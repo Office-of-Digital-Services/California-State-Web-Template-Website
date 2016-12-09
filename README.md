@@ -1,2 +1,2 @@
-# California-State-Template-
-The California State Template is an HTML template and sample website offered by the California Department of Technology to various other agencies and departments within the State of California. The template provides California Government entities with guidelines for how their websites should be created and developed, and allows for consistent branding and web standards for State websites. Please visit webtools.ca.gov for more information.
+# California-State-Template-v5-Beta
+The California State Template is an HTML template and website standard offered by the California Department of Technology to state agencies and departments within the State of California and beyond. Please visit webtools.ca.gov for more information.
