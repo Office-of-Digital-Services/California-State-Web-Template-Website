@@ -1,0 +1,103 @@
+<!doctype html>
+<!--[if lt IE 7]> <html class="no-js ie6 oldie" lang="en"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js ie7 oldie" lang="en"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js ie8 oldie" lang="en"> <![endif]-->
+<!--[if IE 9]>    <html class="no-js ie9 oldie" lang="en"> <![endif]-->
+<!--[if (gt IE 9)]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+<head>
+<!-- 
+California State Template
+Version 5.0
+ 
+Based on Twitter Bootstrap
+-->
+<meta charset="utf-8">
+
+<title>Sample - Grid</title>
+
+<meta name="Author" content="State of California" />
+<meta name="Description" content="State of California" />
+<meta name="Keywords" content="California, government" />
+
+<!--#include virtual="/ssi/head-css-js.html" -->
+
+</head>
+
+<body>
+
+<header role="banner" id="header" class="global-header">
+	<div id="skip-to-content"><a href="#main-content">Skip to Main Content</a></div>    
+        <!-- Location Bar -->
+        <!--#include virtual="/ssi/location-bar.html" -->
+    
+        <!-- Settings Bar -->
+        <!--#include virtual="/ssi/settings-bar.html" -->
+
+        <!-- Alert Banner -->        
+
+        <!-- Include Utility Header -->
+        <!--#include virtual="/ssi/utility-header.html" -->      
+    
+    <!-- Include Branding -->
+    <!--#include virtual="/ssi/branding.html" -->
+    
+    <!-- Include Mobile Controls -->
+    <!--#include virtual="/ssi/mobile-controls.html" -->
+    
+    <div class="navigation-search">
+        
+        <div id="head-search" class="search-container">
+            <!-- Include Search -->
+            <!--#include virtual="/ssi/search.html" -->
+        </div>
+        
+        <!-- Include Navigation -->
+        <!--#include virtual="/ssi/navigation.html" -->
+    
+    </div>
+    
+	<div class="header-decoration"></div>
+</header>
+
+
+<div id="main-content" class="main-content">
+    <div class="section">
+        <main class="main-primary">
+            <ol class="breadcrumb">
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="index.html">Examples</a></li>
+                <li class="active">Grid</li>
+            </ol>
+            
+            <div class="group">
+                <div class="half">
+                    <h1>Grid System</h1>
+                    <p>Grid systems are used for creating page layouts through a series of rows and columns that house your content. This template uses a set of commonly understood fractional units to provide a platform agnostic layout grid. All columns are wrapped in a <code>.group</code> container, all fractional columns are placed directly within the <code>.group</code> container. All fractional columns should equal one whole group. For example two (2) .halfs equal one whole group. Likewise three (3) thirds equal one whole. </p>
+                    <ul>
+                        <li>A row is identified by the <code>.group</code> class</li>
+                        <li>Columns are identified through  fractional notations like <code>.half</code>, <code>.third</code>, <code>.two-thirds</code>, <code>.quarter</code>, and <code>.three-quarters</code> </li>
+                        <li>Use <code>.group</code> to create horizontal groups of columns.</li>
+                        <li>Content should be placed within fractional layout columns.</li>
+                    </ul>
+                                        
+                    <p><span class="label label-info">NOTE:</span> Grids display a 1px gray border in demo only.</p>
+                    
+                    <h2>Example:</h2>
+                    <!--#include virtual="/sample/modules/grid.html" -->
+                </div>
+                 <div class="half">
+                    <h2><label for="sample-accordion">Source Code:</label></h2>
+                    <textarea id="sample-accordion" class="form-control" rows="10" cols="80"><!--#include virtual="/sample/modules/grid.html" --></textarea>
+                </div> 
+            </div>
+        </main>
+    </div>
+</div>
+
+
+<!--#include virtual="/ssi/global-footer.html" -->
+
+<!--#include virtual="/ssi/scripts.html" -->
+
+</body>
+</html>

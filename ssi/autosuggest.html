@@ -1,0 +1,13 @@
+<!-- Google Suggest -->
+<script type="text/javascript">
+	document.write(unescape("%3Cscript src='" + (("https:" == document.location.protocol) ? "https://" : "http://") + "www.google.com/jsapi' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+	google.load('search', '1');
+	google.setOnLoadCallback(function() {
+		google.search.CustomSearchControl.attachAutoCompletion(
+			'001779225245372747843:mdsmtl_vi1a', // Step 7: Update this value with your search engine unique ID. Submit a request to the OTech Service Desk if you don't already know your unique search engine ID.
+			document.getElementById('search_local_textfield'),
+			'local_form');
+	});
+</script>

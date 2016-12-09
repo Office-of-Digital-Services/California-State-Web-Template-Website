@@ -1,0 +1,166 @@
+<!doctype html>
+<!--[if lt IE 7]> <html class="no-js ie6 oldie" lang="en"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js ie7 oldie" lang="en"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js ie8 oldie" lang="en"> <![endif]-->
+<!--[if IE 9]>    <html class="no-js ie9 oldie" lang="en"> <![endif]-->
+<!--[if (gt IE 9)]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+<head>
+<!-- 
+California State Template
+Version 5.0
+ 
+Based on Twitter Bootstrap
+-->
+<meta charset="utf-8">
+
+<title>Sample - Event List</title>
+
+<meta name="Author" content="State of California" />
+<meta name="Description" content="State of California" />
+<meta name="Keywords" content="California, government" />
+
+<!--#include virtual="/ssi/head-css-js.html" -->
+
+</head>
+
+<body class="two-column">
+
+<header role="banner" id="header" class="global-header">
+	<div id="skip-to-content"><a href="#main-content">Skip to Main Content</a></div>    
+        <!-- Location Bar -->
+        <!--#include virtual="/ssi/location-bar.html" -->
+    
+        <!-- Settings Bar -->
+        <!--#include virtual="/ssi/settings-bar.html" -->
+
+        <!-- Alert Banner -->        
+
+        <!-- Include Utility Header -->
+        <!--#include virtual="/ssi/utility-header.html" -->      
+    
+    <!-- Include Branding -->
+    <!--#include virtual="/ssi/branding.html" -->
+    
+    <!-- Include Mobile Controls -->
+    <!--#include virtual="/ssi/mobile-controls.html" -->
+    <div class="navigation-search">
+        <div id="head-search" class="search-container">
+            <!-- Include Search -->
+            <!--#include virtual="/ssi/search.html" -->
+        </div>
+        
+        <!-- Include Navigation -->
+        <!--#include virtual="/ssi/navigation.html" -->
+    </div>
+	<div class="header-decoration"></div>
+</header>
+
+<div id="main-content" class="main-content">
+    <div class="section">
+        <main class="main-primary">
+            <ol class="breadcrumb">
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="index.html">Examples</a></li>
+                <li class="active">Event List</li>
+            </ol>
+            
+            <h1>Event List</h1>
+            <p>An event list contains a repeating group of event items. To begin, wrap this module in a <code>&lt;section class="event-list"&gt;</code>. Then use <code>&lt;article class="event-item"&gt;</code> to group each intividual event together.</p>
+            <p>An <code>.event-item</code> has the following primary child elements.</p>
+            <ul>
+                <li><code>.title</code> - A short title that is linkable to event detail</li>
+                <li><code>.description</code> - A short summary or teaser for the event</li>
+                <li><code>.start-date</code> - Date of the event</li>
+            </ul>
+                
+            <p>An event list can appear in location other than the main content area. The sidebar or inside of a panel for example. The markup in all cases will be exactly the same. <strong>NOTE:</strong> When used within the sidebar, the icons will be removed automatically.</p>
+            
+            <!--#include virtual="/sample/modules/schema-boilerplate.html" -->
+            
+            <h2>Example:</h2>
+            <!--#include virtual="/sample/modules/event-list.html" -->
+            
+            <h2>Source Code:</h2>
+            
+            <div class="tab-group">
+                <ul id="sourceCode" class="nav nav-tabs" role="tablist">
+                    <li class="active"><a href="#html" role="tab" data-toggle="tab">HTML Markup</a></li>
+                    <li><a href="#microdata" role="tab" data-toggle="tab">Microdata</a></li>
+                </ul>
+                <!-- Tab panes -->
+                <div class="tab-content responsive">
+                    <div class="tab-pane active" id="html">
+                         <textarea class="form-control" rows="10" cols="80"><!--#include virtual="/sample/modules/event-list.html" --></textarea>
+                    </div>
+                    <div class="tab-pane" id="microdata">
+                        <p class="alert alert-info">NOTE: This module makes use of a <code>datetime</code> property set in the <strong>ISO 8601</strong> format. Be sure to set the time correctly for each event-item.</p>
+                         <textarea class="form-control" rows="10" cols="80"><!--#include virtual="/sample/modules/event-list-schema.html" --></textarea>
+                    </div>
+                </div>
+            </div>
+            
+            <hr>
+            
+            <h2>Event List with Thumbnails</h2>
+            <p>Event can also include a thumbnail image and layout that is similar to News Lists. To achieve this layout, add a <code>.thumbnail</code> div surrounding an image just inside the <code>article</code> element. Then wrap <code>.title</code>, <code>.description</code>, and <code>.start-date</code> in a new div called <code>.info</code> This will allow the image to be floated left of the information block.</p>
+            
+            <h3>Example:</h3>
+            <!--#include virtual="/sample/modules/event-list-thumbnail.html" -->
+            
+            <h2>Source Code:</h2>
+            
+            <div class="tab-group">
+                <ul id="sourceCodeThumb" class="nav nav-tabs" role="tablist">
+                    <li class="active"><a href="#thumbhtml" role="tab" data-toggle="tab">HTML Markup</a></li>
+                    <li><a href="#thumbmicrodata" role="tab" data-toggle="tab">Microdata</a></li>
+                </ul>
+                <!-- Tab panes -->
+                <div class="tab-content responsive">
+                    <div class="tab-pane active" id="thumbhtml">
+                         <textarea class="form-control" rows="10" cols="80"><!--#include virtual="/sample/modules/event-list-thumbnail.html" --></textarea>
+                    </div>
+                    <div class="tab-pane" id="thumbmicrodata">
+                        <p class="alert alert-info">NOTE: This module makes use of a <code>datetime</code> property set in the <strong>ISO 8601</strong> format. Be sure to set the time correctly for each event-item.</p>
+                         <textarea class="form-control" rows="10" cols="80"><!--#include virtual="/sample/modules/event-list-thumbnail-schema.html" --></textarea>
+                    </div>
+                </div>
+            </div>
+            
+            <hr>
+            
+            <h3>Example of events in a panel:</h3>
+            <p>Events can be included in a panel. See <a href="panels-photo.html">Panels with Photos</a>.</p>
+            <div class="panel panel-overstated photo-left">
+                <div class="panel-heading">
+                    <h4>Event in panel</h4>
+                    <div class="options">
+                        <a href="" class="btn btn-default">More events</a>
+                    </div>
+                </div>
+                <div class="panel-body">
+                    <!--#include virtual="/sample/modules/event-list.html" -->
+                    <div class="photo" style="background-image: url('/sample/images/sample-nav-image.jpg');"></div>
+                </div>
+            </div>
+            
+        </main>
+        <div class="main-secondary">
+        	<h2>Sidebar Example:</h2>
+            <div class="panel panel-standout highlight">
+                <div class="panel-heading">
+                    <h4><span class="ca-gov-icon-info"></span> Latest Events</h4>
+                </div>
+                <div class="panel-body">
+                    <!--#include virtual="/sample/modules/event-list.html" -->
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--#include virtual="/ssi/global-footer.html" -->
+
+<!--#include virtual="/ssi/scripts.html" -->
+
+</body>
+</html>

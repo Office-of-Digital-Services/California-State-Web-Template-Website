@@ -1,0 +1,17 @@
+<form role="form">
+    <div class="group">
+        <div class="form-group half">
+            <label for="exampleInputName"><span class="required-label">*</span> Name</label>
+            <input type="text" class="form-control" id="exampleInputName" placeholder="Name">
+        </div>
+        <div class="form-group half">
+            <label for="exampleInputEmail2"><span class="required-label">*</span> Email address</label>
+            <input type="email" class="form-control" id="exampleInputEmail2" placeholder="Enter email">
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="exampleInputComment">Your Message</label>
+        <textarea id="exampleInputComment" class="form-control" rows="10" cols="80"></textarea>
+    </div>
+    <button type="submit" class="btn btn-default">Submit</button>
+</form>

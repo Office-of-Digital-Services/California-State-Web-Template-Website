@@ -1,0 +1,254 @@
+<!-- Megamenu dropdown -->
+    <nav id="navigation" class="main-navigation megadropdown off-canvas">
+		<ul id="nav_list" class="top-level-nav">
+        	<li class="home-link nav-item">
+            	<a href="/" class="first-level-link"><span id="nav_home_container" class="ca-gov-icon-home" aria-hidden="true"></span><span class="sr-only">Home</span></a>
+            </li>
+			<li class="nav-item">
+            	<a href="/" class="first-level-link">Link 1</a>
+            	<div class="sub-nav">
+                    <ul class="second-level-nav">
+                        <li>
+                            <a href="/" class="second-level-link">Dropdown Sublink</a> 
+                            <div class="link-description">Lorem ipsum dolor sit amet consectetur adipisicing</div>
+                        </li>
+                        <li>
+                            <a href="/" class="second-level-link">Dropdown Sublink</a>
+                            <div class="link-description">Lorem ipsum dolor sit amet consectetur adipisicing</div>
+                        </li>
+                        <li>
+                            <a href="/" class="second-level-link">Dropdown Sublink</a>
+                            <div class="link-description">Lorem ipsum dolor sit amet consectetur adipisicing</div>
+                        </li>
+                        <li>
+                            <a href="/" class="second-level-link">Dropdown Sublink</a> 
+                            <div class="link-description">Lorem ipsum dolor sit amet consectetur adipisicing</div>
+                        </li>
+                        <li>
+                            <a href="/" class="second-level-link">Dropdown Sublink</a>
+                            <div class="link-description">Lorem ipsum dolor sit amet consectetur adipisicing</div>
+                        </li>
+                        <li>
+                            <a href="/" class="second-level-link">Dropdown Sublink</a>
+                            <div class="link-description">Lorem ipsum dolor sit amet consectetur adipisicing</div>
+                        </li>
+                    </ul>
+                 </div>
+			</li>
+            <li class="nav-item">
+            	<a href="http://2014-template.sites.local/sample/dev.html" class="first-level-link">Link 2 This one will be long</a>
+				<div class="sub-nav">
+                    <ul class="second-level-nav">
+                        <li>
+                            <a href="/" class="second-level-link">Dropdown Sublink</a> 
+                            <div class="link-description">Lorem ipsum dolor sit amet consectetur adipisicing</div>
+                        </li>
+                        <li>
+                            <a href="/" class="second-level-link">Dropdown Sublink</a>
+                            <div class="link-description">Lorem ipsum dolor sit amet consectetur adipisicing</div>
+                        </li>
+                        <li>
+                            <a href="/" class="second-level-link">Dropdown Sublink</a>
+                            <div class="link-description">Lorem ipsum dolor sit amet consectetur adipisicing</div>
+                        </li>
+                        <li>
+                            <a href="/" class="second-level-link">Dropdown Sublink</a> 
+                            <div class="link-description">Lorem ipsum dolor sit amet consectetur adipisicing</div>
+                        </li>
+                        <li>
+                            <a href="/" class="second-level-link">Dropdown Sublink</a>
+                            <div class="link-description">Lorem ipsum dolor sit amet consectetur adipisicing</div>
+                        </li>
+                        <li>
+                            <a href="/" class="second-level-link">Dropdown Sublink</a>
+                            <div class="link-description">Lorem ipsum dolor sit amet consectetur adipisicing</div>
+                        </li>
+                        <li>
+                            <a href="/" class="second-level-link">Dropdown Sublink</a>
+                            <div class="link-description">Lorem ipsum dolor sit amet consectetur adipisicing</div>
+                        </li>
+                        <li>
+                            <a href="/" class="second-level-link">Dropdown Sublink</a>
+                            <div class="link-description">Lorem ipsum dolor sit amet consectetur adipisicing</div>
+                        </li>
+                        
+                        <li>
+                            <a href="/" class="second-level-link">Dropdown Sublink</a> 
+                            <div class="link-description">Lorem ipsum dolor sit amet consectetur adipisicing</div>
+                        </li>
+                        <li>
+                            <a href="/" class="second-level-link">Dropdown Sublink</a>
+                            <div class="link-description">Lorem ipsum dolor sit amet consectetur adipisicing</div>
+                        </li>
+                        <li>
+                            <a href="/" class="second-level-link">Dropdown Sublink</a>
+                            <div class="link-description">Lorem ipsum dolor sit amet consectetur adipisicing</div>
+                        </li>
+                        <li>
+                            <a href="/" class="second-level-link">Dropdown Sublink</a> 
+                            <div class="link-description">Lorem ipsum dolor sit amet consectetur adipisicing</div>
+                        </li>
+                        <li>
+                            <a href="/" class="second-level-link">Dropdown Sublink</a>
+                            <div class="link-description">Lorem ipsum dolor sit amet consectetur adipisicing</div>
+                        </li>
+                        <li>
+                            <a href="/" class="second-level-link">Dropdown Sublink</a>
+                            <div class="link-description">Lorem ipsum dolor sit amet consectetur adipisicing</div>
+                        </li>
+                        <li>
+                            <a href="/" class="second-level-link">Dropdown Sublink</a>
+                            <div class="link-description">Lorem ipsum dolor sit amet consectetur adipisicing</div>
+                        </li>
+                        <li>
+                            <a href="/" class="second-level-link">Dropdown Sublink</a>
+                            <div class="link-description">Lorem ipsum dolor sit amet consectetur adipisicing</div>
+                        </li>
+                        <li>
+                            <a href="/" class="second-level-link">Dropdown Sublink</a> 
+                            <div class="link-description">Lorem ipsum dolor sit amet consectetur adipisicing</div>
+                        </li>
+                        <li>
+                            <a href="/" class="second-level-link">Dropdown Sublink</a>
+                            <div class="link-description">Lorem ipsum dolor sit amet consectetur adipisicing</div>
+                        </li>
+                        <li>
+                            <a href="/" class="second-level-link">Dropdown Sublink</a>
+                            <div class="link-description">Lorem ipsum dolor sit amet consectetur adipisicing</div>
+                        </li>
+                        <li>
+                            <a href="/" class="second-level-link">Dropdown Sublink</a> 
+                            <div class="link-description">Lorem ipsum dolor sit amet consectetur adipisicing</div>
+                        </li>
+                        <li>
+                            <a href="/" class="second-level-link">Dropdown Sublink</a>
+                            <div class="link-description">Lorem ipsum dolor sit amet consectetur adipisicing</div>
+                        </li>
+                        <li>
+                            <a href="/" class="second-level-link">Dropdown Sublink</a>
+                            <div class="link-description">Lorem ipsum dolor sit amet consectetur adipisicing</div>
+                        </li>
+                        <li>
+                            <a href="/" class="second-level-link">Dropdown Sublink</a>
+                            <div class="link-description">Lorem ipsum dolor sit amet consectetur adipisicing</div>
+                        </li>
+                        <li>
+                            <a href="/" class="second-level-link">Dropdown Sublink</a>
+                            <div class="link-description">Lorem ipsum dolor sit amet consectetur adipisicing</div>
+                        </li>
+                        <li>
+                            <a href="/" class="second-level-link">Dropdown Sublink</a> 
+                            <div class="link-description">Lorem ipsum dolor sit amet consectetur adipisicing</div>
+                        </li>
+                        <li>
+                            <a href="/" class="second-level-link">Dropdown Sublink</a>
+                            <div class="link-description">Lorem ipsum dolor sit amet consectetur adipisicing</div>
+                        </li>
+                    </ul>
+                    <div class="sub-nav-decoration" style="background:url('/sample/images/sample-nav-image2.jpg')"></div>
+                 </div>
+			</li>
+			<li class="nav-item">
+            	<a href="/" class="first-level-link">Link 3 anothe asf asd fsa fr long title</a>
+                <div class="sub-nav with-image-sm-right">
+                    <ul class="second-level-nav">
+                        <li>
+                            <a href="/" class="second-level-link">Dropdown Sublink</a> 
+                            <div class="link-description">Lorem ipsum dolor sit amet consectetur adipisicing</div>
+                        </li>
+                        <li>
+                            <a href="/" class="second-level-link">Dropdown Sublink</a>
+                            <div class="link-description">Lorem ipsum dolor sit amet consectetur adipisicing</div>
+                        </li>
+                        <li>
+                            <a href="/" class="second-level-link">Dropdown Sublink</a>
+                            <div class="link-description">Lorem ipsum dolor sit amet consectetur adipisicing</div>
+                        </li>
+                        <li>
+                            <a href="/" class="second-level-link">Dropdown Sublink</a> 
+                            <div class="link-description">Lorem ipsum dolor sit amet consectetur adipisicing</div>
+                        </li>
+                        <li>
+                            <a href="/" class="second-level-link">Dropdown Sublink</a>
+                            <div class="link-description">Lorem ipsum dolor sit amet consectetur adipisicing</div>
+                        </li>
+                    </ul>
+                    <div class="sub-nav-decoration" style="background:url('/sample/images/sample-nav-image2.jpg')"></div>
+                 </div>
+				
+			</li>
+			<li class="nav-item">
+            	<a href="/" class="first-level-link">Link 4</a>
+				<div class="sub-nav with-image-md-right">
+                    <ul class="second-level-nav">
+                        <li>
+                            <a href="/" class="second-level-link">Dropdown Sublink</a> 
+                            <div class="link-description">Lorem ipsum dolor sit amet consectetur adipisicing</div>
+                        </li>
+                        <li>
+                            <a href="/" class="second-level-link">Dropdown Sublink</a>
+                            <div class="link-description">Lorem ipsum dolor sit amet consectetur adipisicing</div>
+                        </li>
+                        <li>
+                            <a href="/" class="second-level-link">Dropdown Sublink</a>
+                            <div class="link-description">Lorem ipsum dolor sit amet consectetur adipisicing</div>
+                        </li>
+                    </ul>
+                    <div class="sub-nav-decoration" style="background:url('/sample/images/sample-nav-image2.jpg')"></div>
+                 </div>
+			</li>
+            <li class="nav-item">
+            	<a href="/" class="first-level-link">Link 5</a>
+                <div class="sub-nav with-image-sm-left">
+                    <ul class="second-level-nav">
+                        <li>
+                            <a href="/" class="second-level-link">Dropdown Sublink</a> 
+                            <div class="link-description">Lorem ipsum dolor sit amet consectetur adipisicing</div>
+                        </li>
+                        <li>
+                            <a href="/" class="second-level-link">Dropdown Sublink</a>
+                            <div class="link-description">Lorem ipsum dolor sit amet consectetur adipisicing</div>
+                        </li>
+                        <li>
+                            <a href="/" class="second-level-link">Dropdown Sublink</a>
+                            <div class="link-description">Lorem ipsum dolor sit amet consectetur adipisicing</div>
+                        </li>
+                         <li>
+                            <a href="/" class="second-level-link">Dropdown Sublink</a> 
+                            <div class="link-description">Lorem ipsum dolor sit amet consectetur adipisicing</div>
+                        </li>
+                        <li>
+                            <a href="/" class="second-level-link">Dropdown Sublink</a>
+                            <div class="link-description">Lorem ipsum dolor sit amet consectetur adipisicing</div>
+                        </li>
+                        <li>
+                            <a href="/" class="second-level-link">Dropdown Sublink</a>
+                            <div class="link-description">Lorem ipsum dolor sit amet consectetur adipisicing</div>
+                        </li>
+                    </ul>
+                    <div class="sub-nav-decoration" style="background:url('/sample/images/sample-nav-image2.jpg')"></div>
+                 </div>
+            </li>
+			<li class="nav-item">
+            	<a href="/" class="first-level-link">Link 6</a>
+                <div class="sub-nav with-image-md-left">
+                    <ul class="second-level-nav">
+                        <li>
+                            <a href="/" class="second-level-link">Dropdown Sublink</a> 
+                            <div class="link-description">Lorem ipsum dolor sit amet consectetur adipisicing</div>
+                        </li>
+                        <li>
+                            <a href="/" class="second-level-link">Dropdown Sublink</a>
+                            <div class="link-description">Lorem ipsum dolor sit amet consectetur adipisicing</div>
+                        </li>
+                        <li>
+                            <a href="/" class="second-level-link">Dropdown Sublink</a>
+                            <div class="link-description">Lorem ipsum dolor sit amet consectetur adipisicing</div>
+                        </li>
+                    </ul>
+                    <div class="sub-nav-decoration" style="background:url('/sample/images/sample-nav-image2.jpg')"></div>
+                 </div>
+            </li>
+		</ul>
+	</nav>
+<!-- End megamenu -->

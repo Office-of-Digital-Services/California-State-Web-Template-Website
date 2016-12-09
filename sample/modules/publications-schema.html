@@ -1,0 +1,24 @@
+<div class="publication-list">
+    <article class="pub-item odd" itemscope itemtype="http://schema.org/CreativeWork">
+        <div class="thumbnail"><img itemprop="image" src="images/70x93.gif" alt=""></div>
+        <div class="pub-body">
+            <span class="pub-title" itemprop="name">Immigration Reform and Control Act (IRCA) - What You Should Know</span> <span class="pub-language">(english <a href="">PDF</a>) | <span class="pub-revision-date">(Revision Date <time itemprop="dateModified" datetime="2011-01-02T00:00:00-08:00">Jan 03, 2011</time>)</span><meta itemprop="inLanguage" content="en-US"></span>
+            <div class="pub-tags">Tags: <span itemprop="keywords">Employment Discrimentation</span></div>
+        </div>
+    </article>
+
+    <article class="pub-item odd" itemscope itemtype="http://schema.org/CreativeWork">
+        <div class="thumbnail"><img itemprop="image" src="images/70x93.gif" alt=""></div>
+        <div class="pub-body">
+            <span class="pub-title" itemprop="name">Immigration Reform and Control Act (IRCA) - What You Should Know</span> <span class="pub-language">(english <a href="">PDF</a>) | <span class="pub-revision-date">(Revision Date <time itemprop="dateModified" datetime="2011-01-02T00:00:00-08:00">Jan 03, 2011</time>)</span><meta itemprop="inLanguage" content="en-US"></span>
+            <div class="pub-tags">Tags: <span itemprop="keywords">Employment Discrimentation</span></div>
+        </div>
+    </article>
+
+    <article class="pub-item odd" itemscope itemtype="http://schema.org/CreativeWork">
+        <div class="pub-body">
+            <span class="pub-title" itemprop="name">Immigration Reform and Control Act (IRCA) - What You Should Know</span> <span class="pub-language">(english <a href="">PDF</a>) | <span class="pub-revision-date">(Revision Date <time itemprop="dateModified" datetime="2011-01-02T00:00:00-08:00">Jan 03, 2011</time>)</span><meta itemprop="inLanguage" content="en-US"></span>
+            <div class="pub-tags">Tags: <span itemprop="keywords">Employment Discrimentation</span></div>
+        </div>
+    </article>
+</div>

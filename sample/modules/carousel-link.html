@@ -1,0 +1,18 @@
+<div class="carousel carousel-link">
+    <div class="item"><a href="#"><img src="images/gallery/orangecounty-square.jpg" alt="icon 1"></a></div>
+    <div class="item"><a href="#"><img src="images/gallery/pasorobles-square.jpg" alt="icon 2"></a></div>
+    <div class="item"><a href="#"><img src="images/gallery/santabarbara-square.jpg" alt="icon 3"></a></div>
+    <div class="item"><a href="#"><img src="images/gallery/sierra-square.jpg" alt="icon 4"></a></div>
+    <div class="item"><a href="#"><img src="images/gallery/orangecounty-square.jpg" alt="icon 1"></a></div>
+    <div class="item"><a href="#"><img src="images/gallery/pasorobles-square.jpg" alt="icon 6"></a></div>
+    <div class="item"><a href="#"><img src="images/gallery/santabarbara-square.jpg" alt="icon 7"></a></div>
+    <div class="item"><a href="#"><img src="images/gallery/sierra-square.jpg" alt="icon 8"></a></div>
+    <div class="item"><a href="#"><img src="images/gallery/orangecounty-square.jpg" alt="icon 9"></a></div>
+    <div class="item"><a href="#"><img src="images/gallery/pasorobles-square.jpg" alt="icon 10"></a></div>
+    <div class="item"><a href="#"><img src="images/gallery/santabarbara-square.jpg" alt="icon 11"></a></div>
+    <div class="item"><a href="#"><img src="images/gallery/sierra-square.jpg" alt="icon 12"></a></div>
+    <div class="item"><a href="#"><img src="images/gallery/orangecounty-square.jpg" alt="icon 13"></a></div>
+    <div class="item"><a href="#"><img src="images/gallery/pasorobles-square.jpg" alt="icon 14"></a></div>
+    <div class="item"><a href="#"><img src="images/gallery/santabarbara-square.jpg" alt="icon 15"></a></div>
+    <div class="item"><a href="#"><img src="images/gallery/sierra-square.jpg" alt="icon 16"></a></div>
+</div>

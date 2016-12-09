@@ -1,0 +1,24 @@
+<div class="publication-list">
+    <article class="pub-item odd">
+        <div class="thumbnail"><img src="images/70x93.gif" alt=""></div>
+        <div class="pub-body">
+            <span class="pub-title">Immigration Reform and Control Act (IRCA) - What You Should Know</span> <span class="pub-language">(english <a href="">PDF</a>) | <span class="pub-revision-date">(Revision Date <time datetime="2011-01-03">Jan 03, 2011</time>)</span></span>
+            <div class="pub-tags">Tags: Employment Discrimentation</div>
+        </div>
+    </article>
+    
+    <article class="pub-item even">
+        <div class="thumbnail"><img src="images/70x93.gif" alt=""></div>
+        <div class="pub-body">
+            <span class="pub-title">Immigration Reform and Control Act (IRCA) - What You Should Know</span> <span class="pub-language">(english <a href="">PDF</a>) | <span class="pub-revision-date">(Revision Date <time datetime="2011-01-03">Jan 03, 2011</time>)</span></span>
+            <div class="pub-tags">Tags: Employment Discrimentation</div>
+        </div>
+    </article>
+    
+    <article class="pub-item odd">
+        <div class="pub-body">
+            <span class="pub-title">Immigration Reform and Control Act (IRCA) - What You Should Know</span> <span class="pub-language">(english <a href="">PDF</a>) | <span class="pub-revision-date">(Revision Date <time datetime="2011-01-03">Jan 03, 2011</time>)</span></span>
+            <div class="pub-tags">Tags: Employment Discrimentation</div>
+        </div>
+    </article>
+</div>
