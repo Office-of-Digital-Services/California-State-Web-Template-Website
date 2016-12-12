@@ -23,8 +23,9 @@ Based on Twitter Bootstrap
 <!--#include virtual="/ssi/head-css-js.html" -->
 <!-- TemplateBeginEditable name="head" -->
 <!-- TemplateEndEditable -->
-<!-- TemplateParam name="OptionalSlideshow" type="boolean" value="true" -->
-<!-- TemplateParam name="PrimaryBanner" type="boolean" value="false"  -->
+<!-- TemplateParam name="PrimaryBanner" type="boolean" value="true"  -->
+<!-- TemplateParam name="OptionalSlideshow" type="boolean" value="false" -->
+<!-- TemplateParam name="LargeBanner" type="boolean" value="false"  -->
 </head>
 
 <!-- possible body classes are "primary" and "two-column" -->
@@ -65,9 +66,14 @@ Based on Twitter Bootstrap
     <!-- TemplateBeginIf cond="PrimaryBanner" -->
     <!--#include virtual="/ssi/header-primary-banner.html" -->
     <!-- TemplateEndIf -->
+
     <!-- Include for optional slideshow banner -->
     <!-- TemplateBeginIf cond="OptionalSlideshow" -->
     <!--#include virtual="/ssi/header-slideshow-banner.html" -->
+    <!-- TemplateEndIf -->
+    
+    <!-- TemplateBeginIf cond="LargeBanner" -->
+    <!--#include virtual="/ssi/header-large-banner.html" -->
     <!-- TemplateEndIf -->
     <div class="header-decoration"></div>
 </header>
