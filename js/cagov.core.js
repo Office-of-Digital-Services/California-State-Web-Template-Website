@@ -11222,7 +11222,7 @@ $(document).ready(function () {
         // }
 
         // let the user know the input box is where they should search
-        $(".primary #head-search").addClass('play-animation').one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function () {
+        $("#head-search").addClass('play-animation').one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function () {
             $(this).removeClass('play-animation');
 
         });
@@ -11231,12 +11231,25 @@ $(document).ready(function () {
         // When compact has been applied to the header, it will take 400ms
         // unitll the window has scrolled, and it will keep removing the ".active" class. After that we can apply the active
         // class.
+		
+		//------------------------------------------------------------- v5 ----------------------------------------- *Changes to remove .primary body class dependency for featured-search behaviour 
+		
+		if ( $( "#head-search" ).is( ".featured-search" ) ) {
+		//-------------- v5 *Added if statement
         window.setTimeout(function() {
             $('body:not(.primary) .search-container').addClass('active');
         } ,401);
+		
+		}else{
+		
+		 window.setTimeout(function() {
+            $('.search-container').addClass('active');
+        } ,401);	
+
+		}
+		
     });
-
-
+	
 
     // SEE navitgation.js for mobile click handlers
 
