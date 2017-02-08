@@ -4088,7 +4088,7 @@ button.close {
    /source/less/bootstrap-accessibility-plugin/button.less
 ----------------------------------------- */
 .btn:focus {
-  outline: dotted 2px #000;
+  outline: dotted 1px #fff;
 }
 /* -----------------------------------------
    /source/less/bootstrap-accessibility-plugin/divs.less
@@ -12575,7 +12575,7 @@ fieldset[disabled] a.btn-more {
   -webkit-transition: all .3s;
           transition: all .3s;
 }
-.service-tile .teaser .title:hover {
+.service-tile .teaser .title:hover, .service-tile:focus .teaser .title {
   color: #FDB81E;
 }
 .title:after {
@@ -13526,6 +13526,9 @@ fieldset[disabled] .mapthat-facet-item.active {
   height: 32px;
   position: absolute;
   margin-left: 7px;
+}
+.branding .header-cagov-logo a:focus img {
+	outline:1px dotted black;
 }
 
 .utility-header ul li {
