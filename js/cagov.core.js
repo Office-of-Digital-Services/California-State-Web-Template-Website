@@ -2268,9 +2268,7 @@ var fakewaffle = ( function ( $, fakewaffle ) {
    */
   Owl.Defaults = {
     items: 3,
-	autoplay: true,
-	autoplauhoverpause: true,
-    loop: true,
+    loop: false,
     center: false,
     rewind: false,
 
@@ -11517,7 +11515,7 @@ function initContent() {
         carousel.owlCarousel({
             items: 1,
             autoHeight: true,
-            loop: true,
+            loop: false,
             nav: true,
             navText: [
                 '<span class="ca-gov-icon-arrow-prev" aria-hidden="true"></span>', '<span class="ca-gov-icon-arrow-next" aria-hidden="true"></span>'
