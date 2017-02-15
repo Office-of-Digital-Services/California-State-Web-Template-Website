@@ -2268,7 +2268,7 @@ var fakewaffle = ( function ( $, fakewaffle ) {
    */
   Owl.Defaults = {
     items: 3,
-	autoplay: true,
+	autoplay: false,
 	autoplauhoverpause: true,
     loop: true,
     center: false,
@@ -4577,9 +4577,9 @@ var fakewaffle = ( function ( $, fakewaffle ) {
    * @public
    */
   Autoplay.Defaults = {
-    autoplay: false,
+    autoplay: true,
     autoplayTimeout: 5000,
-    autoplayHoverPause: false,
+    autoplayHoverPause: true,
     autoplaySpeed: false
   };
 
