@@ -1,0 +1,70 @@
+/* -----------------------------------------
+   SEARCH
+   /source/less/colorscheme.search.less
+----------------------------------------- */
+@expanded-background-color: @gray-lighter;
+@text-field-color: rgba(255, 255, 255, 0.8); // 80% white
+
+.search-container {
+
+    .search-textfield {
+        background-color: @text-field-color;
+    }
+
+    .submit-container {
+        button {
+            color:@mobile-controls;
+            border-color: @text-field-color;
+        }
+    }
+
+    &:hover, &:focus, &.active  {
+        .search-textfield {
+            background-color:#fff;
+        }
+
+        .submit-container button {
+            border-color: #fff;
+        }
+    }
+
+    &.active  {
+        //background:desaturate(lighten(@color-p2, 43), 51);      // Nav icon color
+        background: @expanded-background-color;
+
+        @media (min-width:@screen-sm-min) {
+            border-bottom: 2px solid @gray-lighter;
+        }
+
+        .submit-container button {
+            border-color: darken(@gray-lighter, 10%);
+            background: @gray;
+        }
+
+        .search-textfield {
+            border-color: darken(@gray-lighter, 10%);
+        }
+
+        &.focus, &:hover {
+            .search-textfield {
+                //border-color: @color-p2;
+            }
+        }
+    }
+}
+
+.search-container.featured-search {
+    background: @gray-light;            // fallback color
+    .rgba (#000, .65);                   // rgba function
+    background: @rgba;                  // rgba value for modern browsers
+
+    // Darken the search container on hover
+    &:hover, &:focus {
+        .rgba (#000, .8);              // rgba function
+        background-color: @rgba;        // rgba value for modern browsers
+    }
+
+    &.active {
+        background:@expanded-background-color;
+    }
+}

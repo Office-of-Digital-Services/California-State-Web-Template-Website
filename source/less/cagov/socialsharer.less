@@ -1,0 +1,75 @@
+/* -----------------------------------------
+   SOCIAL SHARE WIDGET
+   /source/less/cagov/socialsharer.less
+   SocialSharer module Version Dec 09, 2014
+----------------------------------------- */
+
+// Mixin for link color & hover states
+.social-media(@color) {
+    color: @color;
+
+    &:hover, &:focus {
+        color: darken(@color, 10%);
+    }
+}
+
+.socialsharer-container {
+     float:right;
+    .clearfix();
+
+    a {
+        line-height:1em;
+        .font-size(1.375);
+        cursor:pointer;
+
+        &:hover, &:focus {
+            text-decoration: none !important;               // Remove underlines from icon fonts
+        }
+    }
+}
+
+/* Facebook */
+.ca-gov-icon-share-facebook {
+    .social-media(@share-facebook);
+}
+
+/* Twitter */
+.ca-gov-icon-share-twitter {
+    .social-media(@share-twitter);
+}
+
+/* GooglePlus */
+.ca-gov-icon-share-googleplus {
+    .social-media(@share-googleplus);
+}
+
+/* Flickr */
+.ca-gov-icon-share-flickr {
+    .social-media(@share-flickr);
+}
+
+/* linkedin */
+.ca-gov-icon-share-linkedin {
+    .social-media(@share-linkedin);
+}
+
+/* instagram */
+.ca-gov-icon-share-instagram {
+    .social-media(@share-instagram);
+}
+
+/* pinterest */
+.ca-gov-icon-share-pinterest {
+    .social-media(@share-pinterest);
+}
+
+/* vimeo */
+.ca-gov-icon-share-vimeo {
+    .social-media(@share-vimeo);
+}
+
+/* Email */
+.ca-gov-icon-share-email {
+    /* "Blue a v". Licensed under Public domain via Wikimedia Commons - http://commons.wikimedia.org/wiki/File:Blue_a_v.svg#mediaviewer/File:Blue_a_v.svg */
+    .social-media(@share-email);
+}

@@ -1,0 +1,197 @@
+/* -----------------------------------------
+   MEGA MENU
+   /source/less/cagov/nav-megamenu.less
+----------------------------------------- */
+
+@media (max-width: @screen-xs-max) {
+    .main-navigation {
+        margin-top:0;
+        padding:0;
+    }
+}
+
+.top-level-nav {
+	
+	@media (max-width: @screen-md) and (min-width: @screen-sm-min) { // Beta 5.0 addition
+				font-size: .9em;	
+			}
+   .nav-item {
+        position: static;
+
+        @media (max-width: @screen-xs-max) {
+            position: relative;
+        }
+		
+
+
+        .no-js &:hover .sub-nav {
+            position: absolute;                     // On hover show the sub navigation panel
+            display: block;
+        }
+    }
+}
+
+
+//
+// Sub-menu open indicator
+// --------------------------------------------------
+
+@media (min-width: @screen-xs-max) {
+    /* Dynamic Element appended to each .sub-nav */
+    .nav-arrow-container {
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+    }
+
+    /* Dynamic element contained in .nav-arrow-container */
+    .nav-arrow-down {
+        // KEEPING POINTER AS I FEEL IT'S A BETTER SOLUTION
+        //background: transparent url("@{template-path}/nav-down-arrow.png") no-repeat;
+        //width: 44px;
+        //height: 16px;
+        //margin-left: -22px;
+
+        // VARIATION USING BAR
+        position: absolute;
+        top: -5px;      // equal to the thickness of the border
+        left: 50%;
+        height:5px;
+        width:100px;
+        margin-left:-65px;  // -50 + -15 for 1/2 of gutter
+    }
+}
+
+//
+// Sub navigation container
+// --------------------------------------------------
+
+.sub-nav {
+    left: (@grid-gutter-width / 2);
+    right: (@grid-gutter-width / 2);
+    overflow: visible;
+
+    // Remove border as rules are added to top level links
+    @media (max-width: @screen-xs-max) {
+        border:none;
+    }
+
+    // Collapse grid gutters
+    .half, .third, .quarter, .two-thirds, .three-quarters {
+        padding:0;
+    }
+}
+
+
+
+//
+// Secondary level navigationr
+// --------------------------------------------------
+
+.second-level-nav {
+    list-style: none;
+    padding: 0;
+
+    // SET UP NAVIGATION COLUMNS
+    @media (min-width: @screen-sm-min) {
+        .half &, .two-thirds & {
+            .nav-columns(2);
+        }
+
+        .three-quarters & {
+            .nav-columns(3);
+        }
+    }
+
+    // float links ie9 and below doesn't support columns
+    &.oldie {
+        .clearfix();
+    }
+
+   [class^="unit"] {
+        .nav-column-group;
+        background: none;
+
+        a, .link-description {
+            .nav-column-group;
+        }
+
+        // float links since ie9 and below doesn't support columns
+        .oldie & {
+            width: 33.3333%;
+            float: left;
+        }
+    }
+}
+
+//
+// Links in Subnav
+// --------------------------------------------------
+
+a.second-level-link {
+    .font-size(1.1);
+    padding:15px;
+
+    &:hover, &:focus {
+        text-decoration:none !important;
+    }
+
+    [class^="ca-gov-icon-"] {
+        display:inline-block;
+        .font-size(1.375);
+        vertical-align:-2px;
+        margin-right:3px;
+    }
+
+    @media (max-width: @screen-xs-max) {
+        padding:10px 15px 10px 40px !important;
+    }
+}
+
+.link-description {
+    display: block;
+    .font-size(1);
+}
+
+
+
+//
+// MEGA MENU NAVIGATION UNITS
+// --------------------------------------------------
+
+// Unit values for desktop only, mobile will collapse vertically.
+@media (min-width: @screen-sm-min) {
+    @nav-unit-base: 65px;
+
+    .unit1 {
+        height:@nav-unit-base;
+        overflow:hidden !important;
+    }
+
+    .unit2 {
+        height:(@nav-unit-base * 2);
+        overflow:hidden;
+    }
+
+    .unit3 {
+        height:(@nav-unit-base * 3);
+        overflow:hidden;
+    }
+
+    .unit4 {
+        height:(@nav-unit-base * 4);
+        overflow:hidden;
+    }
+
+    .unit5 {
+        height:(@nav-unit-base * 5);
+        overflow:hidden;
+    }
+
+    .unit6 {
+        height:(@nav-unit-base * 6);
+        overflow:hidden;
+    }
+}

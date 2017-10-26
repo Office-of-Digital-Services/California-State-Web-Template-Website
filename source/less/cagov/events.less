@@ -1,0 +1,70 @@
+/* -----------------------------------------
+   EVENTS /source/less/cagov/events.less
+----------------------------------------- */
+   
+.event-item {
+    padding-left:20px;
+    margin-bottom:@line-height-computed;
+    
+    .title {
+        background: url("@{template-path}/bullet-blue-disc.png") no-repeat 0 3px transparent;
+        margin-left:-20px;
+        padding-left:20px;
+        
+        .main-secondary & {
+            background:none;        // Remove the bullet icon when used in the sidebar
+        }
+    }
+    
+    h1, h2, h3, h4, h5, h6 {
+        margin:0;
+        .font-size(1);
+    }
+}
+
+
+//
+// EVENT LIST WITH THUMBNAIL
+// --------------------------------------------------
+
+.event-item {
+    .make-row();
+     
+    > .thumbnail {
+        .make-xs-column(4);
+        .make-sm-column(3); 
+        .make-md-column(2);
+        padding:0;
+        
+        img {
+            .img-responsive();
+        }
+    }
+    
+    .thumbnail + .info {
+        .make-xs-column(8);
+        .make-sm-column(9); 
+        .make-md-column(10);
+        
+        .title {
+            background: none;       // Removes bullet
+        }
+    }
+}
+
+
+   
+//
+// EVENT DETAILS
+// --------------------------------------------------
+
+.event-detail {
+    .presenter {
+        padding: (@line-height-computed / 2) 0;
+        .clearfix();
+    }
+    
+    .description {
+        .clearfix();
+    }
+}

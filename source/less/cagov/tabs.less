@@ -1,0 +1,64 @@
+/* -----------------------------------------
+   TABS - /source/less/cagov/tabs.less
+----------------------------------------- */
+  
+.tab-group {
+    position: relative;
+    border:1px solid @nav-tabs-border-color;
+    
+    @media (max-width: @screen-sm-max) {
+        border:none;
+    }
+    
+    > [class^="ca-gov-icon-"] {
+        .hide();
+    }
+    
+    .nav-tabs {
+        border-radius:0;
+        
+        li:first-child a {
+            border-left:0;
+        }
+        
+        li {
+            &.active {
+                border-top:0;
+            }
+            
+            > a {
+                padding:3px (@grid-gutter-width / 2);
+                border-top:0;
+            }
+            
+        }
+    }
+    
+    .tab-pane {
+        padding:(@grid-gutter-width / 2);
+    }
+}
+
+/* Bottom Tabs */
+// If left and right solutions are required see: http://www.bootply.com/74926
+.tabs-bottom {
+    .tab-content {
+        padding-bottom:30px;    // Approx height of tabs
+    }
+    
+    .nav-tabs {
+        position:absolute;
+        bottom:0;
+        width:100%;
+        border-bottom:none;
+        margin-bottom:0;
+        
+        > li {
+            margin-bottom:0;
+        }
+    }
+}
+
+.panel-group.responsive {
+    margin-bottom:0;
+}

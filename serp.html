@@ -1,4 +1,4 @@
-<!doctype html>
+﻿<!doctype html>
 <!--[if lt IE 7]> <html class="no-js ie6 oldie" lang="en"> <![endif]-->
 <!--[if IE 7]>    <html class="no-js ie7 oldie" lang="en"> <![endif]-->
 <!--[if IE 8]>    <html class="no-js ie8 oldie" lang="en"> <![endif]-->
@@ -21,6 +21,11 @@ Based on Twitter Bootstrap
 
 <!--#include virtual="/ssi/head-css-js.html" -->
 <link rel='stylesheet' href='http://www.google.com/cse/style/look/default.css' type='text/css'/>
+    <style>
+        #nav-item-search {
+            display:none;
+        }
+    </style>
 </head>
 
 <!-- possible body classes are "primary" and "two-column" -->
@@ -36,7 +41,7 @@ Based on Twitter Bootstrap
     <!--#include virtual="/ssi/settings-bar.html" -->
 
     <!-- Alert Banner -->
-
+    <!--#include virtual="/ssi/alert-banner.html" -->
 
     <!-- Include Utility Header -->
     <!--#include virtual="/ssi/utility-header.html" -->
@@ -60,42 +65,27 @@ Based on Twitter Bootstrap
 </header>
 
 <div id="main-content" class="main-content">
-    <div class="wrapper">
+    <div class="section">
         <main class="main-primary">
-            <!--#include virtual="/ssi/search-results-standalone.html" -->
+            <!--Search include is commented out-->
+            <!--include virtual="/ssi/search-results-standalone.html" -->
             
-            <!-- <script src='//www.google.com/jsapi' type='text/javascript'></script> -->
-            <script type='text/javascript'>
-            google.load('search', '1', {language: 'en', style: google.loader.themes.DEFAULT});
-            google.setOnLoadCallback(function() {
-                var customSearchOptions = {};
-                var customSearchControl = new google.search.CustomSearchControl('001779225245372747843:9s-idxui5pk', customSearchOptions); // Step 7: Update this value with your search engine unique ID.
-                customSearchControl.setResultSetSize(google.search.Search.FILTERED_CSE_RESULTSET);
-                customSearchControl.setLinkTarget(google.search.Search.LINK_TARGET_SELF); // use same tab instead of opening a new tab when clicking a link
-                var options = new google.search.DrawOptions();
-                options.enableSearchResultsOnly();
-                options.setAutoComplete(true);
-                customSearchControl.draw('cse', options);
-                function parseParamsFromUrl() {
-                    var params = {};
-                    var parts = window.location.search.substr(1).split('&');
-                    for (var i = 0; i < parts.length; i++) {
-                        var keyValuePair = parts[i].split('=');
-                        var key = decodeURIComponent(keyValuePair[0]);
-                        params[key] = keyValuePair[1] ?
-                            decodeURIComponent(keyValuePair[1].replace(/\+/g, ' ')) :
-                            keyValuePair[1];
-                    }
-                    return params;
-                }
-                var urlParams = parseParamsFromUrl();
-                var queryParamName = 'q';
-                if (urlParams[queryParamName]) {
-                    customSearchControl.execute(urlParams[queryParamName]);
-                }
-            }, true);
-            </script>
-        </main>
+            <!--Search result section-->
+            <div class="section-default">
+                <div class="container">
+                    <h1>Search Results</h1>
+                    <gcse:searchbox-only resultsUrl="/serp.html" enableAutoComplete="true"></gcse:searchbox-only>
+
+                </div>
+            </div>
+                <div class="section">
+                    <div class="container">
+
+                        <gcse:searchresults-only></gcse:searchresults-only>
+                        <!-- <script src='//www.google.com/jsapi' type='text/javascript'></script> -->
+                    </div>
+                </div>
+</main>
     </div>
 </div>
 

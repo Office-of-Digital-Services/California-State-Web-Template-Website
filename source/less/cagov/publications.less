@@ -1,0 +1,33 @@
+/* -----------------------------------------
+   PUBLICATIONS /source/less/cagov/publications.less
+----------------------------------------- */
+
+.pub-item {
+    .clearfix();
+    margin-bottom:(@line-height-computed / 2);
+    
+    &.odd {
+        background:lighten(@gray-lighter, 3%);
+    }
+    
+    &.even {
+        background:darken(@gray-lighter, 5%);
+    }
+    
+   .thumbnail {
+       float:left;
+       margin-right:15px;
+       
+       img {
+           .img-responsive();
+       }
+   }
+}
+
+.pub-body {
+    padding: (@line-height-computed / 2) (@grid-gutter-width / 2) !important;       // Adds padding consistent to the themes gutter and line-height
+}
+
+.pub-language, .pub-revision-date, .pub-tags {
+    color:@gray-light;
+}

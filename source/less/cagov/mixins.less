@@ -1,0 +1,220 @@
+// Text overflow with(...)
+// -------------------------
+// Requires inline-block or block for proper styling
+.text-overflow() {
+  overflow:hidden;
+  text-overflow:ellipsis;
+  white-space:nowrap;
+  max-width:100%;
+}
+
+.line-overflow(@line, @line-height ) {
+  position: relative;
+  overflow:hidden;
+  text-overflow:ellipsis;
+  display:-webkit-box;
+  line-height: @line-height;
+  max-height: @line * @line-height;
+  -webkit-line-clamp:@line; /* number of lines to show */
+  -webkit-box-orient:vertical;
+}
+
+/* -----------------------------------------
+ Helper Mixins for service-group
+----------------------------------------- */
+  .correct-borders(@n) {
+      & {
+          border-top: @border;
+      }
+
+      &:nth-child(@{n}n + 1) {
+          border-right: @border;
+          border-left: @border;
+      }
+
+      &:nth-last-child(@{n}) {
+          border-bottom: @border;
+      }
+  }
+
+  .triangle-top() {
+    @triangle-size: 7px;
+    position: absolute;
+    margin-left: -@triangle-size;
+    left: 50%;
+    top: -@triangle-size+1px;
+    .triangle(up, @triangle-size, @background-color);
+  }
+
+
+
+//
+// Hex to rgba -  Usage: .rgba (#000000, .5); color: @rgba;
+// --------------------------------------------------
+
+.rgba (@color, @alpha: 1) {
+    @red: red(@color);
+    @green: green(@color);
+    @blue: blue(@color);
+    @rgba: rgba(@red, @green, @blue, @alpha); // Return variable
+}
+
+
+
+//
+// CONDENSED FONT
+// --------------------------------------------------
+
+.font-condensed() {
+    font-family: 'Arial Narrow', 'Helvetica Narrow', Arial, Helvetica, sans-serif;
+  font-stretch: condensed;
+}
+
+
+
+//
+// REUSABLE STYLE FOR PUBLISHING DATE
+// --------------------------------------------------
+
+.published() {
+    font-style:italic;
+}
+
+//
+// TRIANGLES
+// --------------------------------------------------
+// Usage:
+// .triangle(@direction, @size, @color)
+// .triangle(@direction, @width, @height, @color)
+
+.triangle-base() {
+    content: '';
+    display: block;
+    width: 0;
+    height: 0;
+}
+
+.triangle(@direction, @size, @color) {
+    .triangle(@direction, @size * 2, @size, @color);
+}
+
+.triangle(@direction, @width, @height, @color) when (@direction = up) {
+    .triangle-base();
+    border-left: (@width / 2)solid transparent;
+    border-right: (@width / 2)solid transparent;
+    border-bottom: @height solid @color;
+}
+
+.triangle(@direction, @width, @height, @color) when (@direction = down) {
+    .triangle-base();
+    border-left: (@width / 2) solid transparent;
+    border-right: (@width / 2) solid transparent;
+    border-top: @height solid @color;
+}
+
+.triangle(@direction, @width, @height, @color) when (@direction = left) {
+    .triangle-base();
+    border-top: (@width / 2) solid transparent;
+    border-bottom: (@width / 2) solid transparent;
+    border-right: @height solid @color;
+}
+
+.triangle(@direction, @width, @height, @color) when (@direction = right) {
+    .triangle-base();
+    border-top: (@width / 2) solid transparent;
+    border-bottom: (@width / 2) solid transparent;
+    border-left: @height solid @color;
+}
+
+
+
+//
+// BUTTONS VARIATIONS
+// --------------------------------------------------
+
+.better-button(@color; @background; @border; @hover-color; @hover-bg; @hover-border) {
+    color: @color;
+    background-color: @background;
+    border-color: @border;
+
+    &:hover, &:focus, &:active, &.active, .open > .dropdown-toggle& {
+        color: @hover-color;
+        background-color: @hover-bg;
+        border-color: @hover-border;
+    }
+
+    &:active, &.active, .open > .dropdown-toggle& {
+        background-image: none;
+    }
+
+    &.disabled, &[disabled], fieldset[disabled] & {
+        &, &:hover, &:focus, &:active, &.active {
+            background-color: @background;
+            border-color: @border;
+        }
+    }
+
+    .badge {
+        color: @background;
+        background-color: @color;
+    }
+}
+
+// Button sizes
+.button-size(@padding-vertical; @padding-horizontal; @font-size; @line-height; @border-radius) {
+    padding: @padding-vertical @padding-horizontal;
+    font-size: @font-size;
+    line-height: @line-height;
+    border-radius: @border-radius;
+}
+
+
+//
+// Custom link colors
+// --------------------------------------------------
+
+.link-variant(@link-color; @link-hover-color; @decoration: none; @hover-decoration: underline) {
+    a:not(.btn) {
+        color: @link-color;
+        text-decoration: @decoration;      
+        -webkit-transition: all 0.25s;
+		transition:all 0.25s;
+
+        &:hover, &:focus {
+            color: @link-hover-color;
+            text-decoration: @hover-decoration;
+        }
+
+        &:focus {
+            .tab-focus();
+        }
+    }
+}
+
+
+//
+// Custom Chart related Colors
+//
+.donut-color-variants(@donut-background: @gray-light; @donut-halfmark: @gray-light) {
+  .half-gauge-chart {
+      .donut-background {
+          fill: @donut-background;
+      }
+      .donut-halfmark {
+          stroke: @donut-halfmark;
+      }
+  }
+}
+
+
+
+//
+// REM's with px fallback
+// --------------------------------------------------
+
+.font-size(@fontsize) {
+    @remSize: @fontsize;
+    @pxSize: (@fontsize * 16);      // @font-size-base was overwritten by bootstrap-em.less. Setting it manually
+    font-size: ~"@{pxSize}px";
+    font-size: ~"@{remSize}rem";
+}

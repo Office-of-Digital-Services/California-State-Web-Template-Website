@@ -1,0 +1,94 @@
+/* -----------------------------------------
+   TOP NAVIGATION
+   /source/less/cagov/navigation-top.less
+----------------------------------------- */
+
+.utility-header {
+    //position:absolute;
+    top:0;
+    width:100%;
+	min-height: 40px; // beta 5.0 addition
+    background:@color-p2;
+    color:contrast(@color-p2);
+    
+    .half {
+		.make-sm-column(6);
+		padding-top: 4px;	// beta 5.0 addition	
+  	 	padding-left: 80px;	// beta 5.0 addition
+		
+		@media (max-width: @screen-xs-max) {
+			padding-top: 2px; // beta 5.0 addition
+			
+		}
+		
+    }
+
+    a {
+        color:contrast(@color-p2);
+        display:inline-block;
+        padding:3px 0;
+
+        &:hover, &:focus, &.hovered {
+            color:@color-p1;
+            text-decoration:none;
+        }
+    }
+
+    ul {
+        .list-unstyled();
+        .list-inline();
+        margin-bottom:0;
+        li {
+          padding: 0 8px;
+        }
+    }
+
+    .settings-links {
+        .small();
+        .text-right();
+		margin-top: 0px; // beta 5.0 addition
+
+        @media (max-width: @screen-xs-max) {
+            .text-right(); // beta 5.0 addition
+        }
+    }
+
+    [class^="ca-gov-icon-"] {
+        .font-size(1.1);
+        vertical-align:-2px;
+    }
+
+    @media (max-width: @screen-xs-max) {
+		
+        .social-media-links {
+            .sr-only();
+        }
+				
+    }
+    .located-city-name {
+      margin-left: 5px;
+    }
+    
+    .geo-zip-input {
+        margin-left: 5px;
+        width: 50%;
+        vertical-align: initial;
+        line-height: 120%;
+        background: white;
+        color: black;
+    }
+}
+
+
+//
+// HIDE UTILITY HEADER IN HEADER COMPACT MODE
+// --------------------------------------------------
+
+/* .global-header.compact {
+    .utility-header {
+        opacity: 0;
+        position: absolute;
+        width: 100%;
+        height: 0;
+    }
+} */

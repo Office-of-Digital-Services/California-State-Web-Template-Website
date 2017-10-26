@@ -1,0 +1,66 @@
+/* -----------------------------------------
+   COMMENT
+   /source/less/colorscheme/cs-testimonials.less
+----------------------------------------- */
+
+.testimonial {
+    
+    &-default {
+        background:@gray-lightest;
+    }
+    
+    &-understated {
+        background:@color-s1;
+    }
+    
+    &-overstated {
+        .link-variant(#fff; #fff; none; underline);
+        background:@color-s3;
+        color:contrast(@color-s3);
+        
+        footer {
+            color:contrast(@color-s3);
+        }
+    }
+    
+    &-standout {
+        .link-variant(@color-p1; #fff; none; underline);
+        background:@color-p3;
+        color:contrast(@color-p3);
+        
+        footer {
+            color:contrast(@color-p3);
+        }
+    }
+    
+    &-primary {
+        .link-variant(@color-p1; #fff; none; underline);
+        background:@color-p2;
+        color:contrast(@color-p2);
+
+        
+        footer {
+            color:contrast(@color-p2);
+        }
+    }
+    
+    &-inverted {
+        .link-variant(@color-p1; #fff; none; underline);
+        background:@gray-darker;
+        color:#fff;
+        
+        footer {
+            color:contrast(@gray-darker);
+        }
+    }
+    
+    &-danger {
+        .link-variant(@gray-base; #fff; none; underline);
+        background:@brand-danger;
+        color:contrast(@brand-danger);
+        
+        footer {
+            color:contrast(@brand-danger);
+        }
+    }
+}

@@ -1,0 +1,25 @@
+/* -----------------------------------------
+   LOCATION SETTINGS
+   /source/less/cagov/location-settings.less
+----------------------------------------- */
+
+.location-settings {
+    label {
+        font-weight: normal;
+        .p-r();
+    }
+    
+    button.close {
+        position: relative;
+        right: -10px;
+        color: #fff;
+        text-shadow: none;
+        opacity: .5;
+    }
+    
+    @media (max-width: @screen-xs-max) {
+        button.btn-primary {
+            .m-t();
+        }
+    }
+}

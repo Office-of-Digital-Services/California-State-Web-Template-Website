@@ -1,0 +1,82 @@
+/* -----------------------------------------
+   LIST STYLES /source/less/cagov/lists.less
+----------------------------------------- */
+
+[class^="list-"] { // Reset all lists with a class of "list-"
+    list-style-type: none;
+    margin:(@line-height-computed / 2) 0;
+    padding:0;
+}
+
+/* Adding the explicit classes below so that they are available in Rich Text Editor */
+
+ul.list-overstated {
+    padding:0;
+
+    a {
+        font-weight: bold;
+    }
+}
+
+.list-overstated, .list-understated {
+    li {
+        background: url("@{template-path}/bullet-blue-disc.png") no-repeat 0 3px transparent;
+        padding: 0 0 14px 18px;
+
+        /* Rotates disc arrow down when used with accordion */
+        &.open {
+
+            background: url("@{template-path}/bullet-blue-disc-open.png") no-repeat 0 3px transparent;
+        }
+    }
+}
+
+
+.list-standout {
+    @size: 1.5em;               // reusable variable for .list-standout
+    padding:0;
+    padding-left: 0.2em;
+
+    li {
+        padding-left: @size;
+
+        &:before {
+            content: "\35";         // ca-gov-icon-caret-right
+            font-family: "CaGov";
+            width: @size;
+            margin-left: -@size;
+            vertical-align: sub;
+            font-size: @size;
+            font-weight: 900;
+            display: inline-block;
+      }
+
+      &.open:before {
+        content: "\33";             // .ca-gov-icon-caret-down
+      }
+    }
+}
+
+.accordion-list a {
+    cursor:pointer;
+}
+
+.list-divided {
+    height: 350px;
+    overflow-y: auto;
+
+    li {
+        border-top: 1px solid @gray-lighter;
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+}
+
+
+/* Removes image bullets from nested lists */
+.list-overstated, .list-understated, .list-standout {
+    ul li, ol li {
+        background:none;
+        padding-left:0;
+    }
+}

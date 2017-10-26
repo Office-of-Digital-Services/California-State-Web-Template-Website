@@ -1,0 +1,74 @@
+/* -----------------------------------------
+   ALERT BANNER
+   /source/less/cagov/alert-banner.less
+----------------------------------------- */
+
+.alert-banner {
+    margin-bottom: 0;
+    padding: 5px 0;
+    border-radius: 0;
+	-webkit-column-rule: @text-field-color;
+	-moz-column-rule: @text-field-color;
+    column-rule: @text-field-color;
+	-webkit-transition: all 0.2s;
+    transition: all 0.2s;
+    
+    .close {
+        right: -10px;
+        opacity: 1;
+    }
+}
+
+.alert-level {
+    display: inline-block;
+    font-weight: bold;
+    padding: 0 5px;
+    margin: 0 5px;
+    .font-size(.87);
+
+    [class^="ca-gov-icon-"] {
+        margin-right: 3px;
+    }
+}
+
+.alert-link {
+    line-height: 1.2em;
+    .pull-right();
+}
+
+// TODO: refactor into alert bar mixin
+
+.alert-severe {
+    background: @color-a8;
+    
+    .close {
+        color: darken(@color-a8, 30%);
+        text-shadow: 0 1px lighten(@color-a8, 20%);
+    }
+
+    .alert-level {
+        color: contrast(#f27132);
+        .rgba (contrast(#f27132), .15);
+        background: @rgba;
+    }
+
+    .alert-text {
+      color: contrast(#f27132);
+      .rgba (contrast(#f27132), .15);
+    }
+}
+
+
+
+//
+// HIDE ALERTS AFTER PAGE SCROLLS & HEADER COMPACTS
+// --------------------------------------------------
+
+.global-header.compact {
+    .alert-banner {
+        opacity: 0;
+        position: absolute;
+        width: 100%;
+        height: 0;
+    }
+}

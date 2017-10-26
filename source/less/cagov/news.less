@@ -1,0 +1,53 @@
+/* -----------------------------------------
+   NEWS - /source/less/cagov/news.less
+----------------------------------------- */
+
+// NEWS LIST
+.news-item {
+    clear:both;
+    .make-row();
+    margin-bottom:@line-height-computed;
+    padding:0 (@grid-gutter-width / 2);             // Adds padding to compensate for instances where thumbnails are/are not used
+    
+    .published {
+        .published();
+    }
+    
+    .thumbnail {
+        margin-left:(@grid-gutter-width / 2)*-1;    // Remove left margin to account for instances where thumbnails are not used
+        .make-xs-column(5);
+        .make-sm-column(3); 
+        .make-md-column(2);
+        
+        // Thumbnail sizing for two-column pages
+        .two-column & {
+            .make-md-column(3); 
+        }
+        
+        img {
+            .img-responsive();
+        }
+    }
+    
+    .info {
+        //.make-xs-column(9);
+    }
+}
+
+
+// News detail specific
+.news-detail {
+    h1 {
+        margin-bottom:0;
+        float:left;                                 // used when sharing widget is enabled
+    }
+    
+    .published {
+        margin-bottom:@line-height-computed;
+        clear: both;                                // used when share widget is enabled
+    }
+    
+    .keywords {
+        margin-top:@line-height-computed;
+    }
+}

@@ -1,0 +1,42 @@
+/* -----------------------------------------
+   IMAGE HELPERS
+   /source/less/cagov/image.less
+----------------------------------------- */
+
+.image-thumbnail (@bg: @thumbnail-bg; @border: @thumbnail-border; @weight: @thumbnail-padding) {
+    .img-thumbnail {
+        padding: @weight;
+        background-color: @bg;
+        border: 1px solid @border;
+    }
+}
+
+.section, .card {
+    &-default {
+    }
+    
+    &-understated {
+        .image-thumbnail(@gray-lightest; darken(@gray-lighter, 8%));
+    }
+
+    &-overstated {
+        .image-thumbnail(tint(@color-s3, 60%); darken(@color-s3, 8%));
+    }
+
+    &-standout, &-impact {
+        //.image-thumbnail(@color-s2; @color-s2);
+        .image-thumbnail(tint(@color-p3, 40%); darken(@color-p3, 8%));
+    }
+    
+    &-primary {
+        .image-thumbnail(tint(@color-p2, 70%); darken(@color-p2, 10%));
+    }
+
+    &-inverted {
+        .image-thumbnail(@thumbnail-bg; darken(@gray-lighter, 8%));
+    }
+
+    &-danger {
+        .image-thumbnail(@thumbnail-bg; darken(@gray-lighter, 8%));
+    }
+}

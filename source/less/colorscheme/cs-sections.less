@@ -1,0 +1,79 @@
+/* -----------------------------------------
+   SECTIONS
+   /source/less/colorscheme/sections.less
+----------------------------------------- */
+
+.section, .card {
+    &-default {
+        background: @gray-lightest;
+        
+        // One-off color change because gray's were the same value
+        .panel-heading {
+            background: darken(@gray-lightest, 3%);
+        }
+    }
+
+    &-search {
+        background: @gray-lighter;           // TODO: Make Generic
+    }
+
+    &-understated {
+        background: @gray-lighter;
+    }
+
+    &-overstated {
+        .link-variant(#fff; #fff; none; underline);
+        background: @color-s3;
+        color: contrast(@color-s3);
+    }
+
+    &-standout {
+        .link-variant(@color-a2; #fff; none; underline);
+        .donut-color-variants(@donut-background: @gray-lighter; @donut-halfmark: @gray-lightest);
+        background: @color-p3;
+        color: contrast(@color-p3);
+    }
+
+    &-impact {
+        .link-variant(@gray-lightest; @color-p1; none; underline);
+        .donut-color-variants(@donut-background: @gray-lighter; @donut-halfmark: @gray-lightest);
+        background: @color-p3;
+        color: contrast(@color-p3);
+
+        // Create header mixin
+        h1, h2,h3,h4,h5,h6 {
+            color: @color-s2;
+            font-weight: 900;
+        }
+        
+        // SECTION THEME BUTTON COLORS
+        .btn-default {
+            // better-button = color; background; border, hover-color; hover-background; hover-border
+            .better-button(#fff; transparent; @color-s2;  #fff; rgba(255,255,255,.2); #fff);
+            margin-bottom: (@line-height-computed / 2);
+            
+            [class^="ca-gov-icon-"] {
+                color: @color-s2;
+                padding: 0 5px;
+            }
+        }
+    }
+
+    &-primary {
+        .link-variant(@gray-lightest; @color-p1; none; underline);
+        background: @color-p2;
+        color: contrast(@color-p2);
+    }
+
+    &-inverted {
+        .link-variant(@gray-lightest; @color-p1; none; underline);
+        background: @gray-darker;
+        color: #fff;
+    }
+
+    &-danger {
+        .link-variant(@gray-base; #fff; none; underline);
+        background: @brand-danger;
+        color: contrast(@brand-danger);
+    }
+}

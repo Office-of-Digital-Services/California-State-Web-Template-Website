@@ -1,0 +1,17 @@
+/* -----------------------------------------
+   GLOBAL HEADER
+   /source/less/colorscheme/global-header.less
+----------------------------------------- */
+
+.global-header {
+    /* Default header pattern */
+    //background: @body-bg url("@{theme-directory}/header-background.jpg") no-repeat 40% 40%;
+	
+    /* Small screen gets solid color */
+    @media (max-width: @screen-xs-max) {
+		//background: @color-p3;              // Fallback color
+    	//.rgba (@color-p3, .85);             // rgba function
+    	//background: @rgba;                  // rgba value for modern browsers
+	}
+}
+

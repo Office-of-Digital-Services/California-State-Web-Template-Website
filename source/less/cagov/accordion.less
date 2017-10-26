@@ -1,0 +1,49 @@
+/* -----------------------------------------
+   ACCORDIONS
+   /source/less/cagov/accordion.less
+----------------------------------------- */
+
+/* Adds open and closed icons to accordion */
+.accordion, .panel-group,.service-tile-content {
+
+    /* Move padding from container to the href so the entire panel is clickable */
+    .panel-heading {
+        padding: 0;
+
+        a {
+            padding: 15px;
+            padding-right: 30px;
+        }
+    }
+
+    .panel-heading .panel-title {
+        margin-top: 0;           // Remove the top margin on panel groups that are responsive. e.g. tabs2accordion
+        display: block;          // Force the title and a tag to be block to make the hit box larger
+        .font-size(1.125);
+
+        a {
+            display: block;
+            position: relative;
+            outline: none;
+
+            &:hover, &:focus {
+                text-decoration: none;
+            }
+
+            /* Adds open and closed icons to responsive tab panels */
+            &:after {
+                content: "\43";        // .ca-gov-icon-triangle-down
+                font-family: 'CaGov';
+                position: absolute;
+                right: 10px;
+                top: 50%;
+                margin-top: -11px;
+                color: @gray-light;
+            }
+
+            &.collapsed:after {
+                 content: "\45";       // .ca-gov-icon-triangle-right
+            }
+        }
+    }
+}

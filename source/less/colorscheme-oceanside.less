@@ -1,0 +1,95 @@
+@import "variables.less";
+@import "bootstrap/mixins.less";
+@import "cagov/mixins.less";
+
+
+/* -----------------------------------------
+   OCEANSIDE
+----------------------------------------- */
+
+//
+// VARIABLES
+// --------------------------------------------------
+
+// Theme directory
+@theme-directory:       "@{template-path}/oceanside";      // Folder where assets for theme are stored
+
+// Primary Theme colors
+@color-p1:              #FDB81E;            // Gold
+@color-p2:              @brand-primary;     // Medium Blue
+@color-p3:              #323A45;            // Dark Blue
+
+// Secondary Theme colors
+@color-s1:              #E1F2F7;            // Lightest Blue
+@color-s2:              #9FDBF1;            // Lighter Blue
+@color-s3:              @brand-info;        // Light Blue
+
+// Accent Colors
+@color-a1:              #1f89db;            // Dark Blue
+@color-a2:              #49bbf8;            // Med Blue
+@color-a3:              #35bbaa;            // Teal
+@color-a4:              @brand-success;     // Green
+@color-a5:              #815ab4;            // Purple
+@color-a6:              #dd99e5;            // Lavender
+@color-a7:              @brand-danger;      // Red
+@color-a8:              @brand-warning;     // Orange
+@color-a9:              #f7e455;            // Yellow
+
+
+// Module or theme specific variables
+@nav-first-level:       @gray-light;           // Color of navigation links
+@nav-second-level:      @text-color;    // Second level link colors
+@off-canvas-links:      #fff;           // Off Canvas link color
+@search-accent:         @color-p1;      // Search field input hover border
+@nav-accent:            @color-p1;      // Link hover and nav bar bottom line
+@body-color:            #32608a;        // Background base and typically the page edge border
+@body-midline:          @color-s3;      // Midline gradient color
+@edge-border:           @body-color;    // Applied to outer edge of the page
+@header-icon:           @color-p2;      // Icon left of main content H1
+@mobile-controls:		#fff;		    // Mobile controls
+@footer-txt:            #fff;           // Color of text and links in the footer
+
+@overstated-header-bg:          @color-p2;      // Background for panel header
+@overstated-header-txt:         #fff;           // Panel header text color
+@overstated-header-icon:        #fff;           // Panel header text color
+@overstated-header-border:      darken(@color-p2, 10%);     // Panel header bottom border color
+@overstated-border:             @panel-default-border;     // Border surrounding entire panel
+@overstated-body-bg:            #fff;           // Panel body background
+
+@panel-default-header-bg:       @panel-default-heading-bg;      // Background for panel header
+@panel-default-header-txt:      inherit;        // Panel header text color
+@panel-default-header-icon:     @color-p3;      // Panel header icon color
+@panel-default-header-border:   @panel-default-border;      // Panel header bottom border color
+//@panel-default-border:          @panel-default-border;      // Border surrounding entire panel
+@panel-default-body-bg:         #fff;      // Panel body background
+
+@sidebar-default-header-bg:     @color-s2;      // Background for panel header
+@sidebar-default-header-txt:    inherit;        // Panel header text color
+@sidebar-default-header-icon:   @color-p3;      // Panel header icon color
+@sidebar-default-header-border: @color-p3;      // Panel header bottom border color
+@sidebar-default-border:        @color-p3;      // Border surrounding entire panel
+@sidebar-default-body-bg:       #fff;           // Panel body background
+
+@understated-header-bg:         @color-s1;      // Background for panel header
+@understated-header-txt:        inherit;        // Panel header text color
+@understated-header-icon:       @color-p3;      // Panel header icon color
+@understated-header-border:     #ccc;           // Panel header bottom border color
+@understated-border:            #ccc;           // Border surrounding entire panel
+@understated-body-bg:           #fff;           // Panel body background
+
+@standout-header-bg:            @color-p3;      // Background for panel header
+@standout-header-txt:           #fff;           // Panel header text color
+@standout-header-icon:          @color-p1;      // Panel header icon color
+@standout-header-border:        @color-p1;      // Panel header bottom border color
+@standout-border:               #ccc;           // Border surrounding entire panel
+@standout-body-bg:              #fff;           // Panel body background
+
+@figure-border:                 @color-s2;      // Border around media captions
+@figure-bg:                     @color-s1;      // Background behind figure and caption
+
+// MEGAMENU
+@sub-nav-bg:                    #F5F9FB;
+@sub-nav-link-border:           @gray-lighter;
+@sub-nav-media-bg:              transparent;
+
+@import "colorscheme/colorscheme-master.less";

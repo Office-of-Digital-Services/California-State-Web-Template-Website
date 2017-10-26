@@ -1,0 +1,111 @@
+/* -----------------------------------------
+   MAPTHAT
+   /source/less/cagov/mapthat.less
+----------------------------------------- */
+
+//
+// MAP STYLES
+// --------------------------------------------------
+
+@media (max-width: @screen-xs-max) {
+    .mapthat_map {
+        .m-b();
+    }
+}
+
+
+//
+// LIST
+// --------------------------------------------------
+
+@media (min-width: @screen-sm-min) {
+    .mapthat_list {
+        height: 400px;
+        overflow-y: auto;
+    }
+}
+
+.mapthat-list-item {
+    border-bottom: 1px solid @gray-lighter;
+    padding: (@line-height-computed / 2);
+    cursor: pointer;
+
+    &:hover {
+        background: lighten(@gray-lightest, 2%);
+    }
+}
+
+
+//
+// FACETS
+// --------------------------------------------------
+
+.mapthat_facets {
+    .m-b();
+}
+
+.mapthat-facet-item {
+    .btn();
+    .btn-secondary();
+    .m-r-sm();
+
+    &.mapthat-facet-selected {
+        background-color: @gray;
+        color: #fff;
+    }
+
+    @media (max-width: @screen-xs-max) {
+        .m-b-sm();
+    }
+}
+
+// this is added to override /source/less/bootstrap-accessibility-plugin/button.less style
+.mapthat-facet-item:focus {
+	outline: dotted 2px #000;	
+}
+
+.mapthat-facet-name {
+    .m-b-sm();
+}
+
+
+//
+// GOOGLE SEARCH BOX STYLES
+// --------------------------------------------------
+
+.mapthat_container_search_box {
+    margin: 12px 12px 0 0;
+    background-color: #fff;
+    border-radius: 4px;
+    border: 1px solid rgba(255,255,255,0.3);
+    -webkit-box-shadow: 0 1px 4px 0 rgba(50, 50, 50, 0.25);
+    -moz-box-shadow:    0 1px 4px 0 rgba(50, 50, 50, 0.25);
+    box-shadow:         0 1px 4px 0 rgba(50, 50, 50, 0.25);
+}
+
+.mapthat_container_search_box svg {
+    height: 21px;
+    left: 3px;
+    position: absolute;
+    top: 3px;
+    width: 21px;
+}
+
+.mapthat_search_box {
+    box-shadow: 0 0 3px 0 rgba(50, 50, 50, 0.25);
+    cursor: pointer;
+    height: 28px;
+    opacity: 0;
+    position: relative;
+	-webkit-transition: all 0.25s cubic-bezier(0.345, 0, 0.25, 1) 0s;
+    transition: all 0.25s cubic-bezier(0.345, 0, 0.25, 1) 0s;
+    width: 28px;
+    border: medium none;
+    z-index: 2;
+}
+
+.mapthat_search_box:focus {
+    cursor: text;
+    opacity: 1;
+    width: 250px;
+}

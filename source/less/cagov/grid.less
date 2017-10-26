@@ -1,0 +1,96 @@
+/* -----------------------------------------
+   GRID -  /source/less/cagov/grid.less
+----------------------------------------- */
+
+//
+// SEMANTIC GRID
+// --------------------------------------------------
+
+.group {
+    .make-row();            // Self clearing row container same as bootstraps .row
+	
+    @media (max-width: @screen-xs-max) {
+        //.make-row(0);       // Remove negative margins for mobile
+	}
+}
+
+.full-width {
+    .make-xs-column(12);
+}
+
+.half {
+    //.make-sm-column(6);     // 50% wide columns same as bootstraps .col-sm-6
+    .make-sm-column(6);     // Equivelent to .col-md-6
+}
+
+.third {
+    .make-sm-column(4);     // Only specifying medium size grid. Small will collapse to single column only
+}
+
+.two-thirds {
+    .make-sm-column(8);
+}
+
+.quarter {
+    .make-sm-column(6);
+    .make-sm-column(3);
+}
+
+.three-quarters {
+    //.make-sm-column(6);
+    .make-sm-column(9);
+}
+
+
+
+//
+// GRID OFFSETS
+// --------------------------------------------------
+
+.offset-quarter {
+    .make-sm-column-offset(3);
+}
+
+.offset-third {
+    .make-sm-column-offset(4);
+}
+
+.offset-half {
+    .make-sm-column-offset(6);
+}
+
+.offset-two-thirds {
+    .make-sm-column-offset(8);
+}
+
+.offset-three-quarters {
+    .make-sm-column-offset(9);
+}
+
+
+
+//
+// SECONDARY COLUMN GROUP STYLES
+// --------------------------------------------------
+
+.main-secondary .group {
+    padding: 0 8px 0 8px;
+    
+    .half {
+        padding: 0 7px 0 7px;
+    }
+}
+
+
+
+//
+// GRID OUTLINE FOR SAMPLE PAGE
+// --------------------------------------------------
+
+.grid-demo {
+    margin-bottom:(@line-height-computed / 2);
+    
+    div {
+        border:1px solid @gray-light;
+    }
+}
