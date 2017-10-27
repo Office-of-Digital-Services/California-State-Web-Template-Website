@@ -483,6 +483,16 @@
   }
 }
 
+@media (min-width: @screen-sm-min) {
+  .fixed.compact .search-container {
+    opacity: 0;
+  }
+  .active-search .fixed.compact .search-container, .fixed.compact .search-container.active {
+  opacity: 1;
+  top: 55px; //  _cs-shame.less addition	
+}
+}
+
 
 /* -----------------------------------------
 GOOGLE CUSTOM SEARCH CUSTOMIZATION OVERRIDES beta 5.0 addition
@@ -520,7 +530,7 @@ GOOGLE CUSTOM SEARCH CUSTOMIZATION OVERRIDES beta 5.0 addition
 		z-index: 55;
 	}
 	td.gsc-clear-button {
-		width: 0px !important;
+		width: 1px !important;
 		margin-right: 0 !important;
 		margin-left: 0 !important;
 		padding-right: 0 !important;
@@ -541,7 +551,7 @@ GOOGLE CUSTOM SEARCH CUSTOMIZATION OVERRIDES beta 5.0 addition
 		background-image: unset !important;
 		margin-left: 0;
 		margin-right: 0;
-		width: 0px;
+		width: 40px;
 		&:before {
 			content: '\4d';
 			font-family: cagov;
@@ -549,6 +559,8 @@ GOOGLE CUSTOM SEARCH CUSTOMIZATION OVERRIDES beta 5.0 addition
 			width: 100%;
 			color: #666;
 			display: block;
+			margin-top: 12px;
+			margin-left: 2px;
 		}
 	}
 }
@@ -578,8 +590,16 @@ GOOGLE CUSTOM SEARCH CUSTOMIZATION OVERRIDES beta 5.0 addition
 }
 .featured-search {
 	div.gsc-clear-button {
+		width: 0px; // removes right space from featured search box
 		&:before {
 			display: none;
 		}
+	}
+}
+
+.search-results-header .gsc-control-searchbox-only {
+	margin-bottom:20px; // gives bottom margin to search searchbox in search results page
+	td.gsc-clear-button {
+	display:none; // removes clear results cell from the searchbox 
 	}
 }

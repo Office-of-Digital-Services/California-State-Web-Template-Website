@@ -1,15 +1,9 @@
 <!-- mobile navigation controls -->
 <div class="mobile-controls">
-    <span class="mobile-control cagov-logo"><span class="ca-gov-icon-logo" aria-hidden="false"></span></span>
     <span class="mobile-control toggle-menu"><span class="ca-gov-icon-menu" aria-hidden="true"></span><span class="sr-only">Menu</span></span>
     <span class="mobile-control-group mobile-header-icons">
-    	<span class="mobile-control contact-link"><span class="ca-gov-icon-chat" aria-hidden="true"></span><span class="sr-only">Contact</span></span>
-        <span class="mobile-control sample-link"><span class="ca-gov-icon-capitol" aria-hidden="true"></span><span class="sr-only">Capitol Website</span></span> 
-        <!-- Add more mobile controls here. These will be on the right side of the mobile page header section -->
+        <!-- Add mobile control here. THis will be on the right side of the mobile page header section -->
+    	<span class="mobile-control contact-link"><span class="ca-gov-icon-chat" aria-hidden="true"></span><span class="sr-only">Contact</span></span>    
     </span>
     <span class="mobile-control toggle-search"><span class="ca-gov-icon-search" aria-hidden="true"></span><span class="sr-only">Search</span></span>
-    <span class="mobile-control-group mobile-menu-icons">
-    	<span class="mobile-control sample-link"><span class="ca-gov-icon-state" aria-hidden="true"></span><span class="sr-only">California</span></span>
-    	<!-- Add more mobile controls here. These will be on the top right section of the expanded mobile menu -->
-    </span>
 </div>

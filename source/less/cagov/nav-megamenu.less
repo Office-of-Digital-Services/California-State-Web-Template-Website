@@ -9,8 +9,8 @@
         padding:0;
     }
 }
-
-.top-level-nav {
+ 
+.megadropdown .top-level-nav {  // beta 5.0 addition 
 	
 	@media (max-width: @screen-md) and (min-width: @screen-sm-min) { // Beta 5.0 addition
 				font-size: .9em;	
@@ -89,6 +89,17 @@
 //
 // Secondary level navigationr
 // --------------------------------------------------
+
+.dropdown {
+	.second-level-nav {
+		>li {
+			border-right: 0; //  _cs-shame.less addition
+		}
+	}
+	.sub-nav {
+		border-bottom: none; //  _cs-shame.less addition
+	}
+}
 
 .second-level-nav {
     list-style: none;

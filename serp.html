@@ -21,10 +21,17 @@ Based on Twitter Bootstrap
 
 <!--#include virtual="/ssi/head-css-js.html" -->
 <link rel='stylesheet' href='http://www.google.com/cse/style/look/default.css' type='text/css'/>
+    <!--hiding search icons from search results page navigation sinse the search box is already open-->
     <style>
-        #nav-item-search {
+        #nav-item-search, .mobile-controls .toggle-search {
             display:none;
         }
+       .mobile-controls .mobile-header-icons  {
+            display: block;
+            height: 61px;
+            width: 100%;
+            cursor: default;
+       }
     </style>
 </head>
 
@@ -37,14 +44,11 @@ Based on Twitter Bootstrap
     <!-- Location Bar -->
     <!--#include virtual="/ssi/location-bar.html" -->
 
-    <!-- Settings Bar -->
-    <!--#include virtual="/ssi/settings-bar.html" -->
-
-    <!-- Alert Banner -->
-    <!--#include virtual="/ssi/alert-banner.html" -->
-
     <!-- Include Utility Header -->
     <!--#include virtual="/ssi/utility-header.html" -->
+
+    <!-- Settings Bar -->
+    <!--#include virtual="/ssi/settings-bar.html" -->
 
     <!-- Include Branding -->
     <!--#include virtual="/ssi/branding.html" -->
@@ -65,14 +69,14 @@ Based on Twitter Bootstrap
 </header>
 
 <div id="main-content" class="main-content">
-    <div class="section">
+
         <main class="main-primary">
             <!--Search include is commented out-->
             <!--include virtual="/ssi/search-results-standalone.html" -->
             
             <!--Search result section-->
             <div class="section-default">
-                <div class="container">
+                <div class="container search-results-header">
                     <h1>Search Results</h1>
                     <gcse:searchbox-only resultsUrl="/serp.html" enableAutoComplete="true"></gcse:searchbox-only>
 
@@ -86,7 +90,7 @@ Based on Twitter Bootstrap
                     </div>
                 </div>
 </main>
-    </div>
+    
 </div>
 
 

@@ -56,184 +56,180 @@ var jssrc = [
 ];
 
 var csssrc = {
-  "css/cagov.core.css": "source/less/cagov.core.less",
-  "css/cagov.font-only.css": "source/less/cagov.font-only.less",
-  "css/colorscheme-oceanside.css": "source/less/colorscheme-oceanside.less"
-  //"css/colorscheme-orangecounty.css": "source/less/colorscheme-orangecounty.less",
-  //"css/colorscheme-pasorobles.css": "source/less/colorscheme-pasorobles.less",
-  //"css/colorscheme-santabarbara.css": "source/less/colorscheme-santabarbara.less",
-  //"css/colorscheme-sierra.css": "source/less/colorscheme-sierra.less"
+    "css/cagov.core.css": "source/less/cagov.core.less",
+    "css/cagov.font-only.css": "source/less/cagov.font-only.less",
+    "css/colorscheme-oceanside.css": "source/less/colorscheme/colorscheme-master.less"
 }
 
 module.exports = function (grunt) {
 
-  require('time-grunt')(grunt);
+    require('time-grunt')(grunt);
 
-  grunt.initConfig({
-    /* Load the package.json so we can use pkg variables */
-    pkg: grunt.file
-      .readJSON('package.json'), concat: {
-      options: {
-        banner: '<%= banner %><%= jqueryCheck %>',
-        stripBanners: false
-      },
-      javascripts: {
-        src: jssrc,
-        dest: 'js/cagov.core.js'
-      }
-    },
+    grunt.initConfig({
+        /* Load the package.json so we can use pkg variables */
+        pkg: grunt.file
+          .readJSON('package.json'), concat: {
+              options: {
+                  banner: '<%= banner %><%= jqueryCheck %>',
+                  stripBanners: false
+              },
+              javascripts: {
+                  src: jssrc,
+                  dest: 'js/cagov.core.js'
+              }
+          },
 
-    uglify: {
-      my_target: {
-        files: {
-          'js/cagov.core.js': jssrc
-        }
-      },
-      options: {
-        // the banner is inserted at the top of the output
-        banner: '/* <%= pkg.name %> - v<%= pkg.version %> - <%= grunt.template.today("mmm-dd-yyyy' +
-            '") %> */\n/* JS COMPILED FROM SOURCE DO NOT MODIFY */\n'
-      }
-    },
-
-    less: {
-      development: {
-        options: {
-          paths: ["css"],
-          compress: false,
-          ieCompat: true,
-          banner: '/* <%= pkg.name %> - v<%= pkg.version %> - <%= grunt.template.today("mmm-dd-yyyy' +
-              '") %> */\n/* STYLES COMPILED FROM SOURCE (LESS) DO NOT MODIFY */\n\n'
+        uglify: {
+            my_target: {
+                files: {
+                    'js/cagov.core.js': jssrc
+                }
+            },
+            options: {
+                // the banner is inserted at the top of the output
+                banner: '/* <%= pkg.name %> - v<%= pkg.version %> - <%= grunt.template.today("mmm-dd-yyyy' +
+                    '") %> */\n/* JS COMPILED FROM SOURCE DO NOT MODIFY */\n'
+            }
         },
-        files: csssrc
-      },
-      production: {
-        options: {
-          paths: ["css"],
-          compress: true,
-          ieCompat: true,
-          banner: '/* <%= pkg.name %> - v<%= pkg.version %> - <%= grunt.template.today("mmm-dd-yyyy' +
-              '") %> */\n/* STYLES COMPILED FROM SOURCE (LESS) DO NOT MODIFY */\n\n'
+
+        less: {
+            development: {
+                options: {
+                    paths: ["css"],
+                    compress: false,
+                    ieCompat: true,
+                    banner: '/* <%= pkg.name %> - v<%= pkg.version %> - <%= grunt.template.today("mmm-dd-yyyy' +
+                        '") %> */\n/* STYLES COMPILED FROM SOURCE (LESS) DO NOT MODIFY */\n\n'
+                },
+                files: csssrc
+            },
+            production: {
+                options: {
+                    paths: ["css"],
+                    compress: true,
+                    ieCompat: true,
+                    banner: '/* <%= pkg.name %> - v<%= pkg.version %> - <%= grunt.template.today("mmm-dd-yyyy' +
+                        '") %> */\n/* STYLES COMPILED FROM SOURCE (LESS) DO NOT MODIFY */\n\n'
+                },
+                files: csssrc
+            }
         },
-        files: csssrc
-      }
-    },
 
-    htmllint: {
-        // Run on small directories at a time when possible
-        all: ["*.html"]
-    },
-
-    browserSync: {
-      dev: {
-        bsFiles: {
-          src: [
-            'css/*.css', 'js/*.js', '**/*.html',
-          ]
+        htmllint: {
+            // Run on small directories at a time when possible
+            all: ["*.html"]
         },
-        options: {
-          proxy: "cagov5.dev",
-          watchTask: true
+
+        browserSync: {
+            dev: {
+                bsFiles: {
+                    src: [
+                      'css/*.css', 'js/*.js', '**/*.html',
+                    ]
+                },
+                options: {
+                    proxy: "cagov5.dev",
+                    watchTask: true
+                }
+            }
+        },
+
+        autoprefixer: {
+            development: {
+                browsers: [
+                  'Android 2.3', 'Android >= 4', 'Chrome >= 20', 'Firefox >= 24', // Firefox 24 is the latest ESR
+                  'Explorer >= 8', 'iOS >= 6', 'Opera >= 12', 'Safari >= 6'
+                ],
+                expand: true,
+                flatten: true,
+                src: ['css/cagov.core.css', 'css/colorscheme-oceanside'],
+                dest: 'css'
+            }
+        },
+
+        watch: {
+            /* watch for less changes */
+            less: {
+                files: ['source/**/*.less'],
+                tasks: [
+                  'autoprefixer', 'less:development'
+                ]
+            },
+
+            /* watch and see if our javascript files change, or new packages are installed */
+            js: {
+                files: ['source/**/*.js'],
+                tasks: ['concat']
+            },
+
+            /* watch our files for change, reload */
+            livereload: {
+                files: [
+                  'ssi/*.html', 'sample/**/*', './*.html', 'css/*.css', 'images/*'
+                ],
+                options: {
+                    livereload: true
+                }
+            },
+
+            /* Reload gruntfile if it changes */
+            grunt: {
+                files: ['Gruntfile.js']
+            }
+
+            /* Add new module here. Mind the comma's :) */
         }
-      }
-    },
+    });
 
-    autoprefixer: {
-      development: {
-        browsers: [
-          'Android 2.3', 'Android >= 4', 'Chrome >= 20', 'Firefox >= 24', // Firefox 24 is the latest ESR
-          'Explorer >= 8', 'iOS >= 6', 'Opera >= 12', 'Safari >= 6'
-        ],
-        expand: true,
-        flatten: true,
-        src: ['css/cagov.core.css', 'css/colorscheme-oceanside'],
-        dest: 'css'
-      }
-    },
+    // LOAD TASKS
 
-    watch: {
-      /* watch for less changes */
-      less: {
-        files: ['source/**/*.less'],
-        tasks: [
-          'less:development', 'autoprefixer'
-        ]
-      },
+    // Use grunt to execute compass
+    grunt.loadNpmTasks('grunt-contrib-less');
 
-      /* watch and see if our javascript files change, or new packages are installed */
-      js: {
-        files: ['source/**/*.js'],
-        tasks: ['concat']
-      },
+    // Use grunt to watch file changes.
+    grunt.loadNpmTasks('grunt-contrib-watch');
 
-      /* watch our files for change, reload */
-      livereload: {
-        files: [
-          'ssi/*.html', 'sample/**/*', './*.html', 'css/*.css', 'images/*'
-        ],
-        options: {
-          livereload: true
-        }
-      },
+    // Use uglify for js minification
+    grunt.loadNpmTasks('grunt-contrib-uglify');
 
-      /* Reload gruntfile if it changes */
-      grunt: {
-        files: ['Gruntfile.js']
-      }
+    // Concatenate js files
+    grunt.loadNpmTasks('grunt-contrib-concat');
 
-      /* Add new module here. Mind the comma's :) */
-    }
-  });
+    // Automatic vendor prefixing
+    grunt.loadNpmTasks('grunt-autoprefixer');
 
-  // LOAD TASKS
+    // Open Source browser testing server
+    grunt.loadNpmTasks('grunt-browser-sync');
 
-  // Use grunt to execute compass
-  grunt.loadNpmTasks('grunt-contrib-less');
-
-  // Use grunt to watch file changes.
-  grunt.loadNpmTasks('grunt-contrib-watch');
-
-  // Use uglify for js minification
-  grunt.loadNpmTasks('grunt-contrib-uglify');
-
-  // Concatenate js files
-  grunt.loadNpmTasks('grunt-contrib-concat');
-
-  // Automatic vendor prefixing
-  grunt.loadNpmTasks('grunt-autoprefixer');
-
-  // Open Source browser testing server
-  grunt.loadNpmTasks('grunt-browser-sync');
-
-  // HTML Linting
-  grunt.loadNpmTasks('grunt-html');
+    // HTML Linting
+    grunt.loadNpmTasks('grunt-html');
 
 
-  // REGISTER TASKS
+    // REGISTER TASKS
 
-  // Default task to watch and output uncompresses
-  grunt.registerTask('default', [
-    'concat', 'less:development', 'autoprefixer', 'watch'
-  ]);
+    // Default task to watch and output uncompresses
+    grunt.registerTask('default', [
+      'concat', 'less:development', 'autoprefixer', 'watch'
+    ]);
 
-  // Build task to minify css and js
-  grunt.registerTask('build', [
-    'uglify', 'less:production', 'autoprefixer'
-  ]);
+    // Build task to minify css and js
+    grunt.registerTask('build', [
+      'uglify', 'less:production', 'autoprefixer'
+    ]);
 
-  // Development task to concat and unminify
-  grunt.registerTask('dev', [
-    'concat', 'less:development', 'autoprefixer'
-  ]);
+    // Development task to concat and unminify
+    grunt.registerTask('dev', [
+      'concat', 'less:development', 'autoprefixer'
+    ]);
 
-  // HTML linting
-  grunt.registerTask('lint', [
-    'concat', 'less:development', 'htmllint'
-  ]);
+    // HTML linting
+    grunt.registerTask('lint', [
+      'concat', 'less:development', 'htmllint'
+    ]);
 
-  // Device testing
-  grunt.registerTask('test', [
-    'concat', 'less:development', 'autoprefixer', 'browserSync', 'watch'
-  ]);
+    // Device testing
+    grunt.registerTask('test', [
+      'concat', 'less:development', 'autoprefixer', 'browserSync', 'watch'
+    ]);
 
 };

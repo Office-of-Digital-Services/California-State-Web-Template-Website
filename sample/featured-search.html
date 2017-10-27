@@ -1,4 +1,4 @@
-<!doctype html>
+﻿<!doctype html>
 <!--[if lt IE 7]> <html class="no-js ie6 oldie" lang="en"> <![endif]-->
 <!--[if IE 7]>    <html class="no-js ie7 oldie" lang="en"> <![endif]-->
 <!--[if IE 8]>    <html class="no-js ie8 oldie" lang="en"> <![endif]-->
@@ -28,16 +28,14 @@ Based on Twitter Bootstrap
 <header role="banner" id="header" class="global-header fixed">
 	<div id="skip-to-content"><a href="#main-content">Skip to Main Content</a></div>
     
-        <!-- Settings Bar -->
-        <!--#include virtual="/ssi/settings-bar.html" -->
+     	<!-- Include Utility Header -->
+		<!--#include virtual="/ssi/utility-header.html" -->			
         
-        <!-- Alert Banner -->
+        <!-- Settings Bar -->	
+		<!--#include virtual="/ssi/settings-bar.html" -->
 
-        <!-- Include Utility Header -->
-        <!--#include virtual="/ssi/utility-header.html" -->  
-    
-    	<!-- Include Branding -->
-    	<!--#include virtual="/ssi/branding.html" -->
+		<!-- Include Branding -->
+		<!--#include virtual="/ssi/branding.html" -->
     
     	<!-- Include Mobile Controls -->
     	<!--#include virtual="/ssi/mobile-controls.html" -->
@@ -69,7 +67,7 @@ Based on Twitter Bootstrap
     <!--#include virtual="/ssi/ask-bar.html" --> 
     
 	<!-- Include Page Template -->
-    <!--#include virtual="/ssi/header-primary-banner.html" -->
+    <!--#include virtual="/ssi/header-single-banner.html" -->
     
 
 <div id="main-content" class="main-content">
@@ -87,13 +85,7 @@ Based on Twitter Bootstrap
                     <p>The header above is an example of the featured search bar. It's location and size make it a prominent feature on this layout option. The <code>.search-container</code>and<code>.featured-search</code> classes need to be added to the <code>#head-search</code> div in the header of your page.</p>
                     <p>More information on using search results categories and instant search as seen on the <a href="http://www.ca.gov">ca.gov</a> portal will be available in the near future.</p>
                     
-<!--      
-<pre>
-&lt;!-- Search Results --&gt;
-&lt;div class=&quot;search-results-container&quot;&gt;
-&lt;!--#include virtual=&quot;/ssi/search-results-standalone.html&quot;  --&gt;
-&lt;/div&gt;  
-</pre> -->
+
                     
                     <p><span class="label label-info">NOTE:</span> Featured search can be used with any page template, see available options by viewing <a href="page-templates.html"> page  templates</a>.</p>
                     <p>&nbsp;</p> </div>

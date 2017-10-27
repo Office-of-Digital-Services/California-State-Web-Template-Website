@@ -19,7 +19,9 @@
         .options {
             .btn-default {
               // text-color, bg-color, border-color
-              .button-variant(contrast(@panel-default-header-bg); tint(@panel-default-header-bg, 70%); @panel-default-header-border);
+             // .button-variant(contrast(@panel-default-header-bg); tint(@panel-default-header-bg, 70%); @panel-default-header-border);
+			 .button-variant(contrast(@panel-default-header-bg); darken(@panel-default-header-bg, 9%); @panel-default-header-border);
+			 
             }
         }
     }
@@ -47,7 +49,8 @@
         .options {
             .btn-default {
               // text-color, bg-color, border-color
-              .button-variant(contrast(tint(@overstated-header-bg, 30%)); tint(@overstated-header-bg, 30%); @overstated-header-border);
+              //.button-variant(contrast(tint(@overstated-header-bg, 30%)); tint(@overstated-header-bg, 30%); @overstated-header-border);
+			  .button-variant(contrast(tint(@overstated-header-bg, 30%)); darken(@panel-default-header-bg, 9%); @overstated-header-border);
             }
         }
     }
@@ -75,7 +78,8 @@
         .options {
             .btn-default {
               // text-color, bg-color, border-color
-              .button-variant(contrast(@understated-header-bg); tint(@understated-header-bg, 70%); @understated-border);
+             // .button-variant(contrast(@understated-header-bg); tint(@understated-header-bg, 70%); @understated-border);
+			 .button-variant(contrast(@understated-header-bg); darken(@panel-default-header-bg, 9%); @understated-border);
             }
         }
     }
@@ -103,7 +107,8 @@
         .options {
             .btn-default {
               // text-color, bg-color, border-color
-              .button-variant(contrast(tint(@standout-header-bg, 30%)); tint(@standout-header-bg, 30%); darken(@standout-header-bg, 5%));
+              // .button-variant(contrast(tint(@standout-header-bg, 30%)); tint(@standout-header-bg, 30%); darken(@standout-header-bg, 5%));
+			  .button-variant(contrast(tint(@standout-header-bg, 30%)); darken(@panel-default-header-bg, 9%); contrast(@standout-header-bg));
             }
         }
     }

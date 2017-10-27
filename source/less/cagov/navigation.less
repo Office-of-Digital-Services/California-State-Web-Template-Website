@@ -77,6 +77,12 @@
   }
 }
 
+@media (max-width: 768px) {		
+.second-level-nav > li {		
+    border-right: 0px; 	//  _cs-shame.less addition	
+}		
+}	
+
 
 //
 // Main Navigation links
@@ -197,7 +203,11 @@
 	max-width:250px;		
 	min-width:250px;		
 	left: initial;		
-    right: initial;				
+    right: initial;	
+	
+	@media (max-width: @screen-xs-max) {
+		max-width:100%;
+	}
 }	
 
  // beta 5.0 addition	
@@ -345,12 +355,6 @@
     display: none;
   }
 
-    /* Positioning for ca */
-    .cagov-logo {
-        //display: none;
-        position:absolute;
-        left: 60px;
-    }
 
     .oc-menu .mobile-control.cagov-logo {
         display: block;

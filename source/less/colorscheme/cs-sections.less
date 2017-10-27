@@ -7,10 +7,6 @@
     &-default {
         background: @gray-lightest;
         
-        // One-off color change because gray's were the same value
-        .panel-heading {
-            background: darken(@gray-lightest, 3%);
-        }
     }
 
     &-search {
@@ -32,6 +28,15 @@
         .donut-color-variants(@donut-background: @gray-lighter; @donut-halfmark: @gray-lightest);
         background: @color-p3;
         color: contrast(@color-p3);
+		
+		.btn-primary {
+		// better-button = color; background; border, hover-color; hover-background; hover-border
+		.better-button(@white-color; @color-p2; contrast(@color-p2); @white-color;  darken(@color-p2, 7%); contrast(@color-p2));
+		}
+		.btn-standout {
+		// better-button = color; background; border, hover-color; hover-background; hover-border
+		.better-button(@white-color; @color-p3; contrast(@color-p3); @white-color;  darken(@color-p3, 7%); contrast(@color-p3));
+		}
     }
 
     &-impact {
@@ -39,7 +44,15 @@
         .donut-color-variants(@donut-background: @gray-lighter; @donut-halfmark: @gray-lightest);
         background: @color-p3;
         color: contrast(@color-p3);
-
+		
+		.btn-primary {
+		// better-button = color; background; border, hover-color; hover-background; hover-border
+		.better-button(@white-color; @color-p2; contrast(@color-p2); @white-color;  darken(@color-p2, 7%); contrast(@color-p2));
+		}
+		.btn-standout {
+		// better-button = color; background; border, hover-color; hover-background; hover-border
+		.better-button(@white-color; @color-p3; contrast(@color-p3); @white-color;  darken(@color-p3, 7%); contrast(@color-p3));
+		}
         // Create header mixin
         h1, h2,h3,h4,h5,h6 {
             color: @color-s2;
@@ -63,12 +76,28 @@
         .link-variant(@gray-lightest; @color-p1; none; underline);
         background: @color-p2;
         color: contrast(@color-p2);
+		.btn-primary {
+		// better-button = color; background; border, hover-color; hover-background; hover-border
+		.better-button(@white-color; @color-p2; contrast(@color-p2); @white-color;  darken(@color-p2, 7%); contrast(@color-p2));
+		}
+		.btn-standout {
+		// better-button = color; background; border, hover-color; hover-background; hover-border
+		.better-button(@white-color; @color-p3; contrast(@color-p3); @white-color;  darken(@color-p3, 7%); contrast(@color-p3));
+		}
     }
 
     &-inverted {
         .link-variant(@gray-lightest; @color-p1; none; underline);
         background: @gray-darker;
         color: #fff;
+		.btn-primary {
+		// better-button = color; background; border, hover-color; hover-background; hover-border
+		.better-button(@white-color; @color-p2; contrast(@color-p2); @white-color;  darken(@color-p2, 7%); contrast(@color-p2));
+		}
+		.btn-standout {
+		// better-button = color; background; border, hover-color; hover-background; hover-border
+		.better-button(@white-color; @color-p3; contrast(@color-p3); @white-color;  darken(@color-p3, 7%); contrast(@color-p3));
+		}
     }
 
     &-danger {

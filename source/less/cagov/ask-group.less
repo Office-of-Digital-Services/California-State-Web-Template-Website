@@ -165,6 +165,8 @@
     .ask-group {
         .make-xs-column(12);
         padding-top: @line-height-computed;
+		float: none;  //  _cs-shame.less addition
+        padding-bottom: 1px;  //  _cs-shame.less addition
 
         .panel {
             border: none;
@@ -178,7 +180,8 @@
         a.btn {
             .btn-block();
             //.btn-default();
-            border-color: #000;
+			background-color: transparent; // beta 5.0 addition
+            border: none;
             color: #fff;
 
             &:hover, &:focus, &:active {
@@ -208,3 +211,9 @@
         }
     }
 }
+
+//  _cs-shame.less addition
+.fixed + .ask-group {		
+    z-index: 5;		
+    position: fixed;		
+  }

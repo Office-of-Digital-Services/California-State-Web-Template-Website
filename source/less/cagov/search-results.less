@@ -14,7 +14,11 @@
 
     @media (min-width: @screen-sm-min) {
         /* position results container below search box */
-        top: 82px;
+		z-index: 6;  //  _cs-shame.less addition
+        position: absolute; 
+        top: 155px;     // value calulated via js
+        width: 100%;
+	
     }
 
     &.visible {

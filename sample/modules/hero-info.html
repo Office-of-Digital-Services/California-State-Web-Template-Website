@@ -1,0 +1,24 @@
+<!--Hero Info-->
+<section class="p-y-200--md p-y-80">
+    <div class="container text-center">
+        <div class="row">
+            <div class="half offset-quarter">
+                <div class="m-b-lg">
+                    <h2 class="display m-b">
+                        Build a Great
+                        <span class="color-primary">Product!</span>
+                    </h2>
+                    <i class="ca-gov-icon-favorite color-primary font-size-70x"></i>
+                    <i class="ca-gov-icon-favorite font-size-95x color-primary"></i>
+                    <i class="ca-gov-icon-favorite color-primary"></i>
+                    <i class="ca-gov-icon-favorite font-size-95x color-primary"></i>
+                    <i class="ca-gov-icon-favorite font-size-70x color-primary"></i>
+                </div>
+                <p class="lead m-b-60">Sed feugiat porttitor nunc, non dignissim ipsum vestibulum in. Donec in blandit dolor. Vivamus a fringilla lorem, vel faucibus ante. Nunc ullamcorper, justo a iaculis elementum, enim orci viverra eros, fringilla porttitor lorem eros vel.</p>
+                <a class="btn btn-lg btn-primary rounded-15" href="https://www.youtube.com/watch?v=ITmm6koLsDM" target="_blank">
+                    <i class="ca-gov-icon-carousel-play"></i> Watch Our Presentation
+                </a>
+            </div>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,45 @@
+<!--Icon Links-->
+<div class="section-primary section-transparent text-center">
+    <div class="group  p-b-md">
+        <div class="fifth">
+            <a href="#" class="icon-link">
+                <div class="block-icon">
+                    <span class="circle-icon ca-gov-icon-tools" aria-hidden="true"></span>
+                </div>
+                How To
+            </a>
+        </div>
+        <div class="fifth">
+            <a href="#" class="icon-link">
+                <div class="block-icon">
+                    <span class="circle-icon ca-gov-icon-people" aria-hidden="true"></span>
+                </div>
+                State Employees
+            </a>
+        </div>
+        <div class="fifth">
+            <a href="#" class="icon-link">
+                <div class="block-icon">
+                    <span class="circle-icon ca-gov-icon-ca-capitol" aria-hidden="true"></span>
+                </div>
+                State Services
+            </a>
+        </div>
+        <div class="fifth">
+            <a href="#" class="icon-link">
+                <div class="block-icon">
+                    <span class="circle-icon ca-gov-icon-favorite" aria-hidden="true"></span>
+                </div>
+                Veterans
+            </a>
+        </div>
+        <div class="fifth">
+            <a href="#" class="icon-link">
+                <div class="block-icon">
+                    <span class="circle-icon ca-gov-icon-email" aria-hidden="true"></span>
+                </div>
+                Email Us
+            </a>
+        </div>
+    </div>
+</div><!-- End Icon Links -->

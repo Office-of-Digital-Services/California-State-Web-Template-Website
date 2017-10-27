@@ -44,7 +44,7 @@
 @import "bootstrap/close.less";
 
 // Components w/ JavaScript
-//@import "bootstrap/modals.less";
+@import "bootstrap/modals.less";
 @import "bootstrap/tooltip.less";
 //@import "bootstrap/popovers.less";
 //@import "bootstrap/carousel.less";
@@ -79,7 +79,7 @@
 // CALTECH CORE
 // --------------------------------------------------
 
-@import "colorscheme-oceanside.less";       // Pull in oceanside variables to allow dev in gov theme. TODO: Refactor colors to colorscheme file
+@import "colorscheme/colorscheme.less";  // Pull in specific colorscheme variables chosen in colorscheme.less file
 
 @import "cagov/reset.less";
 @import "cagov/mixins.less";
@@ -132,7 +132,8 @@
 @import "cagov/location.less";
 @import "cagov/gallery.less";
 @import "cagov/cards.less";
-
+@import "cagov/hero-info.less"; // beta 5.0 addition
+@import "cagov/icon-blocks.less"; // beta 5.0 addition
 @import "cagov/jobs.less";
 @import "cagov/tables.less";
 @import "cagov/lists.less";

@@ -71,3 +71,7 @@
 .alert-danger {
   .alert-variant(@alert-danger-bg; @alert-danger-border; @alert-danger-text);
 }
+// beta 5.0 addition
+.alert-severe {
+  .alert-variant(@alert-severe-bg; @alert-severe-border; darken(@alert-severe-bg, 15%));
+}

@@ -23,7 +23,7 @@
 
 // better-button = color; background; border, hover-color; hover-background; hover-border
 .btn-primary {
-    .better-button(@white-color; transparent; @white-color; @white-color; rgba(255,255,255,.2); @white-color);
+    .better-button(@white-color; @color-p2; @color-p2; @white-color;  darken(@color-p2, 7%); darken(@color-p2, 7%)); // beta 5.0 addition
     //border-width:2px;
 	-webkit-transition: all 0.5s;
     transition:all 0.5s;
@@ -31,6 +31,14 @@
 
 .btn-default {
     .better-button(@gray-base; rgba(255,255,255,.65); @gray-base; @gray-base; rgba(255,255,255,1); @gray-base);
+    //border-width:2px;
+	-webkit-transition: all 0.5s;
+    transition:all 0.5s;
+}
+
+// beta 5.0 addition
+.btn-standout {
+    .better-button(@white-color; @color-p3; @color-p3; @white-color;  darken(@color-p3, 7%); darken(@color-p3, 7%));
     //border-width:2px;
 	-webkit-transition: all 0.5s;
     transition:all 0.5s;
@@ -131,3 +139,11 @@
         }
     }
 }
+
+// beta 5.0 addition
+/* Rounded Around */
+.rounded-0 {
+  border-radius: 0 !important; }
+
+.rounded-50x {
+  border-radius: 50%; }

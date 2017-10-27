@@ -1,4 +1,4 @@
-<!doctype html>
+﻿<!doctype html>
 <!--[if lt IE 7]> <html class="no-js ie6 oldie" lang="en"> <![endif]-->
 <!--[if IE 7]>    <html class="no-js ie7 oldie" lang="en"> <![endif]-->
 <!--[if IE 8]>    <html class="no-js ie8 oldie" lang="en"> <![endif]-->
@@ -29,15 +29,15 @@ Based on Twitter Bootstrap
 	<div id="skip-to-content"><a href="#main-content">Skip to Main Content</a></div>
     <!-- Alert Banner -->
     <!--#include virtual="/ssi/alert-banner.html" -->
-    
-    <!-- Settings Bar -->
-    <!--#include virtual="/ssi/settings-bar.html" -->
 
     <!-- Include Utility Header -->
-    <!--#include virtual="/ssi/utility-header.html" -->
+    <!--#include virtual="/ssi/utility-header.html" -->		
     
-    <!-- Include Branding -->
-    <!--#include virtual="/ssi/branding.html" -->
+    <!-- Settings Bar -->	
+	<!--#include virtual="/ssi/settings-bar.html" -->
+
+	<!-- Include Branding -->
+	<!--#include virtual="/ssi/branding.html" -->
     
     <!-- Include Mobile Controls -->
     <!--#include virtual="/ssi/mobile-controls.html" -->
@@ -82,8 +82,34 @@ Based on Twitter Bootstrap
 &lt;/header&gt;
 </pre> 
                        
-                       
-                        
+                    
+                        <h2>Other alerts and alert states</h2>
+                        <p>Alert Success</p>
+                        <div class="alert alert-success">
+                            <strong>Well done!</strong> You successfully read this important alert message.
+                            <a href="" class="alert-link btn btn-default btn-xs">Read More</a>
+                        </div>
+                         <p>Alert Warning</p>
+                        <div class="alert alert-warning">
+                            <strong>Warning!</strong> Better check yourself, you're not looking too good.
+                            <a href="" class="alert-link btn btn-default btn-xs">Read More</a>
+                        </div>
+                        <p>Alert Danger</p>
+                        <div class="alert alert-danger">
+                            <strong>Oh snap!</strong> Change a few things up and try submitting again.
+                            <a href="" class="alert-link btn btn-default btn-xs">Read More</a>
+                        </div>
+                        <p>Alert Severe</p>
+                        <div class="alert alert-severe" role="alert">
+                                <span class="alert-level"><span class="ca-gov-icon-important" aria-hidden="true"></span>SEVERE ALERT!</span><span class="alert-text"> Flash Flood in Sacramento until 12:15 PM.</span>
+                                <a href="" class="alert-link btn btn-default btn-xs">Read More</a>
+              
+                        </div>   
+                        <p>Alert Info</p>
+                        <div class="alert alert-info" role="alert">
+                            <strong>Heads up!</strong> This alert needs your attention, but it's not super important.
+                            <a href="" class="alert-link btn btn-default btn-xs">Read More</a>
+</div>                
                     </div>
                 </div>
         </main>

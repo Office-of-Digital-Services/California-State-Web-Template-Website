@@ -36,6 +36,10 @@
     position: fixed;
     width: 100%;
     z-index: 1;
+	@media (min-width: @screen-sm-min) {
+		z-index: 7; //  _cs-shame.less addition
+	}
+	
 }
 
 .fixed + .main-content {
@@ -81,9 +85,8 @@
             max-height: 45px; // Beta 5.0 addition
 			line-height: 55px;	// Beta 5.0 addition	
 
-            img {
-				max-height: 45px;	// Beta 5.0 addition	
-				height:45px;	// Beta 5.0 addition
+            a {
+				max-width: 225px; // Beta 5.0 addition
             }
         }
 		

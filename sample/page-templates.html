@@ -1,4 +1,4 @@
-<!doctype html>
+﻿<!doctype html>
 <!--[if lt IE 7]> <html class="no-js ie6 oldie" lang="en"> <![endif]-->
 <!--[if IE 7]>    <html class="no-js ie7 oldie" lang="en"> <![endif]-->
 <!--[if IE 8]>    <html class="no-js ie8 oldie" lang="en"> <![endif]-->
@@ -28,19 +28,17 @@ Based on Twitter Bootstrap
 <header role="banner" id="header" class="global-header">
 	<div id="skip-to-content"><a href="#main-content">Skip to Main Content</a></div>
     
-        <!-- Location Bar -->
-        <!--#include virtual="/ssi/location-bar.html" -->
-    
-        <!-- Settings Bar -->
-        <!--#include virtual="/ssi/settings-bar.html" -->
-
-        <!-- Alert Banner -->        
-
+        <!-- Location Bar -->        
+		<!--#include virtual="/ssi/location-bar.html" -->
+        
         <!-- Include Utility Header -->
-        <!--#include virtual="/ssi/utility-header.html" -->      
-    
-    	<!-- Include Branding -->
-    	<!--#include virtual="/ssi/branding.html" -->
+		<!--#include virtual="/ssi/utility-header.html" -->	
+        
+        <!-- Settings Bar -->	
+		<!--#include virtual="/ssi/settings-bar.html" -->
+
+		<!-- Include Branding -->
+		<!--#include virtual="/ssi/branding.html" -->
     
     	<!-- Include Mobile Controls -->
     	<!--#include virtual="/ssi/mobile-controls.html" -->
@@ -60,7 +58,7 @@ Based on Twitter Bootstrap
 </header>
 
 			<!-- Include Page Template -->
-    		<!--#include virtual="/ssi/header-primary-banner.html" -->
+    		<!--#include virtual="/ssi/header-single-banner.html" -->
         
 <div id="main-content" class="main-content">
     <div class="section">
@@ -134,12 +132,14 @@ $(document).ready(function(){
             btnLabel.html('Remove Primary Banner');
             //$("body").addClass("primary");
             $(".header-primary-banner").removeClass("hide");
-			$(".header-large-banner").addClass("hide");
+            $(".header-single-banner").removeClass("hide");
+            $(".header-large-banner").removeClass("hide");
 			window.scrollTo(0, 0); 
         } else {
             btnLabel.html('Add Primary Banner');
             //$("body").removeClass("primary");
             $(".header-primary-banner").addClass("hide");
+            $(".header-single-banner").addClass("hide");
 			$(".header-large-banner").addClass("hide");
 			window.scrollTo(0, 0);
         }
