@@ -220,13 +220,8 @@ input[type="radio"]:checked + * i {
 		pointer-events: none;
 		}
 }
-
-
-
-
-
-  
-
-	
-	
-
+//removes clear x icon from the input fields in IE
+.form-control::-ms-clear {
+    display: none !important;
+}
+input[type=text]::-ms-clear { display: none; }

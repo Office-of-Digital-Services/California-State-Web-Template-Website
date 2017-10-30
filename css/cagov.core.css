@@ -1,4 +1,4 @@
-/* cagov-template-v5 - v0.0.1 - Oct-09-2017 */
+/* cagov-template-v5 - v0.0.1 - Oct-18-2017 */
 /* STYLES COMPILED FROM SOURCE (LESS) DO NOT MODIFY */
 /* -----------------------------------------
    NORMALIZE - /source/less/bootstrap/normalize.less
@@ -7066,6 +7066,161 @@ a.second-level-link [class^="ca-gov-icon-"] {
   .unit6 {
     height: 390px;
     overflow: hidden;
+  }
+}
+/* Megamenu State Template v4 */
+@media (min-width: 768px) {
+  .main-navigation.megadropdown.original .second-level-nav {
+    -moz-column-count: 3;
+    -ms-column-count: 3;
+    -webkit-column-count: 3;
+    -moz-column-gap: 20px;
+    -ms-column-gap: 20px;
+    -webkit-column-gap: 20px;
+    column-count: 3;
+    column-gap: 20px;
+  }
+  .main-navigation.megadropdown.original .sub-nav {
+    padding: 16px;
+  }
+  .main-navigation.megadropdown.original .sub-nav[class*="with-image-sm-"] .sub-nav-decoration {
+    width: 33.3333%;
+  }
+  .main-navigation.megadropdown.original .sub-nav[class*="with-image-sm-"] > ul {
+    -webkit-column-count: 2;
+    -moz-column-count: 2;
+    -ms-column-count: 2;
+    column-count: 2;
+    -moz-column-gap: 20px;
+    -ms-column-gap: 20px;
+    -webkit-column-gap: 20px;
+    column-gap: 20px;
+  }
+  .main-navigation.megadropdown.original .sub-nav[class*="with-image-md-"] .sub-nav-decoration {
+    width: 50%;
+  }
+  .main-navigation.megadropdown.original .sub-nav[class*="with-image-md-"] > ul {
+    -moz-column-count: 1;
+    -ms-column-count: 1;
+    -webkit-column-count: 1;
+    -moz-column-gap: 20px;
+    -ms-column-gap: 20px;
+    -webkit-column-gap: 20px;
+    column-count: 1;
+    column-gap: 20px;
+  }
+  .main-navigation.megadropdown.original .sub-nav[class*="with-image-"] > ul > li {
+    padding-right: 16px !important;
+  }
+  .main-navigation.megadropdown.original .sub-nav .sub-nav-decoration {
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    overflow: hidden;
+    background-position: 50% 50% !important;
+    background-size: cover !important;
+  }
+  .main-navigation.megadropdown.original .sub-nav.with-image-sm-right > ul {
+    float: left;
+    width: 66.6667%;
+  }
+  .main-navigation.megadropdown.original .sub-nav.with-image-sm-left > ul {
+    float: right;
+    width: 66.6667%;
+  }
+  .main-navigation.megadropdown.original .sub-nav.with-image-md-right > ul {
+    float: left;
+    width: 50%;
+  }
+  .main-navigation.megadropdown.original .sub-nav.with-image-md-left > ul {
+    float: right;
+    width: 50%;
+  }
+  .main-navigation.megadropdown.original .sub-nav[class*="-left"] .sub-nav-decoration {
+    right: auto;
+    left: 0;
+  }
+}
+.main-navigation.megadropdown.original .link-description {
+  font-size: .8em;
+}
+.main-navigation.megadropdown.original a.second-level-link {
+  padding: 0 !important;
+}
+.main-navigation.megadropdown.original .second-level-nav > li {
+  padding: .3em .7rem .4em 1rem;
+  border: none;
+  -webkit-column-break-inside: avoid;
+  page-break-inside: avoid;
+  break-inside: avoid;
+}
+/* Accessible Menu */
+.main-navigation {
+  -webkit-transition: all .5s;
+  transition: all .5s;
+}
+.nav-item {
+  display: inline-block;
+}
+.sub-nav {
+  -webkit-transition: all .4s;
+  transition: all .4s;
+  left: 0;
+}
+.sub-nav.open {
+  display: block;
+  max-height: 700px;
+  left: 0;
+}
+.main-navigation.active {
+  max-height: 5000px;
+}
+.mobile-controls .toggle-menu {
+  border: none;
+  background: none;
+}
+.mobile-controls .toggle-menu:focus {
+  outline: dotted 1px #000;
+}
+@media (max-width: 767px) {
+  .main-navigation {
+    overflow: hidden;
+  }
+  .sub-nav {
+    display: block;
+    top: 0;
+    position: relative;
+  }
+  .nav-item {
+    display: block;
+  }
+  .nav-item .toggle-sub-nav {
+    display: block;
+  }
+}
+@media (min-width: 768px) {
+  .nav-item::after {
+    content: " ";
+    height: 5px;
+    display: block;
+    margin: 0 auto;
+  }
+  .sub-nav {
+    border-top: none;
+  }
+  .main-navigation {
+    margin-top: -93px;
+    top: 5px;
+  }
+  .no-icons .top-level-nav .nav-item > a {
+    min-height: 86px;
+    padding-top: 2rem;
+  }
+  .fixed.compact .no-icons .top-level-nav .nav-item > a {
+    padding-top: 12px;
+    min-height: 50px;
   }
 }
 /* -----------------------------------------

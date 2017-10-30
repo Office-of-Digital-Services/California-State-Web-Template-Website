@@ -1,4 +1,4 @@
-/* cagov-template-v5 - v0.0.1 - Oct-05-2017 */
+/* cagov-template-v5 - v0.0.1 - Oct-18-2017 */
 /* STYLES COMPILED FROM SOURCE (LESS) DO NOT MODIFY */
 /* -----------------------------------------
  Helper Mixins for service-group
@@ -96,6 +96,11 @@ h1 span[class^="ca-gov-icon-"]:first-child {
   border-right: 1px solid #d6d6d6;
   border-bottom: 1px solid #d6d6d6;
 }
+@media (max-width: 767px) {
+  .second-level-nav > li {
+    border-right: none;
+  }
+}
 .second-level-nav > li:hover,
 .second-level-nav > li:focus {
   background: #fff;
@@ -104,7 +109,6 @@ h1 span[class^="ca-gov-icon-"]:first-child {
   color: #555555;
 }
 .sub-nav {
-  border-top: 5px solid #FDB81E;
   border-bottom: 5px solid #046B99;
   border-left: 1px solid #d6d6d6;
   border-right: 1px solid #d6d6d6;
@@ -124,6 +128,15 @@ h1 span[class^="ca-gov-icon-"]:first-child {
 }
 .nav-media .media {
   border-bottom: 1px solid #d6d6d6;
+}
+@media (min-width: 768px) {
+  .nav-item::after {
+    background-color: #FDB81E;
+  }
+  .nav-item:hover::after,
+  .nav-item:focus::after {
+    background-color: #046B99;
+  }
 }
 /* -----------------------------------------
    SEARCH

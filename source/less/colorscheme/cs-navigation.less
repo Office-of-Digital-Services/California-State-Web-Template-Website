@@ -9,7 +9,7 @@
 // --------------------------------------------------
 
 .mobile-controls {
-  background: darken(@color-p2, 5%);
+  background: @white-color;
 }
 .mobile-control {
   color: @mobile-controls;
@@ -86,6 +86,10 @@
         border-right: 1px solid @gray-lighter;
         border-bottom: 1px solid @gray-lighter;
         //border: 1px solid @sub-nav-link-border;
+		
+		@media (max-width: @screen-xs-max) {
+         border-right:none;
+    }
 
         &:hover, &:focus {
             background:#fff;
@@ -104,7 +108,7 @@
 // --------------------------------------------------
 
 .sub-nav {
-    border-top: 5px solid @color-p1;
+    // border-top: 5px solid @color-p1;
     border-bottom: 5px solid @color-p2;
     border-left: 1px solid @gray-lighter;
     border-right: 1px solid @gray-lighter;
@@ -139,4 +143,18 @@
     .media + .media  {
         //border-bottom-color:red;
     }
+}
+
+// Accessible menu
+@media (min-width: @screen-sm-min) {
+	.nav-item {
+		&::after {
+			background-color: @color-p1;
+			}
+	
+	        &:hover::after, &:focus::after {
+            background-color: @color-p2;
+        }
+	
+	}
 }

@@ -10,7 +10,7 @@
     }
 }
  
-.megadropdown .top-level-nav {  // beta 5.0 addition 
+.megadropdown .top-level-nav {  // beta 5.0 addition (fixes IE dropdown issue)
 	
 	@media (max-width: @screen-md) and (min-width: @screen-sm-min) { // Beta 5.0 addition
 				font-size: .9em;	
@@ -47,7 +47,7 @@
     }
 
     /* Dynamic element contained in .nav-arrow-container */
-    .nav-arrow-down {
+    .megadropdown .nav-arrow-down {
         // KEEPING POINTER AS I FEEL IT'S A BETTER SOLUTION
         //background: transparent url("@{template-path}/nav-down-arrow.png") no-repeat;
         //width: 44px;
@@ -62,6 +62,13 @@
         width:100px;
         margin-left:-65px;  // -50 + -15 for 1/2 of gutter
     }
+	.dropdown .nav-arrow-down {
+		height: 5px;
+		left: 0;
+		margin-left: 0;
+		position: absolute;
+		top: -5px;
+		}
 }
 
 //
@@ -205,4 +212,205 @@ a.second-level-link {
         height:(@nav-unit-base * 6);
         overflow:hidden;
     }
+}
+
+/* Megamenu State Template v4 */ 
+@media (min-width: @screen-sm-min) {
+	
+	.main-navigation.megadropdown.original {
+		.second-level-nav {
+			-moz-column-count: 3;
+            -ms-column-count: 3;
+            -webkit-column-count: 3;
+            -moz-column-gap: 20px;
+            -ms-column-gap: 20px;
+            -webkit-column-gap: 20px;
+            column-count: 3;
+            column-gap: 20px;
+			}
+			
+			.sub-nav {
+				padding: 16px;
+				// one third width of the -sm  nav image
+				&[class*="with-image-sm-"] {
+					.sub-nav-decoration {
+						width: 33.3333%;
+						}
+					// two columns for submenu items with -sm image 
+					> ul {
+						-webkit-column-count: 2;
+						-moz-column-count: 2;
+						-ms-column-count: 2;
+						column-count: 2;
+						-moz-column-gap: 20px;
+						-ms-column-gap: 20px;
+						-webkit-column-gap: 20px;
+						column-gap: 20px;
+						}
+					}
+				// half width for the -md nav image	
+				&[class*="with-image-md-"] {
+					.sub-nav-decoration {
+						width: 50%;
+					}
+					// one column for submenu items with -md image 
+					> ul {
+						-moz-column-count: 1;
+						-ms-column-count: 1;
+						-webkit-column-count: 1;
+						-moz-column-gap: 20px;
+						-ms-column-gap: 20px;
+						-webkit-column-gap: 20px;
+						column-count: 1;
+						column-gap: 20px;
+			  			}
+					}
+					&[class*="with-image-"] > ul > li {
+						padding-right: 16px !important;
+					}
+					// sub nav background image settings
+					.sub-nav-decoration {
+						display: block;
+						position: absolute;
+						top: 0;
+						right: 0;
+						bottom: 0;
+						overflow: hidden;
+						background-position: 50% 50% !important;
+						background-size: cover !important;
+						}
+					// width and float for the sub nav list if there is -sm-right image
+					&.with-image-sm-right > ul {
+						float: left;
+						width: 66.6667%;
+					}
+					// width and float for the sub nav list if there is -sm-left image
+					&.with-image-sm-left > ul {
+						float: right;
+						width: 66.6667%;
+					}
+					// width and float for the sub nav list if there is -md-right image
+					&.with-image-md-right > ul {
+						float: left;
+						width: 50%;
+					}
+					// width and float for the sub nav list if there is -md-left image			
+					&.with-image-md-left > ul {
+						float: right;
+						width: 50%;
+					}
+					// settings if the subnav image has -left
+					&[class*="-left"] .sub-nav-decoration {
+						right: auto;
+						left: 0;
+					}
+				}
+		
+		}
+	
+	}
+	
+.main-navigation.megadropdown.original {
+	.link-description {
+		font-size: .8em;
+	}
+	a.second-level-link {
+	   padding: 0 !important;
+	   }
+	.second-level-nav > li {
+	   padding: .3em .7rem .4em 1rem;
+	   border:none;
+	   -webkit-column-break-inside: avoid;
+	   page-break-inside: avoid;
+	   break-inside: avoid;
+	}
+}
+
+/* Accessible Menu */
+// beta 5.0 addition (for accessible menu)
+.main-navigation {
+	-webkit-transition: all .5s;
+            transition: all .5s;
+	}
+.nav-item {
+	display: inline-block;
+}
+.sub-nav {
+	-webkit-transition: all .4s;
+	transition: all .4s;
+	left: 0;
+}
+.sub-nav.open {
+	display: block;
+	max-height: 700px;
+	left: 0;
+}
+.main-navigation.active {
+	max-height: 5000px;
+}
+.mobile-controls {
+	.toggle-menu {
+		border: none;
+		background: none;
+		&:focus {
+			outline: dotted 1px #000;
+		}
+	}
+}
+@media (max-width: @screen-xs-max) {
+	.main-navigation {
+		overflow: hidden;
+	}
+	.sub-nav {
+		display: block;
+		top: 0;
+		position: relative;
+	}
+	.nav-item {
+		.toggle-sub-nav {
+			display: block;
+		}
+		display: block;
+	}
+}
+@media (min-width: @screen-sm-min) {
+	.nav-item {
+		&::after {
+			content: " ";
+			height: 5px;
+			display: block;
+			
+			margin: 0 auto;
+		}
+		
+	}
+	.sub-nav {
+		border-top: none;
+	}
+	.main-navigation {
+		margin-top: -93px;
+		top: 5px;
+	}
+	.no-icons {
+		.top-level-nav {
+			.nav-item {
+				>a {
+					min-height: 86px;
+					padding-top: 2rem;
+				}
+			}
+		}
+	}
+	.fixed.compact {
+		.no-icons {
+			.top-level-nav {
+				.nav-item {
+					>a {
+						padding-top: 12px;
+						min-height: 50px;
+					}
+				}
+			}
+		}
+	}
 }
