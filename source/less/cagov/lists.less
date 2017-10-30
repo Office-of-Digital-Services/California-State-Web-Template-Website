@@ -20,7 +20,7 @@ ul.list-overstated {
 
 .list-overstated, .list-understated {
     li {
-        background: url("@{template-path}/bullet-blue-disc.png") no-repeat 0 3px transparent;
+        background: url("@{template-path}/bullet-blue-disc.png") no-repeat 0 4px transparent; // beta 5.0 addition
         padding: 0 0 14px 18px;
 
         /* Rotates disc arrow down when used with accordion */
@@ -53,6 +53,31 @@ ul.list-overstated {
 
       &.open:before {
         content: "\33";             // .ca-gov-icon-caret-down
+      }
+    }
+}
+
+.list-primary {
+@size: 1.5em;               // reusable variable for .list-standout
+    padding:0;
+    padding-left: 0.2em;
+
+    li {
+        padding-left: @size;
+
+        &:before {
+            content: "\4b";         //  .ca-gov-icon-minus-mark
+            font-family: "CaGov";
+            width: @size;
+            margin-left: -@size;
+            vertical-align: .1em;
+            font-size: .7em;
+            display: inline-block;
+			color:@color-p2;
+      }
+
+      &.open:before {
+        content: "\4f";             // .ca-gov-icon-minus-line
       }
     }
 }

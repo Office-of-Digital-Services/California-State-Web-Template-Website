@@ -4,98 +4,95 @@
 <!--[if IE 7]>    <html class="no-js ie7 oldie" lang="en"> <![endif]-->
 <!--[if IE 8]>    <html class="no-js ie8 oldie" lang="en"> <![endif]-->
 <!--[if IE 9]>    <html class="no-js ie9 oldie" lang="en"> <![endif]-->
-<!--[if (gt IE 9)]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+<!--[if (gt IE 9)]><!-->
+<html class="no-js" lang="en">
+ <!--<![endif]-->
 <head>
-<!--
-California State Template
-Version 4.0
+    <!--
+    California State Template
+    Version 4.0
 
-Based on Twitter Bootstrap
--->
-<meta charset="utf-8">
+    Based on Twitter Bootstrap
+    -->
+    <meta charset="utf-8">
 
-<title>Sample - Service Group</title>
+    <title>Sample - Service Group</title>
 
-<meta name="Author" content="State of California" />
-<meta name="Description" content="State of California" />
-<meta name="Keywords" content="California, government" />
+    <meta name="Author" content="State of California" />
+    <meta name="Description" content="State of California" />
+    <meta name="Keywords" content="California, government" />
 
-<!--#include virtual="/ssi/head-css-js.html" -->
+    <!--#include virtual="/ssi/head-css-js.html" -->
 
 </head>
 
 <body>
 
-<header role="banner" id="header" class="global-header">
-  <div id="skip-to-content"><a href="#main-content">Skip to Main Content</a></div>    
-        <!-- Location Bar -->        
-		<!--#include virtual="/ssi/location-bar.html" -->
-        
+    <header role="banner" id="header" class="global-header">
+        <div id="skip-to-content"><a href="#main-content">Skip to Main Content</a></div>
+        <!-- Location Bar -->
+        <!--#include virtual="/ssi/location-bar.html" -->
         <!-- Include Utility Header -->
-		<!--#include virtual="/ssi/utility-header.html" -->	
-        
-        <!-- Settings Bar -->	
-		<!--#include virtual="/ssi/settings-bar.html" -->
+        <!--#include virtual="/ssi/utility-header.html" -->
+        <!-- Settings Bar -->
+        <!--#include virtual="/ssi/settings-bar.html" -->
+        <!-- Include Branding -->
+        <!--#include virtual="/ssi/branding.html" -->
+        <!-- Include Mobile Controls -->
+        <!--#include virtual="/ssi/mobile-controls.html" -->
+        <div class="navigation-search">
+            <div id="head-search" class="search-container">
+                <!-- Include Search -->
+                <!--#include virtual="/ssi/search.html" -->
+            </div>
 
-		<!-- Include Branding -->
-		<!--#include virtual="/ssi/branding.html" -->
-
-    <!-- Include Mobile Controls -->
-    <!--#include virtual="/ssi/mobile-controls.html" -->
-    <div class="navigation-search">
-        <div id="head-search" class="search-container">
-            <!-- Include Search -->
-            <!--#include virtual="/ssi/search.html" -->
+            <!-- Include Navigation -->
+            <!--#include virtual="/ssi/navigation.html" -->
         </div>
+        <div class="header-decoration"></div>
+    </header>
 
-        <!-- Include Navigation -->
-        <!--#include virtual="/ssi/navigation.html" -->
-    </div>
-  <div class="header-decoration"></div>
-</header>
+    <div id="main-content" class="main-content">
 
-<div id="main-content" class="main-content">
-    
         <main class="main-primary">
-          <div class="container">
-            <ol class="breadcrumb">
-                <li><a href="../index.html">Home</a></li>
-                <li><a href="index.html">Examples</a></li>
-                <li class="active">Service Group</li>
-            </ol>
+            <div class="container">
+                <ol class="breadcrumb">
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="index.html">Examples</a></li>
+                    <li class="active">Service Group</li>
+                </ol>
 
-            <h1>Service Tiles</h1>
-			
-		      <p>The service tile group is a module that is experimental and will have more documentation coming soon. You can view the structure markup of the <code>service-group.html</code> file located in the<code> sample </code>folder. The key element of using this module is to ensure that each tile id corresponds to the appropreate panel id. For example the service tile<code> &lt;div tabindex=&quot;5&quot; class=&quot;service-tile&quot; data-tile-id=&quot;panel-5&quot;&gt; </code>corresponds to and uses the<code> &lt;div class=&quot;service-tile-panel&quot; data-tile-id=&quot;panel-5&quot;&gt;</code> panel.</p>
-		      <br>
-		  </div>
-                    
-<div class=" section-understated collapsed">
-    <div class="service-group clearfix"  id="service-group-123">
-        <!--#include virtual="/sample/modules/service-tiles.html"  -->
-    </div>
+                <h1>Service Tiles</h1>
 
-    <div class="more-button" >
-        <div class="more-content fake-service-group"></div>
-        <a href="/service-directory.html" class="btn-more inverse"><span class="ca-gov-icon-plus-fill more-icon" aria-hidden="true"></span><span class="more-title">More Services</span></a>
-    </div>
-</div>
+                <p>The service tile group is a module that is experimental and will have more documentation coming soon. You can view the structure markup of the <code>service-group.html</code> file located in the<code> sample </code>folder. The key element of using this module is to ensure that each tile id corresponds to the appropreate panel id. For example the service tile<code> &lt;div tabindex=&quot;5&quot; class=&quot;service-tile&quot; data-tile-id=&quot;panel-5&quot;&gt; </code>corresponds to and uses the<code> &lt;div class=&quot;service-tile-panel&quot; data-tile-id=&quot;panel-5&quot;&gt;</code> panel.</p>
+                <br>
+            </div>
 
-        
-           <div class="container">
-            <div class="group">
-              
-                    <h2><label for="sample-list-a">Source Code:</label></h2>
-                  <textarea id="sample-list-a" class="form-control" rows="10" cols="80"><!--#include virtual="/sample/modules/service-tiles.html" --></textarea>
-                <div class="clearfix"><br /></div>
+            <div class=" section-understated collapsed">
+                <div class="service-group clearfix" id="service-group-123">
+                    <!--#include virtual="/sample/modules/service-tiles.html"  -->
                 </div>
-            </div> 
+
+                <div class="more-button">
+                    <div class="more-content fake-service-group"></div>
+                    <a href="/service-directory.html" class="btn-more inverse"><span class="ca-gov-icon-plus-fill more-icon" aria-hidden="true"></span><span class="more-title">More Services</span></a>
+                </div>
+            </div>
+
+
+            <div class="container">
+                <div class="group">
+
+                    <h2><label for="sample-list-a">Source Code:</label></h2>
+                    <textarea id="sample-list-a" class="form-control" rows="10" cols="80"><!--#include virtual="/sample/modules/service-tiles.html" --></textarea>
+                    <div class="clearfix"><br /></div>
+                </div>
+            </div>
         </main>
-   </div> 
+    </div>
 
-<!--#include virtual="/ssi/global-footer.html" -->
-
-<!--#include virtual="/ssi/scripts.html" -->
+    <!--#include virtual="/ssi/global-footer.html" -->
+    <!--#include virtual="/ssi/scripts.html" -->
 
 </body>
 </html>

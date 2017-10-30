@@ -177,12 +177,6 @@ input[type="radio"]:checked + * i {
 	background-color:  @color-p2;
 	border-color: @color-p2; 
   }
-  
- .u-check input[type="checkbox"]:checked + .check-icon-checkbox i::before,
-.u-check input[type="checkbox"]:checked + .u-check-icon-radio i::before,
-.u-check input[type="checkbox"]:checked + * .check-icon-checkbox i::before,
-.u-check input[type="checkbox"]:checked + * .check-icon-radio i::before {
-	content: "\4e"; }
 	
 
 .bg-primary--checked.checked,
@@ -225,3 +219,34 @@ input[type="radio"]:checked + * i {
     display: none !important;
 }
 input[type=text]::-ms-clear { display: none; }
+
+
+// radio in form of button
+.check {
+    position: relative;
+    cursor: pointer;
+    border:1px solid #ccc;
+    min-width:100px;
+}
+
+// radio and checkbox in form of button
+/* primary Color */
+input[type="checkbox"]:checked + .bg-primary--checked,
+input[type="radio"]:checked + .bg-primary--checked,
+input[type="checkbox"]:checked + * .bg-primary--checked,
+input[type="radio"]:checked + * .bg-primary--checked {
+  background-color: @color-p2; }
+
+/* highlight Color */
+input[type="checkbox"]:checked + .bg-highlight--checked,
+input[type="radio"]:checked + .bg-highlight--checked,
+input[type="checkbox"]:checked + * .bg-highlight--checked,
+input[type="radio"]:checked + * .bg-highlight--checked {
+  background-color: @color-p1; }
+
+/* White Color */
+input[type="checkbox"]:checked + .color-white--checked,
+input[type="radio"]:checked + .color-white--checked,
+input[type="checkbox"]:checked + * .color-white--checked,
+input[type="radio"]:checked + * .color-white--checked {
+  color: #fff !important; }

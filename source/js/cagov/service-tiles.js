@@ -10,10 +10,10 @@ function initServiceGroup() {
     var $items = $service.find('.service-tile');
 
 
-    $service.find('.service-tile-empty').on('click',function(e){
-      e.stopPropagation();
-      var url =  $(this).attr("data-url");
-      window.location = url
+    $service.find('.service-tile-empty').on('click', function (e) {
+        e.stopPropagation();
+        var url = $(this).attr("data-url");
+        window.location = url
     })
 
     $(window).resize(function () {
@@ -70,7 +70,7 @@ function initTiles($service, $items) {
     $items.find('.collapse').collapse();
 
     // remove any inline height set from accordian view
-    $service.find('.service-tile-full .container').css({'height': ''})
+    $service.find('.service-tile-full .container').css({ 'height': '' })
 }
 
 function shrinkAndRemove($rowEl) {
@@ -123,7 +123,7 @@ function setUpEvents($service) {
 
         insertContent($rowEl, $item);
 
-        setCloseButtonEvent($item,closeTile)
+        setCloseButtonEvent($item, closeTile)
 
     }
 
@@ -140,11 +140,35 @@ function setUpEvents($service) {
             case 'closed':
             case 'info':
                 openTile.call(this, e);
+                // this focues on close button after expandable panel is open, so user can tab into the pannel (it's for accessibility purposes)
+                $("button.close").focus();
                 break;
             case 'open':
-                 closeTile.call(this, e);
+                closeTile.call(this, e);
                 break;
             default:
+        }
+    });
+
+
+    // add the "tile-focus" class when got focus
+    $('.service-tile').focusin(function () {
+        $(this).addClass("tile-focus");
+
+    });
+
+
+    // Remove the "tile-focus" class when lost focus
+    $('.service-tile').focusout(function () {
+        $(this).removeClass("tile-focus");
+
+    });
+
+
+    // Make sure it works on 'enter' key (has same behavior as click event)
+    $service.on('keyup', '.service-tile', function (e) {
+        if (e.which == 13 && $(".service-tile").hasClass("tile-focus")) {
+            $(this).click();
         }
     });
 
@@ -162,15 +186,15 @@ function setIconFallback() {
 
 // helper which does as it's name implies
 function setCloseClasses($item) {
-  $item.attr('data-state', 'closed').removeClass('show-info');
+    $item.attr('data-state', 'closed').removeClass('show-info');
 }
 
-function setCloseButtonEvent($item, func){
-  var id = $item.data('tile-id');
-var $content = $item.parent().find('.service-tile-panel[data-tile-id="' + id + '"]').first();
-  $content.find('.close.btn').on('click', function(e){
-     func.call($item, e);
-  })
+function setCloseButtonEvent($item, func) {
+    var id = $item.data('tile-id');
+    var $content = $item.parent().find('.service-tile-panel[data-tile-id="' + id + '"]').first();
+    $content.find('.close.btn').on('click', function (e) {
+        func.call($item, e);
+    })
 }
 
 /**

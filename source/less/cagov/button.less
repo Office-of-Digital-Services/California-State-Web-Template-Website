@@ -44,6 +44,14 @@
     transition:all 0.5s;
 }
 
+// beta 5.0 addition
+.btn-highlight {
+    .better-button(@text-color; @color-p1; @color-p1; @color-p3;  darken(@color-p1, 7%); darken(@color-p1, 7%));
+    //border-width:2px;
+	-webkit-transition: all 0.5s;
+    transition:all 0.5s;
+}
+
 .btn-secondary {
     .better-button(@gray; @gray-lightest; @gray; @link-hover-color; #fff; @gray-base);
     border-width:1px;

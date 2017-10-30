@@ -99,8 +99,37 @@ Based on Twitter Bootstrap
 <style>
 /*sub nav icon*/
 
+.check {
+    position: relative;
+    cursor: pointer;
+    border:1px solid #ccc;
+    min-width:100px;
+}
 
+/* primary Colors */
+input[type="checkbox"]:checked + .bg-primary--checked,
+input[type="radio"]:checked + .bg-primary--checked,
+input[type="checkbox"]:checked + * .bg-primary--checked,
+input[type="radio"]:checked + * .bg-primary--checked {
+  background-color: #72c02c !important; }
 
+/* highlight Colors */
+input[type="checkbox"]:checked + .bg-highlight--checked,
+input[type="radio"]:checked + .bg-highlight--checked,
+input[type="checkbox"]:checked + * .bg-highlight--checked,
+input[type="radio"]:checked + * .bg-highlight--checked {
+  background-color: #f8cc00 !important; }
+
+/* White Colors */
+input[type="checkbox"]:checked + .color-white--checked,
+input[type="radio"]:checked + .color-white--checked,
+input[type="checkbox"]:checked + * .color-white--checked,
+input[type="radio"]:checked + * .color-white--checked {
+  color: #fff !important; }
+
+.color-white--checked.checked,
+.checked .color-white--checked {
+  color: #fff !important; }
 
 </style>
 </head>
@@ -415,6 +444,18 @@ Based on Twitter Bootstrap
 </main>
         
         <div class="main-secondary">
+
+            <label class="check">
+                <input class="hidden-up pos-abs top-0 left-0" name="radGroupBtn1_1" type="radio">
+                <span class="btn btn-lg btn-block bg-highlight--checked rounded-0">Greenland</span>
+            </label>
+
+            <label class="check">
+                <input class="hidden-up pos-abs top-0 left-0" name="radGroupBtn1_1" type="radio">
+                <span class="btn btn-lg btn-block bg-highlight--checked rounded-0">UK</span>
+            </label>
+
+
         </div>
     </div>
 </div>

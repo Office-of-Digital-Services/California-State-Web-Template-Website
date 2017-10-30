@@ -39,22 +39,21 @@
 // TODO: refactor into alert bar mixin
 
 .alert-severe {
-    background: @color-a8;
+    background: @brand-highlight;
     
     .close {
-        color: darken(@color-a8, 30%);
-        text-shadow: 0 1px lighten(@color-a8, 20%);
+        color: @gray-base;
     }
 
     .alert-level {
-        color: contrast(#f27132);
-        .rgba (contrast(#f27132), .15);
+        color: @gray-base;
+        .rgba (contrast(@brand-highlight), .15);
         background: @rgba;
     }
 
     .alert-text {
-      color: contrast(#f27132);
-      .rgba (contrast(#f27132), .15);
+      color: @gray-base;
+      .rgba (contrast(@brand-highlight), .15);
     }
 }
 

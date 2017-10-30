@@ -2,10 +2,10 @@
     <span class="ca-gov-icon-favorite"></span>
     <!-- Nav tabs - NOTE: UNIQUE ID IS REQUIRED -->
     <ul id="homeTabsBottom" class="nav nav-tabs responsive" role="tablist">
-        <li class="active"><a href="#homeB" role="tab" data-toggle="tab">Home</a></li>
-        <li><a href="#profileB" role="tab" data-toggle="tab">Profile</a></li>
-        <li><a href="#messagesB" role="tab" data-toggle="tab">Messages</a></li>
-        <li><a href="#settingsB" role="tab" data-toggle="tab">Settings</a></li>
+        <li class="active" role="tab"><a href="#homeB" data-toggle="tab">Home</a></li>
+        <li role="tab"><a href="#profileB" data-toggle="tab">Profile</a></li>
+        <li role="tab"><a href="#messagesB" data-toggle="tab">Messages</a></li>
+        <li role="tab"><a href="#settingsB" data-toggle="tab">Settings</a></li>
     </ul>
     <!-- Tab panes -->
     <div class="tab-content responsive">

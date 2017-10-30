@@ -3,6 +3,10 @@
    /source/less/colorscheme/cs-navigation.less
 ----------------------------------------- */
 
+.navigation-search {
+	border-bottom-color: @color-p1;
+	}
+
 
 //
 // MOBILE CONTROLS
@@ -88,7 +92,7 @@
         //border: 1px solid @sub-nav-link-border;
 		
 		@media (max-width: @screen-xs-max) {
-         border-right:none;
+         border-right:none; // beta 5.0 addition (for accessible menu)
     }
 
         &:hover, &:focus {
@@ -146,10 +150,11 @@
 }
 
 // Accessible menu
+// beta 5.0 addition (for accessible menu)
 @media (min-width: @screen-sm-min) {
 	.nav-item {
 		&::after {
-			background-color: @color-p1;
+			background-color:transparent;
 			}
 	
 	        &:hover::after, &:focus::after {

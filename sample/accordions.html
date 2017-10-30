@@ -4,13 +4,13 @@
 <!--[if IE 8]>    <html class="no-js ie8 oldie" lang="en"> <![endif]-->
 <!--[if IE 9]>    <html class="no-js ie9 oldie" lang="en"> <![endif]-->
 <!--[if (gt IE 9)]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
-<head>
-<!-- 
-California State Template
-Version 5.0
- 
-Based on Twitter Bootstrap
--->
+                         <head>
+                             <!--
+    California State Template
+    Version 5.0
+
+    Based on Twitter Bootstrap
+    -->
 <meta charset="utf-8">
 
 <title>Sample - Accordion List</title>
@@ -20,76 +20,80 @@ Based on Twitter Bootstrap
 <meta name="Keywords" content="California, government" />
 
 <!--#include virtual="/ssi/head-css-js.html" -->
-
 </head>
 
 <body>
-    <header role="banner" id="header" class="global-header fixed">
-        <div id="skip-to-content"><a href="#main-content">Skip to Main Content</a></div>
+<header role="banner" id="header" class="global-header fixed">
+    <div id="skip-to-content"><a href="#main-content">Skip to Main Content</a></div>
 
-        <!-- Include Utility Header -->
-        <!--#include virtual="/ssi/utility-header.html" -->
+    <!-- Include Utility Header -->
+    <!--#include virtual="/ssi/utility-header.html" -->
+    <!-- Settings Bar -->
+    <!--#include virtual="/ssi/settings-bar.html" -->
+    <!-- Include Branding -->
+    <!--#include virtual="/ssi/branding.html" -->
+    <!-- Include Mobile Controls -->
+    <!--#include virtual="/ssi/mobile-controls.html" -->
 
-        <!-- Settings Bar -->
-        <!--#include virtual="/ssi/settings-bar.html" -->
-
-        <!-- Include Branding -->
-        <!--#include virtual="/ssi/branding.html" -->
-
-        <!-- Include Mobile Controls -->
-        <!--#include virtual="/ssi/mobile-controls.html" -->
-
-        <div class="navigation-search">
-            <div id="head-search" class="search-container">
-                <!-- Include Search -->
-                <!--#include virtual="/ssi/search.html" -->
-            </div>
-            <!-- Include Navigation -->
-            <!--#include virtual="/ssi/navigation.html" -->
+    <div class="navigation-search">
+        <div id="head-search" class="search-container">
+            <!-- Include Search -->
+            <!--#include virtual="/ssi/search.html" -->
         </div>
-        <div class="header-decoration"></div>
-    </header>
+        <!-- Include Navigation -->
+        <!--#include virtual="/ssi/navigation.html" -->
 
-<div id="main-content" class="main-content">
-    <div class="section">
-        <main class="main-primary">
-            <ol class="breadcrumb">
-                <li><a href="../index.html">Home</a></li>
-                <li><a href="index.html">Examples</a></li>
-                <li class="active">Accordions</li>
-            </ol>
-            
-            <div class="group">
-                <div class="half">
-                    <h1>Accordion</h1>
-                    <h2>Example:</h2>
-                    <!--#include virtual="/sample/modules/accordion.html" -->
-                </div>
-                 <div class="half">
-                    <h2><label for="sample-accordion">Source Code:</label></h2>
-                    <textarea id="sample-accordion" class="form-control" rows="10" cols="80"><!--#include virtual="/sample/modules/accordion.html" --></textarea>
-                </div> 
-            </div>
-            
-            <div class="group">
-                <div class="half">
-                    <h1>Accordion List</h1>
-                    <p>Accordion lists are commonly used for things like FAQ's where the title exposes the description in an expanding menu fashion. Any of the base <a href="lists.html">list styles</a> can be used in conjunction with the <code> .accordion-list</code> class.</p>
-                    <h2>Example:</h2>
-                    <!--#include virtual="/sample/modules/accordion-list.html" -->
-                </div>
-                 <div class="half">
-                    <h2><label for="sample-accordion-list">Source Code:</label></h2>
-                    <textarea id="sample-accordion-list" class="form-control" rows="10" cols="80"><!--#include virtual="/sample/modules/accordion-list.html" --></textarea>
-                </div> 
-            </div>
-        </main>
+                                 </div>
+                                 <div class="header-decoration"></div>
+                             </header>
+
+                             <div id="main-content" class="main-content">
+                                 <div class="section">
+                                     <main class="main-primary">
+                                         <ol class="breadcrumb">
+                                             <li><a href="../index.html">Home</a></li>
+                                             <li><a href="index.html">Examples</a></li>
+                                             <li class="active">Accordions</li>
+                                         </ol>
+
+                                         <div class="group">
+                                             <div class="half">
+                                                 <h1>Accordion</h1>
+                                                 <h2>Example:</h2>
+                                                 <!--#include virtual="/sample/modules/accordion.html" -->
+                                             </div>
+                                             <div class="half">
+                                                 <h2><label for="sample-accordion">Source Code:</label></h2>
+                                                 <textarea id="sample-accordion" class="form-control" rows="10" cols="80">
+                                                     <!--#include virtual="/sample/modules/accordion.html" -->
+                                                 </textarea>
+                                             </div>
+                                         </div>
+
+                                         <div class="group">
+                                             <div class="half">
+                                                 <h1>Accordion List</h1>
+                                                 <p>Accordion lists are commonly used for things like FAQ's where the title exposes the description in an expanding menu fashion. 
+                                                     Accordion List uses HTML5 roles, some ARIA properties, and IDs for accessibility.</p>
+                                                                     
+                                                 
+                                                 <h2>Example:</h2>
+                                                 <!--#include virtual="/sample/modules/accordion-list.html" -->
+                                             </div>
+                                             <div class="half">
+                                                 <h2><label for="sample-accordion-list">Source Code:</label></h2>
+                                                 <textarea id="sample-accordion-list" class="form-control" rows="10" cols="80"><!--#include virtual="/sample/modules/accordion-list.html" -->
+                                                 </textarea>
+                                             </div>
+                                         </div>
+
+
+            </main>
+        </div>
     </div>
-</div>
 
-<!--#include virtual="/ssi/global-footer.html" -->
+    <!--#include virtual="/ssi/global-footer.html" -->
+    <!--#include virtual="/ssi/scripts.html" -->
 
-<!--#include virtual="/ssi/scripts.html" -->
-
-</body>
+                         </body>
 </html>

@@ -14,17 +14,28 @@
     }
 
     &-understated {
-        background: @gray-lighter;
+        // background: @gray-lighter;
+		background: @color-s1; // beta 5.0 addition
     }
 
     &-overstated {
-        .link-variant(#fff; #fff; none; underline);
-        background: @color-s3;
-        color: contrast(@color-s3);
+		// Overstated is same as primary // beta 5.0 addition
+     
+		.link-variant(@color-s1; darken(@color-s1, 7%); underline; underline);
+        background: @color-p2;
+        color: contrast(@color-p2);
+		.btn-primary {
+		// better-button = color; background; border, hover-color; hover-background; hover-border
+		.better-button(@white-color; @color-p2; contrast(@color-p2); @white-color;  darken(@color-p2, 7%); contrast(@color-p2));
+		}
+		.btn-standout {
+		// better-button = color; background; border, hover-color; hover-background; hover-border
+		.better-button(@white-color; @color-p3; contrast(@color-p3); @white-color;  darken(@color-p3, 7%); contrast(@color-p3));
+		}
     }
 
     &-standout {
-        .link-variant(@color-a2; #fff; none; underline);
+        .link-variant(@color-s3; darken(@color-s3, 7%); none; underline);
         .donut-color-variants(@donut-background: @gray-lighter; @donut-halfmark: @gray-lightest);
         background: @color-p3;
         color: contrast(@color-p3);
@@ -40,7 +51,8 @@
     }
 
     &-impact {
-        .link-variant(@gray-lightest; @color-p1; none; underline);
+		// SAME AS STANDOUT
+        .link-variant(@color-s3; darken(@color-s3, 7%); none; underline);
         .donut-color-variants(@donut-background: @gray-lighter; @donut-halfmark: @gray-lightest);
         background: @color-p3;
         color: contrast(@color-p3);
@@ -53,11 +65,6 @@
 		// better-button = color; background; border, hover-color; hover-background; hover-border
 		.better-button(@white-color; @color-p3; contrast(@color-p3); @white-color;  darken(@color-p3, 7%); contrast(@color-p3));
 		}
-        // Create header mixin
-        h1, h2,h3,h4,h5,h6 {
-            color: @color-s2;
-            font-weight: 900;
-        }
         
         // SECTION THEME BUTTON COLORS
         .btn-default {
@@ -73,7 +80,7 @@
     }
 
     &-primary {
-        .link-variant(@gray-lightest; @color-p1; none; underline);
+        .link-variant(@color-s1; darken(@color-s1, 7%); underline; underline);
         background: @color-p2;
         color: contrast(@color-p2);
 		.btn-primary {
@@ -87,7 +94,7 @@
     }
 
     &-inverted {
-        .link-variant(@gray-lightest; @color-p1; none; underline);
+        .link-variant(@color-s3; darken(@color-s3, 7%); none; underline);
         background: @gray-darker;
         color: #fff;
 		.btn-primary {
@@ -101,7 +108,7 @@
     }
 
     &-danger {
-        .link-variant(@gray-base; #fff; none; underline);
+        .link-variant(#fff; #fff; underline; underline);
         background: @brand-danger;
         color: contrast(@brand-danger);
     }

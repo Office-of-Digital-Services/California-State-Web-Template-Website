@@ -1,4 +1,4 @@
-<!doctype html>
+﻿<!doctype html>
 <!--[if lt IE 7]> <html class="no-js ie6 oldie" lang="en"> <![endif]-->
 <!--[if IE 7]>    <html class="no-js ie7 oldie" lang="en"> <![endif]-->
 <!--[if IE 8]>    <html class="no-js ie8 oldie" lang="en"> <![endif]-->
@@ -108,8 +108,11 @@ Based on Twitter Bootstrap
             <div class="group">
                 <div class="half">
                     <h2>List as Accordion</h2>
-                    <p>Accordion lists can be toggled open and close by clicking the toggle link. Add <code>.accordion-list</code> to a <code>ul</code> to create the accordion list. Add <code>.toggle</code> to the <code>a</code> tag. Finally, wrap the content to be toggled open and closed in a <code>.description</code> div.</p>
-                    <p><strong>NOTE:</strong> You can use <code>.accordion-list</code> in conjunction with any list style provided you add the <code>.toggle</code> link and <code>.description</code> markup.</p>
+
+                    <p>Accordion lists can be toggled open and close by clicking the toggle link. Add id <code>#accordion</code> and class <code>.accordion-list</code> to a <code>ul</code> to create the accordion list. Add <code>.tab</code> to the <code>li</code> tag. Finally, wrap the content to be toggled open and closed in a <code>.panel</code> div. You can use <code>.accordion-list</code> in conjunction with any list style provided.</p>
+                    
+                    <p><span class="label label-info">Note:</span> Accordion List uses HTML5 roles, some ARIA properties, and IDs for accessibility. For best accessibility paractices certain keyboard shortcuts are also implemented.</p>
+                   
                     <!--#include virtual="/sample/modules/accordion-list.html" -->
                 </div>
                  <div class="half">

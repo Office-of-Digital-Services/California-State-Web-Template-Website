@@ -19,15 +19,14 @@
         .options {
             .btn-default {
               // text-color, bg-color, border-color
-             // .button-variant(contrast(@panel-default-header-bg); tint(@panel-default-header-bg, 70%); @panel-default-header-border);
-			 .button-variant(contrast(@panel-default-header-bg); darken(@panel-default-header-bg, 9%); @panel-default-header-border);
-			 
+              .button-variant(contrast(@panel-default-header-bg); tint(@panel-default-header-bg, 70%); @panel-default-header-border);
             }
         }
     }
     
     .panel-body {
         background: @panel-default-body-bg;
+		color: @text-color;
     }
 }
 
@@ -49,14 +48,14 @@
         .options {
             .btn-default {
               // text-color, bg-color, border-color
-              //.button-variant(contrast(tint(@overstated-header-bg, 30%)); tint(@overstated-header-bg, 30%); @overstated-header-border);
-			  .button-variant(contrast(tint(@overstated-header-bg, 30%)); darken(@panel-default-header-bg, 9%); @overstated-header-border);
+              .button-variant(contrast(tint(@overstated-header-bg, 30%)); darken(@overstated-header-bg, 8%); @overstated-header-border); // beta 5.0 addition
             }
         }
     }
     
     .panel-body {
         background: @overstated-body-bg;
+		color: @text-color;
     }
 }
 
@@ -78,14 +77,14 @@
         .options {
             .btn-default {
               // text-color, bg-color, border-color
-             // .button-variant(contrast(@understated-header-bg); tint(@understated-header-bg, 70%); @understated-border);
-			 .button-variant(contrast(@understated-header-bg); darken(@panel-default-header-bg, 9%); @understated-border);
+              .button-variant(contrast(@understated-header-bg); darken(@understated-header-bg, 8%); @understated-border); // beta 5.0 addition
             }
         }
     }
     
     .panel-body {
         background: @understated-body-bg;
+		color: @text-color;
     }
 }
 
@@ -107,14 +106,14 @@
         .options {
             .btn-default {
               // text-color, bg-color, border-color
-              // .button-variant(contrast(tint(@standout-header-bg, 30%)); tint(@standout-header-bg, 30%); darken(@standout-header-bg, 5%));
-			  .button-variant(contrast(tint(@standout-header-bg, 30%)); darken(@panel-default-header-bg, 9%); contrast(@standout-header-bg));
+              .button-variant(contrast(tint(@standout-header-bg, 30%)); darken(@standout-header-bg, 8%); darken(@standout-header-bg, 5%)); // beta 5.0 addition
             }
         }
     }
     
     .panel-body {
         background: @standout-body-bg;
+		color: @text-color;
     }
 }
 
