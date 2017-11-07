@@ -93,7 +93,7 @@ d-block {
 	}
 
 .hidden-up {
-	display: none;
+	opacity: 0;
 	}
 .check-icon-radio {
 	backface-visibility: hidden;
@@ -250,3 +250,13 @@ input[type="radio"]:checked + .color-white--checked,
 input[type="checkbox"]:checked + * .color-white--checked,
 input[type="radio"]:checked + * .color-white--checked {
   color: #fff !important; }
+  
+  
+/* Focusable custom checkboxes and radios for accessibility */
+input[type="checkbox"]:focus + div, input[type="radio"]:focus + div {
+        box-shadow: 0 0 2px 2px @color-s3;
+    }
+input[type="checkbox"]:focus + .btn, input[type="radio"]:focus + .btn {
+        outline:1px dotted @gray-base;
+    }
+
