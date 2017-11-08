@@ -46,5 +46,13 @@ Network Trash Folder
 Temporary Items
 .apdisk
 SyncToy_dc7c780e-a1a5-4cf2-8ef3-b035c84cecbe.dat
-/.vs
+
+
+#add 'node_modules' to .gitignore file
+
+git rm -r --cached node_modules
+git commit -m 'Remove the now ignored directory node_modules'
+git push origin master
 /node_modules
+/.vs
+*.dat

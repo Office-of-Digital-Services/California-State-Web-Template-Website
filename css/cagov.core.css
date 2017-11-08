@@ -1,4 +1,4 @@
-/* cagov-template-v5 - v0.0.1 - Oct-30-2017 */
+/* cagov-template-v5 - v0.0.1 - Nov-07-2017 */
 /* STYLES COMPILED FROM SOURCE (LESS) DO NOT MODIFY */
 /* -----------------------------------------
    NORMALIZE - /source/less/bootstrap/normalize.less
@@ -9313,6 +9313,11 @@ body {
   padding: 3px 15px;
   border-top: 0;
 }
+.tab-group .nav-tabs li > a,
+.tab-group .nav-tabs li > a:hover,
+.tab-group .nav-tabs li > a:focus {
+  border-top: none;
+}
 .tab-group .tab-pane {
   padding: 15px;
 }
@@ -10608,7 +10613,7 @@ d-block {
   cursor: pointer;
 }
 .hidden-up {
-  display: none;
+  opacity: 0;
 }
 .check-icon-radio {
   backface-visibility: hidden;
@@ -10753,6 +10758,15 @@ input[type="radio"]:checked + .color-white--checked,
 input[type="checkbox"]:checked + * .color-white--checked,
 input[type="radio"]:checked + * .color-white--checked {
   color: #fff !important;
+}
+/* Focusable custom checkboxes and radios for accessibility */
+input[type="checkbox"]:focus + div,
+input[type="radio"]:focus + div {
+  box-shadow: 0 0 2px 2px #50aee4;
+}
+input[type="checkbox"]:focus + .btn,
+input[type="radio"]:focus + .btn {
+  outline: 1px dotted #000;
 }
 /* -----------------------------------------
    PUBLICATIONS /source/less/cagov/publications.less
@@ -11853,7 +11867,13 @@ ul.list-overstated a {
 }
 .list-standout {
   padding: 0;
-  padding-left: 0.2em;
+  padding-left: 1.5em;
+}
+.list-standout ul li:before {
+  content: none;
+}
+.list-standout ul.list-standout li:before {
+  content: "\35";
 }
 .list-standout li {
   padding-left: 1.5em;
@@ -12362,7 +12382,18 @@ fieldset[disabled] a.btn-more {
   right: -10px;
   color: #fff;
   text-shadow: none;
-  opacity: .5;
+  opacity: .8;
+  font-size: 2.5em;
+}
+.site-settings button.close:hover {
+  color: #FDB81E;
+}
+.site-settings button.close:focus {
+  color: #FDB81E;
+}
+.site-settings button.close span {
+  position: relative;
+  top: -10px;
 }
 /* -----------------------------------------
    LOCATION SETTINGS
