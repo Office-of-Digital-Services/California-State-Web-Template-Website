@@ -47,7 +47,8 @@
     list-style:none;
     margin:0;
     padding: 0;
-
+	-webkit-transition: .3s;   // beta 5.0 addition (adds smoother transistion on scroll for fixed headers)
+	transition: all .3s;   // beta 5.0 addition
      .nav-item { // equivalent to .nav-item
           position: relative;
       }
@@ -79,7 +80,7 @@
 
 @media (max-width: 768px) {		
 .second-level-nav > li {		
-    border-right: 0px; 	//  _cs-shame.less addition	
+    border-right: 0px; 	
 }		
 }	
 

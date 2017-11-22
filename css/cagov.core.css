@@ -1,4 +1,4 @@
-/* cagov-template-v5 - v0.0.1 - Nov-07-2017 */
+/* cagov-template-v5 - v0.0.1 - Nov-22-2017 */
 /* STYLES COMPILED FROM SOURCE (LESS) DO NOT MODIFY */
 /* -----------------------------------------
    NORMALIZE - /source/less/bootstrap/normalize.less
@@ -5589,8 +5589,6 @@ h6,
   padding-left: 15px;
   padding-right: 15px;
   position: relative;
-  -webkit-transition: all 0.3s;
-  transition: all 0.3s;
 }
 @media (min-width: 768px) {
   .branding {
@@ -5619,8 +5617,6 @@ h6,
 }
 .branding .header-organization-banner img {
   max-height: 60px;
-  -webkit-transition: all 0.3s;
-  transition: all 0.3s;
   width: 100%;
 }
 @media (max-width: 992px) and (min-width: 768px) {
@@ -5793,8 +5789,8 @@ h6,
 .fixed + div :target:before {
   display: block;
   content: "";
-  height: 110px;
-  margin: -110px 0 0;
+  height: 140px;
+  margin: -140px 0 0;
 }
 @media (min-width: 768px) {
   .fixed.compact .main-navigation {
@@ -6468,7 +6464,7 @@ GOOGLE CUSTOM SEARCH CUSTOMIZATION OVERRIDES beta 5.0 addition
 .gsc-control-searchbox-only div.gsc-clear-button {
   padding-left: 0 !important;
   display: block !important;
-  background-image: unset !important;
+  background-image: none !important;
   margin-left: 0;
   margin-right: 0;
   width: 40px;
@@ -6633,6 +6629,8 @@ GOOGLE CUSTOM SEARCH CUSTOMIZATION OVERRIDES beta 5.0 addition
   list-style: none;
   margin: 0;
   padding: 0;
+  -webkit-transition: .3s;
+  transition: all .3s;
 }
 .top-level-nav .nav-item {
   position: relative;
@@ -7180,10 +7178,6 @@ a.second-level-link [class^="ca-gov-icon-"] {
   break-inside: avoid;
 }
 /* Accessible Menu */
-.main-navigation {
-  -webkit-transition: all .5s;
-  transition: all .5s;
-}
 .nav-item {
   display: inline-block;
 }
