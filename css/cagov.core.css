@@ -5577,13 +5577,13 @@ h6,
     padding-right: 150px;
   }
 }
-.branding .header-cagov-logo img {
-  top: -36px;
+.header-cagov-logo img {
+  top: 1px;
   height: 32px;
   position: absolute;
-  margin-left: 7px;
+  left: 27px;
 }
-.branding .header-cagov-logo a:focus img {
+.header-cagov-logo a:focus img {
   outline: 1px dotted black;
 }
 .mobile-controls toggle-menu {
@@ -6851,13 +6851,20 @@ GOOGLE CUSTOM SEARCH CUSTOMIZATION OVERRIDES beta 5.0 addition
     right: 0;
   }
   /* Dynamic element contained in .nav-arrow-container */
-  .nav-arrow-down {
+  .megadropdown .nav-arrow-down {
     position: absolute;
     top: -5px;
     left: 50%;
     height: 5px;
     width: 100px;
     margin-left: -65px;
+  }
+  .dropdown .nav-arrow-down {
+    height: 5px;
+    left: 0;
+    margin-left: 0;
+    position: absolute;
+    top: -5px;
   }
 }
 .sub-nav {
@@ -11743,7 +11750,7 @@ ul.list-overstated a {
 }
 .list-overstated li,
 .list-understated li {
-  background: url("../images/template2014/bullet-blue-disc.png") no-repeat 0 3px transparent;
+  background: url("../images/template2014/bullet-blue-disc.png") no-repeat 0 4px transparent;
   padding: 0 0 14px 18px;
   /* Rotates disc arrow down when used with accordion */
 }
@@ -13367,5 +13374,19 @@ fieldset[disabled] .mapthat-facet-item.active {
   width: 250px;
 }
 .wf-active body {
+  font-family: "Source Sans Pro", sans-serif;
+}
+.wf-active h1,
+.wf-active h2,
+.wf-active h3,
+.wf-active h4,
+.wf-active h5,
+.wf-active h6,
+.wf-active .h1,
+.wf-active .h2,
+.wf-active .h3,
+.wf-active .h4,
+.wf-active .h5,
+.wf-active .h6 {
   font-family: "Source Sans Pro", sans-serif;
 }
