@@ -11770,16 +11770,17 @@ ul.list-overstated a {
 }
 .list-standout li {
   padding-left: 1.5em;
+  position: relative;
 }
 .list-standout li:before {
   content: "\35";
   font-family: "CaGov";
   width: 1.5em;
-  margin-left: -1.5em;
-  vertical-align: sub;
   font-size: 1.5em;
   font-weight: 900;
-  display: inline-block;
+  position: absolute;
+  left: 0;
+  top: -.22em;
 }
 .list-standout li.open:before {
   content: "\33";
