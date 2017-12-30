@@ -72,16 +72,16 @@ Based on Twitter Bootstrap
                     
                      <div class="tab-group">
                         <ul id="sourceCode" class="nav nav-tabs" role="tablist">
-                            <li class="active"><a href="#panelhtml" role="tab" data-toggle="tab">HTML Markup</a></li>
-                            <li><a href="#panelmicrodata" role="tab" data-toggle="tab">Microdata</a></li>
+                            <li class="active"><a href="#panelhtml" role="tab" data-toggle="tab"><label for="within-panel-html">HTML Markup</label></a></li>
+                            <li><a href="#panelmicrodata" role="tab" data-toggle="tab"><label for="within-panel-microdata">Microdata</label></a></li>
                         </ul>
                         <!-- Tab panes -->
                         <div class="tab-content responsive">
                             <div class="tab-pane active" id="panelhtml">
-                                 <textarea class="form-control" rows="10" cols="80"><!--#include virtual="/sample/modules/contact-panel.html" --></textarea>
+                                 <textarea id="within-panel-html" class="form-control" rows="10" cols="80"><!--#include virtual="/sample/modules/contact-panel.html" --></textarea>
                             </div>
                             <div class="tab-pane" id="panelmicrodata">
-                                 <textarea class="form-control" rows="10" cols="80"><!--#include virtual="/sample/modules/contact-panel-schema.html" --></textarea>
+                                 <textarea id="within-panel-microdata" class="form-control" rows="10" cols="80"><!--#include virtual="/sample/modules/contact-panel-schema.html" --></textarea>
                             </div>
                         </div>
                     </div>
@@ -98,17 +98,17 @@ Based on Twitter Bootstrap
                  <div class="half">
                     <h2>Source Code:</h2>
                      <div class="tab-group">
-                        <ul id="sourceCode" class="nav nav-tabs" role="tablist">
-                            <li class="active"><a href="#html" role="tab" data-toggle="tab">HTML Markup</a></li>
-                            <li><a href="#microdata" role="tab" data-toggle="tab">Microdata</a></li>
+                        <ul id="sourceCode2" class="nav nav-tabs" role="tablist">
+                            <li class="active"><a href="#html" role="tab" data-toggle="tab"><label for="without-panel-html">HTML Markup</label></a></li>
+                            <li><a href="#microdata" role="tab" data-toggle="tab"><label for="without-panel-microdata">Microdata</label></a></li>
                         </ul>
                         <!-- Tab panes -->
                         <div class="tab-content responsive">
                             <div class="tab-pane active" id="html">
-                                 <textarea class="form-control" rows="10" cols="80"><!--#include virtual="/sample/modules/contact.html" --></textarea>
+                                 <textarea id="without-panel-html" class="form-control" rows="10" cols="80"><!--#include virtual="/sample/modules/contact.html" --></textarea>
                             </div>
                             <div class="tab-pane" id="microdata">
-                                 <textarea class="form-control" rows="10" cols="80"><!--#include virtual="/sample/modules/contact-schema.html" --></textarea>
+                                 <textarea id="without-panel-microdata" class="form-control" rows="10" cols="80"><!--#include virtual="/sample/modules/contact-schema.html" --></textarea>
                             </div>
                         </div>
                     </div>

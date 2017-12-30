@@ -12,7 +12,6 @@ var jssrc = [
 
   // TBOOTSTRAP ACCESSIBILITY PLUGIN
   'source/js/bootstrap-accessibility-plugin/functions.js',
-  'source/js/bootstrap-accessibility-plugin/collapse.js',
   'source/js/bootstrap-accessibility-plugin/dropdown.js',
   'source/js/bootstrap-accessibility-plugin/tab.js',
 
@@ -51,8 +50,7 @@ var jssrc = [
   'source/js/cagov/more.js',
   'source/js/cagov/high-contrast.js',
   'source/js/cagov/geo.js',
-  'source/js/cagov/ask-group.js',
-  // 'source/js/cagov/clipboard.js'
+  'source/js/cagov/ask-group.js'
 ];
 
 var csssrc = {

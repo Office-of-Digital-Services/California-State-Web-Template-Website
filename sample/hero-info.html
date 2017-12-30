@@ -68,7 +68,7 @@ Based on Twitter Bootstrap
             </ol>
         
                     <h1>Hero Info</h1>
-                   <p>Here Info is a large section that presents an overview of the site's most important content, prominently placed on a web page, generally in the front and center.</p>
+                   <p>Hero Info is a large section that presents an overview of the site's most important content, prominently placed on a web page, generally in the front and center.</p>
                     
                     <h2>Example:</h2>
             <hr />

@@ -97,39 +97,23 @@ Based on Twitter Bootstrap
 
 
 <style>
-/*sub nav icon*/
 
-.check {
-    position: relative;
-    cursor: pointer;
-    border:1px solid #ccc;
-    min-width:100px;
-}
+    .branding .header-organization-banner {
+        transition:all .3s;
+    }
 
-/* primary Colors */
-input[type="checkbox"]:checked + .bg-primary--checked,
-input[type="radio"]:checked + .bg-primary--checked,
-input[type="checkbox"]:checked + * .bg-primary--checked,
-input[type="radio"]:checked + * .bg-primary--checked {
-  background-color: #72c02c !important; }
+    .main-navigation ul {
+        transition: all .3s;
 
-/* highlight Colors */
-input[type="checkbox"]:checked + .bg-highlight--checked,
-input[type="radio"]:checked + .bg-highlight--checked,
-input[type="checkbox"]:checked + * .bg-highlight--checked,
-input[type="radio"]:checked + * .bg-highlight--checked {
-  background-color: #f8cc00 !important; }
+    }
 
-/* White Colors */
-input[type="checkbox"]:checked + .color-white--checked,
-input[type="radio"]:checked + .color-white--checked,
-input[type="checkbox"]:checked + * .color-white--checked,
-input[type="radio"]:checked + * .color-white--checked {
-  color: #fff !important; }
 
-.color-white--checked.checked,
-.checked .color-white--checked {
-  color: #fff !important; }
+/*.jumptarget::before {
+  content:"";
+  display:block !important;
+  height:170px !important;
+  margin:-170px 0 0 !important; 
+}*/
 
 </style>
 </head>
@@ -168,7 +152,25 @@ input[type="radio"]:checked + * .color-white--checked {
     </div>
     
     	<!-- Settings Bar -->	
-		
+    <div class="site-settings section section-standout collapse collapsed" role="alert" id="siteSettings">
+        <div class="container  p-y">
+            <button type="button" class="close" data-toggle="collapse" data-target="#siteSettings" aria-expanded="false" aria-controls="siteSettings" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+
+            <div class="btn-group btn-group-justified-sm" role="group" aria-label="contrastMode">
+                <div class="btn-group"><button type="button" class="btn btn-standout disableHighContrastMode">Default</button></div>
+                <div class="btn-group"><button type="button" class="btn btn-standout enableHighContrastMode">High Contrast</button></div>
+            </div>
+
+            <div class="btn-group" role="group" aria-label="textSizeMode">
+                <div class="btn-group"><button type="button" class="btn btn-standout resetTextSize">Reset</button></div>
+                <div class="btn-group"><button type="button" class="btn btn-standout increaseTextSize"><span class="hidden-xs">Increase Font Size</span><span class="visible-xs">Font <small class="ca-gov-icon-plus-line"></small></span></button></div>
+                <div class="btn-group"><button type="button" class="btn btn-standout decreaseTextSize"><span class="hidden-xs">Decrease Font Size</span><span class="visible-xs">Font <small class="ca-gov-icon-minus-line"></small></span></button></div>
+            </div>
+
+            <!-- <button type="button" class="btn btn-primary clipboard-activeonhover">Save links on hover</button> -->
+
+        </div>
+    </div>
 
 		<!-- Include Branding -->
     <!-- header branding -->
@@ -373,13 +375,6 @@ input[type="radio"]:checked + * .color-white--checked {
         </nav>
 
 
-
-
-
-
-
-
-
     </div>
     <div class="header-decoration"></div>
 </header>
@@ -393,53 +388,71 @@ input[type="radio"]:checked + * .color-white--checked {
                 <li class="active">Megamenu (State Template v4)</li>
             </ol>
             
-        	<h1>State Template v4 Original Megamenu</h1>
-            <p>This megamenu has similar look and feel as the original State Template v4 megamenu. The functionality in both template v5 and template v4 is the same: the megamenu displays dropdown panels for sub navigation when the user hovers over a primary link. This style of menu can be set by including the <code>.megadropdown</code> as well as <code>.original</code> classes in the <code>&lt;nav&gt;</code> element.</p>
-            <p><strong>Example:</strong> <br><code>&lt;nav id="navigation" class="main-navigation megadropdown original"&gt;</code> .</p> 
-            <p>In the template distribution this markup can be found in <code>/ssi/navigation.html</code>.
-            
-          
-            <h2>Sub Navigation Images</h2>
-             <p>The sub navigation panels in the megamenu include the ability to place images next to the links. 
-            Image are included by placing a <code>&lt;div&gt;</code> with class <code>.sub-nav-decoration</code> 
-            as the last element in the <code>&lt;div&gt;</code> with class <code>.sub-nav</code>.</p>
+            <!-- Page Title-->
+            <h1 class="page-title et_pb_row">Anchor Demo</h1>
 
-            <p>The image is defined as a background image in the <code>style</code> attribute of the <code>.sub-nav-decoration</code> element. 
-            The image will automatically be scaled and cropped to fit the provided area.</p>
 
-            <p>The image size and position is determinde by an additional 
-            class added to the <code>&lt;div&gt;</code> with class <code>.sub-nav</code>. These classes are as follows: </p>
 
-            <ul>
-                <li><code>.with-image-sm-right</code>: Places the image on the right, occupying one third of the sub navigation panel width.</li>
-                <li><code>.with-image-md-right</code>: Places the image on the right, occupying half of the panel. l</li>
-                <li><code>.with-image-sm-left</code>: Places the image on the left, occupying one third of the panel.</li>
-                <li><code>.with-image-md-left</code>: Places the inmage on the left, occupying half of the panel.</li>
-            </ul>
 
-            <p>
-                <strong>Example:</strong> <br>
-            </p>
+            <div class="jumptarget" id="List">
 
-            <pre>&lt;li class="nav-item"&gt;
-    &lt;a href="/" class="first-level-link"&gt;Link 3&lt;/a&gt;
-            <strong>&lt;div class="sub-nav with-image-sm-right"&gt;</strong>
-        &lt;ul class="second-level-nav"&gt;
-            &lt;li&gt;
-                …links
-            &lt;/li&gt;
-        &lt;/ul&gt;
-            <strong>&lt;div class="sub-nav-decoration" style="background:url('/sample/images/sample-nav-image.jpg')"&gt;&lt;/div&gt;</strong>
-     &lt;/div&gt;
-&lt;/li&gt;
-</pre>
-            
-<h2>More Navigation Samples</h2>
-	<ul>
-        <li><a href="navigation-single.html">Single Level Navigation</a></li>
-        <li><a href="navigation-dropdown.html">Dropdown Navigation</a></li>	
-        <li><a href="navigation-megamenu.html">Megamenu</a></li>
-     </ul>
+                <p><a href="#Overview">Overview of the California Regulatory Notice Register</a></p>
+                <p><a href="#Information">What type of information is in a Notice of Proposed Action?</a></p>
+                <p><a href="#Schedule">Notice Publication&nbsp;Schedule&nbsp;and Deadlines</a></p>
+                <p><a href="#Index">Notice Register Index</a></p>
+                <p><a href="#Subscribe">How to Subscribe to the Weekly Hard Copy Notice Register</a></p>
+
+            </div>
+                      
+
+            <div class="et_pb_text_inner"  id="Overview">
+
+                <p><strong>Overview of the California Regulatory Notice Register</strong></p>
+                <p>The California Regulatory Notice Register contains notices of proposed regulatory actions by state regulatory agencies to adopt, amend, or repeal regulations contained in the California Code of Regulations. A state agency must complete its rulemaking and submit the rulemaking file to OAL within one year of the date of publication of a Notice of Proposed Action (“Notice”) in the Notice Register. (Government Code Section 11346.4(b)).&nbsp; OAL provides online access to&nbsp;current and past issues of the&nbsp;<a href="http://odwpi.org/anchor-demo/California_Regulatory_Notice_Online/"><u>California Regulatory Notice Register online.</u></a></p>
+                <p><a href="#List">Back To List</a></p>
+
+            </div>
+                       
+
+            <div id="Information">
+
+                <p dir="ltr"><strong>What type of information is in a Notice of Proposed Action?</strong></p>
+                <p dir="ltr">The Notice of Proposed Action contains a variety of information about the nature of the proposed regulatory changes including various findings, determinations, statutory authority and the law(s) being implemented. The Notice of Proposed Action also contains procedural information, such as deadlines for submitting comments, scheduling of hearings (if any), and where copies of the Express Terms, Initial Statement of Reasons, and any other supporting information can be obtained (see discussion below). For non-major regulations, the results of the Economic Impact Assessment will be included in the Notice of Proposed Action. If the rulemaking is a major regulation, any comments provided by the Department of Finance, along with the agency’s responses, will be included in the Notice of Proposed Action.</p>
+                <p dir="ltr"><a name="Information"></a><a href="#footer">Bottom of page</a></p>
+            </div>
+                        
+                      
+            <div id="Schedule">
+                <div class="et_pb_ca_panel et_pb_module  et_pb_ca_panel_0 panel panel-standout">
+                    <div class="panel-heading"><h2><span class="ca-gov-icon-pushpin"></span> Notice Publication Schedule and Deadlines</h2></div>
+                    <div class="panel-body">
+                        <p>OAL publishes the Notice Register every Friday. To be published, a Notice must be received by OAL no later than 10 calendar days before the publication date. Section 5, Title 1, California Code of Regulations describes what an agency must submit with its Notice.</p>
+                        <p>The Notice for a rulemaking must be published at least 45 calendar days before the close of the public comment period and public hearing, if a hearing is scheduled (Government Code section 11346.4(a). The following is the Notice Register Publication Schedule which identifies the required deadline date for OAL to receive the Notice for publication in order to meet the desired date for the close of the public comment period and for the public hearing, if a hearing is scheduled:</p>
+                        <p><u><a href="https://www.oal.ca.gov/wp-content/uploads/sites/28/2017/05/NR-Schedule-2017-FINAL.pdf" onmousedown="_gaq.push([&#39;_trackEvent&#39;, &#39;Downloads&#39;, &#39;pdf&#39;, &#39;/wp-content/uploads/sites/28/2017/05/nr-schedule-2017-final.pdf&#39;, 0, 0]); _gaq.push([&#39;b._trackEvent&#39;, &#39;Downloads&#39;, &#39;pdf&#39;, &#39;/wp-content/uploads/sites/28/2017/05/nr-schedule-2017-final.pdf&#39;, 0, 0]);">2017 California Regulatory Notice Register Publication Schedule</a></u></p>
+                    </div>
+                </div> <!-- .et_pb_panel -->
+
+            </div>
+
+
+            <div class="et_pb_text_inner" id="Index">
+
+                <p><strong>Notice Register Index</strong></p>
+                <p>The&nbsp;<u><a href="http://oal.ca.gov/wp-content/uploads/sites/28/2016/08/NRI-09-18-2017.pdf" target="_blank" rel="noopener noreferrer" onmousedown="_gaq.push([&#39;_trackEvent&#39;, &#39;Downloads&#39;, &#39;pdf&#39;, &#39;/wp-content/uploads/sites/28/2016/08/nri-09-18-2017.pdf&#39;, 0, 0]); _gaq.push([&#39;b._trackEvent&#39;, &#39;Downloads&#39;, &#39;pdf&#39;, &#39;/wp-content/uploads/sites/28/2016/08/nri-09-18-2017.pdf&#39;, 0, 0]);">Notice Register Index</a></u>&nbsp;covers the past twelve months of notices&nbsp;of proposed actions published by state agencies and is sorted alphabetically&nbsp;by agency name. You can find the text of a notice of proposed action&nbsp;in the California Regulatory Notice Register, using the publication date or register number to locate the California Regulatory Notice Register in which that notice was published.</p>
+                <p><a href="#skip-to-content">Back to Top</a></p>
+
+            </div>
+
+
+            <div class="et_pb_text_inner" id="Subscribe">
+
+                <p><strong>How to Subscribe to the Weekly Hard Copy Notice Register</strong></p>
+                <p>An annual subscription to the California Regulatory Notice Register is available for purchase online from <a href="http://www.barclaysccr.com/" onmousedown="_gaq.push([&#39;_trackEvent&#39;, &#39;Outbound Links&#39;, &#39;Click&#39;, &#39;barclaysccr.com/&#39;, 0, 0]); _gaq.push([&#39;b._trackEvent&#39;, &#39;Outbound Links&#39;, &#39;Click&#39;, &#39;barclaysccr.com/&#39;, 0, 0]);"><u>Barclays</u></a>. You may also place an order by telephone at (800) 888-3600.</p>
+
+            </div>
+
+
+
 
 </main>
         
@@ -502,7 +515,21 @@ input[type="radio"]:checked + * .color-white--checked {
 
 
     <script src="../js/cagov.core.js"></script>
- 
+    <script>
 
+        window.et_pb_smooth_scroll=function($target,$top_section,speed,easing){
+            var $window_width=$(window).width();
+            $("header").hasClass("fixed")&&$window_width>768?$menu_offset=$("#header").outerHeight()-1:$menu_offset=-1,
+            $("#Information").length&&$window_width>600&&($menu_offset+=$("#wpadminbar").outerHeight()),
+            $scroll_position=$top_section?0:$target.offset().top-$menu_offset,
+            void 0===easing&&(easing="swing");
+            if($scroll_position<220){ // scrollDistanceToMakeCompactHeader from cagov.core.js
+                $scroll_position-=36; // Height difference between normal and compact header
+            }
+            $("html, body").animate({scrollTop:$scroll_position},speed,easing);
+        },
+
+
+    </script>
 </body>
 </html>
