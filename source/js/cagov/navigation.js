@@ -516,9 +516,9 @@ $(document).ready(function () {
                         event.stopPropagation();
                         this.justFocused = false;
                     } else if (isTouch) {
-                        event.preventDefault();
-                        event.stopPropagation();
-                        _togglePanel.call(this, event, target.hasClass(this.settings.openClass));
+                        // event.preventDefault();
+                        // event.stopPropagation();
+                        // _togglePanel.call(this, event, target.hasClass(this.settings.openClass));
                     }
                 }
             }

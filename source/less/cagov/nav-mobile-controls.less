@@ -16,7 +16,7 @@
 	top: 0;
 	width: 100%;
     height:100%;
-	padding-right: 70px;	// beta 5.0 addition
+	padding-right: 0;	// IOS fix 5.0 addition
     
     .ca-gov-icon-menu-toggle-open, .ca-gov-icon-menu-toggle-closed { // Dynamic elements included in toggle-sub-nav 
 		padding-left:1em;
@@ -25,9 +25,17 @@
 	}
     
     .toggle-menu {
-		position: absolute;                             //manually position menu toggle on right
-		left: auto;	 // beta 5.0 addition
-		right: 10px; 	 // beta 5.0 addition
+		padding:0;
+		width:52px;
+	}
+	.toggle-search {
+		padding:0;
+		width:52px;
+		border: none;
+    	background: none;
+		&:focus {
+			outline: dotted 1px #000;
+			}
 	}
 }
 
@@ -47,8 +55,18 @@
 		right: 0;
         .font-size(1.5);
         line-height:55px;
-        width:60px;
+        width:80px;
         text-align:center;
         cursor: pointer;
+		padding-left: 7px;
+		border-left: 1px solid @color-s1;
 	}
 }
+
+// IOS Icons FIX
+.main-nav-icons {
+	width:130px;
+    height:70px;
+    position:relative;
+    z-index:1;
+	}

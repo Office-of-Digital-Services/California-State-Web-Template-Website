@@ -1,4 +1,4 @@
-/* cagov-template-v5 - v0.0.1 - Nov-22-2017 */
+/* cagov-template-v5 - v0.0.1 - Jan-09-2018 */
 /* STYLES COMPILED FROM SOURCE (LESS) DO NOT MODIFY */
 /* -----------------------------------------
    NORMALIZE - /source/less/bootstrap/normalize.less
@@ -7335,7 +7335,7 @@ a.second-level-link [class^="ca-gov-icon-"] {
   top: 0;
   width: 100%;
   height: 100%;
-  padding-right: 70px;
+  padding-right: 0;
 }
 .mobile-controls .ca-gov-icon-menu-toggle-open,
 .mobile-controls .ca-gov-icon-menu-toggle-closed {
@@ -7344,9 +7344,17 @@ a.second-level-link [class^="ca-gov-icon-"] {
   line-height: 44px;
 }
 .mobile-controls .toggle-menu {
-  position: absolute;
-  left: auto;
-  right: 10px;
+  padding: 0;
+  width: 52px;
+}
+.mobile-controls .toggle-search {
+  padding: 0;
+  width: 52px;
+  border: none;
+  background: none;
+}
+.mobile-controls .toggle-search:focus {
+  outline: dotted 1px #000;
 }
 .main-navigation .mobile-controls {
   text-align: left;
@@ -7359,9 +7367,17 @@ a.second-level-link [class^="ca-gov-icon-"] {
   font-size: 24px;
   font-size: 1.5rem;
   line-height: 55px;
-  width: 60px;
+  width: 80px;
   text-align: center;
   cursor: pointer;
+  padding-left: 7px;
+  border-left: 1px solid #E1F2F7;
+}
+.main-nav-icons {
+  width: 130px;
+  height: 70px;
+  position: relative;
+  z-index: 1;
 }
 /* -----------------------------------------
    TOP NAVIGATION
