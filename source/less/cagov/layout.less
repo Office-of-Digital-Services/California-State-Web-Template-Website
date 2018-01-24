@@ -157,4 +157,15 @@
       -ms-transform: translateY(-50%);
           transform: translateY(-50%);
   -webkit-backface-visibility: hidden; }
+  
+// Media print .main-content fix (used if gage has .ask-group section)
+  @media print {
+  .print-p-t {
+    padding-top:136px !important;
+  }
+  .global-header.fixed {
+	position:absolute !important;
+	top: 0 !important;
+   }
+}
 

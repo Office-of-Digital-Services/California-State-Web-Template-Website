@@ -13965,7 +13965,7 @@ $(document).ready(function () {
 			
 		
 		 	} if ($(".ask-group").length > 0) {
-				
+			$mainContent.addClass('print-p-t'); // Media print .main-content fix	
 			$mainContent.css({
             'padding-top': 0
             })

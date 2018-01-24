@@ -1,2 +1,2 @@
-<div class="header-primary-banner" style="background-image: url('/sample/images/primary-banner.jpg');">           
+<div class="header-primary-banner hidden-print" style="background-image: url('/sample/images/primary-banner.jpg');">           
 </div>

@@ -11,7 +11,7 @@ $(document).ready(function () {
     var askBarPadding = 10;
     // set up variables here for each maintenance in the future.
     var $header = $('header');
-    var $headerImage = $('.header-single-banner' );
+    var $headerImage = $('.header-single-banner');
 
     var $exploreMore = $('.explore-invite');
     var $globalHeader = $('.global-header');
@@ -30,7 +30,7 @@ $(document).ready(function () {
     var hideDistance = calcInputDifference();
 
     setAskBarTop();
-    $headSearch.bind("transitionend webkitTransitionEnd oTransitionEnd MSTransitionEnd", function(){ setAskBarTop(); });
+    $headSearch.bind("transitionend webkitTransitionEnd oTransitionEnd MSTransitionEnd", function () { setAskBarTop(); });
     function setAskBarTop() {
         window.setTimeout(function () {
             if ($headSearch.hasClass('active') || !$globalHeader.hasClass('fixed')) {
@@ -126,7 +126,7 @@ $(document).ready(function () {
             } else {
                 removeFixed();
             }
-        setAskBarTop();
+            setAskBarTop();
         });
     }
 
@@ -272,38 +272,38 @@ $(document).ready(function () {
             $headerImage.css({
                 height: height + headerHeight + leeway
             });
-// take into account the fixed header -----------------------------------------------------v5 FIX---------------------------------
-       	 	
-			}  else {
+            // take into account the fixed header -----------------------------------------------------v5 FIX---------------------------------
+
+        } else {
             // no header image, which means our main content needs to
-		  						
-			$mainContent.css({
+
+            $mainContent.css({
                 'padding-top': Math.max(headerHeight, 136)
-            })		
-			
-		
-		 	} if ($(".ask-group").length > 0) {
-				
-			$mainContent.css({
-            'padding-top': 0
             })
-			
-			 $('.header-slideshow-banner, .header-primary-banner').css({
-		     'margin-top': 136
-			 
-			 });
-													
-							
+
+
+        } if ($(".ask-group").length > 0) {
+            $mainContent.addClass('print-p-t'); // Media print .main-content fix	
+            $mainContent.css({
+                'padding-top': 0
+            })
+
+            $('.header-slideshow-banner, .header-primary-banner').css({
+                'margin-top': 136
+
+            });
+
+
         }
     }
- // take into account the fixed header -----------------------------------------------------v5 FIX---------------------------------
- 
- 
+    // take into account the fixed header -----------------------------------------------------v5 FIX---------------------------------
+
+
     // remove all inline styles from setting the fixed header
     function removeFixed() {
         $header.removeClass('fixed');
-        $headerImage.css({'top': '', 'margin-bottom': ''});
-        $mainContent.css({'padding-top': ''});
+        $headerImage.css({ 'top': '', 'margin-bottom': '' });
+        $mainContent.css({ 'padding-top': '' });
         $askGroupBar.css('top', '')
     }
 

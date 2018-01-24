@@ -1,4 +1,4 @@
-<div class="header-slideshow-banner">
+<div class="header-slideshow-banner hidden-print">
 	<div id="primary-carousel" class="carousel carousel-banner">
         <div class="slide" style="background-image: url('/sample/images/background_1.jpg');">
             <a href="/">

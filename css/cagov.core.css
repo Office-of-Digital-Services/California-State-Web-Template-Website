@@ -1,4 +1,4 @@
-/* cagov-template-v5 - v0.0.1 - Jan-09-2018 */
+/* cagov-template-v5 - v0.0.1 - Jan-24-2018 */
 /* STYLES COMPILED FROM SOURCE (LESS) DO NOT MODIFY */
 /* -----------------------------------------
    NORMALIZE - /source/less/bootstrap/normalize.less
@@ -5440,6 +5440,15 @@ h6,
   -ms-transform: translateY(-50%);
   transform: translateY(-50%);
   -webkit-backface-visibility: hidden;
+}
+@media print {
+  .print-p-t {
+    padding-top: 136px !important;
+  }
+  .global-header.fixed {
+    position: absolute !important;
+    top: 0 !important;
+  }
 }
 /* -----------------------------------------
    GRID -  /source/less/cagov/grid.less

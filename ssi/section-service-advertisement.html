@@ -1,4 +1,4 @@
-<div class="carousel owl-carousel carousel-content">
+<div class="carousel owl-carousel carousel-content hidden-print">
     <div class="item backdrop" style="background-image: url('/sample/images/gallery/orangecounty-big.jpg');">
         <div class="content-container">
             <div class="content">
