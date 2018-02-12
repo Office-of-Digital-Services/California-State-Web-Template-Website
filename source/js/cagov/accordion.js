@@ -9,7 +9,7 @@ $(document).ready(function () {
     var descriptionDefault = $('.accordion-list').find('.description').hide().attr('aria-hidden', 'true'); // Hide the descriptions by default
     $('.accordion-list .toggle').attr('tabindex', '0').attr('aria-expanded', 'false'); // Add tabindex to toggle links and aria support
 
-    $(".accordion-list .toggle").click(function (e) {
+    $(".accordion-list .toggle").on("click", function (e) {
         var accdDesc = $(this).next(".description");
 
         if (accdDesc.is(":visible")) {
@@ -168,7 +168,7 @@ tabpanel.prototype.switchTabs = function ($curTab, $newTab) {
     $newTab.attr('tabindex', '0');
 
     // give the new tab focus 
-    $newTab.focus();
+    $newTab.trigger("focus");
 
 } // end switchTabs() 
 
@@ -219,27 +219,27 @@ tabpanel.prototype.bindHandlers = function () {
     // Bind handlers for the tabs / accordian headers 
 
     // bind a tab keydown handler 
-    this.$tabs.keydown(function (e) {
+    this.$tabs.on("keydown", function (e) {
         return thisObj.handleTabKeyDown($(this), e);
     });
 
     // bind a tab keypress handler 
-    this.$tabs.keypress(function (e) {
+    this.$tabs.on("keypress", function (e) {
         return thisObj.handleTabKeyPress($(this), e);
     });
 
     // bind a tab click handler 
-    this.$tabs.click(function (e) {
+    this.$tabs.on("click", function (e) {
         return thisObj.handleTabClick($(this), e);
     });
 
     // bind a tab focus handler 
-    this.$tabs.focus(function (e) {
+    this.$tabs.on("focus", function (e) {
         return thisObj.handleTabFocus($(this), e);
     });
 
     // bind a tab blur handler 
-    this.$tabs.blur(function (e) {
+    this.$tabs.on("blur", function (e) {
         return thisObj.handleTabBlur($(this), e);
     });
 
@@ -247,17 +247,17 @@ tabpanel.prototype.bindHandlers = function () {
     // Bind handlers for the panels 
 
     // bind a keydown handlers for the panel focusable elements 
-    this.$panels.keydown(function (e) {
+    this.$panels.on("keydown", function (e) {
         return thisObj.handlePanelKeyDown($(this), e);
     });
 
     // bind a keypress handler for the panel 
-    this.$panels.keypress(function (e) {
+    this.$panels.on("keypress", function (e) {
         return thisObj.handlePanelKeyPress($(this), e);
     });
 
     // bind a panel click handler 
-    this.$panels.click(function (e) {
+    this.$panels.on("click", function (e) {
         return thisObj.handlePanelClick($(this), e);
     });
 
@@ -531,7 +531,7 @@ tabpanel.prototype.handlePanelKeyDown = function ($panel, e) {
                         if ($focusable.length > 0) {
                             // there are focusable items in the panel. 
                             // Set focus to the last item. 
-                            $focusable.last().focus();
+                            $focusable.last().trigger("focus");
 
                             // reset the aria-selected state of the tabs 
                             this.$tabs.attr('aria-selected', 'false').removeClass('selected');
@@ -569,7 +569,7 @@ tabpanel.prototype.handlePanelKeyDown = function ($panel, e) {
                         if ($focusable.length > 0) {
                             // there are focusable items in the panel. 
                             // Set focus to the first item. 
-                            $focusable.first().focus();
+                            $focusable.first().trigger("focus");
 
                             // reset the aria-selected state of the tabs 
                             this.$tabs.attr('aria-selected', 'false').removeClass('selected');
@@ -598,7 +598,7 @@ tabpanel.prototype.handlePanelKeyDown = function ($panel, e) {
             var $tab = $('#' + $panel.attr('aria-labelledby'));
 
             // Move focus to the tab 
-            $tab.focus();
+            $tab.trigger("focus");
 
             e.stopPropagation();
             return false;
@@ -731,7 +731,7 @@ tabpanel.prototype.handlePanelClick = function ($panel, e) {
 // focusable is a small jQuery extension to add a :focusable selector. It is used to 
 // get a list of all focusable elements in a panel. Credit to ajpiano on the jQuery forums. 
 // 
-$.extend($.expr[':'], {
+$.extend($.expr.pseudos, {
     focusable: function (element) {
         var nodeName = element.nodeName.toLowerCase();
         var tabIndex = $(element).attr('tabindex');

@@ -1989,7 +1989,7 @@ var fakewaffle = ( function ( $, fakewaffle ) {
     } );
   };
 
-  $( window ).resize( function () {
+  $( window ).on('resize', function () {
     fakewaffle.checkResize();
   } );
 
@@ -3271,7 +3271,7 @@ var fakewaffle = ( function ( $, fakewaffle ) {
       item = this.prepare(item);
       this.$stage.append(item);
       this._items.push(item);
-      this._mergers.push(item.find('[data-merge]').andSelf('[data-merge]').attr('data-merge') * 1 || 1);
+      this._mergers.push(item.find('[data-merge]').addBack('[data-merge]').attr('data-merge') * 1 || 1);
     }, this));
 
     this.reset($.isNumeric(this.settings.startPosition) ? this.settings.startPosition : 0);
@@ -3300,11 +3300,11 @@ var fakewaffle = ( function ( $, fakewaffle ) {
       this._items.length === 0 && this.$stage.append(content);
       this._items.length !== 0 && this._items[position - 1].after(content);
       this._items.push(content);
-      this._mergers.push(content.find('[data-merge]').andSelf('[data-merge]').attr('data-merge') * 1 || 1);
+      this._mergers.push(content.find('[data-merge]').addBack('[data-merge]').attr('data-merge') * 1 || 1);
     } else {
       this._items[position].before(content);
       this._items.splice(position, 0, content);
-      this._mergers.splice(position, 0, content.find('[data-merge]').andSelf('[data-merge]').attr('data-merge') * 1 || 1);
+      this._mergers.splice(position, 0, content.find('[data-merge]').addBack('[data-merge]').attr('data-merge') * 1 || 1);
     }
 
     this._items[current] && this.reset(this._items[current].index());
@@ -4636,7 +4636,7 @@ var fakewaffle = ( function ( $, fakewaffle ) {
       'prepared.owl.carousel': $.proxy(function(e) {
         if (e.namespace && this._core.settings.dotsData) {
           this._templates.push('<div class="' + this._core.settings.dotClass + '">' +
-            $(e.content).find('[data-dot]').andSelf('[data-dot]').attr('data-dot') + '</div>');
+            $(e.content).find('[data-dot]').addBack('[data-dot]').attr('data-dot') + '</div>');
         }
       }, this),
       'added.owl.carousel': $.proxy(function(e) {
@@ -4990,7 +4990,7 @@ var fakewaffle = ( function ( $, fakewaffle ) {
       }, this),
       'prepared.owl.carousel': $.proxy(function(e) {
         if (e.namespace) {
-          var hash = $(e.content).find('[data-hash]').andSelf('[data-hash]').attr('data-hash');
+          var hash = $(e.content).find('[data-hash]').addBack('[data-hash]').attr('data-hash');
 
           if (!hash) {
             return;
@@ -7107,7 +7107,7 @@ var fakewaffle = ( function ( $, fakewaffle ) {
 		index   = options.index || 0;
 
 		if (!selector || options.live === false) {
-			that.unbind('click.fb-start').bind('click.fb-start', run);
+			that.off('click.fb-start').on('click.fb-start', run);
 
 		} else {
 			D.undelegate(selector, 'click.fb-start').delegate(selector + ":not('.fancybox-item, .fancybox-nav')", 'click.fb-start', run);
@@ -7221,8 +7221,8 @@ Licensed under GPL v2.
           });
           return _equalize_marked_columns();
         };
-        $(window).load(equalizer);
-        return $(window).resize(equalizer);
+        $(window).on("load", equalizer);
+        return $(window).on("resize", equalizer);
       });
     }
   });
@@ -10858,7 +10858,7 @@ $(document).ready(function(){
       $(this).find('.sub-nav').before($toggleSubNav);
 
       // setup mobile toggle
-      $toggleSubNav.click(function(){
+      $toggleSubNav.on("click", function () {
         var secondaryLinks = $(this).parent().find('.sub-nav');
         if(secondaryLinks.is(':visible')) {
           //close panel
@@ -10882,7 +10882,7 @@ $(document).ready(function(){
  
     // Setup non-off-canvas menu
     $('#navigation').addClass('mobile-closed');
-    $('.toggle-menu').click(function () {
+    $('.toggle-menu').on("click", function () {
         if ($('#navigation').hasClass('mobile-closed')) {
             $(this).attr('aria-expanded', 'true');
             $('#navigation').removeClass('mobile-closed');
@@ -10909,12 +10909,12 @@ $(document).ready(function(){
   var menuHoverClass = 'focus',
     clickedFocus = 'clickedFocus';
 
-  $('.top-level-nav > li > a').hover(function(){
+  $('.top-level-nav > li > a').on("mouseenter", function () {
     $(this).closest('ul').find('.'+menuHoverClass).removeClass(menuHoverClass);
-  }, function(){
-    $('.'+clickedFocus).removeClass(clickedFocus)
+  }).on("mouseleave", function () {
+        $('.' + clickedFocus).removeClass(clickedFocus);
   });
-  $('.top-level-nav > li > a').focus(function(e){
+  $('.top-level-nav > li > a').on("focus", function (e) {
     $(this).closest('ul').find('.'+menuHoverClass).removeClass(menuHoverClass);
     if(!$(this).parent().find('.toggle-sub-nav').hasClass('open')) {
       $(this).parent().addClass(menuHoverClass);
@@ -10928,15 +10928,15 @@ $(document).ready(function(){
 
   // Hide menu if click occurs outside of navigation
   // Hide menu if click or focus occurs outside of navigation
-  $('.top-level-nav a').last().keydown(function(e){
+  $('.top-level-nav a').last().on("keydown", function (e) {
     if(e.keyCode == 9) {
       // If the user tabs out of the navigation hide all menus
       $('.top-level-nav .'+menuHoverClass).removeClass(menuHoverClass);
     }
   });
-  $(document).click(function(){ $('.top-level-nav .'+menuHoverClass).removeClass(menuHoverClass); });
+  $(document).on("click", function () { $('.top-level-nav .' + menuHoverClass).removeClass(menuHoverClass); });
 
-  $('.top-level-nav').click(function(e){
+  $('.top-level-nav').on("click", function (e) {
     e.stopPropagation();
   });
   //*/
@@ -11152,7 +11152,7 @@ $(document).ready(function(){
                                 newfocus = topli.find(':tabbable:first');
                                 setTimeout(function () {
                                     menu.find('[aria-expanded].' + that.settings.panelClass).off('DOMAttrModified.accessible-menu');
-                                    newfocus.focus();
+                                    newfocus.trigger("focus");
                                     that.justFocused = false;
                                 }, 99);
                             }
@@ -11177,7 +11177,7 @@ $(document).ready(function(){
                             .filter('.' + settings.panelClass)
                             .attr('aria-hidden', 'false');
                         if (event.type === 'mouseover' && target.is(':tabbable') && topli.length === 1 && panel.length === 0 && menu.has(document.activeElement).length > 0) {
-                            target.focus();
+                            target.trigger("focus");
                             that.justFocused = false;
                         }
 
@@ -11364,15 +11364,15 @@ $(document).ready(function(){
                             event.preventDefault();
                             if (isTopNavItem) {
                                 _togglePanel.call(that, event);
-                                found = (topli.find('.' + settings.panelClass + ' :tabbable:first').focus().length === 1);
+                                found = (topli.find('.' + settings.panelClass + ' :tabbable:first').trigger("focus").length === 1);
                             } else {
-                                found = (tabbables.filter(':gt(' + tabbables.index(target) + '):first').focus().length === 1);
+                                found = (tabbables.filter(':gt(' + tabbables.index(target) + '):first').trigger("focus").length === 1);
                             }
 
                             if (!found && window.opera && opera.toString() === "[object Opera]" && (event.ctrlKey || event.metaKey)) {
                                 tabbables = $(':tabbable');
                                 i = tabbables.index(target);
-                                found = ($(':tabbable:gt(' + $(':tabbable').index(target) + '):first').focus().length === 1);
+                                found = ($(':tabbable:gt(' + $(':tabbable').index(target) + '):first').trigger("focus").length === 1);
                             }
                             break;
                         case Keyboard.UP:
@@ -11387,45 +11387,45 @@ $(document).ready(function(){
                                         .filter('.' + settings.panelClass)
                                         .attr('aria-hidden', 'false')
                                         .find(':tabbable:last')
-                                        .focus() === 1);
+                                        .trigger("focus") === 1);
                                 }
                             } else if (!isTopNavItem) {
-                                found = (tabbables.filter(':lt(' + tabbables.index(target) + '):last').focus().length === 1);
+                                found = (tabbables.filter(':lt(' + tabbables.index(target) + '):last').trigger("focus").length === 1);
                             }
 
                             if (!found && window.opera && opera.toString() === "[object Opera]" && (event.ctrlKey || event.metaKey)) {
                                 tabbables = $(':tabbable');
                                 i = tabbables.index(target);
-                                found = ($(':tabbable:lt(' + $(':tabbable').index(target) + '):first').focus().length === 1);
+                                found = ($(':tabbable:lt(' + $(':tabbable').index(target) + '):first').trigger("focus").length === 1);
                             }
                             break;
                         case Keyboard.RIGHT:
                             event.preventDefault();
                             if (isTopNavItem) {
-                                found = (topnavitems.filter(':gt(' + topnavitems.index(topli) + '):first').find(':tabbable:first').focus().length === 1);
+                                found = (topnavitems.filter(':gt(' + topnavitems.index(topli) + '):first').find(':tabbable:first').trigger("focus").length === 1);
                             } else {
                                 if (panelGroups.length && currentPanelGroup.length) {
                                     // if the current panel contains panel groups, and we are able to focus the first tabbable element of the next panel group
-                                    found = (panelGroups.filter(':gt(' + panelGroups.index(currentPanelGroup) + '):first').find(':tabbable:first').focus().length === 1);
+                                    found = (panelGroups.filter(':gt(' + panelGroups.index(currentPanelGroup) + '):first').find(':tabbable:first').trigger("focus").length === 1);
                                 }
 
                                 if (!found) {
-                                    found = (topli.find(':tabbable:first').focus().length === 1);
+                                    found = (topli.find(':tabbable:first').trigger("focus").length === 1);
                                 }
                             }
                             break;
                         case Keyboard.LEFT:
                             event.preventDefault();
                             if (isTopNavItem) {
-                                found = (topnavitems.filter(':lt(' + topnavitems.index(topli) + '):last').find(':tabbable:first').focus().length === 1);
+                                found = (topnavitems.filter(':lt(' + topnavitems.index(topli) + '):last').find(':tabbable:first').trigger("focus").length === 1);
                             } else {
                                 if (panelGroups.length && currentPanelGroup.length) {
                                     // if the current panel contains panel groups, and we are able to focus the first tabbable element of the previous panel group
-                                    found = (panelGroups.filter(':lt(' + panelGroups.index(currentPanelGroup) + '):last').find(':tabbable:first').focus().length === 1);
+                                    found = (panelGroups.filter(':lt(' + panelGroups.index(currentPanelGroup) + '):last').find(':tabbable:first').trigger("focus").length === 1);
                                 }
 
                                 if (!found) {
-                                    found = (topli.find(':tabbable:first').focus().length === 1);
+                                    found = (topli.find(':tabbable:first').trigger("focus").length === 1);
                                 }
                             }
                             break;
@@ -11441,19 +11441,19 @@ $(document).ready(function(){
                                         .filter('.' + settings.panelClass)
                                         .attr('aria-hidden', 'false')
                                         .find(':tabbable:last')
-                                        .focus();
+                                        .trigger("focus");
                                 }
                             } else if (event.shiftKey && i > 0) {
-                                found = (tabbables.filter(':lt(' + i + '):last').focus().length === 1);
+                                found = (tabbables.filter(':lt(' + i + '):last').trigger("focus").length === 1);
                             } else if (!event.shiftKey && i < tabbables.length - 1) {
-                                found = (tabbables.filter(':gt(' + i + '):first').focus().length === 1);
+                                found = (tabbables.filter(':gt(' + i + '):first').trigger("focus").length === 1);
                             } else if (window.opera && opera.toString() === "[object Opera]") {
                                 tabbables = $(':tabbable');
                                 i = tabbables.index(target);
                                 if (event.shiftKey) {
-                                    found = ($(':tabbable:lt(' + $(':tabbable').index(target) + '):last').focus().length === 1);
+                                    found = ($(':tabbable:lt(' + $(':tabbable').index(target) + '):last').trigger("focus").length === 1);
                                 } else {
-                                    found = ($(':tabbable:gt(' + $(':tabbable').index(target) + '):first').focus().length === 1);
+                                    found = ($(':tabbable:gt(' + $(':tabbable').index(target) + '):first').trigger("focus").length === 1);
                                 }
                             }
 
@@ -11512,7 +11512,7 @@ $(document).ready(function(){
                                 label = $.trim(o.text());
                                 if (regex.test(label)) {
                                     found = true;
-                                    o.focus();
+                                    o.trigger("focus");
                                     break;
                                 }
                             }
@@ -11521,7 +11521,7 @@ $(document).ready(function(){
                                     o = tabbables.eq(i);
                                     label = $.trim(o.text());
                                     if (regex.test(label)) {
-                                        o.focus();
+                                        o.trigger("focus");
                                         break;
                                     }
                                 }
@@ -11757,7 +11757,7 @@ $(document).ready(function(){
              * @private
              */
             function visible(element) {
-                return $.expr.filters.visible(element) && !$(element).parents().addBack().filter(function () {
+                return $.expr.pseudos.visible(element) && !$(element).parents().addBack().filter(function () {
                     return $.css(this, "visibility") === "hidden";
                 }).length;
             }
@@ -11785,7 +11785,7 @@ $(document).ready(function(){
                                     visible(element);
             }
 
-            $.extend($.expr[":"], {
+            $.extend($.expr.pseudos, {
                 data: $.expr.createPseudo ? $.expr.createPseudo(function (dataName) {
                     return function (elem) {
                         return !!$.data(elem, dataName);
@@ -11808,7 +11808,7 @@ $(document).ready(function(){
 
 
             // Resets navigation to defauilt state on resize.
-            $(window).resize(function () {
+            $(window).on('resize', function () {
                 $(".sub-nav").removeClass("open");
                 $(".sub-nav").removeClass("secondary-open");
                 $(".sub-nav").attr("aria-expanded", false);
@@ -11858,7 +11858,7 @@ $(document).ready(function(){
     var descriptionDefault = $('.accordion-list').find('.description').hide().attr('aria-hidden', 'true'); // Hide the descriptions by default
     $('.accordion-list .toggle').attr('tabindex', '0').attr('aria-expanded', 'false'); // Add tabindex to toggle links and aria support
     
-    $(".accordion-list .toggle").click(function(e) {
+    $(".accordion-list .toggle").on("click", function (e) {
         var accdDesc = $(this).next(".description");
         
         if( accdDesc.is(":visible") ){
@@ -12017,7 +12017,7 @@ $(document).ready(function(){
          $newTab.attr('tabindex', '0');
 
          // give the new tab focus 
-         $newTab.focus();
+         $newTab.trigger("focus");
 
      } // end switchTabs() 
 
@@ -12068,27 +12068,27 @@ $(document).ready(function(){
          // Bind handlers for the tabs / accordian headers 
 
          // bind a tab keydown handler 
-         this.$tabs.keydown(function (e) {
+         this.$tabs.on("keydown", function (e) {
              return thisObj.handleTabKeyDown($(this), e);
          });
 
          // bind a tab keypress handler 
-         this.$tabs.keypress(function (e) {
+         this.$tabs.on("keypress", function (e) {
              return thisObj.handleTabKeyPress($(this), e);
          });
 
          // bind a tab click handler 
-         this.$tabs.click(function (e) {
+         this.$tabs.on("click", function (e) {
              return thisObj.handleTabClick($(this), e);
          });
 
          // bind a tab focus handler 
-         this.$tabs.focus(function (e) {
+         this.$tabs.on("focus", function (e) {
              return thisObj.handleTabFocus($(this), e);
          });
 
          // bind a tab blur handler 
-         this.$tabs.blur(function (e) {
+         this.$tabs.on("blur", function (e) {
              return thisObj.handleTabBlur($(this), e);
          });
 
@@ -12096,17 +12096,17 @@ $(document).ready(function(){
          // Bind handlers for the panels 
 
          // bind a keydown handlers for the panel focusable elements 
-         this.$panels.keydown(function (e) {
+         this.$panels.on("keydown", function (e) {
              return thisObj.handlePanelKeyDown($(this), e);
          });
 
          // bind a keypress handler for the panel 
-         this.$panels.keypress(function (e) {
+         this.$panels.on("keypress",function (e) {
              return thisObj.handlePanelKeyPress($(this), e);
          });
 
          // bind a panel click handler 
-         this.$panels.click(function (e) {
+         this.$panels.on("click", function (e) {
              return thisObj.handlePanelClick($(this), e);
          });
 
@@ -12380,7 +12380,7 @@ $(document).ready(function(){
                              if ($focusable.length > 0) {
                                  // there are focusable items in the panel. 
                                  // Set focus to the last item. 
-                                 $focusable.last().focus();
+                                 $focusable.last().trigger("focus");
 
                                  // reset the aria-selected state of the tabs 
                                  this.$tabs.attr('aria-selected', 'false').removeClass('selected');
@@ -12418,7 +12418,7 @@ $(document).ready(function(){
                              if ($focusable.length > 0) {
                                  // there are focusable items in the panel. 
                                  // Set focus to the first item. 
-                                 $focusable.first().focus();
+                                 $focusable.first().trigger("focus");
 
                                  // reset the aria-selected state of the tabs 
                                  this.$tabs.attr('aria-selected', 'false').removeClass('selected');
@@ -12447,7 +12447,7 @@ $(document).ready(function(){
                  var $tab = $('#' + $panel.attr('aria-labelledby'));
 
                  // Move focus to the tab 
-                 $tab.focus();
+                 $tab.trigger("focus");
 
                  e.stopPropagation();
                  return false;
@@ -12580,7 +12580,7 @@ $(document).ready(function(){
      // focusable is a small jQuery extension to add a :focusable selector. It is used to 
      // get a list of all focusable elements in a panel. Credit to ajpiano on the jQuery forums. 
      // 
-     $.extend($.expr[':'], {
+     $.extend($.expr.pseudos, {
          focusable: function (element) {
              var nodeName = element.nodeName.toLowerCase();
              var tabIndex = $(element).attr('tabindex');
@@ -12640,7 +12640,7 @@ $(document).ready(function () {
     var $body = $("body");
     var $specialIcon =
     // setup the tabs
-    $('.search-tabs button').click(function (e) {
+    $('.search-tabs button').on("click", function (e) {
         $(this).siblings().removeClass('active');
         $(this).tab('show').addClass('active');
         e.preventDefault()
@@ -12669,7 +12669,7 @@ $(document).ready(function () {
     // Sitecore link data types currently do not have a way to set id's per nav,
     // so instead we are binding to what I'm assuming will aslways be the search
     $('.top-level-nav .nav-item .ca-gov-icon-search, #nav-item-search').parents('.nav-item').on('click', function (e) {
-        $searchText.focus().trigger('focus')
+        $searchText.trigger("focus").trigger('focus')
         // // already opened search, nothing else needs to be done
         // if ($searchContainer.hasClass('active')) {
         //     return;
@@ -13271,7 +13271,7 @@ function initServiceGroup() {
       window.location = url
     })
 
-    $(window).resize(function () {
+    $(window).on('resize', function () {
         var newWidth = $(window).width();
         if (newWidth !== cachedWidth) {
             //DO RESIZE HERE
@@ -13396,7 +13396,7 @@ function setUpEvents($service) {
             case 'info':
                 openTile.call(this, e);
                 // this focues on close button after expandable panel is open, so user can tab into the pannel (it's for accessibility purposes)
-                $("button.close").focus();
+                $("button.close").trigger("focus");
                 break;
             case 'open':
                 closeTile.call(this, e);
@@ -13407,14 +13407,14 @@ function setUpEvents($service) {
 
 
     // add the "tile-focus" class when got focus
-    $('.service-tile').focusin(function () {
+    $('.service-tile').on("focusin", function () {
         $(this).addClass("tile-focus");
 
     });
 
 
     // Remove the "tile-focus" class when lost focus
-    $('.service-tile').focusout(function () {
+    $('.service-tile').on("focusout", function () {
         $(this).removeClass("tile-focus");
 
     });
@@ -13423,7 +13423,7 @@ function setUpEvents($service) {
     // Make sure it works on 'enter' key (has same behavior as click event)
     $service.on('keyup', '.service-tile', function (e) {
         if (e.which == 13 && $(".service-tile").hasClass("tile-focus")) {
-            $(this).click();
+            $(this).trigger("click");
         }
     });
 
@@ -13528,7 +13528,7 @@ function createExpandedRow($item, method) {
     var newEl = $('<div>').addClass('service-tile-full');
     ($item[method](newEl));
     // HACK: trigger on focus so transitions work
-    newEl.focus();
+    newEl.trigger("focus");
     newEl.addClass('is-open');
     return newEl;
 }
@@ -13712,7 +13712,7 @@ $(document).ready(function () {
     var hideDistance = calcInputDifference();
 
     setAskBarTop();
-    $headSearch.bind("transitionend webkitTransitionEnd oTransitionEnd MSTransitionEnd", function(){ setAskBarTop(); });
+    $headSearch.on("transitionend webkitTransitionEnd oTransitionEnd MSTransitionEnd", function(){ setAskBarTop(); });
     function setAskBarTop() {
         window.setTimeout(function () {
             if ($headSearch.hasClass('active') || !$globalHeader.hasClass('fixed')) {
@@ -14095,10 +14095,10 @@ function initPlotly(d3, Plotly) {
             // });
         })
 
-        $(window).resize(function () {
+        $(window).on('resize', function () {
 
             var gd3 = d3.select(container.get(0)).style({height: getHeight()});
-            Plotly.Plots.resize(gd);
+            Plotly.Plots.on("resize", gd);
         });
 
     });
@@ -14316,18 +14316,18 @@ function initStats() {
 
         sizeText();
 
-        $(window).resize(function () {
+        $(window).on('resize', function () {
 
             window.setTimeout(function () {
                 config.size = {
                     width: chart.width(),
                     height: chart.width()
-                }
+                };
                 config.data = data;
                 donutChart = new Donut(config);
                 donutChart.load({data: data});
                 sizeText();
-            }, 10)
+            }, 10);
 
         });
 
@@ -14771,7 +14771,7 @@ $(document).ready(function () {
 
 // TODO: readd this back in
 function makeBlur($el) {
-    $el.Vague({intensity: 6}).blur();
+    $el.Vague({intensity: 6}).trigger("blur");
 }
 
 
@@ -14863,14 +14863,14 @@ $(document).ready(function () {
     var disableTextOnlyButton = $('.disableTextOnlyMode');
 
     // Enable Text Only
-    enableTextOnlyButton.click(function () {
+    enableTextOnlyButton.on("click", function () {
         enableTextOnlyButton.addClass('active');
         disableTextOnlyButton.removeClass('active');
         $('link[rel~="stylesheet"]').prop('disabled', true);
     });
 
     // Disable Text Only
-    disableTextOnlyButton.click(function () {
+    disableTextOnlyButton.on("click", function () {
         disableTextOnlyButton.addClass('active');
         enableTextOnlyButton.removeClass('active');
         $('link[rel~="stylesheet"]').prop('disabled', false);
@@ -14989,7 +14989,7 @@ $(document).ready(function () {
         var $input = $("#locationSettings").find('input');
         var $btn = $("#locationSettings").find('button');
         // and we prepare our input for user events
-        $input.keypress(function (e) {
+        $input.on("keypress", function (e) {
             if (e.which == 13) {
                 lookByZIP.call(this, e);
                 return false; //<---- Add this line

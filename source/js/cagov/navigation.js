@@ -162,7 +162,7 @@ $(document).ready(function () {
             $(this).find('.sub-nav').before($toggleSubNav);
 
             // setup mobile toggle
-            $toggleSubNav.click(function () {
+            $toggleSubNav.on("click", function () {
                 var secondaryLinks = $(this).parent().find('.sub-nav');
                 if (secondaryLinks.is(':visible')) {
                     //close panel
@@ -186,7 +186,7 @@ $(document).ready(function () {
 
     // Setup non-off-canvas menu
     $('#navigation').addClass('mobile-closed');
-    $('.toggle-menu').click(function () {
+    $('.toggle-menu').on("click", function () {
         if ($('#navigation').hasClass('mobile-closed')) {
             $(this).attr('aria-expanded', 'true');
             $('#navigation').removeClass('mobile-closed');
@@ -213,12 +213,12 @@ $(document).ready(function () {
     var menuHoverClass = 'focus',
       clickedFocus = 'clickedFocus';
 
-    $('.top-level-nav > li > a').hover(function () {
+    $('.top-level-nav > li > a').on("mouseenter", function () {
         $(this).closest('ul').find('.' + menuHoverClass).removeClass(menuHoverClass);
-    }, function () {
-        $('.' + clickedFocus).removeClass(clickedFocus)
+    }).on("mouseleave", function () {
+        $('.' + clickedFocus).removeClass(clickedFocus);
     });
-    $('.top-level-nav > li > a').focus(function (e) {
+    $('.top-level-nav > li > a').on("focus", function (e) {
         $(this).closest('ul').find('.' + menuHoverClass).removeClass(menuHoverClass);
         if (!$(this).parent().find('.toggle-sub-nav').hasClass('open')) {
             $(this).parent().addClass(menuHoverClass);
@@ -232,15 +232,15 @@ $(document).ready(function () {
 
     // Hide menu if click occurs outside of navigation
     // Hide menu if click or focus occurs outside of navigation
-    $('.top-level-nav a').last().keydown(function (e) {
+    $('.top-level-nav a').last().on("keydown", function (e) {
         if (e.keyCode == 9) {
             // If the user tabs out of the navigation hide all menus
             $('.top-level-nav .' + menuHoverClass).removeClass(menuHoverClass);
         }
     });
-    $(document).click(function () { $('.top-level-nav .' + menuHoverClass).removeClass(menuHoverClass); });
+    $(document).on("click", function () { $('.top-level-nav .' + menuHoverClass).removeClass(menuHoverClass); });
 
-    $('.top-level-nav').click(function (e) {
+    $('.top-level-nav').on("click", function (e) {
         e.stopPropagation();
     });
     //*/
@@ -456,7 +456,7 @@ $(document).ready(function () {
                         newfocus = topli.find(':tabbable:first');
                         setTimeout(function () {
                             menu.find('[aria-expanded].' + that.settings.panelClass).off('DOMAttrModified.accessible-menu');
-                            newfocus.focus();
+                            newfocus.trigger("focus");
                             that.justFocused = false;
                         }, 99);
                     }
@@ -481,7 +481,7 @@ $(document).ready(function () {
                     .filter('.' + settings.panelClass)
                     .attr('aria-hidden', 'false');
                 if (event.type === 'mouseover' && target.is(':tabbable') && topli.length === 1 && panel.length === 0 && menu.has(document.activeElement).length > 0) {
-                    target.focus();
+                    target.trigger("focus");
                     that.justFocused = false;
                 }
 
@@ -668,15 +668,15 @@ $(document).ready(function () {
                     event.preventDefault();
                     if (isTopNavItem) {
                         _togglePanel.call(that, event);
-                        found = (topli.find('.' + settings.panelClass + ' :tabbable:first').focus().length === 1);
+                        found = (topli.find('.' + settings.panelClass + ' :tabbable:first').trigger("focus").length === 1);
                     } else {
-                        found = (tabbables.filter(':gt(' + tabbables.index(target) + '):first').focus().length === 1);
+                        found = (tabbables.filter(':gt(' + tabbables.index(target) + '):first').trigger("focus").length === 1);
                     }
 
                     if (!found && window.opera && opera.toString() === "[object Opera]" && (event.ctrlKey || event.metaKey)) {
                         tabbables = $(':tabbable');
                         i = tabbables.index(target);
-                        found = ($(':tabbable:gt(' + $(':tabbable').index(target) + '):first').focus().length === 1);
+                        found = ($(':tabbable:gt(' + $(':tabbable').index(target) + '):first').trigger("focus").length === 1);
                     }
                     break;
                 case Keyboard.UP:
@@ -691,45 +691,45 @@ $(document).ready(function () {
                                 .filter('.' + settings.panelClass)
                                 .attr('aria-hidden', 'false')
                                 .find(':tabbable:last')
-                                .focus() === 1);
+                                .trigger("focus") === 1);
                         }
                     } else if (!isTopNavItem) {
-                        found = (tabbables.filter(':lt(' + tabbables.index(target) + '):last').focus().length === 1);
+                        found = (tabbables.filter(':lt(' + tabbables.index(target) + '):last').trigger("focus").length === 1);
                     }
 
                     if (!found && window.opera && opera.toString() === "[object Opera]" && (event.ctrlKey || event.metaKey)) {
                         tabbables = $(':tabbable');
                         i = tabbables.index(target);
-                        found = ($(':tabbable:lt(' + $(':tabbable').index(target) + '):first').focus().length === 1);
+                        found = ($(':tabbable:lt(' + $(':tabbable').index(target) + '):first').trigger("focus").length === 1);
                     }
                     break;
                 case Keyboard.RIGHT:
                     event.preventDefault();
                     if (isTopNavItem) {
-                        found = (topnavitems.filter(':gt(' + topnavitems.index(topli) + '):first').find(':tabbable:first').focus().length === 1);
+                        found = (topnavitems.filter(':gt(' + topnavitems.index(topli) + '):first').find(':tabbable:first').trigger("focus").length === 1);
                     } else {
                         if (panelGroups.length && currentPanelGroup.length) {
                             // if the current panel contains panel groups, and we are able to focus the first tabbable element of the next panel group
-                            found = (panelGroups.filter(':gt(' + panelGroups.index(currentPanelGroup) + '):first').find(':tabbable:first').focus().length === 1);
+                            found = (panelGroups.filter(':gt(' + panelGroups.index(currentPanelGroup) + '):first').find(':tabbable:first').trigger("focus").length === 1);
                         }
 
                         if (!found) {
-                            found = (topli.find(':tabbable:first').focus().length === 1);
+                            found = (topli.find(':tabbable:first').trigger("focus").length === 1);
                         }
                     }
                     break;
                 case Keyboard.LEFT:
                     event.preventDefault();
                     if (isTopNavItem) {
-                        found = (topnavitems.filter(':lt(' + topnavitems.index(topli) + '):last').find(':tabbable:first').focus().length === 1);
+                        found = (topnavitems.filter(':lt(' + topnavitems.index(topli) + '):last').find(':tabbable:first').trigger("focus").length === 1);
                     } else {
                         if (panelGroups.length && currentPanelGroup.length) {
                             // if the current panel contains panel groups, and we are able to focus the first tabbable element of the previous panel group
-                            found = (panelGroups.filter(':lt(' + panelGroups.index(currentPanelGroup) + '):last').find(':tabbable:first').focus().length === 1);
+                            found = (panelGroups.filter(':lt(' + panelGroups.index(currentPanelGroup) + '):last').find(':tabbable:first').trigger("focus").length === 1);
                         }
 
                         if (!found) {
-                            found = (topli.find(':tabbable:first').focus().length === 1);
+                            found = (topli.find(':tabbable:first').trigger("focus").length === 1);
                         }
                     }
                     break;
@@ -745,19 +745,19 @@ $(document).ready(function () {
                                 .filter('.' + settings.panelClass)
                                 .attr('aria-hidden', 'false')
                                 .find(':tabbable:last')
-                                .focus();
+                                .trigger("focus");
                         }
                     } else if (event.shiftKey && i > 0) {
-                        found = (tabbables.filter(':lt(' + i + '):last').focus().length === 1);
+                        found = (tabbables.filter(':lt(' + i + '):last').trigger("focus").length === 1);
                     } else if (!event.shiftKey && i < tabbables.length - 1) {
-                        found = (tabbables.filter(':gt(' + i + '):first').focus().length === 1);
+                        found = (tabbables.filter(':gt(' + i + '):first').trigger("focus").length === 1);
                     } else if (window.opera && opera.toString() === "[object Opera]") {
                         tabbables = $(':tabbable');
                         i = tabbables.index(target);
                         if (event.shiftKey) {
-                            found = ($(':tabbable:lt(' + $(':tabbable').index(target) + '):last').focus().length === 1);
+                            found = ($(':tabbable:lt(' + $(':tabbable').index(target) + '):last').trigger("focus").length === 1);
                         } else {
-                            found = ($(':tabbable:gt(' + $(':tabbable').index(target) + '):first').focus().length === 1);
+                            found = ($(':tabbable:gt(' + $(':tabbable').index(target) + '):first').trigger("focus").length === 1);
                         }
                     }
 
@@ -816,7 +816,7 @@ $(document).ready(function () {
                         label = $.trim(o.text());
                         if (regex.test(label)) {
                             found = true;
-                            o.focus();
+                            o.trigger("focus");
                             break;
                         }
                     }
@@ -825,7 +825,7 @@ $(document).ready(function () {
                             o = tabbables.eq(i);
                             label = $.trim(o.text());
                             if (regex.test(label)) {
-                                o.focus();
+                                o.trigger("focus");
                                 break;
                             }
                         }
@@ -1061,7 +1061,7 @@ $(document).ready(function () {
      * @private
      */
     function visible(element) {
-        return $.expr.filters.visible(element) && !$(element).parents().addBack().filter(function () {
+        return $.expr.pseudos.visible(element) && !$(element).parents().addBack().filter(function () {
             return $.css(this, "visibility") === "hidden";
         }).length;
     }
@@ -1089,7 +1089,7 @@ $(document).ready(function () {
                             visible(element);
     }
 
-    $.extend($.expr[":"], {
+    $.extend($.expr.pseudos, {
         data: $.expr.createPseudo ? $.expr.createPseudo(function (dataName) {
             return function (elem) {
                 return !!$.data(elem, dataName);
@@ -1112,7 +1112,7 @@ $(document).ready(function () {
 
 
     // Resets navigation to defauilt state on resize.
-    $(window).resize(function () {
+    $(window).on('resize', function () {
         $(".sub-nav").removeClass("open");
         $(".sub-nav").removeClass("secondary-open");
         $(".sub-nav").attr("aria-expanded", false);

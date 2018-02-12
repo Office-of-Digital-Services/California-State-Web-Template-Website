@@ -51,14 +51,14 @@ $(document).ready(function () {
     var disableTextOnlyButton = $('.disableTextOnlyMode');
 
     // Enable Text Only
-    enableTextOnlyButton.click(function () {
+    enableTextOnlyButton.on("click", function () {
         enableTextOnlyButton.addClass('active');
         disableTextOnlyButton.removeClass('active');
         $('link[rel~="stylesheet"]').prop('disabled', true);
     });
 
     // Disable Text Only
-    disableTextOnlyButton.click(function () {
+    disableTextOnlyButton.on("click", function () {
         disableTextOnlyButton.addClass('active');
         enableTextOnlyButton.removeClass('active');
         $('link[rel~="stylesheet"]').prop('disabled', false);
@@ -86,7 +86,7 @@ $(document).ready(function () {
         $('html').css("font-size", fontSize + 'rem')
     } else {
         fontSize = 1;
-        $('html').css("font-size", fontSize  + 'rem')
+        $('html').css("font-size", fontSize + 'rem')
     }
 
     // init button styles for fonts

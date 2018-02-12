@@ -62,7 +62,7 @@ $(document).ready(function () {
         } else {
             $(parentMatch).off("mouseenter.cagov.clipboard");
         }
-        this.blur();
+        this.trigger("blur");
         updateUI();
     });
 
@@ -88,12 +88,12 @@ $(document).ready(function () {
     });
 
     $('.clipboard__help').on('click.cagov.clipboard', function (e) {
-         e.preventDefault();
+        e.preventDefault();
         $(".clipboard__help-text").toggle();
     });
-    
-    $('.clipboard-removeall').on('click.cagov.clipboard', function(e){
-         e.preventDefault();
+
+    $('.clipboard-removeall').on('click.cagov.clipboard', function (e) {
+        e.preventDefault();
         removeAllClips();
     });
 

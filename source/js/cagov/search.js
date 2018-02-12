@@ -5,12 +5,12 @@
 $(document).ready(function () {
     var $searchContainer = $("#head-search");
     var $searchText = $searchContainer.find(".search-textfield");
-    var $resultsContainer =$('.search-results-container');
+    var $resultsContainer = $('.search-results-container');
 
     var $body = $("body");
     var $specialIcon =
     // setup the tabs
-    $('.search-tabs button').click(function (e) {
+    $('.search-tabs button').on("click", function (e) {
         $(this).siblings().removeClass('active');
         $(this).tab('show').addClass('active');
         e.preventDefault()
@@ -39,7 +39,7 @@ $(document).ready(function () {
     // Sitecore link data types currently do not have a way to set id's per nav,
     // so instead we are binding to what I'm assuming will aslways be the search
     $('.top-level-nav .nav-item .ca-gov-icon-search, #nav-item-search').parents('.nav-item').on('click', function (e) {
-        $searchText.focus().trigger('focus')
+        $searchText.trigger("focus").trigger('focus')
         // // already opened search, nothing else needs to be done
         // if ($searchContainer.hasClass('active')) {
         //     return;
@@ -56,22 +56,22 @@ $(document).ready(function () {
         // unitll the window has scrolled, and it will keep removing the ".active" class. After that we can apply the active
         // class.
 
-		//------------------------------------------------------------- v5 ----------------------------------------- *Changes to remove .primary body class dependency for featured-search behaviour 
-		
-		if ( $( "#head-search" ).is( ".featured-search" ) ) {
-		//-------------- v5 *Added if statement
-        window.setTimeout(function() {
-            $('body:not(.primary) .search-container').addClass('active');
-        } ,401);
-		
-		}else{
-		
-		 window.setTimeout(function() {
-            $('.search-container').addClass('active');
-        } ,401);	
+        //------------------------------------------------------------- v5 ----------------------------------------- *Changes to remove .primary body class dependency for featured-search behaviour 
 
-		}
-		
+        if ($("#head-search").is(".featured-search")) {
+            //-------------- v5 *Added if statement
+            window.setTimeout(function () {
+                $('body:not(.primary) .search-container').addClass('active');
+            }, 401);
+
+        } else {
+
+            window.setTimeout(function () {
+                $('.search-container').addClass('active');
+            }, 401);
+
+        }
+
     });
 
     // SEE navitgation.js for mobile click handlers

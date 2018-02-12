@@ -80,7 +80,7 @@ Based on Twitter Bootstrap
                 </ol>
                 <h1>Contact Us</h1>
                 <p>Please create a Contact Page specific to your own website. You may want to provide several methods of contacting your organization. </p>
-                <p>To provide state template v5 Beta feedback use GitHub otherwise feel free to contact us by visiting <a href="http://webtools.ca.gov/about-web-tools/contact-us/">this page</a>.</p>
+                <p>To provide state template v5 feedback use GitHub otherwise feel free to contact us by visiting <a href="http://webtools.ca.gov/about-web-tools/contact-us/">this page</a>.</p>
                 <p>
                     Feel free to <a href="http://Info.Eservices@state.ca.gov/">Subscribe</a> to the Webmaster User Group for state template updates, group announcements and events. You can also visit the <a href="http://webtools.ca.gov/">Webtools</a> website for more information. To contact us about the state template please visit <a href="http://webtools.ca.gov/about-web-tools/contact-us/">this page</a>.<br>
                 </p>

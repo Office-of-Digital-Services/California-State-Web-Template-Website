@@ -16,7 +16,7 @@ function initServiceGroup() {
         window.location = url
     })
 
-    $(window).resize(function () {
+    $(window).on('resize', function () {
         var newWidth = $(window).width();
         if (newWidth !== cachedWidth) {
             //DO RESIZE HERE
@@ -141,7 +141,7 @@ function setUpEvents($service) {
             case 'info':
                 openTile.call(this, e);
                 // this focues on close button after expandable panel is open, so user can tab into the pannel (it's for accessibility purposes)
-                $("button.close").focus();
+                $("button.close").trigger("focus");
                 break;
             case 'open':
                 closeTile.call(this, e);
@@ -152,14 +152,14 @@ function setUpEvents($service) {
 
 
     // add the "tile-focus" class when got focus
-    $('.service-tile').focusin(function () {
+    $('.service-tile').on("focusin", function () {
         $(this).addClass("tile-focus");
 
     });
 
 
     // Remove the "tile-focus" class when lost focus
-    $('.service-tile').focusout(function () {
+    $('.service-tile').on("focusout", function () {
         $(this).removeClass("tile-focus");
 
     });
@@ -168,7 +168,7 @@ function setUpEvents($service) {
     // Make sure it works on 'enter' key (has same behavior as click event)
     $service.on('keyup', '.service-tile', function (e) {
         if (e.which == 13 && $(".service-tile").hasClass("tile-focus")) {
-            $(this).click();
+            $(this).trigger("click");
         }
     });
 
@@ -273,7 +273,7 @@ function createExpandedRow($item, method) {
     var newEl = $('<div>').addClass('service-tile-full');
     ($item[method](newEl));
     // HACK: trigger on focus so transitions work
-    newEl.focus();
+    newEl.trigger("focus");
     newEl.addClass('is-open');
     return newEl;
 }

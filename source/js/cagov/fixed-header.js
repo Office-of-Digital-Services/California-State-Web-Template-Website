@@ -30,7 +30,7 @@ $(document).ready(function () {
     var hideDistance = calcInputDifference();
 
     setAskBarTop();
-    $headSearch.bind("transitionend webkitTransitionEnd oTransitionEnd MSTransitionEnd", function () { setAskBarTop(); });
+    $headSearch.on("transitionend webkitTransitionEnd oTransitionEnd MSTransitionEnd", function () { setAskBarTop(); });
     function setAskBarTop() {
         window.setTimeout(function () {
             if ($headSearch.hasClass('active') || !$globalHeader.hasClass('fixed')) {

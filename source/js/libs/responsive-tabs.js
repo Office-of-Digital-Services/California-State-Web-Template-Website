@@ -1,186 +1,186 @@
-var fakewaffle = ( function ( $, fakewaffle ) {
-  'use strict';
+var fakewaffle = (function ($, fakewaffle) {
+    'use strict';
 
-  var _id= 0;
+    var _id = 0;
 
-  fakewaffle.responsiveTabs = function ( collapseDisplayed ) {
+    fakewaffle.responsiveTabs = function (collapseDisplayed) {
 
-    fakewaffle.currentPosition = 'tabs';
+        fakewaffle.currentPosition = 'tabs';
 
-    var tabGroups = $( '.nav-tabs.responsive, .nav-pills.responsive' );
-    var hidden    = '';
-    var visible   = '';
-    var activeTab = '';
+        var tabGroups = $('.nav-tabs.responsive, .nav-pills.responsive');
+        var hidden = '';
+        var visible = '';
+        var activeTab = '';
 
-    if ( collapseDisplayed === undefined ) {
-      collapseDisplayed = [ 'xs', 'sm' ];
-    }
-
-    $.each( collapseDisplayed, function () {
-      hidden  += ' hidden-' + this;
-      visible += ' visible-' + this;
-    } );
-
-    $.each( tabGroups, function () {
-      var $tabGroup   = $( this );
-      var tabs        = $tabGroup.find( '[data-toggle="tab"]' );
-      var collapseDiv = $( '<div></div>', {
-        'class' : 'panel-group responsive' + visible,
-        'id'    : 'collapse-' + +'waffle-' + (_id++)
-      } );
-
-      $.each( tabs, function () {
-        var $this          = $( this );
-        var oldLinkClass   = $this.attr( 'class' ) === undefined ? '' : $this.attr( 'class' );
-        var newLinkClass   = 'accordion-toggle collapsed';
-        var oldParentClass = $this.parent().attr( 'class' ) === undefined ? '' : $this.parent().attr( 'class' );
-        var newParentClass = 'panel panel-default';
-        var newHash        = $this.get( 0 ).hash.replace( '#', 'collapse-' );
-
-        if ( oldLinkClass.length > 0 ) {
-          newLinkClass += ' ' + oldLinkClass;
+        if (collapseDisplayed === undefined) {
+            collapseDisplayed = ['xs', 'sm'];
         }
 
-        if ( oldParentClass.length > 0 ) {
-          oldParentClass = oldParentClass.replace( /\bactive\b/g, '' );
-          newParentClass += ' ' + oldParentClass;
-          newParentClass = newParentClass.replace( /\s{2,}/g, ' ' );
-          newParentClass = newParentClass.replace( /^\s+|\s+$/g, '' );
+        $.each(collapseDisplayed, function () {
+            hidden += ' hidden-' + this;
+            visible += ' visible-' + this;
+        });
+
+        $.each(tabGroups, function () {
+            var $tabGroup = $(this);
+            var tabs = $tabGroup.find('[data-toggle="tab"]');
+            var collapseDiv = $('<div></div>', {
+                'class': 'panel-group responsive' + visible,
+                'id': 'collapse-' + +'waffle-' + (_id++)
+            });
+
+            $.each(tabs, function () {
+                var $this = $(this);
+                var oldLinkClass = $this.attr('class') === undefined ? '' : $this.attr('class');
+                var newLinkClass = 'accordion-toggle collapsed';
+                var oldParentClass = $this.parent().attr('class') === undefined ? '' : $this.parent().attr('class');
+                var newParentClass = 'panel panel-default';
+                var newHash = $this.get(0).hash.replace('#', 'collapse-');
+
+                if (oldLinkClass.length > 0) {
+                    newLinkClass += ' ' + oldLinkClass;
+                }
+
+                if (oldParentClass.length > 0) {
+                    oldParentClass = oldParentClass.replace(/\bactive\b/g, '');
+                    newParentClass += ' ' + oldParentClass;
+                    newParentClass = newParentClass.replace(/\s{2,}/g, ' ');
+                    newParentClass = newParentClass.replace(/^\s+|\s+$/g, '');
+                }
+
+                if ($this.parent().hasClass('active')) {
+                    activeTab = '#' + newHash;
+                }
+
+                collapseDiv.append(
+                  $('<div>').attr('class', newParentClass).html(
+                    $('<div>').attr('class', 'panel-heading').html(
+                      $('<h4>').attr('class', 'panel-title').html(
+                        $('<a>', {
+                            'class': newLinkClass,
+                            'data-toggle': 'collapse',
+                            'data-parent': '#collapse-' + $tabGroup.attr('id'),
+                            'href': '#' + newHash,
+                            'html': $this.html()
+                        })
+                      )
+                    )
+                  ).append(
+                    $('<div>', {
+                        'id': newHash,
+                        'class': 'panel-collapse collapse'
+                    })
+                  )
+                );
+            });
+
+            $tabGroup.next().after(collapseDiv);
+            $tabGroup.addClass(hidden);
+            $('.tab-content.responsive').addClass(hidden);
+        });
+
+
+        fakewaffle.checkResize();
+        fakewaffle.bindTabToCollapse();
+
+        if (activeTab) {
+            $(activeTab).collapse('show');
+        }
+    };
+
+    fakewaffle.checkResize = function () {
+
+        if ($('.panel-group.responsive').is(':visible') === true && fakewaffle.currentPosition === 'tabs') {
+            fakewaffle.tabToPanel();
+            fakewaffle.currentPosition = 'panel';
+        } else if ($('.panel-group.responsive').is(':visible') === false && fakewaffle.currentPosition === 'panel') {
+            fakewaffle.panelToTab();
+            fakewaffle.currentPosition = 'tabs';
         }
 
-        if ( $this.parent().hasClass( 'active' ) ) {
-          activeTab = '#' + newHash;
-        }
+    };
 
-        collapseDiv.append(
-          $( '<div>' ).attr( 'class', newParentClass ).html(
-            $( '<div>' ).attr( 'class', 'panel-heading' ).html(
-              $( '<h4>' ).attr( 'class', 'panel-title' ).html(
-                $( '<a>', {
-                  'class'       : newLinkClass,
-                  'data-toggle' : 'collapse',
-                  'data-parent' : '#collapse-' + $tabGroup.attr( 'id' ),
-                  'href'        : '#' + newHash,
-                  'html'        : $this.html()
-                } )
-              )
-            )
-          ).append(
-            $( '<div>', {
-              'id'    : newHash,
-              'class' : 'panel-collapse collapse'
-            } )
-          )
-        );
-      } );
+    fakewaffle.tabToPanel = function () {
 
-      $tabGroup.next().after( collapseDiv );
-      $tabGroup.addClass( hidden );
-      $( '.tab-content.responsive' ).addClass( hidden );
-    } );
+        var tabGroups = $('.nav-tabs.responsive, .nav-pills.responsive');
 
+        $.each(tabGroups, function (index, tabGroup) {
 
-    fakewaffle.checkResize();
-    fakewaffle.bindTabToCollapse();
+            // Find the tab
+            var tabContents = $(tabGroup).next('.tab-content').find('.tab-pane');
 
-    if ( activeTab ) {
-      $( activeTab ).collapse( 'show' );
-    }
-  };
+            $.each(tabContents, function (index, tabContent) {
+                // Find the id to move the element to
+                var destinationId = $(tabContent).attr('id').replace(/^/, '#collapse-');
 
-  fakewaffle.checkResize = function () {
+                // Convert tab to panel and move to destination
+                $(tabContent)
+                  .removeClass('tab-pane')
+                  .addClass('panel-body')
+                  .appendTo($(destinationId));
 
-    if ( $( '.panel-group.responsive' ).is( ':visible' ) === true && fakewaffle.currentPosition === 'tabs' ) {
-      fakewaffle.tabToPanel();
-      fakewaffle.currentPosition = 'panel';
-    } else if ( $( '.panel-group.responsive' ).is( ':visible' ) === false && fakewaffle.currentPosition === 'panel' ) {
-      fakewaffle.panelToTab();
-      fakewaffle.currentPosition = 'tabs';
-    }
+            });
 
-  };
+        });
 
-  fakewaffle.tabToPanel = function () {
+    };
 
-    var tabGroups = $( '.nav-tabs.responsive, .nav-pills.responsive' );
+    fakewaffle.panelToTab = function () {
 
-    $.each( tabGroups, function ( index, tabGroup ) {
+        var panelGroups = $('.panel-group.responsive');
 
-      // Find the tab
-      var tabContents = $( tabGroup ).next( '.tab-content' ).find( '.tab-pane' );
+        $.each(panelGroups, function (index, panelGroup) {
 
-      $.each( tabContents, function ( index, tabContent ) {
-        // Find the id to move the element to
-        var destinationId = $( tabContent ).attr( 'id' ).replace ( /^/, '#collapse-' );
+            var destinationId = $(panelGroup).attr('id').replace('collapse-', '#');
+            var destination = $(destinationId).next('.tab-content')[0];
 
-        // Convert tab to panel and move to destination
-        $( tabContent )
-          .removeClass( 'tab-pane' )
-          .addClass( 'panel-body' )
-          .appendTo( $( destinationId ) );
+            // Find the panel contents
+            var panelContents = $(panelGroup).find('.panel-body');
 
-      } );
+            // Convert to tab and move to destination
+            panelContents
+              .removeClass('panel-body')
+              .addClass('tab-pane')
+              .appendTo($(destination));
 
-    } );
+        });
 
-  };
+    };
 
-  fakewaffle.panelToTab = function () {
+    fakewaffle.bindTabToCollapse = function () {
 
-    var panelGroups = $( '.panel-group.responsive' );
+        var tabs = $('.nav-tabs.responsive, .nav-pills.responsive').find('li a');
+        var collapse = $('.panel-group.responsive').find('.panel-collapse');
 
-    $.each( panelGroups, function ( index, panelGroup ) {
+        // Toggle the panels when the associated tab is toggled
+        tabs.on('shown.bs.tab', function (e) {
+            var $current = $(e.currentTarget.hash.replace(/#/, '#collapse-'));
+            $current.collapse('show');
 
-      var destinationId = $( panelGroup ).attr( 'id' ).replace( 'collapse-', '#' );
-      var destination   = $( destinationId ).next( '.tab-content' )[ 0 ];
+            if (e.relatedTarget) {
+                var $previous = $(e.relatedTarget.hash.replace(/#/, '#collapse-'));
+                $previous.collapse('hide');
+            }
+        });
 
-      // Find the panel contents
-      var panelContents = $( panelGroup ).find( '.panel-body' );
+        // Toggle the tab when the associated panel is toggled
+        collapse.on('shown.bs.collapse', function (e) {
 
-      // Convert to tab and move to destination
-      panelContents
-        .removeClass( 'panel-body' )
-        .addClass( 'tab-pane' )
-        .appendTo( $( destination ) );
+            // Activate current tabs
+            var current = $(e.target).context.id.replace(/collapse-/g, '#');
+            $('a[href="' + current + '"]').tab('show');
 
-    } );
+            // Update the content with active
+            var panelGroup = $(e.currentTarget).closest('.panel-group.responsive');
+            $(panelGroup).find('.panel-body').removeClass('active');
+            $(e.currentTarget).find('.panel-body').addClass('active');
 
-  };
+        });
+    };
 
-  fakewaffle.bindTabToCollapse = function () {
+    $(window).on('resize', function () {
+        fakewaffle.checkResize();
+    });
 
-    var tabs     = $( '.nav-tabs.responsive, .nav-pills.responsive' ).find( 'li a' );
-    var collapse = $( '.panel-group.responsive' ).find( '.panel-collapse' );
-
-    // Toggle the panels when the associated tab is toggled
-    tabs.on( 'shown.bs.tab', function ( e ) {
-      var $current  = $( e.currentTarget.hash.replace( /#/, '#collapse-' ) );
-      $current.collapse( 'show' );
-
-      if ( e.relatedTarget ) {
-        var $previous = $( e.relatedTarget.hash.replace( /#/, '#collapse-' ) );
-        $previous.collapse( 'hide' );
-      }
-    } );
-
-    // Toggle the tab when the associated panel is toggled
-    collapse.on( 'shown.bs.collapse', function ( e ) {
-
-      // Activate current tabs
-      var current = $( e.target ).context.id.replace( /collapse-/g, '#' );
-      $( 'a[href="' + current + '"]' ).tab( 'show' );
-
-      // Update the content with active
-      var panelGroup = $( e.currentTarget ).closest( '.panel-group.responsive' );
-      $( panelGroup ).find( '.panel-body' ).removeClass( 'active' );
-      $( e.currentTarget ).find( '.panel-body' ).addClass( 'active' );
-
-    } );
-  };
-
-  $( window ).resize( function () {
-    fakewaffle.checkResize();
-  } );
-
-  return fakewaffle;
-}( window.jQuery, fakewaffle || { } ) );
+    return fakewaffle;
+}(window.jQuery, fakewaffle || {}));
