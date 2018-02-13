@@ -59,6 +59,9 @@ var csssrc = {
     "css/colorscheme-oceanside.css": "source/less/colorscheme/colorscheme-master.less"
 }
 
+// Avoid having to use ASP classic mode for server side includes in IIS using browsersync-ssi
+var ssi = require('browsersync-ssi');
+
 module.exports = function (grunt) {
 
     require('time-grunt')(grunt);
@@ -126,8 +129,15 @@ module.exports = function (grunt) {
                     ]
                 },
                 options: {
-                    proxy: "cagov5.dev",
-                    watchTask: true
+                    watchTask: true,
+                    startPath: "index.html",
+                    server: {
+                        baseDir: "./",
+                        middleware: ssi({
+                            baseDir: './',
+                            ext: '.html'
+                        })
+                    }
                 }
             }
         },
@@ -207,7 +217,7 @@ module.exports = function (grunt) {
 
     // Default task to watch and output uncompresses
     grunt.registerTask('default', [
-      'concat', 'less:development', 'autoprefixer', 'watch'
+      'concat', 'less:development', 'autoprefixer', 'browserSync', 'watch'
     ]);
 
     // Build task to minify css and js
@@ -223,11 +233,6 @@ module.exports = function (grunt) {
     // HTML linting
     grunt.registerTask('lint', [
       'concat', 'less:development', 'htmllint'
-    ]);
-
-    // Device testing
-    grunt.registerTask('test', [
-      'concat', 'less:development', 'autoprefixer', 'browserSync', 'watch'
     ]);
 
 };
