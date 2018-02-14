@@ -18,6 +18,18 @@
 		
 		@media (max-width: @screen-xs-max) {
 			padding-top: 2px; // beta 5.0 addition
+			float: left;
+			
+			&:first-child {
+				padding-left:70px;
+				padding-right:0 !important;
+				width: 60%;
+				}
+				
+			&:nth-child(2) {
+				padding-left:0 !important;
+				width: 40%;
+				}
 			
 		}
 		
@@ -61,8 +73,19 @@
     @media (max-width: @screen-xs-max) {
 		
         .social-media-links {
-            .sr-only();
+			li {
+				padding: 0 1px;
+				}
+            // .sr-only();
         }
+		
+		[class^="ca-gov-icon-"] {
+			.font-size(0.8);
+			}
+			
+		.header-cagov-logo img {
+			left: 10px;
+			}
 				
     }
     .located-city-name {

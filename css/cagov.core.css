@@ -1,4 +1,4 @@
-/* cagov-template-v5 - v0.0.1 - Jan-24-2018 */
+/* cagov-template-v5 - v0.0.1 - Feb-13-2018 */
 /* STYLES COMPILED FROM SOURCE (LESS) DO NOT MODIFY */
 /* -----------------------------------------
    NORMALIZE - /source/less/bootstrap/normalize.less
@@ -5646,7 +5646,7 @@ h6,
   }
 }
 .header-cagov-logo img {
-  top: 1px;
+  top: 4px;
   height: 32px;
   position: absolute;
   left: 27px;
@@ -6662,6 +6662,9 @@ GOOGLE CUSTOM SEARCH CUSTOMIZATION OVERRIDES beta 5.0 addition
   .second-level-nav > li {
     border-right: 0px;
   }
+  #navigation {
+    clear: both;
+  }
 }
 .first-level-link {
   display: block;
@@ -7416,6 +7419,16 @@ a.second-level-link [class^="ca-gov-icon-"] {
 @media (max-width: 767px) {
   .utility-header .half {
     padding-top: 2px;
+    float: left;
+  }
+  .utility-header .half:first-child {
+    padding-left: 70px;
+    padding-right: 0 !important;
+    width: 60%;
+  }
+  .utility-header .half:nth-child(2) {
+    padding-left: 0 !important;
+    width: 40%;
   }
 }
 .utility-header a {
@@ -7465,15 +7478,15 @@ a.second-level-link [class^="ca-gov-icon-"] {
   vertical-align: -2px;
 }
 @media (max-width: 767px) {
-  .utility-header .social-media-links {
-    position: absolute;
-    width: 1px;
-    height: 1px;
-    margin: -1px;
-    padding: 0;
-    overflow: hidden;
-    clip: rect(0, 0, 0, 0);
-    border: 0;
+  .utility-header .social-media-links li {
+    padding: 0 1px;
+  }
+  .utility-header [class^="ca-gov-icon-"] {
+    font-size: 12.8px;
+    font-size: 0.8rem;
+  }
+  .utility-header .header-cagov-logo img {
+    left: 10px;
   }
 }
 .utility-header .located-city-name {
