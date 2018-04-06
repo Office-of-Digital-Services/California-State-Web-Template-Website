@@ -1,4 +1,4 @@
-/* cagov-template-v5 - v0.0.1 - Feb-15-2018 */
+/* cagov-template-v5 - v0.0.1 - Apr-06-2018 */
 /* STYLES COMPILED FROM SOURCE (LESS) DO NOT MODIFY */
 /* -----------------------------------------
    NORMALIZE - /source/less/bootstrap/normalize.less
@@ -5856,6 +5856,9 @@ h6,
 /* -----------------------------------------
    FOOTER - /source/less/cagov/global-footer.less
 ----------------------------------------- */
+#main-content {
+  min-height: calc(10vh);
+}
 .global-footer {
   padding-top: 22px 0;
 }
@@ -6146,10 +6149,10 @@ h6,
     display: block;
     position: absolute;
     top: 240px;
-    padding: 10px;
+    padding: 0;
     max-height: 100%;
     border-radius: 0;
-    min-height: 75px;
+    min-height: 55px;
     width: 60%;
     left: 20%;
     -webkit-transition: all 0.4s;
@@ -6421,7 +6424,7 @@ h6,
   }
 }
 /* -----------------------------------------
-GOOGLE CUSTOM SEARCH CUSTOMIZATION OVERRIDES beta 5.0 addition
+GOOGLE CUSTOM SEARCH CUSTOMIZATION OVERRIDES
 /source/less/cagov/search.less
 ----------------------------------------- */
 .gsc-control-searchbox-only form.gsc-search-box {
@@ -6431,7 +6434,13 @@ GOOGLE CUSTOM SEARCH CUSTOMIZATION OVERRIDES beta 5.0 addition
   margin-bottom: 0;
 }
 .gsc-control-searchbox-only table.gsc-search-box td.gsc-input {
-  padding-right: 0;
+  padding-right: 0 !important;
+  width: 100% !important;
+}
+.gsc-control-searchbox-only .gsc-input-box {
+  border: none !important;
+  background: transparent !important;
+  height: 100%;
 }
 .gsc-control-searchbox-only input.gsc-input {
   background-color: rgba(255, 255, 255, 0.8);
@@ -6440,12 +6449,14 @@ GOOGLE CUSTOM SEARCH CUSTOMIZATION OVERRIDES beta 5.0 addition
   transition: border 0.4s;
   outline: none;
   font-size: 1.1rem;
-  height: 55px;
-  padding: 14px;
+  height: 55px !important;
+  padding: 14px !important;
   opacity: 0.8 !important;
   width: 100%;
+  background-position-x: 7px !important;
 }
-.gsc-control-searchbox-only input.gsc-search-button {
+.gsc-control-searchbox-only input.gsc-search-button,
+.gsc-control-searchbox-only button.gsc-search-button {
   opacity: 0;
   width: 55px;
   height: 51px;
@@ -6472,11 +6483,11 @@ GOOGLE CUSTOM SEARCH CUSTOMIZATION OVERRIDES beta 5.0 addition
 }
 .gsc-control-searchbox-only div.gsc-clear-button {
   padding-left: 0 !important;
-  display: block !important;
   background-image: none !important;
   margin-left: 0;
   margin-right: 0;
   width: 40px;
+  display: block !important;
 }
 .gsc-control-searchbox-only div.gsc-clear-button:before {
   content: '\4d';
@@ -6521,6 +6532,23 @@ GOOGLE CUSTOM SEARCH CUSTOMIZATION OVERRIDES beta 5.0 addition
 }
 .search-results-header .gsc-control-searchbox-only td.gsc-clear-button {
   display: none;
+}
+table.gsc-search-box table td div {
+  padding: 0 !important;
+}
+.gsc-input-box-focus,
+.gsc-input-box-hover {
+  box-shadow: none !important;
+  border: none !important;
+}
+table.gsc-search-box td {
+  padding: 0 !important;
+}
+.gsc-search-box-tools .gsc-clear-button {
+  display: block !important;
+}
+.search-container.active div.gsc-clear-button {
+  width: 40px;
 }
 /* -----------------------------------------
    SITE SEARCH RESULTS - /source/less/cagov/search-results.less

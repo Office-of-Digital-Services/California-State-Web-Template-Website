@@ -208,11 +208,11 @@
         display: block;
         position: absolute;
         top: 240px; // Position search in the middle of the banner
-        padding: 10px;
+        padding: 0;
 
         max-height: 100%;
         border-radius: 0;
-        min-height: 75px;
+        min-height: 55px;
 
         width: 60%;
         left: 20%;
@@ -495,7 +495,7 @@
 
 
 /* -----------------------------------------
-GOOGLE CUSTOM SEARCH CUSTOMIZATION OVERRIDES beta 5.0 addition
+GOOGLE CUSTOM SEARCH CUSTOMIZATION OVERRIDES
 /source/less/cagov/search.less
 ----------------------------------------- */
 .gsc-control-searchbox-only {
@@ -505,9 +505,16 @@ GOOGLE CUSTOM SEARCH CUSTOMIZATION OVERRIDES beta 5.0 addition
 	table.gsc-search-box {
 		margin-bottom: 0;
 		td.gsc-input {
-			padding-right: 0;
+			padding-right: 0 !important;
+  			width:100% !important;
 		}
 	}
+	
+	.gsc-input-box {
+		border: none !important;
+		background: transparent !important;
+		height: 100%;
+		}
 	input.gsc-input {
 		background-color: rgba(255, 255, 255, 0.8);
 		border-radius: 0;
@@ -515,12 +522,13 @@ GOOGLE CUSTOM SEARCH CUSTOMIZATION OVERRIDES beta 5.0 addition
 		transition: border 0.4s;
 		outline: none;
 		font-size: 1.1rem;
-		height: 55px;
-		padding: 14px;
+		height: 55px !important;
+		padding: 14px !important;
 		opacity: 0.8 !important;
 		width: 100%;
+		background-position-x: 7px !important;
 	}
-	input.gsc-search-button {
+	input.gsc-search-button, button.gsc-search-button {
 		opacity: 0;
 		width: 55px;
 		height: 51px;
@@ -528,6 +536,7 @@ GOOGLE CUSTOM SEARCH CUSTOMIZATION OVERRIDES beta 5.0 addition
 		right: 2px;
 		top: 2px;
 		z-index: 55;
+		
 	}
 	td.gsc-clear-button {
 		width: 1px !important;
@@ -552,6 +561,7 @@ GOOGLE CUSTOM SEARCH CUSTOMIZATION OVERRIDES beta 5.0 addition
 		margin-left: 0;
 		margin-right: 0;
 		width: 40px;
+		display:block !important;
 		&:before {
 			content: '\4d';
 			font-family: cagov;
@@ -602,4 +612,23 @@ GOOGLE CUSTOM SEARCH CUSTOMIZATION OVERRIDES beta 5.0 addition
 	td.gsc-clear-button {
 	display:none; // removes clear results cell from the searchbox 
 	}
+}
+
+
+// Fixes after google updated custom search API
+table.gsc-search-box table td div {
+    padding: 0 !important;
+}
+.gsc-input-box-focus, .gsc-input-box-hover {
+    box-shadow:none !important;
+    border:none !important;
+}
+table.gsc-search-box td {
+    padding: 0 !important;
+}
+.gsc-search-box-tools .gsc-clear-button {
+    display:block !important;
+}
+.search-container.active div.gsc-clear-button {
+  width: 40px;
 }
