@@ -1,3 +1,11 @@
+/* -----------------------------------------
+   NO CONFLIT - /source/js/cagov/noconflict.js
+----------------------------------------- */
+
+// Fixes issue with $ not a function
+$ = jQuery.noConflict();
+
+
 /* ========================================================================
  * Bootstrap: alert.js v3.3.5
  * http://getbootstrap.com/javascript/#alerts

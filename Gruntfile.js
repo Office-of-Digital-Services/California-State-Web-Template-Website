@@ -1,5 +1,7 @@
 // JS Partials - Used in concat & uglify tasks
 var jssrc = [
+  // NO CONFLICT
+  'source/js/cagov/noconflict.js',
   // BOOTSTRAP
   'source/js/bootstrap/alert.js',
   'source/js/bootstrap/button.js',
