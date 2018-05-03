@@ -19,7 +19,7 @@ $(document).ready(function () {
     mobileWidth = 767,
     setActiveLinkByFolder = $navigation.hasClass('auto-highlight'); // Use new folder matching method to highlight the current navigation tab
 
-    var mouseOverDelay = 300, setTimeoutConst;
+    var mouseOverDelay = 100, setTimeoutConst;
 
     // touch detection
     var isTouch = Modernizr.touch,
@@ -96,7 +96,7 @@ $(document).ready(function () {
                         // position arrow, hide other sub-nav panels, fade in current panel
 
                         hideSubNavs();
-                        $sub.fadeIn(300);
+                        $sub.fadeIn(1000);
                     }
                 }, false);
             });
@@ -134,7 +134,7 @@ $(document).ready(function () {
                     // position arrow, hide other sub-nav panels, fade in current panel
 
                     hideSubNavs();
-                    $sub.fadeIn(300);
+                    $sub.fadeIn(1000);
                 }
             });
         });
@@ -157,48 +157,59 @@ $(document).ready(function () {
             $(this).find('.first-level-link').addClass('has-sub');
 
             // create toggle object
-            var $toggleSubNav = $('<span class="mobile-control toggle-sub-nav closed"><span class="ca-gov-icon-menu-toggle-closed" aria-hidden="true"></span><span class="ca-gov-icon-menu-toggle-open" aria-hidden="true"></span><span class="sr-only">Sub Menu Toggle</span></span>');
+            var $toggleSubNav = $('<button class="mobile-control toggle-sub-nav closed"><div class="ca-gov-icon-arrow-next rotate" aria-hidden="true"></div><span class="sr-only">Sub Menu Toggle</span></button>');
             // add toggle object to DOM
             $(this).find('.sub-nav').before($toggleSubNav);
 
-            // setup mobile toggle
-            $toggleSubNav.on("click", function () {
-                var secondaryLinks = $(this).parent().find('.sub-nav');
-                if (secondaryLinks.is(':visible')) {
-                    //close panel
-                    $(this).removeClass('open').addClass('closed');
-                    secondaryLinks.slideUp('fast', function () {
-                        // remove style attribute after animation and switch to class for styling
-                        $(this).removeAttr('style').removeClass('secondary-open');
-                    });
-                } else {
-                    // open panel
-                    $(this).removeClass('closed').addClass('open');
-                    secondaryLinks.slideDown('fast', function () {
-                        // remove style attribute after animation and switch to class for styling
-                        $(this).removeAttr('style').addClass('secondary-open');
-                    });
-                }
-            });
         });
     }
 
 
+
+
+
     // Setup non-off-canvas menu
     $('#navigation').addClass('mobile-closed');
+    $(".sub-nav").addClass('subnav-closed');
     $('.toggle-menu').on("click", function () {
         if ($('#navigation').hasClass('mobile-closed')) {
+            $(this).addClass('open'); // for hamburger to X transition
             $(this).attr('aria-expanded', 'true');
-            $('#navigation').removeClass('mobile-closed');
+            // $('#navigation').removeClass('mobile-closed');
+            $('#navigation').slideDownTransition();
         } else {
+            $(this).removeClass('open'); // for hamburger to X transition
             $(this).attr('aria-expanded', 'false');
-            $('#navigation').addClass('mobile-closed');
+            // $('#navigation').addClass('mobile-closed');
+            $('#navigation').slideUpTransition();
         }
         //$('#navigation').toggleClass('mobile-closed');
         $('.search-container').removeClass('active');
         // Changing aria attributes for accessibility
 
     });
+
+    // Subnav Toggle
+    $(".toggle-sub-nav").on("click", function () {
+        var secondaryLinks = $(this).parent().find('.sub-nav');
+        if ($(this).hasClass('closed')) {
+            $(this).removeClass('closed').addClass('open');
+            $(this).find(".rotate").addClass('down');
+            $(secondaryLinks).slideDownTransitionSub();
+        } else {
+            $(this).removeClass('open').addClass('closed');
+            $(this).find(".rotate").removeClass('down');
+            $(secondaryLinks).slideUpTransitionSub();
+        }
+
+    });
+    $(".rotate1").on("click", function () {
+        $(this).toggleClass("down");
+    })
+
+
+
+
 
     $('.toggle-search').on('click', function () {
         $('.search-container').toggleClass('active');
@@ -247,6 +258,80 @@ $(document).ready(function () {
 
 
 });
+
+// Mobile slidedown function
+(function ($) {
+    $.fn.slideUpTransition = function () {
+        return this.each(function () {
+            var $el = $(this);
+            $el.css("max-height", "0");
+            $el.addClass("mobile-closed");
+
+        });
+    };
+
+    $.fn.slideDownTransition = function () {
+        return this.each(function () {
+            var $el = $(this);
+            $el.removeClass("mobile-closed");
+
+            // temporarily make visible to get the size
+            $el.css("max-height", "none");
+            var height = $el.outerHeight();
+
+            // reset to 0 then animate with small delay
+            $el.css("max-height", "0");
+
+            setTimeout(function () {
+                $el.css({
+                    "max-height": height
+                });
+            }, 1);
+        });
+    };
+})(jQuery);
+
+
+// Subnav Mobile slidedown function
+(function ($) {
+    $.fn.slideUpTransitionSub = function () {
+        return this.each(function () {
+            var $subel = $(this);
+            var subheight = $subel.outerHeight();
+            var mainnavheight = $("#navigation").outerHeight();
+            var sumheight = mainnavheight - subheight;
+            $subel.css("max-height", "0");
+            $subel.addClass("subnav-closed");
+            $subel.attr('aria-expanded', 'false');
+            $subel.attr('aria-hidden', 'true');
+            $("#navigation").css({ "max-height": sumheight })
+        });
+    };
+
+    $.fn.slideDownTransitionSub = function () {
+        return this.each(function () {
+            var $subel = $(this);
+            $subel.removeClass("subnav-closed");
+
+            // temporarily make visible to get the size
+            $subel.css("max-height", "none");
+            var subheight = $subel.outerHeight();
+            var mainnavheight = $("#navigation").outerHeight();
+            var sumheight = subheight + mainnavheight;
+            // reset to 0 then animate with small delay
+            $subel.css("max-height", "0");
+
+            setTimeout(function () {
+                $subel.css({
+                    "max-height": subheight
+                });
+                $subel.attr('aria-expanded', 'true');
+                $subel.attr('aria-hidden', 'false');
+                $("#navigation").css({ "max-height": sumheight })
+            }, 1);
+        });
+    };
+})(jQuery);
 
 /*  ACCESSIBLE MENU */
 // source https://github.com/adobe-accessibility/Accessible-Mega-Menu/
@@ -1111,7 +1196,6 @@ $(document).ready(function () {
     });
 
 
-    // Resets navigation to defauilt state on resize.
     $(window).on('resize', function () {
         $(".sub-nav").removeClass("open");
         $(".sub-nav").removeClass("secondary-open");
@@ -1121,10 +1205,24 @@ $(document).ready(function () {
         $(".first-level-link").removeClass("active");
         $(".first-level-link").attr("aria-expanded", false);
         $("#navigation").addClass("mobile-closed");
+        if ($(window).width() < 768) {
+            $("#navigation").css("max-height", "0");
+            $('.sub-nav').slideUpTransitionSub();
+            $('#navigation').slideUpTransition();
+            // 
+            $(".rotate").removeClass('down');
+        }
+        else {
+            $("#navigation").removeAttr("style");
+            $(".sub-nav").removeAttr("style");
+        }
+
         $(".toggle-sub-nav").removeClass("open");
         $(".toggle-sub-nav").addClass("closed");
         $(".nav-item").removeClass("active");
         $(".toggle-menu").attr('aria-expanded', 'false');
+        $(".toggle-menu").removeClass("open");
+        $(".toggle-sub-nav").removeClass("open");
     });
 
 }(jQuery, window, document));

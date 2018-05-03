@@ -1,0 +1,29 @@
+/* -----------------------------------------
+   EXAMS - /source/scss/exams.scss
+----------------------------------------- */
+
+.exam-item {
+    @include well();
+    
+    .footer {
+        a.btn {
+            float:right;
+        }
+    }
+    
+    @media (max-width: $screen-xs-max) {
+        // Remove float on small mobile 
+        .title, .filing-date, .published, a.btn {
+            float:none !important;
+        }
+    }
+}
+
+
+
+.exam-detail {
+    .location {
+        @include float-right();
+    }
+}
+

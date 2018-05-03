@@ -56,14 +56,15 @@ Based on Twitter Bootstrap
     <!-- Include Mobile Controls -->
     <!--#include virtual="/ssi/mobile-controls.html" -->
 
-    <div class="navigation-search">        
-    	<!-- Include Navigation -->
+    <div class="navigation-search">
+        <!-- Include Navigation -->
         <!--#include virtual="/ssi/navigation.html" -->
-        
+
         <div id="head-search" class="search-container">
             <!-- Include Search -->
             <!--#include virtual="/ssi/search.html" -->
         </div>
+
     </div>
 
     <div class="header-decoration"></div>
@@ -72,11 +73,8 @@ Based on Twitter Bootstrap
 <div id="main-content" class="main-content">
 
         <main class="main-primary">
-            <!--Search include is commented out-->
-            <!--include virtual="/ssi/search-results-standalone.html" -->
-            
             <!--Search result section-->
-            <div class="section-default">
+            <div class="section section-default">
                 <div class="container search-results-header">
                     <h1>Search Results</h1>
                     <gcse:searchbox-only resultsUrl="/serp.html" enableAutoComplete="true"></gcse:searchbox-only>

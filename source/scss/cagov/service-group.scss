@@ -1,0 +1,228 @@
+/* -----------------------------------------
+   SERVICE TILES
+   /source/scss/cagov/service-group.scss
+----------------------------------------- */
+
+// TODO: This should be moved to a more appropriate section
+.more-button {
+    position: relative;
+    overflow: hidden;
+
+    .more-content {
+        position: absolute;
+        overflow: hidden;
+        width: 100%;
+    }
+
+    .btn-more {
+        position: relative;
+    }
+}
+
+.service-tile-panel {
+  /*Selectivly show when requested by user*/
+  visibility: collapse;
+  position: absolute;
+
+    // Not sure if this can be a generic class for all of the large close buttons.
+    // Stashing in service tile panel to avoid conflict with other similar.
+    .btn.close {
+        @include font-size(3.5);
+    }
+}
+
+/* -----------------------------------------
+ SERVICE TILE WHEN EXPANDED
+----------------------------------------- */
+.service-tile-full {
+    clear: both;
+    width: 100%;
+    background: $gray-lightest;
+    height: auto;
+
+    &.is-open .service-tile-panel {
+      visibility: visible;
+      position: relative;
+    }
+}
+
+/* -----------------------------------------
+ SERVICE TILE
+----------------------------------------- */
+
+// TODO: Clean this up in accordance with SymSoft's guidelines
+
+.service-tile {
+    // create our columns for all screen sizes
+    @include make-xs-column(12,0);
+
+    /* Need to keep the two column longer than bootstrap has .make-*-column for */
+    @media (min-width: 450px) {
+        width: 50%;
+    }
+
+    @include make-sm-column(6,0);
+    @include make-md-column(3,0);
+
+    // no gaps between service-tiles
+    position: relative;
+    padding: 0;
+    margin: 0;
+    cursor: pointer;
+    text-align: center;
+    outline: none;
+
+    // Keep width and height ratio close to 1 to 1
+    min-height: 240px;
+
+    @media (min-width: $screen-sm) {
+        min-height: 280px;
+    }
+
+    @media (min-width: $screen-md) {
+        min-height: 240px;
+    }
+
+    @media (min-width: $screen-lg) {
+        min-height: 320px;
+    }
+
+    //color: $text-color;
+    // background: lighten($color-s2,10%);  // Caused acessibility failure. Should be dark blue
+    color: $color-s1;
+    background: $brand-primary;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    .icon-fallback {
+        min-width: 100%;
+        line-height: 1;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        vertical-align: middle;
+        display: inline-block;
+        height: 100%;
+		-webkit-transition: opacity 0.3s;
+        transition: opacity 0.3s;
+    }
+
+    .teaser {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        background: #000;       // Fallback color
+		background: -webkit-linear-gradient(top, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0.6) 30%, #000000 100%);
+        background: linear-gradient(to bottom,  rgba(0,0,0,0.6) 0%,rgba(0,0,0,0.6) 30%,rgba(0,0,0,9) 100%);
+        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#cc000000', endColorstr='#000000',GradientType=0 ); // IE6-9
+        color: #fff;
+        //transition: transform 0.3s 0.3s;
+        padding: 10px 0;
+
+        .title {
+            margin: 5px 0 0;
+            @include text-overflow();
+			-webkit-transition: all 0.3s;
+            transition: all 0.3s;
+
+            &:hover {
+                color: $color-p1;
+            }
+        }
+    }
+}
+.service-tile:focus .teaser .title {
+	color: $color-p1;
+	}
+
+// Add open and close icons with css to keep markup clean
+.title:after {
+    @include m-t-sm();
+    font-family: 'CaGov';
+    display: block;
+    font-weight: normal;
+
+    // TODO: data-state="info" not needed but keeping until js has been updated
+    [data-state="closed"].service-tile &, [data-state="info"].service-tile &{
+        content: "\50";             // Close: ca-gov-icon-minus-line
+    }
+
+    [data-state="open"].service-tile & {
+
+        content: "\4f";             // Open: ca-gov-icon-plus-line
+    }
+}
+
+[data-state="open"].service-tile:after {
+    @include triangle(down, 15px, $gray-base);
+    position: absolute;
+    left: 50%;
+    margin-left: -15px;
+    bottom: -15px;
+    z-index: 5;
+}
+
+
+.service-tile-empty {
+// background:  $color-p2;
+// color: $color-s2;
+background:  $color-p3; // beta 5.0 addition
+color: lighten($color-p3, 9%); // beta 5.0 addition
+overflow: hidden;
+  span {
+    font-size: 17em;
+  line-height: 1;
+
+  }
+
+  .title:after {
+    content: "\e65d" !important;
+  }
+
+
+
+    width: 100%;
+     &.half, &.quarter, &.third {
+      width: 100%;
+    }
+
+
+      /* Need to keep the two column longer than bootstrap has .make-*-column for */
+      @media (min-width: 450px) {
+
+        &.full {
+          width: 100%;
+        }
+
+        &.third {
+          width: 50%;
+        }
+        &.half {
+          width: 100%;
+        }
+        &.quarter {
+          width: 50%;
+        }
+
+      }
+
+      @media (min-width: 992px) {
+        &.full {
+          width: 100%;
+        }
+
+        &.third {
+          width: 75%;
+        }
+        &.half {
+          width: 50%;
+        }
+        &.quarter {
+          width: 25%;
+        }
+      }
+
+
+}

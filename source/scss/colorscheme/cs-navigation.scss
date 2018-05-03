@@ -1,0 +1,188 @@
+/* -----------------------------------------
+   NAVIGATION
+   /source/scss/colorscheme/cs-navigation.scss
+----------------------------------------- */
+
+.navigation-search {
+	border-bottom-color: $color-p1;
+	}
+
+
+//
+// MOBILE CONTROLS
+// --------------------------------------------------
+
+.mobile-controls {
+  background: $white;
+}
+.mobile-control {
+  color: $mobile-controls;
+
+  a {
+   color: $mobile-controls;
+   text-decoration: none;
+  }
+
+    &.toggle-sub-nav {
+        color:desaturate(lighten($color-p2, 43), 51);
+		background-color: darken($sub-nav-bg, 2%); 
+		&:hover, &:focus {
+			outline:none;
+			background-color:$sub-nav-bg;  // should be the same as sub-nav background
+			}
+    }
+}
+
+
+
+//
+// NAVIGATION ACTIVE STYLE
+// --------------------------------------------------
+
+.nav-item {
+    &.active, &:hover {
+
+        > a {
+            color:$color-p2;
+            //border-bottom:5px solid $color-p2;
+            //margin-bottom:-5px;
+
+            > span[class^="ca-gov-icon"] {
+                color:$color-p2;
+            }
+        }
+    }
+}
+
+.nav-arrow-down {
+    background: $color-p2;
+}
+
+//
+// FIRST LEVEL LINKS
+// --------------------------------------------------
+
+.first-level-link {
+    color:$gray;
+
+    > span[class^="ca-gov-icon"] {
+        /* Navigation icons */
+        color:desaturate(lighten($color-p2, 43), 51);
+    }
+
+    @media (max-width: $screen-xs-max) {
+         border-bottom:1px solid $color-s1;
+    }
+}
+
+
+
+//
+// SECOND LEVEL LINKS
+// --------------------------------------------------
+
+.second-level-link {
+    color: $color-p2;
+
+    [class^="ca-gov-icon-"] {
+        color: $color-p2;
+    }
+}
+
+.second-level-nav {
+    > li {
+        border:1px solid transparent;
+        border-right: 1px solid $gray-lighter;
+        border-bottom: 1px solid $gray-lighter;
+        //border: 1px solid $sub-nav-link-border;
+		
+		&:hover, &:focus {
+            background:#fff;
+        }
+		
+		@media (max-width: $screen-xs-max) {
+         border-right:none; // beta 5.0 addition (for accessible menu)
+		 border-bottom: 1px solid $color-s1; 
+		 
+		  &:hover, &:focus {
+            background: lighten( $sub-nav-bg, 2%);
+        }
+    }
+
+
+    }
+    
+    .link-description {
+        color: $gray;
+    }
+}
+
+
+
+//
+// SUB NAV CONTAINER
+// --------------------------------------------------
+
+.sub-nav {
+    // border-top: 5px solid $color-p1;
+    border-bottom: 5px solid $color-p2;
+    border-left: 1px solid $gray-lighter;
+    border-right: 1px solid $gray-lighter;
+    background: $sub-nav-bg;
+}
+
+@media (max-width: $screen-xs-max) {
+    .sub-nav {
+        border-top: none;
+        border-bottom: none;
+    }
+}
+
+
+
+//
+// MEDIA IN SUB NAV
+// --------------------------------------------------
+
+.nav-media {
+    background: $sub-nav-media-bg;
+    
+    .media:hover {
+        background: #fff;
+    }
+    
+    // Add the border to the first one only
+    .media {
+        border-bottom: 1px solid $sub-nav-link-border;
+    
+		@media (max-width: $screen-xs-max) {
+		border-bottom: 1px solid $color-s1;
+		
+		&:hover, &:focus {
+			 background: lighten($sub-nav-bg, 2%);
+			}
+		}
+	
+	
+	}
+        
+    .media + .media  {
+        //border-bottom-color:red;
+    }
+
+}
+
+// Accessible menu
+// beta 5.0 addition (for accessible menu)
+@media (min-width: $screen-sm-min) {
+	.nav-item {
+		&::after {
+			background-color:transparent;
+			}
+	
+	        &:hover::after, &:focus::after {
+            background-color: $color-p2;
+        }
+	
+	}
+}

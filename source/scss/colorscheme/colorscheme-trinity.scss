@@ -1,0 +1,137 @@
+
+
+/* -----------------------------------------
+   TRINITY
+----------------------------------------- */
+
+//
+// VARIABLES
+// --------------------------------------------------
+
+// Theme directory
+$theme-directory:       "#{$template-path}/trinity";      // Folder where assets for theme are stored
+
+// Primary Theme colors
+$color-p1:              #C19E73;        // Gold
+$color-p2:              #446A7C;        // Navy Blue
+$color-p3:              #21272A;        // Darker Grey
+
+// Secondary Theme colors
+$color-s1:              #f9f8f8;        // Lightest Grey
+$color-s2:              #e2dfda;        // Lighter Grey
+$color-s3:              #ccc8bf;        // Light Grey
+
+// Accent Colors
+$color-a1:              #1f89db;            // Dark Blue
+$color-a2:              #49bbf8;            // Med Blue
+$color-a3:              #35bbaa;            // Teal
+$color-a4:              #72ce6f;     		// Green $brand-success
+$color-a5:              #815ab4;            // Purple
+$color-a6:              #dd99e5;            // Lavender
+$color-a7:              #d34a37;      		// Red $brand-danger
+$color-a8:              #F27e31;     		// Orange $brand-warning
+$color-a9:              #f7e455;            // Yellow
+
+$panel-border:        #ddd;
+
+// Module or theme specific variables
+$nav-first-level:       #fff;           // Color of navigation links
+$nav-second-level:      $text-color;    // Second level link colors
+$off-canvas-links:      #fff;           // Off Canvas link color
+$search-accent:         $color-p1;      // Search field input hover border
+$nav-accent:            $color-p1;      // Link hover and nav bar bottom line
+$body-color:            #1d4d4c;        // Background base and typically the page edge border
+$body-midline:          $color-s3;      // Midline gradient color
+$edge-border:           $body-color;    // Applied to outer edge of the page
+$header-icon:           $color-p2;      // Icon left of main content H1
+$mobile-controls:		$color-p2;		    // Mobile controls
+$footer-txt:            #fff;           // Color of text and links in the footer
+
+$overstated-header-bg:          $color-p2;      // Background for panel header
+$overstated-header-txt:         #fff;           // Panel header text color 
+$overstated-header-icon:        #fff;           // Panel header icon color  
+$overstated-header-border:      darken($color-p2, 10%);     // Panel header bottom border color 
+$overstated-border:             $panel-border;       // Border surrounding entire panel
+$overstated-body-bg:            $color-s1;      // Panel body background
+
+$panel-default-header-bg:       $color-s2;      // Background for panel header
+$panel-default-header-txt:      $text-color;       // Panel header text color
+$panel-default-header-icon:     $color-p3;      // Panel header icon color 
+$panel-default-header-border:   $panel-border;      // Panel header bottom border color 
+$panel-default-border:          $panel-border;      // Border surrounding entire panel
+$panel-default-body-bg:         $color-s1;      // Panel body background
+
+$sidebar-default-header-bg:     $color-s2;      // Background for panel header
+$sidebar-default-header-txt:    $text-color;       // Panel header text color
+$sidebar-default-header-icon:   $color-p3;      // Panel header icon color
+$sidebar-default-header-border: $panel-border;       // Panel header bottom border color  
+$sidebar-default-border:        $panel-border;       // Border surrounding entire panel
+$sidebar-default-body-bg:       $color-s1;      // Panel body background
+
+$understated-header-bg:         $color-s1;      // Background for panel header
+$understated-header-txt:        $text-color;       // Panel header text color
+$understated-header-icon:       $color-p3;      // Panel header icon color 
+$understated-header-border:     $panel-border;          // Panel header bottom border color  
+$understated-border:            $panel-border;          // Border surrounding entire panel
+$understated-body-bg:           #fff;      // Panel body background
+
+$standout-header-bg:            $color-p3;      // Background for panel header
+$standout-header-txt:           #fff;           // Panel header text color
+$standout-header-icon:          $color-p1;      // Panel header icon color
+$standout-header-border:        $color-p1;      // Panel header bottom border color 
+$standout-border:               $panel-border;          // Border surrounding entire panel
+$standout-body-bg:              $color-s1;      // Panel body background
+
+$figure-border:                 $color-s2;      // Border around media captions
+$figure-bg:                     $color-s1;      // Background behind figure and caption
+
+// MEGAMENU
+$sub-nav-bg:                    $color-s1;
+$sub-nav-link-border:           $gray-lighter;
+$sub-nav-media-bg:              transparent;
+
+// SEARCH
+$expanded-background-color: $gray-lighter;
+$text-field-color: rgba(255, 255, 255, 0.8); // 80% white
+
+/* ----- TRINITY PRIMARY THEME COLORS -----  */
+
+.color-highlight, .color-p1 {
+    color: $color-p1;
+    }
+.color-primary, .color-p2 {
+    color: $color-p2;
+    }
+.color-standout, .color-p3 {
+    color: $color-p3;
+    }
+	
+.bg-highlight, .bg-p1 {
+    background-color: $color-p1 !important;
+    }
+.bg-primary, .bg-p2 {
+    background-color: $color-p2 !important;
+    }
+.bg-standout, .bg-p3 {
+    background-color: $color-p3 !important;
+    }
+	
+/*  SECONDARY THEME COLORS	*/
+.color-s1 {
+    color: $color-s1;
+    }
+.color-s2 {
+    color: $color-s2;
+    }
+.color-s3 {
+    color: $color-s3;
+    }
+.bg-s1 {
+    background-color: $color-s1 !important;
+    }
+.bg-s2 {
+    background-color: $color-s2 !important;
+    }
+.bg-s3 {
+    background-color: $color-s3 !important;
+    }

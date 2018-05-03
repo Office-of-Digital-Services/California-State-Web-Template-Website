@@ -1,0 +1,77 @@
+/* -----------------------------------------
+   COMMENT
+   /source/scss/colorscheme/cs-testimonials.scss
+----------------------------------------- */
+
+.testimonial {
+    
+    &-default {
+        background:$gray-lightest;
+    }
+    
+    &-understated {
+        background:$color-s1;
+    }
+    
+    &-overstated {
+        @include link-variant(#fff, #fff, none, underline);
+        background:$color-s3;
+        color:contrast($color-s3);
+        
+        footer {
+            color:contrast($color-s3);
+        }
+    }
+    
+    &-standout {
+        @include link-variant($color-p1, #fff, none, underline);
+        background:$color-p3;
+        color:contrast($color-p3);
+        
+        footer {
+            color:contrast($color-p3);
+        }
+    }
+    
+    &-primary {
+        @include link-variant($color-p1, #fff, none, underline);
+        background:$color-p2;
+        color:contrast($color-p2);
+
+        
+        footer {
+            color:contrast($color-p2);
+        }
+    }
+	
+	&-highlight {
+        @include link-variant($color-p3, $text-color, none, underline);
+        background:$color-p1;
+        color:$text-color;
+
+        
+        footer {
+            color:contrast($color-p1);
+        }
+    }
+    
+    &-inverted {
+        @include link-variant($color-p1, #fff, none, underline);
+        background:$gray-darker;
+        color:#fff;
+        
+        footer {
+            color:contrast($gray-darker);
+        }
+    }
+    
+    &-danger {
+        @include link-variant($gray-base, #fff, underline, underline);
+        background:$brand-danger;
+        color:contrast($brand-danger);
+        
+        footer {
+            color:contrast($brand-danger);
+        }
+    }
+}

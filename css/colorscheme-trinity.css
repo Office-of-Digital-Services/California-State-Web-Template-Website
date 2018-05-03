@@ -1,515 +1,581 @@
-/* cagov-template-v5 - v0.0.1 - Apr-06-2018 */
-/* STYLES COMPILED FROM SOURCE (LESS) DO NOT MODIFY */
-/* -----------------------------------------
- Helper Mixins for service-group
------------------------------------------ */
 /* -----------------------------------------
    TRINITY
 ----------------------------------------- */
 /* ----- TRINITY PRIMARY THEME COLORS -----  */
-.color-highlight,
-color-p1 {
+.color-highlight, .color-p1 {
   color: #C19E73;
 }
-.color-primary,
-color-p2 {
+
+.color-primary, .color-p2 {
   color: #446A7C;
 }
-.color-standout,
-color-p3 {
+
+.color-standout, .color-p3 {
   color: #21272A;
 }
+
+.bg-highlight, .bg-p1 {
+  background-color: #C19E73 !important;
+}
+
+.bg-primary, .bg-p2 {
+  background-color: #446A7C !important;
+}
+
+.bg-standout, .bg-p3 {
+  background-color: #21272A !important;
+}
+
 /*  SECONDARY THEME COLORS	*/
 .color-s1 {
   color: #f9f8f8;
 }
+
 .color-s2 {
   color: #e2dfda;
 }
+
 .color-s3 {
   color: #ccc8bf;
 }
+
+.bg-s1 {
+  background-color: #f9f8f8 !important;
+}
+
+.bg-s2 {
+  background-color: #e2dfda !important;
+}
+
+.bg-s3 {
+  background-color: #ccc8bf !important;
+}
+
 /* -----------------------------------------
    LAYOUT
-   /source/less/colorscheme/layout.less
+   /source/scss/colorscheme/layout.scss
 ----------------------------------------- */
 /* Primary page with/without two-column */
 .primary {
   /* Primary page with two column */
 }
+
 .primary.two-column {
   /* Main content contains 2col bg and footer bg */
 }
+
 .primary.two-column .main-content {
   background-color: #fff;
 }
+
 /* -----------------------------------------
    GLOBAL HEADER
-   /source/less/colorscheme/global-header.less
+   /source/scss/colorscheme/global-header.scss
 ----------------------------------------- */
 .utility-header {
   background: #446A7C;
   color: #ffffff;
 }
+
 .global-header {
   /* Default header pattern */
   /* Small screen gets solid color */
 }
+
 .explore-invite a:hover span[class^="ca-gov-icon-"] {
   color: #C19E73;
 }
+
 .explore-invite a:hover .explore-title {
   color: #C19E73;
 }
+
 /* -----------------------------------------
    GLOBAL FOOTER
-   /source/less/colorscheme/global-footer.less
+   /source/scss/colorscheme/global-footer.scss
 ----------------------------------------- */
 .global-footer {
   background: #222222;
 }
+
 /* Targets icon of first h1 on the page  */
 h1 span[class^="ca-gov-icon-"]:first-child {
   color: #446A7C;
 }
+
 /* -----------------------------------------
    NAVIGATION
-   /source/less/colorscheme/cs-navigation.less
+   /source/scss/colorscheme/cs-navigation.scss
 ----------------------------------------- */
 .navigation-search {
   border-bottom-color: #C19E73;
 }
+
 .mobile-controls {
   background: #fff;
 }
+
 .mobile-control {
   color: #446A7C;
 }
+
 .mobile-control a {
   color: #446A7C;
   text-decoration: none;
 }
+
 .mobile-control.toggle-sub-nav {
-  color: #777777;
+  color: #cecece;
+  background-color: #f4f3f3;
 }
-.nav-item.active > a,
-.nav-item:hover > a {
+
+.mobile-control.toggle-sub-nav:hover, .mobile-control.toggle-sub-nav:focus {
+  outline: none;
+  background-color: #f9f8f8;
+}
+
+.nav-item.active > a, .nav-item:hover > a {
   color: #446A7C;
 }
-.nav-item.active > a > span[class^="ca-gov-icon"],
-.nav-item:hover > a > span[class^="ca-gov-icon"] {
+
+.nav-item.active > a > span[class^="ca-gov-icon"], .nav-item:hover > a > span[class^="ca-gov-icon"] {
   color: #446A7C;
 }
+
 .nav-arrow-down {
   background: #446A7C;
 }
+
 .first-level-link {
   color: #555555;
 }
+
 .first-level-link > span[class^="ca-gov-icon"] {
   /* Navigation icons */
   color: #cecece;
 }
+
 @media (max-width: 767px) {
   .first-level-link {
     border-bottom: 1px solid #f9f8f8;
   }
 }
+
 .second-level-link {
   color: #446A7C;
 }
+
 .second-level-link [class^="ca-gov-icon-"] {
   color: #446A7C;
 }
+
 .second-level-nav > li {
   border: 1px solid transparent;
   border-right: 1px solid #d6d6d6;
   border-bottom: 1px solid #d6d6d6;
 }
+
+.second-level-nav > li:hover, .second-level-nav > li:focus {
+  background: #fff;
+}
+
 @media (max-width: 767px) {
   .second-level-nav > li {
     border-right: none;
+    border-bottom: 1px solid #f9f8f8;
+  }
+  .second-level-nav > li:hover, .second-level-nav > li:focus {
+    background: #fefdfd;
   }
 }
-.second-level-nav > li:hover,
-.second-level-nav > li:focus {
-  background: #fff;
-}
+
 .second-level-nav .link-description {
   color: #555555;
 }
+
 .sub-nav {
   border-bottom: 5px solid #446A7C;
   border-left: 1px solid #d6d6d6;
   border-right: 1px solid #d6d6d6;
   background: #f9f8f8;
 }
+
 @media (max-width: 767px) {
   .sub-nav {
     border-top: none;
     border-bottom: none;
   }
 }
+
 .nav-media {
   background: transparent;
 }
+
 .nav-media .media:hover {
   background: #fff;
 }
+
 .nav-media .media {
   border-bottom: 1px solid #d6d6d6;
 }
+
+@media (max-width: 767px) {
+  .nav-media .media {
+    border-bottom: 1px solid #f9f8f8;
+  }
+  .nav-media .media:hover, .nav-media .media:focus {
+    background: #fefdfd;
+  }
+}
+
 @media (min-width: 768px) {
   .nav-item::after {
     background-color: transparent;
   }
-  .nav-item:hover::after,
-  .nav-item:focus::after {
+  .nav-item:hover::after, .nav-item:focus::after {
     background-color: #446A7C;
   }
 }
+
 /* -----------------------------------------
    SEARCH
-   /source/less/colorscheme.search.less
+   /source/scss/colorscheme.search.scss
 ----------------------------------------- */
 .search-container .search-textfield {
   background-color: rgba(255, 255, 255, 0.8);
 }
+
 .search-container .submit-container button {
   color: #446A7C;
   border-color: rgba(255, 255, 255, 0.8);
 }
-.search-container:hover .search-textfield,
-.search-container:focus .search-textfield,
-.search-container.active .search-textfield {
+
+.search-container:hover .search-textfield, .search-container:focus .search-textfield, .search-container.active .search-textfield {
   background-color: #fff;
 }
-.search-container:hover .submit-container button,
-.search-container:focus .submit-container button,
-.search-container.active .submit-container button {
+
+.search-container:hover .submit-container button, .search-container:focus .submit-container button, .search-container.active .submit-container button {
   border-color: #fff;
 }
+
 .search-container.active {
   background: #d6d6d6;
 }
+
 @media (min-width: 768px) {
   .search-container.active {
     border-bottom: 2px solid #d6d6d6;
   }
 }
+
 .search-container.active .submit-container button {
   border-color: #bdbdbd;
   background: #555555;
 }
+
 .search-container.active .search-textfield {
   border-color: #bdbdbd;
 }
+
 .search-container.featured-search {
   background: none;
 }
-.search-container.featured-search:hover,
-.search-container.featured-search:focus {
+
+.search-container.featured-search:hover, .search-container.featured-search:focus {
   background: none;
 }
+
 .search-container.featured-search.active {
   background: #d6d6d6;
 }
+
 /* -----------------------------------------
    PANELS
-   /source/less/colorscheme/cs-panels.less
+   /source/scss/colorscheme/cs-panels.scss
 ----------------------------------------- */
 /* Default Panels */
 .panel-default {
   border-color: #ddd;
 }
+
 .panel-default > .panel-heading {
   color: #333333;
   background-color: #e2dfda;
   border-color: #ddd;
 }
+
 .panel-default > .panel-heading + .panel-collapse > .panel-body {
   border-top-color: #ddd;
 }
+
 .panel-default > .panel-heading .badge {
   color: #e2dfda;
   background-color: #333333;
 }
+
 .panel-default > .panel-footer + .panel-collapse > .panel-body {
   border-bottom-color: #ddd;
 }
-.panel-default .panel-heading h2 span[class^="ca-gov-icon-"],
-.panel-default .panel-heading h3 span[class^="ca-gov-icon-"],
-.panel-default .panel-heading h4 span[class^="ca-gov-icon-"],
-.panel-default .panel-heading h5 span[class^="ca-gov-icon-"] {
+
+.panel-default .panel-heading h2 span[class^="ca-gov-icon-"], .panel-default .panel-heading h3 span[class^="ca-gov-icon-"], .panel-default .panel-heading h4 span[class^="ca-gov-icon-"], .panel-default .panel-heading h5 span[class^="ca-gov-icon-"] {
   color: #21272A;
 }
+
 .panel-default .panel-heading .options .btn-default {
-  color: #000000;
+  color: #212529;
   background-color: #f6f5f4;
   border-color: #ddd;
 }
-.panel-default .panel-heading .options .btn-default:hover,
-.panel-default .panel-heading .options .btn-default:focus,
-.panel-default .panel-heading .options .btn-default:active,
-.panel-default .panel-heading .options .btn-default.active,
-.open > .dropdown-toggle.panel-default .panel-heading .options .btn-default {
-  color: #000000;
-  background-color: #e0ddd7;
-  border-color: #bebebe;
+
+.panel-default .panel-heading .options .btn-default:hover {
+  color: #212529;
+  background-color: #e5e2df;
+  border-color: #c4c4c4;
 }
-.panel-default .panel-heading .options .btn-default:active,
-.panel-default .panel-heading .options .btn-default.active,
-.open > .dropdown-toggle.panel-default .panel-heading .options .btn-default {
-  background-image: none;
+
+.panel-default .panel-heading .options .btn-default:focus, .panel-default .panel-heading .options .btn-default.focus {
+  box-shadow: 0 0 0 0.2rem rgba(221, 221, 221, 0.5);
 }
-.panel-default .panel-heading .options .btn-default.disabled,
-.panel-default .panel-heading .options .btn-default[disabled],
-fieldset[disabled] .panel-default .panel-heading .options .btn-default,
-.panel-default .panel-heading .options .btn-default.disabled:hover,
-.panel-default .panel-heading .options .btn-default[disabled]:hover,
-fieldset[disabled] .panel-default .panel-heading .options .btn-default:hover,
-.panel-default .panel-heading .options .btn-default.disabled:focus,
-.panel-default .panel-heading .options .btn-default[disabled]:focus,
-fieldset[disabled] .panel-default .panel-heading .options .btn-default:focus,
-.panel-default .panel-heading .options .btn-default.disabled:active,
-.panel-default .panel-heading .options .btn-default[disabled]:active,
-fieldset[disabled] .panel-default .panel-heading .options .btn-default:active,
-.panel-default .panel-heading .options .btn-default.disabled.active,
-.panel-default .panel-heading .options .btn-default[disabled].active,
-fieldset[disabled] .panel-default .panel-heading .options .btn-default.active {
+
+.panel-default .panel-heading .options .btn-default.disabled, .panel-default .panel-heading .options .btn-default:disabled {
+  color: #212529;
   background-color: #f6f5f4;
   border-color: #ddd;
 }
-.panel-default .panel-heading .options .btn-default .badge {
-  color: #f6f5f4;
-  background-color: #000000;
+
+.panel-default .panel-heading .options .btn-default:not(:disabled):not(.disabled):active, .panel-default .panel-heading .options .btn-default:not(:disabled):not(.disabled).active,
+.show > .panel-default .panel-heading .options .btn-default.dropdown-toggle {
+  color: #212529;
+  background-color: #dfdcd8;
+  border-color: #bdbdbd;
 }
+
+.panel-default .panel-heading .options .btn-default:not(:disabled):not(.disabled):active:focus, .panel-default .panel-heading .options .btn-default:not(:disabled):not(.disabled).active:focus,
+.show > .panel-default .panel-heading .options .btn-default.dropdown-toggle:focus {
+  box-shadow: 0 0 0 0.2rem rgba(221, 221, 221, 0.5);
+}
+
 .panel-default .panel-body {
   background: #f9f8f8;
   color: #333333;
 }
+
 /* Overstated Panels */
 .panel-overstated {
   border-color: #ddd;
 }
+
 .panel-overstated > .panel-heading {
   color: #fff;
   background-color: #446A7C;
   border-color: #324e5b;
 }
+
 .panel-overstated > .panel-heading + .panel-collapse > .panel-body {
   border-top-color: #ddd;
 }
+
 .panel-overstated > .panel-heading .badge {
   color: #446A7C;
   background-color: #fff;
 }
+
 .panel-overstated > .panel-footer + .panel-collapse > .panel-body {
   border-bottom-color: #ddd;
 }
+
 .panel-overstated .panel-heading {
   border-bottom-width: 5px;
   border-bottom-style: solid;
 }
-.panel-overstated .panel-heading h2 span[class^="ca-gov-icon-"],
-.panel-overstated .panel-heading h3 span[class^="ca-gov-icon-"],
-.panel-overstated .panel-heading h4 span[class^="ca-gov-icon-"],
-.panel-overstated .panel-heading h5 span[class^="ca-gov-icon-"] {
+
+.panel-overstated .panel-heading h2 span[class^="ca-gov-icon-"], .panel-overstated .panel-heading h3 span[class^="ca-gov-icon-"], .panel-overstated .panel-heading h4 span[class^="ca-gov-icon-"], .panel-overstated .panel-heading h5 span[class^="ca-gov-icon-"] {
   color: #fff;
 }
+
 .panel-overstated .panel-heading .options .btn-default {
-  color: #ffffff;
+  color: #fff;
   background-color: #365362;
   border-color: #324e5b;
 }
-.panel-overstated .panel-heading .options .btn-default:hover,
-.panel-overstated .panel-heading .options .btn-default:focus,
-.panel-overstated .panel-heading .options .btn-default:active,
-.panel-overstated .panel-heading .options .btn-default.active,
-.open > .dropdown-toggle.panel-overstated .panel-heading .options .btn-default {
-  color: #ffffff;
+
+.panel-overstated .panel-heading .options .btn-default:hover {
+  color: #fff;
+  background-color: #283e49;
+  border-color: #20323a;
+}
+
+.panel-overstated .panel-heading .options .btn-default:focus, .panel-overstated .panel-heading .options .btn-default.focus {
+  box-shadow: 0 0 0 0.2rem rgba(50, 78, 91, 0.5);
+}
+
+.panel-overstated .panel-heading .options .btn-default.disabled, .panel-overstated .panel-heading .options .btn-default:disabled {
+  color: #fff;
+  background-color: #365362;
+  border-color: #324e5b;
+}
+
+.panel-overstated .panel-heading .options .btn-default:not(:disabled):not(.disabled):active, .panel-overstated .panel-heading .options .btn-default:not(:disabled):not(.disabled).active,
+.show > .panel-overstated .panel-heading .options .btn-default.dropdown-toggle {
+  color: #fff;
   background-color: #233741;
-  border-color: #1c2c34;
+  border-color: #1b2b32;
 }
-.panel-overstated .panel-heading .options .btn-default:active,
-.panel-overstated .panel-heading .options .btn-default.active,
-.open > .dropdown-toggle.panel-overstated .panel-heading .options .btn-default {
-  background-image: none;
+
+.panel-overstated .panel-heading .options .btn-default:not(:disabled):not(.disabled):active:focus, .panel-overstated .panel-heading .options .btn-default:not(:disabled):not(.disabled).active:focus,
+.show > .panel-overstated .panel-heading .options .btn-default.dropdown-toggle:focus {
+  box-shadow: 0 0 0 0.2rem rgba(50, 78, 91, 0.5);
 }
-.panel-overstated .panel-heading .options .btn-default.disabled,
-.panel-overstated .panel-heading .options .btn-default[disabled],
-fieldset[disabled] .panel-overstated .panel-heading .options .btn-default,
-.panel-overstated .panel-heading .options .btn-default.disabled:hover,
-.panel-overstated .panel-heading .options .btn-default[disabled]:hover,
-fieldset[disabled] .panel-overstated .panel-heading .options .btn-default:hover,
-.panel-overstated .panel-heading .options .btn-default.disabled:focus,
-.panel-overstated .panel-heading .options .btn-default[disabled]:focus,
-fieldset[disabled] .panel-overstated .panel-heading .options .btn-default:focus,
-.panel-overstated .panel-heading .options .btn-default.disabled:active,
-.panel-overstated .panel-heading .options .btn-default[disabled]:active,
-fieldset[disabled] .panel-overstated .panel-heading .options .btn-default:active,
-.panel-overstated .panel-heading .options .btn-default.disabled.active,
-.panel-overstated .panel-heading .options .btn-default[disabled].active,
-fieldset[disabled] .panel-overstated .panel-heading .options .btn-default.active {
-  background-color: #365362;
-  border-color: #324e5b;
-}
-.panel-overstated .panel-heading .options .btn-default .badge {
-  color: #365362;
-  background-color: #ffffff;
-}
+
 .panel-overstated .panel-body {
   background: #f9f8f8;
   color: #333333;
 }
+
 /* Uderstated Panels */
 .panel-understated {
   border-color: #ddd;
 }
+
 .panel-understated > .panel-heading {
   color: #333333;
   background-color: #f9f8f8;
   border-color: #ddd;
 }
+
 .panel-understated > .panel-heading + .panel-collapse > .panel-body {
   border-top-color: #ddd;
 }
+
 .panel-understated > .panel-heading .badge {
   color: #f9f8f8;
   background-color: #333333;
 }
+
 .panel-understated > .panel-footer + .panel-collapse > .panel-body {
   border-bottom-color: #ddd;
 }
+
 .panel-understated .panel-heading {
   border-bottom-width: 2px;
   border-bottom-style: dotted;
 }
-.panel-understated .panel-heading h2 span[class^="ca-gov-icon-"],
-.panel-understated .panel-heading h3 span[class^="ca-gov-icon-"],
-.panel-understated .panel-heading h4 span[class^="ca-gov-icon-"],
-.panel-understated .panel-heading h5 span[class^="ca-gov-icon-"] {
+
+.panel-understated .panel-heading h2 span[class^="ca-gov-icon-"], .panel-understated .panel-heading h3 span[class^="ca-gov-icon-"], .panel-understated .panel-heading h4 span[class^="ca-gov-icon-"], .panel-understated .panel-heading h5 span[class^="ca-gov-icon-"] {
   color: #21272A;
 }
+
 .panel-understated .panel-heading .options .btn-default {
-  color: #000000;
+  color: #212529;
   background-color: #e6e2e2;
   border-color: #ddd;
 }
-.panel-understated .panel-heading .options .btn-default:hover,
-.panel-understated .panel-heading .options .btn-default:focus,
-.panel-understated .panel-heading .options .btn-default:active,
-.panel-understated .panel-heading .options .btn-default.active,
-.open > .dropdown-toggle.panel-understated .panel-heading .options .btn-default {
-  color: #000000;
+
+.panel-understated .panel-heading .options .btn-default:hover {
+  color: #212529;
+  background-color: #d5cdcd;
+  border-color: #c4c4c4;
+}
+
+.panel-understated .panel-heading .options .btn-default:focus, .panel-understated .panel-heading .options .btn-default.focus {
+  box-shadow: 0 0 0 0.2rem rgba(221, 221, 221, 0.5);
+}
+
+.panel-understated .panel-heading .options .btn-default.disabled, .panel-understated .panel-heading .options .btn-default:disabled {
+  color: #212529;
+  background-color: #e6e2e2;
+  border-color: #ddd;
+}
+
+.panel-understated .panel-heading .options .btn-default:not(:disabled):not(.disabled):active, .panel-understated .panel-heading .options .btn-default:not(:disabled):not(.disabled).active,
+.show > .panel-understated .panel-heading .options .btn-default.dropdown-toggle {
+  color: #212529;
   background-color: #cfc7c7;
-  border-color: #bebebe;
+  border-color: #bdbdbd;
 }
-.panel-understated .panel-heading .options .btn-default:active,
-.panel-understated .panel-heading .options .btn-default.active,
-.open > .dropdown-toggle.panel-understated .panel-heading .options .btn-default {
-  background-image: none;
+
+.panel-understated .panel-heading .options .btn-default:not(:disabled):not(.disabled):active:focus, .panel-understated .panel-heading .options .btn-default:not(:disabled):not(.disabled).active:focus,
+.show > .panel-understated .panel-heading .options .btn-default.dropdown-toggle:focus {
+  box-shadow: 0 0 0 0.2rem rgba(221, 221, 221, 0.5);
 }
-.panel-understated .panel-heading .options .btn-default.disabled,
-.panel-understated .panel-heading .options .btn-default[disabled],
-fieldset[disabled] .panel-understated .panel-heading .options .btn-default,
-.panel-understated .panel-heading .options .btn-default.disabled:hover,
-.panel-understated .panel-heading .options .btn-default[disabled]:hover,
-fieldset[disabled] .panel-understated .panel-heading .options .btn-default:hover,
-.panel-understated .panel-heading .options .btn-default.disabled:focus,
-.panel-understated .panel-heading .options .btn-default[disabled]:focus,
-fieldset[disabled] .panel-understated .panel-heading .options .btn-default:focus,
-.panel-understated .panel-heading .options .btn-default.disabled:active,
-.panel-understated .panel-heading .options .btn-default[disabled]:active,
-fieldset[disabled] .panel-understated .panel-heading .options .btn-default:active,
-.panel-understated .panel-heading .options .btn-default.disabled.active,
-.panel-understated .panel-heading .options .btn-default[disabled].active,
-fieldset[disabled] .panel-understated .panel-heading .options .btn-default.active {
-  background-color: #e6e2e2;
-  border-color: #ddd;
-}
-.panel-understated .panel-heading .options .btn-default .badge {
-  color: #e6e2e2;
-  background-color: #000000;
-}
+
 .panel-understated .panel-body {
   background: #fff;
   color: #333333;
 }
+
 /* Standout Panels */
 .panel-standout {
   border-color: #ddd;
 }
+
 .panel-standout > .panel-heading {
   color: #fff;
   background-color: #21272A;
   border-color: #C19E73;
 }
+
 .panel-standout > .panel-heading + .panel-collapse > .panel-body {
   border-top-color: #ddd;
 }
+
 .panel-standout > .panel-heading .badge {
   color: #21272A;
   background-color: #fff;
 }
+
 .panel-standout > .panel-footer + .panel-collapse > .panel-body {
   border-bottom-color: #ddd;
 }
+
 .panel-standout .panel-heading {
   border-bottom-width: 5px;
   border-bottom-style: solid;
 }
-.panel-standout .panel-heading h2 span[class^="ca-gov-icon-"],
-.panel-standout .panel-heading h3 span[class^="ca-gov-icon-"],
-.panel-standout .panel-heading h4 span[class^="ca-gov-icon-"],
-.panel-standout .panel-heading h5 span[class^="ca-gov-icon-"] {
+
+.panel-standout .panel-heading h2 span[class^="ca-gov-icon-"], .panel-standout .panel-heading h3 span[class^="ca-gov-icon-"], .panel-standout .panel-heading h4 span[class^="ca-gov-icon-"], .panel-standout .panel-heading h5 span[class^="ca-gov-icon-"] {
   color: #C19E73;
 }
+
 .panel-standout .panel-heading .options .btn-default {
-  color: #ffffff;
+  color: #fff;
   background-color: #0f1213;
   border-color: #161a1c;
 }
-.panel-standout .panel-heading .options .btn-default:hover,
-.panel-standout .panel-heading .options .btn-default:focus,
-.panel-standout .panel-heading .options .btn-default:active,
-.panel-standout .panel-heading .options .btn-default.active,
-.open > .dropdown-toggle.panel-standout .panel-heading .options .btn-default {
-  color: #ffffff;
-  background-color: #000000;
-  border-color: #000000;
+
+.panel-standout .panel-heading .options .btn-default:hover {
+  color: #fff;
+  background-color: black;
+  border-color: black;
 }
-.panel-standout .panel-heading .options .btn-default:active,
-.panel-standout .panel-heading .options .btn-default.active,
-.open > .dropdown-toggle.panel-standout .panel-heading .options .btn-default {
-  background-image: none;
+
+.panel-standout .panel-heading .options .btn-default:focus, .panel-standout .panel-heading .options .btn-default.focus {
+  box-shadow: 0 0 0 0.2rem rgba(22, 26, 28, 0.5);
 }
-.panel-standout .panel-heading .options .btn-default.disabled,
-.panel-standout .panel-heading .options .btn-default[disabled],
-fieldset[disabled] .panel-standout .panel-heading .options .btn-default,
-.panel-standout .panel-heading .options .btn-default.disabled:hover,
-.panel-standout .panel-heading .options .btn-default[disabled]:hover,
-fieldset[disabled] .panel-standout .panel-heading .options .btn-default:hover,
-.panel-standout .panel-heading .options .btn-default.disabled:focus,
-.panel-standout .panel-heading .options .btn-default[disabled]:focus,
-fieldset[disabled] .panel-standout .panel-heading .options .btn-default:focus,
-.panel-standout .panel-heading .options .btn-default.disabled:active,
-.panel-standout .panel-heading .options .btn-default[disabled]:active,
-fieldset[disabled] .panel-standout .panel-heading .options .btn-default:active,
-.panel-standout .panel-heading .options .btn-default.disabled.active,
-.panel-standout .panel-heading .options .btn-default[disabled].active,
-fieldset[disabled] .panel-standout .panel-heading .options .btn-default.active {
+
+.panel-standout .panel-heading .options .btn-default.disabled, .panel-standout .panel-heading .options .btn-default:disabled {
+  color: #fff;
   background-color: #0f1213;
   border-color: #161a1c;
 }
-.panel-standout .panel-heading .options .btn-default .badge {
-  color: #0f1213;
-  background-color: #ffffff;
+
+.panel-standout .panel-heading .options .btn-default:not(:disabled):not(.disabled):active, .panel-standout .panel-heading .options .btn-default:not(:disabled):not(.disabled).active,
+.show > .panel-standout .panel-heading .options .btn-default.dropdown-toggle {
+  color: #fff;
+  background-color: black;
+  border-color: black;
 }
+
+.panel-standout .panel-heading .options .btn-default:not(:disabled):not(.disabled):active:focus, .panel-standout .panel-heading .options .btn-default:not(:disabled):not(.disabled).active:focus,
+.show > .panel-standout .panel-heading .options .btn-default.dropdown-toggle:focus {
+  box-shadow: 0 0 0 0.2rem rgba(22, 26, 28, 0.5);
+}
+
 .panel-standout .panel-body {
   background: #f9f8f8;
   color: #333333;
 }
+
 /* Adds triangle to panel */
 .panel-standout.highlight .panel-heading .triangle {
   content: '';
@@ -520,956 +586,510 @@ fieldset[disabled] .panel-standout .panel-heading .options .btn-default.active {
   border-right: 12px solid transparent;
   border-top: 12px solid #C19E73;
 }
+
 /* -----------------------------------------
    TABS
-   /source/less/colorscheme/cs-tabs.less
+   /source/scss/colorscheme/cs-tabs.scss
 ----------------------------------------- */
 .tab-group {
   background: #fff;
 }
+
 .tab-group .nav-tabs {
   background: #e2dfda;
 }
+
 /* -----------------------------------------
    MEDIA
-   /source/less/colorscheme/media.less
+   /source/scss/colorscheme/media.scss
 ----------------------------------------- */
 figure {
   background-color: #f9f8f8;
   border-color: #e2dfda;
 }
+
 /* -----------------------------------------
    PANELS
-   /source/less/colorscheme/location.less
+   /source/scss/colorscheme/location.scss
 ----------------------------------------- */
 .location.mini [class^="ca-gov-icon"] {
   background: #21272A;
   color: #ffffff;
 }
+
 /* -----------------------------------------
    TYPOGRAPHY
-   /source/less/colorscheme/typography.less
+   /source/scss/colorscheme/typography.scss
 ----------------------------------------- */
 .published {
   color: #777777;
 }
+
 /* -----------------------------------------
    SECTIONS
-   /source/less/colorscheme/sections.less
+   /source/scss/colorscheme/sections.scss
 ----------------------------------------- */
-.section-default,
-.card-default {
-  background: #f5f5f5;
+.section-default, .card-default {
+  background: whitesmoke;
 }
-.section-search,
-.card-search {
+
+.section-search, .card-search {
   background: #d6d6d6;
 }
-.section-understated,
-.card-understated {
+
+.section-understated, .card-understated {
   background: #f9f8f8;
 }
-.section-overstated,
-.card-overstated {
+
+.section-overstated, .card-overstated {
   background: #446A7C;
   color: #ffffff;
 }
-.section-overstated a:not(.btn),
-.card-overstated a:not(.btn) {
+
+.section-overstated a:not(.btn), .card-overstated a:not(.btn) {
   color: #f9f8f8;
   text-decoration: underline;
   -webkit-transition: all 0.25s;
   transition: all 0.25s;
 }
-.section-overstated a:not(.btn):hover,
-.card-overstated a:not(.btn):hover,
-.section-overstated a:not(.btn):focus,
-.card-overstated a:not(.btn):focus {
+
+.section-overstated a:not(.btn):hover, .section-overstated a:not(.btn):focus, .card-overstated a:not(.btn):hover, .card-overstated a:not(.btn):focus {
   color: #e9e5e5;
   text-decoration: underline;
 }
-.section-overstated a:not(.btn):focus,
-.card-overstated a:not(.btn):focus {
+
+.section-overstated a:not(.btn):focus, .card-overstated a:not(.btn):focus {
   outline: thin dotted;
   outline: 5px auto -webkit-focus-ring-color;
   outline-offset: -2px;
 }
-.section-overstated .btn-primary,
-.card-overstated .btn-primary {
+
+.section-overstated .btn-primary, .card-overstated .btn-primary {
   color: #fff;
   background-color: #446A7C;
   border-color: #ffffff;
 }
-.section-overstated .btn-primary:hover,
-.card-overstated .btn-primary:hover,
-.section-overstated .btn-primary:focus,
-.card-overstated .btn-primary:focus,
-.section-overstated .btn-primary:active,
-.card-overstated .btn-primary:active,
-.section-overstated .btn-primary.active,
-.card-overstated .btn-primary.active,
-.open > .dropdown-toggle.section-overstated .btn-primary,
-.open > .dropdown-toggle.card-overstated .btn-primary {
+
+.section-overstated .btn-primary:hover, .section-overstated .btn-primary:focus, .section-overstated .btn-primary:not(:disabled):not(.disabled):active, .section-overstated .btn-primary:not(:disabled):not(.disabled).active, .section-overstated .btn-primary .show > .dropdown-toggle, .open > .dropdown-toggle .section-overstated .btn-primary, .card-overstated .btn-primary:hover, .card-overstated .btn-primary:focus, .card-overstated .btn-primary:not(:disabled):not(.disabled):active, .card-overstated .btn-primary:not(:disabled):not(.disabled).active, .card-overstated .btn-primary .show > .dropdown-toggle, .open > .dropdown-toggle .card-overstated .btn-primary {
   color: #fff;
   background-color: #375665;
   border-color: #ffffff;
 }
-.section-overstated .btn-primary:active,
-.card-overstated .btn-primary:active,
-.section-overstated .btn-primary.active,
-.card-overstated .btn-primary.active,
-.open > .dropdown-toggle.section-overstated .btn-primary,
-.open > .dropdown-toggle.card-overstated .btn-primary {
+
+.section-overstated .btn-primary:not(:disabled):not(.disabled):active, .section-overstated .btn-primary:not(:disabled):not(.disabled).active, .open > .dropdown-toggle .section-overstated .btn-primary, .card-overstated .btn-primary:not(:disabled):not(.disabled):active, .card-overstated .btn-primary:not(:disabled):not(.disabled).active, .open > .dropdown-toggle .card-overstated .btn-primary {
   background-image: none;
 }
-.section-overstated .btn-primary.disabled,
-.card-overstated .btn-primary.disabled,
-.section-overstated .btn-primary[disabled],
-.card-overstated .btn-primary[disabled],
-fieldset[disabled] .section-overstated .btn-primary,
-fieldset[disabled] .card-overstated .btn-primary,
-.section-overstated .btn-primary.disabled:hover,
-.card-overstated .btn-primary.disabled:hover,
-.section-overstated .btn-primary[disabled]:hover,
-.card-overstated .btn-primary[disabled]:hover,
-fieldset[disabled] .section-overstated .btn-primary:hover,
-fieldset[disabled] .card-overstated .btn-primary:hover,
-.section-overstated .btn-primary.disabled:focus,
-.card-overstated .btn-primary.disabled:focus,
-.section-overstated .btn-primary[disabled]:focus,
-.card-overstated .btn-primary[disabled]:focus,
-fieldset[disabled] .section-overstated .btn-primary:focus,
-fieldset[disabled] .card-overstated .btn-primary:focus,
-.section-overstated .btn-primary.disabled:active,
-.card-overstated .btn-primary.disabled:active,
-.section-overstated .btn-primary[disabled]:active,
-.card-overstated .btn-primary[disabled]:active,
-fieldset[disabled] .section-overstated .btn-primary:active,
-fieldset[disabled] .card-overstated .btn-primary:active,
-.section-overstated .btn-primary.disabled.active,
-.card-overstated .btn-primary.disabled.active,
-.section-overstated .btn-primary[disabled].active,
-.card-overstated .btn-primary[disabled].active,
-fieldset[disabled] .section-overstated .btn-primary.active,
-fieldset[disabled] .card-overstated .btn-primary.active {
-  background-color: #446A7C;
+
+.section-overstated .btn-primary.disabled, .section-overstated .btn-primary.disabled:hover, .section-overstated .btn-primary.disabled:focus, .section-overstated .btn-primary.disabled:active, .section-overstated .btn-primary.disabled.active, .section-overstated .btn-primary[disabled], .section-overstated .btn-primary[disabled]:hover, .section-overstated .btn-primary[disabled]:focus, .section-overstated .btn-primary[disabled]:active, .section-overstated .btn-primary[disabled].active, fieldset[disabled] .section-overstated .btn-primary, fieldset[disabled] .section-overstated .btn-primary:hover, fieldset[disabled] .section-overstated .btn-primary:focus, fieldset[disabled] .section-overstated .btn-primary:active, fieldset[disabled] .section-overstated .btn-primary.active, .card-overstated .btn-primary.disabled, .card-overstated .btn-primary.disabled:hover, .card-overstated .btn-primary.disabled:focus, .card-overstated .btn-primary.disabled:active, .card-overstated .btn-primary.disabled.active, .card-overstated .btn-primary[disabled], .card-overstated .btn-primary[disabled]:hover, .card-overstated .btn-primary[disabled]:focus, .card-overstated .btn-primary[disabled]:active, .card-overstated .btn-primary[disabled].active, fieldset[disabled] .card-overstated .btn-primary, fieldset[disabled] .card-overstated .btn-primary:hover, fieldset[disabled] .card-overstated .btn-primary:focus, fieldset[disabled] .card-overstated .btn-primary:active, fieldset[disabled] .card-overstated .btn-primary.active {
+  background-color: #446A7C !important;
   border-color: #ffffff;
 }
-.section-overstated .btn-primary .badge,
-.card-overstated .btn-primary .badge {
+
+.section-overstated .btn-primary .badge, .card-overstated .btn-primary .badge {
   color: #446A7C;
   background-color: #fff;
 }
-.section-overstated .btn-standout,
-.card-overstated .btn-standout {
+
+.section-overstated .btn-standout, .card-overstated .btn-standout {
   color: #fff;
   background-color: #21272A;
   border-color: #ffffff;
 }
-.section-overstated .btn-standout:hover,
-.card-overstated .btn-standout:hover,
-.section-overstated .btn-standout:focus,
-.card-overstated .btn-standout:focus,
-.section-overstated .btn-standout:active,
-.card-overstated .btn-standout:active,
-.section-overstated .btn-standout.active,
-.card-overstated .btn-standout.active,
-.open > .dropdown-toggle.section-overstated .btn-standout,
-.open > .dropdown-toggle.card-overstated .btn-standout {
+
+.section-overstated .btn-standout:hover, .section-overstated .btn-standout:focus, .section-overstated .btn-standout:not(:disabled):not(.disabled):active, .section-overstated .btn-standout:not(:disabled):not(.disabled).active, .section-overstated .btn-standout .show > .dropdown-toggle, .open > .dropdown-toggle .section-overstated .btn-standout, .card-overstated .btn-standout:hover, .card-overstated .btn-standout:focus, .card-overstated .btn-standout:not(:disabled):not(.disabled):active, .card-overstated .btn-standout:not(:disabled):not(.disabled).active, .card-overstated .btn-standout .show > .dropdown-toggle, .open > .dropdown-toggle .card-overstated .btn-standout {
   color: #fff;
   background-color: #111416;
   border-color: #ffffff;
 }
-.section-overstated .btn-standout:active,
-.card-overstated .btn-standout:active,
-.section-overstated .btn-standout.active,
-.card-overstated .btn-standout.active,
-.open > .dropdown-toggle.section-overstated .btn-standout,
-.open > .dropdown-toggle.card-overstated .btn-standout {
+
+.section-overstated .btn-standout:not(:disabled):not(.disabled):active, .section-overstated .btn-standout:not(:disabled):not(.disabled).active, .open > .dropdown-toggle .section-overstated .btn-standout, .card-overstated .btn-standout:not(:disabled):not(.disabled):active, .card-overstated .btn-standout:not(:disabled):not(.disabled).active, .open > .dropdown-toggle .card-overstated .btn-standout {
   background-image: none;
 }
-.section-overstated .btn-standout.disabled,
-.card-overstated .btn-standout.disabled,
-.section-overstated .btn-standout[disabled],
-.card-overstated .btn-standout[disabled],
-fieldset[disabled] .section-overstated .btn-standout,
-fieldset[disabled] .card-overstated .btn-standout,
-.section-overstated .btn-standout.disabled:hover,
-.card-overstated .btn-standout.disabled:hover,
-.section-overstated .btn-standout[disabled]:hover,
-.card-overstated .btn-standout[disabled]:hover,
-fieldset[disabled] .section-overstated .btn-standout:hover,
-fieldset[disabled] .card-overstated .btn-standout:hover,
-.section-overstated .btn-standout.disabled:focus,
-.card-overstated .btn-standout.disabled:focus,
-.section-overstated .btn-standout[disabled]:focus,
-.card-overstated .btn-standout[disabled]:focus,
-fieldset[disabled] .section-overstated .btn-standout:focus,
-fieldset[disabled] .card-overstated .btn-standout:focus,
-.section-overstated .btn-standout.disabled:active,
-.card-overstated .btn-standout.disabled:active,
-.section-overstated .btn-standout[disabled]:active,
-.card-overstated .btn-standout[disabled]:active,
-fieldset[disabled] .section-overstated .btn-standout:active,
-fieldset[disabled] .card-overstated .btn-standout:active,
-.section-overstated .btn-standout.disabled.active,
-.card-overstated .btn-standout.disabled.active,
-.section-overstated .btn-standout[disabled].active,
-.card-overstated .btn-standout[disabled].active,
-fieldset[disabled] .section-overstated .btn-standout.active,
-fieldset[disabled] .card-overstated .btn-standout.active {
-  background-color: #21272A;
+
+.section-overstated .btn-standout.disabled, .section-overstated .btn-standout.disabled:hover, .section-overstated .btn-standout.disabled:focus, .section-overstated .btn-standout.disabled:active, .section-overstated .btn-standout.disabled.active, .section-overstated .btn-standout[disabled], .section-overstated .btn-standout[disabled]:hover, .section-overstated .btn-standout[disabled]:focus, .section-overstated .btn-standout[disabled]:active, .section-overstated .btn-standout[disabled].active, fieldset[disabled] .section-overstated .btn-standout, fieldset[disabled] .section-overstated .btn-standout:hover, fieldset[disabled] .section-overstated .btn-standout:focus, fieldset[disabled] .section-overstated .btn-standout:active, fieldset[disabled] .section-overstated .btn-standout.active, .card-overstated .btn-standout.disabled, .card-overstated .btn-standout.disabled:hover, .card-overstated .btn-standout.disabled:focus, .card-overstated .btn-standout.disabled:active, .card-overstated .btn-standout.disabled.active, .card-overstated .btn-standout[disabled], .card-overstated .btn-standout[disabled]:hover, .card-overstated .btn-standout[disabled]:focus, .card-overstated .btn-standout[disabled]:active, .card-overstated .btn-standout[disabled].active, fieldset[disabled] .card-overstated .btn-standout, fieldset[disabled] .card-overstated .btn-standout:hover, fieldset[disabled] .card-overstated .btn-standout:focus, fieldset[disabled] .card-overstated .btn-standout:active, fieldset[disabled] .card-overstated .btn-standout.active {
+  background-color: #21272A !important;
   border-color: #ffffff;
 }
-.section-overstated .btn-standout .badge,
-.card-overstated .btn-standout .badge {
+
+.section-overstated .btn-standout .badge, .card-overstated .btn-standout .badge {
   color: #21272A;
   background-color: #fff;
 }
-.section-standout,
-.card-standout {
+
+.section-standout, .card-standout {
   background: #21272A;
   color: #ffffff;
 }
-.section-standout a:not(.btn),
-.card-standout a:not(.btn) {
+
+.section-standout a:not(.btn), .card-standout a:not(.btn) {
   color: #ccc8bf;
   text-decoration: none;
   -webkit-transition: all 0.25s;
   transition: all 0.25s;
 }
-.section-standout a:not(.btn):hover,
-.card-standout a:not(.btn):hover,
-.section-standout a:not(.btn):focus,
-.card-standout a:not(.btn):focus {
+
+.section-standout a:not(.btn):hover, .section-standout a:not(.btn):focus, .card-standout a:not(.btn):hover, .card-standout a:not(.btn):focus {
   color: #bcb7ab;
   text-decoration: underline;
 }
-.section-standout a:not(.btn):focus,
-.card-standout a:not(.btn):focus {
+
+.section-standout a:not(.btn):focus, .card-standout a:not(.btn):focus {
   outline: thin dotted;
   outline: 5px auto -webkit-focus-ring-color;
   outline-offset: -2px;
 }
-.section-standout .half-gauge-chart .donut-background,
-.card-standout .half-gauge-chart .donut-background {
+
+.section-standout .half-gauge-chart .donut-background, .card-standout .half-gauge-chart .donut-background {
   fill: #d6d6d6;
 }
-.section-standout .half-gauge-chart .donut-halfmark,
-.card-standout .half-gauge-chart .donut-halfmark {
-  stroke: #f5f5f5;
+
+.section-standout .half-gauge-chart .donut-halfmark, .card-standout .half-gauge-chart .donut-halfmark {
+  stroke: whitesmoke;
 }
-.section-standout .btn-primary,
-.card-standout .btn-primary {
+
+.section-standout .btn-primary, .card-standout .btn-primary {
   color: #fff;
   background-color: #446A7C;
   border-color: #ffffff;
 }
-.section-standout .btn-primary:hover,
-.card-standout .btn-primary:hover,
-.section-standout .btn-primary:focus,
-.card-standout .btn-primary:focus,
-.section-standout .btn-primary:active,
-.card-standout .btn-primary:active,
-.section-standout .btn-primary.active,
-.card-standout .btn-primary.active,
-.open > .dropdown-toggle.section-standout .btn-primary,
-.open > .dropdown-toggle.card-standout .btn-primary {
+
+.section-standout .btn-primary:hover, .section-standout .btn-primary:focus, .section-standout .btn-primary:not(:disabled):not(.disabled):active, .section-standout .btn-primary:not(:disabled):not(.disabled).active, .section-standout .btn-primary .show > .dropdown-toggle, .open > .dropdown-toggle .section-standout .btn-primary, .card-standout .btn-primary:hover, .card-standout .btn-primary:focus, .card-standout .btn-primary:not(:disabled):not(.disabled):active, .card-standout .btn-primary:not(:disabled):not(.disabled).active, .card-standout .btn-primary .show > .dropdown-toggle, .open > .dropdown-toggle .card-standout .btn-primary {
   color: #fff;
   background-color: #375665;
   border-color: #ffffff;
 }
-.section-standout .btn-primary:active,
-.card-standout .btn-primary:active,
-.section-standout .btn-primary.active,
-.card-standout .btn-primary.active,
-.open > .dropdown-toggle.section-standout .btn-primary,
-.open > .dropdown-toggle.card-standout .btn-primary {
+
+.section-standout .btn-primary:not(:disabled):not(.disabled):active, .section-standout .btn-primary:not(:disabled):not(.disabled).active, .open > .dropdown-toggle .section-standout .btn-primary, .card-standout .btn-primary:not(:disabled):not(.disabled):active, .card-standout .btn-primary:not(:disabled):not(.disabled).active, .open > .dropdown-toggle .card-standout .btn-primary {
   background-image: none;
 }
-.section-standout .btn-primary.disabled,
-.card-standout .btn-primary.disabled,
-.section-standout .btn-primary[disabled],
-.card-standout .btn-primary[disabled],
-fieldset[disabled] .section-standout .btn-primary,
-fieldset[disabled] .card-standout .btn-primary,
-.section-standout .btn-primary.disabled:hover,
-.card-standout .btn-primary.disabled:hover,
-.section-standout .btn-primary[disabled]:hover,
-.card-standout .btn-primary[disabled]:hover,
-fieldset[disabled] .section-standout .btn-primary:hover,
-fieldset[disabled] .card-standout .btn-primary:hover,
-.section-standout .btn-primary.disabled:focus,
-.card-standout .btn-primary.disabled:focus,
-.section-standout .btn-primary[disabled]:focus,
-.card-standout .btn-primary[disabled]:focus,
-fieldset[disabled] .section-standout .btn-primary:focus,
-fieldset[disabled] .card-standout .btn-primary:focus,
-.section-standout .btn-primary.disabled:active,
-.card-standout .btn-primary.disabled:active,
-.section-standout .btn-primary[disabled]:active,
-.card-standout .btn-primary[disabled]:active,
-fieldset[disabled] .section-standout .btn-primary:active,
-fieldset[disabled] .card-standout .btn-primary:active,
-.section-standout .btn-primary.disabled.active,
-.card-standout .btn-primary.disabled.active,
-.section-standout .btn-primary[disabled].active,
-.card-standout .btn-primary[disabled].active,
-fieldset[disabled] .section-standout .btn-primary.active,
-fieldset[disabled] .card-standout .btn-primary.active {
-  background-color: #446A7C;
+
+.section-standout .btn-primary.disabled, .section-standout .btn-primary.disabled:hover, .section-standout .btn-primary.disabled:focus, .section-standout .btn-primary.disabled:active, .section-standout .btn-primary.disabled.active, .section-standout .btn-primary[disabled], .section-standout .btn-primary[disabled]:hover, .section-standout .btn-primary[disabled]:focus, .section-standout .btn-primary[disabled]:active, .section-standout .btn-primary[disabled].active, fieldset[disabled] .section-standout .btn-primary, fieldset[disabled] .section-standout .btn-primary:hover, fieldset[disabled] .section-standout .btn-primary:focus, fieldset[disabled] .section-standout .btn-primary:active, fieldset[disabled] .section-standout .btn-primary.active, .card-standout .btn-primary.disabled, .card-standout .btn-primary.disabled:hover, .card-standout .btn-primary.disabled:focus, .card-standout .btn-primary.disabled:active, .card-standout .btn-primary.disabled.active, .card-standout .btn-primary[disabled], .card-standout .btn-primary[disabled]:hover, .card-standout .btn-primary[disabled]:focus, .card-standout .btn-primary[disabled]:active, .card-standout .btn-primary[disabled].active, fieldset[disabled] .card-standout .btn-primary, fieldset[disabled] .card-standout .btn-primary:hover, fieldset[disabled] .card-standout .btn-primary:focus, fieldset[disabled] .card-standout .btn-primary:active, fieldset[disabled] .card-standout .btn-primary.active {
+  background-color: #446A7C !important;
   border-color: #ffffff;
 }
-.section-standout .btn-primary .badge,
-.card-standout .btn-primary .badge {
+
+.section-standout .btn-primary .badge, .card-standout .btn-primary .badge {
   color: #446A7C;
   background-color: #fff;
 }
-.section-standout .btn-standout,
-.card-standout .btn-standout {
+
+.section-standout .btn-standout, .card-standout .btn-standout {
   color: #fff;
   background-color: #21272A;
   border-color: #ffffff;
 }
-.section-standout .btn-standout:hover,
-.card-standout .btn-standout:hover,
-.section-standout .btn-standout:focus,
-.card-standout .btn-standout:focus,
-.section-standout .btn-standout:active,
-.card-standout .btn-standout:active,
-.section-standout .btn-standout.active,
-.card-standout .btn-standout.active,
-.open > .dropdown-toggle.section-standout .btn-standout,
-.open > .dropdown-toggle.card-standout .btn-standout {
+
+.section-standout .btn-standout:hover, .section-standout .btn-standout:focus, .section-standout .btn-standout:not(:disabled):not(.disabled):active, .section-standout .btn-standout:not(:disabled):not(.disabled).active, .section-standout .btn-standout .show > .dropdown-toggle, .open > .dropdown-toggle .section-standout .btn-standout, .card-standout .btn-standout:hover, .card-standout .btn-standout:focus, .card-standout .btn-standout:not(:disabled):not(.disabled):active, .card-standout .btn-standout:not(:disabled):not(.disabled).active, .card-standout .btn-standout .show > .dropdown-toggle, .open > .dropdown-toggle .card-standout .btn-standout {
   color: #fff;
   background-color: #111416;
   border-color: #ffffff;
 }
-.section-standout .btn-standout:active,
-.card-standout .btn-standout:active,
-.section-standout .btn-standout.active,
-.card-standout .btn-standout.active,
-.open > .dropdown-toggle.section-standout .btn-standout,
-.open > .dropdown-toggle.card-standout .btn-standout {
+
+.section-standout .btn-standout:not(:disabled):not(.disabled):active, .section-standout .btn-standout:not(:disabled):not(.disabled).active, .open > .dropdown-toggle .section-standout .btn-standout, .card-standout .btn-standout:not(:disabled):not(.disabled):active, .card-standout .btn-standout:not(:disabled):not(.disabled).active, .open > .dropdown-toggle .card-standout .btn-standout {
   background-image: none;
 }
-.section-standout .btn-standout.disabled,
-.card-standout .btn-standout.disabled,
-.section-standout .btn-standout[disabled],
-.card-standout .btn-standout[disabled],
-fieldset[disabled] .section-standout .btn-standout,
-fieldset[disabled] .card-standout .btn-standout,
-.section-standout .btn-standout.disabled:hover,
-.card-standout .btn-standout.disabled:hover,
-.section-standout .btn-standout[disabled]:hover,
-.card-standout .btn-standout[disabled]:hover,
-fieldset[disabled] .section-standout .btn-standout:hover,
-fieldset[disabled] .card-standout .btn-standout:hover,
-.section-standout .btn-standout.disabled:focus,
-.card-standout .btn-standout.disabled:focus,
-.section-standout .btn-standout[disabled]:focus,
-.card-standout .btn-standout[disabled]:focus,
-fieldset[disabled] .section-standout .btn-standout:focus,
-fieldset[disabled] .card-standout .btn-standout:focus,
-.section-standout .btn-standout.disabled:active,
-.card-standout .btn-standout.disabled:active,
-.section-standout .btn-standout[disabled]:active,
-.card-standout .btn-standout[disabled]:active,
-fieldset[disabled] .section-standout .btn-standout:active,
-fieldset[disabled] .card-standout .btn-standout:active,
-.section-standout .btn-standout.disabled.active,
-.card-standout .btn-standout.disabled.active,
-.section-standout .btn-standout[disabled].active,
-.card-standout .btn-standout[disabled].active,
-fieldset[disabled] .section-standout .btn-standout.active,
-fieldset[disabled] .card-standout .btn-standout.active {
-  background-color: #21272A;
+
+.section-standout .btn-standout.disabled, .section-standout .btn-standout.disabled:hover, .section-standout .btn-standout.disabled:focus, .section-standout .btn-standout.disabled:active, .section-standout .btn-standout.disabled.active, .section-standout .btn-standout[disabled], .section-standout .btn-standout[disabled]:hover, .section-standout .btn-standout[disabled]:focus, .section-standout .btn-standout[disabled]:active, .section-standout .btn-standout[disabled].active, fieldset[disabled] .section-standout .btn-standout, fieldset[disabled] .section-standout .btn-standout:hover, fieldset[disabled] .section-standout .btn-standout:focus, fieldset[disabled] .section-standout .btn-standout:active, fieldset[disabled] .section-standout .btn-standout.active, .card-standout .btn-standout.disabled, .card-standout .btn-standout.disabled:hover, .card-standout .btn-standout.disabled:focus, .card-standout .btn-standout.disabled:active, .card-standout .btn-standout.disabled.active, .card-standout .btn-standout[disabled], .card-standout .btn-standout[disabled]:hover, .card-standout .btn-standout[disabled]:focus, .card-standout .btn-standout[disabled]:active, .card-standout .btn-standout[disabled].active, fieldset[disabled] .card-standout .btn-standout, fieldset[disabled] .card-standout .btn-standout:hover, fieldset[disabled] .card-standout .btn-standout:focus, fieldset[disabled] .card-standout .btn-standout:active, fieldset[disabled] .card-standout .btn-standout.active {
+  background-color: #21272A !important;
   border-color: #ffffff;
 }
-.section-standout .btn-standout .badge,
-.card-standout .btn-standout .badge {
+
+.section-standout .btn-standout .badge, .card-standout .btn-standout .badge {
   color: #21272A;
   background-color: #fff;
 }
-.section-impact,
-.card-impact {
+
+.section-impact, .card-impact {
   background: #21272A;
   color: #ffffff;
 }
-.section-impact a:not(.btn),
-.card-impact a:not(.btn) {
+
+.section-impact a:not(.btn), .card-impact a:not(.btn) {
   color: #ccc8bf;
   text-decoration: none;
   -webkit-transition: all 0.25s;
   transition: all 0.25s;
 }
-.section-impact a:not(.btn):hover,
-.card-impact a:not(.btn):hover,
-.section-impact a:not(.btn):focus,
-.card-impact a:not(.btn):focus {
+
+.section-impact a:not(.btn):hover, .section-impact a:not(.btn):focus, .card-impact a:not(.btn):hover, .card-impact a:not(.btn):focus {
   color: #bcb7ab;
   text-decoration: underline;
 }
-.section-impact a:not(.btn):focus,
-.card-impact a:not(.btn):focus {
+
+.section-impact a:not(.btn):focus, .card-impact a:not(.btn):focus {
   outline: thin dotted;
   outline: 5px auto -webkit-focus-ring-color;
   outline-offset: -2px;
 }
-.section-impact .half-gauge-chart .donut-background,
-.card-impact .half-gauge-chart .donut-background {
+
+.section-impact .half-gauge-chart .donut-background, .card-impact .half-gauge-chart .donut-background {
   fill: #d6d6d6;
 }
-.section-impact .half-gauge-chart .donut-halfmark,
-.card-impact .half-gauge-chart .donut-halfmark {
-  stroke: #f5f5f5;
+
+.section-impact .half-gauge-chart .donut-halfmark, .card-impact .half-gauge-chart .donut-halfmark {
+  stroke: whitesmoke;
 }
-.section-impact .btn-primary,
-.card-impact .btn-primary {
+
+.section-impact .btn-primary, .card-impact .btn-primary {
   color: #fff;
   background-color: #446A7C;
   border-color: #ffffff;
 }
-.section-impact .btn-primary:hover,
-.card-impact .btn-primary:hover,
-.section-impact .btn-primary:focus,
-.card-impact .btn-primary:focus,
-.section-impact .btn-primary:active,
-.card-impact .btn-primary:active,
-.section-impact .btn-primary.active,
-.card-impact .btn-primary.active,
-.open > .dropdown-toggle.section-impact .btn-primary,
-.open > .dropdown-toggle.card-impact .btn-primary {
+
+.section-impact .btn-primary:hover, .section-impact .btn-primary:focus, .section-impact .btn-primary:not(:disabled):not(.disabled):active, .section-impact .btn-primary:not(:disabled):not(.disabled).active, .section-impact .btn-primary .show > .dropdown-toggle, .open > .dropdown-toggle .section-impact .btn-primary, .card-impact .btn-primary:hover, .card-impact .btn-primary:focus, .card-impact .btn-primary:not(:disabled):not(.disabled):active, .card-impact .btn-primary:not(:disabled):not(.disabled).active, .card-impact .btn-primary .show > .dropdown-toggle, .open > .dropdown-toggle .card-impact .btn-primary {
   color: #fff;
   background-color: #375665;
   border-color: #ffffff;
 }
-.section-impact .btn-primary:active,
-.card-impact .btn-primary:active,
-.section-impact .btn-primary.active,
-.card-impact .btn-primary.active,
-.open > .dropdown-toggle.section-impact .btn-primary,
-.open > .dropdown-toggle.card-impact .btn-primary {
+
+.section-impact .btn-primary:not(:disabled):not(.disabled):active, .section-impact .btn-primary:not(:disabled):not(.disabled).active, .open > .dropdown-toggle .section-impact .btn-primary, .card-impact .btn-primary:not(:disabled):not(.disabled):active, .card-impact .btn-primary:not(:disabled):not(.disabled).active, .open > .dropdown-toggle .card-impact .btn-primary {
   background-image: none;
 }
-.section-impact .btn-primary.disabled,
-.card-impact .btn-primary.disabled,
-.section-impact .btn-primary[disabled],
-.card-impact .btn-primary[disabled],
-fieldset[disabled] .section-impact .btn-primary,
-fieldset[disabled] .card-impact .btn-primary,
-.section-impact .btn-primary.disabled:hover,
-.card-impact .btn-primary.disabled:hover,
-.section-impact .btn-primary[disabled]:hover,
-.card-impact .btn-primary[disabled]:hover,
-fieldset[disabled] .section-impact .btn-primary:hover,
-fieldset[disabled] .card-impact .btn-primary:hover,
-.section-impact .btn-primary.disabled:focus,
-.card-impact .btn-primary.disabled:focus,
-.section-impact .btn-primary[disabled]:focus,
-.card-impact .btn-primary[disabled]:focus,
-fieldset[disabled] .section-impact .btn-primary:focus,
-fieldset[disabled] .card-impact .btn-primary:focus,
-.section-impact .btn-primary.disabled:active,
-.card-impact .btn-primary.disabled:active,
-.section-impact .btn-primary[disabled]:active,
-.card-impact .btn-primary[disabled]:active,
-fieldset[disabled] .section-impact .btn-primary:active,
-fieldset[disabled] .card-impact .btn-primary:active,
-.section-impact .btn-primary.disabled.active,
-.card-impact .btn-primary.disabled.active,
-.section-impact .btn-primary[disabled].active,
-.card-impact .btn-primary[disabled].active,
-fieldset[disabled] .section-impact .btn-primary.active,
-fieldset[disabled] .card-impact .btn-primary.active {
-  background-color: #446A7C;
+
+.section-impact .btn-primary.disabled, .section-impact .btn-primary.disabled:hover, .section-impact .btn-primary.disabled:focus, .section-impact .btn-primary.disabled:active, .section-impact .btn-primary.disabled.active, .section-impact .btn-primary[disabled], .section-impact .btn-primary[disabled]:hover, .section-impact .btn-primary[disabled]:focus, .section-impact .btn-primary[disabled]:active, .section-impact .btn-primary[disabled].active, fieldset[disabled] .section-impact .btn-primary, fieldset[disabled] .section-impact .btn-primary:hover, fieldset[disabled] .section-impact .btn-primary:focus, fieldset[disabled] .section-impact .btn-primary:active, fieldset[disabled] .section-impact .btn-primary.active, .card-impact .btn-primary.disabled, .card-impact .btn-primary.disabled:hover, .card-impact .btn-primary.disabled:focus, .card-impact .btn-primary.disabled:active, .card-impact .btn-primary.disabled.active, .card-impact .btn-primary[disabled], .card-impact .btn-primary[disabled]:hover, .card-impact .btn-primary[disabled]:focus, .card-impact .btn-primary[disabled]:active, .card-impact .btn-primary[disabled].active, fieldset[disabled] .card-impact .btn-primary, fieldset[disabled] .card-impact .btn-primary:hover, fieldset[disabled] .card-impact .btn-primary:focus, fieldset[disabled] .card-impact .btn-primary:active, fieldset[disabled] .card-impact .btn-primary.active {
+  background-color: #446A7C !important;
   border-color: #ffffff;
 }
-.section-impact .btn-primary .badge,
-.card-impact .btn-primary .badge {
+
+.section-impact .btn-primary .badge, .card-impact .btn-primary .badge {
   color: #446A7C;
   background-color: #fff;
 }
-.section-impact .btn-standout,
-.card-impact .btn-standout {
+
+.section-impact .btn-standout, .card-impact .btn-standout {
   color: #fff;
   background-color: #21272A;
   border-color: #ffffff;
 }
-.section-impact .btn-standout:hover,
-.card-impact .btn-standout:hover,
-.section-impact .btn-standout:focus,
-.card-impact .btn-standout:focus,
-.section-impact .btn-standout:active,
-.card-impact .btn-standout:active,
-.section-impact .btn-standout.active,
-.card-impact .btn-standout.active,
-.open > .dropdown-toggle.section-impact .btn-standout,
-.open > .dropdown-toggle.card-impact .btn-standout {
+
+.section-impact .btn-standout:hover, .section-impact .btn-standout:focus, .section-impact .btn-standout:not(:disabled):not(.disabled):active, .section-impact .btn-standout:not(:disabled):not(.disabled).active, .section-impact .btn-standout .show > .dropdown-toggle, .open > .dropdown-toggle .section-impact .btn-standout, .card-impact .btn-standout:hover, .card-impact .btn-standout:focus, .card-impact .btn-standout:not(:disabled):not(.disabled):active, .card-impact .btn-standout:not(:disabled):not(.disabled).active, .card-impact .btn-standout .show > .dropdown-toggle, .open > .dropdown-toggle .card-impact .btn-standout {
   color: #fff;
   background-color: #111416;
   border-color: #ffffff;
 }
-.section-impact .btn-standout:active,
-.card-impact .btn-standout:active,
-.section-impact .btn-standout.active,
-.card-impact .btn-standout.active,
-.open > .dropdown-toggle.section-impact .btn-standout,
-.open > .dropdown-toggle.card-impact .btn-standout {
+
+.section-impact .btn-standout:not(:disabled):not(.disabled):active, .section-impact .btn-standout:not(:disabled):not(.disabled).active, .open > .dropdown-toggle .section-impact .btn-standout, .card-impact .btn-standout:not(:disabled):not(.disabled):active, .card-impact .btn-standout:not(:disabled):not(.disabled).active, .open > .dropdown-toggle .card-impact .btn-standout {
   background-image: none;
 }
-.section-impact .btn-standout.disabled,
-.card-impact .btn-standout.disabled,
-.section-impact .btn-standout[disabled],
-.card-impact .btn-standout[disabled],
-fieldset[disabled] .section-impact .btn-standout,
-fieldset[disabled] .card-impact .btn-standout,
-.section-impact .btn-standout.disabled:hover,
-.card-impact .btn-standout.disabled:hover,
-.section-impact .btn-standout[disabled]:hover,
-.card-impact .btn-standout[disabled]:hover,
-fieldset[disabled] .section-impact .btn-standout:hover,
-fieldset[disabled] .card-impact .btn-standout:hover,
-.section-impact .btn-standout.disabled:focus,
-.card-impact .btn-standout.disabled:focus,
-.section-impact .btn-standout[disabled]:focus,
-.card-impact .btn-standout[disabled]:focus,
-fieldset[disabled] .section-impact .btn-standout:focus,
-fieldset[disabled] .card-impact .btn-standout:focus,
-.section-impact .btn-standout.disabled:active,
-.card-impact .btn-standout.disabled:active,
-.section-impact .btn-standout[disabled]:active,
-.card-impact .btn-standout[disabled]:active,
-fieldset[disabled] .section-impact .btn-standout:active,
-fieldset[disabled] .card-impact .btn-standout:active,
-.section-impact .btn-standout.disabled.active,
-.card-impact .btn-standout.disabled.active,
-.section-impact .btn-standout[disabled].active,
-.card-impact .btn-standout[disabled].active,
-fieldset[disabled] .section-impact .btn-standout.active,
-fieldset[disabled] .card-impact .btn-standout.active {
-  background-color: #21272A;
+
+.section-impact .btn-standout.disabled, .section-impact .btn-standout.disabled:hover, .section-impact .btn-standout.disabled:focus, .section-impact .btn-standout.disabled:active, .section-impact .btn-standout.disabled.active, .section-impact .btn-standout[disabled], .section-impact .btn-standout[disabled]:hover, .section-impact .btn-standout[disabled]:focus, .section-impact .btn-standout[disabled]:active, .section-impact .btn-standout[disabled].active, fieldset[disabled] .section-impact .btn-standout, fieldset[disabled] .section-impact .btn-standout:hover, fieldset[disabled] .section-impact .btn-standout:focus, fieldset[disabled] .section-impact .btn-standout:active, fieldset[disabled] .section-impact .btn-standout.active, .card-impact .btn-standout.disabled, .card-impact .btn-standout.disabled:hover, .card-impact .btn-standout.disabled:focus, .card-impact .btn-standout.disabled:active, .card-impact .btn-standout.disabled.active, .card-impact .btn-standout[disabled], .card-impact .btn-standout[disabled]:hover, .card-impact .btn-standout[disabled]:focus, .card-impact .btn-standout[disabled]:active, .card-impact .btn-standout[disabled].active, fieldset[disabled] .card-impact .btn-standout, fieldset[disabled] .card-impact .btn-standout:hover, fieldset[disabled] .card-impact .btn-standout:focus, fieldset[disabled] .card-impact .btn-standout:active, fieldset[disabled] .card-impact .btn-standout.active {
+  background-color: #21272A !important;
   border-color: #ffffff;
 }
-.section-impact .btn-standout .badge,
-.card-impact .btn-standout .badge {
+
+.section-impact .btn-standout .badge, .card-impact .btn-standout .badge {
   color: #21272A;
   background-color: #fff;
 }
-.section-impact .btn-default,
-.card-impact .btn-default {
+
+.section-impact .btn-default, .card-impact .btn-default {
   color: #fff;
   background-color: transparent;
   border-color: #e2dfda;
-  margin-bottom: 11px;
+  margin-bottom: 11.5px;
 }
-.section-impact .btn-default:hover,
-.card-impact .btn-default:hover,
-.section-impact .btn-default:focus,
-.card-impact .btn-default:focus,
-.section-impact .btn-default:active,
-.card-impact .btn-default:active,
-.section-impact .btn-default.active,
-.card-impact .btn-default.active,
-.open > .dropdown-toggle.section-impact .btn-default,
-.open > .dropdown-toggle.card-impact .btn-default {
+
+.section-impact .btn-default:hover, .section-impact .btn-default:focus, .section-impact .btn-default:not(:disabled):not(.disabled):active, .section-impact .btn-default:not(:disabled):not(.disabled).active, .section-impact .btn-default .show > .dropdown-toggle, .open > .dropdown-toggle .section-impact .btn-default, .card-impact .btn-default:hover, .card-impact .btn-default:focus, .card-impact .btn-default:not(:disabled):not(.disabled):active, .card-impact .btn-default:not(:disabled):not(.disabled).active, .card-impact .btn-default .show > .dropdown-toggle, .open > .dropdown-toggle .card-impact .btn-default {
   color: #fff;
   background-color: rgba(255, 255, 255, 0.2);
   border-color: #fff;
 }
-.section-impact .btn-default:active,
-.card-impact .btn-default:active,
-.section-impact .btn-default.active,
-.card-impact .btn-default.active,
-.open > .dropdown-toggle.section-impact .btn-default,
-.open > .dropdown-toggle.card-impact .btn-default {
+
+.section-impact .btn-default:not(:disabled):not(.disabled):active, .section-impact .btn-default:not(:disabled):not(.disabled).active, .open > .dropdown-toggle .section-impact .btn-default, .card-impact .btn-default:not(:disabled):not(.disabled):active, .card-impact .btn-default:not(:disabled):not(.disabled).active, .open > .dropdown-toggle .card-impact .btn-default {
   background-image: none;
 }
-.section-impact .btn-default.disabled,
-.card-impact .btn-default.disabled,
-.section-impact .btn-default[disabled],
-.card-impact .btn-default[disabled],
-fieldset[disabled] .section-impact .btn-default,
-fieldset[disabled] .card-impact .btn-default,
-.section-impact .btn-default.disabled:hover,
-.card-impact .btn-default.disabled:hover,
-.section-impact .btn-default[disabled]:hover,
-.card-impact .btn-default[disabled]:hover,
-fieldset[disabled] .section-impact .btn-default:hover,
-fieldset[disabled] .card-impact .btn-default:hover,
-.section-impact .btn-default.disabled:focus,
-.card-impact .btn-default.disabled:focus,
-.section-impact .btn-default[disabled]:focus,
-.card-impact .btn-default[disabled]:focus,
-fieldset[disabled] .section-impact .btn-default:focus,
-fieldset[disabled] .card-impact .btn-default:focus,
-.section-impact .btn-default.disabled:active,
-.card-impact .btn-default.disabled:active,
-.section-impact .btn-default[disabled]:active,
-.card-impact .btn-default[disabled]:active,
-fieldset[disabled] .section-impact .btn-default:active,
-fieldset[disabled] .card-impact .btn-default:active,
-.section-impact .btn-default.disabled.active,
-.card-impact .btn-default.disabled.active,
-.section-impact .btn-default[disabled].active,
-.card-impact .btn-default[disabled].active,
-fieldset[disabled] .section-impact .btn-default.active,
-fieldset[disabled] .card-impact .btn-default.active {
-  background-color: transparent;
+
+.section-impact .btn-default.disabled, .section-impact .btn-default.disabled:hover, .section-impact .btn-default.disabled:focus, .section-impact .btn-default.disabled:active, .section-impact .btn-default.disabled.active, .section-impact .btn-default[disabled], .section-impact .btn-default[disabled]:hover, .section-impact .btn-default[disabled]:focus, .section-impact .btn-default[disabled]:active, .section-impact .btn-default[disabled].active, fieldset[disabled] .section-impact .btn-default, fieldset[disabled] .section-impact .btn-default:hover, fieldset[disabled] .section-impact .btn-default:focus, fieldset[disabled] .section-impact .btn-default:active, fieldset[disabled] .section-impact .btn-default.active, .card-impact .btn-default.disabled, .card-impact .btn-default.disabled:hover, .card-impact .btn-default.disabled:focus, .card-impact .btn-default.disabled:active, .card-impact .btn-default.disabled.active, .card-impact .btn-default[disabled], .card-impact .btn-default[disabled]:hover, .card-impact .btn-default[disabled]:focus, .card-impact .btn-default[disabled]:active, .card-impact .btn-default[disabled].active, fieldset[disabled] .card-impact .btn-default, fieldset[disabled] .card-impact .btn-default:hover, fieldset[disabled] .card-impact .btn-default:focus, fieldset[disabled] .card-impact .btn-default:active, fieldset[disabled] .card-impact .btn-default.active {
+  background-color: transparent !important;
   border-color: #e2dfda;
 }
-.section-impact .btn-default .badge,
-.card-impact .btn-default .badge {
+
+.section-impact .btn-default .badge, .card-impact .btn-default .badge {
   color: transparent;
   background-color: #fff;
 }
-.section-impact .btn-default [class^="ca-gov-icon-"],
-.card-impact .btn-default [class^="ca-gov-icon-"] {
+
+.section-impact .btn-default [class^="ca-gov-icon-"], .card-impact .btn-default [class^="ca-gov-icon-"] {
   color: #e2dfda;
   padding: 0 5px;
 }
-.section-primary,
-.card-primary {
+
+.section-primary, .card-primary {
   background: #446A7C;
   color: #ffffff;
 }
-.section-primary a:not(.btn),
-.card-primary a:not(.btn) {
+
+.section-primary a:not(.btn), .card-primary a:not(.btn) {
   color: #f9f8f8;
   text-decoration: underline;
   -webkit-transition: all 0.25s;
   transition: all 0.25s;
 }
-.section-primary a:not(.btn):hover,
-.card-primary a:not(.btn):hover,
-.section-primary a:not(.btn):focus,
-.card-primary a:not(.btn):focus {
+
+.section-primary a:not(.btn):hover, .section-primary a:not(.btn):focus, .card-primary a:not(.btn):hover, .card-primary a:not(.btn):focus {
   color: #e9e5e5;
   text-decoration: underline;
 }
-.section-primary a:not(.btn):focus,
-.card-primary a:not(.btn):focus {
+
+.section-primary a:not(.btn):focus, .card-primary a:not(.btn):focus {
   outline: thin dotted;
   outline: 5px auto -webkit-focus-ring-color;
   outline-offset: -2px;
 }
-.section-primary .btn-primary,
-.card-primary .btn-primary {
+
+.section-primary .btn-primary, .card-primary .btn-primary {
   color: #fff;
   background-color: #446A7C;
   border-color: #ffffff;
 }
-.section-primary .btn-primary:hover,
-.card-primary .btn-primary:hover,
-.section-primary .btn-primary:focus,
-.card-primary .btn-primary:focus,
-.section-primary .btn-primary:active,
-.card-primary .btn-primary:active,
-.section-primary .btn-primary.active,
-.card-primary .btn-primary.active,
-.open > .dropdown-toggle.section-primary .btn-primary,
-.open > .dropdown-toggle.card-primary .btn-primary {
+
+.section-primary .btn-primary:hover, .section-primary .btn-primary:focus, .section-primary .btn-primary:not(:disabled):not(.disabled):active, .section-primary .btn-primary:not(:disabled):not(.disabled).active, .section-primary .btn-primary .show > .dropdown-toggle, .open > .dropdown-toggle .section-primary .btn-primary, .card-primary .btn-primary:hover, .card-primary .btn-primary:focus, .card-primary .btn-primary:not(:disabled):not(.disabled):active, .card-primary .btn-primary:not(:disabled):not(.disabled).active, .card-primary .btn-primary .show > .dropdown-toggle, .open > .dropdown-toggle .card-primary .btn-primary {
   color: #fff;
   background-color: #375665;
   border-color: #ffffff;
 }
-.section-primary .btn-primary:active,
-.card-primary .btn-primary:active,
-.section-primary .btn-primary.active,
-.card-primary .btn-primary.active,
-.open > .dropdown-toggle.section-primary .btn-primary,
-.open > .dropdown-toggle.card-primary .btn-primary {
+
+.section-primary .btn-primary:not(:disabled):not(.disabled):active, .section-primary .btn-primary:not(:disabled):not(.disabled).active, .open > .dropdown-toggle .section-primary .btn-primary, .card-primary .btn-primary:not(:disabled):not(.disabled):active, .card-primary .btn-primary:not(:disabled):not(.disabled).active, .open > .dropdown-toggle .card-primary .btn-primary {
   background-image: none;
 }
-.section-primary .btn-primary.disabled,
-.card-primary .btn-primary.disabled,
-.section-primary .btn-primary[disabled],
-.card-primary .btn-primary[disabled],
-fieldset[disabled] .section-primary .btn-primary,
-fieldset[disabled] .card-primary .btn-primary,
-.section-primary .btn-primary.disabled:hover,
-.card-primary .btn-primary.disabled:hover,
-.section-primary .btn-primary[disabled]:hover,
-.card-primary .btn-primary[disabled]:hover,
-fieldset[disabled] .section-primary .btn-primary:hover,
-fieldset[disabled] .card-primary .btn-primary:hover,
-.section-primary .btn-primary.disabled:focus,
-.card-primary .btn-primary.disabled:focus,
-.section-primary .btn-primary[disabled]:focus,
-.card-primary .btn-primary[disabled]:focus,
-fieldset[disabled] .section-primary .btn-primary:focus,
-fieldset[disabled] .card-primary .btn-primary:focus,
-.section-primary .btn-primary.disabled:active,
-.card-primary .btn-primary.disabled:active,
-.section-primary .btn-primary[disabled]:active,
-.card-primary .btn-primary[disabled]:active,
-fieldset[disabled] .section-primary .btn-primary:active,
-fieldset[disabled] .card-primary .btn-primary:active,
-.section-primary .btn-primary.disabled.active,
-.card-primary .btn-primary.disabled.active,
-.section-primary .btn-primary[disabled].active,
-.card-primary .btn-primary[disabled].active,
-fieldset[disabled] .section-primary .btn-primary.active,
-fieldset[disabled] .card-primary .btn-primary.active {
-  background-color: #446A7C;
+
+.section-primary .btn-primary.disabled, .section-primary .btn-primary.disabled:hover, .section-primary .btn-primary.disabled:focus, .section-primary .btn-primary.disabled:active, .section-primary .btn-primary.disabled.active, .section-primary .btn-primary[disabled], .section-primary .btn-primary[disabled]:hover, .section-primary .btn-primary[disabled]:focus, .section-primary .btn-primary[disabled]:active, .section-primary .btn-primary[disabled].active, fieldset[disabled] .section-primary .btn-primary, fieldset[disabled] .section-primary .btn-primary:hover, fieldset[disabled] .section-primary .btn-primary:focus, fieldset[disabled] .section-primary .btn-primary:active, fieldset[disabled] .section-primary .btn-primary.active, .card-primary .btn-primary.disabled, .card-primary .btn-primary.disabled:hover, .card-primary .btn-primary.disabled:focus, .card-primary .btn-primary.disabled:active, .card-primary .btn-primary.disabled.active, .card-primary .btn-primary[disabled], .card-primary .btn-primary[disabled]:hover, .card-primary .btn-primary[disabled]:focus, .card-primary .btn-primary[disabled]:active, .card-primary .btn-primary[disabled].active, fieldset[disabled] .card-primary .btn-primary, fieldset[disabled] .card-primary .btn-primary:hover, fieldset[disabled] .card-primary .btn-primary:focus, fieldset[disabled] .card-primary .btn-primary:active, fieldset[disabled] .card-primary .btn-primary.active {
+  background-color: #446A7C !important;
   border-color: #ffffff;
 }
-.section-primary .btn-primary .badge,
-.card-primary .btn-primary .badge {
+
+.section-primary .btn-primary .badge, .card-primary .btn-primary .badge {
   color: #446A7C;
   background-color: #fff;
 }
-.section-primary .btn-standout,
-.card-primary .btn-standout {
+
+.section-primary .btn-standout, .card-primary .btn-standout {
   color: #fff;
   background-color: #21272A;
   border-color: #ffffff;
 }
-.section-primary .btn-standout:hover,
-.card-primary .btn-standout:hover,
-.section-primary .btn-standout:focus,
-.card-primary .btn-standout:focus,
-.section-primary .btn-standout:active,
-.card-primary .btn-standout:active,
-.section-primary .btn-standout.active,
-.card-primary .btn-standout.active,
-.open > .dropdown-toggle.section-primary .btn-standout,
-.open > .dropdown-toggle.card-primary .btn-standout {
+
+.section-primary .btn-standout:hover, .section-primary .btn-standout:focus, .section-primary .btn-standout:not(:disabled):not(.disabled):active, .section-primary .btn-standout:not(:disabled):not(.disabled).active, .section-primary .btn-standout .show > .dropdown-toggle, .open > .dropdown-toggle .section-primary .btn-standout, .card-primary .btn-standout:hover, .card-primary .btn-standout:focus, .card-primary .btn-standout:not(:disabled):not(.disabled):active, .card-primary .btn-standout:not(:disabled):not(.disabled).active, .card-primary .btn-standout .show > .dropdown-toggle, .open > .dropdown-toggle .card-primary .btn-standout {
   color: #fff;
   background-color: #111416;
   border-color: #ffffff;
 }
-.section-primary .btn-standout:active,
-.card-primary .btn-standout:active,
-.section-primary .btn-standout.active,
-.card-primary .btn-standout.active,
-.open > .dropdown-toggle.section-primary .btn-standout,
-.open > .dropdown-toggle.card-primary .btn-standout {
+
+.section-primary .btn-standout:not(:disabled):not(.disabled):active, .section-primary .btn-standout:not(:disabled):not(.disabled).active, .open > .dropdown-toggle .section-primary .btn-standout, .card-primary .btn-standout:not(:disabled):not(.disabled):active, .card-primary .btn-standout:not(:disabled):not(.disabled).active, .open > .dropdown-toggle .card-primary .btn-standout {
   background-image: none;
 }
-.section-primary .btn-standout.disabled,
-.card-primary .btn-standout.disabled,
-.section-primary .btn-standout[disabled],
-.card-primary .btn-standout[disabled],
-fieldset[disabled] .section-primary .btn-standout,
-fieldset[disabled] .card-primary .btn-standout,
-.section-primary .btn-standout.disabled:hover,
-.card-primary .btn-standout.disabled:hover,
-.section-primary .btn-standout[disabled]:hover,
-.card-primary .btn-standout[disabled]:hover,
-fieldset[disabled] .section-primary .btn-standout:hover,
-fieldset[disabled] .card-primary .btn-standout:hover,
-.section-primary .btn-standout.disabled:focus,
-.card-primary .btn-standout.disabled:focus,
-.section-primary .btn-standout[disabled]:focus,
-.card-primary .btn-standout[disabled]:focus,
-fieldset[disabled] .section-primary .btn-standout:focus,
-fieldset[disabled] .card-primary .btn-standout:focus,
-.section-primary .btn-standout.disabled:active,
-.card-primary .btn-standout.disabled:active,
-.section-primary .btn-standout[disabled]:active,
-.card-primary .btn-standout[disabled]:active,
-fieldset[disabled] .section-primary .btn-standout:active,
-fieldset[disabled] .card-primary .btn-standout:active,
-.section-primary .btn-standout.disabled.active,
-.card-primary .btn-standout.disabled.active,
-.section-primary .btn-standout[disabled].active,
-.card-primary .btn-standout[disabled].active,
-fieldset[disabled] .section-primary .btn-standout.active,
-fieldset[disabled] .card-primary .btn-standout.active {
-  background-color: #21272A;
+
+.section-primary .btn-standout.disabled, .section-primary .btn-standout.disabled:hover, .section-primary .btn-standout.disabled:focus, .section-primary .btn-standout.disabled:active, .section-primary .btn-standout.disabled.active, .section-primary .btn-standout[disabled], .section-primary .btn-standout[disabled]:hover, .section-primary .btn-standout[disabled]:focus, .section-primary .btn-standout[disabled]:active, .section-primary .btn-standout[disabled].active, fieldset[disabled] .section-primary .btn-standout, fieldset[disabled] .section-primary .btn-standout:hover, fieldset[disabled] .section-primary .btn-standout:focus, fieldset[disabled] .section-primary .btn-standout:active, fieldset[disabled] .section-primary .btn-standout.active, .card-primary .btn-standout.disabled, .card-primary .btn-standout.disabled:hover, .card-primary .btn-standout.disabled:focus, .card-primary .btn-standout.disabled:active, .card-primary .btn-standout.disabled.active, .card-primary .btn-standout[disabled], .card-primary .btn-standout[disabled]:hover, .card-primary .btn-standout[disabled]:focus, .card-primary .btn-standout[disabled]:active, .card-primary .btn-standout[disabled].active, fieldset[disabled] .card-primary .btn-standout, fieldset[disabled] .card-primary .btn-standout:hover, fieldset[disabled] .card-primary .btn-standout:focus, fieldset[disabled] .card-primary .btn-standout:active, fieldset[disabled] .card-primary .btn-standout.active {
+  background-color: #21272A !important;
   border-color: #ffffff;
 }
-.section-primary .btn-standout .badge,
-.card-primary .btn-standout .badge {
+
+.section-primary .btn-standout .badge, .card-primary .btn-standout .badge {
   color: #21272A;
   background-color: #fff;
 }
-.section-inverted,
-.card-inverted {
+
+.section-inverted, .card-inverted {
   background: #222222;
   color: #fff;
 }
-.section-inverted a:not(.btn),
-.card-inverted a:not(.btn) {
+
+.section-inverted a:not(.btn), .card-inverted a:not(.btn) {
   color: #ccc8bf;
   text-decoration: none;
   -webkit-transition: all 0.25s;
   transition: all 0.25s;
 }
-.section-inverted a:not(.btn):hover,
-.card-inverted a:not(.btn):hover,
-.section-inverted a:not(.btn):focus,
-.card-inverted a:not(.btn):focus {
+
+.section-inverted a:not(.btn):hover, .section-inverted a:not(.btn):focus, .card-inverted a:not(.btn):hover, .card-inverted a:not(.btn):focus {
   color: #bcb7ab;
   text-decoration: underline;
 }
-.section-inverted a:not(.btn):focus,
-.card-inverted a:not(.btn):focus {
+
+.section-inverted a:not(.btn):focus, .card-inverted a:not(.btn):focus {
   outline: thin dotted;
   outline: 5px auto -webkit-focus-ring-color;
   outline-offset: -2px;
 }
-.section-inverted .btn-primary,
-.card-inverted .btn-primary {
+
+.section-inverted .btn-primary, .card-inverted .btn-primary {
   color: #fff;
   background-color: #446A7C;
   border-color: #ffffff;
 }
-.section-inverted .btn-primary:hover,
-.card-inverted .btn-primary:hover,
-.section-inverted .btn-primary:focus,
-.card-inverted .btn-primary:focus,
-.section-inverted .btn-primary:active,
-.card-inverted .btn-primary:active,
-.section-inverted .btn-primary.active,
-.card-inverted .btn-primary.active,
-.open > .dropdown-toggle.section-inverted .btn-primary,
-.open > .dropdown-toggle.card-inverted .btn-primary {
+
+.section-inverted .btn-primary:hover, .section-inverted .btn-primary:focus, .section-inverted .btn-primary:not(:disabled):not(.disabled):active, .section-inverted .btn-primary:not(:disabled):not(.disabled).active, .section-inverted .btn-primary .show > .dropdown-toggle, .open > .dropdown-toggle .section-inverted .btn-primary, .card-inverted .btn-primary:hover, .card-inverted .btn-primary:focus, .card-inverted .btn-primary:not(:disabled):not(.disabled):active, .card-inverted .btn-primary:not(:disabled):not(.disabled).active, .card-inverted .btn-primary .show > .dropdown-toggle, .open > .dropdown-toggle .card-inverted .btn-primary {
   color: #fff;
   background-color: #375665;
   border-color: #ffffff;
 }
-.section-inverted .btn-primary:active,
-.card-inverted .btn-primary:active,
-.section-inverted .btn-primary.active,
-.card-inverted .btn-primary.active,
-.open > .dropdown-toggle.section-inverted .btn-primary,
-.open > .dropdown-toggle.card-inverted .btn-primary {
+
+.section-inverted .btn-primary:not(:disabled):not(.disabled):active, .section-inverted .btn-primary:not(:disabled):not(.disabled).active, .open > .dropdown-toggle .section-inverted .btn-primary, .card-inverted .btn-primary:not(:disabled):not(.disabled):active, .card-inverted .btn-primary:not(:disabled):not(.disabled).active, .open > .dropdown-toggle .card-inverted .btn-primary {
   background-image: none;
 }
-.section-inverted .btn-primary.disabled,
-.card-inverted .btn-primary.disabled,
-.section-inverted .btn-primary[disabled],
-.card-inverted .btn-primary[disabled],
-fieldset[disabled] .section-inverted .btn-primary,
-fieldset[disabled] .card-inverted .btn-primary,
-.section-inverted .btn-primary.disabled:hover,
-.card-inverted .btn-primary.disabled:hover,
-.section-inverted .btn-primary[disabled]:hover,
-.card-inverted .btn-primary[disabled]:hover,
-fieldset[disabled] .section-inverted .btn-primary:hover,
-fieldset[disabled] .card-inverted .btn-primary:hover,
-.section-inverted .btn-primary.disabled:focus,
-.card-inverted .btn-primary.disabled:focus,
-.section-inverted .btn-primary[disabled]:focus,
-.card-inverted .btn-primary[disabled]:focus,
-fieldset[disabled] .section-inverted .btn-primary:focus,
-fieldset[disabled] .card-inverted .btn-primary:focus,
-.section-inverted .btn-primary.disabled:active,
-.card-inverted .btn-primary.disabled:active,
-.section-inverted .btn-primary[disabled]:active,
-.card-inverted .btn-primary[disabled]:active,
-fieldset[disabled] .section-inverted .btn-primary:active,
-fieldset[disabled] .card-inverted .btn-primary:active,
-.section-inverted .btn-primary.disabled.active,
-.card-inverted .btn-primary.disabled.active,
-.section-inverted .btn-primary[disabled].active,
-.card-inverted .btn-primary[disabled].active,
-fieldset[disabled] .section-inverted .btn-primary.active,
-fieldset[disabled] .card-inverted .btn-primary.active {
-  background-color: #446A7C;
+
+.section-inverted .btn-primary.disabled, .section-inverted .btn-primary.disabled:hover, .section-inverted .btn-primary.disabled:focus, .section-inverted .btn-primary.disabled:active, .section-inverted .btn-primary.disabled.active, .section-inverted .btn-primary[disabled], .section-inverted .btn-primary[disabled]:hover, .section-inverted .btn-primary[disabled]:focus, .section-inverted .btn-primary[disabled]:active, .section-inverted .btn-primary[disabled].active, fieldset[disabled] .section-inverted .btn-primary, fieldset[disabled] .section-inverted .btn-primary:hover, fieldset[disabled] .section-inverted .btn-primary:focus, fieldset[disabled] .section-inverted .btn-primary:active, fieldset[disabled] .section-inverted .btn-primary.active, .card-inverted .btn-primary.disabled, .card-inverted .btn-primary.disabled:hover, .card-inverted .btn-primary.disabled:focus, .card-inverted .btn-primary.disabled:active, .card-inverted .btn-primary.disabled.active, .card-inverted .btn-primary[disabled], .card-inverted .btn-primary[disabled]:hover, .card-inverted .btn-primary[disabled]:focus, .card-inverted .btn-primary[disabled]:active, .card-inverted .btn-primary[disabled].active, fieldset[disabled] .card-inverted .btn-primary, fieldset[disabled] .card-inverted .btn-primary:hover, fieldset[disabled] .card-inverted .btn-primary:focus, fieldset[disabled] .card-inverted .btn-primary:active, fieldset[disabled] .card-inverted .btn-primary.active {
+  background-color: #446A7C !important;
   border-color: #ffffff;
 }
-.section-inverted .btn-primary .badge,
-.card-inverted .btn-primary .badge {
+
+.section-inverted .btn-primary .badge, .card-inverted .btn-primary .badge {
   color: #446A7C;
   background-color: #fff;
 }
-.section-inverted .btn-standout,
-.card-inverted .btn-standout {
+
+.section-inverted .btn-standout, .card-inverted .btn-standout {
   color: #fff;
   background-color: #21272A;
   border-color: #ffffff;
 }
-.section-inverted .btn-standout:hover,
-.card-inverted .btn-standout:hover,
-.section-inverted .btn-standout:focus,
-.card-inverted .btn-standout:focus,
-.section-inverted .btn-standout:active,
-.card-inverted .btn-standout:active,
-.section-inverted .btn-standout.active,
-.card-inverted .btn-standout.active,
-.open > .dropdown-toggle.section-inverted .btn-standout,
-.open > .dropdown-toggle.card-inverted .btn-standout {
+
+.section-inverted .btn-standout:hover, .section-inverted .btn-standout:focus, .section-inverted .btn-standout:not(:disabled):not(.disabled):active, .section-inverted .btn-standout:not(:disabled):not(.disabled).active, .section-inverted .btn-standout .show > .dropdown-toggle, .open > .dropdown-toggle .section-inverted .btn-standout, .card-inverted .btn-standout:hover, .card-inverted .btn-standout:focus, .card-inverted .btn-standout:not(:disabled):not(.disabled):active, .card-inverted .btn-standout:not(:disabled):not(.disabled).active, .card-inverted .btn-standout .show > .dropdown-toggle, .open > .dropdown-toggle .card-inverted .btn-standout {
   color: #fff;
   background-color: #111416;
   border-color: #ffffff;
 }
-.section-inverted .btn-standout:active,
-.card-inverted .btn-standout:active,
-.section-inverted .btn-standout.active,
-.card-inverted .btn-standout.active,
-.open > .dropdown-toggle.section-inverted .btn-standout,
-.open > .dropdown-toggle.card-inverted .btn-standout {
+
+.section-inverted .btn-standout:not(:disabled):not(.disabled):active, .section-inverted .btn-standout:not(:disabled):not(.disabled).active, .open > .dropdown-toggle .section-inverted .btn-standout, .card-inverted .btn-standout:not(:disabled):not(.disabled):active, .card-inverted .btn-standout:not(:disabled):not(.disabled).active, .open > .dropdown-toggle .card-inverted .btn-standout {
   background-image: none;
 }
-.section-inverted .btn-standout.disabled,
-.card-inverted .btn-standout.disabled,
-.section-inverted .btn-standout[disabled],
-.card-inverted .btn-standout[disabled],
-fieldset[disabled] .section-inverted .btn-standout,
-fieldset[disabled] .card-inverted .btn-standout,
-.section-inverted .btn-standout.disabled:hover,
-.card-inverted .btn-standout.disabled:hover,
-.section-inverted .btn-standout[disabled]:hover,
-.card-inverted .btn-standout[disabled]:hover,
-fieldset[disabled] .section-inverted .btn-standout:hover,
-fieldset[disabled] .card-inverted .btn-standout:hover,
-.section-inverted .btn-standout.disabled:focus,
-.card-inverted .btn-standout.disabled:focus,
-.section-inverted .btn-standout[disabled]:focus,
-.card-inverted .btn-standout[disabled]:focus,
-fieldset[disabled] .section-inverted .btn-standout:focus,
-fieldset[disabled] .card-inverted .btn-standout:focus,
-.section-inverted .btn-standout.disabled:active,
-.card-inverted .btn-standout.disabled:active,
-.section-inverted .btn-standout[disabled]:active,
-.card-inverted .btn-standout[disabled]:active,
-fieldset[disabled] .section-inverted .btn-standout:active,
-fieldset[disabled] .card-inverted .btn-standout:active,
-.section-inverted .btn-standout.disabled.active,
-.card-inverted .btn-standout.disabled.active,
-.section-inverted .btn-standout[disabled].active,
-.card-inverted .btn-standout[disabled].active,
-fieldset[disabled] .section-inverted .btn-standout.active,
-fieldset[disabled] .card-inverted .btn-standout.active {
-  background-color: #21272A;
+
+.section-inverted .btn-standout.disabled, .section-inverted .btn-standout.disabled:hover, .section-inverted .btn-standout.disabled:focus, .section-inverted .btn-standout.disabled:active, .section-inverted .btn-standout.disabled.active, .section-inverted .btn-standout[disabled], .section-inverted .btn-standout[disabled]:hover, .section-inverted .btn-standout[disabled]:focus, .section-inverted .btn-standout[disabled]:active, .section-inverted .btn-standout[disabled].active, fieldset[disabled] .section-inverted .btn-standout, fieldset[disabled] .section-inverted .btn-standout:hover, fieldset[disabled] .section-inverted .btn-standout:focus, fieldset[disabled] .section-inverted .btn-standout:active, fieldset[disabled] .section-inverted .btn-standout.active, .card-inverted .btn-standout.disabled, .card-inverted .btn-standout.disabled:hover, .card-inverted .btn-standout.disabled:focus, .card-inverted .btn-standout.disabled:active, .card-inverted .btn-standout.disabled.active, .card-inverted .btn-standout[disabled], .card-inverted .btn-standout[disabled]:hover, .card-inverted .btn-standout[disabled]:focus, .card-inverted .btn-standout[disabled]:active, .card-inverted .btn-standout[disabled].active, fieldset[disabled] .card-inverted .btn-standout, fieldset[disabled] .card-inverted .btn-standout:hover, fieldset[disabled] .card-inverted .btn-standout:focus, fieldset[disabled] .card-inverted .btn-standout:active, fieldset[disabled] .card-inverted .btn-standout.active {
+  background-color: #21272A !important;
   border-color: #ffffff;
 }
-.section-inverted .btn-standout .badge,
-.card-inverted .btn-standout .badge {
+
+.section-inverted .btn-standout .badge, .card-inverted .btn-standout .badge {
   color: #21272A;
   background-color: #fff;
 }
-.section-danger,
-.card-danger {
+
+.section-danger, .card-danger {
   background: #d34a37;
-  color: #ffffff;
+  color: #000000;
 }
-.section-danger a:not(.btn),
-.card-danger a:not(.btn) {
+
+.section-danger a:not(.btn), .card-danger a:not(.btn) {
   color: #fff;
   text-decoration: underline;
   -webkit-transition: all 0.25s;
   transition: all 0.25s;
 }
-.section-danger a:not(.btn):hover,
-.card-danger a:not(.btn):hover,
-.section-danger a:not(.btn):focus,
-.card-danger a:not(.btn):focus {
+
+.section-danger a:not(.btn):hover, .section-danger a:not(.btn):focus, .card-danger a:not(.btn):hover, .card-danger a:not(.btn):focus {
   color: #fff;
   text-decoration: underline;
 }
-.section-danger a:not(.btn):focus,
-.card-danger a:not(.btn):focus {
+
+.section-danger a:not(.btn):focus, .card-danger a:not(.btn):focus {
   outline: thin dotted;
   outline: 5px auto -webkit-focus-ring-color;
   outline-offset: -2px;
 }
+
 /* -----------------------------------------
    HEADER SLIDESHOW BANNER
-   /source/less/colorscheme/cs-header-slideshow-banner.less
+   /source/scss/colorscheme/cs-header-slideshow-banner.scss
 ----------------------------------------- */
 /* HEADER SLIDESHOW */
 .header-slideshow-banner {
@@ -1478,15 +1098,17 @@ fieldset[disabled] .card-inverted .btn-standout.active {
   background: #000;
   /* Adjusting the height of the banner controls */
 }
-.header-slideshow-banner .banner-pager,
-.header-slideshow-banner .banner-play-pause {
+
+.header-slideshow-banner .banner-pager, .header-slideshow-banner .banner-play-pause {
   top: 350px;
   z-index: 1;
 }
+
 .header-slideshow-banner .carousel {
   margin-top: 0;
   margin-bottom: 0;
 }
+
 /* CA GOV Template hides the carousel by default. 
    The following lines are to unhide it and make it look pretty */
 @media (max-width: 767px) {
@@ -1499,7 +1121,7 @@ fieldset[disabled] .card-inverted .btn-standout.active {
     padding: 0;
   }
   .header-slideshow-banner #primary-carousel .slide-text {
-    bottom: -11px;
+    bottom: -11.5px;
     right: 0;
     font-size: 14px;
     width: 100%;
@@ -1508,885 +1130,949 @@ fieldset[disabled] .card-inverted .btn-standout.active {
     font-size: 19px;
   }
 }
+
 /* Move the slide text below the image for small mobile devices */
 @media (max-width: 767px) {
-  .header-slideshow-banner .banner-pager,
-  .header-slideshow-banner .banner-play-pause {
+  .header-slideshow-banner .banner-pager, .header-slideshow-banner .banner-play-pause {
     top: 15px;
   }
 }
+
 /* -----------------------------------------
    PROGRESS BARS
-   /source/less/cagov/cs-progress-bar.less
+   /source/scss/cagov/cs-progress-bar.scss
 ----------------------------------------- */
 /* Traditional Colors */
 .progress-bar-default {
   background-color: #d6d6d6;
 }
+
 .progress-striped .progress-bar-default {
-  background-image: -o-linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
-  background-image: -webkit-linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
   background-image: linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
 }
+
 .progress-bar-primary {
   background-color: #446A7C;
 }
+
 .progress-striped .progress-bar-primary {
-  background-image: -o-linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
-  background-image: -webkit-linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
   background-image: linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
 }
+
 .progress-bar-understated {
   background-color: #f9f8f8;
 }
+
 .progress-striped .progress-bar-understated {
-  background-image: -o-linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
-  background-image: -webkit-linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
   background-image: linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
 }
+
 .progress-bar-overstated {
   background-color: #ccc8bf;
 }
+
 .progress-striped .progress-bar-overstated {
-  background-image: -o-linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
-  background-image: -webkit-linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
   background-image: linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
 }
+
 .progress-bar-standout {
   background-color: #21272A;
 }
+
 .progress-striped .progress-bar-standout {
-  background-image: -o-linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
-  background-image: -webkit-linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
   background-image: linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
 }
+
 /* Accent Colors */
 .progress-bar-accent1 {
   background-color: #1f89db;
 }
+
 .progress-striped .progress-bar-accent1 {
-  background-image: -o-linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
-  background-image: -webkit-linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
   background-image: linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
 }
+
 .progress-bar-accent1 {
   background-color: #1f89db;
 }
+
 .progress-striped .progress-bar-accent1 {
-  background-image: -o-linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
-  background-image: -webkit-linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
   background-image: linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
 }
+
 .progress-bar-accent2 {
   background-color: #49bbf8;
 }
+
 .progress-striped .progress-bar-accent2 {
-  background-image: -o-linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
-  background-image: -webkit-linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
   background-image: linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
 }
+
 .progress-bar-accent3 {
   background-color: #35bbaa;
 }
+
 .progress-striped .progress-bar-accent3 {
-  background-image: -o-linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
-  background-image: -webkit-linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
   background-image: linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
 }
+
 .progress-bar-accent4 {
   background-color: #72ce6f;
 }
+
 .progress-striped .progress-bar-accent4 {
-  background-image: -o-linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
-  background-image: -webkit-linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
   background-image: linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
 }
+
 .progress-bar-accent5 {
   background-color: #815ab4;
 }
+
 .progress-striped .progress-bar-accent5 {
-  background-image: -o-linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
-  background-image: -webkit-linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
   background-image: linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
 }
+
 .progress-bar-accent6 {
   background-color: #dd99e5;
 }
+
 .progress-striped .progress-bar-accent6 {
-  background-image: -o-linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
-  background-image: -webkit-linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
   background-image: linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
 }
+
 .progress-bar-accent7 {
   background-color: #d34a37;
 }
+
 .progress-striped .progress-bar-accent7 {
-  background-image: -o-linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
-  background-image: -webkit-linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
   background-image: linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
 }
+
 .progress-bar-accent8 {
   background-color: #F27e31;
 }
+
 .progress-striped .progress-bar-accent8 {
-  background-image: -o-linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
-  background-image: -webkit-linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
   background-image: linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
 }
+
 .progress-bar-accent9 {
   background-color: #f7e455;
 }
+
 .progress-striped .progress-bar-accent9 {
-  background-image: -o-linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
-  background-image: -webkit-linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
   background-image: linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
 }
+
 /* -----------------------------------------
    COMMENT
-   /source/less/colorscheme/cs-testimonials.less
+   /source/scss/colorscheme/cs-testimonials.scss
 ----------------------------------------- */
 .testimonial-default {
-  background: #f5f5f5;
+  background: whitesmoke;
 }
+
 .testimonial-understated {
   background: #f9f8f8;
 }
+
 .testimonial-overstated {
   background: #ccc8bf;
   color: #000000;
 }
+
 .testimonial-overstated a:not(.btn) {
   color: #fff;
   text-decoration: none;
   -webkit-transition: all 0.25s;
   transition: all 0.25s;
 }
-.testimonial-overstated a:not(.btn):hover,
-.testimonial-overstated a:not(.btn):focus {
+
+.testimonial-overstated a:not(.btn):hover, .testimonial-overstated a:not(.btn):focus {
   color: #fff;
   text-decoration: underline;
 }
+
 .testimonial-overstated a:not(.btn):focus {
   outline: thin dotted;
   outline: 5px auto -webkit-focus-ring-color;
   outline-offset: -2px;
 }
+
 .testimonial-overstated footer {
   color: #000000;
 }
+
 .testimonial-standout {
   background: #21272A;
   color: #ffffff;
 }
+
 .testimonial-standout a:not(.btn) {
   color: #C19E73;
   text-decoration: none;
   -webkit-transition: all 0.25s;
   transition: all 0.25s;
 }
-.testimonial-standout a:not(.btn):hover,
-.testimonial-standout a:not(.btn):focus {
+
+.testimonial-standout a:not(.btn):hover, .testimonial-standout a:not(.btn):focus {
   color: #fff;
   text-decoration: underline;
 }
+
 .testimonial-standout a:not(.btn):focus {
   outline: thin dotted;
   outline: 5px auto -webkit-focus-ring-color;
   outline-offset: -2px;
 }
+
 .testimonial-standout footer {
   color: #ffffff;
 }
+
 .testimonial-primary {
   background: #446A7C;
   color: #ffffff;
 }
+
 .testimonial-primary a:not(.btn) {
   color: #C19E73;
   text-decoration: none;
   -webkit-transition: all 0.25s;
   transition: all 0.25s;
 }
-.testimonial-primary a:not(.btn):hover,
-.testimonial-primary a:not(.btn):focus {
+
+.testimonial-primary a:not(.btn):hover, .testimonial-primary a:not(.btn):focus {
   color: #fff;
   text-decoration: underline;
 }
+
 .testimonial-primary a:not(.btn):focus {
   outline: thin dotted;
   outline: 5px auto -webkit-focus-ring-color;
   outline-offset: -2px;
 }
+
 .testimonial-primary footer {
   color: #ffffff;
 }
+
 .testimonial-highlight {
   background: #C19E73;
   color: #333333;
 }
+
 .testimonial-highlight a:not(.btn) {
   color: #21272A;
   text-decoration: none;
   -webkit-transition: all 0.25s;
   transition: all 0.25s;
 }
-.testimonial-highlight a:not(.btn):hover,
-.testimonial-highlight a:not(.btn):focus {
+
+.testimonial-highlight a:not(.btn):hover, .testimonial-highlight a:not(.btn):focus {
   color: #333333;
   text-decoration: underline;
 }
+
 .testimonial-highlight a:not(.btn):focus {
   outline: thin dotted;
   outline: 5px auto -webkit-focus-ring-color;
   outline-offset: -2px;
 }
+
 .testimonial-highlight footer {
-  color: #ffffff;
+  color: #000000;
 }
+
 .testimonial-inverted {
   background: #222222;
   color: #fff;
 }
+
 .testimonial-inverted a:not(.btn) {
   color: #C19E73;
   text-decoration: none;
   -webkit-transition: all 0.25s;
   transition: all 0.25s;
 }
-.testimonial-inverted a:not(.btn):hover,
-.testimonial-inverted a:not(.btn):focus {
+
+.testimonial-inverted a:not(.btn):hover, .testimonial-inverted a:not(.btn):focus {
   color: #fff;
   text-decoration: underline;
 }
+
 .testimonial-inverted a:not(.btn):focus {
   outline: thin dotted;
   outline: 5px auto -webkit-focus-ring-color;
   outline-offset: -2px;
 }
+
 .testimonial-inverted footer {
   color: #ffffff;
 }
+
 .testimonial-danger {
   background: #d34a37;
-  color: #ffffff;
+  color: #000000;
 }
+
 .testimonial-danger a:not(.btn) {
   color: #000;
-  text-decoration: none;
+  text-decoration: underline;
   -webkit-transition: all 0.25s;
   transition: all 0.25s;
 }
-.testimonial-danger a:not(.btn):hover,
-.testimonial-danger a:not(.btn):focus {
+
+.testimonial-danger a:not(.btn):hover, .testimonial-danger a:not(.btn):focus {
   color: #fff;
   text-decoration: underline;
 }
+
 .testimonial-danger a:not(.btn):focus {
   outline: thin dotted;
   outline: 5px auto -webkit-focus-ring-color;
   outline-offset: -2px;
 }
+
 .testimonial-danger footer {
-  color: #ffffff;
+  color: #000000;
 }
+
 /* -----------------------------------------
    CARDS
-   /source/less/colorscheme/cs-cards.less
+   /source/scss/colorscheme/cs-cards.scss
 ----------------------------------------- */
 .card-default {
-  background-color: #ffffff;
+  background-color: white;
   border-color: #d6d6d6;
   color: #000000;
 }
+
 .card-default .card-header {
   border-bottom: 1px solid #d6d6d6;
   background-color: #f2f2f2;
 }
+
 .card-default .card-footer {
   border-top: 1px solid #d6d6d6;
   background-color: #f2f2f2;
 }
+
 .card-primary {
   background-color: #046B99;
   border-color: #046B99;
   color: #ffffff;
 }
+
 .card-primary a:not(.btn) {
   color: gray-lightest;
   text-decoration: none;
   -webkit-transition: all 0.25s;
   transition: all 0.25s;
 }
-.card-primary a:not(.btn):hover,
-.card-primary a:not(.btn):focus {
+
+.card-primary a:not(.btn):hover, .card-primary a:not(.btn):focus {
   color: #C19E73;
   text-decoration: underline;
 }
+
 .card-primary a:not(.btn):focus {
   outline: thin dotted;
   outline: 5px auto -webkit-focus-ring-color;
   outline-offset: -2px;
 }
+
 .card-primary .card-header {
   border-bottom: 1px solid #046B99;
   background-color: #035a80;
 }
+
 .card-primary .card-footer {
   border-top: 1px solid #046B99;
   background-color: #035a80;
 }
+
 .card-understated {
   background-color: #f9f8f8;
   border-color: #edeaea;
   color: #000000;
 }
+
 .card-understated .card-header {
   border-bottom: 1px solid #edeaea;
   background-color: #edeaea;
 }
+
 .card-understated .card-footer {
   border-top: 1px solid #edeaea;
   background-color: #edeaea;
 }
+
 .card-overstated {
   background-color: #ccc8bf;
   border-color: #bab4a8;
   color: #000000;
 }
+
 .card-overstated a:not(.btn) {
   color: #fff;
   text-decoration: none;
   -webkit-transition: all 0.25s;
   transition: all 0.25s;
 }
-.card-overstated a:not(.btn):hover,
-.card-overstated a:not(.btn):focus {
+
+.card-overstated a:not(.btn):hover, .card-overstated a:not(.btn):focus {
   color: #C19E73;
   text-decoration: underline;
 }
+
 .card-overstated a:not(.btn):focus {
   outline: thin dotted;
   outline: 5px auto -webkit-focus-ring-color;
   outline-offset: -2px;
 }
+
 .card-overstated .card-header {
   border-bottom: 1px solid #bab4a8;
   background-color: #c1bcb1;
 }
+
 .card-overstated .card-footer {
   border-top: 1px solid #bab4a8;
   background-color: #c1bcb1;
 }
+
 .card-standout {
   background-color: #21272A;
   border-color: #0f1213;
   color: #ffffff;
 }
+
 .card-standout a:not(.btn) {
-  color: #f5f5f5;
+  color: whitesmoke;
   text-decoration: none;
   -webkit-transition: all 0.25s;
   transition: all 0.25s;
 }
-.card-standout a:not(.btn):hover,
-.card-standout a:not(.btn):focus {
+
+.card-standout a:not(.btn):hover, .card-standout a:not(.btn):focus {
   color: #C19E73;
   text-decoration: underline;
 }
+
 .card-standout a:not(.btn):focus {
   outline: thin dotted;
   outline: 5px auto -webkit-focus-ring-color;
   outline-offset: -2px;
 }
+
 .card-standout .card-header {
   border-bottom: 1px solid #0f1213;
   background-color: #161a1c;
 }
+
 .card-standout .card-footer {
   border-top: 1px solid #0f1213;
   background-color: #161a1c;
 }
-.card-inverted,
-.card-inverse {
+
+.card-inverted, .card-inverse {
   background-color: #000000;
   border-color: #000000;
   color: #ffffff;
 }
-.card-inverted a:not(.btn),
-.card-inverse a:not(.btn) {
-  color: #f5f5f5;
+
+.card-inverted a:not(.btn), .card-inverse a:not(.btn) {
+  color: whitesmoke;
   text-decoration: none;
   -webkit-transition: all 0.25s;
   transition: all 0.25s;
 }
-.card-inverted a:not(.btn):hover,
-.card-inverse a:not(.btn):hover,
-.card-inverted a:not(.btn):focus,
-.card-inverse a:not(.btn):focus {
+
+.card-inverted a:not(.btn):hover, .card-inverted a:not(.btn):focus, .card-inverse a:not(.btn):hover, .card-inverse a:not(.btn):focus {
   color: #C19E73;
   text-decoration: underline;
 }
-.card-inverted a:not(.btn):focus,
-.card-inverse a:not(.btn):focus {
+
+.card-inverted a:not(.btn):focus, .card-inverse a:not(.btn):focus {
   outline: thin dotted;
   outline: 5px auto -webkit-focus-ring-color;
   outline-offset: -2px;
 }
-.card-inverted .card-header,
-.card-inverse .card-header {
+
+.card-inverted .card-header, .card-inverse .card-header {
   border-bottom: 1px solid #000000;
-  background-color: #000000;
+  background-color: black;
 }
-.card-inverted .card-footer,
-.card-inverse .card-footer {
+
+.card-inverted .card-footer, .card-inverse .card-footer {
   border-top: 1px solid #000000;
-  background-color: #000000;
+  background-color: black;
 }
+
 .card-success {
   background-color: #72ce6f;
   border-color: #72ce6f;
   color: #000000;
 }
+
 .card-success a:not(.btn) {
   color: #C19E73;
   text-decoration: none;
   -webkit-transition: all 0.25s;
   transition: all 0.25s;
 }
-.card-success a:not(.btn):hover,
-.card-success a:not(.btn):focus {
+
+.card-success a:not(.btn):hover, .card-success a:not(.btn):focus {
   color: #fff;
   text-decoration: underline;
 }
+
 .card-success a:not(.btn):focus {
   outline: thin dotted;
   outline: 5px auto -webkit-focus-ring-color;
   outline-offset: -2px;
 }
+
 .card-success .card-header {
   border-bottom: 1px solid #72ce6f;
   background-color: #5fc85c;
 }
+
 .card-success .card-footer {
   border-top: 1px solid #72ce6f;
   background-color: #5fc85c;
 }
+
 .card-info {
   background-color: #1C7DB5;
   border-color: #1C7DB5;
   color: #ffffff;
 }
+
 .card-info a:not(.btn) {
   color: #fff;
   text-decoration: none;
   -webkit-transition: all 0.25s;
   transition: all 0.25s;
 }
-.card-info a:not(.btn):hover,
-.card-info a:not(.btn):focus {
+
+.card-info a:not(.btn):hover, .card-info a:not(.btn):focus {
   color: #fff;
   text-decoration: underline;
 }
+
 .card-info a:not(.btn):focus {
   outline: thin dotted;
   outline: 5px auto -webkit-focus-ring-color;
   outline-offset: -2px;
 }
+
 .card-info .card-header {
   border-bottom: 1px solid #1C7DB5;
   background-color: #196e9f;
 }
+
 .card-info .card-footer {
   border-top: 1px solid #1C7DB5;
   background-color: #196e9f;
 }
+
 .card-warning {
   background-color: #F27e31;
   border-color: #F27e31;
-  color: #ffffff;
+  color: #000000;
 }
+
 .card-warning a:not(.btn) {
   color: #000;
   text-decoration: none;
   -webkit-transition: all 0.25s;
   transition: all 0.25s;
 }
-.card-warning a:not(.btn):hover,
-.card-warning a:not(.btn):focus {
+
+.card-warning a:not(.btn):hover, .card-warning a:not(.btn):focus {
   color: #fff;
   text-decoration: underline;
 }
+
 .card-warning a:not(.btn):focus {
   outline: thin dotted;
   outline: 5px auto -webkit-focus-ring-color;
   outline-offset: -2px;
 }
+
 .card-warning .card-header {
   border-bottom: 1px solid #F27e31;
   background-color: #f06f19;
 }
+
 .card-warning .card-footer {
   border-top: 1px solid #F27e31;
   background-color: #f06f19;
 }
+
 .card-danger {
   background-color: #d34a37;
   border-color: #d34a37;
-  color: #ffffff;
+  color: #000000;
 }
+
 .card-danger a:not(.btn) {
   color: #000;
   text-decoration: none;
   -webkit-transition: all 0.25s;
   transition: all 0.25s;
 }
-.card-danger a:not(.btn):hover,
-.card-danger a:not(.btn):focus {
+
+.card-danger a:not(.btn):hover, .card-danger a:not(.btn):focus {
   color: #fff;
   text-decoration: underline;
 }
+
 .card-danger a:not(.btn):focus {
   outline: thin dotted;
   outline: 5px auto -webkit-focus-ring-color;
   outline-offset: -2px;
 }
+
 .card-danger .card-header {
   border-bottom: 1px solid #d34a37;
   background-color: #c53e2b;
 }
+
 .card-danger .card-footer {
   border-top: 1px solid #d34a37;
   background-color: #c53e2b;
 }
-.card-inverse .card-header,
-.card-inverted .card-header {
+
+.card-inverse .card-header, .card-inverted .card-header {
   border-bottom: 1px solid rgba(255, 255, 255, 0.2);
 }
-.card-inverse .card-footer,
-.card-inverted .card-footer {
+
+.card-inverse .card-footer, .card-inverted .card-footer {
   border-top: 1px solid rgba(255, 255, 255, 0.2);
 }
+
 /* -----------------------------------------
    ACCENT TEXT
-   /source/less/colorscheme/cs-text-accent.less
+   /source/scss/colorscheme/cs-text-accent.scss
 ----------------------------------------- */
 .text-accent1 {
   color: #1f89db;
 }
+
 .text-accent2 {
   color: #49bbf8;
 }
+
 .text-accent3 {
   color: #35bbaa;
 }
+
 .text-accent4 {
   color: #72ce6f;
 }
+
 .text-accent5 {
   color: #815ab4;
 }
+
 .text-accent6 {
   color: #dd99e5;
 }
+
 .text-accent7 {
   color: #d34a37;
 }
+
 .text-accent8 {
   color: #F27e31;
 }
+
 .text-accent9 {
   color: #f7e455;
 }
+
 .text-accent-p1 {
   color: #C19E73;
 }
+
 .text-accent-p2 {
   color: #446A7C;
 }
+
 .text-accent-p3 {
   color: #21272A;
 }
+
 .text-accent-s1 {
   color: #f9f8f8;
 }
+
 .text-accent-s2 {
   color: #e2dfda;
 }
+
 .text-accent-s3 {
   color: #ccc8bf;
 }
+
 .color-primary--hover:hover {
   color: #446A7C;
 }
+
 .bg-primary--hover:hover {
   background-color: #446A7C;
 }
+
+.label-primary {
+  color: #fff;
+  background-color: #446A7C;
+}
+
+.label-info {
+  color: #fff;
+  background-color: #446A7C;
+}
+
+.label-secondary {
+  color: #333333;
+  background-color: #e2dfda;
+}
+
+.label-light {
+  color: #333333;
+  background-color: #f9f8f8;
+}
+
+.label-dark {
+  color: #fff;
+  background-color: #21272A;
+}
+
+.label-warning {
+  color: #333333;
+  background-color: #C19E73;
+}
+
 /* -----------------------------------------
    IMAGE HELPERS
-   /source/less/cagov/image.less
+   /source/scss/cagov/image.scss
 ----------------------------------------- */
-.section-understated .img-thumbnail,
-.card-understated .img-thumbnail {
-  padding: 4px;
-  background-color: #f5f5f5;
+.section-understated .img-thumbnail, .card-understated .img-thumbnail {
+  padding: 0.25rem;
+  background-color: whitesmoke;
   border: 1px solid #c2c2c2;
 }
-.section-overstated .img-thumbnail,
-.card-overstated .img-thumbnail {
-  padding: 4px;
+
+.section-overstated .img-thumbnail, .card-overstated .img-thumbnail {
+  padding: 0.25rem;
   background-color: #ebe9e5;
   border: 1px solid #bab4a8;
 }
-.section-standout .img-thumbnail,
-.card-standout .img-thumbnail,
-.section-impact .img-thumbnail,
-.card-impact .img-thumbnail {
-  padding: 4px;
+
+.section-standout .img-thumbnail, .section-impact .img-thumbnail, .card-standout .img-thumbnail, .card-impact .img-thumbnail {
+  padding: 0.25rem;
   background-color: #7a7d7f;
   border: 1px solid #0f1213;
 }
-.section-primary .img-thumbnail,
-.card-primary .img-thumbnail {
-  padding: 4px;
+
+.section-primary .img-thumbnail, .card-primary .img-thumbnail {
+  padding: 0.25rem;
   background-color: #c7d2d8;
   border: 1px solid #324e5b;
 }
-.section-inverted .img-thumbnail,
-.card-inverted .img-thumbnail {
-  padding: 4px;
+
+.section-inverted .img-thumbnail, .card-inverted .img-thumbnail {
+  padding: 0.25rem;
   background-color: #fff;
   border: 1px solid #c2c2c2;
 }
-.section-danger .img-thumbnail,
-.card-danger .img-thumbnail {
-  padding: 4px;
+
+.section-danger .img-thumbnail, .card-danger .img-thumbnail {
+  padding: 0.25rem;
   background-color: #fff;
   border: 1px solid #c2c2c2;
 }
+
 .carousel-video-submenu .owl-item.watching img {
   border-color: #C19E73;
 }
+
 /* -----------------------------------------
    COMMENT
-   /source/less/colorscheme/cs-buttons.less
+   /source/scss/colorscheme/cs-buttons.scss
 ----------------------------------------- */
 .btn-primary {
   color: #fff;
   background-color: #446A7C;
   border-color: #446A7C;
 }
-.btn-primary:hover,
-.btn-primary:focus,
-.btn-primary:active,
-.btn-primary.active,
-.open > .dropdown-toggle.btn-primary {
+
+.btn-primary:hover, .btn-primary:focus, .btn-primary:not(:disabled):not(.disabled):active, .btn-primary:not(:disabled):not(.disabled).active, .btn-primary .show > .dropdown-toggle, .open > .dropdown-toggle .btn-primary {
   color: #fff;
   background-color: #375665;
   border-color: #375665;
 }
-.btn-primary:active,
-.btn-primary.active,
-.open > .dropdown-toggle.btn-primary {
+
+.btn-primary:not(:disabled):not(.disabled):active, .btn-primary:not(:disabled):not(.disabled).active, .open > .dropdown-toggle .btn-primary {
   background-image: none;
 }
-.btn-primary.disabled,
-.btn-primary[disabled],
-fieldset[disabled] .btn-primary,
-.btn-primary.disabled:hover,
-.btn-primary[disabled]:hover,
-fieldset[disabled] .btn-primary:hover,
-.btn-primary.disabled:focus,
-.btn-primary[disabled]:focus,
-fieldset[disabled] .btn-primary:focus,
-.btn-primary.disabled:active,
-.btn-primary[disabled]:active,
-fieldset[disabled] .btn-primary:active,
-.btn-primary.disabled.active,
-.btn-primary[disabled].active,
-fieldset[disabled] .btn-primary.active {
-  background-color: #446A7C;
+
+.btn-primary.disabled, .btn-primary.disabled:hover, .btn-primary.disabled:focus, .btn-primary.disabled:active, .btn-primary.disabled.active, .btn-primary[disabled], .btn-primary[disabled]:hover, .btn-primary[disabled]:focus, .btn-primary[disabled]:active, .btn-primary[disabled].active, fieldset[disabled] .btn-primary, fieldset[disabled] .btn-primary:hover, fieldset[disabled] .btn-primary:focus, fieldset[disabled] .btn-primary:active, fieldset[disabled] .btn-primary.active {
+  background-color: #446A7C !important;
   border-color: #446A7C;
 }
+
 .btn-primary .badge {
   color: #446A7C;
   background-color: #fff;
 }
+
+.btn-primary:disabled {
+  color: #fff !important;
+}
+
+.btn-primary.disabled {
+  color: #fff !important;
+}
+
 .btn-default {
   color: #000;
   background-color: rgba(255, 255, 255, 0.65);
   border-color: #000;
 }
-.btn-default:hover,
-.btn-default:focus,
-.btn-default:active,
-.btn-default.active,
-.open > .dropdown-toggle.btn-default {
+
+.btn-default:hover, .btn-default:focus, .btn-default:not(:disabled):not(.disabled):active, .btn-default:not(:disabled):not(.disabled).active, .btn-default .show > .dropdown-toggle, .open > .dropdown-toggle .btn-default {
   color: #000;
-  background-color: #ffffff;
+  background-color: white;
   border-color: #000;
 }
-.btn-default:active,
-.btn-default.active,
-.open > .dropdown-toggle.btn-default {
+
+.btn-default:not(:disabled):not(.disabled):active, .btn-default:not(:disabled):not(.disabled).active, .open > .dropdown-toggle .btn-default {
   background-image: none;
 }
-.btn-default.disabled,
-.btn-default[disabled],
-fieldset[disabled] .btn-default,
-.btn-default.disabled:hover,
-.btn-default[disabled]:hover,
-fieldset[disabled] .btn-default:hover,
-.btn-default.disabled:focus,
-.btn-default[disabled]:focus,
-fieldset[disabled] .btn-default:focus,
-.btn-default.disabled:active,
-.btn-default[disabled]:active,
-fieldset[disabled] .btn-default:active,
-.btn-default.disabled.active,
-.btn-default[disabled].active,
-fieldset[disabled] .btn-default.active {
-  background-color: rgba(255, 255, 255, 0.65);
+
+.btn-default.disabled, .btn-default.disabled:hover, .btn-default.disabled:focus, .btn-default.disabled:active, .btn-default.disabled.active, .btn-default[disabled], .btn-default[disabled]:hover, .btn-default[disabled]:focus, .btn-default[disabled]:active, .btn-default[disabled].active, fieldset[disabled] .btn-default, fieldset[disabled] .btn-default:hover, fieldset[disabled] .btn-default:focus, fieldset[disabled] .btn-default:active, fieldset[disabled] .btn-default.active {
+  background-color: rgba(255, 255, 255, 0.65) !important;
   border-color: #000;
 }
+
 .btn-default .badge {
   color: rgba(255, 255, 255, 0.65);
   background-color: #000;
 }
+
 .btn-standout {
   color: #fff;
   background-color: #21272A;
   border-color: #21272A;
 }
-.btn-standout:hover,
-.btn-standout:focus,
-.btn-standout:active,
-.btn-standout.active,
-.open > .dropdown-toggle.btn-standout {
+
+.btn-standout:hover, .btn-standout:focus, .btn-standout:not(:disabled):not(.disabled):active, .btn-standout:not(:disabled):not(.disabled).active, .btn-standout .show > .dropdown-toggle, .open > .dropdown-toggle .btn-standout {
   color: #fff;
   background-color: #111416;
   border-color: #111416;
 }
-.btn-standout:active,
-.btn-standout.active,
-.open > .dropdown-toggle.btn-standout {
+
+.btn-standout:not(:disabled):not(.disabled):active, .btn-standout:not(:disabled):not(.disabled).active, .open > .dropdown-toggle .btn-standout {
   background-image: none;
 }
-.btn-standout.disabled,
-.btn-standout[disabled],
-fieldset[disabled] .btn-standout,
-.btn-standout.disabled:hover,
-.btn-standout[disabled]:hover,
-fieldset[disabled] .btn-standout:hover,
-.btn-standout.disabled:focus,
-.btn-standout[disabled]:focus,
-fieldset[disabled] .btn-standout:focus,
-.btn-standout.disabled:active,
-.btn-standout[disabled]:active,
-fieldset[disabled] .btn-standout:active,
-.btn-standout.disabled.active,
-.btn-standout[disabled].active,
-fieldset[disabled] .btn-standout.active {
-  background-color: #21272A;
+
+.btn-standout.disabled, .btn-standout.disabled:hover, .btn-standout.disabled:focus, .btn-standout.disabled:active, .btn-standout.disabled.active, .btn-standout[disabled], .btn-standout[disabled]:hover, .btn-standout[disabled]:focus, .btn-standout[disabled]:active, .btn-standout[disabled].active, fieldset[disabled] .btn-standout, fieldset[disabled] .btn-standout:hover, fieldset[disabled] .btn-standout:focus, fieldset[disabled] .btn-standout:active, fieldset[disabled] .btn-standout.active {
+  background-color: #21272A !important;
   border-color: #21272A;
 }
+
 .btn-standout .badge {
   color: #21272A;
   background-color: #fff;
 }
+
+.btn-standout:disabled {
+  color: #fff !important;
+}
+
+.btn-standout.disabled {
+  color: #fff !important;
+}
+
 .btn-highlight {
   color: #333333;
   background-color: #C19E73;
   border-color: #C19E73;
 }
-.btn-highlight:hover,
-.btn-highlight:focus,
-.btn-highlight:active,
-.btn-highlight.active,
-.open > .dropdown-toggle.btn-highlight {
+
+.btn-highlight:hover, .btn-highlight:focus, .btn-highlight:not(:disabled):not(.disabled):active, .btn-highlight:not(:disabled):not(.disabled).active, .btn-highlight .show > .dropdown-toggle, .open > .dropdown-toggle .btn-highlight {
   color: #21272A;
   background-color: #b68d5a;
   border-color: #b68d5a;
 }
-.btn-highlight:active,
-.btn-highlight.active,
-.open > .dropdown-toggle.btn-highlight {
+
+.btn-highlight:not(:disabled):not(.disabled):active, .btn-highlight:not(:disabled):not(.disabled).active, .open > .dropdown-toggle .btn-highlight {
   background-image: none;
 }
-.btn-highlight.disabled,
-.btn-highlight[disabled],
-fieldset[disabled] .btn-highlight,
-.btn-highlight.disabled:hover,
-.btn-highlight[disabled]:hover,
-fieldset[disabled] .btn-highlight:hover,
-.btn-highlight.disabled:focus,
-.btn-highlight[disabled]:focus,
-fieldset[disabled] .btn-highlight:focus,
-.btn-highlight.disabled:active,
-.btn-highlight[disabled]:active,
-fieldset[disabled] .btn-highlight:active,
-.btn-highlight.disabled.active,
-.btn-highlight[disabled].active,
-fieldset[disabled] .btn-highlight.active {
-  background-color: #C19E73;
+
+.btn-highlight.disabled, .btn-highlight.disabled:hover, .btn-highlight.disabled:focus, .btn-highlight.disabled:active, .btn-highlight.disabled.active, .btn-highlight[disabled], .btn-highlight[disabled]:hover, .btn-highlight[disabled]:focus, .btn-highlight[disabled]:active, .btn-highlight[disabled].active, fieldset[disabled] .btn-highlight, fieldset[disabled] .btn-highlight:hover, fieldset[disabled] .btn-highlight:focus, fieldset[disabled] .btn-highlight:active, fieldset[disabled] .btn-highlight.active {
+  background-color: #C19E73 !important;
   border-color: #C19E73;
 }
+
 .btn-highlight .badge {
   color: #C19E73;
   background-color: #333333;
 }
+
 .btn-secondary {
   color: #555555;
-  background-color: #f5f5f5;
+  background-color: whitesmoke;
   border-color: #555555;
 }
-.btn-secondary:hover,
-.btn-secondary:focus,
-.btn-secondary:active,
-.btn-secondary.active,
-.open > .dropdown-toggle.btn-secondary {
-  color: #1e4b65;
+
+.btn-secondary:hover, .btn-secondary:focus, .btn-secondary:not(:disabled):not(.disabled):active, .btn-secondary:not(:disabled):not(.disabled).active, .btn-secondary .show > .dropdown-toggle, .open > .dropdown-toggle .btn-secondary {
+  color: #02374e;
   background-color: #fff;
   border-color: #000;
 }
-.btn-secondary:active,
-.btn-secondary.active,
-.open > .dropdown-toggle.btn-secondary {
+
+.btn-secondary:not(:disabled):not(.disabled):active, .btn-secondary:not(:disabled):not(.disabled).active, .open > .dropdown-toggle .btn-secondary {
   background-image: none;
 }
-.btn-secondary.disabled,
-.btn-secondary[disabled],
-fieldset[disabled] .btn-secondary,
-.btn-secondary.disabled:hover,
-.btn-secondary[disabled]:hover,
-fieldset[disabled] .btn-secondary:hover,
-.btn-secondary.disabled:focus,
-.btn-secondary[disabled]:focus,
-fieldset[disabled] .btn-secondary:focus,
-.btn-secondary.disabled:active,
-.btn-secondary[disabled]:active,
-fieldset[disabled] .btn-secondary:active,
-.btn-secondary.disabled.active,
-.btn-secondary[disabled].active,
-fieldset[disabled] .btn-secondary.active {
-  background-color: #f5f5f5;
+
+.btn-secondary.disabled, .btn-secondary.disabled:hover, .btn-secondary.disabled:focus, .btn-secondary.disabled:active, .btn-secondary.disabled.active, .btn-secondary[disabled], .btn-secondary[disabled]:hover, .btn-secondary[disabled]:focus, .btn-secondary[disabled]:active, .btn-secondary[disabled].active, fieldset[disabled] .btn-secondary, fieldset[disabled] .btn-secondary:hover, fieldset[disabled] .btn-secondary:focus, fieldset[disabled] .btn-secondary:active, fieldset[disabled] .btn-secondary.active {
+  background-color: whitesmoke !important;
   border-color: #555555;
 }
+
 .btn-secondary .badge {
-  color: #f5f5f5;
+  color: whitesmoke;
   background-color: #555555;
 }
+
 .btn-secondary.active {
   background: #555555;
   color: #fff;
   box-shadow: none;
 }
+
+.btn-secondary:disabled {
+  color: #000;
+}
+
+.btn-secondary.disabled {
+  color: #000;
+}
+
 .check-icon-radio {
   color: #446A7C;
   border-color: #446A7C;
 }
+
 .check-icon-checkbox {
   border-color: #446A7C;
 }
+
 input[type="checkbox"]:checked + i,
 input[type="radio"]:checked + i,
 input[type="checkbox"]:checked + * i,
@@ -2395,37 +2081,43 @@ input[type="radio"]:checked + * i {
   background-color: #446A7C;
   border-color: #446A7C;
 }
+
 .bg-primary--checked.checked,
 .checked .bg-primary--checked {
   background-color: #446A7C !important;
 }
+
 /* -----------------------------------------
    COMMENT
-   /source/less/colorscheme/cs-blocks.less
+   /source/scss/colorscheme/cs-blocks.scss
 ----------------------------------------- */
 .bg-blue-gradient {
   background-repeat: repeat-x;
-  background-image: linear-gradient(225deg, #739eb3, #446A7C);
+  background-image: linear-gradient(225deg, #749eb3, #446A7C);
 }
+
 .circle-icon {
   background: #0b0c0d;
 }
-.icon-link:hover,
-.icon-link:focus {
+
+.icon-link:hover, .icon-link:focus {
   color: #C19E73 !important;
 }
+
 .service-tile-empty {
   background: #21272A;
   color: #353f44;
 }
+
 /* -----------------------------------------
    HIGH CONTRAST MODE
-   /source/less/cagov/file.less
+   /source/scss/cagov/file.scss
 ----------------------------------------- */
 html.high-contrast {
   /* General Reset */
   /* Additional custom overrides */
 }
+
 html.high-contrast * {
   background-color: #000 !important;
   background-image: none !important;
@@ -2434,19 +2126,20 @@ html.high-contrast * {
   color: #ffd600 !important;
   text-shadow: none !important;
 }
-html.high-contrast .gauge-detail,
-html.high-contrast .gauge-number,
-html.high-contrast .percent-detail {
+
+html.high-contrast .gauge-detail, html.high-contrast .gauge-number, html.high-contrast .percent-detail {
   background: none !important;
 }
+
 html.high-contrast .service-tile .teaser:before {
   border: none !important;
 }
-html.high-contrast .enableHighContrastMode.active,
-html.high-contrast .disableHighContrastMode.active {
+
+html.high-contrast .enableHighContrastMode.active, html.high-contrast .disableHighContrastMode.active {
   background: #ffd600 !important;
   color: #000 !important;
 }
+
 html.high-contrast .close {
   opacity: 1;
 }

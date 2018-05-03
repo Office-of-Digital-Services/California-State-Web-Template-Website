@@ -1,0 +1,105 @@
+/* -----------------------------------------
+   ICON BLOCKS - /source/scss/cagov/icon-blocks.scss
+----------------------------------------- */
+.shadow2 {
+  box-shadow: 0 20px 25px -12px rgba(0, 0, 0, 0.09);
+  transition-property: all;
+  transition-timing-function: ease;
+  transition-delay: 0s;
+  transition-duration: 0.3s;
+  border:1px solid lighten($understated-border, 11%);
+  background-color:  rgba(255, 255, 255, 0.2)
+  }
+  
+  .bg-blue-gradient {
+  background-repeat: repeat-x;
+  background-image: linear-gradient(225deg, $color-a1, $color-p2); }
+  
+
+.icon-block
+ {
+  position: relative;
+  display: inline-block;
+  text-align: center;
+  transition: all .2s ease-in-out; 
+  color:$white;
+  -webkit-transform: translateY(-51%);
+      -ms-transform: translateY(-51%);
+          transform: translateY(-51%);
+		  font-size: 1.57143rem;
+    height: 3.92857rem;
+    width: 3.92857rem; 
+    &:hover {
+		text-decoration: none;
+		}
+		
+  &::before {
+	  display: block;
+	  }
+	  
+	  & > i, span > i {
+		  position: relative;
+  top: 50%;
+  display: block;
+  -webkit-transform: translateY(-50%);
+      -ms-transform: translateY(-50%);
+          transform: translateY(-50%);
+  z-index: 2; 
+		  } 
+  }
+  
+.image-icon {
+  	width: 7.14286rem;
+  }
+  
+ /* 5 Columns Evenly Spaced */
+    .fifth {
+        padding-right: 10px;
+        padding-left: 10px;
+        position: relative;
+        min-height: 1px;
+		@media (min-width: $screen-sm-min) {
+			width: 20%;
+        	float: left;
+			}
+		@media (min-width: $screen-md-min) {
+			width: 20%;
+        	float: left;
+			}
+		@media (min-width: $screen-lg-min) {
+			width: 20%;
+        	float: left;
+			}
+    }
+
+.section-transparent {
+    opacity: 0.9;
+}
+
+.circle-icon {
+    background: darken($color-p3, 10%);
+    width: 7rem;
+    height: 7rem;
+    text-align: center;
+    line-height: 7rem;
+    padding:1.5rem;
+    border-radius: 50%;
+    font-size:3.5rem;
+    text-decoration:none;
+}
+
+.block-icon {
+   display:block;
+   margin-bottom:0.7rem;
+   margin-top:1.5rem;
+}
+
+.icon-link {
+    text-decoration:none !important;
+    font-size: 1.25rem;
+    transition:all ease 0.3s;
+	
+	&:hover, &:focus {
+		color:$color-p1 !important;
+		}
+}

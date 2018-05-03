@@ -1,0 +1,214 @@
+/* -----------------------------------------
+   LAYOUTS -  /source/scss/cagov/layout.scss
+----------------------------------------- */
+
+// Layouts are broken down into two layout modes. 1 column and 2 column
+// with a sub layout of .primary
+// 1 column is the default layout. There will be no sidebar in a 1 column layout
+// thus only .main-content and article will be styled
+// 2 column layout uses the .two-column class on the body.
+// .primary can be added to both layouts to give the page a homepage feel
+// by adding the large header with photo or optional carousel.
+
+
+
+/* Default layout is 1 column */
+.main-content {
+    background:#fff;                                        // Globaly set page bg to white
+    //padding-bottom: 65px;
+    min-height:400px;
+
+     > .section {
+        // & :extend(.container);                              // Backwards compatability with v4 templates
+         padding-bottom:$line-height-computed;
+     }
+}
+
+
+/* Two column layout option */
+.two-column {
+    .main-content {
+        > .section:extend(.container) {
+            
+        }
+
+         @media (min-width: $screen-md-min) {
+       .main-primary {
+         @include make-md-column(8);                        // Makes 8 column container
+       }
+
+       .main-secondary {
+         @include make-md-column(4);                        // makes 4 column container
+       }
+         }
+
+         // Reverses the left and right columns so secondary can appear visually on the left
+         .reverse-main {
+            .main-primary {
+                @include make-sm-column-push(4);
+            }
+
+            .main-secondary {
+                @include make-sm-column-pull(8);
+            }
+        }
+    }
+}
+
+
+@media (max-width: $screen-sm-max) {
+    .two-column .main-content .main-secondary {
+        position:inherit;                                   // FIX: - aside was covering the content when the page switched to one column.
+    }
+}
+
+
+/* Remove the left and right border for mobile */
+@media (max-width: $screen-sm-min) {
+    .global-header, .main-content, .global-footer {
+        border:none !important;
+        width:100%;
+    }
+}
+
+/* Allows two column containers used in the sidebar to fill the horizontal space */
+@media (max-width: $screen-xs-max) {
+    .main-secondary {
+        .group {
+            padding:0 !important;
+
+            .half {
+                padding:0 !important;
+            }
+        }
+    }
+}
+
+.decoration-last {
+    display:none;
+}
+
+// beta 5.0 addition
+/*------------------------------------
+  Positions
+------------------------------------*/
+.pos-rel {
+  position: relative !important; }
+
+.pos-abs {
+  position: absolute !important; }
+
+.pos-stc {
+  position: static !important; }
+
+.pos-fix {
+  position: fixed !important; }
+  
+  /* Relative (Position, X, Y) */
+.relative-centered {
+  position: relative;
+  top: 50% !important;
+  left: 50% !important;
+  -webkit-transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  -webkit-backface-visibility: hidden; }
+
+.relative-centered-x {
+  position: relative;
+  left: 50% !important;
+  -webkit-transform: translateX(-50%);
+      -ms-transform: translateX(-50%);
+          transform: translateX(-50%);
+  -webkit-backface-visibility: hidden; }
+
+.relative-centered-y {
+  position: relative;
+  top: 50% !important;
+  -webkit-transform: translateY(-50%);
+      -ms-transform: translateY(-50%);
+          transform: translateY(-50%);
+  -webkit-backface-visibility: hidden; }
+  
+  /* Absolute (Position, X, Y) */
+.absolute-centered {
+  position: absolute !important;
+  top: 50% !important;
+  left: 50% !important;
+  -webkit-transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  -webkit-backface-visibility: hidden; }
+
+.absolute-centered-x {
+  position: absolute !important;
+  left: 50% !important;
+  -webkit-transform: translateX(-50%);
+      -ms-transform: translateX(-50%);
+          transform: translateX(-50%);
+  -webkit-backface-visibility: hidden; }
+  
+  .absolute-centered-y {
+  position: absolute !important;
+  top: 50% !important;
+  -webkit-transform: translateY(-50%);
+      -ms-transform: translateY(-50%);
+          transform: translateY(-50%);
+  -webkit-backface-visibility: hidden; }
+
+ @media print {
+  .print-p-t {
+    padding-top:136px !important;
+  }
+  .global-header.fixed {
+	position:absolute !important;
+	top: 0 !important;
+   }
+}
+
+.hidden {
+	display:none !important; // Keeping old bootstrap3 class for backward compatibility
+}
+
+// Keeping bootstrap3 classes for backward compatibility
+.visible-xs,
+.visible-sm,
+.visible-md,
+.visible-lg {
+  display: none !important;
+}
+@media (max-width: $screen-xxs-max)  {
+.visible-xs {
+display: block !important;
+}
+.hidden-xs {
+display: none !important;
+}
+}
+
+@media (min-width: $screen-sm-min) and (max-width: $screen-sm-max) {
+.visible-sm {
+display: block !important;
+}
+.hidden-sm {
+display: none !important;
+}
+}
+
+@media (min-width: $screen-md-min) and (max-width: $screen-md-max) {
+.visible-md {
+display: block !important;
+}
+.hidden-md {
+display: none !important;
+}
+}
+
+@media (min-width: $screen-lg-min) {
+.visible-lg {
+display: block !important;
+}
+.hidden-lg {
+display: none !important;
+}
+}

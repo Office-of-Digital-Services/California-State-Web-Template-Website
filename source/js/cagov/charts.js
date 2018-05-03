@@ -101,10 +101,9 @@ function initPlotly(d3, Plotly) {
             //     console.log(color);
             //     path.css({'stroke-width': 7, 'stroke': color})
             // });
-        })
+        });
 
         $(window).on('resize', function () {
-
             var gd3 = d3.select(container.get(0)).style({ height: getHeight() });
             Plotly.Plots.on("resize", gd);
         });

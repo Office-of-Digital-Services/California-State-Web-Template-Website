@@ -1,0 +1,188 @@
+/* -----------------------------------------
+   PANELS - /source/scss/cagov/panel.scss
+----------------------------------------- */
+
+.panel {
+    border-width: 1px;
+    border-style: solid;
+    overflow: hidden;                   // fixes disappearing rounded corner
+    box-shadow: none;
+	margin-bottom: 22px;
+    
+    .panel-heading {
+        @include clearfix;
+        //padding: 4px 5px 4px 15px;    // Makes header padding match original design
+        
+        h2, h3, h4, h5 {
+            @include h4();                      // Make all headings appear the same size as h4
+            font-weight:normal;
+            border: none;               // Remove heading border decoration
+            display: inline-block;
+            margin:-8px 0 0 0;
+            
+            span[class^="ca-gov-icon-"] {
+                @include font-size(2);
+                position:relative;      // Aligns icon with heading text
+                top:4px;
+            }
+        }
+		
+
+        
+        .options {
+            display: inline-block;
+            float: right;
+            
+            .btn {
+                @include btn-xs;
+            }
+        }
+		
+
+		
+    }
+    
+
+	
+    //
+    // SET UP PANEL FOR BACKGROUND IMAGES
+    // --------------------------------------------------
+
+    &.photo-left, &.photo-right {
+        position:relative;
+        
+        .panel-body {
+            position:relative;                  // Need position relative so bg images can be positioned absolutly
+        }
+    }
+    
+    &.photo-left .panel-body {
+        padding-left: 27%;                      // .photo is 25%, add a few % to the padding to prevent it from overlapping
+        
+        .photo {
+            left: 0;
+        }
+    }
+    
+    &.photo-right .panel-body {
+        padding-right: 27%;                     // .photo is 25%, add a few % to the padding to prevent it from overlapping
+        
+        .photo {
+            right: 0;
+        }
+    }
+    
+    .photo {
+        background-position: 50% 50%;           // set the photo to the center
+        background-size: cover;                 // Allows background fill the available space
+        height: 100%;
+        overflow: hidden;
+        position: absolute;
+        top: 0;
+        width: 25%;
+    }
+    
+    // Remove .photo-left and .photo-right background images for mobile
+    @media (max-width: $screen-xs-max) {
+        .panel-body {
+            padding: ($grid-gutter-width / 2) !important;
+        }
+        
+        .photo {
+            background-image:none !important;
+        }
+    }
+}
+
+//
+// SPECIAL CASE FOR H1 WITH ICON IN PANELS
+// --------------------------------------------------
+
+.panel-body h1 span[class^="ca-gov-icon-"] {
+    margin-left:0 !important;
+}
+
+
+//
+// SPECIAL CASE FOR PANELS IN SIDEBARS
+// --------------------------------------------------
+
+.main-secondary > .panel {
+    //margin-top:($line-height-computed * -1);
+}
+
+.main-secondary .panel {
+    background:none;
+    box-shadow:none;
+    //border: none;
+    border-radius: 0;
+	
+	//@media (min-width: $screen-sm-min) and (max-width: $screen-sm-max) {
+	//	margin-left: ($grid-gutter-width-sm / -2);
+    //	margin-right: ($grid-gutter-width-sm / -2);
+	//}
+    
+    .panel-heading {
+        border-radius: 0;
+        padding: 0;
+        
+        h2, h3, h4, h5 {
+            margin:0;
+            display:block;
+            text-align: center;
+            padding: 10px 15px 10px 40px;
+            position:relative;
+            
+            span[class^="ca-gov-icon-"] {
+                @include font-size(1.8);
+                position: absolute;
+                left: 10px;
+            }
+        }
+        
+       
+    }   
+    
+    .panel-body {
+        background:transparent;
+    }
+}
+
+
+//
+// ADDS TRIANGLE TO PANEL
+// --------------------------------------------------
+/* NOTE: although any panel could have a triangle, at this time, only .panel-standout has css and an image */
+
+.panel.highlight {
+    .panel-heading {
+        position:relative;
+        
+        // .triangle class injected into DOM by js
+        .triangle {
+            position:absolute;
+            bottom: -16px;
+            height: 12px;
+            left: 50%;
+            margin-left: -12px;
+            width: 24px;
+        }
+    }
+}
+
+
+
+//
+// Additional padding between panels in group
+// --------------------------------------------------
+
+.panel-group .panel + .panel {
+    margin-top: $line-height-computed;
+}
+
+.panel-heading {
+		padding: 10px 15px;
+}
+.panel-body {
+		padding: 15px;
+	}
