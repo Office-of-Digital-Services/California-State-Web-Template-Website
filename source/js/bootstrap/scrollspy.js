@@ -1,16 +1,11 @@
-function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
-
-function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
-
-function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
-
 /**
  * --------------------------------------------------------------------------
  * Bootstrap (v4.0.0): scrollspy.js
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  * --------------------------------------------------------------------------
  */
-var ScrollSpy = function ($) {
+
+var ScrollSpy = function ($$$1) {
   /**
    * ------------------------------------------------------------------------
    * Constants
@@ -21,7 +16,7 @@ var ScrollSpy = function ($) {
   var DATA_KEY = 'bs.scrollspy';
   var EVENT_KEY = "." + DATA_KEY;
   var DATA_API_KEY = '.data-api';
-  var JQUERY_NO_CONFLICT = $.fn[NAME];
+  var JQUERY_NO_CONFLICT = $$$1.fn[NAME];
   var Default = {
     offset: 10,
     method: 'auto',
@@ -78,7 +73,7 @@ var ScrollSpy = function ($) {
       this._targets = [];
       this._activeTarget = null;
       this._scrollHeight = 0;
-      $(this._scrollElement).on(Event.SCROLL, function (event) {
+      $$$1(this._scrollElement).on(Event.SCROLL, function (event) {
         return _this._process(event);
       });
       this.refresh();
@@ -99,13 +94,13 @@ var ScrollSpy = function ($) {
       this._offsets = [];
       this._targets = [];
       this._scrollHeight = this._getScrollHeight();
-      var targets = $.makeArray($(this._selector));
+      var targets = $$$1.makeArray($$$1(this._selector));
       targets.map(function (element) {
         var target;
         var targetSelector = Util.getSelectorFromElement(element);
 
         if (targetSelector) {
-          target = $(targetSelector)[0];
+          target = $$$1(targetSelector)[0];
         }
 
         if (target) {
@@ -113,7 +108,7 @@ var ScrollSpy = function ($) {
 
           if (targetBCR.width || targetBCR.height) {
             // TODO (fat): remove sketch reliance on jQuery position/offset
-            return [$(target)[offsetMethod]().top + offsetBase, targetSelector];
+            return [$$$1(target)[offsetMethod]().top + offsetBase, targetSelector];
           }
         }
 
@@ -130,8 +125,8 @@ var ScrollSpy = function ($) {
     };
 
     _proto.dispose = function dispose() {
-      $.removeData(this._element, DATA_KEY);
-      $(this._scrollElement).off(EVENT_KEY);
+      $$$1.removeData(this._element, DATA_KEY);
+      $$$1(this._scrollElement).off(EVENT_KEY);
       this._element = null;
       this._scrollElement = null;
       this._config = null;
@@ -147,11 +142,11 @@ var ScrollSpy = function ($) {
       config = _extends({}, Default, config);
 
       if (typeof config.target !== 'string') {
-        var id = $(config.target).attr('id');
+        var id = $$$1(config.target).attr('id');
 
         if (!id) {
           id = Util.getUID(NAME);
-          $(config.target).attr('id', id);
+          $$$1(config.target).attr('id', id);
         }
 
         config.target = "#" + id;
@@ -222,7 +217,7 @@ var ScrollSpy = function ($) {
       queries = queries.map(function (selector) {
         return selector + "[data-target=\"" + target + "\"]," + (selector + "[href=\"" + target + "\"]");
       });
-      var $link = $(queries.join(','));
+      var $link = $$$1(queries.join(','));
 
       if ($link.hasClass(ClassName.DROPDOWN_ITEM)) {
         $link.closest(Selector.DROPDOWN).find(Selector.DROPDOWN_TOGGLE).addClass(ClassName.ACTIVE);
@@ -237,25 +232,25 @@ var ScrollSpy = function ($) {
         $link.parents(Selector.NAV_LIST_GROUP).prev(Selector.NAV_ITEMS).children(Selector.NAV_LINKS).addClass(ClassName.ACTIVE);
       }
 
-      $(this._scrollElement).trigger(Event.ACTIVATE, {
+      $$$1(this._scrollElement).trigger(Event.ACTIVATE, {
         relatedTarget: target
       });
     };
 
     _proto._clear = function _clear() {
-      $(this._selector).filter(Selector.ACTIVE).removeClass(ClassName.ACTIVE);
+      $$$1(this._selector).filter(Selector.ACTIVE).removeClass(ClassName.ACTIVE);
     }; // Static
 
 
     ScrollSpy._jQueryInterface = function _jQueryInterface(config) {
       return this.each(function () {
-        var data = $(this).data(DATA_KEY);
+        var data = $$$1(this).data(DATA_KEY);
 
         var _config = typeof config === 'object' && config;
 
         if (!data) {
           data = new ScrollSpy(this, _config);
-          $(this).data(DATA_KEY, data);
+          $$$1(this).data(DATA_KEY, data);
         }
 
         if (typeof config === 'string') {
@@ -279,7 +274,6 @@ var ScrollSpy = function ($) {
         return Default;
       }
     }]);
-
     return ScrollSpy;
   }();
   /**
@@ -289,11 +283,11 @@ var ScrollSpy = function ($) {
    */
 
 
-  $(window).on(Event.LOAD_DATA_API, function () {
-    var scrollSpys = $.makeArray($(Selector.DATA_SPY));
+  $$$1(window).on(Event.LOAD_DATA_API, function () {
+    var scrollSpys = $$$1.makeArray($$$1(Selector.DATA_SPY));
 
     for (var i = scrollSpys.length; i--;) {
-      var $spy = $(scrollSpys[i]);
+      var $spy = $$$1(scrollSpys[i]);
 
       ScrollSpy._jQueryInterface.call($spy, $spy.data());
     }
@@ -304,14 +298,13 @@ var ScrollSpy = function ($) {
    * ------------------------------------------------------------------------
    */
 
-  $.fn[NAME] = ScrollSpy._jQueryInterface;
-  $.fn[NAME].Constructor = ScrollSpy;
+  $$$1.fn[NAME] = ScrollSpy._jQueryInterface;
+  $$$1.fn[NAME].Constructor = ScrollSpy;
 
-  $.fn[NAME].noConflict = function () {
-    $.fn[NAME] = JQUERY_NO_CONFLICT;
+  $$$1.fn[NAME].noConflict = function () {
+    $$$1.fn[NAME] = JQUERY_NO_CONFLICT;
     return ScrollSpy._jQueryInterface;
   };
 
   return ScrollSpy;
 }($);
-//# sourceMappingURL=scrollspy.js.map

@@ -4,12 +4,13 @@
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  * --------------------------------------------------------------------------
  */
-(function ($) {
-  if (typeof $ === 'undefined') {
+
+(function ($$$1) {
+  if (typeof $$$1 === 'undefined') {
     throw new TypeError('Bootstrap\'s JavaScript requires jQuery. jQuery must be included before Bootstrap\'s JavaScript.');
   }
 
-  var version = $.fn.jquery.split(' ')[0].split('.');
+  var version = $$$1.fn.jquery.split(' ')[0].split('.');
   var minMajor = 1;
   var ltMajor = 2;
   var minMinor = 9;
@@ -20,4 +21,19 @@
     throw new Error('Bootstrap\'s JavaScript requires at least jQuery v1.9.1 but less than v4.0.0');
   }
 })($);
-//# sourceMappingURL=index.js.map
+
+exports.Util = Util;
+exports.Alert = Alert;
+exports.Button = Button;
+exports.Carousel = Carousel;
+exports.Collapse = Collapse;
+exports.Dropdown = Dropdown;
+exports.Modal = Modal;
+exports.Popover = Popover;
+exports.Scrollspy = ScrollSpy;
+exports.Tab = Tab;
+exports.Tooltip = Tooltip;
+
+Object.defineProperty(exports, '__esModule', { value: true });
+
+})));

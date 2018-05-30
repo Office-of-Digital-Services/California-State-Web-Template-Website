@@ -168,44 +168,44 @@ $(document).ready(function () {
 
 
 
-    // Setup non-off-canvas menu
-    $('#navigation').addClass('mobile-closed');
-    $(".sub-nav").addClass('subnav-closed');
-    $('.toggle-menu').on("click", function () {
-        if ($('#navigation').hasClass('mobile-closed')) {
-            $(this).addClass('open'); // for hamburger to X transition
-            $(this).attr('aria-expanded', 'true');
-            // $('#navigation').removeClass('mobile-closed');
-            $('#navigation').slideDownTransition();
-        } else {
-            $(this).removeClass('open'); // for hamburger to X transition
-            $(this).attr('aria-expanded', 'false');
-            // $('#navigation').addClass('mobile-closed');
-            $('#navigation').slideUpTransition();
-        }
-        //$('#navigation').toggleClass('mobile-closed');
-        $('.search-container').removeClass('active');
-        // Changing aria attributes for accessibility
+        // Setup non-off-canvas menu
+        $('#navigation').addClass('mobile-closed');
+        $(".sub-nav").addClass('subnav-closed');
+        $('.toggle-menu').on("click", function () {
+            if ($('#navigation').hasClass('mobile-closed')) {
+                $(this).addClass('open'); // for hamburger to X transition
+                $(this).attr('aria-expanded', 'true');
+                // $('#navigation').removeClass('mobile-closed');
+                $('#navigation').slideDownTransition();
+            } else {
+                $(this).removeClass('open'); // for hamburger to X transition
+                $(this).attr('aria-expanded', 'false');
+                // $('#navigation').addClass('mobile-closed');
+                $('#navigation').slideUpTransition();
+            }
+            //$('#navigation').toggleClass('mobile-closed');
+            $('.search-container').removeClass('active');
+            // Changing aria attributes for accessibility
 
-    });
+        });
 
-    // Subnav Toggle
-    $(".toggle-sub-nav").on("click", function () {
-        var secondaryLinks = $(this).parent().find('.sub-nav');
-        if ($(this).hasClass('closed')) {
-            $(this).removeClass('closed').addClass('open');
-            $(this).find(".rotate").addClass('down');
-            $(secondaryLinks).slideDownTransitionSub();
-        } else {
-            $(this).removeClass('open').addClass('closed');
-            $(this).find(".rotate").removeClass('down');
-            $(secondaryLinks).slideUpTransitionSub();
-        }
+        // Subnav Toggle
+        $(".toggle-sub-nav").on("click", function () {
+            var secondaryLinks = $(this).parent().find('.sub-nav');
+            if ($(this).hasClass('closed')) {
+                $(this).removeClass('closed').addClass('open');
+                $(this).find(".rotate").addClass('down');
+                $(secondaryLinks).slideDownTransitionSub();
+            } else {
+                $(this).removeClass('open').addClass('closed');
+                $(this).find(".rotate").removeClass('down');
+                $(secondaryLinks).slideUpTransitionSub();
+            }
 
-    });
-    $(".rotate1").on("click", function () {
-        $(this).toggleClass("down");
-    })
+        });
+        $(".rotate1").on("click", function () {
+            $(this).toggleClass("down");
+        })
 
 
 
@@ -229,7 +229,7 @@ $(document).ready(function () {
     }).on("mouseleave", function () {
         $('.' + clickedFocus).removeClass(clickedFocus);
     });
-    $('.top-level-nav > li > a').on("focus", function (e) {
+	$('.top-level-nav > li > a').on("focus", function (e) {
         $(this).closest('ul').find('.' + menuHoverClass).removeClass(menuHoverClass);
         if (!$(this).parent().find('.toggle-sub-nav').hasClass('open')) {
             $(this).parent().addClass(menuHoverClass);
@@ -259,79 +259,79 @@ $(document).ready(function () {
 
 });
 
-// Mobile slidedown function
-(function ($) {
-    $.fn.slideUpTransition = function () {
-        return this.each(function () {
-            var $el = $(this);
-            $el.css("max-height", "0");
-            $el.addClass("mobile-closed");
+ // Mobile slidedown function
+        (function ($) {
+            $.fn.slideUpTransition = function () {
+                return this.each(function () {
+                    var $el = $(this);
+                    $el.css("max-height", "0");
+                    $el.addClass("mobile-closed");
 
-        });
-    };
-
-    $.fn.slideDownTransition = function () {
-        return this.each(function () {
-            var $el = $(this);
-            $el.removeClass("mobile-closed");
-
-            // temporarily make visible to get the size
-            $el.css("max-height", "none");
-            var height = $el.outerHeight();
-
-            // reset to 0 then animate with small delay
-            $el.css("max-height", "0");
-
-            setTimeout(function () {
-                $el.css({
-                    "max-height": height
                 });
-            }, 1);
-        });
-    };
-})(jQuery);
+            };
 
+            $.fn.slideDownTransition = function () {
+                return this.each(function () {
+                    var $el = $(this);
+                    $el.removeClass("mobile-closed");
 
-// Subnav Mobile slidedown function
-(function ($) {
-    $.fn.slideUpTransitionSub = function () {
-        return this.each(function () {
-            var $subel = $(this);
-            var subheight = $subel.outerHeight();
-            var mainnavheight = $("#navigation").outerHeight();
-            var sumheight = mainnavheight - subheight;
-            $subel.css("max-height", "0");
-            $subel.addClass("subnav-closed");
-            $subel.attr('aria-expanded', 'false');
-            $subel.attr('aria-hidden', 'true');
-            $("#navigation").css({ "max-height": sumheight })
-        });
-    };
+                    // temporarily make visible to get the size
+                    $el.css("max-height", "none");
+                    var height = $el.outerHeight();
 
-    $.fn.slideDownTransitionSub = function () {
-        return this.each(function () {
-            var $subel = $(this);
-            $subel.removeClass("subnav-closed");
+                    // reset to 0 then animate with small delay
+                    $el.css("max-height", "0");
 
-            // temporarily make visible to get the size
-            $subel.css("max-height", "none");
-            var subheight = $subel.outerHeight();
-            var mainnavheight = $("#navigation").outerHeight();
-            var sumheight = subheight + mainnavheight;
-            // reset to 0 then animate with small delay
-            $subel.css("max-height", "0");
-
-            setTimeout(function () {
-                $subel.css({
-                    "max-height": subheight
+                    setTimeout(function () {
+                        $el.css({
+                            "max-height": height
+                        });
+                    }, 1);
                 });
-                $subel.attr('aria-expanded', 'true');
-                $subel.attr('aria-hidden', 'false');
-                $("#navigation").css({ "max-height": sumheight })
-            }, 1);
-        });
-    };
-})(jQuery);
+            };
+        })(jQuery);
+
+
+        // Subnav Mobile slidedown function
+        (function ($) {
+            $.fn.slideUpTransitionSub = function () {
+                return this.each(function () {
+                    var $subel = $(this);
+                    var subheight = $subel.outerHeight();
+                    var mainnavheight = $("#navigation").outerHeight();
+                    var sumheight = mainnavheight - subheight;
+                    $subel.css("max-height", "0");
+                    $subel.addClass("subnav-closed");
+                    $subel.attr('aria-expanded', 'false');
+                    $subel.attr('aria-hidden', 'true');
+                    $("#navigation").css({ "max-height": sumheight })
+                });
+            };
+
+            $.fn.slideDownTransitionSub = function () {
+                return this.each(function () {
+                    var $subel = $(this);
+                    $subel.removeClass("subnav-closed");
+
+                    // temporarily make visible to get the size
+                    $subel.css("max-height", "none");
+                    var subheight = $subel.outerHeight();
+                    var mainnavheight = $("#navigation").outerHeight();
+                    var sumheight = subheight + mainnavheight;
+                    // reset to 0 then animate with small delay
+                    $subel.css("max-height", "0");
+
+                    setTimeout(function () {
+                        $subel.css({
+                            "max-height": subheight
+                        });
+                        $subel.attr('aria-expanded', 'true');
+                        $subel.attr('aria-hidden', 'false');
+                        $("#navigation").css({ "max-height": sumheight })
+                    }, 1);
+                });
+            };
+        })(jQuery);
 
 /*  ACCESSIBLE MENU */
 // source https://github.com/adobe-accessibility/Accessible-Mega-Menu/
@@ -1196,34 +1196,34 @@ $(document).ready(function () {
     });
 
 
-    $(window).on('resize', function () {
-        $(".sub-nav").removeClass("open");
-        $(".sub-nav").removeClass("secondary-open");
-        $(".sub-nav").attr("aria-expanded", false);
-        $(".sub-nav").attr("aria-hidden", true);
-        $(".first-level-link").removeClass("open");
-        $(".first-level-link").removeClass("active");
-        $(".first-level-link").attr("aria-expanded", false);
-        $("#navigation").addClass("mobile-closed");
-        if ($(window).width() < 768) {
-            $("#navigation").css("max-height", "0");
-            $('.sub-nav').slideUpTransitionSub();
-            $('#navigation').slideUpTransition();
-            // 
-            $(".rotate").removeClass('down');
-        }
-        else {
-            $("#navigation").removeAttr("style");
-            $(".sub-nav").removeAttr("style");
-        }
+        $(window).on('resize', function () {
+            $(".sub-nav").removeClass("open");
+            $(".sub-nav").removeClass("secondary-open");
+            $(".sub-nav").attr("aria-expanded", false);
+            $(".sub-nav").attr("aria-hidden", true);
+            $(".first-level-link").removeClass("open");
+            $(".first-level-link").removeClass("active");
+            $(".first-level-link").attr("aria-expanded", false);
+            $("#navigation").addClass("mobile-closed");
+            if ($(window).width() < 768) {
+                $("#navigation").css("max-height", "0");
+                $('.sub-nav').slideUpTransitionSub();
+                $('#navigation').slideUpTransition();
+                // 
+                $(".rotate").removeClass('down');
+            }
+            else {
+                $("#navigation").removeAttr("style");
+                $(".sub-nav").removeAttr("style");
+            }
 
-        $(".toggle-sub-nav").removeClass("open");
-        $(".toggle-sub-nav").addClass("closed");
-        $(".nav-item").removeClass("active");
-        $(".toggle-menu").attr('aria-expanded', 'false');
-        $(".toggle-menu").removeClass("open");
-        $(".toggle-sub-nav").removeClass("open");
-    });
+            $(".toggle-sub-nav").removeClass("open");
+            $(".toggle-sub-nav").addClass("closed");
+            $(".nav-item").removeClass("active");
+            $(".toggle-menu").attr('aria-expanded', 'false');
+            $(".toggle-menu").removeClass("open");
+            $(".toggle-sub-nav").removeClass("open");
+        });
 
 }(jQuery, window, document));
 

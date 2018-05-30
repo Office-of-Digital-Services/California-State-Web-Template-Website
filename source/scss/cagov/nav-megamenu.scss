@@ -150,7 +150,7 @@
 
 a.second-level-link {
     @include font-size(1.1);
-    padding:15px;
+    padding:10px;
 
     &:hover, &:focus {
         text-decoration:none !important;
@@ -410,3 +410,11 @@ a.second-level-link {
 		}
 	}
 }
+
+.media-left, .media-right, .media-body {
+  display: table-cell;
+  vertical-align: top;
+}
+.media-left {
+	padding-right: 10px;
+	}

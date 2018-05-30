@@ -110,18 +110,18 @@ $(document).ready(function () {
 
         $("#locationSettings").collapse("hide");
         displayCities.html(city);
+            
+       $("[data-locations-landing],[data-locations]").first().loadMapThat();
 
-        $("[data-locations-landing],[data-locations]").first().loadMapThat();
 
-
-        $(".header-single-banner").each(function () {
+        $(".header-single-banner").each(function() {
             var imageAjax = $.get(window.__getImageByLocation);
-            imageAjax.done(function (image) {
+            imageAjax.done(function(image) {
                 var newBg = 'url("' + image + '")';
                 var oldBg = $(".header-single-banner").css('background-image');
                 if (newBg !== oldBg) {
-                    if ($(window).width() <= 767) {
-                        $(".ask-group").fadeOut('3000', function () {
+                    if($(window).width() <= 767) {
+                        $(".ask-group").fadeOut('3000', function() {
 
                             $(this).css('background-image', 'url(' + image + ')').fadeIn('3000');
 
@@ -129,9 +129,9 @@ $(document).ready(function () {
                         });
                         $(".header-single-banner").css('background-image', 'url(' + image + ')')
                     } else {
-                        $(".header-single-banner").fadeOut('3000', function () {
+                        $(".header-single-banner").fadeOut('3000', function() {
 
-                            var bgImg = $(this).css('background-image', 'url(' + image + ')').fadeIn('3000', function () {
+                            var bgImg = $(this).css('background-image', 'url(' + image + ')').fadeIn('3000', function(){
                                 $(this).css("display", '');
                             })
 

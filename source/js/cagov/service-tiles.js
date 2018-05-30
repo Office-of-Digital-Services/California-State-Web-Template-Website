@@ -1,7 +1,3 @@
-/* -----------------------------------------
-   SERVICE TILES - /source/js/cagov/service-tiles.js
------------------------------------------ */
-
 $(document).ready(function () {
     // Create the needed js event listeners, set up classes, etc
     $('.service-group').each(initServiceGroup);

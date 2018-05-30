@@ -1,14 +1,11 @@
-function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
-
-function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
-
 /**
  * --------------------------------------------------------------------------
  * Bootstrap (v4.0.0): tab.js
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  * --------------------------------------------------------------------------
  */
-var Tab = function ($) {
+
+var Tab = function ($$$1) {
   /**
    * ------------------------------------------------------------------------
    * Constants
@@ -19,7 +16,7 @@ var Tab = function ($) {
   var DATA_KEY = 'bs.tab';
   var EVENT_KEY = "." + DATA_KEY;
   var DATA_API_KEY = '.data-api';
-  var JQUERY_NO_CONFLICT = $.fn[NAME];
+  var JQUERY_NO_CONFLICT = $$$1.fn[NAME];
   var TRANSITION_DURATION = 150;
   var Event = {
     HIDE: "hide" + EVENT_KEY,
@@ -65,53 +62,53 @@ var Tab = function ($) {
     _proto.show = function show() {
       var _this = this;
 
-      if (this._element.parentNode && this._element.parentNode.nodeType === Node.ELEMENT_NODE && $(this._element).hasClass(ClassName.ACTIVE) || $(this._element).hasClass(ClassName.DISABLED)) {
+      if (this._element.parentNode && this._element.parentNode.nodeType === Node.ELEMENT_NODE && $$$1(this._element).hasClass(ClassName.ACTIVE) || $$$1(this._element).hasClass(ClassName.DISABLED)) {
         return;
       }
 
       var target;
       var previous;
-      var listElement = $(this._element).closest(Selector.NAV_LIST_GROUP)[0];
+      var listElement = $$$1(this._element).closest(Selector.NAV_LIST_GROUP)[0];
       var selector = Util.getSelectorFromElement(this._element);
 
       if (listElement) {
         var itemSelector = listElement.nodeName === 'UL' ? Selector.ACTIVE_UL : Selector.ACTIVE;
-        previous = $.makeArray($(listElement).find(itemSelector));
+        previous = $$$1.makeArray($$$1(listElement).find(itemSelector));
         previous = previous[previous.length - 1];
       }
 
-      var hideEvent = $.Event(Event.HIDE, {
+      var hideEvent = $$$1.Event(Event.HIDE, {
         relatedTarget: this._element
       });
-      var showEvent = $.Event(Event.SHOW, {
+      var showEvent = $$$1.Event(Event.SHOW, {
         relatedTarget: previous
       });
 
       if (previous) {
-        $(previous).trigger(hideEvent);
+        $$$1(previous).trigger(hideEvent);
       }
 
-      $(this._element).trigger(showEvent);
+      $$$1(this._element).trigger(showEvent);
 
       if (showEvent.isDefaultPrevented() || hideEvent.isDefaultPrevented()) {
         return;
       }
 
       if (selector) {
-        target = $(selector)[0];
+        target = $$$1(selector)[0];
       }
 
       this._activate(this._element, listElement);
 
       var complete = function complete() {
-        var hiddenEvent = $.Event(Event.HIDDEN, {
+        var hiddenEvent = $$$1.Event(Event.HIDDEN, {
           relatedTarget: _this._element
         });
-        var shownEvent = $.Event(Event.SHOWN, {
+        var shownEvent = $$$1.Event(Event.SHOWN, {
           relatedTarget: previous
         });
-        $(previous).trigger(hiddenEvent);
-        $(_this._element).trigger(shownEvent);
+        $$$1(previous).trigger(hiddenEvent);
+        $$$1(_this._element).trigger(shownEvent);
       };
 
       if (target) {
@@ -122,7 +119,7 @@ var Tab = function ($) {
     };
 
     _proto.dispose = function dispose() {
-      $.removeData(this._element, DATA_KEY);
+      $$$1.removeData(this._element, DATA_KEY);
       this._element = null;
     }; // Private
 
@@ -133,20 +130,20 @@ var Tab = function ($) {
       var activeElements;
 
       if (container.nodeName === 'UL') {
-        activeElements = $(container).find(Selector.ACTIVE_UL);
+        activeElements = $$$1(container).find(Selector.ACTIVE_UL);
       } else {
-        activeElements = $(container).children(Selector.ACTIVE);
+        activeElements = $$$1(container).children(Selector.ACTIVE);
       }
 
       var active = activeElements[0];
-      var isTransitioning = callback && Util.supportsTransitionEnd() && active && $(active).hasClass(ClassName.FADE);
+      var isTransitioning = callback && Util.supportsTransitionEnd() && active && $$$1(active).hasClass(ClassName.FADE);
 
       var complete = function complete() {
         return _this2._transitionComplete(element, active, callback);
       };
 
       if (active && isTransitioning) {
-        $(active).one(Util.TRANSITION_END, complete).emulateTransitionEnd(TRANSITION_DURATION);
+        $$$1(active).one(Util.TRANSITION_END, complete).emulateTransitionEnd(TRANSITION_DURATION);
       } else {
         complete();
       }
@@ -154,11 +151,11 @@ var Tab = function ($) {
 
     _proto._transitionComplete = function _transitionComplete(element, active, callback) {
       if (active) {
-        $(active).removeClass(ClassName.SHOW + " " + ClassName.ACTIVE);
-        var dropdownChild = $(active.parentNode).find(Selector.DROPDOWN_ACTIVE_CHILD)[0];
+        $$$1(active).removeClass(ClassName.SHOW + " " + ClassName.ACTIVE);
+        var dropdownChild = $$$1(active.parentNode).find(Selector.DROPDOWN_ACTIVE_CHILD)[0];
 
         if (dropdownChild) {
-          $(dropdownChild).removeClass(ClassName.ACTIVE);
+          $$$1(dropdownChild).removeClass(ClassName.ACTIVE);
         }
 
         if (active.getAttribute('role') === 'tab') {
@@ -166,20 +163,20 @@ var Tab = function ($) {
         }
       }
 
-      $(element).addClass(ClassName.ACTIVE);
+      $$$1(element).addClass(ClassName.ACTIVE);
 
       if (element.getAttribute('role') === 'tab') {
         element.setAttribute('aria-selected', true);
       }
 
       Util.reflow(element);
-      $(element).addClass(ClassName.SHOW);
+      $$$1(element).addClass(ClassName.SHOW);
 
-      if (element.parentNode && $(element.parentNode).hasClass(ClassName.DROPDOWN_MENU)) {
-        var dropdownElement = $(element).closest(Selector.DROPDOWN)[0];
+      if (element.parentNode && $$$1(element.parentNode).hasClass(ClassName.DROPDOWN_MENU)) {
+        var dropdownElement = $$$1(element).closest(Selector.DROPDOWN)[0];
 
         if (dropdownElement) {
-          $(dropdownElement).find(Selector.DROPDOWN_TOGGLE).addClass(ClassName.ACTIVE);
+          $$$1(dropdownElement).find(Selector.DROPDOWN_TOGGLE).addClass(ClassName.ACTIVE);
         }
 
         element.setAttribute('aria-expanded', true);
@@ -193,7 +190,7 @@ var Tab = function ($) {
 
     Tab._jQueryInterface = function _jQueryInterface(config) {
       return this.each(function () {
-        var $this = $(this);
+        var $this = $$$1(this);
         var data = $this.data(DATA_KEY);
 
         if (!data) {
@@ -217,7 +214,6 @@ var Tab = function ($) {
         return VERSION;
       }
     }]);
-
     return Tab;
   }();
   /**
@@ -227,10 +223,10 @@ var Tab = function ($) {
    */
 
 
-  $(document).on(Event.CLICK_DATA_API, Selector.DATA_TOGGLE, function (event) {
+  $$$1(document).on(Event.CLICK_DATA_API, Selector.DATA_TOGGLE, function (event) {
     event.preventDefault();
 
-    Tab._jQueryInterface.call($(this), 'show');
+    Tab._jQueryInterface.call($$$1(this), 'show');
   });
   /**
    * ------------------------------------------------------------------------
@@ -238,14 +234,13 @@ var Tab = function ($) {
    * ------------------------------------------------------------------------
    */
 
-  $.fn[NAME] = Tab._jQueryInterface;
-  $.fn[NAME].Constructor = Tab;
+  $$$1.fn[NAME] = Tab._jQueryInterface;
+  $$$1.fn[NAME].Constructor = Tab;
 
-  $.fn[NAME].noConflict = function () {
-    $.fn[NAME] = JQUERY_NO_CONFLICT;
+  $$$1.fn[NAME].noConflict = function () {
+    $$$1.fn[NAME] = JQUERY_NO_CONFLICT;
     return Tab._jQueryInterface;
   };
 
   return Tab;
 }($);
-//# sourceMappingURL=tab.js.map

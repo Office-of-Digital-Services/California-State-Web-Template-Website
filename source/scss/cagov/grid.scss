@@ -6,6 +6,14 @@
 // SEMANTIC GRID
 // --------------------------------------------------
 
+/* .container custom width  */
+
+@media (min-width: $screen-lg-min) {
+  .container {
+    max-width: $container-large-desktop;
+  }
+}
+
 .group {
     @include make-row();            // Self clearing row container same as bootstraps .row
 	

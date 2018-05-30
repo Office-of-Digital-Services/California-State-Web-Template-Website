@@ -4,7 +4,8 @@
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  * --------------------------------------------------------------------------
  */
-var Util = function ($) {
+
+var Util = function ($$$1) {
   /**
    * ------------------------------------------------------------------------
    * Private TransitionEnd Helpers
@@ -22,7 +23,7 @@ var Util = function ($) {
       bindType: transition.end,
       delegateType: transition.end,
       handle: function handle(event) {
-        if ($(event.target).is(this)) {
+        if ($$$1(event.target).is(this)) {
           return event.handleObj.handler.apply(this, arguments); // eslint-disable-line prefer-rest-params
         }
 
@@ -45,7 +46,7 @@ var Util = function ($) {
     var _this = this;
 
     var called = false;
-    $(this).one(Util.TRANSITION_END, function () {
+    $$$1(this).one(Util.TRANSITION_END, function () {
       called = true;
     });
     setTimeout(function () {
@@ -58,17 +59,17 @@ var Util = function ($) {
 
   function setTransitionEndSupport() {
     transition = transitionEndTest();
-    $.fn.emulateTransitionEnd = transitionEndEmulator;
+    $$$1.fn.emulateTransitionEnd = transitionEndEmulator;
 
     if (Util.supportsTransitionEnd()) {
-      $.event.special[Util.TRANSITION_END] = getSpecialTransitionEndEvent();
+      $$$1.event.special[Util.TRANSITION_END] = getSpecialTransitionEndEvent();
     }
   }
 
   function escapeId(selector) {
     // We escape IDs in case of special selectors (selector = '#myId:something')
     // $.escapeSelector does not exist in jQuery < 3
-    selector = typeof $.escapeSelector === 'function' ? $.escapeSelector(selector).substr(1) : selector.replace(/(:|\.|\[|\]|,|=|@)/g, '\\$1');
+    selector = typeof $$$1.escapeSelector === 'function' ? $$$1.escapeSelector(selector).substr(1) : selector.replace(/(:|\.|\[|\]|,|=|@)/g, '\\$1');
     return selector;
   }
   /**
@@ -101,7 +102,7 @@ var Util = function ($) {
       }
 
       try {
-        var $selector = $(document).find(selector);
+        var $selector = $$$1(document).find(selector);
         return $selector.length > 0 ? selector : null;
       } catch (err) {
         return null;
@@ -111,7 +112,7 @@ var Util = function ($) {
       return element.offsetHeight;
     },
     triggerTransitionEnd: function triggerTransitionEnd(element) {
-      $(element).trigger(transition.end);
+      $$$1(element).trigger(transition.end);
     },
     supportsTransitionEnd: function supportsTransitionEnd() {
       return Boolean(transition);
@@ -136,4 +137,3 @@ var Util = function ($) {
   setTransitionEndSupport();
   return Util;
 }($);
-//# sourceMappingURL=util.js.map
