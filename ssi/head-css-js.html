@@ -36,8 +36,7 @@ Select a color scheme:
 <![endif]-->
 
 <!-- modernizr.com, feature detection -->
-<script src="/js/libs/modernizr-2.0.6.min.js"></script>
-<script src="/js/libs/modernizr-extra.min.js" ></script>
+<script src="/js/libs/modernizr-3.6.0.min.js"></script>
 
 
 <!-- Load jQuery from CDN with fallback to local copy -->
