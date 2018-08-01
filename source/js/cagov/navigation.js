@@ -68,7 +68,6 @@ $(document).ready(function () {
             // hide submenus when touch occurs outside of menu
             $(document).on('touchstart.ca.catchNav', function (e) {
                 touchMode = false;
-                hideSubNavs();
             }, false);
 
             $navItemsWithSubs.each(function () {
@@ -94,8 +93,7 @@ $(document).ready(function () {
                         e.stopPropagation();
 
                         // position arrow, hide other sub-nav panels, fade in current panel
-
-                        hideSubNavs();
+                        
                         $sub.fadeIn(300);
                     }
                 }, false);
@@ -106,7 +104,7 @@ $(document).ready(function () {
         // hide submenus when touch/click occurs outside of menu
         $(document).on('click.ca.catchNav', function (e) {
             if (!$navigation.is(e.target) && $navigation.has(e.target).length === 0) {
-                hideSubNavs();
+                
             }
         });
 
@@ -131,9 +129,8 @@ $(document).ready(function () {
                     e.preventDefault();
                     e.stopPropagation();
 
-                    // position arrow, hide other sub-nav panels, fade in current panel
-
-                    hideSubNavs();
+                    // position arrow, fade in current panel
+                    
                     $sub.fadeIn(300);
                 }
             });
@@ -218,7 +215,7 @@ $(document).ready(function () {
     }).on("mouseleave", function () {
         $('.' + clickedFocus).removeClass(clickedFocus);
     });
-    $('.top-level-nav > li > a').on("focus", function (e) {
+	$('.top-level-nav > li > a').on("focus", function (e) {
         $(this).closest('ul').find('.' + menuHoverClass).removeClass(menuHoverClass);
         if (!$(this).parent().find('.toggle-sub-nav').hasClass('open')) {
             $(this).parent().addClass(menuHoverClass);
@@ -1111,8 +1108,26 @@ $(document).ready(function () {
     });
 
 
-    // Resets navigation to defauilt state on resize.
+
+    // Do Navigation Reset function on window resize uless it's mobile device.
     $(window).on('resize', function () {
+        if (navigator.userAgent.match(/Android/i)
+            || navigator.userAgent.match(/webOS/i)
+            || navigator.userAgent.match(/iPhone/i)
+            || navigator.userAgent.match(/iPad/i)
+            || navigator.userAgent.match(/iPod/i)
+            || navigator.userAgent.match(/BlackBerry/i)
+            || navigator.userAgent.match(/Windows Phone/i)
+        ) {
+            return false;
+        }
+        else {
+            NavReset();
+        }
+    });
+
+    // Navigation Reset function
+    function NavReset() {
         $(".sub-nav").removeClass("open");
         $(".sub-nav").removeClass("secondary-open");
         $(".sub-nav").attr("aria-expanded", false);
@@ -1125,7 +1140,7 @@ $(document).ready(function () {
         $(".toggle-sub-nav").addClass("closed");
         $(".nav-item").removeClass("active");
         $(".toggle-menu").attr('aria-expanded', 'false');
-    });
+    };
 
 }(jQuery, window, document));
 
