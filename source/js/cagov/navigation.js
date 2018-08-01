@@ -68,7 +68,6 @@ $(document).ready(function () {
             // hide submenus when touch occurs outside of menu
             $(document).on('touchstart.ca.catchNav', function (e) {
                 touchMode = false;
-                hideSubNavs();
             }, false);
 
             $navItemsWithSubs.each(function () {
@@ -93,9 +92,8 @@ $(document).ready(function () {
                         e.preventDefault();
                         e.stopPropagation();
 
-                        // position arrow, hide other sub-nav panels, fade in current panel
-
-                        hideSubNavs();
+                        // position arrow, fade in current panel
+                    
                         $sub.fadeIn(1000);
                     }
                 }, false);
@@ -106,7 +104,7 @@ $(document).ready(function () {
         // hide submenus when touch/click occurs outside of menu
         $(document).on('click.ca.catchNav', function (e) {
             if (!$navigation.is(e.target) && $navigation.has(e.target).length === 0) {
-                hideSubNavs();
+
             }
         });
 
@@ -132,8 +130,7 @@ $(document).ready(function () {
                     e.stopPropagation();
 
                     // position arrow, hide other sub-nav panels, fade in current panel
-
-                    hideSubNavs();
+                    
                     $sub.fadeIn(1000);
                 }
             });
@@ -190,6 +187,23 @@ $(document).ready(function () {
         });
 
         // Subnav Toggle
+    if (msTouch) {
+        // touch event for mobile
+        $(".toggle-sub-nav").on("touchstart", function () {
+            var secondaryLinks = $(this).parent().find('.sub-nav');
+            if ($(this).hasClass('closed')) {
+                $(this).removeClass('closed').addClass('open');
+                $(this).find(".rotate").addClass('down');
+                $(secondaryLinks).slideDownTransitionSub();
+            } else {
+                $(this).removeClass('open').addClass('closed');
+                $(this).find(".rotate").removeClass('down');
+                $(secondaryLinks).slideUpTransitionSub();
+            }
+        });
+    }
+    else {
+        // click event for desktop
         $(".toggle-sub-nav").on("click", function () {
             var secondaryLinks = $(this).parent().find('.sub-nav');
             if ($(this).hasClass('closed')) {
@@ -203,6 +217,8 @@ $(document).ready(function () {
             }
 
         });
+    }
+
         $(".rotate1").on("click", function () {
             $(this).toggleClass("down");
         })
@@ -1196,34 +1212,52 @@ $(document).ready(function () {
     });
 
 
-        $(window).on('resize', function () {
-            $(".sub-nav").removeClass("open");
-            $(".sub-nav").removeClass("secondary-open");
-            $(".sub-nav").attr("aria-expanded", false);
-            $(".sub-nav").attr("aria-hidden", true);
-            $(".first-level-link").removeClass("open");
-            $(".first-level-link").removeClass("active");
-            $(".first-level-link").attr("aria-expanded", false);
-            $("#navigation").addClass("mobile-closed");
-            if ($(window).width() < 768) {
-                $("#navigation").css("max-height", "0");
-                $('.sub-nav').slideUpTransitionSub();
-                $('#navigation').slideUpTransition();
-                // 
-                $(".rotate").removeClass('down');
-            }
-            else {
-                $("#navigation").removeAttr("style");
-                $(".sub-nav").removeAttr("style");
-            }
+    // Do Navigation Reset function on window resize unless it's mobile device.
+    $(window).on('resize', function () {
+        if (navigator.userAgent.match(/Android/i)
+            || navigator.userAgent.match(/webOS/i)
+            || navigator.userAgent.match(/iPhone/i)
+            || navigator.userAgent.match(/iPad/i)
+            || navigator.userAgent.match(/iPod/i)
+            || navigator.userAgent.match(/BlackBerry/i)
+            || navigator.userAgent.match(/Windows Phone/i)
+        ) {
+            return false;
+        }
+        else {
+            NavReset();
+        }
+    });
 
-            $(".toggle-sub-nav").removeClass("open");
-            $(".toggle-sub-nav").addClass("closed");
-            $(".nav-item").removeClass("active");
-            $(".toggle-menu").attr('aria-expanded', 'false');
-            $(".toggle-menu").removeClass("open");
-            $(".toggle-sub-nav").removeClass("open");
-        });
+    // Navigation Reset function
+    function NavReset() {
+        $(".sub-nav").removeClass("open");
+        $(".sub-nav").removeClass("secondary-open");
+        $(".sub-nav").attr("aria-expanded", false);
+        $(".sub-nav").attr("aria-hidden", true);
+        $(".first-level-link").removeClass("open");
+        $(".first-level-link").removeClass("active");
+        $(".first-level-link").attr("aria-expanded", false);
+        $("#navigation").addClass("mobile-closed");
+        if ($(window).width() < 768) {
+            $("#navigation").css("max-height", "0");
+            $('.sub-nav').slideUpTransitionSub();
+            $('#navigation').slideUpTransition();
+            // 
+            $(".rotate").removeClass('down');
+        }
+        else {
+            $("#navigation").removeAttr("style");
+            $(".sub-nav").removeAttr("style");
+        }
+
+        $(".toggle-sub-nav").removeClass("open");
+        $(".toggle-sub-nav").addClass("closed");
+        $(".nav-item").removeClass("active");
+        $(".toggle-menu").attr('aria-expanded', 'false');
+        $(".toggle-menu").removeClass("open");
+        $(".toggle-sub-nav").removeClass("open");
+    };
 
 }(jQuery, window, document));
 
