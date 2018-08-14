@@ -145,7 +145,7 @@ Options are: megadropdown dropdown singlelevel
             <a href="https://github.com/Office-of-Digital-Innovation" target="_blank" class="first-level-link"><span class="ca-gov-icon-download" aria-hidden="true"></span>Download</a>
         </li>
         <li class="nav-item">
-            <a href="http://webtools.ca.gov/" target="_blank" class="first-level-link"><span class="ca-gov-icon-state" aria-hidden="true"></span>Webtools</a>
+            <a href="https://webstandards.ca.gov" target="_blank" class="first-level-link"><span class="ca-gov-icon-state" aria-hidden="true"></span>Web Standards</a>
         </li>
      
         <li class="nav-item">
