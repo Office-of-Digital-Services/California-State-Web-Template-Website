@@ -11,10 +11,9 @@
 }
 
 .carousel .owl-nav [class*='owl-'] {
-    @include rgba (#000000, .4);
-    // background-color: $rgba;
-    color: #fff;
-    font-size: 20px;
+    background: rgba(0, 0, 0, 0.4) !important;
+    color: #fff !important;
+    font-size: 20px !important;
     height: 35px;
     width: 35px;
     border-radius: 35px;
@@ -22,7 +21,7 @@
     cursor: pointer;
 
     > span {
-        line-height: 35px;      // line-height equal to size of nav circle for centering
+        line-height: 35px; // line-height equal to size of nav circle for centering
     }
 }
 
@@ -114,8 +113,6 @@
     overflow: hidden;
     // hide the buttons so they animate in
     // overflow: hidden;
-
-
     &:hover {
         .owl-prev {
             color: white;
@@ -160,7 +157,7 @@
 
     .owl-nav .owl-prev,
     .owl-nav .owl-next {
-		-webkit-transition: left 400ms ease, right 400ms ease;
+        -webkit-transition: left 400ms ease, right 400ms ease;
         transition: left 400ms ease, right 400ms ease;
         margin: -1em 0 0;
 
@@ -177,6 +174,7 @@
     .owl-nav {
         $button-offsets: -2em;
         $button-offsets-sm: -0.1em;
+
         @media (max-width: $screen-xs-max) {
             .owl-prev {
                 color: white;
@@ -196,8 +194,8 @@
         //margin-top: -35px;
         z-index: 6; // beta 5.0 addition
         position: relative;
-        height: 15px;   // Size of dots
-        top: -40px;     // Pull higher so video controls can still be accessed
+        height: 15px; // Size of dots
+        top: -40px; // Pull higher so video controls can still be accessed
     }
 
     .item {
@@ -211,15 +209,15 @@
         pointer-events: none;
         color: white;
         text-align: center;
-		display: -webkit-box;		
-  		display: -ms-flexbox;
+        display: -webkit-box;
+        display: -ms-flexbox;
         display: flex;
-		-webkit-box-orient: vertical;
-		-webkit-box-direction: normal;
-		-ms-flex-direction: column;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: column;
         flex-direction: column;
-		-webkit-box-pack: center;
-		-ms-flex-pack: center;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
         justify-content: center;
 
         .content {
@@ -227,9 +225,8 @@
             padding: 20px 20px 50px 20px;
         }
     }
-
     // we fit to the image size not content
-    img + .content-container,   video + .content-container{
+    img + .content-container, video + .content-container {
         position: absolute;
         top: 0;
         left: 0;
@@ -247,12 +244,10 @@
     }
 
     .item.backdrop {
-
         // fitting to image
-        img + .content-container,   video + .content-container {
+        img + .content-container, video + .content-container {
             background: rgba(0, 0, 0, 0.3);
         }
-
         // fitting to content
         .content-container:first-child {
             @media (min-width: $screen-sm-min) {
@@ -295,14 +290,14 @@
         text-align: center;
         vertical-align: middle;
         opacity: 0;
-		 -webkit-transition: opacity .25s ease;
+        -webkit-transition: opacity .25s ease;
         transition: opacity .25s ease;
         color: rgba(255,255,255,0.8);
-		display: -webkit-box;		
-  		display: -ms-flexbox;
+        display: -webkit-box;
+        display: -ms-flexbox;
         display: flex;
-		-webkit-box-pack: center;
-		-ms-flex-pack: center;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
         justify-content: center;
 
         span {
@@ -326,12 +321,11 @@
         position: relative;
         width: 100%;
 
-    .owl-video-wrapper, .owl-video-tn {
-        width: 100%;
-        height: 0;
-        padding-bottom: 56.25%;
-
-    }
+        .owl-video-wrapper, .owl-video-tn {
+            width: 100%;
+            height: 0;
+            padding-bottom: 56.25%;
+        }
 
         .video {
             position: relative;
@@ -359,9 +353,9 @@
     }
 
     .item-thumbnail {
-		-webkit-user-select: none;
-		-moz-user-select: none;
-		-ms-user-select: none;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
         user-select: none;
 
         &:hover {
@@ -380,15 +374,15 @@
             text-align: center;
             vertical-align: middle;
             opacity: 0;
-			-webkit-transition: opacity 0.25s ease;
+            -webkit-transition: opacity 0.25s ease;
             transition: opacity 0.25s ease;
             color: rgba(255,255,255,0.8);
             // display: table-cell;
-			display: -webkit-box;		
-  			display: -ms-flexbox;
+            display: -webkit-box;
+            display: -ms-flexbox;
             display: flex;
-			-webkit-box-pack: center;
-			-ms-flex-pack: center;
+            -webkit-box-pack: center;
+            -ms-flex-pack: center;
             justify-content: center;
 
             .ie9 & {
@@ -402,7 +396,7 @@
             }
 
             span {
-				-ms-flex-item-align: center;
+                -ms-flex-item-align: center;
                 align-self: center;
                 font-size: 50px;
 
@@ -443,8 +437,8 @@
 .header-slideshow-banner .banner-pager {
     position: absolute;
     right: 45px;
-	top: auto;	 // Beta 5.0 addition	
-	bottom: 25px;	 // Beta 5.0 addition
+    top: auto; // Beta 5.0 addition
+    bottom: 25px; // Beta 5.0 addition
 }
 
 .header-slideshow-banner .banner-control {
@@ -457,13 +451,13 @@
     border: 1px solid rgba(255, 255, 255, 0.35);
     display: block;
     width: 25px; // Beta 5.0 addition
-    height: 26px;  // Beta 5.0 addition
+    height: 26px; // Beta 5.0 addition
     float: left;
     margin: 0 5px 0 0;
-	font-stretch:normal;  // Beta 5.0 addition
+    font-stretch: normal; // Beta 5.0 addition
     -webkit-border-radius: 5px;
     -moz-border-radius: 5px;
-    border-radius: 15px;  // Beta 5.0 addition
+    border-radius: 15px; // Beta 5.0 addition
     outline-style: none;
     /* remove outlines, for FF */
 }
@@ -484,9 +478,9 @@
 
 .header-slideshow-banner .banner-play-pause {
     position: absolute;
-    top: auto;  // Beta 5.0 addition
+    top: auto; // Beta 5.0 addition
     right: 17px;
-	bottom: 25px; // Beta 5.0 addition
+    bottom: 25px; // Beta 5.0 addition
     z-index: 1000;
 }
 
@@ -503,29 +497,28 @@
 
 .slide-text {
     position: absolute;
-    top:auto;	// Beta 5.0 addition	
+    top: auto; // Beta 5.0 addition
     padding: 15px;
-	bottom: 0px;	// Beta 5.0 addition	
-    width: 100%;	// Beta 5.0 addition	
-	margin: 0 auto;	// Beta 5.0 addition
+    bottom: 0px; // Beta 5.0 addition
+    width: 100%; // Beta 5.0 addition
+    margin: 0 auto; // Beta 5.0 addition
     color: #FFF;
     font-family: Arial, Helvetica, sans-serif;
     font-weight: normal;
-    font-size: 1.2em; 	// Beta 5.0 addition
+    font-size: 1.2em; // Beta 5.0 addition
     font-weight: 500;
-    font-stretch: normal; 	// Beta 5.0 addition
-	text-align: center;	 // Beta 5.0 addition
+    font-stretch: normal; // Beta 5.0 addition
+    text-align: center; // Beta 5.0 addition
     box-sizing: border-box;
-    border: none;	 // Beta 5.0 addition
-	border-radius: 0px;	  // Beta 5.0 addition
-    background-color: rgba(0,0,0,0.5);  // Beta 5.0 addition
-
+    border: none; // Beta 5.0 addition
+    border-radius: 0px; // Beta 5.0 addition
+    background-color: rgba(0,0,0,0.5); // Beta 5.0 addition
 }
 
 .slide-text .title {
-    font-size: 1.8em;		 // Beta 5.0 addition
-    font-weight: bold;		 // Beta 5.0 addition
-    text-shadow: 0 1px 2px #000;  // Beta 5.0 addition
+    font-size: 1.8em; // Beta 5.0 addition
+    font-weight: bold; // Beta 5.0 addition
+    text-shadow: 0 1px 2px #000; // Beta 5.0 addition
 }
 
 /* Media Carousel */
@@ -542,11 +535,11 @@
 
 /* Social Media Slider */
 .carousel-slider .owl-item {
-  img, .item-logo {
-      width: auto;
-      float: left;
-      margin: 0 10px 10px 0;
-      font-size: 32px;
+    img, .item-logo {
+        width: auto;
+        float: left;
+        margin: 0 10px 10px 0;
+        font-size: 32px;
     }
 }
 
@@ -556,10 +549,18 @@
 }
 
 .carousel-gallery .owl-item img {
-
     // let image auto size up to 100%
     width: auto;
     display: inline-block;
     max-width: 100%;
     margin: 0 10px 10px 0;
+}
+
+// Accessibility
+.banner-control:focus, .banner-control .pause:focus, .banner-control .play:focus, .owl-dot:focus, .owl-prev:focus, .owl-next:focus {
+    outline: 1px dotted #000;
+}
+
+.owl-carousel:focus {
+    outline: none;
 }

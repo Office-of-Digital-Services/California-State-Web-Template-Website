@@ -63,7 +63,7 @@ $(document).ready(function () {
                 });
 
                 // Add pause and play buttons
-                var owlBannerControl = $('<div class="banner-play-pause"><div class="banner-control"><span class="play ca-gov-icon-carousel-play" aria-hidden="true"></span><span class="pause ca-gov-icon-carousel-pause" aria-hidden="true"></span></div></div>');
+                var owlBannerControl = $('<div class="banner-play-pause"><div class="banner-control"><button class="play ca-gov-icon-carousel-play" aria-hidden="true"></button><button class="pause ca-gov-icon-carousel-pause" aria-hidden="true"></span></div></div>');
                 $this.append(owlBannerControl); 
                 var playControl = owlBannerControl.find('.play').hide(); 
                 var pauseControl = owlBannerControl.find('.pause'); 
