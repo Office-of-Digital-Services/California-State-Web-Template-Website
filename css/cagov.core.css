@@ -17979,65 +17979,70 @@ fieldset[disabled] .btn-more {
   cursor: pointer;
   font-weight: bold;
   text-align: center;
-  color: rgba(255, 255, 255, 0.95);
-  background: #ddd;
-  background-color: rgba(0, 0, 0, 0.4);
-  border: 1px solid rgba(255, 255, 255, 0.35);
+  color: #fff;
+  background: #181818;
+  background-color: rgba(0, 0, 0, 0.6);
+  border: none;
   display: block;
   width: 25px;
   height: 26px;
   float: left;
   margin: 0 5px 0 0;
   font-stretch: normal;
-  -webkit-border-radius: 5px;
-  -moz-border-radius: 5px;
-  border-radius: 15px;
+  border-radius: 0;
   outline-style: none;
   /* remove outlines, for FF */
 }
 
 .header-slideshow-banner .banner-control:hover {
-  background-color: rgba(125, 125, 125, 0.5);
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.header-slideshow-banner .banner-control .pause {
+  width: 25px;
+  height: 26px;
+  border: none;
+  text-align: center;
+  padding: 0;
+  color: #fff;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.header-slideshow-banner .banner-control .play {
+  width: 25px;
+  height: 26px;
+  border: none;
+  padding: 0;
+  text-align: center;
+  cursor: pointer;
 }
 
 .header-slideshow-banner .banner-control.active {
   display: block;
-  color: rgba(0, 0, 0, 0.9);
+  color: #000;
   background-color: rgba(255, 255, 255, 0.7);
-  border: 1px solid rgba(0, 0, 0, 0.4);
+  border: none;
 }
 
 .header-slideshow-banner .banner-play-pause {
   position: absolute;
   top: auto;
-  right: 17px;
+  right: 15px;
   bottom: 25px;
   z-index: 1000;
-}
-
-.header-slideshow-banner .banner-play-pause a {
-  cursor: pointer;
-  color: #d6d6d6;
-  text-decoration: none;
-}
-
-.header-slideshow-banner .banner-play-pause a:hover {
-  color: #869791;
-  text-decoration: none;
 }
 
 .slide-text {
   position: absolute;
   top: auto;
-  padding: 15px;
+  padding: 5px 15px 25px 15px;
   bottom: 0px;
   width: 100%;
   margin: 0 auto;
   color: #FFF;
-  font-family: Arial, Helvetica, sans-serif;
-  font-weight: normal;
+  font-family: "Source Sans Pro", sans-serif;
   font-size: 1.2em;
-  font-weight: 500;
   font-stretch: normal;
   text-align: center;
   box-sizing: border-box;
@@ -18048,8 +18053,6 @@ fieldset[disabled] .btn-more {
 
 .slide-text .title {
   font-size: 1.8em;
-  font-weight: bold;
-  text-shadow: 0 1px 2px #000;
 }
 
 /* Media Carousel */

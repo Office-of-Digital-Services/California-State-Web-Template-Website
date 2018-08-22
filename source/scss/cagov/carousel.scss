@@ -445,19 +445,17 @@
     cursor: pointer;
     font-weight: bold;
     text-align: center;
-    color: rgba(255, 255, 255, 0.95);
-    background: #ddd;
-    background-color: rgba(0, 0, 0, 0.40);
-    border: 1px solid rgba(255, 255, 255, 0.35);
+    color: #fff;
+    background: #181818;
+    background-color: rgba(0, 0, 0, 0.60);
+    border: none;
     display: block;
     width: 25px; // Beta 5.0 addition
     height: 26px; // Beta 5.0 addition
     float: left;
     margin: 0 5px 0 0;
-    font-stretch: normal; // Beta 5.0 addition
-    -webkit-border-radius: 5px;
-    -moz-border-radius: 5px;
-    border-radius: 15px; // Beta 5.0 addition
+    font-stretch: normal;
+    border-radius: 0; // Beta 5.0 addition
     outline-style: none;
     /* remove outlines, for FF */
 }
@@ -466,47 +464,56 @@
 
 
 .header-slideshow-banner .banner-control:hover {
-    background-color: rgba(125, 125, 125, 0.5);
+    background-color: rgba(0, 0, 0, 0.5);
 }
+
+.header-slideshow-banner .banner-control .pause {
+    width: 25px;
+    height: 26px;
+    border: none;
+    text-align: center;
+    padding: 0;
+    color: #fff;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+.header-slideshow-banner .banner-control .play {
+    width: 25px;
+    height: 26px;
+    border: none;
+    padding: 0;
+    text-align: center;
+    cursor: pointer;
+}
+
 
 .header-slideshow-banner .banner-control.active {
     display: block;
-    color: rgba(0, 0, 0, 0.90);
+    color: #000;
     background-color: rgba(255, 255, 255, 0.70);
-    border: 1px solid rgba(0, 0, 0, 0.40);
+    border: none;
 }
 
 .header-slideshow-banner .banner-play-pause {
     position: absolute;
     top: auto; // Beta 5.0 addition
-    right: 17px;
+    right: 15px;
     bottom: 25px; // Beta 5.0 addition
     z-index: 1000;
 }
 
-.header-slideshow-banner .banner-play-pause a {
-    cursor: pointer;
-    color: #d6d6d6;
-    text-decoration: none;
-}
-
-.header-slideshow-banner .banner-play-pause a:hover {
-    color: #869791;
-    text-decoration: none;
-}
 
 .slide-text {
     position: absolute;
     top: auto; // Beta 5.0 addition
-    padding: 15px;
+    padding: 5px 15px 25px 15px;
     bottom: 0px; // Beta 5.0 addition
     width: 100%; // Beta 5.0 addition
     margin: 0 auto; // Beta 5.0 addition
     color: #FFF;
-    font-family: Arial, Helvetica, sans-serif;
-    font-weight: normal;
+    font-family: $font-family-sans-serif;
     font-size: 1.2em; // Beta 5.0 addition
-    font-weight: 500;
     font-stretch: normal; // Beta 5.0 addition
     text-align: center; // Beta 5.0 addition
     box-sizing: border-box;
@@ -517,8 +524,6 @@
 
 .slide-text .title {
     font-size: 1.8em; // Beta 5.0 addition
-    font-weight: bold; // Beta 5.0 addition
-    text-shadow: 0 1px 2px #000; // Beta 5.0 addition
 }
 
 /* Media Carousel */
