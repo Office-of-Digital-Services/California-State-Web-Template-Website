@@ -17821,6 +17821,9 @@ fieldset[disabled] .btn-more {
   line-height: 80px;
   color: white;
   opacity: 0;
+  background-color: #222222;
+  border-radius: 10px;
+  padding: 15px 15px;
 }
 
 .carousel-video .item-overlay {
@@ -17883,7 +17886,16 @@ fieldset[disabled] .btn-more {
   margin-top: 20px;
 }
 
+.carousel-video-submenu .owl-item button {
+  border: 5px solid #ddd;
+}
+
 .carousel-video-submenu .owl-item.watching img {
+  border-width: 5px;
+  border-style: solid;
+}
+
+.carousel-video-submenu .owl-item.watching button {
   border-width: 5px;
   border-style: solid;
 }
@@ -17895,7 +17907,36 @@ fieldset[disabled] .btn-more {
   user-select: none;
 }
 
-.carousel-video-submenu .item-thumbnail:hover .item-overlay {
+.carousel-video-submenu .item-thumbnail .videoThumb {
+  display: block;
+  width: 100%;
+  background-size: cover;
+  background-position: center, center;
+  height: 160px;
+  zoom: 1;
+}
+
+.carousel-video-submenu .item-thumbnail .videoThumb:focus {
+  outline: 3px dotted #000;
+}
+
+.carousel-video-submenu .item-thumbnail .videoThumb:focus + .item-overlay {
+  opacity: 1;
+}
+
+@media (max-width: 991px) {
+  .carousel-video-submenu .item-thumbnail .videoThumb {
+    height: 110px;
+  }
+}
+
+@media (max-width: 767px) {
+  .carousel-video-submenu .item-thumbnail .videoThumb {
+    height: 80px;
+  }
+}
+
+.carousel-video-submenu .item-thumbnail:hover .item-overlay, .carousel-video-submenu .item-thumbnail:focus .item-overlay {
   opacity: 1;
 }
 
@@ -17920,6 +17961,15 @@ fieldset[disabled] .btn-more {
   justify-content: center;
 }
 
+.carousel-video-submenu .item-thumbnail .item-overlay button {
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+  background: transparent;
+  font-size: 4em;
+  color: #fff;
+}
+
 .ie9 .carousel-video-submenu .item-thumbnail .item-overlay {
   display: table;
 }
@@ -17934,6 +17984,7 @@ fieldset[disabled] .btn-more {
   -ms-flex-item-align: center;
   align-self: center;
   font-size: 50px;
+  cursor: pointer;
 }
 
 @media (max-width: 992px) {
@@ -18087,11 +18138,19 @@ fieldset[disabled] .btn-more {
 }
 
 .banner-control:focus, .banner-control .pause:focus, .banner-control .play:focus, .owl-dot:focus, .owl-prev:focus, .owl-next:focus {
-  outline: 1px dotted #000;
+  outline: 2px dotted #333333;
 }
 
 .owl-carousel:focus {
   outline: none;
+}
+
+.owl-stage-outer {
+  padding: 3px;
+}
+
+.owl-video-wrapper .item-overlay {
+  display: none;
 }
 
 .plotly-chart .plotly-chart--loading {

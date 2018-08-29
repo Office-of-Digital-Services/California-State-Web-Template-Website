@@ -277,6 +277,9 @@
             line-height: 80px;
             color: white;
             opacity: 0;
+            background-color: $gray-darker;
+            border-radius: 10px;
+            padding: 15px 15px;
         }
     }
 
@@ -344,8 +347,20 @@
 .carousel-video-submenu {
     margin-top: 20px;
 
+    .owl-item {
+        button {
+            border: 5px solid #ddd;
+        }
+    }
+
     .owl-item.watching {
         img {
+            border-width: 5px;
+            border-style: solid;
+            // see color schemes
+        }
+
+        button {
             border-width: 5px;
             border-style: solid;
             // see color schemes
@@ -358,7 +373,33 @@
         -ms-user-select: none;
         user-select: none;
 
-        &:hover {
+        .videoThumb {
+            display: block;
+            width: 100%;
+            background-size: cover;
+            background-position: center, center;
+            height: 160px;
+            zoom: 1;
+
+            &:focus {
+                outline: 3px dotted #000;
+
+                + .item-overlay {
+                    opacity: 1;
+                }
+            }
+
+            @media (max-width: $screen-sm-max) {
+                height: 110px;
+            }
+
+            @media (max-width: $screen-xs-max) {
+                height: 80px;
+            }
+        }
+
+
+        &:hover, &:focus {
             .item-overlay {
                 opacity: 1;
             }
@@ -385,6 +426,15 @@
             -ms-flex-pack: center;
             justify-content: center;
 
+            button {
+                width: 100%;
+                height: 100%;
+                cursor: pointer;
+                background: transparent;
+                font-size: 4em;
+                color: $white;
+            }
+
             .ie9 & {
                 display: table;
 
@@ -399,6 +449,7 @@
                 -ms-flex-item-align: center;
                 align-self: center;
                 font-size: 50px;
+                cursor: pointer;
 
                 @media (max-width: $screen-md) {
                     font-size: 30px;
@@ -563,9 +614,18 @@
 
 // Accessibility
 .banner-control:focus, .banner-control .pause:focus, .banner-control .play:focus, .owl-dot:focus, .owl-prev:focus, .owl-next:focus {
-    outline: 1px dotted #000;
+    outline: 2px dotted $gray-dark;
 }
 
 .owl-carousel:focus {
     outline: none;
+}
+
+// Video
+.owl-stage-outer {
+    padding: 3px;
+}
+
+.owl-video-wrapper .item-overlay {
+    display: none;
 }
