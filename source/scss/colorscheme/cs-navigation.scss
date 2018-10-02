@@ -13,8 +13,13 @@
 // --------------------------------------------------
 
 .mobile-controls {
-  background: $white;
+    background: $white;
 }
+
+.toggle-menu span {
+    background-color: $color-p2 !important;
+}
+
 .mobile-control {
   color: $mobile-controls;
 
@@ -34,21 +39,32 @@
 }
 
 
-
 //
 // NAVIGATION ACTIVE STYLE
 // --------------------------------------------------
-
 .nav-item {
-    &.active, &:hover {
+    &.active {
 
         > a {
-            color:$color-p2;
+            color: $color-p2;
             //border-bottom:5px solid $color-p2;
             //margin-bottom:-5px;
+            > span[class^="ca-gov-icon"] {
+                color: $color-p2;
+            }
+        }
+    }
+
+    &:hover, &:focus {
+        @media (min-width: $screen-sm-min) {
+            background-color: $sub-nav-bg; // beta 6.0 addition
+        }
+
+        > a {
+            color: $color-p2;
 
             > span[class^="ca-gov-icon"] {
-                color:$color-p2;
+                color: $color-p2;
             }
         }
     }
@@ -92,9 +108,8 @@
 .second-level-nav {
     > li {
         border:1px solid transparent;
-        border-right: 1px solid $gray-lighter;
-        border-bottom: 1px solid $gray-lighter;
-        //border: 1px solid $sub-nav-link-border;
+        border-right: 4px solid $white;  // beta 6.0 addition
+        border-bottom: 4px solid $white;  // beta 6.0 addition
 		
 		&:hover, &:focus {
             background:#fff;
@@ -125,9 +140,9 @@
 
 .sub-nav {
     // border-top: 5px solid $color-p1;
-    border-bottom: 5px solid $color-p2;
-    border-left: 1px solid $gray-lighter;
-    border-right: 1px solid $gray-lighter;
+    // border-bottom: 5px solid $color-p2;
+    // border-left: 1px solid $gray-lighter;
+    // border-right: 1px solid $gray-lighter;
     background: $sub-nav-bg;
 }
 
@@ -153,10 +168,10 @@
     
     // Add the border to the first one only
     .media {
-        border-bottom: 1px solid $sub-nav-link-border;
+        border-bottom: 4px solid $white;
     
 		@media (max-width: $screen-xs-max) {
-		border-bottom: 1px solid $color-s1;
+		border-bottom:  4px solid $white;
 		
 		&:hover, &:focus {
 			 background: lighten($sub-nav-bg, 2%);
@@ -185,4 +200,18 @@
         }
 	
 	}
+    /*full width navigation*/
+    .nav-full-width {
+        background: $color-p2;
+
+
+        .main-navigation .nav-item:hover, .main-navigation .nav-item:focus, .main-navigation .nav-item.active:hover {
+            background-color: darken($color-p2, 8%);
+        }
+
+        .main-navigation .nav-item.active {
+            background-color: darken($color-p2, 5%);
+        }
+    }
+
 }

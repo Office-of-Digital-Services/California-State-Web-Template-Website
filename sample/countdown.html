@@ -1,0 +1,373 @@
+﻿<!doctype html>
+<!--[if lt IE 7]> <html class="no-js ie6 oldie" lang="en"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js ie7 oldie" lang="en"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js ie8 oldie" lang="en"> <![endif]-->
+<!--[if IE 9]>    <html class="no-js ie9 oldie" lang="en"> <![endif]-->
+<!--[if (gt IE 9)]><!-->
+<html class="no-js" lang="en">
+<!--<![endif]-->
+
+<head>
+  <!--
+California State Template
+Version 4.0
+
+Based on Twitter Bootstrap
+-->
+  <meta charset="utf-8">
+
+  <title>Sample - Countdown</title>
+
+  <meta name="Author" content="State of California" />
+  <meta name="Description" content="State of California" />
+  <meta name="Keywords" content="California, government" />
+
+  <!--#include virtual="/ssi/head-css-js.html" -->
+    <style>
+        #demo, #demo2, #demo3, #demo4 {
+            text-align: center;
+            font-size: 30px;
+            margin-top: 0px;
+            font-weight: 700;
+            background-color: #153554;
+            color: #fff;
+            border-left: 3px solid #fff;
+        }
+
+        .countdown-text {
+            font-size: 16px;
+            font-weight: 400;
+        }
+    </style>
+</head>
+
+<body>
+
+  <header role="banner" id="header" class="global-header">
+    <div id="skip-to-content"><a href="#main-content">Skip to Main Content</a></div>    
+        <!-- Location Bar -->        
+		<!--#include virtual="/ssi/location-bar.html" -->
+        
+        <!-- Include Utility Header -->
+		<!--#include virtual="/ssi/utility-header.html" -->	
+        
+        <!-- Settings Bar -->	
+		<!--#include virtual="/ssi/settings-bar.html" -->
+
+		<!-- Include Branding -->
+		<!--#include virtual="/ssi/branding.html" -->
+
+    <!-- Include Mobile Controls -->
+    <!--#include virtual="/ssi/mobile-controls.html" -->
+
+      <div class="navigation-search">
+          <!-- Include Navigation -->
+          <!--#include virtual="/ssi/navigation.html" -->
+
+          <div id="head-search" class="search-container">
+              <!-- Include Search -->
+              <!--#include virtual="/ssi/search.html" -->
+          </div>
+
+      </div>
+
+    <div class="header-decoration"></div>
+  </header>
+
+  <div id="main-content" class="main-content">
+    <div class="section">
+        <main class="main-primary">
+            <ol class="breadcrumb">
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="index.html">Examples</a></li>
+                <li class="active">Countdown</li>
+            </ol>
+
+         
+
+                    <h1>Countdown</h1>
+
+                    <hr>
+
+            <h3>Countdown primary</h3>
+                    
+
+                    <div class="row section-primary countdown">
+                        <div class="col-sm-3 text-center p-b-md p-l-0 p-r-0">
+                            <span class="countdown-text">days<br></span>
+                            <span id="days"></span>
+                        </div>
+                        <div class="col-sm-3 text-center p-b-md p-l-0 p-r-0">
+                            <span class="countdown-text">hrs<br></span>
+                            <span id="hours"></span>
+                        </div>
+                        <div class="col-sm-3 text-center p-b-md p-l-0 p-r-0">
+                            <span class="countdown-text">min<br></span>
+                            <span id="minutes"></span>
+                        </div>
+                        <div class="col-sm-3 text-center p-b-md p-l-0 p-r-0">
+                            <span class="countdown-text">sec<br></span>
+                            <span id="seconds"></span>
+                        </div>
+                    </div>
+
+
+            <!-- Trigger the modal with a button -->
+            <button type="button" class="btn btn-default btn-sm m-t-md" data-toggle="modal" data-target="#countdown1">Show Source Code</button>
+            <!-- Modal -->
+            <div class="modal fade" id="countdown1" role="dialog">
+                <div class="modal-dialog modal-lg">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h4 class="modal-title">HTML Markup</h4>
+                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        </div>
+                        <div class="modal-body">
+                            <label for="sample-counter-circles">Source Code:</label>
+
+                            <div class="tab-group">
+                                <span class="ca-gov-icon-favorite"></span>
+                                <!-- Nav tabs - NOTE: UNIQUE ID IS REQUIRED -->
+                                <ul class="nav nav-tabs responsive" role="tablist" id="primary">
+                                    <li class="nav-item" role="tab"><a href="#html" data-toggle="tab" class="nav-link active">HTML</a></li>
+                                    <li class="nav-item" role="tab"><a href="#scirpt" data-toggle="tab" class="nav-link">Script</a></li>
+
+                                </ul>
+                                <!-- Tab panes -->
+                                <div class="tab-content responsive">
+                                    <div class="tab-pane active" id="html" role="tabpanel">
+                                        <pre><code class="overflow-auto">
+                                        <div class="row section-primary countdown">
+                                        <div class="col-sm-3 text-center p-b-md p-l-0 p-r-0">
+                                        <span class="countdown-text">days<br></span>
+                                        <span id="days"></span>
+                                                </div>
+                                        <div class="col-sm-3 text-center p-b-md p-l-0 p-r-0">
+                                        <span class="countdown-text">hrs<br></span>
+                                        <span id="hours"></span>
+                                                </div>
+                                        <div class="col-sm-3 text-center p-b-md p-l-0 p-r-0">
+                                        <span class="countdown-text">min<br></span>
+                                        <span id="minutes"></span>
+                                                </div>
+                                        <div class="col-sm-3 text-center p-b-md p-l-0 p-r-0">
+                                        <span class="countdown-text">sec<br></span>
+                                        <span id="seconds"></span>
+                                                </div>
+                                            </div>
+                                        </code></pre>
+                                    </div>
+                                    <div class="tab-pane" id="scirpt" role="tabpanel">
+<pre><code class="overflow-auto">
+    // Set the date we're counting down to
+    var countDownDate = new Date("Apr 1, 2020 00:00:00").getTime();
+
+    // Update the count down every 1 second
+    var x = setInterval(function() {
+
+    // Get todays date and time
+    var now = new Date().getTime();
+
+    // Find the distance between now an the count down date
+    var distance = countDownDate - now;
+
+    // Time calculations for days, hours, minutes and seconds
+    var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+    var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+    var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+    // Output the result in the elements with id="days", id="hours" etc.
+    document.getElementById("days").innerHTML = days;
+    document.getElementById("hours").innerHTML = hours;
+    document.getElementById("minutes").innerHTML = minutes;
+    document.getElementById("seconds").innerHTML = seconds;
+
+    // If the count down is over, write some text
+    if (distance < 0) {
+    clearInterval(x);
+    document.getElementById("days").innerHTML = "EXPIRED";
+    }
+    }, 1000);
+</code></pre>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+                </div>
+            </div><!-- / End Modal -->
+
+
+            <hr />
+
+                    <h3>Countdown default</h3>
+                    <div class="row section-default countdown">
+                        <div class="col-sm-3 text-center p-b-md p-l-0 p-r-0">
+                            <span class="countdown-text">days<br></span>
+                            <span id="days1"></span>
+                        </div>
+                        <div class="col-sm-3 text-center p-b-md p-l-0 p-r-0">
+                            <span class="countdown-text">hrs<br></span>
+                            <span id="hours1"></span>
+                        </div>
+                        <div class="col-sm-3 text-center p-b-md p-l-0 p-r-0">
+                            <span class="countdown-text">min<br></span>
+                            <span id="minutes1"></span>
+                        </div>
+                        <div class="col-sm-3 text-center p-b-md p-l-0 p-r-0">
+                            <span class="countdown-text">sec<br></span>
+                            <span id="seconds1"></span>
+                        </div>
+                    </div>
+
+
+
+
+           
+
+            <!-- Trigger the modal with a button -->
+            <button type="button" class="btn btn-default btn-sm m-t-md" data-toggle="modal" data-target="#countdown2">Show Source Code</button>
+            <!-- Modal -->
+            <div class="modal fade" id="countdown2" role="dialog">
+                <div class="modal-dialog modal-lg">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h4 class="modal-title">HTML Markup</h4>
+                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        </div>
+                        <div class="modal-body">
+                            <label for="sample-counter-circles">Source Code:</label>
+
+                            <div class="tab-group">
+                                <span class="ca-gov-icon-favorite"></span>
+                                <!-- Nav tabs - NOTE: UNIQUE ID IS REQUIRED -->
+                                <ul class="nav nav-tabs responsive" role="tablist" id="default">
+                                    <li class="nav-item" role="tab"><a href="#html2" data-toggle="tab" class="nav-link active">HTML</a></li>
+                                    <li class="nav-item" role="tab"><a href="#scirpt2" data-toggle="tab" class="nav-link">Script</a></li>
+                                   
+                                </ul>
+                                <!-- Tab panes -->
+                                <div class="tab-content responsive">
+<div class="tab-pane active" id="html2" role="tabpanel">
+    <pre><code class="overflow-auto">
+    <div class="row section-default countdown">
+    <div class="col-sm-3 text-center p-b-md p-l-0 p-r-0">
+    <span class="countdown-text">days<br></span>
+    <span id="days1"></span>
+            </div>
+    <div class="col-sm-3 text-center p-b-md p-l-0 p-r-0">
+    <span class="countdown-text">hrs<br></span>
+    <span id="hours1"></span>
+            </div>
+    <div class="col-sm-3 text-center p-b-md p-l-0 p-r-0">
+    <span class="countdown-text">min<br></span>
+    <span id="minutes1"></span>
+            </div>
+    <div class="col-sm-3 text-center p-b-md p-l-0 p-r-0">
+    <span class="countdown-text">sec<br></span>
+    <span id="seconds1"></span>
+            </div>
+        </div>
+    </code></pre>
+                                    </div>
+<div class="tab-pane" id="scirpt2" role="tabpanel">
+<pre><code class="overflow-auto">
+// Set the date we're counting down to
+var countDownDate = new Date("Apr 1, 2020 00:00:00").getTime();
+
+// Update the count down every 1 second
+var x = setInterval(function() {
+
+// Get todays date and time
+var now = new Date().getTime();
+
+// Find the distance between now an the count down date
+var distance = countDownDate - now;
+
+// Time calculations for days, hours, minutes and seconds
+var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+// Output the result in the elements with id="days1", id="hours1" etc.
+document.getElementById("days1").innerHTML = days;
+document.getElementById("hours1").innerHTML = hours;
+document.getElementById("minutes1").innerHTML = minutes;
+document.getElementById("seconds1").innerHTML = seconds;
+
+// If the count down is over, write some text
+if (distance < 0) {
+    clearInterval(x);
+    document.getElementById("days1").innerHTML = "EXPIRED";
+    }
+}, 1000);
+</code></pre>
+</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+                </div>
+            </div><!-- / End Modal -->
+
+        </main>
+    </div>
+  </div>
+
+  <!--#include virtual="/ssi/global-footer.html" -->
+
+  <!--#include virtual="/ssi/scripts.html" -->
+
+<script>
+    // Set the date we're counting down to
+    var countDownDate = new Date("Apr 1, 2020 00:00:00").getTime();
+
+    // Update the count down every 1 second
+    var x = setInterval(function () {
+
+        // Get todays date and time
+        var now = new Date().getTime();
+
+        // Find the distance between now an the count down date
+        var distance = countDownDate - now;
+
+        // Time calculations for days, hours, minutes and seconds
+        var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+        // Output the result in the elements with id="days", id="hours" etc.
+
+
+        document.getElementById("days").innerHTML = days;
+        document.getElementById("hours").innerHTML = hours;
+        document.getElementById("minutes").innerHTML = minutes;
+        document.getElementById("seconds").innerHTML = seconds;
+
+
+        document.getElementById("days1").innerHTML = days;
+        document.getElementById("hours1").innerHTML = hours;
+        document.getElementById("minutes1").innerHTML = minutes;
+        document.getElementById("seconds1").innerHTML = seconds;
+        // If the count down is over, write some text
+        if (distance < 0) {
+            clearInterval(x);
+            document.getElementById("days").innerHTML = "EXPIRED";
+        }
+    }, 1000);
+</script>
+
+
+
+</body>
+
+</html>

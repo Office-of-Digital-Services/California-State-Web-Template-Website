@@ -3,6 +3,7 @@
    NAVIGATION MENU - /source/js/cagov/navigation.js
 ----------------------------------------- */
 
+
 $(document).ready(function () {
     // detect partial flexbox support in IE>9
     if ($('.top-level-nav').css('display') == 'table') { $('body').addClass('no-flex') }
@@ -65,17 +66,14 @@ $(document).ready(function () {
 
 
         if (isTouch) {
-            // hide submenus when touch occurs outside of menu
-            $(document).on('touchstart.ca.catchNav', function (e) {
-                touchMode = false;
-            }, false);
+            
 
             $navItemsWithSubs.each(function () {
                 var $this = $(this),
-                  $a = $this.find('.first-level-link'),
-                  node = $a[0],
-                  $sub = $this.find('.sub-nav'),
-                  $subLinks = $sub.find('a');
+                $a = $this.find('.first-level-link'),
+                node = $a[0],
+                $sub = $this.find('.sub-nav'),
+                $subLinks = $sub.find('a');
                 $a.data('link', $a.attr('href')).removeAttr; // store url
 
                 $this.on('touchstart.ca.propagation', function (e) {
@@ -91,22 +89,14 @@ $(document).ready(function () {
                         // keeps tabpanel from closing when clicking inside of it
                         e.preventDefault();
                         e.stopPropagation();
-
-                        // position arrow, fade in current panel
-                    
-                        $sub.fadeIn(1000);
+                        
                     }
                 }, false);
             });
         }
 
     } else if ((megamenu || dropdown) && msTouch) { 		// setup standard megamenu or dropdown menu and touch supporting 'pointerevents'
-        // hide submenus when touch/click occurs outside of menu
-        $(document).on('click.ca.catchNav', function (e) {
-            if (!$navigation.is(e.target) && $navigation.has(e.target).length === 0) {
-
-            }
-        });
+        
 
         $navItemsWithSubs.each(function () {
             var $this = $(this),
@@ -130,8 +120,9 @@ $(document).ready(function () {
                     e.stopPropagation();
 
                     // position arrow, hide other sub-nav panels, fade in current panel
-                    
-                    $sub.fadeIn(1000);
+
+                    // hideSubNavs();
+                    // $sub.fadeIn(1000);
                 }
             });
         });
@@ -200,7 +191,9 @@ $(document).ready(function () {
                 $(this).find(".rotate").removeClass('down');
                 $(secondaryLinks).slideUpTransitionSub();
             }
+
         });
+
     }
     else {
         // click event for desktop
@@ -217,7 +210,9 @@ $(document).ready(function () {
             }
 
         });
+
     }
+
 
         $(".rotate1").on("click", function () {
             $(this).toggleClass("down");
@@ -348,6 +343,8 @@ $(document).ready(function () {
                 });
             };
         })(jQuery);
+
+
 
 /*  ACCESSIBLE MENU */
 // source https://github.com/adobe-accessibility/Accessible-Mega-Menu/
@@ -967,7 +964,7 @@ $(document).ready(function () {
         _mouseOverHandler = function (event) {
             clearTimeout(this.mouseTimeoutID);
             var that = this;
-            if ($(window).width() > 768) {
+            if (window.innerWidth > 768) {
                 this.mouseTimeoutID = setTimeout(function () {
                     $(event.target).addClass(that.settings.hoverClass);
 
@@ -1212,52 +1209,58 @@ $(document).ready(function () {
     });
 
 
-    // Do Navigation Reset function on window resize unless it's mobile device.
+
+
+    
+
+    // Do Navigation Reset function on window resize uless it's mobile device.
     $(window).on('resize', function () {
-        if (navigator.userAgent.match(/Android/i)
-            || navigator.userAgent.match(/webOS/i)
-            || navigator.userAgent.match(/iPhone/i)
-            || navigator.userAgent.match(/iPad/i)
-            || navigator.userAgent.match(/iPod/i)
-            || navigator.userAgent.match(/BlackBerry/i)
-            || navigator.userAgent.match(/Windows Phone/i)
-        ) {
-            return false;
-        }
-        else {
-            NavReset();
-        }
+            if (navigator.userAgent.match(/Android/i)
+                || navigator.userAgent.match(/webOS/i)
+                || navigator.userAgent.match(/iPhone/i)
+                || navigator.userAgent.match(/iPad/i)
+                || navigator.userAgent.match(/iPod/i)
+                || navigator.userAgent.match(/BlackBerry/i)
+                || navigator.userAgent.match(/Windows Phone/i)
+            ) {
+                return false;
+            }
+            else {
+                NavReset();
+            }
     });
 
     // Navigation Reset function
-    function NavReset() {
-        $(".sub-nav").removeClass("open");
-        $(".sub-nav").removeClass("secondary-open");
-        $(".sub-nav").attr("aria-expanded", false);
-        $(".sub-nav").attr("aria-hidden", true);
-        $(".first-level-link").removeClass("open");
-        $(".first-level-link").removeClass("active");
-        $(".first-level-link").attr("aria-expanded", false);
-        $("#navigation").addClass("mobile-closed");
-        if ($(window).width() < 768) {
-            $("#navigation").css("max-height", "0");
-            $('.sub-nav').slideUpTransitionSub();
-            $('#navigation').slideUpTransition();
-            // 
-            $(".rotate").removeClass('down');
-        }
-        else {
-            $("#navigation").removeAttr("style");
-            $(".sub-nav").removeAttr("style");
-        }
+       function NavReset() {
+            $(".sub-nav").removeClass("open");
+            $(".sub-nav").removeClass("secondary-open");
+            $(".sub-nav").attr("aria-expanded", false);
+            $(".sub-nav").attr("aria-hidden", true);
+            $(".first-level-link").removeClass("open");
+            $(".first-level-link").removeClass("active");
+            $(".first-level-link").attr("aria-expanded", false);
+            $("#navigation").addClass("mobile-closed");
+            if (window.innerWidth < 768) {
+                $("#navigation").css("max-height", "0");
+                $('.sub-nav').slideUpTransitionSub();
+                $('#navigation').slideUpTransition();
+                // 
+                $(".rotate").removeClass('down');
+            }
+            else {
+                $("#navigation").removeAttr("style");
+                $(".sub-nav").removeAttr("style");
+            }
 
-        $(".toggle-sub-nav").removeClass("open");
-        $(".toggle-sub-nav").addClass("closed");
-        $(".nav-item").removeClass("active");
-        $(".toggle-menu").attr('aria-expanded', 'false');
-        $(".toggle-menu").removeClass("open");
-        $(".toggle-sub-nav").removeClass("open");
-    };
+            $(".toggle-sub-nav").removeClass("open");
+            $(".toggle-sub-nav").addClass("closed");
+            $(".nav-item").removeClass("active");
+            $(".toggle-menu").attr('aria-expanded', 'false');
+            $(".toggle-menu").removeClass("open");
+            $(".toggle-sub-nav").removeClass("open");
+        };
+   
+
 
 }(jQuery, window, document));
 
@@ -1282,3 +1285,5 @@ $("nav:first").accessibleMenu({
     /* css class for the open state */
     openClass: "open"
 });
+
+

@@ -5,9 +5,8 @@
 <!--[if IE 9]>    <html class="no-js ie9 oldie" lang="en"> <![endif]-->
 <!--[if (gt IE 9)]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
 <head>
-<!-- 
-California State Template
-Version 5.0
+<!--        California State Template
+        Version 5.5.0
  
 Based on Twitter Bootstrap
 -->
@@ -69,27 +68,29 @@ Based on Twitter Bootstrap
                 <li><a href="index.html">Examples</a></li>
                 <li class="active">Large Header Banner</li>
             </ol>
-            
-<h1>Large  Hero Banner</h1>
+
+            <h1>Large  Hero Banner</h1>
             <p>The large header banner is a full screen hero banner that will dynamically calculate the height of the window and fill it with the chosen image. To use this banner type add  <code>/ssi/header-large-banner.html</code> using the SSI include method right below the header of the desired page.</p>
             <p><span class="label label-info">Note:</span> To have the banner dissapear in a mobile viewport add the <code>.primary</code> class to the <code>&lt;body&gt;</code> element of the page otherwise the banner will remain in all screen sizes.</p>
 <pre>
 &lt;/header&gt; <br>&lt;!-- Include Page Template --&gt;
  &lt;!--#include virtual=&quot;/ssi/<strong>header-large-banner.html</strong>&quot; --&gt;
-</pre> 
+</pre>
 
-			<p>To change the background image edit the <strong>header-large-banner.html</strong> include file located in the <strong>ssi </strong>directory. The image is set by changing the <code>background</code> property in the style attribute for <code>&lt;div class="header-large-banner" style="background-image: url('<strong>/sample/images/background_2.jpg</strong>');"&gt;</code>. The recommended dimensions of the banner images are 1500 by 500 pixels. </p>
-            
+            <p>To change the background image edit the <strong>header-large-banner.html</strong> include file located in the <strong>ssi </strong>directory. The image is set by changing the <code>background</code> property in the style attribute for <code>&lt;div class="header-large-banner" style="background-image: url('<strong>/sample/images/background_2.jpg</strong>');"&gt;</code>. The recommended dimensions of the banner images are 1500 by 500 pixels. </p>
+
             <h2>Demonstration </h2>
-            <p>Toggle the buttons to add or remove the large hero banner.</p>            
-            <button class="toggleBanner btn btn-secondary m-r-sm m-b-sm"> Remove Large Banner													</button>  
-        	<a href="page-templates.html"><button class="btn btn-secondary m-r-sm m-b-sm">Back to Page Templates</button></a>    
-            
+            <p>Toggle the buttons to add or remove the large hero banner.</p>
+            <button class="toggleBanner btn btn-secondary m-r-sm m-b-sm"> Remove Large Banner													</button>
+            <a href="page-templates.html"><button class="btn btn-secondary m-r-sm m-b-sm">Back to Page Templates</button></a>
+
             <h2>Source Code:</h2>
-            <textarea id="sample-header-slideshow-banner" class="form-control" rows="10" cols="80"><!--#include virtual="/ssi/header-large-banner.html" --></textarea>
+            <pre><code class="overflow-auto"><!--#include virtual="/ssi/header-large-banner.html" --></code></pre>
             <br />
-                    
-       </main>
+
+
+
+        </main>
     </div>
 </div>
 

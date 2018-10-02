@@ -115,6 +115,10 @@ h1 span[class^="ca-gov-icon-"]:first-child {
     background: #fff;
 }
 
+.toggle-menu span {
+    background-color: #153554 !important;
+}
+
 .mobile-control {
     color: #153554;
 }
@@ -134,11 +138,25 @@ h1 span[class^="ca-gov-icon-"]:first-child {
             background-color: #f9fbfd;
         }
 
-.nav-item.active > a, .nav-item:hover > a {
+.nav-item.active > a {
     color: #153554;
 }
 
-    .nav-item.active > a > span[class^="ca-gov-icon"], .nav-item:hover > a > span[class^="ca-gov-icon"] {
+    .nav-item.active > a > span[class^="ca-gov-icon"] {
+        color: #153554;
+    }
+
+@media (min-width: 768px) {
+    .nav-item:hover, .nav-item:focus {
+        background-color: #f9fbfd;
+    }
+}
+
+.nav-item:hover > a, .nav-item:focus > a {
+    color: #153554;
+}
+
+    .nav-item:hover > a > span[class^="ca-gov-icon"], .nav-item:focus > a > span[class^="ca-gov-icon"] {
         color: #153554;
     }
 
@@ -171,8 +189,8 @@ h1 span[class^="ca-gov-icon-"]:first-child {
 
 .second-level-nav > li {
     border: 1px solid transparent;
-    border-right: 1px solid #d6d6d6;
-    border-bottom: 1px solid #d6d6d6;
+    border-right: 4px solid #fff;
+    border-bottom: 4px solid #fff;
 }
 
     .second-level-nav > li:hover, .second-level-nav > li:focus {
@@ -195,9 +213,6 @@ h1 span[class^="ca-gov-icon-"]:first-child {
 }
 
 .sub-nav {
-    border-bottom: 5px solid #153554;
-    border-left: 1px solid #d6d6d6;
-    border-right: 1px solid #d6d6d6;
     background: #f9fbfd;
 }
 
@@ -217,12 +232,12 @@ h1 span[class^="ca-gov-icon-"]:first-child {
     }
 
     .nav-media .media {
-        border-bottom: 1px solid #d6d6d6;
+        border-bottom: 4px solid #fff;
     }
 
 @media (max-width: 767px) {
     .nav-media .media {
-        border-bottom: 1px solid #E1ECF7;
+        border-bottom: 4px solid #fff;
     }
 
         .nav-media .media:hover, .nav-media .media:focus {
@@ -238,6 +253,18 @@ h1 span[class^="ca-gov-icon-"]:first-child {
     .nav-item:hover::after, .nav-item:focus::after {
         background-color: #153554;
     }
+    /*full width navigation*/
+    .nav-full-width {
+        background: #153554;
+    }
+
+        .nav-full-width .main-navigation .nav-item:hover, .nav-full-width .main-navigation .nav-item:focus, .nav-full-width .main-navigation .nav-item.active:hover {
+            background-color: #0d2033;
+        }
+
+        .nav-full-width .main-navigation .nav-item.active {
+            background-color: #102840;
+        }
 }
 
 /* -----------------------------------------
@@ -265,20 +292,14 @@ h1 span[class^="ca-gov-icon-"]:first-child {
     background: #d6d6d6;
 }
 
-@media (min-width: 768px) {
-    .search-container.active {
-        border-bottom: 2px solid #d6d6d6;
+    .search-container.active .submit-container button {
+        border-color: #bdbdbd;
+        background: #555555;
     }
-}
 
-.search-container.active .submit-container button {
-    border-color: #bdbdbd;
-    background: #555555;
-}
-
-.search-container.active .search-textfield {
-    border-color: #bdbdbd;
-}
+    .search-container.active .search-textfield {
+        border-color: #bdbdbd;
+    }
 
 .search-container.featured-search {
     background: none;
@@ -289,305 +310,8 @@ h1 span[class^="ca-gov-icon-"]:first-child {
     }
 
     .search-container.featured-search.active {
-        background: #d6d6d6;
-    }
-
-/* -----------------------------------------
-   PANELS
-   /source/scss/colorscheme/cs-panels.scss
------------------------------------------ */
-/* Default Panels */
-.panel-default {
-    border-color: #ddd;
-}
-
-    .panel-default > .panel-heading {
-        color: #333333;
-        background-color: #f5f5f5;
-        border-color: #ddd;
-    }
-
-        .panel-default > .panel-heading + .panel-collapse > .panel-body {
-            border-top-color: #ddd;
-        }
-
-        .panel-default > .panel-heading .badge {
-            color: #f5f5f5;
-            background-color: #333333;
-        }
-
-    .panel-default > .panel-footer + .panel-collapse > .panel-body {
-        border-bottom-color: #ddd;
-    }
-
-    .panel-default .panel-heading h2 span[class^="ca-gov-icon-"], .panel-default .panel-heading h3 span[class^="ca-gov-icon-"], .panel-default .panel-heading h4 span[class^="ca-gov-icon-"], .panel-default .panel-heading h5 span[class^="ca-gov-icon-"] {
-        color: #153554;
-    }
-
-    .panel-default .panel-heading .options .btn-default {
-        color: #212529;
-        background-color: #fcfcfc;
-        border-color: #ddd;
-    }
-
-        .panel-default .panel-heading .options .btn-default:hover {
-            color: #212529;
-            background-color: #e9e9e9;
-            border-color: #c4c4c4;
-        }
-
-        .panel-default .panel-heading .options .btn-default:focus, .panel-default .panel-heading .options .btn-default.focus {
-            box-shadow: 0 0 0 0.2rem rgba(221, 221, 221, 0.5);
-        }
-
-        .panel-default .panel-heading .options .btn-default.disabled, .panel-default .panel-heading .options .btn-default:disabled {
-            color: #212529;
-            background-color: #fcfcfc;
-            border-color: #ddd;
-        }
-
-        .panel-default .panel-heading .options .btn-default:not(:disabled):not(.disabled):active, .panel-default .panel-heading .options .btn-default:not(:disabled):not(.disabled).active,
-        .show > .panel-default .panel-heading .options .btn-default.dropdown-toggle {
-            color: #212529;
-            background-color: #e3e3e3;
-            border-color: #bdbdbd;
-        }
-
-            .panel-default .panel-heading .options .btn-default:not(:disabled):not(.disabled):active:focus, .panel-default .panel-heading .options .btn-default:not(:disabled):not(.disabled).active:focus,
-            .show > .panel-default .panel-heading .options .btn-default.dropdown-toggle:focus {
-                box-shadow: 0 0 0 0.2rem rgba(221, 221, 221, 0.5);
-            }
-
-    .panel-default .panel-body {
-        background: #fff;
-        color: #333333;
-    }
-
-/* Overstated Panels */
-.panel-overstated {
-    border-color: #ddd;
-}
-
-    .panel-overstated > .panel-heading {
-        color: #fff;
-        background-color: #153554;
-        border-color: #0b1b2b;
-    }
-
-        .panel-overstated > .panel-heading + .panel-collapse > .panel-body {
-            border-top-color: #ddd;
-        }
-
-        .panel-overstated > .panel-heading .badge {
-            color: #153554;
-            background-color: #fff;
-        }
-
-    .panel-overstated > .panel-footer + .panel-collapse > .panel-body {
-        border-bottom-color: #ddd;
-    }
-
-    .panel-overstated .panel-heading {
-        border-bottom-width: 5px;
-        border-bottom-style: solid;
-    }
-
-        .panel-overstated .panel-heading h2 span[class^="ca-gov-icon-"], .panel-overstated .panel-heading h3 span[class^="ca-gov-icon-"], .panel-overstated .panel-heading h4 span[class^="ca-gov-icon-"], .panel-overstated .panel-heading h5 span[class^="ca-gov-icon-"] {
-            color: #fff;
-        }
-
-        .panel-overstated .panel-heading .options .btn-default {
-            color: #fff;
-            background-color: #0d2033;
-            border-color: #0b1b2b;
-        }
-
-            .panel-overstated .panel-heading .options .btn-default:hover {
-                color: #fff;
-                background-color: #050d15;
-                border-color: #010202;
-            }
-
-            .panel-overstated .panel-heading .options .btn-default:focus, .panel-overstated .panel-heading .options .btn-default.focus {
-                box-shadow: 0 0 0 0.2rem rgba(11, 27, 43, 0.5);
-            }
-
-            .panel-overstated .panel-heading .options .btn-default.disabled, .panel-overstated .panel-heading .options .btn-default:disabled {
-                color: #fff;
-                background-color: #0d2033;
-                border-color: #0b1b2b;
-            }
-
-            .panel-overstated .panel-heading .options .btn-default:not(:disabled):not(.disabled):active, .panel-overstated .panel-heading .options .btn-default:not(:disabled):not(.disabled).active,
-            .show > .panel-overstated .panel-heading .options .btn-default.dropdown-toggle {
-                color: #fff;
-                background-color: #03070b;
-                border-color: black;
-            }
-
-                .panel-overstated .panel-heading .options .btn-default:not(:disabled):not(.disabled):active:focus, .panel-overstated .panel-heading .options .btn-default:not(:disabled):not(.disabled).active:focus,
-                .show > .panel-overstated .panel-heading .options .btn-default.dropdown-toggle:focus {
-                    box-shadow: 0 0 0 0.2rem rgba(11, 27, 43, 0.5);
-                }
-
-    .panel-overstated .panel-body {
-        background: #fff;
-        color: #333333;
-    }
-
-/* Uderstated Panels */
-.panel-understated {
-    border-color: #ddd;
-}
-
-    .panel-understated > .panel-heading {
-        color: #333333;
-        background-color: #E1ECF7;
-        border-color: #ddd;
-    }
-
-        .panel-understated > .panel-heading + .panel-collapse > .panel-body {
-            border-top-color: #ddd;
-        }
-
-        .panel-understated > .panel-heading .badge {
-            color: #E1ECF7;
-            background-color: #333333;
-        }
-
-    .panel-understated > .panel-footer + .panel-collapse > .panel-body {
-        border-bottom-color: #ddd;
-    }
-
-    .panel-understated .panel-heading {
-        border-bottom-width: 2px;
-        border-bottom-style: dotted;
-    }
-
-        .panel-understated .panel-heading h2 span[class^="ca-gov-icon-"], .panel-understated .panel-heading h3 span[class^="ca-gov-icon-"], .panel-understated .panel-heading h4 span[class^="ca-gov-icon-"], .panel-understated .panel-heading h5 span[class^="ca-gov-icon-"] {
-            color: #153554;
-        }
-
-        .panel-understated .panel-heading .options .btn-default {
-            color: #212529;
-            background-color: #c1d8ee;
-            border-color: #ddd;
-        }
-
-            .panel-understated .panel-heading .options .btn-default:hover {
-                color: #212529;
-                background-color: #a3c4e6;
-                border-color: #c4c4c4;
-            }
-
-            .panel-understated .panel-heading .options .btn-default:focus, .panel-understated .panel-heading .options .btn-default.focus {
-                box-shadow: 0 0 0 0.2rem rgba(221, 221, 221, 0.5);
-            }
-
-            .panel-understated .panel-heading .options .btn-default.disabled, .panel-understated .panel-heading .options .btn-default:disabled {
-                color: #212529;
-                background-color: #c1d8ee;
-                border-color: #ddd;
-            }
-
-            .panel-understated .panel-heading .options .btn-default:not(:disabled):not(.disabled):active, .panel-understated .panel-heading .options .btn-default:not(:disabled):not(.disabled).active,
-            .show > .panel-understated .panel-heading .options .btn-default.dropdown-toggle {
-                color: #212529;
-                background-color: #99bee4;
-                border-color: #bdbdbd;
-            }
-
-                .panel-understated .panel-heading .options .btn-default:not(:disabled):not(.disabled):active:focus, .panel-understated .panel-heading .options .btn-default:not(:disabled):not(.disabled).active:focus,
-                .show > .panel-understated .panel-heading .options .btn-default.dropdown-toggle:focus {
-                    box-shadow: 0 0 0 0.2rem rgba(221, 221, 221, 0.5);
-                }
-
-    .panel-understated .panel-body {
-        background: #fff;
-        color: #333333;
-    }
-
-/* Standout Panels */
-.panel-standout {
-    border-color: #ddd;
-}
-
-    .panel-standout > .panel-heading {
-        color: #fff;
-        background-color: #730000;
-        border-color: #7bb0da;
-    }
-
-        .panel-standout > .panel-heading + .panel-collapse > .panel-body {
-            border-top-color: #ddd;
-        }
-
-        .panel-standout > .panel-heading .badge {
-            color: #730000;
-            background-color: #fff;
-        }
-
-    .panel-standout > .panel-footer + .panel-collapse > .panel-body {
-        border-bottom-color: #ddd;
-    }
-
-    .panel-standout .panel-heading {
-        border-bottom-width: 5px;
-        border-bottom-style: solid;
-    }
-
-        .panel-standout .panel-heading h2 span[class^="ca-gov-icon-"], .panel-standout .panel-heading h3 span[class^="ca-gov-icon-"], .panel-standout .panel-heading h4 span[class^="ca-gov-icon-"], .panel-standout .panel-heading h5 span[class^="ca-gov-icon-"] {
-            color: #7bb0da;
-        }
-
-        .panel-standout .panel-heading .options .btn-default {
-            color: #fff;
-            background-color: #4a0000;
-            border-color: #5a0000;
-        }
-
-            .panel-standout .panel-heading .options .btn-default:hover {
-                color: #fff;
-                background-color: #240000;
-                border-color: #270000;
-            }
-
-            .panel-standout .panel-heading .options .btn-default:focus, .panel-standout .panel-heading .options .btn-default.focus {
-                box-shadow: 0 0 0 0.2rem rgba(90, 0, 0, 0.5);
-            }
-
-            .panel-standout .panel-heading .options .btn-default.disabled, .panel-standout .panel-heading .options .btn-default:disabled {
-                color: #fff;
-                background-color: #4a0000;
-                border-color: #5a0000;
-            }
-
-            .panel-standout .panel-heading .options .btn-default:not(:disabled):not(.disabled):active, .panel-standout .panel-heading .options .btn-default:not(:disabled):not(.disabled).active,
-            .show > .panel-standout .panel-heading .options .btn-default.dropdown-toggle {
-                color: #fff;
-                background-color: #170000;
-                border-color: #1a0000;
-            }
-
-                .panel-standout .panel-heading .options .btn-default:not(:disabled):not(.disabled):active:focus, .panel-standout .panel-heading .options .btn-default:not(:disabled):not(.disabled).active:focus,
-                .show > .panel-standout .panel-heading .options .btn-default.dropdown-toggle:focus {
-                    box-shadow: 0 0 0 0.2rem rgba(90, 0, 0, 0.5);
-                }
-
-    .panel-standout .panel-body {
-        background: #fff;
-        color: #333333;
-    }
-
-    /* Adds triangle to panel */
-    .panel-standout.highlight .panel-heading .triangle {
-        content: '';
-        display: block;
-        width: 0;
-        height: 0;
-        border-left: 12px solid transparent;
-        border-right: 12px solid transparent;
-        border-top: 12px solid #7bb0da;
+        background: #222222;
+        opacity: 0.9;
     }
 
 /* -----------------------------------------
@@ -1448,22 +1172,6 @@ figure {
    CARDS
    /source/scss/colorscheme/cs-cards.scss
 ----------------------------------------- */
-.card-default {
-    background-color: white;
-    border-color: #d6d6d6;
-    color: #000000;
-}
-
-    .card-default .card-header {
-        border-bottom: 1px solid #d6d6d6;
-        background-color: #f2f2f2;
-    }
-
-    .card-default .card-footer {
-        border-top: 1px solid #d6d6d6;
-        background-color: #f2f2f2;
-    }
-
 .card-primary {
     background-color: #046B99;
     border-color: #046B99;
@@ -1471,7 +1179,7 @@ figure {
 }
 
     .card-primary a:not(.btn) {
-        color: gray-lightest;
+        color: whitesmoke;
         text-decoration: none;
         -webkit-transition: all 0.25s;
         transition: all 0.25s;
@@ -1496,90 +1204,6 @@ figure {
     .card-primary .card-footer {
         border-top: 1px solid #046B99;
         background-color: #035a80;
-    }
-
-.card-understated {
-    background-color: #E1ECF7;
-    border-color: #cddff2;
-    color: #000000;
-}
-
-    .card-understated .card-header {
-        border-bottom: 1px solid #cddff2;
-        background-color: #cddff2;
-    }
-
-    .card-understated .card-footer {
-        border-top: 1px solid #cddff2;
-        background-color: #cddff2;
-    }
-
-.card-overstated {
-    background-color: #9bb8d3;
-    border-color: #7fa4c7;
-    color: #000000;
-}
-
-    .card-overstated a:not(.btn) {
-        color: #fff;
-        text-decoration: none;
-        -webkit-transition: all 0.25s;
-        transition: all 0.25s;
-    }
-
-        .card-overstated a:not(.btn):hover, .card-overstated a:not(.btn):focus {
-            color: #7bb0da;
-            text-decoration: underline;
-        }
-
-        .card-overstated a:not(.btn):focus {
-            outline: thin dotted;
-            outline: 5px auto -webkit-focus-ring-color;
-            outline-offset: -2px;
-        }
-
-    .card-overstated .card-header {
-        border-bottom: 1px solid #7fa4c7;
-        background-color: #89abcb;
-    }
-
-    .card-overstated .card-footer {
-        border-top: 1px solid #7fa4c7;
-        background-color: #89abcb;
-    }
-
-.card-standout {
-    background-color: #730000;
-    border-color: #4a0000;
-    color: #ffffff;
-}
-
-    .card-standout a:not(.btn) {
-        color: whitesmoke;
-        text-decoration: none;
-        -webkit-transition: all 0.25s;
-        transition: all 0.25s;
-    }
-
-        .card-standout a:not(.btn):hover, .card-standout a:not(.btn):focus {
-            color: #7bb0da;
-            text-decoration: underline;
-        }
-
-        .card-standout a:not(.btn):focus {
-            outline: thin dotted;
-            outline: 5px auto -webkit-focus-ring-color;
-            outline-offset: -2px;
-        }
-
-    .card-standout .card-header {
-        border-bottom: 1px solid #4a0000;
-        background-color: #5a0000;
-    }
-
-    .card-standout .card-footer {
-        border-top: 1px solid #4a0000;
-        background-color: #5a0000;
     }
 
 .card-inverted, .card-inverse {
@@ -1759,6 +1383,344 @@ figure {
 .card-inverse .card-footer, .card-inverted .card-footer {
     border-top: 1px solid rgba(255, 255, 255, 0.2);
 }
+
+/* -----------------------------------------
+   CARDS THAT USED TO BE PANELS IN BOOTSTRAP 3
+   leaving .panel class for backward compatibility
+----------------------------------------- */
+/* Default Cards */
+.panel-default, .card-default {
+    border-color: #ddd;
+}
+
+    .panel-default > .panel-heading, .panel-default > .card-heading, .card-default > .panel-heading, .card-default > .card-heading {
+        color: #333333;
+        background-color: #f5f5f5;
+        border-color: #ddd;
+    }
+
+        .panel-default > .panel-heading + .panel-collapse > .panel-body, .panel-default > .panel-heading + .card-collapse > .card-body, .panel-default > .card-heading + .panel-collapse > .panel-body, .panel-default > .card-heading + .card-collapse > .card-body, .card-default > .panel-heading + .panel-collapse > .panel-body, .card-default > .panel-heading + .card-collapse > .card-body, .card-default > .card-heading + .panel-collapse > .panel-body, .card-default > .card-heading + .card-collapse > .card-body {
+            border-top-color: #ddd;
+        }
+
+        .panel-default > .panel-heading .badge, .panel-default > .card-heading .badge, .card-default > .panel-heading .badge, .card-default > .card-heading .badge {
+            color: #f5f5f5;
+            background-color: #333333;
+        }
+
+    .panel-default > .panel-footer + .panel-collapse > .panel-body, .panel-default > .panel-footer + .card-collapse > .card-body, .panel-default > .card-footer + .panel-collapse > .panel-body, .panel-default > .card-footer + .card-collapse > .card-body, .card-default > .panel-footer + .panel-collapse > .panel-body, .card-default > .panel-footer + .card-collapse > .card-body, .card-default > .card-footer + .panel-collapse > .panel-body, .card-default > .card-footer + .card-collapse > .card-body {
+        border-bottom-color: #ddd;
+    }
+
+    .panel-default .panel-heading h2 span[class^="ca-gov-icon-"], .panel-default .panel-heading h3 span[class^="ca-gov-icon-"], .panel-default .panel-heading h4 span[class^="ca-gov-icon-"], .panel-default .panel-heading h5 span[class^="ca-gov-icon-"], .panel-default .card-heading h2 span[class^="ca-gov-icon-"], .panel-default .card-heading h3 span[class^="ca-gov-icon-"], .panel-default .card-heading h4 span[class^="ca-gov-icon-"], .panel-default .card-heading h5 span[class^="ca-gov-icon-"], .panel-default .card-header h2 span[class^="ca-gov-icon-"], .panel-default .card-header h3 span[class^="ca-gov-icon-"], .panel-default .card-header h4 span[class^="ca-gov-icon-"], .panel-default .card-header h5 span[class^="ca-gov-icon-"], .card-default .panel-heading h2 span[class^="ca-gov-icon-"], .card-default .panel-heading h3 span[class^="ca-gov-icon-"], .card-default .panel-heading h4 span[class^="ca-gov-icon-"], .card-default .panel-heading h5 span[class^="ca-gov-icon-"], .card-default .card-heading h2 span[class^="ca-gov-icon-"], .card-default .card-heading h3 span[class^="ca-gov-icon-"], .card-default .card-heading h4 span[class^="ca-gov-icon-"], .card-default .card-heading h5 span[class^="ca-gov-icon-"], .card-default .card-header h2 span[class^="ca-gov-icon-"], .card-default .card-header h3 span[class^="ca-gov-icon-"], .card-default .card-header h4 span[class^="ca-gov-icon-"], .card-default .card-header h5 span[class^="ca-gov-icon-"] {
+        color: #153554;
+    }
+
+    .panel-default .panel-heading .options .btn-default, .panel-default .card-heading .options .btn-default, .panel-default .card-header .options .btn-default, .card-default .panel-heading .options .btn-default, .card-default .card-heading .options .btn-default, .card-default .card-header .options .btn-default {
+        color: #212529;
+        background-color: #fcfcfc;
+        border-color: #ddd;
+    }
+
+        .panel-default .panel-heading .options .btn-default:hover, .panel-default .card-heading .options .btn-default:hover, .panel-default .card-header .options .btn-default:hover, .card-default .panel-heading .options .btn-default:hover, .card-default .card-heading .options .btn-default:hover, .card-default .card-header .options .btn-default:hover {
+            color: #212529;
+            background-color: #e9e9e9;
+            border-color: #c4c4c4;
+        }
+
+        .panel-default .panel-heading .options .btn-default:focus, .panel-default .panel-heading .options .btn-default.focus, .panel-default .card-heading .options .btn-default:focus, .panel-default .card-heading .options .btn-default.focus, .panel-default .card-header .options .btn-default:focus, .panel-default .card-header .options .btn-default.focus, .card-default .panel-heading .options .btn-default:focus, .card-default .panel-heading .options .btn-default.focus, .card-default .card-heading .options .btn-default:focus, .card-default .card-heading .options .btn-default.focus, .card-default .card-header .options .btn-default:focus, .card-default .card-header .options .btn-default.focus {
+            box-shadow: 0 0 0 0.2rem rgba(221, 221, 221, 0.5);
+        }
+
+        .panel-default .panel-heading .options .btn-default.disabled, .panel-default .panel-heading .options .btn-default:disabled, .panel-default .card-heading .options .btn-default.disabled, .panel-default .card-heading .options .btn-default:disabled, .panel-default .card-header .options .btn-default.disabled, .panel-default .card-header .options .btn-default:disabled, .card-default .panel-heading .options .btn-default.disabled, .card-default .panel-heading .options .btn-default:disabled, .card-default .card-heading .options .btn-default.disabled, .card-default .card-heading .options .btn-default:disabled, .card-default .card-header .options .btn-default.disabled, .card-default .card-header .options .btn-default:disabled {
+            color: #212529;
+            background-color: #fcfcfc;
+            border-color: #ddd;
+        }
+
+        .panel-default .panel-heading .options .btn-default:not(:disabled):not(.disabled):active, .panel-default .panel-heading .options .btn-default:not(:disabled):not(.disabled).active,
+        .show > .panel-default .panel-heading .options .btn-default.dropdown-toggle, .panel-default .card-heading .options .btn-default:not(:disabled):not(.disabled):active, .panel-default .card-heading .options .btn-default:not(:disabled):not(.disabled).active,
+        .show > .panel-default .card-heading .options .btn-default.dropdown-toggle, .panel-default .card-header .options .btn-default:not(:disabled):not(.disabled):active, .panel-default .card-header .options .btn-default:not(:disabled):not(.disabled).active,
+        .show > .panel-default .card-header .options .btn-default.dropdown-toggle, .card-default .panel-heading .options .btn-default:not(:disabled):not(.disabled):active, .card-default .panel-heading .options .btn-default:not(:disabled):not(.disabled).active,
+        .show > .card-default .panel-heading .options .btn-default.dropdown-toggle, .card-default .card-heading .options .btn-default:not(:disabled):not(.disabled):active, .card-default .card-heading .options .btn-default:not(:disabled):not(.disabled).active,
+        .show > .card-default .card-heading .options .btn-default.dropdown-toggle, .card-default .card-header .options .btn-default:not(:disabled):not(.disabled):active, .card-default .card-header .options .btn-default:not(:disabled):not(.disabled).active,
+        .show > .card-default .card-header .options .btn-default.dropdown-toggle {
+            color: #212529;
+            background-color: #e3e3e3;
+            border-color: #bdbdbd;
+        }
+
+            .panel-default .panel-heading .options .btn-default:not(:disabled):not(.disabled):active:focus, .panel-default .panel-heading .options .btn-default:not(:disabled):not(.disabled).active:focus,
+            .show > .panel-default .panel-heading .options .btn-default.dropdown-toggle:focus, .panel-default .card-heading .options .btn-default:not(:disabled):not(.disabled):active:focus, .panel-default .card-heading .options .btn-default:not(:disabled):not(.disabled).active:focus,
+            .show > .panel-default .card-heading .options .btn-default.dropdown-toggle:focus, .panel-default .card-header .options .btn-default:not(:disabled):not(.disabled):active:focus, .panel-default .card-header .options .btn-default:not(:disabled):not(.disabled).active:focus,
+            .show > .panel-default .card-header .options .btn-default.dropdown-toggle:focus, .card-default .panel-heading .options .btn-default:not(:disabled):not(.disabled):active:focus, .card-default .panel-heading .options .btn-default:not(:disabled):not(.disabled).active:focus,
+            .show > .card-default .panel-heading .options .btn-default.dropdown-toggle:focus, .card-default .card-heading .options .btn-default:not(:disabled):not(.disabled):active:focus, .card-default .card-heading .options .btn-default:not(:disabled):not(.disabled).active:focus,
+            .show > .card-default .card-heading .options .btn-default.dropdown-toggle:focus, .card-default .card-header .options .btn-default:not(:disabled):not(.disabled):active:focus, .card-default .card-header .options .btn-default:not(:disabled):not(.disabled).active:focus,
+            .show > .card-default .card-header .options .btn-default.dropdown-toggle:focus {
+                box-shadow: 0 0 0 0.2rem rgba(221, 221, 221, 0.5);
+            }
+
+    .panel-default .panel-body, .panel-default .card-body, .card-default .panel-body, .card-default .card-body {
+        background: #fff;
+        color: #333333;
+    }
+
+/* Overstated Cards */
+.panel-overstated, .card-overstated {
+    border-color: #ddd;
+}
+
+    .panel-overstated > .panel-heading, .panel-overstated > .card-heading, .card-overstated > .panel-heading, .card-overstated > .card-heading {
+        color: #fff;
+        background-color: #153554;
+        border-color: #153554;
+    }
+
+        .panel-overstated > .panel-heading + .panel-collapse > .panel-body, .panel-overstated > .panel-heading + .card-collapse > .card-body, .panel-overstated > .card-heading + .panel-collapse > .panel-body, .panel-overstated > .card-heading + .card-collapse > .card-body, .card-overstated > .panel-heading + .panel-collapse > .panel-body, .card-overstated > .panel-heading + .card-collapse > .card-body, .card-overstated > .card-heading + .panel-collapse > .panel-body, .card-overstated > .card-heading + .card-collapse > .card-body {
+            border-top-color: #ddd;
+        }
+
+        .panel-overstated > .panel-heading .badge, .panel-overstated > .card-heading .badge, .card-overstated > .panel-heading .badge, .card-overstated > .card-heading .badge {
+            color: #153554;
+            background-color: #fff;
+        }
+
+    .panel-overstated > .panel-footer + .panel-collapse > .panel-body, .panel-overstated > .panel-footer + .card-collapse > .card-body, .panel-overstated > .card-footer + .panel-collapse > .panel-body, .panel-overstated > .card-footer + .card-collapse > .card-body, .card-overstated > .panel-footer + .panel-collapse > .panel-body, .card-overstated > .panel-footer + .card-collapse > .card-body, .card-overstated > .card-footer + .panel-collapse > .panel-body, .card-overstated > .card-footer + .card-collapse > .card-body {
+        border-bottom-color: #ddd;
+    }
+
+    .panel-overstated .panel-heading, .panel-overstated .card-heading, .panel-overstated .card-header, .card-overstated .panel-heading, .card-overstated .card-heading, .card-overstated .card-header {
+        border-bottom-width: 5px;
+        border-bottom-style: solid;
+    }
+
+        .panel-overstated .panel-heading h2 span[class^="ca-gov-icon-"], .panel-overstated .panel-heading h3 span[class^="ca-gov-icon-"], .panel-overstated .panel-heading h4 span[class^="ca-gov-icon-"], .panel-overstated .panel-heading h5 span[class^="ca-gov-icon-"], .panel-overstated .card-heading h2 span[class^="ca-gov-icon-"], .panel-overstated .card-heading h3 span[class^="ca-gov-icon-"], .panel-overstated .card-heading h4 span[class^="ca-gov-icon-"], .panel-overstated .card-heading h5 span[class^="ca-gov-icon-"], .panel-overstated .card-header h2 span[class^="ca-gov-icon-"], .panel-overstated .card-header h3 span[class^="ca-gov-icon-"], .panel-overstated .card-header h4 span[class^="ca-gov-icon-"], .panel-overstated .card-header h5 span[class^="ca-gov-icon-"], .card-overstated .panel-heading h2 span[class^="ca-gov-icon-"], .card-overstated .panel-heading h3 span[class^="ca-gov-icon-"], .card-overstated .panel-heading h4 span[class^="ca-gov-icon-"], .card-overstated .panel-heading h5 span[class^="ca-gov-icon-"], .card-overstated .card-heading h2 span[class^="ca-gov-icon-"], .card-overstated .card-heading h3 span[class^="ca-gov-icon-"], .card-overstated .card-heading h4 span[class^="ca-gov-icon-"], .card-overstated .card-heading h5 span[class^="ca-gov-icon-"], .card-overstated .card-header h2 span[class^="ca-gov-icon-"], .card-overstated .card-header h3 span[class^="ca-gov-icon-"], .card-overstated .card-header h4 span[class^="ca-gov-icon-"], .card-overstated .card-header h5 span[class^="ca-gov-icon-"] {
+            color: #fff;
+        }
+
+        .panel-overstated .panel-heading .options .btn-default, .panel-overstated .card-heading .options .btn-default, .panel-overstated .card-header .options .btn-default, .card-overstated .panel-heading .options .btn-default, .card-overstated .card-heading .options .btn-default, .card-overstated .card-header .options .btn-default {
+            color: #fff;
+            background-color: #0d2033;
+            border-color: #153554;
+        }
+
+            .panel-overstated .panel-heading .options .btn-default:hover, .panel-overstated .card-heading .options .btn-default:hover, .panel-overstated .card-header .options .btn-default:hover, .card-overstated .panel-heading .options .btn-default:hover, .card-overstated .card-heading .options .btn-default:hover, .card-overstated .card-header .options .btn-default:hover {
+                color: #fff;
+                background-color: #050d15;
+                border-color: #0b1b2b;
+            }
+
+            .panel-overstated .panel-heading .options .btn-default:focus, .panel-overstated .panel-heading .options .btn-default.focus, .panel-overstated .card-heading .options .btn-default:focus, .panel-overstated .card-heading .options .btn-default.focus, .panel-overstated .card-header .options .btn-default:focus, .panel-overstated .card-header .options .btn-default.focus, .card-overstated .panel-heading .options .btn-default:focus, .card-overstated .panel-heading .options .btn-default.focus, .card-overstated .card-heading .options .btn-default:focus, .card-overstated .card-heading .options .btn-default.focus, .card-overstated .card-header .options .btn-default:focus, .card-overstated .card-header .options .btn-default.focus {
+                box-shadow: 0 0 0 0.2rem rgba(21, 53, 84, 0.5);
+            }
+
+            .panel-overstated .panel-heading .options .btn-default.disabled, .panel-overstated .panel-heading .options .btn-default:disabled, .panel-overstated .card-heading .options .btn-default.disabled, .panel-overstated .card-heading .options .btn-default:disabled, .panel-overstated .card-header .options .btn-default.disabled, .panel-overstated .card-header .options .btn-default:disabled, .card-overstated .panel-heading .options .btn-default.disabled, .card-overstated .panel-heading .options .btn-default:disabled, .card-overstated .card-heading .options .btn-default.disabled, .card-overstated .card-heading .options .btn-default:disabled, .card-overstated .card-header .options .btn-default.disabled, .card-overstated .card-header .options .btn-default:disabled {
+                color: #fff;
+                background-color: #0d2033;
+                border-color: #153554;
+            }
+
+            .panel-overstated .panel-heading .options .btn-default:not(:disabled):not(.disabled):active, .panel-overstated .panel-heading .options .btn-default:not(:disabled):not(.disabled).active,
+            .show > .panel-overstated .panel-heading .options .btn-default.dropdown-toggle, .panel-overstated .card-heading .options .btn-default:not(:disabled):not(.disabled):active, .panel-overstated .card-heading .options .btn-default:not(:disabled):not(.disabled).active,
+            .show > .panel-overstated .card-heading .options .btn-default.dropdown-toggle, .panel-overstated .card-header .options .btn-default:not(:disabled):not(.disabled):active, .panel-overstated .card-header .options .btn-default:not(:disabled):not(.disabled).active,
+            .show > .panel-overstated .card-header .options .btn-default.dropdown-toggle, .card-overstated .panel-heading .options .btn-default:not(:disabled):not(.disabled):active, .card-overstated .panel-heading .options .btn-default:not(:disabled):not(.disabled).active,
+            .show > .card-overstated .panel-heading .options .btn-default.dropdown-toggle, .card-overstated .card-heading .options .btn-default:not(:disabled):not(.disabled):active, .card-overstated .card-heading .options .btn-default:not(:disabled):not(.disabled).active,
+            .show > .card-overstated .card-heading .options .btn-default.dropdown-toggle, .card-overstated .card-header .options .btn-default:not(:disabled):not(.disabled):active, .card-overstated .card-header .options .btn-default:not(:disabled):not(.disabled).active,
+            .show > .card-overstated .card-header .options .btn-default.dropdown-toggle {
+                color: #fff;
+                background-color: #03070b;
+                border-color: #081521;
+            }
+
+                .panel-overstated .panel-heading .options .btn-default:not(:disabled):not(.disabled):active:focus, .panel-overstated .panel-heading .options .btn-default:not(:disabled):not(.disabled).active:focus,
+                .show > .panel-overstated .panel-heading .options .btn-default.dropdown-toggle:focus, .panel-overstated .card-heading .options .btn-default:not(:disabled):not(.disabled):active:focus, .panel-overstated .card-heading .options .btn-default:not(:disabled):not(.disabled).active:focus,
+                .show > .panel-overstated .card-heading .options .btn-default.dropdown-toggle:focus, .panel-overstated .card-header .options .btn-default:not(:disabled):not(.disabled):active:focus, .panel-overstated .card-header .options .btn-default:not(:disabled):not(.disabled).active:focus,
+                .show > .panel-overstated .card-header .options .btn-default.dropdown-toggle:focus, .card-overstated .panel-heading .options .btn-default:not(:disabled):not(.disabled):active:focus, .card-overstated .panel-heading .options .btn-default:not(:disabled):not(.disabled).active:focus,
+                .show > .card-overstated .panel-heading .options .btn-default.dropdown-toggle:focus, .card-overstated .card-heading .options .btn-default:not(:disabled):not(.disabled):active:focus, .card-overstated .card-heading .options .btn-default:not(:disabled):not(.disabled).active:focus,
+                .show > .card-overstated .card-heading .options .btn-default.dropdown-toggle:focus, .card-overstated .card-header .options .btn-default:not(:disabled):not(.disabled):active:focus, .card-overstated .card-header .options .btn-default:not(:disabled):not(.disabled).active:focus,
+                .show > .card-overstated .card-header .options .btn-default.dropdown-toggle:focus {
+                    box-shadow: 0 0 0 0.2rem rgba(21, 53, 84, 0.5);
+                }
+
+    .panel-overstated .panel-body, .panel-overstated .card-body, .card-overstated .panel-body, .card-overstated .card-body {
+        background: #fff;
+        color: #333333;
+    }
+
+/* Uderstated Cards */
+.panel-understated, .card-understated {
+    border-color: #ddd;
+}
+
+    .panel-understated > .panel-heading, .panel-understated > .card-heading, .card-understated > .panel-heading, .card-understated > .card-heading {
+        color: #333333;
+        background-color: #E1ECF7;
+        border-color: #E1ECF7;
+    }
+
+        .panel-understated > .panel-heading + .panel-collapse > .panel-body, .panel-understated > .panel-heading + .card-collapse > .card-body, .panel-understated > .card-heading + .panel-collapse > .panel-body, .panel-understated > .card-heading + .card-collapse > .card-body, .card-understated > .panel-heading + .panel-collapse > .panel-body, .card-understated > .panel-heading + .card-collapse > .card-body, .card-understated > .card-heading + .panel-collapse > .panel-body, .card-understated > .card-heading + .card-collapse > .card-body {
+            border-top-color: #ddd;
+        }
+
+        .panel-understated > .panel-heading .badge, .panel-understated > .card-heading .badge, .card-understated > .panel-heading .badge, .card-understated > .card-heading .badge {
+            color: #E1ECF7;
+            background-color: #333333;
+        }
+
+    .panel-understated > .panel-footer + .panel-collapse > .panel-body, .panel-understated > .panel-footer + .card-collapse > .card-body, .panel-understated > .card-footer + .panel-collapse > .panel-body, .panel-understated > .card-footer + .card-collapse > .card-body, .card-understated > .panel-footer + .panel-collapse > .panel-body, .card-understated > .panel-footer + .card-collapse > .card-body, .card-understated > .card-footer + .panel-collapse > .panel-body, .card-understated > .card-footer + .card-collapse > .card-body {
+        border-bottom-color: #ddd;
+    }
+
+    .panel-understated .panel-heading, .panel-understated .card-heading, .panel-understated .card-header, .card-understated .panel-heading, .card-understated .card-heading, .card-understated .card-header {
+        border-bottom-width: 2px;
+        border-bottom-style: solid;
+    }
+
+        .panel-understated .panel-heading h2 span[class^="ca-gov-icon-"], .panel-understated .panel-heading h3 span[class^="ca-gov-icon-"], .panel-understated .panel-heading h4 span[class^="ca-gov-icon-"], .panel-understated .panel-heading h5 span[class^="ca-gov-icon-"], .panel-understated .card-heading h2 span[class^="ca-gov-icon-"], .panel-understated .card-heading h3 span[class^="ca-gov-icon-"], .panel-understated .card-heading h4 span[class^="ca-gov-icon-"], .panel-understated .card-heading h5 span[class^="ca-gov-icon-"], .panel-understated .card-header h2 span[class^="ca-gov-icon-"], .panel-understated .card-header h3 span[class^="ca-gov-icon-"], .panel-understated .card-header h4 span[class^="ca-gov-icon-"], .panel-understated .card-header h5 span[class^="ca-gov-icon-"], .card-understated .panel-heading h2 span[class^="ca-gov-icon-"], .card-understated .panel-heading h3 span[class^="ca-gov-icon-"], .card-understated .panel-heading h4 span[class^="ca-gov-icon-"], .card-understated .panel-heading h5 span[class^="ca-gov-icon-"], .card-understated .card-heading h2 span[class^="ca-gov-icon-"], .card-understated .card-heading h3 span[class^="ca-gov-icon-"], .card-understated .card-heading h4 span[class^="ca-gov-icon-"], .card-understated .card-heading h5 span[class^="ca-gov-icon-"], .card-understated .card-header h2 span[class^="ca-gov-icon-"], .card-understated .card-header h3 span[class^="ca-gov-icon-"], .card-understated .card-header h4 span[class^="ca-gov-icon-"], .card-understated .card-header h5 span[class^="ca-gov-icon-"] {
+            color: #153554;
+        }
+
+        .panel-understated .panel-heading .options .btn-default, .panel-understated .card-heading .options .btn-default, .panel-understated .card-header .options .btn-default, .card-understated .panel-heading .options .btn-default, .card-understated .card-heading .options .btn-default, .card-understated .card-header .options .btn-default {
+            color: #212529;
+            background-color: #c1d8ee;
+            border-color: #ddd;
+        }
+
+            .panel-understated .panel-heading .options .btn-default:hover, .panel-understated .card-heading .options .btn-default:hover, .panel-understated .card-header .options .btn-default:hover, .card-understated .panel-heading .options .btn-default:hover, .card-understated .card-heading .options .btn-default:hover, .card-understated .card-header .options .btn-default:hover {
+                color: #212529;
+                background-color: #a3c4e6;
+                border-color: #c4c4c4;
+            }
+
+            .panel-understated .panel-heading .options .btn-default:focus, .panel-understated .panel-heading .options .btn-default.focus, .panel-understated .card-heading .options .btn-default:focus, .panel-understated .card-heading .options .btn-default.focus, .panel-understated .card-header .options .btn-default:focus, .panel-understated .card-header .options .btn-default.focus, .card-understated .panel-heading .options .btn-default:focus, .card-understated .panel-heading .options .btn-default.focus, .card-understated .card-heading .options .btn-default:focus, .card-understated .card-heading .options .btn-default.focus, .card-understated .card-header .options .btn-default:focus, .card-understated .card-header .options .btn-default.focus {
+                box-shadow: 0 0 0 0.2rem rgba(221, 221, 221, 0.5);
+            }
+
+            .panel-understated .panel-heading .options .btn-default.disabled, .panel-understated .panel-heading .options .btn-default:disabled, .panel-understated .card-heading .options .btn-default.disabled, .panel-understated .card-heading .options .btn-default:disabled, .panel-understated .card-header .options .btn-default.disabled, .panel-understated .card-header .options .btn-default:disabled, .card-understated .panel-heading .options .btn-default.disabled, .card-understated .panel-heading .options .btn-default:disabled, .card-understated .card-heading .options .btn-default.disabled, .card-understated .card-heading .options .btn-default:disabled, .card-understated .card-header .options .btn-default.disabled, .card-understated .card-header .options .btn-default:disabled {
+                color: #212529;
+                background-color: #c1d8ee;
+                border-color: #ddd;
+            }
+
+            .panel-understated .panel-heading .options .btn-default:not(:disabled):not(.disabled):active, .panel-understated .panel-heading .options .btn-default:not(:disabled):not(.disabled).active,
+            .show > .panel-understated .panel-heading .options .btn-default.dropdown-toggle, .panel-understated .card-heading .options .btn-default:not(:disabled):not(.disabled):active, .panel-understated .card-heading .options .btn-default:not(:disabled):not(.disabled).active,
+            .show > .panel-understated .card-heading .options .btn-default.dropdown-toggle, .panel-understated .card-header .options .btn-default:not(:disabled):not(.disabled):active, .panel-understated .card-header .options .btn-default:not(:disabled):not(.disabled).active,
+            .show > .panel-understated .card-header .options .btn-default.dropdown-toggle, .card-understated .panel-heading .options .btn-default:not(:disabled):not(.disabled):active, .card-understated .panel-heading .options .btn-default:not(:disabled):not(.disabled).active,
+            .show > .card-understated .panel-heading .options .btn-default.dropdown-toggle, .card-understated .card-heading .options .btn-default:not(:disabled):not(.disabled):active, .card-understated .card-heading .options .btn-default:not(:disabled):not(.disabled).active,
+            .show > .card-understated .card-heading .options .btn-default.dropdown-toggle, .card-understated .card-header .options .btn-default:not(:disabled):not(.disabled):active, .card-understated .card-header .options .btn-default:not(:disabled):not(.disabled).active,
+            .show > .card-understated .card-header .options .btn-default.dropdown-toggle {
+                color: #212529;
+                background-color: #99bee4;
+                border-color: #bdbdbd;
+            }
+
+                .panel-understated .panel-heading .options .btn-default:not(:disabled):not(.disabled):active:focus, .panel-understated .panel-heading .options .btn-default:not(:disabled):not(.disabled).active:focus,
+                .show > .panel-understated .panel-heading .options .btn-default.dropdown-toggle:focus, .panel-understated .card-heading .options .btn-default:not(:disabled):not(.disabled):active:focus, .panel-understated .card-heading .options .btn-default:not(:disabled):not(.disabled).active:focus,
+                .show > .panel-understated .card-heading .options .btn-default.dropdown-toggle:focus, .panel-understated .card-header .options .btn-default:not(:disabled):not(.disabled):active:focus, .panel-understated .card-header .options .btn-default:not(:disabled):not(.disabled).active:focus,
+                .show > .panel-understated .card-header .options .btn-default.dropdown-toggle:focus, .card-understated .panel-heading .options .btn-default:not(:disabled):not(.disabled):active:focus, .card-understated .panel-heading .options .btn-default:not(:disabled):not(.disabled).active:focus,
+                .show > .card-understated .panel-heading .options .btn-default.dropdown-toggle:focus, .card-understated .card-heading .options .btn-default:not(:disabled):not(.disabled):active:focus, .card-understated .card-heading .options .btn-default:not(:disabled):not(.disabled).active:focus,
+                .show > .card-understated .card-heading .options .btn-default.dropdown-toggle:focus, .card-understated .card-header .options .btn-default:not(:disabled):not(.disabled):active:focus, .card-understated .card-header .options .btn-default:not(:disabled):not(.disabled).active:focus,
+                .show > .card-understated .card-header .options .btn-default.dropdown-toggle:focus {
+                    box-shadow: 0 0 0 0.2rem rgba(221, 221, 221, 0.5);
+                }
+
+    .panel-understated .panel-body, .panel-understated .card-body, .card-understated .panel-body, .card-understated .card-body {
+        background: #fff;
+        color: #333333;
+    }
+
+/* Standout Cards */
+.panel-standout, .card-standout {
+    border-color: #ddd;
+}
+
+    .panel-standout > .panel-heading, .panel-standout > .card-heading, .card-standout > .panel-heading, .card-standout > .card-heading {
+        color: #fff;
+        background-color: #730000;
+        border-color: #730000;
+    }
+
+        .panel-standout > .panel-heading + .panel-collapse > .panel-body, .panel-standout > .panel-heading + .card-collapse > .card-body, .panel-standout > .card-heading + .panel-collapse > .panel-body, .panel-standout > .card-heading + .card-collapse > .card-body, .card-standout > .panel-heading + .panel-collapse > .panel-body, .card-standout > .panel-heading + .card-collapse > .card-body, .card-standout > .card-heading + .panel-collapse > .panel-body, .card-standout > .card-heading + .card-collapse > .card-body {
+            border-top-color: #ddd;
+        }
+
+        .panel-standout > .panel-heading .badge, .panel-standout > .card-heading .badge, .card-standout > .panel-heading .badge, .card-standout > .card-heading .badge {
+            color: #730000;
+            background-color: #fff;
+        }
+
+    .panel-standout > .panel-footer + .panel-collapse > .panel-body, .panel-standout > .panel-footer + .card-collapse > .card-body, .panel-standout > .card-footer + .panel-collapse > .panel-body, .panel-standout > .card-footer + .card-collapse > .card-body, .card-standout > .panel-footer + .panel-collapse > .panel-body, .card-standout > .panel-footer + .card-collapse > .card-body, .card-standout > .card-footer + .panel-collapse > .panel-body, .card-standout > .card-footer + .card-collapse > .card-body {
+        border-bottom-color: #ddd;
+    }
+
+    .panel-standout .panel-heading, .panel-standout .card-heading, .panel-standout .card-header, .card-standout .panel-heading, .card-standout .card-heading, .card-standout .card-header {
+        border-bottom-width: 5px;
+        border-bottom-style: solid;
+    }
+
+        .panel-standout .panel-heading h2 span[class^="ca-gov-icon-"], .panel-standout .panel-heading h3 span[class^="ca-gov-icon-"], .panel-standout .panel-heading h4 span[class^="ca-gov-icon-"], .panel-standout .panel-heading h5 span[class^="ca-gov-icon-"], .panel-standout .card-heading h2 span[class^="ca-gov-icon-"], .panel-standout .card-heading h3 span[class^="ca-gov-icon-"], .panel-standout .card-heading h4 span[class^="ca-gov-icon-"], .panel-standout .card-heading h5 span[class^="ca-gov-icon-"], .panel-standout .card-header h2 span[class^="ca-gov-icon-"], .panel-standout .card-header h3 span[class^="ca-gov-icon-"], .panel-standout .card-header h4 span[class^="ca-gov-icon-"], .panel-standout .card-header h5 span[class^="ca-gov-icon-"], .card-standout .panel-heading h2 span[class^="ca-gov-icon-"], .card-standout .panel-heading h3 span[class^="ca-gov-icon-"], .card-standout .panel-heading h4 span[class^="ca-gov-icon-"], .card-standout .panel-heading h5 span[class^="ca-gov-icon-"], .card-standout .card-heading h2 span[class^="ca-gov-icon-"], .card-standout .card-heading h3 span[class^="ca-gov-icon-"], .card-standout .card-heading h4 span[class^="ca-gov-icon-"], .card-standout .card-heading h5 span[class^="ca-gov-icon-"], .card-standout .card-header h2 span[class^="ca-gov-icon-"], .card-standout .card-header h3 span[class^="ca-gov-icon-"], .card-standout .card-header h4 span[class^="ca-gov-icon-"], .card-standout .card-header h5 span[class^="ca-gov-icon-"] {
+            color: #7bb0da;
+        }
+
+        .panel-standout .panel-heading .options .btn-default, .panel-standout .card-heading .options .btn-default, .panel-standout .card-header .options .btn-default, .card-standout .panel-heading .options .btn-default, .card-standout .card-heading .options .btn-default, .card-standout .card-header .options .btn-default {
+            color: #fff;
+            background-color: #4a0000;
+            border-color: #5a0000;
+        }
+
+            .panel-standout .panel-heading .options .btn-default:hover, .panel-standout .card-heading .options .btn-default:hover, .panel-standout .card-header .options .btn-default:hover, .card-standout .panel-heading .options .btn-default:hover, .card-standout .card-heading .options .btn-default:hover, .card-standout .card-header .options .btn-default:hover {
+                color: #fff;
+                background-color: #240000;
+                border-color: #270000;
+            }
+
+            .panel-standout .panel-heading .options .btn-default:focus, .panel-standout .panel-heading .options .btn-default.focus, .panel-standout .card-heading .options .btn-default:focus, .panel-standout .card-heading .options .btn-default.focus, .panel-standout .card-header .options .btn-default:focus, .panel-standout .card-header .options .btn-default.focus, .card-standout .panel-heading .options .btn-default:focus, .card-standout .panel-heading .options .btn-default.focus, .card-standout .card-heading .options .btn-default:focus, .card-standout .card-heading .options .btn-default.focus, .card-standout .card-header .options .btn-default:focus, .card-standout .card-header .options .btn-default.focus {
+                box-shadow: 0 0 0 0.2rem rgba(90, 0, 0, 0.5);
+            }
+
+            .panel-standout .panel-heading .options .btn-default.disabled, .panel-standout .panel-heading .options .btn-default:disabled, .panel-standout .card-heading .options .btn-default.disabled, .panel-standout .card-heading .options .btn-default:disabled, .panel-standout .card-header .options .btn-default.disabled, .panel-standout .card-header .options .btn-default:disabled, .card-standout .panel-heading .options .btn-default.disabled, .card-standout .panel-heading .options .btn-default:disabled, .card-standout .card-heading .options .btn-default.disabled, .card-standout .card-heading .options .btn-default:disabled, .card-standout .card-header .options .btn-default.disabled, .card-standout .card-header .options .btn-default:disabled {
+                color: #fff;
+                background-color: #4a0000;
+                border-color: #5a0000;
+            }
+
+            .panel-standout .panel-heading .options .btn-default:not(:disabled):not(.disabled):active, .panel-standout .panel-heading .options .btn-default:not(:disabled):not(.disabled).active,
+            .show > .panel-standout .panel-heading .options .btn-default.dropdown-toggle, .panel-standout .card-heading .options .btn-default:not(:disabled):not(.disabled):active, .panel-standout .card-heading .options .btn-default:not(:disabled):not(.disabled).active,
+            .show > .panel-standout .card-heading .options .btn-default.dropdown-toggle, .panel-standout .card-header .options .btn-default:not(:disabled):not(.disabled):active, .panel-standout .card-header .options .btn-default:not(:disabled):not(.disabled).active,
+            .show > .panel-standout .card-header .options .btn-default.dropdown-toggle, .card-standout .panel-heading .options .btn-default:not(:disabled):not(.disabled):active, .card-standout .panel-heading .options .btn-default:not(:disabled):not(.disabled).active,
+            .show > .card-standout .panel-heading .options .btn-default.dropdown-toggle, .card-standout .card-heading .options .btn-default:not(:disabled):not(.disabled):active, .card-standout .card-heading .options .btn-default:not(:disabled):not(.disabled).active,
+            .show > .card-standout .card-heading .options .btn-default.dropdown-toggle, .card-standout .card-header .options .btn-default:not(:disabled):not(.disabled):active, .card-standout .card-header .options .btn-default:not(:disabled):not(.disabled).active,
+            .show > .card-standout .card-header .options .btn-default.dropdown-toggle {
+                color: #fff;
+                background-color: #170000;
+                border-color: #1a0000;
+            }
+
+                .panel-standout .panel-heading .options .btn-default:not(:disabled):not(.disabled):active:focus, .panel-standout .panel-heading .options .btn-default:not(:disabled):not(.disabled).active:focus,
+                .show > .panel-standout .panel-heading .options .btn-default.dropdown-toggle:focus, .panel-standout .card-heading .options .btn-default:not(:disabled):not(.disabled):active:focus, .panel-standout .card-heading .options .btn-default:not(:disabled):not(.disabled).active:focus,
+                .show > .panel-standout .card-heading .options .btn-default.dropdown-toggle:focus, .panel-standout .card-header .options .btn-default:not(:disabled):not(.disabled):active:focus, .panel-standout .card-header .options .btn-default:not(:disabled):not(.disabled).active:focus,
+                .show > .panel-standout .card-header .options .btn-default.dropdown-toggle:focus, .card-standout .panel-heading .options .btn-default:not(:disabled):not(.disabled):active:focus, .card-standout .panel-heading .options .btn-default:not(:disabled):not(.disabled).active:focus,
+                .show > .card-standout .panel-heading .options .btn-default.dropdown-toggle:focus, .card-standout .card-heading .options .btn-default:not(:disabled):not(.disabled):active:focus, .card-standout .card-heading .options .btn-default:not(:disabled):not(.disabled).active:focus,
+                .show > .card-standout .card-heading .options .btn-default.dropdown-toggle:focus, .card-standout .card-header .options .btn-default:not(:disabled):not(.disabled):active:focus, .card-standout .card-header .options .btn-default:not(:disabled):not(.disabled).active:focus,
+                .show > .card-standout .card-header .options .btn-default.dropdown-toggle:focus {
+                    box-shadow: 0 0 0 0.2rem rgba(90, 0, 0, 0.5);
+                }
+
+    .panel-standout .panel-body, .panel-standout .card-body, .card-standout .panel-body, .card-standout .card-body {
+        background: #fff;
+        color: #333333;
+    }
+
+    /* Adds triangle to card */
+    .panel-standout.highlight .panel-heading .triangle, .panel-standout.highlight .card-heading .triangle, .panel-standout.highlight .card-header .triangle, .card-standout.highlight .panel-heading .triangle, .card-standout.highlight .card-heading .triangle, .card-standout.highlight .card-header .triangle {
+        content: '';
+        display: block;
+        width: 0;
+        height: 0;
+        border-left: 12px solid transparent;
+        border-right: 12px solid transparent;
+        border-top: 12px solid #730000;
+    }
 
 /* -----------------------------------------
    ACCENT TEXT
@@ -1948,6 +1910,32 @@ figure {
         color: #fff !important;
     }
 
+.btn-outline-primary {
+    color: #153554;
+    background-color: #fff;
+    border-color: #153554;
+}
+
+    .btn-outline-primary:hover, .btn-outline-primary:focus, .btn-outline-primary:not(:disabled):not(.disabled):active, .btn-outline-primary:not(:disabled):not(.disabled).active, .btn-outline-primary .show > .dropdown-toggle, .open > .dropdown-toggle .btn-outline-primary {
+        color: #fff;
+        background-color: #153554;
+        border-color: #0e2337;
+    }
+
+    .btn-outline-primary:not(:disabled):not(.disabled):active, .btn-outline-primary:not(:disabled):not(.disabled).active, .open > .dropdown-toggle .btn-outline-primary {
+        background-image: none;
+    }
+
+    .btn-outline-primary.disabled, .btn-outline-primary.disabled:hover, .btn-outline-primary.disabled:focus, .btn-outline-primary.disabled:active, .btn-outline-primary.disabled.active, .btn-outline-primary[disabled], .btn-outline-primary[disabled]:hover, .btn-outline-primary[disabled]:focus, .btn-outline-primary[disabled]:active, .btn-outline-primary[disabled].active, fieldset[disabled] .btn-outline-primary, fieldset[disabled] .btn-outline-primary:hover, fieldset[disabled] .btn-outline-primary:focus, fieldset[disabled] .btn-outline-primary:active, fieldset[disabled] .btn-outline-primary.active {
+        background-color: #fff !important;
+        border-color: #153554;
+    }
+
+    .btn-outline-primary .badge {
+        color: #fff;
+        background-color: #153554;
+    }
+
 .btn-default {
     color: #000;
     background-color: rgba(255, 255, 255, 0.65);
@@ -2008,6 +1996,32 @@ figure {
         color: #fff !important;
     }
 
+.btn-outline-standout {
+    color: #730000;
+    background-color: #fff;
+    border-color: #730000;
+}
+
+    .btn-outline-standout:hover, .btn-outline-standout:focus, .btn-outline-standout:not(:disabled):not(.disabled):active, .btn-outline-standout:not(:disabled):not(.disabled).active, .btn-outline-standout .show > .dropdown-toggle, .open > .dropdown-toggle .btn-outline-standout {
+        color: #fff;
+        background-color: #730000;
+        border-color: #4f0000;
+    }
+
+    .btn-outline-standout:not(:disabled):not(.disabled):active, .btn-outline-standout:not(:disabled):not(.disabled).active, .open > .dropdown-toggle .btn-outline-standout {
+        background-image: none;
+    }
+
+    .btn-outline-standout.disabled, .btn-outline-standout.disabled:hover, .btn-outline-standout.disabled:focus, .btn-outline-standout.disabled:active, .btn-outline-standout.disabled.active, .btn-outline-standout[disabled], .btn-outline-standout[disabled]:hover, .btn-outline-standout[disabled]:focus, .btn-outline-standout[disabled]:active, .btn-outline-standout[disabled].active, fieldset[disabled] .btn-outline-standout, fieldset[disabled] .btn-outline-standout:hover, fieldset[disabled] .btn-outline-standout:focus, fieldset[disabled] .btn-outline-standout:active, fieldset[disabled] .btn-outline-standout.active {
+        background-color: #fff !important;
+        border-color: #730000;
+    }
+
+    .btn-outline-standout .badge {
+        color: #fff;
+        background-color: #730000;
+    }
+
 .btn-highlight {
     color: #333333;
     background-color: #7bb0da;
@@ -2015,7 +2029,7 @@ figure {
 }
 
     .btn-highlight:hover, .btn-highlight:focus, .btn-highlight:not(:disabled):not(.disabled):active, .btn-highlight:not(:disabled):not(.disabled).active, .btn-highlight .show > .dropdown-toggle, .open > .dropdown-toggle .btn-highlight {
-        color: #730000;
+        color: #333333;
         background-color: #5f9fd2;
         border-color: #5f9fd2;
     }
@@ -2032,6 +2046,36 @@ figure {
     .btn-highlight .badge {
         color: #7bb0da;
         background-color: #333333;
+    }
+
+.btn-outline-highlight {
+    color: #333333;
+    background-color: #fff;
+    border-color: #7bb0da;
+}
+
+    .btn-outline-highlight:hover, .btn-outline-highlight:focus, .btn-outline-highlight:not(:disabled):not(.disabled):active, .btn-outline-highlight:not(:disabled):not(.disabled).active, .btn-outline-highlight .show > .dropdown-toggle, .open > .dropdown-toggle .btn-outline-highlight {
+        color: #333333;
+        background-color: #7bb0da;
+        border-color: #5f9fd2;
+    }
+
+    .btn-outline-highlight:not(:disabled):not(.disabled):active, .btn-outline-highlight:not(:disabled):not(.disabled).active, .open > .dropdown-toggle .btn-outline-highlight {
+        background-image: none;
+    }
+
+    .btn-outline-highlight.disabled, .btn-outline-highlight.disabled:hover, .btn-outline-highlight.disabled:focus, .btn-outline-highlight.disabled:active, .btn-outline-highlight.disabled.active, .btn-outline-highlight[disabled], .btn-outline-highlight[disabled]:hover, .btn-outline-highlight[disabled]:focus, .btn-outline-highlight[disabled]:active, .btn-outline-highlight[disabled].active, fieldset[disabled] .btn-outline-highlight, fieldset[disabled] .btn-outline-highlight:hover, fieldset[disabled] .btn-outline-highlight:focus, fieldset[disabled] .btn-outline-highlight:active, fieldset[disabled] .btn-outline-highlight.active {
+        background-color: #fff !important;
+        border-color: #7bb0da;
+    }
+
+    .btn-outline-highlight .badge {
+        color: #fff;
+        background-color: #333333;
+    }
+
+    .btn-outline-highlight.active {
+        color: #333333;
     }
 
 .btn-secondary {
@@ -2074,6 +2118,32 @@ figure {
         color: #000;
     }
 
+.btn-outline-secondary {
+    color: #555555;
+    background-color: #fff;
+    border-color: #555555;
+}
+
+    .btn-outline-secondary:hover, .btn-outline-secondary:focus, .btn-outline-secondary:not(:disabled):not(.disabled):active, .btn-outline-secondary:not(:disabled):not(.disabled).active, .btn-outline-secondary .show > .dropdown-toggle, .open > .dropdown-toggle .btn-outline-secondary {
+        color: #fff;
+        background-color: #555555;
+        border-color: #444444;
+    }
+
+    .btn-outline-secondary:not(:disabled):not(.disabled):active, .btn-outline-secondary:not(:disabled):not(.disabled).active, .open > .dropdown-toggle .btn-outline-secondary {
+        background-image: none;
+    }
+
+    .btn-outline-secondary.disabled, .btn-outline-secondary.disabled:hover, .btn-outline-secondary.disabled:focus, .btn-outline-secondary.disabled:active, .btn-outline-secondary.disabled.active, .btn-outline-secondary[disabled], .btn-outline-secondary[disabled]:hover, .btn-outline-secondary[disabled]:focus, .btn-outline-secondary[disabled]:active, .btn-outline-secondary[disabled].active, fieldset[disabled] .btn-outline-secondary, fieldset[disabled] .btn-outline-secondary:hover, fieldset[disabled] .btn-outline-secondary:focus, fieldset[disabled] .btn-outline-secondary:active, fieldset[disabled] .btn-outline-secondary.active {
+        background-color: #fff !important;
+        border-color: #555555;
+    }
+
+    .btn-outline-secondary .badge {
+        color: #fff;
+        background-color: #555555;
+    }
+
 .check-icon-radio {
     color: #153554;
     border-color: #153554;
@@ -2111,7 +2181,7 @@ input[type="radio"]:checked + * i {
 }
 
 .icon-link:hover, .icon-link:focus {
-    color: #7bb0da !important;
+    color: #E1ECF7 !important;
 }
 
 .service-tile-empty {

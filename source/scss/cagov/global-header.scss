@@ -8,9 +8,13 @@
 
 .global-header {                 // Extends bootstrap .container class to .global-header
     position: relative;                      // Allows children to be absolute positioned within .global-header
+	z-index:1;
     padding: 0;
     background: $white;
     width: auto;
+	-webkit-box-shadow: 0px 0px 15px 0px rgba(189,189,189,0.4);	// Beta 6.0 addition
+	-moz-box-shadow: 0px 0px 15px 0px rgba(189,189,189,0.4); 	// Beta 6.0 addition
+	box-shadow: 0px 0px 15px 0px rgba(189,189,189,0.4); 	// Beta 6.0 addition
 
     @media (min-width: $screen-sm-min) {
         .primary & {
@@ -36,11 +40,11 @@
     position:relative;
 
     @media (min-width: $screen-sm-min) {
-        height:88px !important;
+        height:82px !important;	// Beta 6.0 addition
     }
 
     .header-organization-banner {
-        line-height:88px;
+        line-height:82px;	// Beta 6.0 addition
 		-webkit-transition: all 0.3s;
         transition: all 0.3s;           // Smooth transition for compact header
 
@@ -73,8 +77,8 @@
 }
 
 .header-cagov-logo img {	 // Beta 5.0 addition	
-  top: 4px;		
-  height: 32px;		
+  top: 1px;		
+  height: 27px;		
   position: absolute;		
   left: 27px;
   
@@ -134,17 +138,16 @@
     overflow: hidden;
 }
 
+.fixed {
+&+ .header-single-banner, &+ .header-large-banner, &+ .header-primary-banner {
+	background-position-y:80px;
+	}
+}
 .carousel-banner,
 .carousel-banner .owl-stage-outer,
 .carousel-banner .owl-stage,
 .carousel-banner .owl-item,
 .carousel-banner .slide {
     height: 100%;
-}
-
-// Beta 5.0 addition
-.fixed + .header-single-banner, .fixed + .header-primary-banner, .fixed + .header-large-banner, .fixed + .header-slideshow-banner  {			
-    top: 136px;		
- 		
 }		
 

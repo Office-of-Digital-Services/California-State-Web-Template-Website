@@ -15,6 +15,7 @@ $ask-bg-hover: rgba(0, 0, 0, 0.8);
         transition: opacity 0.3s, visibility 0.3s;
         z-index: 5;
         visibility: visible;
+		font-family: $headings-font-family;
 
         .flexbox & {
           left: 0px;
@@ -85,11 +86,20 @@ $ask-bg-hover: rgba(0, 0, 0, 0.8);
         border: none;
         border-radius: 0;
 
-        &:hover, &:focus {
+        &:hover {
             background-color: $ask-bg-hover;
             border-bottom-left-radius: 0;
             border-bottom-right-radius: 0;
-            //outline: none;    // designer in me screems, but accessibility is king
+            box-shadow: none;
+            outline: none;
+        }
+
+        &:focus {
+            background-color: $ask-bg-hover;
+            border-bottom-left-radius: 0;
+            border-bottom-right-radius: 0;
+            box-shadow: none;
+            @include outline(2px);
         }
     }
 }
@@ -123,13 +133,7 @@ $ask-bg-hover: rgba(0, 0, 0, 0.8);
 }
 
 .ask-options {
-    background-color: #000;
-    background-color: $ask-bg-hover;
-    padding: 5px 10px;
-
-    @media (max-width: $screen-xs-max) {
-        //position:static;
-    }
+    padding: 0;
 
     > ul {
         @include list-unstyled();
@@ -137,21 +141,18 @@ $ask-bg-hover: rgba(0, 0, 0, 0.8);
 
     li a {
         display: block;
-        padding-left: 10px;
-        border: 1px solid $gray-lighter;
-        margin: 5px 0;
+        padding: 3px 15px 3px 15px;
+        margin:0;
         line-height: 40px;
         color: #fff;
+		@include rgba (#000, .8);
 
         &:hover {
-            @include rgba (#fff, .75);
-            // background-color: $rgba;
-            color: contrast(#fff);
+            @include rgba (#000, .9);
         }
 
         &:hover .more {
-            @include rgba (#000, .75);
-            // background-color: $rgba;
+            @include rgba (#000, .8);
             color: #fff;
         }
     }
@@ -165,8 +166,8 @@ $ask-bg-hover: rgba(0, 0, 0, 0.8);
     .ask-group {
         @include make-xs-column(12);
         padding-top: $line-height-computed;
-		float: none;  //  _cs-shame.scss addition
-        padding-bottom: 1px;  //  _cs-shame.scss addition
+		float: none; 
+        padding-bottom: 1px;  
 
         .panel {
             border: none;

@@ -6,27 +6,26 @@
 // Corrects close button placement & style
 
 .site-settings {
-	
-	padding-right: 20px;  // Beta 5.0 addition
-	
+    padding-right: 20px; // Beta 5.0 addition
     button.close {
         position: relative;
         right: -10px;
         color: #fff;
         text-shadow: none;
         opacity: 0.8;
-		font-size:2.5em;
-		
-		  // Beta 5.0 addition
-		&:hover {
-			color:$color-p1;
-			}
-		&:focus {
-			color:$color-p1;
-			}
-		span {
-			position:relative;
-			top:-10px;
-		}
+        font-size: 2.5em;
+        // Beta 5.0 addition
+        &:hover {
+            color: $color-p1 !important;
+        }
+
+        &:focus {
+            color: $color-p1 !important;
+        }
+
+        span {
+            position: relative;
+            top: -10px;
+        }
     }
 }

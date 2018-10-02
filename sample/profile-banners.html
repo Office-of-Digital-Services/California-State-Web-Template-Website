@@ -5,9 +5,8 @@
 <!--[if IE 9]>    <html class="no-js ie9 oldie" lang="en"> <![endif]-->
 <!--[if (gt IE 9)]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
 <head>
-<!-- 
-California State Template
-Version 5.0
+<!--        California State Template
+        Version 5.5.0
  
 Based on Twitter Bootstrap
 -->
@@ -64,22 +63,14 @@ Based on Twitter Bootstrap
                 <li><a href="index.html">Examples</a></li>
                 <li class="active">Profile Banners</li>
             </ol>
+            <h1>Profile Banners</h1>
             <div class="group">
                 <div class="third">
                     <h2>Example:</h2>
                     <!--#include virtual="/sample/modules/profile-banners.html" -->
                 </div>
                 <div class="two-thirds">
-                    <h1>Profile Banners</h1>
-                    <p>The image in the profile banner is added using inline CSS. The recommended solution is to save the banner images in the <code>/images/banner/</code> folder using the person's full name separated by dashes. Example: <code>bob-smith.png</code>. Then update the inline background image on the <code>.profile-banner</code> div. It should look like the following example: <code>&lt;div class="profile-banner" style="background:url(/images/banner/<strong>bob-smith.png</strong>) no-repeat right bottom"&gt;</code></p>
-
-                    <h2>Creating The Banner</h2>
-                    <p>The banner used is a transparent 24 bit png and requires that the headshot be pre-matted with the "swoosh" background before being used. A blank banner is located here: <code>/images/banner/banner-blank.png</code> It is recommended that a graphics application such as Adobe Photoshop be used to isolate the headshot and pre-matt it with the <code>banner-blank.png</code> placing the headshot on the right edge of the graphic. Save the combined graphic as a 24 bit transparent png using the naming convention described earlier.</p>
-
-                    <hr>
-                    
-
-                    <h2>Source Code:</h2>
+                    <h3>Source Code:</h3>
 
                     <div class="tab-group">
                         <ul id="sourceCode" class="nav nav-tabs" role="tablist">
@@ -89,16 +80,45 @@ Based on Twitter Bootstrap
                         <!-- Tab panes -->
                         <div class="tab-content responsive">
                             <div class="tab-pane active" id="html">
-                                <textarea aria-label="HTML Markup" id="sample-news-list" class="form-control" rows="10" cols="80"><!--#include virtual="/sample/modules/profile-banners.html" --></textarea>
+                                <pre><code class="overflow-auto"><!--#include virtual="/sample/modules/profile-banners.html" --></code></pre>
                             </div>
                             <div class="tab-pane" id="microdata">
-                                <textarea aria-label="Microdata" id="sample-news-list-microdata" class="form-control" rows="10" cols="80"><!--#include virtual="/sample/modules/profile-banners-schema.html" --></textarea>
+                                <pre><code class="overflow-auto"><!--#include virtual="/sample/modules/profile-banners-schema.html" --></code></pre>
                             </div>
                         </div>
                     </div>
                 </div>
                 </div>
-        </main>
+            <hr />
+            
+
+            <div class="group">
+                <div class="third">
+                    <h2>Vertical Layout:</h2>
+                    <!--#include virtual="/sample/modules/profile-banners-vertical.html" -->
+                </div>
+                <div class="two-thirds">
+                    <h3>Source Code:</h3>
+
+                    <div class="tab-group">
+                        <ul id="sourceCode2" class="nav nav-tabs" role="tablist">
+                            <li class="active"><a href="#html2" role="tab" data-toggle="tab">HTML Markup</a></li>
+                            <li><a href="#microdata2" role="tab" data-toggle="tab">Microdata</a></li>
+                        </ul>
+                        <!-- Tab panes -->
+                        <div class="tab-content responsive">
+                            <div class="tab-pane active" id="html2">
+                                <pre><code class="overflow-auto"><!--#include virtual="/sample/modules/profile-banners-vertical.html" --></code></pre>
+                            </div>
+                            <div class="tab-pane" id="microdata2">
+                                <pre><code class="overflow-auto"><!--#include virtual="/sample/modules/profile-banners-vertical-schema.html" --></code></pre>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                </div>
+</main>
       
     </div>
 </div>

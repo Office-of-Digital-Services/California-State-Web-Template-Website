@@ -1,0 +1,99 @@
+﻿<!doctype html>
+<!--[if lt IE 7]> <html class="no-js ie6 oldie" lang="en"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js ie7 oldie" lang="en"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js ie8 oldie" lang="en"> <![endif]-->
+<!--[if IE 9]>    <html class="no-js ie9 oldie" lang="en"> <![endif]-->
+<!--[if (gt IE 9)]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+
+
+<head>
+<!--        California State Template
+        Version 5.5.0
+ 
+Based on Twitter Bootstrap
+-->
+<meta charset="utf-8">
+
+<title>Full Width Navigation</title>
+
+<meta name="Author" content="State of California" />
+<meta name="Description" content="State of California" />
+<meta name="Keywords" content="California, government" />
+
+<!--#include virtual="/ssi/head-css-js.html" -->
+
+</head>
+
+<body class="two-column">
+
+    <header role="banner" id="header" class="global-header fixed">
+        <div id="skip-to-content"><a href="#main-content">Skip to Main Content</a></div>
+
+        <!-- Settings Bar -->
+        <!--#include virtual="/ssi/settings-bar.html" -->
+        <!-- Include Branding -->
+        <!--#include virtual="/ssi/branding-full-width.html" -->
+        <!-- Include Mobile Controls -->
+        <!--#include virtual="/ssi/mobile-controls.html" -->
+
+        <div class="navigation-search">
+            <!-- Include Navigation -->
+            <!--#include virtual="/sample/modules/nav-full-width.html" -->
+
+            <div id="head-search" class="search-container">
+                <!-- Include Search -->
+                <!--#include virtual="/ssi/search.html" -->
+            </div>
+
+        </div>
+
+        <div class="header-decoration"></div>
+    </header>
+
+<div id="main-content" class="main-content">
+    <div class="section">
+        <main class="main-primary">
+            <ol class="breadcrumb">
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="index.html">Examples</a></li>
+                <li class="active">Full Width Navigation</li>
+            </ol>
+
+            <h1>Full Width Navigation</h1>
+            <p>
+                Sometimes there is a need to fit more navigation items in main navigation.
+                This is when full width navigation could be handy. This menu style can be set by enclosing the entire <code>nav</code> element into
+                <code>div</code> with <code>.nav-full-width</code> class.
+            </p>
+            <p><span class="label label-info">Note:</span> This menu style doesn't use icons with nav items. Also, this menu style is preferably to use without utility header.
+                However, if there is a need for utility links instead of using regular <code>/ssi/branding.html</code> server side include use <code>/ssi/branding-full-width.html</code>, 
+            which has some of utility links added in the top right corner.
+            </p>
+            <p>Full Width Navigation can be single level navigation as well as megamenu.</p>
+
+            <p><strong>Example:</strong> <br><code>&lt;div class="nav-full-width"&gt;<br />&lt;nav  id="navigation" class="main-navigation megadropdown auto-highlight"&gt; <br />...  navigation menu goes here ... <br />&lt;/nav&gt;<br />&lt;/div&gt;</code> .</p>
+
+
+            <h2>More Navigation Samples</h2>
+            <ul>
+                <li><a href="navigation-megamenu.html">Megamenu Navigation</a></li>
+                <li><a href="navigation-megamenu-original.html">State Template v4 Original Megamenu</a></li>
+                <li><a href="navigation-dropdown.html">Dropdown Navigation</a></li>
+                <li><a href="navigation-single.html">Single Level Navigation</a></li>
+            </ul>
+
+        </main>
+        
+        <div class="main-secondary">
+            <!--#include virtual="/sample/modules/profile-banners.html" -->
+        </div>
+    </div>
+</div>
+
+
+<!--#include virtual="/ssi/global-footer.html" -->
+
+<!--#include virtual="/ssi/scripts.html" -->
+
+</body>
+</html>

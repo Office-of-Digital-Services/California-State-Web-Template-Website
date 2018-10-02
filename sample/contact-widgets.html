@@ -5,9 +5,8 @@
 <!--[if IE 9]>    <html class="no-js ie9 oldie" lang="en"> <![endif]-->
 <!--[if (gt IE 9)]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
 <head>
-<!-- 
-California State Template
-Version 5.0
+<!--        California State Template
+        Version 5.5.0
  
 Based on Twitter Bootstrap
 -->
@@ -67,24 +66,24 @@ Based on Twitter Bootstrap
             <h1>Contact Widgets</h1>
             <div class="group">
                 <div class="half">
-                    <h2>Example Within Panel:</h2>
-                    <!--#include virtual="/sample/modules/contact-panel.html" -->
+                    <h2>Example Within Card:</h2>
+                    <!--#include virtual="/sample/modules/contact-card.html" -->
                 </div>
                  <div class="half">
                     <h2>Source Code:</h2>
                     
                      <div class="tab-group">
                         <ul id="sourceCode" class="nav nav-tabs" role="tablist">
-                            <li class="active"><a href="#panelhtml" role="tab" data-toggle="tab"><label for="within-panel-html">HTML Markup</label></a></li>
-                            <li><a href="#panelmicrodata" role="tab" data-toggle="tab"><label for="within-panel-microdata">Microdata</label></a></li>
+                            <li class="active"><a href="#cardhtml" role="tab" data-toggle="tab"><label for="within-card-html">HTML Markup</label></a></li>
+                            <li><a href="#cardmicrodata" role="tab" data-toggle="tab"><label for="within-card-microdata">Microdata</label></a></li>
                         </ul>
                         <!-- Tab panes -->
                         <div class="tab-content responsive">
-                            <div class="tab-pane active" id="panelhtml">
-                                 <textarea id="within-panel-html" class="form-control" rows="10" cols="80"><!--#include virtual="/sample/modules/contact-panel.html" --></textarea>
+                            <div class="tab-pane active" id="cardhtml">
+                                <pre><code class="overflow-auto"><!--#include virtual="/sample/modules/contact-card.html" --></code></pre>
                             </div>
-                            <div class="tab-pane" id="panelmicrodata">
-                                 <textarea id="within-panel-microdata" class="form-control" rows="10" cols="80"><!--#include virtual="/sample/modules/contact-panel-schema.html" --></textarea>
+                            <div class="tab-pane" id="cardmicrodata">
+                                <pre><code class="overflow-auto"><!--#include virtual="/sample/modules/contact-card-schema.html" --></code></pre>
                             </div>
                         </div>
                     </div>
@@ -95,23 +94,23 @@ Based on Twitter Bootstrap
             
             <div class="group">
                 <div class="half">
-                    <h2>Example Without Panel:</h2>
+                    <h2>Example Without Card:</h2>
                     <!--#include virtual="/sample/modules/contact.html" -->
                 </div>
                  <div class="half">
                     <h2>Source Code:</h2>
                      <div class="tab-group">
                         <ul id="sourceCode2" class="nav nav-tabs" role="tablist">
-                            <li class="nav-item"><a class="nav-link active" href="#html" role="tab" data-toggle="tab" aria-selected="true"><label for="without-panel-html">HTML Markup</label></a></li>
-                            <li class="nav-item"><a class="nav-link" href="#microdata" role="tab" data-toggle="tab" aria-selected="false"><label for="without-panel-microdata">Microdata</label></a></li>
+                            <li class="nav-item"><a class="nav-link active" href="#html" role="tab" data-toggle="tab" aria-selected="true"><label for="without-card-html">HTML Markup</label></a></li>
+                            <li class="nav-item"><a class="nav-link" href="#microdata" role="tab" data-toggle="tab" aria-selected="false"><label for="without-card-microdata">Microdata</label></a></li>
                         </ul>
                         <!-- Tab panes -->
                         <div class="tab-content responsive">
-                            <div class="tab-pane active" id="html"  role="tabpanel"  aria-labelledby="html-tab">
-                                 <textarea id="without-panel-html" class="form-control" rows="10" cols="80"><!--#include virtual="/sample/modules/contact.html" --></textarea>
+                            <div class="tab-pane active" id="html" role="tabpanel" aria-labelledby="html-tab">
+                                <pre><code class="overflow-auto"><!--#include virtual="/sample/modules/contact.html" --></code></pre>
                             </div>
                             <div class="tab-pane" id="microdata" role="tabpanel" aria-labelledby="microdata-tab">
-                                 <textarea id="without-panel-microdata" class="form-control" rows="10" cols="80"><!--#include virtual="/sample/modules/contact-schema.html" --></textarea>
+                                <pre><code class="overflow-auto"><!--#include virtual="/sample/modules/contact-schema.html" --></code></pre>
                             </div>
                         </div>
                     </div>

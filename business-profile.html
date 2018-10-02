@@ -33,8 +33,8 @@ Based on Twitter Bootstrap
   <header role="banner" id="header" class="global-header fixed">
     <div id="skip-to-content"><a href="#main-content">Skip to Main Content</a></div>
     
-    <!-- Location Bar -->
-    <!--#include virtual="/ssi/location-bar.html" -->
+        <!-- Location Bar -->
+        <!--#include virtual="/ssi/location-bar.html" -->
     
     <!-- Include Utility Header -->
     <!--#include virtual="/ssi/utility-header.html" -->
@@ -72,9 +72,6 @@ Based on Twitter Bootstrap
                 <div class="container">
                     <div class="group">
                         <div class="quarter text-center">
-                            <!-- <img src="images/template2014/header-organization.png" class="img-responsive hidden-xs" alt="Organization Name"> --> 
-                            <!-- <img src="/sample/images/logo-cal-vet.png" class="img-responsive hidden-xs" alt="Organization Name"> -->
-                            <!-- <img src="/sample/images/logo-cal-fire.png" class="img-responsive hidden-xs" alt="Organization Name"> -->
                             <img src="/sample/images/logo-dmv.png" class="img-responsive hidden-xs" alt="Department of Motor Vehicles">
                             
                             <!-- IF AGENCY LOGO NOT AVAILABLE, FALLBACK TO SEAL OF CALIFORNIA -->
@@ -85,14 +82,14 @@ Based on Twitter Bootstrap
                             <!--  <p class="lead">Transportation</p> -->
                             <p>Donec ullamcorper nulla non metus auctor fringilla. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam porta sem malesuada magna mollis euismod. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.</p>
                             
-                            <div class="btn-row">
-                                <a href="" class="btn btn-primary"><span class="ca-gov-icon-computer"></span> Website</a>
-                                <a href="" class="btn btn-primary"><span class="ca-gov-icon-location"></span> Locations Near You</a>
-                                <a href="" class="btn btn-primary"><span class="ca-gov-icon-contact-us"></span> Contact</a>
-                                <a href="" class="btn btn-primary"><span class="ca-gov-icon-chat"></span> Live Chat</a>
+                            <div class="btn-row p-t">
+                                <a href="" class="btn btn-sm btn-outline-light btn-hover rounded-0"><span class="ca-gov-icon-computer"></span> Website</a>
+                                <a href="" class="btn btn-sm btn-outline-light btn-hover rounded-0"><span class="ca-gov-icon-location"></span> Locations Near You</a>
+                                <a href="" class="btn btn-sm btn-outline-light btn-hover rounded-0"><span class="ca-gov-icon-contact-us"></span> Contact</a>
+                                <a href="" class="btn btn-sm btn-outline-light btn-hover rounded-0"><span class="ca-gov-icon-chat"></span> Live Chat</a>
                             </div>
                             
-                            <div class="location contact" itemscope itemtype="http://schema.org/Organization">
+                            <div class="location contact p-t" itemscope itemtype="http://schema.org/Organization">
                                 <meta itemprop="name" content="Organization Name Here">
                                 <div class="contact">
                                     <p class="other">
@@ -114,6 +111,7 @@ Based on Twitter Bootstrap
                             <!-- Embeded Youtube Video -->
                             <div class="video-player" data-sly-test="${!properties.lightbox}">
                                 <iframe title="DMV Youtube video" class="youtube-player" src="https://www.youtube.com/embed/V3Z9ugTj4-o" frameborder="0" allowfullscreen></iframe>
+                                
                             </div>
                         </div>
                     </div>
@@ -135,7 +133,7 @@ Based on Twitter Bootstrap
             <!-- End Section -->
             
 
-            <div class="section section-standout">
+            <div class="section section-primary">
                 <div class="parallax-bg" style="background-image: url(&quot;images/background.jpg&quot;); height: 607.1px; transform: translate(0px, 207.545px);"></div>
                 <div class="container">
                     <!--#include virtual="/sample/modules/icon-links.html" -->
@@ -158,7 +156,7 @@ Based on Twitter Bootstrap
 
   <!--#include virtual="/ssi/scripts.html" -->
   
-<script src="/js/libs/mapthat_script.js"></script>
+
 
 </body>
 

@@ -1,3 +1,7 @@
+/* -----------------------------------------
+   CHARTS - /source/js/cagov/charts.js
+----------------------------------------- */
+
 $(function () {
     // the half circle dashboard things built with the Donut functions
     $('.stats-highlight').each(initStats);
@@ -103,9 +107,11 @@ function initPlotly(d3, Plotly) {
             // });
         });
 
+
+        
         $(window).on('resize', function () {
             var gd3 = d3.select(container.get(0)).style({height: getHeight()});
-            Plotly.Plots.on("resize", gd);
+            Plotly.Plots.resize(gd);
         });
 
     });

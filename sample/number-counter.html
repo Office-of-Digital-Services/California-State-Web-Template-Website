@@ -61,30 +61,59 @@ Based on Twitter Bootstrap
 
   <div id="main-content" class="main-content">
     <div class="section">
-      <main class="main-primary">
-        <ol class="breadcrumb">
-          <li><a href="../index.html">Home</a></li>
-          <li><a href="index.html">Examples</a></li>
-          <li class="active">Number Counter</li>
-        </ol>
+        <main class="main-primary">
+            <ol class="breadcrumb">
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="index.html">Examples</a></li>
+                <li class="active">Number Counter</li>
+            </ol>
 
-        <div class="group">
-          <div class="half">
-            <h1>Number Counter</h1>
+            <div class="group">
+                <div class="half">
+                    <h1>Number Counter</h1>
 
-            <hr>
+                    <hr>
 
-            <h2>Example:</h2>
-              <!--#include virtual="/sample/modules/number-counter.html" -->
-          </div>
-          <div class="half">
-            <h2>Source Code:</h2>
+                    <h2>Example:</h2>
+                    <!--#include virtual="/sample/modules/number-counter.html" -->
+                </div>
+                <div class="half">
+                    <h2>Source Code:</h2>
 
-            <textarea class="form-control" rows="10" cols="80"><!--#include virtual="/sample/modules/number-counter.html" --></textarea>
+                    <pre><code class="overflow-auto"><!--#include virtual="/sample/modules/number-counter.html" --></code></pre>
 
-          </div>
-        </div>
-      </main>
+                </div>
+            </div>
+
+            <div class="section section-inverted m-t-lg m-b-md">
+                <div class="container">
+                    <h2 class="m-b-lg m-t-md text-center">Pie Chart Number Counters</h2>
+                    <!--#include virtual="/sample/modules/number-counter-circles.html" -->
+                </div>
+            </div>
+
+            <!-- Trigger the modal with a button -->
+            <button type="button" class="btn btn-default btn-sm" data-toggle="modal" data-target="#number-counter-circles">Show Source Code</button>
+            <!-- Modal -->
+            <div class="modal fade" id="number-counter-circles" role="dialog">
+                <div class="modal-dialog modal-lg">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h4 class="modal-title">HTML Markup</h4>
+                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        </div>
+                        <div class="modal-body">
+                            <label for="sample-counter-circles">Source Code:</label>
+                            <pre><code class="overflow-auto"><!--#include virtual="/sample/modules/number-counter-circles.html" --></code></pre>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+                </div>
+            </div><!-- / End Modal -->
+
+        </main>
     </div>
   </div>
 

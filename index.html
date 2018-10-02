@@ -3,12 +3,12 @@
 <!--[if IE 7]>    <html class="no-js ie7 oldie" lang="en"> <![endif]-->
 <!--[if IE 8]>    <html class="no-js ie8 oldie" lang="en"> <![endif]-->
 <!--[if IE 9]>    <html class="no-js ie9 oldie" lang="en"> <![endif]-->
-<!--[if (gt IE 9)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<!--[if (gt IE 9)]><!--><html class="no-js" lang="en">
+<!--<![endif]-->
 
-<head>
-    <!--
-        California State Template
-        Version 5.0
+                        <head>
+                            <!--        California State Template
+        Version 5.5.0
 
         Based on Twitter Bootstrap
     -->
@@ -20,29 +20,34 @@
     <!--#include virtual="/ssi/head-css-js.html" -->
 
 
-
 </head>
 
 <!-- possible body classes are "primary" and "two-column" -->
 <body class="primary">
+
+    <script>
+        //makes the browser wait to display the page until it's fully loaded. 
+        // Use it if page contains primary or slideshow banner to make sure page content loads smouthly 
+        $('body').css('opacity', 0);
+        $(window).load(function () {
+           $("body").fadeTo("slow", 1);
+        });
+    </script>
+    
     <header role="banner" id="header" class="global-header fixed">
         <div id="skip-to-content"><a href="#main-content">Skip to Main Content</a></div>
-        
+
         <!-- Location Bar -->
         <!--#include virtual="/ssi/location-bar.html" -->
-    
         <!-- Include Utility Header -->
         <!--#include virtual="/ssi/utility-header.html" -->
-        
         <!-- Settings Bar -->
         <!--#include virtual="/ssi/settings-bar.html" -->
-
         <!-- Include Branding -->
         <!--#include virtual="/ssi/branding.html" -->
-
         <!-- Include Mobile Controls -->
         <!--#include virtual="/ssi/mobile-controls.html" -->
-    
+
         <div class="navigation-search">
             <!-- Include Navigation -->
             <!--#include virtual="/ssi/navigation.html" -->
@@ -61,8 +66,6 @@
 
     <!-- Ask Bar -->
     <!--#include virtual="/ssi/ask-bar.html" -->
-
-
     <!-- Step 5: Header Images -->
     <!-- Include for optional slideshow banner -->
     <!--#include virtual="/ssi/header-single-banner.html" -->
@@ -70,21 +73,21 @@
     <div id="main-content" class="main-content">
         <main class="main-primary">
             <!-- Begin Main Content -->
-            <!--#include virtual="/ssi/section-service-group.html" -->
+            <!--#include virtual="/ssi/section-info-blocks.html" -->
+            <!--#include virtual="/ssi/section-service-icons.html" -->
+            <!--#include virtual="/ssi/section-service-panes.html" -->
             <!--#include virtual="/ssi/section-open-data.html" -->
-            <!--#include virtual="/ssi/section-green-buildings.html" -->
-            <!--#include virtual="/ssi/section-green-stats.html" -->
-            <!--#include virtual="/ssi/section-mobile-gallery.html" -->
-           
-                    <!--#include virtual="/ssi/section-footer2.html" -->
-                    <!-- End Main Content -->
+            <!--#include virtual="/ssi/section-service-group.html" -->
+            <!--#include virtual="/ssi/section-counter-pie-charts.html" -->
+            <!--#include virtual="/ssi/section-footer2.html" -->
+            <!-- End Main Content -->
         </main>
     </div>
 
- 
-    <!--#include virtual="/ssi/global-footer.html" -->
 
+    <!--#include virtual="/ssi/global-footer.html" -->
     <!--#include virtual="/ssi/scripts.html" -->
-  
+
 </body>
+
 </html>

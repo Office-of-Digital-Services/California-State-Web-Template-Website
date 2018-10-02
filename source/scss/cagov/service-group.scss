@@ -113,12 +113,9 @@
         bottom: 0;
         left: 0;
         width: 100%;
-        background: #000;       // Fallback color
-		background: -webkit-linear-gradient(top, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0.6) 30%, #000000 100%);
-        background: linear-gradient(to bottom,  rgba(0,0,0,0.6) 0%,rgba(0,0,0,0.6) 30%,rgba(0,0,0,9) 100%);
-        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#cc000000', endColorstr='#000000',GradientType=0 ); // IE6-9
+        background: #12151a; 
+        opacity:0.9;
         color: #fff;
-        //transition: transform 0.3s 0.3s;
         padding: 10px 0;
 
         .title {
@@ -146,17 +143,17 @@
 
     // TODO: data-state="info" not needed but keeping until js has been updated
     [data-state="closed"].service-tile &, [data-state="info"].service-tile &{
-        content: "\50";             // Close: ca-gov-icon-minus-line
+        content: "\e050";             // Close: ca-gov-icon-minus-line
     }
 
     [data-state="open"].service-tile & {
 
-        content: "\4f";             // Open: ca-gov-icon-plus-line
+        content: "\e04f";             // Open: ca-gov-icon-plus-line
     }
 }
 
 [data-state="open"].service-tile:after {
-    @include triangle(down, 15px, $gray-base);
+    @include triangle(down, 15px, rgba(18,21,26,.9));
     position: absolute;
     left: 50%;
     margin-left: -15px;

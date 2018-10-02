@@ -53,24 +53,24 @@ var fakewaffle = (function ($, fakewaffle) {
                 }
 
                 collapseDiv.append(
-                  $('<div>').attr('class', newParentClass).html(
-                    $('<div>').attr('class', 'panel-heading').html(
-                      $('<h4>').attr('class', 'panel-title').html(
-                        $('<a>', {
-                            'class': newLinkClass,
-                            'data-toggle': 'collapse',
-                            'data-parent': '#collapse-' + $tabGroup.attr('id'),
-                            'href': '#' + newHash,
-                            'html': $this.html()
+                    $('<div>').attr('class', newParentClass).html(
+                        $('<div>').attr('class', 'panel-heading').html(
+                            $('<h4>').attr('class', 'panel-title').html(
+                                $('<a>', {
+                                    'class': newLinkClass,
+                                    'data-toggle': 'collapse',
+                                    'data-parent': '#collapse-' + $tabGroup.attr('id'),
+                                    'href': '#' + newHash,
+                                    'html': $this.html()
+                                })
+                            )
+                        )
+                    ).append(
+                        $('<div>', {
+                            'id': newHash,
+                            'class': 'panel-collapse collapse'
                         })
-                      )
                     )
-                  ).append(
-                    $('<div>', {
-                        'id': newHash,
-                        'class': 'panel-collapse collapse'
-                    })
-                  )
                 );
             });
 
@@ -115,9 +115,9 @@ var fakewaffle = (function ($, fakewaffle) {
 
                 // Convert tab to panel and move to destination
                 $(tabContent)
-                  .removeClass('tab-pane')
-                  .addClass('panel-body')
-                  .appendTo($(destinationId));
+                    .removeClass('tab-pane')
+                    .addClass('panel-body')
+                    .appendTo($(destinationId));
 
             });
 
@@ -139,9 +139,9 @@ var fakewaffle = (function ($, fakewaffle) {
 
             // Convert to tab and move to destination
             panelContents
-              .removeClass('panel-body')
-              .addClass('tab-pane')
-              .appendTo($(destination));
+                .removeClass('panel-body')
+                .addClass('tab-pane')
+                .appendTo($(destination));
 
         });
 
@@ -166,7 +166,9 @@ var fakewaffle = (function ($, fakewaffle) {
         // Toggle the tab when the associated panel is toggled
         collapse.on('shown.bs.collapse', function (e) {
 
-           // Commented out following lines because they produce error
+            // Activate current tabs
+
+           // Coommented out following lines because they produce error
            // var current = $(e.target).context.id.replace(/collapse-/g, '#');
            // $('a[href="' + current + '"]').tab('show');
 

@@ -25,27 +25,9 @@
 // CARD STYLES
 // --------------------------------------------------
 
-.card-default {
-    @include card-variant(lighten(#f5f5f5, 4%), $gray-lighter);
-}
-
 .card-primary {
-    @include link-variant(gray-lightest, $color-p1, none, underline);
-    @include card-variant($brand-primary, $brand-primary);
-}
-
-.card-understated {
-    @include card-variant($color-s1, darken($color-s1, 5%));
-}
-
-.card-overstated {
-     @include link-variant(#fff, $color-p1, none, underline);
-     @include card-variant($color-s3, darken($color-s3, 8%));
-}
-
-.card-standout {
     @include link-variant($gray-lightest, $color-p1, none, underline);
-    @include card-variant($color-p3, darken($color-p3, 8%));
+    @include card-variant($brand-primary, $brand-primary);
 }
 
 .card-inverted, .card-inverse {
@@ -85,5 +67,136 @@
     
     .card-footer {
         border-top: $card-border-width solid rgba(255,255,255,.2);
+    }
+}
+
+
+
+/* -----------------------------------------
+   CARDS THAT USED TO BE PANELS IN BOOTSTRAP 3
+   leaving .panel class for backward compatibility
+----------------------------------------- */
+
+
+/* Default Cards */
+.panel-default, .card-default {
+    // border, heading-text-color, heading-bg-color, heading-border
+    @include panel-variant($panel-default-border, $panel-default-header-txt, $panel-default-header-bg, $panel-default-header-border);
+        
+    .panel-heading, .card-heading, .card-header {        
+        h2, h3, h4, h5 {            
+            span[class^="ca-gov-icon-"] {
+                color: $panel-default-header-icon;
+            }
+        }
+        
+        .options {
+            .btn-default {
+              // bg-color, border-color
+              @include button-variant(tint($panel-default-header-bg, 70%), $panel-default-header-border);
+            }
+        }
+    }
+    
+    .panel-body, .card-body {
+        background: $panel-default-body-bg;
+		color: $text-color;
+    }
+}
+
+/* Overstated Cards */
+.panel-overstated, .card-overstated {
+    // border, heading-text-color, heading-bg-color, heading-border
+    @include panel-variant($overstated-border, $overstated-header-txt, $overstated-header-bg, $overstated-header-border);
+    
+    .panel-heading, .card-heading, .card-header {
+        border-bottom-width:5px;
+        border-bottom-style:solid;
+        
+        h2, h3, h4, h5 {
+            span[class^="ca-gov-icon-"] {
+                color: $overstated-header-icon;
+            }
+        }
+        
+        .options {
+            .btn-default {
+              // bg-color, border-color
+              @include button-variant(darken($overstated-header-bg, 8%), $overstated-header-border); // beta 5.0 addition
+            }
+        }
+    }
+    
+    .panel-body, .card-body {
+        background: $overstated-body-bg;
+		color: $text-color;
+    }
+}
+
+/* Uderstated Cards */
+.panel-understated, .card-understated {
+    // border, heading-text-color, heading-bg-color, heading-border
+    @include panel-variant($understated-border, $understated-header-txt, $understated-header-bg, $understated-header-border);
+        
+    .panel-heading, .card-heading, .card-header {
+        border-bottom-width: 2px;
+        border-bottom-style:solid;
+        
+        h2, h3, h4, h5 {            
+            span[class^="ca-gov-icon-"] {
+                color: $understated-header-icon;
+            }
+        }
+        
+        .options {
+            .btn-default {
+              // bg-color, border-color
+              @include button-variant(darken($understated-header-bg, 8%), $understated-border); // beta 5.0 addition
+            }
+        }
+    }
+    
+    .panel-body, .card-body {
+        background: $understated-body-bg;
+		color: $text-color;
+    }
+}
+
+/* Standout Cards */
+.panel-standout, .card-standout {
+    // border, heading-text-color, heading-bg-color, heading-border
+    @include panel-variant($standout-border, $standout-header-txt, $standout-header-bg, $standout-header-border);
+    
+    .panel-heading, .card-heading, .card-header {
+        border-bottom-width:5px;
+        border-bottom-style:solid;
+        
+        h2, h3, h4, h5 {
+            span[class^="ca-gov-icon-"] {
+                color: $standout-header-icon;
+            }
+        }
+        
+        .options {
+            .btn-default {
+              // bg-color, border-color
+              @include button-variant(darken($standout-header-bg, 8%), darken($standout-header-bg, 5%)); // beta 5.0 addition
+            }
+        }
+    }
+    
+    .panel-body, .card-body {
+        background: $standout-body-bg;
+		color: $text-color;
+    }
+}
+
+/* Adds triangle to card */
+.panel-standout.highlight, .card-standout.highlight {
+    .panel-heading, .card-heading, .card-header {
+        .triangle {
+            //background: url("#{$theme-directory}/panel-standout-triangle.png") no-repeat;
+            @include triangle(down, 12px, $color-p3);
+        }
     }
 }

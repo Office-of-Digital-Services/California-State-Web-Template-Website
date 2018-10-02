@@ -334,12 +334,10 @@ a.second-level-link {
 .sub-nav {
 	-webkit-transition: all 0.4s;
 	transition: all 0.4s;
-	left: 0;
 }
 .sub-nav.open {
 	display: block;
 	max-height: 700px;
-	left: 0;
 }
 .main-navigation.active {
 	max-height: 5000px;
@@ -349,7 +347,7 @@ a.second-level-link {
 		border: none;
 		background: none;
 		&:focus {
-			outline: dotted 1px #000;
+			outline: #2ea3f2 solid 2px;
 		}
 	}
 }
@@ -360,6 +358,7 @@ a.second-level-link {
 	.sub-nav {
 		display: block;
 		top: 0;
+		left: 0; // beta 6.0 addition
 		position: relative;
 	}
 	.nav-item {
@@ -370,28 +369,18 @@ a.second-level-link {
 	}
 }
 @media (min-width: $screen-sm-min) {
-	.nav-item {
-		&::after {
-			content: " ";
-			height: 5px;
-			display: block;
-			
-			margin: 0 auto;
-		}
-		
-	}
+	
 	.sub-nav {
 		border-top: none;
 	}
 	.main-navigation {
-		margin-top: -93px;
-		top: 5px;
+		margin-top: -82px; // beta 6.0 addition
 	}
 	.no-icons {
 		.top-level-nav {
 			.nav-item {
 				>a {
-					min-height: 86px;
+					min-height: 86px; // beta 6.0 addition
 					padding-top: 2rem;
 				}
 			}

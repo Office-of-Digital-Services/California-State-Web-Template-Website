@@ -43,7 +43,7 @@
 }
 
 .fixed + .main-content {
-    padding-top: 127px;      // Padding for fixed header
+    padding-top: 119px;      // Padding for fixed header
 }
 
 
@@ -69,8 +69,8 @@
       // covering edge case  where no links are set. Need this to maintain
       // search box and ask group positioning
       .main-navigation {
-		margin-top: -50px;	 // Beta 5.0 addition	
-		min-height: 50px;	// Beta 5.0 addition
+		margin-top: -55px;	 // Beta 6.0 addition	
+		min-height: 55px;	// Beta 6.0 addition
       }
         .first-level-link [class^="ca-gov-icon-"] {
             display: none;
@@ -91,7 +91,10 @@
         }
 		
 		.top-level-nav { // Beta 5.0 addition	
-			min-height: 50px;	
+			min-height: 55px; // Beta 6.0 addition 
+			.first-level-link {
+				padding: 17px 0 8px 0;
+				}
 			}
     }
 

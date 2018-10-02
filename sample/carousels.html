@@ -74,51 +74,58 @@ Based on Twitter Bootstrap
                     </div>
                     <div class="third">
                         <h2><label for="sample-blank">Source Code:</label></h2>
-                        <textarea id="sample-blank" class="form-control" rows="10" cols="80"><!--#include virtual="/sample/modules/carousel-content-blank.html" --></textarea>
+                        <textarea id="sample-1" class="form-control" rows="10" cols="80"><!--#include virtual="/sample/modules/carousel-content-blank.html" --></textarea>
                     </div>
                 </div>
+
+
+                <hr>
+
                 <div class="group">
                     <div class="two-thirds">
                         <h2>Content Carousel (content fit)</h2>
                         <p>To create a content fit, we use a background-image on the outermost element of our item. One could of course not set the background-image and the carousel item will still fit the content,  but you will have to be aware of issues between the carousel container's background color and your content.</p>
 <pre><code>
-&lt;div class="item" style="background-image: url('/url/to/image');"&gt;
-  &lt;div class="content-container"&gt;
-    &lt;div class="content"&gt;
-    &lt;!-- your content --&gt;
-    &lt;/div&gt;
-  &lt;/div&gt;
-&lt;/div&gt;
+<div class="item" style="background-image: url('/url/to/image');">
+    <div class="content-container">
+        <div class="content">
+            <! -- your content -->
+        </div>
+    </div>
+</div>
 </code></pre>
+                        
                         <!--#include virtual="/sample/modules/carousel-content.html" -->
                     </div>
                     <div class="third">
                         <h2><label for="sample-content">Source Code:</label></h2>
-                        <textarea id="sample-content" class="form-control" rows="10" cols="80"><!--#include virtual="/sample/modules/carousel-content.html" --></textarea>
+                        <textarea id="sample-2" class="form-control" rows="10" cols="80"><!--#include virtual="/sample/modules/carousel-content.html" --></textarea>
                     </div>
                 </div>
 
                 <hr>
+
 
                 <div class="group">
                     <div class="two-thirds">
                         <h2>Content Carousel (image fit)</h2>
                         <p>To create an image fit, we use an image element contained within our item. If the image element is missing the item will simply fallback to being a content fit item. <i>Warn:</i> if the image url is broken or pointing to the wrong location, the element will have 0 height.</p>
 <pre><code>
-  &lt;div class="item"&gt;
-    &lt;img src="/sample/images/gallery/sierra-big.jpg" alt="background" /&gt;
-      &lt;div class="content-container"&gt;
-          &lt;div class="content"&gt;
-              &lt;!-- your content --&gt;
-          &lt;/div&gt;
-      &lt;/div&gt;
-  &lt;/div&gt;
+                        <div class="item">
+                        <img src="/sample/images/gallery/sierra-big.jpg" alt="background" />
+
+                        <div class="content-container">
+                        <div class="content">
+                     <!-- your content -->
+                 </div>
+             </div>
+         </div>
 </code></pre>
                         <!--#include virtual="/sample/modules/carousel-content-fit-image.html" -->
                     </div>
                     <div class="third">
                         <h2><label for="sample-fit-img">Source Code:</label></h2>
-                        <textarea id="sample-fit-img" class="form-control" rows="10" cols="80"><!--#include virtual="/sample/modules/carousel-content-fit-image.html" --></textarea>
+                        <textarea id="sample-3" class="form-control" rows="10" cols="80"><!--#include virtual="/sample/modules/carousel-content-fit-image.html" --></textarea>
                     </div>
                 </div>
 
@@ -127,38 +134,43 @@ Based on Twitter Bootstrap
                 <h2>Video Carousel</h2>
                 <!--#include virtual="/sample/modules/carousel-video.html" -->
                 <h2><label for="sample-carousel-video">Source Code:</label></h2>
-                <textarea id="sample-carousel-video" class="form-control" rows="10" cols="80"><!--#include virtual="/sample/modules/carousel-video.html" --></textarea>
+                <textarea id="sample-4" class="form-control" rows="10" cols="80"><!--#include virtual="/sample/modules/carousel-video.html" --></textarea>
 
                 <hr>
 
+
+
+
+
+
+
                 <h2>Media Carousel</h2>
-                <p>The Media Carousel is often placed within a panel going inside <code>&lt;div class="panel-body"&gt;</code>. It can also simply be placed by itself. It will scroll a set of items contained in a container with class <code>.carousel-media</code></p>
-                <h3>Media Carousel in Panel</h3>
-                <div class="panel panel-overstated">
-                    <div class="panel-heading">
+                <p>The Media Carousel is often placed within a card going inside <code>&lt;div class="card-body"&gt;</code>. It can also simply be placed by itself. It will scroll a set of items contained in a container with class <code>.carousel-media</code></p>
+                <h3>Media Carousel in Card</h3>
+                <div class="card card-overstated">
+                    <div class="card-heading">
                         <h4>Latest Media</h4>
                         <div class="options">
                             <a href="" class="btn btn-default">More Items</a>
                         </div>
                     </div>
-                    <div class="panel-body">
+                    <div class="card-body">
                         <!--#include virtual="/sample/modules/carousel-media.html" -->
                     </div>
                 </div>
 
-                <h3>Media Carousel without Panel</h3>
+                <h3>Media Carousel without Card</h3>
                 <!--#include virtual="/sample/modules/carousel-media.html" -->
                 <h2><label for="sample-carousel-media">Source Code:</label></h2>
-                <textarea id="sample-carousel-media" class="form-control" rows="10" cols="80"><!--#include virtual="/sample/modules/carousel-media.html" --></textarea>
+                <textarea id="sample-5" class="form-control" rows="10" cols="80"><!--#include virtual="/sample/modules/carousel-media.html" --></textarea>
 
                 <hr>
-
                 <h1>Link Carousel</h1>
                 <p>The Link Carousel scrolls through a set of image links. It will scroll a set of items contained in a container with class <code>.carousel-link</code>.</p>
                 <h2>Link Icon Carousel Example</h2>
                 <!--#include virtual="/sample/modules/carousel-link.html" -->
                 <h2><label for="sample-carousel-link">Source Code:</label></h2>
-                <textarea id="sample-carousel-link" class="form-control" rows="10" cols="80"><!--#include virtual="/sample/modules/carousel-link.html" --></textarea>
+                <textarea id="sample-6" class="form-control" rows="10" cols="80"><!--#include virtual="/sample/modules/carousel-link.html" --></textarea>
             </main>
 
             <div class="main-secondary">
@@ -167,7 +179,7 @@ Based on Twitter Bootstrap
                 <h2>Social Media Slider Example</h2>
                 <!--#include virtual="/sample/modules/carousel-slider.html" -->
                 <h2><label for="sample-carousel-slider">Source Code:</label></h2>
-                <textarea id="sample-carousel-slider" class="form-control" rows="10" cols="80"><!--#include virtual="/sample/modules/carousel-slider.html" --></textarea>
+                <textarea id="sample-7" class="form-control" rows="10" cols="80"><!--#include virtual="/sample/modules/carousel-slider.html" --></textarea>
             </div>
         </div>
     </div>
