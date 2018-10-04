@@ -6,24 +6,22 @@
     @include sr-only;
 }
 
-.global-header {                 // Extends bootstrap .container class to .global-header
-    position: relative;                      // Allows children to be absolute positioned within .global-header
-	z-index:1;
+.global-header { // Extends bootstrap .container class to .global-header
+    position: relative; // Allows children to be absolute positioned within .global-header
+    z-index: 1;
     padding: 0;
     background: $white;
     width: auto;
-	-webkit-box-shadow: 0px 0px 15px 0px rgba(189,189,189,0.4);	// Beta 6.0 addition
-	-moz-box-shadow: 0px 0px 15px 0px rgba(189,189,189,0.4); 	// Beta 6.0 addition
-	box-shadow: 0px 0px 15px 0px rgba(189,189,189,0.4); 	// Beta 6.0 addition
-
+    -webkit-box-shadow: 0px 0px 15px 0px rgba(189,189,189,0.4); // Beta 6.0 addition
+    -moz-box-shadow: 0px 0px 15px 0px rgba(189,189,189,0.4); // Beta 6.0 addition
+    box-shadow: 0px 0px 15px 0px rgba(189,189,189,0.4); // Beta 6.0 addition
     @media (min-width: $screen-sm-min) {
         .primary & {
             // min-height: 412px;              // 390px + line-height;
         }
-
         // Hide mobile controls in desktop view
         .mobile-controls {
-            display: none;                  // Javascript also uses this style to detect if page is in mobile view
+            display: none; // Javascript also uses this style to detect if page is in mobile view
         }
     }
 }
@@ -37,71 +35,68 @@
 
 .branding {
     @include container;
-    position:relative;
+    position: relative;
 
     @media (min-width: $screen-sm-min) {
-        height:82px !important;	// Beta 6.0 addition
+        height: 82px !important; // Beta 6.0 addition
     }
 
     .header-organization-banner {
-        line-height:82px;	// Beta 6.0 addition
-		-webkit-transition: all 0.3s;
-        transition: all 0.3s;           // Smooth transition for compact header
+        line-height: 82px; // Beta 6.0 addition
+        -webkit-transition: all 0.3s;
+        transition: all 0.3s; // Smooth transition for compact header
+        @media (max-width: $screen-xs-max) {
+            max-width: 400px;
+        }
 
         img {
-            max-height:60px;
-			width: 100%;
-			
-			
-			@media (max-width: $screen-md) and (min-width: $screen-sm-min) { // Beta 5.0 addition
-				max-width:225px;	
-			}
-			
-        }
+            width: 100%;
+            max-width: 300px;
+            max-height: 70px;
+            object-fit: contain !important;
+            object-position: left;
 
+            @media (max-width: $screen-md) and (min-width: $screen-sm-min) { // Beta 5.0 addition
+                max-width: 225px;
+            }
+        }
         // Move logo above navigation
         a {
-            display:inline-block;
-            z-index:26;                 // navigation is 25
-            position:relative;
+            display: inline-block;
+            z-index: 26; // navigation is 25
+            position: relative;
         }
-		
-		@media (max-width: $screen-xs-max) { // Beta 5.0 addition
-			position: absolute;		
-    		margin-top: -5px;		
-			padding-right: 150px;	
-			}
+
+        @media (max-width: $screen-xs-max) { // Beta 5.0 addition
+            position: absolute;
+            margin-top: -5px;
+            padding-right: 150px;
+        }
     }
-	
-	
 }
 
-.header-cagov-logo img {	 // Beta 5.0 addition	
-  top: 1px;		
-  height: 27px;		
-  position: absolute;		
-  left: 27px;
-  
-  @media (max-width: $screen-md-max) { 
-			left: 5px;	
-			}
-  		
+.header-cagov-logo img { // Beta 5.0 addition
+    top: 1px;
+    height: 27px;
+    position: absolute;
+    left: 27px;
+
+    @media (max-width: $screen-md-max) {
+        left: 5px;
+    }
 }
 
-.header-cagov-logo a:focus img {		
-	outline:1px dotted black;		
+.header-cagov-logo a:focus img {
+    outline: 1px dotted black;
 }
-
-
 //
 // MOBILE
 // --------------------------------------------------
-
 .mobile-controls toggle-menu {
     position: absolute;
     top: 5px;
-	right: 10px;	// Beta 5.0 addition		
-	left: auto;	 // Beta 5.0 addition	
+    right: 10px; // Beta 5.0 addition
+    left: auto; // Beta 5.0 addition
 }
 
 .mobile-controls toggle-search {
@@ -109,14 +104,13 @@
     top: 5px;
     right: 0;
 }
-
-
 // Banner Carousel Styles
 @media (min-width: $screen-sm-min) {
     .header-slideshow-banner.enabled {
         display: block;
     }
 }
+
 .header-single-banner, .header-large-banner, .header-primary-banner {
     width: 100%;
     /* Will be overriden with js */
@@ -139,15 +133,15 @@
 }
 
 .fixed {
-&+ .header-single-banner, &+ .header-large-banner, &+ .header-primary-banner {
-	background-position-y:80px;
-	}
+    & + .header-single-banner, & + .header-large-banner, & + .header-primary-banner {
+        background-position-y: 80px;
+    }
 }
+
 .carousel-banner,
 .carousel-banner .owl-stage-outer,
 .carousel-banner .owl-stage,
 .carousel-banner .owl-item,
 .carousel-banner .slide {
     height: 100%;
-}		
-
+}

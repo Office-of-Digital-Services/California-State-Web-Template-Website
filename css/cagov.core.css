@@ -9608,9 +9608,18 @@ code {
   transition: all 0.3s;
 }
 
+@media (max-width: 767px) {
+  .branding .header-organization-banner {
+    max-width: 400px;
+  }
+}
+
 .branding .header-organization-banner img {
-  max-height: 60px;
   width: 100%;
+  max-width: 300px;
+  max-height: 70px;
+  object-fit: contain !important;
+  object-position: left;
 }
 
 @media (max-width: 992px) and (min-width: 768px) {
@@ -14059,7 +14068,7 @@ body {
   border: 1px solid #dee2e6;
 }
 
-@media (max-width: 991px) {
+@media (max-width: 767px) {
   .tab-group {
     border: none;
   }
@@ -14092,6 +14101,7 @@ body {
   border: 1px solid #f5f5f5;
   border-top: none !important;
   text-decoration: none;
+  border-bottom: 1px solid #dee2e6;
 }
 
 .tab-group .tab-pane {
@@ -14145,12 +14155,22 @@ body {
   }
 }
 
+.nav-tabs > li {
+  margin-bottom: -1px;
+  margin-left: 1px;
+}
+
+.nav-tabs > li:first-child {
+  margin-left: 0;
+}
+
 .nav-tabs > li > a.active, .nav-tabs > li > a.active:hover {
   color: #555555;
   background-color: #fff;
   border: 1px solid #ddd;
   border-bottom-color: transparent;
   cursor: default;
+  border-bottom: 1px solid #fff;
 }
 
 .nav-tabs > li > a:hover {
@@ -14161,17 +14181,8 @@ body {
   outline: solid 2px #2ea3f2 !important;
 }
 
-.nav-tabs > li {
-  margin-bottom: -1px;
-  margin-left: 1px;
-}
-
-.nav-tabs > li:first-child {
-  margin-left: 0;
-}
-
 .nav-tabs .nav-item {
-  margin-left: 1px;
+  margin-left: 2px;
 }
 
 .nav-tabs .nav-item:hover {
@@ -14184,6 +14195,37 @@ body {
 
 .nav-tabs .nav-item::after {
   display: none;
+}
+
+/* Responsive tabs*/
+.responsive .nav-tabs {
+  display: none;
+}
+
+@media (min-width: 768px) {
+  .responsive .nav-tabs {
+    display: flex;
+  }
+  .responsive.tab-group .card {
+    border: none;
+    padding: 0;
+    margin-bottom: 0;
+    background-color: transparent;
+  }
+  .responsive.tab-group .card .card-header {
+    display: none;
+  }
+  .responsive.tab-group .card .collapse {
+    display: block;
+  }
+}
+
+@media (max-width: 767px) {
+  .responsive .tab-pane {
+    display: block !important;
+    opacity: 1 !important;
+    padding: 0 !important;
+  }
 }
 
 /* -----------------------------------------
@@ -19686,7 +19728,7 @@ html:not(.ie8) .stats-highlight img {
   display: flex;
 }
 
-d-block {
+.d-block {
   display: block;
 }
 

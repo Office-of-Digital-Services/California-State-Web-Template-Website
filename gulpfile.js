@@ -36,7 +36,6 @@ var jssrc = [
    'source/js/bootstrap-accessibility-plugin/tab.js',
 
   // THIRD PARTY LIBS
- 'source/js/libs/responsive-tabs.js',
  'source/js/libs/owl.carousel.js',
  'source/js/libs/jquery.fancybox.js',
  'source/js/libs/jquery.eqheight.js',
