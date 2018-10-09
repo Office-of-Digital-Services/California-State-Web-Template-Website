@@ -2,11 +2,6 @@
    INIT THIRD PARTY PLUGINS - /source/js/cagov/plugins.js
 ----------------------------------------- */
 
-requirejs.config({
-    //By default load any module IDs from js/lib
-    baseUrl: '/js/libs'
-});
-
 $(document).ready(function () {
     // Tabs to accordion
     // https://github.com/openam/bootstrap-responsive-tabs

@@ -2005,9 +2005,15 @@ var fakewaffle = (function ($, fakewaffle) {
 }(window.jQuery, fakewaffle || {}));
 
 /**
+ * Owl Carousel v2.3.4
+ * Copyright 2013-2018 David Deutsch
+ * Licensed under: SEE LICENSE IN https://github.com/OwlCarousel2/OwlCarousel2/blob/master/LICENSE
+ */
+/**
  * Owl carousel
- * @version 2.0.0-beta.3
+ * @version 2.3.4
  * @author Bartosz Wojciechowski
+ * @author David Deutsch
  * @license The MIT License (MIT)
  * @todo Lazy Load Icon
  * @todo prevent animationend bubling
@@ -2017,123 +2023,123 @@ var fakewaffle = (function ($, fakewaffle) {
  */
 ; (function ($, window, document, undefined) {
 
-    /**
-     * Creates a carousel.
-     * @class The Owl Carousel.
-     * @public
-     * @param {HTMLElement|jQuery} element - The element to create the carousel for.
-     * @param {Object} [options] - The options
-     */
+	/**
+	 * Creates a carousel.
+	 * @class The Owl Carousel.
+	 * @public
+	 * @param {HTMLElement|jQuery} element - The element to create the carousel for.
+	 * @param {Object} [options] - The options
+	 */
     function Owl(element, options) {
 
-        /**
-         * Current settings for the carousel.
-         * @public
-         */
+		/**
+		 * Current settings for the carousel.
+		 * @public
+		 */
         this.settings = null;
 
-        /**
-         * Current options set by the caller including defaults.
-         * @public
-         */
+		/**
+		 * Current options set by the caller including defaults.
+		 * @public
+		 */
         this.options = $.extend({}, Owl.Defaults, options);
 
-        /**
-         * Plugin element.
-         * @public
-         */
+		/**
+		 * Plugin element.
+		 * @public
+		 */
         this.$element = $(element);
 
-        /**
-         * Proxied event handlers.
-         * @protected
-         */
+		/**
+		 * Proxied event handlers.
+		 * @protected
+		 */
         this._handlers = {};
 
-        /**
-         * References to the running plugins of this carousel.
-         * @protected
-         */
+		/**
+		 * References to the running plugins of this carousel.
+		 * @protected
+		 */
         this._plugins = {};
 
-        /**
-         * Currently suppressed events to prevent them from beeing retriggered.
-         * @protected
-         */
+		/**
+		 * Currently suppressed events to prevent them from being retriggered.
+		 * @protected
+		 */
         this._supress = {};
 
-        /**
-         * Absolute current position.
-         * @protected
-         */
+		/**
+		 * Absolute current position.
+		 * @protected
+		 */
         this._current = null;
 
-        /**
-         * Animation speed in milliseconds.
-         * @protected
-         */
+		/**
+		 * Animation speed in milliseconds.
+		 * @protected
+		 */
         this._speed = null;
 
-        /**
-         * Coordinates of all items in pixel.
-         * @todo The name of this member is missleading.
-         * @protected
-         */
+		/**
+		 * Coordinates of all items in pixel.
+		 * @todo The name of this member is missleading.
+		 * @protected
+		 */
         this._coordinates = [];
 
-        /**
-         * Current breakpoint.
-         * @todo Real media queries would be nice.
-         * @protected
-         */
+		/**
+		 * Current breakpoint.
+		 * @todo Real media queries would be nice.
+		 * @protected
+		 */
         this._breakpoint = null;
 
-        /**
-         * Current width of the plugin element.
-         */
+		/**
+		 * Current width of the plugin element.
+		 */
         this._width = null;
 
-        /**
-         * All real items.
-         * @protected
-         */
+		/**
+		 * All real items.
+		 * @protected
+		 */
         this._items = [];
 
-        /**
-         * All cloned items.
-         * @protected
-         */
+		/**
+		 * All cloned items.
+		 * @protected
+		 */
         this._clones = [];
 
-        /**
-         * Merge values of all items.
-         * @todo Maybe this could be part of a plugin.
-         * @protected
-         */
+		/**
+		 * Merge values of all items.
+		 * @todo Maybe this could be part of a plugin.
+		 * @protected
+		 */
         this._mergers = [];
 
-        /**
-         * Widths of all items.
-         */
+		/**
+		 * Widths of all items.
+		 */
         this._widths = [];
 
-        /**
-         * Invalidated parts within the update process.
-         * @protected
-         */
+		/**
+		 * Invalidated parts within the update process.
+		 * @protected
+		 */
         this._invalidated = {};
 
-        /**
-         * Ordered list of workers for the update process.
-         * @protected
-         */
+		/**
+		 * Ordered list of workers for the update process.
+		 * @protected
+		 */
         this._pipe = [];
 
-        /**
-         * Current state information for the drag operation.
-         * @todo #261
-         * @protected
-         */
+		/**
+		 * Current state information for the drag operation.
+		 * @todo #261
+		 * @protected
+		 */
         this._drag = {
             time: null,
             target: null,
@@ -2145,11 +2151,11 @@ var fakewaffle = (function ($, fakewaffle) {
             direction: null
         };
 
-        /**
-         * Current state information and their tags.
-         * @type {Object}
-         * @protected
-         */
+		/**
+		 * Current state information and their tags.
+		 * @type {Object}
+		 * @protected
+		 */
         this._states = {
             current: {},
             tags: {
@@ -2165,7 +2171,7 @@ var fakewaffle = (function ($, fakewaffle) {
 
         $.each(Owl.Plugins, $.proxy(function (key, plugin) {
             this._plugins[key.charAt(0).toLowerCase() + key.slice(1)]
-              = new plugin(this);
+                = new plugin(this);
         }, this));
 
         $.each(Owl.Workers, $.proxy(function (priority, worker) {
@@ -2179,17 +2185,16 @@ var fakewaffle = (function ($, fakewaffle) {
         this.initialize();
     }
 
-    /**
-     * Default options for the carousel.
-     * @public
-     */
+	/**
+	 * Default options for the carousel.
+	 * @public
+	 */
     Owl.Defaults = {
         items: 3,
-        autoplay: false,
-        autoplauhoverpause: true,
-        loop: true,
+        loop: false,
         center: false,
         rewind: false,
+        checkVisibility: true,
 
         mouseDrag: true,
         touchDrag: true,
@@ -2215,6 +2220,7 @@ var fakewaffle = (function ($, fakewaffle) {
         responsiveBaseElement: window,
 
         fallbackEasing: 'swing',
+        slideTransition: '',
 
         info: false,
 
@@ -2234,38 +2240,38 @@ var fakewaffle = (function ($, fakewaffle) {
         grabClass: 'owl-grab'
     };
 
-    /**
-     * Enumeration for width.
-     * @public
-     * @readonly
-     * @enum {String}
-     */
+	/**
+	 * Enumeration for width.
+	 * @public
+	 * @readonly
+	 * @enum {String}
+	 */
     Owl.Width = {
         Default: 'default',
         Inner: 'inner',
         Outer: 'outer'
     };
 
-    /**
-     * Enumeration for types.
-     * @public
-     * @readonly
-     * @enum {String}
-     */
+	/**
+	 * Enumeration for types.
+	 * @public
+	 * @readonly
+	 * @enum {String}
+	 */
     Owl.Type = {
         Event: 'event',
         State: 'state'
     };
 
-    /**
-     * Contains all registered plugins.
-     * @public
-     */
+	/**
+	 * Contains all registered plugins.
+	 * @public
+	 */
     Owl.Plugins = {};
 
-    /**
-     * List of workers involved in the update process.
-     */
+	/**
+	 * List of workers involved in the update process.
+	 */
     Owl.Workers = [{
         filter: ['width', 'settings'],
         run: function () {
@@ -2285,13 +2291,13 @@ var fakewaffle = (function ($, fakewaffle) {
         filter: ['width', 'items', 'settings'],
         run: function (cache) {
             var margin = this.settings.margin || '',
-              grid = !this.settings.autoWidth,
-              rtl = this.settings.rtl,
-              css = {
-                  'width': 'auto',
-                  'margin-left': rtl ? margin : '',
-                  'margin-right': rtl ? '' : margin
-              };
+                grid = !this.settings.autoWidth,
+                rtl = this.settings.rtl,
+                css = {
+                    'width': 'auto',
+                    'margin-left': rtl ? margin : '',
+                    'margin-right': rtl ? '' : margin
+                };
 
             !grid && this.$stage.children().css(css);
 
@@ -2301,10 +2307,10 @@ var fakewaffle = (function ($, fakewaffle) {
         filter: ['width', 'items', 'settings'],
         run: function (cache) {
             var width = (this.width() / this.settings.items).toFixed(3) - this.settings.margin,
-              merge = null,
-              iterator = this._items.length,
-              grid = !this.settings.autoWidth,
-              widths = [];
+                merge = null,
+                iterator = this._items.length,
+                grid = !this.settings.autoWidth,
+                widths = [];
 
             cache.items = {
                 merge: false,
@@ -2326,21 +2332,24 @@ var fakewaffle = (function ($, fakewaffle) {
         filter: ['items', 'settings'],
         run: function () {
             var clones = [],
-              items = this._items,
-              settings = this.settings,
-              view = Math.max(settings.items * 2, 4),
-              size = Math.ceil(items.length / 2) * 2,
-              repeat = settings.loop && items.length ? settings.rewind ? view : Math.max(view, size) : 0,
-              append = '',
-              prepend = '';
+                items = this._items,
+                settings = this.settings,
+                // TODO: Should be computed from number of min width items in stage
+                view = Math.max(settings.items * 2, 4),
+                size = Math.ceil(items.length / 2) * 2,
+                repeat = settings.loop && items.length ? settings.rewind ? view : Math.max(view, size) : 0,
+                append = '',
+                prepend = '';
 
             repeat /= 2;
 
-            while (repeat--) {
+            while (repeat > 0) {
+                // Switch to only using appended clones
                 clones.push(this.normalize(clones.length / 2, true));
                 append = append + items[clones[clones.length - 1]][0].outerHTML;
                 clones.push(this.normalize(items.length - 1 - (clones.length - 1) / 2, true));
                 prepend = items[clones[clones.length - 1]][0].outerHTML + prepend;
+                repeat -= 1;
             }
 
             this._clones = clones;
@@ -2352,11 +2361,11 @@ var fakewaffle = (function ($, fakewaffle) {
         filter: ['width', 'items', 'settings'],
         run: function () {
             var rtl = this.settings.rtl ? 1 : -1,
-              size = this._clones.length + this._items.length,
-              iterator = -1,
-              previous = 0,
-              current = 0,
-              coordinates = [];
+                size = this._clones.length + this._items.length,
+                iterator = -1,
+                previous = 0,
+                current = 0,
+                coordinates = [];
 
             while (++iterator < size) {
                 previous = coordinates[iterator - 1] || 0;
@@ -2370,12 +2379,12 @@ var fakewaffle = (function ($, fakewaffle) {
         filter: ['width', 'items', 'settings'],
         run: function () {
             var padding = this.settings.stagePadding,
-              coordinates = this._coordinates,
-              css = {
-                  'width': Math.ceil(Math.abs(coordinates[coordinates.length - 1])) + padding * 2,
-                  'padding-left': padding || '',
-                  'padding-right': padding || ''
-              };
+                coordinates = this._coordinates,
+                css = {
+                    'width': Math.ceil(Math.abs(coordinates[coordinates.length - 1])) + padding * 2,
+                    'padding-left': padding || '',
+                    'padding-right': padding || ''
+                };
 
             this.$stage.css(css);
         }
@@ -2383,8 +2392,8 @@ var fakewaffle = (function ($, fakewaffle) {
         filter: ['width', 'items', 'settings'],
         run: function (cache) {
             var iterator = this._coordinates.length,
-              grid = !this.settings.autoWidth,
-              items = this.$stage.children();
+                grid = !this.settings.autoWidth,
+                items = this.$stage.children();
 
             if (grid && cache.items.merge) {
                 while (iterator--) {
@@ -2417,17 +2426,17 @@ var fakewaffle = (function ($, fakewaffle) {
         filter: ['width', 'position', 'items', 'settings'],
         run: function () {
             var rtl = this.settings.rtl ? 1 : -1,
-              padding = this.settings.stagePadding * 2,
-              begin = this.coordinates(this.current()) + padding,
-              end = begin + this.width() * rtl,
-              inner, outer, matches = [], i, n;
+                padding = this.settings.stagePadding * 2,
+                begin = this.coordinates(this.current()) + padding,
+                end = begin + this.width() * rtl,
+                inner, outer, matches = [], i, n;
 
             for (i = 0, n = this._coordinates.length; i < n; i++) {
                 inner = this._coordinates[i - 1] || 0;
                 outer = Math.abs(this._coordinates[i]) + padding * rtl;
 
                 if ((this.op(inner, '<=', begin) && (this.op(inner, '>', end)))
-                  || (this.op(outer, '<', begin) && this.op(outer, '>', end))) {
+                    || (this.op(outer, '<', begin) && this.op(outer, '>', end))) {
                     matches.push(i);
                 }
             }
@@ -2435,17 +2444,79 @@ var fakewaffle = (function ($, fakewaffle) {
             this.$stage.children('.active').removeClass('active');
             this.$stage.children(':eq(' + matches.join('), :eq(') + ')').addClass('active');
 
+            this.$stage.children('.center').removeClass('center');
             if (this.settings.center) {
-                this.$stage.children('.center').removeClass('center');
                 this.$stage.children().eq(this.current()).addClass('center');
             }
         }
     }];
 
-    /**
-     * Initializes the carousel.
-     * @protected
-     */
+	/**
+	 * Create the stage DOM element
+	 */
+    Owl.prototype.initializeStage = function () {
+        this.$stage = this.$element.find('.' + this.settings.stageClass);
+
+        // if the stage is already in the DOM, grab it and skip stage initialization
+        if (this.$stage.length) {
+            return;
+        }
+
+        this.$element.addClass(this.options.loadingClass);
+
+        // create stage
+        this.$stage = $('<' + this.settings.stageElement + '>', {
+            "class": this.settings.stageClass
+        }).wrap($('<div/>', {
+            "class": this.settings.stageOuterClass
+        }));
+
+        // append stage
+        this.$element.append(this.$stage.parent());
+    };
+
+	/**
+	 * Create item DOM elements
+	 */
+    Owl.prototype.initializeItems = function () {
+        var $items = this.$element.find('.owl-item');
+
+        // if the items are already in the DOM, grab them and skip item initialization
+        if ($items.length) {
+            this._items = $items.get().map(function (item) {
+                return $(item);
+            });
+
+            this._mergers = this._items.map(function () {
+                return 1;
+            });
+
+            this.refresh();
+
+            return;
+        }
+
+        // append content
+        this.replace(this.$element.children().not(this.$stage.parent()));
+
+        // check visibility
+        if (this.isVisible()) {
+            // update view
+            this.refresh();
+        } else {
+            // invalidate width
+            this.invalidate('width');
+        }
+
+        this.$element
+            .removeClass(this.options.loadingClass)
+            .addClass(this.options.loadedClass);
+    };
+
+	/**
+	 * Initializes the carousel.
+	 * @protected
+	 */
     Owl.prototype.initialize = function () {
         this.enter('initializing');
         this.trigger('initialize');
@@ -2463,30 +2534,8 @@ var fakewaffle = (function ($, fakewaffle) {
             }
         }
 
-        this.$element.addClass(this.options.loadingClass);
-
-        // create stage
-        this.$stage = $('<' + this.settings.stageElement + ' class="' + this.settings.stageClass + '"/>')
-          .wrap('<div class="' + this.settings.stageOuterClass + '"/>');
-
-        // append stage
-        this.$element.append(this.$stage.parent());
-
-        // append content
-        this.replace(this.$element.children().not(this.$stage.parent()));
-
-        // check visibility
-        if (this.$element.is(':visible')) {
-            // update view
-            this.refresh();
-        } else {
-            // invalidate width
-            this.invalidate('width');
-        }
-
-        this.$element
-          .removeClass(this.options.loadingClass)
-          .addClass(this.options.loadedClass);
+        this.initializeStage();
+        this.initializeItems();
 
         // register event handlers
         this.registerEventHandlers();
@@ -2495,17 +2544,28 @@ var fakewaffle = (function ($, fakewaffle) {
         this.trigger('initialized');
     };
 
-    /**
-     * Setups the current settings.
-     * @todo Remove responsive classes. Why should adaptive designs be brought into IE8?
-     * @todo Support for media queries by using `matchMedia` would be nice.
-     * @public
-     */
+	/**
+	 * @returns {Boolean} visibility of $element
+	 *                    if you know the carousel will always be visible you can set `checkVisibility` to `false` to
+	 *                    prevent the expensive browser layout forced reflow the $element.is(':visible') does
+	 */
+    Owl.prototype.isVisible = function () {
+        return this.settings.checkVisibility
+            ? this.$element.is(':visible')
+            : true;
+    };
+
+	/**
+	 * Setups the current settings.
+	 * @todo Remove responsive classes. Why should adaptive designs be brought into IE8?
+	 * @todo Support for media queries by using `matchMedia` would be nice.
+	 * @public
+	 */
     Owl.prototype.setup = function () {
         var viewport = this.viewport(),
-          overwrites = this.options.responsive,
-          match = -1,
-          settings = null;
+            overwrites = this.options.responsive,
+            match = -1,
+            settings = null;
 
         if (!overwrites) {
             settings = $.extend({}, this.options);
@@ -2517,29 +2577,30 @@ var fakewaffle = (function ($, fakewaffle) {
             });
 
             settings = $.extend({}, this.options, overwrites[match]);
+            if (typeof settings.stagePadding === 'function') {
+                settings.stagePadding = settings.stagePadding();
+            }
             delete settings.responsive;
 
             // responsive class
             if (settings.responsiveClass) {
                 this.$element.attr('class',
-                  this.$element.attr('class').replace(new RegExp('(' + this.options.responsiveClass + '-)\\S+\\s', 'g'), '$1' + match)
+                    this.$element.attr('class').replace(new RegExp('(' + this.options.responsiveClass + '-)\\S+\\s', 'g'), '$1' + match)
                 );
             }
         }
 
-        if (this.settings === null || this._breakpoint !== match) {
-            this.trigger('change', { property: { name: 'settings', value: settings } });
-            this._breakpoint = match;
-            this.settings = settings;
-            this.invalidate('settings');
-            this.trigger('changed', { property: { name: 'settings', value: this.settings } });
-        }
+        this.trigger('change', { property: { name: 'settings', value: settings } });
+        this._breakpoint = match;
+        this.settings = settings;
+        this.invalidate('settings');
+        this.trigger('changed', { property: { name: 'settings', value: this.settings } });
     };
 
-    /**
-     * Updates option logic if necessery.
-     * @protected
-     */
+	/**
+	 * Updates option logic if necessery.
+	 * @protected
+	 */
     Owl.prototype.optionsLogic = function () {
         if (this.settings.autoWidth) {
             this.settings.stagePadding = false;
@@ -2547,18 +2608,18 @@ var fakewaffle = (function ($, fakewaffle) {
         }
     };
 
-    /**
-     * Prepares an item before add.
-     * @todo Rename event parameter `content` to `item`.
-     * @protected
-     * @returns {jQuery|HTMLElement} - The item container.
-     */
+	/**
+	 * Prepares an item before add.
+	 * @todo Rename event parameter `content` to `item`.
+	 * @protected
+	 * @returns {jQuery|HTMLElement} - The item container.
+	 */
     Owl.prototype.prepare = function (item) {
         var event = this.trigger('prepare', { content: item });
 
         if (!event.data) {
             event.data = $('<' + this.settings.itemElement + '/>')
-              .addClass(this.options.itemClass).append(item)
+                .addClass(this.options.itemClass).append(item)
         }
 
         this.trigger('prepared', { content: event.data });
@@ -2566,15 +2627,15 @@ var fakewaffle = (function ($, fakewaffle) {
         return event.data;
     };
 
-    /**
-     * Updates the view.
-     * @public
-     */
+	/**
+	 * Updates the view.
+	 * @public
+	 */
     Owl.prototype.update = function () {
         var i = 0,
-          n = this._pipe.length,
-          filter = $.proxy(function (p) { return this[p] }, this._invalidated),
-          cache = {};
+            n = this._pipe.length,
+            filter = $.proxy(function (p) { return this[p] }, this._invalidated),
+            cache = {};
 
         while (i < n) {
             if (this._invalidated.all || $.grep(this._pipe[i].filter, filter).length > 0) {
@@ -2588,12 +2649,12 @@ var fakewaffle = (function ($, fakewaffle) {
         !this.is('valid') && this.enter('valid');
     };
 
-    /**
-     * Gets the width of the view.
-     * @public
-     * @param {Owl.Width} [dimension=Owl.Width.Default] - The dimension to return.
-     * @returns {Number} - The width of the view in pixel.
-     */
+	/**
+	 * Gets the width of the view.
+	 * @public
+	 * @param {Owl.Width} [dimension=Owl.Width.Default] - The dimension to return.
+	 * @returns {Number} - The width of the view in pixel.
+	 */
     Owl.prototype.width = function (dimension) {
         dimension = dimension || Owl.Width.Default;
         switch (dimension) {
@@ -2605,10 +2666,10 @@ var fakewaffle = (function ($, fakewaffle) {
         }
     };
 
-    /**
-     * Refreshes the carousel primarily for adaptive purposes.
-     * @public
-     */
+	/**
+	 * Refreshes the carousel primarily for adaptive purposes.
+	 * @public
+	 */
     Owl.prototype.refresh = function () {
         this.enter('refreshing');
         this.trigger('refresh');
@@ -2627,19 +2688,19 @@ var fakewaffle = (function ($, fakewaffle) {
         this.trigger('refreshed');
     };
 
-    /**
-     * Checks window `resize` event.
-     * @protected
-     */
+	/**
+	 * Checks window `resize` event.
+	 * @protected
+	 */
     Owl.prototype.onThrottledResize = function () {
         window.clearTimeout(this.resizeTimer);
         this.resizeTimer = window.setTimeout(this._handlers.onResize, this.settings.responsiveRefreshRate);
     };
 
-    /**
-     * Checks window `resize` event.
-     * @protected
-     */
+	/**
+	 * Checks window `resize` event.
+	 * @protected
+	 */
     Owl.prototype.onResize = function () {
         if (!this._items.length) {
             return false;
@@ -2649,7 +2710,7 @@ var fakewaffle = (function ($, fakewaffle) {
             return false;
         }
 
-        if (!this.$element.is(':visible')) {
+        if (!this.isVisible()) {
             return false;
         }
 
@@ -2668,12 +2729,12 @@ var fakewaffle = (function ($, fakewaffle) {
         this.trigger('resized');
     };
 
-    /**
-     * Registers event handlers.
-     * @todo Check `msPointerEnabled`
-     * @todo #261
-     * @protected
-     */
+	/**
+	 * Registers event handlers.
+	 * @todo Check `msPointerEnabled`
+	 * @todo #261
+	 * @protected
+	 */
     Owl.prototype.registerEventHandlers = function () {
         if ($.support.transition) {
             this.$stage.on($.support.transition.end + '.owl.core', $.proxy(this.onTransitionEnd, this));
@@ -2695,13 +2756,13 @@ var fakewaffle = (function ($, fakewaffle) {
         }
     };
 
-    /**
-     * Handles `touchstart` and `mousedown` events.
-     * @todo Horizontal swipe threshold as option
-     * @todo #261
-     * @protected
-     * @param {Event} event - The event arguments.
-     */
+	/**
+	 * Handles `touchstart` and `mousedown` events.
+	 * @todo Horizontal swipe threshold as option
+	 * @todo #261
+	 * @protected
+	 * @param {Event} event - The event arguments.
+	 */
     Owl.prototype.onDragStart = function (event) {
         var stage = null;
 
@@ -2719,8 +2780,8 @@ var fakewaffle = (function ($, fakewaffle) {
             stage = this.$stage.position();
             stage = {
                 x: this.settings.rtl ?
-                  stage.left + this.$stage.width() - this.width() + this.settings.margin :
-                  stage.left,
+                    stage.left + this.$stage.width() - this.width() + this.settings.margin :
+                    stage.left,
                 y: stage.top
             };
         }
@@ -2758,18 +2819,18 @@ var fakewaffle = (function ($, fakewaffle) {
         }, this));
     };
 
-    /**
-     * Handles the `touchmove` and `mousemove` events.
-     * @todo #261
-     * @protected
-     * @param {Event} event - The event arguments.
-     */
+	/**
+	 * Handles the `touchmove` and `mousemove` events.
+	 * @todo #261
+	 * @protected
+	 * @param {Event} event - The event arguments.
+	 */
     Owl.prototype.onDragMove = function (event) {
         var minimum = null,
-          maximum = null,
-          pull = null,
-          delta = this.difference(this._drag.pointer, this.pointer(event)),
-          stage = this.difference(this._drag.stage.start, delta);
+            maximum = null,
+            pull = null,
+            delta = this.difference(this._drag.pointer, this.pointer(event)),
+            stage = this.difference(this._drag.stage.start, delta);
 
         if (!this.is('dragging')) {
             return;
@@ -2793,17 +2854,17 @@ var fakewaffle = (function ($, fakewaffle) {
         this.animate(stage.x);
     };
 
-    /**
-     * Handles the `touchend` and `mouseup` events.
-     * @todo #261
-     * @todo Threshold for click event
-     * @protected
-     * @param {Event} event - The event arguments.
-     */
+	/**
+	 * Handles the `touchend` and `mouseup` events.
+	 * @todo #261
+	 * @todo Threshold for click event
+	 * @protected
+	 * @param {Event} event - The event arguments.
+	 */
     Owl.prototype.onDragEnd = function (event) {
         var delta = this.difference(this._drag.pointer, this.pointer(event)),
-          stage = this._drag.stage.current,
-          direction = delta.x > 0 ^ this.settings.rtl ? 'left' : 'right';
+            stage = this._drag.stage.current,
+            direction = delta.x > 0 ^ this.settings.rtl ? 'left' : 'right';
 
         $(document).off('.owl.core');
 
@@ -2830,27 +2891,32 @@ var fakewaffle = (function ($, fakewaffle) {
         this.trigger('dragged');
     };
 
-    /**
-     * Gets absolute position of the closest item for a coordinate.
-     * @todo Setting `freeDrag` makes `closest` not reusable. See #165.
-     * @protected
-     * @param {Number} coordinate - The coordinate in pixel.
-     * @param {String} direction - The direction to check for the closest item. Ether `left` or `right`.
-     * @return {Number} - The absolute position of the closest item.
-     */
+	/**
+	 * Gets absolute position of the closest item for a coordinate.
+	 * @todo Setting `freeDrag` makes `closest` not reusable. See #165.
+	 * @protected
+	 * @param {Number} coordinate - The coordinate in pixel.
+	 * @param {String} direction - The direction to check for the closest item. Ether `left` or `right`.
+	 * @return {Number} - The absolute position of the closest item.
+	 */
     Owl.prototype.closest = function (coordinate, direction) {
         var position = -1,
-          pull = 30,
-          width = this.width(),
-          coordinates = this.coordinates();
+            pull = 30,
+            width = this.width(),
+            coordinates = this.coordinates();
 
         if (!this.settings.freeDrag) {
             // check closest item
             $.each(coordinates, $.proxy(function (index, value) {
-                if (coordinate > value - pull && coordinate < value + pull) {
+                // on a left pull, check on current index
+                if (direction === 'left' && coordinate > value - pull && coordinate < value + pull) {
                     position = index;
+                    // on a right pull, check on previous index
+                    // to do so, subtract width from value and set position = index + 1
+                } else if (direction === 'right' && coordinate > value - width - pull && coordinate < value - width + pull) {
+                    position = index + 1;
                 } else if (this.op(coordinate, '<', value)
-                  && this.op(coordinate, '>', coordinates[index + 1] || value - width)) {
+                    && this.op(coordinate, '>', coordinates[index + 1] !== undefined ? coordinates[index + 1] : value - width)) {
                     position = direction === 'left' ? index + 1 : index;
                 }
                 return position === -1;
@@ -2869,12 +2935,12 @@ var fakewaffle = (function ($, fakewaffle) {
         return position;
     };
 
-    /**
-     * Animates the stage.
-     * @todo #270
-     * @public
-     * @param {Number} coordinate - The coordinate in pixels.
-     */
+	/**
+	 * Animates the stage.
+	 * @todo #270
+	 * @public
+	 * @param {Number} coordinate - The coordinate in pixels.
+	 */
     Owl.prototype.animate = function (coordinate) {
         var animate = this.speed() > 0;
 
@@ -2888,7 +2954,9 @@ var fakewaffle = (function ($, fakewaffle) {
         if ($.support.transform3d && $.support.transition) {
             this.$stage.css({
                 transform: 'translate3d(' + coordinate + 'px,0px,0px)',
-                transition: (this.speed() / 1000) + 's'
+                transition: (this.speed() / 1000) + 's' + (
+                    this.settings.slideTransition ? ' ' + this.settings.slideTransition : ''
+                )
             });
         } else if (animate) {
             this.$stage.animate({
@@ -2901,21 +2969,21 @@ var fakewaffle = (function ($, fakewaffle) {
         }
     };
 
-    /**
-     * Checks whether the carousel is in a specific state or not.
-     * @param {String} state - The state to check.
-     * @returns {Boolean} - The flag which indicates if the carousel is busy.
-     */
+	/**
+	 * Checks whether the carousel is in a specific state or not.
+	 * @param {String} state - The state to check.
+	 * @returns {Boolean} - The flag which indicates if the carousel is busy.
+	 */
     Owl.prototype.is = function (state) {
         return this._states.current[state] && this._states.current[state] > 0;
     };
 
-    /**
-     * Sets the absolute position of the current item.
-     * @public
-     * @param {Number} [position] - The new absolute position or nothing to leave it unchanged.
-     * @returns {Number} - The absolute position of the current item.
-     */
+	/**
+	 * Sets the absolute position of the current item.
+	 * @public
+	 * @param {Number} [position] - The new absolute position or nothing to leave it unchanged.
+	 * @returns {Number} - The absolute position of the current item.
+	 */
     Owl.prototype.current = function (position) {
         if (position === undefined) {
             return this._current;
@@ -2944,11 +3012,11 @@ var fakewaffle = (function ($, fakewaffle) {
         return this._current;
     };
 
-    /**
-     * Invalidates the given part of the update routine.
-     * @param {String} [part] - The part to invalidate.
-     * @returns {Array.<String>} - The invalidated parts.
-     */
+	/**
+	 * Invalidates the given part of the update routine.
+	 * @param {String} [part] - The part to invalidate.
+	 * @returns {Array.<String>} - The invalidated parts.
+	 */
     Owl.prototype.invalidate = function (part) {
         if ($.type(part) === 'string') {
             this._invalidated[part] = true;
@@ -2957,11 +3025,11 @@ var fakewaffle = (function ($, fakewaffle) {
         return $.map(this._invalidated, function (v, i) { return i });
     };
 
-    /**
-     * Resets the absolute position of the current item.
-     * @public
-     * @param {Number} position - The absolute position of the new item.
-     */
+	/**
+	 * Resets the absolute position of the current item.
+	 * @public
+	 * @param {Number} position - The absolute position of the new item.
+	 */
     Owl.prototype.reset = function (position) {
         position = this.normalize(position);
 
@@ -2979,18 +3047,18 @@ var fakewaffle = (function ($, fakewaffle) {
         this.release(['translate', 'translated']);
     };
 
-    /**
-     * Normalizes an absolute or a relative position of an item.
-     * @public
-     * @param {Number} position - The absolute or relative position to normalize.
-     * @param {Boolean} [relative=false] - Whether the given position is relative or not.
-     * @returns {Number} - The normalized position.
-     */
+	/**
+	 * Normalizes an absolute or a relative position of an item.
+	 * @public
+	 * @param {Number} position - The absolute or relative position to normalize.
+	 * @param {Boolean} [relative=false] - Whether the given position is relative or not.
+	 * @returns {Number} - The normalized position.
+	 */
     Owl.prototype.normalize = function (position, relative) {
         var n = this._items.length,
-          m = relative ? 0 : this._clones.length;
+            m = relative ? 0 : this._clones.length;
 
-        if (!$.isNumeric(position) || n < 1) {
+        if (!this.isNumeric(position) || n < 1) {
             position = undefined;
         } else if (position < 0 || position >= n + m) {
             position = ((position - m / 2) % n + n) % n + m / 2;
@@ -2999,37 +3067,45 @@ var fakewaffle = (function ($, fakewaffle) {
         return position;
     };
 
-    /**
-     * Converts an absolute position of an item into a relative one.
-     * @public
-     * @param {Number} position - The absolute position to convert.
-     * @returns {Number} - The converted position.
-     */
+	/**
+	 * Converts an absolute position of an item into a relative one.
+	 * @public
+	 * @param {Number} position - The absolute position to convert.
+	 * @returns {Number} - The converted position.
+	 */
     Owl.prototype.relative = function (position) {
         position -= this._clones.length / 2;
         return this.normalize(position, true);
     };
 
-    /**
-     * Gets the maximum position for the current item.
-     * @public
-     * @param {Boolean} [relative=false] - Whether to return an absolute position or a relative position.
-     * @returns {Number}
-     */
+	/**
+	 * Gets the maximum position for the current item.
+	 * @public
+	 * @param {Boolean} [relative=false] - Whether to return an absolute position or a relative position.
+	 * @returns {Number}
+	 */
     Owl.prototype.maximum = function (relative) {
         var settings = this.settings,
-          maximum = this._coordinates.length,
-          boundary = Math.abs(this._coordinates[maximum - 1]) - this._width,
-          i = -1, j;
+            maximum = this._coordinates.length,
+            iterator,
+            reciprocalItemsWidth,
+            elementWidth;
 
         if (settings.loop) {
             maximum = this._clones.length / 2 + this._items.length - 1;
         } else if (settings.autoWidth || settings.merge) {
-            // binary search
-            while (maximum - i > 1) {
-                Math.abs(this._coordinates[j = maximum + i >> 1]) < boundary
-                  ? i = j : maximum = j;
+            iterator = this._items.length;
+            if (iterator) {
+                reciprocalItemsWidth = this._items[--iterator].width();
+                elementWidth = this.$element.width();
+                while (iterator--) {
+                    reciprocalItemsWidth += this._items[iterator].width() + this.settings.margin;
+                    if (reciprocalItemsWidth > elementWidth) {
+                        break;
+                    }
+                }
             }
+            maximum = iterator + 1;
         } else if (settings.center) {
             maximum = this._items.length - 1;
         } else {
@@ -3043,22 +3119,22 @@ var fakewaffle = (function ($, fakewaffle) {
         return Math.max(maximum, 0);
     };
 
-    /**
-     * Gets the minimum position for the current item.
-     * @public
-     * @param {Boolean} [relative=false] - Whether to return an absolute position or a relative position.
-     * @returns {Number}
-     */
+	/**
+	 * Gets the minimum position for the current item.
+	 * @public
+	 * @param {Boolean} [relative=false] - Whether to return an absolute position or a relative position.
+	 * @returns {Number}
+	 */
     Owl.prototype.minimum = function (relative) {
         return relative ? 0 : this._clones.length / 2;
     };
 
-    /**
-     * Gets an item at the specified relative position.
-     * @public
-     * @param {Number} [position] - The relative position of the item.
-     * @return {jQuery|Array.<jQuery>} - The item at the given position or all items if no position was given.
-     */
+	/**
+	 * Gets an item at the specified relative position.
+	 * @public
+	 * @param {Number} [position] - The relative position of the item.
+	 * @return {jQuery|Array.<jQuery>} - The item at the given position or all items if no position was given.
+	 */
     Owl.prototype.items = function (position) {
         if (position === undefined) {
             return this._items.slice();
@@ -3068,12 +3144,12 @@ var fakewaffle = (function ($, fakewaffle) {
         return this._items[position];
     };
 
-    /**
-     * Gets an item at the specified relative position.
-     * @public
-     * @param {Number} [position] - The relative position of the item.
-     * @return {jQuery|Array.<jQuery>} - The item at the given position or all items if no position was given.
-     */
+	/**
+	 * Gets an item at the specified relative position.
+	 * @public
+	 * @param {Number} [position] - The relative position of the item.
+	 * @return {jQuery|Array.<jQuery>} - The item at the given position or all items if no position was given.
+	 */
     Owl.prototype.mergers = function (position) {
         if (position === undefined) {
             return this._mergers.slice();
@@ -3083,16 +3159,16 @@ var fakewaffle = (function ($, fakewaffle) {
         return this._mergers[position];
     };
 
-    /**
-     * Gets the absolute positions of clones for an item.
-     * @public
-     * @param {Number} [position] - The relative position of the item.
-     * @returns {Array.<Number>} - The absolute positions of clones for the item or all if no position was given.
-     */
+	/**
+	 * Gets the absolute positions of clones for an item.
+	 * @public
+	 * @param {Number} [position] - The relative position of the item.
+	 * @returns {Array.<Number>} - The absolute positions of clones for the item or all if no position was given.
+	 */
     Owl.prototype.clones = function (position) {
         var odd = this._clones.length / 2,
-          even = odd + this._items.length,
-          map = function (index) { return index % 2 === 0 ? even + index / 2 : odd - (index + 1) / 2 };
+            even = odd + this._items.length,
+            map = function (index) { return index % 2 === 0 ? even + index / 2 : odd - (index + 1) / 2 };
 
         if (position === undefined) {
             return $.map(this._clones, function (v, i) { return map(i) });
@@ -3101,12 +3177,12 @@ var fakewaffle = (function ($, fakewaffle) {
         return $.map(this._clones, function (v, i) { return v === position ? map(i) : null });
     };
 
-    /**
-     * Sets the current animation speed.
-     * @public
-     * @param {Number} [speed] - The animation speed in milliseconds or nothing to leave it unchanged.
-     * @returns {Number} - The current animation speed in milliseconds.
-     */
+	/**
+	 * Sets the current animation speed.
+	 * @public
+	 * @param {Number} [speed] - The animation speed in milliseconds or nothing to leave it unchanged.
+	 * @returns {Number} - The current animation speed in milliseconds.
+	 */
     Owl.prototype.speed = function (speed) {
         if (speed !== undefined) {
             this._speed = speed;
@@ -3115,15 +3191,17 @@ var fakewaffle = (function ($, fakewaffle) {
         return this._speed;
     };
 
-    /**
-     * Gets the coordinate of an item.
-     * @todo The name of this method is missleanding.
-     * @public
-     * @param {Number} position - The absolute position of the item within `minimum()` and `maximum()`.
-     * @returns {Number|Array.<Number>} - The coordinate of the item in pixel or all coordinates.
-     */
+	/**
+	 * Gets the coordinate of an item.
+	 * @todo The name of this method is missleanding.
+	 * @public
+	 * @param {Number} position - The absolute position of the item within `minimum()` and `maximum()`.
+	 * @returns {Number|Array.<Number>} - The coordinate of the item in pixel or all coordinates.
+	 */
     Owl.prototype.coordinates = function (position) {
-        var coordinate = null;
+        var multiplier = 1,
+            newPosition = position - 1,
+            coordinate;
 
         if (position === undefined) {
             return $.map(this._coordinates, $.proxy(function (coordinate, index) {
@@ -3132,41 +3210,52 @@ var fakewaffle = (function ($, fakewaffle) {
         }
 
         if (this.settings.center) {
+            if (this.settings.rtl) {
+                multiplier = -1;
+                newPosition = position + 1;
+            }
+
             coordinate = this._coordinates[position];
-            coordinate += (this.width() - coordinate + (this._coordinates[position - 1] || 0)) / 2 * (this.settings.rtl ? -1 : 1);
+            coordinate += (this.width() - coordinate + (this._coordinates[newPosition] || 0)) / 2 * multiplier;
         } else {
-            coordinate = this._coordinates[position - 1] || 0;
+            coordinate = this._coordinates[newPosition] || 0;
         }
+
+        coordinate = Math.ceil(coordinate);
 
         return coordinate;
     };
 
-    /**
-     * Calculates the speed for a translation.
-     * @protected
-     * @param {Number} from - The absolute position of the start item.
-     * @param {Number} to - The absolute position of the target item.
-     * @param {Number} [factor=undefined] - The time factor in milliseconds.
-     * @returns {Number} - The time in milliseconds for the translation.
-     */
+	/**
+	 * Calculates the speed for a translation.
+	 * @protected
+	 * @param {Number} from - The absolute position of the start item.
+	 * @param {Number} to - The absolute position of the target item.
+	 * @param {Number} [factor=undefined] - The time factor in milliseconds.
+	 * @returns {Number} - The time in milliseconds for the translation.
+	 */
     Owl.prototype.duration = function (from, to, factor) {
+        if (factor === 0) {
+            return 0;
+        }
+
         return Math.min(Math.max(Math.abs(to - from), 1), 6) * Math.abs((factor || this.settings.smartSpeed));
     };
 
-    /**
-     * Slides to the specified item.
-     * @public
-     * @param {Number} position - The position of the item.
-     * @param {Number} [speed] - The time in milliseconds for the transition.
-     */
+	/**
+	 * Slides to the specified item.
+	 * @public
+	 * @param {Number} position - The position of the item.
+	 * @param {Number} [speed] - The time in milliseconds for the transition.
+	 */
     Owl.prototype.to = function (position, speed) {
         var current = this.current(),
-          revert = null,
-          distance = position - this.relative(current),
-          direction = (distance > 0) - (distance < 0),
-          items = this._items.length,
-          minimum = this.minimum(),
-          maximum = this.maximum();
+            revert = null,
+            distance = position - this.relative(current),
+            direction = (distance > 0) - (distance < 0),
+            items = this._items.length,
+            minimum = this.minimum(),
+            maximum = this.maximum();
 
         if (this.settings.loop) {
             if (!this.settings.rewind && Math.abs(distance) > items / 2) {
@@ -3191,36 +3280,36 @@ var fakewaffle = (function ($, fakewaffle) {
         this.speed(this.duration(current, position, speed));
         this.current(position);
 
-        if (this.$element.is(':visible')) {
+        if (this.isVisible()) {
             this.update();
         }
     };
 
-    /**
-     * Slides to the next item.
-     * @public
-     * @param {Number} [speed] - The time in milliseconds for the transition.
-     */
+	/**
+	 * Slides to the next item.
+	 * @public
+	 * @param {Number} [speed] - The time in milliseconds for the transition.
+	 */
     Owl.prototype.next = function (speed) {
         speed = speed || false;
         this.to(this.relative(this.current()) + 1, speed);
     };
 
-    /**
-     * Slides to the previous item.
-     * @public
-     * @param {Number} [speed] - The time in milliseconds for the transition.
-     */
+	/**
+	 * Slides to the previous item.
+	 * @public
+	 * @param {Number} [speed] - The time in milliseconds for the transition.
+	 */
     Owl.prototype.prev = function (speed) {
         speed = speed || false;
         this.to(this.relative(this.current()) - 1, speed);
     };
 
-    /**
-     * Handles the end of an animation.
-     * @protected
-     * @param {Event} event - The event arguments.
-     */
+	/**
+	 * Handles the end of an animation.
+	 * @protected
+	 * @param {Event} event - The event arguments.
+	 */
     Owl.prototype.onTransitionEnd = function (event) {
 
         // if css2 animation then event object is undefined
@@ -3237,11 +3326,11 @@ var fakewaffle = (function ($, fakewaffle) {
         this.trigger('translated');
     };
 
-    /**
-     * Gets viewport width.
-     * @protected
-     * @return {Number} - The width in pixel.
-     */
+	/**
+	 * Gets viewport width.
+	 * @protected
+	 * @return {Number} - The width in pixel.
+	 */
     Owl.prototype.viewport = function () {
         var width;
         if (this.options.responsiveBaseElement !== window) {
@@ -3251,16 +3340,16 @@ var fakewaffle = (function ($, fakewaffle) {
         } else if (document.documentElement && document.documentElement.clientWidth) {
             width = document.documentElement.clientWidth;
         } else {
-            throw 'Can not detect viewport width.';
+            console.warn('Can not detect viewport width.');
         }
         return width;
     };
 
-    /**
-     * Replaces the current content.
-     * @public
-     * @param {HTMLElement|jQuery|String} content - The new content.
-     */
+	/**
+	 * Replaces the current content.
+	 * @public
+	 * @param {HTMLElement|jQuery|String} content - The new content.
+	 */
     Owl.prototype.replace = function (content) {
         this.$stage.empty();
         this._items = [];
@@ -3282,18 +3371,18 @@ var fakewaffle = (function ($, fakewaffle) {
             this._mergers.push(item.find('[data-merge]').addBack('[data-merge]').attr('data-merge') * 1 || 1);
         }, this));
 
-        this.reset($.isNumeric(this.settings.startPosition) ? this.settings.startPosition : 0);
+        this.reset(this.isNumeric(this.settings.startPosition) ? this.settings.startPosition : 0);
 
         this.invalidate('items');
     };
 
-    /**
-     * Adds an item.
-     * @todo Use `item` instead of `content` for the event arguments.
-     * @public
-     * @param {HTMLElement|jQuery|String} content - The item content to add.
-     * @param {Number} [position] - The relative position at which to insert the item otherwise the item will be added to the end.
-     */
+	/**
+	 * Adds an item.
+	 * @todo Use `item` instead of `content` for the event arguments.
+	 * @public
+	 * @param {HTMLElement|jQuery|String} content - The item content to add.
+	 * @param {Number} [position] - The relative position at which to insert the item otherwise the item will be added to the end.
+	 */
     Owl.prototype.add = function (content, position) {
         var current = this.relative(this._current);
 
@@ -3322,12 +3411,12 @@ var fakewaffle = (function ($, fakewaffle) {
         this.trigger('added', { content: content, position: position });
     };
 
-    /**
-     * Removes an item by its position.
-     * @todo Use `item` instead of `content` for the event arguments.
-     * @public
-     * @param {Number} position - The relative position of the item to remove.
-     */
+	/**
+	 * Removes an item by its position.
+	 * @todo Use `item` instead of `content` for the event arguments.
+	 * @public
+	 * @param {Number} position - The relative position of the item to remove.
+	 */
     Owl.prototype.remove = function (position) {
         position = this.normalize(position, true);
 
@@ -3346,11 +3435,11 @@ var fakewaffle = (function ($, fakewaffle) {
         this.trigger('removed', { content: null, position: position });
     };
 
-    /**
-     * Preloads images with auto width.
-     * @todo Replace by a more generic approach
-     * @protected
-     */
+	/**
+	 * Preloads images with auto width.
+	 * @todo Replace by a more generic approach
+	 * @protected
+	 */
     Owl.prototype.preloadAutoWidthImages = function (images) {
         images.each($.proxy(function (i, element) {
             this.enter('pre-loading');
@@ -3364,10 +3453,10 @@ var fakewaffle = (function ($, fakewaffle) {
         }, this));
     };
 
-    /**
-     * Destroys the carousel.
-     * @public
-     */
+	/**
+	 * Destroys the carousel.
+	 * @public
+	 */
     Owl.prototype.destroy = function () {
 
         this.$element.off('.owl.core');
@@ -3388,25 +3477,25 @@ var fakewaffle = (function ($, fakewaffle) {
         this.$stage.unwrap();
         this.$stage.children().contents().unwrap();
         this.$stage.children().unwrap();
-
+        this.$stage.remove();
         this.$element
-          .removeClass(this.options.refreshClass)
-          .removeClass(this.options.loadingClass)
-          .removeClass(this.options.loadedClass)
-          .removeClass(this.options.rtlClass)
-          .removeClass(this.options.dragClass)
-          .removeClass(this.options.grabClass)
-          .attr('class', this.$element.attr('class').replace(new RegExp(this.options.responsiveClass + '-\\S+\\s', 'g'), ''))
-          .removeData('owl.carousel');
+            .removeClass(this.options.refreshClass)
+            .removeClass(this.options.loadingClass)
+            .removeClass(this.options.loadedClass)
+            .removeClass(this.options.rtlClass)
+            .removeClass(this.options.dragClass)
+            .removeClass(this.options.grabClass)
+            .attr('class', this.$element.attr('class').replace(new RegExp(this.options.responsiveClass + '-\\S+\\s', 'g'), ''))
+            .removeData('owl.carousel');
     };
 
-    /**
-     * Operators to calculate right-to-left and left-to-right.
-     * @protected
-     * @param {Number} [a] - The left side operand.
-     * @param {String} [o] - The operator.
-     * @param {Number} [b] - The right side operand.
-     */
+	/**
+	 * Operators to calculate right-to-left and left-to-right.
+	 * @protected
+	 * @param {Number} [a] - The left side operand.
+	 * @param {String} [o] - The operator.
+	 * @param {Number} [b] - The right side operand.
+	 */
     Owl.prototype.op = function (a, o, b) {
         var rtl = this.settings.rtl;
         switch (o) {
@@ -3423,14 +3512,14 @@ var fakewaffle = (function ($, fakewaffle) {
         }
     };
 
-    /**
-     * Attaches to an internal event.
-     * @protected
-     * @param {HTMLElement} element - The event source.
-     * @param {String} event - The event name.
-     * @param {Function} listener - The event handler to attach.
-     * @param {Boolean} capture - Wether the event should be handled at the capturing phase or not.
-     */
+	/**
+	 * Attaches to an internal event.
+	 * @protected
+	 * @param {HTMLElement} element - The event source.
+	 * @param {String} event - The event name.
+	 * @param {Function} listener - The event handler to attach.
+	 * @param {Boolean} capture - Wether the event should be handled at the capturing phase or not.
+	 */
     Owl.prototype.on = function (element, event, listener, capture) {
         if (element.addEventListener) {
             element.addEventListener(event, listener, capture);
@@ -3439,14 +3528,14 @@ var fakewaffle = (function ($, fakewaffle) {
         }
     };
 
-    /**
-     * Detaches from an internal event.
-     * @protected
-     * @param {HTMLElement} element - The event source.
-     * @param {String} event - The event name.
-     * @param {Function} listener - The attached event handler to detach.
-     * @param {Boolean} capture - Wether the attached event handler was registered as a capturing listener or not.
-     */
+	/**
+	 * Detaches from an internal event.
+	 * @protected
+	 * @param {HTMLElement} element - The event source.
+	 * @param {String} event - The event name.
+	 * @param {Function} listener - The attached event handler to detach.
+	 * @param {Boolean} capture - Wether the attached event handler was registered as a capturing listener or not.
+	 */
     Owl.prototype.off = function (element, event, listener, capture) {
         if (element.removeEventListener) {
             element.removeEventListener(event, listener, capture);
@@ -3455,26 +3544,26 @@ var fakewaffle = (function ($, fakewaffle) {
         }
     };
 
-    /**
-     * Triggers a public event.
-     * @todo Remove `status`, `relatedTarget` should be used instead.
-     * @protected
-     * @param {String} name - The event name.
-     * @param {*} [data=null] - The event data.
-     * @param {String} [namespace=carousel] - The event namespace.
-     * @param {String} [state] - The state which is associated with the event.
-     * @param {Boolean} [enter=false] - Indicates if the call enters the specified state or not.
-     * @returns {Event} - The event arguments.
-     */
+	/**
+	 * Triggers a public event.
+	 * @todo Remove `status`, `relatedTarget` should be used instead.
+	 * @protected
+	 * @param {String} name - The event name.
+	 * @param {*} [data=null] - The event data.
+	 * @param {String} [namespace=carousel] - The event namespace.
+	 * @param {String} [state] - The state which is associated with the event.
+	 * @param {Boolean} [enter=false] - Indicates if the call enters the specified state or not.
+	 * @returns {Event} - The event arguments.
+	 */
     Owl.prototype.trigger = function (name, data, namespace, state, enter) {
         var status = {
             item: { count: this._items.length, index: this.current() }
         }, handler = $.camelCase(
-          $.grep(['on', name, namespace], function (v) { return v })
-            .join('-').toLowerCase()
+            $.grep(['on', name, namespace], function (v) { return v })
+                .join('-').toLowerCase()
         ), event = $.Event(
-          [name, 'owl', namespace || 'carousel'].join('.').toLowerCase(),
-          $.extend({ relatedTarget: this }, status, data)
+            [name, 'owl', namespace || 'carousel'].join('.').toLowerCase(),
+            $.extend({ relatedTarget: this }, status, data)
         );
 
         if (!this._supress[name]) {
@@ -3495,10 +3584,10 @@ var fakewaffle = (function ($, fakewaffle) {
         return event;
     };
 
-    /**
-     * Enters a state.
-     * @param name - The state name.
-     */
+	/**
+	 * Enters a state.
+	 * @param name - The state name.
+	 */
     Owl.prototype.enter = function (name) {
         $.each([name].concat(this._states.tags[name] || []), $.proxy(function (i, name) {
             if (this._states.current[name] === undefined) {
@@ -3509,21 +3598,21 @@ var fakewaffle = (function ($, fakewaffle) {
         }, this));
     };
 
-    /**
-     * Leaves a state.
-     * @param name - The state name.
-     */
+	/**
+	 * Leaves a state.
+	 * @param name - The state name.
+	 */
     Owl.prototype.leave = function (name) {
         $.each([name].concat(this._states.tags[name] || []), $.proxy(function (i, name) {
             this._states.current[name]--;
         }, this));
     };
 
-    /**
-     * Registers an event or state.
-     * @public
-     * @param {Object} object - The event or state to register.
-     */
+	/**
+	 * Registers an event or state.
+	 * @public
+	 * @param {Object} object - The event or state to register.
+	 */
     Owl.prototype.register = function (object) {
         if (object.type === Owl.Type.Event) {
             if (!$.event.special[object.name]) {
@@ -3553,43 +3642,43 @@ var fakewaffle = (function ($, fakewaffle) {
         }
     };
 
-    /**
-     * Suppresses events.
-     * @protected
-     * @param {Array.<String>} events - The events to suppress.
-     */
+	/**
+	 * Suppresses events.
+	 * @protected
+	 * @param {Array.<String>} events - The events to suppress.
+	 */
     Owl.prototype.suppress = function (events) {
         $.each(events, $.proxy(function (index, event) {
             this._supress[event] = true;
         }, this));
     };
 
-    /**
-     * Releases suppressed events.
-     * @protected
-     * @param {Array.<String>} events - The events to release.
-     */
+	/**
+	 * Releases suppressed events.
+	 * @protected
+	 * @param {Array.<String>} events - The events to release.
+	 */
     Owl.prototype.release = function (events) {
         $.each(events, $.proxy(function (index, event) {
             delete this._supress[event];
         }, this));
     };
 
-    /**
-     * Gets unified pointer coordinates from event.
-     * @todo #261
-     * @protected
-     * @param {Event} - The `mousedown` or `touchstart` event.
-     * @returns {Object} - Contains `x` and `y` coordinates of current pointer position.
-     */
+	/**
+	 * Gets unified pointer coordinates from event.
+	 * @todo #261
+	 * @protected
+	 * @param {Event} - The `mousedown` or `touchstart` event.
+	 * @returns {Object} - Contains `x` and `y` coordinates of current pointer position.
+	 */
     Owl.prototype.pointer = function (event) {
         var result = { x: null, y: null };
 
         event = event.originalEvent || event || window.event;
 
         event = event.touches && event.touches.length ?
-          event.touches[0] : event.changedTouches && event.changedTouches.length ?
-            event.changedTouches[0] : event;
+            event.touches[0] : event.changedTouches && event.changedTouches.length ?
+                event.changedTouches[0] : event;
 
         if (event.pageX) {
             result.x = event.pageX;
@@ -3602,14 +3691,24 @@ var fakewaffle = (function ($, fakewaffle) {
         return result;
     };
 
-    /**
-     * Gets the difference of two vectors.
-     * @todo #261
-     * @protected
-     * @param {Object} - The first vector.
-     * @param {Object} - The second vector.
-     * @returns {Object} - The difference.
-     */
+	/**
+	 * Determines if the input is a Number or something that can be coerced to a Number
+	 * @protected
+	 * @param {Number|String|Object|Array|Boolean|RegExp|Function|Symbol} - The input to be tested
+	 * @returns {Boolean} - An indication if the input is a Number or can be coerced to a Number
+	 */
+    Owl.prototype.isNumeric = function (number) {
+        return !isNaN(parseFloat(number));
+    };
+
+	/**
+	 * Gets the difference of two vectors.
+	 * @todo #261
+	 * @protected
+	 * @param {Object} - The first vector.
+	 * @param {Object} - The second vector.
+	 * @returns {Object} - The difference.
+	 */
     Owl.prototype.difference = function (first, second) {
         return {
             x: first.x - second.x,
@@ -3617,24 +3716,24 @@ var fakewaffle = (function ($, fakewaffle) {
         };
     };
 
-    /**
-     * The jQuery Plugin for the Owl Carousel
-     * @todo Navigation plugin `next` and `prev`
-     * @public
-     */
+	/**
+	 * The jQuery Plugin for the Owl Carousel
+	 * @todo Navigation plugin `next` and `prev`
+	 * @public
+	 */
     $.fn.owlCarousel = function (option) {
         var args = Array.prototype.slice.call(arguments, 1);
 
         return this.each(function () {
             var $this = $(this),
-              data = $this.data('owl.carousel');
+                data = $this.data('owl.carousel');
 
             if (!data) {
                 data = new Owl(this, typeof option == 'object' && option);
                 $this.data('owl.carousel', data);
 
                 $.each([
-                  'next', 'prev', 'to', 'destroy', 'refresh', 'replace', 'add', 'remove'
+                    'next', 'prev', 'to', 'destroy', 'refresh', 'replace', 'add', 'remove'
                 ], function (i, event) {
                     data.register({ type: Owl.Type.Event, name: event });
                     data.$element.on(event + '.owl.carousel.core', $.proxy(function (e) {
@@ -3653,54 +3752,55 @@ var fakewaffle = (function ($, fakewaffle) {
         });
     };
 
-    /**
-     * The constructor for the jQuery Plugin
-     * @public
-     */
+	/**
+	 * The constructor for the jQuery Plugin
+	 * @public
+	 */
     $.fn.owlCarousel.Constructor = Owl;
 
 })(window.Zepto || window.jQuery, window, document);
 
 /**
  * AutoRefresh Plugin
- * @version 2.0.0-beta.3
+ * @version 2.3.4
  * @author Artus Kolanowski
+ * @author David Deutsch
  * @license The MIT License (MIT)
  */
 ; (function ($, window, document, undefined) {
 
-    /**
-     * Creates the auto refresh plugin.
-     * @class The Auto Refresh Plugin
-     * @param {Owl} carousel - The Owl Carousel
-     */
+	/**
+	 * Creates the auto refresh plugin.
+	 * @class The Auto Refresh Plugin
+	 * @param {Owl} carousel - The Owl Carousel
+	 */
     var AutoRefresh = function (carousel) {
-        /**
-         * Reference to the core.
-         * @protected
-         * @type {Owl}
-         */
+		/**
+		 * Reference to the core.
+		 * @protected
+		 * @type {Owl}
+		 */
         this._core = carousel;
 
-        /**
-         * Refresh interval.
-         * @protected
-         * @type {number}
-         */
+		/**
+		 * Refresh interval.
+		 * @protected
+		 * @type {number}
+		 */
         this._interval = null;
 
-        /**
-         * Whether the element is currently visible or not.
-         * @protected
-         * @type {Boolean}
-         */
+		/**
+		 * Whether the element is currently visible or not.
+		 * @protected
+		 * @type {Boolean}
+		 */
         this._visible = null;
 
-        /**
-         * All event handlers.
-         * @protected
-         * @type {Object}
-         */
+		/**
+		 * All event handlers.
+		 * @protected
+		 * @type {Object}
+		 */
         this._handlers = {
             'initialized.owl.carousel': $.proxy(function (e) {
                 if (e.namespace && this._core.settings.autoRefresh) {
@@ -3716,32 +3816,32 @@ var fakewaffle = (function ($, fakewaffle) {
         this._core.$element.on(this._handlers);
     };
 
-    /**
-     * Default options.
-     * @public
-     */
+	/**
+	 * Default options.
+	 * @public
+	 */
     AutoRefresh.Defaults = {
         autoRefresh: true,
         autoRefreshInterval: 500
     };
 
-    /**
-     * Watches the element.
-     */
+	/**
+	 * Watches the element.
+	 */
     AutoRefresh.prototype.watch = function () {
         if (this._interval) {
             return;
         }
 
-        this._visible = this._core.$element.is(':visible');
+        this._visible = this._core.isVisible();
         this._interval = window.setInterval($.proxy(this.refresh, this), this._core.settings.autoRefreshInterval);
     };
 
-    /**
-     * Refreshes the element.
-     */
+	/**
+	 * Refreshes the element.
+	 */
     AutoRefresh.prototype.refresh = function () {
-        if (this._core.$element.is(':visible') === this._visible) {
+        if (this._core.isVisible() === this._visible) {
             return;
         }
 
@@ -3752,9 +3852,9 @@ var fakewaffle = (function ($, fakewaffle) {
         this._visible && (this._core.invalidate('width') && this._core.refresh());
     };
 
-    /**
-     * Destroys the plugin.
-     */
+	/**
+	 * Destroys the plugin.
+	 */
     AutoRefresh.prototype.destroy = function () {
         var handler, property;
 
@@ -3774,40 +3874,41 @@ var fakewaffle = (function ($, fakewaffle) {
 
 /**
  * Lazy Plugin
- * @version 2.0.0-beta.3
+ * @version 2.3.4
  * @author Bartosz Wojciechowski
+ * @author David Deutsch
  * @license The MIT License (MIT)
  */
 ; (function ($, window, document, undefined) {
 
-    /**
-     * Creates the lazy plugin.
-     * @class The Lazy Plugin
-     * @param {Owl} carousel - The Owl Carousel
-     */
+	/**
+	 * Creates the lazy plugin.
+	 * @class The Lazy Plugin
+	 * @param {Owl} carousel - The Owl Carousel
+	 */
     var Lazy = function (carousel) {
 
-        /**
-         * Reference to the core.
-         * @protected
-         * @type {Owl}
-         */
+		/**
+		 * Reference to the core.
+		 * @protected
+		 * @type {Owl}
+		 */
         this._core = carousel;
 
-        /**
-         * Already loaded items.
-         * @protected
-         * @type {Array.<jQuery>}
-         */
+		/**
+		 * Already loaded items.
+		 * @protected
+		 * @type {Array.<jQuery>}
+		 */
         this._loaded = [];
 
-        /**
-         * Event handlers.
-         * @protected
-         * @type {Object}
-         */
+		/**
+		 * Event handlers.
+		 * @protected
+		 * @type {Object}
+		 */
         this._handlers = {
-            'initialized.owl.carousel change.owl.carousel': $.proxy(function (e) {
+            'initialized.owl.carousel change.owl.carousel resized.owl.carousel': $.proxy(function (e) {
                 if (!e.namespace) {
                     return;
                 }
@@ -3818,11 +3919,20 @@ var fakewaffle = (function ($, fakewaffle) {
 
                 if ((e.property && e.property.name == 'position') || e.type == 'initialized') {
                     var settings = this._core.settings,
-                      n = (settings.center && Math.ceil(settings.items / 2) || settings.items),
-                      i = ((settings.center && n * -1) || 0),
-                      position = ((e.property && e.property.value) || this._core.current()) + i,
-                      clones = this._core.clones().length,
-                      load = $.proxy(function (i, v) { this.load(v) }, this);
+                        n = (settings.center && Math.ceil(settings.items / 2) || settings.items),
+                        i = ((settings.center && n * -1) || 0),
+                        position = (e.property && e.property.value !== undefined ? e.property.value : this._core.current()) + i,
+                        clones = this._core.clones().length,
+                        load = $.proxy(function (i, v) { this.load(v) }, this);
+                    //TODO: Need documentation for this new option
+                    if (settings.lazyLoadEager > 0) {
+                        n += settings.lazyLoadEager;
+                        // If the carousel is looping also preload images that are to the "left"
+                        if (settings.loop) {
+                            position -= settings.lazyLoadEager;
+                            n++;
+                        }
+                    }
 
                     while (i++ < n) {
                         this.load(clones / 2 + this._core.relative(position));
@@ -3838,24 +3948,25 @@ var fakewaffle = (function ($, fakewaffle) {
 
         // register event handler
         this._core.$element.on(this._handlers);
-    }
+    };
 
-    /**
-     * Default options.
-     * @public
-     */
+	/**
+	 * Default options.
+	 * @public
+	 */
     Lazy.Defaults = {
-        lazyLoad: false
-    }
+        lazyLoad: false,
+        lazyLoadEager: 0
+    };
 
-    /**
-     * Loads all resources of an item at the specified position.
-     * @param {Number} position - The absolute position of the item.
-     * @protected
-     */
+	/**
+	 * Loads all resources of an item at the specified position.
+	 * @param {Number} position - The absolute position of the item.
+	 * @protected
+	 */
     Lazy.prototype.load = function (position) {
         var $item = this._core.$stage.children().eq(position),
-          $elements = $item && $item.find('.owl-lazy');
+            $elements = $item && $item.find('.owl-lazy');
 
         if (!$elements || $.inArray($item.get(0), this._loaded) > -1) {
             return;
@@ -3863,7 +3974,7 @@ var fakewaffle = (function ($, fakewaffle) {
 
         $elements.each($.proxy(function (index, element) {
             var $element = $(element), image,
-              url = (window.devicePixelRatio > 1 && $element.attr('data-src-retina')) || $element.attr('data-src');
+                url = (window.devicePixelRatio > 1 && $element.attr('data-src-retina')) || $element.attr('data-src') || $element.attr('data-srcset');
 
             this._core.trigger('load', { element: $element, url: url }, 'lazy');
 
@@ -3872,11 +3983,15 @@ var fakewaffle = (function ($, fakewaffle) {
                     $element.css('opacity', 1);
                     this._core.trigger('loaded', { element: $element, url: url }, 'lazy');
                 }, this)).attr('src', url);
+            } else if ($element.is('source')) {
+                $element.one('load.owl.lazy', $.proxy(function () {
+                    this._core.trigger('loaded', { element: $element, url: url }, 'lazy');
+                }, this)).attr('srcset', url);
             } else {
                 image = new Image();
                 image.onload = $.proxy(function () {
                     $element.css({
-                        'background-image': 'url(' + url + ')',
+                        'background-image': 'url("' + url + '")',
                         'opacity': '1'
                     });
                     this._core.trigger('loaded', { element: $element, url: url }, 'lazy');
@@ -3886,12 +4001,12 @@ var fakewaffle = (function ($, fakewaffle) {
         }, this));
 
         this._loaded.push($item.get(0));
-    }
+    };
 
-    /**
-     * Destroys the plugin.
-     * @public
-     */
+	/**
+	 * Destroys the plugin.
+	 * @public
+	 */
     Lazy.prototype.destroy = function () {
         var handler, property;
 
@@ -3909,30 +4024,33 @@ var fakewaffle = (function ($, fakewaffle) {
 
 /**
  * AutoHeight Plugin
- * @version 2.0.0-beta.3
+ * @version 2.3.4
  * @author Bartosz Wojciechowski
+ * @author David Deutsch
  * @license The MIT License (MIT)
  */
 ; (function ($, window, document, undefined) {
 
-    /**
-     * Creates the auto height plugin.
-     * @class The Auto Height Plugin
-     * @param {Owl} carousel - The Owl Carousel
-     */
+	/**
+	 * Creates the auto height plugin.
+	 * @class The Auto Height Plugin
+	 * @param {Owl} carousel - The Owl Carousel
+	 */
     var AutoHeight = function (carousel) {
-        /**
-         * Reference to the core.
-         * @protected
-         * @type {Owl}
-         */
+		/**
+		 * Reference to the core.
+		 * @protected
+		 * @type {Owl}
+		 */
         this._core = carousel;
 
-        /**
-         * All event handlers.
-         * @protected
-         * @type {Object}
-         */
+        this._previousHeight = null;
+
+		/**
+		 * All event handlers.
+		 * @protected
+		 * @type {Object}
+		 */
         this._handlers = {
             'initialized.owl.carousel refreshed.owl.carousel': $.proxy(function (e) {
                 if (e.namespace && this._core.settings.autoHeight) {
@@ -3940,13 +4058,13 @@ var fakewaffle = (function ($, fakewaffle) {
                 }
             }, this),
             'changed.owl.carousel': $.proxy(function (e) {
-                if (e.namespace && this._core.settings.autoHeight && e.property.name == 'position') {
+                if (e.namespace && this._core.settings.autoHeight && e.property.name === 'position') {
                     this.update();
                 }
             }, this),
             'loaded.owl.lazy': $.proxy(function (e) {
                 if (e.namespace && this._core.settings.autoHeight
-                  && e.element.closest('.' + this._core.settings.itemClass).index() === this._core.current()) {
+                    && e.element.closest('.' + this._core.settings.itemClass).index() === this._core.current()) {
                     this.update();
                 }
             }, this)
@@ -3957,26 +4075,53 @@ var fakewaffle = (function ($, fakewaffle) {
 
         // register event handlers
         this._core.$element.on(this._handlers);
+        this._intervalId = null;
+        var refThis = this;
+
+        // These changes have been taken from a PR by gavrochelegnou proposed in #1575
+        // and have been made compatible with the latest jQuery version
+        $(window).on('load', function () {
+            if (refThis._core.settings.autoHeight) {
+                refThis.update();
+            }
+        });
+
+        // Autoresize the height of the carousel when window is resized
+        // When carousel has images, the height is dependent on the width
+        // and should also change on resize
+        $(window).on('resize', function () {
+            if (refThis._core.settings.autoHeight) {
+                if (refThis._intervalId != null) {
+                    clearTimeout(refThis._intervalId);
+                }
+
+                refThis._intervalId = setTimeout(function () {
+                    refThis.update();
+                }, 250);
+            }
+        });
+
     };
 
-    /**
-     * Default options.
-     * @public
-     */
+	/**
+	 * Default options.
+	 * @public
+	 */
     AutoHeight.Defaults = {
         autoHeight: false,
         autoHeightClass: 'owl-height'
     };
 
-    /**
-     * Updates the view.
-     */
+	/**
+	 * Updates the view.
+	 */
     AutoHeight.prototype.update = function () {
         var start = this._core._current,
-          end = start + this._core.settings.items,
-          visible = this._core.$stage.children().toArray().slice(start, end);
-        heights = [],
-        maxheight = 0;
+            end = start + this._core.settings.items,
+            lazyLoadEnabled = this._core.settings.lazyLoad,
+            visible = this._core.$stage.children().toArray().slice(start, end),
+            heights = [],
+            maxheight = 0;
 
         $.each(visible, function (index, item) {
             heights.push($(item).height());
@@ -3984,9 +4129,15 @@ var fakewaffle = (function ($, fakewaffle) {
 
         maxheight = Math.max.apply(null, heights);
 
+        if (maxheight <= 1 && lazyLoadEnabled && this._previousHeight) {
+            maxheight = this._previousHeight;
+        }
+
+        this._previousHeight = maxheight;
+
         this._core.$stage.parent()
-          .height(maxheight)
-          .addClass(this._core.settings.autoHeightClass);
+            .height(maxheight)
+            .addClass(this._core.settings.autoHeightClass);
     };
 
     AutoHeight.prototype.destroy = function () {
@@ -3996,7 +4147,7 @@ var fakewaffle = (function ($, fakewaffle) {
             this._core.$element.off(handler, this._handlers[handler]);
         }
         for (property in Object.getOwnPropertyNames(this)) {
-            typeof this[property] != 'function' && (this[property] = null);
+            typeof this[property] !== 'function' && (this[property] = null);
         }
     };
 
@@ -4006,45 +4157,46 @@ var fakewaffle = (function ($, fakewaffle) {
 
 /**
  * Video Plugin
- * @version 2.0.0-beta.3
+ * @version 2.3.4
  * @author Bartosz Wojciechowski
+ * @author David Deutsch
  * @license The MIT License (MIT)
  */
 ; (function ($, window, document, undefined) {
 
-    /**
-     * Creates the video plugin.
-     * @class The Video Plugin
-     * @param {Owl} carousel - The Owl Carousel
-     */
+	/**
+	 * Creates the video plugin.
+	 * @class The Video Plugin
+	 * @param {Owl} carousel - The Owl Carousel
+	 */
     var Video = function (carousel) {
-        /**
-         * Reference to the core.
-         * @protected
-         * @type {Owl}
-         */
+		/**
+		 * Reference to the core.
+		 * @protected
+		 * @type {Owl}
+		 */
         this._core = carousel;
 
-        /**
-         * Cache all video URLs.
-         * @protected
-         * @type {Object}
-         */
+		/**
+		 * Cache all video URLs.
+		 * @protected
+		 * @type {Object}
+		 */
         this._videos = {};
 
-        /**
-         * Current playing item.
-         * @protected
-         * @type {jQuery}
-         */
+		/**
+		 * Current playing item.
+		 * @protected
+		 * @type {jQuery}
+		 */
         this._playing = null;
 
-        /**
-         * All event handlers.
-         * @todo The cloned content removale is too late
-         * @protected
-         * @type {Object}
-         */
+		/**
+		 * All event handlers.
+		 * @todo The cloned content removale is too late
+		 * @protected
+		 * @type {Object}
+		 */
         this._handlers = {
             'initialized.owl.carousel': $.proxy(function (e) {
                 if (e.namespace) {
@@ -4091,36 +4243,59 @@ var fakewaffle = (function ($, fakewaffle) {
         }, this));
     };
 
-    /**
-     * Default options.
-     * @public
-     */
+	/**
+	 * Default options.
+	 * @public
+	 */
     Video.Defaults = {
         video: false,
         videoHeight: false,
         videoWidth: false
     };
 
-    /**
-     * Gets the video ID and the type (YouTube/Vimeo only).
-     * @protected
-     * @param {jQuery} target - The target containing the video data.
-     * @param {jQuery} item - The item containing the video.
-     */
+	/**
+	 * Gets the video ID and the type (YouTube/Vimeo/vzaar only).
+	 * @protected
+	 * @param {jQuery} target - The target containing the video data.
+	 * @param {jQuery} item - The item containing the video.
+	 */
     Video.prototype.fetch = function (target, item) {
-        var type = target.attr('data-vimeo-id') ? 'vimeo' : 'youtube',
-          id = target.attr('data-vimeo-id') || target.attr('data-youtube-id'),
-          width = target.attr('data-width') || this._core.settings.videoWidth,
-          height = target.attr('data-height') || this._core.settings.videoHeight,
-          url = target.attr('href');
+        var type = (function () {
+            if (target.attr('data-vimeo-id')) {
+                return 'vimeo';
+            } else if (target.attr('data-vzaar-id')) {
+                return 'vzaar'
+            } else {
+                return 'youtube';
+            }
+        })(),
+            id = target.attr('data-vimeo-id') || target.attr('data-youtube-id') || target.attr('data-vzaar-id'),
+            width = target.attr('data-width') || this._core.settings.videoWidth,
+            height = target.attr('data-height') || this._core.settings.videoHeight,
+            url = target.attr('href');
 
         if (url) {
-            id = url.match(/(http:|https:|)\/\/(player.|www.)?(vimeo\.com|youtu(be\.com|\.be|be\.googleapis\.com))\/(video\/|embed\/|watch\?v=|v\/)?([A-Za-z0-9._%-]*)(\&\S+)?/);
+
+			/*
+					Parses the id's out of the following urls (and probably more):
+					https://www.youtube.com/watch?v=:id
+					https://youtu.be/:id
+					https://vimeo.com/:id
+					https://vimeo.com/channels/:channel/:id
+					https://vimeo.com/groups/:group/videos/:id
+					https://app.vzaar.com/videos/:id
+
+					Visual example: https://regexper.com/#(http%3A%7Chttps%3A%7C)%5C%2F%5C%2F(player.%7Cwww.%7Capp.)%3F(vimeo%5C.com%7Cyoutu(be%5C.com%7C%5C.be%7Cbe%5C.googleapis%5C.com)%7Cvzaar%5C.com)%5C%2F(video%5C%2F%7Cvideos%5C%2F%7Cembed%5C%2F%7Cchannels%5C%2F.%2B%5C%2F%7Cgroups%5C%2F.%2B%5C%2F%7Cwatch%5C%3Fv%3D%7Cv%5C%2F)%3F(%5BA-Za-z0-9._%25-%5D*)(%5C%26%5CS%2B)%3F
+			*/
+
+            id = url.match(/(http:|https:|)\/\/(player.|www.|app.)?(vimeo\.com|youtu(be\.com|\.be|be\.googleapis\.com|be\-nocookie\.com)|vzaar\.com)\/(video\/|videos\/|embed\/|channels\/.+\/|groups\/.+\/|watch\?v=|v\/)?([A-Za-z0-9._%-]*)(\&\S+)?/);
 
             if (id[3].indexOf('youtu') > -1) {
                 type = 'youtube';
             } else if (id[3].indexOf('vimeo') > -1) {
                 type = 'vimeo';
+            } else if (id[3].indexOf('vzaar') > -1) {
+                type = 'vzaar';
             } else {
                 throw new Error('Video URL not supported.');
             }
@@ -4141,36 +4316,45 @@ var fakewaffle = (function ($, fakewaffle) {
         this.thumbnail(target, this._videos[url]);
     };
 
-    /**
-     * Creates video thumbnail.
-     * @protected
-     * @param {jQuery} target - The target containing the video data.
-     * @param {Object} info - The video info object.
-     * @see `fetch`
-     */
+	/**
+	 * Creates video thumbnail.
+	 * @protected
+	 * @param {jQuery} target - The target containing the video data.
+	 * @param {Object} info - The video info object.
+	 * @see `fetch`
+	 */
     Video.prototype.thumbnail = function (target, video) {
         var tnLink,
-          icon,
-          path,
-          dimensions = video.width && video.height ? 'style="width:' + video.width + 'px;height:' + video.height + 'px;"' : '',
-          customTn = target.find('img'),
-          srcType = 'src',
-          lazyClass = '',
-          settings = this._core.settings,
-          create = function (path) {
-              icon = '<div class="owl-video-play-icon"></div>';
+            icon,
+            path,
+            dimensions = video.width && video.height ? 'width:' + video.width + 'px;height:' + video.height + 'px;' : '',
+            customTn = target.find('img'),
+            srcType = 'src',
+            lazyClass = '',
+            settings = this._core.settings,
+            create = function (path) {
+                icon = '<div class="owl-video-play-icon"></div>';
 
-              if (settings.lazyLoad) {
-                  tnLink = '<div class="owl-video-tn ' + lazyClass + '" ' + srcType + '="' + path + '"></div>';
-              } else {
-                  tnLink = '<div class="owl-video-tn" style="opacity:1;background-image:url(' + path + ')"></div>';
-              }
-              target.after(tnLink);
-              target.after(icon);
-          };
+                if (settings.lazyLoad) {
+                    tnLink = $('<div/>', {
+                        "class": 'owl-video-tn ' + lazyClass,
+                        "srcType": path
+                    });
+                } else {
+                    tnLink = $('<div/>', {
+                        "class": "owl-video-tn",
+                        "style": 'opacity:1;background-image:url(' + path + ')'
+                    });
+                }
+                target.after(tnLink);
+                target.after(icon);
+            };
 
         // wrap video content into owl-video-wrapper div
-        target.wrap('<div class="owl-video-wrapper"' + dimensions + '></div>');
+        target.wrap($('<div/>', {
+            "class": "owl-video-wrapper",
+            "style": dimensions
+        }));
 
         if (this._core.settings.lazyLoad) {
             srcType = 'data-src';
@@ -4185,12 +4369,12 @@ var fakewaffle = (function ($, fakewaffle) {
         }
 
         if (video.type === 'youtube') {
-            path = "http://img.youtube.com/vi/" + video.id + "/hqdefault.jpg";
+            path = "//img.youtube.com/vi/" + video.id + "/hqdefault.jpg";
             create(path);
         } else if (video.type === 'vimeo') {
             $.ajax({
                 type: 'GET',
-                url: 'http://vimeo.com/api/v2/video/' + video.id + '.json',
+                url: '//vimeo.com/api/v2/video/' + video.id + '.json',
                 jsonp: 'callback',
                 dataType: 'jsonp',
                 success: function (data) {
@@ -4198,13 +4382,24 @@ var fakewaffle = (function ($, fakewaffle) {
                     create(path);
                 }
             });
+        } else if (video.type === 'vzaar') {
+            $.ajax({
+                type: 'GET',
+                url: '//vzaar.com/api/videos/' + video.id + '.json',
+                jsonp: 'callback',
+                dataType: 'jsonp',
+                success: function (data) {
+                    path = data.framegrab_url;
+                    create(path);
+                }
+            });
         }
     };
 
-    /**
-     * Stops the current video.
-     * @public
-     */
+	/**
+	 * Stops the current video.
+	 * @public
+	 */
     Video.prototype.stop = function () {
         this._core.trigger('stop', null, 'video');
         this._playing.find('.owl-video-frame').remove();
@@ -4214,18 +4409,19 @@ var fakewaffle = (function ($, fakewaffle) {
         this._core.trigger('stopped', null, 'video');
     };
 
-    /**
-     * Starts the current video.
-     * @public
-     * @param {Event} event - The event arguments.
-     */
+	/**
+	 * Starts the current video.
+	 * @public
+	 * @param {Event} event - The event arguments.
+	 */
     Video.prototype.play = function (event) {
         var target = $(event.target),
-          item = target.closest('.' + this._core.settings.itemClass),
-          video = this._videos[item.attr('data-video')],
-          width = video.width || '100%',
-          height = video.height || this._core.$stage.height(),
-          html;
+            item = target.closest('.' + this._core.settings.itemClass),
+            video = this._videos[item.attr('data-video')],
+            width = video.width || '100%',
+            height = video.height || this._core.$stage.height(),
+            html,
+            iframe;
 
         if (this._playing) {
             return;
@@ -4238,26 +4434,28 @@ var fakewaffle = (function ($, fakewaffle) {
 
         this._core.reset(item.index());
 
+        html = $('<iframe frameborder="0" allowfullscreen mozallowfullscreen webkitAllowFullScreen ></iframe>');
+        html.attr('height', height);
+        html.attr('width', width);
         if (video.type === 'youtube') {
-            html = '<iframe width="' + width + '" height="' + height + '" src="http://www.youtube.com/embed/' +
-              video.id + '?autoplay=1&v=' + video.id + '" frameborder="0" allowfullscreen></iframe>';
+            html.attr('src', '//www.youtube.com/embed/' + video.id + '?autoplay=1&rel=0&v=' + video.id);
         } else if (video.type === 'vimeo') {
-            html = '<iframe src="http://player.vimeo.com/video/' + video.id +
-              '?autoplay=1" width="' + width + '" height="' + height +
-              '" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>';
+            html.attr('src', '//player.vimeo.com/video/' + video.id + '?autoplay=1');
+        } else if (video.type === 'vzaar') {
+            html.attr('src', '//view.vzaar.com/' + video.id + '/player?autoplay=true');
         }
 
-        $('<div class="owl-video-frame">' + html + '</div>').insertAfter(item.find('.owl-video'));
+        iframe = $(html).wrap('<div class="owl-video-frame" />').insertAfter(item.find('.owl-video'));
 
         this._playing = item.addClass('owl-video-playing');
     };
 
-    /**
-     * Checks whether an video is currently in full screen mode or not.
-     * @todo Bad style because looks like a readonly method but changes members.
-     * @protected
-     * @returns {Boolean}
-     */
+	/**
+	 * Checks whether an video is currently in full screen mode or not.
+	 * @todo Bad style because looks like a readonly method but changes members.
+	 * @protected
+	 * @returns {Boolean}
+	 */
     Video.prototype.isInFullScreen = function () {
         var element = document.fullscreenElement || document.mozFullScreenElement ||
             document.webkitFullscreenElement;
@@ -4265,9 +4463,9 @@ var fakewaffle = (function ($, fakewaffle) {
         return element && $(element).parent().hasClass('owl-video-frame');
     };
 
-    /**
-     * Destroys the plugin.
-     */
+	/**
+	 * Destroys the plugin.
+	 */
     Video.prototype.destroy = function () {
         var handler, property;
 
@@ -4287,17 +4485,18 @@ var fakewaffle = (function ($, fakewaffle) {
 
 /**
  * Animate Plugin
- * @version 2.0.0-beta.3
+ * @version 2.3.4
  * @author Bartosz Wojciechowski
+ * @author David Deutsch
  * @license The MIT License (MIT)
  */
 ; (function ($, window, document, undefined) {
 
-    /**
-     * Creates the animate plugin.
-     * @class The Navigation Plugin
-     * @param {Owl} scope - The Owl Carousel
-     */
+	/**
+	 * Creates the animate plugin.
+	 * @class The Navigation Plugin
+	 * @param {Owl} scope - The Owl Carousel
+	 */
     var Animate = function (scope) {
         this.core = scope;
         this.core.options = $.extend({}, Animate.Defaults, this.core.options);
@@ -4327,20 +4526,20 @@ var fakewaffle = (function ($, fakewaffle) {
         this.core.$element.on(this.handlers);
     };
 
-    /**
-     * Default options.
-     * @public
-     */
+	/**
+	 * Default options.
+	 * @public
+	 */
     Animate.Defaults = {
         animateOut: false,
         animateIn: false
     };
 
-    /**
-     * Toggles the animation classes whenever an translations starts.
-     * @protected
-     * @returns {Boolean|undefined}
-     */
+	/**
+	 * Toggles the animation classes whenever an translations starts.
+	 * @protected
+	 * @returns {Boolean|undefined}
+	 */
     Animate.prototype.swap = function () {
 
         if (this.core.settings.items !== 1) {
@@ -4354,11 +4553,11 @@ var fakewaffle = (function ($, fakewaffle) {
         this.core.speed(0);
 
         var left,
-          clear = $.proxy(this.clear, this),
-          previous = this.core.$stage.children().eq(this.previous),
-          next = this.core.$stage.children().eq(this.next),
-          incoming = this.core.settings.animateIn,
-          outgoing = this.core.settings.animateOut;
+            clear = $.proxy(this.clear, this),
+            previous = this.core.$stage.children().eq(this.previous),
+            next = this.core.$stage.children().eq(this.next),
+            incoming = this.core.settings.animateIn,
+            outgoing = this.core.settings.animateOut;
 
         if (this.core.current() === this.previous) {
             return;
@@ -4367,30 +4566,30 @@ var fakewaffle = (function ($, fakewaffle) {
         if (outgoing) {
             left = this.core.coordinates(this.previous) - this.core.coordinates(this.next);
             previous.one($.support.animation.end, clear)
-              .css({ 'left': left + 'px' })
-              .addClass('animated owl-animated-out')
-              .addClass(outgoing);
+                .css({ 'left': left + 'px' })
+                .addClass('animated owl-animated-out')
+                .addClass(outgoing);
         }
 
         if (incoming) {
             next.one($.support.animation.end, clear)
-              .addClass('animated owl-animated-in')
-              .addClass(incoming);
+                .addClass('animated owl-animated-in')
+                .addClass(incoming);
         }
     };
 
     Animate.prototype.clear = function (e) {
         $(e.target).css({ 'left': '' })
-          .removeClass('animated owl-animated-out owl-animated-in')
-          .removeClass(this.core.settings.animateIn)
-          .removeClass(this.core.settings.animateOut);
+            .removeClass('animated owl-animated-out owl-animated-in')
+            .removeClass(this.core.settings.animateIn)
+            .removeClass(this.core.settings.animateOut);
         this.core.onTransitionEnd();
     };
 
-    /**
-     * Destroys the plugin.
-     * @public
-     */
+	/**
+	 * Destroys the plugin.
+	 * @public
+	 */
     Animate.prototype.destroy = function () {
         var handler, property;
 
@@ -4408,43 +4607,60 @@ var fakewaffle = (function ($, fakewaffle) {
 
 /**
  * Autoplay Plugin
- * @version 2.0.0-beta.3
+ * @version 2.3.4
  * @author Bartosz Wojciechowski
  * @author Artus Kolanowski
+ * @author David Deutsch
+ * @author Tom De Caluw�
  * @license The MIT License (MIT)
  */
 ; (function ($, window, document, undefined) {
 
-    /**
-     * Creates the autoplay plugin.
-     * @class The Autoplay Plugin
-     * @param {Owl} scope - The Owl Carousel
-     */
+	/**
+	 * Creates the autoplay plugin.
+	 * @class The Autoplay Plugin
+	 * @param {Owl} scope - The Owl Carousel
+	 */
     var Autoplay = function (carousel) {
-        /**
-         * Reference to the core.
-         * @protected
-         * @type {Owl}
-         */
+		/**
+		 * Reference to the core.
+		 * @protected
+		 * @type {Owl}
+		 */
         this._core = carousel;
 
-        /**
-         * The autoplay interval.
-         * @type {Number}
-         */
-        this._interval = null;
+		/**
+		 * The autoplay timeout id.
+		 * @type {Number}
+		 */
+        this._call = null;
 
-        /**
-         * Indicates whenever the autoplay is paused.
-         * @type {Boolean}
-         */
-        this._paused = false;
+		/**
+		 * Depending on the state of the plugin, this variable contains either
+		 * the start time of the timer or the current timer value if it's
+		 * paused. Since we start in a paused state we initialize the timer
+		 * value.
+		 * @type {Number}
+		 */
+        this._time = 0;
 
-        /**
-         * All event handlers.
-         * @protected
-         * @type {Object}
-         */
+		/**
+		 * Stores the timeout currently used.
+		 * @type {Number}
+		 */
+        this._timeout = 0;
+
+		/**
+		 * Indicates whenever the autoplay is paused.
+		 * @type {Boolean}
+		 */
+        this._paused = true;
+
+		/**
+		 * All event handlers.
+		 * @protected
+		 * @type {Object}
+		 */
         this._handlers = {
             'changed.owl.carousel': $.proxy(function (e) {
                 if (e.namespace && e.property.name === 'settings') {
@@ -4453,6 +4669,10 @@ var fakewaffle = (function ($, fakewaffle) {
                     } else {
                         this.stop();
                     }
+                } else if (e.namespace && e.property.name === 'position' && this._paused) {
+                    // Reset the timer. This code is triggered when the position
+                    // of the carousel was changed through user interaction.
+                    this._time = 0;
                 }
             }, this),
             'initialized.owl.carousel': $.proxy(function (e) {
@@ -4479,6 +4699,16 @@ var fakewaffle = (function ($, fakewaffle) {
                 if (this._core.settings.autoplayHoverPause && this._core.is('rotating')) {
                     this.play();
                 }
+            }, this),
+            'touchstart.owl.core': $.proxy(function () {
+                if (this._core.settings.autoplayHoverPause && this._core.is('rotating')) {
+                    this.pause();
+                }
+            }, this),
+            'touchend.owl.core': $.proxy(function () {
+                if (this._core.settings.autoplayHoverPause) {
+                    this.play();
+                }
             }, this)
         };
 
@@ -4489,68 +4719,109 @@ var fakewaffle = (function ($, fakewaffle) {
         this._core.options = $.extend({}, Autoplay.Defaults, this._core.options);
     };
 
-    /**
-     * Default options.
-     * @public
-     */
+	/**
+	 * Default options.
+	 * @public
+	 */
     Autoplay.Defaults = {
-        autoplay: true,
+        autoplay: false,
         autoplayTimeout: 5000,
-        autoplayHoverPause: true,
+        autoplayHoverPause: false,
         autoplaySpeed: false
     };
 
-    /**
-     * Starts the autoplay.
-     * @public
-     * @param {Number} [timeout] - The interval before the next animation starts.
-     * @param {Number} [speed] - The animation speed for the animations.
-     */
+	/**
+	 * Transition to the next slide and set a timeout for the next transition.
+	 * @private
+	 * @param {Number} [speed] - The animation speed for the animations.
+	 */
+    Autoplay.prototype._next = function (speed) {
+        this._call = window.setTimeout(
+            $.proxy(this._next, this, speed),
+            this._timeout * (Math.round(this.read() / this._timeout) + 1) - this.read()
+        );
+
+        if (this._core.is('interacting') || document.hidden) {
+            return;
+        }
+        this._core.next(speed || this._core.settings.autoplaySpeed);
+    }
+
+	/**
+	 * Reads the current timer value when the timer is playing.
+	 * @public
+	 */
+    Autoplay.prototype.read = function () {
+        return new Date().getTime() - this._time;
+    };
+
+	/**
+	 * Starts the autoplay.
+	 * @public
+	 * @param {Number} [timeout] - The interval before the next animation starts.
+	 * @param {Number} [speed] - The animation speed for the animations.
+	 */
     Autoplay.prototype.play = function (timeout, speed) {
-        this._paused = false;
+        var elapsed;
 
-        if (this._core.is('rotating')) {
-            return;
+        if (!this._core.is('rotating')) {
+            this._core.enter('rotating');
         }
 
-        this._core.enter('rotating');
+        timeout = timeout || this._core.settings.autoplayTimeout;
 
-        this._interval = window.setInterval($.proxy(function () {
-            if (this._paused || this._core.is('busy') || this._core.is('interacting') || document.hidden) {
-                return;
-            }
-            this._core.next(speed || this._core.settings.autoplaySpeed);
-        }, this), timeout || this._core.settings.autoplayTimeout);
+        // Calculate the elapsed time since the last transition. If the carousel
+        // wasn't playing this calculation will yield zero.
+        elapsed = Math.min(this._time % (this._timeout || timeout), timeout);
+
+        if (this._paused) {
+            // Start the clock.
+            this._time = this.read();
+            this._paused = false;
+        } else {
+            // Clear the active timeout to allow replacement.
+            window.clearTimeout(this._call);
+        }
+
+        // Adjust the origin of the timer to match the new timeout value.
+        this._time += this.read() % timeout - elapsed;
+
+        this._timeout = timeout;
+        this._call = window.setTimeout($.proxy(this._next, this, speed), timeout - elapsed);
     };
 
-    /**
-     * Stops the autoplay.
-     * @public
-     */
+	/**
+	 * Stops the autoplay.
+	 * @public
+	 */
     Autoplay.prototype.stop = function () {
-        if (!this._core.is('rotating')) {
-            return;
-        }
+        if (this._core.is('rotating')) {
+            // Reset the clock.
+            this._time = 0;
+            this._paused = true;
 
-        window.clearInterval(this._interval);
-        this._core.leave('rotating');
+            window.clearTimeout(this._call);
+            this._core.leave('rotating');
+        }
     };
 
-    /**
-     * Stops the autoplay.
-     * @public
-     */
+	/**
+	 * Pauses the autoplay.
+	 * @public
+	 */
     Autoplay.prototype.pause = function () {
-        if (!this._core.is('rotating')) {
-            return;
-        }
+        if (this._core.is('rotating') && !this._paused) {
+            // Pause the clock.
+            this._time = this.read();
+            this._paused = true;
 
-        this._paused = true;
+            window.clearTimeout(this._call);
+        }
     };
 
-    /**
-     * Destroys the plugin.
-     */
+	/**
+	 * Destroys the plugin.
+	 */
     Autoplay.prototype.destroy = function () {
         var handler, property;
 
@@ -4570,81 +4841,82 @@ var fakewaffle = (function ($, fakewaffle) {
 
 /**
  * Navigation Plugin
- * @version 2.0.0-beta.3
+ * @version 2.3.4
  * @author Artus Kolanowski
+ * @author David Deutsch
  * @license The MIT License (MIT)
  */
 ; (function ($, window, document, undefined) {
     'use strict';
 
-    /**
-     * Creates the navigation plugin.
-     * @class The Navigation Plugin
-     * @param {Owl} carousel - The Owl Carousel.
-     */
+	/**
+	 * Creates the navigation plugin.
+	 * @class The Navigation Plugin
+	 * @param {Owl} carousel - The Owl Carousel.
+	 */
     var Navigation = function (carousel) {
-        /**
-         * Reference to the core.
-         * @protected
-         * @type {Owl}
-         */
+		/**
+		 * Reference to the core.
+		 * @protected
+		 * @type {Owl}
+		 */
         this._core = carousel;
 
-        /**
-         * Indicates whether the plugin is initialized or not.
-         * @protected
-         * @type {Boolean}
-         */
+		/**
+		 * Indicates whether the plugin is initialized or not.
+		 * @protected
+		 * @type {Boolean}
+		 */
         this._initialized = false;
 
-        /**
-         * The current paging indexes.
-         * @protected
-         * @type {Array}
-         */
+		/**
+		 * The current paging indexes.
+		 * @protected
+		 * @type {Array}
+		 */
         this._pages = [];
 
-        /**
-         * All DOM elements of the user interface.
-         * @protected
-         * @type {Object}
-         */
+		/**
+		 * All DOM elements of the user interface.
+		 * @protected
+		 * @type {Object}
+		 */
         this._controls = {};
 
-        /**
-         * Markup for an indicator.
-         * @protected
-         * @type {Array.<String>}
-         */
+		/**
+		 * Markup for an indicator.
+		 * @protected
+		 * @type {Array.<String>}
+		 */
         this._templates = [];
 
-        /**
-         * The carousel element.
-         * @type {jQuery}
-         */
+		/**
+		 * The carousel element.
+		 * @type {jQuery}
+		 */
         this.$element = this._core.$element;
 
-        /**
-         * Overridden methods of the carousel.
-         * @protected
-         * @type {Object}
-         */
+		/**
+		 * Overridden methods of the carousel.
+		 * @protected
+		 * @type {Object}
+		 */
         this._overrides = {
             next: this._core.next,
             prev: this._core.prev,
             to: this._core.to
         };
 
-        /**
-         * All event handlers.
-         * @protected
-         * @type {Object}
-         */
+		/**
+		 * All event handlers.
+		 * @protected
+		 * @type {Object}
+		 */
         this._handlers = {
             'prepared.owl.carousel': $.proxy(function (e) {
                 if (e.namespace && this._core.settings.dotsData) {
                     this._templates.push('<div class="' + this._core.settings.dotClass + '">' +
-                      $(e.content).find('[data-dot]').addBack('[data-dot]').attr('data-dot') + '</div>');
+                        $(e.content).find('[data-dot]').addBack('[data-dot]').attr('data-dot') + '</div>');
                 }
             }, this),
             'added.owl.carousel': $.proxy(function (e) {
@@ -4689,19 +4961,25 @@ var fakewaffle = (function ($, fakewaffle) {
         this.$element.on(this._handlers);
     };
 
-    /**
-     * Default options.
-     * @public
-     * @todo Rename `slideBy` to `navBy`
-     */
+	/**
+	 * Default options.
+	 * @public
+	 * @todo Rename `slideBy` to `navBy`
+	 */
     Navigation.Defaults = {
         nav: false,
-        navText: ['prev', 'next'],
+        navText: [
+            '<span aria-label="' + 'Previous' + '">&#x2039;</span>',
+            '<span aria-label="' + 'Next' + '">&#x203a;</span>'
+        ],
         navSpeed: false,
-        navElement: 'div',
+        navElement: 'button type="button" role="presentation"',
         navContainer: false,
         navContainerClass: 'owl-nav',
-        navClass: ['owl-prev', 'owl-next'],
+        navClass: [
+            'owl-prev',
+            'owl-next'
+        ],
         slideBy: 1,
         dotClass: 'owl-dot',
         dotsClass: 'owl-dots',
@@ -4712,52 +4990,65 @@ var fakewaffle = (function ($, fakewaffle) {
         dotsContainer: false
     };
 
-    /**
-     * Initializes the layout of the plugin and extends the carousel.
-     * @protected
-     */
+	/**
+	 * Initializes the layout of the plugin and extends the carousel.
+	 * @protected
+	 */
     Navigation.prototype.initialize = function () {
         var override,
-          settings = this._core.settings;
+            settings = this._core.settings;
 
         // create DOM structure for relative navigation
         this._controls.$relative = (settings.navContainer ? $(settings.navContainer)
-          : $('<div>').addClass(settings.navContainerClass).appendTo(this.$element)).addClass('disabled');
+            : $('<div>').addClass(settings.navContainerClass).appendTo(this.$element)).addClass('disabled');
 
         this._controls.$previous = $('<' + settings.navElement + '>')
-          .addClass(settings.navClass[0])
-          .html(settings.navText[0])
-          .prependTo(this._controls.$relative)
-          .on('click', $.proxy(function (e) {
-              this.prev(settings.navSpeed);
-          }, this));
+            .addClass(settings.navClass[0])
+            .html(settings.navText[0])
+            .prependTo(this._controls.$relative)
+            .on('click', $.proxy(function (e) {
+                this.prev(settings.navSpeed);
+            }, this));
         this._controls.$next = $('<' + settings.navElement + '>')
-          .addClass(settings.navClass[1])
-          .html(settings.navText[1])
-          .appendTo(this._controls.$relative)
-          .on('click', $.proxy(function (e) {
-              this.next(settings.navSpeed);
-          }, this));
+            .addClass(settings.navClass[1])
+            .html(settings.navText[1])
+            .appendTo(this._controls.$relative)
+            .on('click', $.proxy(function (e) {
+                this.next(settings.navSpeed);
+            }, this));
 
         // create DOM structure for absolute navigation
         if (!settings.dotsData) {
-            this._templates = [$('<div>')
-              .addClass(settings.dotClass)
-              .append($('<span>'))
-              .prop('outerHTML')];
+            this._templates = [$('<button role="button">')
+                .addClass(settings.dotClass)
+                .append($('<span>'))
+                .prop('outerHTML')];
         }
 
         this._controls.$absolute = (settings.dotsContainer ? $(settings.dotsContainer)
-          : $('<div>').addClass(settings.dotsClass).appendTo(this.$element)).addClass('disabled');
+            : $('<div>').addClass(settings.dotsClass).appendTo(this.$element)).addClass('disabled');
 
-        this._controls.$absolute.on('click', 'div', $.proxy(function (e) {
+        this._controls.$absolute.on('click', 'button', $.proxy(function (e) {
             var index = $(e.target).parent().is(this._controls.$absolute)
-              ? $(e.target).index() : $(e.target).parent().index();
+                ? $(e.target).index() : $(e.target).parent().index();
 
             e.preventDefault();
 
             this.to(index, settings.dotsSpeed);
         }, this));
+
+		/*$el.on('focusin', function() {
+			$(document).off(".carousel");
+
+			$(document).on('keydown.carousel', function(e) {
+				if(e.keyCode == 37) {
+					$el.trigger('prev.owl')
+				}
+				if(e.keyCode == 39) {
+					$el.trigger('next.owl')
+				}
+			});
+		});*/
 
         // override public methods of the carousel
         for (override in this._overrides) {
@@ -4765,18 +5056,23 @@ var fakewaffle = (function ($, fakewaffle) {
         }
     };
 
-    /**
-     * Destroys the plugin.
-     * @protected
-     */
+	/**
+	 * Destroys the plugin.
+	 * @protected
+	 */
     Navigation.prototype.destroy = function () {
-        var handler, control, property, override;
+        var handler, control, property, override, settings;
+        settings = this._core.settings;
 
         for (handler in this._handlers) {
             this.$element.off(handler, this._handlers[handler]);
         }
         for (control in this._controls) {
-            this._controls[control].remove();
+            if (control === '$relative' && settings.navContainer) {
+                this._controls[control].html('');
+            } else {
+                this._controls[control].remove();
+            }
         }
         for (override in this.overides) {
             this._core[override] = this._overrides[override];
@@ -4786,18 +5082,18 @@ var fakewaffle = (function ($, fakewaffle) {
         }
     };
 
-    /**
-     * Updates the internal state.
-     * @protected
-     */
+	/**
+	 * Updates the internal state.
+	 * @protected
+	 */
     Navigation.prototype.update = function () {
         var i, j, k,
-          lower = this._core.clones().length / 2,
-          upper = lower + this._core.items().length,
-          maximum = this._core.maximum(true),
-          settings = this._core.settings,
-          size = settings.center || settings.autoWidth || settings.dotsData
-            ? 1 : settings.dotsEach || settings.items;
+            lower = this._core.clones().length / 2,
+            upper = lower + this._core.items().length,
+            maximum = this._core.maximum(true),
+            settings = this._core.settings,
+            size = settings.center || settings.autoWidth || settings.dotsData
+                ? 1 : settings.dotsEach || settings.items;
 
         if (settings.slideBy !== 'page') {
             settings.slideBy = Math.min(settings.slideBy, settings.items);
@@ -4822,17 +5118,17 @@ var fakewaffle = (function ($, fakewaffle) {
         }
     };
 
-    /**
-     * Draws the user interface.
-     * @todo The option `dotsData` wont work.
-     * @protected
-     */
+	/**
+	 * Draws the user interface.
+	 * @todo The option `dotsData` wont work.
+	 * @protected
+	 */
     Navigation.prototype.draw = function () {
         var difference,
-          settings = this._core.settings,
-          disabled = this._core.items().length <= settings.items,
-          index = this._core.relative(this._core.current()),
-          loop = settings.loop || settings.rewind;
+            settings = this._core.settings,
+            disabled = this._core.items().length <= settings.items,
+            index = this._core.relative(this._core.current()),
+            loop = settings.loop || settings.rewind;
 
         this._controls.$relative.toggleClass('disabled', !settings.nav || disabled);
 
@@ -4859,11 +5155,11 @@ var fakewaffle = (function ($, fakewaffle) {
         }
     };
 
-    /**
-     * Extends event data.
-     * @protected
-     * @param {Event} event - The event object which gets thrown.
-     */
+	/**
+	 * Extends event data.
+	 * @protected
+	 * @param {Event} event - The event object which gets thrown.
+	 */
     Navigation.prototype.onTrigger = function (event) {
         var settings = this._core.settings;
 
@@ -4871,15 +5167,15 @@ var fakewaffle = (function ($, fakewaffle) {
             index: $.inArray(this.current(), this._pages),
             count: this._pages.length,
             size: settings && (settings.center || settings.autoWidth || settings.dotsData
-              ? 1 : settings.dotsEach || settings.items)
+                ? 1 : settings.dotsEach || settings.items)
         };
     };
 
-    /**
-     * Gets the current page position of the carousel.
-     * @protected
-     * @returns {Number}
-     */
+	/**
+	 * Gets the current page position of the carousel.
+	 * @protected
+	 * @returns {Number}
+	 */
     Navigation.prototype.current = function () {
         var current = this._core.relative(this._core.current());
         return $.grep(this._pages, $.proxy(function (page, index) {
@@ -4887,14 +5183,14 @@ var fakewaffle = (function ($, fakewaffle) {
         }, this)).pop();
     };
 
-    /**
-     * Gets the current succesor/predecessor position.
-     * @protected
-     * @returns {Number}
-     */
+	/**
+	 * Gets the current succesor/predecessor position.
+	 * @protected
+	 * @returns {Number}
+	 */
     Navigation.prototype.getPosition = function (successor) {
         var position, length,
-          settings = this._core.settings;
+            settings = this._core.settings;
 
         if (settings.slideBy == 'page') {
             position = $.inArray(this.current(), this._pages);
@@ -4910,35 +5206,35 @@ var fakewaffle = (function ($, fakewaffle) {
         return position;
     };
 
-    /**
-     * Slides to the next item or page.
-     * @public
-     * @param {Number} [speed=false] - The time in milliseconds for the transition.
-     */
+	/**
+	 * Slides to the next item or page.
+	 * @public
+	 * @param {Number} [speed=false] - The time in milliseconds for the transition.
+	 */
     Navigation.prototype.next = function (speed) {
         $.proxy(this._overrides.to, this._core)(this.getPosition(true), speed);
     };
 
-    /**
-     * Slides to the previous item or page.
-     * @public
-     * @param {Number} [speed=false] - The time in milliseconds for the transition.
-     */
+	/**
+	 * Slides to the previous item or page.
+	 * @public
+	 * @param {Number} [speed=false] - The time in milliseconds for the transition.
+	 */
     Navigation.prototype.prev = function (speed) {
         $.proxy(this._overrides.to, this._core)(this.getPosition(false), speed);
     };
 
-    /**
-     * Slides to the specified item or page.
-     * @public
-     * @param {Number} position - The position of the item or page.
-     * @param {Number} [speed] - The time in milliseconds for the transition.
-     * @param {Boolean} [standard=false] - Whether to use the standard behaviour or not.
-     */
+	/**
+	 * Slides to the specified item or page.
+	 * @public
+	 * @param {Number} position - The position of the item or page.
+	 * @param {Number} [speed] - The time in milliseconds for the transition.
+	 * @param {Boolean} [standard=false] - Whether to use the standard behaviour or not.
+	 */
     Navigation.prototype.to = function (position, speed, standard) {
         var length;
 
-        if (!standard) {
+        if (!standard && this._pages.length) {
             length = this._pages.length;
             $.proxy(this._overrides.to, this._core)(this._pages[((position % length) + length) % length].start, speed);
         } else {
@@ -4952,44 +5248,45 @@ var fakewaffle = (function ($, fakewaffle) {
 
 /**
  * Hash Plugin
- * @version 2.0.0-beta.3
+ * @version 2.3.4
  * @author Artus Kolanowski
+ * @author David Deutsch
  * @license The MIT License (MIT)
  */
 ; (function ($, window, document, undefined) {
     'use strict';
 
-    /**
-     * Creates the hash plugin.
-     * @class The Hash Plugin
-     * @param {Owl} carousel - The Owl Carousel
-     */
+	/**
+	 * Creates the hash plugin.
+	 * @class The Hash Plugin
+	 * @param {Owl} carousel - The Owl Carousel
+	 */
     var Hash = function (carousel) {
-        /**
-         * Reference to the core.
-         * @protected
-         * @type {Owl}
-         */
+		/**
+		 * Reference to the core.
+		 * @protected
+		 * @type {Owl}
+		 */
         this._core = carousel;
 
-        /**
-         * Hash index for the items.
-         * @protected
-         * @type {Object}
-         */
+		/**
+		 * Hash index for the items.
+		 * @protected
+		 * @type {Object}
+		 */
         this._hashes = {};
 
-        /**
-         * The carousel element.
-         * @type {jQuery}
-         */
+		/**
+		 * The carousel element.
+		 * @type {jQuery}
+		 */
         this.$element = this._core.$element;
 
-        /**
-         * All event handlers.
-         * @protected
-         * @type {Object}
-         */
+		/**
+		 * All event handlers.
+		 * @protected
+		 * @type {Object}
+		 */
         this._handlers = {
             'initialized.owl.carousel': $.proxy(function (e) {
                 if (e.namespace && this._core.settings.startPosition === 'URLHash') {
@@ -5010,9 +5307,9 @@ var fakewaffle = (function ($, fakewaffle) {
             'changed.owl.carousel': $.proxy(function (e) {
                 if (e.namespace && e.property.name === 'position') {
                     var current = this._core.items(this._core.relative(this._core.current())),
-                      hash = $.map(this._hashes, function (item, hash) {
-                          return item === current ? hash : null;
-                      }).join();
+                        hash = $.map(this._hashes, function (item, hash) {
+                            return item === current ? hash : null;
+                        }).join();
 
                     if (!hash || window.location.hash.slice(1) === hash) {
                         return;
@@ -5032,8 +5329,8 @@ var fakewaffle = (function ($, fakewaffle) {
         // register event listener for hash navigation
         $(window).on('hashchange.owl.navigation', $.proxy(function (e) {
             var hash = window.location.hash.substring(1),
-              items = this._core.$stage.children(),
-              position = this._hashes[hash] && items.index(this._hashes[hash]);
+                items = this._core.$stage.children(),
+                position = this._hashes[hash] && items.index(this._hashes[hash]);
 
             if (position === undefined || position === this._core.current()) {
                 return;
@@ -5043,18 +5340,18 @@ var fakewaffle = (function ($, fakewaffle) {
         }, this));
     };
 
-    /**
-     * Default options.
-     * @public
-     */
+	/**
+	 * Default options.
+	 * @public
+	 */
     Hash.Defaults = {
         URLhashListener: false
     };
 
-    /**
-     * Destroys the plugin.
-     * @public
-     */
+	/**
+	 * Destroys the plugin.
+	 * @public
+	 */
     Hash.prototype.destroy = function () {
         var handler, property;
 
@@ -5075,51 +5372,52 @@ var fakewaffle = (function ($, fakewaffle) {
 /**
  * Support Plugin
  *
- * @version 2.0.0-beta.3
+ * @version 2.3.4
  * @author Vivid Planet Software GmbH
  * @author Artus Kolanowski
+ * @author David Deutsch
  * @license The MIT License (MIT)
  */
 ; (function ($, window, document, undefined) {
 
     var style = $('<support>').get(0).style,
-      prefixes = 'Webkit Moz O ms'.split(' '),
-      events = {
-          transition: {
-              end: {
-                  WebkitTransition: 'webkitTransitionEnd',
-                  MozTransition: 'transitionend',
-                  OTransition: 'oTransitionEnd',
-                  transition: 'transitionend'
-              }
-          },
-          animation: {
-              end: {
-                  WebkitAnimation: 'webkitAnimationEnd',
-                  MozAnimation: 'animationend',
-                  OAnimation: 'oAnimationEnd',
-                  animation: 'animationend'
-              }
-          }
-      },
-      tests = {
-          csstransforms: function () {
-              return !!test('transform');
-          },
-          csstransforms3d: function () {
-              return !!test('perspective');
-          },
-          csstransitions: function () {
-              return !!test('transition');
-          },
-          cssanimations: function () {
-              return !!test('animation');
-          }
-      };
+        prefixes = 'Webkit Moz O ms'.split(' '),
+        events = {
+            transition: {
+                end: {
+                    WebkitTransition: 'webkitTransitionEnd',
+                    MozTransition: 'transitionend',
+                    OTransition: 'oTransitionEnd',
+                    transition: 'transitionend'
+                }
+            },
+            animation: {
+                end: {
+                    WebkitAnimation: 'webkitAnimationEnd',
+                    MozAnimation: 'animationend',
+                    OAnimation: 'oAnimationEnd',
+                    animation: 'animationend'
+                }
+            }
+        },
+        tests = {
+            csstransforms: function () {
+                return !!test('transform');
+            },
+            csstransforms3d: function () {
+                return !!test('perspective');
+            },
+            csstransitions: function () {
+                return !!test('transition');
+            },
+            cssanimations: function () {
+                return !!test('animation');
+            }
+        };
 
     function test(property, prefixed) {
         var result = false,
-          upper = property.charAt(0).toUpperCase() + property.slice(1);
+            upper = property.charAt(0).toUpperCase() + property.slice(1);
 
         $.each((property + ' ' + prefixes.join(upper + ' ') + upper).split(' '), function (i, property) {
             if (style[property] !== undefined) {
@@ -8413,2153 +8711,6 @@ https://github.com/imakewebthings/waypoints/blog/master/licenses.txt
 
 }(window, document, jQuery));
 
-/** vim: et:ts=4:sw=4:sts=4
- * @license RequireJS 2.3.5 Copyright jQuery Foundation and other contributors.
- * Released under MIT license, https://github.com/requirejs/requirejs/blob/master/LICENSE
- */
-//Not using strict: uneven strict support in browsers, #392, and causes
-//problems with requirejs.exec()/transpiler plugins that may not be strict.
-/*jslint regexp: true, nomen: true, sloppy: true */
-/*global window, navigator, document, importScripts, setTimeout, opera */
-
-var requirejs, require, define;
-(function (global, setTimeout) {
-    var req, s, head, baseElement, dataMain, src,
-        interactiveScript, currentlyAddingScript, mainScript, subPath,
-        version = '2.3.5',
-        commentRegExp = /\/\*[\s\S]*?\*\/|([^:"'=]|^)\/\/.*$/mg,
-        cjsRequireRegExp = /[^.]\s*require\s*\(\s*["']([^'"\s]+)["']\s*\)/g,
-        jsSuffixRegExp = /\.js$/,
-        currDirRegExp = /^\.\//,
-        op = Object.prototype,
-        ostring = op.toString,
-        hasOwn = op.hasOwnProperty,
-        isBrowser = !!(typeof window !== 'undefined' && typeof navigator !== 'undefined' && window.document),
-        isWebWorker = !isBrowser && typeof importScripts !== 'undefined',
-        //PS3 indicates loaded and complete, but need to wait for complete
-        //specifically. Sequence is 'loading', 'loaded', execution,
-        // then 'complete'. The UA check is unfortunate, but not sure how
-        //to feature test w/o causing perf issues.
-        readyRegExp = isBrowser && navigator.platform === 'PLAYSTATION 3' ?
-                      /^complete$/ : /^(complete|loaded)$/,
-        defContextName = '_',
-        //Oh the tragedy, detecting opera. See the usage of isOpera for reason.
-        isOpera = typeof opera !== 'undefined' && opera.toString() === '[object Opera]',
-        contexts = {},
-        cfg = {},
-        globalDefQueue = [],
-        useInteractive = false;
-
-    //Could match something like ')//comment', do not lose the prefix to comment.
-    function commentReplace(match, singlePrefix) {
-        return singlePrefix || '';
-    }
-
-    function isFunction(it) {
-        return ostring.call(it) === '[object Function]';
-    }
-
-    function isArray(it) {
-        return ostring.call(it) === '[object Array]';
-    }
-
-    /**
-     * Helper function for iterating over an array. If the func returns
-     * a true value, it will break out of the loop.
-     */
-    function each(ary, func) {
-        if (ary) {
-            var i;
-            for (i = 0; i < ary.length; i += 1) {
-                if (ary[i] && func(ary[i], i, ary)) {
-                    break;
-                }
-            }
-        }
-    }
-
-    /**
-     * Helper function for iterating over an array backwards. If the func
-     * returns a true value, it will break out of the loop.
-     */
-    function eachReverse(ary, func) {
-        if (ary) {
-            var i;
-            for (i = ary.length - 1; i > -1; i -= 1) {
-                if (ary[i] && func(ary[i], i, ary)) {
-                    break;
-                }
-            }
-        }
-    }
-
-    function hasProp(obj, prop) {
-        return hasOwn.call(obj, prop);
-    }
-
-    function getOwn(obj, prop) {
-        return hasProp(obj, prop) && obj[prop];
-    }
-
-    /**
-     * Cycles over properties in an object and calls a function for each
-     * property value. If the function returns a truthy value, then the
-     * iteration is stopped.
-     */
-    function eachProp(obj, func) {
-        var prop;
-        for (prop in obj) {
-            if (hasProp(obj, prop)) {
-                if (func(obj[prop], prop)) {
-                    break;
-                }
-            }
-        }
-    }
-
-    /**
-     * Simple function to mix in properties from source into target,
-     * but only if target does not already have a property of the same name.
-     */
-    function mixin(target, source, force, deepStringMixin) {
-        if (source) {
-            eachProp(source, function (value, prop) {
-                if (force || !hasProp(target, prop)) {
-                    if (deepStringMixin && typeof value === 'object' && value &&
-                        !isArray(value) && !isFunction(value) &&
-                        !(value instanceof RegExp)) {
-
-                        if (!target[prop]) {
-                            target[prop] = {};
-                        }
-                        mixin(target[prop], value, force, deepStringMixin);
-                    } else {
-                        target[prop] = value;
-                    }
-                }
-            });
-        }
-        return target;
-    }
-
-    //Similar to Function.prototype.bind, but the 'this' object is specified
-    //first, since it is easier to read/figure out what 'this' will be.
-    function bind(obj, fn) {
-        return function () {
-            return fn.apply(obj, arguments);
-        };
-    }
-
-    function scripts() {
-        return document.getElementsByTagName('script');
-    }
-
-    function defaultOnError(err) {
-        throw err;
-    }
-
-    //Allow getting a global that is expressed in
-    //dot notation, like 'a.b.c'.
-    function getGlobal(value) {
-        if (!value) {
-            return value;
-        }
-        var g = global;
-        each(value.split('.'), function (part) {
-            g = g[part];
-        });
-        return g;
-    }
-
-    /**
-     * Constructs an error with a pointer to an URL with more information.
-     * @param {String} id the error ID that maps to an ID on a web page.
-     * @param {String} message human readable error.
-     * @param {Error} [err] the original error, if there is one.
-     *
-     * @returns {Error}
-     */
-    function makeError(id, msg, err, requireModules) {
-        var e = new Error(msg + '\nhttp://requirejs.org/docs/errors.html#' + id);
-        e.requireType = id;
-        e.requireModules = requireModules;
-        if (err) {
-            e.originalError = err;
-        }
-        return e;
-    }
-
-    if (typeof define !== 'undefined') {
-        //If a define is already in play via another AMD loader,
-        //do not overwrite.
-        return;
-    }
-
-    if (typeof requirejs !== 'undefined') {
-        if (isFunction(requirejs)) {
-            //Do not overwrite an existing requirejs instance.
-            return;
-        }
-        cfg = requirejs;
-        requirejs = undefined;
-    }
-
-    //Allow for a require config object
-    if (typeof require !== 'undefined' && !isFunction(require)) {
-        //assume it is a config object.
-        cfg = require;
-        require = undefined;
-    }
-
-    function newContext(contextName) {
-        var inCheckLoaded, Module, context, handlers,
-            checkLoadedTimeoutId,
-            config = {
-                //Defaults. Do not set a default for map
-                //config to speed up normalize(), which
-                //will run faster if there is no default.
-                waitSeconds: 7,
-                baseUrl: './',
-                paths: {},
-                bundles: {},
-                pkgs: {},
-                shim: {},
-                config: {}
-            },
-            registry = {},
-            //registry of just enabled modules, to speed
-            //cycle breaking code when lots of modules
-            //are registered, but not activated.
-            enabledRegistry = {},
-            undefEvents = {},
-            defQueue = [],
-            defined = {},
-            urlFetched = {},
-            bundlesMap = {},
-            requireCounter = 1,
-            unnormalizedCounter = 1;
-
-        /**
-         * Trims the . and .. from an array of path segments.
-         * It will keep a leading path segment if a .. will become
-         * the first path segment, to help with module name lookups,
-         * which act like paths, but can be remapped. But the end result,
-         * all paths that use this function should look normalized.
-         * NOTE: this method MODIFIES the input array.
-         * @param {Array} ary the array of path segments.
-         */
-        function trimDots(ary) {
-            var i, part;
-            for (i = 0; i < ary.length; i++) {
-                part = ary[i];
-                if (part === '.') {
-                    ary.splice(i, 1);
-                    i -= 1;
-                } else if (part === '..') {
-                    // If at the start, or previous value is still ..,
-                    // keep them so that when converted to a path it may
-                    // still work when converted to a path, even though
-                    // as an ID it is less than ideal. In larger point
-                    // releases, may be better to just kick out an error.
-                    if (i === 0 || (i === 1 && ary[2] === '..') || ary[i - 1] === '..') {
-                        continue;
-                    } else if (i > 0) {
-                        ary.splice(i - 1, 2);
-                        i -= 2;
-                    }
-                }
-            }
-        }
-
-        /**
-         * Given a relative module name, like ./something, normalize it to
-         * a real name that can be mapped to a path.
-         * @param {String} name the relative name
-         * @param {String} baseName a real name that the name arg is relative
-         * to.
-         * @param {Boolean} applyMap apply the map config to the value. Should
-         * only be done if this normalization is for a dependency ID.
-         * @returns {String} normalized name
-         */
-        function normalize(name, baseName, applyMap) {
-            var pkgMain, mapValue, nameParts, i, j, nameSegment, lastIndex,
-                foundMap, foundI, foundStarMap, starI, normalizedBaseParts,
-                baseParts = (baseName && baseName.split('/')),
-                map = config.map,
-                starMap = map && map['*'];
-
-            //Adjust any relative paths.
-            if (name) {
-                name = name.split('/');
-                lastIndex = name.length - 1;
-
-                // If wanting node ID compatibility, strip .js from end
-                // of IDs. Have to do this here, and not in nameToUrl
-                // because node allows either .js or non .js to map
-                // to same file.
-                if (config.nodeIdCompat && jsSuffixRegExp.test(name[lastIndex])) {
-                    name[lastIndex] = name[lastIndex].replace(jsSuffixRegExp, '');
-                }
-
-                // Starts with a '.' so need the baseName
-                if (name[0].charAt(0) === '.' && baseParts) {
-                    //Convert baseName to array, and lop off the last part,
-                    //so that . matches that 'directory' and not name of the baseName's
-                    //module. For instance, baseName of 'one/two/three', maps to
-                    //'one/two/three.js', but we want the directory, 'one/two' for
-                    //this normalization.
-                    normalizedBaseParts = baseParts.slice(0, baseParts.length - 1);
-                    name = normalizedBaseParts.concat(name);
-                }
-
-                trimDots(name);
-                name = name.join('/');
-            }
-
-            //Apply map config if available.
-            if (applyMap && map && (baseParts || starMap)) {
-                nameParts = name.split('/');
-
-                outerLoop: for (i = nameParts.length; i > 0; i -= 1) {
-                    nameSegment = nameParts.slice(0, i).join('/');
-
-                    if (baseParts) {
-                        //Find the longest baseName segment match in the config.
-                        //So, do joins on the biggest to smallest lengths of baseParts.
-                        for (j = baseParts.length; j > 0; j -= 1) {
-                            mapValue = getOwn(map, baseParts.slice(0, j).join('/'));
-
-                            //baseName segment has config, find if it has one for
-                            //this name.
-                            if (mapValue) {
-                                mapValue = getOwn(mapValue, nameSegment);
-                                if (mapValue) {
-                                    //Match, update name to the new value.
-                                    foundMap = mapValue;
-                                    foundI = i;
-                                    break outerLoop;
-                                }
-                            }
-                        }
-                    }
-
-                    //Check for a star map match, but just hold on to it,
-                    //if there is a shorter segment match later in a matching
-                    //config, then favor over this star map.
-                    if (!foundStarMap && starMap && getOwn(starMap, nameSegment)) {
-                        foundStarMap = getOwn(starMap, nameSegment);
-                        starI = i;
-                    }
-                }
-
-                if (!foundMap && foundStarMap) {
-                    foundMap = foundStarMap;
-                    foundI = starI;
-                }
-
-                if (foundMap) {
-                    nameParts.splice(0, foundI, foundMap);
-                    name = nameParts.join('/');
-                }
-            }
-
-            // If the name points to a package's name, use
-            // the package main instead.
-            pkgMain = getOwn(config.pkgs, name);
-
-            return pkgMain ? pkgMain : name;
-        }
-
-        function removeScript(name) {
-            if (isBrowser) {
-                each(scripts(), function (scriptNode) {
-                    if (scriptNode.getAttribute('data-requiremodule') === name &&
-                            scriptNode.getAttribute('data-requirecontext') === context.contextName) {
-                        scriptNode.parentNode.removeChild(scriptNode);
-                        return true;
-                    }
-                });
-            }
-        }
-
-        function hasPathFallback(id) {
-            var pathConfig = getOwn(config.paths, id);
-            if (pathConfig && isArray(pathConfig) && pathConfig.length > 1) {
-                //Pop off the first array value, since it failed, and
-                //retry
-                pathConfig.shift();
-                context.require.undef(id);
-
-                //Custom require that does not do map translation, since
-                //ID is "absolute", already mapped/resolved.
-                context.makeRequire(null, {
-                    skipMap: true
-                })([id]);
-
-                return true;
-            }
-        }
-
-        //Turns a plugin!resource to [plugin, resource]
-        //with the plugin being undefined if the name
-        //did not have a plugin prefix.
-        function splitPrefix(name) {
-            var prefix,
-                index = name ? name.indexOf('!') : -1;
-            if (index > -1) {
-                prefix = name.substring(0, index);
-                name = name.substring(index + 1, name.length);
-            }
-            return [prefix, name];
-        }
-
-        /**
-         * Creates a module mapping that includes plugin prefix, module
-         * name, and path. If parentModuleMap is provided it will
-         * also normalize the name via require.normalize()
-         *
-         * @param {String} name the module name
-         * @param {String} [parentModuleMap] parent module map
-         * for the module name, used to resolve relative names.
-         * @param {Boolean} isNormalized: is the ID already normalized.
-         * This is true if this call is done for a define() module ID.
-         * @param {Boolean} applyMap: apply the map config to the ID.
-         * Should only be true if this map is for a dependency.
-         *
-         * @returns {Object}
-         */
-        function makeModuleMap(name, parentModuleMap, isNormalized, applyMap) {
-            var url, pluginModule, suffix, nameParts,
-                prefix = null,
-                parentName = parentModuleMap ? parentModuleMap.name : null,
-                originalName = name,
-                isDefine = true,
-                normalizedName = '';
-
-            //If no name, then it means it is a require call, generate an
-            //internal name.
-            if (!name) {
-                isDefine = false;
-                name = '_@r' + (requireCounter += 1);
-            }
-
-            nameParts = splitPrefix(name);
-            prefix = nameParts[0];
-            name = nameParts[1];
-
-            if (prefix) {
-                prefix = normalize(prefix, parentName, applyMap);
-                pluginModule = getOwn(defined, prefix);
-            }
-
-            //Account for relative paths if there is a base name.
-            if (name) {
-                if (prefix) {
-                    if (isNormalized) {
-                        normalizedName = name;
-                    } else if (pluginModule && pluginModule.normalize) {
-                        //Plugin is loaded, use its normalize method.
-                        normalizedName = pluginModule.normalize(name, function (name) {
-                            return normalize(name, parentName, applyMap);
-                        });
-                    } else {
-                        // If nested plugin references, then do not try to
-                        // normalize, as it will not normalize correctly. This
-                        // places a restriction on resourceIds, and the longer
-                        // term solution is not to normalize until plugins are
-                        // loaded and all normalizations to allow for async
-                        // loading of a loader plugin. But for now, fixes the
-                        // common uses. Details in #1131
-                        normalizedName = name.indexOf('!') === -1 ?
-                                         normalize(name, parentName, applyMap) :
-                                         name;
-                    }
-                } else {
-                    //A regular module.
-                    normalizedName = normalize(name, parentName, applyMap);
-
-                    //Normalized name may be a plugin ID due to map config
-                    //application in normalize. The map config values must
-                    //already be normalized, so do not need to redo that part.
-                    nameParts = splitPrefix(normalizedName);
-                    prefix = nameParts[0];
-                    normalizedName = nameParts[1];
-                    isNormalized = true;
-
-                    url = context.nameToUrl(normalizedName);
-                }
-            }
-
-            //If the id is a plugin id that cannot be determined if it needs
-            //normalization, stamp it with a unique ID so two matching relative
-            //ids that may conflict can be separate.
-            suffix = prefix && !pluginModule && !isNormalized ?
-                     '_unnormalized' + (unnormalizedCounter += 1) :
-                     '';
-
-            return {
-                prefix: prefix,
-                name: normalizedName,
-                parentMap: parentModuleMap,
-                unnormalized: !!suffix,
-                url: url,
-                originalName: originalName,
-                isDefine: isDefine,
-                id: (prefix ?
-                        prefix + '!' + normalizedName :
-                        normalizedName) + suffix
-            };
-        }
-
-        function getModule(depMap) {
-            var id = depMap.id,
-                mod = getOwn(registry, id);
-
-            if (!mod) {
-                mod = registry[id] = new context.Module(depMap);
-            }
-
-            return mod;
-        }
-
-        function on(depMap, name, fn) {
-            var id = depMap.id,
-                mod = getOwn(registry, id);
-
-            if (hasProp(defined, id) &&
-                    (!mod || mod.defineEmitComplete)) {
-                if (name === 'defined') {
-                    fn(defined[id]);
-                }
-            } else {
-                mod = getModule(depMap);
-                if (mod.error && name === 'error') {
-                    fn(mod.error);
-                } else {
-                    mod.on(name, fn);
-                }
-            }
-        }
-
-        function onError(err, errback) {
-            var ids = err.requireModules,
-                notified = false;
-
-            if (errback) {
-                errback(err);
-            } else {
-                each(ids, function (id) {
-                    var mod = getOwn(registry, id);
-                    if (mod) {
-                        //Set error on module, so it skips timeout checks.
-                        mod.error = err;
-                        if (mod.events.error) {
-                            notified = true;
-                            mod.emit('error', err);
-                        }
-                    }
-                });
-
-                if (!notified) {
-                    req.onError(err);
-                }
-            }
-        }
-
-        /**
-         * Internal method to transfer globalQueue items to this context's
-         * defQueue.
-         */
-        function takeGlobalQueue() {
-            //Push all the globalDefQueue items into the context's defQueue
-            if (globalDefQueue.length) {
-                each(globalDefQueue, function (queueItem) {
-                    var id = queueItem[0];
-                    if (typeof id === 'string') {
-                        context.defQueueMap[id] = true;
-                    }
-                    defQueue.push(queueItem);
-                });
-                globalDefQueue = [];
-            }
-        }
-
-        handlers = {
-            'require': function (mod) {
-                if (mod.require) {
-                    return mod.require;
-                } else {
-                    return (mod.require = context.makeRequire(mod.map));
-                }
-            },
-            'exports': function (mod) {
-                mod.usingExports = true;
-                if (mod.map.isDefine) {
-                    if (mod.exports) {
-                        return (defined[mod.map.id] = mod.exports);
-                    } else {
-                        return (mod.exports = defined[mod.map.id] = {});
-                    }
-                }
-            },
-            'module': function (mod) {
-                if (mod.module) {
-                    return mod.module;
-                } else {
-                    return (mod.module = {
-                        id: mod.map.id,
-                        uri: mod.map.url,
-                        config: function () {
-                            return getOwn(config.config, mod.map.id) || {};
-                        },
-                        exports: mod.exports || (mod.exports = {})
-                    });
-                }
-            }
-        };
-
-        function cleanRegistry(id) {
-            //Clean up machinery used for waiting modules.
-            delete registry[id];
-            delete enabledRegistry[id];
-        }
-
-        function breakCycle(mod, traced, processed) {
-            var id = mod.map.id;
-
-            if (mod.error) {
-                mod.emit('error', mod.error);
-            } else {
-                traced[id] = true;
-                each(mod.depMaps, function (depMap, i) {
-                    var depId = depMap.id,
-                        dep = getOwn(registry, depId);
-
-                    //Only force things that have not completed
-                    //being defined, so still in the registry,
-                    //and only if it has not been matched up
-                    //in the module already.
-                    if (dep && !mod.depMatched[i] && !processed[depId]) {
-                        if (getOwn(traced, depId)) {
-                            mod.defineDep(i, defined[depId]);
-                            mod.check(); //pass false?
-                        } else {
-                            breakCycle(dep, traced, processed);
-                        }
-                    }
-                });
-                processed[id] = true;
-            }
-        }
-
-        function checkLoaded() {
-            var err, usingPathFallback,
-                waitInterval = config.waitSeconds * 1000,
-                //It is possible to disable the wait interval by using waitSeconds of 0.
-                expired = waitInterval && (context.startTime + waitInterval) < new Date().getTime(),
-                noLoads = [],
-                reqCalls = [],
-                stillLoading = false,
-                needCycleCheck = true;
-
-            //Do not bother if this call was a result of a cycle break.
-            if (inCheckLoaded) {
-                return;
-            }
-
-            inCheckLoaded = true;
-
-            //Figure out the state of all the modules.
-            eachProp(enabledRegistry, function (mod) {
-                var map = mod.map,
-                    modId = map.id;
-
-                //Skip things that are not enabled or in error state.
-                if (!mod.enabled) {
-                    return;
-                }
-
-                if (!map.isDefine) {
-                    reqCalls.push(mod);
-                }
-
-                if (!mod.error) {
-                    //If the module should be executed, and it has not
-                    //been inited and time is up, remember it.
-                    if (!mod.inited && expired) {
-                        if (hasPathFallback(modId)) {
-                            usingPathFallback = true;
-                            stillLoading = true;
-                        } else {
-                            noLoads.push(modId);
-                            removeScript(modId);
-                        }
-                    } else if (!mod.inited && mod.fetched && map.isDefine) {
-                        stillLoading = true;
-                        if (!map.prefix) {
-                            //No reason to keep looking for unfinished
-                            //loading. If the only stillLoading is a
-                            //plugin resource though, keep going,
-                            //because it may be that a plugin resource
-                            //is waiting on a non-plugin cycle.
-                            return (needCycleCheck = false);
-                        }
-                    }
-                }
-            });
-
-            if (expired && noLoads.length) {
-                //If wait time expired, throw error of unloaded modules.
-                err = makeError('timeout', 'Load timeout for modules: ' + noLoads, null, noLoads);
-                err.contextName = context.contextName;
-                return onError(err);
-            }
-
-            //Not expired, check for a cycle.
-            if (needCycleCheck) {
-                each(reqCalls, function (mod) {
-                    breakCycle(mod, {}, {});
-                });
-            }
-
-            //If still waiting on loads, and the waiting load is something
-            //other than a plugin resource, or there are still outstanding
-            //scripts, then just try back later.
-            if ((!expired || usingPathFallback) && stillLoading) {
-                //Something is still waiting to load. Wait for it, but only
-                //if a timeout is not already in effect.
-                if ((isBrowser || isWebWorker) && !checkLoadedTimeoutId) {
-                    checkLoadedTimeoutId = setTimeout(function () {
-                        checkLoadedTimeoutId = 0;
-                        checkLoaded();
-                    }, 50);
-                }
-            }
-
-            inCheckLoaded = false;
-        }
-
-        Module = function (map) {
-            this.events = getOwn(undefEvents, map.id) || {};
-            this.map = map;
-            this.shim = getOwn(config.shim, map.id);
-            this.depExports = [];
-            this.depMaps = [];
-            this.depMatched = [];
-            this.pluginMaps = {};
-            this.depCount = 0;
-
-            /* this.exports this.factory
-               this.depMaps = [],
-               this.enabled, this.fetched
-            */
-        };
-
-        Module.prototype = {
-            init: function (depMaps, factory, errback, options) {
-                options = options || {};
-
-                //Do not do more inits if already done. Can happen if there
-                //are multiple define calls for the same module. That is not
-                //a normal, common case, but it is also not unexpected.
-                if (this.inited) {
-                    return;
-                }
-
-                this.factory = factory;
-
-                if (errback) {
-                    //Register for errors on this module.
-                    this.on('error', errback);
-                } else if (this.events.error) {
-                    //If no errback already, but there are error listeners
-                    //on this module, set up an errback to pass to the deps.
-                    errback = bind(this, function (err) {
-                        this.emit('error', err);
-                    });
-                }
-
-                //Do a copy of the dependency array, so that
-                //source inputs are not modified. For example
-                //"shim" deps are passed in here directly, and
-                //doing a direct modification of the depMaps array
-                //would affect that config.
-                this.depMaps = depMaps && depMaps.slice(0);
-
-                this.errback = errback;
-
-                //Indicate this module has be initialized
-                this.inited = true;
-
-                this.ignore = options.ignore;
-
-                //Could have option to init this module in enabled mode,
-                //or could have been previously marked as enabled. However,
-                //the dependencies are not known until init is called. So
-                //if enabled previously, now trigger dependencies as enabled.
-                if (options.enabled || this.enabled) {
-                    //Enable this module and dependencies.
-                    //Will call this.check()
-                    this.enable();
-                } else {
-                    this.check();
-                }
-            },
-
-            defineDep: function (i, depExports) {
-                //Because of cycles, defined callback for a given
-                //export can be called more than once.
-                if (!this.depMatched[i]) {
-                    this.depMatched[i] = true;
-                    this.depCount -= 1;
-                    this.depExports[i] = depExports;
-                }
-            },
-
-            fetch: function () {
-                if (this.fetched) {
-                    return;
-                }
-                this.fetched = true;
-
-                context.startTime = (new Date()).getTime();
-
-                var map = this.map;
-
-                //If the manager is for a plugin managed resource,
-                //ask the plugin to load it now.
-                if (this.shim) {
-                    context.makeRequire(this.map, {
-                        enableBuildCallback: true
-                    })(this.shim.deps || [], bind(this, function () {
-                        return map.prefix ? this.callPlugin() : this.load();
-                    }));
-                } else {
-                    //Regular dependency.
-                    return map.prefix ? this.callPlugin() : this.load();
-                }
-            },
-
-            load: function () {
-                var url = this.map.url;
-
-                //Regular dependency.
-                if (!urlFetched[url]) {
-                    urlFetched[url] = true;
-                    context.load(this.map.id, url);
-                }
-            },
-
-            /**
-             * Checks if the module is ready to define itself, and if so,
-             * define it.
-             */
-            check: function () {
-                if (!this.enabled || this.enabling) {
-                    return;
-                }
-
-                var err, cjsModule,
-                    id = this.map.id,
-                    depExports = this.depExports,
-                    exports = this.exports,
-                    factory = this.factory;
-
-                if (!this.inited) {
-                    // Only fetch if not already in the defQueue.
-                    if (!hasProp(context.defQueueMap, id)) {
-                        this.fetch();
-                    }
-                } else if (this.error) {
-                    this.emit('error', this.error);
-                } else if (!this.defining) {
-                    //The factory could trigger another require call
-                    //that would result in checking this module to
-                    //define itself again. If already in the process
-                    //of doing that, skip this work.
-                    this.defining = true;
-
-                    if (this.depCount < 1 && !this.defined) {
-                        if (isFunction(factory)) {
-                            //If there is an error listener, favor passing
-                            //to that instead of throwing an error. However,
-                            //only do it for define()'d  modules. require
-                            //errbacks should not be called for failures in
-                            //their callbacks (#699). However if a global
-                            //onError is set, use that.
-                            if ((this.events.error && this.map.isDefine) ||
-                                req.onError !== defaultOnError) {
-                                try {
-                                    exports = context.execCb(id, factory, depExports, exports);
-                                } catch (e) {
-                                    err = e;
-                                }
-                            } else {
-                                exports = context.execCb(id, factory, depExports, exports);
-                            }
-
-                            // Favor return value over exports. If node/cjs in play,
-                            // then will not have a return value anyway. Favor
-                            // module.exports assignment over exports object.
-                            if (this.map.isDefine && exports === undefined) {
-                                cjsModule = this.module;
-                                if (cjsModule) {
-                                    exports = cjsModule.exports;
-                                } else if (this.usingExports) {
-                                    //exports already set the defined value.
-                                    exports = this.exports;
-                                }
-                            }
-
-                            if (err) {
-                                err.requireMap = this.map;
-                                err.requireModules = this.map.isDefine ? [this.map.id] : null;
-                                err.requireType = this.map.isDefine ? 'define' : 'require';
-                                return onError((this.error = err));
-                            }
-
-                        } else {
-                            //Just a literal value
-                            exports = factory;
-                        }
-
-                        this.exports = exports;
-
-                        if (this.map.isDefine && !this.ignore) {
-                            defined[id] = exports;
-
-                            if (req.onResourceLoad) {
-                                var resLoadMaps = [];
-                                each(this.depMaps, function (depMap) {
-                                    resLoadMaps.push(depMap.normalizedMap || depMap);
-                                });
-                                req.onResourceLoad(context, this.map, resLoadMaps);
-                            }
-                        }
-
-                        //Clean up
-                        cleanRegistry(id);
-
-                        this.defined = true;
-                    }
-
-                    //Finished the define stage. Allow calling check again
-                    //to allow define notifications below in the case of a
-                    //cycle.
-                    this.defining = false;
-
-                    if (this.defined && !this.defineEmitted) {
-                        this.defineEmitted = true;
-                        this.emit('defined', this.exports);
-                        this.defineEmitComplete = true;
-                    }
-
-                }
-            },
-
-            callPlugin: function () {
-                var map = this.map,
-                    id = map.id,
-                    //Map already normalized the prefix.
-                    pluginMap = makeModuleMap(map.prefix);
-
-                //Mark this as a dependency for this plugin, so it
-                //can be traced for cycles.
-                this.depMaps.push(pluginMap);
-
-                on(pluginMap, 'defined', bind(this, function (plugin) {
-                    var load, normalizedMap, normalizedMod,
-                        bundleId = getOwn(bundlesMap, this.map.id),
-                        name = this.map.name,
-                        parentName = this.map.parentMap ? this.map.parentMap.name : null,
-                        localRequire = context.makeRequire(map.parentMap, {
-                            enableBuildCallback: true
-                        });
-
-                    //If current map is not normalized, wait for that
-                    //normalized name to load instead of continuing.
-                    if (this.map.unnormalized) {
-                        //Normalize the ID if the plugin allows it.
-                        if (plugin.normalize) {
-                            name = plugin.normalize(name, function (name) {
-                                return normalize(name, parentName, true);
-                            }) || '';
-                        }
-
-                        //prefix and name should already be normalized, no need
-                        //for applying map config again either.
-                        normalizedMap = makeModuleMap(map.prefix + '!' + name,
-                                                      this.map.parentMap,
-                                                      true);
-                        on(normalizedMap,
-                            'defined', bind(this, function (value) {
-                                this.map.normalizedMap = normalizedMap;
-                                this.init([], function () { return value; }, null, {
-                                    enabled: true,
-                                    ignore: true
-                                });
-                            }));
-
-                        normalizedMod = getOwn(registry, normalizedMap.id);
-                        if (normalizedMod) {
-                            //Mark this as a dependency for this plugin, so it
-                            //can be traced for cycles.
-                            this.depMaps.push(normalizedMap);
-
-                            if (this.events.error) {
-                                normalizedMod.on('error', bind(this, function (err) {
-                                    this.emit('error', err);
-                                }));
-                            }
-                            normalizedMod.enable();
-                        }
-
-                        return;
-                    }
-
-                    //If a paths config, then just load that file instead to
-                    //resolve the plugin, as it is built into that paths layer.
-                    if (bundleId) {
-                        this.map.url = context.nameToUrl(bundleId);
-                        this.load();
-                        return;
-                    }
-
-                    load = bind(this, function (value) {
-                        this.init([], function () { return value; }, null, {
-                            enabled: true
-                        });
-                    });
-
-                    load.error = bind(this, function (err) {
-                        this.inited = true;
-                        this.error = err;
-                        err.requireModules = [id];
-
-                        //Remove temp unnormalized modules for this module,
-                        //since they will never be resolved otherwise now.
-                        eachProp(registry, function (mod) {
-                            if (mod.map.id.indexOf(id + '_unnormalized') === 0) {
-                                cleanRegistry(mod.map.id);
-                            }
-                        });
-
-                        onError(err);
-                    });
-
-                    //Allow plugins to load other code without having to know the
-                    //context or how to 'complete' the load.
-                    load.fromText = bind(this, function (text, textAlt) {
-                        /*jslint evil: true */
-                        var moduleName = map.name,
-                            moduleMap = makeModuleMap(moduleName),
-                            hasInteractive = useInteractive;
-
-                        //As of 2.1.0, support just passing the text, to reinforce
-                        //fromText only being called once per resource. Still
-                        //support old style of passing moduleName but discard
-                        //that moduleName in favor of the internal ref.
-                        if (textAlt) {
-                            text = textAlt;
-                        }
-
-                        //Turn off interactive script matching for IE for any define
-                        //calls in the text, then turn it back on at the end.
-                        if (hasInteractive) {
-                            useInteractive = false;
-                        }
-
-                        //Prime the system by creating a module instance for
-                        //it.
-                        getModule(moduleMap);
-
-                        //Transfer any config to this other module.
-                        if (hasProp(config.config, id)) {
-                            config.config[moduleName] = config.config[id];
-                        }
-
-                        try {
-                            req.exec(text);
-                        } catch (e) {
-                            return onError(makeError('fromtexteval',
-                                             'fromText eval for ' + id +
-                                            ' failed: ' + e,
-                                             e,
-                                             [id]));
-                        }
-
-                        if (hasInteractive) {
-                            useInteractive = true;
-                        }
-
-                        //Mark this as a dependency for the plugin
-                        //resource
-                        this.depMaps.push(moduleMap);
-
-                        //Support anonymous modules.
-                        context.completeLoad(moduleName);
-
-                        //Bind the value of that module to the value for this
-                        //resource ID.
-                        localRequire([moduleName], load);
-                    });
-
-                    //Use parentName here since the plugin's name is not reliable,
-                    //could be some weird string with no path that actually wants to
-                    //reference the parentName's path.
-                    plugin.load(map.name, localRequire, load, config);
-                }));
-
-                context.enable(pluginMap, this);
-                this.pluginMaps[pluginMap.id] = pluginMap;
-            },
-
-            enable: function () {
-                enabledRegistry[this.map.id] = this;
-                this.enabled = true;
-
-                //Set flag mentioning that the module is enabling,
-                //so that immediate calls to the defined callbacks
-                //for dependencies do not trigger inadvertent load
-                //with the depCount still being zero.
-                this.enabling = true;
-
-                //Enable each dependency
-                each(this.depMaps, bind(this, function (depMap, i) {
-                    var id, mod, handler;
-
-                    if (typeof depMap === 'string') {
-                        //Dependency needs to be converted to a depMap
-                        //and wired up to this module.
-                        depMap = makeModuleMap(depMap,
-                                               (this.map.isDefine ? this.map : this.map.parentMap),
-                                               false,
-                                               !this.skipMap);
-                        this.depMaps[i] = depMap;
-
-                        handler = getOwn(handlers, depMap.id);
-
-                        if (handler) {
-                            this.depExports[i] = handler(this);
-                            return;
-                        }
-
-                        this.depCount += 1;
-
-                        on(depMap, 'defined', bind(this, function (depExports) {
-                            if (this.undefed) {
-                                return;
-                            }
-                            this.defineDep(i, depExports);
-                            this.check();
-                        }));
-
-                        if (this.errback) {
-                            on(depMap, 'error', bind(this, this.errback));
-                        } else if (this.events.error) {
-                            // No direct errback on this module, but something
-                            // else is listening for errors, so be sure to
-                            // propagate the error correctly.
-                            on(depMap, 'error', bind(this, function (err) {
-                                this.emit('error', err);
-                            }));
-                        }
-                    }
-
-                    id = depMap.id;
-                    mod = registry[id];
-
-                    //Skip special modules like 'require', 'exports', 'module'
-                    //Also, don't call enable if it is already enabled,
-                    //important in circular dependency cases.
-                    if (!hasProp(handlers, id) && mod && !mod.enabled) {
-                        context.enable(depMap, this);
-                    }
-                }));
-
-                //Enable each plugin that is used in
-                //a dependency
-                eachProp(this.pluginMaps, bind(this, function (pluginMap) {
-                    var mod = getOwn(registry, pluginMap.id);
-                    if (mod && !mod.enabled) {
-                        context.enable(pluginMap, this);
-                    }
-                }));
-
-                this.enabling = false;
-
-                this.check();
-            },
-
-            on: function (name, cb) {
-                var cbs = this.events[name];
-                if (!cbs) {
-                    cbs = this.events[name] = [];
-                }
-                cbs.push(cb);
-            },
-
-            emit: function (name, evt) {
-                each(this.events[name], function (cb) {
-                    cb(evt);
-                });
-                if (name === 'error') {
-                    //Now that the error handler was triggered, remove
-                    //the listeners, since this broken Module instance
-                    //can stay around for a while in the registry.
-                    delete this.events[name];
-                }
-            }
-        };
-
-        function callGetModule(args) {
-            //Skip modules already defined.
-            if (!hasProp(defined, args[0])) {
-                getModule(makeModuleMap(args[0], null, true)).init(args[1], args[2]);
-            }
-        }
-
-        function removeListener(node, func, name, ieName) {
-            //Favor detachEvent because of IE9
-            //issue, see attachEvent/addEventListener comment elsewhere
-            //in this file.
-            if (node.detachEvent && !isOpera) {
-                //Probably IE. If not it will throw an error, which will be
-                //useful to know.
-                if (ieName) {
-                    node.detachEvent(ieName, func);
-                }
-            } else {
-                node.removeEventListener(name, func, false);
-            }
-        }
-
-        /**
-         * Given an event from a script node, get the requirejs info from it,
-         * and then removes the event listeners on the node.
-         * @param {Event} evt
-         * @returns {Object}
-         */
-        function getScriptData(evt) {
-            //Using currentTarget instead of target for Firefox 2.0's sake. Not
-            //all old browsers will be supported, but this one was easy enough
-            //to support and still makes sense.
-            var node = evt.currentTarget || evt.srcElement;
-
-            //Remove the listeners once here.
-            removeListener(node, context.onScriptLoad, 'load', 'onreadystatechange');
-            removeListener(node, context.onScriptError, 'error');
-
-            return {
-                node: node,
-                id: node && node.getAttribute('data-requiremodule')
-            };
-        }
-
-        function intakeDefines() {
-            var args;
-
-            //Any defined modules in the global queue, intake them now.
-            takeGlobalQueue();
-
-            //Make sure any remaining defQueue items get properly processed.
-            while (defQueue.length) {
-                args = defQueue.shift();
-                if (args[0] === null) {
-                    return onError(makeError('mismatch', 'Mismatched anonymous define() module: ' +
-                        args[args.length - 1]));
-                } else {
-                    //args are id, deps, factory. Should be normalized by the
-                    //define() function.
-                    callGetModule(args);
-                }
-            }
-            context.defQueueMap = {};
-        }
-
-        context = {
-            config: config,
-            contextName: contextName,
-            registry: registry,
-            defined: defined,
-            urlFetched: urlFetched,
-            defQueue: defQueue,
-            defQueueMap: {},
-            Module: Module,
-            makeModuleMap: makeModuleMap,
-            nextTick: req.nextTick,
-            onError: onError,
-
-            /**
-             * Set a configuration for the context.
-             * @param {Object} cfg config object to integrate.
-             */
-            configure: function (cfg) {
-                //Make sure the baseUrl ends in a slash.
-                if (cfg.baseUrl) {
-                    if (cfg.baseUrl.charAt(cfg.baseUrl.length - 1) !== '/') {
-                        cfg.baseUrl += '/';
-                    }
-                }
-
-                // Convert old style urlArgs string to a function.
-                if (typeof cfg.urlArgs === 'string') {
-                    var urlArgs = cfg.urlArgs;
-                    cfg.urlArgs = function (id, url) {
-                        return (url.indexOf('?') === -1 ? '?' : '&') + urlArgs;
-                    };
-                }
-
-                //Save off the paths since they require special processing,
-                //they are additive.
-                var shim = config.shim,
-                    objs = {
-                        paths: true,
-                        bundles: true,
-                        config: true,
-                        map: true
-                    };
-
-                eachProp(cfg, function (value, prop) {
-                    if (objs[prop]) {
-                        if (!config[prop]) {
-                            config[prop] = {};
-                        }
-                        mixin(config[prop], value, true, true);
-                    } else {
-                        config[prop] = value;
-                    }
-                });
-
-                //Reverse map the bundles
-                if (cfg.bundles) {
-                    eachProp(cfg.bundles, function (value, prop) {
-                        each(value, function (v) {
-                            if (v !== prop) {
-                                bundlesMap[v] = prop;
-                            }
-                        });
-                    });
-                }
-
-                //Merge shim
-                if (cfg.shim) {
-                    eachProp(cfg.shim, function (value, id) {
-                        //Normalize the structure
-                        if (isArray(value)) {
-                            value = {
-                                deps: value
-                            };
-                        }
-                        if ((value.exports || value.init) && !value.exportsFn) {
-                            value.exportsFn = context.makeShimExports(value);
-                        }
-                        shim[id] = value;
-                    });
-                    config.shim = shim;
-                }
-
-                //Adjust packages if necessary.
-                if (cfg.packages) {
-                    each(cfg.packages, function (pkgObj) {
-                        var location, name;
-
-                        pkgObj = typeof pkgObj === 'string' ? { name: pkgObj } : pkgObj;
-
-                        name = pkgObj.name;
-                        location = pkgObj.location;
-                        if (location) {
-                            config.paths[name] = pkgObj.location;
-                        }
-
-                        //Save pointer to main module ID for pkg name.
-                        //Remove leading dot in main, so main paths are normalized,
-                        //and remove any trailing .js, since different package
-                        //envs have different conventions: some use a module name,
-                        //some use a file name.
-                        config.pkgs[name] = pkgObj.name + '/' + (pkgObj.main || 'main')
-                                     .replace(currDirRegExp, '')
-                                     .replace(jsSuffixRegExp, '');
-                    });
-                }
-
-                //If there are any "waiting to execute" modules in the registry,
-                //update the maps for them, since their info, like URLs to load,
-                //may have changed.
-                eachProp(registry, function (mod, id) {
-                    //If module already has init called, since it is too
-                    //late to modify them, and ignore unnormalized ones
-                    //since they are transient.
-                    if (!mod.inited && !mod.map.unnormalized) {
-                        mod.map = makeModuleMap(id, null, true);
-                    }
-                });
-
-                //If a deps array or a config callback is specified, then call
-                //require with those args. This is useful when require is defined as a
-                //config object before require.js is loaded.
-                if (cfg.deps || cfg.callback) {
-                    context.require(cfg.deps || [], cfg.callback);
-                }
-            },
-
-            makeShimExports: function (value) {
-                function fn() {
-                    var ret;
-                    if (value.init) {
-                        ret = value.init.apply(global, arguments);
-                    }
-                    return ret || (value.exports && getGlobal(value.exports));
-                }
-                return fn;
-            },
-
-            makeRequire: function (relMap, options) {
-                options = options || {};
-
-                function localRequire(deps, callback, errback) {
-                    var id, map, requireMod;
-
-                    if (options.enableBuildCallback && callback && isFunction(callback)) {
-                        callback.__requireJsBuild = true;
-                    }
-
-                    if (typeof deps === 'string') {
-                        if (isFunction(callback)) {
-                            //Invalid call
-                            return onError(makeError('requireargs', 'Invalid require call'), errback);
-                        }
-
-                        //If require|exports|module are requested, get the
-                        //value for them from the special handlers. Caveat:
-                        //this only works while module is being defined.
-                        if (relMap && hasProp(handlers, deps)) {
-                            return handlers[deps](registry[relMap.id]);
-                        }
-
-                        //Synchronous access to one module. If require.get is
-                        //available (as in the Node adapter), prefer that.
-                        if (req.get) {
-                            return req.get(context, deps, relMap, localRequire);
-                        }
-
-                        //Normalize module name, if it contains . or ..
-                        map = makeModuleMap(deps, relMap, false, true);
-                        id = map.id;
-
-                        if (!hasProp(defined, id)) {
-                            return onError(makeError('notloaded', 'Module name "' +
-                                        id +
-                                        '" has not been loaded yet for context: ' +
-                                        contextName +
-                                        (relMap ? '' : '. Use require([])')));
-                        }
-                        return defined[id];
-                    }
-
-                    //Grab defines waiting in the global queue.
-                    intakeDefines();
-
-                    //Mark all the dependencies as needing to be loaded.
-                    context.nextTick(function () {
-                        //Some defines could have been added since the
-                        //require call, collect them.
-                        intakeDefines();
-
-                        requireMod = getModule(makeModuleMap(null, relMap));
-
-                        //Store if map config should be applied to this require
-                        //call for dependencies.
-                        requireMod.skipMap = options.skipMap;
-
-                        requireMod.init(deps, callback, errback, {
-                            enabled: true
-                        });
-
-                        checkLoaded();
-                    });
-
-                    return localRequire;
-                }
-
-                mixin(localRequire, {
-                    isBrowser: isBrowser,
-
-                    /**
-                     * Converts a module name + .extension into an URL path.
-                     * *Requires* the use of a module name. It does not support using
-                     * plain URLs like nameToUrl.
-                     */
-                    toUrl: function (moduleNamePlusExt) {
-                        var ext,
-                            index = moduleNamePlusExt.lastIndexOf('.'),
-                            segment = moduleNamePlusExt.split('/')[0],
-                            isRelative = segment === '.' || segment === '..';
-
-                        //Have a file extension alias, and it is not the
-                        //dots from a relative path.
-                        if (index !== -1 && (!isRelative || index > 1)) {
-                            ext = moduleNamePlusExt.substring(index, moduleNamePlusExt.length);
-                            moduleNamePlusExt = moduleNamePlusExt.substring(0, index);
-                        }
-
-                        return context.nameToUrl(normalize(moduleNamePlusExt,
-                                                relMap && relMap.id, true), ext, true);
-                    },
-
-                    defined: function (id) {
-                        return hasProp(defined, makeModuleMap(id, relMap, false, true).id);
-                    },
-
-                    specified: function (id) {
-                        id = makeModuleMap(id, relMap, false, true).id;
-                        return hasProp(defined, id) || hasProp(registry, id);
-                    }
-                });
-
-                //Only allow undef on top level require calls
-                if (!relMap) {
-                    localRequire.undef = function (id) {
-                        //Bind any waiting define() calls to this context,
-                        //fix for #408
-                        takeGlobalQueue();
-
-                        var map = makeModuleMap(id, relMap, true),
-                            mod = getOwn(registry, id);
-
-                        mod.undefed = true;
-                        removeScript(id);
-
-                        delete defined[id];
-                        delete urlFetched[map.url];
-                        delete undefEvents[id];
-
-                        //Clean queued defines too. Go backwards
-                        //in array so that the splices do not
-                        //mess up the iteration.
-                        eachReverse(defQueue, function (args, i) {
-                            if (args[0] === id) {
-                                defQueue.splice(i, 1);
-                            }
-                        });
-                        delete context.defQueueMap[id];
-
-                        if (mod) {
-                            //Hold on to listeners in case the
-                            //module will be attempted to be reloaded
-                            //using a different config.
-                            if (mod.events.defined) {
-                                undefEvents[id] = mod.events;
-                            }
-
-                            cleanRegistry(id);
-                        }
-                    };
-                }
-
-                return localRequire;
-            },
-
-            /**
-             * Called to enable a module if it is still in the registry
-             * awaiting enablement. A second arg, parent, the parent module,
-             * is passed in for context, when this method is overridden by
-             * the optimizer. Not shown here to keep code compact.
-             */
-            enable: function (depMap) {
-                var mod = getOwn(registry, depMap.id);
-                if (mod) {
-                    getModule(depMap).enable();
-                }
-            },
-
-            /**
-             * Internal method used by environment adapters to complete a load event.
-             * A load event could be a script load or just a load pass from a synchronous
-             * load call.
-             * @param {String} moduleName the name of the module to potentially complete.
-             */
-            completeLoad: function (moduleName) {
-                var found, args, mod,
-                    shim = getOwn(config.shim, moduleName) || {},
-                    shExports = shim.exports;
-
-                takeGlobalQueue();
-
-                while (defQueue.length) {
-                    args = defQueue.shift();
-                    if (args[0] === null) {
-                        args[0] = moduleName;
-                        //If already found an anonymous module and bound it
-                        //to this name, then this is some other anon module
-                        //waiting for its completeLoad to fire.
-                        if (found) {
-                            break;
-                        }
-                        found = true;
-                    } else if (args[0] === moduleName) {
-                        //Found matching define call for this script!
-                        found = true;
-                    }
-
-                    callGetModule(args);
-                }
-                context.defQueueMap = {};
-
-                //Do this after the cycle of callGetModule in case the result
-                //of those calls/init calls changes the registry.
-                mod = getOwn(registry, moduleName);
-
-                if (!found && !hasProp(defined, moduleName) && mod && !mod.inited) {
-                    if (config.enforceDefine && (!shExports || !getGlobal(shExports))) {
-                        if (hasPathFallback(moduleName)) {
-                            return;
-                        } else {
-                            return onError(makeError('nodefine',
-                                             'No define call for ' + moduleName,
-                                             null,
-                                             [moduleName]));
-                        }
-                    } else {
-                        //A script that does not call define(), so just simulate
-                        //the call for it.
-                        callGetModule([moduleName, (shim.deps || []), shim.exportsFn]);
-                    }
-                }
-
-                checkLoaded();
-            },
-
-            /**
-             * Converts a module name to a file path. Supports cases where
-             * moduleName may actually be just an URL.
-             * Note that it **does not** call normalize on the moduleName,
-             * it is assumed to have already been normalized. This is an
-             * internal API, not a public one. Use toUrl for the public API.
-             */
-            nameToUrl: function (moduleName, ext, skipExt) {
-                var paths, syms, i, parentModule, url,
-                    parentPath, bundleId,
-                    pkgMain = getOwn(config.pkgs, moduleName);
-
-                if (pkgMain) {
-                    moduleName = pkgMain;
-                }
-
-                bundleId = getOwn(bundlesMap, moduleName);
-
-                if (bundleId) {
-                    return context.nameToUrl(bundleId, ext, skipExt);
-                }
-
-                //If a colon is in the URL, it indicates a protocol is used and it is just
-                //an URL to a file, or if it starts with a slash, contains a query arg (i.e. ?)
-                //or ends with .js, then assume the user meant to use an url and not a module id.
-                //The slash is important for protocol-less URLs as well as full paths.
-                if (req.jsExtRegExp.test(moduleName)) {
-                    //Just a plain path, not module name lookup, so just return it.
-                    //Add extension if it is included. This is a bit wonky, only non-.js things pass
-                    //an extension, this method probably needs to be reworked.
-                    url = moduleName + (ext || '');
-                } else {
-                    //A module that needs to be converted to a path.
-                    paths = config.paths;
-
-                    syms = moduleName.split('/');
-                    //For each module name segment, see if there is a path
-                    //registered for it. Start with most specific name
-                    //and work up from it.
-                    for (i = syms.length; i > 0; i -= 1) {
-                        parentModule = syms.slice(0, i).join('/');
-
-                        parentPath = getOwn(paths, parentModule);
-                        if (parentPath) {
-                            //If an array, it means there are a few choices,
-                            //Choose the one that is desired
-                            if (isArray(parentPath)) {
-                                parentPath = parentPath[0];
-                            }
-                            syms.splice(0, i, parentPath);
-                            break;
-                        }
-                    }
-
-                    //Join the path parts together, then figure out if baseUrl is needed.
-                    url = syms.join('/');
-                    url += (ext || (/^data\:|^blob\:|\?/.test(url) || skipExt ? '' : '.js'));
-                    url = (url.charAt(0) === '/' || url.match(/^[\w\+\.\-]+:/) ? '' : config.baseUrl) + url;
-                }
-
-                return config.urlArgs && !/^blob\:/.test(url) ?
-                       url + config.urlArgs(moduleName, url) : url;
-            },
-
-            //Delegates to req.load. Broken out as a separate function to
-            //allow overriding in the optimizer.
-            load: function (id, url) {
-                req.load(context, id, url);
-            },
-
-            /**
-             * Executes a module callback function. Broken out as a separate function
-             * solely to allow the build system to sequence the files in the built
-             * layer in the right sequence.
-             *
-             * @private
-             */
-            execCb: function (name, callback, args, exports) {
-                return callback.apply(exports, args);
-            },
-
-            /**
-             * callback for script loads, used to check status of loading.
-             *
-             * @param {Event} evt the event from the browser for the script
-             * that was loaded.
-             */
-            onScriptLoad: function (evt) {
-                //Using currentTarget instead of target for Firefox 2.0's sake. Not
-                //all old browsers will be supported, but this one was easy enough
-                //to support and still makes sense.
-                if (evt.type === 'load' ||
-                        (readyRegExp.test((evt.currentTarget || evt.srcElement).readyState))) {
-                    //Reset interactive script so a script node is not held onto for
-                    //to long.
-                    interactiveScript = null;
-
-                    //Pull out the name of the module and the context.
-                    var data = getScriptData(evt);
-                    context.completeLoad(data.id);
-                }
-            },
-
-            /**
-             * Callback for script errors.
-             */
-            onScriptError: function (evt) {
-                var data = getScriptData(evt);
-                if (!hasPathFallback(data.id)) {
-                    var parents = [];
-                    eachProp(registry, function (value, key) {
-                        if (key.indexOf('_@r') !== 0) {
-                            each(value.depMaps, function (depMap) {
-                                if (depMap.id === data.id) {
-                                    parents.push(key);
-                                    return true;
-                                }
-                            });
-                        }
-                    });
-                    return onError(makeError('scripterror', 'Script error for "' + data.id +
-                                             (parents.length ?
-                                             '", needed by: ' + parents.join(', ') :
-                                             '"'), evt, [data.id]));
-                }
-            }
-        };
-
-        context.require = context.makeRequire();
-        return context;
-    }
-
-    /**
-     * Main entry point.
-     *
-     * If the only argument to require is a string, then the module that
-     * is represented by that string is fetched for the appropriate context.
-     *
-     * If the first argument is an array, then it will be treated as an array
-     * of dependency string names to fetch. An optional function callback can
-     * be specified to execute when all of those dependencies are available.
-     *
-     * Make a local req variable to help Caja compliance (it assumes things
-     * on a require that are not standardized), and to give a short
-     * name for minification/local scope use.
-     */
-    req = requirejs = function (deps, callback, errback, optional) {
-
-        //Find the right context, use default
-        var context, config,
-            contextName = defContextName;
-
-        // Determine if have config object in the call.
-        if (!isArray(deps) && typeof deps !== 'string') {
-            // deps is a config object
-            config = deps;
-            if (isArray(callback)) {
-                // Adjust args if there are dependencies
-                deps = callback;
-                callback = errback;
-                errback = optional;
-            } else {
-                deps = [];
-            }
-        }
-
-        if (config && config.context) {
-            contextName = config.context;
-        }
-
-        context = getOwn(contexts, contextName);
-        if (!context) {
-            context = contexts[contextName] = req.s.newContext(contextName);
-        }
-
-        if (config) {
-            context.configure(config);
-        }
-
-        return context.require(deps, callback, errback);
-    };
-
-    /**
-     * Support require.config() to make it easier to cooperate with other
-     * AMD loaders on globally agreed names.
-     */
-    req.config = function (config) {
-        return req(config);
-    };
-
-    /**
-     * Execute something after the current tick
-     * of the event loop. Override for other envs
-     * that have a better solution than setTimeout.
-     * @param  {Function} fn function to execute later.
-     */
-    req.nextTick = typeof setTimeout !== 'undefined' ? function (fn) {
-        setTimeout(fn, 4);
-    } : function (fn) { fn(); };
-
-    /**
-     * Export require as a global, but only if it does not already exist.
-     */
-    if (!require) {
-        require = req;
-    }
-
-    req.version = version;
-
-    //Used to filter out dependencies that are already paths.
-    req.jsExtRegExp = /^\/|:|\?|\.js$/;
-    req.isBrowser = isBrowser;
-    s = req.s = {
-        contexts: contexts,
-        newContext: newContext
-    };
-
-    //Create default context.
-    req({});
-
-    //Exports some context-sensitive methods on global require.
-    each([
-        'toUrl',
-        'undef',
-        'defined',
-        'specified'
-    ], function (prop) {
-        //Reference from contexts instead of early binding to default context,
-        //so that during builds, the latest instance of the default context
-        //with its config gets used.
-        req[prop] = function () {
-            var ctx = contexts[defContextName];
-            return ctx.require[prop].apply(ctx, arguments);
-        };
-    });
-
-    if (isBrowser) {
-        head = s.head = document.getElementsByTagName('head')[0];
-        //If BASE tag is in play, using appendChild is a problem for IE6.
-        //When that browser dies, this can be removed. Details in this jQuery bug:
-        //http://dev.jquery.com/ticket/2709
-        baseElement = document.getElementsByTagName('base')[0];
-        if (baseElement) {
-            head = s.head = baseElement.parentNode;
-        }
-    }
-
-    /**
-     * Any errors that require explicitly generates will be passed to this
-     * function. Intercept/override it if you want custom error handling.
-     * @param {Error} err the error object.
-     */
-    req.onError = defaultOnError;
-
-    /**
-     * Creates the node for the load command. Only used in browser envs.
-     */
-    req.createNode = function (config, moduleName, url) {
-        var node = config.xhtml ?
-                document.createElementNS('http://www.w3.org/1999/xhtml', 'html:script') :
-                document.createElement('script');
-        node.type = config.scriptType || 'text/javascript';
-        node.charset = 'utf-8';
-        node.async = true;
-        return node;
-    };
-
-    /**
-     * Does the request to load a module for the browser case.
-     * Make this a separate function to allow other environments
-     * to override it.
-     *
-     * @param {Object} context the require context to find state.
-     * @param {String} moduleName the name of the module.
-     * @param {Object} url the URL to the module.
-     */
-    req.load = function (context, moduleName, url) {
-        var config = (context && context.config) || {},
-            node;
-        if (isBrowser) {
-            //In the browser so use a script tag
-            node = req.createNode(config, moduleName, url);
-
-            node.setAttribute('data-requirecontext', context.contextName);
-            node.setAttribute('data-requiremodule', moduleName);
-
-            //Set up load listener. Test attachEvent first because IE9 has
-            //a subtle issue in its addEventListener and script onload firings
-            //that do not match the behavior of all other browsers with
-            //addEventListener support, which fire the onload event for a
-            //script right after the script execution. See:
-            //https://connect.microsoft.com/IE/feedback/details/648057/script-onload-event-is-not-fired-immediately-after-script-execution
-            //UNFORTUNATELY Opera implements attachEvent but does not follow the script
-            //script execution mode.
-            if (node.attachEvent &&
-                //Check if node.attachEvent is artificially added by custom script or
-                //natively supported by browser
-                //read https://github.com/requirejs/requirejs/issues/187
-                //if we can NOT find [native code] then it must NOT natively supported.
-                //in IE8, node.attachEvent does not have toString()
-                //Note the test for "[native code" with no closing brace, see:
-                //https://github.com/requirejs/requirejs/issues/273
-                    !(node.attachEvent.toString && node.attachEvent.toString().indexOf('[native code') < 0) &&
-                    !isOpera) {
-                //Probably IE. IE (at least 6-8) do not fire
-                //script onload right after executing the script, so
-                //we cannot tie the anonymous define call to a name.
-                //However, IE reports the script as being in 'interactive'
-                //readyState at the time of the define call.
-                useInteractive = true;
-
-                node.attachEvent('onreadystatechange', context.onScriptLoad);
-                //It would be great to add an error handler here to catch
-                //404s in IE9+. However, onreadystatechange will fire before
-                //the error handler, so that does not help. If addEventListener
-                //is used, then IE will fire error before load, but we cannot
-                //use that pathway given the connect.microsoft.com issue
-                //mentioned above about not doing the 'script execute,
-                //then fire the script load event listener before execute
-                //next script' that other browsers do.
-                //Best hope: IE10 fixes the issues,
-                //and then destroys all installs of IE 6-9.
-                //node.attachEvent('onerror', context.onScriptError);
-            } else {
-                node.addEventListener('load', context.onScriptLoad, false);
-                node.addEventListener('error', context.onScriptError, false);
-            }
-            node.src = url;
-
-            //Calling onNodeCreated after all properties on the node have been
-            //set, but before it is placed in the DOM.
-            if (config.onNodeCreated) {
-                config.onNodeCreated(node, config, moduleName, url);
-            }
-
-            //For some cache cases in IE 6-8, the script executes before the end
-            //of the appendChild execution, so to tie an anonymous define
-            //call to the module name (which is stored on the node), hold on
-            //to a reference to this node, but clear after the DOM insertion.
-            currentlyAddingScript = node;
-            if (baseElement) {
-                head.insertBefore(node, baseElement);
-            } else {
-                head.appendChild(node);
-            }
-            currentlyAddingScript = null;
-
-            return node;
-        } else if (isWebWorker) {
-            try {
-                //In a web worker, use importScripts. This is not a very
-                //efficient use of importScripts, importScripts will block until
-                //its script is downloaded and evaluated. However, if web workers
-                //are in play, the expectation is that a build has been done so
-                //that only one script needs to be loaded anyway. This may need
-                //to be reevaluated if other use cases become common.
-
-                // Post a task to the event loop to work around a bug in WebKit
-
-                // where the worker gets garbage-collected after calling
-                // importScripts(): https://webkit.org/b/153317
-                setTimeout(function () { }, 0);
-                importScripts(url);
-
-                //Account for anonymous modules
-                context.completeLoad(moduleName);
-            } catch (e) {
-                context.onError(makeError('importscripts',
-                                'importScripts failed for ' +
-                                    moduleName + ' at ' + url,
-                                e,
-                                [moduleName]));
-            }
-        }
-    };
-
-    function getInteractiveScript() {
-        if (interactiveScript && interactiveScript.readyState === 'interactive') {
-            return interactiveScript;
-        }
-
-        eachReverse(scripts(), function (script) {
-            if (script.readyState === 'interactive') {
-                return (interactiveScript = script);
-            }
-        });
-        return interactiveScript;
-    }
-
-    //Look for a data-main script attribute, which could also adjust the baseUrl.
-    if (isBrowser && !cfg.skipDataMain) {
-        //Figure out baseUrl. Get it from the script tag with require.js in it.
-        eachReverse(scripts(), function (script) {
-            //Set the 'head' where we can append children by
-            //using the script's parent.
-            if (!head) {
-                head = script.parentNode;
-            }
-
-            //Look for a data-main attribute to set main script for the page
-            //to load. If it is there, the path to data main becomes the
-            //baseUrl, if it is not already set.
-            dataMain = script.getAttribute('data-main');
-            if (dataMain) {
-                //Preserve dataMain in case it is a path (i.e. contains '?')
-                mainScript = dataMain;
-
-                //Set final baseUrl if there is not already an explicit one,
-                //but only do so if the data-main value is not a loader plugin
-                //module ID.
-                if (!cfg.baseUrl && mainScript.indexOf('!') === -1) {
-                    //Pull off the directory of data-main for use as the
-                    //baseUrl.
-                    src = mainScript.split('/');
-                    mainScript = src.pop();
-                    subPath = src.length ? src.join('/') + '/' : './';
-
-                    cfg.baseUrl = subPath;
-                }
-
-                //Strip off any trailing .js since mainScript is now
-                //like a module name.
-                mainScript = mainScript.replace(jsSuffixRegExp, '');
-
-                //If mainScript is still a path, fall back to dataMain
-                if (req.jsExtRegExp.test(mainScript)) {
-                    mainScript = dataMain;
-                }
-
-                //Put the data-main script in the files to load.
-                cfg.deps = cfg.deps ? cfg.deps.concat(mainScript) : [mainScript];
-
-                return true;
-            }
-        });
-    }
-
-    /**
-     * The function that handles definitions of modules. Differs from
-     * require() in that a string for the module should be the first argument,
-     * and the function to execute after dependencies are loaded should
-     * return a value to define the module corresponding to the first argument's
-     * name.
-     */
-    define = function (name, deps, callback) {
-        var node, context;
-
-        //Allow for anonymous modules
-        if (typeof name !== 'string') {
-            //Adjust args appropriately
-            callback = deps;
-            deps = name;
-            name = null;
-        }
-
-        //This module may not have dependencies
-        if (!isArray(deps)) {
-            callback = deps;
-            deps = null;
-        }
-
-        //If no name, and callback is a function, then figure out if it a
-        //CommonJS thing with dependencies.
-        if (!deps && isFunction(callback)) {
-            deps = [];
-            //Remove comments from the callback string,
-            //look for require calls, and pull them into the dependencies,
-            //but only if there are function args.
-            if (callback.length) {
-                callback
-                    .toString()
-                    .replace(commentRegExp, commentReplace)
-                    .replace(cjsRequireRegExp, function (match, dep) {
-                        deps.push(dep);
-                    });
-
-                //May be a CommonJS thing even without require calls, but still
-                //could use exports, and module. Avoid doing exports and module
-                //work though if it just needs require.
-                //REQUIRES the function to expect the CommonJS variables in the
-                //order listed below.
-                deps = (callback.length === 1 ? ['require'] : ['require', 'exports', 'module']).concat(deps);
-            }
-        }
-
-        //If in IE 6-8 and hit an anonymous define() call, do the interactive
-        //work.
-        if (useInteractive) {
-            node = currentlyAddingScript || getInteractiveScript();
-            if (node) {
-                if (!name) {
-                    name = node.getAttribute('data-requiremodule');
-                }
-                context = contexts[node.getAttribute('data-requirecontext')];
-            }
-        }
-
-        //Always save off evaluating the def call until the script onload handler.
-        //This allows multiple modules to be in a file without prematurely
-        //tracing dependencies, and allows for anonymous module support,
-        //where the module name is not known until the script onload event
-        //occurs. If no context, use the global queue, and get it processed
-        //in the onscript load callback.
-        if (context) {
-            context.defQueue.push([name, deps, callback]);
-            context.defQueueMap[name] = true;
-        } else {
-            globalDefQueue.push([name, deps, callback]);
-        }
-    };
-
-    define.amd = {
-        jQuery: true
-    };
-
-    /**
-     * Executes the text. Normally just uses eval, but can be modified
-     * to use a better, environment-specific call. Only used for transpiling
-     * loader plugins, not for plain JS modules.
-     * @param {String} text the text to execute/evaluate.
-     */
-    req.exec = function (text) {
-        /*jslint evil: true */
-        return eval(text);
-    };
-
-    //Set up with config info.
-    req(cfg);
-}(this, (typeof setTimeout === 'undefined' ? undefined : setTimeout)));
-
 /*
 * debouncedresize: special jQuery event that happens once after a window resize
 *
@@ -12769,11 +10920,6 @@ $(document).ready(function () {
    INIT THIRD PARTY PLUGINS - /source/js/cagov/plugins.js
 ----------------------------------------- */
 
-requirejs.config({
-    //By default load any module IDs from js/lib
-    baseUrl: '/js/libs'
-});
-
 $(document).ready(function () {
     // Tabs to accordion
     // https://github.com/openam/bootstrap-responsive-tabs
@@ -12847,7 +10993,7 @@ $(document).ready(function () {
                         ? MAXHEIGHT
                         : height;
                     // fill up the remaining heaight of this device
-                    headerSlider.css({'height': height});
+                    headerSlider.css({ 'height': height });
                 }, 0)
 
                 var $this = $(this);
@@ -12876,23 +11022,26 @@ $(document).ready(function () {
                 });
 
                 // Add pause and play buttons
-                var owlBannerControl = $('<div class="banner-play-pause"><div class="banner-control"><span class="play ca-gov-icon-carousel-play" aria-hidden="true"></span><span class="pause ca-gov-icon-carousel-pause" aria-hidden="true"></span></div></div>');
-                $this.append(owlBannerControl); 
-                var playControl = owlBannerControl.find('.play').hide(); 
-                var pauseControl = owlBannerControl.find('.pause'); 
-                playControl.on('click', function() {
-                $(this).hide();   $(this).parent().removeClass('active');
-                pauseControl.show();   $this.trigger('play.owl.autoplay', [settings.delay]);
-                $this.owlCarousel('next'); // Manually play next since autoplay waits for delay
+                var owlBannerControl = $('<div class="banner-play-pause"><div class="banner-control"><button class="play ca-gov-icon-carousel-play" aria-hidden="true"></button><button class="pause ca-gov-icon-carousel-pause" aria-hidden="true"></span></div></div>');
+                $this.append(owlBannerControl);
+                var playControl = owlBannerControl.find('.play').hide();
+                var pauseControl = owlBannerControl.find('.pause');
+                playControl.on('click', function () {
+                    $(this).hide(); $(this).parent().removeClass('active');
+                    pauseControl.show(); $this.trigger('play.owl.autoplay', [settings.delay]);
+                    $this.owlCarousel('next'); // Manually play next since autoplay waits for delay
                 });
-                
-                pauseControl.on('click', function() {   $(this).hide();
-                $(this).parent().addClass('active');   playControl.show();
-                $this.trigger('stop.owl.autoplay'); });
-                
+
+                pauseControl.on('click', function () {
+                    $(this).hide();
+                    $(this).parent().addClass('active'); playControl.show();
+                    $this.trigger('stop.owl.autoplay');
+                });
+
                 // Number the items in .banner-pager 
-                var dots = $('.banner-pager .banner-control'); dots.each(function(){
-                $(this).find('span').append($(this).index() + 1); });
+                var dots = $('.banner-pager .banner-control'); dots.each(function () {
+                    $(this).find('span').append($(this).index() + 1);
+                });
             });
         }
     }(jQuery));
@@ -13027,13 +11176,13 @@ function initContent() {
     })
 }
 
-(function($) {
+(function ($) {
 
-    $.fn.initCAVideo = function(bool) {
+    $.fn.initCAVideo = function (bool) {
 
 
         // Iterate over each object in collection
-        return this.each( function() {
+        return this.each(function () {
 
             var carousel = $(this);
             var didSet = carousel.attr("data-loaded");
@@ -13042,119 +11191,121 @@ function initContent() {
                 return;
             }
             carousel.attr("data-loaded", "true");
-                // get first video
-                var vidHref = carousel.find('.item a').first().attr('href') || "";
-                var vidID = vidHref.split("?v=").pop();
+            // get first video
+            var vidHref = carousel.find('.item a').first().attr('href') || "";
+            var vidID = vidHref.split("?v=").pop();
 
-                var mainIndex = 0;
+            var mainIndex = 0;
 
 
-                var length = carousel.find('.item').length;
+            var length = carousel.find('.item').length;
 
-                // Video  Slider
-                carousel.owlCarousel({
-                    items: 1,
-                    loop: false,
-                    nav: true,
-                    lazyLoad: false,
-                    video: true,
-                    navText: [
-                        '<span class="ca-gov-icon-arrow-prev" aria-hidden="true"></span>', '<span class="ca-gov-icon-arrow-next" aria-hidden="true"></span>'
-                    ],
-                    dots: false
+            // Video  Slider
+            carousel.owlCarousel({
+                items: 1,
+                loop: false,
+                nav: true,
+                lazyLoad: false,
+                video: true,
+                navText: [
+                    '<span class="ca-gov-icon-arrow-prev" aria-hidden="true"></span>', '<span class="ca-gov-icon-arrow-next" aria-hidden="true"></span>'
+                ],
+                dots: false
+            });
+
+            carousel.on('translated.owl.carousel', function (event) {
+
+                // get current video id
+                vidID = carousel.find('.owl-item.active')
+                    .attr('data-video').split(/\?v=|\/v\//).pop();
+                setCurrentSubVideo();
+
+                mainIndex = event.item.index;
+                // show the item in view
+                submenu.trigger('to.owl.carousel', [mainIndex, 300, true])
+            });
+
+
+            //  create the proper video play icon for each video image preview
+            carousel.find('.owl-video-play-icon').append($('<span class="ca-gov-icon-play" />'));
+
+            // create the overlay for each video image preview
+            carousel.find('.owl-video-tn').after($('<div />').addClass('item-overlay'));
+
+            // the submenu lives as a sibling to the carousel.
+            var submenu = $('<div></div>').insertAfter(carousel);
+            submenu.addClass('carousel owl-carousel carousel-video-submenu');
+
+            // create the sub menu for the videos
+            var items = carousel.find('a.owl-video');
+            items.each(function (index) {
+                // get this slide and its video url
+                var oldItem = $(this);
+                var href = oldItem.attr('href');
+
+                // attach the triggers for each thumbnail
+                var item = $('<div/>').addClass('item-thumbnail');
+                item.on('click', function () {
+                    //  force the main carousel to jump to the requested video
+                    carousel.trigger('to.owl.carousel', [
+                        index % length,
+                        300,
+                        true
+                    ]);
+
+                    submenu.find('.watching').removeClass('watching');
+                    $(this).parents('.owl-item').addClass('watching');
+
+                    //  start playing immediately
+                    carousel.find(".active .owl-video-play-icon").trigger("click");
                 });
 
-                carousel.on('translated.owl.carousel', function(event) {
+                // thumbnail related
+                var regex = new RegExp('ab+c', 'i');
+                var youtubeID = href.split(/\?v=|\/v\//).pop();
+                var youtubeThumb = 'url(http://img.youtube.com/vi/' + youtubeID + '/0.jpg )';
+                // var youtubeThumb = 'http://img.youtube.com/vi/' + youtubeID + '/0.jpg ';
+                var thumbnail = $('<button />').css('background-image', youtubeThumb).addClass("videoThumb");
+                // var thumbnail = $('<img />').attr('src', youtubeThumb);
 
-                  // get current video id
-                  vidID = carousel.find('.owl-item.active')
-                            .attr('data-video').split(/\?v=|\/v\//).pop();
-                    setCurrentSubVideo();
+                // overlay related
+                var overlay = $('<div />').addClass('item-overlay');
+                overlay.append($('<span class="ca-gov-icon-play" />'))
 
-                  mainIndex = event.item.index;
-                    // show the item in view
-                    submenu.trigger('to.owl.carousel', [ mainIndex, 300, true ] )
-             });
+                // Append it into the DOM
+                item.append(thumbnail).append(overlay);
+                submenu.append(item);
+            });
 
+            submenu = carousel.next();
 
-                //  create the proper video play icon for each video image preview
-                carousel.find('.owl-video-play-icon').append($('<span class="ca-gov-icon-play" />'));
+            submenu.on('initialized.owl.carousel', function () {
+                setCurrentSubVideo();
+            });
 
-                // create the overlay for each video image preview
-                carousel.find('.owl-video-tn').after($('<div />').addClass('item-overlay'));
-
-                // the submenu lives as a sibling to the carousel.
-                var submenu = $('<div></div>').insertAfter(carousel);
-                submenu.addClass('carousel owl-carousel carousel-video-submenu');
-
-                // create the sub menu for the videos
-                var items = carousel.find('a.owl-video');
-                items.each(function (index) {
-                    // get this slide and its video url
-                    var oldItem = $(this);
-                    var href = oldItem.attr('href');
-
-                    // attach the triggers for each thumbnail
-                    var item = $('<div/>').addClass('item-thumbnail');
-                    item.on('click', function () {
-                        //  force the main carousel to jump to the requested video
-                        carousel.trigger('to.owl.carousel', [
-                            index  % length,
-                            300,
-                            true
-                        ]);
-
-                        submenu.find('.watching').removeClass('watching');
-                        $(this).parents('.owl-item').addClass('watching');
-
-                        //  start playing immediately
-                        carousel.find(".active .owl-video-play-icon").trigger("click");
-                    });
-
-                    // thumbnail related
-                    var regex = new RegExp('ab+c', 'i');
-                    var youtubeID = href.split(/\?v=|\/v\//).pop();
-                    var youtubeThumb = 'http://img.youtube.com/vi/' + youtubeID + '/0.jpg';
-                    var thumbnail = $('<img />').attr('src', youtubeThumb);
-
-                    // overlay related
-                    var overlay = $('<div />').addClass('item-overlay');
-                    overlay.append($('<span class="ca-gov-icon-play" />'))
-
-                    // Append it into the DOM
-                    item.append(thumbnail).append(overlay);
-                    submenu.append(item);
-                });
-
-                submenu = carousel.next();
-
-                  submenu.on('initialized.owl.carousel', function() {
-                    setCurrentSubVideo();
-                  });
-
-                // have owlCarousel init this submenu
-                submenu.owlCarousel({
-                    items: 4,
-                    loop: false,
-                    nav: true,
-                    margin: 20,
-                    dots: false,
-                    navText: ['<span class="ca-gov-icon-arrow-prev" aria-hidden="true"></span>', '<span class="ca-gov-icon-arrow-next" aria-hidden="true"></span>']
-                });
+            // have owlCarousel init this submenu
+            submenu.owlCarousel({
+                items: 4,
+                loop: false,
+                nav: true,
+                margin: 20,
+                dots: false,
+                navText: ['<span class="ca-gov-icon-arrow-prev" aria-hidden="true"></span>', '<span class="ca-gov-icon-arrow-next" aria-hidden="true"></span>']
+            });
 
 
-              submenu.on('changed.owl.carousel', function() {
+            submenu.on('changed.owl.carousel', function () {
                 setTimeout(setCurrentSubVideo, 50);
-              });
+            });
 
-              function setCurrentSubVideo() {
+            function setCurrentSubVideo() {
                 // remove old watched item
                 submenu.find('.watching').removeClass('watching');
 
-                submenu.find('img[src*="' + vidID + '"]').parents('.owl-item').addClass('watching');
+                submenu.find('button[style*="' + vidID + '"]').parents('.owl-item').addClass('watching');
 
 
-              }
+            }
 
         });
     }
@@ -14013,630 +12164,6 @@ $(document).ready(function () {
     }
 
 });
-$(function () {
-    // the half circle dashboard things built with the Donut functions
-    $('.stats-highlight').each(initStats);
-    $('.plotly-chart').each(initPlotly);
-});
-
-// TODO: fallback image for non-js,
-// Description and details for screen readers
-function initPlotly(d3, Plotly) {
-    var container = $(this);
-
-    if ($('html').hasClass('ie8') || $('html').hasClass('ie7')) {
-        //  TODO: Unsupport graphs fall back to image
-        if (!container.has('img').length) {
-            container.html('<span class="plotly-chart--loading">Chart image not found</span>')
-        }
-        return;
-    }
-
-    // no supplied image fallback show loading indicator
-    if (!container.has('img').length) {
-        container.html('<span class="plotly-chart--loading">Loading</span>')
-    }
-
-    var libs = [
-        'd3', 'Plotly',
-        // for ie9 support
-        (('Float32Array' in window)
-            ? ''
-            : 'typedarray')
-    ];
-
-    requirejs(libs, function (d3, Plotly) {
-        var WIDTH_IN_PERCENT_OF_PARENT = 100,
-            HEIGHT_IN_PERCENT_OF_PARENT = 100;
-        container.empty();
-
-        function getHeight() {
-            var tempHeight = container.attr('data-fixed-height')
-                ? container.attr('data-fixed-height') + "px"
-                : HEIGHT_IN_PERCENT_OF_PARENT + "%";
-
-            return tempHeight;
-        }
-        var gd3 = d3.select(container.get(0)).style({
-            width: WIDTH_IN_PERCENT_OF_PARENT + '%',
-            'margin-left': (100 - WIDTH_IN_PERCENT_OF_PARENT) / 2 + '%',
-
-            height: getHeight(),
-            'margin-top': (100 - WIDTH_IN_PERCENT_OF_PARENT) / 2 + '%'
-        });
-
-        var gd = gd3.node();
-        var title = container.attr("data-title");
-        var xLabel = container.attr('data-x-label');
-        var yLabel = container.attr('data-y-label');
-
-        getConfig(d3, container, function (config) {
-            Plotly.plot(gd, config, {
-                title: title,
-                font: {
-                    family: "Source Sans Pro, sans-serif",
-                    size: 20,
-                    color: '#333'
-                },
-                xaxis: {
-                    title: xLabel,
-                    titlefont: {
-                        family: "Source Sans Pro, sans-serif",
-                        size: 18,
-                        color: "#333"
-                    }
-                },
-                yaxis: {
-                    title: yLabel,
-                    titlefont: {
-                        family: "Source Sans Pro, sans-serif",
-                        size: 18,
-                        color: "#333"
-                    }
-                }
-                // not setting the background color atm, keep default
-                // paper_bgcolor: container.css("background-color")
-            });
-
-            // This does not work atm,
-            // following this issue for updates
-            // https://github.com/plotly/plotly.js/issues/102
-
-            // container.on('mousemove', function (data) {
-            //
-            //     // make things bigger
-            //     var hovertext = container.find(".hovertext");
-            //     var trans = hovertext.attr('transform')
-            //     // hovertext.attr('transform', trans + ' scale(1.3)');
-            //
-            //     // give more padding around text by setting stroke to the
-            //     // same color as the fill
-            //     var path = hovertext.find('path');
-            //     var color = path.css('fill');
-            //     console.log(color);
-            //     path.css({'stroke-width': 7, 'stroke': color})
-            // });
-        })
-
-        $(window).on('resize', function () {
-
-            var gd3 = d3.select(container.get(0)).style({ height: getHeight() });
-            Plotly.Plots.on("resize", gd);
-        });
-
-    });
-}
-
-var defaultBar = [
-    {
-        "type": "bar",
-        "x": [],
-        "y": [],
-        "marker": {
-            "color": "#046B99",
-            "line": {
-                "width": 0.5
-            }
-        }
-    }
-];
-
-var defaultLine = [
-    {
-        "x": [],
-        "y": [],
-        "mode": "lines",
-        "name": "Solid",
-        "line": {
-            "color": "#046B99",
-            "dash": "solid",
-            "width": 4
-        }
-    }
-];
-
-var defaultPie = [
-    {
-        "values": [],
-        "labels": [],
-        "hoverinfo": "label+percent",
-        "type": "pie",
-        "marker": {
-            "colors": [
-                "#E1F2F7",
-                "#9FDBF1",
-                "#02BFE7",
-                "#35BBAA",
-                "#72CE6F",
-                "#815AB4",
-                "#D34A37",
-                "#F27E31",
-                "#FFCA4A"
-            ]
-        }
-    }
-];
-
-function getConfigSkeleton(type) {
-    switch (type) {
-        case "bar":
-            return defaultBar;
-        case "pie":
-            return defaultPie;
-        case "line":
-            return defaultLine;
-        default:
-            return [];
-    }
-}
-
-function getConfig(d3, container, func) {
-    var sourceUrl = container.attr('data-datasource-url');
-    var configUrl = container.attr('data-config-url');
-    var chartType = container.attr('data-type');
-    var color = container.attr('data-color');
-
-    if (configUrl) {
-        $.getJSON(configUrl, func);
-        return;
-    }
-
-    var config = getConfigSkeleton(chartType);
-
-    var xValues = container.attr('data-x-values');
-    var yValues = container.attr('data-y-values');
-
-    if (xValues) {
-        xValues = xValues.split('|').map(function (d) {
-            if (isNaN(parseFloat(d))) {
-                return d;
-            }
-            return +d
-        });
-    } else {
-        xValues = [];
-    }
-
-    if (yValues) {
-        yValues = yValues.split('|');
-    } else {
-        yValues = [];
-    }
-    switch (chartType) {
-        case "line":
-        case "bar":
-            config[0].x = xValues
-            config[0].y = yValues.map(function (d) {
-                return +d
-            });
-            break;
-
-        case "pie":
-            config[0].values = xValues;
-            config[0].labels = yValues;
-            break;
-        default:
-
-    }
-
-    if (!color) {
-        color = '#046B99';
-    }
-
-    // specifiying the color
-    switch (chartType) {
-        case "line":
-            config[0].line.color = d3.rgb(color).toString();
-            break;
-        case "bar":
-            config[0].marker.color = d3.rgb(color).toString();
-            break;
-
-        case "pie":
-            var colorA = d3.hsl(color);
-            var colorB = d3.hsl((colorA.h - (4 * xValues.length)) % 360, colorA.s, colorA.l)
-
-            var colorScale = d3.scale.linear().domain(xValues).interpolate(d3.interpolateHsl).range([colorA.toString(), colorB.toString()]);
-            var colors = xValues.map(function (d) {
-                return colorScale(d);
-            });
-            config[0].marker.colors = colors;
-
-            break;
-        default:
-
-    }
-
-    func(config);
-
-}
-
-function initStats() {
-    var container = $(this);
-    var libs = ['d3'];
-    if ($('html').hasClass('ie8') || $('html').hasClass('ie7')) {
-        return;
-        //  TODO: Unsupport graphs fall back to something else
-    }
-    requirejs(libs, function (d3) {
-
-        var shouldFlip = container.attr('data-direction') == 'right'
-            ? true
-            : false;
-
-        var data = parseFloat(container.attr('data-percentfill'));
-        var chart = container.find('.half-gauge-chart');
-        var color = container.attr('data-colorfill');
-        var showHalfTick = container.find('.small-goal-text').length != 0;
-
-        var config = {
-            bindTo: chart.get(0),
-            background: true,
-            maxValue: 100,
-            startAngle: -90,
-            endAngle: 90,
-            thickness: 5,
-            color: color,
-            showHalfTick: showHalfTick,
-            size: {
-                width: chart.get(0).clientWidth,
-                height: chart.get(0).clientWidth
-            },
-            flipStart: shouldFlip
-        };
-        var Donut = initHalfDonut(d3);
-
-        var donutChart = new Donut(config);
-
-        donutChart.load({ data: 0 });
-
-        function sizeText() {
-            var width = chart.get(0).clientWidth;
-            var height = chart.get(0).clientHeight;
-            var detail = container.find('.small-goal-text');
-            var lineHeight = parseFloat(container.find('.small-goal-text').css('line-height'));
-
-            container.find('.info').css({
-                top: -width / 4
-            });
-            detail.css({
-                'font-size': width / 18
-            });
-            var detailHeight = detail.height();
-
-            detail.css({
-                top: (width < 400)
-                    ? detailHeight * 2 + 20
-                    : (detailHeight * 1.5)
-            })
-            container.find('.big-number').css({
-                'font-size': width / 6
-            });
-            container.find('.percent-detail').css({
-                'font-size': width / 10
-            });
-        }
-
-        sizeText();
-
-        $(window).on('resize', function () {
-
-            window.setTimeout(function () {
-                config.size = {
-                    width: chart.width(),
-                    height: chart.width()
-                };
-                config.data = data;
-                donutChart = new Donut(config);
-                donutChart.load({ data: data });
-                sizeText();
-            }, 10);
-
-        });
-
-        var waypoint = new Waypoint({
-            element: chart.get(0),
-            // start when it appears at the bottom
-            offset: '100%',
-            handler: function () {
-                donutChart.load({ data: data })
-            }
-        });
-    })
-
-}
-
-/**
- * Custom Half Donut plugin
- * TODO: code clean up, and refactor
- */
-
-function initHalfDonut(d3) {
-
-    var defaults = {
-        className: 'donut',
-        size: {
-            width: 200,
-            height: 200
-        },
-        margin: {
-            top: 20,
-            right: 20,
-            bottom: 20,
-            left: 20
-        },
-        startAngle: 0,
-        endAngle: 360,
-        thickness: null,
-        offset: 0,
-        sort: null,
-        maxValue: null,
-        background: false,
-        flipStart: false,
-        color: 'rgb(49, 130, 189)',
-        accessor: function (d, i) {
-            return d;
-        }
-    };
-
-    var Donut = function (config) {
-        // need an extend fn
-        this.config = extend({}, defaults, config);
-
-        // setup radius
-        this.config.radius = getRadius(this);
-
-        // setup accessor
-        this.accessor = this.config.accessor;
-
-        // convenience method to map data to start/end angles
-        this.pie = d3.layout.pie().sort(this.config.sort).startAngle(degToRad(this.config.startAngle)).endAngle(degToRad(this.config.endAngle))
-
-        if (this.accessor && typeof this.accessor === 'function') {
-            this.pie.value(this.accessor);
-        }
-
-        var thickness = getThickness(this);
-
-        // setup the arc
-        // divide offset by 4 because the middle of the stroke aligns to the edge
-        // so it's 1/2 on the outside, 1/2 inside
-        this.arc = d3.svg.arc().innerRadius(this.config.radius - thickness - (this.config.offset / 4)).outerRadius(this.config.radius + (this.config.offset / 4));
-
-        bindSvgToDom(this);
-    };
-
-    Donut.prototype.load = function (newOpts) {
-        // store data on object
-        var data = (newOpts && newOpts.data != null)
-            ? newOpts.data
-            : this.data.map(this.accessor);
-
-        // convert to array if not already
-        data = Array.isArray(data)
-            ? data
-            : [data];
-
-        if (this.config.maxValue) {
-            this.data = this.pieMaxValue(data);
-        } else {
-            this.data = this.pie(data);
-        }
-
-        // drawPaths
-        drawPaths(this);
-    };
-
-    Donut.prototype.pieMaxValue = function (data) {
-        var accessor = this.accessor,
-            self = this;
-
-        // Compute the numeric values for each data element.
-        var values = data.map(function (d, i) {
-            return +accessor.call(self, d, i);
-        });
-
-        var sum = d3.sum(values),
-            max = d3.max([this.config.maxValue, sum]),
-            diff = max - sum;
-
-        // Compute the start angle.
-        var a = +(degToRad(this.config.startAngle));
-
-        // Compute the angular scale factor: from value to radians.
-        // include the diff because it will help create angles with a maxValue in mind
-        var k = (degToRad(this.config.endAngle) - a) / (sum + diff);
-
-        var index = d3.range(data.length);
-
-        // Compute the arcs!
-        // They are stored in the original data's order.
-        var arcs = [];
-        index.forEach(function (i) {
-            var d;
-            arcs[i] = {
-                data: data[i],
-                value: d = values[i],
-                startAngle: a,
-                endAngle: a += d * k
-            };
-        });
-        return arcs;
-    };
-
-    function getThickness(donut) {
-        return donut.config.thickness || donut.config.radius;
-    }
-
-    /*
-     * Setup the svg in the DOM and cache a ref to it
-     */
-    function bindSvgToDom(donut) {
-        var width = getWidth(donut),
-            height = getHeight(donut);
-        var transString = 'translate(' + width / 2 + ',' + height / 2 + ')' + ((donut.config.flipStart == true)
-            ? ' scale(-1,1)'
-            : '');
-
-        var tempSVG = d3.select(donut.config.bindTo).select('svg');
-
-        if (tempSVG.empty()) {
-            donut.svg = d3.select(donut.config.bindTo).append('svg').attr('class', donut.config.classNames).attr('width', width).attr('height', height / 2).append('g').attr('transform', transString);
-        } else {
-            donut.svg = d3.select(donut.config.bindTo).select('svg').attr('class', donut.config.classNames).attr('width', width).attr('height', height / 2).select('g').attr('transform', transString);
-            donut.svg.selectAll('*').remove();
-        }
-
-        if (donut.config.background) {
-            donut.svg.append('path').attr('class', 'donut-background').transition().duration(0).attrTween('d', function (d, i) {
-                var fullArc = {
-                    value: 0,
-                    startAngle: degToRad(donut.config.startAngle),
-                    endAngle: degToRad(donut.config.endAngle)
-                };
-                return arcTween.call(this, fullArc, i, donut);
-            });
-        }
-
-        if (donut.config.showHalfTick) {
-            donut.svg.append('line').attr('class', 'donut-halfmark').attr('stroke', 'gray').attr('stroke-width', 1).attr({
-                'x1': 0,
-                'x2': 0,
-                'y1': -height / 2 + 10,
-                'y2': -height / 2 + 35
-            });
-
-        }
-    }
-
-    function drawPaths(donut) {
-        var paths = donut.svg.selectAll('path.donut-section').data(donut.data);
-
-        // enter new data
-        paths.enter().append('path').attr('class', function (d, i) {
-            return 'donut-section value-' + i;
-        }).attr('fill', donut.config.color).attr('stroke', '#fff').attr('stroke-width', donut.config.offset / 2);
-
-        // transition existing paths
-        donut.svg.selectAll('path.donut-section').transition().duration(2000).attrTween('d', function (d, i) {
-            return arcTween.call(this, d, i, donut);
-        });
-
-        // exit old data
-        paths.exit().transition().duration(100).attrTween('d', function (d, i) {
-            return removeArcTween.call(this, d, i, donut);
-        }).remove();
-
-    }
-
-    // Store the currently-displayed angles in this._current.
-    // Then, interpolate from this._current to the new angles.
-    function arcTween(a, i, donut) {
-        var prevSiblingArc,
-            startAngle,
-            newArc,
-            interpolate;
-
-        if (!this._current) {
-            prevSiblingArc = donut.svg.selectAll('path')[0][i - 1]; // donut.data[i - 1];
-
-            // start at the end of the previous one or start of entire donut
-            startAngle = (prevSiblingArc && prevSiblingArc._current)
-                ? prevSiblingArc._current.endAngle
-                : degToRad(donut.config.startAngle);
-
-            newArc = {
-                startAngle: startAngle,
-                endAngle: startAngle,
-                value: 0
-            };
-        }
-
-        interpolate = d3.interpolate(this._current || newArc, a);
-
-        // cache a copy of data to each path
-        this._current = interpolate(0);
-        return function (t) {
-            return donut.arc(interpolate(t));
-        };
-    }
-
-    function removeArcTween(a, i, donut) {
-        var emptyArc = {
-            startAngle: degToRad(donut.config.endAngle),
-            endAngle: degToRad(donut.config.endAngle),
-            value: 0
-        },
-            i = d3.interpolate(a, emptyArc);
-        return function (t) {
-            return donut.arc(i(t));
-        };
-    }
-
-    function getRadius(donut) {
-        var width = getWidth(donut) - donut.config.margin.left - donut.config.margin.right,
-            height = getHeight(donut) - donut.config.margin.top - donut.config.margin.bottom;
-
-        return Math.min(width, height) / 2;
-    }
-
-    function getWidth(donut) {
-        return donut.config.size && donut.config.size.width;
-    }
-
-    function getHeight(donut) {
-        return donut.config.size && donut.config.size.height;
-    }
-
-    function degToRad(degree) {
-        return degree * (Math.PI / 180);
-    }
-
-    function radToDeg(radian) {
-        return radian * (180 / Math.PI);
-    }
-
-    /*
-     * Simple extend fn like jQuery
-     *
-     * Usage: extend({ name: 'Default' }, { name: 'Matt' });
-     * Result: { name: 'Matt' }
-     */
-    function extend() {
-        for (var i = 1; i < arguments.length; i++) {
-            for (var prop in arguments[i]) {
-                if (arguments[i].hasOwnProperty(prop)) {
-                    arguments[0][prop] = arguments[i][prop];
-                }
-            }
-        }
-        return arguments[0];
-    }
-
-    return Donut;
-
-}
-
 /* -----------------------------------------
    PARALLAX EFFECT
    /source/js/cagov/parallax.js

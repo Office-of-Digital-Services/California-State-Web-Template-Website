@@ -34,43 +34,45 @@
 
 .branding {
     .container();
-    position:relative;
+    position: relative;
 
     @media (min-width: @screen-sm-min) {
-        height:88px !important;
+        height: 88px !important;
     }
 
     .header-organization-banner {
-        line-height:88px;
-		-webkit-transition: all 0.3s;
-        transition: all 0.3s;           // Smooth transition for compact header
+        line-height: 88px;
+        -webkit-transition: all 0.3s;
+        transition: all 0.3s; // Smooth transition for compact header
+        @media (max-width: @screen-xs-max) {
+            max-width: 400px;
+        }
 
         img {
-            max-height:60px;
-			width: 100%;	// Beta 5.0 addition
-			
-			
-			@media (max-width: @screen-md) and (min-width: @screen-sm-min) { // Beta 5.0 addition
-				max-width:225px;	
-			}
-			
-        }
+            width: 100%; // Beta 5.0 addition
+            max-width: 300px;
+            max-height: 70px;
+            object-fit: contain !important;
+            object-position: left;
 
+
+            @media (max-width: @screen-md) and (min-width: @screen-sm-min) { // Beta 5.0 addition
+                max-width: 225px;
+            }
+        }
         // Move logo above navigation
         a {
-            display:inline-block;
-            z-index:26;                 // navigation is 25
-            position:relative;
+            display: inline-block;
+            z-index: 26; // navigation is 25
+            position: relative;
         }
-		
-		@media (max-width: @screen-xs-max) { // Beta 5.0 addition
-			position: absolute;		
-    		margin-top: -5px;		
-			padding-right: 150px;	
-			}
+
+        @media (max-width: @screen-xs-max) { // Beta 5.0 addition
+            position: absolute;
+            margin-top: -5px;
+            padding-right: 150px;
+        }
     }
-	
-	
 }
 
 .header-cagov-logo img {	 // Beta 5.0 addition	
@@ -140,7 +142,7 @@
 
 // Beta 5.0 addition
 .fixed + .header-single-banner, .fixed + .header-primary-banner, .fixed + .header-large-banner, .fixed + .header-slideshow-banner  {			
-    top: 136px;		
- 		
+    top: 136px;	
+    
 }		
 

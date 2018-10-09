@@ -25,7 +25,6 @@ var jssrc = [
   'source/js/libs/countUp.js',
   'source/js/libs/jquery.waypoints.js',
   'source/js/libs/Vague.js',
-  'source/js/libs/require.js',
 
   // CAGOV CORE
   'source/js/cagov/helpers.js',
@@ -46,7 +45,6 @@ var jssrc = [
   'source/js/cagov/number-counter.js',
   'source/js/cagov/header.js',
   'source/js/cagov/fixed-header.js',
-  'source/js/cagov/charts.js',
   'source/js/cagov/parallax.js',
   'source/js/cagov/animations.js',
   'source/js/cagov/more.js',
