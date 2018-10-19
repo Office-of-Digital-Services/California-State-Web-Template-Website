@@ -5,7 +5,17 @@ var gulp           	= require('gulp'), // Gulp
     autoprefixer   	= require('gulp-autoprefixer'), // Add the desired vendor prefixes and remove unnecessary in SASS-files
 	uglify 			= require('gulp-uglify'), 
 	gutil 			= require('gulp-util');
-	concat 			= require('gulp-concat'); 
+concat = require('gulp-concat'); 
+injectVersion = require('gulp-inject-version');
+header = require('gulp-header');
+
+
+var pkg = require('./package.json');
+var banner = ['/**',
+    ' * <%= pkg.description %> -  @version v<%= pkg.version %> -  <%= new Date().getMonth() + 1 %>/<%= new Date().getDate() %>/<%= new Date().getFullYear()  %> ', 
+    '  STYLES COMPILED FROM SOURCE (SCSS) DO NOT MODIFY */',
+    ''].join('\n');
+
 
 
 var jssrc = [
@@ -43,7 +53,6 @@ var jssrc = [
  'source/js/libs/jquery.waypoints.js',
  'source/js/libs/Vague.js',
  'source/js/libs/circles.min.js',
-// 'source/js/libs/require.js',
 
   // CAGOV CORE
 
@@ -66,7 +75,6 @@ var jssrc = [
     'source/js/cagov/breadcrumb.js',
     'source/js/cagov/service-tiles.js',
     'source/js/cagov/number-counter.js',
-    'source/js/cagov/charts.js',
     'source/js/cagov/parallax.js',
     'source/js/cagov/animations.js',
     'source/js/cagov/more.js',
@@ -94,9 +102,10 @@ gulp.task('log', function() {
 
 
 // sass core 
-gulp.task('sass', function() {
+gulp.task('csscore', function() {
   return gulp.src('source/scss/cagov.core.scss')
-    .pipe(sass({outputStyle:'expanded'}))
+      .pipe(sass({ outputStyle: 'expanded' }))
+      .pipe(header(banner, { pkg: pkg }))
    // .pipe(autoprefixer(['last 3 versions', '> 1%'], { cascade: true }))
 	.pipe(concat('cagov.core.css')) // compiled file
 	.on('error', gutil.log) // keeping log
@@ -104,20 +113,24 @@ gulp.task('sass', function() {
 });
 
 // sass colorscheme
-gulp.task('sasscolor', function() {
+gulp.task('csscolor', function() {
   return gulp.src('source/scss/colorscheme/colorscheme-master.scss')
-    .pipe(sass({outputStyle:'expanded'}))
+      .pipe(sass({ outputStyle: 'expanded' }))
+      .pipe(header(banner, { pkg: pkg }))
    // .pipe(autoprefixer(['last 3 versions', '> 1%'], { cascade: true }))
 	.pipe(concat('colorscheme-oceanside.css')) // compiled file
-	.on('error', gutil.log) // keeping log
-    .pipe(gulp.dest('css/'))
+      .on('error', gutil.log) // keeping log
+
+        .pipe(gulp.dest('css/'))
+    
 });
 
 
 // sass font 
-gulp.task('sassfont', function() {
+gulp.task('cssfont', function() {
   return gulp.src('source/scss/cagov.font-only.scss')
-    .pipe(sass({outputStyle:'expanded'}))
+      .pipe(sass({ outputStyle: 'expanded' }))
+      .pipe(header(banner, { pkg: pkg }))
     //.pipe(autoprefixer(['last 3 versions', '> 1%'], { cascade: true }))
 	.pipe(concat('cagov.font-only.css')) // compiled file
 	.on('error', gutil.log) // keeping log
@@ -125,10 +138,10 @@ gulp.task('sassfont', function() {
 });
 
 // Combining JS 
-gulp.task('js', function() {
+gulp.task('js', function () {
   gulp.src(jssrc)
-  //.pipe(uglify())
-  .pipe(concat('cagov.core.js'))
+      .pipe(concat('cagov.core.js'))
+     .pipe(header(banner, { pkg: pkg }))
   .pipe(gulp.dest('js'))
 });
 
@@ -145,4 +158,4 @@ gulp.task('watch', function() {
 // Default
 //
 
-gulp.task('default', ['sass', 'sasscolor', 'sassfont', 'js']);
+gulp.task('default', ['csscore', 'csscolor', 'cssfont', 'js']);

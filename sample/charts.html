@@ -4,22 +4,27 @@
 <!--[if IE 8]>    <html class="no-js ie8 oldie" lang="en"> <![endif]-->
 <!--[if IE 9]>    <html class="no-js ie9 oldie" lang="en"> <![endif]-->
 <!--[if (gt IE 9)]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
-<head>
-<!--
-California State Template
-    Version 5.5.0
+                         <head>
+                             <!--
+    California State Template
+    Version 4.0
 
-Based on Twitter Bootstrap
--->
-<meta charset="utf-8">
+    Based on Twitter Bootstrap
+    -->
+    <meta charset="utf-8">
 
-<title>Sample -Charts</title>
+    <title>Sample -Charts</title>
 
-<meta name="Author" content="State of California" />
-<meta name="Description" content="State of California" />
-<meta name="Keywords" content="California, government" />
+    <meta name="Author" content="State of California" />
+    <meta name="Description" content="State of California" />
+    <meta name="Keywords" content="California, government" />
 
-<!--#include virtual="/ssi/head-css-js.html" -->
+    <!-- Plotly JS -->
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <!-- Circles JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/circles/0.0.6/circles.min.js"></script>
+
+    <!--#include virtual="/ssi/head-css-js.html" -->
 
 </head>
 
@@ -62,22 +67,38 @@ Based on Twitter Bootstrap
             <ol class="breadcrumb">
                 <li><a href="../index.html">Home</a></li>
                 <li><a href="index.html">Examples</a></li>
-                <li class="active">Lists</li>
+                <li class="active">Charts</li>
             </ol>
 
-         <h1>Charts</h1>
-         <!-- TODO: Document how a user can utilize either a csv file moring with x,y columns. Or a custom
-               JSON config to take advantage of all Plotly's configurations and features -->
+            <p>Following charts examples are using Plotly and Circles open source graphing JS libraries. To use use plotly.js or circle.js libraries simply add their CDN links to your <code>head</code> section. </p>
+<pre>&lt;!-- Plotly JS --&gt;
+&lt;script src="https://cdn.plot.ly/plotly-latest.min.js"&gt;&lt;/script&gt;
+&lt;!-- Circles JS --&gt;
+&lt;script src="https://cdnjs.cloudflare.com/ajax/libs/circles/0.0.6/circles.min.js"&gt;&lt;/script&gt;</pre>
             <div class="group">
                 <div class="half">
                     <h2>Bar</h2>
-                  <div>
-                    <!--#include virtual="/sample/modules/chart-bar.html" -->
-                  </div>
+                    <div>
+                        <!--#include virtual="/sample/modules/chart-bar.html" -->
+                    </div>
                 </div>
                 <div class="half">
                     <h2><label>Source Code:</label></h2>
-                    <pre><code class="overflow-auto"><!--#include virtual="/sample/modules/chart-bar.html" --></code></pre>
+                    <div class="tab-group">
+                        <ul id="sourceCode" class="nav nav-tabs" role="tablist">
+                            <li class="active"><a href="#html" role="tab" data-toggle="tab">HTML Markup</a></li>
+                            <li><a href="#javascript" role="tab" data-toggle="tab">JavaScript</a></li>
+                        </ul>
+                        <!-- Tab panes -->
+                        <div class="tab-content responsive">
+                            <div class="tab-pane active" id="html">
+                                <textarea aria-label="HTML Markup" class="form-control" rows="4" cols="80"><!--#include virtual="/sample/modules/chart-bar.html" --></textarea>
+                            </div>
+                            <div class="tab-pane" id="javascript">
+                                <textarea aria-label="JavaScript" class="form-control" rows="10" cols="80"><!--#include virtual="/sample/modules/chart-bar-js.html" --></textarea>
+                            </div>
+                        </div>
+                    </div>
 
                 </div>
             </div>
@@ -88,13 +109,27 @@ Based on Twitter Bootstrap
                 <div class="half">
                     <h2>Line</h2>
 
-                  <div >
-                    <!--#include virtual="/sample/modules/chart-line.html" -->
-                  </div>
+                    <div>
+                        <!--#include virtual="/sample/modules/chart-line.html" -->
+                    </div>
                 </div>
                 <div class="half">
                     <h2><label>Source Code:</label></h2>
-                    <pre><code class="overflow-auto"><!--#include virtual="/sample/modules/chart-line.html" --></code></pre>
+                    <div class="tab-group">
+                        <ul id="sourceCode" class="nav nav-tabs" role="tablist">
+                            <li class="active"><a href="#html-line" role="tab" data-toggle="tab">HTML Markup</a></li>
+                            <li><a href="#javascript-line" role="tab" data-toggle="tab">JavaScript</a></li>
+                        </ul>
+                        <!-- Tab panes -->
+                        <div class="tab-content responsive">
+                            <div class="tab-pane active" id="html-line">
+                                <textarea aria-label="HTML Markup" class="form-control" rows="4" cols="80"><!--#include virtual="/sample/modules/chart-line.html" --></textarea>
+                            </div>
+                            <div class="tab-pane" id="javascript-line">
+                                <textarea aria-label="JavaScript" class="form-control" rows="10" cols="80"><!--#include virtual="/sample/modules/chart-line-js.html" --></textarea>
+                            </div>
+                        </div>
+                    </div>
 
                 </div>
             </div>
@@ -105,32 +140,30 @@ Based on Twitter Bootstrap
                 <div class="half">
                     <h2>Pie</h2>
 
-                  <div >
-                    <!--#include virtual="/sample/modules/chart-pie.html" -->
-                  </div>
+                    <div>
+                        <!--#include virtual="/sample/modules/chart-pie.html" -->
+                    </div>
                 </div>
                 <div class="half">
                     <h2><label>Source Code:</label></h2>
-                    <pre><code class="overflow-auto"><!--#include virtual="/sample/modules/chart-pie.html" --></code></pre>
-
+                    <div class="tab-group">
+                        <ul id="sourceCode" class="nav nav-tabs" role="tablist">
+                            <li class="active"><a href="#html-pie" role="tab" data-toggle="tab">HTML Markup</a></li>
+                            <li><a href="#javascript-pie" role="tab" data-toggle="tab">JavaScript</a></li>
+                        </ul>
+                        <!-- Tab panes -->
+                        <div class="tab-content responsive">
+                            <div class="tab-pane active" id="html-pie">
+                                <textarea aria-label="HTML Markup" class="form-control" rows="4" cols="80"><!--#include virtual="/sample/modules/chart-pie.html" --></textarea>
+                            </div>
+                            <div class="tab-pane" id="javascript-pie">
+                                <textarea aria-label="JavaScript" class="form-control" rows="10" cols="80"><!--#include virtual="/sample/modules/chart-pie-js.html" --></textarea>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
 
-            <hr>
-
-            <div class="group">
-                <div class="half">
-                    <h2>Dashboard Arch</h2>
-
-                  <div style="margin:0 auto;">
-                    <!--#include virtual="/sample/modules/chart-dash-arch.html" -->
-                  </div>
-                </div>
-                <div class="half">
-                    <h2><label>Source Code:</label></h2>
-                    <pre><code class="overflow-auto"><!--#include virtual="/sample/modules/chart-dash-arch.html" --></code></pre>
-                </div>
-            </div>
 
             <hr>
 
@@ -142,6 +175,64 @@ Based on Twitter Bootstrap
 <!--#include virtual="/ssi/global-footer.html" -->
 
 <!--#include virtual="/ssi/scripts.html" -->
+    <script>
+            /* -----------------------------------------
+            PLOTLY
+            requires plotly-latest.min.js
+        
+            ----------------------------------------- */
+            //Bar chart settings
+            var trace1 = {
+                x: ['giraffes', 'orangutans', 'monkeys'],
+            y: [20, 14, 23],
+            name: 'SF Zoo',
+            type: 'bar'
+        };
+    
+    var trace2 = {
+                x: ['giraffes', 'orangutans', 'monkeys'],
+            y: [12, 18, 29],
+            name: 'LA Zoo',
+            type: 'bar'
+        };
+    
+        var data = [trace1, trace2];
+    var layout = {barmode: 'group' };
+        
+            Plotly.newPlot('barChart', data, layout);
+        
+            //line chart settings
+    var trace1 = {
+                x: [1, 2, 3, 4],
+            y: [10, 15, 13, 17],
+            type: 'scatter'
+        };
+    var trace2 = {
+                x: [1, 2, 3, 4],
+            y: [16, 5, 11, 9],
+            type: 'scatter'
+        };
+        var data = [trace1, trace2];
+    
+    
+    var layout2 = {
+                yaxis: {
+                rangemode: 'tozero',
+            zeroline: true
+        }
+    };
 
+    Plotly.newPlot('lineChart', data, layout2);
+
+
+    //pie chart settings
+    var data = [{
+                values: [19, 26, 55],
+            labels: ['Residential', 'Non-Residential', 'Utility'],
+            type: 'pie'
+        }];
+    
+        Plotly.newPlot('pieChart', data);
+    </script>
 </body>
 </html>
