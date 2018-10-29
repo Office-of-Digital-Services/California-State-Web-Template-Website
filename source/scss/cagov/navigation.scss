@@ -44,14 +44,15 @@
 }
 
 .top-level-nav {
-    list-style:none;
-    margin:0;
+    list-style: none;
+    margin: 0;
     padding: 0;
-	-webkit-transition: 0.3s;   // beta 5.0 addition (adds smoother transistion on scroll for fixed headers)
-	transition: all 0.3s;   // beta 5.0 addition
-     .nav-item { // equivalent to .nav-item
-          position: relative;
-      }
+    -webkit-transition: 0.3s; // beta 5.0 addition (adds smoother transistion on scroll for fixed headers)
+    transition: all 0.3s; // beta 5.0 addition
+    .nav-item { // equivalent to .nav-item
+        position: relative;
+        @include font-size(1);
+    }
 }
 
 
@@ -236,10 +237,15 @@
 }
 
 
-@media (max-width: $screen-md) and (min-width: $screen-sm-min) {	// Beta 5.0 addition	
-.main-navigation {		
-    padding-left: 225px;
-	}		
+@media (max-width: $screen-md) and (min-width: $screen-sm-min) {	// Beta 5.0 addition
+    .main-navigation {
+        padding-left: 225px;
+        .top-level-nav {
+            .nav-item { // equivalent to .nav-item
+                @include font-size(0.9);
+            }
+        }
+    }		
 }
 
 @media (min-width: $screen-lg) {		

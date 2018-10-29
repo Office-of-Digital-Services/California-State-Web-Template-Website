@@ -1,5 +1,5 @@
 /**
- * CA State Template v5.5 -  @version v5.5.0 -  10/19/2018 
+ * CA State Template v5.5 -  @version v5.5.0 -  10/29/2018 
   STYLES COMPILED FROM SOURCE (SCSS) DO NOT MODIFY */
 /* -----------------------------------------
    BOOTSTRAP v4.1.3 - /source/scss/bootstrap/ 
@@ -8963,6 +8963,14 @@ body {
   color: #333333;
 }
 
+/* make body font size larger for mobile */
+@media (max-width: 767px) {
+  body {
+    font-size: 19.2px;
+    font-size: 1.2rem;
+  }
+}
+
 a {
   color: #046B99;
 }
@@ -9032,8 +9040,8 @@ h5, .h5 {
 }
 
 h6, .h6 {
-  font-size: 13.92px;
-  font-size: 0.87rem;
+  font-size: 12.8px;
+  font-size: 0.8rem;
   margin-top: 1.67em;
   margin-bottom: 1.3em;
   font-family: "Asap Condensed", sans-serif;
@@ -9041,20 +9049,20 @@ h6, .h6 {
 
 @media (max-width: 767px) {
   h1, .h1 {
+    font-size: 40px;
+    font-size: 2.5rem;
+  }
+  h2, .h2 {
     font-size: 32px;
     font-size: 2rem;
   }
-  h2, .h2 {
-    font-size: 26px;
-    font-size: 1.625rem;
-  }
   h3, .h3 {
-    font-size: 22px;
-    font-size: 1.375rem;
+    font-size: 25.6px;
+    font-size: 1.6rem;
   }
   h4, .h4 {
-    font-size: 18px;
-    font-size: 1.125rem;
+    font-size: 20.8px;
+    font-size: 1.3rem;
   }
 }
 
@@ -9641,23 +9649,6 @@ code {
     margin-top: -5px;
     padding-right: 150px;
   }
-}
-
-.header-cagov-logo img {
-  top: 1px;
-  height: 27px;
-  position: absolute;
-  left: 27px;
-}
-
-@media (max-width: 1199px) {
-  .header-cagov-logo img {
-    left: 5px;
-  }
-}
-
-.header-cagov-logo a:focus img {
-  outline: 1px dotted black;
 }
 
 .mobile-controls toggle-menu {
@@ -10741,6 +10732,8 @@ table.gsc-search-box td {
 
 .top-level-nav .nav-item {
   position: relative;
+  font-size: 16px;
+  font-size: 1rem;
 }
 
 .nav-item .sub-nav {
@@ -10894,6 +10887,10 @@ table.gsc-search-box td {
 @media (max-width: 992px) and (min-width: 768px) {
   .main-navigation {
     padding-left: 225px;
+  }
+  .main-navigation .top-level-nav .nav-item {
+    font-size: 14.4px;
+    font-size: 0.9rem;
   }
 }
 
@@ -11721,13 +11718,19 @@ a.second-level-link [class^="ca-gov-icon-"] {
   color: #ffffff;
 }
 
+@media (max-width: 767px) {
+  .utility-header {
+    min-height: 40px;
+  }
+}
+
 .utility-header .half {
   position: relative;
   min-height: 1px;
   padding-left: 15px;
   padding-right: 15px;
   padding-top: 0;
-  padding-left: 80px;
+  padding-left: 15px;
 }
 
 @media (min-width: 768px) {
@@ -11743,7 +11746,7 @@ a.second-level-link [class^="ca-gov-icon-"] {
     float: left;
   }
   .utility-header .half:first-child {
-    padding-left: 70px;
+    padding-left: 15px;
     padding-right: 0 !important;
     width: 50%;
   }
@@ -11809,13 +11812,16 @@ a.second-level-link [class^="ca-gov-icon-"] {
 }
 
 .utility-header .settings-links {
-  font-size: 87%;
+  font-size: 16px;
+  font-size: 1rem;
   text-align: right;
   margin-top: 0px;
 }
 
 @media (max-width: 767px) {
   .utility-header .settings-links {
+    font-size: 14.4px;
+    font-size: 0.9rem;
     text-align: right;
     padding-right: 0;
   }
@@ -11841,11 +11847,7 @@ a.second-level-link [class^="ca-gov-icon-"] {
 
 @media (max-width: 767px) {
   .utility-header .social-media-links li {
-    padding: 0 1px;
-  }
-  .utility-header [class^="ca-gov-icon-"] {
-    font-size: 12.8px;
-    font-size: 0.8rem;
+    padding: 0 5px;
   }
   .utility-header .header-cagov-logo img {
     left: 10px;
@@ -11863,6 +11865,18 @@ a.second-level-link [class^="ca-gov-icon-"] {
   line-height: 120%;
   background: white;
   color: black;
+}
+
+.header-cagov-logo img {
+  top: 1px;
+  height: 27px;
+  left: 27px;
+}
+
+@media (max-width: 1199px) {
+  .header-cagov-logo img {
+    left: 5px;
+  }
 }
 
 /* .global-header.compact {
@@ -14333,18 +14347,22 @@ body {
 .breadcrumb {
   padding-left: 0;
   background-color: transparent;
+  font-size: 16px;
+  font-size: 1rem;
 }
 
-.breadcrumb li {
+.breadcrumb li:before {
+  content: "";
   border-left: 1px dotted #777777;
-  padding: 0 15px;
-  height: 10px;
-  line-height: 10px;
+  margin: 0 15px;
+  font-size: 10px;
+  position: relative;
+  top: -2px;
 }
 
-.breadcrumb li:first-child {
+.breadcrumb li:first-child:before {
   border-left: none;
-  padding-left: 0;
+  margin: 0 0;
 }
 
 .breadcrumb > li + li:before {

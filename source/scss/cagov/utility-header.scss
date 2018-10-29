@@ -5,114 +5,119 @@
 
 .utility-header {
     //position:absolute;
-    top:0;
-    width:100%;
-	min-height: 30px; // beta 6.0 addition
-    background:$color-p2;
-    color:contrast($color-p2);
-    
+    top: 0;
+    width: 100%;
+    min-height: 30px; // beta 6.0 addition
+    background: $color-p2;
+    color: contrast($color-p2);
+
+
+    @media (max-width: $screen-xs-max) {
+        min-height: 40px; // beta 6.0 addition
+    }
+
     .half {
-		@include make-sm-column(6);
-		padding-top: 0;	// beta 6.0 addition	
-  	 	padding-left: 80px;	// beta 5.0 addition
-		
-		@media (max-width: $screen-xs-max) {
-			padding-top: 2px; // beta 5.0 addition
-			float: left;
-			
-			&:first-child {
-				padding-left:70px;
-				padding-right:0 !important;
-				width: 50%;
-				}
-				
-			&:nth-child(2) {
-				padding-left:0 !important;
-				width: 50%;
-				}
-			
-		}
-		
+        @include make-sm-column(6);
+        padding-top: 0; // beta 6.0 addition
+        padding-left: 15px; // beta 5.0 addition
+        @media (max-width: $screen-xs-max) {
+            padding-top: 2px; // beta 5.0 addition
+            float: left;
+
+            &:first-child {
+                padding-left: 15px;
+                padding-right: 0 !important;
+                width: 50%;
+            }
+
+            &:nth-child(2) {
+                padding-left: 0 !important;
+                width: 50%;
+            }
+        }
     }
 
     a {
-        color:contrast($color-p2);
-        display:inline-block;
-        padding:3px 0;
+        color: contrast($color-p2);
+        display: inline-block;
+        padding: 3px 0;
 
         &:hover, &:focus, &.hovered {
-            color:lighten($color-p1, 25%); // beta 5.0 addition
-            text-decoration:none;
+            color: lighten($color-p1, 25%); // beta 5.0 addition
+            text-decoration: none;
         }
     }
 
     ul {
         @include list-unstyled();
         @include list-inline();
-        margin-bottom:0;
+        margin-bottom: 0;
+
         li {
-          padding: 0 8px;
-		  button {
-				font-size: 100%;
-				outline:none !important;
-				position:relative;
-				top:-1px;
-				background-color:transparent;
-				border:none;
-				span {
-					font-size: 100% !important;
-					}
-					&:hover, &:focus {
-						color:lighten($color-p1, 25%);
-						background-color:transparent;
-						border:none;
-						}
-			  }
+            padding: 0 8px;
+
+            button {
+                font-size: 100%;
+                outline: none !important;
+                position: relative;
+                top: -1px;
+                background-color: transparent;
+                border: none;
+
+                span {
+                    font-size: 100% !important;
+                }
+
+                &:hover, &:focus {
+                    color: lighten($color-p1, 25%);
+                    background-color: transparent;
+                    border: none;
+                }
+            }
         }
     }
 
     .settings-links {
-        @include small();
+        @include font-size(1); // font size
         @include text-right();
-		margin-top: 0px; // beta 5.0 addition
-
+        margin-top: 0px; // beta 5.0 addition
         @media (max-width: $screen-xs-max) {
+            @include font-size(0.9); // font size
             @include text-right(); // beta 5.0 addition
-			padding-right:0;
+            padding-right: 0;
         }
-		@media (min-width: $screen-xs-max) and (max-width: $screen-sm-max) {
-			padding-right:0;
+
+        @media (min-width: $screen-xs-max) and (max-width: $screen-sm-max) {
+            padding-right: 0;
         }
-		
-		@media (min-width: $screen-md-min) {
-			padding-right:5px;
+
+        @media (min-width: $screen-md-min) {
+            padding-right: 5px;
         }
     }
 
     [class^="ca-gov-icon-"] {
         @include font-size(1.1);
-        vertical-align:-2px;
+        vertical-align: -2px;
     }
 
     @media (max-width: $screen-xs-max) {
-		
+
         .social-media-links {
-			li {
-			padding: 0 1px;
-			}
+            li {
+                padding: 0 5px;
+            }
         }
-		[class^="ca-gov-icon-"] {
-			@include font-size(0.8);
-			}
-			
-		.header-cagov-logo img {
-			left: 10px;
-			}	
+
+        .header-cagov-logo img {
+            left: 10px;
+        }
     }
+
     .located-city-name {
-      margin-left: 5px;
+        margin-left: 5px;
     }
-    
+
     .geo-zip-input {
         margin-left: 5px;
         width: 50%;
@@ -124,11 +129,19 @@
 }
 
 
-//
-// HIDE UTILITY HEADER IN HEADER COMPACT MODE
-// --------------------------------------------------
+    .header-cagov-logo img { // Beta 5.0 addition
+        top: 1px;
+        height: 27px;
+        left: 27px;
 
-/* .global-header.compact {
+        @media (max-width: $screen-md-max) {
+            left: 5px;
+        }
+    }
+    //
+    // HIDE UTILITY HEADER IN HEADER COMPACT MODE
+    // --------------------------------------------------
+    /* .global-header.compact {
     .utility-header {
         opacity: 0;
         position: absolute;
