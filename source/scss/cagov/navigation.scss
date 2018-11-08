@@ -467,3 +467,31 @@
         padding: 16px 0 16px 5px;
     }
 }
+
+
+/* FULL WIDTH MENU WITH ICONS */
+@media (min-width: $screen-sm-min) {
+    .nav-full-width-icons .main-navigation {
+        padding-left: 0px;
+        margin-top: 0px;
+    }
+
+    // fixed
+    .nav-full-width-icons.fixed.compact .main-navigation {
+        margin-top: 0px;
+    }
+
+    /* full width menu with icons BUT with .no-icons class */
+    .nav-full-width-icons .no-icons {
+        min-height: 55px;
+
+        .top-level-nav {
+            min-height: 55px;
+
+            .nav-item > a {
+                min-height: 55px;
+                padding-top: 1rem;
+            }
+        }
+    }
+}
