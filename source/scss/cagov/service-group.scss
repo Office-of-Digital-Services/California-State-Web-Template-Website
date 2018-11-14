@@ -27,6 +27,8 @@
     // Not sure if this can be a generic class for all of the large close buttons.
     // Stashing in service tile panel to avoid conflict with other similar.
     .btn.close {
+        position:relative;
+        z-index:1;
         @include font-size(3.5);
     }
 }
@@ -161,65 +163,67 @@
     z-index: 5;
 }
 
+// title when open
+div[data-state="open"] .title {
+    color: $color-p1;
+}
 
 .service-tile-empty {
-// background:  $color-p2;
-// color: $color-s2;
-background:  $color-p3; // beta 5.0 addition
-color: lighten($color-p3, 9%); // beta 5.0 addition
-overflow: hidden;
-  span {
-    font-size: 17em;
-  line-height: 1;
+    // background:  $color-p2;
+    // color: $color-s2;
+    background: $color-p3; // beta 5.0 addition
+    color: lighten($color-p3, 9%); // beta 5.0 addition
+    overflow: hidden;
 
-  }
-
-  .title:after {
-    content: "\e65d" !important;
-  }
-
-
-
-    width: 100%;
-     &.half, &.quarter, &.third {
-      width: 100%;
+    span {
+        font-size: 17em;
+        line-height: 1;
     }
 
+    .title:after {
+        content: "\e65d" !important;
+    }
 
-      /* Need to keep the two column longer than bootstrap has .make-*-column for */
-      @media (min-width: 450px) {
+    width: 100%;
+
+    &.half, &.quarter, &.third {
+        width: 100%;
+    }
+    /* Need to keep the two column longer than bootstrap has .make-*-column for */
+    @media (min-width: 450px) {
 
         &.full {
-          width: 100%;
+            width: 100%;
         }
 
         &.third {
-          width: 50%;
+            width: 50%;
         }
+
         &.half {
-          width: 100%;
+            width: 100%;
         }
+
         &.quarter {
-          width: 50%;
+            width: 50%;
         }
+    }
 
-      }
-
-      @media (min-width: 992px) {
+    @media (min-width: 992px) {
         &.full {
-          width: 100%;
+            width: 100%;
         }
 
         &.third {
-          width: 75%;
+            width: 75%;
         }
+
         &.half {
-          width: 50%;
+            width: 50%;
         }
+
         &.quarter {
-          width: 25%;
+            width: 25%;
         }
-      }
-
-
+    }
 }
