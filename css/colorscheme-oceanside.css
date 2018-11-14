@@ -1,4 +1,4 @@
-/* cagov-template-v5 - v5.0.2 - Oct-09-2018 */
+/* cagov-template-v5 - v5.0.2 - Nov-14-2018 */
 /* STYLES COMPILED FROM SOURCE (LESS) DO NOT MODIFY */
 /* -----------------------------------------
  Helper Mixins for service-group
@@ -2449,4 +2449,53 @@ html.high-contrast .disableHighContrastMode.active {
 }
 html.high-contrast .close {
   opacity: 1;
+}
+html.high-contrast input[type="checkbox"]:checked + i,
+html.high-contrast input[type="radio"]:checked + i,
+html.high-contrast input[type="checkbox"]:checked + * i,
+html.high-contrast input[type="radio"]:checked + * i {
+  color: #000 !important;
+  background-color: #ffd600 !important;
+  border-color: #ffd600;
+}
+html.high-contrast .bg-primary--checked.checked,
+html.high-contrast .checked .bg-primary--checked {
+  background-color: #ffd600 !important;
+}
+html.high-contrast .check-icon-checkbox {
+  color: #000 !important;
+  border-color: #ffd600 !important;
+}
+html.high-contrast .check-icon-checkbox i {
+  color: #000 !important;
+}
+html.high-contrast .select {
+  border: 1px solid #ffd600 !important;
+}
+html.high-contrast .select::after {
+  border-left: 1px solid #ffd600 !important;
+  background: #000 !important;
+}
+html.high-contrast .check {
+  border: 1px solid #ffd600 !important;
+}
+html.high-contrast input[type="checkbox"]:checked + .bg-primary--checked,
+html.high-contrast input[type="radio"]:checked + .bg-primary--checked,
+html.high-contrast input[type="checkbox"]:checked + * .bg-primary--checked,
+html.high-contrast input[type="radio"]:checked + * .bg-primary--checked {
+  background-color: #ffd600 !important;
+  color: #000 !important;
+}
+html.high-contrast input[type="checkbox"]:checked + .bg-highlight--checked,
+html.high-contrast input[type="radio"]:checked + .bg-highlight--checked,
+html.high-contrast input[type="checkbox"]:checked + * .bg-highlight--checked,
+html.high-contrast input[type="radio"]:checked + * .bg-highlight--checked {
+  background-color: #ffd600 !important;
+  color: #000 !important;
+}
+html.high-contrast input[type="checkbox"]:checked + .color-white--checked,
+html.high-contrast input[type="radio"]:checked + .color-white--checked,
+html.high-contrast input[type="checkbox"]:checked + * .color-white--checked,
+html.high-contrast input[type="radio"]:checked + * .color-white--checked {
+  color: #000 !important;
 }
