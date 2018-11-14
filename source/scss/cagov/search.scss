@@ -15,7 +15,7 @@ $search-dt: 0.5s;
 $search-dft: 0.10s;
 
 
-$search-absolute-height: 85px;
+$search-absolute-height: 87px;
 
 $search-input-height: 40px;
 
@@ -154,7 +154,6 @@ $search-input-border-width: 3px;
         line-height: 44px;
         cursor: pointer;
         color: $gray-light;
-        opacity: 0.8;
 
         @media (max-width: $screen-xs-max) {
             right:0;
@@ -496,8 +495,7 @@ $search-input-border-width: 3px;
     }
 
     &.active {
-        background: $gray-base;
-        opacity: 0.7;
+        @include rgba (#000, .5);
     }
 }
 
@@ -507,7 +505,7 @@ $search-input-border-width: 3px;
     opacity: 0;
   }
   .active-search .fixed.compact .search-container, .fixed.compact .search-container.active {
-  opacity: 0.9;
+  opacity: 1;
   top: 55px; 	
     }
 
@@ -520,7 +518,7 @@ $search-input-border-width: 3px;
     }
 
     .active-search .fixed.compact .nav-full-width + .search-container, .fixed.compact .nav-full-width + .search-container.active {
-        opacity: 0.9;
+        opacity: 1;
         top: 35px;
     }
 }
@@ -530,7 +528,7 @@ $search-input-border-width: 3px;
     }
 
     .active-search .fixed.compact .nav-full-width + .search-container, .fixed.compact .nav-full-width + .search-container.active {
-        opacity: 0.9;
+        opacity: 1;
         top: 32px;
     }
 
@@ -543,90 +541,90 @@ GOOGLE CUSTOM SEARCH CUSTOMIZATION OVERRIDES
 /source/scss/cagov/search.scss
 ----------------------------------------- */
 
-    .gsc-control-searchbox-only {
-        form.gsc-search-box {
-            margin-bottom: 0;
-        }
+.gsc-control-searchbox-only {
+    form.gsc-search-box {
+        margin-bottom: 0;
+    }
 
-        table.gsc-search-box {
-            margin-bottom: 0;
+    table.gsc-search-box {
+        margin-bottom: 0;
 
-            td.gsc-input {
-                padding-right: 0 !important;
-                width: 100% !important;
-            }
-        }
-
-
-        .gsc-input-box {
-            border: none !important;
-            background: transparent !important;
-            height: 100%;
-        }
-
-        input.gsc-input {
-            background-color: rgba(255, 255, 255, 0.8);
-            border-radius: 0;
-            border: 3px solid transparent;
-            transition: border 0.4s;
-            outline: none;
-            font-size: 1.1rem;
-            height: 55px !important;
-            padding: 14px !important;
-            opacity: 0.8 !important;
-            width: 100%;
-            background-position-x: 7px !important;
-        }
-
-        input.gsc-search-button, button.gsc-search-button {
-            opacity: 0;
-            width: 55px;
-            height: 51px;
-            position: absolute;
-            right: 2px;
-            top: 2px;
-            z-index: 55;
-        }
-
-        td.gsc-clear-button {
-            width: 1px !important;
-            margin-right: 0 !important;
-            margin-left: 0 !important;
+        td.gsc-input {
             padding-right: 0 !important;
-            padding-left: 0 !important;
-            position: relative;
-        }
-
-        td.gsc-search-button {
-            width: 0px !important;
-            margin-right: 0 !important;
-            margin-left: 0 !important;
-            padding-right: 0 !important;
-            padding-left: 0 !important;
-            position: relative;
-        }
-
-        div.gsc-clear-button {
-            padding-left: 0 !important;
-            display: block !important;
-            background-image: none !important;
-            margin-left: 0;
-            margin-right: 0;
-            width: 40px;
-            display: block !important;
-
-            &:before {
-                content: '\4d';
-                font-family: cagov;
-                font-size: 2rem;
-                width: 100%;
-                color: #666;
-                display: block;
-                margin-top: 12px;
-                margin-left: 2px;
-            }
+            width: 100% !important;
         }
     }
+
+
+    .gsc-input-box {
+        border: none !important;
+        background: transparent !important;
+        height: 100%;
+    }
+
+    input.gsc-input {
+        background-color: rgba(255, 255, 255, 1);
+        border-radius: 0;
+        border: 3px solid transparent;
+        transition: border 0.4s;
+        outline: none;
+        font-size: 1.1rem;
+        height: 55px !important;
+        padding: 14px !important;
+        opacity: 1 !important;
+        width: 100%;
+        background-position-x: 7px !important;
+    }
+
+    input.gsc-search-button, button.gsc-search-button {
+        opacity: 0;
+        width: 55px;
+        height: 51px;
+        position: absolute;
+        right: 2px;
+        top: 2px;
+        z-index: 55;
+    }
+
+    td.gsc-clear-button {
+        width: 1px !important;
+        margin-right: 0 !important;
+        margin-left: 0 !important;
+        padding-right: 0 !important;
+        padding-left: 0 !important;
+        position: relative;
+    }
+
+    td.gsc-search-button {
+        width: 0px !important;
+        margin-right: 0 !important;
+        margin-left: 0 !important;
+        padding-right: 0 !important;
+        padding-left: 0 !important;
+        position: relative;
+    }
+
+    div.gsc-clear-button {
+        padding-left: 0 !important;
+        display: block !important;
+        background-image: none !important;
+        margin-left: 0;
+        margin-right: 0;
+        width: 40px;
+        display: block !important;
+
+        &:before {
+            content: '\4d';
+            font-family: cagov;
+            font-size: 2rem;
+            width: 100%;
+            color: $gray-lighter;
+            display: block;
+            margin-top: 12px;
+            margin-left: 2px;
+        }
+    }
+}
 
     .search-icon {
         font-size: 2.4rem;
@@ -638,22 +636,22 @@ GOOGLE CUSTOM SEARCH CUSTOMIZATION OVERRIDES
         right: 49px;
     }
 
-    .search-container.active {
-        div.gsc-clear-button {
-            width: 40px;
+.search-container.active {
+    div.gsc-clear-button {
+        width: 40px;
 
-            &:before {
-                content: '\4d';
-                font-family: cagov;
-                font-size: 2rem;
-                width: 100%;
-                color: #666;
-                display: block;
-                margin-top: 12px;
-                margin-left: 2px;
-            }
+        &:before {
+            content: '\4d';
+            font-family: cagov;
+            font-size: 2rem;
+            width: 100%;
+            color: $gray-lighter;
+            display: block;
+            margin-top: 12px;
+            margin-left: 2px;
         }
     }
+}
 
     .featured-search {
         div.gsc-clear-button {

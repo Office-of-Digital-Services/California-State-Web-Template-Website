@@ -12,14 +12,14 @@
 
     .submit-container {
         button {
-            color:$mobile-controls;
+            color: $mobile-controls;
             border-color: $text-field-color;
         }
     }
 
-    &:hover, &:focus, &.active  {
+    &:hover, &:focus, &.active {
         .search-textfield {
-            background-color:#fff;
+            background-color: #fff;
         }
 
         .submit-container button {
@@ -27,8 +27,8 @@
         }
     }
 
-    &.active  {
-        background: $expanded-background-color;
+    &.active {
+        @include rgba (#000, .7);
 
         .submit-container button {
             border-color: darken($gray-lighter, 10%);
