@@ -73,7 +73,7 @@ Based on Twitter Bootstrap
                     <div class="group">
                         <div class="quarter text-center">
                             <img src="/sample/images/logo-dmv.png" class="img-responsive hidden-xs" alt="Department of Motor Vehicles">
-                            
+
                             <!-- IF AGENCY LOGO NOT AVAILABLE, FALLBACK TO SEAL OF CALIFORNIA -->
                             <!-- <img src="/images/template2014/seal-of-california.png" class="img-responsive m-b" alt="Department of Motor Vehicles"> -->
                         </div>
@@ -81,14 +81,14 @@ Based on Twitter Bootstrap
                             <h1 class="text-accent-p1 m-t-0">Department of Motor Vehicles  (DMV)</h1>
                             <!--  <p class="lead">Transportation</p> -->
                             <p>Donec ullamcorper nulla non metus auctor fringilla. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam porta sem malesuada magna mollis euismod. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.</p>
-                            
+
                             <div class="btn-row p-t">
                                 <a href="" class="btn btn-sm btn-outline-light btn-hover rounded-0"><span class="ca-gov-icon-computer"></span> Website</a>
                                 <a href="" class="btn btn-sm btn-outline-light btn-hover rounded-0"><span class="ca-gov-icon-location"></span> Locations Near You</a>
                                 <a href="" class="btn btn-sm btn-outline-light btn-hover rounded-0"><span class="ca-gov-icon-contact-us"></span> Contact</a>
                                 <a href="" class="btn btn-sm btn-outline-light btn-hover rounded-0"><span class="ca-gov-icon-chat"></span> Live Chat</a>
                             </div>
-                            
+
                             <div class="location contact p-t" itemscope itemtype="http://schema.org/Organization">
                                 <meta itemprop="name" content="Organization Name Here">
                                 <div class="contact">
@@ -99,39 +99,37 @@ Based on Twitter Bootstrap
                                     </p>
                                 </div>
                             </div>
-                            
+
                             <ul class="list-inline list-unstyled">
                                 <li class="list-inline-item"><a href=""><span class="ca-gov-icon-twitter"><span class="sr-only">Twitter</span></span></a></li>
                                 <li class="list-inline-item"><a href=""><span class="ca-gov-icon-facebook"><span class="sr-only">Facebook</span></span></a></li>
                                 <li class="list-inline-item"><a href=""><span class="ca-gov-icon-google-plus"><span class="sr-only">Google+</span></span></a></li>
                             </ul>
                         </div>
-                                
+
                         <div class="quarter">
                             <!-- Embeded Youtube Video -->
                             <div class="video-player" data-sly-test="${!properties.lightbox}">
                                 <iframe title="DMV Youtube video" class="youtube-player" src="https://www.youtube.com/embed/V3Z9ugTj4-o" frameborder="0" allowfullscreen></iframe>
-                                
+
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
             <!-- End Section -->
-            
             <!--#include virtual="/ssi/section-service-group.html" -->
-           
-            
+
+
             <div class="section section-understated">
                 <div class="container">
                     <!--#include virtual="/ssi/section-service-advertisement.html" -->
                 </div>
             </div>
             <!-- End Section -->
-                
-            <!--#include virtual="/ssi/section-data-visualizations.html" -->
+            <!--#include virtual="/ssi/section-counter-pie-charts.html" -->
             <!-- End Section -->
-            
+
 
             <div class="section section-primary">
                 <div class="parallax-bg" style="background-image: url(&quot;images/background.jpg&quot;); height: 607.1px; transform: translate(0px, 207.545px);"></div>
@@ -156,7 +154,81 @@ Based on Twitter Bootstrap
 
   <!--#include virtual="/ssi/scripts.html" -->
   
+    <script>
+    /* Number counter inside of the circle pie chart */
+    // Animating the circles only when visible
+    $.fn.isInViewport = function () {
+        var elementTop = $(this).offset().top;
+        var elementBottom = elementTop + $(this).outerHeight();
+        var viewportTop = $(window).scrollTop();
+        var viewportBottom = viewportTop + $(window).height();
+        return elementBottom > viewportTop && elementTop < viewportBottom;
+    };
 
+    circlesCreated = false;
+
+    $(window).on('scroll', function () {
+        if (!circlesCreated && $("#show-on-scroll").isInViewport()) {
+            circlesCreated = true;
+            createCircles();
+        }
+    });
+
+    function createCircles() {
+        //isolate this circles code out of fuction if you want circles animation to start right away
+        var myCircle1 = Circles.create({
+            id: 'circle1', radius: 80,
+            radius: 80,
+            value: 87,
+            maxValue: 100,
+            width: 8,
+            text: function (value) { return value + '%'; },
+            colors: ['#363636', '#72c02c'],
+            duration: 2000,
+            wrpClass: 'circles-wrp',
+            textClass: 'circles-text',
+            valueStrokeClass: 'circles-valueStroke',
+            maxValueStrokeClass: 'circles-maxValueStroke',
+            styleWrapper: true,
+            styleText: true
+        });
+
+        var myCircle2 = Circles.create({
+            id: 'circle2', radius: 80,
+            radius: 80,
+            value: 74,
+            maxValue: 100,
+            width: 8,
+            text: function (value) { return value + '%'; },
+            colors: ['#363636', '#e81c62'],
+            duration: 2000,
+            wrpClass: 'circles-wrp',
+            textClass: 'circles-text',
+            valueStrokeClass: 'circles-valueStroke',
+            maxValueStrokeClass: 'circles-maxValueStroke',
+            styleWrapper: true,
+            styleText: true
+        });
+
+        var myCircle3 = Circles.create({
+            id: 'circle3', radius: 80,
+            radius: 80,
+            value: 65,
+            maxValue: 100,
+            width: 8,
+            text: function (value) { return value + '%'; },
+            colors: ['#363636', '#00bed6'],
+            duration: 2000,
+            wrpClass: 'circles-wrp',
+            textClass: 'circles-text',
+            valueStrokeClass: 'circles-valueStroke',
+            maxValueStrokeClass: 'circles-maxValueStroke',
+            styleWrapper: true,
+            styleText: true
+        });
+        // End circles
+    }
+    </script>
 
 </body>
 

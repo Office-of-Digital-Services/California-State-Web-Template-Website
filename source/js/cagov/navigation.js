@@ -1027,7 +1027,7 @@ $(document).ready(function () {
             init: function () {
                 var settings = this.settings,
                     nav = $(this.element),
-                    menu = nav.children().first(),
+                    menu = $("#nav_list"), // Main navigation <ul> ID.
                     topnavitems = menu.children();
                 this.start(settings, nav, menu, topnavitems);
             },

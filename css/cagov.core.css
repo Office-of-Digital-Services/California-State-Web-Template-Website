@@ -1,5 +1,5 @@
 /**
- * CA State Template v5.5 -  @version v5.5.0 -  11/14/2018 
+ * CA State Template v5.5 -  @version v5.5.0 -  11/21/2018 
   STYLES COMPILED FROM SOURCE (SCSS) DO NOT MODIFY */
 /* -----------------------------------------
    BOOTSTRAP v4.1.3 - /source/scss/bootstrap/ 
@@ -9514,7 +9514,7 @@ code {
   .main-content > .section,
   .two-column .main-content > .section,
   .global-header {
-    width: 576px;
+    width: 540px;
   }
 }
 
@@ -9522,7 +9522,7 @@ code {
   .main-content > .section,
   .two-column .main-content > .section,
   .global-header {
-    width: 768px;
+    width: 720px;
   }
 }
 
@@ -9530,7 +9530,7 @@ code {
   .main-content > .section,
   .two-column .main-content > .section,
   .global-header {
-    width: 992px;
+    width: 960px;
   }
 }
 
@@ -9583,19 +9583,19 @@ code {
 
 @media (min-width: 576px) {
   .branding {
-    width: 576px;
+    width: 540px;
   }
 }
 
 @media (min-width: 768px) {
   .branding {
-    width: 768px;
+    width: 720px;
   }
 }
 
 @media (min-width: 992px) {
   .branding {
-    width: 992px;
+    width: 960px;
   }
 }
 
@@ -9823,9 +9823,6 @@ code {
   }
   .fixed.compact .header-organization-banner a {
     max-width: 225px;
-  }
-  .fixed.compact .header-organization-banner a img {
-    max-height: 50px;
   }
   .fixed.compact .top-level-nav {
     min-height: 55px;
@@ -10701,19 +10698,19 @@ table.gsc-search-box td {
 
 @media (min-width: 576px) {
   .main-navigation {
-    width: 576px;
+    width: 540px;
   }
 }
 
 @media (min-width: 768px) {
   .main-navigation {
-    width: 768px;
+    width: 720px;
   }
 }
 
 @media (min-width: 992px) {
   .main-navigation {
-    width: 992px;
+    width: 960px;
   }
 }
 
@@ -10790,7 +10787,7 @@ table.gsc-search-box td {
 @media (max-width: 767px) {
   .first-level-link {
     display: block;
-    padding: 10px 0 10px 5px;
+    padding: 20px 0 20px 15px;
   }
   .first-level-link span[class^="ca-gov-icon"] {
     font-size: 24px;
@@ -10805,7 +10802,7 @@ table.gsc-search-box td {
   .main-navigation {
     z-index: 25;
     min-height: 85px;
-    padding-left: 300px;
+    padding-left: 350px;
   }
   .top-level-nav {
     display: table;
@@ -10881,13 +10878,13 @@ table.gsc-search-box td {
 
 @media (min-width: 992px) {
   .main-navigation {
-    padding-left: 300px;
+    padding-left: 350px;
   }
 }
 
 @media (max-width: 992px) and (min-width: 768px) {
   .main-navigation {
-    padding-left: 225px;
+    padding-left: 250px;
   }
   .main-navigation .top-level-nav .nav-item {
     font-size: 14.4px;
@@ -10897,7 +10894,7 @@ table.gsc-search-box td {
 
 @media (min-width: 1200px) {
   .main-navigation {
-    padding-left: 300px;
+    padding-left: 350px;
   }
 }
 
@@ -11077,7 +11074,7 @@ table.gsc-search-box td {
 
 @media (max-width: 767px) {
   .nav-full-width .main-navigation .first-level-link {
-    padding: 16px 0 16px 5px;
+    padding: 20px 0 20px 15px;
   }
 }
 
@@ -11473,6 +11470,67 @@ a.second-level-link [class^="ca-gov-icon-"] {
   padding-right: 10px;
 }
 
+/* Flex Sub Nav */
+@media (min-width: 768px) {
+  .second-level-nav.flex {
+    display: flex;
+    text-align: center;
+    padding: 0 40px 0 40px;
+  }
+  .second-level-nav.flex a {
+    flex: 1;
+    border: none;
+    padding: 20px 15px 15px 15px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    width: 100%;
+    height: auto;
+  }
+  .second-level-nav.flex a:hover {
+    background: #fff;
+  }
+  .second-level-nav.flex .sub-nav-link {
+    display: block;
+    margin: 0;
+  }
+  .second-level-nav.flex.with-border a {
+    border-top: 2px dotted #ccc;
+    border-right: 2px dotted #ccc;
+    border-bottom: 2px dotted #ccc;
+  }
+  .second-level-nav.flex.with-border a:first-child {
+    border-left: 2px dotted #ccc;
+  }
+}
+
+@media (max-width: 767px) {
+  .second-level-nav.flex {
+    display: block;
+    text-align: left;
+    padding: 0;
+  }
+  .second-level-nav.flex a {
+    display: block;
+    border-bottom: 1px solid #ccc;
+    padding: 0;
+    margin-top: 0;
+    margin-bottom: 0;
+    width: 100%;
+    height: auto;
+  }
+  .second-level-nav.flex a:hover {
+    background: #fff;
+  }
+  .second-level-nav.flex .sub-nav-link {
+    display: inline-block;
+    margin: 0 !important;
+  }
+  .second-level-nav.flex .image-icon {
+    width: 4rem;
+    margin-bottom: 5px !important;
+  }
+}
+
 /* -----------------------------------------
    MEDIA IN MAIN NAVIGATION
    /source/scss/cagov/nav-media.scss
@@ -11555,6 +11613,7 @@ a.second-level-link [class^="ca-gov-icon-"] {
   top: 0;
   width: 100%;
   height: 100%;
+  min-height: 80px;
   padding-right: 0;
   margin-right: auto;
   margin-left: auto;
@@ -11564,19 +11623,19 @@ a.second-level-link [class^="ca-gov-icon-"] {
 
 @media (min-width: 576px) {
   .mobile-controls {
-    width: 576px;
+    width: 540px;
   }
 }
 
 @media (min-width: 768px) {
   .mobile-controls {
-    width: 768px;
+    width: 720px;
   }
 }
 
 @media (min-width: 992px) {
   .mobile-controls {
-    width: 992px;
+    width: 960px;
   }
 }
 
@@ -11626,13 +11685,13 @@ a.second-level-link [class^="ca-gov-icon-"] {
   cursor: pointer;
   padding-left: 7px;
   border: none;
-  line-height: 53px;
+  height: 100%;
 }
 
 .mobile-control.toggle-sub-nav:active .rotate {
-  position: relative;
-  top: 0;
-  left: 0;
+  position: absolute;
+  top: 20px;
+  left: 30px;
 }
 
 .main-nav-icons {
@@ -11721,6 +11780,9 @@ a.second-level-link [class^="ca-gov-icon-"] {
   -moz-transition: all .2s ease !important;
   -webkit-transition: all .2s ease !important;
   transition: all .2s ease !important;
+  position: absolute;
+  top: 20px;
+  left: 30px;
 }
 
 .rotate.down {
@@ -13113,6 +13175,7 @@ body {
   top: 50%;
   margin-left: -40px;
   margin-top: -40px;
+  background: url("owl.video.play.png") no-repeat;
   cursor: pointer;
   z-index: 1;
   -webkit-backface-visibility: hidden;

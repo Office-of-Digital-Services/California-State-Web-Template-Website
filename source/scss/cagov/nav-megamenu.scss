@@ -407,3 +407,84 @@ a.second-level-link {
 .media-left {
 	padding-right: 10px;
 	}
+
+/* Flex Sub Nav */
+// Flex subnav desktop view
+
+@media (min-width: $screen-sm-min) {
+
+    .second-level-nav.flex {
+        display: flex;
+        text-align: center;
+        padding: 0 40px 0 40px;
+
+        a {
+            flex: 1;
+            border: none;
+            padding: 20px 15px 15px 15px;
+            margin-top: 15px;
+            margin-bottom: 15px;
+            width: 100%;
+            height: auto;
+
+            &:hover {
+                background: #fff;
+            }
+        }
+
+        .sub-nav-link {
+            display: block;
+            margin: 0;
+        }
+
+
+
+    }
+
+    .second-level-nav.flex.with-border a {
+        border-top: 2px dotted #ccc;
+        border-right: 2px dotted #ccc;
+        border-bottom: 2px dotted #ccc;
+
+        &:first-child {
+            border-left: 2px dotted #ccc;
+        }
+    }
+
+}
+
+
+
+// Flex subnav in mobile view
+@media (max-width: $screen-xs-max) {
+
+    .second-level-nav.flex {
+        display: block;
+        text-align: left;
+        padding: 0;
+
+        a {
+            display: block;
+            border-bottom: 1px solid #ccc;
+            padding: 0;
+            margin-top: 0;
+            margin-bottom: 0;
+            width: 100%;
+            height: auto;
+
+            &:hover {
+                background: #fff;
+            }
+        }
+
+        .sub-nav-link {
+            display: inline-block;
+            margin: 0 !important;
+        }
+
+        .image-icon {
+            width: 4rem;
+            margin-bottom: 5px !important;
+        }
+    }
+}

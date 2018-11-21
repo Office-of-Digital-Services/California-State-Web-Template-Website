@@ -241,26 +241,26 @@
 }
 
 @mixin container {
-	margin-right: auto;
-	margin-left: auto;
-	padding-left: 15px;
-	padding-right: 15px;
-	
-	@media (min-width: $screen-xs-min) {
-    width: $screen-xs;
-	}
-	
-	@media (min-width: $screen-sm-min) {
-    width: $screen-sm;
-	}
+    margin-right: auto;
+    margin-left: auto;
+    padding-left: 15px;
+    padding-right: 15px;
 
-	@media (min-width: $screen-md-min) {
-		width: $screen-md;
-	}
-	
-	@media (min-width: $screen-lg-min) {
-		width: $screen-lg;
-	}
+    @media (min-width: $screen-xs-min) {
+        width: $breakpoint-xm;
+    }
+
+    @media (min-width: $screen-sm-min) {
+        width: $breakpoint-sm;
+    }
+
+    @media (min-width: $screen-md-min) {
+        width: $breakpoint-md;
+    }
+
+    @media (min-width: $screen-lg-min) {
+        width: $breakpoint-lg;
+    }
 }
 	
 @mixin text-muted {

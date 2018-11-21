@@ -82,7 +82,6 @@ var jssrc = [
     'source/js/cagov/geo.js',
     'source/js/cagov/ask-group.js',
     'source/js/cagov/panes.js',
-    'source/js/cagov/circles.js',
     'source/js/cagov/sourcecode.js',
 ];
 
