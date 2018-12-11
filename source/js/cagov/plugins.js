@@ -1,12 +1,6 @@
 /* -----------------------------------------
    INIT THIRD PARTY PLUGINS - /source/js/cagov/plugins.js
 ----------------------------------------- */
-
-//requirejs.config({
-//    //By default load any module IDs from js/lib
-//    baseUrl: '/js/libs'
-//});
-
 $(document).ready(function () {
 
     // https://github.com/jsliang/eqHeight.coffee

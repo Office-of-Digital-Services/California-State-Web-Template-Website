@@ -85,7 +85,6 @@ var jssrc = [
     'source/js/cagov/animations.js',
     'source/js/cagov/more.js',
     'source/js/cagov/high-contrast.js',
-    'source/js/cagov/geo.js',
     'source/js/cagov/ask-group.js',
     'source/js/cagov/panes.js',
     'source/js/cagov/sourcecode.js',
