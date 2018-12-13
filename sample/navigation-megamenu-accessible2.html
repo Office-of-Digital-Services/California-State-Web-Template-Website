@@ -6,39 +6,38 @@
 <!--[if (gt IE 9)]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
 
 
-<head>
-<!-- 
-California State Template
-Version 5.0.2
- 
-Based on Twitter Bootstrap
--->
-<meta charset="utf-8">
+                         <head>
+                             <!--
+    California State Template
+    Version 5.0.3
 
-<title>Megamenu Navigation</title>
+    Based on Twitter Bootstrap
+    -->
+                             <meta charset="utf-8">
 
-<meta name="Author" content="State of California" />
-<meta name="Description" content="State of California" />
-<meta name="Keywords" content="California, government" />
+                             <title>Megamenu Navigation</title>
+
+                             <meta name="Author" content="State of California" />
+                             <meta name="Description" content="State of California" />
+                             <meta name="Keywords" content="California, government" />
 
 
-<!--HEAD INCLUDE-->
-
-    <!-- head content, for all pages -->
-    <!-- Use highest compatibility mode -->
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <!-- http://t.co/dKP3o1e -->
-    <meta name="HandheldFriendly" content="True">
-    <!-- for Blackberry, AvantGo -->
-    <meta name="MobileOptimized" content="320">
-    <!-- for Windows mobile -->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
-    <!-- Google Fonts -->
-    <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700' rel='stylesheet' type='text/css'>
-    <!-- For all browsers -->
-    <link rel="stylesheet" href="/css/cagov.core.css">
-    <script src="/js/search.js"></script>
-    <!--
+                             <!--HEAD INCLUDE-->
+                             <!-- head content, for all pages -->
+                             <!-- Use highest compatibility mode -->
+                             <meta http-equiv="X-UA-Compatible" content="IE=edge">
+                             <!-- http://t.co/dKP3o1e -->
+                             <meta name="HandheldFriendly" content="True">
+                             <!-- for Blackberry, AvantGo -->
+                             <meta name="MobileOptimized" content="320">
+                             <!-- for Windows mobile -->
+                             <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
+                             <!-- Google Fonts -->
+                             <link href="https://fonts.googleapis.com/css?family=Merriweather|Source+Sans+Pro" rel="stylesheet">
+                             <!-- For all browsers -->
+                             <link rel="stylesheet" href="/css/cagov.core.css">
+                             <script src="/js/search.js"></script>
+                             <!--
     Step 3
     Select a color scheme:
 
@@ -48,488 +47,344 @@ Based on Twitter Bootstrap
     <link rel="stylesheet" href="/css/colorscheme-santabarbara.css">
     <link rel="stylesheet" href="/css/colorscheme-sierra.css">
     -->
-    <link rel="stylesheet" href="/css/colorscheme-oceanside.css">
-    <!-- selectivizr.com, emulates CSS3 pseudo-classes and attribute selectors in Internet Explorer 6-8 -->
-    <!--[if (lt IE 9) & (!IEMobile)]>
+                             <link rel="stylesheet" href="/css/colorscheme-oceanside.css">
+                             <!-- selectivizr.com, emulates CSS3 pseudo-classes and attribute selectors in Internet Explorer 6-8 -->
+                             <!--[if (lt IE 9) & (!IEMobile)]>
     <script src="/js/libs/selectivizr-min.js"></script>
     <![endif]-->
-    <!-- modernizr.com, feature detection -->
-    <script src="/js/libs/modernizr-2.0.6.min.js"></script>
-    <script src="/js/libs/modernizr-extra.min.js"></script>
+                             <!-- modernizr.com, feature detection -->
+                             <script src="/js/libs/modernizr-3.6.0.min.js"></script>
 
-    <!-- Load jQuery from CDN with fallback to local copy -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js" type="text/javascript"></script>
-    <script>
-    //Fall back to local copy if no jquery found
-    if (typeof jQuery == 'undefined') {
-        document.write(unescape("%3Cscript src='/js/libs/jquery-1.12.4.min.js' type='text/javascript'%3E%3C/script%3E"));
-    }
-    </script>
+                             <!-- Load jQuery from CDN with fallback to local copy -->
+                             <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js" type="text/javascript"></script>
 
-    <!-- For iPad 3-->
-    <link rel="apple-touch-icon" sizes="144x144" href="/images/template2014/apple-touch-icon-144x144.png">
-    <!-- For iPhone 4 -->
-    <link rel="apple-touch-icon" sizes="114x114" href="/images/template2014/apple-touch-icon-114x114.png">
-    <!-- For iPad 1-->
-    <link rel="apple-touch-icon" sizes="72x72" href="/images/template2014/apple-touch-icon-72x72.png">
-    <!-- For iPhone 3G, iPod Touch and Android -->
-    <link rel="apple-touch-icon" href="/images/template2014/apple-touch-icon-57x57.png">
-    <!-- For Nokia -->
-    <link rel="shortcut icon" href="/images/template2014/apple-touch-icon-57x57.png">
-    <!-- For everything else -->
-    <link rel="shortcut icon" href="/favicon.ico">
-    <!-- Activate ClearType for Mobile IE -->
-    <!--[if IE]>
+
+                             <script>
+                                 //Fall back to local copy if no jquery found
+                                 if (typeof jQuery == 'undefined') {
+                                     document.write(unescape("%3Cscript src='/js/libs/jquery-1.12.4.min.js' type='text/javascript'%3E%3C/script%3E"));
+                                 }
+                             </script>
+
+                             <!-- Plotly JS -->
+                             <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+                             <!-- Circles JS -->
+                             <script src="https://cdnjs.cloudflare.com/ajax/libs/circles/0.0.6/circles.min.js"></script>
+                             
+                             
+                             
+                             <!-- For iPad 3-->
+                             <link rel="apple-touch-icon" sizes="144x144" href="/images/template2014/apple-touch-icon-144x144.png">
+                             <!-- For iPhone 4 -->
+                             <link rel="apple-touch-icon" sizes="114x114" href="/images/template2014/apple-touch-icon-114x114.png">
+                             <!-- For iPad 1-->
+                             <link rel="apple-touch-icon" sizes="72x72" href="/images/template2014/apple-touch-icon-72x72.png">
+                             <!-- For iPhone 3G, iPod Touch and Android -->
+                             <link rel="apple-touch-icon" href="/images/template2014/apple-touch-icon-57x57.png">
+                             <!-- For Nokia -->
+                             <link rel="shortcut icon" href="/images/template2014/apple-touch-icon-57x57.png">
+                             <!-- For everything else -->
+                             <link rel="shortcut icon" href="/favicon.ico">
+                             <!-- Activate ClearType for Mobile IE -->
+                             <!--[if IE]>
     <meta http-equiv="cleartype" content="on">
     <![endif]-->
-    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!--[if lt IE 9]>
+                             <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+                             <!--[if lt IE 9]>
       <script src="/js/libs/html5shiv.min.js"></script>
       <script src="/js/libs/respond.min.js"></script>
     <![endif]-->
-    <!-- Include Google Analytics -->
-    <!-- virtual="/ssi/analytics.html" -->
-
-
-<!--END HEAD INCLUDE-->
-
-
-
-
-<style>
-
-    .branding .header-organization-banner {
-        transition:all .3s;
-    }
-
-    .main-navigation ul {
-        transition: all .3s;
-
-    }
-
-
-/*.jumptarget::before {
-  content:"";
-  display:block !important;
-  height:170px !important;
-  margin:-170px 0 0 !important; 
-}*/
-
-</style>
-</head>
-
-<body class="two-column">
-
-<header role="banner" id="header" class="global-header fixed">
-    <div id="skip-to-content"><a href="#main-content">Skip to Main Content</a></div>
-
-    <!-- Include Utility Header -->
-    <div class="utility-header">
-        <div class="container">
-            <div class="group">
-                <div class="half">
-
-                    <ul class="utility-links social-media-links">
-                        <li><div class="header-cagov-logo"><a href="/"><img src="/images/Ca-Gov-Logo-Gold.svg" alt="CA.gov" /></a></div></li>
-                        <li><a href="/"><span class="ca-gov-icon-home" aria-hidden="true"></span><span class="sr-only">Home</span></a></li>
-
-
-                        <li><a class="ca-gov-icon-facebook" title="Share via Facebook" tabindex="0"></a></li>
-                        <li><a class="ca-gov-icon-twitter" title="Share via Twitter" tabindex="0"></a></li>
-                        <li><a class="ca-gov-icon-google-plus" title="Share via Google+" tabindex="0"></a></li>
-                        <li><a class="ca-gov-icon-email" title="Share via email" tabindex="0"></a></li>
-                    </ul>
-                </div>
-                <div class="half settings-links">
-                    <ul class="utility-links ">
-                        <li><a href="">Contact Us</a></li>
-                        <li><a role="button" data-toggle="collapse" href="#siteSettings" aria-expanded="false" aria-controls="siteSettings"><span class="ca-gov-icon-gear" aria-hidden="true"></span> Settings</a></li>
-
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </div>
-    
-    	<!-- Settings Bar -->	
-    <div class="site-settings section section-standout collapse collapsed" role="alert" id="siteSettings">
-        <div class="container  p-y">
-            <button type="button" class="close" data-toggle="collapse" data-target="#siteSettings" aria-expanded="false" aria-controls="siteSettings" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-
-            <div class="btn-group btn-group-justified-sm" role="group" aria-label="contrastMode">
-                <div class="btn-group"><button type="button" class="btn btn-standout disableHighContrastMode">Default</button></div>
-                <div class="btn-group"><button type="button" class="btn btn-standout enableHighContrastMode">High Contrast</button></div>
-            </div>
-
-            <div class="btn-group" role="group" aria-label="textSizeMode">
-                <div class="btn-group"><button type="button" class="btn btn-standout resetTextSize">Reset</button></div>
-                <div class="btn-group"><button type="button" class="btn btn-standout increaseTextSize"><span class="hidden-xs">Increase Font Size</span><span class="visible-xs">Font <small class="ca-gov-icon-plus-line"></small></span></button></div>
-                <div class="btn-group"><button type="button" class="btn btn-standout decreaseTextSize"><span class="hidden-xs">Decrease Font Size</span><span class="visible-xs">Font <small class="ca-gov-icon-minus-line"></small></span></button></div>
-            </div>
-
-            <!-- <button type="button" class="btn btn-primary clipboard-activeonhover">Save links on hover</button> -->
-
-        </div>
-    </div>
-
-		<!-- Include Branding -->
-    <!-- header branding -->
-    <div class="branding">
-        <div class="header-organization-banner"><a href="/"><img src="/images/template-logo.png" alt="Organization Title" /></a></div>
-    </div>
-
-
-
-
-
-    <!-- Include Mobile Controls -->
-    <!-- mobile navigation controls -->
-    <div class="mobile-controls">
-
-        <button class="mobile-control toggle-menu" aria-expanded="false" aria-controls="navigation"><span class="ca-gov-icon-menu" aria-hidden="true"></span><span class="sr-only">Menu</span></button>
-        <span class="mobile-control-group mobile-header-icons">
-
-            <!-- Add more mobile controls here. These will be on the right side of the mobile page header section -->
-        </span>
-        <span class="mobile-control toggle-search"><span class="ca-gov-icon-search" aria-hidden="true"></span><span class="sr-only">Search</span></span>
-        <span class="mobile-control-group mobile-menu-icons">
-            <!-- Add more mobile controls here. These will be on the top right section of the expanded mobile menu -->
-        </span>
-    </div>
-
-
-
-
-    <div class="navigation-search">
-        <div id="head-search" class="search-container">
-            <!-- Include Search -->
-            <gcse:searchbox-only resultsUrl="/serp.html" enableAutoComplete="true"></gcse:searchbox-only>
-        </div>
-        
-        
-        <!--
-    Step 2
-    Select Navigation Type:
-
-    Options are: megadropdown dropdown singlelevel
-    -->
-
-        <nav id="navigation" class="main-navigation megadropdown auto-highlight">
-            <ul id="nav_list" class="top-level-nav">
-                <li class="home-link nav-item">
-                    <a href="/" class="first-level-link"><span id="nav_home_container" class="ca-gov-icon-home" aria-hidden="true"></span>Home</a>
-                </li>
-                <li class="nav-item">
-                    <a href="/sample/" class="first-level-link"><span class="ca-gov-icon-gears"></span>Examples</a>
-                    <div class="sub-nav">
-                        <div class="half">
-                            <ul class="second-level-nav">
-                                <li class="unit1">
-                                    <a href="/" class="second-level-link"><span class="ca-gov-icon-home" aria-hidden="true"></span>Link 1</a>
-                                </li>
-                                <li class="unit1">
-                                    <a href="/" class="second-level-link"><span class="ca-gov-icon-home" aria-hidden="true"></span>Link 2</a>
-                                </li>
-                                <li class="unit2">
-                                    <a href="/" class="second-level-link">
-                                        <span class="ca-gov-icon-home" aria-hidden="true"></span>Link 3
-                                        <div class="link-description">Lorem ipsum dolor sit amet consectetur adipisicing</div>
-                                    </a>
-                                </li>
-                                <li class="unit1">
-                                    <a href="/" class="second-level-link"><span class="ca-gov-icon-home" aria-hidden="true"></span>Link 4</a>
-                                </li>
-                                <li class="unit2">
-                                    <a href="/" class="second-level-link">
-                                        <span class="ca-gov-icon-home" aria-hidden="true"></span>Link 5
-                                        <div class="link-description">Lorem ipsum dolor sit amet consectetur adipisicing</div>
-                                    </a>
-                                </li>
-                                <li class="unit1">
-                                    <a href="/" class="second-level-link"><span class="ca-gov-icon-home" aria-hidden="true"></span>Link 6</a>
-                                </li>
-                            </ul>
-                        </div>
-
-                        <div class="half">
-                            <div class="nav-media">
-                                <div class="media unit2">
-                                    <div class="media-left">
-                                        <a href="#"><img class="media-object" src="/sample/images/70x70.gif" alt="..."></a>
-                                    </div>
-                                    <div class="media-body">
-                                        <div class="title"><a href="">Public profile</a></div>
-                                        <div class="subtitle">Subtitle</div>
-                                        <div class="teaser">Cras justo odio, dapibus ac facilisis in, egestas eget quam.</div>
-                                        <a href="" class="btn btn-default btn-xs pull-right">Read More</a>
-                                    </div>
-                                </div>
-
-                                <div class="media unit2">
-                                    <div class="media-left">
-                                        <a href="#"><img class="media-object" src="/sample/images/70x70.gif" alt="..."></a>
-                                    </div>
-                                    <div class="media-body">
-                                        <div class="title"><a href="">News Title</a></div>
-                                        <div class="subtitle">Subtitle</div>
-                                        <div class="teaser">Cras justo odio, dapibus ac facilisis in, egestas eget quam.</div>
-                                        <a href="" class="btn btn-default btn-xs pull-right">Read More</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </li>
-
-                <li class="nav-item">
-                    <a href="/" class="first-level-link"><span class="ca-gov-icon-info-bubble" aria-hidden="true"></span>About</a>
-                    <div class="sub-nav">
-                        <div class="half offset-half">
-                            <ul class="second-level-nav">
-                                <li class="unit1">
-                                    <a href="/" class="second-level-link"><span class="ca-gov-icon-home" aria-hidden="true"></span>Link 1</a>
-                                </li>
-                                <li class="unit1">
-                                    <a href="/" class="second-level-link"><span class="ca-gov-icon-home" aria-hidden="true"></span>Link 2</a>
-                                </li>
-                                <li class="unit2">
-                                    <a href="/" class="second-level-link">
-                                        <span class="ca-gov-icon-home" aria-hidden="true"></span>Link 3
-                                        <div class="link-description">Lorem ipsum dolor sit amet consectetur adipisicing</div>
-                                    </a>
-                                </li>
-                                <li class="unit1">
-                                    <a href="/" class="second-level-link"><span class="ca-gov-icon-home" aria-hidden="true"></span>Link 4</a>
-                                </li>
-                                <li class="unit2">
-                                    <a href="/" class="second-level-link">
-                                        <span class="ca-gov-icon-home" aria-hidden="true"></span>Link 5
-                                        <div class="link-description">Lorem ipsum dolor sit amet consectetur adipisicing</div>
-                                    </a>
-                                </li>
-                                <li class="unit1">
-                                    <a href="/" class="second-level-link"><span class="ca-gov-icon-home" aria-hidden="true"></span>Link 6</a>
-                                </li>
-                            </ul>
-                        </div>
-
-                        <div class="half with-image-left">
-                            <div class="nav-media" style="background:url('/sample/images/sample-nav-image2.jpg')"></div>
-                        </div>
-                    </div>
-                </li>
-
-                <!-- LEFT ALIGNED IMAGE -->
-                <li class="nav-item">
-                    <a href="/" class="first-level-link"><span class="ca-gov-icon-flowchart" aria-hidden="true"></span>Structure</a>
-                    <div class="sub-nav">
-                        <!-- Offset class needed to fix positioning issue caused when positioning the image -->
-                        <div class="three-quarters offset-quarter">
-                            <ul class="second-level-nav">
-                                <li class="unit1">
-                                    <a href="/" class="second-level-link"><span class="ca-gov-icon-home" aria-hidden="true"></span>Link 1</a>
-                                </li>
-                                <li class="unit1">
-                                    <a href="/" class="second-level-link"><span class="ca-gov-icon-home" aria-hidden="true"></span>Link 2</a>
-                                </li>
-                                <li class="unit2">
-                                    <a href="/" class="second-level-link">
-                                        <span class="ca-gov-icon-home" aria-hidden="true"></span>Link 3
-                                        <div class="link-description">Lorem ipsum dolor sit amet consectetur adipisicing</div>
-                                    </a>
-                                </li>
-                                <li class="unit1">
-                                    <a href="/" class="second-level-link"><span class="ca-gov-icon-home" aria-hidden="true"></span>Link 4</a>
-                                </li>
-                                <li class="unit2">
-                                    <a href="/" class="second-level-link">
-                                        <span class="ca-gov-icon-home" aria-hidden="true"></span>Link 5
-                                        <div class="link-description">Lorem ipsum dolor sit amet consectetur adipisicing</div>
-                                    </a>
-                                </li>
-                                <li class="unit1">
-                                    <a href="/" class="second-level-link"><span class="ca-gov-icon-home" aria-hidden="true"></span>Link 6</a>
-                                </li>
-                            </ul>
-                        </div>
-                        <div class="quarter with-image-left">
-                            <div class="nav-media" style="background:url('/sample/images/sample-nav-image2.jpg')"></div>
-                        </div>
-                    </div>
-                </li>
-
-                <li class="nav-item">
-                    <a href="/" class="first-level-link"><span class="ca-gov-icon-graduate" aria-hidden="true"></span>Instructions</a>
-                </li>
-                <li class="nav-item">
-                    <a href="/" class="first-level-link"><span class="ca-gov-icon-state" aria-hidden="true"></span>Webtools</a>
-                </li>
-
-                <li class="nav-item">
-                    <a href="/" class="first-level-link"><span class="ca-gov-icon-lightbulb" aria-hidden="true"></span>Contribute</a>
-                </li>
-                <li class="nav-item" id='nav-item-search'>
-                    <a href="javascript:;" class="first-level-link"><span class="ca-gov-icon-search" aria-hidden="true"></span>Search</a>
-                </li>
-            </ul>
-        </nav>
-
-
-    </div>
-    <div class="header-decoration"></div>
-</header>
-
-<div id="main-content" class="main-content">
-    <div class="section">
-        <main class="main-primary">
-            <ol class="breadcrumb">
-                <li><a href="../index.html">Home</a></li>
-                <li><a href="index.html">Examples</a></li>
-                <li class="active">Megamenu (State Template v4)</li>
-            </ol>
-            
-            <!-- Page Title-->
-            <h1 class="page-title et_pb_row">Anchor Demo</h1>
-
-
-
-
-            <div class="jumptarget" id="List">
-
-                <p><a href="#Overview">Overview of the California Regulatory Notice Register</a></p>
-                <p><a href="#Information">What type of information is in a Notice of Proposed Action?</a></p>
-                <p><a href="#Schedule">Notice Publication&nbsp;Schedule&nbsp;and Deadlines</a></p>
-                <p><a href="#Index">Notice Register Index</a></p>
-                <p><a href="#Subscribe">How to Subscribe to the Weekly Hard Copy Notice Register</a></p>
-
-            </div>
-                      
-
-            <div class="et_pb_text_inner"  id="Overview">
-
-                <p><strong>Overview of the California Regulatory Notice Register</strong></p>
-                <p>The California Regulatory Notice Register contains notices of proposed regulatory actions by state regulatory agencies to adopt, amend, or repeal regulations contained in the California Code of Regulations. A state agency must complete its rulemaking and submit the rulemaking file to OAL within one year of the date of publication of a Notice of Proposed Action (“Notice”) in the Notice Register. (Government Code Section 11346.4(b)).&nbsp; OAL provides online access to&nbsp;current and past issues of the&nbsp;<a href="http://odwpi.org/anchor-demo/California_Regulatory_Notice_Online/"><u>California Regulatory Notice Register online.</u></a></p>
-                <p><a href="#List">Back To List</a></p>
-
-            </div>
-                       
-
-            <div id="Information">
-
-                <p dir="ltr"><strong>What type of information is in a Notice of Proposed Action?</strong></p>
-                <p dir="ltr">The Notice of Proposed Action contains a variety of information about the nature of the proposed regulatory changes including various findings, determinations, statutory authority and the law(s) being implemented. The Notice of Proposed Action also contains procedural information, such as deadlines for submitting comments, scheduling of hearings (if any), and where copies of the Express Terms, Initial Statement of Reasons, and any other supporting information can be obtained (see discussion below). For non-major regulations, the results of the Economic Impact Assessment will be included in the Notice of Proposed Action. If the rulemaking is a major regulation, any comments provided by the Department of Finance, along with the agency’s responses, will be included in the Notice of Proposed Action.</p>
-                <p dir="ltr"><a name="Information"></a><a href="#footer">Bottom of page</a></p>
-            </div>
-                        
-                      
-            <div id="Schedule">
-                <div class="et_pb_ca_panel et_pb_module  et_pb_ca_panel_0 panel panel-standout">
-                    <div class="panel-heading"><h2><span class="ca-gov-icon-pushpin"></span> Notice Publication Schedule and Deadlines</h2></div>
-                    <div class="panel-body">
-                        <p>OAL publishes the Notice Register every Friday. To be published, a Notice must be received by OAL no later than 10 calendar days before the publication date. Section 5, Title 1, California Code of Regulations describes what an agency must submit with its Notice.</p>
-                        <p>The Notice for a rulemaking must be published at least 45 calendar days before the close of the public comment period and public hearing, if a hearing is scheduled (Government Code section 11346.4(a). The following is the Notice Register Publication Schedule which identifies the required deadline date for OAL to receive the Notice for publication in order to meet the desired date for the close of the public comment period and for the public hearing, if a hearing is scheduled:</p>
-                        <p><u><a href="https://www.oal.ca.gov/wp-content/uploads/sites/28/2017/05/NR-Schedule-2017-FINAL.pdf" onmousedown="_gaq.push([&#39;_trackEvent&#39;, &#39;Downloads&#39;, &#39;pdf&#39;, &#39;/wp-content/uploads/sites/28/2017/05/nr-schedule-2017-final.pdf&#39;, 0, 0]); _gaq.push([&#39;b._trackEvent&#39;, &#39;Downloads&#39;, &#39;pdf&#39;, &#39;/wp-content/uploads/sites/28/2017/05/nr-schedule-2017-final.pdf&#39;, 0, 0]);">2017 California Regulatory Notice Register Publication Schedule</a></u></p>
-                    </div>
-                </div> <!-- .et_pb_panel -->
-
-            </div>
-
-
-            <div class="et_pb_text_inner" id="Index">
-
-                <p><strong>Notice Register Index</strong></p>
-                <p>The&nbsp;<u><a href="http://oal.ca.gov/wp-content/uploads/sites/28/2016/08/NRI-09-18-2017.pdf" target="_blank" rel="noopener noreferrer" onmousedown="_gaq.push([&#39;_trackEvent&#39;, &#39;Downloads&#39;, &#39;pdf&#39;, &#39;/wp-content/uploads/sites/28/2016/08/nri-09-18-2017.pdf&#39;, 0, 0]); _gaq.push([&#39;b._trackEvent&#39;, &#39;Downloads&#39;, &#39;pdf&#39;, &#39;/wp-content/uploads/sites/28/2016/08/nri-09-18-2017.pdf&#39;, 0, 0]);">Notice Register Index</a></u>&nbsp;covers the past twelve months of notices&nbsp;of proposed actions published by state agencies and is sorted alphabetically&nbsp;by agency name. You can find the text of a notice of proposed action&nbsp;in the California Regulatory Notice Register, using the publication date or register number to locate the California Regulatory Notice Register in which that notice was published.</p>
-                <p><a href="#skip-to-content">Back to Top</a></p>
-
-            </div>
-
-
-            <div class="et_pb_text_inner" id="Subscribe">
-
-                <p><strong>How to Subscribe to the Weekly Hard Copy Notice Register</strong></p>
-                <p>An annual subscription to the California Regulatory Notice Register is available for purchase online from <a href="http://www.barclaysccr.com/" onmousedown="_gaq.push([&#39;_trackEvent&#39;, &#39;Outbound Links&#39;, &#39;Click&#39;, &#39;barclaysccr.com/&#39;, 0, 0]); _gaq.push([&#39;b._trackEvent&#39;, &#39;Outbound Links&#39;, &#39;Click&#39;, &#39;barclaysccr.com/&#39;, 0, 0]);"><u>Barclays</u></a>. You may also place an order by telephone at (800) 888-3600.</p>
-
-            </div>
-
-
-
-
-</main>
-        
-        <div class="main-secondary">
-
-            <label class="check">
-                <input class="hidden-up pos-abs top-0 left-0" name="radGroupBtn1_1" type="radio">
-                <span class="btn btn-lg btn-block bg-highlight--checked rounded-0">Greenland</span>
-            </label>
-
-            <label class="check">
-                <input class="hidden-up pos-abs top-0 left-0" name="radGroupBtn1_1" type="radio">
-                <span class="btn btn-lg btn-block bg-highlight--checked rounded-0">UK</span>
-            </label>
-
-
-        </div>
-    </div>
-</div>
-
-
-
-    <!-- Global Footer -->
-    <footer id="footer" class="global-footer">
-        <div class="container">
-            <div class="row">
-                <div class="three-quarters">
-                    <ul class="footer-links">
-                        <li><a href="#skip-to-content">Back to Top</a></li>
-                        <li><a href="/use.html">Conditions of Use</a></li>
-                        <li><a href="/privacy.html">Privacy Policy</a></li>
-                        <li><a href="/accessibility.html">Accessibility</a></li>
-                        <li><a href="/contact.html">Contact Us</a></li>
-                    </ul>
-                </div>
-                <div class="quarter text-right">
-                    <ul class="socialsharer-container">
-                        <li><a href="https://www.flickr.com/groups/californiagovernment"><span class="ca-gov-icon-flickr" aria-hidden="true"></span><span class="sr-only">Flickr</span></a></li>
-                        <li><a href="https://www.pinterest.com/cagovernment/"><span class="ca-gov-icon-pinterest" aria-hidden="true"></span><span class="sr-only">Pinterest</span></a></li>
-                        <li><a href="https://twitter.com/cagovernment"><span class="ca-gov-icon-twitter" aria-hidden="true"></span><span class="sr-only">Twitter</span></a></li>
-                        <li><a href="https://www.youtube.com/user/californiagovernment"><span class="ca-gov-icon-youtube" aria-hidden="true"></span><span class="sr-only">YouTube</span></a></li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-        <!-- Copyright Statement -->
-        <div class="copyright">
-            <div class="container">
-                Copyright &copy;
-                <script>document.write(new Date().getFullYear())</script> State of California
-            </div>
-        </div>
-    </footer>
-    <!-- Extra Decorative Content -->
-    <div class="decoration-last">&nbsp;</div>
-
-
-
-
-
-
-    <script src="../js/cagov.core.js"></script>
-    <script>
-
-        window.et_pb_smooth_scroll=function($target,$top_section,speed,easing){
-            var $window_width=$(window).width();
-            $("header").hasClass("fixed")&&$window_width>768?$menu_offset=$("#header").outerHeight()-1:$menu_offset=-1,
-            $("#Information").length&&$window_width>600&&($menu_offset+=$("#wpadminbar").outerHeight()),
-            $scroll_position=$top_section?0:$target.offset().top-$menu_offset,
-            void 0===easing&&(easing="swing");
-            if($scroll_position<220){ // scrollDistanceToMakeCompactHeader from cagov.core.js
-                $scroll_position-=36; // Height difference between normal and compact header
-            }
-            $("html, body").animate({scrollTop:$scroll_position},speed,easing);
-        },
-
-
-    </script>
-</body>
+                             <!-- Include Google Analytics -->
+                             <!-- virtual="/ssi/analytics.html" -->
+                             <!--END HEAD INCLUDE-->
+
+                      <style>
+                          /*html.high-contrast input[type="radio"]:checked + * i {
+                              background-color: #ffd600 !important;
+                          }*/
+
+
+
+                          html.high-contrast input[type="checkbox"]:checked + i,
+                          html.high-contrast input[type="radio"]:checked + i,
+                          html.high-contrast input[type="checkbox"]:checked + * i,
+                          html.high-contrast input[type="radio"]:checked + * i {
+                              color: #000 !important;
+                              background-color: #ffd600 !important;
+                              border-color: #ffd600;
+                          }
+
+                          html.high-contrast .bg-primary--checked.checked,
+                          html.high-contrast .checked .bg-primary--checked {
+                              background-color: #ffd600 !important;
+                          }
+
+
+                          html.high-contrast .check-icon-checkbox {
+                              color: #000 !important;
+                              border-color: #ffd600 !important;
+                          }
+
+                              html.high-contrast .check-icon-checkbox i {
+                                  color: #000 !important;
+                              }
+
+
+
+                          html.high-contrast .select {
+                              border: 1px solid #ffd600 !important;
+                          }
+
+                              html.high-contrast .select::after {
+                                  border-left: 1px solid #ffd600 !important;
+                                  background: #000 !important;
+                              }
+
+
+                          html.high-contrast .check {
+                              border: 1px solid #ffd600 !important;
+                          }
+                          /* primary Color */
+                          html.high-contrast input[type="checkbox"]:checked + .bg-primary--checked,
+                          html.high-contrast input[type="radio"]:checked + .bg-primary--checked,
+                          html.high-contrast input[type="checkbox"]:checked + * .bg-primary--checked,
+                          html.high-contrast input[type="radio"]:checked + * .bg-primary--checked {
+                              background-color: #ffd600 !important;
+                              color: #000 !important;
+                          }
+                          /* highlight Color */
+                          html.high-contrast input[type="checkbox"]:checked + .bg-highlight--checked,
+                          html.high-contrast input[type="radio"]:checked + .bg-highlight--checked,
+                          html.high-contrast input[type="checkbox"]:checked + * .bg-highlight--checked,
+                          html.high-contrast input[type="radio"]:checked + * .bg-highlight--checked {
+                              background-color: #ffd600 !important;
+                              color: #000 !important;
+                          }
+                          /* White Color */
+                          html.high-contrast input[type="checkbox"]:checked + .color-white--checked,
+                          html.high-contrast input[type="radio"]:checked + .color-white--checked,
+                          html.high-contrast input[type="checkbox"]:checked + * .color-white--checked,
+                          html.high-contrast input[type="radio"]:checked + * .color-white--checked {
+                              color: #000 !important;
+                          }
+
+                      </style>
+                         </head>
+
+                         <body>
+
+                             <header role="banner" id="header" class="global-header">
+                                 <div id="skip-to-content"><a href="#main-content">Skip to Main Content</a></div>
+                                 <div class="utility-header">
+                                     <div class="container">
+                                         <div class="group">
+                                             <div class="half">
+
+                                                 <ul class="utility-links social-media-links">
+                                                     <li><div class="header-cagov-logo"><a href="/"><img src="/images/Ca-Gov-Logo-Gold.svg" alt="CA.gov" /></a></div></li>
+                                                     <li><a href="/"><span class="ca-gov-icon-home" aria-hidden="true"></span><span class="sr-only">Home</span></a></li>
+
+
+                                                     <li><a class="ca-gov-icon-facebook" title="Share via Facebook"><span class="sr-only">Facebook</span></a></li>
+                                                     <li><a class="ca-gov-icon-twitter" title="Share via Twitter"><span class="sr-only">Twitter</span></a></li>
+                                                     <li><a class="ca-gov-icon-google-plus" title="Share via Google+"><span class="sr-only">Google+</span></a></li>
+                                                     <li><a class="ca-gov-icon-email" title="Share via email"><span class="sr-only">Email</span></a></li>
+                                                 </ul>
+                                             </div>
+                                             <div class="half settings-links p-t-sm">
+                                                 <ul class="utility-links ">
+                                                     <li><a href="">Contact Us</a></li>
+                                                     <li><button class="btn btn-xs btn-primary" data-toggle="collapse" href="#siteSettings" aria-expanded="false" aria-controls="siteSettings"><span class="ca-gov-icon-gear" aria-hidden="true"></span> Settings</button></li>
+                                                 </ul>
+                                             </div>
+                                         </div>
+                                     </div>
+                                 </div>
+
+                                 <div class="site-settings section section-standout collapse collapsed" role="alert" id="siteSettings">
+                                     <div class="container  p-y">
+                                         <button type="button" class="close" data-toggle="collapse" data-target="#siteSettings" aria-expanded="false" aria-controls="siteSettings" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+
+                                         <div class="btn-group btn-group-justified-sm" role="group" aria-label="contrastMode">
+                                             <div class="btn-group"><button type="button" class="btn btn-standout disableHighContrastMode">Default</button></div>
+                                             <div class="btn-group"><button type="button" class="btn btn-standout enableHighContrastMode">High Contrast</button></div>
+                                         </div>
+
+                                         <div class="btn-group" role="group" aria-label="textSizeMode">
+                                             <div class="btn-group"><button type="button" class="btn btn-standout resetTextSize">Reset</button></div>
+                                             <div class="btn-group"><button type="button" class="btn btn-standout increaseTextSize"><span class="hidden-xs">Increase Font Size</span><span class="visible-xs">Font <small class="ca-gov-icon-plus-line"></small></span></button></div>
+                                             <div class="btn-group"><button type="button" class="btn btn-standout decreaseTextSize"><span class="hidden-xs">Decrease Font Size</span><span class="visible-xs">Font <small class="ca-gov-icon-minus-line"></small></span></button></div>
+                                         </div>
+
+                                         <!-- <button type="button" class="btn btn-primary clipboard-activeonhover">Save links on hover</button> -->
+
+                                     </div>
+                                 </div>
+
+
+                                 <div class="branding">
+                                     <div class="header-organization-banner"><a href="/"><img src="/images/template-logo.png" alt="Organization Title" /></a></div>
+                                 </div>
+                                 <div class="navigation-search">
+                                 </div>
+                             </header>
+
+                             <div id="main-content" class="main-content">
+                                 <div class="section">
+                                     <main class="main-primary">
+                                         <ol class="breadcrumb">
+                                             <li><a href="../index.html">Home</a></li>
+                                             <li><a href="index.html">Examples</a></li>
+                                             <li class="active">Megamenu (State Template v4)</li>
+                                         </ol>
+
+
+
+
+
+
+                                         <!--Radios-->
+                                         <div class="m-b">
+                                             <label class="form-check-inline p-l-md m-l-0 m-r-md">
+                                                 <input class="hidden-up pos-abs" name="radInline1_1" checked="" type="radio">
+                                                 <div class="check-icon-radio">
+                                                     <i></i>
+                                                 </div>
+                                                 USA
+                                             </label>
+                                             <label class="form-check-inline p-l-md m-l-0 m-r-md">
+                                                 <input class="hidden-up  pos-abs" name="radInline1_1" type="radio">
+                                                 <div class="check-icon-radio">
+                                                     <i></i>
+                                                 </div>
+                                                 Canada
+                                             </label>
+                                             <label class="form-check-inline p-l-md m-l-0 m-r-md">
+                                                 <input class="hidden-up pos-abs" name="radInline1_1" type="radio">
+                                                 <div class="check-icon-radio">
+                                                     <i></i>
+                                                 </div>
+                                                 United Kingdom
+                                             </label>
+                                             <label class="form-check-inline p-l-md m-l-0 m-r-md">
+                                                 <input class="hidden-up pos-abs" name="radInline1_1" type="radio">
+                                                 <div class="check-icon-radio">
+                                                     <i></i>
+                                                 </div>
+                                                 Sweden
+                                             </label>
+                                         </div>
+
+                                         <div class="m-b">
+                                             <label class="check">
+                                                 <input class="hidden-up pos-abs top-0 left-0" name="radGroupBtn1_1" checked="" type="radio">
+                                                 <span class="btn btn-lg btn-block bg-highlight--checked rounded-0">Italy</span>
+                                             </label>
+
+                                             <label class="check">
+                                                 <input class="hidden-up pos-abs top-0 left-0" name="radGroupBtn1_1" type="radio">
+                                                 <span class="btn btn-lg btn-block bg-highlight--checked rounded-0">UK</span>
+                                             </label>
+
+                                             <label class="check">
+                                                 <input class="hidden-up pos-abs top-0 left-0" name="radGroupBtn1_1" type="radio">
+                                                 <span class="btn btn-lg btn-block bg-highlight--checked rounded-0">USA</span>
+                                             </label>
+                                         </div><!--checkboxes-->
+                                         <div class="m-b">
+                                             <label class="form-check-inline p-l-md m-l-0 m-r-md">
+                                                 <input class="hidden-up pos-abs" type="checkbox">
+                                                 <div class="check-icon-checkbox">
+                                                     <i class="ca-gov-icon-check-mark"></i>
+                                                 </div>
+                                                 USA
+                                             </label>
+
+                                             <label class="form-check-inline p-l-md m-l-0 m-r-md">
+                                                 <input class="hidden-up pos-abs" type="checkbox" checked>
+                                                 <div class="check-icon-checkbox">
+                                                     <i class="ca-gov-icon-check-mark"></i>
+                                                 </div>
+                                                 USA
+                                             </label>
+                                         </div>
+
+                                         <div class="m-b">
+                                             <label class="check">
+                                                 <input class="hidden-up pos-abs top-0 left-0" checked="" type="checkbox">
+                                                 <span class="btn btn-md btn-block color-white--checked bg-primary--checked rounded-0">Canada</span>
+                                             </label>
+
+                                             <label class="check">
+                                                 <input class="hidden-up pos-abs top-0 left-0" type="checkbox">
+                                                 <span class="btn btn-md btn-block color-white--checked bg-primary--checked rounded-0">UK</span>
+                                             </label>
+
+                                             <label class="check">
+                                                 <input class="hidden-up pos-abs top-0 left-0" type="checkbox">
+                                                 <span class="btn btn-md btn-block color-white--checked bg-primary--checked rounded-0">Mexico</span>
+                                             </label>
+                                         </div>
+
+                                         <!-- Page Title-->
+
+
+                                     </main>
+
+
+                                 </div>
+
+
+
+
+                             </div>
+
+
+
+                             <!-- Global Footer -->
+                             <footer id="footer" class="global-footer">
+                                 <div class="container">
+                                     <div class="row">
+                                         <div class="three-quarters">
+                                             <ul class="footer-links">
+                                                 <li><a href="#skip-to-content">Back to Top</a></li>
+                                                 <li><a href="/use.html">Conditions of Use</a></li>
+                                                 <li><a href="/privacy.html">Privacy Policy</a></li>
+                                                 <li><a href="/accessibility.html">Accessibility</a></li>
+                                                 <li><a href="/contact.html">Contact Us</a></li>
+                                             </ul>
+                                         </div>
+                                         <div class="quarter text-right">
+                                             <ul class="socialsharer-container">
+                                                 <li><a href="https://www.flickr.com/groups/californiagovernment"><span class="ca-gov-icon-flickr" aria-hidden="true"></span><span class="sr-only">Flickr</span></a></li>
+                                                 <li><a href="https://www.pinterest.com/cagovernment/"><span class="ca-gov-icon-pinterest" aria-hidden="true"></span><span class="sr-only">Pinterest</span></a></li>
+                                                 <li><a href="https://twitter.com/cagovernment"><span class="ca-gov-icon-twitter" aria-hidden="true"></span><span class="sr-only">Twitter</span></a></li>
+                                                 <li><a href="https://www.youtube.com/user/californiagovernment"><span class="ca-gov-icon-youtube" aria-hidden="true"></span><span class="sr-only">YouTube</span></a></li>
+                                             </ul>
+                                         </div>
+                                     </div>
+                                 </div>
+                                 <!-- Copyright Statement -->
+                                 <div class="copyright">
+                                     <div class="container">
+                                         Copyright &copy;
+                                         <script>document.write(new Date().getFullYear())</script> State of California
+                                     </div>
+                                 </div>
+                             </footer>
+                             <!-- Extra Decorative Content -->
+                             <div class="decoration-last">&nbsp;</div>
+
+
+
+
+
+
+                             <script src="../js/cagov.core.js"></script>
+
+
+                             
+
+
+                         </body>
 </html>

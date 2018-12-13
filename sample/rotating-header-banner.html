@@ -7,7 +7,7 @@
 <head>
 <!-- 
 California State Template
-Version 5.0.2
+    Version 5.0.3
  
 Based on Twitter Bootstrap
 -->
@@ -32,26 +32,27 @@ Based on Twitter Bootstrap
     <!--#include virtual="/ssi/branding.html" -->
     
     <!-- Include Mobile Controls -->
-    <!--#include virtual="/ssi/mobile-controls.html" -->
-    <div class="navigation-search">        
-    	<!-- Include Navigation -->
-        <!--#include virtual="/ssi/navigation.html" -->
+    <!--#include virtual="/ssi/mobile-controls.html" -->    
+    
+    <div class="navigation-search">      
+    <!-- Include Navigation -->
+      <!--#include virtual="/ssi/navigation.html" -->
+      
+      <div id="head-search" class="search-container">
+        <!-- Include Search -->
+        <!--#include virtual="/ssi/search.html" -->
+      </div>
         
-        <div id="head-search" class="search-container">
-            <!-- Include Search -->
-            <!--#include virtual="/ssi/search.html" -->
-        </div>
-        
-        <!-- Include Optional Slideshow banner -->
-        <!--#include virtual="/ssi/header-slideshow-banner.html" -->
+
     </div>
 	<div class="header-decoration"></div>
 </header>
 
-
+    <!-- Include Optional Slideshow banner -->
+    <!--#include virtual="/ssi/header-slideshow-banner.html" -->
 
 <div id="main-content" class="main-content">
-    <div class="wrapper">
+    <div class="section">
         <main class="main-primary">
             <ol class="breadcrumb">
                 <li><a href="../index.html">Home</a></li>
