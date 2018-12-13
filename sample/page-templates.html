@@ -9,7 +9,7 @@
 <head>
     <!--
     California State Template
-Version 5.0.2
+    Version 5.0.3
 
     Based on Twitter Bootstrap
     -->
@@ -29,9 +29,6 @@ Version 5.0.2
 
     <header role="banner" id="header" class="global-header">
         <div id="skip-to-content"><a href="#main-content">Skip to Main Content</a></div>
-
-        <!-- Location Bar -->
-        <!--#include virtual="/ssi/location-bar.html" -->
         <!-- Settings Bar -->
         <!--#include virtual="/ssi/settings-bar.html" -->
         <!-- Alert Banner -->
@@ -40,16 +37,16 @@ Version 5.0.2
         <!-- Include Branding -->
         <!--#include virtual="/ssi/branding.html" -->
         <!-- Include Mobile Controls -->
-        <!--#include virtual="/ssi/mobile-controls.html" -->
-
-        <div class="navigation-search">        
-    	<!-- Include Navigation -->
-        <!--#include virtual="/ssi/navigation.html" -->
-        
-        <div id="head-search" class="search-container">
-            <!-- Include Search -->
-            <!--#include virtual="/ssi/search.html" -->
-        </div>
+        <!--#include virtual="/ssi/mobile-controls.html" -->    
+    
+    <div class="navigation-search">      
+    <!-- Include Navigation -->
+      <!--#include virtual="/ssi/navigation.html" -->
+      
+      <div id="head-search" class="search-container">
+        <!-- Include Search -->
+        <!--#include virtual="/ssi/search.html" -->
+      </div>
 
         </div>
 
@@ -98,11 +95,11 @@ Version 5.0.2
                 <p>Toggle the buttons to add or remove the appropriate <code>&lt;body&gt;</code> classes and server side inscludes. </p>
                 <button class="togglePrimary btn btn-secondary m-r-sm m-b-sm">Remove Primary Banner </button>
                 <button class="toggleTwoCol btn btn-secondary m-r-sm m-b-sm">Add .two-column</button>
-                <a href="large-header-banner.html" style="color:#000;">
-                    <button class="toggleBanner btn btn-secondary m-r-sm m-b-sm"> See Large Banner</button>
+                <a href="large-header-banner.html" class="toggleBanner btn btn-secondary m-r-sm m-b-sm" style="color:#000;">
+                    See Large Banner
                 </a>
-                <a href="slideshow-header-banner.html" style="color:#000;">
-                    <button class="btn btn-secondary m-r-sm m-b-sm">See Slideshow Banner</button>
+                <a href="slideshow-header-banner.html" class="btn btn-secondary m-r-sm m-b-sm">
+                    See Slideshow Banner
                 </a>
 
                 <p><span class="label label-info">Note:</span> Some examples go to a new page.</p>

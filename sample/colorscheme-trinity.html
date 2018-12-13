@@ -9,7 +9,7 @@
 <head>
     <!--
         California State Template
-Version 5.0.2
+    Version 5.0.3
 
         Based on Twitter Bootstrap
     -->
@@ -49,17 +49,27 @@ Version 5.0.2
     <script src="/js/libs/selectivizr-min.js"></script>
     <![endif]-->
     <!-- modernizr.com, feature detection -->
-    <script src="/js/libs/modernizr-2.0.6.min.js"></script>
-    <script src="/js/libs/modernizr-extra.min.js"></script>
+    <script src="/js/libs/modernizr-3.6.0.min.js"></script>
+
 
     <!-- Load jQuery from CDN with fallback to local copy -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js" type="text/javascript"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js" type="text/javascript"></script>
     <script>
-    //Fall back to local copy if no jquery found
-    if (typeof jQuery == 'undefined') {
-        document.write(unescape("%3Cscript src='/js/libs/jquery-1.12.4.min.js' type='text/javascript'%3E%3C/script%3E"));
-    }
+        //Fall back to local copy if no jquery found
+        if (typeof jQuery == 'undefined') {
+            document.write(unescape("%3Cscript src='/js/libs/jquery-3.2.1.min.js' type='text/javascript'%3E%3C/script%3E"));
+        }
     </script>
+    <!-- Load jQuery migrate from CDN with fallback to local copy -->
+    <script src="https://code.jquery.com/jquery-migrate-3.0.1.min.js"></script>
+    <script>
+        //Fall back to local copy if no jQuery migrate found
+        if (typeof jQuery.migrateWarnings == 'undefined') { // or typeof jQuery.fn.live == 'undefined'
+            document.write(unescape("%3Cscript src='/js/libs/jquery-migrate-3.0.1.js' type='text/javascript'%3E%3C/script%3E"));
+        }
+
+    </script>
+
 
     <!-- For iPad 3-->
     <link rel="apple-touch-icon" sizes="144x144" href="/images/template2014/apple-touch-icon-144x144.png">
@@ -73,6 +83,7 @@ Version 5.0.2
     <link rel="shortcut icon" href="/images/template2014/apple-touch-icon-57x57.png">
     <!-- For everything else -->
     <link rel="shortcut icon" href="/favicon.ico">
+
     <!-- Activate ClearType for Mobile IE -->
     <!--[if IE]>
     <meta http-equiv="cleartype" content="on">
@@ -83,8 +94,7 @@ Version 5.0.2
       <script src="/js/libs/respond.min.js"></script>
     <![endif]-->
     <!-- Include Google Analytics -->
-    <!-- virtual="/ssi/analytics.html" -->
-    <!--END HEAD INCLUDE-->
+    <!--#include virtual="/ssi/analytics.html" -->
 
     <style type="text/css">
         div.outer {
@@ -118,10 +128,6 @@ Version 5.0.2
 <body>
     <header role="banner" id="header" class="global-header fixed">
         <div id="skip-to-content"><a href="#main-content">Skip to Main Content</a></div>
-
-
-        <!-- Location Bar -->
-        <!--#include virtual="/ssi/location-bar.html" -->
         <!-- Include Utility Header -->
         <!--#include virtual="/ssi/utility-header.html" -->
         <!-- Settings Bar -->
@@ -129,15 +135,16 @@ Version 5.0.2
         <!-- Include Branding -->
         <!--#include virtual="/ssi/branding.html" -->
         <!-- Include Mobile Controls -->
-        <!--#include virtual="/ssi/mobile-controls.html" -->
-        <div class="navigation-search">        
-    	<!-- Include Navigation -->
-        <!--#include virtual="/ssi/navigation.html" -->
-        
-        <div id="head-search" class="search-container">
-            <!-- Include Search -->
-            <!--#include virtual="/ssi/search.html" -->
-        </div>
+        <!--#include virtual="/ssi/mobile-controls.html" -->    
+    
+    <div class="navigation-search">      
+    <!-- Include Navigation -->
+      <!--#include virtual="/ssi/navigation.html" -->
+      
+      <div id="head-search" class="search-container">
+        <!-- Include Search -->
+        <!--#include virtual="/ssi/search.html" -->
+      </div>
         </div>
 
     </header>

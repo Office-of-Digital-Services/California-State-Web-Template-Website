@@ -77,3 +77,28 @@ h6, .h6 { .font-size(.87); }
 .monospace {
     font-family:@font-family-monospace !important;
 }
+
+// LINKS NEED VISUAL INDICATORS OTHER THAN COLOR
+
+.main-content a {
+    background-image: linear-gradient(currentColor,currentColor);
+    background-repeat: no-repeat;
+    background-size: 100% 1px;
+    background-position: center bottom 4%;
+    background-origin: padding-box;
+    text-decoration: none !important;
+
+    &:hover {
+        text-decoration: none !important;
+    }
+}
+
+.tab-group .nav-tabs
+li > a, .main-content .btn, .panel-title, .panel-heading a, .btn-more, .accordion .panel-heading a, .panel-group .panel-heading .panel-title a, .accordion .panel-heading .panel-title a, .panel-group .panel-heading .panel-title a, .service-tile-content .panel-heading .panel-title a, .service-tile-content .panel-heading a, .accordion .panel-heading a, .icon-link, .social a, .main-content a[role="button"], .gallery-item, .news-link, .news-icon, .socialsharer-container a, .thumbnail a {
+    background-image: none !important;
+}
+
+.no-underline {
+    text-decoration: none !important;
+    background-image: none !important;
+}

@@ -10,7 +10,7 @@
 <head>
   <!--
 California State Template
-Version 5.0.2
+    Version 5.0.3
 
 Based on Twitter Bootstrap
 -->
@@ -32,9 +32,6 @@ Based on Twitter Bootstrap
 
   <header role="banner" id="header" class="global-header fixed">
     <div id="skip-to-content"><a href="#main-content">Skip to Main Content</a></div>
-    
-    <!-- Location Bar -->
-    <!--#include virtual="/ssi/location-bar.html" -->
 
     <!-- Include Utility Header -->
     <!--#include virtual="/ssi/utility-header.html" -->
@@ -48,14 +45,16 @@ Based on Twitter Bootstrap
     <!-- Include Mobile Controls -->
     <!--#include virtual="/ssi/mobile-controls.html" -->
 
-    <div class="navigation-search">        
-    	<!-- Include Navigation -->
+    <div class="navigation-search">
+        <!-- Include Navigation -->
         <!--#include virtual="/ssi/navigation.html" -->
-        
+
         <div id="head-search" class="search-container">
             <!-- Include Search -->
             <!--#include virtual="/ssi/search.html" -->
         </div>
+
+
     </div>
     <div class="header-decoration"></div>
   </header>
@@ -111,36 +110,6 @@ Based on Twitter Bootstrap
             </div>
             <!-- End Section -->
             
-            <div class="section" id="locations-near-you">
-                <div class="container">
-                    <div class="group">
-                        <div class="three-quarters">
-                            <h2 class="m-b-0">Locations Near You</h2>
-                        </div>
-                        <div class="quarter">
-                            <a href="#locationFilters" class="btn btn-secondary filter-toggle toggle-more m-y btn-block-xs pull-right" role="button" data-toggle="collapse" data-parent="#locationFilters" aria-expanded="false" aria-controls="locationFilters"><span class="toggle-more">Show Filters <span class="ca-gov-icon-filter" aria-hidden="true"></span></span></a>
-                        </div>
-                        
-                        <div class="collapse locationFilters filter-group full-width" id="locationFilters">
-                            <!-- MapThat Facets -->
-                            <div id="mapthat_facets" class=""></div>
-                        </div>
-                    </div>
-                       
-                    <div class="group">
-                        <div class="col-md-8 col-md-push-4">
-                            <div class="mapthat" style="width: 100%; height: 400px">
-                                <!-- Placeholder for mapthat -->
-                                <div id="mapthat_map"></div>
-                            </div>
-                        </div>
-                        <div class="col-md-4 col-md-pull-8">
-                            <!-- Mapthat List -->
-                            <div id="mapthat_list"></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
             
             <div class="section section-default" id="frequently-asked-questions">
                 <div class="container">
@@ -175,8 +144,6 @@ Based on Twitter Bootstrap
     <!--#include virtual="/ssi/global-footer.html" -->
 
     <!--#include virtual="/ssi/scripts.html" -->
-    
-    <script src="/js/libs/mapthat_script.js"></script>
 
 </body>
 
