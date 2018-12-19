@@ -1,5 +1,4 @@
 <!-- head content, for all pages -->
-
 <!-- Use highest compatibility mode -->
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
@@ -21,11 +20,15 @@
 Step 3
 Select a color scheme:
 
+<link rel="stylesheet" href="/css/colorscheme-eureka.css">
+<link rel="stylesheet" href="/css/colorscheme-mono.css">
 <link rel="stylesheet" href="/css/colorscheme-oceanside.css">
 <link rel="stylesheet" href="/css/colorscheme-orangecounty.css">
 <link rel="stylesheet" href="/css/colorscheme-pasorobles.css">
 <link rel="stylesheet" href="/css/colorscheme-santabarbara.css">
+<link rel="stylesheet" href="/css/colorscheme-sacramento.css">
 <link rel="stylesheet" href="/css/colorscheme-sierra.css">
+<link rel="stylesheet" href="/css/colorscheme-trinity.css">
 -->
 
 <link rel="stylesheet" href="/css/colorscheme-oceanside.css">
@@ -34,7 +37,6 @@ Select a color scheme:
 <!--[if (lt IE 9) & (!IEMobile)]>
 <script src="/js/libs/selectivizr-min.js"></script>
 <![endif]-->
-
 <!-- modernizr.com, feature detection -->
 <script src="/js/libs/modernizr-3.6.0.min.js"></script>
 
@@ -50,10 +52,10 @@ Select a color scheme:
 <!-- Load jQuery migrate from CDN with fallback to local copy -->
 <script src="https://code.jquery.com/jquery-migrate-3.0.1.min.js"></script>
 <script>
-        //Fall back to local copy if no jQuery migrate found
-        if (typeof jQuery.migrateWarnings == 'undefined') { // or typeof jQuery.fn.live == 'undefined'
-            document.write(unescape("%3Cscript src='/js/libs/jquery-migrate-3.0.1.js' type='text/javascript'%3E%3C/script%3E"));
-        }
+    //Fall back to local copy if no jQuery migrate found
+    if (typeof jQuery.migrateWarnings == 'undefined') { // or typeof jQuery.fn.live == 'undefined'
+        document.write(unescape("%3Cscript src='/js/libs/jquery-migrate-3.0.1.js' type='text/javascript'%3E%3C/script%3E"));
+    }
 
 </script>
 
@@ -75,12 +77,10 @@ Select a color scheme:
 <!--[if IE]>
 <meta http-equiv="cleartype" content="on">
 <![endif]-->
-
 <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
 <!--[if lt IE 9]>
   <script src="/js/libs/html5shiv.min.js"></script>
   <script src="/js/libs/respond.min.js"></script>
 <![endif]-->
-
 <!-- Include Google Analytics -->
 <!--#include virtual="/ssi/analytics.html" -->

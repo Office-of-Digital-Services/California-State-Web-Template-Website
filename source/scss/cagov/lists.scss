@@ -20,13 +20,30 @@ ul.list-overstated {
 
 .list-overstated, .list-understated {
     li {
-        background: url("#{$template-path}/bullet-blue-disc.png") no-repeat 0 4px transparent; // beta 5.0 addition
+        list-style: none;
+        position: relative;
         padding: 0 0 14px 18px;
 
+        &::before {
+            content: "\e66a";
+            font-family: "CaGov";
+            background: none !important;
+            position: absolute;
+            font-size: 0.7em;
+            top: 3px;
+            left: 0;
+        }
         /* Rotates disc arrow down when used with accordion */
         &.open {
-
-            background: url("#{$template-path}/bullet-blue-disc-open.png") no-repeat 0 3px transparent;
+            &::before {
+                content: "\e66b";
+                font-family: "CaGov";
+                background: none !important;
+                position: absolute;
+                font-size: 0.7em;
+                top: 3px;
+                left: 0;
+            }
         }
     }
 }

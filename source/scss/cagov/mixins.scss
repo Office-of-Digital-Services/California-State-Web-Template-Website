@@ -186,8 +186,8 @@
     a:not(.btn) {
         color: $link-color;
         text-decoration: $decoration;      
-        -webkit-transition: all 0.25s;
-		transition:all 0.25s;
+        //-webkit-transition: all 0.25s;
+		//transition:all 0.25s;
 
         &:hover, &:focus {
             color: $link-hover-color;
@@ -874,6 +874,34 @@ a & {
   .progress-striped & {
     @include gradient-striped;
   }
+}
+
+
+// Underline
+
+@mixin underline($underlinecolor: $brand-primary, $underlinehovercolor: darken($link-color, 15%), $size: 1px, $bottom: 4%) {
+    a:not(.btn) {
+        background-image: linear-gradient($underlinecolor,$underlinecolor);
+        background-repeat: no-repeat;
+        background-size: 100% $size;
+        background-position: center bottom $bottom;
+        background-origin: padding-box;
+        text-decoration: none !important;
+
+        &:hover {
+            background-image: linear-gradient($underlinehovercolor,$underlinehovercolor);
+            text-decoration: none !important;
+        }
+    }
+}
+
+@mixin link-underline($undrlncolor: $brand-primary, $size: 1px, $bottom: 4%) {
+    background-image: linear-gradient($undrlncolor,$undrlncolor);
+    background-repeat: no-repeat;
+    background-size: 100% $size;
+    background-position: center bottom $bottom;
+    background-origin: padding-box;
+    text-decoration: none !important;
 }
 
 

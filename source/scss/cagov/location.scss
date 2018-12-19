@@ -8,24 +8,24 @@
 .location {
     .contact {
         .title {
-            font-weight:bold;
+            font-weight: bold;
         }
-        
+
         [class^="ca-gov-icon"] {
             @include font-size(1.5);
-            position:absolute;
-            color:$gray;
+            position: absolute;
+            color: $gray;
         }
-        
+
         a {
-            margin-left:30px;                       // Moves text away from icon
-            display:inline-block;
+            position: relative;
+            left: 0px; 
         }
     }
-    
+
     .summary {
         .title {
-            font-weight:bold;
+            font-weight: bold;
         }
     }
 }
@@ -130,25 +130,26 @@
 
 .location.mini {
     @include clearfix();
-    position:relative;
-    margin-bottom:$line-height-computed;
-    
+    position: relative;
+    margin-bottom: $line-height-computed;
+
     [class^="ca-gov-icon"] {
-        padding:5px;
-        line-height:1;
+        padding: 5px;
+        line-height: 1;
         @include font-size(2);
-        position:absolute;
+        position: absolute;
     }
-    
+
     .contact {
-        margin-left:60px;
-        
+        margin-left: 60px;
+
         .title {
-            font-weight:normal;                  // Overwrites default bold
+            font-weight: normal; // Overwrites default bold
         }
-        
+
         a {
-            margin-left:0;                       // Moves text back inline with address
+            position: relative;
+            left: 0px; // Moves text away from icon
         }
     }
 }
@@ -161,38 +162,38 @@
 
 .location.full {
     .photo {
-        height:100%;
-        width:100%;
-        
+        height: 100%;
+        width: 100%;
+
         @media (max-width: $screen-sm-max) {
-            margin-bottom:($line-height-computed / 2);  // Adds seperation between photo and map at small size
+            margin-bottom: ($line-height-computed / 2); // Adds seperation between photo and map at small size
         }
     }
-    
-	.map {
-		iframe {
-			width: 100%;
-			border: 0;
-		}
-	}
-	
+
+    .map {
+        iframe {
+            width: 100%;
+            border: 0;
+        }
+    }
+
     .contact {
         @include make-sm-column(3);
-        margin-top:$line-height-computed;
-        
+        margin-top: $line-height-computed;
+
         [class^="ca-gov-icon"] {
             @include font-size(2.2);
-            position:absolute;
+            position: absolute;
         }
-        
+
         a {
-            margin-left:40px;                       // Moves text away from icon
-            display:inline-block;
+            position: relative;
+            left:40px; // Moves text away from icon
         }
     }
-    
+
     .summary {
         @include make-sm-column(9);
-        margin-top:$line-height-computed;
+        margin-top: $line-height-computed;
     }
 }
