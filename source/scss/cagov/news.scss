@@ -1,0 +1,161 @@
+/* -----------------------------------------
+   NEWS - /source/scss/cagov/news.scss
+----------------------------------------- */
+
+// NEWS LIST
+.news-item {
+    clear:both;
+    @include make-row();
+    margin-bottom:$line-height-computed;
+    padding:0 ($grid-gutter-width / 2);             // Adds padding to compensate for instances where thumbnails are/are not used
+    
+    .published {
+        @include published();
+    }
+    
+    .thumbnail {
+        margin-left:($grid-gutter-width / 2)*-1;    // Remove left margin to account for instances where thumbnails are not used
+        @include make-xs-column(5);
+        @include make-sm-column(3); 
+        @include make-md-column(3);
+		@include make-lg-column(2.4);
+        
+        // Thumbnail sizing for two-column pages
+        .two-column & {
+            @include make-md-column(3); 
+        }
+        
+        img {
+            @include img-responsive();
+        }
+    }
+    
+    .info {
+        //@include make-xs-column(9);
+    }
+}
+
+
+// News detail specific
+.news-detail {
+    h1 {
+        margin-bottom:0;
+        float:left;                                 // used when sharing widget is enabled
+    }
+    
+    .published {
+        margin-bottom:$line-height-computed;
+        clear: both;                                // used when share widget is enabled
+    }
+    
+    .keywords {
+        margin-top:$line-height-computed;
+    }
+}
+
+// beta 5.0 addition
+
+/* NEWS BLOCKS */
+.shadow {
+	-webkit-box-shadow: 0 2px 5px #eee;
+	-moz-box-box-shadow: 0 2px 5px #eee;
+	    box-shadow: 0 2px 5px #eee;
+		figure {
+			border:none;
+			}
+	}
+	
+.img-fluid {
+	height: auto;
+    max-width: 100%;
+	vertical-align: middle;
+	}
+.font-size-sm {font-size: ($font-size-base * 0.75);}
+.color-primary--hover:hover {color: $color-p2;}
+.bg-primary--hover:hover {background-color: $color-p2;}
+.color-gray-dark {color: $text-color;}
+.color-gray {color: $gray;}
+.news-icon {
+	width: 1.64286rem;
+	height: 1.64286rem;
+	font-size: 0.92857rem;
+	display: inline-block;
+    position: relative;
+    text-align: center;
+	background-color:lighten($gray-lighter, 7%);
+	-webkit-transition: all 0.2s ease-in-out 0s;
+    transition: all 0.2s ease-in-out 0s;
+	&:hover {
+		color:$white;
+		text-decoration:none;
+		}
+	> i {
+		display: block;
+		position: relative;
+		top: 50%;
+		-webkit-transform: translateY(-50%);
+		transform: translateY(-50%);
+		z-index: 2;
+		}
+
+	}
+/* NEWS IMAGE */
+
+.block-hover {
+  position: relative;
+  max-width: 100%;
+  margin: 0;
+  overflow: hidden;
+  color:$white;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -webkit-transform: translateZ(0);
+          transform: translateZ(0);	
+		
+		&:hover .block-hover_zoom {
+				-webkit-transform: scale(1.1);
+		  -ms-transform: scale(1.1);
+			  transform: scale(1.1);
+			} 	  
+}
+[class*="block-hover"], [class*="block-hover"]::before, [class*="block-hover"]::after {
+  -webkit-transition: all .3s ease;
+  transition: all .3s ease; }
+.block-hover_zoom {-webkit-transform: scale(1.01);}
+.bg-overlay {
+	position: relative;
+	margin-bottom:0;
+	&::before {
+			content: "";
+			position: absolute;
+			top: 0;
+			right: 0;
+			bottom: 0;
+			left: 0;
+		}
+		
+	&::after {
+			content: "";
+			position: absolute;
+			top: 0.7rem;
+			right: 0.7rem;
+			bottom: 0.7rem;
+			left: 0.7rem;
+			background-color: rgba(0, 0, 0, 0.7) !important;
+			}
+			
+	}
+	
+
+	
+.news-link {
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	text-indent: 100%;
+	white-space: nowrap;
+	overflow: hidden;
+	}
+

@@ -1,0 +1,79 @@
+/* -----------------------------------------
+   WELLS - /source/scss/cagov/well.scss
+----------------------------------------- */
+
+.well {
+    background: #f2f2f2;
+    padding:($grid-gutter-width / 2);
+    margin-bottom:($grid-gutter-width / 2);
+    position:relative;
+    @include clearfix();
+    
+    .header {
+        @include clearfix();
+        margin-bottom:0;
+        
+        .title {
+            float:left;
+            margin-right: ($grid-gutter-width / 2);
+            @include font-size(1.5);
+            @include font-condensed();
+        }
+        
+        .filing-date {
+            float:right;
+        }
+        
+        .start-date {
+            float:left;
+            margin-top:8px;
+        }
+    }
+    
+    .footer {
+        position:relative;                                  // used in cases where footer has a published date
+        @include clearfix();
+        clear:both;
+        
+        a.btn {
+            float:right;
+            margin-top:($line-height-computed / 2);
+            @include btn-xs();
+            
+            @media (max-width: $screen-md-min) {
+                float:left;                                 // Float the button left $991 and below
+            }
+        }
+        
+        .published {
+            float:left;
+            margin-top:10px;
+            @include published();
+        }
+    }
+    
+    // for use cases when a thumbnail is need left of the content
+    .thumbnail {
+        img {
+            position:absolute;
+        }
+    }
+    
+    // Set the margin to the width of the thumbnail + half of the gutter
+    & > .thumbnail + .well-header, & > .thumbnail ~ .well-body {
+        margin-left: (70px + ($grid-gutter-width / 2));     // (70 + (30 / 2))
+    }
+}
+
+
+
+// Consolidation - inline media querries looked messy and verbose. 
+@media (max-width: $screen-xs-max) {
+    .well {
+        
+        // Remove float on small mobile 
+        .title, .filing-date, .start-date, .published, a.btn {
+            float:none !important;
+        }
+    }
+}

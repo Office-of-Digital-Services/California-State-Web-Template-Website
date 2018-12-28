@@ -1,0 +1,223 @@
+/* -----------------------------------------
+   ASK Group
+   /source/scss/cagov/ask-group.scss
+----------------------------------------- */
+$ask-bg-default: rgba(0, 0, 0, 0.65);
+$ask-bg-hover: rgba(0, 0, 0, 0.8);
+
+
+@media (min-width: $screen-sm-min) {
+    .ask-group {
+        position:relative;
+        width: 60%;
+        left: 20%;
+		-webkit-transition: opacity 0.3s, visibility 0.3s;
+        transition: opacity 0.3s, visibility 0.3s;
+        z-index: 5;
+        visibility: visible;
+
+        .flexbox & {
+          left: 0px;
+          right: 0px;
+          margin: auto;
+          max-width: 630px;
+        }
+
+        &.fade-out {
+          opacity: 0;
+        }
+
+        .panel-group {
+            position: absolute;
+            top: 230px;
+
+            .flexbox & {
+			display: -webkit-box;		
+    		display: -ms-flexbox;
+              display: flex;
+              width: 100%;
+			  -webkit-box-pack: justify;
+			  -ms-flex-pack: justify;
+              justify-content: space-between;
+			  -ms-flex-wrap: nowrap;
+              flex-wrap: nowrap;
+            }
+        }
+
+        @media (max-width: $screen-xs-max) {
+            position:static;
+        }
+
+        .panel {
+            display:inline;
+            background:none;
+            position:relative;
+
+            .flexbox & {
+            margin-top: 0;
+              overflow: visible;
+          }
+        }
+        .flexbox &  .panel-group .panel + .panel {
+          margin-top: 0;
+        }
+        .ask-panel {
+            position: absolute;
+            width: 100%;
+            width: 380px;    // Any larger and it may run off the page
+        }
+
+        /* 3rd and beyond positions panel on right of button */
+        .panel:nth-child(n+4) .ask-panel {
+            right: 0;
+        }
+
+        /* first two panels positioned on left of button */
+        .panel:nth-child(-n+3) .ask-panel {
+            left: 0;
+        }
+    }
+
+    .ask-button.btn-primary {
+        background-color: #000;
+        background-color: $ask-bg-default;
+        color: #fff;
+        border: none;
+        border-radius: 0;
+
+        &:hover, &:focus {
+            background-color: $ask-bg-hover;
+            border-bottom-left-radius: 0;
+            border-bottom-right-radius: 0;
+            //outline: none;    // designer in me screems, but accessibility is king
+        }
+    }
+}
+
+
+/* Optimize ask group position for tablets */
+@media (min-width: $screen-sm-min) and (max-width: $screen-md-min) {
+    .ask-group  {
+        left: 10%;   // matches search bar
+        width: 90%;
+    }
+    .flexbox .ask-group {
+      width: 80%;
+      left: 0;
+    }
+}
+
+.ask-button {
+    overflow: hidden;
+    position: relative;
+    line-height: 44px;
+    @include font-size(1.25);
+
+    > span {
+        @include font-size(1.5);
+        padding-right: 5px;
+        vertical-align: middle;
+        @include rgbacolor (#fff, .8);
+       // color: $rgba;
+    }
+}
+
+.ask-options {
+    background-color: #000;
+    background-color: $ask-bg-hover;
+    padding: 5px 10px;
+
+    @media (max-width: $screen-xs-max) {
+        //position:static;
+    }
+
+    > ul {
+        @include list-unstyled();
+    }
+
+    li a {
+        display: block;
+        padding-left: 10px;
+        border: 1px solid $gray-lighter;
+        margin: 5px 0;
+        line-height: 40px;
+        color: #fff;
+
+        &:hover {
+            @include rgba (#fff, .75);
+            // background-color: $rgba;
+            color: contrast(#fff);
+        }
+
+        &:hover .more {
+            @include rgba (#000, .75);
+            // background-color: $rgba;
+            color: #fff;
+        }
+    }
+}
+
+
+@media (max-width: $screen-xs-max) {
+    .header-single-banner {
+        display: none;
+    }
+    .ask-group {
+        @include make-xs-column(12);
+        padding-top: $line-height-computed;
+		float: none;  //  _cs-shame.scss addition
+        padding-bottom: 1px;  //  _cs-shame.scss addition
+
+        .panel {
+            border: none;
+            background: $ask-bg-default;
+        }
+
+        .panel-group .panel + .panel {
+            margin-top: 10px;               // Overrides default panel behavior
+        }
+
+        a.btn {
+            @include btn-block();
+            //@include btn-default();
+			background-color: transparent; // beta 5.0 addition
+            border: none;
+            color: #fff;
+
+            &:hover, &:focus, &:active {
+                color: #fff;                // Buttons
+                background-color: rgba(0, 0, 0, 0.25);      // Compounded with panel bg
+            }
+
+            // Add triangle control to mobile
+            &:after {
+                content: "\43";        // .ca-gov-icon-triangle-down
+                font-family: 'CaGov';
+                position: absolute;
+                right: 10px;
+                top: 50%;
+                margin-top: -20px;
+            }
+
+            &.collapsed:after {
+                 content: "\45";       // .ca-gov-icon-triangle-right
+            }
+
+            // Increase the icon size and padding on small devices
+            [class^="ca-gov-icon-"] {
+                padding-right: 10px;
+                @include font-size(1.75);
+            }
+        }
+    }
+}
+
+//  _cs-shame.scss addition
+.fixed + .ask-group {		
+    z-index: 5;		
+    position: fixed;		
+  }
+  
+  .fade.in {
+    opacity: 1;
+}

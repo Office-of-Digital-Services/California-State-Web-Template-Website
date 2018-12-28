@@ -86,7 +86,7 @@ $(document).ready(function () {
         $('html').css("font-size", fontSize + 'rem')
     } else {
         fontSize = 1;
-        $('html').css("font-size", fontSize + 'rem')
+        $('html').css("font-size", fontSize  + 'rem')
     }
 
     // init button styles for fonts

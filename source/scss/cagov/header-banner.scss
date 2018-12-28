@@ -1,0 +1,61 @@
+/* -----------------------------------------
+   SLIDESHOW BANNER
+   /source/scss/cagov/header-banner.scss
+----------------------------------------- */
+
+
+.header-slideshow-banner {
+    display: none;
+    height: 500px; // Beta 5.0 addition
+    position:relative;
+}
+
+
+@media (min-width: $screen-sm-min) {
+    .header-slideshow-banner.enabled {
+        display: block;
+    }
+}
+
+.header-single-banner, .header-large-banner, .header-primary-banner {
+    width: 100%;
+    /* Will be overriden with js */
+    height: auto;
+    overflow: hidden;
+    background-position: center;
+    background-size: cover;
+    display: block;
+    /* Preserve aspect ratio */
+    min-width: 100%;
+    min-height: 100%;
+    position: relative;
+}
+
+.header-slideshow-banner {
+    position: absolute;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+}
+
+.carousel-banner,
+.carousel-banner .owl-stage-outer,
+.carousel-banner .owl-stage,
+.carousel-banner .owl-item,
+.carousel-banner .slide {
+    height: 100%;
+}
+
+
+// Beta 5.0 addition
+@media (max-width: $screen-xs-max) {
+	
+	.ask-group + .header-primary-banner, .ask-group + .header-large-banner, .ask-group + .header-slideshow-banner {
+		display: none;
+		}
+		
+	.primary  .header-primary-banner, .primary   .header-large-banner, .primary .header-slideshow-banner {
+		display: none;
+		}
+	}

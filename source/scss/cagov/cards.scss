@@ -1,0 +1,95 @@
+/* -----------------------------------------
+   CARDS - /source/scss/cagov/cards.scss
+----------------------------------------- */
+.card {
+    position: relative;
+    display: block;
+    margin-bottom: $card-spacer-y;
+    background-color: $white;
+    border: $card-border-width solid $card-border-color;
+    border-radius: $card-border-radius;
+    
+    .btn-block {
+            margin-top:5px;
+    }
+    
+    .toggle-more {
+        display: inline-block;
+        color: $gray-light;
+        font-family: 'CaGov';
+        font-size: 22px;
+        margin-left: -11px;
+        
+        &:before {
+            content:"\e050";       // .ca-gov-icon-plus-fill
+        }
+        
+        /* Change icon to minus */
+        &.active:before {
+            content:"\e04f";       // .ca-gov-icon-minus-fill
+        }
+    }
+}
+
+.card-block {
+    padding: $card-spacer-x;
+}
+
+.card-title {
+    margin-bottom: $card-spacer-y;
+    margin-top:0;
+}
+
+.card-subtitle {
+    margin-top: -($card-spacer-y / 2);
+    margin-bottom: 0;
+}
+
+.card-text:last-child {
+    margin-bottom: 0;
+}
+
+.card-link {
+    &:hover {
+        text-decoration: none;
+    }
+
+    + .card-link {
+        margin-left: $card-spacer-x;
+    }
+}
+
+
+
+//
+// Optional textual caps
+//
+
+.card-header {
+    padding: $card-spacer-y $card-spacer-x;
+    //background-color: $card-cap-bg;
+    //border-bottom: $card-border-width solid $card-border-color;
+
+    &:first-child {
+            border-radius:$card-border-radius-inner $card-border-radius-inner 0 0;
+    }
+}
+
+.card-footer {
+    padding: $card-spacer-y $card-spacer-x;
+    //background-color: $card-cap-bg;
+    //border-top: $card-border-width solid $card-border-color;
+
+    &:last-child {
+        border-radius: 0 0 $card-border-radius-inner $card-border-radius-inner;
+    }
+}
+
+
+// Card image caps
+.card-img-top {
+    border-radius: $card-border-radius-inner $card-border-radius-inner 0 0;
+}
+.card-img-bottom {
+    border-radius: 0 0 $card-border-radius-inner $card-border-radius-inner;
+}

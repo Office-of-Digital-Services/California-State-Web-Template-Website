@@ -1,120 +1,163 @@
-/* ========================================================================
- * Bootstrap: button.js v3.3.5
- * http://getbootstrap.com/javascript/#buttons
- * ========================================================================
- * Copyright 2011-2015 Twitter, Inc.
- * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
- * ======================================================================== */
+/**
+   * --------------------------------------------------------------------------
+   * Bootstrap (v4.1.3): button.js
+   * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
+   * --------------------------------------------------------------------------
+   */
+
+var Button = function ($$$1) {
+    /**
+     * ------------------------------------------------------------------------
+     * Constants
+     * ------------------------------------------------------------------------
+     */
+    var NAME = 'button';
+    var VERSION = '4.1.3';
+    var DATA_KEY = 'bs.button';
+    var EVENT_KEY = "." + DATA_KEY;
+    var DATA_API_KEY = '.data-api';
+    var JQUERY_NO_CONFLICT = $$$1.fn[NAME];
+    var ClassName = {
+        ACTIVE: 'active',
+        BUTTON: 'btn',
+        FOCUS: 'focus'
+    };
+    var Selector = {
+        DATA_TOGGLE_CARROT: '[data-toggle^="button"]',
+        DATA_TOGGLE: '[data-toggle="buttons"]',
+        INPUT: 'input',
+        ACTIVE: '.active',
+        BUTTON: '.btn'
+    };
+    var Event = {
+        CLICK_DATA_API: "click" + EVENT_KEY + DATA_API_KEY,
+        FOCUS_BLUR_DATA_API: "focus" + EVENT_KEY + DATA_API_KEY + " " + ("blur" + EVENT_KEY + DATA_API_KEY)
+        /**
+         * ------------------------------------------------------------------------
+         * Class Definition
+         * ------------------------------------------------------------------------
+         */
+
+    };
+
+    var Button =
+        /*#__PURE__*/
+        function () {
+            function Button(element) {
+                this._element = element;
+            } // Getters
 
 
-+function ($) {
-  'use strict';
+            var _proto = Button.prototype;
 
-  // BUTTON PUBLIC CLASS DEFINITION
-  // ==============================
+            // Public
+            _proto.toggle = function toggle() {
+                var triggerChangeEvent = true;
+                var addAriaPressed = true;
+                var rootElement = $$$1(this._element).closest(Selector.DATA_TOGGLE)[0];
 
-  var Button = function (element, options) {
-    this.$element  = $(element)
-    this.options   = $.extend({}, Button.DEFAULTS, options)
-    this.isLoading = false
-  }
+                if (rootElement) {
+                    var input = this._element.querySelector(Selector.INPUT);
 
-  Button.VERSION  = '3.3.5'
+                    if (input) {
+                        if (input.type === 'radio') {
+                            if (input.checked && this._element.classList.contains(ClassName.ACTIVE)) {
+                                triggerChangeEvent = false;
+                            } else {
+                                var activeElement = rootElement.querySelector(Selector.ACTIVE);
 
-  Button.DEFAULTS = {
-    loadingText: 'loading...'
-  }
+                                if (activeElement) {
+                                    $$$1(activeElement).removeClass(ClassName.ACTIVE);
+                                }
+                            }
+                        }
 
-  Button.prototype.setState = function (state) {
-    var d    = 'disabled'
-    var $el  = this.$element
-    var val  = $el.is('input') ? 'val' : 'html'
-    var data = $el.data()
+                        if (triggerChangeEvent) {
+                            if (input.hasAttribute('disabled') || rootElement.hasAttribute('disabled') || input.classList.contains('disabled') || rootElement.classList.contains('disabled')) {
+                                return;
+                            }
 
-    state += 'Text'
+                            input.checked = !this._element.classList.contains(ClassName.ACTIVE);
+                            $$$1(input).trigger('change');
+                        }
 
-    if (data.resetText == null) $el.data('resetText', $el[val]())
+                        input.focus();
+                        addAriaPressed = false;
+                    }
+                }
 
-    // push to event loop to allow forms to submit
-    setTimeout($.proxy(function () {
-      $el[val](data[state] == null ? this.options[state] : data[state])
+                if (addAriaPressed) {
+                    this._element.setAttribute('aria-pressed', !this._element.classList.contains(ClassName.ACTIVE));
+                }
 
-      if (state == 'loadingText') {
-        this.isLoading = true
-        $el.addClass(d).attr(d, d)
-      } else if (this.isLoading) {
-        this.isLoading = false
-        $el.removeClass(d).removeAttr(d)
-      }
-    }, this), 0)
-  }
+                if (triggerChangeEvent) {
+                    $$$1(this._element).toggleClass(ClassName.ACTIVE);
+                }
+            };
 
-  Button.prototype.toggle = function () {
-    var changed = true
-    var $parent = this.$element.closest('[data-toggle="buttons"]')
-
-    if ($parent.length) {
-      var $input = this.$element.find('input')
-      if ($input.prop('type') == 'radio') {
-        if ($input.prop('checked')) changed = false
-        $parent.find('.active').removeClass('active')
-        this.$element.addClass('active')
-      } else if ($input.prop('type') == 'checkbox') {
-        if (($input.prop('checked')) !== this.$element.hasClass('active')) changed = false
-        this.$element.toggleClass('active')
-      }
-      $input.prop('checked', this.$element.hasClass('active'))
-      if (changed) $input.trigger('change')
-    } else {
-      this.$element.attr('aria-pressed', !this.$element.hasClass('active'))
-      this.$element.toggleClass('active')
-    }
-  }
+            _proto.dispose = function dispose() {
+                $$$1.removeData(this._element, DATA_KEY);
+                this._element = null;
+            }; // Static
 
 
-  // BUTTON PLUGIN DEFINITION
-  // ========================
+            Button._jQueryInterface = function _jQueryInterface(config) {
+                return this.each(function () {
+                    var data = $$$1(this).data(DATA_KEY);
 
-  function Plugin(option) {
-    return this.each(function () {
-      var $this   = $(this)
-      var data    = $this.data('bs.button')
-      var options = typeof option == 'object' && option
+                    if (!data) {
+                        data = new Button(this);
+                        $$$1(this).data(DATA_KEY, data);
+                    }
 
-      if (!data) $this.data('bs.button', (data = new Button(this, options)))
+                    if (config === 'toggle') {
+                        data[config]();
+                    }
+                });
+            };
 
-      if (option == 'toggle') data.toggle()
-      else if (option) data.setState(option)
-    })
-  }
+            _createClass(Button, null, [{
+                key: "VERSION",
+                get: function get() {
+                    return VERSION;
+                }
+            }]);
 
-  var old = $.fn.button
-
-  $.fn.button             = Plugin
-  $.fn.button.Constructor = Button
-
-
-  // BUTTON NO CONFLICT
-  // ==================
-
-  $.fn.button.noConflict = function () {
-    $.fn.button = old
-    return this
-  }
+            return Button;
+        }();
+    /**
+     * ------------------------------------------------------------------------
+     * Data Api implementation
+     * ------------------------------------------------------------------------
+     */
 
 
-  // BUTTON DATA-API
-  // ===============
+    $$$1(document).on(Event.CLICK_DATA_API, Selector.DATA_TOGGLE_CARROT, function (event) {
+        event.preventDefault();
+        var button = event.target;
 
-  $(document)
-    .on('click.bs.button.data-api', '[data-toggle^="button"]', function (e) {
-      var $btn = $(e.target)
-      if (!$btn.hasClass('btn')) $btn = $btn.closest('.btn')
-      Plugin.call($btn, 'toggle')
-      if (!($(e.target).is('input[type="radio"]') || $(e.target).is('input[type="checkbox"]'))) e.preventDefault()
-    })
-    .on('focus.bs.button.data-api blur.bs.button.data-api', '[data-toggle^="button"]', function (e) {
-      $(e.target).closest('.btn').toggleClass('focus', /^focus(in)?$/.test(e.type))
-    })
+        if (!$$$1(button).hasClass(ClassName.BUTTON)) {
+            button = $$$1(button).closest(Selector.BUTTON);
+        }
 
-}(jQuery);
+        Button._jQueryInterface.call($$$1(button), 'toggle');
+    }).on(Event.FOCUS_BLUR_DATA_API, Selector.DATA_TOGGLE_CARROT, function (event) {
+        var button = $$$1(event.target).closest(Selector.BUTTON)[0];
+        $$$1(button).toggleClass(ClassName.FOCUS, /^focus(in)?$/.test(event.type));
+    });
+    /**
+     * ------------------------------------------------------------------------
+     * jQuery
+     * ------------------------------------------------------------------------
+     */
+
+    $$$1.fn[NAME] = Button._jQueryInterface;
+    $$$1.fn[NAME].Constructor = Button;
+
+    $$$1.fn[NAME].noConflict = function () {
+        $$$1.fn[NAME] = JQUERY_NO_CONFLICT;
+        return Button._jQueryInterface;
+    };
+
+    return Button;
+}($);

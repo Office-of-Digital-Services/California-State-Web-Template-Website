@@ -1,0 +1,76 @@
+/* -----------------------------------------
+   SECTIONS
+   /source/scss/cagov/sections.scss
+----------------------------------------- */
+
+.section {
+	padding-top: 25px;		// beta 5.0 addition
+    padding-bottom: 25px;	// beta 5.0 addition
+    background: $white;
+    position: relative;      // position and overflow needed for parallax effect
+    overflow: hidden;
+
+    @media (max-width: $screen-xs-max) {
+        padding-top: $line-height-computed;
+        padding-bottom: $line-height-computed;
+    }
+
+    /* Section extensions */
+
+    &.collapsed {
+        padding-top: 0;
+        padding-bottom: 0;
+    }
+
+    .parallax-bg {
+        background-position: center top;
+        background-repeat: no-repeat;
+        background-size: cover;
+        bottom: 0;
+        left: 0;
+        position: absolute;
+        width: 100%;
+        height: 100%;
+
+        ~ .container {
+            position: relative;      // Needed so text appeard above background
+        }
+    }
+    
+    .container {
+        > h1, > h2, > h3, > h4 {
+           margin-top: 0;          // Remove margin for direct decendents of section
+        }
+    }
+}
+
+// beta 5.0 addition
+.five {		
+	width:115px;			
+}
+
+// beta 5.0 addition		
+.four {		
+	width:145px;			
+}
+
+// beta 5.0 addition		
+.three {		
+	width:200px;			
+}	
+
+// beta 5.0 addition	
+.two {		
+	width:307px;			
+}	
+
+// pre tag State Template styles
+pre {
+	word-break: break-all;
+	word-wrap: break-word;
+	background-color: $gray-lightest;
+	border: 1px solid $gray-lighter;
+	padding:$spacer
+	}
+
+

@@ -1,0 +1,15 @@
+/* -----------------------------------------
+   COURSES - /source/scss/cagov/courses.scss
+----------------------------------------- */
+
+.course-item {
+    @include well();
+    
+    .thumbnail~.header, .thumbnail~.body {
+        margin-left:(($grid-gutter-width / 2)+70);      // 70 is the width of the thumbnail in pixels
+    }
+    
+    .datetime {
+        clear:both;
+    }
+}

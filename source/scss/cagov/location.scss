@@ -1,0 +1,198 @@
+/* -----------------------------------------
+   LOCATION - /source/scss/cagov/location.scss
+----------------------------------------- */
+//
+// GENERAL LOCATION STYLES
+// --------------------------------------------------
+
+.location {
+    .contact {
+        .title {
+            font-weight: bold;
+        }
+
+        [class^="ca-gov-icon"] {
+            @include font-size(1.5);
+            position: absolute;
+            color: $gray;
+        }
+
+        a {
+            position: relative;
+            left: 0px;
+        }
+    }
+
+    .summary {
+        .title {
+            font-weight: bold;
+        }
+    }
+}
+
+
+//
+// FULL WIDTH BANNER WITH THUMBNAIL
+// --------------------------------------------------
+
+.location.banner {
+    @include clearfix();
+    padding: ($grid-gutter-width / 2) 0;
+    background:$gray-lightest;
+    margin-bottom:($line-height-computed / 2);
+    
+    .thumbnail {
+        @include make-sm-column(4);
+        @include make-md-column(3);
+        @include make-lg-column(2);
+        
+        img {
+            @include img-responsive();
+        }
+    }
+    
+    .contact {
+        @include make-sm-column(8);
+        @include make-md-column(3);
+        @include make-lg-column(3);
+        position:relative;
+    }
+    
+    .summary {
+        @include make-sm-column(12);
+        @include make-md-column(6);
+        @include make-lg-column(7);
+        
+        @media (max-width: $screen-sm-max) {
+            margin-top:($line-height-computed / 2);
+        }
+    }
+    
+    .btn {
+        @include btn-default;
+        @include btn-xs();
+        float:right;
+        
+        @media (max-width: $screen-sm-max) {
+            margin-top:($line-height-computed / 2);
+        }
+    }
+}
+
+
+
+//
+// GENERIC CONTACT WIDGET
+// --------------------------------------------------
+
+
+.location.contact {
+    @include clearfix();
+    margin-bottom: $line-height-computed;
+    position:relative;
+    
+    .main-secondary > & {
+        margin-top: $line-height-computed;                 // when first in sidebar add extra padding on top
+    }
+    
+    [class^="ca-gov-icon-"] {
+        @include font-size(3.5);
+        color:$gray;
+        float:left;
+        width:20%;
+        min-width:60px;
+        max-width:60px;
+		position: relative;  // beta 5.0 addition
+    	top: -0.3em;  // beta 5.0 addition
+    }
+    
+    .contact {
+        float:left;
+        width:70%;
+        
+        a {
+            margin-left:0;
+        }
+        
+    }
+    
+    .btn {
+        @include btn-default();
+        @include btn-xs();
+    }
+}
+
+
+
+//
+// LOCATION MINI WIDGET
+// --------------------------------------------------
+
+.location.mini {
+    @include clearfix();
+    position:relative;
+    margin-bottom:$line-height-computed;
+    
+    [class^="ca-gov-icon"] {
+        padding:5px;
+        line-height:1;
+        @include font-size(2);
+        position:absolute;
+    }
+    
+    .contact {
+        margin-left:60px;
+        
+        .title {
+            font-weight:normal;                  // Overwrites default bold
+        }
+        
+        a {
+            margin-left:0;                       // Moves text back inline with address
+        }
+    }
+}
+
+
+
+//
+// LOCATION FULL
+// --------------------------------------------------
+
+.location.full {
+    .photo {
+        height: 100%;
+        width: 100%;
+
+        @media (max-width: $screen-sm-max) {
+            margin-bottom: ($line-height-computed / 2); // Adds seperation between photo and map at small size
+        }
+    }
+
+    .map {
+        iframe {
+            width: 100%;
+            border: 0;
+        }
+    }
+
+    .contact {
+        @include make-sm-column(3);
+        margin-top: $line-height-computed;
+
+        [class^="ca-gov-icon"] {
+            @include font-size(2.2);
+            position: absolute;
+        }
+
+        a {
+            position: relative;
+            left: 40px; // Moves text away from icon
+        }
+    }
+
+    .summary {
+        @include make-sm-column(9);
+        margin-top: $line-height-computed;
+    }
+}

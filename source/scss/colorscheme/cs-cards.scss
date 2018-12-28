@@ -1,0 +1,95 @@
+/* -----------------------------------------
+   CARDS
+   /source/scss/colorscheme/cs-cards.scss
+----------------------------------------- */
+
+// MIXIN
+@mixin card-variant($background, $border, $text-color: contrast($background) ){
+    background-color: $background;
+    border-color: $border;
+    color: $text-color;
+    
+    .card-header {
+        border-bottom: $card-border-width solid $border;
+        background-color: darken($background, 5%);
+    }
+    
+    .card-footer {
+        border-top: $card-border-width solid $border;
+        background-color: darken($background, 5%);
+    }
+}
+
+
+//
+// CARD STYLES
+// --------------------------------------------------
+
+.card-default {
+    @include card-variant(lighten(#f5f5f5, 4%), $gray-lighter);
+}
+
+.card-primary {
+    @include link-variant($white, $color-s1);
+    @include underline($white, $color-s1);
+    @include card-variant($brand-primary, $brand-primary);
+}
+
+.card-understated {
+    @include card-variant($color-s1, darken($color-s1, 5%));
+}
+
+.card-overstated {
+     @include link-variant(#fff, $color-p1, none, underline);
+     @include card-variant($color-s3, darken($color-s3, 8%));
+}
+
+.card-standout {
+    @include link-variant($gray-lightest, $color-p1, none, underline);
+    @include card-variant($color-p3, darken($color-p3, 8%));
+}
+
+.card-inverted, .card-inverse {
+    @include link-variant($color-s3, darken($color-s3, 7%));
+    @include underline($color-s3, darken($color-s3, 7%));
+    @include card-variant(contrast(#fff), contrast(#fff));
+}
+
+.card-success {
+    @include link-variant($text-color, $gray-base);
+    @include underline($text-color, $gray-base);
+    @include card-variant($brand-success, $brand-success);
+}
+
+.card-info {
+    @include link-variant(#fff, #fff);
+    @include underline(#fff, #fff);
+    @include card-variant($brand-info, $brand-info);
+}
+
+.card-warning {
+    @include link-variant($text-color, $gray-base);
+    @include underline($text-color, $gray-base);
+    @include card-variant($brand-warning, $brand-warning);
+}
+
+.card-danger {
+    @include link-variant($gray-base, $gray-base);
+    @include underline($gray-base, $gray-base);
+    @include card-variant($brand-danger, $brand-danger);
+}
+
+
+//
+// Inverse cards need a little extra love
+// --------------------------------------------------
+
+.card-inverse, .card-inverted {
+    .card-header {
+        border-bottom: $card-border-width solid rgba(255,255,255,.2);
+    }
+    
+    .card-footer {
+        border-top: $card-border-width solid rgba(255,255,255,.2);
+    }
+}

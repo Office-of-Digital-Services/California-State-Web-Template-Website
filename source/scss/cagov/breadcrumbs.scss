@@ -1,0 +1,24 @@
+/* -----------------------------------------
+   BREADCRUMBS -  /source/scss/cagov/breadcrumbs.scss
+----------------------------------------- */
+
+.breadcrumb {
+    padding-left:0;
+	background-color:transparent;
+    
+    li {
+        border-left:1px dotted $gray-light;
+        padding:0 ($grid-gutter-width / 2);
+        height:10px;                            // Setting Height and Line-height reduces the visual look of the separators
+        line-height:10px;
+        
+        &:first-child {
+            border-left:none;                   // Removes the border from the first item in the breadcrumb
+            padding-left:0;                     // Removes the padding from the left side of the first link
+        }
+    }
+}
+
+.breadcrumb > li + li:before {
+    padding:0;                                  // Overrides Bootstraps injected content
+}

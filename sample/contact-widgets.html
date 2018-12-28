@@ -7,7 +7,8 @@
 <head>
 <!-- 
 California State Template
-    Version 5.0.3
+
+Version 5.0.4
  
 Based on Twitter Bootstrap
 -->
@@ -38,17 +39,19 @@ Based on Twitter Bootstrap
 		<!--#include virtual="/ssi/branding.html" -->
     
     <!-- Include Mobile Controls -->
-    <!--#include virtual="/ssi/mobile-controls.html" -->    
-    
-    <div class="navigation-search">      
-    <!-- Include Navigation -->
-      <!--#include virtual="/ssi/navigation.html" -->
-      
-      <div id="head-search" class="search-container">
-        <!-- Include Search -->
-        <!--#include virtual="/ssi/search.html" -->
-      </div>
+    <!--#include virtual="/ssi/mobile-controls.html" -->
+
+    <div class="navigation-search">
+        <!-- Include Navigation -->
+        <!--#include virtual="/ssi/navigation.html" -->
+
+        <div id="head-search" class="search-container">
+            <!-- Include Search -->
+            <!--#include virtual="/ssi/search.html" -->
+        </div>
+
     </div>
+
 	<div class="header-decoration"></div>
 </header>
 
@@ -98,15 +101,15 @@ Based on Twitter Bootstrap
                     <h2>Source Code:</h2>
                      <div class="tab-group">
                         <ul id="sourceCode2" class="nav nav-tabs" role="tablist">
-                            <li class="active"><a href="#html" role="tab" data-toggle="tab"><label for="without-panel-html">HTML Markup</label></a></li>
-                            <li><a href="#microdata" role="tab" data-toggle="tab"><label for="without-panel-microdata">Microdata</label></a></li>
+                            <li class="nav-item"><a class="nav-link active" href="#html" role="tab" data-toggle="tab" aria-selected="true"><label for="without-panel-html">HTML Markup</label></a></li>
+                            <li class="nav-item"><a class="nav-link" href="#microdata" role="tab" data-toggle="tab" aria-selected="false"><label for="without-panel-microdata">Microdata</label></a></li>
                         </ul>
                         <!-- Tab panes -->
                         <div class="tab-content responsive">
-                            <div class="tab-pane active" id="html">
+                            <div class="tab-pane active" id="html"  role="tabpanel"  aria-labelledby="html-tab">
                                  <textarea id="without-panel-html" class="form-control" rows="10" cols="80"><!--#include virtual="/sample/modules/contact.html" --></textarea>
                             </div>
-                            <div class="tab-pane" id="microdata">
+                            <div class="tab-pane" id="microdata" role="tabpanel" aria-labelledby="microdata-tab">
                                  <textarea id="without-panel-microdata" class="form-control" rows="10" cols="80"><!--#include virtual="/sample/modules/contact-schema.html" --></textarea>
                             </div>
                         </div>

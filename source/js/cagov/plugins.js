@@ -2,6 +2,7 @@
    INIT THIRD PARTY PLUGINS - /source/js/cagov/plugins.js
 ----------------------------------------- */
 
+
 $(document).ready(function () {
     // Tabs to accordion
     // https://github.com/openam/bootstrap-responsive-tabs

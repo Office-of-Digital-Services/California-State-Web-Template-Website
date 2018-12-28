@@ -1,0 +1,87 @@
+/* -----------------------------------------
+   EVENTS /source/scss/cagov/events.scss
+----------------------------------------- */
+
+.event-item {
+    padding-left: 20px;
+    margin-bottom: $line-height-computed;
+
+    .title {
+        list-style: none;
+        position: relative;
+
+        &::before {
+            content: "\e046";
+            font-family: "CaGov";
+            background: none !important;
+            position: absolute;
+            left: -22px;
+            font-size: 12px;
+            top: 4px;
+        }
+
+        .main-secondary & {
+            background: none; // Remove the bullet icon when used in the sidebar
+        }
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+        @include font-size(1);
+        margin: 0 0 4px 0;
+    }
+}
+
+
+//
+// EVENT LIST WITH THUMBNAIL
+// --------------------------------------------------
+
+.event-item {
+    &::after {
+        display: block;
+        clear: both;
+        content: "";
+    }
+
+    > .thumbnail {
+        @include make-xs-column(4);
+        @include make-sm-column(3);
+        @include make-md-column(2);
+        padding: 0;
+
+        img {
+            @include img-responsive();
+        }
+    }
+
+    .thumbnail + .info {
+        @include make-xs-column(8);
+        @include make-sm-column(9);
+        @include make-md-column(10);
+
+        .title {
+            background: none; // Removes bullet
+            &::before {
+                content: "";
+                background: none !important;
+                position: absolute;
+            }
+        }
+    }
+}
+
+
+
+//
+// EVENT DETAILS
+// --------------------------------------------------
+.event-detail {
+    .presenter {
+        padding: ($line-height-computed / 2) 0;
+        @include clearfix();
+    }
+
+    .description {
+        @include clearfix();
+    }
+} 
