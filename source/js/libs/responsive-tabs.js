@@ -166,7 +166,7 @@ var fakewaffle = (function ($, fakewaffle) {
         // Toggle the tab when the associated panel is toggled
         collapse.on('shown.bs.collapse', function (e) {
 
-           // Commented out following lines because they produce error
+           // Coommented out following lines because they produce error
            // var current = $(e.target).context.id.replace(/collapse-/g, '#');
            // $('a[href="' + current + '"]').tab('show');
 

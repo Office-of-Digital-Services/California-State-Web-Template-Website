@@ -8,7 +8,7 @@
 <head>
 <!--
 California State Template
-    Version 5.0.3
+Version 5.0.4
 
 Based on Twitter Bootstrap
 -->
@@ -35,17 +35,19 @@ Based on Twitter Bootstrap
 		<!--#include virtual="/ssi/branding.html" -->
 
         <!-- Include Mobile Controls -->
-        <!--#include virtual="/ssi/mobile-controls.html" -->    
-    
-    <div class="navigation-search">      
-    <!-- Include Navigation -->
-      <!--#include virtual="/ssi/navigation.html" -->
-      
-      <div id="head-search" class="search-container">
-        <!-- Include Search -->
-        <!--#include virtual="/ssi/search.html" -->
-      </div>
+        <!--#include virtual="/ssi/mobile-controls.html" -->
+
+        <div class="navigation-search">
+            <!-- Include Navigation -->
+            <!--#include virtual="/ssi/navigation.html" -->
+
+            <div id="head-search" class="search-container">
+                <!-- Include Search -->
+                <!--#include virtual="/ssi/search.html" -->
+            </div>
+
         </div>
+
         <div class="header-decoration"></div>
     </header>
 
@@ -60,7 +62,7 @@ Based on Twitter Bootstrap
 
                 <h1>Carousels and Slideshows</h1>
 
-                <div class="container">
+                <div class="group">
                     <div class="two-thirds">
                         <h2>Content Carousel</h2>
                         <p>A content carousel component provides a solution for placing text or other content bove an image. With responsive and dynamic content in mind , there is two element configurations for setting the height of the slide. One which fits to the content, and one which fits to the image.</p>
@@ -73,7 +75,7 @@ Based on Twitter Bootstrap
                         <textarea id="sample-blank" class="form-control" rows="10" cols="80"><!--#include virtual="/sample/modules/carousel-content-blank.html" --></textarea>
                     </div>
                 </div>
-                <div class="container">
+                <div class="group">
                     <div class="two-thirds">
                         <h2>Content Carousel (content fit)</h2>
                         <p>To create a content fit, we use a background-image on the outermost element of our item. One could of course not set the background-image and the carousel item will still fit the content,  but you will have to be aware of issues between the carousel container's background color and your content.</p>
@@ -96,7 +98,7 @@ Based on Twitter Bootstrap
 
                 <hr>
 
-                <div class="container">
+                <div class="group">
                     <div class="two-thirds">
                         <h2>Content Carousel (image fit)</h2>
                         <p>To create an image fit, we use an image element contained within our item. If the image element is missing the item will simply fallback to being a content fit item. <i>Warn:</i> if the image url is broken or pointing to the wrong location, the element will have 0 height.</p>

@@ -1,0 +1,36 @@
+/* -----------------------------------------
+   EXPLORE BANNER
+   /source/scss/cagov/explore-banner.scss
+----------------------------------------- */
+
+
+.explore-invite {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    padding: 15px;
+    background: #000;
+	background-color: rgba(0, 0, 0, 0.5);
+
+    .explore-title {
+        @include font-size(1.7);
+    }
+
+    [class^="ca-gov-icon-"] {
+        display: block;
+        @include font-size(3);
+    }
+
+    a {
+        color: #fff;
+        cursor: pointer;
+        display: block;
+
+        &:hover {
+            // decoration on icons cannot be removed unless it uses inline-block or using additional spans like this solution
+            // http: //stackoverflow.com/questions/19326446/keep-underline-on-anchor-text-but-not-on-font-awesome-icon-in-anchor
+            text-decoration: none;
+
+        }
+    }
+}

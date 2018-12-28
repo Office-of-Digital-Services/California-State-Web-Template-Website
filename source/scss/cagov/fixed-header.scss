@@ -1,0 +1,100 @@
+/* -----------------------------------------
+   FIXED-HEADER -  /source/scss/cagov/fixed-header.scss
+----------------------------------------- */
+
+@media (min-width: $screen-sm-min) {
+
+    .ask-group.fixed-hide {
+        visibility:hidden;
+        opacity:0;
+    }
+
+    #head-search.fixed-hide:not(.active) {
+        visibility:hidden;
+        opacity:0;
+		-webkit-transition: all 0.3s;
+        transition: all 0.3s;
+    }
+
+
+.no-js {
+  .ask-group.fade {
+    visibility: visible;
+    opacity:1;
+  }
+
+  #head-search.fade {
+      visibility: visible;
+      opacity:1;
+
+  }
+}
+
+}
+
+.global-header.fixed {
+    position: fixed;
+    width: 100%;
+    z-index: 1;
+	@media (min-width: $screen-sm-min) {
+		z-index: 7; //  _cs-shame.scss addition
+	}
+	
+}
+
+.fixed + .main-content {
+    padding-top: 127px;      // Padding for fixed header
+}
+
+
+ // Beta 5.0 addition
+.fixed + div :target:before {		
+	display: block;		
+	content: "";		
+	height: 140px;		 // Beta 5.0 addition (gives more space on top of targer)		
+	margin: -140px 0 0;			 // Beta 5.0 addition	
+}
+
+
+//
+// COMPACT MENU LOOK AND FEEL
+// --------------------------------------------------
+
+@media (min-width: $screen-sm-min) {
+    .fixed.compact {
+        // .search-container {
+        //   top: 51px;
+        // }
+        // covering edge case  where no links are set. Need this to maintain
+        // search box and ask group positioning
+        .main-navigation {
+            margin-top: -50px; // Beta 5.0 addition
+            min-height: 50px; // Beta 5.0 addition
+        }
+
+        .first-level-link [class^="ca-gov-icon-"] {
+            display: none;
+        }
+
+        .branding {
+            height: 57px !important; // Beta 5.0 addition
+        }
+
+        .header-organization-banner {
+            height: 55px; // Beta 5.0 addition
+            max-height: 45px; // Beta 5.0 addition
+            line-height: 55px; // Beta 5.0 addition
+            a {
+                max-width: 225px; // Beta 5.0 addition
+                img {
+                    max-height: 50px;
+                }
+            }
+        }
+
+        .top-level-nav { // Beta 5.0 addition
+            min-height: 50px;
+        }
+    }
+
+}

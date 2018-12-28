@@ -1,0 +1,159 @@
+/* -----------------------------------------
+   SECTIONS
+   /source/scss/colorscheme/sections.scss
+----------------------------------------- */
+
+.section, .card {
+    &-default {
+        background: $gray-lightest;
+    }
+
+    &-search {
+        background: $gray-lighter; // TODO: Make Generic
+    }
+
+    &-understated {
+        // background: $gray-lighter;
+        background: $color-s1; // beta 5.0 addition
+    }
+
+    &-overstated {
+        // Overstated is same as primary // beta 5.0 addition
+        @include link-variant($white, $color-s1);
+        @include underline($white, $color-s1);
+        background: $color-p2;
+        color: contrast($color-p2);
+
+        .btn-primary {
+            // better-button = color; background; border, hover-color; hover-background; hover-border
+            @include better-button($white, $color-p2, contrast($color-p2), $white, darken($color-p2, 7%), contrast($color-p2));
+        }
+
+        .btn-standout {
+            // better-button = color; background; border, hover-color; hover-background; hover-border
+            @include better-button($white, $color-p3, contrast($color-p3), $white, darken($color-p3, 7%), contrast($color-p3));
+        }
+    }
+
+    &-standout {
+        @include link-variant($color-s3, darken($color-s2, 15%));
+        @include underline($color-s3, darken($color-s2, 15%));
+        @include donut-color-variants($donut-background: $gray-lighter, $donut-halfmark: $gray-lightest);
+        background: $color-p3;
+        color: contrast($color-p3);
+
+        .btn-primary {
+            // better-button = color; background; border, hover-color; hover-background; hover-border
+            @include better-button($white, $color-p2, contrast($color-p2), $white, darken($color-p2, 7%), contrast($color-p2));
+        }
+
+        .btn-standout {
+            // better-button = color; background; border, hover-color; hover-background; hover-border
+            @include better-button($white, $color-p3, contrast($color-p3), $white, darken($color-p3, 7%), contrast($color-p3));
+        }
+
+        code {
+            color:$white;
+        }
+    }
+
+    &-impact {
+        // SAME AS STANDOUT
+        @include link-variant($color-s3, darken($color-s2, 15%));
+        @include underline($color-s3, darken($color-s2, 15%));
+        @include donut-color-variants($donut-background: $gray-lighter, $donut-halfmark: $gray-lightest);
+        background: $color-p3;
+        color: contrast($color-p3);
+
+        .btn-primary {
+            // better-button = color; background; border, hover-color; hover-background; hover-border
+            @include better-button($white, $color-p2, contrast($color-p2), $white, darken($color-p2, 7%), contrast($color-p2));
+        }
+
+        .btn-standout {
+            // better-button = color; background; border, hover-color; hover-background; hover-border
+            @include better-button($white, $color-p3, contrast($color-p3), $white, darken($color-p3, 7%), contrast($color-p3));
+        }
+        // SECTION THEME BUTTON COLORS
+        .btn-default {
+            // better-button = color; background; border, hover-color; hover-background; hover-border
+            @include better-button(#fff, transparent, $color-s2, #fff, rgba(255,255,255,.2), #fff);
+            margin-bottom: ($line-height-computed / 2);
+
+            [class^="ca-gov-icon-"] {
+                color: $color-s2;
+                padding: 0 5px;
+            }
+        }
+    }
+
+    &-primary {
+        @include link-variant($white, $color-s1);
+        @include underline($white, $color-s1);
+        background: $color-p2;
+        color: contrast($color-p2);
+
+        .btn-primary {
+            // better-button = color; background; border, hover-color; hover-background; hover-border
+            @include better-button($white, $color-p2, contrast($color-p2), $white, darken($color-p2, 7%), contrast($color-p2));
+        }
+
+        .btn-standout {
+            // better-button = color; background; border, hover-color; hover-background; hover-border
+            @include better-button($white, $color-p3, contrast($color-p3), $white, darken($color-p3, 7%), contrast($color-p3));
+        }
+    }
+
+    &-inverted {
+        @include link-variant($color-s3, darken($color-s3, 7%));
+        @include underline($color-s3, darken($color-s3, 7%));
+        background: $gray-darker;
+        color: #fff;
+
+        .btn-primary {
+            // better-button = color; background; border, hover-color; hover-background; hover-border
+            @include better-button($white, $color-p2, contrast($color-p2), $white, darken($color-p2, 7%), contrast($color-p2));
+        }
+
+        .btn-standout {
+            // better-button = color; background; border, hover-color; hover-background; hover-border
+            @include better-button($white, $color-p3, contrast($color-p3), $white, darken($color-p3, 7%), contrast($color-p3));
+        }
+    }
+
+    &-danger {
+        @include link-variant($gray-base, $gray-base);
+        @include underline($gray-base, $gray-base);
+        background: $brand-danger;
+        color: contrast($brand-danger);
+    }
+}
+
+// background links / gradient links
+.bg-highlight {
+    color: $gray-base;
+    @include link-variant($text-color, $gray-base);
+    @include underline($text-color, $gray-base);
+}
+
+.bg-primary {
+    color: $white;
+    @include link-variant($white, $color-s1);
+    @include underline($white, $color-s1);
+}
+
+.bg-standout {
+    color: $white;
+    @include link-variant($color-s3, darken($color-s2, 15%));
+    @include underline($color-s3, darken($color-s2, 15%));
+}
+
+//
+
+a.text-white:not(.btn) {
+    @include link-underline($white);
+
+    &:hover {
+        @include link-underline($white);
+    }
+}

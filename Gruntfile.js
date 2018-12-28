@@ -1,7 +1,5 @@
 // JS Partials - Used in concat & uglify tasks
 var jssrc = [
-  // NO CONFLICT
-  'source/js/cagov/noconflict.js',
   // BOOTSTRAP
   'source/js/bootstrap/alert.js',
   'source/js/bootstrap/button.js',
@@ -14,6 +12,7 @@ var jssrc = [
 
   // TBOOTSTRAP ACCESSIBILITY PLUGIN
   'source/js/bootstrap-accessibility-plugin/functions.js',
+  'source/js/bootstrap-accessibility-plugin/collapse.js',
   'source/js/bootstrap-accessibility-plugin/dropdown.js',
   'source/js/bootstrap-accessibility-plugin/tab.js',
 
@@ -25,6 +24,7 @@ var jssrc = [
   'source/js/libs/countUp.js',
   'source/js/libs/jquery.waypoints.js',
   'source/js/libs/Vague.js',
+  'source/js/libs/require.js',
 
   // CAGOV CORE
   'source/js/cagov/helpers.js',
@@ -45,11 +45,14 @@ var jssrc = [
   'source/js/cagov/number-counter.js',
   'source/js/cagov/header.js',
   'source/js/cagov/fixed-header.js',
+  'source/js/cagov/charts.js',
   'source/js/cagov/parallax.js',
   'source/js/cagov/animations.js',
   'source/js/cagov/more.js',
   'source/js/cagov/high-contrast.js',
-  'source/js/cagov/ask-group.js'
+  'source/js/cagov/geo.js',
+  'source/js/cagov/ask-group.js',
+  // 'source/js/cagov/clipboard.js'
 ];
 
 var csssrc = {
@@ -57,9 +60,6 @@ var csssrc = {
     "css/cagov.font-only.css": "source/less/cagov.font-only.less",
     "css/colorscheme-oceanside.css": "source/less/colorscheme/colorscheme-master.less"
 }
-
-// Avoid having to use ASP classic mode for server side includes in IIS using browsersync-ssi
-var ssi = require('browsersync-ssi');
 
 module.exports = function (grunt) {
 
@@ -128,15 +128,8 @@ module.exports = function (grunt) {
                     ]
                 },
                 options: {
-                    watchTask: true,
-                    startPath: "index.html",
-                    server: {
-                        baseDir: "./",
-                        middleware: ssi({
-                            baseDir: './',
-                            ext: '.html'
-                        })
-                    }
+                    proxy: "cagov5.dev",
+                    watchTask: true
                 }
             }
         },
@@ -216,7 +209,7 @@ module.exports = function (grunt) {
 
     // Default task to watch and output uncompresses
     grunt.registerTask('default', [
-      'concat', 'less:development', 'autoprefixer', 'browserSync', 'watch'
+      'concat', 'less:development', 'autoprefixer', 'watch'
     ]);
 
     // Build task to minify css and js
@@ -232,6 +225,11 @@ module.exports = function (grunt) {
     // HTML linting
     grunt.registerTask('lint', [
       'concat', 'less:development', 'htmllint'
+    ]);
+
+    // Device testing
+    grunt.registerTask('test', [
+      'concat', 'less:development', 'autoprefixer', 'browserSync', 'watch'
     ]);
 
 };

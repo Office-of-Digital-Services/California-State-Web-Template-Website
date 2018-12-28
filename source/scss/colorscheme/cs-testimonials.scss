@@ -1,0 +1,83 @@
+/* -----------------------------------------
+   COMMENT
+   /source/scss/colorscheme/cs-testimonials.scss
+----------------------------------------- */
+
+.testimonial {
+
+    &-default {
+        background: $gray-lightest;
+    }
+
+    &-understated {
+        background: $color-s1;
+    }
+
+    &-overstated {
+        @include link-variant($text-color, $gray-base, none);
+        @include underline($text-color, $gray-base);
+        background: $color-s3;
+        color: $text-color;
+
+        footer {
+            color: contrast($color-s3);
+        }
+    }
+
+    &-standout {
+        @include link-variant($color-p1, #fff, none);
+        @include underline($color-p1, $white);
+        background: $color-p3;
+        color: contrast($color-p3);
+
+        footer {
+            color: contrast($color-p3);
+        }
+    }
+
+    &-primary {
+        @include link-variant($white, $color-s1, none);
+        @include underline($white, $color-s1);
+        background: $color-p2;
+        color: contrast($color-p2);
+
+
+        footer {
+            color: contrast($color-p2);
+        }
+    }
+
+    &-highlight {
+        @include link-variant($text-color, $gray-base, none);
+        @include underline($text-color, $gray-base);
+        background: $color-p1;
+        color: $text-color;
+
+
+        footer {
+            color: contrast($color-p1);
+        }
+    }
+
+    &-inverted {
+        @include link-variant($color-p1, #fff, none);
+        @include underline($color-p1, $white);
+        background: $gray-darker;
+        color: #fff;
+
+        footer {
+            color: contrast($gray-darker);
+        }
+    }
+
+    &-danger {
+        @include link-variant($gray-base, $gray-base);
+        @include underline($gray-base, $gray-base);
+        background: $brand-danger;
+        color: contrast($brand-danger);
+
+        footer {
+            color: contrast($brand-danger);
+        }
+    }
+}

@@ -1,0 +1,46 @@
+/* -----------------------------------------
+   TABLES - /source/scss/cagov/tables.scss
+----------------------------------------- */
+
+/* Adding the explicit classes below so that they are available in Rich Text Editor */
+
+table.table {
+    border-spacing: 0;
+}
+
+table.editor-table-default {
+    @include table();
+    @include table-default();
+}
+
+table.editor-table-striped {
+    @include table();
+    @include table-striped();
+}
+
+/* End Rich Text Editor */
+
+.table {
+    // The official table style design for CA.gov
+    &.table-default {
+        border: none;
+        
+        // Table Body
+        > thead, > tbody, > tfoot {
+            > tr {
+                > th, > td {
+                    background:#f2f2f2;
+                    border:2px solid #fff;
+                }
+            }
+        }
+      
+      // Table Head
+      > thead > tr {
+            > th, > td {
+              background:#d9d9d9;
+              border:2px solid #fff;
+            }
+        }
+    }
+}

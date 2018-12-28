@@ -1,0 +1,156 @@
+/* -----------------------------------------
+   LIST STYLES /source/scss/cagov/lists.scss
+----------------------------------------- */
+
+[class^="list-"] { // Reset all lists with a class of "list-"
+    list-style-type: none;
+    margin:($line-height-computed / 2) 0;
+    padding:0;
+}
+
+/* Adding the explicit classes below so that they are available in Rich Text Editor */
+
+ul.list-overstated {
+    padding:0;
+
+    a {
+        font-weight: bold;
+    }
+}
+
+.list-overstated, .list-understated {
+    li {
+        list-style: none;
+        position: relative;
+        padding: 0 0 14px 18px;
+
+        &::before {
+            content: "\e66a";
+            font-family: "CaGov";
+            background: none !important;
+            position: absolute;
+            font-size: 0.7em;
+            top: 3px;
+            left: 0;
+        }
+
+        &.open {
+            &::before {
+                content: "\e66b";
+                font-family: "CaGov";
+                background: none !important;
+                position: absolute;
+                font-size: 0.7em;
+                top: 3px;
+                left: 0;
+            }
+        }
+    }
+}
+
+
+.list-standout {
+    $size: 1.5em;               // reusable variable for .list-standout
+    padding:0;
+    padding-left: 1.5em;
+	margin: 12px 0 10px 0;
+    line-height: 1.4em;
+	
+	ul li:before {
+    content:none;
+}
+
+	ul.list-standout li:before {
+    content:"\35";
+}
+
+    li {
+        padding-left: $size;
+		margin: 10px 0 10px 0;
+
+        &:before {
+            content: "\35";         // ca-gov-icon-caret-right
+            font-family: "CaGov";
+            width: $size;
+            margin-left: -$size;
+            vertical-align: sub;
+            font-size: $size;
+            font-weight: 900;
+            display: inline-block;
+      }
+
+      &.open:before {
+        content: "\33";             // .ca-gov-icon-caret-down
+      }
+    }
+}
+
+.list-primary {
+$size: 1.5em;               // reusable variable for .list-standout
+    padding:0;
+    padding-left: 0.2em;
+
+    li {
+        padding-left: $size;
+
+        &:before {
+            content: "\4b";         //  .ca-gov-icon-minus-mark
+            font-family: "CaGov";
+            width: $size;
+            margin-left: -$size;
+            vertical-align: 0.1em;
+            font-size: 0.7em;
+            display: inline-block;
+			color:$color-p2;
+      }
+
+      &.open:before {
+        content: "\4f";             // .ca-gov-icon-minus-line
+      }
+    }
+}
+
+.accordion-list a {
+    cursor:pointer;
+}
+
+.list-divided {
+    height: 350px;
+    overflow-y: auto;
+
+    li {
+        border-top: 1px solid $gray-lighter;
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+}
+
+
+// Bootstrap 3 backwards compatibility
+.list-inline {
+    padding-left: 0;
+    list-style: none;
+    margin-left: -5px;
+
+    > li {
+        display: inline-block;
+        padding-left: 5px;
+        padding-right: 5px;
+    }
+
+    .list-inline-item {
+        display: inline-block;
+
+        &:not(:last-child) {
+            margin-right: 5px;
+        }
+    }
+}
+
+/* Removes image bullets from nested lists */
+.list-overstated, .list-understated, .list-standout {
+    ul li, ol li {
+        background:none;
+        padding-left:0;
+    }
+}
