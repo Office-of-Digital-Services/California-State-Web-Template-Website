@@ -272,29 +272,32 @@ $(document).ready(function () {
             $headerImage.css({
                 height: height + headerHeight + leeway
             });
-            // take into account the fixed header -----------------------------------------------------v5 FIX---------------------------------
 
-        } else {
-            // no header image, which means our main content needs to
+        } 
 
-            $mainContent.css({
-                'padding-top': Math.max(headerHeight, 119)
-            })
+// take into account the fixed header -----------------------------------------------------v5 FIX---------------------------------
 
+        //else {
+        //    // no header image, which means our main content needs to
 
-        } if ($(".ask-group").length > 0) {
-            $mainContent.addClass('print-p-t'); // Media print .main-content fix	
-            $mainContent.css({
-                'padding-top': 0
-            })
-
-            $('.header-slideshow-banner, .header-primary-banner').css({
-                'margin-top': 119
-
-            });
+        //    $mainContent.css({
+        //        'padding-top': Math.max(headerHeight, 119)
+        //    })
 
 
-        }
+        //} if ($(".ask-group").length > 0) {
+        //    $mainContent.addClass('print-p-t'); // Media print .main-content fix	
+        //    $mainContent.css({
+        //        'padding-top': 0
+        //    })
+
+        //    $('.header-slideshow-banner, .header-primary-banner').css({
+        //        'margin-top': 119
+
+        //    });
+
+
+        //}
     }
     // take into account the fixed header -----------------------------------------------------v5 FIX---------------------------------
 

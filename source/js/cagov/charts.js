@@ -83,28 +83,9 @@ function initPlotly(d3, Plotly) {
                         color: "#333"
                     }
                 }
-                // not setting the background color atm, keep default
-                // paper_bgcolor: container.css("background-color")
             });
 
-            // This does not work atm,
-            // following this issue for updates
-            // https://github.com/plotly/plotly.js/issues/102
-
-            // container.on('mousemove', function (data) {
-            //
-            //     // make things bigger
-            //     var hovertext = container.find(".hovertext");
-            //     var trans = hovertext.attr('transform')
-            //     // hovertext.attr('transform', trans + ' scale(1.3)');
-            //
-            //     // give more padding around text by setting stroke to the
-            //     // same color as the fill
-            //     var path = hovertext.find('path');
-            //     var color = path.css('fill');
-            //     console.log(color);
-            //     path.css({'stroke-width': 7, 'stroke': color})
-            // });
+       
         });
 
 
