@@ -7,7 +7,7 @@
 <head>
 <!-- 
 California State Template
-Version 5.5.0
+Version 5.5.1
  
 Based on Twitter Bootstrap
 -->
@@ -57,11 +57,12 @@ Based on Twitter Bootstrap
 </header>
 
     
-	<!-- Include Page Template -->
-    <!--#include virtual="/ssi/header-large-banner.html" -->
+
     
 
 <div id="main-content" class="main-content">
+    <!-- Include Page Template -->
+    <!--#include virtual="/ssi/header-large-banner.html" -->
     <div class="section">
         <main class="main-primary">
             <ol class="breadcrumb">
@@ -69,32 +70,32 @@ Based on Twitter Bootstrap
                 <li><a href="index.html">Examples</a></li>
                 <li class="active">Fixed Header</li>
             </ol>
-            
+
             <div class="group">
                 <div class="half">
                     <h1 id="title">Fixed Header</h1>
-                  <p>There are two header positioning options available to choose from. The default is a header that scrolls with the page as in previous templates. The new opion is a fixed position header that remains fixed to the top of the page at all times. An added feature of this option is that as the page is scrolled down the header becomes more compact to provide more real estate for the content area.</p>
+                    <p>There are two header positioning options available to choose from. The default is a header that scrolls with the page as in previous templates. The new opion is a fixed position header that remains fixed to the top of the page at all times. An added feature of this option is that as the page is scrolled down the header becomes more compact to provide more real estate for the content area.</p>
                     <p>To use the fixed header option add the <code>.fixed</code> class to the header div tag on your page.</p>
-              </div>
-                 
-              <div class="half p-t-lg m-t-lg">
+                </div>
+
+                <div class="half p-t-lg m-t-lg">
 <pre>
 &lt;header role=&quot;banner&quot; id=&quot;header&quot; class=&quot;global-header <strong>fixed</strong>&quot;&gt;
 ...
 &lt;/header&gt;
 </pre>
                     <p><span class="label label-info">NOTE:</span> The <code>.fixed</code> class may affect how some body elements  render on your page in relation to the top of page positioning. Please test accordingly.                </p>
-                    
-				</div>
-          <div class="p-l-sm">
-           <h2>Demonstration </h2>
-            <p>Toggle the button to add or remove the ask buttons below the featured search bar.</p>
-          
-            <button class="toggleHeader btn btn-secondary m-r-sm m-b-sm">Remove Fixed Header</button>
-            <p>&nbsp;</p>
-				</div>
-           <div class="clearfix"></div>
-           <hr>
+
+                </div>
+                <div class="p-l-sm">
+                    <h2>Demonstration </h2>
+                    <p>Toggle the button to add or remove the ask buttons below the featured search bar.</p>
+
+                    <button class="toggleHeader btn btn-secondary m-r-sm m-b-sm">Remove Fixed Header</button>
+                    <p>&nbsp;</p>
+                </div>
+                <div class="clearfix"></div>
+                <hr>
             </div>
             <!--#include virtual="/sample/modules/headers.html" -->
         </main>
@@ -108,7 +109,6 @@ Based on Twitter Bootstrap
 <script>
 // -- DEMONSTRATION ONLY! -- //
 $(document).ready(function(){ 
-    $("#main-content").css("padding-top", "0");
     // Toggle .fixed header class
     $(".toggleHeader").click(function() {
         var btnLabel = $(this);
@@ -121,7 +121,6 @@ $(document).ready(function(){
         } else {
             btnLabel.html('Add Fixed Header');
       		$("#header").removeClass("fixed");
-			$("#main-content").css("padding-top", "0");
 			$("#title").text("Fixed Header (Removed)");
 			window.scrollTo(0, 0);
 		

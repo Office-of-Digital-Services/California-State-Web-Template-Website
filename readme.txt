@@ -73,7 +73,7 @@ View the Live Demo Site here: http://beta.template.webstandards.ca.gov/
 ________________________________________
 
 Custom CSS (optional)
-CSS and JS is included in the core by default. If a custom build is desired all source files can be compiled using open source tools. Grunt and Node are recommended. Compiling from source allows for a smaller build using only the components that are necessary.
+CSS and JS is included in the core by default. If a custom build is desired all source files can be compiled using open source tools. Gulp and Node are recommended. Compiling from source allows for a smaller build using only the components that are necessary.
 
 ________________________________________ 
 
@@ -84,7 +84,7 @@ ________________________________________
 OPTIONAL SOURCE INSTALL
 
 All CSS and JS is included in the core by default. If a custom build is desired 
-all source files can be compiled using open source tools. Grunt and Node are recommended.
+all source files can be compiled using open source tools. Gulp and Node are recommended.
 Compiling from source allows for a smaller build using only the components that are necessary.
 
 Step 1: Instal node.js (http://nodejs.org)
@@ -93,11 +93,11 @@ Step 2: Install Gulp.js CLI (https://gulpjs.com/)
     * Run "npm install gulp-cli -g" (without quotes) from the cmd line
     
 Step 3: 
-    * cd into the root of the template folder (where the Gruntfile.js is located)
+    * cd into the root of the template folder (where the gulpfile.js is located)
     * Run "npm install" (without quotes) from the cmd line
     * Wait until installation is complete
     
 Step 4: 
-    * Run "gulp default" (without quotes) from the cmd line
+    * Run "gulp prod" (without quotes) from the cmd line
     Bu running this command Gulp will update the template's cagov core css or js files. 
-    (In this mode, css and js files will not be minified.)
+    (In this mode, css and js files will not be minified. If you would like to have unminified files run "gulp dev" command.)

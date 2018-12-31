@@ -41,7 +41,8 @@ var jssrc = [
 	'source/js/bootstrap/tooltip.js',
     'source/js/bootstrap/popover.js',
 	'source/js/bootstrap/scrollspy.js',
-	'source/js/bootstrap/tab.js',
+    'source/js/bootstrap/tab.js',
+    'source/js/bootstrap/toast.js',
 	'source/js/bootstrap/index.js',
 
 
