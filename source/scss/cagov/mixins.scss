@@ -879,26 +879,28 @@ a & {
 
 // Underline
 
-@mixin underline($underlinecolor: $brand-primary, $underlinehovercolor: darken($link-color, 15%), $size: 1px, $bottom: 4%) {
+
+
+@mixin underline($underlinecolor: $brand-primary, $underlinehovercolor: darken($link-color, 15%), $size-long: 2px, $size-height: 1px, $bottom: 4%) {
     a:not(.btn) {
-        background-image: linear-gradient($underlinecolor,$underlinecolor);
-        background-repeat: no-repeat;
-        background-size: 100% $size;
+        background-image: linear-gradient(to right, $underlinecolor 50%, transparent 50%);
+        background-repeat: repeat-x;
+        background-size: $size-long $size-height;
         background-position: center bottom $bottom;
         background-origin: padding-box;
         text-decoration: none !important;
 
         &:hover {
-            background-image: linear-gradient($underlinehovercolor,$underlinehovercolor);
+            background-image: linear-gradient(to right, $underlinehovercolor 50%, transparent 50%);
             text-decoration: none !important;
         }
     }
 }
 
-@mixin link-underline($undrlncolor: $brand-primary, $size: 1px, $bottom: 4%) {
-    background-image: linear-gradient($undrlncolor,$undrlncolor);
-    background-repeat: no-repeat;
-    background-size: 100% $size;
+@mixin link-underline($undrlncolor: $brand-primary, $size-long: 2px, $size-height: 1px, $bottom: 4%) {
+    background-image: linear-gradient(to right, $undrlncolor 50%, transparent 50%);
+    background-repeat: repeat-x;
+    background-size: $size-long $size-height;
     background-position: center bottom $bottom;
     background-origin: padding-box;
     text-decoration: none !important;
