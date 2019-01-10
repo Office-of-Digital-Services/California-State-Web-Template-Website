@@ -57,6 +57,8 @@ var jssrc = [
  'source/js/libs/Vague.js',
 
   // CAGOV CORE
+    'source/js/cagov/header.js',
+    'source/js/cagov/fixed-header.js',
     'source/js/cagov/helpers.js',
     'source/js/cagov/gatag.js',
   	'source/js/cagov/navigation.js',
@@ -73,8 +75,6 @@ var jssrc = [
     'source/js/cagov/breadcrumb.js',
     'source/js/cagov/service-tiles.js',
     'source/js/cagov/number-counter.js',
-    'source/js/cagov/header.js',
-    'source/js/cagov/fixed-header.js',
     'source/js/cagov/charts.js',
     'source/js/cagov/parallax.js',
     'source/js/cagov/animations.js',
