@@ -1,5 +1,5 @@
 /**
- * CA State Template v5.5 -  @version v5.5.1 -  1/3/2019 
+ * CA State Template v5.5 -  @version v5.5.1 -  1/9/2019 
   STYLES COMPILED FROM SOURCE (source/js) DO NOT MODIFY */
 /* -----------------------------------------
    NO CONFLIT - /source/js/cagov/noconflict.js
@@ -16559,6 +16559,13 @@ $(document).ready(function () {
         //     return;
         // }
 
+        if (mobileView() && !$('.search-container').hasClass('active')) {
+            $('html, body').animate({
+                scrollTop: $("#head-search").offset().top
+            }, 500);
+        }
+        $('.search-container').toggleClass('active');
+
         // let the user know the input box is where they should search
         $("#head-search").addClass('play-animation').one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function () {
             $(this).removeClass('play-animation');
@@ -16566,25 +16573,6 @@ $(document).ready(function () {
         });
 
 
-        // When compact has been applied to the header, it will take 400ms
-        // unitll the window has scrolled, and it will keep removing the ".active" class. After that we can apply the active
-        // class.
-
-        //------------------------------------------------------------- v5 ----------------------------------------- *Changes to remove .primary body class dependency for featured-search behaviour 
-
-        if ($("#head-search").is(".featured-search")) {
-            //-------------- v5 *Added if statement
-            window.setTimeout(function () {
-                $('body:not(.primary) .search-container').addClass('active');
-            }, 401);
-
-        } else {
-
-            window.setTimeout(function () {
-                $('.search-container').addClass('active');
-            }, 401);
-
-        }
 
     });
 
@@ -16626,6 +16614,9 @@ $(document).ready(function () {
 
 });
 
+function mobileView() {
+    return ($('.global-header .mobile-controls').css('display') !== "none"); // mobile view uses arrow to show subnav instead of first touch
+}
 /* -----------------------------------------
    INIT THIRD PARTY PLUGINS - /source/js/cagov/plugins.js
 ----------------------------------------- */
