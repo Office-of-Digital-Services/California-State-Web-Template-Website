@@ -7,7 +7,6 @@
 
 .header-slideshow-banner {
     position:relative;
-    height: 500px;  // Beta 5.0 addition
     background:#000;
     
     #primary-carousel {
@@ -16,8 +15,7 @@
         
     /* Adjusting the height of the banner controls */
     .banner-pager, .banner-play-pause {
-        top:350px;
-		z-index: 1;	//  _cs-shame.scss addition
+		z-index: 1;	
     }
     
     // Overrides AEM's main.css
@@ -33,7 +31,6 @@
 @media (max-width: $screen-xs-max) {
     .header-slideshow-banner {
         display:block;
-        height:160px;
         
         #primary-carousel {
             margin:0;
