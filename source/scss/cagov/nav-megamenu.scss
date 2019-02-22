@@ -78,7 +78,7 @@
 .sub-nav {
     left: ($grid-gutter-width / 2);
     right: ($grid-gutter-width / 2);
-    overflow: visible;
+    overflow: hidden;
 
     // Remove border as rules are added to top level links
     @media (max-width: $screen-xs-max) {
@@ -337,7 +337,8 @@ a.second-level-link {
 }
 .sub-nav.open {
 	display: block;
-	max-height: 700px;
+	max-height:1000px;
+    overflow:auto;
 }
 .main-navigation.active {
 	max-height: 5000px;
@@ -487,4 +488,17 @@ a.second-level-link {
             margin-bottom: 5px !important;
         }
     }
+}
+
+// Adding carrot if nav item has sub nav
+@media (min-width: $screen-sm-min) {
+    .has-sub::after {
+        content: "\43";
+        font-family: 'CaGov';
+        font-size: .8rem;
+        position:relative;
+        top:2px;
+
+    }
+
 }

@@ -38,6 +38,7 @@ var jssrc = [
 	'source/js/bootstrap/popper.js',
     'source/js/bootstrap/dropdown.js',
     'source/js/bootstrap/modal.js',
+    'source/js/bootstrap/sanitizer.js',
 	'source/js/bootstrap/tooltip.js',
     'source/js/bootstrap/popover.js',
 	'source/js/bootstrap/scrollspy.js',

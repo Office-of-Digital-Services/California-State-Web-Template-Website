@@ -1,18 +1,18 @@
 /**
    * --------------------------------------------------------------------------
-   * Bootstrap (v4.2.1): button.js
+   * Bootstrap (v4.3.1): button.js
    * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
    * --------------------------------------------------------------------------
    */
 
 /**
-   * ------------------------------------------------------------------------
-   * Constants
-   * ------------------------------------------------------------------------
-   */
+ * ------------------------------------------------------------------------
+ * Constants
+ * ------------------------------------------------------------------------
+ */
 
 var NAME$1 = 'button';
-var VERSION$1 = '4.2.1';
+var VERSION$1 = '4.3.1';
 var DATA_KEY$1 = 'bs.button';
 var EVENT_KEY$1 = "." + DATA_KEY$1;
 var DATA_API_KEY$1 = '.data-api';
@@ -98,8 +98,8 @@ var Button =
         _proto.dispose = function dispose() {
             $.removeData(this._element, DATA_KEY$1);
             this._element = null;
-        }; // Static
-
+        } // Static
+            ;
 
         Button._jQueryInterface = function _jQueryInterface(config) {
             return this.each(function () {

@@ -1,9 +1,9 @@
 /**
-   * --------------------------------------------------------------------------
-   * Bootstrap (v4.2.1): util.js
-   * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
-   * --------------------------------------------------------------------------
-   */
+ * --------------------------------------------------------------------------
+ * Bootstrap (v4.3.1): util.js
+ * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
+ * --------------------------------------------------------------------------
+ */
 /**
  * ------------------------------------------------------------------------
  * Private TransitionEnd Helpers
@@ -76,7 +76,11 @@ var Util = {
             selector = hrefAttr && hrefAttr !== '#' ? hrefAttr.trim() : '';
         }
 
-        return selector && document.querySelector(selector) ? selector : null;
+        try {
+            return document.querySelector(selector) ? selector : null;
+        } catch (err) {
+            return null;
+        }
     },
     getTransitionDurationFromElement: function getTransitionDurationFromElement(element) {
         if (!element) {

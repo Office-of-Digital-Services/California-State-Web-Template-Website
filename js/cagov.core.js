@@ -1,5 +1,5 @@
 /**
- * CA State Template v5.5 -  @version v5.5.1 -  1/14/2019 
+ * CA State Template v5.5 -  @version v5.5.2 -  2/21/2019 
   STYLES COMPILED FROM SOURCE (source/js) DO NOT MODIFY */
 /* -----------------------------------------
    NO CONFLIT - /source/js/cagov/noconflict.js
@@ -10,15 +10,15 @@ $ = jQuery.noConflict();
 
 
 /*!
-  * Bootstrap v4.2.1 (https://getbootstrap.com/)
-  * Copyright 2011-2018 The Bootstrap Authors (https://github.com/twbs/bootstrap/graphs/contributors)
+  * Bootstrap v4.3.1 (https://getbootstrap.com/)
+  * Copyright 2011-2019 The Bootstrap Authors (https://github.com/twbs/bootstrap/graphs/contributors)
   * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
   */
 (function (global, factory) {
     typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports, require('jquery')) :
         typeof define === 'function' && define.amd ? define(['exports', 'jquery'], factory) :
-            (factory((global.bootstrap = {}), global.jQuery));
-}(this, (function (exports, $) {
+            (global = global || self, factory(global.bootstrap = {}, global.jQuery));
+}(this, function (exports, $) {
     'use strict';
 
     $ = $ && $.hasOwnProperty('default') ? $['default'] : $;
@@ -79,11 +79,11 @@ $ = jQuery.noConflict();
         subClass.__proto__ = superClass;
     }
 /**
-   * --------------------------------------------------------------------------
-   * Bootstrap (v4.2.1): util.js
-   * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
-   * --------------------------------------------------------------------------
-   */
+ * --------------------------------------------------------------------------
+ * Bootstrap (v4.3.1): util.js
+ * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
+ * --------------------------------------------------------------------------
+ */
 /**
  * ------------------------------------------------------------------------
  * Private TransitionEnd Helpers
@@ -156,7 +156,11 @@ var Util = {
             selector = hrefAttr && hrefAttr !== '#' ? hrefAttr.trim() : '';
         }
 
-        return selector && document.querySelector(selector) ? selector : null;
+        try {
+            return document.querySelector(selector) ? selector : null;
+        } catch (err) {
+            return null;
+        }
     },
     getTransitionDurationFromElement: function getTransitionDurationFromElement(element) {
         if (!element) {
@@ -230,19 +234,19 @@ var Util = {
 setTransitionEndSupport();
 /**
   * --------------------------------------------------------------------------
-  * Bootstrap (v4.2.1): alert.js
+  * Bootstrap (v4.3.1): alert.js
   * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
   * --------------------------------------------------------------------------
   */
 
 /**
-  * ------------------------------------------------------------------------
-  * Constants
-  * ------------------------------------------------------------------------
-  */
+ * ------------------------------------------------------------------------
+ * Constants
+ * ------------------------------------------------------------------------
+ */
 
 var NAME = 'alert';
-var VERSION = '4.2.1';
+var VERSION = '4.3.1';
 var DATA_KEY = 'bs.alert';
 var EVENT_KEY = "." + DATA_KEY;
 var DATA_API_KEY = '.data-api';
@@ -297,8 +301,8 @@ var Alert =
         _proto.dispose = function dispose() {
             $.removeData(this._element, DATA_KEY);
             this._element = null;
-        }; // Private
-
+        } // Private
+            ;
 
         _proto._getRootElement = function _getRootElement(element) {
             var selector = Util.getSelectorFromElement(element);
@@ -340,8 +344,8 @@ var Alert =
 
         _proto._destroyElement = function _destroyElement(element) {
             $(element).detach().trigger(Event.CLOSED).remove();
-        }; // Static
-
+        } // Static
+            ;
 
         Alert._jQueryInterface = function _jQueryInterface(config) {
             return this.each(function () {
@@ -401,19 +405,19 @@ $.fn[NAME].noConflict = function () {
 };
 /**
    * --------------------------------------------------------------------------
-   * Bootstrap (v4.2.1): button.js
+   * Bootstrap (v4.3.1): button.js
    * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
    * --------------------------------------------------------------------------
    */
 
 /**
-   * ------------------------------------------------------------------------
-   * Constants
-   * ------------------------------------------------------------------------
-   */
+ * ------------------------------------------------------------------------
+ * Constants
+ * ------------------------------------------------------------------------
+ */
 
 var NAME$1 = 'button';
-var VERSION$1 = '4.2.1';
+var VERSION$1 = '4.3.1';
 var DATA_KEY$1 = 'bs.button';
 var EVENT_KEY$1 = "." + DATA_KEY$1;
 var DATA_API_KEY$1 = '.data-api';
@@ -499,8 +503,8 @@ var Button =
         _proto.dispose = function dispose() {
             $.removeData(this._element, DATA_KEY$1);
             this._element = null;
-        }; // Static
-
+        } // Static
+            ;
 
         Button._jQueryInterface = function _jQueryInterface(config) {
             return this.each(function () {
@@ -561,20 +565,20 @@ $.fn[NAME$1].noConflict = function () {
 };
 /**
    * --------------------------------------------------------------------------
-   * Bootstrap (v4.2.1): carousel.js
+   * Bootstrap (v4.3.1): carousel.js
    * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
    * --------------------------------------------------------------------------
    */
 
 
 /**
-   * ------------------------------------------------------------------------
-   * Constants
-   * ------------------------------------------------------------------------
-   */
+ * ------------------------------------------------------------------------
+ * Constants
+ * ------------------------------------------------------------------------
+ */
 
 var NAME$2 = 'carousel';
-var VERSION$2 = '4.2.1';
+var VERSION$2 = '4.3.1';
 var DATA_KEY$2 = 'bs.carousel';
 var EVENT_KEY$2 = "." + DATA_KEY$2;
 var DATA_API_KEY$2 = '.data-api';
@@ -769,8 +773,8 @@ var Carousel =
             this._isSliding = null;
             this._activeElement = null;
             this._indicatorsElement = null;
-        }; // Private
-
+        } // Private
+            ;
 
         _proto._getConfig = function _getConfig(config) {
             config = _objectSpread({}, Default, config);
@@ -814,7 +818,9 @@ var Carousel =
                 });
             }
 
-            this._addTouchEventListeners();
+            if (this._config.touch) {
+                this._addTouchEventListeners();
+            }
         };
 
         _proto._addTouchEventListeners = function _addTouchEventListeners() {
@@ -1055,8 +1061,8 @@ var Carousel =
             if (isCycling) {
                 this.cycle();
             }
-        }; // Static
-
+        } // Static
+            ;
 
         Carousel._jQueryInterface = function _jQueryInterface(config) {
             return this.each(function () {
@@ -1083,7 +1089,7 @@ var Carousel =
                     }
 
                     data[action]();
-                } else if (_config.interval) {
+                } else if (_config.interval && _config.ride) {
                     data.pause();
                     data.cycle();
                 }
@@ -1166,19 +1172,19 @@ $.fn[NAME$2].noConflict = function () {
 };
 /**
    * --------------------------------------------------------------------------
-   * Bootstrap (v4.2.1): collapse.js
+   * Bootstrap (v4.3.1): collapse.js
    * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
    * --------------------------------------------------------------------------
    */
 
 /**
-  * ------------------------------------------------------------------------
-  * Constants
-  * ------------------------------------------------------------------------
-  */
+   * ------------------------------------------------------------------------
+   * Constants
+   * ------------------------------------------------------------------------
+   */
 
 var NAME$3 = 'collapse';
-var VERSION$3 = '4.2.1';
+var VERSION$3 = '4.3.1';
 var DATA_KEY$3 = 'bs.collapse';
 var EVENT_KEY$3 = "." + DATA_KEY$3;
 var DATA_API_KEY$3 = '.data-api';
@@ -1400,8 +1406,8 @@ var Collapse =
             this._element = null;
             this._triggerArray = null;
             this._isTransitioning = null;
-        }; // Private
-
+        } // Private
+            ;
 
         _proto._getConfig = function _getConfig(config) {
             config = _objectSpread({}, Default$1, config);
@@ -1445,8 +1451,8 @@ var Collapse =
             if (triggerArray.length) {
                 $(triggerArray).toggleClass(ClassName$3.COLLAPSED, !isOpen).attr('aria-expanded', isOpen);
             }
-        }; // Static
-
+        } // Static
+            ;
 
         Collapse._getTargetFromElement = function _getTargetFromElement(element) {
             var selector = Util.getSelectorFromElement(element);
@@ -1530,30 +1536,37 @@ $.fn[NAME$3].noConflict = function () {
     $.fn[NAME$3] = JQUERY_NO_CONFLICT$3;
     return Collapse._jQueryInterface;
 };
+/**
+   * --------------------------------------------------------------------------
+   * Bootstrap (v4.3.1): popper.js
+   * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
+   * --------------------------------------------------------------------------
+   */
+
 /**!
-  * @fileOverview Kickass library to create and place poppers near their reference elements.
-  * @version 1.14.6
-  * @license
-  * Copyright (c) 2016 Federico Zivolo and contributors
-  *
-  * Permission is hereby granted, free of charge, to any person obtaining a copy
-  * of this software and associated documentation files (the "Software"), to deal
-  * in the Software without restriction, including without limitation the rights
-  * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-  * copies of the Software, and to permit persons to whom the Software is
-  * furnished to do so, subject to the following conditions:
-  *
-  * The above copyright notice and this permission notice shall be included in all
-  * copies or substantial portions of the Software.
-  *
-  * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-  * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-  * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-  * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-  * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-  * SOFTWARE.
-  */
+   * @fileOverview Kickass library to create and place poppers near their reference elements.
+   * @version 1.14.7
+   * @license
+   * Copyright (c) 2016 Federico Zivolo and contributors
+   *
+   * Permission is hereby granted, free of charge, to any person obtaining a copy
+   * of this software and associated documentation files (the "Software"), to deal
+   * in the Software without restriction, including without limitation the rights
+   * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+   * copies of the Software, and to permit persons to whom the Software is
+   * furnished to do so, subject to the following conditions:
+   *
+   * The above copyright notice and this permission notice shall be included in all
+   * copies or substantial portions of the Software.
+   *
+   * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+   * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+   * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+   * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+   * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+   * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+   * SOFTWARE.
+   */
 var isBrowser = typeof window !== 'undefined' && typeof document !== 'undefined';
 
 var longerTimeoutBrowsers = ['Edge', 'Trident', 'Firefox'];
@@ -2100,7 +2113,11 @@ function isFixed(element) {
     if (getStyleComputedProperty(element, 'position') === 'fixed') {
         return true;
     }
-    return isFixed(getParentNode(element));
+    var parentNode = getParentNode(element);
+    if (!parentNode) {
+        return false;
+    }
+    return isFixed(parentNode);
 }
 
 /**
@@ -2756,18 +2773,23 @@ function getRoundedOffsets(data, shouldRound) {
     var _data$offsets = data.offsets,
         popper = _data$offsets.popper,
         reference = _data$offsets.reference;
+    var round = Math.round,
+        floor = Math.floor;
 
-
-    var isVertical = ['left', 'right'].indexOf(data.placement) !== -1;
-    var isVariation = data.placement.indexOf('-') !== -1;
-    var sameWidthOddness = reference.width % 2 === popper.width % 2;
-    var bothOddWidth = reference.width % 2 === 1 && popper.width % 2 === 1;
     var noRound = function noRound(v) {
         return v;
     };
 
-    var horizontalToInteger = !shouldRound ? noRound : isVertical || isVariation || sameWidthOddness ? Math.round : Math.floor;
-    var verticalToInteger = !shouldRound ? noRound : Math.round;
+    var referenceWidth = round(reference.width);
+    var popperWidth = round(popper.width);
+
+    var isVertical = ['left', 'right'].indexOf(data.placement) !== -1;
+    var isVariation = data.placement.indexOf('-') !== -1;
+    var sameWidthParity = referenceWidth % 2 === popperWidth % 2;
+    var bothOddWidth = referenceWidth % 2 === 1 && popperWidth % 2 === 1;
+
+    var horizontalToInteger = !shouldRound ? noRound : isVertical || isVariation || sameWidthParity ? round : floor;
+    var verticalToInteger = !shouldRound ? noRound : round;
 
     return {
         left: horizontalToInteger(bothOddWidth && !isVariation && shouldRound ? popper.left - 1 : popper.left),
@@ -4101,7 +4123,7 @@ Popper.placements = placements;
 Popper.Defaults = Defaults;
 /**
    * --------------------------------------------------------------------------
-   * Bootstrap (v4.2.1): dropdown.js
+   * Bootstrap (v4.3.1): dropdown.js
    * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
    * --------------------------------------------------------------------------
    */
@@ -4113,7 +4135,7 @@ Popper.Defaults = Defaults;
    */
 
 var NAME$4 = 'dropdown';
-var VERSION$4 = '4.2.1';
+var VERSION$4 = '4.3.1';
 var DATA_KEY$4 = 'bs.dropdown';
 var EVENT_KEY$4 = "." + DATA_KEY$4;
 var DATA_API_KEY$4 = '.data-api';
@@ -4342,8 +4364,8 @@ var Dropdown =
             if (this._popper !== null) {
                 this._popper.scheduleUpdate();
             }
-        }; // Private
-
+        } // Private
+            ;
 
         _proto._addEventListeners = function _addEventListeners() {
             var _this = this;
@@ -4399,24 +4421,28 @@ var Dropdown =
             return $(this._element).closest('.navbar').length > 0;
         };
 
-        _proto._getPopperConfig = function _getPopperConfig() {
+        _proto._getOffset = function _getOffset() {
             var _this2 = this;
 
-            var offsetConf = {};
+            var offset = {};
 
             if (typeof this._config.offset === 'function') {
-                offsetConf.fn = function (data) {
-                    data.offsets = _objectSpread({}, data.offsets, _this2._config.offset(data.offsets) || {});
+                offset.fn = function (data) {
+                    data.offsets = _objectSpread({}, data.offsets, _this2._config.offset(data.offsets, _this2._element) || {});
                     return data;
                 };
             } else {
-                offsetConf.offset = this._config.offset;
+                offset.offset = this._config.offset;
             }
 
+            return offset;
+        };
+
+        _proto._getPopperConfig = function _getPopperConfig() {
             var popperConfig = {
                 placement: this._getPlacement(),
                 modifiers: {
-                    offset: offsetConf,
+                    offset: this._getOffset(),
                     flip: {
                         enabled: this._config.flip
                     },
@@ -4434,8 +4460,8 @@ var Dropdown =
             }
 
             return popperConfig;
-        }; // Static
-
+        } // Static
+            ;
 
         Dropdown._jQueryInterface = function _jQueryInterface(config) {
             return this.each(function () {
@@ -4519,8 +4545,8 @@ var Dropdown =
             }
 
             return parent || element.parentNode;
-        }; // eslint-disable-next-line complexity
-
+        } // eslint-disable-next-line complexity
+            ;
 
         Dropdown._dataApiKeydownHandler = function _dataApiKeydownHandler(event) {
             // If not input/textarea:
@@ -4629,19 +4655,19 @@ $.fn[NAME$4].noConflict = function () {
 };
 /**
    * --------------------------------------------------------------------------
-   * Bootstrap (v4.2.1): modal.js
+   * Bootstrap (v4.3.1): modal.js
    * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
    * --------------------------------------------------------------------------
    */
 
 /**
-  * ------------------------------------------------------------------------
-  * Constants
-  * ------------------------------------------------------------------------
-  */
+   * ------------------------------------------------------------------------
+   * Constants
+   * ------------------------------------------------------------------------
+   */
 
 var NAME$5 = 'modal';
-var VERSION$5 = '4.2.1';
+var VERSION$5 = '4.3.1';
 var DATA_KEY$5 = 'bs.modal';
 var EVENT_KEY$5 = "." + DATA_KEY$5;
 var DATA_API_KEY$5 = '.data-api';
@@ -4674,6 +4700,7 @@ var Event$5 = {
     CLICK_DATA_API: "click" + EVENT_KEY$5 + DATA_API_KEY$5
 };
 var ClassName$5 = {
+    SCROLLABLE: 'modal-dialog-scrollable',
     SCROLLBAR_MEASURER: 'modal-scrollbar-measure',
     BACKDROP: 'modal-backdrop',
     OPEN: 'modal-open',
@@ -4682,6 +4709,7 @@ var ClassName$5 = {
 };
 var Selector$5 = {
     DIALOG: '.modal-dialog',
+    MODAL_BODY: '.modal-body',
     DATA_TOGGLE: '[data-toggle="modal"]',
     DATA_DISMISS: '[data-dismiss="modal"]',
     FIXED_CONTENT: '.fixed-top, .fixed-bottom, .is-fixed, .sticky-top',
@@ -4834,8 +4862,8 @@ var Modal =
 
         _proto.handleUpdate = function handleUpdate() {
             this._adjustDialog();
-        }; // Private
-
+        } // Private
+            ;
 
         _proto._getConfig = function _getConfig(config) {
             config = _objectSpread({}, Default$3, config);
@@ -4859,7 +4887,11 @@ var Modal =
 
             this._element.setAttribute('aria-modal', true);
 
-            this._element.scrollTop = 0;
+            if ($(this._dialog).hasClass(ClassName$5.SCROLLABLE)) {
+                this._dialog.querySelector(Selector$5.MODAL_BODY).scrollTop = 0;
+            } else {
+                this._element.scrollTop = 0;
+            }
 
             if (transition) {
                 Util.reflow(this._element);
@@ -5029,11 +5061,11 @@ var Modal =
             } else if (callback) {
                 callback();
             }
-        }; // ----------------------------------------------------------------------
-        // the following methods are used to handle overflowing modals
-        // todo (fat): these should probably be refactored out of modal.js
-        // ----------------------------------------------------------------------
-
+        } // ----------------------------------------------------------------------
+            // the following methods are used to handle overflowing modals
+            // todo (fat): these should probably be refactored out of modal.js
+            // ----------------------------------------------------------------------
+            ;
 
         _proto._adjustDialog = function _adjustDialog() {
             var isModalOverflowing = this._element.scrollHeight > document.documentElement.clientHeight;
@@ -5118,8 +5150,8 @@ var Modal =
             var scrollbarWidth = scrollDiv.getBoundingClientRect().width - scrollDiv.clientWidth;
             document.body.removeChild(scrollDiv);
             return scrollbarWidth;
-        }; // Static
-
+        } // Static
+            ;
 
         Modal._jQueryInterface = function _jQueryInterface(config, relatedTarget) {
             return this.each(function () {
@@ -5209,10 +5241,129 @@ $.fn[NAME$5].noConflict = function () {
     $.fn[NAME$5] = JQUERY_NO_CONFLICT$5;
     return Modal._jQueryInterface;
 };
-
 /**
    * --------------------------------------------------------------------------
-   * Bootstrap (v4.2.1): tooltip.js
+   * Bootstrap (v4.3.1): tools/sanitizer.js
+   * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
+   * --------------------------------------------------------------------------
+   */
+var uriAttrs = ['background', 'cite', 'href', 'itemtype', 'longdesc', 'poster', 'src', 'xlink:href'];
+var ARIA_ATTRIBUTE_PATTERN = /^aria-[\w-]*$/i;
+var DefaultWhitelist = {
+    // Global attributes allowed on any supplied element below.
+    '*': ['class', 'dir', 'id', 'lang', 'role', ARIA_ATTRIBUTE_PATTERN],
+    a: ['target', 'href', 'title', 'rel'],
+    area: [],
+    b: [],
+    br: [],
+    col: [],
+    code: [],
+    div: [],
+    em: [],
+    hr: [],
+    h1: [],
+    h2: [],
+    h3: [],
+    h4: [],
+    h5: [],
+    h6: [],
+    i: [],
+    img: ['src', 'alt', 'title', 'width', 'height'],
+    li: [],
+    ol: [],
+    p: [],
+    pre: [],
+    s: [],
+    small: [],
+    span: [],
+    sub: [],
+    sup: [],
+    strong: [],
+    u: [],
+    ul: []
+    /**
+     * A pattern that recognizes a commonly useful subset of URLs that are safe.
+     *
+     * Shoutout to Angular 7 https://github.com/angular/angular/blob/7.2.4/packages/core/src/sanitization/url_sanitizer.ts
+     */
+
+};
+var SAFE_URL_PATTERN = /^(?:(?:https?|mailto|ftp|tel|file):|[^&:/?#]*(?:[/?#]|$))/gi;
+/**
+ * A pattern that matches safe data URLs. Only matches image, video and audio types.
+ *
+ * Shoutout to Angular 7 https://github.com/angular/angular/blob/7.2.4/packages/core/src/sanitization/url_sanitizer.ts
+ */
+
+var DATA_URL_PATTERN = /^data:(?:image\/(?:bmp|gif|jpeg|jpg|png|tiff|webp)|video\/(?:mpeg|mp4|ogg|webm)|audio\/(?:mp3|oga|ogg|opus));base64,[a-z0-9+/]+=*$/i;
+
+function allowedAttribute(attr, allowedAttributeList) {
+    var attrName = attr.nodeName.toLowerCase();
+
+    if (allowedAttributeList.indexOf(attrName) !== -1) {
+        if (uriAttrs.indexOf(attrName) !== -1) {
+            return Boolean(attr.nodeValue.match(SAFE_URL_PATTERN) || attr.nodeValue.match(DATA_URL_PATTERN));
+        }
+
+        return true;
+    }
+
+    var regExp = allowedAttributeList.filter(function (attrRegex) {
+        return attrRegex instanceof RegExp;
+    }); // Check if a regular expression validates the attribute.
+
+    for (var i = 0, l = regExp.length; i < l; i++) {
+        if (attrName.match(regExp[i])) {
+            return true;
+        }
+    }
+
+    return false;
+}
+
+function sanitizeHtml(unsafeHtml, whiteList, sanitizeFn) {
+    if (unsafeHtml.length === 0) {
+        return unsafeHtml;
+    }
+
+    if (sanitizeFn && typeof sanitizeFn === 'function') {
+        return sanitizeFn(unsafeHtml);
+    }
+
+    var domParser = new window.DOMParser();
+    var createdDocument = domParser.parseFromString(unsafeHtml, 'text/html');
+    var whitelistKeys = Object.keys(whiteList);
+    var elements = [].slice.call(createdDocument.body.querySelectorAll('*'));
+
+    var _loop = function _loop(i, len) {
+        var el = elements[i];
+        var elName = el.nodeName.toLowerCase();
+
+        if (whitelistKeys.indexOf(el.nodeName.toLowerCase()) === -1) {
+            el.parentNode.removeChild(el);
+            return "continue";
+        }
+
+        var attributeList = [].slice.call(el.attributes);
+        var whitelistedAttributes = [].concat(whiteList['*'] || [], whiteList[elName] || []);
+        attributeList.forEach(function (attr) {
+            if (!allowedAttribute(attr, whitelistedAttributes)) {
+                el.removeAttribute(attr.nodeName);
+            }
+        });
+    };
+
+    for (var i = 0, len = elements.length; i < len; i++) {
+        var _ret = _loop(i, len);
+
+        if (_ret === "continue") continue;
+    }
+
+    return createdDocument.body.innerHTML;
+}
+/**
+   * --------------------------------------------------------------------------
+   * Bootstrap (v4.3.1): tooltip.js
    * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
    * --------------------------------------------------------------------------
    */
@@ -5224,12 +5375,13 @@ $.fn[NAME$5].noConflict = function () {
    */
 
 var NAME$6 = 'tooltip';
-var VERSION$6 = '4.2.1';
+var VERSION$6 = '4.3.1';
 var DATA_KEY$6 = 'bs.tooltip';
 var EVENT_KEY$6 = "." + DATA_KEY$6;
 var JQUERY_NO_CONFLICT$6 = $.fn[NAME$6];
 var CLASS_PREFIX = 'bs-tooltip';
 var BSCLS_PREFIX_REGEX = new RegExp("(^|\\s)" + CLASS_PREFIX + "\\S+", 'g');
+var DISALLOWED_ATTRIBUTES = ['sanitize', 'whiteList', 'sanitizeFn'];
 var DefaultType$4 = {
     animation: 'boolean',
     template: 'string',
@@ -5239,10 +5391,13 @@ var DefaultType$4 = {
     html: 'boolean',
     selector: '(string|boolean)',
     placement: '(string|function)',
-    offset: '(number|string)',
+    offset: '(number|string|function)',
     container: '(string|element|boolean)',
     fallbackPlacement: '(string|array)',
-    boundary: '(string|element)'
+    boundary: '(string|element)',
+    sanitize: 'boolean',
+    sanitizeFn: '(null|function)',
+    whiteList: 'object'
 };
 var AttachmentMap$1 = {
     AUTO: 'auto',
@@ -5263,7 +5418,10 @@ var Default$4 = {
     offset: 0,
     container: false,
     fallbackPlacement: 'flip',
-    boundary: 'scrollParent'
+    boundary: 'scrollParent',
+    sanitize: true,
+    sanitizeFn: null,
+    whiteList: DefaultWhitelist
 };
 var HoverState = {
     SHOW: 'show',
@@ -5448,9 +5606,7 @@ var Tooltip =
                 this._popper = new Popper(this.element, tip, {
                     placement: attachment,
                     modifiers: {
-                        offset: {
-                            offset: this.config.offset
-                        },
+                        offset: this._getOffset(),
                         flip: {
                             behavior: this.config.fallbackPlacement
                         },
@@ -5559,8 +5715,8 @@ var Tooltip =
             if (this._popper !== null) {
                 this._popper.scheduleUpdate();
             }
-        }; // Protected
-
+        } // Protected
+            ;
 
         _proto.isWithContent = function isWithContent() {
             return Boolean(this.getTitle());
@@ -5582,19 +5738,27 @@ var Tooltip =
         };
 
         _proto.setElementContent = function setElementContent($element, content) {
-            var html = this.config.html;
-
             if (typeof content === 'object' && (content.nodeType || content.jquery)) {
                 // Content is a DOM node or a jQuery
-                if (html) {
+                if (this.config.html) {
                     if (!$(content).parent().is($element)) {
                         $element.empty().append(content);
                     }
                 } else {
                     $element.text($(content).text());
                 }
+
+                return;
+            }
+
+            if (this.config.html) {
+                if (this.config.sanitize) {
+                    content = sanitizeHtml(content, this.config.whiteList, this.config.sanitizeFn);
+                }
+
+                $element.html(content);
             } else {
-                $element[html ? 'html' : 'text'](content);
+                $element.text(content);
             }
         };
 
@@ -5606,8 +5770,25 @@ var Tooltip =
             }
 
             return title;
-        }; // Private
+        } // Private
+            ;
 
+        _proto._getOffset = function _getOffset() {
+            var _this3 = this;
+
+            var offset = {};
+
+            if (typeof this.config.offset === 'function') {
+                offset.fn = function (data) {
+                    data.offsets = _objectSpread({}, data.offsets, _this3.config.offset(data.offsets, _this3.element) || {});
+                    return data;
+                };
+            } else {
+                offset.offset = this.config.offset;
+            }
+
+            return offset;
+        };
 
         _proto._getContainer = function _getContainer() {
             if (this.config.container === false) {
@@ -5626,27 +5807,27 @@ var Tooltip =
         };
 
         _proto._setListeners = function _setListeners() {
-            var _this3 = this;
+            var _this4 = this;
 
             var triggers = this.config.trigger.split(' ');
             triggers.forEach(function (trigger) {
                 if (trigger === 'click') {
-                    $(_this3.element).on(_this3.constructor.Event.CLICK, _this3.config.selector, function (event) {
-                        return _this3.toggle(event);
+                    $(_this4.element).on(_this4.constructor.Event.CLICK, _this4.config.selector, function (event) {
+                        return _this4.toggle(event);
                     });
                 } else if (trigger !== Trigger.MANUAL) {
-                    var eventIn = trigger === Trigger.HOVER ? _this3.constructor.Event.MOUSEENTER : _this3.constructor.Event.FOCUSIN;
-                    var eventOut = trigger === Trigger.HOVER ? _this3.constructor.Event.MOUSELEAVE : _this3.constructor.Event.FOCUSOUT;
-                    $(_this3.element).on(eventIn, _this3.config.selector, function (event) {
-                        return _this3._enter(event);
-                    }).on(eventOut, _this3.config.selector, function (event) {
-                        return _this3._leave(event);
+                    var eventIn = trigger === Trigger.HOVER ? _this4.constructor.Event.MOUSEENTER : _this4.constructor.Event.FOCUSIN;
+                    var eventOut = trigger === Trigger.HOVER ? _this4.constructor.Event.MOUSELEAVE : _this4.constructor.Event.FOCUSOUT;
+                    $(_this4.element).on(eventIn, _this4.config.selector, function (event) {
+                        return _this4._enter(event);
+                    }).on(eventOut, _this4.config.selector, function (event) {
+                        return _this4._leave(event);
                     });
                 }
             });
             $(this.element).closest('.modal').on('hide.bs.modal', function () {
-                if (_this3.element) {
-                    _this3.hide();
+                if (_this4.element) {
+                    _this4.hide();
                 }
             });
 
@@ -5745,7 +5926,13 @@ var Tooltip =
         };
 
         _proto._getConfig = function _getConfig(config) {
-            config = _objectSpread({}, this.constructor.Default, $(this.element).data(), typeof config === 'object' && config ? config : {});
+            var dataAttributes = $(this.element).data();
+            Object.keys(dataAttributes).forEach(function (dataAttr) {
+                if (DISALLOWED_ATTRIBUTES.indexOf(dataAttr) !== -1) {
+                    delete dataAttributes[dataAttr];
+                }
+            });
+            config = _objectSpread({}, this.constructor.Default, dataAttributes, typeof config === 'object' && config ? config : {});
 
             if (typeof config.delay === 'number') {
                 config.delay = {
@@ -5763,6 +5950,11 @@ var Tooltip =
             }
 
             Util.typeCheckConfig(NAME$6, config, this.constructor.DefaultType);
+
+            if (config.sanitize) {
+                config.template = sanitizeHtml(config.template, config.whiteList, config.sanitizeFn);
+            }
+
             return config;
         };
 
@@ -5811,8 +6003,8 @@ var Tooltip =
             this.hide();
             this.show();
             this.config.animation = initConfigAnimation;
-        }; // Static
-
+        } // Static
+            ;
 
         Tooltip._jQueryInterface = function _jQueryInterface(config) {
             return this.each(function () {
@@ -5894,19 +6086,19 @@ $.fn[NAME$6].noConflict = function () {
 };
 /**
   * --------------------------------------------------------------------------
-  * Bootstrap (v4.2.1): popover.js
+  * Bootstrap (v4.3.1): popover.js
   * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
   * --------------------------------------------------------------------------
   */
 
-  /**
-   * ------------------------------------------------------------------------
-   * Constants
-   * ------------------------------------------------------------------------
-   */
+/**
+  * ------------------------------------------------------------------------
+  * Constants
+  * ------------------------------------------------------------------------
+  */
 
 var NAME$7 = 'popover';
-var VERSION$7 = '4.2.1';
+var VERSION$7 = '4.3.1';
 var DATA_KEY$7 = 'bs.popover';
 var EVENT_KEY$7 = "." + DATA_KEY$7;
 var JQUERY_NO_CONFLICT$7 = $.fn[NAME$7];
@@ -5989,8 +6181,8 @@ var Popover =
 
             this.setElementContent($tip.find(Selector$7.CONTENT), content);
             $tip.removeClass(ClassName$7.FADE + " " + ClassName$7.SHOW);
-        }; // Private
-
+        } // Private
+            ;
 
         _proto._getContent = function _getContent() {
             return this.element.getAttribute('data-content') || this.config.content;
@@ -6003,8 +6195,8 @@ var Popover =
             if (tabClass !== null && tabClass.length > 0) {
                 $tip.removeClass(tabClass.join(''));
             }
-        }; // Static
-
+        } // Static
+            ;
 
         Popover._jQueryInterface = function _jQueryInterface(config) {
             return this.each(function () {
@@ -6087,19 +6279,19 @@ $.fn[NAME$7].noConflict = function () {
 };
 /**
    * --------------------------------------------------------------------------
-   * Bootstrap (v4.2.1): scrollspy.js
+   * Bootstrap (v4.3.1): scrollspy.js
    * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
    * --------------------------------------------------------------------------
    */
 
 /**
-   * ------------------------------------------------------------------------
-   * Constants
-   * ------------------------------------------------------------------------
-   */
+ * ------------------------------------------------------------------------
+ * Constants
+ * ------------------------------------------------------------------------
+ */
 
 var NAME$8 = 'scrollspy';
-var VERSION$8 = '4.2.1';
+var VERSION$8 = '4.3.1';
 var DATA_KEY$8 = 'bs.scrollspy';
 var EVENT_KEY$8 = "." + DATA_KEY$8;
 var DATA_API_KEY$6 = '.data-api';
@@ -6222,8 +6414,8 @@ var ScrollSpy =
             this._targets = null;
             this._activeTarget = null;
             this._scrollHeight = null;
-        }; // Private
-
+        } // Private
+            ;
 
         _proto._getConfig = function _getConfig(config) {
             config = _objectSpread({}, Default$6, typeof config === 'object' && config ? config : {});
@@ -6330,8 +6522,8 @@ var ScrollSpy =
             }).forEach(function (node) {
                 return node.classList.remove(ClassName$8.ACTIVE);
             });
-        }; // Static
-
+        } // Static
+            ;
 
         ScrollSpy._jQueryInterface = function _jQueryInterface(config) {
             return this.each(function () {
@@ -6400,18 +6592,19 @@ $.fn[NAME$8].noConflict = function () {
 };
 /**
    * --------------------------------------------------------------------------
-   * Bootstrap (v4.2.1): tab.js
+   * Bootstrap (v4.3.1): tab.js
    * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
    * --------------------------------------------------------------------------
    */
-  /**
-   * ------------------------------------------------------------------------
-   * Constants
-   * ------------------------------------------------------------------------
-   */
+
+/**
+  * ------------------------------------------------------------------------
+  * Constants
+  * ------------------------------------------------------------------------
+  */
 
 var NAME$9 = 'tab';
-var VERSION$9 = '4.2.1';
+var VERSION$9 = '4.3.1';
 var DATA_KEY$9 = 'bs.tab';
 var EVENT_KEY$9 = "." + DATA_KEY$9;
 var DATA_API_KEY$7 = '.data-api';
@@ -6519,8 +6712,8 @@ var Tab =
         _proto.dispose = function dispose() {
             $.removeData(this._element, DATA_KEY$9);
             this._element = null;
-        }; // Private
-
+        } // Private
+            ;
 
         _proto._activate = function _activate(element, container, callback) {
             var _this2 = this;
@@ -6562,7 +6755,10 @@ var Tab =
             }
 
             Util.reflow(element);
-            $(element).addClass(ClassName$9.SHOW);
+
+            if (element.classList.contains(ClassName$9.FADE)) {
+                element.classList.add(ClassName$9.SHOW);
+            }
 
             if (element.parentNode && $(element.parentNode).hasClass(ClassName$9.DROPDOWN_MENU)) {
                 var dropdownElement = $(element).closest(Selector$9.DROPDOWN)[0];
@@ -6578,8 +6774,8 @@ var Tab =
             if (callback) {
                 callback();
             }
-        }; // Static
-
+        } // Static
+            ;
 
         Tab._jQueryInterface = function _jQueryInterface(config) {
             return this.each(function () {
@@ -6637,18 +6833,18 @@ $.fn[NAME$9].noConflict = function () {
 };
 /**
    * --------------------------------------------------------------------------
-   * Bootstrap (v4.2.1): toast.js
+   * Bootstrap (v4.3.1): toast.js
    * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
    * --------------------------------------------------------------------------
    */
 /**
-  * ------------------------------------------------------------------------
-  * Constants
-  * ------------------------------------------------------------------------
-  */
+ * ------------------------------------------------------------------------
+ * Constants
+ * ------------------------------------------------------------------------
+ */
 
 var NAME$a = 'toast';
-var VERSION$a = '4.2.1';
+var VERSION$a = '4.3.1';
 var DATA_KEY$a = 'bs.toast';
 var EVENT_KEY$a = "." + DATA_KEY$a;
 var JQUERY_NO_CONFLICT$a = $.fn[NAME$a];
@@ -6763,8 +6959,8 @@ var Toast =
             $.removeData(this._element, DATA_KEY$a);
             this._element = null;
             this._config = null;
-        }; // Private
-
+        } // Private
+            ;
 
         _proto._getConfig = function _getConfig(config) {
             config = _objectSpread({}, Default$7, $(this._element).data(), typeof config === 'object' && config ? config : {});
@@ -6797,8 +6993,8 @@ var Toast =
             } else {
                 complete();
             }
-        }; // Static
-
+        } // Static
+            ;
 
         Toast._jQueryInterface = function _jQueryInterface(config) {
             return this.each(function () {
@@ -6832,6 +7028,11 @@ var Toast =
             get: function get() {
                 return DefaultType$7;
             }
+        }, {
+            key: "Default",
+            get: function get() {
+                return Default$7;
+            }
         }]);
 
         return Toast;
@@ -6851,11 +7052,11 @@ $.fn[NAME$a].noConflict = function () {
     return Toast._jQueryInterface;
 };
 /**
-  * --------------------------------------------------------------------------
-  * Bootstrap (v4.2.1): index.js
-  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
-  * --------------------------------------------------------------------------
-  */
+   * --------------------------------------------------------------------------
+   * Bootstrap (v4.3.1): index.js
+   * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
+   * --------------------------------------------------------------------------
+   */
 
 (function () {
     if (typeof $ === 'undefined') {
@@ -6889,7 +7090,7 @@ exports.Tooltip = Tooltip;
 
 Object.defineProperty(exports, '__esModule', { value: true });
 
-})));
+}));
 //# sourceMappingURL=bootstrap.bundle.js.map
 
   // GENERAL UTILITY FUNCTIONS
@@ -14415,373 +14616,72 @@ function trackExternalLinks (evnt) {
 }
 
 // End gatag.js
-// End gatag.js
 /* -----------------------------------------
-   NAVIGATION MENU - /source/js/cagov/navigation.js
+   NAVIGATION - /source/js/cagov/navigation.js
 ----------------------------------------- */
 
-
-$(document).ready(function () {
-    // detect partial flexbox support in IE>9
-    if ($('.top-level-nav').css('display') == 'table') { $('body').addClass('no-flex') }
-
-    // menu variables
-    var $navigation = $('#navigation.main-navigation'),
-      $navItems = $navigation.find('.nav-item'), // first level link containers'
-      $navItemsWithSubs = $navItems.has('.sub-nav'),
-      $subNavs = $navigation.find('.sub-nav'),
-      megamenu = $navigation.hasClass('megadropdown'),
-      dropdown = $navigation.hasClass('dropdown'),
-      singleLevel = $navigation.hasClass('singleLevel'),
-      offCanvas = false; // beta 5.9 addition instead of: $navigation.hasClass('off-canvas'), 
-    mobileWidth = 767,
-    setActiveLinkByFolder = $navigation.hasClass('auto-highlight'); // Use new folder matching method to highlight the current navigation tab
-
-    var mouseOverDelay = 100, setTimeoutConst;
-
-    // touch detection
-    var isTouch = Modernizr.touch,
-      msTouch = (('ontouchstart' in window) || (navigator.MaxTouchPoints > 0) || (navigator.msMaxTouchPoints > 0));
-
-    var touchMode = false;
-    $(window).on('mousemove', function () {
-        if (touchMode) touchmode = false;
-    });
-
-    // HIGHLIGHT APPROPRIATE NAV ITEM
-    var reMainNav = "",
-      arrCurrentURL = location.href.split("/");
-    if (typeof defaultActiveLink != "undefined") {
-        reMainNav = new RegExp("^" + defaultActiveLink + "$", "i"); // Regex for finding the index of the default main list item
-    }
-    $navItems.each(function () { // loop through top level links
-        var $this = $(this),
-          $a = $this.find('.first-level-link');
-
-        if (reMainNav) {
-            if ($a.text().match(reMainNav)) {
-                $this.addClass('active');
-            }
-        } else if (setActiveLinkByFolder && $a.attr('href')) {
-            var arrNavLink = $a[0].href.split("/");
-            if ((arrNavLink.length > 4) && (arrCurrentURL[3] == arrNavLink[3])) { // folder of current URL matches this nav link
-                $this.addClass('active');
-            }
-        }
-    });
-
-    $navItemsWithSubs.each(function () {
-        var itemCount = $(this).find('.second-level-nav > li').length;
-        if (itemCount <= 2) {
-            $(this).find('.sub-nav').addClass('with-few-items');
-        }
-    });
-
-
-    if ((megamenu || dropdown) && (isTouch || !msTouch)) {		// setup standard megamenu or dropdown menu and touch supporting 'ontouchstart'
-        // show and hide sub nav with fade effect
-
-
-        if (isTouch) {
-            
-
-            $navItemsWithSubs.each(function () {
-                var $this = $(this),
-                $a = $this.find('.first-level-link'),
-                node = $a[0],
-                $sub = $this.find('.sub-nav'),
-                $subLinks = $sub.find('a');
-                $a.data('link', $a.attr('href')).removeAttr; // store url
-
-                $this.on('touchstart.ca.propagation', function (e) {
-                    // keeps tabpanel from closing when clicking inside of it
-                    e.stopPropagation();
-                });
-
-                $this.on('touchstart.ca.navclose', function (e) {
-                    touchMode = true;
-                    if ($sub.is(':visible') || mobileView()) {
-                        // if sub is visible, or in mobile view keep default behavior
-                    } else {
-                        // keeps tabpanel from closing when clicking inside of it
-                        e.preventDefault();
-                        e.stopPropagation();
-                        
-                    }
-                }, false);
-            });
-        }
-
-    } else if ((megamenu || dropdown) && msTouch) { 		// setup standard megamenu or dropdown menu and touch supporting 'pointerevents'
-        
-
-        $navItemsWithSubs.each(function () {
-            var $this = $(this),
-              $a = $this.find('.first-level-link'),
-              node = $a[0],
-              $sub = $this.find('.sub-nav'),
-              $subLinks = $sub.find('a');
-            $a.data('link', $a.attr('href')); // store url
-
-            $this.on('click.ca.propagation', function (e) {
-                // keeps tabpanel from closing when clicking inside of it
-                e.stopPropagation();
-            });
-
-            $a.on('click.ca.navclose', function (e) {
-                if ($sub.is(':visible') || mobileView()) {
-                    // if sub is visible, or in mobile view keep default behavior
-                } else {
-                    // keeps tabpanel from closing when clicking inside of it
-                    e.preventDefault();
-                    e.stopPropagation();
-
-                    // position arrow, hide other sub-nav panels, fade in current panel
-
-                    // hideSubNavs();
-                    // $sub.fadeIn(1000);
-                }
-            });
-        });
-    }
-
-    // MENU FUNCTIONS
-
-
-    function mobileView() {
-        return ($('.global-header .mobile-controls').css('display') !== "none"); // mobile view uses arrow to show subnav instead of first touch
-    }
-
-
-
-    // SETUP MOBILE MENU
-    // add sub nav toggles to mobile menu $navItemsWithSubs
-    if (!singleLevel) {
-        $navItemsWithSubs.each(function () {
-
-            $(this).find('.first-level-link').addClass('has-sub');
-
-            // create toggle object
-            var $toggleSubNav = $('<button class="mobile-control toggle-sub-nav closed"><div class="ca-gov-icon-arrow-next rotate" aria-hidden="true"></div><span class="sr-only">Sub Menu Toggle</span></button>');
-            // add toggle object to DOM
-            $(this).find('.sub-nav').before($toggleSubNav);
-
-        });
-    }
-
-
-
-
-
-        // Setup non-off-canvas menu
-        $('#navigation').addClass('mobile-closed');
-        $(".sub-nav").addClass('subnav-closed');
-        $('.toggle-menu').on("click", function () {
-            if ($('#navigation').hasClass('mobile-closed')) {
-                $(this).addClass('open'); // for hamburger to X transition
-                $(this).attr('aria-expanded', 'true');
-                // $('#navigation').removeClass('mobile-closed');
-                $('#navigation').slideDownTransition();
-            } else {
-                $(this).removeClass('open'); // for hamburger to X transition
-                $(this).attr('aria-expanded', 'false');
-                // $('#navigation').addClass('mobile-closed');
-                $('#navigation').slideUpTransition();
-            }
-            //$('#navigation').toggleClass('mobile-closed');
-            $('.search-container').removeClass('active');
-            // Changing aria attributes for accessibility
-
-        });
-
-        // Subnav Toggle
-    if (msTouch) {
-        // touch event for mobile
-        $(".toggle-sub-nav").on("touchstart", function () {
-            var secondaryLinks = $(this).parent().find('.sub-nav');
-            if ($(this).hasClass('closed')) {
-                $(this).removeClass('closed').addClass('open');
-                $(this).find(".rotate").addClass('down');
-                $(secondaryLinks).slideDownTransitionSub();
-            } else {
-                $(this).removeClass('open').addClass('closed');
-                $(this).find(".rotate").removeClass('down');
-                $(secondaryLinks).slideUpTransitionSub();
-            }
-
-        });
-
-    }
-    else {
-        // click event for desktop
-        $(".toggle-sub-nav").on("click", function () {
-            var secondaryLinks = $(this).parent().find('.sub-nav');
-            if ($(this).hasClass('closed')) {
-                $(this).removeClass('closed').addClass('open');
-                $(this).find(".rotate").addClass('down');
-                $(secondaryLinks).slideDownTransitionSub();
-            } else {
-                $(this).removeClass('open').addClass('closed');
-                $(this).find(".rotate").removeClass('down');
-                $(secondaryLinks).slideUpTransitionSub();
-            }
-
-        });
-
-    }
-
-
-        $(".rotate1").on("click", function () {
-            $(this).toggleClass("down");
-        })
-
-
-
-
-
-    $('.toggle-search').on('click', function () {
-        $('.search-container').toggleClass('active');
-        if (!$('#navigation').hasClass('active')) {
-            $('#navigation').addClass('mobile-closed');
-        }
-    });
-
-
-
-    // allow dropdown on focus
-    var menuHoverClass = 'focus',
-      clickedFocus = 'clickedFocus';
-
-    $('.top-level-nav > li > a').on("mouseenter", function () {
-        $(this).closest('ul').find('.' + menuHoverClass).removeClass(menuHoverClass);
-    }).on("mouseleave", function () {
-        $('.' + clickedFocus).removeClass(clickedFocus);
-    });
-	$('.top-level-nav > li > a').on("focus", function (e) {
-        $(this).closest('ul').find('.' + menuHoverClass).removeClass(menuHoverClass);
-        if (!$(this).parent().find('.toggle-sub-nav').hasClass('open')) {
-            $(this).parent().addClass(menuHoverClass);
-        }
-    }).on('mousedown', function () {
-        // prevent subnav from showing when link is clicked
-        if (!$(this).parent().find('.toggle-sub-nav').hasClass('open')) {
-            $(this).parent().addClass(clickedFocus);
-        }
-    });
-
-    // Hide menu if click occurs outside of navigation
-    // Hide menu if click or focus occurs outside of navigation
-    $('.top-level-nav a').last().on("keydown", function (e) {
-        if (e.keyCode == 9) {
-            // If the user tabs out of the navigation hide all menus
-            $('.top-level-nav .' + menuHoverClass).removeClass(menuHoverClass);
-        }
-    });
-    $(document).on("click", function () { $('.top-level-nav .' + menuHoverClass).removeClass(menuHoverClass); });
-
-    $('.top-level-nav').on("click", function (e) {
-        e.stopPropagation();
-    });
-    //*/
-
-
-});
-
- // Mobile slidedown function
-        (function ($) {
-            $.fn.slideUpTransition = function () {
-                return this.each(function () {
-                    var $el = $(this);
-                    $el.css("max-height", "0");
-                    $el.addClass("mobile-closed");
-
-                });
-            };
-
-            $.fn.slideDownTransition = function () {
-                return this.each(function () {
-                    var $el = $(this);
-                    $el.removeClass("mobile-closed");
-
-                    // temporarily make visible to get the size
-                    $el.css("max-height", "none");
-                    var height = $el.outerHeight();
-
-                    // reset to 0 then animate with small delay
-                    $el.css("max-height", "0");
-
-                    setTimeout(function () {
-                        $el.css({
-                            "max-height": height
-                        });
-                    }, 1);
-                });
-            };
-        })(jQuery);
-
-
-        // Subnav Mobile slidedown function
-        (function ($) {
-            $.fn.slideUpTransitionSub = function () {
-                return this.each(function () {
-                    var $subel = $(this);
-                    var subheight = $subel.outerHeight();
-                    var mainnavheight = $("#navigation").outerHeight();
-                    var sumheight = mainnavheight - subheight;
-                    $subel.css("max-height", "0");
-                    $subel.addClass("subnav-closed");
-                    $subel.attr('aria-expanded', 'false');
-                    $subel.attr('aria-hidden', 'true');
-                    $("#navigation").css({ "max-height": sumheight })
-                });
-            };
-
-            $.fn.slideDownTransitionSub = function () {
-                return this.each(function () {
-                    var $subel = $(this);
-                    $subel.removeClass("subnav-closed");
-
-                    // temporarily make visible to get the size
-                    $subel.css("max-height", "none");
-                    var subheight = $subel.outerHeight();
-                    var mainnavheight = $("#navigation").outerHeight();
-                    var sumheight = subheight + mainnavheight;
-                    // reset to 0 then animate with small delay
-                    $subel.css("max-height", "0");
-
-                    setTimeout(function () {
-                        $subel.css({
-                            "max-height": subheight
-                        });
-                        $subel.attr('aria-expanded', 'true');
-                        $subel.attr('aria-hidden', 'false');
-                        $("#navigation").css({ "max-height": sumheight })
-                    }, 1);
-                });
-            };
-        })(jQuery);
-
-
-
-/*  ACCESSIBLE MENU */
-// source https://github.com/adobe-accessibility/Accessible-Mega-Menu/
-
+/*
+Copyright © 2013 Adobe Systems Incorporated.
+
+Licensed under the Apache License, Version 2.0 (the “License”);
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an “AS IS” BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+*/
+
+/**
+ * See <a href="http://jquery.com">http://jquery.com</a>.
+ * @name jquery
+ * @class
+ * See the jQuery Library  (<a href="http://jquery.com">http://jquery.com</a>) for full details.  This just
+ * documents the function and classes that are added to jQuery by this plug-in.
+ */
+
+/**
+ * See <a href="http://jquery.com">http://jquery.com</a>
+ * @name fn
+ * @class
+ * See the jQuery Library  (<a href="http://jquery.com">http://jquery.com</a>) for full details.  This just
+ * documents the function and classes that are added to jQuery by this plug-in.
+ * @memberOf jquery
+ */
+
+/**
+ * @fileOverview accessibleMegaMenu plugin
+ *
+ *<p>Licensed under the Apache License, Version 2.0 (the “License”)
+ *<br />Copyright © 2013 Adobe Systems Incorporated.
+ *<br />Project page <a href="https://github.com/adobe-accessibility/Accessible-Mega-Menu">https://github.com/adobe-accessibility/Accessible-Mega-Menu</a>
+ * @version 0.1
+ * @author Michael Jordan
+ * @requires jquery
+ */
+
+/*jslint browser: true, devel: true, plusplus: true, nomen: true */
+/*global jQuery, window, document */
 (function ($, window, document) {
     "use strict";
-    var pluginName = "accessibleMenu",
+    var pluginName = "accessibleMegaMenu",
         defaults = {
-            navToggle: "#nav-toggle",
-            navId: "#navigation",
-            uuidPrefix: "accessible-menu", // unique ID's are required to indicate aria-owns, aria-controls and aria-labelledby
-            menuClass: "nav-menu", // default css class used to define the megamenu styling
-            topNavItemClass: "nav-item", // default css class for a top-level navigation item in the megamenu
-            panelClass: "accessible-menu-panel", // default css class for a megamenu panel
-            panelGroupClass: "accessible-menu-panel-group", // default css class for a group of items within a megamenu panel
+            uuidPrefix: "accessible-megamenu", // unique ID's are required to indicate aria-owns, aria-controls and aria-labelledby
+            menuClass: "accessible-megamenu", // default css class used to define the megamenu styling
+            topNavItemClass: "accessible-megamenu-top-nav-item", // default css class for a top-level navigation item in the megamenu
+            panelClass: "accessible-megamenu-panel", // default css class for a megamenu panel
+            panelGroupClass: "accessible-megamenu-panel-group", // default css class for a group of items within a megamenu panel
             hoverClass: "hover", // default css class for the hover state
             focusClass: "focus", // default css class for the focus state
-            openClass: "open", // default css class for the open state
-            openDelay: 400, // default open delay when opening menu via mouseover
-            closeDelay: 500 // default close delay when on mouseout
+            openClass: "open", // default css class for the open state,
+            toggleButtonClass: "toggle-menu", // default css class responsive toggle button
+            openDelay: 0, // default open delay when opening menu via mouseover
+            closeDelay: 250, // default open delay when opening menu via mouseover
+            openOnMouseover: false // default setting for whether menu should open on mouseover
         },
         Keyboard = {
             BACKSPACE: 8,
@@ -14850,22 +14750,25 @@ $(document).ready(function () {
                 105: "9",
                 190: "."
             }
-        };
+        },
+        clearTimeout = window.clearTimeout,
+        setTimeout = window.setTimeout,
+        isOpera = window.opera && window.opera.toString() === '[object Opera]';
     /**
      * @desc Creates a new accessible mega menu instance.
      * @param {jquery} element
      * @param {object} [options] Mega Menu options
-     * @param {string} [options.uuidPrefix=accessible-menu] - Prefix for generated unique id attributes, which are required to indicate aria-owns, aria-controls and aria-labelledby
-     * @param {string} [options.menuClass=accessible-menu] - CSS class used to define the megamenu styling
-     * @param {string} [options.topNavItemClass=accessible-menu-top-nav-item] - CSS class for a top-level navigation item in the megamenu
-     * @param {string} [options.panelClass=accessible-menu-panel] - CSS class for a megamenu panel
-     * @param {string} [options.panelGroupClass=accessible-menu-panel-group] - CSS class for a group of items within a megamenu panel
+     * @param {string} [options.uuidPrefix=accessible-megamenu] - Prefix for generated unique id attributes, which are required to indicate aria-owns, aria-controls and aria-labelledby
+     * @param {string} [options.menuClass=accessible-megamenu] - CSS class used to define the megamenu styling
+     * @param {string} [options.topNavItemClass=accessible-megamenu-top-nav-item] - CSS class for a top-level navigation item in the megamenu
+     * @param {string} [options.panelClass=accessible-megamenu-panel] - CSS class for a megamenu panel
+     * @param {string} [options.panelGroupClass=accessible-megamenu-panel-group] - CSS class for a group of items within a megamenu panel
      * @param {string} [options.hoverClass=hover] - CSS class for the hover state
      * @param {string} [options.focusClass=focus] - CSS class for the focus state
      * @param {string} [options.openClass=open] - CSS class for the open state
      * @constructor
      */
-    function accessibleMenu(element, options) {
+    function AccessibleMegaMenu(element, options) {
         this.element = element;
 
         // merge optional settings and defaults into settings
@@ -14882,19 +14785,18 @@ $(document).ready(function () {
         this.init();
     }
 
-
-
-    accessibleMenu.prototype = (function () {
+    AccessibleMegaMenu.prototype = (function () {
 
         /* private attributes and methods ------------------------ */
         var uuid = 0,
             keydownTimeoutDuration = 1000,
             keydownSearchString = "",
-            isTouch = typeof window.hasOwnProperty === "function" && !!window.hasOwnProperty("ontouchstart"),
+            isTouch = 'ontouchstart' in window || window.navigator.msMaxTouchPoints,
             _getPlugin,
             _addUniqueId,
             _togglePanel,
             _clickHandler,
+            _touchmoveHandler,
             _clickOutsideHandler,
             _DOMAttrModifiedHandler,
             _focusInHandler,
@@ -14903,13 +14805,16 @@ $(document).ready(function () {
             _mouseDownHandler,
             _mouseOverHandler,
             _mouseOutHandler,
-            _toggleExpandedEventHandlers;
+            _clickToggleHandler,
+            _toggleExpandedEventHandlers,
+            _addEventHandlers,
+            _removeEventHandlers;
 
         /**
-         * @name jQuery.fn.accessibleMenu~_getPlugin
-         * @desc Returns the parent accessibleMenu instance for a given element
+         * @name jQuery.fn.accessibleMegaMenu~_getPlugin
+         * @desc Returns the parent accessibleMegaMenu instance for a given element
          * @param {jQuery} element
-         * @memberof jQuery.fn.accessibleMenu
+         * @memberof jQuery.fn.accessibleMegaMenu
          * @inner
          * @private
          */
@@ -14918,12 +14823,12 @@ $(document).ready(function () {
         };
 
         /**
-         * @name jQuery.fn.accessibleMenu~_addUniqueId
+         * @name jQuery.fn.accessibleMegaMenu~_addUniqueId
          * @desc Adds a unique id and element.
          * The id string starts with the
          * string defined in settings.uuidPrefix.
          * @param {jQuery} element
-         * @memberof jQuery.fn.accessibleMenu
+         * @memberof jQuery.fn.accessibleMegaMenu
          * @inner
          * @private
          */
@@ -14936,12 +14841,12 @@ $(document).ready(function () {
         };
 
         /**
-         * @name jQuery.fn.accessibleMenu~_togglePanel
+         * @name jQuery.fn.accessibleMegaMenu~_togglePanel
          * @desc Toggle the display of mega menu panels in response to an event.
          * The optional boolean value 'hide' forces all panels to hide.
          * @param {event} event
          * @param {Boolean} [hide] Hide all mega menu panels when true
-         * @memberof jQuery.fn.accessibleMenu
+         * @memberof jQuery.fn.accessibleMegaMenu
          * @inner
          * @private
          */
@@ -14970,8 +14875,8 @@ $(document).ready(function () {
                     if ((event.type === 'keydown' && event.keyCode === Keyboard.ESCAPE) || event.type === 'DOMAttrModified') {
                         newfocus = topli.find(':tabbable:first');
                         setTimeout(function () {
-                            menu.find('[aria-expanded].' + that.settings.panelClass).off('DOMAttrModified.accessible-menu');
-                            newfocus.trigger("focus");
+                            menu.find('[aria-expanded].' + that.settings.panelClass).off('DOMAttrModified.accessible-megamenu');
+                            newfocus.focus();
                             that.justFocused = false;
                         }, 99);
                     }
@@ -14995,8 +14900,16 @@ $(document).ready(function () {
                     .addClass(settings.openClass)
                     .filter('.' + settings.panelClass)
                     .attr('aria-hidden', 'false');
+
+                var pageScrollPosition = $('html')[0].scrollTop;
+                var openPanelTopPosition = $('.' + settings.panelClass + '.' + settings.openClass).parent().offset().top;
+
+                if (pageScrollPosition > openPanelTopPosition) {
+                    $('html')[0].scrollTop = openPanelTopPosition;
+                }
+
                 if (event.type === 'mouseover' && target.is(':tabbable') && topli.length === 1 && panel.length === 0 && menu.has(document.activeElement).length > 0) {
-                    target.trigger("focus");
+                    target.focus();
                     that.justFocused = false;
                 }
 
@@ -15005,10 +14918,10 @@ $(document).ready(function () {
         };
 
         /**
-         * @name jQuery.fn.accessibleMenu~_clickHandler
+         * @name jQuery.fn.accessibleMegaMenu~_clickHandler
          * @desc Handle click event on mega menu item
          * @param {event} Event object
-         * @memberof jQuery.fn.accessibleMenu
+         * @memberof jQuery.fn.accessibleMegaMenu
          * @inner
          * @private
          */
@@ -15017,33 +14930,43 @@ $(document).ready(function () {
                 topli = target.closest('.' + this.settings.topNavItemClass),
                 panel = target.closest('.' + this.settings.panelClass);
             if (topli.length === 1
-                    && panel.length === 0
-                    && topli.find('.' + this.settings.panelClass).length === 1) {
+                && panel.length === 0
+                && topli.find('.' + this.settings.panelClass).length === 1) {
                 if (!target.hasClass(this.settings.openClass)) {
                     event.preventDefault();
                     event.stopPropagation();
                     _togglePanel.call(this, event);
                     this.justFocused = false;
-                }
-                else {
+                } else {
                     if (this.justFocused) {
                         event.preventDefault();
                         event.stopPropagation();
                         this.justFocused = false;
-                    } else if (isTouch) {
-                        // event.preventDefault();
-                        // event.stopPropagation();
-                        // _togglePanel.call(this, event, target.hasClass(this.settings.openClass));
+                    } else if (isTouch || !isTouch && !this.settings.openOnMouseover) {
+                        event.preventDefault();
+                        event.stopPropagation();
+                        _togglePanel.call(this, event, target.hasClass(this.settings.openClass));
                     }
                 }
             }
         };
 
         /**
-         * @name jQuery.fn.accessibleMenu~_clickOutsideHandler
+         * @name jQuery.fn.accessibleMegaMenu~_touchmoveHandler
+         * @desc Handle touch move event on menu
+         * @memberof jQuery.fn.accessibleMegaMenu
+         * @inner
+         * @private
+         */
+        _touchmoveHandler = function () {
+            this.justMoved = true;
+        };
+
+        /**
+         * @name jQuery.fn.accessibleMegaMenu~_clickOutsideHandler
          * @desc Handle click event outside of a the megamenu
          * @param {event} Event object
-         * @memberof jQuery.fn.accessibleMenu
+         * @memberof jQuery.fn.accessibleMegaMenu
          * @inner
          * @private
          */
@@ -15056,17 +14979,17 @@ $(document).ready(function () {
         };
 
         /**
-         * @name jQuery.fn.accessibleMenu~_DOMAttrModifiedHandler
+         * @name jQuery.fn.accessibleMegaMenu~_DOMAttrModifiedHandler
          * @desc Handle DOMAttrModified event on panel to respond to Windows 8 Narrator ExpandCollapse pattern
          * @param {event} Event object
-         * @memberof jQuery.fn.accessibleMenu
+         * @memberof jQuery.fn.accessibleMegaMenu
          * @inner
          * @private
          */
         _DOMAttrModifiedHandler = function (event) {
             if (event.originalEvent.attrName === 'aria-expanded'
-                    && event.originalEvent.newValue === 'false'
-                    && $(event.target).hasClass(this.settings.openClass)) {
+                && event.originalEvent.newValue === 'false'
+                && $(event.target).hasClass(this.settings.openClass)) {
                 event.preventDefault();
                 event.stopPropagation();
                 _togglePanel.call(this, event, true);
@@ -15074,10 +14997,10 @@ $(document).ready(function () {
         };
 
         /**
-         * @name jQuery.fn.accessibleMenu~_focusInHandler
+         * @name jQuery.fn.accessibleMegaMenu~_focusInHandler
          * @desc Handle focusin event on mega menu item.
          * @param {event} Event object
-         * @memberof jQuery.fn.accessibleMenu
+         * @memberof jQuery.fn.accessibleMegaMenu
          * @inner
          * @private
          */
@@ -15086,20 +15009,19 @@ $(document).ready(function () {
             var target = $(event.target),
                 panel = target.closest('.' + this.settings.panelClass);
             target
-                .addClass(this.settings.focusClass)
-            //.on('click.accessible-menu', $.proxy(_clickHandler, this));
-            this.justFocused = !this.mouseFocused;
+                .addClass(this.settings.focusClass);
+            this.justFocused = !this.mouseFocused || (!this.settings.openOnMouseover && this.mouseFocused);
             this.mouseFocused = false;
-            if (this.panels.not(panel).filter('.' + this.settings.openClass).length) {
+            if (this.justFocused && this.panels.not(panel).filter('.' + this.settings.openClass).length) {
                 _togglePanel.call(this, event);
             }
         };
 
         /**
-         * @name jQuery.fn.accessibleMenu~_focusOutHandler
+         * @name jQuery.fn.accessibleMegaMenu~_focusOutHandler
          * @desc Handle focusout event on mega menu item.
          * @param {event} Event object
-         * @memberof jQuery.fn.accessibleMenu
+         * @memberof jQuery.fn.accessibleMegaMenu
          * @inner
          * @private
          */
@@ -15107,11 +15029,9 @@ $(document).ready(function () {
             this.justFocused = false;
             var that = this,
                 target = $(event.target),
-                topli = target.closest('.' + this.settings.topNavItemClass),
-                keepOpen = false;
+                topli = target.closest('.' + this.settings.topNavItemClass);
             target
-                .removeClass(this.settings.focusClass)
-                .off('click.accessible-menu');
+                .removeClass(this.settings.focusClass);
 
             if (window.cvox) {
                 // If ChromeVox is running...
@@ -15131,21 +15051,24 @@ $(document).ready(function () {
                 }, 25);
             } else {
                 that.focusTimeoutID = setTimeout(function () {
+                    if (that.mouseFocused && event.relatedTarget === null) {
+                        return;
+                    }
                     _togglePanel.call(that, event, true);
                 }, 300);
             }
         };
 
         /**
-         * @name jQuery.fn.accessibleMenu~_keyDownHandler
+         * @name jQuery.fn.accessibleMegaMenu~_keyDownHandler
          * @desc Handle keydown event on mega menu.
          * @param {event} Event object
-         * @memberof jQuery.fn.accessibleMenu
+         * @memberof jQuery.fn.accessibleMegaMenu
          * @inner
          * @private
          */
         _keyDownHandler = function (event) {
-            var that = (this.constructor === accessibleMenu) ? this : _getPlugin(this), // determine the accessibleMenu plugin instance
+            var that = (this.constructor === AccessibleMegaMenu) ? this : _getPlugin(this), // determine the AccessibleMegaMenu plugin instance
                 settings = that.settings,
                 target = $($(this).is('.' + settings.hoverClass + ':tabbable') ? this : event.target), // if the element is hovered the target is this, otherwise, its the focused element
                 menu = that.menu,
@@ -15172,83 +15095,89 @@ $(document).ready(function () {
             }
 
             if (target.is('.' + settings.hoverClass + ':tabbable')) {
-                $('html').off('keydown.accessible-menu');
+                $('html').off('keydown.accessible-megamenu');
             }
 
             switch (keycode) {
                 case Keyboard.ESCAPE:
+                    this.mouseFocused = false;
                     _togglePanel.call(that, event, true);
                     break;
                 case Keyboard.DOWN:
                     event.preventDefault();
+                    this.mouseFocused = false;
                     if (isTopNavItem) {
                         _togglePanel.call(that, event);
-                        found = (topli.find('.' + settings.panelClass + ' :tabbable:first').trigger("focus").length === 1);
+                        found = (topli.find('.' + settings.panelClass + ' :tabbable:first').focus().length === 1);
                     } else {
-                        found = (tabbables.filter(':gt(' + tabbables.index(target) + '):first').trigger("focus").length === 1);
+                        found = (tabbables.filter(':gt(' + tabbables.index(target) + '):first').focus().length === 1);
                     }
 
-                    if (!found && window.opera && opera.toString() === "[object Opera]" && (event.ctrlKey || event.metaKey)) {
+                    if (!found && isOpera && (event.ctrlKey || event.metaKey)) {
                         tabbables = $(':tabbable');
                         i = tabbables.index(target);
-                        found = ($(':tabbable:gt(' + $(':tabbable').index(target) + '):first').trigger("focus").length === 1);
+                        found = ($(':tabbable:gt(' + $(':tabbable').index(target) + '):first').focus().length === 1);
                     }
                     break;
                 case Keyboard.UP:
                     event.preventDefault();
+                    this.mouseFocused = false;
                     if (isTopNavItem && target.hasClass(settings.openClass)) {
                         _togglePanel.call(that, event, true);
                         next = topnavitems.filter(':lt(' + topnavitems.index(topli) + '):last');
                         if (next.children('.' + settings.panelClass).length) {
-                            found = (next.children()
+                            found = (next.find('[aria-expanded]')
                                 .attr('aria-expanded', 'true')
                                 .addClass(settings.openClass)
                                 .filter('.' + settings.panelClass)
                                 .attr('aria-hidden', 'false')
                                 .find(':tabbable:last')
-                                .trigger("focus") === 1);
+                                .focus() === 1);
                         }
                     } else if (!isTopNavItem) {
-                        found = (tabbables.filter(':lt(' + tabbables.index(target) + '):last').trigger("focus").length === 1);
+                        found = (tabbables.filter(':lt(' + tabbables.index(target) + '):last').focus().length === 1);
                     }
 
-                    if (!found && window.opera && opera.toString() === "[object Opera]" && (event.ctrlKey || event.metaKey)) {
+                    if (!found && isOpera && (event.ctrlKey || event.metaKey)) {
                         tabbables = $(':tabbable');
                         i = tabbables.index(target);
-                        found = ($(':tabbable:lt(' + $(':tabbable').index(target) + '):first').trigger("focus").length === 1);
+                        found = ($(':tabbable:lt(' + $(':tabbable').index(target) + '):first').focus().length === 1);
                     }
                     break;
                 case Keyboard.RIGHT:
                     event.preventDefault();
+                    this.mouseFocused = false;
                     if (isTopNavItem) {
-                        found = (topnavitems.filter(':gt(' + topnavitems.index(topli) + '):first').find(':tabbable:first').trigger("focus").length === 1);
+                        found = (topnavitems.filter(':gt(' + topnavitems.index(topli) + '):first').find(':tabbable:first').focus().length === 1);
                     } else {
                         if (panelGroups.length && currentPanelGroup.length) {
                             // if the current panel contains panel groups, and we are able to focus the first tabbable element of the next panel group
-                            found = (panelGroups.filter(':gt(' + panelGroups.index(currentPanelGroup) + '):first').find(':tabbable:first').trigger("focus").length === 1);
+                            found = (panelGroups.filter(':gt(' + panelGroups.index(currentPanelGroup) + '):first').find(':tabbable:first').focus().length === 1);
                         }
 
                         if (!found) {
-                            found = (topli.find(':tabbable:first').trigger("focus").length === 1);
+                            found = (topli.find(':tabbable:first').focus().length === 1);
                         }
                     }
                     break;
                 case Keyboard.LEFT:
                     event.preventDefault();
+                    this.mouseFocused = false;
                     if (isTopNavItem) {
-                        found = (topnavitems.filter(':lt(' + topnavitems.index(topli) + '):last').find(':tabbable:first').trigger("focus").length === 1);
+                        found = (topnavitems.filter(':lt(' + topnavitems.index(topli) + '):last').find(':tabbable:first').focus().length === 1);
                     } else {
                         if (panelGroups.length && currentPanelGroup.length) {
                             // if the current panel contains panel groups, and we are able to focus the first tabbable element of the previous panel group
-                            found = (panelGroups.filter(':lt(' + panelGroups.index(currentPanelGroup) + '):last').find(':tabbable:first').trigger("focus").length === 1);
+                            found = (panelGroups.filter(':lt(' + panelGroups.index(currentPanelGroup) + '):last').find(':tabbable:first').focus().length === 1);
                         }
 
                         if (!found) {
-                            found = (topli.find(':tabbable:first').trigger("focus").length === 1);
+                            found = (topli.find(':tabbable:first').focus().length === 1);
                         }
                     }
                     break;
                 case Keyboard.TAB:
+                    this.mouseFocused = false;
                     i = tabbables.index(target);
                     if (event.shiftKey && isTopNavItem && target.hasClass(settings.openClass)) {
                         _togglePanel.call(that, event, true);
@@ -15260,19 +15189,19 @@ $(document).ready(function () {
                                 .filter('.' + settings.panelClass)
                                 .attr('aria-hidden', 'false')
                                 .find(':tabbable:last')
-                                .trigger("focus");
+                                .focus();
                         }
                     } else if (event.shiftKey && i > 0) {
-                        found = (tabbables.filter(':lt(' + i + '):last').trigger("focus").length === 1);
+                        found = (tabbables.filter(':lt(' + i + '):last').focus().length === 1);
                     } else if (!event.shiftKey && i < tabbables.length - 1) {
-                        found = (tabbables.filter(':gt(' + i + '):first').trigger("focus").length === 1);
-                    } else if (window.opera && opera.toString() === "[object Opera]") {
+                        found = (tabbables.filter(':gt(' + i + '):first').focus().length === 1);
+                    } else if (isOpera) {
                         tabbables = $(':tabbable');
                         i = tabbables.index(target);
                         if (event.shiftKey) {
-                            found = ($(':tabbable:lt(' + $(':tabbable').index(target) + '):last').trigger("focus").length === 1);
+                            found = ($(':tabbable:lt(' + $(':tabbable').index(target) + '):last').focus().length === 1);
                         } else {
-                            found = ($(':tabbable:gt(' + $(':tabbable').index(target) + '):first').trigger("focus").length === 1);
+                            found = ($(':tabbable:gt(' + $(':tabbable').index(target) + '):first').focus().length === 1);
                         }
                     }
 
@@ -15281,15 +15210,13 @@ $(document).ready(function () {
                     }
                     break;
                 case Keyboard.SPACE:
+                case Keyboard.ENTER:
                     if (isTopNavItem) {
                         event.preventDefault();
                         _clickHandler.call(that, event);
                     } else {
                         return true;
                     }
-                    break;
-                case Keyboard.ENTER:
-                    return true;
                     break;
                 default:
                     // alphanumeric filter
@@ -15331,7 +15258,7 @@ $(document).ready(function () {
                         label = $.trim(o.text());
                         if (regex.test(label)) {
                             found = true;
-                            o.trigger("focus");
+                            o.focus();
                             break;
                         }
                     }
@@ -15340,7 +15267,7 @@ $(document).ready(function () {
                             o = tabbables.eq(i);
                             label = $.trim(o.text());
                             if (regex.test(label)) {
-                                o.trigger("focus");
+                                o.focus();
                                 break;
                             }
                         }
@@ -15351,16 +15278,19 @@ $(document).ready(function () {
         };
 
         /**
-         * @name jQuery.fn.accessibleMenu~_mouseDownHandler
+         * @name jQuery.fn.accessibleMegaMenu~_mouseDownHandler
          * @desc Handle mousedown event on mega menu.
          * @param {event} Event object
-         * @memberof accessibleMenu
+         * @memberof accessibleMegaMenu
          * @inner
          * @private
          */
         _mouseDownHandler = function (event) {
-            if ($(event.target).is(this.settings.panelClass) || $(event.target).closest(":focusable").length) {
+            if ($(event.target).closest(this.settings.panelClass) || $(event.target).closest(":focusable").length) {
                 this.mouseFocused = true;
+                if ($(event.target).closest(this.settings.menuClass)) {
+                    $('html').on('keydown.accessible-megamenu', $.proxy(_keyDownHandler, event.target));
+                }
             }
             clearTimeout(this.mouseTimeoutID);
             this.mouseTimeoutID = setTimeout(function () {
@@ -15369,41 +15299,46 @@ $(document).ready(function () {
         };
 
         /**
-         * @name jQuery.fn.accessibleMenu~_mouseOverHandler
+         * @name jQuery.fn.accessibleMegaMenu~_mouseOverHandler
          * @desc Handle mouseover event on mega menu.
          * @param {event} Event object
-         * @memberof jQuery.fn.accessibleMenu
+         * @memberof jQuery.fn.accessibleMegaMenu
          * @inner
          * @private
          */
-
-
         _mouseOverHandler = function (event) {
             clearTimeout(this.mouseTimeoutID);
             var that = this;
-            if (window.innerWidth > 768) {
-                this.mouseTimeoutID = setTimeout(function () {
-                    $(event.target).addClass(that.settings.hoverClass);
 
-                    _togglePanel.call(that, event);
-                    if ($(event.target).is(':tabbable')) {
-                        $('html').on('keydown.accessible-menu', $.proxy(_keyDownHandler, event.target));
-                    }
-                }, this.settings.openDelay);
+            if (!that.settings.openOnMouseover) {
+                return;
             }
+
+            this.mouseTimeoutID = setTimeout(function () {
+                $(event.target).addClass(that.settings.hoverClass);
+                _togglePanel.call(that, event);
+                if ($(event.target).closest(that.settings.menuClass)) {
+                    $('html').on('keydown.accessible-megamenu', $.proxy(_keyDownHandler, event.target));
+                }
+            }, this.settings.openDelay);
         };
 
         /**
-         * @name jQuery.fn.accessibleMenu~_mouseOutHandler
+         * @name jQuery.fn.accessibleMegaMenu~_mouseOutHandler
          * @desc Handle mouseout event on mega menu.
          * @param {event} Event object
-         * @memberof jQuery.fn.accessibleMenu
+         * @memberof jQuery.fn.accessibleMegaMenu
          * @inner
          * @private
          */
         _mouseOutHandler = function (event) {
             clearTimeout(this.mouseTimeoutID);
             var that = this;
+
+            if (!that.settings.openOnMouseover) {
+                return;
+            }
+
             $(event.target)
                 .removeClass(that.settings.hoverClass);
 
@@ -15411,52 +15346,103 @@ $(document).ready(function () {
                 _togglePanel.call(that, event, true);
             }, this.settings.closeDelay);
             if ($(event.target).is(':tabbable')) {
-                $('html').off('keydown.accessible-menu');
+                $('html').off('keydown.accessible-megamenu');
             }
+        };
+
+        /**
+         * @name jQuery.fn.accessibleMegaMenu~_clickToggleHandler
+         * @desc Handle click event on menu toggle button.
+         * @memberof jQuery.fn.accessibleMegaMenu
+         * @inner
+         * @private
+         */
+        _clickToggleHandler = function () {
+            var isExpanded = this.toggleButton.attr('aria-expanded') === 'true';
+
+            this.toggleButton.attr({ 'aria-expanded': !isExpanded, 'aria-pressed': !isExpanded });
+
 
         };
 
         _toggleExpandedEventHandlers = function (hide) {
             var menu = this.menu;
             if (hide) {
-                $('html').off('mouseup.outside-accessible-menu, touchend.outside-accessible-menu, mspointerup.outside-accessible-menu,  pointerup.outside-accessible-menu');
+                $('html').off('mouseup.outside-accessible-megamenu, touchend.outside-accessible-megamenu, mspointerup.outside-accessible-megamenu,  pointerup.outside-accessible-megamenu');
 
-                menu.find('[aria-expanded].' + this.settings.panelClass).off('DOMAttrModified.accessible-menu');
+                menu.find('[aria-expanded].' + this.settings.panelClass).off('DOMAttrModified.accessible-megamenu');
             } else {
-                $('html').on('mouseup.outside-accessible-menu, touchend.outside-accessible-menu, mspointerup.outside-accessible-menu,  pointerup.outside-accessible-menu', $.proxy(_clickOutsideHandler, this));
+                $('html').on('mouseup.outside-accessible-megamenu, touchend.outside-accessible-megamenu, mspointerup.outside-accessible-megamenu,  pointerup.outside-accessible-megamenu', $.proxy(_clickOutsideHandler, this));
 
                 /* Narrator in Windows 8 automatically toggles the aria-expanded property on double tap or click.
                    To respond to the change to collapse the panel, we must add a listener for a DOMAttrModified event. */
-                menu.find('[aria-expanded=true].' + this.settings.panelClass).on('DOMAttrModified.accessible-menu', $.proxy(_DOMAttrModifiedHandler, this));
+                menu.find('[aria-expanded=true].' + this.settings.panelClass).on('DOMAttrModified.accessible-megamenu', $.proxy(_DOMAttrModifiedHandler, this));
             }
+        };
+
+        _addEventHandlers = function () {
+            var menu = this.menu,
+                toggleButton = this.toggleButton;
+            menu.on("focusin.accessible-megamenu", ":focusable, ." + this.settings.panelClass, $.proxy(_focusInHandler, this))
+                .on("focusout.accessible-megamenu", ":focusable, ." + this.settings.panelClass, $.proxy(_focusOutHandler, this))
+                .on("keydown.accessible-megamenu", $.proxy(_keyDownHandler, this))
+                .on("mouseover.accessible-megamenu", $.proxy(_mouseOverHandler, this))
+                .on("mouseout.accessible-megamenu", $.proxy(_mouseOutHandler, this))
+                .on("mousedown.accessible-megamenu", $.proxy(_mouseDownHandler, this))
+                .on("click.accessible-megamenu", $.proxy(_clickHandler, this));
+
+            toggleButton.on('click.accessible-megamenu', $.proxy(_clickToggleHandler, this));
+
+            if (isTouch) {
+                menu.on("touchmove.accessible-megamenu", $.proxy(_touchmoveHandler, this));
+            }
+
+            if ($(document.activeElement).closest(menu).length) {
+                $(document.activeElement).trigger("focusin.accessible-megamenu");
+            }
+        };
+
+        _removeEventHandlers = function () {
+            var menu = this.menu,
+                toggleButton = this.toggleButton;
+            menu.off('.accessible-megamenu');
+            if (menu.find('[aria-expanded=true].' + this.settings.panelClass).length) {
+                _toggleExpandedEventHandlers.call(this, true);
+            }
+
+            toggleButton.off('.accessible-megamenu');
         };
 
         /* public attributes and methods ------------------------- */
         return {
-            constructor: accessibleMenu,
+            constructor: AccessibleMegaMenu,
 
             /**
-             * @lends jQuery.fn.accessibleMenu
-             * @desc Initializes an instance of the accessibleMenu plugins
-             * @memberof jQuery.fn.accessibleMenu
+             * @lends jQuery.fn.accessibleMegaMenu
+             * @desc Initializes an instance of the accessibleMegaMenu plugins
+             * @memberof jQuery.fn.accessibleMegaMenu
              * @instance
              */
             init: function () {
                 var settings = this.settings,
                     nav = $(this.element),
-                    menu = $("#nav_list"), // Main navigation <ul> ID.
-                    topnavitems = menu.children();
-                this.start(settings, nav, menu, topnavitems);
+                    menu = nav.children('ol,ul').first(),
+                    topnavitems = menu.children(),
+                    toggleButton = $('.toggle-menu');
+                this.start(settings, nav, menu, topnavitems, toggleButton);
             },
 
-            start: function (settings, nav, menu, topnavitems) {
+            start: function (settings, nav, menu, topnavitems, toggleButton) {
                 var that = this;
                 this.settings = settings;
                 this.menu = menu;
                 this.topnavitems = topnavitems;
+                this.toggleButton = toggleButton;
 
                 nav.attr("role", "navigation");
+                _addUniqueId.call(that, menu);
                 menu.addClass(settings.menuClass);
+                menu.addClass(['js', settings.menuClass].join('-'));
                 topnavitems.each(function (i, topnavitem) {
                     var topnavitemlink, topnavitempanel;
                     topnavitem = $(topnavitem);
@@ -15467,9 +15453,10 @@ $(document).ready(function () {
                     if (topnavitempanel.length) {
                         _addUniqueId.call(that, topnavitempanel);
                         topnavitemlink.attr({
-                            // "aria-haspopup": true,
+                            "role": "button",
                             "aria-controls": topnavitempanel.attr("id"),
-                            "aria-expanded": false
+                            "aria-expanded": false,
+                            "tabindex": 0
                         });
 
                         topnavitempanel.attr({
@@ -15485,33 +15472,31 @@ $(document).ready(function () {
 
                 this.panels = menu.find("." + settings.panelClass);
 
-
-                menu.on("focusin.accessible-menu", ":focusable, ." + settings.panelClass, $.proxy(_focusInHandler, this))
-                    .on("focusout.accessible-menu", ":focusable, ." + settings.panelClass, $.proxy(_focusOutHandler, this))
-                    .on("keydown.accessible-menu", $.proxy(_keyDownHandler, this))
-                    .on("mouseover.accessible-menu", $.proxy(_mouseOverHandler, this))
-                    .on("mouseout.accessible-menu", $.proxy(_mouseOutHandler, this))
-                    .on("mousedown.accessible-menu", $.proxy(_mouseDownHandler, this));
-
-                if (isTouch) {
-                    menu.on("touchstart.accessible-menu", $.proxy(_clickHandler, this));
-                }
-
                 menu.find("hr").attr("role", "separator");
 
-                if ($(document.activeElement).closest(menu).length) {
-                    $(document.activeElement).trigger("focusin.accessible-menu");
-                }
+                toggleButton.addClass(settings.toggleButtonClass);
+                toggleButton.attr({ 'aria-expanded': false, 'aria-pressed': false, 'aria-controls': menu.attr('id') });
 
+                _addEventHandlers.call(this);
+            },
 
-
+            /**
+             * @desc Removes maga menu javascript behavior
+             * @example $(selector).accessibleMegaMenu("destroy");
+             * @return {object}
+             * @memberof jQuery.fn.accessibleMegaMenu
+             * @instance
+             */
+            destroy: function () {
+                this.menu.removeClass(['js', this.settings.menuClass].join('-'));
+                _removeEventHandlers.call(this, true);
             },
 
             /**
              * @desc Get default values
-             * @example $(selector).accessibleMenu("getDefaults");
+             * @example $(selector).accessibleMegaMenu("getDefaults");
              * @return {object}
-             * @memberof jQuery.fn.accessibleMenu
+             * @memberof jQuery.fn.accessibleMegaMenu
              * @instance
              */
             getDefaults: function () {
@@ -15520,10 +15505,10 @@ $(document).ready(function () {
 
             /**
              * @desc Get any option set to plugin using its name (as string)
-             * @example $(selector).accessibleMenu("getOption", some_option);
+             * @example $(selector).accessibleMegaMenu("getOption", some_option);
              * @param {string} opt
              * @return {string}
-             * @memberof jQuery.fn.accessibleMenu
+             * @memberof jQuery.fn.accessibleMegaMenu
              * @instance
              */
             getOption: function (opt) {
@@ -15532,9 +15517,9 @@ $(document).ready(function () {
 
             /**
              * @desc Get all options
-             * @example $(selector).accessibleMenu("getAllOptions");
+             * @example $(selector).accessibleMegaMenu("getAllOptions");
              * @return {object}
-             * @memberof jQuery.fn.accessibleMenu
+             * @memberof jQuery.fn.accessibleMegaMenu
              * @instance
              */
             getAllOptions: function () {
@@ -15543,11 +15528,11 @@ $(document).ready(function () {
 
             /**
              * @desc Set option
-             * @example $(selector).accessibleMenu("setOption", "option_name",  "option_value",  reinitialize);
+             * @example $(selector).accessibleMegaMenu("setOption", "option_name",  "option_value",  reinitialize);
              * @param {string} opt - Option name
              * @param {string} val - Option value
              * @param {boolean} [reinitialize] - boolean to re-initialize the menu.
-             * @memberof jQuery.fn.accessibleMenu
+             * @memberof jQuery.fn.accessibleMegaMenu
              * @instance
              */
             setOption: function (opt, value, reinitialize) {
@@ -15559,24 +15544,27 @@ $(document).ready(function () {
         };
     }());
 
+
     $.fn[pluginName] = function (options) {
         return this.each(function () {
-            if (!$.data(this, "plugin_" + pluginName)) {
-                $.data(this, "plugin_" + pluginName, new $.fn[pluginName].accessibleMenu(this, options));
+            var pluginInstance = $.data(this, "plugin_" + pluginName);
+            if (!pluginInstance) {
+                $.data(this, "plugin_" + pluginName, new $.fn[pluginName].AccessibleMegaMenu(this, options));
+            } else if (typeof pluginInstance[options] === 'function') {
+                pluginInstance[options].apply(pluginInstance, Array.prototype.slice.call(arguments, 1));
             }
         });
     };
 
-    $.fn[pluginName].accessibleMenu = accessibleMenu;
+    $.fn[pluginName].AccessibleMegaMenu = AccessibleMegaMenu;
 
-    /* :focusable and :tabbable selectors from
-       https://raw.github.com/jquery/jquery-ui/master/ui/jquery.ui.core.js */
+
 
     /**
      * @private
      */
     function visible(element) {
-        return $.expr.pseudos.visible(element) && !$(element).parents().addBack().filter(function () {
+        return $.expr.filters.visible(element) && !$(element).parents().addBack().filter(function () {
             return $.css(this, "visibility") === "hidden";
         }).length;
     }
@@ -15597,22 +15585,22 @@ $(document).ready(function () {
             return !!img && visible(img);
         }
         return (/input|select|textarea|button|object/.test(nodeName) ? !element.disabled :
-                "a" === nodeName ?
-                        element.href || isTabIndexNotNaN :
-                        isTabIndexNotNaN) &&
-                            // the element and all of its ancestors must be visible
-                            visible(element);
+            "a" === nodeName ?
+                element.href || isTabIndexNotNaN :
+                isTabIndexNotNaN) &&
+            // the element and all of its ancestors must be visible
+            visible(element);
     }
 
-    $.extend($.expr.pseudos, {
+    $.extend($.expr[":"], {
         data: $.expr.createPseudo ? $.expr.createPseudo(function (dataName) {
             return function (elem) {
                 return !!$.data(elem, dataName);
             };
         }) : // support: jQuery <1.8
-                function (elem, i, match) {
-                    return !!$.data(elem, match[3]);
-                },
+            function (elem, i, match) {
+                return !!$.data(elem, match[3]);
+            },
 
         focusable: function (element) {
             return focusable(element, !isNaN($.attr(element, "tabindex")));
@@ -15628,81 +15616,170 @@ $(document).ready(function () {
 
 
 
-    
 
-    // Do Navigation Reset function on window resize uless it's mobile device.
-    $(window).on('resize', function () {
-            if (navigator.userAgent.match(/Android/i)
-                || navigator.userAgent.match(/webOS/i)
-                || navigator.userAgent.match(/iPhone/i)
-                || navigator.userAgent.match(/iPad/i)
-                || navigator.userAgent.match(/iPod/i)
-                || navigator.userAgent.match(/BlackBerry/i)
-                || navigator.userAgent.match(/Windows Phone/i)
-            ) {
-                return false;
-            }
-            else {
-                NavReset();
-            }
-    });
-
-    // Navigation Reset function
-       function NavReset() {
-            $(".sub-nav").removeClass("open");
-            $(".sub-nav").removeClass("secondary-open");
-            $(".sub-nav").attr("aria-expanded", false);
-            $(".sub-nav").attr("aria-hidden", true);
-            $(".first-level-link").removeClass("open");
-            $(".first-level-link").removeClass("active");
-            $(".first-level-link").attr("aria-expanded", false);
-            $("#navigation").addClass("mobile-closed");
-            if (window.innerWidth < 768) {
-                $("#navigation").css("max-height", "0");
-                $('.sub-nav').slideUpTransitionSub();
-                $('#navigation').slideUpTransition();
-                // 
-                $(".rotate").removeClass('down');
-            }
-            else {
-                $("#navigation").removeAttr("style");
-                $(".sub-nav").removeAttr("style");
-            }
-
-            $(".toggle-sub-nav").removeClass("open");
-            $(".toggle-sub-nav").addClass("closed");
-            $(".nav-item").removeClass("active");
-            $(".toggle-menu").attr('aria-expanded', 'false');
-            $(".toggle-menu").removeClass("open");
-            $(".toggle-sub-nav").removeClass("open");
-        };
-   
 
 
 }(jQuery, window, document));
 
 
-$("nav:first").accessibleMenu({
-    navId: "#navigation",
+$("nav:first").accessibleMegaMenu({
     /* prefix for generated unique id attributes, which are required 
        to indicate aria-owns, aria-controls and aria-labelledby */
     uuidPrefix: "accessible-menu",
+
     /* css class used to define the megamenu styling */
     menuClass: "nav-menu",
+
     /* css class for a top-level navigation item in the megamenu */
     topNavItemClass: "nav-item",
+
     /* css class for a megamenu panel */
     panelClass: "sub-nav",
+
     /* css class for a group of items within a megamenu panel */
     panelGroupClass: "sub-nav-group",
+
     /* css class for the hover state */
     hoverClass: "hover",
+
     /* css class for the focus state */
     focusClass: "focus",
+
     /* css class for the open state */
     openClass: "open"
 });
 
+
+
+
+
+
+/// MOBILE
+function mobileView() {
+    return ($('.global-header .mobile-controls').css('display') !== "none"); 
+}
+
+
+
+
+
+$(document).ready(function () {
+
+    // INITIAZE NAVIGATION
+    $('.main-navigation').accessibleMegaMenu();
+
+    if (mobileView()) {
+        $('#navigation').addClass('collapse');
+    }
+
+
+    // Variables
+var $navigation = $('#navigation.main-navigation'),
+    $navItems = $navigation.find('.nav-item'), // first level link containers'
+    $navItemsWithSubs = $navItems.has('.sub-nav'),
+    $subNavs = $navigation.find('.sub-nav'),
+    megamenu = $navigation.hasClass('megadropdown'),
+    dropdown = $navigation.hasClass('dropdown'),
+    singleLevel = $navigation.hasClass('singleLevel'),
+    setActiveLinkByFolder = $navigation.hasClass('auto-highlight'); // Use new folder matching method to highlight the current navigation tab
+
+
+    // HIGHLIGHT APPROPRIATE NAV ITEM
+    var reMainNav = "",
+        arrCurrentURL = location.href.split("/");
+    if (typeof defaultActiveLink != "undefined") {
+        reMainNav = new RegExp("^" + defaultActiveLink + "$", "i"); // Regex for finding the index of the default main list item
+    }
+    $navItems.each(function () { // loop through top level links
+        var $this = $(this),
+            $a = $this.find('.first-level-link');
+
+        if (reMainNav) {
+            if ($a.text().match(reMainNav)) {
+                $this.addClass('active');
+            }
+        } else if (setActiveLinkByFolder && $a.attr('href')) {
+            var arrNavLink = $a[0].href.split("/");
+            if ((arrNavLink.length > 4) && (arrCurrentURL[3] == arrNavLink[3])) { // folder of current URL matches this nav link
+                $this.addClass('active');
+            }
+        }
+    });
+
+
+    // Nav items with subs
+    $navItemsWithSubs.each(function () {
+        var itemCount = $(this).find('.second-level-nav > li').length;
+        if (itemCount <= 2) {
+            $(this).find('.sub-nav').addClass('with-few-items');
+        }
+    });
+
+    
+    // Add class has-sub, then add carrots
+    if (!singleLevel) {
+        $navItemsWithSubs.each(function () {
+
+            $(this).find('.first-level-link').addClass('has-sub');
+
+            var $toggleSubNav = $('<div class="ca-gov-icon-caret-right rotate" aria-hidden="true"></div>');
+
+            if (mobileView()) {
+                $(this).find('.has-sub').append($toggleSubNav);
+            }
+
+        });
+    }
+
+    // Scrolling to the top of the menu in mobile
+    var HasSubLink = $(".collapse .has-sub");
+    var FirstLink = $(".first-level-link").first();
+    $(HasSubLink).click(function () {
+        $('html,body').animate({
+            scrollTop: $(FirstLink).offset().top
+        }, '3000');
+    });
+
+});
+
+
+// Do Navigation Reset function on window resize uless it's mobile device.
+$(window).on('resize', function () {
+    if (navigator.userAgent.match(/Android/i)
+        || navigator.userAgent.match(/webOS/i)
+        || navigator.userAgent.match(/iPhone/i)
+        || navigator.userAgent.match(/iPad/i)
+        || navigator.userAgent.match(/iPod/i)
+        || navigator.userAgent.match(/BlackBerry/i)
+        || navigator.userAgent.match(/Windows Phone/i)
+    ) {
+        return false;
+    }
+    else {
+        NavReset();
+    }
+});
+
+// Navigation Reset function
+function NavReset() {
+    var $toggleSubNav = $('<div class="ca-gov-icon-caret-right rotate" aria-hidden="true"></div>');
+    if (window.innerWidth < 768) {
+        $("#navigation").addClass("collapse");
+        $("#navigation").removeClass("show");
+        $('.has-sub').append($toggleSubNav);
+        $(".rotate").css("display", "block");
+    }
+    else {
+        $("#navigation").removeClass("collapse");
+        $(".rotate").css("display", "none");
+        
+    }
+    
+    $(".toggle-menu").attr('aria-expanded', 'false');
+    $(".toggle-menu").attr('aria-selected', 'false');
+    $(".toggle-menu").attr('aria-pressed', 'false');
+    $(".toggle-menu").addClass("collapsed");
+};
 
 
 /* -----------------------------------------
@@ -16610,7 +16687,10 @@ $(document).ready(function () {
         $.event.trigger('cagov.searchresults.hide');
     }
 
-
+    // Mobile Search toggle
+    $('.toggle-search').on('click', function () {
+        $('.search-container').toggleClass('active');
+    });
 
 });
 
@@ -17071,7 +17151,7 @@ function PopupCentered(url, popupName, popupWidth, popupHeight) {
 ----------------------------------------- */
 
 // This function populates the breadcrumb section of the page.
-// Adapted from http://webtools.ca.gov/tools/design-enhancements/breadcrumbs/ to use jQuery
+// Adapted from http://webstandards.ca.gov/tools/design-enhancements/breadcrumbs/ to use jQuery
 
 function breadcrumbs()
 {

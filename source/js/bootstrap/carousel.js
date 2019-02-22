@@ -1,19 +1,19 @@
 /**
    * --------------------------------------------------------------------------
-   * Bootstrap (v4.2.1): carousel.js
+   * Bootstrap (v4.3.1): carousel.js
    * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
    * --------------------------------------------------------------------------
    */
 
 
 /**
-   * ------------------------------------------------------------------------
-   * Constants
-   * ------------------------------------------------------------------------
-   */
+ * ------------------------------------------------------------------------
+ * Constants
+ * ------------------------------------------------------------------------
+ */
 
 var NAME$2 = 'carousel';
-var VERSION$2 = '4.2.1';
+var VERSION$2 = '4.3.1';
 var DATA_KEY$2 = 'bs.carousel';
 var EVENT_KEY$2 = "." + DATA_KEY$2;
 var DATA_API_KEY$2 = '.data-api';
@@ -208,8 +208,8 @@ var Carousel =
             this._isSliding = null;
             this._activeElement = null;
             this._indicatorsElement = null;
-        }; // Private
-
+        } // Private
+            ;
 
         _proto._getConfig = function _getConfig(config) {
             config = _objectSpread({}, Default, config);
@@ -253,7 +253,9 @@ var Carousel =
                 });
             }
 
-            this._addTouchEventListeners();
+            if (this._config.touch) {
+                this._addTouchEventListeners();
+            }
         };
 
         _proto._addTouchEventListeners = function _addTouchEventListeners() {
@@ -494,8 +496,8 @@ var Carousel =
             if (isCycling) {
                 this.cycle();
             }
-        }; // Static
-
+        } // Static
+            ;
 
         Carousel._jQueryInterface = function _jQueryInterface(config) {
             return this.each(function () {
@@ -522,7 +524,7 @@ var Carousel =
                     }
 
                     data[action]();
-                } else if (_config.interval) {
+                } else if (_config.interval && _config.ride) {
                     data.pause();
                     data.cycle();
                 }

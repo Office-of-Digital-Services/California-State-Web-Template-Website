@@ -1,0 +1,338 @@
+﻿<!doctype html>
+<!--[if lt IE 7]> <html class="no-js ie6 oldie" lang="en"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js ie7 oldie" lang="en"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js ie8 oldie" lang="en"> <![endif]-->
+<!--[if IE 9]>    <html class="no-js ie9 oldie" lang="en"> <![endif]-->
+<!--[if (gt IE 9)]><!-->
+<html class="no-js" lang="en">
+<!--<![endif]-->
+
+<head>
+    <!--
+California State Template
+Version 5.5.2
+
+    Based on Twitter Bootstrap
+    -->
+    <meta charset="utf-8">
+
+    <title>State Template CDN</title>
+
+    <meta name="Author" content="State of California" />
+    <meta name="Description" content="State of California" />
+    <meta name="Keywords" content="California, government" />
+
+    <!--#include virtual="/ssi/head-css-js.html" -->
+    <style>
+    </style>
+</head>
+
+<!-- possible body classes are "primary" and "two-column" -->
+
+<body>
+
+    <header role="banner" id="header" class="global-header fixed">
+        <div id="skip-to-content"><a href="#main-content">Skip to Main Content</a></div>
+        <!-- Include Utility Header -->
+        <!--#include virtual="/ssi/utility-header.html" -->
+        <!-- Settings Bar -->
+        <!--#include virtual="/ssi/settings-bar.html" -->
+        <!-- Include Branding -->
+        <!--#include virtual="/ssi/branding.html" -->
+        <!-- Include Mobile Controls -->
+        <!--#include virtual="/ssi/mobile-controls.html" -->
+
+        <div class="navigation-search">
+            <!-- Include Navigation -->
+            <!--#include virtual="/ssi/navigation.html" -->
+
+            <div id="head-search" class="search-container">
+                <!-- Include Search -->
+                <!--#include virtual="/ssi/search.html" -->
+            </div>
+
+        </div>
+
+
+        <div class="header-decoration"></div>
+
+    </header>
+
+
+    <div id="main-content" class="main-content">
+        <main class="main-primary">
+
+            <div class="container m-b-lg">
+                <h1>State Template CDN</h1>
+
+                <p>Users can load your website faster by serving State Template's static resources such as css, JavaScript, fonts, and images in nodes all around the world. 
+                When a user requests your site, the node closest in proximity to user will deliver the static content, 
+                ensuring the shortest distance for the data to travel (reduced latency), therefore providing the fastest 
+                site experience.</p>
+               
+                <h2>CDN example using core CSS files</h2>
+                <pre><span class="text-accent-p2">&lt;link</span> <span class="text-info">href=</span><span class="text-accent7">"https://california.azureedge.net/cdt/statetemplate/5.5.2/css/cagov.core.css" <span class="text-info">rel=</span><span class="text-accent7">"stylesheet"</span></span><span class="text-accent-p2">&gt;</span>
+<span class="text-accent-p2">&lt;link</span> <span class="text-info">href=</span><span class="text-accent7">"https://california.azureedge.net/cdt/statetemplate/5.5.2/css/colorscheme-oceanside.css"</span> <span class="text-info">rel=</span><span class="text-accent7">"stylesheet"</span><span class="text-accent-p2">&gt;</span><br /></pre>
+
+                <h2>CDN example using JS files</h2>
+                <pre><span class="text-accent-p2">&lt;script</span> <span class="text-info">src=</span><span class="text-accent7">"https://california.azureedge.net/cdt/statetemplate/5.5.2/js/libs/modernizr-3.6.0.min.js"</span><span class="text-accent-p2">&gt;&lt;/script&gt;</span>
+<span class="text-accent-p2">&lt;script</span> <span class="text-info">src=</span><span class="text-accent7">"https://california.azureedge.net/cdt/statetemplate/5.5.2/js/cagov.core.js"</span><span class="text-accent-p2">&gt;&lt;/script&gt;</span></pre>
+
+
+                <h2>Sample page using State Template CDN</h2>
+                <p>Here is the example of using CDN for core CSS/JS State Template files together with Server Side Includes (ssi):</p>
+                <pre>
+<span class="text-success">&lt;!doctype html&gt;</span>
+<span class="text-accent-p2">&lt;html</span> <span class="text-info">lang=</span><span class="text-accent7">"en"</span><span class="text-accent-p2">&gt;</span>
+    <span class="text-accent-p2">&lt;head&gt;</span>
+        <span class="text-accent-p2">&lt;meta </span><span class="text-info">charset=</span><span class="text-accent7">"utf-8"</span><span class="text-accent-p2">&gt;</span>
+        <span class="text-accent-p2">&lt;title&gt;</span>State Template<span class="text-accent-p2">&lt;/title&gt;</span>
+        <span class="text-accent-p2">&lt;meta</span> <span class="text-info">name=</span><span class="text-accent7">"Author"</span> <span class="text-info">content=</span><span class="text-accent7">"State of California"</span><span class="text-accent-p2"> /&gt;</span>
+        <span class="text-accent-p2">&lt;meta</span> <span class="text-info">name=</span><span class="text-accent7">"Description"</span> <span class="text-info">content=</span><span class="text-accent7">"State of California"</span><span class="text-accent-p2"> /&gt;</span>
+        <span class="text-accent-p2">&lt;meta</span> <span class="text-info">name=</span><span class="text-accent7">"Keywords"</span> <span class="text-info">content=</span><span class="text-accent7">"California, government"</span><span class="text-accent-p2"> /&gt;</span>
+        <span class="text-accent-p2">&lt;meta</span> <span class="text-info">name=</span><span class="text-accent7">"viewport"</span> <span class="text-info">content=</span><span class="text-accent7">"width=device-width, initial-scale=1, shrink-to-fit=no"</span><span class="text-accent-p2">&gt;</span>
+
+        <span class="text-muted">&lt;!-- State Template Fonts --&gt;</span>
+        <span class="text-accent-p2">&lt;link</span> <span class="text-info">href=</span><span class="text-accent7">'https://fonts.googleapis.com/css?family=Asap+Condensed:400,600|Source+Sans+Pro:400,700'</span> <span class="text-info">rel=</span><span class="text-accent7">'stylesheet'</span> <span class="text-info">type=</span><span class="text-accent7">'text/css'</span><span class="text-accent-p2">&gt;</span>
+        
+        <span class="text-muted">&lt;!-- State Template CDN CSS --&gt;</span>
+        <span class="text-accent-p2">&lt;link</span> <span class="text-info">rel=</span><span class="text-accent7">"stylesheet"</span> <span class="text-info">href=</span><span class="text-accent7">"https://california.azureedge.net/cdt/statetemplate/5.5.2/css/cagov.core.css"</span><span class="text-accent-p2">&gt;</span>
+        <span class="text-accent-p2">&lt;link</span> <span class="text-info">rel=</span><span class="text-accent7">"stylesheet"</span> <span class="text-info">href=</span><span class="text-accent7">"https://california.azureedge.net/cdt/statetemplate/5.5.2/css/colorscheme-oceanside.css"</span><span class="text-accent-p2">&gt;</span>
+        
+        <span class="text-muted">&lt;!-- Required JS --&gt;</span>
+        <span class="text-accent-p2">&lt;script </span><span class="text-info">src=</span><span class="text-accent7">"https://california.azureedge.net/cdt/statetemplate/5.5.2/js/libs/modernizr-3.6.0.min.js"</span><span class="text-accent-p2">&gt;&lt;/script&gt;</span>
+        <span class="text-accent-p2">&lt;script </span><span class="text-info">src=</span><span class="text-accent7">"https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"</span> <span class="text-info">type=</span><span class="text-accent7">"text/javascript"</span><span class="text-accent-p2">&gt;&lt;/script&gt;</span>
+        <span class="text-accent-p2">&lt;script </span><span class="text-info">src=</span><span class="text-accent7">"https://code.jquery.com/jquery-migrate-3.0.1.min.js"</span> <span class="text-info">type=</span><span class="text-accent7">"text/javascript"</span><span class="text-accent-p2">&gt;&lt;/script&gt;</span>
+    <span class="text-accent-p2">&lt;/head&gt;</span>
+    <span class="text-accent-p2">&lt;body&gt;</span>
+        <span class="text-accent-p2">&lt;header</span> <span class="text-info">role=</span><span class="text-accent7">"banner"</span> <span class="text-info">id=</span><span class="text-accent7">"header"</span> <span class="text-info">class=</span><span class="text-accent7">"global-header fixed"</span><span class="text-accent-p2">&gt;</span>
+            <span class="text-accent-p2">&lt;div</span> <span class="text-info">id=</span><span class="text-accent7">"skip-to-content"</span><span class="text-accent-p2">&gt;&lt;a </span><span class="text-info">href=</span><span class="text-accent7">"#main-content"</span><span class="text-accent-p2">&gt;</span>Skip to Main Content<span class="text-accent-p2">&lt;/a&gt;&lt;/div&gt;</span>
+            <span class="text-success">&lt;!--#include virtual="/ssi/utility-header.html" --&gt;</span>
+            <span class="text-success">&lt;!--#include virtual="/ssi/settings-bar.html" --&gt;</span>
+            <span class="text-success">&lt;!--#include virtual="/ssi/branding.html" --&gt;</span>
+            <span class="text-success">&lt;!--#include virtual="/ssi/mobile-controls.html" --&gt;</span>
+                <span class="text-accent-p2">&lt;div</span> <span class="text-info">class=</span><span class="text-accent7">"navigation-search"</span><span class="text-accent-p2">&gt;</span>
+                    <span class="text-success">&lt;!--#include virtual="/ssi/navigation.html" --&gt;</span>
+                    <span class="text-accent-p2">&lt;div</span> <span class="text-info">id=</span><span class="text-accent7">"head-search"</span> <span class="text-info">class=</span><span class="text-accent7">"search-container"</span><span class="text-accent-p2">&gt;</span>
+                    <span class="text-success">&lt;!--#include virtual="/ssi/search.html" --&gt;</span>
+                <span class="text-accent-p2">&lt;/div&gt;</span>
+            <span class="text-accent-p2">&lt;/div&gt;</span>
+            <span class="text-accent-p2">&lt;div </span><span class="text-info">class=</span><span class="text-accent7">"header-decoration"</span><span class="text-accent-p2">&gt;</span><span class="text-accent-p2">&lt;/div&gt;</span>
+            <span class="text-accent-p2">&lt;/header&gt;</span>
+            <span class="text-accent-p2">&lt;div</span> <span class="text-info">id=</span><span class="text-accent7">"main-content"</span> <span class="text-info">class=</span><span class="text-accent7">"main-content"</span><span class="text-accent-p2">&gt;</span>
+                <span class="text-accent-p2">&lt;div </span><span class="text-info">class=</span><span class="text-accent7">"container"</span><span class="text-accent-p2">&gt;</span>
+                    <span class="text-accent-p2">&lt;main </span><span class="text-info">class=</span><span class="text-accent7">"main-primary"</span><span class="text-accent-p2">&gt;</span>
+                    Page content
+                    <span class="text-accent-p2">&lt;/main&gt;</span>
+                <span class="text-accent-p2">&lt;/div&gt;</span>
+            <span class="text-accent-p2">&lt;/div&gt;</span>
+        <span class="text-success">&lt;!--#include virtual="/ssi/global-footer.html" --&gt;</span>
+        
+        <span class="text-muted">&lt;!-- State Template JavaScript CDN --&gt;</span>
+        <span class="text-accent-p2">&lt;script </span><span class="text-info">src=</span><span class="text-accent7">"https://california.azureedge.net/cdt/statetemplate/5.5.2/js/cagov.core.js"</span><span class="text-accent-p2">&gt;&lt;/script&gt;</span>
+    <span class="text-accent-p2">&lt;/body&gt;</span>
+<span class="text-accent-p2">&lt;/html&gt;</span>
+</pre>
+<p><span class="label label-info">Note:</span> The web server that hosts the State Template should be configured to process SSI's with the .html extension.</p>
+
+
+
+                <h2>State Template core files CDN by version</h2>
+                                <h3>State Template v5.5</h3>
+
+                                <ul id="accordion" class="accordion-list list-overstated" role="tablist" multiselectable="true">
+                                    <li id="panel_v5_5_2" class="tab" aria-selected="false" aria-controls="panel_5_5_2" aria-expanded="false" role="tab" tabindex="0">
+                                        <a>Version 5.5.2</a>
+                                    </li>
+                                    <div id="panel_5_5_2" class="panel" aria-labelledby="panel_v5_5_2" aria-hidden="true" role="tabpanel">
+                                        <p>CSS</p>
+<pre>
+<code class="overflow-auto">https://california.azureedge.net/cdt/statetemplate/5.5.2/css/cagov.core.css
+https://california.azureedge.net/cdt/statetemplate/5.5.2/css/cagov.core.min.css
+https://california.azureedge.net/cdt/statetemplate/5.5.2/css/cagov.font-only.css
+https://california.azureedge.net/cdt/statetemplate/5.5.2/css/cagov.font-only.min.css
+https://california.azureedge.net/cdt/statetemplate/5.5.2/css/colorscheme-eureka.css
+https://california.azureedge.net/cdt/statetemplate/5.5.2/css/colorscheme-eureka.min.css
+https://california.azureedge.net/cdt/statetemplate/5.5.2/css/colorscheme-mono.css
+https://california.azureedge.net/cdt/statetemplate/5.5.2/css/colorscheme-mono.min.css
+https://california.azureedge.net/cdt/statetemplate/5.5.2/css/colorscheme-oceanside.css
+https://california.azureedge.net/cdt/statetemplate/5.5.2/css/colorscheme-oceanside.min.css
+https://california.azureedge.net/cdt/statetemplate/5.5.2/css/colorscheme-orangecounty.css
+https://california.azureedge.net/cdt/statetemplate/5.5.2/css/colorscheme-orangecounty.min.css
+https://california.azureedge.net/cdt/statetemplate/5.5.2/css/colorscheme-pasorobles.css
+https://california.azureedge.net/cdt/statetemplate/5.5.2/css/colorscheme-pasorobles.min.css
+https://california.azureedge.net/cdt/statetemplate/5.5.2/css/colorscheme-sacramento.css
+https://california.azureedge.net/cdt/statetemplate/5.5.2/css/colorscheme-sacramento.min.css
+https://california.azureedge.net/cdt/statetemplate/5.5.2/css/colorscheme-santabarbara.css
+https://california.azureedge.net/cdt/statetemplate/5.5.2/css/colorscheme-santabarbara.min.css
+https://california.azureedge.net/cdt/statetemplate/5.5.2/css/colorscheme-sierra.css
+https://california.azureedge.net/cdt/statetemplate/5.5.2/css/colorscheme-sierra.min.css
+https://california.azureedge.net/cdt/statetemplate/5.5.2/css/colorscheme-trinity.css
+https://california.azureedge.net/cdt/statetemplate/5.5.2/css/colorscheme-trinity.min.css
+    </code></pre>
+                                        <p>JS</p>
+<pre><code class="overflow-auto">https://california.azureedge.net/cdt/statetemplate/5.5.2/js/cagov.core.js
+https://california.azureedge.net/cdt/statetemplate/5.5.2/js/cagov.core.min.js
+</code></pre>
+                                    </div>
+                                    <li id="panel_v5_5_1" class="tab" aria-selected="false" aria-controls="panel_5_5_1" aria-expanded="false" role="tab" tabindex="0">
+                                        <a>Version 5.5.1</a>
+                                    </li>
+                                    <div id="panel_5_5_1" class="panel" aria-labelledby="panel_v5_5_1" aria-hidden="true" role="tabpanel">
+                                        <p>CSS</p>
+<pre>
+<code class="overflow-auto">https://california.azureedge.net/cdt/statetemplate/5.5.1/css/cagov.core.css
+https://california.azureedge.net/cdt/statetemplate/5.5.1/css/cagov.core.min.css
+https://california.azureedge.net/cdt/statetemplate/5.5.1/css/cagov.font-only.css
+https://california.azureedge.net/cdt/statetemplate/5.5.1/css/cagov.font-only.min.css
+https://california.azureedge.net/cdt/statetemplate/5.5.1/css/colorscheme-eureka.css
+https://california.azureedge.net/cdt/statetemplate/5.5.1/css/colorscheme-eureka.min.css
+https://california.azureedge.net/cdt/statetemplate/5.5.1/css/colorscheme-mono.css
+https://california.azureedge.net/cdt/statetemplate/5.5.1/css/colorscheme-mono.min.css
+https://california.azureedge.net/cdt/statetemplate/5.5.1/css/colorscheme-oceanside.css
+https://california.azureedge.net/cdt/statetemplate/5.5.1/css/colorscheme-oceanside.min.css
+https://california.azureedge.net/cdt/statetemplate/5.5.1/css/colorscheme-orangecounty.css
+https://california.azureedge.net/cdt/statetemplate/5.5.1/css/colorscheme-orangecounty.min.css
+https://california.azureedge.net/cdt/statetemplate/5.5.1/css/colorscheme-pasorobles.css
+https://california.azureedge.net/cdt/statetemplate/5.5.1/css/colorscheme-pasorobles.min.css
+https://california.azureedge.net/cdt/statetemplate/5.5.1/css/colorscheme-sacramento.css
+https://california.azureedge.net/cdt/statetemplate/5.5.1/css/colorscheme-sacramento.min.css
+https://california.azureedge.net/cdt/statetemplate/5.5.1/css/colorscheme-santabarbara.css
+https://california.azureedge.net/cdt/statetemplate/5.5.1/css/colorscheme-santabarbara.min.css
+https://california.azureedge.net/cdt/statetemplate/5.5.1/css/colorscheme-sierra.css
+https://california.azureedge.net/cdt/statetemplate/5.5.1/css/colorscheme-sierra.min.css
+https://california.azureedge.net/cdt/statetemplate/5.5.1/css/colorscheme-trinity.css
+https://california.azureedge.net/cdt/statetemplate/5.5.1/css/colorscheme-trinity.min.css
+    </code></pre>
+                                        <p>JS</p>
+<pre><code class="overflow-auto">https://california.azureedge.net/cdt/statetemplate/5.5.1/js/cagov.core.js
+https://california.azureedge.net/cdt/statetemplate/5.5.1/js/cagov.core.min.js
+</code></pre>
+                                    </div>
+                                    <li id="tab3" class="tab" aria-selected="false" aria-controls="panel3" aria-expanded="false" role="tab" tabindex="0">
+                                        <a>Version 5.5.0</a>
+                                    </li>
+                                    <div id="panel3" class="panel" aria-labelledby="tab3" aria-hidden="true" role="tabpanel">
+                                        <p>CSS</p>
+<pre>
+<code class="overflow-auto">https://california.azureedge.net/cdt/statetemplate/5.5.0/css/cagov.core.css
+https://california.azureedge.net/cdt/statetemplate/5.5.0/css/cagov.core.min.css
+https://california.azureedge.net/cdt/statetemplate/5.5.0/css/cagov.font-only.css
+https://california.azureedge.net/cdt/statetemplate/5.5.0/css/cagov.font-only.min.css
+https://california.azureedge.net/cdt/statetemplate/5.5.0/css/colorscheme-eureka.css
+https://california.azureedge.net/cdt/statetemplate/5.5.0/css/colorscheme-eureka.min.css
+https://california.azureedge.net/cdt/statetemplate/5.5.0/css/colorscheme-mono.css
+https://california.azureedge.net/cdt/statetemplate/5.5.0/css/colorscheme-mono.min.css
+https://california.azureedge.net/cdt/statetemplate/5.5.0/css/colorscheme-oceanside.css
+https://california.azureedge.net/cdt/statetemplate/5.5.0/css/colorscheme-oceanside.min.css
+https://california.azureedge.net/cdt/statetemplate/5.5.0/css/colorscheme-orangecounty.css
+https://california.azureedge.net/cdt/statetemplate/5.5.0/css/colorscheme-orangecounty.min.css
+https://california.azureedge.net/cdt/statetemplate/5.5.0/css/colorscheme-pasorobles.css
+https://california.azureedge.net/cdt/statetemplate/5.5.0/css/colorscheme-pasorobles.min.css
+https://california.azureedge.net/cdt/statetemplate/5.5.0/css/colorscheme-sacramento.css
+https://california.azureedge.net/cdt/statetemplate/5.5.0/css/colorscheme-sacramento.min.css
+https://california.azureedge.net/cdt/statetemplate/5.5.0/css/colorscheme-santabarbara.css
+https://california.azureedge.net/cdt/statetemplate/5.5.0/css/colorscheme-santabarbara.min.css
+https://california.azureedge.net/cdt/statetemplate/5.5.0/css/colorscheme-sierra.css
+https://california.azureedge.net/cdt/statetemplate/5.5.0/css/colorscheme-sierra.min.css
+https://california.azureedge.net/cdt/statetemplate/5.5.0/css/colorscheme-trinity.css
+https://california.azureedge.net/cdt/statetemplate/5.5.0/css/colorscheme-trinity.min.css
+    </code></pre>
+                                        <p>JS</p>
+<pre><code class="overflow-auto">https://california.azureedge.net/cdt/statetemplate/5.5.0/js/cagov.core.js
+https://california.azureedge.net/cdt/statetemplate/5.5.0/js/cagov.core.min.js
+</code></pre>
+                                    </div>
+
+
+
+
+                                    <h3>State Template v5</h3>
+
+                                    <li id="tab_v5_0_4" class="tab" aria-selected="false" aria-controls="tab_5_0_4" aria-expanded="false" role="tab" tabindex="0">
+                                        <a>Version 5.0.4</a>
+                                    </li>
+                                    <div id="tab_5_0_4" class="panel" aria-labelledby="tab_v5_0_4" aria-hidden="true" role="tabpanel">
+                                        <p>CSS</p>
+<pre>
+<code class="overflow-auto">https://california.azureedge.net/cdt/statetemplate/5.0.4/css/cagov.core.css
+https://california.azureedge.net/cdt/statetemplate/5.0.4/css/cagov.core.min.css
+https://california.azureedge.net/cdt/statetemplate/5.0.4/css/cagov.font-only.css
+https://california.azureedge.net/cdt/statetemplate/5.0.4/css/cagov.font-only.min.css
+https://california.azureedge.net/cdt/statetemplate/5.0.4/css/colorscheme-eureka.css
+https://california.azureedge.net/cdt/statetemplate/5.0.4/css/colorscheme-eureka.min.css
+https://california.azureedge.net/cdt/statetemplate/5.0.4/css/colorscheme-mono.css
+https://california.azureedge.net/cdt/statetemplate/5.0.4/css/colorscheme-mono.min.css
+https://california.azureedge.net/cdt/statetemplate/5.0.4/css/colorscheme-oceanside.css
+https://california.azureedge.net/cdt/statetemplate/5.0.4/css/colorscheme-oceanside.min.css
+https://california.azureedge.net/cdt/statetemplate/5.0.4/css/colorscheme-orangecounty.css
+https://california.azureedge.net/cdt/statetemplate/5.0.4/css/colorscheme-orangecounty.min.css
+https://california.azureedge.net/cdt/statetemplate/5.0.4/css/colorscheme-pasorobles.css
+https://california.azureedge.net/cdt/statetemplate/5.0.4/css/colorscheme-pasorobles.min.css
+https://california.azureedge.net/cdt/statetemplate/5.0.4/css/colorscheme-sacramento.css
+https://california.azureedge.net/cdt/statetemplate/5.0.4/css/colorscheme-sacramento.min.css
+https://california.azureedge.net/cdt/statetemplate/5.0.4/css/colorscheme-santabarbara.css
+https://california.azureedge.net/cdt/statetemplate/5.0.4/css/colorscheme-santabarbara.min.css
+https://california.azureedge.net/cdt/statetemplate/5.0.4/css/colorscheme-sierra.css
+https://california.azureedge.net/cdt/statetemplate/5.0.4/css/colorscheme-sierra.min.css
+https://california.azureedge.net/cdt/statetemplate/5.0.4/css/colorscheme-trinity.css
+https://california.azureedge.net/cdt/statetemplate/5.0.4/css/colorscheme-trinity.min.css
+</code></pre>
+                                        <p>JS</p>
+<pre><code class="overflow-auto">https://california.azureedge.net/cdt/statetemplate/5.0.4/js/cagov.core.js
+https://california.azureedge.net/cdt/statetemplate/5.0.4/js/cagov.core.min.js
+</code></pre>
+                                    </div>
+
+                                    <li id="tab2" class="tab" aria-selected="false" aria-controls="panel2" aria-expanded="false" role="tab" tabindex="0">
+                                        <a>Version 5.0.3</a>
+                                    </li>
+                                    <div id="panel2" class="panel" aria-labelledby="tab2" aria-hidden="false" role="tabpanel">
+                                        <p>CSS</p>
+<pre><code class="overflow-auto">https://california.azureedge.net/cdt/statetemplate/5.0.3/css/cagov.core.css
+https://california.azureedge.net/cdt/statetemplate/5.0.3/css/colorscheme-eureka.css
+https://california.azureedge.net/cdt/statetemplate/5.0.3/css/colorscheme-mono.css
+https://california.azureedge.net/cdt/statetemplate/5.0.3/css/colorscheme-oceanside.css
+https://california.azureedge.net/cdt/statetemplate/5.0.3/css/colorscheme-orangecounty.css
+https://california.azureedge.net/cdt/statetemplate/5.0.3/css/colorscheme-pasorobles.css
+https://california.azureedge.net/cdt/statetemplate/5.0.3/css/colorscheme-sacramento.css
+https://california.azureedge.net/cdt/statetemplate/5.0.3/css/colorscheme-santabarbara.css
+https://california.azureedge.net/cdt/statetemplate/5.0.3/css/colorscheme-sierra.css
+https://california.azureedge.net/cdt/statetemplate/5.0.3/css/colorscheme-trinity.css
+</code></pre>
+                                        <p>JS</p>
+<pre><code class="overflow-auto">https://california.azureedge.net/cdt/statetemplate/5.0.3/js/cagov.core.js</code></pre>
+                                    </div>
+
+                                    <li id="tab1" class="tab" aria-selected="false" aria-controls="panel1" aria-expanded="false" role="tab" tabindex="0">
+                                        <a>Version 5.0.2</a>
+                                    </li>
+                                    <div id="panel1" class="panel" aria-labelledby="tab1" aria-hidden="false" role="tabpanel">
+                                        <p>CSS</p>
+<pre><code class="overflow-auto">https://california.azureedge.net/cdt/statetemplate/5.0.2/css/cagov.core.css
+https://california.azureedge.net/cdt/statetemplate/5.0.2/css/colorscheme-eureka.css
+https://california.azureedge.net/cdt/statetemplate/5.0.2/css/colorscheme-mono.css
+https://california.azureedge.net/cdt/statetemplate/5.0.2/css/colorscheme-oceanside.css
+https://california.azureedge.net/cdt/statetemplate/5.0.2/css/colorscheme-orangecounty.css
+https://california.azureedge.net/cdt/statetemplate/5.0.2/css/colorscheme-pasorobles.css
+https://california.azureedge.net/cdt/statetemplate/5.0.2/css/colorscheme-sacramento.css
+https://california.azureedge.net/cdt/statetemplate/5.0.2/css/colorscheme-santabarbara.css
+https://california.azureedge.net/cdt/statetemplate/5.0.2/css/colorscheme-sierra.css
+https://california.azureedge.net/cdt/statetemplate/5.0.2/css/colorscheme-trinity.css
+</code></pre>
+                                        <p>JS</p>
+<pre><code class="overflow-auto">https://california.azureedge.net/cdt/statetemplate/5.0.2/js/cagov.core.js</code></pre>
+                                    </div>
+                                </ul>
+</div>
+
+
+<!-- End Section -->
+</main>
+    </div>
+
+<!--#include virtual="/ssi/global-footer.html" -->
+<!--#include virtual="/ssi/scripts.html" -->
+</body>
+
+</html>

@@ -1,18 +1,18 @@
 /**
    * --------------------------------------------------------------------------
-   * Bootstrap (v4.2.1): modal.js
+   * Bootstrap (v4.3.1): modal.js
    * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
    * --------------------------------------------------------------------------
    */
 
 /**
-  * ------------------------------------------------------------------------
-  * Constants
-  * ------------------------------------------------------------------------
-  */
+   * ------------------------------------------------------------------------
+   * Constants
+   * ------------------------------------------------------------------------
+   */
 
 var NAME$5 = 'modal';
-var VERSION$5 = '4.2.1';
+var VERSION$5 = '4.3.1';
 var DATA_KEY$5 = 'bs.modal';
 var EVENT_KEY$5 = "." + DATA_KEY$5;
 var DATA_API_KEY$5 = '.data-api';
@@ -45,6 +45,7 @@ var Event$5 = {
     CLICK_DATA_API: "click" + EVENT_KEY$5 + DATA_API_KEY$5
 };
 var ClassName$5 = {
+    SCROLLABLE: 'modal-dialog-scrollable',
     SCROLLBAR_MEASURER: 'modal-scrollbar-measure',
     BACKDROP: 'modal-backdrop',
     OPEN: 'modal-open',
@@ -53,6 +54,7 @@ var ClassName$5 = {
 };
 var Selector$5 = {
     DIALOG: '.modal-dialog',
+    MODAL_BODY: '.modal-body',
     DATA_TOGGLE: '[data-toggle="modal"]',
     DATA_DISMISS: '[data-dismiss="modal"]',
     FIXED_CONTENT: '.fixed-top, .fixed-bottom, .is-fixed, .sticky-top',
@@ -205,8 +207,8 @@ var Modal =
 
         _proto.handleUpdate = function handleUpdate() {
             this._adjustDialog();
-        }; // Private
-
+        } // Private
+            ;
 
         _proto._getConfig = function _getConfig(config) {
             config = _objectSpread({}, Default$3, config);
@@ -230,7 +232,11 @@ var Modal =
 
             this._element.setAttribute('aria-modal', true);
 
-            this._element.scrollTop = 0;
+            if ($(this._dialog).hasClass(ClassName$5.SCROLLABLE)) {
+                this._dialog.querySelector(Selector$5.MODAL_BODY).scrollTop = 0;
+            } else {
+                this._element.scrollTop = 0;
+            }
 
             if (transition) {
                 Util.reflow(this._element);
@@ -400,11 +406,11 @@ var Modal =
             } else if (callback) {
                 callback();
             }
-        }; // ----------------------------------------------------------------------
-        // the following methods are used to handle overflowing modals
-        // todo (fat): these should probably be refactored out of modal.js
-        // ----------------------------------------------------------------------
-
+        } // ----------------------------------------------------------------------
+            // the following methods are used to handle overflowing modals
+            // todo (fat): these should probably be refactored out of modal.js
+            // ----------------------------------------------------------------------
+            ;
 
         _proto._adjustDialog = function _adjustDialog() {
             var isModalOverflowing = this._element.scrollHeight > document.documentElement.clientHeight;
@@ -489,8 +495,8 @@ var Modal =
             var scrollbarWidth = scrollDiv.getBoundingClientRect().width - scrollDiv.clientWidth;
             document.body.removeChild(scrollDiv);
             return scrollbarWidth;
-        }; // Static
-
+        } // Static
+            ;
 
         Modal._jQueryInterface = function _jQueryInterface(config, relatedTarget) {
             return this.each(function () {

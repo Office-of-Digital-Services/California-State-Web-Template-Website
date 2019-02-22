@@ -1,17 +1,17 @@
 /**
    * --------------------------------------------------------------------------
-   * Bootstrap (v4.2.1): toast.js
+   * Bootstrap (v4.3.1): toast.js
    * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
    * --------------------------------------------------------------------------
    */
 /**
-  * ------------------------------------------------------------------------
-  * Constants
-  * ------------------------------------------------------------------------
-  */
+ * ------------------------------------------------------------------------
+ * Constants
+ * ------------------------------------------------------------------------
+ */
 
 var NAME$a = 'toast';
-var VERSION$a = '4.2.1';
+var VERSION$a = '4.3.1';
 var DATA_KEY$a = 'bs.toast';
 var EVENT_KEY$a = "." + DATA_KEY$a;
 var JQUERY_NO_CONFLICT$a = $.fn[NAME$a];
@@ -126,8 +126,8 @@ var Toast =
             $.removeData(this._element, DATA_KEY$a);
             this._element = null;
             this._config = null;
-        }; // Private
-
+        } // Private
+            ;
 
         _proto._getConfig = function _getConfig(config) {
             config = _objectSpread({}, Default$7, $(this._element).data(), typeof config === 'object' && config ? config : {});
@@ -160,8 +160,8 @@ var Toast =
             } else {
                 complete();
             }
-        }; // Static
-
+        } // Static
+            ;
 
         Toast._jQueryInterface = function _jQueryInterface(config) {
             return this.each(function () {
@@ -194,6 +194,11 @@ var Toast =
             key: "DefaultType",
             get: function get() {
                 return DefaultType$7;
+            }
+        }, {
+            key: "Default",
+            get: function get() {
+                return Default$7;
             }
         }]);
 

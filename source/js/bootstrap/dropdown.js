@@ -1,6 +1,6 @@
 /**
    * --------------------------------------------------------------------------
-   * Bootstrap (v4.2.1): dropdown.js
+   * Bootstrap (v4.3.1): dropdown.js
    * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
    * --------------------------------------------------------------------------
    */
@@ -12,7 +12,7 @@
    */
 
 var NAME$4 = 'dropdown';
-var VERSION$4 = '4.2.1';
+var VERSION$4 = '4.3.1';
 var DATA_KEY$4 = 'bs.dropdown';
 var EVENT_KEY$4 = "." + DATA_KEY$4;
 var DATA_API_KEY$4 = '.data-api';
@@ -241,8 +241,8 @@ var Dropdown =
             if (this._popper !== null) {
                 this._popper.scheduleUpdate();
             }
-        }; // Private
-
+        } // Private
+            ;
 
         _proto._addEventListeners = function _addEventListeners() {
             var _this = this;
@@ -298,24 +298,28 @@ var Dropdown =
             return $(this._element).closest('.navbar').length > 0;
         };
 
-        _proto._getPopperConfig = function _getPopperConfig() {
+        _proto._getOffset = function _getOffset() {
             var _this2 = this;
 
-            var offsetConf = {};
+            var offset = {};
 
             if (typeof this._config.offset === 'function') {
-                offsetConf.fn = function (data) {
-                    data.offsets = _objectSpread({}, data.offsets, _this2._config.offset(data.offsets) || {});
+                offset.fn = function (data) {
+                    data.offsets = _objectSpread({}, data.offsets, _this2._config.offset(data.offsets, _this2._element) || {});
                     return data;
                 };
             } else {
-                offsetConf.offset = this._config.offset;
+                offset.offset = this._config.offset;
             }
 
+            return offset;
+        };
+
+        _proto._getPopperConfig = function _getPopperConfig() {
             var popperConfig = {
                 placement: this._getPlacement(),
                 modifiers: {
-                    offset: offsetConf,
+                    offset: this._getOffset(),
                     flip: {
                         enabled: this._config.flip
                     },
@@ -333,8 +337,8 @@ var Dropdown =
             }
 
             return popperConfig;
-        }; // Static
-
+        } // Static
+            ;
 
         Dropdown._jQueryInterface = function _jQueryInterface(config) {
             return this.each(function () {
@@ -418,8 +422,8 @@ var Dropdown =
             }
 
             return parent || element.parentNode;
-        }; // eslint-disable-next-line complexity
-
+        } // eslint-disable-next-line complexity
+            ;
 
         Dropdown._dataApiKeydownHandler = function _dataApiKeydownHandler(event) {
             // If not input/textarea:

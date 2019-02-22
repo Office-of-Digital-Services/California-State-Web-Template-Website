@@ -1,17 +1,18 @@
 /**
    * --------------------------------------------------------------------------
-   * Bootstrap (v4.2.1): tab.js
+   * Bootstrap (v4.3.1): tab.js
    * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
    * --------------------------------------------------------------------------
    */
-  /**
-   * ------------------------------------------------------------------------
-   * Constants
-   * ------------------------------------------------------------------------
-   */
+
+/**
+  * ------------------------------------------------------------------------
+  * Constants
+  * ------------------------------------------------------------------------
+  */
 
 var NAME$9 = 'tab';
-var VERSION$9 = '4.2.1';
+var VERSION$9 = '4.3.1';
 var DATA_KEY$9 = 'bs.tab';
 var EVENT_KEY$9 = "." + DATA_KEY$9;
 var DATA_API_KEY$7 = '.data-api';
@@ -119,8 +120,8 @@ var Tab =
         _proto.dispose = function dispose() {
             $.removeData(this._element, DATA_KEY$9);
             this._element = null;
-        }; // Private
-
+        } // Private
+            ;
 
         _proto._activate = function _activate(element, container, callback) {
             var _this2 = this;
@@ -162,7 +163,10 @@ var Tab =
             }
 
             Util.reflow(element);
-            $(element).addClass(ClassName$9.SHOW);
+
+            if (element.classList.contains(ClassName$9.FADE)) {
+                element.classList.add(ClassName$9.SHOW);
+            }
 
             if (element.parentNode && $(element.parentNode).hasClass(ClassName$9.DROPDOWN_MENU)) {
                 var dropdownElement = $(element).closest(Selector$9.DROPDOWN)[0];
@@ -178,8 +182,8 @@ var Tab =
             if (callback) {
                 callback();
             }
-        }; // Static
-
+        } // Static
+            ;
 
         Tab._jQueryInterface = function _jQueryInterface(config) {
             return this.each(function () {

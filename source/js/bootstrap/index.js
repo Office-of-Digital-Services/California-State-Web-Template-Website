@@ -1,9 +1,9 @@
 /**
-  * --------------------------------------------------------------------------
-  * Bootstrap (v4.2.1): index.js
-  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
-  * --------------------------------------------------------------------------
-  */
+   * --------------------------------------------------------------------------
+   * Bootstrap (v4.3.1): index.js
+   * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
+   * --------------------------------------------------------------------------
+   */
 
 (function () {
     if (typeof $ === 'undefined') {
@@ -37,5 +37,5 @@ exports.Tooltip = Tooltip;
 
 Object.defineProperty(exports, '__esModule', { value: true });
 
-})));
+}));
 //# sourceMappingURL=bootstrap.bundle.js.map

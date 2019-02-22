@@ -1,18 +1,18 @@
 /**
    * --------------------------------------------------------------------------
-   * Bootstrap (v4.2.1): scrollspy.js
+   * Bootstrap (v4.3.1): scrollspy.js
    * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
    * --------------------------------------------------------------------------
    */
 
 /**
-   * ------------------------------------------------------------------------
-   * Constants
-   * ------------------------------------------------------------------------
-   */
+ * ------------------------------------------------------------------------
+ * Constants
+ * ------------------------------------------------------------------------
+ */
 
 var NAME$8 = 'scrollspy';
-var VERSION$8 = '4.2.1';
+var VERSION$8 = '4.3.1';
 var DATA_KEY$8 = 'bs.scrollspy';
 var EVENT_KEY$8 = "." + DATA_KEY$8;
 var DATA_API_KEY$6 = '.data-api';
@@ -135,8 +135,8 @@ var ScrollSpy =
             this._targets = null;
             this._activeTarget = null;
             this._scrollHeight = null;
-        }; // Private
-
+        } // Private
+            ;
 
         _proto._getConfig = function _getConfig(config) {
             config = _objectSpread({}, Default$6, typeof config === 'object' && config ? config : {});
@@ -243,8 +243,8 @@ var ScrollSpy =
             }).forEach(function (node) {
                 return node.classList.remove(ClassName$8.ACTIVE);
             });
-        }; // Static
-
+        } // Static
+            ;
 
         ScrollSpy._jQueryInterface = function _jQueryInterface(config) {
             return this.each(function () {

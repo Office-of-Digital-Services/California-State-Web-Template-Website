@@ -1,6 +1,6 @@
 /**
    * --------------------------------------------------------------------------
-   * Bootstrap (v4.2.1): tooltip.js
+   * Bootstrap (v4.3.1): tooltip.js
    * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
    * --------------------------------------------------------------------------
    */
@@ -12,12 +12,13 @@
    */
 
 var NAME$6 = 'tooltip';
-var VERSION$6 = '4.2.1';
+var VERSION$6 = '4.3.1';
 var DATA_KEY$6 = 'bs.tooltip';
 var EVENT_KEY$6 = "." + DATA_KEY$6;
 var JQUERY_NO_CONFLICT$6 = $.fn[NAME$6];
 var CLASS_PREFIX = 'bs-tooltip';
 var BSCLS_PREFIX_REGEX = new RegExp("(^|\\s)" + CLASS_PREFIX + "\\S+", 'g');
+var DISALLOWED_ATTRIBUTES = ['sanitize', 'whiteList', 'sanitizeFn'];
 var DefaultType$4 = {
     animation: 'boolean',
     template: 'string',
@@ -27,10 +28,13 @@ var DefaultType$4 = {
     html: 'boolean',
     selector: '(string|boolean)',
     placement: '(string|function)',
-    offset: '(number|string)',
+    offset: '(number|string|function)',
     container: '(string|element|boolean)',
     fallbackPlacement: '(string|array)',
-    boundary: '(string|element)'
+    boundary: '(string|element)',
+    sanitize: 'boolean',
+    sanitizeFn: '(null|function)',
+    whiteList: 'object'
 };
 var AttachmentMap$1 = {
     AUTO: 'auto',
@@ -51,7 +55,10 @@ var Default$4 = {
     offset: 0,
     container: false,
     fallbackPlacement: 'flip',
-    boundary: 'scrollParent'
+    boundary: 'scrollParent',
+    sanitize: true,
+    sanitizeFn: null,
+    whiteList: DefaultWhitelist
 };
 var HoverState = {
     SHOW: 'show',
@@ -236,9 +243,7 @@ var Tooltip =
                 this._popper = new Popper(this.element, tip, {
                     placement: attachment,
                     modifiers: {
-                        offset: {
-                            offset: this.config.offset
-                        },
+                        offset: this._getOffset(),
                         flip: {
                             behavior: this.config.fallbackPlacement
                         },
@@ -347,8 +352,8 @@ var Tooltip =
             if (this._popper !== null) {
                 this._popper.scheduleUpdate();
             }
-        }; // Protected
-
+        } // Protected
+            ;
 
         _proto.isWithContent = function isWithContent() {
             return Boolean(this.getTitle());
@@ -370,19 +375,27 @@ var Tooltip =
         };
 
         _proto.setElementContent = function setElementContent($element, content) {
-            var html = this.config.html;
-
             if (typeof content === 'object' && (content.nodeType || content.jquery)) {
                 // Content is a DOM node or a jQuery
-                if (html) {
+                if (this.config.html) {
                     if (!$(content).parent().is($element)) {
                         $element.empty().append(content);
                     }
                 } else {
                     $element.text($(content).text());
                 }
+
+                return;
+            }
+
+            if (this.config.html) {
+                if (this.config.sanitize) {
+                    content = sanitizeHtml(content, this.config.whiteList, this.config.sanitizeFn);
+                }
+
+                $element.html(content);
             } else {
-                $element[html ? 'html' : 'text'](content);
+                $element.text(content);
             }
         };
 
@@ -394,8 +407,25 @@ var Tooltip =
             }
 
             return title;
-        }; // Private
+        } // Private
+            ;
 
+        _proto._getOffset = function _getOffset() {
+            var _this3 = this;
+
+            var offset = {};
+
+            if (typeof this.config.offset === 'function') {
+                offset.fn = function (data) {
+                    data.offsets = _objectSpread({}, data.offsets, _this3.config.offset(data.offsets, _this3.element) || {});
+                    return data;
+                };
+            } else {
+                offset.offset = this.config.offset;
+            }
+
+            return offset;
+        };
 
         _proto._getContainer = function _getContainer() {
             if (this.config.container === false) {
@@ -414,27 +444,27 @@ var Tooltip =
         };
 
         _proto._setListeners = function _setListeners() {
-            var _this3 = this;
+            var _this4 = this;
 
             var triggers = this.config.trigger.split(' ');
             triggers.forEach(function (trigger) {
                 if (trigger === 'click') {
-                    $(_this3.element).on(_this3.constructor.Event.CLICK, _this3.config.selector, function (event) {
-                        return _this3.toggle(event);
+                    $(_this4.element).on(_this4.constructor.Event.CLICK, _this4.config.selector, function (event) {
+                        return _this4.toggle(event);
                     });
                 } else if (trigger !== Trigger.MANUAL) {
-                    var eventIn = trigger === Trigger.HOVER ? _this3.constructor.Event.MOUSEENTER : _this3.constructor.Event.FOCUSIN;
-                    var eventOut = trigger === Trigger.HOVER ? _this3.constructor.Event.MOUSELEAVE : _this3.constructor.Event.FOCUSOUT;
-                    $(_this3.element).on(eventIn, _this3.config.selector, function (event) {
-                        return _this3._enter(event);
-                    }).on(eventOut, _this3.config.selector, function (event) {
-                        return _this3._leave(event);
+                    var eventIn = trigger === Trigger.HOVER ? _this4.constructor.Event.MOUSEENTER : _this4.constructor.Event.FOCUSIN;
+                    var eventOut = trigger === Trigger.HOVER ? _this4.constructor.Event.MOUSELEAVE : _this4.constructor.Event.FOCUSOUT;
+                    $(_this4.element).on(eventIn, _this4.config.selector, function (event) {
+                        return _this4._enter(event);
+                    }).on(eventOut, _this4.config.selector, function (event) {
+                        return _this4._leave(event);
                     });
                 }
             });
             $(this.element).closest('.modal').on('hide.bs.modal', function () {
-                if (_this3.element) {
-                    _this3.hide();
+                if (_this4.element) {
+                    _this4.hide();
                 }
             });
 
@@ -533,7 +563,13 @@ var Tooltip =
         };
 
         _proto._getConfig = function _getConfig(config) {
-            config = _objectSpread({}, this.constructor.Default, $(this.element).data(), typeof config === 'object' && config ? config : {});
+            var dataAttributes = $(this.element).data();
+            Object.keys(dataAttributes).forEach(function (dataAttr) {
+                if (DISALLOWED_ATTRIBUTES.indexOf(dataAttr) !== -1) {
+                    delete dataAttributes[dataAttr];
+                }
+            });
+            config = _objectSpread({}, this.constructor.Default, dataAttributes, typeof config === 'object' && config ? config : {});
 
             if (typeof config.delay === 'number') {
                 config.delay = {
@@ -551,6 +587,11 @@ var Tooltip =
             }
 
             Util.typeCheckConfig(NAME$6, config, this.constructor.DefaultType);
+
+            if (config.sanitize) {
+                config.template = sanitizeHtml(config.template, config.whiteList, config.sanitizeFn);
+            }
+
             return config;
         };
 
@@ -599,8 +640,8 @@ var Tooltip =
             this.hide();
             this.show();
             this.config.animation = initConfigAnimation;
-        }; // Static
-
+        } // Static
+            ;
 
         Tooltip._jQueryInterface = function _jQueryInterface(config) {
             return this.each(function () {

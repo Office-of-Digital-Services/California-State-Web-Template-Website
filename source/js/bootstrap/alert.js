@@ -1,18 +1,18 @@
 /**
   * --------------------------------------------------------------------------
-  * Bootstrap (v4.2.1): alert.js
+  * Bootstrap (v4.3.1): alert.js
   * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
   * --------------------------------------------------------------------------
   */
 
 /**
-  * ------------------------------------------------------------------------
-  * Constants
-  * ------------------------------------------------------------------------
-  */
+ * ------------------------------------------------------------------------
+ * Constants
+ * ------------------------------------------------------------------------
+ */
 
 var NAME = 'alert';
-var VERSION = '4.2.1';
+var VERSION = '4.3.1';
 var DATA_KEY = 'bs.alert';
 var EVENT_KEY = "." + DATA_KEY;
 var DATA_API_KEY = '.data-api';
@@ -67,8 +67,8 @@ var Alert =
         _proto.dispose = function dispose() {
             $.removeData(this._element, DATA_KEY);
             this._element = null;
-        }; // Private
-
+        } // Private
+            ;
 
         _proto._getRootElement = function _getRootElement(element) {
             var selector = Util.getSelectorFromElement(element);
@@ -110,8 +110,8 @@ var Alert =
 
         _proto._destroyElement = function _destroyElement(element) {
             $(element).detach().trigger(Event.CLOSED).remove();
-        }; // Static
-
+        } // Static
+            ;
 
         Alert._jQueryInterface = function _jQueryInterface(config) {
             return this.each(function () {

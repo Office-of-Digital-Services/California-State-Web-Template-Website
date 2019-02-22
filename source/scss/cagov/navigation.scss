@@ -57,13 +57,16 @@
 
 
 .nav-item {
-  .sub-nav {
-    display: none;		                                    // Hide sub navigation panels by default.
-  }
+    .sub-nav {
+        display: none; // Hide sub navigation panels by default.
+        @media (max-width: $screen-xs-max) {
+            max-height: 0;
+        }
+    }
 
-  .sub-nav-decoration {
-    display: none;
-  }
+    .sub-nav-decoration {
+        display: none;
+    }
 }
 
 .second-level-nav {
@@ -86,12 +89,6 @@
 #navigation {
      clear: both;
 	 width:100%;
-	 // Styles for mobile slide down transition
-	-webkit-transition: max-height 0.5s ease-in-out;
-	-moz-transition: max-height 0.5s ease-in-out;
-	-o-transition: max-height 0.5s ease-in-out;
-	transition: max-height 0.5s ease-in-out;
-
     }			
 }	
 
@@ -102,30 +99,32 @@
 
 .first-level-link {
     display: block;
-    padding: 5px 0 12px 0;	// Beta 6.0 addition
-	font-family:$headings-font-family;	// Beta 6.0 addition
-	font-weight:400;
+    padding: 5px 5px 12px 5px;
+    font-family: $headings-font-family;
+    font-weight: 400;
     white-space: nowrap;
+    position: relative; 
+    z-index: 1; 
 
     &:hover, &:focus {
-        text-decoration:none;
+        text-decoration: none;
     }
 
     > span[class^="ca-gov-icon"] {
         /* Navigation icons */
-        display:block;
+        display: block;
         font-size: 32px;
     }
 
     @media (max-width: $screen-xs-max) {
-         display:block;
-         padding:20px 0 20px 15px;
+        display: block;
+        padding: 20px 0 20px 15px;
 
-         span[class^="ca-gov-icon"] {
+        span[class^="ca-gov-icon"] {
             @include font-size(1.5);
-            display:inline-block ;
-            vertical-align:-2px;
-            padding-right:5px;
+            display: inline-block;
+            vertical-align: -2px;
+            padding-right: 5px;
         }
     }
 }

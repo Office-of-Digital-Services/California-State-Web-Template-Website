@@ -1,18 +1,18 @@
 /**
   * --------------------------------------------------------------------------
-  * Bootstrap (v4.2.1): popover.js
+  * Bootstrap (v4.3.1): popover.js
   * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
   * --------------------------------------------------------------------------
   */
 
-  /**
-   * ------------------------------------------------------------------------
-   * Constants
-   * ------------------------------------------------------------------------
-   */
+/**
+  * ------------------------------------------------------------------------
+  * Constants
+  * ------------------------------------------------------------------------
+  */
 
 var NAME$7 = 'popover';
-var VERSION$7 = '4.2.1';
+var VERSION$7 = '4.3.1';
 var DATA_KEY$7 = 'bs.popover';
 var EVENT_KEY$7 = "." + DATA_KEY$7;
 var JQUERY_NO_CONFLICT$7 = $.fn[NAME$7];
@@ -95,8 +95,8 @@ var Popover =
 
             this.setElementContent($tip.find(Selector$7.CONTENT), content);
             $tip.removeClass(ClassName$7.FADE + " " + ClassName$7.SHOW);
-        }; // Private
-
+        } // Private
+            ;
 
         _proto._getContent = function _getContent() {
             return this.element.getAttribute('data-content') || this.config.content;
@@ -109,8 +109,8 @@ var Popover =
             if (tabClass !== null && tabClass.length > 0) {
                 $tip.removeClass(tabClass.join(''));
             }
-        }; // Static
-
+        } // Static
+            ;
 
         Popover._jQueryInterface = function _jQueryInterface(config) {
             return this.each(function () {

@@ -1,18 +1,18 @@
 /**
    * --------------------------------------------------------------------------
-   * Bootstrap (v4.2.1): collapse.js
+   * Bootstrap (v4.3.1): collapse.js
    * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
    * --------------------------------------------------------------------------
    */
 
 /**
-  * ------------------------------------------------------------------------
-  * Constants
-  * ------------------------------------------------------------------------
-  */
+   * ------------------------------------------------------------------------
+   * Constants
+   * ------------------------------------------------------------------------
+   */
 
 var NAME$3 = 'collapse';
-var VERSION$3 = '4.2.1';
+var VERSION$3 = '4.3.1';
 var DATA_KEY$3 = 'bs.collapse';
 var EVENT_KEY$3 = "." + DATA_KEY$3;
 var DATA_API_KEY$3 = '.data-api';
@@ -234,8 +234,8 @@ var Collapse =
             this._element = null;
             this._triggerArray = null;
             this._isTransitioning = null;
-        }; // Private
-
+        } // Private
+            ;
 
         _proto._getConfig = function _getConfig(config) {
             config = _objectSpread({}, Default$1, config);
@@ -279,8 +279,8 @@ var Collapse =
             if (triggerArray.length) {
                 $(triggerArray).toggleClass(ClassName$3.COLLAPSED, !isOpen).attr('aria-expanded', isOpen);
             }
-        }; // Static
-
+        } // Static
+            ;
 
         Collapse._getTargetFromElement = function _getTargetFromElement(element) {
             var selector = Util.getSelectorFromElement(element);
