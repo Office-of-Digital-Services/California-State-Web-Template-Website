@@ -3,7 +3,7 @@
 ----------------------------------------- */
 
 // This function populates the breadcrumb section of the page.
-// Adapted from http://webtools.ca.gov/tools/design-enhancements/breadcrumbs/ to use jQuery
+// Adapted from http://webstandards.ca.gov/tools/design-enhancements/breadcrumbs/ to use jQuery
 
 function breadcrumbs()
 {

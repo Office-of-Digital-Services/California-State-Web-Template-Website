@@ -60,7 +60,7 @@ The /sample/index.html file contains links to examples of the new content styles
 * Icon fonts
 * Useful content modules
 
-View the Live Demo Site here: http://template.webtools.ca.gov/
+View the Live Demo Site here: http://template.webstandards.ca.gov/
 
 ________________________________________
 
@@ -81,18 +81,15 @@ Compiling from source allows for a smaller build using only the components that 
 
 Step 1: Instal node.js (http://nodejs.org)
 
-Step 2: Install Grunt.js CLI (http://gruntjs.com/getting-started)
-    * Run "npm install -g grunt-cli" (without quotes) from the cmd line
+Step 2: Install Gulp.js CLI (https://gulpjs.com/)
+    * Run "npm install gulp-cli -g" (without quotes) from the cmd line
     
 Step 3: 
-    * cd into the root of the template folder (where the Gruntfile.js is located)
+    * cd into the root of the template folder (where the gulpfile.js is located)
     * Run "npm install" (without quotes) from the cmd line
     * Wait until installation is complete
     
 Step 4: 
-    * Run "grunt watch" (without quotes) from the cmd line
-    When a change is saved Grunt will automatically create the css or js files. 
-    (In this mode, css and js files will not be minified. For minified version see step 5)
-    
-STEP 5:
-    * Running "grunt build" (without quotes) from the cmd line will concatinate and minify all css and js. 
+    * Run "gulp prod" (without quotes) from the cmd line
+    Bu running this command Gulp will update the template's cagov core css or js files. 
+    (In this mode, css and js files will not be minified. If you would like to have unminified files run "gulp dev" command.)
