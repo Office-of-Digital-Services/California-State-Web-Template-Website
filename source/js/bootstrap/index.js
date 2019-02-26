@@ -1,16 +1,16 @@
 /**
    * --------------------------------------------------------------------------
-   * Bootstrap (v4.1.3): index.js
+   * Bootstrap (v4.3.1): index.js
    * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
    * --------------------------------------------------------------------------
    */
 
-(function ($$$1) {
-    if (typeof $$$1 === 'undefined') {
+(function () {
+    if (typeof $ === 'undefined') {
         throw new TypeError('Bootstrap\'s JavaScript requires jQuery. jQuery must be included before Bootstrap\'s JavaScript.');
     }
 
-    var version = $$$1.fn.jquery.split(' ')[0].split('.');
+    var version = $.fn.jquery.split(' ')[0].split('.');
     var minMajor = 1;
     var ltMajor = 2;
     var minMinor = 9;
@@ -20,7 +20,7 @@
     if (version[0] < ltMajor && version[1] < minMinor || version[0] === minMajor && version[1] === minMinor && version[2] < minPatch || version[0] >= maxMajor) {
         throw new Error('Bootstrap\'s JavaScript requires at least jQuery v1.9.1 but less than v4.0.0');
     }
-})($);
+})();
 
 exports.Util = Util;
 exports.Alert = Alert;
@@ -32,8 +32,10 @@ exports.Modal = Modal;
 exports.Popover = Popover;
 exports.Scrollspy = ScrollSpy;
 exports.Tab = Tab;
+exports.Toast = Toast;
 exports.Tooltip = Tooltip;
 
 Object.defineProperty(exports, '__esModule', { value: true });
 
-})));
+}));
+//# sourceMappingURL=bootstrap.bundle.js.map
