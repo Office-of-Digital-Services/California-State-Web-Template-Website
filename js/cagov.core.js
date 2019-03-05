@@ -1,5 +1,5 @@
 /**
- * CA State Template v5.5 -  @version v5.5.2 -  2/25/2019 
+ * CA State Template v5.5 -  @version v5.5.2 -  3/5/2019 
   STYLES COMPILED FROM SOURCE (source/js) DO NOT MODIFY */
 /*! modernizr (Custom Build) | MIT *
  * https://modernizr.com/download/?-flexbox-setclasses !*/
@@ -14211,9 +14211,9 @@ $(document).ready(function () {
             var searchBox = $headSearch.get(0).getBoundingClientRect();
             var newAskTop = searchBox.top + searchBox.height + askBarPadding;
 
-            $askGroupBar.css('top', newAskTop)
-            $askGroupBar.trigger('cagov.askgroup.update')
-        }, 0)
+            $askGroupBar.css('top', newAskTop);
+            $askGroupBar.trigger('cagov.askgroup.update');
+        }, 0);
 
     }
 
@@ -14238,12 +14238,12 @@ $(document).ready(function () {
                     $('html,body').animate({
                         scrollTop: 0
                     }, 400, function () {
-                        $(window).scroll()
+                        $(window).scroll();
                     });
                     return;
-                })
+                });
             });
-        }
+        };
     }(jQuery));
 
     // Set any buttons or links which must scroll back to the top
@@ -14276,7 +14276,7 @@ $(document).ready(function () {
     // proactively update our fixed header
     function setResizeHandler() {
         if (!$header.hasClass('fixed')) {
-            return
+            return;
         }
 
         $(window).on('resize', function () {
@@ -14308,7 +14308,7 @@ $(document).ready(function () {
                 // we dont have any fixed updates if we switch or start in mobile
                 // even if the user has requested to be fixed.
                 if (windowWidth < headerVars.MOBILEWIDTH) {
-                    return
+                    return;
                 }
 
                 checkForCompactUpdate();
@@ -14342,7 +14342,6 @@ $(document).ready(function () {
         // we dont fade out if we have search results being shown
         if ($headSearch.hasClass('active')) {
             $askGroup.addClass('fixed-hide');
-            $header.addClass('compact, .fixed');
 
             return;
         }
@@ -14370,8 +14369,8 @@ $(document).ready(function () {
             $askGroup.addClass('fixed-hide');
             $headSearch.addClass('fixed-hide');
         } else {
-            $askGroup.removeClass('fixed-hide')
-            $headSearch.removeClass('fixed-hide')
+            $askGroup.removeClass('fixed-hide');
+            $headSearch.removeClass('fixed-hide');
         }
         if (currentScrollTop >= scrollDistanceToMakeCompactHeader) {
             $header.addClass('compact');
@@ -14387,16 +14386,16 @@ $(document).ready(function () {
     // justify showing the return icon
     function checkForReturnTopUpdate() {
         if (currentScrollTop >= scrollDistanceToMakeCompactHeader) {
-            $returnTop.addClass('is-visible')
+            $returnTop.addClass('is-visible');
         } else {
-            $returnTop.removeClass('is-visible')
+            $returnTop.removeClass('is-visible');
         }
     }
 
-    /**
-     * Figures out the difference between the bottom of the askbar and the
-     * explore more bar. Used to caclulate when we should hide these elements
-     */
+   // /**
+   //  * Figures out the difference between the bottom of the askbar and the
+   //  * explore more bar. Used to caclulate when we should hide these elements
+   //  */
     function calcInputDifference() {
         if (!$exploreMore.length || !$askGroupBar.length) {
             return 0;
@@ -14473,7 +14472,7 @@ $(document).ready(function () {
         $header.removeClass('fixed');
         $headerImage.css({ 'top': '', 'margin-bottom': '' });
         $mainContent.css({ 'padding-top': '' });
-        $askGroupBar.css('top', '')
+        $askGroupBar.css('top', '');
     }
 
 });
@@ -15659,7 +15658,7 @@ $("nav:first").accessibleMegaMenu({
 
 /// MOBILE
 function mobileView() {
-    return ($('.global-header .mobile-controls').css('display') !== "none"); 
+    return $('.global-header .mobile-controls').css('display') !== "none";
 }
 
 
@@ -15677,14 +15676,14 @@ $(document).ready(function () {
 
 
     // Variables
-var $navigation = $('#navigation.main-navigation'),
-    $navItems = $navigation.find('.nav-item'), // first level link containers'
-    $navItemsWithSubs = $navItems.has('.sub-nav'),
-    $subNavs = $navigation.find('.sub-nav'),
-    megamenu = $navigation.hasClass('megadropdown'),
-    dropdown = $navigation.hasClass('dropdown'),
-    singleLevel = $navigation.hasClass('singleLevel'),
-    setActiveLinkByFolder = $navigation.hasClass('auto-highlight'); // Use new folder matching method to highlight the current navigation tab
+    var $navigation = $('#navigation.main-navigation'),
+        $navItems = $navigation.find('.nav-item'), // first level link containers'
+        $navItemsWithSubs = $navItems.has('.sub-nav'),
+        $subNavs = $navigation.find('.sub-nav'),
+        megamenu = $navigation.hasClass('megadropdown'),
+        dropdown = $navigation.hasClass('dropdown'),
+        singleLevel = $navigation.hasClass('singleLevel'),
+        setActiveLinkByFolder = $navigation.hasClass('auto-highlight'); // Use new folder matching method to highlight the current navigation tab
 
 
     // HIGHLIGHT APPROPRIATE NAV ITEM
@@ -15718,7 +15717,7 @@ var $navigation = $('#navigation.main-navigation'),
         }
     });
 
-    
+
     // Add class has-sub, then add carrots
     if (!singleLevel) {
         $navItemsWithSubs.each(function () {
@@ -15737,10 +15736,13 @@ var $navigation = $('#navigation.main-navigation'),
     // Scrolling to the top of the menu in mobile
     var HasSubLink = $(".collapse .has-sub");
     var FirstLink = $(".first-level-link").first();
+
     $(HasSubLink).click(function () {
-        $('html,body').animate({
-            scrollTop: $(FirstLink).offset().top
-        }, '3000');
+        if (mobileView()) {
+            $('html,body').animate({
+                scrollTop: $(FirstLink).offset().top
+            }, '3000');
+        }
     });
 
 });
@@ -15775,15 +15777,14 @@ function NavReset() {
     else {
         $("#navigation").removeClass("collapse");
         $(".rotate").css("display", "none");
-        
+
     }
-    
+
     $(".toggle-menu").attr('aria-expanded', 'false');
     $(".toggle-menu").attr('aria-selected', 'false');
     $(".toggle-menu").attr('aria-pressed', 'false');
     $(".toggle-menu").addClass("collapsed");
-};
-
+}
 
 /* -----------------------------------------
    ACCORDION LIST - /source/js/cagov/accordion.js
