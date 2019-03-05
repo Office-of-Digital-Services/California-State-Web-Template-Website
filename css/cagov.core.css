@@ -12458,7 +12458,7 @@ table.gsc-search-box td {
 
 .first-level-link {
   display: block;
-  padding: 5px 0 12px 0;
+  padding: 5px 5px 12px 5px;
   font-family: "Asap Condensed", sans-serif;
   font-weight: 400;
   white-space: nowrap;
@@ -12487,6 +12487,12 @@ table.gsc-search-box td {
     display: inline-block;
     vertical-align: -2px;
     padding-right: 5px;
+  }
+}
+
+@media (max-width: 992px) and (min-width: 768px) {
+  .first-level-link {
+    padding: 5px 3px 12px 3px;
   }
 }
 

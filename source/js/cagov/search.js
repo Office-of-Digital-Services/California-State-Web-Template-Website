@@ -9,12 +9,12 @@ $(document).ready(function () {
 
     var $body = $("body");
     var $specialIcon =
-    // setup the tabs
-    $('.search-tabs button').on("click", function (e) {
-        $(this).siblings().removeClass('active');
-        $(this).tab('show').addClass('active');
-        e.preventDefault()
-    });
+        // setup the tabs
+        $('.search-tabs button').on("click", function (e) {
+            $(this).siblings().removeClass('active');
+            $(this).tab('show').addClass('active');
+            e.preventDefault()
+        });
 
     // Unfreeze search width when blured.
     // Unfreeze search width when blured.
@@ -99,10 +99,15 @@ $(document).ready(function () {
     // Mobile Search toggle
     $('.toggle-search').on('click', function () {
         $('.search-container').toggleClass('active');
+        if ($('.search-container').hasClass('active')) {
+            $('html, body').animate({
+                scrollTop: $("#head-search").offset().top
+            }, 500);
+        }
     });
 
 });
 
 function mobileView() {
-    return ($('.global-header .mobile-controls').css('display') !== "none"); // mobile view uses arrow to show subnav instead of first touch
+    return $('.global-header .mobile-controls').css('display') !== "none"; // mobile view uses arrow to show subnav instead of first touch
 }
