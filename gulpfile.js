@@ -25,6 +25,9 @@ var bannerjs = ['/**',
 
 
 var jssrc = [
+    // MODERNIZR
+    'source/js/libs/modernizr.js',
+
 	// NO CONFLICT
 	'source/js/cagov/noconflict.js',
 	

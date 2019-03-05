@@ -1,6 +1,9 @@
 /**
- * CA State Template v5.5 -  @version v5.5.2 -  2/21/2019 
+ * CA State Template v5.5 -  @version v5.5.2 -  3/5/2019 
   STYLES COMPILED FROM SOURCE (source/js) DO NOT MODIFY */
+/*! modernizr (Custom Build) | MIT *
+ * https://modernizr.com/download/?-flexbox-setclasses !*/
+!function (e, n, t) { function r(e, n) { return typeof e === n } function o() { var e, n, t, o, s, i, l; for (var a in S) if (S.hasOwnProperty(a)) { if (e = [], n = S[a], n.name && (e.push(n.name.toLowerCase()), n.options && n.options.aliases && n.options.aliases.length)) for (t = 0; t < n.options.aliases.length; t++)e.push(n.options.aliases[t].toLowerCase()); for (o = r(n.fn, "function") ? n.fn() : n.fn, s = 0; s < e.length; s++)i = e[s], l = i.split("."), 1 === l.length ? Modernizr[l[0]] = o : (!Modernizr[l[0]] || Modernizr[l[0]] instanceof Boolean || (Modernizr[l[0]] = new Boolean(Modernizr[l[0]])), Modernizr[l[0]][l[1]] = o), C.push((o ? "" : "no-") + l.join("-")) } } function s(e) { var n = x.className, t = Modernizr._config.classPrefix || ""; if (_ && (n = n.baseVal), Modernizr._config.enableJSClass) { var r = new RegExp("(^|\\s)" + t + "no-js(\\s|$)"); n = n.replace(r, "$1" + t + "js$2") } Modernizr._config.enableClasses && (n += " " + t + e.join(" " + t), _ ? x.className.baseVal = n : x.className = n) } function i(e, n) { return !!~("" + e).indexOf(n) } function l() { return "function" != typeof n.createElement ? n.createElement(arguments[0]) : _ ? n.createElementNS.call(n, "http://www.w3.org/2000/svg", arguments[0]) : n.createElement.apply(n, arguments) } function a(e) { return e.replace(/([a-z])-([a-z])/g, function (e, n, t) { return n + t.toUpperCase() }).replace(/^-/, "") } function f(e, n) { return function () { return e.apply(n, arguments) } } function u(e, n, t) { var o; for (var s in e) if (e[s] in n) return t === !1 ? e[s] : (o = n[e[s]], r(o, "function") ? f(o, t || n) : o); return !1 } function c(e) { return e.replace(/([A-Z])/g, function (e, n) { return "-" + n.toLowerCase() }).replace(/^ms-/, "-ms-") } function p(n, t, r) { var o; if ("getComputedStyle" in e) { o = getComputedStyle.call(e, n, t); var s = e.console; if (null !== o) r && (o = o.getPropertyValue(r)); else if (s) { var i = s.error ? "error" : "log"; s[i].call(s, "getComputedStyle returning null, its possible modernizr test results are inaccurate") } } else o = !t && n.currentStyle && n.currentStyle[r]; return o } function d() { var e = n.body; return e || (e = l(_ ? "svg" : "body"), e.fake = !0), e } function m(e, t, r, o) { var s, i, a, f, u = "modernizr", c = l("div"), p = d(); if (parseInt(r, 10)) for (; r--;)a = l("div"), a.id = o ? o[r] : u + (r + 1), c.appendChild(a); return s = l("style"), s.type = "text/css", s.id = "s" + u, (p.fake ? p : c).appendChild(s), p.appendChild(c), s.styleSheet ? s.styleSheet.cssText = e : s.appendChild(n.createTextNode(e)), c.id = u, p.fake && (p.style.background = "", p.style.overflow = "hidden", f = x.style.overflow, x.style.overflow = "hidden", x.appendChild(p)), i = t(c, e), p.fake ? (p.parentNode.removeChild(p), x.style.overflow = f, x.offsetHeight) : c.parentNode.removeChild(c), !!i } function y(n, r) { var o = n.length; if ("CSS" in e && "supports" in e.CSS) { for (; o--;)if (e.CSS.supports(c(n[o]), r)) return !0; return !1 } if ("CSSSupportsRule" in e) { for (var s = []; o--;)s.push("(" + c(n[o]) + ":" + r + ")"); return s = s.join(" or "), m("@supports (" + s + ") { #modernizr { position: absolute; } }", function (e) { return "absolute" == p(e, null, "position") }) } return t } function v(e, n, o, s) { function f() { c && (delete N.style, delete N.modElem) } if (s = r(s, "undefined") ? !1 : s, !r(o, "undefined")) { var u = y(e, o); if (!r(u, "undefined")) return u } for (var c, p, d, m, v, g = ["modernizr", "tspan", "samp"]; !N.style && g.length;)c = !0, N.modElem = l(g.shift()), N.style = N.modElem.style; for (d = e.length, p = 0; d > p; p++)if (m = e[p], v = N.style[m], i(m, "-") && (m = a(m)), N.style[m] !== t) { if (s || r(o, "undefined")) return f(), "pfx" == n ? m : !0; try { N.style[m] = o } catch (h) { } if (N.style[m] != v) return f(), "pfx" == n ? m : !0 } return f(), !1 } function g(e, n, t, o, s) { var i = e.charAt(0).toUpperCase() + e.slice(1), l = (e + " " + P.join(i + " ") + i).split(" "); return r(n, "string") || r(n, "undefined") ? v(l, n, o, s) : (l = (e + " " + z.join(i + " ") + i).split(" "), u(l, n, t)) } function h(e, n, r) { return g(e, t, t, n, r) } var C = [], S = [], w = { _version: "3.6.0", _config: { classPrefix: "", enableClasses: !0, enableJSClass: !0, usePrefixes: !0 }, _q: [], on: function (e, n) { var t = this; setTimeout(function () { n(t[e]) }, 0) }, addTest: function (e, n, t) { S.push({ name: e, fn: n, options: t }) }, addAsyncTest: function (e) { S.push({ name: null, fn: e }) } }, Modernizr = function () { }; Modernizr.prototype = w, Modernizr = new Modernizr; var x = n.documentElement, _ = "svg" === x.nodeName.toLowerCase(), b = "Moz O ms Webkit", P = w._config.usePrefixes ? b.split(" ") : []; w._cssomPrefixes = P; var z = w._config.usePrefixes ? b.toLowerCase().split(" ") : []; w._domPrefixes = z; var E = { elem: l("modernizr") }; Modernizr._q.push(function () { delete E.elem }); var N = { style: E.elem.style }; Modernizr._q.unshift(function () { delete N.style }), w.testAllProps = g, w.testAllProps = h, Modernizr.addTest("flexbox", h("flexBasis", "1px", !0)), o(), s(C), delete w.addTest, delete w.addAsyncTest; for (var T = 0; T < Modernizr._q.length; T++)Modernizr._q[T](); e.Modernizr = Modernizr }(window, document);
 /* -----------------------------------------
    NO CONFLIT - /source/js/cagov/noconflict.js
 ----------------------------------------- */
@@ -14208,9 +14211,9 @@ $(document).ready(function () {
             var searchBox = $headSearch.get(0).getBoundingClientRect();
             var newAskTop = searchBox.top + searchBox.height + askBarPadding;
 
-            $askGroupBar.css('top', newAskTop)
-            $askGroupBar.trigger('cagov.askgroup.update')
-        }, 0)
+            $askGroupBar.css('top', newAskTop);
+            $askGroupBar.trigger('cagov.askgroup.update');
+        }, 0);
 
     }
 
@@ -14235,12 +14238,12 @@ $(document).ready(function () {
                     $('html,body').animate({
                         scrollTop: 0
                     }, 400, function () {
-                        $(window).scroll()
+                        $(window).scroll();
                     });
                     return;
-                })
+                });
             });
-        }
+        };
     }(jQuery));
 
     // Set any buttons or links which must scroll back to the top
@@ -14273,7 +14276,7 @@ $(document).ready(function () {
     // proactively update our fixed header
     function setResizeHandler() {
         if (!$header.hasClass('fixed')) {
-            return
+            return;
         }
 
         $(window).on('resize', function () {
@@ -14305,7 +14308,7 @@ $(document).ready(function () {
                 // we dont have any fixed updates if we switch or start in mobile
                 // even if the user has requested to be fixed.
                 if (windowWidth < headerVars.MOBILEWIDTH) {
-                    return
+                    return;
                 }
 
                 checkForCompactUpdate();
@@ -14339,7 +14342,6 @@ $(document).ready(function () {
         // we dont fade out if we have search results being shown
         if ($headSearch.hasClass('active')) {
             $askGroup.addClass('fixed-hide');
-            $header.addClass('compact, .fixed');
 
             return;
         }
@@ -14367,8 +14369,8 @@ $(document).ready(function () {
             $askGroup.addClass('fixed-hide');
             $headSearch.addClass('fixed-hide');
         } else {
-            $askGroup.removeClass('fixed-hide')
-            $headSearch.removeClass('fixed-hide')
+            $askGroup.removeClass('fixed-hide');
+            $headSearch.removeClass('fixed-hide');
         }
         if (currentScrollTop >= scrollDistanceToMakeCompactHeader) {
             $header.addClass('compact');
@@ -14384,16 +14386,16 @@ $(document).ready(function () {
     // justify showing the return icon
     function checkForReturnTopUpdate() {
         if (currentScrollTop >= scrollDistanceToMakeCompactHeader) {
-            $returnTop.addClass('is-visible')
+            $returnTop.addClass('is-visible');
         } else {
-            $returnTop.removeClass('is-visible')
+            $returnTop.removeClass('is-visible');
         }
     }
 
-    /**
-     * Figures out the difference between the bottom of the askbar and the
-     * explore more bar. Used to caclulate when we should hide these elements
-     */
+   // /**
+   //  * Figures out the difference between the bottom of the askbar and the
+   //  * explore more bar. Used to caclulate when we should hide these elements
+   //  */
     function calcInputDifference() {
         if (!$exploreMore.length || !$askGroupBar.length) {
             return 0;
@@ -14470,7 +14472,7 @@ $(document).ready(function () {
         $header.removeClass('fixed');
         $headerImage.css({ 'top': '', 'margin-bottom': '' });
         $mainContent.css({ 'padding-top': '' });
-        $askGroupBar.css('top', '')
+        $askGroupBar.css('top', '');
     }
 
 });
@@ -15656,7 +15658,7 @@ $("nav:first").accessibleMegaMenu({
 
 /// MOBILE
 function mobileView() {
-    return ($('.global-header .mobile-controls').css('display') !== "none"); 
+    return $('.global-header .mobile-controls').css('display') !== "none";
 }
 
 
@@ -15674,14 +15676,14 @@ $(document).ready(function () {
 
 
     // Variables
-var $navigation = $('#navigation.main-navigation'),
-    $navItems = $navigation.find('.nav-item'), // first level link containers'
-    $navItemsWithSubs = $navItems.has('.sub-nav'),
-    $subNavs = $navigation.find('.sub-nav'),
-    megamenu = $navigation.hasClass('megadropdown'),
-    dropdown = $navigation.hasClass('dropdown'),
-    singleLevel = $navigation.hasClass('singleLevel'),
-    setActiveLinkByFolder = $navigation.hasClass('auto-highlight'); // Use new folder matching method to highlight the current navigation tab
+    var $navigation = $('#navigation.main-navigation'),
+        $navItems = $navigation.find('.nav-item'), // first level link containers'
+        $navItemsWithSubs = $navItems.has('.sub-nav'),
+        $subNavs = $navigation.find('.sub-nav'),
+        megamenu = $navigation.hasClass('megadropdown'),
+        dropdown = $navigation.hasClass('dropdown'),
+        singleLevel = $navigation.hasClass('singleLevel'),
+        setActiveLinkByFolder = $navigation.hasClass('auto-highlight'); // Use new folder matching method to highlight the current navigation tab
 
 
     // HIGHLIGHT APPROPRIATE NAV ITEM
@@ -15715,7 +15717,7 @@ var $navigation = $('#navigation.main-navigation'),
         }
     });
 
-    
+
     // Add class has-sub, then add carrots
     if (!singleLevel) {
         $navItemsWithSubs.each(function () {
@@ -15734,10 +15736,13 @@ var $navigation = $('#navigation.main-navigation'),
     // Scrolling to the top of the menu in mobile
     var HasSubLink = $(".collapse .has-sub");
     var FirstLink = $(".first-level-link").first();
+
     $(HasSubLink).click(function () {
-        $('html,body').animate({
-            scrollTop: $(FirstLink).offset().top
-        }, '3000');
+        if (mobileView()) {
+            $('html,body').animate({
+                scrollTop: $(FirstLink).offset().top
+            }, '3000');
+        }
     });
 
 });
@@ -15772,15 +15777,14 @@ function NavReset() {
     else {
         $("#navigation").removeClass("collapse");
         $(".rotate").css("display", "none");
-        
+
     }
-    
+
     $(".toggle-menu").attr('aria-expanded', 'false');
     $(".toggle-menu").attr('aria-selected', 'false');
     $(".toggle-menu").attr('aria-pressed', 'false');
     $(".toggle-menu").addClass("collapsed");
-};
-
+}
 
 /* -----------------------------------------
    ACCORDION LIST - /source/js/cagov/accordion.js
@@ -16630,7 +16634,7 @@ $(document).ready(function () {
     // Sitecore link data types currently do not have a way to set id's per nav,
     // so instead we are binding to what I'm assuming will aslways be the search
     $('.top-level-nav .nav-item .ca-gov-icon-search, #nav-item-search').parents('.nav-item').on('click', function (e) {
-        $searchText.trigger("focus").trigger('focus')
+        $searchText.trigger("focus").trigger('focus');
         // // already opened search, nothing else needs to be done
         // if ($searchContainer.hasClass('active')) {
         //     return;
