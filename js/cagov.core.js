@@ -15658,7 +15658,7 @@ $("nav:first").accessibleMegaMenu({
 
 /// MOBILE
 function mobileView() {
-    return $('.global-header .mobile-controls').css('display') !== "none";
+    return $('.global-header .mobile-controls').css('display') !== "none"; 
 }
 
 
@@ -15676,14 +15676,14 @@ $(document).ready(function () {
 
 
     // Variables
-    var $navigation = $('#navigation.main-navigation'),
-        $navItems = $navigation.find('.nav-item'), // first level link containers'
-        $navItemsWithSubs = $navItems.has('.sub-nav'),
-        $subNavs = $navigation.find('.sub-nav'),
-        megamenu = $navigation.hasClass('megadropdown'),
-        dropdown = $navigation.hasClass('dropdown'),
-        singleLevel = $navigation.hasClass('singleLevel'),
-        setActiveLinkByFolder = $navigation.hasClass('auto-highlight'); // Use new folder matching method to highlight the current navigation tab
+var $navigation = $('#navigation.main-navigation'),
+    $navItems = $navigation.find('.nav-item'), // first level link containers'
+    $navItemsWithSubs = $navItems.has('.sub-nav'),
+    $subNavs = $navigation.find('.sub-nav'),
+    megamenu = $navigation.hasClass('megadropdown'),
+    dropdown = $navigation.hasClass('dropdown'),
+    singleLevel = $navigation.hasClass('singleLevel'),
+    setActiveLinkByFolder = $navigation.hasClass('auto-highlight'); // Use new folder matching method to highlight the current navigation tab
 
 
     // HIGHLIGHT APPROPRIATE NAV ITEM
@@ -15717,7 +15717,7 @@ $(document).ready(function () {
         }
     });
 
-
+    
     // Add class has-sub, then add carrots
     if (!singleLevel) {
         $navItemsWithSubs.each(function () {
@@ -15735,16 +15735,16 @@ $(document).ready(function () {
 
     // Scrolling to the top of the menu in mobile
     var HasSubLink = $(".collapse .has-sub");
-    var FirstLink = $(".first-level-link").first();
-
+    var navTarget = $(".mobile-controls");
+    
     $(HasSubLink).click(function () {
         if (mobileView()) {
             $('html,body').animate({
-                scrollTop: $(FirstLink).offset().top
+                scrollTop: $(navTarget).offset().top
             }, '3000');
         }
-    });
-
+        });
+    
 });
 
 
@@ -15777,14 +15777,15 @@ function NavReset() {
     else {
         $("#navigation").removeClass("collapse");
         $(".rotate").css("display", "none");
-
+        
     }
-
+    
     $(".toggle-menu").attr('aria-expanded', 'false');
     $(".toggle-menu").attr('aria-selected', 'false');
     $(".toggle-menu").attr('aria-pressed', 'false');
-    $(".toggle-menu").addClass("collapsed");
+  //  $(".toggle-menu").addClass("collapsed");
 }
+
 
 /* -----------------------------------------
    ACCORDION LIST - /source/js/cagov/accordion.js
@@ -16604,12 +16605,12 @@ $(document).ready(function () {
 
     var $body = $("body");
     var $specialIcon =
-    // setup the tabs
-    $('.search-tabs button').on("click", function (e) {
-        $(this).siblings().removeClass('active');
-        $(this).tab('show').addClass('active');
-        e.preventDefault()
-    });
+        // setup the tabs
+        $('.search-tabs button').on("click", function (e) {
+            $(this).siblings().removeClass('active');
+            $(this).tab('show').addClass('active');
+            e.preventDefault()
+        });
 
     // Unfreeze search width when blured.
     // Unfreeze search width when blured.
@@ -16694,12 +16695,17 @@ $(document).ready(function () {
     // Mobile Search toggle
     $('.toggle-search').on('click', function () {
         $('.search-container').toggleClass('active');
+        if ($('.search-container').hasClass('active')) {
+            $('html, body').animate({
+                scrollTop: $("#head-search").offset().top
+            }, 500);
+        }
     });
 
 });
 
 function mobileView() {
-    return ($('.global-header .mobile-controls').css('display') !== "none"); // mobile view uses arrow to show subnav instead of first touch
+    return $('.global-header .mobile-controls').css('display') !== "none"; // mobile view uses arrow to show subnav instead of first touch
 }
 /* -----------------------------------------
    INIT THIRD PARTY PLUGINS - /source/js/cagov/plugins.js
