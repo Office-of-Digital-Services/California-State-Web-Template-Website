@@ -1,5 +1,5 @@
 /**
- * CA State Template v5.5 -  @version v5.5.2 -  3/5/2019 
+ * CA State Template v5.5 -  @version v5.5.2 -  3/13/2019 
   STYLES COMPILED FROM SOURCE (source/js) DO NOT MODIFY */
 /*! modernizr (Custom Build) | MIT *
  * https://modernizr.com/download/?-flexbox-setclasses !*/
@@ -15214,7 +15214,7 @@ limitations under the License.
                 case Keyboard.SPACE:
                 case Keyboard.ENTER:
                     if (isTopNavItem) {
-                        event.preventDefault();
+                       // event.preventDefault();
                         _clickHandler.call(that, event);
                     } else {
                         return true;

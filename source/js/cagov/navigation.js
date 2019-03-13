@@ -594,7 +594,7 @@ limitations under the License.
                 case Keyboard.SPACE:
                 case Keyboard.ENTER:
                     if (isTopNavItem) {
-                        event.preventDefault();
+                       // event.preventDefault();
                         _clickHandler.call(that, event);
                     } else {
                         return true;
