@@ -1,6 +1,8 @@
 <!-- Google Custom Search - /ssi/search.html-->
 
-<script type="text/javascript">
+<!--Uncomment if you prefer to use original google search box.
+    (be advided that original custom search box is not meeting WCAG accessibility standards)-->
+<!--<script type="text/javascript">
     var cx = '001779225245372747843:9s-idxui5pk';// Step 7: Update this value with your search engine unique ID. Submit a request to the CDT Service Desk if you don't already know your unique search engine ID.
     var gcse = document.createElement('script');
     gcse.type = 'text/javascript';
@@ -9,7 +11,11 @@
     var s = document.getElementsByTagName('script');
     s[s.length - 1].parentNode.insertBefore(gcse, s[s.length - 1]);
 </script>
+<gcse:searchbox-only resultsUrl="/serp.html" enableAutoComplete="true"></gcse:searchbox-only>-->
 
-<gcse:searchbox-only resultsUrl="/serp.html" enableAutoComplete="true"></gcse:searchbox-only>
-
-
+<!--Custom Google Search ID Script can be found inside of serp.html file -->
+<form id="Search" class="pos-rel" action="/serp.html">
+    <span class="sr-only" id="SearchInput">Custom Google Search</span>
+    <input type="text" id="q" name="q" aria-labelledby="SearchInput" placeholder="Custom Search" class="w-100 height-50 border-0 p-x-sm" />
+    <button type="submit" class="pos-abs gsc-search-button right-0 top-0 width-50 height-50 border-0 bg-transparent"><span class="ca-gov-icon-search font-size-30 color-gray" aria-hidden="true"></span><span class="sr-only">Submit</span></button>
+</form>

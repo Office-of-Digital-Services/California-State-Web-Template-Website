@@ -3,96 +3,122 @@
 <!--[if IE 7]>    <html class="no-js ie7 oldie" lang="en"> <![endif]-->
 <!--[if IE 8]>    <html class="no-js ie8 oldie" lang="en"> <![endif]-->
 <!--[if IE 9]>    <html class="no-js ie9 oldie" lang="en"> <![endif]-->
-<!--[if (gt IE 9)]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+<!--[if (gt IE 9)]><!-->
+<html class="no-js" lang="en">
+ <!--<![endif]-->
 <head>
-<!--
-California State Template
-Version 5.5.2
- 
-Based on Twitter Bootstrap
--->
-<meta charset="utf-8">
+    <!--
+    California State Template
+    Version 5.5.2
 
-<title>Search Results - Organization</title>
+    Based on Twitter Bootstrap
+    -->
+    <meta charset="utf-8">
 
-<meta name="Author" content="State of California" />
-<meta name="Description" content="State of California" />
-<meta name="Keywords" content="California, government" />
+    <title>Search Results - Organization</title>
 
-<!--#include virtual="/ssi/head-css-js.html" -->
-<link rel='stylesheet' href='http://www.google.com/cse/style/look/default.css' type='text/css'/>
+    <meta name="Author" content="State of California" />
+    <meta name="Description" content="State of California" />
+    <meta name="Keywords" content="California, government" />
+
+    <!--#include virtual="/ssi/head-css-js.html" -->
+    <link rel='stylesheet' href='http://www.google.com/cse/style/look/default.css' type='text/css' />
     <!--hiding search icons from search results page navigation sinse the search box is already open-->
     <style>
         #nav-item-search, .mobile-controls .toggle-search {
-            display:none;
+            display: none;
         }
-       .mobile-controls .mobile-header-icons  {
+
+        .mobile-controls .mobile-header-icons {
             display: block;
             height: 61px;
             width: 100%;
             cursor: default;
-       }
+        }
     </style>
 </head>
 
-<!-- possible body classes are "primary" and "two-column" -->
 <body>
 
-<header role="banner" id="header" class="global-header fixed">
-    <div id="skip-to-content"><a href="#main-content">Skip to Main Content</a></div>
+    <header role="banner" id="header" class="global-header fixed">
+        <div id="skip-to-content"><a href="#main-content">Skip to Main Content</a></div>
 
-    <!-- Include Utility Header -->
-    <!--#include virtual="/ssi/utility-header.html" -->
+        <!-- Include Utility Header -->
+        <!--#include virtual="/ssi/utility-header.html" -->
+        <!-- Settings Bar -->
+        <!--#include virtual="/ssi/settings-bar.html" -->
+        <!-- Include Branding -->
+        <!--#include virtual="/ssi/branding.html" -->
+        <!-- Include Mobile Controls -->
+        <!--#include virtual="/ssi/mobile-controls.html" -->
 
-    <!-- Settings Bar -->
-    <!--#include virtual="/ssi/settings-bar.html" -->
+        <div class="navigation-search">
+            <!-- Include Navigation -->
+            <!--#include virtual="/ssi/navigation.html" -->
 
-    <!-- Include Branding -->
-    <!--#include virtual="/ssi/branding.html" -->
+            <div id="head-search" class="search-container">
+                <!-- Include Search -->
+                <!--#include virtual="/ssi/search.html" -->
+            </div>
 
-    <!-- Include Mobile Controls -->
-    <!--#include virtual="/ssi/mobile-controls.html" -->
-
-    <div class="navigation-search">
-        <!-- Include Navigation -->
-        <!--#include virtual="/ssi/navigation.html" -->
-
-        <div id="head-search" class="search-container">
-            <!-- Include Search -->
-            <!--#include virtual="/ssi/search.html" -->
         </div>
 
-    </div>
+        <div class="header-decoration"></div>
+    </header>
 
-    <div class="header-decoration"></div>
-</header>
-
-<div id="main-content" class="main-content">
+    <div id="main-content" class="main-content">
 
         <main class="main-primary">
             <!--Search result section-->
             <div class="section section-default">
                 <div class="container search-results-header p-r-lg">
                     <h1>Search Results</h1>
-                    <gcse:searchbox-only resultsUrl="/serp.html" enableAutoComplete="true"></gcse:searchbox-only>
+                    <!--Uncomment if you prefer to use original google search box. Be advided that original custom search box is not meeting WCAG accessibility standards. -->
+                    <!--<gcse:searchbox-only resultsUrl="/serp.html" enableAutoComplete="true"></gcse:searchbox-only>-->
 
+                    <form id="Search" class="pos-rel" action="/serp.html">
+                        <span class="sr-only" id="SearchInput">Custom Google Search</span>
+                        <input type="text" id="q" name="q" aria-labelledby="SearchInput" placeholder="Custom Search" class="w-100 height-50 border-0 p-x-sm" />
+                        <button type="submit" class="pos-abs gsc-search-button right-0 top-0 width-50 height-50 border-0"><span class="ca-gov-icon-search font-size-30" aria-hidden="true"></span><span class="sr-only">Submit</span></button>
+                    </form>
                 </div>
             </div>
-                <div class="section">
-                    <div class="container">
+            <div class="section">
+                <div class="container">
 
-                        <gcse:searchresults-only></gcse:searchresults-only>
-                        <!-- <script src='//www.google.com/jsapi' type='text/javascript'></script> -->
-                    </div>
+                    <gcse:searchresults-only></gcse:searchresults-only>
                 </div>
-</main>
-    
-</div>
+            </div>
+        </main>
+
+    </div>
 
 
-<!--#include virtual="/ssi/global-footer.html" -->
+    <!--#include virtual="/ssi/global-footer.html" -->
+    <!--#include virtual="/ssi/scripts.html" -->
 
-<!--#include virtual="/ssi/scripts.html" -->
+    <script>
+        // Search ID
+        var cx = '001779225245372747843:9s-idxui5pk';// Update this value with your search engine unique ID. Submit a request to the CDT Service Desk if you don't already know your unique search engine ID.
+        var gcse = document.createElement('script');
+        gcse.type = 'text/javascript';
+        gcse.async = true;
+        gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
+        var s = document.getElementsByTagName('script');
+        s[s.length - 1].parentNode.insertBefore(gcse, s[s.length - 1]);
 
+
+
+        // extracting search query from the url parameter and applying it to the searchbox
+        jQuery.urlParam = function (name) {
+            var results = new RegExp('[\?&]' + name + '=([^&#]*)')
+                .exec(window.location.search);
+
+            return (results !== null) ? results[1] || 0 : false;
+        }
+        var query = jQuery.urlParam('q');
+        $('input[name=q]').val(query);
+
+    </script>
 </body>
 </html>
