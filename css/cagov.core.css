@@ -1,5 +1,5 @@
 /**
- * CA State Template v5.5 -  @version v5.5.2 -  3/5/2019 
+ * CA State Template v5.5 -  @version v5.5.2 -  3/22/2019 
   STYLES COMPILED FROM SOURCE (SCSS) DO NOT MODIFY */
 /* -----------------------------------------
    BOOTSTRAP v4.3.1 - /source/scss/bootstrap/ 
@@ -11212,14 +11212,35 @@ code {
    GLOBAL HEADER - /source/scss/cagov/global-header.scss
 ----------------------------------------- */
 #skip-to-content {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  margin: -1px;
-  padding: 0;
+  position: relative;
+  left: 50% !important;
+  -webkit-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  transform: translateX(-50%);
+  width: 0;
+  height: 0;
+  z-index: 999;
+}
+
+#skip-to-content a {
+  width: 0;
+  height: 0;
+  text-align: center;
+  position: absolute !important;
+  left: 50% !important;
+  -webkit-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  transform: translateX(-50%);
+  clip: unset;
+  background-color: white;
+  border-bottom-left-radius: 7px;
+  border-bottom-right-radius: 7px;
   overflow: hidden;
-  clip: rect(0, 0, 0, 0);
-  border: 0;
+}
+
+#skip-to-content a:focus {
+  width: 160px;
+  height: 27px;
 }
 
 .global-header {
