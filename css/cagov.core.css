@@ -1,5 +1,5 @@
 /**
- * CA State Template v5.5 -  @version v5.5.2 -  3/22/2019 
+ * CA State Template v5.5 -  @version v5.5.2 -  3/26/2019 
   STYLES COMPILED FROM SOURCE (SCSS) DO NOT MODIFY */
 /* -----------------------------------------
    BOOTSTRAP v4.3.1 - /source/scss/bootstrap/ 
@@ -13803,6 +13803,85 @@ a.second-level-link [class^="ca-gov-icon-"] {
     position: relative;
     z-index: 9;
   }
+}
+
+.utility-header .flex-row {
+  display: flex;
+}
+
+.utility-header .flex-row .social-media-links {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+}
+
+.utility-header .flex-row .social-media-links .header-cagov-logo {
+  margin-right: 40px;
+}
+
+.utility-header .flex-row .social-media-links .header-cagov-logo img {
+  top: 4px;
+}
+
+@media (min-width: 767px) and (max-width: 991px) {
+  .utility-header .flex-row .social-media-links .header-cagov-logo {
+    margin-right: 20px;
+  }
+}
+
+@media (max-width: 767px) {
+  .utility-header .flex-row .social-media-links .header-cagov-logo {
+    margin-right: 15px;
+  }
+}
+
+.utility-header .flex-row .social-media-links .header-cagov-logo a {
+  margin: 0;
+  padding-top: 0;
+}
+
+.utility-header .flex-row .social-media-links a {
+  margin: 0px 10px 0 10px;
+}
+
+@media (max-width: 767px) {
+  .utility-header .flex-row .social-media-links a {
+    margin: 4px 4px 0 4px;
+  }
+}
+
+.utility-header .flex-row .social-media-links > a {
+  padding-top: 5px;
+}
+
+@media (max-width: 767px) {
+  .utility-header .flex-row .social-media-links [class^="ca-gov-icon-"] {
+    font-size: 1rem;
+  }
+}
+
+.utility-header .flex-row .settings-links {
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: auto;
+  align-items: baseline;
+  justify-content: flex-end;
+  padding-top: 3px;
+}
+
+.utility-header .flex-row .settings-links a {
+  margin: 0 10px 0 10px;
+}
+
+@media (max-width: 767px) {
+  .utility-header .flex-row .settings-links a {
+    margin: 5px 4px 0 4px;
+    padding: 0;
+  }
+}
+
+.utility-header .flex-row .settings-links button {
+  margin: -5px 4px 0 4px;
 }
 
 /* -----------------------------------------
