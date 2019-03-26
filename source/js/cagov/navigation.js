@@ -1123,8 +1123,10 @@ var $navigation = $('#navigation.main-navigation'),
                 scrollTop: $(navTarget).offset().top
             }, '3000');
         }
-        });
-    
+    });
+
+    $(".toggle-menu").removeAttr('aria-pressed'); // siteimprove accesibility error fix...
+
 });
 
 
@@ -1162,7 +1164,5 @@ function NavReset() {
     
     $(".toggle-menu").attr('aria-expanded', 'false');
     $(".toggle-menu").attr('aria-selected', 'false');
-    $(".toggle-menu").attr('aria-pressed', 'false');
-  //  $(".toggle-menu").addClass("collapsed");
 }
 

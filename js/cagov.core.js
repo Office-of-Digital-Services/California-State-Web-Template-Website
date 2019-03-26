@@ -1,5 +1,5 @@
 /**
- * CA State Template v5.5 -  @version v5.5.2 -  3/13/2019 
+ * CA State Template v5.5 -  @version v5.5.2 -  3/26/2019 
   STYLES COMPILED FROM SOURCE (source/js) DO NOT MODIFY */
 /*! modernizr (Custom Build) | MIT *
  * https://modernizr.com/download/?-flexbox-setclasses !*/
@@ -15743,8 +15743,10 @@ var $navigation = $('#navigation.main-navigation'),
                 scrollTop: $(navTarget).offset().top
             }, '3000');
         }
-        });
-    
+    });
+
+    $(".toggle-menu").removeAttr('aria-pressed'); // siteimprove accesibility error fix...
+
 });
 
 
@@ -15782,8 +15784,6 @@ function NavReset() {
     
     $(".toggle-menu").attr('aria-expanded', 'false');
     $(".toggle-menu").attr('aria-selected', 'false');
-    $(".toggle-menu").attr('aria-pressed', 'false');
-  //  $(".toggle-menu").addClass("collapsed");
 }
 
 
