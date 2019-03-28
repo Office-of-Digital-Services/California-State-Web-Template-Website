@@ -1,5 +1,5 @@
 /**
- * CA State Template v5 -  @version v5.0.5 -  3/26/2019 
+ * CA State Template v5 -  @version v5.0.5 -  3/28/2019 
   STYLES COMPILED FROM SOURCE (SCSS) DO NOT MODIFY */
 /* -----------------------------------------
    BOOTSTRAP v4.3.1 - /source/scss/bootstrap/ 
@@ -12172,6 +12172,55 @@ td.gsc-search-button::before {
 
 button.gsc-search-button {
   cursor: pointer;
+}
+
+/* ------------- Custom search box (not google) --------------*/
+.search-container #Search {
+  display: flex;
+}
+
+.search-container #Search .gsc-search-button {
+  right: 50px;
+}
+
+.search-container #Search .close-search-btn {
+  display: block;
+}
+
+.search-container #Search .close-search {
+  font-size: 2rem;
+  display: block;
+  right: 0;
+}
+
+.search-container #Search .close-search .ca-gov-icon-close-mark {
+  color: #555555;
+}
+
+@media (max-width: 767px) {
+  .search-container #Search .close-search {
+    display: block;
+  }
+}
+
+.featured-search .container {
+  padding: 0 !important;
+}
+
+.featured-search .container #Search .gsc-search-button {
+  right: 0;
+}
+
+.featured-search .container #Search .close-search-btn {
+  display: none;
+}
+
+.featured-search.active .container #Search .gsc-search-button {
+  right: 50px;
+}
+
+.featured-search.active .container #Search .close-search-btn {
+  display: block;
 }
 
 /* -----------------------------------------
