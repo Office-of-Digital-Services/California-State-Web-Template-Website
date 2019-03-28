@@ -557,6 +557,66 @@ button.gsc-search-button {
 }
 
 
+/* ------------- Custom search box (not google) --------------*/
+.search-container {
+    #Search {
+        display: flex;
+
+        .gsc-search-button {
+            right: 50px;
+        }
+
+        .close-search-btn {
+            display: block;
+        }
+
+        .close-search {
+            font-size: 2rem;
+            display: block;
+            right: 0;
+
+            .ca-gov-icon-close-mark {
+                color: $gray-lightest;
+            }
+
+            @media (max-width: $screen-xs-max) {
+                display: block;
+            }
+        }
+    }
+}
+
+.featured-search {
+    .container {
+        padding: 0 !important;
+
+        #Search {
+            .gsc-search-button {
+                right: 0;
+            }
+
+            .close-search-btn {
+                display: none;
+            }
+        }
+    }
+}
+
+
+.featured-search.active {
+    .container {
+        #Search {
+            .gsc-search-button {
+                right: 50px;
+            }
+
+            .close-search-btn {
+                display: block;
+            }
+        }
+    }
+}
+
 /* -----------------------------------------
 GOOGLE CUSTOM SEARCH CUSTOMIZATION OVERRIDES 
 /source/scss/cagov/search.scss
