@@ -73,16 +73,16 @@ Based on Twitter Bootstrap
                     
                      <div class="tab-group">
                         <ul id="sourceCode" class="nav nav-tabs" role="tablist">
-                            <li class="active"><a href="#panelhtml" role="tab" data-toggle="tab"><label for="within-panel-html">HTML Markup</label></a></li>
-                            <li><a href="#panelmicrodata" role="tab" data-toggle="tab"><label for="within-panel-microdata">Microdata</label></a></li>
+                            <li class="active"><a href="#panelhtml" role="tab" data-toggle="tab" aria-label="HTML Markup for Example Within Panel"><strong for="within-panel-html">HTML Markup</strong></a></li>
+                            <li><a href="#panelmicrodata" role="tab" data-toggle="tab" aria-label="Microdata for Example Within Panel"><strong>Microdata</strong></a></li>
                         </ul>
                         <!-- Tab panes -->
                         <div class="tab-content responsive">
                             <div class="tab-pane active" id="panelhtml">
-                                 <textarea id="within-panel-html" class="form-control" rows="10" cols="80"><!--#include virtual="/sample/modules/contact-panel.html" --></textarea>
+                                 <textarea id="within-panel-html" class="form-control" rows="10" cols="80" aria-label="Source Code of HTML Markup for Example Within Panel"><!--#include virtual="/sample/modules/contact-panel.html" --></textarea>
                             </div>
                             <div class="tab-pane" id="panelmicrodata">
-                                 <textarea id="within-panel-microdata" class="form-control" rows="10" cols="80"><!--#include virtual="/sample/modules/contact-panel-schema.html" --></textarea>
+                                 <textarea id="within-panel-microdata" class="form-control" rows="10" cols="80" aria-label="Source Code of Microdata for Example Within Panel"><!--#include virtual="/sample/modules/contact-panel-schema.html" --></textarea>
                             </div>
                         </div>
                     </div>
@@ -100,16 +100,16 @@ Based on Twitter Bootstrap
                     <h2>Source Code:</h2>
                      <div class="tab-group">
                         <ul id="sourceCode2" class="nav nav-tabs" role="tablist">
-                            <li class="nav-item"><a class="nav-link active" href="#html" role="tab" data-toggle="tab" aria-selected="true"><label for="without-panel-html">HTML Markup</label></a></li>
-                            <li class="nav-item"><a class="nav-link" href="#microdata" role="tab" data-toggle="tab" aria-selected="false"><label for="without-panel-microdata">Microdata</label></a></li>
+                            <li class="nav-item"><a class="nav-link active" href="#html" role="tab" data-toggle="tab" aria-selected="true" aria-label="HTML Markup for Example Without Panel"><strong>HTML Markup</strong></a></li>
+                            <li class="nav-item"><a class="nav-link" href="#microdata" role="tab" data-toggle="tab" aria-selected="false" aria-label="Microdata for Example Without Panel"><strong>Microdata</strong></a></li>
                         </ul>
                         <!-- Tab panes -->
                         <div class="tab-content responsive">
                             <div class="tab-pane active" id="html"  role="tabpanel"  aria-labelledby="html-tab">
-                                 <textarea id="without-panel-html" class="form-control" rows="10" cols="80"><!--#include virtual="/sample/modules/contact.html" --></textarea>
+                                 <textarea id="without-panel-html" class="form-control" rows="10" cols="80" aria-label="Source Code of HTML Markup for Example Without Panel"><!--#include virtual="/sample/modules/contact.html" --></textarea>
                             </div>
                             <div class="tab-pane" id="microdata" role="tabpanel" aria-labelledby="microdata-tab">
-                                 <textarea id="without-panel-microdata" class="form-control" rows="10" cols="80"><!--#include virtual="/sample/modules/contact-schema.html" --></textarea>
+                                 <textarea id="without-panel-microdata" class="form-control" rows="10" cols="80" aria-label="Source Code of Microdata for Example Without Panel"><!--#include virtual="/sample/modules/contact-schema.html" --></textarea>
                             </div>
                         </div>
                     </div>
