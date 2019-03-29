@@ -78,17 +78,17 @@ Based on Twitter Bootstrap
                     <h2>Source Code:</h2>
                     <div class="tab-group">
                     <ul id="sourceCode" class="nav nav-tabs" role="tablist">
-                        <li class="active"><a href="#html" role="tab" data-toggle="tab">HTML Markup</a></li>
-                        <li><a href="#microdata" role="tab" data-toggle="tab">Microdata</a></li>
+                        <li class="active"><a href="#html" role="tab" data-toggle="tab" aria-label="HTML Markup for News Detail"><strong>HTML Markup</strong></a></li>
+                        <li><a href="#microdata" role="tab" data-toggle="tab" aria-label="Microdata for News Detail"><strong>Microdata</strong></a></li>
                     </ul>
                     <!-- Tab panes -->
                     <div class="tab-content responsive">
                         <div class="tab-pane active" id="html">
-                            <textarea aria-label="HTML Markup" id="sample-news-detail" class="form-control" rows="10" cols="80"><!--#include virtual="/sample/modules/news-detail.html" --></textarea>
+                            <textarea id="sample-news-detail" class="form-control" rows="10" cols="80" aria-label="Source Code of HTML Markup for News Detail"><!--#include virtual="/sample/modules/news-detail.html" --></textarea>
                         </div>
                         <div class="tab-pane" id="microdata">
                             <p class="alert alert-info">NOTE: This module makes use of a <code>datetime</code> property set in the <strong>ISO 8601</strong> format. Be sure to set the time correctly for each news-item.</p>
-                            <textarea aria-label="Microdata" id="sample-news-detail-microdata" class="form-control" rows="10" cols="80"><!--#include virtual="/sample/modules/news-detail-schema.html" --></textarea>
+                            <textarea id="sample-news-detail-microdata" class="form-control" rows="10" cols="80" aria-label="Source Code of Microdata for News Detail"><!--#include virtual="/sample/modules/news-detail-schema.html" --></textarea>
                         </div>
                     </div>
                 </div>
