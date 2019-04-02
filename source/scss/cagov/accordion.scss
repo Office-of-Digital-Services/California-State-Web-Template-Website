@@ -49,6 +49,17 @@
     }
 }
 
+.accordion {
+    .panel {
+        overflow: visible; // to display focus outline for accessibility
+        a {
+            &:focus {
+                outline: dotted 1px $gray-base;
+            }
+        }
+    }
+}
+
 /* list accordion */
 .accordion-list {
 	list-style: none;

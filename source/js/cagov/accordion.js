@@ -764,6 +764,12 @@ $.extend($.expr.pseudos, {
 });
 
 
+/* Accordion */
+$(document).ready(function () {
+    var accordion = $('.accordion').find('.collapsed');
+    accordion.attr("tabindex", 0); // make accordion tabable for accessibility
+});
+
 /* -----------------------------------------
    Tabs -- some fixing to bootstap 3 tabs 
    and backward compatibility
