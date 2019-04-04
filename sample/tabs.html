@@ -62,36 +62,67 @@ Based on Twitter Bootstrap
                 <li><a href="index.html" title="Examples landing page">Examples</a></li>
                 <li class="active">Tabs</li>
             </ol>
-            
+
             <div class="group">
                 <div class="half">
                     <h1>Tabs</h1>
-                    <p>Note the <code>.nav-tabs</code> class requires the <code>.nav</code> base class. Tabs also uses HTML5 roles for accessibility. Add <code>role="tablist"</code> to the ul that contains the tab links, and add <code>role="tab"</code> to the anchor tag that is the tab link. The tab link also requires an HTML5 <code>data-toggle="tab"</code> attribute be applied to instantiate the javascript behavior.</p>
-                    <p>The tab panel uses standadard deep linking markup to target the appropriate tab panel. As such the tabs href should match the ID of the tab panel it targets. For example <code>href="#home"</code> will show the  <code>id="home"</code> tab panel</p>
-                    <p>Any tab panel can be the first or default tab by applying <code>.active</code> to the tablist <code>li</code> element and to the corosponding tab panel.</p>
-                    <p>Tabs on small mobile devices can be a really bad experience. By applying the <code>.responsive</code> class to the <code>ul.nav-tabs</code> element and to the <code>div.tab-content</code> element, the tab will transform from a tab list to an accordion list on small mobile devices.</p>
-                    <h2>Example:</h2>
+                    <p>
+                        Note the <code>.nav-tabs</code> class requires the <code>.nav</code> base class. Tabs also uses HTML5 roles for accessibility.
+                        Add <code>role="tablist"</code> to the ul that contains the tab links,
+                        and add <code>role="tab"</code> to the anchor tag that is the tab link.
+                        The tab link also requires an HTML5 <code>data-toggle="tab"</code> attribute
+                        be applied to instantiate the javascript behavior.
+                    </p>
+                    <p>
+                        The tab panel uses standadard deep linking markup to target the appropriate tab panel.
+                        As such the tabs href should match the ID of the tab panel it targets.
+                        For example <code>href="#home"</code> will show the  <code>id="home"</code> tab panel
+                    </p>
+                    <p>
+                        Any tab panel can be the first or default tab by applying <code>.active</code>
+                        to the tablist <code>li</code> element and to the corosponding tab panel.
+                    </p>
+                    
                     <!--#include virtual="/sample/modules/tabs.html" -->
                 </div>
                 <div class="half">
-                    <h2><label for="sample-tabs">Source Code:</label></h2>
+                    <h2><label for="sample-tabs">Source Code  (not responsive):</label></h2>
                     <textarea id="sample-tabs" class="form-control" rows="10" cols="80"><!--#include virtual="/sample/modules/tabs.html" --></textarea>
                 </div>
             </div>
-            
+
             <hr>
-            
+
             <div class="group">
                 <div class="half">
-                <h2>Tabs on bottom</h2>
-                <p>Tabs can be placed below the content. This requires that that .nav-tabs div be placed below the content. The <code>.tabs-bottom</code> class need also be added to the <code>.tab-group</code></p>
-                <!--#include virtual="/sample/modules/tabs-bottom.html" -->
+                    <h2>Responsive Tabs</h2>
+                    <p>
+                        Tabs on small mobile devices can be a really bad experience. By applying the <code>.responsive</code> class to the <code>.tab-group</code>
+                        element, the tab will transform from a tab list to an accordion list on small mobile devices. Following example is using bootstrap cards to display tabs as accordion list in mobile devices:
+                    </p>
+                    <!--#include virtual="/sample/modules/tabs-responsive.html" -->
+                </div>
+                <div class="half">
+                    <h2><label for="responsive-tabs">Source Code (responsive):</label></h2>
+                    <textarea id="responsive-tabs" class="form-control" rows="10" cols="80"><!--#include virtual="/sample/modules/tabs-responsive.html" --></textarea>
+                </div>
+            </div>
+
+
+
+
+
+            <div class="group">
+                <div class="half">
+                    <h2>Tabs on bottom</h2>
+                    <p>Tabs can be placed below the content. This requires that that .nav-tabs div be placed below the content. The <code>.tabs-bottom</code> class need also be added to the <code>.tab-group</code></p>
+                    <!--#include virtual="/sample/modules/tabs-bottom.html" -->
                 </div>
                 <div class="half">
                     <h2><label for="sample-tabs-bottom">Source Code:</label></h2>
                     <textarea id="sample-tabs-bottom" class="form-control" rows="10" cols="80"><!--#include virtual="/sample/modules/tabs-bottom.html" --></textarea>
                 </div>
-            </div>                
+            </div>
         </main>
     </div>
 </div>

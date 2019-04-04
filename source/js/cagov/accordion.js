@@ -139,7 +139,7 @@ tabpanel.prototype.switchTabs = function ($curTab, $newTab) {
     $curTab.removeClass('selected focus');
 
     // remove tab from the tab order and update its aria-selected attribute 
-    $curTab.attr('tabindex', '-1').attr('aria-selected', 'false');
+    $curTab.attr('aria-selected', 'false');
 
 
     // Highlight the new tab and update its aria-selected attribute 
@@ -434,7 +434,7 @@ tabpanel.prototype.handleTabClick = function ($tab, e) {
     $tab.attr('tabindex', '0').attr('aria-selected', 'true').addClass('selected');
 
     // remove all tabs from the tab order and update their aria-selected attribute 
-    this.$tabs.not($tab).attr('tabindex', '-1').attr('aria-selected', 'false').removeClass('selected');
+    this.$tabs.not($tab).attr('aria-selected', 'false').removeClass('selected');
 
     // Expand the new panel 
     this.togglePanel($tab);
@@ -722,7 +722,7 @@ tabpanel.prototype.handlePanelClick = function ($panel, e) {
     $tab.attr('tabindex', '0').attr('aria-selected', 'true').addClass('selected');
 
     // remove all tabs from the tab order and update their aria-selected attribute 
-    this.$tabs.not($tab).attr('tabindex', '-1').attr('aria-selected', 'false').removeClass('selected');
+    this.$tabs.not($tab).attr('aria-selected', 'false').removeClass('selected');
 
     return true;
 
@@ -764,34 +764,13 @@ $.extend($.expr.pseudos, {
 });
 
 
-/* Accordion */
+/* Accordion Bootstrap 4 */
 $(document).ready(function () {
-    var accordion = $('.accordion').find('.collapsed');
-    accordion.attr("tabindex", 0); // make accordion tabable for accessibility
+    var accordion = $('.accordion').find('.collapsed'); 
+    accordion.attr("tabindex", 0); // make accordion tabable
 });
 
-/* -----------------------------------------
-   Tabs -- some fixing to bootstap 3 tabs 
-   and backward compatibility
------------------------------------------ */
-$(document).ready(function () {
-            // adding active class to a tag if aria selected is true 
-            var activeTab = $(".nav-tabs > li > a[aria-selected='true']");
-            activeTab.addClass("active");
-
-            // Just to change class active in the parent li element (backward compatibility)
-            $(".nav-tabs > li > a").on("click", function () {
-                if ($(this).attr('aria-selected') == "false") {
-                    $(".nav-tabs > li").removeClass("active");
-                    $(this).parent("li").addClass("active");
-                }
-                else {
-                    $(".nav-tabs > li").removeClass("active");
-                    $(this).parent("li").addClass("active");
-                }
-            });
 
 
-        });
 
 
