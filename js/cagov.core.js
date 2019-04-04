@@ -16849,6 +16849,12 @@ $(document).ready(function () {
     accordion.attr("tabindex", 0); // make accordion tabable
 });
 
+/* Remove aria controls from a links */
+$(document).ready(function () {
+    var alink = $(".card").find("a[role='tab']");
+    alink.removeAttr("aria-controls");
+});
+
 
 
 
