@@ -1,0 +1,367 @@
+/* -----------------------------------------
+   GLOBALS - /source/scss/cagov/globals.scss
+----------------------------------------- */
+.overflow-hidden {overflow:hidden;}
+.overflow-visible {overflow:visible;}
+.overflow-auto {overflow:auto;}
+.no-underline {
+    text-decoration: none !important;
+}
+// width 
+.w-100 {width: 100%;} // beta 5.0 addition
+.width-1 {
+  width: 1px !important;}
+.width-5 {
+  width: 5px !important;}
+.width-10 {
+  width: 10px !important;}
+.width-15 {
+  width: 15px !important;}
+.width-20 {
+  width: 20px !important; }
+.width-30 {
+  width: 30px !important; }
+.width-40 {
+  width: 40px !important; }
+.width-50 {
+  width: 50px !important; }
+.width-60 {
+  width: 60px !important; }
+.width-70 {
+  width: 70px !important; }
+.width-80 {
+  width: 80px !important; }
+.width-100 {
+  width: 100px !important; }
+.width-150 {
+  width: 150px !important; }
+.width-200 {
+  width: 200px !important; }
+// height
+.h-auto {
+  height: auto; } 
+.h-100 {
+  height: 100%; }
+.height-1 {
+  height: 1px !important; }
+.height-5 {
+  height: 5px !important; }
+.height-10 {
+  height: 10px !important; }
+.height-15 {
+  height: 15px !important; }
+.height-20 {
+  height: 20px !important; }
+.height-30 {
+  height: 30px !important; }
+.height-40 {
+  height: 40px !important; }
+.height-50 {
+  height: 50px !important; }
+.height-60 {
+  height: 60px !important; }
+.height-70 {
+  height: 70px !important; }
+.height-80 {
+  height: 80px !important; }
+.height-100 {
+  height: 100px !important; }
+.height-150 {
+  height: 150px !important; }
+.height-200 {
+  height: 200px !important; }
+.height-250 {
+  height: 250px !important; }
+.height-300 {
+  height: 300px !important; }
+.height-400 {
+    height: 400px !important;}
+.height-500 {
+    height: 500px !important;}
+.height-600 {
+    height: 600px !important;}
+//right
+.right-0 {right: 0 !important;}
+//left
+.left-0 {left: 0 !important;}
+//top
+.top-0 {top: 0 !important;}
+//bottom
+.bottom-0 {top: 0 !important;}
+/*------------------------------------
+  colors and backgrounds
+------------------------------------*/
+// colors and backgrounds
+.color-primary-hover:hover {
+    color: $color-p2;
+}
+.color-gray-dark {color: $text-color;}
+.color-gray {color: $gray;}
+.bg-primary-hover:hover {background-color: $color-p2;}
+.text-primary {color: $text-primary !important;}
+.text-success {color: $text-success !important;}
+.text-info {color: $text-info !important;}
+.text-muted {color: $text-muted !important;}
+
+// light backgrounds
+.bg-grey-light {
+    background-color: $gray-lighter !important;
+}
+.bg-primary-light {
+    background-color:tint($color-p2, 60%) !important;
+}
+.bg-highlight-light {
+    background-color:tint($color-p1, 50%) !important;
+}
+.bg-standout-light {
+    background-color:tint($color-p1, 60%) !important;
+}
+.bg-secondary-light {
+    background-color:tint($color-s3, 40%) !important;
+}
+.bg-alpha-40 {
+    background-color: rgba(0, 0, 0, 0.4) !important;}
+.bg-alpha-50 {
+    background-color: rgba(0, 0, 0, 0.5) !important;}
+.bg-alpha-70 {
+    background-color: rgba(0, 0, 0, 0.7) !important;}
+.bg-alpha-60 {
+    background-color: rgba(0, 0, 0, 0.6) !important;}
+.bg-alpha-80 {
+    background-color: rgba(0, 0, 0, 0.8) !important;}
+.bg-alpha-90 {
+    background-color: rgba(0, 0, 0, 0.9) !important;}
+
+
+
+
+// before after backgrounds
+.bg-secondary-before::before, .bg-secondary-after::after {
+    background-color:$color-s3 !important; 
+}
+.bg-highlight-before::before, .bg-highlight-after::after {
+    background-color:$color-p1 !important; 
+}
+.bg-standout-before::before, .bg-standout-after::after {
+    background-color:$color-p3 !important; 
+}
+.bg-primary-before::before, .bg-primary-after::after {
+    background-color:$color-p2 !important; 
+}
+/*------------------------------------
+  borders colors and styles
+------------------------------------*/
+// border colors
+.brd-gray-light {
+    border-color: $card-border-color !important;
+}
+.brd-gray-light-before::before, .brd-gray-light-after::after {
+    border-color: $card-border-color !important;
+}
+.brd-transparent-before::before, .brd-transparent-after::after {
+    border-color: transparent !important;
+}
+.brd-primary-light {
+  border-color:tint($color-p2, 60%) !important;
+}
+.brd-primary-light-before::before, .brd-primary-light-after::after {
+    border-color:tint($color-p2, 60%) !important;
+}
+.brd-highlight-light-before::before, .brd-highlight-light-after::after {
+    border-color:tint($color-p1, 50%) !important;
+}
+.brd-standout-light-before::before, .brd-standout-light-after::after {
+    border-color:tint($color-p3, 60%) !important;
+}
+.brd-secondary-light-before::before, .brd-secondary-light-after::after {
+    border-color:tint($color-s3, 40%) !important;
+}
+
+//Border styles 
+.brd-solid-1 {
+    border-width:1px;
+    border-style:solid;
+}
+.brd-solid-2 {
+    border-width:2px;
+    border-style:solid;
+}
+.brd-solid-3 {
+    border-width:3px;
+    border-style:solid;
+}
+.brd-solid-4 {
+    border-width:4px;
+    border-style:solid;
+}
+.brd-solid-5 {
+    border-width:5px;
+    border-style:solid;
+}
+
+
+/*------------------------------------
+  Positions
+------------------------------------*/
+.pos-rel {
+  position: relative !important; }
+
+.pos-abs {
+  position: absolute !important; }
+
+.pos-stc {
+  position: static !important; }
+
+.pos-fix {
+  position: fixed !important; }
+  
+  /* Relative (Position, X, Y) */
+.relative-centered {
+  position: relative;
+  top: 50% !important;
+  left: 50% !important;
+  -webkit-transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  -webkit-backface-visibility: hidden; }
+
+.relative-centered-x {
+  position: relative;
+  left: 50% !important;
+  -webkit-transform: translateX(-50%);
+      -ms-transform: translateX(-50%);
+          transform: translateX(-50%);
+  -webkit-backface-visibility: hidden; }
+
+.relative-centered-y {
+  position: relative;
+  top: 50% !important;
+  -webkit-transform: translateY(-50%);
+      -ms-transform: translateY(-50%);
+          transform: translateY(-50%);
+  -webkit-backface-visibility: hidden; }
+  
+  /* Absolute (Position, X, Y) */
+.absolute-centered {
+  position: absolute !important;
+  top: 50% !important;
+  left: 50% !important;
+  -webkit-transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  -webkit-backface-visibility: hidden; }
+
+.absolute-centered-x {
+  position: absolute !important;
+  left: 50% !important;
+  -webkit-transform: translateX(-50%);
+      -ms-transform: translateX(-50%);
+          transform: translateX(-50%);
+  -webkit-backface-visibility: hidden; }
+  
+  .absolute-centered-y {
+  position: absolute !important;
+  top: 50% !important;
+  -webkit-transform: translateY(-50%);
+      -ms-transform: translateY(-50%);
+          transform: translateY(-50%);
+  -webkit-backface-visibility: hidden; }
+
+/*------------------------------------
+  Font Sizes
+------------------------------------*/
+.text-huge {font-size: 6em;}
+.font-size-sm {font-size: ($font-size-base * 0.75);}
+.font-size-70x {
+    font-size: 70% !important; }
+.font-size-75x {
+  font-size: 75% !important; }
+.font-size-80x {
+  font-size: 80% !important; }
+.font-size-85x {
+  font-size: 85% !important; }
+.font-size-90x {
+  font-size: 90% !important; }
+.font-size-95x {
+    font-size: 95% !important; }
+.font-size-11 {
+  font-size: 0.78571rem !important; }
+.font-size-12 {
+  font-size: 0.85714rem !important; }
+.font-size-13 {
+  font-size: 0.92857rem !important; }
+.font-size-14 {
+  font-size: 1rem !important; }
+.font-size-15 {
+  font-size: 1.07143rem !important; }
+.font-size-16 {
+  font-size: 1.14286rem !important; }
+.font-size-20 {
+  font-size: 1.42857rem !important; }
+.font-size-25 {
+  font-size: 1.78571rem !important; }
+.font-size-30 {
+  font-size: 2.14286rem !important; }
+.font-size-40 {
+  font-size: 2.85714rem !important; }
+	
+/*------------------------------------
+  Rounded borders
+------------------------------------*/	
+.rounded-20 {
+	border-radius: 20px;
+	}
+.rounded-15 {
+	border-radius: 15px;
+	}
+.rounded-10 {
+  border-radius: 10px;
+}
+.rounded-5 {
+  border-radius: 5px;
+}
+.rounded-4 {
+  border-radius: 4px;
+}
+.rounded-3 {
+  border-radius: 3px;
+}
+.rounded-2 {
+  border-radius: 2px;
+}
+.rounded-50 {
+  border-radius: 50px;
+}
+.rounded-0 {
+	border-radius: 0 !important; }
+
+.rounded-50x {
+	border-radius: 50%; }
+	
+/*------------------------------------
+  Displays
+------------------------------------*/		
+.d-flex {
+    display: flex;
+}
+.d-block {
+	display: block;
+	}
+.hidden-up {
+	opacity: 0;
+	}
+.hidden {
+	display:none !important; // Keeping old bootstrap3 class for backward compatibility
+}
+/*------------------------------------
+  Transforms & Transitions
+------------------------------------*/
+.transition-0_3, .transition-0_3:before, .transition-0_3:after, .transition-0_3 path, .transition-0_3 polygon {
+	transition-duration: .3s;
+	transition-property: all;
+	transition-timing-function: ease;
+	transition-delay: 0s;
+	}
+.transform-scale-1_05--hover:hover {
+	transform: scale3d(1.05, 1.05, 1.05);
+	}

@@ -3,132 +3,127 @@
 <!--[if IE 7]>    <html class="no-js ie7 oldie" lang="en"> <![endif]-->
 <!--[if IE 8]>    <html class="no-js ie8 oldie" lang="en"> <![endif]-->
 <!--[if IE 9]>    <html class="no-js ie9 oldie" lang="en"> <![endif]-->
-<!--[if (gt IE 9)]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+<!--[if (gt IE 9)]><!-->
+<html class="no-js" lang="en">
+ <!--<![endif]-->
 <head>
-<!--
-California State Template
-Version 5.0.5
- 
-Based on Twitter Bootstrap
--->
-<meta charset="utf-8">
+    <!--
+    California State Template
+    Version 5.0.5
 
-<title>Sample - Fixed Header</title>
+    Based on Twitter Bootstrap
+    -->
+    <meta charset="utf-8">
 
-<meta name="Author" content="State of California" />
-<meta name="Description" content="State of California" />
-<meta name="Keywords" content="California, government" />
+    <title>Sample - Fixed Header</title>
 
-<!--#include virtual="/ssi/head-css-js.html" -->
+    <meta name="Author" content="State of California" />
+    <meta name="Description" content="State of California" />
+    <meta name="Keywords" content="California, government" />
+
+    <!--#include virtual="/ssi/head-css-js.html" -->
 
 </head>
 
 <body>
 
-<header role="banner" id="header" class="global-header fixed">
-	<div id="skip-to-content"><a href="#main-content">Skip to Main Content</a></div><!-- Include Utility Header -->
-		<!--#include virtual="/ssi/utility-header.html" -->			
-        
-        <!-- Settings Bar -->	
-		<!--#include virtual="/ssi/settings-bar.html" -->
+    <header role="banner" id="header" class="global-header fixed">
+        <div id="skip-to-content"><a href="#main-content">Skip to Main Content</a></div><!-- Include Utility Header -->
+        <!--#include virtual="/ssi/utility-header.html" -->
+        <!-- Settings Bar -->
+        <!--#include virtual="/ssi/settings-bar.html" -->
+        <!-- Include Branding -->
+        <!--#include virtual="/ssi/branding.html" -->
+        <!-- Include Mobile Controls -->
+        <!--#include virtual="/ssi/mobile-controls.html" -->
 
-		<!-- Include Branding -->
-		<!--#include virtual="/ssi/branding.html" -->
-    
-    	<!-- Include Mobile Controls -->
-    	<!--#include virtual="/ssi/mobile-controls.html" -->
-    
-    <div class="navigation-search">
-        <!-- Include Navigation -->
-        <!--#include virtual="/ssi/navigation.html" -->
+        <div class="navigation-search">
+            <!-- Include Navigation -->
+            <!--#include virtual="/ssi/navigation.html" -->
 
-        <div id="head-search" class="search-container">
-            <!-- Include Search -->
-            <!--#include virtual="/ssi/search.html" -->
+            <div id="head-search" class="search-container">
+                <!-- Include Search -->
+                <!--#include virtual="/ssi/search.html" -->
+            </div>
+
         </div>
 
-    </div> 
-    
-		<!-- Search Results -->
-    <div class="search-results-container">
-        <!--#include virtual="/ssi/search-results.html"  -->
-    </div>  
-       
-</header>
 
-    
-	<!-- Include Page Template -->
+
+    </header>
+
+
+    <!-- Include Page Template -->
     <!--#include virtual="/ssi/header-large-banner.html" -->
-    
 
-<div id="main-content" class="main-content">
-    <div class="section">
-        <main class="main-primary">
-            <ol class="breadcrumb">
-                <li><a href="../index.html">Home</a></li>
-                <li><a href="index.html">Examples</a></li>
-                <li class="active">Fixed Header</li>
-            </ol>
-            
-            <div class="group">
-                <div class="half">
-                    <h1 id="title">Fixed Header</h1>
-                  <p>There are two header positioning options available to choose from. The default is a header that scrolls with the page as in previous templates. The new opion is a fixed position header that remains fixed to the top of the page at all times. An added feature of this option is that as the page is scrolled down the header becomes more compact to provide more real estate for the content area.</p>
-                    <p>To use the fixed header option add the <code>.fixed</code> class to the header div tag on your page.</p>
-              </div>
-                 
-              <div class="half p-t-lg m-t-lg">
+
+    <div id="main-content" class="main-content">
+        <div class="section">
+            <main class="main-primary">
+                <ol class="breadcrumb">
+                    <li><a href="../index.html" title="Home page">Home</a></li>
+                    <li><a href="index.html" title="Examples landing page">Examples</a></li>
+                    <li class="active">Fixed Header</li>
+                </ol>
+
+                <div class="group">
+                    <div class="half">
+                        <h1 id="title">Fixed Header</h1>
+                        <p>There are two header positioning options available to choose from. The default is a header that scrolls with the page as in previous templates. The new opion is a fixed position header that remains fixed to the top of the page at all times. An added feature of this option is that as the page is scrolled down the header becomes more compact to provide more real estate for the content area.</p>
+                        <p>To use the fixed header option add the <code>.fixed</code> class to the header div tag on your page.</p>
+                    </div>
+
+                    <div class="half p-t-lg m-t-lg">
 <pre>
 &lt;header role=&quot;banner&quot; id=&quot;header&quot; class=&quot;global-header <strong>fixed</strong>&quot;&gt;
 ...
 &lt;/header&gt;
 </pre>
-                    <p><span class="label label-info">NOTE:</span> The <code>.fixed</code> class may affect how some body elements  render on your page in relation to the top of page positioning. Please test accordingly.                </p>
-                    
-				</div>
-          <div class="p-l-sm">
-           <h2>Demonstration </h2>
-            <p>Toggle the button to add or remove the ask buttons below the featured search bar.</p>
-          
-            <button class="toggleHeader btn btn-secondary m-r-sm m-b-sm">Remove Fixed Header</button>
-            <p>&nbsp;</p>
-				</div>
-           <div class="clearfix"></div>
-           <hr>
-            </div>
-            <!--#include virtual="/sample/modules/headers.html" -->
-        </main>
+                        <p><span class="label label-info">NOTE:</span> The <code>.fixed</code> class may affect how some body elements  render on your page in relation to the top of page positioning. Please test accordingly.                </p>
+
+                    </div>
+                    <div class="p-l-sm">
+                        <h2>Demonstration </h2>
+                        <p>Toggle the button to add or remove the ask buttons below the featured search bar.</p>
+
+                        <button class="toggleHeader btn btn-secondary m-r-sm m-b-sm">Remove Fixed Header</button>
+                        <p>&nbsp;</p>
+                    </div>
+                    <div class="clearfix"></div>
+                    <hr>
+                </div>
+                <!--#include virtual="/sample/modules/headers.html" -->
+            </main>
+        </div>
     </div>
-</div>
 
-<!--#include virtual="/ssi/global-footer.html" -->
+    <!--#include virtual="/ssi/global-footer.html" -->
+    <!--#include virtual="/ssi/scripts.html" -->
 
-<!--#include virtual="/ssi/scripts.html" -->
+    <script>
+        // -- DEMONSTRATION ONLY! -- //
+        $(document).ready(function () {
 
-<script>
-// -- DEMONSTRATION ONLY! -- //
-$(document).ready(function(){ 
+            // Toggle .fixed header class
+            $(".toggleHeader").click(function () {
+                var btnLabel = $(this);
+                // Toggle body class and button text when clicked
+                if ($(this).html() == 'Add Fixed Header') {
+                    btnLabel.html('Remove Fixed Header');
+                    window.scrollTo(0, 0);
+                    location.reload();
 
-    // Toggle .fixed header class
-    $(".toggleHeader").click(function() {
-        var btnLabel = $(this);
-        // Toggle body class and button text when clicked
-        if ($(this).html() == 'Add Fixed Header') {
-            btnLabel.html('Remove Fixed Header');
-			window.scrollTo(0, 0);
-			location.reload();
-			
-        } else {
-            btnLabel.html('Add Fixed Header');
-      		$("#header").removeClass("fixed");
-			$("#main-content").css("padding-top", "0");
-			$("#title").text("Fixed Header (Removed)");
-			window.scrollTo(0, 0);
-		
-        }
-    });
-});
-</script>
+                } else {
+                    btnLabel.html('Add Fixed Header');
+                    $("#header").removeClass("fixed");
+                    $("#main-content").css("padding-top", "0");
+                    $("#title").text("Fixed Header (Removed)");
+                    window.scrollTo(0, 0);
+
+                }
+            });
+        });
+    </script>
 
 </body>
 </html>
