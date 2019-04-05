@@ -1,5 +1,5 @@
 /**
- * CA State Template v5 -  @version v5.0.5 -  4/4/2019 
+ * CA State Template v5 -  @version v5.0.5 -  4/5/2019 
   STYLES COMPILED FROM SOURCE (source/js) DO NOT MODIFY */
 /*! modernizr (Custom Build) | MIT *
  * https://modernizr.com/download/?-flexbox-setclasses !*/
@@ -16076,6 +16076,15 @@ $("nav:first").accessibleMenu({
     /* css class for the open state */
     openClass: "open"
 });
+
+
+/* Mobile Controls fix */
+$(document).ready(function () {
+    $("#navigation .mobile-controls").removeClass("nav-menu");
+    $("#navigation .mobile-control a").removeAttr("aria-hidden aria-expanded role id").removeClass("sub-nav with-few-items subnav-closed");
+    $("#navigation .mobile-control .sr-only").removeAttr("aria-hidden aria-expanded role id").removeClass("sub-nav with-few-items subnav-closed");
+});
+
 
 /* -----------------------------------------
    ACCORDION LIST - /source/js/cagov/accordion.js
