@@ -1,5 +1,5 @@
 /**
- * CA State Template v5 -  @version v5.0.5 -  4/5/2019 
+ * CA State Template v5 -  @version v5.0.5 -  4/8/2019 
   STYLES COMPILED FROM SOURCE (source/js) DO NOT MODIFY */
 /*! modernizr (Custom Build) | MIT *
  * https://modernizr.com/download/?-flexbox-setclasses !*/
@@ -17107,7 +17107,8 @@ $(document).ready(function () {
                 $this.trigger('stop.owl.autoplay'); });
                 
                 // Number the items in .banner-pager 
-                var dots = $('.banner-pager .banner-control'); dots.each(function(){
+                var dots = $('.banner-pager .banner-control');
+                dots.each(function () {
                 $(this).find('span').append($(this).index() + 1); });
             });
         }
@@ -17162,7 +17163,7 @@ $(document).ready(function () {
                 }
             },
             navText: [
-                '<span class="ca-gov-icon-arrow-prev" aria-hidden="true"></span>', '<span class="ca-gov-icon-arrow-next" aria-hidden="true"></span>'
+                '<span class="ca-gov-icon-arrow-prev" aria-hidden="true"></span></span><span class="sr-only">Previous</span>', '<span class="ca-gov-icon-arrow-next" aria-hidden="true"></span><span class="sr-only">Next</span>'
             ],
             dots: false
         });
@@ -17173,7 +17174,7 @@ $(document).ready(function () {
             autoWidth: true,
             nav: true,
             navText: [
-                '<span class="ca-gov-icon-arrow-prev" aria-hidden="true"></span>', '<span class="ca-gov-icon-arrow-next" aria-hidden="true"></span>'
+                '<span class="ca-gov-icon-arrow-prev" aria-hidden="true"></span></span><span class="sr-only">Previous</span>', '<span class="ca-gov-icon-arrow-next" aria-hidden="true"></span><span class="sr-only">Next</span>'
             ],
             dots: false
         });
@@ -17183,7 +17184,7 @@ $(document).ready(function () {
             items: 1,
             nav: true,
             navText: [
-                '<span class="ca-gov-icon-arrow-prev" aria-hidden="true"></span>', '<span class="ca-gov-icon-arrow-next" aria-hidden="true"></span>'
+                '<span class="ca-gov-icon-arrow-prev" aria-hidden="true"></span></span><span class="sr-only">Previous</span>', '<span class="ca-gov-icon-arrow-next" aria-hidden="true"></span><span class="sr-only">Next</span>'
             ],
             dots: false
         });
@@ -17193,7 +17194,7 @@ $(document).ready(function () {
             items: 1,
             nav: true,
             navText: [
-                '<span class="ca-gov-icon-arrow-prev" aria-hidden="true"></span>', '<span class="ca-gov-icon-arrow-next" aria-hidden="true"></span>'
+                '<span class="ca-gov-icon-arrow-prev" aria-hidden="true"></span></span><span class="sr-only">Previous</span>', '<span class="ca-gov-icon-arrow-next" aria-hidden="true"></span><span class="sr-only">Next</span>'
             ],
             dots: false
         });
@@ -17210,7 +17211,7 @@ function initContent() {
             loop: true,
             nav: true,
             navText: [
-                '<span class="ca-gov-icon-arrow-prev" aria-hidden="true"></span>', '<span class="ca-gov-icon-arrow-next" aria-hidden="true"></span>'
+                '<span class="ca-gov-icon-arrow-prev" aria-hidden="true"></span></span><span class="sr-only">Previous</span>', '<span class="ca-gov-icon-arrow-next" aria-hidden="true"></span><span class="sr-only">Next</span>'
             ],
             dots: true,
             // all these callbacks are to make sure any js inside carousl items can refresh
@@ -17231,6 +17232,14 @@ function initContent() {
                 }, 0)
             }
         });
+
+        // Add text to the dots 
+        var dot = $('.owl-dots .owl-dot');
+        dot.each(function () {
+            $(this).find('span').html("<span class='sr-only'>Change Slide</span>");
+        });
+
+
         carousel.on('changed.owl.carousel', function (event) {
             setTimeout(function () {
                 carousel.find('.owl-item.active .item video').each(function () {
@@ -17275,7 +17284,7 @@ function initContent() {
                     lazyLoad: false,
                     video: true,
                     navText: [
-                        '<span class="ca-gov-icon-arrow-prev" aria-hidden="true"></span>', '<span class="ca-gov-icon-arrow-next" aria-hidden="true"></span>'
+                        '<span class="ca-gov-icon-arrow-prev" aria-hidden="true"></span></span><span class="sr-only">Previous</span>', '<span class="ca-gov-icon-arrow-next" aria-hidden="true"></span><span class="sr-only">Next</span>'
                     ],
                     dots: false
                 });
@@ -17305,34 +17314,35 @@ function initContent() {
 
                 // create the sub menu for the videos
                 var items = carousel.find('a.owl-video');
-                items.each(function (index) {
-                    // get this slide and its video url
-                    var oldItem = $(this);
-                    var href = oldItem.attr('href');
+            items.each(function (index) {
+                // get this slide and its video url
+                var oldItem = $(this);
+                var href = oldItem.attr('href');
+                var theHTML = oldItem.find('span'); // Getting title span
+                // attach the triggers for each thumbnail
+                var item = $('<div/>').addClass('item-thumbnail');
+                item.on('click', function () {
+                    //  force the main carousel to jump to the requested video
+                    carousel.trigger('to.owl.carousel', [
+                        index % length,
+                        300,
+                        true
+                    ]);
 
-                    // attach the triggers for each thumbnail
-                    var item = $('<div/>').addClass('item-thumbnail');
-                    item.on('click', function () {
-                        //  force the main carousel to jump to the requested video
-                        carousel.trigger('to.owl.carousel', [
-                            index  % length,
-                            300,
-                            true
-                        ]);
+                    submenu.find('.watching').removeClass('watching');
+                    $(this).parents('.owl-item').addClass('watching');
 
-                        submenu.find('.watching').removeClass('watching');
-                        $(this).parents('.owl-item').addClass('watching');
+                    //  start playing immediately
+                    carousel.find(".active .owl-video-play-icon").trigger("click");
+                });
 
-                        //  start playing immediately
-                        carousel.find(".active .owl-video-play-icon").trigger("click");
-                    });
+                // thumbnail related
+                var regex = new RegExp('ab+c', 'i');
+                var youtubeID = href.split(/\?v=|\/v\//).pop();
+                var youtubeThumb = 'url(http://img.youtube.com/vi/' + youtubeID + '/0.jpg )';
+                // var youtubeThumb = 'http://img.youtube.com/vi/' + youtubeID + '/0.jpg ';
+                var thumbnail = $('<button />').css('background-image', youtubeThumb).addClass("videoThumb").append(theHTML); // Adding title span to the thumbnail
 
-                    // thumbnail related
-                    var regex = new RegExp('ab+c', 'i');
-                    var youtubeID = href.split(/\?v=|\/v\//).pop();
-                    var youtubeThumb = 'url(http://img.youtube.com/vi/' + youtubeID + '/0.jpg )';
-                    // var youtubeThumb = 'http://img.youtube.com/vi/' + youtubeID + '/0.jpg ';
-                    var thumbnail = $('<button />').css('background-image', youtubeThumb).addClass("videoThumb");
                     // var thumbnail = $('<img />').attr('src', youtubeThumb);
 
                     // overlay related
@@ -17357,7 +17367,7 @@ function initContent() {
                     nav: true,
                     margin: 20,
                     dots: false,
-                    navText: ['<span class="ca-gov-icon-arrow-prev" aria-hidden="true"></span>', '<span class="ca-gov-icon-arrow-next" aria-hidden="true"></span>']
+                    navText: ['<span class="ca-gov-icon-arrow-prev" aria-hidden="true"></span><span class="sr-only">Previous</span>', '<span class="ca-gov-icon-arrow-next" aria-hidden="true"></span><span class="sr-only">Next</span>']
                 });
 
 
