@@ -19143,7 +19143,7 @@ fieldset[disabled] .btn-more {
 
 .service-tile-panel {
   /*Selectivly show when requested by user*/
-  visibility: collapse;
+  visibility: hidden;
   position: absolute;
 }
 
@@ -19198,6 +19198,10 @@ fieldset[disabled] .btn-more {
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+}
+
+.service-tile:focus {
+  outline: solid 2px #2ea3f2;
 }
 
 @media (min-width: 450px) {

@@ -21,7 +21,7 @@
 
 .service-tile-panel {
   /*Selectivly show when requested by user*/
-  visibility: collapse;
+  visibility: hidden; // changed from "collapse" to fix siteimprove checker accessibility errors 
   position: absolute;
 
     // Not sure if this can be a generic class for all of the large close buttons.
@@ -53,6 +53,9 @@
 // TODO: Clean this up in accordance with SymSoft's guidelines
 
 .service-tile {
+    &:focus {
+        outline: solid 2px #2ea3f2; // added focus indication for accessibility
+    }
     // create our columns for all screen sizes
     @include make-xs-column(12,0);
     /* Need to keep the two column longer than bootstrap has .make-*-column for */
