@@ -3,197 +3,190 @@
 <!--[if IE 7]>    <html class="no-js ie7 oldie" lang="en"> <![endif]-->
 <!--[if IE 8]>    <html class="no-js ie8 oldie" lang="en"> <![endif]-->
 <!--[if IE 9]>    <html class="no-js ie9 oldie" lang="en"> <![endif]-->
-<!--[if (gt IE 9)]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+<!--[if (gt IE 9)]><!-->
+<html class="no-js" lang="en">
+ <!--<![endif]-->
 <head>
-<!--
-California State Template
-Version 5.5.2
- 
-Based on Twitter Bootstrap
--->
-<meta charset="utf-8">
+    <!--
+    California State Template
+    Version 5.5.2
 
-<title>Sample - Cards</title>
+    Based on Twitter Bootstrap
+    -->
+    <meta charset="utf-8">
 
-<meta name="Author" content="State of California" />
-<meta name="Description" content="State of California" />
-<meta name="Keywords" content="California, government" />
+    <title>Sample - Cards</title>
 
-<!--#include virtual="/ssi/head-css-js.html" -->
+    <meta name="Author" content="State of California" />
+    <meta name="Description" content="State of California" />
+    <meta name="Keywords" content="California, government" />
+
+    <!--#include virtual="/ssi/head-css-js.html" -->
 
 </head>
 
 <body>
 
-<header role="banner" id="header" class="global-header">
-	<div id="skip-to-content"><a href="#main-content">Skip to Main Content</a></div>
-        
+    <header role="banner" id="header" class="global-header">
+        <div id="skip-to-content"><a href="#main-content">Skip to Main Content</a></div>
+
         <!-- Include Utility Header -->
-		<!--#include virtual="/ssi/utility-header.html" -->	
-        
-        <!-- Settings Bar -->	
-		<!--#include virtual="/ssi/settings-bar.html" -->
+        <!--#include virtual="/ssi/utility-header.html" -->
+        <!-- Settings Bar -->
+        <!--#include virtual="/ssi/settings-bar.html" -->
+        <!-- Include Branding -->
+        <!--#include virtual="/ssi/branding.html" -->
+        <!-- Include Mobile Controls -->
+        <!--#include virtual="/ssi/mobile-controls.html" -->
 
-		<!-- Include Branding -->
-		<!--#include virtual="/ssi/branding.html" -->
-    
-    <!-- Include Mobile Controls -->
-    <!--#include virtual="/ssi/mobile-controls.html" -->
-    
-    <div class="navigation-search">
-        <!-- Include Navigation -->
-        <!--#include virtual="/ssi/navigation.html" -->
+        <div class="navigation-search">
+            <!-- Include Navigation -->
+            <!--#include virtual="/ssi/navigation.html" -->
 
-        <div id="head-search" class="search-container">
-            <!-- Include Search -->
-            <!--#include virtual="/ssi/search.html" -->
+            <div id="head-search" class="search-container">
+                <!-- Include Search -->
+                <!--#include virtual="/ssi/search.html" -->
+            </div>
+
         </div>
 
-    </div>
-    
-	<div class="header-decoration"></div>
-</header>
+        <div class="header-decoration"></div>
+    </header>
 
-<div id="main-content" class="main-content">
-    <div class="section">
-        <main class="main-primary">            
-            <ol class="breadcrumb">
-                <li><a href="../index.html" title="Home page">Home</a></li>
-                <li><a href="index.html" title="Examples landing page">Examples</a></li>
-                <li class="active">Cards</li>
-            </ol>
-            <div class="group">
-                <div class="three-quarters">
-                     <h1>Cards</h1>
-                     <p>A card is a flexible and extensible content container. It includes options for headers and footers, a wide variety of content, contextual background colors, and powerful display options.</p>
-                     <p>Cards require a small amount of markup and classes to provide you with as much control as possible. These classes and markup are flexible though and can typically be remixed and extended with ease. For example, if your card has no flush content like images, feel free to put the <code>.card-block</code> class on the <code>.card element</code> to consolidate your markup.</p>
-                     <h3>Example:</h3>
-                     <!--#include virtual="/sample/modules/cards.html" -->
-
-                    <!-- Trigger the modal with a button -->
-                    <button type="button" class="btn btn-default btn-sm m-t" data-toggle="modal" data-target="#cards">Show Source Code</button>
-                    <!-- Modal -->
-                    <div class="modal fade" id="cards" role="dialog">
-                        <div class="modal-dialog modal-lg">
-                            <div class="modal-content">
-                                <div class="modal-header">
-                                    <h4 class="modal-title">HTML Markup</h4>
-                                    <button type="button" class="close" data-dismiss="modal">&times;</button>
-                                </div>
-                                <div class="modal-body">
-                                    <label for="sample-news-blocks">Source Code:</label>
-                                    <pre><code class="overflow-auto"><!--#include virtual="/sample/modules/cards.html" --></code></pre>
-                                </div>
-                                <div class="modal-footer">
-                                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+    <div id="main-content" class="main-content">
+        <div class="section">
+            <main class="main-primary">
+                <ol class="breadcrumb">
+                    <li><a href="../index.html" title="Home page">Home</a></li>
+                    <li><a href="index.html" title="Examples landing page">Examples</a></li>
+                    <li class="active">Cards</li>
+                </ol>
+                <div class="group">
+                    <div class="three-quarters">
+                        <h1>Cards</h1>
+                        <p>A card is a flexible and extensible content container. It includes options for headers and footers, a wide variety of content, contextual background colors, and powerful display options.</p>
+                        <p>Cards require a small amount of markup and classes to provide you with as much control as possible. These classes and markup are flexible though and can typically be remixed and extended with ease. For example, if your card has no flush content like images, feel free to put the <code>.card-block</code> class on the <code>.card element</code> to consolidate your markup.</p>
+                        <h3>Example:</h3>
+                        <!--#include virtual="/sample/modules/cards.html" -->
+                        <!-- Trigger the modal with a button -->
+                        <button type="button" class="btn btn-default btn-sm m-t" data-toggle="modal" data-target="#cards">Show Source Code</button>
+                        <!-- Modal -->
+                        <div class="modal fade" id="cards" role="dialog">
+                            <div class="modal-dialog modal-lg">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h4 class="modal-title">HTML Markup</h4>
+                                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <h4>Source Code:</h4>
+                                        <pre><code class="overflow-auto"><!--#include virtual="/sample/modules/cards.html" --></code></pre>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                    </div><!-- / End Modal -->
+                        </div><!-- / End Modal -->
 
-                </div>
-                 <div class="quarter">
-                     <h2>Card with an Image</h2>
-                     <p><code>.card-img-top</code> places an image to the top of the card.</p>
-                     <!--#include virtual="/sample/modules/card-image.html" -->
+                    </div>
+                    <div class="quarter">
+                        <h2>Card with an Image</h2>
+                        <p><code>.card-img-top</code> places an image to the top of the card.</p>
+                        <!--#include virtual="/sample/modules/card-image.html" -->
+                        <!-- Trigger the modal with a button -->
+                        <button type="button" class="btn btn-default btn-sm m-t" data-toggle="modal" data-target="#card-image">Show Source Code</button>
+                        <div class="modal fade" id="card-image" role="dialog">
+                            <div class="modal-dialog modal-lg">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h4 class="modal-title">HTML Markup</h4>
+                                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <h4>Source Code:</h4>
+                                        <pre><code class="overflow-auto"><!--#include virtual="/sample/modules/card-image.html" --></code></pre>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div><!-- / End Modal -->
 
-                     <!-- Trigger the modal with a button -->
-                     <button type="button" class="btn btn-default btn-sm m-t" data-toggle="modal" data-target="#card-image">Show Source Code</button>
-                     <div class="modal fade" id="card-image" role="dialog">
-                         <div class="modal-dialog modal-lg">
-                             <div class="modal-content">
-                                 <div class="modal-header">
-                                     <h4 class="modal-title">HTML Markup</h4>
-                                     <button type="button" class="close" data-dismiss="modal">&times;</button>
-                                 </div>
-                                 <div class="modal-body">
-                                     <label for="sample-news-blocks">Source Code:</label>
-                                     <pre><code class="overflow-auto"><!--#include virtual="/sample/modules/card-image.html" --></code></pre>
-                                 </div>
-                                 <div class="modal-footer">
-                                     <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                                 </div>
-                             </div>
-                         </div>
-                     </div><!-- / End Modal -->
-
-                    <hr />
-                     <h2>Card Variations:</h2>
-                     <p>As with most components, cards can be extended to display with a different style. Apply one of the following supported class names to the <code>.card</code> div:</p>
-                     <ul>
-                         <li><code>.card-default</code></li>
-                         <li><code>.card-understated</code></li>
-                         <li><code>.card-overstated</code></li>
-                         <li><code>.card-standout</code></li>
-                         <li><code>.card-primary</code></li>
-                         <li><code>.card-danger</code></li>
-                         <li><code>.card-inverted</code></li>
-                     </ul>
-                </div> 
-            </div>
-            
-            <hr>
-            
-            <h2>Card decks</h2>
-            <p>Need a set of equal width and height cards that aren’t attached to one another? Use card decks.</p>
-
-            <!--#include virtual="/sample/modules/card-deck.html" -->
-
-
-            <!-- Trigger the modal with a button -->
-            <button type="button" class="btn btn-default btn-sm m-t" data-toggle="modal" data-target="#card-deck">Show Source Code</button>
-            <div class="modal fade" id="card-deck" role="dialog">
-                <div class="modal-dialog modal-lg">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h4 class="modal-title">HTML Markup</h4>
-                            <button type="button" class="close" data-dismiss="modal">&times;</button>
-                        </div>
-                        <div class="modal-body">
-                            <label for="sample-news-blocks">Source Code:</label>
-                            <pre><code class="overflow-auto"><!--#include virtual="/sample/modules/card-deck.html" --></code></pre>
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                        </div>
+                        <hr />
+                        <h2>Card Variations:</h2>
+                        <p>As with most components, cards can be extended to display with a different style. Apply one of the following supported class names to the <code>.card</code> div:</p>
+                        <ul>
+                            <li><code>.card-default</code></li>
+                            <li><code>.card-understated</code></li>
+                            <li><code>.card-overstated</code></li>
+                            <li><code>.card-standout</code></li>
+                            <li><code>.card-primary</code></li>
+                            <li><code>.card-danger</code></li>
+                            <li><code>.card-inverted</code></li>
+                        </ul>
                     </div>
                 </div>
-            </div><!-- / End Modal -->
-           
-            <hr />
-            <h2>Card with Photos</h2>
-            <p>Cards can be extended to include an optional photo background on the left or right. Add a <code>.photo-right</code> or <code>.photo-left</code> class to the <code>.card</code> div.</p>
-            <p class="m-b-md">Before the closing .card-body div, add a new div with a class of <code>.photo</code> and also an inline style with a link to your background-image. e.g. <code>style="background-image: url('/path/to/photo.jpg');"</code> Alternatively, webmasters can move this inline style to their own custom stylesheet if that is more preferable.</p>
 
-            <!--#include virtual="/sample/modules/card-photo.html" -->
+                <hr>
 
-            <!-- Trigger the modal with a button -->
-            <button type="button" class="btn btn-default btn-sm m-t" data-toggle="modal" data-target="#card-photo">Show Source Code</button>
-            <div class="modal fade" id="card-photo" role="dialog">
-                <div class="modal-dialog modal-lg">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h4 class="modal-title">HTML Markup</h4>
-                            <button type="button" class="close" data-dismiss="modal">&times;</button>
-                        </div>
-                        <div class="modal-body">
-                            <label for="sample-news-blocks">Source Code:</label>
-                            <pre><code class="overflow-auto"><!--#include virtual="/sample/modules/card-photo.html" --></code></pre>
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                <h2>Card decks</h2>
+                <p>Need a set of equal width and height cards that aren’t attached to one another? Use card decks.</p>
+
+                <!--#include virtual="/sample/modules/card-deck.html" -->
+                <!-- Trigger the modal with a button -->
+                <button type="button" class="btn btn-default btn-sm m-t" data-toggle="modal" data-target="#card-deck">Show Source Code</button>
+                <div class="modal fade" id="card-deck" role="dialog">
+                    <div class="modal-dialog modal-lg">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h4 class="modal-title">HTML Markup</h4>
+                                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                            </div>
+                            <div class="modal-body">
+                                <h4>Source Code:</h4>
+                                <pre><code class="overflow-auto"><!--#include virtual="/sample/modules/card-deck.html" --></code></pre>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                            </div>
                         </div>
                     </div>
-                </div>
-            </div><!-- / End Modal -->
+                </div><!-- / End Modal -->
 
-        </main>
+                <hr />
+                <h2>Card with Photos</h2>
+                <p>Cards can be extended to include an optional photo background on the left or right. Add a <code>.photo-right</code> or <code>.photo-left</code> class to the <code>.card</code> div.</p>
+                <p class="m-b-md">Before the closing .card-body div, add a new div with a class of <code>.photo</code> and also an inline style with a link to your background-image. e.g. <code>style="background-image: url('/path/to/photo.jpg');"</code> Alternatively, webmasters can move this inline style to their own custom stylesheet if that is more preferable.</p>
+
+                <!--#include virtual="/sample/modules/card-photo.html" -->
+                <!-- Trigger the modal with a button -->
+                <button type="button" class="btn btn-default btn-sm m-t" data-toggle="modal" data-target="#card-photo">Show Source Code</button>
+                <div class="modal fade" id="card-photo" role="dialog">
+                    <div class="modal-dialog modal-lg">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h4 class="modal-title">HTML Markup</h4>
+                                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                            </div>
+                            <div class="modal-body">
+                                <h4>Source Code:</h4>
+                                <pre><code class="overflow-auto"><!--#include virtual="/sample/modules/card-photo.html" --></code></pre>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                            </div>
+                        </div>
+                    </div>
+                </div><!-- / End Modal -->
+
+            </main>
+        </div>
     </div>
-</div>
 
-<!--#include virtual="/ssi/global-footer.html" -->
-
-<!--#include virtual="/ssi/scripts.html" -->
+    <!--#include virtual="/ssi/global-footer.html" -->
+    <!--#include virtual="/ssi/scripts.html" -->
 
 </body>
 </html>
