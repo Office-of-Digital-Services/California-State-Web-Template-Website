@@ -3,95 +3,93 @@
 <!--[if IE 7]>    <html class="no-js ie7 oldie" lang="en"> <![endif]-->
 <!--[if IE 8]>    <html class="no-js ie8 oldie" lang="en"> <![endif]-->
 <!--[if IE 9]>    <html class="no-js ie9 oldie" lang="en"> <![endif]-->
-<!--[if (gt IE 9)]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+<!--[if (gt IE 9)]><!-->
+<html class="no-js" lang="en">
+ <!--<![endif]-->
 <head>
-<!--
-California State Template
-Version 5.5.2
- 
-Based on Twitter Bootstrap
--->
-<meta charset="utf-8">
+    <!--
+    California State Template
+    Version 5.5.2
 
-<title>Sample - Blockquotes</title>
+    Based on Twitter Bootstrap
+    -->
+    <meta charset="utf-8">
 
-<meta name="Author" content="State of California" />
-<meta name="Description" content="State of California" />
-<meta name="Keywords" content="California, government" />
+    <title>Sample - Blockquotes</title>
 
-<!--#include virtual="/ssi/head-css-js.html" -->
+    <meta name="Author" content="State of California" />
+    <meta name="Description" content="State of California" />
+    <meta name="Keywords" content="California, government" />
+
+    <!--#include virtual="/ssi/head-css-js.html" -->
 
 </head>
 
 <body>
 
-<header role="banner" id="header" class="global-header">
-	<div id="skip-to-content"><a href="#main-content">Skip to Main Content</a></div>
-        
+    <header role="banner" id="header" class="global-header">
+        <div id="skip-to-content"><a href="#main-content">Skip to Main Content</a></div>
+
         <!-- Include Utility Header -->
-		<!--#include virtual="/ssi/utility-header.html" -->	
-        
-        <!-- Settings Bar -->	
-		<!--#include virtual="/ssi/settings-bar.html" -->
+        <!--#include virtual="/ssi/utility-header.html" -->
+        <!-- Settings Bar -->
+        <!--#include virtual="/ssi/settings-bar.html" -->
+        <!-- Include Branding -->
+        <!--#include virtual="/ssi/branding.html" -->
+        <!-- Include Mobile Controls -->
+        <!--#include virtual="/ssi/mobile-controls.html" -->
 
-		<!-- Include Branding -->
-		<!--#include virtual="/ssi/branding.html" -->
-    
-    <!-- Include Mobile Controls -->
-    <!--#include virtual="/ssi/mobile-controls.html" -->
-    
-    <div class="navigation-search">
-        <!-- Include Navigation -->
-        <!--#include virtual="/ssi/navigation.html" -->
+        <div class="navigation-search">
+            <!-- Include Navigation -->
+            <!--#include virtual="/ssi/navigation.html" -->
 
-        <div id="head-search" class="search-container">
-            <!-- Include Search -->
-            <!--#include virtual="/ssi/search.html" -->
+            <div id="head-search" class="search-container">
+                <!-- Include Search -->
+                <!--#include virtual="/ssi/search.html" -->
+            </div>
+
         </div>
 
-    </div>
-    
-	<div class="header-decoration"></div>
-</header>
+        <div class="header-decoration"></div>
+    </header>
 
 
-<div id="main-content" class="main-content">
-    <div class="section">
-        <main class="main-primary">           
-            <ol class="breadcrumb">
-                <li><a href="../index.html" title="Home page">Home</a></li>
-                <li><a href="index.html" title="Examples landing page">Examples</a></li>
-                <li class="active">Blockquotes</li>
-            </ol>
+    <div id="main-content" class="main-content">
+        <div class="section">
+            <main class="main-primary">
+                <ol class="breadcrumb">
+                    <li><a href="../index.html" title="Home page">Home</a></li>
+                    <li><a href="index.html" title="Examples landing page">Examples</a></li>
+                    <li class="active">Blockquotes</li>
+                </ol>
 
-            <div class="group">
-                <div class="half">
-                    <h1>Blockquotes</h1>
-                    <p>For quoting blocks of content from another source within your document.</p>
-                    <p>Wrap <code>&lt;blockquote&gt;</code> around any HTML as the quote. For straight quotes, we recommend a <code>&lt;p&gt;</code>.</p>
-                    
-                    <h2>Example:</h2>
-                    <!--#include virtual="/sample/modules/blockquote.html" -->
-                    
-                    <b>Naming a source</b>
-                    <p>Add a <code>&lt;footer&gt;</code> for identifying the source. Wrap the name of the source work in <code>&lt;cite&gt;</code>.</p>
-                    
-                    <b>Alternate displays</b>
-                    <p>Add <code>.blockquote-reverse</code> for a blockquote with right-aligned content.</p>
+                <div class="group">
+                    <div class="half">
+                        <h1>Blockquotes</h1>
+                        <p>For quoting blocks of content from another source within your document.</p>
+                        <p>Wrap <code>&lt;blockquote&gt;</code> around any HTML as the quote. For straight quotes, we recommend a <code>&lt;p&gt;</code>.</p>
+
+                        <h2>Example:</h2>
+                        <!--#include virtual="/sample/modules/blockquote.html" -->
+
+                        <h3>Naming a source</h3>
+                        <p>Add a <code>&lt;footer&gt;</code> for identifying the source. Wrap the name of the source work in <code>&lt;cite&gt;</code>.</p>
+
+                        <h3>Alternate displays</h3>
+                        <p>Add <code>.blockquote-reverse</code> for a blockquote with right-aligned content.</p>
+                    </div>
+                    <div class="half">
+                        <h2>Source Code:</h2>
+                        <pre><code class="overflow-auto"><!--#include virtual="/sample/modules/blockquote.html" --></code></pre>
+                    </div>
                 </div>
-                <div class="half">
-                    <h2><label for="sample-accordion">Source Code:</label></h2>
-                    <pre><code class="overflow-auto"><!--#include virtual="/sample/modules/blockquote.html" --></code></pre>
-                </div> 
-            </div>
-        </main>
+            </main>
+        </div>
     </div>
-</div>
 
 
-<!--#include virtual="/ssi/global-footer.html" -->
-
-<!--#include virtual="/ssi/scripts.html" -->
+    <!--#include virtual="/ssi/global-footer.html" -->
+    <!--#include virtual="/ssi/scripts.html" -->
 
 </body>
 </html>
