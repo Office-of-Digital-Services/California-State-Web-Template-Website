@@ -1,5 +1,5 @@
 /**
- * CA State Template v5.5 -  @version v5.5.2 -  4/10/2019 
+ * CA State Template v5.5 -  @version v5.5.2 -  4/11/2019 
   STYLES COMPILED FROM SOURCE (source/js) DO NOT MODIFY */
 /*! modernizr (Custom Build) | MIT *
  * https://modernizr.com/download/?-flexbox-setclasses !*/
@@ -15928,7 +15928,7 @@ tabpanel.prototype.switchTabs = function ($curTab, $newTab) {
     $curTab.removeClass('selected focus');
 
     // remove tab from the tab order and update its aria-selected attribute 
-    $curTab.attr('tabindex', '-1').attr('aria-selected', 'false');
+    $curTab.attr('aria-selected', 'false');
 
 
     // Highlight the new tab and update its aria-selected attribute 
@@ -16041,7 +16041,7 @@ tabpanel.prototype.bindHandlers = function () {
     });
 
     // bind a keypress handler for the panel 
-    this.$panels.on("keypress",function (e) {
+    this.$panels.on("keypress", function (e) {
         return thisObj.handlePanelKeyPress($(this), e);
     });
 
@@ -16223,7 +16223,7 @@ tabpanel.prototype.handleTabClick = function ($tab, e) {
     $tab.attr('tabindex', '0').attr('aria-selected', 'true').addClass('selected');
 
     // remove all tabs from the tab order and update their aria-selected attribute 
-    this.$tabs.not($tab).attr('tabindex', '-1').attr('aria-selected', 'false').removeClass('selected');
+    this.$tabs.not($tab).attr('aria-selected', 'false').removeClass('selected');
 
     // Expand the new panel 
     this.togglePanel($tab);
@@ -16511,7 +16511,7 @@ tabpanel.prototype.handlePanelClick = function ($panel, e) {
     $tab.attr('tabindex', '0').attr('aria-selected', 'true').addClass('selected');
 
     // remove all tabs from the tab order and update their aria-selected attribute 
-    this.$tabs.not($tab).attr('tabindex', '-1').attr('aria-selected', 'false').removeClass('selected');
+    this.$tabs.not($tab).attr('aria-selected', 'false').removeClass('selected');
 
     return true;
 
@@ -16558,31 +16558,6 @@ $(document).ready(function () {
     var accordion = $('.accordion').find('.collapsed');
     accordion.attr("tabindex", 0); // make accordion tabable for accessibility
 });
-
-/* -----------------------------------------
-   Tabs -- some fixing to bootstap 3 tabs 
-   and backward compatibility
------------------------------------------ */
-$(document).ready(function () {
-            // adding active class to a tag if aria selected is true 
-            var activeTab = $(".nav-tabs > li > a[aria-selected='true']");
-            activeTab.addClass("active");
-
-            // Just to change class active in the parent li element (backward compatibility)
-            $(".nav-tabs > li > a").on("click", function () {
-                if ($(this).attr('aria-selected') == "false") {
-                    $(".nav-tabs > li").removeClass("active");
-                    $(this).parent("li").addClass("active");
-                }
-                else {
-                    $(".nav-tabs > li").removeClass("active");
-                    $(this).parent("li").addClass("active");
-                }
-            });
-
-
-        });
-
 
 
 /* -----------------------------------------
@@ -17992,3 +17967,31 @@ window.onload = function init() {
         }
     }
 }
+/* -----------------------------------------
+   Tabs -- some fixing to bootstap 3 tabs 
+   and backward compatibility
+----------------------------------------- */
+$(document).ready(function () {
+    // adding active class to a tag if aria selected is true 
+    var activeTab = $(".nav-tabs > li > a[aria-selected='true']");
+    activeTab.addClass("active");
+
+    // Just to change class active in the parent li element (backward compatibility)
+    $(".nav-tabs > li > a").on("click", function () {
+        if ($(this).attr('aria-selected') == "false") {
+            $(".nav-tabs > li").removeClass("active");
+            $(this).parent("li").addClass("active");
+        }
+        else {
+            $(".nav-tabs > li").removeClass("active");
+            $(this).parent("li").addClass("active");
+        }
+    });
+
+
+    /* Tabblale tabs */
+    var tabs = $('ul.nav-tabs').find('.nav-link');
+    tabs.attr("tabindex", 0); // make accordion tabable
+
+
+});
