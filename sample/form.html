@@ -1,154 +1,160 @@
 ﻿<!doctype html>
 
-<!-- 
+<!--
 State of California 2014 master template
 Version 2014.xx.xx
 
 Based on Twitter Bootstrap
 -->
-
 <!--[if lt IE 7]> <html class="no-js ie6 oldie" lang="en"> <![endif]-->
 <!--[if IE 7]>    <html class="no-js ie7 oldie" lang="en"> <![endif]-->
 <!--[if IE 8]>    <html class="no-js ie8 oldie" lang="en"> <![endif]-->
 <!--[if IE 9]>    <html class="no-js ie9 oldie" lang="en"> <![endif]-->
-<!--[if (gt IE 9)]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+<!--[if (gt IE 9)]><!-->
+<html class="no-js" lang="en">
+ <!--<![endif]-->
 
 <head>
-<!--
-California State Template
-Version 5.5.2
- 
-Based on Twitter Bootstrap
--->
-<meta charset="utf-8">
+    <!--
+    California State Template
+    Version 5.5.2
 
-<title>Sample - Forms</title>
+    Based on Twitter Bootstrap
+    -->
+    <meta charset="utf-8">
 
-<meta name="Author" content="State of California" />
-<meta name="Description" content="State of California" />
-<meta name="Keywords" content="California, government" />
+    <title>Sample - Forms</title>
 
-<!--#include virtual="/ssi/head-css-js.html" -->
+    <meta name="Author" content="State of California" />
+    <meta name="Description" content="State of California" />
+    <meta name="Keywords" content="California, government" />
+
+    <!--#include virtual="/ssi/head-css-js.html" -->
 
 </head>
 
 <!-- possible body classes are "primary" and "two-column" -->
 <body>
 
-<header role="banner" id="header" class="global-header">
-	<div id="skip-to-content"><a href="#main-content">Skip to Main Content</a></div>
-        
+    <header role="banner" id="header" class="global-header">
+        <div id="skip-to-content"><a href="#main-content">Skip to Main Content</a></div>
+
         <!-- Include Utility Header -->
-		<!--#include virtual="/ssi/utility-header.html" -->	
-        
-        <!-- Settings Bar -->	
-		<!--#include virtual="/ssi/settings-bar.html" -->
+        <!--#include virtual="/ssi/utility-header.html" -->
+        <!-- Settings Bar -->
+        <!--#include virtual="/ssi/settings-bar.html" -->
+        <!-- Include Branding -->
+        <!--#include virtual="/ssi/branding.html" -->
+        <!-- Include Mobile Controls -->
+        <!--#include virtual="/ssi/mobile-controls.html" -->
 
-		<!-- Include Branding -->
-		<!--#include virtual="/ssi/branding.html" -->
-    
-    <!-- Include Mobile Controls -->
-    <!--#include virtual="/ssi/mobile-controls.html" -->
+        <div class="navigation-search">
+            <!-- Include Navigation -->
+            <!--#include virtual="/ssi/navigation.html" -->
 
-    <div class="navigation-search">
-        <!-- Include Navigation -->
-        <!--#include virtual="/ssi/navigation.html" -->
-
-        <div id="head-search" class="search-container">
-            <!-- Include Search -->
-            <!--#include virtual="/ssi/search.html" -->
-        </div>
-
-    </div>
-
-	<div class="header-decoration"></div>
-</header>
-
-
-<div id="main-content" class="main-content">
-    <div class="section">
-        <main class="main-primary">            
-            <ol class="breadcrumb">
-                <li><a href="../index.html" title="Home page">Home</a></li>
-                <li><a href="index.html" title="Examples landing page">Examples</a></li>
-                <li class="active">Forms</li>
-            </ol>
-         
-            <div class="group">
-                <div class="half">
-                    <h1>Forms</h1>
-                    <p>All form controls automatically receive some global styling. Form elements with <code>.form-control</code> are set to <code>width: 100%;</code> by default. Wrap labels and controls in <code>.form-group</code> for optimum spacing.</p>
-                    
-                    <h2>Example:</h2>
-                    <!--#include virtual="/sample/modules/form.html" -->
-                </div>
-                <div class="half">
-                    <h2><label for="sample-form">Source Code:</label></h2>
-                    <pre class="height-300"><code class="overflow-auto"><!--#include virtual="/sample/modules/form.html" --></code></pre>
-                </div> 
+            <div id="head-search" class="search-container">
+                <!-- Include Search -->
+                <!--#include virtual="/ssi/search.html" -->
             </div>
-            
-            <hr>
-            
-            <div class="group">
-                <div class="half">
-                <h2>Sample contact form:</h2>
-                <!--#include virtual="/sample/modules/form-contact.html" -->
+
+        </div>
+
+        <div class="header-decoration"></div>
+    </header>
+
+
+    <div id="main-content" class="main-content">
+        <div class="section">
+            <main class="main-primary">
+                <ol class="breadcrumb">
+                    <li><a href="../index.html" title="Home page">Home</a></li>
+                    <li><a href="index.html" title="Examples landing page">Examples</a></li>
+                    <li class="active">Forms</li>
+                </ol>
+
+                <div class="group">
+                    <div class="half">
+                        <h1>Forms</h1>
+                        <p>All form controls automatically receive some global styling. Form elements with <code>.form-control</code> are set to <code>width: 100%;</code> by default. Wrap labels and controls in <code>.form-group</code> for optimum spacing.</p>
+
+                        <h2>Example:</h2>
+                        <!--#include virtual="/sample/modules/form.html" -->
+                    </div>
+                    <div class="half">
+                        <h2>Source Code:</h2>
+                        <pre class="height-300"><code class="overflow-auto"><!--#include virtual="/sample/modules/form.html" --></code></pre>
+                    </div>
                 </div>
-                <div class="half">
-                    <h2><label for="sample-xxx">Source Code:</label></h2>
-                    <pre class="height-300"><code class="overflow-auto">
+
+                <hr>
+
+                <div class="group">
+                    <div class="half">
+                        <h2>Sample contact form:</h2>
+                        <!--#include virtual="/sample/modules/form-contact.html" -->
+                    </div>
+                    <div class="half">
+                        <h2>Source Code:</h2>
+                        <pre class="height-300"><code class="overflow-auto">
 <form role="form">
-                    <div class="group">
-                    <div class="form-group half">
-                    <label for="exampleInputName" class="form-control-label"><span class="required-label">*</span> Name</label>
-                    <input type="text" class="form-control" id="exampleInputName" placeholder="Name">
+                        <div class="group">
+                        <div class="form-group half">
+                        <label for="exampleInputName" class="form-control-label"><span class="required-label">*</span> Name</label>
+                        <input type="text" class="form-control" id="exampleInputName" placeholder="Name">
+
+
+
+
 
 
 
         </div>
-                    <div class="form-group half">
-                    <label for="exampleInputEmail" class="form-control-label"><span class="required-label">*</span> Email address</label>
-                    <input type="email" class="form-control" id="exampleInputEmail" placeholder="Enter email">
+                        <div class="form-group half">
+                        <label for="exampleInputEmail" class="form-control-label"><span class="required-label">*</span> Email address</label>
+                        <input type="email" class="form-control" id="exampleInputEmail" placeholder="Enter email">
+
+
+
+
 
 
 
         </div>
     </div>
     
-                    <div class="form-group">
-                    <label for="exampleInputComment">Your Message</label>
+                        <div class="form-group">
+                        <label for="exampleInputComment">Your Message</label>
         &lt;textarea id="exampleInputComment" class="form-control" rows="10" cols="80"&gt;&lt;/textarea&gt;
     </div>
-                    <button type="submit" class="btn btn-default">Submit</button>
+                        <button type="submit" class="btn btn-default">Submit</button>
 </form>
                     </code></pre>
+                    </div>
                 </div>
-            </div>
 
 
-            <hr>
+                <hr>
 
-            <div class="group">
-                <div class="half">
-                    <h2>Form states and sizes:</h2>
-                    <!--#include virtual="/sample/modules/form-states.html" -->
+                <div class="group">
+                    <div class="half">
+                        <h2>Form states and sizes:</h2>
+                        <!--#include virtual="/sample/modules/form-states.html" -->
+                    </div>
+                    <div class="half">
+                        <h2>Source Code:</h2>
+                        <pre class="height-300"><code class="overflow-auto"><!--#include virtual="/sample/modules/form-states.html" --></code></pre>
+                    </div>
                 </div>
-                <div class="half">
-                    <h2><label for="sample-form">Source Code:</label></h2>
-                    <pre class="height-300"><code class="overflow-auto"><!--#include virtual="/sample/modules/form-states.html" --></code></pre>
-                </div>
-                </div>
-            <hr />
+                <hr />
                 <div class="group">
                     <div class="half">
 
-                        
+
                         <h2>Custom file input:</h2>
                         <!--#include virtual="/sample/modules/form-file-input.html" -->
                     </div>
                     <div class="half">
-                        <h2><label for="sample-form">Source Code:</label></h2>
+                        <h2>Source Code:</h2>
                         <pre class="height-200"><code class="overflow-auto"><!--#include virtual="/sample/modules/form-file-input.html" --></code></pre>
                     </div>
                 </div>
@@ -165,34 +171,33 @@ Based on Twitter Bootstrap
 
                     </div>
                     <div class="half">
-                        <h2><label for="sample-form">Source Code:</label></h2>
+                        <h2>Source Code:</h2>
                         <pre class="height-300"><code class="overflow-auto"><!--#include virtual="/sample/modules/form-radios.html" -->
 <!--#include virtual="/sample/modules/form-checkboxes.html" -->
                         </code></pre>
                     </div>
                 </div>
 
-            <hr />
+                <hr />
 
-            <div class="group p-b-lg">
-                <div class="half">
-                    <h2>Custom select:</h2>
-                    <!--#include virtual="/sample/modules/form-select.html" -->
-                </div>
-                <div class="half">
-                    <h2><label for="sample-form">Source Code:</label></h2>
-                    <pre class="height-300"><code class="overflow-auto"><!--#include virtual="/sample/modules/form-select.html" --></code></pre>
-                </div>
+                <div class="group p-b-lg">
+                    <div class="half">
+                        <h2>Custom select:</h2>
+                        <!--#include virtual="/sample/modules/form-select.html" -->
+                    </div>
+                    <div class="half">
+                        <h2>Source Code:</h2>
+                        <pre class="height-300"><code class="overflow-auto"><!--#include virtual="/sample/modules/form-select.html" --></code></pre>
+                    </div>
 
-            </div>
-</main>
+                </div>
+            </main>
+        </div>
     </div>
-</div>
 
 
-<!--#include virtual="/ssi/global-footer.html" -->
-
-<!--#include virtual="/ssi/scripts.html" -->
+    <!--#include virtual="/ssi/global-footer.html" -->
+    <!--#include virtual="/ssi/scripts.html" -->
 
 </body>
 </html>
