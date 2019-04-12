@@ -1,5 +1,5 @@
 /**
- * CA State Template v5.5 -  @version v5.5.2 -  4/11/2019 
+ * CA State Template v5.5 -  @version v5.5.2 -  4/12/2019 
   STYLES COMPILED FROM SOURCE (source/js) DO NOT MODIFY */
 /*! modernizr (Custom Build) | MIT *
  * https://modernizr.com/download/?-flexbox-setclasses !*/
@@ -16557,6 +16557,12 @@ $.extend($.expr.pseudos, {
 $(document).ready(function () {
     var accordion = $('.accordion').find('.collapsed');
     accordion.attr("tabindex", 0); // make accordion tabable for accessibility
+});
+
+/* Remove aria controls from a links */
+$(document).ready(function () {
+    var alink = $(".card").find("a[role='tab']");
+    alink.removeAttr("aria-controls");
 });
 
 
