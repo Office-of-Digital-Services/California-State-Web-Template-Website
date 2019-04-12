@@ -30,35 +30,32 @@ Based on Twitter Bootstrap
 
 <body>
 
-  <header role="banner" id="header" class="global-header fixed">
-    <div id="skip-to-content"><a href="#main-content">Skip to Main Content</a></div>
+    <header role="banner" id="header" class="global-header fixed">
+        <div id="skip-to-content"><a href="#main-content">Skip to Main Content</a></div>
 
-    <!-- Include Utility Header -->
-    <!--#include virtual="/ssi/utility-header.html" -->
-  
-    <!-- Settings Bar -->
-    <!--#include virtual="/ssi/settings-bar.html" -->
+        <!-- Include Utility Header -->
+        <!--#include virtual="/ssi/utility-header.html" -->
+        <!-- Settings Bar -->
+        <!--#include virtual="/ssi/settings-bar.html" -->
+        <!-- Include Branding -->
+        <!--#include virtual="/ssi/branding.html" -->
+        <!-- Include Mobile Controls -->
+        <!--#include virtual="/ssi/mobile-controls.html" -->
 
-    <!-- Include Branding -->
-    <!--#include virtual="/ssi/branding.html" -->
+        <div class="navigation-search">
+            <!-- Include Navigation -->
+            <!--#include virtual="/ssi/navigation.html" -->
 
-    <!-- Include Mobile Controls -->
-    <!--#include virtual="/ssi/mobile-controls.html" -->
+            <div id="head-search" class="search-container">
+                <!-- Include Search -->
+                <!--#include virtual="/ssi/search.html" -->
+            </div>
 
-      <div class="navigation-search">
-          <!-- Include Navigation -->
-          <!--#include virtual="/ssi/navigation.html" -->
+        </div>
 
-          <div id="head-search" class="search-container">
-              <!-- Include Search -->
-              <!--#include virtual="/ssi/search.html" -->
-          </div>
+        <div class="header-decoration"></div>
 
-      </div>
-
-    <div class="header-decoration"></div>
-
-  </header>
+    </header>
 
 
     <div id="main-content" class="main-content">
@@ -76,7 +73,7 @@ Based on Twitter Bootstrap
                         <div class="three-quarters">
                             <form id="agency_form" class="agency-form">
                                 <div class="textfield-container">
-                                    <label for="search_local_textfield" accesskey="s" class="hidden">Agency Search: </label>
+                                    <label for="search_local_textfield" accesskey="s" class="sr-only">Agency Search: </label>
                                     <input type="text" name="q" id="search_local_textfield" class="search-textfield" size="35" autocomplete="off" value="Search" onfocus="if(this.value=='Search')this.value=''" onblur="if(this.value=='')this.value='Search'" />
                                 </div>
                                 <div class="submit-container">
@@ -88,7 +85,7 @@ Based on Twitter Bootstrap
                             <a href="#serviceFilters" class="btn btn-secondary filter-toggle toggle-more m-y btn-block-xs" role="button" data-toggle="collapse" data-parent="#serviceFilters" aria-expanded="false" aria-controls="serviceFilters"><span class="toggle-more">Show Filters <span class="ca-gov-icon-filter" aria-hidden="true"></span></span></a>
                         </div>
                     </div>
-                    
+
                     <!-- Filters expand only when requested -->
                     <!-- Use .active class on buttons when selected by user -->
                     <div class="collapse serviceFilters filter-group m-b-sm" id="serviceFilters">
@@ -98,7 +95,7 @@ Based on Twitter Bootstrap
                             <a href="" class="btn btn-secondary"><span class="ca-gov-icon-apps"></span> Applications</a>
                             <a href="" class="btn btn-secondary"><span class="ca-gov-icon-location"></span> Field Office</a>
                         </div>
-                        
+
                         Categories:
                         <div class="btn-row">
                             <a href="" class="btn btn-secondary">Business</a>
@@ -106,18 +103,18 @@ Based on Twitter Bootstrap
                             <a href="" class="btn btn-secondary">Employment</a>
                             <a href="" class="btn btn-secondary">Family</a>
                             <a href="" class="btn btn-secondary">Health</a>
-                            <a href="" class="btn btn-secondary">Home</a>
+                            <a href="" class="btn btn-secondary">Real Estate</a>
                             <a href="" class="btn btn-secondary">Records</a>
                             <a href="" class="btn btn-secondary">Recreation</a>
                             <a href="" class="btn btn-secondary">Taxes</a>
                             <a href="" class="btn btn-secondary">Transportation</a>
                         </div>
-                    
+
                     </div>
                 </div>
             </div>
-            
-            
+
+
 
             <div class="section section-default">
                 <div class="container">
@@ -127,7 +124,7 @@ Based on Twitter Bootstrap
                             <p class="search-result-stats">xx of xxx results for "keyword"</p>
                         </div>
                         <div class="half text-right">
-                            <form class="form-inline">
+                            <div class="form-inline float-sm-right">
                                 <div class="form-group">
                                     <label for="sortResultsBy">Sort By:</label>
                                     <select class="form-control" id="sortResultsBy">
@@ -137,11 +134,10 @@ Based on Twitter Bootstrap
                                         <option>Last Updated</option>
                                     </select>
                                 </div>
-                            </form>
+                            </div>
                         </div>
                     </div>
                     <!-- End results header -->
-                    
                     <!-- Start Cards -->
                     <div class="group">
                         <div class="half">
@@ -149,14 +145,14 @@ Based on Twitter Bootstrap
                             <div class="card card-default">
                                 <div class="card-block" id="collapse1234" itemscope itemtype="http://schema.org/Organization">
                                     <div class="row">
-                                        <div class="col-lg-2">
+                                        <div class="col-md-2">
                                             <!-- If image is availabele show it -->
-                                             <img src="http://www.elegantthemes.com/preview/Divi/wp-content/uploads/2014/04/rock-trail.jpg" alt="" class="img-responsive">  
+                                            <img src="http://www.elegantthemes.com/preview/Divi/wp-content/uploads/2014/04/rock-trail.jpg" alt="" class="img-responsive">
                                             <!-- If no image but icon is available show it instead -->
                                             <!-- <div class="service-icon-thumbnail ca-gov-icon-travel-car"></div> -->
                                             <!-- If nothing is selected show service icon -->
                                         </div>
-                                        <div class="col-lg-10">
+                                        <div class="col-md-10">
                                             <a href="" class="lead">Renew Vehicle Registration</a>
                                             <div class="row">
                                                 <div class="col-md-7">
@@ -178,10 +174,10 @@ Based on Twitter Bootstrap
                                                     <div class="collapse collapse1234">
                                                         <a href="/service-profile.html#locations-near-you" class="btn btn-secondary btn-block btn-sm">Locations</a>
                                                         <a href="/service-profile.html#frequently-asked-questions" class="btn btn-secondary btn-block btn-sm">FAQ's</a>
-                                                        <ul class="list-inline list-unstyled social">
-                                                            <li class="list-inline-item"><a href=""><span class="ca-gov-icon-twitter" aria-hidden="true"><span class="sr-only">Twitter</span></span></a></li>
-                                                            <li class="list-inline-item"><a href=""><span class="ca-gov-icon-facebook" aria-hidden="true"><span class="sr-only">Facebook</span></span></a></li>
-                                                            <li class="list-inline-item"><a href=""><span class="ca-gov-icon-google-plus" aria-hidden="true"><span class="sr-only">Google+</span></span></a></li>
+                                                        <ul class="list-inline list-unstyled">
+                                                            <li class="list-inline-item"><a href=""><span class="ca-gov-icon-twitter" aria-hidden="true"><span class="sr-only">Twitter DMV</span></span></a></li>
+                                                            <li class="list-inline-item"><a href=""><span class="ca-gov-icon-facebook" aria-hidden="true"><span class="sr-only">Facebook DMV</span></span></a></li>
+                                                            <li class="list-inline-item"><a href=""><span class="ca-gov-icon-google-plus" aria-hidden="true"><span class="sr-only">Google+ DMV</span></span></a></li>
                                                         </ul>
                                                     </div>
                                                 </div>
@@ -190,8 +186,9 @@ Based on Twitter Bootstrap
                                     </div>
                                 </div>
                                 <div class="card-block text-center">
-                                     <a href="javascript:;" role="button" data-toggle="collapse" data-parent="#collapse1234" aria-expanded="false" aria-controls="collapse1234" data-target=".collapse1234">
-                                     <span class="toggle-more"></span><span class="sr-only">Open</span></a> 
+                                    <a href="javascript:;" role="button" data-toggle="collapse" data-parent="#collapse1234" aria-expanded="false" aria-controls="collapse1234" data-target=".collapse1234">
+                                        <span class="toggle-more"></span><span class="sr-only">Open</span>
+                                    </a>
                                 </div>
                             </div>
                             <!-- END CARD -->
@@ -211,9 +208,13 @@ Based on Twitter Bootstrap
 
 
 
-  <!--#include virtual="/ssi/global-footer.html" -->
-
-  <!--#include virtual="/ssi/scripts.html" -->
+    <!--#include virtual="/ssi/global-footer.html" -->
+    <!--#include virtual="/ssi/scripts.html" -->
+    <script>
+        $(document).ready(function () {
+            $("#serviceFilters").removeAttr("aria-multiselectable");
+        });
+    </script>
 
 </body>
 
