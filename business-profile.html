@@ -8,21 +8,21 @@
 <!--<![endif]-->
 
 <head>
-  <!--
-California State Template
-Version 5.5.2
+    <!--
+    California State Template
+    Version 5.5.2
 
-Based on Twitter Bootstrap
--->
-  <meta charset="utf-8">
+    Based on Twitter Bootstrap
+    -->
+    <meta charset="utf-8">
 
-  <title>Agency Profile</title>
+    <title>Agency Profile</title>
 
-  <meta name="Author" content="State of California" />
-  <meta name="Description" content="State of California" />
-  <meta name="Keywords" content="California, government" />
+    <meta name="Author" content="State of California" />
+    <meta name="Description" content="State of California" />
+    <meta name="Keywords" content="California, government" />
 
-  <!--#include virtual="/ssi/head-css-js.html" -->
+    <!--#include virtual="/ssi/head-css-js.html" -->
 
 </head>
 
@@ -30,36 +30,33 @@ Based on Twitter Bootstrap
 
 <body>
 
-  <header role="banner" id="header" class="global-header fixed">
-    <div id="skip-to-content"><a href="#main-content">Skip to Main Content</a></div>
-    
-    <!-- Include Utility Header -->
-    <!--#include virtual="/ssi/utility-header.html" -->
-    
-    <!-- Settings Bar -->
-    <!--#include virtual="/ssi/settings-bar.html" -->
+    <header role="banner" id="header" class="global-header fixed">
+        <div id="skip-to-content"><a href="#main-content">Skip to Main Content</a></div>
 
-    <!-- Include Branding -->
-    <!--#include virtual="/ssi/branding.html" -->
+        <!-- Include Utility Header -->
+        <!--#include virtual="/ssi/utility-header.html" -->
+        <!-- Settings Bar -->
+        <!--#include virtual="/ssi/settings-bar.html" -->
+        <!-- Include Branding -->
+        <!--#include virtual="/ssi/branding.html" -->
+        <!-- Include Mobile Controls -->
+        <!--#include virtual="/ssi/mobile-controls.html" -->
 
-    <!-- Include Mobile Controls -->
-    <!--#include virtual="/ssi/mobile-controls.html" -->
+        <div class="navigation-search">
+            <!-- Include Navigation -->
+            <!--#include virtual="/ssi/navigation.html" -->
 
-      <div class="navigation-search">
-          <!-- Include Navigation -->
-          <!--#include virtual="/ssi/navigation.html" -->
+            <div id="head-search" class="search-container">
+                <!-- Include Search -->
+                <!--#include virtual="/ssi/search.html" -->
+            </div>
 
-          <div id="head-search" class="search-container">
-              <!-- Include Search -->
-              <!--#include virtual="/ssi/search.html" -->
-          </div>
-
-      </div>
+        </div>
 
 
-    <div class="header-decoration"></div>
+        <div class="header-decoration"></div>
 
-  </header>
+    </header>
 
 
     <div id="main-content" class="main-content">
@@ -69,6 +66,9 @@ Based on Twitter Bootstrap
                 <div class="container">
                     <div class="group">
                         <div class="quarter text-center">
+                            <!-- <img src="images/template2014/header-organization.png" class="img-responsive hidden-xs" alt="Organization Name"> -->
+                            <!-- <img src="/sample/images/logo-cal-vet.png" class="img-responsive hidden-xs" alt="Organization Name"> -->
+                            <!-- <img src="/sample/images/logo-cal-fire.png" class="img-responsive hidden-xs" alt="Organization Name"> -->
                             <img src="/sample/images/logo-dmv.png" class="img-responsive hidden-xs" alt="Department of Motor Vehicles">
 
                             <!-- IF AGENCY LOGO NOT AVAILABLE, FALLBACK TO SEAL OF CALIFORNIA -->
@@ -79,14 +79,14 @@ Based on Twitter Bootstrap
                             <!--  <p class="lead">Transportation</p> -->
                             <p>Donec ullamcorper nulla non metus auctor fringilla. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam porta sem malesuada magna mollis euismod. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.</p>
 
-                            <div class="btn-row p-t">
-                                <a href="" class="btn btn-sm btn-outline-light btn-hover rounded-0"><span class="ca-gov-icon-computer"></span> Website</a>
-                                <a href="" class="btn btn-sm btn-outline-light btn-hover rounded-0"><span class="ca-gov-icon-location"></span> Locations Near You</a>
-                                <a href="" class="btn btn-sm btn-outline-light btn-hover rounded-0"><span class="ca-gov-icon-contact-us"></span> Contact</a>
-                                <a href="" class="btn btn-sm btn-outline-light btn-hover rounded-0"><span class="ca-gov-icon-chat"></span> Live Chat</a>
+                            <div class="btn-row">
+                                <a href="" class="btn btn-primary"><span class="ca-gov-icon-computer"></span> Website</a>
+                                <a href="" class="btn btn-primary"><span class="ca-gov-icon-location"></span> Locations Near You <span class="sr-only">(google map)</span></a>
+                                <a href="" class="btn btn-primary"><span class="ca-gov-icon-contact-us"></span> Contact <span class="sr-only">DMV</span></a>
+                                <a href="" class="btn btn-primary"><span class="ca-gov-icon-chat"></span> Live Chat</a>
                             </div>
 
-                            <div class="location contact p-t" itemscope itemtype="http://schema.org/Organization">
+                            <div class="location contact" itemscope itemtype="http://schema.org/Organization">
                                 <meta itemprop="name" content="Organization Name Here">
                                 <div class="contact">
                                     <p class="other">
@@ -98,16 +98,19 @@ Based on Twitter Bootstrap
                             </div>
 
                             <ul class="list-inline list-unstyled social">
-                                <li class="list-inline-item"><a href=""><span class="ca-gov-icon-twitter"><span class="sr-only">Twitter</span></span></a></li>
-                                <li class="list-inline-item"><a href=""><span class="ca-gov-icon-facebook"><span class="sr-only">Facebook</span></span></a></li>
-                                <li class="list-inline-item"><a href=""><span class="ca-gov-icon-google-plus"><span class="sr-only">Google+</span></span></a></li>
+                                <li class="list-inline-item"><a href=""><span class="ca-gov-icon-twitter"><span class="sr-only">Twitter DMV</span></span></a></li>
+                                <li class="list-inline-item"><a href=""><span class="ca-gov-icon-facebook"><span class="sr-only">Facebook DMV</span></span></a></li>
+                                <li class="list-inline-item"><a href=""><span class="ca-gov-icon-google-plus"><span class="sr-only">Google+ DMV</span></span></a></li>
                             </ul>
                         </div>
 
                         <div class="quarter">
                             <!-- Embeded Youtube Video -->
                             <div class="video-player" data-sly-test="${!properties.lightbox}">
-                                <iframe title="DMV Youtube video" class="youtube-player" src="https://www.youtube.com/embed/V3Z9ugTj4-o" frameborder="0" allowfullscreen></iframe>
+                                <iframe title="DMV Youtube video" class="youtube-player border-0" src="https://www.youtube.com/embed/V3Z9ugTj4-o" allowfullscreen></iframe>
+
+
+
 
                             </div>
                         </div>
@@ -147,84 +150,83 @@ Based on Twitter Bootstrap
         </main>
     </div>
 
-  <!--#include virtual="/ssi/global-footer.html" -->
+    <!--#include virtual="/ssi/global-footer.html" -->
+    <!--#include virtual="/ssi/scripts.html" -->
 
-  <!--#include virtual="/ssi/scripts.html" -->
-  
     <script>
-    /* Number counter inside of the circle pie chart */
-    // Animating the circles only when visible
-    $.fn.isInViewport = function () {
-        var elementTop = $(this).offset().top;
-        var elementBottom = elementTop + $(this).outerHeight();
-        var viewportTop = $(window).scrollTop();
-        var viewportBottom = viewportTop + $(window).height();
-        return elementBottom > viewportTop && elementTop < viewportBottom;
-    };
+        /* Number counter inside of the circle pie chart */
+        // Animating the circles only when visible
+        $.fn.isInViewport = function () {
+            var elementTop = $(this).offset().top;
+            var elementBottom = elementTop + $(this).outerHeight();
+            var viewportTop = $(window).scrollTop();
+            var viewportBottom = viewportTop + $(window).height();
+            return elementBottom > viewportTop && elementTop < viewportBottom;
+        };
 
-    circlesCreated = false;
+        circlesCreated = false;
 
-    $(window).on('scroll', function () {
-        if (!circlesCreated && $("#show-on-scroll").isInViewport()) {
-            circlesCreated = true;
-            createCircles();
+        $(window).on('scroll', function () {
+            if (!circlesCreated && $("#show-on-scroll").isInViewport()) {
+                circlesCreated = true;
+                createCircles();
+            }
+        });
+
+        function createCircles() {
+            //isolate this circles code out of fuction if you want circles animation to start right away
+            var myCircle1 = Circles.create({
+                id: 'circle1', radius: 80,
+                radius: 80,
+                value: 87,
+                maxValue: 100,
+                width: 8,
+                text: function (value) { return value + '%'; },
+                colors: ['#363636', '#72c02c'],
+                duration: 2000,
+                wrpClass: 'circles-wrp',
+                textClass: 'circles-text',
+                valueStrokeClass: 'circles-valueStroke',
+                maxValueStrokeClass: 'circles-maxValueStroke',
+                styleWrapper: true,
+                styleText: true
+            });
+
+            var myCircle2 = Circles.create({
+                id: 'circle2', radius: 80,
+                radius: 80,
+                value: 74,
+                maxValue: 100,
+                width: 8,
+                text: function (value) { return value + '%'; },
+                colors: ['#363636', '#e81c62'],
+                duration: 2000,
+                wrpClass: 'circles-wrp',
+                textClass: 'circles-text',
+                valueStrokeClass: 'circles-valueStroke',
+                maxValueStrokeClass: 'circles-maxValueStroke',
+                styleWrapper: true,
+                styleText: true
+            });
+
+            var myCircle3 = Circles.create({
+                id: 'circle3', radius: 80,
+                radius: 80,
+                value: 65,
+                maxValue: 100,
+                width: 8,
+                text: function (value) { return value + '%'; },
+                colors: ['#363636', '#00bed6'],
+                duration: 2000,
+                wrpClass: 'circles-wrp',
+                textClass: 'circles-text',
+                valueStrokeClass: 'circles-valueStroke',
+                maxValueStrokeClass: 'circles-maxValueStroke',
+                styleWrapper: true,
+                styleText: true
+            });
+            // End circles
         }
-    });
-
-    function createCircles() {
-        //isolate this circles code out of fuction if you want circles animation to start right away
-        var myCircle1 = Circles.create({
-            id: 'circle1', radius: 80,
-            radius: 80,
-            value: 87,
-            maxValue: 100,
-            width: 8,
-            text: function (value) { return value + '%'; },
-            colors: ['#363636', '#72c02c'],
-            duration: 2000,
-            wrpClass: 'circles-wrp',
-            textClass: 'circles-text',
-            valueStrokeClass: 'circles-valueStroke',
-            maxValueStrokeClass: 'circles-maxValueStroke',
-            styleWrapper: true,
-            styleText: true
-        });
-
-        var myCircle2 = Circles.create({
-            id: 'circle2', radius: 80,
-            radius: 80,
-            value: 74,
-            maxValue: 100,
-            width: 8,
-            text: function (value) { return value + '%'; },
-            colors: ['#363636', '#e81c62'],
-            duration: 2000,
-            wrpClass: 'circles-wrp',
-            textClass: 'circles-text',
-            valueStrokeClass: 'circles-valueStroke',
-            maxValueStrokeClass: 'circles-maxValueStroke',
-            styleWrapper: true,
-            styleText: true
-        });
-
-        var myCircle3 = Circles.create({
-            id: 'circle3', radius: 80,
-            radius: 80,
-            value: 65,
-            maxValue: 100,
-            width: 8,
-            text: function (value) { return value + '%'; },
-            colors: ['#363636', '#00bed6'],
-            duration: 2000,
-            wrpClass: 'circles-wrp',
-            textClass: 'circles-text',
-            valueStrokeClass: 'circles-valueStroke',
-            maxValueStrokeClass: 'circles-maxValueStroke',
-            styleWrapper: true,
-            styleText: true
-        });
-        // End circles
-    }
     </script>
 
 </body>
