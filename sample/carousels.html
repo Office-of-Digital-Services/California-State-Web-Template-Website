@@ -82,10 +82,9 @@
                     <div class="two-thirds">
                         <h2>Content Carousel (content fit)</h2>
                         <p>To create a content fit, we use a background-image on the outermost element of our item. One could of course not set the background-image and the carousel item will still fit the content,  but you will have to be aware of issues between the carousel container's background color and your content.</p>
-<pre><code>
-<div class="item" style="background-image: url('/url/to/image');">
-                        <div class="content-container">
-                        <div class="content">
+<pre><code><div class="item" style="background-image: url('/url/to/image');">
+    <div class="content-container">
+        <div class="content">
             <! -- your content -->
         </div>
     </div>
@@ -107,22 +106,14 @@
                     <div class="two-thirds">
                         <h2>Content Carousel (image fit)</h2>
                         <p>To create an image fit, we use an image element contained within our item. If the image element is missing the item will simply fallback to being a content fit item. <i>Warn:</i> if the image url is broken or pointing to the wrong location, the element will have 0 height.</p>
-<pre><code>
-                        <div class="item">
-                        <img src="/sample/images/gallery/sierra-big.jpg" alt="background" />
-
-
-
-
-
-
-
-                        <div class="content-container">
-                        <div class="content">
-                     <!-- your content -->
-                 </div>
-             </div>
-         </div>
+<pre><code><div class="item">
+<img src="/sample/images/gallery/sierra-big.jpg" alt="background" />
+    <div class="content-container">
+        <div class="content">
+            <!-- your content -->
+        </div>
+     </div>
+</div>
 </code></pre>
                         <!--#include virtual="/sample/modules/carousel-content-fit-image.html" -->
                     </div>
