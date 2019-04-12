@@ -15786,6 +15786,12 @@ function NavReset() {
     $(".toggle-menu").attr('aria-selected', 'false');
 }
 
+/* Mobile Controls fix */
+$(document).ready(function () {
+    $("#navigation .mobile-controls").removeClass("nav-menu");
+    $("#navigation .mobile-control a").removeAttr("aria-hidden aria-expanded role id").removeClass("sub-nav with-few-items subnav-closed");
+    $("#navigation .mobile-control .sr-only").removeAttr("aria-hidden aria-expanded role id").removeClass("sub-nav with-few-items subnav-closed");
+});
 
 /* -----------------------------------------
    ACCORDION LIST - /source/js/cagov/accordion.js
