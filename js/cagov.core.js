@@ -1,5 +1,5 @@
 /**
- * CA State Template v5.5 -  @version v5.5.2 -  4/12/2019 
+ * CA State Template v5.5 -  @version v5.5.2 -  4/15/2019 
   STYLES COMPILED FROM SOURCE (source/js) DO NOT MODIFY */
 /*! modernizr (Custom Build) | MIT *
  * https://modernizr.com/download/?-flexbox-setclasses !*/
@@ -14442,27 +14442,27 @@ $(document).ready(function () {
 
 // take into account the fixed header -----------------------------------------------------v5 FIX---------------------------------
 
-        //else {
-        //    // no header image, which means our main content needs to
+        else {
+            // no header image, which means our main content needs to
 
-        //    $mainContent.css({
-        //        'padding-top': Math.max(headerHeight, 119)
-        //    })
-
-
-        //} if ($(".ask-group").length > 0) {
-        //    $mainContent.addClass('print-p-t'); // Media print .main-content fix	
-        //    $mainContent.css({
-        //        'padding-top': 0
-        //    })
-
-        //    $('.header-slideshow-banner, .header-primary-banner').css({
-        //        'margin-top': 119
-
-        //    });
+            $mainContent.css({
+                'padding-top': Math.max(headerHeight, 119)
+            })
 
 
-        //}
+        } if ($(".ask-group").length > 0) {
+            $mainContent.addClass('print-p-t'); // Media print .main-content fix	
+            $mainContent.css({
+                'padding-top': 0
+            })
+
+            $('.header-slideshow-banner, .header-primary-banner').css({
+                'margin-top': 119
+
+            });
+
+
+        }
     }
     // take into account the fixed header -----------------------------------------------------v5 FIX---------------------------------
 
