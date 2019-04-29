@@ -102,7 +102,7 @@
 .first-level-link {
     display: block;
     padding: 12px 0;
-    white-space: nowrap;
+   // white-space: nowrap;
 
     &:hover, &:focus {
         text-decoration:none;
@@ -138,52 +138,49 @@
     min-height:91px;
 	padding-left: 300px;  // beta 5.0 addition
   }
-  .top-level-nav {
-    display: table;                               // Use table and table-cell method to space top level navigation items
-    table-layout: auto;
-    display: -webkit-box;
-    display: -moz-box;
-    display: -ms-flexbox;
-    display: -webkit-flex;
-    display: flex;
-    width: 100%;
-	min-height: 91px; // beta 5.0 addition
-	
-   .nav-item {
-      padding: 0;
-      margin-top: 0;
-      background: none;
-      width: auto;
-      display: table-cell;
+    .top-level-nav {
+        display: table; // Use table and table-cell method to space top level navigation items
+        table-layout: auto;
+        display: -webkit-box;
+        display: -moz-box;
+        display: -ms-flexbox;
+        display: -webkit-flex;
+        display: flex;
+        width: 100%;
+        min-height: 91px; // beta 5.0 addition
+        .nav-item {
+            padding: 0;
+            margin-top: 0;
+            background: none;
+            width: auto;
+            display: table-cell;
+            display: block;
+            -webkit-box-flex: 1;
+            -moz-box-flex: 1;
+            -webkit-flex: 1 1 auto;
+            -ms-flex: 1 1 auto;
+            flex: 1 1 auto;
 
-      display: block;
-      -webkit-box-flex: 1;
-      -moz-box-flex: 1;
-      -webkit-flex: 1 1 auto;
-      -ms-flex: 1 1 auto;
-      flex: 1 1 auto;
-
-      .noflex &, .oldie & {
-        display: table-cell;
-      }
-
-            .sub-nav {
-                top: 100%;  // Positioning for flexbox layout
+            .noflex &, .oldie & {
+                display: table-cell;
             }
 
-      > a {
-        text-align: center;                         // Center only top level navigation links
-		min-height:50px; // beta 5.0 addition
-      }
+            .sub-nav {
+                top: 100%; // Positioning for flexbox layout
+            }
+
+            > a {
+                text-align: center; // Center only top level navigation links
+                min-height: 50px; // beta 5.0 addition
+                height: calc(100% - 5px);
+            }
+        }
+        // beta 5.0 addition
+        .main-navigation.dropdown .nav-arrow-down {
+            left: auto;
+            margin-left: auto;
+        }
     }
-	
-	// beta 5.0 addition
-	.main-navigation.dropdown .nav-arrow-down {		
-    left: auto;		
-    margin-left: auto; 		
-	}
-	
-  }
 
 
 	
