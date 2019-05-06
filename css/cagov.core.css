@@ -1,5 +1,5 @@
 /**
- * CA State Template v5.5 -  @version v5.5.3 -  4/15/2019 
+ * CA State Template v5.5 -  @version v5.5.3 -  5/6/2019 
   STYLES COMPILED FROM SOURCE (SCSS) DO NOT MODIFY */
 /* -----------------------------------------
    BOOTSTRAP v4.3.1 - /source/scss/bootstrap/ 
@@ -13333,12 +13333,18 @@ a.second-level-link [class^="ca-gov-icon-"] {
 }
 
 @media (min-width: 768px) {
-  .has-sub::after {
-    content: "\43";
-    font-family: 'CaGov';
+  .nav-item .first-level-link.has-sub .carrot {
     font-size: .8rem;
     position: relative;
     top: 2px;
+    display: inline-block;
+    color: #555555;
+  }
+}
+
+@media (max-width: 767px) {
+  .nav-item .first-level-link.has-sub .carrot {
+    display: none;
   }
 }
 
@@ -20666,6 +20672,14 @@ div[data-state="open"] .title {
 
 .owl-carousel:focus {
   outline: none;
+}
+
+.owl-carousel .owl-nav button.owl-prev:focus {
+  margin-left: 3em;
+}
+
+.owl-carousel .owl-nav button.owl-next:focus {
+  margin-right: 3em;
 }
 
 .owl-video-wrapper .item-overlay {
