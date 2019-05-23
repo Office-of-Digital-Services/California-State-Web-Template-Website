@@ -16995,9 +16995,9 @@ $(document).ready(function () {
 
 
     // Make Search form tabable if it's featured
-    var searchInput = $("#Search #q");
-    var searchSubmit = $("#Search .gsc-search-button");
-    var searchReset = $("#Search .gsc-clear-button");
+    var searchInput = $("#head-search #Search #q");
+    var searchSubmit = $("#head-search #Search .gsc-search-button");
+    var searchReset = $("#head-search #Search .gsc-clear-button");
     if ($('#head-search').hasClass('featured-search')) {
         searchInput.removeAttr('tabindex');
         searchSubmit.removeAttr('tabindex');
