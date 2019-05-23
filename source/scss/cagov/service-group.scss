@@ -54,7 +54,7 @@
 
 .service-tile {
     &:focus {
-        outline: solid 2px #2ea3f2; // added focus indication for accessibility
+        @include outline(2px); // added focus indication for accessibility
     }
     // create our columns for all screen sizes
     @include make-xs-column(12,0);

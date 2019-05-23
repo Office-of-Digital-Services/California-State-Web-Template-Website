@@ -382,7 +382,7 @@
             zoom: 1;
 
             &:focus {
-                outline: 3px dotted #000;
+                @include outline(2px);
 
                 + .item-overlay {
                     opacity: 1;
@@ -614,11 +614,11 @@
 
 // Accessibility
 .banner-control:focus, .banner-control .pause:focus, .banner-control .play:focus, .owl-dot:focus, .owl-prev:focus, .owl-next:focus {
-    outline: 2px dotted $gray-dark;
+    @include outline(2px);
 }
 
 .owl-carousel:focus {
-    outline: none;
+    @include outline(2px);
 }
 
 // Video

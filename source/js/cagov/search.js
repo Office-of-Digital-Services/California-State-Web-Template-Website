@@ -36,6 +36,8 @@ $(document).ready(function () {
     // Our special nav icon which we need to hook into for starting the search
     // $('#nav-item-search')
 
+
+
     // Sitecore link data types currently do not have a way to set id's per nav,
     // so instead we are binding to what I'm assuming will aslways be the search
     $('.top-level-nav .nav-item .ca-gov-icon-search, #nav-item-search').parents('.nav-item').on('click', function (e) {
@@ -50,6 +52,20 @@ $(document).ready(function () {
             }, 500);
         }
         $('.search-container').toggleClass('active');
+
+        // hide Search form if it's not active
+        var searchInput = $("#Search #q");
+        var searchSubmit = $("#Search .gsc-search-button");
+        var searchReset = $("#Search .gsc-clear-button");
+        if ($('.search-container').hasClass('active')) {
+            searchInput.removeAttr('tabindex');
+            searchSubmit.removeAttr('tabindex');
+            searchReset.removeAttr('tabindex');
+        } else {
+            searchInput.attr('tabindex', "-1");
+            searchSubmit.attr('tabindex', "-1");
+            searchReset.attr('tabindex', "-1");
+        }
 
         // let the user know the input box is where they should search
         $("#head-search").addClass('play-animation').one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function () {
@@ -93,6 +109,20 @@ $(document).ready(function () {
         $.event.trigger('cagov.searchresults.hide');
     }
 
+
+    // Make Search form tabable if it's featured
+    var searchInput = $("#Search #q");
+    var searchSubmit = $("#Search .gsc-search-button");
+    var searchReset = $("#Search .gsc-clear-button");
+    if ($('#head-search').hasClass('featured-search')) {
+        searchInput.removeAttr('tabindex');
+        searchSubmit.removeAttr('tabindex');
+        searchReset.removeAttr('tabindex');
+    } else {
+        searchInput.attr('tabindex', "-1");
+        searchSubmit.attr('tabindex', "-1");
+        searchReset.attr('tabindex', "-1");
+    }
 
 
 });

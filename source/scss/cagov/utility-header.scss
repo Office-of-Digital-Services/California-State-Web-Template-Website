@@ -106,10 +106,6 @@
         [class^="ca-gov-icon-"] {
             @include font-size(0.8);
         }
-
-        .header-cagov-logo img {
-            left: 10px;
-        }
     }
 
     .located-city-name {
@@ -140,14 +136,19 @@
             justify-content: flex-start;
 
             .header-cagov-logo {
-                margin-right: 40px;
+                @media (min-width: $screen-md-min) {
+                    margin-right: 20px;
+                    padding-left: 20px;
+                }
 
                 @media (min-width: $screen-xs-max) and (max-width: $screen-sm-max) {
                     margin-right: 20px;
+                    padding-left: 15px;
                 }
 
                 @media (max-width: $screen-xs-max) {
                     margin-right: 15px;
+                    padding-left: 15px;
                 }
 
                 a {
