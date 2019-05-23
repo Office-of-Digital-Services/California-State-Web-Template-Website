@@ -1,5 +1,5 @@
 /**
- * CA State Template v5 -  @version v5.0.6 -  4/29/2019 
+ * CA State Template v5 -  @version v5.0.7 -  5/23/2019 
   STYLES COMPILED FROM SOURCE (SCSS) DO NOT MODIFY */
 /* -----------------------------------------
    BOOTSTRAP v4.3.1 - /source/scss/bootstrap/ 
@@ -9202,43 +9202,43 @@ a.text-dark:hover, a.text-dark:focus {
    /source/scss/bootstrap-accessibility-plugin/button.scss
 ----------------------------------------- */
 .btn:focus {
-  outline: dotted 1px #fff;
+  outline: solid 2px #2ea3f2;
 }
 
 /* -----------------------------------------
    /source/scss/bootstrap-accessibility-plugin/divs.scss
 ----------------------------------------- */
 div.active:focus {
-  outline: dotted 1px #000;
+  outline: solid 2px #2ea3f2;
 }
 
 /* -----------------------------------------
    /source/scss/bootstrap-accessibility-plugin/links.scss
 ----------------------------------------- */
 a:focus {
-  outline: dotted 1px #000;
+  outline: solid 2px #2ea3f2;
 }
 
 .accordion-list li:focus {
-  outline: dotted 1px #000;
+  outline: solid 2px #2ea3f2;
 }
 
 /* -----------------------------------------
    /source/scss/bootstrap-accessibility-plugin/close.scss
 ----------------------------------------- */
 .close:hover, .close:focus {
-  outline: dotted 1px #000;
+  outline: solid 2px #2ea3f2;
 }
 
 .btn.close:hover, .btn.close:focus {
-  outline: dotted 0 #000;
+  outline: solid 0 #2ea3f2;
 }
 
 /* -----------------------------------------
    /source/scss/bootstrap-accessibility-plugin/navigation.scss
 ----------------------------------------- */
 .nav > li > a:hover, .nav > li > a:focus {
-  outline: dotted 1px #000;
+  outline: solid 2px #2ea3f2;
 }
 
 /* -----------------------------------------
@@ -11064,9 +11064,40 @@ code {
    GRID -  /source/scss/cagov/grid.scss
 ----------------------------------------- */
 /* .container custom width  */
+.container {
+  margin-right: auto;
+  margin-left: auto;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+@media (min-width: 576px) {
+  .container {
+    max-width: 540px;
+  }
+}
+
+@media (min-width: 768px) {
+  .container {
+    max-width: 720px;
+  }
+}
+
+@media (min-width: 992px) {
+  .container {
+    max-width: 960px;
+  }
+}
+
 @media (min-width: 1200px) {
   .container {
-    max-width: 1200px;
+    max-width: 1140px;
+  }
+}
+
+@media (min-width: 1280px) {
+  .container {
+    max-width: 1280px;
   }
 }
 
@@ -11218,8 +11249,7 @@ code {
 }
 
 .main-content > .section,
-.two-column .main-content > .section,
-.global-header {
+.two-column .main-content > .section {
   margin-right: auto;
   margin-left: auto;
   padding-left: 15px;
@@ -11228,33 +11258,36 @@ code {
 
 @media (min-width: 576px) {
   .main-content > .section,
-  .two-column .main-content > .section,
-  .global-header {
-    width: 576px;
+  .two-column .main-content > .section {
+    max-width: 540px;
   }
 }
 
 @media (min-width: 768px) {
   .main-content > .section,
-  .two-column .main-content > .section,
-  .global-header {
-    width: 768px;
+  .two-column .main-content > .section {
+    max-width: 720px;
   }
 }
 
 @media (min-width: 992px) {
   .main-content > .section,
-  .two-column .main-content > .section,
-  .global-header {
-    width: 992px;
+  .two-column .main-content > .section {
+    max-width: 960px;
   }
 }
 
 @media (min-width: 1200px) {
   .main-content > .section,
-  .two-column .main-content > .section,
-  .global-header {
-    width: 1200px;
+  .two-column .main-content > .section {
+    max-width: 1140px;
+  }
+}
+
+@media (min-width: 1280px) {
+  .main-content > .section,
+  .two-column .main-content > .section {
+    max-width: 1280px;
   }
 }
 
@@ -11316,25 +11349,31 @@ code {
 
 @media (min-width: 576px) {
   .branding {
-    width: 576px;
+    max-width: 540px;
   }
 }
 
 @media (min-width: 768px) {
   .branding {
-    width: 768px;
+    max-width: 720px;
   }
 }
 
 @media (min-width: 992px) {
   .branding {
-    width: 992px;
+    max-width: 960px;
   }
 }
 
 @media (min-width: 1200px) {
   .branding {
-    width: 1200px;
+    max-width: 1140px;
+  }
+}
+
+@media (min-width: 1280px) {
+  .branding {
+    max-width: 1280px;
   }
 }
 
@@ -11388,17 +11427,6 @@ code {
   top: 4px;
   height: 32px;
   position: absolute;
-  left: 27px;
-}
-
-@media (max-width: 1199px) {
-  .header-cagov-logo img {
-    left: 5px;
-  }
-}
-
-.header-cagov-logo a:focus img {
-  outline: 1px dotted black;
 }
 
 .mobile-controls toggle-menu {
@@ -12479,25 +12507,31 @@ table.gsc-search-box td {
 
 @media (min-width: 576px) {
   .main-navigation {
-    width: 576px;
+    max-width: 540px;
   }
 }
 
 @media (min-width: 768px) {
   .main-navigation {
-    width: 768px;
+    max-width: 720px;
   }
 }
 
 @media (min-width: 992px) {
   .main-navigation {
-    width: 992px;
+    max-width: 960px;
   }
 }
 
 @media (min-width: 1200px) {
   .main-navigation {
-    width: 1200px;
+    max-width: 1140px;
+  }
+}
+
+@media (min-width: 1280px) {
+  .main-navigation {
+    max-width: 1280px;
   }
 }
 
@@ -12998,27 +13032,27 @@ a.second-level-link [class^="ca-gov-icon-"] {
 @media (min-width: 768px) {
   .unit1 {
     height: 65px;
-    overflow: hidden !important;
+    overflow: visible;
   }
   .unit2 {
     height: 130px;
-    overflow: hidden;
+    overflow: visible;
   }
   .unit3 {
     height: 195px;
-    overflow: hidden;
+    overflow: visible;
   }
   .unit4 {
     height: 260px;
-    overflow: hidden;
+    overflow: visible;
   }
   .unit5 {
     height: 325px;
-    overflow: hidden;
+    overflow: visible;
   }
   .unit6 {
     height: 390px;
-    overflow: hidden;
+    overflow: visible;
   }
 }
 
@@ -13141,7 +13175,7 @@ a.second-level-link [class^="ca-gov-icon-"] {
 }
 
 .mobile-controls .toggle-menu:focus {
-  outline: dotted 1px #000;
+  outline: solid 2px #2ea3f2;
 }
 
 @media (max-width: 767px) {
@@ -13285,25 +13319,31 @@ a.second-level-link [class^="ca-gov-icon-"] {
 
 @media (min-width: 576px) {
   .mobile-controls {
-    width: 576px;
+    max-width: 540px;
   }
 }
 
 @media (min-width: 768px) {
   .mobile-controls {
-    width: 768px;
+    max-width: 720px;
   }
 }
 
 @media (min-width: 992px) {
   .mobile-controls {
-    width: 992px;
+    max-width: 960px;
   }
 }
 
 @media (min-width: 1200px) {
   .mobile-controls {
-    width: 1200px;
+    max-width: 1140px;
+  }
+}
+
+@media (min-width: 1280px) {
+  .mobile-controls {
+    max-width: 1280px;
   }
 }
 
@@ -13328,7 +13368,7 @@ a.second-level-link [class^="ca-gov-icon-"] {
 }
 
 .mobile-controls .toggle-search:focus {
-  outline: dotted 1px #000;
+  outline: solid 2px #2ea3f2;
 }
 
 .main-navigation .mobile-controls {
@@ -13588,9 +13628,6 @@ a.second-level-link [class^="ca-gov-icon-"] {
     font-size: 12.8px;
     font-size: 0.8rem;
   }
-  .utility-header .header-cagov-logo img {
-    left: 10px;
-  }
 }
 
 .utility-header .located-city-name {
@@ -13616,19 +13653,24 @@ a.second-level-link [class^="ca-gov-icon-"] {
   justify-content: flex-start;
 }
 
-.utility-header .flex-row .social-media-links .header-cagov-logo {
-  margin-right: 40px;
+@media (min-width: 992px) {
+  .utility-header .flex-row .social-media-links .header-cagov-logo {
+    margin-right: 20px;
+    padding-left: 20px;
+  }
 }
 
 @media (min-width: 767px) and (max-width: 991px) {
   .utility-header .flex-row .social-media-links .header-cagov-logo {
     margin-right: 20px;
+    padding-left: 15px;
   }
 }
 
 @media (max-width: 767px) {
   .utility-header .flex-row .social-media-links .header-cagov-logo {
     margin-right: 15px;
+    padding-left: 15px;
   }
 }
 
@@ -15962,7 +16004,7 @@ body {
 }
 
 .accordion .panel a:focus {
-  outline: dotted 1px #000;
+  outline: solid 2px #2ea3f2;
 }
 
 /* list accordion */
@@ -17398,7 +17440,7 @@ input[type="checkbox"]:focus + div, input[type="radio"]:focus + div {
 }
 
 input[type="checkbox"]:focus + .btn, input[type="radio"]:focus + .btn {
-  outline: 1px dotted #000;
+  outline: solid 2px #2ea3f2;
 }
 
 .custom-radio .custom-control-input:checked ~ .custom-control-label::before {
@@ -18972,7 +19014,7 @@ fieldset[disabled] .btn-more {
 }
 
 .btn-more:focus {
-  outline: dotted 2px #000;
+  outline: solid 2px #2ea3f2;
 }
 
 .btn-more.inverse {
@@ -19066,6 +19108,12 @@ fieldset[disabled] .btn-more {
   text-shadow: none;
   opacity: 0.8;
   font-size: 2.5em;
+}
+
+@media (max-width: 767px) {
+  .site-settings button.close {
+    margin-top: 20px;
+  }
 }
 
 .site-settings button.close:hover {
@@ -19772,7 +19820,7 @@ fieldset[disabled] .btn-more {
 }
 
 .carousel-video-submenu .item-thumbnail .videoThumb:focus {
-  outline: 3px dotted #000;
+  outline: solid 2px #2ea3f2;
 }
 
 .carousel-video-submenu .item-thumbnail .videoThumb:focus + .item-overlay {
@@ -19993,11 +20041,11 @@ fieldset[disabled] .btn-more {
 }
 
 .banner-control:focus, .banner-control .pause:focus, .banner-control .play:focus, .owl-dot:focus, .owl-prev:focus, .owl-next:focus {
-  outline: 2px dotted #333333;
+  outline: solid 2px #2ea3f2;
 }
 
 .owl-carousel:focus {
-  outline: none;
+  outline: solid 2px #2ea3f2;
 }
 
 .owl-video-wrapper .item-overlay {

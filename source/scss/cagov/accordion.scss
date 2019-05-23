@@ -54,7 +54,7 @@
         overflow: visible; // to display focus outline for accessibility
         a {
             &:focus {
-                outline: dotted 1px $gray-base;
+                @include outline(2px);
             }
         }
     }

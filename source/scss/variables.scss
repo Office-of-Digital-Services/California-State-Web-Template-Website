@@ -30,7 +30,7 @@ $share-email:       #888;
 
 // Template and image paths were seperated to allow cagov theme specific images to live outside of images folder. 
 // This may be helpful for theme variations or multi-site uses.
-$template-path:         "../images/template2014";     // Absolute or relative path to the master theme directory
+$template-path:         "../images";     // Absolute or relative path to the master theme directory
 $image-path:            "../images";                  // Absolute or relative path to the images directory
 $font-path:             "../fonts";                   // Absolute or relative path to the fonts directory
 
@@ -367,23 +367,36 @@ $screen-tablet:              $screen-sm-min !default;
 
 // Medium screen / desktop
 // Deprecated `$screen-md` as of v3.0.1
-$screen-md:                  992px !default;
-$screen-md-min:              $screen-md !default;
+$screen-md: 992px !global;
+$screen-md-min: $screen-md !global;
 // Deprecated `$screen-desktop` as of v3.0.1
-$screen-desktop:             $screen-md-min !default;
+$screen-desktop: $screen-md-min !global;
 
 // Large screen / wide desktop
 // Deprecated `$screen-lg` as of v3.0.1
-$screen-lg:                  1200px !default;
-$screen-lg-min:              $screen-lg !default;
+$screen-lg: 1200px !global;
+$screen-lg-min: $screen-lg !global;
 // Deprecated `$screen-lg-desktop` as of v3.0.1
-$screen-lg-desktop:          $screen-lg-min !default;
+$screen-lg-desktop: $screen-lg-min !global;
+
+
+$screen-xl: 1280px !global;
+$screen-xl-min: $screen-xl !global;
+$screen-xl-desktop: $screen-xl-min !global;
 
 // So media queries don't overlap when required, provide a maximum
 $screen-xxs-max:             ($screen-xs-min - 1) !default; // 575px
 $screen-xs-max:              ($screen-sm-min - 1) !default; // 767px
-$screen-sm-max:              ($screen-md-min - 1) !default; // 991px
-$screen-md-max:              ($screen-lg-min - 1) !default; // 1199px
+$screen-sm-max: ($screen-md-min - 1) !global; // 991px
+$screen-md-max: ($screen-lg-min - 1) !global; // 1139px
+$screen-lg-max: ($screen-xl-min - 1) !global; // 1279px
+
+// Bootstrap4 breakpoints
+$breakpoint-xm: 540px;
+$breakpoint-sm: 720px;
+$breakpoint-md: 960px;
+$breakpoint-lg: 1140px;
+$breakpoint-xl: 1280px;
 
 
 
@@ -412,14 +425,14 @@ $container-tablet:             (720px + $grid-gutter-width) !default;
 $container-sm:                 $container-tablet !default;
 
 // Medium screen / desktop
-$container-desktop:            (940px + $grid-gutter-width) !default;
+$container-desktop: (962px + $grid-gutter-width) !default;
 // For `$screen-md-min` and up.
 $container-md:                 $container-desktop !default;
 
 // Large screen / wide desktop
-$container-large-desktop:      (1170px + $grid-gutter-width) !default;
+$container-large-desktop: (1250px + $grid-gutter-width) !global;
 // For `$screen-lg-min` and up.
-$container-lg:                 $container-large-desktop !default;
+$container-lg: $container-large-desktop !global;
 
 
 //== Navbar

@@ -185,32 +185,32 @@ a.second-level-link {
 
     .unit1 {
         height:$nav-unit-base;
-        overflow:hidden !important;
+        overflow:visible;
     }
 
     .unit2 {
-        height:($nav-unit-base * 2);
-        overflow:hidden;
+        height: ($nav-unit-base * 2);
+        overflow: visible;
     }
 
     .unit3 {
-        height:($nav-unit-base * 3);
-        overflow:hidden;
+        height: ($nav-unit-base * 3);
+        overflow: visible;
     }
 
     .unit4 {
-        height:($nav-unit-base * 4);
-        overflow:hidden;
+        height: ($nav-unit-base * 4);
+        overflow: visible;
     }
 
     .unit5 {
-        height:($nav-unit-base * 5);
-        overflow:hidden;
+        height: ($nav-unit-base * 5);
+        overflow: visible;
     }
 
     .unit6 {
-        height:($nav-unit-base * 6);
-        overflow:hidden;
+        height: ($nav-unit-base * 6);
+        overflow: visible;
     }
 }
 
@@ -349,7 +349,7 @@ a.second-level-link {
 		border: none;
 		background: none;
 		&:focus {
-			outline: dotted 1px #000;
+			@include outline(2px);
 		}
 	}
 }
