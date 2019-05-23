@@ -3,35 +3,35 @@
 <!--[if IE 7]>    <html class="no-js ie7 oldie" lang="en"> <![endif]-->
 <!--[if IE 8]>    <html class="no-js ie8 oldie" lang="en"> <![endif]-->
 <!--[if IE 9]>    <html class="no-js ie9 oldie" lang="en"> <![endif]-->
-<!--[if (gt IE 9)]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+<!--[if (gt IE 9)]><!-->
+<html class="no-js" lang="en">
+ <!--<![endif]-->
 <head>
-<!--
-California State Template
-Version 5.0.7
- 
-Based on Twitter Bootstrap
--->
-<meta charset="utf-8">
+    <!--
+    California State Template
+    Version 5.0.7
 
-<title>Search Results - Organization</title>
+    Based on Twitter Bootstrap
+    -->
+    <meta charset="utf-8">
 
-<meta name="Author" content="State of California" />
-<meta name="Description" content="State of California" />
-<meta name="Keywords" content="California, government" />
+    <title>Search Results - Organization</title>
 
-<!--#include virtual="/ssi/head-css-js.html" -->
-<link rel='stylesheet' href='http://www.google.com/cse/style/look/default.css' type='text/css'/>
+    <meta name="Author" content="State of California" />
+    <meta name="Description" content="State of California" />
+    <meta name="Keywords" content="California, government" />
+
+    <!--#include virtual="/ssi/head-css-js.html" -->
+    <link rel='stylesheet' href='http://www.google.com/cse/style/look/default.css' type='text/css' />
     <!--hiding search icons from search results page navigation sinse the search box is already open-->
     <style>
         #nav-item-search, .mobile-controls .toggle-search {
-            display:none;
+            display: none;
         }
-       .mobile-controls .mobile-header-icons  {
-            display: block;
-            height: 61px;
-            width: 100%;
-            cursor: default;
-       }
+
+        .mobile-controls .mobile-header-icons {
+            display: none;
+        }
     </style>
 </head>
 
@@ -56,7 +56,6 @@ Based on Twitter Bootstrap
 
             <div id="head-search" class="search-container">
                 <!-- Include Search -->
-                <!--#include virtual="/ssi/search.html" -->
             </div>
 
         </div>
@@ -75,7 +74,7 @@ Based on Twitter Bootstrap
 
                     <form id="Search" class="pos-rel" action="/serp.html">
                         <span class="sr-only" id="SearchInput">Custom Google Search</span>
-                        <input type="text" id="q" name="q" aria-labelledby="SearchInput" placeholder="Custom Search" class="w-100 height-50 border-0 p-x-sm" />
+                        <input type="text" id="q" name="q" aria-labelledby="SearchInput" placeholder="Search this website" class="w-100 height-50 border-0 p-x-sm" />
                         <button type="submit" class="pos-abs gsc-search-button right-0 top-0 width-50 height-50 border-0"><span class="ca-gov-icon-search font-size-30" aria-hidden="true"></span><span class="sr-only">Submit</span></button>
                     </form>
 
@@ -83,9 +82,7 @@ Based on Twitter Bootstrap
             </div>
             <div class="section">
                 <div class="container">
-
                     <gcse:searchresults-only></gcse:searchresults-only>
-                    <!-- <script src='//www.google.com/jsapi' type='text/javascript'></script> -->
                 </div>
             </div>
         </main>
@@ -98,7 +95,7 @@ Based on Twitter Bootstrap
 
 
     <script>
-// Search ID
+        // Search ID
         var cx = '001779225245372747843:9s-idxui5pk';// Update this value with your search engine unique ID. Submit a request to the CDT Service Desk if you don't already know your unique search engine ID.
         var gcse = document.createElement('script');
         gcse.type = 'text/javascript';
@@ -109,15 +106,15 @@ Based on Twitter Bootstrap
 
 
 
-// extracting search query from the url parameter and applying it to the searchbox
-jQuery.urlParam = function (name) {
-         var results = new RegExp('[\?&]' + name + '=([^&#]*)')
-             .exec(window.location.search);
+        // extracting search query from the url parameter and applying it to the searchbox
+        jQuery.urlParam = function (name) {
+            var results = new RegExp('[\?&]' + name + '=([^&#]*)')
+                .exec(window.location.search);
 
-          return (results !== null) ? results[1] || 0 : false;
-       }
-    var query = jQuery.urlParam('q');
-    $('input[name=q]').val(query);
+            return (results !== null) ? results[1] || 0 : false;
+        }
+        var query = jQuery.urlParam('q');
+        $('input[name=q]').val(query);
 
     </script>
 
