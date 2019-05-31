@@ -1,5 +1,5 @@
 /**
- * CA State Template v5 -  @version v5.0.7 -  5/23/2019 
+ * CA State Template v5 -  @version v5.0.7 -  5/31/2019 
   STYLES COMPILED FROM SOURCE (source/js) DO NOT MODIFY */
 /*! modernizr (Custom Build) | MIT *
  * https://modernizr.com/download/?-flexbox-setclasses !*/
@@ -16855,7 +16855,11 @@ $.extend($.expr.pseudos, {
 /* Accordion Bootstrap 4 */
 $(document).ready(function () {
     var accordion = $('.accordion').find('.collapsed'); 
+    var accordionTab = $('.accordion').find('a[data-toggle="collapse"]');
+    var accordioncarrot = $('<span aria-hidden="true"></span>');
     accordion.attr("tabindex", 0); // make accordion tabable
+    // appending carrot span to each accordion tab
+    accordionTab.append(accordioncarrot);
 });
 
 /* Remove aria controls from a links */

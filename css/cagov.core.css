@@ -1,5 +1,5 @@
 /**
- * CA State Template v5 -  @version v5.0.7 -  5/23/2019 
+ * CA State Template v5 -  @version v5.0.7 -  5/31/2019 
   STYLES COMPILED FROM SOURCE (SCSS) DO NOT MODIFY */
 /* -----------------------------------------
    BOOTSTRAP v4.3.1 - /source/scss/bootstrap/ 
@@ -13720,7 +13720,7 @@ a.second-level-link [class^="ca-gov-icon-"] {
 }
 
 .utility-header .flex-row .settings-links button {
-  margin: -5px 4px 0 4px;
+  margin: 0 4px 0 4px;
 }
 
 /* .global-header.compact {
@@ -15985,9 +15985,7 @@ body {
   background: #f0f0f0;
 }
 
-.accordion .panel-heading .panel-title a:after, .panel-group .panel-heading .panel-title a:after, .service-tile-content .panel-heading .panel-title a:after {
-  content: "\43";
-  font-family: 'CaGov';
+.accordion .panel-heading .panel-title a span[aria-hidden="true"], .panel-group .panel-heading .panel-title a span[aria-hidden="true"], .service-tile-content .panel-heading .panel-title a span[aria-hidden="true"] {
   position: absolute;
   right: 10px;
   top: 50%;
@@ -15995,7 +15993,12 @@ body {
   color: #777777;
 }
 
-.accordion .panel-heading .panel-title a.collapsed:after, .panel-group .panel-heading .panel-title a.collapsed:after, .service-tile-content .panel-heading .panel-title a.collapsed:after {
+.accordion .panel-heading .panel-title a span[aria-hidden="true"]:after, .panel-group .panel-heading .panel-title a span[aria-hidden="true"]:after, .service-tile-content .panel-heading .panel-title a span[aria-hidden="true"]:after {
+  content: "\43";
+  font-family: 'CaGov';
+}
+
+.accordion .panel-heading .panel-title a.collapsed span[aria-hidden="true"]:after, .panel-group .panel-heading .panel-title a.collapsed span[aria-hidden="true"]:after, .service-tile-content .panel-heading .panel-title a.collapsed span[aria-hidden="true"]:after {
   content: "\45";
 }
 
