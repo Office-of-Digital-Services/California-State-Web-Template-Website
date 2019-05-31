@@ -1,5 +1,5 @@
 /**
- * CA State Template v5.5 -  @version v5.5.3 -  5/6/2019 
+ * CA State Template v5.5 -  @version v5.5.4 -  5/31/2019 
   STYLES COMPILED FROM SOURCE (SCSS) DO NOT MODIFY */
 /* -----------------------------------------
    BOOTSTRAP v4.3.1 - /source/scss/bootstrap/ 
@@ -12563,9 +12563,12 @@ table.gsc-search-box td {
   padding: 5px 5px 12px 5px;
   font-family: "Asap Condensed", sans-serif;
   font-weight: 400;
-  white-space: nowrap;
   position: relative;
   z-index: 1;
+}
+
+.first-level-link.has-sub {
+  padding-right: 10px;
 }
 
 .first-level-link:hover, .first-level-link:focus {
@@ -12594,7 +12597,10 @@ table.gsc-search-box td {
 
 @media (max-width: 992px) and (min-width: 768px) {
   .first-level-link {
-    padding: 5px 3px 12px 3px;
+    padding: 5px 9px 12px 9px;
+  }
+  .first-level-link.has-sub {
+    padding-right: 13px;
   }
 }
 
@@ -12860,6 +12866,13 @@ table.gsc-search-box td {
   .nav-full-width .main-navigation .first-level-link {
     padding: 5px 0 7px 0;
   }
+  .nav-full-width .main-navigation .first-level-link.has-sub {
+    padding-right: 5px;
+  }
+  .nav-full-width .main-navigation .first-level-link.has-sub .carrot {
+    bottom: 7px;
+    color: #fff;
+  }
   .fixed.compact .branding {
     transition: all 0.3s;
   }
@@ -12869,6 +12882,9 @@ table.gsc-search-box td {
   }
   .fixed.compact .nav-full-width .main-navigation .top-level-nav .first-level-link {
     padding: 5px 0 7px 0;
+  }
+  .fixed.compact .nav-full-width .main-navigation .top-level-nav .first-level-link.has-sub {
+    padding-right: 5px;
   }
 }
 
@@ -12897,6 +12913,9 @@ table.gsc-search-box td {
   .nav-full-width-icons .no-icons .top-level-nav .nav-item > a {
     min-height: 55px;
     padding-top: 1rem;
+  }
+  .nav-full-width-icons .no-icons .top-level-nav .nav-item > a.has-sub .carrot {
+    bottom: 16px;
   }
 }
 
@@ -13335,8 +13354,8 @@ a.second-level-link [class^="ca-gov-icon-"] {
 @media (min-width: 768px) {
   .nav-item .first-level-link.has-sub .carrot {
     font-size: .8rem;
-    position: relative;
-    top: 2px;
+    position: absolute;
+    bottom: 13px;
     display: inline-block;
     color: #555555;
   }
@@ -16386,9 +16405,7 @@ body {
   background: #f0f0f0;
 }
 
-.accordion .panel-heading .panel-title a:after, .panel-group .panel-heading .panel-title a:after, .service-tile-content .panel-heading .panel-title a:after {
-  content: "\43";
-  font-family: 'CaGov';
+.accordion .panel-heading .panel-title a span[aria-hidden="true"], .panel-group .panel-heading .panel-title a span[aria-hidden="true"], .service-tile-content .panel-heading .panel-title a span[aria-hidden="true"] {
   position: absolute;
   right: 10px;
   top: 50%;
@@ -16396,7 +16413,12 @@ body {
   color: #777777;
 }
 
-.accordion .panel-heading .panel-title a.collapsed:after, .panel-group .panel-heading .panel-title a.collapsed:after, .service-tile-content .panel-heading .panel-title a.collapsed:after {
+.accordion .panel-heading .panel-title a span[aria-hidden="true"]:after, .panel-group .panel-heading .panel-title a span[aria-hidden="true"]:after, .service-tile-content .panel-heading .panel-title a span[aria-hidden="true"]:after {
+  content: "\43";
+  font-family: 'CaGov';
+}
+
+.accordion .panel-heading .panel-title a.collapsed span[aria-hidden="true"]:after, .panel-group .panel-heading .panel-title a.collapsed span[aria-hidden="true"]:after, .service-tile-content .panel-heading .panel-title a.collapsed span[aria-hidden="true"]:after {
   content: "\45";
 }
 

@@ -52,6 +52,20 @@ $(document).ready(function () {
         }
         $('.search-container').toggleClass('active');
 
+        // hide Search form if it's not active
+        var searchInput = $("#Search #q");
+        var searchSubmit = $("#Search .gsc-search-button");
+        var searchReset = $("#Search .gsc-clear-button");
+        if ($('.search-container').hasClass('active')) {
+            searchInput.removeAttr('tabindex');
+            searchSubmit.removeAttr('tabindex');
+            searchReset.removeAttr('tabindex');
+        } else {
+            searchInput.attr('tabindex', "-1");
+            searchSubmit.attr('tabindex', "-1");
+            searchReset.attr('tabindex', "-1");
+        }
+
         // let the user know the input box is where they should search
         $("#head-search").addClass('play-animation').one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function () {
             $(this).removeClass('play-animation');
@@ -105,6 +119,20 @@ $(document).ready(function () {
             }, 500);
         }
     });
+
+    // Make Search form tabable if it's featured
+    var searchInput = $("#head-search #Search #q");
+    var searchSubmit = $("#head-search #Search .gsc-search-button");
+    var searchReset = $("#head-search #Search .gsc-clear-button");
+    if ($('#head-search').hasClass('featured-search')) {
+        searchInput.removeAttr('tabindex');
+        searchSubmit.removeAttr('tabindex');
+        searchReset.removeAttr('tabindex');
+    } else {
+        searchInput.attr('tabindex', "-1");
+        searchSubmit.attr('tabindex', "-1");
+        searchReset.attr('tabindex', "-1");
+    }
 
 });
 

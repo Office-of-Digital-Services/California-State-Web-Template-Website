@@ -499,12 +499,15 @@ a.second-level-link {
 
 // Adding carrot if nav item has sub nav
 @media (min-width: $screen-sm-min) {
-    .nav-item .first-level-link.has-sub .carrot {
-        font-size: .8rem;
-        position: relative;
-        top: 2px;
-        display: inline-block;
-        color: $gray;
+    .nav-item .first-level-link.has-sub {
+
+        .carrot {
+            font-size: .8rem;
+            position: absolute;
+            bottom: 13px;
+            display: inline-block;
+            color: $gray;
+        }
     }
 }
 

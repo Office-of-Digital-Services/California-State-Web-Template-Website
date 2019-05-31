@@ -103,9 +103,13 @@
     padding: 5px 5px 12px 5px;
     font-family: $headings-font-family;
     font-weight: 400;
-    white-space: nowrap;
+    // white-space: nowrap;
     position: relative;
     z-index: 1;
+
+    &.has-sub {
+        padding-right: 10px; // extra room for arrow
+    }
 
     &:hover, &:focus {
         text-decoration: none;
@@ -132,7 +136,11 @@
 
 @media (max-width: $screen-md) and (min-width: $screen-sm-min) {
     .first-level-link {
-        padding: 5px 3px 12px 3px;
+        padding: 5px 9px 12px 9px;
+
+        &.has-sub {
+            padding-right: 13px; // extra room for arrow
+        }
     }
 }
 
@@ -442,6 +450,15 @@
 
             .first-level-link {
                 padding: 5px 0 7px 0;
+
+                &.has-sub {
+                    padding-right: 5px;
+
+                    .carrot {
+                        bottom: 7px;
+                        color: $white;
+                    }
+                }
             }
         }
     }
@@ -458,6 +475,10 @@
 
             .top-level-nav .first-level-link {
                 padding: 5px 0 7px 0;
+
+                &.has-sub {
+                    padding-right: 5px;
+                }
             }
         }
     }
@@ -492,7 +513,13 @@
             .nav-item > a {
                 min-height: 55px;
                 padding-top: 1rem;
+
+                &.has-sub {
+                    .carrot {
+                        bottom: 16px;
+                    }
+                }
             }
         }
     }
-}
+    }
