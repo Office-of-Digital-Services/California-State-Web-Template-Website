@@ -8,21 +8,20 @@
 <!--<![endif]-->
 
 <head>
-  <!--
-California State Template
-Version 5.5.2
+    <!--    California State Template
+    Version 5.5.4
 
-Based on Twitter Bootstrap
--->
-  <meta charset="utf-8">
+    Based on Twitter Bootstrap
+    -->
+    <meta charset="utf-8">
 
-  <title>Service Profile</title>
+    <title>Service Profile</title>
 
-  <meta name="Author" content="State of California" />
-  <meta name="Description" content="State of California" />
-  <meta name="Keywords" content="California, government" />
+    <meta name="Author" content="State of California" />
+    <meta name="Description" content="State of California" />
+    <meta name="Keywords" content="California, government" />
 
-  <!--#include virtual="/ssi/head-css-js.html" -->
+    <!--#include virtual="/ssi/head-css-js.html" -->
 
 </head>
 
@@ -30,34 +29,31 @@ Based on Twitter Bootstrap
 
 <body>
 
-  <header role="banner" id="header" class="global-header fixed">
-    <div id="skip-to-content"><a href="#main-content">Skip to Main Content</a></div>
+    <header role="banner" id="header" class="global-header fixed">
+        <div id="skip-to-content"><a href="#main-content">Skip to Main Content</a></div>
 
-    <!-- Include Utility Header -->
-    <!--#include virtual="/ssi/utility-header.html" -->
-  
-    <!-- Settings Bar -->
-    <!--#include virtual="/ssi/settings-bar.html" -->
+        <!-- Include Utility Header -->
+        <!--#include virtual="/ssi/utility-header.html" -->
+        <!-- Settings Bar -->
+        <!--#include virtual="/ssi/settings-bar.html" -->
+        <!-- Include Branding -->
+        <!--#include virtual="/ssi/branding.html" -->
+        <!-- Include Mobile Controls -->
+        <!--#include virtual="/ssi/mobile-controls.html" -->
 
-    <!-- Include Branding -->
-    <!--#include virtual="/ssi/branding.html" -->
+        <div class="navigation-search">
+            <!-- Include Navigation -->
+            <!--#include virtual="/ssi/navigation.html" -->
 
-    <!-- Include Mobile Controls -->
-    <!--#include virtual="/ssi/mobile-controls.html" -->
+            <div id="head-search" class="search-container">
+                <!-- Include Search -->
+                <!--#include virtual="/ssi/search.html" -->
+            </div>
 
-      <div class="navigation-search">
-          <!-- Include Navigation -->
-          <!--#include virtual="/ssi/navigation.html" -->
+        </div>
 
-          <div id="head-search" class="search-container">
-              <!-- Include Search -->
-              <!--#include virtual="/ssi/search.html" -->
-          </div>
-
-      </div>
-
-    <div class="header-decoration"></div>
-  </header>
+        <div class="header-decoration"></div>
+    </header>
 
 
     <div id="main-content" class="main-content">
@@ -68,7 +64,7 @@ Based on Twitter Bootstrap
                     <div class="group">
                         <div class="third">
                             <!-- If image is availabele show it -->
-                            <!-- <img src="http://www.elegantthemes.com/preview/Divi/wp-content/uploads/2014/04/rock-trail.jpg" alt="" class="img-responsive img-thumbnail"> --> 
+                            <!-- <img src="http://www.elegantthemes.com/preview/Divi/wp-content/uploads/2014/04/rock-trail.jpg" alt="" class="img-responsive img-thumbnail"> -->
                             <!-- If no image but icon is available show it instead -->
                             <div class="service-icon ca-gov-icon-capitol"></div>
                             <!-- If nothing is selected show service icon -->
@@ -77,13 +73,13 @@ Based on Twitter Bootstrap
                             <h1 class="m-y-0 text-accent-p1">Renew Vehicle Registration</h1>
                             <p class="lead"><a href="">Department of Motor Vehicles (DMV)</a></p>
                             <p>Placeholder Description: Nullam quis risus eget urna mollis ornare vel eu leo. Vivamus sagittis lacus vel augue rutrum. Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Donec ullamcorper nulla non metus auctor fringilla.</p>
-                            
+
                             <div class="btn-row m-y">
                                 <a href="" class="btn btn-primary btn-block-xs"><span class="ca-gov-icon-computer"></span> Launch Service</a>
                                 <a href="" class="btn btn-primary btn-block-xs"><span class="ca-gov-icon-location"></span> Locations Near You</a>
                                 <a href="" class="btn btn-primary btn-block-xs"><span class="ca-gov-icon-contact-us"></span>  Contact</a>
                             </div>
-                            
+
                             <div class="location" itemscope itemtype="http://schema.org/Organization">
                                 <meta itemprop="name" content="Organization Name Here">
                                 <p class="other">
@@ -97,20 +93,20 @@ Based on Twitter Bootstrap
                                 <a href="" class="btn btn-primary btn-xs">Find a Traffic School</a>
                                 <a href="" class="btn btn-primary btn-xs">Release of Liability</a>
                                 <a href="" class="btn btn-primary btn-xs">Name Change</a>
-                            </div> 
-                            
+                            </div>
+
                             <ul class="list-inline list-unstyled m-t-md social">
-                                <li class="list-inline-item"><a href=""><span class="ca-gov-icon-twitter" aria-hidden="true"><span class="sr-only">Twitter</span></span></a></li>
-                                <li class="list-inline-item"><a href=""><span class="ca-gov-icon-facebook" aria-hidden="true"><span class="sr-only">Facebook</span></span></a></li>
-                                <li class="list-inline-item"><a href=""><span class="ca-gov-icon-google-plus" aria-hidden="true"><span class="sr-only">Google+</span></span></a></li>
+                                <li class="list-inline-item"><a href=""><span class="ca-gov-icon-twitter" aria-hidden="true"><span class="sr-only">Twitter DMV</span></span></a></li>
+                                <li class="list-inline-item"><a href=""><span class="ca-gov-icon-facebook" aria-hidden="true"><span class="sr-only">Facebook DMV</span></span></a></li>
+                                <li class="list-inline-item"><a href=""><span class="ca-gov-icon-google-plus" aria-hidden="true"><span class="sr-only">Google+ DMV</span></span></a></li>
                             </ul>
                         </div>
                     </div>
                 </div>
             </div>
             <!-- End Section -->
-        
-            
+
+
             <div class="section section-default" id="frequently-asked-questions">
                 <div class="container">
                     <h2>Frequently Asked Questions</h2>
@@ -119,30 +115,27 @@ Based on Twitter Bootstrap
             </div>
 
             <!--#include virtual="/ssi/section-data-visualizations.html" -->
-            
+
             <div class="section section-understated">
                 <div class="container">
                     <!--#include virtual="/ssi/section-service-advertisement.html" -->
                 </div>
             </div>
             <!-- End Section -->
-            
             <!--#include virtual="/ssi/section-related-links.html" -->
-            
+
             <div class="section">
                 <div class="container">
                     <!--#include virtual="/ssi/google-cse.html" -->
                 </div>
             </div>
-   
+
         </main>
     </div>
 
 
     <!--#include virtual="/ssi/section-footer2.html" -->
-    
     <!--#include virtual="/ssi/global-footer.html" -->
-
     <!--#include virtual="/ssi/scripts.html" -->
 
 

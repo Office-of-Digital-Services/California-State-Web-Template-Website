@@ -5,27 +5,27 @@
 
 @media (max-width: $screen-xs-max) {
     .main-navigation {
-        margin-top:0;
-        padding:0;
+        margin-top: 0;
+        padding: 0;
     }
 }
- 
-.megadropdown .top-level-nav {  // beta 5.0 addition (fixes IE dropdown issue)
-	
-	@media (max-width: $screen-md) and (min-width: $screen-sm-min) { // Beta 5.0 addition
-				font-size: 0.9em;	
-			}
-   .nav-item {
+
+.megadropdown .top-level-nav { // beta 5.0 addition (fixes IE dropdown issue)
+    @media (max-width: $screen-md) and (min-width: $screen-sm-min) { // Beta 5.0 addition
+        font-size: 0.9em;
+    }
+
+    .nav-item {
         position: static;
 
         @media (max-width: $screen-xs-max) {
             position: relative;
         }
-		
+
 
 
         .no-js &:hover .sub-nav {
-            position: absolute;                     // On hover show the sub navigation panel
+            position: absolute; // On hover show the sub navigation panel
             display: block;
         }
     }
@@ -53,22 +53,22 @@
         //width: 44px;
         //height: 16px;
         //margin-left: -22px;
-
         // VARIATION USING BAR
         position: absolute;
-        top: -5px;      // equal to the thickness of the border
+        top: -5px; // equal to the thickness of the border
         left: 50%;
-        height:5px;
-        width:100px;
-        margin-left:-65px;  // -50 + -15 for 1/2 of gutter
+        height: 5px;
+        width: 100px;
+        margin-left: -65px; // -50 + -15 for 1/2 of gutter
     }
-	.dropdown .nav-arrow-down {
-		height: 5px;
-		left: 0;
-		margin-left: 0;
-		position: absolute;
-		top: -5px;
-		}
+
+    .dropdown .nav-arrow-down {
+        height: 5px;
+        left: 0;
+        margin-left: 0;
+        position: absolute;
+        top: -5px;
+    }
 }
 
 //
@@ -79,15 +79,13 @@
     left: ($grid-gutter-width / 2);
     right: ($grid-gutter-width / 2);
     overflow: hidden;
-
     // Remove border as rules are added to top level links
     @media (max-width: $screen-xs-max) {
-        border:none;
+        border: none;
     }
-
     // Collapse grid gutters
     .half, .third, .quarter, .two-thirds, .three-quarters {
-        padding:0;
+        padding: 0;
     }
 }
 
@@ -98,20 +96,20 @@
 // --------------------------------------------------
 
 .dropdown {
-	.second-level-nav {
-		>li {
-			border-right: 0; //  _cs-shame.scss addition
-		}
-	}
-	.sub-nav {
-		border-bottom: none; //  _cs-shame.scss addition
-	}
+    .second-level-nav {
+        > li {
+            border-right: 0; //  _cs-shame.scss addition
+        }
+    }
+
+    .sub-nav {
+        border-bottom: none; //  _cs-shame.scss addition
+    }
 }
 
 .second-level-nav {
     list-style: none;
     padding: 0;
-
     // SET UP NAVIGATION COLUMNS
     @media (min-width: $screen-sm-min) {
         .half &, .two-thirds & {
@@ -122,20 +120,18 @@
             @include nav-columns(3);
         }
     }
-
     // float links ie9 and below doesn't support columns
     &.oldie {
         @include clearfix();
     }
 
-   [class^="unit"] {
+    [class^="unit"] {
         @include nav-column-group;
         background: none;
 
         a, .link-description {
             @include nav-column-group;
         }
-
         // float links since ie9 and below doesn't support columns
         .oldie & {
             width: 33.3333%;
@@ -150,21 +146,21 @@
 
 a.second-level-link {
     @include font-size(1.1);
-    padding:10px;
+    padding: 10px;
 
     &:hover, &:focus {
-        text-decoration:none !important;
+        text-decoration: none !important;
     }
 
     [class^="ca-gov-icon-"] {
-        display:inline-block;
+        display: inline-block;
         @include font-size(1.375);
-        vertical-align:-2px;
-        margin-right:3px;
+        vertical-align: -2px;
+        margin-right: 3px;
     }
 
     @media (max-width: $screen-xs-max) {
-        padding:10px 15px 10px 40px !important;
+        padding: 10px 15px 10px 40px !important;
     }
 }
 
@@ -184,42 +180,42 @@ a.second-level-link {
     $nav-unit-base: 65px;
 
     .unit1 {
-        height:$nav-unit-base;
-        overflow:hidden !important;
+        height: $nav-unit-base;
+        overflow: hidden !important;
     }
 
     .unit2 {
-        height:($nav-unit-base * 2);
-        overflow:hidden;
+        height: ($nav-unit-base * 2);
+        overflow: hidden;
     }
 
     .unit3 {
-        height:($nav-unit-base * 3);
-        overflow:hidden;
+        height: ($nav-unit-base * 3);
+        overflow: hidden;
     }
 
     .unit4 {
-        height:($nav-unit-base * 4);
-        overflow:hidden;
+        height: ($nav-unit-base * 4);
+        overflow: hidden;
     }
 
     .unit5 {
-        height:($nav-unit-base * 5);
-        overflow:hidden;
+        height: ($nav-unit-base * 5);
+        overflow: hidden;
     }
 
     .unit6 {
-        height:($nav-unit-base * 6);
-        overflow:hidden;
+        height: ($nav-unit-base * 6);
+        overflow: hidden;
     }
 }
 
-/* Megamenu State Template v4 */ 
+/* Megamenu State Template v4 */
 @media (min-width: $screen-sm-min) {
-	
-	.main-navigation.megadropdown.original {
-		.second-level-nav {
-			-moz-column-count: 3;
+
+    .main-navigation.megadropdown.original {
+        .second-level-nav {
+            -moz-column-count: 3;
             -ms-column-count: 3;
             -webkit-column-count: 3;
             -moz-column-gap: 20px;
@@ -227,187 +223,202 @@ a.second-level-link {
             -webkit-column-gap: 20px;
             column-count: 3;
             column-gap: 20px;
-			}
-			
-			.sub-nav {
-				padding: 16px;
-				// one third width of the -sm  nav image
-				&[class*="with-image-sm-"] {
-					.sub-nav-decoration {
-						width: 33.3333%;
-						}
-					// two columns for submenu items with -sm image 
-					> ul {
-						-webkit-column-count: 2;
-						-moz-column-count: 2;
-						-ms-column-count: 2;
-						column-count: 2;
-						-moz-column-gap: 20px;
-						-ms-column-gap: 20px;
-						-webkit-column-gap: 20px;
-						column-gap: 20px;
-						}
-					}
-				// half width for the -md nav image	
-				&[class*="with-image-md-"] {
-					.sub-nav-decoration {
-						width: 50%;
-					}
-					// one column for submenu items with -md image 
-					> ul {
-						-moz-column-count: 1;
-						-ms-column-count: 1;
-						-webkit-column-count: 1;
-						-moz-column-gap: 20px;
-						-ms-column-gap: 20px;
-						-webkit-column-gap: 20px;
-						column-count: 1;
-						column-gap: 20px;
-			  			}
-					}
-					&[class*="with-image-"] > ul > li {
-						padding-right: 16px !important;
-					}
-					// sub nav background image settings
-					.sub-nav-decoration {
-						display: block;
-						position: absolute;
-						top: 0;
-						right: 0;
-						bottom: 0;
-						overflow: hidden;
-						background-position: 50% 50% !important;
-						background-size: cover !important;
-						}
-					// width and float for the sub nav list if there is -sm-right image
-					&.with-image-sm-right > ul {
-						float: left;
-						width: 66.6667%;
-					}
-					// width and float for the sub nav list if there is -sm-left image
-					&.with-image-sm-left > ul {
-						float: right;
-						width: 66.6667%;
-					}
-					// width and float for the sub nav list if there is -md-right image
-					&.with-image-md-right > ul {
-						float: left;
-						width: 50%;
-					}
-					// width and float for the sub nav list if there is -md-left image			
-					&.with-image-md-left > ul {
-						float: right;
-						width: 50%;
-					}
-					// settings if the subnav image has -left
-					&[class*="-left"] .sub-nav-decoration {
-						right: auto;
-						left: 0;
-					}
-				}
-		
-		}
-	
-	}
-	
+        }
+
+        .sub-nav {
+            padding: 16px;
+            // one third width of the -sm  nav image
+            &[class*="with-image-sm-"] {
+                .sub-nav-decoration {
+                    width: 33.3333%;
+                }
+                // two columns for submenu items with -sm image
+                > ul {
+                    -webkit-column-count: 2;
+                    -moz-column-count: 2;
+                    -ms-column-count: 2;
+                    column-count: 2;
+                    -moz-column-gap: 20px;
+                    -ms-column-gap: 20px;
+                    -webkit-column-gap: 20px;
+                    column-gap: 20px;
+                }
+            }
+            // half width for the -md nav image
+            &[class*="with-image-md-"] {
+                .sub-nav-decoration {
+                    width: 50%;
+                }
+                // one column for submenu items with -md image
+                > ul {
+                    -moz-column-count: 1;
+                    -ms-column-count: 1;
+                    -webkit-column-count: 1;
+                    -moz-column-gap: 20px;
+                    -ms-column-gap: 20px;
+                    -webkit-column-gap: 20px;
+                    column-count: 1;
+                    column-gap: 20px;
+                }
+            }
+
+            &[class*="with-image-"] > ul > li {
+                padding-right: 16px !important;
+            }
+            // sub nav background image settings
+            .sub-nav-decoration {
+                display: block;
+                position: absolute;
+                top: 0;
+                right: 0;
+                bottom: 0;
+                overflow: hidden;
+                background-position: 50% 50% !important;
+                background-size: cover !important;
+            }
+            // width and float for the sub nav list if there is -sm-right image
+            &.with-image-sm-right > ul {
+                float: left;
+                width: 66.6667%;
+            }
+            // width and float for the sub nav list if there is -sm-left image
+            &.with-image-sm-left > ul {
+                float: right;
+                width: 66.6667%;
+            }
+            // width and float for the sub nav list if there is -md-right image
+            &.with-image-md-right > ul {
+                float: left;
+                width: 50%;
+            }
+            // width and float for the sub nav list if there is -md-left image
+            &.with-image-md-left > ul {
+                float: right;
+                width: 50%;
+            }
+            // settings if the subnav image has -left
+            &[class*="-left"] .sub-nav-decoration {
+                right: auto;
+                left: 0;
+            }
+        }
+    }
+}
+
 .main-navigation.megadropdown.original {
-	.link-description {
-		font-size: 0.8em;
-	}
-	a.second-level-link {
-	   padding: 0 !important;
-	   }
-	.second-level-nav > li {
-	   padding: .3em .7rem .4em 1rem;
-	   border:none;
-	   -webkit-column-break-inside: avoid;
-	   page-break-inside: avoid;
-	   break-inside: avoid;
-	}
+    .link-description {
+        font-size: 0.8em;
+    }
+
+    a.second-level-link {
+        padding: 0 !important;
+    }
+
+    .second-level-nav > li {
+        padding: .3em .7rem .4em 1rem;
+        border: none;
+        -webkit-column-break-inside: avoid;
+        page-break-inside: avoid;
+        break-inside: avoid;
+    }
 }
 
 /* Accessible Menu */
 // beta 5.0 addition (for accessible menu)
 .nav-item {
-	display: inline-block;
+    display: inline-block;
 }
+
 .sub-nav {
-	-webkit-transition: all 0.4s;
-	transition: all 0.4s;
+    -webkit-transition: all 0.4s;
+    transition: all 0.4s;
 }
+
 .sub-nav.open {
-	display: block;
-	max-height:1000px;
-    overflow:auto;
+    display: block;
+    max-height: 1000px;
+    overflow: auto;
 }
+
 .main-navigation.active {
-	max-height: 5000px;
+    max-height: 5000px;
 }
+
 .mobile-controls {
-	.toggle-menu {
-		border: none;
-		background: none;
-		&:focus {
-			outline: #2ea3f2 solid 2px;
-		}
-	}
+    .toggle-menu {
+        border: none;
+        background: none;
+
+        &:focus {
+            outline: #2ea3f2 solid 2px;
+        }
+    }
 }
+
 @media (max-width: $screen-xs-max) {
-	.main-navigation {
-		overflow: hidden;
-	}
-	.sub-nav {
-		display: block;
-		top: 0;
-		left: 0; // beta 6.0 addition
-		position: relative;
-	}
-	.nav-item {
-		.toggle-sub-nav {
-			display: block;
-		}
-		display: block;
-	}
+    .main-navigation {
+        overflow: hidden;
+    }
+
+    .sub-nav {
+        display: block;
+        top: 0;
+        left: 0; // beta 6.0 addition
+        position: relative;
+    }
+
+    .nav-item {
+        .toggle-sub-nav {
+            display: block;
+        }
+
+        display: block;
+    }
 }
+
 @media (min-width: $screen-sm-min) {
-	
-	.sub-nav {
-		border-top: none;
-	}
-	.main-navigation {
-		margin-top: -82px; // beta 6.0 addition
-	}
-	.no-icons {
-		.top-level-nav {
-			.nav-item {
-				>a {
-					min-height: 86px; // beta 6.0 addition
-					padding-top: 2rem;
-				}
-			}
-		}
-	}
-	.fixed.compact {
-		.no-icons {
-			.top-level-nav {
-				.nav-item {
-					>a {
-						padding-top: 12px;
-						min-height: 50px;
-					}
-				}
-			}
-		}
-	}
+
+    .sub-nav {
+        border-top: none;
+    }
+
+    .main-navigation {
+        margin-top: -82px; // beta 6.0 addition
+    }
+
+    .no-icons {
+        .top-level-nav {
+            .nav-item {
+                > a {
+                    min-height: 86px; // beta 6.0 addition
+                    padding-top: 2rem;
+                }
+            }
+        }
+    }
+
+    .fixed.compact {
+        .no-icons {
+            .top-level-nav {
+                .nav-item {
+                    > a {
+                        padding-top: 12px;
+                        min-height: 50px;
+                    }
+                }
+            }
+        }
+    }
 }
 
 .media-left, .media-right, .media-body {
-  display: table-cell;
-  vertical-align: top;
+    display: table-cell;
+    vertical-align: top;
 }
+
 .media-left {
-	padding-right: 10px;
-	}
+    padding-right: 10px;
+}
 
 /* Flex Sub Nav */
 // Flex subnav desktop view
@@ -437,9 +448,6 @@ a.second-level-link {
             display: block;
             margin: 0;
         }
-
-
-
     }
 
     .second-level-nav.flex.with-border a {
@@ -451,7 +459,6 @@ a.second-level-link {
             border-left: 2px dotted #ccc;
         }
     }
-
 }
 
 
@@ -492,13 +499,20 @@ a.second-level-link {
 
 // Adding carrot if nav item has sub nav
 @media (min-width: $screen-sm-min) {
-    .has-sub::after {
-        content: "\43";
-        font-family: 'CaGov';
-        font-size: .8rem;
-        position:relative;
-        top:2px;
+    .nav-item .first-level-link.has-sub {
 
+        .carrot {
+            font-size: .8rem;
+            position: absolute;
+            bottom: 13px;
+            display: inline-block;
+            color: $gray;
+        }
     }
+}
 
+@media (max-width: $screen-xs-max) {
+    .nav-item .first-level-link.has-sub .carrot {
+        display: none;
+    }
 }

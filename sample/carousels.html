@@ -3,15 +3,16 @@
 <!--[if IE 7]>    <html class="no-js ie7 oldie" lang="en"> <![endif]-->
 <!--[if IE 8]>    <html class="no-js ie8 oldie" lang="en"> <![endif]-->
 <!--[if IE 9]>    <html class="no-js ie9 oldie" lang="en"> <![endif]-->
-<!--[if (gt IE 9)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<!--[if (gt IE 9)]><!-->
+<html class="no-js" lang="en">
+<!--<![endif]-->
 
 <head>
-<!--
-California State Template
-Version 5.5.2
+    <!--    California State Template
+    Version 5.5.4
 
-Based on Twitter Bootstrap
--->
+    Based on Twitter Bootstrap
+    -->
     <meta charset="utf-8">
     <title>Sample - Carousels</title>
     <meta name="Author" content="State of California" />
@@ -24,16 +25,13 @@ Based on Twitter Bootstrap
 <body>
     <header role="banner" id="header" class="global-header">
         <div id="skip-to-content"><a href="#main-content">Skip to Main Content</a></div>
-        
+
         <!-- Include Utility Header -->
-		<!--#include virtual="/ssi/utility-header.html" -->	
-        
-        <!-- Settings Bar -->	
-		<!--#include virtual="/ssi/settings-bar.html" -->
-
-		<!-- Include Branding -->
-		<!--#include virtual="/ssi/branding.html" -->
-
+        <!--#include virtual="/ssi/utility-header.html" -->
+        <!-- Settings Bar -->
+        <!--#include virtual="/ssi/settings-bar.html" -->
+        <!-- Include Branding -->
+        <!--#include virtual="/ssi/branding.html" -->
         <!-- Include Mobile Controls -->
         <!--#include virtual="/ssi/mobile-controls.html" -->
 
@@ -55,8 +53,8 @@ Based on Twitter Bootstrap
         <div class="section">
             <main class="main-primary">
                 <ol class="breadcrumb">
-                    <li><a href="../index.html">Home</a></li>
-                    <li><a href="index.html">Examples</a></li>
+                    <li><a href="../index.html" title="Home page">Home</a></li>
+                    <li><a href="index.html" title="Examples landing page">Examples</a></li>
                     <li class="active">Carousels</li>
                 </ol>
 
@@ -66,12 +64,12 @@ Based on Twitter Bootstrap
                     <div class="two-thirds">
                         <h2>Content Carousel</h2>
                         <p>A content carousel component provides a solution for placing text or other content bove an image. With responsive and dynamic content in mind , there is two element configurations for setting the height of the slide. One which fits to the content, and one which fits to the image.</p>
-                        <p>Our recommendation is use the <b>content fit</b> when you have a large amount of text, descriptive content, etc. <i>Note: </i> that in this case your background image should be a generic pattern or design.</p>
-                        <p>On the other hand you should use the <b>image fit</b> when you have only a single line or so of text, a simple header or button, html5 video or any content which would take up less space than your image or video.</p>
+                        <p>Our recommendation is use the <strong>content fit</strong> when you have a large amount of text, descriptive content, etc. <i>Note: </i> that in this case your background image should be a generic pattern or design.</p>
+                        <p>On the other hand you should use the <strong>image fit</strong> when you have only a single line or so of text, a simple header or button, html5 video or any content which would take up less space than your image or video.</p>
                         <p>For any content carousel item, you can also apply the class of <code>backdrop</code> which will apply a slight opaque grey background to the content. This is useful when your images do not have enough contrast with your text.</p>
                     </div>
                     <div class="third">
-                        <h2><label for="sample-blank">Source Code:</label></h2>
+                        <h2><label for="sample-1">Source Code:</label></h2>
                         <textarea id="sample-1" class="form-control" rows="10" cols="80"><!--#include virtual="/sample/modules/carousel-content-blank.html" --></textarea>
                     </div>
                 </div>
@@ -83,10 +81,9 @@ Based on Twitter Bootstrap
                     <div class="two-thirds">
                         <h2>Content Carousel (content fit)</h2>
                         <p>To create a content fit, we use a background-image on the outermost element of our item. One could of course not set the background-image and the carousel item will still fit the content,  but you will have to be aware of issues between the carousel container's background color and your content.</p>
-<pre><code>
-<div class="item" style="background-image: url('/url/to/image');">
-                        <div class="content-container">
-                        <div class="content">
+<pre><code><div class="item" style="background-image: url('/url/to/image');">
+    <div class="content-container">
+        <div class="content">
             <! -- your content -->
         </div>
     </div>
@@ -96,7 +93,7 @@ Based on Twitter Bootstrap
                         <!--#include virtual="/sample/modules/carousel-content.html" -->
                     </div>
                     <div class="third">
-                        <h2><label for="sample-content">Source Code:</label></h2>
+                        <h2><label for="sample-2">Source Code:</label></h2>
                         <textarea id="sample-2" class="form-control" rows="10" cols="80"><!--#include virtual="/sample/modules/carousel-content.html" --></textarea>
                     </div>
                 </div>
@@ -108,23 +105,19 @@ Based on Twitter Bootstrap
                     <div class="two-thirds">
                         <h2>Content Carousel (image fit)</h2>
                         <p>To create an image fit, we use an image element contained within our item. If the image element is missing the item will simply fallback to being a content fit item. <i>Warn:</i> if the image url is broken or pointing to the wrong location, the element will have 0 height.</p>
-<pre><code>
-                        <div class="item">
-                        <img src="/sample/images/gallery/sierra-big.jpg" alt="background" />
-
-
-
-                        <div class="content-container">
-                        <div class="content">
-                     <!-- your content -->
-                 </div>
-             </div>
-         </div>
+<pre><code><div class="item">
+<img src="/sample/images/gallery/sierra-big.jpg" alt="background" />
+    <div class="content-container">
+        <div class="content">
+            <!-- your content -->
+        </div>
+     </div>
+</div>
 </code></pre>
                         <!--#include virtual="/sample/modules/carousel-content-fit-image.html" -->
                     </div>
                     <div class="third">
-                        <h2><label for="sample-fit-img">Source Code:</label></h2>
+                        <h2><label for="sample-3">Source Code:</label></h2>
                         <textarea id="sample-3" class="form-control" rows="10" cols="80"><!--#include virtual="/sample/modules/carousel-content-fit-image.html" --></textarea>
                     </div>
                 </div>
@@ -133,7 +126,7 @@ Based on Twitter Bootstrap
 
                 <h2>Video Carousel</h2>
                 <!--#include virtual="/sample/modules/carousel-video.html" -->
-                <h2><label for="sample-carousel-video">Source Code:</label></h2>
+                <h2><label for="sample-4">Source Code:</label></h2>
                 <textarea id="sample-4" class="form-control" rows="10" cols="80"><!--#include virtual="/sample/modules/carousel-video.html" --></textarea>
 
                 <hr>
@@ -144,8 +137,8 @@ Based on Twitter Bootstrap
                     <h2>Slideshow Banner</h2>
                     <!--#include virtual="/sample/modules/slideshow-banner.html" -->
                 </div>
-                <h2><label for="sample-carousel-video">Source Code:</label></h2>
-                <textarea id="sample-4" class="form-control" rows="10" cols="80"><!--#include virtual="/sample/modules/slideshow-banner.html" --></textarea>
+                <h2><label for="sample-5">Source Code:</label></h2>
+                <textarea id="sample-5" class="form-control" rows="10" cols="80"><!--#include virtual="/sample/modules/slideshow-banner.html" --></textarea>
 
 
                 <hr />
@@ -169,16 +162,16 @@ Based on Twitter Bootstrap
 
                 <h3>Media Carousel without Card</h3>
                 <!--#include virtual="/sample/modules/carousel-media.html" -->
-                <h2><label for="sample-carousel-media">Source Code:</label></h2>
-                <textarea id="sample-5" class="form-control" rows="10" cols="80"><!--#include virtual="/sample/modules/carousel-media.html" --></textarea>
+                <h2><label for="sample-6">Source Code:</label></h2>
+                <textarea id="sample-6" class="form-control" rows="10" cols="80"><!--#include virtual="/sample/modules/carousel-media.html" --></textarea>
 
                 <hr>
                 <h1>Link Carousel</h1>
                 <p>The Link Carousel scrolls through a set of image links. It will scroll a set of items contained in a container with class <code>.carousel-link</code>.</p>
                 <h2>Link Icon Carousel Example</h2>
                 <!--#include virtual="/sample/modules/carousel-link.html" -->
-                <h2><label for="sample-carousel-link">Source Code:</label></h2>
-                <textarea id="sample-6" class="form-control" rows="10" cols="80"><!--#include virtual="/sample/modules/carousel-link.html" --></textarea>
+                <h2><label for="sample-7">Source Code:</label></h2>
+                <textarea id="sample-7" class="form-control" rows="10" cols="80"><!--#include virtual="/sample/modules/carousel-link.html" --></textarea>
             </main>
 
             <div class="main-secondary">
@@ -186,14 +179,13 @@ Based on Twitter Bootstrap
                 <p>The Social Media Slider displays one item at a time. It will slide a set of items contained in a container with class <code>.carousel-slider</code>.</p>
                 <h2>Social Media Slider Example</h2>
                 <!--#include virtual="/sample/modules/carousel-slider.html" -->
-                <h2><label for="sample-carousel-slider">Source Code:</label></h2>
-                <textarea id="sample-7" class="form-control" rows="10" cols="80"><!--#include virtual="/sample/modules/carousel-slider.html" --></textarea>
+                <h2><label for="sample-8">Source Code:</label></h2>
+                <textarea id="sample-8" class="form-control" rows="10" cols="80"><!--#include virtual="/sample/modules/carousel-slider.html" --></textarea>
             </div>
         </div>
     </div>
 
     <!--#include virtual="/ssi/global-footer.html" -->
-
     <!--#include virtual="/ssi/scripts.html" -->
 
 </body>

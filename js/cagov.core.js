@@ -1,5 +1,5 @@
 /**
- * CA State Template v5.5 -  @version v5.5.2 -  3/26/2019 
+ * CA State Template v5.5 -  @version v5.5.4 -  5/31/2019 
   STYLES COMPILED FROM SOURCE (source/js) DO NOT MODIFY */
 /*! modernizr (Custom Build) | MIT *
  * https://modernizr.com/download/?-flexbox-setclasses !*/
@@ -14442,27 +14442,27 @@ $(document).ready(function () {
 
 // take into account the fixed header -----------------------------------------------------v5 FIX---------------------------------
 
-        //else {
-        //    // no header image, which means our main content needs to
+        else {
+            // no header image, which means our main content needs to
 
-        //    $mainContent.css({
-        //        'padding-top': Math.max(headerHeight, 119)
-        //    })
-
-
-        //} if ($(".ask-group").length > 0) {
-        //    $mainContent.addClass('print-p-t'); // Media print .main-content fix	
-        //    $mainContent.css({
-        //        'padding-top': 0
-        //    })
-
-        //    $('.header-slideshow-banner, .header-primary-banner').css({
-        //        'margin-top': 119
-
-        //    });
+            $mainContent.css({
+                'padding-top': Math.max(headerHeight, 119)
+            })
 
 
-        //}
+        } if ($(".ask-group").length > 0) {
+            $mainContent.addClass('print-p-t'); // Media print .main-content fix	
+            $mainContent.css({
+                'padding-top': 0
+            })
+
+            $('.header-slideshow-banner, .header-primary-banner').css({
+                'margin-top': 119
+
+            });
+
+
+        }
     }
     // take into account the fixed header -----------------------------------------------------v5 FIX---------------------------------
 
@@ -15214,7 +15214,7 @@ limitations under the License.
                 case Keyboard.SPACE:
                 case Keyboard.ENTER:
                     if (isTopNavItem) {
-                       // event.preventDefault();
+                        // event.preventDefault();
                         _clickHandler.call(that, event);
                     } else {
                         return true;
@@ -15658,7 +15658,7 @@ $("nav:first").accessibleMegaMenu({
 
 /// MOBILE
 function mobileView() {
-    return $('.global-header .mobile-controls').css('display') !== "none"; 
+    return $('.global-header .mobile-controls').css('display') !== "none";
 }
 
 
@@ -15676,14 +15676,14 @@ $(document).ready(function () {
 
 
     // Variables
-var $navigation = $('#navigation.main-navigation'),
-    $navItems = $navigation.find('.nav-item'), // first level link containers'
-    $navItemsWithSubs = $navItems.has('.sub-nav'),
-    $subNavs = $navigation.find('.sub-nav'),
-    megamenu = $navigation.hasClass('megadropdown'),
-    dropdown = $navigation.hasClass('dropdown'),
-    singleLevel = $navigation.hasClass('singleLevel'),
-    setActiveLinkByFolder = $navigation.hasClass('auto-highlight'); // Use new folder matching method to highlight the current navigation tab
+    var $navigation = $('#navigation.main-navigation'),
+        $navItems = $navigation.find('.nav-item'), // first level link containers'
+        $navItemsWithSubs = $navItems.has('.sub-nav'),
+        $subNavs = $navigation.find('.sub-nav'),
+        megamenu = $navigation.hasClass('megadropdown'),
+        dropdown = $navigation.hasClass('dropdown'),
+        singleLevel = $navigation.hasClass('singleLevel'),
+        setActiveLinkByFolder = $navigation.hasClass('auto-highlight'); // Use new folder matching method to highlight the current navigation tab
 
 
     // HIGHLIGHT APPROPRIATE NAV ITEM
@@ -15717,7 +15717,7 @@ var $navigation = $('#navigation.main-navigation'),
         }
     });
 
-    
+
     // Add class has-sub, then add carrots
     if (!singleLevel) {
         $navItemsWithSubs.each(function () {
@@ -15725,18 +15725,19 @@ var $navigation = $('#navigation.main-navigation'),
             $(this).find('.first-level-link').addClass('has-sub');
 
             var $toggleSubNav = $('<div class="ca-gov-icon-caret-right rotate" aria-hidden="true"></div>');
+            var carrot = $('<span class="ca-gov-icon-triangle-down carrot" aria-hidden="true"></span>');
 
             if (mobileView()) {
                 $(this).find('.has-sub').append($toggleSubNav);
             }
-
+            $(this).find('.has-sub').append(carrot);
         });
     }
 
     // Scrolling to the top of the menu in mobile
     var HasSubLink = $(".collapse .has-sub");
     var navTarget = $(".mobile-controls");
-    
+
     $(HasSubLink).click(function () {
         if (mobileView()) {
             $('html,body').animate({
@@ -15779,13 +15780,19 @@ function NavReset() {
     else {
         $("#navigation").removeClass("collapse");
         $(".rotate").css("display", "none");
-        
+
     }
-    
+
     $(".toggle-menu").attr('aria-expanded', 'false');
     $(".toggle-menu").attr('aria-selected', 'false');
 }
 
+/* Mobile Controls fix */
+$(document).ready(function () {
+    $("#navigation .mobile-controls").removeClass("nav-menu");
+    $("#navigation .mobile-control a").removeAttr("aria-hidden aria-expanded role id").removeClass("sub-nav with-few-items subnav-closed");
+    $("#navigation .mobile-control .sr-only").removeAttr("aria-hidden aria-expanded role id").removeClass("sub-nav with-few-items subnav-closed");
+});
 
 /* -----------------------------------------
    ACCORDION LIST - /source/js/cagov/accordion.js
@@ -15928,7 +15935,7 @@ tabpanel.prototype.switchTabs = function ($curTab, $newTab) {
     $curTab.removeClass('selected focus');
 
     // remove tab from the tab order and update its aria-selected attribute 
-    $curTab.attr('tabindex', '-1').attr('aria-selected', 'false');
+    $curTab.attr('aria-selected', 'false');
 
 
     // Highlight the new tab and update its aria-selected attribute 
@@ -16041,7 +16048,7 @@ tabpanel.prototype.bindHandlers = function () {
     });
 
     // bind a keypress handler for the panel 
-    this.$panels.on("keypress",function (e) {
+    this.$panels.on("keypress", function (e) {
         return thisObj.handlePanelKeyPress($(this), e);
     });
 
@@ -16223,7 +16230,7 @@ tabpanel.prototype.handleTabClick = function ($tab, e) {
     $tab.attr('tabindex', '0').attr('aria-selected', 'true').addClass('selected');
 
     // remove all tabs from the tab order and update their aria-selected attribute 
-    this.$tabs.not($tab).attr('tabindex', '-1').attr('aria-selected', 'false').removeClass('selected');
+    this.$tabs.not($tab).attr('aria-selected', 'false').removeClass('selected');
 
     // Expand the new panel 
     this.togglePanel($tab);
@@ -16511,7 +16518,7 @@ tabpanel.prototype.handlePanelClick = function ($panel, e) {
     $tab.attr('tabindex', '0').attr('aria-selected', 'true').addClass('selected');
 
     // remove all tabs from the tab order and update their aria-selected attribute 
-    this.$tabs.not($tab).attr('tabindex', '-1').attr('aria-selected', 'false').removeClass('selected');
+    this.$tabs.not($tab).attr('aria-selected', 'false').removeClass('selected');
 
     return true;
 
@@ -16553,30 +16560,22 @@ $.extend($.expr.pseudos, {
 });
 
 
-/* -----------------------------------------
-   Tabs -- some fixing to bootstap 3 tabs 
-   and backward compatibility
------------------------------------------ */
+/* Accordion */
 $(document).ready(function () {
-            // adding active class to a tag if aria selected is true 
-            var activeTab = $(".nav-tabs > li > a[aria-selected='true']");
-            activeTab.addClass("active");
+    var accordion = $('.accordion').find('.collapsed');
+    var accordionTab = $('.accordion').find('a[data-toggle="collapse"]');
+    var accordioncarrot = $('<span aria-hidden="true"></span>');
+    accordion.attr("tabindex", 0); // make accordion tabable for accessibility
 
-            // Just to change class active in the parent li element (backward compatibility)
-            $(".nav-tabs > li > a").on("click", function () {
-                if ($(this).attr('aria-selected') == "false") {
-                    $(".nav-tabs > li").removeClass("active");
-                    $(this).parent("li").addClass("active");
-                }
-                else {
-                    $(".nav-tabs > li").removeClass("active");
-                    $(this).parent("li").addClass("active");
-                }
-            });
+    // appending carrot span to each accordion tab
+        accordionTab.append(accordioncarrot);
+});
 
-
-        });
-
+/* Remove aria controls from a links */
+$(document).ready(function () {
+    var alink = $(".card").find("a[role='tab']");
+    alink.removeAttr("aria-controls");
+});
 
 
 /* -----------------------------------------
@@ -16648,6 +16647,20 @@ $(document).ready(function () {
         }
         $('.search-container').toggleClass('active');
 
+        // hide Search form if it's not active
+        var searchInput = $("#Search #q");
+        var searchSubmit = $("#Search .gsc-search-button");
+        var searchReset = $("#Search .gsc-clear-button");
+        if ($('.search-container').hasClass('active')) {
+            searchInput.removeAttr('tabindex');
+            searchSubmit.removeAttr('tabindex');
+            searchReset.removeAttr('tabindex');
+        } else {
+            searchInput.attr('tabindex', "-1");
+            searchSubmit.attr('tabindex', "-1");
+            searchReset.attr('tabindex', "-1");
+        }
+
         // let the user know the input box is where they should search
         $("#head-search").addClass('play-animation').one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function () {
             $(this).removeClass('play-animation');
@@ -16701,6 +16714,20 @@ $(document).ready(function () {
             }, 500);
         }
     });
+
+    // Make Search form tabable if it's featured
+    var searchInput = $("#head-search #Search #q");
+    var searchSubmit = $("#head-search #Search .gsc-search-button");
+    var searchReset = $("#head-search #Search .gsc-clear-button");
+    if ($('#head-search').hasClass('featured-search')) {
+        searchInput.removeAttr('tabindex');
+        searchSubmit.removeAttr('tabindex');
+        searchReset.removeAttr('tabindex');
+    } else {
+        searchInput.attr('tabindex', "-1");
+        searchSubmit.attr('tabindex', "-1");
+        searchReset.attr('tabindex', "-1");
+    }
 
 });
 
@@ -16780,7 +16807,7 @@ $(document).ready(function () {
                         ? MAXHEIGHT
                         : height;
                     // fill up the remaining heaight of this device
-                    headerSlider.css({'height': height});
+                    headerSlider.css({ 'height': height });
                 }, 0)
 
                 var $this = $(this);
@@ -16810,22 +16837,25 @@ $(document).ready(function () {
 
                 // Add pause and play buttons
                 var owlBannerControl = $('<div class="banner-play-pause"><div class="banner-control"><button class="play ca-gov-icon-carousel-play" aria-hidden="true"></button><button class="pause ca-gov-icon-carousel-pause" aria-hidden="true"></span></div></div>');
-                $this.append(owlBannerControl); 
-                var playControl = owlBannerControl.find('.play').hide(); 
-                var pauseControl = owlBannerControl.find('.pause'); 
-                playControl.on('click', function() {
-                $(this).hide();   $(this).parent().removeClass('active');
-                pauseControl.show();   $this.trigger('play.owl.autoplay', [settings.delay]);
-                $this.owlCarousel('next'); // Manually play next since autoplay waits for delay
+                $this.append(owlBannerControl);
+                var playControl = owlBannerControl.find('.play').hide();
+                var pauseControl = owlBannerControl.find('.pause');
+                playControl.on('click', function () {
+                    $(this).hide(); $(this).parent().removeClass('active');
+                    pauseControl.show(); $this.trigger('play.owl.autoplay', [settings.delay]);
+                    $this.owlCarousel('next'); // Manually play next since autoplay waits for delay
                 });
-                
-                pauseControl.on('click', function() {   $(this).hide();
-                $(this).parent().addClass('active');   playControl.show();
-                $this.trigger('stop.owl.autoplay'); });
-                
+
+                pauseControl.on('click', function () {
+                    $(this).hide();
+                    $(this).parent().addClass('active'); playControl.show();
+                    $this.trigger('stop.owl.autoplay');
+                });
+
                 // Number the items in .banner-pager 
-                var dots = $('.banner-pager .banner-control'); dots.each(function(){
-                $(this).find('span').append($(this).index() + 1); });
+                var dots = $('.banner-pager .banner-control'); dots.each(function () {
+                    $(this).find('span').append($(this).index() + 1);
+                });
             });
         }
     }(jQuery));
@@ -16878,9 +16908,7 @@ $(document).ready(function () {
                     nav: true
                 }
             },
-            navText: [
-                '<span class="ca-gov-icon-arrow-prev" aria-hidden="true"></span>', '<span class="ca-gov-icon-arrow-next" aria-hidden="true"></span>'
-            ],
+            navText: ['<span class="ca-gov-icon-arrow-prev" aria-hidden="true"></span></span><span class="sr-only">Previous</span>', '<span class="ca-gov-icon-arrow-next" aria-hidden="true"></span></span><span class="sr-only">Next</span>'],
             dots: false
         });
 
@@ -16889,9 +16917,7 @@ $(document).ready(function () {
             margin: 25,
             autoWidth: true,
             nav: true,
-            navText: [
-                '<span class="ca-gov-icon-arrow-prev" aria-hidden="true"></span>', '<span class="ca-gov-icon-arrow-next" aria-hidden="true"></span>'
-            ],
+            navText: ['<span class="ca-gov-icon-arrow-prev" aria-hidden="true"></span></span><span class="sr-only">Previous</span>', '<span class="ca-gov-icon-arrow-next" aria-hidden="true"></span></span><span class="sr-only">Next</span>'],
             dots: false
         });
 
@@ -16899,9 +16925,7 @@ $(document).ready(function () {
         $(".carousel-slider").owlCarousel({
             items: 1,
             nav: true,
-            navText: [
-                '<span class="ca-gov-icon-arrow-prev" aria-hidden="true"></span>', '<span class="ca-gov-icon-arrow-next" aria-hidden="true"></span>'
-            ],
+            navText: ['<span class="ca-gov-icon-arrow-prev" aria-hidden="true"></span></span><span class="sr-only">Previous</span>', '<span class="ca-gov-icon-arrow-next" aria-hidden="true"></span></span><span class="sr-only">Next</span>'],
             dots: false
         });
 
@@ -16909,9 +16933,7 @@ $(document).ready(function () {
         $(".carousel-gallery").owlCarousel({
             items: 1,
             nav: true,
-            navText: [
-                '<span class="ca-gov-icon-arrow-prev" aria-hidden="true"></span>', '<span class="ca-gov-icon-arrow-next" aria-hidden="true"></span>'
-            ],
+            navText: ['<span class="ca-gov-icon-arrow-prev" aria-hidden="true"></span></span><span class="sr-only">Previous</span>', '<span class="ca-gov-icon-arrow-next" aria-hidden="true"></span></span><span class="sr-only">Next</span>'],
             dots: false
         });
 
@@ -16926,9 +16948,7 @@ function initContent() {
             autoHeight: true,
             loop: true,
             nav: true,
-            navText: [
-                '<span class="ca-gov-icon-arrow-prev" aria-hidden="true"></span>', '<span class="ca-gov-icon-arrow-next" aria-hidden="true"></span>'
-            ],
+            navText: ['<span class="ca-gov-icon-arrow-prev" aria-hidden="true"></span></span><span class="sr-only">Previous</span>', '<span class="ca-gov-icon-arrow-next" aria-hidden="true"></span></span><span class="sr-only">Next</span>'],
             dots: true,
             // all these callbacks are to make sure any js inside carousl items can refresh
             // themselves
@@ -16948,6 +16968,13 @@ function initContent() {
                 }, 0)
             }
         });
+
+        // Add text to the dots 
+        var dot = $('.owl-dots .owl-dot');
+        dot.each(function () {
+            $(this).find('span').html("<span class='sr-only'>Change Slide</span>");
+        });
+
         carousel.on('changed.owl.carousel', function (event) {
             setTimeout(function () {
                 carousel.find('.owl-item.active .item video').each(function () {
@@ -16960,13 +16987,13 @@ function initContent() {
     })
 }
 
-(function($) {
+(function ($) {
 
-    $.fn.initCAVideo = function(bool) {
+    $.fn.initCAVideo = function (bool) {
 
 
         // Iterate over each object in collection
-        return this.each( function() {
+        return this.each(function () {
 
             var carousel = $(this);
             var didSet = carousel.attr("data-loaded");
@@ -16975,121 +17002,120 @@ function initContent() {
                 return;
             }
             carousel.attr("data-loaded", "true");
-                // get first video
-                var vidHref = carousel.find('.item a').first().attr('href') || "";
-                var vidID = vidHref.split("?v=").pop();
+            // get first video
+            var vidHref = carousel.find('.item a').first().attr('href') || "";
+            var vidID = vidHref.split("?v=").pop();
 
-                var mainIndex = 0;
+            var mainIndex = 0;
 
 
-                var length = carousel.find('.item').length;
+            var length = carousel.find('.item').length;
 
-                // Video  Slider
-                carousel.owlCarousel({
-                    items: 1,
-                    loop: false,
-                    nav: true,
-                    lazyLoad: false,
-                    video: true,
-                    navText: [
-                        '<span class="ca-gov-icon-arrow-prev" aria-hidden="true"></span>', '<span class="ca-gov-icon-arrow-next" aria-hidden="true"></span>'
-                    ],
-                    dots: false
+            // Video  Slider
+            carousel.owlCarousel({
+                items: 1,
+                loop: false,
+                nav: true,
+                lazyLoad: false,
+                video: true,
+                navText: ['<span class="ca-gov-icon-arrow-prev" aria-hidden="true"></span></span><span class="sr-only">Previous</span>', '<span class="ca-gov-icon-arrow-next" aria-hidden="true"></span><span class="sr-only">Next</span>'],
+                dots: false
+            });
+
+            carousel.on('translated.owl.carousel', function (event) {
+
+                // get current video id
+                vidID = carousel.find('.owl-item.active')
+                    .attr('data-video').split(/\?v=|\/v\//).pop();
+                setCurrentSubVideo();
+
+                mainIndex = event.item.index;
+                // show the item in view
+                submenu.trigger('to.owl.carousel', [mainIndex, 300, true])
+            });
+
+
+            //  create the proper video play icon for each video image preview
+            carousel.find('.owl-video-play-icon').append($('<span class="ca-gov-icon-play" />'));
+
+            // create the overlay for each video image preview
+            carousel.find('.owl-video-tn').after($('<div />').addClass('item-overlay'));
+
+            // the submenu lives as a sibling to the carousel.
+            var submenu = $('<div></div>').insertAfter(carousel);
+            submenu.addClass('carousel owl-carousel carousel-video-submenu');
+
+            // create the sub menu for the videos
+            var items = carousel.find('a.owl-video');
+            items.each(function (index) {
+                // get this slide and its video url
+                var oldItem = $(this);
+                var href = oldItem.attr('href');
+                var theHTML = oldItem.find('span'); // Getting title span
+                // attach the triggers for each thumbnail
+                var item = $('<div/>').addClass('item-thumbnail');
+                item.on('click', function () {
+                    //  force the main carousel to jump to the requested video
+                    carousel.trigger('to.owl.carousel', [
+                        index % length,
+                        300,
+                        true
+                    ]);
+
+                    submenu.find('.watching').removeClass('watching');
+                    $(this).parents('.owl-item').addClass('watching');
+
+                    //  start playing immediately
+                    carousel.find(".active .owl-video-play-icon").trigger("click");
                 });
 
-                carousel.on('translated.owl.carousel', function(event) {
+                // thumbnail related
+                var regex = new RegExp('ab+c', 'i');
+                var youtubeID = href.split(/\?v=|\/v\//).pop();
+                var youtubeThumb = 'url(http://img.youtube.com/vi/' + youtubeID + '/0.jpg )';
+                // var youtubeThumb = 'http://img.youtube.com/vi/' + youtubeID + '/0.jpg ';
+                var thumbnail = $('<button />').css('background-image', youtubeThumb).addClass("videoThumb").append(theHTML); // Adding title span to the thumbnail
 
-                  // get current video id
-                  vidID = carousel.find('.owl-item.active')
-                            .attr('data-video').split(/\?v=|\/v\//).pop();
-                    setCurrentSubVideo();
+                // var thumbnail = $('<img />').attr('src', youtubeThumb);
 
-                  mainIndex = event.item.index;
-                    // show the item in view
-                    submenu.trigger('to.owl.carousel', [ mainIndex, 300, true ] )
-             });
+                // overlay related
+                var overlay = $('<div />').addClass('item-overlay');
+                overlay.append($('<span class="ca-gov-icon-play" />'))
 
+                // Append it into the DOM
+                item.append(thumbnail).append(overlay);
+                submenu.append(item);
+            });
 
-                //  create the proper video play icon for each video image preview
-                carousel.find('.owl-video-play-icon').append($('<span class="ca-gov-icon-play" />'));
+            submenu = carousel.next();
 
-                // create the overlay for each video image preview
-                carousel.find('.owl-video-tn').after($('<div />').addClass('item-overlay'));
+            submenu.on('initialized.owl.carousel', function () {
+                setCurrentSubVideo();
+            });
 
-                // the submenu lives as a sibling to the carousel.
-                var submenu = $('<div></div>').insertAfter(carousel);
-                submenu.addClass('carousel owl-carousel carousel-video-submenu');
-
-                // create the sub menu for the videos
-                var items = carousel.find('a.owl-video');
-                items.each(function (index) {
-                    // get this slide and its video url
-                    var oldItem = $(this);
-                    var href = oldItem.attr('href');
-
-                    // attach the triggers for each thumbnail
-                    var item = $('<div/>').addClass('item-thumbnail');
-                    item.on('click', function () {
-                        //  force the main carousel to jump to the requested video
-                        carousel.trigger('to.owl.carousel', [
-                            index  % length,
-                            300,
-                            true
-                        ]);
-
-                        submenu.find('.watching').removeClass('watching');
-                        $(this).parents('.owl-item').addClass('watching');
-
-                        //  start playing immediately
-                        carousel.find(".active .owl-video-play-icon").trigger("click");
-                    });
-
-                    // thumbnail related
-                    var regex = new RegExp('ab+c', 'i');
-                    var youtubeID = href.split(/\?v=|\/v\//).pop();
-                    var youtubeThumb = 'url(http://img.youtube.com/vi/' + youtubeID + '/0.jpg )';
-                    // var youtubeThumb = 'http://img.youtube.com/vi/' + youtubeID + '/0.jpg ';
-                    var thumbnail = $('<button />').css('background-image', youtubeThumb).addClass("videoThumb");
-                    // var thumbnail = $('<img />').attr('src', youtubeThumb);
-
-                    // overlay related
-                    var overlay = $('<div />').addClass('item-overlay');
-                    overlay.append($('<span class="ca-gov-icon-play" />'))
-
-                    // Append it into the DOM
-                    item.append(thumbnail).append(overlay);
-                    submenu.append(item);
-                });
-
-                submenu = carousel.next();
-
-                  submenu.on('initialized.owl.carousel', function() {
-                    setCurrentSubVideo();
-                  });
-
-                // have owlCarousel init this submenu
-                submenu.owlCarousel({
-                    items: 4,
-                    loop: false,
-                    nav: true,
-                    margin: 20,
-                    dots: false,
-                    navText: ['<span class="ca-gov-icon-arrow-prev" aria-hidden="true"></span>', '<span class="ca-gov-icon-arrow-next" aria-hidden="true"></span>']
-                });
+            // have owlCarousel init this submenu
+            submenu.owlCarousel({
+                items: 4,
+                loop: false,
+                nav: true,
+                margin: 20,
+                dots: false,
+                navText: ['<span class="ca-gov-icon-arrow-prev" aria-hidden="true"></span><span class="sr-only">Previous</span>', '<span class="ca-gov-icon-arrow-next" aria-hidden="true"></span><span class="sr-only">Next</span>']
+            });
 
 
-              submenu.on('changed.owl.carousel', function() {
+            submenu.on('changed.owl.carousel', function () {
                 setTimeout(setCurrentSubVideo, 50);
-              });
+            });
 
-              function setCurrentSubVideo() {
+            function setCurrentSubVideo() {
                 // remove old watched item
                 submenu.find('.watching').removeClass('watching');
 
-                  submenu.find('button[style*="' + vidID + '"]').parents('.owl-item').addClass('watching');
+                submenu.find('button[style*="' + vidID + '"]').parents('.owl-item').addClass('watching');
 
 
-              }
+            }
 
         });
     }
@@ -17986,3 +18012,31 @@ window.onload = function init() {
         }
     }
 }
+/* -----------------------------------------
+   Tabs -- some fixing to bootstap 3 tabs 
+   and backward compatibility
+----------------------------------------- */
+$(document).ready(function () {
+    // adding active class to a tag if aria selected is true 
+    var activeTab = $(".nav-tabs > li > a[aria-selected='true']");
+    activeTab.addClass("active");
+
+    // Just to change class active in the parent li element (backward compatibility)
+    $(".nav-tabs > li > a").on("click", function () {
+        if ($(this).attr('aria-selected') == "false") {
+            $(".nav-tabs > li").removeClass("active");
+            $(this).parent("li").addClass("active");
+        }
+        else {
+            $(".nav-tabs > li").removeClass("active");
+            $(this).parent("li").addClass("active");
+        }
+    });
+
+
+    /* Tabblale tabs */
+    var tabs = $('ul.nav-tabs').find('.nav-link');
+    tabs.attr("tabindex", 0); // make accordion tabable
+
+
+});

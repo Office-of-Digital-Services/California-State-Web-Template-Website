@@ -37,13 +37,14 @@ Select a color scheme:
 <!--[if (lt IE 9) & (!IEMobile)]>
 <script src="/js/libs/selectivizr-min.js"></script>
 <![endif]-->
-
 <!-- Load jQuery from CDN with fallback to local copy -->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js" type="text/javascript"></script>
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"
+        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+        crossorigin="anonymous"></script>
 <script>
     //Fall back to local copy if no jquery found
     if (typeof jQuery == 'undefined') {
-        document.write(unescape("%3Cscript src='/js/libs/jquery-3.2.1.min.js' type='text/javascript'%3E%3C/script%3E"));
+        document.write(unescape("%3Cscript src='/js/libs/jquery.js' type='text/javascript'%3E%3C/script%3E"));
     }
 </script>
 <!-- Load jQuery migrate from CDN with fallback to local copy -->
@@ -57,16 +58,18 @@ Select a color scheme:
 </script>
 
 
-<!-- For iPad 3-->
-<link rel="apple-touch-icon" sizes="144x144" href="/images/template2014/apple-touch-icon-144x144.png">
-<!-- For iPhone 4 -->
-<link rel="apple-touch-icon" sizes="114x114" href="/images/template2014/apple-touch-icon-114x114.png">
-<!-- For iPad 1-->
-<link rel="apple-touch-icon" sizes="72x72" href="/images/template2014/apple-touch-icon-72x72.png">
-<!-- For iPhone 3G, iPod Touch and Android -->
-<link rel="apple-touch-icon" href="/images/template2014/apple-touch-icon-57x57.png">
-<!-- For Nokia -->
-<link rel="shortcut icon" href="/images/template2014/apple-touch-icon-57x57.png">
+<!-- apple touch icons -->
+<link rel="apple-touch-icon-precomposed" sizes="100x100" href="/images/apple-touch-icon-precomposed.png">
+<link rel="icon" sizes="192x192" href="/images/apple-touch-icon-192x192.png">
+<link rel="apple-touch-icon-precomposed" sizes="180x180" href="/images/apple-touch-icon-180x180.png">
+<link rel="apple-touch-icon-precomposed" sizes="152x152" href="/images/apple-touch-icon-152x152.png">
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="/images/apple-touch-icon-144x144.png">
+<link rel="apple-touch-icon-precomposed" sizes="120x120" href="/images/apple-touch-icon-120x120.png">
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="/images/apple-touch-icon-114x114.png">
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="/images/apple-touch-icon-72x72.png">
+<link rel="apple-touch-icon-precomposed" href="/images/apple-touch-icon-57x57.png">
+<link rel="shortcut icon" href="/images/apple-touch-icon-57x57.png">
+<link rel="apple-touch-icon" href="/images/apple-touch-icon.png">
 <!-- For everything else -->
 <link rel="shortcut icon" href="/favicon.ico">
 

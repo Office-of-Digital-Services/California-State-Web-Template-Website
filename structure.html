@@ -8,21 +8,20 @@
 <!--<![endif]-->
 
 <head>
-  <!--
-California State Template
-Version 5.5.2
+    <!--    California State Template
+    Version 5.5.4
 
-Based on Twitter Bootstrap
--->
-  <meta charset="utf-8">
+    Based on Twitter Bootstrap
+    -->
+    <meta charset="utf-8">
 
-  <title>State Template Structure</title>
+    <title>State Template Structure</title>
 
-  <meta name="Author" content="State of California" />
-  <meta name="Description" content="State of California" />
-  <meta name="Keywords" content="California, government" />
+    <meta name="Author" content="State of California" />
+    <meta name="Description" content="State of California" />
+    <meta name="Keywords" content="California, government" />
 
-  <!--#include virtual="/ssi/head-css-js.html" -->
+    <!--#include virtual="/ssi/head-css-js.html" -->
 
 </head>
 
@@ -30,99 +29,97 @@ Based on Twitter Bootstrap
 
 <body>
 
-  <header role="banner" id="header" class="global-header fixed">
-    <div id="skip-to-content"><a href="#main-content">Skip to Main Content</a></div>
-    
-    <!-- Include Utility Header -->
-    <!--#include virtual="/ssi/utility-header.html" -->
-    
-    <!-- Settings Bar -->
-    <!--#include virtual="/ssi/settings-bar.html" -->
+    <header role="banner" id="header" class="global-header fixed">
+        <div id="skip-to-content"><a href="#main-content">Skip to Main Content</a></div>
 
-    <!-- Include Branding -->
-    <!--#include virtual="/ssi/branding.html" -->
+        <!-- Include Utility Header -->
+        <!--#include virtual="/ssi/utility-header.html" -->
+        <!-- Settings Bar -->
+        <!--#include virtual="/ssi/settings-bar.html" -->
+        <!-- Include Branding -->
+        <!--#include virtual="/ssi/branding.html" -->
+        <!-- Include Mobile Controls -->
+        <!--#include virtual="/ssi/mobile-controls.html" -->
 
-    <!-- Include Mobile Controls -->
-    <!--#include virtual="/ssi/mobile-controls.html" -->
+        <div class="navigation-search">
+            <!-- Include Navigation -->
+            <!--#include virtual="/ssi/navigation.html" -->
 
-    <div class="navigation-search">
-        <!-- Include Navigation -->
-        <!--#include virtual="/ssi/navigation.html" -->
+            <div id="head-search" class="search-container">
+                <!-- Include Search -->
+                <!--#include virtual="/ssi/search.html" -->
+            </div>
 
-        <div id="head-search" class="search-container">
-            <!-- Include Search -->
-            <!--#include virtual="/ssi/search.html" -->
         </div>
 
-    </div>
 
+        <div class="header-decoration"></div>
 
-    <div class="header-decoration"></div>
-
-  </header>
+    </header>
 
 
     <div id="main-content" class="main-content">
         <div class="container">
-                <!-- InstanceBeginEditable name="MainContent" -->
-                <div id="main-content" class="main-content">
-                        <main role="main" class="main-primary">
-                            <ol class="breadcrumb">
-                                <li><a href="/index.html">Home</a></li>
-                                <li class="active">Structure</li>
-                            </ol>
-                            <h1>State Template Structure</h1>
-                            <h2>Web Page Structure</h2>
-                            <p>The image below shows the basic structure of a State Template web page, consisting of various elements and building blocks. In our case Server Side Includes (SSI) are used as our webpage structure main building blocks.
-                                Several common components (such as page headers, footers, navigation, etc.) are included in pages using Server Side Includes. Note that the web server that hosts the State Template should be configured to process SSI's with the .html extension.
-                            </p>
-                            <img src="images/structure.jpg" class="img-fluid" />
+            <!-- InstanceBeginEditable name="MainContent" -->
+            <main role="main" class="main-primary">
+                <ol class="breadcrumb">
+                    <li><a href="index.html" title="Home page">Home</a></li>
+                    <li class="active">Structure</li>
+                </ol>
+                <h1>State Template Structure</h1>
+                <h2>Web Page Structure</h2>
+                <p>
+                    The image below shows the basic structure of a State Template web page, consisting of various elements and building blocks. In our case Server Side Includes (SSI) are used as our webpage structure main building blocks.
+                    Several common components (such as page headers, footers, navigation, etc.) are included in pages using Server Side Includes. Note that the web server that hosts the State Template should be configured to process SSI's with the .html extension.
+                </p>
+                <img src="images/structure.jpg" class="img-fluid" alt="Web Page Template Structure: Global Header (which includes Utility header, Setting Bar, Branding, Navigation and Search), Main Content and Footer." />
 
-                            <p>
-                                Code below shows basic State Template web page structure:
-                            </p>
+                <p>
+                    Code below shows basic State Template web page structure:
+                </p>
 <pre>
 <span class="text-success">&lt;!doctype html&gt;</span>
 <span class="text-accent-p2">&lt;html</span> <span class="text-info">lang=</span><span class="text-accent7">"en"</span><span class="text-accent-p2">&gt;</span>
-    <span class="text-accent-p2">&lt;head&gt;</span>
-        <span class="text-accent-p2">&lt;meta </span><span class="text-info">charset=</span><span class="text-accent7">"utf-8"</span><span class="text-accent-p2">&gt;</span>
-        <span class="text-accent-p2">&lt;title&gt;</span>State Template<span class="text-accent-p2">&lt;/title&gt;</span>
-        <span class="text-accent-p2">&lt;meta</span> <span class="text-info">name=</span><span class="text-accent7">"Author"</span> <span class="text-info">content=</span><span class="text-accent7">"State of California"</span><span class="text-accent-p2"> /&gt;</span>
-        <span class="text-accent-p2">&lt;meta</span> <span class="text-info">name=</span><span class="text-accent7">"Description"</span> <span class="text-info">content=</span><span class="text-accent7">"State of California"</span><span class="text-accent-p2"> /&gt;</span>
-        <span class="text-accent-p2">&lt;meta</span> <span class="text-info">name=</span><span class="text-accent7">"Keywords"</span> <span class="text-info">content=</span><span class="text-accent7">"California, government"</span><span class="text-accent-p2"> /&gt;</span>
-        <span class="text-success">&lt;!--#include virtual="/ssi/head-css-js.html" --&gt;</span>
+     <span class="text-accent-p2">&lt;head&gt;</span>
+            <span class="text-accent-p2">&lt;meta </span><span class="text-info">charset=</span><span class="text-accent7">"utf-8"</span><span class="text-accent-p2">&gt;</span>
+            <span class="text-accent-p2">&lt;title&gt;</span>State Template<span class="text-accent-p2">&lt;/title&gt;</span>
+            <span class="text-accent-p2">&lt;meta</span> <span class="text-info">name=</span><span class="text-accent7">"Author"</span> <span class="text-info">content=</span><span class="text-accent7">"State of California"</span><span class="text-accent-p2"> /&gt;</span>
+            <span class="text-accent-p2">&lt;meta</span> <span class="text-info">name=</span><span class="text-accent7">"Description"</span> <span class="text-info">content=</span><span class="text-accent7">"State of California"</span><span class="text-accent-p2"> /&gt;</span>
+            <span class="text-accent-p2">&lt;meta</span> <span class="text-info">name=</span><span class="text-accent7">"Keywords"</span> <span class="text-info">content=</span><span class="text-accent7">"California, government"</span><span class="text-accent-p2"> /&gt;</span>
+            <span class="text-success">&lt;!--#include virtual="/ssi/head-css-js.html" --&gt;</span>
     <span class="text-accent-p2">&lt;/head&gt;</span>
     <span class="text-accent-p2">&lt;body&gt;</span>
-        <span class="text-accent-p2">&lt;header</span> <span class="text-info">role=</span><span class="text-accent7">"banner"</span> <span class="text-info">id=</span><span class="text-accent7">"header"</span> <span class="text-info">class=</span><span class="text-accent7">"global-header fixed"</span><span class="text-accent-p2">&gt;</span>
-            <span class="text-accent-p2">&lt;div</span> <span class="text-info">id=</span><span class="text-accent7">"skip-to-content"</span><span class="text-accent-p2">&gt;&lt;a </span><span class="text-info">href=</span><span class="text-accent7">"#main-content"</span><span class="text-accent-p2">&gt;</span>Skip to Main Content<span class="text-accent-p2">&lt;/a&gt;&lt;/div&gt;</span>
-            <span class="text-success">&lt;!--#include virtual="/ssi/utility-header.html" --&gt;</span>
-            <span class="text-success">&lt;!--#include virtual="/ssi/settings-bar.html" --&gt;</span>
-            <span class="text-success">&lt;!--#include virtual="/ssi/branding.html" --&gt;</span>
-            <span class="text-success">&lt;!--#include virtual="/ssi/mobile-controls.html" --&gt;</span>
-            <span class="text-accent-p2">&lt;div</span> <span class="text-info">class=</span><span class="text-accent7">"navigation-search"</span><span class="text-accent-p2">&gt;</span>
-                <span class="text-success">&lt;!--#include virtual="/ssi/navigation.html" --&gt;</span>
-                <span class="text-accent-p2">&lt;div</span> <span class="text-info">id=</span><span class="text-accent7">"head-search"</span> <span class="text-info">class=</span><span class="text-accent7">"search-container"</span><span class="text-accent-p2">&gt;</span>
-                    <span class="text-success">&lt;!--#include virtual="/ssi/search.html" --&gt;</span>
+          <span class="text-accent-p2">&lt;header</span> <span class="text-info">role=</span><span class="text-accent7">"banner"</span> <span class="text-info">id=</span><span class="text-accent7">"header"</span> <span class="text-info">class=</span><span class="text-accent7">"global-header fixed"</span><span class="text-accent-p2">&gt;</span>
+                <span class="text-accent-p2">&lt;div</span> <span class="text-info">id=</span><span class="text-accent7">"skip-to-content"</span><span class="text-accent-p2">&gt;&lt;a </span><span class="text-info">href=</span><span class="text-accent7">"#main-content"</span><span class="text-accent-p2">&gt;</span>Skip to Main Content<span class="text-accent-p2">&lt;/a&gt;&lt;/div&gt;</span>
+                <span class="text-success">&lt;!--#include virtual="/ssi/utility-header.html" --&gt;</span>
+                <span class="text-success">&lt;!--#include virtual="/ssi/settings-bar.html" --&gt;</span>
+                <span class="text-success">&lt;!--#include virtual="/ssi/branding.html" --&gt;</span>
+                <span class="text-success">&lt;!--#include virtual="/ssi/mobile-controls.html" --&gt;</span>
+                <span class="text-accent-p2">&lt;div</span> <span class="text-info">class=</span><span class="text-accent7">"navigation-search"</span><span class="text-accent-p2">&gt;</span>
+                    <span class="text-success">&lt;!--#include virtual="/ssi/navigation.html" --&gt;</span>
+                    <span class="text-accent-p2">&lt;div</span> <span class="text-info">id=</span><span class="text-accent7">"head-search"</span> <span class="text-info">class=</span><span class="text-accent7">"search-container"</span><span class="text-accent-p2">&gt;</span>
+                        <span class="text-success">&lt;!--#include virtual="/ssi/search.html" --&gt;</span>
+                    <span class="text-accent-p2">&lt;/div&gt;</span>
                 <span class="text-accent-p2">&lt;/div&gt;</span>
-            <span class="text-accent-p2">&lt;/div&gt;</span>
-       <span class="text-accent-p2">&lt;/header&gt;</span>
-       <span class="text-accent-p2">&lt;div</span> <span class="text-info">id=</span><span class="text-accent7">"main-content"</span> <span class="text-info">class=</span><span class="text-accent7">"main-content"</span><span class="text-accent-p2">&gt;</span>
-             <span class="text-accent-p2">&lt;div </span><span class="text-info">class=</span><span class="text-accent7">"container"</span><span class="text-accent-p2">&gt;</span>
+                <span class="text-accent-p2">&lt;div </span><span class="text-info">class=</span><span class="text-accent7">"header-decoration"</span><span class="text-accent-p2">&gt;</span><span class="text-accent-p2">&lt;/div&gt;</span>
+            <span class="text-accent-p2">&lt;/header&gt;</span>
+            <span class="text-accent-p2">&lt;div</span> <span class="text-info">id=</span><span class="text-accent7">"main-content"</span> <span class="text-info">class=</span><span class="text-accent7">"main-content"</span><span class="text-accent-p2">&gt;</span>
+                <span class="text-accent-p2">&lt;div </span><span class="text-info">class=</span><span class="text-accent7">"container"</span><span class="text-accent-p2">&gt;</span>
                     <span class="text-accent-p2">&lt;main </span><span class="text-info">class=</span><span class="text-accent7">"main-primary"</span><span class="text-accent-p2">&gt;</span>
                     Page content
                     <span class="text-accent-p2">&lt;/main&gt;</span>
-             <span class="text-accent-p2">&lt;/div&gt;</span>
-        <span class="text-accent-p2">&lt;/div&gt;</span>
-        <span class="text-success">&lt;!--#include virtual="/ssi/global-footer.html" --&gt;</span>
-        <span class="text-success">&lt;!--#include virtual="/ssi/scripts.html" --&gt;</span>
+               <span class="text-accent-p2">&lt;/div&gt;</span>
+           <span class="text-accent-p2">&lt;/div&gt;</span>
+            <span class="text-success">&lt;!--#include virtual="/ssi/global-footer.html" --&gt;</span>
+            <span class="text-success">&lt;!--#include virtual="/ssi/scripts.html" --&gt;</span>
     <span class="text-accent-p2">&lt;/body&gt;</span>
 <span class="text-accent-p2">&lt;/html&gt;</span>
 </pre>
-                            <h2>File and Folder Structure</h2>
-                            <p>The following is the file and folder structure for the 2018 State Template package.</p>
-                            <div class="group">
-                                <div class="half">
-                                    <pre><code class="language-plaintext" data-lang="plaintext">StateTemplate/
+                <h2>File and Folder Structure</h2>
+                <p>The following is the file and folder structure for the 2018 State Template package.</p>
+                <div class="group">
+                    <div class="half">
+                        <pre><code class="language-plaintext" data-lang="plaintext">StateTemplate/
 ├── css/
 │   ├── cagov.core.css
 │   ├── cagov.font-only.css
@@ -144,90 +141,87 @@ Based on Twitter Bootstrap
 └── ssi/ 
 └── templates/
                         </code></pre>
-                                </div>
-                                    <div class="half">
-                                        
-                                        
-                                        <ul class="list-standout">
-                                            <li><strong>css</strong> –  This folder contains the minified CSS files that are generated through  compilation of the CSCC files.</li>
-                                            <li><strong>fonts</strong> – Contains icon fonts and type fonts used by the State Template.</li>
-                                            <li><strong>images</strong> – This folder contains the structural images used by the State Template.</li>
-                                            <li><strong>js</strong> –  Contains the compiled, minified JavaScript files that are used by the State  Template. Third party JavaScript libraries are also included in this folder.</li>
-                                            <li><strong>sample</strong> – The &ldquo;sample&rdquo; folder contains various HTML files that provide example code and  individual component documentation for the State Template.</li>
-                                            <li><strong>source</strong> – The &ldquo;source&rdquo; folder contains Bootstrap and State Template SCSS and JavaScript source code files.</li>
-                                            <li><strong>ssi</strong> –  This folder contains the common template components used on various pages in the  State Template (for example, header, footers, navigation, etc.).</li>
-                                            <li>
-                                                <strong>templates</strong> – Contains template files for the State Template that will be utilized by  webmasters that use Adobe Dreamweaver.
-                                                </p>
-                                            </li>
-                                        </ul>
-                                        <p></p>
-                                       
-                                    </div>
-                                </div>
+                    </div>
+                    <div class="half">
 
 
-                            <div class="group">
-                                <div class="col-12">
-                                    <h2>Mime Type Configurations</h2>
-                                    <p>
-                                        Newer versions of IIS (such as 8.5) already have mime types defined for fonts. However, older versions may need to be configured to serve those mime types for fonts.
-                                        The same may apply for other web servers such as Apache HTTP Server. Below is a list of the mime types that must be defined for the 2018 State Template.
-                                    </p>
-                                    <ul class="list-standout">
-                                        <li>.eot - application/vnd.ms-fontobject</li>
-                                        <li>.ttf - application/octet-stream</li>
-                                        <li>.svg - image/svg+xml</li>
-                                        <li>.woff - application/x-woff</li>
-                                    </ul>
-                                    
-                                </div>
+                        <ul class="list-standout">
+                            <li><strong>css</strong> –  This folder contains the minified CSS files that are generated through  compilation of the CSCC files.</li>
+                            <li><strong>fonts</strong> – Contains icon fonts and type fonts used by the State Template.</li>
+                            <li><strong>images</strong> – This folder contains the structural images used by the State Template.</li>
+                            <li><strong>js</strong> –  Contains the compiled, minified JavaScript files that are used by the State  Template. Third party JavaScript libraries are also included in this folder.</li>
+                            <li><strong>sample</strong> – The &ldquo;sample&rdquo; folder contains various HTML files that provide example code and  individual component documentation for the State Template.</li>
+                            <li><strong>source</strong> – The &ldquo;source&rdquo; folder contains Bootstrap and State Template SCSS and JavaScript source code files.</li>
+                            <li><strong>ssi</strong> –  This folder contains the common template components used on various pages in the  State Template (for example, header, footers, navigation, etc.).</li>
+                            <li>
+                                <strong>templates</strong> – Contains template files for the State Template that will be utilized by  webmasters that use Adobe Dreamweaver.
+                                </p>
+                            </li>
+                        </ul>
+                        <p></p>
 
-                            </div>
-
-                            <div class="group">
-
-                                <div  class="col-12">
-                                    <h2>New Page Structure in v5.5</h2>
-                                    <p>There are several structural elements in the v5.5 of the state template. Most are optional and one is required namely the <code>utility-header.html</code> located in the <code>ssi</code> folder of the template.</p>
-                                    <ul class="list-standout">
-                                        <li>
-                                            <strong>Utility Header</strong><br>
-                                            This is the new header module that is required in the new template containing the Ca.gov logo and several other features. The Utility Header is the top most content bar in the template header area.
-                                        </li>
-                                        <li>
-                                            <strong>Settings Bar</strong> <br>
-                                            This is a fully functioning feature that allows users to increase and decrease the font size as well as toggle to a high contrast viewing mode. The Settings Bar can be seen in the top right corner of the page.
-                                        </li>
-                                        <li>
-                                            <strong>Alert Banner</strong> <br>
-                                            This is a banner that serves as a tool to communicate important or timely information to your users. More information can be found on the <a href="/sample/alert-banner.html">Alert Banner page</a>.
-                                        </li>
-                                    </ul>
-                                   
-                                    <h2>Icon Fonts</h2>
-                                    <p><a href="/sample/icon-fonts.html">Icon Fonts</a> are also included as part of the State Template. These icon fonts were developed by OTECH, with some additions from other sources.</p>
-                                    <p>The Sample Pages included with the State Template package include a list of available icon fonts, as well as instructions on how to use them in page markup. </p>
-                                    <h2>&nbsp;</h2>
-                                </div>
-
-
-                            </div>
-                        </main>
                     </div>
                 </div>
-                <!-- InstanceEndEditable -->
 
+
+                <div class="group">
+                    <div class="col-12">
+                        <h2>Mime Type Configurations</h2>
+                        <p>
+                            Newer versions of IIS (such as 8.5) already have mime types defined for fonts. However, older versions may need to be configured to serve those mime types for fonts.
+                            The same may apply for other web servers such as Apache HTTP Server. Below is a list of the mime types that must be defined for the 2018 State Template.
+                        </p>
+                        <ul class="list-standout">
+                            <li>.eot - application/vnd.ms-fontobject</li>
+                            <li>.ttf - application/octet-stream</li>
+                            <li>.svg - image/svg+xml</li>
+                            <li>.woff - application/x-woff</li>
+                        </ul>
+
+                    </div>
+
+                </div>
+
+                <div class="group">
+
+                    <div class="col-12">
+                        <h2>New Page Structure in v5.5</h2>
+                        <p>There are several structural elements in the v5.5 of the state template. Most are optional and one is required namely the <code>utility-header.html</code> located in the <code>ssi</code> folder of the template.</p>
+                        <ul class="list-standout">
+                            <li>
+                                <strong>Utility Header</strong><br>
+                                This is the new header module that is required in the new template containing the Ca.gov logo and several other features. The Utility Header is the top most content bar in the template header area.
+                            </li>
+                            <li>
+                                <strong>Settings Bar</strong> <br>
+                                This is a fully functioning feature that allows users to increase and decrease the font size as well as toggle to a high contrast viewing mode. The Settings Bar can be seen in the top right corner of the page.
+                            </li>
+                            <li>
+                                <strong>Alert Banner</strong> <br>
+                                This is a banner that serves as a tool to communicate important or timely information to your users. More information can be found on the <a href="/sample/alert-banner.html">Alert Banner page</a>.
+                            </li>
+                        </ul>
+
+                        <h2>Icon Fonts</h2>
+                        <p><a href="/sample/icon-fonts.html">Icon Fonts</a> are also included as part of the State Template. These icon fonts were developed by OTECH, with some additions from other sources.</p>
+                        <p>The Sample Pages included with the State Template package include a list of available icon fonts, as well as instructions on how to use them in page markup. </p>
+                    </div>
+
+
+                </div>
+            </main>
         </div>
+        <!-- InstanceEndEditable -->
+
+    </div>
 
 
 
 
 
-  <!--#include virtual="/ssi/global-footer.html" -->
+    <!--#include virtual="/ssi/global-footer.html" -->
+    <!--#include virtual="/ssi/scripts.html" -->
 
-  <!--#include virtual="/ssi/scripts.html" -->
-  
 
 </body>
 

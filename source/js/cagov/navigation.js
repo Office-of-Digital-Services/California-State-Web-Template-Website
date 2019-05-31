@@ -594,7 +594,7 @@ limitations under the License.
                 case Keyboard.SPACE:
                 case Keyboard.ENTER:
                     if (isTopNavItem) {
-                       // event.preventDefault();
+                        // event.preventDefault();
                         _clickHandler.call(that, event);
                     } else {
                         return true;
@@ -1038,7 +1038,7 @@ $("nav:first").accessibleMegaMenu({
 
 /// MOBILE
 function mobileView() {
-    return $('.global-header .mobile-controls').css('display') !== "none"; 
+    return $('.global-header .mobile-controls').css('display') !== "none";
 }
 
 
@@ -1056,14 +1056,14 @@ $(document).ready(function () {
 
 
     // Variables
-var $navigation = $('#navigation.main-navigation'),
-    $navItems = $navigation.find('.nav-item'), // first level link containers'
-    $navItemsWithSubs = $navItems.has('.sub-nav'),
-    $subNavs = $navigation.find('.sub-nav'),
-    megamenu = $navigation.hasClass('megadropdown'),
-    dropdown = $navigation.hasClass('dropdown'),
-    singleLevel = $navigation.hasClass('singleLevel'),
-    setActiveLinkByFolder = $navigation.hasClass('auto-highlight'); // Use new folder matching method to highlight the current navigation tab
+    var $navigation = $('#navigation.main-navigation'),
+        $navItems = $navigation.find('.nav-item'), // first level link containers'
+        $navItemsWithSubs = $navItems.has('.sub-nav'),
+        $subNavs = $navigation.find('.sub-nav'),
+        megamenu = $navigation.hasClass('megadropdown'),
+        dropdown = $navigation.hasClass('dropdown'),
+        singleLevel = $navigation.hasClass('singleLevel'),
+        setActiveLinkByFolder = $navigation.hasClass('auto-highlight'); // Use new folder matching method to highlight the current navigation tab
 
 
     // HIGHLIGHT APPROPRIATE NAV ITEM
@@ -1097,7 +1097,7 @@ var $navigation = $('#navigation.main-navigation'),
         }
     });
 
-    
+
     // Add class has-sub, then add carrots
     if (!singleLevel) {
         $navItemsWithSubs.each(function () {
@@ -1105,18 +1105,19 @@ var $navigation = $('#navigation.main-navigation'),
             $(this).find('.first-level-link').addClass('has-sub');
 
             var $toggleSubNav = $('<div class="ca-gov-icon-caret-right rotate" aria-hidden="true"></div>');
+            var carrot = $('<span class="ca-gov-icon-triangle-down carrot" aria-hidden="true"></span>');
 
             if (mobileView()) {
                 $(this).find('.has-sub').append($toggleSubNav);
             }
-
+            $(this).find('.has-sub').append(carrot);
         });
     }
 
     // Scrolling to the top of the menu in mobile
     var HasSubLink = $(".collapse .has-sub");
     var navTarget = $(".mobile-controls");
-    
+
     $(HasSubLink).click(function () {
         if (mobileView()) {
             $('html,body').animate({
@@ -1159,10 +1160,16 @@ function NavReset() {
     else {
         $("#navigation").removeClass("collapse");
         $(".rotate").css("display", "none");
-        
+
     }
-    
+
     $(".toggle-menu").attr('aria-expanded', 'false');
     $(".toggle-menu").attr('aria-selected', 'false');
 }
 
+/* Mobile Controls fix */
+$(document).ready(function () {
+    $("#navigation .mobile-controls").removeClass("nav-menu");
+    $("#navigation .mobile-control a").removeAttr("aria-hidden aria-expanded role id").removeClass("sub-nav with-few-items subnav-closed");
+    $("#navigation .mobile-control .sr-only").removeAttr("aria-hidden aria-expanded role id").removeClass("sub-nav with-few-items subnav-closed");
+});

@@ -20,15 +20,14 @@
 }
 
 .service-tile-panel {
-  /*Selectivly show when requested by user*/
-  visibility: collapse;
-  position: absolute;
-
+    /*Selectivly show when requested by user*/
+    visibility: hidden;
+    position: absolute;
     // Not sure if this can be a generic class for all of the large close buttons.
     // Stashing in service tile panel to avoid conflict with other similar.
     .btn.close {
-        position:relative;
-        z-index:1;
+        position: relative;
+        z-index: 1;
         @include font-size(3.5);
     }
 }
@@ -43,8 +42,8 @@
     height: auto;
 
     &.is-open .service-tile-panel {
-      visibility: visible;
-      position: relative;
+        visibility: visible;
+        position: relative;
     }
 }
 
@@ -55,9 +54,11 @@
 // TODO: Clean this up in accordance with SymSoft's guidelines
 
 .service-tile {
+    &:focus {
+        @include outline(2px); // added focus indication for accessibility
+    }
     // create our columns for all screen sizes
     @include make-xs-column(12,0);
-
     /* Need to keep the two column longer than bootstrap has .make-*-column for */
     @media (min-width: 450px) {
         width: 50%;
@@ -65,7 +66,6 @@
 
     @include make-sm-column(6,0);
     @include make-md-column(3,0);
-
     // no gaps between service-tiles
     position: relative;
     padding: 0;
@@ -73,7 +73,6 @@
     cursor: pointer;
     text-align: center;
     outline: none;
-
     // Keep width and height ratio close to 1 to 1
     min-height: 240px;
 
@@ -88,7 +87,6 @@
     @media (min-width: $screen-lg) {
         min-height: 320px;
     }
-
     //color: $text-color;
     // background: lighten($color-s2,10%);  // Caused acessibility failure. Should be dark blue
     color: $color-s1;
@@ -106,7 +104,7 @@
         vertical-align: middle;
         display: inline-block;
         height: 100%;
-		-webkit-transition: opacity 0.3s;
+        -webkit-transition: opacity 0.3s;
         transition: opacity 0.3s;
     }
 
@@ -115,15 +113,15 @@
         bottom: 0;
         left: 0;
         width: 100%;
-        background: #12151a; 
-        opacity:0.9;
+        background: #12151a;
+        opacity: 0.9;
         color: #fff;
         padding: 10px 0;
 
         .title {
             margin: 5px 0 0;
             @include text-overflow();
-			-webkit-transition: all 0.3s;
+            -webkit-transition: all 0.3s;
             transition: all 0.3s;
 
             &:hover {
@@ -132,9 +130,10 @@
         }
     }
 }
+
 .service-tile:focus .teaser .title {
-	color: $color-p1;
-	}
+    color: $color-p1;
+}
 
 // Add open and close icons with css to keep markup clean
 .title:after {
@@ -142,15 +141,13 @@
     font-family: 'CaGov';
     display: block;
     font-weight: normal;
-
     // TODO: data-state="info" not needed but keeping until js has been updated
-    [data-state="closed"].service-tile &, [data-state="info"].service-tile &{
-        content: "\e050";             // Close: ca-gov-icon-minus-line
+    [data-state="closed"].service-tile &, [data-state="info"].service-tile & {
+        content: "\e050"; // Close: ca-gov-icon-minus-line
     }
 
     [data-state="open"].service-tile & {
-
-        content: "\e04f";             // Open: ca-gov-icon-plus-line
+        content: "\e04f"; // Open: ca-gov-icon-plus-line
     }
 }
 

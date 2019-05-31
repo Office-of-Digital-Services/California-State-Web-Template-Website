@@ -1,19 +1,19 @@
 // Gulpfile
 
-var gulp           	= require('gulp'), // Gulp
-    sass           	= require('gulp-sass'), // SASS,
-    autoprefixer   	= require('gulp-autoprefixer'), // Add the desired vendor prefixes and remove unnecessary in SASS-files
-	uglify 			= require('gulp-uglify'), 
+var gulp = require('gulp'), // Gulp
+    sass = require('gulp-sass'), // SASS,
+    autoprefixer = require('gulp-autoprefixer'), // Add the desired vendor prefixes and remove unnecessary in SASS-files
+    uglify = require('gulp-uglify'),
     gutil = require('gulp-util');
 csso = require('gulp-csso');
-concat = require('gulp-concat'); 
+concat = require('gulp-concat');
 injectVersion = require('gulp-inject-version');
 header = require('gulp-header');
 
 
 var pkg = require('./package.json');
 var banner = ['/**',
-    ' * <%= pkg.description %> -  @version v<%= pkg.version %> -  <%= new Date().getMonth() + 1 %>/<%= new Date().getDate() %>/<%= new Date().getFullYear()  %> ', 
+    ' * <%= pkg.description %> -  @version v<%= pkg.version %> -  <%= new Date().getMonth() + 1 %>/<%= new Date().getDate() %>/<%= new Date().getFullYear()  %> ',
     '  STYLES COMPILED FROM SOURCE (SCSS) DO NOT MODIFY */',
     ''].join('\n');
 var bannerjs = ['/**',
@@ -28,50 +28,50 @@ var jssrc = [
     // MODERNIZR
     'source/js/libs/modernizr.js',
 
-	// NO CONFLICT
-	'source/js/cagov/noconflict.js',
-	
-	// BOOTSTRAP 4
-	'source/js/bootstrap/master.js',
-	'source/js/bootstrap/util.js',
-	'source/js/bootstrap/alert.js',
-	'source/js/bootstrap/button.js',
-	'source/js/bootstrap/carousel.js',
-	'source/js/bootstrap/collapse.js',
-	'source/js/bootstrap/popper.js',
+    // NO CONFLICT
+    'source/js/cagov/noconflict.js',
+
+    // BOOTSTRAP 4
+    'source/js/bootstrap/master.js',
+    'source/js/bootstrap/util.js',
+    'source/js/bootstrap/alert.js',
+    'source/js/bootstrap/button.js',
+    'source/js/bootstrap/carousel.js',
+    'source/js/bootstrap/collapse.js',
+    'source/js/bootstrap/popper.js',
     'source/js/bootstrap/dropdown.js',
     'source/js/bootstrap/modal.js',
     'source/js/bootstrap/sanitizer.js',
-	'source/js/bootstrap/tooltip.js',
+    'source/js/bootstrap/tooltip.js',
     'source/js/bootstrap/popover.js',
-	'source/js/bootstrap/scrollspy.js',
+    'source/js/bootstrap/scrollspy.js',
     'source/js/bootstrap/tab.js',
     'source/js/bootstrap/toast.js',
-	'source/js/bootstrap/index.js',
+    'source/js/bootstrap/index.js',
 
 
-  // BOOTSTRAP ACCESSIBILITY PLUGIN
-   'source/js/bootstrap-accessibility-plugin/functions.js',
-   'source/js/bootstrap-accessibility-plugin/collapse.js',
-   'source/js/bootstrap-accessibility-plugin/dropdown.js',
-   'source/js/bootstrap-accessibility-plugin/tab.js',
+    // BOOTSTRAP ACCESSIBILITY PLUGIN
+    'source/js/bootstrap-accessibility-plugin/functions.js',
+    'source/js/bootstrap-accessibility-plugin/collapse.js',
+    'source/js/bootstrap-accessibility-plugin/dropdown.js',
+    'source/js/bootstrap-accessibility-plugin/tab.js',
 
-  // THIRD PARTY LIBS
- 'source/js/libs/owl.carousel.js',
- 'source/js/libs/jquery.fancybox.js',
- 'source/js/libs/jquery.eqheight.js',
- 'source/js/libs/countUp.js', // updated
- 'source/js/libs/jquery.waypoints.js',
- 'source/js/libs/Vague.js',
- 'source/js/libs/circles.min.js',
+    // THIRD PARTY LIBS
+    'source/js/libs/owl.carousel.js',
+    'source/js/libs/jquery.fancybox.js',
+    'source/js/libs/jquery.eqheight.js',
+    'source/js/libs/countUp.js', // updated
+    'source/js/libs/jquery.waypoints.js',
+    'source/js/libs/Vague.js',
+    'source/js/libs/circles.min.js',
 
-  // CAGOV CORE
+    // CAGOV CORE
 
     'source/js/cagov/header.js',
     'source/js/cagov/fixed-header.js',
     'source/js/cagov/helpers.js',
     'source/js/cagov/gatag.js',
-  	'source/js/cagov/navigation.js',
+    'source/js/cagov/navigation.js',
     'source/js/cagov/accordion.js',
     'source/js/cagov/panel.js',
     'source/js/cagov/card.js',
@@ -93,20 +93,21 @@ var jssrc = [
     'source/js/cagov/ask-group.js',
     'source/js/cagov/panes.js',
     'source/js/cagov/sourcecode.js',
+    'source/js/cagov/tabs.js'
 ];
 
 
 // creating assets folder and copiing index file in there.
 //gulp.task('copy', function() {
- // gulp.src('index.html')  //src where we put the name of the file we want to work with and use as an input
- // .pipe(gulp.dest('assets')) // pipe will take output of the previous command as pipe it as an input for the next
-  // dest writes the output of previous commands to the folder we specify
+// gulp.src('index.html')  //src where we put the name of the file we want to work with and use as an input
+// .pipe(gulp.dest('assets')) // pipe will take output of the previous command as pipe it as an input for the next
+// dest writes the output of previous commands to the folder we specify
 //});
 
 
 // log plugin
-gulp.task('log', function() {
-  gutil.log('== My Log Task ==')
+gulp.task('log', function () {
+    gutil.log('== My Log Task ==')
 });
 
 
@@ -115,14 +116,14 @@ gulp.task('log', function() {
 //CORE
 /*-----------------------*/
 // sass CORE 
-gulp.task('core', function() {
-  return gulp.src('source/scss/cagov.core.scss')
-      .pipe(sass({ outputStyle: 'expanded' }))
-      .pipe(header(banner, { pkg: pkg }))
-   // .pipe(autoprefixer(['last 3 versions', '> 1%'], { cascade: true }))
-      .pipe(concat('cagov.core.css')) // compiled file
-	.on('error', gutil.log) // keeping log
-    .pipe(gulp.dest('css/'))
+gulp.task('core', function () {
+    return gulp.src('source/scss/cagov.core.scss')
+        .pipe(sass({ outputStyle: 'expanded' }))
+        .pipe(header(banner, { pkg: pkg }))
+        // .pipe(autoprefixer(['last 3 versions', '> 1%'], { cascade: true }))
+        .pipe(concat('cagov.core.css')) // compiled file
+        .on('error', gutil.log) // keeping log
+        .pipe(gulp.dest('css/'))
 });
 
 
@@ -147,16 +148,16 @@ gulp.task('coremin', function () {
 /*-----------------------*/
 
 // EUREKA
-gulp.task('eureka', function() {
-  return gulp.src('source/scss/colorscheme/colorscheme-eureka-import.scss')
-      .pipe(sass({ outputStyle: 'expanded' }))
-      .pipe(header(banner, { pkg: pkg }))
-   // .pipe(autoprefixer(['last 3 versions', '> 1%'], { cascade: true }))
-	.pipe(concat('colorscheme-eureka.css')) // compiled file
-      .on('error', gutil.log) // keeping log
+gulp.task('eureka', function () {
+    return gulp.src('source/scss/colorscheme/colorscheme-eureka-import.scss')
+        .pipe(sass({ outputStyle: 'expanded' }))
+        .pipe(header(banner, { pkg: pkg }))
+        // .pipe(autoprefixer(['last 3 versions', '> 1%'], { cascade: true }))
+        .pipe(concat('colorscheme-eureka.css')) // compiled file
+        .on('error', gutil.log) // keeping log
 
         .pipe(gulp.dest('css/'))
-    
+
 });
 // eureka min
 gulp.task('eurekamin', function () {
@@ -410,14 +411,14 @@ gulp.task('trinitymin', function () {
 
 
 // sass font 
-gulp.task('font', function() {
-  return gulp.src('source/scss/cagov.font-only.scss')
-      .pipe(sass({ outputStyle: 'expanded' }))
-      .pipe(header(banner, { pkg: pkg }))
-    //.pipe(autoprefixer(['last 3 versions', '> 1%'], { cascade: true }))
-	.pipe(concat('cagov.font-only.css')) // compiled file
-	.on('error', gutil.log) // keeping log
-    .pipe(gulp.dest('css/'))
+gulp.task('font', function () {
+    return gulp.src('source/scss/cagov.font-only.scss')
+        .pipe(sass({ outputStyle: 'expanded' }))
+        .pipe(header(banner, { pkg: pkg }))
+        //.pipe(autoprefixer(['last 3 versions', '> 1%'], { cascade: true }))
+        .pipe(concat('cagov.font-only.css')) // compiled file
+        .on('error', gutil.log) // keeping log
+        .pipe(gulp.dest('css/'))
 });
 
 
@@ -442,10 +443,10 @@ gulp.task('fontmin', function () {
 
 // Combining JS 
 gulp.task('js', function () {
-  gulp.src(jssrc)
-      .pipe(concat('cagov.core.js'))
-      .pipe(header(bannerjs, { pkg: pkg }))
-  .pipe(gulp.dest('js'))
+    gulp.src(jssrc)
+        .pipe(concat('cagov.core.js'))
+        .pipe(header(bannerjs, { pkg: pkg }))
+        .pipe(gulp.dest('js'))
 });
 
 // JS Core Min 
@@ -466,9 +467,9 @@ gulp.task('jsmin', function () {
 /*-----------------------*/
 
 // watching for the file
-gulp.task('watch', function() {
-  gulp.watch('source/js/**/*.js', ['js']);
-  gulp.watch('source/scss/cagov/*.scss', ['core']);
+gulp.task('watch', function () {
+    gulp.watch('source/js/**/*.js', ['js']);
+    gulp.watch('source/scss/cagov/*.scss', ['core']);
     gulp.watch('source/scss/colorscheme/*.scss', ['eureka']);
     gulp.watch('source/scss/colorscheme/*.scss', ['mono']);
     gulp.watch('source/scss/colorscheme/*.scss', ['oceanside']);
@@ -478,7 +479,7 @@ gulp.task('watch', function() {
     gulp.watch('source/scss/colorscheme/*.scss', ['santabarbara']);
     gulp.watch('source/scss/colorscheme/*.scss', ['sierra']);
     gulp.watch('source/scss/colorscheme/*.scss', ['trinity']);
-  gulp.watch('source/scss/cagov/cagov.font-only.scss', ['font']);
+    gulp.watch('source/scss/cagov/cagov.font-only.scss', ['font']);
 });
 
 

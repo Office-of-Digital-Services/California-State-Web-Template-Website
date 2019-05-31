@@ -3,14 +3,15 @@
 <!--[if IE 7]>    <html class="no-js ie7 oldie" lang="en"> <![endif]-->
 <!--[if IE 8]>    <html class="no-js ie8 oldie" lang="en"> <![endif]-->
 <!--[if IE 9]>    <html class="no-js ie9 oldie" lang="en"> <![endif]-->
-<!--[if (gt IE 9)]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
-                         <head>
-                             <!--
-California State Template
-Version 5.5.2
+<!--[if (gt IE 9)]><!-->
+<html class="no-js" lang="en">
+ <!--<![endif]-->
+<head>
+    <!--    California State Template
+    Version 5.5.4
 
-    Based on Twitter Bootstrap
-    -->
+        Based on Twitter Bootstrap
+        -->
     <meta charset="utf-8">
 
     <title>Sample -Charts</title>
@@ -30,206 +31,202 @@ Version 5.5.2
 
 <body>
 
-<header role="banner" id="header" class="global-header">
-  <div id="skip-to-content"><a href="#main-content">Skip to Main Content</a></div>
-        
+    <header role="banner" id="header" class="global-header">
+        <div id="skip-to-content"><a href="#main-content">Skip to Main Content</a></div>
+
         <!-- Include Utility Header -->
-		<!--#include virtual="/ssi/utility-header.html" -->	
-        
-        <!-- Settings Bar -->	
-		<!--#include virtual="/ssi/settings-bar.html" -->
+        <!--#include virtual="/ssi/utility-header.html" -->
+        <!-- Settings Bar -->
+        <!--#include virtual="/ssi/settings-bar.html" -->
+        <!-- Include Branding -->
+        <!--#include virtual="/ssi/branding.html" -->
+        <!-- Include Mobile Controls -->
+        <!--#include virtual="/ssi/mobile-controls.html" -->
 
-		<!-- Include Branding -->
-		<!--#include virtual="/ssi/branding.html" -->
+        <div class="navigation-search">
+            <!-- Include Navigation -->
+            <!--#include virtual="/ssi/navigation.html" -->
 
-    <!-- Include Mobile Controls -->
-    <!--#include virtual="/ssi/mobile-controls.html" -->
+            <div id="head-search" class="search-container">
+                <!-- Include Search -->
+                <!--#include virtual="/ssi/search.html" -->
+            </div>
 
-    <div class="navigation-search">
-        <!-- Include Navigation -->
-        <!--#include virtual="/ssi/navigation.html" -->
-
-        <div id="head-search" class="search-container">
-            <!-- Include Search -->
-            <!--#include virtual="/ssi/search.html" -->
         </div>
 
-    </div>
+        <div class="header-decoration"></div>
+    </header>
 
-  <div class="header-decoration"></div>
-</header>
+    <div id="main-content" class="main-content">
+        <div class="section">
+            <main class="main-primary">
+                <ol class="breadcrumb">
+                    <li><a href="../index.html" title="Home page">Home</a></li>
+                    <li><a href="index.html" title="Examples landing page">Examples</a></li>
+                    <li class="active">Charts</li>
+                </ol>
 
-<div id="main-content" class="main-content">
-    <div class="section">
-        <main class="main-primary">
-            <ol class="breadcrumb">
-                <li><a href="../index.html">Home</a></li>
-                <li><a href="index.html">Examples</a></li>
-                <li class="active">Charts</li>
-            </ol>
-
-            <p>Following charts examples are using Plotly and Circles open source graphing JS libraries. To use use plotly.js or circle.js libraries simply add their CDN links to your <code>head</code> section. </p>
+                <p>Following charts examples are using Plotly and Circles open source graphing JS libraries. To use use plotly.js or circle.js libraries simply add their CDN links to your <code>head</code> section. </p>
 <pre>&lt;!-- Plotly JS --&gt;
 &lt;script src="https://cdn.plot.ly/plotly-latest.min.js"&gt;&lt;/script&gt;
 &lt;!-- Circles JS --&gt;
 &lt;script src="https://cdnjs.cloudflare.com/ajax/libs/circles/0.0.6/circles.min.js"&gt;&lt;/script&gt;</pre>
-            <div class="group">
-                <div class="half">
-                    <h2>Bar</h2>
-                    <div>
-                        <!--#include virtual="/sample/modules/chart-bar.html" -->
+                <div class="group">
+                    <div class="half">
+                        <h2>Bar</h2>
+                        <div>
+                            <!--#include virtual="/sample/modules/chart-bar.html" -->
+                        </div>
+                    </div>
+                    <div class="half">
+                        <h2><label>Source Code:</label></h2>
+                        <div class="tab-group">
+                            <ul id="sourceCode1" class="nav nav-tabs" role="tablist">
+                                <li class="active"><a href="#html" role="tab" data-toggle="tab"><span class="sr-only">Bar Chart </span>HTML Markup</a></li>
+                                <li><a href="#javascript" role="tab" data-toggle="tab"><span class="sr-only">Bar Chart </span>JavaScript</a></li>
+                            </ul>
+                            <!-- Tab panes -->
+                            <div class="tab-content responsive">
+                                <div class="tab-pane active" id="html">
+                                    <textarea aria-label="HTML Markup" class="form-control" rows="4" cols="80"><!--#include virtual="/sample/modules/chart-bar.html" --></textarea>
+                                </div>
+                                <div class="tab-pane" id="javascript">
+                                    <textarea aria-label="JavaScript" class="form-control" rows="10" cols="80"><!--#include virtual="/sample/modules/chart-bar-js.html" --></textarea>
+                                </div>
+                            </div>
+                        </div>
+
                     </div>
                 </div>
-                <div class="half">
-                    <h2><label>Source Code:</label></h2>
-                    <div class="tab-group">
-                        <ul id="sourceCode" class="nav nav-tabs" role="tablist">
-                            <li class="active"><a href="#html" role="tab" data-toggle="tab">HTML Markup</a></li>
-                            <li><a href="#javascript" role="tab" data-toggle="tab">JavaScript</a></li>
-                        </ul>
-                        <!-- Tab panes -->
-                        <div class="tab-content responsive">
-                            <div class="tab-pane active" id="html">
-                                <textarea aria-label="HTML Markup" class="form-control" rows="4" cols="80"><!--#include virtual="/sample/modules/chart-bar.html" --></textarea>
+
+                <hr>
+
+                <div class="group">
+                    <div class="half">
+                        <h2>Line</h2>
+
+                        <div>
+                            <!--#include virtual="/sample/modules/chart-line.html" -->
+                        </div>
+                    </div>
+                    <div class="half">
+                        <h2><label>Source Code:</label></h2>
+                        <div class="tab-group">
+                            <ul id="sourceCode2" class="nav nav-tabs" role="tablist">
+                                <li class="active"><a href="#html-line" role="tab" data-toggle="tab"><span class="sr-only">Line Chart </span>HTML Markup</a></li>
+                                <li><a href="#javascript-line" role="tab" data-toggle="tab"><span class="sr-only">Line Chart </span>JavaScript</a></li>
+                            </ul>
+                            <!-- Tab panes -->
+                            <div class="tab-content responsive">
+                                <div class="tab-pane active" id="html-line">
+                                    <textarea aria-label="HTML Markup" class="form-control" rows="4" cols="80"><!--#include virtual="/sample/modules/chart-line.html" --></textarea>
+                                </div>
+                                <div class="tab-pane" id="javascript-line">
+                                    <textarea aria-label="JavaScript" class="form-control" rows="10" cols="80"><!--#include virtual="/sample/modules/chart-line-js.html" --></textarea>
+                                </div>
                             </div>
-                            <div class="tab-pane" id="javascript">
-                                <textarea aria-label="JavaScript" class="form-control" rows="10" cols="80"><!--#include virtual="/sample/modules/chart-bar-js.html" --></textarea>
+                        </div>
+
+                    </div>
+                </div>
+
+                <hr>
+
+                <div class="group">
+                    <div class="half">
+                        <h2>Pie</h2>
+
+                        <div>
+                            <!--#include virtual="/sample/modules/chart-pie.html" -->
+                        </div>
+                    </div>
+                    <div class="half">
+                        <h2><label>Source Code:</label></h2>
+                        <div class="tab-group">
+                            <ul id="sourceCode3" class="nav nav-tabs" role="tablist">
+                                <li class="active"><a href="#html-pie" role="tab" data-toggle="tab"><span class="sr-only">Pie Chart </span>HTML Markup</a></li>
+                                <li><a href="#javascript-pie" role="tab" data-toggle="tab"><span class="sr-only">Pie Chart </span>JavaScript</a></li>
+                            </ul>
+                            <!-- Tab panes -->
+                            <div class="tab-content responsive">
+                                <div class="tab-pane active" id="html-pie">
+                                    <textarea aria-label="HTML Markup" class="form-control" rows="4" cols="80"><!--#include virtual="/sample/modules/chart-pie.html" --></textarea>
+                                </div>
+                                <div class="tab-pane" id="javascript-pie">
+                                    <textarea aria-label="JavaScript" class="form-control" rows="10" cols="80"><!--#include virtual="/sample/modules/chart-pie-js.html" --></textarea>
+                                </div>
                             </div>
                         </div>
                     </div>
-
                 </div>
-            </div>
-
-            <hr>
-
-            <div class="group">
-                <div class="half">
-                    <h2>Line</h2>
-
-                    <div>
-                        <!--#include virtual="/sample/modules/chart-line.html" -->
-                    </div>
-                </div>
-                <div class="half">
-                    <h2><label>Source Code:</label></h2>
-                    <div class="tab-group">
-                        <ul id="sourceCode" class="nav nav-tabs" role="tablist">
-                            <li class="active"><a href="#html-line" role="tab" data-toggle="tab">HTML Markup</a></li>
-                            <li><a href="#javascript-line" role="tab" data-toggle="tab">JavaScript</a></li>
-                        </ul>
-                        <!-- Tab panes -->
-                        <div class="tab-content responsive">
-                            <div class="tab-pane active" id="html-line">
-                                <textarea aria-label="HTML Markup" class="form-control" rows="4" cols="80"><!--#include virtual="/sample/modules/chart-line.html" --></textarea>
-                            </div>
-                            <div class="tab-pane" id="javascript-line">
-                                <textarea aria-label="JavaScript" class="form-control" rows="10" cols="80"><!--#include virtual="/sample/modules/chart-line-js.html" --></textarea>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-
-            <hr>
-
-            <div class="group">
-                <div class="half">
-                    <h2>Pie</h2>
-
-                    <div>
-                        <!--#include virtual="/sample/modules/chart-pie.html" -->
-                    </div>
-                </div>
-                <div class="half">
-                    <h2><label>Source Code:</label></h2>
-                    <div class="tab-group">
-                        <ul id="sourceCode" class="nav nav-tabs" role="tablist">
-                            <li class="active"><a href="#html-pie" role="tab" data-toggle="tab">HTML Markup</a></li>
-                            <li><a href="#javascript-pie" role="tab" data-toggle="tab">JavaScript</a></li>
-                        </ul>
-                        <!-- Tab panes -->
-                        <div class="tab-content responsive">
-                            <div class="tab-pane active" id="html-pie">
-                                <textarea aria-label="HTML Markup" class="form-control" rows="4" cols="80"><!--#include virtual="/sample/modules/chart-pie.html" --></textarea>
-                            </div>
-                            <div class="tab-pane" id="javascript-pie">
-                                <textarea aria-label="JavaScript" class="form-control" rows="10" cols="80"><!--#include virtual="/sample/modules/chart-pie-js.html" --></textarea>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
 
 
-            <hr>
+                <hr>
 
 
-        </main>
+            </main>
+        </div>
     </div>
-</div>
 
-<!--#include virtual="/ssi/global-footer.html" -->
-
-<!--#include virtual="/ssi/scripts.html" -->
+    <!--#include virtual="/ssi/global-footer.html" -->
+    <!--#include virtual="/ssi/scripts.html" -->
     <script>
-            /* -----------------------------------------
-            PLOTLY
-            requires plotly-latest.min.js
-        
-            ----------------------------------------- */
-            //Bar chart settings
-            var trace1 = {
-                x: ['giraffes', 'orangutans', 'monkeys'],
+        /* -----------------------------------------
+        PLOTLY
+        requires plotly-latest.min.js
+
+        ----------------------------------------- */
+        //Bar chart settings
+        var trace1 = {
+            x: ['giraffes', 'orangutans', 'monkeys'],
             y: [20, 14, 23],
             name: 'SF Zoo',
             type: 'bar'
         };
-    
-    var trace2 = {
-                x: ['giraffes', 'orangutans', 'monkeys'],
+
+        var trace2 = {
+            x: ['giraffes', 'orangutans', 'monkeys'],
             y: [12, 18, 29],
             name: 'LA Zoo',
             type: 'bar'
         };
-    
+
         var data = [trace1, trace2];
-    var layout = {barmode: 'group' };
-        
-            Plotly.newPlot('barChart', data, layout);
-        
-            //line chart settings
-    var trace1 = {
-                x: [1, 2, 3, 4],
+        var layout = { barmode: 'group' };
+
+        Plotly.newPlot('barChart', data, layout);
+
+        //line chart settings
+        var trace1 = {
+            x: [1, 2, 3, 4],
             y: [10, 15, 13, 17],
             type: 'scatter'
         };
-    var trace2 = {
-                x: [1, 2, 3, 4],
+        var trace2 = {
+            x: [1, 2, 3, 4],
             y: [16, 5, 11, 9],
             type: 'scatter'
         };
         var data = [trace1, trace2];
-    
-    
-    var layout2 = {
-                yaxis: {
+
+
+        var layout2 = {
+            yaxis: {
                 rangemode: 'tozero',
-            zeroline: true
-        }
-    };
+                zeroline: true
+            }
+        };
 
-    Plotly.newPlot('lineChart', data, layout2);
+        Plotly.newPlot('lineChart', data, layout2);
 
 
-    //pie chart settings
-    var data = [{
-                values: [19, 26, 55],
+        //pie chart settings
+        var data = [{
+            values: [19, 26, 55],
             labels: ['Residential', 'Non-Residential', 'Utility'],
             type: 'pie'
         }];
-    
+
         Plotly.newPlot('pieChart', data);
     </script>
 </body>
