@@ -53,20 +53,6 @@ _gaq.push(['b._trackPageview']);
 
         //	$('.gsc-search-button').innerHTML
 
-        $('.top-level-nav .nav-item .ca-gov-icon-search, #nav-item-search').parents('.nav-item').on('click', function (e) {
-            $searchText.focus().trigger('focus')
-
-            // let the user know the input box is where they should search
-            $(".primary #head-search").addClass('play-animation').one(
-            'webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend',
-            function () {
-                $(this).removeClass('play-animation');
-
-            });
-
-
-        });
-
 
         // Helpers
         function addSearchResults() {
