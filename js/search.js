@@ -52,20 +52,6 @@ _gaq.push(['b._trackPageview']);
 
         //	$('.gsc-search-button').innerHTML
 
-        $('.top-level-nav .nav-item .ca-gov-icon-search, #nav-item-search').parents('.nav-item').on('click', function (e) {
-            $searchText.focus().trigger('focus');
-
-            // let the user know the input box is where they should search
-            $(".primary #head-search").addClass('play-animation').one(
-            'webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend',
-            function () {
-                $(this).removeClass('play-animation');
-
-            });
-
-
-        });
-
 
         // Helpers
         function addSearchResults() {
@@ -84,6 +70,9 @@ _gaq.push(['b._trackPageview']);
             $body.removeClass("active-search");
             $searchContainer.removeClass('active');
             $resultsContainer.removeClass('visible');
+            searchInput.attr('tabindex', "-1");
+            searchSubmit.attr('tabindex', "-1");
+            searchReset.attr('tabindex', "-1");
 
 
             // fire a scroll event to help update headers if need be
