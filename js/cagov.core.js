@@ -1,5 +1,5 @@
 /**
- * CA State Template v5 -  @version v5.0.7 -  5/31/2019 
+ * CA State Template v5 -  @version v5.0.7 -  6/6/2019 
   STYLES COMPILED FROM SOURCE (source/js) DO NOT MODIFY */
 /*! modernizr (Custom Build) | MIT *
  * https://modernizr.com/download/?-flexbox-setclasses !*/
@@ -16894,6 +16894,9 @@ $(document).ready(function () {
     var $searchContainer = $("#head-search");
     var $searchText = $searchContainer.find(".search-textfield");
     var $resultsContainer = $('.search-results-container');
+    var searchInput = $("#head-search #Search .search-textfield");
+    var searchSubmit = $("#head-search #Search .gsc-search-button");
+    var searchReset = $("#head-search #Search .gsc-clear-button");
 
     var $body = $("body");
     var $specialIcon =
@@ -16942,9 +16945,6 @@ $(document).ready(function () {
         $('.search-container').toggleClass('active');
 
         // hide Search form if it's not active
-        var searchInput = $("#Search #q");
-        var searchSubmit = $("#Search .gsc-search-button");
-        var searchReset = $("#Search .gsc-clear-button");
         if ($('.search-container').hasClass('active')) {
             searchInput.removeAttr('tabindex');
             searchSubmit.removeAttr('tabindex');
@@ -16990,6 +16990,9 @@ $(document).ready(function () {
         $searchContainer.removeClass('active');
         $resultsContainer.removeClass('visible');
         $('.ask-group').removeClass('fade-out');
+        searchInput.attr('tabindex', "-1");
+        searchSubmit.attr('tabindex', "-1");
+        searchReset.attr('tabindex', "-1");
 
         // fire a scroll event to help update headers if need be
         $(window).scroll();
@@ -16999,9 +17002,7 @@ $(document).ready(function () {
 
 
     // Make Search form tabable if it's featured
-    var searchInput = $("#head-search #Search #q");
-    var searchSubmit = $("#head-search #Search .gsc-search-button");
-    var searchReset = $("#head-search #Search .gsc-clear-button");
+
     if ($('#head-search').hasClass('featured-search')) {
         searchInput.removeAttr('tabindex');
         searchSubmit.removeAttr('tabindex');
