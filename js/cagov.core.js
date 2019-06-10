@@ -1,5 +1,5 @@
 /**
- * CA State Template v5 -  @version v5.0.7 -  6/6/2019 
+ * CA State Template v5 -  @version v5.0.7 -  6/10/2019 
   STYLES COMPILED FROM SOURCE (source/js) DO NOT MODIFY */
 /*! modernizr (Custom Build) | MIT *
  * https://modernizr.com/download/?-flexbox-setclasses !*/
@@ -16971,17 +16971,17 @@ $(document).ready(function () {
     // Helpers
     function addSearchResults() {
         $body.addClass("active-search");
-        $searchContainer.addClass('active');
-        $resultsContainer.addClass('visible');
+        //  $searchContainer.addClass('active');
+        //  $resultsContainer.addClass('visible');
         // close the the menu when we are search
-        $('#navigation').addClass('mobile-closed');
+        //  $('#navigation').addClass('mobile-closed');
         // hide the ask group as well
-        $('.ask-group').addClass('fade-out');
+        //  $('.ask-group').addClass('fade-out');
 
         // fire a scroll event to help update headers if need be
-        $(window).scroll();
+        //  $(window).scroll();
 
-        $.event.trigger('cagov.searchresults.show');
+        //  $.event.trigger('cagov.searchresults.show');
     }
 
     function removeSearchResults() {

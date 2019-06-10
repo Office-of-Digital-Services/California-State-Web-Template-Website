@@ -49,7 +49,7 @@ $search-input-border-width: 3px;
     // on our larger screens our whole header is one big gigantic position absolute thing
     // so we need to of course respect this and add to the insanity
     @media (min-width: $screen-sm-min) {
-        position: absolute;
+        position: static;
         top: $search-absolute-height;
     }
 
@@ -273,7 +273,7 @@ $search-input-border-width: 3px;
         opacity:1;
 
         @media (min-width: $screen-sm-min) {
-            position: absolute;
+            position: static;
         }
  -webkit-transition: top $search-ft, left $search-st $search-ft, width  $search-st $search-ft, background-color $search-ft + $search-st , border $search-ft, padding $search-st $search-ft;
         transition: top $search-ft, left $search-st $search-ft, width  $search-st $search-ft, background-color $search-ft + $search-st , border $search-ft, padding $search-st $search-ft;
