@@ -1,5 +1,5 @@
 /**
- * CA State Template v5.5 -  @version v5.5.4 -  6/6/2019 
+ * CA State Template v5.5 -  @version v5.5.4 -  6/12/2019 
   STYLES COMPILED FROM SOURCE (source/js) DO NOT MODIFY */
 /*! modernizr (Custom Build) | MIT *
  * https://modernizr.com/download/?-flexbox-setclasses !*/
@@ -16604,6 +16604,13 @@ $(document).ready(function () {
     var searchInput = $("#head-search #Search .search-textfield");
     var searchSubmit = $("#head-search #Search .gsc-search-button");
     var searchReset = $("#head-search #Search .gsc-clear-button");
+    var featuredsearch = $("#head-search").hasClass("featured-search");
+    var searchactive = $("#head-search").hasClass("active");
+    var $globalHeader = $('.global-header');
+    var searchbox = $(".search-container:not(.featured-search)");
+    var headerHeight = $globalHeader.innerHeight();
+    var utility = 34;
+    var searchtop = headerHeight - utility;
 
     var $body = $("body");
     var $specialIcon =
@@ -16638,28 +16645,40 @@ $(document).ready(function () {
     // so instead we are binding to what I'm assuming will aslways be the search
     $('.top-level-nav .nav-item .ca-gov-icon-search, #nav-item-search').parents('.nav-item').on('click', function (e) {
         $searchText.trigger("focus").trigger('focus');
-        // // already opened search, nothing else needs to be done
-        // if ($searchContainer.hasClass('active')) {
-        //     return;
-        // }
-
+       
+        // mobile
         if (mobileView() && !$('.search-container').hasClass('active')) {
             $('html, body').animate({
                 scrollTop: $("#head-search").offset().top
             }, 500);
         }
-        $('.search-container').toggleClass('active');
 
+        if (!featuredsearch) {
+            $('.search-container:not(.featured-search)').toggleClass('active');
+        }
+
+        var featuredsearch = $("#head-search").hasClass("featured-search");
+        var searchactive = $("#head-search").hasClass("active");
         // hide Search form if it's not active
-        if ($('.search-container').hasClass('active')) {
+        if (searchactive) {
             searchInput.removeAttr('tabindex');
             searchSubmit.removeAttr('tabindex');
             searchReset.removeAttr('tabindex');
-        } else {
+        
+        }
+        else {
             searchInput.attr('tabindex', "-1");
             searchSubmit.attr('tabindex', "-1");
             searchReset.attr('tabindex', "-1");
         }
+
+       if (featuredsearch) {
+            searchInput.removeAttr('tabindex');
+            searchSubmit.removeAttr('tabindex');
+          searchReset.removeAttr('tabindex');
+        }
+
+        if (mobileView() && featuredsearch) { $('.search-container').toggleClass('active');}
 
         // let the user know the input box is where they should search
         $("#head-search").addClass('play-animation').one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function () {
@@ -16679,17 +16698,17 @@ $(document).ready(function () {
     // Helpers
     function addSearchResults() {
         $body.addClass("active-search");
-        $searchContainer.addClass('active');
-        $resultsContainer.addClass('visible');
+        //$searchContainer.addClass('active');
+        //$resultsContainer.addClass('visible');
         // close the the menu when we are search
-        $('#navigation').addClass('mobile-closed');
+        //$('#navigation').addClass('mobile-closed');
         // hide the ask group as well
-        $('.ask-group').addClass('fade-out');
+       // $('.ask-group').addClass('fade-out');
 
         // fire a scroll event to help update headers if need be
-        $(window).scroll();
+       // $(window).scroll();
 
-        $.event.trigger('cagov.searchresults.show');
+       // $.event.trigger('cagov.searchresults.show');
     }
 
     function removeSearchResults() {
@@ -16698,14 +16717,20 @@ $(document).ready(function () {
         $searchContainer.removeClass('active');
         $resultsContainer.removeClass('visible');
         $('.ask-group').removeClass('fade-out');
+        
+        if (!featuredsearch) {
         searchInput.attr('tabindex', "-1");
         searchSubmit.attr('tabindex', "-1");
         searchReset.attr('tabindex', "-1");
-
+        }
         // fire a scroll event to help update headers if need be
         $(window).scroll();
 
         $.event.trigger('cagov.searchresults.hide');
+
+        if (mobileView()) {
+            $('html, body').animate({ scrollTop: 0 }, "slow");
+        }
     }
 
     // Mobile Search toggle
@@ -16718,6 +16743,8 @@ $(document).ready(function () {
         }
     });
 
+
+
     // Make Search form tabable if it's featured
     if ($('#head-search').hasClass('featured-search')) {
         searchInput.removeAttr('tabindex');
@@ -16729,7 +16756,34 @@ $(document).ready(function () {
         searchReset.attr('tabindex', "-1");
     }
 
+    //  search box top position
+    if (!mobileView()) {
+        searchbox.css({
+            'top': Math.max(searchtop, 87)
+        });
+    } 
+
+
+
+
+
+
 });
+
+//  search box top position if browser window is resized
+$(window).on('resize', function () {
+    var $globalHeader = $('.global-header');
+    var searchbox = $(".search-container:not(.featured-search)");
+    var headerHeight = $globalHeader.innerHeight();
+    var utility = 34;
+    var searchtop = headerHeight - utility;
+    if (!mobileView()) {
+        searchbox.css({
+            'top': Math.max(searchtop, 87)
+        });
+    }
+});
+
 
 function mobileView() {
     return $('.global-header .mobile-controls').css('display') !== "none"; // mobile view uses arrow to show subnav instead of first touch
