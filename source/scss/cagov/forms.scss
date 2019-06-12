@@ -313,8 +313,8 @@ input[type="checkbox"]:focus + div, input[type="radio"]:focus + div {
         box-shadow: 0 0 2px 2px $color-s3;
     }
 input[type="checkbox"]:focus + .btn, input[type="radio"]:focus + .btn {
-        outline:1px dotted $gray-base;
-    }
+    @include outline(2px);
+}
 	
 	
 .custom-radio {
@@ -336,4 +336,9 @@ input[type="checkbox"]:focus + .btn, input[type="radio"]:focus + .btn {
 
 .valid-feedback {
     color: $brand-success;
+}
+
+/* Accessibilty focus */
+input:focus, textarea:focus, button:focus, select:focus {
+    @include outline(2px);
 }

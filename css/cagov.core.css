@@ -1,5 +1,5 @@
 /**
- * CA State Template v5.5 -  @version v5.5.4 -  5/31/2019 
+ * CA State Template v5.5 -  @version v5.5.4 -  6/12/2019 
   STYLES COMPILED FROM SOURCE (SCSS) DO NOT MODIFY */
 /* -----------------------------------------
    BOOTSTRAP v4.3.1 - /source/scss/bootstrap/ 
@@ -11719,7 +11719,6 @@ code {
   padding: 0 10px;
   -webkit-transition: border 0.4s;
   transition: border 0.4s;
-  outline: none;
 }
 
 .search-container .submit-container, .featured-search.active .submit-container {
@@ -11926,7 +11925,6 @@ code {
     padding: 0 4px;
     -webkit-transition: border 0.4s;
     transition: border 0.4s;
-    outline: none;
   }
 }
 
@@ -12241,7 +12239,6 @@ GOOGLE CUSTOM SEARCH CUSTOMIZATION OVERRIDES
   border-radius: 0;
   border: 3px solid transparent;
   transition: border 0.4s;
-  outline: none;
   font-size: 1.1rem;
   height: 55px !important;
   padding: 14px !important;
@@ -17808,7 +17805,7 @@ input[type="checkbox"]:focus + div, input[type="radio"]:focus + div {
 }
 
 input[type="checkbox"]:focus + .btn, input[type="radio"]:focus + .btn {
-  outline: 1px dotted #000;
+  outline: solid 2px #2ea3f2;
 }
 
 .custom-radio .custom-control-input:checked ~ .custom-control-label::before {
@@ -17826,6 +17823,11 @@ input[type="checkbox"]:focus + .btn, input[type="radio"]:focus + .btn {
 
 .valid-feedback {
   color: #32852E;
+}
+
+/* Accessibilty focus */
+input:focus, textarea:focus, button:focus, select:focus {
+  outline: solid 2px #2ea3f2;
 }
 
 /* -----------------------------------------
