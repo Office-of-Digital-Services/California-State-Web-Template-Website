@@ -1,5 +1,5 @@
 /**
- * CA State Template v5 -  @version v5.0.7 -  6/10/2019 
+ * CA State Template v5 -  @version v5.0.8 -  6/18/2019 
   STYLES COMPILED FROM SOURCE (SCSS) DO NOT MODIFY */
 /* -----------------------------------------
    BOOTSTRAP v4.3.1 - /source/scss/bootstrap/ 
@@ -11114,11 +11114,16 @@ code {
 
 .full-width {
   position: relative;
-  float: left;
-  width: 100%;
   min-height: 1px;
   padding-left: 15px;
   padding-right: 15px;
+}
+
+@media (min-width: 576px) {
+  .full-width {
+    float: left;
+    width: 100%;
+  }
 }
 
 .half {
@@ -11126,6 +11131,17 @@ code {
   min-height: 1px;
   padding-left: 15px;
   padding-right: 15px;
+  position: relative;
+  min-height: 1px;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+@media (min-width: 576px) {
+  .half {
+    float: left;
+    width: 100%;
+  }
 }
 
 @media (min-width: 768px) {
@@ -11140,6 +11156,17 @@ code {
   min-height: 1px;
   padding-left: 15px;
   padding-right: 15px;
+  position: relative;
+  min-height: 1px;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+@media (min-width: 576px) {
+  .third {
+    float: left;
+    width: 100%;
+  }
 }
 
 @media (min-width: 768px) {
@@ -11154,6 +11181,17 @@ code {
   min-height: 1px;
   padding-left: 15px;
   padding-right: 15px;
+  position: relative;
+  min-height: 1px;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+@media (min-width: 576px) {
+  .two-thirds {
+    float: left;
+    width: 100%;
+  }
 }
 
 @media (min-width: 768px) {
@@ -11172,6 +11210,17 @@ code {
   min-height: 1px;
   padding-left: 15px;
   padding-right: 15px;
+  position: relative;
+  min-height: 1px;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+@media (min-width: 576px) {
+  .quarter {
+    float: left;
+    width: 100%;
+  }
 }
 
 @media (min-width: 768px) {
@@ -11181,7 +11230,7 @@ code {
   }
 }
 
-@media (min-width: 768px) {
+@media (min-width: 992px) {
   .quarter {
     float: left;
     width: 25%;
@@ -11193,6 +11242,17 @@ code {
   min-height: 1px;
   padding-left: 15px;
   padding-right: 15px;
+  position: relative;
+  min-height: 1px;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+@media (min-width: 576px) {
+  .three-quarters {
+    float: left;
+    width: 100%;
+  }
 }
 
 @media (min-width: 768px) {
@@ -11755,7 +11815,7 @@ code {
 
 @media (min-width: 768px) {
   .search-container, .featured-search.active {
-    position: static;
+    position: absolute;
     top: 100px;
   }
 }
@@ -11776,7 +11836,6 @@ code {
   padding: 0 10px;
   -webkit-transition: border 0.4s;
   transition: border 0.4s;
-  outline: none;
 }
 
 .search-container .submit-container, .featured-search.active .submit-container {
@@ -11966,7 +12025,7 @@ code {
 
 @media (min-width: 768px) and (min-width: 768px) {
   .featured-search.active {
-    position: static;
+    position: absolute;
   }
 }
 
@@ -11984,7 +12043,6 @@ code {
     padding: 0 4px;
     -webkit-transition: border 0.4s;
     transition: border 0.4s;
-    outline: none;
   }
 }
 
@@ -12266,7 +12324,6 @@ GOOGLE CUSTOM SEARCH CUSTOMIZATION OVERRIDES
   border-radius: 0;
   border: 3px solid transparent;
   transition: border 0.4s;
-  outline: none;
   font-size: 1.1rem;
   height: 55px !important;
   padding: 14px !important;
@@ -13949,8 +14006,6 @@ pre {
   }
   .ask-group {
     position: relative;
-    float: left;
-    width: 100%;
     min-height: 1px;
     padding-left: 15px;
     padding-right: 15px;
@@ -13958,6 +14013,16 @@ pre {
     float: none;
     padding-bottom: 1px;
   }
+}
+
+@media (max-width: 767px) and (min-width: 576px) {
+  .ask-group {
+    float: left;
+    width: 100%;
+  }
+}
+
+@media (max-width: 767px) {
   .ask-group .panel {
     border: none;
     background: rgba(0, 0, 0, 0.65);
@@ -16574,8 +16639,6 @@ figcaption {
 .news-item .thumbnail {
   margin-left: -15px;
   position: relative;
-  float: left;
-  width: 41.66667%;
   min-height: 1px;
   padding-left: 15px;
   padding-right: 15px;
@@ -16591,6 +16654,13 @@ figcaption {
   min-height: 1px;
   padding-left: 15px;
   padding-right: 15px;
+}
+
+@media (min-width: 576px) {
+  .news-item .thumbnail {
+    float: left;
+    width: 41.66667%;
+  }
 }
 
 @media (min-width: 768px) {
@@ -16816,8 +16886,6 @@ figcaption {
 
 .event-item > .thumbnail {
   position: relative;
-  float: left;
-  width: 33.33333%;
   min-height: 1px;
   padding-left: 15px;
   padding-right: 15px;
@@ -16830,6 +16898,13 @@ figcaption {
   padding-left: 15px;
   padding-right: 15px;
   padding: 0;
+}
+
+@media (min-width: 576px) {
+  .event-item > .thumbnail {
+    float: left;
+    width: 33.33333%;
+  }
 }
 
 @media (min-width: 768px) {
@@ -16855,8 +16930,6 @@ figcaption {
 
 .event-item .thumbnail + .info {
   position: relative;
-  float: left;
-  width: 66.66667%;
   min-height: 1px;
   padding-left: 15px;
   padding-right: 15px;
@@ -16868,6 +16941,13 @@ figcaption {
   min-height: 1px;
   padding-left: 15px;
   padding-right: 15px;
+}
+
+@media (min-width: 576px) {
+  .event-item .thumbnail + .info {
+    float: left;
+    width: 66.66667%;
+  }
 }
 
 @media (min-width: 768px) {
@@ -17463,6 +17543,11 @@ input[type="checkbox"]:focus + .btn, input[type="radio"]:focus + .btn {
   color: #32852E;
 }
 
+/* Accessibilty focus */
+input:focus, textarea:focus, button:focus, select:focus {
+  outline: solid 2px #2ea3f2;
+}
+
 /* -----------------------------------------
    PUBLICATIONS /source/scss/cagov/publications.scss
 ----------------------------------------- */
@@ -17895,11 +17980,16 @@ input[type="checkbox"]:focus + .btn, input[type="radio"]:focus + .btn {
 @media (max-width: 576px) {
   .gallery .item {
     position: relative;
-    float: left;
-    width: 100%;
     min-height: 1px;
     padding-left: 15px;
     padding-right: 15px;
+  }
+}
+
+@media (max-width: 576px) and (min-width: 576px) {
+  .gallery .item {
+    float: left;
+    width: 100%;
   }
 }
 
@@ -18023,8 +18113,6 @@ input[type="checkbox"]:focus + .btn, input[type="radio"]:focus + .btn {
 
 .gallery.gallery-small .item {
   position: relative;
-  float: left;
-  width: 33.33333%;
   min-height: 1px;
   padding-left: 15px;
   padding-right: 15px;
@@ -18032,6 +18120,13 @@ input[type="checkbox"]:focus + .btn, input[type="radio"]:focus + .btn {
   min-height: 1px;
   padding-left: 15px;
   padding-right: 15px;
+}
+
+@media (min-width: 576px) {
+  .gallery.gallery-small .item {
+    float: left;
+    width: 33.33333%;
+  }
 }
 
 @media (min-width: 992px) {
@@ -19223,8 +19318,6 @@ fieldset[disabled] .btn-more {
 ----------------------------------------- */
 .service-tile {
   position: relative;
-  float: left;
-  width: 100%;
   min-height: 1px;
   padding-left: 0;
   padding-right: 0;
@@ -19253,6 +19346,13 @@ fieldset[disabled] .btn-more {
 
 .service-tile:focus {
   outline: solid 2px #2ea3f2;
+}
+
+@media (min-width: 576px) {
+  .service-tile {
+    float: left;
+    width: 100%;
+  }
 }
 
 @media (min-width: 450px) {
@@ -20069,6 +20169,52 @@ fieldset[disabled] .btn-more {
 
 .owl-video-wrapper .item-overlay {
   display: none;
+}
+
+/* HEADER SLIDESHOW */
+.header-slideshow-banner {
+  position: relative;
+  height: 500px;
+  /* Adjusting the height of the banner controls */
+}
+
+.header-slideshow-banner .banner-pager, .header-slideshow-banner .banner-play-pause {
+  top: 350px;
+  z-index: 1;
+}
+
+.header-slideshow-banner .carousel {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+/* CA GOV Template hides the carousel by default. 
+   The following lines are to unhide it and make it look pretty */
+@media (max-width: 767px) {
+  .header-slideshow-banner {
+    display: block;
+    height: 160px;
+  }
+  .header-slideshow-banner #primary-carousel {
+    margin: 0;
+    padding: 0;
+  }
+  .header-slideshow-banner #primary-carousel .slide-text {
+    bottom: -11.5px;
+    right: 0;
+    font-size: 14px;
+    width: 100%;
+  }
+  .header-slideshow-banner #primary-carousel .slide-text .title {
+    font-size: 19px;
+  }
+}
+
+/* Move the slide text below the image for small mobile devices */
+@media (max-width: 767px) {
+  .header-slideshow-banner .banner-pager, .header-slideshow-banner .banner-play-pause {
+    top: 15px;
+  }
 }
 
 .plotly-chart .plotly-chart--loading {

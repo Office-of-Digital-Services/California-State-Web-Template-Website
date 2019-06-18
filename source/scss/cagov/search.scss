@@ -49,7 +49,7 @@ $search-input-border-width: 3px;
     // on our larger screens our whole header is one big gigantic position absolute thing
     // so we need to of course respect this and add to the insanity
     @media (min-width: $screen-sm-min) {
-        position: static;
+        position: absolute;
         top: $search-absolute-height;
     }
 
@@ -78,7 +78,6 @@ $search-input-border-width: 3px;
         padding: 0 10px;
 		-webkit-transition: border $search-ft;
         transition: border $search-ft;
-        outline: none;
     }
 
     .submit-container {
@@ -273,7 +272,7 @@ $search-input-border-width: 3px;
         opacity:1;
 
         @media (min-width: $screen-sm-min) {
-            position: static;
+            position: absolute;
         }
  -webkit-transition: top $search-ft, left $search-st $search-ft, width  $search-st $search-ft, background-color $search-ft + $search-st , border $search-ft, padding $search-st $search-ft;
         transition: top $search-ft, left $search-st $search-ft, width  $search-st $search-ft, background-color $search-ft + $search-st , border $search-ft, padding $search-st $search-ft;
@@ -302,7 +301,6 @@ $search-input-border-width: 3px;
             padding: 0 4px; // Padding can control size of small search box
 			-webkit-transition: border $search-ft;
             transition: border $search-ft;
-            outline: none;
         }
       }
 
@@ -606,7 +604,6 @@ GOOGLE CUSTOM SEARCH CUSTOMIZATION OVERRIDES
 		border-radius: 0;
 		border: 3px solid transparent;
 		transition: border 0.4s;
-		outline: none;
 		font-size: 1.1rem;
 		height: 55px !important;
 		padding: 14px !important;
