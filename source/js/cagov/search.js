@@ -200,6 +200,39 @@ $(document).ready(function () {
 
 
 
+    $('.toggle-search').on('click', function () {
+        $('.search-container').toggleClass('active');
+        var searchactive = $("#head-search").hasClass("active");
+        if (searchactive) {
+            searchInput.removeAttr('tabindex aria-hidden');
+            searchSubmit.removeAttr('tabindex aria-hidden');
+            searchReset.removeAttr('tabindex aria-hidden');
+            searchlabel.removeAttr('aria-hidden');
+            $searchText.trigger("focus").trigger('focus');
+
+        }
+        else {
+            searchInput.attr({
+                "tabindex": '-1',
+                "aria-hidden": 'true'
+            });
+            searchSubmit.attr({
+                "tabindex": '-1',
+                "aria-hidden": 'true'
+            });
+            searchReset.attr({
+                "tabindex": '-1',
+                "aria-hidden": 'true'
+            });
+            searchlabel.attr({
+                "aria-hidden": 'true'
+            });
+        }
+        if (!$('#navigation').hasClass('active')) {
+            $('#navigation').addClass('mobile-closed');
+        }
+    });
+
 
 
 

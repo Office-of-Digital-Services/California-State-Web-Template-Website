@@ -20,14 +20,15 @@
 }
 
 .service-tile-panel {
-  /*Selectivly show when requested by user*/
-  visibility: hidden; // changed from "collapse" to fix siteimprove checker accessibility errors 
-  position: absolute;
-
+    /*Selectivly show when requested by user*/
+    visibility: hidden; // changed from "collapse" to fix siteimprove checker accessibility errors
+    position: absolute;
     // Not sure if this can be a generic class for all of the large close buttons.
     // Stashing in service tile panel to avoid conflict with other similar.
     .btn.close {
         @include font-size(3.5);
+        position: relative;
+        z-index: 3;
     }
 }
 

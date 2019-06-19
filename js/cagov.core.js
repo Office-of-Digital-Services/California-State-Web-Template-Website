@@ -1,5 +1,5 @@
 /**
- * CA State Template v5 -  @version v5.0.8 -  6/18/2019 
+ * CA State Template v5 -  @version v5.0.8 -  6/19/2019 
   STYLES COMPILED FROM SOURCE (source/js) DO NOT MODIFY */
 /*! modernizr (Custom Build) | MIT *
  * https://modernizr.com/download/?-flexbox-setclasses !*/
@@ -15013,21 +15013,10 @@ $(document).ready(function () {
         });
     }
 
-        $(".rotate1").on("click", function () {
-            $(this).toggleClass("down");
-        })
-
-
-
-
-
-    $('.toggle-search').on('click', function () {
-        $('.search-container').toggleClass('active');
-        if (!$('#navigation').hasClass('active')) {
-            $('#navigation').addClass('mobile-closed');
-        }
+    $(".rotate1").on("click", function () {
+        $(this).toggleClass("down");
     });
-
+    
 
 
     // allow dropdown on focus
@@ -17088,6 +17077,39 @@ $(document).ready(function () {
 
 
 
+    $('.toggle-search').on('click', function () {
+        $('.search-container').toggleClass('active');
+        var searchactive = $("#head-search").hasClass("active");
+        if (searchactive) {
+            searchInput.removeAttr('tabindex aria-hidden');
+            searchSubmit.removeAttr('tabindex aria-hidden');
+            searchReset.removeAttr('tabindex aria-hidden');
+            searchlabel.removeAttr('aria-hidden');
+            $searchText.trigger("focus").trigger('focus');
+
+        }
+        else {
+            searchInput.attr({
+                "tabindex": '-1',
+                "aria-hidden": 'true'
+            });
+            searchSubmit.attr({
+                "tabindex": '-1',
+                "aria-hidden": 'true'
+            });
+            searchReset.attr({
+                "tabindex": '-1',
+                "aria-hidden": 'true'
+            });
+            searchlabel.attr({
+                "aria-hidden": 'true'
+            });
+        }
+        if (!$('#navigation').hasClass('active')) {
+            $('#navigation').addClass('mobile-closed');
+        }
+    });
+
 
 
 
@@ -18986,4 +19008,11 @@ $(document).ready(function () {
     tabs.attr("tabindex", 0); // make accordion tabable
 
 
+});
+/* -----------------------------------------
+   Utility Header
+----------------------------------------- */
+$(document).ready(function () {
+    // removing role attribute to fix accessibilty error
+    $(".settings-links button[data-target='#siteSettings']").removeAttr("role");
 });

@@ -219,21 +219,10 @@ $(document).ready(function () {
         });
     }
 
-        $(".rotate1").on("click", function () {
-            $(this).toggleClass("down");
-        })
-
-
-
-
-
-    $('.toggle-search').on('click', function () {
-        $('.search-container').toggleClass('active');
-        if (!$('#navigation').hasClass('active')) {
-            $('#navigation').addClass('mobile-closed');
-        }
+    $(".rotate1").on("click", function () {
+        $(this).toggleClass("down");
     });
-
+    
 
 
     // allow dropdown on focus

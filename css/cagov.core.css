@@ -1,5 +1,5 @@
 /**
- * CA State Template v5 -  @version v5.0.8 -  6/18/2019 
+ * CA State Template v5 -  @version v5.0.8 -  6/19/2019 
   STYLES COMPILED FROM SOURCE (SCSS) DO NOT MODIFY */
 /* -----------------------------------------
    BOOTSTRAP v4.3.1 - /source/scss/bootstrap/ 
@@ -11114,16 +11114,11 @@ code {
 
 .full-width {
   position: relative;
+  float: left;
+  width: 100%;
   min-height: 1px;
   padding-left: 15px;
   padding-right: 15px;
-}
-
-@media (min-width: 576px) {
-  .full-width {
-    float: left;
-    width: 100%;
-  }
 }
 
 .half {
@@ -11131,17 +11126,6 @@ code {
   min-height: 1px;
   padding-left: 15px;
   padding-right: 15px;
-  position: relative;
-  min-height: 1px;
-  padding-left: 15px;
-  padding-right: 15px;
-}
-
-@media (min-width: 576px) {
-  .half {
-    float: left;
-    width: 100%;
-  }
 }
 
 @media (min-width: 768px) {
@@ -11156,17 +11140,6 @@ code {
   min-height: 1px;
   padding-left: 15px;
   padding-right: 15px;
-  position: relative;
-  min-height: 1px;
-  padding-left: 15px;
-  padding-right: 15px;
-}
-
-@media (min-width: 576px) {
-  .third {
-    float: left;
-    width: 100%;
-  }
 }
 
 @media (min-width: 768px) {
@@ -11181,17 +11154,6 @@ code {
   min-height: 1px;
   padding-left: 15px;
   padding-right: 15px;
-  position: relative;
-  min-height: 1px;
-  padding-left: 15px;
-  padding-right: 15px;
-}
-
-@media (min-width: 576px) {
-  .two-thirds {
-    float: left;
-    width: 100%;
-  }
 }
 
 @media (min-width: 768px) {
@@ -11203,6 +11165,8 @@ code {
 
 .quarter {
   position: relative;
+  float: left;
+  width: 50%;
   min-height: 1px;
   padding-left: 15px;
   padding-right: 15px;
@@ -11210,24 +11174,6 @@ code {
   min-height: 1px;
   padding-left: 15px;
   padding-right: 15px;
-  position: relative;
-  min-height: 1px;
-  padding-left: 15px;
-  padding-right: 15px;
-}
-
-@media (min-width: 576px) {
-  .quarter {
-    float: left;
-    width: 100%;
-  }
-}
-
-@media (min-width: 768px) {
-  .quarter {
-    float: left;
-    width: 50%;
-  }
 }
 
 @media (min-width: 992px) {
@@ -11242,17 +11188,6 @@ code {
   min-height: 1px;
   padding-left: 15px;
   padding-right: 15px;
-  position: relative;
-  min-height: 1px;
-  padding-left: 15px;
-  padding-right: 15px;
-}
-
-@media (min-width: 576px) {
-  .three-quarters {
-    float: left;
-    width: 100%;
-  }
 }
 
 @media (min-width: 768px) {
@@ -14006,6 +13941,8 @@ pre {
   }
   .ask-group {
     position: relative;
+    float: left;
+    width: 100%;
     min-height: 1px;
     padding-left: 15px;
     padding-right: 15px;
@@ -14013,16 +13950,6 @@ pre {
     float: none;
     padding-bottom: 1px;
   }
-}
-
-@media (max-width: 767px) and (min-width: 576px) {
-  .ask-group {
-    float: left;
-    width: 100%;
-  }
-}
-
-@media (max-width: 767px) {
   .ask-group .panel {
     border: none;
     background: rgba(0, 0, 0, 0.65);
@@ -16639,6 +16566,8 @@ figcaption {
 .news-item .thumbnail {
   margin-left: -15px;
   position: relative;
+  float: left;
+  width: 41.66667%;
   min-height: 1px;
   padding-left: 15px;
   padding-right: 15px;
@@ -16654,13 +16583,6 @@ figcaption {
   min-height: 1px;
   padding-left: 15px;
   padding-right: 15px;
-}
-
-@media (min-width: 576px) {
-  .news-item .thumbnail {
-    float: left;
-    width: 41.66667%;
-  }
 }
 
 @media (min-width: 768px) {
@@ -16886,6 +16808,8 @@ figcaption {
 
 .event-item > .thumbnail {
   position: relative;
+  float: left;
+  width: 33.33333%;
   min-height: 1px;
   padding-left: 15px;
   padding-right: 15px;
@@ -16898,13 +16822,6 @@ figcaption {
   padding-left: 15px;
   padding-right: 15px;
   padding: 0;
-}
-
-@media (min-width: 576px) {
-  .event-item > .thumbnail {
-    float: left;
-    width: 33.33333%;
-  }
 }
 
 @media (min-width: 768px) {
@@ -16930,6 +16847,8 @@ figcaption {
 
 .event-item .thumbnail + .info {
   position: relative;
+  float: left;
+  width: 66.66667%;
   min-height: 1px;
   padding-left: 15px;
   padding-right: 15px;
@@ -16941,13 +16860,6 @@ figcaption {
   min-height: 1px;
   padding-left: 15px;
   padding-right: 15px;
-}
-
-@media (min-width: 576px) {
-  .event-item .thumbnail + .info {
-    float: left;
-    width: 66.66667%;
-  }
 }
 
 @media (min-width: 768px) {
@@ -17980,16 +17892,11 @@ input:focus, textarea:focus, button:focus, select:focus {
 @media (max-width: 576px) {
   .gallery .item {
     position: relative;
+    float: left;
+    width: 100%;
     min-height: 1px;
     padding-left: 15px;
     padding-right: 15px;
-  }
-}
-
-@media (max-width: 576px) and (min-width: 576px) {
-  .gallery .item {
-    float: left;
-    width: 100%;
   }
 }
 
@@ -18113,6 +18020,8 @@ input:focus, textarea:focus, button:focus, select:focus {
 
 .gallery.gallery-small .item {
   position: relative;
+  float: left;
+  width: 33.33333%;
   min-height: 1px;
   padding-left: 15px;
   padding-right: 15px;
@@ -18120,13 +18029,6 @@ input:focus, textarea:focus, button:focus, select:focus {
   min-height: 1px;
   padding-left: 15px;
   padding-right: 15px;
-}
-
-@media (min-width: 576px) {
-  .gallery.gallery-small .item {
-    float: left;
-    width: 33.33333%;
-  }
 }
 
 @media (min-width: 992px) {
@@ -19296,6 +19198,8 @@ fieldset[disabled] .btn-more {
 .service-tile-panel .btn.close {
   font-size: 56px;
   font-size: 3.5rem;
+  position: relative;
+  z-index: 3;
 }
 
 /* -----------------------------------------
@@ -19318,6 +19222,8 @@ fieldset[disabled] .btn-more {
 ----------------------------------------- */
 .service-tile {
   position: relative;
+  float: left;
+  width: 100%;
   min-height: 1px;
   padding-left: 0;
   padding-right: 0;
@@ -19346,13 +19252,6 @@ fieldset[disabled] .btn-more {
 
 .service-tile:focus {
   outline: solid 2px #2ea3f2;
-}
-
-@media (min-width: 576px) {
-  .service-tile {
-    float: left;
-    width: 100%;
-  }
 }
 
 @media (min-width: 450px) {
