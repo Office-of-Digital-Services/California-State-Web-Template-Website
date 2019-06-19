@@ -347,4 +347,7 @@ input[type="checkbox"]:focus + .btn, input[type="radio"]:focus + .btn {
     color: $brand-success;
 }
 
-
+/* Accessibilty focus */
+input:focus, textarea:focus, button:focus, select:focus {
+    @include outline(2px);
+} 

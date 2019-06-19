@@ -1,5 +1,5 @@
 /**
- * CA State Template v5 -  @version v5.0.7 -  5/31/2019 
+ * CA State Template v5 -  @version v5.0.8 -  6/19/2019 
   STYLES COMPILED FROM SOURCE (SCSS) DO NOT MODIFY */
 /* -----------------------------------------
    SIERRA
@@ -1374,49 +1374,7 @@ a.text-white:not(.btn):hover {
 ----------------------------------------- */
 /* HEADER SLIDESHOW */
 .header-slideshow-banner {
-  position: relative;
-  height: 500px;
   background: #000;
-  /* Adjusting the height of the banner controls */
-}
-
-.header-slideshow-banner .banner-pager, .header-slideshow-banner .banner-play-pause {
-  top: 350px;
-  z-index: 1;
-}
-
-.header-slideshow-banner .carousel {
-  margin-top: 0;
-  margin-bottom: 0;
-}
-
-/* CA GOV Template hides the carousel by default. 
-   The following lines are to unhide it and make it look pretty */
-@media (max-width: 767px) {
-  .header-slideshow-banner {
-    display: block;
-    height: 160px;
-  }
-  .header-slideshow-banner #primary-carousel {
-    margin: 0;
-    padding: 0;
-  }
-  .header-slideshow-banner #primary-carousel .slide-text {
-    bottom: -11.5px;
-    right: 0;
-    font-size: 14px;
-    width: 100%;
-  }
-  .header-slideshow-banner #primary-carousel .slide-text .title {
-    font-size: 19px;
-  }
-}
-
-/* Move the slide text below the image for small mobile devices */
-@media (max-width: 767px) {
-  .header-slideshow-banner .banner-pager, .header-slideshow-banner .banner-play-pause {
-    top: 15px;
-  }
 }
 
 /* -----------------------------------------

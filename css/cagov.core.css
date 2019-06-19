@@ -1,5 +1,5 @@
 /**
- * CA State Template v5 -  @version v5.0.7 -  6/10/2019 
+ * CA State Template v5 -  @version v5.0.8 -  6/19/2019 
   STYLES COMPILED FROM SOURCE (SCSS) DO NOT MODIFY */
 /* -----------------------------------------
    BOOTSTRAP v4.3.1 - /source/scss/bootstrap/ 
@@ -11165,6 +11165,8 @@ code {
 
 .quarter {
   position: relative;
+  float: left;
+  width: 50%;
   min-height: 1px;
   padding-left: 15px;
   padding-right: 15px;
@@ -11174,14 +11176,7 @@ code {
   padding-right: 15px;
 }
 
-@media (min-width: 768px) {
-  .quarter {
-    float: left;
-    width: 50%;
-  }
-}
-
-@media (min-width: 768px) {
+@media (min-width: 992px) {
   .quarter {
     float: left;
     width: 25%;
@@ -11755,7 +11750,7 @@ code {
 
 @media (min-width: 768px) {
   .search-container, .featured-search.active {
-    position: static;
+    position: absolute;
     top: 100px;
   }
 }
@@ -11776,7 +11771,6 @@ code {
   padding: 0 10px;
   -webkit-transition: border 0.4s;
   transition: border 0.4s;
-  outline: none;
 }
 
 .search-container .submit-container, .featured-search.active .submit-container {
@@ -11966,7 +11960,7 @@ code {
 
 @media (min-width: 768px) and (min-width: 768px) {
   .featured-search.active {
-    position: static;
+    position: absolute;
   }
 }
 
@@ -11984,7 +11978,6 @@ code {
     padding: 0 4px;
     -webkit-transition: border 0.4s;
     transition: border 0.4s;
-    outline: none;
   }
 }
 
@@ -12266,7 +12259,6 @@ GOOGLE CUSTOM SEARCH CUSTOMIZATION OVERRIDES
   border-radius: 0;
   border: 3px solid transparent;
   transition: border 0.4s;
-  outline: none;
   font-size: 1.1rem;
   height: 55px !important;
   padding: 14px !important;
@@ -17463,6 +17455,11 @@ input[type="checkbox"]:focus + .btn, input[type="radio"]:focus + .btn {
   color: #32852E;
 }
 
+/* Accessibilty focus */
+input:focus, textarea:focus, button:focus, select:focus {
+  outline: solid 2px #2ea3f2;
+}
+
 /* -----------------------------------------
    PUBLICATIONS /source/scss/cagov/publications.scss
 ----------------------------------------- */
@@ -19201,6 +19198,8 @@ fieldset[disabled] .btn-more {
 .service-tile-panel .btn.close {
   font-size: 56px;
   font-size: 3.5rem;
+  position: relative;
+  z-index: 3;
 }
 
 /* -----------------------------------------
@@ -20069,6 +20068,52 @@ fieldset[disabled] .btn-more {
 
 .owl-video-wrapper .item-overlay {
   display: none;
+}
+
+/* HEADER SLIDESHOW */
+.header-slideshow-banner {
+  position: relative;
+  height: 500px;
+  /* Adjusting the height of the banner controls */
+}
+
+.header-slideshow-banner .banner-pager, .header-slideshow-banner .banner-play-pause {
+  top: 350px;
+  z-index: 1;
+}
+
+.header-slideshow-banner .carousel {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+/* CA GOV Template hides the carousel by default. 
+   The following lines are to unhide it and make it look pretty */
+@media (max-width: 767px) {
+  .header-slideshow-banner {
+    display: block;
+    height: 160px;
+  }
+  .header-slideshow-banner #primary-carousel {
+    margin: 0;
+    padding: 0;
+  }
+  .header-slideshow-banner #primary-carousel .slide-text {
+    bottom: -11.5px;
+    right: 0;
+    font-size: 14px;
+    width: 100%;
+  }
+  .header-slideshow-banner #primary-carousel .slide-text .title {
+    font-size: 19px;
+  }
+}
+
+/* Move the slide text below the image for small mobile devices */
+@media (max-width: 767px) {
+  .header-slideshow-banner .banner-pager, .header-slideshow-banner .banner-play-pause {
+    top: 15px;
+  }
 }
 
 .plotly-chart .plotly-chart--loading {

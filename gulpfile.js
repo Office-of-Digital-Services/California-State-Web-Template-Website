@@ -87,7 +87,8 @@ var jssrc = [
     'source/js/cagov/more.js',
     'source/js/cagov/high-contrast.js',
     'source/js/cagov/ask-group.js',
-    'source/js/cagov/tabs.js'
+    'source/js/cagov/tabs.js',
+    'source/js/cagov/utility-header.js'
 ];
 
 
