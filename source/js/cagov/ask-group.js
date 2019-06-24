@@ -15,3 +15,8 @@ try {
 }
 
 });
+
+$(document).ready(function () {
+    // removing unsupported aria attribute to fix aria validator errors
+    $("#askGroup").removeAttr("aria-multiselectable");
+});

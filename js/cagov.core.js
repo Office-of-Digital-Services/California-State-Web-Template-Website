@@ -1,5 +1,5 @@
 /**
- * CA State Template v5 -  @version v5.0.8 -  6/19/2019 
+ * CA State Template v5 -  @version v5.0.8 -  6/24/2019 
   STYLES COMPILED FROM SOURCE (source/js) DO NOT MODIFY */
 /*! modernizr (Custom Build) | MIT *
  * https://modernizr.com/download/?-flexbox-setclasses !*/
@@ -18981,6 +18981,11 @@ try {
 
 });
 
+$(document).ready(function () {
+    // removing unsupported aria attribute to fix aria validator errors
+    $("#askGroup").removeAttr("aria-multiselectable");
+});
+
 /* -----------------------------------------
    Tabs -- some fixing to bootstap 3 tabs 
    and backward compatibility
@@ -19013,6 +19018,7 @@ $(document).ready(function () {
    Utility Header
 ----------------------------------------- */
 $(document).ready(function () {
-    // removing role attribute to fix accessibilty error
-    $(".settings-links button[data-target='#siteSettings']").removeAttr("role");
+    // removing role attribute to fix aria validator errors
+    $(".settings-links button[data-target='#siteSettings']").removeAttr("role aria-selected");
+    $(".site-settings button.close").removeAttr("role aria-selected");
 });
