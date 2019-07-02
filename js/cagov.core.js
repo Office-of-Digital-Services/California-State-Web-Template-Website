@@ -1,5 +1,5 @@
 /**
- * CA State Template v5 -  @version v5.0.8 -  6/24/2019 
+ * CA State Template v5 -  @version v5.0.8 -  7/2/2019 
   STYLES COMPILED FROM SOURCE (source/js) DO NOT MODIFY */
 /*! modernizr (Custom Build) | MIT *
  * https://modernizr.com/download/?-flexbox-setclasses !*/
@@ -16891,9 +16891,15 @@ $(document).ready(function () {
     var $globalHeader = $('.global-header');
     var searchbox = $(".search-container:not(.featured-search)");
     var searchlabel = $("#SearchInput");
+
     var headerHeight = $globalHeader.innerHeight();
-    var utility = 34;
-    var searchtop = headerHeight - utility;
+    var utility = $(".utility-header");
+    var utilityHeight = utility.innerHeight();
+ 
+    var alertBanner = $(".alert-banner");
+    var alertbannerHeight = alertBanner.innerHeight();
+
+    var searchtop = headerHeight - utilityHeight - alertbannerHeight;
 
     var $body = $("body");
     var $specialIcon =
@@ -17120,8 +17126,14 @@ $(window).on('resize', function () {
     var $globalHeader = $('.global-header');
     var searchbox = $(".search-container:not(.featured-search)");
     var headerHeight = $globalHeader.innerHeight();
-    var utility = 34;
-    var searchtop = headerHeight - utility;
+    var utility = $(".utility-header");
+    var utilityHeight = utility.innerHeight();
+
+    var alertBanner = $(".alert-banner");
+    var alertbannerHeight = alertBanner.innerHeight();
+
+    var searchtop = headerHeight - utilityHeight - alertbannerHeight;
+   
     if (!mobileView()) {
         searchbox.css({
             'top': Math.max(searchtop, 87)
@@ -18985,7 +18997,6 @@ $(document).ready(function () {
     // removing unsupported aria attribute to fix aria validator errors
     $("#askGroup").removeAttr("aria-multiselectable");
 });
-
 /* -----------------------------------------
    Tabs -- some fixing to bootstap 3 tabs 
    and backward compatibility
