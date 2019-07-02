@@ -14,9 +14,15 @@ $(document).ready(function () {
     var $globalHeader = $('.global-header');
     var searchbox = $(".search-container:not(.featured-search)");
     var searchlabel = $("#SearchInput");
+
     var headerHeight = $globalHeader.innerHeight();
-    var utility = 34;
-    var searchtop = headerHeight - utility;
+    var utility = $(".utility-header");
+    var utilityHeight = utility.innerHeight();
+ 
+    var alertBanner = $(".alert-banner");
+    var alertbannerHeight = alertBanner.innerHeight();
+
+    var searchtop = headerHeight - utilityHeight - alertbannerHeight;
 
     var $body = $("body");
     var $specialIcon =
@@ -243,8 +249,14 @@ $(window).on('resize', function () {
     var $globalHeader = $('.global-header');
     var searchbox = $(".search-container:not(.featured-search)");
     var headerHeight = $globalHeader.innerHeight();
-    var utility = 34;
-    var searchtop = headerHeight - utility;
+    var utility = $(".utility-header");
+    var utilityHeight = utility.innerHeight();
+
+    var alertBanner = $(".alert-banner");
+    var alertbannerHeight = alertBanner.innerHeight();
+
+    var searchtop = headerHeight - utilityHeight - alertbannerHeight;
+   
     if (!mobileView()) {
         searchbox.css({
             'top': Math.max(searchtop, 87)
