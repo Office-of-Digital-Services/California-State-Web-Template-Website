@@ -215,6 +215,9 @@ $(document).ready(function () {
             searchReset.removeAttr('tabindex aria-hidden');
             searchlabel.removeAttr('aria-hidden');
             $searchText.trigger("focus").trigger('focus');
+            $('html, body').animate({
+                scrollTop: $("#head-search").offset().top
+            }, 500);
 
         }
         else {

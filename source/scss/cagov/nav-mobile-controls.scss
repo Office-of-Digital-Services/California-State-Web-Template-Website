@@ -4,43 +4,48 @@
 ----------------------------------------- */
 
 
-// CONTAINER 
+// CONTAINER
 .mobile-controls {
-    @include font-size(2.5);                     // mobile "hamburger menu", chat, and search icons
+    @include font-size(2.5); // mobile "hamburger menu", chat, and search icons
     padding: .2em;
-	cursor: pointer;
-    text-align: right;                                  // move most menu controls to right
-	position: relative;
-	color: $color-p2;
-	background: $white;	
-	top: 0;
-	width: 100%;
-    height:100%;
-	padding-right: 0;	// IOS fix 5.0 addition
-	@include container;
-    
-    .ca-gov-icon-menu-toggle-open, .ca-gov-icon-menu-toggle-closed { // Dynamic elements included in toggle-sub-nav 
-		padding-left:1em;
-		padding-right:1em;
-		line-height:44px;
-	}
-    
+    cursor: pointer;
+    text-align: right; // move most menu controls to right
+    position: relative;
+    color: $color-p2;
+    background: $white;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    padding-right: 0; // IOS fix 5.0 addition
+    @include container;
+
+    .ca-gov-icon-menu-toggle-open, .ca-gov-icon-menu-toggle-closed { // Dynamic elements included in toggle-sub-nav
+        padding-left: 1em;
+        padding-right: 1em;
+        line-height: 44px;
+    }
+
     .toggle-menu {
-		padding:0;
-		width:52px;
-		cursor:pointer;
-	}
-	
-	.toggle-search {
-		padding:0;
-		width:52px;
-		border: none;
-    	background: none;
-		cursor:pointer;
-		&:focus {
-			@include outline(2px);
-			}
-	}
+        padding: 0;
+        width: 52px;
+        cursor: pointer;
+    }
+
+    .toggle-search {
+        padding: 0;
+        width: 52px;
+        border: none;
+        background: none;
+        cursor: pointer;
+
+        &:focus {
+            @include outline(2px);
+        }
+    }
+
+    @media (max-width: $screen-xs-max) {
+        max-width: 100%;
+    }
 }
 
 

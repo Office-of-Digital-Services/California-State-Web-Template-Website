@@ -11,6 +11,7 @@
     background: $color-p2;
     color: contrast($color-p2);
 
+
     .half {
         @include make-sm-column(6);
         padding-top: 4px; // beta 5.0 addition
@@ -96,6 +97,9 @@
     }
 
     @media (max-width: $screen-xs-max) {
+        .container {
+            max-width: 100%;
+        }
 
         .social-media-links {
             li {
