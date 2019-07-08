@@ -20,8 +20,12 @@ $(document).ready(function () {
     var utilityHeight = utility.innerHeight();
  
     var alertBanner = $(".alert-banner");
-    var alertbannerHeight = alertBanner.innerHeight();
+    var alertbannerHeight = 0;
 
+    $.each(alertBanner, function () {
+        alertbannerHeight += $(this).innerHeight();
+    });
+    
     var searchtop = headerHeight - utilityHeight - alertbannerHeight;
 
     var $body = $("body");
@@ -256,14 +260,20 @@ $(window).on('resize', function () {
     var utilityHeight = utility.innerHeight();
 
     var alertBanner = $(".alert-banner");
-    var alertbannerHeight = alertBanner.innerHeight();
+
+    $.each(alertBanner, function () {
+        alertbannerHeight += $(this).innerHeight();
+    });
 
     var searchtop = headerHeight - utilityHeight - alertbannerHeight;
+
+
    
     if (!mobileView()) {
         searchbox.css({
             'top': Math.max(searchtop, 87)
         });
+        
     }
 });
 
