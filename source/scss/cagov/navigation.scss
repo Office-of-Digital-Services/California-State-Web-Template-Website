@@ -38,9 +38,13 @@
 
 .main-navigation {
     @include container();
-    position:relative;
-    margin-top:-88px;
-    padding-left:80px;
+    position: relative;
+    margin-top: -88px;
+    padding-left: 80px;
+
+    @media (max-width: $screen-xs-max) {
+        max-width: 100%;
+    }
 }
 
 .top-level-nav {

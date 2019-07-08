@@ -1,5 +1,5 @@
 /**
- * CA State Template v5 -  @version v5.0.8 -  7/2/2019 
+ * CA State Template v5 -  @version v5.0.8 -  7/8/2019 
   STYLES COMPILED FROM SOURCE (source/js) DO NOT MODIFY */
 /*! modernizr (Custom Build) | MIT *
  * https://modernizr.com/download/?-flexbox-setclasses !*/
@@ -16897,8 +16897,12 @@ $(document).ready(function () {
     var utilityHeight = utility.innerHeight();
  
     var alertBanner = $(".alert-banner");
-    var alertbannerHeight = alertBanner.innerHeight();
+    var alertbannerHeight = 0;
 
+    $.each(alertBanner, function () {
+        alertbannerHeight += $(this).innerHeight();
+    });
+    
     var searchtop = headerHeight - utilityHeight - alertbannerHeight;
 
     var $body = $("body");
@@ -17092,6 +17096,9 @@ $(document).ready(function () {
             searchReset.removeAttr('tabindex aria-hidden');
             searchlabel.removeAttr('aria-hidden');
             $searchText.trigger("focus").trigger('focus');
+            $('html, body').animate({
+                scrollTop: $("#head-search").offset().top
+            }, 500);
 
         }
         else {
@@ -17130,14 +17137,20 @@ $(window).on('resize', function () {
     var utilityHeight = utility.innerHeight();
 
     var alertBanner = $(".alert-banner");
-    var alertbannerHeight = alertBanner.innerHeight();
+
+    $.each(alertBanner, function () {
+        alertbannerHeight += $(this).innerHeight();
+    });
 
     var searchtop = headerHeight - utilityHeight - alertbannerHeight;
+
+
    
     if (!mobileView()) {
         searchbox.css({
             'top': Math.max(searchtop, 87)
         });
+        
     }
 });
 
