@@ -129,7 +129,31 @@ $(document).ready(function () {
 
     });
 
-    // SEE navitgation.js for mobile click handlers
+    // Make Search form tabable if it's featured	
+    if ($('#head-search').hasClass('featured-search')) {
+        searchInput.removeAttr('tabindex aria-hidden');
+        searchSubmit.removeAttr('tabindex aria-hidden');
+        searchReset.removeAttr('tabindex aria-hidden');
+        searchlabel.removeAttr('aria-hidden');
+    } else {
+        searchInput.attr({
+            "tabindex": '-1',
+            "aria-hidden": 'true'
+        });
+        searchSubmit.attr({
+            "tabindex": '-1',
+            "aria-hidden": 'true'
+        });
+        searchReset.attr({
+            "tabindex": '-1',
+            "aria-hidden": 'true'
+        });
+        searchlabel.attr({
+            "aria-hidden": 'true'
+        });
+    }
+
+
 
     // Close search when close icon is clicked
     $('.close-search').on('click', removeSearchResults);
