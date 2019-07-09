@@ -1,5 +1,5 @@
 /**
- * CA State Template v5.5 -  @version v5.5.5 -  7/3/2019 
+ * CA State Template v5.5 -  @version v5.5.5 -  7/9/2019 
   STYLES COMPILED FROM SOURCE (source/js) DO NOT MODIFY */
 /*! modernizr (Custom Build) | MIT *
  * https://modernizr.com/download/?-flexbox-setclasses !*/
@@ -16613,8 +16613,9 @@ $(document).ready(function () {
     var utility = $(".utility-header");
     var utilityHeight = utility.innerHeight();
     var alertBanner = $(".alert-banner");
-    var alertbannerHeight = alertBanner.innerHeight();
-    var searchtop = headerHeight - utilityHeight - alertbannerHeight;
+    var alertClose = $(".alert-banner .close");
+    var alertbannerHeight = 0;
+    
 
     var $body = $("body");
     var $specialIcon =
@@ -16637,6 +16638,22 @@ $(document).ready(function () {
             addSearchResults();
         }
     });
+
+
+    //  search box top position
+    if (!mobileView()) {
+        // taking into account multiple alert banners
+        $.each(alertBanner, function () {
+            alertbannerHeight += $(this).innerHeight();
+        });
+        // calulation search box top position
+        var searchtop = headerHeight - utilityHeight - alertbannerHeight;
+        if (!mobileView()) {
+            searchbox.css({
+                'top': Math.max(searchtop, 87)
+            });
+        }
+    } 
 
     // have the close button remove search results and the applied classes
     $resultsContainer.find('.close').on('click', removeSearchResults);
@@ -16823,40 +16840,47 @@ $(document).ready(function () {
         });
     }
 
-    //  search box top position
-    if (!mobileView()) {
-        searchbox.css({
-            'top': Math.max(searchtop, 87)
+
+
+    // on alert close event
+    $.each(alertClose, function () {
+        $(this).on("click", function () {
+            searchTop();
         });
-    } 
+        
+    });
+    
 
-
-
-
-
-
-});
+}); 
 
 //  search box top position if browser window is resized
 $(window).on('resize', function () {
+    searchTop();
+});
+
+
+function searchTop() {
+    var searchlabel = $("#SearchInput");
     var $globalHeader = $('.global-header');
     var searchbox = $(".search-container:not(.featured-search)");
     var headerHeight = $globalHeader.innerHeight();
     var utility = $(".utility-header");
     var utilityHeight = utility.innerHeight();
-
     var alertBanner = $(".alert-banner");
-    var alertbannerHeight = alertBanner.innerHeight();
-
+    var alertClose = $(".alert-banner .close");
+    var alertbannerHeight = 0;
+    // taking into account multiple alert banners
+    $.each(alertBanner, function () {
+        alertbannerHeight += $(this).innerHeight();
+    });
+    // calulation search box top position
     var searchtop = headerHeight - utilityHeight - alertbannerHeight;
-
     if (!mobileView()) {
         searchbox.css({
             'top': Math.max(searchtop, 87)
         });
     }
-});
-
+}
 
 function mobileView() {
     return $('.global-header .mobile-controls').css('display') !== "none"; // mobile view uses arrow to show subnav instead of first touch
