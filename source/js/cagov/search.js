@@ -11,11 +11,16 @@ $(document).ready(function () {
     var searchReset = $("#head-search #Search .gsc-clear-button");
     var featuredsearch = $("#head-search").hasClass("featured-search");
     var searchactive = $("#head-search").hasClass("active");
+    var searchlabel = $("#SearchInput");
     var $globalHeader = $('.global-header');
     var searchbox = $(".search-container:not(.featured-search)");
     var headerHeight = $globalHeader.innerHeight();
-    var utility = 34;
-    var searchtop = headerHeight - utility;
+    var utility = $(".utility-header");
+    var utilityHeight = utility.innerHeight();
+    var alertBanner = $(".alert-banner");
+    var alertClose = $(".alert-banner .close");
+    var alertbannerHeight = 0;
+    
 
     var $body = $("body");
     var $specialIcon =
@@ -38,6 +43,22 @@ $(document).ready(function () {
             addSearchResults();
         }
     });
+
+
+    //  search box top position
+    if (!mobileView()) {
+        // taking into account multiple alert banners
+        $.each(alertBanner, function () {
+            alertbannerHeight += $(this).innerHeight();
+        });
+        // calulation search box top position
+        var searchtop = headerHeight - utilityHeight - alertbannerHeight;
+        if (!mobileView()) {
+            searchbox.css({
+                'top': Math.max(searchtop, 87)
+            });
+        }
+    } 
 
     // have the close button remove search results and the applied classes
     $resultsContainer.find('.close').on('click', removeSearchResults);
@@ -66,21 +87,35 @@ $(document).ready(function () {
         var searchactive = $("#head-search").hasClass("active");
         // hide Search form if it's not active
         if (searchactive) {
-            searchInput.removeAttr('tabindex');
-            searchSubmit.removeAttr('tabindex');
-            searchReset.removeAttr('tabindex');
+            searchInput.removeAttr('tabindex aria-hidden');
+            searchSubmit.removeAttr('tabindex aria-hidden');
+            searchReset.removeAttr('tabindex aria-hidden');
+            searchlabel.removeAttr('aria-hidden');
         
         }
         else {
-            searchInput.attr('tabindex', "-1");
-            searchSubmit.attr('tabindex', "-1");
-            searchReset.attr('tabindex', "-1");
+            searchInput.attr({
+                "tabindex": '-1',
+                "aria-hidden": 'true'
+            });
+            searchSubmit.attr({
+                "tabindex": '-1',
+                "aria-hidden": 'true'
+            });
+            searchReset.attr({
+                "tabindex": '-1',
+                "aria-hidden": 'true'
+            });
+            searchlabel.attr({
+                "aria-hidden": 'true'
+            });
         }
 
        if (featuredsearch) {
-            searchInput.removeAttr('tabindex');
-            searchSubmit.removeAttr('tabindex');
-          searchReset.removeAttr('tabindex');
+           searchInput.removeAttr('tabindex aria-hidden');
+           searchSubmit.removeAttr('tabindex aria-hidden');
+           searchReset.removeAttr('tabindex aria-hidden');
+           searchlabel.removeAttr('aria-hidden');
         }
 
         if (mobileView() && featuredsearch) { $('.search-container').toggleClass('active');}
@@ -124,9 +159,21 @@ $(document).ready(function () {
         $('.ask-group').removeClass('fade-out');
         
         if (!featuredsearch) {
-        searchInput.attr('tabindex', "-1");
-        searchSubmit.attr('tabindex', "-1");
-        searchReset.attr('tabindex', "-1");
+            searchInput.attr({
+                "tabindex": '-1',
+                "aria-hidden": 'true'
+            });
+            searchSubmit.attr({
+                "tabindex": '-1',
+                "aria-hidden": 'true'
+            });
+            searchReset.attr({
+                "tabindex": '-1',
+                "aria-hidden": 'true'
+            });
+            searchlabel.attr({
+                "aria-hidden": 'true'
+            });
         }
         // fire a scroll event to help update headers if need be
         $(window).scroll();
@@ -141,10 +188,34 @@ $(document).ready(function () {
     // Mobile Search toggle
     $('.toggle-search').on('click', function () {
         $('.search-container').toggleClass('active');
-        if ($('.search-container').hasClass('active')) {
-            $('html, body').animate({
-                scrollTop: $("#head-search").offset().top
-            }, 500);
+        var searchactive = $("#head-search").hasClass("active");
+        if (searchactive) {
+            searchInput.removeAttr('tabindex aria-hidden');
+            searchSubmit.removeAttr('tabindex aria-hidden');
+            searchReset.removeAttr('tabindex aria-hidden');
+            searchlabel.removeAttr('aria-hidden');
+            $searchText.trigger("focus").trigger('focus');
+             $('html, body').animate({
+                    scrollTop: $("#head-search").offset().top
+                }, 500);
+            
+        }
+        else {
+            searchInput.attr({
+                "tabindex": '-1',
+                "aria-hidden": 'true'
+            });
+            searchSubmit.attr({
+                "tabindex": '-1',
+                "aria-hidden": 'true'
+            });
+            searchReset.attr({
+                "tabindex": '-1',
+                "aria-hidden": 'true'
+            });
+            searchlabel.attr({
+                "aria-hidden": 'true'
+            });
         }
     });
 
@@ -152,43 +223,69 @@ $(document).ready(function () {
 
     // Make Search form tabable if it's featured
     if ($('#head-search').hasClass('featured-search')) {
-        searchInput.removeAttr('tabindex');
-        searchSubmit.removeAttr('tabindex');
-        searchReset.removeAttr('tabindex');
+        searchInput.removeAttr('tabindex aria-hidden');
+        searchSubmit.removeAttr('tabindex aria-hidden');
+        searchReset.removeAttr('tabindex aria-hidden');
+        searchlabel.removeAttr('aria-hidden');
     } else {
-        searchInput.attr('tabindex', "-1");
-        searchSubmit.attr('tabindex', "-1");
-        searchReset.attr('tabindex', "-1");
+        searchInput.attr({
+            "tabindex": '-1',
+            "aria-hidden": 'true'
+        });
+        searchSubmit.attr({
+            "tabindex": '-1',
+            "aria-hidden": 'true'
+        });
+        searchReset.attr({
+            "tabindex": '-1',
+            "aria-hidden": 'true'
+        });
+        searchlabel.attr({
+            "aria-hidden": 'true'
+        });
     }
 
-    //  search box top position
-    if (!mobileView()) {
-        searchbox.css({
-            'top': Math.max(searchtop, 87)
+
+
+    // on alert close event
+    $.each(alertClose, function () {
+        $(this).on("click", function () {
+            searchTop();
         });
-    } 
+        
+    });
+    
 
-
-
-
-
-
-});
+}); 
 
 //  search box top position if browser window is resized
 $(window).on('resize', function () {
+    searchTop();
+});
+
+
+function searchTop() {
+    var searchlabel = $("#SearchInput");
     var $globalHeader = $('.global-header');
     var searchbox = $(".search-container:not(.featured-search)");
     var headerHeight = $globalHeader.innerHeight();
-    var utility = 34;
-    var searchtop = headerHeight - utility;
+    var utility = $(".utility-header");
+    var utilityHeight = utility.innerHeight();
+    var alertBanner = $(".alert-banner");
+    var alertClose = $(".alert-banner .close");
+    var alertbannerHeight = 0;
+    // taking into account multiple alert banners
+    $.each(alertBanner, function () {
+        alertbannerHeight += $(this).innerHeight();
+    });
+    // calulation search box top position
+    var searchtop = headerHeight - utilityHeight - alertbannerHeight;
     if (!mobileView()) {
         searchbox.css({
             'top': Math.max(searchtop, 87)
         });
     }
-});
-
+}
 
 function mobileView() {
     return $('.global-header .mobile-controls').css('display') !== "none"; // mobile view uses arrow to show subnav instead of first touch

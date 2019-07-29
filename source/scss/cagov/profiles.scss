@@ -33,16 +33,19 @@ $profile-thumbnail: 70px;                                         // Thumbnail w
 // --------------------------------------------------
 
 .profile-banner {
-    background:#fff;                                            // Old browsers get solid white
-    background:rgba(255,255,255,0.5);                           // Background to be 50% white for modern browsers
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#80ffffff', endColorstr='#80ffffff',GradientType=0 );    // IE6-9
-    border:1px solid $gray-lighter;
+    background: #fff; // Old browsers get solid white
+    background: rgba(255,255,255,0.5); // Background to be 50% white for modern browsers
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#80ffffff', endColorstr='#80ffffff',GradientType=0 ); // IE6-9
+    border: 1px solid $gray-lighter;
     //border-radius:$border-radius-large;
     margin-bottom: 15px;
-    clear:both;                                                 // Keep floats from overlapping into profile-banner
-    
+    clear: both; // Keep floats from overlapping into profile-banner
     .main-secondary > & {
-        margin-top: $line-height-computed;                      // When banner is first item inside main-secondary
+        margin-top: $line-height-computed; // When banner is first item inside main-secondary
+    }
+    // backwards compatibility
+    .inner {
+        background-size: contain;
     }
 }
 

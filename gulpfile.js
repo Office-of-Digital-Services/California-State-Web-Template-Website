@@ -93,7 +93,8 @@ var jssrc = [
     'source/js/cagov/ask-group.js',
     'source/js/cagov/panes.js',
     'source/js/cagov/sourcecode.js',
-    'source/js/cagov/tabs.js'
+    'source/js/cagov/tabs.js',
+    'source/js/cagov/utility-header.js'
 ];
 
 
