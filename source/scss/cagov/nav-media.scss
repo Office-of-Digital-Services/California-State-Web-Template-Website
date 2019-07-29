@@ -46,20 +46,28 @@
     top: 0;
     bottom: 0;
     right: 0;
-    
+
     .nav-media {
         @include nav-media();
+
+        @media (max-width: $screen-xs-max) {
+            background-image: none !important;
+        }
     }
 }
-    
+
 .with-image-left {
     position: absolute;
     top: 0;
     bottom: 0;
     left: 0;
-    
+
     .nav-media {
         @include nav-media();
+
+        @media (max-width: $screen-xs-max) {
+            background-image: none !important;
+        }
     }
 }
 
