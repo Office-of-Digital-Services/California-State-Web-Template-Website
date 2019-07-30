@@ -90,6 +90,7 @@ $(document).ready(function () {
             searchSubmit.removeAttr('tabindex aria-hidden');
             searchReset.removeAttr('tabindex aria-hidden');
             searchlabel.removeAttr('aria-hidden');
+            $searchContainer.removeAttr('aria-hidden');
 
         }
         else {
@@ -108,6 +109,7 @@ $(document).ready(function () {
             searchlabel.attr({
                 "aria-hidden": 'true'
             });
+            $searchContainer.attr("aria-hidden", "true");
         }
 
         if (featuredsearch) {
@@ -115,6 +117,7 @@ $(document).ready(function () {
             searchSubmit.removeAttr('tabindex aria-hidden');
             searchReset.removeAttr('tabindex aria-hidden');
             searchlabel.removeAttr('aria-hidden');
+            $searchContainer.removeAttr('aria-hidden');
         }
 
         if (mobileView() && featuredsearch) { $('.search-container').toggleClass('active'); }
@@ -135,6 +138,7 @@ $(document).ready(function () {
         searchSubmit.removeAttr('tabindex aria-hidden');
         searchReset.removeAttr('tabindex aria-hidden');
         searchlabel.removeAttr('aria-hidden');
+        $searchContainer.removeAttr('aria-hidden');
     } else {
         searchInput.attr({
             "tabindex": '-1',
@@ -151,6 +155,8 @@ $(document).ready(function () {
         searchlabel.attr({
             "aria-hidden": 'true'
         });
+        $searchContainer.attr("aria-hidden", "true");
+
     }
 
 
@@ -177,7 +183,7 @@ $(document).ready(function () {
     function removeSearchResults() {
         $body.removeClass("active-search");
         $searchText.val('');
-        $searchContainer.removeClass('active');
+        $searchContainer.removeClass('active').attr("aria-hidden", "true");
         $resultsContainer.removeClass('visible');
         $('.ask-group').removeClass('fade-out');
 
@@ -215,6 +221,7 @@ $(document).ready(function () {
         $('.search-container').toggleClass('active');
         var searchactive = $("#head-search").hasClass("active");
         if (searchactive) {
+            $searchContainer.removeAttr('aria-hidden');
             searchInput.removeAttr('tabindex aria-hidden');
             searchSubmit.removeAttr('tabindex aria-hidden');
             searchReset.removeAttr('tabindex aria-hidden');
@@ -241,6 +248,7 @@ $(document).ready(function () {
             searchlabel.attr({
                 "aria-hidden": 'true'
             });
+            $searchContainer.attr("aria-hidden", "true");
         }
         if (!$('#navigation').hasClass('active')) {
             $('#navigation').addClass('mobile-closed');
