@@ -1,5 +1,5 @@
 /**
- * CA State Template v5.5 -  @version v5.5.5 -  7/9/2019 
+ * CA State Template v5.5 -  @version v5.5.6 -  8/8/2019 
   STYLES COMPILED FROM SOURCE (source/js) DO NOT MODIFY */
 /*! modernizr (Custom Build) | MIT *
  * https://modernizr.com/download/?-flexbox-setclasses !*/
@@ -14874,6 +14874,8 @@ limitations under the License.
                         .removeClass(settings.openClass)
                         .filter('.' + settings.panelClass)
                         .attr('aria-hidden', 'true');
+                    // Add tabindex -1 attribute to the second level links to prevent tabbing thru them when they are not visible. Added in ver5.5.6
+                    topli.find(".second-level-link").attr("tabindex", "-1");
                     if ((event.type === 'keydown' && event.keyCode === Keyboard.ESCAPE) || event.type === 'DOMAttrModified') {
                         newfocus = topli.find(':tabbable:first');
                         setTimeout(function () {
@@ -14888,7 +14890,9 @@ limitations under the License.
                         .removeClass(settings.openClass)
                         .filter('.' + settings.panelClass)
                         .attr('aria-hidden', 'true');
+
                 }
+
             } else {
                 clearTimeout(that.focusTimeoutID);
                 topli.siblings()
@@ -14902,6 +14906,9 @@ limitations under the License.
                     .addClass(settings.openClass)
                     .filter('.' + settings.panelClass)
                     .attr('aria-hidden', 'false');
+
+                // And change make second level links tabbable as sson as they are visible. Added in ver5.5.6
+                topli.find(".second-level-link").removeAttr("tabindex");
 
                 var pageScrollPosition = $('html')[0].scrollTop;
                 var openPanelTopPosition = $('.' + settings.panelClass + '.' + settings.openClass).parent().offset().top;
@@ -15214,8 +15221,8 @@ limitations under the License.
                 case Keyboard.SPACE:
                 case Keyboard.ENTER:
                     if (isTopNavItem) {
-                        // event.preventDefault();
                         _clickHandler.call(that, event);
+
                     } else {
                         return true;
                     }
@@ -15748,6 +15755,30 @@ $(document).ready(function () {
 
     $(".toggle-menu").removeAttr('aria-pressed'); // siteimprove accesibility error fix...
 
+
+    // Hide navigation from screen reader in mobile
+    if (mobileView()) {
+        $navigation.attr("aria-hidden", "true");
+
+      // Prevent focusing/tabbing thru sub navigation links in mobile
+       $(".sub-nav a").attr("tabindex", "-1");
+       $(".sub-nav button").attr("tabindex", "-1");
+
+       
+
+    }
+
+    // Show navigation to a screen reader if expanded in mobile
+    $(".toggle-menu").on("click", function () {
+        if ($(this).attr("aria-expanded") === "true") {
+            $navigation.removeAttr("aria-hidden");
+        }
+        else {
+            $navigation.attr("aria-hidden", "true");
+        }
+
+    });
+
 });
 
 
@@ -15768,19 +15799,24 @@ $(window).on('resize', function () {
     }
 });
 
+
+
+
+
+
+
+
 // Navigation Reset function
 function NavReset() {
     var $toggleSubNav = $('<div class="ca-gov-icon-caret-right rotate" aria-hidden="true"></div>');
     if (window.innerWidth < 768) {
-        $("#navigation").addClass("collapse");
-        $("#navigation").removeClass("show");
+        $("#navigation").addClass("collapse").removeClass("show").attr("aria-hidden", "true");
         $('.has-sub').append($toggleSubNav);
         $(".rotate").css("display", "block");
     }
     else {
-        $("#navigation").removeClass("collapse");
+        $("#navigation").removeClass("collapse").removeAttr("aria-hidden");
         $(".rotate").css("display", "none");
-
     }
 
     $(".toggle-menu").attr('aria-expanded', 'false');
@@ -16625,8 +16661,7 @@ $(document).ready(function () {
             $(this).tab('show').addClass('active');
             e.preventDefault()
         });
-
-    // Unfreeze search width when blured.
+    
     // Unfreeze search width when blured.
     $searchText.on('blur focus', function (e) {
         $(this).parents("#head-search").removeClass("focus");
@@ -16682,10 +16717,12 @@ $(document).ready(function () {
         var searchactive = $("#head-search").hasClass("active");
         // hide Search form if it's not active
         if (searchactive) {
+            $searchContainer.removeAttr('aria-hidden');
             searchInput.removeAttr('tabindex aria-hidden');
             searchSubmit.removeAttr('tabindex aria-hidden');
             searchReset.removeAttr('tabindex aria-hidden');
             searchlabel.removeAttr('aria-hidden');
+            
         
         }
         else {
@@ -16704,6 +16741,7 @@ $(document).ready(function () {
             searchlabel.attr({
                 "aria-hidden": 'true'
             });
+            $searchContainer.attr("aria-hidden", "true");
         }
 
        if (featuredsearch) {
@@ -16711,6 +16749,7 @@ $(document).ready(function () {
            searchSubmit.removeAttr('tabindex aria-hidden');
            searchReset.removeAttr('tabindex aria-hidden');
            searchlabel.removeAttr('aria-hidden');
+           $searchContainer.removeAttr('aria-hidden');
         }
 
         if (mobileView() && featuredsearch) { $('.search-container').toggleClass('active');}
@@ -16749,7 +16788,7 @@ $(document).ready(function () {
     function removeSearchResults() {
         $body.removeClass("active-search");
         $searchText.val('');
-        $searchContainer.removeClass('active');
+        $searchContainer.removeClass('active').attr("aria-hidden", "true");
         $resultsContainer.removeClass('visible');
         $('.ask-group').removeClass('fade-out');
         
@@ -16785,6 +16824,7 @@ $(document).ready(function () {
         $('.search-container').toggleClass('active');
         var searchactive = $("#head-search").hasClass("active");
         if (searchactive) {
+            $searchContainer.removeAttr('aria-hidden');
             searchInput.removeAttr('tabindex aria-hidden');
             searchSubmit.removeAttr('tabindex aria-hidden');
             searchReset.removeAttr('tabindex aria-hidden');
@@ -16811,6 +16851,7 @@ $(document).ready(function () {
             searchlabel.attr({
                 "aria-hidden": 'true'
             });
+            $searchContainer.attr("aria-hidden", "true");
         }
     });
 
@@ -16818,6 +16859,7 @@ $(document).ready(function () {
 
     // Make Search form tabable if it's featured
     if ($('#head-search').hasClass('featured-search')) {
+        $searchContainer.removeAttr('aria-hidden');
         searchInput.removeAttr('tabindex aria-hidden');
         searchSubmit.removeAttr('tabindex aria-hidden');
         searchReset.removeAttr('tabindex aria-hidden');
@@ -16838,6 +16880,7 @@ $(document).ready(function () {
         searchlabel.attr({
             "aria-hidden": 'true'
         });
+        $searchContainer.attr("aria-hidden", "true");
     }
 
 
@@ -16856,6 +16899,7 @@ $(document).ready(function () {
 //  search box top position if browser window is resized
 $(window).on('resize', function () {
     searchTop();
+    ariaHidden();
 });
 
 
@@ -16880,6 +16924,18 @@ function searchTop() {
             'top': Math.max(searchtop, 87)
         });
     }
+}
+
+function ariaHidden() {
+    var $searchContainer = $("#head-search");
+    var featuredsearch = $("#head-search").hasClass("featured-search");
+    if (featuredsearch) {
+        $searchContainer.removeAttr('aria-hidden');
+    }
+    else {
+        $searchContainer.attr("aria-hidden", "true");
+    }
+
 }
 
 function mobileView() {

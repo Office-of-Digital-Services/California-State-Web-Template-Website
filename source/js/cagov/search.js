@@ -30,8 +30,7 @@ $(document).ready(function () {
             $(this).tab('show').addClass('active');
             e.preventDefault()
         });
-
-    // Unfreeze search width when blured.
+    
     // Unfreeze search width when blured.
     $searchText.on('blur focus', function (e) {
         $(this).parents("#head-search").removeClass("focus");
@@ -87,10 +86,12 @@ $(document).ready(function () {
         var searchactive = $("#head-search").hasClass("active");
         // hide Search form if it's not active
         if (searchactive) {
+            $searchContainer.removeAttr('aria-hidden');
             searchInput.removeAttr('tabindex aria-hidden');
             searchSubmit.removeAttr('tabindex aria-hidden');
             searchReset.removeAttr('tabindex aria-hidden');
             searchlabel.removeAttr('aria-hidden');
+            
         
         }
         else {
@@ -109,6 +110,7 @@ $(document).ready(function () {
             searchlabel.attr({
                 "aria-hidden": 'true'
             });
+            $searchContainer.attr("aria-hidden", "true");
         }
 
        if (featuredsearch) {
@@ -116,6 +118,7 @@ $(document).ready(function () {
            searchSubmit.removeAttr('tabindex aria-hidden');
            searchReset.removeAttr('tabindex aria-hidden');
            searchlabel.removeAttr('aria-hidden');
+           $searchContainer.removeAttr('aria-hidden');
         }
 
         if (mobileView() && featuredsearch) { $('.search-container').toggleClass('active');}
@@ -154,7 +157,7 @@ $(document).ready(function () {
     function removeSearchResults() {
         $body.removeClass("active-search");
         $searchText.val('');
-        $searchContainer.removeClass('active');
+        $searchContainer.removeClass('active').attr("aria-hidden", "true");
         $resultsContainer.removeClass('visible');
         $('.ask-group').removeClass('fade-out');
         
@@ -190,6 +193,7 @@ $(document).ready(function () {
         $('.search-container').toggleClass('active');
         var searchactive = $("#head-search").hasClass("active");
         if (searchactive) {
+            $searchContainer.removeAttr('aria-hidden');
             searchInput.removeAttr('tabindex aria-hidden');
             searchSubmit.removeAttr('tabindex aria-hidden');
             searchReset.removeAttr('tabindex aria-hidden');
@@ -216,6 +220,7 @@ $(document).ready(function () {
             searchlabel.attr({
                 "aria-hidden": 'true'
             });
+            $searchContainer.attr("aria-hidden", "true");
         }
     });
 
@@ -223,6 +228,7 @@ $(document).ready(function () {
 
     // Make Search form tabable if it's featured
     if ($('#head-search').hasClass('featured-search')) {
+        $searchContainer.removeAttr('aria-hidden');
         searchInput.removeAttr('tabindex aria-hidden');
         searchSubmit.removeAttr('tabindex aria-hidden');
         searchReset.removeAttr('tabindex aria-hidden');
@@ -243,6 +249,7 @@ $(document).ready(function () {
         searchlabel.attr({
             "aria-hidden": 'true'
         });
+        $searchContainer.attr("aria-hidden", "true");
     }
 
 
@@ -261,6 +268,7 @@ $(document).ready(function () {
 //  search box top position if browser window is resized
 $(window).on('resize', function () {
     searchTop();
+    ariaHidden();
 });
 
 
@@ -285,6 +293,18 @@ function searchTop() {
             'top': Math.max(searchtop, 87)
         });
     }
+}
+
+function ariaHidden() {
+    var $searchContainer = $("#head-search");
+    var featuredsearch = $("#head-search").hasClass("featured-search");
+    if (featuredsearch) {
+        $searchContainer.removeAttr('aria-hidden');
+    }
+    else {
+        $searchContainer.attr("aria-hidden", "true");
+    }
+
 }
 
 function mobileView() {
