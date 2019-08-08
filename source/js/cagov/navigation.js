@@ -254,6 +254,8 @@ limitations under the License.
                         .removeClass(settings.openClass)
                         .filter('.' + settings.panelClass)
                         .attr('aria-hidden', 'true');
+                    // Add tabindex -1 attribute to the second level links to prevent tabbing thru them when they are not visible. Added in ver5.5.6
+                    topli.find(".second-level-link").attr("tabindex", "-1");
                     if ((event.type === 'keydown' && event.keyCode === Keyboard.ESCAPE) || event.type === 'DOMAttrModified') {
                         newfocus = topli.find(':tabbable:first');
                         setTimeout(function () {
@@ -268,7 +270,9 @@ limitations under the License.
                         .removeClass(settings.openClass)
                         .filter('.' + settings.panelClass)
                         .attr('aria-hidden', 'true');
+
                 }
+
             } else {
                 clearTimeout(that.focusTimeoutID);
                 topli.siblings()
@@ -282,6 +286,9 @@ limitations under the License.
                     .addClass(settings.openClass)
                     .filter('.' + settings.panelClass)
                     .attr('aria-hidden', 'false');
+
+                // And change make second level links tabbable as sson as they are visible. Added in ver5.5.6
+                topli.find(".second-level-link").removeAttr("tabindex");
 
                 var pageScrollPosition = $('html')[0].scrollTop;
                 var openPanelTopPosition = $('.' + settings.panelClass + '.' + settings.openClass).parent().offset().top;
@@ -594,8 +601,8 @@ limitations under the License.
                 case Keyboard.SPACE:
                 case Keyboard.ENTER:
                     if (isTopNavItem) {
-                        // event.preventDefault();
                         _clickHandler.call(that, event);
+
                     } else {
                         return true;
                     }
@@ -1128,6 +1135,30 @@ $(document).ready(function () {
 
     $(".toggle-menu").removeAttr('aria-pressed'); // siteimprove accesibility error fix...
 
+
+    // Hide navigation from screen reader in mobile
+    if (mobileView()) {
+        $navigation.attr("aria-hidden", "true");
+
+      // Prevent focusing/tabbing thru sub navigation links in mobile
+       $(".sub-nav a").attr("tabindex", "-1");
+       $(".sub-nav button").attr("tabindex", "-1");
+
+       
+
+    }
+
+    // Show navigation to a screen reader if expanded in mobile
+    $(".toggle-menu").on("click", function () {
+        if ($(this).attr("aria-expanded") === "true") {
+            $navigation.removeAttr("aria-hidden");
+        }
+        else {
+            $navigation.attr("aria-hidden", "true");
+        }
+
+    });
+
 });
 
 
@@ -1148,19 +1179,24 @@ $(window).on('resize', function () {
     }
 });
 
+
+
+
+
+
+
+
 // Navigation Reset function
 function NavReset() {
     var $toggleSubNav = $('<div class="ca-gov-icon-caret-right rotate" aria-hidden="true"></div>');
     if (window.innerWidth < 768) {
-        $("#navigation").addClass("collapse");
-        $("#navigation").removeClass("show");
+        $("#navigation").addClass("collapse").removeClass("show").attr("aria-hidden", "true");
         $('.has-sub').append($toggleSubNav);
         $(".rotate").css("display", "block");
     }
     else {
-        $("#navigation").removeClass("collapse");
+        $("#navigation").removeClass("collapse").removeAttr("aria-hidden");
         $(".rotate").css("display", "none");
-
     }
 
     $(".toggle-menu").attr('aria-expanded', 'false');

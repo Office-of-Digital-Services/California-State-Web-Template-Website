@@ -127,9 +127,14 @@
     }
 
     @media (max-width: $screen-xs-max) {
+        &:first-child {
+            margin-top: 2px
+        }
+        // to make outline visible
         display: block;
         padding: 20px 0 20px 15px;
-
+        margin-right: 2px; // to make outline visible
+        margin-left: 2px; // to make outline visible
         span[class^="ca-gov-icon"] {
             @include font-size(1.5);
             display: inline-block;
