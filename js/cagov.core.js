@@ -1,5 +1,5 @@
 /**
- * CA State Template v5 -  @version v5.0.10 -  7/30/2019 
+ * CA State Template v5 -  @version v5.0.10 -  8/19/2019 
   STYLES COMPILED FROM SOURCE (source/js) DO NOT MODIFY */
 /*! modernizr (Custom Build) | MIT *
  * https://modernizr.com/download/?-flexbox-setclasses !*/
@@ -14381,15 +14381,15 @@ $(document).ready(function () {
             }
 
             if (currentScrollTop >= scrollDistanceToMakeCompactHeader) {
-                return
+                return;
             }
 
             var searchBox = $headSearch.get(0).getBoundingClientRect();
             var newAskTop = searchBox.top + searchBox.height + askBarPadding;
 
-            $askGroupBar.css('top', newAskTop)
-            $askGroupBar.trigger('cagov.askgroup.update')
-        }, 0)
+            $askGroupBar.css('top', newAskTop);
+            $askGroupBar.trigger('cagov.askgroup.update');
+        }, 0);
 
     }
 
@@ -14414,12 +14414,12 @@ $(document).ready(function () {
                     $('html,body').animate({
                         scrollTop: 0
                     }, 400, function () {
-                        $(window).scroll()
+                        $(window).scroll();
                     });
                     return;
-                })
+                });
             });
-        }
+        };
     }(jQuery));
 
     // Set any buttons or links which must scroll back to the top
@@ -14452,7 +14452,7 @@ $(document).ready(function () {
     // proactively update our fixed header
     function setResizeHandler() {
         if (!$header.hasClass('fixed')) {
-            return
+            return;
         }
 
         $(window).on('resize', function () {
@@ -14484,7 +14484,7 @@ $(document).ready(function () {
                 // we dont have any fixed updates if we switch or start in mobile
                 // even if the user has requested to be fixed.
                 if (windowWidth < headerVars.MOBILEWIDTH) {
-                    return
+                    return;
                 }
 
                 checkForCompactUpdate();
@@ -14495,7 +14495,7 @@ $(document).ready(function () {
             updateFunc = function () {
                 checkForReturnTopUpdate();
 
-            }
+            };
         }
 
         // set up our event listener to update the continously
@@ -14518,7 +14518,7 @@ $(document).ready(function () {
         // we dont fade out if we have search results being shown
         if ($headSearch.hasClass('active')) {
             $askGroup.addClass('fixed-hide');
-            $header.addClass('compact, .fixed');
+          //  $header.addClass('compact fixed');
 
             return;
         }
@@ -14546,8 +14546,8 @@ $(document).ready(function () {
             $askGroup.addClass('fixed-hide');
             $headSearch.addClass('fixed-hide');
         } else {
-            $askGroup.removeClass('fixed-hide')
-            $headSearch.removeClass('fixed-hide')
+            $askGroup.removeClass('fixed-hide');
+            $headSearch.removeClass('fixed-hide');
         }
         if (currentScrollTop >= scrollDistanceToMakeCompactHeader) {
             $header.addClass('compact');
@@ -14563,9 +14563,9 @@ $(document).ready(function () {
     // justify showing the return icon
     function checkForReturnTopUpdate() {
         if (currentScrollTop >= scrollDistanceToMakeCompactHeader) {
-            $returnTop.addClass('is-visible')
+            $returnTop.addClass('is-visible');
         } else {
-            $returnTop.removeClass('is-visible')
+            $returnTop.removeClass('is-visible');
         }
     }
 
@@ -14602,7 +14602,7 @@ $(document).ready(function () {
      */
     function addFixed() {
         var leeway = 10;
-        $header.addClass('fixed')
+        $header.addClass('fixed');
         headerVars.setHeaderImageHeight();
 
         // we have a header image, we need to adjust it
@@ -14621,14 +14621,14 @@ $(document).ready(function () {
 
             $mainContent.css({
                 'padding-top': Math.max(headerHeight, 136)
-            })
+            });
 
 
         } if ($(".ask-group").length > 0) {
             $mainContent.addClass('print-p-t'); // Media print .main-content fix	
             $mainContent.css({
                 'padding-top': 0
-            })
+            });
 
             $('.header-slideshow-banner, .header-primary-banner').css({
                 'margin-top': 136
@@ -14646,7 +14646,7 @@ $(document).ready(function () {
         $header.removeClass('fixed');
         $headerImage.css({ 'top': '', 'margin-bottom': '' });
         $mainContent.css({ 'padding-top': '' });
-        $askGroupBar.css('top', '')
+        $askGroupBar.css('top', '');
     }
 
 });
@@ -17176,6 +17176,12 @@ $(window).on('resize', function () {
 });
 
 
+
+
+
+
+
+
 function searchTop() {
     var searchlabel = $("#SearchInput");
     var $globalHeader = $('.global-header');
@@ -17198,6 +17204,52 @@ function searchTop() {
         });
     }
 }
+
+// Calculation search box top proprety on the scroll for the fixed nav
+$(window).on('scroll', function () {
+    var currentScrollTop = $(document).scrollTop();
+    var scrollDistanceToMakeCompactHeader = 220;
+   
+    if (currentScrollTop >= scrollDistanceToMakeCompactHeader) {
+        
+        if (!mobileView()) {
+            
+               // setting timeout before calulating the search box top proprty othervise it can take into account transitional values.
+            setTimeout(function () {
+                var searchlabel = $("#SearchInput");
+                var $globalHeader = $('.global-header');
+                var searchbox = $(".search-container:not(.featured-search)");
+                var headerHeight = $globalHeader.innerHeight();
+                var utility = $(".utility-header");
+                var utilityHeight = utility.innerHeight();
+                var alertBanner = $(".alert-banner");
+                var alertClose = $(".alert-banner .close");
+                var alertbannerHeight = 0;
+                // taking into account multiple alert banners
+                $.each(alertBanner, function () {
+                    alertbannerHeight += $(this).innerHeight() + 2;
+                });
+                // calulation search box top position
+                var searchtopscroll = headerHeight - utilityHeight - alertbannerHeight - 7;
+                console.log(headerHeight);
+                searchbox.css({ 'top': Math.max(searchtopscroll, 60) });
+            }, 400);
+
+            
+
+        }
+    }
+    else if (currentScrollTop <= scrollDistanceToMakeCompactHeader) {
+        if (!mobileView()) {
+            setTimeout(function () {
+                searchTop();
+            }, 400);
+            
+        }
+    }
+});
+
+
 
 function mobileView() {
     return $('.global-header .mobile-controls').css('display') !== "none"; // mobile view uses arrow to show subnav instead of first touch
