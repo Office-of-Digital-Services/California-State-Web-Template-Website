@@ -273,6 +273,12 @@ $(window).on('resize', function () {
 });
 
 
+
+
+
+
+
+
 function searchTop() {
     var searchlabel = $("#SearchInput");
     var $globalHeader = $('.global-header');
@@ -295,6 +301,51 @@ function searchTop() {
         });
     }
 }
+
+// Calculation search box top proprety on the scroll for the fixed nav
+$(window).on('scroll', function () {
+    var currentScrollTop = $(document).scrollTop();
+    var scrollDistanceToMakeCompactHeader = 220;
+   
+    if (currentScrollTop >= scrollDistanceToMakeCompactHeader) {
+        
+        if (!mobileView()) {
+            
+               // setting timeout before calulating the search box top proprty othervise it can take into account transitional values.
+            setTimeout(function () {
+                var searchlabel = $("#SearchInput");
+                var $globalHeader = $('.global-header');
+                var searchbox = $(".search-container:not(.featured-search)");
+                var headerHeight = $globalHeader.innerHeight();
+                var utility = $(".utility-header");
+                var utilityHeight = utility.innerHeight();
+                var alertBanner = $(".alert-banner");
+                var alertClose = $(".alert-banner .close");
+                var alertbannerHeight = 0;
+                // taking into account multiple alert banners
+                $.each(alertBanner, function () {
+                    alertbannerHeight += $(this).innerHeight() + 2;
+                });
+                // calulation search box top position
+                var searchtopscroll = headerHeight - utilityHeight - alertbannerHeight - 7;
+                searchbox.css({ 'top': Math.max(searchtopscroll, 60) });
+            }, 400);
+
+            
+
+        }
+    }
+    else if (currentScrollTop <= scrollDistanceToMakeCompactHeader) {
+        if (!mobileView()) {
+            setTimeout(function () {
+                searchTop();
+            }, 400);
+            
+        }
+    }
+});
+
+
 
 function mobileView() {
     return $('.global-header .mobile-controls').css('display') !== "none"; // mobile view uses arrow to show subnav instead of first touch
