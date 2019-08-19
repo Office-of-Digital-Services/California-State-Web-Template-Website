@@ -17231,7 +17231,6 @@ $(window).on('scroll', function () {
                 });
                 // calulation search box top position
                 var searchtopscroll = headerHeight - utilityHeight - alertbannerHeight - 7;
-                console.log(headerHeight);
                 searchbox.css({ 'top': Math.max(searchtopscroll, 60) });
             }, 400);
 
