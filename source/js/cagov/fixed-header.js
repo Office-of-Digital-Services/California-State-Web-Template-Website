@@ -148,12 +148,12 @@ $(document).ready(function () {
                 checkForCompactUpdate();
                 checkForFixedUpdate();
 
-            }
+            };
         } else {
             updateFunc = function () {
                 checkForReturnTopUpdate();
 
-            }
+            };
         }
 
         // set up our event listener to update the continously
@@ -259,7 +259,7 @@ $(document).ready(function () {
      */
     function addFixed() {
         var leeway = 10;
-        $header.addClass('fixed')
+        $header.addClass('fixed');
         headerVars.setHeaderImageHeight();
 
         // we have a header image, we need to adjust it
@@ -281,14 +281,14 @@ $(document).ready(function () {
 
             $mainContent.css({
                 'padding-top': Math.max(headerHeight, 119)
-            })
+            });
 
 
         } if ($(".ask-group").length > 0) {
             $mainContent.addClass('print-p-t'); // Media print .main-content fix	
             $mainContent.css({
                 'padding-top': 0
-            })
+            });
 
             $('.header-slideshow-banner, .header-primary-banner').css({
                 'margin-top': 119

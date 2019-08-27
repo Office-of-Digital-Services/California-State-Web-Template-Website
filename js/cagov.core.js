@@ -1,5 +1,5 @@
 /**
- * CA State Template v5.5 -  @version v5.5.6 -  8/8/2019 
+ * CA State Template v5.5 -  @version v5.5.6 -  8/27/2019 
   STYLES COMPILED FROM SOURCE (source/js) DO NOT MODIFY */
 /*! modernizr (Custom Build) | MIT *
  * https://modernizr.com/download/?-flexbox-setclasses !*/
@@ -14314,12 +14314,12 @@ $(document).ready(function () {
                 checkForCompactUpdate();
                 checkForFixedUpdate();
 
-            }
+            };
         } else {
             updateFunc = function () {
                 checkForReturnTopUpdate();
 
-            }
+            };
         }
 
         // set up our event listener to update the continously
@@ -14425,7 +14425,7 @@ $(document).ready(function () {
      */
     function addFixed() {
         var leeway = 10;
-        $header.addClass('fixed')
+        $header.addClass('fixed');
         headerVars.setHeaderImageHeight();
 
         // we have a header image, we need to adjust it
@@ -14447,14 +14447,14 @@ $(document).ready(function () {
 
             $mainContent.css({
                 'padding-top': Math.max(headerHeight, 119)
-            })
+            });
 
 
         } if ($(".ask-group").length > 0) {
             $mainContent.addClass('print-p-t'); // Media print .main-content fix	
             $mainContent.css({
                 'padding-top': 0
-            })
+            });
 
             $('.header-slideshow-banner, .header-primary-banner').css({
                 'margin-top': 119
@@ -16895,6 +16895,52 @@ $(document).ready(function () {
     
 
 }); 
+
+
+// Calculation search box top property on the scroll for the fixed nav
+$(window).on('scroll', function () {
+    var currentScrollTop = $(document).scrollTop();
+    var scrollDistanceToMakeCompactHeader = 220;
+
+    if (currentScrollTop >= scrollDistanceToMakeCompactHeader) {
+
+        if (!mobileView()) {
+
+            // setting timeout before calculating the search box top property otherwise it can take into account transitional values.
+            setTimeout(function () {
+                var searchlabel = $("#SearchInput");
+                var $globalHeader = $('.global-header');
+                var searchbox = $(".search-container:not(.featured-search)");
+                var headerHeight = $globalHeader.innerHeight();
+                var utility = $(".utility-header");
+                var utilityHeight = utility.innerHeight();
+                var alertBanner = $(".alert-banner");
+                var alertClose = $(".alert-banner .close");
+                var alertbannerHeight = 0;
+                // taking into account multiple alert banners
+                $.each(alertBanner, function () {
+                    alertbannerHeight += $(this).innerHeight();
+                });
+                // calculation search box top position
+                var searchtopscroll = headerHeight - utilityHeight - alertbannerHeight - 3;
+                searchbox.css({ 'top': Math.max(searchtopscroll, 55) });
+            }, 400);
+
+
+
+        }
+    }
+    else if (currentScrollTop <= scrollDistanceToMakeCompactHeader) {
+        if (!mobileView()) {
+            setTimeout(function () {
+                searchTop();
+            }, 400);
+
+        }
+    }
+});
+
+
 
 //  search box top position if browser window is resized
 $(window).on('resize', function () {

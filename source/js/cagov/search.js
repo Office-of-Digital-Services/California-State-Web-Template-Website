@@ -265,6 +265,52 @@ $(document).ready(function () {
 
 }); 
 
+
+// Calculation search box top property on the scroll for the fixed nav
+$(window).on('scroll', function () {
+    var currentScrollTop = $(document).scrollTop();
+    var scrollDistanceToMakeCompactHeader = 220;
+
+    if (currentScrollTop >= scrollDistanceToMakeCompactHeader) {
+
+        if (!mobileView()) {
+
+            // setting timeout before calculating the search box top property otherwise it can take into account transitional values.
+            setTimeout(function () {
+                var searchlabel = $("#SearchInput");
+                var $globalHeader = $('.global-header');
+                var searchbox = $(".search-container:not(.featured-search)");
+                var headerHeight = $globalHeader.innerHeight();
+                var utility = $(".utility-header");
+                var utilityHeight = utility.innerHeight();
+                var alertBanner = $(".alert-banner");
+                var alertClose = $(".alert-banner .close");
+                var alertbannerHeight = 0;
+                // taking into account multiple alert banners
+                $.each(alertBanner, function () {
+                    alertbannerHeight += $(this).innerHeight();
+                });
+                // calculation search box top position
+                var searchtopscroll = headerHeight - utilityHeight - alertbannerHeight - 3;
+                searchbox.css({ 'top': Math.max(searchtopscroll, 55) });
+            }, 400);
+
+
+
+        }
+    }
+    else if (currentScrollTop <= scrollDistanceToMakeCompactHeader) {
+        if (!mobileView()) {
+            setTimeout(function () {
+                searchTop();
+            }, 400);
+
+        }
+    }
+});
+
+
+
 //  search box top position if browser window is resized
 $(window).on('resize', function () {
     searchTop();
