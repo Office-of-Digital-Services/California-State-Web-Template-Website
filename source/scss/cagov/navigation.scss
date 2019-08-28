@@ -533,3 +533,34 @@
         }
     }
     }
+
+/* FULL WIDTH MENU WITH REGULAR UTILITY BAR */
+@media (min-width: $screen-sm-min) {
+    .full-width-nav .main-navigation {
+        padding-left: 0px;
+        margin-top: 0px;
+        min-height: 55px;
+
+        .top-level-nav {
+            min-height: 55px;
+
+            .nav-item > a {
+                min-height: 55px;
+                padding-top: 1rem;
+
+                &.has-sub {
+                    .carrot {
+                        bottom: 16px;
+                    }
+                }
+            }
+        }
+    }
+
+    .fixed.compact {
+        .full-width-nav .main-navigation {
+            margin-top: 0;
+            }
+        }
+    }
+

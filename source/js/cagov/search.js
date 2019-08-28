@@ -20,7 +20,9 @@ $(document).ready(function () {
     var alertBanner = $(".alert-banner");
     var alertClose = $(".alert-banner .close");
     var alertbannerHeight = 0;
-    
+    var navigationHeight = 0;
+    var fullnav = $(".top-level-nav");
+    var navsearch = $(".navigation-search");
 
     var $body = $("body");
     var $specialIcon =
@@ -28,7 +30,7 @@ $(document).ready(function () {
         $('.search-tabs button').on("click", function (e) {
             $(this).siblings().removeClass('active');
             $(this).tab('show').addClass('active');
-            e.preventDefault()
+            e.preventDefault();
         });
     
     // Unfreeze search width when blured.
@@ -50,11 +52,15 @@ $(document).ready(function () {
         $.each(alertBanner, function () {
             alertbannerHeight += $(this).innerHeight();
         });
+        //fullwidth navigation
+        if (navsearch.hasClass("full-width-nav")) {
+            navigationHeight = fullnav.innerHeight() + 32;
+        }
         // calulation search box top position
-        var searchtop = headerHeight - utilityHeight - alertbannerHeight;
+        var searchtop = headerHeight - utilityHeight - alertbannerHeight - navigationHeight;
         if (!mobileView()) {
             searchbox.css({
-                'top': Math.max(searchtop, 87)
+                'top': Math.max(searchtop, 55)
             });
         }
     } 
@@ -286,12 +292,19 @@ $(window).on('scroll', function () {
                 var alertBanner = $(".alert-banner");
                 var alertClose = $(".alert-banner .close");
                 var alertbannerHeight = 0;
+                var fullnav = $(".top-level-nav");
+                var navsearch = $(".navigation-search");
                 // taking into account multiple alert banners
                 $.each(alertBanner, function () {
                     alertbannerHeight += $(this).innerHeight();
                 });
-                // calculation search box top position
-                var searchtopscroll = headerHeight - utilityHeight - alertbannerHeight - 3;
+                // Full width navigation
+                if (navsearch.hasClass("full-width-nav")) {
+                    navigationHeight = fullnav.innerHeight() + 32;
+                }
+                else { navigationHeight = 0; }
+                // calulation search box top position
+                var searchtopscroll = headerHeight - utilityHeight - alertbannerHeight - navigationHeight;
                 searchbox.css({ 'top': Math.max(searchtopscroll, 55) });
             }, 400);
 
@@ -328,15 +341,23 @@ function searchTop() {
     var alertBanner = $(".alert-banner");
     var alertClose = $(".alert-banner .close");
     var alertbannerHeight = 0;
+    var fullnav = $(".top-level-nav");
+    var navsearch = $(".navigation-search");
     // taking into account multiple alert banners
     $.each(alertBanner, function () {
         alertbannerHeight += $(this).innerHeight();
     });
+    // Full width navigation
+    if (navsearch.hasClass("full-width-nav")) {
+        navigationHeight = fullnav.innerHeight() + 32;
+    }
+    else { navigationHeight = 0;}
     // calulation search box top position
-    var searchtop = headerHeight - utilityHeight - alertbannerHeight;
+    var searchtop = headerHeight - utilityHeight - alertbannerHeight - navigationHeight;
     if (!mobileView()) {
+        
         searchbox.css({
-            'top': Math.max(searchtop, 87)
+            'top': Math.max(searchtop, 55)
         });
     }
 }
