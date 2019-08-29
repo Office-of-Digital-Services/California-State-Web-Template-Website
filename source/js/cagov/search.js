@@ -20,7 +20,9 @@ $(document).ready(function () {
     var alertBanner = $(".alert-banner");
     var alertClose = $(".alert-banner .close");
     var alertbannerHeight = 0;
-    
+    var navigationHeight = 0;
+    var fullnav = $(".top-level-nav");
+    var navsearch = $(".navigation-search");
 
     var $body = $("body");
     var $specialIcon =
@@ -28,7 +30,7 @@ $(document).ready(function () {
         $('.search-tabs button').on("click", function (e) {
             $(this).siblings().removeClass('active');
             $(this).tab('show').addClass('active');
-            e.preventDefault()
+            e.preventDefault();
         });
     
     // Unfreeze search width when blured.
@@ -50,11 +52,15 @@ $(document).ready(function () {
         $.each(alertBanner, function () {
             alertbannerHeight += $(this).innerHeight();
         });
+        //fullwidth navigation
+        if (navsearch.hasClass("full-width-nav")) {
+            navigationHeight = 82;
+        }
         // calulation search box top position
-        var searchtop = headerHeight - utilityHeight - alertbannerHeight;
+        var searchtop = headerHeight - utilityHeight - alertbannerHeight - navigationHeight;
         if (!mobileView()) {
             searchbox.css({
-                'top': Math.max(searchtop, 87)
+                'top': Math.max(searchtop, 82)
             });
         }
     } 
@@ -65,8 +71,7 @@ $(document).ready(function () {
 
     // Our special nav icon which we need to hook into for starting the search
     // $('#nav-item-search')
-
-    // Sitecore link data types currently do not have a way to set id's per nav,
+    
     // so instead we are binding to what I'm assuming will aslways be the search
     $('.top-level-nav .nav-item .ca-gov-icon-search, #nav-item-search').parents('.nav-item').on('click', function (e) {
         $searchText.trigger("focus").trigger('focus');
@@ -265,6 +270,59 @@ $(document).ready(function () {
 
 }); 
 
+
+// Calculation search box top property on the scroll for the fixed nav
+$(window).on('scroll', function () {
+    var currentScrollTop = $(document).scrollTop();
+    var scrollDistanceToMakeCompactHeader = 220;
+
+    if (currentScrollTop >= scrollDistanceToMakeCompactHeader) {
+
+        if (!mobileView()) {
+
+            // setting timeout before calculating the search box top property otherwise it can take into account transitional values.
+            setTimeout(function () {
+                var searchlabel = $("#SearchInput");
+                var $globalHeader = $('.global-header');
+                var searchbox = $(".search-container:not(.featured-search)");
+                var headerHeight = $globalHeader.innerHeight();
+                var utility = $(".utility-header");
+                var utilityHeight = utility.innerHeight();
+                var alertBanner = $(".alert-banner");
+                var alertClose = $(".alert-banner .close");
+                var alertbannerHeight = 0;
+                var fullnav = $(".top-level-nav");
+                var navsearch = $(".navigation-search");
+                // taking into account multiple alert banners
+                $.each(alertBanner, function () {
+                    alertbannerHeight += $(this).innerHeight();
+                });
+                // Full width navigation
+                if (navsearch.hasClass("full-width-nav")) {
+                    navigationHeight = 82;
+                }
+                else { navigationHeight = 0; }
+                // calulation search box top position
+                var searchtopscroll = headerHeight - utilityHeight - alertbannerHeight - navigationHeight;
+                searchbox.css({ 'top': Math.max(searchtopscroll, 55) });
+            }, 400);
+
+
+
+        }
+    }
+    else if (currentScrollTop <= scrollDistanceToMakeCompactHeader) {
+        if (!mobileView()) {
+            setTimeout(function () {
+                searchTop();
+            }, 400);
+
+        }
+    }
+});
+
+
+
 //  search box top position if browser window is resized
 $(window).on('resize', function () {
     searchTop();
@@ -282,15 +340,23 @@ function searchTop() {
     var alertBanner = $(".alert-banner");
     var alertClose = $(".alert-banner .close");
     var alertbannerHeight = 0;
+    var fullnav = $(".top-level-nav");
+    var navsearch = $(".navigation-search");
     // taking into account multiple alert banners
     $.each(alertBanner, function () {
         alertbannerHeight += $(this).innerHeight();
     });
+    // Full width navigation
+    if (navsearch.hasClass("full-width-nav")) {
+        navigationHeight = 82;
+    }
+    else {navigationHeight = 0;}
     // calulation search box top position
-    var searchtop = headerHeight - utilityHeight - alertbannerHeight;
+    var searchtop = headerHeight - utilityHeight - alertbannerHeight - navigationHeight;
     if (!mobileView()) {
+        
         searchbox.css({
-            'top': Math.max(searchtop, 87)
+            'top': Math.max(searchtop, 55)
         });
     }
 }

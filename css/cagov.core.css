@@ -1,5 +1,5 @@
 /**
- * CA State Template v5.5 -  @version v5.5.6 -  8/8/2019 
+ * CA State Template v5.5 -  @version v5.5.7 -  8/29/2019 
   STYLES COMPILED FROM SOURCE (SCSS) DO NOT MODIFY */
 /* -----------------------------------------
    BOOTSTRAP v4.3.1 - /source/scss/bootstrap/ 
@@ -12479,6 +12479,22 @@ table.gsc-search-box td {
   display: none !important;
 }
 
+/* Full Width navigation search */
+@media (min-width: 768px) {
+  .full-width-nav .featured-search {
+    top: -65px;
+    right: 15px;
+    left: unset !important;
+    width: 40%;
+  }
+  .full-width-nav .featured-search input.search-textfield {
+    border: 1px solid !important;
+    border-color: #ccc !important;
+    border-radius: 4px;
+    padding: 0 10px 0 10px;
+  }
+}
+
 /* -----------------------------------------
    SITE SEARCH RESULTS - /source/scss/cagov/search-results.scss
 ----------------------------------------- */
@@ -13041,6 +13057,28 @@ table.gsc-search-box td {
   }
   .nav-full-width-icons .no-icons .top-level-nav .nav-item > a.has-sub .carrot {
     bottom: 16px;
+  }
+}
+
+/* FULL WIDTH MENU WITH REGULAR UTILITY BAR */
+@media (min-width: 768px) {
+  .full-width-nav .main-navigation {
+    padding-left: 0px;
+    margin-top: 0px;
+    min-height: 55px;
+  }
+  .full-width-nav .main-navigation .top-level-nav {
+    min-height: 55px;
+  }
+  .full-width-nav .main-navigation .top-level-nav .nav-item > a {
+    min-height: 55px;
+    padding-top: 1rem;
+  }
+  .full-width-nav .main-navigation .top-level-nav .nav-item > a.has-sub .carrot {
+    bottom: 16px;
+  }
+  .fixed.compact .full-width-nav .main-navigation {
+    margin-top: 0;
   }
 }
 
@@ -13637,6 +13675,7 @@ a.second-level-link [class^="ca-gov-icon-"] {
   padding: 0;
   width: 52px;
   cursor: pointer;
+  color: #fff;
 }
 
 .mobile-controls .toggle-search {
