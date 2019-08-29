@@ -44,18 +44,14 @@ Based on Twitter Bootstrap
         <!--#include virtual="/ssi/mobile-controls.html" -->
 
         <div class="navigation-search full-width-nav container">
-            <div id="head-search" class="search-container featured-search fade">
+            <div id="head-search" class="search-container featured-search">
                 <!-- Include Search -->
                 <!--#include virtual="/ssi/search.html" -->
             </div>
             <!-- Include Navigation -->
             <!--#include virtual="/sample/modules/nav-full-width.html" -->
 
-
-
         </div>
-
-        <div class="header-decoration"></div>
     </header>
 
 <div id="main-content" class="main-content">
@@ -64,41 +60,46 @@ Based on Twitter Bootstrap
             <ol class="breadcrumb">
                 <li><a href="../index.html" title="Home page">Home</a></li>
                 <li><a href="index.html" title="Examples landing page">Examples</a></li>
-                <li class="active">Full Width Navigation</li>
+                <li class="active">Full Width Navigation with Active Search</li>
             </ol>
 
-            <h1>Full Width Navigation (with no icons)</h1>
+            <h1>Full Width Navigation with Active Search</h1>
             <p>
                 Sometimes there is a need to fit more navigation items in main navigation.
-                This is when full width navigation could be handy. This menu style can be set by adding class <code>.nav-full-width-icons</code> to the
-                <code>header</code> tag. Also, this menu version uses <code>branding-full-width-icons.html</code> instead of <code>utility-header.html</code> server side include.
-            </p>
-            <p>If you don't want to use icons on top of menu items simply add class <code>.no-icons</code> to the <code>nav</code> tag.</p>
+                This is when full width navigation could be handy. This menu style can be set by adding classes <code>.full-width-nav</code> and <code>.container</code> to the
+                <code>.navigation-search</code> div tag. This layout uses featured search that is placed to the right of the website's logo. Please note, that the logo include (<code>branding.html</code>) is placed inside of the <code>.section-default</code> div to show visual separation between branding and navigation sections. Make sure to switch order of search include with the navigation because search include in this case needs to go before the navigation include to match visual tabbing  order. Also, <code>.featured-search</code> class needs to be added to the <code>#head-search</code> div to keep search visible.
+
             <p>
-                <span class="label label-info">Note:</span> Please note that there are no social icons links in the <code>branding-full-width-icons.html</code>
-                include just to make sure it looks right in the mobile view.
-                For the same reason, there are only two utility links (buttons) that are used along with ca.gov logo and organization branding image.
-
+                This menu version doesn’t uses icons to save some vertical real estate. However, you can apply icons to it.
             </p>
 
 
 
-            <h3>Full width navigation header example:</h3>
+
+            <h3>Full width navigation with active search header example:</h3>
             <pre>
-<span class="text-accent-p2">&lt;header</span> <span class="text-info">class=</span><span class="text-accent7">"global-header fixed nav-full-width-icons"</span><span class="text-accent-p2">&gt;</span>
-<span class="text-accent-p2">&lt;div</span> <span class="text-info">id=</span><span class="text-accent7">"skip-to-content"</span><span class="text-accent-p2">&gt;&lt;a </span><span class="text-info">href=</span><span class="text-accent7">"#main-content"</span><span class="text-accent-p2">&gt;</span>Skip to Main Content<span class="text-accent-p2">&lt;/a&gt;&lt;/div&gt;</span>
-<span class="text-success">&lt;!--#include virtual="/ssi/settings-bar.html" --&gt;</span>
-<span class="text-success">&lt;!--#include virtual="/ssi/branding-full-width.html" --&gt;</span>
-<span class="text-success">&lt;!--#include virtual="/ssi/mobile-controls.html" --&gt;</span>
-<span class="text-accent-p2">&lt;div</span> <span class="text-info">class=</span><span class="text-accent7">"navigation-search"</span><span class="text-accent-p2">&gt;</span>
-<span class="text-success">&lt;!--#include virtual="/ssi/navigation.html" --&gt;</span>
-<span class="text-accent-p2">&lt;div</span> <span class="text-info">id=</span><span class="text-accent7">"head-search"</span> <span class="text-info">class=</span><span class="text-accent7">"search-container"</span><span class="text-accent-p2">&gt;</span>
-<span class="text-success">&lt;!--#include virtual="/ssi/search.html" --&gt;</span>
-<span class="text-accent-p2">&lt;/div&gt;</span>
-<span class="text-accent-p2">&lt;/div&gt;</span>
-<span class="text-accent-p2">&lt;div </span><span class="text-info">class=</span><span class="text-accent7">"header-decoration"</span><span class="text-accent-p2">&gt;</span><span class="text-accent-p2">&lt;/div&gt;</span>
+<span class="text-accent-p2">&lt;header</span> <span class="text-info">class=</span><span class="text-accent7">"global-header fixed"</span><span class="text-accent-p2">&gt;</span>
+    <span class="text-accent-p2">&lt;div</span> <span class="text-info">id=</span><span class="text-accent7">"skip-to-content"</span><span class="text-accent-p2">&gt;&lt;a </span><span class="text-info">href=</span><span class="text-accent7">"#main-content"</span><span class="text-accent-p2">&gt;</span>Skip to Main Content<span class="text-accent-p2">&lt;/a&gt;&lt;/div&gt;</span>
+    <span class="text-success">&lt;!--#include virtual="/ssi/utility-header.html" --&gt;</span>
+    <span class="text-success">&lt;!--#include virtual="/ssi/settings-bar.html" --&gt;</span>
+    <span class="text-accent-p2">&lt;div</span> <span class="text-info">class=</span><span class="text-accent7">"section-default"</span><span class="text-accent-p2">&gt;</span>
+        <span class="text-success">&lt;!--#include virtual="/ssi/branding.html" --&gt;</span>
+    <span class="text-accent-p2">&lt;/div&gt;</span>
+    <span class="text-success">&lt;!--#include virtual="/ssi/mobile-controls.html" --&gt;</span>
+    <span class="text-accent-p2">&lt;div</span> <span class="text-info">class=</span><span class="text-accent7">"navigation-search"</span><span class="text-accent-p2">&gt;</span>
+        <span class="text-accent-p2">&lt;div</span> <span class="text-info">id=</span><span class="text-accent7">"head-search"</span> <span class="text-info">class=</span><span class="text-accent7">"search-container"</span><span class="text-accent-p2">&gt;</span>
+            <span class="text-success">&lt;!--#include virtual="/ssi/search.html" --&gt;</span>
+        <span class="text-accent-p2">&lt;/div&gt;</span>
+        <span class="text-success">&lt;!--#include virtual="/sample/modules/nav-full-width.html" --&gt;</span>
+    <span class="text-accent-p2">&lt;/div&gt;</span>
 <span class="text-accent-p2">&lt;/header&gt;</span>
 </pre>
+
+
+
+
+
+
 
 
             <h2>More Navigation Samples</h2>

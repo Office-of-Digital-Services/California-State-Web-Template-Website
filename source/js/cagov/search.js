@@ -54,13 +54,13 @@ $(document).ready(function () {
         });
         //fullwidth navigation
         if (navsearch.hasClass("full-width-nav")) {
-            navigationHeight = fullnav.innerHeight() + 32;
+            navigationHeight = 82;
         }
         // calulation search box top position
         var searchtop = headerHeight - utilityHeight - alertbannerHeight - navigationHeight;
         if (!mobileView()) {
             searchbox.css({
-                'top': Math.max(searchtop, 55)
+                'top': Math.max(searchtop, 82)
             });
         }
     } 
@@ -71,8 +71,7 @@ $(document).ready(function () {
 
     // Our special nav icon which we need to hook into for starting the search
     // $('#nav-item-search')
-
-    // Sitecore link data types currently do not have a way to set id's per nav,
+    
     // so instead we are binding to what I'm assuming will aslways be the search
     $('.top-level-nav .nav-item .ca-gov-icon-search, #nav-item-search').parents('.nav-item').on('click', function (e) {
         $searchText.trigger("focus").trigger('focus');
@@ -300,7 +299,7 @@ $(window).on('scroll', function () {
                 });
                 // Full width navigation
                 if (navsearch.hasClass("full-width-nav")) {
-                    navigationHeight = fullnav.innerHeight() + 32;
+                    navigationHeight = 82;
                 }
                 else { navigationHeight = 0; }
                 // calulation search box top position
@@ -349,9 +348,9 @@ function searchTop() {
     });
     // Full width navigation
     if (navsearch.hasClass("full-width-nav")) {
-        navigationHeight = fullnav.innerHeight() + 32;
+        navigationHeight = 82;
     }
-    else { navigationHeight = 0;}
+    else {navigationHeight = 0;}
     // calulation search box top position
     var searchtop = headerHeight - utilityHeight - alertbannerHeight - navigationHeight;
     if (!mobileView()) {
