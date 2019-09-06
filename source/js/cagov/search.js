@@ -69,6 +69,7 @@ $(document).ready(function () {
     // Sitecore link data types currently do not have a way to set id's per nav,
     // so instead we are binding to what I'm assuming will aslways be the search
     $('.top-level-nav .nav-item .ca-gov-icon-search, #nav-item-search').parents('.nav-item').on('click', function (e) {
+        e.preventDefault();
         $searchText.trigger("focus").trigger('focus');
 
         // mobile

@@ -1,5 +1,5 @@
 /**
- * CA State Template v5 -  @version v5.0.10 -  8/19/2019 
+ * CA State Template v5 -  @version v5.0.11 -  9/6/2019 
   STYLES COMPILED FROM SOURCE (source/js) DO NOT MODIFY */
 /*! modernizr (Custom Build) | MIT *
  * https://modernizr.com/download/?-flexbox-setclasses !*/
@@ -15844,7 +15844,7 @@ $(document).ready(function () {
                 this.menu = menu;
                 this.topnavitems = topnavitems;
 
-                nav.attr("role", "navigation");
+               // nav.attr("role", "navigation"); //it is already inside of <nav> no need for role.
                 menu.addClass(settings.menuClass);
                 topnavitems.each(function (i, topnavitem) {
                     var topnavitemlink, topnavitempanel;
@@ -16972,6 +16972,7 @@ $(document).ready(function () {
     // Sitecore link data types currently do not have a way to set id's per nav,
     // so instead we are binding to what I'm assuming will aslways be the search
     $('.top-level-nav .nav-item .ca-gov-icon-search, #nav-item-search').parents('.nav-item').on('click', function (e) {
+        e.preventDefault();
         $searchText.trigger("focus").trigger('focus');
 
         // mobile
@@ -19138,6 +19139,7 @@ $(document).ready(function () {
 ----------------------------------------- */
 $(document).ready(function () {
     // removing role attribute to fix aria validator errors
+    $(".site-settings").removeAttr("role");
     $(".settings-links button[data-target='#siteSettings']").removeAttr("role aria-selected");
     $(".site-settings button.close").removeAttr("role aria-selected");
 });
