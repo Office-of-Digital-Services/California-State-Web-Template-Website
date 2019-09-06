@@ -1050,7 +1050,7 @@ $(document).ready(function () {
                 this.menu = menu;
                 this.topnavitems = topnavitems;
 
-                nav.attr("role", "navigation");
+               // nav.attr("role", "navigation"); //it is already inside of <nav> no need for role.
                 menu.addClass(settings.menuClass);
                 topnavitems.each(function (i, topnavitem) {
                     var topnavitemlink, topnavitempanel;
