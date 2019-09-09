@@ -1,5 +1,5 @@
 /**
- * CA State Template v5.5 -  @version v5.5.7 -  8/29/2019 
+ * CA State Template v5.5 -  @version v5.5.7 -  9/9/2019 
   STYLES COMPILED FROM SOURCE (source/js) DO NOT MODIFY */
 /*! modernizr (Custom Build) | MIT *
  * https://modernizr.com/download/?-flexbox-setclasses !*/
@@ -15448,7 +15448,7 @@ limitations under the License.
                 this.topnavitems = topnavitems;
                 this.toggleButton = toggleButton;
 
-                nav.attr("role", "navigation");
+                 // nav.attr("role", "navigation"); //it is already inside of <nav> no need for role.
                 _addUniqueId.call(that, menu);
                 menu.addClass(settings.menuClass);
                 menu.addClass(['js', settings.menuClass].join('-'));
@@ -16706,7 +16706,7 @@ $(document).ready(function () {
     // so instead we are binding to what I'm assuming will aslways be the search
     $('.top-level-nav .nav-item .ca-gov-icon-search, #nav-item-search').parents('.nav-item').on('click', function (e) {
         $searchText.trigger("focus").trigger('focus');
-       
+        e.preventDefault();
         // mobile
         if (mobileView() && !$('.search-container').hasClass('active')) {
             $('html, body').animate({
@@ -17081,7 +17081,7 @@ $(document).ready(function () {
                         : height;
                     // fill up the remaining heaight of this device
                     headerSlider.css({ 'height': height });
-                }, 0)
+                }, 0);
 
                 var $this = $(this);
 
@@ -17130,7 +17130,7 @@ $(document).ready(function () {
                     $(this).find('span').append($(this).index() + 1);
                 });
             });
-        }
+        };
     }(jQuery));
 
     // Banner Carousel Init
@@ -17147,17 +17147,17 @@ $(document).ready(function () {
             onResized: function () {
                 window.setTimeout(function () {
                     $(window).trigger('resize');
-                }, 0)
+                }, 0);
             },
             onDragged: function () {
                 window.setTimeout(function () {
                     $(window).trigger('resize');
-                }, 0)
+                }, 0);
             },
             onTranslated: function () {
                 window.setTimeout(function () {
                     $(window).trigger('resize');
-                }, 0)
+                }, 0);
             },
             responsive: true,
             margin: 10,
@@ -17211,6 +17211,9 @@ $(document).ready(function () {
         });
 
     }
+
+    // Remove unnessesary role="button" from button
+    $("button.banner-control").removeAttr("role");
 });
 
 function initContent() {
@@ -17228,23 +17231,24 @@ function initContent() {
             onResized: function () {
                 window.setTimeout(function () {
                     $(window).trigger('resize');
-                }, 0)
+                }, 0);
             },
             onDragged: function () {
                 window.setTimeout(function () {
                     $(window).trigger('resize');
-                }, 0)
+                }, 0);
             },
             onTranslated: function () {
                 window.setTimeout(function () {
                     $(window).trigger('resize');
-                }, 0)
+                }, 0);
             }
         });
 
         // Add text to the dots 
         var dot = $('.owl-dots .owl-dot');
         dot.each(function () {
+            $(this).removeAttr("role");
             $(this).find('span').html("<span class='sr-only'>Change Slide</span>");
         });
 
@@ -17253,11 +17257,10 @@ function initContent() {
                 carousel.find('.owl-item.active .item video').each(function () {
 
                     $(this).get(0).play();
-                })
-            }, 10)
-
-        })
-    })
+                });
+            }, 10);
+        });
+    });
 }
 
 (function ($) {
@@ -17304,7 +17307,7 @@ function initContent() {
 
                 mainIndex = event.item.index;
                 // show the item in view
-                submenu.trigger('to.owl.carousel', [mainIndex, 300, true])
+                submenu.trigger('to.owl.carousel', [mainIndex, 300, true]);
             });
 
 
@@ -17391,7 +17394,7 @@ function initContent() {
             }
 
         });
-    }
+    };
 }(jQuery));
 
 // EQ Heights for Job Wells
@@ -18323,6 +18326,7 @@ $(document).ready(function () {
 ----------------------------------------- */
 $(document).ready(function () {
     // removing role attribute to fix aria validator errors
+    $(".site-settings").removeAttr("role");
     $(".settings-links button[data-target='#siteSettings']").removeAttr("role aria-selected");
     $(".site-settings button.close").removeAttr("role aria-selected");
 });
