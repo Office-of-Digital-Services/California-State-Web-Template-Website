@@ -278,7 +278,7 @@ $(document).ready(function () {
             // no header image, which means our main content needs to
 
             $mainContent.css({
-                'padding-top': Math.max(headerHeight, 136)
+                'padding-top': Math.max(headerHeight, 129)
             });
 
 
@@ -289,7 +289,7 @@ $(document).ready(function () {
             });
 
             $('.header-slideshow-banner, .header-primary-banner').css({
-                'margin-top': 136
+                'margin-top': 129
 
             });
 

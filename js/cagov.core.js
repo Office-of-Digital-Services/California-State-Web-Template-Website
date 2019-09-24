@@ -1,5 +1,5 @@
 /**
- * CA State Template v5 -  @version v5.0.11 -  9/6/2019 
+ * CA State Template v5 -  @version v5.0.11 -  9/24/2019 
   STYLES COMPILED FROM SOURCE (source/js) DO NOT MODIFY */
 /*! modernizr (Custom Build) | MIT *
  * https://modernizr.com/download/?-flexbox-setclasses !*/
@@ -14620,7 +14620,7 @@ $(document).ready(function () {
             // no header image, which means our main content needs to
 
             $mainContent.css({
-                'padding-top': Math.max(headerHeight, 136)
+                'padding-top': Math.max(headerHeight, 129)
             });
 
 
@@ -14631,7 +14631,7 @@ $(document).ready(function () {
             });
 
             $('.header-slideshow-banner, .header-primary-banner').css({
-                'margin-top': 136
+                'margin-top': 129
 
             });
 
