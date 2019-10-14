@@ -75,7 +75,7 @@ $(document).ready(function () {
     // so instead we are binding to what I'm assuming will aslways be the search
     $('.top-level-nav .nav-item .ca-gov-icon-search, #nav-item-search').parents('.nav-item').on('click', function (e) {
         $searchText.trigger("focus").trigger('focus');
-       
+        e.preventDefault();
         // mobile
         if (mobileView() && !$('.search-container').hasClass('active')) {
             $('html, body').animate({

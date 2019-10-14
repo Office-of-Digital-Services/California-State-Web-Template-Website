@@ -828,7 +828,7 @@ limitations under the License.
                 this.topnavitems = topnavitems;
                 this.toggleButton = toggleButton;
 
-                nav.attr("role", "navigation");
+                 // nav.attr("role", "navigation"); //it is already inside of <nav> no need for role.
                 _addUniqueId.call(that, menu);
                 menu.addClass(settings.menuClass);
                 menu.addClass(['js', settings.menuClass].join('-'));

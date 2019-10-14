@@ -35,7 +35,7 @@ $(document).ready(function () {
                         : height;
                     // fill up the remaining heaight of this device
                     headerSlider.css({ 'height': height });
-                }, 0)
+                }, 0);
 
                 var $this = $(this);
 
@@ -84,7 +84,7 @@ $(document).ready(function () {
                     $(this).find('span').append($(this).index() + 1);
                 });
             });
-        }
+        };
     }(jQuery));
 
     // Banner Carousel Init
@@ -101,17 +101,17 @@ $(document).ready(function () {
             onResized: function () {
                 window.setTimeout(function () {
                     $(window).trigger('resize');
-                }, 0)
+                }, 0);
             },
             onDragged: function () {
                 window.setTimeout(function () {
                     $(window).trigger('resize');
-                }, 0)
+                }, 0);
             },
             onTranslated: function () {
                 window.setTimeout(function () {
                     $(window).trigger('resize');
-                }, 0)
+                }, 0);
             },
             responsive: true,
             margin: 10,
@@ -165,6 +165,9 @@ $(document).ready(function () {
         });
 
     }
+
+    // Remove unnessesary role="button" from button
+    $("button.banner-control").removeAttr("role");
 });
 
 function initContent() {
@@ -182,23 +185,24 @@ function initContent() {
             onResized: function () {
                 window.setTimeout(function () {
                     $(window).trigger('resize');
-                }, 0)
+                }, 0);
             },
             onDragged: function () {
                 window.setTimeout(function () {
                     $(window).trigger('resize');
-                }, 0)
+                }, 0);
             },
             onTranslated: function () {
                 window.setTimeout(function () {
                     $(window).trigger('resize');
-                }, 0)
+                }, 0);
             }
         });
 
         // Add text to the dots 
         var dot = $('.owl-dots .owl-dot');
         dot.each(function () {
+            $(this).removeAttr("role");
             $(this).find('span').html("<span class='sr-only'>Change Slide</span>");
         });
 
@@ -207,11 +211,10 @@ function initContent() {
                 carousel.find('.owl-item.active .item video').each(function () {
 
                     $(this).get(0).play();
-                })
-            }, 10)
-
-        })
-    })
+                });
+            }, 10);
+        });
+    });
 }
 
 (function ($) {
@@ -258,7 +261,7 @@ function initContent() {
 
                 mainIndex = event.item.index;
                 // show the item in view
-                submenu.trigger('to.owl.carousel', [mainIndex, 300, true])
+                submenu.trigger('to.owl.carousel', [mainIndex, 300, true]);
             });
 
 
@@ -345,5 +348,5 @@ function initContent() {
             }
 
         });
-    }
+    };
 }(jQuery));
