@@ -6,8 +6,7 @@
 
 // CONTAINER
 .mobile-controls {
-    @include font-size(2.5); // mobile "hamburger menu", chat, and search icons
-    padding: .2em;
+    padding: 5px;
     cursor: pointer;
     text-align: right; // move most menu controls to right
     position: relative;
@@ -20,8 +19,8 @@
     @include container;
 
     .ca-gov-icon-menu-toggle-open, .ca-gov-icon-menu-toggle-closed { // Dynamic elements included in toggle-sub-nav
-        padding-left: 1em;
-        padding-right: 1em;
+        padding-left: 16px;
+        padding-right: 16px;
         line-height: 44px;
     }
 
@@ -34,6 +33,7 @@
     .toggle-search {
         padding: 0;
         width: 52px;
+        font-size: 40px;
         border: none;
         background: none;
         cursor: pointer;
