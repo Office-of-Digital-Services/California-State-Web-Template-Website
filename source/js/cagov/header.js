@@ -17,10 +17,10 @@ $(document).ready(function () {
 
 // Beta 5 Changes please incorporate into source files
 
-setTimeout(function(){
-  $askGroup.addClass('in')
-  $headSearch.addClass('in')
-}, 150)
+    setTimeout(function () {
+        $askGroup.addClass('in');
+        $headSearch.addClass('in');
+    }, 150);
 
     // setting up global variables for header functions
     window.headerVars = {
@@ -28,8 +28,8 @@ setTimeout(function(){
         MAXHEIGHT: 1200,
         MINHEIGHT: 500,
         setHeaderImageHeight: function () {
-            if ($headerImage.length == 0) {
-                return
+            if ($headerImage.length === 0) {
+                return;
             }
 			
             var height = windowHeight;
@@ -60,7 +60,7 @@ setTimeout(function(){
     var bgImage = $headerImage.css('background-image');
         var askGroup = $('.ask-group');
 
-        askGroup.attr("style", "background-size: cover; background-repeat: no-repeat; background-image:" + bgImage)
+    askGroup.attr("style", "background-size: cover; background-repeat: no-repeat; background-image:" + bgImage);
 
 
 });

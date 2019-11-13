@@ -112,7 +112,7 @@ tabpanel.prototype.init = function () {
     // get the selected tab 
     $tab = this.$tabs.filter('.selected');
 
-    if ($tab == undefined) {
+    if ($tab === undefined) {
         $tab = this.$tabs.first();
         $tab.addClass('selected');
     }
@@ -120,7 +120,7 @@ tabpanel.prototype.init = function () {
     // show the panel that the selected tab controls and set aria-hidden to false 
     this.$panel.find('#' + $tab.attr('aria-controls')).show().attr('aria-hidden', 'false');
 
-} // end init() 
+}; // end init() 
 
 // 
 // Function switchTabs() is a member function to give focus to a new tab or accordian header. 
@@ -146,7 +146,7 @@ tabpanel.prototype.switchTabs = function ($curTab, $newTab) {
     $newTab.addClass('selected').attr('aria-selected', 'true');
 
     // If this is a tab panel, swap displayed tabs 
-    if (this.accordian == false) {
+    if (this.accordian === false) {
         // hide the current tab panel and set aria-hidden to true 
         this.$panel.find('#' + $curTab.attr('aria-controls')).hide().attr('aria-hidden', 'true');
 
@@ -170,7 +170,7 @@ tabpanel.prototype.switchTabs = function ($curTab, $newTab) {
     // give the new tab focus 
     $newTab.trigger("focus");
 
-} // end switchTabs() 
+}; // end switchTabs() 
 
 // 
 // Function togglePanel() is a member function to display or hide the panel 
@@ -185,7 +185,7 @@ tabpanel.prototype.togglePanel = function ($tab) {
 
     $panel = this.$panel.find('#' + $tab.attr('aria-controls'));
 
-    if ($panel.attr('aria-hidden') == 'true') {
+    if ($panel.attr('aria-hidden') === 'true') {
         $panel.attr('aria-hidden', 'false');
         $panel.slideDown(100);
         $tab.addClass('open');
@@ -204,7 +204,7 @@ tabpanel.prototype.togglePanel = function ($tab) {
         $tab.attr('aria-expanded', 'false');
     }
 
-} // end togglePanel() 
+}; // end togglePanel() 
 
 // 
 // Function bindHandlers() is a member function to bind event handlers for the tabs 
@@ -252,7 +252,7 @@ tabpanel.prototype.bindHandlers = function () {
     });
 
     // bind a keypress handler for the panel 
-    this.$panels.on("keypress",function (e) {
+    this.$panels.on("keypress", function (e) {
         return thisObj.handlePanelKeyPress($(this), e);
     });
 
@@ -261,7 +261,7 @@ tabpanel.prototype.bindHandlers = function () {
         return thisObj.handlePanelClick($(this), e);
     });
 
-} // end bindHandlers() 
+}; // end bindHandlers() 
 
 // 
 // Function handleTabKeyDown() is a member function to process keydown events for a tab 
@@ -284,7 +284,7 @@ tabpanel.prototype.handleTabKeyDown = function ($tab, e) {
         case this.keys.space: {
 
             // Only process if this is an accordian widget 
-            if (this.accordian == true) {
+            if (this.accordian === true) {
                 // display or collapse the panel 
                 this.togglePanel($tab);
 
@@ -308,7 +308,7 @@ tabpanel.prototype.handleTabKeyDown = function ($tab, e) {
             else {
                 var curNdx = this.$tabs.index($tab);
 
-                if (curNdx == 0) {
+                if (curNdx === 0) {
                     // tab is the first one: 
                     // set newTab to last tab 
                     $newTab = this.$tabs.last();
@@ -367,7 +367,7 @@ tabpanel.prototype.handleTabKeyDown = function ($tab, e) {
             return false;
         }
     }
-} // end handleTabKeyDown() 
+}; // end handleTabKeyDown() 
 
 
 // 
@@ -417,7 +417,7 @@ tabpanel.prototype.handleTabKeyPress = function ($tab, e) {
 
     return true;
 
-} // end handleTabKeyPress() 
+}; // end handleTabKeyPress() 
 
 // 
 // Function handleTabClick() is a member function to process click events for tabs 
@@ -442,7 +442,7 @@ tabpanel.prototype.handleTabClick = function ($tab, e) {
     e.stopPropagation();
     return false;
 
-} // end handleTabClick() 
+}; // end handleTabClick() 
 
 // 
 // Function handleTabFocus() is a member function to process focus events for tabs 
@@ -460,7 +460,7 @@ tabpanel.prototype.handleTabFocus = function ($tab, e) {
 
     return true;
 
-} // end handleTabFocus() 
+}; // end handleTabFocus() 
 
 // 
 // Function handleTabBlur() is a member function to process blur events for tabs 
@@ -478,7 +478,7 @@ tabpanel.prototype.handleTabBlur = function ($tab, e) {
 
     return true;
 
-} // end handleTabBlur() 
+}; // end handleTabBlur() 
 
 
 ///////////////////////////////////////////////////////// 
@@ -506,7 +506,7 @@ tabpanel.prototype.handlePanelKeyDown = function ($panel, e) {
             var $focusable = $panel.find(':focusable');
             var curNdx = $focusable.index($(e.target));
             var panelNdx = this.$panels.index($panel);
-            var numPanels = this.$panels.length
+            var numPanels = this.$panels.length;
 
             if (e.shiftKey) {
                 // if this is the first focusable item in the panel 
@@ -514,7 +514,7 @@ tabpanel.prototype.handlePanelKeyDown = function ($panel, e) {
                 // focusable items and set focus to the last one in that 
                 // panel. If there is no preceding panel or no focusable items 
                 // do not process. 
-                if (curNdx == 0 && panelNdx > 0) {
+                if (curNdx === 0 && panelNdx > 0) {
 
                     // Iterate through previous panels until we find one that 
                     // is expanded and has focusable elements 
@@ -552,7 +552,7 @@ tabpanel.prototype.handlePanelKeyDown = function ($panel, e) {
                 // focusable items and set focus to the first one in that 
                 // panel. If there is no preceding panel or no focusable items 
                 // do not process. 
-                if (curNdx == $focusable.length - 1) {
+                if (curNdx === $focusable.length - 1) {
 
                     // Iterate through following panels until we find one that 
                     // is expanded and has focusable elements 
@@ -618,7 +618,7 @@ tabpanel.prototype.handlePanelKeyDown = function ($panel, e) {
             // get the index of the tab in the tab list 
             var curNdx = this.$tabs.index($tab);
 
-            if (curNdx == 0) {
+            if (curNdx === 0) {
                 // this is the first tab, set focus on the last one 
                 $newTab = this.$tabs.last();
             }
@@ -649,7 +649,7 @@ tabpanel.prototype.handlePanelKeyDown = function ($panel, e) {
             // get the index of the tab in the tab list 
             var curNdx = this.$tabs.index($tab);
 
-            if (curNdx == this.$tabs.length - 1) {
+            if (curNdx === this.$tabs.length - 1) {
                 // this is the last tab, set focus on the first one 
                 $newTab = this.$tabs.first();
             }
@@ -669,7 +669,7 @@ tabpanel.prototype.handlePanelKeyDown = function ($panel, e) {
 
     return true;
 
-} // end handlePanelKeyDown() 
+}; // end handlePanelKeyDown() 
 
 // 
 // Function handlePanelKeyPress() is a member function to process keypress events for a panel 
@@ -687,7 +687,7 @@ tabpanel.prototype.handlePanelKeyPress = function ($panel, e) {
         return true;
     }
 
-    if (e.ctrlKey && (e.keyCode == this.keys.pageup || e.keyCode == this.keys.pagedown)) {
+    if (e.ctrlKey && (e.keyCode === this.keys.pageup || e.keyCode === this.keys.pagedown)) {
         e.stopPropagation();
         e.preventDefault();
         return false;
@@ -703,7 +703,7 @@ tabpanel.prototype.handlePanelKeyPress = function ($panel, e) {
 
     return true;
 
-} // end handlePanelKeyPress() 
+}; // end handlePanelKeyPress() 
 
 // 
 // Function handlePanelClick() is a member function to process click events for panels 
@@ -726,7 +726,7 @@ tabpanel.prototype.handlePanelClick = function ($panel, e) {
 
     return true;
 
-} // end handlePanelClick() 
+}; // end handlePanelClick() 
 
 // focusable is a small jQuery extension to add a :focusable selector. It is used to 
 // get a list of all focusable elements in a panel. Credit to ajpiano on the jQuery forums. 
@@ -737,7 +737,7 @@ $.extend($.expr.pseudos, {
         var tabIndex = $(element).attr('tabindex');
 
         // the element and all of its ancestors must be visible 
-        if (($(element)[(nodeName == 'area' ? 'parents' : 'closest')](':hidden').length) == true) {
+        if ($(element)[nodeName === 'area' ? 'parents' : 'closest'](':hidden').length === true) {
             return false;
         }
 
@@ -747,15 +747,15 @@ $.extend($.expr.pseudos, {
         }
 
         // if the element is a standard form control, it must not be disabled 
-        if (/input|select|textarea|button|object/.test(nodeName) == true) {
+        if (/input|select|textarea|button|object/.test(nodeName) === true) {
 
             return !element.disabled;
         }
 
         // if the element is a link, href must be defined 
-        if ((nodeName == 'a' || nodeName == 'area') == true) {
+        if ((nodeName === 'a' || nodeName === 'area') === true) {
 
-            return (element.href.length > 0);
+            return element.href.length > 0;
         }
 
         // this is some other page element that is not normally focusable. 

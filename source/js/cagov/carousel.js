@@ -30,7 +30,7 @@ $(document).ready(function () {
                     var headerTop = headerSlider.offset().top;
                     var windowHeight = $(window).height();
                     var height = windowHeight - headerTop;
-                    height = (height > MAXHEIGHT)
+                    height = height > MAXHEIGHT
                         ? MAXHEIGHT
                         : height;
                     // fill up the remaining heaight of this device
@@ -40,7 +40,7 @@ $(document).ready(function () {
                 var $this = $(this);
 
                 // If browser is IE9 and below set transition speed to 0
-                var transitionSpeed = (!$('html').hasClass('oldie'))
+                var transitionSpeed = !$('html').hasClass('oldie')
                     ? 250
                     : 0;
 
@@ -102,17 +102,17 @@ $(document).ready(function () {
             onResized: function () {
                 window.setTimeout(function () {
                     $(window).trigger('resize');
-                }, 0)
+                }, 0);
             },
             onDragged: function () {
                 window.setTimeout(function () {
                     $(window).trigger('resize');
-                }, 0)
+                }, 0);
             },
             onTranslated: function () {
                 window.setTimeout(function () {
                     $(window).trigger('resize');
-                }, 0)
+                }, 0);
             },
             responsive: true,
             margin: 10,
@@ -277,7 +277,7 @@ function initContent() {
 
                 mainIndex = event.item.index;
                 // show the item in view
-                submenu.trigger('to.owl.carousel', [mainIndex, 300, true])
+                submenu.trigger('to.owl.carousel', [mainIndex, 300, true]);
             });
 
 
@@ -326,7 +326,7 @@ function initContent() {
 
                 // overlay related
                 var overlay = $('<div />').addClass('item-overlay');
-                overlay.append($('<span class="ca-gov-icon-play" />'))
+                overlay.append($('<span class="ca-gov-icon-play" />'));
 
                 // Append it into the DOM
                 item.append(thumbnail).append(overlay);

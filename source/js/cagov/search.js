@@ -27,7 +27,7 @@ $(document).ready(function () {
         $('.search-tabs button').on("click", function (e) {
             $(this).siblings().removeClass('active');
             $(this).tab('show').addClass('active');
-            e.preventDefault()
+            e.preventDefault();
         });
     
     // Unfreeze search width when blured.

@@ -17,7 +17,7 @@ $(document).ready(function () {
 
         // Stop the animation if the user scrolls
         $(document).one("scroll mousedown DOMMouseScroll mousewheel keyup touchstart", function(e){
-            if ( e.which > 0 || e.type === "mousedown" || e.type === "mousewheel"  || e.type == 'touchstart'){
+            if ( e.which > 0 || e.type === "mousedown" || e.type === "mousewheel"  || e.type === 'touchstart'){
                  $viewport.stop();
             }
         });
@@ -28,21 +28,21 @@ $(document).ready(function () {
 
 (function($) {
 
-    $.fn.toggleMore = function(bool) {
+    $.fn.toggleMore = function (bool) {
 
-      /**
-       * Helper for setting required attrs and class
-       */
-      function expanded($this, bool) {
-          if (bool) {
-              $this.addClass('active').attr('aria-expanded', 'true');
-          } else {
-              $this.removeClass('active').attr('aria-expanded', 'false');
-          }
-      }
+
+        // * Helper for setting required attrs and class
+
+        function expanded($this, bool) {
+            if (bool) {
+                $this.addClass('active').attr('aria-expanded', 'true');
+            } else {
+                $this.removeClass('active').attr('aria-expanded', 'false');
+            }
+        }
 
         // Iterate over each object in collection
-        return this.each( function() {
+        return this.each(function () {
 
             // Save a reference to the element
 
@@ -57,7 +57,7 @@ $(document).ready(function () {
                     : expanded($this, false);
             }
 
-  
+
             $this.off("click.cagovmore");
             $this.on("click.cagovmore", function () {
                 $this.hasClass('active')
@@ -66,7 +66,7 @@ $(document).ready(function () {
             });
 
         });
-    }
+    };
 }(jQuery));
 
 
@@ -91,7 +91,7 @@ function initLoad() {
           if(isTest) {
             return;
           }
-          if ((status == "error" || linkHeader == null)) {
+          if (status === "error" || linkHeader === null) {
               $moreBtn.animate({
                   'opacity': 0,
                   'height': 0
@@ -107,8 +107,8 @@ function initLoad() {
 
     $moreBtn.on('click', function (e) {
         e.preventDefault();
-        $(moreContents).children().hide().appendTo(elTarget).fadeIn(1000)
+        $(moreContents).children().hide().appendTo(elTarget).fadeIn(1000);
         $(elTarget).trigger('more.new');
         loadMore(htmlURL);
-    })
+    });
 }

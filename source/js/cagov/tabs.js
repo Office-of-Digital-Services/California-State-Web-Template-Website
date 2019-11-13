@@ -9,7 +9,7 @@ $(document).ready(function () {
 
     // Just to change class active in the parent li element (backward compatibility)
     $(".nav-tabs > li > a").on("click", function () {
-        if ($(this).attr('aria-selected') == "false") {
+        if ($(this).attr('aria-selected') === "false") {
             $(".nav-tabs > li").removeClass("active");
             $(this).parent("li").addClass("active");
         }
