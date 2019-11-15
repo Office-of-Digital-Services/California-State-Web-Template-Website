@@ -27,8 +27,8 @@ $(document).ready(function () {
         MAXHEIGHT: 1200,
         MINHEIGHT: 500,
         setHeaderImageHeight: function () {
-            if ($headerImage.length == 0) {
-                return
+            if ($headerImage.length === 0) {
+                return;
             }
 			
             var height = windowHeight;
@@ -59,7 +59,7 @@ $(document).ready(function () {
     var bgImage = $headerImage.css('background-image');
         var askGroup = $('.ask-group');
 
-        askGroup.attr("style", "background-size: cover; background-repeat: no-repeat; background-image:" + bgImage)
+    askGroup.attr("style", "background-size: cover; background-repeat: no-repeat; background-image:" + bgImage);
 
 
 });

@@ -13,8 +13,8 @@ function initServiceGroup() {
     $service.find('.service-tile-empty').on('click', function (e) {
         e.stopPropagation();
         var url = $(this).attr("data-url");
-        window.location = url
-    })
+        window.location = url;
+    });
 
     $(window).on('resize', function () {
         var newWidth = $(window).width();
@@ -45,7 +45,7 @@ function initServiceGroup() {
         $items = $service.find('.service-tile');
         // enable interactions
         initTiles($service, $items);
-    })
+    });
 
     // make sure any icons are set to the proper size
     $items.find('.icon-fallback').each(setIconFallback);
@@ -70,7 +70,7 @@ function initTiles($service, $items) {
     $items.find('.collapse').collapse();
 
     // remove any inline height set from accordian view
-    $service.find('.service-tile-full .container').css({ 'height': '' })
+    $service.find('.service-tile-full .container').css({ 'height': '' });
 }
 
 function shrinkAndRemove($rowEl) {
@@ -82,7 +82,7 @@ function shrinkAndRemove($rowEl) {
         'height': '0px'
     }, 300, 'linear', function () {
         $rowEl.empty().remove();
-    })
+    });
 
 }
 
@@ -123,7 +123,7 @@ function setUpEvents($service) {
 
         insertContent($rowEl, $item);
 
-        setCloseButtonEvent($item, closeTile)
+        setCloseButtonEvent($item, closeTile);
 
     }
 
@@ -167,7 +167,7 @@ function setUpEvents($service) {
 
     // Make sure it works on 'enter' key (has same behavior as click event)
     $service.on('keyup', '.service-tile', function (e) {
-        if (e.which == 13 && $(".service-tile").hasClass("tile-focus")) {
+        if (e.which === 13 && $(".service-tile").hasClass("tile-focus")) {
             $(this).trigger("click");
         }
     });
@@ -194,16 +194,16 @@ function setCloseButtonEvent($item, func) {
     var $content = $item.parent().find('.service-tile-panel[data-tile-id="' + id + '"]').first();
     $content.find('.close.btn').on('click', function (e) {
         func.call($item, e);
-    })
+    });
 }
 
-/**
- * TODO: +Docs
- * TODO: Expand height using calculated content height
- */
+
+// * TODO: +Docs
+// * TODO: Expand height using calculated content height
+
 function insertContent($rowEl, $item) {
     if (!$rowEl) {
-        return
+        return;
     }
     var id = $item.data('tile-id');
 
@@ -246,7 +246,7 @@ function findRow($item) {
         return createExpandedRow($nextItem, 'before');
     }
     if ($item.nextAll('.service-tile').length) {
-        return createExpandedRow($item.nextAll('.service-tile').last(), 'after')
+        return createExpandedRow($item.nextAll('.service-tile').last(), 'after');
     }
     // at this point the only other possiblity is a new row after all siblings
     return createExpandedRow($item, 'after');
@@ -271,7 +271,7 @@ function checkIfOldAndSet($rowEl) {
  */
 function createExpandedRow($item, method) {
     var newEl = $('<div>').addClass('service-tile-full');
-    ($item[method](newEl));
+    $item[method](newEl);
     // HACK: trigger on focus so transitions work
     newEl.trigger("focus");
     newEl.addClass('is-open');
@@ -282,14 +282,14 @@ function createExpandedRow($item, method) {
    HELPERS
 ----------------------------------------- */
 
-/**
- * TODO: +Docs
- * @param  {[type]} $el [description]
- * @return {[type]}     [description]
- */
+
+// * TODO: +Docs
+// * @param  {[type]} $el [description]
+// * @return {[type]}     [description]
+
 function scrollToEl($el) {
     if (!$el || !$el.length) {
-        return
+        return;
     }
     var scrollVal = $el.offset().top;
     $('html, body').animate({

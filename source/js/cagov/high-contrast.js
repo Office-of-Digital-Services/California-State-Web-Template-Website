@@ -83,10 +83,10 @@ $(document).ready(function () {
     // Read in previous settings and convert to number
     var fontSize = +localStorage.getItem('font-size');
     if (fontSize) {
-        $('html').css("font-size", fontSize + 'rem')
+        $('html').css("font-size", fontSize + 'rem');
     } else {
         fontSize = 1;
-        $('html').css("font-size", fontSize  + 'rem')
+        $('html').css("font-size", fontSize + 'rem');
     }
 
     // init button styles for fonts
@@ -94,7 +94,7 @@ $(document).ready(function () {
 
     // utility functions
     function updateFont(f) {
-        var updatedSize = Math.min(MAXFONTSIZE, Math.max(f, MINFONTSIZE))
+        var updatedSize = Math.min(MAXFONTSIZE, Math.max(f, MINFONTSIZE));
         localStorage.setItem('font-size', updatedSize);
         $('html').css("font-size", updatedSize + "rem");
         updateFontBtns(updatedSize);
@@ -115,7 +115,7 @@ $(document).ready(function () {
     }
 
     incFontSize.on('click', function () {
-        fontSize += STEPVALUE
+        fontSize += STEPVALUE;
         fontSize = updateFont(fontSize);
     });
 
@@ -125,6 +125,6 @@ $(document).ready(function () {
     });
 
     resetFontSize.on('click', function () {
-        fontSize = updateFont(1)
-    })
+        fontSize = updateFont(1);
+    });
 });

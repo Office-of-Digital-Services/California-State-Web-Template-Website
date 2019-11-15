@@ -48,7 +48,7 @@ function initCountUp() {
         handler: function () {
             demo.start();
         }
-    })
+    });
 }
 
 
