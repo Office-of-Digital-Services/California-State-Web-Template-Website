@@ -74,7 +74,7 @@ var jssrc = [
     'source/js/cagov/navigation.js',
     'source/js/cagov/accordion.js',
     'source/js/cagov/panel.js',
-    'source/js/cagov/card.js',
+    'source/js/cagov/cards.js',
     'source/js/cagov/search.js',
     'source/js/cagov/plugins.js',
     'source/js/cagov/gallery.js',

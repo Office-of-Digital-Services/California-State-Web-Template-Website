@@ -12,15 +12,15 @@ $(document).ready(function(){
     // TODO: flickr, linkedin, instagram, pinterest, vimeo, youtube
 
     $(".ca-gov-icon-share-facebook").on('click', function(e) {
-      PopupCentered('https://www.facebook.com/sharer/sharer.php?u=' + docURL + '&display=popup','socialsharer','658','450')
+        PopupCentered('https://www.facebook.com/sharer/sharer.php?u=' + docURL + '&display=popup', 'socialsharer', '658', '450');
     });
 
     $(".ca-gov-icon-share-twitter").on('click', function(e) {
-      PopupCentered('https://twitter.com/intent/tweet?text=' + docTitle + '&url=' + docURL,'socialsharer','568','531')
+        PopupCentered('https://twitter.com/intent/tweet?text=' + docTitle + '&url=' + docURL, 'socialsharer', '568', '531');
     });
 
     $(".ca-gov-icon-share-googleplus").on('click', function(e) {
-      PopupCentered('https://plus.google.com/share?url=' + docURL,'socialsharer','550','552')
+        PopupCentered('https://plus.google.com/share?url=' + docURL, 'socialsharer', '550', '552');
     });
 
     $(".ca-gov-icon-share-email").attr('href',  "mailto:?subject=" + docTitle + "&body=%0a" + docURL + "%0a%0a");
@@ -44,8 +44,8 @@ function PopupCentered(url, popupName, popupWidth, popupHeight) {
   var parentWidth = window.innerWidth ? window.innerWidth : document.documentElement.clientWidth ? document.documentElement.clientWidth : screen.width;
   var parentHeight = window.innerHeight ? window.innerHeight : document.documentElement.clientHeight ? document.documentElement.clientHeight : screen.height;
 
-  var popupLeft = (parentWidth / 2) - (popupWidth / 2) + parentLeft;
-  var popupTop = (parentHeight / 2) - (popupHeight / 2) + parentTop;
+  var popupLeft = parentWidth / 2 - popupWidth / 2 + parentLeft;
+  var popupTop = parentHeight / 2 - popupHeight / 2 + parentTop;
 
   window.open(url, popupName, 'scrollbars=yes, width=' + popupWidth + ', height=' + popupHeight + ', left=' + popupLeft + ', top=' + popupTop);
 }

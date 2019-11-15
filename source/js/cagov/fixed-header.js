@@ -39,7 +39,7 @@ $(document).ready(function () {
             }
 
             if (currentScrollTop >= scrollDistanceToMakeCompactHeader) {
-                return
+                return;
             }
 
             var searchBox = $headSearch.get(0).getBoundingClientRect();

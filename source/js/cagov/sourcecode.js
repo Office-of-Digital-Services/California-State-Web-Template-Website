@@ -27,4 +27,4 @@ window.onload = function init() {
             dom.innerHTML = html;
         }
     }
-}
+};
