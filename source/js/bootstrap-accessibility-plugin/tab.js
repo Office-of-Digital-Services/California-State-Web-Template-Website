@@ -1,6 +1,6 @@
   // Tab Extension
   // ===============================
-  
+
 var $tablist = $('.nav-tabs, .nav-pills')
     , $lis = $tablist.children('li')
     , $tabs = $tablist.find('[data-toggle="tab"], [data-toggle="pill"]');
@@ -48,8 +48,8 @@ $.fn.tab.Constructor.prototype.keydown = function (e) {
     var nextTab = $items.eq(index);
     if (nextTab.attr('role') === 'tab') {
 
-        nextTab.tab('show')      //Comment this line for dynamically loaded tabPabels, to save Ajax requests on arrow key navigation
-            .focus();
+        nextTab.tab('show');      //Comment this line for dynamically loaded tabPabels, to save Ajax requests on arrow key navigation
+        nextTab.focus();
     }
     // nextTab.focus()
 
@@ -59,7 +59,7 @@ $.fn.tab.Constructor.prototype.keydown = function (e) {
 
 $(document).on('keydown.tab.data-api', '[data-toggle="tab"], [data-toggle="pill"]', $.fn.tab.Constructor.prototype.keydown);
 
-   var tabactivate =    $.fn.tab.Constructor.prototype.activate;
+   var tabactivate = $.fn.tab.Constructor.prototype.activate;
 $.fn.tab.Constructor.prototype.activate = function (element, container, callback) {
     var $active = container.find('> .active');
     $active.find('[data-toggle=tab], [data-toggle=pill]').attr({ 'tabIndex': '-1', 'aria-selected': false });

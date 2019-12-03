@@ -1,5 +1,5 @@
 /**
- * CA State Template v5.5 -  @version v5.5.9 -  11/15/2019 
+ * CA State Template v5.5 -  @version v5.5.9 -  12/3/2019 
   STYLES COMPILED FROM SOURCE (SCSS) DO NOT MODIFY */
 /* -----------------------------------------
    BOOTSTRAP v4.3.1 - /source/scss/bootstrap/ 
@@ -12653,6 +12653,15 @@ table.gsc-search-box td {
   }
 }
 
+@media (max-width: 767px) {
+  .gsc-search-button .ca-gov-icon-search {
+    font-size: 34px !important;
+  }
+  .search-container #Search .close-search {
+    font-size: 34px !important;
+  }
+}
+
 /* -----------------------------------------
    SITE SEARCH RESULTS - /source/scss/cagov/search-results.scss
 ----------------------------------------- */
@@ -16547,7 +16556,7 @@ body {
 .global-header.compact .alert-banner {
   opacity: 0;
   position: absolute;
-  width: 100%;
+  width: 0;
   height: 0;
 }
 
