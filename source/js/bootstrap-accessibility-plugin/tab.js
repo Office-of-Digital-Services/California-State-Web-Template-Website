@@ -48,8 +48,9 @@ $.fn.tab.Constructor.prototype.keydown = function (e) {
     var nextTab = $items.eq(index);
     if (nextTab.attr('role') === 'tab') {
 
-        nextTab.tab('show')      //Comment this line for dynamically loaded tabPabels, to save Ajax requests on arrow key navigation
-            .focus();
+        nextTab.tab('show');
+        //Comment this line for dynamically loaded tabPabels, to save Ajax requests on arrow key navigation
+        nextTab.focus();
     }
     // nextTab.focus()
 

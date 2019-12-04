@@ -1,5 +1,5 @@
 /**
- * CA State Template v5 -  @version v5.0.12 -  11/13/2019 
+ * CA State Template v5 -  @version v5.0.13 -  12/3/2019 
   STYLES COMPILED FROM SOURCE (source/js) DO NOT MODIFY */
 /*! modernizr (Custom Build) | MIT *
  * https://modernizr.com/download/?-flexbox-setclasses !*/
@@ -7311,8 +7311,9 @@ $.fn.tab.Constructor.prototype.keydown = function (e) {
     var nextTab = $items.eq(index);
     if (nextTab.attr('role') === 'tab') {
 
-        nextTab.tab('show')      //Comment this line for dynamically loaded tabPabels, to save Ajax requests on arrow key navigation
-            .focus();
+        nextTab.tab('show');
+        //Comment this line for dynamically loaded tabPabels, to save Ajax requests on arrow key navigation
+        nextTab.focus();
     }
     // nextTab.focus()
 
@@ -16819,6 +16820,24 @@ $(document).ready(function () {
     accordion.attr("tabindex", 0); // make accordion tabable
     // appending carrot span to each accordion tab
     accordionTab.append(accordioncarrot);
+
+    // Accessibility fixes
+    $(".accordion > .panel > .panel-heading > .panel-title > a").on("click", function () {
+
+        var accordionPanelID = $(this).attr("id");
+        var accordionContentID = $("[aria-labelledby=" + accordionPanelID + "]");
+        var accordionGroup = $(this).closest(".accordion");
+        var accordionContentDiv = accordionGroup.find(".panel-collapse");
+
+        if ($(this).attr("aria-expanded") === "true") {
+            accordionContentID.attr("tabindex", "-1").attr("aria-hidden", "true");
+
+        }
+        else {
+            accordionContentID.removeAttr("tabindex aria-hidden");
+        }
+    });
+
 });
 
 /* Remove aria controls from a links */
@@ -19067,13 +19086,64 @@ $(document).ready(function () {
 
     // Just to change class active in the parent li element (backward compatibility)
     $(".nav-tabs > li > a").on("click", function () {
+
+        var tabID = $(this).attr("id");
+        var tabcontentID = $("[aria-labelledby=" + tabID + "]");
+        var tabGroup = $(this).closest(".tab-group");
+        var tabsPane = tabGroup.find(".tab-pane");
+        tabsPane.attr("tabindex", "-1").attr("aria-hidden", "true");
         if ($(this).attr('aria-selected') === "false") {
             $(".nav-tabs > li").removeClass("active");
             $(this).parent("li").addClass("active");
+            tabcontentID.removeAttr("tabindex aria-hidden");
         }
         else {
             $(".nav-tabs > li").removeClass("active");
             $(this).parent("li").addClass("active");
+        }
+    });
+
+    // takes care of tabindexes and aria-hidden attributes when using arrow keys to navigate
+    $(".nav-tabs > li > a").on('keydown', function (e) {
+        var tabID = $(this).attr("id");
+        var tabcontentID = $("[aria-labelledby=" + tabID + "]");
+        var tabGroup = $(this).closest(".tab-group");
+        var tabsPane = tabGroup.find(".tab-pane");
+        var tabsPaneFirst = tabGroup.find(".tab-pane:first-child");
+        var tabsPaneLast = tabGroup.find(".tab-pane:last-child");
+        var parentLI = $(this).parent("li");
+        
+
+        if (e.keyCode === 37) {
+            tabcontentID.prev().removeAttr("tabindex aria-hidden");
+            tabcontentID.attr("tabindex", "-1").attr("aria-hidden", "true");
+
+            if (parentLI.is(':first-child')) {
+                tabsPaneLast.removeAttr("tabindex aria-hidden");
+            }
+
+        } else if (e.keyCode === 38) {
+            tabcontentID.prev().removeAttr("tabindex aria-hidden");
+            tabcontentID.attr("tabindex", "-1").attr("aria-hidden", "true");
+
+            if (parentLI.is(':first-child')) {
+                tabsPaneLast.removeAttr("tabindex aria-hidden");
+            }
+
+        } else if (e.keyCode === 39) {
+            tabcontentID.next().removeAttr("tabindex aria-hidden");
+            tabcontentID.attr("tabindex", "-1").attr("aria-hidden", "true");
+
+            if (parentLI.is(':last-child')) {
+                tabsPaneFirst.removeAttr("tabindex aria-hidden");
+            }
+        } else if (e.keyCode === 40) {
+            tabcontentID.next().removeAttr("tabindex aria-hidden");
+            tabcontentID.attr("tabindex", "-1").attr("aria-hidden", "true");
+            if (parentLI.is(':last-child')) {
+                tabsPaneFirst.removeAttr("tabindex aria-hidden");
+            }
+
         }
     });
 

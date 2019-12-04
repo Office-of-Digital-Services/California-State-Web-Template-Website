@@ -772,6 +772,24 @@ $(document).ready(function () {
     accordion.attr("tabindex", 0); // make accordion tabable
     // appending carrot span to each accordion tab
     accordionTab.append(accordioncarrot);
+
+    // Accessibility fixes
+    $(".accordion > .panel > .panel-heading > .panel-title > a").on("click", function () {
+
+        var accordionPanelID = $(this).attr("id");
+        var accordionContentID = $("[aria-labelledby=" + accordionPanelID + "]");
+        var accordionGroup = $(this).closest(".accordion");
+        var accordionContentDiv = accordionGroup.find(".panel-collapse");
+
+        if ($(this).attr("aria-expanded") === "true") {
+            accordionContentID.attr("tabindex", "-1").attr("aria-hidden", "true");
+
+        }
+        else {
+            accordionContentID.removeAttr("tabindex aria-hidden");
+        }
+    });
+
 });
 
 /* Remove aria controls from a links */
