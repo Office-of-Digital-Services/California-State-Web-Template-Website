@@ -1,5 +1,5 @@
 /**
- * CA State Template v5 -  @version v5.0.11 -  10/30/2019 
+ * CA State Template v5 -  @version v5.0.13 -  12/3/2019 
   STYLES COMPILED FROM SOURCE (SCSS) DO NOT MODIFY */
 /* -----------------------------------------
    BOOTSTRAP v4.3.1 - /source/scss/bootstrap/ 
@@ -9237,7 +9237,7 @@ a:focus {
 /* -----------------------------------------
    /source/scss/bootstrap-accessibility-plugin/navigation.scss
 ----------------------------------------- */
-.nav > li > a:hover, .nav > li > a:focus {
+.nav > li > a:focus {
   outline: solid 2px #2ea3f2;
 }
 
@@ -9389,6 +9389,18 @@ ul.et-fb-font-icon-list li:after {
   font-family: 'CaGov', 'ETModules' !important;
   content: attr(data-icon);
   speak: none;
+}
+
+.ca-gov-icon-update:before {
+  content: "\e994";
+}
+
+.ca-gov-icon-features:before {
+  content: "\e993";
+}
+
+.ca-gov-icon-accessibility:before {
+  content: "\e992";
 }
 
 .ca-gov-icon-collapse-all:before {
@@ -11687,8 +11699,8 @@ code {
 }
 
 .header-cagov-logo img {
-  top: 4px;
-  height: 32px;
+  top: 2px;
+  height: 34px;
   position: absolute;
 }
 
@@ -12648,6 +12660,15 @@ table.gsc-search-box td {
 
 .gsc-input-box table td:nth-child(2), .gsib_b {
   display: none !important;
+}
+
+@media (max-width: 767px) {
+  .gsc-search-button .ca-gov-icon-search {
+    font-size: 34px !important;
+  }
+  .search-container #Search .close-search {
+    font-size: 34px !important;
+  }
 }
 
 /* -----------------------------------------
@@ -16077,7 +16098,7 @@ body {
 .global-header.compact .alert-banner {
   opacity: 0;
   position: absolute;
-  width: 100%;
+  width: 0;
   height: 0;
 }
 

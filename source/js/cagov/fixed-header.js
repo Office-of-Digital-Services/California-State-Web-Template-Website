@@ -148,7 +148,7 @@ $(document).ready(function () {
                 checkForCompactUpdate();
                 checkForFixedUpdate();
 
-            }
+            };
         } else {
             updateFunc = function () {
                 checkForReturnTopUpdate();
@@ -227,10 +227,10 @@ $(document).ready(function () {
         }
     }
 
-    /**
-     * Figures out the difference between the bottom of the askbar and the
-     * explore more bar. Used to caclulate when we should hide these elements
-     */
+
+    // * Figures out the difference between the bottom of the askbar and the
+    // * explore more bar. Used to caclulate when we should hide these elements
+
     function calcInputDifference() {
         if (!$exploreMore.length || !$askGroupBar.length) {
             return 0;

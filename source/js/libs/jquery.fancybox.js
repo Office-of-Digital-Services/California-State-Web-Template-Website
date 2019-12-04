@@ -17,35 +17,35 @@
 		W = $(window),
 		D = $(document),
 		F = $.fancybox = function () {
-		    F.open.apply(this, arguments);
+		F.open.apply(this, arguments);
 		},
 		IE = navigator.userAgent.match(/msie/i),
 		didUpdate = null,
 		isTouch = document.createTouch !== undefined,
 
 		isQuery = function (obj) {
-		    return obj && obj.hasOwnProperty && obj instanceof $;
+		return obj && obj.hasOwnProperty && obj instanceof $;
 		},
 		isString = function (str) {
-		    return str && $.type(str) === "string";
+		return str && $.type(str) === "string";
 		},
 		isPercentage = function (str) {
-		    return isString(str) && str.indexOf('%') > 0;
+		return isString(str) && str.indexOf('%') > 0;
 		},
 		isScrollable = function (el) {
-		    return (el && !(el.style.overflow && el.style.overflow === 'hidden') && ((el.clientWidth && el.scrollWidth > el.clientWidth) || (el.clientHeight && el.scrollHeight > el.clientHeight)));
+		return el && !(el.style.overflow && el.style.overflow === 'hidden') && (el.clientWidth && el.scrollWidth > el.clientWidth || el.clientHeight && el.scrollHeight > el.clientHeight);
 		},
 		getScalar = function (orig, dim) {
-		    var value = parseInt(orig, 10) || 0;
+		var value = parseInt(orig, 10) || 0;
 
-		    if (dim && isPercentage(orig)) {
-		        value = F.getViewport()[dim] / 100 * value;
-		    }
+		if (dim && isPercentage(orig)) {
+		value = F.getViewport()[dim] / 100 * value;
+		}
 
-		    return Math.ceil(value);
+		return Math.ceil(value);
 		},
 		getValue = function (value, dim) {
-		    return getScalar(value, dim) + 'px';
+		return getScalar(value, dim) + 'px';
 		};
 
     $.extend(F, {
@@ -280,7 +280,7 @@
                 title = opts.title !== undefined ? opts.title : obj.title || '';
 
                 content = opts.content || obj.content;
-                type = content ? 'html' : (opts.type || obj.type);
+                type = content ? 'html' : opts.type || obj.type;
 
                 if (!type && obj.isDom) {
                     type = element.data('fancybox-type');
@@ -431,43 +431,43 @@
         //   $.fancybox.play(); - toggle slideshow
         //   $.fancybox.play( true ); - start
         //   $.fancybox.play( false ); - stop
-        play: function (action) {
-            var clear = function () {
-                clearTimeout(F.player.timer);
-            },
-				set = function () {
-				    clear();
+    play: function (action) {
+    var clear = function () {
+    clearTimeout(F.player.timer);
+    },
+    set = function () {
+    clear();
 
-				    if (F.current && F.player.isActive) {
-				        F.player.timer = setTimeout(F.next, F.current.playSpeed);
-				    }
-				},
-				stop = function () {
-				    clear();
+    if (F.current && F.player.isActive) {
+		F.player.timer = setTimeout(F.next, F.current.playSpeed);
+	}
+    },
+    stop = function () {
+	clear();
 
-				    D.unbind('.player');
+	D.unbind('.player');
 
-				    F.player.isActive = false;
+	F.player.isActive = false;
 
-				    F.trigger('onPlayEnd');
-				},
-				start = function () {
-				    if (F.current && (F.current.loop || F.current.index < F.group.length - 1)) {
-				        F.player.isActive = true;
+	F.trigger('onPlayEnd');
+    },
+    start = function () {
+	if (F.current && (F.current.loop || F.current.index < F.group.length - 1)) {
+		F.player.isActive = true;
 
-				        D.bind({
-				            'onCancel.player beforeClose.player': stop,
-				            'onUpdate.player': set,
-				            'beforeLoad.player': clear
-				        });
+		D.bind({
+			'onCancel.player beforeClose.player': stop,
+			'onUpdate.player': set,
+			'beforeLoad.player': clear
+		});
 
-				        set();
+		set();
 
-				        F.trigger('onPlayStart');
-				    }
-				};
+    F.trigger('onPlayStart');
+    }
+    };
 
-            if (action === true || (!F.player.isActive && action !== false)) {
+            if (action === true || !F.player.isActive && action !== false) {
                 start();
             } else {
                 stop();
@@ -510,12 +510,12 @@
 
             index = getScalar(index);
 
-            F.direction = direction || current.direction[(index >= current.index ? 'next' : 'prev')];
+            F.direction = direction || current.direction[index >= current.index ? 'next' : 'prev'];
             F.router = router || 'jumpto';
 
             if (current.loop) {
                 if (index < 0) {
-                    index = current.group.length + (index % current.group.length);
+                    index = current.group.length + index % current.group.length;
                 }
 
                 index = index % current.group.length;
@@ -551,7 +551,7 @@
         },
 
         update: function (e) {
-            var type = (e && e.originalEvent && e.originalEvent.type),
+            var type = e && e.originalEvent && e.originalEvent.type,
 				anyway = !type || type === 'orientationchange';
 
             if (anyway) {
@@ -573,7 +573,7 @@
 
                 F.wrap.removeClass('fancybox-tmp');
 
-                if (anyway || type === 'load' || (type === 'resize' && current.autoResize)) {
+                if (anyway || type === 'load' || type === 'resize' && current.autoResize) {
                     F._setDimension();
                 }
 
@@ -585,7 +585,7 @@
 
                 didUpdate = null;
 
-            }, (anyway && !isTouch ? 0 : 300));
+            }, anyway && !isTouch ? 0 : 300);
         },
 
         // Shrink content to fit inside viewport or restore if resized
@@ -631,8 +631,8 @@
 
                 el.css({
                     position: 'absolute',
-                    top: (viewport.h * 0.5) + viewport.y,
-                    left: (viewport.w * 0.5) + viewport.x
+                    top: viewport.h * 0.5 + viewport.y,
+                    left: viewport.w * 0.5 + viewport.x
                 });
             }
 
@@ -640,10 +640,10 @@
         },
 
         getViewport: function () {
-            var locked = (F.current && F.current.locked) || false,
+            var locked = F.current && F.current.locked || false,
 				rez = {
-				    x: W.scrollLeft(),
-				    y: W.scrollTop()
+				x: W.scrollLeft(),
+				y: W.scrollTop()
 				};
 
             if (locked && locked.length) {
@@ -1146,7 +1146,7 @@
             F.trigger('beforeShow');
 
             // Set scrolling before calculating dimensions
-            current.inner.css('overflow', scrolling === 'yes' ? 'scroll' : (scrolling === 'no' ? 'hidden' : scrolling));
+            current.inner.css('overflow', scrolling === 'yes' ? 'scroll' : scrolling === 'no' ? 'hidden' : scrolling);
 
             // Set initial dimensions and start position
             F._setDimension();
@@ -1362,7 +1362,7 @@
                 }
             }
 
-            if (scrollOut && scrolling === 'auto' && height < origHeight && (width + wPadding + scrollOut) < maxWidth_) {
+            if (scrollOut && scrolling === 'auto' && height < origHeight && width + wPadding + scrollOut < maxWidth_) {
                 width += scrollOut;
             }
 
@@ -1374,7 +1374,7 @@
             height_ = wrap.height();
 
             canShrink = (width_ > maxWidth_ || height_ > maxHeight_) && width > minWidth && height > minHeight;
-            canExpand = current.aspectRatio ? (width < origMaxWidth && height < origMaxHeight && width < origWidth && height < origHeight) : ((width < origMaxWidth || height < origMaxHeight) && (width < origWidth || height < origHeight));
+            canExpand = current.aspectRatio ? width < origMaxWidth && height < origMaxHeight && width < origWidth && height < origHeight : (width < origMaxWidth || height < origMaxHeight) && (width < origWidth || height < origHeight);
 
             $.extend(current, {
                 dim: {
@@ -1403,9 +1403,9 @@
 				width = F.wrap.width() + margin[1] + margin[3],
 				height = F.wrap.height() + margin[0] + margin[2],
 				rez = {
-				    position: 'absolute',
-				    top: margin[0],
-				    left: margin[3]
+				position: 'absolute',
+				top: margin[0],
+				left: margin[3]
 				};
 
             if (current.autoCenter && current.fixed && !onlyAbsolute && height <= viewport.h && width <= viewport.w) {
@@ -1416,8 +1416,8 @@
                 rez.left += viewport.x;
             }
 
-            rez.top = getValue(Math.max(rez.top, rez.top + ((viewport.h - height) * current.topRatio)));
-            rez.left = getValue(Math.max(rez.left, rez.left + ((viewport.w - width) * current.leftRatio)));
+            rez.top = getValue(Math.max(rez.top, rez.top + (viewport.h - height) * current.topRatio));
+            rez.left = getValue(Math.max(rez.left, rez.left + (viewport.w - width) * current.leftRatio));
 
             return rez;
         },
@@ -1436,7 +1436,7 @@
             F.update();
 
             // Assign a click event
-            if (current.closeClick || (current.nextClick && F.group.length > 1)) {
+            if (current.closeClick || current.nextClick && F.group.length > 1) {
                 F.inner.css('cursor', 'pointer').bind('click.fb', function (e) {
                     if (!$(e.target).is('a') && !$(e.target).parent().is('a')) {
                         e.preventDefault();
@@ -1575,8 +1575,8 @@
                 padding = prop === 'width' ? current.wPadding : current.hPadding;
                 value = now - padding;
 
-                F.skin[prop](getScalar(prop === 'width' ? value : value - (wrapSpace * ratio)));
-                F.inner[prop](getScalar(prop === 'width' ? value : value - (wrapSpace * ratio) - (skinSpace * ratio)));
+                F.skin[prop](getScalar(prop === 'width' ? value : value - wrapSpace * ratio));
+                F.inner[prop](getScalar(prop === 'width' ? value : value - wrapSpace * ratio - skinSpace * ratio));
             }
         },
 
@@ -1830,7 +1830,7 @@
             if (obj.locked && !this.el.hasClass('fancybox-lock')) {
                 if (this.fixPosition !== false) {
                     $('*').filter(function () {
-                        return ($(this).css('position') === 'fixed' && !$(this).hasClass("fancybox-overlay") && !$(this).hasClass("fancybox-wrap"));
+                        return $(this).css('position') === 'fixed' && !$(this).hasClass("fancybox-overlay") && !$(this).hasClass("fancybox-wrap");
                     }).addClass('fancybox-margin');
                 }
 
@@ -1918,7 +1918,7 @@
                     break;
             }
 
-            title[(opts.position === 'top' ? 'prependTo' : 'appendTo')](target);
+            title[opts.position === 'top' ? 'prependTo' : 'appendTo'](target);
         }
     };
 
@@ -1928,30 +1928,30 @@
 			that = $(this),
 			selector = this.selector || '',
 			run = function (e) {
-			    var what = $(this).blur(), idx = index, relType, relVal;
+			var what = $(this).blur(), idx = index, relType, relVal;
 
-			    if (!(e.ctrlKey || e.altKey || e.shiftKey || e.metaKey) && !what.is('.fancybox-wrap')) {
-			        relType = options.groupAttr || 'data-fancybox-group';
-			        relVal = what.attr(relType);
+			if (!(e.ctrlKey || e.altKey || e.shiftKey || e.metaKey) && !what.is('.fancybox-wrap')) {
+			relType = options.groupAttr || 'data-fancybox-group';
+			relVal = what.attr(relType);
 
-			        if (!relVal) {
-			            relType = 'rel';
-			            relVal = what.get(0)[relType];
-			        }
+			if (!relVal) {
+			relType = 'rel';
+			relVal = what.get(0)[relType];
+			}
 
-			        if (relVal && relVal !== '' && relVal !== 'nofollow') {
-			            what = selector.length ? $(selector) : that;
-			            what = what.filter('[' + relType + '="' + relVal + '"]');
-			            idx = what.index(this);
-			        }
+			if (relVal && relVal !== '' && relVal !== 'nofollow') {
+			what = selector.length ? $(selector) : that;
+			what = what.filter('[' + relType + '="' + relVal + '"]');
+			idx = what.index(this);
+			}
 
-			        options.index = idx;
+			options.index = idx;
 
-			        // Stop an event from bubbling if everything is fine
-			        if (F.open(what, options) !== false) {
-			            e.preventDefault();
-			        }
-			    }
+			// Stop an event from bubbling if everything is fine
+			if (F.open(what, options) !== false) {
+			e.preventDefault();
+			}
+			}
 			};
 
         options = options || {};
@@ -1989,7 +1989,7 @@
         if ($.support.fixedPosition === undefined) {
             $.support.fixedPosition = (function () {
                 var elem = $('<div style="position:fixed;top:20px;"></div>').appendTo('body'),
-					fixed = (elem[0].offsetTop === 20 || elem[0].offsetTop === 15);
+					fixed = elem[0].offsetTop === 20 || elem[0].offsetTop === 15;
 
                 elem.remove();
 

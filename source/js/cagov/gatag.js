@@ -15,11 +15,11 @@ function addGAToDownloadLinks() {
 			// try {} catch{} block added by erikvold VKI
 			try{
 				//protocol, host, hostname, port, pathname, search, hash
-				if (hrefs[l].protocol == "mailto:") {
+				if (hrefs[l].protocol === "mailto:") {
 					startListening(hrefs[l],"mousedown",trackMailto);
-				} else if (hrefs[l].protocol == "tel:") {
+				} else if (hrefs[l].protocol === "tel:") {
 					startListening(hrefs[l],"mousedown",trackTelto);
-				} else if (hrefs[l].hostname == location.host) {
+				} else if (hrefs[l].hostname === location.host) {
 					var path = hrefs[l].pathname + hrefs[l].search;
 					var isDoc = path.match(/\.(?:doc|docx|eps|jpg|png|svg|xls|xlsx|ppt|pptx|pdf|zip|txt|vsd|vxd|js|css|rar|exe|wma|mov|avi|wmv|mp3)($|\&|\?)/);
 					if (isDoc) {
@@ -45,27 +45,27 @@ function startListening (obj,evnt,func) {
 }
 
 function trackMailto (evnt) {
-	var href = (evnt.srcElement) ? evnt.srcElement.href : this.href;
+	var href = evnt.srcElement ? evnt.srcElement.href : this.href;
 	var mailto = "/mailto/" + href.substring(7);
 	_gaq.push(['_trackPageview', mailto]);
 	_gaq.push(['b._trackPageview', mailto]);
 }
 
 function trackTelto (evnt) {
-	var href = (evnt.srcElement) ? evnt.srcElement.href : this.href;
+	var href = evnt.srcElement ? evnt.srcElement.href : this.href;
 	var telto = "/telto/" + href.substring(4);
 	_gaq.push(['_trackPageview', telto]);
 	_gaq.push(['b._trackPageview', telto]);
 }
 
 function trackExternalLinks (evnt) {
-	var e = (evnt.srcElement) ? evnt.srcElement : this;
-	while (e.tagName != "A") {
+	var e = evnt.srcElement ? evnt.srcElement : this;
+	while (e.tagName !== "A") {
 		e = e.parentNode;
 	}
-	var lnk = (e.pathname.charAt(0) == "/") ? e.pathname : "/" + e.pathname;
-	if (e.search && e.pathname.indexOf(e.search) == -1) lnk += e.search;
-	if (e.hostname != location.host) lnk = "/external/" + e.hostname + lnk;
+	var lnk = e.pathname.charAt(0) === "/" ? e.pathname : "/" + e.pathname;
+	if (e.search && e.pathname.indexOf(e.search) === -1) lnk += e.search;
+	if (e.hostname !== location.host) lnk = "/external/" + e.hostname + lnk;
 	_gaq.push(['_trackPageview', lnk]);
 	_gaq.push(['b._trackPageview', lnk]);
 }

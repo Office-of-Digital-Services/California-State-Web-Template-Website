@@ -80,8 +80,8 @@ var CountUp = function(target, startVal, endVal, decimals, duration, options) {
 	}
 
 	function formatNumber(num) {
-		var neg = (num < 0),
-        	x, x1, x2, x3, i, len;
+		var neg = num < 0,
+        x, x1, x2, x3, i, len;
 		num = Math.abs(num).toFixed(self.decimals);
 		num += '';
 		x = num.split('.');
@@ -90,7 +90,7 @@ var CountUp = function(target, startVal, endVal, decimals, duration, options) {
 		if (self.options.useGrouping) {
 			x3 = '';
 			for (i = 0, len = x1.length; i < len; ++i) {
-				if (i !== 0 && ((i % 3) === 0)) {
+				if (i !== 0 && i % 3 === 0) {
 					x3 = self.options.separator + x3;
 				}
 				x3 = x1[len - i - 1] + x3;
@@ -99,12 +99,12 @@ var CountUp = function(target, startVal, endVal, decimals, duration, options) {
 		}
 		// optional numeral substitution
 		if (self.options.numerals.length) {
-			x1 = x1.replace(/[0-9]/g, function(w) {
-				return self.options.numerals[+w];
-			})
-			x2 = x2.replace(/[0-9]/g, function(w) {
-				return self.options.numerals[+w];
-			})
+            x1 = x1.replace(/[0-9]/g, function (w) {
+                return self.options.numerals[+w];
+            });
+            x2 = x2.replace(/[0-9]/g, function (w) {
+                return self.options.numerals[+w];
+            });
 		}
 		return (neg ? '-' : '') + self.options.prefix + x1 + x2 + self.options.suffix;
 	}
@@ -113,16 +113,16 @@ var CountUp = function(target, startVal, endVal, decimals, duration, options) {
 		return c * (-Math.pow(2, -10 * t / d) + 1) * 1024 / 1023 + b;
 	}
 	function ensureNumber(n) {
-		return (typeof n === 'number' && !isNaN(n));
+		return typeof n === 'number' && !isNaN(n);
 	}
 
 	self.initialize = function() { 
 		if (self.initialized) return true;
 		
 		self.error = '';
-		self.d = (typeof target === 'string') ? document.getElementById(target) : target;
+		self.d = typeof target === 'string' ? document.getElementById(target) : target;
 		if (!self.d) { 
-			self.error = '[CountUp] target is null or undefined'
+            self.error = '[CountUp] target is null or undefined';
 			return false;
 		}
 		self.startVal = Number(startVal);
@@ -132,7 +132,7 @@ var CountUp = function(target, startVal, endVal, decimals, duration, options) {
 			self.decimals = Math.max(0, decimals || 0);
 			self.dec = Math.pow(10, self.decimals);
 			self.duration = Number(duration) * 1000 || 2000;
-			self.countDown = (self.startVal > self.endVal);
+			self.countDown = self.startVal > self.endVal;
 			self.frameVal = self.startVal;
 			self.initialized = true;
 			return true;
@@ -175,7 +175,7 @@ var CountUp = function(target, startVal, endVal, decimals, duration, options) {
 			}
 		} else {
 			if (self.countDown) {
-				self.frameVal = self.startVal - ((self.startVal - self.endVal) * (progress / self.duration));
+				self.frameVal = self.startVal - (self.startVal - self.endVal) * (progress / self.duration);
 			} else {
 				self.frameVal = self.startVal + (self.endVal - self.startVal) * (progress / self.duration);
 			}
@@ -183,9 +183,9 @@ var CountUp = function(target, startVal, endVal, decimals, duration, options) {
 
 		// don't go past endVal since progress can exceed duration in the last frame
 		if (self.countDown) {
-			self.frameVal = (self.frameVal < self.endVal) ? self.endVal : self.frameVal;
+			self.frameVal = self.frameVal < self.endVal ? self.endVal : self.frameVal;
 		} else {
-			self.frameVal = (self.frameVal > self.endVal) ? self.endVal : self.frameVal;
+			self.frameVal = self.frameVal > self.endVal ? self.endVal : self.frameVal;
 		}
 
 		// decimal
@@ -245,7 +245,7 @@ var CountUp = function(target, startVal, endVal, decimals, duration, options) {
 		delete self.startTime;
 		self.startVal = self.frameVal;
 		self.endVal = newEndVal;
-		self.countDown = (self.startVal > self.endVal);
+		self.countDown = self.startVal > self.endVal;
 		self.rAF = requestAnimationFrame(self.count);
 	};
 

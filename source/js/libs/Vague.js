@@ -87,7 +87,7 @@
           var result = false;
           try {
             result = typeof SVGFEColorMatrixElement !== undefined &&
-              SVGFEColorMatrixElement.SVG_FECOLORMATRIX_TYPE_SATURATE == 2;
+              SVGFEColorMatrixElement.SVG_FECOLORMATRIX_TYPE_SATURATE === 2;
           } catch (e) {}
           return result;
         }()
@@ -234,9 +234,9 @@
     this.animate = function(newIntensity, customAnimationOptions) {
       // control the new blur intensity checking if it's a valid value
       if (typeof newIntensity !== 'number') {
-        throw (typeof newIntensity + ' is not a valid number to animate the blur');
+        throw typeof newIntensity + ' is not a valid number to animate the blur';
       } else if (newIntensity < 0) {
-        throw ('I can animate only positive numbers');
+        throw 'I can animate only positive numbers';
       }
       // create a new jQuery deferred instance
       var dfr = new $.Deferred();
@@ -256,12 +256,9 @@
       // return the animation deferred promise
       return dfr.promise();
     };
-
-    /**
-     *
-     * Unblur the DOM element
-     *
-     */
+      
+    // * Unblur the DOM element
+    
     this.unblur = function() {
       // set the DOM filter property to none
       this.$elm.css(_cssFilterProp, 'none');
@@ -283,9 +280,9 @@
       }
       return this;
     };
-    /**
-     * Destroy the Vague.js instance removing also the svg filter injected into the DOM
-     */
+
+    // * Destroy the Vague.js instance removing also the svg filter injected into the DOM
+
     this.destroy = function() {
       // do we need to remove the svg filter?
       if (_support.svgfilters) {
