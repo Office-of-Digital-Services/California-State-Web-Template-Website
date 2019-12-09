@@ -5,41 +5,55 @@
 @media (min-width: $screen-sm-min) {
 
     .ask-group.fixed-hide {
-        visibility:hidden;
-        opacity:0;
+        visibility: hidden;
+        opacity: 0;
     }
 
     #head-search.fixed-hide:not(.active) {
-        visibility:hidden;
-        opacity:0;
-		-webkit-transition: all 0.3s;
+        visibility: hidden;
+        opacity: 0;
+        -webkit-transition: all 0.3s;
         transition: all 0.3s;
     }
 
+    /* full width nav search box in fixed nav*/
+    .full-width-nav #head-search.fixed-hide:not(.active) {
+        visibility: visible;
+        opacity: 1;
+        margin-top: 14px;
 
-.no-js {
-  .ask-group.fade {
-    visibility: visible;
-    opacity:1;
-  }
+        .search-textfield {
+            height: 44px !important;
+        }
 
-  #head-search.fade {
-      visibility: visible;
-      opacity:1;
+        .gsc-search-button {
+            height: 44px !important;
+            top: -3px !important;
+        }
+    }
 
-  }
-}
 
+    .no-js {
+        .ask-group.fade {
+            visibility: visible;
+            opacity: 1;
+        }
+
+        #head-search.fade {
+            visibility: visible;
+            opacity: 1;
+        }
+    }
 }
 
 .global-header.fixed {
     position: fixed;
     width: 100%;
     z-index: 1;
-	@media (min-width: $screen-sm-min) {
-		z-index: 7; //  _cs-shame.scss addition
-	}
-	
+
+    @media (min-width: $screen-sm-min) {
+        z-index: 7; //  _cs-shame.scss addition
+    }
 }
 
 .fixed + .main-content {
@@ -51,16 +65,16 @@
 }
 
 .fixed.nav-full-width-icons + .main-content {
-    padding-top: 145px; // Padding for full width nav with fixed header 
+    padding-top: 145px; // Padding for full width nav with fixed header
 }
 
 
- // Beta 5.0 addition
-.fixed + div :target:before {		
-	display: block;		
-	content: "";		
-	height: 140px;		 // Beta 5.0 addition (gives more space on top of targer)		
-	margin: -140px 0 0;			 // Beta 5.0 addition	
+// Beta 5.0 addition
+.fixed + div :target:before {
+    display: block;
+    content: "";
+    height: 140px; // Beta 5.0 addition (gives more space on top of targer)
+    margin: -140px 0 0; // Beta 5.0 addition
 }
 
 
@@ -80,8 +94,12 @@
             min-height: 55px; // Beta 6.0 addition
         }
 
-        .first-level-link [class^="ca-gov-icon-"] {
+        .first-level-link [class^="ca-gov-icon-"], .first-level-btn [class^="ca-gov-icon-"]:not(.carrot) {
             display: none;
+        }
+
+        .first-level-btn .carrot {
+            bottom: 9px;
         }
 
         .branding {
@@ -99,11 +117,22 @@
 
         .top-level-nav { // Beta 5.0 addition
             min-height: 55px; // Beta 6.0 addition
-            .first-level-link {
+            .first-level-link, .first-level-btn {
                 padding-top: 17px;
                 padding-bottom: 8px;
             }
         }
-    }
 
+        .full-width-nav {
+            .top-level-nav {
+                .first-level-btn {
+                    padding-top: 9px;
+                }
+
+                .first-level-link {
+                    padding-top: 17px;
+                }
+            }
+        }
+    }
 }

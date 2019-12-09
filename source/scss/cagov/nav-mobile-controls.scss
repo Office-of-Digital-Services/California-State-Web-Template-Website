@@ -56,9 +56,9 @@
 
 // Mobile controls inside main navigation
 .main-navigation .mobile-controls {
-		text-align: left;
-		background-color: $body-bg;
-	}
+    text-align: left;
+    background-color: $body-bg;
+}
 
 
 // INDIVIDUAL CONTROLS
@@ -87,15 +87,15 @@
 
 // IOS Icons FIX
 .main-nav-icons {
-	width:130px;
-    height:70px;
-    position:relative;
-    z-index:1;
-	}
-	
-	
-	
-	
+    width: 130px;
+    height: 70px;
+    position: relative;
+    z-index: 1;
+}
+
+
+
+
 // Hamburger menu to X transition
 .toggle-menu {
     width: 55px;
@@ -194,28 +194,38 @@
 
 // HAS SUB CARROT
 @media (max-width: $screen-xs-max) {
-    .has-sub .rotate {
+    /*button carrot*/
+    .first-level-btn[aria-expanded="false"] .rotate {
         display: block;
         position: absolute;
         top: 0;
         right: 0;
-        font-size: 1.5rem;
-        line-height: 2.8;
-        width: 80px;
+        font-size: 24px !important;
+        line-height: 64px !important;
+        width: 64px !important;
+        height: 64px !important;
         text-align: center;
         cursor: pointer;
         border: none;
-        height: 100%;
         -moz-transition: all .2s ease !important;
         -webkit-transition: all .2s ease !important;
         transition: all .2s ease !important;
     }
 
-    .has-sub.open .rotate {
+    .first-level-btn[aria-expanded="true"] .rotate {
         -moz-transform: rotate(90deg) !important;
         -webkit-transform: rotate(90deg) !important;
         transform: rotate(90deg) !important;
+        position: absolute;
+        width: 64px !important;
+        height: 64px !important;
+        line-height: 64px !important;
+        font-size: 24px !important;
+        top: 0;
+        right: 0;
+        text-align: center;
+        -moz-transition: all .2s ease !important;
+        -webkit-transition: all .2s ease !important;
+        transition: all .2s ease !important;
     }
-
 }
-

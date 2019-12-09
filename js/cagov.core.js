@@ -1,5 +1,5 @@
 /**
- * CA State Template v5.5 -  @version v5.5.9 -  11/15/2019 
+ * CA State Template v5.5 -  @version v5.5.10 -  12/9/2019 
   STYLES COMPILED FROM SOURCE (source/js) DO NOT MODIFY */
 /*! modernizr (Custom Build) | MIT *
  * https://modernizr.com/download/?-flexbox-setclasses !*/
@@ -7263,7 +7263,7 @@ $(document)
     .on('keydown.bs.dropdown.data-api', toggle + ', [role=menu]', $.fn.dropdown.Constructor.prototype.keydown);
   // Tab Extension
   // ===============================
-  
+
 var $tablist = $('.nav-tabs, .nav-pills')
     , $lis = $tablist.children('li')
     , $tabs = $tablist.find('[data-toggle="tab"], [data-toggle="pill"]');
@@ -7311,8 +7311,8 @@ $.fn.tab.Constructor.prototype.keydown = function (e) {
     var nextTab = $items.eq(index);
     if (nextTab.attr('role') === 'tab') {
 
-        nextTab.tab('show')      //Comment this line for dynamically loaded tabPabels, to save Ajax requests on arrow key navigation
-            .focus();
+        nextTab.tab('show');      //Comment this line for dynamically loaded tabPabels, to save Ajax requests on arrow key navigation
+        nextTab.focus();
     }
     // nextTab.focus()
 
@@ -7322,7 +7322,7 @@ $.fn.tab.Constructor.prototype.keydown = function (e) {
 
 $(document).on('keydown.tab.data-api', '[data-toggle="tab"], [data-toggle="pill"]', $.fn.tab.Constructor.prototype.keydown);
 
-   var tabactivate =    $.fn.tab.Constructor.prototype.activate;
+   var tabactivate = $.fn.tab.Constructor.prototype.activate;
 $.fn.tab.Constructor.prototype.activate = function (element, container, callback) {
     var $active = container.find('> .active');
     $active.find('[data-toggle=tab], [data-toggle=pill]').attr({ 'tabIndex': '-1', 'aria-selected': false });
@@ -7334,6 +7334,7 @@ $.fn.tab.Constructor.prototype.activate = function (element, container, callback
     element.find('[data-toggle=tab], [data-toggle=pill]').attr({ 'tabIndex': '0', 'aria-selected': true });
     element.filter('.tab-pane').attr({ 'aria-hidden': false, 'tabIndex': '0' });
 };
+
 /**
  * Owl Carousel v2.3.4
  * Copyright 2013-2018 David Deutsch
@@ -14701,983 +14702,528 @@ function trackExternalLinks (evnt) {
    NAVIGATION - /source/js/cagov/navigation.js
 ----------------------------------------- */
 
+
 /*
-Copyright © 2013 Adobe Systems Incorporated.
-
-Licensed under the Apache License, Version 2.0 (the “License”);
-you may not use this file except in compliance with the License.
-You may obtain a copy of the License at
-
-http://www.apache.org/licenses/LICENSE-2.0
-
-Unless required by applicable law or agreed to in writing, software
-distributed under the License is distributed on an “AS IS” BASIS,
-WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-See the License for the specific language governing permissions and
-limitations under the License.
-*/
-
-/**
- * See <a href="http://jquery.com">http://jquery.com</a>.
- * @name jquery
- * @class
- * See the jQuery Library  (<a href="http://jquery.com">http://jquery.com</a>) for full details.  This just
- * documents the function and classes that are added to jQuery by this plug-in.
+ * ES2015 accessible accordion system, using ARIA
+ * Website: https://van11y.net/accessible-accordion/
+ * License MIT: https://github.com/nico3333fr/van11y-accessible-accordion-aria/blob/master/LICENSE
  */
+'use strict';
 
-/**
- * See <a href="http://jquery.com">http://jquery.com</a>
- * @name fn
- * @class
- * See the jQuery Library  (<a href="http://jquery.com">http://jquery.com</a>) for full details.  This just
- * documents the function and classes that are added to jQuery by this plug-in.
- * @memberOf jquery
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+var loadConfig = function loadConfig() {
+
+    var CACHE = {};
+
+    var set = function set(id, config) {
+
+        CACHE[id] = config;
+    };
+    var get = function get(id) {
+        return CACHE[id];
+    };
+    var remove = function remove(id) {
+        return CACHE[id];
+    };
+
+    return {
+        set: set,
+        get: get,
+        remove: remove
+    };
+};
+
+var DATA_HASH_ID = 'data-nav-id';
+
+var pluginConfig = loadConfig();
+
+/** Find an element based on an Id
+ * @param  {String} id Id to find
+ * @param  {String} hash hash id (not mandatory)
+ * @return {Node} the element with the specified id
  */
+var findById = function findById(id, hash) {
+    return document.querySelector('#' + id + '[' + DATA_HASH_ID + '="' + hash + '"]');
+};
 
-/**
- * @fileOverview accessibleMegaMenu plugin
- *
- *<p>Licensed under the Apache License, Version 2.0 (the “License”)
- *<br />Copyright © 2013 Adobe Systems Incorporated.
- *<br />Project page <a href="https://github.com/adobe-accessibility/Accessible-Mega-Menu">https://github.com/adobe-accessibility/Accessible-Mega-Menu</a>
- * @version 0.1
- * @author Michael Jordan
- * @requires jquery
+/** add a class to a node
+ * @param  {Node} el node to attach class
+ * @param  {String} className the class to add
  */
-
-/*jslint browser: true, devel: true, plusplus: true, nomen: true */
-/*global jQuery, window, document */
-(function ($, window, document) {
-    "use strict";
-    var pluginName = "accessibleMegaMenu",
-        defaults = {
-            uuidPrefix: "accessible-megamenu", // unique ID's are required to indicate aria-owns, aria-controls and aria-labelledby
-            menuClass: "accessible-megamenu", // default css class used to define the megamenu styling
-            topNavItemClass: "accessible-megamenu-top-nav-item", // default css class for a top-level navigation item in the megamenu
-            panelClass: "accessible-megamenu-panel", // default css class for a megamenu panel
-            panelGroupClass: "accessible-megamenu-panel-group", // default css class for a group of items within a megamenu panel
-            hoverClass: "hover", // default css class for the hover state
-            focusClass: "focus", // default css class for the focus state
-            openClass: "open", // default css class for the open state,
-            toggleButtonClass: "toggle-menu", // default css class responsive toggle button
-            openDelay: 0, // default open delay when opening menu via mouseover
-            closeDelay: 250, // default open delay when opening menu via mouseover
-            openOnMouseover: false // default setting for whether menu should open on mouseover
-        },
-        Keyboard = {
-            BACKSPACE: 8,
-            COMMA: 188,
-            DELETE: 46,
-            DOWN: 40,
-            END: 35,
-            ENTER: 13,
-            ESCAPE: 27,
-            HOME: 36,
-            LEFT: 37,
-            PAGE_DOWN: 34,
-            PAGE_UP: 33,
-            PERIOD: 190,
-            RIGHT: 39,
-            SPACE: 32,
-            TAB: 9,
-            UP: 38,
-            keyMap: {
-                48: "0",
-                49: "1",
-                50: "2",
-                51: "3",
-                52: "4",
-                53: "5",
-                54: "6",
-                55: "7",
-                56: "8",
-                57: "9",
-                59: ";",
-                65: "a",
-                66: "b",
-                67: "c",
-                68: "d",
-                69: "e",
-                70: "f",
-                71: "g",
-                72: "h",
-                73: "i",
-                74: "j",
-                75: "k",
-                76: "l",
-                77: "m",
-                78: "n",
-                79: "o",
-                80: "p",
-                81: "q",
-                82: "r",
-                83: "s",
-                84: "t",
-                85: "u",
-                86: "v",
-                87: "w",
-                88: "x",
-                89: "y",
-                90: "z",
-                96: "0",
-                97: "1",
-                98: "2",
-                99: "3",
-                100: "4",
-                101: "5",
-                102: "6",
-                103: "7",
-                104: "8",
-                105: "9",
-                190: "."
-            }
-        },
-        clearTimeout = window.clearTimeout,
-        setTimeout = window.setTimeout,
-        isOpera = window.opera && window.opera.toString() === '[object Opera]';
-
-    // * @desc Creates a new accessible mega menu instance.
-    // * @param {jquery} element
-    // * @param {object} [options] Mega Menu options
-    // * @param {string} [options.uuidPrefix=accessible-megamenu] - Prefix for generated unique id attributes, which are required to indicate aria-owns, aria-controls and aria-labelledby
-    // * @param {string} [options.menuClass=accessible-megamenu] - CSS class used to define the megamenu styling
-    // * @param {string} [options.topNavItemClass=accessible-megamenu-top-nav-item] - CSS class for a top-level navigation item in the megamenu
-    // * @param {string} [options.panelClass=accessible-megamenu-panel] - CSS class for a megamenu panel
-    // * @param {string} [options.panelGroupClass=accessible-megamenu-panel-group] - CSS class for a group of items within a megamenu panel
-    // * @param {string} [options.hoverClass=hover] - CSS class for the hover state
-    // * @param {string} [options.focusClass=focus] - CSS class for the focus state
-    // * @param {string} [options.openClass=open] - CSS class for the open state
-    // * @constructor
-
-    function AccessibleMegaMenu(element, options) {
-        this.element = element;
-
-        // merge optional settings and defaults into settings
-        this.settings = $.extend({}, defaults, options);
-
-        this._defaults = defaults;
-        this._name = pluginName;
-
-        this.mouseTimeoutID = null;
-        this.focusTimeoutID = null;
-        this.mouseFocused = false;
-        this.justFocused = false;
-
-        this.init();
+var addClass = function addClass(el, className) {
+    if (el.classList) {
+        el.classList.add(className); // IE 10+
+    } else {
+        el.className += ' ' + className; // IE 8+
     }
+};
 
-    AccessibleMegaMenu.prototype = (function () {
+/** remove class from node
+ * @param  {Node} el node to remove class
+ * @param  {String} className the class to remove
+ */
+var removeClass = function removeClass(el, className) {
+    if (el.classList) {
+        el.classList.remove(className); // IE 10+
+    } else {
+        el.className = el.className.replace(new RegExp('(^|\\b)' + className.split(' ').join('|') + '(\\b|$)', 'gi'), ' '); // IE 8+
+    }
+};
 
-        /* private attributes and methods ------------------------ */
-        var uuid = 0,
-            keydownTimeoutDuration = 1000,
-            keydownSearchString = "",
-            isTouch = 'ontouchstart' in window || window.navigator.msMaxTouchPoints,
-            _getPlugin,
-            _addUniqueId,
-            _togglePanel,
-            _clickHandler,
-            _touchmoveHandler,
-            _clickOutsideHandler,
-            _DOMAttrModifiedHandler,
-            _focusInHandler,
-            _focusOutHandler,
-            _keyDownHandler,
-            _mouseDownHandler,
-            _mouseOverHandler,
-            _mouseOutHandler,
-            _clickToggleHandler,
-            _toggleExpandedEventHandlers,
-            _addEventHandlers,
-            _removeEventHandlers;
+// check if node has specified class
+// @param  {Node} el node to check
+// @param  {String} className the class
 
-        // * @name jQuery.fn.accessibleMegaMenu~_getPlugin
-        // * @desc Returns the parent accessibleMegaMenu instance for a given element
-        // * @param {jQuery} element
-        // * @memberof jQuery.fn.accessibleMegaMenu
-        // * @inner
-        // * @private
+var hasClass = function hasClass(el, className) {
+    if (el.classList) {
+        return el.classList.contains(className); // IE 10+
+    } else {
+        return new RegExp('(^| )' + className + '( |$)', 'gi').test(el.className); // IE 8+ ?
+    }
+};
 
-        _getPlugin = function (element) {
-            return $(element).closest(':data(plugin_' + pluginName + ')').data("plugin_" + pluginName);
-        };
+var setAttributes = function setAttributes(node, attrs) {
+    Object.keys(attrs).forEach(function (attribute) {
+        node.setAttribute(attribute, attrs[attribute]);
+    });
+};
 
-        // * @name jQuery.fn.accessibleMegaMenu~_addUniqueId
-        // * @desc Adds a unique id and element.
-        // * The id string starts with the
-        // * string defined in settings.uuidPrefix.
-        // * @param {jQuery} element
-        // * @memberof jQuery.fn.accessibleMegaMenu
-        // * @inner
-        // * @private
+/** search if element is or is contained in another element with attribute data-nav-id
+ * @param  {Node} el element (node)
+ * @param  {String} hashId the attribute data-hashtooltip-id
+ * @return {String} the value of attribute data-hashtooltip-id
+ */
+var searchParentHashId = function searchParentHashId(el, hashId) {
+    var found = false;
 
-        _addUniqueId = function (element) {
-            element = $(element);
-            var settings = this.settings;
-            if (!element.attr("id")) {
-                element.attr("id", settings.uuidPrefix + "-" + new Date().getTime() + "-" + ++uuid);
-            }
-        };
+    var parentElement = el;
+    while (parentElement.nodeType === 1 && parentElement && found === false) {
 
-        // * @name jQuery.fn.accessibleMegaMenu~_togglePanel
-        // * @desc Toggle the display of mega menu panels in response to an event.
-        // * The optional boolean value 'hide' forces all panels to hide.
-        // * @param {event} event
-        // * @param {Boolean} [hide] Hide all mega menu panels when true
-        // * @memberof jQuery.fn.accessibleMegaMenu
-        // * @inner
-        // * @private
+        if (parentElement.hasAttribute(hashId) === true) {
+            found = true;
+        } else {
+            parentElement = parentElement.parentNode;
+        }
+    }
+    if (found === true) {
+        return parentElement.getAttribute(hashId);
+    } else {
+        return '';
+    }
+};
+var searchParent = function searchParent(el, parentClass, hashId) {
+    var found = false;
 
-        _togglePanel = function (event, hide) {
-            var target = $(event.target),
-                that = this,
-                settings = this.settings,
-                menu = this.menu,
-                topli = target.closest('.' + settings.topNavItemClass),
-                panel = target.hasClass(settings.panelClass) ? target : target.closest('.' + settings.panelClass),
-                newfocus;
+    var parentElement = el;
+    while (parentElement && found === false) {
+        if (hasClass(parentElement, parentClass) === true && parentElement.getAttribute(DATA_HASH_ID) === hashId) {
+            found = true;
+        } else {
+            parentElement = parentElement.parentNode;
+        }
+    }
+    if (found === true) {
+        return parentElement.getAttribute('id');
+    } else {
+        return '';
+    }
+};
 
-            _toggleExpandedEventHandlers.call(this, true);
+var unSelectHeaders = function unSelectHeaders(elts, attrSelected) {
+    elts.forEach(function (header_node) {
+        setAttributes(header_node, _defineProperty({}, attrSelected, 'false'));
+    });
+};
 
-            if (hide) {
-                topli = menu.find('.' + settings.topNavItemClass + ' .' + settings.openClass + ':first').closest('.' + settings.topNavItemClass);
-                if (!(topli.is(event.relatedTarget) || topli.has(event.relatedTarget).length > 0)) {
-                    if ((event.type === 'mouseout' || event.type === 'focusout') && topli.has(document.activeElement).length > 0) {
-                        return;
-                    }
-                    topli.find('[aria-expanded]')
-                        .attr('aria-expanded', 'false')
-                        .removeClass(settings.openClass)
-                        .filter('.' + settings.panelClass)
-                        .attr('aria-hidden', 'true');
-                    // Add tabindex -1 attribute to the second level links to prevent tabbing thru them when they are not visible. Added in ver5.5.6
-                    topli.find(".second-level-link").attr("tabindex", "-1");
-                    if (event.type === 'keydown' && event.keyCode === Keyboard.ESCAPE || event.type === 'DOMAttrModified') {
-                        newfocus = topli.find(':tabbable:first');
-                        setTimeout(function () {
-                            menu.find('[aria-expanded].' + that.settings.panelClass).off('DOMAttrModified.accessible-megamenu');
-                            newfocus.focus();
-                            that.justFocused = false;
-                        }, 99);
-                    }
-                } else if (topli.length === 0) {
-                    menu.find('[aria-expanded=true]')
-                        .attr('aria-expanded', 'false')
-                        .removeClass(settings.openClass)
-                        .filter('.' + settings.panelClass)
-                        .attr('aria-hidden', 'true');
+var selectHeader = function selectHeader(el, attrSelected) {
+    el.setAttribute(attrSelected, true);
+};
 
-                }
+var selectHeaderInList = function selectHeaderInList(elts, param, attrSelected) {
+    var indice_trouve = undefined;
+    elts.forEach(function (header_node, index) {
 
+        if (header_node.getAttribute(attrSelected) === 'true') {
+            indice_trouve = index;
+        }
+    });
+
+    if (param === 'next') {
+        selectHeader(elts[indice_trouve + 1]);
+        setTimeout(function () {
+            elts[indice_trouve + 1].focus();
+        }, 0);
+    }
+    if (param === 'prev') {
+        selectHeader(elts[indice_trouve - 1]);
+        setTimeout(function () {
+            elts[indice_trouve - 1].focus();
+        }, 0);
+    }
+};
+
+var plugin = function plugin() {
+    var config = arguments.length <= 0 || arguments[0] === undefined ? {} : arguments[0];
+    // Findig if first-level-link has sub-nav then changing its clasee to first-level-btn
+    var $navigation = $('.main-navigation'),
+        $navItems = $navigation.find('.first-level-link'),
+        $navItemsWithSubs = $navigation.find('.sub-nav').siblings('.first-level-link');
+    $navItemsWithSubs.attr("class", "first-level-btn");
+    var className = $navItemsWithSubs.attr('class');
+
+    var CONFIG = _extends({
+        ACCORDION_JS: 'main-navigation',
+        ACCORDION_JS_HEADER: className, // Assigning button class to link that has sub-nav
+        ACCORDION_JS_PANEL: 'nav-panel',
+
+        ACCORDION_DATA_PREFIX_CLASS: 'data-nav-prefix-classes',
+        ACCORDION_DATA_OPENED: 'data-nav-opened',
+        ACCORDION_DATA_MULTISELECTABLE: 'data-nav-multiselectable',
+        ACCORDION_DATA_COOL_SELECTORS: true,
+
+        ACCORDION_PREFIX_IDS: 'nav',
+        ACCORDION_BUTTON_ID: '_tab',
+        ACCORDION_PANEL_ID: '_panel',
+
+        ACCORDION_STYLE: 'nav',
+        ACCORDION_TITLE_STYLE: 'has-sub-btn',
+        ACCORDION_HEADER_STYLE: 'nav-header',
+        ACCORDION_PANEL_STYLE: 'sub-nav',
+
+        ACCORDION_ROLE_TABLIST: 'tablist',
+        ACCORDION_ROLE_TAB: 'tab',
+        ACCORDION_ROLE_TABPANEL: 'tabpanel',
+
+        ATTR_ROLE: 'role',
+        ATTR_MULTISELECTABLE: 'aria-multiselectable',
+        ATTR_EXPANDED: 'aria-expanded',
+        ATTR_LABELLEDBY: 'aria-labelledby',
+        ATTR_HIDDEN: 'aria-hidden',
+        ATTR_CONTROLS: 'aria-controls',
+        ATTR_SELECTED: 'aria-selected'
+    }, config);
+
+    var HASH_ID = Math.random().toString(32).slice(2, 12);
+
+    pluginConfig.set(HASH_ID, CONFIG);
+    // Find all accordions inside a container
+    // @param  {Node} node Default document
+    // @return {Array}
+    var $listAccordions = function $listAccordions() {
+        var node = arguments.length <= 0 || arguments[0] === undefined ? document : arguments[0];
+        return [].slice.call(node.querySelectorAll('.' + CONFIG.ACCORDION_JS));
+    };
+
+    // Build accordions for a container
+    // @param  {Node} node
+    // @param  {addListeners} boolean
+    var attach = function attach(node) {
+
+        $listAccordions(node).forEach(function (accordion_node) {
+
+            var iLisible = 'z' + Math.random().toString(32).slice(2, 12); // avoid selector exception when starting by a number
+            var prefixClassName = accordion_node.hasAttribute(CONFIG.ACCORDION_DATA_PREFIX_CLASS) === true ? accordion_node.getAttribute(CONFIG.ACCORDION_DATA_PREFIX_CLASS) + '-' : '';
+            var coolSelectors = CONFIG.ACCORDION_DATA_COOL_SELECTORS === true;
+
+            // Findig if first-level-link has sub-nav then changing its class to first-level-btn
+            var $navigation = $('.main-navigation'),
+                $navItems = $navigation.find('.first-level-link'),
+                $navItemsWithSubs = $navigation.find('.sub-nav').siblings('a');
+            $navItemsWithSubs.attr("class", "first-level-btn");
+            var className = $navItemsWithSubs.attr('class');
+
+            // Init attributes accordion
+            if (!mobileView()) {
+                accordion_node.setAttribute(CONFIG.ATTR_MULTISELECTABLE, 'false');
             } else {
-                clearTimeout(that.focusTimeoutID);
-                topli.siblings()
-                    .find('[aria-expanded]')
-                    .attr('aria-expanded', 'false')
-                    .removeClass(settings.openClass)
-                    .filter('.' + settings.panelClass)
-                    .attr('aria-hidden', 'true');
-                topli.find('[aria-expanded]')
-                    .attr('aria-expanded', 'true')
-                    .addClass(settings.openClass)
-                    .filter('.' + settings.panelClass)
-                    .attr('aria-hidden', 'false');
-
-                // And change make second level links tabbable as sson as they are visible. Added in ver5.5.6
-                topli.find(".second-level-link").removeAttr("tabindex");
-
-                var pageScrollPosition = $('html')[0].scrollTop;
-                var openPanelTopPosition = $('.' + settings.panelClass + '.' + settings.openClass).parent().offset().top;
-
-                if (pageScrollPosition > openPanelTopPosition) {
-                    $('html')[0].scrollTop = openPanelTopPosition;
-                }
-
-                if (event.type === 'mouseover' && target.is(':tabbable') && topli.length === 1 && panel.length === 0 && menu.has(document.activeElement).length > 0) {
-                    target.focus();
-                    that.justFocused = false;
-                }
-
-                _toggleExpandedEventHandlers.call(that);
+                accordion_node.setAttribute(CONFIG.ATTR_MULTISELECTABLE, 'true');
             }
-        };
+            accordion_node.setAttribute(CONFIG.ATTR_ROLE, CONFIG.ACCORDION_ROLE_TABLIST);
+            // We already have main navigation id
+            // accordion_node.setAttribute('id', iLisible);
+            accordion_node.setAttribute(DATA_HASH_ID, HASH_ID);
 
-        // * @name jQuery.fn.accessibleMegaMenu~_clickHandler
-        // * @desc Handle click event on mega menu item
-        // * @param {event} Event object
-        // * @memberof jQuery.fn.accessibleMegaMenu
-        // * @inner
-        // * @private
+            addClass(accordion_node, prefixClassName + CONFIG.ACCORDION_STYLE);
 
-        _clickHandler = function (event) {
-            var target = $(event.target).closest(':tabbable'),
-                topli = target.closest('.' + this.settings.topNavItemClass),
-                panel = target.closest('.' + this.settings.panelClass);
-            if (topli.length === 1
-                && panel.length === 0
-                && topli.find('.' + this.settings.panelClass).length === 1) {
-                if (!target.hasClass(this.settings.openClass)) {
-                    event.preventDefault();
-                    event.stopPropagation();
-                    _togglePanel.call(this, event);
-                    this.justFocused = false;
+            var $listAccordionsHeader = [].slice.call(accordion_node.querySelectorAll('.' + className));
+            $listAccordionsHeader.forEach(function (header_node, index_header) {
+                var _setAttributes2, _setAttributes3;
+
+                // if we do not have cool selectors enabled,
+                // it is not a direct child, we ignore it
+                if (header_node.parentNode !== accordion_node && coolSelectors === false) {
+                    return;
+                }
+
+                var indexHeaderLisible = index_header + 1;
+                var accordionPanel = header_node.nextElementSibling;
+                var accordionHeaderText = header_node.innerHTML;
+                var accordionButton = document.createElement("BUTTON");
+                var accordionOpenedAttribute = header_node.hasAttribute(CONFIG.ACCORDION_DATA_OPENED) === true ? header_node.getAttribute(CONFIG.ACCORDION_DATA_OPENED) : '';
+
+                // set button with attributes
+                accordionButton.innerHTML = accordionHeaderText;
+                addClass(accordionButton, className);
+                addClass(accordionButton, prefixClassName + CONFIG.ACCORDION_HEADER_STYLE);
+                setAttributes(accordionButton, (_setAttributes2 = {}, _defineProperty(_setAttributes2, CONFIG.ATTR_ROLE, CONFIG.ACCORDION_ROLE_TAB), _defineProperty(_setAttributes2, 'id', CONFIG.ACCORDION_PREFIX_IDS + iLisible + CONFIG.ACCORDION_BUTTON_ID + indexHeaderLisible), _defineProperty(_setAttributes2, CONFIG.ATTR_CONTROLS, CONFIG.ACCORDION_PREFIX_IDS + iLisible + CONFIG.ACCORDION_PANEL_ID + indexHeaderLisible), _defineProperty(_setAttributes2, CONFIG.ATTR_SELECTED, 'false'), _defineProperty(_setAttributes2, 'type', 'button'), _defineProperty(_setAttributes2, DATA_HASH_ID, HASH_ID), _setAttributes2));
+
+                // place button
+                header_node.innerHTML = '';
+                header_node.appendChild(accordionButton);
+
+                // move title into panel
+                //accordionPanel.insertBefore(header_node, accordionPanel.firstChild);
+                // set title with attributes
+                addClass(header_node, prefixClassName + CONFIG.ACCORDION_TITLE_STYLE);
+                removeClass(header_node, className);
+
+                // set attributes to panels
+                addClass(accordionPanel, prefixClassName + CONFIG.ACCORDION_PANEL_STYLE);
+                setAttributes(accordionPanel, (_setAttributes3 = {}, _defineProperty(_setAttributes3, CONFIG.ATTR_ROLE, CONFIG.ACCORDION_ROLE_TABPANEL), _defineProperty(_setAttributes3, CONFIG.ATTR_LABELLEDBY, CONFIG.ACCORDION_PREFIX_IDS + iLisible + CONFIG.ACCORDION_BUTTON_ID + indexHeaderLisible), _defineProperty(_setAttributes3, 'id', CONFIG.ACCORDION_PREFIX_IDS + iLisible + CONFIG.ACCORDION_PANEL_ID + indexHeaderLisible), _defineProperty(_setAttributes3, DATA_HASH_ID, HASH_ID), _setAttributes3));
+
+                if (accordionOpenedAttribute === 'true') {
+                    accordionButton.setAttribute(CONFIG.ATTR_EXPANDED, 'true');
+                    header_node.removeAttribute(CONFIG.ACCORDION_DATA_OPENED);
+                    accordionPanel.setAttribute(CONFIG.ATTR_HIDDEN, 'false');
+                    //  $(accordionPanel).addClass("open");
+                    $(accordionPanel).find(".second-level-link").removeAttr("tabindex");
                 } else {
-                    if (this.justFocused) {
-                        event.preventDefault();
-                        event.stopPropagation();
-                        this.justFocused = false;
-                    } else if (isTouch || !isTouch && !this.settings.openOnMouseover) {
-                        event.preventDefault();
-                        event.stopPropagation();
-                        _togglePanel.call(this, event, target.hasClass(this.settings.openClass));
-                    }
+                    accordionButton.setAttribute(CONFIG.ATTR_EXPANDED, 'false');
+                    accordionPanel.setAttribute(CONFIG.ATTR_HIDDEN, 'true');
+                    // making sure all second level links are not tabable
+                    //  $(accordionPanel).removeClass("open");
+                    $(accordionPanel).find(".second-level-link").attr("tabindex", "-1");
                 }
-            }
-        };
-
-        /**
-         * @name jQuery.fn.accessibleMegaMenu~_touchmoveHandler
-         * @desc Handle touch move event on menu
-         * @memberof jQuery.fn.accessibleMegaMenu
-         * @inner
-         * @private
-         */
-        _touchmoveHandler = function () {
-            this.justMoved = true;
-        };
-
-        // * @name jQuery.fn.accessibleMegaMenu~_clickOutsideHandler
-        // * @desc Handle click event outside of a the megamenu
-        // * @param {event} Event object
-        // * @memberof jQuery.fn.accessibleMegaMenu
-        // * @inner
-        // * @private
-
-        _clickOutsideHandler = function (event) {
-            if ($(event.target).closest(this.menu).length === 0) {
-                event.preventDefault();
-                event.stopPropagation();
-                _togglePanel.call(this, event, true);
-            }
-        };
-        
-        // * @name jQuery.fn.accessibleMegaMenu~_DOMAttrModifiedHandler
-        // * @desc Handle DOMAttrModified event on panel to respond to Windows 8 Narrator ExpandCollapse pattern
-        // * @param {event} Event object
-        // * @memberof jQuery.fn.accessibleMegaMenu
-        // * @inner
-        // * @private
-
-        _DOMAttrModifiedHandler = function (event) {
-            if (event.originalEvent.attrName === 'aria-expanded'
-                && event.originalEvent.newValue === 'false'
-                && $(event.target).hasClass(this.settings.openClass)) {
-                event.preventDefault();
-                event.stopPropagation();
-                _togglePanel.call(this, event, true);
-            }
-        };
-
-        // * @name jQuery.fn.accessibleMegaMenu~_focusInHandler
-        // * @desc Handle focusin event on mega menu item.
-        // * @param {event} Event object
-        // * @memberof jQuery.fn.accessibleMegaMenu
-        // * @inner
-        // * @private
-
-        _focusInHandler = function (event) {
-            clearTimeout(this.focusTimeoutID);
-            var target = $(event.target),
-                panel = target.closest('.' + this.settings.panelClass);
-            target
-                .addClass(this.settings.focusClass);
-            this.justFocused = !this.mouseFocused || !this.settings.openOnMouseover && this.mouseFocused;
-            this.mouseFocused = false;
-            if (this.justFocused && this.panels.not(panel).filter('.' + this.settings.openClass).length) {
-                _togglePanel.call(this, event);
-            }
-        };
-
-        // * @name jQuery.fn.accessibleMegaMenu~_focusOutHandler
-        // * @desc Handle focusout event on mega menu item.
-        // * @param {event} Event object
-        // * @memberof jQuery.fn.accessibleMegaMenu
-        // * @inner
-        // * @private
-
-        _focusOutHandler = function (event) {
-            this.justFocused = false;
-            var that = this,
-                target = $(event.target),
-                topli = target.closest('.' + this.settings.topNavItemClass);
-            target
-                .removeClass(this.settings.focusClass);
-
-            if (window.cvox) {
-                // If ChromeVox is running...
-                that.focusTimeoutID = setTimeout(function () {
-                    window.cvox.Api.getCurrentNode(function (node) {
-                        if (topli.has(node).length) {
-                            // and the current node being voiced is in
-                            // the mega menu, clearTimeout,
-                            // so the panel stays open.
-                            clearTimeout(that.focusTimeoutID);
-                        } else {
-                            that.focusTimeoutID = setTimeout(function (scope, event, hide) {
-                                _togglePanel.call(scope, event, hide);
-                            }, 275, that, event, true);
-                        }
-                    });
-                }, 25);
-            } else {
-                that.focusTimeoutID = setTimeout(function () {
-                    if (that.mouseFocused && event.relatedTarget === null) {
-                        return;
-                    }
-                    _togglePanel.call(that, event, true);
-                }, 300);
-            }
-        };
-
-        // * @name jQuery.fn.accessibleMegaMenu~_keyDownHandler
-        // * @desc Handle keydown event on mega menu.
-        // * @param {event} Event object
-        // * @memberof jQuery.fn.accessibleMegaMenu
-        // * @inner
-        // * @private
-
-        _keyDownHandler = function (event) {
-            var that = this.constructor === AccessibleMegaMenu ? this : _getPlugin(this), // determine the AccessibleMegaMenu plugin instance
-                settings = that.settings,
-                target = $($(this).is('.' + settings.hoverClass + ':tabbable') ? this : event.target), // if the element is hovered the target is this, otherwise, its the focused element
-                menu = that.menu,
-                topnavitems = that.topnavitems,
-                topli = target.closest('.' + settings.topNavItemClass),
-                tabbables = menu.find(':tabbable'),
-                panel = target.hasClass(settings.panelClass) ? target : target.closest('.' + settings.panelClass),
-                panelGroups = panel.find('.' + settings.panelGroupClass),
-                currentPanelGroup = target.closest('.' + settings.panelGroupClass),
-                next,
-                keycode = event.keyCode || event.which,
-                start,
-                i,
-                o,
-                label,
-                found = false,
-                newString = Keyboard.keyMap[event.keyCode] || '',
-                regex,
-                isTopNavItem = topli.length === 1 && panel.length === 0;
-
-            if (target.is("input:focus, select:focus, textarea:focus, button:focus")) {
-                // if the event target is a form element we should handle keydown normally
-                return;
-            }
-
-            if (target.is('.' + settings.hoverClass + ':tabbable')) {
-                $('html').off('keydown.accessible-megamenu');
-            }
-
-            switch (keycode) {
-                case Keyboard.ESCAPE:
-                    this.mouseFocused = false;
-                    _togglePanel.call(that, event, true);
-                    break;
-                case Keyboard.DOWN:
-                    event.preventDefault();
-                    this.mouseFocused = false;
-                    if (isTopNavItem) {
-                        _togglePanel.call(that, event);
-                        found = topli.find('.' + settings.panelClass + ' :tabbable:first').focus().length === 1;
-                    } else {
-                        found = tabbables.filter(':gt(' + tabbables.index(target) + '):first').focus().length === 1;
-                    }
-
-                    if (!found && isOpera && (event.ctrlKey || event.metaKey)) {
-                        tabbables = $(':tabbable');
-                        i = tabbables.index(target);
-                        found = $(':tabbable:gt(' + $(':tabbable').index(target) + '):first').focus().length === 1;
-                    }
-                    break;
-                case Keyboard.UP:
-                    event.preventDefault();
-                    this.mouseFocused = false;
-                    if (isTopNavItem && target.hasClass(settings.openClass)) {
-                        _togglePanel.call(that, event, true);
-                        next = topnavitems.filter(':lt(' + topnavitems.index(topli) + '):last');
-                        if (next.children('.' + settings.panelClass).length) {
-                            found = next.find('[aria-expanded]')
-                                .attr('aria-expanded', 'true')
-                                .addClass(settings.openClass)
-                                .filter('.' + settings.panelClass)
-                                .attr('aria-hidden', 'false')
-                                .find(':tabbable:last')
-                                .focus() === 1;
-                        }
-                    } else if (!isTopNavItem) {
-                        found = tabbables.filter(':lt(' + tabbables.index(target) + '):last').focus().length === 1;
-                    }
-
-                    if (!found && isOpera && (event.ctrlKey || event.metaKey)) {
-                        tabbables = $(':tabbable');
-                        i = tabbables.index(target);
-                        found = $(':tabbable:lt(' + $(':tabbable').index(target) + '):first').focus().length === 1;
-                    }
-                    break;
-                case Keyboard.RIGHT:
-                    event.preventDefault();
-                    this.mouseFocused = false;
-                    if (isTopNavItem) {
-                        found = topnavitems.filter(':gt(' + topnavitems.index(topli) + '):first').find(':tabbable:first').focus().length === 1;
-                    } else {
-                        if (panelGroups.length && currentPanelGroup.length) {
-                            // if the current panel contains panel groups, and we are able to focus the first tabbable element of the next panel group
-                            found = panelGroups.filter(':gt(' + panelGroups.index(currentPanelGroup) + '):first').find(':tabbable:first').focus().length === 1;
-                        }
-
-                        if (!found) {
-                            found = topli.find(':tabbable:first').focus().length === 1;
-                        }
-                    }
-                    break;
-                case Keyboard.LEFT:
-                    event.preventDefault();
-                    this.mouseFocused = false;
-                    if (isTopNavItem) {
-                        found = topnavitems.filter(':lt(' + topnavitems.index(topli) + '):last').find(':tabbable:first').focus().length === 1;
-                    } else {
-                        if (panelGroups.length && currentPanelGroup.length) {
-                            // if the current panel contains panel groups, and we are able to focus the first tabbable element of the previous panel group
-                            found = panelGroups.filter(':lt(' + panelGroups.index(currentPanelGroup) + '):last').find(':tabbable:first').focus().length === 1;
-                        }
-
-                        if (!found) {
-                            found = topli.find(':tabbable:first').focus().length === 1;
-                        }
-                    }
-                    break;
-                case Keyboard.TAB:
-                    this.mouseFocused = false;
-                    i = tabbables.index(target);
-                    if (event.shiftKey && isTopNavItem && target.hasClass(settings.openClass)) {
-                        _togglePanel.call(that, event, true);
-                        next = topnavitems.filter(':lt(' + topnavitems.index(topli) + '):last');
-                        if (next.children('.' + settings.panelClass).length) {
-                            found = next.children()
-                                .attr('aria-expanded', 'true')
-                                .addClass(settings.openClass)
-                                .filter('.' + settings.panelClass)
-                                .attr('aria-hidden', 'false')
-                                .find(':tabbable:last')
-                                .focus();
-                        }
-                    } else if (event.shiftKey && i > 0) {
-                        found = tabbables.filter(':lt(' + i + '):last').focus().length === 1;
-                    } else if (!event.shiftKey && i < tabbables.length - 1) {
-                        found = tabbables.filter(':gt(' + i + '):first').focus().length === 1;
-                    } else if (isOpera) {
-                        tabbables = $(':tabbable');
-                        i = tabbables.index(target);
-                        if (event.shiftKey) {
-                            found = $(':tabbable:lt(' + $(':tabbable').index(target) + '):last').focus().length === 1;
-                        } else {
-                            found = $(':tabbable:gt(' + $(':tabbable').index(target) + '):first').focus().length === 1;
-                        }
-                    }
-
-                    if (found) {
-                        event.preventDefault();
-                    }
-                    break;
-                case Keyboard.SPACE:
-                case Keyboard.ENTER:
-                    if (isTopNavItem) {
-                        _clickHandler.call(that, event);
-
-                    } else {
-                        return true;
-                    }
-                    break;
-                default:
-                    // alphanumeric filter
-                    clearTimeout(this.keydownTimeoutID);
-
-                    keydownSearchString += newString !== keydownSearchString ? newString : '';
-
-                    if (keydownSearchString.length === 0) {
-                        return;
-                    }
-
-                    this.keydownTimeoutID = setTimeout(function () {
-                        keydownSearchString = '';
-                    }, keydownTimeoutDuration);
-
-                    if (isTopNavItem && !target.hasClass(settings.openClass)) {
-                        tabbables = tabbables.filter(':not(.' + settings.panelClass + ' :tabbable)');
-                    } else {
-                        tabbables = topli.find(':tabbable');
-                    }
-
-                    if (event.shiftKey) {
-                        tabbables = $(tabbables.get()
-                            .reverse());
-                    }
-
-                    for (i = 0; i < tabbables.length; i++) {
-                        o = tabbables.eq(i);
-                        if (o.is(target)) {
-                            start = keydownSearchString.length === 1 ? i + 1 : i;
-                            break;
-                        }
-                    }
-
-                    regex = new RegExp('^' + keydownSearchString.replace(/[\-\[\]{}()*+?.,\\\^$|#\s]/g, '\\$&'), 'i');
-
-                    for (i = start; i < tabbables.length; i++) {
-                        o = tabbables.eq(i);
-                        label = $.trim(o.text());
-                        if (regex.test(label)) {
-                            found = true;
-                            o.focus();
-                            break;
-                        }
-                    }
-                    if (!found) {
-                        for (i = 0; i < start; i++) {
-                            o = tabbables.eq(i);
-                            label = $.trim(o.text());
-                            if (regex.test(label)) {
-                                o.focus();
-                                break;
-                            }
-                        }
-                    }
-                    break;
-            }
-            that.justFocused = false;
-        };
-
-        // * @name jQuery.fn.accessibleMegaMenu~_mouseDownHandler
-        // * @desc Handle mousedown event on mega menu.
-        // * @param {event} Event object
-        // * @memberof accessibleMegaMenu
-        // * @inner
-        // * @private
-
-        _mouseDownHandler = function (event) {
-            if ($(event.target).closest(this.settings.panelClass) || $(event.target).closest(":focusable").length) {
-                this.mouseFocused = true;
-                if ($(event.target).closest(this.settings.menuClass)) {
-                    $('html').on('keydown.accessible-megamenu', $.proxy(_keyDownHandler, event.target));
-                }
-            }
-            clearTimeout(this.mouseTimeoutID);
-            this.mouseTimeoutID = setTimeout(function () {
-                clearTimeout(this.focusTimeoutID);
-            }, 1);
-        };
-
-        // * @name jQuery.fn.accessibleMegaMenu~_mouseOverHandler
-        // * @desc Handle mouseover event on mega menu.
-        // * @param {event} Event object
-        // * @memberof jQuery.fn.accessibleMegaMenu
-        // * @inner
-        // * @private
-
-        _mouseOverHandler = function (event) {
-            clearTimeout(this.mouseTimeoutID);
-            var that = this;
-
-            if (!that.settings.openOnMouseover) {
-                return;
-            }
-
-            this.mouseTimeoutID = setTimeout(function () {
-                $(event.target).addClass(that.settings.hoverClass);
-                _togglePanel.call(that, event);
-                if ($(event.target).closest(that.settings.menuClass)) {
-                    $('html').on('keydown.accessible-megamenu', $.proxy(_keyDownHandler, event.target));
-                }
-            }, this.settings.openDelay);
-        };
-
-        // * @name jQuery.fn.accessibleMegaMenu~_mouseOutHandler
-        // * @desc Handle mouseout event on mega menu.
-        // * @param {event} Event object
-        // * @memberof jQuery.fn.accessibleMegaMenu
-        // * @inner
-        // * @private
-
-        _mouseOutHandler = function (event) {
-            clearTimeout(this.mouseTimeoutID);
-            var that = this;
-
-            if (!that.settings.openOnMouseover) {
-                return;
-            }
-
-            $(event.target)
-                .removeClass(that.settings.hoverClass);
-
-            that.mouseTimeoutID = setTimeout(function () {
-                _togglePanel.call(that, event, true);
-            }, this.settings.closeDelay);
-            if ($(event.target).is(':tabbable')) {
-                $('html').off('keydown.accessible-megamenu');
-            }
-        };
-
-        // * @name jQuery.fn.accessibleMegaMenu~_clickToggleHandler
-        // * @desc Handle click event on menu toggle button.
-        // * @memberof jQuery.fn.accessibleMegaMenu
-        // * @inner
-        // * @private
-
-        _clickToggleHandler = function () {
-            var isExpanded = this.toggleButton.attr('aria-expanded') === 'true';
-
-            this.toggleButton.attr({ 'aria-expanded': !isExpanded, 'aria-pressed': !isExpanded });
-
-
-        };
-
-        _toggleExpandedEventHandlers = function (hide) {
-            var menu = this.menu;
-            if (hide) {
-                $('html').off('mouseup.outside-accessible-megamenu, touchend.outside-accessible-megamenu, mspointerup.outside-accessible-megamenu,  pointerup.outside-accessible-megamenu');
-
-                menu.find('[aria-expanded].' + this.settings.panelClass).off('DOMAttrModified.accessible-megamenu');
-            } else {
-                $('html').on('mouseup.outside-accessible-megamenu, touchend.outside-accessible-megamenu, mspointerup.outside-accessible-megamenu,  pointerup.outside-accessible-megamenu', $.proxy(_clickOutsideHandler, this));
-
-                /* Narrator in Windows 8 automatically toggles the aria-expanded property on double tap or click.
-                   To respond to the change to collapse the panel, we must add a listener for a DOMAttrModified event. */
-                menu.find('[aria-expanded=true].' + this.settings.panelClass).on('DOMAttrModified.accessible-megamenu', $.proxy(_DOMAttrModifiedHandler, this));
-            }
-        };
-
-        _addEventHandlers = function () {
-            var menu = this.menu,
-                toggleButton = this.toggleButton;
-            menu.on("focusin.accessible-megamenu", ":focusable, ." + this.settings.panelClass, $.proxy(_focusInHandler, this))
-                .on("focusout.accessible-megamenu", ":focusable, ." + this.settings.panelClass, $.proxy(_focusOutHandler, this))
-                .on("keydown.accessible-megamenu", $.proxy(_keyDownHandler, this))
-                .on("mouseover.accessible-megamenu", $.proxy(_mouseOverHandler, this))
-                .on("mouseout.accessible-megamenu", $.proxy(_mouseOutHandler, this))
-                .on("mousedown.accessible-megamenu", $.proxy(_mouseDownHandler, this))
-                .on("click.accessible-megamenu", $.proxy(_clickHandler, this));
-
-            toggleButton.on('click.accessible-megamenu', $.proxy(_clickToggleHandler, this));
-
-            if (isTouch) {
-                menu.on("touchmove.accessible-megamenu", $.proxy(_touchmoveHandler, this));
-            }
-
-            if ($(document.activeElement).closest(menu).length) {
-                $(document.activeElement).trigger("focusin.accessible-megamenu");
-            }
-        };
-
-        _removeEventHandlers = function () {
-            var menu = this.menu,
-                toggleButton = this.toggleButton;
-            menu.off('.accessible-megamenu');
-            if (menu.find('[aria-expanded=true].' + this.settings.panelClass).length) {
-                _toggleExpandedEventHandlers.call(this, true);
-            }
-
-            toggleButton.off('.accessible-megamenu');
-        };
-
-        /* public attributes and methods ------------------------- */
-        return {
-            constructor: AccessibleMegaMenu,
-
-            /**
-             * @lends jQuery.fn.accessibleMegaMenu
-             * @desc Initializes an instance of the accessibleMegaMenu plugins
-             * @memberof jQuery.fn.accessibleMegaMenu
-             * @instance
-             */
-            init: function () {
-                var settings = this.settings,
-                    nav = $(this.element),
-                    menu = nav.children('ol,ul').first(),
-                    topnavitems = menu.children(),
-                    toggleButton = $('.toggle-menu');
-                this.start(settings, nav, menu, topnavitems, toggleButton);
-            },
-
-            start: function (settings, nav, menu, topnavitems, toggleButton) {
-                var that = this;
-                this.settings = settings;
-                this.menu = menu;
-                this.topnavitems = topnavitems;
-                this.toggleButton = toggleButton;
-
-                 // nav.attr("role", "navigation"); //it is already inside of <nav> no need for role.
-                _addUniqueId.call(that, menu);
-                menu.addClass(settings.menuClass);
-                menu.addClass(['js', settings.menuClass].join('-'));
-                topnavitems.each(function (i, topnavitem) {
-                    var topnavitemlink, topnavitempanel;
-                    topnavitem = $(topnavitem);
-                    topnavitem.addClass(settings.topNavItemClass);
-                    topnavitemlink = topnavitem.find(":tabbable:first");
-                    topnavitempanel = topnavitem.children(":not(:tabbable):last");
-                    _addUniqueId.call(that, topnavitemlink);
-                    if (topnavitempanel.length) {
-                        _addUniqueId.call(that, topnavitempanel);
-                        topnavitemlink.attr({
-                            "role": "button",
-                            "aria-controls": topnavitempanel.attr("id"),
-                            "aria-expanded": false,
-                            "tabindex": 0
-                        });
-
-                        topnavitempanel.attr({
-                            "role": "region",
-                            "aria-expanded": false,
-                            "aria-hidden": true
-                        })
-                            .addClass(settings.panelClass)
-                            .not("[aria-labelledby]")
-                            .attr("aria-labelledby", topnavitemlink.attr("id"));
-                    }
-                });
-
-                this.panels = menu.find("." + settings.panelClass);
-
-                menu.find("hr").attr("role", "separator");
-
-                toggleButton.addClass(settings.toggleButtonClass);
-                toggleButton.attr({ 'aria-expanded': false, 'aria-pressed': false, 'aria-controls': menu.attr('id') });
-
-                _addEventHandlers.call(this);
-            },
-
-
-            // * @desc Removes maga menu javascript behavior
-            // * @example $(selector).accessibleMegaMenu("destroy");
-            // * @return {object}
-            // * @memberof jQuery.fn.accessibleMegaMenu
-            // * @instance
-
-            destroy: function () {
-                this.menu.removeClass(['js', this.settings.menuClass].join('-'));
-                _removeEventHandlers.call(this, true);
-            },
-
-            // * @desc Get default values
-            // * @example $(selector).accessibleMegaMenu("getDefaults");
-            // * @return {object}
-            // * @memberof jQuery.fn.accessibleMegaMenu
-            // * @instance
-
-            getDefaults: function () {
-                return this._defaults;
-            },
-
-            // * @desc Get any option set to plugin using its name (as string)
-            // * @example $(selector).accessibleMegaMenu("getOption", some_option);
-            // * @param {string} opt
-            // * @return {string}
-            // * @memberof jQuery.fn.accessibleMegaMenu
-            // * @instance
-
-            getOption: function (opt) {
-                return this.settings[opt];
-            },
-
-            // * @desc Get all options
-            // * @example $(selector).accessibleMegaMenu("getAllOptions");
-            // * @return {object}
-            // * @memberof jQuery.fn.accessibleMegaMenu
-            // * @instance
-
-            getAllOptions: function () {
-                return this.settings;
-            },
-
-            // * @desc Set option
-            // * @example $(selector).accessibleMegaMenu("setOption", "option_name",  "option_value",  reinitialize);
-            // * @param {string} opt - Option name
-            // * @param {string} val - Option value
-            // * @param {boolean} [reinitialize] - boolean to re-initialize the menu.
-            // * @memberof jQuery.fn.accessibleMegaMenu
-            // * @instance
-
-            setOption: function (opt, value, reinitialize) {
-                this.settings[opt] = value;
-                if (reinitialize) {
-                    this.init();
-                }
-            }
-        };
-    }());
-
-
-    $.fn[pluginName] = function (options) {
-        return this.each(function () {
-            var pluginInstance = $.data(this, "plugin_" + pluginName);
-            if (!pluginInstance) {
-                $.data(this, "plugin_" + pluginName, new $.fn[pluginName].AccessibleMegaMenu(this, options));
-            } else if (typeof pluginInstance[options] === 'function') {
-                pluginInstance[options].apply(pluginInstance, Array.prototype.slice.call(arguments, 1));
-            }
+            });
         });
     };
 
-    $.fn[pluginName].AccessibleMegaMenu = AccessibleMegaMenu;
+    return {
+        attach: attach
+        /*,
+                destroy*/
+    };
+};
 
-    // * @private
+var main = function main() {
 
-    function visible(element) {
-        return $.expr.filters.visible(element) && !$(element).parents().addBack().filter(function () {
-            return $.css(this, "visibility") === "hidden";
-        }).length;
-    }
+    /* listeners for all configs */
+    ['click', 'keydown', 'focus'].forEach(function (eventName) {
 
-    // * @private
+        document.body.addEventListener(eventName, function (e) {
 
-    function focusable(element, isTabIndexNotNaN) {
-        var map, mapName, img,
-            nodeName = element.nodeName.toLowerCase();
-        if ("area" === nodeName) {
-            map = element.parentNode;
-            mapName = map.name;
-            if (!element.href || !mapName || map.nodeName.toLowerCase() !== "map") {
-                return false;
+            var hashId = searchParentHashId(e.target, DATA_HASH_ID); //e.target.dataset.hashId;
+            // search if click on button or on element in a button contains data-hash-id (it is needed to load config and know which class to search)
+
+
+
+            if (hashId !== '') {
+                (function () {
+
+                    // loading config from element
+                    var CONFIG = pluginConfig.get(hashId);
+
+                    // focus on button
+                    if (hasClass(e.target, 'first-level-btn') === true && eventName === 'focus') {
+                        (function () {
+                            var buttonTag = e.target;
+                            var accordionContainer = findById(searchParent(buttonTag, CONFIG.ACCORDION_JS, hashId), hashId);
+                            var coolSelectors = CONFIG.ACCORDION_DATA_COOL_SELECTORS === true;
+                            var $accordionAllHeaders = [].slice.call(accordionContainer.querySelectorAll('.first-level-btn'));
+
+                            if (coolSelectors === false) {
+                                $accordionAllHeaders = $accordionAllHeaders.filter(function (element) {
+                                    return element.parentNode.parentNode === accordionContainer;
+                                });
+                            }
+
+                            unSelectHeaders($accordionAllHeaders, CONFIG.ATTR_SELECTED);
+
+                            selectHeader(buttonTag, CONFIG.ATTR_SELECTED);
+                        })();
+                    }
+
+                    // click on button
+                    if (hasClass(e.target, 'first-level-btn') === true && eventName === 'click') {
+                        (function () {
+                            var buttonTag = e.target;
+                            var accordionContainer = findById(searchParent(buttonTag, CONFIG.ACCORDION_JS, hashId), hashId);
+                            var coolSelectors = CONFIG.ACCORDION_DATA_COOL_SELECTORS === true;
+                            var $accordionAllHeaders = [].slice.call(accordionContainer.querySelectorAll('.first-level-btn'));
+                            var accordionMultiSelectable = accordionContainer.getAttribute(CONFIG.ATTR_MULTISELECTABLE);
+                            var destination = findById(buttonTag.getAttribute(CONFIG.ATTR_CONTROLS), hashId);
+                            var stateButton = buttonTag.getAttribute(CONFIG.ATTR_EXPANDED);
+
+
+                            if (coolSelectors === false) {
+                                $accordionAllHeaders = $accordionAllHeaders.filter(function (element) {
+                                    return element.parentNode.parentNode === accordionContainer;
+                                });
+                            }
+
+                            // if closed
+                            if (stateButton === 'false') {
+                                buttonTag.setAttribute(CONFIG.ATTR_EXPANDED, true);
+                                destination.removeAttribute(CONFIG.ATTR_HIDDEN);
+                                $(destination).addClass("open");
+                                // making second level links tabbable if sub nav panel is opened
+                                $(destination).find(".second-level-link").removeAttr("tabindex");
+                            } else {
+                                buttonTag.setAttribute(CONFIG.ATTR_EXPANDED, false);
+                                destination.setAttribute(CONFIG.ATTR_HIDDEN, true);
+                                $(destination).removeClass("open");
+                                // adding tabindex to links to make sure they are not tabable if sub nav panel is closed
+                                $(destination).find(".second-level-link").attr("tabindex", "-1");
+                            }
+
+                            if (!mobileView()) {
+                                $accordionAllHeaders.forEach(function (header_node) {
+
+                                    var destinationPanel = findById(header_node.getAttribute(CONFIG.ATTR_CONTROLS), hashId);
+
+                                    if (header_node !== buttonTag) {
+                                        header_node.setAttribute(CONFIG.ATTR_SELECTED, false);
+                                        header_node.setAttribute(CONFIG.ATTR_EXPANDED, false);
+                                        $(destinationPanel).removeClass("open");
+                                        // destinationPanel.setAttribute(CONFIG.ATTR_HIDDEN, true);
+                                    } else {
+                                        header_node.setAttribute(CONFIG.ATTR_SELECTED, true);
+                                    }
+                                });
+                            }
+
+                            setTimeout(function () {
+                                buttonTag.focus();
+                            }, 0);
+                            e.stopPropagation(); // making icons and other buttons elements clickable  https://css-tricks.com/slightly-careful-sub-elements-clickable-things/
+                            e.preventDefault();
+                        })();
+                    }
+
+                    // keyboard management for headers
+                    if (hasClass(e.target, 'first-level-btn') === true && eventName === 'keydown') {
+                        (function () {
+                            var buttonTag = e.target;
+                            var idAccordionContainer = searchParent(buttonTag, CONFIG.ACCORDION_JS, hashId);
+                            var accordionContainer = findById(idAccordionContainer, hashId);
+
+                            var coolSelectors = CONFIG.ACCORDION_DATA_COOL_SELECTORS === true;
+                            var $accordionAllHeaders = [].slice.call(accordionContainer.querySelectorAll('.first-level-btn'));
+
+                            if (coolSelectors === false) {
+                                $accordionAllHeaders = $accordionAllHeaders.filter(function (element) {
+                                    return element.parentNode.parentNode === accordionContainer;
+                                });
+                            }
+
+                            // strike home on a tab => 1st tab
+                            if (e.keyCode === 36) {
+                                unSelectHeaders($accordionAllHeaders, CONFIG.ATTR_SELECTED);
+                                selectHeader($accordionAllHeaders[0], CONFIG.ATTR_SELECTED);
+                                setTimeout(function () {
+                                    $accordionAllHeaders[0].focus();
+                                }, 0);
+                                e.preventDefault();
+                            }
+                            // strike end on the tab => last tab
+                            else if (e.keyCode === 35) {
+                                unSelectHeaders($accordionAllHeaders, CONFIG.ATTR_SELECTED);
+                                selectHeader($accordionAllHeaders[$accordionAllHeaders.length - 1], CONFIG.ATTR_SELECTED);
+                                setTimeout(function () {
+                                    $accordionAllHeaders[$accordionAllHeaders.length - 1].focus();
+                                }, 0);
+                                e.preventDefault();
+                            }
+                            // strike up or left on the tab => previous tab
+                            else if ((e.keyCode === 37 || e.keyCode === 38) && !e.ctrlKey) {
+
+                                // if first selected = select last
+                                if ($accordionAllHeaders[0].getAttribute(CONFIG.ATTR_SELECTED) === 'true') {
+                                    unSelectHeaders($accordionAllHeaders, CONFIG.ATTR_SELECTED);
+                                    selectHeader($accordionAllHeaders[$accordionAllHeaders.length - 1], CONFIG.ATTR_SELECTED);
+                                    setTimeout(function () {
+                                        $accordionAllHeaders[$accordionAllHeaders.length - 1].focus();
+                                    }, 0);
+                                    e.preventDefault();
+                                } else {
+                                    selectHeaderInList($accordionAllHeaders, 'prev', CONFIG.ATTR_SELECTED);
+                                    e.preventDefault();
+                                }
+                            }
+                            // strike down or right in the tab => next tab
+                            else if ((e.keyCode === 40 || e.keyCode === 39) && !e.ctrlKey) {
+
+                                // if last selected = select first
+                                if ($accordionAllHeaders[$accordionAllHeaders.length - 1].getAttribute(CONFIG.ATTR_SELECTED) === 'true') {
+                                    unSelectHeaders($accordionAllHeaders, CONFIG.ATTR_SELECTED);
+                                    selectHeader($accordionAllHeaders[0], CONFIG.ATTR_SELECTED);
+                                    setTimeout(function () {
+                                        $accordionAllHeaders[0].focus();
+                                    }, 0);
+                                    e.preventDefault();
+                                } else {
+                                    selectHeaderInList($accordionAllHeaders, 'next', CONFIG.ATTR_SELECTED);
+                                    e.preventDefault();
+                                }
+                            }
+                        })();
+                    }
+                })();
             }
-            img = $("img[usemap=#" + mapName + "]")[0];
-            return !!img && visible(img);
-        }
-        return (/input|select|textarea|button|object/.test(nodeName) ? !element.disabled :
-            "a" === nodeName ?
-                element.href || isTabIndexNotNaN :
-                isTabIndexNotNaN) &&
-            // the element and all of its ancestors must be visible
-            visible(element);
+        }, true);
+    });
+
+    return plugin;
+};
+
+window.van11yAccessibleAccordionAria = main();
+
+var onLoad = function onLoad() {
+    var expand_default = window.van11yAccessibleAccordionAria();
+    expand_default.attach();
+
+    document.removeEventListener('DOMContentLoaded', onLoad);
+};
+
+document.addEventListener('DOMContentLoaded', onLoad);
+//window.addEventListener("resize", navreset);
+
+
+function NavReset() {
+    //RESET
+    $(".first-level-btn").attr("aria-expanded", "false");
+    $(".first-level-btn").attr("aria-selected", "false");
+    $(".sub-nav").attr("aria-hidden", "true").removeClass("open");
+    $(".second-level-link").attr("tabindex", "-1");
+    var $toggleSubNav = $('<div class="ca-gov-icon-caret-right rotate" aria-hidden="true"></div>');
+    if (window.innerWidth < 768) {
+        $('.has-sub').append($toggleSubNav);
+        $(".rotate").css("display", "block");
+    }
+    else {
+        $("#navigation").removeClass("collapse").removeAttr("aria-hidden");
+        $(".rotate").css("display", "none");
     }
 
-    $.extend($.expr[":"], {
-        data: $.expr.createPseudo ? $.expr.createPseudo(function (dataName) {
-            return function (elem) {
-                return !!$.data(elem, dataName);
-            };
-        }) : // support: jQuery <1.8
-            function (elem, i, match) {
-                return !!$.data(elem, match[3]);
-            },
+}
 
-        focusable: function (element) {
-            return focusable(element, !isNaN($.attr(element, "tabindex")));
-        },
+function mobileView() {
+    return $('.global-header .mobile-controls').css('display') !== "none"; // mobile view uses arrow to show subnav instead of first touch
+}
 
-        tabbable: function (element) {
-            var tabIndex = $.attr(element, "tabindex"),
-                isTabIndexNaN = isNaN(tabIndex);
-            return (isTabIndexNaN || tabIndex >= 0) && focusable(element, !isTabIndexNaN);
-        }
+// Remove href if <a> has a link
+$(document).ready(function () {
+    // Change <a> tag to div since you can't place button into <a> tag
+    var subnavbtn = $(".nav-item .has-sub-btn");
+    $(".has-sub-btn").removeAttr("href");
+    subnavbtn.replaceWith(function () {
+        return $('<div/>', {
+            class: 'has-sub-btn',
+            html: this.innerHTML
+        });
     });
 
 
@@ -15685,63 +15231,14 @@ limitations under the License.
 
 
 
-
-}(jQuery, window, document));
-
-
-$("nav:first").accessibleMegaMenu({
-    /* prefix for generated unique id attributes, which are required 
-       to indicate aria-owns, aria-controls and aria-labelledby */
-    uuidPrefix: "accessible-menu",
-
-    /* css class used to define the megamenu styling */
-    menuClass: "nav-menu",
-
-    /* css class for a top-level navigation item in the megamenu */
-    topNavItemClass: "nav-item",
-
-    /* css class for a megamenu panel */
-    panelClass: "sub-nav",
-
-    /* css class for a group of items within a megamenu panel */
-    panelGroupClass: "sub-nav-group",
-
-    /* css class for the hover state */
-    hoverClass: "hover",
-
-    /* css class for the focus state */
-    focusClass: "focus",
-
-    /* css class for the open state */
-    openClass: "open"
-});
-
-
-
-
-
-
-/// MOBILE
-function mobileView() {
-    return $('.global-header .mobile-controls').css('display') !== "none";
-}
-
-
-
-
-
-$(document).ready(function () {
-
-    // INITIAZE NAVIGATION
-    $('.main-navigation').accessibleMegaMenu();
-
     if (mobileView()) {
+        $('#navigation').addClass('collapse');
         $('#navigation').addClass('collapse');
     }
 
 
     // Variables
-    var $navigation = $('#navigation.main-navigation'),
+    var $navigation = $('.main-navigation'),
         $navItems = $navigation.find('.nav-item'), // first level link containers'
         $navItemsWithSubs = $navItems.has('.sub-nav'),
         $subNavs = $navigation.find('.sub-nav'),
@@ -15749,7 +15246,6 @@ $(document).ready(function () {
         dropdown = $navigation.hasClass('dropdown'),
         singleLevel = $navigation.hasClass('singleLevel'),
         setActiveLinkByFolder = $navigation.hasClass('auto-highlight'); // Use new folder matching method to highlight the current navigation tab
-
 
     // HIGHLIGHT APPROPRIATE NAV ITEM
     var reMainNav = "",
@@ -15759,7 +15255,7 @@ $(document).ready(function () {
     }
     $navItems.each(function () { // loop through top level links
         var $this = $(this),
-            $a = $this.find('.first-level-link');
+            $a = $this.find('.first-level-btn, .first-level-link');
 
         if (reMainNav) {
             if ($a.text().match(reMainNav)) {
@@ -15770,6 +15266,17 @@ $(document).ready(function () {
             if (arrNavLink.length > 4 && arrCurrentURL[3] === arrNavLink[3]) { // folder of current URL matches this nav link
                 $this.addClass('active');
             }
+        }
+    });
+
+
+    // Reset if click outside of nav
+    $(document).mouseup(function (e) {
+        var navContainer = $(".main-navigation");
+
+        // if the target of the click isn't the navigation container nor a descendant of the navigation
+        if (!navContainer.is(e.target) && navContainer.has(e.target).length === 0) {
+            NavReset();
         }
     });
 
@@ -15787,7 +15294,7 @@ $(document).ready(function () {
     if (!singleLevel) {
         $navItemsWithSubs.each(function () {
 
-            $(this).find('.first-level-link').addClass('has-sub');
+            $(this).find('.first-level-btn').addClass('has-sub');
 
             var $toggleSubNav = $('<div class="ca-gov-icon-caret-right rotate" aria-hidden="true"></div>');
             var carrot = $('<span class="ca-gov-icon-triangle-down carrot" aria-hidden="true"></span>');
@@ -15799,46 +15306,10 @@ $(document).ready(function () {
         });
     }
 
-    // Scrolling to the top of the menu in mobile
-    var HasSubLink = $(".collapse .has-sub");
-    var navTarget = $(".mobile-controls");
-
-    $(HasSubLink).click(function () {
-        if (mobileView()) {
-            $('html,body').animate({
-                scrollTop: $(navTarget).offset().top
-            }, '3000');
-        }
-    });
-
-    $(".toggle-menu").removeAttr('aria-pressed'); // siteimprove accesibility error fix...
-
-
-    // Hide navigation from screen reader in mobile
-    if (mobileView()) {
-        $navigation.attr("aria-hidden", "true");
-
-      // Prevent focusing/tabbing thru sub navigation links in mobile
-       $(".sub-nav a").attr("tabindex", "-1");
-       $(".sub-nav button").attr("tabindex", "-1");
-
-       
-
-    }
-
-    // Show navigation to a screen reader if expanded in mobile
-    $(".toggle-menu").on("click", function () {
-        if ($(this).attr("aria-expanded") === "true") {
-            $navigation.removeAttr("aria-hidden");
-        }
-        else {
-            $navigation.attr("aria-hidden", "true");
-        }
-
-    });
+    // Addig class first-level-btn to first-level-link to make sure left and right keyboard keys work for all navigation links
+    $(".first-level-link").addClass("first-level-btn");
 
 });
-
 
 // Do Navigation Reset function on window resize uless it's mobile device.
 $(window).on('resize', function () {
@@ -15853,33 +15324,22 @@ $(window).on('resize', function () {
         return false;
     }
     else {
+        $("#navigation").addClass("collapse").removeClass("show").attr("aria-hidden", "true");
+        $(".toggle-menu").attr('aria-expanded', 'false');
+        NavReset();
+    }
+
+});
+
+// Reset on escape
+$(document).keyup(function (e) {
+    if (e.keyCode === 27) {
         NavReset();
     }
 });
 
 
 
-
-
-
-
-
-// Navigation Reset function
-function NavReset() {
-    var $toggleSubNav = $('<div class="ca-gov-icon-caret-right rotate" aria-hidden="true"></div>');
-    if (window.innerWidth < 768) {
-        $("#navigation").addClass("collapse").removeClass("show").attr("aria-hidden", "true");
-        $('.has-sub').append($toggleSubNav);
-        $(".rotate").css("display", "block");
-    }
-    else {
-        $("#navigation").removeClass("collapse").removeAttr("aria-hidden");
-        $(".rotate").css("display", "none");
-    }
-
-    $(".toggle-menu").attr('aria-expanded', 'false');
-    $(".toggle-menu").attr('aria-selected', 'false');
-}
 
 /* Mobile Controls fix */
 $(document).ready(function () {
@@ -15927,11 +15387,11 @@ $(document).ready(function () {
     // eaxaple: var panel1 = new tabpanel("accordion2", true);
 });
 
-// 
-// keyCodes() is an object to contain keycodes needed for the application 
-// 
+//
+// keyCodes() is an object to contain keycodes needed for the application
+//
 function keyCodes() {
-    // Define values for keycodes 
+    // Define values for keycodes
     this.tab = 9;
     this.enter = 13;
     this.esc = 27;
@@ -15947,59 +15407,59 @@ function keyCodes() {
     this.right = 39;
     this.down = 40;
 
-} // end keyCodes 
+} // end keyCodes
 
-// 
-// tabpanel() is a class constructor to create a ARIA-enabled tab panel widget. 
-// 
-// @param (id string) id is the id of the div containing the tab panel. 
-// 
-// @param (accordian boolean) accordian is true if the tab panel should operate 
-//         as an accordian; false if a tab panel 
-// 
-// @return N/A 
-// 
-// Usage: Requires a div container and children as follows: 
-// 
-//         1. tabs/accordian headers have class 'tab' 
-// 
-//         2. panels are divs with class 'panel' 
-// 
+//
+// tabpanel() is a class constructor to create a ARIA-enabled tab panel widget.
+//
+// @param (id string) id is the id of the div containing the tab panel.
+//
+// @param (accordian boolean) accordian is true if the tab panel should operate
+//         as an accordian; false if a tab panel
+//
+// @return N/A
+//
+// Usage: Requires a div container and children as follows:
+//
+//         1. tabs/accordian headers have class 'tab'
+//
+//         2. panels are divs with class 'panel'
+//
 function tabpanel(id, accordian) {
 
-    // define the class properties 
+    // define the class properties
 
-    this.panel_id = id; // store the id of the containing div 
-    this.accordian = accordian; // true if this is an accordian control 
-    this.$panel = $('#' + id);  // store the jQuery object for the panel 
-    this.keys = new keyCodes(); // keycodes needed for event handlers 
-    this.$tabs = this.$panel.find('.tab'); // Array of panel tabs. 
-    this.$panels = this.$panel.children('.panel'); // Array of panel. 
+    this.panel_id = id; // store the id of the containing div
+    this.accordian = accordian; // true if this is an accordian control
+    this.$panel = $('#' + id);  // store the jQuery object for the panel
+    this.keys = new keyCodes(); // keycodes needed for event handlers
+    this.$tabs = this.$panel.find('.tab'); // Array of panel tabs.
+    this.$panels = this.$panel.children('.panel'); // Array of panel.
 
-    // Bind event handlers 
+    // Bind event handlers
     this.bindHandlers();
 
-    // Initialize the tab panel 
+    // Initialize the tab panel
     this.init();
 
-} // end tabpanel() constructor 
+} // end tabpanel() constructor
 
-// 
-// Function init() is a member function to initialize the tab/accordian panel. Hides all panels. If a tab 
-// has the class 'selected', makes that panel visible; otherwise, makes first panel visible. 
-// 
-// @return N/A 
-// 
+//
+// Function init() is a member function to initialize the tab/accordian panel. Hides all panels. If a tab
+// has the class 'selected', makes that panel visible; otherwise, makes first panel visible.
+//
+// @return N/A
+//
 tabpanel.prototype.init = function () {
-    var $tab; // the selected tab - if one is selected 
+    var $tab; // the selected tab - if one is selected
 
-    // add aria attributes to the panels 
+    // add aria attributes to the panels
     this.$panels.attr('aria-hidden', 'true');
 
-    // hide all the panels 
+    // hide all the panels
     this.$panels.hide();
 
-    // get the selected tab 
+    // get the selected tab
     $tab = this.$tabs.filter('.selected');
 
     if ($tab === undefined) {
@@ -16007,70 +15467,70 @@ tabpanel.prototype.init = function () {
         $tab.addClass('selected');
     }
 
-    // show the panel that the selected tab controls and set aria-hidden to false 
+    // show the panel that the selected tab controls and set aria-hidden to false
     this.$panel.find('#' + $tab.attr('aria-controls')).show().attr('aria-hidden', 'false');
 
-}; // end init() 
+}; // end init()
 
-// 
-// Function switchTabs() is a member function to give focus to a new tab or accordian header. 
-// If it's a tab panel, the currently displayed panel is hidden and the panel associated with the new tab 
-// is displayed. 
-// 
-// @param ($curTab obj) $curTab is the jQuery object of the currently selected tab 
-// 
-// @param ($newTab obj) $newTab is the jQuery object of new tab to switch to 
-// 
-// @return N/A 
-// 
+//
+// Function switchTabs() is a member function to give focus to a new tab or accordian header.
+// If it's a tab panel, the currently displayed panel is hidden and the panel associated with the new tab
+// is displayed.
+//
+// @param ($curTab obj) $curTab is the jQuery object of the currently selected tab
+//
+// @param ($newTab obj) $newTab is the jQuery object of new tab to switch to
+//
+// @return N/A
+//
 tabpanel.prototype.switchTabs = function ($curTab, $newTab) {
 
-    // Remove the highlighting from the current tab 
+    // Remove the highlighting from the current tab
     $curTab.removeClass('selected focus');
 
-    // remove tab from the tab order and update its aria-selected attribute 
+    // remove tab from the tab order and update its aria-selected attribute
     $curTab.attr('aria-selected', 'false');
 
 
-    // Highlight the new tab and update its aria-selected attribute 
+    // Highlight the new tab and update its aria-selected attribute
     $newTab.addClass('selected').attr('aria-selected', 'true');
 
-    // If this is a tab panel, swap displayed tabs 
+    // If this is a tab panel, swap displayed tabs
     if (this.accordian === false) {
-        // hide the current tab panel and set aria-hidden to true 
+        // hide the current tab panel and set aria-hidden to true
         this.$panel.find('#' + $curTab.attr('aria-controls')).hide().attr('aria-hidden', 'true');
 
-        // update the aria-expanded attribute for the old tab 
+        // update the aria-expanded attribute for the old tab
         $curTab.attr('aria-expanded', 'false');
 
-        // show the new tab panel and set aria-hidden to false 
+        // show the new tab panel and set aria-hidden to false
         this.$panel.find('#' + $newTab.attr('aria-controls')).show().attr('aria-hidden', 'false');
 
-        // update the aria-expanded attribute for the new tab 
+        // update the aria-expanded attribute for the new tab
         $newTab.attr('aria-expanded', 'true');
 
-        // get new list of focusable elements 
+        // get new list of focusable elements
         this.$focusable.length = 0;
         this.$panels.find(':focusable');
     }
 
-    // Make new tab navigable 
+    // Make new tab navigable
     $newTab.attr('tabindex', '0');
 
-    // give the new tab focus 
+    // give the new tab focus
     $newTab.trigger("focus");
 
-}; // end switchTabs() 
+}; // end switchTabs()
 
-// 
-// Function togglePanel() is a member function to display or hide the panel 
-// associated with an accordian header. Function also binds a keydown handler to the focusable items 
-// in the panel when expanding and unbinds the handlers when collapsing. 
-// 
-// @param ($tab obj) $tab is the jQuery object of the currently selected tab 
-// 
-// @return N/A 
-// 
+//
+// Function togglePanel() is a member function to display or hide the panel
+// associated with an accordian header. Function also binds a keydown handler to the focusable items
+// in the panel when expanding and unbinds the handlers when collapsing.
+//
+// @param ($tab obj) $tab is the jQuery object of the currently selected tab
+//
+// @return N/A
+//
 tabpanel.prototype.togglePanel = function ($tab) {
 
     $panel = this.$panel.find('#' + $tab.attr('aria-controls'));
@@ -16081,7 +15541,7 @@ tabpanel.prototype.togglePanel = function ($tab) {
         $tab.addClass('open');
         $tab.find('i').attr('class', 'ca-gov-icon-menu-toggle-open font-size-sm');
 
-        // update the aria-expanded attribute 
+        // update the aria-expanded attribute
         $tab.attr('aria-expanded', 'true');
     }
     else {
@@ -16090,82 +15550,82 @@ tabpanel.prototype.togglePanel = function ($tab) {
         $tab.removeClass('open');
         $tab.find('i').attr('class', 'ca-gov-icon-menu-toggle-closed font-size-sm');
 
-        // update the aria-expanded attribute 
+        // update the aria-expanded attribute
         $tab.attr('aria-expanded', 'false');
     }
 
-}; // end togglePanel() 
+}; // end togglePanel()
 
-// 
-// Function bindHandlers() is a member function to bind event handlers for the tabs 
-// 
-// @return N/A 
-// 
+//
+// Function bindHandlers() is a member function to bind event handlers for the tabs
+//
+// @return N/A
+//
 tabpanel.prototype.bindHandlers = function () {
 
-    var thisObj = this; // Store the this pointer for reference 
+    var thisObj = this; // Store the this pointer for reference
 
-    ////////////////////////////// 
-    // Bind handlers for the tabs / accordian headers 
+    //////////////////////////////
+    // Bind handlers for the tabs / accordian headers
 
-    // bind a tab keydown handler 
+    // bind a tab keydown handler
     this.$tabs.on("keydown", function (e) {
         return thisObj.handleTabKeyDown($(this), e);
     });
 
-    // bind a tab keypress handler 
+    // bind a tab keypress handler
     this.$tabs.on("keypress", function (e) {
         return thisObj.handleTabKeyPress($(this), e);
     });
 
-    // bind a tab click handler 
+    // bind a tab click handler
     this.$tabs.on("click", function (e) {
         return thisObj.handleTabClick($(this), e);
     });
 
-    // bind a tab focus handler 
+    // bind a tab focus handler
     this.$tabs.on("focus", function (e) {
         return thisObj.handleTabFocus($(this), e);
     });
 
-    // bind a tab blur handler 
+    // bind a tab blur handler
     this.$tabs.on("blur", function (e) {
         return thisObj.handleTabBlur($(this), e);
     });
 
-    ///////////////////////////// 
-    // Bind handlers for the panels 
+    /////////////////////////////
+    // Bind handlers for the panels
 
-    // bind a keydown handlers for the panel focusable elements 
+    // bind a keydown handlers for the panel focusable elements
     this.$panels.on("keydown", function (e) {
         return thisObj.handlePanelKeyDown($(this), e);
     });
 
-    // bind a keypress handler for the panel 
+    // bind a keypress handler for the panel
     this.$panels.on("keypress", function (e) {
         return thisObj.handlePanelKeyPress($(this), e);
     });
 
-    // bind a panel click handler 
+    // bind a panel click handler
     this.$panels.on("click", function (e) {
         return thisObj.handlePanelClick($(this), e);
     });
 
-}; // end bindHandlers() 
+}; // end bindHandlers()
 
-// 
-// Function handleTabKeyDown() is a member function to process keydown events for a tab 
-// 
-// @param ($tab obj) $tab is the jquery object of the tab being processed 
-// 
-// @param (e obj) e is the associated event object 
-// 
-// @return (boolean) Returns true if propagating; false if consuming event 
-// 
+//
+// Function handleTabKeyDown() is a member function to process keydown events for a tab
+//
+// @param ($tab obj) $tab is the jquery object of the tab being processed
+//
+// @param (e obj) e is the associated event object
+//
+// @return (boolean) Returns true if propagating; false if consuming event
+//
 tabpanel.prototype.handleTabKeyDown = function ($tab, e) {
 
     if (e.altKey) {
-        // do nothing 
+        // do nothing
         return true;
     }
 
@@ -16173,9 +15633,9 @@ tabpanel.prototype.handleTabKeyDown = function ($tab, e) {
         case this.keys.enter:
         case this.keys.space: {
 
-            // Only process if this is an accordian widget 
+            // Only process if this is an accordian widget
             if (this.accordian === true) {
-                // display or collapse the panel 
+                // display or collapse the panel
                 this.togglePanel($tab);
 
                 e.stopPropagation();
@@ -16188,27 +15648,27 @@ tabpanel.prototype.handleTabKeyDown = function ($tab, e) {
         case this.keys.up: {
 
             var thisObj = this;
-            var $prevTab; // holds jQuery object of tab from previous pass 
-            var $newTab; // the new tab to switch to 
+            var $prevTab; // holds jQuery object of tab from previous pass
+            var $newTab; // the new tab to switch to
 
             if (e.ctrlKey) {
-                // Ctrl+arrow moves focus from panel content to the open 
-                // tab/accordian header. 
+                // Ctrl+arrow moves focus from panel content to the open
+                // tab/accordian header.
             }
             else {
                 var curNdx = this.$tabs.index($tab);
 
                 if (curNdx === 0) {
-                    // tab is the first one: 
-                    // set newTab to last tab 
+                    // tab is the first one:
+                    // set newTab to last tab
                     $newTab = this.$tabs.last();
                 }
                 else {
-                    // set newTab to previous 
+                    // set newTab to previous
                     $newTab = this.$tabs.eq(curNdx - 1);
                 }
 
-                // switch to the new tab 
+                // switch to the new tab
                 this.switchTabs($tab, $newTab);
             }
 
@@ -16219,22 +15679,22 @@ tabpanel.prototype.handleTabKeyDown = function ($tab, e) {
         case this.keys.down: {
 
             var thisObj = this;
-            var foundTab = false; // set to true when current tab found in array 
-            var $newTab; // the new tab to switch to 
+            var foundTab = false; // set to true when current tab found in array
+            var $newTab; // the new tab to switch to
 
             var curNdx = this.$tabs.index($tab);
 
             if (curNdx == this.$tabs.length - 1) {
-                // tab is the last one: 
-                // set newTab to first tab 
+                // tab is the last one:
+                // set newTab to first tab
                 $newTab = this.$tabs.first();
             }
             else {
-                // set newTab to next tab 
+                // set newTab to next tab
                 $newTab = this.$tabs.eq(curNdx + 1);
             }
 
-            // switch to the new tab 
+            // switch to the new tab
             this.switchTabs($tab, $newTab);
 
             e.stopPropagation();
@@ -16242,7 +15702,7 @@ tabpanel.prototype.handleTabKeyDown = function ($tab, e) {
         }
         case this.keys.home: {
 
-            // switch to the first tab 
+            // switch to the first tab
             this.switchTabs($tab, this.$tabs.first());
 
             e.stopPropagation();
@@ -16250,30 +15710,30 @@ tabpanel.prototype.handleTabKeyDown = function ($tab, e) {
         }
         case this.keys.end: {
 
-            // switch to the last tab 
+            // switch to the last tab
             this.switchTabs($tab, this.$tabs.last());
 
             e.stopPropagation();
             return false;
         }
     }
-}; // end handleTabKeyDown() 
+}; // end handleTabKeyDown()
 
 
-// 
-// Function handleTabKeyPress() is a member function to process keypress events for a tab. 
-// 
-// 
-// @param ($tab obj) $tab is the jquery object of the tab being processed 
-// 
-// @param (e obj) e is the associated event object 
-// 
-// @return (boolean) Returns true if propagating; false if consuming event 
-// 
+//
+// Function handleTabKeyPress() is a member function to process keypress events for a tab.
+//
+//
+// @param ($tab obj) $tab is the jquery object of the tab being processed
+//
+// @param (e obj) e is the associated event object
+//
+// @return (boolean) Returns true if propagating; false if consuming event
+//
 tabpanel.prototype.handleTabKeyPress = function ($tab, e) {
 
     if (e.altKey) {
-        // do nothing 
+        // do nothing
         return true;
     }
 
@@ -16292,9 +15752,9 @@ tabpanel.prototype.handleTabKeyPress = function ($tab, e) {
         case this.keys.pageup:
         case this.keys.pagedown: {
 
-            // The tab keypress handler must consume pageup and pagedown 
-            // keypresses to prevent Firefox from switching tabs 
-            // on ctrl+pageup and ctrl+pagedown 
+            // The tab keypress handler must consume pageup and pagedown
+            // keypresses to prevent Firefox from switching tabs
+            // on ctrl+pageup and ctrl+pagedown
 
             if (!e.ctrlKey) {
                 return true;
@@ -16307,87 +15767,87 @@ tabpanel.prototype.handleTabKeyPress = function ($tab, e) {
 
     return true;
 
-}; // end handleTabKeyPress() 
+}; // end handleTabKeyPress()
 
-// 
-// Function handleTabClick() is a member function to process click events for tabs 
-// 
-// @param ($tab object) $tab is the jQuery object of the tab being processed 
-// 
-// @param (e object) e is the associated event object 
-// 
-// @return (boolean) returns false 
-// 
+//
+// Function handleTabClick() is a member function to process click events for tabs
+//
+// @param ($tab object) $tab is the jQuery object of the tab being processed
+//
+// @param (e object) e is the associated event object
+//
+// @return (boolean) returns false
+//
 tabpanel.prototype.handleTabClick = function ($tab, e) {
 
-    // make clicked tab navigable 
+    // make clicked tab navigable
     $tab.attr('tabindex', '0').attr('aria-selected', 'true').addClass('selected');
 
-    // remove all tabs from the tab order and update their aria-selected attribute 
+    // remove all tabs from the tab order and update their aria-selected attribute
     this.$tabs.not($tab).attr('aria-selected', 'false').removeClass('selected');
 
-    // Expand the new panel 
+    // Expand the new panel
     this.togglePanel($tab);
 
     e.stopPropagation();
     return false;
 
-}; // end handleTabClick() 
+}; // end handleTabClick()
 
-// 
-// Function handleTabFocus() is a member function to process focus events for tabs 
-// 
-// @param ($tab object) $tab is the jQuery object of the tab being processed 
-// 
-// @param (e object) e is the associated event object 
-// 
-// @return (boolean) returns true 
-// 
+//
+// Function handleTabFocus() is a member function to process focus events for tabs
+//
+// @param ($tab object) $tab is the jQuery object of the tab being processed
+//
+// @param (e object) e is the associated event object
+//
+// @return (boolean) returns true
+//
 tabpanel.prototype.handleTabFocus = function ($tab, e) {
 
-    // Add the focus class to the tab 
+    // Add the focus class to the tab
     $tab.addClass('focus');
 
     return true;
 
-}; // end handleTabFocus() 
+}; // end handleTabFocus()
 
-// 
-// Function handleTabBlur() is a member function to process blur events for tabs 
-// 
-// @param ($tab object) $tab is the jQuery object of the tab being processed 
-// 
-// @param (e object) e is the associated event object 
-// 
-// @return (boolean) returns true 
-// 
+//
+// Function handleTabBlur() is a member function to process blur events for tabs
+//
+// @param ($tab object) $tab is the jQuery object of the tab being processed
+//
+// @param (e object) e is the associated event object
+//
+// @return (boolean) returns true
+//
 tabpanel.prototype.handleTabBlur = function ($tab, e) {
 
-    // Remove the focus class to the tab 
+    // Remove the focus class to the tab
     $tab.removeClass('focus');
 
     return true;
 
-}; // end handleTabBlur() 
+}; // end handleTabBlur()
 
 
-///////////////////////////////////////////////////////// 
-// Panel Event handlers 
-// 
+/////////////////////////////////////////////////////////
+// Panel Event handlers
+//
 
-// 
-// Function handlePanelKeyDown() is a member function to process keydown events for a panel 
-// 
-// @param ($panel obj) $panel is the jquery object of the panel being processed 
-// 
-// @param (e obj) e is the associated event object 
-// 
-// @return (boolean) Returns true if propagating; false if consuming event 
-// 
+//
+// Function handlePanelKeyDown() is a member function to process keydown events for a panel
+//
+// @param ($panel obj) $panel is the jquery object of the panel being processed
+//
+// @param (e obj) e is the associated event object
+//
+// @return (boolean) Returns true if propagating; false if consuming event
+//
 tabpanel.prototype.handlePanelKeyDown = function ($panel, e) {
 
     if (e.altKey) {
-        // do nothing 
+        // do nothing
         return true;
     }
 
@@ -16399,34 +15859,34 @@ tabpanel.prototype.handlePanelKeyDown = function ($panel, e) {
             var numPanels = this.$panels.length;
 
             if (e.shiftKey) {
-                // if this is the first focusable item in the panel 
-                // find the preceding expanded panel (if any) that has 
-                // focusable items and set focus to the last one in that 
-                // panel. If there is no preceding panel or no focusable items 
-                // do not process. 
+                // if this is the first focusable item in the panel
+                // find the preceding expanded panel (if any) that has
+                // focusable items and set focus to the last one in that
+                // panel. If there is no preceding panel or no focusable items
+                // do not process.
                 if (curNdx === 0 && panelNdx > 0) {
 
-                    // Iterate through previous panels until we find one that 
-                    // is expanded and has focusable elements 
-                    // 
+                    // Iterate through previous panels until we find one that
+                    // is expanded and has focusable elements
+                    //
                     for (var ndx = panelNdx - 1; ndx >= 0; ndx--) {
 
                         var $prevPanel = this.$panels.eq(ndx);
                         var $prevTab = $('#' + $prevPanel.attr('aria-labelledby'));
 
-                        // get the focusable items in the panel 
+                        // get the focusable items in the panel
                         $focusable.length = 0;
                         $focusable = $prevPanel.find(':focusable');
 
                         if ($focusable.length > 0) {
-                            // there are focusable items in the panel. 
-                            // Set focus to the last item. 
+                            // there are focusable items in the panel.
+                            // Set focus to the last item.
                             $focusable.last().trigger("focus");
 
-                            // reset the aria-selected state of the tabs 
+                            // reset the aria-selected state of the tabs
                             this.$tabs.attr('aria-selected', 'false').removeClass('selected');
 
-                            // set the associated tab's aria-selected state 
+                            // set the associated tab's aria-selected state
                             $prevTab.attr('aria-selected', 'true').addClass('selected');
 
                             e.stopPropagation;
@@ -16437,34 +15897,34 @@ tabpanel.prototype.handlePanelKeyDown = function ($panel, e) {
             }
             else if (panelNdx < numPanels) {
 
-                // if this is the last focusable item in the panel 
-                // find the nearest following expanded panel (if any) that has 
-                // focusable items and set focus to the first one in that 
-                // panel. If there is no preceding panel or no focusable items 
-                // do not process. 
+                // if this is the last focusable item in the panel
+                // find the nearest following expanded panel (if any) that has
+                // focusable items and set focus to the first one in that
+                // panel. If there is no preceding panel or no focusable items
+                // do not process.
                 if (curNdx === $focusable.length - 1) {
 
-                    // Iterate through following panels until we find one that 
-                    // is expanded and has focusable elements 
-                    // 
+                    // Iterate through following panels until we find one that
+                    // is expanded and has focusable elements
+                    //
                     for (var ndx = panelNdx + 1; ndx < numPanels; ndx++) {
 
                         var $nextPanel = this.$panels.eq(ndx);
                         var $nextTab = $('#' + $nextPanel.attr('aria-labelledby'));
 
-                        // get the focusable items in the panel 
+                        // get the focusable items in the panel
                         $focusable.length = 0;
                         $focusable = $nextPanel.find(':focusable');
 
                         if ($focusable.length > 0) {
-                            // there are focusable items in the panel. 
-                            // Set focus to the first item. 
+                            // there are focusable items in the panel.
+                            // Set focus to the first item.
                             $focusable.first().trigger("focus");
 
-                            // reset the aria-selected state of the tabs 
+                            // reset the aria-selected state of the tabs
                             this.$tabs.attr('aria-selected', 'false').removeClass('selected');
 
-                            // set the associated tab's aria-selected state 
+                            // set the associated tab's aria-selected state
                             $nextTab.attr('aria-selected', 'true').addClass('selected');
 
                             e.stopPropagation;
@@ -16480,14 +15940,14 @@ tabpanel.prototype.handlePanelKeyDown = function ($panel, e) {
         case this.keys.up: {
 
             if (!e.ctrlKey) {
-                // do not process 
+                // do not process
                 return true;
             }
 
-            // get the jQuery object of the tab 
+            // get the jQuery object of the tab
             var $tab = $('#' + $panel.attr('aria-labelledby'));
 
-            // Move focus to the tab 
+            // Move focus to the tab
             $tab.trigger("focus");
 
             e.stopPropagation();
@@ -16498,26 +15958,26 @@ tabpanel.prototype.handlePanelKeyDown = function ($panel, e) {
             var $newTab;
 
             if (!e.ctrlKey) {
-                // do not process 
+                // do not process
                 return true;
             }
 
-            // get the jQuery object of the tab 
+            // get the jQuery object of the tab
             var $tab = this.$tabs.filter('.selected');
 
-            // get the index of the tab in the tab list 
+            // get the index of the tab in the tab list
             var curNdx = this.$tabs.index($tab);
 
             if (curNdx === 0) {
-                // this is the first tab, set focus on the last one 
+                // this is the first tab, set focus on the last one
                 $newTab = this.$tabs.last();
             }
             else {
-                // set focus on the previous tab 
+                // set focus on the previous tab
                 $newTab = this.$tabs.eq(curNdx - 1);
             }
 
-            // switch to the new tab 
+            // switch to the new tab
             this.switchTabs($tab, $newTab);
 
             e.stopPropagation();
@@ -16529,26 +15989,26 @@ tabpanel.prototype.handlePanelKeyDown = function ($panel, e) {
             var $newTab;
 
             if (!e.ctrlKey) {
-                // do not process 
+                // do not process
                 return true;
             }
 
-            // get the jQuery object of the tab 
+            // get the jQuery object of the tab
             var $tab = $('#' + $panel.attr('aria-labelledby'));
 
-            // get the index of the tab in the tab list 
+            // get the index of the tab in the tab list
             var curNdx = this.$tabs.index($tab);
 
             if (curNdx === this.$tabs.length - 1) {
-                // this is the last tab, set focus on the first one 
+                // this is the last tab, set focus on the first one
                 $newTab = this.$tabs.first();
             }
             else {
-                // set focus on the next tab 
+                // set focus on the next tab
                 $newTab = this.$tabs.eq(curNdx + 1);
             }
 
-            // switch to the new tab 
+            // switch to the new tab
             this.switchTabs($tab, $newTab);
 
             e.stopPropagation();
@@ -16559,21 +16019,21 @@ tabpanel.prototype.handlePanelKeyDown = function ($panel, e) {
 
     return true;
 
-}; // end handlePanelKeyDown() 
+}; // end handlePanelKeyDown()
 
-// 
-// Function handlePanelKeyPress() is a member function to process keypress events for a panel 
-// 
-// @param ($panel obj) $panel is the jquery object of the panel being processed 
-// 
-// @param (e obj) e is the associated event object 
-// 
-// @return (boolean) Returns true if propagating; false if consuming event 
-// 
+//
+// Function handlePanelKeyPress() is a member function to process keypress events for a panel
+//
+// @param ($panel obj) $panel is the jquery object of the panel being processed
+//
+// @param (e obj) e is the associated event object
+//
+// @return (boolean) Returns true if propagating; false if consuming event
+//
 tabpanel.prototype.handlePanelKeyPress = function ($panel, e) {
 
     if (e.altKey) {
-        // do nothing 
+        // do nothing
         return true;
     }
 
@@ -16593,62 +16053,62 @@ tabpanel.prototype.handlePanelKeyPress = function ($panel, e) {
 
     return true;
 
-}; // end handlePanelKeyPress() 
+}; // end handlePanelKeyPress()
 
-// 
-// Function handlePanelClick() is a member function to process click events for panels 
-// 
-// @param ($panel object) $panel is the jQuery object of the panel being processed 
-// 
-// @param (e object) e is the associated event object 
-// 
-// @return (boolean) returns true 
-// 
+//
+// Function handlePanelClick() is a member function to process click events for panels
+//
+// @param ($panel object) $panel is the jQuery object of the panel being processed
+//
+// @param (e object) e is the associated event object
+//
+// @return (boolean) returns true
+//
 tabpanel.prototype.handlePanelClick = function ($panel, e) {
 
     var $tab = $('#' + $panel.attr('aria-labelledby'));
 
-    // make clicked panel's tab navigable 
+    // make clicked panel's tab navigable
     $tab.attr('tabindex', '0').attr('aria-selected', 'true').addClass('selected');
 
-    // remove all tabs from the tab order and update their aria-selected attribute 
+    // remove all tabs from the tab order and update their aria-selected attribute
     this.$tabs.not($tab).attr('aria-selected', 'false').removeClass('selected');
 
     return true;
 
-}; // end handlePanelClick() 
+}; // end handlePanelClick()
 
-// focusable is a small jQuery extension to add a :focusable selector. It is used to 
-// get a list of all focusable elements in a panel. Credit to ajpiano on the jQuery forums. 
-// 
+// focusable is a small jQuery extension to add a :focusable selector. It is used to
+// get a list of all focusable elements in a panel. Credit to ajpiano on the jQuery forums.
+//
 $.extend($.expr.pseudos, {
     focusable: function (element) {
         var nodeName = element.nodeName.toLowerCase();
         var tabIndex = $(element).attr('tabindex');
 
-        // the element and all of its ancestors must be visible 
+        // the element and all of its ancestors must be visible
         if ($(element)[nodeName === 'area' ? 'parents' : 'closest'](':hidden').length === true) {
             return false;
         }
 
-        // If tabindex is defined, its value must be greater than 0 
+        // If tabindex is defined, its value must be greater than 0
         if (!isNaN(tabIndex) && tabIndex < 0) {
             return false;
         }
 
-        // if the element is a standard form control, it must not be disabled 
+        // if the element is a standard form control, it must not be disabled
         if (/input|select|textarea|button|object/.test(nodeName) === true) {
 
             return !element.disabled;
         }
 
-        // if the element is a link, href must be defined 
+        // if the element is a link, href must be defined
         if ((nodeName === 'a' || nodeName === 'area') === true) {
 
             return element.href.length > 0;
         }
 
-        // this is some other page element that is not normally focusable. 
+        // this is some other page element that is not normally focusable.
         return false;
     }
 });
@@ -16662,6 +16122,23 @@ $(document).ready(function () {
     accordion.attr("tabindex", 0); // make accordion tabable
     // appending carrot span to each accordion tab
     accordionTab.append(accordioncarrot);
+
+    // Accessibility fixes
+$(".accordion > .panel > .panel-heading > .panel-title > a").on("click", function () {
+
+    var accordionPanelID = $(this).attr("id");
+    var accordionContentID = $("[aria-labelledby=" + accordionPanelID + "]");
+    var accordionGroup = $(this).closest(".accordion");
+    var accordionContentDiv = accordionGroup.find(".panel-collapse");
+
+    if ($(this).attr("aria-expanded") === "true") {
+        accordionContentID.attr("tabindex", "-1").attr("aria-hidden", "true");
+
+    }
+    else {
+        accordionContentID.removeAttr("tabindex aria-hidden");
+    }
+});
 });
 
 /* Remove aria controls from a links */
@@ -16669,11 +16146,6 @@ $(document).ready(function () {
     var alink = $(".card").find("a[role='tab']");
     alink.removeAttr("aria-controls");
 });
-
-
-
-
-
 
 /* -----------------------------------------
    PANELS - /source/js/cagov/panel.js
@@ -18384,23 +17856,83 @@ window.onload = function init() {
     }
 };
 /* -----------------------------------------
-   Tabs -- some fixing to bootstap 3 tabs 
+   Tabs -- some fixing to bootstap 3 tabs
    and backward compatibility
 ----------------------------------------- */
 $(document).ready(function () {
-    // adding active class to a tag if aria selected is true 
+    // adding active class to a tag if aria selected is true
     var activeTab = $(".nav-tabs > li > a[aria-selected='true']");
     activeTab.addClass("active");
 
     // Just to change class active in the parent li element (backward compatibility)
     $(".nav-tabs > li > a").on("click", function () {
+
+        var tabID = $(this).attr("id");
+        var tabcontentID = $("[aria-labelledby=" + tabID + "]");
+        var tabGroup = $(this).closest(".tab-group");
+        var tabsPane = tabGroup.find(".tab-pane");
+        tabsPane.attr("tabindex", "-1").attr("aria-hidden", "true");
         if ($(this).attr('aria-selected') === "false") {
             $(".nav-tabs > li").removeClass("active");
             $(this).parent("li").addClass("active");
+            tabcontentID.removeAttr("tabindex aria-hidden");
         }
         else {
             $(".nav-tabs > li").removeClass("active");
             $(this).parent("li").addClass("active");
+        }
+    });
+
+
+    // takes care of tabindexes and aria-hidden attributes when using arrow keys to navigate
+    $(".nav-tabs > li > a").on('keydown', function (e) {
+        var tabID = $(this).attr("id");
+        var tabcontentID = $("[aria-labelledby=" + tabID + "]");
+        var tabGroup = $(this).closest(".tab-group");
+        var tabsPane = tabGroup.find(".tab-pane");
+        var tabsPaneFirst = tabGroup.find(".tab-pane:first-child");
+        var tabsPaneLast = tabGroup.find(".tab-pane:last-child");
+        var parentLI = $(this).parent("li");
+
+        if (parentLI.is(':first-child')) {
+            console.log("first");
+        }
+        if (parentLI.is(':last-child')) {
+            console.log("last");
+        }
+
+
+
+        if (e.keyCode === 37) {
+            tabcontentID.prev().removeAttr("tabindex aria-hidden");
+            tabcontentID.attr("tabindex", "-1").attr("aria-hidden", "true");
+
+            if (parentLI.is(':first-child')) {
+                tabsPaneLast.removeAttr("tabindex aria-hidden");
+            }
+
+        } else if (e.keyCode === 38) {
+            tabcontentID.prev().removeAttr("tabindex aria-hidden");
+            tabcontentID.attr("tabindex", "-1").attr("aria-hidden", "true");
+
+            if (parentLI.is(':first-child')) {
+                tabsPaneLast.removeAttr("tabindex aria-hidden");
+            }
+
+        } else if (e.keyCode === 39) {
+            tabcontentID.next().removeAttr("tabindex aria-hidden");
+            tabcontentID.attr("tabindex", "-1").attr("aria-hidden", "true");
+
+            if (parentLI.is(':last-child')) {
+                tabsPaneFirst.removeAttr("tabindex aria-hidden");
+            }
+        } else if (e.keyCode === 40) {
+            tabcontentID.next().removeAttr("tabindex aria-hidden");
+            tabcontentID.attr("tabindex", "-1").attr("aria-hidden", "true");
+            if (parentLI.is(':last-child')) {
+                tabsPaneFirst.removeAttr("tabindex aria-hidden");
+            }
+
         }
     });
 
@@ -18411,6 +17943,7 @@ $(document).ready(function () {
 
 
 });
+
 /* -----------------------------------------
    Utility Header
 ----------------------------------------- */

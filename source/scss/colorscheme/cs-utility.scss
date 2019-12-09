@@ -1,0 +1,46 @@
+/* -----------------------------------------
+   UTILITY HEADER
+   /source/scss/colorscheme/utility.scss
+----------------------------------------- */
+
+.utility-header {
+    background: $color-p2;
+    color: contrast($color-p2);
+
+    a {
+        color: contrast($color-p2);
+
+        &:hover, &:focus, &.hovered {
+            color: $utility-link-hover-color;
+        }
+    }
+
+    ul {
+
+        li {
+            padding: 0 8px;
+
+            button {
+
+                &:hover, &:focus {
+                    color: lighten($color-p1, 25%);
+                }
+            }
+        }
+    }
+}
+
+// Mobile view
+@media (max-width: $screen-xs-max) {
+    .nav-full-width-icons {
+
+        .settings-links {
+            .utility-links {
+                a, button {
+                    border: 1px solid $color-p2;
+                    color: $color-p2;
+                }
+            }
+        }
+    }
+}
