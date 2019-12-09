@@ -334,10 +334,7 @@ a.second-level-link {
     display: inline-block;
 }
 
-.sub-nav {
-    -webkit-transition: all 0.4s;
-    transition: all 0.4s;
-}
+
 
 .sub-nav.open {
     display: block;
@@ -504,7 +501,7 @@ a.second-level-link {
 
 // Adding carrot if nav item has sub nav
 @media (min-width: $screen-sm-min) {
-    .nav-item .first-level-link.has-sub {
+    .nav-item .first-level-link.has-sub, .first-level-btn {
 
         .carrot {
             font-size: .8rem;

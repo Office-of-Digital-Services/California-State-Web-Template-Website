@@ -1,5 +1,5 @@
 /**
- * CA State Template v5.5 -  @version v5.5.9 -  12/3/2019 
+ * CA State Template v5.5 -  @version v5.5.10 -  12/9/2019 
   STYLES COMPILED FROM SOURCE (SCSS) DO NOT MODIFY */
 /* -----------------------------------------
    BOOTSTRAP v4.3.1 - /source/scss/bootstrap/ 
@@ -9297,56 +9297,6 @@ a:focus {
 /* -----------------------------------------
    OCEANSIDE
 ----------------------------------------- */
-/* ----- OCEANSIDE PRIMARY THEME COLORS -----  */
-.color-highlight, .color-p1 {
-  color: #FDB81E;
-}
-
-.color-primary, .color-p2 {
-  color: #046B99;
-}
-
-.color-standout, .color-p3 {
-  color: #323A45;
-}
-
-.bg-highlight, .bg-p1 {
-  background-color: #FDB81E !important;
-}
-
-.bg-primary, .bg-p2 {
-  background-color: #046B99 !important;
-}
-
-.bg-standout, .bg-p3 {
-  background-color: #323A45 !important;
-}
-
-/*  SECONDARY THEME COLORS	*/
-.color-s1 {
-  color: #E1F2F7;
-}
-
-.color-s2 {
-  color: #9FDBF1;
-}
-
-.color-s3 {
-  color: #50aee4;
-}
-
-.bg-s1 {
-  background-color: #E1F2F7 !important;
-}
-
-.bg-s2 {
-  background-color: #9FDBF1 !important;
-}
-
-.bg-s3 {
-  background-color: #50aee4 !important;
-}
-
 /* -----------------------------------------
    RESET /source/scss/cagov/reset.scss
 ----------------------------------------- */
@@ -11760,6 +11710,19 @@ code {
     -webkit-transition: all 0.3s;
     transition: all 0.3s;
   }
+  /* full width nav search box in fixed nav*/
+  .full-width-nav #head-search.fixed-hide:not(.active) {
+    visibility: visible;
+    opacity: 1;
+    margin-top: 14px;
+  }
+  .full-width-nav #head-search.fixed-hide:not(.active) .search-textfield {
+    height: 44px !important;
+  }
+  .full-width-nav #head-search.fixed-hide:not(.active) .gsc-search-button {
+    height: 44px !important;
+    top: -3px !important;
+  }
   .no-js .ask-group.fade {
     visibility: visible;
     opacity: 1;
@@ -11806,8 +11769,11 @@ code {
     margin-top: -55px;
     min-height: 55px;
   }
-  .fixed.compact .first-level-link [class^="ca-gov-icon-"] {
+  .fixed.compact .first-level-link [class^="ca-gov-icon-"], .fixed.compact .first-level-btn [class^="ca-gov-icon-"]:not(.carrot) {
     display: none;
+  }
+  .fixed.compact .first-level-btn .carrot {
+    bottom: 9px;
   }
   .fixed.compact .branding {
     height: 57px !important;
@@ -11823,9 +11789,15 @@ code {
   .fixed.compact .top-level-nav {
     min-height: 55px;
   }
-  .fixed.compact .top-level-nav .first-level-link {
+  .fixed.compact .top-level-nav .first-level-link, .fixed.compact .top-level-nav .first-level-btn {
     padding-top: 17px;
     padding-bottom: 8px;
+  }
+  .fixed.compact .full-width-nav .top-level-nav .first-level-btn {
+    padding-top: 9px;
+  }
+  .fixed.compact .full-width-nav .top-level-nav .first-level-link {
+    padding-top: 17px;
   }
 }
 
@@ -12472,6 +12444,7 @@ button.gsc-search-button {
 
 .featured-search .container #Search .gsc-search-button {
   right: 0;
+  outline-offset: -2px;
 }
 
 .featured-search .container #Search .close-search-btn {
@@ -12480,6 +12453,7 @@ button.gsc-search-button {
 
 .featured-search.active .container #Search .gsc-search-button {
   right: 50px;
+  outline-offset: -2px;
 }
 
 .featured-search.active .container #Search .close-search-btn {
@@ -12653,6 +12627,7 @@ table.gsc-search-box td {
   }
 }
 
+/* search box icons for mobile */
 @media (max-width: 767px) {
   .gsc-search-button .ca-gov-icon-search {
     font-size: 34px !important;
@@ -12827,18 +12802,34 @@ table.gsc-search-box td {
   font-size: 1rem;
 }
 
-.nav-item .sub-nav {
-  display: none;
+.nav-item .sub-nav.open {
+  display: block;
+  overflow: hidden;
+  opacity: 1;
+  max-height: 1000px !important;
 }
 
 @media (max-width: 767px) {
-  .nav-item .sub-nav {
-    max-height: 0;
+  .nav-item .sub-nav.open {
+    max-height: 1000px;
+    -webkit-transition: max-height 0.5s ease-in-out;
+    -moz-transition: max-height 0.5s ease-in-out;
+    -o-transition: max-height 0.5s ease-in-out;
+    transition: max-height 0.5s ease-in-out;
   }
+}
+
+.nav-item .sub-nav {
+  display: block;
+  opacity: 0;
 }
 
 .nav-item .sub-nav-decoration {
   display: none;
+}
+
+#navigation .nav-item .sub-nav {
+  max-height: 0;
 }
 
 .second-level-nav {
@@ -12859,9 +12850,12 @@ table.gsc-search-box td {
     clear: both;
     width: 100%;
   }
+  .nav-item [aria-hidden=true].sub-nav {
+    max-height: 0;
+  }
 }
 
-.first-level-link {
+.first-level-link, .first-level-btn {
   display: block;
   padding: 5px 5px 12px 5px;
   font-family: "Asap Condensed", sans-serif;
@@ -12870,31 +12864,33 @@ table.gsc-search-box td {
   z-index: 1;
 }
 
-.first-level-link.has-sub {
+.first-level-link.has-sub, .first-level-btn.has-sub {
   padding-right: 10px;
 }
 
-.first-level-link:hover, .first-level-link:focus {
+.first-level-link:hover, .first-level-link:focus, .first-level-btn:hover, .first-level-btn:focus {
   text-decoration: none;
 }
 
-.first-level-link > span[class^="ca-gov-icon"] {
-  /* Navigation icons */
-  display: block;
-  font-size: 32px;
+@media (min-width: 768px) {
+  .first-level-link > span[class^="ca-gov-icon"]:not(.carrot), .first-level-btn > span[class^="ca-gov-icon"]:not(.carrot) {
+    /* Navigation icons */
+    display: block;
+    font-size: 32px;
+  }
 }
 
 @media (max-width: 767px) {
-  .first-level-link {
+  .first-level-link, .first-level-btn {
     display: block;
     padding: 20px 0 20px 15px;
     margin-right: 2px;
     margin-left: 2px;
   }
-  .first-level-link:first-child {
+  .first-level-link:first-child, .first-level-btn:first-child {
     margin-top: 2px;
   }
-  .first-level-link span[class^="ca-gov-icon"] {
+  .first-level-link span[class^="ca-gov-icon"]:not(.carrot), .first-level-btn span[class^="ca-gov-icon"]:not(.carrot) {
     font-size: 24px;
     font-size: 1.5rem;
     display: inline-block;
@@ -12904,10 +12900,10 @@ table.gsc-search-box td {
 }
 
 @media (max-width: 992px) and (min-width: 768px) {
-  .first-level-link {
+  .first-level-link, .first-level-btn {
     padding: 5px 9px 12px 9px;
   }
-  .first-level-link.has-sub {
+  .first-level-link.has-sub, .first-level-btn.has-sub {
     padding-right: 13px;
   }
 }
@@ -13038,7 +13034,7 @@ table.gsc-search-box td {
     background-color: #fff;
     margin-top: 0;
   }
-  .top-level-nav .nav-item .first-level-link.has-sub {
+  .top-level-nav .nav-item .first-level-link.has-sub, .top-level-nav .nav-item .first-level-btn.has-sub {
     padding-right: 82px;
   }
   .top-level-nav .nav-item .sub-nav {
@@ -13171,13 +13167,13 @@ table.gsc-search-box td {
     text-decoration: none;
     color: #fff;
   }
-  .nav-full-width .main-navigation .first-level-link {
+  .nav-full-width .main-navigation .first-level-link, .nav-full-width .main-navigation .first-level-btn {
     padding: 5px 0 7px 0;
   }
-  .nav-full-width .main-navigation .first-level-link.has-sub {
+  .nav-full-width .main-navigation .first-level-link.has-sub, .nav-full-width .main-navigation .first-level-btn.has-sub {
     padding-right: 5px;
   }
-  .nav-full-width .main-navigation .first-level-link.has-sub .carrot {
+  .nav-full-width .main-navigation .first-level-link.has-sub .carrot, .nav-full-width .main-navigation .first-level-btn.has-sub .carrot {
     bottom: 7px;
     color: #fff;
   }
@@ -13188,16 +13184,16 @@ table.gsc-search-box td {
     margin-top: 0;
     min-height: 30px;
   }
-  .fixed.compact .nav-full-width .main-navigation .top-level-nav .first-level-link {
+  .fixed.compact .nav-full-width .main-navigation .top-level-nav .first-level-link, .fixed.compact .nav-full-width .main-navigation .top-level-nav .first-level-btn {
     padding: 5px 0 7px 0;
   }
-  .fixed.compact .nav-full-width .main-navigation .top-level-nav .first-level-link.has-sub {
+  .fixed.compact .nav-full-width .main-navigation .top-level-nav .first-level-link.has-sub, .fixed.compact .nav-full-width .main-navigation .top-level-nav .first-level-btn.has-sub {
     padding-right: 5px;
   }
 }
 
 @media (max-width: 767px) {
-  .nav-full-width .main-navigation .first-level-link {
+  .nav-full-width .main-navigation .first-level-link, .nav-full-width .main-navigation .first-level-btn {
     padding: 20px 0 20px 15px;
   }
 }
@@ -13237,15 +13233,104 @@ table.gsc-search-box td {
   .full-width-nav .main-navigation .top-level-nav {
     min-height: 55px;
   }
-  .full-width-nav .main-navigation .top-level-nav .nav-item > a {
+  .full-width-nav .main-navigation .top-level-nav .first-level-btn {
     min-height: 55px;
-    padding-top: 1rem;
+    padding-top: 12px;
   }
-  .full-width-nav .main-navigation .top-level-nav .nav-item > a.has-sub .carrot {
+  .full-width-nav .main-navigation .top-level-nav .first-level-btn.has-sub .carrot {
     bottom: 16px;
+  }
+  .full-width-nav .main-navigation .top-level-nav .first-level-link {
+    min-height: 55px;
+    padding-top: 17px;
   }
   .fixed.compact .full-width-nav .main-navigation {
     margin-top: 0;
+  }
+}
+
+@media (max-width: 767px) {
+  .full-width-nav {
+    max-width: 100%;
+    padding: 0;
+  }
+}
+
+/* Side nav */
+.accordion-list.list-group .list-group-item {
+  cursor: pointer;
+}
+
+.accordion-list.list-group .list-group-item:focus {
+  outline: solid 2px #2ea3f2;
+  outline-offset: -2px;
+  background-color: whitesmoke;
+}
+
+.accordion-list.list-group .list-group-item:hover {
+  background-color: whitesmoke;
+}
+
+.accordion-list.list-group .list-group-item.open {
+  background-color: whitesmoke;
+}
+
+.accordion-list.list-group .list-group-item.open .rotate {
+  -moz-transform: rotate(90deg) !important;
+  -webkit-transform: rotate(90deg) !important;
+  transform: rotate(90deg) !important;
+}
+
+.accordion-list.list-group .list-group-item .rotate {
+  position: absolute;
+  right: 0;
+  top: 0;
+  font-size: 1.3rem;
+  line-height: 3rem;
+  text-align: center;
+  width: 3rem;
+  height: 3rem;
+  border: none;
+  display: block !important;
+  -moz-transition: all .2s ease !important;
+  -webkit-transition: all .2s ease !important;
+  transition: all .2s ease !important;
+}
+
+/* v6 Nav Button */
+.first-level-btn > * {
+  pointer-events: none;
+}
+
+@media (min-width: 768px) {
+  .first-level-btn {
+    text-align: center;
+    border: none;
+    background: none;
+    width: 100%;
+  }
+}
+
+/* Navigation button mobile */
+@media (max-width: 767px) {
+  .top-level-nav {
+    width: 100%;
+  }
+  .first-level-btn {
+    border: none;
+    background: none;
+    width: 99.5%;
+    text-align: left;
+  }
+  .first-level-btn:focus {
+    outline-offset: -2px;
+  }
+  .first-level-btn .carrot {
+    display: none;
+  }
+  /* Some weird bug in mobile */
+  .no-js .megadropdown .top-level-nav .nav-item:hover .sub-nav, .megadropdown .top-level-nav .nav-item:hover .sub-nav {
+    position: relative !important;
   }
 }
 
@@ -13555,11 +13640,6 @@ a.second-level-link [class^="ca-gov-icon-"] {
   display: inline-block;
 }
 
-.sub-nav {
-  -webkit-transition: all 0.4s;
-  transition: all 0.4s;
-}
-
 .sub-nav.open {
   display: block;
   max-height: 1000px;
@@ -13685,7 +13765,7 @@ a.second-level-link [class^="ca-gov-icon-"] {
 }
 
 @media (min-width: 768px) {
-  .nav-item .first-level-link.has-sub .carrot {
+  .nav-item .first-level-link.has-sub .carrot, .first-level-btn .carrot {
     font-size: .8rem;
     position: absolute;
     bottom: 13px;
@@ -13988,26 +14068,38 @@ a.second-level-link [class^="ca-gov-icon-"] {
     }
 }*/
 @media (max-width: 767px) {
-  .has-sub .rotate {
+  /*button carrot*/
+  .first-level-btn[aria-expanded="false"] .rotate {
     display: block;
     position: absolute;
     top: 0;
     right: 0;
-    font-size: 1.5rem;
-    line-height: 2.8;
-    width: 80px;
+    font-size: 24px !important;
+    line-height: 64px !important;
+    width: 64px !important;
+    height: 64px !important;
     text-align: center;
     cursor: pointer;
     border: none;
-    height: 100%;
     -moz-transition: all .2s ease !important;
     -webkit-transition: all .2s ease !important;
     transition: all .2s ease !important;
   }
-  .has-sub.open .rotate {
+  .first-level-btn[aria-expanded="true"] .rotate {
     -moz-transform: rotate(90deg) !important;
     -webkit-transform: rotate(90deg) !important;
     transform: rotate(90deg) !important;
+    position: absolute;
+    width: 64px !important;
+    height: 64px !important;
+    line-height: 64px !important;
+    font-size: 24px !important;
+    top: 0;
+    right: 0;
+    text-align: center;
+    -moz-transition: all .2s ease !important;
+    -webkit-transition: all .2s ease !important;
+    transition: all .2s ease !important;
   }
 }
 
@@ -14019,8 +14111,6 @@ a.second-level-link [class^="ca-gov-icon-"] {
   top: 0;
   width: 100%;
   min-height: 38px;
-  background: #046B99;
-  color: #ffffff;
 }
 
 @media (max-width: 767px) {
@@ -14065,13 +14155,11 @@ a.second-level-link [class^="ca-gov-icon-"] {
 }
 
 .utility-header a {
-  color: #ffffff;
   display: inline-block;
   padding: 3px 0;
 }
 
 .utility-header a:hover, .utility-header a:focus, .utility-header a.hovered {
-  color: #fff0cf;
   text-decoration: none;
 }
 
@@ -14177,7 +14265,7 @@ a.second-level-link [class^="ca-gov-icon-"] {
 
 .header-cagov-logo img {
   top: 1px;
-  height: 34px;
+  height: 27px;
   left: 27px;
 }
 
@@ -14290,7 +14378,7 @@ a.second-level-link [class^="ca-gov-icon-"] {
 }
 
 .utility-header .flex-row .social-media-links .header-cagov-logo img {
-  top: 1px;
+  top: 4px;
   left: 0;
 }
 

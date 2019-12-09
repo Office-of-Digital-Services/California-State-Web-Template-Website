@@ -63,16 +63,34 @@
 
 
 .nav-item {
-    .sub-nav {
-        display: none; // Hide sub navigation panels by default.
+    .sub-nav.open {
+        display: block;
+        overflow: hidden;
+        opacity: 1;
+        max-height: 1000px !important;
+
         @media (max-width: $screen-xs-max) {
-            max-height: 0;
+            max-height: 1000px;
+            -webkit-transition: max-height 0.5s ease-in-out;
+            -moz-transition: max-height 0.5s ease-in-out;
+            -o-transition: max-height 0.5s ease-in-out;
+            transition: max-height 0.5s ease-in-out;
         }
     }
+
+    .sub-nav {
+        display: block;
+        opacity: 0;
+    }
+
 
     .sub-nav-decoration {
         display: none;
     }
+}
+
+#navigation .nav-item .sub-nav {
+    max-height: 0;
 }
 
 .second-level-nav {
@@ -96,6 +114,12 @@
         clear: both;
         width: 100%;
     }
+
+    .nav-item {
+        [aria-hidden=true].sub-nav {
+            max-height: 0;
+        }
+    }
 }
 
 
@@ -103,7 +127,8 @@
 // Main Navigation links
 // --------------------------------------------------
 
-.first-level-link {
+
+.first-level-link, .first-level-btn {
     display: block;
     padding: 5px 5px 12px 5px;
     font-family: $headings-font-family;
@@ -120,10 +145,12 @@
         text-decoration: none;
     }
 
-    > span[class^="ca-gov-icon"] {
-        /* Navigation icons */
-        display: block;
-        font-size: 32px;
+    > span[class^="ca-gov-icon"]:not(.carrot) {
+        @media (min-width: $screen-sm-min) {
+            /* Navigation icons */
+            display: block;
+            font-size: 32px;
+        }
     }
 
     @media (max-width: $screen-xs-max) {
@@ -135,7 +162,7 @@
         padding: 20px 0 20px 15px;
         margin-right: 2px; // to make outline visible
         margin-left: 2px; // to make outline visible
-        span[class^="ca-gov-icon"] {
+        span[class^="ca-gov-icon"]:not(.carrot) {
             @include font-size(1.5);
             display: inline-block;
             vertical-align: -2px;
@@ -145,7 +172,7 @@
 }
 
 @media (max-width: $screen-md) and (min-width: $screen-sm-min) {
-    .first-level-link {
+    .first-level-link, .first-level-btn {
         padding: 5px 9px 12px 9px;
 
         &.has-sub {
@@ -153,7 +180,6 @@
         }
     }
 }
-
 //
 // TOP LEVEL NAVIGATION FOR DESKTOP
 // --------------------------------------------------
@@ -208,11 +234,6 @@
             margin-left: auto;
         }
     }
-
-
-
-
-
     // shared styles megamenu and dropdown menu
     .nav-item {
         .sub-nav {
@@ -232,8 +253,6 @@
         }
     }
 }
-
-
 // beta 5.0 addition
 .main-navigation.dropdown .sub-nav {
     max-width: 250px;
@@ -245,7 +264,6 @@
         max-width: 100%;
     }
 }
-
 // beta 5.0 addition
 .main-navigation.dropdown .nav-arrow-down {
     width: 100%;
@@ -275,8 +293,6 @@
         padding-left: 350px;
     }
 }
-
-
 // Second-level-link toggle button
 .nav-item .toggle-sub-nav {
     &.closed .ca-gov-icon-menu-toggle-open {
@@ -302,13 +318,12 @@
         max-height: 0;
         overflow-y: hidden;
     }
-
     // For standard mobile menu and off canvas menu
     .top-level-nav .nav-item {
         background-color: $white;
         margin-top: 0;
 
-        .first-level-link.has-sub {
+        .first-level-link.has-sub, .first-level-btn.has-sub {
             padding-right: 82px; // allow room for sub nav toggle arrow
         }
         // Sub nav transition
@@ -335,7 +350,6 @@
     .nav-item.focus.clickedFocus .sub-nav {
         display: none;
     }
-
     // For off canvas menu
     .oc-outer { //Dynamically added wrapper div
         position: relative;
@@ -380,9 +394,7 @@
         overflow-y: auto; // allow menu to scroll if dynamic height reaches beyond page height
         overflow-x: hidden;
     }
-
     // .header-decoration is placed on top of regular page, produces dropshadow, prevents clicks on main page, and when clicked closes the menu.
-
     .header-decoration {
         display: none; // hide in mobile view by default
     }
@@ -420,12 +432,9 @@
         top: 5px;
     }
 }
-
-
 //
 // Minor divsions or sub sections
 // --------------------------------------------------
-
 @media (min-width: $screen-sm-min) {
     .home-link {
         @include sr-only();
@@ -435,14 +444,10 @@
         min-height: 50px;
     }
 }
-
 /* Need a little extra specificity for IE to override display: table-cell */
 .oldie .home-link {
     @include sr-only();
 }
-
-
-
 /*full width navigation*/
 @media (min-width: $screen-sm-min) {
     .nav-full-width {
@@ -458,7 +463,7 @@
                 color: #fff;
             }
 
-            .first-level-link {
+            .first-level-link, .first-level-btn {
                 padding: 5px 0 7px 0;
 
                 &.has-sub {
@@ -472,7 +477,6 @@
             }
         }
     }
-
     // fixed
     .fixed.compact {
         .branding {
@@ -483,7 +487,7 @@
             margin-top: 0;
             min-height: 30px;
 
-            .top-level-nav .first-level-link {
+            .top-level-nav .first-level-link, .top-level-nav .first-level-btn {
                 padding: 5px 0 7px 0;
 
                 &.has-sub {
@@ -495,24 +499,20 @@
 }
 
 @media (max-width: $screen-xs-max) {
-    .nav-full-width .main-navigation .first-level-link {
+    .nav-full-width .main-navigation .first-level-link, .nav-full-width .main-navigation .first-level-btn {
         padding: 20px 0 20px 15px;
     }
 }
-
-
 /* FULL WIDTH MENU WITH ICONS */
 @media (min-width: $screen-sm-min) {
     .nav-full-width-icons .main-navigation {
         padding-left: 0px;
         margin-top: 0px;
     }
-
     // fixed
     .nav-full-width-icons.fixed.compact .main-navigation {
         margin-top: 0px;
     }
-
     /* full width menu with icons BUT with .no-icons class */
     .nav-full-width-icons .no-icons {
         min-height: 55px;
@@ -532,8 +532,7 @@
             }
         }
     }
-    }
-
+}
 /* FULL WIDTH MENU WITH REGULAR UTILITY BAR */
 @media (min-width: $screen-sm-min) {
     .full-width-nav .main-navigation {
@@ -544,9 +543,9 @@
         .top-level-nav {
             min-height: 55px;
 
-            .nav-item > a {
+            .first-level-btn {
                 min-height: 55px;
-                padding-top: 1rem;
+                padding-top: 12px;
 
                 &.has-sub {
                     .carrot {
@@ -554,13 +553,109 @@
                     }
                 }
             }
+
+            .first-level-link {
+                min-height: 55px;
+                padding-top: 17px;
+            }
         }
     }
 
     .fixed.compact {
         .full-width-nav .main-navigation {
             margin-top: 0;
+        }
+    }
+}
+
+@media (max-width: $screen-xs-max) {
+    .full-width-nav {
+        max-width: 100%;
+        padding: 0;
+    }
+}
+/* Side nav */
+.accordion-list.list-group {
+    .list-group-item {
+        cursor: pointer;
+
+        &:focus {
+            @include outline(2px);
+            outline-offset: -2px;
+            background-color: $gray-lightest;
+        }
+
+        &:hover {
+            background-color: $gray-lightest;
+        }
+
+        &.open {
+            background-color: $gray-lightest;
+
+            .rotate {
+                -moz-transform: rotate(90deg) !important;
+                -webkit-transform: rotate(90deg) !important;
+                transform: rotate(90deg) !important;
             }
+        }
+
+        .rotate {
+            position: absolute;
+            right: 0;
+            top: 0;
+            font-size: 1.3rem;
+            line-height: 3rem;
+            text-align: center;
+            width: 3rem;
+            height: 3rem;
+            border: none;
+            display: block !important;
+            -moz-transition: all .2s ease !important;
+            -webkit-transition: all .2s ease !important;
+            transition: all .2s ease !important;
+        }
+    }
+}
+/* v6 Nav Button */
+.first-level-btn > * {
+    pointer-events: none;
+}
+
+@media (min-width: $screen-sm-min) {
+
+    .first-level-btn {
+        text-align: center;
+        border: none;
+        background: none;
+        width: 100%;
+    }
+}
+
+
+
+/* Navigation button mobile */
+@media (max-width: $screen-xs-max) {
+    .top-level-nav {
+        width: 100%;
+    }
+
+    .first-level-btn {
+        border: none;
+        background: none;
+        width: 99.5%;
+        text-align: left;
+
+        &:focus {
+            outline-offset: -2px;
         }
     }
 
+    .first-level-btn .carrot {
+        display: none;
+    }
+
+    /* Some weird bug in mobile */
+    .no-js .megadropdown .top-level-nav .nav-item:hover .sub-nav, .megadropdown .top-level-nav .nav-item:hover .sub-nav {
+        position: relative !important;
+    }
+}
