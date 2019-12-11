@@ -171,6 +171,8 @@
     }
 }
 
+
+
 @media (max-width: $screen-md) and (min-width: $screen-sm-min) {
     .first-level-link, .first-level-btn {
         padding: 5px 9px 12px 9px;
@@ -227,6 +229,14 @@
                 text-align: center; // Center only top level navigation links
                 min-height: 50px; // beta 5.0 addition
             }
+        }
+        // Search button in navigation
+        #nav-item-search button.first-level-link {
+            background: none;
+            text-align: center;
+            border: none;
+            padding: 5px 5px 12px 5px;
+            width: 100%;
         }
         // beta 5.0 addition
         .main-navigation.dropdown .nav-arrow-down {
@@ -558,20 +568,57 @@
                 min-height: 55px;
                 padding-top: 17px;
             }
+
+            #nav-item-search button.first-level-link {
+                background: none;
+                text-align: center;
+                border: none;
+                padding-top: 12px;
+                width: 100%;
+            }
         }
     }
 
     .fixed.compact {
+        .main-navigation {
+            #nav-item-search button.first-level-link {
+                padding-top: 17px;
+                padding-bottom: 8px;
+            }
+        }
+
         .full-width-nav .main-navigation {
             margin-top: 0;
+
+            #nav-item-search button.first-level-link {
+                padding-top: 9px;
+                padding-bottom: 8px;
+            }
         }
     }
 }
 
 @media (max-width: $screen-xs-max) {
+    .main-navigation {
+        #nav-item-search button.first-level-link {
+            background: none;
+            border: none;
+            width: 99.5%;
+            text-align: left;
+            outline-offset: -2px;
+        }
+    }
+
     .full-width-nav {
         max-width: 100%;
         padding: 0;
+
+        #nav-item-search button.first-level-link {
+            background: none;
+            border: none;
+            width: 99.5%;
+            text-align: left;
+        }
     }
 }
 /* Side nav */
