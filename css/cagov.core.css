@@ -1,5 +1,5 @@
 /**
- * CA State Template v5.5 -  @version v5.5.10 -  12/9/2019 
+ * CA State Template v5.5 -  @version v5.5.10 -  12/10/2019 
   STYLES COMPILED FROM SOURCE (SCSS) DO NOT MODIFY */
 /* -----------------------------------------
    BOOTSTRAP v4.3.1 - /source/scss/bootstrap/ 
@@ -10956,6 +10956,21 @@ code {
   background-image: none !important;
 }
 
+.list-group {
+  padding-left: 0 !important;
+  margin-bottom: 0 !important;
+}
+
+.list-group-item {
+  padding-top: 0.75rem !important;
+  padding-bottom: 0.75rem !important;
+  padding-left: 1.25rem !important;
+  padding-right: 1.25rem !important;
+  margin-bottom: -1px !important;
+  margin-top: 0 !important;
+  background-image: none !important;
+}
+
 /* -----------------------------------------
    SOCIAL SHARE WIDGET
    /source/scss/cagov/socialsharer.scss
@@ -12949,6 +12964,13 @@ table.gsc-search-box td {
     text-align: center;
     min-height: 50px;
   }
+  .top-level-nav #nav-item-search button.first-level-link {
+    background: none;
+    text-align: center;
+    border: none;
+    padding: 5px 5px 12px 5px;
+    width: 100%;
+  }
   .top-level-nav .main-navigation.dropdown .nav-arrow-down {
     left: auto;
     margin-left: auto;
@@ -13244,15 +13266,43 @@ table.gsc-search-box td {
     min-height: 55px;
     padding-top: 17px;
   }
+  .full-width-nav .main-navigation .top-level-nav #nav-item-search button.first-level-link {
+    background: none;
+    text-align: center;
+    border: none;
+    padding-top: 12px;
+    width: 100%;
+  }
+  .fixed.compact .main-navigation #nav-item-search button.first-level-link {
+    padding-top: 17px;
+    padding-bottom: 8px;
+  }
   .fixed.compact .full-width-nav .main-navigation {
     margin-top: 0;
+  }
+  .fixed.compact .full-width-nav .main-navigation #nav-item-search button.first-level-link {
+    padding-top: 9px;
+    padding-bottom: 8px;
   }
 }
 
 @media (max-width: 767px) {
+  .main-navigation #nav-item-search button.first-level-link {
+    background: none;
+    border: none;
+    width: 99.5%;
+    text-align: left;
+    outline-offset: -2px;
+  }
   .full-width-nav {
     max-width: 100%;
     padding: 0;
+  }
+  .full-width-nav #nav-item-search button.first-level-link {
+    background: none;
+    border: none;
+    width: 99.5%;
+    text-align: left;
   }
 }
 

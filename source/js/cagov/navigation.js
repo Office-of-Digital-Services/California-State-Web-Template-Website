@@ -403,74 +403,7 @@ var main = function main() {
                         })();
                     }
 
-                    // keyboard management for headers
-                    if (hasClass(e.target, 'first-level-btn') === true && eventName === 'keydown') {
-                        (function () {
-                            var buttonTag = e.target;
-                            var idAccordionContainer = searchParent(buttonTag, CONFIG.ACCORDION_JS, hashId);
-                            var accordionContainer = findById(idAccordionContainer, hashId);
-
-                            var coolSelectors = CONFIG.ACCORDION_DATA_COOL_SELECTORS === true;
-                            var $accordionAllHeaders = [].slice.call(accordionContainer.querySelectorAll('.first-level-btn'));
-
-                            if (coolSelectors === false) {
-                                $accordionAllHeaders = $accordionAllHeaders.filter(function (element) {
-                                    return element.parentNode.parentNode === accordionContainer;
-                                });
-                            }
-
-                            // strike home on a tab => 1st tab
-                            if (e.keyCode === 36) {
-                                unSelectHeaders($accordionAllHeaders, CONFIG.ATTR_SELECTED);
-                                selectHeader($accordionAllHeaders[0], CONFIG.ATTR_SELECTED);
-                                setTimeout(function () {
-                                    $accordionAllHeaders[0].focus();
-                                }, 0);
-                                e.preventDefault();
-                            }
-                            // strike end on the tab => last tab
-                            else if (e.keyCode === 35) {
-                                unSelectHeaders($accordionAllHeaders, CONFIG.ATTR_SELECTED);
-                                selectHeader($accordionAllHeaders[$accordionAllHeaders.length - 1], CONFIG.ATTR_SELECTED);
-                                setTimeout(function () {
-                                    $accordionAllHeaders[$accordionAllHeaders.length - 1].focus();
-                                }, 0);
-                                e.preventDefault();
-                            }
-                            // strike up or left on the tab => previous tab
-                            else if ((e.keyCode === 37 || e.keyCode === 38) && !e.ctrlKey) {
-
-                                // if first selected = select last
-                                if ($accordionAllHeaders[0].getAttribute(CONFIG.ATTR_SELECTED) === 'true') {
-                                    unSelectHeaders($accordionAllHeaders, CONFIG.ATTR_SELECTED);
-                                    selectHeader($accordionAllHeaders[$accordionAllHeaders.length - 1], CONFIG.ATTR_SELECTED);
-                                    setTimeout(function () {
-                                        $accordionAllHeaders[$accordionAllHeaders.length - 1].focus();
-                                    }, 0);
-                                    e.preventDefault();
-                                } else {
-                                    selectHeaderInList($accordionAllHeaders, 'prev', CONFIG.ATTR_SELECTED);
-                                    e.preventDefault();
-                                }
-                            }
-                            // strike down or right in the tab => next tab
-                            else if ((e.keyCode === 40 || e.keyCode === 39) && !e.ctrlKey) {
-
-                                // if last selected = select first
-                                if ($accordionAllHeaders[$accordionAllHeaders.length - 1].getAttribute(CONFIG.ATTR_SELECTED) === 'true') {
-                                    unSelectHeaders($accordionAllHeaders, CONFIG.ATTR_SELECTED);
-                                    selectHeader($accordionAllHeaders[0], CONFIG.ATTR_SELECTED);
-                                    setTimeout(function () {
-                                        $accordionAllHeaders[0].focus();
-                                    }, 0);
-                                    e.preventDefault();
-                                } else {
-                                    selectHeaderInList($accordionAllHeaders, 'next', CONFIG.ATTR_SELECTED);
-                                    e.preventDefault();
-                                }
-                            }
-                        })();
-                    }
+                    
                 })();
             }
         }, true);
@@ -607,7 +540,7 @@ $(document).ready(function () {
     }
 
     // Addig class first-level-btn to first-level-link to make sure left and right keyboard keys work for all navigation links
-    $(".first-level-link").addClass("first-level-btn");
+    // $(".first-level-link").addClass("first-level-btn");
 
 });
 
