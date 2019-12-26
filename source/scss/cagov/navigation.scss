@@ -182,14 +182,33 @@
                 height: calc(100% - 5px);
             }
         }
+        // Search button in navigation
+        button.first-level-link {
+            background: none;
+            border: none;
+            text-align: center;
+            padding: 12px 0;
+            width: 100%;
+            min-height: 50px;
+            height: calc(100% - 5px);
+        }
         // beta 5.0 addition
         .main-navigation.dropdown .nav-arrow-down {
             left: auto;
             margin-left: auto;
         }
+
+       
     }
 
-
+    .fixed.compact {
+        .main-navigation {
+            #nav-item-search button.first-level-link {
+                padding-top: 7px;
+                padding-bottom: 8px;
+            }
+        }
+    }
 	
 
 
@@ -264,6 +283,15 @@
 }
 
 @media (max-width: $screen-xs-max) {
+    #nav-item-search button.first-level-link {
+        background: none;
+        border: none;
+        width: 99.5%;
+        text-align: left;
+        outline-offset: -2px;
+    }
+
+
   // For standard mobile menu
   .mobile-closed {
     max-height: 0;

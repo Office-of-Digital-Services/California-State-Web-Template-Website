@@ -1,6 +1,6 @@
 /**
    * --------------------------------------------------------------------------
-   * Bootstrap (v4.3.1): collapse.js
+   * Bootstrap (v4.4.1): collapse.js
    * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
    * --------------------------------------------------------------------------
    */
@@ -12,7 +12,7 @@
    */
 
 var NAME$3 = 'collapse';
-var VERSION$3 = '4.3.1';
+var VERSION$3 = '4.4.1';
 var DATA_KEY$3 = 'bs.collapse';
 var EVENT_KEY$3 = "." + DATA_KEY$3;
 var DATA_API_KEY$3 = '.data-api';
@@ -45,13 +45,12 @@ var Dimension = {
 var Selector$3 = {
     ACTIVES: '.show, .collapsing',
     DATA_TOGGLE: '[data-toggle="collapse"]'
-    /**
-     * ------------------------------------------------------------------------
-     * Class Definition
-     * ------------------------------------------------------------------------
-     */
-
 };
+/**
+ * ------------------------------------------------------------------------
+ * Class Definition
+ * ------------------------------------------------------------------------
+ */
 
 var Collapse =
     /*#__PURE__*/
@@ -238,7 +237,7 @@ var Collapse =
             ;
 
         _proto._getConfig = function _getConfig(config) {
-            config = _objectSpread({}, Default$1, config);
+            config = _objectSpread2({}, Default$1, {}, config);
             config.toggle = Boolean(config.toggle); // Coerce string values
 
             Util.typeCheckConfig(NAME$3, config, DefaultType$1);
@@ -292,7 +291,7 @@ var Collapse =
                 var $this = $(this);
                 var data = $this.data(DATA_KEY$3);
 
-                var _config = _objectSpread({}, Default$1, $this.data(), typeof config === 'object' && config ? config : {});
+                var _config = _objectSpread2({}, Default$1, {}, $this.data(), {}, typeof config === 'object' && config ? config : {});
 
                 if (!data && _config.toggle && /show|hide/.test(config)) {
                     _config.toggle = false;

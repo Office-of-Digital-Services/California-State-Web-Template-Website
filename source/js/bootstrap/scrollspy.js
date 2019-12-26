@@ -1,18 +1,18 @@
 /**
    * --------------------------------------------------------------------------
-   * Bootstrap (v4.3.1): scrollspy.js
+   * Bootstrap (v4.4.1): scrollspy.js
    * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
    * --------------------------------------------------------------------------
    */
 
 /**
- * ------------------------------------------------------------------------
- * Constants
- * ------------------------------------------------------------------------
- */
+   * ------------------------------------------------------------------------
+   * Constants
+   * ------------------------------------------------------------------------
+   */
 
 var NAME$8 = 'scrollspy';
-var VERSION$8 = '4.3.1';
+var VERSION$8 = '4.4.1';
 var DATA_KEY$8 = 'bs.scrollspy';
 var EVENT_KEY$8 = "." + DATA_KEY$8;
 var DATA_API_KEY$6 = '.data-api';
@@ -51,13 +51,12 @@ var Selector$8 = {
 var OffsetMethod = {
     OFFSET: 'offset',
     POSITION: 'position'
-    /**
-     * ------------------------------------------------------------------------
-     * Class Definition
-     * ------------------------------------------------------------------------
-     */
-
 };
+/**
+ * ------------------------------------------------------------------------
+ * Class Definition
+ * ------------------------------------------------------------------------
+ */
 
 var ScrollSpy =
     /*#__PURE__*/
@@ -139,7 +138,7 @@ var ScrollSpy =
             ;
 
         _proto._getConfig = function _getConfig(config) {
-            config = _objectSpread({}, Default$6, typeof config === 'object' && config ? config : {});
+            config = _objectSpread2({}, Default$6, {}, typeof config === 'object' && config ? config : {});
 
             if (typeof config.target !== 'string') {
                 var id = $(config.target).attr('id');

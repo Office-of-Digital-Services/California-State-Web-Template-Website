@@ -1,6 +1,6 @@
 /**
    * --------------------------------------------------------------------------
-   * Bootstrap (v4.3.1): dropdown.js
+   * Bootstrap (v4.4.1): dropdown.js
    * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
    * --------------------------------------------------------------------------
    */
@@ -12,7 +12,7 @@
    */
 
 var NAME$4 = 'dropdown';
-var VERSION$4 = '4.3.1';
+var VERSION$4 = '4.4.1';
 var DATA_KEY$4 = 'bs.dropdown';
 var EVENT_KEY$4 = "." + DATA_KEY$4;
 var DATA_API_KEY$4 = '.data-api';
@@ -72,21 +72,22 @@ var Default$2 = {
     flip: true,
     boundary: 'scrollParent',
     reference: 'toggle',
-    display: 'dynamic'
+    display: 'dynamic',
+    popperConfig: null
 };
 var DefaultType$2 = {
     offset: '(number|string|function)',
     flip: 'boolean',
     boundary: '(string|element)',
     reference: '(string|element)',
-    display: 'string'
-    /**
-     * ------------------------------------------------------------------------
-     * Class Definition
-     * ------------------------------------------------------------------------
-     */
-
+    display: 'string',
+    popperConfig: '(null|object)'
 };
+/**
+ * ------------------------------------------------------------------------
+ * Class Definition
+ * ------------------------------------------------------------------------
+ */
 
 var Dropdown =
     /*#__PURE__*/
@@ -110,8 +111,6 @@ var Dropdown =
                 return;
             }
 
-            var parent = Dropdown._getParentFromElement(this._element);
-
             var isActive = $(this._menu).hasClass(ClassName$4.SHOW);
 
             Dropdown._clearMenus();
@@ -120,10 +119,25 @@ var Dropdown =
                 return;
             }
 
+            this.show(true);
+        };
+
+        _proto.show = function show(usePopper) {
+            if (usePopper === void 0) {
+                usePopper = false;
+            }
+
+            if (this._element.disabled || $(this._element).hasClass(ClassName$4.DISABLED) || $(this._menu).hasClass(ClassName$4.SHOW)) {
+                return;
+            }
+
             var relatedTarget = {
                 relatedTarget: this._element
             };
             var showEvent = $.Event(Event$4.SHOW, relatedTarget);
+
+            var parent = Dropdown._getParentFromElement(this._element);
+
             $(parent).trigger(showEvent);
 
             if (showEvent.isDefaultPrevented()) {
@@ -131,7 +145,7 @@ var Dropdown =
             } // Disable totally Popper.js for Dropdown in Navbar
 
 
-            if (!this._inNavbar) {
+            if (!this._inNavbar && usePopper) {
                 /**
                  * Check for Popper dependency
                  * Popper - https://popper.js.org
@@ -178,28 +192,6 @@ var Dropdown =
             $(parent).toggleClass(ClassName$4.SHOW).trigger($.Event(Event$4.SHOWN, relatedTarget));
         };
 
-        _proto.show = function show() {
-            if (this._element.disabled || $(this._element).hasClass(ClassName$4.DISABLED) || $(this._menu).hasClass(ClassName$4.SHOW)) {
-                return;
-            }
-
-            var relatedTarget = {
-                relatedTarget: this._element
-            };
-            var showEvent = $.Event(Event$4.SHOW, relatedTarget);
-
-            var parent = Dropdown._getParentFromElement(this._element);
-
-            $(parent).trigger(showEvent);
-
-            if (showEvent.isDefaultPrevented()) {
-                return;
-            }
-
-            $(this._menu).toggleClass(ClassName$4.SHOW);
-            $(parent).toggleClass(ClassName$4.SHOW).trigger($.Event(Event$4.SHOWN, relatedTarget));
-        };
-
         _proto.hide = function hide() {
             if (this._element.disabled || $(this._element).hasClass(ClassName$4.DISABLED) || !$(this._menu).hasClass(ClassName$4.SHOW)) {
                 return;
@@ -216,6 +208,10 @@ var Dropdown =
 
             if (hideEvent.isDefaultPrevented()) {
                 return;
+            }
+
+            if (this._popper) {
+                this._popper.destroy();
             }
 
             $(this._menu).toggleClass(ClassName$4.SHOW);
@@ -256,7 +252,7 @@ var Dropdown =
         };
 
         _proto._getConfig = function _getConfig(config) {
-            config = _objectSpread({}, this.constructor.Default, $(this._element).data(), config);
+            config = _objectSpread2({}, this.constructor.Default, {}, $(this._element).data(), {}, config);
             Util.typeCheckConfig(NAME$4, config, this.constructor.DefaultType);
             return config;
         };
@@ -305,7 +301,7 @@ var Dropdown =
 
             if (typeof this._config.offset === 'function') {
                 offset.fn = function (data) {
-                    data.offsets = _objectSpread({}, data.offsets, _this2._config.offset(data.offsets, _this2._element) || {});
+                    data.offsets = _objectSpread2({}, data.offsets, {}, _this2._config.offset(data.offsets, _this2._element) || {});
                     return data;
                 };
             } else {
@@ -326,9 +322,8 @@ var Dropdown =
                     preventOverflow: {
                         boundariesElement: this._config.boundary
                     }
-                } // Disable Popper.js if we have a static display
-
-            };
+                }
+            }; // Disable Popper.js if we have a static display
 
             if (this._config.display === 'static') {
                 popperConfig.modifiers.applyStyle = {
@@ -336,7 +331,7 @@ var Dropdown =
                 };
             }
 
-            return popperConfig;
+            return _objectSpread2({}, popperConfig, {}, this._config.popperConfig);
         } // Static
             ;
 
@@ -408,6 +403,11 @@ var Dropdown =
                 }
 
                 toggles[i].setAttribute('aria-expanded', 'false');
+
+                if (context._popper) {
+                    context._popper.destroy();
+                }
+
                 $(dropdownMenu).removeClass(ClassName$4.SHOW);
                 $(parent).removeClass(ClassName$4.SHOW).trigger($.Event(Event$4.HIDDEN, relatedTarget));
             }
@@ -448,6 +448,10 @@ var Dropdown =
 
             var isActive = $(parent).hasClass(ClassName$4.SHOW);
 
+            if (!isActive && event.which === ESCAPE_KEYCODE) {
+                return;
+            }
+
             if (!isActive || isActive && (event.which === ESCAPE_KEYCODE || event.which === SPACE_KEYCODE)) {
                 if (event.which === ESCAPE_KEYCODE) {
                     var toggle = parent.querySelector(Selector$4.DATA_TOGGLE);
@@ -458,7 +462,9 @@ var Dropdown =
                 return;
             }
 
-            var items = [].slice.call(parent.querySelectorAll(Selector$4.VISIBLE_ITEMS));
+            var items = [].slice.call(parent.querySelectorAll(Selector$4.VISIBLE_ITEMS)).filter(function (item) {
+                return $(item).is(':visible');
+            });
 
             if (items.length === 0) {
                 return;
