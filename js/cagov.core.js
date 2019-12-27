@@ -19300,9 +19300,11 @@ $(document).ready(function () {
 (function () {
     // Get relevant elements and collections
     var tabbed = document.querySelector('.tabs');
-    var tablist = tabbed.querySelector('ul');
-    var tabs = tablist.querySelectorAll('a');
-    var panels = tabbed.querySelectorAll('[id^="section"]');
+    if (tabbed !== null) {
+        var tablist = tabbed.querySelector('ul');
+        var tabs = tablist.querySelectorAll('a');
+        var panels = tabbed.querySelectorAll('[id^="section"]');
+  
 
     // The tab switching function
     var switchTab = function(oldTab, newTab) {
@@ -19368,7 +19370,8 @@ $(document).ready(function () {
     // Initially activate the first tab and reveal the first tab panel
     tabs[0].removeAttribute('tabindex');
     tabs[0].setAttribute('aria-selected', 'true');
-    panels[0].hidden = false;
+        panels[0].hidden = false;
+    }
 })();
 
 /* -----------------------------------------
