@@ -36,7 +36,7 @@
     a {
         color: contrast($color-p2);
         display: inline-block;
-        padding: 3px 0;
+        padding: 0;
 
         &:hover, &:focus, &.hovered {
             color: #FEF1D2;
@@ -76,7 +76,7 @@
     .settings-links {
         @include small();
         @include text-right();
-        margin-top: 0px; // beta 5.0 addition
+        margin-top: 3px; // beta 5.0 addition
         @media (max-width: $screen-xs-max) {
             @include text-right(); // beta 5.0 addition
             padding-right: 0;
@@ -138,6 +138,7 @@
             display: flex;
             flex-direction: row;
             justify-content: flex-start;
+            align-items: center; // make items vertically centered
 
             .header-cagov-logo {
                 @media (min-width: $screen-md-min) {
@@ -170,10 +171,6 @@
                 }
             }
 
-            > a {
-                padding-top: 7px; // links with icons
-            }
-
             @media (max-width: $screen-xs-max) {
                 [class^="ca-gov-icon-"] {
                     font-size: 1rem;
@@ -185,9 +182,8 @@
             display: flex;
             flex-wrap: wrap;
             margin-left: auto; // justify to the right
-            align-items: baseline; // make items vertically centered
+            align-items: center; // make items vertically centered
             justify-content: flex-end;
-            padding-top: 3px;
 
             a {
                 margin: 0 10px 0 10px;
@@ -196,7 +192,7 @@
 
 
                 @media (max-width: $screen-xs-max) {
-                    margin: 5px 4px 0 4px;
+                    margin: 0 4px 0 4px;
                     padding: 0;
                 }
             }
