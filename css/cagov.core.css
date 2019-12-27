@@ -1,5 +1,5 @@
 /**
- * CA State Template v5 -  @version v5.0.13 -  12/26/2019 
+ * CA State Template v5 -  @version v5.0.14 -  12/27/2019 
   STYLES COMPILED FROM SOURCE (SCSS) DO NOT MODIFY */
 /* -----------------------------------------
    BOOTSTRAP v4.3.1 - /source/scss/bootstrap/ 
@@ -16449,6 +16449,53 @@ body {
     opacity: 1 !important;
     padding: 0 !important;
   }
+}
+
+/* ACCESSIBLE tabs*/
+.tabs {
+  position: relative;
+}
+
+.tabs [role="tablist"] {
+  padding: 0;
+  margin-bottom: 0;
+}
+
+.tabs [role="tablist"] li, .tabs [role="tablist"] a {
+  display: inline-block;
+}
+
+.tabs [role="tablist"] a {
+  text-decoration: none;
+  padding: 7px 15px;
+  margin: 1px 1px;
+}
+
+.tabs [role="tablist"] a:focus {
+  outline-offset: -2px;
+}
+
+.tabs [role="tablist"] [aria-selected] {
+  border: 1px solid #dee2e6;
+  background: #fff;
+  border-bottom: 0;
+  position: relative;
+  margin: 0 0;
+}
+
+.tabs [role="tabpanel"] {
+  border: 1px solid #dee2e6;
+  padding: 1.1rem;
+  margin-top: -2px;
+}
+
+.tabs [role="tabpanel"]:focus {
+  outline: solid 2px #2ea3f2;
+  outline-offset: -2px;
+}
+
+.tabs [role="tabpanel"] * + * {
+  margin-top: 0.75rem;
 }
 
 /* -----------------------------------------

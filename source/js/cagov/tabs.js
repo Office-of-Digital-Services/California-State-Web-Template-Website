@@ -1,10 +1,9 @@
 /* -----------------------------------------
-   Tabs -- some fixing to bootstap 3 tabs 
-   and backward compatibility
+   Tabs -- custom accessible tabs
 ----------------------------------------- */
 (function () {
     // Get relevant elements and collections
-    const tabbed = document.querySelector('.tab-group');
+    const tabbed = document.querySelector('.tabs');
     const tablist = tabbed.querySelector('ul');
     const tabs = tablist.querySelectorAll('a');
     const panels = tabbed.querySelectorAll('[id^="section"]');

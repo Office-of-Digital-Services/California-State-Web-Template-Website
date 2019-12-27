@@ -51,7 +51,7 @@ var jssrc = [
    'source/js/bootstrap-accessibility-plugin/functions.js',
    'source/js/bootstrap-accessibility-plugin/collapse.js',
    'source/js/bootstrap-accessibility-plugin/dropdown.js',
-   'source/js/bootstrap-accessibility-plugin/tab.js',
+  // 'source/js/bootstrap-accessibility-plugin/tab.js',
 
   // THIRD PARTY LIBS
   'source/js/libs/responsive-tabs.js',
