@@ -1,6 +1,6 @@
 /**
    * --------------------------------------------------------------------------
-   * Bootstrap (v4.3.1): tooltip.js
+   * Bootstrap (v4.4.1): tooltip.js
    * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
    * --------------------------------------------------------------------------
    */
@@ -12,7 +12,7 @@
    */
 
 var NAME$6 = 'tooltip';
-var VERSION$6 = '4.3.1';
+var VERSION$6 = '4.4.1';
 var DATA_KEY$6 = 'bs.tooltip';
 var EVENT_KEY$6 = "." + DATA_KEY$6;
 var JQUERY_NO_CONFLICT$6 = $.fn[NAME$6];
@@ -34,7 +34,8 @@ var DefaultType$4 = {
     boundary: '(string|element)',
     sanitize: 'boolean',
     sanitizeFn: '(null|function)',
-    whiteList: 'object'
+    whiteList: 'object',
+    popperConfig: '(null|object)'
 };
 var AttachmentMap$1 = {
     AUTO: 'auto',
@@ -58,7 +59,8 @@ var Default$4 = {
     boundary: 'scrollParent',
     sanitize: true,
     sanitizeFn: null,
-    whiteList: DefaultWhitelist
+    whiteList: DefaultWhitelist,
+    popperConfig: null
 };
 var HoverState = {
     SHOW: 'show',
@@ -90,22 +92,17 @@ var Trigger = {
     FOCUS: 'focus',
     CLICK: 'click',
     MANUAL: 'manual'
-    /**
-     * ------------------------------------------------------------------------
-     * Class Definition
-     * ------------------------------------------------------------------------
-     */
-
 };
+/**
+ * ------------------------------------------------------------------------
+ * Class Definition
+ * ------------------------------------------------------------------------
+ */
 
 var Tooltip =
     /*#__PURE__*/
     function () {
         function Tooltip(element, config) {
-            /**
-             * Check for Popper dependency
-             * Popper - https://popper.js.org
-             */
             if (typeof Popper === 'undefined') {
                 throw new TypeError('Bootstrap\'s tooltips require Popper.js (https://popper.js.org/)');
             } // private
@@ -176,7 +173,7 @@ var Tooltip =
             clearTimeout(this._timeout);
             $.removeData(this.element, this.constructor.DATA_KEY);
             $(this.element).off(this.constructor.EVENT_KEY);
-            $(this.element).closest('.modal').off('hide.bs.modal');
+            $(this.element).closest('.modal').off('hide.bs.modal', this._hideModalHandler);
 
             if (this.tip) {
                 $(this.tip).remove();
@@ -187,7 +184,7 @@ var Tooltip =
             this._hoverState = null;
             this._activeTrigger = null;
 
-            if (this._popper !== null) {
+            if (this._popper) {
                 this._popper.destroy();
             }
 
@@ -240,29 +237,7 @@ var Tooltip =
                 }
 
                 $(this.element).trigger(this.constructor.Event.INSERTED);
-                this._popper = new Popper(this.element, tip, {
-                    placement: attachment,
-                    modifiers: {
-                        offset: this._getOffset(),
-                        flip: {
-                            behavior: this.config.fallbackPlacement
-                        },
-                        arrow: {
-                            element: Selector$6.ARROW
-                        },
-                        preventOverflow: {
-                            boundariesElement: this.config.boundary
-                        }
-                    },
-                    onCreate: function onCreate(data) {
-                        if (data.originalPlacement !== data.placement) {
-                            _this._handlePopperPlacementChange(data);
-                        }
-                    },
-                    onUpdate: function onUpdate(data) {
-                        return _this._handlePopperPlacementChange(data);
-                    }
-                });
+                this._popper = new Popper(this.element, tip, this._getPopperConfig(attachment));
                 $(tip).addClass(ClassName$6.SHOW); // If this is a touch-enabled device we add extra
                 // empty mouseover listeners to the body's immediate children;
                 // only needed because of broken event delegation on iOS
@@ -410,14 +385,43 @@ var Tooltip =
         } // Private
             ;
 
-        _proto._getOffset = function _getOffset() {
+        _proto._getPopperConfig = function _getPopperConfig(attachment) {
             var _this3 = this;
+
+            var defaultBsConfig = {
+                placement: attachment,
+                modifiers: {
+                    offset: this._getOffset(),
+                    flip: {
+                        behavior: this.config.fallbackPlacement
+                    },
+                    arrow: {
+                        element: Selector$6.ARROW
+                    },
+                    preventOverflow: {
+                        boundariesElement: this.config.boundary
+                    }
+                },
+                onCreate: function onCreate(data) {
+                    if (data.originalPlacement !== data.placement) {
+                        _this3._handlePopperPlacementChange(data);
+                    }
+                },
+                onUpdate: function onUpdate(data) {
+                    return _this3._handlePopperPlacementChange(data);
+                }
+            };
+            return _objectSpread2({}, defaultBsConfig, {}, this.config.popperConfig);
+        };
+
+        _proto._getOffset = function _getOffset() {
+            var _this4 = this;
 
             var offset = {};
 
             if (typeof this.config.offset === 'function') {
                 offset.fn = function (data) {
-                    data.offsets = _objectSpread({}, data.offsets, _this3.config.offset(data.offsets, _this3.element) || {});
+                    data.offsets = _objectSpread2({}, data.offsets, {}, _this4.config.offset(data.offsets, _this4.element) || {});
                     return data;
                 };
             } else {
@@ -444,32 +448,35 @@ var Tooltip =
         };
 
         _proto._setListeners = function _setListeners() {
-            var _this4 = this;
+            var _this5 = this;
 
             var triggers = this.config.trigger.split(' ');
             triggers.forEach(function (trigger) {
                 if (trigger === 'click') {
-                    $(_this4.element).on(_this4.constructor.Event.CLICK, _this4.config.selector, function (event) {
-                        return _this4.toggle(event);
+                    $(_this5.element).on(_this5.constructor.Event.CLICK, _this5.config.selector, function (event) {
+                        return _this5.toggle(event);
                     });
                 } else if (trigger !== Trigger.MANUAL) {
-                    var eventIn = trigger === Trigger.HOVER ? _this4.constructor.Event.MOUSEENTER : _this4.constructor.Event.FOCUSIN;
-                    var eventOut = trigger === Trigger.HOVER ? _this4.constructor.Event.MOUSELEAVE : _this4.constructor.Event.FOCUSOUT;
-                    $(_this4.element).on(eventIn, _this4.config.selector, function (event) {
-                        return _this4._enter(event);
-                    }).on(eventOut, _this4.config.selector, function (event) {
-                        return _this4._leave(event);
+                    var eventIn = trigger === Trigger.HOVER ? _this5.constructor.Event.MOUSEENTER : _this5.constructor.Event.FOCUSIN;
+                    var eventOut = trigger === Trigger.HOVER ? _this5.constructor.Event.MOUSELEAVE : _this5.constructor.Event.FOCUSOUT;
+                    $(_this5.element).on(eventIn, _this5.config.selector, function (event) {
+                        return _this5._enter(event);
+                    }).on(eventOut, _this5.config.selector, function (event) {
+                        return _this5._leave(event);
                     });
-                }
-            });
-            $(this.element).closest('.modal').on('hide.bs.modal', function () {
-                if (_this4.element) {
-                    _this4.hide();
                 }
             });
 
+            this._hideModalHandler = function () {
+                if (_this5.element) {
+                    _this5.hide();
+                }
+            };
+
+            $(this.element).closest('.modal').on('hide.bs.modal', this._hideModalHandler);
+
             if (this.config.selector) {
-                this.config = _objectSpread({}, this.config, {
+                this.config = _objectSpread2({}, this.config, {
                     trigger: 'manual',
                     selector: ''
                 });
@@ -569,7 +576,7 @@ var Tooltip =
                     delete dataAttributes[dataAttr];
                 }
             });
-            config = _objectSpread({}, this.constructor.Default, dataAttributes, typeof config === 'object' && config ? config : {});
+            config = _objectSpread2({}, this.constructor.Default, {}, dataAttributes, {}, typeof config === 'object' && config ? config : {});
 
             if (typeof config.delay === 'number') {
                 config.delay = {

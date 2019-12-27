@@ -205,3 +205,54 @@
         padding: 0 !important;
     }
 }
+
+/* ACCESSIBLE tabs*/
+
+.tabs {
+    position: relative;
+
+
+    [role="tablist"] {
+        padding: 0;
+        margin-bottom: 0;
+    }
+
+    [role="tablist"] li, [role="tablist"] a {
+        display: inline-block;
+    }
+
+    [role="tablist"] a {
+        text-decoration: none;
+        padding: 7px 15px;
+        margin: 1px 1px;
+
+        &:focus {
+            outline-offset: -2px;
+        }
+    }
+
+    [role="tablist"] [aria-selected] {
+        border: 1px solid $nav-tabs-border-color;
+        background: #fff;
+        border-bottom: 0;
+        position: relative;
+        margin: 0 0;
+        // top: 1px;
+    }
+
+    [role="tabpanel"] {
+        border: 1px solid $nav-tabs-border-color;
+        padding: 1.1rem;
+        margin-top: -2px;
+
+        &:focus {
+
+            @include outline(2px);
+            outline-offset: -2px;
+        }
+    }
+
+    [role="tabpanel"] * + * {
+        margin-top: 0.75rem;
+    }
+}
