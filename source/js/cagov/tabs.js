@@ -1,88 +1,80 @@
 /* -----------------------------------------
-   Tabs -- some fixing to bootstap 3 tabs
-   and backward compatibility
+   TABS -- custom accessible tabs
 ----------------------------------------- */
-$(document).ready(function () {
-    // adding active class to a tag if aria selected is true
-    var activeTab = $(".nav-tabs > li > a[aria-selected='true']");
-    activeTab.addClass("active");
 
-    // Just to change class active in the parent li element (backward compatibility)
-    $(".nav-tabs > li > a").on("click", function () {
-
-        var tabID = $(this).attr("id");
-        var tabcontentID = $("[aria-labelledby=" + tabID + "]");
-        var tabGroup = $(this).closest(".tab-group");
-        var tabsPane = tabGroup.find(".tab-pane");
-        tabsPane.attr("tabindex", "-1").attr("aria-hidden", "true");
-        if ($(this).attr('aria-selected') === "false") {
-            $(".nav-tabs > li").removeClass("active");
-            $(this).parent("li").addClass("active");
-            tabcontentID.removeAttr("tabindex aria-hidden");
-        }
-        else {
-            $(".nav-tabs > li").removeClass("active");
-            $(this).parent("li").addClass("active");
-        }
-    });
+(function () {
+    // Get relevant elements and collections
+    var tabbed = document.querySelector('.tabs');
+    if (tabbed !== null) {
+        var tablist = tabbed.querySelector('ul');
+        var tabs = tablist.querySelectorAll('a');
+        var panels = tabbed.querySelectorAll('[id^="section"]');
 
 
-    // takes care of tabindexes and aria-hidden attributes when using arrow keys to navigate
-    $(".nav-tabs > li > a").on('keydown', function (e) {
-        var tabID = $(this).attr("id");
-        var tabcontentID = $("[aria-labelledby=" + tabID + "]");
-        var tabGroup = $(this).closest(".tab-group");
-        var tabsPane = tabGroup.find(".tab-pane");
-        var tabsPaneFirst = tabGroup.find(".tab-pane:first-child");
-        var tabsPaneLast = tabGroup.find(".tab-pane:last-child");
-        var parentLI = $(this).parent("li");
+        // The tab switching function
+        var switchTab = function (oldTab, newTab) {
+            newTab.focus();
+            // Make the active tab focusable by the user (Tab key)
+            newTab.removeAttribute('tabindex');
+            // Set the selected state
+            newTab.setAttribute('aria-selected', 'true');
+            oldTab.removeAttribute('aria-selected');
+            oldTab.setAttribute('tabindex', '-1');
+            // Get the indices of the new and old tabs to find the correct
+            // tab panels to show and hide
+            var index = Array.prototype.indexOf.call(tabs, newTab);
+            var oldIndex = Array.prototype.indexOf.call(tabs, oldTab);
+            panels[oldIndex].hidden = true;
+            panels[index].hidden = false;
+        };
 
-        if (parentLI.is(':first-child')) {
-            console.log("first");
-        }
-        if (parentLI.is(':last-child')) {
-            console.log("last");
-        }
+        // Add the tablist role to the first <ul> in the .tabbed container
+        tablist.setAttribute('role', 'tablist');
 
+        // Add semantics are remove user focusability for each tab
+        Array.prototype.forEach.call(tabs, function (tab, i) {
+            tab.setAttribute('role', 'tab');
+            tab.setAttribute('id', 'tab' + (i + 1));
+            tab.setAttribute('tabindex', '-1');
+            tab.parentNode.setAttribute('role', 'presentation');
 
+            // Handle clicking of tabs for mouse users
+            tab.addEventListener('click', function (e) {
+                e.preventDefault();
+                var currentTab = tablist.querySelector('[aria-selected]');
+                if (e.currentTarget !== currentTab) {
+                    switchTab(currentTab, e.currentTarget);
+                }
+            });
 
-        if (e.keyCode === 37) {
-            tabcontentID.prev().removeAttr("tabindex aria-hidden");
-            tabcontentID.attr("tabindex", "-1").attr("aria-hidden", "true");
+            // Handle keydown events for keyboard users
+            tab.addEventListener('keydown', function (e) {
+                // Get the index of the current tab in the tabs node list
+                var index = Array.prototype.indexOf.call(tabs, e.currentTarget);
+                // Work out which key the user is pressing and
+                // Calculate the new tab's index where appropriate
+                var dir = e.which === 37 ? index - 1 : e.which === 39 ? index + 1 : e.which === 40 ? 'down' : null;
+                if (dir !== null) {
+                    e.preventDefault();
+                    // If the down key is pressed, move focus to the open panel,
+                    // otherwise switch to the adjacent tab
+                    dir === 'down' ? panels[i].focus() : tabs[dir] ? switchTab(e.currentTarget, tabs[dir]) : void 0;
+                }
+            });
+        });
 
-            if (parentLI.is(':first-child')) {
-                tabsPaneLast.removeAttr("tabindex aria-hidden");
-            }
+        // Add tab panel semantics and hide them all
+        Array.prototype.forEach.call(panels, function (panel, i) {
+            panel.setAttribute('role', 'tabpanel');
+            panel.setAttribute('tabindex', '-1');
+            var id = panel.getAttribute('id');
+            panel.setAttribute('aria-labelledby', tabs[i].id);
+            panel.hidden = true;
+        });
 
-        } else if (e.keyCode === 38) {
-            tabcontentID.prev().removeAttr("tabindex aria-hidden");
-            tabcontentID.attr("tabindex", "-1").attr("aria-hidden", "true");
-
-            if (parentLI.is(':first-child')) {
-                tabsPaneLast.removeAttr("tabindex aria-hidden");
-            }
-
-        } else if (e.keyCode === 39) {
-            tabcontentID.next().removeAttr("tabindex aria-hidden");
-            tabcontentID.attr("tabindex", "-1").attr("aria-hidden", "true");
-
-            if (parentLI.is(':last-child')) {
-                tabsPaneFirst.removeAttr("tabindex aria-hidden");
-            }
-        } else if (e.keyCode === 40) {
-            tabcontentID.next().removeAttr("tabindex aria-hidden");
-            tabcontentID.attr("tabindex", "-1").attr("aria-hidden", "true");
-            if (parentLI.is(':last-child')) {
-                tabsPaneFirst.removeAttr("tabindex aria-hidden");
-            }
-
-        }
-    });
-
-
-    /* Tabblale tabs */
-    var tabs = $('ul.nav-tabs').find('.nav-link');
-    tabs.attr("tabindex", 0); // make accordion tabable
-
-
-});
+        // Initially activate the first tab and reveal the first tab panel
+        tabs[0].removeAttribute('tabindex');
+        tabs[0].setAttribute('aria-selected', 'true');
+        panels[0].hidden = false;
+    }
+})();

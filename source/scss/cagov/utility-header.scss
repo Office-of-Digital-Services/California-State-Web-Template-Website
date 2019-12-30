@@ -38,7 +38,7 @@
 
     a {
         display: inline-block;
-        padding: 3px 0;
+        padding: 0;
 
         &:hover, &:focus, &.hovered {
             text-decoration: none;
@@ -77,7 +77,6 @@
     .settings-links {
         @include font-size(1); // font size
         @include text-right();
-        margin-top: 0px; // beta 5.0 addition
         @media (max-width: $screen-xs-max) {
             @include font-size(0.9); // font size
             @include text-right(); // beta 5.0 addition
@@ -127,8 +126,6 @@
 
 
 .header-cagov-logo img { // Beta 5.0 addition
-    top: 1px;
-    height: 27px;
     left: 27px;
 
     @media (max-width: $screen-md-max) {
@@ -260,14 +257,16 @@
             display: flex;
             flex-direction: row;
             justify-content: flex-start;
-
+            min-height: 38px;
+            align-items: center; // make items vertically centered
             .header-cagov-logo {
                 margin-right: 20px;
                 margin-left: 20px;
+                min-height: 34px;
 
                 img {
-                    top: 4px;
                     left: 0;
+                    height: 34px;
                 }
 
                 @media (min-width: $screen-xs-max) and (max-width: $screen-sm-max) {
@@ -295,9 +294,6 @@
                 }
             }
 
-            > a {
-                padding-top: 5px; // links with icons
-            }
 
             @media (max-width: $screen-xs-max) {
                 [class^="ca-gov-icon-"] {
@@ -310,24 +306,25 @@
             display: flex;
             flex-wrap: wrap;
             margin-left: auto; // justify to the right
-            align-items: baseline; // make items vertically centered
+            align-items: center; // make items vertically centered
             justify-content: flex-end;
-            padding-top: 3px;
+            min-height: 38px;
 
             a {
                 margin: 0 10px 0 10px;
+                font-size: .9em;
 
 
 
 
                 @media (max-width: $screen-xs-max) {
-                    margin: 5px 4px 0 4px;
+                    margin: 0 4px 0 4px;
                     padding: 0;
                 }
             }
 
             button {
-                margin: -5px 4px 0 4px;
+                margin: 0 4px 0 4px;
             }
         }
     }

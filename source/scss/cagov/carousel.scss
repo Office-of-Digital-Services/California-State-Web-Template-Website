@@ -622,11 +622,11 @@
 
 // Accessibility
 .banner-control:focus, .banner-control .pause:focus, .banner-control .play:focus, .owl-dot:focus, .owl-prev:focus, .owl-next:focus {
-    outline: #2ea3f2 solid 2px;
+    @include outline(2px);
 }
 
 .owl-carousel:focus {
-    outline:none;
+    @include outline(2px);
 }
 
 .owl-carousel .owl-nav button.owl-prev:focus {
@@ -644,10 +644,24 @@
 .owl-carousel:hover .owl-nav button.owl-next:focus {
     margin-right: 0;
 }
-// Video
 
+.owl-carousel.carousel-media .owl-nav button.owl-prev:focus, .owl-carousel.carousel-link .owl-nav button.owl-prev:focus, .owl-carousel.carousel-slider .owl-nav button.owl-prev:focus {
+    margin-left: 0;
+}
+
+.owl-carousel.carousel-media .owl-nav button.owl-next:focus, .owl-carousel.carousel-link .owl-nav button.owl-next:focus, .owl-carousel.carousel-slider .owl-nav button.owl-next:focus {
+    margin-right: 0;
+}
+
+.owl-carousel.carousel-link .owl-item .item a {
+    display: block;
+    &:focus {
+        outline-offset: -2px;
+    }
+}
+// Video
 .owl-video-wrapper .item-overlay {
-    display:none;
+    display: none;
 }
 
 
