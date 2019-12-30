@@ -237,32 +237,32 @@
             border: none;
             padding: 5px 5px 12px 5px;
             width: 100%;
+            }
+            // beta 5.0 addition
+            .main-navigation.dropdown .nav-arrow-down {
+                left: auto;
+                margin-left: auto;
+            }
         }
-        // beta 5.0 addition
-        .main-navigation.dropdown .nav-arrow-down {
-            left: auto;
-            margin-left: auto;
+        // shared styles megamenu and dropdown menu
+        .nav-item {
+            .sub-nav {
+                position: absolute;
+            }
         }
-    }
-    // shared styles megamenu and dropdown menu
-    .nav-item {
-        .sub-nav {
-            position: absolute;
-        }
-    }
-    /* sub-navigation panel open state */
-    .main-navigation.dropdown .dropdown,
-    .no-js .main-navigation.dropdown,
-    .no-js .main-navigation.megadropdown {
-        .nav-item:hover .sub-nav {
-            display: block;
+        /* sub-navigation panel open state */
+        .main-navigation.dropdown .dropdown,
+        .no-js .main-navigation.dropdown,
+        .no-js .main-navigation.megadropdown {
+            .nav-item:hover .sub-nav {
+                display: block;
 
-            .touch & {
-                display: none;
+                .touch & {
+                    display: none;
+                }
             }
         }
     }
-}
 // beta 5.0 addition
 .main-navigation.dropdown .sub-nav {
     max-width: 250px;

@@ -790,10 +790,12 @@ $(document).ready(function () {
 
         if ($(this).attr("aria-expanded") === "true") {
             accordionContentID.attr("tabindex", "-1").attr("aria-hidden", "true");
+            $(this).focus();
 
         }
         else {
-            accordionContentID.removeAttr("tabindex aria-hidden");
+            accordionContentID.removeAttr("aria-hidden");
+            accordionContentID.focus();
         }
     });
 

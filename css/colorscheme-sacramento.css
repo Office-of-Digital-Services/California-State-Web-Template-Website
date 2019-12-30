@@ -1,5 +1,5 @@
 /**
- * CA State Template v5.5 -  @version v5.5.10 -  12/10/2019 
+ * CA State Template v5.5 -  @version v5.5.11 -  12/30/2019 
   STYLES COMPILED FROM SOURCE (SCSS) DO NOT MODIFY */
 /* -----------------------------------------
    SACRAMENTO
@@ -345,25 +345,25 @@ h1 span[class^="ca-gov-icon-"]:first-child {
   background-color: #f9fbfd;
 }
 
-.nav-item.active > a, .nav-item.active .first-level-btn {
+.nav-item.active > a, .nav-item.active .first-level-btn, .nav-item.active .first-level-link, nav-item-search.active > a, nav-item-search.active .first-level-btn, nav-item-search.active .first-level-link {
   color: #153554;
 }
 
-.nav-item.active > a > span[class^="ca-gov-icon"], .nav-item.active .first-level-btn > span[class^="ca-gov-icon"] {
+.nav-item.active > a > span[class^="ca-gov-icon"], .nav-item.active .first-level-btn > span[class^="ca-gov-icon"], .nav-item.active .first-level-link > span[class^="ca-gov-icon"], nav-item-search.active > a > span[class^="ca-gov-icon"], nav-item-search.active .first-level-btn > span[class^="ca-gov-icon"], nav-item-search.active .first-level-link > span[class^="ca-gov-icon"] {
   color: #153554;
 }
 
 @media (min-width: 768px) {
-  .nav-item:hover, .nav-item:focus {
+  .nav-item:hover, .nav-item:focus, nav-item-search:hover, nav-item-search:focus {
     background-color: #f9fbfd;
   }
 }
 
-.nav-item:hover > a, .nav-item:hover .first-level-btn, .nav-item:focus > a, .nav-item:focus .first-level-btn {
+.nav-item:hover > a, .nav-item:hover .first-level-btn, .nav-item:hover .first-level-link, .nav-item:focus > a, .nav-item:focus .first-level-btn, .nav-item:focus .first-level-link, nav-item-search:hover > a, nav-item-search:hover .first-level-btn, nav-item-search:hover .first-level-link, nav-item-search:focus > a, nav-item-search:focus .first-level-btn, nav-item-search:focus .first-level-link {
   color: #153554;
 }
 
-.nav-item:hover > a > span[class^="ca-gov-icon"], .nav-item:hover .first-level-btn > span[class^="ca-gov-icon"], .nav-item:focus > a > span[class^="ca-gov-icon"], .nav-item:focus .first-level-btn > span[class^="ca-gov-icon"] {
+.nav-item:hover > a > span[class^="ca-gov-icon"], .nav-item:hover .first-level-btn > span[class^="ca-gov-icon"], .nav-item:hover .first-level-link > span[class^="ca-gov-icon"], .nav-item:focus > a > span[class^="ca-gov-icon"], .nav-item:focus .first-level-btn > span[class^="ca-gov-icon"], .nav-item:focus .first-level-link > span[class^="ca-gov-icon"], nav-item-search:hover > a > span[class^="ca-gov-icon"], nav-item-search:hover .first-level-btn > span[class^="ca-gov-icon"], nav-item-search:hover .first-level-link > span[class^="ca-gov-icon"], nav-item-search:focus > a > span[class^="ca-gov-icon"], nav-item-search:focus .first-level-btn > span[class^="ca-gov-icon"], nav-item-search:focus .first-level-link > span[class^="ca-gov-icon"] {
   color: #153554;
 }
 
@@ -1989,6 +1989,9 @@ a.text-white:not(.btn):hover {
 }
 
 .panel-default .panel-heading .options .btn-default:focus, .panel-default .panel-heading .options .btn-default.focus, .panel-default .card-heading .options .btn-default:focus, .panel-default .card-heading .options .btn-default.focus, .panel-default .card-header .options .btn-default:focus, .panel-default .card-header .options .btn-default.focus, .card-default .panel-heading .options .btn-default:focus, .card-default .panel-heading .options .btn-default.focus, .card-default .card-heading .options .btn-default:focus, .card-default .card-heading .options .btn-default.focus, .card-default .card-header .options .btn-default:focus, .card-default .card-header .options .btn-default.focus {
+  color: #212529;
+  background-color: #e9e9e9;
+  border-color: #c4c4c4;
   box-shadow: 0 0 0 0.2rem rgba(193, 193, 194, 0.5);
 }
 
@@ -2071,6 +2074,9 @@ a.text-white:not(.btn):hover {
 }
 
 .panel-overstated .panel-heading .options .btn-default:focus, .panel-overstated .panel-heading .options .btn-default.focus, .panel-overstated .card-heading .options .btn-default:focus, .panel-overstated .card-heading .options .btn-default.focus, .panel-overstated .card-header .options .btn-default:focus, .panel-overstated .card-header .options .btn-default.focus, .card-overstated .panel-heading .options .btn-default:focus, .card-overstated .panel-heading .options .btn-default.focus, .card-overstated .card-heading .options .btn-default:focus, .card-overstated .card-heading .options .btn-default.focus, .card-overstated .card-header .options .btn-default:focus, .card-overstated .card-header .options .btn-default.focus {
+  color: #fff;
+  background-color: #050d15;
+  border-color: #0b1b2b;
   box-shadow: 0 0 0 0.2rem rgba(56, 83, 110, 0.5);
 }
 
@@ -2183,6 +2189,9 @@ a.text-white:not(.btn):hover {
 }
 
 .panel-understated .panel-heading .options .btn-default:focus, .panel-understated .panel-heading .options .btn-default.focus, .panel-understated .card-heading .options .btn-default:focus, .panel-understated .card-heading .options .btn-default.focus, .panel-understated .card-header .options .btn-default:focus, .panel-understated .card-header .options .btn-default.focus, .card-understated .panel-heading .options .btn-default:focus, .card-understated .panel-heading .options .btn-default.focus, .card-understated .card-heading .options .btn-default:focus, .card-understated .card-heading .options .btn-default.focus, .card-understated .card-header .options .btn-default:focus, .card-understated .card-header .options .btn-default.focus {
+  color: #212529;
+  background-color: #a3c4e6;
+  border-color: #c4c4c4;
   box-shadow: 0 0 0 0.2rem rgba(193, 193, 194, 0.5);
 }
 
@@ -2265,6 +2274,9 @@ a.text-white:not(.btn):hover {
 }
 
 .panel-standout .panel-heading .options .btn-default:focus, .panel-standout .panel-heading .options .btn-default.focus, .panel-standout .card-heading .options .btn-default:focus, .panel-standout .card-heading .options .btn-default.focus, .panel-standout .card-header .options .btn-default:focus, .panel-standout .card-header .options .btn-default.focus, .card-standout .panel-heading .options .btn-default:focus, .card-standout .panel-heading .options .btn-default.focus, .card-standout .card-heading .options .btn-default:focus, .card-standout .card-heading .options .btn-default.focus, .card-standout .card-header .options .btn-default:focus, .card-standout .card-header .options .btn-default.focus {
+  color: #fff;
+  background-color: #240000;
+  border-color: #270000;
   box-shadow: 0 0 0 0.2rem rgba(114, 38, 38, 0.5);
 }
 

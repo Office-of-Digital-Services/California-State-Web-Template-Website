@@ -1,17 +1,17 @@
 /**
    * --------------------------------------------------------------------------
-   * Bootstrap (v4.3.1): toast.js
+   * Bootstrap (v4.4.1): toast.js
    * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
    * --------------------------------------------------------------------------
    */
 /**
- * ------------------------------------------------------------------------
- * Constants
- * ------------------------------------------------------------------------
- */
+   * ------------------------------------------------------------------------
+   * Constants
+   * ------------------------------------------------------------------------
+   */
 
 var NAME$a = 'toast';
-var VERSION$a = '4.3.1';
+var VERSION$a = '4.4.1';
 var DATA_KEY$a = 'bs.toast';
 var EVENT_KEY$a = "." + DATA_KEY$a;
 var JQUERY_NO_CONFLICT$a = $.fn[NAME$a];
@@ -40,13 +40,12 @@ var Default$7 = {
 };
 var Selector$a = {
     DATA_DISMISS: '[data-dismiss="toast"]'
-    /**
-     * ------------------------------------------------------------------------
-     * Class Definition
-     * ------------------------------------------------------------------------
-     */
-
 };
+/**
+ * ------------------------------------------------------------------------
+ * Class Definition
+ * ------------------------------------------------------------------------
+ */
 
 var Toast =
     /*#__PURE__*/
@@ -66,7 +65,12 @@ var Toast =
         _proto.show = function show() {
             var _this = this;
 
-            $(this._element).trigger(Event$a.SHOW);
+            var showEvent = $.Event(Event$a.SHOW);
+            $(this._element).trigger(showEvent);
+
+            if (showEvent.isDefaultPrevented()) {
+                return;
+            }
 
             if (this._config.animation) {
                 this._element.classList.add(ClassName$a.FADE);
@@ -80,11 +84,15 @@ var Toast =
                 $(_this._element).trigger(Event$a.SHOWN);
 
                 if (_this._config.autohide) {
-                    _this.hide();
+                    _this._timeout = setTimeout(function () {
+                        _this.hide();
+                    }, _this._config.delay);
                 }
             };
 
             this._element.classList.remove(ClassName$a.HIDE);
+
+            Util.reflow(this._element);
 
             this._element.classList.add(ClassName$a.SHOWING);
 
@@ -96,22 +104,19 @@ var Toast =
             }
         };
 
-        _proto.hide = function hide(withoutTimeout) {
-            var _this2 = this;
-
+        _proto.hide = function hide() {
             if (!this._element.classList.contains(ClassName$a.SHOW)) {
                 return;
             }
 
-            $(this._element).trigger(Event$a.HIDE);
+            var hideEvent = $.Event(Event$a.HIDE);
+            $(this._element).trigger(hideEvent);
 
-            if (withoutTimeout) {
-                this._close();
-            } else {
-                this._timeout = setTimeout(function () {
-                    _this2._close();
-                }, this._config.delay);
+            if (hideEvent.isDefaultPrevented()) {
+                return;
             }
+
+            this._close();
         };
 
         _proto.dispose = function dispose() {
@@ -130,26 +135,26 @@ var Toast =
             ;
 
         _proto._getConfig = function _getConfig(config) {
-            config = _objectSpread({}, Default$7, $(this._element).data(), typeof config === 'object' && config ? config : {});
+            config = _objectSpread2({}, Default$7, {}, $(this._element).data(), {}, typeof config === 'object' && config ? config : {});
             Util.typeCheckConfig(NAME$a, config, this.constructor.DefaultType);
             return config;
         };
 
         _proto._setListeners = function _setListeners() {
-            var _this3 = this;
+            var _this2 = this;
 
             $(this._element).on(Event$a.CLICK_DISMISS, Selector$a.DATA_DISMISS, function () {
-                return _this3.hide(true);
+                return _this2.hide();
             });
         };
 
         _proto._close = function _close() {
-            var _this4 = this;
+            var _this3 = this;
 
             var complete = function complete() {
-                _this4._element.classList.add(ClassName$a.HIDE);
+                _this3._element.classList.add(ClassName$a.HIDE);
 
-                $(_this4._element).trigger(Event$a.HIDDEN);
+                $(_this3._element).trigger(Event$a.HIDDEN);
             };
 
             this._element.classList.remove(ClassName$a.SHOW);
