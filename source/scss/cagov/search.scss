@@ -15,7 +15,7 @@ $search-dt: 0.5s;
 $search-dft: 0.10s;
 
 
-$search-absolute-height: 100px;
+$search-absolute-height: 87px;
 
 $search-input-height: 40px;
 
@@ -153,7 +153,6 @@ $search-input-border-width: 3px;
         line-height: 44px;
         cursor: pointer;
         color: $gray-light;
-        opacity: 0.8;
 
         @media (max-width: $screen-xs-max) {
             right:0;
@@ -485,15 +484,55 @@ $search-input-border-width: 3px;
   }
 }
 
+
+.search-container.featured-search {
+    background: none; // fallback color
+    // Darken the search container on hover
+    &:hover, &:focus {
+        background: none;
+    }
+
+    &.active {
+        @include rgba (#000, .5);
+    }
+}
+
+
 @media (min-width: $screen-sm-min) {
   .fixed.compact .search-container {
     opacity: 0;
   }
   .active-search .fixed.compact .search-container, .fixed.compact .search-container.active {
   opacity: 1;
-  top: 55px; //  _cs-shame.scss addition	
+  top: 55px; 	
+    }
+
 }
+
+/*full width navigation search container*/
+@media (min-width: $screen-sm-min) {
+    .nav-full-width + .search-container, .nav-full-width + .featured-search.active {
+        top: 35px;
+    }
+
+    .active-search .fixed.compact .nav-full-width + .search-container, .fixed.compact .nav-full-width + .search-container.active {
+        opacity: 1;
+        top: 35px;
+    }
 }
+@media (min-width: $screen-sm-min) and (max-width: $screen-md-min) {
+    .nav-full-width + .search-container, .nav-full-width + .featured-search.active {
+        top: 32px;
+    }
+
+    .active-search .fixed.compact .nav-full-width + .search-container, .fixed.compact .nav-full-width + .search-container.active {
+        opacity: 1;
+        top: 32px;
+    }
+
+}
+
+
 
 /* Search Icon */
 td.gsc-search-button {
@@ -506,9 +545,10 @@ td.gsc-search-button {
         position: absolute;
         font-size: 2.5rem;
         right: 10px;
-        line-height: .01rem;
+        line-height:0.01rem;
     }
 }
+
 
 button.gsc-search-button {
     cursor: pointer;
@@ -534,7 +574,7 @@ button.gsc-search-button {
             right: 0;
 
             .ca-gov-icon-close-mark {
-                color: $gray;
+                color: $gray-lightest;
             }
 
             @media (max-width: $screen-xs-max) {
@@ -551,6 +591,7 @@ button.gsc-search-button {
         #Search {
             .gsc-search-button {
                 right: 0;
+                outline-offset: -2px;
             }
 
             .close-search-btn {
@@ -566,6 +607,7 @@ button.gsc-search-button {
         #Search {
             .gsc-search-button {
                 right: 50px;
+                outline-offset: -2px;
             }
 
             .close-search-btn {
@@ -581,143 +623,191 @@ GOOGLE CUSTOM SEARCH CUSTOMIZATION OVERRIDES
 ----------------------------------------- */
 
 .gsc-control-searchbox-only {
-	form.gsc-search-box {
-		margin-bottom: 0;
-	}
-	table.gsc-search-box {
-		margin-bottom: 0;
-		td.gsc-input {
-			padding-right: 0 !important;
-  			width:100% !important;
-		}
-	}
-	
+    form.gsc-search-box {
+        margin-bottom: 0;
+    }
 
-	.gsc-input-box {
-		border: none !important;
-		background: transparent !important;
-		height: 100%;
-		}
-	
-	input.gsc-input {
-		background-color: rgba(255, 255, 255, 0.8);
-		border-radius: 0;
-		border: 3px solid transparent;
-		transition: border 0.4s;
-		font-size: 1.1rem;
-		height: 55px !important;
-		padding: 14px !important;
-		opacity: 0.8 !important;
-		width: 100%;
-		background-position-x: 7px !important;
-	}
-	input.gsc-search-button, button.gsc-search-button {
-		opacity: 0;
-		width: 55px;
-		height: 51px;
-		position: absolute;
-		right: 2px;
-		top: 2px;
-		z-index: 55;
-	}
-	td.gsc-clear-button {
-		width: 1px !important;
-		margin-right: 0 !important;
-		margin-left: 0 !important;
-		padding-right: 0 !important;
-		padding-left: 0 !important;
-		position: relative;
-	}
-	td.gsc-search-button {
-		width: 0px !important;
-		margin-right: 0 !important;
-		margin-left: 0 !important;
-		padding-right: 0 !important;
-		padding-left: 0 !important;
-		position: relative;
-	}
-	div.gsc-clear-button {
-		padding-left: 0 !important;
-		display: block !important;
-		background-image: none !important;
-		margin-left: 0;
-		margin-right: 0;
-		width: 40px;
-		display:block !important;
-		&:before {
-			content: '\4d';
-			font-family: cagov;
-			font-size: 2rem;
-			width: 100%;
-			color: #666;
-			display: block;
-			margin-top: 12px;
-			margin-left: 2px;
-		}
-	}
+    table.gsc-search-box {
+        margin-bottom: 0;
+
+        td.gsc-input {
+            padding-right: 0 !important;
+            width: 100% !important;
+        }
+    }
+
+
+    .gsc-input-box {
+        border: none !important;
+        background: transparent !important;
+        height: 100%;
+    }
+
+    input.gsc-input {
+        background-color: rgba(255, 255, 255, 1);
+        border-radius: 0;
+        border: 3px solid transparent;
+        transition: border 0.4s;
+        font-size: 1.1rem;
+        height: 55px !important;
+        padding: 14px !important;
+        opacity: 1 !important;
+        width: 100%;
+        background-position-x: 7px !important;
+    }
+
+    input.gsc-search-button, button.gsc-search-button {
+        opacity: 0;
+        width: 55px;
+        height: 51px;
+        position: absolute;
+        right: 2px;
+        top: 2px;
+        z-index: 55;
+    }
+
+    td.gsc-clear-button {
+        width: 1px !important;
+        margin-right: 0 !important;
+        margin-left: 0 !important;
+        padding-right: 0 !important;
+        padding-left: 0 !important;
+        position: relative;
+    }
+
+    td.gsc-search-button {
+        width: 0px !important;
+        margin-right: 0 !important;
+        margin-left: 0 !important;
+        padding-right: 0 !important;
+        padding-left: 0 !important;
+        position: relative;
+    }
+
+    div.gsc-clear-button {
+        padding-left: 0 !important;
+        display: block !important;
+        background-image: none !important;
+        margin-left: 0;
+        margin-right: 0;
+        width: 40px;
+        display: block !important;
+
+        &:before {
+            content: '\4d';
+            font-family: cagov;
+            font-size: 2rem;
+            width: 100%;
+            color: $gray-lighter;
+            display: block;
+            margin-top: 12px;
+            margin-left: 2px;
+        }
+    }
 }
-.search-icon {
-	font-size: 2.4rem;
-	width: 0;
-	color: #666;
-	display: block;
-	position: relative;
-	top: 0;
-	right: 49px;
-}
+
+    .search-icon {
+        font-size: 2.4rem;
+        width: 0;
+        color: #666;
+        display: block;
+        position: relative;
+        top: 0;
+        right: 49px;
+    }
+
 .search-container.active {
-	div.gsc-clear-button {
-		width: 40px;
-		&:before {
-			content: '\4d';
-			font-family: cagov;
-			font-size: 2rem;
-			width: 100%;
-			color: #666;
-			display: block;
-			margin-top: 12px;
-			margin-left: 2px;
-		}
-	}
-}
-.featured-search {
-	div.gsc-clear-button {
-		width: 0px; // removes right space from featured search box
-		&:before {
-			display: none;
-		}
-	}
+    div.gsc-clear-button {
+        width: 40px;
+
+        &:before {
+            content: '\4d';
+            font-family: cagov;
+            font-size: 2rem;
+            width: 100%;
+            color: $gray-lighter;
+            display: block;
+            margin-top: 12px;
+            margin-left: 2px;
+        }
+    }
 }
 
-.search-results-header .gsc-control-searchbox-only {
-	margin-bottom:20px; // gives bottom margin to search searchbox in search results page
-	td.gsc-clear-button {
-	display:none; // removes clear results cell from the searchbox 
-	}
+    .featured-search {
+        div.gsc-clear-button {
+            width: 0px; // removes right space from featured search box
+            &:before {
+                display: none;
+            }
+        }
+    }
+
+    .search-results-header .gsc-control-searchbox-only {
+        margin-bottom: 20px; // gives bottom margin to search searchbox in search results page
+        td.gsc-clear-button {
+            display: none; // removes clear results cell from the searchbox
+        }
+    }
+
+    // Fixes after google updated custom search API
+
+    table.gsc-search-box table td div {
+        padding: 0 !important;
+    }
+
+    .gsc-input-box-focus, .gsc-input-box-hover {
+        box-shadow: none !important;
+        border: none !important;
+    }
+
+    table.gsc-search-box td {
+        padding: 0 !important;
+    }
+
+    .gsc-search-box-tools .gsc-clear-button {
+        display: block !important;
+    }
+
+    .search-container.active div.gsc-clear-button {
+        width: 40px;
+    }
+
+    .gsc-input-box table td:nth-child(2), .gsib_b {
+        display: none !important;
+    }
+
+
+/* Full Width navigation search */
+@media (min-width: 768px) {
+    .full-width-nav .featured-search {
+        top: -65px;
+        right: 15px;
+        left: unset !important;
+        width: 40%;
+    }
+
+    .full-width-nav .featured-search input.search-textfield {
+        border: 1px solid !important;
+        border-color: #ccc !important;
+        border-radius: 4px;
+        padding: 0 10px 0 10px;
+    }
 }
 
-// Fixes after google updated custom search API
+/* search box icons for mobile */
+@media (max-width: $screen-xs-max) {
+    .gsc-search-button .ca-gov-icon-search {
+        font-size: 34px !important;
+    }
 
-table.gsc-search-box table td div {
-    padding: 0 !important;
-}
+    .search-container #Search .close-search {
+        font-size: 34px !important;
+        padding-left: 10px;
+    }
 
-.gsc-input-box-focus, .gsc-input-box-hover {
-    box-shadow:none !important;
-    border:none !important;
-}
+    .search-container #Search .gsc-search-button {
+        padding-left: 10px;
+        padding-right: 10px;
+    }
 
-table.gsc-search-box td {
-    padding: 0 !important;
-}
-
-.gsc-search-box-tools .gsc-clear-button {
-    display:block !important;
-}
-
-.search-container.active div.gsc-clear-button {
-  width: 40px;
-}
-.gsc-input-box table td:nth-child(2), .gsib_b {
-  display: none !important;
 }

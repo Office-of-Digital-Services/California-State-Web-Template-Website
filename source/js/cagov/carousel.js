@@ -30,7 +30,7 @@ $(document).ready(function () {
                     var headerTop = headerSlider.offset().top;
                     var windowHeight = $(window).height();
                     var height = windowHeight - headerTop;
-                    height = (height > MAXHEIGHT)
+                    height = height > MAXHEIGHT
                         ? MAXHEIGHT
                         : height;
                     // fill up the remaining heaight of this device
@@ -40,7 +40,7 @@ $(document).ready(function () {
                 var $this = $(this);
 
                 // If browser is IE9 and below set transition speed to 0
-                var transitionSpeed = (!$('html').hasClass('oldie'))
+                var transitionSpeed = !$('html').hasClass('oldie')
                     ? 250
                     : 0;
 
@@ -80,8 +80,7 @@ $(document).ready(function () {
                 });
 
                 // Number the items in .banner-pager 
-                var dots = $('.banner-pager .banner-control');
-                dots.each(function () {
+                var dots = $('.banner-pager .banner-control'); dots.each(function () {
                     $(this).find('span').append($(this).index() + 1);
                 });
             });
@@ -102,17 +101,17 @@ $(document).ready(function () {
             onResized: function () {
                 window.setTimeout(function () {
                     $(window).trigger('resize');
-                }, 0)
+                }, 0);
             },
             onDragged: function () {
                 window.setTimeout(function () {
                     $(window).trigger('resize');
-                }, 0)
+                }, 0);
             },
             onTranslated: function () {
                 window.setTimeout(function () {
                     $(window).trigger('resize');
-                }, 0)
+                }, 0);
             },
             responsive: true,
             margin: 10,
@@ -136,9 +135,7 @@ $(document).ready(function () {
                     nav: true
                 }
             },
-            navText: [
-                '<span class="ca-gov-icon-arrow-prev" aria-hidden="true"></span></span><span class="sr-only">Previous</span>', '<span class="ca-gov-icon-arrow-next" aria-hidden="true"></span><span class="sr-only">Next</span>'
-            ],
+            navText: ['<span class="ca-gov-icon-arrow-prev" aria-hidden="true"></span></span><span class="sr-only">Previous</span>', '<span class="ca-gov-icon-arrow-next" aria-hidden="true"></span></span><span class="sr-only">Next</span>'],
             dots: false
         });
 
@@ -147,9 +144,7 @@ $(document).ready(function () {
             margin: 25,
             autoWidth: true,
             nav: true,
-            navText: [
-                '<span class="ca-gov-icon-arrow-prev" aria-hidden="true"></span></span><span class="sr-only">Previous</span>', '<span class="ca-gov-icon-arrow-next" aria-hidden="true"></span><span class="sr-only">Next</span>'
-            ],
+            navText: ['<span class="ca-gov-icon-arrow-prev" aria-hidden="true"></span></span><span class="sr-only">Previous</span>', '<span class="ca-gov-icon-arrow-next" aria-hidden="true"></span></span><span class="sr-only">Next</span>'],
             dots: false
         });
 
@@ -157,9 +152,7 @@ $(document).ready(function () {
         $(".carousel-slider").owlCarousel({
             items: 1,
             nav: true,
-            navText: [
-                '<span class="ca-gov-icon-arrow-prev" aria-hidden="true"></span></span><span class="sr-only">Previous</span>', '<span class="ca-gov-icon-arrow-next" aria-hidden="true"></span><span class="sr-only">Next</span>'
-            ],
+            navText: ['<span class="ca-gov-icon-arrow-prev" aria-hidden="true"></span></span><span class="sr-only">Previous</span>', '<span class="ca-gov-icon-arrow-next" aria-hidden="true"></span></span><span class="sr-only">Next</span>'],
             dots: false
         });
 
@@ -167,9 +160,7 @@ $(document).ready(function () {
         $(".carousel-gallery").owlCarousel({
             items: 1,
             nav: true,
-            navText: [
-                '<span class="ca-gov-icon-arrow-prev" aria-hidden="true"></span></span><span class="sr-only">Previous</span>', '<span class="ca-gov-icon-arrow-next" aria-hidden="true"></span><span class="sr-only">Next</span>'
-            ],
+            navText: ['<span class="ca-gov-icon-arrow-prev" aria-hidden="true"></span></span><span class="sr-only">Previous</span>', '<span class="ca-gov-icon-arrow-next" aria-hidden="true"></span></span><span class="sr-only">Next</span>'],
             dots: false
         });
 
@@ -177,7 +168,6 @@ $(document).ready(function () {
 
     // Remove unnessesary role="button" from button
     $("button.banner-control").removeAttr("role");
-
 });
 
 function initContent() {
@@ -188,9 +178,7 @@ function initContent() {
             autoHeight: true,
             loop: true,
             nav: true,
-            navText: [
-                '<span class="ca-gov-icon-arrow-prev" aria-hidden="true"></span></span><span class="sr-only">Previous</span>', '<span class="ca-gov-icon-arrow-next" aria-hidden="true"></span><span class="sr-only">Next</span>'
-            ],
+            navText: ['<span class="ca-gov-icon-arrow-prev" aria-hidden="true"></span></span><span class="sr-only">Previous</span>', '<span class="ca-gov-icon-arrow-next" aria-hidden="true"></span></span><span class="sr-only">Next</span>'],
             dots: true,
             // all these callbacks are to make sure any js inside carousl items can refresh
             // themselves
@@ -218,7 +206,6 @@ function initContent() {
             $(this).find('span').html("<span class='sr-only'>Change Slide</span>");
         });
 
-
         carousel.on('changed.owl.carousel', function (event) {
             setTimeout(function () {
                 carousel.find('.owl-item.active .item video').each(function () {
@@ -226,12 +213,11 @@ function initContent() {
                     $(this).get(0).play();
                 });
             }, 10);
-
         });
     });
 }
 
-(function($) {
+(function ($) {
 
     $.fn.initCAVideo = function (bool) {
 
@@ -262,9 +248,7 @@ function initContent() {
                 nav: true,
                 lazyLoad: false,
                 video: true,
-                navText: [
-                    '<span class="ca-gov-icon-arrow-prev" aria-hidden="true"></span></span><span class="sr-only">Previous</span>', '<span class="ca-gov-icon-arrow-next" aria-hidden="true"></span><span class="sr-only">Next</span>'
-                ],
+                navText: ['<span class="ca-gov-icon-arrow-prev" aria-hidden="true"></span></span><span class="sr-only">Previous</span>', '<span class="ca-gov-icon-arrow-next" aria-hidden="true"></span><span class="sr-only">Next</span>'],
                 dots: false
             });
 
@@ -277,7 +261,7 @@ function initContent() {
 
                 mainIndex = event.item.index;
                 // show the item in view
-                submenu.trigger('to.owl.carousel', [mainIndex, 300, true])
+                submenu.trigger('to.owl.carousel', [mainIndex, 300, true]);
             });
 
 
@@ -326,7 +310,7 @@ function initContent() {
 
                 // overlay related
                 var overlay = $('<div />').addClass('item-overlay');
-                overlay.append($('<span class="ca-gov-icon-play" />'))
+                overlay.append($('<span class="ca-gov-icon-play" />'));
 
                 // Append it into the DOM
                 item.append(thumbnail).append(overlay);
@@ -358,7 +342,6 @@ function initContent() {
                 // remove old watched item
                 submenu.find('.watching').removeClass('watching');
 
-                // submenu.find('img[src*="' + vidID + '"]').parents('.owl-item').addClass('watching');
                 submenu.find('button[style*="' + vidID + '"]').parents('.owl-item').addClass('watching');
 
 

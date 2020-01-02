@@ -1,0 +1,130 @@
+﻿<!doctype html>
+<!--[if lt IE 7]> <html class="no-js ie6 oldie" lang="en"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js ie7 oldie" lang="en"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js ie8 oldie" lang="en"> <![endif]-->
+<!--[if IE 9]>    <html class="no-js ie9 oldie" lang="en"> <![endif]-->
+<!--[if (gt IE 9)]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+
+
+<head>
+
+<!--    California State Template
+    Version 6.0.0
+ 
+Based on Twitter Bootstrap
+-->
+<meta charset="utf-8">
+
+<title>Full Width Navigation</title>
+
+<meta name="Author" content="State of California" />
+<meta name="Description" content="State of California" />
+<meta name="Keywords" content="California, government" />
+
+<!--#include virtual="/ssi/head-css-js.html" -->
+<script type="text/javascript">
+var defaultActiveLink = "Components";
+</script>
+</head>
+
+<body class="two-column">
+
+    <header role="banner" id="header" class="global-header fixed">
+        <div id="skip-to-content"><a href="#main-content">Skip to Main Content</a></div>
+        <!-- Include Utility Header -->
+        <!--#include virtual="/ssi/utility-header.html" -->
+        <!-- Settings Bar -->
+        <!--#include virtual="/ssi/settings-bar.html" -->
+        <!-- Include Branding -->
+        <div class="section-default">
+            <!--#include virtual="/ssi/branding.html" -->
+        </div>
+        <!-- Include Mobile Controls -->
+        <!--#include virtual="/ssi/mobile-controls.html" -->
+
+        <div class="navigation-search full-width-nav container">
+            <div id="head-search" class="search-container featured-search">
+                <!-- Include Search -->
+                <!--#include virtual="/ssi/search.html" -->
+            </div>
+            <!-- Include Navigation -->
+            <!--#include virtual="/sample/modules/nav-full-width.html" -->
+
+        </div>
+    </header>
+
+<div id="main-content" class="main-content">
+    <div class="section">
+        <main class="main-primary">
+            <ol class="breadcrumb">
+                <li><a href="../index.html" title="Home page">Home</a></li>
+                <li><a href="/sample/navsamples.html" title="Navigation Samples page">Navigation Samples</a></li>
+                <li class="active">Full Width Navigation with Active Search</li>
+            </ol>
+
+            <h1>Full Width Navigation with Active Search</h1>
+            <p>
+                Sometimes there is a need to fit more navigation items in main navigation.
+                This is when full width navigation could be handy. This menu style can be set by adding classes <code>.full-width-nav</code> and <code>.container</code> to the
+                <code>.navigation-search</code> div tag. This layout uses featured search that is placed to the right of the website's logo. Please note, that the logo include (<code>branding.html</code>) is placed inside of the <code>.section-default</code> div to show visual separation between branding and navigation sections. Make sure to switch order of search include with the navigation because search include in this case needs to go before the navigation include to match visual tabbing  order. Also, <code>.featured-search</code> class needs to be added to the <code>#head-search</code> div to keep search visible.
+
+            <p>
+                This menu version doesn’t uses icons to save some vertical real estate. However, you can apply icons to it.
+            </p>
+
+
+
+
+            <h3>Full width navigation with active search header example:</h3>
+            <pre>
+<span class="text-accent-p2">&lt;header</span> <span class="text-info">class=</span><span class="text-accent7">"global-header fixed"</span><span class="text-accent-p2">&gt;</span>
+    <span class="text-accent-p2">&lt;div</span> <span class="text-info">id=</span><span class="text-accent7">"skip-to-content"</span><span class="text-accent-p2">&gt;&lt;a </span><span class="text-info">href=</span><span class="text-accent7">"#main-content"</span><span class="text-accent-p2">&gt;</span>Skip to Main Content<span class="text-accent-p2">&lt;/a&gt;&lt;/div&gt;</span>
+    <span class="text-success">&lt;!--#include virtual="/ssi/utility-header.html" --&gt;</span>
+    <span class="text-success">&lt;!--#include virtual="/ssi/settings-bar.html" --&gt;</span>
+    <span class="text-accent-p2">&lt;div</span> <span class="text-info">class=</span><span class="text-accent7">"section-default"</span><span class="text-accent-p2">&gt;</span>
+        <span class="text-success">&lt;!--#include virtual="/ssi/branding.html" --&gt;</span>
+    <span class="text-accent-p2">&lt;/div&gt;</span>
+    <span class="text-success">&lt;!--#include virtual="/ssi/mobile-controls.html" --&gt;</span>
+    <span class="text-accent-p2">&lt;div</span> <span class="text-info">class=</span><span class="text-accent7">"navigation-search"</span><span class="text-accent-p2">&gt;</span>
+        <span class="text-accent-p2">&lt;div</span> <span class="text-info">id=</span><span class="text-accent7">"head-search"</span> <span class="text-info">class=</span><span class="text-accent7">"search-container"</span><span class="text-accent-p2">&gt;</span>
+            <span class="text-success">&lt;!--#include virtual="/ssi/search.html" --&gt;</span>
+        <span class="text-accent-p2">&lt;/div&gt;</span>
+        <span class="text-success">&lt;!--#include virtual="/sample/modules/nav-full-width.html" --&gt;</span>
+    <span class="text-accent-p2">&lt;/div&gt;</span>
+<span class="text-accent-p2">&lt;/header&gt;</span>
+</pre>
+
+
+
+
+
+
+
+
+            <h2>More Navigation Samples</h2>
+            <ul>
+                <li><a href="navigation-full-width-icons.html">Full Width Navigation with Icons</a></li>
+                <li><a href="navigation-single.html">Single Level Navigation</a></li>
+                <li><a href="navigation-megamenu-flex.html">State Template v5.5 Flex Megamenu</a></li>
+                <li><a href="navigation-megamenu.html">State Template v5 Megamenu</a></li>
+                <li><a href="navigation-megamenu-original.html">State Template v4 Megamenu</a></li>
+                <li><a href="navigation-dropdown.html">Dropdown Navigation</a></li>
+                <li><a href="navigation-sidebar.html">Side navigation menu</a></li>
+
+            </ul>
+
+        </main>
+        
+        <div class="main-secondary" role="complementary">
+            <!--#include virtual="/sample/modules/profile-banners.html" -->
+        </div>
+    </div>
+</div>
+
+
+<!--#include virtual="/ssi/global-footer.html" -->
+
+<!--#include virtual="/ssi/scripts.html" -->
+
+</body>
+</html>

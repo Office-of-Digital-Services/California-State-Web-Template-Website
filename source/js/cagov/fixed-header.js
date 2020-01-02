@@ -6,13 +6,13 @@ $(document).ready(function () {
     // The scroll distance (in pixels) which will make the header
     // compact if needed and
     var scrollDistanceToMakeCompactHeader = 220;
-    var scrollDistanceToHideSearch = 80;
+    var scrollDistanceToHideSearch = 220;
 
     var askBarPadding = 10;
     // set up variables here for each maintenance in the future.
     var $header = $('header');
     var $headerImage = $('.header-single-banner');
-
+    var $headerLargeImage = $('.header-large-banner');
     var $exploreMore = $('.explore-invite');
     var $globalHeader = $('.global-header');
     var $alert = $('.alert-banner');
@@ -28,6 +28,8 @@ $(document).ready(function () {
     var currentScrollTop = $(document).scrollTop();
 
     var hideDistance = calcInputDifference();
+
+    var fullnav = $(".navigation-search").hasClass("full-width-nav");
 
     setAskBarTop();
     $headSearch.on("transitionend webkitTransitionEnd oTransitionEnd MSTransitionEnd", function () { setAskBarTop(); });
@@ -115,7 +117,7 @@ $(document).ready(function () {
 
         $(window).on('resize', function () {
             windowHeight = $(window).height();
-            windowWidth = $(window).width();
+            windowWidth = window.innerWidth;
             headerHeight = $globalHeader.innerHeight();
             hideDistance = calcInputDifference();
 
@@ -148,7 +150,7 @@ $(document).ready(function () {
                 checkForCompactUpdate();
                 checkForFixedUpdate();
 
-            }
+            };
         } else {
             updateFunc = function () {
                 checkForReturnTopUpdate();
@@ -176,7 +178,6 @@ $(document).ready(function () {
         // we dont fade out if we have search results being shown
         if ($headSearch.hasClass('active')) {
             $askGroup.addClass('fixed-hide');
-          //  $header.addClass('compact fixed');
 
             return;
         }
@@ -227,10 +228,10 @@ $(document).ready(function () {
         }
     }
 
-    /**
-     * Figures out the difference between the bottom of the askbar and the
-     * explore more bar. Used to caclulate when we should hide these elements
-     */
+   // /**
+   //  * Figures out the difference between the bottom of the askbar and the
+   //  * explore more bar. Used to caclulate when we should hide these elements
+   //  */
     function calcInputDifference() {
         if (!$exploreMore.length || !$askGroupBar.length) {
             return 0;
@@ -260,6 +261,8 @@ $(document).ready(function () {
      */
     function addFixed() {
         var leeway = 10;
+        var leewayfullwidth = 100;
+        var leewayLargefullwidth = 150;
         $header.addClass('fixed');
         headerVars.setHeaderImageHeight();
 
@@ -269,27 +272,64 @@ $(document).ready(function () {
             var height = $headerImage.height();
             height = Math.max(Math.min(height, headerVars.MAXHEIGHT), headerVars.MINHEIGHT);
 
-            $headerImage.css({
-                height: height + headerHeight + leeway
-            });
-            // take into account the fixed header -----------------------------------------------------v5 FIX---------------------------------
+            
+            // single banner 
+            if (fullnav) {
+                $headerImage.css({
+                    height: height + headerHeight - leewayfullwidth
+                });
 
-        } else {
+            }
+            else {
+                $headerImage.css({
+                    height: height + headerHeight + leeway
+                });
+            }
+
+        } 
+
+
+        // large banner 
+        else if ($headerLargeImage.length) {
+            var Largeheight = $headerLargeImage.height();
+            Largeheight = Math.max(Math.min(Largeheight, headerVars.MAXHEIGHT), headerVars.MINHEIGHT);
+
+
+
+            if (fullnav) {
+                $headerLargeImage.css({
+                    height: Largeheight + headerHeight - leewayLargefullwidth
+                });
+
+            }
+            else {
+                $headerLargeImage.css({
+                    height: Largeheight + headerHeight - leewayfullwidth
+                });
+            }
+
+        } 
+
+// take into account the fixed header -----------------------------------------------------v5 FIX---------------------------------
+
+        else {
             // no header image, which means our main content needs to
 
             $mainContent.css({
-                'padding-top': Math.max(headerHeight, 136)
+                'padding-top': Math.max(headerHeight, 119)
             });
 
 
-        } if ($(".ask-group").length > 0) {
+        }
+
+        if ($(".ask-group").length > 0) {
             $mainContent.addClass('print-p-t'); // Media print .main-content fix	
             $mainContent.css({
                 'padding-top': 0
             });
 
             $('.header-slideshow-banner, .header-primary-banner').css({
-                'margin-top': 136
+                'margin-top': 119
 
             });
 

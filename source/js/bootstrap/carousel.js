@@ -1,19 +1,18 @@
 /**
    * --------------------------------------------------------------------------
-   * Bootstrap (v4.3.1): carousel.js
+   * Bootstrap (v4.4.1): carousel.js
    * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
    * --------------------------------------------------------------------------
    */
 
-
 /**
- * ------------------------------------------------------------------------
- * Constants
- * ------------------------------------------------------------------------
- */
+   * ------------------------------------------------------------------------
+   * Constants
+   * ------------------------------------------------------------------------
+   */
 
 var NAME$2 = 'carousel';
-var VERSION$2 = '4.3.1';
+var VERSION$2 = '4.4.1';
 var DATA_KEY$2 = 'bs.carousel';
 var EVENT_KEY$2 = "." + DATA_KEY$2;
 var DATA_API_KEY$2 = '.data-api';
@@ -86,13 +85,12 @@ var Selector$2 = {
 var PointerType = {
     TOUCH: 'touch',
     PEN: 'pen'
-    /**
-     * ------------------------------------------------------------------------
-     * Class Definition
-     * ------------------------------------------------------------------------
-     */
-
 };
+/**
+ * ------------------------------------------------------------------------
+ * Class Definition
+ * ------------------------------------------------------------------------
+ */
 
 var Carousel =
     /*#__PURE__*/
@@ -212,7 +210,7 @@ var Carousel =
             ;
 
         _proto._getConfig = function _getConfig(config) {
-            config = _objectSpread({}, Default, config);
+            config = _objectSpread2({}, Default, {}, config);
             Util.typeCheckConfig(NAME$2, config, DefaultType);
             return config;
         };
@@ -224,7 +222,8 @@ var Carousel =
                 return;
             }
 
-            var direction = absDeltax / this.touchDeltaX; // swipe left
+            var direction = absDeltax / this.touchDeltaX;
+            this.touchDeltaX = 0; // swipe left
 
             if (direction > 0) {
                 this.prev();
@@ -350,8 +349,6 @@ var Carousel =
                     event.preventDefault();
                     this.next();
                     break;
-
-                default:
             }
         };
 
@@ -503,10 +500,10 @@ var Carousel =
             return this.each(function () {
                 var data = $(this).data(DATA_KEY$2);
 
-                var _config = _objectSpread({}, Default, $(this).data());
+                var _config = _objectSpread2({}, Default, {}, $(this).data());
 
                 if (typeof config === 'object') {
-                    _config = _objectSpread({}, _config, config);
+                    _config = _objectSpread2({}, _config, {}, config);
                 }
 
                 var action = typeof config === 'string' ? config : _config.slide;
@@ -544,7 +541,7 @@ var Carousel =
                 return;
             }
 
-            var config = _objectSpread({}, $(target).data(), $(this).data());
+            var config = _objectSpread2({}, $(target).data(), {}, $(this).data());
 
             var slideIndex = this.getAttribute('data-slide-to');
 

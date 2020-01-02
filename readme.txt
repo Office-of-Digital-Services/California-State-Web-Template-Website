@@ -48,24 +48,32 @@ ________________________________________
 
 Step 10 - Content
 The /sample/index.html file contains links to examples of the new content styles as well as documentation and code that can be copied.
-
-* Menus
-* 5 container styles
-* 3 list styles
-* Heading & parahraph styles
-* Tabs
 * Accordion Lists
 * Carousels & slideshows
-* Gallery
+* Countdowns
+* Color Schemes
+* Info/News blocks styles
+* List styles
+* Buttons styles
+* Heading & parahraph styles
 * Icon fonts
+* Form styles
+* Gallery
+* Navigation Menus
+* Number Counters
+* Panes
+* Progress blocks
+* Sections
+* Tables
+* Tabs
 * Useful content modules
 
-View the Live Demo Site here: http://template.webstandards.ca.gov/
+View the Live Demo Site here: http://beta.template.webstandards.ca.gov/
 
 ________________________________________
 
 Custom CSS (optional)
-CSS and JS is included in the core by default. If a custom build is desired all source files can be compiled using open source tools. Grunt and Node are recommended. Compiling from source allows for a smaller build using only the components that are necessary.
+CSS and JS is included in the core by default. If a custom build is desired all source files can be compiled using open source tools. Gulp and Node are recommended. Compiling from source allows for a smaller build using only the components that are necessary.
 
 ________________________________________ 
 
@@ -76,7 +84,7 @@ ________________________________________
 OPTIONAL SOURCE INSTALL
 
 All CSS and JS is included in the core by default. If a custom build is desired 
-all source files can be compiled using open source tools. Grunt and Node are recommended.
+all source files can be compiled using open source tools. Gulp and Node are recommended.
 Compiling from source allows for a smaller build using only the components that are necessary.
 
 Step 1: Instal node.js (http://nodejs.org)

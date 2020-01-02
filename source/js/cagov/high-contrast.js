@@ -16,6 +16,7 @@ $(document).ready(function () {
     var theHTML = $('html');
 
     var isHighContrast = localStorage.getItem('high-contrast');
+    var isDyslexic = localStorage.getItem('dyslexic');
 
     function onContrast() {
         enableHighContrastButton.addClass('active');
@@ -74,6 +75,7 @@ $(document).ready(function () {
     var incFontSize = $('.increaseTextSize');
     var decFontSize = $('.decreaseTextSize');
     var resetFontSize = $('.resetTextSize');
+    var dyslexicFontBtn = $('.dyslexicFont');
 
     // in rems's
     var MAXFONTSIZE = 1.5;
@@ -83,10 +85,10 @@ $(document).ready(function () {
     // Read in previous settings and convert to number
     var fontSize = +localStorage.getItem('font-size');
     if (fontSize) {
-        $('html').css("font-size", fontSize + 'rem')
+        $('html').css("font-size", fontSize + 'rem');
     } else {
         fontSize = 1;
-        $('html').css("font-size", fontSize  + 'rem')
+        $('html').css("font-size", fontSize + 'rem');
     }
 
     // init button styles for fonts
@@ -94,7 +96,7 @@ $(document).ready(function () {
 
     // utility functions
     function updateFont(f) {
-        var updatedSize = Math.min(MAXFONTSIZE, Math.max(f, MINFONTSIZE))
+        var updatedSize = Math.min(MAXFONTSIZE, Math.max(f, MINFONTSIZE));
         localStorage.setItem('font-size', updatedSize);
         $('html').css("font-size", updatedSize + "rem");
         updateFontBtns(updatedSize);
@@ -115,7 +117,7 @@ $(document).ready(function () {
     }
 
     incFontSize.on('click', function () {
-        fontSize += STEPVALUE
+        fontSize += STEPVALUE;
         fontSize = updateFont(fontSize);
     });
 
@@ -125,6 +127,26 @@ $(document).ready(function () {
     });
 
     resetFontSize.on('click', function () {
-        fontSize = updateFont(1)
-    })
+        $("html").removeAttr("style");
+        $('body, h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .first-level-link, .slide-text, .slide-text .title, .stat-counter, .explore-invite .explore-title').removeAttr("style");
+        localStorage.removeItem('dyslexic');
+        localStorage.removeItem('font-size');
+    });
+
+
+    if (isDyslexic) {
+        dyslexicFont();
+    }
+
+    dyslexicFontBtn.on('click', function () {
+        dyslexicFont();
+    });
+
+    function dyslexicFont() {
+        $('body, h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .first-level-link, .slide-text, .slide-text .title, .stat-counter, .explore-invite .explore-title').attr("style", "font-family: 'OpenDyslexicAlta Regular', sans serif !important");
+        localStorage.setItem('dyslexic', 'true');
+    }
+
+
+
 });

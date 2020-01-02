@@ -1,6 +1,7 @@
+
 /**
    * --------------------------------------------------------------------------
-   * Bootstrap (v4.3.1): tools/sanitizer.js
+   * Bootstrap (v4.4.1): tools/sanitizer.js
    * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
    * --------------------------------------------------------------------------
    */
@@ -38,13 +39,13 @@ var DefaultWhitelist = {
     strong: [],
     u: [],
     ul: []
-    /**
-     * A pattern that recognizes a commonly useful subset of URLs that are safe.
-     *
-     * Shoutout to Angular 7 https://github.com/angular/angular/blob/7.2.4/packages/core/src/sanitization/url_sanitizer.ts
-     */
-
 };
+/**
+ * A pattern that recognizes a commonly useful subset of URLs that are safe.
+ *
+ * Shoutout to Angular 7 https://github.com/angular/angular/blob/7.2.4/packages/core/src/sanitization/url_sanitizer.ts
+ */
+
 var SAFE_URL_PATTERN = /^(?:(?:https?|mailto|ftp|tel|file):|[^&:/?#]*(?:[/?#]|$))/gi;
 /**
  * A pattern that matches safe data URLs. Only matches image, video and audio types.
@@ -111,7 +112,7 @@ function sanitizeHtml(unsafeHtml, whiteList, sanitizeFn) {
     };
 
     for (var i = 0, len = elements.length; i < len; i++) {
-        var _ret = _loop(i, len);
+        var _ret = _loop(i);
 
         if (_ret === "continue") continue;
     }

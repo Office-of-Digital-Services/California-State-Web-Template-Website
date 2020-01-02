@@ -3,89 +3,114 @@
 <!--[if IE 7]>    <html class="no-js ie7 oldie" lang="en"> <![endif]-->
 <!--[if IE 8]>    <html class="no-js ie8 oldie" lang="en"> <![endif]-->
 <!--[if IE 9]>    <html class="no-js ie9 oldie" lang="en"> <![endif]-->
-<!--[if (gt IE 9)]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
-                         <head>
-                             <!--
-    California State Template
-Version 5.0.11
+<!--[if (gt IE 9)]><!-->
+<html class="no-js" lang="en">
+<!--<![endif]-->
+<head>
 
-    Based on Twitter Bootstrap
-    -->
-<meta charset="utf-8">
 
-<title>Sample - Accordion List</title>
+    <!--    California State Template
+        Version 6.0.0
 
-<meta name="Author" content="State of California" />
-<meta name="Description" content="State of California" />
-<meta name="Keywords" content="California, government" />
+            Based on Twitter Bootstrap
+            -->
+    <meta charset="utf-8">
 
-<!--#include virtual="/ssi/head-css-js.html" -->
+    <title>Sample - Accordion List</title>
+
+    <meta name="Author" content="State of California" />
+    <meta name="Description" content="State of California" />
+    <meta name="Keywords" content="California, government" />
+
+    <!--#include virtual="/ssi/head-css-js.html" -->
+    <script type="text/javascript">
+        var defaultActiveLink = "Components";
+    </script>
 </head>
 
 <body>
-<header role="banner" id="header" class="global-header fixed">
-    <div id="skip-to-content"><a href="#main-content">Skip to Main Content</a></div>
+    <header role="banner" id="header" class="global-header fixed">
+        <div id="skip-to-content"><a href="#main-content">Skip to Main Content</a></div>
 
-    <!-- Include Utility Header -->
-    <!--#include virtual="/ssi/utility-header.html" -->
-    <!-- Settings Bar -->
-    <!--#include virtual="/ssi/settings-bar.html" -->
-    <!-- Include Branding -->
-    <!--#include virtual="/ssi/branding.html" -->
-    <!-- Include Mobile Controls -->
-    <!--#include virtual="/ssi/mobile-controls.html" -->
+        <!-- Include Utility Header -->
+        <!--#include virtual="/ssi/utility-header.html" -->
+        <!-- Settings Bar -->
+        <!--#include virtual="/ssi/settings-bar.html" -->
+        <!-- Include Branding -->
+        <!--#include virtual="/ssi/branding-lightgrey.html" -->
+        <!-- Include Mobile Controls -->
+        <!--#include virtual="/ssi/mobile-controls.html" -->
 
-    <div class="navigation-search">
-        <!-- Include Navigation -->
-        <!--#include virtual="/ssi/navigation.html" -->
-
-        <div id="head-search" class="search-container">
+        <div class="navigation-search full-width-nav container">
+        <div id="head-search" class="search-container featured-search fade">
             <!-- Include Search -->
             <!--#include virtual="/ssi/search.html" -->
         </div>
 
+        <!-- Include Navigation -->
+        <!--#include virtual="/ssi/navigation.html" -->
     </div>
-                                 <div class="header-decoration"></div>
-                             </header>
+        <div class="header-decoration"></div>
+    </header>
 
-                             <div id="main-content" class="main-content">
-                                 <div class="section">
-                                     <main class="main-primary">
-                                         <ol class="breadcrumb">
-                                             <li><a href="../index.html" title="Home page">Home</a></li>
-                                             <li><a href="index.html" title="Examples landing page">Examples</a></li>
-                                             <li class="active">Accordions</li>
-                                         </ol>
+    <div id="main-content" class="main-content">
+        <div class="container p-b-lg">
+            <main class="main-primary">
+                <ol class="breadcrumb">
+                    <li><a href="../index.html" title="Home page">Home</a></li>
+                    <li><a href="/sample/" title="Content Modules landing page">Content Modules</a></li>
+                    <li class="active">Accordions</li>
+                </ol>
 
-                                         <div class="group">
-                                             <div class="half">
-                                                 <h1>Accordion</h1>
-                                                 <h2>Example:</h2>
-                                                 <!--#include virtual="/sample/modules/accordion.html" -->
-                                             </div>
-                                             <div class="half">
-                                                 <h2><label for="sample-accordion">Source Code:</label></h2>
-                                                 <textarea id="sample-accordion" class="form-control" rows="10" cols="80"><!--#include virtual="/sample/modules/accordion.html" -->
+                <div class="group">
+                    <div class="half">
+                        <h1>Accordion</h1>
+                        <h2>Example:</h2>
+                        <!--#include virtual="/sample/modules/accordion.html" -->
+                    </div>
+                    <div class="half">
+                        <h3><label for="sample-accordion">Source Code:</label></h3>
+<textarea id="sample-accordion" class="form-control" rows="10" cols="80"><!--#include virtual="/sample/modules/accordion.html" --></textarea>
+                    </div>
+                </div>
+                <hr />
+                <div class="group">
+                    <div class="half">
+                        <h2>Accordion List</h2>
+                        <p>
+                            Accordion lists are commonly used for things like FAQ's where the title exposes the description in an expanding menu fashion.
+                            Accordion List uses HTML5 roles, some ARIA properties, and IDs for accessibility.
+                        </p>
+
+
+                        <h2>Example:</h2>
+                        <!--#include virtual="/sample/modules/accordion-list.html" -->
+                    </div>
+                    <div class="half">
+                        <h3><label for="sample-accordion-list">Source Code:</label></h3>
+<textarea id="sample-accordion-list" class="form-control" rows="10" cols="80"><!--#include virtual="/sample/modules/accordion-list.html" -->
                                                  </textarea>
-                                             </div>
-                                         </div>
+                    </div>
+                </div>
 
-                                         <div class="group">
-                                             <div class="half">
-                                                 <h1>Accordion List</h1>
-                                                 <p>Accordion lists are commonly used for things like FAQ's where the title exposes the description in an expanding menu fashion. 
-                                                     Accordion List uses HTML5 roles, some ARIA properties, and IDs for accessibility.</p>
-                                                                     
-                                                 
-                                                 <h2>Example:</h2>
-                                                 <!--#include virtual="/sample/modules/accordion-list.html" -->
-                                             </div>
-                                             <div class="half">
-                                                 <h2><label for="sample-accordion-list">Source Code:</label></h2>
-                                                 <textarea id="sample-accordion-list" class="form-control" rows="10" cols="80"><!--#include virtual="/sample/modules/accordion-list.html" -->
+                <hr />
+                <div class="group p-b-lg">
+                    <div class="half">
+                        <h2>Accordion Side Menu</h2>
+                        <p>
+                            Accordion side menu is a vertical navigation component which apart from traditional, text links, might embed icons, dropdowns, images or even forms. For more information and examples visit <a href="navigation-sidebar.html">side menu navigation</a> page.
+                        </p>
+
+
+                        <h2>Example:</h2>
+                        <!--#include virtual="/sample/modules/nav-side.html" -->
+                    </div>
+                    <div class="half">
+                        <h3><label for="sample-side-menu">Source Code:</label></h3>
+                        <textarea id="sample-side-menu" class="form-control" rows="10" cols="80"><!--#include virtual="/sample/modules/nav-side.html" -->
                                                  </textarea>
-                                             </div>
-                                         </div>
+                    </div>
+                </div>
 
 
             </main>
@@ -95,5 +120,6 @@ Version 5.0.11
     <!--#include virtual="/ssi/global-footer.html" -->
     <!--#include virtual="/ssi/scripts.html" -->
 
-                         </body>
+
+</body>
 </html>

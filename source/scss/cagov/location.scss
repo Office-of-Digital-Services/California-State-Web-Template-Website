@@ -13,7 +13,7 @@
 
         [class^="ca-gov-icon"] {
             @include font-size(1.5);
-            position: absolute;
+            position: relative;
             color: $gray;
         }
 
@@ -38,43 +38,43 @@
 .location.banner {
     @include clearfix();
     padding: ($grid-gutter-width / 2) 0;
-    background:$gray-lightest;
-    margin-bottom:($line-height-computed / 2);
-    
+    background: $gray-lightest;
+    margin-bottom: ($line-height-computed / 2);
+
     .thumbnail {
         @include make-sm-column(4);
         @include make-md-column(3);
         @include make-lg-column(2);
-        
+
         img {
             @include img-responsive();
         }
     }
-    
+
     .contact {
         @include make-sm-column(8);
         @include make-md-column(3);
         @include make-lg-column(3);
-        position:relative;
+        position: relative;
     }
-    
+
     .summary {
         @include make-sm-column(12);
         @include make-md-column(6);
         @include make-lg-column(7);
-        
+
         @media (max-width: $screen-sm-max) {
-            margin-top:($line-height-computed / 2);
+            margin-top: ($line-height-computed / 2);
         }
     }
-    
+
     .btn {
         @include btn-default;
         @include btn-xs();
-        float:right;
-        
+        float: right;
+
         @media (max-width: $screen-sm-max) {
-            margin-top:($line-height-computed / 2);
+            margin-top: ($line-height-computed / 2);
         }
     }
 }
@@ -89,33 +89,32 @@
 .location.contact {
     @include clearfix();
     margin-bottom: $line-height-computed;
-    position:relative;
-    
+    position: relative;
+
     .main-secondary > & {
-        margin-top: $line-height-computed;                 // when first in sidebar add extra padding on top
+        margin-top: $line-height-computed; // when first in sidebar add extra padding on top
     }
-    
+
     [class^="ca-gov-icon-"] {
         @include font-size(3.5);
-        color:$gray;
-        float:left;
-        width:20%;
-        min-width:60px;
-        max-width:60px;
-		position: relative;  // beta 5.0 addition
-    	top: -0.3em;  // beta 5.0 addition
+        color: $gray;
+        float: left;
+        width: 20%;
+        min-width: 60px;
+        max-width: 60px;
+        position: relative; // beta 5.0 addition
+        top: -0.3em; // beta 5.0 addition
     }
-    
+
     .contact {
-        float:left;
-        width:70%;
-        
+        float: left;
+        width: 70%;
+
         a {
-            margin-left:0;
+            margin-left: 0;
         }
-        
     }
-    
+
     .btn {
         @include btn-default();
         @include btn-xs();
@@ -130,25 +129,26 @@
 
 .location.mini {
     @include clearfix();
-    position:relative;
-    margin-bottom:$line-height-computed;
-    
+    position: relative;
+    margin-bottom: $line-height-computed;
+
     [class^="ca-gov-icon"] {
-        padding:5px;
-        line-height:1;
+        padding: 5px;
+        line-height: 1;
         @include font-size(2);
-        position:absolute;
+        position: absolute;
     }
-    
+
     .contact {
-        margin-left:60px;
-        
+        margin-left: 60px;
+
         .title {
-            font-weight:normal;                  // Overwrites default bold
+            font-weight: normal; // Overwrites default bold
         }
-        
+
         a {
-            margin-left:0;                       // Moves text back inline with address
+            position: relative;
+            left: 0px; // Moves text away from icon
         }
     }
 }

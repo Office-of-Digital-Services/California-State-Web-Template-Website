@@ -5,9 +5,9 @@
 <!--[if IE 9]>    <html class="no-js ie9 oldie" lang="en"> <![endif]-->
 <!--[if (gt IE 9)]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
 <head>
-<!--
-    California State Template
-Version 5.0.11
+
+<!--    California State Template
+    Version 6.0.0
 
 Based on Twitter Bootstrap
 -->
@@ -20,7 +20,9 @@ Based on Twitter Bootstrap
 <meta name="Keywords" content="California, government" />
 
 <!--#include virtual="/ssi/head-css-js.html" -->
-
+        <script type="text/javascript">
+        var defaultActiveLink = "Components";
+    </script>
 </head>
 
 <body>
@@ -35,31 +37,29 @@ Based on Twitter Bootstrap
 		<!--#include virtual="/ssi/settings-bar.html" -->
 
 		<!-- Include Branding -->
-		<!--#include virtual="/ssi/branding.html" -->
+		<!--#include virtual="/ssi/branding-lightgrey.html" -->
 
     <!-- Include Mobile Controls -->
     <!--#include virtual="/ssi/mobile-controls.html" -->
 
-    <div class="navigation-search">
-        <!-- Include Navigation -->
-        <!--#include virtual="/ssi/navigation.html" -->
-
-        <div id="head-search" class="search-container">
+    <div class="navigation-search full-width-nav container">
+        <div id="head-search" class="search-container featured-search fade">
             <!-- Include Search -->
             <!--#include virtual="/ssi/search.html" -->
         </div>
-
+        <!-- Include Navigation -->
+        <!--#include virtual="/ssi/navigation.html" -->
     </div>
 
   <div class="header-decoration"></div>
 </header>
 
 <div id="main-content" class="main-content">
-    <div class="section">
-        <main class="main-primary">
+    <div class="container p-b-lg">
+        <main class="main-primary">            
             <ol class="breadcrumb">
                 <li><a href="../index.html" title="Home page">Home</a></li>
-                <li><a href="index.html" title="Examples landing page">Examples</a></li>
+                <li><a href="/sample/" title="Content Modules landing page">Content Modules</a></li>
                 <li class="active">Course Detail</li>
             </ol>
 
@@ -87,16 +87,16 @@ Based on Twitter Bootstrap
 
                     <div class="tab-group">
                         <ul id="sourceCode" class="nav nav-tabs responsive" role="tablist">
-                            <li class="active"><a href="#html" role="tab" data-toggle="tab" aria-label="HTML Markup for Course Detail"><strong>HTML Markup</strong></a></li>
-                            <li><a href="#microdata" role="tab" data-toggle="tab" aria-label="Microdata for Course Detail"><strong>Microdata</strong></a></li>
+                            <li class="active"><a href="#html" role="tab" data-toggle="tab">HTML Markup</a></li>
+                            <li><a href="#microdata" role="tab" data-toggle="tab">Microdata</a></li>
                         </ul>
                         <!-- Tab panes -->
                         <div class="tab-content responsive">
                             <div class="tab-pane active" id="html">
-                                 <textarea aria-label="Source Code of HTML Markup for Course Detail" class="form-control" rows="10" cols="80"><!--#include virtual="/sample/modules/course-detail.html" --></textarea>
+                                <pre><code class="overflow-auto"><!--#include virtual="/sample/modules/course-detail.html" --></code></pre>
                             </div>
                             <div class="tab-pane" id="microdata">
-                                 <textarea aria-label="Source Code of Microdata for Course Detail" class="form-control" rows="10" cols="80"><!--#include virtual="/sample/modules/course-detail-schema.html" --></textarea>
+                                <pre><code class="overflow-auto"><!--#include virtual="/sample/modules/course-detail-schema.html" --></code></pre>
                             </div>
                         </div>
                     </div>

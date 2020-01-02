@@ -33,7 +33,7 @@ ul.list-overstated {
             top: 3px;
             left: 0;
         }
-
+        /* Rotates disc arrow down when used with accordion */
         &.open {
             &::before {
                 content: "\e66b";
@@ -124,8 +124,6 @@ $size: 1.5em;               // reusable variable for .list-standout
         padding-bottom: 10px;
     }
 }
-
-
 // Bootstrap 3 backwards compatibility
 .list-inline {
     padding-left: 0;
@@ -146,6 +144,7 @@ $size: 1.5em;               // reusable variable for .list-standout
         }
     }
 }
+
 
 /* Removes image bullets from nested lists */
 .list-overstated, .list-understated, .list-standout {

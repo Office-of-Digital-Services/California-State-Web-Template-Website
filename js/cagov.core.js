@@ -1,5 +1,5 @@
 /**
- * CA State Template v5 -  @version v5.0.11 -  9/6/2019 
+ * CA State Template v6 -  @version v6.0.0 -  12/30/2019 
   STYLES COMPILED FROM SOURCE (source/js) DO NOT MODIFY */
 /*! modernizr (Custom Build) | MIT *
  * https://modernizr.com/download/?-flexbox-setclasses !*/
@@ -13,7 +13,7 @@ $ = jQuery.noConflict();
 
 
 /*!
-  * Bootstrap v4.3.1 (https://getbootstrap.com/)
+  * Bootstrap v4.4.1 (https://getbootstrap.com/)
   * Copyright 2011-2019 The Bootstrap Authors (https://github.com/twbs/bootstrap/graphs/contributors)
   * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
   */
@@ -21,7 +21,7 @@ $ = jQuery.noConflict();
     typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports, require('jquery')) :
         typeof define === 'function' && define.amd ? define(['exports', 'jquery'], factory) :
             (global = global || self, factory(global.bootstrap = {}, global.jQuery));
-}(this, function (exports, $) {
+}(this, (function (exports, $) {
     'use strict';
 
     $ = $ && $.hasOwnProperty('default') ? $['default'] : $;
@@ -57,20 +57,35 @@ $ = jQuery.noConflict();
         return obj;
     }
 
-    function _objectSpread(target) {
+    function ownKeys(object, enumerableOnly) {
+        var keys = Object.keys(object);
+
+        if (Object.getOwnPropertySymbols) {
+            var symbols = Object.getOwnPropertySymbols(object);
+            if (enumerableOnly) symbols = symbols.filter(function (sym) {
+                return Object.getOwnPropertyDescriptor(object, sym).enumerable;
+            });
+            keys.push.apply(keys, symbols);
+        }
+
+        return keys;
+    }
+
+    function _objectSpread2(target) {
         for (var i = 1; i < arguments.length; i++) {
             var source = arguments[i] != null ? arguments[i] : {};
-            var ownKeys = Object.keys(source);
 
-            if (typeof Object.getOwnPropertySymbols === 'function') {
-                ownKeys = ownKeys.concat(Object.getOwnPropertySymbols(source).filter(function (sym) {
-                    return Object.getOwnPropertyDescriptor(source, sym).enumerable;
-                }));
+            if (i % 2) {
+                ownKeys(Object(source), true).forEach(function (key) {
+                    _defineProperty(target, key, source[key]);
+                });
+            } else if (Object.getOwnPropertyDescriptors) {
+                Object.defineProperties(target, Object.getOwnPropertyDescriptors(source));
+            } else {
+                ownKeys(Object(source)).forEach(function (key) {
+                    Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key));
+                });
             }
-
-            ownKeys.forEach(function (key) {
-                _defineProperty(target, key, source[key]);
-            });
         }
 
         return target;
@@ -82,11 +97,11 @@ $ = jQuery.noConflict();
         subClass.__proto__ = superClass;
     }
 /**
- * --------------------------------------------------------------------------
- * Bootstrap (v4.3.1): util.js
- * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
- * --------------------------------------------------------------------------
- */
+   * --------------------------------------------------------------------------
+   * Bootstrap (v4.4.1): util.js
+   * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
+   * --------------------------------------------------------------------------
+   */
 /**
  * ------------------------------------------------------------------------
  * Private TransitionEnd Helpers
@@ -232,24 +247,41 @@ var Util = {
         }
 
         return Util.findShadowRoot(element.parentNode);
+    },
+    jQueryDetection: function jQueryDetection() {
+        if (typeof $ === 'undefined') {
+            throw new TypeError('Bootstrap\'s JavaScript requires jQuery. jQuery must be included before Bootstrap\'s JavaScript.');
+        }
+
+        var version = $.fn.jquery.split(' ')[0].split('.');
+        var minMajor = 1;
+        var ltMajor = 2;
+        var minMinor = 9;
+        var minPatch = 1;
+        var maxMajor = 4;
+
+        if (version[0] < ltMajor && version[1] < minMinor || version[0] === minMajor && version[1] === minMinor && version[2] < minPatch || version[0] >= maxMajor) {
+            throw new Error('Bootstrap\'s JavaScript requires at least jQuery v1.9.1 but less than v4.0.0');
+        }
     }
 };
+Util.jQueryDetection();
 setTransitionEndSupport();
 /**
   * --------------------------------------------------------------------------
-  * Bootstrap (v4.3.1): alert.js
+  * Bootstrap (v4.4.1): alert.js
   * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
   * --------------------------------------------------------------------------
   */
 
 /**
- * ------------------------------------------------------------------------
- * Constants
- * ------------------------------------------------------------------------
- */
+   * ------------------------------------------------------------------------
+   * Constants
+   * ------------------------------------------------------------------------
+   */
 
 var NAME = 'alert';
-var VERSION = '4.3.1';
+var VERSION = '4.4.1';
 var DATA_KEY = 'bs.alert';
 var EVENT_KEY = "." + DATA_KEY;
 var DATA_API_KEY = '.data-api';
@@ -266,13 +298,12 @@ var ClassName = {
     ALERT: 'alert',
     FADE: 'fade',
     SHOW: 'show'
-    /**
-     * ------------------------------------------------------------------------
-     * Class Definition
-     * ------------------------------------------------------------------------
-     */
-
 };
+/**
+ * ------------------------------------------------------------------------
+ * Class Definition
+ * ------------------------------------------------------------------------
+ */
 
 var Alert =
     /*#__PURE__*/
@@ -408,19 +439,19 @@ $.fn[NAME].noConflict = function () {
 };
 /**
    * --------------------------------------------------------------------------
-   * Bootstrap (v4.3.1): button.js
+   * Bootstrap (v4.4.1): button.js
    * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
    * --------------------------------------------------------------------------
    */
 
 /**
- * ------------------------------------------------------------------------
- * Constants
- * ------------------------------------------------------------------------
- */
+   * ------------------------------------------------------------------------
+   * Constants
+   * ------------------------------------------------------------------------
+   */
 
 var NAME$1 = 'button';
-var VERSION$1 = '4.3.1';
+var VERSION$1 = '4.4.1';
 var DATA_KEY$1 = 'bs.button';
 var EVENT_KEY$1 = "." + DATA_KEY$1;
 var DATA_API_KEY$1 = '.data-api';
@@ -432,21 +463,23 @@ var ClassName$1 = {
 };
 var Selector$1 = {
     DATA_TOGGLE_CARROT: '[data-toggle^="button"]',
-    DATA_TOGGLE: '[data-toggle="buttons"]',
+    DATA_TOGGLES: '[data-toggle="buttons"]',
+    DATA_TOGGLE: '[data-toggle="button"]',
+    DATA_TOGGLES_BUTTONS: '[data-toggle="buttons"] .btn',
     INPUT: 'input:not([type="hidden"])',
     ACTIVE: '.active',
     BUTTON: '.btn'
 };
 var Event$1 = {
     CLICK_DATA_API: "click" + EVENT_KEY$1 + DATA_API_KEY$1,
-    FOCUS_BLUR_DATA_API: "focus" + EVENT_KEY$1 + DATA_API_KEY$1 + " " + ("blur" + EVENT_KEY$1 + DATA_API_KEY$1)
-    /**
-     * ------------------------------------------------------------------------
-     * Class Definition
-     * ------------------------------------------------------------------------
-     */
-
+    FOCUS_BLUR_DATA_API: "focus" + EVENT_KEY$1 + DATA_API_KEY$1 + " " + ("blur" + EVENT_KEY$1 + DATA_API_KEY$1),
+    LOAD_DATA_API: "load" + EVENT_KEY$1 + DATA_API_KEY$1
 };
+/**
+ * ------------------------------------------------------------------------
+ * Class Definition
+ * ------------------------------------------------------------------------
+ */
 
 var Button =
     /*#__PURE__*/
@@ -462,7 +495,7 @@ var Button =
         _proto.toggle = function toggle() {
             var triggerChangeEvent = true;
             var addAriaPressed = true;
-            var rootElement = $(this._element).closest(Selector$1.DATA_TOGGLE)[0];
+            var rootElement = $(this._element).closest(Selector$1.DATA_TOGGLES)[0];
 
             if (rootElement) {
                 var input = this._element.querySelector(Selector$1.INPUT);
@@ -478,13 +511,16 @@ var Button =
                                 $(activeElement).removeClass(ClassName$1.ACTIVE);
                             }
                         }
+                    } else if (input.type === 'checkbox') {
+                        if (this._element.tagName === 'LABEL' && input.checked === this._element.classList.contains(ClassName$1.ACTIVE)) {
+                            triggerChangeEvent = false;
+                        }
+                    } else {
+                        // if it's not a radio button or checkbox don't add a pointless/invalid checked property to the input
+                        triggerChangeEvent = false;
                     }
 
                     if (triggerChangeEvent) {
-                        if (input.hasAttribute('disabled') || rootElement.hasAttribute('disabled') || input.classList.contains('disabled') || rootElement.classList.contains('disabled')) {
-                            return;
-                        }
-
                         input.checked = !this._element.classList.contains(ClassName$1.ACTIVE);
                         $(input).trigger('change');
                     }
@@ -494,12 +530,14 @@ var Button =
                 }
             }
 
-            if (addAriaPressed) {
-                this._element.setAttribute('aria-pressed', !this._element.classList.contains(ClassName$1.ACTIVE));
-            }
+            if (!(this._element.hasAttribute('disabled') || this._element.classList.contains('disabled'))) {
+                if (addAriaPressed) {
+                    this._element.setAttribute('aria-pressed', !this._element.classList.contains(ClassName$1.ACTIVE));
+                }
 
-            if (triggerChangeEvent) {
-                $(this._element).toggleClass(ClassName$1.ACTIVE);
+                if (triggerChangeEvent) {
+                    $(this._element).toggleClass(ClassName$1.ACTIVE);
+                }
             }
         };
 
@@ -541,17 +579,57 @@ var Button =
 
 
 $(document).on(Event$1.CLICK_DATA_API, Selector$1.DATA_TOGGLE_CARROT, function (event) {
-    event.preventDefault();
     var button = event.target;
 
     if (!$(button).hasClass(ClassName$1.BUTTON)) {
-        button = $(button).closest(Selector$1.BUTTON);
+        button = $(button).closest(Selector$1.BUTTON)[0];
     }
 
-    Button._jQueryInterface.call($(button), 'toggle');
+    if (!button || button.hasAttribute('disabled') || button.classList.contains('disabled')) {
+        event.preventDefault(); // work around Firefox bug #1540995
+    } else {
+        var inputBtn = button.querySelector(Selector$1.INPUT);
+
+        if (inputBtn && (inputBtn.hasAttribute('disabled') || inputBtn.classList.contains('disabled'))) {
+            event.preventDefault(); // work around Firefox bug #1540995
+
+            return;
+        }
+
+        Button._jQueryInterface.call($(button), 'toggle');
+    }
 }).on(Event$1.FOCUS_BLUR_DATA_API, Selector$1.DATA_TOGGLE_CARROT, function (event) {
     var button = $(event.target).closest(Selector$1.BUTTON)[0];
     $(button).toggleClass(ClassName$1.FOCUS, /^focus(in)?$/.test(event.type));
+});
+$(window).on(Event$1.LOAD_DATA_API, function () {
+    // ensure correct active class is set to match the controls' actual values/states
+    // find all checkboxes/readio buttons inside data-toggle groups
+    var buttons = [].slice.call(document.querySelectorAll(Selector$1.DATA_TOGGLES_BUTTONS));
+
+    for (var i = 0, len = buttons.length; i < len; i++) {
+        var button = buttons[i];
+        var input = button.querySelector(Selector$1.INPUT);
+
+        if (input.checked || input.hasAttribute('checked')) {
+            button.classList.add(ClassName$1.ACTIVE);
+        } else {
+            button.classList.remove(ClassName$1.ACTIVE);
+        }
+    } // find all button toggles
+
+
+    buttons = [].slice.call(document.querySelectorAll(Selector$1.DATA_TOGGLE));
+
+    for (var _i = 0, _len = buttons.length; _i < _len; _i++) {
+        var _button = buttons[_i];
+
+        if (_button.getAttribute('aria-pressed') === 'true') {
+            _button.classList.add(ClassName$1.ACTIVE);
+        } else {
+            _button.classList.remove(ClassName$1.ACTIVE);
+        }
+    }
 });
 /**
  * ------------------------------------------------------------------------
@@ -568,20 +646,19 @@ $.fn[NAME$1].noConflict = function () {
 };
 /**
    * --------------------------------------------------------------------------
-   * Bootstrap (v4.3.1): carousel.js
+   * Bootstrap (v4.4.1): carousel.js
    * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
    * --------------------------------------------------------------------------
    */
 
-
 /**
- * ------------------------------------------------------------------------
- * Constants
- * ------------------------------------------------------------------------
- */
+   * ------------------------------------------------------------------------
+   * Constants
+   * ------------------------------------------------------------------------
+   */
 
 var NAME$2 = 'carousel';
-var VERSION$2 = '4.3.1';
+var VERSION$2 = '4.4.1';
 var DATA_KEY$2 = 'bs.carousel';
 var EVENT_KEY$2 = "." + DATA_KEY$2;
 var DATA_API_KEY$2 = '.data-api';
@@ -654,13 +731,12 @@ var Selector$2 = {
 var PointerType = {
     TOUCH: 'touch',
     PEN: 'pen'
-    /**
-     * ------------------------------------------------------------------------
-     * Class Definition
-     * ------------------------------------------------------------------------
-     */
-
 };
+/**
+ * ------------------------------------------------------------------------
+ * Class Definition
+ * ------------------------------------------------------------------------
+ */
 
 var Carousel =
     /*#__PURE__*/
@@ -780,7 +856,7 @@ var Carousel =
             ;
 
         _proto._getConfig = function _getConfig(config) {
-            config = _objectSpread({}, Default, config);
+            config = _objectSpread2({}, Default, {}, config);
             Util.typeCheckConfig(NAME$2, config, DefaultType);
             return config;
         };
@@ -792,7 +868,8 @@ var Carousel =
                 return;
             }
 
-            var direction = absDeltax / this.touchDeltaX; // swipe left
+            var direction = absDeltax / this.touchDeltaX;
+            this.touchDeltaX = 0; // swipe left
 
             if (direction > 0) {
                 this.prev();
@@ -918,8 +995,6 @@ var Carousel =
                     event.preventDefault();
                     this.next();
                     break;
-
-                default:
             }
         };
 
@@ -1071,10 +1146,10 @@ var Carousel =
             return this.each(function () {
                 var data = $(this).data(DATA_KEY$2);
 
-                var _config = _objectSpread({}, Default, $(this).data());
+                var _config = _objectSpread2({}, Default, {}, $(this).data());
 
                 if (typeof config === 'object') {
-                    _config = _objectSpread({}, _config, config);
+                    _config = _objectSpread2({}, _config, {}, config);
                 }
 
                 var action = typeof config === 'string' ? config : _config.slide;
@@ -1112,7 +1187,7 @@ var Carousel =
                 return;
             }
 
-            var config = _objectSpread({}, $(target).data(), $(this).data());
+            var config = _objectSpread2({}, $(target).data(), {}, $(this).data());
 
             var slideIndex = this.getAttribute('data-slide-to');
 
@@ -1175,7 +1250,7 @@ $.fn[NAME$2].noConflict = function () {
 };
 /**
    * --------------------------------------------------------------------------
-   * Bootstrap (v4.3.1): collapse.js
+   * Bootstrap (v4.4.1): collapse.js
    * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
    * --------------------------------------------------------------------------
    */
@@ -1187,7 +1262,7 @@ $.fn[NAME$2].noConflict = function () {
    */
 
 var NAME$3 = 'collapse';
-var VERSION$3 = '4.3.1';
+var VERSION$3 = '4.4.1';
 var DATA_KEY$3 = 'bs.collapse';
 var EVENT_KEY$3 = "." + DATA_KEY$3;
 var DATA_API_KEY$3 = '.data-api';
@@ -1220,13 +1295,12 @@ var Dimension = {
 var Selector$3 = {
     ACTIVES: '.show, .collapsing',
     DATA_TOGGLE: '[data-toggle="collapse"]'
-    /**
-     * ------------------------------------------------------------------------
-     * Class Definition
-     * ------------------------------------------------------------------------
-     */
-
 };
+/**
+ * ------------------------------------------------------------------------
+ * Class Definition
+ * ------------------------------------------------------------------------
+ */
 
 var Collapse =
     /*#__PURE__*/
@@ -1413,7 +1487,7 @@ var Collapse =
             ;
 
         _proto._getConfig = function _getConfig(config) {
-            config = _objectSpread({}, Default$1, config);
+            config = _objectSpread2({}, Default$1, {}, config);
             config.toggle = Boolean(config.toggle); // Coerce string values
 
             Util.typeCheckConfig(NAME$3, config, DefaultType$1);
@@ -1467,7 +1541,7 @@ var Collapse =
                 var $this = $(this);
                 var data = $this.data(DATA_KEY$3);
 
-                var _config = _objectSpread({}, Default$1, $this.data(), typeof config === 'object' && config ? config : {});
+                var _config = _objectSpread2({}, Default$1, {}, $this.data(), {}, typeof config === 'object' && config ? config : {});
 
                 if (!data && _config.toggle && /show|hide/.test(config)) {
                     _config.toggle = false;
@@ -1541,14 +1615,14 @@ $.fn[NAME$3].noConflict = function () {
 };
 /**
    * --------------------------------------------------------------------------
-   * Bootstrap (v4.3.1): popper.js
+   * Bootstrap (v4.4.1): popper.js
    * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
    * --------------------------------------------------------------------------
    */
 
 /**!
    * @fileOverview Kickass library to create and place poppers near their reference elements.
-   * @version 1.14.7
+   * @version 1.16.0
    * @license
    * Copyright (c) 2016 Federico Zivolo and contributors
    *
@@ -1570,16 +1644,17 @@ $.fn[NAME$3].noConflict = function () {
    * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
    * SOFTWARE.
    */
-var isBrowser = typeof window !== 'undefined' && typeof document !== 'undefined';
+var isBrowser = typeof window !== 'undefined' && typeof document !== 'undefined' && typeof navigator !== 'undefined';
 
-var longerTimeoutBrowsers = ['Edge', 'Trident', 'Firefox'];
-var timeoutDuration = 0;
-for (var i = 0; i < longerTimeoutBrowsers.length; i += 1) {
-    if (isBrowser && navigator.userAgent.indexOf(longerTimeoutBrowsers[i]) >= 0) {
-        timeoutDuration = 1;
-        break;
+var timeoutDuration = function () {
+    var longerTimeoutBrowsers = ['Edge', 'Trident', 'Firefox'];
+    for (var i = 0; i < longerTimeoutBrowsers.length; i += 1) {
+        if (isBrowser && navigator.userAgent.indexOf(longerTimeoutBrowsers[i]) >= 0) {
+            return 1;
+        }
     }
-}
+    return 0;
+}();
 
 function microtaskDebounce(fn) {
     var called = false;
@@ -1697,6 +1772,17 @@ function getScrollParent(element) {
     }
 
     return getScrollParent(getParentNode(element));
+}
+
+/**
+ * Returns the reference node of the reference object, or the reference object itself.
+ * @method
+ * @memberof Popper.Utils
+ * @param {Element|Object} reference - the reference element (the popper will be relative to this)
+ * @returns {Element} parent
+ */
+function getReferenceNode(reference) {
+    return reference && reference.referenceNode ? reference.referenceNode : reference;
 }
 
 var isIE11 = isBrowser && !!(window.MSInputMethodContext && document.documentMode);
@@ -2007,8 +2093,8 @@ function getBoundingClientRect(element) {
 
     // subtract scrollbar size from sizes
     var sizes = element.nodeName === 'HTML' ? getWindowSizes(element.ownerDocument) : {};
-    var width = sizes.width || element.clientWidth || result.right - result.left;
-    var height = sizes.height || element.clientHeight || result.bottom - result.top;
+    var width = sizes.width || element.clientWidth || result.width;
+    var height = sizes.height || element.clientHeight || result.height;
 
     var horizScrollbar = element.offsetWidth - width;
     var vertScrollbar = element.offsetHeight - height;
@@ -2160,7 +2246,7 @@ function getBoundaries(popper, reference, padding, boundariesElement) {
     // NOTE: 1 DOM access here
 
     var boundaries = { top: 0, left: 0 };
-    var offsetParent = fixedPosition ? getFixedPositionOffsetParent(popper) : findCommonOffsetParent(popper, reference);
+    var offsetParent = fixedPosition ? getFixedPositionOffsetParent(popper) : findCommonOffsetParent(popper, getReferenceNode(reference));
 
     // Handle viewport case
     if (boundariesElement === 'viewport') {
@@ -2288,7 +2374,7 @@ function computeAutoPlacement(placement, refRect, popper, reference, boundariesE
 function getReferenceOffsets(state, popper, reference) {
     var fixedPosition = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : null;
 
-    var commonOffsetParent = fixedPosition ? getFixedPositionOffsetParent(popper) : findCommonOffsetParent(popper, reference);
+    var commonOffsetParent = fixedPosition ? getFixedPositionOffsetParent(popper) : findCommonOffsetParent(popper, getReferenceNode(reference));
     return getOffsetRectRelativeToArbitraryNode(reference, commonOffsetParent, fixedPosition);
 }
 
@@ -2550,7 +2636,7 @@ function destroy() {
 
     this.disableEventListeners();
 
-    // remove the popper if user explicity asked for the deletion on destroy
+    // remove the popper if user explicitly asked for the deletion on destroy
     // do not use `remove` because IE11 doesn't support it
     if (this.options.removeOnDestroy) {
         this.popper.parentNode.removeChild(this.popper);
@@ -3152,7 +3238,14 @@ function flip(data, options) {
 
         // flip the variation if required
         var isVertical = ['top', 'bottom'].indexOf(placement) !== -1;
-        var flippedVariation = !!options.flipVariations && (isVertical && variation === 'start' && overflowsLeft || isVertical && variation === 'end' && overflowsRight || !isVertical && variation === 'start' && overflowsTop || !isVertical && variation === 'end' && overflowsBottom);
+
+        // flips variation if reference element overflows boundaries
+        var flippedVariationByRef = !!options.flipVariations && (isVertical && variation === 'start' && overflowsLeft || isVertical && variation === 'end' && overflowsRight || !isVertical && variation === 'start' && overflowsTop || !isVertical && variation === 'end' && overflowsBottom);
+
+        // flips variation if popper content overflows boundaries
+        var flippedVariationByContent = !!options.flipVariationsByContent && (isVertical && variation === 'start' && overflowsRight || isVertical && variation === 'end' && overflowsLeft || !isVertical && variation === 'start' && overflowsBottom || !isVertical && variation === 'end' && overflowsTop);
+
+        var flippedVariation = flippedVariationByRef || flippedVariationByContent;
 
         if (overlapsRef || overflowsBoundaries || flippedVariation) {
             // this boolean to detect any flip loop
@@ -3759,7 +3852,23 @@ var modifiers = {
          * The popper will never be placed outside of the defined boundaries
          * (except if `keepTogether` is enabled)
          */
-        boundariesElement: 'viewport'
+        boundariesElement: 'viewport',
+        /**
+         * @prop {Boolean} flipVariations=false
+         * The popper will switch placement variation between `-start` and `-end` when
+         * the reference element overlaps its boundaries.
+         *
+         * The original placement should have a set variation.
+         */
+        flipVariations: false,
+        /**
+         * @prop {Boolean} flipVariationsByContent=false
+         * The popper will switch placement variation between `-start` and `-end` when
+         * the popper element overlaps its reference boundaries.
+         *
+         * The original placement should have a set variation.
+         */
+        flipVariationsByContent: false
     },
 
     /**
@@ -3976,8 +4085,8 @@ var Popper = function () {
     /**
      * Creates a new Popper.js instance.
      * @class Popper
-     * @param {HTMLElement|referenceObject} reference - The reference element used to position the popper
-     * @param {HTMLElement} popper - The HTML element used as the popper
+     * @param {Element|referenceObject} reference - The reference element used to position the popper
+     * @param {Element} popper - The HTML / XML element used as the popper
      * @param {Object} options - Your custom options to override the ones defined in [Defaults](#defaults)
      * @return {Object} instance - The generated Popper.js instance
      */
@@ -4126,7 +4235,7 @@ Popper.placements = placements;
 Popper.Defaults = Defaults;
 /**
    * --------------------------------------------------------------------------
-   * Bootstrap (v4.3.1): dropdown.js
+   * Bootstrap (v4.4.1): dropdown.js
    * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
    * --------------------------------------------------------------------------
    */
@@ -4138,7 +4247,7 @@ Popper.Defaults = Defaults;
    */
 
 var NAME$4 = 'dropdown';
-var VERSION$4 = '4.3.1';
+var VERSION$4 = '4.4.1';
 var DATA_KEY$4 = 'bs.dropdown';
 var EVENT_KEY$4 = "." + DATA_KEY$4;
 var DATA_API_KEY$4 = '.data-api';
@@ -4198,21 +4307,22 @@ var Default$2 = {
     flip: true,
     boundary: 'scrollParent',
     reference: 'toggle',
-    display: 'dynamic'
+    display: 'dynamic',
+    popperConfig: null
 };
 var DefaultType$2 = {
     offset: '(number|string|function)',
     flip: 'boolean',
     boundary: '(string|element)',
     reference: '(string|element)',
-    display: 'string'
-    /**
-     * ------------------------------------------------------------------------
-     * Class Definition
-     * ------------------------------------------------------------------------
-     */
-
+    display: 'string',
+    popperConfig: '(null|object)'
 };
+/**
+ * ------------------------------------------------------------------------
+ * Class Definition
+ * ------------------------------------------------------------------------
+ */
 
 var Dropdown =
     /*#__PURE__*/
@@ -4236,8 +4346,6 @@ var Dropdown =
                 return;
             }
 
-            var parent = Dropdown._getParentFromElement(this._element);
-
             var isActive = $(this._menu).hasClass(ClassName$4.SHOW);
 
             Dropdown._clearMenus();
@@ -4246,10 +4354,25 @@ var Dropdown =
                 return;
             }
 
+            this.show(true);
+        };
+
+        _proto.show = function show(usePopper) {
+            if (usePopper === void 0) {
+                usePopper = false;
+            }
+
+            if (this._element.disabled || $(this._element).hasClass(ClassName$4.DISABLED) || $(this._menu).hasClass(ClassName$4.SHOW)) {
+                return;
+            }
+
             var relatedTarget = {
                 relatedTarget: this._element
             };
             var showEvent = $.Event(Event$4.SHOW, relatedTarget);
+
+            var parent = Dropdown._getParentFromElement(this._element);
+
             $(parent).trigger(showEvent);
 
             if (showEvent.isDefaultPrevented()) {
@@ -4257,7 +4380,7 @@ var Dropdown =
             } // Disable totally Popper.js for Dropdown in Navbar
 
 
-            if (!this._inNavbar) {
+            if (!this._inNavbar && usePopper) {
                 /**
                  * Check for Popper dependency
                  * Popper - https://popper.js.org
@@ -4304,28 +4427,6 @@ var Dropdown =
             $(parent).toggleClass(ClassName$4.SHOW).trigger($.Event(Event$4.SHOWN, relatedTarget));
         };
 
-        _proto.show = function show() {
-            if (this._element.disabled || $(this._element).hasClass(ClassName$4.DISABLED) || $(this._menu).hasClass(ClassName$4.SHOW)) {
-                return;
-            }
-
-            var relatedTarget = {
-                relatedTarget: this._element
-            };
-            var showEvent = $.Event(Event$4.SHOW, relatedTarget);
-
-            var parent = Dropdown._getParentFromElement(this._element);
-
-            $(parent).trigger(showEvent);
-
-            if (showEvent.isDefaultPrevented()) {
-                return;
-            }
-
-            $(this._menu).toggleClass(ClassName$4.SHOW);
-            $(parent).toggleClass(ClassName$4.SHOW).trigger($.Event(Event$4.SHOWN, relatedTarget));
-        };
-
         _proto.hide = function hide() {
             if (this._element.disabled || $(this._element).hasClass(ClassName$4.DISABLED) || !$(this._menu).hasClass(ClassName$4.SHOW)) {
                 return;
@@ -4342,6 +4443,10 @@ var Dropdown =
 
             if (hideEvent.isDefaultPrevented()) {
                 return;
+            }
+
+            if (this._popper) {
+                this._popper.destroy();
             }
 
             $(this._menu).toggleClass(ClassName$4.SHOW);
@@ -4382,7 +4487,7 @@ var Dropdown =
         };
 
         _proto._getConfig = function _getConfig(config) {
-            config = _objectSpread({}, this.constructor.Default, $(this._element).data(), config);
+            config = _objectSpread2({}, this.constructor.Default, {}, $(this._element).data(), {}, config);
             Util.typeCheckConfig(NAME$4, config, this.constructor.DefaultType);
             return config;
         };
@@ -4431,7 +4536,7 @@ var Dropdown =
 
             if (typeof this._config.offset === 'function') {
                 offset.fn = function (data) {
-                    data.offsets = _objectSpread({}, data.offsets, _this2._config.offset(data.offsets, _this2._element) || {});
+                    data.offsets = _objectSpread2({}, data.offsets, {}, _this2._config.offset(data.offsets, _this2._element) || {});
                     return data;
                 };
             } else {
@@ -4452,9 +4557,8 @@ var Dropdown =
                     preventOverflow: {
                         boundariesElement: this._config.boundary
                     }
-                } // Disable Popper.js if we have a static display
-
-            };
+                }
+            }; // Disable Popper.js if we have a static display
 
             if (this._config.display === 'static') {
                 popperConfig.modifiers.applyStyle = {
@@ -4462,7 +4566,7 @@ var Dropdown =
                 };
             }
 
-            return popperConfig;
+            return _objectSpread2({}, popperConfig, {}, this._config.popperConfig);
         } // Static
             ;
 
@@ -4534,6 +4638,11 @@ var Dropdown =
                 }
 
                 toggles[i].setAttribute('aria-expanded', 'false');
+
+                if (context._popper) {
+                    context._popper.destroy();
+                }
+
                 $(dropdownMenu).removeClass(ClassName$4.SHOW);
                 $(parent).removeClass(ClassName$4.SHOW).trigger($.Event(Event$4.HIDDEN, relatedTarget));
             }
@@ -4574,6 +4683,10 @@ var Dropdown =
 
             var isActive = $(parent).hasClass(ClassName$4.SHOW);
 
+            if (!isActive && event.which === ESCAPE_KEYCODE) {
+                return;
+            }
+
             if (!isActive || isActive && (event.which === ESCAPE_KEYCODE || event.which === SPACE_KEYCODE)) {
                 if (event.which === ESCAPE_KEYCODE) {
                     var toggle = parent.querySelector(Selector$4.DATA_TOGGLE);
@@ -4584,7 +4697,9 @@ var Dropdown =
                 return;
             }
 
-            var items = [].slice.call(parent.querySelectorAll(Selector$4.VISIBLE_ITEMS));
+            var items = [].slice.call(parent.querySelectorAll(Selector$4.VISIBLE_ITEMS)).filter(function (item) {
+                return $(item).is(':visible');
+            });
 
             if (items.length === 0) {
                 return;
@@ -4658,7 +4773,7 @@ $.fn[NAME$4].noConflict = function () {
 };
 /**
    * --------------------------------------------------------------------------
-   * Bootstrap (v4.3.1): modal.js
+   * Bootstrap (v4.4.1): modal.js
    * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
    * --------------------------------------------------------------------------
    */
@@ -4670,7 +4785,7 @@ $.fn[NAME$4].noConflict = function () {
    */
 
 var NAME$5 = 'modal';
-var VERSION$5 = '4.3.1';
+var VERSION$5 = '4.4.1';
 var DATA_KEY$5 = 'bs.modal';
 var EVENT_KEY$5 = "." + DATA_KEY$5;
 var DATA_API_KEY$5 = '.data-api';
@@ -4691,6 +4806,7 @@ var DefaultType$3 = {
 };
 var Event$5 = {
     HIDE: "hide" + EVENT_KEY$5,
+    HIDE_PREVENTED: "hidePrevented" + EVENT_KEY$5,
     HIDDEN: "hidden" + EVENT_KEY$5,
     SHOW: "show" + EVENT_KEY$5,
     SHOWN: "shown" + EVENT_KEY$5,
@@ -4708,7 +4824,8 @@ var ClassName$5 = {
     BACKDROP: 'modal-backdrop',
     OPEN: 'modal-open',
     FADE: 'fade',
-    SHOW: 'show'
+    SHOW: 'show',
+    STATIC: 'modal-static'
 };
 var Selector$5 = {
     DIALOG: '.modal-dialog',
@@ -4717,13 +4834,12 @@ var Selector$5 = {
     DATA_DISMISS: '[data-dismiss="modal"]',
     FIXED_CONTENT: '.fixed-top, .fixed-bottom, .is-fixed, .sticky-top',
     STICKY_CONTENT: '.sticky-top'
-    /**
-     * ------------------------------------------------------------------------
-     * Class Definition
-     * ------------------------------------------------------------------------
-     */
-
 };
+/**
+ * ------------------------------------------------------------------------
+ * Class Definition
+ * ------------------------------------------------------------------------
+ */
 
 var Modal =
     /*#__PURE__*/
@@ -4869,15 +4985,40 @@ var Modal =
             ;
 
         _proto._getConfig = function _getConfig(config) {
-            config = _objectSpread({}, Default$3, config);
+            config = _objectSpread2({}, Default$3, {}, config);
             Util.typeCheckConfig(NAME$5, config, DefaultType$3);
             return config;
         };
 
-        _proto._showElement = function _showElement(relatedTarget) {
+        _proto._triggerBackdropTransition = function _triggerBackdropTransition() {
             var _this3 = this;
 
+            if (this._config.backdrop === 'static') {
+                var hideEventPrevented = $.Event(Event$5.HIDE_PREVENTED);
+                $(this._element).trigger(hideEventPrevented);
+
+                if (hideEventPrevented.defaultPrevented) {
+                    return;
+                }
+
+                this._element.classList.add(ClassName$5.STATIC);
+
+                var modalTransitionDuration = Util.getTransitionDurationFromElement(this._element);
+                $(this._element).one(Util.TRANSITION_END, function () {
+                    _this3._element.classList.remove(ClassName$5.STATIC);
+                }).emulateTransitionEnd(modalTransitionDuration);
+
+                this._element.focus();
+            } else {
+                this.hide();
+            }
+        };
+
+        _proto._showElement = function _showElement(relatedTarget) {
+            var _this4 = this;
+
             var transition = $(this._element).hasClass(ClassName$5.FADE);
+            var modalBody = this._dialog ? this._dialog.querySelector(Selector$5.MODAL_BODY) : null;
 
             if (!this._element.parentNode || this._element.parentNode.nodeType !== Node.ELEMENT_NODE) {
                 // Don't move modal's DOM position
@@ -4890,8 +5031,8 @@ var Modal =
 
             this._element.setAttribute('aria-modal', true);
 
-            if ($(this._dialog).hasClass(ClassName$5.SCROLLABLE)) {
-                this._dialog.querySelector(Selector$5.MODAL_BODY).scrollTop = 0;
+            if ($(this._dialog).hasClass(ClassName$5.SCROLLABLE) && modalBody) {
+                modalBody.scrollTop = 0;
             } else {
                 this._element.scrollTop = 0;
             }
@@ -4911,12 +5052,12 @@ var Modal =
             });
 
             var transitionComplete = function transitionComplete() {
-                if (_this3._config.focus) {
-                    _this3._element.focus();
+                if (_this4._config.focus) {
+                    _this4._element.focus();
                 }
 
-                _this3._isTransitioning = false;
-                $(_this3._element).trigger(shownEvent);
+                _this4._isTransitioning = false;
+                $(_this4._element).trigger(shownEvent);
             };
 
             if (transition) {
@@ -4928,25 +5069,23 @@ var Modal =
         };
 
         _proto._enforceFocus = function _enforceFocus() {
-            var _this4 = this;
+            var _this5 = this;
 
             $(document).off(Event$5.FOCUSIN) // Guard against infinite focus loop
                 .on(Event$5.FOCUSIN, function (event) {
-                    if (document !== event.target && _this4._element !== event.target && $(_this4._element).has(event.target).length === 0) {
-                        _this4._element.focus();
+                    if (document !== event.target && _this5._element !== event.target && $(_this5._element).has(event.target).length === 0) {
+                        _this5._element.focus();
                     }
                 });
         };
 
         _proto._setEscapeEvent = function _setEscapeEvent() {
-            var _this5 = this;
+            var _this6 = this;
 
             if (this._isShown && this._config.keyboard) {
                 $(this._element).on(Event$5.KEYDOWN_DISMISS, function (event) {
                     if (event.which === ESCAPE_KEYCODE$1) {
-                        event.preventDefault();
-
-                        _this5.hide();
+                        _this6._triggerBackdropTransition();
                     }
                 });
             } else if (!this._isShown) {
@@ -4955,11 +5094,11 @@ var Modal =
         };
 
         _proto._setResizeEvent = function _setResizeEvent() {
-            var _this6 = this;
+            var _this7 = this;
 
             if (this._isShown) {
                 $(window).on(Event$5.RESIZE, function (event) {
-                    return _this6.handleUpdate(event);
+                    return _this7.handleUpdate(event);
                 });
             } else {
                 $(window).off(Event$5.RESIZE);
@@ -4967,7 +5106,7 @@ var Modal =
         };
 
         _proto._hideModal = function _hideModal() {
-            var _this7 = this;
+            var _this8 = this;
 
             this._element.style.display = 'none';
 
@@ -4980,11 +5119,11 @@ var Modal =
             this._showBackdrop(function () {
                 $(document.body).removeClass(ClassName$5.OPEN);
 
-                _this7._resetAdjustments();
+                _this8._resetAdjustments();
 
-                _this7._resetScrollbar();
+                _this8._resetScrollbar();
 
-                $(_this7._element).trigger(Event$5.HIDDEN);
+                $(_this8._element).trigger(Event$5.HIDDEN);
             });
         };
 
@@ -4996,7 +5135,7 @@ var Modal =
         };
 
         _proto._showBackdrop = function _showBackdrop(callback) {
-            var _this8 = this;
+            var _this9 = this;
 
             var animate = $(this._element).hasClass(ClassName$5.FADE) ? ClassName$5.FADE : '';
 
@@ -5010,8 +5149,8 @@ var Modal =
 
                 $(this._backdrop).appendTo(document.body);
                 $(this._element).on(Event$5.CLICK_DISMISS, function (event) {
-                    if (_this8._ignoreBackdropClick) {
-                        _this8._ignoreBackdropClick = false;
+                    if (_this9._ignoreBackdropClick) {
+                        _this9._ignoreBackdropClick = false;
                         return;
                     }
 
@@ -5019,11 +5158,7 @@ var Modal =
                         return;
                     }
 
-                    if (_this8._config.backdrop === 'static') {
-                        _this8._element.focus();
-                    } else {
-                        _this8.hide();
-                    }
+                    _this9._triggerBackdropTransition();
                 });
 
                 if (animate) {
@@ -5047,7 +5182,7 @@ var Modal =
                 $(this._backdrop).removeClass(ClassName$5.SHOW);
 
                 var callbackRemove = function callbackRemove() {
-                    _this8._removeBackdrop();
+                    _this9._removeBackdrop();
 
                     if (callback) {
                         callback();
@@ -5094,7 +5229,7 @@ var Modal =
         };
 
         _proto._setScrollbar = function _setScrollbar() {
-            var _this9 = this;
+            var _this10 = this;
 
             if (this._isBodyOverflowing) {
                 // Note: DOMNode.style.paddingRight returns the actual value or '' if not set
@@ -5105,13 +5240,13 @@ var Modal =
                 $(fixedContent).each(function (index, element) {
                     var actualPadding = element.style.paddingRight;
                     var calculatedPadding = $(element).css('padding-right');
-                    $(element).data('padding-right', actualPadding).css('padding-right', parseFloat(calculatedPadding) + _this9._scrollbarWidth + "px");
+                    $(element).data('padding-right', actualPadding).css('padding-right', parseFloat(calculatedPadding) + _this10._scrollbarWidth + "px");
                 }); // Adjust sticky content margin
 
                 $(stickyContent).each(function (index, element) {
                     var actualMargin = element.style.marginRight;
                     var calculatedMargin = $(element).css('margin-right');
-                    $(element).data('margin-right', actualMargin).css('margin-right', parseFloat(calculatedMargin) - _this9._scrollbarWidth + "px");
+                    $(element).data('margin-right', actualMargin).css('margin-right', parseFloat(calculatedMargin) - _this10._scrollbarWidth + "px");
                 }); // Adjust body padding
 
                 var actualPadding = document.body.style.paddingRight;
@@ -5160,7 +5295,7 @@ var Modal =
             return this.each(function () {
                 var data = $(this).data(DATA_KEY$5);
 
-                var _config = _objectSpread({}, Default$3, $(this).data(), typeof config === 'object' && config ? config : {});
+                var _config = _objectSpread2({}, Default$3, {}, $(this).data(), {}, typeof config === 'object' && config ? config : {});
 
                 if (!data) {
                     data = new Modal(this, _config);
@@ -5201,7 +5336,7 @@ var Modal =
 
 
 $(document).on(Event$5.CLICK_DATA_API, Selector$5.DATA_TOGGLE, function (event) {
-    var _this10 = this;
+    var _this11 = this;
 
     var target;
     var selector = Util.getSelectorFromElement(this);
@@ -5210,7 +5345,7 @@ $(document).on(Event$5.CLICK_DATA_API, Selector$5.DATA_TOGGLE, function (event) 
         target = document.querySelector(selector);
     }
 
-    var config = $(target).data(DATA_KEY$5) ? 'toggle' : _objectSpread({}, $(target).data(), $(this).data());
+    var config = $(target).data(DATA_KEY$5) ? 'toggle' : _objectSpread2({}, $(target).data(), {}, $(this).data());
 
     if (this.tagName === 'A' || this.tagName === 'AREA') {
         event.preventDefault();
@@ -5223,8 +5358,8 @@ $(document).on(Event$5.CLICK_DATA_API, Selector$5.DATA_TOGGLE, function (event) 
         }
 
         $target.one(Event$5.HIDDEN, function () {
-            if ($(_this10).is(':visible')) {
-                _this10.focus();
+            if ($(_this11).is(':visible')) {
+                _this11.focus();
             }
         });
     });
@@ -5244,9 +5379,10 @@ $.fn[NAME$5].noConflict = function () {
     $.fn[NAME$5] = JQUERY_NO_CONFLICT$5;
     return Modal._jQueryInterface;
 };
+
 /**
    * --------------------------------------------------------------------------
-   * Bootstrap (v4.3.1): tools/sanitizer.js
+   * Bootstrap (v4.4.1): tools/sanitizer.js
    * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
    * --------------------------------------------------------------------------
    */
@@ -5284,13 +5420,13 @@ var DefaultWhitelist = {
     strong: [],
     u: [],
     ul: []
-    /**
-     * A pattern that recognizes a commonly useful subset of URLs that are safe.
-     *
-     * Shoutout to Angular 7 https://github.com/angular/angular/blob/7.2.4/packages/core/src/sanitization/url_sanitizer.ts
-     */
-
 };
+/**
+ * A pattern that recognizes a commonly useful subset of URLs that are safe.
+ *
+ * Shoutout to Angular 7 https://github.com/angular/angular/blob/7.2.4/packages/core/src/sanitization/url_sanitizer.ts
+ */
+
 var SAFE_URL_PATTERN = /^(?:(?:https?|mailto|ftp|tel|file):|[^&:/?#]*(?:[/?#]|$))/gi;
 /**
  * A pattern that matches safe data URLs. Only matches image, video and audio types.
@@ -5357,7 +5493,7 @@ function sanitizeHtml(unsafeHtml, whiteList, sanitizeFn) {
     };
 
     for (var i = 0, len = elements.length; i < len; i++) {
-        var _ret = _loop(i, len);
+        var _ret = _loop(i);
 
         if (_ret === "continue") continue;
     }
@@ -5366,7 +5502,7 @@ function sanitizeHtml(unsafeHtml, whiteList, sanitizeFn) {
 }
 /**
    * --------------------------------------------------------------------------
-   * Bootstrap (v4.3.1): tooltip.js
+   * Bootstrap (v4.4.1): tooltip.js
    * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
    * --------------------------------------------------------------------------
    */
@@ -5378,7 +5514,7 @@ function sanitizeHtml(unsafeHtml, whiteList, sanitizeFn) {
    */
 
 var NAME$6 = 'tooltip';
-var VERSION$6 = '4.3.1';
+var VERSION$6 = '4.4.1';
 var DATA_KEY$6 = 'bs.tooltip';
 var EVENT_KEY$6 = "." + DATA_KEY$6;
 var JQUERY_NO_CONFLICT$6 = $.fn[NAME$6];
@@ -5400,7 +5536,8 @@ var DefaultType$4 = {
     boundary: '(string|element)',
     sanitize: 'boolean',
     sanitizeFn: '(null|function)',
-    whiteList: 'object'
+    whiteList: 'object',
+    popperConfig: '(null|object)'
 };
 var AttachmentMap$1 = {
     AUTO: 'auto',
@@ -5424,7 +5561,8 @@ var Default$4 = {
     boundary: 'scrollParent',
     sanitize: true,
     sanitizeFn: null,
-    whiteList: DefaultWhitelist
+    whiteList: DefaultWhitelist,
+    popperConfig: null
 };
 var HoverState = {
     SHOW: 'show',
@@ -5456,22 +5594,17 @@ var Trigger = {
     FOCUS: 'focus',
     CLICK: 'click',
     MANUAL: 'manual'
-    /**
-     * ------------------------------------------------------------------------
-     * Class Definition
-     * ------------------------------------------------------------------------
-     */
-
 };
+/**
+ * ------------------------------------------------------------------------
+ * Class Definition
+ * ------------------------------------------------------------------------
+ */
 
 var Tooltip =
     /*#__PURE__*/
     function () {
         function Tooltip(element, config) {
-            /**
-             * Check for Popper dependency
-             * Popper - https://popper.js.org
-             */
             if (typeof Popper === 'undefined') {
                 throw new TypeError('Bootstrap\'s tooltips require Popper.js (https://popper.js.org/)');
             } // private
@@ -5542,7 +5675,7 @@ var Tooltip =
             clearTimeout(this._timeout);
             $.removeData(this.element, this.constructor.DATA_KEY);
             $(this.element).off(this.constructor.EVENT_KEY);
-            $(this.element).closest('.modal').off('hide.bs.modal');
+            $(this.element).closest('.modal').off('hide.bs.modal', this._hideModalHandler);
 
             if (this.tip) {
                 $(this.tip).remove();
@@ -5553,7 +5686,7 @@ var Tooltip =
             this._hoverState = null;
             this._activeTrigger = null;
 
-            if (this._popper !== null) {
+            if (this._popper) {
                 this._popper.destroy();
             }
 
@@ -5606,29 +5739,7 @@ var Tooltip =
                 }
 
                 $(this.element).trigger(this.constructor.Event.INSERTED);
-                this._popper = new Popper(this.element, tip, {
-                    placement: attachment,
-                    modifiers: {
-                        offset: this._getOffset(),
-                        flip: {
-                            behavior: this.config.fallbackPlacement
-                        },
-                        arrow: {
-                            element: Selector$6.ARROW
-                        },
-                        preventOverflow: {
-                            boundariesElement: this.config.boundary
-                        }
-                    },
-                    onCreate: function onCreate(data) {
-                        if (data.originalPlacement !== data.placement) {
-                            _this._handlePopperPlacementChange(data);
-                        }
-                    },
-                    onUpdate: function onUpdate(data) {
-                        return _this._handlePopperPlacementChange(data);
-                    }
-                });
+                this._popper = new Popper(this.element, tip, this._getPopperConfig(attachment));
                 $(tip).addClass(ClassName$6.SHOW); // If this is a touch-enabled device we add extra
                 // empty mouseover listeners to the body's immediate children;
                 // only needed because of broken event delegation on iOS
@@ -5776,14 +5887,43 @@ var Tooltip =
         } // Private
             ;
 
-        _proto._getOffset = function _getOffset() {
+        _proto._getPopperConfig = function _getPopperConfig(attachment) {
             var _this3 = this;
+
+            var defaultBsConfig = {
+                placement: attachment,
+                modifiers: {
+                    offset: this._getOffset(),
+                    flip: {
+                        behavior: this.config.fallbackPlacement
+                    },
+                    arrow: {
+                        element: Selector$6.ARROW
+                    },
+                    preventOverflow: {
+                        boundariesElement: this.config.boundary
+                    }
+                },
+                onCreate: function onCreate(data) {
+                    if (data.originalPlacement !== data.placement) {
+                        _this3._handlePopperPlacementChange(data);
+                    }
+                },
+                onUpdate: function onUpdate(data) {
+                    return _this3._handlePopperPlacementChange(data);
+                }
+            };
+            return _objectSpread2({}, defaultBsConfig, {}, this.config.popperConfig);
+        };
+
+        _proto._getOffset = function _getOffset() {
+            var _this4 = this;
 
             var offset = {};
 
             if (typeof this.config.offset === 'function') {
                 offset.fn = function (data) {
-                    data.offsets = _objectSpread({}, data.offsets, _this3.config.offset(data.offsets, _this3.element) || {});
+                    data.offsets = _objectSpread2({}, data.offsets, {}, _this4.config.offset(data.offsets, _this4.element) || {});
                     return data;
                 };
             } else {
@@ -5810,32 +5950,35 @@ var Tooltip =
         };
 
         _proto._setListeners = function _setListeners() {
-            var _this4 = this;
+            var _this5 = this;
 
             var triggers = this.config.trigger.split(' ');
             triggers.forEach(function (trigger) {
                 if (trigger === 'click') {
-                    $(_this4.element).on(_this4.constructor.Event.CLICK, _this4.config.selector, function (event) {
-                        return _this4.toggle(event);
+                    $(_this5.element).on(_this5.constructor.Event.CLICK, _this5.config.selector, function (event) {
+                        return _this5.toggle(event);
                     });
                 } else if (trigger !== Trigger.MANUAL) {
-                    var eventIn = trigger === Trigger.HOVER ? _this4.constructor.Event.MOUSEENTER : _this4.constructor.Event.FOCUSIN;
-                    var eventOut = trigger === Trigger.HOVER ? _this4.constructor.Event.MOUSELEAVE : _this4.constructor.Event.FOCUSOUT;
-                    $(_this4.element).on(eventIn, _this4.config.selector, function (event) {
-                        return _this4._enter(event);
-                    }).on(eventOut, _this4.config.selector, function (event) {
-                        return _this4._leave(event);
+                    var eventIn = trigger === Trigger.HOVER ? _this5.constructor.Event.MOUSEENTER : _this5.constructor.Event.FOCUSIN;
+                    var eventOut = trigger === Trigger.HOVER ? _this5.constructor.Event.MOUSELEAVE : _this5.constructor.Event.FOCUSOUT;
+                    $(_this5.element).on(eventIn, _this5.config.selector, function (event) {
+                        return _this5._enter(event);
+                    }).on(eventOut, _this5.config.selector, function (event) {
+                        return _this5._leave(event);
                     });
-                }
-            });
-            $(this.element).closest('.modal').on('hide.bs.modal', function () {
-                if (_this4.element) {
-                    _this4.hide();
                 }
             });
 
+            this._hideModalHandler = function () {
+                if (_this5.element) {
+                    _this5.hide();
+                }
+            };
+
+            $(this.element).closest('.modal').on('hide.bs.modal', this._hideModalHandler);
+
             if (this.config.selector) {
-                this.config = _objectSpread({}, this.config, {
+                this.config = _objectSpread2({}, this.config, {
                     trigger: 'manual',
                     selector: ''
                 });
@@ -5935,7 +6078,7 @@ var Tooltip =
                     delete dataAttributes[dataAttr];
                 }
             });
-            config = _objectSpread({}, this.constructor.Default, dataAttributes, typeof config === 'object' && config ? config : {});
+            config = _objectSpread2({}, this.constructor.Default, {}, dataAttributes, {}, typeof config === 'object' && config ? config : {});
 
             if (typeof config.delay === 'number') {
                 config.delay = {
@@ -6089,33 +6232,33 @@ $.fn[NAME$6].noConflict = function () {
 };
 /**
   * --------------------------------------------------------------------------
-  * Bootstrap (v4.3.1): popover.js
+  * Bootstrap (v4.4.1): popover.js
   * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
   * --------------------------------------------------------------------------
   */
 
 /**
-  * ------------------------------------------------------------------------
-  * Constants
-  * ------------------------------------------------------------------------
-  */
+   * ------------------------------------------------------------------------
+   * Constants
+   * ------------------------------------------------------------------------
+   */
 
 var NAME$7 = 'popover';
-var VERSION$7 = '4.3.1';
+var VERSION$7 = '4.4.1';
 var DATA_KEY$7 = 'bs.popover';
 var EVENT_KEY$7 = "." + DATA_KEY$7;
 var JQUERY_NO_CONFLICT$7 = $.fn[NAME$7];
 var CLASS_PREFIX$1 = 'bs-popover';
 var BSCLS_PREFIX_REGEX$1 = new RegExp("(^|\\s)" + CLASS_PREFIX$1 + "\\S+", 'g');
 
-var Default$5 = _objectSpread({}, Tooltip.Default, {
+var Default$5 = _objectSpread2({}, Tooltip.Default, {
     placement: 'right',
     trigger: 'click',
     content: '',
     template: '<div class="popover" role="tooltip">' + '<div class="arrow"></div>' + '<h3 class="popover-header"></h3>' + '<div class="popover-body"></div></div>'
 });
 
-var DefaultType$5 = _objectSpread({}, Tooltip.DefaultType, {
+var DefaultType$5 = _objectSpread2({}, Tooltip.DefaultType, {
     content: '(string|element|function)'
 });
 
@@ -6138,13 +6281,12 @@ var Event$7 = {
     FOCUSOUT: "focusout" + EVENT_KEY$7,
     MOUSEENTER: "mouseenter" + EVENT_KEY$7,
     MOUSELEAVE: "mouseleave" + EVENT_KEY$7
-    /**
-     * ------------------------------------------------------------------------
-     * Class Definition
-     * ------------------------------------------------------------------------
-     */
-
 };
+/**
+ * ------------------------------------------------------------------------
+ * Class Definition
+ * ------------------------------------------------------------------------
+ */
 
 var Popover =
     /*#__PURE__*/
@@ -6282,19 +6424,19 @@ $.fn[NAME$7].noConflict = function () {
 };
 /**
    * --------------------------------------------------------------------------
-   * Bootstrap (v4.3.1): scrollspy.js
+   * Bootstrap (v4.4.1): scrollspy.js
    * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
    * --------------------------------------------------------------------------
    */
 
 /**
- * ------------------------------------------------------------------------
- * Constants
- * ------------------------------------------------------------------------
- */
+   * ------------------------------------------------------------------------
+   * Constants
+   * ------------------------------------------------------------------------
+   */
 
 var NAME$8 = 'scrollspy';
-var VERSION$8 = '4.3.1';
+var VERSION$8 = '4.4.1';
 var DATA_KEY$8 = 'bs.scrollspy';
 var EVENT_KEY$8 = "." + DATA_KEY$8;
 var DATA_API_KEY$6 = '.data-api';
@@ -6333,13 +6475,12 @@ var Selector$8 = {
 var OffsetMethod = {
     OFFSET: 'offset',
     POSITION: 'position'
-    /**
-     * ------------------------------------------------------------------------
-     * Class Definition
-     * ------------------------------------------------------------------------
-     */
-
 };
+/**
+ * ------------------------------------------------------------------------
+ * Class Definition
+ * ------------------------------------------------------------------------
+ */
 
 var ScrollSpy =
     /*#__PURE__*/
@@ -6421,7 +6562,7 @@ var ScrollSpy =
             ;
 
         _proto._getConfig = function _getConfig(config) {
-            config = _objectSpread({}, Default$6, typeof config === 'object' && config ? config : {});
+            config = _objectSpread2({}, Default$6, {}, typeof config === 'object' && config ? config : {});
 
             if (typeof config.target !== 'string') {
                 var id = $(config.target).attr('id');
@@ -6595,19 +6736,19 @@ $.fn[NAME$8].noConflict = function () {
 };
 /**
    * --------------------------------------------------------------------------
-   * Bootstrap (v4.3.1): tab.js
+   * Bootstrap (v4.4.1): tab.js
    * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
    * --------------------------------------------------------------------------
    */
 
 /**
-  * ------------------------------------------------------------------------
-  * Constants
-  * ------------------------------------------------------------------------
-  */
+   * ------------------------------------------------------------------------
+   * Constants
+   * ------------------------------------------------------------------------
+   */
 
 var NAME$9 = 'tab';
-var VERSION$9 = '4.3.1';
+var VERSION$9 = '4.4.1';
 var DATA_KEY$9 = 'bs.tab';
 var EVENT_KEY$9 = "." + DATA_KEY$9;
 var DATA_API_KEY$7 = '.data-api';
@@ -6634,13 +6775,12 @@ var Selector$9 = {
     DATA_TOGGLE: '[data-toggle="tab"], [data-toggle="pill"], [data-toggle="list"]',
     DROPDOWN_TOGGLE: '.dropdown-toggle',
     DROPDOWN_ACTIVE_CHILD: '> .dropdown-menu .active'
-    /**
-     * ------------------------------------------------------------------------
-     * Class Definition
-     * ------------------------------------------------------------------------
-     */
-
 };
+/**
+ * ------------------------------------------------------------------------
+ * Class Definition
+ * ------------------------------------------------------------------------
+ */
 
 var Tab =
     /*#__PURE__*/
@@ -6836,18 +6976,18 @@ $.fn[NAME$9].noConflict = function () {
 };
 /**
    * --------------------------------------------------------------------------
-   * Bootstrap (v4.3.1): toast.js
+   * Bootstrap (v4.4.1): toast.js
    * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
    * --------------------------------------------------------------------------
    */
 /**
- * ------------------------------------------------------------------------
- * Constants
- * ------------------------------------------------------------------------
- */
+   * ------------------------------------------------------------------------
+   * Constants
+   * ------------------------------------------------------------------------
+   */
 
 var NAME$a = 'toast';
-var VERSION$a = '4.3.1';
+var VERSION$a = '4.4.1';
 var DATA_KEY$a = 'bs.toast';
 var EVENT_KEY$a = "." + DATA_KEY$a;
 var JQUERY_NO_CONFLICT$a = $.fn[NAME$a];
@@ -6876,13 +7016,12 @@ var Default$7 = {
 };
 var Selector$a = {
     DATA_DISMISS: '[data-dismiss="toast"]'
-    /**
-     * ------------------------------------------------------------------------
-     * Class Definition
-     * ------------------------------------------------------------------------
-     */
-
 };
+/**
+ * ------------------------------------------------------------------------
+ * Class Definition
+ * ------------------------------------------------------------------------
+ */
 
 var Toast =
     /*#__PURE__*/
@@ -6902,7 +7041,12 @@ var Toast =
         _proto.show = function show() {
             var _this = this;
 
-            $(this._element).trigger(Event$a.SHOW);
+            var showEvent = $.Event(Event$a.SHOW);
+            $(this._element).trigger(showEvent);
+
+            if (showEvent.isDefaultPrevented()) {
+                return;
+            }
 
             if (this._config.animation) {
                 this._element.classList.add(ClassName$a.FADE);
@@ -6916,11 +7060,15 @@ var Toast =
                 $(_this._element).trigger(Event$a.SHOWN);
 
                 if (_this._config.autohide) {
-                    _this.hide();
+                    _this._timeout = setTimeout(function () {
+                        _this.hide();
+                    }, _this._config.delay);
                 }
             };
 
             this._element.classList.remove(ClassName$a.HIDE);
+
+            Util.reflow(this._element);
 
             this._element.classList.add(ClassName$a.SHOWING);
 
@@ -6932,22 +7080,19 @@ var Toast =
             }
         };
 
-        _proto.hide = function hide(withoutTimeout) {
-            var _this2 = this;
-
+        _proto.hide = function hide() {
             if (!this._element.classList.contains(ClassName$a.SHOW)) {
                 return;
             }
 
-            $(this._element).trigger(Event$a.HIDE);
+            var hideEvent = $.Event(Event$a.HIDE);
+            $(this._element).trigger(hideEvent);
 
-            if (withoutTimeout) {
-                this._close();
-            } else {
-                this._timeout = setTimeout(function () {
-                    _this2._close();
-                }, this._config.delay);
+            if (hideEvent.isDefaultPrevented()) {
+                return;
             }
+
+            this._close();
         };
 
         _proto.dispose = function dispose() {
@@ -6966,26 +7111,26 @@ var Toast =
             ;
 
         _proto._getConfig = function _getConfig(config) {
-            config = _objectSpread({}, Default$7, $(this._element).data(), typeof config === 'object' && config ? config : {});
+            config = _objectSpread2({}, Default$7, {}, $(this._element).data(), {}, typeof config === 'object' && config ? config : {});
             Util.typeCheckConfig(NAME$a, config, this.constructor.DefaultType);
             return config;
         };
 
         _proto._setListeners = function _setListeners() {
-            var _this3 = this;
+            var _this2 = this;
 
             $(this._element).on(Event$a.CLICK_DISMISS, Selector$a.DATA_DISMISS, function () {
-                return _this3.hide(true);
+                return _this2.hide();
             });
         };
 
         _proto._close = function _close() {
-            var _this4 = this;
+            var _this3 = this;
 
             var complete = function complete() {
-                _this4._element.classList.add(ClassName$a.HIDE);
+                _this3._element.classList.add(ClassName$a.HIDE);
 
-                $(_this4._element).trigger(Event$a.HIDDEN);
+                $(_this3._element).trigger(Event$a.HIDDEN);
             };
 
             this._element.classList.remove(ClassName$a.SHOW);
@@ -7056,29 +7201,11 @@ $.fn[NAME$a].noConflict = function () {
 };
 /**
    * --------------------------------------------------------------------------
-   * Bootstrap (v4.3.1): index.js
+   * Bootstrap (v4.4.1): index.js
    * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
    * --------------------------------------------------------------------------
    */
 
-(function () {
-    if (typeof $ === 'undefined') {
-        throw new TypeError('Bootstrap\'s JavaScript requires jQuery. jQuery must be included before Bootstrap\'s JavaScript.');
-    }
-
-    var version = $.fn.jquery.split(' ')[0].split('.');
-    var minMajor = 1;
-    var ltMajor = 2;
-    var minMinor = 9;
-    var minPatch = 1;
-    var maxMajor = 4;
-
-    if (version[0] < ltMajor && version[1] < minMinor || version[0] === minMajor && version[1] === minMinor && version[2] < minPatch || version[0] >= maxMajor) {
-        throw new Error('Bootstrap\'s JavaScript requires at least jQuery v1.9.1 but less than v4.0.0');
-    }
-})();
-
-exports.Util = Util;
 exports.Alert = Alert;
 exports.Button = Button;
 exports.Carousel = Carousel;
@@ -7090,437 +7217,342 @@ exports.Scrollspy = ScrollSpy;
 exports.Tab = Tab;
 exports.Toast = Toast;
 exports.Tooltip = Tooltip;
+exports.Util = Util;
 
 Object.defineProperty(exports, '__esModule', { value: true });
 
-}));
-//# sourceMappingURL=bootstrap.bundle.js.map
+})));
 
   // GENERAL UTILITY FUNCTIONS
   // ===============================
   
-  var uniqueId = function(prefix) {
-      return (prefix || 'ui-id') + '-' + Math.floor((Math.random()*1000)+1)
-  }
+var uniqueId = function (prefix) {
+    return (prefix || 'ui-id') + '-' + Math.floor(Math.random() * 1000 + 1);
+};
 
   
-  var removeMultiValAttributes = function (el, attr, val) {
-   var describedby = (el.attr( attr ) || "").split( /\s+/ )
-      , index = $.inArray(val, describedby)
-   if ( index !== -1 ) {
-     describedby.splice( index, 1 )
-   }
-   describedby = $.trim( describedby.join( " " ) )
-   if (describedby ) {
-     el.attr( attr, describedby )
-   } else {
-    el.removeAttr( attr )
-   }
-  }
+var removeMultiValAttributes = function (el, attr, val) {
+    var describedby = (el.attr(attr) || "").split(/\s+/)
+        , index = $.inArray(val, describedby);
+    if (index !== -1) {
+        describedby.splice(index, 1);
+    }
+    describedby = $.trim(describedby.join(" "));
+    if (describedby) {
+        el.attr(attr, describedby);
+    } else {
+        el.removeAttr(attr);
+    }
+};
 
-  // Collapse Extension
-  // ===============================
+// Collapse Extension
+// ===============================
 
-     var $colltabs =  $('[data-toggle="collapse"]')
-      $colltabs.attr({ 'role':'tab', 'aria-selected':'false', 'aria-expanded':'false' })
-      $colltabs.each(function( index ) {
-        var colltab = $(this)
-        , collpanel = (colltab.attr('data-target')) ? $(colltab.attr('data-target')) : $(colltab.attr('href'))
-        , parent  = colltab.attr('data-parent')
+var $colltabs = $('[data-toggle="collapse"]');
+$colltabs.attr({ 'role': 'tab', 'aria-selected': 'false', 'aria-expanded': 'false' });
+$colltabs.each(function (index) {
+    var colltab = $(this)
+        , collpanel = colltab.attr('data-target') ? $(colltab.attr('data-target')) : $(colltab.attr('href'))
+        , parent = colltab.attr('data-parent')
         , collparent = parent && $(parent)
-        , collid = colltab.attr('id') || uniqueId('ui-collapse')
+        , collid = colltab.attr('id') || uniqueId('ui-collapse');
 
-        $(collparent).find('div:not(.collapse,.panel-body), h4').attr('role','presentation')
+    $(collparent).find('div:not(.collapse,.panel-body), h4').attr('role', 'presentation');
 
-          colltab.attr('id', collid)
-          if(collparent){
-            collparent.attr({ 'role' : 'tablist', 'aria-multiselectable' : 'true' })
-            if(collpanel.hasClass('in')){
-              colltab.attr({ 'aria-controls': colltab.attr('href').substr(1), 'aria-selected':'true', 'aria-expanded':'true', 'tabindex':'0' })
-              collpanel.attr({ 'role':'tabpanel', 'tabindex':'0', 'aria-labelledby':collid, 'aria-hidden':'false' })
-            }else{
-              colltab.attr({'aria-controls' : colltab.attr('href').substr(1), 'tabindex':'-1' })
-              collpanel.attr({ 'role':'tabpanel', 'tabindex':'-1', 'aria-labelledby':collid, 'aria-hidden':'true' })
-            }
-          }
-      })
+    colltab.attr('id', collid);
+    if (collparent) {
+        collparent.attr({ 'role': 'tablist', 'aria-multiselectable': 'true' });
+        if (collpanel.hasClass('in')) {
+            colltab.attr({ 'aria-controls': colltab.attr('href').substr(1), 'aria-selected': 'true', 'aria-expanded': 'true', 'tabindex': '0' });
+            collpanel.attr({ 'role': 'tabpanel', 'tabindex': '0', 'aria-labelledby': collid, 'aria-hidden': 'false' });
+        } else {
+            colltab.attr({ 'aria-controls': colltab.attr('href').substr(1), 'tabindex': '-1' });
+            collpanel.attr({ 'role': 'tabpanel', 'tabindex': '-1', 'aria-labelledby': collid, 'aria-hidden': 'true' });
+        }
+    }
+});
 
-    var collToggle = $.fn.collapse.Constructor.prototype.toggle
-    $.fn.collapse.Constructor.prototype.toggle = function(){
-        var prevTab = this.$parent && this.$parent.find('[aria-expanded="true"]') , href
+var collToggle = $.fn.collapse.Constructor.prototype.toggle;
+$.fn.collapse.Constructor.prototype.toggle = function () {
+    var prevTab = this.$parent && this.$parent.find('[aria-expanded="true"]'), href;
 
-        if(prevTab){
-          var prevPanel = prevTab.attr('data-target') || (href = prevTab.attr('href')) && href.replace(/.*(?=#[^\s]+$)/, '')
-          , $prevPanel = $(prevPanel)
-          , $curPanel = this.$element
-          , par = this.$parent
-          , curTab
+    if (prevTab) {
+        var prevPanel = prevTab.attr('data-target') || (href = prevTab.attr('href')) && href.replace(/.*(?=#[^\s]+$)/, '')
+            , $prevPanel = $(prevPanel)
+            , $curPanel = this.$element
+            , par = this.$parent
+            , curTab;
 
-        if (this.$parent) curTab = this.$parent.find('[data-toggle=collapse][href="#' + this.$element.attr('id') + '"]')
+        if (this.$parent) curTab = this.$parent.find('[data-toggle=collapse][href="#' + this.$element.attr('id') + '"]');
 
-        collToggle.apply(this, arguments)
+        collToggle.apply(this, arguments);
 
         if ($.support.transition) {
-          this.$element.one($.support.transition.end, function(){
+            this.$element.one($.support.transition.end, function () {
 
-              prevTab.attr({ 'aria-selected':'false','aria-expanded':'false', 'tabIndex':'-1' })
-              $prevPanel.attr({ 'aria-hidden' : 'true','tabIndex' : '-1'})
+                prevTab.attr({ 'aria-selected': 'false', 'aria-expanded': 'false', 'tabIndex': '-1' });
+                $prevPanel.attr({ 'aria-hidden': 'true', 'tabIndex': '-1' });
 
-              curTab.attr({ 'aria-selected':'true','aria-expanded':'true', 'tabIndex':'0' })
+                curTab.attr({ 'aria-selected': 'true', 'aria-expanded': 'true', 'tabIndex': '0' });
 
-              if($curPanel.hasClass('in')){
-                $curPanel.attr({ 'aria-hidden' : 'false','tabIndex' : '0' })
-              }else{
-                curTab.attr({ 'aria-selected':'false','aria-expanded':'false'})
-                $curPanel.attr({ 'aria-hidden' : 'true','tabIndex' : '-1' })
-              }
-          })
+                if ($curPanel.hasClass('in')) {
+                    $curPanel.attr({ 'aria-hidden': 'false', 'tabIndex': '0' });
+                } else {
+                    curTab.attr({ 'aria-selected': 'false', 'aria-expanded': 'false' });
+                    $curPanel.attr({ 'aria-hidden': 'true', 'tabIndex': '-1' });
+                }
+            });
         }
-      }else{
-        collToggle.apply(this, arguments)
-      }
+    } else {
+        collToggle.apply(this, arguments);
     }
+};
 
-    $.fn.collapse.Constructor.prototype.keydown = function (e) {
-      var $this = $(this)
-      , $items
-      , $tablist = $this.closest('div[role=tablist] ')
-      , index
-      , k = e.which || e.keyCode
+$.fn.collapse.Constructor.prototype.keydown = function (e) {
+    var $this = $(this)
+        , $items
+        , $tablist = $this.closest('div[role=tablist] ')
+        , index
+        , k = e.which || e.keyCode;
 
-      $this = $(this)
-      if (!/(32|37|38|39|40)/.test(k)) return
-      if(k==32) $this.click()
+    $this = $(this);
+    if (!/(32|37|38|39|40)/.test(k)) return;
+    if (k === 32) $this.click();
 
-      $items = $tablist.find('[role=tab]')
-      index = $items.index($items.filter(':focus'))
+    $items = $tablist.find('[role=tab]');
+    index = $items.index($items.filter(':focus'));
 
-      if (k == 38 || k == 37) index--                                        // up & left
-      if (k == 39 || k == 40) index++                        // down & right
-      if(index < 0) index = $items.length -1
-      if(index == $items.length) index = 0
+    if (k === 38 || k === 37) index--;                                        // up & left
+    if (k === 39 || k === 40) index++;                        // down & right
+    if (index < 0) index = $items.length - 1;
+    if (index === $items.length) index = 0;
 
-      $items.eq(index).focus()
+    $items.eq(index).focus();
 
-      e.preventDefault()
-      e.stopPropagation()
+    e.preventDefault();
+    e.stopPropagation();
 
-    }
+};
 
-    $(document).on('keydown.collapse.data-api','[data-toggle="collapse"]' ,  $.fn.collapse.Constructor.prototype.keydown)
-    
-  // DROPDOWN Extension
-  // ===============================
-  
-  var toggle   = '[data-toggle=dropdown]'
-      , $par
-      , firstItem
-      , focusDelay = 200
-      , menus = $(toggle).parent().find('ul').attr('role','menu')
-      , lis = menus.find('li').attr('role','presentation')
+$(document).on('keydown.collapse.data-api', '[data-toggle="collapse"]', $.fn.collapse.Constructor.prototype.keydown);
 
-    lis.find('a').attr({'role':'menuitem', 'tabIndex':'-1'})
-    $(toggle).attr({ 'aria-haspopup':'true', 'aria-expanded': 'false'})
+// DROPDOWN Extension
+// ===============================
 
-    $(toggle).parent().on('shown.bs.dropdown',function(e){
-      $par = $(this)
-      var $toggle = $par.find(toggle)
-      $toggle.attr('aria-expanded','true')
+var toggle = '[data-toggle=dropdown]'
+    , $par
+    , firstItem
+    , focusDelay = 200
+    , menus = $(toggle).parent().find('ul').attr('role', 'menu')
+    , lis = menus.find('li').attr('role', 'presentation');
 
-      setTimeout(function(){
-            firstItem = $('.dropdown-menu [role=menuitem]:visible', $par)[0]
-            try{ firstItem.focus()} catch(ex) {}
-      }, focusDelay)
-    })
+lis.find('a').attr({ 'role': 'menuitem', 'tabIndex': '-1' });
+$(toggle).attr({ 'aria-haspopup': 'true', 'aria-expanded': 'false' });
 
-    $(toggle).parent().on('hidden.bs.dropdown',function(e){
-      $par = $(this)
-      var $toggle = $par.find(toggle)
-      $toggle.attr('aria-expanded','false')
-    })
+$(toggle).parent().on('shown.bs.dropdown', function (e) {
+    $par = $(this);
+    var $toggle = $par.find(toggle);
+    $toggle.attr('aria-expanded', 'true');
 
-    //Adding Space Key Behaviour, opens on spacebar
-    $.fn.dropdown.Constructor.prototype.keydown = function (e) {
-      var  $par
-        , firstItem
-      if (!/(32)/.test(e.keyCode)) return
-        $par = $(this).parent()
-        $(this).trigger ("click")
-        e.preventDefault() && e.stopPropagation()
-    }
+    setTimeout(function () {
+        firstItem = $('.dropdown-menu [role=menuitem]:visible', $par)[0];
+        try { firstItem.focus(); } catch (ex) { }
+    }, focusDelay);
+});
 
-    $(document)
-      .on('focusout.dropdown.data-api', '.dropdown-menu', function(e){
+$(toggle).parent().on('hidden.bs.dropdown', function (e) {
+    $par = $(this);
+    var $toggle = $par.find(toggle);
+    $toggle.attr('aria-expanded', 'false');
+});
+
+//Adding Space Key Behaviour, opens on spacebar
+$.fn.dropdown.Constructor.prototype.keydown = function (e) {
+    var $par
+        , firstItem;
+    if (!/(32)/.test(e.keyCode)) return;
+    $par = $(this).parent();
+    $(this).trigger("click");
+    e.preventDefault() && e.stopPropagation();
+};
+
+$(document)
+    .on('focusout.dropdown.data-api', '.dropdown-menu', function (e) {
         var $this = $(this)
-                    , that = this
-        setTimeout(function() {
-         if(!$.contains(that, document.activeElement)){
-          $this.parent().removeClass('open')
-          $this.parent().find('[data-toggle=dropdown]').attr('aria-expanded','false')
-         }
-        }, 150)
-       })
-      .on('keydown.bs.dropdown.data-api', toggle + ', [role=menu]' , $.fn.dropdown.Constructor.prototype.keydown)
-  // Tab Extension
-  // ===============================
-  
-  var $tablist = $('.nav-tabs, .nav-pills')
-        , $lis = $tablist.children('li')
-        , $tabs = $tablist.find('[data-toggle="tab"], [data-toggle="pill"]')
-
-    $tablist.attr('role', 'tablist')
-    $lis.attr('role', 'presentation')
-    $tabs.attr('role', 'tab')
-
-    $tabs.each(function( index ) {
-      var tabpanel = $($(this).attr('href'))
-        , tab = $(this)
-        , tabid = tab.attr('id') || uniqueId('ui-tab')
-
-        tab.attr('id', tabid)
-
-      if(tab.parent().hasClass('active')){
-        tab.attr( { 'tabIndex' : '0', 'aria-selected' : 'true', 'aria-controls': tab.attr('href').substr(1) } )
-        tabpanel.attr({ 'role' : 'tabpanel', 'tabIndex' : '0', 'aria-hidden' : 'false', 'aria-labelledby':tabid })
-      }else{
-        tab.attr( { 'tabIndex' : '-1', 'aria-selected' : 'false', 'aria-controls': tab.attr('href').substr(1) } )
-        tabpanel.attr( { 'role' : 'tabpanel', 'tabIndex' : '-1', 'aria-hidden' : 'true', 'aria-labelledby':tabid } )
-      }
-    })
-
-    $.fn.tab.Constructor.prototype.keydown = function (e) {
-      var $this = $(this)
-      , $items
-      , $ul = $this.closest('ul[role=tablist] ')
-      , index
-      , k = e.which || e.keyCode
-
-      $this = $(this)
-      if (!/(37|38|39|40)/.test(k)) return
-
-      $items = $ul.find('[role=tab]:visible')
-      index = $items.index($items.filter(':focus'))
-
-      if (k == 38 || k == 37) index--                         // up & left
-      if (k == 39 || k == 40) index++                        // down & right
-
-
-      if(index < 0) index = $items.length -1
-      if(index == $items.length) index = 0
-
-      var nextTab = $items.eq(index)
-      if(nextTab.attr('role') ==='tab'){
-
-        nextTab.tab('show')      //Comment this line for dynamically loaded tabPabels, to save Ajax requests on arrow key navigation
-        .focus()
-      }
-      // nextTab.focus()
-
-      e.preventDefault()
-      e.stopPropagation()
-    }
-
-    $(document).on('keydown.tab.data-api','[data-toggle="tab"], [data-toggle="pill"]' , $.fn.tab.Constructor.prototype.keydown)
-
-   var tabactivate =    $.fn.tab.Constructor.prototype.activate;
-   $.fn.tab.Constructor.prototype.activate = function (element, container, callback) {
-      var $active = container.find('> .active')
-      $active.find('[data-toggle=tab], [data-toggle=pill]').attr({ 'tabIndex' : '-1','aria-selected' : false })
-      $active.filter('.tab-pane').attr({ 'aria-hidden' : true,'tabIndex' : '-1' })
-
-      tabactivate.apply(this, arguments)
-
-      element.addClass('active')
-      element.find('[data-toggle=tab], [data-toggle=pill]').attr({ 'tabIndex' : '0','aria-selected' : true })
-      element.filter('.tab-pane').attr({ 'aria-hidden' : false,'tabIndex' : '0' })
-   }
-var fakewaffle = (function ($, fakewaffle) {
-    'use strict';
-
-    var _id = 0;
-
-    fakewaffle.responsiveTabs = function (collapseDisplayed) {
-
-        fakewaffle.currentPosition = 'tabs';
-
-        var tabGroups = $('.nav-tabs.responsive, .nav-pills.responsive');
-        var hidden = '';
-        var visible = '';
-        var activeTab = '';
-
-        if (collapseDisplayed === undefined) {
-            collapseDisplayed = ['xs', 'sm'];
-        }
-
-        $.each(collapseDisplayed, function () {
-            hidden += ' hidden-' + this;
-            visible += ' visible-' + this;
-        });
-
-        $.each(tabGroups, function () {
-            var $tabGroup = $(this);
-            var tabs = $tabGroup.find('[data-toggle="tab"]');
-            var collapseDiv = $('<div></div>', {
-                'class': 'panel-group responsive' + visible,
-                'id': 'collapse-' + +'waffle-' + (_id++)
-            });
-
-            $.each(tabs, function () {
-                var $this = $(this);
-                var oldLinkClass = $this.attr('class') === undefined ? '' : $this.attr('class');
-                var newLinkClass = 'accordion-toggle collapsed';
-                var oldParentClass = $this.parent().attr('class') === undefined ? '' : $this.parent().attr('class');
-                var newParentClass = 'panel panel-default';
-                var newHash = $this.get(0).hash.replace('#', 'collapse-');
-
-                if (oldLinkClass.length > 0) {
-                    newLinkClass += ' ' + oldLinkClass;
-                }
-
-                if (oldParentClass.length > 0) {
-                    oldParentClass = oldParentClass.replace(/\bactive\b/g, '');
-                    newParentClass += ' ' + oldParentClass;
-                    newParentClass = newParentClass.replace(/\s{2,}/g, ' ');
-                    newParentClass = newParentClass.replace(/^\s+|\s+$/g, '');
-                }
-
-                if ($this.parent().hasClass('active')) {
-                    activeTab = '#' + newHash;
-                }
-
-                collapseDiv.append(
-                  $('<div>').attr('class', newParentClass).html(
-                    $('<div>').attr('class', 'panel-heading').html(
-                      $('<h4>').attr('class', 'panel-title').html(
-                        $('<a>', {
-                            'class': newLinkClass,
-                            'data-toggle': 'collapse',
-                            'data-parent': '#collapse-' + $tabGroup.attr('id'),
-                            'href': '#' + newHash,
-                            'html': $this.html()
-                        })
-                      )
-                    )
-                  ).append(
-                    $('<div>', {
-                        'id': newHash,
-                        'class': 'panel-collapse collapse'
-                    })
-                  )
-                );
-            });
-
-            $tabGroup.next().after(collapseDiv);
-            $tabGroup.addClass(hidden);
-            $('.tab-content.responsive').addClass(hidden);
-        });
-
-
-        fakewaffle.checkResize();
-        fakewaffle.bindTabToCollapse();
-
-        if (activeTab) {
-            $(activeTab).collapse('show');
-        }
-    };
-
-    fakewaffle.checkResize = function () {
-
-        if ($('.panel-group.responsive').is(':visible') === true && fakewaffle.currentPosition === 'tabs') {
-            fakewaffle.tabToPanel();
-            fakewaffle.currentPosition = 'panel';
-        } else if ($('.panel-group.responsive').is(':visible') === false && fakewaffle.currentPosition === 'panel') {
-            fakewaffle.panelToTab();
-            fakewaffle.currentPosition = 'tabs';
-        }
-
-    };
-
-    fakewaffle.tabToPanel = function () {
-
-        var tabGroups = $('.nav-tabs.responsive, .nav-pills.responsive');
-
-        $.each(tabGroups, function (index, tabGroup) {
-
-            // Find the tab
-            var tabContents = $(tabGroup).next('.tab-content').find('.tab-pane');
-
-            $.each(tabContents, function (index, tabContent) {
-                // Find the id to move the element to
-                var destinationId = $(tabContent).attr('id').replace(/^/, '#collapse-');
-
-                // Convert tab to panel and move to destination
-                $(tabContent)
-                  .removeClass('tab-pane')
-                  .addClass('panel-body')
-                  .appendTo($(destinationId));
-
-            });
-
-        });
-
-    };
-
-    fakewaffle.panelToTab = function () {
-
-        var panelGroups = $('.panel-group.responsive');
-
-        $.each(panelGroups, function (index, panelGroup) {
-
-            var destinationId = $(panelGroup).attr('id').replace('collapse-', '#');
-            var destination = $(destinationId).next('.tab-content')[0];
-
-            // Find the panel contents
-            var panelContents = $(panelGroup).find('.panel-body');
-
-            // Convert to tab and move to destination
-            panelContents
-              .removeClass('panel-body')
-              .addClass('tab-pane')
-              .appendTo($(destination));
-
-        });
-
-    };
-
-    fakewaffle.bindTabToCollapse = function () {
-
-        var tabs = $('.nav-tabs.responsive, .nav-pills.responsive').find('li a');
-        var collapse = $('.panel-group.responsive').find('.panel-collapse');
-
-        // Toggle the panels when the associated tab is toggled
-        tabs.on('shown.bs.tab', function (e) {
-            var $current = $(e.currentTarget.hash.replace(/#/, '#collapse-'));
-            $current.collapse('show');
-
-            if (e.relatedTarget) {
-                var $previous = $(e.relatedTarget.hash.replace(/#/, '#collapse-'));
-                $previous.collapse('hide');
+            , that = this;
+        setTimeout(function () {
+            if (!$.contains(that, document.activeElement)) {
+                $this.parent().removeClass('open');
+                $this.parent().find('[data-toggle=dropdown]').attr('aria-expanded', 'false');
             }
-        });
+        }, 150);
+    })
+    .on('keydown.bs.dropdown.data-api', toggle + ', [role=menu]', $.fn.dropdown.Constructor.prototype.keydown);
+// Tab Extension
+// ===============================
 
-        // Toggle the tab when the associated panel is toggled
-        collapse.on('shown.bs.collapse', function (e) {
+var $tablist = $('.nav-tabs, .nav-pills')
+    , $lis = $tablist.children('li')
+    , $tabs = $tablist.find('[data-toggle="tab"], [data-toggle="pill"]');
 
-           // Coommented out following lines because they produce error
-           // var current = $(e.target).context.id.replace(/collapse-/g, '#');
-           // $('a[href="' + current + '"]').tab('show');
+$tablist.attr('role', 'tablist');
+$lis.attr('role', 'presentation');
+$tabs.attr('role', 'tab');
 
-            // Update the content with active
-            var panelGroup = $(e.currentTarget).closest('.panel-group.responsive');
-            $(panelGroup).find('.panel-body').removeClass('active');
-            $(e.currentTarget).find('.panel-body').addClass('active');
+$tabs.each(function (index) {
+    var tabpanel = $($(this).attr('href'))
+        , tab = $(this)
+        , tabid = tab.attr('id') || uniqueId('ui-tab');
 
-        });
-    };
+    tab.attr('id', tabid);
 
-    $(window).on('resize', function () {
-        fakewaffle.checkResize();
+    if (tab.parent().hasClass('active')) {
+        tab.attr({ 'tabIndex': '0', 'aria-selected': 'true', 'aria-controls': tab.attr('href').substr(1) });
+        tabpanel.attr({ 'role': 'tabpanel', 'tabIndex': '0', 'aria-hidden': 'false', 'aria-labelledby': tabid });
+    } else {
+        tab.attr({ 'tabIndex': '-1', 'aria-selected': 'false', 'aria-controls': tab.attr('href').substr(1) });
+        tabpanel.attr({ 'role': 'tabpanel', 'tabIndex': '-1', 'aria-hidden': 'true', 'aria-labelledby': tabid });
+    }
+});
+
+$.fn.tab.Constructor.prototype.keydown = function (e) {
+
+    var $this = $(this)
+        , $items
+        , $ul = $this.closest('ul[role=tablist] ')
+        , index
+        , k = e.which || e.keyCode;
+
+    $this = $(this);
+    if (!/(37|38|39|40)/.test(k)) return;
+
+    $items = $ul.find('[role=tab]:visible');
+    index = $items.index($items.filter(':focus'));
+
+    if (k === 38 || k === 37) index--;                         // up & left
+    if (k === 39 || k === 40) index++;                        // down & right
+
+
+    if (index < 0) index = $items.length - 1;
+    if (index === $items.length) index = 0;
+
+    var nextTab = $items.eq(index);
+    if (nextTab.attr('role') === 'tab') {
+
+        nextTab.tab('show');
+        nextTab.focus();
+    }
+    // nextTab.focus()
+
+    e.preventDefault();
+    e.stopPropagation();
+};
+
+$(document).on('keydown.tab.data-api', '[data-toggle="tab"], [data-toggle="pill"]', $.fn.tab.Constructor.prototype.keydown);
+
+var tabactivate = $.fn.tab.Constructor.prototype.activate;
+$.fn.tab.Constructor.prototype.activate = function (element, container, callback) {
+    var $active = container.find('> .active');
+    $active.find('[data-toggle=tab], [data-toggle=pill]').attr({ 'tabIndex': '-1', 'aria-selected': false });
+    $active.filter('.tab-pane').attr({ 'aria-hidden': true, 'tabIndex': '-1' });
+
+    tabactivate.apply(this, arguments);
+
+   element.addClass('active');
+
+    element.find('[data-toggle=tab], [data-toggle=pill]').attr({ 'tabIndex': '0', 'aria-selected': true });
+    element.filter('.tab-pane').attr({ 'aria-hidden': false, 'tabIndex': '0' });
+};
+
+
+/* -----------------------------------------
+   Tabs -- some fixing to bootstap 3 tabs
+   and backward compatibility
+----------------------------------------- */
+$(document).ready(function () {
+    // adding active class to a tag if aria selected is true
+    var activeTab = $(".nav-tabs > li > a[aria-selected='true']");
+    activeTab.addClass("active");
+
+    // Just to change class active in the parent li element (backward compatibility)
+    $(".nav-tabs > li > a").on("click", function () {
+
+        var tabID = $(this).attr("id");
+        var tabcontentID = $("[aria-labelledby=" + tabID + "]");
+        var tabGroup = $(this).closest(".tab-group");
+        var tabsPane = tabGroup.find(".tab-pane");
+        tabsPane.attr("tabindex", "-1").attr("aria-hidden", "true");
+        if ($(this).attr('aria-selected') === "false") {
+            $(".nav-tabs > li").removeClass("active");
+            $(this).parent("li").addClass("active");
+            tabcontentID.removeAttr("tabindex aria-hidden");
+        }
+        else {
+            $(".nav-tabs > li").removeClass("active");
+            $(this).parent("li").addClass("active");
+        }
     });
 
-    return fakewaffle;
-}(window.jQuery, fakewaffle || {}));
 
+    // takes care of tabindexes and aria-hidden attributes when using arrow keys to navigate
+    $(".nav-tabs > li > a").on('keydown', function (e) {
+        var tabID = $(this).attr("id");
+        var tabcontentID = $("[aria-labelledby=" + tabID + "]");
+        var tabGroup = $(this).closest(".tab-group");
+        var tabsPane = tabGroup.find(".tab-pane");
+        var tabsPaneFirst = tabGroup.find(".tab-pane:first-child");
+        var tabsPaneLast = tabGroup.find(".tab-pane:last-child");
+        var parentLI = $(this).parent("li");
+
+        if (parentLI.is(':first-child')) {
+            console.log("first");
+        }
+        if (parentLI.is(':last-child')) {
+            console.log("last");
+        }
+
+
+
+        if (e.keyCode === 37) {
+            tabcontentID.prev().removeAttr("tabindex aria-hidden");
+            tabcontentID.attr("tabindex", "-1").attr("aria-hidden", "true");
+
+            if (parentLI.is(':first-child')) {
+                tabsPaneLast.removeAttr("tabindex aria-hidden");
+            }
+
+        } else if (e.keyCode === 38) {
+            tabcontentID.prev().removeAttr("tabindex aria-hidden");
+            tabcontentID.attr("tabindex", "-1").attr("aria-hidden", "true");
+
+            if (parentLI.is(':first-child')) {
+                tabsPaneLast.removeAttr("tabindex aria-hidden");
+            }
+
+        } else if (e.keyCode === 39) {
+            tabcontentID.next().removeAttr("tabindex aria-hidden");
+            tabcontentID.attr("tabindex", "-1").attr("aria-hidden", "true");
+
+            if (parentLI.is(':last-child')) {
+                tabsPaneFirst.removeAttr("tabindex aria-hidden");
+            }
+        } else if (e.keyCode === 40) {
+            tabcontentID.next().removeAttr("tabindex aria-hidden");
+            tabcontentID.attr("tabindex", "-1").attr("aria-hidden", "true");
+            if (parentLI.is(':last-child')) {
+                tabsPaneFirst.removeAttr("tabindex aria-hidden");
+            }
+
+        }
+    });
+
+
+    /* Tabblale tabs */
+    var tabs = $('ul.nav-tabs').find('.nav-link');
+    tabs.attr("tabindex", 0); // make accordion tabable
+
+
+});
 /**
  * Owl Carousel v2.3.4
  * Copyright 2013-2018 David Deutsch
@@ -7540,13 +7572,12 @@ var fakewaffle = (function ($, fakewaffle) {
  */
 ; (function ($, window, document, undefined) {
 
-	/**
-	 * Creates a carousel.
-	 * @class The Owl Carousel.
-	 * @public
-	 * @param {HTMLElement|jQuery} element - The element to create the carousel for.
-	 * @param {Object} [options] - The options
-	 */
+    // Creates a carousel.
+    //* @class The Owl Carousel.
+    //* @public
+    //* @param {HTMLElement|jQuery} element - The element to create the carousel for.
+    //* @param {Object} [options] - The options
+
     function Owl(element, options) {
 
 		/**
@@ -7952,8 +7983,8 @@ var fakewaffle = (function ($, fakewaffle) {
                 inner = this._coordinates[i - 1] || 0;
                 outer = Math.abs(this._coordinates[i]) + padding * rtl;
 
-                if ((this.op(inner, '<=', begin) && (this.op(inner, '>', end)))
-                    || (this.op(outer, '<', begin) && this.op(outer, '>', end))) {
+                if (this.op(inner, '<=', begin) && this.op(inner, '>', end)
+                    || this.op(outer, '<', begin) && this.op(outer, '>', end)) {
                     matches.push(i);
                 }
             }
@@ -8125,18 +8156,16 @@ var fakewaffle = (function ($, fakewaffle) {
         }
     };
 
-	/**
-	 * Prepares an item before add.
-	 * @todo Rename event parameter `content` to `item`.
-	 * @protected
-	 * @returns {jQuery|HTMLElement} - The item container.
-	 */
+    // * Prepares an item before add.
+    // * @todo Rename event parameter `content` to `item`.
+    // * @protected
+    // * @returns {jQuery|HTMLElement} - The item container.
     Owl.prototype.prepare = function (item) {
         var event = this.trigger('prepare', { content: item });
 
         if (!event.data) {
             event.data = $('<' + this.settings.itemElement + '/>')
-                .addClass(this.options.itemClass).append(item)
+                .addClass(this.options.itemClass).append(item);
         }
 
         this.trigger('prepared', { content: event.data });
@@ -8151,7 +8180,7 @@ var fakewaffle = (function ($, fakewaffle) {
     Owl.prototype.update = function () {
         var i = 0,
             n = this._pipe.length,
-            filter = $.proxy(function (p) { return this[p] }, this._invalidated),
+            filter = $.proxy(function (p) { return this[p]; }, this._invalidated),
             cache = {};
 
         while (i < n) {
@@ -8214,10 +8243,8 @@ var fakewaffle = (function ($, fakewaffle) {
         this.resizeTimer = window.setTimeout(this._handlers.onResize, this.settings.responsiveRefreshRate);
     };
 
-	/**
-	 * Checks window `resize` event.
-	 * @protected
-	 */
+    // Checks window `resize` event.
+    // @protected
     Owl.prototype.onResize = function () {
         if (!this._items.length) {
             return false;
@@ -8264,7 +8291,7 @@ var fakewaffle = (function ($, fakewaffle) {
         if (this.settings.mouseDrag) {
             this.$element.addClass(this.options.dragClass);
             this.$stage.on('mousedown.owl.core', $.proxy(this.onDragStart, this));
-            this.$stage.on('dragstart.owl.core selectstart.owl.core', function () { return false });
+            this.$stage.on('dragstart.owl.core selectstart.owl.core', function () { return false; });
         }
 
         if (this.settings.touchDrag) {
@@ -8304,7 +8331,7 @@ var fakewaffle = (function ($, fakewaffle) {
         }
 
         if (this.is('animating')) {
-            $.support.transform ? this.animate(stage.x) : this.$stage.stop()
+            $.support.transform ? this.animate(stage.x) : this.$stage.stop();
             this.invalidate('position');
         }
 
@@ -8358,7 +8385,7 @@ var fakewaffle = (function ($, fakewaffle) {
         if (this.settings.loop) {
             minimum = this.coordinates(this.minimum());
             maximum = this.coordinates(this.maximum() + 1) - minimum;
-            stage.x = (((stage.x - minimum) % maximum + maximum) % maximum) + minimum;
+            stage.x = ((stage.x - minimum) % maximum + maximum) % maximum + minimum;
         } else {
             minimum = this.settings.rtl ? this.coordinates(this.maximum()) : this.coordinates(this.minimum());
             maximum = this.settings.rtl ? this.coordinates(this.minimum()) : this.coordinates(this.maximum());
@@ -8471,7 +8498,7 @@ var fakewaffle = (function ($, fakewaffle) {
         if ($.support.transform3d && $.support.transition) {
             this.$stage.css({
                 transform: 'translate3d(' + coordinate + 'px,0px,0px)',
-                transition: (this.speed() / 1000) + 's' + (
+                transition: this.speed() / 1000 + 's' + (
                     this.settings.slideTransition ? ' ' + this.settings.slideTransition : ''
                 )
             });
@@ -8539,7 +8566,7 @@ var fakewaffle = (function ($, fakewaffle) {
             this._invalidated[part] = true;
             this.is('valid') && this.leave('valid');
         }
-        return $.map(this._invalidated, function (v, i) { return i });
+        return $.map(this._invalidated, function (v, i) { return i; });
     };
 
 	/**
@@ -8595,12 +8622,10 @@ var fakewaffle = (function ($, fakewaffle) {
         return this.normalize(position, true);
     };
 
-	/**
-	 * Gets the maximum position for the current item.
-	 * @public
-	 * @param {Boolean} [relative=false] - Whether to return an absolute position or a relative position.
-	 * @returns {Number}
-	 */
+    // Gets the maximum position for the current item.
+    // * @public
+    // * @param {Boolean} [relative=false] - Whether to return an absolute position or a relative position.
+    // * @returns {Number}
     Owl.prototype.maximum = function (relative) {
         var settings = this.settings,
             maximum = this._coordinates.length,
@@ -8636,12 +8661,10 @@ var fakewaffle = (function ($, fakewaffle) {
         return Math.max(maximum, 0);
     };
 
-	/**
-	 * Gets the minimum position for the current item.
-	 * @public
-	 * @param {Boolean} [relative=false] - Whether to return an absolute position or a relative position.
-	 * @returns {Number}
-	 */
+    // * Gets the minimum position for the current item.
+    // * @public
+    // * @param {Boolean} [relative=false] - Whether to return an absolute position or a relative position.
+    // * @returns {Number}
     Owl.prototype.minimum = function (relative) {
         return relative ? 0 : this._clones.length / 2;
     };
@@ -8685,13 +8708,13 @@ var fakewaffle = (function ($, fakewaffle) {
     Owl.prototype.clones = function (position) {
         var odd = this._clones.length / 2,
             even = odd + this._items.length,
-            map = function (index) { return index % 2 === 0 ? even + index / 2 : odd - (index + 1) / 2 };
+            map = function (index) { return index % 2 === 0 ? even + index / 2 : odd - (index + 1) / 2; };
 
         if (position === undefined) {
-            return $.map(this._clones, function (v, i) { return map(i) });
+            return $.map(this._clones, function (v, i) { return map(i); });
         }
 
-        return $.map(this._clones, function (v, i) { return v === position ? map(i) : null });
+        return $.map(this._clones, function (v, i) { return v === position ? map(i) : null; });
     };
 
 	/**
@@ -8756,7 +8779,7 @@ var fakewaffle = (function ($, fakewaffle) {
             return 0;
         }
 
-        return Math.min(Math.max(Math.abs(to - from), 1), 6) * Math.abs((factor || this.settings.smartSpeed));
+        return Math.min(Math.max(Math.abs(to - from), 1), 6) * Math.abs(factor || this.settings.smartSpeed);
     };
 
 	/**
@@ -8822,11 +8845,9 @@ var fakewaffle = (function ($, fakewaffle) {
         this.to(this.relative(this.current()) - 1, speed);
     };
 
-	/**
-	 * Handles the end of an animation.
-	 * @protected
-	 * @param {Event} event - The event arguments.
-	 */
+    // Handles the end of an animation.
+    // * @protected
+    // * @param {Event} event - The event arguments.
     Owl.prototype.onTransitionEnd = function (event) {
 
         // if css2 animation then event object is undefined
@@ -8872,7 +8893,7 @@ var fakewaffle = (function ($, fakewaffle) {
         this._items = [];
 
         if (content) {
-            content = (content instanceof jQuery) ? content : $(content);
+            content = content instanceof jQuery ? content : $(content);
         }
 
         if (this.settings.nestedItemSelector) {
@@ -8952,11 +8973,9 @@ var fakewaffle = (function ($, fakewaffle) {
         this.trigger('removed', { content: null, position: position });
     };
 
-	/**
-	 * Preloads images with auto width.
-	 * @todo Replace by a more generic approach
-	 * @protected
-	 */
+    //* Preloads images with auto width.
+    // * @todo Replace by a more generic approach
+    // * @protected
     Owl.prototype.preloadAutoWidthImages = function (images) {
         images.each($.proxy(function (i, element) {
             this.enter('pre-loading');
@@ -9006,13 +9025,11 @@ var fakewaffle = (function ($, fakewaffle) {
             .removeData('owl.carousel');
     };
 
-	/**
-	 * Operators to calculate right-to-left and left-to-right.
-	 * @protected
-	 * @param {Number} [a] - The left side operand.
-	 * @param {String} [o] - The operator.
-	 * @param {Number} [b] - The right side operand.
-	 */
+    // Operators to calculate right-to-left and left-to-right.
+    // * @protected
+    // * @param {Number} [a] - The left side operand.
+    // * @param {String} [o] - The operator.
+    // * @param {Number} [b] - The right side operand.
     Owl.prototype.op = function (a, o, b) {
         var rtl = this.settings.rtl;
         switch (o) {
@@ -9076,7 +9093,7 @@ var fakewaffle = (function ($, fakewaffle) {
         var status = {
             item: { count: this._items.length, index: this.current() }
         }, handler = $.camelCase(
-            $.grep(['on', name, namespace], function (v) { return v })
+            $.grep(['on', name, namespace], function (v) { return v; })
                 .join('-').toLowerCase()
         ), event = $.Event(
             [name, 'owl', namespace || 'carousel'].join('.').toLowerCase(),
@@ -9101,10 +9118,8 @@ var fakewaffle = (function ($, fakewaffle) {
         return event;
     };
 
-	/**
-	 * Enters a state.
-	 * @param name - The state name.
-	 */
+    //* Enters a state.
+    // * @param name - The state name.
     Owl.prototype.enter = function (name) {
         $.each([name].concat(this._states.tags[name] || []), $.proxy(function (i, name) {
             if (this._states.current[name] === undefined) {
@@ -9115,10 +9130,8 @@ var fakewaffle = (function ($, fakewaffle) {
         }, this));
     };
 
-	/**
-	 * Leaves a state.
-	 * @param name - The state name.
-	 */
+    //* Leaves a state.
+    // * @param name - The state name.
     Owl.prototype.leave = function (name) {
         $.each([name].concat(this._states.tags[name] || []), $.proxy(function (i, name) {
             this._states.current[name]--;
@@ -9181,13 +9194,11 @@ var fakewaffle = (function ($, fakewaffle) {
         }, this));
     };
 
-	/**
-	 * Gets unified pointer coordinates from event.
-	 * @todo #261
-	 * @protected
-	 * @param {Event} - The `mousedown` or `touchstart` event.
-	 * @returns {Object} - Contains `x` and `y` coordinates of current pointer position.
-	 */
+    // * Gets unified pointer coordinates from event.
+    // * @todo #261
+    // * @protected
+    // * @param {Event} - The `mousedown` or `touchstart` event.
+    // * @returns {Object} - Contains `x` and `y` coordinates of current pointer position.
     Owl.prototype.pointer = function (event) {
         var result = { x: null, y: null };
 
@@ -9208,24 +9219,20 @@ var fakewaffle = (function ($, fakewaffle) {
         return result;
     };
 
-	/**
-	 * Determines if the input is a Number or something that can be coerced to a Number
-	 * @protected
-	 * @param {Number|String|Object|Array|Boolean|RegExp|Function|Symbol} - The input to be tested
-	 * @returns {Boolean} - An indication if the input is a Number or can be coerced to a Number
-	 */
+    //* Determines if the input is a Number or something that can be coerced to a Number
+    // * @protected
+    // * @param {Number|String|Object|Array|Boolean|RegExp|Function|Symbol} - The input to be tested
+    // * @returns {Boolean} - An indication if the input is a Number or can be coerced to a Number
     Owl.prototype.isNumeric = function (number) {
         return !isNaN(parseFloat(number));
     };
 
-	/**
-	 * Gets the difference of two vectors.
-	 * @todo #261
-	 * @protected
-	 * @param {Object} - The first vector.
-	 * @param {Object} - The second vector.
-	 * @returns {Object} - The difference.
-	 */
+    //* Gets the difference of two vectors.
+    // * @todo #261
+    // * @protected
+    // * @param {Object} - The first vector.
+    // * @param {Object} - The second vector.
+    // * @returns {Object} - The difference.
     Owl.prototype.difference = function (first, second) {
         return {
             x: first.x - second.x,
@@ -9233,11 +9240,9 @@ var fakewaffle = (function ($, fakewaffle) {
         };
     };
 
-	/**
-	 * The jQuery Plugin for the Owl Carousel
-	 * @todo Navigation plugin `next` and `prev`
-	 * @public
-	 */
+    //* The jQuery Plugin for the Owl Carousel
+    // * @todo Navigation plugin `next` and `prev`
+    // * @public
     $.fn.owlCarousel = function (option) {
         var args = Array.prototype.slice.call(arguments, 1);
 
@@ -9246,7 +9251,7 @@ var fakewaffle = (function ($, fakewaffle) {
                 data = $this.data('owl.carousel');
 
             if (!data) {
-                data = new Owl(this, typeof option == 'object' && option);
+                data = new Owl(this, typeof option === 'object' && option);
                 $this.data('owl.carousel', data);
 
                 $.each([
@@ -9263,7 +9268,7 @@ var fakewaffle = (function ($, fakewaffle) {
                 });
             }
 
-            if (typeof option == 'string' && option.charAt(0) !== '_') {
+            if (typeof option === 'string' && option.charAt(0) !== '_') {
                 data[option].apply(data, args);
             }
         });
@@ -9286,11 +9291,9 @@ var fakewaffle = (function ($, fakewaffle) {
  */
 ; (function ($, window, document, undefined) {
 
-	/**
-	 * Creates the auto refresh plugin.
-	 * @class The Auto Refresh Plugin
-	 * @param {Owl} carousel - The Owl Carousel
-	 */
+    //* Creates the auto refresh plugin.
+    // * @class The Auto Refresh Plugin
+    // * @param {Owl} carousel - The Owl Carousel
     var AutoRefresh = function (carousel) {
 		/**
 		 * Reference to the core.
@@ -9381,7 +9384,7 @@ var fakewaffle = (function ($, fakewaffle) {
             this._core.$element.off(handler, this._handlers[handler]);
         }
         for (property in Object.getOwnPropertyNames(this)) {
-            typeof this[property] != 'function' && (this[property] = null);
+            typeof this[property] !== 'function' && (this[property] = null);
         }
     };
 
@@ -9398,11 +9401,9 @@ var fakewaffle = (function ($, fakewaffle) {
  */
 ; (function ($, window, document, undefined) {
 
-	/**
-	 * Creates the lazy plugin.
-	 * @class The Lazy Plugin
-	 * @param {Owl} carousel - The Owl Carousel
-	 */
+    //* Creates the lazy plugin.
+    // * @class The Lazy Plugin
+    // * @param {Owl} carousel - The Owl Carousel
     var Lazy = function (carousel) {
 
 		/**
@@ -9434,13 +9435,13 @@ var fakewaffle = (function ($, fakewaffle) {
                     return;
                 }
 
-                if ((e.property && e.property.name == 'position') || e.type == 'initialized') {
+                if (e.property && e.property.name === 'position' || e.type === 'initialized') {
                     var settings = this._core.settings,
-                        n = (settings.center && Math.ceil(settings.items / 2) || settings.items),
-                        i = ((settings.center && n * -1) || 0),
+                        n = settings.center && Math.ceil(settings.items / 2) || settings.items,
+                        i = settings.center && n * -1 || 0,
                         position = (e.property && e.property.value !== undefined ? e.property.value : this._core.current()) + i,
                         clones = this._core.clones().length,
-                        load = $.proxy(function (i, v) { this.load(v) }, this);
+                        load = $.proxy(function (i, v) { this.load(v); }, this);
                     //TODO: Need documentation for this new option
                     if (settings.lazyLoadEager > 0) {
                         n += settings.lazyLoadEager;
@@ -9491,7 +9492,7 @@ var fakewaffle = (function ($, fakewaffle) {
 
         $elements.each($.proxy(function (index, element) {
             var $element = $(element), image,
-                url = (window.devicePixelRatio > 1 && $element.attr('data-src-retina')) || $element.attr('data-src') || $element.attr('data-srcset');
+                url = window.devicePixelRatio > 1 && $element.attr('data-src-retina') || $element.attr('data-src') || $element.attr('data-srcset');
 
             this._core.trigger('load', { element: $element, url: url }, 'lazy');
 
@@ -9531,7 +9532,7 @@ var fakewaffle = (function ($, fakewaffle) {
             this._core.$element.off(handler, this.handlers[handler]);
         }
         for (property in Object.getOwnPropertyNames(this)) {
-            typeof this[property] != 'function' && (this[property] = null);
+            typeof this[property] !== 'function' && (this[property] = null);
         }
     };
 
@@ -9548,11 +9549,10 @@ var fakewaffle = (function ($, fakewaffle) {
  */
 ; (function ($, window, document, undefined) {
 
-	/**
-	 * Creates the auto height plugin.
-	 * @class The Auto Height Plugin
-	 * @param {Owl} carousel - The Owl Carousel
-	 */
+    // * Creates the auto height plugin.
+    // * @class The Auto Height Plugin
+    // * @param {Owl} carousel - The Owl Carousel
+
     var AutoHeight = function (carousel) {
 		/**
 		 * Reference to the core.
@@ -9608,7 +9608,7 @@ var fakewaffle = (function ($, fakewaffle) {
         // and should also change on resize
         $(window).on('resize', function () {
             if (refThis._core.settings.autoHeight) {
-                if (refThis._intervalId != null) {
+                if (refThis._intervalId !== null) {
                     clearTimeout(refThis._intervalId);
                 }
 
@@ -9681,11 +9681,10 @@ var fakewaffle = (function ($, fakewaffle) {
  */
 ; (function ($, window, document, undefined) {
 
-	/**
-	 * Creates the video plugin.
-	 * @class The Video Plugin
-	 * @param {Owl} carousel - The Owl Carousel
-	 */
+    // * Creates the video plugin.
+    // * @class The Video Plugin
+    // * @param {Owl} carousel - The Owl Carousel
+
     var Video = function (carousel) {
 		/**
 		 * Reference to the core.
@@ -9781,7 +9780,7 @@ var fakewaffle = (function ($, fakewaffle) {
             if (target.attr('data-vimeo-id')) {
                 return 'vimeo';
             } else if (target.attr('data-vzaar-id')) {
-                return 'vzaar'
+                return 'vzaar';
             } else {
                 return 'youtube';
             }
@@ -9833,13 +9832,12 @@ var fakewaffle = (function ($, fakewaffle) {
         this.thumbnail(target, this._videos[url]);
     };
 
-	/**
-	 * Creates video thumbnail.
-	 * @protected
-	 * @param {jQuery} target - The target containing the video data.
-	 * @param {Object} info - The video info object.
-	 * @see `fetch`
-	 */
+    // * Creates video thumbnail.
+    // * @protected
+    // * @param {jQuery} target - The target containing the video data.
+    // * @param {Object} info - The video info object.
+    // * @see `fetch`
+
     Video.prototype.thumbnail = function (target, video) {
         var tnLink,
             icon,
@@ -9967,12 +9965,11 @@ var fakewaffle = (function ($, fakewaffle) {
         this._playing = item.addClass('owl-video-playing');
     };
 
-	/**
-	 * Checks whether an video is currently in full screen mode or not.
-	 * @todo Bad style because looks like a readonly method but changes members.
-	 * @protected
-	 * @returns {Boolean}
-	 */
+    // * Checks whether an video is currently in full screen mode or not.
+    // * @todo Bad style because looks like a readonly method but changes members.
+    // * @protected
+    // * @returns {Boolean}
+
     Video.prototype.isInFullScreen = function () {
         var element = document.fullscreenElement || document.mozFullScreenElement ||
             document.webkitFullscreenElement;
@@ -9992,7 +9989,7 @@ var fakewaffle = (function ($, fakewaffle) {
             this._core.$element.off(handler, this._handlers[handler]);
         }
         for (property in Object.getOwnPropertyNames(this)) {
-            typeof this[property] != 'function' && (this[property] = null);
+            typeof this[property] !== 'function' && (this[property] = null);
         }
     };
 
@@ -10009,11 +10006,10 @@ var fakewaffle = (function ($, fakewaffle) {
  */
 ; (function ($, window, document, undefined) {
 
-	/**
-	 * Creates the animate plugin.
-	 * @class The Navigation Plugin
-	 * @param {Owl} scope - The Owl Carousel
-	 */
+    // * Creates the animate plugin.
+    // * @class The Navigation Plugin
+    // * @param {Owl} scope - The Owl Carousel
+
     var Animate = function (scope) {
         this.core = scope;
         this.core.options = $.extend({}, Animate.Defaults, this.core.options);
@@ -10023,14 +10019,14 @@ var fakewaffle = (function ($, fakewaffle) {
 
         this.handlers = {
             'change.owl.carousel': $.proxy(function (e) {
-                if (e.namespace && e.property.name == 'position') {
+                if (e.namespace && e.property.name === 'position') {
                     this.previous = this.core.current();
                     this.next = e.property.value;
                 }
             }, this),
             'drag.owl.carousel dragged.owl.carousel translated.owl.carousel': $.proxy(function (e) {
                 if (e.namespace) {
-                    this.swapping = e.type == 'translated';
+                    this.swapping = e.type === 'translated';
                 }
             }, this),
             'translate.owl.carousel': $.proxy(function (e) {
@@ -10052,11 +10048,10 @@ var fakewaffle = (function ($, fakewaffle) {
         animateIn: false
     };
 
-	/**
-	 * Toggles the animation classes whenever an translations starts.
-	 * @protected
-	 * @returns {Boolean|undefined}
-	 */
+    // * Toggles the animation classes whenever an translations starts.
+    // * @protected
+    // * @returns {Boolean|undefined}
+
     Animate.prototype.swap = function () {
 
         if (this.core.settings.items !== 1) {
@@ -10114,7 +10109,7 @@ var fakewaffle = (function ($, fakewaffle) {
             this.core.$element.off(handler, this.handlers[handler]);
         }
         for (property in Object.getOwnPropertyNames(this)) {
-            typeof this[property] != 'function' && (this[property] = null);
+            typeof this[property] !== 'function' && (this[property] = null);
         }
     };
 
@@ -10133,11 +10128,10 @@ var fakewaffle = (function ($, fakewaffle) {
  */
 ; (function ($, window, document, undefined) {
 
-	/**
-	 * Creates the autoplay plugin.
-	 * @class The Autoplay Plugin
-	 * @param {Owl} scope - The Owl Carousel
-	 */
+    // * Creates the autoplay plugin.
+    // * @class The Autoplay Plugin
+    // * @param {Owl} scope - The Owl Carousel
+
     var Autoplay = function (carousel) {
 		/**
 		 * Reference to the core.
@@ -10262,12 +10256,12 @@ var fakewaffle = (function ($, fakewaffle) {
             return;
         }
         this._core.next(speed || this._core.settings.autoplaySpeed);
-    }
+    };
 
-	/**
-	 * Reads the current timer value when the timer is playing.
-	 * @public
-	 */
+
+    // * Reads the current timer value when the timer is playing.
+    // * @public
+
     Autoplay.prototype.read = function () {
         return new Date().getTime() - this._time;
     };
@@ -10348,7 +10342,7 @@ var fakewaffle = (function ($, fakewaffle) {
             this._core.$element.off(handler, this._handlers[handler]);
         }
         for (property in Object.getOwnPropertyNames(this)) {
-            typeof this[property] != 'function' && (this[property] = null);
+            typeof this[property] !== 'function' && (this[property] = null);
         }
     };
 
@@ -10366,11 +10360,11 @@ var fakewaffle = (function ($, fakewaffle) {
 ; (function ($, window, document, undefined) {
     'use strict';
 
-	/**
-	 * Creates the navigation plugin.
-	 * @class The Navigation Plugin
-	 * @param {Owl} carousel - The Owl Carousel.
-	 */
+
+    // * Creates the navigation plugin.
+    // * @class The Navigation Plugin
+    // * @param {Owl} carousel - The Owl Carousel.
+
     var Navigation = function (carousel) {
 		/**
 		 * Reference to the core.
@@ -10447,7 +10441,7 @@ var fakewaffle = (function ($, fakewaffle) {
                 }
             }, this),
             'changed.owl.carousel': $.proxy(function (e) {
-                if (e.namespace && e.property.name == 'position') {
+                if (e.namespace && e.property.name === 'position') {
                     this.draw();
                 }
             }, this),
@@ -10595,7 +10589,7 @@ var fakewaffle = (function ($, fakewaffle) {
             this._core[override] = this._overrides[override];
         }
         for (property in Object.getOwnPropertyNames(this)) {
-            typeof this[property] != 'function' && (this[property] = null);
+            typeof this[property] !== 'function' && (this[property] = null);
         }
     };
 
@@ -10616,7 +10610,7 @@ var fakewaffle = (function ($, fakewaffle) {
             settings.slideBy = Math.min(settings.slideBy, settings.items);
         }
 
-        if (settings.dots || settings.slideBy == 'page') {
+        if (settings.dots || settings.slideBy === 'page') {
             this._pages = [];
 
             for (i = lower, j = 0, k = 0; i < upper; i++) {
@@ -10688,11 +10682,11 @@ var fakewaffle = (function ($, fakewaffle) {
         };
     };
 
-	/**
-	 * Gets the current page position of the carousel.
-	 * @protected
-	 * @returns {Number}
-	 */
+
+    // * Gets the current page position of the carousel.
+    // * @protected
+    // * @returns {Number}
+
     Navigation.prototype.current = function () {
         var current = this._core.relative(this._core.current());
         return $.grep(this._pages, $.proxy(function (page, index) {
@@ -10700,20 +10694,20 @@ var fakewaffle = (function ($, fakewaffle) {
         }, this)).pop();
     };
 
-	/**
-	 * Gets the current succesor/predecessor position.
-	 * @protected
-	 * @returns {Number}
-	 */
+
+    // * Gets the current succesor/predecessor position.
+    // * @protected
+    // * @returns {Number}
+
     Navigation.prototype.getPosition = function (successor) {
         var position, length,
             settings = this._core.settings;
 
-        if (settings.slideBy == 'page') {
+        if (settings.slideBy === 'page') {
             position = $.inArray(this.current(), this._pages);
             length = this._pages.length;
             successor ? ++position : --position;
-            position = this._pages[((position % length) + length) % length].start;
+            position = this._pages[(position % length + length) % length].start;
         } else {
             position = this._core.relative(this._core.current());
             length = this._core.items().length;
@@ -10753,7 +10747,7 @@ var fakewaffle = (function ($, fakewaffle) {
 
         if (!standard && this._pages.length) {
             length = this._pages.length;
-            $.proxy(this._overrides.to, this._core)(this._pages[((position % length) + length) % length].start, speed);
+            $.proxy(this._overrides.to, this._core)(this._pages[(position % length + length) % length].start, speed);
         } else {
             $.proxy(this._overrides.to, this._core)(position, speed);
         }
@@ -10773,11 +10767,11 @@ var fakewaffle = (function ($, fakewaffle) {
 ; (function ($, window, document, undefined) {
     'use strict';
 
-	/**
-	 * Creates the hash plugin.
-	 * @class The Hash Plugin
-	 * @param {Owl} carousel - The Owl Carousel
-	 */
+
+    // * Creates the hash plugin.
+    // * @class The Hash Plugin
+    // * @param {Owl} carousel - The Owl Carousel
+
     var Hash = function (carousel) {
 		/**
 		 * Reference to the core.
@@ -10878,7 +10872,7 @@ var fakewaffle = (function ($, fakewaffle) {
             this._core.$element.off(handler, this._handlers[handler]);
         }
         for (property in Object.getOwnPropertyNames(this)) {
-            typeof this[property] != 'function' && (this[property] = null);
+            typeof this[property] !== 'function' && (this[property] = null);
         }
     };
 
@@ -10952,13 +10946,13 @@ var fakewaffle = (function ($, fakewaffle) {
 
     if (tests.csstransitions()) {
         /* jshint -W053 */
-        $.support.transition = new String(prefixed('transition'))
+        $.support.transition = new String(prefixed('transition'));
         $.support.transition.end = events.transition.end[$.support.transition];
     }
 
     if (tests.cssanimations()) {
         /* jshint -W053 */
-        $.support.animation = new String(prefixed('animation'))
+        $.support.animation = new String(prefixed('animation'));
         $.support.animation.end = events.animation.end[$.support.animation];
     }
 
@@ -10986,39 +10980,39 @@ var fakewaffle = (function ($, fakewaffle) {
     "use strict";
 
     var H = $("html"),
-		W = $(window),
-		D = $(document),
-		F = $.fancybox = function () {
-		    F.open.apply(this, arguments);
-		},
-		IE = navigator.userAgent.match(/msie/i),
-		didUpdate = null,
-		isTouch = document.createTouch !== undefined,
+        W = $(window),
+        D = $(document),
+        F = $.fancybox = function () {
+            F.open.apply(this, arguments);
+        },
+        IE = navigator.userAgent.match(/msie/i),
+        didUpdate = null,
+        isTouch = document.createTouch !== undefined,
 
-		isQuery = function (obj) {
-		    return obj && obj.hasOwnProperty && obj instanceof $;
-		},
-		isString = function (str) {
-		    return str && $.type(str) === "string";
-		},
-		isPercentage = function (str) {
-		    return isString(str) && str.indexOf('%') > 0;
-		},
-		isScrollable = function (el) {
-		    return (el && !(el.style.overflow && el.style.overflow === 'hidden') && ((el.clientWidth && el.scrollWidth > el.clientWidth) || (el.clientHeight && el.scrollHeight > el.clientHeight)));
-		},
-		getScalar = function (orig, dim) {
-		    var value = parseInt(orig, 10) || 0;
+        isQuery = function (obj) {
+            return obj && obj.hasOwnProperty && obj instanceof $;
+        },
+        isString = function (str) {
+            return str && $.type(str) === "string";
+        },
+        isPercentage = function (str) {
+            return isString(str) && str.indexOf('%') > 0;
+        },
+        isScrollable = function (el) {
+            return el && !(el.style.overflow && el.style.overflow === 'hidden') && (el.clientWidth && el.scrollWidth > el.clientWidth || el.clientHeight && el.scrollHeight > el.clientHeight);
+        },
+        getScalar = function (orig, dim) {
+            var value = parseInt(orig, 10) || 0;
 
-		    if (dim && isPercentage(orig)) {
-		        value = F.getViewport()[dim] / 100 * value;
-		    }
+            if (dim && isPercentage(orig)) {
+                value = F.getViewport()[dim] / 100 * value;
+            }
 
-		    return Math.ceil(value);
-		},
-		getValue = function (value, dim) {
-		    return getScalar(value, dim) + 'px';
-		};
+            return Math.ceil(value);
+        },
+        getValue = function (value, dim) {
+            return getScalar(value, dim) + 'px';
+        };
 
     $.extend(F, {
         // The current version of fancyBox
@@ -11217,13 +11211,13 @@ var fakewaffle = (function ($, fakewaffle) {
             // Recheck if the type of each element is `object` and set content type (image, ajax, etc)
             $.each(group, function (i, element) {
                 var obj = {},
-					href,
-					title,
-					content,
-					type,
-					rez,
-					hrefParts,
-					selector;
+                    href,
+                    title,
+                    content,
+                    type,
+                    rez,
+                    hrefParts,
+                    selector;
 
                 if ($.type(element) === "object") {
                     // Check if is DOM element
@@ -11252,7 +11246,7 @@ var fakewaffle = (function ($, fakewaffle) {
                 title = opts.title !== undefined ? opts.title : obj.title || '';
 
                 content = opts.content || obj.content;
-                type = content ? 'html' : (opts.type || obj.type);
+                type = content ? 'html' : opts.type || obj.type;
 
                 if (!type && obj.isDom) {
                     type = element.data('fancybox-type');
@@ -11407,39 +11401,39 @@ var fakewaffle = (function ($, fakewaffle) {
             var clear = function () {
                 clearTimeout(F.player.timer);
             },
-				set = function () {
-				    clear();
+                set = function () {
+                    clear();
 
-				    if (F.current && F.player.isActive) {
-				        F.player.timer = setTimeout(F.next, F.current.playSpeed);
-				    }
-				},
-				stop = function () {
-				    clear();
+                    if (F.current && F.player.isActive) {
+                        F.player.timer = setTimeout(F.next, F.current.playSpeed);
+                    }
+                },
+                stop = function () {
+                    clear();
 
-				    D.unbind('.player');
+                    D.unbind('.player');
 
-				    F.player.isActive = false;
+                    F.player.isActive = false;
 
-				    F.trigger('onPlayEnd');
-				},
-				start = function () {
-				    if (F.current && (F.current.loop || F.current.index < F.group.length - 1)) {
-				        F.player.isActive = true;
+                    F.trigger('onPlayEnd');
+                },
+                start = function () {
+                    if (F.current && (F.current.loop || F.current.index < F.group.length - 1)) {
+                        F.player.isActive = true;
 
-				        D.bind({
-				            'onCancel.player beforeClose.player': stop,
-				            'onUpdate.player': set,
-				            'beforeLoad.player': clear
-				        });
+                        D.bind({
+                            'onCancel.player beforeClose.player': stop,
+                            'onUpdate.player': set,
+                            'beforeLoad.player': clear
+                        });
 
-				        set();
+                        set();
 
-				        F.trigger('onPlayStart');
-				    }
-				};
+                        F.trigger('onPlayStart');
+                    }
+                };
 
-            if (action === true || (!F.player.isActive && action !== false)) {
+            if (action === true || !F.player.isActive && action !== false) {
                 start();
             } else {
                 stop();
@@ -11482,12 +11476,12 @@ var fakewaffle = (function ($, fakewaffle) {
 
             index = getScalar(index);
 
-            F.direction = direction || current.direction[(index >= current.index ? 'next' : 'prev')];
+            F.direction = direction || current.direction[index >= current.index ? 'next' : 'prev'];
             F.router = router || 'jumpto';
 
             if (current.loop) {
                 if (index < 0) {
-                    index = current.group.length + (index % current.group.length);
+                    index = current.group.length + index % current.group.length;
                 }
 
                 index = index % current.group.length;
@@ -11503,8 +11497,8 @@ var fakewaffle = (function ($, fakewaffle) {
         // Center inside viewport and toggle position type to fixed or absolute if needed
         reposition: function (e, onlyAbsolute) {
             var current = F.current,
-				wrap = current ? current.wrap : null,
-				pos;
+                wrap = current ? current.wrap : null,
+                pos;
 
             if (wrap) {
                 pos = F._getPosition(onlyAbsolute);
@@ -11523,8 +11517,8 @@ var fakewaffle = (function ($, fakewaffle) {
         },
 
         update: function (e) {
-            var type = (e && e.originalEvent && e.originalEvent.type),
-				anyway = !type || type === 'orientationchange';
+            var type = e && e.originalEvent && e.originalEvent.type,
+                anyway = !type || type === 'orientationchange';
 
             if (anyway) {
                 clearTimeout(didUpdate);
@@ -11545,7 +11539,7 @@ var fakewaffle = (function ($, fakewaffle) {
 
                 F.wrap.removeClass('fancybox-tmp');
 
-                if (anyway || type === 'load' || (type === 'resize' && current.autoResize)) {
+                if (anyway || type === 'load' || type === 'resize' && current.autoResize) {
                     F._setDimension();
                 }
 
@@ -11557,7 +11551,7 @@ var fakewaffle = (function ($, fakewaffle) {
 
                 didUpdate = null;
 
-            }, (anyway && !isTouch ? 0 : 300));
+            }, anyway && !isTouch ? 0 : 300);
         },
 
         // Shrink content to fit inside viewport or restore if resized
@@ -11603,8 +11597,8 @@ var fakewaffle = (function ($, fakewaffle) {
 
                 el.css({
                     position: 'absolute',
-                    top: (viewport.h * 0.5) + viewport.y,
-                    left: (viewport.w * 0.5) + viewport.x
+                    top: viewport.h * 0.5 + viewport.y,
+                    left: viewport.w * 0.5 + viewport.x
                 });
             }
 
@@ -11612,11 +11606,11 @@ var fakewaffle = (function ($, fakewaffle) {
         },
 
         getViewport: function () {
-            var locked = (F.current && F.current.locked) || false,
-				rez = {
-				    x: W.scrollLeft(),
-				    y: W.scrollTop()
-				};
+            var locked = F.current && F.current.locked || false,
+                rez = {
+                    x: W.scrollLeft(),
+                    y: W.scrollTop()
+                };
 
             if (locked && locked.length) {
                 rez.w = locked[0].clientWidth;
@@ -11643,7 +11637,7 @@ var fakewaffle = (function ($, fakewaffle) {
 
         bindEvents: function () {
             var current = F.current,
-				keys;
+                keys;
 
             if (!current) {
                 return;
@@ -11658,7 +11652,7 @@ var fakewaffle = (function ($, fakewaffle) {
             if (keys) {
                 D.bind('keydown.fb', function (e) {
                     var code = e.which || e.keyCode,
-						target = e.target || e.srcElement;
+                        target = e.target || e.srcElement;
 
                     // Skip esc key if loading, because showLoading will cancel preloading
                     if (code === 27 && F.coming) {
@@ -11689,8 +11683,8 @@ var fakewaffle = (function ($, fakewaffle) {
             if ($.fn.mousewheel && current.mouseWheel) {
                 F.wrap.bind('mousewheel.fb', function (e, delta, deltaX, deltaY) {
                     var target = e.target || null,
-						parent = $(target),
-						canScroll = false;
+                        parent = $(target),
+                        canScroll = false;
 
                     while (parent.length) {
                         if (canScroll || parent.is('.fancybox-skin') || parent.is('.fancybox-wrap')) {
@@ -11751,11 +11745,11 @@ var fakewaffle = (function ($, fakewaffle) {
 
         _start: function (index) {
             var coming = {},
-				obj,
-				href,
-				type,
-				margin,
-				padding;
+                obj,
+                href,
+                type,
+                margin,
+                padding;
 
             index = getScalar(index);
             obj = F.group[index] || null;
@@ -11965,9 +11959,9 @@ var fakewaffle = (function ($, fakewaffle) {
 
         _loadIframe: function () {
             var coming = F.coming,
-				iframe = $(coming.tpl.iframe.replace(/\{rnd\}/g, new Date().getTime()))
-					.attr('scrolling', isTouch ? 'auto' : coming.iframe.scrolling)
-					.attr('src', coming.href);
+                iframe = $(coming.tpl.iframe.replace(/\{rnd\}/g, new Date().getTime()))
+                    .attr('scrolling', isTouch ? 'auto' : coming.iframe.scrolling)
+                    .attr('src', coming.href);
 
             // This helps IE
             $(coming.wrap).bind('onReset', function () {
@@ -12005,11 +11999,11 @@ var fakewaffle = (function ($, fakewaffle) {
 
         _preloadImages: function () {
             var group = F.group,
-				current = F.current,
-				len = group.length,
-				cnt = current.preload ? Math.min(current.preload, len - 1) : 0,
-				item,
-				i;
+                current = F.current,
+                len = group.length,
+                cnt = current.preload ? Math.min(current.preload, len - 1) : 0,
+                item,
+                i;
 
             for (i = 1; i <= cnt; i += 1) {
                 item = group[(current.index + i) % len];
@@ -12022,14 +12016,14 @@ var fakewaffle = (function ($, fakewaffle) {
 
         _afterLoad: function () {
             var coming = F.coming,
-				previous = F.current,
-				placeholder = 'fancybox-placeholder',
-				current,
-				content,
-				type,
-				scrolling,
-				href,
-				embed;
+                previous = F.current,
+                placeholder = 'fancybox-placeholder',
+                current,
+                content,
+                type,
+                scrolling,
+                href,
+                embed;
 
             F.hideLoading();
 
@@ -12049,8 +12043,8 @@ var fakewaffle = (function ($, fakewaffle) {
                 F.trigger('beforeChange', previous);
 
                 previous.wrap.stop(true).removeClass('fancybox-opened')
-					.find('.fancybox-item, .fancybox-nav')
-					.remove();
+                    .find('.fancybox-item, .fancybox-nav')
+                    .remove();
             }
 
             F.unbindEvents();
@@ -12118,7 +12112,7 @@ var fakewaffle = (function ($, fakewaffle) {
             F.trigger('beforeShow');
 
             // Set scrolling before calculating dimensions
-            current.inner.css('overflow', scrolling === 'yes' ? 'scroll' : (scrolling === 'no' ? 'hidden' : scrolling));
+            current.inner.css('overflow', scrolling === 'yes' ? 'scroll' : scrolling === 'no' ? 'hidden' : scrolling);
 
             // Set initial dimensions and start position
             F._setDimension();
@@ -12144,39 +12138,39 @@ var fakewaffle = (function ($, fakewaffle) {
 
         _setDimension: function () {
             var viewport = F.getViewport(),
-				steps = 0,
-				canShrink = false,
-				canExpand = false,
-				wrap = F.wrap,
-				skin = F.skin,
-				inner = F.inner,
-				current = F.current,
-				width = current.width,
-				height = current.height,
-				minWidth = current.minWidth,
-				minHeight = current.minHeight,
-				maxWidth = current.maxWidth,
-				maxHeight = current.maxHeight,
-				scrolling = current.scrolling,
-				scrollOut = current.scrollOutside ? current.scrollbarWidth : 0,
-				margin = current.margin,
-				wMargin = getScalar(margin[1] + margin[3]),
-				hMargin = getScalar(margin[0] + margin[2]),
-				wPadding,
-				hPadding,
-				wSpace,
-				hSpace,
-				origWidth,
-				origHeight,
-				origMaxWidth,
-				origMaxHeight,
-				ratio,
-				width_,
-				height_,
-				maxWidth_,
-				maxHeight_,
-				iframe,
-				body;
+                steps = 0,
+                canShrink = false,
+                canExpand = false,
+                wrap = F.wrap,
+                skin = F.skin,
+                inner = F.inner,
+                current = F.current,
+                width = current.width,
+                height = current.height,
+                minWidth = current.minWidth,
+                minHeight = current.minHeight,
+                maxWidth = current.maxWidth,
+                maxHeight = current.maxHeight,
+                scrolling = current.scrolling,
+                scrollOut = current.scrollOutside ? current.scrollbarWidth : 0,
+                margin = current.margin,
+                wMargin = getScalar(margin[1] + margin[3]),
+                hMargin = getScalar(margin[0] + margin[2]),
+                wPadding,
+                hPadding,
+                wSpace,
+                hSpace,
+                origWidth,
+                origHeight,
+                origMaxWidth,
+                origMaxHeight,
+                ratio,
+                width_,
+                height_,
+                maxWidth_,
+                maxHeight_,
+                iframe,
+                body;
 
             // Reset dimensions so we could re-check actual size
             wrap.add(skin).add(inner).width('auto').height('auto').removeClass('fancybox-tmp');
@@ -12334,7 +12328,7 @@ var fakewaffle = (function ($, fakewaffle) {
                 }
             }
 
-            if (scrollOut && scrolling === 'auto' && height < origHeight && (width + wPadding + scrollOut) < maxWidth_) {
+            if (scrollOut && scrolling === 'auto' && height < origHeight && width + wPadding + scrollOut < maxWidth_) {
                 width += scrollOut;
             }
 
@@ -12346,7 +12340,7 @@ var fakewaffle = (function ($, fakewaffle) {
             height_ = wrap.height();
 
             canShrink = (width_ > maxWidth_ || height_ > maxHeight_) && width > minWidth && height > minHeight;
-            canExpand = current.aspectRatio ? (width < origMaxWidth && height < origMaxHeight && width < origWidth && height < origHeight) : ((width < origMaxWidth || height < origMaxHeight) && (width < origWidth || height < origHeight));
+            canExpand = current.aspectRatio ? width < origMaxWidth && height < origMaxHeight && width < origWidth && height < origHeight : (width < origMaxWidth || height < origMaxHeight) && (width < origWidth || height < origHeight);
 
             $.extend(current, {
                 dim: {
@@ -12370,15 +12364,15 @@ var fakewaffle = (function ($, fakewaffle) {
 
         _getPosition: function (onlyAbsolute) {
             var current = F.current,
-				viewport = F.getViewport(),
-				margin = current.margin,
-				width = F.wrap.width() + margin[1] + margin[3],
-				height = F.wrap.height() + margin[0] + margin[2],
-				rez = {
-				    position: 'absolute',
-				    top: margin[0],
-				    left: margin[3]
-				};
+                viewport = F.getViewport(),
+                margin = current.margin,
+                width = F.wrap.width() + margin[1] + margin[3],
+                height = F.wrap.height() + margin[0] + margin[2],
+                rez = {
+                    position: 'absolute',
+                    top: margin[0],
+                    left: margin[3]
+                };
 
             if (current.autoCenter && current.fixed && !onlyAbsolute && height <= viewport.h && width <= viewport.w) {
                 rez.position = 'fixed';
@@ -12388,8 +12382,8 @@ var fakewaffle = (function ($, fakewaffle) {
                 rez.left += viewport.x;
             }
 
-            rez.top = getValue(Math.max(rez.top, rez.top + ((viewport.h - height) * current.topRatio)));
-            rez.left = getValue(Math.max(rez.left, rez.left + ((viewport.w - width) * current.leftRatio)));
+            rez.top = getValue(Math.max(rez.top, rez.top + (viewport.h - height) * current.topRatio));
+            rez.left = getValue(Math.max(rez.left, rez.left + (viewport.w - width) * current.leftRatio));
 
             return rez;
         },
@@ -12408,7 +12402,7 @@ var fakewaffle = (function ($, fakewaffle) {
             F.update();
 
             // Assign a click event
-            if (current.closeClick || (current.nextClick && F.group.length > 1)) {
+            if (current.closeClick || current.nextClick && F.group.length > 1) {
                 F.inner.css('cursor', 'pointer').bind('click.fb', function (e) {
                     if (!$(e.target).is('a') && !$(e.target).parent().is('a')) {
                         e.preventDefault();
@@ -12483,14 +12477,14 @@ var fakewaffle = (function ($, fakewaffle) {
     F.transitions = {
         getOrigPosition: function () {
             var current = F.current,
-				element = current.element,
-				orig = current.orig,
-				pos = {},
-				width = 50,
-				height = 50,
-				hPadding = current.hPadding,
-				wPadding = current.wPadding,
-				viewport = F.getViewport();
+                element = current.element,
+                orig = current.orig,
+                pos = {},
+                width = 50,
+                height = 50,
+                hPadding = current.hPadding,
+                wPadding = current.wPadding,
+                viewport = F.getViewport();
 
             if (!orig && current.isDom && element.is(':visible')) {
                 orig = element.find('img:first');
@@ -12530,12 +12524,12 @@ var fakewaffle = (function ($, fakewaffle) {
 
         step: function (now, fx) {
             var ratio,
-				padding,
-				value,
-				prop = fx.prop,
-				current = F.current,
-				wrapSpace = current.wrapSpace,
-				skinSpace = current.skinSpace;
+                padding,
+                value,
+                prop = fx.prop,
+                current = F.current,
+                wrapSpace = current.wrapSpace,
+                skinSpace = current.skinSpace;
 
             if (prop === 'width' || prop === 'height') {
                 ratio = fx.end === fx.start ? 1 : (now - fx.start) / (fx.end - fx.start);
@@ -12547,17 +12541,17 @@ var fakewaffle = (function ($, fakewaffle) {
                 padding = prop === 'width' ? current.wPadding : current.hPadding;
                 value = now - padding;
 
-                F.skin[prop](getScalar(prop === 'width' ? value : value - (wrapSpace * ratio)));
-                F.inner[prop](getScalar(prop === 'width' ? value : value - (wrapSpace * ratio) - (skinSpace * ratio)));
+                F.skin[prop](getScalar(prop === 'width' ? value : value - wrapSpace * ratio));
+                F.inner[prop](getScalar(prop === 'width' ? value : value - wrapSpace * ratio - skinSpace * ratio));
             }
         },
 
         zoomIn: function () {
             var current = F.current,
-				startPos = current.pos,
-				effect = current.openEffect,
-				elastic = effect === 'elastic',
-				endPos = $.extend({ opacity: 1 }, startPos);
+                startPos = current.pos,
+                effect = current.openEffect,
+                elastic = effect === 'elastic',
+                endPos = $.extend({ opacity: 1 }, startPos);
 
             // Remove "position" property that breaks older IE
             delete endPos.position;
@@ -12583,9 +12577,9 @@ var fakewaffle = (function ($, fakewaffle) {
 
         zoomOut: function () {
             var current = F.current,
-				effect = current.closeEffect,
-				elastic = effect === 'elastic',
-				endPos = { opacity: 0.1 };
+                effect = current.closeEffect,
+                elastic = effect === 'elastic',
+                endPos = { opacity: 0.1 };
 
             if (elastic) {
                 endPos = this.getOrigPosition();
@@ -12605,12 +12599,12 @@ var fakewaffle = (function ($, fakewaffle) {
 
         changeIn: function () {
             var current = F.current,
-				effect = current.nextEffect,
-				startPos = current.pos,
-				endPos = { opacity: 1 },
-				direction = F.direction,
-				distance = 200,
-				field;
+                effect = current.nextEffect,
+                startPos = current.pos,
+                endPos = { opacity: 1 },
+                direction = F.direction,
+                distance = 200,
+                field;
 
             startPos.opacity = 0.1;
 
@@ -12642,10 +12636,10 @@ var fakewaffle = (function ($, fakewaffle) {
 
         changeOut: function () {
             var previous = F.previous,
-				effect = previous.prevEffect,
-				endPos = { opacity: 0.1 },
-				direction = F.direction,
-				distance = 200;
+                effect = previous.prevEffect,
+                endPos = { opacity: 0.1 },
+                direction = F.direction,
+                distance = 200;
 
             if (effect === 'elastic') {
                 endPos[direction === 'down' || direction === 'up' ? 'top' : 'left'] = (direction === 'up' || direction === 'left' ? '-' : '+') + '=' + distance + 'px';
@@ -12802,7 +12796,7 @@ var fakewaffle = (function ($, fakewaffle) {
             if (obj.locked && !this.el.hasClass('fancybox-lock')) {
                 if (this.fixPosition !== false) {
                     $('*').filter(function () {
-                        return ($(this).css('position') === 'fixed' && !$(this).hasClass("fancybox-overlay") && !$(this).hasClass("fancybox-wrap"));
+                        return $(this).css('position') === 'fixed' && !$(this).hasClass("fancybox-overlay") && !$(this).hasClass("fancybox-wrap");
                     }).addClass('fancybox-margin');
                 }
 
@@ -12846,10 +12840,10 @@ var fakewaffle = (function ($, fakewaffle) {
 
         beforeShow: function (opts) {
             var current = F.current,
-				text = current.title,
-				type = opts.type,
-				title,
-				target;
+                text = current.title,
+                type = opts.type,
+                title,
+                target;
 
             if ($.isFunction(text)) {
                 text = text.call(current.element, current);
@@ -12890,41 +12884,41 @@ var fakewaffle = (function ($, fakewaffle) {
                     break;
             }
 
-            title[(opts.position === 'top' ? 'prependTo' : 'appendTo')](target);
+            title[opts.position === 'top' ? 'prependTo' : 'appendTo'](target);
         }
     };
 
     // jQuery plugin initialization
     $.fn.fancybox = function (options) {
         var index,
-			that = $(this),
-			selector = this.selector || '',
-			run = function (e) {
-			    var what = $(this).blur(), idx = index, relType, relVal;
+            that = $(this),
+            selector = this.selector || '',
+            run = function (e) {
+                var what = $(this).blur(), idx = index, relType, relVal;
 
-			    if (!(e.ctrlKey || e.altKey || e.shiftKey || e.metaKey) && !what.is('.fancybox-wrap')) {
-			        relType = options.groupAttr || 'data-fancybox-group';
-			        relVal = what.attr(relType);
+                if (!(e.ctrlKey || e.altKey || e.shiftKey || e.metaKey) && !what.is('.fancybox-wrap')) {
+                    relType = options.groupAttr || 'data-fancybox-group';
+                    relVal = what.attr(relType);
 
-			        if (!relVal) {
-			            relType = 'rel';
-			            relVal = what.get(0)[relType];
-			        }
+                    if (!relVal) {
+                        relType = 'rel';
+                        relVal = what.get(0)[relType];
+                    }
 
-			        if (relVal && relVal !== '' && relVal !== 'nofollow') {
-			            what = selector.length ? $(selector) : that;
-			            what = what.filter('[' + relType + '="' + relVal + '"]');
-			            idx = what.index(this);
-			        }
+                    if (relVal && relVal !== '' && relVal !== 'nofollow') {
+                        what = selector.length ? $(selector) : that;
+                        what = what.filter('[' + relType + '="' + relVal + '"]');
+                        idx = what.index(this);
+                    }
 
-			        options.index = idx;
+                    options.index = idx;
 
-			        // Stop an event from bubbling if everything is fine
-			        if (F.open(what, options) !== false) {
-			            e.preventDefault();
-			        }
-			    }
-			};
+                    // Stop an event from bubbling if everything is fine
+                    if (F.open(what, options) !== false) {
+                        e.preventDefault();
+                    }
+                }
+            };
 
         options = options || {};
         index = options.index || 0;
@@ -12949,8 +12943,8 @@ var fakewaffle = (function ($, fakewaffle) {
             // http://benalman.com/projects/jquery-misc-plugins/#scrollbarwidth
             $.scrollbarWidth = function () {
                 var parent = $('<div style="width:50px;height:50px;overflow:auto"><div/></div>').appendTo('body'),
-					child = parent.children(),
-					width = child.innerWidth() - child.height(99).innerWidth();
+                    child = parent.children(),
+                    width = child.innerWidth() - child.height(99).innerWidth();
 
                 parent.remove();
 
@@ -12961,7 +12955,7 @@ var fakewaffle = (function ($, fakewaffle) {
         if ($.support.fixedPosition === undefined) {
             $.support.fixedPosition = (function () {
                 var elem = $('<div style="position:fixed;top:20px;"></div>').appendTo('body'),
-					fixed = (elem[0].offsetTop === 20 || elem[0].offsetTop === 15);
+                    fixed = elem[0].offsetTop === 20 || elem[0].offsetTop === 15;
 
                 elem.remove();
 
@@ -13052,262 +13046,262 @@ Licensed under GPL v2.
 
 }).call(this);
 
-(function(root, factory) {
-  if (typeof define === 'function' && define.amd) {
-    define(factory);
-  } else if (typeof exports === 'object') {
-    module.exports = factory(require, exports, module);
-  } else {
-    root.CountUp = factory();
-  }
-}(this, function(require, exports, module) {
+(function (root, factory) {
+    if (typeof define === 'function' && define.amd) {
+        define(factory);
+    } else if (typeof exports === 'object') {
+        module.exports = factory(require, exports, module);
+    } else {
+        root.CountUp = factory();
+    }
+}(this, function (require, exports, module) {
 
-/*
-	countUp.js
-	by @inorganik
-*/
+    /*
+        countUp.js
+        by @inorganik
+    */
 
-// target = id of html element or var of previously selected html element where counting occurs
-// startVal = the value you want to begin at
-// endVal = the value you want to arrive at
-// decimals = number of decimal places, default 0
-// duration = duration of animation in seconds, default 2
-// options = optional object of options (see below)
+    // target = id of html element or var of previously selected html element where counting occurs
+    // startVal = the value you want to begin at
+    // endVal = the value you want to arrive at
+    // decimals = number of decimal places, default 0
+    // duration = duration of animation in seconds, default 2
+    // options = optional object of options (see below)
 
-var CountUp = function(target, startVal, endVal, decimals, duration, options) {
+    var CountUp = function (target, startVal, endVal, decimals, duration, options) {
 
-	var self = this;
-	self.version = function () { return '1.9.3'; };
-	
-	// default options
-	self.options = {
-		useEasing: true, // toggle easing
-		useGrouping: true, // 1,000,000 vs 1000000
-		separator: ',', // character to use as a separator
-		decimal: '.', // character to use as a decimal
-		easingFn: easeOutExpo, // optional custom easing function, default is Robert Penner's easeOutExpo
-		formattingFn: formatNumber, // optional custom formatting function, default is formatNumber above
-		prefix: '', // optional text before the result
-		suffix: '', // optional text after the result
-		numerals: [] // optionally pass an array of custom numerals for 0-9
-	};
+        var self = this;
+        self.version = function () { return '1.9.3'; };
 
-	// extend default options with passed options object
-	if (options && typeof options === 'object') {
-		for (var key in self.options) {
-			if (options.hasOwnProperty(key) && options[key] !== null) {
-				self.options[key] = options[key];
-			}
-		}
-	}
+        // default options
+        self.options = {
+            useEasing: true, // toggle easing
+            useGrouping: true, // 1,000,000 vs 1000000
+            separator: ',', // character to use as a separator
+            decimal: '.', // character to use as a decimal
+            easingFn: easeOutExpo, // optional custom easing function, default is Robert Penner's easeOutExpo
+            formattingFn: formatNumber, // optional custom formatting function, default is formatNumber above
+            prefix: '', // optional text before the result
+            suffix: '', // optional text after the result
+            numerals: [] // optionally pass an array of custom numerals for 0-9
+        };
 
-	if (self.options.separator === '') {
-		self.options.useGrouping = false;
-	}
-	else {
-		// ensure the separator is a string (formatNumber assumes this)
-		self.options.separator = '' + self.options.separator;
-	}
+        // extend default options with passed options object
+        if (options && typeof options === 'object') {
+            for (var key in self.options) {
+                if (options.hasOwnProperty(key) && options[key] !== null) {
+                    self.options[key] = options[key];
+                }
+            }
+        }
 
-	// make sure requestAnimationFrame and cancelAnimationFrame are defined
-	// polyfill for browsers without native support
-	// by Opera engineer Erik Möller
-	var lastTime = 0;
-	var vendors = ['webkit', 'moz', 'ms', 'o'];
-	for(var x = 0; x < vendors.length && !window.requestAnimationFrame; ++x) {
-		window.requestAnimationFrame = window[vendors[x]+'RequestAnimationFrame'];
-		window.cancelAnimationFrame = window[vendors[x]+'CancelAnimationFrame'] || window[vendors[x]+'CancelRequestAnimationFrame'];
-	}
-	if (!window.requestAnimationFrame) {
-		window.requestAnimationFrame = function(callback, element) {
-			var currTime = new Date().getTime();
-			var timeToCall = Math.max(0, 16 - (currTime - lastTime));
-			var id = window.setTimeout(function() { callback(currTime + timeToCall); }, timeToCall);
-			lastTime = currTime + timeToCall;
-			return id;
-		};
-	}
-	if (!window.cancelAnimationFrame) {
-		window.cancelAnimationFrame = function(id) {
-			clearTimeout(id);
-		};
-	}
+        if (self.options.separator === '') {
+            self.options.useGrouping = false;
+        }
+        else {
+            // ensure the separator is a string (formatNumber assumes this)
+            self.options.separator = '' + self.options.separator;
+        }
 
-	function formatNumber(num) {
-		var neg = (num < 0),
-        	x, x1, x2, x3, i, len;
-		num = Math.abs(num).toFixed(self.decimals);
-		num += '';
-		x = num.split('.');
-		x1 = x[0];
-		x2 = x.length > 1 ? self.options.decimal + x[1] : '';
-		if (self.options.useGrouping) {
-			x3 = '';
-			for (i = 0, len = x1.length; i < len; ++i) {
-				if (i !== 0 && ((i % 3) === 0)) {
-					x3 = self.options.separator + x3;
-				}
-				x3 = x1[len - i - 1] + x3;
-			}
-			x1 = x3;
-		}
-		// optional numeral substitution
-		if (self.options.numerals.length) {
-			x1 = x1.replace(/[0-9]/g, function(w) {
-				return self.options.numerals[+w];
-			})
-			x2 = x2.replace(/[0-9]/g, function(w) {
-				return self.options.numerals[+w];
-			})
-		}
-		return (neg ? '-' : '') + self.options.prefix + x1 + x2 + self.options.suffix;
-	}
-	// Robert Penner's easeOutExpo
-	function easeOutExpo(t, b, c, d) {
-		return c * (-Math.pow(2, -10 * t / d) + 1) * 1024 / 1023 + b;
-	}
-	function ensureNumber(n) {
-		return (typeof n === 'number' && !isNaN(n));
-	}
+        // make sure requestAnimationFrame and cancelAnimationFrame are defined
+        // polyfill for browsers without native support
+        // by Opera engineer Erik Möller
+        var lastTime = 0;
+        var vendors = ['webkit', 'moz', 'ms', 'o'];
+        for (var x = 0; x < vendors.length && !window.requestAnimationFrame; ++x) {
+            window.requestAnimationFrame = window[vendors[x] + 'RequestAnimationFrame'];
+            window.cancelAnimationFrame = window[vendors[x] + 'CancelAnimationFrame'] || window[vendors[x] + 'CancelRequestAnimationFrame'];
+        }
+        if (!window.requestAnimationFrame) {
+            window.requestAnimationFrame = function (callback, element) {
+                var currTime = new Date().getTime();
+                var timeToCall = Math.max(0, 16 - (currTime - lastTime));
+                var id = window.setTimeout(function () { callback(currTime + timeToCall); }, timeToCall);
+                lastTime = currTime + timeToCall;
+                return id;
+            };
+        }
+        if (!window.cancelAnimationFrame) {
+            window.cancelAnimationFrame = function (id) {
+                clearTimeout(id);
+            };
+        }
 
-	self.initialize = function() { 
-		if (self.initialized) return true;
-		
-		self.error = '';
-		self.d = (typeof target === 'string') ? document.getElementById(target) : target;
-		if (!self.d) { 
-			self.error = '[CountUp] target is null or undefined'
-			return false;
-		}
-		self.startVal = Number(startVal);
-		self.endVal = Number(endVal);
-		// error checks
-		if (ensureNumber(self.startVal) && ensureNumber(self.endVal)) {
-			self.decimals = Math.max(0, decimals || 0);
-			self.dec = Math.pow(10, self.decimals);
-			self.duration = Number(duration) * 1000 || 2000;
-			self.countDown = (self.startVal > self.endVal);
-			self.frameVal = self.startVal;
-			self.initialized = true;
-			return true;
-		}
-		else {
-			self.error = '[CountUp] startVal ('+startVal+') or endVal ('+endVal+') is not a number';
-			return false;
-		}
-	};
+        function formatNumber(num) {
+            var neg = num < 0,
+                x, x1, x2, x3, i, len;
+            num = Math.abs(num).toFixed(self.decimals);
+            num += '';
+            x = num.split('.');
+            x1 = x[0];
+            x2 = x.length > 1 ? self.options.decimal + x[1] : '';
+            if (self.options.useGrouping) {
+                x3 = '';
+                for (i = 0, len = x1.length; i < len; ++i) {
+                    if (i !== 0 && i % 3 === 0) {
+                        x3 = self.options.separator + x3;
+                    }
+                    x3 = x1[len - i - 1] + x3;
+                }
+                x1 = x3;
+            }
+            // optional numeral substitution
+            if (self.options.numerals.length) {
+                x1 = x1.replace(/[0-9]/g, function (w) {
+                    return self.options.numerals[+w];
+                });
+                x2 = x2.replace(/[0-9]/g, function (w) {
+                    return self.options.numerals[+w];
+                });
+            }
+            return (neg ? '-' : '') + self.options.prefix + x1 + x2 + self.options.suffix;
+        }
+        // Robert Penner's easeOutExpo
+        function easeOutExpo(t, b, c, d) {
+            return c * (-Math.pow(2, -10 * t / d) + 1) * 1024 / 1023 + b;
+        }
+        function ensureNumber(n) {
+            return typeof n === 'number' && !isNaN(n);
+        }
 
-	// Print value to target
-	self.printValue = function(value) {
-		var result = self.options.formattingFn(value);
+        self.initialize = function () {
+            if (self.initialized) return true;
 
-		if (self.d.tagName === 'INPUT') {
-			this.d.value = result;
-		}
-		else if (self.d.tagName === 'text' || self.d.tagName === 'tspan') {
-			this.d.textContent = result;
-		}
-		else {
-			this.d.innerHTML = result;
-		}
-	};
+            self.error = '';
+            self.d = typeof target === 'string' ? document.getElementById(target) : target;
+            if (!self.d) {
+                self.error = '[CountUp] target is null or undefined';
+                return false;
+            }
+            self.startVal = Number(startVal);
+            self.endVal = Number(endVal);
+            // error checks
+            if (ensureNumber(self.startVal) && ensureNumber(self.endVal)) {
+                self.decimals = Math.max(0, decimals || 0);
+                self.dec = Math.pow(10, self.decimals);
+                self.duration = Number(duration) * 1000 || 2000;
+                self.countDown = self.startVal > self.endVal;
+                self.frameVal = self.startVal;
+                self.initialized = true;
+                return true;
+            }
+            else {
+                self.error = '[CountUp] startVal (' + startVal + ') or endVal (' + endVal + ') is not a number';
+                return false;
+            }
+        };
 
-	self.count = function(timestamp) {
+        // Print value to target
+        self.printValue = function (value) {
+            var result = self.options.formattingFn(value);
 
-		if (!self.startTime) { self.startTime = timestamp; }
+            if (self.d.tagName === 'INPUT') {
+                this.d.value = result;
+            }
+            else if (self.d.tagName === 'text' || self.d.tagName === 'tspan') {
+                this.d.textContent = result;
+            }
+            else {
+                this.d.innerHTML = result;
+            }
+        };
 
-		self.timestamp = timestamp;
-		var progress = timestamp - self.startTime;
-		self.remaining = self.duration - progress;
+        self.count = function (timestamp) {
 
-		// to ease or not to ease
-		if (self.options.useEasing) {
-			if (self.countDown) {
-				self.frameVal = self.startVal - self.options.easingFn(progress, 0, self.startVal - self.endVal, self.duration);
-			} else {
-				self.frameVal = self.options.easingFn(progress, self.startVal, self.endVal - self.startVal, self.duration);
-			}
-		} else {
-			if (self.countDown) {
-				self.frameVal = self.startVal - ((self.startVal - self.endVal) * (progress / self.duration));
-			} else {
-				self.frameVal = self.startVal + (self.endVal - self.startVal) * (progress / self.duration);
-			}
-		}
+            if (!self.startTime) { self.startTime = timestamp; }
 
-		// don't go past endVal since progress can exceed duration in the last frame
-		if (self.countDown) {
-			self.frameVal = (self.frameVal < self.endVal) ? self.endVal : self.frameVal;
-		} else {
-			self.frameVal = (self.frameVal > self.endVal) ? self.endVal : self.frameVal;
-		}
+            self.timestamp = timestamp;
+            var progress = timestamp - self.startTime;
+            self.remaining = self.duration - progress;
 
-		// decimal
-		self.frameVal = Math.round(self.frameVal*self.dec)/self.dec;
+            // to ease or not to ease
+            if (self.options.useEasing) {
+                if (self.countDown) {
+                    self.frameVal = self.startVal - self.options.easingFn(progress, 0, self.startVal - self.endVal, self.duration);
+                } else {
+                    self.frameVal = self.options.easingFn(progress, self.startVal, self.endVal - self.startVal, self.duration);
+                }
+            } else {
+                if (self.countDown) {
+                    self.frameVal = self.startVal - (self.startVal - self.endVal) * (progress / self.duration);
+                } else {
+                    self.frameVal = self.startVal + (self.endVal - self.startVal) * (progress / self.duration);
+                }
+            }
 
-		// format and print value
-		self.printValue(self.frameVal);
+            // don't go past endVal since progress can exceed duration in the last frame
+            if (self.countDown) {
+                self.frameVal = self.frameVal < self.endVal ? self.endVal : self.frameVal;
+            } else {
+                self.frameVal = self.frameVal > self.endVal ? self.endVal : self.frameVal;
+            }
 
-		// whether to continue
-		if (progress < self.duration) {
-			self.rAF = requestAnimationFrame(self.count);
-		} else {
-			if (self.callback) self.callback();
-		}
-	};
-	// start your animation
-	self.start = function(callback) {
-		if (!self.initialize()) return;
-		self.callback = callback;
-		self.rAF = requestAnimationFrame(self.count);
-	};
-	// toggles pause/resume animation
-	self.pauseResume = function() {
-		if (!self.paused) {
-			self.paused = true;
-			cancelAnimationFrame(self.rAF);
-		} else {
-			self.paused = false;
-			delete self.startTime;
-			self.duration = self.remaining;
-			self.startVal = self.frameVal;
-			requestAnimationFrame(self.count);
-		}
-	};
-	// reset to startVal so animation can be run again
-	self.reset = function() {
-		self.paused = false;
-		delete self.startTime;
-		self.initialized = false;
-		if (self.initialize()) {
-			cancelAnimationFrame(self.rAF);
-			self.printValue(self.startVal);
-		}
-	};
-	// pass a new endVal and start animation
-	self.update = function (newEndVal) {
-		if (!self.initialize()) return;
-		newEndVal = Number(newEndVal);
-		if (!ensureNumber(newEndVal)) {
-			self.error = '[CountUp] update() - new endVal is not a number: '+newEndVal;
-			return;
-		}
-		self.error = '';
-		if (newEndVal === self.frameVal) return;
-		cancelAnimationFrame(self.rAF);
-		self.paused = false;
-		delete self.startTime;
-		self.startVal = self.frameVal;
-		self.endVal = newEndVal;
-		self.countDown = (self.startVal > self.endVal);
-		self.rAF = requestAnimationFrame(self.count);
-	};
+            // decimal
+            self.frameVal = Math.round(self.frameVal * self.dec) / self.dec;
 
-	// format startVal on initialization
-	if (self.initialize()) self.printValue(self.startVal);
-};
+            // format and print value
+            self.printValue(self.frameVal);
 
-return CountUp;
+            // whether to continue
+            if (progress < self.duration) {
+                self.rAF = requestAnimationFrame(self.count);
+            } else {
+                if (self.callback) self.callback();
+            }
+        };
+        // start your animation
+        self.start = function (callback) {
+            if (!self.initialize()) return;
+            self.callback = callback;
+            self.rAF = requestAnimationFrame(self.count);
+        };
+        // toggles pause/resume animation
+        self.pauseResume = function () {
+            if (!self.paused) {
+                self.paused = true;
+                cancelAnimationFrame(self.rAF);
+            } else {
+                self.paused = false;
+                delete self.startTime;
+                self.duration = self.remaining;
+                self.startVal = self.frameVal;
+                requestAnimationFrame(self.count);
+            }
+        };
+        // reset to startVal so animation can be run again
+        self.reset = function () {
+            self.paused = false;
+            delete self.startTime;
+            self.initialized = false;
+            if (self.initialize()) {
+                cancelAnimationFrame(self.rAF);
+                self.printValue(self.startVal);
+            }
+        };
+        // pass a new endVal and start animation
+        self.update = function (newEndVal) {
+            if (!self.initialize()) return;
+            newEndVal = Number(newEndVal);
+            if (!ensureNumber(newEndVal)) {
+                self.error = '[CountUp] update() - new endVal is not a number: ' + newEndVal;
+                return;
+            }
+            self.error = '';
+            if (newEndVal === self.frameVal) return;
+            cancelAnimationFrame(self.rAF);
+            self.paused = false;
+            delete self.startTime;
+            self.startVal = self.frameVal;
+            self.endVal = newEndVal;
+            self.countDown = self.startVal > self.endVal;
+            self.rAF = requestAnimationFrame(self.count);
+        };
+
+        // format startVal on initialization
+        if (self.initialize()) self.printValue(self.startVal);
+    };
+
+    return CountUp;
 
 }));
 /*!
@@ -13316,649 +13310,649 @@ Copyright © 2011-2015 Caleb Troughton
 Licensed under the MIT license.
 https://github.com/imakewebthings/waypoints/blog/master/licenses.txt
 */
-(function() {
-  'use strict'
+(function () {
+    'use strict';
 
-  var keyCounter = 0
-  var allWaypoints = {}
+    var keyCounter = 0;
+    var allWaypoints = {};
 
-  /* http://imakewebthings.com/waypoints/api/waypoint */
-  function Waypoint(options) {
-    if (!options) {
-      throw new Error('No options passed to Waypoint constructor')
+    /* http://imakewebthings.com/waypoints/api/waypoint */
+    function Waypoint(options) {
+        if (!options) {
+            throw new Error('No options passed to Waypoint constructor');
+        }
+        if (!options.element) {
+            throw new Error('No element option passed to Waypoint constructor');
+        }
+        if (!options.handler) {
+            throw new Error('No handler option passed to Waypoint constructor');
+        }
+
+        this.key = 'waypoint-' + keyCounter;
+        this.options = Waypoint.Adapter.extend({}, Waypoint.defaults, options);
+        this.element = this.options.element;
+        this.adapter = new Waypoint.Adapter(this.element);
+        this.callback = options.handler;
+        this.axis = this.options.horizontal ? 'horizontal' : 'vertical';
+        this.enabled = this.options.enabled;
+        this.triggerPoint = null;
+        this.group = Waypoint.Group.findOrCreate({
+            name: this.options.group,
+            axis: this.axis
+        });
+        this.context = Waypoint.Context.findOrCreateByElement(this.options.context);
+
+        if (Waypoint.offsetAliases[this.options.offset]) {
+            this.options.offset = Waypoint.offsetAliases[this.options.offset];
+        }
+        this.group.add(this);
+        this.context.add(this);
+        allWaypoints[this.key] = this;
+        keyCounter += 1;
     }
-    if (!options.element) {
-      throw new Error('No element option passed to Waypoint constructor')
-    }
-    if (!options.handler) {
-      throw new Error('No handler option passed to Waypoint constructor')
-    }
 
-    this.key = 'waypoint-' + keyCounter
-    this.options = Waypoint.Adapter.extend({}, Waypoint.defaults, options)
-    this.element = this.options.element
-    this.adapter = new Waypoint.Adapter(this.element)
-    this.callback = options.handler
-    this.axis = this.options.horizontal ? 'horizontal' : 'vertical'
-    this.enabled = this.options.enabled
-    this.triggerPoint = null
-    this.group = Waypoint.Group.findOrCreate({
-      name: this.options.group,
-      axis: this.axis
-    })
-    this.context = Waypoint.Context.findOrCreateByElement(this.options.context)
+    /* Private */
+    Waypoint.prototype.queueTrigger = function (direction) {
+        this.group.queueTrigger(this, direction);
+    };
 
-    if (Waypoint.offsetAliases[this.options.offset]) {
-      this.options.offset = Waypoint.offsetAliases[this.options.offset]
-    }
-    this.group.add(this)
-    this.context.add(this)
-    allWaypoints[this.key] = this
-    keyCounter += 1
-  }
+    /* Private */
+    Waypoint.prototype.trigger = function (args) {
+        if (!this.enabled) {
+            return;
+        }
+        if (this.callback) {
+            this.callback.apply(this, args);
+        }
+    };
 
-  /* Private */
-  Waypoint.prototype.queueTrigger = function(direction) {
-    this.group.queueTrigger(this, direction)
-  }
+    /* Public */
+    /* http://imakewebthings.com/waypoints/api/destroy */
+    Waypoint.prototype.destroy = function () {
+        this.context.remove(this);
+        this.group.remove(this);
+        delete allWaypoints[this.key];
+    };
 
-  /* Private */
-  Waypoint.prototype.trigger = function(args) {
-    if (!this.enabled) {
-      return
-    }
-    if (this.callback) {
-      this.callback.apply(this, args)
-    }
-  }
+    /* Public */
+    /* http://imakewebthings.com/waypoints/api/disable */
+    Waypoint.prototype.disable = function () {
+        this.enabled = false;
+        return this;
+    };
 
-  /* Public */
-  /* http://imakewebthings.com/waypoints/api/destroy */
-  Waypoint.prototype.destroy = function() {
-    this.context.remove(this)
-    this.group.remove(this)
-    delete allWaypoints[this.key]
-  }
+    /* Public */
+    /* http://imakewebthings.com/waypoints/api/enable */
+    Waypoint.prototype.enable = function () {
+        this.context.refresh();
+        this.enabled = true;
+        return this;
+    };
 
-  /* Public */
-  /* http://imakewebthings.com/waypoints/api/disable */
-  Waypoint.prototype.disable = function() {
-    this.enabled = false
-    return this
-  }
+    /* Public */
+    /* http://imakewebthings.com/waypoints/api/next */
+    Waypoint.prototype.next = function () {
+        return this.group.next(this);
+    };
 
-  /* Public */
-  /* http://imakewebthings.com/waypoints/api/enable */
-  Waypoint.prototype.enable = function() {
-    this.context.refresh()
-    this.enabled = true
-    return this
-  }
+    /* Public */
+    /* http://imakewebthings.com/waypoints/api/previous */
+    Waypoint.prototype.previous = function () {
+        return this.group.previous(this);
+    };
 
-  /* Public */
-  /* http://imakewebthings.com/waypoints/api/next */
-  Waypoint.prototype.next = function() {
-    return this.group.next(this)
-  }
+    /* Private */
+    Waypoint.invokeAll = function (method) {
+        var allWaypointsArray = [];
+        for (var waypointKey in allWaypoints) {
+            allWaypointsArray.push(allWaypoints[waypointKey]);
+        }
+        for (var i = 0, end = allWaypointsArray.length; i < end; i++) {
+            allWaypointsArray[i][method]();
+        }
+    };
 
-  /* Public */
-  /* http://imakewebthings.com/waypoints/api/previous */
-  Waypoint.prototype.previous = function() {
-    return this.group.previous(this)
-  }
+    /* Public */
+    /* http://imakewebthings.com/waypoints/api/destroy-all */
+    Waypoint.destroyAll = function () {
+        Waypoint.invokeAll('destroy');
+    };
 
-  /* Private */
-  Waypoint.invokeAll = function(method) {
-    var allWaypointsArray = []
-    for (var waypointKey in allWaypoints) {
-      allWaypointsArray.push(allWaypoints[waypointKey])
-    }
-    for (var i = 0, end = allWaypointsArray.length; i < end; i++) {
-      allWaypointsArray[i][method]()
-    }
-  }
+    /* Public */
+    /* http://imakewebthings.com/waypoints/api/disable-all */
+    Waypoint.disableAll = function () {
+        Waypoint.invokeAll('disable');
+    };
 
-  /* Public */
-  /* http://imakewebthings.com/waypoints/api/destroy-all */
-  Waypoint.destroyAll = function() {
-    Waypoint.invokeAll('destroy')
-  }
+    /* Public */
+    /* http://imakewebthings.com/waypoints/api/enable-all */
+    Waypoint.enableAll = function () {
+        Waypoint.invokeAll('enable');
+    };
 
-  /* Public */
-  /* http://imakewebthings.com/waypoints/api/disable-all */
-  Waypoint.disableAll = function() {
-    Waypoint.invokeAll('disable')
-  }
+    /* Public */
+    /* http://imakewebthings.com/waypoints/api/refresh-all */
+    Waypoint.refreshAll = function () {
+        Waypoint.Context.refreshAll();
+    };
 
-  /* Public */
-  /* http://imakewebthings.com/waypoints/api/enable-all */
-  Waypoint.enableAll = function() {
-    Waypoint.invokeAll('enable')
-  }
+    /* Public */
+    /* http://imakewebthings.com/waypoints/api/viewport-height */
+    Waypoint.viewportHeight = function () {
+        return window.innerHeight || document.documentElement.clientHeight;
+    };
 
-  /* Public */
-  /* http://imakewebthings.com/waypoints/api/refresh-all */
-  Waypoint.refreshAll = function() {
-    Waypoint.Context.refreshAll()
-  }
+    /* Public */
+    /* http://imakewebthings.com/waypoints/api/viewport-width */
+    Waypoint.viewportWidth = function () {
+        return document.documentElement.clientWidth;
+    };
 
-  /* Public */
-  /* http://imakewebthings.com/waypoints/api/viewport-height */
-  Waypoint.viewportHeight = function() {
-    return window.innerHeight || document.documentElement.clientHeight
-  }
+    Waypoint.adapters = [];
 
-  /* Public */
-  /* http://imakewebthings.com/waypoints/api/viewport-width */
-  Waypoint.viewportWidth = function() {
-    return document.documentElement.clientWidth
-  }
+    Waypoint.defaults = {
+        context: window,
+        continuous: true,
+        enabled: true,
+        group: 'default',
+        horizontal: false,
+        offset: 0
+    };
 
-  Waypoint.adapters = []
+    Waypoint.offsetAliases = {
+        'bottom-in-view': function () {
+            return this.context.innerHeight() - this.adapter.outerHeight();
+        },
+        'right-in-view': function () {
+            return this.context.innerWidth() - this.adapter.outerWidth();
+        }
+    };
 
-  Waypoint.defaults = {
-    context: window,
-    continuous: true,
-    enabled: true,
-    group: 'default',
-    horizontal: false,
-    offset: 0
-  }
-
-  Waypoint.offsetAliases = {
-    'bottom-in-view': function() {
-      return this.context.innerHeight() - this.adapter.outerHeight()
-    },
-    'right-in-view': function() {
-      return this.context.innerWidth() - this.adapter.outerWidth()
-    }
-  }
-
-  window.Waypoint = Waypoint
+    window.Waypoint = Waypoint;
 }())
-;(function() {
-  'use strict'
+    ; (function () {
+        'use strict';
 
-  function requestAnimationFrameShim(callback) {
-    window.setTimeout(callback, 1000 / 60)
-  }
-
-  var keyCounter = 0
-  var contexts = {}
-  var Waypoint = window.Waypoint
-  var oldWindowLoad = window.onload
-
-  /* http://imakewebthings.com/waypoints/api/context */
-  function Context(element) {
-    this.element = element
-    this.Adapter = Waypoint.Adapter
-    this.adapter = new this.Adapter(element)
-    this.key = 'waypoint-context-' + keyCounter
-    this.didScroll = false
-    this.didResize = false
-    this.oldScroll = {
-      x: this.adapter.scrollLeft(),
-      y: this.adapter.scrollTop()
-    }
-    this.waypoints = {
-      vertical: {},
-      horizontal: {}
-    }
-
-    element.waypointContextKey = this.key
-    contexts[element.waypointContextKey] = this
-    keyCounter += 1
-
-    this.createThrottledScrollHandler()
-    this.createThrottledResizeHandler()
-  }
-
-  /* Private */
-  Context.prototype.add = function(waypoint) {
-    var axis = waypoint.options.horizontal ? 'horizontal' : 'vertical'
-    this.waypoints[axis][waypoint.key] = waypoint
-    this.refresh()
-  }
-
-  /* Private */
-  Context.prototype.checkEmpty = function() {
-    var horizontalEmpty = this.Adapter.isEmptyObject(this.waypoints.horizontal)
-    var verticalEmpty = this.Adapter.isEmptyObject(this.waypoints.vertical)
-    if (horizontalEmpty && verticalEmpty) {
-      this.adapter.off('.waypoints')
-      delete contexts[this.key]
-    }
-  }
-
-  /* Private */
-  Context.prototype.createThrottledResizeHandler = function() {
-    var self = this
-
-    function resizeHandler() {
-      self.handleResize()
-      self.didResize = false
-    }
-
-    this.adapter.on('resize.waypoints', function() {
-      if (!self.didResize) {
-        self.didResize = true
-        Waypoint.requestAnimationFrame(resizeHandler)
-      }
-    })
-  }
-
-  /* Private */
-  Context.prototype.createThrottledScrollHandler = function() {
-    var self = this
-    function scrollHandler() {
-      self.handleScroll()
-      self.didScroll = false
-    }
-
-    this.adapter.on('scroll.waypoints', function() {
-      if (!self.didScroll || Waypoint.isTouch) {
-        self.didScroll = true
-        Waypoint.requestAnimationFrame(scrollHandler)
-      }
-    })
-  }
-
-  /* Private */
-  Context.prototype.handleResize = function() {
-    Waypoint.Context.refreshAll()
-  }
-
-  /* Private */
-  Context.prototype.handleScroll = function() {
-    var triggeredGroups = {}
-    var axes = {
-      horizontal: {
-        newScroll: this.adapter.scrollLeft(),
-        oldScroll: this.oldScroll.x,
-        forward: 'right',
-        backward: 'left'
-      },
-      vertical: {
-        newScroll: this.adapter.scrollTop(),
-        oldScroll: this.oldScroll.y,
-        forward: 'down',
-        backward: 'up'
-      }
-    }
-
-    for (var axisKey in axes) {
-      var axis = axes[axisKey]
-      var isForward = axis.newScroll > axis.oldScroll
-      var direction = isForward ? axis.forward : axis.backward
-
-      for (var waypointKey in this.waypoints[axisKey]) {
-        var waypoint = this.waypoints[axisKey][waypointKey]
-        var wasBeforeTriggerPoint = axis.oldScroll < waypoint.triggerPoint
-        var nowAfterTriggerPoint = axis.newScroll >= waypoint.triggerPoint
-        var crossedForward = wasBeforeTriggerPoint && nowAfterTriggerPoint
-        var crossedBackward = !wasBeforeTriggerPoint && !nowAfterTriggerPoint
-        if (crossedForward || crossedBackward) {
-          waypoint.queueTrigger(direction)
-          triggeredGroups[waypoint.group.id] = waypoint.group
-        }
-      }
-    }
-
-    for (var groupKey in triggeredGroups) {
-      triggeredGroups[groupKey].flushTriggers()
-    }
-
-    this.oldScroll = {
-      x: axes.horizontal.newScroll,
-      y: axes.vertical.newScroll
-    }
-  }
-
-  /* Private */
-  Context.prototype.innerHeight = function() {
-    /*eslint-disable eqeqeq */
-    if (this.element == this.element.window) {
-      return Waypoint.viewportHeight()
-    }
-    /*eslint-enable eqeqeq */
-    return this.adapter.innerHeight()
-  }
-
-  /* Private */
-  Context.prototype.remove = function(waypoint) {
-    delete this.waypoints[waypoint.axis][waypoint.key]
-    this.checkEmpty()
-  }
-
-  /* Private */
-  Context.prototype.innerWidth = function() {
-    /*eslint-disable eqeqeq */
-    if (this.element == this.element.window) {
-      return Waypoint.viewportWidth()
-    }
-    /*eslint-enable eqeqeq */
-    return this.adapter.innerWidth()
-  }
-
-  /* Public */
-  /* http://imakewebthings.com/waypoints/api/context-destroy */
-  Context.prototype.destroy = function() {
-    var allWaypoints = []
-    for (var axis in this.waypoints) {
-      for (var waypointKey in this.waypoints[axis]) {
-        allWaypoints.push(this.waypoints[axis][waypointKey])
-      }
-    }
-    for (var i = 0, end = allWaypoints.length; i < end; i++) {
-      allWaypoints[i].destroy()
-    }
-  }
-
-  /* Public */
-  /* http://imakewebthings.com/waypoints/api/context-refresh */
-  Context.prototype.refresh = function() {
-    /*eslint-disable eqeqeq */
-    var isWindow = this.element == this.element.window
-    /*eslint-enable eqeqeq */
-    var contextOffset = isWindow ? undefined : this.adapter.offset()
-    var triggeredGroups = {}
-    var axes
-
-    this.handleScroll()
-    axes = {
-      horizontal: {
-        contextOffset: isWindow ? 0 : contextOffset.left,
-        contextScroll: isWindow ? 0 : this.oldScroll.x,
-        contextDimension: this.innerWidth(),
-        oldScroll: this.oldScroll.x,
-        forward: 'right',
-        backward: 'left',
-        offsetProp: 'left'
-      },
-      vertical: {
-        contextOffset: isWindow ? 0 : contextOffset.top,
-        contextScroll: isWindow ? 0 : this.oldScroll.y,
-        contextDimension: this.innerHeight(),
-        oldScroll: this.oldScroll.y,
-        forward: 'down',
-        backward: 'up',
-        offsetProp: 'top'
-      }
-    }
-
-    for (var axisKey in axes) {
-      var axis = axes[axisKey]
-      for (var waypointKey in this.waypoints[axisKey]) {
-        var waypoint = this.waypoints[axisKey][waypointKey]
-        var adjustment = waypoint.options.offset
-        var oldTriggerPoint = waypoint.triggerPoint
-        var elementOffset = 0
-        var freshWaypoint = oldTriggerPoint == null
-        var contextModifier, wasBeforeScroll, nowAfterScroll
-        var triggeredBackward, triggeredForward
-
-        if (waypoint.element !== waypoint.element.window) {
-          elementOffset = waypoint.adapter.offset()[axis.offsetProp]
+        function requestAnimationFrameShim(callback) {
+            window.setTimeout(callback, 1000 / 60);
         }
 
-        if (typeof adjustment === 'function') {
-          adjustment = adjustment.apply(waypoint)
+        var keyCounter = 0;
+        var contexts = {};
+        var Waypoint = window.Waypoint;
+        var oldWindowLoad = window.onload;
+
+        /* http://imakewebthings.com/waypoints/api/context */
+        function Context(element) {
+            this.element = element;
+            this.Adapter = Waypoint.Adapter;
+            this.adapter = new this.Adapter(element);
+            this.key = 'waypoint-context-' + keyCounter;
+            this.didScroll = false;
+            this.didResize = false;
+            this.oldScroll = {
+                x: this.adapter.scrollLeft(),
+                y: this.adapter.scrollTop()
+            };
+            this.waypoints = {
+                vertical: {},
+                horizontal: {}
+            };
+
+            element.waypointContextKey = this.key;
+            contexts[element.waypointContextKey] = this;
+            keyCounter += 1;
+
+            this.createThrottledScrollHandler();
+            this.createThrottledResizeHandler();
         }
-        else if (typeof adjustment === 'string') {
-          adjustment = parseFloat(adjustment)
-          if (waypoint.options.offset.indexOf('%') > - 1) {
-            adjustment = Math.ceil(axis.contextDimension * adjustment / 100)
-          }
+
+        /* Private */
+        Context.prototype.add = function (waypoint) {
+            var axis = waypoint.options.horizontal ? 'horizontal' : 'vertical';
+            this.waypoints[axis][waypoint.key] = waypoint;
+            this.refresh();
+        };
+
+        /* Private */
+        Context.prototype.checkEmpty = function () {
+            var horizontalEmpty = this.Adapter.isEmptyObject(this.waypoints.horizontal);
+            var verticalEmpty = this.Adapter.isEmptyObject(this.waypoints.vertical);
+            if (horizontalEmpty && verticalEmpty) {
+                this.adapter.off('.waypoints');
+                delete contexts[this.key];
+            }
+        };
+
+        /* Private */
+        Context.prototype.createThrottledResizeHandler = function () {
+            var self = this;
+
+            function resizeHandler() {
+                self.handleResize();
+                self.didResize = false;
+            }
+
+            this.adapter.on('resize.waypoints', function () {
+                if (!self.didResize) {
+                    self.didResize = true;
+                    Waypoint.requestAnimationFrame(resizeHandler);
+                }
+            });
+        };
+
+        /* Private */
+        Context.prototype.createThrottledScrollHandler = function () {
+            var self = this;
+            function scrollHandler() {
+                self.handleScroll();
+                self.didScroll = false;
+            }
+
+            this.adapter.on('scroll.waypoints', function () {
+                if (!self.didScroll || Waypoint.isTouch) {
+                    self.didScroll = true;
+                    Waypoint.requestAnimationFrame(scrollHandler);
+                }
+            });
+        };
+
+        /* Private */
+        Context.prototype.handleResize = function () {
+            Waypoint.Context.refreshAll();
+        };
+
+        /* Private */
+        Context.prototype.handleScroll = function () {
+            var triggeredGroups = {};
+            var axes = {
+                horizontal: {
+                    newScroll: this.adapter.scrollLeft(),
+                    oldScroll: this.oldScroll.x,
+                    forward: 'right',
+                    backward: 'left'
+                },
+                vertical: {
+                    newScroll: this.adapter.scrollTop(),
+                    oldScroll: this.oldScroll.y,
+                    forward: 'down',
+                    backward: 'up'
+                }
+            };
+
+            for (var axisKey in axes) {
+                var axis = axes[axisKey];
+                var isForward = axis.newScroll > axis.oldScroll;
+                var direction = isForward ? axis.forward : axis.backward;
+
+                for (var waypointKey in this.waypoints[axisKey]) {
+                    var waypoint = this.waypoints[axisKey][waypointKey];
+                    var wasBeforeTriggerPoint = axis.oldScroll < waypoint.triggerPoint;
+                    var nowAfterTriggerPoint = axis.newScroll >= waypoint.triggerPoint;
+                    var crossedForward = wasBeforeTriggerPoint && nowAfterTriggerPoint;
+                    var crossedBackward = !wasBeforeTriggerPoint && !nowAfterTriggerPoint;
+                    if (crossedForward || crossedBackward) {
+                        waypoint.queueTrigger(direction);
+                        triggeredGroups[waypoint.group.id] = waypoint.group;
+                    }
+                }
+            }
+
+            for (var groupKey in triggeredGroups) {
+                triggeredGroups[groupKey].flushTriggers();
+            }
+
+            this.oldScroll = {
+                x: axes.horizontal.newScroll,
+                y: axes.vertical.newScroll
+            };
+        };
+
+        /* Private */
+        Context.prototype.innerHeight = function () {
+            /*eslint-disable eqeqeq */
+            if (this.element == this.element.window) {
+                return Waypoint.viewportHeight();
+            }
+            /*eslint-enable eqeqeq */
+            return this.adapter.innerHeight();
+        };
+
+        /* Private */
+        Context.prototype.remove = function (waypoint) {
+            delete this.waypoints[waypoint.axis][waypoint.key];
+            this.checkEmpty();
+        };
+
+        /* Private */
+        Context.prototype.innerWidth = function () {
+            /*eslint-disable eqeqeq */
+            if (this.element == this.element.window) {
+                return Waypoint.viewportWidth();
+            }
+            /*eslint-enable eqeqeq */
+            return this.adapter.innerWidth();
+        };
+
+        /* Public */
+        /* http://imakewebthings.com/waypoints/api/context-destroy */
+        Context.prototype.destroy = function () {
+            var allWaypoints = [];
+            for (var axis in this.waypoints) {
+                for (var waypointKey in this.waypoints[axis]) {
+                    allWaypoints.push(this.waypoints[axis][waypointKey]);
+                }
+            }
+            for (var i = 0, end = allWaypoints.length; i < end; i++) {
+                allWaypoints[i].destroy();
+            }
+        };
+
+        /* Public */
+        /* http://imakewebthings.com/waypoints/api/context-refresh */
+        Context.prototype.refresh = function () {
+            /*eslint-disable eqeqeq */
+            var isWindow = this.element == this.element.window;
+            /*eslint-enable eqeqeq */
+            var contextOffset = isWindow ? undefined : this.adapter.offset();
+            var triggeredGroups = {};
+            var axes;
+
+            this.handleScroll();
+            axes = {
+                horizontal: {
+                    contextOffset: isWindow ? 0 : contextOffset.left,
+                    contextScroll: isWindow ? 0 : this.oldScroll.x,
+                    contextDimension: this.innerWidth(),
+                    oldScroll: this.oldScroll.x,
+                    forward: 'right',
+                    backward: 'left',
+                    offsetProp: 'left'
+                },
+                vertical: {
+                    contextOffset: isWindow ? 0 : contextOffset.top,
+                    contextScroll: isWindow ? 0 : this.oldScroll.y,
+                    contextDimension: this.innerHeight(),
+                    oldScroll: this.oldScroll.y,
+                    forward: 'down',
+                    backward: 'up',
+                    offsetProp: 'top'
+                }
+            };
+
+            for (var axisKey in axes) {
+                var axis = axes[axisKey];
+                for (var waypointKey in this.waypoints[axisKey]) {
+                    var waypoint = this.waypoints[axisKey][waypointKey];
+                    var adjustment = waypoint.options.offset;
+                    var oldTriggerPoint = waypoint.triggerPoint;
+                    var elementOffset = 0;
+                    var freshWaypoint = oldTriggerPoint === null;
+                    var contextModifier, wasBeforeScroll, nowAfterScroll;
+                    var triggeredBackward, triggeredForward;
+
+                    if (waypoint.element !== waypoint.element.window) {
+                        elementOffset = waypoint.adapter.offset()[axis.offsetProp];
+                    }
+
+                    if (typeof adjustment === 'function') {
+                        adjustment = adjustment.apply(waypoint);
+                    }
+                    else if (typeof adjustment === 'string') {
+                        adjustment = parseFloat(adjustment);
+                        if (waypoint.options.offset.indexOf('%') > - 1) {
+                            adjustment = Math.ceil(axis.contextDimension * adjustment / 100);
+                        }
+                    }
+
+                    contextModifier = axis.contextScroll - axis.contextOffset;
+                    waypoint.triggerPoint = elementOffset + contextModifier - adjustment;
+                    wasBeforeScroll = oldTriggerPoint < axis.oldScroll;
+                    nowAfterScroll = waypoint.triggerPoint >= axis.oldScroll;
+                    triggeredBackward = wasBeforeScroll && nowAfterScroll;
+                    triggeredForward = !wasBeforeScroll && !nowAfterScroll;
+
+                    if (!freshWaypoint && triggeredBackward) {
+                        waypoint.queueTrigger(axis.backward);
+                        triggeredGroups[waypoint.group.id] = waypoint.group;
+                    }
+                    else if (!freshWaypoint && triggeredForward) {
+                        waypoint.queueTrigger(axis.forward);
+                        triggeredGroups[waypoint.group.id] = waypoint.group;
+                    }
+                    else if (freshWaypoint && axis.oldScroll >= waypoint.triggerPoint) {
+                        waypoint.queueTrigger(axis.forward);
+                        triggeredGroups[waypoint.group.id] = waypoint.group;
+                    }
+                }
+            }
+
+            Waypoint.requestAnimationFrame(function () {
+                for (var groupKey in triggeredGroups) {
+                    triggeredGroups[groupKey].flushTriggers();
+                }
+            });
+
+            return this;
+        };
+
+        /* Private */
+        Context.findOrCreateByElement = function (element) {
+            return Context.findByElement(element) || new Context(element);
+        };
+
+        /* Private */
+        Context.refreshAll = function () {
+            for (var contextId in contexts) {
+                contexts[contextId].refresh();
+            }
+        };
+
+        /* Public */
+        /* http://imakewebthings.com/waypoints/api/context-find-by-element */
+        Context.findByElement = function (element) {
+            return contexts[element.waypointContextKey];
+        };
+
+        window.onload = function () {
+            if (oldWindowLoad) {
+                oldWindowLoad();
+            }
+            Context.refreshAll();
+        };
+
+        Waypoint.requestAnimationFrame = function (callback) {
+            var requestFn = window.requestAnimationFrame ||
+                window.mozRequestAnimationFrame ||
+                window.webkitRequestAnimationFrame ||
+                requestAnimationFrameShim;
+            requestFn.call(window, callback);
+        };
+        Waypoint.Context = Context;
+    }())
+    ; (function () {
+        'use strict';
+
+        function byTriggerPoint(a, b) {
+            return a.triggerPoint - b.triggerPoint;
         }
 
-        contextModifier = axis.contextScroll - axis.contextOffset
-        waypoint.triggerPoint = elementOffset + contextModifier - adjustment
-        wasBeforeScroll = oldTriggerPoint < axis.oldScroll
-        nowAfterScroll = waypoint.triggerPoint >= axis.oldScroll
-        triggeredBackward = wasBeforeScroll && nowAfterScroll
-        triggeredForward = !wasBeforeScroll && !nowAfterScroll
-
-        if (!freshWaypoint && triggeredBackward) {
-          waypoint.queueTrigger(axis.backward)
-          triggeredGroups[waypoint.group.id] = waypoint.group
+        function byReverseTriggerPoint(a, b) {
+            return b.triggerPoint - a.triggerPoint;
         }
-        else if (!freshWaypoint && triggeredForward) {
-          waypoint.queueTrigger(axis.forward)
-          triggeredGroups[waypoint.group.id] = waypoint.group
+
+        var groups = {
+            vertical: {},
+            horizontal: {}
+        };
+        var Waypoint = window.Waypoint;
+
+        /* http://imakewebthings.com/waypoints/api/group */
+        function Group(options) {
+            this.name = options.name;
+            this.axis = options.axis;
+            this.id = this.name + '-' + this.axis;
+            this.waypoints = [];
+            this.clearTriggerQueues();
+            groups[this.axis][this.name] = this;
         }
-        else if (freshWaypoint && axis.oldScroll >= waypoint.triggerPoint) {
-          waypoint.queueTrigger(axis.forward)
-          triggeredGroups[waypoint.group.id] = waypoint.group
+
+        /* Private */
+        Group.prototype.add = function (waypoint) {
+            this.waypoints.push(waypoint);
+        };
+
+        /* Private */
+        Group.prototype.clearTriggerQueues = function () {
+            this.triggerQueues = {
+                up: [],
+                down: [],
+                left: [],
+                right: []
+            };
+        };
+
+        /* Private */
+        Group.prototype.flushTriggers = function () {
+            for (var direction in this.triggerQueues) {
+                var waypoints = this.triggerQueues[direction];
+                var reverse = direction === 'up' || direction === 'left';
+                waypoints.sort(reverse ? byReverseTriggerPoint : byTriggerPoint);
+                for (var i = 0, end = waypoints.length; i < end; i += 1) {
+                    var waypoint = waypoints[i];
+                    if (waypoint.options.continuous || i === waypoints.length - 1) {
+                        waypoint.trigger([direction]);
+                    }
+                }
+            }
+            this.clearTriggerQueues();
+        };
+
+        /* Private */
+        Group.prototype.next = function (waypoint) {
+            this.waypoints.sort(byTriggerPoint);
+            var index = Waypoint.Adapter.inArray(waypoint, this.waypoints);
+            var isLast = index === this.waypoints.length - 1;
+            return isLast ? null : this.waypoints[index + 1];
+        };
+
+        /* Private */
+        Group.prototype.previous = function (waypoint) {
+            this.waypoints.sort(byTriggerPoint);
+            var index = Waypoint.Adapter.inArray(waypoint, this.waypoints);
+            return index ? this.waypoints[index - 1] : null;
+        };
+
+        /* Private */
+        Group.prototype.queueTrigger = function (waypoint, direction) {
+            this.triggerQueues[direction].push(waypoint);
+        };
+
+        /* Private */
+        Group.prototype.remove = function (waypoint) {
+            var index = Waypoint.Adapter.inArray(waypoint, this.waypoints);
+            if (index > -1) {
+                this.waypoints.splice(index, 1);
+            }
+        };
+
+        /* Public */
+        /* http://imakewebthings.com/waypoints/api/first */
+        Group.prototype.first = function () {
+            return this.waypoints[0];
+        };
+
+        /* Public */
+        /* http://imakewebthings.com/waypoints/api/last */
+        Group.prototype.last = function () {
+            return this.waypoints[this.waypoints.length - 1];
+        };
+
+        /* Private */
+        Group.findOrCreate = function (options) {
+            return groups[options.axis][options.name] || new Group(options);
+        };
+
+        Waypoint.Group = Group;
+    }())
+    ; (function () {
+        'use strict';
+
+        var $ = window.jQuery;
+        var Waypoint = window.Waypoint;
+
+        function JQueryAdapter(element) {
+            this.$element = $(element);
         }
-      }
-    }
 
-    Waypoint.requestAnimationFrame(function() {
-      for (var groupKey in triggeredGroups) {
-        triggeredGroups[groupKey].flushTriggers()
-      }
-    })
+        $.each([
+            'innerHeight',
+            'innerWidth',
+            'off',
+            'offset',
+            'on',
+            'outerHeight',
+            'outerWidth',
+            'scrollLeft',
+            'scrollTop'
+        ], function (i, method) {
+            JQueryAdapter.prototype[method] = function () {
+                var args = Array.prototype.slice.call(arguments);
+                return this.$element[method].apply(this.$element, args);
+            };
+        });
 
-    return this
-  }
+        $.each([
+            'extend',
+            'inArray',
+            'isEmptyObject'
+        ], function (i, method) {
+            JQueryAdapter[method] = $[method];
+        });
 
-  /* Private */
-  Context.findOrCreateByElement = function(element) {
-    return Context.findByElement(element) || new Context(element)
-  }
+        Waypoint.adapters.push({
+            name: 'jquery',
+            Adapter: JQueryAdapter
+        });
+        Waypoint.Adapter = JQueryAdapter;
+    }())
+    ; (function () {
+        'use strict';
 
-  /* Private */
-  Context.refreshAll = function() {
-    for (var contextId in contexts) {
-      contexts[contextId].refresh()
-    }
-  }
+        var Waypoint = window.Waypoint;
 
-  /* Public */
-  /* http://imakewebthings.com/waypoints/api/context-find-by-element */
-  Context.findByElement = function(element) {
-    return contexts[element.waypointContextKey]
-  }
+        function createExtension(framework) {
+            return function () {
+                var waypoints = [];
+                var overrides = arguments[0];
 
-  window.onload = function() {
-    if (oldWindowLoad) {
-      oldWindowLoad()
-    }
-    Context.refreshAll()
-  }
+                if (framework.isFunction(arguments[0])) {
+                    overrides = framework.extend({}, arguments[1]);
+                    overrides.handler = arguments[0];
+                }
 
-  Waypoint.requestAnimationFrame = function(callback) {
-    var requestFn = window.requestAnimationFrame ||
-      window.mozRequestAnimationFrame ||
-      window.webkitRequestAnimationFrame ||
-      requestAnimationFrameShim
-    requestFn.call(window, callback)
-  }
-  Waypoint.Context = Context
-}())
-;(function() {
-  'use strict'
+                this.each(function () {
+                    var options = framework.extend({}, overrides, {
+                        element: this
+                    });
+                    if (typeof options.context === 'string') {
+                        options.context = framework(this).closest(options.context)[0];
+                    }
+                    waypoints.push(new Waypoint(options));
+                });
 
-  function byTriggerPoint(a, b) {
-    return a.triggerPoint - b.triggerPoint
-  }
-
-  function byReverseTriggerPoint(a, b) {
-    return b.triggerPoint - a.triggerPoint
-  }
-
-  var groups = {
-    vertical: {},
-    horizontal: {}
-  }
-  var Waypoint = window.Waypoint
-
-  /* http://imakewebthings.com/waypoints/api/group */
-  function Group(options) {
-    this.name = options.name
-    this.axis = options.axis
-    this.id = this.name + '-' + this.axis
-    this.waypoints = []
-    this.clearTriggerQueues()
-    groups[this.axis][this.name] = this
-  }
-
-  /* Private */
-  Group.prototype.add = function(waypoint) {
-    this.waypoints.push(waypoint)
-  }
-
-  /* Private */
-  Group.prototype.clearTriggerQueues = function() {
-    this.triggerQueues = {
-      up: [],
-      down: [],
-      left: [],
-      right: []
-    }
-  }
-
-  /* Private */
-  Group.prototype.flushTriggers = function() {
-    for (var direction in this.triggerQueues) {
-      var waypoints = this.triggerQueues[direction]
-      var reverse = direction === 'up' || direction === 'left'
-      waypoints.sort(reverse ? byReverseTriggerPoint : byTriggerPoint)
-      for (var i = 0, end = waypoints.length; i < end; i += 1) {
-        var waypoint = waypoints[i]
-        if (waypoint.options.continuous || i === waypoints.length - 1) {
-          waypoint.trigger([direction])
+                return waypoints;
+            };
         }
-      }
-    }
-    this.clearTriggerQueues()
-  }
 
-  /* Private */
-  Group.prototype.next = function(waypoint) {
-    this.waypoints.sort(byTriggerPoint)
-    var index = Waypoint.Adapter.inArray(waypoint, this.waypoints)
-    var isLast = index === this.waypoints.length - 1
-    return isLast ? null : this.waypoints[index + 1]
-  }
-
-  /* Private */
-  Group.prototype.previous = function(waypoint) {
-    this.waypoints.sort(byTriggerPoint)
-    var index = Waypoint.Adapter.inArray(waypoint, this.waypoints)
-    return index ? this.waypoints[index - 1] : null
-  }
-
-  /* Private */
-  Group.prototype.queueTrigger = function(waypoint, direction) {
-    this.triggerQueues[direction].push(waypoint)
-  }
-
-  /* Private */
-  Group.prototype.remove = function(waypoint) {
-    var index = Waypoint.Adapter.inArray(waypoint, this.waypoints)
-    if (index > -1) {
-      this.waypoints.splice(index, 1)
-    }
-  }
-
-  /* Public */
-  /* http://imakewebthings.com/waypoints/api/first */
-  Group.prototype.first = function() {
-    return this.waypoints[0]
-  }
-
-  /* Public */
-  /* http://imakewebthings.com/waypoints/api/last */
-  Group.prototype.last = function() {
-    return this.waypoints[this.waypoints.length - 1]
-  }
-
-  /* Private */
-  Group.findOrCreate = function(options) {
-    return groups[options.axis][options.name] || new Group(options)
-  }
-
-  Waypoint.Group = Group
-}())
-;(function() {
-  'use strict'
-
-  var $ = window.jQuery
-  var Waypoint = window.Waypoint
-
-  function JQueryAdapter(element) {
-    this.$element = $(element)
-  }
-
-  $.each([
-    'innerHeight',
-    'innerWidth',
-    'off',
-    'offset',
-    'on',
-    'outerHeight',
-    'outerWidth',
-    'scrollLeft',
-    'scrollTop'
-  ], function(i, method) {
-    JQueryAdapter.prototype[method] = function() {
-      var args = Array.prototype.slice.call(arguments)
-      return this.$element[method].apply(this.$element, args)
-    }
-  })
-
-  $.each([
-    'extend',
-    'inArray',
-    'isEmptyObject'
-  ], function(i, method) {
-    JQueryAdapter[method] = $[method]
-  })
-
-  Waypoint.adapters.push({
-    name: 'jquery',
-    Adapter: JQueryAdapter
-  })
-  Waypoint.Adapter = JQueryAdapter
-}())
-;(function() {
-  'use strict'
-
-  var Waypoint = window.Waypoint
-
-  function createExtension(framework) {
-    return function() {
-      var waypoints = []
-      var overrides = arguments[0]
-
-      if (framework.isFunction(arguments[0])) {
-        overrides = framework.extend({}, arguments[1])
-        overrides.handler = arguments[0]
-      }
-
-      this.each(function() {
-        var options = framework.extend({}, overrides, {
-          element: this
-        })
-        if (typeof options.context === 'string') {
-          options.context = framework(this).closest(options.context)[0]
+        if (window.jQuery) {
+            window.jQuery.fn.waypoint = createExtension(window.jQuery);
         }
-        waypoints.push(new Waypoint(options))
-      })
-
-      return waypoints
-    }
-  }
-
-  if (window.jQuery) {
-    window.jQuery.fn.waypoint = createExtension(window.jQuery)
-  }
-  if (window.Zepto) {
-    window.Zepto.fn.waypoint = createExtension(window.Zepto)
-  }
-}())
-;
+        if (window.Zepto) {
+            window.Zepto.fn.waypoint = createExtension(window.Zepto);
+        }
+    }())
+    ;
 /**
  *
  * Version: 0.0.6
@@ -13992,287 +13986,411 @@ https://github.com/imakewebthings/waypoints/blog/master/licenses.txt
  **/
 
 
-(function(window, document, $) {
-  'use strict';
+(function (window, document, $) {
+    'use strict';
 
-  // Plugin private cache
-  // static vars
-  var cache = {
-    filterId: 0
-  },
-    $body = $('body');
-
-  var Vague = function(elm, customOptions) {
-    // Default options
-    var defaultOptions = {
-      intensity: 5,
-      forceSVGUrl: false,
-      animationOptions: {
-        duration: 1000,
-        easing: 'linear'
-      }
+    // Plugin private cache
+    // static vars
+    var cache = {
+        filterId: 0
     },
-      // extend the default options with the ones passed to the plugin
-      options = $.extend(defaultOptions, customOptions),
+        $body = $('body');
 
-      /*
-       *
-       * Helpers
-       *
-       */
+    var Vague = function (elm, customOptions) {
+        // Default options
+        var defaultOptions = {
+            intensity: 5,
+            forceSVGUrl: false,
+            animationOptions: {
+                duration: 1000,
+                easing: 'linear'
+            }
+        },
+            // extend the default options with the ones passed to the plugin
+            options = $.extend(defaultOptions, customOptions),
 
-      _browserPrefixes = ' -webkit- -moz- -o- -ms- '.split(' '),
-      _cssPrefixString = {},
-      _cssPrefix = function(property) {
-        if (_cssPrefixString[property] || _cssPrefixString[property] === '') return _cssPrefixString[property] + property;
-        var e = document.createElement('div');
-        var prefixes = ['', 'Moz', 'Webkit', 'O', 'ms', 'Khtml']; // Various supports...
-        for (var i in prefixes) {
-          if (typeof e.style[prefixes[i] + property] !== 'undefined') {
-            _cssPrefixString[property] = prefixes[i];
-            return prefixes[i] + property;
-          }
-        }
-        return property.toLowerCase();
-      },
-      // https://github.com/Modernizr/Modernizr/blob/master/feature-detects/css-filters.js
-      _support = {
-        cssfilters: function() {
-          var el = document.createElement('div');
-          el.style.cssText = _browserPrefixes.join('filter' + ':blur(2px); ');
-          return !!el.style.length && ((document.documentMode === undefined || document.documentMode > 9));
-        }(),
+            /*
+             *
+             * Helpers
+             *
+             */
 
-        // https://github.com/Modernizr/Modernizr/blob/master/feature-detects/svg-filters.js
-        svgfilters: function() {
-          var result = false;
-          try {
-            result = typeof SVGFEColorMatrixElement !== undefined &&
-              SVGFEColorMatrixElement.SVG_FECOLORMATRIX_TYPE_SATURATE == 2;
-          } catch (e) {}
-          return result;
-        }()
-      },
+            _browserPrefixes = ' -webkit- -moz- -o- -ms- '.split(' '),
+            _cssPrefixString = {},
+            _cssPrefix = function (property) {
+                if (_cssPrefixString[property] || _cssPrefixString[property] === '') return _cssPrefixString[property] + property;
+                var e = document.createElement('div');
+                var prefixes = ['', 'Moz', 'Webkit', 'O', 'ms', 'Khtml']; // Various supports...
+                for (var i in prefixes) {
+                    if (typeof e.style[prefixes[i] + property] !== 'undefined') {
+                        _cssPrefixString[property] = prefixes[i];
+                        return prefixes[i] + property;
+                    }
+                }
+                return property.toLowerCase();
+            },
+            // https://github.com/Modernizr/Modernizr/blob/master/feature-detects/css-filters.js
+            _support = {
+                cssfilters: function () {
+                    var el = document.createElement('div');
+                    el.style.cssText = _browserPrefixes.join('filter' + ':blur(2px); ');
+                    return !!el.style.length && ((document.documentMode === undefined || document.documentMode > 9));
+                }(),
 
-      /*
-       *
-       * PRIVATE VARS
-       *
-       */
+                // https://github.com/Modernizr/Modernizr/blob/master/feature-detects/svg-filters.js
+                svgfilters: function () {
+                    var result = false;
+                    try {
+                        result = typeof SVGFEColorMatrixElement !== undefined &&
+                            SVGFEColorMatrixElement.SVG_FECOLORMATRIX_TYPE_SATURATE === 2;
+                    } catch (e) { }
+                    return result;
+                }()
+            },
 
-      _blurred = false,
-      // cache the right prefixed css filter property
-      _cssFilterProp = _cssPrefix('Filter'),
-      _svgGaussianFilter,
-      _filterId,
-      // to cache the jquery animation instance
-      _animation,
+            /*
+             *
+             * PRIVATE VARS
+             *
+             */
 
-      /*
-       *
-       * PRIVATE METHODS
-       *
-       */
+            _blurred = false,
+            // cache the right prefixed css filter property
+            _cssFilterProp = _cssPrefix('Filter'),
+            _svgGaussianFilter,
+            _filterId,
+            // to cache the jquery animation instance
+            _animation,
 
-      /**
-       * Create any svg element
-       * @param  { String } tagName: svg tag name
-       * @return { SVG Node }
-       */
+            /*
+             *
+             * PRIVATE METHODS
+             *
+             */
 
-      _createSvgElement = function(tagName) {
-        return document.createElementNS('http://www.w3.org/2000/svg', tagName);
-      },
+            /**
+             * Create any svg element
+             * @param  { String } tagName: svg tag name
+             * @return { SVG Node }
+             */
 
-      /**
-       *
-       * Inject the svg tag into the DOM
-       * we will use it only if the css filters are not supported
-       *
-       */
+            _createSvgElement = function (tagName) {
+                return document.createElementNS('http://www.w3.org/2000/svg', tagName);
+            },
 
-      _appendSVGFilter = function() {
-        // create the svg and the filter tags
-        var svg = _createSvgElement('svg'),
-          filter = _createSvgElement('filter');
+            /**
+             *
+             * Inject the svg tag into the DOM
+             * we will use it only if the css filters are not supported
+             *
+             */
 
-        // cache the feGaussianBlur tag and make it available
-        // outside of this function to easily update the blur intensity
-        _svgGaussianFilter = _createSvgElement('feGaussianBlur');
+            _appendSVGFilter = function () {
+                // create the svg and the filter tags
+                var svg = _createSvgElement('svg'),
+                    filter = _createSvgElement('filter');
 
-        // hide the svg tag
-        // we don't want to see it into the DOM!
-        svg.setAttribute('style', 'position:absolute');
-        svg.setAttribute('width', '0');
-        svg.setAttribute('height', '0');
-        // set the id that will be used as link between the DOM element to blur and the svg just created
-        filter.setAttribute('id', 'blur-effect-id-' + cache.filterId);
+                // cache the feGaussianBlur tag and make it available
+                // outside of this function to easily update the blur intensity
+                _svgGaussianFilter = _createSvgElement('feGaussianBlur');
 
-        filter.appendChild(_svgGaussianFilter);
-        svg.appendChild(filter);
-        // append the svg into the body
-        $body.append(svg);
+                // hide the svg tag
+                // we don't want to see it into the DOM!
+                svg.setAttribute('style', 'position:absolute');
+                svg.setAttribute('width', '0');
+                svg.setAttribute('height', '0');
+                // set the id that will be used as link between the DOM element to blur and the svg just created
+                filter.setAttribute('id', 'blur-effect-id-' + cache.filterId);
 
-      };
+                filter.appendChild(_svgGaussianFilter);
+                svg.appendChild(filter);
+                // append the svg into the body
+                $body.append(svg);
 
-    /*
-     *
-     * PUBLIC VARS
-     *
-     */
+            };
 
-    // cache the DOM element to blur
-    this.$elm = elm instanceof $ ? elm : $(elm);
+        /*
+         *
+         * PUBLIC VARS
+         *
+         */
+
+        // cache the DOM element to blur
+        this.$elm = elm instanceof $ ? elm : $(elm);
 
 
-    /*
-     *
-     * PUBLIC METHODS
-     *
-     */
+        /*
+         *
+         * PUBLIC METHODS
+         *
+         */
 
-    /**
-     *
-     * Initialize the plugin creating a new svg if necessary
-     *
-     */
+        /**
+         *
+         * Initialize the plugin creating a new svg if necessary
+         *
+         */
 
-    this.init = function() {
-      // checking the css filter feature
-      if (_support.svgfilters) {
-        _appendSVGFilter();
-      }
-      // cache the filter id
-      _filterId = cache.filterId;
-      // increment the filter id static var
-      cache.filterId++;
+        this.init = function () {
+            // checking the css filter feature
+            if (_support.svgfilters) {
+                _appendSVGFilter();
+            }
+            // cache the filter id
+            _filterId = cache.filterId;
+            // increment the filter id static var
+            cache.filterId++;
 
-      return this;
+            return this;
 
+        };
+
+        /**
+         *
+         * Blur the DOM element selected
+         *
+         */
+
+        this.blur = function () {
+
+            var cssFilterValue,
+                // variables needed to force the svg filter URL
+                loc = window.location,
+                svgUrl = options.forceSVGUrl ? loc.protocol + '//' + loc.host + loc.pathname + loc.search : '';
+
+            // use the css filters if supported
+            if (_support.cssfilters) {
+                cssFilterValue = 'blur(' + options.intensity + 'px)';
+                // .. or use the svg filters
+            } else if (_support.svgfilters) {
+                // update the svg stdDeviation tag to set up the blur intensity
+                _svgGaussianFilter.setAttribute('stdDeviation', options.intensity);
+                cssFilterValue = 'url(' + svgUrl + '#blur-effect-id-' + _filterId + ')';
+            } else {
+                // .. use the IE css filters
+                cssFilterValue = 'progid:DXImageTransform.Microsoft.Blur(pixelradius=' + options.intensity + ')';
+            }
+
+            // update the DOM element css
+            this.$elm[0].style[_cssFilterProp] = cssFilterValue;
+            // set the _blurred internal var to true to cache the element current status
+            _blurred = true;
+
+            return this;
+        };
+
+
+        /**
+         * Animate the blur intensity
+         * @param  { Int } newIntensity: new blur intensity value
+         * @param  { Object } customAnimationOptions: default jQuery animate options
+         */
+
+        this.animate = function (newIntensity, customAnimationOptions) {
+            // control the new blur intensity checking if it's a valid value
+            if (typeof newIntensity !== 'number') {
+                throw typeof newIntensity + ' is not a valid number to animate the blur';
+            } else if (newIntensity < 0) {
+                throw 'I can animate only positive numbers';
+            }
+            // create a new jQuery deferred instance
+            var dfr = new $.Deferred();
+
+            // kill the previous animation
+            if (_animation) {
+                _animation.stop(true, true);
+            }
+
+            // trigger the animation using the jQuery Animation class
+            _animation = new $.Animation(options, {
+                intensity: newIntensity
+            }, $.extend(options.animationOptions, customAnimationOptions))
+                .progress($.proxy(this.blur, this))
+                .done(dfr.resolve);
+
+            // return the animation deferred promise
+            return dfr.promise();
+        };
+
+        // * Unblur the DOM element
+
+        this.unblur = function () {
+            // set the DOM filter property to none
+            this.$elm.css(_cssFilterProp, 'none');
+            _blurred = false;
+            return this;
+        };
+
+        /**
+         *
+         * Trigger alternatively the @blur and @unblur methods
+         *
+         */
+
+        this.toggleblur = function () {
+            if (_blurred) {
+                this.unblur();
+            } else {
+                this.blur();
+            }
+            return this;
+        };
+
+        // * Destroy the Vague.js instance removing also the svg filter injected into the DOM
+
+        this.destroy = function () {
+            // do we need to remove the svg filter?
+            if (_support.svgfilters) {
+                $('filter#blur-effect-id-' + _filterId).parent().remove();
+            }
+
+            this.unblur();
+
+            // clear all the property stored into this Vague.js instance
+            for (var prop in this) {
+                delete this[prop];
+            }
+
+            return this;
+        };
+        // init the plugin
+        return this.init();
     };
 
-    /**
-     *
-     * Blur the DOM element selected
-     *
-     */
-
-    this.blur = function() {
-
-      var cssFilterValue,
-        // variables needed to force the svg filter URL
-        loc = window.location,
-        svgUrl = options.forceSVGUrl ? loc.protocol + '//' + loc.host + loc.pathname + loc.search : '';
-
-      // use the css filters if supported
-      if (_support.cssfilters) {
-        cssFilterValue = 'blur(' + options.intensity + 'px)';
-        // .. or use the svg filters
-      } else if (_support.svgfilters) {
-        // update the svg stdDeviation tag to set up the blur intensity
-        _svgGaussianFilter.setAttribute('stdDeviation', options.intensity);
-        cssFilterValue = 'url(' + svgUrl + '#blur-effect-id-' + _filterId + ')';
-      } else {
-        // .. use the IE css filters
-        cssFilterValue = 'progid:DXImageTransform.Microsoft.Blur(pixelradius=' + options.intensity + ')';
-      }
-
-      // update the DOM element css
-      this.$elm[0].style[_cssFilterProp] = cssFilterValue;
-      // set the _blurred internal var to true to cache the element current status
-      _blurred = true;
-
-      return this;
+    // export the plugin as a jQuery function
+    $.fn.Vague = function (options) {
+        return new Vague(this, options);
     };
-
-
-    /**
-     * Animate the blur intensity
-     * @param  { Int } newIntensity: new blur intensity value
-     * @param  { Object } customAnimationOptions: default jQuery animate options
-     */
-
-    this.animate = function(newIntensity, customAnimationOptions) {
-      // control the new blur intensity checking if it's a valid value
-      if (typeof newIntensity !== 'number') {
-        throw (typeof newIntensity + ' is not a valid number to animate the blur');
-      } else if (newIntensity < 0) {
-        throw ('I can animate only positive numbers');
-      }
-      // create a new jQuery deferred instance
-      var dfr = new $.Deferred();
-
-      // kill the previous animation
-      if (_animation) {
-        _animation.stop(true, true);
-      }
-
-      // trigger the animation using the jQuery Animation class
-      _animation = new $.Animation(options, {
-        intensity: newIntensity
-      }, $.extend(options.animationOptions, customAnimationOptions))
-        .progress($.proxy(this.blur, this))
-        .done(dfr.resolve);
-
-      // return the animation deferred promise
-      return dfr.promise();
-    };
-
-    /**
-     *
-     * Unblur the DOM element
-     *
-     */
-    this.unblur = function() {
-      // set the DOM filter property to none
-      this.$elm.css(_cssFilterProp, 'none');
-      _blurred = false;
-      return this;
-    };
-
-    /**
-     *
-     * Trigger alternatively the @blur and @unblur methods
-     *
-     */
-
-    this.toggleblur = function() {
-      if (_blurred) {
-        this.unblur();
-      } else {
-        this.blur();
-      }
-      return this;
-    };
-    /**
-     * Destroy the Vague.js instance removing also the svg filter injected into the DOM
-     */
-    this.destroy = function() {
-      // do we need to remove the svg filter?
-      if (_support.svgfilters) {
-        $('filter#blur-effect-id-' + _filterId).parent().remove();
-      }
-
-      this.unblur();
-
-      // clear all the property stored into this Vague.js instance
-      for (var prop in this) {
-        delete this[prop];
-      }
-
-      return this;
-    };
-    // init the plugin
-    return this.init();
-  };
-
-  // export the plugin as a jQuery function
-  $.fn.Vague = function(options) {
-    return new Vague(this, options);
-  };
 
 }(window, document, jQuery));
 
+/**
+ * circles - v0.0.6 - 2015-11-27
+ *
+ * Copyright (c) 2015 lugolabs
+ * Licensed 
+ */
+! function (a, b) {
+    "object" === typeof exports ? module.exports = b() : "function" === typeof define && define.amd ? define([], b) : a.Circles = b();
+}(this, function () {
+    "use strict";
+    var a = window.requestAnimationFrame || window.webkitRequestAnimationFrame || window.mozRequestAnimationFrame || window.oRequestAnimationFrame || window.msRequestAnimationFrame || function (a) {
+        setTimeout(a, 1e3 / 60);
+    },
+        b = function (a) {
+            var b = a.id;
+            if (this._el = document.getElementById(b), null !== this._el) {
+                this._radius = a.radius || 10, this._duration = void 0 === a.duration ? 500 : a.duration, this._value = 0, this._maxValue = a.maxValue || 100, this._text = void 0 === a.text ? function (a) {
+                    return this.htmlifyNumber(a);
+                } : a.text, this._strokeWidth = a.width || 10, this._colors = a.colors || ["#EEE", "#F00"], this._svg = null, this._movingPath = null, this._wrapContainer = null, this._textContainer = null, this._wrpClass = a.wrpClass || "circles-wrp", this._textClass = a.textClass || "circles-text", this._valClass = a.valueStrokeClass || "circles-valueStroke", this._maxValClass = a.maxValueStrokeClass || "circles-maxValueStroke", this._styleWrapper = a.styleWrapper === !1 ? !1 : !0, this._styleText = a.styleText === !1 ? !1 : !0;
+                var c = Math.PI / 180 * 270;
+                this._start = -Math.PI / 180 * 90, this._startPrecise = this._precise(this._start), this._circ = c - this._start, this._generate().update(a.value || 0);
+            }
+        };
+    return b.prototype = {
+        VERSION: "0.0.6",
+        _generate: function () {
+            return this._svgSize = 2 * this._radius, this._radiusAdjusted = this._radius - this._strokeWidth / 2, this._generateSvg()._generateText()._generateWrapper(), this._el.innerHTML = "", this._el.appendChild(this._wrapContainer), this;
+        },
+        _setPercentage: function (a) {
+            this._movingPath.setAttribute("d", this._calculatePath(a, !0)), this._textContainer.innerHTML = this._getText(this.getValueFromPercent(a));
+        },
+        _generateWrapper: function () {
+            return this._wrapContainer = document.createElement("div"), this._wrapContainer.className = this._wrpClass, this._styleWrapper && (this._wrapContainer.style.position = "relative", this._wrapContainer.style.display = "inline-block"), this._wrapContainer.appendChild(this._svg), this._wrapContainer.appendChild(this._textContainer), this;
+        },
+        _generateText: function () {
+            if (this._textContainer = document.createElement("div"), this._textContainer.className = this._textClass, this._styleText) {
+                var a = {
+                    position: "absolute",
+                    top: 0,
+                    left: 0,
+                    textAlign: "center",
+                    width: "100%",
+                    fontSize: .7 * this._radius + "px",
+                    height: this._svgSize + "px",
+                    lineHeight: this._svgSize + "px"
+                };
+                for (var b in a) this._textContainer.style[b] = a[b];
+            }
+            return this._textContainer.innerHTML = this._getText(0), this;
+        },
+        _getText: function (a) {
+            return this._text ? (void 0 === a && (a = this._value), a = parseFloat(a.toFixed(2)), "function" === typeof this._text ? this._text.call(this, a) : this._text) : "";
+        },
+        _generateSvg: function () {
+            return this._svg = document.createElementNS("http://www.w3.org/2000/svg", "svg"), this._svg.setAttribute("xmlns", "http://www.w3.org/2000/svg"), this._svg.setAttribute("width", this._svgSize), this._svg.setAttribute("height", this._svgSize), this._generatePath(100, !1, this._colors[0], this._maxValClass)._generatePath(1, !0, this._colors[1], this._valClass), this._movingPath = this._svg.getElementsByTagName("path")[1], this;
+        },
+        _generatePath: function (a, b, c, d) {
+            var e = document.createElementNS("http://www.w3.org/2000/svg", "path");
+            return e.setAttribute("fill", "transparent"), e.setAttribute("stroke", c), e.setAttribute("stroke-width", this._strokeWidth), e.setAttribute("d", this._calculatePath(a, b)), e.setAttribute("class", d), this._svg.appendChild(e), this;
+        },
+        _calculatePath: function (a, b) {
+            var c = this._start + a / 100 * this._circ,
+                d = this._precise(c);
+            return this._arc(d, b);
+        },
+        _arc: function (a, b) {
+            var c = a - .001,
+                d = a - this._startPrecise < Math.PI ? 0 : 1;
+            return ["M", this._radius + this._radiusAdjusted * Math.cos(this._startPrecise), this._radius + this._radiusAdjusted * Math.sin(this._startPrecise), "A", this._radiusAdjusted, this._radiusAdjusted, 0, d, 1, this._radius + this._radiusAdjusted * Math.cos(c), this._radius + this._radiusAdjusted * Math.sin(c), b ? "" : "Z"].join(" ");
+        },
+        _precise: function (a) {
+            return Math.round(1e3 * a) / 1e3;
+        },
+        htmlifyNumber: function (a, b, c) {
+            b = b || "circles-integer", c = c || "circles-decimals";
+            var d = (a + "").split("."),
+                e = '<span class="' + b + '">' + d[0] + "</span>";
+            return d.length > 1 && (e += '.<span class="' + c + '">' + d[1].substring(0, 2) + "</span>"), e;
+        },
+        updateRadius: function (a) {
+            return this._radius = a, this._generate().update(!0);
+        },
+        updateWidth: function (a) {
+            return this._strokeWidth = a, this._generate().update(!0);
+        },
+        updateColors: function (a) {
+            this._colors = a;
+            var b = this._svg.getElementsByTagName("path");
+            return b[0].setAttribute("stroke", a[0]), b[1].setAttribute("stroke", a[1]), this;
+        },
+        getPercent: function () {
+            return 100 * this._value / this._maxValue;
+        },
+        getValueFromPercent: function (a) {
+            return this._maxValue * a / 100;
+        },
+        getValue: function () {
+            return this._value;
+        },
+        getMaxValue: function () {
+            return this._maxValue;
+        },
+        update: function (b, c) {
+            if (b === !0) return this._setPercentage(this.getPercent()), this;
+            if (this._value === b || isNaN(b)) return this;
+            void 0 === c && (c = this._duration);
+            var d, e, f, g, h = this,
+                i = h.getPercent(),
+                j = 1;
+            return this._value = Math.min(this._maxValue, Math.max(0, b)), c ? (d = h.getPercent(), e = d > i, j += d % 1, f = Math.floor(Math.abs(d - i) / j), g = c / f, function k(b) {
+                if (e ? i += j : i -= j, e && i >= d || !e && d >= i) return void a(function () {
+                    h._setPercentage(d);
+                });
+                a(function () {
+                    h._setPercentage(i);
+                });
+                var c = Date.now(),
+                    f = c - b;
+                f >= g ? k(c) : setTimeout(function () {
+                    k(Date.now());
+                }, g - f);
+            }(Date.now()), this) : (this._setPercentage(this.getPercent()), this);
+        }
+    }, b.create = function (a) {
+        return new b(a);
+    }, b;
+});
 /* -----------------------------------------
    HEADER - /source/js/cagov/header.js
 ----------------------------------------- */
@@ -14292,10 +14410,9 @@ $(document).ready(function () {
 
 // Beta 5 Changes please incorporate into source files
 
-setTimeout(function(){
-  $askGroup.addClass('in')
-  $headSearch.addClass('in')
-}, 150)
+    $askGroup.addClass('in');
+    $headSearch.addClass('in');
+
 
     // setting up global variables for header functions
     window.headerVars = {
@@ -14303,8 +14420,8 @@ setTimeout(function(){
         MAXHEIGHT: 1200,
         MINHEIGHT: 500,
         setHeaderImageHeight: function () {
-            if ($headerImage.length == 0) {
-                return
+            if ($headerImage.length === 0) {
+                return;
             }
 			
             var height = windowHeight;
@@ -14335,9 +14452,14 @@ setTimeout(function(){
     var bgImage = $headerImage.css('background-image');
         var askGroup = $('.ask-group');
 
-        askGroup.attr("style", "background-size: cover; background-repeat: no-repeat; background-image:" + bgImage)
+    askGroup.attr("style", "background-size: cover; background-repeat: no-repeat; background-image:" + bgImage);
 
 
+});
+
+// Remove unnessesary aria attributes from settings expand button to pass accessibility
+$(document).ready(function () {
+    $("#settings-btn").removeAttr("role aria-selected");
 });
 
 /* -----------------------------------------
@@ -14348,13 +14470,13 @@ $(document).ready(function () {
     // The scroll distance (in pixels) which will make the header
     // compact if needed and
     var scrollDistanceToMakeCompactHeader = 220;
-    var scrollDistanceToHideSearch = 80;
+    var scrollDistanceToHideSearch = 220;
 
     var askBarPadding = 10;
     // set up variables here for each maintenance in the future.
     var $header = $('header');
     var $headerImage = $('.header-single-banner');
-
+    var $headerLargeImage = $('.header-large-banner');
     var $exploreMore = $('.explore-invite');
     var $globalHeader = $('.global-header');
     var $alert = $('.alert-banner');
@@ -14370,6 +14492,8 @@ $(document).ready(function () {
     var currentScrollTop = $(document).scrollTop();
 
     var hideDistance = calcInputDifference();
+
+    var fullnav = $(".navigation-search").hasClass("full-width-nav");
 
     setAskBarTop();
     $headSearch.on("transitionend webkitTransitionEnd oTransitionEnd MSTransitionEnd", function () { setAskBarTop(); });
@@ -14457,7 +14581,7 @@ $(document).ready(function () {
 
         $(window).on('resize', function () {
             windowHeight = $(window).height();
-            windowWidth = $(window).width();
+            windowWidth = window.innerWidth;
             headerHeight = $globalHeader.innerHeight();
             hideDistance = calcInputDifference();
 
@@ -14490,7 +14614,7 @@ $(document).ready(function () {
                 checkForCompactUpdate();
                 checkForFixedUpdate();
 
-            }
+            };
         } else {
             updateFunc = function () {
                 checkForReturnTopUpdate();
@@ -14518,7 +14642,6 @@ $(document).ready(function () {
         // we dont fade out if we have search results being shown
         if ($headSearch.hasClass('active')) {
             $askGroup.addClass('fixed-hide');
-          //  $header.addClass('compact fixed');
 
             return;
         }
@@ -14569,10 +14692,10 @@ $(document).ready(function () {
         }
     }
 
-    /**
-     * Figures out the difference between the bottom of the askbar and the
-     * explore more bar. Used to caclulate when we should hide these elements
-     */
+   // /**
+   //  * Figures out the difference between the bottom of the askbar and the
+   //  * explore more bar. Used to caclulate when we should hide these elements
+   //  */
     function calcInputDifference() {
         if (!$exploreMore.length || !$askGroupBar.length) {
             return 0;
@@ -14602,6 +14725,8 @@ $(document).ready(function () {
      */
     function addFixed() {
         var leeway = 10;
+        var leewayfullwidth = 100;
+        var leewayLargefullwidth = 150;
         $header.addClass('fixed');
         headerVars.setHeaderImageHeight();
 
@@ -14611,27 +14736,64 @@ $(document).ready(function () {
             var height = $headerImage.height();
             height = Math.max(Math.min(height, headerVars.MAXHEIGHT), headerVars.MINHEIGHT);
 
-            $headerImage.css({
-                height: height + headerHeight + leeway
-            });
-            // take into account the fixed header -----------------------------------------------------v5 FIX---------------------------------
+            
+            // single banner 
+            if (fullnav) {
+                $headerImage.css({
+                    height: height + headerHeight - leewayfullwidth
+                });
 
-        } else {
+            }
+            else {
+                $headerImage.css({
+                    height: height + headerHeight + leeway
+                });
+            }
+
+        } 
+
+
+        // large banner 
+        else if ($headerLargeImage.length) {
+            var Largeheight = $headerLargeImage.height();
+            Largeheight = Math.max(Math.min(Largeheight, headerVars.MAXHEIGHT), headerVars.MINHEIGHT);
+
+
+
+            if (fullnav) {
+                $headerLargeImage.css({
+                    height: Largeheight + headerHeight - leewayLargefullwidth
+                });
+
+            }
+            else {
+                $headerLargeImage.css({
+                    height: Largeheight + headerHeight - leewayfullwidth
+                });
+            }
+
+        } 
+
+// take into account the fixed header -----------------------------------------------------v5 FIX---------------------------------
+
+        else {
             // no header image, which means our main content needs to
 
             $mainContent.css({
-                'padding-top': Math.max(headerHeight, 136)
+                'padding-top': Math.max(headerHeight, 119)
             });
 
 
-        } if ($(".ask-group").length > 0) {
+        }
+
+        if ($(".ask-group").length > 0) {
             $mainContent.addClass('print-p-t'); // Media print .main-content fix	
             $mainContent.css({
                 'padding-top': 0
             });
 
             $('.header-slideshow-banner, .header-primary-banner').css({
-                'margin-top': 136
+                'margin-top': 119
 
             });
 
@@ -14729,110 +14891,627 @@ if (!Function.prototype.bind) {
 // 7/14/14 Added Office 2010 file extensions. Changed "click" to "mousedown". Added support for 2 dashboards.
 
 function addGAToDownloadLinks() {
-	if (document.getElementsByTagName) {
-		// Initialize external link handlers
-		var hrefs = document.getElementsByTagName("a");
-		for (var l = 0; l < hrefs.length; l++) {
-			// try {} catch{} block added by erikvold VKI
-			try{
-				//protocol, host, hostname, port, pathname, search, hash
-				if (hrefs[l].protocol == "mailto:") {
-					startListening(hrefs[l],"mousedown",trackMailto);
-				} else if (hrefs[l].protocol == "tel:") {
-					startListening(hrefs[l],"mousedown",trackTelto);
-				} else if (hrefs[l].hostname == location.host) {
-					var path = hrefs[l].pathname + hrefs[l].search;
-					var isDoc = path.match(/\.(?:doc|docx|eps|jpg|png|svg|xls|xlsx|ppt|pptx|pdf|zip|txt|vsd|vxd|js|css|rar|exe|wma|mov|avi|wmv|mp3)($|\&|\?)/);
-					if (isDoc) {
-						startListening(hrefs[l],"mousedown",trackExternalLinks);
-					}
-				} else if (!hrefs[l].href.match(/^javascript:/)) {
-					startListening(hrefs[l],"mousedown",trackExternalLinks);
-				}
-			}
-			catch(e){
-				continue;
-			}
-		}
-	}
+    if (document.getElementsByTagName) {
+        // Initialize external link handlers
+        var hrefs = document.getElementsByTagName("a");
+        for (var l = 0; l < hrefs.length; l++) {
+            // try {} catch{} block added by erikvold VKI
+            try {
+                //protocol, host, hostname, port, pathname, search, hash
+                if (hrefs[l].protocol === "mailto:") {
+                    startListening(hrefs[l], "mousedown", trackMailto);
+                } else if (hrefs[l].protocol === "tel:") {
+                    startListening(hrefs[l], "mousedown", trackTelto);
+                } else if (hrefs[l].hostname === location.host) {
+                    var path = hrefs[l].pathname + hrefs[l].search;
+                    var isDoc = path.match(/\.(?:doc|docx|eps|jpg|png|svg|xls|xlsx|ppt|pptx|pdf|zip|txt|vsd|vxd|js|css|rar|exe|wma|mov|avi|wmv|mp3)($|\&|\?)/);
+                    if (isDoc) {
+                        startListening(hrefs[l], "mousedown", trackExternalLinks);
+                    }
+                } else if (!hrefs[l].href.match(/^javascript:/)) {
+                    startListening(hrefs[l], "mousedown", trackExternalLinks);
+                }
+            }
+            catch (e) {
+                continue;
+            }
+        }
+    }
 }
 
-function startListening (obj,evnt,func) {
-	if (obj.addEventListener) {
-		obj.addEventListener(evnt,func,false);
-	} else if (obj.attachEvent) {
-		obj.attachEvent("on" + evnt,func);
-	}
+function startListening(obj, evnt, func) {
+    if (obj.addEventListener) {
+        obj.addEventListener(evnt, func, false);
+    } else if (obj.attachEvent) {
+        obj.attachEvent("on" + evnt, func);
+    }
 }
 
-function trackMailto (evnt) {
-	var href = (evnt.srcElement) ? evnt.srcElement.href : this.href;
-	var mailto = "/mailto/" + href.substring(7);
-	_gaq.push(['_trackPageview', mailto]);
-	_gaq.push(['b._trackPageview', mailto]);
+function trackMailto(evnt) {
+    var href = evnt.srcElement ? evnt.srcElement.href : this.href;
+    var mailto = "/mailto/" + href.substring(7);
+    _gaq.push(['_trackPageview', mailto]);
+    _gaq.push(['b._trackPageview', mailto]);
 }
 
-function trackTelto (evnt) {
-	var href = (evnt.srcElement) ? evnt.srcElement.href : this.href;
-	var telto = "/telto/" + href.substring(4);
-	_gaq.push(['_trackPageview', telto]);
-	_gaq.push(['b._trackPageview', telto]);
+function trackTelto(evnt) {
+    var href = evnt.srcElement ? evnt.srcElement.href : this.href;
+    var telto = "/telto/" + href.substring(4);
+    _gaq.push(['_trackPageview', telto]);
+    _gaq.push(['b._trackPageview', telto]);
 }
 
-function trackExternalLinks (evnt) {
-	var e = (evnt.srcElement) ? evnt.srcElement : this;
-	while (e.tagName != "A") {
-		e = e.parentNode;
-	}
-	var lnk = (e.pathname.charAt(0) == "/") ? e.pathname : "/" + e.pathname;
-	if (e.search && e.pathname.indexOf(e.search) == -1) lnk += e.search;
-	if (e.hostname != location.host) lnk = "/external/" + e.hostname + lnk;
-	_gaq.push(['_trackPageview', lnk]);
-	_gaq.push(['b._trackPageview', lnk]);
+function trackExternalLinks(evnt) {
+    var e = evnt.srcElement ? evnt.srcElement : this;
+    while (e.tagName !== "A") {
+        e = e.parentNode;
+    }
+    var lnk = e.pathname.charAt(0) === "/" ? e.pathname : "/" + e.pathname;
+    if (e.search && e.pathname.indexOf(e.search) === -1) lnk += e.search;
+    if (e.hostname !== location.host) lnk = "/external/" + e.hostname + lnk;
+    _gaq.push(['_trackPageview', lnk]);
+    _gaq.push(['b._trackPageview', lnk]);
 }
 
-// End gatag.js
 // End gatag.js
 /* -----------------------------------------
-   NAVIGATION MENU - /source/js/cagov/navigation.js
+   NAVIGATION - /source/js/cagov/navigation.js
 ----------------------------------------- */
 
-$(document).ready(function () {
-    // detect partial flexbox support in IE>9
-    if ($('.top-level-nav').css('display') == 'table') { $('body').addClass('no-flex') }
 
-    // menu variables
-    var $navigation = $('#navigation.main-navigation'),
-      $navItems = $navigation.find('.nav-item'), // first level link containers'
-      $navItemsWithSubs = $navItems.has('.sub-nav'),
-      $subNavs = $navigation.find('.sub-nav'),
-      megamenu = $navigation.hasClass('megadropdown'),
-      dropdown = $navigation.hasClass('dropdown'),
-      singleLevel = $navigation.hasClass('singleLevel'),
-      offCanvas = false; // beta 5.9 addition instead of: $navigation.hasClass('off-canvas'), 
-    mobileWidth = 767,
-    setActiveLinkByFolder = $navigation.hasClass('auto-highlight'); // Use new folder matching method to highlight the current navigation tab
+/*
+ * ES2015 accessible accordion system, using ARIA
+ * Website: https://van11y.net/accessible-accordion/
+ * License MIT: https://github.com/nico3333fr/van11y-accessible-accordion-aria/blob/master/LICENSE
+ */
+'use strict';
 
-    var mouseOverDelay = 100, setTimeoutConst;
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
-    // touch detection
-    var isTouch = Modernizr.touch,
-      msTouch = (('ontouchstart' in window) || (navigator.MaxTouchPoints > 0) || (navigator.msMaxTouchPoints > 0));
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
-    var touchMode = false;
-    $(window).on('mousemove', function () {
-        if (touchMode) touchmode = false;
+var loadConfig = function loadConfig() {
+
+    var CACHE = {};
+
+    var set = function set(id, config) {
+
+        CACHE[id] = config;
+    };
+    var get = function get(id) {
+        return CACHE[id];
+    };
+    var remove = function remove(id) {
+        return CACHE[id];
+    };
+
+    return {
+        set: set,
+        get: get,
+        remove: remove
+    };
+};
+
+var DATA_HASH_ID = 'data-nav-id';
+
+var pluginConfig = loadConfig();
+
+/** Find an element based on an Id
+ * @param  {String} id Id to find
+ * @param  {String} hash hash id (not mandatory)
+ * @return {Node} the element with the specified id
+ */
+var findById = function findById(id, hash) {
+    return document.querySelector('#' + id + '[' + DATA_HASH_ID + '="' + hash + '"]');
+};
+
+/** add a class to a node
+ * @param  {Node} el node to attach class
+ * @param  {String} className the class to add
+ */
+var addClass = function addClass(el, className) {
+    if (el.classList) {
+        el.classList.add(className); // IE 10+
+    } else {
+        el.className += ' ' + className; // IE 8+
+    }
+};
+
+/** remove class from node
+ * @param  {Node} el node to remove class
+ * @param  {String} className the class to remove
+ */
+var removeClass = function removeClass(el, className) {
+    if (el.classList) {
+        el.classList.remove(className); // IE 10+
+    } else {
+        el.className = el.className.replace(new RegExp('(^|\\b)' + className.split(' ').join('|') + '(\\b|$)', 'gi'), ' '); // IE 8+
+    }
+};
+
+// check if node has specified class
+// @param  {Node} el node to check
+// @param  {String} className the class
+
+var hasClass = function hasClass(el, className) {
+    if (el.classList) {
+        return el.classList.contains(className); // IE 10+
+    } else {
+        return new RegExp('(^| )' + className + '( |$)', 'gi').test(el.className); // IE 8+ ?
+    }
+};
+
+var setAttributes = function setAttributes(node, attrs) {
+    Object.keys(attrs).forEach(function (attribute) {
+        node.setAttribute(attribute, attrs[attribute]);
     });
+};
+
+/** search if element is or is contained in another element with attribute data-nav-id
+ * @param  {Node} el element (node)
+ * @param  {String} hashId the attribute data-hashtooltip-id
+ * @return {String} the value of attribute data-hashtooltip-id
+ */
+var searchParentHashId = function searchParentHashId(el, hashId) {
+    var found = false;
+
+    var parentElement = el;
+    while (parentElement.nodeType === 1 && parentElement && found === false) {
+
+        if (parentElement.hasAttribute(hashId) === true) {
+            found = true;
+        } else {
+            parentElement = parentElement.parentNode;
+        }
+    }
+    if (found === true) {
+        return parentElement.getAttribute(hashId);
+    } else {
+        return '';
+    }
+};
+var searchParent = function searchParent(el, parentClass, hashId) {
+    var found = false;
+
+    var parentElement = el;
+    while (parentElement && found === false) {
+        if (hasClass(parentElement, parentClass) === true && parentElement.getAttribute(DATA_HASH_ID) === hashId) {
+            found = true;
+        } else {
+            parentElement = parentElement.parentNode;
+        }
+    }
+    if (found === true) {
+        return parentElement.getAttribute('id');
+    } else {
+        return '';
+    }
+};
+
+var unSelectHeaders = function unSelectHeaders(elts, attrSelected) {
+    elts.forEach(function (header_node) {
+        setAttributes(header_node, _defineProperty({}, attrSelected, 'false'));
+    });
+};
+
+var selectHeader = function selectHeader(el, attrSelected) {
+    el.setAttribute(attrSelected, true);
+};
+
+var selectHeaderInList = function selectHeaderInList(elts, param, attrSelected) {
+    var indice_trouve = undefined;
+    elts.forEach(function (header_node, index) {
+
+        if (header_node.getAttribute(attrSelected) === 'true') {
+            indice_trouve = index;
+        }
+    });
+
+    if (param === 'next') {
+        selectHeader(elts[indice_trouve + 1]);
+        setTimeout(function () {
+            elts[indice_trouve + 1].focus();
+        }, 0);
+    }
+    if (param === 'prev') {
+        selectHeader(elts[indice_trouve - 1]);
+        setTimeout(function () {
+            elts[indice_trouve - 1].focus();
+        }, 0);
+    }
+};
+
+var plugin = function plugin() {
+    var config = arguments.length <= 0 || arguments[0] === undefined ? {} : arguments[0];
+    // Findig if first-level-link has sub-nav then changing its clasee to first-level-btn
+    var $navigation = $('.main-navigation'),
+        $navItems = $navigation.find('.first-level-link'),
+        $navItemsWithSubs = $navigation.find('.sub-nav').siblings('.first-level-link');
+    $navItemsWithSubs.attr("class", "first-level-btn");
+    var className = $navItemsWithSubs.attr('class');
+
+    var CONFIG = _extends({
+        ACCORDION_JS: 'main-navigation',
+        ACCORDION_JS_HEADER: className, // Assigning button class to link that has sub-nav
+        ACCORDION_JS_PANEL: 'nav-panel',
+
+        ACCORDION_DATA_PREFIX_CLASS: 'data-nav-prefix-classes',
+        ACCORDION_DATA_OPENED: 'data-nav-opened',
+        ACCORDION_DATA_MULTISELECTABLE: 'data-nav-multiselectable',
+        ACCORDION_DATA_COOL_SELECTORS: true,
+
+        ACCORDION_PREFIX_IDS: 'nav',
+        ACCORDION_BUTTON_ID: '_tab',
+        ACCORDION_PANEL_ID: '_panel',
+
+        ACCORDION_STYLE: 'nav',
+        ACCORDION_TITLE_STYLE: 'has-sub-btn',
+        ACCORDION_HEADER_STYLE: 'nav-header',
+        ACCORDION_PANEL_STYLE: 'sub-nav',
+
+        ACCORDION_ROLE_TABLIST: 'tablist',
+        ACCORDION_ROLE_TAB: 'tab',
+        ACCORDION_ROLE_TABPANEL: 'tabpanel',
+
+        ATTR_ROLE: 'role',
+        ATTR_MULTISELECTABLE: 'aria-multiselectable',
+        ATTR_EXPANDED: 'aria-expanded',
+        ATTR_LABELLEDBY: 'aria-labelledby',
+        ATTR_HIDDEN: 'aria-hidden',
+        ATTR_CONTROLS: 'aria-controls',
+        ATTR_SELECTED: 'aria-selected'
+    }, config);
+
+    var HASH_ID = Math.random().toString(32).slice(2, 12);
+
+    pluginConfig.set(HASH_ID, CONFIG);
+    // Find all accordions inside a container
+    // @param  {Node} node Default document
+    // @return {Array}
+    var $listAccordions = function $listAccordions() {
+        var node = arguments.length <= 0 || arguments[0] === undefined ? document : arguments[0];
+        return [].slice.call(node.querySelectorAll('.' + CONFIG.ACCORDION_JS));
+    };
+
+    // Build accordions for a container
+    // @param  {Node} node
+    // @param  {addListeners} boolean
+    var attach = function attach(node) {
+
+        $listAccordions(node).forEach(function (accordion_node) {
+
+            var iLisible = 'z' + Math.random().toString(32).slice(2, 12); // avoid selector exception when starting by a number
+            var prefixClassName = accordion_node.hasAttribute(CONFIG.ACCORDION_DATA_PREFIX_CLASS) === true ? accordion_node.getAttribute(CONFIG.ACCORDION_DATA_PREFIX_CLASS) + '-' : '';
+            var coolSelectors = CONFIG.ACCORDION_DATA_COOL_SELECTORS === true;
+
+            // Findig if first-level-link has sub-nav then changing its class to first-level-btn
+            var $navigation = $('.main-navigation'),
+                $navItems = $navigation.find('.first-level-link'),
+                $navItemsWithSubs = $navigation.find('.sub-nav').siblings('a');
+            $navItemsWithSubs.attr("class", "first-level-btn");
+            var className = $navItemsWithSubs.attr('class');
+
+            // Init attributes accordion
+            if (!mobileView()) {
+                accordion_node.setAttribute(CONFIG.ATTR_MULTISELECTABLE, 'false');
+            } else {
+                accordion_node.setAttribute(CONFIG.ATTR_MULTISELECTABLE, 'true');
+            }
+            accordion_node.setAttribute(CONFIG.ATTR_ROLE, CONFIG.ACCORDION_ROLE_TABLIST);
+            // We already have main navigation id
+            // accordion_node.setAttribute('id', iLisible);
+            accordion_node.setAttribute(DATA_HASH_ID, HASH_ID);
+
+            addClass(accordion_node, prefixClassName + CONFIG.ACCORDION_STYLE);
+
+            var $listAccordionsHeader = [].slice.call(accordion_node.querySelectorAll('.' + className));
+            $listAccordionsHeader.forEach(function (header_node, index_header) {
+                var _setAttributes2, _setAttributes3;
+
+                // if we do not have cool selectors enabled,
+                // it is not a direct child, we ignore it
+                if (header_node.parentNode !== accordion_node && coolSelectors === false) {
+                    return;
+                }
+
+                var indexHeaderLisible = index_header + 1;
+                var accordionPanel = header_node.nextElementSibling;
+                var accordionHeaderText = header_node.innerHTML;
+                var accordionButton = document.createElement("BUTTON");
+                var accordionOpenedAttribute = header_node.hasAttribute(CONFIG.ACCORDION_DATA_OPENED) === true ? header_node.getAttribute(CONFIG.ACCORDION_DATA_OPENED) : '';
+
+                // set button with attributes
+                accordionButton.innerHTML = accordionHeaderText;
+                addClass(accordionButton, className);
+                addClass(accordionButton, prefixClassName + CONFIG.ACCORDION_HEADER_STYLE);
+                setAttributes(accordionButton, (_setAttributes2 = {}, _defineProperty(_setAttributes2, CONFIG.ATTR_ROLE, CONFIG.ACCORDION_ROLE_TAB), _defineProperty(_setAttributes2, 'id', CONFIG.ACCORDION_PREFIX_IDS + iLisible + CONFIG.ACCORDION_BUTTON_ID + indexHeaderLisible), _defineProperty(_setAttributes2, CONFIG.ATTR_CONTROLS, CONFIG.ACCORDION_PREFIX_IDS + iLisible + CONFIG.ACCORDION_PANEL_ID + indexHeaderLisible), _defineProperty(_setAttributes2, CONFIG.ATTR_SELECTED, 'false'), _defineProperty(_setAttributes2, 'type', 'button'), _defineProperty(_setAttributes2, DATA_HASH_ID, HASH_ID), _setAttributes2));
+
+                // place button
+                header_node.innerHTML = '';
+                header_node.appendChild(accordionButton);
+
+                // move title into panel
+                //accordionPanel.insertBefore(header_node, accordionPanel.firstChild);
+                // set title with attributes
+                addClass(header_node, prefixClassName + CONFIG.ACCORDION_TITLE_STYLE);
+                removeClass(header_node, className);
+
+                // set attributes to panels
+                addClass(accordionPanel, prefixClassName + CONFIG.ACCORDION_PANEL_STYLE);
+                setAttributes(accordionPanel, (_setAttributes3 = {}, _defineProperty(_setAttributes3, CONFIG.ATTR_ROLE, CONFIG.ACCORDION_ROLE_TABPANEL), _defineProperty(_setAttributes3, CONFIG.ATTR_LABELLEDBY, CONFIG.ACCORDION_PREFIX_IDS + iLisible + CONFIG.ACCORDION_BUTTON_ID + indexHeaderLisible), _defineProperty(_setAttributes3, 'id', CONFIG.ACCORDION_PREFIX_IDS + iLisible + CONFIG.ACCORDION_PANEL_ID + indexHeaderLisible), _defineProperty(_setAttributes3, DATA_HASH_ID, HASH_ID), _setAttributes3));
+
+                if (accordionOpenedAttribute === 'true') {
+                    accordionButton.setAttribute(CONFIG.ATTR_EXPANDED, 'true');
+                    header_node.removeAttribute(CONFIG.ACCORDION_DATA_OPENED);
+                    accordionPanel.setAttribute(CONFIG.ATTR_HIDDEN, 'false');
+                    //  $(accordionPanel).addClass("open");
+                    $(accordionPanel).find(".second-level-link").removeAttr("tabindex");
+                } else {
+                    accordionButton.setAttribute(CONFIG.ATTR_EXPANDED, 'false');
+                    accordionPanel.setAttribute(CONFIG.ATTR_HIDDEN, 'true');
+                    // making sure all second level links are not tabable
+                    //  $(accordionPanel).removeClass("open");
+                    $(accordionPanel).find(".second-level-link").attr("tabindex", "-1");
+                }
+            });
+        });
+    };
+
+    return {
+        attach: attach
+        /*,
+                destroy*/
+    };
+};
+
+var main = function main() {
+
+    /* listeners for all configs */
+    ['click', 'keydown', 'focus'].forEach(function (eventName) {
+
+        document.body.addEventListener(eventName, function (e) {
+
+            var hashId = searchParentHashId(e.target, DATA_HASH_ID); //e.target.dataset.hashId;
+            // search if click on button or on element in a button contains data-hash-id (it is needed to load config and know which class to search)
+
+
+
+            if (hashId !== '') {
+                (function () {
+
+                    // loading config from element
+                    var CONFIG = pluginConfig.get(hashId);
+
+                    // focus on button
+                    if (hasClass(e.target, 'first-level-btn') === true && eventName === 'focus') {
+                        (function () {
+                            var buttonTag = e.target;
+                            var accordionContainer = findById(searchParent(buttonTag, CONFIG.ACCORDION_JS, hashId), hashId);
+                            var coolSelectors = CONFIG.ACCORDION_DATA_COOL_SELECTORS === true;
+                            var $accordionAllHeaders = [].slice.call(accordionContainer.querySelectorAll('.first-level-btn'));
+
+                            if (coolSelectors === false) {
+                                $accordionAllHeaders = $accordionAllHeaders.filter(function (element) {
+                                    return element.parentNode.parentNode === accordionContainer;
+                                });
+                            }
+
+                            unSelectHeaders($accordionAllHeaders, CONFIG.ATTR_SELECTED);
+
+                            selectHeader(buttonTag, CONFIG.ATTR_SELECTED);
+                        })();
+                    }
+
+                    // click on button
+                    if (hasClass(e.target, 'first-level-btn') === true && eventName === 'click') {
+                        (function () {
+                            var buttonTag = e.target;
+                            var accordionContainer = findById(searchParent(buttonTag, CONFIG.ACCORDION_JS, hashId), hashId);
+                            var coolSelectors = CONFIG.ACCORDION_DATA_COOL_SELECTORS === true;
+                            var $accordionAllHeaders = [].slice.call(accordionContainer.querySelectorAll('.first-level-btn'));
+                            var accordionMultiSelectable = accordionContainer.getAttribute(CONFIG.ATTR_MULTISELECTABLE);
+                            var destination = findById(buttonTag.getAttribute(CONFIG.ATTR_CONTROLS), hashId);
+                            var stateButton = buttonTag.getAttribute(CONFIG.ATTR_EXPANDED);
+
+
+                            if (coolSelectors === false) {
+                                $accordionAllHeaders = $accordionAllHeaders.filter(function (element) {
+                                    return element.parentNode.parentNode === accordionContainer;
+                                });
+                            }
+
+                            // if closed
+                            if (stateButton === 'false') {
+                                buttonTag.setAttribute(CONFIG.ATTR_EXPANDED, true);
+                                destination.removeAttribute(CONFIG.ATTR_HIDDEN);
+                                $(destination).addClass("open");
+                                // making second level links tabbable if sub nav panel is opened
+                                $(destination).find(".second-level-link").removeAttr("tabindex");
+                            } else {
+                                buttonTag.setAttribute(CONFIG.ATTR_EXPANDED, false);
+                                destination.setAttribute(CONFIG.ATTR_HIDDEN, true);
+                                $(destination).removeClass("open");
+                                // adding tabindex to links to make sure they are not tabable if sub nav panel is closed
+                                $(destination).find(".second-level-link").attr("tabindex", "-1");
+                            }
+
+                            if (!mobileView()) {
+                                $accordionAllHeaders.forEach(function (header_node) {
+
+                                    var destinationPanel = findById(header_node.getAttribute(CONFIG.ATTR_CONTROLS), hashId);
+
+                                    if (header_node !== buttonTag) {
+                                        header_node.setAttribute(CONFIG.ATTR_SELECTED, false);
+                                        header_node.setAttribute(CONFIG.ATTR_EXPANDED, false);
+                                        $(destinationPanel).removeClass("open");
+                                       // destinationPanel.setAttribute(CONFIG.ATTR_HIDDEN, true);
+                                    } else {
+                                        header_node.setAttribute(CONFIG.ATTR_SELECTED, true);
+                                    }
+                                });
+                            }
+
+                            setTimeout(function () {
+                                buttonTag.focus();
+                            }, 0);
+                            e.stopPropagation(); // making icons and other buttons elements clickable  https://css-tricks.com/slightly-careful-sub-elements-clickable-things/
+                            e.preventDefault();
+                        })();
+                    }
+
+                    // keyboard management for headers
+                    //if (hasClass(e.target, 'first-level-btn') === true && eventName === 'keydown') {
+                    //    (function () {
+                    //        var buttonTag = e.target;
+                    //        var idAccordionContainer = searchParent(buttonTag, CONFIG.ACCORDION_JS, hashId);
+                    //        var accordionContainer = findById(idAccordionContainer, hashId);
+
+                    //        var coolSelectors = CONFIG.ACCORDION_DATA_COOL_SELECTORS === true;
+                    //        var $accordionAllHeaders = [].slice.call(accordionContainer.querySelectorAll('.first-level-btn'));
+
+                    //        if (coolSelectors === false) {
+                    //            $accordionAllHeaders = $accordionAllHeaders.filter(function (element) {
+                    //                return element.parentNode.parentNode === accordionContainer;
+                    //            });
+                    //        }
+
+                    //        // strike home on a tab => 1st tab
+                    //        if (e.keyCode === 36) {
+                    //            unSelectHeaders($accordionAllHeaders, CONFIG.ATTR_SELECTED);
+                    //            selectHeader($accordionAllHeaders[0], CONFIG.ATTR_SELECTED);
+                    //            setTimeout(function () {
+                    //                $accordionAllHeaders[0].focus();
+                    //            }, 0);
+                    //            e.preventDefault();
+                    //        }
+                    //        // strike end on the tab => last tab
+                    //        else if (e.keyCode === 35) {
+                    //            unSelectHeaders($accordionAllHeaders, CONFIG.ATTR_SELECTED);
+                    //            selectHeader($accordionAllHeaders[$accordionAllHeaders.length - 1], CONFIG.ATTR_SELECTED);
+                    //            setTimeout(function () {
+                    //                $accordionAllHeaders[$accordionAllHeaders.length - 1].focus();
+                    //            }, 0);
+                    //            e.preventDefault();
+                    //        }
+                    //        // strike up or left on the tab => previous tab
+                    //        else if ((e.keyCode === 37 || e.keyCode === 38) && !e.ctrlKey) {
+
+                    //            // if first selected = select last
+                    //            if ($accordionAllHeaders[0].getAttribute(CONFIG.ATTR_SELECTED) === 'true') {
+                    //                unSelectHeaders($accordionAllHeaders, CONFIG.ATTR_SELECTED);
+                    //                selectHeader($accordionAllHeaders[$accordionAllHeaders.length - 1], CONFIG.ATTR_SELECTED);
+                    //                setTimeout(function () {
+                    //                    $accordionAllHeaders[$accordionAllHeaders.length - 1].focus();
+                    //                }, 0);
+                    //                e.preventDefault();
+                    //            } else {
+                    //                selectHeaderInList($accordionAllHeaders, 'prev', CONFIG.ATTR_SELECTED);
+                    //                e.preventDefault();
+                    //            }
+                    //        }
+                    //        // strike down or right in the tab => next tab
+                    //        else if ((e.keyCode === 40 || e.keyCode === 39) && !e.ctrlKey) {
+
+                    //            // if last selected = select first
+                    //            if ($accordionAllHeaders[$accordionAllHeaders.length - 1].getAttribute(CONFIG.ATTR_SELECTED) === 'true') {
+                    //                unSelectHeaders($accordionAllHeaders, CONFIG.ATTR_SELECTED);
+                    //                selectHeader($accordionAllHeaders[0], CONFIG.ATTR_SELECTED);
+                    //                setTimeout(function () {
+                    //                    $accordionAllHeaders[0].focus();
+                    //                }, 0);
+                    //                e.preventDefault();
+                    //            } else {
+                    //                selectHeaderInList($accordionAllHeaders, 'next', CONFIG.ATTR_SELECTED);
+                    //                e.preventDefault();
+                    //            }
+                    //        }
+                    //    })();
+                    //}
+                })();
+            }
+        }, true);
+    });
+
+    return plugin;
+};
+
+window.van11yAccessibleAccordionAria = main();
+
+var onLoad = function onLoad() {
+    var expand_default = window.van11yAccessibleAccordionAria();
+    expand_default.attach();
+
+    document.removeEventListener('DOMContentLoaded', onLoad);
+};
+
+document.addEventListener('DOMContentLoaded', onLoad);
+//window.addEventListener("resize", navreset);
+
+
+function NavReset() {
+    //RESET
+    $(".first-level-btn").attr("aria-expanded", "false");
+    $(".first-level-btn").attr("aria-selected", "false");
+    $(".sub-nav").attr("aria-hidden", "true").removeClass("open");
+    $(".second-level-link").attr("tabindex", "-1");
+    var $toggleSubNav = $('<div class="ca-gov-icon-caret-right rotate" aria-hidden="true"></div>');
+    if (window.innerWidth < 768) {
+        $('.has-sub').append($toggleSubNav);
+        $(".rotate").css("display", "block");
+    }
+    else {
+        $("#navigation").removeClass("collapse").removeAttr("aria-hidden");
+        $(".rotate").css("display", "none");
+    }
+
+}
+
+function mobileView() {
+    return $('.global-header .mobile-controls').css('display') !== "none"; // mobile view uses arrow to show subnav instead of first touch
+}
+
+// Remove href if <a> has a link
+$(document).ready(function () {
+    // Change <a> tag to div since you can't place button into <a> tag
+    var subnavbtn = $(".nav-item .has-sub-btn");
+    $(".has-sub-btn").removeAttr("href");
+    subnavbtn.replaceWith(function () {
+        return $('<div/>', {
+            class: 'has-sub-btn',
+            html: this.innerHTML
+        });
+    });
+
+
+
+
+
+
+    if (mobileView()) {
+        $('#navigation').addClass('collapse');
+        $('#navigation').addClass('collapse');
+    }
+
+
+    // Variables
+    var $navigation = $('.main-navigation'),
+        $navItems = $navigation.find('.nav-item'), // first level link containers'
+        $navItemsWithSubs = $navItems.has('.sub-nav'),
+        $subNavs = $navigation.find('.sub-nav'),
+        megamenu = $navigation.hasClass('megadropdown'),
+        dropdown = $navigation.hasClass('dropdown'),
+        singleLevel = $navigation.hasClass('singleLevel'),
+        setActiveLinkByFolder = $navigation.hasClass('auto-highlight'); // Use new folder matching method to highlight the current navigation tab
 
     // HIGHLIGHT APPROPRIATE NAV ITEM
     var reMainNav = "",
-      arrCurrentURL = location.href.split("/");
-    if (typeof defaultActiveLink != "undefined") {
+        arrCurrentURL = location.href.split("/");
+    if (typeof defaultActiveLink !== "undefined") {
         reMainNav = new RegExp("^" + defaultActiveLink + "$", "i"); // Regex for finding the index of the default main list item
     }
     $navItems.each(function () { // loop through top level links
         var $this = $(this),
-          $a = $this.find('.first-level-link');
+            $a = $this.find('.first-level-btn, .first-level-link');
 
         if (reMainNav) {
             if ($a.text().match(reMainNav)) {
@@ -14840,12 +15519,25 @@ $(document).ready(function () {
             }
         } else if (setActiveLinkByFolder && $a.attr('href')) {
             var arrNavLink = $a[0].href.split("/");
-            if ((arrNavLink.length > 4) && (arrCurrentURL[3] == arrNavLink[3])) { // folder of current URL matches this nav link
+            if (arrNavLink.length > 4 && arrCurrentURL[3] === arrNavLink[3]) { // folder of current URL matches this nav link
                 $this.addClass('active');
             }
         }
     });
 
+
+    // Reset if click outside of nav
+    $(document).mouseup(function (e) {
+        var navContainer = $(".main-navigation");
+
+        // if the target of the click isn't the navigation container nor a descendant of the navigation
+        if (!navContainer.is(e.target) && navContainer.has(e.target).length === 0) {
+            NavReset();
+        }
+    });
+
+
+    // Nav items with subs
     $navItemsWithSubs.each(function () {
         var itemCount = $(this).find('.second-level-nav > li').length;
         if (itemCount <= 2) {
@@ -14854,1243 +15546,55 @@ $(document).ready(function () {
     });
 
 
-    if ((megamenu || dropdown) && (isTouch || !msTouch)) {		// setup standard megamenu or dropdown menu and touch supporting 'ontouchstart'
-        // show and hide sub nav with fade effect
-
-
-        if (isTouch) {
-            // hide submenus when touch occurs outside of menu
-            $(document).on('touchstart.ca.catchNav', function (e) {
-                touchMode = false;
-            }, false);
-
-            $navItemsWithSubs.each(function () {
-                var $this = $(this),
-                  $a = $this.find('.first-level-link'),
-                  node = $a[0],
-                  $sub = $this.find('.sub-nav'),
-                  $subLinks = $sub.find('a');
-                $a.data('link', $a.attr('href')).removeAttr; // store url
-
-                $this.on('touchstart.ca.propagation', function (e) {
-                    // keeps tabpanel from closing when clicking inside of it
-                    e.stopPropagation();
-                });
-
-                $this.on('touchstart.ca.navclose', function (e) {
-                    touchMode = true;
-                    if ($sub.is(':visible') || mobileView()) {
-                        // if sub is visible, or in mobile view keep default behavior
-                    } else {
-                        // keeps tabpanel from closing when clicking inside of it
-                        e.preventDefault();
-                        e.stopPropagation();
-
-                        // position arrow, fade in current panel
-                    
-                        $sub.fadeIn(1000);
-                    }
-                }, false);
-            });
-        }
-
-    } else if ((megamenu || dropdown) && msTouch) { 		// setup standard megamenu or dropdown menu and touch supporting 'pointerevents'
-        // hide submenus when touch/click occurs outside of menu
-        $(document).on('click.ca.catchNav', function (e) {
-            if (!$navigation.is(e.target) && $navigation.has(e.target).length === 0) {
-
-            }
-        });
-
-        $navItemsWithSubs.each(function () {
-            var $this = $(this),
-              $a = $this.find('.first-level-link'),
-              node = $a[0],
-              $sub = $this.find('.sub-nav'),
-              $subLinks = $sub.find('a');
-            $a.data('link', $a.attr('href')); // store url
-
-            $this.on('click.ca.propagation', function (e) {
-                // keeps tabpanel from closing when clicking inside of it
-                e.stopPropagation();
-            });
-
-            $a.on('click.ca.navclose', function (e) {
-                if ($sub.is(':visible') || mobileView()) {
-                    // if sub is visible, or in mobile view keep default behavior
-                } else {
-                    // keeps tabpanel from closing when clicking inside of it
-                    e.preventDefault();
-                    e.stopPropagation();
-
-                    // position arrow, hide other sub-nav panels, fade in current panel
-                    
-                    $sub.fadeIn(1000);
-                }
-            });
-        });
-    }
-
-    // MENU FUNCTIONS
-
-
-    function mobileView() {
-        return ($('.global-header .mobile-controls').css('display') !== "none"); // mobile view uses arrow to show subnav instead of first touch
-    }
-
-
-
-    // SETUP MOBILE MENU
-    // add sub nav toggles to mobile menu $navItemsWithSubs
+    // Add class has-sub, then add carrots
     if (!singleLevel) {
         $navItemsWithSubs.each(function () {
 
-            $(this).find('.first-level-link').addClass('has-sub');
-            var linktext = $(this).find('.first-level-link').text();
-            // create toggle object
-            var $toggleSubNav = $('<button class="mobile-control toggle-sub-nav closed"><div class="ca-gov-icon-arrow-next rotate" aria-hidden="true"></div><span class="sr-only">' + linktext + ' sub menu toggle</span></button>');
-            // add toggle object to DOM
-            $(this).find('.sub-nav').before($toggleSubNav);
+            $(this).find('.first-level-btn').addClass('has-sub');
 
+            var $toggleSubNav = $('<div class="ca-gov-icon-caret-right rotate" aria-hidden="true"></div>');
+            var carrot = $('<span class="ca-gov-icon-triangle-down carrot" aria-hidden="true"></span>');
+
+            if (mobileView()) {
+                $(this).find('.has-sub').append($toggleSubNav);
+            }
+            $(this).find('.has-sub').append(carrot);
         });
     }
 
+    // Addig class first-level-btn to first-level-link to make sure left and right keyboard keys work for all navigation links
+  //$(".first-level-link").addClass("first-level-btn");
 
+});
 
-
-
-        // Setup non-off-canvas menu
-        $('#navigation').addClass('mobile-closed');
-        $(".sub-nav").addClass('subnav-closed');
-        $('.toggle-menu').on("click", function () {
-            if ($('#navigation').hasClass('mobile-closed')) {
-                $(this).addClass('open'); // for hamburger to X transition
-                $(this).attr('aria-expanded', 'true');
-                // $('#navigation').removeClass('mobile-closed');
-                $('#navigation').slideDownTransition();
-            } else {
-                $(this).removeClass('open'); // for hamburger to X transition
-                $(this).attr('aria-expanded', 'false');
-                // $('#navigation').addClass('mobile-closed');
-                $('#navigation').slideUpTransition();
-            }
-            //$('#navigation').toggleClass('mobile-closed');
-            $('.search-container').removeClass('active');
-            // Changing aria attributes for accessibility
-
-        });
-
-        // Subnav Toggle
-    if (msTouch) {
-        // touch event for mobile
-        $(".toggle-sub-nav").on("touchstart", function () {
-            var secondaryLinks = $(this).parent().find('.sub-nav');
-            if ($(this).hasClass('closed')) {
-                $(this).removeClass('closed').addClass('open');
-                $(this).find(".rotate").addClass('down');
-                $(secondaryLinks).slideDownTransitionSub();
-            } else {
-                $(this).removeClass('open').addClass('closed');
-                $(this).find(".rotate").removeClass('down');
-                $(secondaryLinks).slideUpTransitionSub();
-            }
-        });
+// Do Navigation Reset function on window resize uless it's mobile device.
+$(window).on('resize', function () {
+    if (navigator.userAgent.match(/Android/i)
+        || navigator.userAgent.match(/webOS/i)
+        || navigator.userAgent.match(/iPhone/i)
+        || navigator.userAgent.match(/iPad/i)
+        || navigator.userAgent.match(/iPod/i)
+        || navigator.userAgent.match(/BlackBerry/i)
+        || navigator.userAgent.match(/Windows Phone/i)
+    ) {
+        return false;
     }
     else {
-        // click event for desktop
-        $(".toggle-sub-nav").on("click", function () {
-            var secondaryLinks = $(this).parent().find('.sub-nav');
-            if ($(this).hasClass('closed')) {
-                $(this).removeClass('closed').addClass('open');
-                $(this).find(".rotate").addClass('down');
-                $(secondaryLinks).slideDownTransitionSub();
-            } else {
-                $(this).removeClass('open').addClass('closed');
-                $(this).find(".rotate").removeClass('down');
-                $(secondaryLinks).slideUpTransitionSub();
-            }
-
-        });
-    }
-
-    $(".rotate1").on("click", function () {
-        $(this).toggleClass("down");
-    });
-    
-    
-
-
-
-    // allow dropdown on focus
-    var menuHoverClass = 'focus',
-      clickedFocus = 'clickedFocus';
-
-    $('.top-level-nav > li > a').on("mouseenter", function () {
-        $(this).closest('ul').find('.' + menuHoverClass).removeClass(menuHoverClass);
-    }).on("mouseleave", function () {
-        $('.' + clickedFocus).removeClass(clickedFocus);
-    });
-	$('.top-level-nav > li > a').on("focus", function (e) {
-        $(this).closest('ul').find('.' + menuHoverClass).removeClass(menuHoverClass);
-        if (!$(this).parent().find('.toggle-sub-nav').hasClass('open')) {
-            $(this).parent().addClass(menuHoverClass);
-        }
-    }).on('mousedown', function () {
-        // prevent subnav from showing when link is clicked
-        if (!$(this).parent().find('.toggle-sub-nav').hasClass('open')) {
-            $(this).parent().addClass(clickedFocus);
-        }
-    });
-
-    // Hide menu if click occurs outside of navigation
-    // Hide menu if click or focus occurs outside of navigation
-    $('.top-level-nav a').last().on("keydown", function (e) {
-        if (e.keyCode == 9) {
-            // If the user tabs out of the navigation hide all menus
-            $('.top-level-nav .' + menuHoverClass).removeClass(menuHoverClass);
-        }
-    });
-    $(document).on("click", function () { $('.top-level-nav .' + menuHoverClass).removeClass(menuHoverClass); });
-
-    $('.top-level-nav').on("click", function (e) {
-        e.stopPropagation();
-    });
-    //*/
-    // Hide navigation from screen reader in mobile
-    if (mobileView()) {
-        $navigation.attr("aria-hidden", "true");
-
-        // Prevent focusing/tabbing thru links in mobile if nav is closed
-        if ($navigation.hasClass("mobile-closed")) {
-            $("#nav_list a").attr("tabindex", "-1");
-            $("#nav_list button").attr("tabindex", "-1");
-        }
-        else {
-            $("#nav_list a").removeAttr("tabindex");
-            $("#nav_list button").removeAttr("tabindex");
-        }
-    }
-
-
-});
-
- // Mobile slidedown function
-        (function ($) {
-            $.fn.slideUpTransition = function () {
-                return this.each(function () {
-                    var $el = $(this);
-                    $el.css("max-height", "0").addClass("mobile-closed").attr("aria-hidden", "true");
-                    $(".first-level-link").attr("tabindex", "-1");
-                    $(".top-level-nav li button").attr("tabindex", "-1");
-                   
-                });
-            };
-
-            $.fn.slideDownTransition = function () {
-                return this.each(function () {
-                    var $el = $(this);
-                    $el.removeClass("mobile-closed");
-                    $el.removeAttr("aria-hidden");
-                    $(".first-level-link").removeAttr("tabindex");
-                    $(".top-level-nav li button").removeAttr("tabindex");
-                    // temporarily make visible to get the size
-                    $el.css("max-height", "none");
-                    var height = $el.outerHeight();
-
-                    // reset to 0 then animate with small delay
-                    $el.css("max-height", "0");
-
-                    setTimeout(function () {
-                        $el.css({
-                            "max-height": height
-                        });
-                    }, 1);
-                });
-            };
-        })(jQuery);
-
-
-        // Subnav Mobile slidedown function
-        (function ($) {
-            $.fn.slideUpTransitionSub = function () {
-                return this.each(function () {
-                    var $subel = $(this);
-                    var subheight = $subel.outerHeight();
-                    var mainnavheight = $("#navigation").outerHeight();
-                    var sumheight = mainnavheight - subheight;
-                    $subel.css("max-height", "0");
-                    $subel.addClass("subnav-closed");
-                    $subel.attr('aria-expanded', 'false');
-                    $subel.attr('aria-hidden', 'true');
-                    $subel.find("a").attr("tabindex", "-1");
-                    $("#navigation").css({ "max-height": sumheight });
-                });
-            };
-
-            $.fn.slideDownTransitionSub = function () {
-                return this.each(function () {
-                    var $subel = $(this);
-                    $subel.removeClass("subnav-closed");
-                    $subel.find("a").removeAttr("tabindex");
-                    // temporarily make visible to get the size
-                    $subel.css("max-height", "none");
-                    var subheight = $subel.outerHeight();
-                    var mainnavheight = $("#navigation").outerHeight();
-                    var sumheight = subheight + mainnavheight;
-                    // reset to 0 then animate with small delay
-                    $subel.css("max-height", "0");
-
-                    setTimeout(function () {
-                        $subel.css({
-                            "max-height": subheight
-                        });
-                        $subel.attr('aria-expanded', 'true');
-                        $subel.attr('aria-hidden', 'false');
-                        $("#navigation").css({ "max-height": sumheight });
-                    }, 1);
-                });
-            };
-        })(jQuery);
-
-/*  ACCESSIBLE MENU */
-// source https://github.com/adobe-accessibility/Accessible-Mega-Menu/
-
-(function ($, window, document) {
-    "use strict";
-    var pluginName = "accessibleMenu",
-        defaults = {
-            navToggle: "#nav-toggle",
-            navId: "#navigation",
-            uuidPrefix: "accessible-menu", // unique ID's are required to indicate aria-owns, aria-controls and aria-labelledby
-            menuClass: "nav-menu", // default css class used to define the megamenu styling
-            topNavItemClass: "nav-item", // default css class for a top-level navigation item in the megamenu
-            panelClass: "accessible-menu-panel", // default css class for a megamenu panel
-            panelGroupClass: "accessible-menu-panel-group", // default css class for a group of items within a megamenu panel
-            hoverClass: "hover", // default css class for the hover state
-            focusClass: "focus", // default css class for the focus state
-            openClass: "open", // default css class for the open state
-            openDelay: 400, // default open delay when opening menu via mouseover
-            closeDelay: 500 // default close delay when on mouseout
-        },
-        Keyboard = {
-            BACKSPACE: 8,
-            COMMA: 188,
-            DELETE: 46,
-            DOWN: 40,
-            END: 35,
-            ENTER: 13,
-            ESCAPE: 27,
-            HOME: 36,
-            LEFT: 37,
-            PAGE_DOWN: 34,
-            PAGE_UP: 33,
-            PERIOD: 190,
-            RIGHT: 39,
-            SPACE: 32,
-            TAB: 9,
-            UP: 38,
-            keyMap: {
-                48: "0",
-                49: "1",
-                50: "2",
-                51: "3",
-                52: "4",
-                53: "5",
-                54: "6",
-                55: "7",
-                56: "8",
-                57: "9",
-                59: ";",
-                65: "a",
-                66: "b",
-                67: "c",
-                68: "d",
-                69: "e",
-                70: "f",
-                71: "g",
-                72: "h",
-                73: "i",
-                74: "j",
-                75: "k",
-                76: "l",
-                77: "m",
-                78: "n",
-                79: "o",
-                80: "p",
-                81: "q",
-                82: "r",
-                83: "s",
-                84: "t",
-                85: "u",
-                86: "v",
-                87: "w",
-                88: "x",
-                89: "y",
-                90: "z",
-                96: "0",
-                97: "1",
-                98: "2",
-                99: "3",
-                100: "4",
-                101: "5",
-                102: "6",
-                103: "7",
-                104: "8",
-                105: "9",
-                190: "."
-            }
-        };
-    /**
-     * @desc Creates a new accessible mega menu instance.
-     * @param {jquery} element
-     * @param {object} [options] Mega Menu options
-     * @param {string} [options.uuidPrefix=accessible-menu] - Prefix for generated unique id attributes, which are required to indicate aria-owns, aria-controls and aria-labelledby
-     * @param {string} [options.menuClass=accessible-menu] - CSS class used to define the megamenu styling
-     * @param {string} [options.topNavItemClass=accessible-menu-top-nav-item] - CSS class for a top-level navigation item in the megamenu
-     * @param {string} [options.panelClass=accessible-menu-panel] - CSS class for a megamenu panel
-     * @param {string} [options.panelGroupClass=accessible-menu-panel-group] - CSS class for a group of items within a megamenu panel
-     * @param {string} [options.hoverClass=hover] - CSS class for the hover state
-     * @param {string} [options.focusClass=focus] - CSS class for the focus state
-     * @param {string} [options.openClass=open] - CSS class for the open state
-     * @constructor
-     */
-    function accessibleMenu(element, options) {
-        this.element = element;
-
-        // merge optional settings and defaults into settings
-        this.settings = $.extend({}, defaults, options);
-
-        this._defaults = defaults;
-        this._name = pluginName;
-
-        this.mouseTimeoutID = null;
-        this.focusTimeoutID = null;
-        this.mouseFocused = false;
-        this.justFocused = false;
-
-        this.init();
-    }
-
-
-
-    accessibleMenu.prototype = (function () {
-
-        /* private attributes and methods ------------------------ */
-        var uuid = 0,
-            keydownTimeoutDuration = 1000,
-            keydownSearchString = "",
-            isTouch = typeof window.hasOwnProperty === "function" && !!window.hasOwnProperty("ontouchstart"),
-            _getPlugin,
-            _addUniqueId,
-            _togglePanel,
-            _clickHandler,
-            _clickOutsideHandler,
-            _DOMAttrModifiedHandler,
-            _focusInHandler,
-            _focusOutHandler,
-            _keyDownHandler,
-            _mouseDownHandler,
-            _mouseOverHandler,
-            _mouseOutHandler,
-            _toggleExpandedEventHandlers;
-
-        /**
-         * @name jQuery.fn.accessibleMenu~_getPlugin
-         * @desc Returns the parent accessibleMenu instance for a given element
-         * @param {jQuery} element
-         * @memberof jQuery.fn.accessibleMenu
-         * @inner
-         * @private
-         */
-        _getPlugin = function (element) {
-            return $(element).closest(':data(plugin_' + pluginName + ')').data("plugin_" + pluginName);
-        };
-
-        /**
-         * @name jQuery.fn.accessibleMenu~_addUniqueId
-         * @desc Adds a unique id and element.
-         * The id string starts with the
-         * string defined in settings.uuidPrefix.
-         * @param {jQuery} element
-         * @memberof jQuery.fn.accessibleMenu
-         * @inner
-         * @private
-         */
-        _addUniqueId = function (element) {
-            element = $(element);
-            var settings = this.settings;
-            if (!element.attr("id")) {
-                element.attr("id", settings.uuidPrefix + "-" + new Date().getTime() + "-" + (++uuid));
-            }
-        };
-
-        /**
-         * @name jQuery.fn.accessibleMenu~_togglePanel
-         * @desc Toggle the display of mega menu panels in response to an event.
-         * The optional boolean value 'hide' forces all panels to hide.
-         * @param {event} event
-         * @param {Boolean} [hide] Hide all mega menu panels when true
-         * @memberof jQuery.fn.accessibleMenu
-         * @inner
-         * @private
-         */
-        _togglePanel = function (event, hide) {
-            var target = $(event.target),
-                that = this,
-                settings = this.settings,
-                menu = this.menu,
-                topli = target.closest('.' + settings.topNavItemClass),
-                panel = target.hasClass(settings.panelClass) ? target : target.closest('.' + settings.panelClass),
-                newfocus;
-
-            _toggleExpandedEventHandlers.call(this, true);
-
-            if (hide) {
-                topli = menu.find('.' + settings.topNavItemClass + ' .' + settings.openClass + ':first').closest('.' + settings.topNavItemClass);
-                if (!(topli.is(event.relatedTarget) || topli.has(event.relatedTarget).length > 0)) {
-                    if ((event.type === 'mouseout' || event.type === 'focusout') && topli.has(document.activeElement).length > 0) {
-                        return;
-                    }
-                    topli.find('[aria-expanded]')
-                        .attr('aria-expanded', 'false')
-                        .removeClass(settings.openClass)
-                        .filter('.' + settings.panelClass)
-                        .attr('aria-hidden', 'true');
-                    if ((event.type === 'keydown' && event.keyCode === Keyboard.ESCAPE) || event.type === 'DOMAttrModified') {
-                        newfocus = topli.find(':tabbable:first');
-                        setTimeout(function () {
-                            menu.find('[aria-expanded].' + that.settings.panelClass).off('DOMAttrModified.accessible-menu');
-                            newfocus.trigger("focus");
-                            that.justFocused = false;
-                        }, 99);
-                    }
-                } else if (topli.length === 0) {
-                    menu.find('[aria-expanded=true]')
-                        .attr('aria-expanded', 'false')
-                        .removeClass(settings.openClass)
-                        .filter('.' + settings.panelClass)
-                        .attr('aria-hidden', 'true');
-                }
-            } else {
-                clearTimeout(that.focusTimeoutID);
-                topli.siblings()
-                    .find('[aria-expanded]')
-                    .attr('aria-expanded', 'false')
-                    .removeClass(settings.openClass)
-                    .filter('.' + settings.panelClass)
-                    .attr('aria-hidden', 'true');
-                topli.find('[aria-expanded]')
-                    .attr('aria-expanded', 'true')
-                    .addClass(settings.openClass)
-                    .filter('.' + settings.panelClass)
-                    .attr('aria-hidden', 'false');
-                if (event.type === 'mouseover' && target.is(':tabbable') && topli.length === 1 && panel.length === 0 && menu.has(document.activeElement).length > 0) {
-                    target.trigger("focus");
-                    that.justFocused = false;
-                }
-
-                _toggleExpandedEventHandlers.call(that);
-            }
-        };
-
-        /**
-         * @name jQuery.fn.accessibleMenu~_clickHandler
-         * @desc Handle click event on mega menu item
-         * @param {event} Event object
-         * @memberof jQuery.fn.accessibleMenu
-         * @inner
-         * @private
-         */
-        _clickHandler = function (event) {
-            var target = $(event.target).closest(':tabbable'),
-                topli = target.closest('.' + this.settings.topNavItemClass),
-                panel = target.closest('.' + this.settings.panelClass);
-            if (topli.length === 1
-                    && panel.length === 0
-                    && topli.find('.' + this.settings.panelClass).length === 1) {
-                if (!target.hasClass(this.settings.openClass)) {
-                    event.preventDefault();
-                    event.stopPropagation();
-                    _togglePanel.call(this, event);
-                    this.justFocused = false;
-                }
-                else {
-                    if (this.justFocused) {
-                        event.preventDefault();
-                        event.stopPropagation();
-                        this.justFocused = false;
-                    } else if (isTouch) {
-                        // event.preventDefault();
-                        // event.stopPropagation();
-                        // _togglePanel.call(this, event, target.hasClass(this.settings.openClass));
-                    }
-                }
-            }
-        };
-
-        /**
-         * @name jQuery.fn.accessibleMenu~_clickOutsideHandler
-         * @desc Handle click event outside of a the megamenu
-         * @param {event} Event object
-         * @memberof jQuery.fn.accessibleMenu
-         * @inner
-         * @private
-         */
-        _clickOutsideHandler = function (event) {
-            if ($(event.target).closest(this.menu).length === 0) {
-                event.preventDefault();
-                event.stopPropagation();
-                _togglePanel.call(this, event, true);
-            }
-        };
-
-        /**
-         * @name jQuery.fn.accessibleMenu~_DOMAttrModifiedHandler
-         * @desc Handle DOMAttrModified event on panel to respond to Windows 8 Narrator ExpandCollapse pattern
-         * @param {event} Event object
-         * @memberof jQuery.fn.accessibleMenu
-         * @inner
-         * @private
-         */
-        _DOMAttrModifiedHandler = function (event) {
-            if (event.originalEvent.attrName === 'aria-expanded'
-                    && event.originalEvent.newValue === 'false'
-                    && $(event.target).hasClass(this.settings.openClass)) {
-                event.preventDefault();
-                event.stopPropagation();
-                _togglePanel.call(this, event, true);
-            }
-        };
-
-        /**
-         * @name jQuery.fn.accessibleMenu~_focusInHandler
-         * @desc Handle focusin event on mega menu item.
-         * @param {event} Event object
-         * @memberof jQuery.fn.accessibleMenu
-         * @inner
-         * @private
-         */
-        _focusInHandler = function (event) {
-            clearTimeout(this.focusTimeoutID);
-            var target = $(event.target),
-                panel = target.closest('.' + this.settings.panelClass);
-            target
-                .addClass(this.settings.focusClass)
-            //.on('click.accessible-menu', $.proxy(_clickHandler, this));
-            this.justFocused = !this.mouseFocused;
-            this.mouseFocused = false;
-            if (this.panels.not(panel).filter('.' + this.settings.openClass).length) {
-                _togglePanel.call(this, event);
-            }
-        };
-
-        /**
-         * @name jQuery.fn.accessibleMenu~_focusOutHandler
-         * @desc Handle focusout event on mega menu item.
-         * @param {event} Event object
-         * @memberof jQuery.fn.accessibleMenu
-         * @inner
-         * @private
-         */
-        _focusOutHandler = function (event) {
-            this.justFocused = false;
-            var that = this,
-                target = $(event.target),
-                topli = target.closest('.' + this.settings.topNavItemClass),
-                keepOpen = false;
-            target
-                .removeClass(this.settings.focusClass)
-                .off('click.accessible-menu');
-
-            if (window.cvox) {
-                // If ChromeVox is running...
-                that.focusTimeoutID = setTimeout(function () {
-                    window.cvox.Api.getCurrentNode(function (node) {
-                        if (topli.has(node).length) {
-                            // and the current node being voiced is in
-                            // the mega menu, clearTimeout,
-                            // so the panel stays open.
-                            clearTimeout(that.focusTimeoutID);
-                        } else {
-                            that.focusTimeoutID = setTimeout(function (scope, event, hide) {
-                                _togglePanel.call(scope, event, hide);
-                            }, 275, that, event, true);
-                        }
-                    });
-                }, 25);
-            } else {
-                that.focusTimeoutID = setTimeout(function () {
-                    _togglePanel.call(that, event, true);
-                }, 300);
-            }
-        };
-
-        /**
-         * @name jQuery.fn.accessibleMenu~_keyDownHandler
-         * @desc Handle keydown event on mega menu.
-         * @param {event} Event object
-         * @memberof jQuery.fn.accessibleMenu
-         * @inner
-         * @private
-         */
-        _keyDownHandler = function (event) {
-            var that = (this.constructor === accessibleMenu) ? this : _getPlugin(this), // determine the accessibleMenu plugin instance
-                settings = that.settings,
-                target = $($(this).is('.' + settings.hoverClass + ':tabbable') ? this : event.target), // if the element is hovered the target is this, otherwise, its the focused element
-                menu = that.menu,
-                topnavitems = that.topnavitems,
-                topli = target.closest('.' + settings.topNavItemClass),
-                tabbables = menu.find(':tabbable'),
-                panel = target.hasClass(settings.panelClass) ? target : target.closest('.' + settings.panelClass),
-                panelGroups = panel.find('.' + settings.panelGroupClass),
-                currentPanelGroup = target.closest('.' + settings.panelGroupClass),
-                next,
-                keycode = event.keyCode || event.which,
-                start,
-                i,
-                o,
-                label,
-                found = false,
-                newString = Keyboard.keyMap[event.keyCode] || '',
-                regex,
-                isTopNavItem = (topli.length === 1 && panel.length === 0);
-
-            if (target.is("input:focus, select:focus, textarea:focus, button:focus")) {
-                // if the event target is a form element we should handle keydown normally
-                return;
-            }
-
-            if (target.is('.' + settings.hoverClass + ':tabbable')) {
-                $('html').off('keydown.accessible-menu');
-            }
-
-            switch (keycode) {
-                case Keyboard.ESCAPE:
-                    _togglePanel.call(that, event, true);
-                    break;
-                case Keyboard.DOWN:
-                    event.preventDefault();
-                    if (isTopNavItem) {
-                        _togglePanel.call(that, event);
-                        found = (topli.find('.' + settings.panelClass + ' :tabbable:first').trigger("focus").length === 1);
-                    } else {
-                        found = (tabbables.filter(':gt(' + tabbables.index(target) + '):first').trigger("focus").length === 1);
-                    }
-
-                    if (!found && window.opera && opera.toString() === "[object Opera]" && (event.ctrlKey || event.metaKey)) {
-                        tabbables = $(':tabbable');
-                        i = tabbables.index(target);
-                        found = ($(':tabbable:gt(' + $(':tabbable').index(target) + '):first').trigger("focus").length === 1);
-                    }
-                    break;
-                case Keyboard.UP:
-                    event.preventDefault();
-                    if (isTopNavItem && target.hasClass(settings.openClass)) {
-                        _togglePanel.call(that, event, true);
-                        next = topnavitems.filter(':lt(' + topnavitems.index(topli) + '):last');
-                        if (next.children('.' + settings.panelClass).length) {
-                            found = (next.children()
-                                .attr('aria-expanded', 'true')
-                                .addClass(settings.openClass)
-                                .filter('.' + settings.panelClass)
-                                .attr('aria-hidden', 'false')
-                                .find(':tabbable:last')
-                                .trigger("focus") === 1);
-                        }
-                    } else if (!isTopNavItem) {
-                        found = (tabbables.filter(':lt(' + tabbables.index(target) + '):last').trigger("focus").length === 1);
-                    }
-
-                    if (!found && window.opera && opera.toString() === "[object Opera]" && (event.ctrlKey || event.metaKey)) {
-                        tabbables = $(':tabbable');
-                        i = tabbables.index(target);
-                        found = ($(':tabbable:lt(' + $(':tabbable').index(target) + '):first').trigger("focus").length === 1);
-                    }
-                    break;
-                case Keyboard.RIGHT:
-                    event.preventDefault();
-                    if (isTopNavItem) {
-                        found = (topnavitems.filter(':gt(' + topnavitems.index(topli) + '):first').find(':tabbable:first').trigger("focus").length === 1);
-                    } else {
-                        if (panelGroups.length && currentPanelGroup.length) {
-                            // if the current panel contains panel groups, and we are able to focus the first tabbable element of the next panel group
-                            found = (panelGroups.filter(':gt(' + panelGroups.index(currentPanelGroup) + '):first').find(':tabbable:first').trigger("focus").length === 1);
-                        }
-
-                        if (!found) {
-                            found = (topli.find(':tabbable:first').trigger("focus").length === 1);
-                        }
-                    }
-                    break;
-                case Keyboard.LEFT:
-                    event.preventDefault();
-                    if (isTopNavItem) {
-                        found = (topnavitems.filter(':lt(' + topnavitems.index(topli) + '):last').find(':tabbable:first').trigger("focus").length === 1);
-                    } else {
-                        if (panelGroups.length && currentPanelGroup.length) {
-                            // if the current panel contains panel groups, and we are able to focus the first tabbable element of the previous panel group
-                            found = (panelGroups.filter(':lt(' + panelGroups.index(currentPanelGroup) + '):last').find(':tabbable:first').trigger("focus").length === 1);
-                        }
-
-                        if (!found) {
-                            found = (topli.find(':tabbable:first').trigger("focus").length === 1);
-                        }
-                    }
-                    break;
-                case Keyboard.TAB:
-                    i = tabbables.index(target);
-                    if (event.shiftKey && isTopNavItem && target.hasClass(settings.openClass)) {
-                        _togglePanel.call(that, event, true);
-                        next = topnavitems.filter(':lt(' + topnavitems.index(topli) + '):last');
-                        if (next.children('.' + settings.panelClass).length) {
-                            found = next.children()
-                                .attr('aria-expanded', 'true')
-                                .addClass(settings.openClass)
-                                .filter('.' + settings.panelClass)
-                                .attr('aria-hidden', 'false')
-                                .find(':tabbable:last')
-                                .trigger("focus");
-                        }
-                    } else if (event.shiftKey && i > 0) {
-                        found = (tabbables.filter(':lt(' + i + '):last').trigger("focus").length === 1);
-                    } else if (!event.shiftKey && i < tabbables.length - 1) {
-                        found = (tabbables.filter(':gt(' + i + '):first').trigger("focus").length === 1);
-                    } else if (window.opera && opera.toString() === "[object Opera]") {
-                        tabbables = $(':tabbable');
-                        i = tabbables.index(target);
-                        if (event.shiftKey) {
-                            found = ($(':tabbable:lt(' + $(':tabbable').index(target) + '):last').trigger("focus").length === 1);
-                        } else {
-                            found = ($(':tabbable:gt(' + $(':tabbable').index(target) + '):first').trigger("focus").length === 1);
-                        }
-                    }
-
-                    if (found) {
-                        event.preventDefault();
-                    }
-                    break;
-                case Keyboard.SPACE:
-                    if (isTopNavItem) {
-                        event.preventDefault();
-                        _clickHandler.call(that, event);
-                    } else {
-                        return true;
-                    }
-                    break;
-                case Keyboard.ENTER:
-                    return true;
-                    break;
-                default:
-                    // alphanumeric filter
-                    clearTimeout(this.keydownTimeoutID);
-
-                    keydownSearchString += newString !== keydownSearchString ? newString : '';
-
-                    if (keydownSearchString.length === 0) {
-                        return;
-                    }
-
-                    this.keydownTimeoutID = setTimeout(function () {
-                        keydownSearchString = '';
-                    }, keydownTimeoutDuration);
-
-                    if (isTopNavItem && !target.hasClass(settings.openClass)) {
-                        tabbables = tabbables.filter(':not(.' + settings.panelClass + ' :tabbable)');
-                    } else {
-                        tabbables = topli.find(':tabbable');
-                    }
-
-                    if (event.shiftKey) {
-                        tabbables = $(tabbables.get()
-                            .reverse());
-                    }
-
-                    for (i = 0; i < tabbables.length; i++) {
-                        o = tabbables.eq(i);
-                        if (o.is(target)) {
-                            start = (keydownSearchString.length === 1) ? i + 1 : i;
-                            break;
-                        }
-                    }
-
-                    regex = new RegExp('^' + keydownSearchString.replace(/[\-\[\]{}()*+?.,\\\^$|#\s]/g, '\\$&'), 'i');
-
-                    for (i = start; i < tabbables.length; i++) {
-                        o = tabbables.eq(i);
-                        label = $.trim(o.text());
-                        if (regex.test(label)) {
-                            found = true;
-                            o.trigger("focus");
-                            break;
-                        }
-                    }
-                    if (!found) {
-                        for (i = 0; i < start; i++) {
-                            o = tabbables.eq(i);
-                            label = $.trim(o.text());
-                            if (regex.test(label)) {
-                                o.trigger("focus");
-                                break;
-                            }
-                        }
-                    }
-                    break;
-            }
-            that.justFocused = false;
-        };
-
-        /**
-         * @name jQuery.fn.accessibleMenu~_mouseDownHandler
-         * @desc Handle mousedown event on mega menu.
-         * @param {event} Event object
-         * @memberof accessibleMenu
-         * @inner
-         * @private
-         */
-        _mouseDownHandler = function (event) {
-            if ($(event.target).is(this.settings.panelClass) || $(event.target).closest(":focusable").length) {
-                this.mouseFocused = true;
-            }
-            clearTimeout(this.mouseTimeoutID);
-            this.mouseTimeoutID = setTimeout(function () {
-                clearTimeout(this.focusTimeoutID);
-            }, 1);
-        };
-
-        /**
-         * @name jQuery.fn.accessibleMenu~_mouseOverHandler
-         * @desc Handle mouseover event on mega menu.
-         * @param {event} Event object
-         * @memberof jQuery.fn.accessibleMenu
-         * @inner
-         * @private
-         */
-
-
-        _mouseOverHandler = function (event) {
-            clearTimeout(this.mouseTimeoutID);
-            var that = this;
-            if ($(window).width() > 768) {
-                this.mouseTimeoutID = setTimeout(function () {
-                    $(event.target).addClass(that.settings.hoverClass);
-
-                    _togglePanel.call(that, event);
-                    if ($(event.target).is(':tabbable')) {
-                        $('html').on('keydown.accessible-menu', $.proxy(_keyDownHandler, event.target));
-                    }
-                }, this.settings.openDelay);
-            }
-        };
-
-        /**
-         * @name jQuery.fn.accessibleMenu~_mouseOutHandler
-         * @desc Handle mouseout event on mega menu.
-         * @param {event} Event object
-         * @memberof jQuery.fn.accessibleMenu
-         * @inner
-         * @private
-         */
-        _mouseOutHandler = function (event) {
-            clearTimeout(this.mouseTimeoutID);
-            var that = this;
-            $(event.target)
-                .removeClass(that.settings.hoverClass);
-
-            that.mouseTimeoutID = setTimeout(function () {
-                _togglePanel.call(that, event, true);
-            }, this.settings.closeDelay);
-            if ($(event.target).is(':tabbable')) {
-                $('html').off('keydown.accessible-menu');
-            }
-
-        };
-
-        _toggleExpandedEventHandlers = function (hide) {
-            var menu = this.menu;
-            if (hide) {
-                $('html').off('mouseup.outside-accessible-menu, touchend.outside-accessible-menu, mspointerup.outside-accessible-menu,  pointerup.outside-accessible-menu');
-
-                menu.find('[aria-expanded].' + this.settings.panelClass).off('DOMAttrModified.accessible-menu');
-            } else {
-                $('html').on('mouseup.outside-accessible-menu, touchend.outside-accessible-menu, mspointerup.outside-accessible-menu,  pointerup.outside-accessible-menu', $.proxy(_clickOutsideHandler, this));
-
-                /* Narrator in Windows 8 automatically toggles the aria-expanded property on double tap or click.
-                   To respond to the change to collapse the panel, we must add a listener for a DOMAttrModified event. */
-                menu.find('[aria-expanded=true].' + this.settings.panelClass).on('DOMAttrModified.accessible-menu', $.proxy(_DOMAttrModifiedHandler, this));
-            }
-        };
-
-        /* public attributes and methods ------------------------- */
-        return {
-            constructor: accessibleMenu,
-
-            /**
-             * @lends jQuery.fn.accessibleMenu
-             * @desc Initializes an instance of the accessibleMenu plugins
-             * @memberof jQuery.fn.accessibleMenu
-             * @instance
-             */
-            init: function () {
-                var settings = this.settings,
-                    nav = $(this.element),
-                    menu = nav.children().first(),
-                    topnavitems = menu.children();
-                this.start(settings, nav, menu, topnavitems);
-            },
-
-            start: function (settings, nav, menu, topnavitems) {
-                var that = this;
-                this.settings = settings;
-                this.menu = menu;
-                this.topnavitems = topnavitems;
-
-               // nav.attr("role", "navigation"); //it is already inside of <nav> no need for role.
-                menu.addClass(settings.menuClass);
-                topnavitems.each(function (i, topnavitem) {
-                    var topnavitemlink, topnavitempanel;
-                    topnavitem = $(topnavitem);
-                    topnavitem.addClass(settings.topNavItemClass);
-                    topnavitemlink = topnavitem.find(":tabbable:first");
-                    topnavitempanel = topnavitem.children(":not(:tabbable):last");
-                    _addUniqueId.call(that, topnavitemlink);
-                    if (topnavitempanel.length) {
-                        _addUniqueId.call(that, topnavitempanel);
-                        topnavitemlink.attr({
-                            // "aria-haspopup": true,
-                            "aria-controls": topnavitempanel.attr("id"),
-                            "aria-expanded": false
-                        });
-
-                        topnavitempanel.attr({
-                            "role": "region",
-                            "aria-expanded": false,
-                            "aria-hidden": true
-                        })
-                            .addClass(settings.panelClass)
-                            .not("[aria-labelledby]")
-                            .attr("aria-labelledby", topnavitemlink.attr("id"));
-                    }
-                });
-
-                this.panels = menu.find("." + settings.panelClass);
-
-
-                menu.on("focusin.accessible-menu", ":focusable, ." + settings.panelClass, $.proxy(_focusInHandler, this))
-                    .on("focusout.accessible-menu", ":focusable, ." + settings.panelClass, $.proxy(_focusOutHandler, this))
-                    .on("keydown.accessible-menu", $.proxy(_keyDownHandler, this))
-                    .on("mouseover.accessible-menu", $.proxy(_mouseOverHandler, this))
-                    .on("mouseout.accessible-menu", $.proxy(_mouseOutHandler, this))
-                    .on("mousedown.accessible-menu", $.proxy(_mouseDownHandler, this));
-
-                if (isTouch) {
-                    menu.on("touchstart.accessible-menu", $.proxy(_clickHandler, this));
-                }
-
-                menu.find("hr").attr("role", "separator");
-
-                if ($(document.activeElement).closest(menu).length) {
-                    $(document.activeElement).trigger("focusin.accessible-menu");
-                }
-
-
-
-            },
-
-            /**
-             * @desc Get default values
-             * @example $(selector).accessibleMenu("getDefaults");
-             * @return {object}
-             * @memberof jQuery.fn.accessibleMenu
-             * @instance
-             */
-            getDefaults: function () {
-                return this._defaults;
-            },
-
-            /**
-             * @desc Get any option set to plugin using its name (as string)
-             * @example $(selector).accessibleMenu("getOption", some_option);
-             * @param {string} opt
-             * @return {string}
-             * @memberof jQuery.fn.accessibleMenu
-             * @instance
-             */
-            getOption: function (opt) {
-                return this.settings[opt];
-            },
-
-            /**
-             * @desc Get all options
-             * @example $(selector).accessibleMenu("getAllOptions");
-             * @return {object}
-             * @memberof jQuery.fn.accessibleMenu
-             * @instance
-             */
-            getAllOptions: function () {
-                return this.settings;
-            },
-
-            /**
-             * @desc Set option
-             * @example $(selector).accessibleMenu("setOption", "option_name",  "option_value",  reinitialize);
-             * @param {string} opt - Option name
-             * @param {string} val - Option value
-             * @param {boolean} [reinitialize] - boolean to re-initialize the menu.
-             * @memberof jQuery.fn.accessibleMenu
-             * @instance
-             */
-            setOption: function (opt, value, reinitialize) {
-                this.settings[opt] = value;
-                if (reinitialize) {
-                    this.init();
-                }
-            }
-        };
-    }());
-
-    $.fn[pluginName] = function (options) {
-        return this.each(function () {
-            if (!$.data(this, "plugin_" + pluginName)) {
-                $.data(this, "plugin_" + pluginName, new $.fn[pluginName].accessibleMenu(this, options));
-            }
-        });
-    };
-
-    $.fn[pluginName].accessibleMenu = accessibleMenu;
-
-    /* :focusable and :tabbable selectors from
-       https://raw.github.com/jquery/jquery-ui/master/ui/jquery.ui.core.js */
-
-    /**
-     * @private
-     */
-    function visible(element) {
-        return $.expr.pseudos.visible(element) && !$(element).parents().addBack().filter(function () {
-            return $.css(this, "visibility") === "hidden";
-        }).length;
-    }
-
-    /**
-     * @private
-     */
-    function focusable(element, isTabIndexNotNaN) {
-        var map, mapName, img,
-            nodeName = element.nodeName.toLowerCase();
-        if ("area" === nodeName) {
-            map = element.parentNode;
-            mapName = map.name;
-            if (!element.href || !mapName || map.nodeName.toLowerCase() !== "map") {
-                return false;
-            }
-            img = $("img[usemap=#" + mapName + "]")[0];
-            return !!img && visible(img);
-        }
-        return (/input|select|textarea|button|object/.test(nodeName) ? !element.disabled :
-                "a" === nodeName ?
-                        element.href || isTabIndexNotNaN :
-                        isTabIndexNotNaN) &&
-                            // the element and all of its ancestors must be visible
-                            visible(element);
-    }
-
-    $.extend($.expr.pseudos, {
-        data: $.expr.createPseudo ? $.expr.createPseudo(function (dataName) {
-            return function (elem) {
-                return !!$.data(elem, dataName);
-            };
-        }) : // support: jQuery <1.8
-                function (elem, i, match) {
-                    return !!$.data(elem, match[3]);
-                },
-
-        focusable: function (element) {
-            return focusable(element, !isNaN($.attr(element, "tabindex")));
-        },
-
-        tabbable: function (element) {
-            var tabIndex = $.attr(element, "tabindex"),
-                isTabIndexNaN = isNaN(tabIndex);
-            return (isTabIndexNaN || tabIndex >= 0) && focusable(element, !isTabIndexNaN);
-        }
-    });
-
-
-    // Do Navigation Reset function on window resize unless it's mobile device.
-    $(window).on('resize', function () {
-        if (navigator.userAgent.match(/Android/i)
-            || navigator.userAgent.match(/webOS/i)
-            || navigator.userAgent.match(/iPhone/i)
-            || navigator.userAgent.match(/iPad/i)
-            || navigator.userAgent.match(/iPod/i)
-            || navigator.userAgent.match(/BlackBerry/i)
-            || navigator.userAgent.match(/Windows Phone/i)
-        ) {
-            return false;
-        }
-        else {
-            NavReset();
-        }
-    });
-
-
-
-    // Navigation Reset function
-    function NavReset() {
-        $(".sub-nav").removeClass("open");
-        $(".sub-nav").removeClass("secondary-open");
-        $(".sub-nav").attr("aria-expanded", false);
-        $(".sub-nav").attr("aria-hidden", true);
-        $(".first-level-link").removeClass("open");
-        $(".first-level-link").removeClass("active");
-        $(".first-level-link").attr("aria-expanded", false);
-        $("#navigation").addClass("mobile-closed");
-        if ($(window).width() < 768) {
-            $("#navigation").css("max-height", "0").attr("aria-hidden", "true");
-            $('.sub-nav').slideUpTransitionSub();
-            $('#navigation').slideUpTransition();
-            // 
-            $(".rotate").removeClass('down');
-            $("#nav_list a").attr("tabindex", "-1");
-            $("#nav_list button").attr("tabindex", "-1");
-        }
-        else {
-            $("#navigation").removeAttr("style aria-hidden");
-            $(".sub-nav").removeAttr("style");
-            $("#nav_list a").removeAttr("tabindex");
-            $("#nav_list button").removeAttr("tabindex");
-        }
-
-        $(".toggle-sub-nav").removeClass("open");
-        $(".toggle-sub-nav").addClass("closed");
-        $(".nav-item").removeClass("active");
+        $("#navigation").addClass("collapse").removeClass("show").attr("aria-hidden", "true");
         $(".toggle-menu").attr('aria-expanded', 'false');
-        $(".toggle-menu").removeClass("open");
-        $(".toggle-sub-nav").removeClass("open");
-    };
+        NavReset();
+    }
 
-}(jQuery, window, document));
-
-
-$("nav:first").accessibleMenu({
-    navId: "#navigation",
-    /* prefix for generated unique id attributes, which are required 
-       to indicate aria-owns, aria-controls and aria-labelledby */
-    uuidPrefix: "accessible-menu",
-    /* css class used to define the megamenu styling */
-    menuClass: "nav-menu",
-    /* css class for a top-level navigation item in the megamenu */
-    topNavItemClass: "nav-item",
-    /* css class for a megamenu panel */
-    panelClass: "sub-nav",
-    /* css class for a group of items within a megamenu panel */
-    panelGroupClass: "sub-nav-group",
-    /* css class for the hover state */
-    hoverClass: "hover",
-    /* css class for the focus state */
-    focusClass: "focus",
-    /* css class for the open state */
-    openClass: "open"
 });
+
+// Reset on escape
+$(document).keyup(function (e) {
+    if (e.keyCode === 27) {
+        NavReset();
+    }
+});
+
+
 
 
 /* Mobile Controls fix */
@@ -16099,7 +15603,6 @@ $(document).ready(function () {
     $("#navigation .mobile-control a").removeAttr("aria-hidden aria-expanded role id").removeClass("sub-nav with-few-items subnav-closed");
     $("#navigation .mobile-control .sr-only").removeAttr("aria-hidden aria-expanded role id").removeClass("sub-nav with-few-items subnav-closed");
 });
-
 
 /* -----------------------------------------
    ACCORDION LIST - /source/js/cagov/accordion.js
@@ -16136,6 +15639,10 @@ $(document).ready(function () {
 $(document).ready(function () {
 
     var panel1 = new tabpanel("accordion", true);
+    var panel2 = new tabpanel("accordion1", true);
+    var panel3 = new tabpanel("accordion2", true);
+    var panel4 = new tabpanel("accordion3", true);
+    var panel5 = new tabpanel("accordion4", true);
     // you can have more than one accordion on your webpage simply adding new tabpanel variable with new assigned id
     // eaxaple: var panel1 = new tabpanel("accordion2", true);
 });
@@ -16215,7 +15722,7 @@ tabpanel.prototype.init = function () {
     // get the selected tab 
     $tab = this.$tabs.filter('.selected');
 
-    if ($tab == undefined) {
+    if ($tab === undefined) {
         $tab = this.$tabs.first();
         $tab.addClass('selected');
     }
@@ -16223,7 +15730,7 @@ tabpanel.prototype.init = function () {
     // show the panel that the selected tab controls and set aria-hidden to false 
     this.$panel.find('#' + $tab.attr('aria-controls')).show().attr('aria-hidden', 'false');
 
-} // end init() 
+}; // end init() 
 
 // 
 // Function switchTabs() is a member function to give focus to a new tab or accordian header. 
@@ -16249,7 +15756,7 @@ tabpanel.prototype.switchTabs = function ($curTab, $newTab) {
     $newTab.addClass('selected').attr('aria-selected', 'true');
 
     // If this is a tab panel, swap displayed tabs 
-    if (this.accordian == false) {
+    if (this.accordian === false) {
         // hide the current tab panel and set aria-hidden to true 
         this.$panel.find('#' + $curTab.attr('aria-controls')).hide().attr('aria-hidden', 'true');
 
@@ -16273,7 +15780,7 @@ tabpanel.prototype.switchTabs = function ($curTab, $newTab) {
     // give the new tab focus 
     $newTab.trigger("focus");
 
-} // end switchTabs() 
+}; // end switchTabs() 
 
 // 
 // Function togglePanel() is a member function to display or hide the panel 
@@ -16288,7 +15795,7 @@ tabpanel.prototype.togglePanel = function ($tab) {
 
     $panel = this.$panel.find('#' + $tab.attr('aria-controls'));
 
-    if ($panel.attr('aria-hidden') == 'true') {
+    if ($panel.attr('aria-hidden') === 'true') {
         $panel.attr('aria-hidden', 'false');
         $panel.slideDown(100);
         $tab.addClass('open');
@@ -16307,7 +15814,7 @@ tabpanel.prototype.togglePanel = function ($tab) {
         $tab.attr('aria-expanded', 'false');
     }
 
-} // end togglePanel() 
+}; // end togglePanel() 
 
 // 
 // Function bindHandlers() is a member function to bind event handlers for the tabs 
@@ -16355,7 +15862,7 @@ tabpanel.prototype.bindHandlers = function () {
     });
 
     // bind a keypress handler for the panel 
-    this.$panels.on("keypress",function (e) {
+    this.$panels.on("keypress", function (e) {
         return thisObj.handlePanelKeyPress($(this), e);
     });
 
@@ -16364,7 +15871,7 @@ tabpanel.prototype.bindHandlers = function () {
         return thisObj.handlePanelClick($(this), e);
     });
 
-} // end bindHandlers() 
+}; // end bindHandlers() 
 
 // 
 // Function handleTabKeyDown() is a member function to process keydown events for a tab 
@@ -16387,7 +15894,7 @@ tabpanel.prototype.handleTabKeyDown = function ($tab, e) {
         case this.keys.space: {
 
             // Only process if this is an accordian widget 
-            if (this.accordian == true) {
+            if (this.accordian === true) {
                 // display or collapse the panel 
                 this.togglePanel($tab);
 
@@ -16411,7 +15918,7 @@ tabpanel.prototype.handleTabKeyDown = function ($tab, e) {
             else {
                 var curNdx = this.$tabs.index($tab);
 
-                if (curNdx == 0) {
+                if (curNdx === 0) {
                     // tab is the first one: 
                     // set newTab to last tab 
                     $newTab = this.$tabs.last();
@@ -16437,7 +15944,7 @@ tabpanel.prototype.handleTabKeyDown = function ($tab, e) {
 
             var curNdx = this.$tabs.index($tab);
 
-            if (curNdx == this.$tabs.length - 1) {
+            if (curNdx === this.$tabs.length - 1) {
                 // tab is the last one: 
                 // set newTab to first tab 
                 $newTab = this.$tabs.first();
@@ -16470,7 +15977,7 @@ tabpanel.prototype.handleTabKeyDown = function ($tab, e) {
             return false;
         }
     }
-} // end handleTabKeyDown() 
+}; // end handleTabKeyDown() 
 
 
 // 
@@ -16520,7 +16027,7 @@ tabpanel.prototype.handleTabKeyPress = function ($tab, e) {
 
     return true;
 
-} // end handleTabKeyPress() 
+}; // end handleTabKeyPress() 
 
 // 
 // Function handleTabClick() is a member function to process click events for tabs 
@@ -16545,7 +16052,7 @@ tabpanel.prototype.handleTabClick = function ($tab, e) {
     e.stopPropagation();
     return false;
 
-} // end handleTabClick() 
+}; // end handleTabClick() 
 
 // 
 // Function handleTabFocus() is a member function to process focus events for tabs 
@@ -16563,7 +16070,7 @@ tabpanel.prototype.handleTabFocus = function ($tab, e) {
 
     return true;
 
-} // end handleTabFocus() 
+}; // end handleTabFocus() 
 
 // 
 // Function handleTabBlur() is a member function to process blur events for tabs 
@@ -16581,7 +16088,7 @@ tabpanel.prototype.handleTabBlur = function ($tab, e) {
 
     return true;
 
-} // end handleTabBlur() 
+}; // end handleTabBlur() 
 
 
 ///////////////////////////////////////////////////////// 
@@ -16609,7 +16116,7 @@ tabpanel.prototype.handlePanelKeyDown = function ($panel, e) {
             var $focusable = $panel.find(':focusable');
             var curNdx = $focusable.index($(e.target));
             var panelNdx = this.$panels.index($panel);
-            var numPanels = this.$panels.length
+            var numPanels = this.$panels.length;
 
             if (e.shiftKey) {
                 // if this is the first focusable item in the panel 
@@ -16617,7 +16124,7 @@ tabpanel.prototype.handlePanelKeyDown = function ($panel, e) {
                 // focusable items and set focus to the last one in that 
                 // panel. If there is no preceding panel or no focusable items 
                 // do not process. 
-                if (curNdx == 0 && panelNdx > 0) {
+                if (curNdx === 0 && panelNdx > 0) {
 
                     // Iterate through previous panels until we find one that 
                     // is expanded and has focusable elements 
@@ -16655,7 +16162,7 @@ tabpanel.prototype.handlePanelKeyDown = function ($panel, e) {
                 // focusable items and set focus to the first one in that 
                 // panel. If there is no preceding panel or no focusable items 
                 // do not process. 
-                if (curNdx == $focusable.length - 1) {
+                if (curNdx === $focusable.length - 1) {
 
                     // Iterate through following panels until we find one that 
                     // is expanded and has focusable elements 
@@ -16721,7 +16228,7 @@ tabpanel.prototype.handlePanelKeyDown = function ($panel, e) {
             // get the index of the tab in the tab list 
             var curNdx = this.$tabs.index($tab);
 
-            if (curNdx == 0) {
+            if (curNdx === 0) {
                 // this is the first tab, set focus on the last one 
                 $newTab = this.$tabs.last();
             }
@@ -16752,7 +16259,7 @@ tabpanel.prototype.handlePanelKeyDown = function ($panel, e) {
             // get the index of the tab in the tab list 
             var curNdx = this.$tabs.index($tab);
 
-            if (curNdx == this.$tabs.length - 1) {
+            if (curNdx === this.$tabs.length - 1) {
                 // this is the last tab, set focus on the first one 
                 $newTab = this.$tabs.first();
             }
@@ -16772,7 +16279,7 @@ tabpanel.prototype.handlePanelKeyDown = function ($panel, e) {
 
     return true;
 
-} // end handlePanelKeyDown() 
+}; // end handlePanelKeyDown() 
 
 // 
 // Function handlePanelKeyPress() is a member function to process keypress events for a panel 
@@ -16790,7 +16297,7 @@ tabpanel.prototype.handlePanelKeyPress = function ($panel, e) {
         return true;
     }
 
-    if (e.ctrlKey && (e.keyCode == this.keys.pageup || e.keyCode == this.keys.pagedown)) {
+    if (e.ctrlKey && (e.keyCode === this.keys.pageup || e.keyCode === this.keys.pagedown)) {
         e.stopPropagation();
         e.preventDefault();
         return false;
@@ -16806,7 +16313,8 @@ tabpanel.prototype.handlePanelKeyPress = function ($panel, e) {
 
     return true;
 
-} // end handlePanelKeyPress() 
+};
+// end handlePanelKeyPress()
 
 // 
 // Function handlePanelClick() is a member function to process click events for panels 
@@ -16829,7 +16337,8 @@ tabpanel.prototype.handlePanelClick = function ($panel, e) {
 
     return true;
 
-} // end handlePanelClick() 
+};
+// end handlePanelClick()
 
 // focusable is a small jQuery extension to add a :focusable selector. It is used to 
 // get a list of all focusable elements in a panel. Credit to ajpiano on the jQuery forums. 
@@ -16840,7 +16349,7 @@ $.extend($.expr.pseudos, {
         var tabIndex = $(element).attr('tabindex');
 
         // the element and all of its ancestors must be visible 
-        if (($(element)[(nodeName == 'area' ? 'parents' : 'closest')](':hidden').length) == true) {
+        if ($(element)[nodeName === 'area' ? 'parents' : 'closest'](':hidden').length === true) {
             return false;
         }
 
@@ -16850,13 +16359,13 @@ $.extend($.expr.pseudos, {
         }
 
         // if the element is a standard form control, it must not be disabled 
-        if (/input|select|textarea|button|object/.test(nodeName) == true) {
+        if (/input|select|textarea|button|object/.test(nodeName) === true) {
 
             return !element.disabled;
         }
 
         // if the element is a link, href must be defined 
-        if ((nodeName == 'a' || nodeName == 'area') == true) {
+        if ((nodeName === 'a' || nodeName === 'area') === true) {
 
             return (element.href.length > 0);
         }
@@ -16867,14 +16376,33 @@ $.extend($.expr.pseudos, {
 });
 
 
-/* Accordion Bootstrap 4 */
+/* Accordion */
 $(document).ready(function () {
-    var accordion = $('.accordion').find('.collapsed'); 
+    var accordion = $('.accordion').find('.collapsed');
     var accordionTab = $('.accordion').find('a[data-toggle="collapse"]');
     var accordioncarrot = $('<span aria-hidden="true"></span>');
-    accordion.attr("tabindex", 0); // make accordion tabable
+    accordion.attr("tabindex", 0); // make accordion tabable for accessibility
+
     // appending carrot span to each accordion tab
     accordionTab.append(accordioncarrot);
+
+    // Accessibility fixes
+    $(".accordion > .panel > .panel-heading > .panel-title > a").on("click", function () {
+
+        var accordionPanelID = $(this).attr("id");
+        var accordionContentID = $("[aria-labelledby=" + accordionPanelID + "]");
+        var accordionGroup = $(this).closest(".accordion");
+        var accordionContentDiv = accordionGroup.find(".panel-collapse");
+
+        if ($(this).attr("aria-expanded") === "true") {
+            accordionContentID.attr("tabindex", "-1").attr("aria-hidden", "true");
+            
+        }
+        else {
+            accordionContentID.removeAttr("tabindex aria-hidden");
+        }
+    });
+
 });
 
 /* Remove aria controls from a links */
@@ -16882,10 +16410,6 @@ $(document).ready(function () {
     var alink = $(".card").find("a[role='tab']");
     alink.removeAttr("aria-controls");
 });
-
-
-
-
 
 
 /* -----------------------------------------
@@ -16898,7 +16422,22 @@ $(document).ready(function(){
     $(".main-secondary .panel").first().addClass("first");
        
     // Add a hook to the standout panel for adding a triangle
-    $(".panel.highlight").find(".panel-heading").prepend( "<span class='triangle'></span>" );
+    $(".panel.highlight").find(".panel-heading").prepend("<span class='triangle'></span>");
+    // Add a hook to the standout card for adding a triangle
+    $(".card.highlight").find(".card-heading").prepend("<span class='triangle'></span>");
+});
+
+/* -----------------------------------------
+   CARDS - /source/js/cagov/cards.js
+----------------------------------------- */
+
+$(document).ready(function () {
+    // Finds the first panel in the sidebar
+    // Adds the "first" class
+    $(".main-secondary .card").first().addClass("first");
+
+    // Add a hook to the standout card for adding a triangle
+    $(".card.highlight").find(".card-heading").prepend("<span class='triangle'></span>");
 });
 
 /* -----------------------------------------
@@ -16923,6 +16462,9 @@ $(document).ready(function () {
     var alertBanner = $(".alert-banner");
     var alertClose = $(".alert-banner .close");
     var alertbannerHeight = 0;
+    var navigationHeight = 0;
+    var fullnav = $(".top-level-nav");
+    var navsearch = $(".navigation-search");
 
     var $body = $("body");
     var $specialIcon =
@@ -16930,7 +16472,7 @@ $(document).ready(function () {
         $('.search-tabs button').on("click", function (e) {
             $(this).siblings().removeClass('active');
             $(this).tab('show').addClass('active');
-            e.preventDefault()
+            e.preventDefault();
         });
     
     // Unfreeze search width when blured.
@@ -16946,18 +16488,21 @@ $(document).ready(function () {
     });
 
 
-
     //  search box top position
     if (!mobileView()) {
         // taking into account multiple alert banners
         $.each(alertBanner, function () {
-            alertbannerHeight += $(this).innerHeight() + 2;
+            alertbannerHeight += $(this).innerHeight();
         });
+        //fullwidth navigation
+        if (navsearch.hasClass("full-width-nav")) {
+            navigationHeight = 82;
+        }
         // calulation search box top position
-        var searchtop = headerHeight - utilityHeight - alertbannerHeight + 5;
+        var searchtop = headerHeight - utilityHeight - alertbannerHeight - navigationHeight;
         if (!mobileView()) {
             searchbox.css({
-                'top': Math.max(searchtop, 87)
+                'top': Math.max(searchtop, 82)
             });
         }
     } 
@@ -16968,13 +16513,12 @@ $(document).ready(function () {
 
     // Our special nav icon which we need to hook into for starting the search
     // $('#nav-item-search')
-
-    // Sitecore link data types currently do not have a way to set id's per nav,
+    
     // so instead we are binding to what I'm assuming will aslways be the search
     $('.top-level-nav .nav-item .ca-gov-icon-search, #nav-item-search').parents('.nav-item').on('click', function (e) {
         e.preventDefault();
         $searchText.trigger("focus").trigger('focus');
-
+        
         // mobile
         if (mobileView() && !$('.search-container').hasClass('active')) {
             $('html, body').animate({
@@ -16990,12 +16534,13 @@ $(document).ready(function () {
         var searchactive = $("#head-search").hasClass("active");
         // hide Search form if it's not active
         if (searchactive) {
+            $searchContainer.removeAttr('aria-hidden');
             searchInput.removeAttr('tabindex aria-hidden');
             searchSubmit.removeAttr('tabindex aria-hidden');
             searchReset.removeAttr('tabindex aria-hidden');
             searchlabel.removeAttr('aria-hidden');
-            $searchContainer.removeAttr('aria-hidden');
-
+            
+        
         }
         else {
             searchInput.attr({
@@ -17016,15 +16561,20 @@ $(document).ready(function () {
             $searchContainer.attr("aria-hidden", "true");
         }
 
-        if (featuredsearch) {
-            searchInput.removeAttr('tabindex aria-hidden');
-            searchSubmit.removeAttr('tabindex aria-hidden');
-            searchReset.removeAttr('tabindex aria-hidden');
-            searchlabel.removeAttr('aria-hidden');
-            $searchContainer.removeAttr('aria-hidden');
+       if (featuredsearch) {
+           searchInput.removeAttr('tabindex aria-hidden');
+           searchSubmit.removeAttr('tabindex aria-hidden');
+           searchReset.removeAttr('tabindex aria-hidden');
+           searchlabel.removeAttr('aria-hidden');
+           $searchContainer.removeAttr('aria-hidden');
         }
 
-        if (mobileView() && featuredsearch) { $('.search-container').toggleClass('active'); }
+        if (mobileView() && featuredsearch) {
+            $('.search-container').toggleClass('active');
+            ariaHidden();
+        }
+        // Reset the nav
+        NavReset();
 
         // let the user know the input box is where they should search
         $("#head-search").addClass('play-animation').one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function () {
@@ -17036,37 +16586,13 @@ $(document).ready(function () {
 
     });
 
-    // Make Search form tabable if it's featured	
-    if ($('#head-search').hasClass('featured-search')) {
-        searchInput.removeAttr('tabindex aria-hidden');
-        searchSubmit.removeAttr('tabindex aria-hidden');
-        searchReset.removeAttr('tabindex aria-hidden');
-        searchlabel.removeAttr('aria-hidden');
-        $searchContainer.removeAttr('aria-hidden');
-    } else {
-        searchInput.attr({
-            "tabindex": '-1',
-            "aria-hidden": 'true'
-        });
-        searchSubmit.attr({
-            "tabindex": '-1',
-            "aria-hidden": 'true'
-        });
-        searchReset.attr({
-            "tabindex": '-1',
-            "aria-hidden": 'true'
-        });
-        searchlabel.attr({
-            "aria-hidden": 'true'
-        });
-        $searchContainer.attr("aria-hidden", "true");
-
-    }
-
-
+    // SEE navitgation.js for mobile click handlers
 
     // Close search when close icon is clicked
-    $('.close-search').on('click', removeSearchResults);
+    $('.close-search').on('click', function () {
+        removeSearchResults();
+        
+    });
 
     // Helpers
     function addSearchResults() {
@@ -17076,12 +16602,12 @@ $(document).ready(function () {
         // close the the menu when we are search
         //$('#navigation').addClass('mobile-closed');
         // hide the ask group as well
-        // $('.ask-group').addClass('fade-out');
+       // $('.ask-group').addClass('fade-out');
 
         // fire a scroll event to help update headers if need be
-        // $(window).scroll();
+       // $(window).scroll();
 
-        // $.event.trigger('cagov.searchresults.show');
+       // $.event.trigger('cagov.searchresults.show');
     }
 
     function removeSearchResults() {
@@ -17090,7 +16616,7 @@ $(document).ready(function () {
         $searchContainer.removeClass('active').attr("aria-hidden", "true");
         $resultsContainer.removeClass('visible');
         $('.ask-group').removeClass('fade-out');
-
+        
         if (!featuredsearch) {
             searchInput.attr({
                 "tabindex": '-1',
@@ -17115,12 +16641,11 @@ $(document).ready(function () {
 
         if (mobileView()) {
             $('html, body').animate({ scrollTop: 0 }, "slow");
+            ariaHidden();
         }
     }
 
-
-
-
+    // Mobile Search toggle
     $('.toggle-search').on('click', function () {
         $('.search-container').toggleClass('active');
         var searchactive = $("#head-search").hasClass("active");
@@ -17131,10 +16656,10 @@ $(document).ready(function () {
             searchReset.removeAttr('tabindex aria-hidden');
             searchlabel.removeAttr('aria-hidden');
             $searchText.trigger("focus").trigger('focus');
-            $('html, body').animate({
-                scrollTop: $("#head-search").offset().top
-            }, 500);
-
+             $('html, body').animate({
+                    scrollTop: $("#head-search").offset().top
+                }, 500);
+            
         }
         else {
             searchInput.attr({
@@ -17154,10 +16679,36 @@ $(document).ready(function () {
             });
             $searchContainer.attr("aria-hidden", "true");
         }
-        if (!$('#navigation').hasClass('active')) {
-            $('#navigation').addClass('mobile-closed');
-        }
     });
+
+
+
+    // Make Search form tabable if it's featured
+    if ($('#head-search').hasClass('featured-search')) {
+        $searchContainer.removeAttr('aria-hidden');
+        searchInput.removeAttr('tabindex aria-hidden');
+        searchSubmit.removeAttr('tabindex aria-hidden');
+        searchReset.removeAttr('tabindex aria-hidden');
+        searchlabel.removeAttr('aria-hidden');
+    } else {
+        searchInput.attr({
+            "tabindex": '-1',
+            "aria-hidden": 'true'
+        });
+        searchSubmit.attr({
+            "tabindex": '-1',
+            "aria-hidden": 'true'
+        });
+        searchReset.attr({
+            "tabindex": '-1',
+            "aria-hidden": 'true'
+        });
+        searchlabel.attr({
+            "aria-hidden": 'true'
+        });
+        $searchContainer.attr("aria-hidden", "true");
+    }
+
 
 
     // on alert close event
@@ -17165,22 +16716,71 @@ $(document).ready(function () {
         $(this).on("click", function () {
             searchTop();
         });
-
+        
     });
 
+    ariaHidden();
+
+}); 
+
+
+// Calculation search box top property on the scroll for the fixed nav
+$(window).on('scroll', function () {
+    var currentScrollTop = $(document).scrollTop();
+    var scrollDistanceToMakeCompactHeader = 220;
+
+    if (currentScrollTop >= scrollDistanceToMakeCompactHeader) {
+
+        if (!mobileView()) {
+
+            // setting timeout before calculating the search box top property otherwise it can take into account transitional values.
+            setTimeout(function () {
+                var searchlabel = $("#SearchInput");
+                var $globalHeader = $('.global-header');
+                var searchbox = $(".search-container:not(.featured-search)");
+                var headerHeight = $globalHeader.innerHeight();
+                var utility = $(".utility-header");
+                var utilityHeight = utility.innerHeight();
+                var alertBanner = $(".alert-banner");
+                var alertClose = $(".alert-banner .close");
+                var alertbannerHeight = 0;
+                var fullnav = $(".top-level-nav");
+                var navsearch = $(".navigation-search");
+                // taking into account multiple alert banners
+                $.each(alertBanner, function () {
+                    alertbannerHeight += $(this).innerHeight();
+                });
+                // Full width navigation
+                if (navsearch.hasClass("full-width-nav")) {
+                    navigationHeight = 82;
+                }
+                else { navigationHeight = 0; }
+                // calulation search box top position
+                var searchtopscroll = headerHeight - utilityHeight - alertbannerHeight - navigationHeight;
+                searchbox.css({ 'top': Math.max(searchtopscroll, 55) });
+            }, 400);
+
+
+
+        }
+    }
+    else if (currentScrollTop <= scrollDistanceToMakeCompactHeader) {
+        if (!mobileView()) {
+            setTimeout(function () {
+                searchTop();
+            }, 400);
+
+        }
+    }
 });
+
 
 
 //  search box top position if browser window is resized
 $(window).on('resize', function () {
     searchTop();
+    ariaHidden();
 });
-
-
-
-
-
-
 
 
 function searchTop() {
@@ -17193,61 +16793,47 @@ function searchTop() {
     var alertBanner = $(".alert-banner");
     var alertClose = $(".alert-banner .close");
     var alertbannerHeight = 0;
+    var fullnav = $(".top-level-nav");
+    var navsearch = $(".navigation-search");
     // taking into account multiple alert banners
     $.each(alertBanner, function () {
-        alertbannerHeight += $(this).innerHeight() + 2;
+        alertbannerHeight += $(this).innerHeight();
     });
+    // Full width navigation
+    if (navsearch.hasClass("full-width-nav")) {
+        navigationHeight = 82;
+    }
+    else {navigationHeight = 0;}
     // calulation search box top position
-    var searchtop = headerHeight - utilityHeight - alertbannerHeight + 5;
+    var searchtop = headerHeight - utilityHeight - alertbannerHeight - navigationHeight;
     if (!mobileView()) {
+        
         searchbox.css({
-            'top': Math.max(searchtop, 87)
+            'top': Math.max(searchtop, 55)
         });
     }
 }
 
-// Calculation search box top proprety on the scroll for the fixed nav
-$(window).on('scroll', function () {
-    var currentScrollTop = $(document).scrollTop();
-    var scrollDistanceToMakeCompactHeader = 220;
-   
-    if (currentScrollTop >= scrollDistanceToMakeCompactHeader) {
-        
-        if (!mobileView()) {
-            
-               // setting timeout before calulating the search box top proprty othervise it can take into account transitional values.
-            setTimeout(function () {
-                var searchlabel = $("#SearchInput");
-                var $globalHeader = $('.global-header');
-                var searchbox = $(".search-container:not(.featured-search)");
-                var headerHeight = $globalHeader.innerHeight();
-                var utility = $(".utility-header");
-                var utilityHeight = utility.innerHeight();
-                var alertBanner = $(".alert-banner");
-                var alertClose = $(".alert-banner .close");
-                var alertbannerHeight = 0;
-                // taking into account multiple alert banners
-                $.each(alertBanner, function () {
-                    alertbannerHeight += $(this).innerHeight() + 2;
-                });
-                // calulation search box top position
-                var searchtopscroll = headerHeight - utilityHeight - alertbannerHeight - 7;
-                searchbox.css({ 'top': Math.max(searchtopscroll, 60) });
-            }, 400);
-
-            
-
+function ariaHidden() {
+    var $searchContainer = $("#head-search");
+    var featuredsearch = $("#head-search").hasClass("featured-search");
+    if (featuredsearch) {
+        if (mobileView()) {
+            $searchContainer.attr("aria-hidden", "true");
+            $("#q").attr("tabindex", "-1");
+            $(".gsc-search-button").attr("tabindex", "-1");
         }
+
+        else {
+            $searchContainer.removeAttr('aria-hidden');
+            $("#q").removeAttr("tabindex");
+            $(".gsc-search-button").removeAttr("tabindex");}
     }
-    else if (currentScrollTop <= scrollDistanceToMakeCompactHeader) {
-        if (!mobileView()) {
-            setTimeout(function () {
-                searchTop();
-            }, 400);
-            
-        }
+    else {
+        $searchContainer.attr("aria-hidden", "true");
     }
-});
+
+}
 
 
 
@@ -17257,13 +16843,8 @@ function mobileView() {
 /* -----------------------------------------
    INIT THIRD PARTY PLUGINS - /source/js/cagov/plugins.js
 ----------------------------------------- */
-
-
 $(document).ready(function () {
-    // Tabs to accordion
-    // https://github.com/openam/bootstrap-responsive-tabs
-    fakewaffle.responsiveTabs(['xs', 'sm']);
-    
+
     // https://github.com/jsliang/eqHeight.coffee
     // Generic EQ Heights for top level children
     // Example: Use on .group to effect columns
@@ -17328,7 +16909,7 @@ $(document).ready(function () {
                     var headerTop = headerSlider.offset().top;
                     var windowHeight = $(window).height();
                     var height = windowHeight - headerTop;
-                    height = (height > MAXHEIGHT)
+                    height = height > MAXHEIGHT
                         ? MAXHEIGHT
                         : height;
                     // fill up the remaining heaight of this device
@@ -17338,7 +16919,7 @@ $(document).ready(function () {
                 var $this = $(this);
 
                 // If browser is IE9 and below set transition speed to 0
-                var transitionSpeed = (!$('html').hasClass('oldie'))
+                var transitionSpeed = !$('html').hasClass('oldie')
                     ? 250
                     : 0;
 
@@ -17378,8 +16959,7 @@ $(document).ready(function () {
                 });
 
                 // Number the items in .banner-pager 
-                var dots = $('.banner-pager .banner-control');
-                dots.each(function () {
+                var dots = $('.banner-pager .banner-control'); dots.each(function () {
                     $(this).find('span').append($(this).index() + 1);
                 });
             });
@@ -17400,17 +16980,17 @@ $(document).ready(function () {
             onResized: function () {
                 window.setTimeout(function () {
                     $(window).trigger('resize');
-                }, 0)
+                }, 0);
             },
             onDragged: function () {
                 window.setTimeout(function () {
                     $(window).trigger('resize');
-                }, 0)
+                }, 0);
             },
             onTranslated: function () {
                 window.setTimeout(function () {
                     $(window).trigger('resize');
-                }, 0)
+                }, 0);
             },
             responsive: true,
             margin: 10,
@@ -17434,9 +17014,7 @@ $(document).ready(function () {
                     nav: true
                 }
             },
-            navText: [
-                '<span class="ca-gov-icon-arrow-prev" aria-hidden="true"></span></span><span class="sr-only">Previous</span>', '<span class="ca-gov-icon-arrow-next" aria-hidden="true"></span><span class="sr-only">Next</span>'
-            ],
+            navText: ['<span class="ca-gov-icon-arrow-prev" aria-hidden="true"></span></span><span class="sr-only">Previous</span>', '<span class="ca-gov-icon-arrow-next" aria-hidden="true"></span></span><span class="sr-only">Next</span>'],
             dots: false
         });
 
@@ -17445,9 +17023,7 @@ $(document).ready(function () {
             margin: 25,
             autoWidth: true,
             nav: true,
-            navText: [
-                '<span class="ca-gov-icon-arrow-prev" aria-hidden="true"></span></span><span class="sr-only">Previous</span>', '<span class="ca-gov-icon-arrow-next" aria-hidden="true"></span><span class="sr-only">Next</span>'
-            ],
+            navText: ['<span class="ca-gov-icon-arrow-prev" aria-hidden="true"></span></span><span class="sr-only">Previous</span>', '<span class="ca-gov-icon-arrow-next" aria-hidden="true"></span></span><span class="sr-only">Next</span>'],
             dots: false
         });
 
@@ -17455,9 +17031,7 @@ $(document).ready(function () {
         $(".carousel-slider").owlCarousel({
             items: 1,
             nav: true,
-            navText: [
-                '<span class="ca-gov-icon-arrow-prev" aria-hidden="true"></span></span><span class="sr-only">Previous</span>', '<span class="ca-gov-icon-arrow-next" aria-hidden="true"></span><span class="sr-only">Next</span>'
-            ],
+            navText: ['<span class="ca-gov-icon-arrow-prev" aria-hidden="true"></span></span><span class="sr-only">Previous</span>', '<span class="ca-gov-icon-arrow-next" aria-hidden="true"></span></span><span class="sr-only">Next</span>'],
             dots: false
         });
 
@@ -17465,9 +17039,7 @@ $(document).ready(function () {
         $(".carousel-gallery").owlCarousel({
             items: 1,
             nav: true,
-            navText: [
-                '<span class="ca-gov-icon-arrow-prev" aria-hidden="true"></span></span><span class="sr-only">Previous</span>', '<span class="ca-gov-icon-arrow-next" aria-hidden="true"></span><span class="sr-only">Next</span>'
-            ],
+            navText: ['<span class="ca-gov-icon-arrow-prev" aria-hidden="true"></span></span><span class="sr-only">Previous</span>', '<span class="ca-gov-icon-arrow-next" aria-hidden="true"></span></span><span class="sr-only">Next</span>'],
             dots: false
         });
 
@@ -17475,7 +17047,6 @@ $(document).ready(function () {
 
     // Remove unnessesary role="button" from button
     $("button.banner-control").removeAttr("role");
-
 });
 
 function initContent() {
@@ -17486,9 +17057,7 @@ function initContent() {
             autoHeight: true,
             loop: true,
             nav: true,
-            navText: [
-                '<span class="ca-gov-icon-arrow-prev" aria-hidden="true"></span></span><span class="sr-only">Previous</span>', '<span class="ca-gov-icon-arrow-next" aria-hidden="true"></span><span class="sr-only">Next</span>'
-            ],
+            navText: ['<span class="ca-gov-icon-arrow-prev" aria-hidden="true"></span></span><span class="sr-only">Previous</span>', '<span class="ca-gov-icon-arrow-next" aria-hidden="true"></span></span><span class="sr-only">Next</span>'],
             dots: true,
             // all these callbacks are to make sure any js inside carousl items can refresh
             // themselves
@@ -17516,7 +17085,6 @@ function initContent() {
             $(this).find('span').html("<span class='sr-only'>Change Slide</span>");
         });
 
-
         carousel.on('changed.owl.carousel', function (event) {
             setTimeout(function () {
                 carousel.find('.owl-item.active .item video').each(function () {
@@ -17524,12 +17092,11 @@ function initContent() {
                     $(this).get(0).play();
                 });
             }, 10);
-
         });
     });
 }
 
-(function($) {
+(function ($) {
 
     $.fn.initCAVideo = function (bool) {
 
@@ -17560,9 +17127,7 @@ function initContent() {
                 nav: true,
                 lazyLoad: false,
                 video: true,
-                navText: [
-                    '<span class="ca-gov-icon-arrow-prev" aria-hidden="true"></span></span><span class="sr-only">Previous</span>', '<span class="ca-gov-icon-arrow-next" aria-hidden="true"></span><span class="sr-only">Next</span>'
-                ],
+                navText: ['<span class="ca-gov-icon-arrow-prev" aria-hidden="true"></span></span><span class="sr-only">Previous</span>', '<span class="ca-gov-icon-arrow-next" aria-hidden="true"></span><span class="sr-only">Next</span>'],
                 dots: false
             });
 
@@ -17575,7 +17140,7 @@ function initContent() {
 
                 mainIndex = event.item.index;
                 // show the item in view
-                submenu.trigger('to.owl.carousel', [mainIndex, 300, true])
+                submenu.trigger('to.owl.carousel', [mainIndex, 300, true]);
             });
 
 
@@ -17624,7 +17189,7 @@ function initContent() {
 
                 // overlay related
                 var overlay = $('<div />').addClass('item-overlay');
-                overlay.append($('<span class="ca-gov-icon-play" />'))
+                overlay.append($('<span class="ca-gov-icon-play" />'));
 
                 // Append it into the DOM
                 item.append(thumbnail).append(overlay);
@@ -17656,7 +17221,6 @@ function initContent() {
                 // remove old watched item
                 submenu.find('.watching').removeClass('watching');
 
-                // submenu.find('img[src*="' + vidID + '"]').parents('.owl-item').addClass('watching');
                 submenu.find('button[style*="' + vidID + '"]').parents('.owl-item').addClass('watching');
 
 
@@ -17688,15 +17252,15 @@ $(document).ready(function(){
     // TODO: flickr, linkedin, instagram, pinterest, vimeo, youtube
 
     $(".ca-gov-icon-share-facebook").on('click', function(e) {
-      PopupCentered('https://www.facebook.com/sharer/sharer.php?u=' + docURL + '&display=popup','socialsharer','658','450')
+        PopupCentered('https://www.facebook.com/sharer/sharer.php?u=' + docURL + '&display=popup', 'socialsharer', '658', '450');
     });
 
     $(".ca-gov-icon-share-twitter").on('click', function(e) {
-      PopupCentered('https://twitter.com/intent/tweet?text=' + docTitle + '&url=' + docURL,'socialsharer','568','531')
+        PopupCentered('https://twitter.com/intent/tweet?text=' + docTitle + '&url=' + docURL, 'socialsharer', '568', '531');
     });
 
     $(".ca-gov-icon-share-googleplus").on('click', function(e) {
-      PopupCentered('https://plus.google.com/share?url=' + docURL,'socialsharer','550','552')
+        PopupCentered('https://plus.google.com/share?url=' + docURL, 'socialsharer', '550', '552');
     });
 
     $(".ca-gov-icon-share-email").attr('href',  "mailto:?subject=" + docTitle + "&body=%0a" + docURL + "%0a%0a");
@@ -17720,8 +17284,8 @@ function PopupCentered(url, popupName, popupWidth, popupHeight) {
   var parentWidth = window.innerWidth ? window.innerWidth : document.documentElement.clientWidth ? document.documentElement.clientWidth : screen.width;
   var parentHeight = window.innerHeight ? window.innerHeight : document.documentElement.clientHeight ? document.documentElement.clientHeight : screen.height;
 
-  var popupLeft = (parentWidth / 2) - (popupWidth / 2) + parentLeft;
-  var popupTop = (parentHeight / 2) - (popupHeight / 2) + parentTop;
+  var popupLeft = parentWidth / 2 - popupWidth / 2 + parentLeft;
+  var popupTop = parentHeight / 2 - popupHeight / 2 + parentTop;
 
   window.open(url, popupName, 'scrollbars=yes, width=' + popupWidth + ', height=' + popupHeight + ', left=' + popupLeft + ', top=' + popupTop);
 }
@@ -17739,11 +17303,11 @@ function breadcrumbs()
 	if ( $(".breadcrumb.dynamic")[0] ) { // Make sure browser supports getElementById and breadcrumb_dynamic exists
 		var wrkLocation = location.href;
 		var wrkLength = wrkLocation.indexOf("#");  // Find the begining of any anchor reference
-		if (wrkLength != -1) {
+		if (wrkLength !== -1) {
 			wrkLocation = wrkLocation.substr(0,wrkLength);  // Remove the anchor reference
 		}	
 		var wrkLength = wrkLocation.indexOf("?");  // Find the begining of the query string
-		if (wrkLength != -1) {
+		if (wrkLength !== -1) {
 			wrkLocation = wrkLocation.substr(0,wrkLength);  // Remove the query string
 		}
 
@@ -17758,18 +17322,18 @@ function breadcrumbs()
 		var path = '/'; // Link for the crumbs
 
 		// If last item is blank or index.* or default.*, remove it
-		if (arrURL[arrURL.length-1] == '' || arrURL[arrURL.length-1].match(/^index\.|^default\./i) ) {
+		if (arrURL[arrURL.length-1] === '' || arrURL[arrURL.length-1].match(/^index\.|^default\./i) ) {
 			arrURL.length--;
 		}
 
 		if (arrURL.length > 3) {
-			for (counter = 3;counter < arrURL.length-1;counter++) {  // Loop to display the links
+			for (counter = 3; counter < arrURL.length-1; counter++) {  // Loop to display the links
 				path += arrURL[counter] + '/';  // always end links to folder with '/' 
-				output += '<li><a href="' + path + '">' + (arrURL[counter].replace(/(_|-)/g,' ')) + '</a></li>';
+				output += '<li><a href="' + path + '">' + arrURL[counter].replace(/(_|-)/g,' ') + '</a></li>';
 			}
 
 			// Adds a class of active to the current page
-			output += '<li class="active">' + (arrURL[arrURL.length-1].replace(/(_|-)/g,' ').replace(/\.\w{3,5}$/,'')) + '</li>';
+			output += '<li class="active">' + arrURL[arrURL.length-1].replace(/(_|-)/g,' ').replace(/\.\w{3,5}$/,'') + '</li>';
 		}
 
 		$(".breadcrumb.dynamic").html(output);  // Display the breadcrumbs
@@ -17797,8 +17361,8 @@ function initServiceGroup() {
     $service.find('.service-tile-empty').on('click', function (e) {
         e.stopPropagation();
         var url = $(this).attr("data-url");
-        window.location = url
-    })
+        window.location = url;
+    });
 
     $(window).on('resize', function () {
         var newWidth = $(window).width();
@@ -17829,7 +17393,7 @@ function initServiceGroup() {
         $items = $service.find('.service-tile');
         // enable interactions
         initTiles($service, $items);
-    })
+    });
 
     // make sure any icons are set to the proper size
     $items.find('.icon-fallback').each(setIconFallback);
@@ -17854,7 +17418,7 @@ function initTiles($service, $items) {
     $items.find('.collapse').collapse();
 
     // remove any inline height set from accordian view
-    $service.find('.service-tile-full .container').css({ 'height': '' })
+    $service.find('.service-tile-full .container').css({ 'height': '' });
 }
 
 function shrinkAndRemove($rowEl) {
@@ -17866,7 +17430,7 @@ function shrinkAndRemove($rowEl) {
         'height': '0px'
     }, 300, 'linear', function () {
         $rowEl.empty().remove();
-    })
+    });
 
 }
 
@@ -17907,7 +17471,7 @@ function setUpEvents($service) {
 
         insertContent($rowEl, $item);
 
-        setCloseButtonEvent($item, closeTile)
+        setCloseButtonEvent($item, closeTile);
 
     }
 
@@ -17951,7 +17515,7 @@ function setUpEvents($service) {
 
     // Make sure it works on 'enter' key (has same behavior as click event)
     $service.on('keyup', '.service-tile', function (e) {
-        if (e.which == 13 && $(".service-tile").hasClass("tile-focus")) {
+        if (e.which === 13 && $(".service-tile").hasClass("tile-focus")) {
             $(this).trigger("click");
         }
     });
@@ -17978,16 +17542,16 @@ function setCloseButtonEvent($item, func) {
     var $content = $item.parent().find('.service-tile-panel[data-tile-id="' + id + '"]').first();
     $content.find('.close.btn').on('click', function (e) {
         func.call($item, e);
-    })
+    });
 }
 
-/**
- * TODO: +Docs
- * TODO: Expand height using calculated content height
- */
+
+// * TODO: +Docs
+// * TODO: Expand height using calculated content height
+
 function insertContent($rowEl, $item) {
     if (!$rowEl) {
-        return
+        return;
     }
     var id = $item.data('tile-id');
 
@@ -18030,7 +17594,7 @@ function findRow($item) {
         return createExpandedRow($nextItem, 'before');
     }
     if ($item.nextAll('.service-tile').length) {
-        return createExpandedRow($item.nextAll('.service-tile').last(), 'after')
+        return createExpandedRow($item.nextAll('.service-tile').last(), 'after');
     }
     // at this point the only other possiblity is a new row after all siblings
     return createExpandedRow($item, 'after');
@@ -18055,7 +17619,7 @@ function checkIfOldAndSet($rowEl) {
  */
 function createExpandedRow($item, method) {
     var newEl = $('<div>').addClass('service-tile-full');
-    ($item[method](newEl));
+    $item[method](newEl);
     // HACK: trigger on focus so transitions work
     newEl.trigger("focus");
     newEl.addClass('is-open');
@@ -18066,14 +17630,14 @@ function createExpandedRow($item, method) {
    HELPERS
 ----------------------------------------- */
 
-/**
- * TODO: +Docs
- * @param  {[type]} $el [description]
- * @return {[type]}     [description]
- */
+
+// * TODO: +Docs
+// * @param  {[type]} $el [description]
+// * @return {[type]}     [description]
+
 function scrollToEl($el) {
     if (!$el || !$el.length) {
-        return
+        return;
     }
     var scrollVal = $el.offset().top;
     $('html, body').animate({
@@ -18131,7 +17695,7 @@ function initCountUp() {
         handler: function () {
             demo.start();
         }
-    })
+    });
 }
 
 
@@ -18142,629 +17706,6 @@ if (!String.prototype.trim) {
   };
 }
 
-$(function () {
-    // the half circle dashboard things built with the Donut functions
-    $('.stats-highlight').each(initStats);
-    $('.plotly-chart').each(initPlotly);
-});
-
-// TODO: fallback image for non-js,
-// Description and details for screen readers
-function initPlotly(d3, Plotly) {
-    var container = $(this);
-
-    if ($('html').hasClass('ie8') || $('html').hasClass('ie7')) {
-        //  TODO: Unsupport graphs fall back to image
-        if (!container.has('img').length) {
-            container.html('<span class="plotly-chart--loading">Chart image not found</span>')
-        }
-        return;
-    }
-
-    // no supplied image fallback show loading indicator
-    if (!container.has('img').length) {
-        container.html('<span class="plotly-chart--loading">Loading</span>')
-    }
-
-    var libs = [
-        'd3', 'Plotly',
-        // for ie9 support
-        (('Float32Array' in window)
-            ? ''
-            : 'typedarray')
-    ];
-
-    requirejs(libs, function (d3, Plotly) {
-        var WIDTH_IN_PERCENT_OF_PARENT = 100,
-            HEIGHT_IN_PERCENT_OF_PARENT = 100;
-        container.empty();
-
-        function getHeight() {
-            var tempHeight = container.attr('data-fixed-height')
-                ? container.attr('data-fixed-height') + "px"
-                : HEIGHT_IN_PERCENT_OF_PARENT + "%";
-
-            return tempHeight;
-        }
-        var gd3 = d3.select(container.get(0)).style({
-            width: WIDTH_IN_PERCENT_OF_PARENT + '%',
-            'margin-left': (100 - WIDTH_IN_PERCENT_OF_PARENT) / 2 + '%',
-
-            height: getHeight(),
-            'margin-top': (100 - WIDTH_IN_PERCENT_OF_PARENT) / 2 + '%'
-        });
-
-        var gd = gd3.node();
-        var title = container.attr("data-title");
-        var xLabel = container.attr('data-x-label');
-        var yLabel = container.attr('data-y-label');
-
-        getConfig(d3, container, function (config) {
-            Plotly.plot(gd, config, {
-                title: title,
-                font: {
-                    family: "Source Sans Pro, sans-serif",
-                    size: 20,
-                    color: '#333'
-                },
-                xaxis: {
-                    title: xLabel,
-                    titlefont: {
-                        family: "Source Sans Pro, sans-serif",
-                        size: 18,
-                        color: "#333"
-                    }
-                },
-                yaxis: {
-                    title: yLabel,
-                    titlefont: {
-                        family: "Source Sans Pro, sans-serif",
-                        size: 18,
-                        color: "#333"
-                    }
-                }
-                // not setting the background color atm, keep default
-                // paper_bgcolor: container.css("background-color")
-            });
-
-            // This does not work atm,
-            // following this issue for updates
-            // https://github.com/plotly/plotly.js/issues/102
-
-            // container.on('mousemove', function (data) {
-            //
-            //     // make things bigger
-            //     var hovertext = container.find(".hovertext");
-            //     var trans = hovertext.attr('transform')
-            //     // hovertext.attr('transform', trans + ' scale(1.3)');
-            //
-            //     // give more padding around text by setting stroke to the
-            //     // same color as the fill
-            //     var path = hovertext.find('path');
-            //     var color = path.css('fill');
-            //     console.log(color);
-            //     path.css({'stroke-width': 7, 'stroke': color})
-            // });
-        });
-
-        $(window).on('resize', function () {
-            var gd3 = d3.select(container.get(0)).style({height: getHeight()});
-            Plotly.Plots.on("resize", gd);
-        });
-
-    });
-}
-
-var defaultBar = [
-    {
-        "type": "bar",
-        "x": [],
-        "y": [],
-        "marker": {
-            "color": "#046B99",
-            "line": {
-                "width": 0.5
-            }
-        }
-    }
-];
-
-var defaultLine = [
-    {
-        "x": [],
-        "y": [],
-        "mode": "lines",
-        "name": "Solid",
-        "line": {
-            "color": "#046B99",
-            "dash": "solid",
-            "width": 4
-        }
-    }
-];
-
-var defaultPie = [
-    {
-        "values": [],
-        "labels": [],
-        "hoverinfo": "label+percent",
-        "type": "pie",
-        "marker": {
-            "colors": [
-                "#E1F2F7",
-                "#9FDBF1",
-                "#02BFE7",
-                "#35BBAA",
-                "#72CE6F",
-                "#815AB4",
-                "#D34A37",
-                "#F27E31",
-                "#FFCA4A"
-            ]
-        }
-    }
-];
-
-function getConfigSkeleton(type) {
-    switch (type) {
-        case "bar":
-            return defaultBar;
-        case "pie":
-            return defaultPie;
-        case "line":
-            return defaultLine;
-        default:
-            return [];
-    }
-}
-
-function getConfig(d3, container, func) {
-    var sourceUrl = container.attr('data-datasource-url');
-    var configUrl = container.attr('data-config-url');
-    var chartType = container.attr('data-type');
-    var color = container.attr('data-color');
-
-    if (configUrl) {
-        $.getJSON(configUrl, func);
-        return;
-    }
-
-    var config = getConfigSkeleton(chartType);
-
-    var xValues = container.attr('data-x-values');
-    var yValues = container.attr('data-y-values');
-
-    if (xValues) {
-        xValues = xValues.split('|').map(function (d) {
-            if(isNaN(parseFloat(d))) {
-              return d;
-            }
-            return + d
-        });
-    } else {
-        xValues = [];
-    }
-
-    if (yValues) {
-        yValues = yValues.split('|');
-    } else {
-        yValues = [];
-    }
-    switch (chartType) {
-        case "line":
-        case "bar":
-            config[0].x = xValues
-            config[0].y = yValues.map(function (d) {
-                return + d
-            });
-            break;
-
-        case "pie":
-            config[0].values = xValues;
-            config[0].labels = yValues;
-            break;
-        default:
-
-    }
-
-    if (!color) {
-        color = '#046B99';
-    }
-
-    // specifiying the color
-    switch (chartType) {
-        case "line":
-            config[0].line.color = d3.rgb(color).toString();
-            break;
-        case "bar":
-            config[0].marker.color = d3.rgb(color).toString();
-            break;
-
-        case "pie":
-            var colorA = d3.hsl(color);
-            var colorB = d3.hsl((colorA.h - (4 * xValues.length)) % 360, colorA.s, colorA.l)
-
-            var colorScale = d3.scale.linear().domain(xValues).interpolate(d3.interpolateHsl).range([colorA.toString(), colorB.toString()]);
-            var colors = xValues.map(function (d) {
-                return colorScale(d);
-            });
-            config[0].marker.colors = colors;
-
-            break;
-        default:
-
-    }
-
-    func(config);
-
-}
-
-function initStats() {
-    var container = $(this);
-    var libs = ['d3'];
-    if ($('html').hasClass('ie8')|| $('html').hasClass('ie7') ) {
-        return;
-        //  TODO: Unsupport graphs fall back to something else
-    }
-    requirejs(libs, function (d3) {
-
-        var shouldFlip = container.attr('data-direction') == 'right'
-            ? true
-            : false;
-
-        var data = parseFloat(container.attr('data-percentfill'));
-        var chart = container.find('.half-gauge-chart');
-        var color = container.attr('data-colorfill');
-        var showHalfTick = container.find('.small-goal-text').length != 0;
-
-        var config = {
-            bindTo: chart.get(0),
-            background: true,
-            maxValue: 100,
-            startAngle: -90,
-            endAngle: 90,
-            thickness: 5,
-            color: color,
-            showHalfTick: showHalfTick,
-            size: {
-                width: chart.get(0).clientWidth,
-                height: chart.get(0).clientWidth
-            },
-            flipStart: shouldFlip
-        };
-        var Donut = initHalfDonut(d3);
-
-        var donutChart = new Donut(config);
-
-        donutChart.load({data: 0});
-
-        function sizeText() {
-            var width = chart.get(0).clientWidth;
-            var height = chart.get(0).clientHeight;
-            var detail = container.find('.small-goal-text');
-            var lineHeight = parseFloat(container.find('.small-goal-text').css('line-height'));
-
-            container.find('.info').css({
-                top: -width / 4
-            });
-            detail.css({
-                'font-size': width / 18
-            });
-            var detailHeight = detail.height();
-
-            detail.css({
-                top: (width < 400)
-                    ? detailHeight * 2 + 20
-                    : (detailHeight * 1.5)
-            })
-            container.find('.big-number').css({
-                'font-size': width / 6
-            });
-            container.find('.percent-detail').css({
-                'font-size': width / 10
-            });
-        }
-
-        sizeText();
-
-        $(window).on('resize', function () {
-
-            window.setTimeout(function () {
-                config.size = {
-                    width: chart.width(),
-                    height: chart.width()
-                };
-                config.data = data;
-                donutChart = new Donut(config);
-                donutChart.load({data: data});
-                sizeText();
-            }, 10);
-
-        });
-
-        var waypoint = new Waypoint({
-            element: chart.get(0),
-            // start when it appears at the bottom
-            offset: '100%',
-            handler: function () {
-                donutChart.load({data: data})
-            }
-        });
-    })
-
-}
-
-/**
- * Custom Half Donut plugin
- * TODO: code clean up, and refactor
- */
-
-function initHalfDonut(d3) {
-
-    var defaults = {
-        className: 'donut',
-        size: {
-            width: 200,
-            height: 200
-        },
-        margin: {
-            top: 20,
-            right: 20,
-            bottom: 20,
-            left: 20
-        },
-        startAngle: 0,
-        endAngle: 360,
-        thickness: null,
-        offset: 0,
-        sort: null,
-        maxValue: null,
-        background: false,
-        flipStart: false,
-        color: 'rgb(49, 130, 189)',
-        accessor: function (d, i) {
-            return d;
-        }
-    };
-
-    var Donut = function (config) {
-        // need an extend fn
-        this.config = extend({}, defaults, config);
-
-        // setup radius
-        this.config.radius = getRadius(this);
-
-        // setup accessor
-        this.accessor = this.config.accessor;
-
-        // convenience method to map data to start/end angles
-        this.pie = d3.layout.pie().sort(this.config.sort).startAngle(degToRad(this.config.startAngle)).endAngle(degToRad(this.config.endAngle))
-
-        if (this.accessor && typeof this.accessor === 'function') {
-            this.pie.value(this.accessor);
-        }
-
-        var thickness = getThickness(this);
-
-        // setup the arc
-        // divide offset by 4 because the middle of the stroke aligns to the edge
-        // so it's 1/2 on the outside, 1/2 inside
-        this.arc = d3.svg.arc().innerRadius(this.config.radius - thickness - (this.config.offset / 4)).outerRadius(this.config.radius + (this.config.offset / 4));
-
-        bindSvgToDom(this);
-    };
-
-    Donut.prototype.load = function (newOpts) {
-        // store data on object
-        var data = (newOpts && newOpts.data != null)
-            ? newOpts.data
-            : this.data.map(this.accessor);
-
-        // convert to array if not already
-        data = Array.isArray(data)
-            ? data
-            : [data];
-
-        if (this.config.maxValue) {
-            this.data = this.pieMaxValue(data);
-        } else {
-            this.data = this.pie(data);
-        }
-
-        // drawPaths
-        drawPaths(this);
-    };
-
-    Donut.prototype.pieMaxValue = function (data) {
-        var accessor = this.accessor,
-            self = this;
-
-        // Compute the numeric values for each data element.
-        var values = data.map(function (d, i) {
-            return + accessor.call(self, d, i);
-        });
-
-        var sum = d3.sum(values),
-            max = d3.max([this.config.maxValue, sum]),
-            diff = max - sum;
-
-        // Compute the start angle.
-        var a = +(degToRad(this.config.startAngle));
-
-        // Compute the angular scale factor: from value to radians.
-        // include the diff because it will help create angles with a maxValue in mind
-        var k = (degToRad(this.config.endAngle) - a) / (sum + diff);
-
-        var index = d3.range(data.length);
-
-        // Compute the arcs!
-        // They are stored in the original data's order.
-        var arcs = [];
-        index.forEach(function (i) {
-            var d;
-            arcs[i] = {
-                data: data[i],
-                value: d = values[i],
-                startAngle: a,
-                endAngle: a += d * k
-            };
-        });
-        return arcs;
-    };
-
-    function getThickness(donut) {
-        return donut.config.thickness || donut.config.radius;
-    }
-
-    /*
-     * Setup the svg in the DOM and cache a ref to it
-     */
-    function bindSvgToDom(donut) {
-        var width = getWidth(donut),
-            height = getHeight(donut);
-        var transString = 'translate(' + width / 2 + ',' + height / 2 + ')' + ((donut.config.flipStart == true)
-            ? ' scale(-1,1)'
-            : '');
-
-        var tempSVG = d3.select(donut.config.bindTo).select('svg');
-
-        if (tempSVG.empty()) {
-            donut.svg = d3.select(donut.config.bindTo).append('svg').attr('class', donut.config.classNames).attr('width', width).attr('height', height / 2).append('g').attr('transform', transString);
-        } else {
-            donut.svg = d3.select(donut.config.bindTo).select('svg').attr('class', donut.config.classNames).attr('width', width).attr('height', height / 2).select('g').attr('transform', transString);
-            donut.svg.selectAll('*').remove();
-        }
-
-        if (donut.config.background) {
-            donut.svg.append('path').attr('class', 'donut-background').transition().duration(0).attrTween('d', function (d, i) {
-                var fullArc = {
-                    value: 0,
-                    startAngle: degToRad(donut.config.startAngle),
-                    endAngle: degToRad(donut.config.endAngle)
-                };
-                return arcTween.call(this, fullArc, i, donut);
-            });
-        }
-
-        if (donut.config.showHalfTick) {
-            donut.svg.append('line').attr('class', 'donut-halfmark').attr('stroke', 'gray').attr('stroke-width', 1).attr({
-                'x1': 0,
-                'x2': 0,
-                'y1': -height / 2 + 10,
-                'y2': -height / 2 + 35
-            });
-
-        }
-    }
-
-    function drawPaths(donut) {
-        var paths = donut.svg.selectAll('path.donut-section').data(donut.data);
-
-        // enter new data
-        paths.enter().append('path').attr('class', function (d, i) {
-            return 'donut-section value-' + i;
-        }).attr('fill', donut.config.color).attr('stroke', '#fff').attr('stroke-width', donut.config.offset / 2);
-
-        // transition existing paths
-        donut.svg.selectAll('path.donut-section').transition().duration(2000).attrTween('d', function (d, i) {
-            return arcTween.call(this, d, i, donut);
-        });
-
-        // exit old data
-        paths.exit().transition().duration(100).attrTween('d', function (d, i) {
-            return removeArcTween.call(this, d, i, donut);
-        }).remove();
-
-    }
-
-    // Store the currently-displayed angles in this._current.
-    // Then, interpolate from this._current to the new angles.
-    function arcTween(a, i, donut) {
-        var prevSiblingArc,
-            startAngle,
-            newArc,
-            interpolate;
-
-        if (!this._current) {
-            prevSiblingArc = donut.svg.selectAll('path')[0][i - 1]; // donut.data[i - 1];
-
-            // start at the end of the previous one or start of entire donut
-            startAngle = (prevSiblingArc && prevSiblingArc._current)
-                ? prevSiblingArc._current.endAngle
-                : degToRad(donut.config.startAngle);
-
-            newArc = {
-                startAngle: startAngle,
-                endAngle: startAngle,
-                value: 0
-            };
-        }
-
-        interpolate = d3.interpolate(this._current || newArc, a);
-
-        // cache a copy of data to each path
-        this._current = interpolate(0);
-        return function (t) {
-            return donut.arc(interpolate(t));
-        };
-    }
-
-    function removeArcTween(a, i, donut) {
-        var emptyArc = {
-                startAngle: degToRad(donut.config.endAngle),
-                endAngle: degToRad(donut.config.endAngle),
-                value: 0
-            },
-            i = d3.interpolate(a, emptyArc);
-        return function (t) {
-            return donut.arc(i(t));
-        };
-    }
-
-    function getRadius(donut) {
-        var width = getWidth(donut) - donut.config.margin.left - donut.config.margin.right,
-            height = getHeight(donut) - donut.config.margin.top - donut.config.margin.bottom;
-
-        return Math.min(width, height) / 2;
-    }
-
-    function getWidth(donut) {
-        return donut.config.size && donut.config.size.width;
-    }
-
-    function getHeight(donut) {
-        return donut.config.size && donut.config.size.height;
-    }
-
-    function degToRad(degree) {
-        return degree * (Math.PI / 180);
-    }
-
-    function radToDeg(radian) {
-        return radian * (180 / Math.PI);
-    }
-
-    /*
-     * Simple extend fn like jQuery
-     *
-     * Usage: extend({ name: 'Default' }, { name: 'Matt' });
-     * Result: { name: 'Matt' }
-     */
-    function extend() {
-        for (var i = 1; i < arguments.length; i++) {
-            for (var prop in arguments[i]) {
-                if (arguments[i].hasOwnProperty(prop)) {
-                    arguments[0][prop] = arguments[i][prop];
-                }
-            }
-        }
-        return arguments[0];
-    }
-
-    return Donut;
-
-}
-
 /* -----------------------------------------
    PARALLAX EFFECT
    /source/js/cagov/parallax.js
@@ -18772,45 +17713,45 @@ function initHalfDonut(d3) {
 
 (function($) {
 
-    $.fn.parallax = function(options) {
+    $.fn.parallax = function (options) {
 
         var windowHeight = $(window).height();
 
         // Establish default settings
         var settings = $.extend({
-            speed        : 0.3
+            speed: 0.3
         }, options);
 
         // Iterate over each object in collection
-        return this.each( function() {
+        return this.each(function () {
 
             // Save a reference to the element
             var $this = $(this);
 
-              // Init proper heights
-              var bg_height = ($(window).outerHeight() * settings.speed) + $this.innerHeight();
-              $this.css( { 'height' : bg_height } );
+            // Init proper heights
+            var bg_height = $(window).outerHeight() * settings.speed + $this.innerHeight();
+            $this.css({ 'height': bg_height });
 
             // Set up Scroll Handler
-            $(window).scroll(function() {
+            $(window).scroll(function () {
                 var element_top = $this.offset().top,
                     window_top = $(window).scrollTop(),
-                    y_pos = ( ( ( window_top + $(window).innerHeight() ) - element_top ) * settings.speed ),
+                    y_pos = (window_top + $(window).innerHeight() - element_top) * settings.speed,
                     main_position;
 
                 main_position = 'translate(0, ' + y_pos + 'px)';
 
-                $this.css( {
-                    '-webkit-transform' : main_position,
-                    '-moz-transform'    : main_position,
-                    '-ms-transform'     : main_position,
-                    'transform'         : main_position
-                } );
+                $this.css({
+                    '-webkit-transform': main_position,
+                    '-moz-transform': main_position,
+                    '-ms-transform': main_position,
+                    'transform': main_position
+                });
             });
-        // $(window).scroll();
+            // $(window).scroll();
 
         });
-    }
+    };
 }(jQuery));
 
 $('.parallax-bg').parallax();
@@ -18826,24 +17767,24 @@ $(document).ready(function () {
 
 function initAnimations() {
   var $this = $(this);
-  var waypoint = new Waypoint({
-      element: $this.get(0),
-      // start when it appears at the bottom
-      offset: '95%',
-      handler: function () {
-          // get the class and animation name out of it
-          var animation = $this.attr("class").match(/animate-(\w+)\b/i)[1];
-          var toRemove = 'animate-' + animation;
-          var toAdd = 'animated ' + animation;
+    var waypoint = new Waypoint({
+        element: $this.get(0),
+        // start when it appears at the bottom
+        offset: '95%',
+        handler: function () {
+            // get the class and animation name out of it
+            var animation = $this.attr("class").match(/animate-(\w+)\b/i)[1];
+            var toRemove = 'animate-' + animation;
+            var toAdd = 'animated ' + animation;
 
-          // update classes
-          $this.removeClass('animate-' + animation);
-          $this.addClass('animated ' + animation);
+            // update classes
+            $this.removeClass('animate-' + animation);
+            $this.addClass('animated ' + animation);
 
-          // stop firing again
-          this.disable();
-      }
-  })
+            // stop firing again
+            this.disable();
+        }
+    });
 }
 
 $(document).ready(function () {
@@ -18859,14 +17800,14 @@ $(document).ready(function () {
     $(".explore-invite").on('click', function (e) {
         e.preventDefault();
         var extraHeight = $('header.fixed').height();
-         $viewport.animate({
+        $viewport.animate({
             scrollTop: $(".main-primary").offset().top - extraHeight
         }, 2000);
 
         // Stop the animation if the user scrolls
-        $(document).one("scroll mousedown DOMMouseScroll mousewheel keyup touchstart", function(e){
-            if ( e.which > 0 || e.type === "mousedown" || e.type === "mousewheel"  || e.type == 'touchstart'){
-                 $viewport.stop();
+        $(document).one("scroll mousedown DOMMouseScroll mousewheel keyup touchstart", function (e) {
+            if (e.which > 0 || e.type === "mousedown" || e.type === "mousewheel" || e.type === 'touchstart') {
+                $viewport.stop();
             }
         });
     });
@@ -18874,23 +17815,23 @@ $(document).ready(function () {
 
 });
 
-(function($) {
+(function ($) {
 
-    $.fn.toggleMore = function(bool) {
+    $.fn.toggleMore = function (bool) {
 
-      /**
-       * Helper for setting required attrs and class
-       */
-      function expanded($this, bool) {
-          if (bool) {
-              $this.addClass('active').attr('aria-expanded', 'true');
-          } else {
-              $this.removeClass('active').attr('aria-expanded', 'false');
-          }
-      }
+
+        // * Helper for setting required attrs and class
+
+        function expanded($this, bool) {
+            if (bool) {
+                $this.addClass('active').attr('aria-expanded', 'true');
+            } else {
+                $this.removeClass('active').attr('aria-expanded', 'false');
+            }
+        }
 
         // Iterate over each object in collection
-        return this.each( function() {
+        return this.each(function () {
 
             // Save a reference to the element
 
@@ -18905,7 +17846,7 @@ $(document).ready(function () {
                     : expanded($this, false);
             }
 
-  
+
             $this.off("click.cagovmore");
             $this.on("click.cagovmore", function () {
                 $this.hasClass('active')
@@ -18914,7 +17855,7 @@ $(document).ready(function () {
             });
 
         });
-    }
+    };
 }(jQuery));
 
 
@@ -18922,7 +17863,7 @@ $(document).ready(function () {
 
 // TODO: readd this back in
 function makeBlur($el) {
-    $el.Vague({intensity: 6}).trigger("blur");
+    $el.Vague({ intensity: 6 }).trigger("blur");
 }
 
 
@@ -18935,19 +17876,19 @@ function initLoad() {
     makeBlur(moreContents);
     function loadMore(url) {
         $(moreContents).load(url, function (response, status, xhr) {
-          var linkHeader = xhr.getResponseHeader("Link");
-          if(isTest) {
-            return;
-          }
-          if ((status == "error" || linkHeader == null)) {
-              $moreBtn.animate({
-                  'opacity': 0,
-                  'height': 0
-              }, 300, 'linear');
-          } else {
-              htmlURL = linkHeader.match(/<(.*?)>/)[1];
-          }
-      });
+            var linkHeader = xhr.getResponseHeader("Link");
+            if (isTest) {
+                return;
+            }
+            if (status === "error" || linkHeader === null) {
+                $moreBtn.animate({
+                    'opacity': 0,
+                    'height': 0
+                }, 300, 'linear');
+            } else {
+                htmlURL = linkHeader.match(/<(.*?)>/)[1];
+            }
+        });
     }
 
 
@@ -18955,10 +17896,10 @@ function initLoad() {
 
     $moreBtn.on('click', function (e) {
         e.preventDefault();
-        $(moreContents).children().hide().appendTo(elTarget).fadeIn(1000)
+        $(moreContents).children().hide().appendTo(elTarget).fadeIn(1000);
         $(elTarget).trigger('more.new');
         loadMore(htmlURL);
-    })
+    });
 }
 
 /* -----------------------------------------
@@ -18979,6 +17920,7 @@ $(document).ready(function () {
     var theHTML = $('html');
 
     var isHighContrast = localStorage.getItem('high-contrast');
+    var isDyslexic = localStorage.getItem('dyslexic');
 
     function onContrast() {
         enableHighContrastButton.addClass('active');
@@ -19037,6 +17979,7 @@ $(document).ready(function () {
     var incFontSize = $('.increaseTextSize');
     var decFontSize = $('.decreaseTextSize');
     var resetFontSize = $('.resetTextSize');
+    var dyslexicFontBtn = $('.dyslexicFont');
 
     // in rems's
     var MAXFONTSIZE = 1.5;
@@ -19046,10 +17989,10 @@ $(document).ready(function () {
     // Read in previous settings and convert to number
     var fontSize = +localStorage.getItem('font-size');
     if (fontSize) {
-        $('html').css("font-size", fontSize + 'rem')
+        $('html').css("font-size", fontSize + 'rem');
     } else {
         fontSize = 1;
-        $('html').css("font-size", fontSize  + 'rem')
+        $('html').css("font-size", fontSize + 'rem');
     }
 
     // init button styles for fonts
@@ -19057,7 +18000,7 @@ $(document).ready(function () {
 
     // utility functions
     function updateFont(f) {
-        var updatedSize = Math.min(MAXFONTSIZE, Math.max(f, MINFONTSIZE))
+        var updatedSize = Math.min(MAXFONTSIZE, Math.max(f, MINFONTSIZE));
         localStorage.setItem('font-size', updatedSize);
         $('html').css("font-size", updatedSize + "rem");
         updateFontBtns(updatedSize);
@@ -19078,7 +18021,7 @@ $(document).ready(function () {
     }
 
     incFontSize.on('click', function () {
-        fontSize += STEPVALUE
+        fontSize += STEPVALUE;
         fontSize = updateFont(fontSize);
     });
 
@@ -19088,8 +18031,28 @@ $(document).ready(function () {
     });
 
     resetFontSize.on('click', function () {
-        fontSize = updateFont(1)
-    })
+        $("html").removeAttr("style");
+        $('body, h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .first-level-link, .slide-text, .slide-text .title, .stat-counter, .explore-invite .explore-title').removeAttr("style");
+        localStorage.removeItem('dyslexic');
+        localStorage.removeItem('font-size');
+    });
+
+
+    if (isDyslexic) {
+        dyslexicFont();
+    }
+
+    dyslexicFontBtn.on('click', function () {
+        dyslexicFont();
+    });
+
+    function dyslexicFont() {
+        $('body, h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .first-level-link, .slide-text, .slide-text .title, .stat-counter, .explore-invite .explore-title').attr("style", "font-family: 'OpenDyslexicAlta Regular', sans serif !important");
+        localStorage.setItem('dyslexic', 'true');
+    }
+
+
+
 });
 
 /* -----------------------------------------
@@ -19114,34 +18077,158 @@ $(document).ready(function () {
     // removing unsupported aria attribute to fix aria validator errors
     $("#askGroup").removeAttr("aria-multiselectable");
 });
+
 /* -----------------------------------------
-   Tabs -- some fixing to bootstap 3 tabs 
-   and backward compatibility
+   PANES
 ----------------------------------------- */
-$(document).ready(function () {
-    // adding active class to a tag if aria selected is true 
-    var activeTab = $(".nav-tabs > li > a[aria-selected='true']");
-    activeTab.addClass("active");
 
-    // Just to change class active in the parent li element (backward compatibility)
-    $(".nav-tabs > li > a").on("click", function () {
-        if ($(this).attr('aria-selected') == "false") {
-            $(".nav-tabs > li").removeClass("active");
-            $(this).parent("li").addClass("active");
-        }
-        else {
-            $(".nav-tabs > li").removeClass("active");
-            $(this).parent("li").addClass("active");
-        }
-    });
-
-
-    /* Tabblale tabs */
-    var tabs = $('ul.nav-tabs').find('.nav-link');
-    tabs.attr("tabindex", 0); // make accordion tabable
-
-
+$(document).ready(pane);
+$(window).on("resize", function () {
+	pane();
 });
+function pane() {
+	$(".even .group-left").each(function () {
+		if (window.innerWidth < 768) {
+			var EvenLeftHeight = $(this).height();
+			$(this).height(EvenLeftHeight);
+			$(this).css("top", EvenLeftHeight);
+
+		}
+		else {
+			$(this).css("top", 0);
+		}
+	});
+
+
+	$(".even .group-right").each(function () {
+		if (window.innerWidth < 768) {
+			var EvenRightHeight = $(this).prev().height();
+			$(this).height(EvenRightHeight);
+			$(this).css("top", -EvenRightHeight);
+
+		}
+		else {
+			$(this).css("top", 0);
+		}
+	});
+
+	$(".pane-img").each(function () {
+		var SetHeight = $(this).parent().height();
+		$(this).height(SetHeight);
+	});
+	
+}
+// Displaying HTML Source code in HTML Page
+
+var entityMap = {
+    "&": "&amp;",
+    "<": "&lt;",
+    ">": "&gt;",
+    '"': '&quot;',
+    "'": '&#39;',
+    "/": '&#x2F;'
+};
+
+function escapeHtml(string) {
+    return String(string).replace(/[&<>"'\/]/g, function (s) {
+        return entityMap[s];
+    });
+}
+
+
+window.onload = function init() {
+    var codeblock = document.querySelectorAll("pre code");
+
+    if (codeblock.length) {
+        for (var i = 0, len = codeblock.length; i < len; i++) {
+            var dom = codeblock[i];
+            var html = dom.innerHTML;
+            html = escapeHtml(html);
+            dom.innerHTML = html;
+        }
+    }
+};
+/* -----------------------------------------
+   TABS -- custom accessible tabs
+----------------------------------------- */
+
+(function () {
+    // Get relevant elements and collections
+    var tabbed = document.querySelector('.tabs');
+    if (tabbed !== null) {
+        var tablist = tabbed.querySelector('ul');
+        var tabs = tablist.querySelectorAll('a');
+        var panels = tabbed.querySelectorAll('[id^="section"]');
+
+
+        // The tab switching function
+        var switchTab = function (oldTab, newTab) {
+            newTab.focus();
+            // Make the active tab focusable by the user (Tab key)
+            newTab.removeAttribute('tabindex');
+            // Set the selected state
+            newTab.setAttribute('aria-selected', 'true');
+            oldTab.removeAttribute('aria-selected');
+            oldTab.setAttribute('tabindex', '-1');
+            // Get the indices of the new and old tabs to find the correct
+            // tab panels to show and hide
+            var index = Array.prototype.indexOf.call(tabs, newTab);
+            var oldIndex = Array.prototype.indexOf.call(tabs, oldTab);
+            panels[oldIndex].hidden = true;
+            panels[index].hidden = false;
+        };
+
+        // Add the tablist role to the first <ul> in the .tabbed container
+        tablist.setAttribute('role', 'tablist');
+
+        // Add semantics are remove user focusability for each tab
+        Array.prototype.forEach.call(tabs, function (tab, i) {
+            tab.setAttribute('role', 'tab');
+            tab.setAttribute('id', 'tab' + (i + 1));
+            tab.setAttribute('tabindex', '-1');
+            tab.parentNode.setAttribute('role', 'presentation');
+
+            // Handle clicking of tabs for mouse users
+            tab.addEventListener('click', function (e) {
+                e.preventDefault();
+                var currentTab = tablist.querySelector('[aria-selected]');
+                if (e.currentTarget !== currentTab) {
+                    switchTab(currentTab, e.currentTarget);
+                }
+            });
+
+            // Handle keydown events for keyboard users
+            tab.addEventListener('keydown', function (e) {
+                // Get the index of the current tab in the tabs node list
+                var index = Array.prototype.indexOf.call(tabs, e.currentTarget);
+                // Work out which key the user is pressing and
+                // Calculate the new tab's index where appropriate
+                var dir = e.which === 37 ? index - 1 : e.which === 39 ? index + 1 : e.which === 40 ? 'down' : null;
+                if (dir !== null) {
+                    e.preventDefault();
+                    // If the down key is pressed, move focus to the open panel,
+                    // otherwise switch to the adjacent tab
+                    dir === 'down' ? panels[i].focus() : tabs[dir] ? switchTab(e.currentTarget, tabs[dir]) : void 0;
+                }
+            });
+        });
+
+        // Add tab panel semantics and hide them all
+        Array.prototype.forEach.call(panels, function (panel, i) {
+            panel.setAttribute('role', 'tabpanel');
+            panel.setAttribute('tabindex', '-1');
+            var id = panel.getAttribute('id');
+            panel.setAttribute('aria-labelledby', tabs[i].id);
+            panel.hidden = true;
+        });
+
+        // Initially activate the first tab and reveal the first tab panel
+        tabs[0].removeAttribute('tabindex');
+        tabs[0].setAttribute('aria-selected', 'true');
+        panels[0].hidden = false;
+    }
+})();
+
 /* -----------------------------------------
    Utility Header
 ----------------------------------------- */

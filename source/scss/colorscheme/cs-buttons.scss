@@ -15,6 +15,13 @@
     }
 }
 
+
+// better-button = color; background; border, hover-color; hover-background; hover-border
+.btn-outline-primary {
+    @include better-button($color-p2, $white, $color-p2, $white, $color-p2, darken($color-p2, 7%)); // beta 6.0 addition
+}
+
+
 .btn-default {
     @include better-button($gray-base, rgba(255,255,255,.65), $gray-base, $gray-base, rgba(255,255,255,1), $gray-base);
 }
@@ -32,9 +39,22 @@
     }
 }
 
+// better-button = color; background; border, hover-color; hover-background; hover-border
+.btn-outline-standout {
+    @include better-button($color-p3, $white, $color-p3, $white, $color-p3, darken($color-p3, 7%)); // beta 6.0 addition
+}
+
 // beta 5.0 addition
 .btn-highlight {
-    @include better-button($gray-base, $color-p1, $color-p1, $gray-base, darken($color-p1, 7%), darken($color-p1, 7%));
+    @include better-button($gray-darker, $color-p1, $color-p1, $gray-darker, darken($color-p1, 7%), darken($color-p1, 7%));
+}
+
+// better-button = color; background; border, hover-color; hover-background; hover-border
+.btn-outline-highlight {
+    @include better-button($text-color, $white, $color-p1, $text-color, $color-p1, darken($color-p1, 7%)); // beta 6.0 addition
+    &.active {
+        color: $text-color;
+    }
 }
 
 .btn-secondary {
@@ -54,6 +74,12 @@
     &.disabled {
         color: $gray-base;
     }
+}
+
+
+// better-button = color; background; border, hover-color; hover-background; hover-border
+.btn-outline-secondary {
+    @include better-button($gray, $white, $gray, $white, $gray, darken($gray, 7%)); // beta 6.0 addition
 }
 
 .check-icon-radio {

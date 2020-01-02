@@ -3,26 +3,26 @@
 <!--[if IE 7]>    <html class="no-js ie7 oldie" lang="en"> <![endif]-->
 <!--[if IE 8]>    <html class="no-js ie8 oldie" lang="en"> <![endif]-->
 <!--[if IE 9]>    <html class="no-js ie9 oldie" lang="en"> <![endif]-->
-<!--[if (gt IE 9)]><!-->
-<html class="no-js" lang="en">
-<!--<![endif]-->
+<!--[if (gt IE 9)]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
 <head>
-    <!--
-    California State Template
-Version 5.0.11
 
-    Based on Twitter Bootstrap
-    -->
-    <meta charset="utf-8">
+<!--    California State Template
+    Version 6.0.0
+ 
+Based on Twitter Bootstrap
+-->
+<meta charset="utf-8">
 
-    <title>Sample - Featured Search</title>
+<title>Sample - Featured Search</title>
 
-    <meta name="Author" content="State of California" />
-    <meta name="Description" content="State of California" />
-    <meta name="Keywords" content="California, government" />
+<meta name="Author" content="State of California" />
+<meta name="Description" content="State of California" />
+<meta name="Keywords" content="California, government" />
 
-    <!--#include virtual="/ssi/head-css-js.html" -->
-
+<!--#include virtual="/ssi/head-css-js.html" -->
+<script type="text/javascript">
+    var defaultActiveLink = "Components";
+</script>
 </head>
 
 <body>
@@ -43,13 +43,13 @@ Version 5.0.11
         <!-- Settings Bar -->
         <!--#include virtual="/ssi/settings-bar.html" -->
         <!-- Include Branding -->
-        <!--#include virtual="/ssi/branding.html" -->
+        <!--#include virtual="/ssi/branding-lightgrey.html" -->
         <!-- Include Mobile Controls -->
         <!--#include virtual="/ssi/mobile-controls.html" -->
 
         <div class="navigation-search">
             <!-- Include Navigation -->
-            <!--#include virtual="/ssi/navigation.html" -->
+            <!--#include virtual="/sample/modules/nav-flex.html" -->
 
             <div id="head-search" class="search-container featured-search">
                 <!-- Include Search -->
@@ -76,11 +76,11 @@ Version 5.0.11
     <div id="main-content" class="main-content">
         <!-- Include Page Template -->
         <!--#include virtual="/ssi/header-single-banner.html" -->
-        <div class="section">
-            <main class="main-primary">
+        <div class="container p-b-lg">
+            <main class="main-primary">            
                 <ol class="breadcrumb">
                     <li><a href="../index.html" title="Home page">Home</a></li>
-                    <li><a href="index.html" title="Examples landing page">Examples</a></li>
+                    <li><a href="/sample/" title="Content Modules landing page">Content Modules</a></li>
                     <li class="active">Featured Search</li>
                 </ol>
 
@@ -96,9 +96,9 @@ Version 5.0.11
                         <p>&nbsp;</p>
                     </div>
                     <div class="half">
-                        <h2 id="source-code1">Source Code <span class="sr-only">For Search Container</span>:</h2>
-                        <textarea id="basic-progress" class="form-control" rows="10" cols="80" aria-labelledby="source-code1"><!--#include virtual="/sample/modules/featured-search.html" -->
-                         </textarea>
+                        <h2>Source Code:</h2>
+                        <pre><code class="overflow-auto"><!--#include virtual="/sample/modules/featured-search.html" -->
+                            </code></pre>
                     </div>
                     <div class="clearfix"></div>
 
@@ -112,8 +112,8 @@ Version 5.0.11
                         <p>The number of buttons can be customized from two to six including the menu options for each one. All of the configurations are located in the <code>ask-bar.html</code> file located in the <code>ssi</code> folder. Remember to update the <code>&lt;a&gt;</code>class right below the panel div tag of each ask button to the number of total buttons you plan to use. The options are: two, three, four, five and six. The number you pick should coinside with the number of ask buttons in the <code>ask-bar.html</code> file located in the <code>ssi</code> folder.</p>
                     </div>
                     <div class="half">
-                        <h2 id="source-code2">Source Code <span class="sr-only">For Ask Bar</span>:</h2>
-                        <textarea id="basic-progress2" class="form-control" rows="10" cols="80" aria-labelledby="source-code2"><!--#include virtual="/sample/modules/ask-panel.html" --></textarea>
+                        <h2>Source Code:</h2>
+                        <pre><code class="overflow-auto"><!--#include virtual="/sample/modules/ask-panel.html" --></code></pre>
                     </div>
 
                     <div class="clearfix"></div>

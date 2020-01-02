@@ -16,21 +16,35 @@
         transition: all 0.3s;
     }
 
+    /* full width nav search box in fixed nav*/
+    .full-width-nav #head-search.fixed-hide:not(.active) {
+        visibility: visible;
+        opacity: 1;
+        margin-top: 14px;
 
-.no-js {
-  .ask-group.fade {
-    visibility: visible;
-    opacity:1;
-  }
+        .search-textfield {
+            height: 44px !important;
+        }
 
-  #head-search.fade {
-      visibility: visible;
-      opacity:1;
+        .gsc-search-button {
+            height: 44px !important;
+            top: -3px !important;
+        }
+    }
 
-  }
-}
 
-}
+        .no-js {
+            .ask-group.fade {
+                visibility: visible;
+                opacity: 1;
+            }
+
+            #head-search.fade {
+                visibility: visible;
+                opacity: 1;
+            }
+        }
+    }
 
 .global-header.fixed {
     position: fixed;
@@ -43,7 +57,15 @@
 }
 
 .fixed + .main-content {
-    padding-top: 127px;      // Padding for fixed header
+    padding-top: 119px; // Padding for fixed header
+}
+
+.fixed .main-content {
+    padding-top: 119px; // Padding for fixed header
+}
+
+.fixed.nav-full-width-icons + .main-content {
+    padding-top: 145px; // Padding for full width nav with fixed header 
 }
 
 
@@ -67,14 +89,7 @@
         // }
         // covering edge case  where no links are set. Need this to maintain
         // search box and ask group positioning
-        .main-navigation {
-            margin-top: -50px; // Beta 5.0 addition
-            min-height: 50px; // Beta 5.0 addition
-        }
-
-        .first-level-link [class^="ca-gov-icon-"] {
-            display: none;
-        }
+        
 
         .branding {
             height: 57px !important; // Beta 5.0 addition
@@ -86,15 +101,10 @@
             line-height: 55px; // Beta 5.0 addition
             a {
                 max-width: 225px; // Beta 5.0 addition
-                img {
-                    max-height: 50px;
-                }
             }
         }
 
-        .top-level-nav { // Beta 5.0 addition
-            min-height: 50px;
-        }
+
     }
 
 }

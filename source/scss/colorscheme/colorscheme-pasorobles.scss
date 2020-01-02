@@ -14,7 +14,7 @@ $theme-directory:       "#{$template-path}/pasorobles";      // Folder where ass
 
 // Primary Theme colors
 $color-p1:              #fbad23;        // Gold
-$color-p2:              #9a0000;        // Red
+$color-p2:              #691808;        // Red
 $color-p3:              #313131;        // Gray
 
 // Secondary Theme colors
@@ -51,7 +51,7 @@ $panel-border:        #ddd;
 $overstated-header-bg:          $color-p2;      // Background for panel header
 $overstated-header-txt:         #fff;           // Panel header text color 
 $overstated-header-icon:        #fff;           // Panel header icon color  
-$overstated-header-border:      darken($color-p2, 10%);     // Panel header bottom border color 
+$overstated-header-border:      $color-p2;     // Panel header bottom border color 
 $overstated-border:             $panel-border;     // Border surrounding entire panel
 $overstated-body-bg:            $color-s1;      		// Panel body background
 
@@ -72,14 +72,14 @@ $sidebar-default-body-bg:       #fff;      		// Panel body background
 $understated-header-bg:         $color-s1;      // Background for panel header
 $understated-header-txt:        $text-color;        // Panel header text color
 $understated-header-icon:       $color-p3;      // Panel header icon color
-$understated-header-border:     $panel-border;            // Panel header bottom border color   
+$understated-header-border:     $color-s1;            // Panel header bottom border color   
 $understated-border:            $panel-border;           // Border surrounding entire panel
 $understated-body-bg:           #fff;      	// Panel body background
 
 $standout-header-bg:            $color-p3;      // Background for panel header
 $standout-header-txt:           #fff;           // Panel header text color
 $standout-header-icon:          $color-p1;      // Panel header icon color
-$standout-header-border:        $panel-border;       // Panel header bottom border color 
+$standout-header-border:        $color-p3;       // Panel header bottom border color 
 $standout-border:               $panel-border;      // Border surrounding entire panel
 $standout-body-bg:              $color-s1;      // Panel body background
 
@@ -95,44 +95,6 @@ $sub-nav-media-bg:              transparent;
 $expanded-background-color: $gray-lighter;
 $text-field-color: rgba(255, 255, 255, 0.8); // 80% white
 
-/* ----- PASOROBLES PRIMARY THEME COLORS -----  */
+// UTILITY
+$utility-link-hover-color: lighten($color-p1, 35%);
 
-.color-highlight, .color-p1 {
-    color: $color-p1;
-    }
-.color-primary, .color-p2 {
-    color: $color-p2;
-    }
-.color-standout, .color-p3 {
-    color: $color-p3;
-    }
-	
-.bg-highlight, .bg-p1 {
-    background-color: $color-p1 !important;
-    }
-.bg-primary, .bg-p2 {
-    background-color: $color-p2 !important;
-    }
-.bg-standout, .bg-p3 {
-    background-color: $color-p3 !important;
-    }
-	
-/*  SECONDARY THEME COLORS	*/
-.color-s1 {
-    color: $color-s1;
-    }
-.color-s2 {
-    color: $color-s2;
-    }
-.color-s3 {
-    color: $color-s3;
-    }
-.bg-s1 {
-    background-color: $color-s1 !important;
-    }
-.bg-s2 {
-    background-color: $color-s2 !important;
-    }
-.bg-s3 {
-    background-color: $color-s3 !important;
-    }

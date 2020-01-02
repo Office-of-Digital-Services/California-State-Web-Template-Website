@@ -38,6 +38,8 @@
     &-standout {
         @include link-variant($color-s3, darken($color-s2, 15%));
         @include underline($color-s3, darken($color-s2, 15%));
+
+
         @include donut-color-variants($donut-background: $gray-lighter, $donut-halfmark: $gray-lightest);
         background: $color-p3;
         color: contrast($color-p3);
@@ -51,16 +53,15 @@
             // better-button = color; background; border, hover-color; hover-background; hover-border
             @include better-button($white, $color-p3, contrast($color-p3), $white, darken($color-p3, 7%), contrast($color-p3));
         }
-
-        code {
-            color:$white;
-        }
     }
 
     &-impact {
         // SAME AS STANDOUT
         @include link-variant($color-s3, darken($color-s2, 15%));
         @include underline($color-s3, darken($color-s2, 15%));
+
+
+
         @include donut-color-variants($donut-background: $gray-lighter, $donut-halfmark: $gray-lightest);
         background: $color-p3;
         color: contrast($color-p3);
@@ -124,6 +125,7 @@
     &-danger {
         @include link-variant($gray-base, $gray-base);
         @include underline($gray-base, $gray-base);
+
         background: $brand-danger;
         color: contrast($brand-danger);
     }
@@ -131,7 +133,6 @@
 
 // background links / gradient links
 .bg-highlight {
-    color: $gray-base;
     @include link-variant($text-color, $gray-base);
     @include underline($text-color, $gray-base);
 }
@@ -148,12 +149,12 @@
     @include underline($color-s3, darken($color-s2, 15%));
 }
 
-//
+// 
 
 a.text-white:not(.btn) {
-    @include link-underline($white);
+@include link-underline($white);
 
-    &:hover {
-        @include link-underline($white);
-    }
+&:hover {
+    @include link-underline($white);
+}
 }

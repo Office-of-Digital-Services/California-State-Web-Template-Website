@@ -3,66 +3,66 @@
 <!--[if IE 7]>    <html class="no-js ie7 oldie" lang="en"> <![endif]-->
 <!--[if IE 8]>    <html class="no-js ie8 oldie" lang="en"> <![endif]-->
 <!--[if IE 9]>    <html class="no-js ie9 oldie" lang="en"> <![endif]-->
-<!--[if (gt IE 9)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<!--[if (gt IE 9)]><!-->
+<html class="no-js" lang="en">
+<!--<![endif]-->
 
 <head>
-    <!--
-    California State Template
-Version 5.0.11
+    <!--    California State Template
+        Version 6.0.0
 
-        Based on Twitter Bootstrap
-    -->
-  <meta charset="utf-8">
-  <title>Sample - Animations</title>
-  <meta name="Author" content="State of California" />
-  <meta name="Description" content="State of California" />
-  <meta name="Keywords" content="California, government" />
-  <!--#include virtual="/ssi/head-css-js.html" -->
+                Based on Twitter Bootstrap
+            -->
+    <meta charset="utf-8">
+    <title>Sample - Animations</title>
+    <meta name="Author" content="State of California" />
+    <meta name="Description" content="State of California" />
+    <meta name="Keywords" content="California, government" />
+    <!--#include virtual="/ssi/head-css-js.html" -->
+    <script type="text/javascript">
+        var defaultActiveLink = "Components";
+    </script>
 </head>
 
-<body >
+<body>
     <header role="banner" id="header" class="global-header fixed">
         <div id="skip-to-content"><a href="#main-content">Skip to Main Content</a></div>
 
         <!-- Include Utility Header -->
         <!--#include virtual="/ssi/utility-header.html" -->
-
         <!-- Settings Bar -->
         <!--#include virtual="/ssi/settings-bar.html" -->
-
         <!-- Include Branding -->
-        <!--#include virtual="/ssi/branding.html" -->
-
+        <!--#include virtual="/ssi/branding-lightgrey.html" -->
         <!-- Include Mobile Controls -->
         <!--#include virtual="/ssi/mobile-controls.html" -->
 
-        <div class="navigation-search">
-            <!-- Include Navigation -->
-            <!--#include virtual="/ssi/navigation.html" -->
-
-            <div id="head-search" class="search-container">
-                <!-- Include Search -->
-                <!--#include virtual="/ssi/search.html" -->
-            </div>
-
+        <div class="navigation-search full-width-nav container">
+        <div id="head-search" class="search-container featured-search fade">
+            <!-- Include Search -->
+            <!--#include virtual="/ssi/search.html" -->
         </div>
+
+        <!-- Include Navigation -->
+        <!--#include virtual="/ssi/navigation.html" -->
+    </div>
         <div class="header-decoration"></div>
     </header>
 
     <div id="main-content" class="main-content">
-        <div class="section">
+        <div class="container p-b-lg">
             <main class="main-primary">
                 <ol class="breadcrumb">
                     <li><a href="../index.html" title="Home page">Home</a></li>
-                    <li><a href="index.html" title="Examples landing page">Examples</a></li>
+                    <li><a href="/sample/" title="Content Modules landing page">Content Modules</a></li>
                     <li class="active">Lists</li>
                 </ol>
 
                 <div class="container">
                     <div class="two-thirds">
-                    <h1>Animations</h1>
-                    <p>Animations are for adding motion or effects as they scroll into view. We recommend using animations both sparingly and only on elements which need to have a visual impact or emphasis. Common use cases are  images, charts, call to actions, etc.</p>
-                    <p>The available animations are configured by including the specified animation name directly on the element or a containing element.</p>
+                        <h1>Animations</h1>
+                        <p>Animations are for adding motion or effects as they scroll into view. We recommend using animations both sparingly and only on elements which need to have a visual impact or emphasis. Common use cases are  images, charts, call to actions, etc.</p>
+                        <p>The available animations are configured by including the specified animation name directly on the element or a containing element.</p>
                         <ul>
                             <li> <code>.animate-bounceInLeft</code> </li>
                             <li> <code>.animate-bounceInRight</code> </li>
@@ -77,8 +77,8 @@ Version 5.0.11
                         </ul>
                     </div>
                     <div class="third">
-                        <h2><label for="sample-xxx">Source Code:</label></h2>
-                        <textarea id="sample-xxx" class="form-control" rows="5" cols="80"><!--#include virtual="/sample/modules/animation-simple.html" --></textarea>
+                        <h2>Source Code:</h2>
+                        <pre><code class="overflow-auto"><!--#include virtual="/sample/modules/animation-simple.html" --></code></pre>
                     </div>
                 </div>
                 <h1>Animation Playground</h1>
@@ -97,12 +97,12 @@ Version 5.0.11
                                     <option value="slideInRight">animate-slideInRight</option>
                                     <option value="slideInUp">animate-slideInUp</option>
                                 </optgroup>
-                                    <optgroup label="Bounce In's">
+                                <optgroup label="Bounce In's">
                                     <option value="bounceInLeft">animate-bounceInLeft</option>
                                     <option value="bounceInRight">animate-bounceInRight</option>
                                     <option value="bounceInUp">animate-bounceInUp</option>
                                 </optgroup>
-                                    <optgroup label="Specials">
+                                <optgroup label="Specials">
                                     <option value="pulse">animate-pulse</option>
                                     <option value="shake">animate-shake</option>
                                     <option value="jello">animate-jello</option>
@@ -121,27 +121,26 @@ Version 5.0.11
         </div>
     </div>
 
-  <!--#include virtual="/ssi/global-footer.html" -->
+    <!--#include virtual="/ssi/global-footer.html" -->
+    <!--#include virtual="/ssi/scripts.html" -->
 
-  <!--#include virtual="/ssi/scripts.html" -->
-
-  <script>
-    function testAnim(x) {
-      $('#animationSandbox').removeClass().addClass(x + ' animated').one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function() {
-        $(this).removeClass();
-      });
-    };
-    $(document).ready(function() {
-      $('.js--triggerAnimation').click(function(e) {
-        e.preventDefault();
-        var anim = $('.js--animations').val();
-        testAnim(anim);
-      });
-      $('.js--animations').change(function() {
-        var anim = $(this).val();
-        testAnim(anim);
-      });
-    });
-  </script>
+    <script>
+        function testAnim(x) {
+            $('#animationSandbox').removeClass().addClass(x + ' animated').one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function () {
+                $(this).removeClass();
+            });
+        };
+        $(document).ready(function () {
+            $('.js--triggerAnimation').click(function (e) {
+                e.preventDefault();
+                var anim = $('.js--animations').val();
+                testAnim(anim);
+            });
+            $('.js--animations').change(function () {
+                var anim = $(this).val();
+                testAnim(anim);
+            });
+        });
+    </script>
 </body>
 </html>

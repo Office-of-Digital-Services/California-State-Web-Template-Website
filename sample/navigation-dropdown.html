@@ -5,9 +5,9 @@
 <!--[if IE 9]>    <html class="no-js ie9 oldie" lang="en"> <![endif]-->
 <!--[if (gt IE 9)]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
 <head>
-<!--
-    California State Template
-Version 5.0.11
+
+<!--    California State Template
+    Version 6.0.0
  
 Based on Twitter Bootstrap
 -->
@@ -20,7 +20,9 @@ Based on Twitter Bootstrap
 <meta name="Keywords" content="California, government" />
 
 <!--#include virtual="/ssi/head-css-js.html" -->
-
+<script type="text/javascript">
+var defaultActiveLink = "Components";
+</script>
 </head>
 
 <body class="primary two-column">
@@ -29,7 +31,9 @@ Based on Twitter Bootstrap
 	<div id="skip-to-content"><a href="#main-content">Skip to Main Content</a></div>
         
         <!-- Include Utility Header -->
-		<!--#include virtual="/ssi/utility-header.html" -->	<!-- Settings Bar -->	
+		<!--#include virtual="/ssi/utility-header.html" -->	
+    
+        <!-- Settings Bar -->	
 		<!--#include virtual="/ssi/settings-bar.html" -->
 
 		<!-- Include Branding -->
@@ -54,10 +58,10 @@ Based on Twitter Bootstrap
 
 <div id="main-content" class="main-content">
     <div class="section">
-        <main class="main-primary">
+        <main class="main-primary">            
             <ol class="breadcrumb">
                 <li><a href="../index.html" title="Home page">Home</a></li>
-                <li><a href="index.html" title="Examples landing page">Examples</a></li>
+                <li><a href="/sample/navsamples.html" title="Navigation Samples page">Navigation Samples</a></li>
                 <li class="active">Dropdown Navigation</li>
             </ol>
             
@@ -68,10 +72,19 @@ Based on Twitter Bootstrap
             <p>In the template distribution this markup can be found in <code>/ssi/navigation.html</code>.
             
 <h2>More Navigation Samples</h2>
-	<ul>
-		<li><a href="navigation-megamenu.html">Megamenu Navigation</a></li>
-        <li><a href="navigation-single.html">Single Level Navigation</a></li>
-     </ul>
+<ul>
+
+    <li><a href="navigation-full-width-utility.html">Full Width Navigation with Active Search</a></li>
+    <li><a href="navigation-full-width-icons.html">Full Width Navigation with Icons</a></li>
+    <li><a href="navigation-single.html">Single Level Navigation</a></li>
+    <li><a href="navigation-megamenu-flex.html">State Template v5.5 Flex Megamenu</a></li>
+    <li><a href="navigation-megamenu.html">State Template v5 Megamenu</a></li>
+    <li><a href="navigation-megamenu-original.html">State Template v4 Megamenu</a></li>
+    <li><a href="navigation-sidebar.html">Side navigation menu</a></li>
+
+
+
+</ul>
         </main>
         
         <div class="main-secondary" role="complementary">

@@ -12,14 +12,14 @@
 
     .submit-container {
         button {
-            color:$mobile-controls;
+            color: $mobile-controls;
             border-color: $text-field-color;
         }
     }
 
-    &:hover, &:focus, &.active  {
+    &:hover, &:focus, &.active {
         .search-textfield {
-            background-color:#fff;
+            background-color: #fff;
         }
 
         .submit-container button {
@@ -27,13 +27,8 @@
         }
     }
 
-    &.active  {
-        //background:desaturate(lighten($color-p2, 43), 51);      // Nav icon color
-        background: $expanded-background-color;
-
-        @media (min-width:$screen-sm-min) {
-            border-bottom: 2px solid $gray-lighter;
-        }
+    &.active {
+        @include rgba (#000, .7);
 
         .submit-container button {
             border-color: darken($gray-lighter, 10%);
@@ -52,19 +47,4 @@
     }
 }
 
-.search-container.featured-search {
-    background:none;            // fallback color
-   // @include rgba (#000, .65);                   // rgba function
-   // background: $rgba;                  // rgba value for modern browsers
 
-    // Darken the search container on hover
-    &:hover, &:focus {
-		background:none; 
-       // @include rgba (#000, .8);              // rgba function
-        // background-color: $rgba;        // rgba value for modern browsers
-    }
-
-    &.active {
-        background:$expanded-background-color;
-    }
-}

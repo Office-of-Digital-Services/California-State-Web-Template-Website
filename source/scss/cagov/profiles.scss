@@ -10,7 +10,7 @@
 $profile-thumbnail: 70px;                                         // Thumbnail width based on mockups
 
 .profile-item {
-    @include well();
+    @include card();
     
     .thumbnail {
         position:absolute;
@@ -49,38 +49,38 @@ $profile-thumbnail: 70px;                                         // Thumbnail w
     }
 }
 
+.banner-subtitle {
+	@include font-size(.9);
+	margin:0 30px .2em 0;
+	padding:4px 35px 2px 10px;
+	background: -moz-linear-gradient(left, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0) 100%);
+	background: -webkit-linear-gradient(left, rgba(0,0,0,0.1) 0%,rgba(0,0,0,0) 100%);
+	background: -o-linear-gradient(left, rgba(0,0,0,0.1) 0%,rgba(0,0,0,0) 100%);
+	background: -ms-linear-gradient(left, rgba(0,0,0,0.1) 0%,rgba(0,0,0,0) 100%);
+	background: linear-gradient(to right, rgba(0,0,0,0.1) 0%,rgba(0,0,0,0) 100%);
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorStr='#20000000',endColorStr='#00000000', GradientType='1'); 
+}
+
+.banner-title {
+	@include font-condensed();
+	font-weight:bold;
+	color: $gray;
+	@include font-size(1.2);
+	padding-right:70px;
+	padding-left:10px;
+}
+
+.banner-link {
+	@include font-size(.7);
+	margin:0;
+	padding-left:12px;
+	padding-bottom:10px;
+	padding-top:10px;
+}
+
+.main-secondary .group {
     .banner-subtitle {
-        @include font-size(.9);
-        margin: 0 30px .2em 0;
-        padding: 4px 35px 2px 10px;
-        background: -moz-linear-gradient(left, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0) 100%);
-        background: -webkit-linear-gradient(left, rgba(0,0,0,0.1) 0%,rgba(0,0,0,0) 100%);
-        background: -o-linear-gradient(left, rgba(0,0,0,0.1) 0%,rgba(0,0,0,0) 100%);
-        background: -ms-linear-gradient(left, rgba(0,0,0,0.1) 0%,rgba(0,0,0,0) 100%);
-        background: linear-gradient(to right, rgba(0,0,0,0.1) 0%,rgba(0,0,0,0) 100%);
-        filter: progid:DXImageTransform.Microsoft.gradient(startColorStr='#20000000',endColorStr='#00000000', GradientType='1');
+        padding-right: 5px;
+        margin-right: 0;
     }
-
-    .banner-title {
-        @include font-condensed();
-        font-weight: bold;
-        color: $gray;
-        @include font-size(1.2);
-        padding-right: 70px;
-        padding-left: 10px;
-    }
-
-    .banner-link {
-        @include font-size(.7);
-        margin: 0;
-        padding-left: 12px;
-        padding-bottom: 10px;
-        padding-top: 10px;
-    }
-
-    .main-secondary .group {
-        .banner-subtitle {
-            padding-right: 5px;
-            margin-right: 0;
-        }
-    }
+}

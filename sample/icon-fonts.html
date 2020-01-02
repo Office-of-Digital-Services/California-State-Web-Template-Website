@@ -12,15 +12,14 @@ Based on Twitter Bootstrap
 <!--[if IE 9]>    <html class="no-js ie9 oldie" lang="en"> <![endif]-->
 <!--[if (gt IE 9)]><!-->
 <html class="no-js" lang="en">
- <!--<![endif]-->
+<!--<![endif]-->
 
 <head>
-    <!--
-    California State Template
-Version 5.0.11
+    <!--    California State Template
+        Version 5.5.8
 
-    Based on Twitter Bootstrap
-    -->
+        Based on Twitter Bootstrap
+        -->
     <meta charset="utf-8">
 
     <title>Sample - Icon Font Library</title>
@@ -195,13 +194,15 @@ Version 5.0.11
             margin: 0 !important;
         }
     </style>
-
+    <script type="text/javascript">
+var defaultActiveLink = "Components";
+    </script>
 </head>
 
 <!-- possible body classes are "primary" and "two-column" -->
 <body>
 
-    <header role="banner" id="header" class="global-header">
+    <header role="banner" id="header" class="global-header fixed">
         <div id="skip-to-content"><a href="#main-content">Skip to Main Content</a></div>
 
         <!-- Include Utility Header -->
@@ -209,28 +210,25 @@ Version 5.0.11
         <!-- Settings Bar -->
         <!--#include virtual="/ssi/settings-bar.html" -->
         <!-- Include Branding -->
-        <!--#include virtual="/ssi/branding.html" -->
+        <!--#include virtual="/ssi/branding-lightgrey.html" -->
         <!-- Include Mobile Controls -->
         <!--#include virtual="/ssi/mobile-controls.html" -->
 
-        <div class="navigation-search">
-            <!-- Include Navigation -->
-            <!--#include virtual="/ssi/navigation.html" -->
-
-            <div id="head-search" class="search-container">
+        <div class="navigation-search full-width-nav container">
+            <div id="head-search" class="search-container featured-search fade">
                 <!-- Include Search -->
                 <!--#include virtual="/ssi/search.html" -->
             </div>
 
+            <!-- Include Navigation -->
+            <!--#include virtual="/ssi/navigation.html" -->
         </div>
 
-        <div class="header-decoration"></div>
     </header>
 
     <div id="main-content" class="main-content">
-        <div class="section">
+        <div class="container p-b-lg">
             <main class="main-primary">
-
                 <ol class="breadcrumb">
                     <li><a href="../index.html" title="Home page">Home</a></li>
                     <li><a href="index.html" title="Examples landing page">Examples</a></li>
@@ -239,7 +237,7 @@ Version 5.0.11
 
                 <h1>Icon Font Library</h1>
 
-                <p>The CaGov icon font includes 356 icons you can use in your site. Four different formats of the font are included for compatibility with all popular browsers. You may need to add a mime map to your webserver for the WOFF font. To determine if your webserver needs it, upload the /fonts/CaGov.woff file to your webserver. Try downloading the WOFF in your browser by visiting: http://yourwebsite.ca.gov/fonts/CaGov.woff . If it prompts you to download the font, your server is configured correctly. If you get a 404 or other error, you'll need to add a mime map for extension ".woff", and the mimetype is "application/font-woff". Ask your server admin if you need assistance.</p>
+                <p>The CaGov icon font includes 361 icons you can use in your site. Four different formats of the font are included for compatibility with all popular browsers. You may need to add a mime map to your webserver for the WOFF font. To determine if your webserver needs it, upload the /fonts/CaGov.woff file to your webserver. Try downloading the WOFF in your browser by visiting: http://yourwebsite.ca.gov/fonts/CaGov.woff . If it prompts you to download the font, your server is configured correctly. If you get a 404 or other error, you'll need to add a mime map for extension ".woff", and the mimetype is "application/font-woff". Ask your server admin if you need assistance.</p>
 
                 <!-- START ICOMOON DEMO -->
                 <div class="clearfix mhl ptl">
@@ -391,6 +389,26 @@ Version 5.0.11
 
 
 
+
+                    <div class="glyph fs1">
+                        <div class="clearfix bshadow0 pbs">
+                            <span class="ca-gov-icon-features">
+
+                            </span>
+                            <span class="mls"> ca-gov-icon-features</span>
+                        </div>
+                        <p class="icon-value">e993</p>
+                    </div>
+
+                    <div class="glyph fs1">
+                        <div class="clearfix bshadow0 pbs">
+                            <span class="ca-gov-icon-accessibility">
+
+                            </span>
+                            <span class="mls"> ca-gov-icon-accessibility</span>
+                        </div>
+                        <p class="icon-value">e992</p>
+                    </div>
 
 
                     <div class="glyph fs1">
@@ -3544,7 +3562,15 @@ Version 5.0.11
                         </div>
                         <p class="icon-value">e972</p>
                     </div>
+                    <div class="glyph fs1">
+                        <div class="clearfix bshadow0 pbs">
+                            <span class="ca-gov-icon-update">
 
+                            </span>
+                            <span class="mls"> ca-gov-icon-update</span>
+                        </div>
+                        <p class="icon-value">e994</p>
+                    </div>
 
 
                 </div>

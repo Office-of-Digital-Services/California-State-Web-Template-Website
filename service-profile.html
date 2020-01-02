@@ -7,10 +7,9 @@
 <html class="no-js" lang="en">
 <!--<![endif]-->
 
-<head>
-    <!--
-    California State Template
-Version 5.0.11
+<head>    
+<!--    California State Template
+    Version 6.0.0
 
     Based on Twitter Bootstrap
     -->
@@ -38,20 +37,19 @@ Version 5.0.11
         <!-- Settings Bar -->
         <!--#include virtual="/ssi/settings-bar.html" -->
         <!-- Include Branding -->
-        <!--#include virtual="/ssi/branding.html" -->
+        <!--#include virtual="/ssi/branding-lightgrey.html" -->
         <!-- Include Mobile Controls -->
         <!--#include virtual="/ssi/mobile-controls.html" -->
 
-        <div class="navigation-search">
-            <!-- Include Navigation -->
-            <!--#include virtual="/ssi/navigation.html" -->
-
-            <div id="head-search" class="search-container">
-                <!-- Include Search -->
-                <!--#include virtual="/ssi/search.html" -->
-            </div>
-
+        <div class="navigation-search full-width-nav container">
+        <div id="head-search" class="search-container featured-search fade">
+            <!-- Include Search -->
+            <!--#include virtual="/ssi/search.html" -->
         </div>
+
+        <!-- Include Navigation -->
+        <!--#include virtual="/ssi/navigation.html" -->
+    </div>
 
         <div class="header-decoration"></div>
     </header>
@@ -78,7 +76,7 @@ Version 5.0.11
                             <div class="btn-row m-y">
                                 <a href="" class="btn btn-primary btn-block-xs"><span class="ca-gov-icon-computer"></span> Launch Service</a>
                                 <a href="" class="btn btn-primary btn-block-xs"><span class="ca-gov-icon-location"></span> Locations Near You</a>
-                                <a href="" class="btn btn-primary btn-block-xs"><span class="ca-gov-icon-contact-us"></span>  Contact <span class="sr-only">DMV</span></a>
+                                <a href="" class="btn btn-primary btn-block-xs"><span class="ca-gov-icon-contact-us"></span>  Contact</a>
                             </div>
 
                             <div class="location" itemscope itemtype="http://schema.org/Organization">
@@ -138,7 +136,6 @@ Version 5.0.11
     <!--#include virtual="/ssi/section-footer2.html" -->
     <!--#include virtual="/ssi/global-footer.html" -->
     <!--#include virtual="/ssi/scripts.html" -->
-
 
 
 </body>

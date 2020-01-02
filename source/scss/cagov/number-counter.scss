@@ -9,8 +9,28 @@
 
 .stat-counter {
     text-align:center;
-    @include font-size(4);
+    @include font-size(3);
+    font-family: $headings-font-family;
 }
-.circles-text {
+
+.circles-text { 
     font-size: 35px !important;
+    font-family: $headings-font-family;
+}
+
+/* -----------------------------------------
+   Countdown
+----------------------------------------- */
+.countdown div {
+    text-align: center;
+    @include font-size(3);
+    margin-top: 0px;
+    font-weight: 700;
+    line-height:1.1;
+    border-left: 3px solid #fff;
+}
+
+.countdown-text {
+    @include font-size(1);
+    font-weight: 400;
 }

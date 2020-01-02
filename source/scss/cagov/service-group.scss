@@ -21,14 +21,14 @@
 
 .service-tile-panel {
     /*Selectivly show when requested by user*/
-    visibility: hidden; // changed from "collapse" to fix siteimprove checker accessibility errors
+    visibility: hidden;
     position: absolute;
     // Not sure if this can be a generic class for all of the large close buttons.
     // Stashing in service tile panel to avoid conflict with other similar.
     .btn.close {
-        @include font-size(3.5);
         position: relative;
-        z-index: 3;
+        z-index: 1;
+        @include font-size(3.5);
     }
 }
 
@@ -42,8 +42,8 @@
     height: auto;
 
     &.is-open .service-tile-panel {
-      visibility: visible;
-      position: relative;
+        visibility: visible;
+        position: relative;
     }
 }
 
@@ -95,7 +95,6 @@
     background-repeat: no-repeat;
     background-size: cover;
 
-
     .icon-fallback {
         min-width: 100%;
         line-height: 1;
@@ -114,12 +113,9 @@
         bottom: 0;
         left: 0;
         width: 100%;
-        background: #000; // Fallback color
-        background: -webkit-linear-gradient(top, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0.6) 30%, #000000 100%);
-        background: linear-gradient(to bottom, rgba(0,0,0,0.6) 0%,rgba(0,0,0,0.6) 30%,rgba(0,0,0,9) 100%);
-        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#cc000000', endColorstr='#000000',GradientType=0 ); // IE6-9
+        background: #12151a;
+        opacity: 0.9;
         color: #fff;
-        //transition: transform 0.3s 0.3s;
         padding: 10px 0;
 
         .title {
@@ -134,9 +130,10 @@
         }
     }
 }
+
 .service-tile:focus .teaser .title {
-	color: $color-p1;
-	}
+    color: $color-p1;
+}
 
 // Add open and close icons with css to keep markup clean
 .title:after {
@@ -144,20 +141,18 @@
     font-family: 'CaGov';
     display: block;
     font-weight: normal;
-
     // TODO: data-state="info" not needed but keeping until js has been updated
-    [data-state="closed"].service-tile &, [data-state="info"].service-tile &{
-        content: "\50";             // Close: ca-gov-icon-minus-line
+    [data-state="closed"].service-tile &, [data-state="info"].service-tile & {
+        content: "\e050"; // Close: ca-gov-icon-minus-line
     }
 
     [data-state="open"].service-tile & {
-
-        content: "\4f";             // Open: ca-gov-icon-plus-line
+        content: "\e04f"; // Open: ca-gov-icon-plus-line
     }
 }
 
 [data-state="open"].service-tile:after {
-    @include triangle(down, 15px, $gray-base);
+    @include triangle(down, 15px, rgba(18,21,26,.9));
     position: absolute;
     left: 50%;
     margin-left: -15px;
@@ -165,65 +160,67 @@
     z-index: 5;
 }
 
+// title when open
+div[data-state="open"] .title {
+    color: $color-p1;
+}
 
 .service-tile-empty {
-// background:  $color-p2;
-// color: $color-s2;
-background:  $color-p3; // beta 5.0 addition
-color: lighten($color-p3, 9%); // beta 5.0 addition
-overflow: hidden;
-  span {
-    font-size: 17em;
-  line-height: 1;
+    // background:  $color-p2;
+    // color: $color-s2;
+    background: $color-p3; // beta 5.0 addition
+    color: lighten($color-p3, 9%); // beta 5.0 addition
+    overflow: hidden;
 
-  }
-
-  .title:after {
-    content: "\e65d" !important;
-  }
-
-
-
-    width: 100%;
-     &.half, &.quarter, &.third {
-      width: 100%;
+    span {
+        font-size: 17em;
+        line-height: 1;
     }
 
+    .title:after {
+        content: "\e65d" !important;
+    }
 
-      /* Need to keep the two column longer than bootstrap has .make-*-column for */
-      @media (min-width: 450px) {
+    width: 100%;
+
+    &.half, &.quarter, &.third {
+        width: 100%;
+    }
+    /* Need to keep the two column longer than bootstrap has .make-*-column for */
+    @media (min-width: 450px) {
 
         &.full {
-          width: 100%;
+            width: 100%;
         }
 
         &.third {
-          width: 50%;
+            width: 50%;
         }
+
         &.half {
-          width: 100%;
+            width: 100%;
         }
+
         &.quarter {
-          width: 50%;
+            width: 50%;
         }
+    }
 
-      }
-
-      @media (min-width: 992px) {
+    @media (min-width: 992px) {
         &.full {
-          width: 100%;
+            width: 100%;
         }
 
         &.third {
-          width: 75%;
+            width: 75%;
         }
+
         &.half {
-          width: 50%;
+            width: 50%;
         }
+
         &.quarter {
-          width: 25%;
+            width: 25%;
         }
-      }
-
-
+    }
 }

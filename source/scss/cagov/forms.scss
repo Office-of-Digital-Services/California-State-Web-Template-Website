@@ -91,12 +91,7 @@ label, .form-control-label {
 			}
   }
   
-.d-flex {
-    display: flex;
-}
-d-block {
-	display: block;
-	}
+
 // Bootstrap3 Backward bcompatibility 
 .has-error {
 	.feedback {
@@ -154,10 +149,6 @@ d-block {
 .form-check {
 	position:relative;
 	cursor: pointer;
-	}
-
-.hidden-up {
-	opacity: 0;
 	}
 .check-icon-radio {
 	backface-visibility: hidden;
@@ -322,8 +313,8 @@ input[type="checkbox"]:focus + div, input[type="radio"]:focus + div {
         box-shadow: 0 0 2px 2px $color-s3;
     }
 input[type="checkbox"]:focus + .btn, input[type="radio"]:focus + .btn {
-        @include outline(2px);
-    }
+    @include outline(2px);
+}
 	
 	
 .custom-radio {
@@ -350,4 +341,9 @@ input[type="checkbox"]:focus + .btn, input[type="radio"]:focus + .btn {
 /* Accessibilty focus */
 input:focus, textarea:focus, button:focus, select:focus {
     @include outline(2px);
-} 
+}
+
+/* bootstrap 4.4.1 adjustments */
+.input-group > .form-control {
+    flex: 1 1 0% !important;
+}

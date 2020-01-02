@@ -8,12 +8,11 @@
 <!--<![endif]-->
 
 <head>
-    <!--
-    California State Template
-Version 5.0.11
+    <!--    California State Template
+        Version 6.0.0
 
-    Based on Twitter Bootstrap
-    -->
+        Based on Twitter Bootstrap
+        -->
     <meta charset="utf-8">
 
     <title>Getting Started with California State Template</title>
@@ -23,8 +22,9 @@ Version 5.0.11
     <meta name="Keywords" content="California, government" />
 
     <!--#include virtual="/ssi/head-css-js.html" -->
-    <style>
-    </style>
+    <script type="text/javascript">
+        var defaultActiveLink = "Getting Started";
+    </script>
 </head>
 
 <!-- possible body classes are "primary" and "two-column" -->
@@ -38,20 +38,19 @@ Version 5.0.11
         <!-- Settings Bar -->
         <!--#include virtual="/ssi/settings-bar.html" -->
         <!-- Include Branding -->
-        <!--#include virtual="/ssi/branding.html" -->
+        <!--#include virtual="/ssi/branding-lightgrey.html" -->
         <!-- Include Mobile Controls -->
         <!--#include virtual="/ssi/mobile-controls.html" -->
 
-        <div class="navigation-search">
-            <!-- Include Navigation -->
-            <!--#include virtual="/ssi/navigation.html" -->
-
-            <div id="head-search" class="search-container">
-                <!-- Include Search -->
-                <!--#include virtual="/ssi/search.html" -->
-            </div>
-
+        <div class="navigation-search full-width-nav container">
+        <div id="head-search" class="search-container featured-search fade">
+            <!-- Include Search -->
+            <!--#include virtual="/ssi/search.html" -->
         </div>
+
+        <!-- Include Navigation -->
+        <!--#include virtual="/ssi/navigation.html" -->
+    </div>
 
 
         <div class="header-decoration"></div>
@@ -63,12 +62,16 @@ Version 5.0.11
         <main class="main-primary">
 
             <div class="container m-b-lg">
+                <ol class="breadcrumb">
+                    <li><a href="index.html" title="Home page">Home</a></li>
+                    <li class="active">Getting Started</li>
+                </ol>
                 <h1>Getting Started with California State Template</h1>
 
                 <p>The following page includes examples of applying California State Template css, js and ssi files to a web page. Here are the steps you need to quickly set you your site with California State Template.</p>
                 <h2>Contents</h2>
-                <p>To get started you need to download Californis State Template from <a href="https://github.com/Office-of-Digital-Innovation/California-State-Template-v5" target="_blank">HitGub</a>. Once downloaded, unzip the compressed folder and you’ll see something like this:</p>
-                <div class="col-6">
+                <p>To get started you need to download Californis State Template from <a href="https://github.com/Office-of-Digital-Innovation/California-State-Template-v5" target="_blank">GitHub</a>. Once downloaded, unzip the compressed folder and you’ll see something like this:</p>
+                <div class="col-9">
                     <pre><code class="language-plaintext" data-lang="plaintext">StateTemplate/
 ├── css/
 │   ├── cagov.core.css
@@ -96,11 +99,10 @@ Version 5.0.11
 
                 <h2>CSS</h2>
                 <p>Copy-paste the stylesheet links into your <code class="highlighter-rouge">&lt;head&gt;</code> before all other stylesheets to load our CSS.</p>
-<pre><code class="language-html" data-lang="html">
-<span class="text-accent-p2">&lt;link</span> <span class="text-info">href=</span><span class="text-accent7">'https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700'</span> <span class="text-info">rel=</span><span class="text-accent7">'stylesheet'</span> <span class="text-info">type=</span><span class="text-accent7">'text/css'</span><span class="text-accent-p2">&gt;</span>
+                <pre>
+<span class="text-accent-p2">&lt;link</span> <span class="text-info">href=</span><span class="text-accent7">'https://fonts.googleapis.com/css?family=Asap+Condensed:400,600|Source+Sans+Pro:400,700'</span> <span class="text-info">rel=</span><span class="text-accent7">'stylesheet'</span> <span class="text-info">type=</span><span class="text-accent7">'text/css'</span><span class="text-accent-p2">&gt;</span>
 <span class="text-accent-p2">&lt;link</span> <span class="text-info">rel=</span><span class="text-accent7">"stylesheet"</span> <span class="text-info">href=</span><span class="text-accent7">"/css/cagov.core.css"</span><span class="text-accent-p2">&gt;</span>
-<span class="text-accent-p2">&lt;link</span> <span class="text-info">rel=</span><span class="text-accent7">"stylesheet"</span> <span class="text-info">href=</span><span class="text-accent7">"/css/colorscheme-oceanside.css"</span><span class="text-accent-p2">&gt;</span><br />
-</code></pre>
+<span class="text-accent-p2">&lt;link</span> <span class="text-info">rel=</span><span class="text-accent7">"stylesheet"</span> <span class="text-info">href=</span><span class="text-accent7">"/css/colorscheme-oceanside.css"</span><span class="text-accent-p2">&gt;</span></pre>
                 <p><code>colorscheme-oceanside.css</code> can be replaced with a color scheme file of your choice.</p>
 
                 <h2>JS</h2>
@@ -109,22 +111,22 @@ Version 5.0.11
                     <code>&lt;script&gt;</code>s in the <code>&lt;head&gt;</code> section right after stylesheet links.
                 </p>
 
-<pre><code class="language-html" data-lang="html">
+<pre>
 <span class="text-accent-p2">&lt;script</span> <span class="text-info">src=</span><span class="text-accent7">"https://code.jquery.com/jquery-3.4.1.min.js"</span> <span class="text-info">type=</span><span class="text-accent7">"text/javascript"</span><span class="text-accent-p2">&gt;&lt;/script&gt;</span>
-<span class="text-accent-p2">&lt;script</span> <span class="text-info">src=</span><span class="text-accent7">"https://code.jquery.com/jquery-migrate-3.0.1.min.js"</span><span class="text-accent-p2">&gt;&lt;/script&gt;</span><br />
-</code></pre>
+<span class="text-accent-p2">&lt;script</span> <span class="text-info">src=</span><span class="text-accent7">"https://code.jquery.com/jquery-migrate-3.0.1.min.js"</span><span class="text-accent-p2">&gt;&lt;/script&gt;</span></pre>
                 <p>
                     Finally, place the rest of js reffernces near the end of your pages, right before the closing
                     <code>&lt;/body&gt;</code> tag
                 </p>
                 <div class="row">
                     <div class="col-6">
-<pre><code class="language-html" data-lang="html">
-<span class="text-accent-p2">&lt;script</span> <span class="text-info">src=</span><span class="text-accent7">"/js/cagov.core.js"</span><span class="text-accent-p2">&gt;&lt;/script&gt;</span><br />
-</code></pre>
-<p><span class="label label-info">Note:</span> Load your website faster by using <a href="/cdn.html">State Template CDN</a></p>
+<pre>
+<span class="text-accent-p2">&lt;script</span> <span class="text-info">src=</span><span class="text-accent7">"/js/cagov.core.js"</span><span class="text-accent-p2">&gt;&lt;/script&gt;</span></pre>
                     </div>
                 </div>
+                <p><span class="label label-info">Note:</span> Load your website faster by using <a href="/cdn.html">State Template CDN</a></p>
+
+
                 <h2>Clean Starter Template</h2>
                 <p>
                     Be sure to have your pages set up with the latest design and development standards.
@@ -133,81 +135,82 @@ Version 5.0.11
                 </p>
 
 
-<pre><code class="language-html" data-lang="html"><span class="text-success">&lt;!doctype html&gt;</span>
+<pre>
+&lt;!doctype html&gt;</span>
 <span class="text-accent-p2">&lt;html</span> <span class="text-info">lang=</span><span class="text-accent7">"en"</span><span class="text-accent-p2">&gt;</span>
-    <span class="text-accent-p2">&lt;head&gt;</span>
-        <span class="text-muted">&lt;!-- Required meta tags --&gt;</span>
+                <span class="text-accent-p2">&lt;head&gt;</span>
+                <span class="text-muted">&lt;!-- Required meta tags --&gt;</span>
         
-        <span class="text-accent-p2">&lt;meta</span> <span class="text-info">charset=</span><span class="text-accent7">"utf-8"</span><span class="text-accent-p2">&gt;</span>
-        <span class="text-accent-p2">&lt;meta</span> <span class="text-info">name=</span><span class="text-accent7">"viewport"</span> <span class="text-info">content=</span><span class="text-accent7">"width=device-width, initial-scale=1, shrink-to-fit=no"</span><span class="text-accent-p2">&gt;</span>
-        <span class="text-accent-p2">&lt;link</span> <span class="text-info">href=</span><span class="text-accent7">'https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700'</span> <span class="text-info">rel=</span><span class="text-accent7">'stylesheet'</span> <span class="text-info">type=</span><span class="text-accent7">'text/css'</span><span class="text-accent-p2">&gt;</span>
+                <span class="text-accent-p2">&lt;meta</span> <span class="text-info">charset=</span><span class="text-accent7">"utf-8"</span><span class="text-accent-p2">&gt;</span>
+                <span class="text-accent-p2">&lt;meta</span> <span class="text-info">name=</span><span class="text-accent7">"viewport"</span> <span class="text-info">content=</span><span class="text-accent7">"width=device-width, initial-scale=1, shrink-to-fit=no"</span><span class="text-accent-p2">&gt;</span>
+                <span class="text-accent-p2">&lt;link</span> <span class="text-info">href=</span><span class="text-accent7">'https://fonts.googleapis.com/css?family=Asap+Condensed:400,600|Source+Sans+Pro:400,700'</span> <span class="text-info">rel=</span><span class="text-accent7">'stylesheet'</span> <span class="text-info">type=</span><span class="text-accent7">'text/css'</span><span class="text-accent-p2">&gt;</span>
         
-        <span class="text-muted">&lt;!-- State Template CSS --&gt;</span>
-        <span class="text-accent-p2">&lt;link</span> <span class="text-info">rel=</span><span class="text-accent7">"stylesheet"</span> <span class="text-info">href=</span><span class="text-accent7">"/css/cagov.core.css"</span><span class="text-accent-p2">&gt;</span>
-        <span class="text-accent-p2">&lt;link</span> <span class="text-info">rel=</span><span class="text-accent7">"stylesheet"</span> <span class="text-info">href=</span><span class="text-accent7">"/css/colorscheme-oceanside.css"</span><span class="text-accent-p2">&gt;</span>
+                <span class="text-muted">&lt;!-- State Template CSS --&gt;</span>
+                <span class="text-accent-p2">&lt;link</span> <span class="text-info">rel=</span><span class="text-accent7">"stylesheet"</span> <span class="text-info">href=</span><span class="text-accent7">"/css/cagov.core.css"</span><span class="text-accent-p2">&gt;</span>
+                <span class="text-accent-p2">&lt;link</span> <span class="text-info">rel=</span><span class="text-accent7">"stylesheet"</span> <span class="text-info">href=</span><span class="text-accent7">"/css/colorscheme-oceanside.css"</span><span class="text-accent-p2">&gt;</span>
         
-        <span class="text-accent-p2">&lt;title&gt;</span>California State Webpage<span class="text-accent-p2">&lt;/title&gt;</span>
-        <span class="text-muted">&lt;!-- Required JS --&gt;</span>
-        <span class="text-accent-p2">&lt;script </span><span class="text-info">src=</span><span class="text-accent7">"https://code.jquery.com/jquery-3.4.1.min.js"</span> <span class="text-info">type=</span><span class="text-accent7">"text/javascript"</span><span class="text-accent-p2">&gt;&lt;/script&gt;</span>
-        <span class="text-accent-p2">&lt;script </span><span class="text-info">src=</span><span class="text-accent7">"https://code.jquery.com/jquery-migrate-3.0.1.min.js"</span> <span class="text-info">type=</span><span class="text-accent7">"text/javascript"</span><span class="text-accent-p2">&gt;&lt;/script&gt;</span>
-    <span class="text-accent-p2">&lt;/head&gt;</span>
-    <span class="text-accent-p2">&lt;body&gt;</span>
-        <span class="text-accent-p2">&lt;h1&gt;</span>California State Webpage<span class="text-accent-p2">&lt;/h1&gt;</span>
+                <span class="text-accent-p2">&lt;title&gt;</span>California State Webpage<span class="text-accent-p2">&lt;/title&gt;</span>
+                <span class="text-muted">&lt;!-- Required JS --&gt;</span>
+                <span class="text-accent-p2">&lt;script </span><span class="text-info">src=</span><span class="text-accent7">"https://code.jquery.com/jquery-3.4.1.min.js"</span> <span class="text-info">type=</span><span class="text-accent7">"text/javascript"</span><span class="text-accent-p2">&gt;&lt;/script&gt;</span>
+                <span class="text-accent-p2">&lt;script </span><span class="text-info">src=</span><span class="text-accent7">"https://code.jquery.com/jquery-migrate-3.0.1.min.js"</span> <span class="text-info">type=</span><span class="text-accent7">"text/javascript"</span><span class="text-accent-p2">&gt;&lt;/script&gt;</span>
+                <span class="text-accent-p2">&lt;/head&gt;</span>
+                <span class="text-accent-p2">&lt;body&gt;</span>
+                <span class="text-accent-p2">&lt;h1&gt;</span>California State Webpage<span class="text-accent-p2">&lt;/h1&gt;</span>
        
-        <span class="text-muted">&lt;!-- State Template JavaScript --&gt;</span>
-        <span class="text-accent-p2">&lt;script </span><span class="text-info">src=</span><span class="text-accent7">"/js/cagov.core.js"</span> <span class="text-accent-p2">&gt;&lt;/script&gt;</span>
-    <span class="text-accent-p2">&lt;/body&gt;</span>
-<span class="text-accent-p2">&lt;/html&gt;</span></code></pre>
+                <span class="text-muted">&lt;!-- State Template JavaScript --&gt;</span>
+                <span class="text-accent-p2">&lt;script </span><span class="text-info">src=</span><span class="text-accent7">"/js/cagov.core.js"</span> <span class="text-accent-p2">&gt;&lt;/script&gt;</span>
+                <span class="text-accent-p2">&lt;/body&gt;</span>
+<span class="text-accent-p2">&lt;/html&gt;</span></pre>
 
                 <p><span class="label label-info">Note:</span> Template above does not include any State Template content, modules or server side includes.</p>
 
                 <h2>Server Side Includes</h2>
-                <p>Another way to set up the Californisa State Template web page is by using Server Side Includes. 
-                Several common components (such as page headers, footers, navigation, etc.) are included in pages using Server Side Includes (SSI). 
-                 Here is code example using SSI in California State Template web page:</p>
+                <p>
+                    Another way to set up the Californisa State Template web page is by using Server Side Includes.
+                    Several common components (such as page headers, footers, navigation, etc.) are included in pages using Server Side Includes (SSI).
+                    Here is code example using SSI in California State Template web page:
+                </p>
 <pre>
-                <code>
 <span class="text-success">&lt;!doctype html&gt;</span>
 <span class="text-accent-p2">&lt;html</span> <span class="text-info">lang=</span><span class="text-accent7">"en"</span><span class="text-accent-p2">&gt;</span>
-     <span class="text-accent-p2">&lt;head&gt;</span>
-            <span class="text-accent-p2">&lt;meta </span><span class="text-info">charset=</span><span class="text-accent7">"utf-8"</span><span class="text-accent-p2">&gt;</span>
-            <span class="text-accent-p2">&lt;title&gt;</span>State Template<span class="text-accent-p2">&lt;/title&gt;</span>
-            <span class="text-accent-p2">&lt;meta</span> <span class="text-info">name=</span><span class="text-accent7">"Author"</span> <span class="text-info">content=</span><span class="text-accent7">"State of California"</span><span class="text-accent-p2"> /&gt;</span>
-            <span class="text-accent-p2">&lt;meta</span> <span class="text-info">name=</span><span class="text-accent7">"Description"</span> <span class="text-info">content=</span><span class="text-accent7">"State of California"</span><span class="text-accent-p2"> /&gt;</span>
-            <span class="text-accent-p2">&lt;meta</span> <span class="text-info">name=</span><span class="text-accent7">"Keywords"</span> <span class="text-info">content=</span><span class="text-accent7">"California, government"</span><span class="text-accent-p2"> /&gt;</span>
-            <span class="text-success">&lt;!--#include virtual="/ssi/head-css-js.html" --&gt;</span>
-    <span class="text-accent-p2">&lt;/head&gt;</span>
-    <span class="text-accent-p2">&lt;body&gt;</span>
-          <span class="text-accent-p2">&lt;header</span> <span class="text-info">role=</span><span class="text-accent7">"banner"</span> <span class="text-info">id=</span><span class="text-accent7">"header"</span> <span class="text-info">class=</span><span class="text-accent7">"global-header fixed"</span><span class="text-accent-p2">&gt;</span>
+                <span class="text-accent-p2">&lt;head&gt;</span>
+                <span class="text-accent-p2">&lt;meta </span><span class="text-info">charset=</span><span class="text-accent7">"utf-8"</span><span class="text-accent-p2">&gt;</span>
+                <span class="text-accent-p2">&lt;title&gt;</span>State Template<span class="text-accent-p2">&lt;/title&gt;</span>
+                <span class="text-accent-p2">&lt;meta</span> <span class="text-info">name=</span><span class="text-accent7">"Author"</span> <span class="text-info">content=</span><span class="text-accent7">"State of California"</span><span class="text-accent-p2"> /&gt;</span>
+                <span class="text-accent-p2">&lt;meta</span> <span class="text-info">name=</span><span class="text-accent7">"Description"</span> <span class="text-info">content=</span><span class="text-accent7">"State of California"</span><span class="text-accent-p2"> /&gt;</span>
+                <span class="text-accent-p2">&lt;meta</span> <span class="text-info">name=</span><span class="text-accent7">"Keywords"</span> <span class="text-info">content=</span><span class="text-accent7">"California, government"</span><span class="text-accent-p2"> /&gt;</span>
+                <span class="text-success">&lt;!--#include virtual="/ssi/head-css-js.html" --&gt;</span>
+                <span class="text-accent-p2">&lt;/head&gt;</span>
+                <span class="text-accent-p2">&lt;body&gt;</span>
+                <span class="text-accent-p2">&lt;header</span> <span class="text-info">role=</span><span class="text-accent7">"banner"</span> <span class="text-info">id=</span><span class="text-accent7">"header"</span> <span class="text-info">class=</span><span class="text-accent7">"global-header fixed"</span><span class="text-accent-p2">&gt;</span>
                 <span class="text-accent-p2">&lt;div</span> <span class="text-info">id=</span><span class="text-accent7">"skip-to-content"</span><span class="text-accent-p2">&gt;&lt;a </span><span class="text-info">href=</span><span class="text-accent7">"#main-content"</span><span class="text-accent-p2">&gt;</span>Skip to Main Content<span class="text-accent-p2">&lt;/a&gt;&lt;/div&gt;</span>
                 <span class="text-success">&lt;!--#include virtual="/ssi/utility-header.html" --&gt;</span>
                 <span class="text-success">&lt;!--#include virtual="/ssi/settings-bar.html" --&gt;</span>
                 <span class="text-success">&lt;!--#include virtual="/ssi/branding.html" --&gt;</span>
                 <span class="text-success">&lt;!--#include virtual="/ssi/mobile-controls.html" --&gt;</span>
                 <span class="text-accent-p2">&lt;div</span> <span class="text-info">class=</span><span class="text-accent7">"navigation-search"</span><span class="text-accent-p2">&gt;</span>
-                    <span class="text-success">&lt;!--#include virtual="/ssi/navigation.html" --&gt;</span>
-                    <span class="text-accent-p2">&lt;div</span> <span class="text-info">id=</span><span class="text-accent7">"head-search"</span> <span class="text-info">class=</span><span class="text-accent7">"search-container"</span><span class="text-accent-p2">&gt;</span>
-                        <span class="text-success">&lt;!--#include virtual="/ssi/search.html" --&gt;</span>
-                    <span class="text-accent-p2">&lt;/div&gt;</span>
+                <span class="text-success">&lt;!--#include virtual="/ssi/navigation.html" --&gt;</span>
+                <span class="text-accent-p2">&lt;div</span> <span class="text-info">id=</span><span class="text-accent7">"head-search"</span> <span class="text-info">class=</span><span class="text-accent7">"search-container"</span><span class="text-accent-p2">&gt;</span>
+                <span class="text-success">&lt;!--#include virtual="/ssi/search.html" --&gt;</span>
+                <span class="text-accent-p2">&lt;/div&gt;</span>
                 <span class="text-accent-p2">&lt;/div&gt;</span>
                 <span class="text-accent-p2">&lt;div </span><span class="text-info">class=</span><span class="text-accent7">"header-decoration"</span><span class="text-accent-p2">&gt;</span><span class="text-accent-p2">&lt;/div&gt;</span>
-            <span class="text-accent-p2">&lt;/header&gt;</span>
-            <span class="text-accent-p2">&lt;div</span> <span class="text-info">id=</span><span class="text-accent7">"main-content"</span> <span class="text-info">class=</span><span class="text-accent7">"main-content"</span><span class="text-accent-p2">&gt;</span>
+                <span class="text-accent-p2">&lt;/header&gt;</span>
+                <span class="text-accent-p2">&lt;div</span> <span class="text-info">id=</span><span class="text-accent7">"main-content"</span> <span class="text-info">class=</span><span class="text-accent7">"main-content"</span><span class="text-accent-p2">&gt;</span>
                 <span class="text-accent-p2">&lt;div </span><span class="text-info">class=</span><span class="text-accent7">"container"</span><span class="text-accent-p2">&gt;</span>
-                    <span class="text-accent-p2">&lt;main </span><span class="text-info">class=</span><span class="text-accent7">"main-primary"</span><span class="text-accent-p2">&gt;</span>
+                <span class="text-accent-p2">&lt;main </span><span class="text-info">class=</span><span class="text-accent7">"main-primary"</span><span class="text-accent-p2">&gt;</span>
                     Page content
-                    <span class="text-accent-p2">&lt;/main&gt;</span>
-               <span class="text-accent-p2">&lt;/div&gt;</span>
-           <span class="text-accent-p2">&lt;/div&gt;</span>
-            <span class="text-success">&lt;!--#include virtual="/ssi/global-footer.html" --&gt;</span>
-            <span class="text-success">&lt;!--#include virtual="/ssi/scripts.html" --&gt;</span>
-    <span class="text-accent-p2">&lt;/body&gt;</span>
+                <span class="text-accent-p2">&lt;/main&gt;</span>
+                <span class="text-accent-p2">&lt;/div&gt;</span>
+                <span class="text-accent-p2">&lt;/div&gt;</span>
+                <span class="text-success">&lt;!--#include virtual="/ssi/global-footer.html" --&gt;</span>
+                <span class="text-success">&lt;!--#include virtual="/ssi/scripts.html" --&gt;</span>
+                <span class="text-accent-p2">&lt;/body&gt;</span>
 <span class="text-accent-p2">&lt;/html&gt;</span>
-</code>
 </pre>
-<p><span class="label label-info">Note:</span> The web server that hosts the State Template should be configured to process SSI's with the .html extension.</p>
+                <p><span class="label label-info">Note:</span> The web server that hosts the State Template should be configured to process SSI's with the .html extension.</p>
 
-                </div>
+            </div>
 
 
 <!-- End Section -->
