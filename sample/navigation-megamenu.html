@@ -5,15 +5,15 @@
 <!--[if IE 9]>    <html class="no-js ie9 oldie" lang="en"> <![endif]-->
 <!--[if (gt IE 9)]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
 <head>
-<!--
-    California State Template
-Version 5.0.14
+
+<!--    California State Template
+    Version 5.5.11
  
 Based on Twitter Bootstrap
 -->
 <meta charset="utf-8">
 
-<title>Megamenu Navigation</title>
+<title>State Template v5 Megamenu</title>
 
 <meta name="Author" content="State of California" />
 <meta name="Description" content="State of California" />
@@ -29,9 +29,7 @@ Based on Twitter Bootstrap
     <div id="skip-to-content"><a href="#main-content">Skip to Main Content</a></div>
 
     <!-- Include Utility Header -->
-    <!--#include virtual="/ssi/utility-header.html" -->		
-    
-    <!-- Settings Bar -->	
+    <!--#include virtual="/ssi/utility-header.html" -->		<!-- Settings Bar -->	
 		<!--#include virtual="/ssi/settings-bar.html" -->
 
 		<!-- Include Branding -->
@@ -56,20 +54,24 @@ Based on Twitter Bootstrap
 
 <div id="main-content" class="main-content">
     <div class="section">
-        <main class="main-primary">
+        <main class="main-primary">            
             <ol class="breadcrumb">
                 <li><a href="../index.html" title="Home page">Home</a></li>
                 <li><a href="index.html" title="Examples landing page">Examples</a></li>
-                <li class="active">Megamenu</li>
+                <li class="active">State Template v5 Megamenu</li>
             </ol>
             
-        	<h1>Megamenu Navigation</h1>
-            <p>The megamenu displays dropdown panels for sub navigation when the user hovers over a primary link. This style of menu can be set by including the <code>.megadropdown</code> class in the <code>&lt;nav&gt;</code> element.</p>
-            <p><strong>Example:</strong> <br><code>&lt;nav id="navigation" class="main-navigation megadropdown"&gt;</code> .</p> 
-            <p>In the template distribution this markup can be found in <code>/ssi/navigation.html</code>.
+            <h1>State Template v5 Megamenu</h1>
+            <p>The functionality in both template v5.5 and template v5 is the same: the megamenu displays dropdown panels 
+            for sub navigation when the user clicks on a primary link. The difference is layout and display of the sub-navigation units. 
+            Tempalte v5.5 uses <code>.flex</code> class in <code>.second-level-nav</code> container. 
+            Template v5 doesn't use <code>flex</code> class. It uses <code>ul</code> list to display grid like sub nav links.</p> 
+            <p>In the template distribution this markup can be found in <code>/sample/modules/nav-megamenu.html</code>.
             
             <h2>Fixed Units</h2>
-            <p>When you open the mega menu, you may notice a table or grid like look to the sub nav links. In order maintain the grid look the items need to have a <code>.unit</code> class applied. Each unit increment multiplies it's base value by it's unit value. </p>
+            <p>When you open the mega menu, you may notice a table or grid like look to the sub nav links. 
+            In order maintain the grid look the items need to have a <code>.unit</code> class applied. 
+            Each unit increment multiplies it's base value by it's unit value. </p>
             
             <ul>
                 <li><code>.unit1</code> = 50px</li>
@@ -112,11 +114,15 @@ Based on Twitter Bootstrap
           
             
 <h2>More Navigation Samples</h2>
-            <ul>
-                <li><a href="navigation-single.html">Single Level Navigation</a></li>
-                <li><a href="navigation-dropdown.html">Dropdown Navigation</a></li>
-                <li><a href="navigation-megamenu-original.html">State Template v4 Original Megamenu</a></li>
-            </ul>
+<ul>
+    <li><a href="navigation-full-width-utility.html">Full Width Navigation with Active Search</a></li>
+    <li><a href="navigation-single.html">Single Level Navigation</a></li>
+    <li><a href="navigation-dropdown.html">Dropdown Navigation</a></li>
+    <li><a href="navigation-megamenu-flex.html">State Template v5.5 Flex Megamenu</a></li>
+    <li><a href="navigation-megamenu-original.html">State Template v4 Megamenu</a></li>
+    <li><a href="navigation-full-width.html">Full Width Navigation</a></li>
+    <li><a href="navigation-single.html">Single Level Navigation</a></li>
+</ul>
 
 </main>
         

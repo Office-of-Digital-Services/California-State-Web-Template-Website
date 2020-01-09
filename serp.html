@@ -5,11 +5,10 @@
 <!--[if IE 9]>    <html class="no-js ie9 oldie" lang="en"> <![endif]-->
 <!--[if (gt IE 9)]><!-->
 <html class="no-js" lang="en">
- <!--<![endif]-->
-<head>
-    <!--
-    California State Template
-    Version 5.0.7
+<!--<![endif]-->
+<head>    
+<!--    California State Template
+    Version 5.5.11
 
     Based on Twitter Bootstrap
     -->
@@ -35,7 +34,6 @@
     </style>
 </head>
 
-<!-- possible body classes are "primary" and "two-column" -->
 <body>
 
     <header role="banner" id="header" class="global-header fixed">
@@ -82,17 +80,17 @@
             </div>
             <div class="section">
                 <div class="container">
+
                     <gcse:searchresults-only></gcse:searchresults-only>
+                    <!-- <script src='//www.google.com/jsapi' type='text/javascript'></script> -->
                 </div>
             </div>
         </main>
 
     </div>
 
-
     <!--#include virtual="/ssi/global-footer.html" -->
     <!--#include virtual="/ssi/scripts.html" -->
-
 
     <script>
         // Search ID
@@ -113,10 +111,9 @@
 
             return (results !== null) ? results[1] || 0 : false;
         }
-        var query = decodeURIComponent($.urlParam('q').replace(/\+/g," "));
+        var query = decodeURIComponent($.urlParam('q').replace(/\+/g, " "));
         $('input[name=q]').val(query);
 
     </script>
-
 </body>
 </html>

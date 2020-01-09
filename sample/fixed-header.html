@@ -6,10 +6,9 @@
 <!--[if (gt IE 9)]><!-->
 <html class="no-js" lang="en">
  <!--<![endif]-->
-<head>
-    <!--
-    California State Template
-Version 5.0.14
+<head>    
+<!--    California State Template
+    Version 5.5.11
 
     Based on Twitter Bootstrap
     -->
@@ -48,16 +47,19 @@ Version 5.0.14
 
         </div>
 
-
+        <!-- Search Results -->
+        <div class="search-results-container">
+        </div>
 
     </header>
 
 
-    <!-- Include Page Template -->
-    <!--#include virtual="/ssi/header-large-banner.html" -->
+
 
 
     <div id="main-content" class="main-content">
+        <!-- Include Page Template -->
+        <!--#include virtual="/ssi/header-large-banner.html" -->
         <div class="section">
             <main class="main-primary">
                 <ol class="breadcrumb">
@@ -103,7 +105,6 @@ Version 5.0.14
     <script>
         // -- DEMONSTRATION ONLY! -- //
         $(document).ready(function () {
-
             // Toggle .fixed header class
             $(".toggleHeader").click(function () {
                 var btnLabel = $(this);
@@ -116,7 +117,6 @@ Version 5.0.14
                 } else {
                     btnLabel.html('Add Fixed Header');
                     $("#header").removeClass("fixed");
-                    $("#main-content").css("padding-top", "0");
                     $("#title").text("Fixed Header (Removed)");
                     window.scrollTo(0, 0);
 

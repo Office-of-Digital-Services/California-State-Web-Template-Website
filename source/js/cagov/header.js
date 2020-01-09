@@ -17,10 +17,9 @@ $(document).ready(function () {
 
 // Beta 5 Changes please incorporate into source files
 
-    setTimeout(function () {
-        $askGroup.addClass('in');
-        $headSearch.addClass('in');
-    }, 150);
+    $askGroup.addClass('in');
+    $headSearch.addClass('in');
+
 
     // setting up global variables for header functions
     window.headerVars = {
@@ -63,4 +62,9 @@ $(document).ready(function () {
     askGroup.attr("style", "background-size: cover; background-repeat: no-repeat; background-image:" + bgImage);
 
 
+});
+
+// Remove unnessesary aria attributes from settings expand button to pass accessibility
+$(document).ready(function () {
+    $("#settings-btn").removeAttr("role aria-selected");
 });

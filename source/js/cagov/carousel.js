@@ -231,7 +231,7 @@ function initContent() {
     });
 }
 
-(function($) {
+(function ($) {
 
     $.fn.initCAVideo = function (bool) {
 

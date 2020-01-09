@@ -7,10 +7,9 @@
 <html class="no-js" lang="en">
 <!--<![endif]-->
 
-<head>
-    <!--
-    California State Template
-Version 5.0.14
+<head>    
+<!--    California State Template
+    Version 5.5.11
 
     Based on Twitter Bootstrap
     -->
@@ -60,12 +59,11 @@ Version 5.0.14
 
 
     <div id="main-content" class="main-content">
-        <div class="container p-b-lg">
+        <div class="container">
             <!-- InstanceBeginEditable name="MainContent" -->
-            <main class="main-primary">
+            <main role="main" class="main-primary">
                 <ol class="breadcrumb">
-                    <li><a href="/index.html" title="Home page">Home</a></li>
-                    <li><a href="/sample/index.html" title="Examples landing page">Examples</a></li>
+                    <li><a href="index.html" title="Home page">Home</a></li>
                     <li class="active">Structure</li>
                 </ol>
                 <h1>State Template Structure</h1>
@@ -80,44 +78,42 @@ Version 5.0.14
                     Code below shows basic State Template web page structure:
                 </p>
 <pre>
-<code>
 <span class="text-success">&lt;!doctype html&gt;</span>
 <span class="text-accent-p2">&lt;html</span> <span class="text-info">lang=</span><span class="text-accent7">"en"</span><span class="text-accent-p2">&gt;</span>
-    <span class="text-accent-p2">&lt;head&gt;</span>
-        <span class="text-accent-p2">&lt;meta </span><span class="text-info">charset=</span><span class="text-accent7">"utf-8"</span><span class="text-accent-p2">&gt;</span>
-        <span class="text-accent-p2">&lt;title&gt;</span>State Template<span class="text-accent-p2">&lt;/title&gt;</span>
-        <span class="text-accent-p2">&lt;meta</span> <span class="text-info">name=</span><span class="text-accent7">"Author"</span> <span class="text-info">content=</span><span class="text-accent7">"State of California"</span><span class="text-accent-p2"> /&gt;</span>
-        <span class="text-accent-p2">&lt;meta</span> <span class="text-info">name=</span><span class="text-accent7">"Description"</span> <span class="text-info">content=</span><span class="text-accent7">"State of California"</span><span class="text-accent-p2"> /&gt;</span>
-        <span class="text-accent-p2">&lt;meta</span> <span class="text-info">name=</span><span class="text-accent7">"Keywords"</span> <span class="text-info">content=</span><span class="text-accent7">"California, government"</span><span class="text-accent-p2"> /&gt;</span>
-        <span class="text-success">&lt;!--#include virtual="/ssi/head-css-js.html" --&gt;</span>
+     <span class="text-accent-p2">&lt;head&gt;</span>
+            <span class="text-accent-p2">&lt;meta </span><span class="text-info">charset=</span><span class="text-accent7">"utf-8"</span><span class="text-accent-p2">&gt;</span>
+            <span class="text-accent-p2">&lt;title&gt;</span>State Template<span class="text-accent-p2">&lt;/title&gt;</span>
+            <span class="text-accent-p2">&lt;meta</span> <span class="text-info">name=</span><span class="text-accent7">"Author"</span> <span class="text-info">content=</span><span class="text-accent7">"State of California"</span><span class="text-accent-p2"> /&gt;</span>
+            <span class="text-accent-p2">&lt;meta</span> <span class="text-info">name=</span><span class="text-accent7">"Description"</span> <span class="text-info">content=</span><span class="text-accent7">"State of California"</span><span class="text-accent-p2"> /&gt;</span>
+            <span class="text-accent-p2">&lt;meta</span> <span class="text-info">name=</span><span class="text-accent7">"Keywords"</span> <span class="text-info">content=</span><span class="text-accent7">"California, government"</span><span class="text-accent-p2"> /&gt;</span>
+            <span class="text-success">&lt;!--#include virtual="/ssi/head-css-js.html" --&gt;</span>
     <span class="text-accent-p2">&lt;/head&gt;</span>
     <span class="text-accent-p2">&lt;body&gt;</span>
-        <span class="text-accent-p2">&lt;header</span> <span class="text-info">role=</span><span class="text-accent7">"banner"</span> <span class="text-info">id=</span><span class="text-accent7">"header"</span> <span class="text-info">class=</span><span class="text-accent7">"global-header fixed"</span><span class="text-accent-p2">&gt;</span>
-            <span class="text-accent-p2">&lt;div</span> <span class="text-info">id=</span><span class="text-accent7">"skip-to-content"</span><span class="text-accent-p2">&gt;&lt;a </span><span class="text-info">href=</span><span class="text-accent7">"#main-content"</span><span class="text-accent-p2">&gt;</span>Skip to Main Content<span class="text-accent-p2">&lt;/a&gt;&lt;/div&gt;</span>
-            <span class="text-success">&lt;!--#include virtual="/ssi/location-bar.html" --&gt;</span>
-            <span class="text-success">&lt;!--#include virtual="/ssi/utility-header.html" --&gt;</span>
-            <span class="text-success">&lt;!--#include virtual="/ssi/settings-bar.html" --&gt;</span>
-            <span class="text-success">&lt;!--#include virtual="/ssi/branding.html" --&gt;</span>
-            <span class="text-success">&lt;!--#include virtual="/ssi/mobile-controls.html" --&gt;</span>
-            <span class="text-accent-p2">&lt;div</span> <span class="text-info">class=</span><span class="text-accent7">"navigation-search"</span><span class="text-accent-p2">&gt;</span>
-                <span class="text-success">&lt;!--#include virtual="/ssi/navigation.html" --&gt;</span>
-                <span class="text-accent-p2">&lt;div</span> <span class="text-info">id=</span><span class="text-accent7">"head-search"</span> <span class="text-info">class=</span><span class="text-accent7">"search-container"</span><span class="text-accent-p2">&gt;</span>
-                    <span class="text-success">&lt;!--#include virtual="/ssi/search.html" --&gt;</span>
+          <span class="text-accent-p2">&lt;header</span> <span class="text-info">role=</span><span class="text-accent7">"banner"</span> <span class="text-info">id=</span><span class="text-accent7">"header"</span> <span class="text-info">class=</span><span class="text-accent7">"global-header fixed"</span><span class="text-accent-p2">&gt;</span>
+                <span class="text-accent-p2">&lt;div</span> <span class="text-info">id=</span><span class="text-accent7">"skip-to-content"</span><span class="text-accent-p2">&gt;&lt;a </span><span class="text-info">href=</span><span class="text-accent7">"#main-content"</span><span class="text-accent-p2">&gt;</span>Skip to Main Content<span class="text-accent-p2">&lt;/a&gt;&lt;/div&gt;</span>
+                <span class="text-success">&lt;!--#include virtual="/ssi/utility-header.html" --&gt;</span>
+                <span class="text-success">&lt;!--#include virtual="/ssi/settings-bar.html" --&gt;</span>
+                <span class="text-success">&lt;!--#include virtual="/ssi/branding.html" --&gt;</span>
+                <span class="text-success">&lt;!--#include virtual="/ssi/mobile-controls.html" --&gt;</span>
+                <span class="text-accent-p2">&lt;div</span> <span class="text-info">class=</span><span class="text-accent7">"navigation-search"</span><span class="text-accent-p2">&gt;</span>
+                    <span class="text-success">&lt;!--#include virtual="/ssi/navigation.html" --&gt;</span>
+                    <span class="text-accent-p2">&lt;div</span> <span class="text-info">id=</span><span class="text-accent7">"head-search"</span> <span class="text-info">class=</span><span class="text-accent7">"search-container"</span><span class="text-accent-p2">&gt;</span>
+                        <span class="text-success">&lt;!--#include virtual="/ssi/search.html" --&gt;</span>
+                    <span class="text-accent-p2">&lt;/div&gt;</span>
                 <span class="text-accent-p2">&lt;/div&gt;</span>
-            <span class="text-accent-p2">&lt;/div&gt;</span>
-        <span class="text-accent-p2">&lt;/header&gt;</span>
-        <span class="text-accent-p2">&lt;div</span> <span class="text-info">id=</span><span class="text-accent7">"main-content"</span> <span class="text-info">class=</span><span class="text-accent7">"main-content"</span><span class="text-accent-p2">&gt;</span>
-            <span class="text-accent-p2">&lt;div </span><span class="text-info">class=</span><span class="text-accent7">"container"</span><span class="text-accent-p2">&gt;</span>
-                <span class="text-accent-p2">&lt;main </span><span class="text-info">class=</span><span class="text-accent7">"main-primary"</span><span class="text-accent-p2">&gt;</span>
-                        Page content
-                <span class="text-accent-p2">&lt;/main&gt;</span>
-            <span class="text-accent-p2">&lt;/div&gt;</span>
-        <span class="text-accent-p2">&lt;/div&gt;</span>
-        <span class="text-success">&lt;!--#include virtual="/ssi/global-footer.html" --&gt;</span>
-        <span class="text-success">&lt;!--#include virtual="/ssi/scripts.html" --&gt;</span>
+                <span class="text-accent-p2">&lt;div </span><span class="text-info">class=</span><span class="text-accent7">"header-decoration"</span><span class="text-accent-p2">&gt;</span><span class="text-accent-p2">&lt;/div&gt;</span>
+            <span class="text-accent-p2">&lt;/header&gt;</span>
+            <span class="text-accent-p2">&lt;div</span> <span class="text-info">id=</span><span class="text-accent7">"main-content"</span> <span class="text-info">class=</span><span class="text-accent7">"main-content"</span><span class="text-accent-p2">&gt;</span>
+                <span class="text-accent-p2">&lt;div </span><span class="text-info">class=</span><span class="text-accent7">"container"</span><span class="text-accent-p2">&gt;</span>
+                    <span class="text-accent-p2">&lt;main </span><span class="text-info">class=</span><span class="text-accent7">"main-primary"</span><span class="text-accent-p2">&gt;</span>
+                    Page content
+                    <span class="text-accent-p2">&lt;/main&gt;</span>
+               <span class="text-accent-p2">&lt;/div&gt;</span>
+           <span class="text-accent-p2">&lt;/div&gt;</span>
+            <span class="text-success">&lt;!--#include virtual="/ssi/global-footer.html" --&gt;</span>
+            <span class="text-success">&lt;!--#include virtual="/ssi/scripts.html" --&gt;</span>
     <span class="text-accent-p2">&lt;/body&gt;</span>
 <span class="text-accent-p2">&lt;/html&gt;</span>
-</code>
 </pre>
                 <h2>File and Folder Structure</h2>
                 <p>The following is the file and folder structure for the 2018 State Template package.</p>
@@ -189,14 +185,13 @@ Version 5.0.14
                 <div class="group">
 
                     <div class="col-12">
-                        <h2>New Page Structure in v5</h2>
-                        <p>There are several new structural elements in the v5 of the state template. Most are optional and one is required namely the <code>utility-header.html</code> located in the <code>ssi</code> folder of the template.</p>
+                        <h2>New Page Structure in v5.5</h2>
+                        <p>There are several structural elements in the v5.5 of the state template. Most are optional and one is required namely the <code>utility-header.html</code> located in the <code>ssi</code> folder of the template.</p>
                         <ul class="list-standout">
                             <li>
                                 <strong>Utility Header</strong><br>
                                 This is the new header module that is required in the new template containing the Ca.gov logo and several other features. The Utility Header is the top most content bar in the template header area.
                             </li>
-
                             <li>
                                 <strong>Settings Bar</strong> <br>
                                 This is a fully functioning feature that allows users to increase and decrease the font size as well as toggle to a high contrast viewing mode. The Settings Bar can be seen in the top right corner of the page.
@@ -215,7 +210,6 @@ Version 5.0.14
 
                 </div>
             </main>
-
         </div>
         <!-- InstanceEndEditable -->
 
@@ -227,7 +221,6 @@ Version 5.0.14
 
     <!--#include virtual="/ssi/global-footer.html" -->
     <!--#include virtual="/ssi/scripts.html" -->
-
 
 
 </body>

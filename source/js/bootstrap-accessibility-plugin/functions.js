@@ -3,7 +3,7 @@
   // ===============================
   
 var uniqueId = function (prefix) {
-    return (prefix || 'ui-id') + '-' + Math.floor(Math.random() * 1000 + 1);
+    return (prefix || 'ui-id') + '-' + Math.floor((Math.random() * 1000) + 1);
 };
 
   

@@ -8,9 +8,9 @@
 <!--<![endif]-->
 
 <head>
-  <!--
-    California State Template
-Version 5.0.14
+  
+<!--    California State Template
+    Version 5.5.11
 
 Based on Twitter Bootstrap
 -->
@@ -30,11 +30,11 @@ Based on Twitter Bootstrap
 
   <header role="banner" id="header" class="global-header">
     <div id="skip-to-content"><a href="#main-content">Skip to Main Content</a></div>
-        
+
         <!-- Include Utility Header -->
-		<!--#include virtual="/ssi/utility-header.html" -->	
-        
-        <!-- Settings Bar -->	
+		<!--#include virtual="/ssi/utility-header.html" -->
+
+        <!-- Settings Bar -->
 		<!--#include virtual="/ssi/settings-bar.html" -->
 
 		<!-- Include Branding -->
@@ -59,36 +59,202 @@ Based on Twitter Bootstrap
 
   <div id="main-content" class="main-content">
     <div class="section">
-      <main class="main-primary">
-        <ol class="breadcrumb">
-          <li><a href="../index.html" title="Home page">Home</a></li>
-          <li><a href="index.html" title="Examples landing page">Examples</a></li>
-          <li class="active">Number Counter</li>
-        </ol>
+        <main class="main-primary">            
+            <ol class="breadcrumb">
+                <li><a href="../index.html" title="Home page">Home</a></li>
+                <li><a href="index.html" title="Examples landing page">Examples</a></li>
+                <li class="active">Number Counter</li>
+            </ol>
 
-        <div class="group">
-          <div class="half">
-            <h1>Number Counter</h1>
+            <div class="group">
+                <div class="half">
+                    <h1>Number Counter</h1>
 
-            <hr>
+                    <hr>
 
-            <h2>Example:</h2>
-              <!--#include virtual="/sample/modules/number-counter.html" -->
-          </div>
-          <div class="half">
-            <h2>Source Code:</h2>
+                    <h2>Example:</h2>
+                    <!--#include virtual="/sample/modules/number-counter.html" -->
+                </div>
+                <div class="half">
+                    <h2>Source Code:</h2>
 
-            <textarea aria-label="HTML Markup" class="form-control" rows="10" cols="80"><!--#include virtual="/sample/modules/number-counter.html" --></textarea>
+                    <pre><code class="overflow-auto"><!--#include virtual="/sample/modules/number-counter.html" --></code></pre>
 
-          </div>
-        </div>
-      </main>
+                </div>
+            </div>
+
+            <div class="section section-inverted m-t-lg m-b-md">
+                <div class="container">
+                    <h2 class="m-b-lg m-t-md text-center">Pie Chart Number Counters</h2>
+                    <!--#include virtual="/sample/modules/number-counter-circles.html" -->
+                </div>
+            </div>
+
+            <!-- Trigger the modal with a button -->
+            <button type="button" class="btn btn-default btn-sm" data-toggle="modal" data-target="#number-counter-circles">Show Source Code</button>
+            <!-- Modal -->
+            <div class="modal fade" id="number-counter-circles" role="dialog">
+                <div class="modal-dialog modal-lg">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h4 class="modal-title">HTML Markup</h4>
+                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        </div>
+                        <div class="modal-body">
+
+                            <div class="tab-group">
+                                <ul id="sourceCode" class="nav nav-tabs" role="tablist">
+                                    <li class="active"><a href="#html" role="tab" data-toggle="tab">HTML Markup</a></li>
+                                    <li><a href="#js" role="tab" data-toggle="tab">JavaScript</a></li>
+                                </ul>
+                                <!-- Tab panes -->
+                                <div class="tab-content responsive">
+                                    <div class="tab-pane active" id="html">
+                                        <pre><code class="overflow-auto"><!--#include virtual="/sample/modules/number-counter-circles.html" --></code></pre>
+                                    </div>
+                                    <div class="tab-pane" id="js">
+                                        <pre><code class="overflow-auto">createCircles();
+
+
+function createCircles() {
+    //isolate this circles code out of fuction if you want circles animation to start right away
+    var myCircle1 = Circles.create({
+        id: 'circle1', radius: 80,
+        radius: 80,
+        value: 87,
+        maxValue: 100,
+        width: 8,
+        text: function (value) { return value + '%'; },
+        colors: ['#363636', '#72c02c'],
+        duration: 2000,
+        wrpClass: 'circles-wrp',
+        textClass: 'circles-text',
+        valueStrokeClass: 'circles-valueStroke',
+        maxValueStrokeClass: 'circles-maxValueStroke',
+        styleWrapper: true,
+        styleText: true
+    });
+
+    var myCircle2 = Circles.create({
+        id: 'circle2', radius: 80,
+        radius: 80,
+        value: 74,
+        maxValue: 100,
+        width: 8,
+        text: function (value) { return value + '%'; },
+        colors: ['#363636', '#e81c62'],
+        duration: 2000,
+        wrpClass: 'circles-wrp',
+        textClass: 'circles-text',
+        valueStrokeClass: 'circles-valueStroke',
+        maxValueStrokeClass: 'circles-maxValueStroke',
+        styleWrapper: true,
+        styleText: true
+    });
+
+    var myCircle3 = Circles.create({
+        id: 'circle3', radius: 80,
+        radius: 80,
+        value: 65,
+        maxValue: 100,
+        width: 8,
+        text: function (value) { return value + '%'; },
+        colors: ['#363636', '#00bed6'],
+        duration: 2000,
+        wrpClass: 'circles-wrp',
+        textClass: 'circles-text',
+        valueStrokeClass: 'circles-valueStroke',
+        maxValueStrokeClass: 'circles-maxValueStroke',
+        styleWrapper: true,
+        styleText: true
+    });
+    // End circles
+}
+
+</code></pre>
+                                    </div>
+                                </div>
+                            </div>
+
+
+
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+                </div>
+            </div><!-- / End Modal -->
+
+        </main>
     </div>
   </div>
 
   <!--#include virtual="/ssi/global-footer.html" -->
 
   <!--#include virtual="/ssi/scripts.html" -->
+
+
+    <script>
+
+createCircles();
+
+
+function createCircles() {
+    //isolate this circles code out of fuction if you want circles animation to start right away
+    var myCircle1 = Circles.create({
+        id: 'circle1', radius: 80,
+        radius: 80,
+        value: 87,
+        maxValue: 100,
+        width: 8,
+        text: function (value) { return value + '%'; },
+        colors: ['#363636', '#72c02c'],
+        duration: 2000,
+        wrpClass: 'circles-wrp',
+        textClass: 'circles-text',
+        valueStrokeClass: 'circles-valueStroke',
+        maxValueStrokeClass: 'circles-maxValueStroke',
+        styleWrapper: true,
+        styleText: true
+    });
+
+    var myCircle2 = Circles.create({
+        id: 'circle2', radius: 80,
+        radius: 80,
+        value: 74,
+        maxValue: 100,
+        width: 8,
+        text: function (value) { return value + '%'; },
+        colors: ['#363636', '#e81c62'],
+        duration: 2000,
+        wrpClass: 'circles-wrp',
+        textClass: 'circles-text',
+        valueStrokeClass: 'circles-valueStroke',
+        maxValueStrokeClass: 'circles-maxValueStroke',
+        styleWrapper: true,
+        styleText: true
+    });
+
+    var myCircle3 = Circles.create({
+        id: 'circle3', radius: 80,
+        radius: 80,
+        value: 65,
+        maxValue: 100,
+        width: 8,
+        text: function (value) { return value + '%'; },
+        colors: ['#363636', '#00bed6'],
+        duration: 2000,
+        wrpClass: 'circles-wrp',
+        textClass: 'circles-text',
+        valueStrokeClass: 'circles-valueStroke',
+        maxValueStrokeClass: 'circles-maxValueStroke',
+        styleWrapper: true,
+        styleText: true
+    });
+    // End circles
+}
+    </script>
 
 </body>
 

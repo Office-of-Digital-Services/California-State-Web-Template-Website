@@ -26,7 +26,7 @@ var fakewaffle = (function ($, fakewaffle) {
             var tabs = $tabGroup.find('[data-toggle="tab"]');
             var collapseDiv = $('<div></div>', {
                 'class': 'panel-group responsive' + visible,
-                'id': 'collapse-' + +'waffle-' + _id++
+                'id': 'collapse-' + +'waffle-' + (_id++)
             });
 
             $.each(tabs, function () {

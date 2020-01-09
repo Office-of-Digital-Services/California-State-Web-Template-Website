@@ -1,3 +1,7 @@
+/* -----------------------------------------
+   CHARTS - /source/js/cagov/charts.js
+----------------------------------------- */
+
 $(function () {
     // the half circle dashboard things built with the Donut functions
     $('.stats-highlight').each(initStats);
@@ -12,22 +16,22 @@ function initPlotly(d3, Plotly) {
     if ($('html').hasClass('ie8') || $('html').hasClass('ie7')) {
         //  TODO: Unsupport graphs fall back to image
         if (!container.has('img').length) {
-            container.html('<span class="plotly-chart--loading">Chart image not found</span>');
+            container.html('<span class="plotly-chart--loading">Chart image not found</span>')
         }
         return;
     }
 
     // no supplied image fallback show loading indicator
     if (!container.has('img').length) {
-        container.html('<span class="plotly-chart--loading">Loading</span>');
+        container.html('<span class="plotly-chart--loading">Loading</span>')
     }
 
     var libs = [
         'd3', 'Plotly',
         // for ie9 support
-        'Float32Array' in window
+        (('Float32Array' in window)
             ? ''
-            : 'typedarray'
+            : 'typedarray')
     ];
 
     requirejs(libs, function (d3, Plotly) {
@@ -79,33 +83,16 @@ function initPlotly(d3, Plotly) {
                         color: "#333"
                     }
                 }
-                // not setting the background color atm, keep default
-                // paper_bgcolor: container.css("background-color")
             });
 
-            // This does not work atm,
-            // following this issue for updates
-            // https://github.com/plotly/plotly.js/issues/102
-
-            // container.on('mousemove', function (data) {
-            //
-            //     // make things bigger
-            //     var hovertext = container.find(".hovertext");
-            //     var trans = hovertext.attr('transform')
-            //     // hovertext.attr('transform', trans + ' scale(1.3)');
-            //
-            //     // give more padding around text by setting stroke to the
-            //     // same color as the fill
-            //     var path = hovertext.find('path');
-            //     var color = path.css('fill');
-            //     console.log(color);
-            //     path.css({'stroke-width': 7, 'stroke': color})
-            // });
+       
         });
 
+
+        
         $(window).on('resize', function () {
             var gd3 = d3.select(container.get(0)).style({height: getHeight()});
-            Plotly.Plots.on("resize", gd);
+            Plotly.Plots.resize(gd);
         });
 
     });
@@ -195,7 +182,7 @@ function getConfig(d3, container, func) {
             if(isNaN(parseFloat(d))) {
               return d;
             }
-            return + d;
+            return + d
         });
     } else {
         xValues = [];
@@ -209,9 +196,9 @@ function getConfig(d3, container, func) {
     switch (chartType) {
         case "line":
         case "bar":
-            config[0].x = xValues;
+            config[0].x = xValues
             config[0].y = yValues.map(function (d) {
-                return + d;
+                return + d
             });
             break;
 
@@ -238,7 +225,7 @@ function getConfig(d3, container, func) {
 
         case "pie":
             var colorA = d3.hsl(color);
-            var colorB = d3.hsl((colorA.h - 4 * xValues.length) % 360, colorA.s, colorA.l);
+            var colorB = d3.hsl((colorA.h - (4 * xValues.length)) % 360, colorA.s, colorA.l)
 
             var colorScale = d3.scale.linear().domain(xValues).interpolate(d3.interpolateHsl).range([colorA.toString(), colorB.toString()]);
             var colors = xValues.map(function (d) {
@@ -264,14 +251,14 @@ function initStats() {
     }
     requirejs(libs, function (d3) {
 
-        var shouldFlip = container.attr('data-direction') === 'right'
+        var shouldFlip = container.attr('data-direction') == 'right'
             ? true
             : false;
 
         var data = parseFloat(container.attr('data-percentfill'));
         var chart = container.find('.half-gauge-chart');
         var color = container.attr('data-colorfill');
-        var showHalfTick = container.find('.small-goal-text').length !== 0;
+        var showHalfTick = container.find('.small-goal-text').length != 0;
 
         var config = {
             bindTo: chart.get(0),
@@ -292,7 +279,7 @@ function initStats() {
 
         var donutChart = new Donut(config);
 
-        donutChart.load({ data: 0 });
+        donutChart.load({data: 0});
 
         function sizeText() {
             var width = chart.get(0).clientWidth;
@@ -309,10 +296,10 @@ function initStats() {
             var detailHeight = detail.height();
 
             detail.css({
-                top: width < 400
+                top: (width < 400)
                     ? detailHeight * 2 + 20
-                    : detailHeight * 1.5
-            });
+                    : (detailHeight * 1.5)
+            })
             container.find('.big-number').css({
                 'font-size': width / 6
             });
@@ -332,7 +319,7 @@ function initStats() {
                 };
                 config.data = data;
                 donutChart = new Donut(config);
-                donutChart.load({ data: data });
+                donutChart.load({data: data});
                 sizeText();
             }, 10);
 
@@ -343,10 +330,10 @@ function initStats() {
             // start when it appears at the bottom
             offset: '100%',
             handler: function () {
-                donutChart.load({ data: data });
+                donutChart.load({data: data})
             }
         });
-    });
+    })
 
 }
 
@@ -394,7 +381,7 @@ function initHalfDonut(d3) {
         this.accessor = this.config.accessor;
 
         // convenience method to map data to start/end angles
-        this.pie = d3.layout.pie().sort(this.config.sort).startAngle(degToRad(this.config.startAngle)).endAngle(degToRad(this.config.endAngle));
+        this.pie = d3.layout.pie().sort(this.config.sort).startAngle(degToRad(this.config.startAngle)).endAngle(degToRad(this.config.endAngle))
 
         if (this.accessor && typeof this.accessor === 'function') {
             this.pie.value(this.accessor);
@@ -405,14 +392,14 @@ function initHalfDonut(d3) {
         // setup the arc
         // divide offset by 4 because the middle of the stroke aligns to the edge
         // so it's 1/2 on the outside, 1/2 inside
-        this.arc = d3.svg.arc().innerRadius(this.config.radius - thickness - this.config.offset / 4).outerRadius(this.config.radius + this.config.offset / 4);
+        this.arc = d3.svg.arc().innerRadius(this.config.radius - thickness - (this.config.offset / 4)).outerRadius(this.config.radius + (this.config.offset / 4));
 
         bindSvgToDom(this);
     };
 
     Donut.prototype.load = function (newOpts) {
         // store data on object
-        var data = newOpts && newOpts.data !== null
+        var data = (newOpts && newOpts.data != null)
             ? newOpts.data
             : this.data.map(this.accessor);
 
@@ -445,7 +432,7 @@ function initHalfDonut(d3) {
             diff = max - sum;
 
         // Compute the start angle.
-        var a = +degToRad(this.config.startAngle);
+        var a = +(degToRad(this.config.startAngle));
 
         // Compute the angular scale factor: from value to radians.
         // include the diff because it will help create angles with a maxValue in mind
@@ -478,7 +465,7 @@ function initHalfDonut(d3) {
     function bindSvgToDom(donut) {
         var width = getWidth(donut),
             height = getHeight(donut);
-        var transString = 'translate(' + width / 2 + ',' + height / 2 + ')' + (donut.config.flipStart === true
+        var transString = 'translate(' + width / 2 + ',' + height / 2 + ')' + ((donut.config.flipStart == true)
             ? ' scale(-1,1)'
             : '');
 
@@ -545,7 +532,7 @@ function initHalfDonut(d3) {
             prevSiblingArc = donut.svg.selectAll('path')[0][i - 1]; // donut.data[i - 1];
 
             // start at the end of the previous one or start of entire donut
-            startAngle = prevSiblingArc && prevSiblingArc._current
+            startAngle = (prevSiblingArc && prevSiblingArc._current)
                 ? prevSiblingArc._current.endAngle
                 : degToRad(donut.config.startAngle);
 

@@ -3,85 +3,167 @@
 <!--[if IE 7]>    <html class="no-js ie7 oldie" lang="en"> <![endif]-->
 <!--[if IE 8]>    <html class="no-js ie8 oldie" lang="en"> <![endif]-->
 <!--[if IE 9]>    <html class="no-js ie9 oldie" lang="en"> <![endif]-->
-<!--[if (gt IE 9)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<!--[if (gt IE 9)]><!--><html class="no-js" lang="en">
+<!--<![endif]-->
 
-<head>
-    <!--
-    California State Template
-Version 5.0.14
+                        <head>    
+<!--    California State Template
+    Version 5.5.11
 
         Based on Twitter Bootstrap
     -->
     <meta charset="utf-8">
-    <title>DEV-Your Organization Name</title>
+    <title>California State Website Template (Version 5.5)</title>
     <meta name="Author" content="State of California" />
     <meta name="Description" content="State of California" />
     <meta name="Keywords" content="California, government" />
     <!--#include virtual="/ssi/head-css-js.html" -->
 
 
-
 </head>
 
 <!-- possible body classes are "primary" and "two-column" -->
 <body class="primary">
-    <script>
+
+<script>
     //makes the browser wait to display the page until it's fully loaded.
     // Use it if page contains primary or slideshow banner to make sure page content loads smouthly
     $('body').css('opacity', 0);
     $(window).load(function () {
         $("body").fadeTo("slow", 1);
     });
-    </script>
-    <header role="banner" id="header" class="global-header fixed">
-        <div id="skip-to-content"><a href="#main-content">Skip to Main Content</a></div>
+</script>
 
-        <!-- Include Utility Header -->
-        <!--#include virtual="/ssi/utility-header.html" -->
-        <!-- Settings Bar -->
-        <!--#include virtual="/ssi/settings-bar.html" -->
-        <!-- Include Branding -->
-        <!--#include virtual="/ssi/branding.html" -->
-        <!-- Include Mobile Controls -->
-        <!--#include virtual="/ssi/mobile-controls.html" -->
+<header role="banner" id="header" class="global-header fixed">
+    <div id="skip-to-content"><a href="#main-content">Skip to Main Content</a></div>
+    <!-- Include Utility Header -->
+    <!--#include virtual="/ssi/utility-header.html" -->
+    <!-- Settings Bar -->
+    <!--#include virtual="/ssi/settings-bar.html" -->
+    <!-- Include Branding -->
+    <!--#include virtual="/ssi/branding.html" -->
+    <!-- Include Mobile Controls -->
+    <!--#include virtual="/ssi/mobile-controls.html" -->
 
-        <div class="navigation-search">
-            <!-- Include Navigation -->
-            <!--#include virtual="/ssi/navigation.html" -->
+    <div class="navigation-search">
+        <!-- Include Navigation -->
+        <!--#include virtual="/ssi/navigation.html" -->
 
-            <div id="head-search" class="search-container featured-search fade">
-                <!-- Include Search -->
-                <!--#include virtual="/ssi/search.html" -->
-            </div>
-
+        <div id="head-search" class="search-container featured-search fade">
+            <!-- Include Search -->
+            <!--#include virtual="/ssi/search.html" -->
         </div>
 
-        <div class="header-decoration"></div>
-    </header>
-
-
-
-    <!-- Ask Bar -->
-    <!--#include virtual="/ssi/ask-bar.html" -->
-    <!-- Step 5: Header Images -->
-    <!-- Include for optional slideshow banner -->
-    <!--#include virtual="/ssi/header-single-banner.html" -->
-
-    <div id="main-content" class="main-content">
-        <main class="main-primary">
-            <!-- Begin Main Content -->
-            <!--#include virtual="/ssi/section-service-group.html" -->
-            <!--#include virtual="/ssi/section-open-data.html" -->
-            <!--#include virtual="/ssi/section-green-stats.html" -->
-            <!--#include virtual="/ssi/section-mobile-gallery.html" -->
-            <!--#include virtual="/ssi/section-footer2.html" -->
-            <!-- End Main Content -->
-        </main>
     </div>
 
+    <div class="header-decoration"></div>
+</header>
 
-    <!--#include virtual="/ssi/global-footer.html" -->
-    <!--#include virtual="/ssi/scripts.html" -->
 
+
+<!-- Ask Bar -->
+<!--#include virtual="/ssi/ask-bar.html" -->
+
+
+
+
+<div id="main-content" class="main-content">
+    <h1 class="sr-only">California State Website Template (Version 5.5)</h1>
+    <!-- Include for optional slideshow banner -->
+    <!--#include virtual="/ssi/header-single-banner.html" -->
+    <main class="main-primary">
+        <!-- Begin Main Content -->
+        <!--#include virtual="/ssi/section-info-blocks.html" -->
+        <!--#include virtual="/ssi/section-service-icons.html" -->
+        <!--#include virtual="/ssi/section-service-panes.html" -->
+        <!--#include virtual="/ssi/section-open-data.html" -->
+        <!--#include virtual="/ssi/section-service-group.html" -->
+        <!--#include virtual="/ssi/section-counter-pie-charts.html" -->
+        <!--#include virtual="/ssi/section-footer2.html" -->
+        <!-- End Main Content -->
+    </main>
+</div>
+
+
+<!--#include virtual="/ssi/global-footer.html" -->
+<!--#include virtual="/ssi/scripts.html" -->
+
+
+<script>
+    /* Number counter inside of the circle pie chart */
+    // Animating the circles only when visible
+    $.fn.isInViewport = function () {
+        var elementTop = $(this).offset().top;
+        var elementBottom = elementTop + $(this).outerHeight();
+        var viewportTop = $(window).scrollTop();
+        var viewportBottom = viewportTop + $(window).height();
+        return elementBottom > viewportTop && elementTop < viewportBottom;
+    };
+
+    circlesCreated = false;
+
+    $(window).on('scroll', function () {
+        if (!circlesCreated && $("#show-on-scroll").isInViewport()) {
+            circlesCreated = true;
+            createCircles();
+        }
+    });
+
+    function createCircles() {
+        //isolate this circles code out of fuction if you want circles animation to start right away
+        var myCircle1 = Circles.create({
+            id: 'circle1', radius: 80,
+            radius: 80,
+            value: 87,
+            maxValue: 100,
+            width: 8,
+            text: function (value) { return value + '%'; },
+            colors: ['#363636', '#72c02c'],
+            duration: 2000,
+            wrpClass: 'circles-wrp',
+            textClass: 'circles-text',
+            valueStrokeClass: 'circles-valueStroke',
+            maxValueStrokeClass: 'circles-maxValueStroke',
+            styleWrapper: true,
+            styleText: true
+        });
+
+        var myCircle2 = Circles.create({
+            id: 'circle2', radius: 80,
+            radius: 80,
+            value: 74,
+            maxValue: 100,
+            width: 8,
+            text: function (value) { return value + '%'; },
+            colors: ['#363636', '#e81c62'],
+            duration: 2000,
+            wrpClass: 'circles-wrp',
+            textClass: 'circles-text',
+            valueStrokeClass: 'circles-valueStroke',
+            maxValueStrokeClass: 'circles-maxValueStroke',
+            styleWrapper: true,
+            styleText: true
+        });
+
+        var myCircle3 = Circles.create({
+            id: 'circle3', radius: 80,
+            radius: 80,
+            value: 65,
+            maxValue: 100,
+            width: 8,
+            text: function (value) { return value + '%'; },
+            colors: ['#363636', '#00bed6'],
+            duration: 2000,
+            wrpClass: 'circles-wrp',
+            textClass: 'circles-text',
+            valueStrokeClass: 'circles-valueStroke',
+            maxValueStrokeClass: 'circles-maxValueStroke',
+            styleWrapper: true,
+            styleText: true
+        });
+        // End circles
+    }
+</script>
 </body>
+
 </html>

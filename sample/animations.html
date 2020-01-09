@@ -3,36 +3,34 @@
 <!--[if IE 7]>    <html class="no-js ie7 oldie" lang="en"> <![endif]-->
 <!--[if IE 8]>    <html class="no-js ie8 oldie" lang="en"> <![endif]-->
 <!--[if IE 9]>    <html class="no-js ie9 oldie" lang="en"> <![endif]-->
-<!--[if (gt IE 9)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<!--[if (gt IE 9)]><!-->
+<html class="no-js" lang="en">
+<!--<![endif]-->
 
-<head>
-    <!--
-    California State Template
-Version 5.0.14
+<head>    
+<!--    California State Template
+    Version 5.5.11
 
-        Based on Twitter Bootstrap
-    -->
-  <meta charset="utf-8">
-  <title>Sample - Animations</title>
-  <meta name="Author" content="State of California" />
-  <meta name="Description" content="State of California" />
-  <meta name="Keywords" content="California, government" />
-  <!--#include virtual="/ssi/head-css-js.html" -->
+            Based on Twitter Bootstrap
+        -->
+    <meta charset="utf-8">
+    <title>Sample - Animations</title>
+    <meta name="Author" content="State of California" />
+    <meta name="Description" content="State of California" />
+    <meta name="Keywords" content="California, government" />
+    <!--#include virtual="/ssi/head-css-js.html" -->
 </head>
 
-<body >
+<body>
     <header role="banner" id="header" class="global-header fixed">
         <div id="skip-to-content"><a href="#main-content">Skip to Main Content</a></div>
 
         <!-- Include Utility Header -->
         <!--#include virtual="/ssi/utility-header.html" -->
-
         <!-- Settings Bar -->
         <!--#include virtual="/ssi/settings-bar.html" -->
-
         <!-- Include Branding -->
         <!--#include virtual="/ssi/branding.html" -->
-
         <!-- Include Mobile Controls -->
         <!--#include virtual="/ssi/mobile-controls.html" -->
 
@@ -60,9 +58,9 @@ Version 5.0.14
 
                 <div class="container">
                     <div class="two-thirds">
-                    <h1>Animations</h1>
-                    <p>Animations are for adding motion or effects as they scroll into view. We recommend using animations both sparingly and only on elements which need to have a visual impact or emphasis. Common use cases are  images, charts, call to actions, etc.</p>
-                    <p>The available animations are configured by including the specified animation name directly on the element or a containing element.</p>
+                        <h1>Animations</h1>
+                        <p>Animations are for adding motion or effects as they scroll into view. We recommend using animations both sparingly and only on elements which need to have a visual impact or emphasis. Common use cases are  images, charts, call to actions, etc.</p>
+                        <p>The available animations are configured by including the specified animation name directly on the element or a containing element.</p>
                         <ul>
                             <li> <code>.animate-bounceInLeft</code> </li>
                             <li> <code>.animate-bounceInRight</code> </li>
@@ -77,8 +75,8 @@ Version 5.0.14
                         </ul>
                     </div>
                     <div class="third">
-                        <h2><label for="sample-xxx">Source Code:</label></h2>
-                        <textarea id="sample-xxx" class="form-control" rows="5" cols="80"><!--#include virtual="/sample/modules/animation-simple.html" --></textarea>
+                        <h2>Source Code:</h2>
+                        <pre><code class="overflow-auto"><!--#include virtual="/sample/modules/animation-simple.html" --></code></pre>
                     </div>
                 </div>
                 <h1>Animation Playground</h1>
@@ -97,12 +95,12 @@ Version 5.0.14
                                     <option value="slideInRight">animate-slideInRight</option>
                                     <option value="slideInUp">animate-slideInUp</option>
                                 </optgroup>
-                                    <optgroup label="Bounce In's">
+                                <optgroup label="Bounce In's">
                                     <option value="bounceInLeft">animate-bounceInLeft</option>
                                     <option value="bounceInRight">animate-bounceInRight</option>
                                     <option value="bounceInUp">animate-bounceInUp</option>
                                 </optgroup>
-                                    <optgroup label="Specials">
+                                <optgroup label="Specials">
                                     <option value="pulse">animate-pulse</option>
                                     <option value="shake">animate-shake</option>
                                     <option value="jello">animate-jello</option>
@@ -121,27 +119,26 @@ Version 5.0.14
         </div>
     </div>
 
-  <!--#include virtual="/ssi/global-footer.html" -->
+    <!--#include virtual="/ssi/global-footer.html" -->
+    <!--#include virtual="/ssi/scripts.html" -->
 
-  <!--#include virtual="/ssi/scripts.html" -->
-
-  <script>
-    function testAnim(x) {
-      $('#animationSandbox').removeClass().addClass(x + ' animated').one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function() {
-        $(this).removeClass();
-      });
-    };
-    $(document).ready(function() {
-      $('.js--triggerAnimation').click(function(e) {
-        e.preventDefault();
-        var anim = $('.js--animations').val();
-        testAnim(anim);
-      });
-      $('.js--animations').change(function() {
-        var anim = $(this).val();
-        testAnim(anim);
-      });
-    });
-  </script>
+    <script>
+        function testAnim(x) {
+            $('#animationSandbox').removeClass().addClass(x + ' animated').one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function () {
+                $(this).removeClass();
+            });
+        };
+        $(document).ready(function () {
+            $('.js--triggerAnimation').click(function (e) {
+                e.preventDefault();
+                var anim = $('.js--animations').val();
+                testAnim(anim);
+            });
+            $('.js--animations').change(function () {
+                var anim = $(this).val();
+                testAnim(anim);
+            });
+        });
+    </script>
 </body>
 </html>

@@ -6,13 +6,12 @@
 <!--[if (gt IE 9)]><!-->
 <html class="no-js" lang="en">
 <!--<![endif]-->
-<head>
-    <!--
-    California State Template
-Version 5.0.14
+<head>    
+<!--    California State Template
+    Version 5.5.11
 
-            Based on Twitter Bootstrap
-        -->
+        Based on Twitter Bootstrap
+    -->
     <meta charset="utf-8">
     <title>Trinity Color Scheme</title>
     <meta name="Author" content="State of California" />
@@ -22,37 +21,28 @@ Version 5.0.14
     <!-- head content, for all pages -->
     <!-- Use highest compatibility mode -->
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-
     <!-- http://t.co/dKP3o1e -->
     <meta name="HandheldFriendly" content="True">
     <!-- for Blackberry, AvantGo -->
     <meta name="MobileOptimized" content="320">
     <!-- for Windows mobile -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
-
     <!-- Google Fonts -->
-    <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700' rel='stylesheet' type='text/css'>
-
+    <link href="https://fonts.googleapis.com/css?family=Asap+Condensed:400,600|Source+Sans+Pro:400,700" rel="stylesheet">
     <!-- For all browsers -->
     <link rel="stylesheet" href="/css/cagov.core.css">
-
     <script src="/js/search.js"></script>
     <!--
     Step 3
     Select a color scheme:
-    <link rel="stylesheet" href="/css/colorscheme-eureka.css">
-    <link rel="stylesheet" href="/css/colorscheme-mono.css">
-    <link rel="stylesheet" href="/css/colorscheme-oceanside.css">
+
+    <link rel="stylesheet" href="/css/colorscheme-Trinity.css">
     <link rel="stylesheet" href="/css/colorscheme-orangecounty.css">
     <link rel="stylesheet" href="/css/colorscheme-pasorobles.css">
     <link rel="stylesheet" href="/css/colorscheme-santabarbara.css">
-    <link rel="stylesheet" href="/css/colorscheme-sacramento.css">
-    <link rel="stylesheet" href="/css/colorscheme-sierra.css">
-    <link rel="stylesheet" href="/css/colorscheme-trinity.css">
+    <link rel="stylesheet" href="/css/colorscheme-Mono.css">
     -->
-
     <link rel="stylesheet" href="/css/colorscheme-trinity.css">
-
     <!-- selectivizr.com, emulates CSS3 pseudo-classes and attribute selectors in Internet Explorer 6-8 -->
     <!--[if (lt IE 9) & (!IEMobile)]>
     <script src="/js/libs/selectivizr-min.js"></script>
@@ -78,7 +68,6 @@ Version 5.0.14
 
     </script>
 
-
     <!-- For iPad 3-->
     <link rel="apple-touch-icon" sizes="144x144" href="/images/template2014/apple-touch-icon-144x144.png">
     <!-- For iPhone 4 -->
@@ -91,7 +80,6 @@ Version 5.0.14
     <link rel="shortcut icon" href="/images/template2014/apple-touch-icon-57x57.png">
     <!-- For everything else -->
     <link rel="shortcut icon" href="/favicon.ico">
-
     <!-- Activate ClearType for Mobile IE -->
     <!--[if IE]>
     <meta http-equiv="cleartype" content="on">
@@ -140,10 +128,13 @@ Version 5.0.14
 
         <!-- Include Utility Header -->
         <!--#include virtual="/ssi/utility-header.html" -->
+
         <!-- Settings Bar -->
         <!--#include virtual="/ssi/settings-bar.html" -->
+
         <!-- Include Branding -->
         <!--#include virtual="/ssi/branding.html" -->
+
         <!-- Include Mobile Controls -->
         <!--#include virtual="/ssi/mobile-controls.html" -->
 
@@ -160,7 +151,7 @@ Version 5.0.14
 
     </header>
     <div id="main-content" class="main-content">
-        <div class="container">
+        <div class="container">            
             <ol class="breadcrumb">
                 <li><a href="../index.html" title="Home page">Home</a></li>
                 <li><a href="index.html" title="Examples landing page">Examples</a></li>
@@ -210,11 +201,11 @@ Version 5.0.14
                     </div>
 
 
-                    <div class="panel panel-understated">
-                        <div class="panel-heading">
+                    <div class="card card-understated">
+                        <div class="card-heading">
                             <h4><span class="ca-gov-icon-info"></span> Theme Colors Customization</h4>
                         </div>
-                        <div class="panel-body">
+                        <div class="card-body">
                             <p>
                                 There are two ways to customize theme main colors. One way is to change primary and secondary theme color variables
                                 in the colorscheme-[yourcolorshceme].less file. This method will require you to re-compile the state template, you
@@ -269,29 +260,29 @@ Version 5.0.14
                         <hr>
 
 
-                        <h3>Panels</h3>
+                        <h3>Cards</h3>
 
-                        <div class="panel panel-overstated">
-                            <div class="panel-heading">
-                                <h3><span class="ca-gov-icon-info"></span> Panel (Overstated)</h3>
+                        <div class="card card-overstated">
+                            <div class="card-heading">
+                                <h3><span class="ca-gov-icon-info"></span> Card (Overstated)</h3>
                                 <div class="options">
                                     <a href="" class="btn btn-default">button</a>
                                 </div>
                             </div>
-                            <div class="panel-body">
-                                Panel Body
+                            <div class="card-body">
+                                Card Body
                             </div>
                         </div>
 
-                        <div class="panel panel-standout">
-                            <div class="panel-heading">
-                                <h2><span class="ca-gov-icon-info"></span> Panel (Standout)</h2>
+                        <div class="card card-standout">
+                            <div class="card-heading">
+                                <h2><span class="ca-gov-icon-info"></span> Card (Standout)</h2>
                                 <div class="options">
                                     <a href="" class="btn btn-default">button</a>
                                 </div>
                             </div>
-                            <div class="panel-body">
-                                Panel Body
+                            <div class="card-body">
+                                Card Body
                             </div>
                         </div>
 

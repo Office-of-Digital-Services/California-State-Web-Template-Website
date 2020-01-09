@@ -5,9 +5,9 @@
 <!--[if IE 9]>    <html class="no-js ie9 oldie" lang="en"> <![endif]-->
 <!--[if (gt IE 9)]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
 <head>
-<!--
-    California State Template
-Version 5.0.14
+
+<!--    California State Template
+    Version 5.5.11
  
 Based on Twitter Bootstrap
 -->
@@ -56,7 +56,7 @@ Based on Twitter Bootstrap
 
 <div id="main-content" class="main-content">
     <div class="section">
-        <main class="main-primary">
+        <main class="main-primary">            
             <ol class="breadcrumb">
                 <li><a href="../index.html" title="Home page">Home</a></li>
                 <li><a href="index.html" title="Examples landing page">Examples</a></li>
@@ -72,7 +72,7 @@ Based on Twitter Bootstrap
                 <li><code>.start-date</code> - Date of the event</li>
             </ul>
                 
-            <p>An event list can appear in location other than the main content area. The sidebar or inside of a panel for example. The markup in all cases will be exactly the same. <strong>NOTE:</strong> When used within the sidebar, the icons will be removed automatically.</p>
+            <p>An event list can appear in location other than the main content area. The sidebar or inside of a card for example. The markup in all cases will be exactly the same. <strong>NOTE:</strong> When used within the sidebar, the icons will be removed automatically.</p>
             
             <!--#include virtual="/sample/modules/schema-boilerplate.html" -->
             
@@ -83,17 +83,17 @@ Based on Twitter Bootstrap
             
             <div class="tab-group">
                 <ul id="sourceCode" class="nav nav-tabs" role="tablist">
-                    <li class="active"><a href="#html" role="tab" data-toggle="tab" aria-label="HTML Markup for Event List"><strong>HTML Markup</strong></a></li>
-                    <li><a href="#microdata" role="tab" data-toggle="tab" aria-label="Microdata for Event List"><strong>Microdata</strong></a></li>
+                    <li class="active"><a href="#html" role="tab" data-toggle="tab" aria-label="Markup for Event List">HTML Markup</a></li>
+                    <li><a href="#microdata" role="tab" data-toggle="tab" aria-label="Microdata for Event List">Microdata</a></li>
                 </ul>
                 <!-- Tab panes -->
                 <div class="tab-content responsive">
                     <div class="tab-pane active" id="html">
-                         <textarea class="form-control" rows="10" cols="80" aria-label="Source Code of HTML Markup for Event List"><!--#include virtual="/sample/modules/event-list.html" --></textarea>
+                        <pre><code class="overflow-auto"><!--#include virtual="/sample/modules/event-list.html" --></code></pre>
                     </div>
                     <div class="tab-pane" id="microdata">
                         <p class="alert alert-info">NOTE: This module makes use of a <code>datetime</code> property set in the <strong>ISO 8601</strong> format. Be sure to set the time correctly for each event-item.</p>
-                         <textarea class="form-control" rows="10" cols="80" aria-label="Source Code of Microdata for Event List"><!--#include virtual="/sample/modules/event-list-schema.html" --></textarea>
+                        <pre><code class="overflow-auto"><!--#include virtual="/sample/modules/event-list-schema.html" --></code></pre>
                     </div>
                 </div>
             </div>
@@ -110,33 +110,33 @@ Based on Twitter Bootstrap
             
             <div class="tab-group">
                 <ul id="sourceCodeThumb" class="nav nav-tabs" role="tablist">
-                    <li class="active"><a href="#thumbhtml" role="tab" data-toggle="tab" aria-label="HTML Markup for Event List with Thumbnails"><strong>HTML Markup</strong></a></li>
-                    <li><a href="#thumbmicrodata" role="tab" data-toggle="tab" aria-label="Microdata for Event List with Thumbnails"><strong>Microdata</strong></a></li>
+                    <li class="active"><a href="#thumbhtml" role="tab" data-toggle="tab" aria-label="Markup for Event List with Thumbnails">HTML Markup</a></li>
+                    <li><a href="#thumbmicrodata" role="tab" data-toggle="tab" aria-label="Microdata for Event List with Thumbnails">Microdata</a></li>
                 </ul>
                 <!-- Tab panes -->
                 <div class="tab-content responsive">
                     <div class="tab-pane active" id="thumbhtml">
-                         <textarea class="form-control" rows="10" cols="80" aria-label="Source Code of HTML Markup for Event List with Thumbnails"><!--#include virtual="/sample/modules/event-list-thumbnail.html" --></textarea>
+                        <pre><code class="overflow-auto"><!--#include virtual="/sample/modules/event-list-thumbnail.html" --></code></pre>
                     </div>
                     <div class="tab-pane" id="thumbmicrodata">
                         <p class="alert alert-info">NOTE: This module makes use of a <code>datetime</code> property set in the <strong>ISO 8601</strong> format. Be sure to set the time correctly for each event-item.</p>
-                         <textarea class="form-control" rows="10" cols="80" aria-label="Source Code of Microdata for Event List with Thumbnails"><!--#include virtual="/sample/modules/event-list-thumbnail-schema.html" --></textarea>
+                        <pre><code class="overflow-auto"><!--#include virtual="/sample/modules/event-list-thumbnail-schema.html" --></code></pre>
                     </div>
                 </div>
             </div>
             
             <hr>
             
-            <h3>Example of events in a panel:</h3>
-            <p>Events can be included in a panel. See <a href="panels-photo.html">Panels with Photos</a>.</p>
-            <div class="panel panel-overstated photo-left">
-                <div class="panel-heading">
-                    <h4>Event in panel</h4>
+            <h3>Example of events in a card:</h3>
+            <p>Events can be included in a card. See <a href="cards.html">Card with Photos</a>.</p>
+            <div class="card card-overstated photo-left">
+                <div class="card-heading">
+                    <h4>Event in card</h4>
                     <div class="options">
                         <a href="" class="btn btn-default">More events</a>
                     </div>
                 </div>
-                <div class="panel-body">
+                <div class="card-body">
                     <!--#include virtual="/sample/modules/event-list.html" -->
                     <div class="photo" style="background-image: url('/sample/images/sample-nav-image.jpg');"></div>
                 </div>
@@ -145,11 +145,11 @@ Based on Twitter Bootstrap
         </main>
         <div class="main-secondary" role="complementary">
         	<h2>Sidebar Example:</h2>
-            <div class="panel panel-standout highlight">
-                <div class="panel-heading">
+            <div class="card card-standout highlight">
+                <div class="card-heading">
                     <h4><span class="ca-gov-icon-info"></span> Latest Events</h4>
                 </div>
-                <div class="panel-body">
+                <div class="card-body">
                     <!--#include virtual="/sample/modules/event-list.html" -->
                 </div>
             </div>

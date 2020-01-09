@@ -4,7 +4,7 @@
    /source/js/cagov/socialsharer.js
 ----------------------------------------- */
 
-$(document).ready(function () {
+$(document).ready(function(){
     var docTitle = sanitize(document.title);
     var docURL = window.location.href;
     docURL = encodeURIComponent(sanitize(docURL));
@@ -22,6 +22,7 @@ $(document).ready(function () {
     $(".ca-gov-icon-share-googleplus").on('click', function(e) {
         PopupCentered('https://plus.google.com/share?url=' + docURL, 'socialsharer', '550', '552');
     });
+
     $(".ca-gov-icon-share-email").attr('href',  "mailto:?subject=" + docTitle + "&body=%0a" + docURL + "%0a%0a");
 
 function sanitize(sText) {
@@ -47,5 +48,5 @@ function PopupCentered(url, popupName, popupWidth, popupHeight) {
   var popupTop = parentHeight / 2 - popupHeight / 2 + parentTop;
 
   window.open(url, popupName, 'scrollbars=yes, width=' + popupWidth + ', height=' + popupHeight + ', left=' + popupLeft + ', top=' + popupTop);
-        }
-    });
+}
+});

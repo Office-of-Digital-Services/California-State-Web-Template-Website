@@ -7,10 +7,9 @@
 <html class="no-js" lang="en">
 <!--<![endif]-->
 
-<head>
-    <!--
-    California State Template
-Version 5.0.14
+<head>    
+<!--    California State Template
+    Version 5.5.11
 
     Based on Twitter Bootstrap
     -->
@@ -127,9 +126,11 @@ Version 5.0.14
                 </div>
             </div>
             <!-- End Section -->
+            <!--#include virtual="/ssi/section-counter-pie-charts.html" -->
+            <!-- End Section -->
 
 
-            <div class="section section-standout">
+            <div class="section section-primary">
                 <div class="parallax-bg" style="background-image: url(&quot;images/background.jpg&quot;); height: 607.1px; transform: translate(0px, 207.545px);"></div>
                 <div class="container">
                     <!--#include virtual="/sample/modules/icon-links.html" -->
@@ -151,7 +152,81 @@ Version 5.0.14
     <!--#include virtual="/ssi/global-footer.html" -->
     <!--#include virtual="/ssi/scripts.html" -->
 
+    <script>
+        /* Number counter inside of the circle pie chart */
+        // Animating the circles only when visible
+        $.fn.isInViewport = function () {
+            var elementTop = $(this).offset().top;
+            var elementBottom = elementTop + $(this).outerHeight();
+            var viewportTop = $(window).scrollTop();
+            var viewportBottom = viewportTop + $(window).height();
+            return elementBottom > viewportTop && elementTop < viewportBottom;
+        };
 
+        circlesCreated = false;
+
+        $(window).on('scroll', function () {
+            if (!circlesCreated && $("#show-on-scroll").isInViewport()) {
+                circlesCreated = true;
+                createCircles();
+            }
+        });
+
+        function createCircles() {
+            //isolate this circles code out of fuction if you want circles animation to start right away
+            var myCircle1 = Circles.create({
+                id: 'circle1', radius: 80,
+                radius: 80,
+                value: 87,
+                maxValue: 100,
+                width: 8,
+                text: function (value) { return value + '%'; },
+                colors: ['#363636', '#72c02c'],
+                duration: 2000,
+                wrpClass: 'circles-wrp',
+                textClass: 'circles-text',
+                valueStrokeClass: 'circles-valueStroke',
+                maxValueStrokeClass: 'circles-maxValueStroke',
+                styleWrapper: true,
+                styleText: true
+            });
+
+            var myCircle2 = Circles.create({
+                id: 'circle2', radius: 80,
+                radius: 80,
+                value: 74,
+                maxValue: 100,
+                width: 8,
+                text: function (value) { return value + '%'; },
+                colors: ['#363636', '#e81c62'],
+                duration: 2000,
+                wrpClass: 'circles-wrp',
+                textClass: 'circles-text',
+                valueStrokeClass: 'circles-valueStroke',
+                maxValueStrokeClass: 'circles-maxValueStroke',
+                styleWrapper: true,
+                styleText: true
+            });
+
+            var myCircle3 = Circles.create({
+                id: 'circle3', radius: 80,
+                radius: 80,
+                value: 65,
+                maxValue: 100,
+                width: 8,
+                text: function (value) { return value + '%'; },
+                colors: ['#363636', '#00bed6'],
+                duration: 2000,
+                wrpClass: 'circles-wrp',
+                textClass: 'circles-text',
+                valueStrokeClass: 'circles-valueStroke',
+                maxValueStrokeClass: 'circles-maxValueStroke',
+                styleWrapper: true,
+                styleText: true
+            });
+            // End circles
+        }
+    </script>
 
 </body>
 

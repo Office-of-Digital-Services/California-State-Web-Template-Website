@@ -8,5 +8,7 @@ $(document).ready(function(){
     $(".main-secondary .panel").first().addClass("first");
        
     // Add a hook to the standout panel for adding a triangle
-    $(".panel.highlight").find(".panel-heading").prepend( "<span class='triangle'></span>" );
+    $(".panel.highlight").find(".panel-heading").prepend("<span class='triangle'></span>");
+    // Add a hook to the standout card for adding a triangle
+    $(".card.highlight").find(".card-heading").prepend("<span class='triangle'></span>");
 });

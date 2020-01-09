@@ -115,7 +115,7 @@ $(document).ready(function () {
 
         $(window).on('resize', function () {
             windowHeight = $(window).height();
-            windowWidth = $(window).width();
+            windowWidth = window.innerWidth;
             headerHeight = $globalHeader.innerHeight();
             hideDistance = calcInputDifference();
 
@@ -176,7 +176,6 @@ $(document).ready(function () {
         // we dont fade out if we have search results being shown
         if ($headSearch.hasClass('active')) {
             $askGroup.addClass('fixed-hide');
-          //  $header.addClass('compact fixed');
 
             return;
         }
@@ -227,10 +226,10 @@ $(document).ready(function () {
         }
     }
 
-
-    // * Figures out the difference between the bottom of the askbar and the
-    // * explore more bar. Used to caclulate when we should hide these elements
-
+   // /**
+   //  * Figures out the difference between the bottom of the askbar and the
+   //  * explore more bar. Used to caclulate when we should hide these elements
+   //  */
     function calcInputDifference() {
         if (!$exploreMore.length || !$askGroupBar.length) {
             return 0;
@@ -272,13 +271,16 @@ $(document).ready(function () {
             $headerImage.css({
                 height: height + headerHeight + leeway
             });
-            // take into account the fixed header -----------------------------------------------------v5 FIX---------------------------------
 
-        } else {
+        } 
+
+// take into account the fixed header -----------------------------------------------------v5 FIX---------------------------------
+
+        else {
             // no header image, which means our main content needs to
 
             $mainContent.css({
-                'padding-top': Math.max(headerHeight, 129)
+                'padding-top': Math.max(headerHeight, 119)
             });
 
 
@@ -289,7 +291,7 @@ $(document).ready(function () {
             });
 
             $('.header-slideshow-banner, .header-primary-banner').css({
-                'margin-top': 129
+                'margin-top': 119
 
             });
 

@@ -1,3 +1,5 @@
+// Gulpfile
+
 var gulp = require('gulp'), // Gulp
     sass = require('gulp-sass'), // SASS,
     autoprefixer = require('gulp-autoprefixer'), // Add the desired vendor prefixes and remove unnecessary in SASS-files
@@ -9,7 +11,6 @@ injectVersion = require('gulp-inject-version');
 header = require('gulp-header');
 
 
-
 var pkg = require('./package.json');
 var banner = ['/**',
     ' * <%= pkg.description %> -  @version v<%= pkg.version %> -  <%= new Date().getMonth() + 1 %>/<%= new Date().getDate() %>/<%= new Date().getFullYear()  %> ',
@@ -19,6 +20,7 @@ var bannerjs = ['/**',
     ' * <%= pkg.description %> -  @version v<%= pkg.version %> -  <%= new Date().getMonth() + 1 %>/<%= new Date().getDate() %>/<%= new Date().getFullYear()  %> ',
     '  STYLES COMPILED FROM SOURCE (source/js) DO NOT MODIFY */',
     ''].join('\n');
+
 
 
 
@@ -48,48 +50,51 @@ var jssrc = [
     'source/js/bootstrap/index.js',
 
 
-  // BOOTSTRAP ACCESSIBILITY PLUGIN
-   'source/js/bootstrap-accessibility-plugin/functions.js',
-   'source/js/bootstrap-accessibility-plugin/collapse.js',
-   'source/js/bootstrap-accessibility-plugin/dropdown.js',
-   'source/js/bootstrap-accessibility-plugin/tab.js',
+    // BOOTSTRAP ACCESSIBILITY PLUGIN
+    'source/js/bootstrap-accessibility-plugin/functions.js',
+    'source/js/bootstrap-accessibility-plugin/collapse.js',
+    'source/js/bootstrap-accessibility-plugin/dropdown.js',
+    'source/js/bootstrap-accessibility-plugin/tab.js',
 
-  // THIRD PARTY LIBS
-  'source/js/libs/responsive-tabs.js',
- 'source/js/libs/owl.carousel.js',
- 'source/js/libs/jquery.fancybox.js',
- 'source/js/libs/jquery.eqheight.js',
- 'source/js/libs/countUp.js',
- 'source/js/libs/jquery.waypoints.js',
- 'source/js/libs/Vague.js',
+    // THIRD PARTY LIBS
+    'source/js/libs/owl.carousel.js',
+    'source/js/libs/jquery.fancybox.js',
+    'source/js/libs/jquery.eqheight.js',
+    'source/js/libs/countUp.js', // updated
+    'source/js/libs/jquery.waypoints.js',
+    'source/js/libs/Vague.js',
+    'source/js/libs/circles.min.js',
 
-  // CAGOV CORE
-'source/js/cagov/header.js',
-'source/js/cagov/fixed-header.js',
-'source/js/cagov/helpers.js',
-'source/js/cagov/gatag.js',
-'source/js/cagov/navigation.js',
-'source/js/cagov/accordion.js',
-'source/js/cagov/panel.js',
-'source/js/cagov/search.js',
-'source/js/cagov/plugins.js',
-'source/js/cagov/gallery.js',
-'source/js/cagov/profile-banners.js',
-'source/js/cagov/carousel.js',
-'source/js/cagov/jobs.js',
-'source/js/cagov/locations.js',
-'source/js/cagov/socialsharer.js',
-'source/js/cagov/breadcrumb.js',
-'source/js/cagov/service-tiles.js',
-'source/js/cagov/number-counter.js',
-'source/js/cagov/charts.js',
-'source/js/cagov/parallax.js',
-'source/js/cagov/animations.js',
-'source/js/cagov/more.js',
-'source/js/cagov/high-contrast.js',
-'source/js/cagov/ask-group.js',
-'source/js/cagov/tabs.js',
-'source/js/cagov/utility-header.js'
+    // CAGOV CORE
+
+    'source/js/cagov/header.js',
+    'source/js/cagov/fixed-header.js',
+    'source/js/cagov/helpers.js',
+    'source/js/cagov/gatag.js',
+    'source/js/cagov/navigation.js',
+    'source/js/cagov/accordion.js',
+    'source/js/cagov/panel.js',
+    'source/js/cagov/cards.js',
+    'source/js/cagov/search.js',
+    'source/js/cagov/plugins.js',
+    'source/js/cagov/gallery.js',
+    'source/js/cagov/profile-banners.js',
+    'source/js/cagov/carousel.js',
+    'source/js/cagov/jobs.js',
+    'source/js/cagov/locations.js',
+    'source/js/cagov/socialsharer.js',
+    'source/js/cagov/breadcrumb.js',
+    'source/js/cagov/service-tiles.js',
+    'source/js/cagov/number-counter.js',
+    'source/js/cagov/parallax.js',
+    'source/js/cagov/animations.js',
+    'source/js/cagov/more.js',
+    'source/js/cagov/high-contrast.js',
+    'source/js/cagov/ask-group.js',
+    'source/js/cagov/panes.js',
+    'source/js/cagov/sourcecode.js',
+    'source/js/cagov/tabs.js',
+    'source/js/cagov/utility-header.js'
 ];
 
 
@@ -105,6 +110,7 @@ var jssrc = [
 gulp.task('log', function () {
     gutil.log('== My Log Task ==')
 });
+
 
 
 /*-----------------------*/

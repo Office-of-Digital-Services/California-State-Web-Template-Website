@@ -76,8 +76,8 @@ $.fn.collapse.Constructor.prototype.keydown = function (e) {
     $items = $tablist.find('[role=tab]');
     index = $items.index($items.filter(':focus'));
 
-    if (k === 38 || k === 37) index--;                                       // up & left
-    if (k === 39 || k === 40) index++;                      // down & right
+    if (k === 38 || k === 37) index--;                                        // up & left
+    if (k === 39 || k === 40) index++;                        // down & right
     if (index < 0) index = $items.length - 1;
     if (index === $items.length) index = 0;
 

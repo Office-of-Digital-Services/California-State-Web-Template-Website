@@ -33,6 +33,10 @@ $(document).ready(function () {
 $(document).ready(function () {
 
     var panel1 = new tabpanel("accordion", true);
+    var panel2 = new tabpanel("accordion1", true);
+    var panel3 = new tabpanel("accordion2", true);
+    var panel4 = new tabpanel("accordion3", true);
+    var panel5 = new tabpanel("accordion4", true);
     // you can have more than one accordion on your webpage simply adding new tabpanel variable with new assigned id
     // eaxaple: var panel1 = new tabpanel("accordion2", true);
 });
@@ -334,7 +338,7 @@ tabpanel.prototype.handleTabKeyDown = function ($tab, e) {
 
             var curNdx = this.$tabs.index($tab);
 
-            if (curNdx == this.$tabs.length - 1) {
+            if (curNdx === this.$tabs.length - 1) {
                 // tab is the last one: 
                 // set newTab to first tab 
                 $newTab = this.$tabs.first();
@@ -703,7 +707,8 @@ tabpanel.prototype.handlePanelKeyPress = function ($panel, e) {
 
     return true;
 
-}; // end handlePanelKeyPress() 
+};
+// end handlePanelKeyPress()
 
 // 
 // Function handlePanelClick() is a member function to process click events for panels 
@@ -726,7 +731,8 @@ tabpanel.prototype.handlePanelClick = function ($panel, e) {
 
     return true;
 
-}; // end handlePanelClick() 
+};
+// end handlePanelClick()
 
 // focusable is a small jQuery extension to add a :focusable selector. It is used to 
 // get a list of all focusable elements in a panel. Credit to ajpiano on the jQuery forums. 
@@ -755,7 +761,7 @@ $.extend($.expr.pseudos, {
         // if the element is a link, href must be defined 
         if ((nodeName === 'a' || nodeName === 'area') === true) {
 
-            return element.href.length > 0;
+            return (element.href.length > 0);
         }
 
         // this is some other page element that is not normally focusable. 
@@ -764,12 +770,13 @@ $.extend($.expr.pseudos, {
 });
 
 
-/* Accordion Bootstrap 4 */
+/* Accordion */
 $(document).ready(function () {
-    var accordion = $('.accordion').find('.collapsed'); 
+    var accordion = $('.accordion').find('.collapsed');
     var accordionTab = $('.accordion').find('a[data-toggle="collapse"]');
     var accordioncarrot = $('<span aria-hidden="true"></span>');
-    accordion.attr("tabindex", 0); // make accordion tabable
+    accordion.attr("tabindex", 0); // make accordion tabable for accessibility
+
     // appending carrot span to each accordion tab
     accordionTab.append(accordioncarrot);
 
@@ -799,8 +806,4 @@ $(document).ready(function () {
     var alink = $(".card").find("a[role='tab']");
     alink.removeAttr("aria-controls");
 });
-
-
-
-
 

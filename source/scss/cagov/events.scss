@@ -26,8 +26,8 @@
     }
 
     h1, h2, h3, h4, h5, h6 {
-        @include font-size(1);
         margin: 0 0 4px 0;
+        @include font-size(1.2);
     }
 }
 
@@ -60,7 +60,8 @@
         @include make-md-column(10);
 
         .title {
-            background: none; // Removes bullet
+            background: none; 
+            // Removes bullet
             &::before {
                 content: "";
                 background: none !important;
@@ -69,19 +70,16 @@
         }
     }
 }
+    //
+    // EVENT DETAILS
+    // --------------------------------------------------
+    .event-detail {
+        .presenter {
+            padding: ($line-height-computed / 2) 0;
+            @include clearfix();
+        }
 
-
-
-//
-// EVENT DETAILS
-// --------------------------------------------------
-.event-detail {
-    .presenter {
-        padding: ($line-height-computed / 2) 0;
-        @include clearfix();
+        .description {
+            @include clearfix();
+        }
     }
-
-    .description {
-        @include clearfix();
-    }
-} 

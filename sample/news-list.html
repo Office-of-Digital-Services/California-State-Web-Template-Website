@@ -5,9 +5,9 @@
 <!--[if IE 9]>    <html class="no-js ie9 oldie" lang="en"> <![endif]-->
 <!--[if (gt IE 9)]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
 <head>
-<!--
-    California State Template
-Version 5.0.14
+
+<!--    California State Template
+    Version 5.5.11
  
 Based on Twitter Bootstrap
 -->
@@ -56,7 +56,7 @@ Based on Twitter Bootstrap
 
     <div id="main-content" class="main-content">
         <div class="section">
-            <main class="main-primary">
+            <main class="main-primary">            
                 <ol class="breadcrumb">
                     <li><a href="../index.html" title="Home page">Home</a></li>
                     <li><a href="index.html" title="Examples landing page">Examples</a></li>
@@ -80,112 +80,39 @@ Based on Twitter Bootstrap
                 <!--#include virtual="/sample/modules/schema-boilerplate.html" -->
                 <hr>
 
-                    <div class="group">
-
-
-
-                        <div class="three-quarters">
-                            <h2>News Blocks</h2>
-                            <!--#include virtual="/sample/modules/news-block.html" -->
-                            <!-- Trigger the modal with a button -->
-                            <button type="button" class="btn btn-default btn-sm" data-toggle="modal" data-target="#news-block">Show Source Code</button>
-                            <!-- Modal -->
-                            <div class="modal fade" id="news-block" role="dialog">
-                                <div class="modal-dialog modal-lg">
-                                    <div class="modal-content">
-                                        <div class="modal-header">
-                                            <h4 class="modal-title">HTML Markup</h4>
-                                            <button type="button" class="close" data-dismiss="modal">&times;</button>
-                                        </div>
-                                        <div class="modal-body">
-                                            <strong for="sample-news-blocks">Source Code:</strong>
-                                            <textarea id="sample-news-blocks" class="form-control" rows="10" cols="80" aria-label="Source Code of HTML Markup for News Blocks"><!--#include virtual="/sample/modules/news-block.html" --></textarea>
-                                        </div>
-                                        <div class="modal-footer">
-                                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div><!-- / End Modal -->
-                        </div>
-                    </div>
-                    <hr>
-                <div class="group">
-                    <div class="three-quarters">
-                        <h2>Image News Blocks</h2>
-                        <!--#include virtual="/sample/modules/news-image.html" -->
-                        <button type="button" class="btn btn-default btn-sm" data-toggle="modal" data-target="#image-blocks">Show Source Code</button>
-                        <!-- Modal -->
-                        <div class="modal fade" id="image-blocks" role="dialog">
-                            <div class="modal-dialog modal-lg">
-                                <div class="modal-content">
-                                    <div class="modal-header">
-                                        <h4 class="modal-title">HTML Markup</h4>
-                                        <button type="button" class="close" data-dismiss="modal">&times;</button>
-                                    </div>
-                                    <div class="modal-body">
-                                        <label for="sample-image-blocks">Source Code:</label>
-                                        <textarea id="sample-image-blocks" class="form-control" rows="10" cols="80" aria-label="Source Code of HTML Markup for Image News Blocks"><!--#include virtual="/sample/modules/news-image.html" --></textarea>
-                                    </div>
-                                    <div class="modal-footer">
-                                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div><!-- / End Modal -->
-                    </div>
-                </div>
-                <hr>
+                  
             <div class="group">
                 <div class="two-thirds">
-                    <h2>News List</h2>
+                    <h2>Example:</h2>
                     <!--#include virtual="/sample/modules/news-list.html" -->
-                    <!-- Trigger the modal with a button -->
-                    <button type="button" class="btn btn-default btn-sm" data-toggle="modal" data-target="#news-list">Show Source Code</button>
 
-                    <!-- Modal -->
-                    <div class="modal fade" id="news-list" role="dialog">
-                        <div class="modal-dialog modal-lg">
-                            <div class="modal-content">
-                                <div class="modal-header">
-                                    <h4 class="modal-title">Source Code</h4>
-                                    <button type="button" class="close" data-dismiss="modal">&times;</button>
-                                </div>
-                                <div class="modal-body">
-                                    <!-- modal content start-->
-                                    <div class="tab-group">
-                                        <ul id="sourceCode" class="nav nav-tabs" role="tablist">
-                                            <li class="active"><a href="#html" role="tab" data-toggle="tab" aria-label="HTML Markup for News List"><strong>HTML Markup</strong></a></li>
-                                            <li><a href="#microdata" role="tab" data-toggle="tab" aria-label="Source Code of Microdata for News List"><strong>Microdata</strong></a></li>
-                                        </ul>
-                                        <!-- Tab panes -->
-                                        <div class="tab-content responsive">
-                                            <div class="tab-pane active" id="html">
-                                                <textarea id="sample-news-list" class="form-control" rows="10" cols="80" aria-label="Source Code of HTML Markup for News List"><!--#include virtual="/sample/modules/news-list.html" --></textarea>
-                                            </div>
-                                            <div class="tab-pane" id="microdata">
-                                                <p class="alert alert-info">NOTE: This module makes use of a <code>datetime</code> property set in the <strong>ISO 8601</strong> format. Be sure to set the time correctly for each news-item.</p>
-                                                <textarea id="sample-news-list-microdata" class="form-control" rows="10" cols="80" aria-label="Source Code of Microdata for News List"><!--#include virtual="/sample/modules/news-list-schema.html" --></textarea>
-                                            </div>
-                                        </div>
-                                    </div><!--/ modal content end-->
-                                </div>
-                                <div class="modal-footer">
-                                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                                </div>
+                    <h3>Source Code:</h3>
+                    <div class="tab-group">
+                        <ul id="sourceCode" class="nav nav-tabs" role="tablist">
+                            <li class="active"><a href="#html" role="tab" data-toggle="tab">HTML Markup</a></li>
+                            <li><a href="#microdata" role="tab" data-toggle="tab">Microdata</a></li>
+                        </ul>
+                        <!-- Tab panes -->
+                        <div class="tab-content responsive">
+                            <div class="tab-pane active" id="html">
+                                <pre><code class="overflow-auto"><!--#include virtual="/sample/modules/news-list.html" --></code></pre>
+                            </div>
+                            <div class="tab-pane" id="microdata">
+                                <p class="alert alert-info">NOTE: This module makes use of a <code>datetime</code> property set in the <strong>ISO 8601</strong> format. Be sure to set the time correctly for each news-item.</p>
+                                <pre><code class="overflow-auto"><!--#include virtual="/sample/modules/news-list-schema.html" --></code></pre>
                             </div>
                         </div>
-                    </div><!-- / End Modal -->
-                    <hr>
+                    </div>
+
                 </div>
                 <div class="third">
                         <h2>Sidebar Example:</h2>
                         <p>Using the <code>.news-item</code> module in the sidebar makes use of the same markup however it omits the <code>.description</code> node for sake of saving space.</p>
-                        <div class="panel panel-standout highlight">
-                            <div class="panel-heading">
+                        <div class="card card-standout highlight">
+                            <div class="card-heading">
                                 <h4><span class="ca-gov-icon-info"></span> Latest News Headlines</h4>
                             </div>
-                            <div class="panel-body">
+                            <div class="card-body">
                                 <!--#include virtual="/sample/modules/news-list-sidebar.html" -->
                                 <hr>              
                             </div>
@@ -201,8 +128,8 @@ Based on Twitter Bootstrap
                                         <button type="button" class="close" data-dismiss="modal">&times;</button>
                                     </div>
                                     <div class="modal-body">
-                                        <strong>Source Code:</strong>
-                                        <textarea id="sample-news-list-sidebar" class="form-control" rows="10" cols="80" aria-label="Source Code of HTML Markup for News List Sidebar"><!--#include virtual="/sample/modules/news-list-sidebar.html" --></textarea>
+                                        <strong aria-label="Source Code for News List">Source Code:</strong>
+                                        <pre><code class="overflow-auto"><!--#include virtual="/sample/modules/news-list-sidebar.html" --></code></pre>
                                     </div>
                                     <div class="modal-footer">
                                         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
@@ -213,7 +140,15 @@ Based on Twitter Bootstrap
                     </div>
 
                 </div>
-                        
+                  
+                
+                <hr />
+                <h3>More News Samples</h3>
+                <ul class="list-primary">
+                    <li><a href="news-blocks.html">News Blocks</a></li>
+                    <li><a href="info-blocks.html">Info Blocks</a></li>
+                    
+                </ul>        
               
             </main>
 

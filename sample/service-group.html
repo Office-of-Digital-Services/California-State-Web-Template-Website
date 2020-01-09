@@ -6,14 +6,13 @@
 <!--[if IE 9]>    <html class="no-js ie9 oldie" lang="en"> <![endif]-->
 <!--[if (gt IE 9)]><!-->
 <html class="no-js" lang="en">
- <!--<![endif]-->
-<head>
-    <!--
-    California State Template
-Version 5.0.14
+<!--<![endif]-->
+<head>    
+<!--    California State Template
+    Version 5.5.11
 
-    Based on Twitter Bootstrap
-    -->
+        Based on Twitter Bootstrap
+        -->
     <meta charset="utf-8">
 
     <title>Sample - Service Group</title>
@@ -33,13 +32,10 @@ Version 5.0.14
 
         <!-- Include Utility Header -->
         <!--#include virtual="/ssi/utility-header.html" -->
-
         <!-- Settings Bar -->
         <!--#include virtual="/ssi/settings-bar.html" -->
-
         <!-- Include Branding -->
         <!--#include virtual="/ssi/branding.html" -->
-
         <!-- Include Mobile Controls -->
         <!--#include virtual="/ssi/mobile-controls.html" -->
 
@@ -80,7 +76,7 @@ Version 5.0.14
 
                 <div class="more-button">
                     <div class="more-content fake-service-group"></div>
-                    <a href="/service-directory.html" class="btn-more inverse"><span class="ca-gov-icon-plus-fill more-icon" aria-hidden="true"></span><span class="more-title">More Services</span></a>
+                    <a href="/service-directory.html" class="btn-more inverse p-t-md  p-b-md"><span class="more-title">More Services <span class="ca-gov-icon-arrow-fill-right m-l-sm" aria-hidden="true"></span></span></a>
                 </div>
             </div>
 
@@ -88,8 +84,8 @@ Version 5.0.14
             <div class="container">
                 <div class="group">
 
-                    <h2><label for="sample-list-a">Source Code:</label></h2>
-                    <textarea id="sample-list-a" class="form-control" rows="10" cols="80"><!--#include virtual="/sample/modules/service-tiles.html" --></textarea>
+                    <h2>Source Code:</h2>
+                    <pre class="height-600"><code class="overflow-auto"><!--#include virtual="/sample/modules/service-tiles.html" --></code></pre>
                     <div class="clearfix"><br /></div>
                 </div>
             </div>

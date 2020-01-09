@@ -3,22 +3,29 @@
 ----------------------------------------- */
 
 .breadcrumb {
-    padding-left:0;
-	background-color:transparent;
-    
+    padding-left: 0;
+    background-color: transparent;
+    @include font-size(1);
+
     li {
-        border-left:1px dotted $gray-light;
-        padding:0 ($grid-gutter-width / 2);
-        height:10px;                            // Setting Height and Line-height reduces the visual look of the separators
-        line-height:10px;
-        
+        &:before {
+            content: "";
+            border-left: 1px dotted $gray-light;
+            margin: 0 ($grid-gutter-width / 2);
+            font-size: 10px;
+            position: relative;
+            top: -2px;
+        }
+
         &:first-child {
-            border-left:none;                   // Removes the border from the first item in the breadcrumb
-            padding-left:0;                     // Removes the padding from the left side of the first link
+            &:before {
+                border-left: none; // Removes the border from the first item in the breadcrumb
+                margin: 0 0;
+            }
         }
     }
 }
 
-.breadcrumb > li + li:before {
-    padding:0;                                  // Overrides Bootstraps injected content
-}
+    .breadcrumb > li + li:before {
+        padding: 0; // Overrides Bootstraps injected content
+    }

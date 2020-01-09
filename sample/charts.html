@@ -5,14 +5,12 @@
 <!--[if IE 9]>    <html class="no-js ie9 oldie" lang="en"> <![endif]-->
 <!--[if (gt IE 9)]><!-->
 <html class="no-js" lang="en">
-<!--<![endif]-->
+ <!--<![endif]-->
+<head>    
+<!--    California State Template
+    Version 5.5.11
 
-<head>
-    <!--
-    California State Template
-Version 5.0.14
-
-            Based on Twitter Bootstrap
+        Based on Twitter Bootstrap
         -->
     <meta charset="utf-8">
 
@@ -26,12 +24,14 @@ Version 5.0.14
     <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
     <!-- Circles JS -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/circles/0.0.6/circles.min.js"></script>
+
     <!--#include virtual="/ssi/head-css-js.html" -->
 
 </head>
 
 <body>
-    <header role="banner" id="header" class="global-header fixed">
+
+    <header role="banner" id="header" class="global-header">
         <div id="skip-to-content"><a href="#main-content">Skip to Main Content</a></div>
 
         <!-- Include Utility Header -->
@@ -54,6 +54,7 @@ Version 5.0.14
 
         </div>
 
+        <div class="header-decoration"></div>
     </header>
 
     <div id="main-content" class="main-content">
@@ -65,7 +66,6 @@ Version 5.0.14
                     <li class="active">Charts</li>
                 </ol>
 
-                <h1>Charts</h1>
                 <p>Following charts examples are using Plotly and Circles open source graphing JS libraries. To use use plotly.js or circle.js libraries simply add their CDN links to your <code>head</code> section. </p>
 <pre>&lt;!-- Plotly JS --&gt;
 &lt;script src="https://cdn.plot.ly/plotly-latest.min.js"&gt;&lt;/script&gt;
@@ -160,50 +160,16 @@ Version 5.0.14
                     </div>
                 </div>
 
+
                 <hr>
 
-                <div class="group" id="show-on-scroll">
-                    <div class="half">
-                        <h2>Number Counter Circle Chart</h2>
-                        <div class="m-b-md text-center" id="circle1">
-                        </div>
-                        <h4 class="text-center">UI Design</h4>
-                        <p class="p-x m-b-0 text-center">Sed feugiat porttitor nunc etiam gravi daex justo ac rhoncus</p>
-
-                    </div>
-                    <div class="half">
-                        <h2><label>Source Code:</label></h2>
-                        <div class="tab-group">
-                            <ul id="sourceCode4" class="nav nav-tabs" role="tablist">
-                                <li class="active"><a href="#html-circles" role="tab" data-toggle="tab"><span class="sr-only">Circle Percentage Module </span>HTML Markup</a></li>
-                                <li><a href="#javascript-circles" role="tab" data-toggle="tab"><span class="sr-only">Circle Percentage Module </span>JavaScript</a></li>
-                            </ul>
-                            <!-- Tab panes -->
-                            <div class="tab-content responsive">
-                                <div class="tab-pane active" id="html-circles">
-                                    <textarea aria-label="HTML Markup" class="form-control" rows="4" cols="80"><!--#include virtual="/sample/modules/number-counter-circles.html" --></textarea>
-                                </div>
-                                <div class="tab-pane" id="javascript-circles">
-                                    <textarea aria-label="JavaScript" class="form-control" rows="10" cols="80"><!--#include virtual="/sample/modules/number-counter-circles-js.html" --></textarea>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <hr>
 
             </main>
-
-
-
         </div>
     </div>
 
     <!--#include virtual="/ssi/global-footer.html" -->
     <!--#include virtual="/ssi/scripts.html" -->
-
-
-
     <script>
         /* -----------------------------------------
         PLOTLY
@@ -262,56 +228,6 @@ Version 5.0.14
         }];
 
         Plotly.newPlot('pieChart', data);
-
-
-
-        /* -----------------------------------------
-        CIRCLES
-        requires circles.min.js
-
-        ----------------------------------------- */
-
-        // Animating the circles only when visible
-        $.fn.isInViewport = function () {
-            var elementTop = $(this).offset().top;
-            var elementBottom = elementTop + $(this).outerHeight();
-            var viewportTop = $(window).scrollTop();
-            var viewportBottom = viewportTop + $(window).height();
-            return elementBottom > viewportTop && elementTop < viewportBottom;
-        };
-
-        circlesCreated = false;
-
-        $(window).on('scroll', function () {
-            if (!circlesCreated && $("#show-on-scroll").isInViewport()) {
-                circlesCreated = true;
-                createCircles();
-            }
-        });
-
-        function createCircles() {
-            //isolate this circles code out of fuction if you want circles animation to start right away
-            var myCircle1 = Circles.create({
-                id: 'circle1', radius: 80,
-                radius: 80,
-                value: 87,
-                maxValue: 100,
-                width: 8,
-                text: function (value) { return value + '%'; },
-                colors: ['#e0e0e0', '#72c02c'],
-                duration: 2000,
-                wrpClass: 'circles-wrp',
-                textClass: 'circles-text',
-                valueStrokeClass: 'circles-valueStroke',
-                maxValueStrokeClass: 'circles-maxValueStroke',
-                styleWrapper: true,
-                styleText: true
-            });
-        }
-
-// End Animating the circles only when visible
-
     </script>
-
 </body>
 </html>
