@@ -1,0 +1,85 @@
+﻿<!doctype html>
+<!--[if lt IE 7]> <html class="no-js ie6 oldie" lang="en"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js ie7 oldie" lang="en"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js ie8 oldie" lang="en"> <![endif]-->
+<!--[if IE 9]>    <html class="no-js ie9 oldie" lang="en"> <![endif]-->
+<!--[if (gt IE 9)]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+<head>
+
+<!--    California State Template
+    Version 5.5.11
+
+Based on Twitter Bootstrap
+-->
+<meta charset="utf-8">
+
+<title>Sample - SocialSharer</title>
+
+<meta name="Author" content="State of California" />
+<meta name="Description" content="State of California" />
+<meta name="Keywords" content="California, government" />
+
+<!--#include virtual="/ssi/head-css-js.html" -->
+
+</head>
+
+<body class="sticky-footer">
+
+    <header role="banner" id="header" class="global-header">
+        <div id="skip-to-content"><a href="#main-content">Skip to Main Content</a></div>
+
+        <!-- Include Utility Header -->
+        <!--#include virtual="/ssi/utility-header.html" -->
+        <!-- Settings Bar -->
+        <!--#include virtual="/ssi/settings-bar.html" -->
+        <!-- Include Branding -->
+        <!--#include virtual="/ssi/branding.html" -->
+        <!-- Include Mobile Controls -->
+        <!--#include virtual="/ssi/mobile-controls.html" -->
+
+        <div class="navigation-search">
+            <!-- Include Navigation -->
+            <!--#include virtual="/ssi/navigation.html" -->
+
+            <div id="head-search" class="search-container">
+                <!-- Include Search -->
+                <!--#include virtual="/ssi/search.html" -->
+            </div>
+
+        </div>
+
+        <div class="header-decoration"></div>
+    </header>
+
+
+    <div id="main-content" class="main-content">
+        <div class="container p-b-lg">
+            <main class="main-primary">
+                <ol class="breadcrumb">
+                    <li><a href="../index.html" title="Home page">Home</a></li>
+                    <li><a href="/sample/" title="Samples landing page">Examples</a></li>
+                    <li class="active">Sticky Footer</li>
+                </ol>
+                <h1>Sticky Footer</h1>
+                <p>The purpose of a sticky footer is that it "sticks" to the bottom of the browser window. But not always, if there is enough content on the page to push the footer lower, it still does that. But if the content on the page is short, a sticky footer will still hang to the bottom of the browser window. To acheive that add <code>.sticky-footer</code> to the <code>&lt;body&gt;</code> tag and <code>.mt-auto</code> class to your <code>&lt;footer&gt;</code> tag. <button class="btn btn-default btn-xs m-l" id="add">Add more content</button><button class="btn btn-default btn-xs m-l" id="remove">Remove content</button></p>
+
+                <div class="content"></div>
+            </main>
+        </div>
+    </div>
+
+
+    <!--#include virtual="/sample/modules/sticky-footer.html" -->
+    <!--#include virtual="/ssi/scripts.html" -->
+    <script>
+        $(document).ready(function () {
+        $("#add").on("click", function () {
+            $("<p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.</p>").appendTo(".content");
+            });
+            $("#remove").on("click", function () {
+                $(".content").empty()
+            });
+        });
+    </script>
+</body>
+</html>
