@@ -3,7 +3,7 @@
    /source/js/cagov/parallax.js
 ----------------------------------------- */
 
-(function($) {
+(function ($) {
 
     $.fn.parallax = function (options) {
 
@@ -21,14 +21,14 @@
             var $this = $(this);
 
             // Init proper heights
-            var bg_height = $(window).outerHeight() * settings.speed + $this.innerHeight();
+            var bg_height = ($(window).outerHeight() * settings.speed) + $this.innerHeight();
             $this.css({ 'height': bg_height });
 
             // Set up Scroll Handler
             $(window).scroll(function () {
                 var element_top = $this.offset().top,
                     window_top = $(window).scrollTop(),
-                    y_pos = window_top + $(window).innerHeight() - element_top * settings.speed,
+                    y_pos = (((window_top + $(window).innerHeight()) - element_top) * settings.speed),
                     main_position;
 
                 main_position = 'translate(0, ' + y_pos + 'px)';

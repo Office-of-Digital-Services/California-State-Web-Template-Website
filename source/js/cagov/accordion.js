@@ -792,6 +792,18 @@ $(document).ready(function () {
         }
     });
 
+    $(".accordion > .panel > .panel-heading > .panel-title > a").on("keydown", function (e) {
+        // Down arrow will focus on the expanded accordion content panel
+        if (e.keyCode === 40) {
+            var accordionPanelID = $(this).attr("id");
+            var accordionContentID = $("[aria-labelledby=" + accordionPanelID + "]");
+            if ($(this).attr("aria-expanded") === "true") {
+                e.stopPropagation();
+                accordionContentID.focus();
+            }
+        }
+    });
+
 });
 
 /* Remove aria controls from a links */

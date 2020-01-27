@@ -1,5 +1,5 @@
 /**
- * CA State Template v5 -  @version v5.0.14 -  12/27/2019 
+ * CA State Template v5 -  @version v5.0.14 -  1/27/2020 
   STYLES COMPILED FROM SOURCE (source/js) DO NOT MODIFY */
 /*! modernizr (Custom Build) | MIT *
  * https://modernizr.com/download/?-flexbox-setclasses !*/
@@ -17056,6 +17056,18 @@ $(document).ready(function () {
         }
     });
 
+    $(".accordion > .panel > .panel-heading > .panel-title > a").on("keydown", function (e) {
+        // Down arrow will focus on the expanded accordion content panel
+        if (e.keyCode === 40) {
+            var accordionPanelID = $(this).attr("id");
+            var accordionContentID = $("[aria-labelledby=" + accordionPanelID + "]");
+            if ($(this).attr("aria-expanded") === "true") {
+                e.stopPropagation();
+                accordionContentID.focus();
+            }
+        }
+    });
+
 });
 
 /* Remove aria controls from a links */
@@ -18949,7 +18961,7 @@ function initHalfDonut(d3) {
    /source/js/cagov/parallax.js
 ----------------------------------------- */
 
-(function($) {
+(function ($) {
 
     $.fn.parallax = function (options) {
 
@@ -18967,14 +18979,14 @@ function initHalfDonut(d3) {
             var $this = $(this);
 
             // Init proper heights
-            var bg_height = $(window).outerHeight() * settings.speed + $this.innerHeight();
+            var bg_height = ($(window).outerHeight() * settings.speed) + $this.innerHeight();
             $this.css({ 'height': bg_height });
 
             // Set up Scroll Handler
             $(window).scroll(function () {
                 var element_top = $this.offset().top,
                     window_top = $(window).scrollTop(),
-                    y_pos = window_top + $(window).innerHeight() - element_top * settings.speed,
+                    y_pos = (((window_top + $(window).innerHeight()) - element_top) * settings.speed),
                     main_position;
 
                 main_position = 'translate(0, ' + y_pos + 'px)';
