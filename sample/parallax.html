@@ -1,0 +1,100 @@
+﻿<!doctype html>
+<!--[if lt IE 7]> <html class="no-js ie6 oldie" lang="en"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js ie7 oldie" lang="en"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js ie8 oldie" lang="en"> <![endif]-->
+<!--[if IE 9]>    <html class="no-js ie9 oldie" lang="en"> <![endif]-->
+<!--[if (gt IE 9)]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+<head>
+
+<!--    California State Template
+    Version 5.5.11
+ 
+Based on Twitter Bootstrap
+-->
+<meta charset="utf-8">
+
+<title>Sample - Parallax</title>
+
+<meta name="Author" content="State of California" />
+<meta name="Description" content="State of California" />
+<meta name="Keywords" content="California, government" />
+
+<!--#include virtual="/ssi/head-css-js.html" -->
+
+</head>
+
+<body>
+
+<header role="banner" id="header" class="global-header">
+	<div id="skip-to-content"><a href="#main-content">Skip to Main Content</a></div>
+        
+        <!-- Include Utility Header -->
+		<!--#include virtual="/ssi/utility-header.html" -->	
+        
+        <!-- Settings Bar -->	
+		<!--#include virtual="/ssi/settings-bar.html" -->
+
+		<!-- Include Branding -->
+		<!--#include virtual="/ssi/branding.html" -->
+    
+    <!-- Include Mobile Controls -->
+    <!--#include virtual="/ssi/mobile-controls.html" -->
+
+    <div class="navigation-search">
+        <!-- Include Navigation -->
+        <!--#include virtual="/ssi/navigation.html" -->
+
+        <div id="head-search" class="search-container">
+            <!-- Include Search -->
+            <!--#include virtual="/ssi/search.html" -->
+        </div>
+
+    </div>
+
+	<div class="header-decoration"></div>
+</header>
+
+<div id="main-content">
+    <div class="container p-b-lg">
+        <main class="main-primary">
+            <ol class="breadcrumb">
+                <li><a href="../index.html" title="Home page">Home</a></li>
+                <li><a href="index.html" title="Examples landing page">Examples</a></li>
+                <li class="active">Parallax</li>
+            </ol>
+
+            <h1>Parallax</h1>
+            <p>Parallax scrolling is a web site trend where the background content image is moved at a different speed than the foreground content while scrolling. To implement parallax effect place backgound image div with <code>.parallax-bg</code> class to inside of the <code>.section</code> div. You can add more content inside of the <code>.section</code> div right after <code>.parallax-bg</code> backgound image div.</p>
+    </div>
+
+
+    <div class="section section-default">
+        <div class="parallax-bg" style="background-image:url(/images/bg-open-data.jpg);"></div>
+        <div class="container p-y-lg">
+            <h2 class="text-center">Parallax Effect</h2>
+            <p class="text-center">More content</p>
+        </div>
+    </div>
+
+
+    <div class="container p-b-lg">
+        <h2><label for="sample-panels">Source Code:</label></h2>
+        <div class="form-group">
+<textarea id="sample-accordion-list" class="form-control" rows="8" cols="80"><div class="section section-default">
+            <div class="parallax-bg" style="background-image:url(/images/bg-open-data.jpg);"></div>
+            <div class="container p-y-lg">
+            <h2 class="text-center">Parallax Effect</h2>
+            <p class="text-center">More content</p>
+    </div>
+</div></textarea>
+        </div>
+    </div>
+    </main>
+
+
+
+    <!--#include virtual="/ssi/global-footer.html" -->
+    <!--#include virtual="/ssi/scripts.html" -->
+
+</body>
+</html>

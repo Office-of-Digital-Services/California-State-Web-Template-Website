@@ -1,5 +1,5 @@
 /**
- * CA State Template v5.5 -  @version v5.5.11 -  1/16/2020 
+ * CA State Template v5.5 -  @version v5.5.11 -  1/30/2020 
   STYLES COMPILED FROM SOURCE (SCSS) DO NOT MODIFY */
 /* -----------------------------------------
    BOOTSTRAP v4.4.1 - /source/scss/bootstrap/ 
@@ -12091,6 +12091,7 @@ code {
   }
 }
 
+/* sticky footer */
 .sticky-footer {
   display: flex;
   flex-direction: column;
@@ -14690,12 +14691,14 @@ a.second-level-link [class^="ca-gov-icon-"] {
 }
 
 .section .parallax-bg {
-  background-position: center center;
+  background-position: center top;
   background-repeat: no-repeat;
   background-size: cover;
+  bottom: 0;
+  left: 0;
   position: absolute;
   width: 100%;
-  height: 300%;
+  height: 100%;
 }
 
 .section .parallax-bg ~ .container {
