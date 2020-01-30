@@ -112,15 +112,6 @@ $(document).ready(function () {
         var tabsPaneLast = tabGroup.find(".tab-pane:last-child");
         var parentLI = $(this).parent("li");
 
-        if (parentLI.is(':first-child')) {
-            console.log("first");
-        }
-        if (parentLI.is(':last-child')) {
-            console.log("last");
-        }
-
-
-
         if (e.keyCode === 37) {
             tabcontentID.prev().removeAttr("tabindex aria-hidden");
             tabcontentID.attr("tabindex", "-1").attr("aria-hidden", "true");
