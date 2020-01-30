@@ -1,5 +1,5 @@
 /**
- * CA State Template v5.5 -  @version v5.5.11 -  1/7/2020 
+ * CA State Template v5.5 -  @version v5.5.12 -  1/30/2020 
   STYLES COMPILED FROM SOURCE (SCSS) DO NOT MODIFY */
 /* -----------------------------------------
    BOOTSTRAP v4.4.1 - /source/scss/bootstrap/ 
@@ -11117,9 +11117,16 @@ code {
   padding-bottom: 0.75rem !important;
   padding-left: 1.25rem !important;
   padding-right: 1.25rem !important;
-  margin-bottom: -1px !important;
   margin-top: 0 !important;
   background-image: none !important;
+}
+
+a.list-group-item {
+  margin-bottom: 0px !important;
+}
+
+.tab.list-group-item {
+  margin-bottom: -1px !important;
 }
 
 /* -----------------------------------------
@@ -12089,6 +12096,18 @@ code {
   .global-footer .footer-links {
     margin-top: 1rem !important;
   }
+}
+
+/* sticky footer */
+.sticky-footer {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  overflow: visible;
+}
+
+.sticky-footer .main-content {
+  min-height: unset;
 }
 
 /* -----------------------------------------
@@ -14679,12 +14698,14 @@ a.second-level-link [class^="ca-gov-icon-"] {
 }
 
 .section .parallax-bg {
-  background-position: center center;
+  background-position: center top;
   background-repeat: no-repeat;
   background-size: cover;
+  bottom: 0;
+  left: 0;
   position: absolute;
   width: 100%;
-  height: 300%;
+  height: 100%;
 }
 
 .section .parallax-bg ~ .container {

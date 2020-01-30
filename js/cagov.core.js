@@ -1,5 +1,5 @@
 /**
- * CA State Template v5.5 -  @version v5.5.11 -  1/7/2020 
+ * CA State Template v5.5 -  @version v5.5.12 -  1/30/2020 
   STYLES COMPILED FROM SOURCE (source/js) DO NOT MODIFY */
 /*! modernizr (Custom Build) | MIT *
  * https://modernizr.com/download/?-flexbox-setclasses !*/
@@ -7501,15 +7501,6 @@ $(document).ready(function () {
         var tabsPaneFirst = tabGroup.find(".tab-pane:first-child");
         var tabsPaneLast = tabGroup.find(".tab-pane:last-child");
         var parentLI = $(this).parent("li");
-
-        if (parentLI.is(':first-child')) {
-            console.log("first");
-        }
-        if (parentLI.is(':last-child')) {
-            console.log("last");
-        }
-
-
 
         if (e.keyCode === 37) {
             tabcontentID.prev().removeAttr("tabindex aria-hidden");
@@ -15526,6 +15517,12 @@ $(document).ready(function () {
     });
 });
 
+
+
+
+
+
+
 /* Accessible list accordion */
 // Source: http://oaa-accessibility.org/examplep/accordian1/
 
@@ -15723,6 +15720,7 @@ tabpanel.prototype.bindHandlers = function () {
 
     // bind a tab keydown handler 
     this.$tabs.on("keydown", function (e) {
+        
         return thisObj.handleTabKeyDown($(this), e);
     });
 
@@ -16269,6 +16267,8 @@ $.extend($.expr.pseudos, {
 });
 
 
+
+
 /* Accordion */
 $(document).ready(function () {
     var accordion = $('.accordion').find('.collapsed');
@@ -16295,6 +16295,18 @@ $(document).ready(function () {
         else {
             accordionContentID.removeAttr("aria-hidden");
             accordionContentID.focus();
+        }
+    });
+
+    $(".accordion > .panel > .panel-heading > .panel-title > a").on("keydown", function (e) {
+        // Down arrow will focus on the expanded accordion content panel
+        if (e.keyCode === 40) {
+            var accordionPanelID = $(this).attr("id");
+            var accordionContentID = $("[aria-labelledby=" + accordionPanelID + "]");
+            if ($(this).attr("aria-expanded") === "true") {
+                e.stopPropagation();
+                accordionContentID.focus();
+            }
         }
     });
 
@@ -17600,21 +17612,50 @@ if (!String.prototype.trim) {
    /source/js/cagov/parallax.js
 ----------------------------------------- */
 
-var parallaxElements = $('.parallax-bg'),
-    parallaxQuantity = parallaxElements.length;
+(function ($) {
 
-$(window).on('scroll', function () {
-    window.requestAnimationFrame(function () {
-        for (var i = 0; i < parallaxQuantity; i++) {
-            var currentElement = parallaxElements.eq(i);
-            var scrolled = $(window).scrollTop();
+    $.fn.parallax = function (options) {
 
-            currentElement.css({
-                transform: 'translate3d(0,' + scrolled * -0.3 + 'px, 0)'
+        var windowHeight = $(window).height();
+
+        // Establish default settings
+        var settings = $.extend({
+            speed: 0.3
+        }, options);
+
+        // Iterate over each object in collection
+        return this.each(function () {
+
+            // Save a reference to the element
+            var $this = $(this);
+
+            // Init proper heights
+            var bg_height = ($(window).outerHeight() * settings.speed) + $this.innerHeight();
+            $this.css({ 'height': bg_height });
+
+            // Set up Scroll Handler
+            $(window).scroll(function () {
+                var element_top = $this.offset().top,
+                    window_top = $(window).scrollTop(),
+                    y_pos = (((window_top + $(window).innerHeight()) - element_top) * settings.speed),
+                    main_position;
+
+                main_position = 'translate(0, ' + y_pos + 'px)';
+
+                $this.css({
+                    '-webkit-transform': main_position,
+                    '-moz-transform': main_position,
+                    '-ms-transform': main_position,
+                    'transform': main_position
+                });
             });
-        }
-    });
-});
+            // $(window).scroll();
+
+        });
+    };
+}(jQuery));
+
+$('.parallax-bg').parallax();
 
 /**
  *
