@@ -1,5 +1,5 @@
 /**
- * CA State Template v6 -  @version v6.0.0 -  1/31/2020 
+ * CA State Template v6 -  @version v6.0.1 -  1/31/2020 
   STYLES COMPILED FROM SOURCE (source/js) DO NOT MODIFY */
 /*! modernizr (Custom Build) | MIT *
  * https://modernizr.com/download/?-flexbox-setclasses !*/
