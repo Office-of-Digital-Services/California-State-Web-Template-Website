@@ -27,6 +27,12 @@ $(document).ready(function () {
     });
 });
 
+
+
+
+
+
+
 /* Accessible list accordion */
 // Source: http://oaa-accessibility.org/examplep/accordian1/
 
@@ -224,6 +230,7 @@ tabpanel.prototype.bindHandlers = function () {
 
     // bind a tab keydown handler 
     this.$tabs.on("keydown", function (e) {
+
         return thisObj.handleTabKeyDown($(this), e);
     });
 
@@ -770,6 +777,8 @@ $.extend($.expr.pseudos, {
 });
 
 
+
+
 /* Accordion */
 $(document).ready(function () {
     var accordion = $('.accordion').find('.collapsed');
@@ -790,10 +799,24 @@ $(document).ready(function () {
 
         if ($(this).attr("aria-expanded") === "true") {
             accordionContentID.attr("tabindex", "-1").attr("aria-hidden", "true");
-            
+            $(this).focus();
+
         }
         else {
-            accordionContentID.removeAttr("tabindex aria-hidden");
+            accordionContentID.removeAttr("aria-hidden");
+            accordionContentID.focus();
+        }
+    });
+
+    $(".accordion > .panel > .panel-heading > .panel-title > a").on("keydown", function (e) {
+        // Down arrow will focus on the expanded accordion content panel
+        if (e.keyCode === 40) {
+            var accordionPanelID = $(this).attr("id");
+            var accordionContentID = $("[aria-labelledby=" + accordionPanelID + "]");
+            if ($(this).attr("aria-expanded") === "true") {
+                e.stopPropagation();
+                accordionContentID.focus();
+            }
         }
     });
 

@@ -4,42 +4,25 @@
 ----------------------------------------- */
 
 .section {
-	padding-top: 25px;		// beta 5.0 addition
-    padding-bottom: 25px;	// beta 5.0 addition
+    padding-top: 25px; // beta 5.0 addition
+    padding-bottom: 25px; // beta 5.0 addition
     background: $white;
-    position: relative;      // position and overflow needed for parallax effect
+    position: relative; // position and overflow needed for parallax effect
     overflow: hidden;
 
     @media (max-width: $screen-xs-max) {
         padding-top: $line-height-computed;
         padding-bottom: $line-height-computed;
     }
-
     /* Section extensions */
-
     &.collapsed {
         padding-top: 0;
         padding-bottom: 0;
     }
 
-    .parallax-bg {
-        background-position: center top;
-        background-repeat: no-repeat;
-        background-size: cover;
-        bottom: 0;
-        left: 0;
-        position: absolute;
-        width: 100%;
-        height: 100%;
-
-        ~ .container {
-            position: relative;      // Needed so text appeard above background
-        }
-    }
-    
     .container {
         > h1, > h2, > h3, > h4 {
-           margin-top: 0;          // Remove margin for direct decendents of section
+            margin-top: 0; // Remove margin for direct decendents of section
         }
     }
 }
@@ -73,4 +56,11 @@ pre {
 	padding:$spacer
 	}
 
-
+.parallax-bg {
+    position: relative;
+    background-attachment: fixed;
+    background-position: center 0;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+}
