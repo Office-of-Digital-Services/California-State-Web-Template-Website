@@ -1,5 +1,5 @@
 /**
- * CA State Template v5.5 -  @version v5.5.12 -  1/30/2020 
+ * CA State Template v5.5 -  @version v5.5.12 -  3/13/2020 
   STYLES COMPILED FROM SOURCE (SCSS) DO NOT MODIFY */
 /* -----------------------------------------
    BOOTSTRAP v4.4.1 - /source/scss/bootstrap/ 
@@ -12810,6 +12810,53 @@ table.gsc-search-box td {
     border-radius: 4px;
     padding: 0 10px 0 10px;
   }
+  /* full width featured search hack for IE */
+}
+
+@media all and (min-width: 768px) and (-ms-high-contrast: none) {
+  .full-width-nav .featured-search {
+    width: 100%;
+    max-width: 100%;
+    padding-right: 15px;
+  }
+  .full-width-nav .featured-search .container {
+    width: 40%;
+    float: right;
+  }
+  *::-ms-backdrop, .full-width-nav .featured-search {
+    width: 100%;
+    max-width: 100%;
+    padding-right: 15px;
+  }
+  *::-ms-backdrop .container, .full-width-nav .featured-search .container {
+    width: 40%;
+    float: right;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 992px) {
+  /* full width featured search hack for IE */
+}
+
+@media all and (min-width: 768px) and (max-width: 992px) and (-ms-high-contrast: none) {
+  .full-width-nav .featured-search {
+    width: 100%;
+    max-width: 100%;
+    padding-right: 15px;
+  }
+  .full-width-nav .featured-search .container {
+    width: 40%;
+    float: right;
+  }
+  *::-ms-backdrop, .full-width-nav .featured-search {
+    width: 100%;
+    max-width: 100%;
+    padding-right: 15px;
+  }
+  *::-ms-backdrop .container, .full-width-nav .featured-search .container {
+    width: 40%;
+    float: right;
+  }
 }
 
 /* search box icons for mobile */
@@ -14331,6 +14378,22 @@ a.second-level-link [class^="ca-gov-icon-"] {
     -webkit-transition: all .2s ease !important;
     transition: all .2s ease !important;
   }
+}
+
+/* mobile controls hack for IE because IE never dies */
+@media all and (-ms-high-contrast: none) {
+  .mobile-controls .toggle-search {
+    position: absolute;
+    right: 70px;
+    top: 14px;
+  }
+  /* IE10 */
+  *::-ms-backdrop, .mobile-controls .toggle-search {
+    position: absolute;
+    right: 70px;
+    top: 14px;
+  }
+  /* IE11 */
 }
 
 /* -----------------------------------------
