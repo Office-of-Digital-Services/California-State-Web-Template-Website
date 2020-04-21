@@ -1,9 +1,8 @@
-// End gatag.js
 /* -----------------------------------------
-   NAVIGATION MENU - /source/js/cagov/navigation.js
------------------------------------------ */
-
-$(document).ready(function () {
+    NAVIGATION MENU - /source/js/cagov/navigation.js
+ ----------------------------------------- */
+ 
+ $(document).ready(function () {
     // detect partial flexbox support in IE>9
     if ($('.top-level-nav').css('display') === 'table') { $('body').addClass('no-flex'); }
 
@@ -50,6 +49,7 @@ $(document).ready(function () {
                 $this.addClass('active');
             }
         }
+
     });
 
     $navItemsWithSubs.each(function () {
@@ -231,7 +231,7 @@ $(document).ready(function () {
     }).on("mouseleave", function () {
         $('.' + clickedFocus).removeClass(clickedFocus);
     });
-	$('.top-level-nav > li > a').on("focus", function (e) {
+    $('.top-level-nav > li > a').on("focus", function (e) {
         $(this).closest('ul').find('.' + menuHoverClass).removeClass(menuHoverClass);
         if (!$(this).parent().find('.toggle-sub-nav').hasClass('open')) {
             $(this).parent().addClass(menuHoverClass);
@@ -1291,3 +1291,29 @@ $(document).ready(function () {
     $("#navigation .mobile-control .sr-only").removeAttr("aria-hidden aria-expanded role id").removeClass("sub-nav with-few-items subnav-closed");
 });
 
+/* -----------------------------------------
+   Navigation accessibility fixes
+----------------------------------------- */
+$(document).ready(function () {
+   
+   // Navigation vars
+   var $navigation = $("#navigation");
+   var $navItems = $navigation.find('.nav-item'); 
+   var FirstLevelLink = $navItems.find('a.first-level-link');
+  
+// Function checks if first nav link has sub-navigation, if not then code removes unnessesary aria-expanded attribute
+FirstLevelLink.each(function() {
+   if (!$(this).siblings('.sub-nav').length) {
+     
+       $(this).removeAttr("aria-expanded");
+       $(this).on("mouseover", function(e){
+           e.stopPropagation();
+       });
+       $(this).on("mouseout", function(e){
+           e.stopPropagation();
+       });
+   }
+
+});
+       
+});

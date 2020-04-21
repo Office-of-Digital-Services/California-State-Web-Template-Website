@@ -1,5 +1,5 @@
 /**
- * CA State Template v5 -  @version v5.0.16 -  2/21/2020 
+ * CA State Template v5 -  @version v5.0.17 -  4/21/2020 
   STYLES COMPILED FROM SOURCE (source/js) DO NOT MODIFY */
 /*! modernizr (Custom Build) | MIT *
  * https://modernizr.com/download/?-flexbox-setclasses !*/
@@ -14968,12 +14968,11 @@ function trackExternalLinks (evnt) {
 }
 
 // End gatag.js
-// End gatag.js
 /* -----------------------------------------
-   NAVIGATION MENU - /source/js/cagov/navigation.js
------------------------------------------ */
-
-$(document).ready(function () {
+    NAVIGATION MENU - /source/js/cagov/navigation.js
+ ----------------------------------------- */
+ 
+ $(document).ready(function () {
     // detect partial flexbox support in IE>9
     if ($('.top-level-nav').css('display') === 'table') { $('body').addClass('no-flex'); }
 
@@ -15020,6 +15019,7 @@ $(document).ready(function () {
                 $this.addClass('active');
             }
         }
+
     });
 
     $navItemsWithSubs.each(function () {
@@ -15201,7 +15201,7 @@ $(document).ready(function () {
     }).on("mouseleave", function () {
         $('.' + clickedFocus).removeClass(clickedFocus);
     });
-	$('.top-level-nav > li > a').on("focus", function (e) {
+    $('.top-level-nav > li > a').on("focus", function (e) {
         $(this).closest('ul').find('.' + menuHoverClass).removeClass(menuHoverClass);
         if (!$(this).parent().find('.toggle-sub-nav').hasClass('open')) {
             $(this).parent().addClass(menuHoverClass);
@@ -16261,7 +16261,32 @@ $(document).ready(function () {
     $("#navigation .mobile-control .sr-only").removeAttr("aria-hidden aria-expanded role id").removeClass("sub-nav with-few-items subnav-closed");
 });
 
+/* -----------------------------------------
+   Navigation accessibility fixes
+----------------------------------------- */
+$(document).ready(function () {
+   
+   // Navigation vars
+   var $navigation = $("#navigation");
+   var $navItems = $navigation.find('.nav-item'); 
+   var FirstLevelLink = $navItems.find('a.first-level-link');
+  
+// Function checks if first nav link has sub-navigation, if not then code removes unnessesary aria-expanded attribute
+FirstLevelLink.each(function() {
+   if (!$(this).siblings('.sub-nav').length) {
+     
+       $(this).removeAttr("aria-expanded");
+       $(this).on("mouseover", function(e){
+           e.stopPropagation();
+       });
+       $(this).on("mouseout", function(e){
+           e.stopPropagation();
+       });
+   }
 
+});
+       
+});
 /* -----------------------------------------
    ACCORDION LIST - /source/js/cagov/accordion.js
 ----------------------------------------- */
@@ -17094,11 +17119,11 @@ $(document).ready(function(){
     $(".panel.highlight").find(".panel-heading").prepend( "<span class='triangle'></span>" );
 });
 
-/* -----------------------------------------
-   SEARCH - /source/js/cagov/search.js
------------------------------------------ */
-
-$(document).ready(function () {
+ /* -----------------------------------------
+    SEARCH - /source/js/cagov/search.js
+ ----------------------------------------- */
+ 
+ $(document).ready(function () {
     var $searchContainer = $("#head-search");
     var $searchText = $searchContainer.find(".search-textfield");
     var $resultsContainer = $('.search-results-container');
@@ -17159,6 +17184,11 @@ $(document).ready(function () {
     $resultsContainer.find('.close').on('click', removeSearchResults);
     $searchContainer.find('.close').on('click', removeSearchResults);
 
+    if (!featuredsearch) {
+        // added aria expaned attr for accessibility
+        $("button.first-level-link").attr("aria-expanded", "false");
+    }
+
     // Our special nav icon which we need to hook into for starting the search
     // $('#nav-item-search')
 
@@ -17183,6 +17213,8 @@ $(document).ready(function () {
         var searchactive = $("#head-search").hasClass("active");
         // hide Search form if it's not active
         if (searchactive) {
+             // added aria expaned attr for accessibility
+            $(this).find("button").attr("aria-expanded", "true");
             searchInput.removeAttr('tabindex aria-hidden');
             searchSubmit.removeAttr('tabindex aria-hidden');
             searchReset.removeAttr('tabindex aria-hidden');
@@ -17191,6 +17223,8 @@ $(document).ready(function () {
 
         }
         else {
+            // added aria expaned attr for accessibility
+           $(this).find("button").attr("aria-expanded", "false");
             searchInput.attr({
                 "tabindex": '-1',
                 "aria-hidden": 'true'
@@ -17285,6 +17319,8 @@ $(document).ready(function () {
         $('.ask-group').removeClass('fade-out');
 
         if (!featuredsearch) {
+             // added aria expaned attr for accessibility
+             $("button.first-level-link").attr("aria-expanded", "false");
             searchInput.attr({
                 "tabindex": '-1',
                 "aria-hidden": 'true'
@@ -17360,6 +17396,8 @@ $(document).ready(function () {
         });
 
     });
+
+   
 
 });
 
@@ -17447,6 +17485,16 @@ $(window).on('scroll', function () {
 function mobileView() {
     return $('.global-header .mobile-controls').css('display') !== "none"; // mobile view uses arrow to show subnav instead of first touch
 }
+
+/* Search main navigation button accessibility fix */
+
+// make sure search button link doen't pick up main nav functions on hover
+$("button.first-level-link").on("mouseover", function(event) {
+   event.stopPropagation();
+});
+$("button.first-level-link").on("mouseout", function(event) {
+   event.stopPropagation();
+});
 /* -----------------------------------------
    INIT THIRD PARTY PLUGINS - /source/js/cagov/plugins.js
 ----------------------------------------- */

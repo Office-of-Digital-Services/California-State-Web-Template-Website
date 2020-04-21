@@ -1,8 +1,8 @@
-/* -----------------------------------------
-   SEARCH - /source/js/cagov/search.js
------------------------------------------ */
-
-$(document).ready(function () {
+ /* -----------------------------------------
+    SEARCH - /source/js/cagov/search.js
+ ----------------------------------------- */
+ 
+ $(document).ready(function () {
     var $searchContainer = $("#head-search");
     var $searchText = $searchContainer.find(".search-textfield");
     var $resultsContainer = $('.search-results-container');
@@ -63,6 +63,11 @@ $(document).ready(function () {
     $resultsContainer.find('.close').on('click', removeSearchResults);
     $searchContainer.find('.close').on('click', removeSearchResults);
 
+    if (!featuredsearch) {
+        // added aria expaned attr for accessibility
+        $("button.first-level-link").attr("aria-expanded", "false");
+    }
+
     // Our special nav icon which we need to hook into for starting the search
     // $('#nav-item-search')
 
@@ -87,6 +92,8 @@ $(document).ready(function () {
         var searchactive = $("#head-search").hasClass("active");
         // hide Search form if it's not active
         if (searchactive) {
+             // added aria expaned attr for accessibility
+            $(this).find("button").attr("aria-expanded", "true");
             searchInput.removeAttr('tabindex aria-hidden');
             searchSubmit.removeAttr('tabindex aria-hidden');
             searchReset.removeAttr('tabindex aria-hidden');
@@ -95,6 +102,8 @@ $(document).ready(function () {
 
         }
         else {
+            // added aria expaned attr for accessibility
+           $(this).find("button").attr("aria-expanded", "false");
             searchInput.attr({
                 "tabindex": '-1',
                 "aria-hidden": 'true'
@@ -189,6 +198,8 @@ $(document).ready(function () {
         $('.ask-group').removeClass('fade-out');
 
         if (!featuredsearch) {
+             // added aria expaned attr for accessibility
+             $("button.first-level-link").attr("aria-expanded", "false");
             searchInput.attr({
                 "tabindex": '-1',
                 "aria-hidden": 'true'
@@ -264,6 +275,8 @@ $(document).ready(function () {
         });
 
     });
+
+   
 
 });
 
@@ -351,3 +364,13 @@ $(window).on('scroll', function () {
 function mobileView() {
     return $('.global-header .mobile-controls').css('display') !== "none"; // mobile view uses arrow to show subnav instead of first touch
 }
+
+/* Search main navigation button accessibility fix */
+
+// make sure search button link doen't pick up main nav functions on hover
+$("button.first-level-link").on("mouseover", function(event) {
+   event.stopPropagation();
+});
+$("button.first-level-link").on("mouseout", function(event) {
+   event.stopPropagation();
+});
