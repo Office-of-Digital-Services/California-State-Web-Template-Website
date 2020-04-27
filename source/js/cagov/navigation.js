@@ -1294,26 +1294,25 @@ $(document).ready(function () {
 /* -----------------------------------------
    Navigation accessibility fixes
 ----------------------------------------- */
-$(document).ready(function () {
-   
-   // Navigation vars
-   var $navigation = $("#navigation");
-   var $navItems = $navigation.find('.nav-item'); 
-   var FirstLevelLink = $navItems.find('a.first-level-link');
-  
-// Function checks if first nav link has sub-navigation, if not then code removes unnessesary aria-expanded attribute
-FirstLevelLink.each(function() {
-   if (!$(this).siblings('.sub-nav').length) {
-     
-       $(this).removeAttr("aria-expanded");
-       $(this).on("mouseover", function(e){
-           e.stopPropagation();
-       });
-       $(this).on("mouseout", function(e){
-           e.stopPropagation();
-       });
-   }
 
-});
-       
-});
+setTimeout(function () {
+    // Navigation vars
+    var $navigation = $("#navigation");
+    var $navItems = $navigation.find('.nav-item');
+    var FirstLevelLink = $navItems.find('a.first-level-link');
+
+    // Function checks if first nav link has sub-navigation, if not then code removes unnecessary aria-expanded attribute
+
+    FirstLevelLink.each(function () {
+        if (!$(this).siblings('.sub-nav').length) {
+
+            $(this).removeAttr("aria-expanded");
+            $(this).on("mouseover", function (e) {
+                e.stopPropagation();
+            });
+            $(this).on("mouseout", function (e) {
+                e.stopPropagation();
+            });
+        }
+    });
+}, 1000);
