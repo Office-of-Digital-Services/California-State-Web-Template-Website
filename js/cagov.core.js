@@ -16285,7 +16285,7 @@ setTimeout(function () {
             });
         }
     });
-}, 1000);
+}, 2000);
 
 /* -----------------------------------------
    ACCORDION LIST - /source/js/cagov/accordion.js
