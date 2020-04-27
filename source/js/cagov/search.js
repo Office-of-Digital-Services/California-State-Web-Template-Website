@@ -46,6 +46,11 @@ $(document).ready(function () {
     });
 
 
+    if (!featuredsearch) {
+        // added aria expaned attr for accessibility
+        $("button.first-level-link").attr("aria-expanded", "false");
+    }
+
     //  search box top position
     if (!mobileView()) {
         // taking into account multiple alert banners
@@ -91,6 +96,8 @@ $(document).ready(function () {
         var searchactive = $("#head-search").hasClass("active");
         // hide Search form if it's not active
         if (searchactive) {
+            // added aria expanded attr for accessibility
+            $(this).find("button").attr("aria-expanded", "true");
             $searchContainer.removeAttr('aria-hidden');
             searchInput.removeAttr('tabindex aria-hidden');
             searchSubmit.removeAttr('tabindex aria-hidden');
@@ -100,6 +107,8 @@ $(document).ready(function () {
         
         }
         else {
+            // added aria expaned attr for accessibility
+            $(this).find("button").attr("aria-expanded", "false");
             searchInput.attr({
                 "tabindex": '-1',
                 "aria-hidden": 'true'
@@ -167,6 +176,8 @@ $(document).ready(function () {
         $('.ask-group').removeClass('fade-out');
         
         if (!featuredsearch) {
+            // added aria expaned attr for accessibility
+            $("button.first-level-link").attr("aria-expanded", "false");
             searchInput.attr({
                 "tabindex": '-1',
                 "aria-hidden": 'true'
