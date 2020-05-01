@@ -1,5 +1,5 @@
 /**
- * CA State Template v5 -  @version v5.0.17 -  4/21/2020 
+ * CA State Template v5 -  @version v5.0.17 -  5/1/2020 
   STYLES COMPILED FROM SOURCE (SCSS) DO NOT MODIFY */
 /* -----------------------------------------
    BOOTSTRAP v4.4.1 - /source/scss/bootstrap/ 
@@ -13403,6 +13403,26 @@ table.gsc-search-box td {
   overflow: hidden;
   clip: rect(0, 0, 0, 0);
   border: 0;
+}
+
+/* Search button desktop styles */
+@media (min-width: 768px) {
+  #nav-item-search button.first-level-link {
+    position: relative;
+    min-width: 40px;
+  }
+  button.first-level-link > span.search-btn {
+    display: block;
+    position: absolute;
+    left: 50% !important;
+    transform: translateX(-50%);
+    top: 0;
+    padding-top: 12px;
+  }
+  .first-level-link > span.search-btn > span[class^="ca-gov-icon"] {
+    display: block;
+    font-size: 32px;
+  }
 }
 
 /* -----------------------------------------
