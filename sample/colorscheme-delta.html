@@ -1,0 +1,346 @@
+﻿<!doctype html>
+<!--[if lt IE 7]> <html class="no-js ie6 oldie" lang="en"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js ie7 oldie" lang="en"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js ie8 oldie" lang="en"> <![endif]-->
+<!--[if IE 9]>    <html class="no-js ie9 oldie" lang="en"> <![endif]-->
+<!--[if (gt IE 9)]><!-->
+<html class="no-js" lang="en">
+<!--<![endif]-->
+<head>    
+<!--    California State Template
+
+        Based on Twitter Bootstrap
+    -->
+    <meta charset="utf-8">
+    <title>Delta Color Scheme</title>
+    <meta name="Author" content="State of California" />
+    <meta name="Description" content="State of California" />
+    <meta name="Keywords" content="California, government" />
+    <!--HEAD INCLUDE-->
+    <!-- head content, for all pages -->
+    <!-- Use highest compatibility mode -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- http://t.co/dKP3o1e -->
+    <meta name="HandheldFriendly" content="True">
+    <!-- for Blackberry, AvantGo -->
+    <meta name="MobileOptimized" content="320">
+    <!-- for Windows mobile -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Asap+Condensed:400,600|Source+Sans+Pro:400,700" rel="stylesheet">
+    <!-- For all browsers -->
+    <link rel="stylesheet" href="/css/cagov.core.css">
+    <script src="/js/search.js"></script>
+    <!--
+    Step 3
+    Select a color scheme:
+
+    <link rel="stylesheet" href="/css/colorscheme-trinity.css">
+    <link rel="stylesheet" href="/css/colorscheme-orangecounty.css">
+    <link rel="stylesheet" href="/css/colorscheme-pasorobles.css">
+    <link rel="stylesheet" href="/css/colorscheme-santabarbara.css">
+    <link rel="stylesheet" href="/css/colorscheme-mono.css">
+    -->
+    <link rel="stylesheet" href="/css/colorscheme-delta.css">
+    <!-- selectivizr.com, emulates CSS3 pseudo-classes and attribute selectors in Internet Explorer 6-8 -->
+    <!--[if (lt IE 9) & (!IEMobile)]>
+    <script src="/js/libs/selectivizr-min.js"></script>
+    <![endif]-->
+    <!-- modernizr.com, feature detection -->
+    <script src="/js/libs/modernizr-3.6.0.min.js"></script>
+
+    <!-- Load jQuery from CDN with fallback to local copy -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js" type="text/javascript"></script>
+    <script>
+        //Fall back to local copy if no jquery found
+        if (typeof jQuery == 'undefined') {
+            document.write(unescape("%3Cscript src='/js/libs/jquery-3.2.1.min.js' type='text/javascript'%3E%3C/script%3E"));
+        }
+    </script>
+    <!-- Load jQuery migrate from CDN with fallback to local copy -->
+    <script src="https://code.jquery.com/jquery-migrate-3.0.1.min.js"></script>
+    <script>
+        //Fall back to local copy if no jQuery migrate found
+        if (typeof jQuery.migrateWarnings == 'undefined') { // or typeof jQuery.fn.live == 'undefined'
+            document.write(unescape("%3Cscript src='/js/libs/jquery-migrate-3.0.1.js' type='text/javascript'%3E%3C/script%3E"));
+        }
+
+    </script>
+
+    <!-- For iPad 3-->
+    <link rel="apple-touch-icon" sizes="144x144" href="/images/template2014/apple-touch-icon-144x144.png">
+    <!-- For iPhone 4 -->
+    <link rel="apple-touch-icon" sizes="114x114" href="/images/template2014/apple-touch-icon-114x114.png">
+    <!-- For iPad 1-->
+    <link rel="apple-touch-icon" sizes="72x72" href="/images/template2014/apple-touch-icon-72x72.png">
+    <!-- For iPhone 3G, iPod Touch and Android -->
+    <link rel="apple-touch-icon" href="/images/template2014/apple-touch-icon-57x57.png">
+    <!-- For Nokia -->
+    <link rel="shortcut icon" href="/images/template2014/apple-touch-icon-57x57.png">
+    <!-- For everything else -->
+    <link rel="shortcut icon" href="/favicon.ico">
+    <!-- Activate ClearType for Mobile IE -->
+    <!--[if IE]>
+    <meta http-equiv="cleartype" content="on">
+    <![endif]-->
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="/js/libs/html5shiv.min.js"></script>
+      <script src="/js/libs/respond.min.js"></script>
+    <![endif]-->
+    <!-- Include Google Analytics -->
+    <!-- virtual="/ssi/analytics.html" -->
+    <!--END HEAD INCLUDE-->
+
+    <style type="text/css">
+        div.outer {
+            border: 1px solid #ccc;
+            margin: 0 auto;
+            padding: 1px;
+            width: 88px;
+        }
+
+        div.shadow {
+            padding: 1px;
+        }
+
+        div.color {
+            width: 80px;
+            height: 80px;
+            padding: 0;
+            margin: 0;
+        }
+
+        div.caption {
+            color: #555;
+            font-size: 12px;
+            line-height: 16px;
+            margin: 0 0 0 10px;
+            text-align: center;
+        }
+    </style>
+
+</head>
+<body>
+    <header role="banner" id="header" class="global-header fixed">
+        <div id="skip-to-content"><a href="#main-content">Skip to Main Content</a></div>
+
+        <!-- Include Utility Header -->
+        <!--#include virtual="/ssi/utility-header.html" -->
+
+        <!-- Settings Bar -->
+        <!--#include virtual="/ssi/settings-bar.html" -->
+
+        <!-- Include Branding -->
+        <!--#include virtual="/ssi/branding.html" -->
+
+        <!-- Include Mobile Controls -->
+        <!--#include virtual="/ssi/mobile-controls.html" -->
+
+        <div class="navigation-search">
+            <!-- Include Navigation -->
+            <!--#include virtual="/ssi/navigation.html" -->
+
+            <div id="head-search" class="search-container">
+                <!-- Include Search -->
+                <!--#include virtual="/ssi/search.html" -->
+            </div>
+
+        </div>
+
+    </header>
+    <div id="main-content" class="main-content">
+        <div class="container">
+            <ol class="breadcrumb">
+                <li><a href="../index.html" title="Home page">Home</a></li>
+                <li><a href="index.html" title="Examples landing page">Examples</a></li>
+                <li class="active">Delta</li>
+            </ol>
+        </div>
+        <main class="main-primary">
+            <div class="section">
+                <!-- Content Demonstration -->
+                <div class="container">
+                    <h1>Delta Theme</h1>
+                    <h2>Theme Main Colors</h2>
+
+                    <div class="group m-b-lg">
+                        <div class="quarter">
+                            <div class="outer">
+                                <div class="shadow" style="border:1px solid #9bb2ba;background-color:#9bb2ba;">
+                                    <div class="color" style="background-color:#A5BDC5;"></div>
+                                </div>
+                            </div>
+                            <div class="caption"><h4>.color-highlight<br />@color-p1</h4>HEX: #A5BDC5<br>RGB: 165,189,197</div>
+                        </div>
+                        <div class="quarter">
+                            <div class="outer">
+                                <div class="shadow" style="border:1px solid #304651;background-color:#375767;">
+                                    <div class="color" style="background-color:#577786;"></div>
+                                </div>
+                            </div>
+                            <div class="caption"><h4>.color-primary<br />@color-p2</h4>HEX: #577786<br />RGB: 87,119,134</div>
+                        </div>
+                        <div class="quarter">
+                            <div class="outer">
+                                <div class="shadow" style="border:1px solid #101112;background-color:#324047;">
+                                    <div class="color" style="background-color:#46565E;"></div>
+                                </div>
+                            </div>
+                            <div class="caption"><h4>.color-standout<br />@color-p3</h4>HEX: #46565E<br />RGB: 70,86,94</div>
+                        </div>
+                        <div class="quarter">
+                            <div class="outer">
+                                <div class="shadow" style="border:1px solid #dfd8d8;background-color:#eeeaea;">
+                                    <div class="color" style="background-color:#f5f9fa;"></div>
+                                </div>
+                            </div>
+                            <div class="caption"><h4>.color-s1<br />@color-s1</h4>HEX: #f5f9fa<br />RGB: 245,249,250</div>
+                        </div>
+                    </div>
+
+
+                    <div class="card card-understated">
+                        <div class="card-heading">
+                            <h4><span class="ca-gov-icon-info"></span> Theme Colors Customization</h4>
+                        </div>
+                        <div class="card-body">
+                            <p>
+                                There are two ways to customize theme main colors. One way is to change primary and secondary theme color variables
+                                in the colorscheme-[yourcolorshceme].scss file. This method will require you to re-compile the state template, you
+                                can find instructions in the readme file.  After the compilation you will have updated colorscheme-[yourcolorshceme].css file.
+                            </p>
+
+                            <p>
+                                Another way is to manually find and replace all main theme colors and their variations in colorscheme-[yourcolorshceme].css.
+                                Main theme colors classes will be listed at the top of the CSS file. You can copy their values and use find/replace feature
+                                in your web editor software to replace all those colors references with your custom colors throughout entire css file.
+                            </p>
+
+                            <p>
+                                <span class="font-size-sm"><strong>Note:</strong> Before changing your colors make sure that your custom theme colors have sufficient color cotrast ratios.</span>
+                            </p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="section section-primary">
+                <div class="container">
+                    <div class="half">
+                        <h2>Section Primary</h2>
+                        <h3>Buttons</h3>
+                        <div class="btn-row">
+                            <a href="" class="btn btn-default">.btn-default</a>
+                            <a href="" class="btn btn-default active">.btn-default.active</a>
+                            <a href="" class="btn btn-default disabled">.btn-default.disabled</a>
+                        </div>
+                        <div class="btn-row">
+                            <a href="" class="btn btn-primary">.btn-primary</a>
+                            <a href="" class="btn btn-primary active">.btn-primary.active</a>
+                            <a href="" class="btn btn-primary disabled">.btn-primary.disabled</a>
+                        </div>
+                        <div class="btn-row">
+                            <a href="" class="btn btn-highlight">.btn-highlight</a>
+                            <a href="" class="btn btn-highlight active">.btn-highlight.active</a>
+                            <a href="" class="btn btn-highlight disabled">.btn-highlight.disabled</a>
+                        </div>
+                        <div class="btn-row">
+                            <a href="" class="btn btn-standout">.btn-standout</a>
+                            <a href="" class="btn btn-standout active">.btn-standout.active</a>
+                            <a href="" class="btn btn-standout disabled">.btn-standout.disabled</a>
+                        </div>
+                        <div class="btn-row">
+                            <a href="" class="btn btn-secondary">.btn-secondary</a>
+                            <a href="" class="btn btn-secondary active">.btn-secondary.active</a>
+                            <a href="" class="btn btn-secondary disabled">.btn-secondary.disabled</a>
+                        </div>
+                        <hr>
+
+
+                        <h3>Cards</h3>
+
+                        <div class="card card-overstated">
+                            <div class="card-heading">
+                                <h3><span class="ca-gov-icon-info"></span> Card (Overstated)</h3>
+                                <div class="options">
+                                    <a href="" class="btn btn-default">button</a>
+                                </div>
+                            </div>
+                            <div class="card-body">
+                                Card Body
+                            </div>
+                        </div>
+
+                        <div class="card card-standout">
+                            <div class="card-heading">
+                                <h2><span class="ca-gov-icon-info"></span> Card (Standout)</h2>
+                                <div class="options">
+                                    <a href="" class="btn btn-default">button</a>
+                                </div>
+                            </div>
+                            <div class="card-body">
+                                Card Body
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="half">
+                        <!-- Article -->
+                        <h3>News block</h3>
+                        <article class="block-hover">
+                            <figure class="bg-overlay">
+                                <img class="img-fluid w-100 block-hover_zoom" src="/sample/images/service-tiles/service-paid-family-leave.jpg" alt="Image Description">
+                            </figure>
+
+                            <header class="w-100 text-center absolute-centered p-x">
+                                <span class="btn btn-xs btn-primary rounded-0" href="#">EDD</span>
+                                <h4 class="m-y-sm">
+                                    File for paid family leave insurance
+                                </h4>
+
+                                <small class="color-white">
+                                    <i class="ca-gov-icon-time pos-rel"></i> July 04, 2016
+                                </small>
+                            </header>
+
+                            <a class="news-link" href="#">File for paid family leave insurance</a>
+                        </article>
+                        <!-- End Article -->
+                        <!--<ul class="list-inline list-unstyled m-t-md">
+                        <li><span class="ca-gov-icon-twitter" aria-hidden="true"><span class="sr-only">Twitter</span></span></li>
+                        <li><span class="ca-gov-icon-facebook" aria-hidden="true"><span class="sr-only">Facebook</span></span></li>
+                        <li><span class="ca-gov-icon-google-plus" aria-hidden="true"><span class="sr-only">Google+</span></span></li>
+                    </ul>-->
+
+                        <h3 class="m-t-lg">Testimonials</h3>
+
+                        <blockquote class="testimonial testimonial-highlight m-t-md">
+                            <div class="testimonial-body">
+                                <p>Maecenas sed diam eget risus varius blandit sit amet non magna. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.</p>
+                                <footer>
+                                    <cite>
+                                        <a href="">John Smith</a> Some Awesome Company
+                                    </cite>
+                                </footer>
+                            </div>
+                            <div class="thumbnail thumbnail-right">
+                                <a href="#"><img class="thumbnail-img img-rounded" src="images/70x70.gif" alt="..."></a>
+                            </div>
+                        </blockquote>
+
+                    </div>
+
+                </div>
+            </div>
+        </main>
+
+
+    </div>
+
+    <!--#include virtual="/ssi/global-footer.html" -->
+    <!--#include virtual="/ssi/scripts.html" -->
+</body>
+</html>

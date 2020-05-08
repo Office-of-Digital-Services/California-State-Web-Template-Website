@@ -22,8 +22,8 @@
     /* Will be overriden with js */
     height: auto;
     overflow: hidden;
-    background-position: center;
-    background-size: cover;
+    background-position: center !important;
+    background-size: cover !important;
     display: block;
     /* Preserve aspect ratio */
     min-width: 100%;
@@ -59,3 +59,18 @@
 		display: none;
 		}
 	}
+
+.header-image {
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+    background-image: url('/images/main-banner9.jpg');
+    background-position: center;
+    background-size: cover;
+    display: block;
+    min-width: 100%;
+    min-height: 100%;
+    position: relative;
+    color: $white;
+    padding: 1rem 0 1.5rem 0;
+}

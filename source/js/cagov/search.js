@@ -45,7 +45,6 @@ $(document).ready(function () {
         }
     });
 
-
     if (!featuredsearch) {
         // added aria expaned attr for accessibility
         $("button.first-level-link").attr("aria-expanded", "false");
@@ -79,8 +78,9 @@ $(document).ready(function () {
     
     // so instead we are binding to what I'm assuming will aslways be the search
     $('.top-level-nav .nav-item .ca-gov-icon-search, #nav-item-search').parents('.nav-item').on('click', function (e) {
-        $searchText.trigger("focus").trigger('focus');
         e.preventDefault();
+        $searchText.trigger("focus").trigger('focus');
+        
         // mobile
         if (mobileView() && !$('.search-container').hasClass('active')) {
             $('html, body').animate({
@@ -135,7 +135,12 @@ $(document).ready(function () {
            $searchContainer.removeAttr('aria-hidden');
         }
 
-        if (mobileView() && featuredsearch) { $('.search-container').toggleClass('active');}
+        if (mobileView() && featuredsearch) {
+            $('.search-container').toggleClass('active');
+            ariaHidden();
+        }
+        // Reset the nav
+        NavReset();
 
         // let the user know the input box is where they should search
         $("#head-search").addClass('play-animation').one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function () {
@@ -150,7 +155,10 @@ $(document).ready(function () {
     // SEE navitgation.js for mobile click handlers
 
     // Close search when close icon is clicked
-    $('.close-search').on('click', removeSearchResults);
+    $('.close-search').on('click', function () {
+        removeSearchResults();
+        
+    });
 
     // Helpers
     function addSearchResults() {
@@ -201,6 +209,7 @@ $(document).ready(function () {
 
         if (mobileView()) {
             $('html, body').animate({ scrollTop: 0 }, "slow");
+            ariaHidden();
         }
     }
 
@@ -277,7 +286,8 @@ $(document).ready(function () {
         });
         
     });
-    
+
+    ariaHidden();
 
 }); 
 
@@ -376,13 +386,24 @@ function ariaHidden() {
     var $searchContainer = $("#head-search");
     var featuredsearch = $("#head-search").hasClass("featured-search");
     if (featuredsearch) {
-        $searchContainer.removeAttr('aria-hidden');
+        if (mobileView()) {
+            $searchContainer.attr("aria-hidden", "true");
+            $("#q").attr("tabindex", "-1");
+            $(".gsc-search-button").attr("tabindex", "-1");
+        }
+
+        else {
+            $searchContainer.removeAttr('aria-hidden');
+            $("#q").removeAttr("tabindex");
+            $(".gsc-search-button").removeAttr("tabindex");}
     }
     else {
         $searchContainer.attr("aria-hidden", "true");
     }
 
 }
+
+
 
 function mobileView() {
     return $('.global-header .mobile-controls').css('display') !== "none"; // mobile view uses arrow to show subnav instead of first touch
