@@ -176,6 +176,7 @@
     .owl-nav {
         $button-offsets: -2em;
         $button-offsets-sm: -0.1em;
+
         @media (max-width: $screen-xs-max) {
             .owl-prev {
                 color: white;
@@ -193,10 +194,14 @@
 
     .owl-dots {
         //margin-top: -35px;
-        z-index: 6; // beta 5.0 addition
-        position: relative;
-        height: 15px;   // Size of dots
-        top: -40px;     // Pull higher so video controls can still be accessed
+        position: absolute !important;
+        left: 50% !important;
+        -webkit-transform: translateX(-50%);
+        -ms-transform: translateX(-50%);
+        transform: translateX(-50%);
+        -webkit-backface-visibility: hidden;
+        height: 15px; // Size of dots
+        bottom: 25px; // Pull higher so video controls can still be accessed
     }
 
     .item {
@@ -210,15 +215,15 @@
         pointer-events: none;
         color: white;
         text-align: center;
-		display: -webkit-box;		
-  		display: -ms-flexbox;
+        display: -webkit-box;
+        display: -ms-flexbox;
         display: flex;
-		-webkit-box-orient: vertical;
-		-webkit-box-direction: normal;
-		-ms-flex-direction: column;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: column;
         flex-direction: column;
-		-webkit-box-pack: center;
-		-ms-flex-pack: center;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
         justify-content: center;
 
         .content {
@@ -226,9 +231,8 @@
             padding: 20px 20px 50px 20px;
         }
     }
-
     // we fit to the image size not content
-    img + .content-container,   video + .content-container{
+    img + .content-container, video + .content-container {
         position: absolute;
         top: 0;
         left: 0;
@@ -246,12 +250,10 @@
     }
 
     .item.backdrop {
-
         // fitting to image
-        img + .content-container,   video + .content-container {
+        img + .content-container, video + .content-container {
             background: rgba(0, 0, 0, 0.3);
         }
-
         // fitting to content
         .content-container:first-child {
             @media (min-width: $screen-sm-min) {
@@ -655,13 +657,16 @@
 
 .owl-carousel.carousel-link .owl-item .item a {
     display: block;
+
     &:focus {
         outline-offset: -2px;
     }
 }
+
 // Video
+
 .owl-video-wrapper .item-overlay {
-    display: none;
+    display:none;
 }
 
 

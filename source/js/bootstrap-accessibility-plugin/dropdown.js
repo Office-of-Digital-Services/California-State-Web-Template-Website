@@ -1,6 +1,6 @@
-  // DROPDOWN Extension
-  // ===============================
-  
+// DROPDOWN Extension
+// ===============================
+
 var toggle = '[data-toggle=dropdown]'
     , $par
     , firstItem
@@ -28,7 +28,7 @@ $(toggle).parent().on('hidden.bs.dropdown', function (e) {
     $toggle.attr('aria-expanded', 'false');
 });
 
-    //Adding Space Key Behaviour, opens on spacebar
+//Adding Space Key Behaviour, opens on spacebar
 $.fn.dropdown.Constructor.prototype.keydown = function (e) {
     var $par
         , firstItem;

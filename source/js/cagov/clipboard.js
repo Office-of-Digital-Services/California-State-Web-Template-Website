@@ -5,7 +5,7 @@ $(document).ready(function () {
     var thumbnailEnpdoint = window.__cagovThumbnailService || "http://caportal.local/api/sitecore/Clipboard/GetThumbnail";
 
     var siteURL = "http://" + top.location.host.toString();
-    var prefixStr = "ca-clip://"
+    var prefixStr = "ca-clip://";
     var prefixRegex = new RegExp('^' + prefixStr, 'g');
     // The currently shown tooltip
     var current;
@@ -71,7 +71,7 @@ $(document).ready(function () {
         var url = normalizeURL(window.location.href);
         if (checkClip(url)) {
             // TODO: Let user know they are trying to add a duplicate url
-            console.log("Duplicate")
+            console.log("Duplicate");
             return;
         }
 
@@ -83,8 +83,8 @@ $(document).ready(function () {
 
     $(".clipboard__handle").on('click.cagov.clipboard', function (e) {
         e.preventDefault();
-        console.log("Click Handle")
-        $(".clipboard-settings").toggleClass("in")
+        console.log("Click Handle");
+        $(".clipboard-settings").toggleClass("in");
     });
 
     $('.clipboard__help').on('click.cagov.clipboard', function (e) {
@@ -98,9 +98,7 @@ $(document).ready(function () {
     });
 
 
-    /** Passed into the tooltip library and given for "this" the current
-     * element the tooltip is attached to.
-     */
+    // Passed into the tooltip library and given for "this" the current
     function clipUIELement() {
         var url = normalizeURL($(this).attr("href"));
         var wasSaved = checkClip(url);
@@ -109,13 +107,11 @@ $(document).ready(function () {
 
         var stopMsg = "<div class='clipboard-details-msg'> <a role='button'  href='javascript:;' class=''>Don't show me this. <i>(disables clips)</i></a></div>";
 
-        return (wasSaved == true) ? saved + icon : icon;  //+ " Click to add to saved links" + stopMsg
+        return wasSaved === true ? saved + icon : icon;  //+ " Click to add to saved links" + stopMsg
     }
 
 
-    /**
-     * * Brings up the ui element for adding links to the clipboard
-     * */
+    // Brings up the ui element for adding links to the clipboard
     function showTooltip(e) {
         // remove any old tooltips or timers
         if (current && !current.is($(this))) {
@@ -138,7 +134,7 @@ $(document).ready(function () {
                 current.tooltip('hide');
                 console.log("Out");
             }
-        }, 2000)
+        }, 2000);
 
     }
 
@@ -165,7 +161,7 @@ $(document).ready(function () {
 
         if (checkClip(url)) {
             // TODO: Let user know they are trying to add a duplicate url
-            console.log("Duplicate")
+            console.log("Duplicate");
             return;
         }
         setClip(createClip(url));
@@ -180,23 +176,22 @@ $(document).ready(function () {
     function removeAllClips() {
         clipList.forEach(function (clip) {
             removeClip(clip);
-        })
+        });
 
         updateUI();
         animateCount();
         current.tooltip('show');
     }
 
-    /**
-     * Utilizes implicit variables
-     */
+    // Utilizes implicit variables
+
     function updateUI() {
         clipCount = getClipCount();
         clipList = getClipList();
         clipHoverMode = getClipHoverMode();
 
         console.log(clipHoverMode);
-        $(".clipboard__clip-count").text(clipCount == 0 ? "" : clipCount);
+        $(".clipboard__clip-count").text(clipCount === 0 ? "" : clipCount);
 
         $(".clipboard-activeonhover").toggleClass("active", clipHoverMode);
         $(".clipboard-list").children().remove();
@@ -223,7 +218,7 @@ $(document).ready(function () {
     function animateCount() {
         var el = $(".clipboard__clip-count");
 
-        var animation = "bouncesmall"
+        var animation = "bouncesmall";
         var classToAdd = animation + ' animated hovered';
 
         el.addClass(classToAdd).one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function () {
@@ -234,7 +229,7 @@ $(document).ready(function () {
 
 
     function animateTooltip(el) {
-        el.find('.tooltip-inner').append($("<div class='clipboard-details-msg'>Saved! </div>").hide().fadeIn(500))
+        el.find('.tooltip-inner').append($("<div class='clipboard-details-msg'>Saved! </div>").hide().fadeIn(500));
     }
 
     function normalizeURL(url) {
@@ -243,10 +238,8 @@ $(document).ready(function () {
     }
 
 
+    // Functions for manipulating localstorage objects
 
-    /**
-     * Functions for manipulating localstorage objectss
-     */
     function createClip(url) {
 
         getThumbnail(url);
@@ -254,7 +247,7 @@ $(document).ready(function () {
         return {
             url: url,
             title: url || document.title
-        }
+        };
     }
 
     function getThumbnail(url) {
@@ -302,9 +295,8 @@ $(document).ready(function () {
         return true;
     }
 
-    /**
-     * Given a string url gets the full clip item object if it exists
-     */
+    // Given a string url gets the full clip item object if it exists
+
     function getClip(url) {
         // dont want undefined being converted to string
         if (!url) {
@@ -316,10 +308,7 @@ $(document).ready(function () {
     }
 
 
-    /**
-     * Returns our set clip items by enumerating through all keys and only returning those with
-     * our prefix set.
-     */
+    // Returns our set clip items by enumerating through all keys and only returning those with our prefix set.
     function getClipList() {
         var out = [];
 
@@ -333,12 +322,10 @@ $(document).ready(function () {
 
 
 
-
-    /**
-     * Returns the total count of of clips.
-     * Currently just reloops through on each check
-     * TODO: make this a simple var lookup
-     */
+    
+     // Returns the total count of of clips.
+     // Currently just reloops through on each check
+     // TODO: make this a simple var lookup
     function getClipCount() {
         var count = 0;
         for (key in localStorage) {
@@ -353,7 +340,7 @@ $(document).ready(function () {
         var key = "cagov-hovermode";
         var mode = JSON.parse(window.localStorage.getItem(key));
         // default is to be true
-        return (mode == null) ? true : mode;
+        return mode === null ? true : mode;
     }
 
     function setClipHoverMode(bool) {

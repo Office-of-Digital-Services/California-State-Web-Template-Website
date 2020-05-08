@@ -1,5 +1,5 @@
 /**
- * CA State Template v5.5 -  @version v5.5.14 -  4/21/2020 
+ * CA State Template v5.5 -  @version v5.5.15 -  5/8/2020 
   STYLES COMPILED FROM SOURCE (source/js) DO NOT MODIFY */
 /*! modernizr (Custom Build) | MIT *
  * https://modernizr.com/download/?-flexbox-setclasses !*/
@@ -7227,7 +7227,7 @@ Object.defineProperty(exports, '__esModule', { value: true });
   // ===============================
   
 var uniqueId = function (prefix) {
-    return (prefix || 'ui-id') + '-' + Math.floor((Math.random() * 1000) + 1);
+    return (prefix || 'ui-id') + '-' + Math.floor(Math.random() * 1000 + 1);
 };
 
   
@@ -7245,8 +7245,8 @@ var removeMultiValAttributes = function (el, attr, val) {
     }
 };
 
-  // Collapse Extension
-  // ===============================
+// Collapse Extension
+// ===============================
 
 var $colltabs = $('[data-toggle="collapse"]');
 $colltabs.attr({ 'role': 'tab', 'aria-selected': 'false', 'aria-expanded': 'false' });
@@ -7335,10 +7335,10 @@ $.fn.collapse.Constructor.prototype.keydown = function (e) {
 };
 
 $(document).on('keydown.collapse.data-api', '[data-toggle="collapse"]', $.fn.collapse.Constructor.prototype.keydown);
-    
-  // DROPDOWN Extension
-  // ===============================
-  
+
+// DROPDOWN Extension
+// ===============================
+
 var toggle = '[data-toggle=dropdown]'
     , $par
     , firstItem
@@ -7366,7 +7366,7 @@ $(toggle).parent().on('hidden.bs.dropdown', function (e) {
     $toggle.attr('aria-expanded', 'false');
 });
 
-    //Adding Space Key Behaviour, opens on spacebar
+//Adding Space Key Behaviour, opens on spacebar
 $.fn.dropdown.Constructor.prototype.keydown = function (e) {
     var $par
         , firstItem;
@@ -7416,6 +7416,7 @@ $tabs.each(function (index) {
 });
 
 $.fn.tab.Constructor.prototype.keydown = function (e) {
+
     var $this = $(this)
         , $items
         , $ul = $this.closest('ul[role=tablist] ')
@@ -7439,7 +7440,6 @@ $.fn.tab.Constructor.prototype.keydown = function (e) {
     if (nextTab.attr('role') === 'tab') {
 
         nextTab.tab('show');
-        //Comment this line for dynamically loaded tabPabels, to save Ajax requests on arrow key navigation
         nextTab.focus();
     }
     // nextTab.focus()
@@ -7458,10 +7458,12 @@ $.fn.tab.Constructor.prototype.activate = function (element, container, callback
 
     tabactivate.apply(this, arguments);
 
-    element.addClass('active');
+   element.addClass('active');
+
     element.find('[data-toggle=tab], [data-toggle=pill]').attr({ 'tabIndex': '0', 'aria-selected': true });
     element.filter('.tab-pane').attr({ 'aria-hidden': false, 'tabIndex': '0' });
 };
+
 
 /* -----------------------------------------
    Tabs -- some fixing to bootstap 3 tabs
@@ -7501,6 +7503,15 @@ $(document).ready(function () {
         var tabsPaneFirst = tabGroup.find(".tab-pane:first-child");
         var tabsPaneLast = tabGroup.find(".tab-pane:last-child");
         var parentLI = $(this).parent("li");
+
+        if (parentLI.is(':first-child')) {
+            console.log("first");
+        }
+        if (parentLI.is(':last-child')) {
+            console.log("last");
+        }
+
+
 
         if (e.keyCode === 37) {
             tabcontentID.prev().removeAttr("tabindex aria-hidden");
@@ -14459,13 +14470,13 @@ $(document).ready(function () {
     // The scroll distance (in pixels) which will make the header
     // compact if needed and
     var scrollDistanceToMakeCompactHeader = 220;
-    var scrollDistanceToHideSearch = 80;
+    var scrollDistanceToHideSearch = 220;
 
     var askBarPadding = 10;
     // set up variables here for each maintenance in the future.
     var $header = $('header');
     var $headerImage = $('.header-single-banner');
-
+    var $headerLargeImage = $('.header-large-banner');
     var $exploreMore = $('.explore-invite');
     var $globalHeader = $('.global-header');
     var $alert = $('.alert-banner');
@@ -14481,6 +14492,8 @@ $(document).ready(function () {
     var currentScrollTop = $(document).scrollTop();
 
     var hideDistance = calcInputDifference();
+
+    var fullnav = $(".navigation-search").hasClass("full-width-nav");
 
     setAskBarTop();
     $headSearch.on("transitionend webkitTransitionEnd oTransitionEnd MSTransitionEnd", function () { setAskBarTop(); });
@@ -14712,6 +14725,8 @@ $(document).ready(function () {
      */
     function addFixed() {
         var leeway = 10;
+        var leewayfullwidth = 100;
+        var leewayLargefullwidth = 150;
         $header.addClass('fixed');
         headerVars.setHeaderImageHeight();
 
@@ -14721,9 +14736,41 @@ $(document).ready(function () {
             var height = $headerImage.height();
             height = Math.max(Math.min(height, headerVars.MAXHEIGHT), headerVars.MINHEIGHT);
 
-            $headerImage.css({
-                height: height + headerHeight + leeway
-            });
+            
+            // single banner 
+            if (fullnav) {
+                $headerImage.css({
+                    height: height + headerHeight - leewayfullwidth
+                });
+
+            }
+            else {
+                $headerImage.css({
+                    height: height + headerHeight + leeway
+                });
+            }
+
+        } 
+
+
+        // large banner 
+        else if ($headerLargeImage.length) {
+            var Largeheight = $headerLargeImage.height();
+            Largeheight = Math.max(Math.min(Largeheight, headerVars.MAXHEIGHT), headerVars.MINHEIGHT);
+
+
+
+            if (fullnav) {
+                $headerLargeImage.css({
+                    height: Largeheight + headerHeight - leewayLargefullwidth
+                });
+
+            }
+            else {
+                $headerLargeImage.css({
+                    height: Largeheight + headerHeight - leewayfullwidth
+                });
+            }
 
         } 
 
@@ -14737,7 +14784,9 @@ $(document).ready(function () {
             });
 
 
-        } if ($(".ask-group").length > 0) {
+        }
+
+        if ($(".ask-group").length > 0) {
             $mainContent.addClass('print-p-t'); // Media print .main-content fix	
             $mainContent.css({
                 'padding-top': 0
@@ -14842,66 +14891,66 @@ if (!Function.prototype.bind) {
 // 7/14/14 Added Office 2010 file extensions. Changed "click" to "mousedown". Added support for 2 dashboards.
 
 function addGAToDownloadLinks() {
-	if (document.getElementsByTagName) {
-		// Initialize external link handlers
-		var hrefs = document.getElementsByTagName("a");
-		for (var l = 0; l < hrefs.length; l++) {
-			// try {} catch{} block added by erikvold VKI
-			try{
-				//protocol, host, hostname, port, pathname, search, hash
-				if (hrefs[l].protocol === "mailto:") {
-					startListening(hrefs[l],"mousedown",trackMailto);
-				} else if (hrefs[l].protocol === "tel:") {
-					startListening(hrefs[l],"mousedown",trackTelto);
-				} else if (hrefs[l].hostname === location.host) {
-					var path = hrefs[l].pathname + hrefs[l].search;
-					var isDoc = path.match(/\.(?:doc|docx|eps|jpg|png|svg|xls|xlsx|ppt|pptx|pdf|zip|txt|vsd|vxd|js|css|rar|exe|wma|mov|avi|wmv|mp3)($|\&|\?)/);
-					if (isDoc) {
-						startListening(hrefs[l],"mousedown",trackExternalLinks);
-					}
-				} else if (!hrefs[l].href.match(/^javascript:/)) {
-					startListening(hrefs[l],"mousedown",trackExternalLinks);
-				}
-			}
-			catch(e){
-				continue;
-			}
-		}
-	}
+    if (document.getElementsByTagName) {
+        // Initialize external link handlers
+        var hrefs = document.getElementsByTagName("a");
+        for (var l = 0; l < hrefs.length; l++) {
+            // try {} catch{} block added by erikvold VKI
+            try {
+                //protocol, host, hostname, port, pathname, search, hash
+                if (hrefs[l].protocol === "mailto:") {
+                    startListening(hrefs[l], "mousedown", trackMailto);
+                } else if (hrefs[l].protocol === "tel:") {
+                    startListening(hrefs[l], "mousedown", trackTelto);
+                } else if (hrefs[l].hostname === location.host) {
+                    var path = hrefs[l].pathname + hrefs[l].search;
+                    var isDoc = path.match(/\.(?:doc|docx|eps|jpg|png|svg|xls|xlsx|ppt|pptx|pdf|zip|txt|vsd|vxd|js|css|rar|exe|wma|mov|avi|wmv|mp3)($|\&|\?)/);
+                    if (isDoc) {
+                        startListening(hrefs[l], "mousedown", trackExternalLinks);
+                    }
+                } else if (!hrefs[l].href.match(/^javascript:/)) {
+                    startListening(hrefs[l], "mousedown", trackExternalLinks);
+                }
+            }
+            catch (e) {
+                continue;
+            }
+        }
+    }
 }
 
-function startListening (obj,evnt,func) {
-	if (obj.addEventListener) {
-		obj.addEventListener(evnt,func,false);
-	} else if (obj.attachEvent) {
-		obj.attachEvent("on" + evnt,func);
-	}
+function startListening(obj, evnt, func) {
+    if (obj.addEventListener) {
+        obj.addEventListener(evnt, func, false);
+    } else if (obj.attachEvent) {
+        obj.attachEvent("on" + evnt, func);
+    }
 }
 
-function trackMailto (evnt) {
-	var href = evnt.srcElement ? evnt.srcElement.href : this.href;
-	var mailto = "/mailto/" + href.substring(7);
-	_gaq.push(['_trackPageview', mailto]);
-	_gaq.push(['b._trackPageview', mailto]);
+function trackMailto(evnt) {
+    var href = evnt.srcElement ? evnt.srcElement.href : this.href;
+    var mailto = "/mailto/" + href.substring(7);
+    _gaq.push(['_trackPageview', mailto]);
+    _gaq.push(['b._trackPageview', mailto]);
 }
 
-function trackTelto (evnt) {
-	var href = evnt.srcElement ? evnt.srcElement.href : this.href;
-	var telto = "/telto/" + href.substring(4);
-	_gaq.push(['_trackPageview', telto]);
-	_gaq.push(['b._trackPageview', telto]);
+function trackTelto(evnt) {
+    var href = evnt.srcElement ? evnt.srcElement.href : this.href;
+    var telto = "/telto/" + href.substring(4);
+    _gaq.push(['_trackPageview', telto]);
+    _gaq.push(['b._trackPageview', telto]);
 }
 
-function trackExternalLinks (evnt) {
-	var e = evnt.srcElement ? evnt.srcElement : this;
-	while (e.tagName !== "A") {
-		e = e.parentNode;
-	}
-	var lnk = e.pathname.charAt(0) === "/" ? e.pathname : "/" + e.pathname;
-	if (e.search && e.pathname.indexOf(e.search) === -1) lnk += e.search;
-	if (e.hostname !== location.host) lnk = "/external/" + e.hostname + lnk;
-	_gaq.push(['_trackPageview', lnk]);
-	_gaq.push(['b._trackPageview', lnk]);
+function trackExternalLinks(evnt) {
+    var e = evnt.srcElement ? evnt.srcElement : this;
+    while (e.tagName !== "A") {
+        e = e.parentNode;
+    }
+    var lnk = e.pathname.charAt(0) === "/" ? e.pathname : "/" + e.pathname;
+    if (e.search && e.pathname.indexOf(e.search) === -1) lnk += e.search;
+    if (e.hostname !== location.host) lnk = "/external/" + e.hostname + lnk;
+    _gaq.push(['_trackPageview', lnk]);
+    _gaq.push(['b._trackPageview', lnk]);
 }
 
 // End gatag.js
@@ -15295,7 +15344,7 @@ var main = function main() {
                                         header_node.setAttribute(CONFIG.ATTR_SELECTED, false);
                                         header_node.setAttribute(CONFIG.ATTR_EXPANDED, false);
                                         $(destinationPanel).removeClass("open");
-                                        // destinationPanel.setAttribute(CONFIG.ATTR_HIDDEN, true);
+                                       // destinationPanel.setAttribute(CONFIG.ATTR_HIDDEN, true);
                                     } else {
                                         header_node.setAttribute(CONFIG.ATTR_SELECTED, true);
                                     }
@@ -15310,7 +15359,74 @@ var main = function main() {
                         })();
                     }
 
-                    
+                    // keyboard management for headers
+                    //if (hasClass(e.target, 'first-level-btn') === true && eventName === 'keydown') {
+                    //    (function () {
+                    //        var buttonTag = e.target;
+                    //        var idAccordionContainer = searchParent(buttonTag, CONFIG.ACCORDION_JS, hashId);
+                    //        var accordionContainer = findById(idAccordionContainer, hashId);
+
+                    //        var coolSelectors = CONFIG.ACCORDION_DATA_COOL_SELECTORS === true;
+                    //        var $accordionAllHeaders = [].slice.call(accordionContainer.querySelectorAll('.first-level-btn'));
+
+                    //        if (coolSelectors === false) {
+                    //            $accordionAllHeaders = $accordionAllHeaders.filter(function (element) {
+                    //                return element.parentNode.parentNode === accordionContainer;
+                    //            });
+                    //        }
+
+                    //        // strike home on a tab => 1st tab
+                    //        if (e.keyCode === 36) {
+                    //            unSelectHeaders($accordionAllHeaders, CONFIG.ATTR_SELECTED);
+                    //            selectHeader($accordionAllHeaders[0], CONFIG.ATTR_SELECTED);
+                    //            setTimeout(function () {
+                    //                $accordionAllHeaders[0].focus();
+                    //            }, 0);
+                    //            e.preventDefault();
+                    //        }
+                    //        // strike end on the tab => last tab
+                    //        else if (e.keyCode === 35) {
+                    //            unSelectHeaders($accordionAllHeaders, CONFIG.ATTR_SELECTED);
+                    //            selectHeader($accordionAllHeaders[$accordionAllHeaders.length - 1], CONFIG.ATTR_SELECTED);
+                    //            setTimeout(function () {
+                    //                $accordionAllHeaders[$accordionAllHeaders.length - 1].focus();
+                    //            }, 0);
+                    //            e.preventDefault();
+                    //        }
+                    //        // strike up or left on the tab => previous tab
+                    //        else if ((e.keyCode === 37 || e.keyCode === 38) && !e.ctrlKey) {
+
+                    //            // if first selected = select last
+                    //            if ($accordionAllHeaders[0].getAttribute(CONFIG.ATTR_SELECTED) === 'true') {
+                    //                unSelectHeaders($accordionAllHeaders, CONFIG.ATTR_SELECTED);
+                    //                selectHeader($accordionAllHeaders[$accordionAllHeaders.length - 1], CONFIG.ATTR_SELECTED);
+                    //                setTimeout(function () {
+                    //                    $accordionAllHeaders[$accordionAllHeaders.length - 1].focus();
+                    //                }, 0);
+                    //                e.preventDefault();
+                    //            } else {
+                    //                selectHeaderInList($accordionAllHeaders, 'prev', CONFIG.ATTR_SELECTED);
+                    //                e.preventDefault();
+                    //            }
+                    //        }
+                    //        // strike down or right in the tab => next tab
+                    //        else if ((e.keyCode === 40 || e.keyCode === 39) && !e.ctrlKey) {
+
+                    //            // if last selected = select first
+                    //            if ($accordionAllHeaders[$accordionAllHeaders.length - 1].getAttribute(CONFIG.ATTR_SELECTED) === 'true') {
+                    //                unSelectHeaders($accordionAllHeaders, CONFIG.ATTR_SELECTED);
+                    //                selectHeader($accordionAllHeaders[0], CONFIG.ATTR_SELECTED);
+                    //                setTimeout(function () {
+                    //                    $accordionAllHeaders[0].focus();
+                    //                }, 0);
+                    //                e.preventDefault();
+                    //            } else {
+                    //                selectHeaderInList($accordionAllHeaders, 'next', CONFIG.ATTR_SELECTED);
+                    //                e.preventDefault();
+                    //            }
+                    //        }
+                    //    })();
+                    //}
                 })();
             }
         }, true);
@@ -15447,7 +15563,7 @@ $(document).ready(function () {
     }
 
     // Addig class first-level-btn to first-level-link to make sure left and right keyboard keys work for all navigation links
-    // $(".first-level-link").addClass("first-level-btn");
+  //$(".first-level-link").addClass("first-level-btn");
 
 });
 
@@ -15720,7 +15836,7 @@ tabpanel.prototype.bindHandlers = function () {
 
     // bind a tab keydown handler 
     this.$tabs.on("keydown", function (e) {
-        
+
         return thisObj.handleTabKeyDown($(this), e);
     });
 
@@ -16394,7 +16510,6 @@ $(document).ready(function () {
         }
     });
 
-
     if (!featuredsearch) {
         // added aria expaned attr for accessibility
         $("button.first-level-link").attr("aria-expanded", "false");
@@ -16428,8 +16543,9 @@ $(document).ready(function () {
     
     // so instead we are binding to what I'm assuming will aslways be the search
     $('.top-level-nav .nav-item .ca-gov-icon-search, #nav-item-search').parents('.nav-item').on('click', function (e) {
-        $searchText.trigger("focus").trigger('focus');
         e.preventDefault();
+        $searchText.trigger("focus").trigger('focus');
+        
         // mobile
         if (mobileView() && !$('.search-container').hasClass('active')) {
             $('html, body').animate({
@@ -16484,7 +16600,12 @@ $(document).ready(function () {
            $searchContainer.removeAttr('aria-hidden');
         }
 
-        if (mobileView() && featuredsearch) { $('.search-container').toggleClass('active');}
+        if (mobileView() && featuredsearch) {
+            $('.search-container').toggleClass('active');
+            ariaHidden();
+        }
+        // Reset the nav
+        NavReset();
 
         // let the user know the input box is where they should search
         $("#head-search").addClass('play-animation').one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function () {
@@ -16499,7 +16620,10 @@ $(document).ready(function () {
     // SEE navitgation.js for mobile click handlers
 
     // Close search when close icon is clicked
-    $('.close-search').on('click', removeSearchResults);
+    $('.close-search').on('click', function () {
+        removeSearchResults();
+        
+    });
 
     // Helpers
     function addSearchResults() {
@@ -16550,6 +16674,7 @@ $(document).ready(function () {
 
         if (mobileView()) {
             $('html, body').animate({ scrollTop: 0 }, "slow");
+            ariaHidden();
         }
     }
 
@@ -16626,7 +16751,8 @@ $(document).ready(function () {
         });
         
     });
-    
+
+    ariaHidden();
 
 }); 
 
@@ -16725,13 +16851,24 @@ function ariaHidden() {
     var $searchContainer = $("#head-search");
     var featuredsearch = $("#head-search").hasClass("featured-search");
     if (featuredsearch) {
-        $searchContainer.removeAttr('aria-hidden');
+        if (mobileView()) {
+            $searchContainer.attr("aria-hidden", "true");
+            $("#q").attr("tabindex", "-1");
+            $(".gsc-search-button").attr("tabindex", "-1");
+        }
+
+        else {
+            $searchContainer.removeAttr('aria-hidden');
+            $("#q").removeAttr("tabindex");
+            $(".gsc-search-button").removeAttr("tabindex");}
     }
     else {
         $searchContainer.attr("aria-hidden", "true");
     }
 
 }
+
+
 
 function mobileView() {
     return $('.global-header .mobile-controls').css('display') !== "none"; // mobile view uses arrow to show subnav instead of first touch
@@ -16855,8 +16992,7 @@ $(document).ready(function () {
                 });
 
                 // Number the items in .banner-pager 
-                var dots = $('.banner-pager .banner-control');
-                dots.each(function () {
+                var dots = $('.banner-pager .banner-control'); dots.each(function () {
                     $(this).find('span').append($(this).index() + 1);
                 });
             });
@@ -16911,9 +17047,7 @@ $(document).ready(function () {
                     nav: true
                 }
             },
-            navText: [
-                '<span class="ca-gov-icon-arrow-prev" aria-hidden="true"></span></span><span class="sr-only">Previous</span>', '<span class="ca-gov-icon-arrow-next" aria-hidden="true"></span><span class="sr-only">Next</span>'
-            ],
+            navText: ['<span class="ca-gov-icon-arrow-prev" aria-hidden="true"></span></span><span class="sr-only">Previous</span>', '<span class="ca-gov-icon-arrow-next" aria-hidden="true"></span></span><span class="sr-only">Next</span>'],
             dots: false
         });
 
@@ -16922,9 +17056,7 @@ $(document).ready(function () {
             margin: 25,
             autoWidth: true,
             nav: true,
-            navText: [
-                '<span class="ca-gov-icon-arrow-prev" aria-hidden="true"></span></span><span class="sr-only">Previous</span>', '<span class="ca-gov-icon-arrow-next" aria-hidden="true"></span><span class="sr-only">Next</span>'
-            ],
+            navText: ['<span class="ca-gov-icon-arrow-prev" aria-hidden="true"></span></span><span class="sr-only">Previous</span>', '<span class="ca-gov-icon-arrow-next" aria-hidden="true"></span></span><span class="sr-only">Next</span>'],
             dots: false
         });
 
@@ -16932,9 +17064,7 @@ $(document).ready(function () {
         $(".carousel-slider").owlCarousel({
             items: 1,
             nav: true,
-            navText: [
-                '<span class="ca-gov-icon-arrow-prev" aria-hidden="true"></span></span><span class="sr-only">Previous</span>', '<span class="ca-gov-icon-arrow-next" aria-hidden="true"></span><span class="sr-only">Next</span>'
-            ],
+            navText: ['<span class="ca-gov-icon-arrow-prev" aria-hidden="true"></span></span><span class="sr-only">Previous</span>', '<span class="ca-gov-icon-arrow-next" aria-hidden="true"></span></span><span class="sr-only">Next</span>'],
             dots: false
         });
 
@@ -16942,9 +17072,7 @@ $(document).ready(function () {
         $(".carousel-gallery").owlCarousel({
             items: 1,
             nav: true,
-            navText: [
-                '<span class="ca-gov-icon-arrow-prev" aria-hidden="true"></span></span><span class="sr-only">Previous</span>', '<span class="ca-gov-icon-arrow-next" aria-hidden="true"></span><span class="sr-only">Next</span>'
-            ],
+            navText: ['<span class="ca-gov-icon-arrow-prev" aria-hidden="true"></span></span><span class="sr-only">Previous</span>', '<span class="ca-gov-icon-arrow-next" aria-hidden="true"></span></span><span class="sr-only">Next</span>'],
             dots: false
         });
 
@@ -16952,7 +17080,6 @@ $(document).ready(function () {
 
     // Remove unnessesary role="button" from button
     $("button.banner-control").removeAttr("role");
-
 });
 
 function initContent() {
@@ -16963,9 +17090,7 @@ function initContent() {
             autoHeight: true,
             loop: true,
             nav: true,
-            navText: [
-                '<span class="ca-gov-icon-arrow-prev" aria-hidden="true"></span></span><span class="sr-only">Previous</span>', '<span class="ca-gov-icon-arrow-next" aria-hidden="true"></span><span class="sr-only">Next</span>'
-            ],
+            navText: ['<span class="ca-gov-icon-arrow-prev" aria-hidden="true"></span></span><span class="sr-only">Previous</span>', '<span class="ca-gov-icon-arrow-next" aria-hidden="true"></span></span><span class="sr-only">Next</span>'],
             dots: true,
             // all these callbacks are to make sure any js inside carousl items can refresh
             // themselves
@@ -16993,7 +17118,6 @@ function initContent() {
             $(this).find('span').html("<span class='sr-only'>Change Slide</span>");
         });
 
-
         carousel.on('changed.owl.carousel', function (event) {
             setTimeout(function () {
                 carousel.find('.owl-item.active .item video').each(function () {
@@ -17001,7 +17125,6 @@ function initContent() {
                     $(this).get(0).play();
                 });
             }, 10);
-
         });
     });
 }
@@ -17037,9 +17160,7 @@ function initContent() {
                 nav: true,
                 lazyLoad: false,
                 video: true,
-                navText: [
-                    '<span class="ca-gov-icon-arrow-prev" aria-hidden="true"></span></span><span class="sr-only">Previous</span>', '<span class="ca-gov-icon-arrow-next" aria-hidden="true"></span><span class="sr-only">Next</span>'
-                ],
+                navText: ['<span class="ca-gov-icon-arrow-prev" aria-hidden="true"></span></span><span class="sr-only">Previous</span>', '<span class="ca-gov-icon-arrow-next" aria-hidden="true"></span><span class="sr-only">Next</span>'],
                 dots: false
             });
 
@@ -17133,7 +17254,6 @@ function initContent() {
                 // remove old watched item
                 submenu.find('.watching').removeClass('watching');
 
-                // submenu.find('img[src*="' + vidID + '"]').parents('.owl-item').addClass('watching');
                 submenu.find('button[style*="' + vidID + '"]').parents('.owl-item').addClass('watching');
 
 
@@ -17211,48 +17331,49 @@ function PopupCentered(url, popupName, popupWidth, popupHeight) {
 // This function populates the breadcrumb section of the page.
 // Adapted from http://webstandards.ca.gov/tools/design-enhancements/breadcrumbs/ to use jQuery
 
-function breadcrumbs() {
-    if ($(".breadcrumb.dynamic")[0]) { // Make sure browser supports getElementById and breadcrumb_dynamic exists
-        var wrkLocation = location.href;
-        var wrkLength = wrkLocation.indexOf("#");  // Find the begining of any anchor reference
-        if (wrkLength !== -1) {
-            wrkLocation = wrkLocation.substr(0, wrkLength);  // Remove the anchor reference
-        }
-        var wrkLength = wrkLocation.indexOf("?");  // Find the begining of the query string
-        if (wrkLength !== -1) {
-            wrkLocation = wrkLocation.substr(0, wrkLength);  // Remove the query string
-        }
+function breadcrumbs()
+{
+	if ( $(".breadcrumb.dynamic")[0] ) { // Make sure browser supports getElementById and breadcrumb_dynamic exists
+		var wrkLocation = location.href;
+		var wrkLength = wrkLocation.indexOf("#");  // Find the begining of any anchor reference
+		if (wrkLength !== -1) {
+			wrkLocation = wrkLocation.substr(0,wrkLength);  // Remove the anchor reference
+		}	
+		var wrkLength = wrkLocation.indexOf("?");  // Find the begining of the query string
+		if (wrkLength !== -1) {
+			wrkLocation = wrkLocation.substr(0,wrkLength);  // Remove the query string
+		}
 
-        wrkLocation = unescape(wrkLocation);
+		wrkLocation = unescape(wrkLocation);
 
-        //var re = /<\S[^>]*>/g; // Remove html tags from a string
-        var re = /<.*/g; // remove < and anything after
-        wrkLocation = wrkLocation.replace(re, "");
+		//var re = /<\S[^>]*>/g; // Remove html tags from a string
+		var re = /<.*/g; // remove < and anything after
+		wrkLocation = wrkLocation.replace(re, "");
 
-        var arrURL = wrkLocation.split("/"); // Array containing the current location, split at the slashes
-        var output = '<li><a href="/">Home</a></li>'; // The string which will be output to the browser, starts with a link to the home page
-        var path = '/'; // Link for the crumbs
+		var arrURL=wrkLocation.split("/"); // Array containing the current location, split at the slashes
+		var output='<li><a href="/">Home</a></li>'; // The string which will be output to the browser, starts with a link to the home page
+		var path = '/'; // Link for the crumbs
 
-        // If last item is blank or index.* or default.*, remove it
-        if (arrURL[arrURL.length - 1] === '' || arrURL[arrURL.length - 1].match(/^index\.|^default\./i)) {
-            arrURL.length--;
-        }
+		// If last item is blank or index.* or default.*, remove it
+		if (arrURL[arrURL.length-1] === '' || arrURL[arrURL.length-1].match(/^index\.|^default\./i) ) {
+			arrURL.length--;
+		}
 
-        if (arrURL.length > 3) {
-            for (counter = 3; counter < arrURL.length - 1; counter++) {  // Loop to display the links
-                path += arrURL[counter] + '/';  // always end links to folder with '/' 
-                output += '<li><a href="' + path + '">' + arrURL[counter].replace(/(_|-)/g, ' ') + '</a></li>';
-            }
+		if (arrURL.length > 3) {
+			for (counter = 3; counter < arrURL.length-1; counter++) {  // Loop to display the links
+				path += arrURL[counter] + '/';  // always end links to folder with '/' 
+				output += '<li><a href="' + path + '">' + arrURL[counter].replace(/(_|-)/g,' ') + '</a></li>';
+			}
 
-            // Adds a class of active to the current page
-            output += '<li class="active">' + arrURL[arrURL.length - 1].replace(/(_|-)/g, ' ').replace(/\.\w{3,5}$/, '') + '</li>';
-        }
+			// Adds a class of active to the current page
+			output += '<li class="active">' + arrURL[arrURL.length-1].replace(/(_|-)/g,' ').replace(/\.\w{3,5}$/,'') + '</li>';
+		}
 
-        $(".breadcrumb.dynamic").html(output);  // Display the breadcrumbs
-    }
+		$(".breadcrumb.dynamic").html(output);  // Display the breadcrumbs
+	}
 }
 
-$(document).ready(function () {
+$(document).ready(function(){
     breadcrumbs();
 });
 
@@ -17623,50 +17744,61 @@ if (!String.prototype.trim) {
    /source/js/cagov/parallax.js
 ----------------------------------------- */
 
-(function ($) {
+$(document).ready(function () {
 
-    $.fn.parallax = function (options) {
+    // Populate images from data attributes.
+    var scrolled = $(window).scrollTop();
+    $('.parallax-bg').each(function (index) {
+        var imageSrc = $(this).data('image-src');
+        var imageHeight = $(this).data('height');
+        $(this).css('background-image', 'url(' + imageSrc + ')');
+        $(this).css('height', imageHeight);
 
-        var windowHeight = $(window).height();
+        // Adjust the background position.
+        var initY = $(this).offset().top;
+        var height = $(this).height();
+        var diff = scrolled - initY;
+        var ratio = Math.round((diff / height) * 100);
+        $(this).css('background-position', 'center ' + parseInt(-(ratio * 1.5)) + 'px');
+    });
 
-        // Establish default settings
-        var settings = $.extend({
-            speed: 0.3
-        }, options);
+    // Attach scroll event to window. Calculate the scroll ratio of each element
+    // and change the image position with that ratio.
+    // https://codepen.io/lemagus/pen/RWxEYz
+    $(window).scroll(function () {
+        var scrolled = $(window).scrollTop();
+        $('.parallax-bg').each(function (index, element) {
+            var initY = $(this).offset().top;
+            var height = $(this).height();
+            var endY = initY + $(this).height();
 
-        // Iterate over each object in collection
-        return this.each(function () {
-
-            // Save a reference to the element
-            var $this = $(this);
-
-            // Init proper heights
-            var bg_height = ($(window).outerHeight() * settings.speed) + $this.innerHeight();
-            $this.css({ 'height': bg_height });
-
-            // Set up Scroll Handler
-            $(window).scroll(function () {
-                var element_top = $this.offset().top,
-                    window_top = $(window).scrollTop(),
-                    y_pos = (((window_top + $(window).innerHeight()) - element_top) * settings.speed),
-                    main_position;
-
-                main_position = 'translate(0, ' + y_pos + 'px)';
-
-                $this.css({
-                    '-webkit-transform': main_position,
-                    '-moz-transform': main_position,
-                    '-ms-transform': main_position,
-                    'transform': main_position
-                });
-            });
-            // $(window).scroll();
-
+            // Check if the element is in the viewport.
+            var visible = isInViewport(this);
+            if (visible) {
+                var diff = scrolled - initY;
+                var ratio = Math.round((diff / height) * 100);
+                $(this).css('background-position', 'center ' + parseInt(-(ratio * 1.5)) + 'px');
+            }
         });
-    };
-}(jQuery));
+    });
+});
 
-$('.parallax-bg').parallax();
+// Check if the element is in the viewport.
+// http://www.hnldesign.nl/work/code/check-if-element-is-visible/
+function isInViewport(node) {
+    // Am I visible? Height and Width are not explicitly necessary in visibility
+    // detection, the bottom, right, top and left are the essential checks. If an
+    // image is 0x0, it is technically not visible, so it should not be marked as
+    // such. That is why either width or height have to be > 0.
+    var rect = node.getBoundingClientRect();
+    return (
+        (rect.height > 0 || rect.width > 0) &&
+        rect.bottom >= 0 &&
+        rect.right >= 0 &&
+        rect.top <= (window.innerHeight || document.documentElement.clientHeight) &&
+        rect.left <= (window.innerWidth || document.documentElement.clientWidth)
+    );
+}
 
 /**
  *
@@ -17832,6 +17964,7 @@ $(document).ready(function () {
     var theHTML = $('html');
 
     var isHighContrast = localStorage.getItem('high-contrast');
+    var isDyslexic = localStorage.getItem('dyslexic');
 
     function onContrast() {
         enableHighContrastButton.addClass('active');
@@ -17890,6 +18023,7 @@ $(document).ready(function () {
     var incFontSize = $('.increaseTextSize');
     var decFontSize = $('.decreaseTextSize');
     var resetFontSize = $('.resetTextSize');
+    var dyslexicFontBtn = $('.dyslexicFont');
 
     // in rems's
     var MAXFONTSIZE = 1.5;
@@ -17941,8 +18075,28 @@ $(document).ready(function () {
     });
 
     resetFontSize.on('click', function () {
-        fontSize = updateFont(1);
+        $("html").removeAttr("style");
+        $('body, h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .first-level-link, .slide-text, .slide-text .title, .stat-counter, .explore-invite .explore-title').removeAttr("style");
+        localStorage.removeItem('dyslexic');
+        localStorage.removeItem('font-size');
     });
+
+
+    if (isDyslexic) {
+        dyslexicFont();
+    }
+
+    dyslexicFontBtn.on('click', function () {
+        dyslexicFont();
+    });
+
+    function dyslexicFont() {
+        $('body, h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .first-level-link, .slide-text, .slide-text .title, .stat-counter, .explore-invite .explore-title').attr("style", "font-family: 'OpenDyslexicAlta Regular', sans serif !important");
+        localStorage.setItem('dyslexic', 'true');
+    }
+
+
+
 });
 
 /* -----------------------------------------

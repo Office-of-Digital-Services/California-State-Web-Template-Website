@@ -26,6 +26,7 @@ $tabs.each(function (index) {
 });
 
 $.fn.tab.Constructor.prototype.keydown = function (e) {
+
     var $this = $(this)
         , $items
         , $ul = $this.closest('ul[role=tablist] ')
@@ -49,7 +50,6 @@ $.fn.tab.Constructor.prototype.keydown = function (e) {
     if (nextTab.attr('role') === 'tab') {
 
         nextTab.tab('show');
-        //Comment this line for dynamically loaded tabPabels, to save Ajax requests on arrow key navigation
         nextTab.focus();
     }
     // nextTab.focus()
@@ -68,10 +68,12 @@ $.fn.tab.Constructor.prototype.activate = function (element, container, callback
 
     tabactivate.apply(this, arguments);
 
-    element.addClass('active');
+   element.addClass('active');
+
     element.find('[data-toggle=tab], [data-toggle=pill]').attr({ 'tabIndex': '0', 'aria-selected': true });
     element.filter('.tab-pane').attr({ 'aria-hidden': false, 'tabIndex': '0' });
 };
+
 
 /* -----------------------------------------
    Tabs -- some fixing to bootstap 3 tabs
@@ -111,6 +113,15 @@ $(document).ready(function () {
         var tabsPaneFirst = tabGroup.find(".tab-pane:first-child");
         var tabsPaneLast = tabGroup.find(".tab-pane:last-child");
         var parentLI = $(this).parent("li");
+
+        if (parentLI.is(':first-child')) {
+            console.log("first");
+        }
+        if (parentLI.is(':last-child')) {
+            console.log("last");
+        }
+
+
 
         if (e.keyCode === 37) {
             tabcontentID.prev().removeAttr("tabindex aria-hidden");

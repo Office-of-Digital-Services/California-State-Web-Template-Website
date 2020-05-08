@@ -230,7 +230,7 @@ tabpanel.prototype.bindHandlers = function () {
 
     // bind a tab keydown handler 
     this.$tabs.on("keydown", function (e) {
-        
+
         return thisObj.handleTabKeyDown($(this), e);
     });
 

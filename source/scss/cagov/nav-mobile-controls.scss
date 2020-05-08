@@ -28,15 +28,15 @@
     .toggle-menu {
         padding: 0;
         width: 52px;
+        height: 61px;
         cursor: pointer;
         color: $white;
     }
 
     .toggle-search {
         padding: 0;
-        top: 0;
         width: 52px;
-        height: 50px;
+        height: 61px;
         font-size: 40px;
         border: none;
         background: none;
@@ -58,9 +58,9 @@
 
 // Mobile controls inside main navigation
 .main-navigation .mobile-controls {
-    text-align: left;
-    background-color: $body-bg;
-}
+		text-align: left;
+		background-color: $body-bg;
+	}
 
 
 // INDIVIDUAL CONTROLS
@@ -96,10 +96,10 @@
     align-items: center;
     z-index: 1;
 }
-
-
-
-
+	
+	
+	
+	
 // Hamburger menu to X transition
 .toggle-menu {
     width: 55px;
@@ -233,6 +233,7 @@
         -webkit-transition: all .2s ease !important;
         transition: all .2s ease !important;
     }
+
 }
 
 /* mobile controls hack for IE because IE never dies */
@@ -240,13 +241,14 @@
     .mobile-controls .toggle-search {
         position: absolute;
         right: 70px;
-        top: 14px;
+        top: 10px;
     }
     /* IE10 */
     *::-ms-backdrop, .mobile-controls .toggle-search {
         position: absolute;
         right: 70px;
-        top: 14px;
+        top: 10px;
     }
     /* IE11 */
 }
+

@@ -31,6 +31,17 @@
     }
 }
 
+// beta 5.0 addition
+.main-navigation.dropdown .sub-nav {
+    max-width: 250px;
+    min-width: 250px;
+    left: initial;
+    right: initial;
+
+    @media (max-width: $screen-xs-max) {
+        max-width: 100%;
+    }
+}
 
 //
 // Sub-menu open indicator
@@ -328,8 +339,7 @@ a.second-level-link {
     }
 }
 
-/* Accessible Menu */
-// beta 5.0 addition (for accessible menu)
+
 .nav-item {
     display: inline-block;
 }
@@ -358,6 +368,8 @@ a.second-level-link {
 }
 
 @media (max-width: $screen-xs-max) {
+
+
     .main-navigation {
         overflow: hidden;
     }
@@ -376,6 +388,9 @@ a.second-level-link {
 
         display: block;
     }
+    .second-level-nav > li {
+        border-right: 0px;
+    }
 }
 
 @media (min-width: $screen-sm-min) {
@@ -388,29 +403,7 @@ a.second-level-link {
         margin-top: -82px; // beta 6.0 addition
     }
 
-    .no-icons {
-        .top-level-nav {
-            .nav-item {
-                > a {
-                    min-height: 86px; // beta 6.0 addition
-                    padding-top: 2rem;
-                }
-            }
-        }
-    }
-
-    .fixed.compact {
-        .no-icons {
-            .top-level-nav {
-                .nav-item {
-                    > a {
-                        padding-top: 12px;
-                        min-height: 50px;
-                    }
-                }
-            }
-        }
-    }
+ 
 }
 
 .media-left, .media-right, .media-body {
@@ -467,7 +460,7 @@ a.second-level-link {
 
 // Flex subnav in mobile view
 @media (max-width: $screen-xs-max) {
-
+   
     .second-level-nav.flex {
         display: block;
         text-align: left;
@@ -499,22 +492,6 @@ a.second-level-link {
     }
 }
 
-// Adding carrot if nav item has sub nav
-@media (min-width: $screen-sm-min) {
-    .nav-item .first-level-link.has-sub, .first-level-btn {
 
-        .carrot {
-            font-size: .8rem;
-            position: absolute;
-            bottom: 13px;
-            display: inline-block;
-            color: $gray;
-        }
-    }
-}
 
-@media (max-width: $screen-xs-max) {
-    .nav-item .first-level-link.has-sub .carrot {
-        display: none;
-    }
-}
+
