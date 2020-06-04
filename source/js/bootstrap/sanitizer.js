@@ -1,10 +1,9 @@
-
 /**
-   * --------------------------------------------------------------------------
-   * Bootstrap (v4.4.1): tools/sanitizer.js
-   * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
-   * --------------------------------------------------------------------------
-   */
+  * --------------------------------------------------------------------------
+  * Bootstrap (v4.5.0): tools/sanitizer.js
+  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
+  * --------------------------------------------------------------------------
+  */
 var uriAttrs = ['background', 'cite', 'href', 'itemtype', 'longdesc', 'poster', 'src', 'xlink:href'];
 var ARIA_ATTRIBUTE_PATTERN = /^aria-[\w-]*$/i;
 var DefaultWhitelist = {
@@ -26,7 +25,7 @@ var DefaultWhitelist = {
     h5: [],
     h6: [],
     i: [],
-    img: ['src', 'alt', 'title', 'width', 'height'],
+    img: ['src', 'srcset', 'alt', 'title', 'width', 'height'],
     li: [],
     ol: [],
     p: [],
@@ -46,14 +45,14 @@ var DefaultWhitelist = {
  * Shoutout to Angular 7 https://github.com/angular/angular/blob/7.2.4/packages/core/src/sanitization/url_sanitizer.ts
  */
 
-var SAFE_URL_PATTERN = /^(?:(?:https?|mailto|ftp|tel|file):|[^&:/?#]*(?:[/?#]|$))/gi;
+var SAFE_URL_PATTERN = /^(?:(?:https?|mailto|ftp|tel|file):|[^#&/:?]*(?:[#/?]|$))/gi;
 /**
  * A pattern that matches safe data URLs. Only matches image, video and audio types.
  *
  * Shoutout to Angular 7 https://github.com/angular/angular/blob/7.2.4/packages/core/src/sanitization/url_sanitizer.ts
  */
 
-var DATA_URL_PATTERN = /^data:(?:image\/(?:bmp|gif|jpeg|jpg|png|tiff|webp)|video\/(?:mpeg|mp4|ogg|webm)|audio\/(?:mp3|oga|ogg|opus));base64,[a-z0-9+/]+=*$/i;
+var DATA_URL_PATTERN = /^data:(?:image\/(?:bmp|gif|jpeg|jpg|png|tiff|webp)|video\/(?:mpeg|mp4|ogg|webm)|audio\/(?:mp3|oga|ogg|opus));base64,[\d+/a-z]+=*$/i;
 
 function allowedAttribute(attr, allowedAttributeList) {
     var attrName = attr.nodeName.toLowerCase();
@@ -70,7 +69,7 @@ function allowedAttribute(attr, allowedAttributeList) {
         return attrRegex instanceof RegExp;
     }); // Check if a regular expression validates the attribute.
 
-    for (var i = 0, l = regExp.length; i < l; i++) {
+    for (var i = 0, len = regExp.length; i < len; i++) {
         if (attrName.match(regExp[i])) {
             return true;
         }

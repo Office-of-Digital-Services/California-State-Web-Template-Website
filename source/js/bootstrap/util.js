@@ -1,9 +1,9 @@
 /**
-   * --------------------------------------------------------------------------
-   * Bootstrap (v4.4.1): util.js
-   * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
-   * --------------------------------------------------------------------------
-   */
+ * --------------------------------------------------------------------------
+ * Bootstrap (v4.5.0): util.js
+ * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
+ * --------------------------------------------------------------------------
+ */
 /**
  * ------------------------------------------------------------------------
  * Private TransitionEnd Helpers
@@ -15,6 +15,10 @@ var MAX_UID = 1000000;
 var MILLISECONDS_MULTIPLIER = 1000; // Shoutout AngusCroll (https://goo.gl/pxwQGp)
 
 function toType(obj) {
+    if (obj === null || typeof obj === 'undefined') {
+        return "" + obj;
+    }
+
     return {}.toString.call(obj).match(/\s([a-z]+)/i)[1].toLowerCase();
 }
 
@@ -27,7 +31,7 @@ function getSpecialTransitionEndEvent() {
                 return event.handleObj.handler.apply(this, arguments); // eslint-disable-line prefer-rest-params
             }
 
-            return undefined; // eslint-disable-line no-undefined
+            return undefined;
         }
     };
 }
