@@ -1,5 +1,5 @@
 /**
- * CA State Template v5.5 -  @version v5.5.16 -  6/4/2020 
+ * CA State Template v5.5 -  @version v5.5.17 -  8/17/2020 
   STYLES COMPILED FROM SOURCE (SCSS) DO NOT MODIFY */
 /* -----------------------------------------
    BOOTSTRAP v4.5.0 - /source/scss/bootstrap/ 
@@ -162,12 +162,12 @@ a:hover {
   text-decoration: underline;
 }
 
-a:not([href]) {
+a:not([href]):not([class]) {
   color: inherit;
   text-decoration: none;
 }
 
-a:not([href]):hover {
+a:not([href]):not([class]):hover {
   color: inherit;
   text-decoration: none;
 }
@@ -538,39 +538,12 @@ pre code {
   overflow-y: scroll;
 }
 
-.container {
-  width: 100%;
-  padding-right: 15px;
-  padding-left: 15px;
-  margin-right: auto;
-  margin-left: auto;
-}
-
-@media (min-width: 576px) {
-  .container {
-    max-width: 540px;
-  }
-}
-
-@media (min-width: 768px) {
-  .container {
-    max-width: 720px;
-  }
-}
-
-@media (min-width: 992px) {
-  .container {
-    max-width: 960px;
-  }
-}
-
-@media (min-width: 1200px) {
-  .container {
-    max-width: 1140px;
-  }
-}
-
-.container-fluid, .container-sm, .container-md, .container-lg, .container-xl {
+.container,
+.container-fluid,
+.container-sm,
+.container-md,
+.container-lg,
+.container-xl {
   width: 100%;
   padding-right: 15px;
   padding-left: 15px;
@@ -635,7 +608,6 @@ pre code {
 .col {
   flex-basis: 0;
   flex-grow: 1;
-  min-width: 0;
   max-width: 100%;
 }
 
@@ -843,7 +815,6 @@ pre code {
   .col-sm {
     flex-basis: 0;
     flex-grow: 1;
-    min-width: 0;
     max-width: 100%;
   }
   .row-cols-sm-1 > * {
@@ -1010,7 +981,6 @@ pre code {
   .col-md {
     flex-basis: 0;
     flex-grow: 1;
-    min-width: 0;
     max-width: 100%;
   }
   .row-cols-md-1 > * {
@@ -1177,7 +1147,6 @@ pre code {
   .col-lg {
     flex-basis: 0;
     flex-grow: 1;
-    min-width: 0;
     max-width: 100%;
   }
   .row-cols-lg-1 > * {
@@ -1344,7 +1313,6 @@ pre code {
   .col-xl {
     flex-basis: 0;
     flex-grow: 1;
-    min-width: 0;
     max-width: 100%;
   }
   .row-cols-xl-1 > * {
@@ -2050,6 +2018,7 @@ textarea.form-control {
 .valid-tooltip {
   position: absolute;
   top: 100%;
+  left: 0;
   z-index: 5;
   display: none;
   max-width: 100%;
@@ -2150,6 +2119,7 @@ textarea.form-control {
 .invalid-tooltip {
   position: absolute;
   top: 100%;
+  left: 0;
   z-index: 5;
   display: none;
   max-width: 100%;
@@ -3531,6 +3501,7 @@ input[type="button"].btn-block {
 
 .custom-control {
   position: relative;
+  z-index: 1;
   display: block;
   min-height: 1.5rem;
   padding-left: 1.5rem;
@@ -4049,11 +4020,13 @@ input[type="button"].btn-block {
   background-color: #007bff;
 }
 
+.nav-fill > .nav-link,
 .nav-fill .nav-item {
   flex: 1 1 auto;
   text-align: center;
 }
 
+.nav-justified > .nav-link,
 .nav-justified .nav-item {
   flex-basis: 0;
   flex-grow: 1;
@@ -4464,6 +4437,11 @@ input[type="button"].btn-block {
   border-bottom-left-radius: calc(0.25rem - 1px);
 }
 
+.card > .card-header + .list-group,
+.card > .list-group + .card-footer {
+  border-top: 0;
+}
+
 .card-body {
   flex: 1 1 auto;
   min-height: 1px;
@@ -4502,10 +4480,6 @@ input[type="button"].btn-block {
   border-radius: calc(0.25rem - 1px) calc(0.25rem - 1px) 0 0;
 }
 
-.card-header + .list-group .list-group-item:first-child {
-  border-top: 0;
-}
-
 .card-footer {
   padding: 0.75rem 1.25rem;
   background-color: rgba(0, 0, 0, 0.03);
@@ -4535,6 +4509,7 @@ input[type="button"].btn-block {
   bottom: 0;
   left: 0;
   padding: 1.25rem;
+  border-radius: calc(0.25rem - 1px);
 }
 
 .card-img,
@@ -4633,6 +4608,10 @@ input[type="button"].btn-block {
     display: inline-block;
     width: 100%;
   }
+}
+
+.accordion {
+  overflow-anchor: none;
 }
 
 .accordion > .card {
@@ -9291,7 +9270,8 @@ a.text-dark:hover, a.text-dark:focus {
 }
 
 .text-break {
-  word-wrap: break-word !important;
+  word-break: break-word !important;
+  overflow-wrap: break-word !important;
 }
 
 .text-reset {
@@ -9526,6 +9506,206 @@ ul.et-fb-font-icon-list li:after {
   font-family: 'CaGov', 'ETModules' !important;
   content: attr(data-icon);
   speak: none;
+}
+
+.ca-gov-icon-amusement:before {
+  content: "\e9ab";
+}
+
+.ca-gov-icon-baloons:before {
+  content: "\e9ac";
+}
+
+.ca-gov-icon-barge-ship:before {
+  content: "\e9ad";
+}
+
+.ca-gov-icon-bike:before {
+  content: "\e9ae";
+}
+
+.ca-gov-icon-boat:before {
+  content: "\e9af";
+}
+
+.ca-gov-icon-bridge:before {
+  content: "\e9b0";
+}
+
+.ca-gov-icon-bridge-alt:before {
+  content: "\e9b1";
+}
+
+.ca-gov-icon-bus:before {
+  content: "\e9b2";
+}
+
+.ca-gov-icon-bus-alt:before {
+  content: "\e9b3";
+}
+
+.ca-gov-icon-car:before {
+  content: "\e9b4";
+}
+
+.ca-gov-icon-car-alt:before {
+  content: "\e9b5";
+}
+
+.ca-gov-icon-casino:before {
+  content: "\e9b6";
+}
+
+.ca-gov-icon-cofee:before {
+  content: "\e9b7";
+}
+
+.ca-gov-icon-cruise-ship:before {
+  content: "\e9b8";
+}
+
+.ca-gov-icon-dices:before {
+  content: "\e9b9";
+}
+
+.ca-gov-icon-directions:before {
+  content: "\e9ba";
+}
+
+.ca-gov-icon-entertainment:before {
+  content: "\e9bb";
+}
+
+.ca-gov-icon-family:before {
+  content: "\e9bc";
+}
+
+.ca-gov-icon-family-alt:before {
+  content: "\e9bd";
+}
+
+.ca-gov-icon-fastfood:before {
+  content: "\e9be";
+}
+
+.ca-gov-icon-ferry:before {
+  content: "\e9bf";
+}
+
+.ca-gov-icon-fitness:before {
+  content: "\e9c0";
+}
+
+.ca-gov-icon-fitness-alt:before {
+  content: "\e9c1";
+}
+
+.ca-gov-icon-hair:before {
+  content: "\e9c2";
+}
+
+.ca-gov-icon-hair-salon:before {
+  content: "\e9c3";
+}
+
+.ca-gov-icon-highway:before {
+  content: "\e9c4";
+}
+
+.ca-gov-icon-museum:before {
+  content: "\e9c5";
+}
+
+.ca-gov-icon-museum-alt:before {
+  content: "\e9c6";
+}
+
+.ca-gov-icon-no-travel:before {
+  content: "\e9c7";
+}
+
+.ca-gov-icon-paddle-boat:before {
+  content: "\e9c8";
+}
+
+.ca-gov-icon-party:before {
+  content: "\e9c9";
+}
+
+.ca-gov-icon-places:before {
+  content: "\e9ca";
+}
+
+.ca-gov-icon-rail:before {
+  content: "\e9cb";
+}
+
+.ca-gov-icon-restaurant:before {
+  content: "\e9cc";
+}
+
+.ca-gov-icon-road:before {
+  content: "\e9cd";
+}
+
+.ca-gov-icon-rv:before {
+  content: "\e9ce";
+}
+
+.ca-gov-icon-sail-ship:before {
+  content: "\e9cf";
+}
+
+.ca-gov-icon-scooter:before {
+  content: "\e9d0";
+}
+
+.ca-gov-icon-ship:before {
+  content: "\e9d1";
+}
+
+.ca-gov-icon-speedtrain:before {
+  content: "\e9d2";
+}
+
+.ca-gov-icon-suv:before {
+  content: "\e9d3";
+}
+
+.ca-gov-icon-temple:before {
+  content: "\e9d4";
+}
+
+.ca-gov-icon-train:before {
+  content: "\e9d5";
+}
+
+.ca-gov-icon-trolleybus:before {
+  content: "\e9d6";
+}
+
+.ca-gov-icon-truck:before {
+  content: "\e9d7";
+}
+
+.ca-gov-icon-truck-alt:before {
+  content: "\e9d8";
+}
+
+.ca-gov-icon-van:before {
+  content: "\e9d9";
+}
+
+.ca-gov-icon-yacht:before {
+  content: "\e9da";
+}
+
+.ca-gov-icon-zoo:before {
+  content: "\e9db";
+}
+
+.ca-gov-icon-zoo-alt:before {
+  content: "\e9dc";
 }
 
 .ca-gov-icon-distance:before {

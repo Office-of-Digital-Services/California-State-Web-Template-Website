@@ -3,23 +3,27 @@
 <!--[if IE 7]>    <html class="no-js ie7 oldie" lang="en"> <![endif]-->
 <!--[if IE 8]>    <html class="no-js ie8 oldie" lang="en"> <![endif]-->
 <!--[if IE 9]>    <html class="no-js ie9 oldie" lang="en"> <![endif]-->
-<!--[if (gt IE 9)]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+<!--[if (gt IE 9)]><!-->
+<html class="no-js" lang="en">
+ <!--<![endif]-->
 <head>
 
-<!--    California State Template
+    <!--    California State Template
 
-Based on Twitter Bootstrap
--->
-<meta charset="utf-8">
+    Based on Twitter Bootstrap
+    -->
+    <meta charset="utf-8">
 
-<title>Sample - SocialSharer</title>
+    <title>Sample - Sticky Footer</title>
 
-<meta name="Author" content="State of California" />
-<meta name="Description" content="State of California" />
-<meta name="Keywords" content="California, government" />
+    <meta name="Author" content="State of California" />
+    <meta name="Description" content="State of California" />
+    <meta name="Keywords" content="California, government" />
 
-<!--#include virtual="/ssi/head-css-js.html" -->
-
+    <!--#include virtual="/ssi/head-css-js.html" -->
+    <script type="text/javascript">
+        var defaultActiveLink = "Components";
+    </script>
 </head>
 
 <body class="sticky-footer">
@@ -50,13 +54,12 @@ Based on Twitter Bootstrap
         <div class="header-decoration"></div>
     </header>
 
-
-    <div id="main-content" class="main-content">
+    <div id="main-content">
         <div class="container p-b-lg">
             <main class="main-primary">
                 <ol class="breadcrumb">
                     <li><a href="../index.html" title="Home page">Home</a></li>
-                    <li><a href="/sample/" title="Samples landing page">Examples</a></li>
+                    <li><a href="/sample/" title="Content Modules landing page">Content Modules</a></li>
                     <li class="active">Sticky Footer</li>
                 </ol>
                 <h1>Sticky Footer</h1>
@@ -67,18 +70,18 @@ Based on Twitter Bootstrap
         </div>
     </div>
 
-
     <!--#include virtual="/sample/modules/sticky-footer.html" -->
     <!--#include virtual="/ssi/scripts.html" -->
     <script>
         $(document).ready(function () {
-        $("#add").on("click", function () {
-            $("<p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.</p>").appendTo(".content");
+            $("#add").on("click", function () {
+                $("<p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.</p>").appendTo(".content");
             });
             $("#remove").on("click", function () {
                 $(".content").empty()
             });
         });
     </script>
+
 </body>
 </html>

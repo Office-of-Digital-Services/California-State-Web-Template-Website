@@ -31,24 +31,8 @@ var jssrc = [
     // NO CONFLICT
     'source/js/cagov/noconflict.js',
 
-    // BOOTSTRAP 4
-    'source/js/bootstrap/master.js',
-    'source/js/bootstrap/util.js',
-    'source/js/bootstrap/alert.js',
-    'source/js/bootstrap/button.js',
-    'source/js/bootstrap/carousel.js',
-    'source/js/bootstrap/collapse.js',
-    'source/js/bootstrap/popper.js',
-    'source/js/bootstrap/dropdown.js',
-    'source/js/bootstrap/modal.js',
-    'source/js/bootstrap/sanitizer.js',
-    'source/js/bootstrap/tooltip.js',
-    'source/js/bootstrap/popover.js',
-    'source/js/bootstrap/scrollspy.js',
-    'source/js/bootstrap/tab.js',
-    'source/js/bootstrap/toast.js',
-    'source/js/bootstrap/index.js',
-
+    // BOOTSTRAP 
+    'source/js/bootstrap/bootstrap.bundle.js',
 
     // BOOTSTRAP ACCESSIBILITY PLUGIN
     'source/js/bootstrap-accessibility-plugin/functions.js',
