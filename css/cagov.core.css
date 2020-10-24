@@ -12169,6 +12169,66 @@ a.list-group-item {
   display: inline-block;
   z-index: 26;
   position: relative;
+  text-decoration: none;
+  color: black;
+  background-image: none;
+}
+
+.branding .header-organization-banner a .logo-assets {
+  display: flex;
+  align-items: center;
+  height: 80px;
+}
+
+.branding .header-organization-banner a .logo-assets .logo-img {
+  max-width: 100%;
+  width: 80px;
+  height: auto;
+  display: inline-block;
+  transition: all .3s;
+}
+
+.branding .header-organization-banner a .logo-assets .logo-text {
+  padding-left: 5px;
+}
+
+.branding .header-organization-banner a .logo-assets .logo-text .logo-state {
+  font-size: 1rem;
+  font-family: "Asap Condensed", sans-serif;
+  margin: 0;
+  padding: 0;
+  color: #333333;
+  height: 20px;
+  line-height: 1.2em;
+  transition: all .3s;
+  display: block;
+}
+
+@media (max-width: 767px) {
+  .branding .header-organization-banner a .logo-assets .logo-text .logo-state {
+    margin-top: 5px;
+    font-size: .9rem;
+  }
+}
+
+.branding .header-organization-banner a .logo-assets .logo-text .logo-dept {
+  font-size: 1.54rem;
+  font-family: "Asap Condensed", sans-serif;
+  font-weight: 700;
+  margin: 0;
+  padding: 0;
+  color: #333333;
+  height: 24px;
+  line-height: 1.2em;
+  transition: all .3s;
+  display: block;
+}
+
+@media (max-width: 767px) {
+  .branding .header-organization-banner a .logo-assets .logo-text .logo-dept {
+    font-size: 1.1rem;
+    min-width: 200px;
+  }
 }
 
 @media (max-width: 767px) {
@@ -12183,6 +12243,27 @@ a.list-group-item {
   .branding {
     max-width: 100%;
   }
+}
+
+.fixed.compact .branding .header-organization-banner .logo-assets {
+  height: 60px;
+}
+
+.fixed.compact .branding .header-organization-banner .logo-assets .logo-img {
+  width: 70px;
+}
+
+.fixed.compact .branding .header-organization-banner .logo-assets .logo-text .logo-state {
+  font-size: .8rem;
+  line-height: 1em;
+  height: 16px;
+  min-width: 200px;
+}
+
+.fixed.compact .branding .header-organization-banner .logo-assets .logo-text .logo-dept {
+  font-size: 1.2rem;
+  line-height: 1em;
+  min-width: 200px;
 }
 
 .mobile-controls toggle-menu {
@@ -12235,6 +12316,49 @@ a.list-group-item {
 .carousel-banner .owl-item,
 .carousel-banner .slide {
   height: 100%;
+}
+
+.nav-full-width-icons a .logo-assets {
+  display: flex;
+  align-items: center;
+  height: 55px;
+}
+
+.nav-full-width-icons a .logo-assets .logo-img {
+  max-width: 100%;
+  width: 80px;
+  height: auto;
+  display: inline-block;
+  transition: all .3s;
+}
+
+.nav-full-width-icons a .logo-assets .logo-text {
+  padding-left: 5px;
+}
+
+.nav-full-width-icons a .logo-assets .logo-text .logo-state {
+  font-size: .9rem;
+  font-family: "Asap Condensed", sans-serif;
+  margin: 0;
+  padding: 0;
+  color: #fff;
+  height: 17px;
+  line-height: 1em;
+  transition: all .3s;
+  display: block;
+}
+
+.nav-full-width-icons a .logo-assets .logo-text .logo-dept {
+  font-size: 1.4rem;
+  font-family: "Asap Condensed", sans-serif;
+  font-weight: 700;
+  margin: 0;
+  padding: 0;
+  color: #fff;
+  height: 24px;
+  line-height: 1em;
+  transition: all .3s;
+  display: block;
 }
 
 /* -----------------------------------------
@@ -23596,7 +23720,7 @@ a.label-dark:focus, a.label-dark.focus {
   line-height: 1.6em !important;
 }
 
-.bold {
+.bold, .text-bold {
   font-weight: 700 !important;
 }
 
