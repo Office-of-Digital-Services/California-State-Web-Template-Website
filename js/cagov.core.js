@@ -1,5 +1,5 @@
 /**
- * CA State Template v5.5 -  @version v5.5.18 -  10/23/2020 
+ * CA State Template v5.5 -  @version v5.5.18 -  10/24/2020 
   STYLES COMPILED FROM SOURCE (source/js) DO NOT MODIFY */
 /*! modernizr (Custom Build) | MIT *
  * https://modernizr.com/download/?-flexbox-setclasses !*/
@@ -14230,7 +14230,7 @@ $(document).ready(function () {
 
     // setting up global variables for header functions
     window.headerVars = {
-        MOBILEWIDTH: 767,
+        MOBILEWIDTH: 991,
         MAXHEIGHT: 1200,
         MINHEIGHT: 500,
         setHeaderImageHeight: function () {
@@ -15269,7 +15269,7 @@ function NavReset() {
     $(".sub-nav").attr("aria-hidden", "true").removeClass("open");
     $(".second-level-link").attr("tabindex", "-1");
     var $toggleSubNav = $('<div class="ca-gov-icon-caret-right rotate" aria-hidden="true"></div>');
-    if (window.innerWidth < 768) {
+    if (window.innerWidth < 991) {
         $('.has-sub').append($toggleSubNav);
         $(".rotate").css("display", "block");
     }

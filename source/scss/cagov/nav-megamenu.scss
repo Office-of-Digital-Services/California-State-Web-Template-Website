@@ -2,8 +2,8 @@
    MEGA MENU
    /source/scss/cagov/nav-megamenu.scss
 ----------------------------------------- */
-
-@media (max-width: $screen-xs-max) {
+// 991px
+@media (max-width: $screen-sm-max) {
     .main-navigation {
         margin-top: 0;
         padding: 0;
@@ -11,14 +11,12 @@
 }
 
 .megadropdown .top-level-nav { // beta 5.0 addition (fixes IE dropdown issue)
-    @media (max-width: $screen-md) and (min-width: $screen-sm-min) { // Beta 5.0 addition
-        font-size: 0.9em;
-    }
 
+    
     .nav-item {
         position: static;
-
-        @media (max-width: $screen-xs-max) {
+        // 992px 
+        @media (max-width: $screen-sm-max) {
             position: relative;
         }
 
@@ -38,7 +36,8 @@
     left: initial;
     right: initial;
 
-    @media (max-width: $screen-xs-max) {
+    // 992px 
+    @media (max-width: $screen-sm-max) {
         max-width: 100%;
     }
 }
@@ -46,8 +45,8 @@
 //
 // Sub-menu open indicator
 // --------------------------------------------------
-
-@media (min-width: $screen-xs-max) {
+// 991px 
+@media (min-width: $screen-sm-max) {
     /* Dynamic Element appended to each .sub-nav */
     .nav-arrow-container {
         display: block;
@@ -91,6 +90,7 @@
     right: ($grid-gutter-width / 2);
     overflow: hidden;
     // Remove border as rules are added to top level links
+    // 991px 
     @media (max-width: $screen-xs-max) {
         border: none;
     }
@@ -122,7 +122,9 @@
     list-style: none;
     padding: 0;
     // SET UP NAVIGATION COLUMNS
-    @media (min-width: $screen-sm-min) {
+
+    // 992px 
+    @media (min-width: $screen-md-min) {
         .half &, .two-thirds & {
             @include nav-columns(2);
         }
@@ -170,8 +172,8 @@ a.second-level-link {
         vertical-align: -2px;
         margin-right: 3px;
     }
-
-    @media (max-width: $screen-xs-max) {
+// 991px 
+    @media (max-width: $screen-sm-max) {
         &:first-child {
             margin-top: 2px !important;
         }
@@ -192,7 +194,8 @@ a.second-level-link {
 // --------------------------------------------------
 
 // Unit values for desktop only, mobile will collapse vertically.
-@media (min-width: $screen-sm-min) {
+// 992px 
+@media (min-width: $screen-md-min) {
     $nav-unit-base: 65px;
 
     .unit1 {
@@ -227,7 +230,8 @@ a.second-level-link {
 }
 
 /* Megamenu State Template v4 */
-@media (min-width: $screen-sm-min) {
+// 992px 
+@media (min-width: $screen-md-min) {
 
     .main-navigation.megadropdown.original {
         .second-level-nav {
@@ -367,7 +371,8 @@ a.second-level-link {
     }
 }
 
-@media (max-width: $screen-xs-max) {
+// 991
+@media (max-width: $screen-sm-max) {
 
 
     .main-navigation {
@@ -393,7 +398,8 @@ a.second-level-link {
     }
 }
 
-@media (min-width: $screen-sm-min) {
+// 992
+@media (min-width: $screen-md-min) {
 
     .sub-nav {
         border-top: none;
@@ -418,7 +424,9 @@ a.second-level-link {
 /* Flex Sub Nav */
 // Flex subnav desktop view
 
-@media (min-width: $screen-sm-min) {
+
+// 992
+@media (min-width: $screen-md-min) {
 
     .second-level-nav.flex {
         display: flex;
@@ -459,7 +467,9 @@ a.second-level-link {
 
 
 // Flex subnav in mobile view
-@media (max-width: $screen-xs-max) {
+
+//991
+@media (max-width: $screen-sm-max) {
    
     .second-level-nav.flex {
         display: block;

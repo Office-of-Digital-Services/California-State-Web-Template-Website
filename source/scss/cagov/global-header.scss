@@ -44,10 +44,7 @@
     -webkit-box-shadow: 0px 0px 15px 0px rgba(189,189,189,0.4); // Beta 6.0 addition
     -moz-box-shadow: 0px 0px 15px 0px rgba(189,189,189,0.4); // Beta 6.0 addition
     box-shadow: 0px 0px 15px 0px rgba(189,189,189,0.4); // Beta 6.0 addition
-    @media (min-width: $screen-sm-min) {
-        .primary & {
-            // min-height: 412px;              // 390px + line-height;
-        }
+    @media (min-width: $screen-md-min) {
         // Hide mobile controls in desktop view
         .mobile-controls {
             display: none !important; // Javascript also uses this style to detect if page is in mobile view
@@ -66,7 +63,7 @@
     @include container;
     position: relative;
 
-    @media (min-width: $screen-sm-min) {
+    @media (min-width: $screen-md-min) {
         height: 82px !important; // Beta 6.0 addition
     }
 
@@ -74,7 +71,7 @@
         line-height: 82px; // Beta 6.0 addition
         -webkit-transition: all 0.3s;
         transition: all 0.3s; // Smooth transition for compact header
-        @media (max-width: $screen-xs-max) {
+        @media (max-width: $screen-sm-max) {
             max-width: 400px;
         }
 
@@ -150,13 +147,13 @@
             }
         }
 
-        @media (max-width: $screen-xs-max) { // Beta 5.0 addition
+        @media (max-width: $screen-sm-max) { // Beta 5.0 addition
             position: absolute;
             margin-top: -5px;
             padding-right: 150px;
         }
     }
-
+// Goes full width on 767 breakpoint
     @media (max-width: $screen-xs-max) { 
         max-width:100%;
     }
