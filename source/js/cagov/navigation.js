@@ -499,7 +499,7 @@ function NavReset() {
     $(".sub-nav").attr("aria-hidden", "true").removeClass("open");
     $(".second-level-link").attr("tabindex", "-1");
     var $toggleSubNav = $('<div class="ca-gov-icon-caret-right rotate" aria-hidden="true"></div>');
-    if (window.innerWidth < 991) {
+    if (window.innerWidth <= 991) {
         $('.has-sub').append($toggleSubNav);
         $(".rotate").css("display", "block");
     }
