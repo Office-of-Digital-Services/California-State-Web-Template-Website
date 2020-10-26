@@ -1,0 +1,100 @@
+﻿<!doctype html>
+<!--[if lt IE 7]> <html class="no-js ie6 oldie" lang="en"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js ie7 oldie" lang="en"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js ie8 oldie" lang="en"> <![endif]-->
+<!--[if IE 9]>    <html class="no-js ie9 oldie" lang="en"> <![endif]-->
+<!--[if (gt IE 9)]><!-->
+<html class="no-js" lang="en">
+<!--<![endif]-->
+
+<head>    
+<!--    California State Template
+
+    Based on Twitter Bootstrap
+    -->
+    <meta charset="utf-8">
+
+    <title>Contact Us</title>
+
+    <meta name="Author" content="State of California" />
+    <meta name="Description" content="State of California" />
+    <meta name="Keywords" content="California, government" />
+
+    <!--#include virtual="/ssi/head-css-js.html" -->
+
+</head>
+
+<!-- possible body classes are "primary" and "two-column" -->
+
+<body>
+
+    <header role="banner" id="header" class="global-header fixed">
+        <div id="skip-to-content"><a href="#main-content">Skip to Main Content</a></div>
+
+        <!-- Include Utility Header -->
+        <!--#include virtual="/ssi/utility-header.html" -->
+        <!-- Settings Bar -->
+        <!--#include virtual="/ssi/settings-bar.html" -->
+        <!-- Include Branding -->
+        <!--#include virtual="/ssi/branding.html" -->
+        <!-- Include Mobile Controls -->
+        <!--#include virtual="/ssi/mobile-controls.html" -->
+
+        <div class="navigation-search">
+            <!-- Include Navigation -->
+            <!--#include virtual="/ssi/navigation.html" -->
+
+            <div id="head-search" class="search-container">
+                <!-- Include Search -->
+                <!--#include virtual="/ssi/search.html" -->
+            </div>
+
+        </div>
+
+
+        <div class="header-decoration"></div>
+
+    </header>
+
+
+    <div id="main-content" class="main-content">
+        <div class="container">
+            <main class="main-primary">
+                <!-- InstanceBeginEditable name="MainContent" -->
+                <ol class="breadcrumb">
+                    <li><a href="index.html" title="Home page">Home</a></li>
+                    <li class="active">Gulp</li>
+                </ol>
+
+                <h1>What is gulp</h1>
+                <p>Gulp is a cross-platform, streaming task runner that lets developers automate many development tasks. At a high level, gulp reads files as streams and pipes the streams to different tasks. These tasks are code-based and use plugins. The tasks modify the files, building source files into production files. State template is using gulp tasks to build minified and unminified core css files from source SASS files, as well as unified minified and unminified core JavaScript files from multiple source js files.</p>
+                <h1>How to use gulp with the state template</h1>
+                <p>Make sure in your website folder you have gulpfile.js, package.json files (if not please go ahead and clone or download state Template zip file from our GitHub repository releases).</p>
+                <ol>
+                <li>First you need to install node.js on your machine.</li>
+                <li>Then you need to install Gulp Globally. (run command <code>npm install gulp-cli -g</code> in your pc's PowerShell or Terminal)</li>
+                <li>Then you need to install Gulp locally (navigate to your local website repository folder using cd command.</li>
+                <li>Then use command <code>npm install gulp –save-dev</code> or <code>npm install gulp</code></li>
+                <li>Finally, you can now use gulp task commands such as: <br>
+                    <code>gulp core</code> (compiles unminified cagov.core.css)<br>
+                    <code>gulp js</code> (compiles unminified cagov.core.js)<br>
+                    <code>gulp dev</code> (compiles unminified core css js files including color schemes)<br><code>gulp prod</code> (compiles minified core css and js files including color schemes)</li>
+                </ol>
+
+                <article>
+                    <p>&nbsp;</p>
+                </article>
+                <!-- InstanceEndEditable -->
+            </main>
+        </div>
+    </div>
+
+
+
+
+    <!--#include virtual="/ssi/global-footer.html" -->
+    <!--#include virtual="/ssi/scripts.html" -->
+
+</body>
+
+</html>
