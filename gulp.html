@@ -14,7 +14,7 @@
     -->
     <meta charset="utf-8">
 
-    <title>Contact Us</title>
+    <title>Using Gulp</title>
 
     <meta name="Author" content="State of California" />
     <meta name="Description" content="State of California" />
@@ -65,21 +65,46 @@
                     <li><a href="index.html" title="Home page">Home</a></li>
                     <li class="active">Gulp</li>
                 </ol>
-
-                <h1>What is gulp</h1>
+<h1>Using Gulp with the State Template</h1>
+                <h2 class="h3">What is Gulp</h3>
                 <p>Gulp is a cross-platform, streaming task runner that lets developers automate many development tasks. At a high level, gulp reads files as streams and pipes the streams to different tasks. These tasks are code-based and use plugins. The tasks modify the files, building source files into production files. State template is using gulp tasks to build minified and unminified core css files from source SASS files, as well as unified minified and unminified core JavaScript files from multiple source js files.</p>
-                <h1>How to use gulp with the state template</h1>
-                <p>Make sure in your website folder you have gulpfile.js, package.json files (if not please go ahead and clone or download state Template zip file from our GitHub repository releases).</p>
+                
+                <h2 class="h3">How to use Gulp with the State Template</h2>
+                <p>Make sure in your website folder you have gulpfile.js, package.json files (if not please go ahead and <a href="https://github.com/Office-of-Digital-Innovation" target="_blank">clone<span class="ca-gov-icon-external-link link-icon" aria-hidden="true"></span><span class="sr-only">opens in new window</span></a> or <a href="https://github.com/Office-of-Digital-Innovation/California-State-Template/releases" target="_blank">download<span class="ca-gov-icon-external-link link-icon" aria-hidden="true"></span><span class="sr-only">opens in new window</span></a> State Template zip file from our GitHub repository releases).</p>
+
+                
+
                 <ol>
-                <li>First you need to install node.js on your machine.</li>
-                <li>Then you need to install Gulp Globally. (run command <code>npm install gulp-cli -g</code> in your pc's PowerShell or Terminal)</li>
-                <li>Then you need to install Gulp locally (navigate to your local website repository folder using cd command.</li>
-                <li>Then use command <code>npm install gulp –save-dev</code> or <code>npm install gulp</code></li>
-                <li>Finally, you can now use gulp task commands such as: <br>
+                <li>Install <a href="https://nodejs.org/en/download/" target="_blank">node.js<span class="ca-gov-icon-external-link link-icon" aria-hidden="true"></span><span class="sr-only">opens in new window</span></a> on your machine.</li>
+                <li>Install Gulp globally (run command <code>npm install gulp-cli -g</code> in your pc's PowerShell or Terminal)</li>
+                <li>Install Gulp locally (navigate to your local website repository folder using cd command) then use command <br><code>npm install gulp –save-dev</code> or <Br><code>npm install gulp</code></li>
+                <li>Once you done these steps above, start using State Template gulp task commands such as: <br>
                     <code>gulp core</code> (compiles unminified cagov.core.css)<br>
                     <code>gulp js</code> (compiles unminified cagov.core.js)<br>
                     <code>gulp dev</code> (compiles unminified core css js files including color schemes)<br><code>gulp prod</code> (compiles minified core css and js files including color schemes)</li>
                 </ol>
+
+                <div class="card card-default">
+                    <div class="card-heading">
+                        <h4><span class="ca-gov-icon-info"></span> Fixing <span class="bold">ReferenceError: primordials is not defined</span> error</h4>
+                       
+                    </div>
+                    <div class="card-body">
+                        in case you are having issues with version compatibility between gulp and node you might face <em>primordials is not defined</em> error. To fix it remove all the content from your <span class="bold">npm-shrinkwrap.json</span> and only paste following content:
+<pre class="m-t">
+    {
+        "dependencies": {
+            "graceful-fs": {
+                "version": "4.2.2"
+            }
+        }
+    }
+</pre>
+<p>Then run  <code>npm install</code>, It'll update npm-shrinkwrap.json with a bunch of content. Then try using gulp.</p>
+                        
+                    </div>
+                </div>
+                
 
                 <article>
                     <p>&nbsp;</p>
