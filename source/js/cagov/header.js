@@ -23,7 +23,7 @@ $(document).ready(function () {
 
     // setting up global variables for header functions
     window.headerVars = {
-        MOBILEWIDTH: 767,
+        MOBILEWIDTH: 991,
         MAXHEIGHT: 1200,
         MINHEIGHT: 500,
         setHeaderImageHeight: function () {

@@ -44,10 +44,7 @@
     -webkit-box-shadow: 0px 0px 15px 0px rgba(189,189,189,0.4); // Beta 6.0 addition
     -moz-box-shadow: 0px 0px 15px 0px rgba(189,189,189,0.4); // Beta 6.0 addition
     box-shadow: 0px 0px 15px 0px rgba(189,189,189,0.4); // Beta 6.0 addition
-    @media (min-width: $screen-sm-min) {
-        .primary & {
-            // min-height: 412px;              // 390px + line-height;
-        }
+    @media (min-width: $screen-md-min) {
         // Hide mobile controls in desktop view
         .mobile-controls {
             display: none !important; // Javascript also uses this style to detect if page is in mobile view
@@ -66,7 +63,7 @@
     @include container;
     position: relative;
 
-    @media (min-width: $screen-sm-min) {
+    @media (min-width: $screen-md-min) {
         height: 82px !important; // Beta 6.0 addition
     }
 
@@ -74,7 +71,7 @@
         line-height: 82px; // Beta 6.0 addition
         -webkit-transition: all 0.3s;
         transition: all 0.3s; // Smooth transition for compact header
-        @media (max-width: $screen-xs-max) {
+        @media (max-width: $screen-sm-max) {
             max-width: 400px;
         }
 
@@ -89,24 +86,107 @@
                 max-width: 225px;
             }
         }
+
+        
         // Move logo above navigation
         a {
             display: inline-block;
             z-index: 26; // navigation is 25
             position: relative;
+            text-decoration: none;
+            color: black;
+            background-image: none;
+
+            .logo-assets {
+                display: flex;
+                align-items:center;
+                height: 80px;
+
+                .logo-img {
+                    max-width: 100%;
+                    width: 80px;
+                    height: auto;
+                    display: inline-block;
+                    transition: all .3s;
+                }
+            
+                .logo-text {
+                    padding-left: 5px;
+                    .logo-state {
+                        font-size: 1rem; 
+                        font-family: "Asap Condensed", sans-serif;
+                        margin: 0; 
+                        padding: 0;
+                        color: $gray-dark;
+                        height: 20px;
+                        line-height: 1.2em;
+                        transition: all .3s;
+                        display: block;
+                     @media (max-width: $screen-xs-max) { 
+                         margin-top: 5px;
+                        font-size: .9rem;
+                       }
+                    }
+                    .logo-dept {
+                        font-size: 1.54rem;
+                        font-family: "Asap Condensed", sans-serif;
+                        font-weight: 700;
+                        margin: 0; 
+                        padding: 0;
+                        color: $gray-dark;
+                        height: 24px;
+                        line-height: 1.2em;
+                       transition: all .3s;
+                       display: block;
+                       @media (max-width: $screen-xs-max) { 
+                        font-size: 1.1rem;
+                        min-width: 200px;
+                       }
+                    }
+                }
+            }
         }
 
-        @media (max-width: $screen-xs-max) { // Beta 5.0 addition
+        @media (max-width: $screen-sm-max) { // Beta 5.0 addition
             position: absolute;
             margin-top: -5px;
             padding-right: 150px;
         }
     }
-
+// Goes full width on 767 breakpoint
     @media (max-width: $screen-xs-max) { 
         max-width:100%;
     }
 }
+
+    
+
+
+// FIXED HEADER LOGO
+.fixed.compact .branding .header-organization-banner {
+    .logo-assets {
+        height: 60px;
+    
+        .logo-img {
+            width: 70px;
+        }
+    
+        .logo-text {
+            .logo-state {
+                font-size: .8rem; 
+                line-height: 1em;
+                height: 16px;
+                min-width: 200px;
+            }
+            .logo-dept {
+                font-size: 1.2rem;
+                line-height: 1em;
+                min-width: 200px;
+            }
+        }
+    }
+}
+
 
 
 //
@@ -156,6 +236,8 @@
     & + .header-single-banner, & + .header-large-banner, & + .header-primary-banner {
         margin-top: 120px;
     }
+
+    
 }
 
 .carousel-banner,
@@ -164,4 +246,53 @@
 .carousel-banner .owl-item,
 .carousel-banner .slide {
     height: 100%;
+}
+
+
+.nav-full-width-icons {
+    a {
+
+        .logo-assets {
+            display: flex;
+            align-items:center;
+            height: 55px;
+
+            .logo-img {
+                max-width: 100%;
+                width: 80px;
+                height: auto;
+                display: inline-block;
+                transition: all .3s;
+            }
+        
+            .logo-text {
+                padding-left: 5px;
+                .logo-state {
+                    font-size: .9rem; 
+                    font-family: "Asap Condensed", sans-serif;
+                    margin: 0; 
+                    padding: 0;
+                    color: $white;
+                    height: 17px;
+                    line-height: 1em;
+                    transition: all .3s;
+                    display: block;
+                
+                }
+                .logo-dept {
+                    font-size: 1.4rem;
+                    font-family: "Asap Condensed", sans-serif;
+                    font-weight: 700;
+                    margin: 0; 
+                    padding: 0;
+                    color: $white;
+                    height: 24px;
+                    line-height: 1em;
+                   transition: all .3s;
+                   display: block;
+                   
+                }
+            }
+        }
+    }
 }
