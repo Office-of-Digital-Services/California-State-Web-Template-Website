@@ -92,7 +92,7 @@
 
                 <h2>Demonstration </h2>
                 <p>Toggle the buttons to add or remove the appropriate <code>&lt;body&gt;</code> classes and server side inscludes. </p>
-                <button class="togglePrimary btn btn-secondary m-r-sm m-b-sm">Remove Primary Banner </button>
+                <button class="togglePrimary btn btn-secondary m-r-sm m-b-sm">Add Primary Banner </button>
                 <button class="toggleTwoCol btn btn-secondary m-r-sm m-b-sm">Add .two-column</button>
                 <a href="large-header-banner.html" class="toggleBanner btn btn-secondary m-r-sm m-b-sm">See Large Banner</a>
                 <a href="slideshow-header-banner.html" class="btn btn-secondary m-r-sm m-b-sm">See Slideshow Banner</a>
@@ -113,23 +113,20 @@
     <script>
 // -- DEMONSTRATION ONLY! -- //
 $(document).ready(function(){
-	 $(".header-large-banner").addClass("hide");
+	 $(".header-primary-banner").addClass("d-none");
+	$(".togglePrimary").html("Add Primary Banner");
     // Toggle .primary class
     $(".togglePrimary").click(function() {
         var btnLabel = $(this);
         // Toggle body class and button text when clicked
         if ($(this).html() == 'Add Primary Banner') {
             btnLabel.html('Remove Primary Banner');
-            //$("body").addClass("primary");
-            $(".header-primary-banner").removeClass("hide");
-			$(".header-large-banner").addClass("hide");
-			window.scrollTo(0, 0);
+            $(".header-primary-banner").removeClass("d-none");
+		window.scrollTo(0, 0);
         } else {
             btnLabel.html('Add Primary Banner');
-            //$("body").removeClass("primary");
-            $(".header-primary-banner").addClass("hide");
-			$(".header-large-banner").addClass("hide");
-			window.scrollTo(0, 0);
+            $(".header-primary-banner").addClass("d-none");
+		window.scrollTo(0, 0);
         }
     });
 
