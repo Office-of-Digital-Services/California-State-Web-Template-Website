@@ -241,7 +241,7 @@ var plugin = function plugin() {
             } else {
                 accordion_node.setAttribute(CONFIG.ATTR_MULTISELECTABLE, 'true');
             }
-            accordion_node.setAttribute(CONFIG.ATTR_ROLE, CONFIG.ACCORDION_ROLE_TABLIST);
+           // accordion_node.setAttribute(CONFIG.ATTR_ROLE, CONFIG.ACCORDION_ROLE_TABLIST);
             // We already have main navigation id
             // accordion_node.setAttribute('id', iLisible);
             accordion_node.setAttribute(DATA_HASH_ID, HASH_ID);

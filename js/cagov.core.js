@@ -1,5 +1,5 @@
 /**
- * CA State Template v5.5 -  @version v5.5.19 -  1/26/2021 
+ * CA State Template v5.5 -  @version v5.5.19 -  2/19/2021 
   STYLES COMPILED FROM SOURCE (source/js) DO NOT MODIFY */
 /*! modernizr (Custom Build) | MIT *
  * https://modernizr.com/download/?-flexbox-setclasses !*/
@@ -15032,7 +15032,7 @@ var plugin = function plugin() {
             } else {
                 accordion_node.setAttribute(CONFIG.ATTR_MULTISELECTABLE, 'true');
             }
-            accordion_node.setAttribute(CONFIG.ATTR_ROLE, CONFIG.ACCORDION_ROLE_TABLIST);
+           // accordion_node.setAttribute(CONFIG.ATTR_ROLE, CONFIG.ACCORDION_ROLE_TABLIST);
             // We already have main navigation id
             // accordion_node.setAttribute('id', iLisible);
             accordion_node.setAttribute(DATA_HASH_ID, HASH_ID);
