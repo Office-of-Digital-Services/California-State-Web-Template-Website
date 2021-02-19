@@ -15,7 +15,7 @@ $colltabs.each(function (index) {
 
     colltab.attr('id', collid);
     if (collparent) {
-        collparent.attr({ 'role': 'tablist', 'aria-multiselectable': 'true' });
+        collparent.attr({ 'aria-multiselectable': 'true' });
         if (collpanel.hasClass('in')) {
             colltab.attr({ 'aria-controls': colltab.attr('href').substr(1), 'aria-selected': 'true', 'aria-expanded': 'true', 'tabindex': '0' });
             collpanel.attr({ 'role': 'tabpanel', 'tabindex': '0', 'aria-labelledby': collid, 'aria-hidden': 'false' });
