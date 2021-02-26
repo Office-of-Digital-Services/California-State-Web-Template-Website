@@ -1,5 +1,5 @@
 /**
- * CA State Template v5.5 -  @version v5.5.19 -  2/19/2021 
+ * CA State Template v5.5 -  @version v5.5.19 -  2/26/2021 
   STYLES COMPILED FROM SOURCE (source/js) DO NOT MODIFY */
 /*! modernizr (Custom Build) | MIT *
  * https://modernizr.com/download/?-flexbox-setclasses !*/
@@ -14902,7 +14902,7 @@ var plugin = function plugin() {
         ACCORDION_ROLE_TABPANEL: 'tabpanel',
 
         ATTR_ROLE: 'role',
-        ATTR_MULTISELECTABLE: 'aria-multiselectable',
+        ATTR_MULTISELECTABLE: 'data-multiselectable',
         ATTR_EXPANDED: 'aria-expanded',
         ATTR_LABELLEDBY: 'aria-labelledby',
         ATTR_HIDDEN: 'aria-hidden',
@@ -14972,7 +14972,7 @@ var plugin = function plugin() {
                 accordionButton.innerHTML = accordionHeaderText;
                 addClass(accordionButton, className);
                 addClass(accordionButton, prefixClassName + CONFIG.ACCORDION_HEADER_STYLE);
-                setAttributes(accordionButton, (_setAttributes2 = {}, _defineProperty(_setAttributes2, 'id', CONFIG.ACCORDION_PREFIX_IDS + iLisible + CONFIG.ACCORDION_BUTTON_ID + indexHeaderLisible), _defineProperty(_setAttributes2, CONFIG.ATTR_CONTROLS, CONFIG.ACCORDION_PREFIX_IDS + iLisible + CONFIG.ACCORDION_PANEL_ID + indexHeaderLisible), _defineProperty(_setAttributes2, CONFIG.ATTR_SELECTED, 'false'), _defineProperty(_setAttributes2, 'type', 'button'), _defineProperty(_setAttributes2, DATA_HASH_ID, HASH_ID), _setAttributes2));
+                setAttributes(accordionButton, (_setAttributes2 = {}, _defineProperty(_setAttributes2, 'id', CONFIG.ACCORDION_PREFIX_IDS + iLisible + CONFIG.ACCORDION_BUTTON_ID + indexHeaderLisible), _defineProperty(_setAttributes2, CONFIG.ATTR_CONTROLS, CONFIG.ACCORDION_PREFIX_IDS + iLisible + CONFIG.ACCORDION_PANEL_ID + indexHeaderLisible), _defineProperty(_setAttributes2, DATA_HASH_ID, HASH_ID), _setAttributes2));
 
                 // place button
                 header_node.innerHTML = '';
@@ -15044,9 +15044,9 @@ var main = function main() {
                                 });
                             }
 
-                            unSelectHeaders($accordionAllHeaders, CONFIG.ATTR_SELECTED);
+                           // unSelectHeaders($accordionAllHeaders, CONFIG.ATTR_SELECTED);
 
-                            selectHeader(buttonTag, CONFIG.ATTR_SELECTED);
+                           // selectHeader(buttonTag, CONFIG.ATTR_SELECTED);
                         })();
                     }
 
@@ -15089,13 +15089,11 @@ var main = function main() {
                                     var destinationPanel = findById(header_node.getAttribute(CONFIG.ATTR_CONTROLS), hashId);
 
                                     if (header_node !== buttonTag) {
-                                        header_node.setAttribute(CONFIG.ATTR_SELECTED, false);
+                                       // header_node.setAttribute(CONFIG.ATTR_SELECTED, false);
                                         header_node.setAttribute(CONFIG.ATTR_EXPANDED, false);
                                         $(destinationPanel).removeClass("open");
                                        // destinationPanel.setAttribute(CONFIG.ATTR_HIDDEN, true);
-                                    } else {
-                                        header_node.setAttribute(CONFIG.ATTR_SELECTED, true);
-                                    }
+                                    } 
                                 });
                             }
 
@@ -15199,7 +15197,7 @@ document.addEventListener('DOMContentLoaded', onLoad);
 function NavReset() {
     //RESET
     $(".first-level-btn").attr("aria-expanded", "false");
-    $(".first-level-btn").attr("aria-selected", "false");
+   // $(".first-level-btn").attr("aria-selected", "false");
     $(".sub-nav").attr("aria-hidden", "true").removeClass("open");
     $(".second-level-link").attr("tabindex", "-1");
     var $toggleSubNav = $('<div class="ca-gov-icon-caret-right rotate" aria-hidden="true"></div>');
