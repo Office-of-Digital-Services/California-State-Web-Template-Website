@@ -7,8 +7,8 @@
 <html class="no-js" lang="en">
 <!--<![endif]-->
 
-<head>    
-<!--    California State Template
+<head>
+    <!--    California State Template
 
     Based on Twitter Bootstrap
     -->
@@ -21,6 +21,7 @@
 </head>
 
 <!-- possibly body classes are primary and two-column -->
+
 <body>
     <header role="banner" id="header" class="global-header">
         <div id="skip-to-content"><a href="#main-content">Skip to Main Content</a></div>
@@ -48,9 +49,9 @@
         <div class="header-decoration"></div>
     </header>
 
-    <div id="main-content" class="main-content">
-        <div class="section">
-            <main class="main-primary">
+    <div id="main-content">
+        <main class="main-primary">
+            <div class="container p-t-md p-b-lg">
                 <ol class="breadcrumb">
                     <li><a href="../index.html" title="Home page">Home</a></li>
                     <li><a href="index.html" title="Examples landing page">Examples</a></li>
@@ -62,14 +63,24 @@
                 <div class="group">
                     <div class="two-thirds">
                         <h2>Content Carousel</h2>
-                        <p>A content carousel component provides a solution for placing text or other content bove an image. With responsive and dynamic content in mind , there is two element configurations for setting the height of the slide. One which fits to the content, and one which fits to the image.</p>
-                        <p>Our recommendation is use the <strong>content fit</strong> when you have a large amount of text, descriptive content, etc. <em>Note: </em> that in this case your background image should be a generic pattern or design.</p>
-                        <p>On the other hand you should use the <strong>image fit</strong> when you have only a single line or so of text, a simple header or button, html5 video or any content which would take up less space than your image or video.</p>
-                        <p>For any content carousel item, you can also apply the class of <code>backdrop</code> which will apply a slight opaque grey background to the content. This is useful when your images do not have enough contrast with your text.</p>
+                        <p>A content carousel component provides a solution for placing text or other content bove an
+                            image. With responsive and dynamic content in mind , there is two element configurations for
+                            setting the height of the slide. One which fits to the content, and one which fits to the
+                            image.</p>
+                        <p>Our recommendation is use the <strong>content fit</strong> when you have a large amount of
+                            text, descriptive content, etc. <em>Note: </em> that in this case your background image
+                            should be a generic pattern or design.</p>
+                        <p>On the other hand you should use the <strong>image fit</strong> when you have only a single
+                            line or so of text, a simple header or button, html5 video or any content which would take
+                            up less space than your image or video.</p>
+                        <p>For any content carousel item, you can also apply the class of <code>backdrop</code> which
+                            will apply a slight opaque grey background to the content. This is useful when your images
+                            do not have enough contrast with your text.</p>
                     </div>
                     <div class="third">
                         <h2><label for="sample-1">Source Code:</label></h2>
-                        <textarea id="sample-1" class="form-control" rows="10" cols="80"><!--#include virtual="/sample/modules/carousel-content-blank.html" --></textarea>
+                        <textarea id="sample-1" class="form-control" rows="10"
+                            cols="80"><!--#include virtual="/sample/modules/carousel-content-blank.html" --></textarea>
                     </div>
                 </div>
 
@@ -79,21 +90,25 @@
                 <div class="group">
                     <div class="two-thirds">
                         <h2>Content Carousel (content fit)</h2>
-                        <p>To create a content fit, we use a background-image on the outermost element of our item. One could of course not set the background-image and the carousel item will still fit the content,  but you will have to be aware of issues between the carousel container's background color and your content.</p>
-<pre><code><div class="item" style="background-image: url('/url/to/image');">
-    <div class="content-container">
-        <div class="content">
-            <!-- your content -->
-        </div>
-    </div>
-</div>
-</code></pre>
+                        <p>To create a content fit, we use a background-image on the outermost element of our item. One
+                            could of course not set the background-image and the carousel item will still fit the
+                            content, but you will have to be aware of issues between the carousel container's background
+                            color and your content.</p>
+                        <pre><code><div class="item" style="background-image: url('/url/to/image');">
+                         <div class="content-container">
+                             <div class="content">
+                                <! -- your content -->
+                            </div>
+                        </div>
+                        </div>
+                        </code></pre>
 
                         <!--#include virtual="/sample/modules/carousel-content.html" -->
                     </div>
                     <div class="third">
                         <h2><label for="sample-2">Source Code:</label></h2>
-                        <textarea id="sample-2" class="form-control" rows="10" cols="80"><!--#include virtual="/sample/modules/carousel-content.html" --></textarea>
+                        <textarea id="sample-2" class="form-control" rows="10"
+                            cols="80"><!--#include virtual="/sample/modules/carousel-content.html" --></textarea>
                     </div>
                 </div>
 
@@ -103,21 +118,26 @@
                 <div class="group">
                     <div class="two-thirds">
                         <h2>Content Carousel (image fit)</h2>
-                        <p>To create an image fit, we use an image element contained within our item. If the image element is missing the item will simply fallback to being a content fit item. <em>Warning:</em> if the image url is broken or pointing to the wrong location, the element will have 0 height.</p>
-<pre><code><div class="item">
-<img src="/sample/images/gallery/sierra-big.jpg" alt="background" />
-    <div class="content-container">
-        <div class="content">
-            <!-- your content -->
-        </div>
-     </div>
-</div>
-</code></pre>
+                        <p>To create an image fit, we use an image element contained within our item. If the image
+                            element is missing the item will simply fallback to being a content fit item.
+                            <em>Warning:</em> if the image url is broken or pointing to the wrong location, the element
+                            will have 0 height.
+                        </p>
+                        <pre><code><div class="item">
+                        <img src="/sample/images/gallery/sierra-big.jpg" alt="background" />
+                            <div class="content-container">
+                                <div class="content">
+                                    <!-- your content -->
+                                </div>
+                            </div>
+                        </div>
+                        </code></pre>
                         <!--#include virtual="/sample/modules/carousel-content-fit-image.html" -->
                     </div>
                     <div class="third">
                         <h2><label for="sample-3">Source Code:</label></h2>
-                        <textarea id="sample-3" class="form-control" rows="10" cols="80"><!--#include virtual="/sample/modules/carousel-content-fit-image.html" --></textarea>
+                        <textarea id="sample-3" class="form-control" rows="10"
+                            cols="80"><!--#include virtual="/sample/modules/carousel-content-fit-image.html" --></textarea>
                     </div>
                 </div>
 
@@ -126,7 +146,8 @@
                 <h2>Video Carousel</h2>
                 <!--#include virtual="/sample/modules/carousel-video.html" -->
                 <h2><label for="sample-4">Source Code:</label></h2>
-                <textarea id="sample-4" class="form-control" rows="10" cols="80"><!--#include virtual="/sample/modules/carousel-video.html" --></textarea>
+                <textarea id="sample-4" class="form-control" rows="10"
+                    cols="80"><!--#include virtual="/sample/modules/carousel-video.html" --></textarea>
 
                 <hr>
 
@@ -137,7 +158,8 @@
                     <!--#include virtual="/sample/modules/slideshow-banner.html" -->
                 </div>
                 <h2><label for="sample-5">Source Code:</label></h2>
-                <textarea id="sample-5" class="form-control" rows="10" cols="80"><!--#include virtual="/sample/modules/slideshow-banner.html" --></textarea>
+                <textarea id="sample-5" class="form-control" rows="10"
+                    cols="80"><!--#include virtual="/sample/modules/slideshow-banner.html" --></textarea>
 
 
                 <hr />
@@ -145,7 +167,10 @@
 
 
                 <h2>Media Carousel</h2>
-                <p>The Media Carousel is often placed within a card going inside <code>&lt;div class="card-body"&gt;</code>. It can also simply be placed by itself. It will scroll a set of items contained in a container with class <code>.carousel-media</code></p>
+                <p>The Media Carousel is often placed within a card going inside
+                    <code>&lt;div class="card-body"&gt;</code>. It can also simply be placed by itself. It will scroll a
+                    set of items contained in a container with class <code>.carousel-media</code>
+                </p>
                 <h3>Media Carousel in Card</h3>
                 <div class="card card-overstated">
                     <div class="card-heading">
@@ -162,27 +187,36 @@
                 <h3>Media Carousel without Card</h3>
                 <!--#include virtual="/sample/modules/carousel-media.html" -->
                 <h2><label for="sample-6">Source Code:</label></h2>
-                <textarea id="sample-6" class="form-control" rows="10" cols="80"><!--#include virtual="/sample/modules/carousel-media.html" --></textarea>
+                <textarea id="sample-6" class="form-control" rows="10"
+                    cols="80"><!--#include virtual="/sample/modules/carousel-media.html" --></textarea>
 
                 <hr>
                 <h1>Link Carousel</h1>
-                <p>The Link Carousel scrolls through a set of image links. It will scroll a set of items contained in a container with class <code>.carousel-link</code>.</p>
+                <p>The Link Carousel scrolls through a set of image links. It will scroll a set of items contained in a
+                    container with class <code>.carousel-link</code>.</p>
                 <h2>Link Icon Carousel Example</h2>
                 <!--#include virtual="/sample/modules/carousel-link.html" -->
                 <h2><label for="sample-7">Source Code:</label></h2>
-                <textarea id="sample-7" class="form-control" rows="10" cols="80"><!--#include virtual="/sample/modules/carousel-link.html" --></textarea>
-            </main>
+                <textarea id="sample-7" class="form-control" rows="10"
+                    cols="80"><!--#include virtual="/sample/modules/carousel-link.html" --></textarea>
 
-            <div class="main-secondary" role="complementary">
-                <h1>Social Media Slider</h1>
-                <p>The Social Media Slider displays one item at a time. It will slide a set of items contained in a container with class <code>.carousel-slider</code>.</p>
-                <h2>Social Media Slider Example</h2>
-                <!--#include virtual="/sample/modules/carousel-slider.html" -->
-                <h2><label for="sample-8">Source Code:</label></h2>
-                <textarea id="sample-8" class="form-control" rows="10" cols="80"><!--#include virtual="/sample/modules/carousel-slider.html" --></textarea>
+
+                        <h1>Social Media Slider</h1>
+                        <p>The Social Media Slider displays one item at a time. It will slide a set of items contained in a
+                            container with class <code>.carousel-slider</code>.</p>
+                        <h2>Social Media Slider Example</h2>
+                        <!--#include virtual="/sample/modules/carousel-slider.html" -->
+                        <h2><label for="sample-8">Source Code:</label></h2>
+                        <textarea id="sample-8" class="form-control" rows="10"
+                            cols="80"><!--#include virtual="/sample/modules/carousel-slider.html" --></textarea>
+                  
+
             </div>
-        </div>
+        </main>
+
+        
     </div>
+
 
     <!--#include virtual="/ssi/global-footer.html" -->
     <!--#include virtual="/ssi/scripts.html" -->

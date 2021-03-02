@@ -24,14 +24,7 @@
 <!-- possible body classes are "primary" and "two-column" -->
 <body class="primary">
 
-<script>
-    //makes the browser wait to display the page until it's fully loaded.
-    // Use it if page contains primary or slideshow banner to make sure page content loads smouthly
-    $('body').css('opacity', 0);
-    $(window).load(function () {
-        $("body").fadeTo("slow", 1);
-    });
-</script>
+
 
 <header role="banner" id="header" class="global-header fixed">
     <div id="skip-to-content"><a href="#main-content">Skip to Main Content</a></div>
@@ -69,7 +62,7 @@
 
 
 
-<div id="main-content" class="main-content">
+
 
     <section aria-label="Hero banner">
         <h1 class="sr-only">California State Website Template (Version 5.5)</h1>
@@ -77,6 +70,8 @@
         <!--#include virtual="/ssi/header-single-banner.html" -->
     </section>
 
+
+<div id="main-content">
     <main class="main-primary">
         <!-- Begin Main Content -->
         <!--#include virtual="/ssi/section-info-blocks.html" -->
