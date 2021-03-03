@@ -1,5 +1,5 @@
 /**
- * CA State Template v5.5 -  @version v5.5.19 -  2/26/2021 
+ * CA State Template v5.5 -  @version v5.5.20 -  3/3/2021 
   STYLES COMPILED FROM SOURCE (source/js) DO NOT MODIFY */
 /*! modernizr (Custom Build) | MIT *
  * https://modernizr.com/download/?-flexbox-setclasses !*/
@@ -16721,19 +16721,30 @@ $(document).ready(function () {
                 });
 
                 // Add pause and play buttons
-                var owlBannerControl = $('<div class="banner-play-pause"><div class="banner-control"><button class="play ca-gov-icon-carousel-play" aria-hidden="true"></button><button class="pause ca-gov-icon-carousel-pause" aria-hidden="true"></span></div></div>');
+                var owlBannerControl = $('<div class="banner-play-pause"><div class="banner-control"><button class="play ca-gov-icon-carousel-play" aria-hidden="true"  tabindex="-1" aria-label="play slideshow"></button><button class="pause ca-gov-icon-carousel-pause" aria-hidden="false" tabindex="0" aria-label="pause slideshow"></span></div></div>');
                 $this.append(owlBannerControl);
                 var playControl = owlBannerControl.find('.play').hide();
                 var pauseControl = owlBannerControl.find('.pause');
                 playControl.on('click', function () {
-                    $(this).hide(); $(this).parent().removeClass('active');
-                    pauseControl.show(); $this.trigger('play.owl.autoplay', [settings.delay]);
+                    $(this).hide(); 
+                    $(this).parent().removeClass('active');
+                    $(this).attr("aria-hidden", "true");
+                    $(this).attr("tabindex", "-1");
+                    pauseControl.show(); 
+                    pauseControl.attr("aria-hidden", "false");
+                    pauseControl.attr("tabindex", "0");
+                    $this.trigger('play.owl.autoplay', [settings.delay]);
                     $this.owlCarousel('next'); // Manually play next since autoplay waits for delay
                 });
 
                 pauseControl.on('click', function () {
                     $(this).hide();
-                    $(this).parent().addClass('active'); playControl.show();
+                    $(this).parent().addClass('active'); 
+                    $(this).attr("aria-hidden", "true");
+                    $(this).attr("tabindex", "-1");
+                    playControl.show();
+                    playControl.attr("aria-hidden", "false");
+                    playControl.attr("tabindex", "0");
                     $this.trigger('stop.owl.autoplay');
                 });
 
