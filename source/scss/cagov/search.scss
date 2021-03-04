@@ -115,7 +115,7 @@ $search-input-border-width: 3px;
             // good size for the current height
             // NOTE: if changing input size this will need to be adjusted
             @include font-size(1.5);
-            line-height: 15px;
+            line-height: 0.9375rem;
 
             // HACK: ios needed button padding explicity removed tp prevent button from expanding
             padding: 0;
@@ -129,7 +129,7 @@ $search-input-border-width: 3px;
                 // good size for the current height
                 // NOTE: if changing input size this will need to be adjusted
                 @include font-size(1.87);
-                line-height: 30px;
+                line-height: 1.875rem;
             }
 
             // 991px
@@ -153,7 +153,7 @@ $search-input-border-width: 3px;
         @include font-size(3);
         position: absolute;
         right: -10px;
-        line-height: 44px;
+        line-height: 2.75rem;
         cursor: pointer;
         color: $gray-light;
 
@@ -264,8 +264,8 @@ $search-input-border-width: 3px;
                 -webkit-appearance: none;
 
                 > span {
-                    font-size: 45px;
-                    line-height: 45px;
+                    font-size: 2.8125rem;
+                    line-height: 2.8125rem;
                 }
             }
         }
@@ -368,7 +368,7 @@ $search-input-border-width: 3px;
             height: 100%;
             float: left;
             @include font-size(1.5);
-            line-height: 15px;
+            line-height: 0.9375rem;
             padding: 0; // ios needed button padding explicity removed tp prevent button from expanding
             -webkit-appearance: none; // Removes ios default appearance
 
@@ -377,7 +377,7 @@ $search-input-border-width: 3px;
                 position: relative;
                 top: 0;
                 @include font-size(1.87);
-                line-height: 30px;
+                line-height: 1.875rem;
             }
             // 991px
             @media (max-width: $screen-sm-max) {
@@ -390,7 +390,7 @@ $search-input-border-width: 3px;
 
     input, button {
         height: $search-input-height;
-        line-height: $search-input-height;
+        line-height: 2.5rem;
     }
 
     button {
