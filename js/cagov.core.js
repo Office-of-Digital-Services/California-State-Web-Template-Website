@@ -14054,9 +14054,9 @@ https://github.com/imakewebthings/waypoints/blog/master/licenses.txt
                     left: 0,
                     textAlign: "center",
                     width: "100%",
-                    fontSize: .7 * this._radius + "px",
+                    fontSize: .7 * this._radius/16 + "rem",
                     height: this._svgSize + "px",
-                    lineHeight: this._svgSize + "px"
+                    lineHeight: this._svgSize/16 + "rem"
                 };
                 for (var b in a) this._textContainer.style[b] = a[b];
             }
