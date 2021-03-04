@@ -113,8 +113,8 @@
 
         div.caption {
             color: #555;
-            font-size: 12px;
-            line-height: 16px;
+            font-size: .75rem;
+            line-height: 1rem;
             margin: 0 0 0 10px;
             text-align: center;
         }
@@ -150,13 +150,16 @@
 
     </header>
     <div id="main-content" class="main-content">
-        <div class="container">
-            <ol class="breadcrumb">
-                <li><a href="../index.html" title="Home page">Home</a></li>
-                <li><a href="index.html" title="Examples landing page">Examples</a></li>
-                <li class="active">Santa Cruz</li>
-            </ol>
-        </div>
+        <section title="breadcrumbs">
+            <div class="container">
+                <ol class="breadcrumb">
+                    <li><a href="../index.html" title="Home page">Home</a></li>
+                    <li><a href="index.html" title="Examples landing page">Examples</a></li>
+                    <li class="active">Santa Cruz</li>
+                </ol>
+            </div>
+        </section>
+        
         <main class="main-primary">
             <div class="section">
                 <!-- Content Demonstration -->
@@ -171,7 +174,7 @@
                                     <div class="color" style="background-color:#f5811b;"></div>
                                 </div>
                             </div>
-                            <div class="caption"><h4>.color-highlight<br />@color-p1</h4>HEX: #f5811b<br>RGB: 245,129,27</div>
+                            <div class="caption"><h3 class="h4">.color-highlight<br />@color-p1</h3>HEX: #f5811b<br>RGB: 245,129,27</div>
                         </div>
                         <div class="quarter">
                             <div class="outer">
@@ -179,7 +182,7 @@
                                     <div class="color" style="background-color:#0f4f94;"></div>
                                 </div>
                             </div>
-                            <div class="caption"><h4>.color-primary<br />@color-p2</h4>HEX: #0f4f94<br />RGB: 15,79,148</div>
+                            <div class="caption"><h3 class="h4">.color-primary<br />@color-p2</h3>HEX: #0f4f94<br />RGB: 15,79,148</div>
                         </div>
 
                         <div class="quarter">
@@ -188,7 +191,7 @@
                                     <div class="color" style="background-color:#2c2c4f;"></div>
                                 </div>
                             </div>
-                            <div class="caption"><h4>.color-standout<br />@color-p3</h4>HEX: #2c2c4f<br />RGB: 44,44,79</div>
+                            <div class="caption"><h3 class="h4">.color-standout<br />@color-p3</h3>HEX: #2c2c4f<br />RGB: 44,44,79</div>
                         </div>
                         <div class="quarter">
                             <div class="outer">
@@ -196,14 +199,14 @@
                                     <div class="color" style="background-color:#E1ECF7;"></div>
                                 </div>
                             </div>
-                            <div class="caption"><h4>.color-s1<br />@color-s1</h4>HEX: #E1ECF7<br />RGB: 225,236,247</div>
+                            <div class="caption"><h3 class="h4">.color-s1<br />@color-s1</h3>HEX: #E1ECF7<br />RGB: 225,236,247</div>
                         </div>
                     </div>
 
 
                     <div class="card card-understated">
                         <div class="card-heading">
-                            <h4><span class="ca-gov-icon-info"></span> Theme Colors Customization</h4>
+                            <h3 class="h4"><span class="ca-gov-icon-info"></span> Theme Colors Customization</h3>
                         </div>
                         <div class="card-body">
                             <p>
@@ -291,7 +294,7 @@
                     <div class="half">
                         <!-- Article -->
                         <h3>News block</h3>
-                        <article class="block-hover">
+                        <article class="block-hover section-standout">
                             <figure class="bg-overlay">
                                 <img class="img-fluid w-100 block-hover_zoom" src="/sample/images/service-tiles/service-paid-family-leave.jpg" alt="Image Description">
                             </figure>

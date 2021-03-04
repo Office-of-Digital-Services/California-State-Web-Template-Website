@@ -1,5 +1,5 @@
 /**
- * CA State Template v5.5 -  @version v5.5.19 -  1/26/2021 
+ * CA State Template v5.5 -  @version v5.5.20 -  3/4/2021 
   STYLES COMPILED FROM SOURCE (source/js) DO NOT MODIFY */
 /*! modernizr (Custom Build) | MIT *
  * https://modernizr.com/download/?-flexbox-setclasses !*/
@@ -7083,93 +7083,6 @@ var removeMultiValAttributes = function (el, attr, val) {
 // Collapse Extension
 // ===============================
 
-var $colltabs = $('[data-toggle="collapse"]');
-$colltabs.attr({ 'role': 'tab', 'aria-selected': 'false', 'aria-expanded': 'false' });
-$colltabs.each(function (index) {
-    var colltab = $(this)
-        , collpanel = colltab.attr('data-target') ? $(colltab.attr('data-target')) : $(colltab.attr('href'))
-        , parent = colltab.attr('data-parent')
-        , collparent = parent && $(parent)
-        , collid = colltab.attr('id') || uniqueId('ui-collapse');
-
-    $(collparent).find('div:not(.collapse,.panel-body), h4').attr('role', 'presentation');
-
-    colltab.attr('id', collid);
-    if (collparent) {
-        collparent.attr({ 'role': 'tablist', 'aria-multiselectable': 'true' });
-        if (collpanel.hasClass('in')) {
-            colltab.attr({ 'aria-controls': colltab.attr('href').substr(1), 'aria-selected': 'true', 'aria-expanded': 'true', 'tabindex': '0' });
-            collpanel.attr({ 'role': 'tabpanel', 'tabindex': '0', 'aria-labelledby': collid, 'aria-hidden': 'false' });
-        } else {
-            colltab.attr({ 'aria-controls': colltab.attr('href').substr(1), 'tabindex': '-1' });
-            collpanel.attr({ 'role': 'tabpanel', 'tabindex': '-1', 'aria-labelledby': collid, 'aria-hidden': 'true' });
-        }
-    }
-});
-
-var collToggle = $.fn.collapse.Constructor.prototype.toggle;
-$.fn.collapse.Constructor.prototype.toggle = function () {
-    var prevTab = this.$parent && this.$parent.find('[aria-expanded="true"]'), href;
-
-    if (prevTab) {
-        var prevPanel = prevTab.attr('data-target') || (href = prevTab.attr('href')) && href.replace(/.*(?=#[^\s]+$)/, '')
-            , $prevPanel = $(prevPanel)
-            , $curPanel = this.$element
-            , par = this.$parent
-            , curTab;
-
-        if (this.$parent) curTab = this.$parent.find('[data-toggle=collapse][href="#' + this.$element.attr('id') + '"]');
-
-        collToggle.apply(this, arguments);
-
-        if ($.support.transition) {
-            this.$element.one($.support.transition.end, function () {
-
-                prevTab.attr({ 'aria-selected': 'false', 'aria-expanded': 'false', 'tabIndex': '-1' });
-                $prevPanel.attr({ 'aria-hidden': 'true', 'tabIndex': '-1' });
-
-                curTab.attr({ 'aria-selected': 'true', 'aria-expanded': 'true', 'tabIndex': '0' });
-
-                if ($curPanel.hasClass('in')) {
-                    $curPanel.attr({ 'aria-hidden': 'false', 'tabIndex': '0' });
-                } else {
-                    curTab.attr({ 'aria-selected': 'false', 'aria-expanded': 'false' });
-                    $curPanel.attr({ 'aria-hidden': 'true', 'tabIndex': '-1' });
-                }
-            });
-        }
-    } else {
-        collToggle.apply(this, arguments);
-    }
-};
-
-$.fn.collapse.Constructor.prototype.keydown = function (e) {
-    var $this = $(this)
-        , $items
-        , $tablist = $this.closest('div[role=tablist] ')
-        , index
-        , k = e.which || e.keyCode;
-
-    $this = $(this);
-    if (!/(32|37|38|39|40)/.test(k)) return;
-    if (k === 32) $this.click();
-
-    $items = $tablist.find('[role=tab]');
-    index = $items.index($items.filter(':focus'));
-
-    if (k === 38 || k === 37) index--;                                        // up & left
-    if (k === 39 || k === 40) index++;                        // down & right
-    if (index < 0) index = $items.length - 1;
-    if (index === $items.length) index = 0;
-
-    $items.eq(index).focus();
-
-    e.preventDefault();
-    e.stopPropagation();
-
-};
-
-$(document).on('keydown.collapse.data-api', '[data-toggle="collapse"]', $.fn.collapse.Constructor.prototype.keydown);
 
 // DROPDOWN Extension
 // ===============================
@@ -10319,7 +10232,7 @@ $(document).ready(function () {
             '<span aria-label="' + 'Next' + '">&#x203a;</span>'
         ],
         navSpeed: false,
-        navElement: 'button type="button" role="presentation"',
+        navElement: 'button type="button"',
         navContainer: false,
         navContainerClass: 'owl-nav',
         navClass: [
@@ -14141,9 +14054,9 @@ https://github.com/imakewebthings/waypoints/blog/master/licenses.txt
                     left: 0,
                     textAlign: "center",
                     width: "100%",
-                    fontSize: .7 * this._radius + "px",
+                    fontSize: .7 * this._radius/16 + "rem",
                     height: this._svgSize + "px",
-                    lineHeight: this._svgSize + "px"
+                    lineHeight: this._svgSize/16 + "rem"
                 };
                 for (var b in a) this._textContainer.style[b] = a[b];
             }
@@ -14989,7 +14902,7 @@ var plugin = function plugin() {
         ACCORDION_ROLE_TABPANEL: 'tabpanel',
 
         ATTR_ROLE: 'role',
-        ATTR_MULTISELECTABLE: 'aria-multiselectable',
+        ATTR_MULTISELECTABLE: 'data-multiselectable',
         ATTR_EXPANDED: 'aria-expanded',
         ATTR_LABELLEDBY: 'aria-labelledby',
         ATTR_HIDDEN: 'aria-hidden',
@@ -15032,7 +14945,7 @@ var plugin = function plugin() {
             } else {
                 accordion_node.setAttribute(CONFIG.ATTR_MULTISELECTABLE, 'true');
             }
-            accordion_node.setAttribute(CONFIG.ATTR_ROLE, CONFIG.ACCORDION_ROLE_TABLIST);
+           // accordion_node.setAttribute(CONFIG.ATTR_ROLE, CONFIG.ACCORDION_ROLE_TABLIST);
             // We already have main navigation id
             // accordion_node.setAttribute('id', iLisible);
             accordion_node.setAttribute(DATA_HASH_ID, HASH_ID);
@@ -15059,7 +14972,7 @@ var plugin = function plugin() {
                 accordionButton.innerHTML = accordionHeaderText;
                 addClass(accordionButton, className);
                 addClass(accordionButton, prefixClassName + CONFIG.ACCORDION_HEADER_STYLE);
-                setAttributes(accordionButton, (_setAttributes2 = {}, _defineProperty(_setAttributes2, CONFIG.ATTR_ROLE, CONFIG.ACCORDION_ROLE_TAB), _defineProperty(_setAttributes2, 'id', CONFIG.ACCORDION_PREFIX_IDS + iLisible + CONFIG.ACCORDION_BUTTON_ID + indexHeaderLisible), _defineProperty(_setAttributes2, CONFIG.ATTR_CONTROLS, CONFIG.ACCORDION_PREFIX_IDS + iLisible + CONFIG.ACCORDION_PANEL_ID + indexHeaderLisible), _defineProperty(_setAttributes2, CONFIG.ATTR_SELECTED, 'false'), _defineProperty(_setAttributes2, 'type', 'button'), _defineProperty(_setAttributes2, DATA_HASH_ID, HASH_ID), _setAttributes2));
+                setAttributes(accordionButton, (_setAttributes2 = {}, _defineProperty(_setAttributes2, 'id', CONFIG.ACCORDION_PREFIX_IDS + iLisible + CONFIG.ACCORDION_BUTTON_ID + indexHeaderLisible), _defineProperty(_setAttributes2, CONFIG.ATTR_CONTROLS, CONFIG.ACCORDION_PREFIX_IDS + iLisible + CONFIG.ACCORDION_PANEL_ID + indexHeaderLisible), _defineProperty(_setAttributes2, DATA_HASH_ID, HASH_ID), _setAttributes2));
 
                 // place button
                 header_node.innerHTML = '';
@@ -15131,9 +15044,9 @@ var main = function main() {
                                 });
                             }
 
-                            unSelectHeaders($accordionAllHeaders, CONFIG.ATTR_SELECTED);
+                           // unSelectHeaders($accordionAllHeaders, CONFIG.ATTR_SELECTED);
 
-                            selectHeader(buttonTag, CONFIG.ATTR_SELECTED);
+                           // selectHeader(buttonTag, CONFIG.ATTR_SELECTED);
                         })();
                     }
 
@@ -15176,13 +15089,11 @@ var main = function main() {
                                     var destinationPanel = findById(header_node.getAttribute(CONFIG.ATTR_CONTROLS), hashId);
 
                                     if (header_node !== buttonTag) {
-                                        header_node.setAttribute(CONFIG.ATTR_SELECTED, false);
+                                       // header_node.setAttribute(CONFIG.ATTR_SELECTED, false);
                                         header_node.setAttribute(CONFIG.ATTR_EXPANDED, false);
                                         $(destinationPanel).removeClass("open");
                                        // destinationPanel.setAttribute(CONFIG.ATTR_HIDDEN, true);
-                                    } else {
-                                        header_node.setAttribute(CONFIG.ATTR_SELECTED, true);
-                                    }
+                                    } 
                                 });
                             }
 
@@ -15286,7 +15197,7 @@ document.addEventListener('DOMContentLoaded', onLoad);
 function NavReset() {
     //RESET
     $(".first-level-btn").attr("aria-expanded", "false");
-    $(".first-level-btn").attr("aria-selected", "false");
+   // $(".first-level-btn").attr("aria-selected", "false");
     $(".sub-nav").attr("aria-hidden", "true").removeClass("open");
     $(".second-level-link").attr("tabindex", "-1");
     var $toggleSubNav = $('<div class="ca-gov-icon-caret-right rotate" aria-hidden="true"></div>');
@@ -16810,19 +16721,30 @@ $(document).ready(function () {
                 });
 
                 // Add pause and play buttons
-                var owlBannerControl = $('<div class="banner-play-pause"><div class="banner-control"><button class="play ca-gov-icon-carousel-play" aria-hidden="true"></button><button class="pause ca-gov-icon-carousel-pause" aria-hidden="true"></span></div></div>');
+                var owlBannerControl = $('<div class="banner-play-pause"><div class="banner-control"><button class="play ca-gov-icon-carousel-play" aria-hidden="true"  tabindex="-1" aria-label="play slideshow"></button><button class="pause ca-gov-icon-carousel-pause" aria-hidden="false" tabindex="0" aria-label="pause slideshow"></span></div></div>');
                 $this.append(owlBannerControl);
                 var playControl = owlBannerControl.find('.play').hide();
                 var pauseControl = owlBannerControl.find('.pause');
                 playControl.on('click', function () {
-                    $(this).hide(); $(this).parent().removeClass('active');
-                    pauseControl.show(); $this.trigger('play.owl.autoplay', [settings.delay]);
+                    $(this).hide(); 
+                    $(this).parent().removeClass('active');
+                    $(this).attr("aria-hidden", "true");
+                    $(this).attr("tabindex", "-1");
+                    pauseControl.show(); 
+                    pauseControl.attr("aria-hidden", "false");
+                    pauseControl.attr("tabindex", "0");
+                    $this.trigger('play.owl.autoplay', [settings.delay]);
                     $this.owlCarousel('next'); // Manually play next since autoplay waits for delay
                 });
 
                 pauseControl.on('click', function () {
                     $(this).hide();
-                    $(this).parent().addClass('active'); playControl.show();
+                    $(this).parent().addClass('active'); 
+                    $(this).attr("aria-hidden", "true");
+                    $(this).attr("tabindex", "-1");
+                    playControl.show();
+                    playControl.attr("aria-hidden", "false");
+                    playControl.attr("tabindex", "0");
                     $this.trigger('stop.owl.autoplay');
                 });
 
@@ -16946,6 +16868,9 @@ function initContent() {
             }
         });
 
+
+        $(".owl-prev").attr("aria-label", "Previous slide");
+        $(".owl-next").attr("aria-label", "Next slide");
         // Add text to the dots 
         var dot = $('.owl-dots .owl-dot');
         dot.each(function () {
