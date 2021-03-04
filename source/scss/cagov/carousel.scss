@@ -633,10 +633,16 @@
 
 .owl-carousel .owl-nav button.owl-prev:focus {
     margin-left: 3em;
+    @include outline(2px);
 }
 
 .owl-carousel .owl-nav button.owl-next:focus {
     margin-right: 3em;
+    @include outline(2px);
+}
+
+button.owl-dot:focus {
+    @include outline(2px);
 }
 
 .owl-carousel:hover .owl-nav button.owl-prev:focus {

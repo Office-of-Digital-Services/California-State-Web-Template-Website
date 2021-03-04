@@ -2929,7 +2929,7 @@
             '<span aria-label="' + 'Next' + '">&#x203a;</span>'
         ],
         navSpeed: false,
-        navElement: 'button type="button" role="presentation"',
+        navElement: 'button type="button"',
         navContainer: false,
         navContainerClass: 'owl-nav',
         navClass: [
