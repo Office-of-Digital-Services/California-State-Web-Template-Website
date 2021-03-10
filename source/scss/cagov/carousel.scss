@@ -13,7 +13,7 @@
 .carousel .owl-nav [class*='owl-'] {
     background: rgba(0, 0, 0, 0.4) !important;
     color: #fff !important;
-    font-size: 20px !important;
+    font-size: 1.25rem !important;
     height: 35px;
     width: 35px;
     border-radius: 35px;
@@ -21,7 +21,7 @@
     cursor: pointer;
 
     > span {
-        line-height: 35px; // line-height equal to size of nav circle for centering
+        line-height: 2.1875rem; // line-height equal to size of nav circle for centering
     }
 }
 
@@ -279,8 +279,8 @@
 
     .owl-video-play-icon {
         span {
-            font-size: 80px;
-            line-height: 80px;
+            font-size: 5rem;
+            line-height: 5rem;
             color: white;
             opacity: 0;
             background-color: $gray-darker;
@@ -633,10 +633,16 @@
 
 .owl-carousel .owl-nav button.owl-prev:focus {
     margin-left: 3em;
+    @include outline(2px);
 }
 
 .owl-carousel .owl-nav button.owl-next:focus {
     margin-right: 3em;
+    @include outline(2px);
+}
+
+button.owl-dot:focus {
+    @include outline(2px);
 }
 
 .owl-carousel:hover .owl-nav button.owl-prev:focus {
@@ -722,3 +728,6 @@
         }
     }
 }
+
+// A11y fix
+.owl-height {overflow: auto !important;}

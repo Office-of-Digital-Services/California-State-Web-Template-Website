@@ -48,7 +48,9 @@ $search-input-border-width: 3px;
 
     // on our larger screens our whole header is one big gigantic position absolute thing
     // so we need to of course respect this and add to the insanity
-    @media (min-width: $screen-sm-min) {
+    
+    // 992px
+    @media (min-width: $screen-md-min) {
         position: absolute;
         top: $search-absolute-height;
     }
@@ -113,7 +115,7 @@ $search-input-border-width: 3px;
             // good size for the current height
             // NOTE: if changing input size this will need to be adjusted
             @include font-size(1.5);
-            line-height: 15px;
+            line-height: 0.9375rem;
 
             // HACK: ios needed button padding explicity removed tp prevent button from expanding
             padding: 0;
@@ -127,10 +129,11 @@ $search-input-border-width: 3px;
                 // good size for the current height
                 // NOTE: if changing input size this will need to be adjusted
                 @include font-size(1.87);
-                line-height: 30px;
+                line-height: 1.875rem;
             }
 
-            @media (max-width: $screen-xs-max) {
+            // 991px
+            @media (max-width: $screen-sm-max) {
                 @include font-size(2);
                 line-height: 1em;
                 padding-top: 0;
@@ -150,11 +153,12 @@ $search-input-border-width: 3px;
         @include font-size(3);
         position: absolute;
         right: -10px;
-        line-height: 44px;
+        line-height: 2.75rem;
         cursor: pointer;
         color: $gray-light;
 
-        @media (max-width: $screen-xs-max) {
+        // 991px
+        @media (max-width: $screen-sm-max) {
             right:0;
             display: none;
         }
@@ -170,14 +174,15 @@ $search-input-border-width: 3px;
     padding: 20px 15%;
     //border-bottom-width: 2px;
 
-    /* Active on mobile */
-    @media (max-width: $screen-xs-max) {
+    /* Active on mobile // 991px // */
+    @media (max-width: $screen-sm-max) {
         padding: 10px;
     }
 
     .close-search {
-      display: block; // beta 5.0 addition
-      @media (max-width: $screen-xs-max) {
+      display: block; // beta 5.0 addition 
+      // 991px
+      @media (max-width: $screen-sm-max) {
         display: none;
       }
     }
@@ -200,7 +205,9 @@ $search-input-border-width: 3px;
 
 // TODO: Refactor this into using an applied class of active instead of expanded
 /* Large Search Animation and Styling */
-@media (min-width: $screen-sm-min) {
+
+//992px
+@media (min-width: $screen-md-min) {
 
     .featured-search {
         display: block;
@@ -257,8 +264,8 @@ $search-input-border-width: 3px;
                 -webkit-appearance: none;
 
                 > span {
-                    font-size: 45px;
-                    line-height: 45px;
+                    font-size: 2.8125rem;
+                    line-height: 2.8125rem;
                 }
             }
         }
@@ -270,7 +277,8 @@ $search-input-border-width: 3px;
         visibility:visible;
         opacity:1;
 
-        @media (min-width: $screen-sm-min) {
+        // 992px
+        @media (min-width: $screen-md-min) {
             position: absolute;
         }
  -webkit-transition: top $search-ft, left $search-st $search-ft, width  $search-st $search-ft, background-color $search-ft + $search-st , border $search-ft, padding $search-st $search-ft;
@@ -306,7 +314,8 @@ $search-input-border-width: 3px;
 }
 
 .search-container.featured-search {
-      @media (max-width: $screen-xs-max) {
+    // 991px
+      @media (max-width: $screen-sm-max) {
         padding-right: 10px;
         padding-left: 10px;
     }
@@ -359,7 +368,7 @@ $search-input-border-width: 3px;
             height: 100%;
             float: left;
             @include font-size(1.5);
-            line-height: 15px;
+            line-height: 0.9375rem;
             padding: 0; // ios needed button padding explicity removed tp prevent button from expanding
             -webkit-appearance: none; // Removes ios default appearance
 
@@ -368,10 +377,10 @@ $search-input-border-width: 3px;
                 position: relative;
                 top: 0;
                 @include font-size(1.87);
-                line-height: 30px;
+                line-height: 1.875rem;
             }
-
-            @media (max-width: $screen-xs-max) {
+            // 991px
+            @media (max-width: $screen-sm-max) {
                 @include font-size(2);
                 line-height: 1em;
                 padding-top: 0;
@@ -381,7 +390,7 @@ $search-input-border-width: 3px;
 
     input, button {
         height: $search-input-height;
-        line-height: $search-input-height;
+        line-height: 2.5rem;
     }
 
     button {
@@ -407,7 +416,7 @@ $search-input-border-width: 3px;
         padding-right: 80px;
         
         /* Mobile Search button padding */
-        @media (max-width: $screen-xs-max) {
+        @media (max-width: $screen-sm-max) {
           margin-right: -48px;      // Larger by 4 to account for border
           padding-right: 44px;
         }
@@ -454,7 +463,7 @@ $search-input-border-width: 3px;
             text-overflow: ellipsis;
         }
         /* Active on mobile */
-        @media (max-width: $screen-xs-max) {
+        @media (max-width: $screen-sm-max) {
             width: 75px;
             margin-left: 5px;
 
@@ -497,8 +506,8 @@ $search-input-border-width: 3px;
     }
 }
 
-
-@media (min-width: $screen-sm-min) {
+// 992px
+@media (min-width: $screen-md-min) {
   .fixed.compact .search-container {
     opacity: 0;
   }
@@ -510,7 +519,8 @@ $search-input-border-width: 3px;
 }
 
 /*full width navigation search container*/
-@media (min-width: $screen-sm-min) {
+// 992px
+@media (min-width: $screen-md-min) {
     .nav-full-width + .search-container, .nav-full-width + .featured-search.active {
         top: 35px;
     }
@@ -520,7 +530,8 @@ $search-input-border-width: 3px;
         top: 35px;
     }
 }
-@media (min-width: $screen-sm-min) and (max-width: $screen-md-min) {
+// from 992px to 1140 // 
+@media (min-width: $screen-md-min) and (max-width: $screen-lg-min) {
     .nav-full-width + .search-container, .nav-full-width + .featured-search.active {
         top: 32px;
     }
@@ -576,8 +587,8 @@ button.gsc-search-button {
             .ca-gov-icon-close-mark {
                 color: $gray-lightest;
             }
-
-            @media (max-width: $screen-xs-max) {
+            // 991px
+            @media (max-width: $screen-sm-max) {
                 display: block;
             }
         }
@@ -778,7 +789,7 @@ GOOGLE CUSTOM SEARCH CUSTOMIZATION OVERRIDES
 
 
 /* Full Width navigation search */
-@media (min-width: 768px) {
+@media (min-width: 992px) {
     .full-width-nav .featured-search {
         top: -65px;
         right: 15px;
@@ -820,7 +831,7 @@ GOOGLE CUSTOM SEARCH CUSTOMIZATION OVERRIDES
 }
 
 
-@media (min-width: $screen-sm-min) and (max-width: $screen-md-min) {
+@media (min-width: $screen-md-min) and (max-width: $screen-lg-min) {
     /* full width featured search hack for IE */
     @media all and (-ms-high-contrast:none) {
         .full-width-nav .featured-search {
@@ -848,7 +859,7 @@ GOOGLE CUSTOM SEARCH CUSTOMIZATION OVERRIDES
 }
 
 /* search box icons for mobile */
-@media (max-width: $screen-xs-max) {
+@media (max-width: $screen-sm-max) {
     .gsc-search-button .ca-gov-icon-search {
         font-size: 34px !important;
     }
