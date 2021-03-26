@@ -211,8 +211,8 @@ function initContent() {
         });
 
 
-        $(".owl-prev").attr("aria-label", "Previous slide");
-        $(".owl-next").attr("aria-label", "Next slide");
+        // $(".owl-prev").attr("aria-label", "Previous slide");
+        // $(".owl-next").attr("aria-label", "Next slide");
         // Add text to the dots 
         var dot = $('.owl-dots .owl-dot');
         dot.each(function () {
