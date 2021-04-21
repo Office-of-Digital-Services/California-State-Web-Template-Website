@@ -8,7 +8,7 @@ $(document).ready(function () {
     var $resultsContainer = $('.search-results-container');
     var searchInput = $("#head-search #Search .search-textfield");
     var searchSubmit = $("#head-search #Search .gsc-search-button");
-    var searchReset = $("#head-search #Search .gsc-clear-button");
+    var searchReset = $("#head-search #Search .close-search");
     var featuredsearch = $("#head-search").hasClass("featured-search");
     var searchactive = $("#head-search").hasClass("active");
     var searchlabel = $("#SearchInput");
