@@ -1,5 +1,5 @@
 /**
- * CA State Template v6 -  @version v6.0.3 -  3/10/2021 
+ * CA State Template v6 -  @version v6.0.4 -  4/21/2021 
   STYLES COMPILED FROM SOURCE (source/js) DO NOT MODIFY */
 /*! modernizr (Custom Build) | MIT *
  * https://modernizr.com/download/?-flexbox-setclasses !*/
@@ -16219,7 +16219,7 @@ $(document).ready(function () {
     var $resultsContainer = $('.search-results-container');
     var searchInput = $("#head-search #Search .search-textfield");
     var searchSubmit = $("#head-search #Search .gsc-search-button");
-    var searchReset = $("#head-search #Search .gsc-clear-button");
+    var searchReset = $("#head-search #Search .close-search");
     var featuredsearch = $("#head-search").hasClass("featured-search");
     var searchactive = $("#head-search").hasClass("active");
     var searchlabel = $("#SearchInput");
