@@ -31,24 +31,8 @@ var jssrc = [
     // NO CONFLICT
     'source/js/cagov/noconflict.js',
 
-    // BOOTSTRAP 4
-    'source/js/bootstrap/master.js',
-    'source/js/bootstrap/util.js',
-    'source/js/bootstrap/alert.js',
-    'source/js/bootstrap/button.js',
-    'source/js/bootstrap/carousel.js',
-    'source/js/bootstrap/collapse.js',
-    'source/js/bootstrap/popper.js',
-    'source/js/bootstrap/dropdown.js',
-    'source/js/bootstrap/modal.js',
-    'source/js/bootstrap/sanitizer.js',
-    'source/js/bootstrap/tooltip.js',
-    'source/js/bootstrap/popover.js',
-    'source/js/bootstrap/scrollspy.js',
-    'source/js/bootstrap/tab.js',
-    'source/js/bootstrap/toast.js',
-    'source/js/bootstrap/index.js',
-
+    // BOOTSTRAP 
+    'source/js/bootstrap/bootstrap.bundle.js',
 
     // BOOTSTRAP ACCESSIBILITY PLUGIN
     'source/js/bootstrap-accessibility-plugin/functions.js',
@@ -117,6 +101,8 @@ gulp.task('log', function () {
 //CORE
 /*-----------------------*/
 // sass CORE 
+
+
 gulp.task('core', function () {
     return gulp.src('source/scss/cagov.core.scss')
         .pipe(sass({ outputStyle: 'expanded' }))
@@ -147,6 +133,32 @@ gulp.task('coremin', function () {
 /*-----------------------*/
 //COLOR SCHEMES
 /*-----------------------*/
+// DELTA
+gulp.task('delta', function () {
+    return gulp.src('source/scss/colorscheme/colorscheme-delta-import.scss')
+        .pipe(sass({ outputStyle: 'expanded' }))
+        .pipe(header(banner, { pkg: pkg }))
+        // .pipe(autoprefixer(['last 3 versions', '> 1%'], { cascade: true }))
+        .pipe(concat('colorscheme-delta.css')) // compiled file
+        .on('error', gutil.log) // keeping log
+
+        .pipe(gulp.dest('css/'))
+
+});
+// delta min
+gulp.task('deltamin',  function () {
+    return gulp.src('source/scss/colorscheme/colorscheme-delta-import.scss')
+        .pipe(sass({ outputStyle: 'expanded' }))
+        // .pipe(autoprefixer(['last 3 versions', '> 1%'], { cascade: true }))
+        .pipe(concat('colorscheme-delta.min.css')) // compiled file
+        .pipe(csso()) // minify
+        .pipe(header(banner, { pkg: pkg }))
+        .on('error', gutil.log) // keeping log
+
+        .pipe(gulp.dest('css/'))
+
+});
+
 
 // EUREKA
 gulp.task('eureka', function () {
@@ -217,7 +229,7 @@ gulp.task('oceanside', function () {
 
 });
 // oceanside min
-gulp.task('oceansidemin', function () {
+gulp.task('oceansidemin',  function () {
     return gulp.src('source/scss/colorscheme/colorscheme-oceanside-import.scss')
         .pipe(sass({ outputStyle: 'expanded' }))
         // .pipe(autoprefixer(['last 3 versions', '> 1%'], { cascade: true }))
@@ -262,7 +274,7 @@ gulp.task('orangecountymin', function () {
 
 
 // PASO ROBLES
-gulp.task('pasorobles', function () {
+gulp.task('pasorobles',  function () {
     return gulp.src('source/scss/colorscheme/colorscheme-pasorobles-import.scss')
         .pipe(sass({ outputStyle: 'expanded' }))
         .pipe(header(banner, { pkg: pkg }))
@@ -272,7 +284,7 @@ gulp.task('pasorobles', function () {
 
         .pipe(gulp.dest('css/'))
 
-});
+})
 // pasorobles min
 gulp.task('pasoroblesmin', function () {
     return gulp.src('source/scss/colorscheme/colorscheme-pasorobles-import.scss')
@@ -349,6 +361,58 @@ gulp.task('santabarbaramin', function () {
 
 
 
+// SANTA CRUZ
+gulp.task('santacruz', function () {
+    return gulp.src('source/scss/colorscheme/colorscheme-santacruz-import.scss')
+        .pipe(sass({ outputStyle: 'expanded' }))
+        .pipe(header(banner, { pkg: pkg }))
+        // .pipe(autoprefixer(['last 3 versions', '> 1%'], { cascade: true }))
+        .pipe(concat('colorscheme-santacruz.css')) // compiled file
+        .on('error', gutil.log) // keeping log
+
+        .pipe(gulp.dest('css/'))
+
+});
+// santacruz min
+gulp.task('santacruzmin', function () {
+    return gulp.src('source/scss/colorscheme/colorscheme-santacruz-import.scss')
+        .pipe(sass({ outputStyle: 'expanded' }))
+        // .pipe(autoprefixer(['last 3 versions', '> 1%'], { cascade: true }))
+        .pipe(concat('colorscheme-santacruz.min.css')) // compiled file
+        .pipe(csso()) // minify
+        .pipe(header(banner, { pkg: pkg }))
+        .on('error', gutil.log) // keeping log
+
+        .pipe(gulp.dest('css/'))
+
+});
+
+
+// SHASTA
+gulp.task('shasta', function () {
+    return gulp.src('source/scss/colorscheme/colorscheme-shasta-import.scss')
+        .pipe(sass({ outputStyle: 'expanded' }))
+        .pipe(header(banner, { pkg: pkg }))
+        // .pipe(autoprefixer(['last 3 versions', '> 1%'], { cascade: true }))
+        .pipe(concat('colorscheme-shasta.css')) // compiled file
+        .on('error', gutil.log) // keeping log
+
+        .pipe(gulp.dest('css/'))
+
+});
+// shasta min
+gulp.task('shastamin', function () {
+    return gulp.src('source/scss/colorscheme/colorscheme-shasta-import.scss')
+        .pipe(sass({ outputStyle: 'expanded' }))
+        // .pipe(autoprefixer(['last 3 versions', '> 1%'], { cascade: true }))
+        .pipe(concat('colorscheme-shasta.min.css')) // compiled file
+        .pipe(csso()) // minify
+        .pipe(header(banner, { pkg: pkg }))
+        .on('error', gutil.log) // keeping log
+
+        .pipe(gulp.dest('css/'))
+
+});
 
 
 
@@ -443,20 +507,22 @@ gulp.task('fontmin', function () {
 /*-----------------------*/
 
 // Combining JS 
-gulp.task('js', function () {
+gulp.task('js', done => {
     gulp.src(jssrc)
         .pipe(concat('cagov.core.js'))
         .pipe(header(bannerjs, { pkg: pkg }))
-        .pipe(gulp.dest('js'))
+        .pipe(gulp.dest('js'));
+        done();
 });
 
 // JS Core Min 
-gulp.task('jsmin', function () {
+gulp.task('jsmin', done => {
     gulp.src(jssrc)
         .pipe(concat('cagov.core.min.js'))
         .pipe(uglify())
         .pipe(header(bannerjs, { pkg: pkg }))
-        .pipe(gulp.dest('js'))
+        .pipe(gulp.dest('js'));
+        done();
 });
 
 
@@ -471,6 +537,7 @@ gulp.task('jsmin', function () {
 gulp.task('watch', function () {
     gulp.watch('source/js/**/*.js', ['js']);
     gulp.watch('source/scss/cagov/*.scss', ['core']);
+    gulp.watch('source/scss/colorscheme/*.scss', ['delta']);
     gulp.watch('source/scss/colorscheme/*.scss', ['eureka']);
     gulp.watch('source/scss/colorscheme/*.scss', ['mono']);
     gulp.watch('source/scss/colorscheme/*.scss', ['oceanside']);
@@ -478,6 +545,8 @@ gulp.task('watch', function () {
     gulp.watch('source/scss/colorscheme/*.scss', ['pasorobles']);
     gulp.watch('source/scss/colorscheme/*.scss', ['sacramento']);
     gulp.watch('source/scss/colorscheme/*.scss', ['santabarbara']);
+    gulp.watch('source/scss/colorscheme/*.scss', ['santacruz']);
+    gulp.watch('source/scss/colorscheme/*.scss', ['shasta']);
     gulp.watch('source/scss/colorscheme/*.scss', ['sierra']);
     gulp.watch('source/scss/colorscheme/*.scss', ['trinity']);
     gulp.watch('source/scss/cagov/cagov.font-only.scss', ['font']);
@@ -488,7 +557,8 @@ gulp.task('watch', function () {
 //
 // DEV (Development Output)
 //
-gulp.task('dev', ['core', 'eureka', 'mono', 'oceanside', 'orangecounty', 'pasorobles', 'sacramento', 'santabarbara', 'sierra', 'trinity', 'font', 'js']);
+
+gulp.task('dev', gulp.series('core', 'delta', 'eureka', 'mono', 'oceanside', 'orangecounty', 'pasorobles', 'sacramento', 'santabarbara', 'santacruz', 'shasta', 'sierra', 'trinity', 'font', 'js'));
 
 // PROD (Minified Output)
-gulp.task('prod', ['coremin', 'eurekamin', 'monomin', 'oceansidemin', 'orangecountymin', 'pasoroblesmin', 'sacramentomin', 'santabarbaramin', 'sierramin', 'trinitymin', 'fontmin', 'jsmin']);
+gulp.task('prod', gulp.series('coremin', 'deltamin', 'eurekamin', 'monomin', 'oceansidemin', 'orangecountymin', 'pasoroblesmin', 'sacramentomin', 'santabarbaramin', 'santacruzmin', 'shastamin', 'sierramin', 'trinitymin', 'fontmin', 'jsmin'));

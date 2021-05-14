@@ -52,6 +52,7 @@ $bootstrap-sass-asset-helper: false !default;
 //## Gray and brand colors for use across Bootstrap.
 
 $gray-base: #000 !default;
+$gray-text: #111111;
 $gray-darker: lighten($gray-base, 13.5%) !default; // #222
 $gray-dark: lighten($gray-base, 20%) !default; // #333
 $gray: lighten($gray-base, 33.5%) !default; // #555
@@ -73,13 +74,13 @@ $text-muted: $gray;
 // Background color for `<body>`.
 $body-bg: #fff !default; // Bootstrap duplicate
 // Global text color on `<body>`.
-$text-color: $gray-dark !default;
+$text-color: $gray-text !default;
 
 // Global textual link color.
 $link-color: $brand-primary;
 // Link hover color set via `darken()` function.
 $link-hover-color: darken($link-color, 15%);
-// Link hover decoration.
+// Link visited color set via `darken()` function.
 $link-hover-decoration: underline !default;
 
 //== Generic Spacers
@@ -110,14 +111,14 @@ $font-size-h5: $font-size-base !default;
 $font-size-h6: ceil(($font-size-base * 0.85)) !default; // ~12px
 
 // Unit-less `line-height` for use in components like buttons.
-$line-height-base: 1.45 !global; // 20/14
+$line-height-base: 1.5 !global; // 20/14
 // Computed "line-height" (`font-size` * `line-height`) for use with `margin`, `padding`, etc.
 $line-height-computed: floor((16px * $line-height-base)) !default; // ~20px
 
 // By default, this inherits from the `<body>`.
 $headings-font-family: "Asap Condensed", sans-serif;
 $headings-font-weight: 400 !default;
-$headings-line-height: 1.1 !default;
+$headings-line-height: $line-height-base;
 $headings-color: inherit !default;
 
 
@@ -285,7 +286,7 @@ $input-height-small: (floor(13 * $line-height-small) + ($padding-small-vertical 
 // `.form-group` margin
 $form-group-margin-bottom: 1rem !default // Old bootstrap3 value 15px !default;
 
-$legend-color: $gray-dark !default;
+$legend-color: $gray-text !default;
 $legend-border-color: #e5e5e5 !default;
 
 // Background color for textual input addons
@@ -311,9 +312,9 @@ $dropdown-fallback-border: #ccc !default;
 $dropdown-divider-bg: #e5e5e5 !default;
 
 // Dropdown link text color.
-$dropdown-link-color: $gray-dark !default;
+$dropdown-link-color: $gray-text !default;
 // Hover color for dropdown links.
-$dropdown-link-hover-color: darken($gray-dark, 5%) !default;
+$dropdown-link-hover-color: darken($gray-text, 5%) !default;
 // Hover background for dropdown links.
 $dropdown-link-hover-bg: #f5f5f5 !default;
 
@@ -804,7 +805,7 @@ $panel-border-radius: $border-radius-base !default;
 $panel-inner-border: #ddd !default;
 $panel-footer-bg: #f5f5f5 !default;
 
-$panel-default-text: $gray-dark !default;
+$panel-default-text: $gray-text !default;
 $panel-default-border: #ddd !default;
 $panel-default-heading-bg: #f5f5f5 !default;
 
@@ -921,14 +922,14 @@ $close-text-shadow: 0 1px 0 #fff !default;
 //
 //##
 
-$code-color: #D71A6F;
+$code-color: #D11A6C;
 $code-bg: #f9f2f4 !default;
 
 $kbd-color: #fff !default;
 $kbd-bg: #333 !default;
 
 $pre-bg: #f5f5f5 !default;
-$pre-color: $gray-dark !default;
+$pre-color: $gray-text !default;
 $pre-border-color: #ccc !default;
 $pre-scrollable-max-height: 340px !default;
 

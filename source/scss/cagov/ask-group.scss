@@ -5,8 +5,8 @@
 $ask-bg-default: rgba(0, 0, 0, 0.65);
 $ask-bg-hover: rgba(0, 0, 0, 0.8);
 
-
-@media (min-width: $screen-sm-min) {
+// 991px
+@media (min-width: $screen-md-min) {
     .ask-group {
         position:relative;
         width: 60%;
@@ -45,7 +45,8 @@ $ask-bg-hover: rgba(0, 0, 0, 0.8);
             }
         }
 
-        @media (max-width: $screen-xs-max) {
+        // 991px
+        @media (max-width: $screen-sm-max) {
             position:static;
         }
 
@@ -105,8 +106,8 @@ $ask-bg-hover: rgba(0, 0, 0, 0.8);
 }
 
 
-/* Optimize ask group position for tablets */
-@media (min-width: $screen-sm-min) and (max-width: $screen-md-min) {
+/* Optimize ask group position for tablets 992 and 1140 */
+@media (min-width: $screen-md-min) and (max-width: $screen-lg-min) {
     .ask-group  {
         left: 10%;   // matches search bar
         width: 90%;
@@ -120,7 +121,7 @@ $ask-bg-hover: rgba(0, 0, 0, 0.8);
 .ask-button {
     overflow: hidden;
     position: relative;
-    line-height: 44px;
+    line-height: 2.75rem;
     @include font-size(1.25);
 
     > span {
@@ -143,7 +144,7 @@ $ask-bg-hover: rgba(0, 0, 0, 0.8);
         display: block;
         padding: 3px 15px 3px 15px;
         margin:0;
-        line-height: 40px;
+        line-height: 2.5rem;
         color: #fff;
 		@include rgba (#000, .8);
 
@@ -159,7 +160,7 @@ $ask-bg-hover: rgba(0, 0, 0, 0.8);
 }
 
 
-@media (max-width: $screen-xs-max) {
+@media (max-width: $screen-sm-max) {
     .header-single-banner {
         display: none;
     }

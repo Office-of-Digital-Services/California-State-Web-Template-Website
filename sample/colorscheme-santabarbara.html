@@ -8,7 +8,6 @@
 <!--<![endif]-->
 <head>    
 <!--    California State Template
-    Version 5.5.12
 
         Based on Twitter Bootstrap
     -->
@@ -114,8 +113,8 @@
 
         div.caption {
             color: #555;
-            font-size: 12px;
-            line-height: 16px;
+            font-size: .75rem;
+            line-height: 1rem;
             margin: 0 0 0 10px;
             text-align: center;
         }
@@ -151,13 +150,16 @@
 
     </header>
     <div id="main-content" class="main-content">
-        <div class="container">            
-            <ol class="breadcrumb">
-                <li><a href="../index.html" title="Home page">Home</a></li>
-                <li><a href="index.html" title="Examples landing page">Examples</a></li>
-                <li class="active">Santa Barbara</li>
-            </ol>
-        </div>
+        <section title="breadcrumbs">
+            <div class="container">            
+                <ol class="breadcrumb">
+                    <li><a href="../index.html" title="Home page">Home</a></li>
+                    <li><a href="index.html" title="Examples landing page">Examples</a></li>
+                    <li class="active">Santa Barbara</li>
+                </ol>
+            </div>
+        </section>
+        
         <main class="main-primary">
             <div class="section">
                 <!-- Content Demonstration -->
@@ -172,7 +174,7 @@
                                     <div class="color" style="background-color:#FF9B53;"></div>
                                 </div>
                             </div>
-                            <div class="caption"><h4>.color-highlight<br />@color-p1</h4>HEX: #FF9B53<br>RGB: 255,155,83</div>
+                            <div class="caption"><h3 class="h4">.color-highlight<br />@color-p1</h3>HEX: #FF9B53<br>RGB: 255,155,83</div>
                         </div>
                         <div class="quarter">
                             <div class="outer">
@@ -180,7 +182,7 @@
                                     <div class="color" style="background-color:#834B1E;"></div>
                                 </div>
                             </div>
-                            <div class="caption"><h4>.color-primary<br />@color-p2</h4>HEX: #834B1E<br />RGB: 131,75,30</div>
+                            <div class="caption"><h3 class="h4">.color-primary<br />@color-p2</h3>HEX: #834B1E<br />RGB: 131,75,30</div>
                         </div>
 
                         <div class="quarter">
@@ -189,7 +191,7 @@
                                     <div class="color" style="background-color:#3c2c29;"></div>
                                 </div>
                             </div>
-                            <div class="caption"><h4>.color-standout<br />@color-p3</h4>HEX: #3c2c29<br />RGB: 60,44,41</div>
+                            <div class="caption"><h3 class="h4">.color-standout<br />@color-p3</h3>HEX: #3c2c29<br />RGB: 60,44,41</div>
                         </div>
                         <div class="quarter">
                             <div class="outer">
@@ -197,20 +199,20 @@
                                     <div class="color" style="background-color:#FFEBD7;"></div>
                                 </div>
                             </div>
-                            <div class="caption"><h4>.color-s1<br />@color-s1</h4>HEX: #FFEBD7<br />RGB: 255,235,215</div>
+                            <div class="caption"><h3 class="h4">.color-s1<br />@color-s1</h3>HEX: #FFEBD7<br />RGB: 255,235,215</div>
                         </div>
                     </div>
 
 
                     <div class="card card-understated">
                         <div class="card-heading">
-                            <h4><span class="ca-gov-icon-info"></span> Theme Colors Customization</h4>
+                            <h3 class="h4"><span class="ca-gov-icon-info"></span> Theme Colors Customization</h3>
                         </div>
                         <div class="card-body">
                             <p>
                                 There are two ways to customize theme main colors. One way is to change primary and secondary theme color variables
-                                in the colorscheme-[yourcolorshceme].less file. This method will require you to re-compile the state template, you
-                                can find instructions in the readme file.  After the compilation you will have updated colorscheme-[yourcolorshceme].css file.
+                                in the colorscheme-[yourcolorshceme].scss file. This method will require you to re-compile the state template, you
+                                can find instructions on <a href="/gulp.html">using Gulp with State Template page</a>.  After the compilation you will have updated colorscheme-[yourcolorshceme].css file.
                             </p>
 
                             <p>
@@ -292,7 +294,7 @@
                     <div class="half">
                         <!-- Article -->
                         <h3>News block</h3>
-                        <article class="block-hover">
+                        <article class="block-hover section-standout">
                             <figure class="bg-overlay">
                                 <img class="img-fluid w-100 block-hover_zoom" src="/sample/images/service-tiles/service-paid-family-leave.jpg" alt="Image Description">
                             </figure>

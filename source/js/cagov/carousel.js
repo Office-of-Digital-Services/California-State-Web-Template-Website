@@ -63,25 +63,35 @@ $(document).ready(function () {
                 });
 
                 // Add pause and play buttons
-                var owlBannerControl = $('<div class="banner-play-pause"><div class="banner-control"><button class="play ca-gov-icon-carousel-play" aria-hidden="true"></button><button class="pause ca-gov-icon-carousel-pause" aria-hidden="true"></span></div></div>');
+                var owlBannerControl = $('<div class="banner-play-pause"><div class="banner-control"><button class="play ca-gov-icon-carousel-play" aria-hidden="true"  tabindex="-1" aria-label="play slideshow"></button><button class="pause ca-gov-icon-carousel-pause" aria-hidden="false" tabindex="0" aria-label="pause slideshow"></span></div></div>');
                 $this.append(owlBannerControl);
                 var playControl = owlBannerControl.find('.play').hide();
                 var pauseControl = owlBannerControl.find('.pause');
                 playControl.on('click', function () {
-                    $(this).hide(); $(this).parent().removeClass('active');
-                    pauseControl.show(); $this.trigger('play.owl.autoplay', [settings.delay]);
+                    $(this).hide(); 
+                    $(this).parent().removeClass('active');
+                    $(this).attr("aria-hidden", "true");
+                    $(this).attr("tabindex", "-1");
+                    pauseControl.show(); 
+                    pauseControl.attr("aria-hidden", "false");
+                    pauseControl.attr("tabindex", "0");
+                    $this.trigger('play.owl.autoplay', [settings.delay]);
                     $this.owlCarousel('next'); // Manually play next since autoplay waits for delay
                 });
 
                 pauseControl.on('click', function () {
                     $(this).hide();
-                    $(this).parent().addClass('active'); playControl.show();
+                    $(this).parent().addClass('active'); 
+                    $(this).attr("aria-hidden", "true");
+                    $(this).attr("tabindex", "-1");
+                    playControl.show();
+                    playControl.attr("aria-hidden", "false");
+                    playControl.attr("tabindex", "0");
                     $this.trigger('stop.owl.autoplay');
                 });
 
                 // Number the items in .banner-pager 
-                var dots = $('.banner-pager .banner-control');
-                dots.each(function () {
+                var dots = $('.banner-pager .banner-control'); dots.each(function () {
                     $(this).find('span').append($(this).index() + 1);
                 });
             });
@@ -136,9 +146,7 @@ $(document).ready(function () {
                     nav: true
                 }
             },
-            navText: [
-                '<span class="ca-gov-icon-arrow-prev" aria-hidden="true"></span></span><span class="sr-only">Previous</span>', '<span class="ca-gov-icon-arrow-next" aria-hidden="true"></span><span class="sr-only">Next</span>'
-            ],
+            navText: ['<span class="ca-gov-icon-arrow-prev" aria-hidden="true"></span></span><span class="sr-only">Previous</span>', '<span class="ca-gov-icon-arrow-next" aria-hidden="true"></span></span><span class="sr-only">Next</span>'],
             dots: false
         });
 
@@ -147,9 +155,7 @@ $(document).ready(function () {
             margin: 25,
             autoWidth: true,
             nav: true,
-            navText: [
-                '<span class="ca-gov-icon-arrow-prev" aria-hidden="true"></span></span><span class="sr-only">Previous</span>', '<span class="ca-gov-icon-arrow-next" aria-hidden="true"></span><span class="sr-only">Next</span>'
-            ],
+            navText: ['<span class="ca-gov-icon-arrow-prev" aria-hidden="true"></span></span><span class="sr-only">Previous</span>', '<span class="ca-gov-icon-arrow-next" aria-hidden="true"></span></span><span class="sr-only">Next</span>'],
             dots: false
         });
 
@@ -157,9 +163,7 @@ $(document).ready(function () {
         $(".carousel-slider").owlCarousel({
             items: 1,
             nav: true,
-            navText: [
-                '<span class="ca-gov-icon-arrow-prev" aria-hidden="true"></span></span><span class="sr-only">Previous</span>', '<span class="ca-gov-icon-arrow-next" aria-hidden="true"></span><span class="sr-only">Next</span>'
-            ],
+            navText: ['<span class="ca-gov-icon-arrow-prev" aria-hidden="true"></span></span><span class="sr-only">Previous</span>', '<span class="ca-gov-icon-arrow-next" aria-hidden="true"></span></span><span class="sr-only">Next</span>'],
             dots: false
         });
 
@@ -167,9 +171,7 @@ $(document).ready(function () {
         $(".carousel-gallery").owlCarousel({
             items: 1,
             nav: true,
-            navText: [
-                '<span class="ca-gov-icon-arrow-prev" aria-hidden="true"></span></span><span class="sr-only">Previous</span>', '<span class="ca-gov-icon-arrow-next" aria-hidden="true"></span><span class="sr-only">Next</span>'
-            ],
+            navText: ['<span class="ca-gov-icon-arrow-prev" aria-hidden="true"></span></span><span class="sr-only">Previous</span>', '<span class="ca-gov-icon-arrow-next" aria-hidden="true"></span></span><span class="sr-only">Next</span>'],
             dots: false
         });
 
@@ -177,7 +179,6 @@ $(document).ready(function () {
 
     // Remove unnessesary role="button" from button
     $("button.banner-control").removeAttr("role");
-
 });
 
 function initContent() {
@@ -188,9 +189,7 @@ function initContent() {
             autoHeight: true,
             loop: true,
             nav: true,
-            navText: [
-                '<span class="ca-gov-icon-arrow-prev" aria-hidden="true"></span></span><span class="sr-only">Previous</span>', '<span class="ca-gov-icon-arrow-next" aria-hidden="true"></span><span class="sr-only">Next</span>'
-            ],
+            navText: ['<span class="ca-gov-icon-arrow-prev" aria-hidden="true"></span></span><span class="sr-only">Previous</span>', '<span class="ca-gov-icon-arrow-next" aria-hidden="true"></span></span><span class="sr-only">Next</span>'],
             dots: true,
             // all these callbacks are to make sure any js inside carousl items can refresh
             // themselves
@@ -211,13 +210,15 @@ function initContent() {
             }
         });
 
+
+        // $(".owl-prev").attr("aria-label", "Previous slide");
+        // $(".owl-next").attr("aria-label", "Next slide");
         // Add text to the dots 
         var dot = $('.owl-dots .owl-dot');
         dot.each(function () {
             $(this).removeAttr("role");
             $(this).find('span').html("<span class='sr-only'>Change Slide</span>");
         });
-
 
         carousel.on('changed.owl.carousel', function (event) {
             setTimeout(function () {
@@ -226,7 +227,6 @@ function initContent() {
                     $(this).get(0).play();
                 });
             }, 10);
-
         });
     });
 }
@@ -262,9 +262,7 @@ function initContent() {
                 nav: true,
                 lazyLoad: false,
                 video: true,
-                navText: [
-                    '<span class="ca-gov-icon-arrow-prev" aria-hidden="true"></span></span><span class="sr-only">Previous</span>', '<span class="ca-gov-icon-arrow-next" aria-hidden="true"></span><span class="sr-only">Next</span>'
-                ],
+                navText: ['<span class="ca-gov-icon-arrow-prev" aria-hidden="true"></span></span><span class="sr-only">Previous</span>', '<span class="ca-gov-icon-arrow-next" aria-hidden="true"></span><span class="sr-only">Next</span>'],
                 dots: false
             });
 
@@ -358,7 +356,6 @@ function initContent() {
                 // remove old watched item
                 submenu.find('.watching').removeClass('watching');
 
-                // submenu.find('img[src*="' + vidID + '"]').parents('.owl-item').addClass('watching');
                 submenu.find('button[style*="' + vidID + '"]').parents('.owl-item').addClass('watching');
 
 

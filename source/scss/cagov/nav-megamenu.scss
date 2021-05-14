@@ -2,8 +2,8 @@
    MEGA MENU
    /source/scss/cagov/nav-megamenu.scss
 ----------------------------------------- */
-
-@media (max-width: $screen-xs-max) {
+// 991px
+@media (max-width: $screen-sm-max) {
     .main-navigation {
         margin-top: 0;
         padding: 0;
@@ -11,14 +11,12 @@
 }
 
 .megadropdown .top-level-nav { // beta 5.0 addition (fixes IE dropdown issue)
-    @media (max-width: $screen-md) and (min-width: $screen-sm-min) { // Beta 5.0 addition
-        font-size: 0.9em;
-    }
 
+    
     .nav-item {
         position: static;
-
-        @media (max-width: $screen-xs-max) {
+        // 992px 
+        @media (max-width: $screen-sm-max) {
             position: relative;
         }
 
@@ -31,12 +29,24 @@
     }
 }
 
+// beta 5.0 addition
+.main-navigation.dropdown .sub-nav {
+    max-width: 250px;
+    min-width: 250px;
+    left: initial;
+    right: initial;
+
+    // 992px 
+    @media (max-width: $screen-sm-max) {
+        max-width: 100%;
+    }
+}
 
 //
 // Sub-menu open indicator
 // --------------------------------------------------
-
-@media (min-width: $screen-xs-max) {
+// 991px 
+@media (min-width: $screen-sm-max) {
     /* Dynamic Element appended to each .sub-nav */
     .nav-arrow-container {
         display: block;
@@ -80,6 +90,7 @@
     right: ($grid-gutter-width / 2);
     overflow: hidden;
     // Remove border as rules are added to top level links
+    // 991px 
     @media (max-width: $screen-xs-max) {
         border: none;
     }
@@ -111,7 +122,9 @@
     list-style: none;
     padding: 0;
     // SET UP NAVIGATION COLUMNS
-    @media (min-width: $screen-sm-min) {
+
+    // 992px 
+    @media (min-width: $screen-md-min) {
         .half &, .two-thirds & {
             @include nav-columns(2);
         }
@@ -159,8 +172,8 @@ a.second-level-link {
         vertical-align: -2px;
         margin-right: 3px;
     }
-
-    @media (max-width: $screen-xs-max) {
+// 991px 
+    @media (max-width: $screen-sm-max) {
         &:first-child {
             margin-top: 2px !important;
         }
@@ -181,7 +194,8 @@ a.second-level-link {
 // --------------------------------------------------
 
 // Unit values for desktop only, mobile will collapse vertically.
-@media (min-width: $screen-sm-min) {
+// 992px 
+@media (min-width: $screen-md-min) {
     $nav-unit-base: 65px;
 
     .unit1 {
@@ -216,7 +230,8 @@ a.second-level-link {
 }
 
 /* Megamenu State Template v4 */
-@media (min-width: $screen-sm-min) {
+// 992px 
+@media (min-width: $screen-md-min) {
 
     .main-navigation.megadropdown.original {
         .second-level-nav {
@@ -328,8 +343,7 @@ a.second-level-link {
     }
 }
 
-/* Accessible Menu */
-// beta 5.0 addition (for accessible menu)
+
 .nav-item {
     display: inline-block;
 }
@@ -357,7 +371,10 @@ a.second-level-link {
     }
 }
 
-@media (max-width: $screen-xs-max) {
+// 991
+@media (max-width: $screen-sm-max) {
+
+
     .main-navigation {
         overflow: hidden;
     }
@@ -376,9 +393,13 @@ a.second-level-link {
 
         display: block;
     }
+    .second-level-nav > li {
+        border-right: 0px;
+    }
 }
 
-@media (min-width: $screen-sm-min) {
+// 992
+@media (min-width: $screen-md-min) {
 
     .sub-nav {
         border-top: none;
@@ -388,29 +409,7 @@ a.second-level-link {
         margin-top: -82px; // beta 6.0 addition
     }
 
-    .no-icons {
-        .top-level-nav {
-            .nav-item {
-                > a {
-                    min-height: 86px; // beta 6.0 addition
-                    padding-top: 2rem;
-                }
-            }
-        }
-    }
-
-    .fixed.compact {
-        .no-icons {
-            .top-level-nav {
-                .nav-item {
-                    > a {
-                        padding-top: 12px;
-                        min-height: 50px;
-                    }
-                }
-            }
-        }
-    }
+ 
 }
 
 .media-left, .media-right, .media-body {
@@ -425,7 +424,9 @@ a.second-level-link {
 /* Flex Sub Nav */
 // Flex subnav desktop view
 
-@media (min-width: $screen-sm-min) {
+
+// 992
+@media (min-width: $screen-md-min) {
 
     .second-level-nav.flex {
         display: flex;
@@ -466,8 +467,10 @@ a.second-level-link {
 
 
 // Flex subnav in mobile view
-@media (max-width: $screen-xs-max) {
 
+//991
+@media (max-width: $screen-sm-max) {
+   
     .second-level-nav.flex {
         display: block;
         text-align: left;
@@ -499,22 +502,6 @@ a.second-level-link {
     }
 }
 
-// Adding carrot if nav item has sub nav
-@media (min-width: $screen-sm-min) {
-    .nav-item .first-level-link.has-sub, .first-level-btn {
 
-        .carrot {
-            font-size: .8rem;
-            position: absolute;
-            bottom: 13px;
-            display: inline-block;
-            color: $gray;
-        }
-    }
-}
 
-@media (max-width: $screen-xs-max) {
-    .nav-item .first-level-link.has-sub .carrot {
-        display: none;
-    }
-}
+

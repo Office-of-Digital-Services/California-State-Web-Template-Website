@@ -6,6 +6,12 @@
 <meta name="HandheldFriendly" content="True">
 <!-- for Blackberry, AvantGo -->
 <meta name="MobileOptimized" content="320">
+
+<meta property="og:image" content="http://https://template.webstandards.ca.gov/template.jpg">
+<meta property="og:image:type" content="image/png">
+<meta property="og:image:width" content="1024">
+<meta property="og:image:height" content="1024">
+
 <!-- for Windows mobile -->
 <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
 
@@ -38,17 +44,21 @@ Select a color scheme:
 <script src="/js/libs/selectivizr-min.js"></script>
 <![endif]-->
 <!-- Load jQuery from CDN with fallback to local copy -->
-<script src="https://code.jquery.com/jquery-3.4.1.min.js"
-        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
-        crossorigin="anonymous"></script>
-<script>
+<script
+  src="https://code.jquery.com/jquery-3.6.0.min.js"
+  integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+  crossorigin="anonymous"></script>
+  <script>
     //Fall back to local copy if no jquery found
     if (typeof jQuery == 'undefined') {
         document.write(unescape("%3Cscript src='/js/libs/jquery.js' type='text/javascript'%3E%3C/script%3E"));
     }
 </script>
 <!-- Load jQuery migrate from CDN with fallback to local copy -->
-<script src="https://code.jquery.com/jquery-migrate-3.1.0.min.js"></script>
+<script
+  src="https://code.jquery.com/jquery-migrate-3.3.2.min.js"
+  integrity="sha256-Ap4KLoCf1rXb52q+i3p0k2vjBsmownyBTE1EqlRiMwA="
+  crossorigin="anonymous"></script>
 <script>
     //Fall back to local copy if no jQuery migrate found
     if (typeof jQuery.migrateWarnings == 'undefined') { // or typeof jQuery.fn.live == 'undefined'
