@@ -5,9 +5,10 @@
 <!--[if IE 9]>    <html class="no-js ie9 oldie" lang="en"> <![endif]-->
 <!--[if (gt IE 9)]><!-->
 <html class="no-js" lang="en">
- <!--<![endif]-->
-<head>    
- <!--    California State Template (beta)
+<!--<![endif]-->
+
+<head>
+    <!--    California State Template (beta)
  
 
     Based on Twitter Bootstrap
@@ -22,8 +23,8 @@
 
     <!--#include virtual="/ssi/head-css-js.html" -->
     <script type="text/javascript">
-var defaultActiveLink = "Components";
-</script>
+        var defaultActiveLink = "Components";
+    </script>
 </head>
 
 <body class="two-column">
@@ -41,20 +42,21 @@ var defaultActiveLink = "Components";
         <!--#include virtual="/ssi/mobile-controls.html" -->
 
         <div class="navigation-search full-width-nav container">
-        <div id="head-search" class="search-container featured-search fade">
-            <!-- Include Search -->
-            <!--#include virtual="/ssi/search.html" -->
-        </div>
+            <div id="head-search" class="search-container featured-search fade">
+                <!-- Include Search -->
+                <!--#include virtual="/ssi/search.html" -->
+            </div>
 
-        <!-- Include Navigation -->
-        <!--#include virtual="/ssi/navigation.html" -->
-    </div>
+            <!-- Include Navigation -->
+            <!--#include virtual="/ssi/navigation.html" -->
+        </div>
 
         <div class="header-decoration"></div>
     </header>
 
     <div id="main-content" class="main-content">
-        <div class="container p-b-lg">
+        <div class="section p-b-lg">
+
             <main class="main-primary">
                 <ol class="breadcrumb">
                     <li><a href="../index.html" title="Home page">Home</a></li>
@@ -63,9 +65,16 @@ var defaultActiveLink = "Components";
                 </ol>
 
                 <h1>Image Gallery</h1>
-                <p>The default gallery will attempt to place as many photos as it can in a row before wrapping to a new line. For a little added control over layout, add a class of <code>.three-up</code> or <code>.four-up</code> to the <code>.gallery</code> div limit the number of item in a single row.</p>
-                <p>Images can be grouped into galleries by adding the <code>data-gallery</code> attribute with a value of the name of the gallery to the image link. For example, any gallery item link to an image with <code>&lt;a data-gallery="gallery1" ... &gt;</code> will group all elements with the value <code>gallery1</code> together. A user can then use arrows on either side of the image popup to navigate through items in the same gallery.</p>
-                <p><strong>NOTE:</strong> For optimum viewing experience, it is recommended that gallery thumbnails be landscape cropped to 210x140 or square cropped to 140x140.</p>
+                <p>The default gallery will attempt to place as many photos as it can in a row before wrapping to a new
+                    line. For a little added control over layout, add a class of <code>.three-up</code> or
+                    <code>.four-up</code> to the <code>.gallery</code> div limit the number of item in a single row.</p>
+                <p>Images can be grouped into galleries by adding the <code>data-gallery</code> attribute with a value
+                    of the name of the gallery to the image link. For example, any gallery item link to an image with
+                    <code>&lt;a data-gallery="gallery1" ... &gt;</code> will group all elements with the value
+                    <code>gallery1</code> together. A user can then use arrows on either side of the image popup to
+                    navigate through items in the same gallery.</p>
+                <p><strong>NOTE:</strong> For optimum viewing experience, it is recommended that gallery thumbnails be
+                    landscape cropped to 210x140 or square cropped to 140x140.</p>
                 <!--#include virtual="/sample/modules/gallery.html" -->
 
                 <h2>Source Code:</h2>
@@ -76,33 +85,36 @@ var defaultActiveLink = "Components";
             <div class="main-secondary" role="complementary">
                 <h2>Galleries in Sidebar</h2>
                 <p>
-                    Two gallery styles are available for use in the sidebar. The small gallery uses a class of <code>.gallery-small</code> and the sliding gallery uses a class of <code>.carousel-gallery</code>.
-                    <div class="card card-standout">
-                        <div class="card-heading">
-                            <h3 class="h4"><span class="ca-gov-icon-info"></span>Small Example</h3>
-                        </div>
-                        <div class="card-body">
-                            <!--#include virtual="/sample/modules/gallery-small.html" -->
-                        </div>
+                    Two gallery styles are available for use in the sidebar. The small gallery uses a class of
+                    <code>.gallery-small</code> and the sliding gallery uses a class of <code>.carousel-gallery</code>.
+                <div class="card card-standout">
+                    <div class="card-heading">
+                        <h3 class="h4"><span class="ca-gov-icon-info"></span>Small Example</h3>
                     </div>
-                    <h2>Source Code:</h2>
-                    <pre><code class="overflow-auto"><!--#include virtual="/sample/modules/gallery-small.html" --></code></pre>
-                    <br>
-
-
-
-                    <div class="card card-standout">
-                        <div class="card-heading">
-                            <h3 class="h4">span class="ca-gov-icon-info"></span>Slider Gallery Example</h3>
-                        </div>
-                        <div class="card-body">
-                            <!--#include virtual="/sample/modules/carousel-gallery.html" -->
-                        </div>
+                    <div class="card-body">
+                        <!--#include virtual="/sample/modules/gallery-small.html" -->
                     </div>
-                    <h2><label for="sample-1">Source Code:</label></h2>
-                    <textarea id="sample-1" class="form-control" rows="10" cols="80"><!--#include virtual="/sample/modules/carousel-gallery.html" --></textarea>
+                </div>
+                <h2>Source Code:</h2>
+                <pre><code class="overflow-auto"><!--#include virtual="/sample/modules/gallery-small.html" --></code></pre>
+                <br>
+
+
+
+                <div class="card card-standout">
+                    <div class="card-heading">
+                        <h3 class="h4">span class="ca-gov-icon-info"></span>Slider Gallery Example</h3>
+                    </div>
+                    <div class="card-body">
+                        <!--#include virtual="/sample/modules/carousel-gallery.html" -->
+                    </div>
+                </div>
+                <h2><label for="sample-1">Source Code:</label></h2>
+                <textarea id="sample-1" class="form-control" rows="10"
+                    cols="80"><!--#include virtual="/sample/modules/carousel-gallery.html" --></textarea>
 
             </div>
+
         </div>
     </div>
 
@@ -110,4 +122,5 @@ var defaultActiveLink = "Components";
     <!--#include virtual="/ssi/scripts.html" -->
 
 </body>
+
 </html>
