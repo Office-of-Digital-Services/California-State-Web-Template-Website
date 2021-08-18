@@ -1,5 +1,4 @@
-/**
- * CA State Template v6 -  @version v6.0.5 -  8/18/2021 
+/* CA State Template v6 -  @version v6.0.5 -  8/18/2021 
   STYLES COMPILED FROM SOURCE (source/js) DO NOT MODIFY */
 /*! modernizr (Custom Build) | MIT *
  * https://modernizr.com/download/?-flexbox-setclasses !*/
@@ -14940,6 +14939,7 @@ var plugin = function plugin() {
             var coolSelectors = CONFIG.ACCORDION_DATA_COOL_SELECTORS === true;
             var childClassName = 'first-level-btn';
             
+
             // Init attributes accordion
             if (!mobileView()) {
                 accordion_node.setAttribute(CONFIG.ATTR_MULTISELECTABLE, 'false');
@@ -14952,9 +14952,9 @@ var plugin = function plugin() {
             accordion_node.setAttribute(DATA_HASH_ID, HASH_ID);
 
             addClass(accordion_node, prefixClassName + CONFIG.ACCORDION_STYLE);
-
             var listAccordionsHeader = [].slice.call(accordion_node.querySelectorAll('.' + childClassName));
             listAccordionsHeader.forEach(function (header_node, index_header) {
+
                 var _setAttributes2, _setAttributes3;
 
                 // if we do not have cool selectors enabled,
@@ -15060,6 +15060,7 @@ var main = function main() {
                             var accordionContainer = findById(searchParent(buttonTag, CONFIG.ACCORDION_JS, hashId), hashId);
                             var coolSelectors = CONFIG.ACCORDION_DATA_COOL_SELECTORS === true;
                             var accordionAllHeaders = [].slice.call(accordionContainer.querySelectorAll('.first-level-btn'));
+
                             //var accordionMultiSelectable = accordionContainer.getAttribute(CONFIG.ATTR_MULTISELECTABLE);
                             var destination = findById(buttonTag.getAttribute(CONFIG.ATTR_CONTROLS), hashId);
                             var stateButton = buttonTag.getAttribute(CONFIG.ATTR_EXPANDED);
@@ -15091,7 +15092,9 @@ var main = function main() {
                             }
 
                             if (!mobileView()) {
+
                                 accordionAllHeaders.forEach(function (header_node) {
+
                                     //Close all the other panels
 
                                     var destinationPanel = findById(header_node.getAttribute(CONFIG.ATTR_CONTROLS), hashId);
@@ -15236,6 +15239,7 @@ function NavReset() {
     
     //if (window.innerWidth <= 991) {
     //    //$('.has-sub').append(toggleSubNav);
+
     //    $(".rotate").css("display", "block");
     // }
     //else {
@@ -15411,6 +15415,7 @@ AlmostJQueryDocumentReady(function () { //JS
                 //    toggleSubNav.css("display", "none");
                 //}
                 //$(this).find('.has-sub').append(toggleSubNav);
+
                 //$(this).find('.has-sub').append(carrot);
 
 
@@ -15419,6 +15424,7 @@ AlmostJQueryDocumentReady(function () { //JS
                 addClass(carrot,"ca-gov-icon-triangle-down");
                 addClass(carrot,"carrot");
                 carrot.setAttribute("aria-hidden","true");
+
 
                 var toggleSubNav = document.createElement("div");
                 addClass(toggleSubNav,"ca-gov-icon-caret-right");
@@ -15432,6 +15438,19 @@ AlmostJQueryDocumentReady(function () { //JS
                 }
 
                 el.appendChild(toggleSubNav);
+
+                var $toggleSubNav = document.createElement("div");
+                addClass($toggleSubNav,"ca-gov-icon-caret-right");
+                addClass($toggleSubNav,"rotate");
+                $toggleSubNav.setAttribute("aria-hidden","true");
+
+                if (mobileView()) {
+                    $toggleSubNav.style.display="block";
+                } else {
+                    $toggleSubNav.style.display="none";
+                }
+
+                el.appendChild($toggleSubNav);
                 el.appendChild(carrot);
             });
         //}); //JQ
