@@ -182,7 +182,6 @@ var plugin = function plugin() {
         node.parentElement.querySelector('a').className=className;
     });
 
-
     var CONFIG = _extends({
         ACCORDION_JS: 'main-navigation',
         ACCORDION_JS_HEADER: className, // Assigning button class to link that has sub-nav
@@ -237,7 +236,6 @@ var plugin = function plugin() {
             var coolSelectors = CONFIG.ACCORDION_DATA_COOL_SELECTORS === true;
             var childClassName = 'first-level-btn';
             
-
             // Init attributes accordion
             if (!mobileView()) {
                 accordion_node.setAttribute(CONFIG.ATTR_MULTISELECTABLE, 'false');
@@ -253,7 +251,6 @@ var plugin = function plugin() {
 
             var listAccordionsHeader = [].slice.call(accordion_node.querySelectorAll('.' + childClassName));
             listAccordionsHeader.forEach(function (header_node, index_header) {
-
                 var _setAttributes2, _setAttributes3;
 
                 // if we do not have cool selectors enabled,
@@ -359,8 +356,6 @@ var main = function main() {
                             var accordionContainer = findById(searchParent(buttonTag, CONFIG.ACCORDION_JS, hashId), hashId);
                             var coolSelectors = CONFIG.ACCORDION_DATA_COOL_SELECTORS === true;
                             var accordionAllHeaders = [].slice.call(accordionContainer.querySelectorAll('.first-level-btn'));
-
-
                             //var accordionMultiSelectable = accordionContainer.getAttribute(CONFIG.ATTR_MULTISELECTABLE);
                             var destination = findById(buttonTag.getAttribute(CONFIG.ATTR_CONTROLS), hashId);
                             var stateButton = buttonTag.getAttribute(CONFIG.ATTR_EXPANDED);
@@ -393,8 +388,6 @@ var main = function main() {
 
                             if (!mobileView()) {
                                 accordionAllHeaders.forEach(function (header_node) {
-
-
                                     //Close all the other panels
 
                                     var destinationPanel = findById(header_node.getAttribute(CONFIG.ATTR_CONTROLS), hashId);
@@ -610,7 +603,6 @@ AlmostJQueryDocumentReady(function () { //JS
      //   singleLevel = $navigation.hasClass('singleLevel'),
      //   setActiveLinkByFolder = $navigation.hasClass('auto-highlight'); // Use new folder matching method to highlight the current navigation tab
 
-
     // Variables JS
 
     var singleLevel = navigationJS.classList.contains('singleLevel');
@@ -715,7 +707,6 @@ AlmostJQueryDocumentReady(function () { //JS
                 //    toggleSubNav.css("display", "none");
                 //}
                 //$(this).find('.has-sub').append(toggleSubNav);
-
                 //$(this).find('.has-sub').append(carrot);
 
 
@@ -724,6 +715,7 @@ AlmostJQueryDocumentReady(function () { //JS
                 addClass(carrot,"ca-gov-icon-triangle-down");
                 addClass(carrot,"carrot");
                 carrot.setAttribute("aria-hidden","true");
+
                 var toggleSubNav = document.createElement("div");
                 addClass(toggleSubNav,"ca-gov-icon-caret-right");
                 addClass(toggleSubNav,"rotate");
@@ -736,7 +728,6 @@ AlmostJQueryDocumentReady(function () { //JS
                 }
 
                 el.appendChild(toggleSubNav);
-
                 el.appendChild(carrot);
             });
         //}); //JQ
@@ -801,4 +792,3 @@ document.addEventListener('keyup', function (e) {
     //$("#navigation .mobile-control a").removeAttr("aria-hidden aria-expanded role id").removeClass("sub-nav with-few-items subnav-closed");
     //$("#navigation .mobile-control .sr-only").removeAttr("aria-hidden aria-expanded role id").removeClass("sub-nav with-few-items subnav-closed");
 //});
-
