@@ -8,7 +8,7 @@
  * Website: https://van11y.net/accessible-accordion/
  * License MIT: https://github.com/nico3333fr/van11y-accessible-accordion-aria/blob/master/LICENSE
  */
-
+"use strict";
 
 //JQUERY replacement helpers
 //var matches = function(el, selector) {
