@@ -8,13 +8,14 @@
  * Website: https://van11y.net/accessible-accordion/
  * License MIT: https://github.com/nico3333fr/van11y-accessible-accordion-aria/blob/master/LICENSE
  */
-'use strict';
+
 
 //JQUERY replacement helpers
 //var matches = function(el, selector) {
 //    return (el.matches || el.matchesSelector || el.msMatchesSelector || el.mozMatchesSelector || el.webkitMatchesSelector || el.oMatchesSelector).call(el, selector);
 //};
 //var defaultActiveLink = "About";
+
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
@@ -783,7 +784,6 @@ document.addEventListener('keyup', function (e) {
         NavReset();
     }
 });
-
 
 /* Mobile Controls fix */
 //Doesn't appear to do anything

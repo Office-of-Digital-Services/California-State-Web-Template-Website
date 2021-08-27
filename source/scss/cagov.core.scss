@@ -4,72 +4,60 @@
 
 //
 // BOOTSTRAP CORE
-// --------------------------------------------------
+// -------------------------------------------------
 
-// Core variables and mixins
-@import "bootstrap/functions";
-@import "bootstrap/variables";
-@import "bootstrap/mixins";
-@import "bootstrap/root";
-@import "bootstrap/reboot";
-@import "bootstrap/type";
-@import "bootstrap/images";
-@import "bootstrap/code";
-@import "bootstrap/grid";
-@import "bootstrap/tables";
-@import "bootstrap/forms";
-@import "bootstrap/buttons";
-@import "bootstrap/transitions";
-@import "bootstrap/dropdown";
-@import "bootstrap/button-group";
-@import "bootstrap/input-group";
-@import "bootstrap/custom-forms";
-@import "bootstrap/nav";
-@import "bootstrap/navbar";
-@import "bootstrap/card";
-@import "bootstrap/breadcrumb";
-@import "bootstrap/pagination";
-@import "bootstrap/badge";
-@import "bootstrap/jumbotron";
-@import "bootstrap/alert";
-@import "bootstrap/progress";
-@import "bootstrap/media";
-@import "bootstrap/list-group";
-@import "bootstrap/close";
-@import "bootstrap/modal";
-@import "bootstrap/tooltip";
-@import "bootstrap/popover";
-// @import "bootstrap/carousel"; // State template is using Third Party Owl Carousel plugin
-@import "bootstrap/utilities";
-@import "bootstrap/print";
+
+// Configuration
+@import "bootstrap/scss/functions";
+@import "bootstrap/scss/variables";
+@import "bootstrap/scss/mixins";
+@import "bootstrap/scss/utilities";
+
+// Layout & components
+@import "bootstrap/scss/root";
+@import "bootstrap/scss/reboot";
+@import "bootstrap/scss/type";
+@import "bootstrap/scss/images";
+@import "bootstrap/scss/containers";
+@import "bootstrap/scss/grid";
+@import "bootstrap/scss/tables";
+@import "bootstrap/scss/forms";
+@import "bootstrap/scss/buttons";
+@import "bootstrap/scss/transitions";
+@import "bootstrap/scss/dropdown";
+@import "bootstrap/scss/button-group";
+@import "bootstrap/scss/nav";
+@import "bootstrap/scss/navbar";
+@import "bootstrap/scss/card";
+@import "bootstrap/scss/accordion";
+@import "bootstrap/scss/breadcrumb";
+@import "bootstrap/scss/pagination";
+@import "bootstrap/scss/badge";
+@import "bootstrap/scss/alert";
+@import "bootstrap/scss/progress";
+@import "bootstrap/scss/list-group";
+@import "bootstrap/scss/close";
+@import "bootstrap/scss/toasts";
+@import "bootstrap/scss/modal";
+@import "bootstrap/scss/tooltip";
+@import "bootstrap/scss/popover";
+@import "bootstrap/scss/carousel";
+@import "bootstrap/scss/spinners";
+@import "bootstrap/scss/offcanvas";
+@import "bootstrap/scss/placeholders";
+
+// Helpers
+@import "bootstrap/scss/helpers";
+
+// Utilities
+@import "bootstrap/scss/utilities/api";
+// scss-docs-end import-stack
+
 
 
 // State Template Variables
 @import "variables";
 //
-
-
-//
-// BOOTSTRAP ACCESSIBILITY PLUGIN
-// --------------------------------------------------
-
-
-// Import Variables
-@import "bootstrap-accessibility-plugin/variables.scss";
-
-// Import Mixins
-@import "bootstrap-accessibility-plugin/mixins.scss";
-
-// Import Partials Styles
-@import "bootstrap-accessibility-plugin/buttons.scss";
-@import "bootstrap-accessibility-plugin/divs.scss";
-@import "bootstrap-accessibility-plugin/links.scss";
-@import "bootstrap-accessibility-plugin/close.scss";
-@import "bootstrap-accessibility-plugin/navigation.scss";
-@import "bootstrap-accessibility-plugin/carousel.scss";
-@import "bootstrap-accessibility-plugin/alerts.scss";
-
-
 
 //
 //  CAGOV CORE
@@ -111,11 +99,6 @@
 @import "cagov/spacing.scss";
 @import "cagov/return-top.scss";
 
-// libs
-@import "libs/owl.carousel.scss"; 
-@import "libs/fancybox.scss"; 
-@import "libs/animate.scss";
-
 // content modules
 @import "cagov/alert-banner.scss";
 @import "cagov/tabs.scss";
@@ -152,7 +135,6 @@
 @import "cagov/carousel.scss";
 @import "cagov/charts.scss";
 @import "cagov/filter-group.scss";
-@import "cagov/pills.scss";
 @import "cagov/panes.scss";
 @import "cagov/progress-bar.scss";
 @import "cagov/progress-block.scss";
