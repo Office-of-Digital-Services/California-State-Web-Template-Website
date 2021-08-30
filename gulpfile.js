@@ -33,7 +33,7 @@ var jssrc = [
 
 
     // CAGOV CORE
-   // 'source/js/cagov/accordion.js',
+    'source/js/cagov/accordion.js',
     'source/js/cagov/navigation.js',
     //'source/js/cagov/search.js',
     'source/js/cagov/sourcecode.js',

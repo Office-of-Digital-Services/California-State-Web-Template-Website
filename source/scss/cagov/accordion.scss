@@ -4,211 +4,123 @@
 ----------------------------------------- */
 
 /* accordion component specific classes */
-cagov-accordion .card {
-    border-radius: 0 !important;
-    border: none;
-    margin-bottom: 0;
+cagov-accordion .cagov-accordion-card {
+  border-radius: .3rem !important;
+  margin-bottom: 0;
+  min-height: 3rem;
+  margin-top: .5rem;
+  border: solid 1px #ededef !important;
+}
+
+cagov-accordion .accordion-card-container {
+  display: block;
+  overflow: hidden;
+}
+
+cagov-accordion button.accordion-card-header {
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  padding: 0 0 0 1rem;
+  background-clip: border-box;
+  background-color: #EDEDEF;
+  border: none;
+  position: relative;
+  width: 100%;
+  line-height: 3rem;
+}
+
+cagov-accordion.prog-enhanced button.accordion-card-header {
+  cursor:pointer;
+}
+
+cagov-accordion .accordion-title {
+  text-align: left;
+  margin-bottom: 0;
+  color: var(--primary-color, #064E66);
+  margin-right: auto;
+  width: 90%;
+  padding: 0 0.5rem 0 0 !important;
+  font-size: 1.125rem;
+  font-weight: bold;
+}
+
+cagov-accordion.prog-enhanced .accordion-card-container {
+  height: 0px;
+  transition: height 0.3s ease;
+}
+cagov-accordion.prog-enhanced .accordion-card-container .card-body {
+  padding-left: 1rem;
+  margin-top: 8px;
+}
+
+cagov-accordion.prog-enhanced .accordion-card-container .card-body ul {
+  margin-left: 16px;
+  margin-right: 16px;
+}
+
+cagov-accordion .collapsed {
+  display: block;
+  overflow: hidden;
+  visibility: hidden;
+}
+
+.accordion-title h4,
+.accordion-title h3,
+.accordion-title h2 {
+  padding: 0 !important;
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+  font-size: 1.2rem !important;
+  font-weight: 700;
+  color: var(--primary-color, #064E66);
+  text-align: left !important;
+}
+
+button.accordion-card-header:hover {
+  background-color: var(--hover-color, #F9F9FA);
+}
+button.accordion-card-header:hover .accordion-title {
+  text-decoration: underline;
+}
+button.accordion-card-header:hover .accordion-title:hover {
+  text-decoration: underline;
+}
+
+button.accordion-card-header:focus {
+  outline-offset: -2px;
+}
+
+.accordion-icon svg line {
+  stroke-width: 4px;  
+}
+
+cagov-accordion.prog-enhanced .accordion-alpha .plus-minus {
+  width: 2.125rem;
+  height: 2.125rem;
+  border: none;
+  overflow: hidden;
+  margin-left: 1rem;
+  color: var(--primary-color, #064E66);
+  align-self: flex-start;
+  margin-top: 8px;
+}
+
+.prog-enhanced .accordion-alpha .plus-minus svg {
+  fill: var(--primary-color, #064E66);
+  width: 25px;
+  height: 25px;
+}
+
+.prog-enhanced .accordion-alpha-open cagov-plus .accordion-icon {
+  display: none !important;
+}
+.prog-enhanced .accordion-alpha-open cagov-minus .accordion-icon {
+  display: block !important;
+}
+
+@media only screen and (max-width: 767px) {
+  .accordion-alpha-open + .accordion-card-container {
+    height: 100% !important;
   }
-  
-  cagov-accordion .card-container {
-    display: block;
-    overflow: hidden;
-    &[aria-hidden="false"] {
-      border-bottom: 1px solid $color-p2;
-    }
-  }
-  
-  cagov-accordion.prog-enhanced .card-container {
-    height: 0px;
-    transition: height 0.3s ease;
-  }
-  
-  cagov-accordion .collapsed {
-    display: block;
-    overflow: hidden;
-    visibility: hidden;
-  }
-  
-  .card-header .button {
-    color: #000;
-  }
-  
-  .accordion {
-    margin-bottom: 20px;
-  }
-  
-  .accordion-title {
-    padding: 0.5rem;
-    text-align: left;
-    margin-bottom: 0;
-    color: $color-p2;
-    margin-right: auto;
-    width: 90%;
-    h4,
-    h3,
-    h2 {
-      padding: 0 !important;
-      margin-top: 0 !important;
-      margin-bottom: 0 !important;
-      font-family: "Roboto", sans-serif;
-      font-size: 1.2rem !important;
-      font-weight: 700;
-      color: $color-p2;
-      text-align: left !important;
-    }
-  }
-  
-  button.card-header {
-    display: flex;
-    justify-content: left;
-    align-items: center;
-    padding: 1rem 0.75rem;
-    background-clip: border-box;
-    background-color: $white;
-    border: none;
-    border-bottom: 1px solid $color-p2;
-    border-top: 1px solid $color-p2;
-    border-radius: 0 !important;
-    margin-top: -1px;
-    &:hover {
-      background-color: $color-s1;
-    }
-    &:focus {
-      outline-offset: -2px;
-    }
-  }
-  
-  .prog-enhanced .accordion-alpha .plus-munus {
-    width: 2.125rem;
-    height: 2.125rem;
-    border: 2px solid $orange;
-    border-radius: 50%;
-    padding: 0.02rem 0;
-    overflow: hidden;
-    transition: all 0.3s ease;
-    margin-left: 1rem;
-    color: $orange;
-    align-self: flex-start;
-    cagov-plus .accordion-icon {display: block;}
-    cagov-minus .accordion-icon {display: none;}
-  }
-  
-  /* chart-drawer version overrides */
-  .prog-enhanced.chart-drawer  {
-    font-size: 0.95rem;
-  }
-  .prog-enhanced.chart-drawer .accordion-alpha .plus-munus {
-    margin-left: 0;
-    margin-right: 1rem;
-    height: 1.35rem;
-    width: 1.35rem;
-  }
-  .chart-drawer button.card-header {
-    border-bottom: none;
-    border-top: none;
-  }
-  .chart-drawer .card-container[aria-hidden="false"] {
-    border-bottom: none;
-  }
-  .chart-drawer .card {
-    padding: 1px;
-    border: 1px solid #F2F5FC;
-  }
-  
-  .prog-enhanced .accordion-alpha-open {
-    border-bottom-color: $white !important;
-    cagov-plus .accordion-icon {display: none !important;}
-    cagov-minus .accordion-icon {display: block !important;}
-  }
-  @function tint($color, $percentage) {
-    @return mix(white, $color, $percentage);
-  }
-  
-  
-  //Dark accordion
-  
-  // first sibling
-  .dark-accordion-bg > .container.dark-accordion-first {
-    padding-top: 3rem;
-    margin-top: 3rem;
-    padding-bottom: 0;
-    margin-bottom: 0;
-  }
-  // stand alone
-  .dark-accordion-bg > .container {
-    padding-top: 3rem;
-    margin-top: 3rem;
-    padding-bottom: 3rem;
-    margin-bottom: 3rem;
-  }
-  // siblings (in the middle)
-  .dark-accordion-sibling > .container {
-    padding-top: 0rem;
-    padding-bottom: 0rem;
-    margin-top: 0rem;
-    margin-bottom: 0rem;
-  }
-  // last sibling (with many siblings)
-  .dark-accordion-sibling + .dark-accordion-bg > .container {
-    padding-top: 0rem;
-    margin-top: 0rem;
-    padding-bottom: 3rem;
-    margin-bottom: 3rem;
-  }
-  
-  
-  
-  .dark-accordion-bg {
-    .card {
-      background-color: $color-p2;
-      .accordion-alpha {
-        background-color: $color-p2;
-        border-bottom: 1px solid tint($color-p2, 20%);
-        border-top: 1px solid tint($color-p2, 20%);
-        &.accordion-alpha-open {
-          border-bottom-color: $color-p2 !important;
-        }
-        &:hover, &:focus {
-          background-color: $blue;
-        }
-        .accordion-title {
-          color: $white;
-          h4,
-          h3,
-          h2 {
-            color: $white;
-          }
-        }
-      }
-  
-      //dark accordion content
-      .card-container {
-        &[aria-hidden="false"] {
-          border-bottom: 1px solid tint($color-p2, 20%);
-        }
-        color: $white !important;
-        h2, h3, h4, h5 {
-          color: $white !important;
-        }
-        .card-body {
-          color: $white !important;
-        }
-      }
-  
-    }
-  }
-  
-  // Fist sibling inside of dark container
-  .bg-darkblue .dark-accordion-bg > .container.dark-accordion-first {
-    padding-top: 1rem;
-    margin-top: 0;
-    padding-bottom: 0;
-    margin-bottom: 0;
-  }
-  
-  // Search results accodions fix (mobile)
-  @media only screen and (max-width: 767px) {
-    .accordion-alpha-open + .card-container {
-      height: 100% !important;
-    }
-  }
+}
