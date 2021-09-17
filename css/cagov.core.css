@@ -1,5 +1,5 @@
 /**
- * CA State Template v5.5 -  @version v5.5.23 -  8/2/2021 
+ * CA State Template v5.5 -  @version v5.5.24 -  9/17/2021 
   STYLES COMPILED FROM SOURCE (SCSS) DO NOT MODIFY */
 /* -----------------------------------------
    BOOTSTRAP v4.6.0 - /source/scss/bootstrap/ 
@@ -9529,6 +9529,10 @@ html {
   -moz-osx-font-smoothing: grayscale;
 }
 
+.ca-gov-icon-pdf-text:before {
+  content: "\ea20";
+}
+
 .ca-gov-icon-mask-light:before {
   content: "\e9fb";
 }
@@ -14957,6 +14961,7 @@ a.second-level-link [class^="ca-gov-icon-"] {
   position: relative;
   margin-left: auto;
   text-align: center;
+  z-index: 99;
 }
 
 .mobile-controls .toggle-search:focus {

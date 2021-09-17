@@ -56,7 +56,7 @@ $(document).ready(function () {
     /**
  * Create a return to top button
  */
-    var $returnTop = $('<span class="return-top"/>').appendTo('.main-content');
+    var $returnTop = $(".return-top");
 
     // set up the interaction handlers before anything else
     setResizeHandler();

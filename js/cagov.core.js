@@ -1,5 +1,5 @@
 /**
- * CA State Template v5.5 -  @version v5.5.23 -  8/2/2021 
+ * CA State Template v5.5 -  @version v5.5.24 -  9/17/2021 
   STYLES COMPILED FROM SOURCE (source/js) DO NOT MODIFY */
 /*! modernizr (Custom Build) | MIT *
  * https://modernizr.com/download/?-flexbox-setclasses !*/
@@ -14268,7 +14268,7 @@ $(document).ready(function () {
     /**
  * Create a return to top button
  */
-    var $returnTop = $('<span class="return-top"/>').appendTo('.main-content');
+    var $returnTop = $(".return-top");
 
     // set up the interaction handlers before anything else
     setResizeHandler();
@@ -15247,12 +15247,21 @@ function NavReset() {
 
 }
 
+
+
+
 var mobileView = function() {
-    //JQ
-    //return $('.global-header .mobile-controls').css('display') !== "none"; // mobile view uses arrow to show subnav instead of first touch
-    //JS
-    return getComputedStyle(document.querySelector('.global-header .mobile-controls'))['display'] !== 'none';
+    var mobileElement = document.querySelector('.global-header .mobile-controls');
+
+    if (mobileElement) {
+        return getComputedStyle(mobileElement)['display'] !== 'none';
+
+    } else {
+         return false; // or whatever is supposed to be returned when there is no header
+
+    }
 };
+
 
 function AlmostJQueryDocumentReady(callbackFunction){
     if(document.readyState != 'loading')
@@ -16765,9 +16774,19 @@ function ariaHidden() {
 
 
 
-function mobileView() {
-    return $('.global-header .mobile-controls').css('display') !== "none"; // mobile view uses arrow to show subnav instead of first touch
-}
+
+
+var mobileView = function() {
+    var mobileElement = document.querySelector('.global-header .mobile-controls');
+
+    if (mobileElement) {
+        return getComputedStyle(mobileElement)['display'] !== 'none';
+
+    } else {
+         return false; // or whatever is supposed to be returned when there is no header
+
+    }
+};
 /* -----------------------------------------
    INIT THIRD PARTY PLUGINS - /source/js/cagov/plugins.js
 ----------------------------------------- */
