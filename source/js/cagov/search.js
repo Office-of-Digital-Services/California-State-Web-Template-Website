@@ -405,6 +405,16 @@ function ariaHidden() {
 
 
 
-function mobileView() {
-    return $('.global-header .mobile-controls').css('display') !== "none"; // mobile view uses arrow to show subnav instead of first touch
-}
+
+
+var mobileView = function() {
+    var mobileElement = document.querySelector('.global-header .mobile-controls');
+
+    if (mobileElement) {
+        return getComputedStyle(mobileElement)['display'] !== 'none';
+
+    } else {
+         return false; // or whatever is supposed to be returned when there is no header
+
+    }
+};
