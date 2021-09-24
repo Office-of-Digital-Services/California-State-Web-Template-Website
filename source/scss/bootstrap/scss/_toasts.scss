@@ -10,11 +10,11 @@
   box-shadow: $toast-box-shadow;
   @include border-radius($toast-border-radius);
 
-  &.showing {
+  &:not(.showing):not(.show) {
     opacity: 0;
   }
 
-  &:not(.show) {
+  &.hide {
     display: none;
   }
 }

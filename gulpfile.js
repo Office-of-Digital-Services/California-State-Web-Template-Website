@@ -3,7 +3,7 @@
 var gulp = require('gulp'), // Gulp
     sass = require('gulp-sass'), // SASS,
     autoprefixer = require('gulp-autoprefixer'), // Add the desired vendor prefixes and remove unnecessary in SASS-files
-    uglify = require('gulp-uglify'),
+    uglify = require('gulp-uglify-es').default,
     gutil = require('gulp-util');
 csso = require('gulp-csso');
 concat = require('gulp-concat');
@@ -29,7 +29,7 @@ var jssrc = [
     'source/js/libs/modernizr.js',
 
     // BOOTSTRAP 
-   'source/js/bootstrap/bootstrap.bundle.min.js',
+   'source/js/bootstrap/bootstrap.min.js',
 
 
     // CAGOV CORE
@@ -475,8 +475,8 @@ gulp.task('js', done => {
 });
 
 // JS Core Min 
-gulp.task('jsmin', done => {
-    gulp.src(jssrc)
+gulp.task('jsmin', function () {
+    return gulp.src(jssrc)
         .pipe(concat('cagov.core.min.js'))
         .pipe(uglify())
         .pipe(header(bannerjs, { pkg: pkg }))

@@ -13,7 +13,6 @@
   background-clip: border-box;
   border: $card-border-width solid $card-border-color;
   @include border-radius($card-border-radius);
-  @include box-shadow($card-box-shadow);
 
   > hr {
     margin-right: 0;
@@ -66,7 +65,7 @@
 
 .card-link {
   &:hover {
-    text-decoration: if($link-hover-decoration == underline, none, null);
+    text-decoration: none;
   }
 
   + .card-link {

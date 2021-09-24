@@ -1,5 +1,5 @@
 /**
- * CA State Template v6 -  @version v6.0.5 -  8/18/2021 
+ * CA State Template v6 -  @version v6.0.5 -  9/24/2021 
   STYLES COMPILED FROM SOURCE (SCSS) DO NOT MODIFY */
 /* -----------------------------------------
    SIERRA
@@ -1803,50 +1803,62 @@ a.text-white:not(.btn):hover {
 }
 
 .panel-default .panel-heading .options .btn-default, .panel-default .card-heading .options .btn-default, .panel-default .card-header .options .btn-default, .card-default .panel-heading .options .btn-default, .card-default .card-heading .options .btn-default, .card-default .card-header .options .btn-default {
-  color: #212529;
+  color: #000;
   background-color: #e3f0e3;
   border-color: #ddd;
 }
 
 .panel-default .panel-heading .options .btn-default:hover, .panel-default .card-heading .options .btn-default:hover, .panel-default .card-header .options .btn-default:hover, .card-default .panel-heading .options .btn-default:hover, .card-default .card-heading .options .btn-default:hover, .card-default .card-header .options .btn-default:hover {
-  color: #212529;
-  background-color: #cae3ca;
-  border-color: #c4c4c4;
+  color: #000;
+  background-color: #e7f2e7;
+  border-color: #e0e0e0;
 }
 
-.panel-default .panel-heading .options .btn-default:focus, .panel-default .panel-heading .options .btn-default.focus, .panel-default .card-heading .options .btn-default:focus, .panel-default .card-heading .options .btn-default.focus, .panel-default .card-header .options .btn-default:focus, .panel-default .card-header .options .btn-default.focus, .card-default .panel-heading .options .btn-default:focus, .card-default .panel-heading .options .btn-default.focus, .card-default .card-heading .options .btn-default:focus, .card-default .card-heading .options .btn-default.focus, .card-default .card-header .options .btn-default:focus, .card-default .card-header .options .btn-default.focus {
-  color: #212529;
-  background-color: #cae3ca;
-  border-color: #c4c4c4;
-  box-shadow: 0 0 0 0.2rem rgba(193, 193, 194, 0.5);
+.btn-check:focus + .panel-default .panel-heading .options .btn-default, .panel-default .panel-heading .options .btn-default:focus, .btn-check:focus + .panel-default .card-heading .options .btn-default, .panel-default .card-heading .options .btn-default:focus, .btn-check:focus + .panel-default .card-header .options .btn-default, .panel-default .card-header .options .btn-default:focus, .btn-check:focus + .card-default .panel-heading .options .btn-default, .card-default .panel-heading .options .btn-default:focus, .btn-check:focus + .card-default .card-heading .options .btn-default, .card-default .card-heading .options .btn-default:focus, .btn-check:focus + .card-default .card-header .options .btn-default, .card-default .card-header .options .btn-default:focus {
+  color: #000;
+  background-color: #e7f2e7;
+  border-color: #e0e0e0;
+  box-shadow: 0 0 0 0.25rem rgba(188, 188, 188, 0.5);
 }
 
-.panel-default .panel-heading .options .btn-default.disabled, .panel-default .panel-heading .options .btn-default:disabled, .panel-default .card-heading .options .btn-default.disabled, .panel-default .card-heading .options .btn-default:disabled, .panel-default .card-header .options .btn-default.disabled, .panel-default .card-header .options .btn-default:disabled, .card-default .panel-heading .options .btn-default.disabled, .card-default .panel-heading .options .btn-default:disabled, .card-default .card-heading .options .btn-default.disabled, .card-default .card-heading .options .btn-default:disabled, .card-default .card-header .options .btn-default.disabled, .card-default .card-header .options .btn-default:disabled {
-  color: #212529;
+.btn-check:checked + .panel-default .panel-heading .options .btn-default,
+.btn-check:active + .panel-default .panel-heading .options .btn-default, .panel-default .panel-heading .options .btn-default:active, .panel-default .panel-heading .options .btn-default.active,
+.show > .panel-default .panel-heading .options .btn-default.dropdown-toggle, .btn-check:checked + .panel-default .card-heading .options .btn-default,
+.btn-check:active + .panel-default .card-heading .options .btn-default, .panel-default .card-heading .options .btn-default:active, .panel-default .card-heading .options .btn-default.active,
+.show > .panel-default .card-heading .options .btn-default.dropdown-toggle, .btn-check:checked + .panel-default .card-header .options .btn-default,
+.btn-check:active + .panel-default .card-header .options .btn-default, .panel-default .card-header .options .btn-default:active, .panel-default .card-header .options .btn-default.active,
+.show > .panel-default .card-header .options .btn-default.dropdown-toggle, .btn-check:checked + .card-default .panel-heading .options .btn-default,
+.btn-check:active + .card-default .panel-heading .options .btn-default, .card-default .panel-heading .options .btn-default:active, .card-default .panel-heading .options .btn-default.active,
+.show > .card-default .panel-heading .options .btn-default.dropdown-toggle, .btn-check:checked + .card-default .card-heading .options .btn-default,
+.btn-check:active + .card-default .card-heading .options .btn-default, .card-default .card-heading .options .btn-default:active, .card-default .card-heading .options .btn-default.active,
+.show > .card-default .card-heading .options .btn-default.dropdown-toggle, .btn-check:checked + .card-default .card-header .options .btn-default,
+.btn-check:active + .card-default .card-header .options .btn-default, .card-default .card-header .options .btn-default:active, .card-default .card-header .options .btn-default.active,
+.show > .card-default .card-header .options .btn-default.dropdown-toggle {
+  color: #000;
+  background-color: #e9f3e9;
+  border-color: #e0e0e0;
+}
+
+.btn-check:checked + .panel-default .panel-heading .options .btn-default:focus,
+.btn-check:active + .panel-default .panel-heading .options .btn-default:focus, .panel-default .panel-heading .options .btn-default:active:focus, .panel-default .panel-heading .options .btn-default.active:focus,
+.show > .panel-default .panel-heading .options .btn-default.dropdown-toggle:focus, .btn-check:checked + .panel-default .card-heading .options .btn-default:focus,
+.btn-check:active + .panel-default .card-heading .options .btn-default:focus, .panel-default .card-heading .options .btn-default:active:focus, .panel-default .card-heading .options .btn-default.active:focus,
+.show > .panel-default .card-heading .options .btn-default.dropdown-toggle:focus, .btn-check:checked + .panel-default .card-header .options .btn-default:focus,
+.btn-check:active + .panel-default .card-header .options .btn-default:focus, .panel-default .card-header .options .btn-default:active:focus, .panel-default .card-header .options .btn-default.active:focus,
+.show > .panel-default .card-header .options .btn-default.dropdown-toggle:focus, .btn-check:checked + .card-default .panel-heading .options .btn-default:focus,
+.btn-check:active + .card-default .panel-heading .options .btn-default:focus, .card-default .panel-heading .options .btn-default:active:focus, .card-default .panel-heading .options .btn-default.active:focus,
+.show > .card-default .panel-heading .options .btn-default.dropdown-toggle:focus, .btn-check:checked + .card-default .card-heading .options .btn-default:focus,
+.btn-check:active + .card-default .card-heading .options .btn-default:focus, .card-default .card-heading .options .btn-default:active:focus, .card-default .card-heading .options .btn-default.active:focus,
+.show > .card-default .card-heading .options .btn-default.dropdown-toggle:focus, .btn-check:checked + .card-default .card-header .options .btn-default:focus,
+.btn-check:active + .card-default .card-header .options .btn-default:focus, .card-default .card-header .options .btn-default:active:focus, .card-default .card-header .options .btn-default.active:focus,
+.show > .card-default .card-header .options .btn-default.dropdown-toggle:focus {
+  box-shadow: 0 0 0 0.25rem rgba(188, 188, 188, 0.5);
+}
+
+.panel-default .panel-heading .options .btn-default:disabled, .panel-default .panel-heading .options .btn-default.disabled, .panel-default .card-heading .options .btn-default:disabled, .panel-default .card-heading .options .btn-default.disabled, .panel-default .card-header .options .btn-default:disabled, .panel-default .card-header .options .btn-default.disabled, .card-default .panel-heading .options .btn-default:disabled, .card-default .panel-heading .options .btn-default.disabled, .card-default .card-heading .options .btn-default:disabled, .card-default .card-heading .options .btn-default.disabled, .card-default .card-header .options .btn-default:disabled, .card-default .card-header .options .btn-default.disabled {
+  color: #000;
   background-color: #e3f0e3;
   border-color: #ddd;
-}
-
-.panel-default .panel-heading .options .btn-default:not(:disabled):not(.disabled):active, .panel-default .panel-heading .options .btn-default:not(:disabled):not(.disabled).active,
-.show > .panel-default .panel-heading .options .btn-default.dropdown-toggle, .panel-default .card-heading .options .btn-default:not(:disabled):not(.disabled):active, .panel-default .card-heading .options .btn-default:not(:disabled):not(.disabled).active,
-.show > .panel-default .card-heading .options .btn-default.dropdown-toggle, .panel-default .card-header .options .btn-default:not(:disabled):not(.disabled):active, .panel-default .card-header .options .btn-default:not(:disabled):not(.disabled).active,
-.show > .panel-default .card-header .options .btn-default.dropdown-toggle, .card-default .panel-heading .options .btn-default:not(:disabled):not(.disabled):active, .card-default .panel-heading .options .btn-default:not(:disabled):not(.disabled).active,
-.show > .card-default .panel-heading .options .btn-default.dropdown-toggle, .card-default .card-heading .options .btn-default:not(:disabled):not(.disabled):active, .card-default .card-heading .options .btn-default:not(:disabled):not(.disabled).active,
-.show > .card-default .card-heading .options .btn-default.dropdown-toggle, .card-default .card-header .options .btn-default:not(:disabled):not(.disabled):active, .card-default .card-header .options .btn-default:not(:disabled):not(.disabled).active,
-.show > .card-default .card-header .options .btn-default.dropdown-toggle {
-  color: #212529;
-  background-color: #c2dec2;
-  border-color: #bdbdbd;
-}
-
-.panel-default .panel-heading .options .btn-default:not(:disabled):not(.disabled):active:focus, .panel-default .panel-heading .options .btn-default:not(:disabled):not(.disabled).active:focus,
-.show > .panel-default .panel-heading .options .btn-default.dropdown-toggle:focus, .panel-default .card-heading .options .btn-default:not(:disabled):not(.disabled):active:focus, .panel-default .card-heading .options .btn-default:not(:disabled):not(.disabled).active:focus,
-.show > .panel-default .card-heading .options .btn-default.dropdown-toggle:focus, .panel-default .card-header .options .btn-default:not(:disabled):not(.disabled):active:focus, .panel-default .card-header .options .btn-default:not(:disabled):not(.disabled).active:focus,
-.show > .panel-default .card-header .options .btn-default.dropdown-toggle:focus, .card-default .panel-heading .options .btn-default:not(:disabled):not(.disabled):active:focus, .card-default .panel-heading .options .btn-default:not(:disabled):not(.disabled).active:focus,
-.show > .card-default .panel-heading .options .btn-default.dropdown-toggle:focus, .card-default .card-heading .options .btn-default:not(:disabled):not(.disabled):active:focus, .card-default .card-heading .options .btn-default:not(:disabled):not(.disabled).active:focus,
-.show > .card-default .card-heading .options .btn-default.dropdown-toggle:focus, .card-default .card-header .options .btn-default:not(:disabled):not(.disabled):active:focus, .card-default .card-header .options .btn-default:not(:disabled):not(.disabled).active:focus,
-.show > .card-default .card-header .options .btn-default.dropdown-toggle:focus {
-  box-shadow: 0 0 0 0.2rem rgba(193, 193, 194, 0.5);
 }
 
 .panel-default .panel-body, .panel-default .card-body, .card-default .panel-body, .card-default .card-body {
@@ -1895,43 +1907,55 @@ a.text-white:not(.btn):hover {
 
 .panel-overstated .panel-heading .options .btn-default:hover, .panel-overstated .card-heading .options .btn-default:hover, .panel-overstated .card-header .options .btn-default:hover, .card-overstated .panel-heading .options .btn-default:hover, .card-overstated .card-heading .options .btn-default:hover, .card-overstated .card-header .options .btn-default:hover {
   color: #fff;
-  background-color: #27453b;
-  border-color: #31574a;
+  background-color: #2d4f44;
+  border-color: #365f52;
 }
 
-.panel-overstated .panel-heading .options .btn-default:focus, .panel-overstated .panel-heading .options .btn-default.focus, .panel-overstated .card-heading .options .btn-default:focus, .panel-overstated .card-heading .options .btn-default.focus, .panel-overstated .card-header .options .btn-default:focus, .panel-overstated .card-header .options .btn-default.focus, .card-overstated .panel-heading .options .btn-default:focus, .card-overstated .panel-heading .options .btn-default.focus, .card-overstated .card-heading .options .btn-default:focus, .card-overstated .card-heading .options .btn-default.focus, .card-overstated .card-header .options .btn-default:focus, .card-overstated .card-header .options .btn-default.focus {
+.btn-check:focus + .panel-overstated .panel-heading .options .btn-default, .panel-overstated .panel-heading .options .btn-default:focus, .btn-check:focus + .panel-overstated .card-heading .options .btn-default, .panel-overstated .card-heading .options .btn-default:focus, .btn-check:focus + .panel-overstated .card-header .options .btn-default, .panel-overstated .card-header .options .btn-default:focus, .btn-check:focus + .card-overstated .panel-heading .options .btn-default, .card-overstated .panel-heading .options .btn-default:focus, .btn-check:focus + .card-overstated .card-heading .options .btn-default, .card-overstated .card-heading .options .btn-default:focus, .btn-check:focus + .card-overstated .card-header .options .btn-default, .card-overstated .card-header .options .btn-default:focus {
   color: #fff;
-  background-color: #27453b;
-  border-color: #31574a;
-  box-shadow: 0 0 0 0.2rem rgba(96, 139, 125, 0.5);
+  background-color: #2d4f44;
+  border-color: #365f52;
+  box-shadow: 0 0 0 0.25rem rgba(96, 139, 125, 0.5);
 }
 
-.panel-overstated .panel-heading .options .btn-default.disabled, .panel-overstated .panel-heading .options .btn-default:disabled, .panel-overstated .card-heading .options .btn-default.disabled, .panel-overstated .card-heading .options .btn-default:disabled, .panel-overstated .card-header .options .btn-default.disabled, .panel-overstated .card-header .options .btn-default:disabled, .card-overstated .panel-heading .options .btn-default.disabled, .card-overstated .panel-heading .options .btn-default:disabled, .card-overstated .card-heading .options .btn-default.disabled, .card-overstated .card-heading .options .btn-default:disabled, .card-overstated .card-header .options .btn-default.disabled, .card-overstated .card-header .options .btn-default:disabled {
+.btn-check:checked + .panel-overstated .panel-heading .options .btn-default,
+.btn-check:active + .panel-overstated .panel-heading .options .btn-default, .panel-overstated .panel-heading .options .btn-default:active, .panel-overstated .panel-heading .options .btn-default.active,
+.show > .panel-overstated .panel-heading .options .btn-default.dropdown-toggle, .btn-check:checked + .panel-overstated .card-heading .options .btn-default,
+.btn-check:active + .panel-overstated .card-heading .options .btn-default, .panel-overstated .card-heading .options .btn-default:active, .panel-overstated .card-heading .options .btn-default.active,
+.show > .panel-overstated .card-heading .options .btn-default.dropdown-toggle, .btn-check:checked + .panel-overstated .card-header .options .btn-default,
+.btn-check:active + .panel-overstated .card-header .options .btn-default, .panel-overstated .card-header .options .btn-default:active, .panel-overstated .card-header .options .btn-default.active,
+.show > .panel-overstated .card-header .options .btn-default.dropdown-toggle, .btn-check:checked + .card-overstated .panel-heading .options .btn-default,
+.btn-check:active + .card-overstated .panel-heading .options .btn-default, .card-overstated .panel-heading .options .btn-default:active, .card-overstated .panel-heading .options .btn-default.active,
+.show > .card-overstated .panel-heading .options .btn-default.dropdown-toggle, .btn-check:checked + .card-overstated .card-heading .options .btn-default,
+.btn-check:active + .card-overstated .card-heading .options .btn-default, .card-overstated .card-heading .options .btn-default:active, .card-overstated .card-heading .options .btn-default.active,
+.show > .card-overstated .card-heading .options .btn-default.dropdown-toggle, .btn-check:checked + .card-overstated .card-header .options .btn-default,
+.btn-check:active + .card-overstated .card-header .options .btn-default, .card-overstated .card-header .options .btn-default:active, .card-overstated .card-header .options .btn-default.active,
+.show > .card-overstated .card-header .options .btn-default.dropdown-toggle {
+  color: #fff;
+  background-color: #2b4a40;
+  border-color: #33594d;
+}
+
+.btn-check:checked + .panel-overstated .panel-heading .options .btn-default:focus,
+.btn-check:active + .panel-overstated .panel-heading .options .btn-default:focus, .panel-overstated .panel-heading .options .btn-default:active:focus, .panel-overstated .panel-heading .options .btn-default.active:focus,
+.show > .panel-overstated .panel-heading .options .btn-default.dropdown-toggle:focus, .btn-check:checked + .panel-overstated .card-heading .options .btn-default:focus,
+.btn-check:active + .panel-overstated .card-heading .options .btn-default:focus, .panel-overstated .card-heading .options .btn-default:active:focus, .panel-overstated .card-heading .options .btn-default.active:focus,
+.show > .panel-overstated .card-heading .options .btn-default.dropdown-toggle:focus, .btn-check:checked + .panel-overstated .card-header .options .btn-default:focus,
+.btn-check:active + .panel-overstated .card-header .options .btn-default:focus, .panel-overstated .card-header .options .btn-default:active:focus, .panel-overstated .card-header .options .btn-default.active:focus,
+.show > .panel-overstated .card-header .options .btn-default.dropdown-toggle:focus, .btn-check:checked + .card-overstated .panel-heading .options .btn-default:focus,
+.btn-check:active + .card-overstated .panel-heading .options .btn-default:focus, .card-overstated .panel-heading .options .btn-default:active:focus, .card-overstated .panel-heading .options .btn-default.active:focus,
+.show > .card-overstated .panel-heading .options .btn-default.dropdown-toggle:focus, .btn-check:checked + .card-overstated .card-heading .options .btn-default:focus,
+.btn-check:active + .card-overstated .card-heading .options .btn-default:focus, .card-overstated .card-heading .options .btn-default:active:focus, .card-overstated .card-heading .options .btn-default.active:focus,
+.show > .card-overstated .card-heading .options .btn-default.dropdown-toggle:focus, .btn-check:checked + .card-overstated .card-header .options .btn-default:focus,
+.btn-check:active + .card-overstated .card-header .options .btn-default:focus, .card-overstated .card-header .options .btn-default:active:focus, .card-overstated .card-header .options .btn-default.active:focus,
+.show > .card-overstated .card-header .options .btn-default.dropdown-toggle:focus {
+  box-shadow: 0 0 0 0.25rem rgba(96, 139, 125, 0.5);
+}
+
+.panel-overstated .panel-heading .options .btn-default:disabled, .panel-overstated .panel-heading .options .btn-default.disabled, .panel-overstated .card-heading .options .btn-default:disabled, .panel-overstated .card-heading .options .btn-default.disabled, .panel-overstated .card-header .options .btn-default:disabled, .panel-overstated .card-header .options .btn-default.disabled, .card-overstated .panel-heading .options .btn-default:disabled, .card-overstated .panel-heading .options .btn-default.disabled, .card-overstated .card-heading .options .btn-default:disabled, .card-overstated .card-heading .options .btn-default.disabled, .card-overstated .card-header .options .btn-default:disabled, .card-overstated .card-header .options .btn-default.disabled {
   color: #fff;
   background-color: #355d50;
   border-color: #447766;
-}
-
-.panel-overstated .panel-heading .options .btn-default:not(:disabled):not(.disabled):active, .panel-overstated .panel-heading .options .btn-default:not(:disabled):not(.disabled).active,
-.show > .panel-overstated .panel-heading .options .btn-default.dropdown-toggle, .panel-overstated .card-heading .options .btn-default:not(:disabled):not(.disabled):active, .panel-overstated .card-heading .options .btn-default:not(:disabled):not(.disabled).active,
-.show > .panel-overstated .card-heading .options .btn-default.dropdown-toggle, .panel-overstated .card-header .options .btn-default:not(:disabled):not(.disabled):active, .panel-overstated .card-header .options .btn-default:not(:disabled):not(.disabled).active,
-.show > .panel-overstated .card-header .options .btn-default.dropdown-toggle, .card-overstated .panel-heading .options .btn-default:not(:disabled):not(.disabled):active, .card-overstated .panel-heading .options .btn-default:not(:disabled):not(.disabled).active,
-.show > .card-overstated .panel-heading .options .btn-default.dropdown-toggle, .card-overstated .card-heading .options .btn-default:not(:disabled):not(.disabled):active, .card-overstated .card-heading .options .btn-default:not(:disabled):not(.disabled).active,
-.show > .card-overstated .card-heading .options .btn-default.dropdown-toggle, .card-overstated .card-header .options .btn-default:not(:disabled):not(.disabled):active, .card-overstated .card-header .options .btn-default:not(:disabled):not(.disabled).active,
-.show > .card-overstated .card-header .options .btn-default.dropdown-toggle {
-  color: #fff;
-  background-color: #233d34;
-  border-color: #2d4e43;
-}
-
-.panel-overstated .panel-heading .options .btn-default:not(:disabled):not(.disabled):active:focus, .panel-overstated .panel-heading .options .btn-default:not(:disabled):not(.disabled).active:focus,
-.show > .panel-overstated .panel-heading .options .btn-default.dropdown-toggle:focus, .panel-overstated .card-heading .options .btn-default:not(:disabled):not(.disabled):active:focus, .panel-overstated .card-heading .options .btn-default:not(:disabled):not(.disabled).active:focus,
-.show > .panel-overstated .card-heading .options .btn-default.dropdown-toggle:focus, .panel-overstated .card-header .options .btn-default:not(:disabled):not(.disabled):active:focus, .panel-overstated .card-header .options .btn-default:not(:disabled):not(.disabled).active:focus,
-.show > .panel-overstated .card-header .options .btn-default.dropdown-toggle:focus, .card-overstated .panel-heading .options .btn-default:not(:disabled):not(.disabled):active:focus, .card-overstated .panel-heading .options .btn-default:not(:disabled):not(.disabled).active:focus,
-.show > .card-overstated .panel-heading .options .btn-default.dropdown-toggle:focus, .card-overstated .card-heading .options .btn-default:not(:disabled):not(.disabled):active:focus, .card-overstated .card-heading .options .btn-default:not(:disabled):not(.disabled).active:focus,
-.show > .card-overstated .card-heading .options .btn-default.dropdown-toggle:focus, .card-overstated .card-header .options .btn-default:not(:disabled):not(.disabled):active:focus, .card-overstated .card-header .options .btn-default:not(:disabled):not(.disabled).active:focus,
-.show > .card-overstated .card-header .options .btn-default.dropdown-toggle:focus {
-  box-shadow: 0 0 0 0.2rem rgba(96, 139, 125, 0.5);
 }
 
 .panel-overstated .panel-body, .panel-overstated .card-body, .card-overstated .panel-body, .card-overstated .card-body {
@@ -1995,50 +2019,62 @@ a.text-white:not(.btn):hover {
 }
 
 .panel-understated .panel-heading .options .btn-default, .panel-understated .card-heading .options .btn-default, .panel-understated .card-header .options .btn-default, .card-understated .panel-heading .options .btn-default, .card-understated .card-heading .options .btn-default, .card-understated .card-header .options .btn-default {
-  color: #212529;
+  color: #000;
   background-color: #d0f0e5;
   border-color: #ddd;
 }
 
 .panel-understated .panel-heading .options .btn-default:hover, .panel-understated .card-heading .options .btn-default:hover, .panel-understated .card-header .options .btn-default:hover, .card-understated .panel-heading .options .btn-default:hover, .card-understated .card-heading .options .btn-default:hover, .card-understated .card-header .options .btn-default:hover {
-  color: #212529;
-  background-color: #b3e7d4;
-  border-color: #c4c4c4;
+  color: #000;
+  background-color: #d7f2e8;
+  border-color: #e0e0e0;
 }
 
-.panel-understated .panel-heading .options .btn-default:focus, .panel-understated .panel-heading .options .btn-default.focus, .panel-understated .card-heading .options .btn-default:focus, .panel-understated .card-heading .options .btn-default.focus, .panel-understated .card-header .options .btn-default:focus, .panel-understated .card-header .options .btn-default.focus, .card-understated .panel-heading .options .btn-default:focus, .card-understated .panel-heading .options .btn-default.focus, .card-understated .card-heading .options .btn-default:focus, .card-understated .card-heading .options .btn-default.focus, .card-understated .card-header .options .btn-default:focus, .card-understated .card-header .options .btn-default.focus {
-  color: #212529;
-  background-color: #b3e7d4;
-  border-color: #c4c4c4;
-  box-shadow: 0 0 0 0.2rem rgba(193, 193, 194, 0.5);
+.btn-check:focus + .panel-understated .panel-heading .options .btn-default, .panel-understated .panel-heading .options .btn-default:focus, .btn-check:focus + .panel-understated .card-heading .options .btn-default, .panel-understated .card-heading .options .btn-default:focus, .btn-check:focus + .panel-understated .card-header .options .btn-default, .panel-understated .card-header .options .btn-default:focus, .btn-check:focus + .card-understated .panel-heading .options .btn-default, .card-understated .panel-heading .options .btn-default:focus, .btn-check:focus + .card-understated .card-heading .options .btn-default, .card-understated .card-heading .options .btn-default:focus, .btn-check:focus + .card-understated .card-header .options .btn-default, .card-understated .card-header .options .btn-default:focus {
+  color: #000;
+  background-color: #d7f2e8;
+  border-color: #e0e0e0;
+  box-shadow: 0 0 0 0.25rem rgba(188, 188, 188, 0.5);
 }
 
-.panel-understated .panel-heading .options .btn-default.disabled, .panel-understated .panel-heading .options .btn-default:disabled, .panel-understated .card-heading .options .btn-default.disabled, .panel-understated .card-heading .options .btn-default:disabled, .panel-understated .card-header .options .btn-default.disabled, .panel-understated .card-header .options .btn-default:disabled, .card-understated .panel-heading .options .btn-default.disabled, .card-understated .panel-heading .options .btn-default:disabled, .card-understated .card-heading .options .btn-default.disabled, .card-understated .card-heading .options .btn-default:disabled, .card-understated .card-header .options .btn-default.disabled, .card-understated .card-header .options .btn-default:disabled {
-  color: #212529;
+.btn-check:checked + .panel-understated .panel-heading .options .btn-default,
+.btn-check:active + .panel-understated .panel-heading .options .btn-default, .panel-understated .panel-heading .options .btn-default:active, .panel-understated .panel-heading .options .btn-default.active,
+.show > .panel-understated .panel-heading .options .btn-default.dropdown-toggle, .btn-check:checked + .panel-understated .card-heading .options .btn-default,
+.btn-check:active + .panel-understated .card-heading .options .btn-default, .panel-understated .card-heading .options .btn-default:active, .panel-understated .card-heading .options .btn-default.active,
+.show > .panel-understated .card-heading .options .btn-default.dropdown-toggle, .btn-check:checked + .panel-understated .card-header .options .btn-default,
+.btn-check:active + .panel-understated .card-header .options .btn-default, .panel-understated .card-header .options .btn-default:active, .panel-understated .card-header .options .btn-default.active,
+.show > .panel-understated .card-header .options .btn-default.dropdown-toggle, .btn-check:checked + .card-understated .panel-heading .options .btn-default,
+.btn-check:active + .card-understated .panel-heading .options .btn-default, .card-understated .panel-heading .options .btn-default:active, .card-understated .panel-heading .options .btn-default.active,
+.show > .card-understated .panel-heading .options .btn-default.dropdown-toggle, .btn-check:checked + .card-understated .card-heading .options .btn-default,
+.btn-check:active + .card-understated .card-heading .options .btn-default, .card-understated .card-heading .options .btn-default:active, .card-understated .card-heading .options .btn-default.active,
+.show > .card-understated .card-heading .options .btn-default.dropdown-toggle, .btn-check:checked + .card-understated .card-header .options .btn-default,
+.btn-check:active + .card-understated .card-header .options .btn-default, .card-understated .card-header .options .btn-default:active, .card-understated .card-header .options .btn-default.active,
+.show > .card-understated .card-header .options .btn-default.dropdown-toggle {
+  color: #000;
+  background-color: #d9f3ea;
+  border-color: #e0e0e0;
+}
+
+.btn-check:checked + .panel-understated .panel-heading .options .btn-default:focus,
+.btn-check:active + .panel-understated .panel-heading .options .btn-default:focus, .panel-understated .panel-heading .options .btn-default:active:focus, .panel-understated .panel-heading .options .btn-default.active:focus,
+.show > .panel-understated .panel-heading .options .btn-default.dropdown-toggle:focus, .btn-check:checked + .panel-understated .card-heading .options .btn-default:focus,
+.btn-check:active + .panel-understated .card-heading .options .btn-default:focus, .panel-understated .card-heading .options .btn-default:active:focus, .panel-understated .card-heading .options .btn-default.active:focus,
+.show > .panel-understated .card-heading .options .btn-default.dropdown-toggle:focus, .btn-check:checked + .panel-understated .card-header .options .btn-default:focus,
+.btn-check:active + .panel-understated .card-header .options .btn-default:focus, .panel-understated .card-header .options .btn-default:active:focus, .panel-understated .card-header .options .btn-default.active:focus,
+.show > .panel-understated .card-header .options .btn-default.dropdown-toggle:focus, .btn-check:checked + .card-understated .panel-heading .options .btn-default:focus,
+.btn-check:active + .card-understated .panel-heading .options .btn-default:focus, .card-understated .panel-heading .options .btn-default:active:focus, .card-understated .panel-heading .options .btn-default.active:focus,
+.show > .card-understated .panel-heading .options .btn-default.dropdown-toggle:focus, .btn-check:checked + .card-understated .card-heading .options .btn-default:focus,
+.btn-check:active + .card-understated .card-heading .options .btn-default:focus, .card-understated .card-heading .options .btn-default:active:focus, .card-understated .card-heading .options .btn-default.active:focus,
+.show > .card-understated .card-heading .options .btn-default.dropdown-toggle:focus, .btn-check:checked + .card-understated .card-header .options .btn-default:focus,
+.btn-check:active + .card-understated .card-header .options .btn-default:focus, .card-understated .card-header .options .btn-default:active:focus, .card-understated .card-header .options .btn-default.active:focus,
+.show > .card-understated .card-header .options .btn-default.dropdown-toggle:focus {
+  box-shadow: 0 0 0 0.25rem rgba(188, 188, 188, 0.5);
+}
+
+.panel-understated .panel-heading .options .btn-default:disabled, .panel-understated .panel-heading .options .btn-default.disabled, .panel-understated .card-heading .options .btn-default:disabled, .panel-understated .card-heading .options .btn-default.disabled, .panel-understated .card-header .options .btn-default:disabled, .panel-understated .card-header .options .btn-default.disabled, .card-understated .panel-heading .options .btn-default:disabled, .card-understated .panel-heading .options .btn-default.disabled, .card-understated .card-heading .options .btn-default:disabled, .card-understated .card-heading .options .btn-default.disabled, .card-understated .card-header .options .btn-default:disabled, .card-understated .card-header .options .btn-default.disabled {
+  color: #000;
   background-color: #d0f0e5;
   border-color: #ddd;
-}
-
-.panel-understated .panel-heading .options .btn-default:not(:disabled):not(.disabled):active, .panel-understated .panel-heading .options .btn-default:not(:disabled):not(.disabled).active,
-.show > .panel-understated .panel-heading .options .btn-default.dropdown-toggle, .panel-understated .card-heading .options .btn-default:not(:disabled):not(.disabled):active, .panel-understated .card-heading .options .btn-default:not(:disabled):not(.disabled).active,
-.show > .panel-understated .card-heading .options .btn-default.dropdown-toggle, .panel-understated .card-header .options .btn-default:not(:disabled):not(.disabled):active, .panel-understated .card-header .options .btn-default:not(:disabled):not(.disabled).active,
-.show > .panel-understated .card-header .options .btn-default.dropdown-toggle, .card-understated .panel-heading .options .btn-default:not(:disabled):not(.disabled):active, .card-understated .panel-heading .options .btn-default:not(:disabled):not(.disabled).active,
-.show > .card-understated .panel-heading .options .btn-default.dropdown-toggle, .card-understated .card-heading .options .btn-default:not(:disabled):not(.disabled):active, .card-understated .card-heading .options .btn-default:not(:disabled):not(.disabled).active,
-.show > .card-understated .card-heading .options .btn-default.dropdown-toggle, .card-understated .card-header .options .btn-default:not(:disabled):not(.disabled):active, .card-understated .card-header .options .btn-default:not(:disabled):not(.disabled).active,
-.show > .card-understated .card-header .options .btn-default.dropdown-toggle {
-  color: #212529;
-  background-color: #a9e4cf;
-  border-color: #bdbdbd;
-}
-
-.panel-understated .panel-heading .options .btn-default:not(:disabled):not(.disabled):active:focus, .panel-understated .panel-heading .options .btn-default:not(:disabled):not(.disabled).active:focus,
-.show > .panel-understated .panel-heading .options .btn-default.dropdown-toggle:focus, .panel-understated .card-heading .options .btn-default:not(:disabled):not(.disabled):active:focus, .panel-understated .card-heading .options .btn-default:not(:disabled):not(.disabled).active:focus,
-.show > .panel-understated .card-heading .options .btn-default.dropdown-toggle:focus, .panel-understated .card-header .options .btn-default:not(:disabled):not(.disabled):active:focus, .panel-understated .card-header .options .btn-default:not(:disabled):not(.disabled).active:focus,
-.show > .panel-understated .card-header .options .btn-default.dropdown-toggle:focus, .card-understated .panel-heading .options .btn-default:not(:disabled):not(.disabled):active:focus, .card-understated .panel-heading .options .btn-default:not(:disabled):not(.disabled).active:focus,
-.show > .card-understated .panel-heading .options .btn-default.dropdown-toggle:focus, .card-understated .card-heading .options .btn-default:not(:disabled):not(.disabled):active:focus, .card-understated .card-heading .options .btn-default:not(:disabled):not(.disabled).active:focus,
-.show > .card-understated .card-heading .options .btn-default.dropdown-toggle:focus, .card-understated .card-header .options .btn-default:not(:disabled):not(.disabled):active:focus, .card-understated .card-header .options .btn-default:not(:disabled):not(.disabled).active:focus,
-.show > .card-understated .card-header .options .btn-default.dropdown-toggle:focus {
-  box-shadow: 0 0 0 0.2rem rgba(193, 193, 194, 0.5);
 }
 
 .panel-understated .panel-body, .panel-understated .card-body, .card-understated .panel-body, .card-understated .card-body {
@@ -2087,43 +2123,55 @@ a.text-white:not(.btn):hover {
 
 .panel-standout .panel-heading .options .btn-default:hover, .panel-standout .card-heading .options .btn-default:hover, .panel-standout .card-header .options .btn-default:hover, .card-standout .panel-heading .options .btn-default:hover, .card-standout .card-heading .options .btn-default:hover, .card-standout .card-header .options .btn-default:hover {
   color: #fff;
-  background-color: #050e0e;
-  border-color: #051010;
+  background-color: #0c2424;
+  border-color: #0f2b2b;
 }
 
-.panel-standout .panel-heading .options .btn-default:focus, .panel-standout .panel-heading .options .btn-default.focus, .panel-standout .card-heading .options .btn-default:focus, .panel-standout .card-heading .options .btn-default.focus, .panel-standout .card-header .options .btn-default:focus, .panel-standout .card-header .options .btn-default.focus, .card-standout .panel-heading .options .btn-default:focus, .card-standout .panel-heading .options .btn-default.focus, .card-standout .card-heading .options .btn-default:focus, .card-standout .card-heading .options .btn-default.focus, .card-standout .card-header .options .btn-default:focus, .card-standout .card-header .options .btn-default.focus {
+.btn-check:focus + .panel-standout .panel-heading .options .btn-default, .panel-standout .panel-heading .options .btn-default:focus, .btn-check:focus + .panel-standout .card-heading .options .btn-default, .panel-standout .card-heading .options .btn-default:focus, .btn-check:focus + .panel-standout .card-header .options .btn-default, .panel-standout .card-header .options .btn-default:focus, .btn-check:focus + .card-standout .panel-heading .options .btn-default, .card-standout .panel-heading .options .btn-default:focus, .btn-check:focus + .card-standout .card-heading .options .btn-default, .card-standout .card-heading .options .btn-default:focus, .btn-check:focus + .card-standout .card-header .options .btn-default, .card-standout .card-header .options .btn-default:focus {
   color: #fff;
-  background-color: #050e0e;
-  border-color: #051010;
-  box-shadow: 0 0 0 0.2rem rgba(54, 84, 84, 0.5);
+  background-color: #0c2424;
+  border-color: #0f2b2b;
+  box-shadow: 0 0 0 0.25rem rgba(54, 84, 84, 0.5);
 }
 
-.panel-standout .panel-heading .options .btn-default.disabled, .panel-standout .panel-heading .options .btn-default:disabled, .panel-standout .card-heading .options .btn-default.disabled, .panel-standout .card-heading .options .btn-default:disabled, .panel-standout .card-header .options .btn-default.disabled, .panel-standout .card-header .options .btn-default:disabled, .card-standout .panel-heading .options .btn-default.disabled, .card-standout .panel-heading .options .btn-default:disabled, .card-standout .card-heading .options .btn-default.disabled, .card-standout .card-heading .options .btn-default:disabled, .card-standout .card-header .options .btn-default.disabled, .card-standout .card-header .options .btn-default:disabled {
+.btn-check:checked + .panel-standout .panel-heading .options .btn-default,
+.btn-check:active + .panel-standout .panel-heading .options .btn-default, .panel-standout .panel-heading .options .btn-default:active, .panel-standout .panel-heading .options .btn-default.active,
+.show > .panel-standout .panel-heading .options .btn-default.dropdown-toggle, .btn-check:checked + .panel-standout .card-heading .options .btn-default,
+.btn-check:active + .panel-standout .card-heading .options .btn-default, .panel-standout .card-heading .options .btn-default:active, .panel-standout .card-heading .options .btn-default.active,
+.show > .panel-standout .card-heading .options .btn-default.dropdown-toggle, .btn-check:checked + .panel-standout .card-header .options .btn-default,
+.btn-check:active + .panel-standout .card-header .options .btn-default, .panel-standout .card-header .options .btn-default:active, .panel-standout .card-header .options .btn-default.active,
+.show > .panel-standout .card-header .options .btn-default.dropdown-toggle, .btn-check:checked + .card-standout .panel-heading .options .btn-default,
+.btn-check:active + .card-standout .panel-heading .options .btn-default, .card-standout .panel-heading .options .btn-default:active, .card-standout .panel-heading .options .btn-default.active,
+.show > .card-standout .panel-heading .options .btn-default.dropdown-toggle, .btn-check:checked + .card-standout .card-heading .options .btn-default,
+.btn-check:active + .card-standout .card-heading .options .btn-default, .card-standout .card-heading .options .btn-default:active, .card-standout .card-heading .options .btn-default.active,
+.show > .card-standout .card-heading .options .btn-default.dropdown-toggle, .btn-check:checked + .card-standout .card-header .options .btn-default,
+.btn-check:active + .card-standout .card-header .options .btn-default, .card-standout .card-header .options .btn-default:active, .card-standout .card-header .options .btn-default.active,
+.show > .card-standout .card-header .options .btn-default.dropdown-toggle {
+  color: #fff;
+  background-color: #0c2222;
+  border-color: #0e2929;
+}
+
+.btn-check:checked + .panel-standout .panel-heading .options .btn-default:focus,
+.btn-check:active + .panel-standout .panel-heading .options .btn-default:focus, .panel-standout .panel-heading .options .btn-default:active:focus, .panel-standout .panel-heading .options .btn-default.active:focus,
+.show > .panel-standout .panel-heading .options .btn-default.dropdown-toggle:focus, .btn-check:checked + .panel-standout .card-heading .options .btn-default:focus,
+.btn-check:active + .panel-standout .card-heading .options .btn-default:focus, .panel-standout .card-heading .options .btn-default:active:focus, .panel-standout .card-heading .options .btn-default.active:focus,
+.show > .panel-standout .card-heading .options .btn-default.dropdown-toggle:focus, .btn-check:checked + .panel-standout .card-header .options .btn-default:focus,
+.btn-check:active + .panel-standout .card-header .options .btn-default:focus, .panel-standout .card-header .options .btn-default:active:focus, .panel-standout .card-header .options .btn-default.active:focus,
+.show > .panel-standout .card-header .options .btn-default.dropdown-toggle:focus, .btn-check:checked + .card-standout .panel-heading .options .btn-default:focus,
+.btn-check:active + .card-standout .panel-heading .options .btn-default:focus, .card-standout .panel-heading .options .btn-default:active:focus, .card-standout .panel-heading .options .btn-default.active:focus,
+.show > .card-standout .panel-heading .options .btn-default.dropdown-toggle:focus, .btn-check:checked + .card-standout .card-heading .options .btn-default:focus,
+.btn-check:active + .card-standout .card-heading .options .btn-default:focus, .card-standout .card-heading .options .btn-default:active:focus, .card-standout .card-heading .options .btn-default.active:focus,
+.show > .card-standout .card-heading .options .btn-default.dropdown-toggle:focus, .btn-check:checked + .card-standout .card-header .options .btn-default:focus,
+.btn-check:active + .card-standout .card-header .options .btn-default:focus, .card-standout .card-header .options .btn-default:active:focus, .card-standout .card-header .options .btn-default.active:focus,
+.show > .card-standout .card-header .options .btn-default.dropdown-toggle:focus {
+  box-shadow: 0 0 0 0.25rem rgba(54, 84, 84, 0.5);
+}
+
+.panel-standout .panel-heading .options .btn-default:disabled, .panel-standout .panel-heading .options .btn-default.disabled, .panel-standout .card-heading .options .btn-default:disabled, .panel-standout .card-heading .options .btn-default.disabled, .panel-standout .card-header .options .btn-default:disabled, .panel-standout .card-header .options .btn-default.disabled, .card-standout .panel-heading .options .btn-default:disabled, .card-standout .panel-heading .options .btn-default.disabled, .card-standout .card-heading .options .btn-default:disabled, .card-standout .card-heading .options .btn-default.disabled, .card-standout .card-header .options .btn-default:disabled, .card-standout .card-header .options .btn-default.disabled {
   color: #fff;
   background-color: #0f2b2b;
   border-color: #123636;
-}
-
-.panel-standout .panel-heading .options .btn-default:not(:disabled):not(.disabled):active, .panel-standout .panel-heading .options .btn-default:not(:disabled):not(.disabled).active,
-.show > .panel-standout .panel-heading .options .btn-default.dropdown-toggle, .panel-standout .card-heading .options .btn-default:not(:disabled):not(.disabled):active, .panel-standout .card-heading .options .btn-default:not(:disabled):not(.disabled).active,
-.show > .panel-standout .card-heading .options .btn-default.dropdown-toggle, .panel-standout .card-header .options .btn-default:not(:disabled):not(.disabled):active, .panel-standout .card-header .options .btn-default:not(:disabled):not(.disabled).active,
-.show > .panel-standout .card-header .options .btn-default.dropdown-toggle, .card-standout .panel-heading .options .btn-default:not(:disabled):not(.disabled):active, .card-standout .panel-heading .options .btn-default:not(:disabled):not(.disabled).active,
-.show > .card-standout .panel-heading .options .btn-default.dropdown-toggle, .card-standout .card-heading .options .btn-default:not(:disabled):not(.disabled):active, .card-standout .card-heading .options .btn-default:not(:disabled):not(.disabled).active,
-.show > .card-standout .card-heading .options .btn-default.dropdown-toggle, .card-standout .card-header .options .btn-default:not(:disabled):not(.disabled):active, .card-standout .card-header .options .btn-default:not(:disabled):not(.disabled).active,
-.show > .card-standout .card-header .options .btn-default.dropdown-toggle {
-  color: #fff;
-  background-color: #020505;
-  border-color: #020707;
-}
-
-.panel-standout .panel-heading .options .btn-default:not(:disabled):not(.disabled):active:focus, .panel-standout .panel-heading .options .btn-default:not(:disabled):not(.disabled).active:focus,
-.show > .panel-standout .panel-heading .options .btn-default.dropdown-toggle:focus, .panel-standout .card-heading .options .btn-default:not(:disabled):not(.disabled):active:focus, .panel-standout .card-heading .options .btn-default:not(:disabled):not(.disabled).active:focus,
-.show > .panel-standout .card-heading .options .btn-default.dropdown-toggle:focus, .panel-standout .card-header .options .btn-default:not(:disabled):not(.disabled):active:focus, .panel-standout .card-header .options .btn-default:not(:disabled):not(.disabled).active:focus,
-.show > .panel-standout .card-header .options .btn-default.dropdown-toggle:focus, .card-standout .panel-heading .options .btn-default:not(:disabled):not(.disabled):active:focus, .card-standout .panel-heading .options .btn-default:not(:disabled):not(.disabled).active:focus,
-.show > .card-standout .panel-heading .options .btn-default.dropdown-toggle:focus, .card-standout .card-heading .options .btn-default:not(:disabled):not(.disabled):active:focus, .card-standout .card-heading .options .btn-default:not(:disabled):not(.disabled).active:focus,
-.show > .card-standout .card-heading .options .btn-default.dropdown-toggle:focus, .card-standout .card-header .options .btn-default:not(:disabled):not(.disabled):active:focus, .card-standout .card-header .options .btn-default:not(:disabled):not(.disabled).active:focus,
-.show > .card-standout .card-header .options .btn-default.dropdown-toggle:focus {
-  box-shadow: 0 0 0 0.2rem rgba(54, 84, 84, 0.5);
 }
 
 .panel-standout .panel-body, .panel-standout .card-body, .card-standout .panel-body, .card-standout .card-body {
@@ -2712,12 +2760,12 @@ input[type="radio"]:checked + * i {
    /source/scss/colorscheme/utility.scss
 ----------------------------------------- */
 .utility-header {
-  background: #447766;
-  color: #ffffff;
+  background: #fff;
+  color: black;
 }
 
 .utility-header a {
-  color: #ffffff;
+  color: black;
 }
 
 .utility-header a:hover, .utility-header a:focus, .utility-header a.hovered {
