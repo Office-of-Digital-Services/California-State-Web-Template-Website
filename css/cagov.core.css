@@ -9202,10 +9202,6 @@ a.list-group-item {
   overflow: hidden;
 }
 
-.fixed + .header-single-banner, .fixed + .header-large-banner, .fixed + .header-primary-banner {
-  margin-top: 120px;
-}
-
 .carousel-banner,
 .carousel-banner .owl-stage-outer,
 .carousel-banner .owl-stage,
@@ -9365,7 +9361,8 @@ a.list-group-item {
 }
 
 .global-header.fixed {
-  position: fixed;
+  position: sticky;
+  top: 0;
   width: 100%;
   z-index: 1;
 }
@@ -9374,18 +9371,6 @@ a.list-group-item {
   .global-header.fixed {
     z-index: 7;
   }
-}
-
-.fixed + .main-content {
-  padding-top: 119px;
-}
-
-.fixed .main-content {
-  padding-top: 119px;
-}
-
-.fixed.nav-full-width-icons + .main-content {
-  padding-top: 145px;
 }
 
 .fixed + div :target:before {
@@ -13070,10 +13055,6 @@ pre {
 ----------------------------------------- */
 html {
   -ms-overflow-style: scrollbar;
-}
-
-body {
-  overflow-x: hidden;
 }
 
 .return-top {

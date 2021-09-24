@@ -47,7 +47,8 @@
     }
 
 .global-header.fixed {
-    position: fixed;
+    position: sticky;
+    top: 0;
     width: 100%;
     z-index: 1;
 	@media (min-width: $screen-sm-min) {
@@ -56,17 +57,6 @@
 	
 }
 
-.fixed + .main-content {
-    padding-top: 119px; // Padding for fixed header
-}
-
-.fixed .main-content {
-    padding-top: 119px; // Padding for fixed header
-}
-
-.fixed.nav-full-width-icons + .main-content {
-    padding-top: 145px; // Padding for full width nav with fixed header 
-}
 
 
  // Beta 5.0 addition
