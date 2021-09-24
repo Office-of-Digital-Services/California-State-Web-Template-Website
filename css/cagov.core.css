@@ -9361,15 +9361,17 @@ a.list-group-item {
 }
 
 .global-header.fixed {
+  transition: all 0.3s ease;
   position: sticky;
   top: 0;
   width: 100%;
   z-index: 1;
 }
 
-@media (min-width: 768px) {
+@media (min-width: 992px) {
   .global-header.fixed {
     z-index: 7;
+    position: sticky;
   }
 }
 
@@ -9392,6 +9394,11 @@ a.list-group-item {
   .fixed.compact .header-organization-banner a {
     max-width: 225px;
   }
+}
+
+.is-hidden,
+.scrolled {
+  top: -40px !important;
 }
 
 /* -----------------------------------------
@@ -11833,6 +11840,7 @@ a.second-level-link [class^="ca-gov-icon-"] {
   top: 0;
   width: 100%;
   min-height: 38px;
+  transition: all 0.3s ease;
 }
 
 @media (max-width: 767px) {
