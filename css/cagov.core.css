@@ -9037,11 +9037,13 @@ a.list-group-item {
   line-height: 5.125rem;
   -webkit-transition: all 0.3s;
   transition: all 0.3s;
+  padding-left: 15px;
 }
 
 @media (max-width: 991px) {
   .branding .header-organization-banner {
     max-width: 400px;
+    padding-left: 0;
   }
 }
 
@@ -11892,6 +11894,7 @@ a.second-level-link [class^="ca-gov-icon-"] {
 .utility-header a {
   display: inline-block;
   padding: 0;
+  text-decoration: none;
 }
 
 .utility-header a:hover, .utility-header a:focus, .utility-header a.hovered {
@@ -12125,8 +12128,8 @@ a.second-level-link [class^="ca-gov-icon-"] {
 
 @media (max-width: 767px) {
   .utility-header .flex-row .social-media-links .header-cagov-logo {
-    margin-right: 15px;
-    margin-left: 15px;
+    margin-right: 12px;
+    margin-left: 0;
   }
 }
 
@@ -16825,11 +16828,21 @@ fieldset[disabled] .btn-more {
 
 .site-settings button.close {
   position: relative;
+  right: -15px;
   right: -10px;
   color: #fff;
   text-shadow: none;
-  opacity: 0.8;
+  opacity: 1;
   font-size: 2.5em;
+  border: none;
+  background: none;
+  float: right;
+}
+
+@media (min-width: 992px) {
+  .site-settings button.close {
+    margin-top: -15px;
+  }
 }
 
 .site-settings button.close:hover {
@@ -16838,11 +16851,6 @@ fieldset[disabled] .btn-more {
 
 .site-settings button.close:focus {
   color: #FDB81E !important;
-}
-
-.site-settings button.close span {
-  position: relative;
-  top: -10px;
 }
 
 /* -----------------------------------------
