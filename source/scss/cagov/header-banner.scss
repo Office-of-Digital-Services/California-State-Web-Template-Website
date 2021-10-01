@@ -3,13 +3,11 @@
    /source/scss/cagov/header-banner.scss
 ----------------------------------------- */
 
-
 .header-slideshow-banner {
     display: none;
     height: 500px; // Beta 5.0 addition
-    position:relative;
+    position: relative;
 }
-
 
 @media (min-width: $screen-sm-min) {
     .header-slideshow-banner.enabled {
@@ -17,15 +15,15 @@
     }
 }
 
-.header-single-banner, .header-large-banner, .header-primary-banner {
+.header-single-banner,
+.header-large-banner,
+.header-primary-banner {
     width: 100%;
-    /* Will be overriden with js */
-    height: auto;
+    height: 80vh;
     overflow: hidden;
     background-position: center !important;
     background-size: cover !important;
     display: block;
-    /* Preserve aspect ratio */
     min-width: 100%;
     min-height: 100%;
     position: relative;
@@ -47,24 +45,26 @@
     height: 100%;
 }
 
-
 // Beta 5.0 addition
 @media (max-width: $screen-xs-max) {
-	
-	.ask-group + .header-primary-banner, .ask-group + .header-large-banner, .ask-group + .header-slideshow-banner {
-		display: none;
-		}
-		
-	.primary  .header-primary-banner, .primary   .header-large-banner, .primary .header-slideshow-banner {
-		display: none;
-		}
-	}
+    .ask-group + .header-primary-banner,
+    .ask-group + .header-large-banner,
+    .ask-group + .header-slideshow-banner {
+        display: none;
+    }
+
+    .primary .header-primary-banner,
+    .primary .header-large-banner,
+    .primary .header-slideshow-banner {
+        display: none;
+    }
+}
 
 .header-image {
     width: 100%;
     height: auto;
     overflow: hidden;
-    background-image: url('/images/main-banner9.jpg');
+    background-image: url("/images/main-banner9.jpg");
     background-position: center;
     background-size: cover;
     display: block;
