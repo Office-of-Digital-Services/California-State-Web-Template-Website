@@ -13643,7 +13643,8 @@ a.list-group-item {
 /* -----------------------------------------
    SITE SEARCH - /source/scss/cagov/search.scss
 ----------------------------------------- */
-.search-container, .featured-search.active {
+.search-container,
+.featured-search.active {
   overflow: hidden;
   z-index: 7;
   position: relative;
@@ -13652,26 +13653,28 @@ a.list-group-item {
   left: 0;
   padding: 0 15%;
   width: 100%;
-  max-height: 0;
   border: none;
   -webkit-transition: all 0.5s 0.1s;
   transition: all 0.5s 0.1s;
 }
 
 @media (min-width: 992px) {
-  .search-container, .featured-search.active {
+  .search-container,
+  .featured-search.active {
     position: absolute;
     top: 87px;
   }
 }
 
-.search-container::after, .featured-search.active::after {
+.search-container::after,
+.featured-search.active::after {
   display: block;
   clear: both;
   content: "";
 }
 
-.search-container .search-textfield, .featured-search.active .search-textfield {
+.search-container .search-textfield,
+.featured-search.active .search-textfield {
   font-size: 17.6px;
   font-size: 1.1rem;
   height: 40px;
@@ -13683,7 +13686,8 @@ a.list-group-item {
   transition: border 0.4s;
 }
 
-.search-container .submit-container, .featured-search.active .submit-container {
+.search-container .submit-container,
+.featured-search.active .submit-container {
   float: left;
   height: auto;
   height: 40px;
@@ -13691,13 +13695,15 @@ a.list-group-item {
   transition: all 0.5s 0.1s;
 }
 
-.search-container .submit-container::after, .featured-search.active .submit-container::after {
+.search-container .submit-container::after,
+.featured-search.active .submit-container::after {
   display: block;
   clear: both;
   content: "";
 }
 
-.search-container .submit-container button, .featured-search.active .submit-container button {
+.search-container .submit-container button,
+.featured-search.active .submit-container button {
   float: left;
   -webkit-transition: all 0.5s 0.1s;
   transition: all 0.5s 0.1s;
@@ -13714,13 +13720,15 @@ a.list-group-item {
   -webkit-appearance: none;
 }
 
-.search-container .submit-container button::after, .featured-search.active .submit-container button::after {
+.search-container .submit-container button::after,
+.featured-search.active .submit-container button::after {
   display: block;
   clear: both;
   content: "";
 }
 
-.search-container .submit-container button > span, .featured-search.active .submit-container button > span {
+.search-container .submit-container button > span,
+.featured-search.active .submit-container button > span {
   position: relative;
   top: 0;
   font-size: 29.92px;
@@ -13729,7 +13737,8 @@ a.list-group-item {
 }
 
 @media (max-width: 991px) {
-  .search-container .submit-container button, .featured-search.active .submit-container button {
+  .search-container .submit-container button,
+  .featured-search.active .submit-container button {
     font-size: 32px;
     font-size: 2rem;
     line-height: 1em;
@@ -13737,12 +13746,14 @@ a.list-group-item {
   }
 }
 
-.search-container .textfield-container, .featured-search.active .textfield-container {
+.search-container .textfield-container,
+.featured-search.active .textfield-container {
   float: left;
   width: 100%;
 }
 
-.search-container .close-search, .featured-search.active .close-search {
+.search-container .close-search,
+.featured-search.active .close-search {
   display: none;
   font-size: 48px;
   font-size: 3rem;
@@ -13754,7 +13765,8 @@ a.list-group-item {
 }
 
 @media (max-width: 991px) {
-  .search-container .close-search, .featured-search.active .close-search {
+  .search-container .close-search,
+  .featured-search.active .close-search {
     right: 0;
     display: none;
   }
@@ -13790,7 +13802,8 @@ a.list-group-item {
   position: relative;
 }
 
-.cse .gsc-control-cse, .gsc-control-cse {
+.cse .gsc-control-cse,
+.gsc-control-cse {
   padding: 0 !important;
 }
 
@@ -13975,7 +13988,8 @@ a.list-group-item {
   }
 }
 
-.agency-form input, .agency-form button {
+.agency-form input,
+.agency-form button {
   height: 40px;
   line-height: 2.5rem;
 }
@@ -13990,7 +14004,8 @@ a.list-group-item {
   font-size: 1.8rem;
 }
 
-.search-container .textfield-container, .search-container.featured-search.active .textfield-container {
+.search-container .textfield-container,
+.search-container.featured-search.active .textfield-container {
   /* Desktop Search Button Padding */
   margin-right: -80px;
   padding-right: 80px;
@@ -13998,17 +14013,20 @@ a.list-group-item {
 }
 
 @media (max-width: 991px) {
-  .search-container .textfield-container, .search-container.featured-search.active .textfield-container {
+  .search-container .textfield-container,
+  .search-container.featured-search.active .textfield-container {
     margin-right: -48px;
     padding-right: 44px;
   }
 }
 
-.search-container .submit-container, .search-container.featured-search.active .submit-container {
+.search-container .submit-container,
+.search-container.featured-search.active .submit-container {
   width: auto;
 }
 
-.search-container .search-locator, .search-container.featured-search.active .search-locator {
+.search-container .search-locator,
+.search-container.featured-search.active .search-locator {
   color: #111111;
   float: left;
   text-align: center;
@@ -14020,7 +14038,8 @@ a.list-group-item {
   /* Active on mobile */
 }
 
-.search-container .search-locator [class^="ca-gov-icon-"], .search-container.featured-search.active .search-locator [class^="ca-gov-icon-"] {
+.search-container .search-locator [class^="ca-gov-icon-"],
+.search-container.featured-search.active .search-locator [class^="ca-gov-icon-"] {
   font-size: 22.4px;
   font-size: 1.4rem;
   padding: 0 !important;
@@ -14030,7 +14049,9 @@ a.list-group-item {
   left: 0;
 }
 
-.search-container .search-locator small, .search-container .search-locator .small, .search-container.featured-search.active .search-locator small, .search-container.featured-search.active .search-locator .small {
+.search-container .search-locator small, .search-container .search-locator .small,
+.search-container.featured-search.active .search-locator small,
+.search-container.featured-search.active .search-locator .small {
   position: absolute;
   top: 1.7em;
   left: 0;
@@ -14043,13 +14064,15 @@ a.list-group-item {
 }
 
 @media (max-width: 991px) {
-  .search-container .search-locator, .search-container.featured-search.active .search-locator {
+  .search-container .search-locator,
+  .search-container.featured-search.active .search-locator {
     width: 75px;
     margin-left: 5px;
   }
 }
 
-.search-container.active .search-locator, .search-container.featured-search.active.active .search-locator {
+.search-container.active .search-locator,
+.search-container.featured-search.active.active .search-locator {
   display: block;
 }
 
@@ -14078,7 +14101,8 @@ a.list-group-item {
   .fixed.compact .search-container {
     opacity: 0;
   }
-  .active-search .fixed.compact .search-container, .fixed.compact .search-container.active {
+  .active-search .fixed.compact .search-container,
+  .fixed.compact .search-container.active {
     opacity: 1;
     top: 55px;
   }
@@ -14086,20 +14110,24 @@ a.list-group-item {
 
 /*full width navigation search container*/
 @media (min-width: 992px) {
-  .nav-full-width + .search-container, .nav-full-width + .featured-search.active {
+  .nav-full-width + .search-container,
+  .nav-full-width + .featured-search.active {
     top: 35px;
   }
-  .active-search .fixed.compact .nav-full-width + .search-container, .fixed.compact .nav-full-width + .search-container.active {
+  .active-search .fixed.compact .nav-full-width + .search-container,
+  .fixed.compact .nav-full-width + .search-container.active {
     opacity: 1;
     top: 35px;
   }
 }
 
 @media (min-width: 992px) and (max-width: 1200px) {
-  .nav-full-width + .search-container, .nav-full-width + .featured-search.active {
+  .nav-full-width + .search-container,
+  .nav-full-width + .featured-search.active {
     top: 32px;
   }
-  .active-search .fixed.compact .nav-full-width + .search-container, .fixed.compact .nav-full-width + .search-container.active {
+  .active-search .fixed.compact .nav-full-width + .search-container,
+  .fixed.compact .nav-full-width + .search-container.active {
     opacity: 1;
     top: 32px;
   }
@@ -14111,7 +14139,7 @@ td.gsc-search-button {
 }
 
 td.gsc-search-button::before {
-  font-family: 'CaGov';
+  font-family: "CaGov";
   content: "\e604";
   color: #666;
   position: absolute;
@@ -14211,7 +14239,8 @@ GOOGLE CUSTOM SEARCH CUSTOMIZATION OVERRIDES
   background-position-x: 7px !important;
 }
 
-.gsc-control-searchbox-only input.gsc-search-button, .gsc-control-searchbox-only button.gsc-search-button {
+.gsc-control-searchbox-only input.gsc-search-button,
+.gsc-control-searchbox-only button.gsc-search-button {
   opacity: 0;
   width: 55px;
   height: 51px;
@@ -14250,7 +14279,7 @@ GOOGLE CUSTOM SEARCH CUSTOMIZATION OVERRIDES
 }
 
 .gsc-control-searchbox-only div.gsc-clear-button:before {
-  content: '\4d';
+  content: "\4d";
   font-family: cagov;
   font-size: 2rem;
   width: 100%;
@@ -14275,7 +14304,7 @@ GOOGLE CUSTOM SEARCH CUSTOMIZATION OVERRIDES
 }
 
 .search-container.active div.gsc-clear-button:before {
-  content: '\4d';
+  content: "\4d";
   font-family: cagov;
   font-size: 2rem;
   width: 100%;
@@ -14305,7 +14334,8 @@ table.gsc-search-box table td div {
   padding: 0 !important;
 }
 
-.gsc-input-box-focus, .gsc-input-box-hover {
+.gsc-input-box-focus,
+.gsc-input-box-hover {
   box-shadow: none !important;
   border: none !important;
 }
@@ -14322,7 +14352,8 @@ table.gsc-search-box td {
   width: 40px;
 }
 
-.gsc-input-box table td:nth-child(2), .gsib_b {
+.gsc-input-box table td:nth-child(2),
+.gsib_b {
   display: none !important;
 }
 
@@ -14353,12 +14384,14 @@ table.gsc-search-box td {
     width: 40%;
     float: right;
   }
-  *::-ms-backdrop, .full-width-nav .featured-search {
+  *::-ms-backdrop,
+  .full-width-nav .featured-search {
     width: 100%;
     max-width: 100%;
     padding-right: 15px;
   }
-  *::-ms-backdrop .container, .full-width-nav .featured-search .container {
+  *::-ms-backdrop .container,
+  .full-width-nav .featured-search .container {
     width: 40%;
     float: right;
   }
@@ -14378,12 +14411,14 @@ table.gsc-search-box td {
     width: 40%;
     float: right;
   }
-  *::-ms-backdrop, .full-width-nav .featured-search {
+  *::-ms-backdrop,
+  .full-width-nav .featured-search {
     width: 100%;
     max-width: 100%;
     padding-right: 15px;
   }
-  *::-ms-backdrop .container, .full-width-nav .featured-search .container {
+  *::-ms-backdrop .container,
+  .full-width-nav .featured-search .container {
     width: 40%;
     float: right;
   }
@@ -14401,6 +14436,13 @@ table.gsc-search-box td {
   .search-container #Search .gsc-search-button {
     padding-left: 10px;
     padding-right: 10px;
+  }
+}
+
+/*remove desctop search */
+@media (max-width: 991px) {
+  #featured-search {
+    display: none;
   }
 }
 
@@ -15756,7 +15798,8 @@ a.second-level-link [class^="ca-gov-icon-"] {
   }
 }
 
-.mobile-controls .ca-gov-icon-menu-toggle-open, .mobile-controls .ca-gov-icon-menu-toggle-closed {
+.mobile-controls .ca-gov-icon-menu-toggle-open,
+.mobile-controls .ca-gov-icon-menu-toggle-closed {
   padding-left: 16px;
   padding-right: 16px;
   line-height: 2.75rem;
@@ -15781,6 +15824,7 @@ a.second-level-link [class^="ca-gov-icon-"] {
   position: relative;
   margin-left: auto;
   text-align: center;
+  z-index: 99;
 }
 
 .mobile-controls .toggle-search:focus {
@@ -15835,10 +15879,10 @@ a.second-level-link [class^="ca-gov-icon-"] {
   -moz-transform: rotate(0deg);
   -o-transform: rotate(0deg);
   transform: rotate(0deg);
-  -webkit-transition: .5s ease-in-out;
-  -moz-transition: .5s ease-in-out;
-  -o-transition: .5s ease-in-out;
-  transition: .5s ease-in-out;
+  -webkit-transition: 0.5s ease-in-out;
+  -moz-transition: 0.5s ease-in-out;
+  -o-transition: 0.5s ease-in-out;
+  transition: 0.5s ease-in-out;
   cursor: pointer;
   color: #fff;
   top: 4px;
@@ -15859,10 +15903,10 @@ a.second-level-link [class^="ca-gov-icon-"] {
   -moz-transform: rotate(0deg);
   -o-transform: rotate(0deg);
   transform: rotate(0deg);
-  -webkit-transition: .25s ease-in-out;
-  -moz-transition: .25s ease-in-out;
-  -o-transition: .25s ease-in-out;
-  transition: .25s ease-in-out;
+  -webkit-transition: 0.25s ease-in-out;
+  -moz-transition: 0.25s ease-in-out;
+  -o-transition: 0.25s ease-in-out;
+  transition: 0.25s ease-in-out;
 }
 
 .toggle-menu span:nth-child(1) {
@@ -15932,9 +15976,9 @@ a.second-level-link [class^="ca-gov-icon-"] {
     text-align: center;
     cursor: pointer;
     border: none;
-    -moz-transition: all .2s ease !important;
-    -webkit-transition: all .2s ease !important;
-    transition: all .2s ease !important;
+    -moz-transition: all 0.2s ease !important;
+    -webkit-transition: all 0.2s ease !important;
+    transition: all 0.2s ease !important;
   }
   .first-level-btn[aria-expanded="true"] .rotate {
     -moz-transform: rotate(90deg) !important;
@@ -15948,9 +15992,9 @@ a.second-level-link [class^="ca-gov-icon-"] {
     top: 0;
     right: 0;
     text-align: center;
-    -moz-transition: all .2s ease !important;
-    -webkit-transition: all .2s ease !important;
-    transition: all .2s ease !important;
+    -moz-transition: all 0.2s ease !important;
+    -webkit-transition: all 0.2s ease !important;
+    transition: all 0.2s ease !important;
   }
 }
 
@@ -15962,7 +16006,8 @@ a.second-level-link [class^="ca-gov-icon-"] {
     top: 10px;
   }
   /* IE10 */
-  *::-ms-backdrop, .mobile-controls .toggle-search {
+  *::-ms-backdrop,
+  .mobile-controls .toggle-search {
     position: absolute;
     right: 70px;
     top: 10px;

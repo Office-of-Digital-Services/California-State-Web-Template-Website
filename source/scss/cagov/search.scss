@@ -2,18 +2,15 @@
    SITE SEARCH - /source/scss/cagov/search.scss
 ----------------------------------------- */
 
-
 // default animation time for featured-search
 $search-st: 0.2s;
 // default delay time for featured-search
 $search-ft: 0.4s;
 
-
 // default animation time for transitions
 $search-dt: 0.5s;
 // default delay time for transitions
-$search-dft: 0.10s;
-
+$search-dft: 0.1s;
 
 $search-absolute-height: 87px;
 
@@ -21,8 +18,8 @@ $search-input-height: 40px;
 
 $search-input-border-width: 3px;
 
-.search-container, .featured-search.active {
-
+.search-container,
+.featured-search.active {
     // we need to hide our innner elements when we are at 0 height
     overflow: hidden;
 
@@ -38,29 +35,24 @@ $search-input-border-width: 3px;
     // Give some room on the sides so the search bar doesnt feel overly long
     padding: 0 15%;
 
-
     // full width for all sizes
     width: 100%;
-    // we are going to animate in our height if needed
-    max-height: 0;
     border: none;
-
 
     // on our larger screens our whole header is one big gigantic position absolute thing
     // so we need to of course respect this and add to the insanity
-    
+
     // 992px
     @media (min-width: $screen-md-min) {
         position: absolute;
         top: $search-absolute-height;
     }
 
-
     // needed for our floating search-locator
     @include clearfix();
 
     // Transition all the things
-	-webkit-transition: all $search-dt $search-dft;
+    -webkit-transition: all $search-dt $search-dft;
     transition: all $search-dt $search-dft;
 
     .search-textfield {
@@ -78,7 +70,7 @@ $search-input-border-width: 3px;
 
         // Padding can control size of small search box
         padding: 0 10px;
-		-webkit-transition: border $search-ft;
+        -webkit-transition: border $search-ft;
         transition: border $search-ft;
     }
 
@@ -90,14 +82,14 @@ $search-input-border-width: 3px;
         height: auto;
         // ie9 needs a little help figuring out it's height
         height: $search-input-height;
--webkit-transition: all $search-dt $search-dft;
+        -webkit-transition: all $search-dt $search-dft;
         transition: all $search-dt $search-dft;
 
         button {
-          // Keep on floating and floating
-          float: left;
-          @include clearfix();
--webkit-transition: all $search-dt $search-dft;
+            // Keep on floating and floating
+            float: left;
+            @include clearfix();
+            -webkit-transition: all $search-dt $search-dft;
             transition: all $search-dt $search-dft;
 
             background: none;
@@ -141,15 +133,14 @@ $search-input-border-width: 3px;
         }
     }
 
-      // we are floating this and all of its siblings
+    // we are floating this and all of its siblings
     .textfield-container {
         float: left;
         width: 100%;
     }
 
-
     .close-search {
-      display: none;
+        display: none;
         @include font-size(3);
         position: absolute;
         right: -10px;
@@ -159,14 +150,14 @@ $search-input-border-width: 3px;
 
         // 991px
         @media (max-width: $screen-sm-max) {
-            right:0;
+            right: 0;
             display: none;
         }
     }
 }
 
 .search-textfield {
-    padding-left: 10px;     // Applying padding to all the search inputs globally. TODO: Check regression
+    padding-left: 10px; // Applying padding to all the search inputs globally. TODO: Check regression
 }
 
 .search-container.active {
@@ -180,26 +171,24 @@ $search-input-border-width: 3px;
     }
 
     .close-search {
-      display: block; // beta 5.0 addition 
-      // 991px
-      @media (max-width: $screen-sm-max) {
-        display: none;
-      }
+        display: block; // beta 5.0 addition
+        // 991px
+        @media (max-width: $screen-sm-max) {
+            display: none;
+        }
     }
-
 }
-
 
 #local_form {
     position: relative;
 }
 
-
 //
 // Override google custom search styles
 //-----------------------------------------
 
-.cse .gsc-control-cse, .gsc-control-cse {
+.cse .gsc-control-cse,
+.gsc-control-cse {
     padding: 0 !important;
 }
 
@@ -208,12 +197,11 @@ $search-input-border-width: 3px;
 
 //992px
 @media (min-width: $screen-md-min) {
-
     .featured-search {
         display: block;
         position: absolute;
         top: 240px; // Position search in the middle of the banner
-        padding:0;
+        padding: 0;
 
         max-height: 100%;
         border-radius: 0;
@@ -222,25 +210,22 @@ $search-input-border-width: 3px;
         width: 60%;
         left: 20%;
 
-
-        .flexbox &  {
-          left: 0px;
-          right: 0px;
-          margin: 0 auto;
-          width: 60%;
-          max-width: 630px;
+        .flexbox & {
+            left: 0px;
+            right: 0px;
+            margin: 0 auto;
+            width: 60%;
+            max-width: 630px;
         }
-
 
         &.play-animation {
-			-webkit-animation-duration: 1s;
-			animation-duration: 1s;
-			-webkit-animation-fill-mode: both;
-			animation-fill-mode: both;
-			-webkit-animation-name: pulse;
-			animation-name: pulse;
+            -webkit-animation-duration: 1s;
+            animation-duration: 1s;
+            -webkit-animation-fill-mode: both;
+            animation-fill-mode: both;
+            -webkit-animation-name: pulse;
+            animation-name: pulse;
         }
-
 
         .search-textfield {
             padding: 14px; // Increases padding on large search to make it appear bigger.
@@ -248,16 +233,16 @@ $search-input-border-width: 3px;
             height: 55px; // Large search box overides default from above
         }
 
--webkit-transition: all $search-ft;
+        -webkit-transition: all $search-ft;
         transition: all $search-ft;
 
-       .submit-container {
+        .submit-container {
             height: 55px; // HACK: ie9 needs a little help figuring out its height
             width: 55px;
-			-webkit-transition: all $search-ft;
+            -webkit-transition: all $search-ft;
             transition: all $search-ft;
             button {
-				-webkit-transition: all $search-ft;
+                -webkit-transition: all $search-ft;
                 transition: all $search-ft;
                 @include font-size(2.5); // Approx 37.5px
                 width: 60px;
@@ -271,18 +256,19 @@ $search-input-border-width: 3px;
         }
     }
 
-
     .featured-search.active {
         position: relative;
-        visibility:visible;
-        opacity:1;
+        visibility: visible;
+        opacity: 1;
 
         // 992px
         @media (min-width: $screen-md-min) {
             position: absolute;
         }
- -webkit-transition: top $search-ft, left $search-st $search-ft, width  $search-st $search-ft, background-color $search-ft + $search-st , border $search-ft, padding $search-st $search-ft;
-        transition: top $search-ft, left $search-st $search-ft, width  $search-st $search-ft, background-color $search-ft + $search-st , border $search-ft, padding $search-st $search-ft;
+        -webkit-transition: top $search-ft, left $search-st $search-ft, width $search-st $search-ft,
+            background-color $search-ft + $search-st, border $search-ft, padding $search-st $search-ft;
+        transition: top $search-ft, left $search-st $search-ft, width $search-st $search-ft,
+            background-color $search-ft + $search-st, border $search-ft, padding $search-st $search-ft;
         top: $search-absolute-height;
         left: 0;
         padding: 20px 0;
@@ -296,7 +282,7 @@ $search-input-border-width: 3px;
         max-width: 100%;
 
         .close-search {
-          display: none;
+            display: none;
         }
 
         .search-textfield {
@@ -306,16 +292,15 @@ $search-input-border-width: 3px;
             border-radius: $border-radius-base; // 4px corners by default
             border: $search-input-border-width solid transparent; // makes border transparent but maintains height for hover effect
             padding: 0 4px; // Padding can control size of small search box
-			-webkit-transition: border $search-ft;
+            -webkit-transition: border $search-ft;
             transition: border $search-ft;
         }
-      }
-
+    }
 }
 
 .search-container.featured-search {
     // 991px
-      @media (max-width: $screen-sm-max) {
+    @media (max-width: $screen-sm-max) {
         padding-right: 10px;
         padding-left: 10px;
     }
@@ -323,17 +308,17 @@ $search-input-border-width: 3px;
 
 /* Resize search bar to look better on tablet size screens */
 @media (min-width: $screen-sm-min) and (max-width: $screen-md-min) {
-    .featured-search  {
-        left:10%;
-        width:80%;
+    .featured-search {
+        left: 10%;
+        width: 80%;
     }
     .flexbox .featured-search {
-      left: 0;
-      width: 80%;
+        left: 0;
+        width: 80%;
     }
 
     .featured-search.active {
-      width: 100%;
+        width: 100%;
     }
 }
 
@@ -343,7 +328,8 @@ $search-input-border-width: 3px;
 
 .agency-form {
     @include clearfix();
-    margin-top:    $spacer-y !important; margin-bottom: $spacer-y !important; 
+    margin-top: $spacer-y !important;
+    margin-bottom: $spacer-y !important;
 
     .textfield-container {
         float: left;
@@ -388,7 +374,8 @@ $search-input-border-width: 3px;
         }
     }
 
-    input, button {
+    input,
+    button {
         height: $search-input-height;
         line-height: 2.5rem;
     }
@@ -403,22 +390,21 @@ $search-input-border-width: 3px;
     }
 }
 
-
-
 //
 // ADD LOCATION BUTTON NEXT TO SEARCH
 // --------------------------------------------------
 
-.search-container, .search-container.featured-search.active {
+.search-container,
+.search-container.featured-search.active {
     .textfield-container {
         /* Desktop Search Button Padding */
         margin-right: -80px;
         padding-right: 80px;
-        
+
         /* Mobile Search button padding */
         @media (max-width: $screen-sm-max) {
-          margin-right: -48px;      // Larger by 4 to account for border
-          padding-right: 44px;
+            margin-right: -48px; // Larger by 4 to account for border
+            padding-right: 44px;
         }
     }
 
@@ -437,8 +423,7 @@ $search-input-border-width: 3px;
 
         display: none;
 
-        line-height:inherit !important;
-
+        line-height: inherit !important;
 
         cursor: pointer;
 
@@ -453,8 +438,8 @@ $search-input-border-width: 3px;
 
         small {
             position: absolute;
-            top:1.7em;
-            left:0;
+            top: 1.7em;
+            left: 0;
             width: 100%;
             text-align: center;
             display: block;
@@ -466,105 +451,99 @@ $search-input-border-width: 3px;
         @media (max-width: $screen-sm-max) {
             width: 75px;
             margin-left: 5px;
-
         }
-
-
-
     }
     &.active {
-      .search-locator {
-        display: block;
-      }
+        .search-locator {
+            display: block;
+        }
     }
-
 }
 
 .featured-search {
-  .textfield-container {
-      padding-right: 60px; // Creates blank space to left of search for submit button
-      margin-right: -60px; // Reverses space created for button and prevents line break
-  }
+    .textfield-container {
+        padding-right: 60px; // Creates blank space to left of search for submit button
+        margin-right: -60px; // Reverses space created for button and prevents line break
+    }
 }
 
 .featured-search.active {
-  .search-locator {
-      display: block;
-  }
+    .search-locator {
+        display: block;
+    }
 }
-
 
 .search-container.featured-search {
     background: none; // fallback color
     // Darken the search container on hover
-    &:hover, &:focus {
+    &:hover,
+    &:focus {
         background: none;
     }
 
     &.active {
-        @include rgba (#000, .5);
+        @include rgba(#000, 0.5);
     }
 }
 
 // 992px
 @media (min-width: $screen-md-min) {
-  .fixed.compact .search-container {
-    opacity: 0;
-  }
-  .active-search .fixed.compact .search-container, .fixed.compact .search-container.active {
-  opacity: 1;
-  top: 55px; 	
+    .fixed.compact .search-container {
+        opacity: 0;
     }
-
+    .active-search .fixed.compact .search-container,
+    .fixed.compact .search-container.active {
+        opacity: 1;
+        top: 55px;
+    }
 }
 
 /*full width navigation search container*/
 // 992px
 @media (min-width: $screen-md-min) {
-    .nav-full-width + .search-container, .nav-full-width + .featured-search.active {
+    .nav-full-width + .search-container,
+    .nav-full-width + .featured-search.active {
         top: 35px;
     }
 
-    .active-search .fixed.compact .nav-full-width + .search-container, .fixed.compact .nav-full-width + .search-container.active {
+    .active-search .fixed.compact .nav-full-width + .search-container,
+    .fixed.compact .nav-full-width + .search-container.active {
         opacity: 1;
         top: 35px;
     }
 }
-// from 992px to 1140 // 
+// from 992px to 1140 //
 @media (min-width: $screen-md-min) and (max-width: $screen-lg-min) {
-    .nav-full-width + .search-container, .nav-full-width + .featured-search.active {
+    .nav-full-width + .search-container,
+    .nav-full-width + .featured-search.active {
         top: 32px;
     }
 
-    .active-search .fixed.compact .nav-full-width + .search-container, .fixed.compact .nav-full-width + .search-container.active {
+    .active-search .fixed.compact .nav-full-width + .search-container,
+    .fixed.compact .nav-full-width + .search-container.active {
         opacity: 1;
         top: 32px;
     }
-
 }
-
-
 
 /* Search Icon */
 td.gsc-search-button {
     position: relative;
 
     &::before {
-        font-family: 'CaGov';
+        font-family: "CaGov";
         content: "\e604";
         color: #666;
         position: absolute;
         font-size: 2.5rem;
         right: 10px;
-        line-height:0.01rem;
+        line-height: 0.01rem;
     }
 }
-
 
 button.gsc-search-button {
     cursor: pointer;
 }
-
 
 /* ------------- Custom search box (not google) --------------*/
 .search-container {
@@ -612,7 +591,6 @@ button.gsc-search-button {
     }
 }
 
-
 .featured-search.active {
     .container {
         #Search {
@@ -647,7 +625,6 @@ GOOGLE CUSTOM SEARCH CUSTOMIZATION OVERRIDES
         }
     }
 
-
     .gsc-input-box {
         border: none !important;
         background: transparent !important;
@@ -667,7 +644,8 @@ GOOGLE CUSTOM SEARCH CUSTOMIZATION OVERRIDES
         background-position-x: 7px !important;
     }
 
-    input.gsc-search-button, button.gsc-search-button {
+    input.gsc-search-button,
+    button.gsc-search-button {
         opacity: 0;
         width: 55px;
         height: 51px;
@@ -705,7 +683,7 @@ GOOGLE CUSTOM SEARCH CUSTOMIZATION OVERRIDES
         display: block !important;
 
         &:before {
-            content: '\4d';
+            content: "\4d";
             font-family: cagov;
             font-size: 2rem;
             width: 100%;
@@ -717,22 +695,22 @@ GOOGLE CUSTOM SEARCH CUSTOMIZATION OVERRIDES
     }
 }
 
-    .search-icon {
-        font-size: 2.4rem;
-        width: 0;
-        color: #666;
-        display: block;
-        position: relative;
-        top: 0;
-        right: 49px;
-    }
+.search-icon {
+    font-size: 2.4rem;
+    width: 0;
+    color: #666;
+    display: block;
+    position: relative;
+    top: 0;
+    right: 49px;
+}
 
 .search-container.active {
     div.gsc-clear-button {
         width: 40px;
 
         &:before {
-            content: '\4d';
+            content: "\4d";
             font-family: cagov;
             font-size: 2rem;
             width: 100%;
@@ -744,49 +722,50 @@ GOOGLE CUSTOM SEARCH CUSTOMIZATION OVERRIDES
     }
 }
 
-    .featured-search {
-        div.gsc-clear-button {
-            width: 0px; // removes right space from featured search box
-            &:before {
-                display: none;
-            }
+.featured-search {
+    div.gsc-clear-button {
+        width: 0px; // removes right space from featured search box
+        &:before {
+            display: none;
         }
     }
+}
 
-    .search-results-header .gsc-control-searchbox-only {
-        margin-bottom: 20px; // gives bottom margin to search searchbox in search results page
-        td.gsc-clear-button {
-            display: none; // removes clear results cell from the searchbox
-        }
+.search-results-header .gsc-control-searchbox-only {
+    margin-bottom: 20px; // gives bottom margin to search searchbox in search results page
+    td.gsc-clear-button {
+        display: none; // removes clear results cell from the searchbox
     }
+}
 
-    // Fixes after google updated custom search API
+// Fixes after google updated custom search API
 
-    table.gsc-search-box table td div {
-        padding: 0 !important;
-    }
+table.gsc-search-box table td div {
+    padding: 0 !important;
+}
 
-    .gsc-input-box-focus, .gsc-input-box-hover {
-        box-shadow: none !important;
-        border: none !important;
-    }
+.gsc-input-box-focus,
+.gsc-input-box-hover {
+    box-shadow: none !important;
+    border: none !important;
+}
 
-    table.gsc-search-box td {
-        padding: 0 !important;
-    }
+table.gsc-search-box td {
+    padding: 0 !important;
+}
 
-    .gsc-search-box-tools .gsc-clear-button {
-        display: block !important;
-    }
+.gsc-search-box-tools .gsc-clear-button {
+    display: block !important;
+}
 
-    .search-container.active div.gsc-clear-button {
-        width: 40px;
-    }
+.search-container.active div.gsc-clear-button {
+    width: 40px;
+}
 
-    .gsc-input-box table td:nth-child(2), .gsib_b {
-        display: none !important;
-    }
-
+.gsc-input-box table td:nth-child(2),
+.gsib_b {
+    display: none !important;
+}
 
 /* Full Width navigation search */
 @media (min-width: 992px) {
@@ -805,11 +784,11 @@ GOOGLE CUSTOM SEARCH CUSTOMIZATION OVERRIDES
     }
 
     /* full width featured search hack for IE */
-    @media all and (-ms-high-contrast:none) {
+    @media all and (-ms-high-contrast: none) {
         .full-width-nav .featured-search {
             width: 100%;
             max-width: 100%;
-            padding-right:15px;
+            padding-right: 15px;
 
             .container {
                 width: 40%;
@@ -817,7 +796,8 @@ GOOGLE CUSTOM SEARCH CUSTOMIZATION OVERRIDES
             }
         }
 
-        *::-ms-backdrop, .full-width-nav .featured-search {
+        *::-ms-backdrop,
+        .full-width-nav .featured-search {
             width: 100%;
             max-width: 100%;
             padding-right: 15px;
@@ -830,10 +810,9 @@ GOOGLE CUSTOM SEARCH CUSTOMIZATION OVERRIDES
     }
 }
 
-
 @media (min-width: $screen-md-min) and (max-width: $screen-lg-min) {
     /* full width featured search hack for IE */
-    @media all and (-ms-high-contrast:none) {
+    @media all and (-ms-high-contrast: none) {
         .full-width-nav .featured-search {
             width: 100%;
             max-width: 100%;
@@ -845,7 +824,8 @@ GOOGLE CUSTOM SEARCH CUSTOMIZATION OVERRIDES
             }
         }
 
-        *::-ms-backdrop, .full-width-nav .featured-search {
+        *::-ms-backdrop,
+        .full-width-nav .featured-search {
             width: 100%;
             max-width: 100%;
             padding-right: 15px;
@@ -873,5 +853,11 @@ GOOGLE CUSTOM SEARCH CUSTOMIZATION OVERRIDES
         padding-left: 10px;
         padding-right: 10px;
     }
+}
 
+/*remove desctop search */
+@media (max-width: $screen-sm-max) {
+    #featured-search {
+        display: none;
+    }
 }
