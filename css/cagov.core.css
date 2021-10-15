@@ -1,5 +1,5 @@
 /**
- * CA State Template v6 -  @version v6.0.5 -  10/1/2021 
+ * CA State Template v6 -  @version v6.0.5 -  10/15/2021 
   STYLES COMPILED FROM SOURCE (SCSS) DO NOT MODIFY */
 /* -----------------------------------------
    BOOTSTRAP v4.6.0 - /source/scss/bootstrap/ 
@@ -13188,7 +13188,7 @@ a.list-group-item {
   width: 80px;
   height: auto;
   display: inline-block;
-  transition: all .3s;
+  transition: all 0.3s;
 }
 
 .branding .header-organization-banner a .logo-assets .logo-text {
@@ -13203,14 +13203,14 @@ a.list-group-item {
   color: #333333;
   height: 20px;
   line-height: 1.2em;
-  transition: all .3s;
+  transition: all 0.3s;
   display: block;
 }
 
 @media (max-width: 767px) {
   .branding .header-organization-banner a .logo-assets .logo-text .logo-state {
     margin-top: 5px;
-    font-size: .9rem;
+    font-size: 0.9rem;
   }
 }
 
@@ -13223,7 +13223,7 @@ a.list-group-item {
   color: #333333;
   height: 24px;
   line-height: 1.2em;
-  transition: all .3s;
+  transition: all 0.3s;
   display: block;
 }
 
@@ -13238,7 +13238,6 @@ a.list-group-item {
   .branding .header-organization-banner {
     position: absolute;
     margin-top: -5px;
-    padding-right: 150px;
   }
 }
 
@@ -13257,7 +13256,7 @@ a.list-group-item {
 }
 
 .fixed.compact .branding .header-organization-banner .logo-assets .logo-text .logo-state {
-  font-size: .8rem;
+  font-size: 0.8rem;
   line-height: 1em;
   height: 16px;
   min-width: 200px;
@@ -13288,7 +13287,9 @@ a.list-group-item {
   }
 }
 
-.header-single-banner, .header-large-banner, .header-primary-banner {
+.header-single-banner,
+.header-large-banner,
+.header-primary-banner {
   width: 100%;
   /* Will be overriden with js */
   height: auto;
@@ -13328,7 +13329,7 @@ a.list-group-item {
   width: 80px;
   height: auto;
   display: inline-block;
-  transition: all .3s;
+  transition: all 0.3s;
 }
 
 .nav-full-width-icons a .logo-assets .logo-text {
@@ -13336,14 +13337,14 @@ a.list-group-item {
 }
 
 .nav-full-width-icons a .logo-assets .logo-text .logo-state {
-  font-size: .9rem;
+  font-size: 0.9rem;
   font-family: "Asap Condensed", sans-serif;
   margin: 0;
   padding: 0;
   color: #fff;
   height: 17px;
   line-height: 1em;
-  transition: all .3s;
+  transition: all 0.3s;
   display: block;
 }
 
@@ -13356,7 +13357,7 @@ a.list-group-item {
   color: #fff;
   height: 24px;
   line-height: 1em;
-  transition: all .3s;
+  transition: all 0.3s;
   display: block;
 }
 
@@ -13376,7 +13377,9 @@ a.list-group-item {
   }
 }
 
-.header-single-banner, .header-large-banner, .header-primary-banner {
+.header-single-banner,
+.header-large-banner,
+.header-primary-banner {
   width: 100%;
   height: 80vh;
   overflow: hidden;
@@ -13386,6 +13389,16 @@ a.list-group-item {
   min-width: 100%;
   min-height: 100%;
   position: relative;
+}
+
+@media (max-width: 767px) {
+  .header-single-banner,
+  .header-large-banner,
+  .header-primary-banner {
+    height: unset;
+    padding-top: 70px;
+    padding-bottom: 80px;
+  }
 }
 
 .header-slideshow-banner {
@@ -14442,6 +14455,28 @@ table.gsc-search-box td {
 /*remove desctop search */
 @media (max-width: 991px) {
   #featured-search {
+    display: none;
+  }
+}
+
+/* MOBILE SEARCH */
+#head-search {
+  background: rgba(0, 0, 0, 0.5);
+  opacity: 1;
+  padding: 10px !important;
+}
+
+#head-search .gsc-search-button {
+  right: 50px !important;
+  outline-offset: -2px;
+}
+
+#head-search .close-search-btn {
+  display: block !important;
+}
+
+@media (min-width: 992px) {
+  #head-search {
     display: none;
   }
 }
