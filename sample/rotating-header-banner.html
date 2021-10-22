@@ -3,85 +3,100 @@
 <!--[if IE 7]>    <html class="no-js ie7 oldie" lang="en"> <![endif]-->
 <!--[if IE 8]>    <html class="no-js ie8 oldie" lang="en"> <![endif]-->
 <!--[if IE 9]>    <html class="no-js ie9 oldie" lang="en"> <![endif]-->
-<!--[if (gt IE 9)]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+<!--[if (gt IE 9)]><!-->
+<html class="no-js" lang="en">
+<!--<![endif]-->
+
 <head>
 
- <!--    California State Template (beta)
+    <!--    California State Template (beta)
  
  
 Based on Twitter Bootstrap
 -->
-<meta charset="utf-8">
+    <meta charset="utf-8">
 
-<title>DEV-Your Organization Name</title>
+    <title>DEV-Your Organization Name</title>
 
-<meta name="Author" content="State of California" />
-<meta name="Description" content="State of California" />
-<meta name="Keywords" content="California, government" />
+    <meta name="Author" content="State of California" />
+    <meta name="Description" content="State of California" />
+    <meta name="Keywords" content="California, government" />
 
-<!--#include virtual="/ssi/head-css-js.html" -->
-<script type="text/javascript">
-var defaultActiveLink = "Components";
-</script>
+    <!--#include virtual="/ssi/head-css-js.html" -->
+    <script type="text/javascript">
+        var defaultActiveLink = "Components";
+    </script>
 </head>
 
 <!-- possibly body classes are primary and two-column -->
+
 <body class="primary">
 
-<header role="banner" id="header" class="global-header">
-	<div id="skip-to-content"><a href="#main-content">Skip to Main Content</a></div>
-    <!-- Include Branding -->
-    <!--#include virtual="/ssi/branding-lightgrey.html" -->
-    
-    <!-- Include Mobile Controls -->
-    <!--#include virtual="/ssi/mobile-controls.html" -->
+    <header role="banner" id="header" class="global-header">
+        <div id="skip-to-content"><a href="#main-content">Skip to Main Content</a></div>
+        <!-- Include Branding -->
+        <!--#include virtual="/ssi/branding-lightgrey.html" -->
 
-    <div class="navigation-search full-width-nav container">
-        <div id="head-search" class="search-container featured-search fade">
-            <!-- Include Search -->
-            <!--#include virtual="/ssi/search.html" -->
+        <!-- Include Mobile Controls -->
+        <!--#include virtual="/ssi/mobile-controls.html" -->
+
+        <div class="navigation-search full-width-nav container">
+            <div id="head-search" class="search-container featured-search collapse collapsed">
+                <!-- Include Search -->
+                <!--#include virtual="/ssi/search-mobile.html" -->
+            </div>
+            <div id="featured-search" class="search-container featured-search">
+                <!--#include virtual="/ssi/search.html" -->
+            </div>
+            <!-- Include Navigation -->
+            <!--#include virtual="/ssi/navigation.html" -->
         </div>
-        <!-- Include Navigation -->
-        <!--#include virtual="/ssi/navigation.html" -->
+
+        <div class="header-decoration"></div>
+    </header>
+
+
+
+    <div id="main-content" class="main-content">
+
+        <!-- Include Optional Slideshow banner -->
+        <section aria-label="hero banner">
+            <!--#include virtual="/ssi/header-slideshow-banner.html" -->
+        </section>
+
+        <div class="container p-b-lg">
+            <main class="main-primary">
+                <ol class="breadcrumb">
+                    <li><a href="../index.html" title="Home page">Home</a></li>
+                    <li><a href="/sample/" title="Content Modules landing page">Content Modules</a></li>
+                    <li class="active">Rotating Banner</li>
+                </ol>
+
+                <h1>Rotating Header Banner with Caption</h1>
+                <p>The rotating header banner is integrated with the page header. It appears as a background to the
+                    other header elements. The markup is contained in <code>/ssi/header-slideshow-banner.html</code>.
+                    The banner can only appear on templates with the <code>.primary</code> class applied to the body
+                    element.</p>
+
+                <p>Each slide in the banner containes a background image and a caption that functions as a link. The
+                    image is set by changing the <code>background</code> property in the style attribute for
+                    <code>&lt;div class="slide" style="background-image: url('sample/images/background_1.jpg');"&gt;</code>.
+                </p>
+
+                <p>An optional link with a caption can be added. The caption is contained inside the link in the
+                    <code>.slide-text</code> element.</p>
+
+                <h2><label for="sample-header-slideshow-banner">Source Code:</label></h2>
+                <pre><code class="overflow-auto"><!--#include virtual="/ssi/header-slideshow-banner.html" --></code></pre>
+            </main>
+
+        </div>
     </div>
 
-	<div class="header-decoration"></div>
-</header>
 
+    <!--#include virtual="/ssi/global-footer.html" -->
 
-
-<div id="main-content" class="main-content">
-
-    <!-- Include Optional Slideshow banner -->
-    <section aria-label="hero banner">
-    <!--#include virtual="/ssi/header-slideshow-banner.html" -->
-    </section>
-
-    <div class="container p-b-lg">
-        <main class="main-primary">            
-            <ol class="breadcrumb">
-                <li><a href="../index.html" title="Home page">Home</a></li>
-                <li><a href="/sample/" title="Content Modules landing page">Content Modules</a></li>
-                <li class="active">Rotating Banner</li>
-            </ol>
-
-            <h1>Rotating Header Banner with Caption</h1>
-            <p>The rotating header banner is integrated with the page header. It appears as a background to the other header elements. The markup is contained in <code>/ssi/header-slideshow-banner.html</code>. The banner can only appear on templates with the <code>.primary</code> class applied to the body element.</p>
-
-            <p>Each slide in the banner containes a background image and a caption that functions as a link. The image is set by changing the <code>background</code> property in the style attribute for <code>&lt;div class="slide" style="background-image: url('sample/images/background_1.jpg');"&gt;</code>.</p>
-
-            <p>An optional link with a caption can be added. The caption is contained inside the link in the <code>.slide-text</code> element.</p>
-
-            <h2><label for="sample-header-slideshow-banner">Source Code:</label></h2>
-            <pre><code class="overflow-auto"><!--#include virtual="/ssi/header-slideshow-banner.html" --></code></pre>
-        </main>
-
-    </div>
-</div>
-
-
-<!--#include virtual="/ssi/global-footer.html" -->
-
-<!--#include virtual="/ssi/scripts.html" -->
+    <!--#include virtual="/ssi/scripts.html" -->
 </body>
+
 </html>

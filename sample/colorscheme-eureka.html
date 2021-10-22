@@ -6,8 +6,9 @@
 <!--[if (gt IE 9)]><!-->
 <html class="no-js" lang="en">
 <!--<![endif]-->
+
 <head>
- <!--    California State Template (beta)
+    <!--    California State Template (beta)
  
 
             Based on Twitter Bootstrap
@@ -28,7 +29,8 @@
     <!-- for Windows mobile -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
     <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css?family=Asap+Condensed:400,600|Source+Sans+Pro:400,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Asap+Condensed:400,600|Source+Sans+Pro:400,700"
+        rel="stylesheet">
     <!-- For all browsers -->
     <link rel="stylesheet" href="/css/cagov.core.css">
     <script src="/js/search.js"></script>
@@ -91,8 +93,8 @@
     <![endif]-->
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
-      <script src="/js/libs/html5shiv.min.js"></script>
-      <script src="/js/libs/respond.min.js"></script>
+    <script src="/js/libs/html5shiv.min.js"></script>
+    <script src="/js/libs/respond.min.js"></script>
     <![endif]-->
     <!-- Include Google Analytics -->
     <!--#include virtual="/ssi/analytics.html" -->
@@ -145,10 +147,13 @@
         <!--#include virtual="/ssi/mobile-controls.html" -->
 
         <div class="navigation-search full-width-nav container">
-        <div id="head-search" class="search-container featured-search fade">
-            <!-- Include Search -->
-            <!--#include virtual="/ssi/search.html" -->
-        </div>
+        <div id="head-search" class="search-container featured-search collapse collapsed">
+                <!-- Include Search -->
+                <!--#include virtual="/ssi/search-mobile.html" -->
+            </div>
+            <div id="featured-search" class="search-container featured-search">
+                <!--#include virtual="/ssi/search.html" -->
+            </div>
 
         <!-- Include Navigation -->
         <!--#include virtual="/ssi/navigation.html" -->

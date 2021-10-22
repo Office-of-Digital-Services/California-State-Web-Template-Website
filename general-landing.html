@@ -7,8 +7,8 @@
 <html class="no-js" lang="en">
 <!--<![endif]-->
 
-<head>    
- <!--    California State Template (beta)
+<head>
+    <!--    California State Template (beta)
  
 
     Based on Twitter Bootstrap
@@ -42,14 +42,17 @@
         <!--#include virtual="/ssi/mobile-controls.html" -->
 
         <div class="navigation-search full-width-nav container">
-        <div id="head-search" class="search-container featured-search fade">
-            <!-- Include Search -->
-            <!--#include virtual="/ssi/search.html" -->
-        </div>
+            <div id="head-search" class="search-container featured-search collapse collapsed">
+                <!-- Include Search -->
+                <!--#include virtual="/ssi/search-mobile.html" -->
+            </div>
+            <div id="featured-search" class="search-container featured-search">
+                <!--#include virtual="/ssi/search.html" -->
+            </div>
 
-        <!-- Include Navigation -->
-        <!--#include virtual="/ssi/navigation.html" -->
-    </div>
+            <!-- Include Navigation -->
+            <!--#include virtual="/ssi/navigation.html" -->
+        </div>
 
 
         <div class="header-decoration"></div>
@@ -81,8 +84,12 @@
                                 <i class="ca-gov-icon-favorite font-size-95x color-primary"></i>
                                 <i class="ca-gov-icon-favorite font-size-70x color-primary"></i>
                             </div>
-                            <p class="lead m-b-60">From entry-level jobs to student opportunities to full career paths, the state of California offers a wide variety of opportunities for job applicants. The state offers comprehensive benefits for its employees, who provide essential and exceptional service to millions of Californians every day.</p>
-                            <a class="btn btn-lg btn-primary rounded-15" href="https://www.jobs.ca.gov/" target="_blank">
+                            <p class="lead m-b-60">From entry-level jobs to student opportunities to full career paths,
+                                the state of California offers a wide variety of opportunities for job applicants. The
+                                state offers comprehensive benefits for its employees, who provide essential and
+                                exceptional service to millions of Californians every day.</p>
+                            <a class="btn btn-lg btn-primary rounded-15" href="https://www.jobs.ca.gov/"
+                                target="_blank">
                                 <i class="ca-gov-icon-online-services"></i> Apply Here
                             </a>
                         </div>
@@ -98,18 +105,19 @@
                             <!-- Article -->
                             <article class="block-hover section-standout">
                                 <figure class="bg-overlay">
-                                    <img class="img-fluid w-100 block-hover_zoom" src="/sample/images/service-find-job.jpg" alt="Image Description">
+                                    <img class="img-fluid w-100 block-hover_zoom"
+                                        src="/sample/images/service-find-job.jpg" alt="Image Description">
                                 </figure>
 
                                 <header class="w-100 text-center absolute-centered p-x">
                                     <span class="btn btn-xs btn-primary rounded-0" href="#">CalHR</span>
                                     <h3 class="h4 m-y-sm">
                                         Find a Job
-                                    </h4>
+                                        </h4>
 
-                                    <small class="color-white">
-                                        <span class="ca-gov-icon-time pos-rel"></span> July 04, 2016
-                                    </small>
+                                        <small class="color-white">
+                                            <span class="ca-gov-icon-time pos-rel"></span> July 04, 2016
+                                        </small>
                                 </header>
 
                                 <a class="news-link" href="#">Find a Job</a>
@@ -120,7 +128,9 @@
                             <!-- Article -->
                             <article class="block-hover section-standout">
                                 <figure class="bg-overlay">
-                                    <img class="img-fluid w-100 block-hover_zoom" src="/sample/images/service-tiles/service-file-unemployment.jpg" alt="Image Description">
+                                    <img class="img-fluid w-100 block-hover_zoom"
+                                        src="/sample/images/service-tiles/service-file-unemployment.jpg"
+                                        alt="Image Description">
                                 </figure>
 
                                 <header class="w-100 text-center absolute-centered p-x">
@@ -142,7 +152,9 @@
                             <!-- Article -->
                             <article class="block-hover section-standout">
                                 <figure class="bg-overlay">
-                                    <img class="img-fluid w-100 block-hover_zoom" src="/sample/images/service-tiles/service-paid-family-leave.jpg" alt="Image Description">
+                                    <img class="img-fluid w-100 block-hover_zoom"
+                                        src="/sample/images/service-tiles/service-paid-family-leave.jpg"
+                                        alt="Image Description">
                                 </figure>
 
                                 <header class="w-100 text-center absolute-centered p-x">
@@ -212,7 +224,8 @@
                         <div class="half">
                             <!-- Start Card -->
                             <div class="card card-default">
-                                <div class="card-block" id="collapseCALHR" itemscope itemtype="http://schema.org/Organization">
+                                <div class="card-block" id="collapseCALHR" itemscope
+                                    itemtype="http://schema.org/Organization">
                                     <div class="row">
                                         <div class="col-md-2 col-xs-4">
                                             <img class="img-responsive" src="sample/images/logo-calhr.png" alt="">
@@ -221,26 +234,47 @@
                                             <a href="" class="lead" itemprop="name">Department of Human Resources</a>
                                             <div class="row">
                                                 <div class="col-md-7">
-                                                    <p>Etiam porta sem malesuada magna mollis euismod. Morbi leo risus.</p>
+                                                    <p>Etiam porta sem malesuada magna mollis euismod. Morbi leo risus.
+                                                    </p>
                                                     <div class="collapse collapseCALHR">
-                                                        <p itemprop="description">Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec ullamcorper nulla non metus auctor fringilla. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Donec id elit non mi porta gravida at eget metus.</p>
+                                                        <p itemprop="description">Cras justo odio, dapibus ac facilisis
+                                                            in, egestas eget quam. Donec ullamcorper nulla non metus
+                                                            auctor fringilla. Aenean eu leo quam. Pellentesque ornare
+                                                            sem lacinia quam venenatis vestibulum. Donec id elit non mi
+                                                            porta gravida at eget metus.</p>
                                                         <p class="other">
-                                                            General Information: <span itemprop="telephone">(916)323-5400</span><br>
-                                                            Hearing Impaired: <span itemprop="telephone">(916)323-5400</span><br>
+                                                            General Information: <span
+                                                                itemprop="telephone">(916)323-5400</span><br>
+                                                            Hearing Impaired: <span
+                                                                itemprop="telephone">(916)323-5400</span><br>
                                                             Fax <span itemprop="faxNumber">(916)323-5400</span><br>
                                                         </p>
                                                     </div>
                                                 </div>
                                                 <div class="col-md-5">
-                                                    <a href="" class="btn btn-secondary btn-block btn-sm">Agency Details</a>
+                                                    <a href="" class="btn btn-secondary btn-block btn-sm">Agency
+                                                        Details</a>
                                                     <div class="collapse collapseCALHR">
-                                                        <a href="" class="btn btn-secondary btn-block btn-sm">Contact Agency</a>
-                                                        <a href="" class="btn btn-secondary btn-block btn-sm">Show on Map</a>
-                                                        <a href="" class="btn btn-secondary btn-block btn-sm">Live Chat</a>
+                                                        <a href="" class="btn btn-secondary btn-block btn-sm">Contact
+                                                            Agency</a>
+                                                        <a href="" class="btn btn-secondary btn-block btn-sm">Show on
+                                                            Map</a>
+                                                        <a href="" class="btn btn-secondary btn-block btn-sm">Live
+                                                            Chat</a>
                                                         <ul class="list-inline list-unstyled social">
-                                                            <li class="list-inline-item"><a href=""><span class="ca-gov-icon-share-twitter" aria-hidden="true"><span class="sr-only">Twitter CalHR</span></span></a></li>
-                                                            <li class="list-inline-item"><a href=""><span class="ca-gov-icon-share-facebook" aria-hidden="true"><span class="sr-only">Facebook CalHR</span></span></a></li>
-                                                            <li class="list-inline-item"><a href=""><span class="ca-gov-icon-share-googleplus" aria-hidden="true"><span class="sr-only">Google+ CalHR</span></span></a></li>
+                                                            <li class="list-inline-item"><a href=""><span
+                                                                        class="ca-gov-icon-share-twitter"
+                                                                        aria-hidden="true"><span class="sr-only">Twitter
+                                                                            CalHR</span></span></a></li>
+                                                            <li class="list-inline-item"><a href=""><span
+                                                                        class="ca-gov-icon-share-facebook"
+                                                                        aria-hidden="true"><span
+                                                                            class="sr-only">Facebook
+                                                                            CalHR</span></span></a></li>
+                                                            <li class="list-inline-item"><a href=""><span
+                                                                        class="ca-gov-icon-share-googleplus"
+                                                                        aria-hidden="true"><span class="sr-only">Google+
+                                                                            CalHR</span></span></a></li>
                                                         </ul>
                                                     </div>
                                                 </div>
@@ -249,7 +283,8 @@
                                     </div>
                                 </div>
                                 <div class="text-center m-b">
-                                    <a href="javascript:;" role="button" data-toggle="collapse" data-parent="#collapseCALHR" aria-expanded="false" data-target=".collapseCALHR">
+                                    <a href="javascript:;" role="button" data-toggle="collapse"
+                                        data-parent="#collapseCALHR" aria-expanded="false" data-target=".collapseCALHR">
                                         <span class="toggle-more"></span><span class="sr-only">Open</span>
                                     </a>
                                 </div>
@@ -257,35 +292,55 @@
                             <!-- End Card -->
                             <!-- Start Card -->
                             <div class="card card-default">
-                                <div class="card-block" id="collapseEDD" itemscope itemtype="http://schema.org/Organization">
+                                <div class="card-block" id="collapseEDD" itemscope
+                                    itemtype="http://schema.org/Organization">
                                     <div class="row">
                                         <div class="col-md-2 col-xs-4">
                                             <img class="img-responsive" src="sample/images/logo-edd.jpg" alt="">
                                         </div>
                                         <div class="col-md-10 col-xs-8">
-                                            <a href="" class="lead" itemprop="name">Employment Development Department</a>
+                                            <a href="" class="lead" itemprop="name">Employment Development
+                                                Department</a>
                                             <div class="row">
                                                 <div class="col-md-7">
-                                                    <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam auctor fringilla.</p>
+                                                    <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam
+                                                        auctor fringilla.</p>
                                                     <div class="collapse collapseEDD">
-                                                        <p itemprop="description">Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec ullamcorper nulla non metus auctor fringilla. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Donec id elit non mi porta gravida at eget metus.</p>
+                                                        <p itemprop="description">Cras justo odio, dapibus ac facilisis
+                                                            in, egestas eget quam. Donec ullamcorper nulla non metus
+                                                            auctor fringilla. Aenean eu leo quam. Pellentesque ornare
+                                                            sem lacinia quam venenatis vestibulum. Donec id elit non mi
+                                                            porta gravida at eget metus.</p>
                                                         <p class="other">
-                                                            General Information: <span itemprop="telephone">(916)323-5400</span><br>
-                                                            Hearing Impaired: <span itemprop="telephone">(916)323-5400</span><br>
+                                                            General Information: <span
+                                                                itemprop="telephone">(916)323-5400</span><br>
+                                                            Hearing Impaired: <span
+                                                                itemprop="telephone">(916)323-5400</span><br>
                                                             Fax <span itemprop="faxNumber">(916)323-5400</span><br>
                                                         </p>
                                                     </div>
                                                 </div>
                                                 <div class="col-md-5">
-                                                    <a href="" class="btn btn-secondary btn-block btn-sm">Agency Details</a>
+                                                    <a href="" class="btn btn-secondary btn-block btn-sm">Agency
+                                                        Details</a>
                                                     <div class="collapse collapseEDD">
-                                                        <a href="" class="btn btn-secondary btn-block btn-sm">Contact Agency</a>
-                                                        <a href="" class="btn btn-secondary btn-block btn-sm">Show on Map</a>
-                                                        <a href="" class="btn btn-secondary btn-block btn-sm">Live Chat</a>
+                                                        <a href="" class="btn btn-secondary btn-block btn-sm">Contact
+                                                            Agency</a>
+                                                        <a href="" class="btn btn-secondary btn-block btn-sm">Show on
+                                                            Map</a>
+                                                        <a href="" class="btn btn-secondary btn-block btn-sm">Live
+                                                            Chat</a>
                                                         <ul class="list-inline list-unstyled social">
-                                                            <li><a href=""><span class="ca-gov-icon-share-twitter" aria-hidden="true"><span class="sr-only">Twitter EDD</span></span></a></li>
-                                                            <li><a href=""><span class="ca-gov-icon-share-facebook" aria-hidden="true"><span class="sr-only">Facebook EDD</span></span></a></li>
-                                                            <li><a href=""><span class="ca-gov-icon-share-googleplus" aria-hidden="true"><span class="sr-only">Google+ EDD</span></span></a></li>
+                                                            <li><a href=""><span class="ca-gov-icon-share-twitter"
+                                                                        aria-hidden="true"><span class="sr-only">Twitter
+                                                                            EDD</span></span></a></li>
+                                                            <li><a href=""><span class="ca-gov-icon-share-facebook"
+                                                                        aria-hidden="true"><span
+                                                                            class="sr-only">Facebook
+                                                                            EDD</span></span></a></li>
+                                                            <li><a href=""><span class="ca-gov-icon-share-googleplus"
+                                                                        aria-hidden="true"><span class="sr-only">Google+
+                                                                            EDD</span></span></a></li>
                                                         </ul>
                                                     </div>
                                                 </div>
@@ -294,7 +349,8 @@
                                     </div>
                                 </div>
                                 <div class="text-center m-b">
-                                    <a href="javascript:;" role="button" data-toggle="collapse" data-parent="#collapseEDD" aria-expanded="false" data-target=".collapseEDD">
+                                    <a href="javascript:;" role="button" data-toggle="collapse"
+                                        data-parent="#collapseEDD" aria-expanded="false" data-target=".collapseEDD">
                                         <span class="toggle-more"></span><span class="sr-only">Open</span>
                                     </a>
                                 </div>
@@ -305,35 +361,55 @@
                         <div class="half">
                             <!-- Start Card -->
                             <div class="card card-default">
-                                <div class="card-block" id="collapseSCIF" itemscope itemtype="http://schema.org/Organization">
+                                <div class="card-block" id="collapseSCIF" itemscope
+                                    itemtype="http://schema.org/Organization">
                                     <div class="row">
                                         <div class="col-md-2 col-xs-4">
                                             <img class="img-responsive" src="sample/images/logo-scif.jpg" alt="">
                                         </div>
                                         <div class="col-md-10 col-xs-8">
-                                            <a href="" class="lead" itemprop="name">State Compensation Insurance Fund</a>
+                                            <a href="" class="lead" itemprop="name">State Compensation Insurance
+                                                Fund</a>
                                             <div class="row">
                                                 <div class="col-md-7">
-                                                    <p>Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. </p>
+                                                    <p>Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor
+                                                        auctor. </p>
                                                     <div class="collapse collapseSCIF">
-                                                        <p itemprop="description">Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec ullamcorper nulla non metus auctor fringilla. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Donec id elit non mi porta gravida at eget metus.</p>
+                                                        <p itemprop="description">Cras justo odio, dapibus ac facilisis
+                                                            in, egestas eget quam. Donec ullamcorper nulla non metus
+                                                            auctor fringilla. Aenean eu leo quam. Pellentesque ornare
+                                                            sem lacinia quam venenatis vestibulum. Donec id elit non mi
+                                                            porta gravida at eget metus.</p>
                                                         <p class="other">
-                                                            General Information: <span itemprop="telephone">(916)323-5400</span><br>
-                                                            Hearing Impaired: <span itemprop="telephone">(916)323-5400</span><br>
+                                                            General Information: <span
+                                                                itemprop="telephone">(916)323-5400</span><br>
+                                                            Hearing Impaired: <span
+                                                                itemprop="telephone">(916)323-5400</span><br>
                                                             Fax <span itemprop="faxNumber">(916)323-5400</span><br>
                                                         </p>
                                                     </div>
                                                 </div>
                                                 <div class="col-md-5">
-                                                    <a href="" class="btn btn-secondary btn-block btn-sm">Agency Details</a>
+                                                    <a href="" class="btn btn-secondary btn-block btn-sm">Agency
+                                                        Details</a>
                                                     <div class="collapse collapseSCIF">
-                                                        <a href="" class="btn btn-secondary btn-block btn-sm">Contact Agency</a>
-                                                        <a href="" class="btn btn-secondary btn-block btn-sm">Show on Map</a>
-                                                        <a href="" class="btn btn-secondary btn-block btn-sm">Live Chat</a>
+                                                        <a href="" class="btn btn-secondary btn-block btn-sm">Contact
+                                                            Agency</a>
+                                                        <a href="" class="btn btn-secondary btn-block btn-sm">Show on
+                                                            Map</a>
+                                                        <a href="" class="btn btn-secondary btn-block btn-sm">Live
+                                                            Chat</a>
                                                         <ul class="list-inline list-unstyled social">
-                                                            <li><a href=""><span class="ca-gov-icon-share-twitter" aria-hidden="true"><span class="sr-only">Twitter SCIF</span></span></a></li>
-                                                            <li><a href=""><span class="ca-gov-icon-share-facebook" aria-hidden="true"><span class="sr-only">Facebook SCIF</span></span></a></li>
-                                                            <li><a href=""><span class="ca-gov-icon-share-googleplus" aria-hidden="true"><span class="sr-only">Google+ SCIF</span></span></a></li>
+                                                            <li><a href=""><span class="ca-gov-icon-share-twitter"
+                                                                        aria-hidden="true"><span class="sr-only">Twitter
+                                                                            SCIF</span></span></a></li>
+                                                            <li><a href=""><span class="ca-gov-icon-share-facebook"
+                                                                        aria-hidden="true"><span
+                                                                            class="sr-only">Facebook
+                                                                            SCIF</span></span></a></li>
+                                                            <li><a href=""><span class="ca-gov-icon-share-googleplus"
+                                                                        aria-hidden="true"><span class="sr-only">Google+
+                                                                            SCIF</span></span></a></li>
                                                         </ul>
                                                     </div>
                                                 </div>
@@ -342,7 +418,8 @@
                                     </div>
                                 </div>
                                 <div class="text-center m-b">
-                                    <a href="javascript:;" role="button" data-toggle="collapse" data-parent="#collapseSCIF" aria-expanded="false" data-target=".collapseSCIF">
+                                    <a href="javascript:;" role="button" data-toggle="collapse"
+                                        data-parent="#collapseSCIF" aria-expanded="false" data-target=".collapseSCIF">
                                         <span class="toggle-more"></span><span class="sr-only">Open</span>
                                     </a>
                                 </div>
@@ -350,7 +427,8 @@
                             <!-- End Card -->
                             <!-- Start Card -->
                             <div class="card card-default">
-                                <div class="card-block" id="collapse5678" itemscope itemtype="http://schema.org/Organization">
+                                <div class="card-block" id="collapse5678" itemscope
+                                    itemtype="http://schema.org/Organization">
                                     <div class="row">
                                         <div class="col-md-2 col-xs-4">
                                             <img class="img-responsive" src="sample/images/logo-dmv.png" alt="">
@@ -359,26 +437,44 @@
                                             <a href="" class="lead" itemprop="name">Department of Motor Vehicles</a>
                                             <div class="row">
                                                 <div class="col-md-7">
-                                                    <p>Some short teaser content. Aenean lacinia bibendum consectetur.</p>
+                                                    <p>Some short teaser content. Aenean lacinia bibendum consectetur.
+                                                    </p>
                                                     <div class="collapse collapse5678">
-                                                        <p itemprop="description">Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec ullamcorper nulla non metus auctor fringilla. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Donec id elit non mi porta gravida at eget metus.</p>
+                                                        <p itemprop="description">Cras justo odio, dapibus ac facilisis
+                                                            in, egestas eget quam. Donec ullamcorper nulla non metus
+                                                            auctor fringilla. Aenean eu leo quam. Pellentesque ornare
+                                                            sem lacinia quam venenatis vestibulum. Donec id elit non mi
+                                                            porta gravida at eget metus.</p>
                                                         <p class="other">
-                                                            General Information: <span itemprop="telephone">(916)323-5400</span><br>
-                                                            Hearing Impaired: <span itemprop="telephone">(916)323-5400</span><br>
+                                                            General Information: <span
+                                                                itemprop="telephone">(916)323-5400</span><br>
+                                                            Hearing Impaired: <span
+                                                                itemprop="telephone">(916)323-5400</span><br>
                                                             Fax <span itemprop="faxNumber">(916)323-5400</span><br>
                                                         </p>
                                                     </div>
                                                 </div>
                                                 <div class="col-md-5">
-                                                    <a href="" class="btn btn-secondary btn-block btn-sm">Agency Details</a>
+                                                    <a href="" class="btn btn-secondary btn-block btn-sm">Agency
+                                                        Details</a>
                                                     <div class="collapse collapse5678">
-                                                        <a href="" class="btn btn-secondary btn-block btn-sm">Contact Agency</a>
-                                                        <a href="" class="btn btn-secondary btn-block btn-sm">Show on Map</a>
-                                                        <a href="" class="btn btn-secondary btn-block btn-sm">Live Chat</a>
+                                                        <a href="" class="btn btn-secondary btn-block btn-sm">Contact
+                                                            Agency</a>
+                                                        <a href="" class="btn btn-secondary btn-block btn-sm">Show on
+                                                            Map</a>
+                                                        <a href="" class="btn btn-secondary btn-block btn-sm">Live
+                                                            Chat</a>
                                                         <ul class="list-inline list-unstyled social">
-                                                            <li><a href=""><span class="ca-gov-icon-share-twitter" aria-hidden="true"><span class="sr-only">Twitter DMV</span></span></a></li>
-                                                            <li><a href=""><span class="ca-gov-icon-share-facebook" aria-hidden="true"><span class="sr-only">Facebook DMV</span></span></a></li>
-                                                            <li><a href=""><span class="ca-gov-icon-share-googleplus" aria-hidden="true"><span class="sr-only">Google+ DMV</span></span></a></li>
+                                                            <li><a href=""><span class="ca-gov-icon-share-twitter"
+                                                                        aria-hidden="true"><span class="sr-only">Twitter
+                                                                            DMV</span></span></a></li>
+                                                            <li><a href=""><span class="ca-gov-icon-share-facebook"
+                                                                        aria-hidden="true"><span
+                                                                            class="sr-only">Facebook
+                                                                            DMV</span></span></a></li>
+                                                            <li><a href=""><span class="ca-gov-icon-share-googleplus"
+                                                                        aria-hidden="true"><span class="sr-only">Google+
+                                                                            DMV</span></span></a></li>
                                                         </ul>
                                                     </div>
                                                 </div>
@@ -387,7 +483,8 @@
                                     </div>
                                 </div>
                                 <div class="text-center m-b">
-                                    <a href="javascript:;" role="button" data-toggle="collapse" data-parent="#collapse5678" aria-expanded="false" data-target=".collapse5678">
+                                    <a href="javascript:;" role="button" data-toggle="collapse"
+                                        data-parent="#collapse5678" aria-expanded="false" data-target=".collapse5678">
                                         <span class="toggle-more"></span><span class="sr-only">Open</span>
                                     </a>
                                 </div>
@@ -438,25 +535,30 @@
                     <div class="group">
                         <div class="half">
                             <div class="media">
-                                <div class="media-left"><span class="ca-gov-icon-lightbulb color-primary biggest"></span></div>
+                                <div class="media-left"><span
+                                        class="ca-gov-icon-lightbulb color-primary biggest"></span></div>
                                 <div class="media-body">
                                     <h3 class="h4">Job Opportunities</h3>
                                     <ul class="list-standout">
                                         <li>
                                             <a href="/">California apprenticeship Program</a>
-                                            <p>Etiam porta sem malesuada magna mollis euismod. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum.</p>
+                                            <p>Etiam porta sem malesuada magna mollis euismod. Aenean eu leo quam.
+                                                Pellentesque ornare sem lacinia quam venenatis vestibulum.</p>
                                         </li>
                                         <li>
                                             <a href="/">One Stop Career Center System</a>
-                                            <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Etiam porta sem malesuada magna mollis euismod.</p>
+                                            <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Etiam
+                                                porta sem malesuada magna mollis euismod.</p>
                                         </li>
                                         <li>
                                             <a href="/">CALPERS Member Education Programs</a>
-                                            <p>Maecenas faucibus mollis interdum. Aenean lacinia bibendum nulla sed consectetur. Integer dapibus posuere velit aliquet.</p>
+                                            <p>Maecenas faucibus mollis interdum. Aenean lacinia bibendum nulla sed
+                                                consectetur. Integer dapibus posuere velit aliquet.</p>
                                         </li>
                                         <li>
                                             <a href="/">State Training Resources</a>
-                                            <p>Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit sit amet non magna.</p>
+                                            <p>Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget
+                                                risus varius blandit sit amet non magna.</p>
                                         </li>
                                     </ul>
                                 </div>
@@ -464,25 +566,30 @@
                         </div>
                         <div class="half">
                             <div class="media">
-                                <div class="media-left"><span class="ca-gov-icon-graduate color-primary biggest"></span></div>
+                                <div class="media-left"><span class="ca-gov-icon-graduate color-primary biggest"></span>
+                                </div>
                                 <div class="media-body">
                                     <h3 class="h4">Training</h3>
                                     <ul class="list-standout">
                                         <li>
                                             <a href="/">California apprenticeship Program</a>
-                                            <p>Etiam porta sem malesuada magna mollis euismod. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum.</p>
+                                            <p>Etiam porta sem malesuada magna mollis euismod. Aenean eu leo quam.
+                                                Pellentesque ornare sem lacinia quam venenatis vestibulum.</p>
                                         </li>
                                         <li>
                                             <a href="/">One Stop Career Center System</a>
-                                            <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Etiam porta sem malesuada magna mollis euismod.</p>
+                                            <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Etiam
+                                                porta sem malesuada magna mollis euismod.</p>
                                         </li>
                                         <li>
                                             <a href="/">CALPERS Member Education Programs</a>
-                                            <p>Maecenas faucibus mollis interdum. Aenean lacinia bibendum nulla sed consectetur. Integer dapibus posuere velit aliquet.</p>
+                                            <p>Maecenas faucibus mollis interdum. Aenean lacinia bibendum nulla sed
+                                                consectetur. Integer dapibus posuere velit aliquet.</p>
                                         </li>
                                         <li>
                                             <a href="/">State Training Resources</a>
-                                            <p>Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit sit amet non magna.</p>
+                                            <p>Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget
+                                                risus varius blandit sit amet non magna.</p>
                                         </li>
                                     </ul>
                                 </div>
@@ -502,18 +609,31 @@
                             <article class="news-item">
                                 <div class="thumbnail"><img src="/sample/images/150x100.gif" alt="sample image"></div>
                                 <div class="info">
-                                    <div class="headline"><a href="">Duis mollis, est non commodo luctus, nisi erat porttitor ligula.</a></div>
-                                    <p>Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Nullam quis risus eget urna mollis ornare vel eu leo. Nulla vitae elit libero, a pharetra augue. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Donec ullamcorper nulla non metus auctor fringilla.</p>
-                                    <div class="published">Published: <time datetime="2014-10-20">Oct 20, 2014</time></div>
+                                    <div class="headline"><a href="">Duis mollis, est non commodo luctus, nisi erat
+                                            porttitor ligula.</a></div>
+                                    <p>Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Integer posuere
+                                        erat a ante venenatis dapibus posuere velit aliquet. Nullam quis risus eget urna
+                                        mollis ornare vel eu leo. Nulla vitae elit libero, a pharetra augue. Duis
+                                        mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio
+                                        sem nec elit. Donec ullamcorper nulla non metus auctor fringilla.</p>
+                                    <div class="published">Published: <time datetime="2014-10-20">Oct 20, 2014</time>
+                                    </div>
                                 </div>
                             </article>
 
                             <article class="news-item">
                                 <div class="thumbnail"><img src="/sample/images/150x100.gif" alt="sample image"></div>
                                 <div class="info">
-                                    <div class="headline"><a href="">Duis mollis, est non commodo luctus, nisi erat porttitor ligula.</a></div>
-                                    <p>Aenean lacinia bibendum nulla sed consectetur. Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Donec sed odio dui.</p>
-                                    <div class="published">Published: <time datetime="2014-10-20">Oct 20, 2014</time></div>
+                                    <div class="headline"><a href="">Duis mollis, est non commodo luctus, nisi erat
+                                            porttitor ligula.</a></div>
+                                    <p>Aenean lacinia bibendum nulla sed consectetur. Integer posuere erat a ante
+                                        venenatis dapibus posuere velit aliquet. Vivamus sagittis lacus vel augue
+                                        laoreet rutrum faucibus dolor auctor. Fusce dapibus, tellus ac cursus commodo,
+                                        tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.
+                                        Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Donec sed
+                                        odio dui.</p>
+                                    <div class="published">Published: <time datetime="2014-10-20">Oct 20, 2014</time>
+                                    </div>
                                 </div>
                             </article>
                         </div>
@@ -522,18 +642,31 @@
                             <article class="news-item">
                                 <div class="thumbnail"><img src="/sample/images/150x100.gif" alt="sample image"></div>
                                 <div class="info">
-                                    <div class="headline"><a href="">Duis mollis, est non commodo luctus, nisi erat porttitor ligula.</a></div>
-                                    <p>Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Nullam quis risus eget urna mollis ornare vel eu leo. Nulla vitae elit libero, a pharetra augue. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Donec ullamcorper nulla non metus auctor fringilla.</p>
-                                    <div class="published">Published: <time datetime="2014-10-20">Oct 20, 2014</time></div>
+                                    <div class="headline"><a href="">Duis mollis, est non commodo luctus, nisi erat
+                                            porttitor ligula.</a></div>
+                                    <p>Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Integer posuere
+                                        erat a ante venenatis dapibus posuere velit aliquet. Nullam quis risus eget urna
+                                        mollis ornare vel eu leo. Nulla vitae elit libero, a pharetra augue. Duis
+                                        mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio
+                                        sem nec elit. Donec ullamcorper nulla non metus auctor fringilla.</p>
+                                    <div class="published">Published: <time datetime="2014-10-20">Oct 20, 2014</time>
+                                    </div>
                                 </div>
                             </article>
 
                             <article class="news-item">
                                 <div class="thumbnail"><img src="/sample/images/150x100.gif" alt="sample image"></div>
                                 <div class="info">
-                                    <div class="headline"><a href="">Duis mollis, est non commodo luctus, nisi erat porttitor ligula.</a></div>
-                                    <p>Aenean lacinia bibendum nulla sed consectetur. Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Donec sed odio dui.</p>
-                                    <div class="published">Published: <time datetime="2014-10-20">Oct 20, 2014</time></div>
+                                    <div class="headline"><a href="">Duis mollis, est non commodo luctus, nisi erat
+                                            porttitor ligula.</a></div>
+                                    <p>Aenean lacinia bibendum nulla sed consectetur. Integer posuere erat a ante
+                                        venenatis dapibus posuere velit aliquet. Vivamus sagittis lacus vel augue
+                                        laoreet rutrum faucibus dolor auctor. Fusce dapibus, tellus ac cursus commodo,
+                                        tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.
+                                        Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Donec sed
+                                        odio dui.</p>
+                                    <div class="published">Published: <time datetime="2014-10-20">Oct 20, 2014</time>
+                                    </div>
                                 </div>
                             </article>
                         </div>

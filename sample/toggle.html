@@ -5,9 +5,10 @@
 <!--[if IE 9]>    <html class="no-js ie9 oldie" lang="en"> <![endif]-->
 <!--[if (gt IE 9)]><!-->
 <html class="no-js" lang="en">
- <!--<![endif]-->
-<head>    
- <!--    California State Template (beta)
+<!--<![endif]-->
+
+<head>
+    <!--    California State Template (beta)
  
 
     Based on Twitter Bootstrap
@@ -22,7 +23,7 @@
 
     <!--#include virtual="/ssi/head-css-js.html" -->
     <script type="text/javascript">
-var defaultActiveLink = "Components";
+        var defaultActiveLink = "Components";
     </script>
 </head>
 
@@ -41,14 +42,17 @@ var defaultActiveLink = "Components";
         <!--#include virtual="/ssi/mobile-controls.html" -->
 
         <div class="navigation-search full-width-nav container">
-        <div id="head-search" class="search-container featured-search fade">
-            <!-- Include Search -->
-            <!--#include virtual="/ssi/search.html" -->
-        </div>
+            <div id="head-search" class="search-container featured-search collapse collapsed">
+                <!-- Include Search -->
+                <!--#include virtual="/ssi/search-mobile.html" -->
+            </div>
+            <div id="featured-search" class="search-container featured-search">
+                <!--#include virtual="/ssi/search.html" -->
+            </div>
 
-        <!-- Include Navigation -->
-        <!--#include virtual="/ssi/navigation.html" -->
-    </div>
+            <!-- Include Navigation -->
+            <!--#include virtual="/ssi/navigation.html" -->
+        </div>
 
         <div class="header-decoration"></div>
     </header>
@@ -66,7 +70,8 @@ var defaultActiveLink = "Components";
                 <div class="group">
                     <div class="half">
                         <h1>Generic Toggles</h1>
-                        <p>Flexible and generic component that utilizes a handful of classes and data attributes for easy toggle behavior of any content.</p>
+                        <p>Flexible and generic component that utilizes a handful of classes and data attributes for
+                            easy toggle behavior of any content.</p>
                         <p>Click the buttons below to show and hide another element via class changes:</p>
 
                         <ul>
@@ -75,9 +80,13 @@ var defaultActiveLink = "Components";
                             <li><code>.collapse.in</code> shows content</li>
                         </ul>
 
-                        <p>You can use a link with the <code>href</code> attribute, or a button with the <code>data-target</code> attribute. In both cases, the <code>data-toggle="collapse"</code> is required.</p>
+                        <p>You can use a link with the <code>href</code> attribute, or a button with the
+                            <code>data-target</code> attribute. In both cases, the <code>data-toggle="collapse"</code>
+                            is required.</p>
 
-                        <p>The example uses an optional <code>.toggle-more</code> class. This class is a generic class that toggles a <code>.active</code> class on the clicked element. This can be used as a hook to change icons to show opened and closed states.</p>
+                        <p>The example uses an optional <code>.toggle-more</code> class. This class is a generic class
+                            that toggles a <code>.active</code> class on the clicked element. This can be used as a hook
+                            to change icons to show opened and closed states.</p>
 
                         <h2>Example:</h2>
                         <!--#include virtual="/sample/modules/toggle.html" -->
@@ -96,4 +105,5 @@ var defaultActiveLink = "Components";
     <!--#include virtual="/ssi/scripts.html" -->
 
 </body>
+
 </html>

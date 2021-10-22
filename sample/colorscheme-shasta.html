@@ -6,8 +6,9 @@
 <!--[if (gt IE 9)]><!-->
 <html class="no-js" lang="en">
 <!--<![endif]-->
+
 <head>
- <!--    California State Template (beta)
+    <!--    California State Template (beta)
  
 
             Based on Twitter Bootstrap
@@ -28,7 +29,8 @@
     <!-- for Windows mobile -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
     <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css?family=Asap+Condensed:400,600|Source+Sans+Pro:400,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Asap+Condensed:400,600|Source+Sans+Pro:400,700"
+        rel="stylesheet">
     <!-- For all browsers -->
     <link rel="stylesheet" href="/css/cagov.core.css">
     <script src="/js/search.js"></script>
@@ -49,8 +51,7 @@
     <![endif]-->
     <!-- Load jQuery from CDN with fallback to local copy -->
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"
-            integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
-            crossorigin="anonymous"></script>
+        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
     <script>
         //Fall back to local copy if no jquery found
         if (typeof jQuery == 'undefined') {
@@ -126,6 +127,7 @@
         var defaultActiveLink = "Color Schemes";
     </script>
 </head>
+
 <body>
     <header role="banner" id="header" class="global-header fixed">
         <div id="skip-to-content"><a href="#main-content">Skip to Main Content</a></div>
@@ -143,20 +145,23 @@
         <!--#include virtual="/ssi/mobile-controls.html" -->
 
         <div class="navigation-search full-width-nav container">
-        <div id="head-search" class="search-container featured-search fade">
-            <!-- Include Search -->
-            <!--#include virtual="/ssi/search.html" -->
-        </div>
+            <div id="head-search" class="search-container featured-search collapse collapsed">
+                <!-- Include Search -->
+                <!--#include virtual="/ssi/search-mobile.html" -->
+            </div>
+            <div id="featured-search" class="search-container featured-search">
+                <!--#include virtual="/ssi/search.html" -->
+            </div>
 
-        <!-- Include Navigation -->
-        <!--#include virtual="/ssi/navigation.html" -->
-    </div>
+            <!-- Include Navigation -->
+            <!--#include virtual="/ssi/navigation.html" -->
+        </div>
 
     </header>
     <div id="main-content" class="main-content">
 
         <main class="main-primary">
-            <div class="container">            
+            <div class="container">
                 <ol class="breadcrumb">
                     <li><a href="../index.html" title="Home page">Home</a></li>
                     <li><a href="color-schemes.html" title="Color schemes landing page">Color Schemes</a></li>
@@ -176,7 +181,9 @@
                                     <div class="color" style="background-color:#fbad23;"></div>
                                 </div>
                             </div>
-                            <div class="caption"><h3 class="h4">.color-highlight<br />@color-p1</h3>HEX: #fbad23<br>RGB: 251,173,35</div>
+                            <div class="caption">
+                                <h3 class="h4">.color-highlight<br />@color-p1</h3>HEX: #fbad23<br>RGB: 251,173,35
+                            </div>
                         </div>
                         <div class="quarter">
                             <div class="outer">
@@ -184,7 +191,9 @@
                                     <div class="color" style="background-color:#336c39;"></div>
                                 </div>
                             </div>
-                            <div class="caption"><h3 class="h4">.color-primary<br />@color-p2</h3>HEX: #336c39<br />RGB: 51,108,57</div>
+                            <div class="caption">
+                                <h3 class="h4">.color-primary<br />@color-p2</h3>HEX: #336c39<br />RGB: 51,108,57
+                            </div>
                         </div>
 
                         <div class="quarter">
@@ -193,7 +202,9 @@
                                     <div class="color" style="background-color:#3c4543;"></div>
                                 </div>
                             </div>
-                            <div class="caption"><h3 class="h4">.color-standout<br />@color-p3</h3>HEX: #3c4543<br />RGB: 60,69,67</div>
+                            <div class="caption">
+                                <h3 class="h4">.color-standout<br />@color-p3</h3>HEX: #3c4543<br />RGB: 60,69,67
+                            </div>
                         </div>
                         <div class="quarter">
                             <div class="outer">
@@ -201,7 +212,9 @@
                                     <div class="color" style="background-color:#effaf6;"></div>
                                 </div>
                             </div>
-                            <div class="caption"><h3 class="h4">.color-s1<br />@color-s1</h3>HEX: #effaf6<br />RGB: 239,250,246</div>
+                            <div class="caption">
+                                <h3 class="h4">.color-s1<br />@color-s1</h3>HEX: #effaf6<br />RGB: 239,250,246
+                            </div>
                         </div>
                     </div>
 
@@ -212,19 +225,26 @@
                         </div>
                         <div class="card-body">
                             <p>
-                                There are two ways to customize theme main colors. One way is to change primary and secondary theme color variables
-                                in the colorscheme-[yourcolorshceme].scss file. This method will require you to re-compile the state template, you
-                                can find instructions in the readme file.  After the compilation you will have updated colorscheme-[yourcolorshceme].css file.
+                                There are two ways to customize theme main colors. One way is to change primary and
+                                secondary theme color variables
+                                in the colorscheme-[yourcolorshceme].scss file. This method will require you to
+                                re-compile the state template, you
+                                can find instructions in the readme file. After the compilation you will have updated
+                                colorscheme-[yourcolorshceme].css file.
                             </p>
 
                             <p>
-                                Another way is to manually find and replace all main theme colors and their variations in colorscheme-[yourcolorshceme].css.
-                                Main theme colors classes will be listed at the top of the CSS file. You can copy their values and use find/replace feature
-                                in your web editor software to replace all those colors references with your custom colors throughout entire css file.
+                                Another way is to manually find and replace all main theme colors and their variations
+                                in colorscheme-[yourcolorshceme].css.
+                                Main theme colors classes will be listed at the top of the CSS file. You can copy their
+                                values and use find/replace feature
+                                in your web editor software to replace all those colors references with your custom
+                                colors throughout entire css file.
                             </p>
 
                             <p>
-                                <span class="font-size-sm"><strong>Note:</strong> Before changing your colors make sure that your custom theme colors have sufficient color cotrast ratios.</span>
+                                <span class="font-size-sm"><strong>Note:</strong> Before changing your colors make sure
+                                    that your custom theme colors have sufficient color cotrast ratios.</span>
                             </p>
                         </div>
                     </div>
@@ -298,7 +318,9 @@
                         <h3>News block</h3>
                         <article class="block-hover">
                             <figure class="bg-overlay">
-                                <img class="img-fluid w-100 block-hover_zoom" src="/sample/images/service-tiles/service-paid-family-leave.jpg" alt="Image Description">
+                                <img class="img-fluid w-100 block-hover_zoom"
+                                    src="/sample/images/service-tiles/service-paid-family-leave.jpg"
+                                    alt="Image Description">
                             </figure>
 
                             <header class="w-100 text-center absolute-centered p-x">
@@ -325,7 +347,8 @@
 
                         <blockquote class="testimonial testimonial-highlight m-t-md">
                             <div class="testimonial-body">
-                                <p>Maecenas sed diam eget risus varius blandit sit amet non magna. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.</p>
+                                <p>Maecenas sed diam eget risus varius blandit sit amet non magna. Morbi leo risus,
+                                    porta ac consectetur ac, vestibulum at eros.</p>
                                 <footer>
                                     <cite>
                                         <a href="">John Smith</a> Some Awesome Company
@@ -348,4 +371,5 @@
     <!--#include virtual="/ssi/global-footer.html" -->
     <!--#include virtual="/ssi/scripts.html" -->
 </body>
+
 </html>

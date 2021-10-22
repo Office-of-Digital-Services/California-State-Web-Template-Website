@@ -8,7 +8,7 @@
 <!--<![endif]-->
 
 <head>
-<!--    California State Template (beta)
+    <!--    California State Template (beta)
 
         Based on Twitter Bootstrap
         -->
@@ -42,14 +42,17 @@
         <!--#include virtual="/ssi/mobile-controls.html" -->
 
         <div class="navigation-search full-width-nav container">
-        <div id="head-search" class="search-container featured-search fade">
-            <!-- Include Search -->
-            <!--#include virtual="/ssi/search.html" -->
-        </div>
+            <div id="head-search" class="search-container featured-search collapse collapsed">
+                <!-- Include Search -->
+                <!--#include virtual="/ssi/search-mobile.html" -->
+            </div>
+            <div id="featured-search" class="search-container featured-search">
+                <!--#include virtual="/ssi/search.html" -->
+            </div>
 
-        <!-- Include Navigation -->
-        <!--#include virtual="/ssi/navigation.html" -->
-    </div>
+            <!-- Include Navigation -->
+            <!--#include virtual="/ssi/navigation.html" -->
+        </div>
 
 
         <div class="header-decoration"></div>
@@ -68,9 +71,12 @@
                 <h1>State Template CDN</h1>
 
                 <p>
-                    Users can load your website faster by serving State Template's static resources such as css, JavaScript, fonts, and images in nodes all around the world.
-                    When a user requests your site, the node closest in proximity to user will deliver the static content,
-                    ensuring the shortest distance for the data to travel (reduced latency), therefore providing the fastest
+                    Users can load your website faster by serving State Template's static resources such as css,
+                    JavaScript, fonts, and images in nodes all around the world.
+                    When a user requests your site, the node closest in proximity to user will deliver the static
+                    content,
+                    ensuring the shortest distance for the data to travel (reduced latency), therefore providing the
+                    fastest
                     site experience.
                 </p>
 
@@ -83,7 +89,8 @@
 
 
                 <h2>Sample page using State Template CDN</h2>
-                <p>Here is the example of using CDN for core CSS/JS State Template files together with Server Side Includes (ssi):</p>
+                <p>Here is the example of using CDN for core CSS/JS State Template files together with Server Side
+                    Includes (ssi):</p>
                 <pre>
 <span class="text-success">&lt;!doctype html&gt;</span>
 <span class="text-accent-p2">&lt;html</span> <span class="text-info">lang=</span><span class="text-accent7">"en"</span><span class="text-accent-p2">&gt;</span>
@@ -135,7 +142,8 @@
     <span class="text-accent-p2">&lt;/body&gt;</span>
 <span class="text-accent-p2">&lt;/html&gt;</span>
 </pre>
-                <p><span class="label label-info">Note:</span> The web server that hosts the State Template should be configured to process SSI's with the .html extension.</p>
+                <p><span class="label label-info">Note:</span> The web server that hosts the State Template should be
+                    configured to process SSI's with the .html extension.</p>
 
 
 
@@ -143,12 +151,14 @@
 
                 <h3>State Template v6</h3>
                 <ul id="accordion" class="accordion-list list-overstated" role="tablist" multiselectable="true">
-                    <li id="panel_v6_0_6" class="tab" aria-selected="false" aria-controls="panel_6_0_6" aria-expanded="false" role="tab" tabindex="0">
+                    <li id="panel_v6_0_6" class="tab" aria-selected="false" aria-controls="panel_6_0_6"
+                        aria-expanded="false" role="tab" tabindex="0">
                         <a>Version 6.0.6</a>
                     </li>
-                    <div id="panel_6_0_6" class="panel" aria-labelledby="panel_v6_0_6" aria-hidden="true" role="tabpanel">
+                    <div id="panel_6_0_6" class="panel" aria-labelledby="panel_v6_0_6" aria-hidden="true"
+                        role="tabpanel">
                         <p>CSS</p>
-<pre>
+                        <pre>
 <code class="overflow-auto">https://california.azureedge.net/cdt/statetemplate/6.0.6/css/cagov.core.css
 https://california.azureedge.net/cdt/statetemplate/6.0.6/css/cagov.core.min.css
 https://california.azureedge.net/cdt/statetemplate/6.0.6/css/cagov.font-only.css
@@ -179,16 +189,18 @@ https://california.azureedge.net/cdt/statetemplate/6.0.6/css/colorscheme-trinity
 https://california.azureedge.net/cdt/statetemplate/6.0.6/css/colorscheme-trinity.min.css
 </code></pre>
                         <p>JS</p>
-                    <pre><code class="overflow-auto">https://california.azureedge.net/cdt/statetemplate/6.0.6/js/cagov.core.js
+                        <pre><code class="overflow-auto">https://california.azureedge.net/cdt/statetemplate/6.0.6/js/cagov.core.js
                     https://california.azureedge.net/cdt/statetemplate/6.0.6/js/cagov.core.min.js
                     </code></pre>
                     </div>
-                    <li id="panel_v6_0_5" class="tab" aria-selected="false" aria-controls="panel_6_0_5" aria-expanded="false" role="tab" tabindex="0">
+                    <li id="panel_v6_0_5" class="tab" aria-selected="false" aria-controls="panel_6_0_5"
+                        aria-expanded="false" role="tab" tabindex="0">
                         <a>Version 6.0.5</a>
                     </li>
-                    <div id="panel_6_0_5" class="panel" aria-labelledby="panel_v6_0_5" aria-hidden="true" role="tabpanel">
+                    <div id="panel_6_0_5" class="panel" aria-labelledby="panel_v6_0_5" aria-hidden="true"
+                        role="tabpanel">
                         <p>CSS</p>
-<pre>
+                        <pre>
 <code class="overflow-auto">https://california.azureedge.net/cdt/statetemplate/6.0.5/css/cagov.core.css
 https://california.azureedge.net/cdt/statetemplate/6.0.5/css/cagov.core.min.css
 https://california.azureedge.net/cdt/statetemplate/6.0.5/css/cagov.font-only.css
@@ -219,16 +231,18 @@ https://california.azureedge.net/cdt/statetemplate/6.0.5/css/colorscheme-trinity
 https://california.azureedge.net/cdt/statetemplate/6.0.5/css/colorscheme-trinity.min.css
     </code></pre>
                         <p>JS</p>
-<pre><code class="overflow-auto">https://california.azureedge.net/cdt/statetemplate/6.0.5/js/cagov.core.js
+                        <pre><code class="overflow-auto">https://california.azureedge.net/cdt/statetemplate/6.0.5/js/cagov.core.js
 https://california.azureedge.net/cdt/statetemplate/6.0.5/js/cagov.core.min.js
 </code></pre>
                     </div>
-                    <li id="panel_v6_0_4" class="tab" aria-selected="false" aria-controls="panel_6_0_4" aria-expanded="false" role="tab" tabindex="0">
+                    <li id="panel_v6_0_4" class="tab" aria-selected="false" aria-controls="panel_6_0_4"
+                        aria-expanded="false" role="tab" tabindex="0">
                         <a>Version 6.0.4</a>
                     </li>
-                    <div id="panel_6_0_4" class="panel" aria-labelledby="panel_v6_0_4" aria-hidden="true" role="tabpanel">
+                    <div id="panel_6_0_4" class="panel" aria-labelledby="panel_v6_0_4" aria-hidden="true"
+                        role="tabpanel">
                         <p>CSS</p>
-<pre>
+                        <pre>
 <code class="overflow-auto">https://california.azureedge.net/cdt/statetemplate/6.0.4/css/cagov.core.css
 https://california.azureedge.net/cdt/statetemplate/6.0.4/css/cagov.core.min.css
 https://california.azureedge.net/cdt/statetemplate/6.0.4/css/cagov.font-only.css
@@ -259,16 +273,18 @@ https://california.azureedge.net/cdt/statetemplate/6.0.4/css/colorscheme-trinity
 https://california.azureedge.net/cdt/statetemplate/6.0.4/css/colorscheme-trinity.min.css
     </code></pre>
                         <p>JS</p>
-<pre><code class="overflow-auto">https://california.azureedge.net/cdt/statetemplate/6.0.4/js/cagov.core.js
+                        <pre><code class="overflow-auto">https://california.azureedge.net/cdt/statetemplate/6.0.4/js/cagov.core.js
 https://california.azureedge.net/cdt/statetemplate/6.0.4/js/cagov.core.min.js
 </code></pre>
                     </div>
-                    <li id="panel_v6_0_3" class="tab" aria-selected="false" aria-controls="panel_6_0_3" aria-expanded="false" role="tab" tabindex="0">
+                    <li id="panel_v6_0_3" class="tab" aria-selected="false" aria-controls="panel_6_0_3"
+                        aria-expanded="false" role="tab" tabindex="0">
                         <a>Version 6.0.3</a>
                     </li>
-                    <div id="panel_6_0_3" class="panel" aria-labelledby="panel_v6_0_3" aria-hidden="true" role="tabpanel">
+                    <div id="panel_6_0_3" class="panel" aria-labelledby="panel_v6_0_3" aria-hidden="true"
+                        role="tabpanel">
                         <p>CSS</p>
-<pre>
+                        <pre>
 <code class="overflow-auto">https://california.azureedge.net/cdt/statetemplate/6.0.3/css/cagov.core.css
 https://california.azureedge.net/cdt/statetemplate/6.0.3/css/cagov.core.min.css
 https://california.azureedge.net/cdt/statetemplate/6.0.3/css/cagov.font-only.css
@@ -299,16 +315,18 @@ https://california.azureedge.net/cdt/statetemplate/6.0.3/css/colorscheme-trinity
 https://california.azureedge.net/cdt/statetemplate/6.0.3/css/colorscheme-trinity.min.css
     </code></pre>
                         <p>JS</p>
-<pre><code class="overflow-auto">https://california.azureedge.net/cdt/statetemplate/6.0.3/js/cagov.core.js
+                        <pre><code class="overflow-auto">https://california.azureedge.net/cdt/statetemplate/6.0.3/js/cagov.core.js
 https://california.azureedge.net/cdt/statetemplate/6.0.3/js/cagov.core.min.js
 </code></pre>
                     </div>
-                    <li id="panel_v6_0_2" class="tab" aria-selected="false" aria-controls="panel_6_0_2" aria-expanded="false" role="tab" tabindex="0">
+                    <li id="panel_v6_0_2" class="tab" aria-selected="false" aria-controls="panel_6_0_2"
+                        aria-expanded="false" role="tab" tabindex="0">
                         <a>Version 6.0.2</a>
                     </li>
-                    <div id="panel_6_0_2" class="panel" aria-labelledby="panel_v6_0_2" aria-hidden="true" role="tabpanel">
+                    <div id="panel_6_0_2" class="panel" aria-labelledby="panel_v6_0_2" aria-hidden="true"
+                        role="tabpanel">
                         <p>CSS</p>
-<pre>
+                        <pre>
 <code class="overflow-auto">https://california.azureedge.net/cdt/statetemplate/6.0.2/css/cagov.core.css
 https://california.azureedge.net/cdt/statetemplate/6.0.2/css/cagov.core.min.css
 https://california.azureedge.net/cdt/statetemplate/6.0.2/css/cagov.font-only.css
@@ -339,16 +357,18 @@ https://california.azureedge.net/cdt/statetemplate/6.0.2/css/colorscheme-trinity
 https://california.azureedge.net/cdt/statetemplate/6.0.2/css/colorscheme-trinity.min.css
     </code></pre>
                         <p>JS</p>
-<pre><code class="overflow-auto">https://california.azureedge.net/cdt/statetemplate/6.0.2/js/cagov.core.js
+                        <pre><code class="overflow-auto">https://california.azureedge.net/cdt/statetemplate/6.0.2/js/cagov.core.js
 https://california.azureedge.net/cdt/statetemplate/6.0.2/js/cagov.core.min.js
 </code></pre>
                     </div>
-                    <li id="panel_v6_0_1" class="tab" aria-selected="false" aria-controls="panel_6_0_1" aria-expanded="false" role="tab" tabindex="0">
+                    <li id="panel_v6_0_1" class="tab" aria-selected="false" aria-controls="panel_6_0_1"
+                        aria-expanded="false" role="tab" tabindex="0">
                         <a>Version 6.0.1</a>
                     </li>
-                    <div id="panel_6_0_1" class="panel" aria-labelledby="panel_v6_0_1" aria-hidden="true" role="tabpanel">
+                    <div id="panel_6_0_1" class="panel" aria-labelledby="panel_v6_0_1" aria-hidden="true"
+                        role="tabpanel">
                         <p>CSS</p>
-<pre>
+                        <pre>
 <code class="overflow-auto">https://california.azureedge.net/cdt/statetemplate/6.0.1/css/cagov.core.css
 https://california.azureedge.net/cdt/statetemplate/6.0.1/css/cagov.core.min.css
 https://california.azureedge.net/cdt/statetemplate/6.0.1/css/cagov.font-only.css
@@ -379,16 +399,18 @@ https://california.azureedge.net/cdt/statetemplate/6.0.1/css/colorscheme-trinity
 https://california.azureedge.net/cdt/statetemplate/6.0.1/css/colorscheme-trinity.min.css
     </code></pre>
                         <p>JS</p>
-<pre><code class="overflow-auto">https://california.azureedge.net/cdt/statetemplate/6.0.1/js/cagov.core.js
+                        <pre><code class="overflow-auto">https://california.azureedge.net/cdt/statetemplate/6.0.1/js/cagov.core.js
 https://california.azureedge.net/cdt/statetemplate/6.0.1/js/cagov.core.min.js
 </code></pre>
                     </div>
-                    <li id="panel_v6_0_0" class="tab" aria-selected="false" aria-controls="panel_6_0_0" aria-expanded="false" role="tab" tabindex="0">
+                    <li id="panel_v6_0_0" class="tab" aria-selected="false" aria-controls="panel_6_0_0"
+                        aria-expanded="false" role="tab" tabindex="0">
                         <a>Version 6.0.0</a>
                     </li>
-                    <div id="panel_6_0_0" class="panel" aria-labelledby="panel_v6_0_0" aria-hidden="true" role="tabpanel">
+                    <div id="panel_6_0_0" class="panel" aria-labelledby="panel_v6_0_0" aria-hidden="true"
+                        role="tabpanel">
                         <p>CSS</p>
-<pre>
+                        <pre>
 <code class="overflow-auto">https://california.azureedge.net/cdt/statetemplate/6.0.0/css/cagov.core.css
 https://california.azureedge.net/cdt/statetemplate/6.0.0/css/cagov.core.min.css
 https://california.azureedge.net/cdt/statetemplate/6.0.0/css/cagov.font-only.css
@@ -419,19 +441,21 @@ https://california.azureedge.net/cdt/statetemplate/6.0.0/css/colorscheme-trinity
 https://california.azureedge.net/cdt/statetemplate/6.0.0/css/colorscheme-trinity.min.css
     </code></pre>
                         <p>JS</p>
-<pre><code class="overflow-auto">https://california.azureedge.net/cdt/statetemplate/6.0.0/js/cagov.core.js
+                        <pre><code class="overflow-auto">https://california.azureedge.net/cdt/statetemplate/6.0.0/js/cagov.core.js
 https://california.azureedge.net/cdt/statetemplate/6.0.0/js/cagov.core.min.js
 </code></pre>
                     </div>
 
 
                     <div class="h3">State Template v5.5</div>
-                    <li id="panel_v5_5_21" class="tab" aria-selected="false" aria-controls="panel_5_5_21" aria-expanded="false" role="tab" tabindex="0">
+                    <li id="panel_v5_5_21" class="tab" aria-selected="false" aria-controls="panel_5_5_21"
+                        aria-expanded="false" role="tab" tabindex="0">
                         <a>Version 5.5.21</a>
                     </li>
-                    <div id="panel_5_5_21" class="panel" aria-labelledby="panel_v5_5_21" aria-hidden="true" role="tabpanel">
+                    <div id="panel_5_5_21" class="panel" aria-labelledby="panel_v5_5_21" aria-hidden="true"
+                        role="tabpanel">
                         <p>CSS</p>
-<pre>
+                        <pre>
 <code class="overflow-auto">https://california.azureedge.net/cdt/statetemplate/5.5.21/css/cagov.core.css
 https://california.azureedge.net/cdt/statetemplate/5.5.21/css/cagov.core.min.css
 https://california.azureedge.net/cdt/statetemplate/5.5.21/css/cagov.font-only.css
@@ -462,16 +486,18 @@ https://california.azureedge.net/cdt/statetemplate/5.5.21/css/colorscheme-trinit
 https://california.azureedge.net/cdt/statetemplate/5.5.21/css/colorscheme-trinity.min.css
     </code></pre>
                         <p>JS</p>
-<pre><code class="overflow-auto">https://california.azureedge.net/cdt/statetemplate/5.5.21/js/cagov.core.js
+                        <pre><code class="overflow-auto">https://california.azureedge.net/cdt/statetemplate/5.5.21/js/cagov.core.js
 https://california.azureedge.net/cdt/statetemplate/5.5.21/js/cagov.core.min.js
 </code></pre>
                     </div>
-                    <li id="panel_v5_5_20" class="tab" aria-selected="false" aria-controls="panel_5_5_20" aria-expanded="false" role="tab" tabindex="0">
+                    <li id="panel_v5_5_20" class="tab" aria-selected="false" aria-controls="panel_5_5_20"
+                        aria-expanded="false" role="tab" tabindex="0">
                         <a>Version 5.5.20</a>
                     </li>
-                    <div id="panel_5_5_20" class="panel" aria-labelledby="panel_v5_5_20" aria-hidden="true" role="tabpanel">
+                    <div id="panel_5_5_20" class="panel" aria-labelledby="panel_v5_5_20" aria-hidden="true"
+                        role="tabpanel">
                         <p>CSS</p>
-<pre>
+                        <pre>
 <code class="overflow-auto">https://california.azureedge.net/cdt/statetemplate/5.5.20/css/cagov.core.css
 https://california.azureedge.net/cdt/statetemplate/5.5.20/css/cagov.core.min.css
 https://california.azureedge.net/cdt/statetemplate/5.5.20/css/cagov.font-only.css
@@ -502,16 +528,18 @@ https://california.azureedge.net/cdt/statetemplate/5.5.20/css/colorscheme-trinit
 https://california.azureedge.net/cdt/statetemplate/5.5.20/css/colorscheme-trinity.min.css
     </code></pre>
                         <p>JS</p>
-<pre><code class="overflow-auto">https://california.azureedge.net/cdt/statetemplate/5.5.20/js/cagov.core.js
+                        <pre><code class="overflow-auto">https://california.azureedge.net/cdt/statetemplate/5.5.20/js/cagov.core.js
 https://california.azureedge.net/cdt/statetemplate/5.5.20/js/cagov.core.min.js
 </code></pre>
                     </div>
-                    <li id="panel_v5_5_19" class="tab" aria-selected="false" aria-controls="panel_5_5_19" aria-expanded="false" role="tab" tabindex="0">
+                    <li id="panel_v5_5_19" class="tab" aria-selected="false" aria-controls="panel_5_5_19"
+                        aria-expanded="false" role="tab" tabindex="0">
                         <a>Version 5.5.19</a>
                     </li>
-                    <div id="panel_5_5_19" class="panel" aria-labelledby="panel_v5_5_19" aria-hidden="true" role="tabpanel">
+                    <div id="panel_5_5_19" class="panel" aria-labelledby="panel_v5_5_19" aria-hidden="true"
+                        role="tabpanel">
                         <p>CSS</p>
-<pre>
+                        <pre>
 <code class="overflow-auto">https://california.azureedge.net/cdt/statetemplate/5.5.19/css/cagov.core.css
 https://california.azureedge.net/cdt/statetemplate/5.5.19/css/cagov.core.min.css
 https://california.azureedge.net/cdt/statetemplate/5.5.19/css/cagov.font-only.css
@@ -542,16 +570,18 @@ https://california.azureedge.net/cdt/statetemplate/5.5.19/css/colorscheme-trinit
 https://california.azureedge.net/cdt/statetemplate/5.5.19/css/colorscheme-trinity.min.css
     </code></pre>
                         <p>JS</p>
-<pre><code class="overflow-auto">https://california.azureedge.net/cdt/statetemplate/5.5.19/js/cagov.core.js
+                        <pre><code class="overflow-auto">https://california.azureedge.net/cdt/statetemplate/5.5.19/js/cagov.core.js
 https://california.azureedge.net/cdt/statetemplate/5.5.19/js/cagov.core.min.js
 </code></pre>
                     </div>
-                    <li id="panel_v5_5_18" class="tab" aria-selected="false" aria-controls="panel_5_5_18" aria-expanded="false" role="tab" tabindex="0">
+                    <li id="panel_v5_5_18" class="tab" aria-selected="false" aria-controls="panel_5_5_18"
+                        aria-expanded="false" role="tab" tabindex="0">
                         <a>Version 5.5.18</a>
                     </li>
-                    <div id="panel_5_5_18" class="panel" aria-labelledby="panel_v5_5_18" aria-hidden="true" role="tabpanel">
+                    <div id="panel_5_5_18" class="panel" aria-labelledby="panel_v5_5_18" aria-hidden="true"
+                        role="tabpanel">
                         <p>CSS</p>
-<pre>
+                        <pre>
 <code class="overflow-auto">https://california.azureedge.net/cdt/statetemplate/5.5.18/css/cagov.core.css
 https://california.azureedge.net/cdt/statetemplate/5.5.18/css/cagov.core.min.css
 https://california.azureedge.net/cdt/statetemplate/5.5.18/css/cagov.font-only.css
@@ -582,18 +612,20 @@ https://california.azureedge.net/cdt/statetemplate/5.5.18/css/colorscheme-trinit
 https://california.azureedge.net/cdt/statetemplate/5.5.18/css/colorscheme-trinity.min.css
     </code></pre>
                         <p>JS</p>
-<pre><code class="overflow-auto">https://california.azureedge.net/cdt/statetemplate/5.5.18/js/cagov.core.js
+                        <pre><code class="overflow-auto">https://california.azureedge.net/cdt/statetemplate/5.5.18/js/cagov.core.js
 https://california.azureedge.net/cdt/statetemplate/5.5.18/js/cagov.core.min.js
 </code></pre>
                     </div>
 
 
-                    <li id="panel_v5_5_17" class="tab" aria-selected="false" aria-controls="panel_5_5_17" aria-expanded="false" role="tab" tabindex="0">
+                    <li id="panel_v5_5_17" class="tab" aria-selected="false" aria-controls="panel_5_5_17"
+                        aria-expanded="false" role="tab" tabindex="0">
                         <a>Version 5.5.17</a>
                     </li>
-                    <div id="panel_5_5_17" class="panel" aria-labelledby="panel_v5_5_17" aria-hidden="true" role="tabpanel">
+                    <div id="panel_5_5_17" class="panel" aria-labelledby="panel_v5_5_17" aria-hidden="true"
+                        role="tabpanel">
                         <p>CSS</p>
-<pre>
+                        <pre>
 <code class="overflow-auto">https://california.azureedge.net/cdt/statetemplate/5.5.17/css/cagov.core.css
 https://california.azureedge.net/cdt/statetemplate/5.5.17/css/cagov.core.min.css
 https://california.azureedge.net/cdt/statetemplate/5.5.17/css/cagov.font-only.css
@@ -624,20 +656,22 @@ https://california.azureedge.net/cdt/statetemplate/5.5.17/css/colorscheme-trinit
 https://california.azureedge.net/cdt/statetemplate/5.5.17/css/colorscheme-trinity.min.css
     </code></pre>
                         <p>JS</p>
-<pre><code class="overflow-auto">https://california.azureedge.net/cdt/statetemplate/5.5.17/js/cagov.core.js
+                        <pre><code class="overflow-auto">https://california.azureedge.net/cdt/statetemplate/5.5.17/js/cagov.core.js
 https://california.azureedge.net/cdt/statetemplate/5.5.17/js/cagov.core.min.js
 </code></pre>
                     </div>
 
-                   
 
 
-                    <li id="panel_v5_5_16" class="tab" aria-selected="false" aria-controls="panel_5_5_16" aria-expanded="false" role="tab" tabindex="0">
+
+                    <li id="panel_v5_5_16" class="tab" aria-selected="false" aria-controls="panel_5_5_16"
+                        aria-expanded="false" role="tab" tabindex="0">
                         <a>Version 5.5.16</a>
                     </li>
-                    <div id="panel_5_5_16" class="panel" aria-labelledby="panel_v5_5_16" aria-hidden="true" role="tabpanel">
+                    <div id="panel_5_5_16" class="panel" aria-labelledby="panel_v5_5_16" aria-hidden="true"
+                        role="tabpanel">
                         <p>CSS</p>
-<pre>
+                        <pre>
 <code class="overflow-auto">https://california.azureedge.net/cdt/statetemplate/5.5.16/css/cagov.core.css
 https://california.azureedge.net/cdt/statetemplate/5.5.16/css/cagov.core.min.css
 https://california.azureedge.net/cdt/statetemplate/5.5.16/css/cagov.font-only.css
@@ -668,16 +702,18 @@ https://california.azureedge.net/cdt/statetemplate/5.5.16/css/colorscheme-trinit
 https://california.azureedge.net/cdt/statetemplate/5.5.16/css/colorscheme-trinity.min.css
     </code></pre>
                         <p>JS</p>
-<pre><code class="overflow-auto">https://california.azureedge.net/cdt/statetemplate/5.5.16/js/cagov.core.js
+                        <pre><code class="overflow-auto">https://california.azureedge.net/cdt/statetemplate/5.5.16/js/cagov.core.js
 https://california.azureedge.net/cdt/statetemplate/5.5.16/js/cagov.core.min.js
 </code></pre>
                     </div>
-                    <li id="panel_v5_5_15" class="tab" aria-selected="false" aria-controls="panel_5_5_15" aria-expanded="false" role="tab" tabindex="0">
+                    <li id="panel_v5_5_15" class="tab" aria-selected="false" aria-controls="panel_5_5_15"
+                        aria-expanded="false" role="tab" tabindex="0">
                         <a>Version 5.5.15</a>
                     </li>
-                    <div id="panel_5_5_15" class="panel" aria-labelledby="panel_v5_5_15" aria-hidden="true" role="tabpanel">
+                    <div id="panel_5_5_15" class="panel" aria-labelledby="panel_v5_5_15" aria-hidden="true"
+                        role="tabpanel">
                         <p>CSS</p>
-<pre>
+                        <pre>
 <code class="overflow-auto">https://california.azureedge.net/cdt/statetemplate/5.5.15/css/cagov.core.css
 https://california.azureedge.net/cdt/statetemplate/5.5.15/css/cagov.core.min.css
 https://california.azureedge.net/cdt/statetemplate/5.5.15/css/cagov.font-only.css
@@ -708,18 +744,20 @@ https://california.azureedge.net/cdt/statetemplate/5.5.15/css/colorscheme-trinit
 https://california.azureedge.net/cdt/statetemplate/5.5.15/css/colorscheme-trinity.min.css
     </code></pre>
                         <p>JS</p>
-<pre><code class="overflow-auto">https://california.azureedge.net/cdt/statetemplate/5.5.15/js/cagov.core.js
+                        <pre><code class="overflow-auto">https://california.azureedge.net/cdt/statetemplate/5.5.15/js/cagov.core.js
 https://california.azureedge.net/cdt/statetemplate/5.5.15/js/cagov.core.min.js
 </code></pre>
                     </div>
 
 
-                    <li id="panel_v5_5_14" class="tab" aria-selected="false" aria-controls="panel_5_5_14" aria-expanded="false" role="tab" tabindex="0">
+                    <li id="panel_v5_5_14" class="tab" aria-selected="false" aria-controls="panel_5_5_14"
+                        aria-expanded="false" role="tab" tabindex="0">
                         <a>Version 5.5.14</a>
                     </li>
-                    <div id="panel_5_5_14" class="panel" aria-labelledby="panel_v5_5_14" aria-hidden="true" role="tabpanel">
+                    <div id="panel_5_5_14" class="panel" aria-labelledby="panel_v5_5_14" aria-hidden="true"
+                        role="tabpanel">
                         <p>CSS</p>
-<pre>
+                        <pre>
 <code class="overflow-auto">https://california.azureedge.net/cdt/statetemplate/5.5.14/css/cagov.core.css
 https://california.azureedge.net/cdt/statetemplate/5.5.14/css/cagov.core.min.css
 https://california.azureedge.net/cdt/statetemplate/5.5.14/css/cagov.font-only.css
@@ -744,16 +782,18 @@ https://california.azureedge.net/cdt/statetemplate/5.5.14/css/colorscheme-trinit
 https://california.azureedge.net/cdt/statetemplate/5.5.14/css/colorscheme-trinity.min.css
     </code></pre>
                         <p>JS</p>
-<pre><code class="overflow-auto">https://california.azureedge.net/cdt/statetemplate/5.5.14/js/cagov.core.js
+                        <pre><code class="overflow-auto">https://california.azureedge.net/cdt/statetemplate/5.5.14/js/cagov.core.js
 https://california.azureedge.net/cdt/statetemplate/5.5.14/js/cagov.core.min.js
 </code></pre>
                     </div>
-                    <li id="panel_v5_5_13" class="tab" aria-selected="false" aria-controls="panel_5_5_13" aria-expanded="false" role="tab" tabindex="0">
+                    <li id="panel_v5_5_13" class="tab" aria-selected="false" aria-controls="panel_5_5_13"
+                        aria-expanded="false" role="tab" tabindex="0">
                         <a>Version 5.5.13</a>
                     </li>
-                    <div id="panel_5_5_13" class="panel" aria-labelledby="panel_v5_5_13" aria-hidden="true" role="tabpanel">
+                    <div id="panel_5_5_13" class="panel" aria-labelledby="panel_v5_5_13" aria-hidden="true"
+                        role="tabpanel">
                         <p>CSS</p>
-<pre>
+                        <pre>
 <code class="overflow-auto">https://california.azureedge.net/cdt/statetemplate/5.5.13/css/cagov.core.css
 https://california.azureedge.net/cdt/statetemplate/5.5.13/css/cagov.core.min.css
 https://california.azureedge.net/cdt/statetemplate/5.5.13/css/cagov.font-only.css
@@ -778,16 +818,18 @@ https://california.azureedge.net/cdt/statetemplate/5.5.13/css/colorscheme-trinit
 https://california.azureedge.net/cdt/statetemplate/5.5.13/css/colorscheme-trinity.min.css
     </code></pre>
                         <p>JS</p>
-<pre><code class="overflow-auto">https://california.azureedge.net/cdt/statetemplate/5.5.13/js/cagov.core.js
+                        <pre><code class="overflow-auto">https://california.azureedge.net/cdt/statetemplate/5.5.13/js/cagov.core.js
 https://california.azureedge.net/cdt/statetemplate/5.5.13/js/cagov.core.min.js
 </code></pre>
                     </div>
-                    <li id="panel_v5_5_12" class="tab" aria-selected="false" aria-controls="panel_5_5_12" aria-expanded="false" role="tab" tabindex="0">
+                    <li id="panel_v5_5_12" class="tab" aria-selected="false" aria-controls="panel_5_5_12"
+                        aria-expanded="false" role="tab" tabindex="0">
                         <a>Version 5.5.12</a>
                     </li>
-                    <div id="panel_5_5_12" class="panel" aria-labelledby="panel_v5_5_12" aria-hidden="true" role="tabpanel">
+                    <div id="panel_5_5_12" class="panel" aria-labelledby="panel_v5_5_12" aria-hidden="true"
+                        role="tabpanel">
                         <p>CSS</p>
-<pre>
+                        <pre>
 <code class="overflow-auto">https://california.azureedge.net/cdt/statetemplate/5.5.12/css/cagov.core.css
 https://california.azureedge.net/cdt/statetemplate/5.5.12/css/cagov.core.min.css
 https://california.azureedge.net/cdt/statetemplate/5.5.12/css/cagov.font-only.css
@@ -812,16 +854,18 @@ https://california.azureedge.net/cdt/statetemplate/5.5.12/css/colorscheme-trinit
 https://california.azureedge.net/cdt/statetemplate/5.5.12/css/colorscheme-trinity.min.css
     </code></pre>
                         <p>JS</p>
-<pre><code class="overflow-auto">https://california.azureedge.net/cdt/statetemplate/5.5.12/js/cagov.core.js
+                        <pre><code class="overflow-auto">https://california.azureedge.net/cdt/statetemplate/5.5.12/js/cagov.core.js
 https://california.azureedge.net/cdt/statetemplate/5.5.12/js/cagov.core.min.js
 </code></pre>
                     </div>
-                    <li id="panel_v5_5_11" class="tab" aria-selected="false" aria-controls="panel_5_5_11" aria-expanded="false" role="tab" tabindex="0">
+                    <li id="panel_v5_5_11" class="tab" aria-selected="false" aria-controls="panel_5_5_11"
+                        aria-expanded="false" role="tab" tabindex="0">
                         <a>Version 5.5.11</a>
                     </li>
-                    <div id="panel_5_5_11" class="panel" aria-labelledby="panel_v5_5_11" aria-hidden="true" role="tabpanel">
+                    <div id="panel_5_5_11" class="panel" aria-labelledby="panel_v5_5_11" aria-hidden="true"
+                        role="tabpanel">
                         <p>CSS</p>
-<pre>
+                        <pre>
 <code class="overflow-auto">https://california.azureedge.net/cdt/statetemplate/5.5.11/css/cagov.core.css
 https://california.azureedge.net/cdt/statetemplate/5.5.11/css/cagov.core.min.css
 https://california.azureedge.net/cdt/statetemplate/5.5.11/css/cagov.font-only.css
@@ -846,16 +890,18 @@ https://california.azureedge.net/cdt/statetemplate/5.5.11/css/colorscheme-trinit
 https://california.azureedge.net/cdt/statetemplate/5.5.11/css/colorscheme-trinity.min.css
     </code></pre>
                         <p>JS</p>
-<pre><code class="overflow-auto">https://california.azureedge.net/cdt/statetemplate/5.5.11/js/cagov.core.js
+                        <pre><code class="overflow-auto">https://california.azureedge.net/cdt/statetemplate/5.5.11/js/cagov.core.js
 https://california.azureedge.net/cdt/statetemplate/5.5.11/js/cagov.core.min.js
 </code></pre>
                     </div>
-                    <li id="panel_v5_5_10" class="tab" aria-selected="false" aria-controls="panel_5_5_10" aria-expanded="false" role="tab" tabindex="0">
+                    <li id="panel_v5_5_10" class="tab" aria-selected="false" aria-controls="panel_5_5_10"
+                        aria-expanded="false" role="tab" tabindex="0">
                         <a>Version 5.5.10</a>
                     </li>
-                    <div id="panel_5_5_10" class="panel" aria-labelledby="panel_v5_5_10" aria-hidden="true" role="tabpanel">
+                    <div id="panel_5_5_10" class="panel" aria-labelledby="panel_v5_5_10" aria-hidden="true"
+                        role="tabpanel">
                         <p>CSS</p>
-<pre>
+                        <pre>
 <code class="overflow-auto">https://california.azureedge.net/cdt/statetemplate/5.5.10/css/cagov.core.css
 https://california.azureedge.net/cdt/statetemplate/5.5.10/css/cagov.core.min.css
 https://california.azureedge.net/cdt/statetemplate/5.5.10/css/cagov.font-only.css
@@ -880,16 +926,18 @@ https://california.azureedge.net/cdt/statetemplate/5.5.10/css/colorscheme-trinit
 https://california.azureedge.net/cdt/statetemplate/5.5.10/css/colorscheme-trinity.min.css
     </code></pre>
                         <p>JS</p>
-<pre><code class="overflow-auto">https://california.azureedge.net/cdt/statetemplate/5.5.10/js/cagov.core.js
+                        <pre><code class="overflow-auto">https://california.azureedge.net/cdt/statetemplate/5.5.10/js/cagov.core.js
 https://california.azureedge.net/cdt/statetemplate/5.5.10/js/cagov.core.min.js
 </code></pre>
                     </div>
-                    <li id="panel_v5_5_9" class="tab" aria-selected="false" aria-controls="panel_5_5_9" aria-expanded="false" role="tab" tabindex="0">
+                    <li id="panel_v5_5_9" class="tab" aria-selected="false" aria-controls="panel_5_5_9"
+                        aria-expanded="false" role="tab" tabindex="0">
                         <a>Version 5.5.9</a>
                     </li>
-                    <div id="panel_5_5_9" class="panel" aria-labelledby="panel_v5_5_9" aria-hidden="true" role="tabpanel">
+                    <div id="panel_5_5_9" class="panel" aria-labelledby="panel_v5_5_9" aria-hidden="true"
+                        role="tabpanel">
                         <p>CSS</p>
-<pre>
+                        <pre>
 <code class="overflow-auto">https://california.azureedge.net/cdt/statetemplate/5.5.9/css/cagov.core.css
 https://california.azureedge.net/cdt/statetemplate/5.5.9/css/cagov.core.min.css
 https://california.azureedge.net/cdt/statetemplate/5.5.9/css/cagov.font-only.css
@@ -914,16 +962,18 @@ https://california.azureedge.net/cdt/statetemplate/5.5.9/css/colorscheme-trinity
 https://california.azureedge.net/cdt/statetemplate/5.5.9/css/colorscheme-trinity.min.css
     </code></pre>
                         <p>JS</p>
-<pre><code class="overflow-auto">https://california.azureedge.net/cdt/statetemplate/5.5.9/js/cagov.core.js
+                        <pre><code class="overflow-auto">https://california.azureedge.net/cdt/statetemplate/5.5.9/js/cagov.core.js
 https://california.azureedge.net/cdt/statetemplate/5.5.9/js/cagov.core.min.js
 </code></pre>
                     </div>
-                    <li id="panel_v5_5_8" class="tab" aria-selected="false" aria-controls="panel_5_5_8" aria-expanded="false" role="tab" tabindex="0">
+                    <li id="panel_v5_5_8" class="tab" aria-selected="false" aria-controls="panel_5_5_8"
+                        aria-expanded="false" role="tab" tabindex="0">
                         <a>Version 5.5.8</a>
                     </li>
-                    <div id="panel_5_5_8" class="panel" aria-labelledby="panel_v5_5_8" aria-hidden="true" role="tabpanel">
+                    <div id="panel_5_5_8" class="panel" aria-labelledby="panel_v5_5_8" aria-hidden="true"
+                        role="tabpanel">
                         <p>CSS</p>
-<pre>
+                        <pre>
 <code class="overflow-auto">https://california.azureedge.net/cdt/statetemplate/5.5.8/css/cagov.core.css
 https://california.azureedge.net/cdt/statetemplate/5.5.8/css/cagov.core.min.css
 https://california.azureedge.net/cdt/statetemplate/5.5.8/css/cagov.font-only.css
@@ -948,16 +998,18 @@ https://california.azureedge.net/cdt/statetemplate/5.5.8/css/colorscheme-trinity
 https://california.azureedge.net/cdt/statetemplate/5.5.8/css/colorscheme-trinity.min.css
     </code></pre>
                         <p>JS</p>
-<pre><code class="overflow-auto">https://california.azureedge.net/cdt/statetemplate/5.5.8/js/cagov.core.js
+                        <pre><code class="overflow-auto">https://california.azureedge.net/cdt/statetemplate/5.5.8/js/cagov.core.js
 https://california.azureedge.net/cdt/statetemplate/5.5.8/js/cagov.core.min.js
 </code></pre>
                     </div>
-                    <li id="panel_v5_5_7" class="tab" aria-selected="false" aria-controls="panel_5_5_7" aria-expanded="false" role="tab" tabindex="0">
+                    <li id="panel_v5_5_7" class="tab" aria-selected="false" aria-controls="panel_5_5_7"
+                        aria-expanded="false" role="tab" tabindex="0">
                         <a>Version 5.5.7</a>
                     </li>
-                    <div id="panel_5_5_7" class="panel" aria-labelledby="panel_v5_5_7" aria-hidden="true" role="tabpanel">
+                    <div id="panel_5_5_7" class="panel" aria-labelledby="panel_v5_5_7" aria-hidden="true"
+                        role="tabpanel">
                         <p>CSS</p>
-<pre>
+                        <pre>
 <code class="overflow-auto">https://california.azureedge.net/cdt/statetemplate/5.5.7/css/cagov.core.css
 https://california.azureedge.net/cdt/statetemplate/5.5.7/css/cagov.core.min.css
 https://california.azureedge.net/cdt/statetemplate/5.5.7/css/cagov.font-only.css
@@ -982,16 +1034,18 @@ https://california.azureedge.net/cdt/statetemplate/5.5.7/css/colorscheme-trinity
 https://california.azureedge.net/cdt/statetemplate/5.5.7/css/colorscheme-trinity.min.css
     </code></pre>
                         <p>JS</p>
-<pre><code class="overflow-auto">https://california.azureedge.net/cdt/statetemplate/5.5.7/js/cagov.core.js
+                        <pre><code class="overflow-auto">https://california.azureedge.net/cdt/statetemplate/5.5.7/js/cagov.core.js
 https://california.azureedge.net/cdt/statetemplate/5.5.7/js/cagov.core.min.js
 </code></pre>
                     </div>
-                    <li id="panel_v5_5_6" class="tab" aria-selected="false" aria-controls="panel_5_5_6" aria-expanded="false" role="tab" tabindex="0">
+                    <li id="panel_v5_5_6" class="tab" aria-selected="false" aria-controls="panel_5_5_6"
+                        aria-expanded="false" role="tab" tabindex="0">
                         <a>Version 5.5.6</a>
                     </li>
-                    <div id="panel_5_5_6" class="panel" aria-labelledby="panel_v5_5_6" aria-hidden="true" role="tabpanel">
+                    <div id="panel_5_5_6" class="panel" aria-labelledby="panel_v5_5_6" aria-hidden="true"
+                        role="tabpanel">
                         <p>CSS</p>
-<pre>
+                        <pre>
 <code class="overflow-auto">https://california.azureedge.net/cdt/statetemplate/5.5.6/css/cagov.core.css
 https://california.azureedge.net/cdt/statetemplate/5.5.6/css/cagov.core.min.css
 https://california.azureedge.net/cdt/statetemplate/5.5.6/css/cagov.font-only.css
@@ -1016,16 +1070,18 @@ https://california.azureedge.net/cdt/statetemplate/5.5.6/css/colorscheme-trinity
 https://california.azureedge.net/cdt/statetemplate/5.5.6/css/colorscheme-trinity.min.css
     </code></pre>
                         <p>JS</p>
-<pre><code class="overflow-auto">https://california.azureedge.net/cdt/statetemplate/5.5.6/js/cagov.core.js
+                        <pre><code class="overflow-auto">https://california.azureedge.net/cdt/statetemplate/5.5.6/js/cagov.core.js
 https://california.azureedge.net/cdt/statetemplate/5.5.6/js/cagov.core.min.js
 </code></pre>
                     </div>
-                    <li id="panel_v5_5_5" class="tab" aria-selected="false" aria-controls="panel_5_5_5" aria-expanded="false" role="tab" tabindex="0">
+                    <li id="panel_v5_5_5" class="tab" aria-selected="false" aria-controls="panel_5_5_5"
+                        aria-expanded="false" role="tab" tabindex="0">
                         <a>Version 5.5.5</a>
                     </li>
-                    <div id="panel_5_5_5" class="panel" aria-labelledby="panel_v5_5_5" aria-hidden="true" role="tabpanel">
+                    <div id="panel_5_5_5" class="panel" aria-labelledby="panel_v5_5_5" aria-hidden="true"
+                        role="tabpanel">
                         <p>CSS</p>
-<pre>
+                        <pre>
 <code class="overflow-auto">https://california.azureedge.net/cdt/statetemplate/5.5.5/css/cagov.core.css
 https://california.azureedge.net/cdt/statetemplate/5.5.5/css/cagov.core.min.css
 https://california.azureedge.net/cdt/statetemplate/5.5.5/css/cagov.font-only.css
@@ -1050,16 +1106,18 @@ https://california.azureedge.net/cdt/statetemplate/5.5.5/css/colorscheme-trinity
 https://california.azureedge.net/cdt/statetemplate/5.5.5/css/colorscheme-trinity.min.css
     </code></pre>
                         <p>JS</p>
-<pre><code class="overflow-auto">https://california.azureedge.net/cdt/statetemplate/5.5.5/js/cagov.core.js
+                        <pre><code class="overflow-auto">https://california.azureedge.net/cdt/statetemplate/5.5.5/js/cagov.core.js
 https://california.azureedge.net/cdt/statetemplate/5.5.5/js/cagov.core.min.js
 </code></pre>
                     </div>
-                    <li id="panel_v5_5_4" class="tab" aria-selected="false" aria-controls="panel_5_5_4" aria-expanded="false" role="tab" tabindex="0">
+                    <li id="panel_v5_5_4" class="tab" aria-selected="false" aria-controls="panel_5_5_4"
+                        aria-expanded="false" role="tab" tabindex="0">
                         <a>Version 5.5.4</a>
                     </li>
-                    <div id="panel_5_5_4" class="panel" aria-labelledby="panel_v5_5_4" aria-hidden="true" role="tabpanel">
+                    <div id="panel_5_5_4" class="panel" aria-labelledby="panel_v5_5_4" aria-hidden="true"
+                        role="tabpanel">
                         <p>CSS</p>
-<pre>
+                        <pre>
 <code class="overflow-auto">https://california.azureedge.net/cdt/statetemplate/5.5.4/css/cagov.core.css
 https://california.azureedge.net/cdt/statetemplate/5.5.4/css/cagov.core.min.css
 https://california.azureedge.net/cdt/statetemplate/5.5.4/css/cagov.font-only.css
@@ -1084,16 +1142,18 @@ https://california.azureedge.net/cdt/statetemplate/5.5.4/css/colorscheme-trinity
 https://california.azureedge.net/cdt/statetemplate/5.5.4/css/colorscheme-trinity.min.css
     </code></pre>
                         <p>JS</p>
-<pre><code class="overflow-auto">https://california.azureedge.net/cdt/statetemplate/5.5.4/js/cagov.core.js
+                        <pre><code class="overflow-auto">https://california.azureedge.net/cdt/statetemplate/5.5.4/js/cagov.core.js
 https://california.azureedge.net/cdt/statetemplate/5.5.4/js/cagov.core.min.js
 </code></pre>
                     </div>
-                    <li id="panel_v5_5_3" class="tab" aria-selected="false" aria-controls="panel_5_5_3" aria-expanded="false" role="tab" tabindex="0">
+                    <li id="panel_v5_5_3" class="tab" aria-selected="false" aria-controls="panel_5_5_3"
+                        aria-expanded="false" role="tab" tabindex="0">
                         <a>Version 5.5.3</a>
                     </li>
-                    <div id="panel_5_5_3" class="panel" aria-labelledby="panel_v5_5_3" aria-hidden="true" role="tabpanel">
+                    <div id="panel_5_5_3" class="panel" aria-labelledby="panel_v5_5_3" aria-hidden="true"
+                        role="tabpanel">
                         <p>CSS</p>
-<pre>
+                        <pre>
 <code class="overflow-auto">https://california.azureedge.net/cdt/statetemplate/5.5.3/css/cagov.core.css
 https://california.azureedge.net/cdt/statetemplate/5.5.3/css/cagov.core.min.css
 https://california.azureedge.net/cdt/statetemplate/5.5.3/css/cagov.font-only.css
@@ -1118,16 +1178,18 @@ https://california.azureedge.net/cdt/statetemplate/5.5.3/css/colorscheme-trinity
 https://california.azureedge.net/cdt/statetemplate/5.5.3/css/colorscheme-trinity.min.css
     </code></pre>
                         <p>JS</p>
-<pre><code class="overflow-auto">https://california.azureedge.net/cdt/statetemplate/5.5.3/js/cagov.core.js
+                        <pre><code class="overflow-auto">https://california.azureedge.net/cdt/statetemplate/5.5.3/js/cagov.core.js
 https://california.azureedge.net/cdt/statetemplate/5.5.3/js/cagov.core.min.js
 </code></pre>
                     </div>
-                    <li id="panel_v5_5_2" class="tab" aria-selected="false" aria-controls="panel_5_5_2" aria-expanded="false" role="tab" tabindex="0">
+                    <li id="panel_v5_5_2" class="tab" aria-selected="false" aria-controls="panel_5_5_2"
+                        aria-expanded="false" role="tab" tabindex="0">
                         <a>Version 5.5.2</a>
                     </li>
-                    <div id="panel_5_5_2" class="panel" aria-labelledby="panel_v5_5_2" aria-hidden="true" role="tabpanel">
+                    <div id="panel_5_5_2" class="panel" aria-labelledby="panel_v5_5_2" aria-hidden="true"
+                        role="tabpanel">
                         <p>CSS</p>
-<pre>
+                        <pre>
 <code class="overflow-auto">https://california.azureedge.net/cdt/statetemplate/5.5.2/css/cagov.core.css
 https://california.azureedge.net/cdt/statetemplate/5.5.2/css/cagov.core.min.css
 https://california.azureedge.net/cdt/statetemplate/5.5.2/css/cagov.font-only.css
@@ -1152,16 +1214,18 @@ https://california.azureedge.net/cdt/statetemplate/5.5.2/css/colorscheme-trinity
 https://california.azureedge.net/cdt/statetemplate/5.5.2/css/colorscheme-trinity.min.css
     </code></pre>
                         <p>JS</p>
-<pre><code class="overflow-auto">https://california.azureedge.net/cdt/statetemplate/5.5.2/js/cagov.core.js
+                        <pre><code class="overflow-auto">https://california.azureedge.net/cdt/statetemplate/5.5.2/js/cagov.core.js
 https://california.azureedge.net/cdt/statetemplate/5.5.2/js/cagov.core.min.js
 </code></pre>
                     </div>
-                    <li id="panel_v5_5_1" class="tab" aria-selected="false" aria-controls="panel_5_5_1" aria-expanded="false" role="tab" tabindex="0">
+                    <li id="panel_v5_5_1" class="tab" aria-selected="false" aria-controls="panel_5_5_1"
+                        aria-expanded="false" role="tab" tabindex="0">
                         <a>Version 5.5.1</a>
                     </li>
-                    <div id="panel_5_5_1" class="panel" aria-labelledby="panel_v5_5_1" aria-hidden="true" role="tabpanel">
+                    <div id="panel_5_5_1" class="panel" aria-labelledby="panel_v5_5_1" aria-hidden="true"
+                        role="tabpanel">
                         <p>CSS</p>
-<pre>
+                        <pre>
 <code class="overflow-auto">https://california.azureedge.net/cdt/statetemplate/5.5.1/css/cagov.core.css
 https://california.azureedge.net/cdt/statetemplate/5.5.1/css/cagov.core.min.css
 https://california.azureedge.net/cdt/statetemplate/5.5.1/css/cagov.font-only.css
@@ -1186,16 +1250,17 @@ https://california.azureedge.net/cdt/statetemplate/5.5.1/css/colorscheme-trinity
 https://california.azureedge.net/cdt/statetemplate/5.5.1/css/colorscheme-trinity.min.css
     </code></pre>
                         <p>JS</p>
-<pre><code class="overflow-auto">https://california.azureedge.net/cdt/statetemplate/5.5.1/js/cagov.core.js
+                        <pre><code class="overflow-auto">https://california.azureedge.net/cdt/statetemplate/5.5.1/js/cagov.core.js
 https://california.azureedge.net/cdt/statetemplate/5.5.1/js/cagov.core.min.js
 </code></pre>
                     </div>
-                    <li id="tab3" class="tab" aria-selected="false" aria-controls="panel3" aria-expanded="false" role="tab" tabindex="0">
+                    <li id="tab3" class="tab" aria-selected="false" aria-controls="panel3" aria-expanded="false"
+                        role="tab" tabindex="0">
                         <a>Version 5.5.0</a>
                     </li>
                     <div id="panel3" class="panel" aria-labelledby="tab3" aria-hidden="true" role="tabpanel">
                         <p>CSS</p>
-<pre>
+                        <pre>
 <code class="overflow-auto">https://california.azureedge.net/cdt/statetemplate/5.5.0/css/cagov.core.css
 https://california.azureedge.net/cdt/statetemplate/5.5.0/css/cagov.core.min.css
 https://california.azureedge.net/cdt/statetemplate/5.5.0/css/cagov.font-only.css
@@ -1220,7 +1285,7 @@ https://california.azureedge.net/cdt/statetemplate/5.5.0/css/colorscheme-trinity
 https://california.azureedge.net/cdt/statetemplate/5.5.0/css/colorscheme-trinity.min.css
     </code></pre>
                         <p>JS</p>
-<pre><code class="overflow-auto">https://california.azureedge.net/cdt/statetemplate/5.5.0/js/cagov.core.js
+                        <pre><code class="overflow-auto">https://california.azureedge.net/cdt/statetemplate/5.5.0/js/cagov.core.js
 https://california.azureedge.net/cdt/statetemplate/5.5.0/js/cagov.core.min.js
 </code></pre>
                     </div>
@@ -1229,12 +1294,13 @@ https://california.azureedge.net/cdt/statetemplate/5.5.0/js/cagov.core.min.js
 
 
                     <div class="h3">State Template v5</div>
-                    <li id="tab_v5_0_17" class="tab" aria-selected="false" aria-controls="tab_5_0_17" aria-expanded="false" role="tab" tabindex="0">
+                    <li id="tab_v5_0_17" class="tab" aria-selected="false" aria-controls="tab_5_0_17"
+                        aria-expanded="false" role="tab" tabindex="0">
                         <a>Version 5.0.17</a>
                     </li>
                     <div id="tab_5_0_17" class="panel" aria-labelledby="tab_v5_0_17" aria-hidden="true" role="tabpanel">
                         <p>CSS</p>
-<pre>
+                        <pre>
 <code class="overflow-auto">https://california.azureedge.net/cdt/statetemplate/5.0.17/css/cagov.core.css
 https://california.azureedge.net/cdt/statetemplate/5.0.17/css/cagov.core.min.css
 https://california.azureedge.net/cdt/statetemplate/5.0.17/css/cagov.font-only.css
@@ -1259,16 +1325,17 @@ https://california.azureedge.net/cdt/statetemplate/5.0.17/css/colorscheme-trinit
 https://california.azureedge.net/cdt/statetemplate/5.0.17/css/colorscheme-trinity.min.css
 </code></pre>
                         <p>JS</p>
-<pre><code class="overflow-auto">https://california.azureedge.net/cdt/statetemplate/5.0.17/js/cagov.core.js
+                        <pre><code class="overflow-auto">https://california.azureedge.net/cdt/statetemplate/5.0.17/js/cagov.core.js
 https://california.azureedge.net/cdt/statetemplate/5.0.1/js/cagov.core.min.js
 </code></pre>
                     </div>
-                    <li id="tab_v5_0_16" class="tab" aria-selected="false" aria-controls="tab_5_0_16" aria-expanded="false" role="tab" tabindex="0">
+                    <li id="tab_v5_0_16" class="tab" aria-selected="false" aria-controls="tab_5_0_16"
+                        aria-expanded="false" role="tab" tabindex="0">
                         <a>Version 5.0.16</a>
                     </li>
                     <div id="tab_5_0_16" class="panel" aria-labelledby="tab_v5_0_16" aria-hidden="true" role="tabpanel">
                         <p>CSS</p>
-<pre>
+                        <pre>
 <code class="overflow-auto">https://california.azureedge.net/cdt/statetemplate/5.0.16/css/cagov.core.css
 https://california.azureedge.net/cdt/statetemplate/5.0.16/css/cagov.core.min.css
 https://california.azureedge.net/cdt/statetemplate/5.0.16/css/cagov.font-only.css
@@ -1293,16 +1360,17 @@ https://california.azureedge.net/cdt/statetemplate/5.0.16/css/colorscheme-trinit
 https://california.azureedge.net/cdt/statetemplate/5.0.16/css/colorscheme-trinity.min.css
 </code></pre>
                         <p>JS</p>
-<pre><code class="overflow-auto">https://california.azureedge.net/cdt/statetemplate/5.0.16/js/cagov.core.js
+                        <pre><code class="overflow-auto">https://california.azureedge.net/cdt/statetemplate/5.0.16/js/cagov.core.js
 https://california.azureedge.net/cdt/statetemplate/5.0.16/js/cagov.core.min.js
 </code></pre>
                     </div>
-                    <li id="tab_v5_0_15" class="tab" aria-selected="false" aria-controls="tab_5_0_15" aria-expanded="false" role="tab" tabindex="0">
+                    <li id="tab_v5_0_15" class="tab" aria-selected="false" aria-controls="tab_5_0_15"
+                        aria-expanded="false" role="tab" tabindex="0">
                         <a>Version 5.0.15</a>
                     </li>
                     <div id="tab_5_0_15" class="panel" aria-labelledby="tab_v5_0_15" aria-hidden="true" role="tabpanel">
                         <p>CSS</p>
-<pre>
+                        <pre>
 <code class="overflow-auto">https://california.azureedge.net/cdt/statetemplate/5.0.15/css/cagov.core.css
 https://california.azureedge.net/cdt/statetemplate/5.0.15/css/cagov.core.min.css
 https://california.azureedge.net/cdt/statetemplate/5.0.15/css/cagov.font-only.css
@@ -1327,16 +1395,17 @@ https://california.azureedge.net/cdt/statetemplate/5.0.15/css/colorscheme-trinit
 https://california.azureedge.net/cdt/statetemplate/5.0.15/css/colorscheme-trinity.min.css
 </code></pre>
                         <p>JS</p>
-<pre><code class="overflow-auto">https://california.azureedge.net/cdt/statetemplate/5.0.15/js/cagov.core.js
+                        <pre><code class="overflow-auto">https://california.azureedge.net/cdt/statetemplate/5.0.15/js/cagov.core.js
 https://california.azureedge.net/cdt/statetemplate/5.0.15/js/cagov.core.min.js
 </code></pre>
                     </div>
-                    <li id="tab_v5_0_14" class="tab" aria-selected="false" aria-controls="tab_5_0_14" aria-expanded="false" role="tab" tabindex="0">
+                    <li id="tab_v5_0_14" class="tab" aria-selected="false" aria-controls="tab_5_0_14"
+                        aria-expanded="false" role="tab" tabindex="0">
                         <a>Version 5.0.14</a>
                     </li>
                     <div id="tab_5_0_14" class="panel" aria-labelledby="tab_v5_0_14" aria-hidden="true" role="tabpanel">
                         <p>CSS</p>
-<pre>
+                        <pre>
 <code class="overflow-auto">https://california.azureedge.net/cdt/statetemplate/5.0.14/css/cagov.core.css
 https://california.azureedge.net/cdt/statetemplate/5.0.14/css/cagov.core.min.css
 https://california.azureedge.net/cdt/statetemplate/5.0.14/css/cagov.font-only.css
@@ -1361,16 +1430,17 @@ https://california.azureedge.net/cdt/statetemplate/5.0.14/css/colorscheme-trinit
 https://california.azureedge.net/cdt/statetemplate/5.0.14/css/colorscheme-trinity.min.css
 </code></pre>
                         <p>JS</p>
-<pre><code class="overflow-auto">https://california.azureedge.net/cdt/statetemplate/5.0.14/js/cagov.core.js
+                        <pre><code class="overflow-auto">https://california.azureedge.net/cdt/statetemplate/5.0.14/js/cagov.core.js
 https://california.azureedge.net/cdt/statetemplate/5.0.14/js/cagov.core.min.js
 </code></pre>
                     </div>
-                    <li id="tab_v5_0_13" class="tab" aria-selected="false" aria-controls="tab_5_0_13" aria-expanded="false" role="tab" tabindex="0">
+                    <li id="tab_v5_0_13" class="tab" aria-selected="false" aria-controls="tab_5_0_13"
+                        aria-expanded="false" role="tab" tabindex="0">
                         <a>Version 5.0.13</a>
                     </li>
                     <div id="tab_5_0_13" class="panel" aria-labelledby="tab_v5_0_13" aria-hidden="true" role="tabpanel">
                         <p>CSS</p>
-<pre>
+                        <pre>
 <code class="overflow-auto">https://california.azureedge.net/cdt/statetemplate/5.0.13/css/cagov.core.css
 https://california.azureedge.net/cdt/statetemplate/5.0.13/css/cagov.core.min.css
 https://california.azureedge.net/cdt/statetemplate/5.0.13/css/cagov.font-only.css
@@ -1395,16 +1465,17 @@ https://california.azureedge.net/cdt/statetemplate/5.0.13/css/colorscheme-trinit
 https://california.azureedge.net/cdt/statetemplate/5.0.13/css/colorscheme-trinity.min.css
 </code></pre>
                         <p>JS</p>
-<pre><code class="overflow-auto">https://california.azureedge.net/cdt/statetemplate/5.0.13/js/cagov.core.js
+                        <pre><code class="overflow-auto">https://california.azureedge.net/cdt/statetemplate/5.0.13/js/cagov.core.js
 https://california.azureedge.net/cdt/statetemplate/5.0.13/js/cagov.core.min.js
 </code></pre>
                     </div>
-                    <li id="tab_v5_0_12" class="tab" aria-selected="false" aria-controls="tab_5_0_12" aria-expanded="false" role="tab" tabindex="0">
+                    <li id="tab_v5_0_12" class="tab" aria-selected="false" aria-controls="tab_5_0_12"
+                        aria-expanded="false" role="tab" tabindex="0">
                         <a>Version 5.0.12</a>
                     </li>
                     <div id="tab_5_0_12" class="panel" aria-labelledby="tab_v5_0_12" aria-hidden="true" role="tabpanel">
                         <p>CSS</p>
-<pre>
+                        <pre>
 <code class="overflow-auto">https://california.azureedge.net/cdt/statetemplate/5.0.12/css/cagov.core.css
 https://california.azureedge.net/cdt/statetemplate/5.0.12/css/cagov.core.min.css
 https://california.azureedge.net/cdt/statetemplate/5.0.12/css/cagov.font-only.css
@@ -1429,16 +1500,17 @@ https://california.azureedge.net/cdt/statetemplate/5.0.12/css/colorscheme-trinit
 https://california.azureedge.net/cdt/statetemplate/5.0.12/css/colorscheme-trinity.min.css
 </code></pre>
                         <p>JS</p>
-<pre><code class="overflow-auto">https://california.azureedge.net/cdt/statetemplate/5.0.12/js/cagov.core.js
+                        <pre><code class="overflow-auto">https://california.azureedge.net/cdt/statetemplate/5.0.12/js/cagov.core.js
 https://california.azureedge.net/cdt/statetemplate/5.0.12/js/cagov.core.min.js
 </code></pre>
                     </div>
-                    <li id="tab_v5_0_11" class="tab" aria-selected="false" aria-controls="tab_5_0_11" aria-expanded="false" role="tab" tabindex="0">
+                    <li id="tab_v5_0_11" class="tab" aria-selected="false" aria-controls="tab_5_0_11"
+                        aria-expanded="false" role="tab" tabindex="0">
                         <a>Version 5.0.11</a>
                     </li>
                     <div id="tab_5_0_11" class="panel" aria-labelledby="tab_v5_0_11" aria-hidden="true" role="tabpanel">
                         <p>CSS</p>
-<pre>
+                        <pre>
 <code class="overflow-auto">https://california.azureedge.net/cdt/statetemplate/5.0.11/css/cagov.core.css
 https://california.azureedge.net/cdt/statetemplate/5.0.11/css/cagov.core.min.css
 https://california.azureedge.net/cdt/statetemplate/5.0.11/css/cagov.font-only.css
@@ -1463,16 +1535,17 @@ https://california.azureedge.net/cdt/statetemplate/5.0.11/css/colorscheme-trinit
 https://california.azureedge.net/cdt/statetemplate/5.0.11/css/colorscheme-trinity.min.css
 </code></pre>
                         <p>JS</p>
-<pre><code class="overflow-auto">https://california.azureedge.net/cdt/statetemplate/5.0.11/js/cagov.core.js
+                        <pre><code class="overflow-auto">https://california.azureedge.net/cdt/statetemplate/5.0.11/js/cagov.core.js
 https://california.azureedge.net/cdt/statetemplate/5.0.11/js/cagov.core.min.js
 </code></pre>
                     </div>
-                    <li id="tab_v5_0_10" class="tab" aria-selected="false" aria-controls="tab_5_0_10" aria-expanded="false" role="tab" tabindex="0">
+                    <li id="tab_v5_0_10" class="tab" aria-selected="false" aria-controls="tab_5_0_10"
+                        aria-expanded="false" role="tab" tabindex="0">
                         <a>Version 5.0.10</a>
                     </li>
                     <div id="tab_5_0_10" class="panel" aria-labelledby="tab_v5_0_10" aria-hidden="true" role="tabpanel">
                         <p>CSS</p>
-<pre>
+                        <pre>
 <code class="overflow-auto">https://california.azureedge.net/cdt/statetemplate/5.0.10/css/cagov.core.css
 https://california.azureedge.net/cdt/statetemplate/5.0.10/css/cagov.core.min.css
 https://california.azureedge.net/cdt/statetemplate/5.0.10/css/cagov.font-only.css
@@ -1497,16 +1570,17 @@ https://california.azureedge.net/cdt/statetemplate/5.0.10/css/colorscheme-trinit
 https://california.azureedge.net/cdt/statetemplate/5.0.10/css/colorscheme-trinity.min.css
 </code></pre>
                         <p>JS</p>
-<pre><code class="overflow-auto">https://california.azureedge.net/cdt/statetemplate/5.0.10/js/cagov.core.js
+                        <pre><code class="overflow-auto">https://california.azureedge.net/cdt/statetemplate/5.0.10/js/cagov.core.js
 https://california.azureedge.net/cdt/statetemplate/5.0.10/js/cagov.core.min.js
 </code></pre>
                     </div>
-                    <li id="tab_v5_0_9" class="tab" aria-selected="false" aria-controls="tab_5_0_9" aria-expanded="false" role="tab" tabindex="0">
+                    <li id="tab_v5_0_9" class="tab" aria-selected="false" aria-controls="tab_5_0_9"
+                        aria-expanded="false" role="tab" tabindex="0">
                         <a>Version 5.0.9</a>
                     </li>
                     <div id="tab_5_0_9" class="panel" aria-labelledby="tab_v5_0_9" aria-hidden="true" role="tabpanel">
                         <p>CSS</p>
-<pre>
+                        <pre>
 <code class="overflow-auto">https://california.azureedge.net/cdt/statetemplate/5.0.9/css/cagov.core.css
 https://california.azureedge.net/cdt/statetemplate/5.0.9/css/cagov.core.min.css
 https://california.azureedge.net/cdt/statetemplate/5.0.9/css/cagov.font-only.css
@@ -1531,16 +1605,17 @@ https://california.azureedge.net/cdt/statetemplate/5.0.9/css/colorscheme-trinity
 https://california.azureedge.net/cdt/statetemplate/5.0.9/css/colorscheme-trinity.min.css
 </code></pre>
                         <p>JS</p>
-<pre><code class="overflow-auto">https://california.azureedge.net/cdt/statetemplate/5.0.9/js/cagov.core.js
+                        <pre><code class="overflow-auto">https://california.azureedge.net/cdt/statetemplate/5.0.9/js/cagov.core.js
 https://california.azureedge.net/cdt/statetemplate/5.0.9/js/cagov.core.min.js
 </code></pre>
                     </div>
-                    <li id="tab_v5_0_8" class="tab" aria-selected="false" aria-controls="tab_5_0_8" aria-expanded="false" role="tab" tabindex="0">
+                    <li id="tab_v5_0_8" class="tab" aria-selected="false" aria-controls="tab_5_0_8"
+                        aria-expanded="false" role="tab" tabindex="0">
                         <a>Version 5.0.8</a>
                     </li>
                     <div id="tab_5_0_8" class="panel" aria-labelledby="tab_v5_0_8" aria-hidden="true" role="tabpanel">
                         <p>CSS</p>
-<pre>
+                        <pre>
 <code class="overflow-auto">https://california.azureedge.net/cdt/statetemplate/5.0.8/css/cagov.core.css
 https://california.azureedge.net/cdt/statetemplate/5.0.8/css/cagov.core.min.css
 https://california.azureedge.net/cdt/statetemplate/5.0.8/css/cagov.font-only.css
@@ -1565,16 +1640,17 @@ https://california.azureedge.net/cdt/statetemplate/5.0.8/css/colorscheme-trinity
 https://california.azureedge.net/cdt/statetemplate/5.0.8/css/colorscheme-trinity.min.css
 </code></pre>
                         <p>JS</p>
-<pre><code class="overflow-auto">https://california.azureedge.net/cdt/statetemplate/5.0.8/js/cagov.core.js
+                        <pre><code class="overflow-auto">https://california.azureedge.net/cdt/statetemplate/5.0.8/js/cagov.core.js
 https://california.azureedge.net/cdt/statetemplate/5.0.8/js/cagov.core.min.js
 </code></pre>
                     </div>
-                    <li id="tab_v5_0_7" class="tab" aria-selected="false" aria-controls="tab_5_0_7" aria-expanded="false" role="tab" tabindex="0">
+                    <li id="tab_v5_0_7" class="tab" aria-selected="false" aria-controls="tab_5_0_7"
+                        aria-expanded="false" role="tab" tabindex="0">
                         <a>Version 5.0.7</a>
                     </li>
                     <div id="tab_5_0_7" class="panel" aria-labelledby="tab_v5_0_7" aria-hidden="true" role="tabpanel">
                         <p>CSS</p>
-<pre>
+                        <pre>
 <code class="overflow-auto">https://california.azureedge.net/cdt/statetemplate/5.0.7/css/cagov.core.css
 https://california.azureedge.net/cdt/statetemplate/5.0.7/css/cagov.core.min.css
 https://california.azureedge.net/cdt/statetemplate/5.0.7/css/cagov.font-only.css
@@ -1599,16 +1675,17 @@ https://california.azureedge.net/cdt/statetemplate/5.0.7/css/colorscheme-trinity
 https://california.azureedge.net/cdt/statetemplate/5.0.7/css/colorscheme-trinity.min.css
 </code></pre>
                         <p>JS</p>
-<pre><code class="overflow-auto">https://california.azureedge.net/cdt/statetemplate/5.0.7/js/cagov.core.js
+                        <pre><code class="overflow-auto">https://california.azureedge.net/cdt/statetemplate/5.0.7/js/cagov.core.js
 https://california.azureedge.net/cdt/statetemplate/5.0.7/js/cagov.core.min.js
 </code></pre>
                     </div>
-                    <li id="tab_v5_0_6" class="tab" aria-selected="false" aria-controls="tab_5_0_6" aria-expanded="false" role="tab" tabindex="0">
+                    <li id="tab_v5_0_6" class="tab" aria-selected="false" aria-controls="tab_5_0_6"
+                        aria-expanded="false" role="tab" tabindex="0">
                         <a>Version 5.0.6</a>
                     </li>
                     <div id="tab_5_0_6" class="panel" aria-labelledby="tab_v5_0_6" aria-hidden="true" role="tabpanel">
                         <p>CSS</p>
-<pre>
+                        <pre>
 <code class="overflow-auto">https://california.azureedge.net/cdt/statetemplate/5.0.6/css/cagov.core.css
 https://california.azureedge.net/cdt/statetemplate/5.0.6/css/cagov.core.min.css
 https://california.azureedge.net/cdt/statetemplate/5.0.6/css/cagov.font-only.css
@@ -1633,16 +1710,17 @@ https://california.azureedge.net/cdt/statetemplate/5.0.6/css/colorscheme-trinity
 https://california.azureedge.net/cdt/statetemplate/5.0.6/css/colorscheme-trinity.min.css
 </code></pre>
                         <p>JS</p>
-<pre><code class="overflow-auto">https://california.azureedge.net/cdt/statetemplate/5.0.6/js/cagov.core.js
+                        <pre><code class="overflow-auto">https://california.azureedge.net/cdt/statetemplate/5.0.6/js/cagov.core.js
 https://california.azureedge.net/cdt/statetemplate/5.0.6/js/cagov.core.min.js
 </code></pre>
                     </div>
-                    <li id="tab_v5_0_5" class="tab" aria-selected="false" aria-controls="tab_5_0_5" aria-expanded="false" role="tab" tabindex="0">
+                    <li id="tab_v5_0_5" class="tab" aria-selected="false" aria-controls="tab_5_0_5"
+                        aria-expanded="false" role="tab" tabindex="0">
                         <a>Version 5.0.5</a>
                     </li>
                     <div id="tab_5_0_5" class="panel" aria-labelledby="tab_v5_0_5" aria-hidden="true" role="tabpanel">
                         <p>CSS</p>
-<pre>
+                        <pre>
 <code class="overflow-auto">https://california.azureedge.net/cdt/statetemplate/5.0.5/css/cagov.core.css
 https://california.azureedge.net/cdt/statetemplate/5.0.5/css/cagov.core.min.css
 https://california.azureedge.net/cdt/statetemplate/5.0.5/css/cagov.font-only.css
@@ -1667,17 +1745,18 @@ https://california.azureedge.net/cdt/statetemplate/5.0.5/css/colorscheme-trinity
 https://california.azureedge.net/cdt/statetemplate/5.0.5/css/colorscheme-trinity.min.css
 </code></pre>
                         <p>JS</p>
-<pre><code class="overflow-auto">https://california.azureedge.net/cdt/statetemplate/5.0.5/js/cagov.core.js
+                        <pre><code class="overflow-auto">https://california.azureedge.net/cdt/statetemplate/5.0.5/js/cagov.core.js
 https://california.azureedge.net/cdt/statetemplate/5.0.5/js/cagov.core.min.js
 </code></pre>
                     </div>
 
-                    <li id="tab_v5_0_4" class="tab" aria-selected="false" aria-controls="tab_5_0_4" aria-expanded="false" role="tab" tabindex="0">
+                    <li id="tab_v5_0_4" class="tab" aria-selected="false" aria-controls="tab_5_0_4"
+                        aria-expanded="false" role="tab" tabindex="0">
                         <a>Version 5.0.4</a>
                     </li>
                     <div id="tab_5_0_4" class="panel" aria-labelledby="tab_v5_0_4" aria-hidden="true" role="tabpanel">
                         <p>CSS</p>
-<pre>
+                        <pre>
 <code class="overflow-auto">https://california.azureedge.net/cdt/statetemplate/5.0.4/css/cagov.core.css
 https://california.azureedge.net/cdt/statetemplate/5.0.4/css/cagov.core.min.css
 https://california.azureedge.net/cdt/statetemplate/5.0.4/css/cagov.font-only.css
@@ -1702,17 +1781,18 @@ https://california.azureedge.net/cdt/statetemplate/5.0.4/css/colorscheme-trinity
 https://california.azureedge.net/cdt/statetemplate/5.0.4/css/colorscheme-trinity.min.css
 </code></pre>
                         <p>JS</p>
-<pre><code class="overflow-auto">https://california.azureedge.net/cdt/statetemplate/5.0.4/js/cagov.core.js
+                        <pre><code class="overflow-auto">https://california.azureedge.net/cdt/statetemplate/5.0.4/js/cagov.core.js
 https://california.azureedge.net/cdt/statetemplate/5.0.4/js/cagov.core.min.js
 </code></pre>
                     </div>
 
-                    <li id="tab2" class="tab" aria-selected="false" aria-controls="panel2" aria-expanded="false" role="tab" tabindex="0">
+                    <li id="tab2" class="tab" aria-selected="false" aria-controls="panel2" aria-expanded="false"
+                        role="tab" tabindex="0">
                         <a>Version 5.0.3</a>
                     </li>
                     <div id="panel2" class="panel" aria-labelledby="tab2" aria-hidden="false" role="tabpanel">
                         <p>CSS</p>
-<pre><code class="overflow-auto">https://california.azureedge.net/cdt/statetemplate/5.0.3/css/cagov.core.css
+                        <pre><code class="overflow-auto">https://california.azureedge.net/cdt/statetemplate/5.0.3/css/cagov.core.css
 https://california.azureedge.net/cdt/statetemplate/5.0.3/css/colorscheme-eureka.css
 https://california.azureedge.net/cdt/statetemplate/5.0.3/css/colorscheme-mono.css
 https://california.azureedge.net/cdt/statetemplate/5.0.3/css/colorscheme-oceanside.css
@@ -1724,15 +1804,16 @@ https://california.azureedge.net/cdt/statetemplate/5.0.3/css/colorscheme-sierra.
 https://california.azureedge.net/cdt/statetemplate/5.0.3/css/colorscheme-trinity.css
 </code></pre>
                         <p>JS</p>
-<pre><code class="overflow-auto">https://california.azureedge.net/cdt/statetemplate/5.0.3/js/cagov.core.js</code></pre>
+                        <pre><code class="overflow-auto">https://california.azureedge.net/cdt/statetemplate/5.0.3/js/cagov.core.js</code></pre>
                     </div>
 
-                    <li id="tab1" class="tab" aria-selected="false" aria-controls="panel1" aria-expanded="false" role="tab" tabindex="0">
+                    <li id="tab1" class="tab" aria-selected="false" aria-controls="panel1" aria-expanded="false"
+                        role="tab" tabindex="0">
                         <a>Version 5.0.2</a>
                     </li>
                     <div id="panel1" class="panel" aria-labelledby="tab1" aria-hidden="false" role="tabpanel">
                         <p>CSS</p>
-<pre><code class="overflow-auto">https://california.azureedge.net/cdt/statetemplate/5.0.2/css/cagov.core.css
+                        <pre><code class="overflow-auto">https://california.azureedge.net/cdt/statetemplate/5.0.2/css/cagov.core.css
 https://california.azureedge.net/cdt/statetemplate/5.0.2/css/colorscheme-eureka.css
 https://california.azureedge.net/cdt/statetemplate/5.0.2/css/colorscheme-mono.css
 https://california.azureedge.net/cdt/statetemplate/5.0.2/css/colorscheme-oceanside.css
@@ -1744,18 +1825,18 @@ https://california.azureedge.net/cdt/statetemplate/5.0.2/css/colorscheme-sierra.
 https://california.azureedge.net/cdt/statetemplate/5.0.2/css/colorscheme-trinity.css
 </code></pre>
                         <p>JS</p>
-<pre><code class="overflow-auto">https://california.azureedge.net/cdt/statetemplate/5.0.2/js/cagov.core.js</code></pre>
+                        <pre><code class="overflow-auto">https://california.azureedge.net/cdt/statetemplate/5.0.2/js/cagov.core.js</code></pre>
                     </div>
                 </ul>
             </div>
 
 
-<!-- End Section -->
-</main>
+            <!-- End Section -->
+        </main>
     </div>
 
-<!--#include virtual="/ssi/global-footer.html" -->
-<!--#include virtual="/ssi/scripts.html" -->
+    <!--#include virtual="/ssi/global-footer.html" -->
+    <!--#include virtual="/ssi/scripts.html" -->
 </body>
 
 </html>

@@ -8,7 +8,7 @@
 <!--<![endif]-->
 
 <head>
- <!--    California State Template (beta)
+    <!--    California State Template (beta)
  
 
         Based on Twitter Bootstrap
@@ -44,14 +44,17 @@
         <!--#include virtual="/ssi/mobile-controls.html" -->
 
         <div class="navigation-search full-width-nav container">
-        <div id="head-search" class="search-container featured-search fade">
-            <!-- Include Search -->
-            <!--#include virtual="/ssi/search.html" -->
-        </div>
+            <div id="head-search" class="search-container featured-search collapse collapsed">
+                <!-- Include Search -->
+                <!--#include virtual="/ssi/search-mobile.html" -->
+            </div>
+            <div id="featured-search" class="search-container featured-search">
+                <!--#include virtual="/ssi/search.html" -->
+            </div>
 
-        <!-- Include Navigation -->
-        <!--#include virtual="/ssi/navigation.html" -->
-    </div>
+            <!-- Include Navigation -->
+            <!--#include virtual="/ssi/navigation.html" -->
+        </div>
 
 
         <div class="header-decoration"></div>
@@ -69,21 +72,28 @@
                             <!-- <img src="images/template2014/header-organization.png" class="img-responsive hidden-xs" alt="Organization Name"> -->
                             <!-- <img src="/sample/images/logo-cal-vet.png" class="img-responsive hidden-xs" alt="Organization Name"> -->
                             <!-- <img src="/sample/images/logo-cal-fire.png" class="img-responsive hidden-xs" alt="Organization Name"> -->
-                            <img src="/sample/images/logo-dmv.png" class="img-responsive hidden-xs" alt="Department of Motor Vehicles">
+                            <img src="/sample/images/logo-dmv.png" class="img-responsive hidden-xs"
+                                alt="Department of Motor Vehicles">
 
                             <!-- IF AGENCY LOGO NOT AVAILABLE, FALLBACK TO SEAL OF CALIFORNIA -->
                             <!-- <img src="/images/template2014/seal-of-california.png" class="img-responsive m-b" alt="Department of Motor Vehicles"> -->
                         </div>
                         <div class="half">
-                            <h1 class="m-t-0">Department of Motor Vehicles  (DMV)</h1>
+                            <h1 class="m-t-0">Department of Motor Vehicles (DMV)</h1>
                             <!--  <p class="lead">Transportation</p> -->
-                            <p>Donec ullamcorper nulla non metus auctor fringilla. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam porta sem malesuada magna mollis euismod. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.</p>
+                            <p>Donec ullamcorper nulla non metus auctor fringilla. Lorem ipsum dolor sit amet,
+                                consectetur adipiscing elit. Etiam porta sem malesuada magna mollis euismod. Morbi leo
+                                risus, porta ac consectetur ac, vestibulum at eros.</p>
 
                             <div class="btn-row m-t-md">
-                                <a href="" class="btn btn-outline-light"><span class="ca-gov-icon-computer"></span> Website</a>
-                                <a href="" class="btn btn-outline-light"><span class="ca-gov-icon-location"></span> Locations Near You <span class="sr-only">(google map)</span></a>
-                                <a href="" class="btn btn-outline-light"><span class="ca-gov-icon-contact-us"></span> Contact <span class="sr-only">DMV</span></a>
-                                <a href="" class="btn btn-outline-light"><span class="ca-gov-icon-chat"></span> Live Chat</a>
+                                <a href="" class="btn btn-outline-light"><span class="ca-gov-icon-computer"></span>
+                                    Website</a>
+                                <a href="" class="btn btn-outline-light"><span class="ca-gov-icon-location"></span>
+                                    Locations Near You <span class="sr-only">(google map)</span></a>
+                                <a href="" class="btn btn-outline-light"><span class="ca-gov-icon-contact-us"></span>
+                                    Contact <span class="sr-only">DMV</span></a>
+                                <a href="" class="btn btn-outline-light"><span class="ca-gov-icon-chat"></span> Live
+                                    Chat</a>
                             </div>
 
                             <div class="location contact" itemscope itemtype="http://schema.org/Organization">
@@ -104,7 +114,8 @@
                         <div class="quarter">
                             <!-- Embeded Youtube Video -->
                             <div class="video-player" data-sly-test="${!properties.lightbox}">
-                                <iframe title="DMV Youtube video" class="youtube-player border-0" src="https://www.youtube.com/embed/V3Z9ugTj4-o" allowfullscreen></iframe>
+                                <iframe title="DMV Youtube video" class="youtube-player border-0"
+                                    src="https://www.youtube.com/embed/V3Z9ugTj4-o" allowfullscreen></iframe>
 
 
 
@@ -113,9 +124,15 @@
                             <hr />
                             <h2 class="h4 m-b-0">Conncet with us:</h2>
                             <ul class="m-t-0 list-inline list-unstyled social">
-                                <li class="list-inline-item"><a href=""><span class="ca-gov-icon-twitter text-white"><span class="sr-only">Twitter DMV</span></span></a></li>
-                                <li class="list-inline-item"><a href=""><span class="ca-gov-icon-facebook text-white"><span class="sr-only">Facebook DMV</span></span></a></li>
-                                <li class="list-inline-item"><a href=""><span class="ca-gov-icon-google-plus text-white"><span class="sr-only">Google+ DMV</span></span></a></li>
+                                <li class="list-inline-item"><a href=""><span
+                                            class="ca-gov-icon-twitter text-white"><span class="sr-only">Twitter
+                                                DMV</span></span></a></li>
+                                <li class="list-inline-item"><a href=""><span
+                                            class="ca-gov-icon-facebook text-white"><span class="sr-only">Facebook
+                                                DMV</span></span></a></li>
+                                <li class="list-inline-item"><a href=""><span
+                                            class="ca-gov-icon-google-plus text-white"><span class="sr-only">Google+
+                                                DMV</span></span></a></li>
                             </ul>
                         </div>
                     </div>
@@ -129,7 +146,9 @@
 
                 <div class="more-button">
                     <div class="more-content fake-service-group"></div>
-                    <a href="/service-directory.html" class="btn-more inverse p-t-md  p-b-md"><span class="more-title">More Services <span class="ca-gov-icon-arrow-fill-right m-l-sm" aria-hidden="true"></span></span></a>
+                    <a href="/service-directory.html" class="btn-more inverse p-t-md  p-b-md"><span
+                            class="more-title">More Services <span class="ca-gov-icon-arrow-fill-right m-l-sm"
+                                aria-hidden="true"></span></span></a>
                 </div>
             </div>
 
@@ -144,7 +163,8 @@
             <!-- End Section -->
 
 
-            <div class="parallax-bg height-250 color-white" id="parallax-1" data-image-src="/images/background-primary.jpg">
+            <div class="parallax-bg height-250 color-white" id="parallax-1"
+                data-image-src="/images/background-primary.jpg">
                 <div class="container p-t-md">
                     <!--#include virtual="/sample/modules/icon-links.html" -->
 

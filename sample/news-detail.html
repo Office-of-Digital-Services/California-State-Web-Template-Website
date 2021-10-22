@@ -3,105 +3,118 @@
 <!--[if IE 7]>    <html class="no-js ie7 oldie" lang="en"> <![endif]-->
 <!--[if IE 8]>    <html class="no-js ie8 oldie" lang="en"> <![endif]-->
 <!--[if IE 9]>    <html class="no-js ie9 oldie" lang="en"> <![endif]-->
-<!--[if (gt IE 9)]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+<!--[if (gt IE 9)]><!-->
+<html class="no-js" lang="en">
+<!--<![endif]-->
+
 <head>
 
- <!--    California State Template (beta)
+    <!--    California State Template (beta)
  
  
 Based on Twitter Bootstrap
 -->
-<meta charset="utf-8">
+    <meta charset="utf-8">
 
-<title>Sample - News Detail</title>
+    <title>Sample - News Detail</title>
 
-<meta name="Author" content="State of California" />
-<meta name="Description" content="State of California" />
-<meta name="Keywords" content="California, government" />
+    <meta name="Author" content="State of California" />
+    <meta name="Description" content="State of California" />
+    <meta name="Keywords" content="California, government" />
 
-<!--#include virtual="/ssi/head-css-js.html" -->
-<script type="text/javascript">
-var defaultActiveLink = "Components";
-</script>
+    <!--#include virtual="/ssi/head-css-js.html" -->
+    <script type="text/javascript">
+        var defaultActiveLink = "Components";
+    </script>
 </head>
 
 <body>
 
-<header role="banner" id="header" class="global-header">
-	<div id="skip-to-content"><a href="#main-content">Skip to Main Content</a></div>
-        
+    <header role="banner" id="header" class="global-header">
+        <div id="skip-to-content"><a href="#main-content">Skip to Main Content</a></div>
+
         <!-- Include Utility Header -->
-		<!--#include virtual="/ssi/utility-header.html" -->	
-        
-        <!-- Settings Bar -->	
-		<!--#include virtual="/ssi/settings-bar.html" -->
+        <!--#include virtual="/ssi/utility-header.html" -->
 
-		<!-- Include Branding -->
-		<!--#include virtual="/ssi/branding-lightgrey.html" -->
-    
-    <!-- Include Mobile Controls -->
-    <!--#include virtual="/ssi/mobile-controls.html" -->
+        <!-- Settings Bar -->
+        <!--#include virtual="/ssi/settings-bar.html" -->
 
-    <div class="navigation-search full-width-nav container">
-        <div id="head-search" class="search-container featured-search fade">
-            <!-- Include Search -->
-            <!--#include virtual="/ssi/search.html" -->
+        <!-- Include Branding -->
+        <!--#include virtual="/ssi/branding-lightgrey.html" -->
+
+        <!-- Include Mobile Controls -->
+        <!--#include virtual="/ssi/mobile-controls.html" -->
+
+        <div class="navigation-search full-width-nav container">
+            <div id="head-search" class="search-container featured-search collapse collapsed">
+                <!-- Include Search -->
+                <!--#include virtual="/ssi/search-mobile.html" -->
+            </div>
+            <div id="featured-search" class="search-container featured-search">
+                <!--#include virtual="/ssi/search.html" -->
+            </div>
+            <!-- Include Navigation -->
+            <!--#include virtual="/ssi/navigation.html" -->
         </div>
-        <!-- Include Navigation -->
-        <!--#include virtual="/ssi/navigation.html" -->
-    </div>
 
-	<div class="header-decoration"></div>
-</header>
+        <div class="header-decoration"></div>
+    </header>
 
-<div id="main-content" class="main-content">
-    <div class="container p-b-lg">
-        <main class="main-primary">            
-            <ol class="breadcrumb">
-                <li><a href="../index.html" title="Home page">Home</a></li>
-                <li><a href="/sample/" title="Content Modules landing page">Content Modules</a></li>
-                <li class="active">News Detail</li>
-            </ol>
-            
-            <div class="group">
-                <div class="half">
-                    <h1>News Detail</h1>
-                    <p><code>.news-detail</code> is an end page content module for news articles.  To begin, wrap the contents of the page in a <code>&lt;article class="news-detail"&gt;</code> tag.</p>
-                    <p>This module makes use of the <code>&lt;header&gt;</code> tag and locates the h1 and the publishing date within it.</p>
-                    <p>The keywords section uses an unordered list within a <code>div</code> or <code>footer</code> element with the class of <code>.keywords</code> The keywords themselves could be linked or not linked.</p>
-                    <!--#include virtual="/sample/modules/schema-boilerplate.html" -->
-                    
-                    <h2>Example:</h2>
-                    <!--#include virtual="/sample/modules/news-detail.html" -->
-                </div>
-                <div class="half">
-                    <h2>Source Code:</h2>
-                    <div class="tab-group">
-                    <ul id="sourceCode" class="nav nav-tabs" role="tablist">
-                        <li class="active"><a href="#html" role="tab" data-toggle="tab">HTML Markup</a></li>
-                        <li><a href="#microdata" role="tab" data-toggle="tab">Microdata</a></li>
-                    </ul>
-                    <!-- Tab panes -->
-                    <div class="tab-content responsive">
-                        <div class="tab-pane active" id="html">
-                            <pre><code class="overflow-auto"><!--#include virtual="/sample/modules/news-detail.html" --></code></pre>
+    <div id="main-content" class="main-content">
+        <div class="container p-b-lg">
+            <main class="main-primary">
+                <ol class="breadcrumb">
+                    <li><a href="../index.html" title="Home page">Home</a></li>
+                    <li><a href="/sample/" title="Content Modules landing page">Content Modules</a></li>
+                    <li class="active">News Detail</li>
+                </ol>
+
+                <div class="group">
+                    <div class="half">
+                        <h1>News Detail</h1>
+                        <p><code>.news-detail</code> is an end page content module for news articles. To begin, wrap the
+                            contents of the page in a <code>&lt;article class="news-detail"&gt;</code> tag.</p>
+                        <p>This module makes use of the <code>&lt;header&gt;</code> tag and locates the h1 and the
+                            publishing date within it.</p>
+                        <p>The keywords section uses an unordered list within a <code>div</code> or <code>footer</code>
+                            element with the class of <code>.keywords</code> The keywords themselves could be linked or
+                            not linked.</p>
+                        <!--#include virtual="/sample/modules/schema-boilerplate.html" -->
+
+                        <h2>Example:</h2>
+                        <!--#include virtual="/sample/modules/news-detail.html" -->
+                    </div>
+                    <div class="half">
+                        <h2>Source Code:</h2>
+                        <div class="tab-group">
+                            <ul id="sourceCode" class="nav nav-tabs" role="tablist">
+                                <li class="active"><a href="#html" role="tab" data-toggle="tab">HTML Markup</a></li>
+                                <li><a href="#microdata" role="tab" data-toggle="tab">Microdata</a></li>
+                            </ul>
+                            <!-- Tab panes -->
+                            <div class="tab-content responsive">
+                                <div class="tab-pane active" id="html">
+                                    <pre><code class="overflow-auto"><!--#include virtual="/sample/modules/news-detail.html" --></code></pre>
+                                </div>
+                                <div class="tab-pane" id="microdata">
+                                    <p class="alert alert-info">NOTE: This module makes use of a <code>datetime</code>
+                                        property set in the <strong>ISO 8601</strong> format. Be sure to set the time
+                                        correctly for each news-item.</p>
+                                    <pre><code class="overflow-auto"><!--#include virtual="/sample/modules/news-detail-schema.html" --></code></pre>
+                                </div>
+                            </div>
                         </div>
-                        <div class="tab-pane" id="microdata">
-                            <p class="alert alert-info">NOTE: This module makes use of a <code>datetime</code> property set in the <strong>ISO 8601</strong> format. Be sure to set the time correctly for each news-item.</p>
-                            <pre><code class="overflow-auto"><!--#include virtual="/sample/modules/news-detail-schema.html" --></code></pre>
-                        </div>
+
                     </div>
                 </div>
-                    
-                </div>
-            </div>
-        </main>
+            </main>
+        </div>
     </div>
-</div>
 
-<!--#include virtual="/ssi/global-footer.html" -->
+    <!--#include virtual="/ssi/global-footer.html" -->
 
-<!--#include virtual="/ssi/scripts.html" -->
+    <!--#include virtual="/ssi/scripts.html" -->
 
 </body>
+
 </html>

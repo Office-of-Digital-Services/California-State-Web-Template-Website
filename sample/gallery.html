@@ -42,8 +42,11 @@
         <!--#include virtual="/ssi/mobile-controls.html" -->
 
         <div class="navigation-search full-width-nav container">
-            <div id="head-search" class="search-container featured-search fade">
+            <div id="head-search" class="search-container featured-search collapse collapsed">
                 <!-- Include Search -->
+                <!--#include virtual="/ssi/search-mobile.html" -->
+            </div>
+            <div id="featured-search" class="search-container featured-search">
                 <!--#include virtual="/ssi/search.html" -->
             </div>
 
@@ -67,12 +70,14 @@
                 <h1>Image Gallery</h1>
                 <p>The default gallery will attempt to place as many photos as it can in a row before wrapping to a new
                     line. For a little added control over layout, add a class of <code>.three-up</code> or
-                    <code>.four-up</code> to the <code>.gallery</code> div limit the number of item in a single row.</p>
+                    <code>.four-up</code> to the <code>.gallery</code> div limit the number of item in a single row.
+                </p>
                 <p>Images can be grouped into galleries by adding the <code>data-gallery</code> attribute with a value
                     of the name of the gallery to the image link. For example, any gallery item link to an image with
                     <code>&lt;a data-gallery="gallery1" ... &gt;</code> will group all elements with the value
                     <code>gallery1</code> together. A user can then use arrows on either side of the image popup to
-                    navigate through items in the same gallery.</p>
+                    navigate through items in the same gallery.
+                </p>
                 <p><strong>NOTE:</strong> For optimum viewing experience, it is recommended that gallery thumbnails be
                     landscape cropped to 210x140 or square cropped to 140x140.</p>
                 <!--#include virtual="/sample/modules/gallery.html" -->

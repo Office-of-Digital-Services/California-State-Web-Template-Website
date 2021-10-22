@@ -8,7 +8,7 @@
 <!--<![endif]-->
 
 <head>
- <!--    California State Template (beta)
+    <!--    California State Template (beta)
  
 
         Based on Twitter Bootstrap
@@ -43,14 +43,17 @@
         <!--#include virtual="/ssi/mobile-controls.html" -->
 
         <div class="navigation-search full-width-nav container">
-        <div id="head-search" class="search-container featured-search fade">
-            <!-- Include Search -->
-            <!--#include virtual="/ssi/search.html" -->
-        </div>
+            <div id="head-search" class="search-container featured-search collapse collapsed">
+                <!-- Include Search -->
+                <!--#include virtual="/ssi/search-mobile.html" -->
+            </div>
+            <div id="featured-search" class="search-container featured-search">
+                <!--#include virtual="/ssi/search.html" -->
+            </div>
 
-        <!-- Include Navigation -->
-        <!--#include virtual="/ssi/navigation.html" -->
-    </div>
+            <!-- Include Navigation -->
+            <!--#include virtual="/ssi/navigation.html" -->
+        </div>
 
 
         <div class="header-decoration"></div>
@@ -66,18 +69,26 @@
                     <li class="active">Update</li>
                 </ol>
                 <h1>Update your State Template to most current version</h1>
-                <p>If your website is using a State Template that is perhaps couple of revisions back, you may be able to use the following method to update. Make extra backups if you plan to use the methods outlined below. </p>
+                <p>If your website is using a State Template that is perhaps couple of revisions back, you may be able
+                    to use the following method to update. Make extra backups if you plan to use the methods outlined
+                    below. </p>
                 <h2>Before you start</h2>
-                <p>Make a backup of your current site before you start. This way if you make any errors you still have your current site. Most template updates are made to make State Template more ADA compliant and for better compatibility in mobile devices.</p>
+                <p>Make a backup of your current site before you start. This way if you make any errors you still have
+                    your current site. Most template updates are made to make State Template more ADA compliant and for
+                    better compatibility in mobile devices.</p>
 
 
 
 
                 <h2>Updating steps</h2>
                 <ol>
-                    <li class="m-t-md">Download the latest production (v5.5) or beta (v6) State Template release from our <a href="https://github.com/Office-of-Digital-Innovation/California-State-Template/releases">GitHub repository</a> </li>
+                    <li class="m-t-md">Download the latest production (v5.5) or beta (v6) State Template release from
+                        our <a
+                            href="https://github.com/Office-of-Digital-Innovation/California-State-Template/releases">GitHub
+                            repository</a> </li>
                     <li class="m-t-md">
-                        Copy over the core css and colorscheme files from /css folder or compare the old and new CSS files. Most updates include changes to the CSS code.<br />
+                        Copy over the core css and colorscheme files from /css folder or compare the old and new CSS
+                        files. Most updates include changes to the CSS code.<br />
                         <pre class="m-t"><code class="language-plaintext" data-lang="plaintext">StateTemplate/
     ├── css/
     │   ├── cagov.core.css
@@ -101,7 +112,8 @@
 
                     </li>
                     <li class="m-t-md">
-                        Copy over the core js files and other js libraries from /js folder or compare the old and new js files.<br />
+                        Copy over the core js files and other js libraries from /js folder or compare the old and new js
+                        files.<br />
                         <pre class="m-t"><code class="language-plaintext" data-lang="plaintext">
     StateTemplate/
     └── css/
@@ -124,7 +136,8 @@
 </code></pre>
                     </li>
                     <li class="m-t-md">
-                        Compare the structure of old and new page structure includes in /ssi folder. Here is the list of <a href="structure.html">State Template webpage structure</a> essential includes:<br />
+                        Compare the structure of old and new page structure includes in /ssi folder. Here is the list of
+                        <a href="structure.html">State Template webpage structure</a> essential includes:<br />
                         <!--<ul class="list-primary">
             <li><code>utility-header.html</code></li>
             <li><code>settings-bar.html</code></li>
@@ -184,21 +197,26 @@
     └── templates/
 </code></pre>
                     </li>
-                    <li class="m-t-md">Compare structure and code patterns of your State Tempalte modules/components  that you are using in your website with new <a href="sample/index.html">components/modules</a> structures. Update your code if nessesary.</li>
+                    <li class="m-t-md">Compare structure and code patterns of your State Tempalte modules/components
+                        that you are using in your website with new <a href="sample/index.html">components/modules</a>
+                        structures. Update your code if nessesary.</li>
                     <li class="m-t-md">Test all your pages.</li>
                 </ol>
 
 
                 <h2>Use State Template CDN</h2>
-                <p>Update your website faster by using <a href="/cdn.html">State Template CDN</a>. You  will only need to update CSS and JavaScript CDN links. No manual copying over files is needed. Instead, you can replace copying over files described in steps 2 and 3 with CDN. By doing so you will eliminate step 5 because fonts are already referenced in CDN import calls.</p>
+                <p>Update your website faster by using <a href="/cdn.html">State Template CDN</a>. You will only need to
+                    update CSS and JavaScript CDN links. No manual copying over files is needed. Instead, you can
+                    replace copying over files described in steps 2 and 3 with CDN. By doing so you will eliminate step
+                    5 because fonts are already referenced in CDN import calls.</p>
 
             </div>
-<!-- End Section -->
-</main>
+            <!-- End Section -->
+        </main>
     </div>
 
-<!--#include virtual="/ssi/global-footer.html" -->
-<!--#include virtual="/ssi/scripts.html" -->
+    <!--#include virtual="/ssi/global-footer.html" -->
+    <!--#include virtual="/ssi/scripts.html" -->
 </body>
 
 </html>

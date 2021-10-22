@@ -6,10 +6,11 @@
 <!--[if (gt IE 9)]><!-->
 <html class="no-js" lang="en">
 <!--<![endif]-->
+
 <head>
 
 
- <!--    California State Template (beta)
+    <!--    California State Template (beta)
  
 
             Based on Twitter Bootstrap
@@ -42,14 +43,17 @@
         <!--#include virtual="/ssi/mobile-controls.html" -->
 
         <div class="navigation-search full-width-nav container">
-        <div id="head-search" class="search-container featured-search fade">
-            <!-- Include Search -->
-            <!--#include virtual="/ssi/search.html" -->
-        </div>
+            <div id="head-search" class="search-container featured-search collapse collapsed">
+                <!-- Include Search -->
+                <!--#include virtual="/ssi/search-mobile.html" -->
+            </div>
+            <div id="featured-search" class="search-container featured-search">
+                <!--#include virtual="/ssi/search.html" -->
+            </div>
 
-        <!-- Include Navigation -->
-        <!--#include virtual="/ssi/navigation.html" -->
-    </div>
+            <!-- Include Navigation -->
+            <!--#include virtual="/ssi/navigation.html" -->
+        </div>
         <div class="header-decoration"></div>
     </header>
 
@@ -70,18 +74,21 @@
                     </div>
                     <div class="half">
                         <h3><label for="sample-accordion">Source Code:</label></h3>
-<textarea id="sample-accordion" class="form-control" rows="10" cols="80"><!--#include virtual="/sample/modules/accordion.html" --></textarea>
+                        <textarea id="sample-accordion" class="form-control" rows="10"
+                            cols="80"><!--#include virtual="/sample/modules/accordion.html" --></textarea>
                     </div>
                 </div>
                 <hr />
-           
+
 
                 <hr />
                 <div class="group p-b-lg">
                     <div class="half">
                         <h2>Accordion Side Menu</h2>
                         <p>
-                            Accordion side menu is a vertical navigation component which apart from traditional, text links, might embed icons, dropdowns, images or even forms. For more information and examples visit <a href="navigation-sidebar.html">side menu navigation</a> page.
+                            Accordion side menu is a vertical navigation component which apart from traditional, text
+                            links, might embed icons, dropdowns, images or even forms. For more information and examples
+                            visit <a href="navigation-sidebar.html">side menu navigation</a> page.
                         </p>
 
 
@@ -105,4 +112,5 @@
 
 
 </body>
+
 </html>

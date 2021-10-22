@@ -3,32 +3,37 @@
 <!--[if IE 7]>    <html class="no-js ie7 oldie" lang="en"> <![endif]-->
 <!--[if IE 8]>    <html class="no-js ie8 oldie" lang="en"> <![endif]-->
 <!--[if IE 9]>    <html class="no-js ie9 oldie" lang="en"> <![endif]-->
-<!--[if (gt IE 9)]><!--> <html class="no-js" lang="en"><!-- InstanceBegin template="/Templates/1-column.dwt" codeOutsideHTMLIsLocked="false" --> <!--<![endif]-->
+<!--[if (gt IE 9)]><!-->
+<html class="no-js" lang="en">
+<!-- InstanceBegin template="/Templates/1-column.dwt" codeOutsideHTMLIsLocked="false" -->
+<!--<![endif]-->
+
 <head>
 
- <!--    California State Template (beta)
+    <!--    California State Template (beta)
  
  
 Based on Twitter Bootstrap
 -->
-<meta charset="utf-8">
-<!-- InstanceBeginEditable name="doctitle" -->
-<title>Dreamweaver Templates</title>
-<!-- InstanceEndEditable -->
-<!-- InstanceBeginEditable name="MetaTags" -->
-<meta name="Author" content="State of California" />
-<meta name="Description" content="State of California" />
-<meta name="Keywords" content="California, government" />
-<!-- InstanceEndEditable -->
-<!--#include virtual="/ssi/head-css-js.html" -->
-<!-- InstanceBeginEditable name="head" -->
-<!-- InstanceEndEditable -->
-        <script type="text/javascript">
+    <meta charset="utf-8">
+    <!-- InstanceBeginEditable name="doctitle" -->
+    <title>Dreamweaver Templates</title>
+    <!-- InstanceEndEditable -->
+    <!-- InstanceBeginEditable name="MetaTags" -->
+    <meta name="Author" content="State of California" />
+    <meta name="Description" content="State of California" />
+    <meta name="Keywords" content="California, government" />
+    <!-- InstanceEndEditable -->
+    <!--#include virtual="/ssi/head-css-js.html" -->
+    <!-- InstanceBeginEditable name="head" -->
+    <!-- InstanceEndEditable -->
+    <script type="text/javascript">
         var defaultActiveLink = "Components";
     </script>
 </head>
 
 <!-- possible body classes are "primary" and "two-column" -->
+
 <body>
 
     <header role="banner" id="header" class="global-header fixed">
@@ -44,14 +49,17 @@ Based on Twitter Bootstrap
         <!--#include virtual="/ssi/mobile-controls.html" -->
 
         <div class="navigation-search full-width-nav container">
-        <div id="head-search" class="search-container featured-search fade">
-            <!-- Include Search -->
-            <!--#include virtual="/ssi/search.html" -->
-        </div>
+            <div id="head-search" class="search-container featured-search collapse collapsed">
+                <!-- Include Search -->
+                <!--#include virtual="/ssi/search-mobile.html" -->
+            </div>
+            <div id="featured-search" class="search-container featured-search">
+                <!--#include virtual="/ssi/search.html" -->
+            </div>
 
-        <!-- Include Navigation -->
-        <!--#include virtual="/ssi/navigation.html" -->
-    </div>
+            <!-- Include Navigation -->
+            <!--#include virtual="/ssi/navigation.html" -->
+        </div>
 
         <div class="header-decoration"></div>
     </header>
@@ -68,24 +76,43 @@ Based on Twitter Bootstrap
                 <!-- InstanceBeginEditable name="MainContent" -->
                 <article>
                     <h1>Dreamweaver Templates</h1>
-                    <p>For those webmasters that choose to use the Dreamweaver templates, the following is a set of basic instructions for using the templates. This is not intended to be a comprehensive tutorial on using Dreamweaver. There are many tutorials and books on using Dreamweaver and templates. Please refer to those educational sources for any help beyond this documentation.</p>
+                    <p>For those webmasters that choose to use the Dreamweaver templates, the following is a set of
+                        basic instructions for using the templates. This is not intended to be a comprehensive tutorial
+                        on using Dreamweaver. There are many tutorials and books on using Dreamweaver and templates.
+                        Please refer to those educational sources for any help beyond this documentation.</p>
                     <p>There are 8 templates provided, one for each template configuration. </p>
                     <ul>
-                        <li>Primary banner (<a href="/PrimaryBanner-1-column.html">1 columns <span class="sr-only">primary</span></a> and <a href="/PrimaryBanner-2-column.html">2 column <span class="sr-only">primary</span></a>)</li>
-                        <li>Slideshow banner (<a href="/SlideshowBanner-1-column.html">1 columns <span class="sr-only">slideshow</span></a> and <a href="/SlideshowBanner-2-column.html">2 column <span class="sr-only">slideshow</span></a></a>)</li>
-                        <li>Large banner (<a href="/LargeBanner-1-column.html">1 columns <span class="sr-only">large</span></a> and <a href="/LargeBanner-2-column.html">2 column <span class="sr-only">large</span></a>)</li>
-                        <li>Regular page (<a href="/1-column.html">1 coluns <span class="sr-only">regular</span></a> and <a href="/2-column.html">2 column <span class="sr-only">regular</span></a>)</li>
+                        <li>Primary banner (<a href="/PrimaryBanner-1-column.html">1 columns <span
+                                    class="sr-only">primary</span></a> and <a href="/PrimaryBanner-2-column.html">2
+                                column <span class="sr-only">primary</span></a>)</li>
+                        <li>Slideshow banner (<a href="/SlideshowBanner-1-column.html">1 columns <span
+                                    class="sr-only">slideshow</span></a> and <a href="/SlideshowBanner-2-column.html">2
+                                column <span class="sr-only">slideshow</span></a></a>)</li>
+                        <li>Large banner (<a href="/LargeBanner-1-column.html">1 columns <span
+                                    class="sr-only">large</span></a> and <a href="/LargeBanner-2-column.html">2 column
+                                <span class="sr-only">large</span></a>)</li>
+                        <li>Regular page (<a href="/1-column.html">1 coluns <span class="sr-only">regular</span></a> and
+                            <a href="/2-column.html">2 column <span class="sr-only">regular</span></a>)</li>
                     </ul>
-                    <p>The templates with &quot;ribbon&quot; contain the primary, large and slideshow headers, see <a href="page-templates.html">Page Templates</a> for more information on header types. The ribbon templates are generally recommended for use as a homepage template. The 1 column and 2 column templates without the ribbon are recommended for internal pages.                </p>
+                    <p>The templates with &quot;ribbon&quot; contain the primary, large and slideshow headers, see <a
+                            href="page-templates.html">Page Templates</a> for more information on header types. The
+                        ribbon templates are generally recommended for use as a homepage template. The 1 column and 2
+                        column templates without the ribbon are recommended for internal pages. </p>
                     <h2>Optional Banner</h2>
                     <p>
-                        Pages created using the ribbon templates  include Dreamweaver options for showing or hiding the various banner types. By default the primay banner is turned on in the template, but it can be turned off or swapped by going to the
-                        <mark><strong>Edit</strong> (Modify in older versions ) <strong>&gt;</strong> <strong>Template Properties</strong></mark>
-                        menu in Dreamweaver and toggle  the checkbox of each banner type.
+                        Pages created using the ribbon templates include Dreamweaver options for showing or hiding the
+                        various banner types. By default the primay banner is turned on in the template, but it can be
+                        turned off or swapped by going to the
+                        <mark><strong>Edit</strong> (Modify in older versions ) <strong>&gt;</strong> <strong>Template
+                                Properties</strong></mark>
+                        menu in Dreamweaver and toggle the checkbox of each banner type.
                     </p>
-                    <p><span class="label label-warning">NOTE:</span> There can only be <mark><strong>one </strong></mark>banner option selected at a time, having more than one type marked as <mark><strong>True</strong></mark> will break the page layout.</p>
+                    <p><span class="label label-warning">NOTE:</span> There can only be <mark><strong>one
+                            </strong></mark>banner option selected at a time, having more than one type marked as
+                        <mark><strong>True</strong></mark> will break the page layout.</p>
                     <p><img src="images/dw-optionalslideshow.png" alt="" /></p>
-                    <p>Please refer to <a href="page-templates.html">Page Templates</a> for details on editing the content of each banner type.</p>
+                    <p>Please refer to <a href="page-templates.html">Page Templates</a> for details on editing the
+                        content of each banner type.</p>
                     <p>&nbsp;</p>
                 </article>
                 <!-- InstanceEndEditable -->
@@ -99,4 +126,6 @@ Based on Twitter Bootstrap
     <!--#include virtual="/ssi/scripts.html" -->
 
 </body>
-<!-- InstanceEnd --></html>
+<!-- InstanceEnd -->
+
+</html>

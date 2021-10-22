@@ -3,77 +3,86 @@
 <!--[if IE 7]>    <html class="no-js ie7 oldie" lang="en"> <![endif]-->
 <!--[if IE 8]>    <html class="no-js ie8 oldie" lang="en"> <![endif]-->
 <!--[if IE 9]>    <html class="no-js ie9 oldie" lang="en"> <![endif]-->
-<!--[if (gt IE 9)]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+<!--[if (gt IE 9)]><!-->
+<html class="no-js" lang="en">
+<!--<![endif]-->
+
 <head>
 
- <!--    California State Template (beta)
+    <!--    California State Template (beta)
  
  
 Based on Twitter Bootstrap
 -->
-<meta charset="utf-8">
+    <meta charset="utf-8">
 
-<title>Sample - Spacing</title>
+    <title>Sample - Spacing</title>
 
-<meta name="Author" content="State of California" />
-<meta name="Description" content="State of California" />
-<meta name="Keywords" content="California, government" />
+    <meta name="Author" content="State of California" />
+    <meta name="Description" content="State of California" />
+    <meta name="Keywords" content="California, government" />
 
-<!--#include virtual="/ssi/head-css-js.html" -->
-<script type="text/javascript">
-var defaultActiveLink = "Components";
-</script>
+    <!--#include virtual="/ssi/head-css-js.html" -->
+    <script type="text/javascript">
+        var defaultActiveLink = "Components";
+    </script>
 </head>
 
 <body>
 
-<header role="banner" id="header" class="global-header">
-	<div id="skip-to-content"><a href="#main-content">Skip to Main Content</a></div>
-        
+    <header role="banner" id="header" class="global-header">
+        <div id="skip-to-content"><a href="#main-content">Skip to Main Content</a></div>
+
         <!-- Include Utility Header -->
-		<!--#include virtual="/ssi/utility-header.html" -->	
-        
-        <!-- Settings Bar -->	
-		<!--#include virtual="/ssi/settings-bar.html" -->
+        <!--#include virtual="/ssi/utility-header.html" -->
 
-		<!-- Include Branding -->
-		<!--#include virtual="/ssi/branding-lightgrey.html" -->
-    
-    <!-- Include Mobile Controls -->
-    <!--#include virtual="/ssi/mobile-controls.html" -->
+        <!-- Settings Bar -->
+        <!--#include virtual="/ssi/settings-bar.html" -->
 
-    <div class="navigation-search full-width-nav container">
-        <div id="head-search" class="search-container featured-search fade">
-            <!-- Include Search -->
-            <!--#include virtual="/ssi/search.html" -->
+        <!-- Include Branding -->
+        <!--#include virtual="/ssi/branding-lightgrey.html" -->
+
+        <!-- Include Mobile Controls -->
+        <!--#include virtual="/ssi/mobile-controls.html" -->
+
+        <div class="navigation-search full-width-nav container">
+            <div id="head-search" class="search-container featured-search collapse collapsed">
+                <!-- Include Search -->
+                <!--#include virtual="/ssi/search-mobile.html" -->
+            </div>
+            <div id="featured-search" class="search-container featured-search">
+                <!--#include virtual="/ssi/search.html" -->
+            </div>
+            <!-- Include Navigation -->
+            <!--#include virtual="/ssi/navigation.html" -->
         </div>
-        <!-- Include Navigation -->
-        <!--#include virtual="/ssi/navigation.html" -->
-    </div>
 
-	<div class="header-decoration"></div>
-</header>
+        <div class="header-decoration"></div>
+    </header>
 
-<div id="main-content" class="main-content">
-    <div class="container p-b-lg">
-        <main class="main-primary">            
-            <ol class="breadcrumb">
-                <li><a href="../index.html" title="Home page">Home</a></li>
-                <li><a href="/sample/" title="Content Modules landing page">Content Modules</a></li>
-                <li class="active">Spacing</li>
-            </ol>
-            
-            <h1>Generic Spacing Classes</h1>
-                
+    <div id="main-content" class="main-content">
+        <div class="container p-b-lg">
+            <main class="main-primary">
+                <ol class="breadcrumb">
+                    <li><a href="../index.html" title="Home page">Home</a></li>
+                    <li><a href="/sample/" title="Content Modules landing page">Content Modules</a></li>
+                    <li class="active">Spacing</li>
+                </ol>
+
+                <h1>Generic Spacing Classes</h1>
+
                 <div class="group">
-                  <div class="two-thirds">
-                        <p>Assign <code>margin</code> or <code>padding</code> to an element or a subset of it’s sides with shorthand classes. Includes support for individual properties, all properties, vertical only and horizontal only properties.</p>
+                    <div class="two-thirds">
+                        <p>Assign <code>margin</code> or <code>padding</code> to an element or a subset of it’s sides
+                            with shorthand classes. Includes support for individual properties, all properties, vertical
+                            only and horizontal only properties.</p>
                         <h2>Naming Convention</h2>
                         <p>The naming convention used can be broken down into three parts. </p>
-                        <p><strong>Part 1:</strong> can be <code>m</code> or <code>p</code> and relates to Margin or Padding respectivly.</p>
+                        <p><strong>Part 1:</strong> can be <code>m</code> or <code>p</code> and relates to Margin or
+                            Padding respectivly.</p>
                         <p><strong>Part 2:</strong> corolates to the margin or padding position. </p>
-                        
-                    <ul class="list-unstyled m-x-md m-b-md">
+
+                        <ul class="list-unstyled m-x-md m-b-md">
                             <li><code>a</code> = All</li>
                             <li><code>t</code> = Top</li>
                             <li><code>r</code> = Right</li>
@@ -82,22 +91,27 @@ var defaultActiveLink = "Components";
                             <li><code>x</code> = x axis or Left &amp; Right</li>
                             <li><code>y</code> = y axis or Top &amp; Bottom</li>
                         </ul>
-                        
-                        <p><strong>Part 3:</strong> refers to how much padding or margin an element receives and is based on multiples of the base font size. (Currently 16px) It can have the following arguments <code>0</code> = None, <code>md</code> = x1.5, <code>lg</code> = x3</p>                      
-<pre>
+
+                        <p><strong>Part 3:</strong> refers to how much padding or margin an element receives and is
+                            based on multiples of the base font size. (Currently 16px) It can have the following
+                            arguments <code>0</code> = None, <code>md</code> = x1.5, <code>lg</code> = x3</p>
+                        <pre>
 &lt;ul class=&quot;list-unstyled <strong>m-x-md m-b-md</strong>&quot;&gt;
 </pre>
-					  <p>This code sample illustrates the spacing classes used in the Part 2 unordered list above.   <code>m-x-md</code> defines a medium margin for the left and right axis. <code>m-b-md</code> is setting the bottom margin to a medium height.</p>
-                        
+                        <p>This code sample illustrates the spacing classes used in the Part 2 unordered list above.
+                            <code>m-x-md</code> defines a medium margin for the left and right axis. <code>m-b-md</code>
+                            is setting the bottom margin to a medium height.</p>
+
                     </div>
                 </div>
-        </main>
+            </main>
+        </div>
     </div>
-</div>
 
-<!--#include virtual="/ssi/global-footer.html" -->
+    <!--#include virtual="/ssi/global-footer.html" -->
 
-<!--#include virtual="/ssi/scripts.html" -->
+    <!--#include virtual="/ssi/scripts.html" -->
 
 </body>
+
 </html>

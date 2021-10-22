@@ -12,10 +12,10 @@ Based on Twitter Bootstrap
 <!--[if IE 9]>    <html class="no-js ie9 oldie" lang="en"> <![endif]-->
 <!--[if (gt IE 9)]><!-->
 <html class="no-js" lang="en">
- <!--<![endif]-->
+<!--<![endif]-->
 
-<head>    
- <!--    California State Template (beta)
+<head>
+    <!--    California State Template (beta)
  
 
     Based on Twitter Bootstrap
@@ -30,11 +30,12 @@ Based on Twitter Bootstrap
 
     <!--#include virtual="/ssi/head-css-js.html" -->
     <script type="text/javascript">
-var defaultActiveLink = "Components";
-</script>
+        var defaultActiveLink = "Components";
+    </script>
 </head>
 
 <!-- possible body classes are "primary" and "two-column" -->
+
 <body>
 
     <header role="banner" id="header" class="global-header">
@@ -50,14 +51,17 @@ var defaultActiveLink = "Components";
         <!--#include virtual="/ssi/mobile-controls.html" -->
 
         <div class="navigation-search full-width-nav container">
-        <div id="head-search" class="search-container featured-search fade">
-            <!-- Include Search -->
-            <!--#include virtual="/ssi/search.html" -->
-        </div>
+            <div id="head-search" class="search-container featured-search collapse collapsed">
+                <!-- Include Search -->
+                <!--#include virtual="/ssi/search-mobile.html" -->
+            </div>
+            <div id="featured-search" class="search-container featured-search">
+                <!--#include virtual="/ssi/search.html" -->
+            </div>
 
-        <!-- Include Navigation -->
-        <!--#include virtual="/ssi/navigation.html" -->
-    </div>
+            <!-- Include Navigation -->
+            <!--#include virtual="/ssi/navigation.html" -->
+        </div>
 
         <div class="header-decoration"></div>
     </header>
@@ -75,7 +79,9 @@ var defaultActiveLink = "Components";
                 <div class="group">
                     <div class="half">
                         <h1>Forms</h1>
-                        <p>All form controls automatically receive some global styling. Form elements with <code>.form-control</code> are set to <code>width: 100%;</code> by default. Wrap labels and controls in <code>.form-group</code> for optimum spacing.</p>
+                        <p>All form controls automatically receive some global styling. Form elements with
+                            <code>.form-control</code> are set to <code>width: 100%;</code> by default. Wrap labels and
+                            controls in <code>.form-group</code> for optimum spacing.</p>
 
                         <h2>Example:</h2>
                         <!--#include virtual="/sample/modules/form.html" -->
@@ -200,4 +206,5 @@ var defaultActiveLink = "Components";
     <!--#include virtual="/ssi/scripts.html" -->
 
 </body>
+
 </html>

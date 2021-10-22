@@ -5,11 +5,12 @@
 <!--[if IE 9]>    <html class="no-js ie9 oldie" lang="en"> <![endif]-->
 <!--[if (gt IE 9)]><!-->
 <html class="no-js" lang="en">
- <!--<![endif]-->
+<!--<![endif]-->
+
 <head>
 
 
- <!--    California State Template (beta)
+    <!--    California State Template (beta)
  
 
             Based on Twitter Bootstrap
@@ -42,8 +43,11 @@
         <!--#include virtual="/ssi/mobile-controls.html" -->
 
         <div class="navigation-search full-width-nav container">
-            <div id="head-search" class="search-container featured-search fade">
+            <div id="head-search" class="search-container featured-search collapse collapsed">
                 <!-- Include Search -->
+                <!--#include virtual="/ssi/search-mobile.html" -->
+            </div>
+            <div id="featured-search" class="search-container featured-search">
                 <!--#include virtual="/ssi/search.html" -->
             </div>
             <!-- Include Navigation -->
@@ -56,7 +60,11 @@
 
     <div id="main-content" class="main-content">
         <main class="main-primary">
-            <div class="section-default p-y-md"><div class="container"><h1 class="m-y-0">Contact</h1></div></div>
+            <div class="section-default p-y-md">
+                <div class="container">
+                    <h1 class="m-y-0">Contact</h1>
+                </div>
+            </div>
             <div class="container p-y-lg">
                 <div class="row">
                     <div class="col-sm-4">
@@ -86,25 +94,32 @@
                         <form role="form">
                             <div class="group">
                                 <div class="form-group half">
-                                    <label class="form-control-label" for="exampleInputFirstName">Name <span class="required-label">*</span></label>
-                                    <input type="text" class="form-control" id="exampleInputFirstName" placeholder="Enter First Name">
+                                    <label class="form-control-label" for="exampleInputFirstName">Name <span
+                                            class="required-label">*</span></label>
+                                    <input type="text" class="form-control" id="exampleInputFirstName"
+                                        placeholder="Enter First Name">
                                 </div>
                                 <div class="form-group half">
-                                    <label class="form-control-label" for="exampleInputLastName">Last Name <span class="required-label">*</span></label>
-                                    <input type="text" class="form-control" id="exampleInputLastName" placeholder="Enter Last name">
+                                    <label class="form-control-label" for="exampleInputLastName">Last Name <span
+                                            class="required-label">*</span></label>
+                                    <input type="text" class="form-control" id="exampleInputLastName"
+                                        placeholder="Enter Last name">
                                 </div>
                             </div>
                             <div class="form-group">
-                                <label class="form-control-label" for="exampleEmail">Email <span class="required-label">*</span></label>
+                                <label class="form-control-label" for="exampleEmail">Email <span
+                                        class="required-label">*</span></label>
                                 <input type="email" class="form-control" id="exampleEmail" placeholder="Enter Email">
                             </div>
                             <div class="form-group">
-                                <label class="form-control-label" for="examplePhone">Phone <span class="required-label">*</span></label>
+                                <label class="form-control-label" for="examplePhone">Phone <span
+                                        class="required-label">*</span></label>
                                 <input type="text" class="form-control" id="examplePhone" placeholder="Enter Phone">
                             </div>
 
                             <div class="form-group">
-                                <label class="form-control-label" for="exampleInputComment">Your Message <span class="required-label">*</span></label>
+                                <label class="form-control-label" for="exampleInputComment">Your Message <span
+                                        class="required-label">*</span></label>
                                 <textarea id="exampleInputComment" class="form-control" rows="5" cols="80"></textarea>
                             </div>
                             <button type="submit" class="btn btn-default btn-lg">Submit</button>
@@ -124,18 +139,20 @@
                                 Rancho Cordova, CA<br />
                                 95670
                             </span>
-                                <h3 class="h4 m-b-0">Business Hours:</h3>
-                                <span>
-                                    MON - FRI<br />
-                                    8:00 am - 4:00pm
-                                </span>
-</div>
+                            <h3 class="h4 m-b-0">Business Hours:</h3>
+                            <span>
+                                MON - FRI<br />
+                                8:00 am - 4:00pm
+                            </span>
+                        </div>
                         <div class="col-sm-6">
                             <div class="embed-responsive embed-responsive-4by3">
-                                <iframe class="embed-responsive-item" src="https://maps.google.com/maps?q=10860%20Gold%20Center%20Drive%20Rancho%20Cordova%2C%20CA%2095670&t=&z=13&ie=UTF8&iwloc=&output=embed" title="Our address on the map"></iframe>
+                                <iframe class="embed-responsive-item"
+                                    src="https://maps.google.com/maps?q=10860%20Gold%20Center%20Drive%20Rancho%20Cordova%2C%20CA%2095670&t=&z=13&ie=UTF8&iwloc=&output=embed"
+                                    title="Our address on the map"></iframe>
                             </div>
                         </div>
-                        </div>
+                    </div>
                 </div>
             </div>
         </main>
@@ -152,4 +169,5 @@
         });
     </script>
 </body>
+
 </html>

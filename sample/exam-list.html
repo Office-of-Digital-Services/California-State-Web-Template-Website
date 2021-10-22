@@ -3,93 +3,105 @@
 <!--[if IE 7]>    <html class="no-js ie7 oldie" lang="en"> <![endif]-->
 <!--[if IE 8]>    <html class="no-js ie8 oldie" lang="en"> <![endif]-->
 <!--[if IE 9]>    <html class="no-js ie9 oldie" lang="en"> <![endif]-->
-<!--[if (gt IE 9)]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+<!--[if (gt IE 9)]><!-->
+<html class="no-js" lang="en">
+<!--<![endif]-->
+
 <head>
 
- <!--    California State Template (beta)
+    <!--    California State Template (beta)
  
  
 Based on Twitter Bootstrap
 -->
-<meta charset="utf-8">
+    <meta charset="utf-8">
 
-<title>Sample - Exam List</title>
+    <title>Sample - Exam List</title>
 
-<meta name="Author" content="State of California" />
-<meta name="Description" content="State of California" />
-<meta name="Keywords" content="California, government" />
+    <meta name="Author" content="State of California" />
+    <meta name="Description" content="State of California" />
+    <meta name="Keywords" content="California, government" />
 
-<!--#include virtual="/ssi/head-css-js.html" -->
-<script type="text/javascript">
-var defaultActiveLink = "Components";
-</script>
+    <!--#include virtual="/ssi/head-css-js.html" -->
+    <script type="text/javascript">
+        var defaultActiveLink = "Components";
+    </script>
 </head>
 
 <body>
 
-<header role="banner" id="header" class="global-header">
-	<div id="skip-to-content"><a href="#main-content">Skip to Main Content</a></div>
-        
+    <header role="banner" id="header" class="global-header">
+        <div id="skip-to-content"><a href="#main-content">Skip to Main Content</a></div>
+
         <!-- Include Utility Header -->
-		<!--#include virtual="/ssi/utility-header.html" -->	
-        
-        <!-- Settings Bar -->	
-		<!--#include virtual="/ssi/settings-bar.html" -->
+        <!--#include virtual="/ssi/utility-header.html" -->
 
-		<!-- Include Branding -->
-		<!--#include virtual="/ssi/branding-lightgrey.html" -->
-    
-    <!-- Include Mobile Controls -->
-    <!--#include virtual="/ssi/mobile-controls.html" -->
+        <!-- Settings Bar -->
+        <!--#include virtual="/ssi/settings-bar.html" -->
 
-    <div class="navigation-search full-width-nav container">
-        <div id="head-search" class="search-container featured-search fade">
-            <!-- Include Search -->
-            <!--#include virtual="/ssi/search.html" -->
-        </div>
-        <!-- Include Navigation -->
-        <!--#include virtual="/ssi/navigation.html" -->
-    </div>
+        <!-- Include Branding -->
+        <!--#include virtual="/ssi/branding-lightgrey.html" -->
 
-	<div class="header-decoration"></div>
-</header>
+        <!-- Include Mobile Controls -->
+        <!--#include virtual="/ssi/mobile-controls.html" -->
 
-<div id="main-content" class="main-content">
-    <div class="container p-b-lg">
-        <main class="main-primary">            
-            <ol class="breadcrumb">
-                <li><a href="../index.html" title="Home page">Home</a></li>
-                <li><a href="/sample/" title="Content Modules landing page">Content Modules</a></li>
-                <li class="active">Exam List</li>
-            </ol>
-            
-            <div class="group">
-                <div class="half">
-                    <h1>Exam List</h1>
-                    <p>An exam list contains a repeating group of exam items. To begin, wrap this module in a <code>&lt;section class="exam-list"&gt;</code>. Then use <code>&lt;article class="exam-item"&gt;</code> to group intividual exams.</p>
-                    <p>Like similar widgets, the list item contains the following child elements. <code>.header</code>, <code>.body</code>, and <code>.footer</code></p>
-                    
-                    <p><span class="label label-info">Note:</span> Exam items have additional classes on sub elements that may not be used in the current design, however they could be used in the future.</p> 
-                    
-                    <hr>
-                    
-                    <h2>Example:</h2>
-                    <!--#include virtual="/sample/modules/exam-list.html" -->
-                </div>
-                <div class="half">
-                    <h2>Source Code:</h2>
-
-                    <pre><code class="overflow-auto"><!--#include virtual="/sample/modules/exam-list.html" --></code></pre>
-
-                </div> 
+        <div class="navigation-search full-width-nav container">
+            <div id="head-search" class="search-container featured-search collapse collapsed">
+                <!-- Include Search -->
+                <!--#include virtual="/ssi/search-mobile.html" -->
             </div>
-        </main>
+            <div id="featured-search" class="search-container featured-search">
+                <!--#include virtual="/ssi/search.html" -->
+            </div>
+            <!-- Include Navigation -->
+            <!--#include virtual="/ssi/navigation.html" -->
+        </div>
+
+        <div class="header-decoration"></div>
+    </header>
+
+    <div id="main-content" class="main-content">
+        <div class="container p-b-lg">
+            <main class="main-primary">
+                <ol class="breadcrumb">
+                    <li><a href="../index.html" title="Home page">Home</a></li>
+                    <li><a href="/sample/" title="Content Modules landing page">Content Modules</a></li>
+                    <li class="active">Exam List</li>
+                </ol>
+
+                <div class="group">
+                    <div class="half">
+                        <h1>Exam List</h1>
+                        <p>An exam list contains a repeating group of exam items. To begin, wrap this module in a
+                            <code>&lt;section class="exam-list"&gt;</code>. Then use
+                            <code>&lt;article class="exam-item"&gt;</code> to group intividual exams.</p>
+                        <p>Like similar widgets, the list item contains the following child elements.
+                            <code>.header</code>, <code>.body</code>, and <code>.footer</code></p>
+
+                        <p><span class="label label-info">Note:</span> Exam items have additional classes on sub
+                            elements that may not be used in the current design, however they could be used in the
+                            future.</p>
+
+                        <hr>
+
+                        <h2>Example:</h2>
+                        <!--#include virtual="/sample/modules/exam-list.html" -->
+                    </div>
+                    <div class="half">
+                        <h2>Source Code:</h2>
+
+                        <pre><code class="overflow-auto"><!--#include virtual="/sample/modules/exam-list.html" --></code></pre>
+
+                    </div>
+                </div>
+            </main>
+        </div>
     </div>
-</div>
 
-<!--#include virtual="/ssi/global-footer.html" -->
+    <!--#include virtual="/ssi/global-footer.html" -->
 
-<!--#include virtual="/ssi/scripts.html" -->
+    <!--#include virtual="/ssi/scripts.html" -->
 
 </body>
+
 </html>

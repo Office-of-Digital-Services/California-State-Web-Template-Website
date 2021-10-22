@@ -3,100 +3,116 @@
 <!--[if IE 7]>    <html class="no-js ie7 oldie" lang="en"> <![endif]-->
 <!--[if IE 8]>    <html class="no-js ie8 oldie" lang="en"> <![endif]-->
 <!--[if IE 9]>    <html class="no-js ie9 oldie" lang="en"> <![endif]-->
-<!--[if (gt IE 9)]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+<!--[if (gt IE 9)]><!-->
+<html class="no-js" lang="en">
+<!--<![endif]-->
+
 <head>
 
- <!--    California State Template (beta)
+    <!--    California State Template (beta)
  
  
 Based on Twitter Bootstrap
 -->
-<meta charset="utf-8">
+    <meta charset="utf-8">
 
-<title>Sample - Grid</title>
+    <title>Sample - Grid</title>
 
-<meta name="Author" content="State of California" />
-<meta name="Description" content="State of California" />
-<meta name="Keywords" content="California, government" />
+    <meta name="Author" content="State of California" />
+    <meta name="Description" content="State of California" />
+    <meta name="Keywords" content="California, government" />
 
-<!--#include virtual="/ssi/head-css-js.html" -->
-<script type="text/javascript">
-var defaultActiveLink = "Components";
-</script>
+    <!--#include virtual="/ssi/head-css-js.html" -->
+    <script type="text/javascript">
+        var defaultActiveLink = "Components";
+    </script>
 </head>
 
 <body>
 
-<header role="banner" id="header" class="global-header">
-	<div id="skip-to-content"><a href="#main-content">Skip to Main Content</a></div>
-        
+    <header role="banner" id="header" class="global-header">
+        <div id="skip-to-content"><a href="#main-content">Skip to Main Content</a></div>
+
         <!-- Include Utility Header -->
-		<!--#include virtual="/ssi/utility-header.html" -->	
-        
-        <!-- Settings Bar -->	
-		<!--#include virtual="/ssi/settings-bar.html" -->
+        <!--#include virtual="/ssi/utility-header.html" -->
 
-		<!-- Include Branding -->
-		<!--#include virtual="/ssi/branding-lightgrey.html" -->
-    
-    <!-- Include Mobile Controls -->
-    <!--#include virtual="/ssi/mobile-controls.html" -->
-    
-    <div class="navigation-search full-width-nav container">
-        <div id="head-search" class="search-container featured-search fade">
-            <!-- Include Search -->
-            <!--#include virtual="/ssi/search.html" -->
-        </div>
-        <!-- Include Navigation -->
-        <!--#include virtual="/ssi/navigation.html" -->
-    </div>
-    
-	<div class="header-decoration"></div>
-</header>
+        <!-- Settings Bar -->
+        <!--#include virtual="/ssi/settings-bar.html" -->
 
+        <!-- Include Branding -->
+        <!--#include virtual="/ssi/branding-lightgrey.html" -->
 
-<div id="main-content" class="main-content">
-    <div class="container p-b-lg">
-        <main class="main-primary">            
-            <ol class="breadcrumb">
-                <li><a href="../index.html" title="Home page">Home</a></li>
-                <li><a href="/sample/layouts.html" title="Page Layouts landing page">Page Layouts</a></li>
-                <li class="active">Grid</li>
-            </ol>
-            
-            <div class="group">
-                <div class="two-thirds">
-                    <h1>Grid System</h1>
-                    <p>In addition to bootstrap grid system State Template uses its own simplified grid systems. This template uses a set of commonly understood fractional units to provide a platform agnostic layout grid. All columns are wrapped in a <code>.group</code> container, all fractional columns are placed directly within the <code>.group</code> container. All fractional columns should equal one whole group. For example two (2) .halfs equal one whole group. Likewise three (3) thirds equal one whole. </p>
-                    <ul>
-                        <li>A row is identified by the <code>.group</code> class</li>
-                        <li>Columns are identified through  fractional notations like <code>.half</code>, <code>.third</code>, <code>.two-thirds</code>, <code>.quarter</code>, and <code>.three-quarters</code> </li>
-                        <li>Use <code>.group</code> to create horizontal groups of columns.</li>
-                        <li>Content should be placed within fractional layout columns.</li>
-                    </ul>
+        <!-- Include Mobile Controls -->
+        <!--#include virtual="/ssi/mobile-controls.html" -->
 
-                    <p><span class="label label-info">NOTE:</span> Grids display a 1px gray border in demo only.</p>
-
-                    <h2>Example:</h2>
-                    <!--#include virtual="/sample/modules/grid.html" -->
-
-                    <hr class="m-t-lg" />
-                    <p class="lead"><span class="label label-info">NOTE:</span> For more CSS breakpoint-specific column classes and other responsive grid options we suggest utilizing what is available in Bootstrap.</p>
-
-                </div>
-                 <div class="third">
-                    <h2>Source Code:</h2>
-                    <pre><code class="overflow-auto"><!--#include virtual="/sample/modules/grid.html" --></code></pre>
-                </div> 
+        <div class="navigation-search full-width-nav container">
+            <div id="head-search" class="search-container featured-search collapse collapsed">
+                <!-- Include Search -->
+                <!--#include virtual="/ssi/search-mobile.html" -->
             </div>
-        </main>
+            <div id="featured-search" class="search-container featured-search">
+                <!--#include virtual="/ssi/search.html" -->
+            </div>
+            <!-- Include Navigation -->
+            <!--#include virtual="/ssi/navigation.html" -->
+        </div>
+
+        <div class="header-decoration"></div>
+    </header>
+
+
+    <div id="main-content" class="main-content">
+        <div class="container p-b-lg">
+            <main class="main-primary">
+                <ol class="breadcrumb">
+                    <li><a href="../index.html" title="Home page">Home</a></li>
+                    <li><a href="/sample/layouts.html" title="Page Layouts landing page">Page Layouts</a></li>
+                    <li class="active">Grid</li>
+                </ol>
+
+                <div class="group">
+                    <div class="two-thirds">
+                        <h1>Grid System</h1>
+                        <p>In addition to bootstrap grid system State Template uses its own simplified grid systems.
+                            This template uses a set of commonly understood fractional units to provide a platform
+                            agnostic layout grid. All columns are wrapped in a <code>.group</code> container, all
+                            fractional columns are placed directly within the <code>.group</code> container. All
+                            fractional columns should equal one whole group. For example two (2) .halfs equal one whole
+                            group. Likewise three (3) thirds equal one whole. </p>
+                        <ul>
+                            <li>A row is identified by the <code>.group</code> class</li>
+                            <li>Columns are identified through fractional notations like <code>.half</code>,
+                                <code>.third</code>, <code>.two-thirds</code>, <code>.quarter</code>, and
+                                <code>.three-quarters</code> </li>
+                            <li>Use <code>.group</code> to create horizontal groups of columns.</li>
+                            <li>Content should be placed within fractional layout columns.</li>
+                        </ul>
+
+                        <p><span class="label label-info">NOTE:</span> Grids display a 1px gray border in demo only.</p>
+
+                        <h2>Example:</h2>
+                        <!--#include virtual="/sample/modules/grid.html" -->
+
+                        <hr class="m-t-lg" />
+                        <p class="lead"><span class="label label-info">NOTE:</span> For more CSS breakpoint-specific
+                            column classes and other responsive grid options we suggest utilizing what is available in
+                            Bootstrap.</p>
+
+                    </div>
+                    <div class="third">
+                        <h2>Source Code:</h2>
+                        <pre><code class="overflow-auto"><!--#include virtual="/sample/modules/grid.html" --></code></pre>
+                    </div>
+                </div>
+            </main>
+        </div>
     </div>
-</div>
 
 
-<!--#include virtual="/ssi/global-footer.html" -->
+    <!--#include virtual="/ssi/global-footer.html" -->
 
-<!--#include virtual="/ssi/scripts.html" -->
+    <!--#include virtual="/ssi/scripts.html" -->
 
 </body>
+
 </html>

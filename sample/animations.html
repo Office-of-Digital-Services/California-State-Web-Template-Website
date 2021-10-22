@@ -8,7 +8,7 @@
 <!--<![endif]-->
 
 <head>
- <!--    California State Template (beta)
+    <!--    California State Template (beta)
  
 
                 Based on Twitter Bootstrap
@@ -38,14 +38,17 @@
         <!--#include virtual="/ssi/mobile-controls.html" -->
 
         <div class="navigation-search full-width-nav container">
-        <div id="head-search" class="search-container featured-search fade">
-            <!-- Include Search -->
-            <!--#include virtual="/ssi/search.html" -->
-        </div>
+            <div id="head-search" class="search-container featured-search collapse collapsed">
+                <!-- Include Search -->
+                <!--#include virtual="/ssi/search-mobile.html" -->
+            </div>
+            <div id="featured-search" class="search-container featured-search">
+                <!--#include virtual="/ssi/search.html" -->
+            </div>
 
-        <!-- Include Navigation -->
-        <!--#include virtual="/ssi/navigation.html" -->
-    </div>
+            <!-- Include Navigation -->
+            <!--#include virtual="/ssi/navigation.html" -->
+        </div>
         <div class="header-decoration"></div>
     </header>
 
@@ -61,8 +64,11 @@
                 <div class="container">
                     <div class="two-thirds">
                         <h1>Animations</h1>
-                        <p>Animations are for adding motion or effects as they scroll into view. We recommend using animations both sparingly and only on elements which need to have a visual impact or emphasis. Common use cases are  images, charts, call to actions, etc.</p>
-                        <p>The available animations are configured by including the specified animation name directly on the element or a containing element.</p>
+                        <p>Animations are for adding motion or effects as they scroll into view. We recommend using
+                            animations both sparingly and only on elements which need to have a visual impact or
+                            emphasis. Common use cases are images, charts, call to actions, etc.</p>
+                        <p>The available animations are configured by including the specified animation name directly on
+                            the element or a containing element.</p>
                         <ul>
                             <li> <code>.animate-bounceInLeft</code> </li>
                             <li> <code>.animate-bounceInRight</code> </li>
@@ -114,7 +120,9 @@
                         </div>
                     </div>
                     <div class="two-thirds">
-                        <div id="animationSandbox" style="display: block;" class=""><span class="ca-gov-icon-logo text-accent3 text-center" style="font-size:250px;display:block;"></span></div>
+                        <div id="animationSandbox" style="display: block;" class=""><span
+                                class="ca-gov-icon-logo text-accent3 text-center"
+                                style="font-size:250px;display:block;"></span></div>
                     </div>
                 </div>
             </main>
@@ -143,4 +151,5 @@
         });
     </script>
 </body>
+
 </html>
