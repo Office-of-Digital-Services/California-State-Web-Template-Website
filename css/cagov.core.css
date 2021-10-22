@@ -13101,6 +13101,8 @@ a.list-group-item {
   margin-left: auto;
   padding-left: 15px;
   padding-right: 15px;
+  padding-left: 0;
+  padding-right: 0;
   position: relative;
 }
 
@@ -14589,6 +14591,8 @@ table.gsc-search-box td {
 .navigation-search {
   border: none;
   position: relative;
+  padding-left: 0;
+  padding-right: 0;
 }
 
 .main-navigation {
@@ -15359,7 +15363,11 @@ table.gsc-search-box td {
   }
 }
 
-.sub-nav .half, .sub-nav .third, .sub-nav .quarter, .sub-nav .two-thirds, .sub-nav .three-quarters {
+.sub-nav .half,
+.sub-nav .third,
+.sub-nav .quarter,
+.sub-nav .two-thirds,
+.sub-nav .three-quarters {
   padding: 0;
 }
 
@@ -15377,7 +15385,8 @@ table.gsc-search-box td {
 }
 
 @media (min-width: 992px) {
-  .half .second-level-nav, .two-thirds .second-level-nav {
+  .half .second-level-nav,
+  .two-thirds .second-level-nav {
     -moz-column-count: 2;
     -ms-column-count: 2;
     -webkit-column-count: 2;
@@ -15423,7 +15432,8 @@ table.gsc-search-box td {
   background: none;
 }
 
-.second-level-nav [class^="unit"] a, .second-level-nav [class^="unit"] .link-description {
+.second-level-nav [class^="unit"] a,
+.second-level-nav [class^="unit"] .link-description {
   -webkit-column-break-inside: avoid;
   /* for Safari, Chrome, Opera */
   page-break-inside: avoid;
@@ -15457,7 +15467,7 @@ a.second-level-link [class^="ca-gov-icon-"] {
 
 @media (max-width: 991px) {
   a.second-level-link {
-    padding: 10px 15px 10px 40px !important;
+    padding: 10px 15px 10px 20px !important;
   }
   a.second-level-link:first-child {
     margin-top: 2px !important;
@@ -15582,7 +15592,7 @@ a.second-level-link [class^="ca-gov-icon-"] {
 }
 
 .main-navigation.megadropdown.original .second-level-nav > li {
-  padding: .3em .7rem .4em 1rem;
+  padding: 0.3em 0.7rem 0.4em 1rem;
   border: none;
   -webkit-column-break-inside: avoid;
   page-break-inside: avoid;
@@ -15642,7 +15652,9 @@ a.second-level-link [class^="ca-gov-icon-"] {
   }
 }
 
-.media-left, .media-right, .media-body {
+.media-left,
+.media-right,
+.media-body {
   display: table-cell;
   vertical-align: top;
 }
@@ -16274,13 +16286,16 @@ a.second-level-link [class^="ca-gov-icon-"] {
   .nav-full-width-icons .settings-links {
     margin-top: -52px;
   }
-  .nav-full-width-icons .settings-links a, .nav-full-width-icons .settings-links button {
+  .nav-full-width-icons .settings-links a,
+  .nav-full-width-icons .settings-links button {
     padding: 8px 10px 8px 10px;
     border: 1px solid #fff;
     border-radius: 3px;
     color: #fff;
   }
-  .nav-full-width-icons .settings-links a:hover, .nav-full-width-icons .settings-links a:focus, .nav-full-width-icons .settings-links button:hover, .nav-full-width-icons .settings-links button:focus {
+  .nav-full-width-icons .settings-links a:hover, .nav-full-width-icons .settings-links a:focus,
+  .nav-full-width-icons .settings-links button:hover,
+  .nav-full-width-icons .settings-links button:focus {
     border: 1px solid #fff;
   }
 }
@@ -16302,7 +16317,8 @@ a.second-level-link [class^="ca-gov-icon-"] {
     top: 20px;
     z-index: 9;
   }
-  .nav-full-width-icons .settings-links .utility-links a, .nav-full-width-icons .settings-links .utility-links button {
+  .nav-full-width-icons .settings-links .utility-links a,
+  .nav-full-width-icons .settings-links .utility-links button {
     padding: 8px 10px 8px 10px;
     border: 1px solid #046B99;
     border-radius: 3px;
@@ -16331,7 +16347,6 @@ a.second-level-link [class^="ca-gov-icon-"] {
 
 .utility-header .flex-row .social-media-links .header-cagov-logo {
   margin-right: 20px;
-  margin-left: 20px;
 }
 
 .utility-header .flex-row .social-media-links .header-cagov-logo img {
@@ -16342,7 +16357,6 @@ a.second-level-link [class^="ca-gov-icon-"] {
 @media (min-width: 767px) and (max-width: 991px) {
   .utility-header .flex-row .social-media-links .header-cagov-logo {
     margin-right: 15px;
-    margin-left: 15px;
   }
 }
 
@@ -16385,7 +16399,7 @@ a.second-level-link [class^="ca-gov-icon-"] {
 
 .utility-header .flex-row .settings-links a {
   margin: 0 10px 0 10px;
-  font-size: .9em;
+  font-size: 0.9em;
 }
 
 @media (max-width: 767px) {
