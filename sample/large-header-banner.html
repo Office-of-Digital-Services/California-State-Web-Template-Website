@@ -69,7 +69,7 @@ Based on Twitter Bootstrap
             <!--#include virtual="/ssi/header-large-banner.html" -->
         </section>
 
-        <div class="container p-b-lg">
+        <div class="container p-b-lg p-t-md">
             <main class="main-primary">
                 <ol class="breadcrumb">
                     <li><a href="../index.html" title="Home page">Home</a></li>
@@ -81,10 +81,12 @@ Based on Twitter Bootstrap
                 <p>The large header banner is a full screen hero banner that will dynamically calculate the height of
                     the window and fill it with the chosen image. To use this banner type add
                     <code>/ssi/header-large-banner.html</code> using the SSI include method right below the header of
-                    the desired page.</p>
+                    the desired page.
+                </p>
                 <p><span class="label label-info">Note:</span> To have the banner dissapear in a mobile viewport add the
                     <code>.primary</code> class to the <code>&lt;body&gt;</code> element of the page otherwise the
-                    banner will remain in all screen sizes.</p>
+                    banner will remain in all screen sizes.
+                </p>
                 <pre>
 &lt;/header&gt; <br>&lt;!-- Include Page Template --&gt;
  &lt;!--#include virtual=&quot;/ssi/<strong>header-large-banner.html</strong>&quot; --&gt;
@@ -94,7 +96,8 @@ Based on Twitter Bootstrap
                     located in the <strong>ssi </strong>directory. The image is set by changing the
                     <code>background</code> property in the style attribute for
                     <code>&lt;div class="header-large-banner" style="background-image: url('<strong>/sample/images/background_2.jpg</strong>');"&gt;</code>.
-                    The recommended dimensions of the banner images are 1500 by 500 pixels. </p>
+                    The recommended dimensions of the banner images are 1500 by 500 pixels.
+                </p>
 
                 <h2>Other hero banner options</h2>
 

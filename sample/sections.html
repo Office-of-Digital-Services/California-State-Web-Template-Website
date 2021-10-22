@@ -67,8 +67,8 @@
                 </ol>
             </div>
             <div class="container">
-                <div class="group">
-                    <div class="two-thirds">
+                <div class="row">
+                    <div class="col-md-8">
                         <h1>Sections</h1>
                         <p>Sections are a new layout tool that was introduced in the CA Gov template v5 that provide
                             authors with a means of creating modern looking pages often associated with promotion pages
@@ -80,17 +80,20 @@
                         <p>A slight change was made to the v5 template to accomodate this full width layout while
                             maintaining backwards compatability with v4 templates. Specifically v4 templates have a
                             <code>.wrapper</code> div just inside the <code>.main-content</code> div. The
-                            <code>.wrapper</code> class is not used in this layout.</p>
+                            <code>.wrapper</code> class is not used in this layout.
+                        </p>
 
                         <p>If organizations wish to use the new <code>.section</code> feature within pages already
                             created using the v4 methodology there are some things that can be done but they are not
                             without limitations for some systems.</p>
                         <p><strong>1)</strong> Webmasters can manually remove the <code>.wrapper</code> class and wrap
                             <code>.section</code>'s around the content. Note: Failing to put content into a section will
-                            cause the content to fill the full horizontal space.</p>
+                            cause the content to fill the full horizontal space.
+                        </p>
                         <p><strong>2)</strong> If changing the html is not possible the following javascript can be
                             included. Note: Templates using <code>.two-column</code> layout will display the
-                            <code>.main-secondary</code> below the main content. </p>
+                            <code>.main-secondary</code> below the main content.
+                        </p>
 
                         <pre>
 &lt;script&gt;
@@ -117,7 +120,7 @@ $(document).ready(function() {
                         <p>A <code>.section</code> without any additional style classes will be white.</p>
 
                     </div>
-                    <div class="third">
+                    <div class="col-md-4">
                         <h2>Source Code:</h2>
                         <pre><code class="overflow-auto"><!--#include virtual="/sample/modules/section-default.html" --></code></pre>
                     </div>
@@ -138,7 +141,7 @@ $(document).ready(function() {
             <!-- SECTION DEFAULT -->
             <div class="section section-default">
                 <div class="container">
-                    <div class="group">
+                    <div class="row">
                         <div class="half">
                             <h2>Section Default</h2>
                             <!--#include virtual="/sample/modules/section-content-test.html" -->
@@ -159,7 +162,7 @@ $(document).ready(function() {
             <!-- SECTION PRIMARY -->
             <div class="section section-primary">
                 <div class="container">
-                    <div class="group">
+                    <div class="row">
                         <div class="half">
                             <h2>Section Primary</h2>
                             <!--#include virtual="/sample/modules/section-content-test.html" -->
@@ -181,7 +184,7 @@ $(document).ready(function() {
             <!-- SECTION STANDOUT -->
             <div class="section section-standout">
                 <div class="container">
-                    <div class="group">
+                    <div class="row">
                         <div class="half">
                             <h2>Section Standout</h2>
                             <!--#include virtual="/sample/modules/section-content-test.html" -->
@@ -202,7 +205,7 @@ $(document).ready(function() {
             <!-- SECTION UNDERSTATED -->
             <div class="section section-understated">
                 <div class="container">
-                    <div class="group">
+                    <div class="row">
                         <div class="half">
                             <h2>Section Understated</h2>
                             <!--#include virtual="/sample/modules/section-content-test.html" -->
@@ -224,7 +227,7 @@ $(document).ready(function() {
             <!-- SECTION INVERTED -->
             <div class="section section-inverted">
                 <div class="container">
-                    <div class="group">
+                    <div class="row">
                         <div class="half">
                             <h2>Section Inverted</h2>
                             <!--#include virtual="/sample/modules/section-content-test.html" -->
@@ -245,7 +248,7 @@ $(document).ready(function() {
             <!-- SECTION COLLAPSED -->
             <div class="section collapsed">
                 <div class="container">
-                    <div class="group">
+                    <div class="row">
                         <div class="half">
                             <h2>Section Collapsed</h2>
                             <!--#include virtual="/sample/modules/section-content-test.html" -->
