@@ -29,12 +29,13 @@ var jssrc = [
     'source/js/libs/modernizr.js',
 
     // BOOTSTRAP 
-   'source/js/bootstrap/bootstrap.min.js',
+    'source/js/bootstrap/bootstrap.min.js',
 
 
     // CAGOV CORE
     'source/js/cagov/fixed-header.js',
     'source/js/cagov/accordion.js',
+    'source/js/cagov/accordion-list.js',
     'source/js/cagov/navigation.js',
     //'source/js/cagov/search.js',
     'source/js/cagov/sourcecode.js',
@@ -106,7 +107,7 @@ gulp.task('delta', function () {
 
 });
 // delta min
-gulp.task('deltamin',  function () {
+gulp.task('deltamin', function () {
     return gulp.src('source/scss/colorscheme/colorscheme-delta-import.scss')
         .pipe(sass({ outputStyle: 'expanded' }))
         // .pipe(autoprefixer(['last 3 versions', '> 1%'], { cascade: true }))
@@ -189,7 +190,7 @@ gulp.task('oceanside', function () {
 
 });
 // oceanside min
-gulp.task('oceansidemin',  function () {
+gulp.task('oceansidemin', function () {
     return gulp.src('source/scss/colorscheme/colorscheme-oceanside-import.scss')
         .pipe(sass({ outputStyle: 'expanded' }))
         // .pipe(autoprefixer(['last 3 versions', '> 1%'], { cascade: true }))
@@ -234,7 +235,7 @@ gulp.task('orangecountymin', function () {
 
 
 // PASO ROBLES
-gulp.task('pasorobles',  function () {
+gulp.task('pasorobles', function () {
     return gulp.src('source/scss/colorscheme/colorscheme-pasorobles-import.scss')
         .pipe(sass({ outputStyle: 'expanded' }))
         .pipe(header(banner, { pkg: pkg }))
@@ -472,7 +473,7 @@ gulp.task('js', done => {
         .pipe(concat('cagov.core.js'))
         .pipe(header(bannerjs, { pkg: pkg }))
         .pipe(gulp.dest('js'));
-        done();
+    done();
 });
 
 // JS Core Min 
@@ -482,7 +483,7 @@ gulp.task('jsmin', function () {
         .pipe(uglify())
         .pipe(header(bannerjs, { pkg: pkg }))
         .pipe(gulp.dest('js'));
-        done();
+    done();
 });
 
 
