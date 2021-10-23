@@ -42,7 +42,7 @@ var jssrc = [
     'source/js/cagov/tabs.js'
 ];
 
-
+var jssrcmap = ['source/js/bootstrap/bootstrap.min.js.map',];
 // creating assets folder and copiing index file in there.
 //gulp.task('copy', function() {
 // gulp.src('index.html')  //src where we put the name of the file we want to work with and use as an input
@@ -474,6 +474,10 @@ gulp.task('js', done => {
         .pipe(header(bannerjs, { pkg: pkg }))
         .pipe(gulp.dest('js'));
     done();
+    gulp.src(jssrcmap)
+        .pipe(concat('bootstrap.min.js.map'))
+        .pipe(gulp.dest('js'));
+    done();
 });
 
 // JS Core Min 
@@ -482,6 +486,10 @@ gulp.task('jsmin', function () {
         .pipe(concat('cagov.core.min.js'))
         .pipe(uglify())
         .pipe(header(bannerjs, { pkg: pkg }))
+        .pipe(gulp.dest('js'));
+    done();
+    gulp.src(jssrcmap)
+        .pipe(concat('bootstrap.min.js.map'))
         .pipe(gulp.dest('js'));
     done();
 });
