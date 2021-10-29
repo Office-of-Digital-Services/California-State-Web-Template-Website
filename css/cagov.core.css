@@ -1,5 +1,5 @@
 /**
- * CA State Template v6 -  @version v6.0.5 -  10/22/2021 
+ * CA State Template v6 -  @version v6.0.6 -  10/29/2021 
   STYLES COMPILED FROM SOURCE (SCSS) DO NOT MODIFY */
 /* -----------------------------------------
    BOOTSTRAP v4.6.0 - /source/scss/bootstrap/ 
@@ -12356,7 +12356,8 @@ a:hover {
 }
 
 /* Solution for links that are behind fixed Header */
-#main-content a, #main-content button {
+#main-content a,
+#main-content button {
   scroll-margin-top: 120px !important;
 }
 
@@ -12372,15 +12373,23 @@ p {
   margin-bottom: 0.7rem;
 }
 
-.ie9 p + h1, .ie9 p + .h1, .ie9 p + h2, .ie9 p + .h2, .ie9 p + h3, .ie9 p + .h3, .ie9 p + h4, .ie9 p + .h4 {
+.ie9 p + h1, .ie9 p + .h1,
+.ie9 p + h2,
+.ie9 p + .h2,
+.ie9 p + h3,
+.ie9 p + .h3,
+.ie9 p + h4,
+.ie9 p + .h4 {
   padding-top: 10px;
 }
 
-h1 span[class^="ca-gov-icon-"]:first-child, .h1 span[class^="ca-gov-icon-"]:first-child, .h1 span[class^="ca-gov-icon-"]:first-child {
+h1 span[class^="ca-gov-icon-"]:first-child, .h1 span[class^="ca-gov-icon-"]:first-child,
+.h1 span[class^="ca-gov-icon-"]:first-child {
   display: none;
 }
 
-h1, .h1, .h1 {
+h1, .h1,
+.h1 {
   font-size: 38.4px;
   font-size: 2.4rem;
   margin-top: 3rem;
@@ -12388,7 +12397,8 @@ h1, .h1, .h1 {
   font-family: "Asap Condensed", sans-serif;
 }
 
-h2, .h2, .h2 {
+h2, .h2,
+.h2 {
   font-size: 31.04px;
   font-size: 1.94rem;
   margin-top: 2.7rem;
@@ -12396,7 +12406,8 @@ h2, .h2, .h2 {
   font-family: "Asap Condensed", sans-serif;
 }
 
-h3, .h3, .h3 {
+h3, .h3,
+.h3 {
   font-size: 24.64px;
   font-size: 1.54rem;
   margin-top: 2.4rem;
@@ -12404,7 +12415,8 @@ h3, .h3, .h3 {
   font-family: "Asap Condensed", sans-serif;
 }
 
-h4, .h4, .h4 {
+h4, .h4,
+.h4 {
   font-size: 20px;
   font-size: 1.25rem;
   margin-top: 2rem;
@@ -12412,42 +12424,54 @@ h4, .h4, .h4 {
   font-family: "Asap Condensed", sans-serif;
 }
 
-h5, .h5, .h5 {
+h5, .h5,
+.h5 {
   font-size: 16px;
   font-size: 1rem;
   margin-top: 1.7rem;
-  margin-bottom: .8rem;
+  margin-bottom: 0.8rem;
   font-family: "Asap Condensed", sans-serif;
 }
 
-h6, .h6, .h6 {
+h6, .h6,
+.h6 {
   font-size: 12.8px;
   font-size: 0.8rem;
   margin-top: 1.4rem;
-  margin-bottom: .6rem;
+  margin-bottom: 0.6rem;
   font-family: "Asap Condensed", sans-serif;
 }
 
 @media (max-width: 767px) {
-  h1, .h1, .h1 {
+  h1, .h1,
+  .h1 {
     font-size: 40px;
     font-size: 2.5rem;
   }
-  h2, .h2, .h2 {
+  h2, .h2,
+  .h2 {
     font-size: 32px;
     font-size: 2rem;
   }
-  h3, .h3, .h3 {
+  h3, .h3,
+  .h3 {
     font-size: 25.6px;
     font-size: 1.6rem;
   }
-  h4, .h4, .h4 {
+  h4, .h4,
+  .h4 {
     font-size: 20.8px;
     font-size: 1.3rem;
   }
 }
 
-h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6, .h1, .h2, .h3, .h4, .h5, .h6 {
+h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6,
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6 {
   line-height: 1.5;
 }
 
@@ -12492,7 +12516,28 @@ code {
   text-decoration-thickness: from-font;
 }
 
-.tab-group .nav-tabs li > a, .main-content .btn, .panel-title, .panel-heading a, .btn-more, .accordion .panel-heading a, .panel-group .panel-heading .panel-title a, .accordion .panel-heading .panel-title a, .panel-group .panel-heading .panel-title a, .service-tile-content .panel-heading .panel-title a, .service-tile-content .panel-heading a, .accordion .panel-heading a, .icon-link, .social a, .main-content a[role="button"], .main-content a[role="tab"], .gallery-item, .news-link, .news-icon, .socialsharer-container a, .thumbnail a, .explore-invite a {
+.tab-group .nav-tabs li > a,
+.main-content .btn,
+.panel-title,
+.panel-heading a,
+.btn-more,
+.accordion .panel-heading a,
+.panel-group .panel-heading .panel-title a,
+.accordion .panel-heading .panel-title a,
+.panel-group .panel-heading .panel-title a,
+.service-tile-content .panel-heading .panel-title a,
+.service-tile-content .panel-heading a,
+.accordion .panel-heading a,
+.icon-link,
+.social a,
+.main-content a[role="button"],
+.main-content a[role="tab"],
+.gallery-item,
+.news-link,
+.news-icon,
+.socialsharer-container a,
+.thumbnail a,
+.explore-invite a {
   text-decoration: none !important;
   background-image: none !important;
 }
@@ -12527,7 +12572,7 @@ a.list-group-item {
 
 /*dyslexic font*/
 @font-face {
-  font-family: 'OpenDyslexicAlta Regular';
+  font-family: "OpenDyslexicAlta Regular";
   src: url("../fonts/OpenDyslexicAlta-Regular.eat");
   src: url("../fonts/OpenDyslexicAlta-Regular.eot#iefix") format("embedded-opentype"), url("../fonts/OpenDyslexicAlta-Regular.ttf") format("truetype"), url("../fonts/OpenDyslexicAlta-Regular.woff") format("woff"), url("../fonts/OpenDyslexicAlta-Regular.svg#OpenDyslexicAlta") format("svg");
   font-weight: normal;
@@ -12535,7 +12580,7 @@ a.list-group-item {
 }
 
 @font-face {
-  font-family: 'OpenDyslexic Regular';
+  font-family: "OpenDyslexic Regular";
   src: url("../fonts/OpenDyslexic-Regular.eat");
   src: url("../fonts/OpenDyslexic-Regular.eot#iefix") format("embedded-opentype"), url("../fonts/OpenDyslexic-Regular.ttf") format("truetype"), url("../fonts/OpenDyslexic-Regular.woff") format("woff"), url("../fonts/OpenDyslexic-Regular.svg#OpenDyslexicAlta") format("svg");
   font-weight: normal;
@@ -17889,6 +17934,57 @@ cagov-accordion.prog-enhanced .accordion-alpha .plus-minus {
   padding-left: 1em;
   overflow: auto;
   visibility: visible;
+}
+
+/* -----------------------------------------
+   ACCORDIONS SIDE NAV
+   /source/scss/cagov/accordion-side-nav.scss
+----------------------------------------- */
+.side-nav .accordion {
+  position: relative;
+}
+
+.side-nav .accordion .list-group-item {
+  border-radius: 0;
+}
+
+.side-nav .accordion .list-group-item:focus {
+  outline: solid 2px #2ea3f2;
+  outline-offset: -2px;
+}
+
+.side-nav .accordion .accordion__heading {
+  padding: 0 !important;
+}
+
+.side-nav .accordion .accordion__heading .accordion__trigger {
+  padding-top: 0.75rem !important;
+  padding-bottom: 0.75rem !important;
+  padding-left: 1.25rem !important;
+  padding-right: 1.25rem !important;
+  color: #212529;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.side-nav .accordion .accordion__heading .accordion__trigger:hover, .side-nav .accordion .accordion__heading .accordion__trigger:focus {
+  background-color: #f8f9fa;
+}
+
+.side-nav .accordion .accordion__heading .accordion__trigger::before {
+  display: none;
+}
+
+.side-nav .accordion .accordion__heading .accordion__trigger:after {
+  position: absolute;
+  font-family: "CaGov" !important;
+  content: "\35";
+  right: 15px;
+  transition: transform 0.2s ease-in-out;
+}
+
+.side-nav .accordion .accordion__heading .accordion__trigger[aria-expanded="true"]:after {
+  transform: rotate(90deg);
 }
 
 /* -----------------------------------------
