@@ -118,17 +118,12 @@
 
                 <h2>JS</h2>
                 <p>
-                    Many of our components require the use of JavaScript to function. Specifically, they require jQuery
-                    and our own <code>cagov.core.js</code>. Place the following
-                    <code>&lt;script&gt;</code>s in the <code>&lt;head&gt;</code> section right after stylesheet links.
-                </p>
-
-                <pre>
-<span class="text-accent-p2">&lt;script</span> <span class="text-info">src=</span><span class="text-accent7">"https://code.jquery.com/jquery-3.6.0.min.js"</span> <span class="text-info">type=</span><span class="text-accent7">"text/javascript"</span><span class="text-accent-p2">&gt;&lt;/script&gt;</span>
-<span class="text-accent-p2">&lt;script</span> <span class="text-info">src=</span><span class="text-accent7">"https://code.jquery.com/jquery-migrate-3.3.2.min.js"</span><span class="text-accent-p2">&gt;&lt;/script&gt;</span></pre>
-                <p>
-                    Finally, place the rest of js reffernces near the end of your pages, right before the closing
-                    <code>&lt;/body&gt;</code> tag
+                    Many of our components require the use of our own <code>cagov.core.js</code> JavaScript file to
+                    function. Place the following
+                    near the end of your pages, right before the closing
+                    <code>&lt;/body&gt;</code> tag. (Please note, that starting from release 6.0.6 State Template
+                    stopped using any
+                    jQuery libraries, or any components that are using jQuery.)
                 </p>
                 <div class="row">
                     <div class="col-6">
@@ -162,9 +157,7 @@
          <span class="text-accent-p2">&lt;link</span> <span class="text-info">rel=</span><span class="text-accent7">"stylesheet"</span> <span class="text-info">href=</span><span class="text-accent7">"/css/colorscheme-oceanside.css"</span><span class="text-accent-p2">&gt;</span>
         
          <span class="text-accent-p2">&lt;title&gt;</span>California State Webpage<span class="text-accent-p2">&lt;/title&gt;</span>
-         <span class="text-muted">&lt;!-- Required JS --&gt;</span>
-         <span class="text-accent-p2">&lt;script </span><span class="text-info">src=</span><span class="text-accent7">"https://code.jquery.com/jquery-3.6.0.min.js"</span> <span class="text-info">type=</span><span class="text-accent7">"text/javascript"</span><span class="text-accent-p2">&gt;&lt;/script&gt;</span>
-         <span class="text-accent-p2">&lt;script </span><span class="text-info">src=</span><span class="text-accent7">"https://code.jquery.com/jquery-migrate-3.3.2.min.js"</span> <span class="text-info">type=</span><span class="text-accent7">"text/javascript"</span><span class="text-accent-p2">&gt;&lt;/script&gt;</span>
+         
      <span class="text-accent-p2">&lt;/head&gt;</span>
      <span class="text-accent-p2">&lt;body&gt;</span>
         <span class="text-accent-p2">&lt;h1&gt;</span>California State Webpage<span class="text-accent-p2">&lt;/h1&gt;</span>
