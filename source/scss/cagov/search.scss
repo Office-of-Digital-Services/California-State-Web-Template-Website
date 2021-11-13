@@ -37,6 +37,8 @@ $search-input-border-width: 3px;
 
     // full width for all sizes
     width: 100%;
+    // we are going to animate in our height if needed
+    max-height: 0;
     border: none;
 
     // on our larger screens our whole header is one big gigantic position absolute thing
@@ -547,7 +549,7 @@ button.gsc-search-button {
 
 /* ------------- Custom search box (not google) --------------*/
 .search-container {
-    .search-form {
+    #Search {
         display: flex;
 
         .gsc-search-button {
@@ -578,7 +580,7 @@ button.gsc-search-button {
     .container {
         padding: 0 !important;
 
-        .search-form {
+        #Search {
             .gsc-search-button {
                 right: 0;
                 outline-offset: -2px;
@@ -593,7 +595,7 @@ button.gsc-search-button {
 
 .featured-search.active {
     .container {
-        .search-form {
+        #Search {
             .gsc-search-button {
                 right: 50px;
                 outline-offset: -2px;
@@ -844,42 +846,13 @@ table.gsc-search-box td {
         font-size: 34px !important;
     }
 
-    .search-container .search-form .close-search {
+    .search-container #Search .close-search {
         font-size: 34px !important;
         padding-left: 10px;
     }
 
-    .search-container .search-form .gsc-search-button {
+    .search-container #Search .gsc-search-button {
         padding-left: 10px;
         padding-right: 10px;
-    }
-}
-
-/*remove desctop search */
-@media (max-width: $screen-sm-max) {
-    #featured-search {
-        display: none;
-    }
-}
-
-/* MOBILE SEARCH */
-
-#head-search {
-    background: rgba(0, 0, 0, 0.5);
-    opacity: 1;
-    padding: 0 !important;
-    transition: ease-in 0.3s;
-    .container {
-        padding: 10px !important;
-    }
-    .gsc-search-button {
-        right: 50px !important;
-        outline-offset: -2px;
-    }
-    .close-search-btn {
-        display: block !important;
-    }
-    @media (min-width: $screen-md-min) {
-        display: none;
     }
 }

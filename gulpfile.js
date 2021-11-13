@@ -37,7 +37,7 @@ var jssrc = [
     'source/js/cagov/accordion.js',
     'source/js/cagov/accordion-list.js',
     'source/js/cagov/navigation.js',
-    //'source/js/cagov/search.js',
+    'source/js/cagov/search.js',
     'source/js/cagov/sourcecode.js',
     'source/js/cagov/tabs.js'
 ];
@@ -474,10 +474,6 @@ gulp.task('js', done => {
         .pipe(header(bannerjs, { pkg: pkg }))
         .pipe(gulp.dest('js'));
     done();
-    gulp.src(jssrcmap)
-        .pipe(concat('bootstrap.min.js.map'))
-        .pipe(gulp.dest('js'));
-    done();
 });
 
 // JS Core Min 
@@ -486,10 +482,6 @@ gulp.task('jsmin', function () {
         .pipe(concat('cagov.core.min.js'))
         .pipe(uglify())
         .pipe(header(bannerjs, { pkg: pkg }))
-        .pipe(gulp.dest('js'));
-    done();
-    gulp.src(jssrcmap)
-        .pipe(concat('bootstrap.min.js.map'))
         .pipe(gulp.dest('js'));
     done();
 });
