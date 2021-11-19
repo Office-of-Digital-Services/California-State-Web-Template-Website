@@ -8,7 +8,7 @@
     max-width: 100%;
 }
 
-@mixin line-overflow($line, $line-height ) {
+@mixin line-overflow($line, $line-height) {
     position: relative;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -18,7 +18,6 @@
     -webkit-line-clamp: $line; /* number of lines to show */
     -webkit-box-orient: vertical;
 }
-
 
 // Helper Mixins for service-group
 
@@ -34,17 +33,14 @@
 //       border-bottom: $border;
 //   }
 
-
 @mixin triangle-top() {
     $triangle-size: 7px;
     position: absolute;
     margin-left: -$triangle-size;
     left: 50%;
-    top: -$triangle-size+1px;
+    top: -$triangle-size + 1px;
     @include triangle(up, $triangle-size, $background-color);
 }
-
-
 
 //
 // Hex to rgba -  Usage: .rgba (#000000, .5); color: $rgba;
@@ -64,17 +60,14 @@
     color: rgba($red, $green, $blue, $alpha);
 }
 
-
 //
 // CONDENSED FONT
 // --------------------------------------------------
 
 @mixin font-condensed() {
-    font-family: 'Arial Narrow', 'Helvetica Narrow', Arial, Helvetica, sans-serif;
+    font-family: "Arial Narrow", "Helvetica Narrow", Arial, Helvetica, sans-serif;
     font-stretch: condensed;
 }
-
-
 
 //
 // REUSABLE STYLE FOR PUBLISHING DATE
@@ -92,37 +85,29 @@
 // .triangle($direction, $width, $height, $color)
 
 @mixin triangle-base() {
-    content: '';
+    content: "";
     display: block;
     width: 0;
     height: 0;
 }
 
-
-
 @mixin triangle1($direction, $width, $height, $color) {
     @if ($direction == up) {
         @include triangle-base();
-        border-left: ($width / 2)solid transparent;
-        border-right: ($width / 2)solid transparent;
+        border-left: ($width / 2) solid transparent;
+        border-right: ($width / 2) solid transparent;
         border-bottom: $height solid $color;
-    }
-
-    @else if ($direction == down) {
+    } @else if ($direction == down) {
         @include triangle-base();
         border-left: ($width / 2) solid transparent;
         border-right: ($width / 2) solid transparent;
         border-top: $height solid $color;
-    }
-
-    @else if ($direction == left) {
+    } @else if ($direction == left) {
         @include triangle-base();
         border-top: ($width / 2) solid transparent;
         border-bottom: ($width / 2) solid transparent;
         border-right: $height solid $color;
-    }
-
-    @else {
+    } @else {
         @include triangle-base();
         border-top: ($width / 2) solid transparent;
         border-bottom: ($width / 2) solid transparent;
@@ -134,8 +119,6 @@
     @include triangle1($direction, $size * 2, $size, $color);
 }
 
-
-
 //
 // BUTTONS VARIATIONS
 // --------------------------------------------------
@@ -145,18 +128,31 @@
     background-color: $background;
     border-color: $border;
 
-    &:hover, &:focus, &:not(:disabled):not(.disabled):active, &:not(:disabled):not(.disabled).active, .show > .dropdown-toggle, .open > .dropdown-toggle & {
+    &:hover,
+    &:focus,
+    &:not(:disabled):not(.disabled):active,
+    &:not(:disabled):not(.disabled).active,
+    .show > .dropdown-toggle,
+    .open > .dropdown-toggle & {
         color: $hover-color;
         background-color: $hover-bg;
         border-color: $hover-border;
     }
 
-    &:not(:disabled):not(.disabled):active, &:not(:disabled):not(.disabled).active, .open > .dropdown-toggle & {
+    &:not(:disabled):not(.disabled):active,
+    &:not(:disabled):not(.disabled).active,
+    .open > .dropdown-toggle & {
         background-image: none;
     }
 
-    &.disabled, &[disabled], fieldset[disabled] & {
-        &, &:hover, &:focus, &:active, &.active {
+    &.disabled,
+    &[disabled],
+    fieldset[disabled] & {
+        &,
+        &:hover,
+        &:focus,
+        &:active,
+        &.active {
             background-color: $background !important;
             border-color: $border;
         }
@@ -176,7 +172,6 @@
     border-radius: $border-radius;
 }
 
-
 //
 // Custom link colors
 // --------------------------------------------------
@@ -187,7 +182,8 @@
         text-decoration: $decoration;
         //-webkit-transition: all 0.25s;
         //transition:all 0.25s;
-        &:hover, &:focus {
+        &:hover,
+        &:focus {
             color: $link-hover-color;
             text-decoration: $hover-decoration;
         }
@@ -197,7 +193,6 @@
         }
     }
 }
-
 
 //
 // Custom Chart related Colors
@@ -214,8 +209,6 @@
     }
 }
 
-
-
 //
 // REM's with px fallback
 // --------------------------------------------------
@@ -223,8 +216,8 @@
 @mixin font-size($fontsize) {
     $remSize: $fontsize;
     $pxSize: ($fontsize * 16); // $font-size-base was overwritten by bootstrap-em.scss. Setting it manually
-    font-size: $pxSize#{'px'};
-    font-size: $remSize#{'rem'};
+    font-size: $pxSize#{"px"};
+    font-size: $remSize#{"rem"};
 }
 
 @mixin sr-only {
@@ -234,7 +227,7 @@
     margin: -1px;
     padding: 0;
     overflow: hidden;
-    clip: rect(0,0,0,0);
+    clip: rect(0, 0, 0, 0);
     border: 0;
 }
 
@@ -340,10 +333,9 @@
     display: none !important;
 }
 
-
 @mixin label {
     display: inline;
-    padding: .2em .6em .3em;
+    padding: 0.2em 0.6em 0.3em;
     font-size: 75%;
     font-weight: bold;
     line-height: 1;
@@ -351,7 +343,7 @@
     text-align: center;
     white-space: nowrap;
     vertical-align: baseline;
-    border-radius: .25em;
+    border-radius: 0.25em;
 
     a & {
         &:hover,
@@ -380,7 +372,8 @@
     color: $headings-color;
     @include font-size(1.25);
 
-    small, .small {
+    small,
+    .small {
         font-weight: normal;
         line-height: 1;
         color: $headings-small-color;
@@ -389,15 +382,33 @@
 }
 
 @mixin btn-lg {
-    @include button-size($padding-large-vertical, $padding-large-horizontal, $font-size-large, $line-height-large, $btn-border-radius-large);
+    @include button-size(
+        $padding-large-vertical,
+        $padding-large-horizontal,
+        $font-size-large,
+        $line-height-large,
+        $btn-border-radius-large
+    );
 }
 
 @mixin btn-sm {
-    @include button-size($padding-small-vertical, $padding-small-horizontal, $font-size-small, $line-height-small, $btn-border-radius-small);
+    @include button-size(
+        $padding-small-vertical,
+        $padding-small-horizontal,
+        $font-size-small,
+        $line-height-small,
+        $btn-border-radius-small
+    );
 }
 
 @mixin btn-xs {
-    @include button-size($padding-xs-vertical, $padding-xs-horizontal, $font-size-x-small, $line-height-small, $btn-border-radius-small);
+    @include button-size(
+        $padding-xs-vertical,
+        $padding-xs-horizontal,
+        $font-size-x-small,
+        $line-height-small,
+        $btn-border-radius-small
+    );
 }
 
 @mixin card {
@@ -457,18 +468,21 @@
     }
     // Consolidation - inline media querries looked messy and verbose.
     @media (max-width: $screen-xs-max) {
-        .exam-item, .job-item, .profile-item, .course-item {
+        .exam-item,
+        .job-item,
+        .profile-item,
+        .course-item {
             // Remove float on small mobile
-            .title, .filing-date, .start-date, .published, a.btn {
+            .title,
+            .filing-date,
+            .start-date,
+            .published,
+            a.btn {
                 float: none !important;
             }
         }
     }
 }
-
-
-
-
 
 @mixin table {
     width: 100%;
@@ -514,14 +528,16 @@
     }
 }
 
-
 @mixin table-default {
     &.table-default {
         border: none;
         // Table Body
-        > thead, > tbody, > tfoot {
+        > thead,
+        > tbody,
+        > tfoot {
             > tr {
-                > th, > td {
+                > th,
+                > td {
                     background: #f2f2f2;
                     border: 2px solid #fff;
                 }
@@ -529,16 +545,19 @@
         }
         // Table Head
         > thead > tr {
-            > th, > td {
+            > th,
+            > td {
                 background: #d9d9d9;
                 border: 2px solid #fff;
             }
         }
     }
 
-    > tbody, > tfoot {
+    > tbody,
+    > tfoot {
         > tr {
-            > th, > td {
+            > th,
+            > td {
                 background: #f2f2f2;
                 border: 2px solid #fff;
             }
@@ -547,7 +566,8 @@
 
     > thead {
         > tr {
-            > th, > td {
+            > th,
+            > td {
                 background: #d9d9d9;
                 border: 2px solid #fff;
             }
@@ -563,9 +583,12 @@
     &.table-default {
         border: none;
         // Table Body
-        > thead, > tbody, > tfoot {
+        > thead,
+        > tbody,
+        > tfoot {
             > tr {
-                > th, > td {
+                > th,
+                > td {
                     background: #f2f2f2;
                     border: 2px solid #fff;
                 }
@@ -573,7 +596,8 @@
         }
         // Table Head
         > thead > tr {
-            > th, > td {
+            > th,
+            > td {
                 background: #d9d9d9;
                 border: 2px solid #fff;
             }
@@ -582,7 +606,8 @@
 
     > tbody {
         > tr:nth-child(odd) {
-            > th, > td {
+            > th,
+            > td {
                 background-color: #f9f9f9;
             }
         }
@@ -600,7 +625,13 @@
     background-image: none; // Reset unusual Firefox-on-Android default style; see https://github.com/necolas/normalize.css/issues/214
     border: 1px solid transparent;
     white-space: nowrap;
-    @include button-size($padding-base-vertical, $padding-base-horizontal, $font-size-base, $line-height-base, $btn-border-radius-base);
+    @include button-size(
+        $padding-base-vertical,
+        $padding-base-horizontal,
+        $font-size-base,
+        $line-height-base,
+        $btn-border-radius-base
+    );
     @include user-select(none);
 
     &,
@@ -623,14 +654,14 @@
     &.active {
         outline: 0;
         background-image: none;
-        @include box-shadow(inset 0 3px 5px rgba(0,0,0,.125));
+        @include box-shadow(inset 0 3px 5px rgba(0, 0, 0, 0.125));
     }
 
     &.disabled,
     &[disabled],
     fieldset[disabled] & {
         cursor: $cursor-disabled;
-        @include opacity(.65);
+        @include opacity(0.65);
         @include box-shadow(none);
     }
 }
@@ -659,7 +690,14 @@
 
 @mixin btn-default {
     // Here is what is has in bootstrap 4 $background, border, hover-background, hover-border, $active-background, active-border
-    @include button-variant($btn-default-bg, $btn-default-border, #f5f5f5, $btn-default-border, #f5f5f5, $btn-default-border);
+    @include button-variant(
+        $btn-default-bg,
+        $btn-default-border,
+        #f5f5f5,
+        $btn-default-border,
+        #f5f5f5,
+        $btn-default-border
+    );
 }
 
 @function tint($color, $percentage) {
@@ -670,18 +708,16 @@
     @return mix(black, $color, $percentage);
 }
 
-
 @function contrast($color) {
     @if (lightness($color) > 50) {
         @return #000000; // Lighter backgorund, return dark color
-    }
-    @else {
+    } @else {
         @return #ffffff; // Darker background, return light color
     }
 }
 
 @mixin icon-withslash($icon-code) {
-    content: #{"\"\\"}#{$icon-code + "\""};
+    content: #{'"\\'}#{$icon-code + '"'};
 }
 
 // ######################## Old Bootstrap3 Mixins #############################
@@ -882,12 +918,14 @@
 @mixin panel-variant($border, $heading-text-color, $heading-bg-color, $heading-border) {
     border-color: $border;
 
-    & > .panel-heading, & > .card-heading {
+    & > .panel-heading,
+    & > .card-heading {
         color: $heading-text-color;
         background-color: $heading-bg-color;
         border-color: $heading-border;
 
-        + .panel-collapse > .panel-body, + .card-collapse > .card-body {
+        + .panel-collapse > .panel-body,
+        + .card-collapse > .card-body {
             border-top-color: $border;
         }
 
@@ -897,8 +935,10 @@
         }
     }
 
-    & > .panel-footer, & > .card-footer {
-        + .panel-collapse > .panel-body, + .card-collapse > .card-body {
+    & > .panel-footer,
+    & > .card-footer {
+        + .panel-collapse > .panel-body,
+        + .card-collapse > .card-body {
             border-bottom-color: $border;
         }
     }
@@ -912,18 +952,21 @@
     }
 }
 
-
 // Underline
 
-
-
-@mixin underline($underlinecolor: $brand-primary, $underlinehovercolor: darken($link-color, 15%), $size-long: 2px, $size-height: 1px, $bottom: 4%) {
+@mixin underline(
+    $underlinecolor: $brand-primary,
+    $underlinehovercolor: darken($link-color, 15%),
+    $size-long: 2px,
+    $size-height: 1px,
+    $bottom: 4%
+) {
     a:not(.btn) {
-       // background-image: linear-gradient(to right, $underlinecolor 50%, transparent 50%);
-       // background-repeat: repeat-x;
-       // background-size: $size-long $size-height;
-       // background-position: center bottom $bottom;
-       // background-origin: padding-box;
+        // background-image: linear-gradient(to right, $underlinecolor 50%, transparent 50%);
+        // background-repeat: repeat-x;
+        // background-size: $size-long $size-height;
+        // background-position: center bottom $bottom;
+        // background-origin: padding-box;
         text-decoration: underline;
         text-decoration-style: dotted;
         text-decoration-thickness: from-font;
@@ -946,6 +989,6 @@
     text-decoration-thickness: from-font;
 }
 
-@mixin outline($size){
-	outline: $outline-default-style $size $outline-default-color;
+@mixin outline($size) {
+    outline: $outline-default-style $size $outline-default-color !important;
 }

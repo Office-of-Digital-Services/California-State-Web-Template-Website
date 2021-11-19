@@ -9,10 +9,8 @@
 	border-color: $input-border;
 }
 
-label,
-.form-control-label {
+label {
 	font-weight: 700;
-	margin-bottom: 0.3rem;
 }
 .input-group-text {
 	border-radius: $border-radius-base;
@@ -28,7 +26,6 @@ label,
 	}
 }
 .custom-file-label:after {
-	background-color: $color-p2;
 	color: $white;
 	border-radius: $border-radius-base;
 	font-weight: 500;
@@ -153,9 +150,7 @@ label,
 	width: 18px;
 	height: 18px;
 	font-size: 12px;
-	color: $color-p2;
 	border: 1px solid;
-	border-color: $color-p2;
 	border-radius: 50%;
 	i {
 		border-radius: 50%;
@@ -193,7 +188,6 @@ label,
 	font-size: 12px;
 	color: $white;
 	border: 1px solid;
-	border-color: $color-p2;
 	i {
 		display: block;
 		height: 100%;
@@ -222,17 +216,13 @@ input[type="radio"]:checked + i,
 input[type="checkbox"]:checked + * i,
 input[type="radio"]:checked + * i {
 	color: #fff;
-	background-color: $color-p2;
-	border-color: $color-p2;
-}
-
-.bg-primary--checked.checked,
-.checked .bg-primary--checked {
-	background-color: $color-p2 !important;
 }
 
 // custom select
-
+.form-select {
+	background-image: url("../images/icons/caret-down.svg");
+	background-size: 20px 20px;
+}
 .select {
 	border: 1px solid $input-border;
 	overflow: hidden;
@@ -281,23 +271,6 @@ input[type="text"]::-ms-clear {
 	min-width: 100px;
 }
 
-// radio and checkbox in form of button
-/* primary Color */
-input[type="checkbox"]:checked + .bg-primary--checked,
-input[type="radio"]:checked + .bg-primary--checked,
-input[type="checkbox"]:checked + * .bg-primary--checked,
-input[type="radio"]:checked + * .bg-primary--checked {
-	background-color: $color-p2;
-}
-
-/* highlight Color */
-input[type="checkbox"]:checked + .bg-highlight--checked,
-input[type="radio"]:checked + .bg-highlight--checked,
-input[type="checkbox"]:checked + * .bg-highlight--checked,
-input[type="radio"]:checked + * .bg-highlight--checked {
-	background-color: $color-p1;
-}
-
 /* White Color */
 input[type="checkbox"]:checked + .color-white--checked,
 input[type="radio"]:checked + .color-white--checked,
@@ -306,20 +279,9 @@ input[type="radio"]:checked + * .color-white--checked {
 	color: #fff !important;
 }
 
-/* Focusable custom checkboxes and radios for accessibility */
-input[type="checkbox"]:focus + div,
-input[type="radio"]:focus + div {
-	box-shadow: 0 0 2px 2px $color-s3;
-}
 input[type="checkbox"]:focus + .btn,
 input[type="radio"]:focus + .btn {
 	@include outline(2px);
-}
-
-.custom-radio {
-	.custom-control-input:checked ~ .custom-control-label::before {
-		@include gradient-bg($color-p2);
-	}
 }
 
 .custom-checkbox {
@@ -328,7 +290,6 @@ input[type="radio"]:focus + .btn {
 	}
 
 	.custom-control-input:checked ~ .custom-control-label::before {
-		@include gradient-bg($color-p2);
 		border-radius: $border-radius-base;
 	}
 }
