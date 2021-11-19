@@ -95,8 +95,8 @@ Based on Twitter Bootstrap
                         <h3>Source Code:</h3>
                         <div class="tab-group">
                             <ul id="sourceCode" class="nav nav-tabs" role="tablist">
-                                <li class="active"><a href="#html" role="tab" data-toggle="tab">HTML Markup</a></li>
-                                <li><a href="#microdata" role="tab" data-toggle="tab">Microdata</a></li>
+                                <li class="active"><a href="#html" role="tab" data-bs-toggle="tab">HTML Markup</a></li>
+                                <li><a href="#microdata" role="tab" data-bs-toggle="tab">Microdata</a></li>
                             </ul>
                             <!-- Tab panes -->
                             <div class="tab-content responsive">
@@ -126,8 +126,8 @@ Based on Twitter Bootstrap
                                 <hr>
                             </div>
                         </div>
-                        <button type="button" class="btn btn-default btn-sm" data-toggle="modal"
-                            data-target="#news-headlines">Show Source Code</button>
+                        <button type="button" class="btn btn-default btn-sm" data-bs-toggle="modal"
+                            data-bs-target="#news-headlines">Show Source Code</button>
 
                         <!-- Modal -->
                         <div class="modal fade" id="news-headlines" role="dialog">
@@ -135,7 +135,9 @@ Based on Twitter Bootstrap
                                 <div class="modal-content">
                                     <div class="modal-header">
                                         <h3 class="modal-title">HTML Markup</h3>
-                                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                        <button type="button" class="close btn btn-secondary"
+                                            data-bs-dismiss="modal"><span class="sr-only">Close modal</span><span
+                                                class="ca-gov-icon-close-mark" aria-hidden="true"></span></button>
                                     </div>
                                     <div class="modal-body">
                                         <strong aria-label="Source Code for News List">Source Code:</strong>
@@ -143,7 +145,7 @@ Based on Twitter Bootstrap
                                     </div>
                                     <div class="modal-footer">
                                         <button type="button" class="btn btn-default"
-                                            data-dismiss="modal">Close</button>
+                                            data-bs-dismiss="modal">Close</button>
                                     </div>
                                 </div>
                             </div>

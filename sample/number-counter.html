@@ -91,23 +91,26 @@ Based on Twitter Bootstrap
                 </div>
 
                 <!-- Trigger the modal with a button -->
-                <button type="button" class="btn btn-default btn-sm" data-toggle="modal"
-                    data-target="#number-counter-circles">Show Source Code</button>
+                <button type="button" class="btn btn-default btn-sm" data-bs-toggle="modal"
+                    data-bs-target="#number-counter-circles">Show Source Code</button>
                 <!-- Modal -->
                 <div class="modal fade" id="number-counter-circles" role="dialog">
                     <div class="modal-dialog modal-lg">
                         <div class="modal-content">
                             <div class="modal-header">
                                 <h4 class="modal-title">HTML Markup</h4>
-                                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                <button type="button" class="close btn btn-secondary" data-bs-dismiss="modal"><span
+                                        class="sr-only">Close modal</span><span class="ca-gov-icon-close-mark"
+                                        aria-hidden="true"></span></button>
                             </div>
                             <div class="modal-body">
 
                                 <div class="tab-group">
                                     <ul id="sourceCode" class="nav nav-tabs" role="tablist">
-                                        <li class="active"><a href="#html" role="tab" data-toggle="tab">HTML Markup</a>
+                                        <li class="active"><a href="#html" role="tab" data-bs-toggle="tab">HTML
+                                                Markup</a>
                                         </li>
-                                        <li><a href="#js" role="tab" data-toggle="tab">JavaScript</a></li>
+                                        <li><a href="#js" role="tab" data-bs-toggle="tab">JavaScript</a></li>
                                     </ul>
                                     <!-- Tab panes -->
                                     <div class="tab-content responsive">
@@ -182,7 +185,7 @@ function createCircles() {
 
                             </div>
                             <div class="modal-footer">
-                                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                <button type="button" class="btn btn-default" data-bs-dismiss="modal">Close</button>
                             </div>
                         </div>
                     </div>

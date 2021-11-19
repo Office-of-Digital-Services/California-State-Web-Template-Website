@@ -1,5 +1,5 @@
 /**
- * CA State Template v6 -  @version v6.0.6 -  11/12/2021 
+ * CA State Template v6 -  @version v6.0.6 -  11/19/2021 
   STYLES COMPILED FROM SOURCE (SCSS) DO NOT MODIFY */
 /* -----------------------------------------
    BOOTSTRAP v4.6.0 - /source/scss/bootstrap/ 
@@ -17459,7 +17459,10 @@ html {
   border-radius: 0;
 }
 
-.tab-group .nav-tabs li:first-child a, .tab-group .nav-tabs li:first-child a:hover, .tab-group .nav-tabs li:first-child a:focus, .tab-group .nav-tabs li:first-child a:active {
+.tab-group .nav-tabs li:first-child a,
+.tab-group .nav-tabs li:first-child a:hover,
+.tab-group .nav-tabs li:first-child a:focus,
+.tab-group .nav-tabs li:first-child a:active {
   border-left: 0 !important;
 }
 
@@ -17472,6 +17475,7 @@ html {
   border-top: 0;
   position: relative;
   display: block;
+  color: #046B99;
 }
 
 .tab-group .nav-tabs li > a, .tab-group .nav-tabs li > a:hover {
@@ -17541,7 +17545,8 @@ html {
   margin-left: 0;
 }
 
-.nav-tabs > li > a.active, .nav-tabs > li > a.active:hover {
+.nav-tabs > li > a.active,
+.nav-tabs > li > a.active:hover {
   color: #555555;
   background-color: #fff;
   border: 1px solid #ddd;
@@ -17615,7 +17620,8 @@ html {
   margin-bottom: 0;
 }
 
-.tabs [role="tablist"] li, .tabs [role="tablist"] a {
+.tabs [role="tablist"] li,
+.tabs [role="tablist"] a {
   display: inline-block;
 }
 
@@ -19007,14 +19013,17 @@ figcaption {
 /* -----------------------------------------
    FORMS - /source/scss/cagov/forms.scss
 ----------------------------------------- */
-.form-control, .custom-file-label, .custom-select {
+.form-control,
+.custom-file-label,
+.custom-select {
   border-radius: 0;
   border-color: #ccc;
 }
 
-label, .form-control-label {
+label,
+.form-control-label {
   font-weight: 700;
-  margin-bottom: .3rem;
+  margin-bottom: 0.3rem;
 }
 
 .input-group-text {
@@ -19074,7 +19083,7 @@ label, .form-control-label {
   background-color: transparent;
   border: 1px solid;
   border-color: #ccc;
-  transition: border-color .15s ease-in-out 0s;
+  transition: border-color 0.15s ease-in-out 0s;
   -moz-box-align: center;
   align-items: center;
   text-align: center;
@@ -19254,7 +19263,7 @@ input[type="radio"]:checked + * i {
 
 .select::after {
   content: "\43";
-  font-family: 'CaGov';
+  font-family: "CaGov";
   border-left: 1px solid #ccc;
   padding: 8px 0px;
   position: absolute;
@@ -19272,7 +19281,7 @@ input[type="radio"]:checked + * i {
   display: none !important;
 }
 
-input[type=text]::-ms-clear {
+input[type="text"]::-ms-clear {
   display: none;
 }
 
@@ -19308,11 +19317,13 @@ input[type="radio"]:checked + * .color-white--checked {
 }
 
 /* Focusable custom checkboxes and radios for accessibility */
-input[type="checkbox"]:focus + div, input[type="radio"]:focus + div {
+input[type="checkbox"]:focus + div,
+input[type="radio"]:focus + div {
   box-shadow: 0 0 2px 2px #50aee4;
 }
 
-input[type="checkbox"]:focus + .btn, input[type="radio"]:focus + .btn {
+input[type="checkbox"]:focus + .btn,
+input[type="radio"]:focus + .btn {
   outline: solid 2px #2ea3f2;
 }
 
@@ -19334,13 +19345,20 @@ input[type="checkbox"]:focus + .btn, input[type="radio"]:focus + .btn {
 }
 
 /* Accessibilty focus */
-input:focus, textarea:focus, button:focus, select:focus {
+input:focus,
+textarea:focus,
+button:focus,
+select:focus {
   outline: solid 2px #2ea3f2;
 }
 
 /* bootstrap 4.4.1 adjustments */
 .input-group > .form-control {
   flex: 1 1 0% !important;
+}
+
+.form-group {
+  margin-bottom: 1rem;
 }
 
 /* -----------------------------------------
