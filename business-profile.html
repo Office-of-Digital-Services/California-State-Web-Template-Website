@@ -135,18 +135,6 @@
                 </div>
             </div>
             <!-- End Section -->
-            <div class=" section-understated collapsed">
-                <div class="service-group clearfix" id="service-group-123">
-                    <!--#include virtual="/sample/modules/service-tiles.html"  -->
-                </div>
-
-                <div class="more-button">
-                    <div class="more-content fake-service-group"></div>
-                    <a href="/service-directory.html" class="btn-more inverse p-t-md  p-b-md"><span
-                            class="more-title">More Services <span class="ca-gov-icon-arrow-fill-right m-l-sm"
-                                aria-hidden="true"></span></span></a>
-                </div>
-            </div>
 
 
             <div class="section section-understated">
@@ -159,8 +147,8 @@
             <!-- End Section -->
 
 
-            <div class="parallax-bg height-250 color-white" id="parallax-1"
-                data-image-src="/images/background-primary.jpg">
+            <div class="parallax-bg height-250 color-white"
+                style="background-image: url(/images/background-primary.jpg)">
                 <div class="container p-t-md">
                     <!--#include virtual="/sample/modules/icon-links.html" -->
 
@@ -180,82 +168,6 @@
 
     <!--#include virtual="/ssi/global-footer.html" -->
     <!--#include virtual="/ssi/scripts.html" -->
-
-    <script>
-        /* Number counter inside of the circle pie chart */
-        // Animating the circles only when visible
-        $.fn.isInViewport = function () {
-            var elementTop = $(this).offset().top;
-            var elementBottom = elementTop + $(this).outerHeight();
-            var viewportTop = $(window).scrollTop();
-            var viewportBottom = viewportTop + $(window).height();
-            return elementBottom > viewportTop && elementTop < viewportBottom;
-        };
-
-        circlesCreated = false;
-
-        $(window).on('scroll', function () {
-            if (!circlesCreated && $("#show-on-scroll").isInViewport()) {
-                circlesCreated = true;
-                createCircles();
-            }
-        });
-
-        function createCircles() {
-            //isolate this circles code out of fuction if you want circles animation to start right away
-            var myCircle1 = Circles.create({
-                id: 'circle1', radius: 80,
-                radius: 80,
-                value: 87,
-                maxValue: 100,
-                width: 8,
-                text: function (value) { return value + '%'; },
-                colors: ['#363636', '#72c02c'],
-                duration: 2000,
-                wrpClass: 'circles-wrp',
-                textClass: 'circles-text',
-                valueStrokeClass: 'circles-valueStroke',
-                maxValueStrokeClass: 'circles-maxValueStroke',
-                styleWrapper: true,
-                styleText: true
-            });
-
-            var myCircle2 = Circles.create({
-                id: 'circle2', radius: 80,
-                radius: 80,
-                value: 74,
-                maxValue: 100,
-                width: 8,
-                text: function (value) { return value + '%'; },
-                colors: ['#363636', '#e81c62'],
-                duration: 2000,
-                wrpClass: 'circles-wrp',
-                textClass: 'circles-text',
-                valueStrokeClass: 'circles-valueStroke',
-                maxValueStrokeClass: 'circles-maxValueStroke',
-                styleWrapper: true,
-                styleText: true
-            });
-
-            var myCircle3 = Circles.create({
-                id: 'circle3', radius: 80,
-                radius: 80,
-                value: 65,
-                maxValue: 100,
-                width: 8,
-                text: function (value) { return value + '%'; },
-                colors: ['#363636', '#00bed6'],
-                duration: 2000,
-                wrpClass: 'circles-wrp',
-                textClass: 'circles-text',
-                valueStrokeClass: 'circles-valueStroke',
-                maxValueStrokeClass: 'circles-maxValueStroke',
-                styleWrapper: true,
-                styleText: true
-            });
-            // End circles
-        }
-    </script>
 
 </body>
 
