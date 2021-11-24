@@ -56,7 +56,7 @@
     <div id="main-content" class="main-content">
         <main class="main-primary">
 
-            <div class="container p-b-lg">
+            <div class="container p-b-lg p-t-md">
 
                 <ol class="breadcrumb">
                     <li><a href="../index.html" title="Home page">Home</a></li>
@@ -64,82 +64,82 @@
                     <li class="active">Profile page layout</li>
                 </ol>
                 <h1 class="sr-only">Profile Page</h1>
-                <div class="row">
+                <div class="row p-t-md">
                     <div class="col-md-3">
+
                         <!-- Side navigation -->
-                        <div id="accordion1" class="accordion-list list-group" role="tablist" multiselectable="true">
-                            <div id="tab-1" class="tab list-group-item" aria-selected="false" aria-controls="panel-1"
-                                aria-expanded="false" role="tab" tabindex="0">
-                                <span class="ca-gov-icon-person" aria-hidden="true"></span> Overview
-                                <span class="ca-gov-icon-caret-right rotate" aria-hidden="true"></span>
-                            </div>
-                            <div id="panel-1" class="panel p-0 m-0" aria-labelledby="tab-1" aria-hidden="false"
-                                role="tabpanel">
-                                <div class="list-group m-0">
-                                    <a href="#" class="list-group-item list-group-item-action"><span
-                                            class="ca-gov-icon-apps" aria-hidden="true"></span> Sub navigation link
-                                        1</a>
-                                    <a href="#" class="list-group-item list-group-item-action"><span
-                                            class="ca-gov-icon-chat" aria-hidden="true"></span> Sub navigation link
-                                        2</a>
-                                    <a href="#" class="list-group-item list-group-item-action"><span
-                                            class="ca-gov-icon-phone" aria-hidden="true"></span> Sub navigation link
-                                        3</a>
-                                    <a href="#" class="list-group-item list-group-item-action"><span
-                                            class="ca-gov-icon-email" aria-hidden="true"></span> Sub navigation link
-                                        4</a>
-                                    <a href="#" class="list-group-item list-group-item-action"><span
-                                            class="ca-gov-icon-calendar" aria-hidden="true"></span> Sub navigation link
-                                        5</a>
+                        <div class="side-nav">
+                            <div data-aria-accordion data-multi data-transition data-default="none">
+
+                                <div data-aria-accordion-heading class="tab list-group-item">
+                                    <div class="ca-gov-icon-hand" aria-hidden="true"></div>
+                                    Overview
                                 </div>
-                            </div>
-                            <div id="tab-2" class="tab list-group-item" aria-selected="false" aria-controls="panel-2"
-                                aria-expanded="false" role="tab" tabindex="0">
-                                <span class="ca-gov-icon-fingerprint" aria-hidden="true"></span> Profile
-                                <span class="ca-gov-icon-caret-right rotate" aria-hidden="true"></span>
-                            </div>
-                            <div id="panel-2" class="panel m-0 border border-bottom-0" aria-labelledby="tab-2"
-                                aria-hidden="true" role="tabpanel">
-                                <ul class="list-primary">
-                                    <li><a href="#">Sub-navigation list link 1</a></li>
-                                    <li><a href="#">Sub-navigation list link 2</a></li>
-                                    <li><a href="#">Sub-navigation list link 3</a></li>
-                                </ul>
-                            </div>
-                            <a href="#" class="list-group-item list-group-item-action"><span class="ca-gov-icon-apps"
-                                    aria-hidden="true"></span> My projects</a>
-                            <div id="tab-3" class="tab list-group-item" aria-selected="false" aria-controls="panel-3"
-                                aria-expanded="false" role="tab" tabindex="0">
-                                <span class="ca-gov-icon-online-services" aria-hidden="true"></span> Login
-                                <span class="ca-gov-icon-caret-right rotate" aria-hidden="true"></span>
-                            </div>
-                            <div id="panel-3" class="panel m-0 p-a-md border border-bottom-0" aria-labelledby="tab-3"
-                                aria-hidden="true" role="tabpanel">
-                                <form>
-                                    <div class="form-group">
-                                        <label for="exampleInputEmail-1">Email address</label>
-                                        <input type="email" class="form-control" id="exampleInputEmail-1"
-                                            aria-describedby="emailHelp-1" placeholder="Enter email">
-                                        <small id="emailHelp-1" class="form-text text-muted">We'll never share your
-                                            email with anyone else.</small>
+                                <div data-aria-accordion-panel class="p-0 m-0">
+                                    <div class="list-group m-0">
+                                        <a href="#" class="list-group-item list-group-item-action"><span
+                                                class="ca-gov-icon-apps" aria-hidden="true"></span> Sub navigation link
+                                            1</a>
+                                        <a href="#" class="list-group-item list-group-item-action"><span
+                                                class="ca-gov-icon-chat" aria-hidden="true"></span> Sub navigation link
+                                            2</a>
+                                        <a href="#" class="list-group-item list-group-item-action"><span
+                                                class="ca-gov-icon-phone" aria-hidden="true"></span> Sub navigation link
+                                            3</a>
+                                        <a href="#" class="list-group-item list-group-item-action"><span
+                                                class="ca-gov-icon-email" aria-hidden="true"></span> Sub navigation link
+                                            4</a>
+                                        <a href="#" class="list-group-item list-group-item-action"><span
+                                                class="ca-gov-icon-calendar" aria-hidden="true"></span> Sub navigation
+                                            link 5</a>
                                     </div>
-                                    <div class="form-group">
-                                        <label for="exampleInputPassword-1">Password</label>
-                                        <input type="password" class="form-control" id="exampleInputPassword-1"
-                                            placeholder="Password">
-                                    </div>
-                                    <div class="form-check">
-                                        <input type="checkbox" class="form-check-input" id="exampleCheck-1">
-                                        <label class="form-check-label" for="exampleCheck-1">Check me out</label>
-                                    </div>
-                                    <button type="submit" class="btn btn-primary m-t">Submit</button>
-                                </form>
+                                </div>
+
+                                <div data-aria-accordion-heading class="tab list-group-item border-bottom-0">
+                                    <span class="ca-gov-icon-fingerprint" aria-hidden="true"></span>
+                                    Profile
+                                </div>
+                                <div data-aria-accordion-panel class="m-0 border border-bottom-0">
+                                    <ul class="list-primary pb-4">
+                                        <li><a href="#">Sub-navigation list link 1</a></li>
+                                        <li><a href="#">Sub-navigation list link 2</a></li>
+                                        <li><a href="#">Sub-navigation list link 3</a></li>
+                                    </ul>
+                                </div>
+                                <a href="#" class="list-group-item list-group-item-action"><span
+                                        class="ca-gov-icon-apps" aria-hidden="true"></span> My projects</a>
+                                <div data-aria-accordion-heading class="tab list-group-item border-bottom-0">
+                                    <span class="ca-gov-icon-puzzle-piece" aria-hidden="true"></span> Login
+                                </div>
+                                <div data-aria-accordion-panel class="m-0 border border-bottom-0">
+                                    <form class="p-y-md">
+                                        <div class="form-group">
+                                            <label for="exampleInputEmail-1">Email address</label>
+                                            <input type="email" class="form-control" id="exampleInputEmail-1"
+                                                aria-describedby="emailHelp-1" placeholder="Enter email">
+                                            <small id="emailHelp-1" class="form-text text-muted">We'll never share your
+                                                email with anyone
+                                                else.</small>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="exampleInputPassword-1">Password</label>
+                                            <input type="password" class="form-control" id="exampleInputPassword-1"
+                                                placeholder="Password">
+                                        </div>
+                                        <div class="form-check">
+                                            <input type="checkbox" class="form-check-input" id="exampleCheck-1">
+                                            <label class="form-check-label" for="exampleCheck-1">Check me out</label>
+                                        </div>
+                                        <button type="submit" class="btn btn-primary m-t">Submit</button>
+                                    </form>
+                                </div>
+                                <a href="#" class="list-group-item list-group-item-action"><span
+                                        class="ca-gov-icon-clock" aria-hidden="true"></span> History</a>
+                                <a href="#" class="list-group-item list-group-item-action"><span
+                                        class="ca-gov-icon-gear" aria-hidden="true"></span> Settings</a>
                             </div>
-                            <a href="#" class="list-group-item list-group-item-action"><span class="ca-gov-icon-clock"
-                                    aria-hidden="true"></span> History</a>
-                            <a href="#" class="list-group-item list-group-item-action"><span class="ca-gov-icon-gear"
-                                    aria-hidden="true"></span> Settings</a>
                         </div>
+                        <!--sude nav-->
 
 
                         <h2 class="m-y-md h3">Projects Progress</h2>
@@ -168,7 +168,7 @@
                         </div>
 
                     </div>
-                    <!--end side nav-->
+                    <!--col-->
 
 
 
@@ -217,7 +217,7 @@
                         </div>
                         <!--End Profile-->
                         <!--Experience-->
-                        <div class="card overflow-visible">
+                        <div class="card overflow-visible m-t-md">
                             <!-- Panel Header -->
                             <div class="card-heading bg-grey-lightest">
                                 <h2 class="h4"><span class="ca-gov-icon-briefcase" aria-hidden="true"></span> Experience
@@ -255,13 +255,14 @@
                                     <li class="col-md-12">
                                         <div class="row">
                                             <!-- Timeline Date -->
-                                            <div class="col-md-3 align-self-center text-md-right p-r-md">
+                                            <div class="col-md-3 align-self-center text-md-end p-r-md">
                                                 <h3 class="h5 m-b-0">Project Manager</h3>
                                                 <h3 class="h6 m-t-sm">2016 - Current</h3>
                                             </div>
                                             <!-- End Timeline Date -->
                                             <!-- Timeline Content -->
-                                            <div class="col-md-9 align-self-center p-l-md brd-md-left brd-gray-light">
+                                            <div
+                                                class="col-md-9 align-self-center pos-rel p-l-md brd-md-left brd-gray-light">
                                                 <!-- Timeline Dot -->
                                                 <div class="timeline-dot d-none d-md-block">
                                                     <span
@@ -281,13 +282,14 @@
                                     <li class="col-md-12">
                                         <div class="row">
                                             <!-- Timeline Date -->
-                                            <div class="col-md-3 align-self-center text-md-right p-r-md">
+                                            <div class="col-md-3 align-self-center text-md-end p-r-md">
                                                 <h3 class="h5 m-b-0">Full Stack Developer</h3>
                                                 <h3 class="h6 m-t-sm">2014 - 2016</h3>
                                             </div>
                                             <!-- End Timeline Date -->
                                             <!-- Timeline Content -->
-                                            <div class="col-md-9 align-self-center p-l-md brd-md-left brd-gray-light">
+                                            <div
+                                                class="col-md-9 align-self-center pos-rel p-l-md brd-md-left brd-gray-light">
                                                 <!-- Timeline Dot -->
                                                 <div class="timeline-dot d-none d-md-block">
                                                     <span
@@ -307,13 +309,14 @@
                                     <li class="col-md-12">
                                         <div class="row">
                                             <!-- Timeline Date -->
-                                            <div class="col-md-3 align-self-center text-md-right p-r-md">
+                                            <div class="col-md-3 align-self-center text-md-end p-r-md">
                                                 <h3 class="h5 m-b-0">Frontend Developer</h3>
                                                 <h3 class="h6 m-t-sm">2012 - 2014</h3>
                                             </div>
                                             <!-- End Timeline Date -->
                                             <!-- Timeline Content -->
-                                            <div class="col-md-9 align-self-center p-l-md brd-md-left brd-gray-light">
+                                            <div
+                                                class="col-md-9 align-self-center pos-rel p-l-md brd-md-left brd-gray-light">
                                                 <!-- Timeline Dot -->
                                                 <div class="timeline-dot d-none d-md-block">
                                                     <span
@@ -333,13 +336,14 @@
                                     <li class="col-md-12">
                                         <div class="row">
                                             <!-- Timeline Date -->
-                                            <div class="col-md-3 align-self-center text-md-right p-r-md">
+                                            <div class="col-md-3 align-self-center text-md-end p-r-md">
                                                 <h3 class="h5 m-b-0">UX/UI Designer</h3>
                                                 <h3 class="h6 m-t-sm">2010 - 2012</h3>
                                             </div>
                                             <!-- End Timeline Date -->
                                             <!-- Timeline Content -->
-                                            <div class="col-md-9 align-self-center p-l-md brd-md-left brd-gray-light">
+                                            <div
+                                                class="col-md-9 align-self-center pos-rel p-l-md brd-md-left brd-gray-light">
                                                 <!-- Timeline Dot -->
                                                 <div class="timeline-dot d-none d-md-block">
                                                     <span
@@ -399,13 +403,14 @@
                                     <li class="col-md-12">
                                         <div class="row">
                                             <!-- Timeline Date -->
-                                            <div class="col-md-3 align-self-center text-md-right p-r-md">
+                                            <div class="col-md-3 align-self-center text-md-end p-r-md">
                                                 <h3 class="h5 m-b-0">MBA</h3>
                                                 <h3 class="h6 m-t-sm">2008 - 2010</h3>
                                             </div>
                                             <!-- End Timeline Date -->
                                             <!-- Timeline Content -->
-                                            <div class="col-md-9 align-self-center p-l-md brd-md-left brd-gray-light">
+                                            <div
+                                                class="col-md-9 align-self-center pos-rel p-l-md brd-md-left brd-gray-light">
                                                 <!-- Timeline Dot -->
                                                 <div class="timeline-dot d-none d-md-block">
                                                     <span
@@ -426,13 +431,14 @@
                                     <li class="col-md-12">
                                         <div class="row">
                                             <!-- Timeline Date -->
-                                            <div class="col-md-3 align-self-center text-md-right p-r-md">
+                                            <div class="col-md-3 align-self-center text-md-end p-r-md">
                                                 <h3 class="h5 m-b-0">Bachelor of IT</h3>
                                                 <h3 class="h6 m-t-sm">2004 - 2008</h3>
                                             </div>
                                             <!-- End Timeline Date -->
                                             <!-- Timeline Content -->
-                                            <div class="col-md-9 align-self-center p-l-md brd-md-left brd-gray-light">
+                                            <div
+                                                class="col-md-9 align-self-center pos-rel p-l-md brd-md-left brd-gray-light">
                                                 <!-- Timeline Dot -->
                                                 <div class="timeline-dot d-none d-md-block">
                                                     <span
@@ -452,13 +458,14 @@
                                     <li class="col-md-12">
                                         <div class="row">
                                             <!-- Timeline Date -->
-                                            <div class="col-md-3 align-self-center text-md-right p-r-md">
+                                            <div class="col-md-3 align-self-center text-md-end p-r-md">
                                                 <h3 class="h5 m-b-0">High School</h3>
                                                 <h3 class="h6 m-t-sm">2001 - 2004</h3>
                                             </div>
                                             <!-- End Timeline Date -->
                                             <!-- Timeline Content -->
-                                            <div class="col-md-9 align-self-center p-l-md brd-md-left brd-gray-light">
+                                            <div
+                                                class="col-md-9 align-self-center pos-rel p-l-md brd-md-left brd-gray-light">
                                                 <!-- Timeline Dot -->
                                                 <div class="timeline-dot d-none d-md-block">
                                                     <span

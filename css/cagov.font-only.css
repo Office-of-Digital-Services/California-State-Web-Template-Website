@@ -1,11 +1,11 @@
 /**
- * CA State Template v6 -  @version v6.0.6 -  11/19/2021 
+ * CA State Template v6 -  @version v6.0.6 -  11/24/2021 
   STYLES COMPILED FROM SOURCE (SCSS) DO NOT MODIFY */
 /* -----------------------------------------
    ICON FONTS - /source/scss/cagov/icon-font.scss
 ----------------------------------------- */
 @font-face {
-  font-family: 'CaGov';
+  font-family: "CaGov";
   src: url("../fonts/CaGov.eot?ocljyw");
   src: url("../fonts/CaGov.eot?ocljyw#iefix") format("embedded-opentype"), url("../fonts/CaGov.ttf?ocljyw") format("truetype"), url("../fonts/CaGov.woff?ocljyw") format("woff"), url("../fonts/CaGov.svg??ocljyw#CaGov") format("svg");
   font-weight: normal;
@@ -13,9 +13,10 @@
   font-display: block;
 }
 
-[class^="ca-gov-icon-"], [class*=" ca-gov-icon-"] {
+[class^="ca-gov-icon-"],
+[class*=" ca-gov-icon-"] {
   /* use !important to prevent issues with browser extensions that change fonts */
-  font-family: 'CaGov' !important;
+  font-family: "CaGov" !important;
   speak: never;
   font-style: normal;
   font-weight: normal;
@@ -24,6 +25,10 @@
   /* Better Font Rendering =========== */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+.ca-gov-icon-pdf-text:before {
+  content: "\ea20";
 }
 
 .ca-gov-icon-mask-light:before {

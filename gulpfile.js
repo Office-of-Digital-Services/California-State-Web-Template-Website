@@ -29,7 +29,7 @@ var jssrc = [
     'source/js/libs/modernizr.js',
 
     // BOOTSTRAP 
-    'source/js/bootstrap/bootstrap.min.js',
+    'source/js/bootstrap/bootstrap.bundle.min.js',
 
 
     // CAGOV CORE
@@ -43,7 +43,7 @@ var jssrc = [
     'source/js/cagov/number-counter.js',
 ];
 
-var jssrcmap = ['source/js/bootstrap/bootstrap.min.js.map',];
+var jssrcmap = ['source/js/bootstrap/bootstrap.bundle.min.js.map',];
 // creating assets folder and copiing index file in there.
 //gulp.task('copy', function() {
 // gulp.src('index.html')  //src where we put the name of the file we want to work with and use as an input
