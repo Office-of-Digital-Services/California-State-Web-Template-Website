@@ -12,10 +12,10 @@ Based on Twitter Bootstrap
 <!--[if IE 9]>    <html class="no-js ie9 oldie" lang="en"> <![endif]-->
 <!--[if (gt IE 9)]><!-->
 <html class="no-js" lang="en">
- <!--<![endif]-->
+<!--<![endif]-->
 
-<head>    
- <!--    California State Template (beta)
+<head>
+    <!--    California State Template (beta)
  
 
     Based on Twitter Bootstrap
@@ -30,11 +30,12 @@ Based on Twitter Bootstrap
 
     <!--#include virtual="/ssi/head-css-js.html" -->
     <script type="text/javascript">
-var defaultActiveLink = "Components";
-</script>
+        var defaultActiveLink = "Components";
+    </script>
 </head>
 
 <!-- possible body classes are "primary" and "two-column" -->
+
 <body>
 
     <header role="banner" id="header" class="global-header">
@@ -50,21 +51,20 @@ var defaultActiveLink = "Components";
         <!--#include virtual="/ssi/mobile-controls.html" -->
 
         <div class="navigation-search full-width-nav container">
-        <div id="head-search" class="search-container featured-search fade">
-            <!-- Include Search -->
-            <!--#include virtual="/ssi/search.html" -->
+            <div id="head-search" class="search-container featured-search">
+                <!-- Include Search -->
+                <!--#include virtual="/ssi/search.html" -->
+            </div>
+            <!-- Include Navigation -->
+            <!--#include virtual="/ssi/navigation.html" -->
         </div>
-
-        <!-- Include Navigation -->
-        <!--#include virtual="/ssi/navigation.html" -->
-    </div>
 
         <div class="header-decoration"></div>
     </header>
 
 
     <div id="main-content" class="main-content">
-        <div class="container p-b-lg">
+        <div class="container p-b-lg p-t-md">
             <main class="main-primary">
                 <ol class="breadcrumb">
                     <li><a href="../index.html" title="Home page">Home</a></li>
@@ -72,10 +72,13 @@ var defaultActiveLink = "Components";
                     <li class="active">Forms</li>
                 </ol>
 
-                <div class="group">
+                <div class="row">
                     <div class="half">
                         <h1>Forms</h1>
-                        <p>All form controls automatically receive some global styling. Form elements with <code>.form-control</code> are set to <code>width: 100%;</code> by default. Wrap labels and controls in <code>.form-group</code> for optimum spacing.</p>
+                        <p>All form controls automatically receive some global styling. Form elements with
+                            <code>.form-control</code> are set to <code>width: 100%;</code> by default. Wrap labels and
+                            controls in <code>.form-group</code> for optimum spacing.
+                        </p>
 
                         <h2>Example:</h2>
                         <!--#include virtual="/sample/modules/form.html" -->
@@ -88,7 +91,7 @@ var defaultActiveLink = "Components";
 
                 <hr>
 
-                <div class="group">
+                <div class="row">
                     <div class="half">
                         <h2>Sample contact form:</h2>
                         <!--#include virtual="/sample/modules/form-contact.html" -->
@@ -97,7 +100,7 @@ var defaultActiveLink = "Components";
                         <h2>Source Code:</h2>
                         <pre><code class="overflow-auto">
 <form role="form">
-                        <div class="group">
+                        <div class="row">
                         <div class="form-group half">
                         <label for="exampleInputName" class="form-control-label"><span class="required-label">*</span> Name</label>
                         <input type="text" class="form-control" id="exampleInputName" placeholder="Name">
@@ -135,7 +138,7 @@ var defaultActiveLink = "Components";
 
                 <hr>
 
-                <div class="group">
+                <div class="row">
                     <div class="half">
                         <h2>Form states and sizes:</h2>
                         <!--#include virtual="/sample/modules/form-states.html" -->
@@ -146,7 +149,7 @@ var defaultActiveLink = "Components";
                     </div>
                 </div>
                 <hr />
-                <div class="group">
+                <div class="row">
                     <div class="half">
 
 
@@ -161,7 +164,7 @@ var defaultActiveLink = "Components";
 
 
                 <hr />
-                <div class="group">
+                <div class="row">
                     <div class="half">
                         <h2>Custom radio buttons and checkboxes:</h2>
                         <!--#include virtual="/sample/modules/form-radios.html" -->
@@ -200,4 +203,5 @@ var defaultActiveLink = "Components";
     <!--#include virtual="/ssi/scripts.html" -->
 
 </body>
+
 </html>

@@ -17,7 +17,10 @@
     .nav-tabs {
         border-radius: 0;
 
-        li:first-child a, li:first-child a:hover, li:first-child a:focus, li:first-child a:active {
+        li:first-child a,
+        li:first-child a:hover,
+        li:first-child a:focus,
+        li:first-child a:active {
             border-left: 0 !important;
         }
 
@@ -31,6 +34,7 @@
                 border-top: 0;
                 position: relative;
                 display: block;
+                color: $link-color;
 
                 &,
                 &:hover {
@@ -110,20 +114,18 @@
     }
 }
 
-
 // In Tabs bootstap 4 uses active class in a elements (not parent li)
 .nav-tabs > li {
     margin-bottom: -1px;
     margin-left: 1px;
-
 
     &:first-child {
         margin-left: 0;
     }
 }
 
-
-.nav-tabs > li > a.active, .nav-tabs > li > a.active:hover {
+.nav-tabs > li > a.active,
+.nav-tabs > li > a.active:hover {
     color: #555555;
     background-color: #fff;
     border: 1px solid #ddd;
@@ -136,13 +138,9 @@
     color: #555555;
 }
 
-
 .nav-tabs > li > a.active:focus {
     outline: solid 2px $outline-default-color !important;
 }
-
-
-
 
 // Rmoving :after content from bootstrap4 tabs.
 
@@ -163,9 +161,6 @@
         }
     }
 }
-
-
-
 
 /* Responsive tabs*/
 
@@ -211,13 +206,13 @@
 .tabs {
     position: relative;
 
-
     [role="tablist"] {
         padding: 0;
         margin-bottom: 0;
     }
 
-    [role="tablist"] li, [role="tablist"] a {
+    [role="tablist"] li,
+    [role="tablist"] a {
         display: inline-block;
     }
 
@@ -246,7 +241,6 @@
         margin-top: -2px;
 
         &:focus {
-
             @include outline(2px);
             outline-offset: -2px;
         }

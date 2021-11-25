@@ -3,123 +3,138 @@
 <!--[if IE 7]>    <html class="no-js ie7 oldie" lang="en"> <![endif]-->
 <!--[if IE 8]>    <html class="no-js ie8 oldie" lang="en"> <![endif]-->
 <!--[if IE 9]>    <html class="no-js ie9 oldie" lang="en"> <![endif]-->
-<!--[if (gt IE 9)]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+<!--[if (gt IE 9)]><!-->
+<html class="no-js" lang="en">
+<!--<![endif]-->
+
 <head>
 
- <!--    California State Template (beta)
+    <!--    California State Template (beta)
  
  
 Based on Twitter Bootstrap
 -->
-<meta charset="utf-8">
+    <meta charset="utf-8">
 
-<title>Sample - Large Header Banner</title>
+    <title>Sample - Large Header Banner</title>
 
-<meta name="Author" content="State of California" />
-<meta name="Description" content="State of California" />
-<meta name="Keywords" content="California, government" />
+    <meta name="Author" content="State of California" />
+    <meta name="Description" content="State of California" />
+    <meta name="Keywords" content="California, government" />
 
-<!--#include virtual="/ssi/head-css-js.html" -->
-<script type="text/javascript">
-    var defaultActiveLink = "Components";
-</script>
+    <!--#include virtual="/ssi/head-css-js.html" -->
+    <script type="text/javascript">
+        var defaultActiveLink = "Components";
+    </script>
 </head>
 
 <body>
 
-<header role="banner" id="header" class="global-header fixed">
-	<div id="skip-to-content"><a href="#main-content">Skip to Main Content</a></div>
-        
+    <header role="banner" id="header" class="global-header fixed">
+        <div id="skip-to-content"><a href="#main-content">Skip to Main Content</a></div>
+
         <!-- Include Utility Header -->
-		<!--#include virtual="/ssi/utility-header.html" -->	
-        
-        <!-- Settings Bar -->	
-		<!--#include virtual="/ssi/settings-bar.html" -->
+        <!--#include virtual="/ssi/utility-header.html" -->
 
-		<!-- Include Branding -->
-		<!--#include virtual="/ssi/branding-lightgrey.html" -->
-    
-    <!-- Include Mobile Controls -->
-    <!--#include virtual="/ssi/mobile-controls.html" -->
-    
-    <div class="navigation-search full-width-nav container">
-        <div id="head-search" class="search-container featured-search fade">
-            <!-- Include Search -->
-            <!--#include virtual="/ssi/search.html" -->
+        <!-- Settings Bar -->
+        <!--#include virtual="/ssi/settings-bar.html" -->
+
+        <!-- Include Branding -->
+        <!--#include virtual="/ssi/branding-lightgrey.html" -->
+
+        <!-- Include Mobile Controls -->
+        <!--#include virtual="/ssi/mobile-controls.html" -->
+
+        <div class="navigation-search full-width-nav container">
+            <div id="head-search" class="search-container featured-search">
+                <!-- Include Search -->
+                <!--#include virtual="/ssi/search.html" -->
+            </div>
+            <!-- Include Navigation -->
+            <!--#include virtual="/ssi/navigation.html" -->
         </div>
-        <!-- Include Navigation -->
-        <!--#include virtual="/ssi/navigation.html" -->
-    </div> 
 
-    <div class="header-decoration"></div>
-</header>
+        <div class="header-decoration"></div>
+    </header>
 
 
 
 
-<div id="main-content" class="main-content">
-    <!-- Include Page Template -->
-    <section aria-label="hero banner">
-    <!--#include virtual="/ssi/header-large-banner.html" -->
-    </section>
+    <div id="main-content" class="main-content">
+        <!-- Include Page Template -->
+        <section aria-label="hero banner">
+            <!--#include virtual="/ssi/header-large-banner.html" -->
+        </section>
 
-    <div class="container p-b-lg">
-        <main class="main-primary">
-            <ol class="breadcrumb">
-                <li><a href="../index.html" title="Home page">Home</a></li>
-                <li><a href="/sample/" title="Content Modules landing page">Content Modules</a></li>
-                <li class="active">Large Header Banner</li>
-            </ol>
+        <div class="container p-b-lg p-t-md">
+            <main class="main-primary">
+                <ol class="breadcrumb">
+                    <li><a href="../index.html" title="Home page">Home</a></li>
+                    <li><a href="/sample/" title="Content Modules landing page">Content Modules</a></li>
+                    <li class="active">Large Header Banner</li>
+                </ol>
 
-            <h1>Large  Hero Banner</h1>
-            <p>The large header banner is a full screen hero banner that will dynamically calculate the height of the window and fill it with the chosen image. To use this banner type add  <code>/ssi/header-large-banner.html</code> using the SSI include method right below the header of the desired page.</p>
-            <p><span class="label label-info">Note:</span> To have the banner dissapear in a mobile viewport add the <code>.primary</code> class to the <code>&lt;body&gt;</code> element of the page otherwise the banner will remain in all screen sizes.</p>
-<pre>
+                <h1>Large Hero Banner</h1>
+                <p>The large header banner is a full screen hero banner that will dynamically calculate the height of
+                    the window and fill it with the chosen image. To use this banner type add
+                    <code>/ssi/header-large-banner.html</code> using the SSI include method right below the header of
+                    the desired page.
+                </p>
+                <p><span class="badge label-info">Note:</span> To have the banner dissapear in a mobile viewport add the
+                    <code>.primary</code> class to the <code>&lt;body&gt;</code> element of the page otherwise the
+                    banner will remain in all screen sizes.
+                </p>
+                <pre>
 &lt;/header&gt; <br>&lt;!-- Include Page Template --&gt;
  &lt;!--#include virtual=&quot;/ssi/<strong>header-large-banner.html</strong>&quot; --&gt;
 </pre>
 
-            <p>To change the background image edit the <strong>header-large-banner.html</strong> include file located in the <strong>ssi </strong>directory. The image is set by changing the <code>background</code> property in the style attribute for <code>&lt;div class="header-large-banner" style="background-image: url('<strong>/sample/images/background_2.jpg</strong>');"&gt;</code>. The recommended dimensions of the banner images are 1500 by 500 pixels. </p>
+                <p>To change the background image edit the <strong>header-large-banner.html</strong> include file
+                    located in the <strong>ssi </strong>directory. The image is set by changing the
+                    <code>background</code> property in the style attribute for
+                    <code>&lt;div class="header-large-banner" style="background-image: url('<strong>/sample/images/background_2.jpg</strong>');"&gt;</code>.
+                    The recommended dimensions of the banner images are 1500 by 500 pixels.
+                </p>
 
-            <h2>Other hero banner options</h2>
-        
-            <a href="slideshow-header-banner.html" class="btn btn-secondary m-r-sm m-b-sm">Slideshow Banner</a>
-            <a href="page-templates.html" class="btn btn-secondary m-r-sm m-b-sm">Primary Banner</a>
-            <h2>Source Code:</h2>
-            <pre><code class="overflow-auto"><!--#include virtual="/ssi/header-large-banner.html" --></code></pre>
-            <br />
+                <h2>Other hero banner options</h2>
+
+                <a href="page-templates.html" class="btn btn-secondary m-r-sm m-b-sm">Primary Banner</a>
+                <h2>Source Code:</h2>
+                <pre><code class="overflow-auto"><!--#include virtual="/ssi/header-large-banner.html" --></code></pre>
+                <br />
 
 
 
-        </main>
+            </main>
+        </div>
     </div>
-</div>
 
-<!--#include virtual="/ssi/global-footer.html" -->
+    <!--#include virtual="/ssi/global-footer.html" -->
 
-<!--#include virtual="/ssi/scripts.html" -->
+    <!--#include virtual="/ssi/scripts.html" -->
 
-<script>
-// -- DEMONSTRATION ONLY! -- //
-$(document).ready(function(){ 
-	// Toggle .header-large-banner class
-	 $(".toggleBanner").click(function() {
-        var btnLabel = $(this);
-        // Toggle body class and button text when clicked
-        if ($(this).html() == 'Add Large Banner') {
-            btnLabel.html('Remove Large Banner');    
-			window.scrollTo(0, 0);    
-            $(".header-large-banner").removeClass("hidden");
-			//$(".header-primary-banner").addClass("hidden");
-        } else {
-            btnLabel.html('Add Large Banner');
-            $(".header-large-banner").addClass("hidden");
-			window.scrollTo(0, 0);
-			//$(".header-primary-banner").addClass("hidden");
-        }
-      });
-});
-</script>
+    <script>
+        // -- DEMONSTRATION ONLY! -- //
+        $(document).ready(function () {
+            // Toggle .header-large-banner class
+            $(".toggleBanner").click(function () {
+                var btnLabel = $(this);
+                // Toggle body class and button text when clicked
+                if ($(this).html() == 'Add Large Banner') {
+                    btnLabel.html('Remove Large Banner');
+                    window.scrollTo(0, 0);
+                    $(".header-large-banner").removeClass("hidden");
+                    //$(".header-primary-banner").addClass("hidden");
+                } else {
+                    btnLabel.html('Add Large Banner');
+                    $(".header-large-banner").addClass("hidden");
+                    window.scrollTo(0, 0);
+                    //$(".header-primary-banner").addClass("hidden");
+                }
+            });
+        });
+    </script>
 
 </body>
+
 </html>

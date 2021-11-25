@@ -5,9 +5,10 @@
 <!--[if IE 9]>    <html class="no-js ie9 oldie" lang="en"> <![endif]-->
 <!--[if (gt IE 9)]><!-->
 <html class="no-js" lang="en">
- <!--<![endif]-->
+<!--<![endif]-->
+
 <head>
- <!--    California State Template (beta)
+    <!--    California State Template (beta)
  
 
         Based on Twitter Bootstrap
@@ -42,19 +43,18 @@
         <!--#include virtual="/ssi/mobile-controls.html" -->
 
         <div class="navigation-search full-width-nav container">
-        <div id="head-search" class="search-container featured-search fade">
-            <!-- Include Search -->
-            <!--#include virtual="/ssi/search.html" -->
+            <div id="head-search" class="search-container featured-search">
+                <!-- Include Search -->
+                <!--#include virtual="/ssi/search.html" -->
+            </div>
+            <!-- Include Navigation -->
+            <!--#include virtual="/ssi/navigation.html" -->
         </div>
-
-        <!-- Include Navigation -->
-        <!--#include virtual="/ssi/navigation.html" -->
-    </div>
         <div class="header-decoration"></div>
     </header>
 
     <div id="main-content" class="main-content">
-        <div  class="container p-b-lg">
+        <div class="container p-b-lg p-t-md">
             <main class="main-primary">
                 <ol class="breadcrumb">
                     <li><a href="../index.html" title="Home page">Home</a></li>
@@ -64,17 +64,22 @@
 
                 <h1>Alert Banner</h1>
 
-                <div class="group">
-                    <div class="two-thirds">
-                        <p>You can now add an alert banner at the top of your website for communicating important information which is meant to alert users. The Alert banner can be closed by the user using the x button in the top right corner.</p>
+                <div class="row">
+                    <div class="col-md-8">
+                        <p>You can now add an alert banner at the top of your website for communicating important
+                            information which is meant to alert users. The Alert banner can be closed by the user using
+                            the x button in the top right corner.</p>
                         <h2>Usage</h2>
                         <p>
-                            Generally an Alert Banner will be added to your home page although it can be included on any page. <br>
-                            Add the <code>&lt;!--#include virtual="/ssi/alert-banner.html" --&gt;</code> as the first item in your header.<br>
+                            Generally an Alert Banner will be added to your home page although it can be included on any
+                            page. <br>
+                            Add the <code>&lt;!--#include virtual="/ssi/alert-banner.html" --&gt;</code> as the first
+                            item in your header.<br>
                         </p><br>
-                        <button onClick="pageReload()" class="btn btn-secondary m-r-sm m-b-sm">Reload Alert Banner</button>
-                        <br>   <br>
-<pre>
+                        <button onClick="pageReload()" class="btn btn-secondary m-r-sm m-b-sm">Reload Alert
+                            Banner</button>
+                        <br> <br>
+                        <pre>
 &lt;header role="banner" id="header" class="global-header"&gt;
 &lt;div id="skip-to-content"&gt;&lt;a href="#main-content"&gt;Skip to Main Content&lt;/a&gt;&lt;/div&gt;<br>
 
@@ -103,7 +108,10 @@
                         </div>
                         <p>Alert Severe</p>
                         <div class="alert alert-severe" role="alert">
-                            <span class="alert-level"><span class="ca-gov-icon-important" aria-hidden="true"></span>SEVERE ALERT!</span><span class="alert-text"> Flash Flood in Sacramento until 12:15 PM.</span> <a href="" class="alert-link btn btn-default btn-xs">Alert Severe</a>
+                            <span class="alert-level"><span class="ca-gov-icon-important"
+                                    aria-hidden="true"></span>SEVERE ALERT!</span><span class="alert-text"> Flash Flood
+                                in Sacramento until 12:15 PM.</span> <a href=""
+                                class="alert-link btn btn-default btn-xs">Alert Severe</a>
 
                         </div>
                         <p>Alert Info</p>
@@ -129,4 +137,5 @@
     </script>
 
 </body>
+
 </html>

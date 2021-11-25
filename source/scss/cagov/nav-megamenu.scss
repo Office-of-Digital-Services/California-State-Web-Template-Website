@@ -10,17 +10,15 @@
     }
 }
 
-.megadropdown .top-level-nav { // beta 5.0 addition (fixes IE dropdown issue)
+.megadropdown .top-level-nav {
+    // beta 5.0 addition (fixes IE dropdown issue)
 
-    
     .nav-item {
         position: static;
-        // 992px 
+        // 992px
         @media (max-width: $screen-sm-max) {
             position: relative;
         }
-
-
 
         .no-js &:hover .sub-nav {
             position: absolute; // On hover show the sub navigation panel
@@ -36,7 +34,7 @@
     left: initial;
     right: initial;
 
-    // 992px 
+    // 992px
     @media (max-width: $screen-sm-max) {
         max-width: 100%;
     }
@@ -45,7 +43,7 @@
 //
 // Sub-menu open indicator
 // --------------------------------------------------
-// 991px 
+// 991px
 @media (min-width: $screen-sm-max) {
     /* Dynamic Element appended to each .sub-nav */
     .nav-arrow-container {
@@ -90,17 +88,19 @@
     right: ($grid-gutter-width / 2);
     overflow: hidden;
     // Remove border as rules are added to top level links
-    // 991px 
+    // 991px
     @media (max-width: $screen-xs-max) {
         border: none;
     }
     // Collapse grid gutters
-    .half, .third, .quarter, .two-thirds, .three-quarters {
+    .half,
+    .third,
+    .quarter,
+    .two-thirds,
+    .three-quarters {
         padding: 0;
     }
 }
-
-
 
 //
 // Secondary level navigationr
@@ -123,9 +123,10 @@
     padding: 0;
     // SET UP NAVIGATION COLUMNS
 
-    // 992px 
+    // 992px
     @media (min-width: $screen-md-min) {
-        .half &, .two-thirds & {
+        .half &,
+        .two-thirds & {
             @include nav-columns(2);
         }
 
@@ -142,7 +143,8 @@
         @include nav-column-group;
         background: none;
 
-        a, .link-description {
+        a,
+        .link-description {
             @include nav-column-group;
         }
         // float links since ie9 and below doesn't support columns
@@ -161,8 +163,8 @@ a.second-level-link {
     @include font-size(1.1);
     padding: 10px;
 
-
-    &:hover, &:focus {
+    &:hover,
+    &:focus {
         text-decoration: none !important;
     }
 
@@ -172,13 +174,13 @@ a.second-level-link {
         vertical-align: -2px;
         margin-right: 3px;
     }
-// 991px 
+    // 991px
     @media (max-width: $screen-sm-max) {
         &:first-child {
             margin-top: 2px !important;
         }
         // to make outline visible
-        padding: 10px 15px 10px 40px !important;
+        padding: 10px 15px 10px 20px !important;
     }
 }
 
@@ -187,14 +189,12 @@ a.second-level-link {
     @include font-size(1);
 }
 
-
-
 //
 // MEGA MENU NAVIGATION UNITS
 // --------------------------------------------------
 
 // Unit values for desktop only, mobile will collapse vertically.
-// 992px 
+// 992px
 @media (min-width: $screen-md-min) {
     $nav-unit-base: 65px;
 
@@ -230,9 +230,8 @@ a.second-level-link {
 }
 
 /* Megamenu State Template v4 */
-// 992px 
+// 992px
 @media (min-width: $screen-md-min) {
-
     .main-navigation.megadropdown.original {
         .second-level-nav {
             -moz-column-count: 3;
@@ -335,7 +334,7 @@ a.second-level-link {
     }
 
     .second-level-nav > li {
-        padding: .3em .7rem .4em 1rem;
+        padding: 0.3em 0.7rem 0.4em 1rem;
         border: none;
         -webkit-column-break-inside: avoid;
         page-break-inside: avoid;
@@ -343,12 +342,9 @@ a.second-level-link {
     }
 }
 
-
 .nav-item {
     display: inline-block;
 }
-
-
 
 .sub-nav.open {
     display: block;
@@ -373,8 +369,6 @@ a.second-level-link {
 
 // 991
 @media (max-width: $screen-sm-max) {
-
-
     .main-navigation {
         overflow: hidden;
     }
@@ -400,7 +394,6 @@ a.second-level-link {
 
 // 992
 @media (min-width: $screen-md-min) {
-
     .sub-nav {
         border-top: none;
     }
@@ -408,11 +401,11 @@ a.second-level-link {
     .main-navigation {
         margin-top: -82px; // beta 6.0 addition
     }
-
- 
 }
 
-.media-left, .media-right, .media-body {
+.media-left,
+.media-right,
+.media-body {
     display: table-cell;
     vertical-align: top;
 }
@@ -424,10 +417,8 @@ a.second-level-link {
 /* Flex Sub Nav */
 // Flex subnav desktop view
 
-
 // 992
 @media (min-width: $screen-md-min) {
-
     .second-level-nav.flex {
         display: flex;
         text-align: center;
@@ -464,13 +455,10 @@ a.second-level-link {
     }
 }
 
-
-
 // Flex subnav in mobile view
 
 //991
 @media (max-width: $screen-sm-max) {
-   
     .second-level-nav.flex {
         display: block;
         text-align: left;
@@ -501,7 +489,3 @@ a.second-level-link {
         }
     }
 }
-
-
-
-

@@ -3,60 +3,63 @@
 <!--[if IE 7]>    <html class="no-js ie7 oldie" lang="en"> <![endif]-->
 <!--[if IE 8]>    <html class="no-js ie8 oldie" lang="en"> <![endif]-->
 <!--[if IE 9]>    <html class="no-js ie9 oldie" lang="en"> <![endif]-->
-<!--[if (gt IE 9)]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+<!--[if (gt IE 9)]><!-->
+<html class="no-js" lang="en">
+<!--<![endif]-->
+
 <head>
 
- <!--    California State Template (beta)
+    <!--    California State Template (beta)
  
  
 Based on Twitter Bootstrap
 -->
-<meta charset="utf-8">
+    <meta charset="utf-8">
 
-<title>Sample - News List</title>
+    <title>Sample - News List</title>
 
-<meta name="Author" content="State of California" />
-<meta name="Description" content="State of California" />
-<meta name="Keywords" content="California, government" />
+    <meta name="Author" content="State of California" />
+    <meta name="Description" content="State of California" />
+    <meta name="Keywords" content="California, government" />
 
-<!--#include virtual="/ssi/head-css-js.html" -->
-<script type="text/javascript">
-var defaultActiveLink = "Components";
-</script>
+    <!--#include virtual="/ssi/head-css-js.html" -->
+    <script type="text/javascript">
+        var defaultActiveLink = "Components";
+    </script>
 </head>
 
 <body>
 
-<header role="banner" id="header" class="global-header">
-	<div id="skip-to-content"><a href="#main-content">Skip to Main Content</a></div>
-        
+    <header role="banner" id="header" class="global-header">
+        <div id="skip-to-content"><a href="#main-content">Skip to Main Content</a></div>
+
         <!-- Include Utility Header -->
-		<!--#include virtual="/ssi/utility-header.html" -->	
-        
-        <!-- Settings Bar -->	
-		<!--#include virtual="/ssi/settings-bar.html" -->
+        <!--#include virtual="/ssi/utility-header.html" -->
 
-		<!-- Include Branding -->
-		<!--#include virtual="/ssi/branding-lightgrey.html" -->
-    
-    <!-- Include Mobile Controls -->
-    <!--#include virtual="/ssi/mobile-controls.html" -->
+        <!-- Settings Bar -->
+        <!--#include virtual="/ssi/settings-bar.html" -->
 
-    <div class="navigation-search full-width-nav container">
-        <div id="head-search" class="search-container featured-search fade">
-            <!-- Include Search -->
-            <!--#include virtual="/ssi/search.html" -->
+        <!-- Include Branding -->
+        <!--#include virtual="/ssi/branding-lightgrey.html" -->
+
+        <!-- Include Mobile Controls -->
+        <!--#include virtual="/ssi/mobile-controls.html" -->
+
+        <div class="navigation-search full-width-nav container">
+            <div id="head-search" class="search-container featured-search">
+                <!-- Include Search -->
+                <!--#include virtual="/ssi/search.html" -->
+            </div>
+            <!-- Include Navigation -->
+            <!--#include virtual="/ssi/navigation.html" -->
         </div>
-        <!-- Include Navigation -->
-        <!--#include virtual="/ssi/navigation.html" -->
-    </div>
 
-	<div class="header-decoration"></div>
-</header>
+        <div class="header-decoration"></div>
+    </header>
 
     <div id="main-content" class="main-content">
-        <div class="container p-b-lg">
-            <main class="main-primary">            
+        <div class="container p-b-lg p-t-md">
+            <main class="main-primary">
                 <ol class="breadcrumb">
                     <li><a href="../index.html" title="Home page">Home</a></li>
                     <li><a href="/sample/" title="Content Modules landing page">Content Modules</a></li>
@@ -66,7 +69,10 @@ var defaultActiveLink = "Components";
 
 
                 <h1>News Lists</h1>
-                <p>A news list contains a repeating group of news items. To begin, wrap this module in a <code>&lt;section class="news-list"&gt;</code>. Then use <code>&lt;article class="news-item"&gt;</code> to group each intividual article.</p>
+                <p>A news list contains a repeating group of news items. To begin, wrap this module in a
+                    <code>&lt;section class="news-list"&gt;</code>. Then use
+                    <code>&lt;article class="news-item"&gt;</code> to group each intividual article.
+                </p>
                 <p>A <code>.news-item</code> has the following primary child elements.</p>
                 <ul>
                     <li><code>.thumbnail</code> - Contains an image that is at least 150px wide</li>
@@ -80,44 +86,48 @@ var defaultActiveLink = "Components";
                 <!--#include virtual="/sample/modules/schema-boilerplate.html" -->
                 <hr>
 
-                  
-            <div class="group">
-                <div class="two-thirds">
-                    <h2>Example:</h2>
-                    <!--#include virtual="/sample/modules/news-list.html" -->
 
-                    <h3>Source Code:</h3>
-                    <div class="tab-group">
-                        <ul id="sourceCode" class="nav nav-tabs" role="tablist">
-                            <li class="active"><a href="#html" role="tab" data-toggle="tab">HTML Markup</a></li>
-                            <li><a href="#microdata" role="tab" data-toggle="tab">Microdata</a></li>
-                        </ul>
-                        <!-- Tab panes -->
-                        <div class="tab-content responsive">
-                            <div class="tab-pane active" id="html">
-                                <pre><code class="overflow-auto"><!--#include virtual="/sample/modules/news-list.html" --></code></pre>
-                            </div>
-                            <div class="tab-pane" id="microdata">
-                                <p class="alert alert-info">NOTE: This module makes use of a <code>datetime</code> property set in the <strong>ISO 8601</strong> format. Be sure to set the time correctly for each news-item.</p>
-                                <pre><code class="overflow-auto"><!--#include virtual="/sample/modules/news-list-schema.html" --></code></pre>
+                <div class="row">
+                    <div class="col-md-8">
+                        <h2>Example:</h2>
+                        <!--#include virtual="/sample/modules/news-list.html" -->
+
+                        <h3>Source Code:</h3>
+                        <div class="tab-group">
+                            <ul id="sourceCode" class="nav nav-tabs" role="tablist">
+                                <li class="active"><a href="#html" role="tab" data-bs-toggle="tab">HTML Markup</a></li>
+                                <li><a href="#microdata" role="tab" data-bs-toggle="tab">Microdata</a></li>
+                            </ul>
+                            <!-- Tab panes -->
+                            <div class="tab-content responsive">
+                                <div class="tab-pane active" id="html">
+                                    <pre><code class="overflow-auto"><!--#include virtual="/sample/modules/news-list.html" --></code></pre>
+                                </div>
+                                <div class="tab-pane" id="microdata">
+                                    <p class="alert alert-info">NOTE: This module makes use of a <code>datetime</code>
+                                        property set in the <strong>ISO 8601</strong> format. Be sure to set the time
+                                        correctly for each news-item.</p>
+                                    <pre><code class="overflow-auto"><!--#include virtual="/sample/modules/news-list-schema.html" --></code></pre>
+                                </div>
                             </div>
                         </div>
-                    </div>
 
-                </div>
-                <div class="third">
+                    </div>
+                    <div class="col-md-4">
                         <h2>Sidebar Example:</h2>
-                        <p>Using the <code>.news-item</code> module in the sidebar makes use of the same markup however it omits the <code>.description</code> node for sake of saving space.</p>
+                        <p>Using the <code>.news-item</code> module in the sidebar makes use of the same markup however
+                            it omits the <code>.description</code> node for sake of saving space.</p>
                         <div class="card card-standout highlight">
                             <div class="card-heading">
                                 <h3 class="h4"><span class="ca-gov-icon-info"></span> Latest News Headlines</h3>
                             </div>
                             <div class="card-body">
                                 <!--#include virtual="/sample/modules/news-list-sidebar.html" -->
-                                <hr>              
+                                <hr>
                             </div>
                         </div>
-                        <button type="button" class="btn btn-default btn-sm" data-toggle="modal" data-target="#news-headlines">Show Source Code</button>
+                        <button type="button" class="btn btn-default btn-sm" data-bs-toggle="modal"
+                            data-bs-target="#news-headlines">Show Source Code</button>
 
                         <!-- Modal -->
                         <div class="modal fade" id="news-headlines" role="dialog">
@@ -125,14 +135,17 @@ var defaultActiveLink = "Components";
                                 <div class="modal-content">
                                     <div class="modal-header">
                                         <h3 class="modal-title">HTML Markup</h3>
-                                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                        <button type="button" class="close btn btn-secondary"
+                                            data-bs-dismiss="modal"><span class="sr-only">Close modal</span><span
+                                                class="ca-gov-icon-close-mark" aria-hidden="true"></span></button>
                                     </div>
                                     <div class="modal-body">
                                         <strong aria-label="Source Code for News List">Source Code:</strong>
                                         <pre><code class="overflow-auto"><!--#include virtual="/sample/modules/news-list-sidebar.html" --></code></pre>
                                     </div>
                                     <div class="modal-footer">
-                                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                        <button type="button" class="btn btn-default"
+                                            data-bs-dismiss="modal">Close</button>
                                     </div>
                                 </div>
                             </div>
@@ -140,28 +153,30 @@ var defaultActiveLink = "Components";
                     </div>
 
                 </div>
-                  
-                
+
+
                 <hr />
                 <h3>More News Samples</h3>
                 <ul class="list-primary">
                     <li><a href="news-blocks.html">News Blocks</a></li>
                     <li><a href="info-blocks.html">Info Blocks</a></li>
-                    
-                </ul>        
-              
+
+                </ul>
+
             </main>
 
-        
-        
 
 
-    </div><!--/end section-->
-</div>
 
-<!--#include virtual="/ssi/global-footer.html" -->
 
-<!--#include virtual="/ssi/scripts.html" -->
+        </div>
+        <!--/end section-->
+    </div>
+
+    <!--#include virtual="/ssi/global-footer.html" -->
+
+    <!--#include virtual="/ssi/scripts.html" -->
 
 </body>
+
 </html>

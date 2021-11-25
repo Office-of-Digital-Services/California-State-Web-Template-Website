@@ -8,7 +8,7 @@
 <!--<![endif]-->
 
 <head>
- <!--    California State Template (beta)
+    <!--    California State Template (beta)
  
 
         Based on Twitter Bootstrap
@@ -25,7 +25,7 @@
     <style>
     </style>
     <script type="text/javascript">
-  var defaultActiveLink = "Components";
+        var defaultActiveLink = "Components";
     </script>
 </head>
 
@@ -45,14 +45,13 @@
         <!--#include virtual="/ssi/mobile-controls.html" -->
 
         <div class="navigation-search full-width-nav container">
-        <div id="head-search" class="search-container featured-search fade">
-            <!-- Include Search -->
-            <!--#include virtual="/ssi/search.html" -->
+            <div id="head-search" class="search-container featured-search">
+                <!-- Include Search -->
+                <!--#include virtual="/ssi/search.html" -->
+            </div>
+            <!-- Include Navigation -->
+            <!--#include virtual="/ssi/navigation.html" -->
         </div>
-
-        <!-- Include Navigation -->
-        <!--#include virtual="/ssi/navigation.html" -->
-    </div>
 
 
         <div class="header-decoration"></div>
@@ -63,19 +62,21 @@
     <div id="main-content" class="main-content">
         <main class="main-primary">
 
-            <div class="container m-b-lg">
+            <div class="container p-b-lg p-t-md">
 
                 <div class="row">
                     <div class="col-md-3">
                         <div class="list-group">
                             <a class="list-group-item list-group-item-action" href="#borders">Borders</a>
-                            <a class="list-group-item list-group-item-action" href="#colors">Colors &amp; Backgrounds</a>
+                            <a class="list-group-item list-group-item-action" href="#colors">Colors &amp;
+                                Backgrounds</a>
                             <a class="list-group-item list-group-item-action" href="#display">Display</a>
                             <a class="list-group-item list-group-item-action" href="#positioning">Positioning</a>
                             <a class="list-group-item list-group-item-action" href="#sizing">Sizing</a>
                             <a class="list-group-item list-group-item-action" href="#spacing">Spacing</a>
                             <a class="list-group-item list-group-item-action" href="#text">Text</a>
-                            <a class="list-group-item list-group-item-action" href="#transitions ">Transitions &amp; Transforms</a>
+                            <a class="list-group-item list-group-item-action" href="#transitions ">Transitions &amp;
+                                Transforms</a>
                         </div>
                     </div>
 
@@ -88,7 +89,10 @@
 
                         <h1>CSS Classes Shortcuts</h1>
 
-                        <p>In addition to bootstrap css classes that can be found in this <a href="https://www.w3schools.com/bootstrap4/bootstrap_ref_all_classes.asp" target="_blank">Bootstrap Cheat Sheep</a> here is the State Template's custom css classes shortcuts list.</p>
+                        <p>In addition to bootstrap css classes that can be found in this <a
+                                href="https://www.w3schools.com/bootstrap4/bootstrap_ref_all_classes.asp"
+                                target="_blank">Bootstrap Cheat Sheep</a> here is the State Template's custom css
+                            classes shortcuts list.</p>
 
                         <h2 id="borders">Borders</h2>
                         <table class="table table-striped">
@@ -144,28 +148,34 @@
                                 </tr>
                                 <tr>
                                     <td><code>.brd-white-before</code></td>
-                                    <td>adds white border to something before the content of each selected element(s).</td>
+                                    <td>adds white border to something before the content of each selected element(s).
+                                    </td>
                                 </tr>
                                 <tr>
                                     <td><code>.brd-white-after</code></td>
-                                    <td>adds white border to something after the content of each selected element(s).</td>
+                                    <td>adds white border to something after the content of each selected element(s).
+                                    </td>
                                 </tr>
                                 <tr>
                                     <td><code>.brd-gray-light-before</code></td>
-                                    <td>adds light grey to something before the content of each selected element(s).</td>
+                                    <td>adds light grey to something before the content of each selected element(s).
+                                    </td>
                                 </tr>
                                 <tr>
                                     <td><code>.brd-gray-light-after</code></td>
-                                    <td>adds light grey border to something after the content of each selected element(s).</td>
+                                    <td>adds light grey border to something after the content of each selected
+                                        element(s).</td>
                                 </tr>
                                 <tr>
                                     <td><code>.brd-transparent-before</code></td>
-                                    <td>transparent border to something before the content of each selected element(s).</td>
+                                    <td>transparent border to something before the content of each selected element(s).
+                                    </td>
                                 </tr>
 
                                 <tr>
                                     <td><code>.brd-transparent-after</code></td>
-                                    <td>transparent border to something after the content of each selected element(s).</td>
+                                    <td>transparent border to something after the content of each selected element(s).
+                                    </td>
                                 </tr>
                                 <tr>
                                     <td><code>.brd-0</code></td>
@@ -302,7 +312,7 @@
 
                                 <tr>
                                     <td><code>.bg-grey-light</code></td>
-                                    <td>light grey  background color (#eee)</td>
+                                    <td>light grey background color (#eee)</td>
                                 </tr>
                                 <tr>
                                     <td><code>.bg-grey-light-hover</code></td>
@@ -440,7 +450,8 @@
                                 </tr>
                                 <tr>
                                     <td><code>.bg-danger-warning-gradient</code></td>
-                                    <td>danger color (#D24532) and warning color (#C2570F) linear gradient background</td>
+                                    <td>danger color (#D24532) and warning color (#C2570F) linear gradient background
+                                    </td>
                                 </tr>
                                 <tr>
                                     <td><code>.bg-info-success-gradient</code></td>
@@ -599,11 +610,13 @@
                                 </tr>
                                 <tr>
                                     <td><code>.top-md-rel-40pct</code></td>
-                                    <td>move relative positioned element 40% below its normal position in medium sized devices</td>
+                                    <td>move relative positioned element 40% below its normal position in medium sized
+                                        devices</td>
                                 </tr>
                                 <tr>
                                     <td><code>.top-lg-rel-40pct</code></td>
-                                    <td>move relative positioned element 40% below its normal position in larger devices</td>
+                                    <td>move relative positioned element 40% below its normal position in larger devices
+                                    </td>
                                 </tr>
                                 <tr>
                                     <td><code>.top-rel-30pct</code></td>
@@ -615,11 +628,13 @@
                                 </tr>
                                 <tr>
                                     <td><code>.top-md-rel-30pct</code></td>
-                                    <td>move relative positioned element 30% below its normal position in medium sized devices</td>
+                                    <td>move relative positioned element 30% below its normal position in medium sized
+                                        devices</td>
                                 </tr>
                                 <tr>
                                     <td><code>.top-lg-rel-30pct</code></td>
-                                    <td>move relative positioned element 30% below its normal position in larger devices</td>
+                                    <td>move relative positioned element 30% below its normal position in larger devices
+                                    </td>
                                 </tr>
                                 <tr>
                                     <td><code>.top-rel-20pct</code></td>
@@ -631,11 +646,13 @@
                                 </tr>
                                 <tr>
                                     <td><code>.top-md-rel-20pct</code></td>
-                                    <td>move relative positioned element 20% below its normal position in medium sized devices</td>
+                                    <td>move relative positioned element 20% below its normal position in medium sized
+                                        devices</td>
                                 </tr>
                                 <tr>
                                     <td><code>.top-lg-rel-20pct</code></td>
-                                    <td>move relative positioned element 20% below its normal position in larger devices</td>
+                                    <td>move relative positioned element 20% below its normal position in larger devices
+                                    </td>
                                 </tr>
                                 <tr>
                                     <td><code>.top-rel-10pct</code></td>
@@ -647,11 +664,13 @@
                                 </tr>
                                 <tr>
                                     <td><code>.top-md-rel-10pct</code></td>
-                                    <td>move relative positioned element 10% below its normal position in medium sized devices</td>
+                                    <td>move relative positioned element 10% below its normal position in medium sized
+                                        devices</td>
                                 </tr>
                                 <tr>
                                     <td><code>.top-lg-rel-10pct</code></td>
-                                    <td>move relative positioned element 10% below its normal position in larger devices</td>
+                                    <td>move relative positioned element 10% below its normal position in larger devices
+                                    </td>
                                 </tr>
                                 <tr>
                                     <td><code>.top-rel-5pct</code></td>
@@ -663,11 +682,13 @@
                                 </tr>
                                 <tr>
                                     <td><code>.top-md-rel-5pct</code></td>
-                                    <td>move relative positioned element 5% below its normal position in medium sized devices</td>
+                                    <td>move relative positioned element 5% below its normal position in medium sized
+                                        devices</td>
                                 </tr>
                                 <tr>
                                     <td><code>.top-lg-rel-5pct</code></td>
-                                    <td>move relative positioned element 5% below its normal position in larger devices</td>
+                                    <td>move relative positioned element 5% below its normal position in larger devices
+                                    </td>
                                 </tr>
                             </tbody>
                         </table>
@@ -1613,7 +1634,7 @@
                                     <td><code>.line-height-1-6em</code></td>
                                     <td>text line height is set to 1.6em</td>
                                 </tr>
-                                
+
 
                                 <tr>
                                     <td><code>.no-underline</code></td>
@@ -1702,7 +1723,8 @@
                                 </tr>
                                 <tr>
                                     <td><code>.outline-block-offset</code></td>
-                                    <td>2px solid blue outline on focus with outline offcet -2px and display block properties</td>
+                                    <td>2px solid blue outline on focus with outline offcet -2px and display block
+                                        properties</td>
                                 </tr>
                                 <tr>
                                     <td><code>.cursor-pointer</code></td>
@@ -1735,14 +1757,14 @@
                 </div>
 
 
-                
+
             </div>
-<!-- End Section -->
-</main>
+            <!-- End Section -->
+        </main>
     </div>
 
-<!--#include virtual="/ssi/global-footer.html" -->
-<!--#include virtual="/ssi/scripts.html" -->
+    <!--#include virtual="/ssi/global-footer.html" -->
+    <!--#include virtual="/ssi/scripts.html" -->
 </body>
 
 </html>
