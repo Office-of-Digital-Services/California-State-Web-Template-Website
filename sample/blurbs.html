@@ -3,169 +3,185 @@
 <!--[if IE 7]>    <html class="no-js ie7 oldie" lang="en"> <![endif]-->
 <!--[if IE 8]>    <html class="no-js ie8 oldie" lang="en"> <![endif]-->
 <!--[if IE 9]>    <html class="no-js ie9 oldie" lang="en"> <![endif]-->
-<!--[if (gt IE 9)]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+<!--[if (gt IE 9)]><!-->
+<html class="no-js" lang="en">
+<!--<![endif]-->
+
 <head>
 
- <!--    California State Template (beta)
+    <!--    California State Template (beta)
  
  
 Based on Twitter Bootstrap
 -->
-<meta charset="utf-8">
+    <meta charset="utf-8">
 
-<title>Sample - Blurbs</title>
+    <title>Sample - Blurbs</title>
 
-<meta name="Author" content="State of California" />
-<meta name="Description" content="State of California" />
-<meta name="Keywords" content="California, government" />
+    <meta name="Author" content="State of California" />
+    <meta name="Description" content="State of California" />
+    <meta name="Keywords" content="California, government" />
 
-<!--#include virtual="/ssi/head-css-js.html" -->
-        <script type="text/javascript">
+    <!--#include virtual="/ssi/head-css-js.html" -->
+    <script type="text/javascript">
         var defaultActiveLink = "Components";
     </script>
-<style>
+    <style>
 
-</style>
+    </style>
 </head>
 
 <body>
 
-<header role="banner" id="header" class="global-header">
-	<div id="skip-to-content"><a href="#main-content">Skip to Main Content</a></div>
-        
+    <header role="banner" id="header" class="global-header">
+        <div id="skip-to-content"><a href="#main-content">Skip to Main Content</a></div>
+
         <!-- Include Utility Header -->
-		<!--#include virtual="/ssi/utility-header.html" -->	
-        
-        <!-- Settings Bar -->	
-		<!--#include virtual="/ssi/settings-bar.html" -->
+        <!--#include virtual="/ssi/utility-header.html" -->
 
-		<!-- Include Branding -->
-		<!--#include virtual="/ssi/branding-lightgrey.html" -->
-    
-    <!-- Include Mobile Controls -->
-    <!--#include virtual="/ssi/mobile-controls.html" -->
+        <!-- Settings Bar -->
+        <!--#include virtual="/ssi/settings-bar.html" -->
 
-    <div class="navigation-search full-width-nav container">
-        <div id="head-search" class="search-container featured-search fade">
-            <!-- Include Search -->
-            <!--#include virtual="/ssi/search.html" -->
+        <!-- Include Branding -->
+        <!--#include virtual="/ssi/branding-lightgrey.html" -->
+
+        <!-- Include Mobile Controls -->
+        <!--#include virtual="/ssi/mobile-controls.html" -->
+
+        <div class="navigation-search full-width-nav container">
+            <div id="head-search" class="search-container featured-search">
+                <!-- Include Search -->
+                <!--#include virtual="/ssi/search.html" -->
+            </div>
+            <!-- Include Navigation -->
+            <!--#include virtual="/ssi/navigation.html" -->
         </div>
-        <!-- Include Navigation -->
-        <!--#include virtual="/ssi/navigation.html" -->
-    </div>
 
-	<div class="header-decoration"></div>
-</header>
+        <div class="header-decoration"></div>
+    </header>
 
     <div id="main-content" class="main-content">
         <main class="main-primary">
-            <div class="container p-b-lg">
-                    <ol class="breadcrumb">
-                        <li><a href="../index.html" title="Home page">Home</a></li>
-                        <li><a href="/sample/" title="Content Modules landing page">Content Modules</a></li>
-                        <li class="active">Blurbs</li>
-                    </ol>
+            <div class="container p-b-lg p-t-md">
+                <ol class="breadcrumb">
+                    <li><a href="../index.html" title="Home page">Home</a></li>
+                    <li><a href="/sample/" title="Content Modules landing page">Content Modules</a></li>
+                    <li class="active">Blurbs</li>
+                </ol>
 
 
 
-                    <h1>Blurbs</h1>
-                    <p>The blurb module is a simple and elegant combination of text and imagery. Blurbs are a great way to showcase small bits of important information, and are often used in rows to display services or features. Image or icon can either appear above the blurb's text, or to the left of the text. </p>
+                <h1>Blurbs</h1>
+                <p>The blurb module is a simple and elegant combination of text and imagery. Blurbs are a great way to
+                    showcase small bits of important information, and are often used in rows to display services or
+                    features. Image or icon can either appear above the blurb's text, or to the left of the text. </p>
 
-                    <hr />
+                <hr />
 
-                    <h2>No margin blurbs</h2>
-
-
+                <h2>No margin blurbs</h2>
 
 
 
-                    <!--#include virtual="/sample/modules/blurb-no-margin.html" -->
-                    <!-- Trigger the modal with a button -->
-                    <button type="button" class="btn btn-default btn-sm m-t-md" data-toggle="modal" data-target="#icon-blocks">Show Source Code</button>
-                    <!-- Modal -->
-                    <div class="modal fade" id="icon-blocks" role="dialog">
-                        <div class="modal-dialog modal-lg">
-                            <div class="modal-content">
-                                <div class="modal-header">
-                                    <h4 class="modal-title">HTML Markup</h4>
-                                    <button type="button" class="close" data-dismiss="modal">&times;</button>
-                                </div>
-                                <div class="modal-body">
-                                    <strong aria-label="Source Code for Icon Blocks">Source Code:</strong>
-                                    <pre><code class="overflow-auto"><!--#include virtual="/sample/modules/blurb-no-margin.html" --></code></pre>
-                                </div>
-                                <div class="modal-footer">
-                                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                                </div>
+
+
+                <!--#include virtual="/sample/modules/blurb-no-margin.html" -->
+                <!-- Trigger the modal with a button -->
+                <button type="button" class="btn btn-default btn-sm m-t-md" data-bs-toggle="modal"
+                    data-bs-target="#icon-blocks">Show Source Code</button>
+                <!-- Modal -->
+                <div class="modal fade" id="icon-blocks" role="dialog">
+                    <div class="modal-dialog modal-lg">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h4 class="modal-title">HTML Markup</h4>
+                                <button type="button" class="close btn btn-secondary" data-bs-dismiss="modal"><span
+                                        class="sr-only">Close modal</span><span class="ca-gov-icon-close-mark"
+                                        aria-hidden="true"></span></button>
+                            </div>
+                            <div class="modal-body">
+                                <strong aria-label="Source Code for Icon Blocks">Source Code:</strong>
+                                <pre><code class="overflow-auto"><!--#include virtual="/sample/modules/blurb-no-margin.html" --></code></pre>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-default" data-bs-dismiss="modal">Close</button>
                             </div>
                         </div>
-                    </div><!-- / End Modal -->
+                    </div>
+                </div><!-- / End Modal -->
 
 
 
 
-                    <div class="container m-b-lg">
-                        <hr>
-                        <h2>Left justified </h2>
-                        <!--#include virtual="/sample/modules/blurb-left-justified.html" -->
-
-                        <button type="button" class="btn btn-default btn-sm m-t-md" data-toggle="modal" data-target="#icon-link">Show Source Code</button>
-
-
-
-                        <!-- Modal -->
-                        <div class="modal fade" id="icon-link" role="dialog">
-                            <div class="modal-dialog modal-lg">
-                                <div class="modal-content">
-                                    <div class="modal-header">
-                                        <h4 class="modal-title">HTML Markup</h4>
-                                        <button type="button" class="close" data-dismiss="modal">&times;</button>
-                                    </div>
-                                    <div class="modal-body">
-                                        <strong aria-label="Source Code for Icon Links">Source Code:</strong>
-                                        <pre><code class="overflow-auto"><!--#include virtual="/sample/modules/blurb-left-justified.html" --></code></pre>
-                                    </div>
-                                    <div class="modal-footer">
-                                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div><!-- / End Modal -->
-
-                    </div><!--/end container-->
-
-
-
+                <div class="container m-b-lg">
                     <hr>
+                    <h2>Left justified </h2>
+                    <!--#include virtual="/sample/modules/blurb-left-justified.html" -->
+
+                    <button type="button" class="btn btn-default btn-sm m-t-md" data-bs-toggle="modal"
+                        data-bs-target="#icon-link">Show Source Code</button>
 
 
-                    <h2>Image blurbs</h2>
 
-
-                    <!--#include virtual="/sample/modules/icon-image-blocks.html" -->
-                    <!-- Trigger the modal with a button -->
-                    <button type="button" class="btn btn-default btn-sm" data-toggle="modal" data-target="#icon-image-blocks">Show Source Code</button>
                     <!-- Modal -->
-                    <div class="modal fade" id="icon-image-blocks" role="dialog">
+                    <div class="modal fade" id="icon-link" role="dialog">
                         <div class="modal-dialog modal-lg">
                             <div class="modal-content">
                                 <div class="modal-header">
                                     <h4 class="modal-title">HTML Markup</h4>
-                                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                    <button type="button" class="close btn btn-secondary" data-bs-dismiss="modal"><span
+                                            class="sr-only">Close modal</span><span class="ca-gov-icon-close-mark"
+                                            aria-hidden="true"></span></button>
                                 </div>
                                 <div class="modal-body">
-                                    <strong aria-label="Source Code for Icon Image Blocks">Source Code:</strong>
-                                    <pre><code class="overflow-auto"><!--#include virtual="/sample/modules/icon-image-blocks.html" --></code></pre>
+                                    <strong aria-label="Source Code for Icon Links">Source Code:</strong>
+                                    <pre><code class="overflow-auto"><!--#include virtual="/sample/modules/blurb-left-justified.html" --></code></pre>
                                 </div>
                                 <div class="modal-footer">
-                                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                    <button type="button" class="btn btn-default" data-bs-dismiss="modal">Close</button>
                                 </div>
                             </div>
                         </div>
                     </div><!-- / End Modal -->
-            
 
-            </div><!--/end section-->
+                </div>
+                <!--/end container-->
+
+
+
+                <hr>
+
+
+                <h2>Image blurbs</h2>
+
+
+                <!--#include virtual="/sample/modules/icon-image-blocks.html" -->
+                <!-- Trigger the modal with a button -->
+                <button type="button" class="btn btn-default btn-sm" data-bs-toggle="modal"
+                    data-bs-target="#icon-image-blocks">Show Source Code</button>
+                <!-- Modal -->
+                <div class="modal fade" id="icon-image-blocks" role="dialog">
+                    <div class="modal-dialog modal-lg">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h4 class="modal-title">HTML Markup</h4>
+                                <button type="button" class="close btn btn-secondary" data-bs-dismiss="modal"><span
+                                        class="sr-only">Close modal</span><span class="ca-gov-icon-close-mark"
+                                        aria-hidden="true"></span></button>
+                            </div>
+                            <div class="modal-body">
+                                <strong aria-label="Source Code for Icon Image Blocks">Source Code:</strong>
+                                <pre><code class="overflow-auto"><!--#include virtual="/sample/modules/icon-image-blocks.html" --></code></pre>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-default" data-bs-dismiss="modal">Close</button>
+                            </div>
+                        </div>
+                    </div>
+                </div><!-- / End Modal -->
+
+
+            </div>
+            <!--/end section-->
 
 
 
@@ -175,7 +191,8 @@ Based on Twitter Bootstrap
                     <h2>Icons with rounded corners</h2>
                     <!--#include virtual="/sample/modules/blurb-rounded-corners-icon.html" -->
 
-                    <button type="button" class="btn btn-default btn-sm m-t-md" data-toggle="modal" data-target="#blurb-rounded">Show Source Code</button>
+                    <button type="button" class="btn btn-default btn-sm m-t-md" data-bs-toggle="modal"
+                        data-bs-target="#blurb-rounded">Show Source Code</button>
 
 
 
@@ -185,20 +202,23 @@ Based on Twitter Bootstrap
                             <div class="modal-content">
                                 <div class="modal-header">
                                     <h4 class="modal-title">HTML Markup</h4>
-                                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                    <button type="button" class="close btn btn-secondary" data-bs-dismiss="modal"><span
+                                            class="sr-only">Close modal</span><span class="ca-gov-icon-close-mark"
+                                            aria-hidden="true"></span></button>
                                 </div>
                                 <div class="modal-body">
                                     <strong aria-label="Source Code for Icon Links">Source Code:</strong>
                                     <pre><code class="overflow-auto"><!--#include virtual="/sample/modules/blurb-rounded-corners-icon.html" --></code></pre>
                                 </div>
                                 <div class="modal-footer">
-                                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                    <button type="button" class="btn btn-default" data-bs-dismiss="modal">Close</button>
                                 </div>
                             </div>
                         </div>
                     </div><!-- / End Modal -->
 
-                </div><!--/end container-->
+                </div>
+                <!--/end container-->
             </div>
         </main>
 
@@ -208,9 +228,10 @@ Based on Twitter Bootstrap
 
     </div>
 
-<!--#include virtual="/ssi/global-footer.html" -->
+    <!--#include virtual="/ssi/global-footer.html" -->
 
-<!--#include virtual="/ssi/scripts.html" -->
+    <!--#include virtual="/ssi/scripts.html" -->
 
 </body>
+
 </html>

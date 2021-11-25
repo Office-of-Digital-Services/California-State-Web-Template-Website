@@ -1,47 +1,65 @@
 <!-- Side navigation (primary) -->
-<div id="accordion4" class="accordion-list list-group section-primary" role="tablist" multiselectable="true">
-    <div id="tab7" class="tab list-group-item" aria-selected="false" aria-controls="panel7" aria-expanded="false" role="tab" tabindex="0">
-        <span class="ca-gov-icon-hand" aria-hidden="true"></span> Primary link with sub-nav 1
-        <span class="ca-gov-icon-caret-right rotate" aria-hidden="true"></span>
-    </div>
-    <div id="panel7" class="panel p-0 m-0" aria-labelledby="tab4" aria-hidden="false" role="tabpanel">
-        <div class="list-group m-0">
-            <a href="#" class="list-group-item list-group-item-action"><span class="ca-gov-icon-apps" aria-hidden="true"></span> Primary sub-nav link 1</a>
-            <a href="#" class="list-group-item list-group-item-action"><span class="ca-gov-icon-chat" aria-hidden="true"></span> Primary sub-nav link 2</a>
-            <a href="#" class="list-group-item list-group-item-action"><span class="ca-gov-icon-phone" aria-hidden="true"></span> Primary sub-nav link 3</a>
-            <a href="#" class="list-group-item list-group-item-action"><span class="ca-gov-icon-email" aria-hidden="true"></span> Primary sub-nav link 4</a>
-            <a href="#" class="list-group-item list-group-item-action"><span class="ca-gov-icon-calendar" aria-hidden="true"></span> Primary sub-nav link 5</a>
+<!-- Side navigation -->
+<div class="side-nav section-primary list-group section-primary">
+    <div data-aria-accordion data-multi data-transition data-default="none">
+
+        <div data-aria-accordion-heading class="tab list-group-item">
+            <div class="ca-gov-icon-hand" aria-hidden="true"></div>
+            Link with sub-nav 1
         </div>
-    </div>
-    <div id="tab8" class="tab list-group-item" aria-selected="false" aria-controls="panel8" aria-expanded="false" role="tab" tabindex="0">
-        <span class="ca-gov-icon-fingerprint" aria-hidden="true"></span> Primary link with sub-nav 2
-        <span class="ca-gov-icon-caret-right rotate" aria-hidden="true"></span>
-    </div>
-    <div id="panel8" class="panel m-0" aria-labelledby="tab5" aria-hidden="true" role="tabpanel">
-        <ul class="list-primary">
-            <li><a href="#">Primary sub-nav list link 1</a></li>
-            <li><a href="#">Primary sub-nav list link 2</a></li>
-            <li><a href="#">Primary sub-nav list link 3</a></li>
-        </ul>
-    </div>
-    <a href="#" class="list-group-item list-group-item-action"><span class="ca-gov-icon-calendar" aria-hidden="true"></span> Regular Primary link</a>
-    <div id="tab9" class="tab list-group-item" aria-selected="false" aria-controls="panel9" aria-expanded="false" role="tab" tabindex="0">
-        <span class="ca-gov-icon-puzzle-piece" aria-hidden="true"></span> Primary link with sub-nav 3
-        <span class="ca-gov-icon-caret-right rotate" aria-hidden="true"></span>
-    </div>
-    <div id="panel9" class="panel m-0 p-a-md" aria-labelledby="tab6" aria-hidden="true" role="tabpanel">
-        <form>
-            <div class="form-group">
-                <label for="exampleInputEmail3">Email address</label>
-                <input type="email" class="form-control" id="exampleInputEmail3" aria-describedby="emailHelp1" placeholder="Enter email">
-                <small id="emailHelp3" class="form-text">We'll never share your email with anyone else.</small>
+        <div data-aria-accordion-panel class="p-0 m-0">
+            <div class="list-group m-0">
+                <a href="#" class="list-group-item list-group-item-action"><span class="ca-gov-icon-apps"
+                        aria-hidden="true"></span> Sub navigation link 1</a>
+                <a href="#" class="list-group-item list-group-item-action"><span class="ca-gov-icon-chat"
+                        aria-hidden="true"></span> Sub navigation link 2</a>
+                <a href="#" class="list-group-item list-group-item-action"><span class="ca-gov-icon-phone"
+                        aria-hidden="true"></span> Sub navigation link 3</a>
+                <a href="#" class="list-group-item list-group-item-action"><span class="ca-gov-icon-email"
+                        aria-hidden="true"></span> Sub navigation link 4</a>
+                <a href="#" class="list-group-item list-group-item-action"><span class="ca-gov-icon-calendar"
+                        aria-hidden="true"></span> Sub navigation link 5</a>
             </div>
-            <div class="form-group">
-                <label for="exampleInputPassword3">Password</label>
-                <input type="password" class="form-control" id="exampleInputPassword3" placeholder="Password">
-            </div>
-            <button type="submit" class="btn btn-primary m-t">Submit</button>
-        </form>
+        </div>
+
+        <div data-aria-accordion-heading class="tab list-group-item border-bottom-0">
+            <span class="ca-gov-icon-fingerprint" aria-hidden="true"></span>
+            Link with sub-nav 2
+        </div>
+        <div data-aria-accordion-panel class="m-0 border border-bottom-0">
+            <ul class="list-primary pb-4">
+                <li><a href="#">Sub-navigation list link 1</a></li>
+                <li><a href="#">Sub-navigation list link 2</a></li>
+                <li><a href="#">Sub-navigation list link 3</a></li>
+            </ul>
+        </div>
+        <a href="#" class="list-group-item list-group-item-action"><span class="ca-gov-icon-calendar"
+                aria-hidden="true"></span> Regular link</a>
+        <div data-aria-accordion-heading class="tab list-group-item border-bottom-0">
+            <span class="ca-gov-icon-puzzle-piece" aria-hidden="true"></span> Link with sub-nav 3
+        </div>
+        <div data-aria-accordion-panel class="m-0 border border-bottom-0">
+            <form class="p-y-md">
+                <div class="form-group">
+                    <label for="exampleInputEmail-1">Email address</label>
+                    <input type="email" class="form-control" id="exampleInputEmail-1" aria-describedby="emailHelp-1"
+                        placeholder="Enter email">
+                    <small id="emailHelp-1" class="form-text text-white">We'll never share your email with
+                        anyone
+                        else.</small>
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputPassword-1">Password</label>
+                    <input type="password" class="form-control" id="exampleInputPassword-1" placeholder="Password">
+                </div>
+                <div class="form-check">
+                    <input type="checkbox" class="form-check-input" id="exampleCheck-1">
+                    <label class="form-check-label" for="exampleCheck-1">Check me out</label>
+                </div>
+                <button type="submit" class="btn btn-primary m-t">Submit</button>
+            </form>
+        </div>
+        <a href="#" class="list-group-item list-group-item-action"><span class="ca-gov-icon-info-bubble"
+                aria-hidden="true"></span> Regular link 2</a>
     </div>
-    <a href="#" class="list-group-item list-group-item-action"><span class="ca-gov-icon-info-bubble" aria-hidden="true"></span> Primary link 2</a>
 </div>

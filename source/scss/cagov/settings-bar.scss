@@ -9,12 +9,18 @@
     padding-right: 20px; // Beta 5.0 addition
     button.close {
         position: relative;
+        right: -15px;
         right: -10px;
         color: #fff;
         text-shadow: none;
-        opacity: 0.8;
+        opacity:1;
         font-size: 2.5em;
-        // Beta 5.0 addition
+        border: none;
+        background: none;
+        float: right;
+        @media (min-width: $screen-md-min) {
+            margin-top: -15px;
+        }
         &:hover {
             color: $color-p1 !important;
         }
@@ -23,9 +29,5 @@
             color: $color-p1 !important;
         }
 
-        span {
-            position: relative;
-            top: -10px;
-        }
     }
 }

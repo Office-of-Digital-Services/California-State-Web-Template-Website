@@ -8,13 +8,14 @@
  * Website: https://van11y.net/accessible-accordion/
  * License MIT: https://github.com/nico3333fr/van11y-accessible-accordion-aria/blob/master/LICENSE
  */
-'use strict';
+"use strict";
 
 //JQUERY replacement helpers
 //var matches = function(el, selector) {
 //    return (el.matches || el.matchesSelector || el.msMatchesSelector || el.mozMatchesSelector || el.webkitMatchesSelector || el.oMatchesSelector).call(el, selector);
 //};
 //var defaultActiveLink = "About";
+
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
@@ -173,11 +174,14 @@ var selectHeaderInList = function selectHeaderInList(elts, param, attrSelected) 
 var plugin = function plugin() {
     var config = arguments.length <= 0 || arguments[0] === undefined ? {} : arguments[0];
     // Findig if first-level-link has sub-nav then changing its clasee to first-level-btn
-    var $navigation = $('.main-navigation'),
-        //$navItems = $navigation.find('.first-level-link'),
-        $navItemsWithSubs = $navigation.find('.sub-nav').siblings('.first-level-link');
-    $navItemsWithSubs.attr("class", "first-level-btn");
-    var className = $navItemsWithSubs.attr('class');
+    //JQuery
+    //var $navItemsWithSubs = $('.main-navigation').find('.sub-nav').siblings('.first-level-link');
+    var className = "first-level-btn";
+
+    //Change all the links next to sub-navs to first-level-btn
+    document.querySelectorAll('.main-navigation .sub-nav').forEach(function (node) {
+        node.parentElement.querySelector('a').className=className;
+    });
 
     var CONFIG = _extends({
         ACCORDION_JS: 'main-navigation',
@@ -217,7 +221,7 @@ var plugin = function plugin() {
     // Find all accordions inside a container
     // @param  {Node} node Default document
     // @return {Array}
-    var $listAccordions = function $listAccordions() {
+    var listAccordions = function listAccordions() {
         var node = arguments.length <= 0 || arguments[0] === undefined ? document : arguments[0];
         return [].slice.call(node.querySelectorAll('.' + CONFIG.ACCORDION_JS));
     };
@@ -227,17 +231,12 @@ var plugin = function plugin() {
     // @param  {addListeners} boolean
     var attach = function attach(node) {
 
-        $listAccordions(node).forEach(function (accordion_node) {
+        listAccordions(node).forEach(function (accordion_node) {
             var iLisible = 'z' + Math.random().toString(32).slice(2, 12); // avoid selector exception when starting by a number
             var prefixClassName = accordion_node.hasAttribute(CONFIG.ACCORDION_DATA_PREFIX_CLASS) === true ? accordion_node.getAttribute(CONFIG.ACCORDION_DATA_PREFIX_CLASS) + '-' : '';
             var coolSelectors = CONFIG.ACCORDION_DATA_COOL_SELECTORS === true;
-
-            // Findig if first-level-link has sub-nav then changing its class to first-level-btn
-            //var $navigation = $('.main-navigation');
-            var navItemsWithSubs2 = $navigation.find('.sub-nav').siblings('a');
-            navItemsWithSubs2.attr("class", "first-level-btn");
-            var childClassName = navItemsWithSubs2.attr('class');
-
+            var childClassName = 'first-level-btn';
+            
             // Init attributes accordion
             if (!mobileView()) {
                 accordion_node.setAttribute(CONFIG.ATTR_MULTISELECTABLE, 'false');
@@ -251,8 +250,8 @@ var plugin = function plugin() {
 
             addClass(accordion_node, prefixClassName + CONFIG.ACCORDION_STYLE);
 
-            var $listAccordionsHeader = [].slice.call(accordion_node.querySelectorAll('.' + childClassName));
-            $listAccordionsHeader.forEach(function (header_node, index_header) {
+            var listAccordionsHeader = [].slice.call(accordion_node.querySelectorAll('.' + childClassName));
+            listAccordionsHeader.forEach(function (header_node, index_header) {
                 var _setAttributes2, _setAttributes3;
 
                 // if we do not have cool selectors enabled,
@@ -337,15 +336,15 @@ var main = function main() {
                             var buttonTag = e.target;
                             var accordionContainer = findById(searchParent(buttonTag, CONFIG.ACCORDION_JS, hashId), hashId);
                             var coolSelectors = CONFIG.ACCORDION_DATA_COOL_SELECTORS === true;
-                            var $accordionAllHeaders = [].slice.call(accordionContainer.querySelectorAll('.first-level-btn'));
+                            var accordionAllHeaders = [].slice.call(accordionContainer.querySelectorAll('.first-level-btn'));
 
                             if (coolSelectors === false) {
-                                $accordionAllHeaders = $accordionAllHeaders.filter(function (element) {
+                                accordionAllHeaders = accordionAllHeaders.filter(function (element) {
                                     return element.parentNode.parentNode === accordionContainer;
                                 });
                             }
 
-                           // unSelectHeaders($accordionAllHeaders, CONFIG.ATTR_SELECTED);
+                           // unSelectHeaders(accordionAllHeaders, CONFIG.ATTR_SELECTED);
 
                            // selectHeader(buttonTag, CONFIG.ATTR_SELECTED);
                         })();
@@ -357,14 +356,14 @@ var main = function main() {
                             var buttonTag = e.target;
                             var accordionContainer = findById(searchParent(buttonTag, CONFIG.ACCORDION_JS, hashId), hashId);
                             var coolSelectors = CONFIG.ACCORDION_DATA_COOL_SELECTORS === true;
-                            var $accordionAllHeaders = [].slice.call(accordionContainer.querySelectorAll('.first-level-btn'));
+                            var accordionAllHeaders = [].slice.call(accordionContainer.querySelectorAll('.first-level-btn'));
                             //var accordionMultiSelectable = accordionContainer.getAttribute(CONFIG.ATTR_MULTISELECTABLE);
                             var destination = findById(buttonTag.getAttribute(CONFIG.ATTR_CONTROLS), hashId);
                             var stateButton = buttonTag.getAttribute(CONFIG.ATTR_EXPANDED);
 
 
                             if (coolSelectors === false) {
-                                $accordionAllHeaders = $accordionAllHeaders.filter(function (element) {
+                                accordionAllHeaders = accordionAllHeaders.filter(function (element) {
                                     return element.parentNode.parentNode === accordionContainer;
                                 });
                             }
@@ -389,7 +388,7 @@ var main = function main() {
                             }
 
                             if (!mobileView()) {
-                                $accordionAllHeaders.forEach(function (header_node) {
+                                accordionAllHeaders.forEach(function (header_node) {
                                     //Close all the other panels
 
                                     var destinationPanel = findById(header_node.getAttribute(CONFIG.ATTR_CONTROLS), hashId);
@@ -424,29 +423,29 @@ var main = function main() {
                     //        var accordionContainer = findById(idAccordionContainer, hashId);
 
                     //        var coolSelectors = CONFIG.ACCORDION_DATA_COOL_SELECTORS === true;
-                    //        var $accordionAllHeaders = [].slice.call(accordionContainer.querySelectorAll('.first-level-btn'));
+                    //        var accordionAllHeaders = [].slice.call(accordionContainer.querySelectorAll('.first-level-btn'));
 
                     //        if (coolSelectors === false) {
-                    //            $accordionAllHeaders = $accordionAllHeaders.filter(function (element) {
+                    //            accordionAllHeaders = accordionAllHeaders.filter(function (element) {
                     //                return element.parentNode.parentNode === accordionContainer;
                     //            });
                     //        }
 
                     //        // strike home on a tab => 1st tab
                     //        if (e.keyCode === 36) {
-                    //            unSelectHeaders($accordionAllHeaders, CONFIG.ATTR_SELECTED);
-                    //            selectHeader($accordionAllHeaders[0], CONFIG.ATTR_SELECTED);
+                    //            unSelectHeaders(accordionAllHeaders, CONFIG.ATTR_SELECTED);
+                    //            selectHeader(accordionAllHeaders[0], CONFIG.ATTR_SELECTED);
                     //            setTimeout(function () {
-                    //                $accordionAllHeaders[0].focus();
+                    //                accordionAllHeaders[0].focus();
                     //            }, 0);
                     //            e.preventDefault();
                     //        }
                     //        // strike end on the tab => last tab
                     //        else if (e.keyCode === 35) {
-                    //            unSelectHeaders($accordionAllHeaders, CONFIG.ATTR_SELECTED);
-                    //            selectHeader($accordionAllHeaders[$accordionAllHeaders.length - 1], CONFIG.ATTR_SELECTED);
+                    //            unSelectHeaders(accordionAllHeaders, CONFIG.ATTR_SELECTED);
+                    //            selectHeader(accordionAllHeaders[accordionAllHeaders.length - 1], CONFIG.ATTR_SELECTED);
                     //            setTimeout(function () {
-                    //                $accordionAllHeaders[$accordionAllHeaders.length - 1].focus();
+                    //                accordionAllHeaders[accordionAllHeaders.length - 1].focus();
                     //            }, 0);
                     //            e.preventDefault();
                     //        }
@@ -454,15 +453,15 @@ var main = function main() {
                     //        else if ((e.keyCode === 37 || e.keyCode === 38) && !e.ctrlKey) {
 
                     //            // if first selected = select last
-                    //            if ($accordionAllHeaders[0].getAttribute(CONFIG.ATTR_SELECTED) === 'true') {
-                    //                unSelectHeaders($accordionAllHeaders, CONFIG.ATTR_SELECTED);
-                    //                selectHeader($accordionAllHeaders[$accordionAllHeaders.length - 1], CONFIG.ATTR_SELECTED);
+                    //            if (accordionAllHeaders[0].getAttribute(CONFIG.ATTR_SELECTED) === 'true') {
+                    //                unSelectHeaders(accordionAllHeaders, CONFIG.ATTR_SELECTED);
+                    //                selectHeader(accordionAllHeaders[accordionAllHeaders.length - 1], CONFIG.ATTR_SELECTED);
                     //                setTimeout(function () {
-                    //                    $accordionAllHeaders[$accordionAllHeaders.length - 1].focus();
+                    //                    accordionAllHeaders[accordionAllHeaders.length - 1].focus();
                     //                }, 0);
                     //                e.preventDefault();
                     //            } else {
-                    //                selectHeaderInList($accordionAllHeaders, 'prev', CONFIG.ATTR_SELECTED);
+                    //                selectHeaderInList(accordionAllHeaders, 'prev', CONFIG.ATTR_SELECTED);
                     //                e.preventDefault();
                     //            }
                     //        }
@@ -470,15 +469,15 @@ var main = function main() {
                     //        else if ((e.keyCode === 40 || e.keyCode === 39) && !e.ctrlKey) {
 
                     //            // if last selected = select first
-                    //            if ($accordionAllHeaders[$accordionAllHeaders.length - 1].getAttribute(CONFIG.ATTR_SELECTED) === 'true') {
-                    //                unSelectHeaders($accordionAllHeaders, CONFIG.ATTR_SELECTED);
-                    //                selectHeader($accordionAllHeaders[0], CONFIG.ATTR_SELECTED);
+                    //            if (accordionAllHeaders[accordionAllHeaders.length - 1].getAttribute(CONFIG.ATTR_SELECTED) === 'true') {
+                    //                unSelectHeaders(accordionAllHeaders, CONFIG.ATTR_SELECTED);
+                    //                selectHeader(accordionAllHeaders[0], CONFIG.ATTR_SELECTED);
                     //                setTimeout(function () {
-                    //                    $accordionAllHeaders[0].focus();
+                    //                    accordionAllHeaders[0].focus();
                     //                }, 0);
                     //                e.preventDefault();
                     //            } else {
-                    //                selectHeaderInList($accordionAllHeaders, 'next', CONFIG.ATTR_SELECTED);
+                    //                selectHeaderInList(accordionAllHeaders, 'next', CONFIG.ATTR_SELECTED);
                     //                e.preventDefault();
                     //            }
                     //        }
@@ -530,10 +529,10 @@ function NavReset() {
     // // $(".first-level-btn").attr("aria-selected", "false");
     //$(".sub-nav").attr("aria-hidden", "true").removeClass("open");
     //$(".second-level-link").attr("tabindex", "-1");
-    //var $toggleSubNav = $('<div class="ca-gov-icon-caret-right rotate" aria-hidden="true"></div>');
+    //var toggleSubNav = $('<div class="ca-gov-icon-caret-right rotate" aria-hidden="true"></div>');
     
     //if (window.innerWidth <= 991) {
-    //    //$('.has-sub').append($toggleSubNav);
+    //    //$('.has-sub').append(toggleSubNav);
     //    $(".rotate").css("display", "block");
     // }
     //else {
@@ -701,14 +700,14 @@ AlmostJQueryDocumentReady(function () { //JS
 
                 //JQ
                 //var carrot = $('<span class="ca-gov-icon-triangle-down carrot" aria-hidden="true"></span>');
-                //var $toggleSubNav = $('<div class="ca-gov-icon-caret-right rotate" aria-hidden="true"></div>');
+                //var toggleSubNav = $('<div class="ca-gov-icon-caret-right rotate" aria-hidden="true"></div>');
                 
                 //if (mobileView()) {
-                //    $toggleSubNav.css("display", "block");
+                //    toggleSubNav.css("display", "block");
                 //  } else {
-                //    $toggleSubNav.css("display", "none");
+                //    toggleSubNav.css("display", "none");
                 //}
-                //$(this).find('.has-sub').append($toggleSubNav);
+                //$(this).find('.has-sub').append(toggleSubNav);
                 //$(this).find('.has-sub').append(carrot);
 
 
@@ -718,18 +717,18 @@ AlmostJQueryDocumentReady(function () { //JS
                 addClass(carrot,"carrot");
                 carrot.setAttribute("aria-hidden","true");
 
-                var $toggleSubNav = document.createElement("div");
-                addClass($toggleSubNav,"ca-gov-icon-caret-right");
-                addClass($toggleSubNav,"rotate");
-                $toggleSubNav.setAttribute("aria-hidden","true");
+                var toggleSubNav = document.createElement("div");
+                addClass(toggleSubNav,"ca-gov-icon-caret-right");
+                addClass(toggleSubNav,"rotate");
+                toggleSubNav.setAttribute("aria-hidden","true");
 
                 if (mobileView()) {
-                    $toggleSubNav.style.display="block";
+                    toggleSubNav.style.display="block";
                 } else {
-                    $toggleSubNav.style.display="none";
+                    toggleSubNav.style.display="none";
                 }
 
-                el.appendChild($toggleSubNav);
+                el.appendChild(toggleSubNav);
                 el.appendChild(carrot);
             });
         //}); //JQ
@@ -785,7 +784,6 @@ document.addEventListener('keyup', function (e) {
         NavReset();
     }
 });
-
 
 /* Mobile Controls fix */
 //Doesn't appear to do anything
