@@ -45,13 +45,18 @@ document.addEventListener("DOMContentLoaded", function () {
     // Funciton that will get fired uppon scrolling
     var handleScroll = function handleScroll() {
         elements.forEach(function (item, id) {
-            if (true === item.counterAlreadyFired) return
-            if (!isElementVisible(item)) return
-            item.updateCounter()
-            item.counterAlreadyFired = true
-        })
+            if (true === item.counterAlreadyFired) return;
+            if (!isElementVisible(item)) return;
+            item.updateCounter();
+            item.counterAlreadyFired = true;
+        });
     }
 
-    // Fire the function on scroll
-    window.addEventListener("scroll", handleScroll)
-})
+    // Fire the function on load and scroll
+    window.addEventListener("load", function () {
+        handleScroll();
+    });
+    window.addEventListener("scroll", function () {
+        handleScroll();
+    });
+});
