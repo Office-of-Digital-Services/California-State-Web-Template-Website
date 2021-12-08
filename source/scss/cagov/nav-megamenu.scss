@@ -161,6 +161,9 @@
 
 a.second-level-link {
     @include font-size(1.1);
+    @include media-breakpoint-up(sm) {
+        font-size: calc(1.1rem + 0.3vw);
+    }
     padding: 10px;
 
     &:hover,
@@ -187,6 +190,9 @@ a.second-level-link {
 .link-description {
     display: block;
     @include font-size(1);
+    @include media-breakpoint-up(sm) {
+        font-size: calc(1rem + 0.3vw);
+    }
 }
 
 //

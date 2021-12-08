@@ -82,9 +82,13 @@
 
     .settings-links {
         @include font-size(1); // font size
+        @include media-breakpoint-up(sm) {
+            font-size: calc(1rem + 0.3vw);
+        }
+
         @include text-right();
         @media (max-width: $screen-xs-max) {
-            @include font-size(0.9); // font size
+            @include font-size(1); // font size
             @include text-right(); // beta 5.0 addition
             padding-right: 0;
         }
