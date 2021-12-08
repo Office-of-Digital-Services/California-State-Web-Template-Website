@@ -65,6 +65,26 @@ p {
     }
 }
 
+.btn {
+    font-size: 1rem;
+    @include media-breakpoint-up(sm) {
+        font-size: calc(1rem + 0.3vw);
+    }
+}
+
+.btn-lg {
+    font-size: 1.125rem;
+    @include media-breakpoint-up(sm) {
+        font-size: calc(1.125rem + 0.3vw);
+    }
+}
+.btn-sm {
+    font-size: 0.9rem;
+    @include media-breakpoint-up(sm) {
+        font-size: calc(0.9rem + 0.3vw);
+    }
+}
+
 .ie9 p {
     + h1,
     + h2,

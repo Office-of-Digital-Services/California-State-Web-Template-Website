@@ -4,10 +4,13 @@
 ----------------------------------------- */
 
 blockquote {
-    @include font-size(1.2);
-	padding: 11px 22px;
-    margin: 0 0 22px;
-	border-left: 5px solid #d6d6d6;
+  @include font-size(1.125);
+  @include media-breakpoint-up(sm) {
+    font-size: calc(1.125rem + 0.3vw);
+  }
+  padding: 11px 22px;
+  margin: 0 0 22px;
+  border-left: 5px solid #d6d6d6;
 }
 
 blockquote footer {
@@ -21,7 +24,7 @@ blockquote footer {
 }
 
 blockquote.blockquote-reverse {
-padding-right: 15px;
+  padding-right: 15px;
   padding-left: 0;
   border-right: 5px solid $blockquote-border-color;
   border-left: 0;
@@ -29,9 +32,11 @@ padding-right: 15px;
   footer,
   small,
   .small {
-    &:before { content: ''; }
+    &:before {
+      content: "";
+    }
     &:after {
-      content: '\00A0 \2014'; // nbsp, em dash
+      content: "\00A0 \2014"; // nbsp, em dash
     }
   }
 }

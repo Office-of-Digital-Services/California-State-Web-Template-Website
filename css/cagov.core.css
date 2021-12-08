@@ -1,5 +1,5 @@
 /**
- * CA State Template v6 -  @version v6.0.6 -  12/7/2021 
+ * CA State Template v6 -  @version v6.0.6 -  12/8/2021 
   STYLES COMPILED FROM SOURCE (SCSS) DO NOT MODIFY */
 /* -----------------------------------------
    BOOTSTRAP v4.6.0 - /source/scss/bootstrap/ 
@@ -12780,6 +12780,36 @@ p {
   }
 }
 
+.btn {
+  font-size: 1rem;
+}
+
+@media (min-width: 576px) {
+  .btn {
+    font-size: calc(1rem + 0.3vw);
+  }
+}
+
+.btn-lg, .btn-group-lg > .btn {
+  font-size: 1.125rem;
+}
+
+@media (min-width: 576px) {
+  .btn-lg, .btn-group-lg > .btn {
+    font-size: calc(1.125rem + 0.3vw);
+  }
+}
+
+.btn-sm, .btn-group-sm > .btn {
+  font-size: 0.9rem;
+}
+
+@media (min-width: 576px) {
+  .btn-sm, .btn-group-sm > .btn {
+    font-size: calc(0.9rem + 0.3vw);
+  }
+}
+
 .ie9 p + h1, .ie9 p + .h1,
 .ie9 p + h2,
 .ie9 p + .h2,
@@ -13723,6 +13753,7 @@ a.list-group-item {
   .branding .header-organization-banner {
     position: absolute;
     margin-top: -5px;
+    margin-left: 15px;
   }
 }
 
@@ -15103,8 +15134,13 @@ table.gsc-search-box td {
 
 .top-level-nav .nav-item {
   position: relative;
-  font-size: 16px;
   font-size: 1rem;
+}
+
+@media (min-width: 576px) {
+  .top-level-nav .nav-item {
+    font-size: calc(1rem + 0.3vw);
+  }
 }
 
 .nav-item .sub-nav.open {
@@ -15163,7 +15199,7 @@ table.gsc-search-box td {
 
 .first-level-link.has-sub,
 .first-level-btn.has-sub {
-  padding-right: 20px;
+  padding-right: 24px;
 }
 
 .first-level-link:hover, .first-level-link:focus,
@@ -15480,8 +15516,8 @@ table.gsc-search-box td {
     padding-left: 250px;
   }
   .main-navigation .top-level-nav .nav-item {
-    font-size: 14.4px;
-    font-size: 0.9rem;
+    font-size: 16px;
+    font-size: 1rem;
   }
 }
 
@@ -15906,6 +15942,12 @@ a.second-level-link {
   padding: 10px;
 }
 
+@media (min-width: 576px) {
+  a.second-level-link {
+    font-size: calc(1.1rem + 0.3vw);
+  }
+}
+
 a.second-level-link:hover, a.second-level-link:focus {
   text-decoration: none !important;
 }
@@ -15931,6 +15973,12 @@ a.second-level-link [class^="ca-gov-icon-"] {
   display: block;
   font-size: 16px;
   font-size: 1rem;
+}
+
+@media (min-width: 576px) {
+  .link-description {
+    font-size: calc(1rem + 0.3vw);
+  }
 }
 
 @media (min-width: 992px) {
@@ -16636,10 +16684,16 @@ a.second-level-link [class^="ca-gov-icon-"] {
   text-align: right;
 }
 
+@media (min-width: 576px) {
+  .utility-header .settings-links {
+    font-size: calc(1rem + 0.3vw);
+  }
+}
+
 @media (max-width: 767px) {
   .utility-header .settings-links {
-    font-size: 14.4px;
-    font-size: 0.9rem;
+    font-size: 16px;
+    font-size: 1rem;
     text-align: right;
     padding-right: 0;
   }
@@ -18107,7 +18161,7 @@ cagov-accordion .cagov-accordion-card {
   border-radius: 0.3rem !important;
   margin-bottom: 0;
   min-height: 3rem;
-  margin-top: 0.5rem;
+  margin-top: 1rem;
   border: solid 1px #ededef !important;
 }
 
@@ -18144,9 +18198,16 @@ cagov-accordion .accordion-title {
   color: #046B99;
   margin-right: auto;
   width: 90%;
-  padding: 0 0.5rem 0 0 !important;
+  padding: 0.8rem 0.5rem 0.8rem 0 !important;
   font-size: 1.125rem;
-  font-weight: bold;
+  font-weight: 700;
+  line-height: 1.5;
+}
+
+@media (min-width: 576px) {
+  cagov-accordion .accordion-title {
+    font-size: calc(1.125rem + 0.3vw);
+  }
 }
 
 cagov-accordion.prog-enhanced .accordion-card-container {
@@ -18209,7 +18270,7 @@ cagov-accordion.prog-enhanced .accordion-alpha .plus-minus {
   height: 2.125rem;
   border: none;
   overflow: hidden;
-  margin-top: -2px;
+  margin-top: 0.15rem;
   margin-left: 1rem;
   color: #046B99;
   align-self: flex-start;
@@ -18424,6 +18485,12 @@ cagov-accordion.prog-enhanced .accordion-alpha .plus-minus {
   font-size: 1rem;
 }
 
+@media (min-width: 576px) {
+  .breadcrumb {
+    font-size: calc(1rem + 0.3vw);
+  }
+}
+
 .breadcrumb li:before {
   content: "";
   border-left: 1px dotted #777777;
@@ -18525,7 +18592,8 @@ hr.hr-light {
 /* -----------------------------------------
    PANELS - /source/scss/cagov/panel.scss
 ----------------------------------------- */
-.panel, .card {
+.panel,
+.card {
   border-width: 1px;
   border-style: solid;
   overflow: hidden;
@@ -18533,13 +18601,64 @@ hr.hr-light {
   margin-bottom: 22px;
 }
 
-.panel .panel-heading::after, .panel .card-heading::after, .panel .card-header::after, .card .panel-heading::after, .card .card-heading::after, .card .card-header::after {
+.panel .panel-heading::after,
+.panel .card-heading::after,
+.panel .card-header::after,
+.card .panel-heading::after,
+.card .card-heading::after,
+.card .card-header::after {
   display: block;
   clear: both;
   content: "";
 }
 
-.panel .panel-heading h2, .panel .panel-heading .h2, .panel .panel-heading h3, .panel .panel-heading .h3, .panel .panel-heading h4, .panel .panel-heading .h4, .panel .panel-heading h5, .panel .panel-heading .h5, .panel .card-heading h2, .panel .card-heading .h2, .panel .card-heading h3, .panel .card-heading .h3, .panel .card-heading h4, .panel .card-heading .h4, .panel .card-heading h5, .panel .card-heading .h5, .panel .card-header h2, .panel .card-header .h2, .panel .card-header h3, .panel .card-header .h3, .panel .card-header h4, .panel .card-header .h4, .panel .card-header h5, .panel .card-header .h5, .card .panel-heading h2, .card .panel-heading .h2, .card .panel-heading h3, .card .panel-heading .h3, .card .panel-heading h4, .card .panel-heading .h4, .card .panel-heading h5, .card .panel-heading .h5, .card .card-heading h2, .card .card-heading .h2, .card .card-heading h3, .card .card-heading .h3, .card .card-heading h4, .card .card-heading .h4, .card .card-heading h5, .card .card-heading .h5, .card .card-header h2, .card .card-header .h2, .card .card-header h3, .card .card-header .h3, .card .card-header h4, .card .card-header .h4, .card .card-header h5, .card .card-header .h5 {
+.panel .panel-heading h2, .panel .panel-heading .h2,
+.panel .panel-heading h3,
+.panel .panel-heading .h3,
+.panel .panel-heading h4,
+.panel .panel-heading .h4,
+.panel .panel-heading h5,
+.panel .panel-heading .h5,
+.panel .card-heading h2,
+.panel .card-heading .h2,
+.panel .card-heading h3,
+.panel .card-heading .h3,
+.panel .card-heading h4,
+.panel .card-heading .h4,
+.panel .card-heading h5,
+.panel .card-heading .h5,
+.panel .card-header h2,
+.panel .card-header .h2,
+.panel .card-header h3,
+.panel .card-header .h3,
+.panel .card-header h4,
+.panel .card-header .h4,
+.panel .card-header h5,
+.panel .card-header .h5,
+.card .panel-heading h2,
+.card .panel-heading .h2,
+.card .panel-heading h3,
+.card .panel-heading .h3,
+.card .panel-heading h4,
+.card .panel-heading .h4,
+.card .panel-heading h5,
+.card .panel-heading .h5,
+.card .card-heading h2,
+.card .card-heading .h2,
+.card .card-heading h3,
+.card .card-heading .h3,
+.card .card-heading h4,
+.card .card-heading .h4,
+.card .card-heading h5,
+.card .card-heading .h5,
+.card .card-header h2,
+.card .card-header .h2,
+.card .card-header h3,
+.card .card-header .h3,
+.card .card-header h4,
+.card .card-header .h4,
+.card .card-header h5,
+.card .card-header .h5 {
   font-family: "Asap Condensed", sans-serif;
   font-weight: 500;
   line-height: 1.5;
@@ -18554,51 +18673,143 @@ hr.hr-light {
 
 .panel .panel-heading h2 small, .panel .panel-heading .h2 small, .panel .panel-heading h2 .small, .panel .panel-heading .h2 .small,
 .panel .panel-heading h2 .small,
-.panel .panel-heading .h2 .small, .panel .panel-heading h3 small, .panel .panel-heading .h3 small, .panel .panel-heading h3 .small, .panel .panel-heading .h3 .small,
+.panel .panel-heading .h2 .small,
+.panel .panel-heading h3 small,
+.panel .panel-heading .h3 small,
 .panel .panel-heading h3 .small,
-.panel .panel-heading .h3 .small, .panel .panel-heading h4 small, .panel .panel-heading .h4 small, .panel .panel-heading h4 .small, .panel .panel-heading .h4 .small,
+.panel .panel-heading .h3 .small,
+.panel .panel-heading h3 .small,
+.panel .panel-heading .h3 .small,
+.panel .panel-heading h4 small,
+.panel .panel-heading .h4 small,
 .panel .panel-heading h4 .small,
-.panel .panel-heading .h4 .small, .panel .panel-heading h5 small, .panel .panel-heading .h5 small, .panel .panel-heading h5 .small, .panel .panel-heading .h5 .small,
+.panel .panel-heading .h4 .small,
+.panel .panel-heading h4 .small,
+.panel .panel-heading .h4 .small,
+.panel .panel-heading h5 small,
+.panel .panel-heading .h5 small,
 .panel .panel-heading h5 .small,
-.panel .panel-heading .h5 .small, .panel .card-heading h2 small, .panel .card-heading .h2 small, .panel .card-heading h2 .small, .panel .card-heading .h2 .small,
+.panel .panel-heading .h5 .small,
+.panel .panel-heading h5 .small,
+.panel .panel-heading .h5 .small,
+.panel .card-heading h2 small,
+.panel .card-heading .h2 small,
 .panel .card-heading h2 .small,
-.panel .card-heading .h2 .small, .panel .card-heading h3 small, .panel .card-heading .h3 small, .panel .card-heading h3 .small, .panel .card-heading .h3 .small,
+.panel .card-heading .h2 .small,
+.panel .card-heading h2 .small,
+.panel .card-heading .h2 .small,
+.panel .card-heading h3 small,
+.panel .card-heading .h3 small,
 .panel .card-heading h3 .small,
-.panel .card-heading .h3 .small, .panel .card-heading h4 small, .panel .card-heading .h4 small, .panel .card-heading h4 .small, .panel .card-heading .h4 .small,
+.panel .card-heading .h3 .small,
+.panel .card-heading h3 .small,
+.panel .card-heading .h3 .small,
+.panel .card-heading h4 small,
+.panel .card-heading .h4 small,
 .panel .card-heading h4 .small,
-.panel .card-heading .h4 .small, .panel .card-heading h5 small, .panel .card-heading .h5 small, .panel .card-heading h5 .small, .panel .card-heading .h5 .small,
+.panel .card-heading .h4 .small,
+.panel .card-heading h4 .small,
+.panel .card-heading .h4 .small,
+.panel .card-heading h5 small,
+.panel .card-heading .h5 small,
 .panel .card-heading h5 .small,
-.panel .card-heading .h5 .small, .panel .card-header h2 small, .panel .card-header .h2 small, .panel .card-header h2 .small, .panel .card-header .h2 .small,
+.panel .card-heading .h5 .small,
+.panel .card-heading h5 .small,
+.panel .card-heading .h5 .small,
+.panel .card-header h2 small,
+.panel .card-header .h2 small,
 .panel .card-header h2 .small,
-.panel .card-header .h2 .small, .panel .card-header h3 small, .panel .card-header .h3 small, .panel .card-header h3 .small, .panel .card-header .h3 .small,
+.panel .card-header .h2 .small,
+.panel .card-header h2 .small,
+.panel .card-header .h2 .small,
+.panel .card-header h3 small,
+.panel .card-header .h3 small,
 .panel .card-header h3 .small,
-.panel .card-header .h3 .small, .panel .card-header h4 small, .panel .card-header .h4 small, .panel .card-header h4 .small, .panel .card-header .h4 .small,
+.panel .card-header .h3 .small,
+.panel .card-header h3 .small,
+.panel .card-header .h3 .small,
+.panel .card-header h4 small,
+.panel .card-header .h4 small,
 .panel .card-header h4 .small,
-.panel .card-header .h4 .small, .panel .card-header h5 small, .panel .card-header .h5 small, .panel .card-header h5 .small, .panel .card-header .h5 .small,
+.panel .card-header .h4 .small,
+.panel .card-header h4 .small,
+.panel .card-header .h4 .small,
+.panel .card-header h5 small,
+.panel .card-header .h5 small,
 .panel .card-header h5 .small,
-.panel .card-header .h5 .small, .card .panel-heading h2 small, .card .panel-heading .h2 small, .card .panel-heading h2 .small, .card .panel-heading .h2 .small,
+.panel .card-header .h5 .small,
+.panel .card-header h5 .small,
+.panel .card-header .h5 .small,
+.card .panel-heading h2 small,
+.card .panel-heading .h2 small,
 .card .panel-heading h2 .small,
-.card .panel-heading .h2 .small, .card .panel-heading h3 small, .card .panel-heading .h3 small, .card .panel-heading h3 .small, .card .panel-heading .h3 .small,
+.card .panel-heading .h2 .small,
+.card .panel-heading h2 .small,
+.card .panel-heading .h2 .small,
+.card .panel-heading h3 small,
+.card .panel-heading .h3 small,
 .card .panel-heading h3 .small,
-.card .panel-heading .h3 .small, .card .panel-heading h4 small, .card .panel-heading .h4 small, .card .panel-heading h4 .small, .card .panel-heading .h4 .small,
+.card .panel-heading .h3 .small,
+.card .panel-heading h3 .small,
+.card .panel-heading .h3 .small,
+.card .panel-heading h4 small,
+.card .panel-heading .h4 small,
 .card .panel-heading h4 .small,
-.card .panel-heading .h4 .small, .card .panel-heading h5 small, .card .panel-heading .h5 small, .card .panel-heading h5 .small, .card .panel-heading .h5 .small,
+.card .panel-heading .h4 .small,
+.card .panel-heading h4 .small,
+.card .panel-heading .h4 .small,
+.card .panel-heading h5 small,
+.card .panel-heading .h5 small,
 .card .panel-heading h5 .small,
-.card .panel-heading .h5 .small, .card .card-heading h2 small, .card .card-heading .h2 small, .card .card-heading h2 .small, .card .card-heading .h2 .small,
+.card .panel-heading .h5 .small,
+.card .panel-heading h5 .small,
+.card .panel-heading .h5 .small,
+.card .card-heading h2 small,
+.card .card-heading .h2 small,
 .card .card-heading h2 .small,
-.card .card-heading .h2 .small, .card .card-heading h3 small, .card .card-heading .h3 small, .card .card-heading h3 .small, .card .card-heading .h3 .small,
+.card .card-heading .h2 .small,
+.card .card-heading h2 .small,
+.card .card-heading .h2 .small,
+.card .card-heading h3 small,
+.card .card-heading .h3 small,
 .card .card-heading h3 .small,
-.card .card-heading .h3 .small, .card .card-heading h4 small, .card .card-heading .h4 small, .card .card-heading h4 .small, .card .card-heading .h4 .small,
+.card .card-heading .h3 .small,
+.card .card-heading h3 .small,
+.card .card-heading .h3 .small,
+.card .card-heading h4 small,
+.card .card-heading .h4 small,
 .card .card-heading h4 .small,
-.card .card-heading .h4 .small, .card .card-heading h5 small, .card .card-heading .h5 small, .card .card-heading h5 .small, .card .card-heading .h5 .small,
+.card .card-heading .h4 .small,
+.card .card-heading h4 .small,
+.card .card-heading .h4 .small,
+.card .card-heading h5 small,
+.card .card-heading .h5 small,
 .card .card-heading h5 .small,
-.card .card-heading .h5 .small, .card .card-header h2 small, .card .card-header .h2 small, .card .card-header h2 .small, .card .card-header .h2 .small,
+.card .card-heading .h5 .small,
+.card .card-heading h5 .small,
+.card .card-heading .h5 .small,
+.card .card-header h2 small,
+.card .card-header .h2 small,
 .card .card-header h2 .small,
-.card .card-header .h2 .small, .card .card-header h3 small, .card .card-header .h3 small, .card .card-header h3 .small, .card .card-header .h3 .small,
+.card .card-header .h2 .small,
+.card .card-header h2 .small,
+.card .card-header .h2 .small,
+.card .card-header h3 small,
+.card .card-header .h3 small,
 .card .card-header h3 .small,
-.card .card-header .h3 .small, .card .card-header h4 small, .card .card-header .h4 small, .card .card-header h4 .small, .card .card-header .h4 .small,
+.card .card-header .h3 .small,
+.card .card-header h3 .small,
+.card .card-header .h3 .small,
+.card .card-header h4 small,
+.card .card-header .h4 small,
 .card .card-header h4 .small,
-.card .card-header .h4 .small, .card .card-header h5 small, .card .card-header .h5 small, .card .card-header h5 .small, .card .card-header .h5 .small,
+.card .card-header .h4 .small,
+.card .card-header h4 .small,
+.card .card-header .h4 .small,
+.card .card-header h5 small,
+.card .card-header .h5 small,
+.card .card-header h5 .small,
+.card .card-header .h5 .small,
 .card .card-header h5 .small,
 .card .card-header .h5 .small {
   font-weight: normal;
@@ -18607,50 +18818,127 @@ hr.hr-light {
   font-size: 75%;
 }
 
-.panel .panel-heading h2 span[class^="ca-gov-icon-"], .panel .panel-heading .h2 span[class^="ca-gov-icon-"], .panel .panel-heading h3 span[class^="ca-gov-icon-"], .panel .panel-heading .h3 span[class^="ca-gov-icon-"], .panel .panel-heading h4 span[class^="ca-gov-icon-"], .panel .panel-heading .h4 span[class^="ca-gov-icon-"], .panel .panel-heading h5 span[class^="ca-gov-icon-"], .panel .panel-heading .h5 span[class^="ca-gov-icon-"], .panel .card-heading h2 span[class^="ca-gov-icon-"], .panel .card-heading .h2 span[class^="ca-gov-icon-"], .panel .card-heading h3 span[class^="ca-gov-icon-"], .panel .card-heading .h3 span[class^="ca-gov-icon-"], .panel .card-heading h4 span[class^="ca-gov-icon-"], .panel .card-heading .h4 span[class^="ca-gov-icon-"], .panel .card-heading h5 span[class^="ca-gov-icon-"], .panel .card-heading .h5 span[class^="ca-gov-icon-"], .panel .card-header h2 span[class^="ca-gov-icon-"], .panel .card-header .h2 span[class^="ca-gov-icon-"], .panel .card-header h3 span[class^="ca-gov-icon-"], .panel .card-header .h3 span[class^="ca-gov-icon-"], .panel .card-header h4 span[class^="ca-gov-icon-"], .panel .card-header .h4 span[class^="ca-gov-icon-"], .panel .card-header h5 span[class^="ca-gov-icon-"], .panel .card-header .h5 span[class^="ca-gov-icon-"], .card .panel-heading h2 span[class^="ca-gov-icon-"], .card .panel-heading .h2 span[class^="ca-gov-icon-"], .card .panel-heading h3 span[class^="ca-gov-icon-"], .card .panel-heading .h3 span[class^="ca-gov-icon-"], .card .panel-heading h4 span[class^="ca-gov-icon-"], .card .panel-heading .h4 span[class^="ca-gov-icon-"], .card .panel-heading h5 span[class^="ca-gov-icon-"], .card .panel-heading .h5 span[class^="ca-gov-icon-"], .card .card-heading h2 span[class^="ca-gov-icon-"], .card .card-heading .h2 span[class^="ca-gov-icon-"], .card .card-heading h3 span[class^="ca-gov-icon-"], .card .card-heading .h3 span[class^="ca-gov-icon-"], .card .card-heading h4 span[class^="ca-gov-icon-"], .card .card-heading .h4 span[class^="ca-gov-icon-"], .card .card-heading h5 span[class^="ca-gov-icon-"], .card .card-heading .h5 span[class^="ca-gov-icon-"], .card .card-header h2 span[class^="ca-gov-icon-"], .card .card-header .h2 span[class^="ca-gov-icon-"], .card .card-header h3 span[class^="ca-gov-icon-"], .card .card-header .h3 span[class^="ca-gov-icon-"], .card .card-header h4 span[class^="ca-gov-icon-"], .card .card-header .h4 span[class^="ca-gov-icon-"], .card .card-header h5 span[class^="ca-gov-icon-"], .card .card-header .h5 span[class^="ca-gov-icon-"] {
+.panel .panel-heading h2 span[class^="ca-gov-icon-"], .panel .panel-heading .h2 span[class^="ca-gov-icon-"],
+.panel .panel-heading h3 span[class^="ca-gov-icon-"],
+.panel .panel-heading .h3 span[class^="ca-gov-icon-"],
+.panel .panel-heading h4 span[class^="ca-gov-icon-"],
+.panel .panel-heading .h4 span[class^="ca-gov-icon-"],
+.panel .panel-heading h5 span[class^="ca-gov-icon-"],
+.panel .panel-heading .h5 span[class^="ca-gov-icon-"],
+.panel .card-heading h2 span[class^="ca-gov-icon-"],
+.panel .card-heading .h2 span[class^="ca-gov-icon-"],
+.panel .card-heading h3 span[class^="ca-gov-icon-"],
+.panel .card-heading .h3 span[class^="ca-gov-icon-"],
+.panel .card-heading h4 span[class^="ca-gov-icon-"],
+.panel .card-heading .h4 span[class^="ca-gov-icon-"],
+.panel .card-heading h5 span[class^="ca-gov-icon-"],
+.panel .card-heading .h5 span[class^="ca-gov-icon-"],
+.panel .card-header h2 span[class^="ca-gov-icon-"],
+.panel .card-header .h2 span[class^="ca-gov-icon-"],
+.panel .card-header h3 span[class^="ca-gov-icon-"],
+.panel .card-header .h3 span[class^="ca-gov-icon-"],
+.panel .card-header h4 span[class^="ca-gov-icon-"],
+.panel .card-header .h4 span[class^="ca-gov-icon-"],
+.panel .card-header h5 span[class^="ca-gov-icon-"],
+.panel .card-header .h5 span[class^="ca-gov-icon-"],
+.card .panel-heading h2 span[class^="ca-gov-icon-"],
+.card .panel-heading .h2 span[class^="ca-gov-icon-"],
+.card .panel-heading h3 span[class^="ca-gov-icon-"],
+.card .panel-heading .h3 span[class^="ca-gov-icon-"],
+.card .panel-heading h4 span[class^="ca-gov-icon-"],
+.card .panel-heading .h4 span[class^="ca-gov-icon-"],
+.card .panel-heading h5 span[class^="ca-gov-icon-"],
+.card .panel-heading .h5 span[class^="ca-gov-icon-"],
+.card .card-heading h2 span[class^="ca-gov-icon-"],
+.card .card-heading .h2 span[class^="ca-gov-icon-"],
+.card .card-heading h3 span[class^="ca-gov-icon-"],
+.card .card-heading .h3 span[class^="ca-gov-icon-"],
+.card .card-heading h4 span[class^="ca-gov-icon-"],
+.card .card-heading .h4 span[class^="ca-gov-icon-"],
+.card .card-heading h5 span[class^="ca-gov-icon-"],
+.card .card-heading .h5 span[class^="ca-gov-icon-"],
+.card .card-header h2 span[class^="ca-gov-icon-"],
+.card .card-header .h2 span[class^="ca-gov-icon-"],
+.card .card-header h3 span[class^="ca-gov-icon-"],
+.card .card-header .h3 span[class^="ca-gov-icon-"],
+.card .card-header h4 span[class^="ca-gov-icon-"],
+.card .card-header .h4 span[class^="ca-gov-icon-"],
+.card .card-header h5 span[class^="ca-gov-icon-"],
+.card .card-header .h5 span[class^="ca-gov-icon-"] {
   font-size: 32px;
   font-size: 2rem;
   position: relative;
   top: 4px;
 }
 
-.panel .panel-heading .options, .panel .card-heading .options, .panel .card-header .options, .card .panel-heading .options, .card .card-heading .options, .card .card-header .options {
+.panel .panel-heading .options,
+.panel .card-heading .options,
+.panel .card-header .options,
+.card .panel-heading .options,
+.card .card-heading .options,
+.card .card-header .options {
   display: inline-block;
   float: right;
 }
 
-.panel .panel-heading .options .btn, .panel .card-heading .options .btn, .panel .card-header .options .btn, .card .panel-heading .options .btn, .card .card-heading .options .btn, .card .card-header .options .btn {
-  padding: 1px 5px;
-  font-size: 0.8rem;
+.panel .panel-heading .options .btn,
+.panel .card-heading .options .btn,
+.panel .card-header .options .btn,
+.card .panel-heading .options .btn,
+.card .card-heading .options .btn,
+.card .card-header .options .btn {
+  padding: 5px 10px;
+  font-size: 0.85rem;
   line-height: 1.5;
   border-radius: 3px;
 }
 
-.panel.photo-left, .panel.photo-right, .card.photo-left, .card.photo-right {
+.panel.photo-left, .panel.photo-right,
+.card.photo-left,
+.card.photo-right {
   position: relative;
 }
 
-.panel.photo-left .panel-body, .panel.photo-left .card-body, .panel.photo-right .panel-body, .panel.photo-right .card-body, .card.photo-left .panel-body, .card.photo-left .card-body, .card.photo-right .panel-body, .card.photo-right .card-body {
+.panel.photo-left .panel-body,
+.panel.photo-left .card-body, .panel.photo-right .panel-body,
+.panel.photo-right .card-body,
+.card.photo-left .panel-body,
+.card.photo-left .card-body,
+.card.photo-right .panel-body,
+.card.photo-right .card-body {
   position: relative;
 }
 
-.panel.photo-left .panel-body, .panel.photo-left .card-body, .card.photo-left .panel-body, .card.photo-left .card-body {
+.panel.photo-left .panel-body,
+.panel.photo-left .card-body,
+.card.photo-left .panel-body,
+.card.photo-left .card-body {
   padding-left: 27%;
 }
 
-.panel.photo-left .panel-body .photo, .panel.photo-left .card-body .photo, .card.photo-left .panel-body .photo, .card.photo-left .card-body .photo {
+.panel.photo-left .panel-body .photo,
+.panel.photo-left .card-body .photo,
+.card.photo-left .panel-body .photo,
+.card.photo-left .card-body .photo {
   left: 0;
 }
 
-.panel.photo-right .panel-body, .panel.photo-right .card-body, .card.photo-right .panel-body, .card.photo-right .card-body {
+.panel.photo-right .panel-body,
+.panel.photo-right .card-body,
+.card.photo-right .panel-body,
+.card.photo-right .card-body {
   padding-right: 27%;
 }
 
-.panel.photo-right .panel-body .photo, .panel.photo-right .card-body .photo, .card.photo-right .panel-body .photo, .card.photo-right .card-body .photo {
+.panel.photo-right .panel-body .photo,
+.panel.photo-right .card-body .photo,
+.card.photo-right .panel-body .photo,
+.card.photo-right .card-body .photo {
   right: 0;
 }
 
-.panel .photo, .card .photo {
+.panel .photo,
+.card .photo {
   background-position: 50% 50%;
   background-size: cover;
   height: 100%;
@@ -18661,30 +18949,70 @@ hr.hr-light {
 }
 
 @media (max-width: 767px) {
-  .panel .panel-body, .panel .card-body, .card .panel-body, .card .card-body {
+  .panel .panel-body,
+  .panel .card-body,
+  .card .panel-body,
+  .card .card-body {
     padding: 0.75rem !important;
   }
-  .panel .photo, .card .photo {
+  .panel .photo,
+  .card .photo {
     background-image: none !important;
   }
 }
 
-.panel-body h1 span[class^="ca-gov-icon-"], .panel-body .h1 span[class^="ca-gov-icon-"], .card-body h1 span[class^="ca-gov-icon-"], .card-body .h1 span[class^="ca-gov-icon-"] {
+.panel-body h1 span[class^="ca-gov-icon-"], .panel-body .h1 span[class^="ca-gov-icon-"],
+.card-body h1 span[class^="ca-gov-icon-"],
+.card-body .h1 span[class^="ca-gov-icon-"] {
   margin-left: 0 !important;
 }
 
-.main-secondary .panel, .main-secondary .card {
+.main-secondary .panel,
+.main-secondary .card {
   background: none;
   box-shadow: none;
   border-radius: 0;
 }
 
-.main-secondary .panel .panel-heading, .main-secondary .panel .card-heading, .main-secondary .card .panel-heading, .main-secondary .card .card-heading {
+.main-secondary .panel .panel-heading,
+.main-secondary .panel .card-heading,
+.main-secondary .card .panel-heading,
+.main-secondary .card .card-heading {
   border-radius: 0;
   padding: 0;
 }
 
-.main-secondary .panel .panel-heading h2, .main-secondary .panel .panel-heading .h2, .main-secondary .panel .panel-heading h3, .main-secondary .panel .panel-heading .h3, .main-secondary .panel .panel-heading h4, .main-secondary .panel .panel-heading .h4, .main-secondary .panel .panel-heading h5, .main-secondary .panel .panel-heading .h5, .main-secondary .panel .card-heading h2, .main-secondary .panel .card-heading .h2, .main-secondary .panel .card-heading h3, .main-secondary .panel .card-heading .h3, .main-secondary .panel .card-heading h4, .main-secondary .panel .card-heading .h4, .main-secondary .panel .card-heading h5, .main-secondary .panel .card-heading .h5, .main-secondary .card .panel-heading h2, .main-secondary .card .panel-heading .h2, .main-secondary .card .panel-heading h3, .main-secondary .card .panel-heading .h3, .main-secondary .card .panel-heading h4, .main-secondary .card .panel-heading .h4, .main-secondary .card .panel-heading h5, .main-secondary .card .panel-heading .h5, .main-secondary .card .card-heading h2, .main-secondary .card .card-heading .h2, .main-secondary .card .card-heading h3, .main-secondary .card .card-heading .h3, .main-secondary .card .card-heading h4, .main-secondary .card .card-heading .h4, .main-secondary .card .card-heading h5, .main-secondary .card .card-heading .h5 {
+.main-secondary .panel .panel-heading h2, .main-secondary .panel .panel-heading .h2,
+.main-secondary .panel .panel-heading h3,
+.main-secondary .panel .panel-heading .h3,
+.main-secondary .panel .panel-heading h4,
+.main-secondary .panel .panel-heading .h4,
+.main-secondary .panel .panel-heading h5,
+.main-secondary .panel .panel-heading .h5,
+.main-secondary .panel .card-heading h2,
+.main-secondary .panel .card-heading .h2,
+.main-secondary .panel .card-heading h3,
+.main-secondary .panel .card-heading .h3,
+.main-secondary .panel .card-heading h4,
+.main-secondary .panel .card-heading .h4,
+.main-secondary .panel .card-heading h5,
+.main-secondary .panel .card-heading .h5,
+.main-secondary .card .panel-heading h2,
+.main-secondary .card .panel-heading .h2,
+.main-secondary .card .panel-heading h3,
+.main-secondary .card .panel-heading .h3,
+.main-secondary .card .panel-heading h4,
+.main-secondary .card .panel-heading .h4,
+.main-secondary .card .panel-heading h5,
+.main-secondary .card .panel-heading .h5,
+.main-secondary .card .card-heading h2,
+.main-secondary .card .card-heading .h2,
+.main-secondary .card .card-heading h3,
+.main-secondary .card .card-heading .h3,
+.main-secondary .card .card-heading h4,
+.main-secondary .card .card-heading .h4,
+.main-secondary .card .card-heading h5,
+.main-secondary .card .card-heading .h5 {
   margin: 0;
   display: block;
   text-align: center;
@@ -18692,23 +19020,62 @@ hr.hr-light {
   position: relative;
 }
 
-.main-secondary .panel .panel-heading h2 span[class^="ca-gov-icon-"], .main-secondary .panel .panel-heading .h2 span[class^="ca-gov-icon-"], .main-secondary .panel .panel-heading h3 span[class^="ca-gov-icon-"], .main-secondary .panel .panel-heading .h3 span[class^="ca-gov-icon-"], .main-secondary .panel .panel-heading h4 span[class^="ca-gov-icon-"], .main-secondary .panel .panel-heading .h4 span[class^="ca-gov-icon-"], .main-secondary .panel .panel-heading h5 span[class^="ca-gov-icon-"], .main-secondary .panel .panel-heading .h5 span[class^="ca-gov-icon-"], .main-secondary .panel .card-heading h2 span[class^="ca-gov-icon-"], .main-secondary .panel .card-heading .h2 span[class^="ca-gov-icon-"], .main-secondary .panel .card-heading h3 span[class^="ca-gov-icon-"], .main-secondary .panel .card-heading .h3 span[class^="ca-gov-icon-"], .main-secondary .panel .card-heading h4 span[class^="ca-gov-icon-"], .main-secondary .panel .card-heading .h4 span[class^="ca-gov-icon-"], .main-secondary .panel .card-heading h5 span[class^="ca-gov-icon-"], .main-secondary .panel .card-heading .h5 span[class^="ca-gov-icon-"], .main-secondary .card .panel-heading h2 span[class^="ca-gov-icon-"], .main-secondary .card .panel-heading .h2 span[class^="ca-gov-icon-"], .main-secondary .card .panel-heading h3 span[class^="ca-gov-icon-"], .main-secondary .card .panel-heading .h3 span[class^="ca-gov-icon-"], .main-secondary .card .panel-heading h4 span[class^="ca-gov-icon-"], .main-secondary .card .panel-heading .h4 span[class^="ca-gov-icon-"], .main-secondary .card .panel-heading h5 span[class^="ca-gov-icon-"], .main-secondary .card .panel-heading .h5 span[class^="ca-gov-icon-"], .main-secondary .card .card-heading h2 span[class^="ca-gov-icon-"], .main-secondary .card .card-heading .h2 span[class^="ca-gov-icon-"], .main-secondary .card .card-heading h3 span[class^="ca-gov-icon-"], .main-secondary .card .card-heading .h3 span[class^="ca-gov-icon-"], .main-secondary .card .card-heading h4 span[class^="ca-gov-icon-"], .main-secondary .card .card-heading .h4 span[class^="ca-gov-icon-"], .main-secondary .card .card-heading h5 span[class^="ca-gov-icon-"], .main-secondary .card .card-heading .h5 span[class^="ca-gov-icon-"] {
+.main-secondary .panel .panel-heading h2 span[class^="ca-gov-icon-"], .main-secondary .panel .panel-heading .h2 span[class^="ca-gov-icon-"],
+.main-secondary .panel .panel-heading h3 span[class^="ca-gov-icon-"],
+.main-secondary .panel .panel-heading .h3 span[class^="ca-gov-icon-"],
+.main-secondary .panel .panel-heading h4 span[class^="ca-gov-icon-"],
+.main-secondary .panel .panel-heading .h4 span[class^="ca-gov-icon-"],
+.main-secondary .panel .panel-heading h5 span[class^="ca-gov-icon-"],
+.main-secondary .panel .panel-heading .h5 span[class^="ca-gov-icon-"],
+.main-secondary .panel .card-heading h2 span[class^="ca-gov-icon-"],
+.main-secondary .panel .card-heading .h2 span[class^="ca-gov-icon-"],
+.main-secondary .panel .card-heading h3 span[class^="ca-gov-icon-"],
+.main-secondary .panel .card-heading .h3 span[class^="ca-gov-icon-"],
+.main-secondary .panel .card-heading h4 span[class^="ca-gov-icon-"],
+.main-secondary .panel .card-heading .h4 span[class^="ca-gov-icon-"],
+.main-secondary .panel .card-heading h5 span[class^="ca-gov-icon-"],
+.main-secondary .panel .card-heading .h5 span[class^="ca-gov-icon-"],
+.main-secondary .card .panel-heading h2 span[class^="ca-gov-icon-"],
+.main-secondary .card .panel-heading .h2 span[class^="ca-gov-icon-"],
+.main-secondary .card .panel-heading h3 span[class^="ca-gov-icon-"],
+.main-secondary .card .panel-heading .h3 span[class^="ca-gov-icon-"],
+.main-secondary .card .panel-heading h4 span[class^="ca-gov-icon-"],
+.main-secondary .card .panel-heading .h4 span[class^="ca-gov-icon-"],
+.main-secondary .card .panel-heading h5 span[class^="ca-gov-icon-"],
+.main-secondary .card .panel-heading .h5 span[class^="ca-gov-icon-"],
+.main-secondary .card .card-heading h2 span[class^="ca-gov-icon-"],
+.main-secondary .card .card-heading .h2 span[class^="ca-gov-icon-"],
+.main-secondary .card .card-heading h3 span[class^="ca-gov-icon-"],
+.main-secondary .card .card-heading .h3 span[class^="ca-gov-icon-"],
+.main-secondary .card .card-heading h4 span[class^="ca-gov-icon-"],
+.main-secondary .card .card-heading .h4 span[class^="ca-gov-icon-"],
+.main-secondary .card .card-heading h5 span[class^="ca-gov-icon-"],
+.main-secondary .card .card-heading .h5 span[class^="ca-gov-icon-"] {
   font-size: 28.8px;
   font-size: 1.8rem;
   position: absolute;
   left: 10px;
 }
 
-.main-secondary .panel .panel-body, .main-secondary .panel .card-body, .main-secondary .card .panel-body, .main-secondary .card .card-body {
+.main-secondary .panel .panel-body,
+.main-secondary .panel .card-body,
+.main-secondary .card .panel-body,
+.main-secondary .card .card-body {
   background: transparent;
 }
 
 /* NOTE: although any panel could have a triangle, at this time, only .panel-standout has css and an image */
-.panel.highlight .panel-heading, .panel.highlight .card-heading, .card.highlight .panel-heading, .card.highlight .card-heading {
+.panel.highlight .panel-heading,
+.panel.highlight .card-heading,
+.card.highlight .panel-heading,
+.card.highlight .card-heading {
   position: relative;
 }
 
-.panel.highlight .panel-heading .triangle, .panel.highlight .card-heading .triangle, .card.highlight .panel-heading .triangle, .card.highlight .card-heading .triangle {
+.panel.highlight .panel-heading .triangle,
+.panel.highlight .card-heading .triangle,
+.card.highlight .panel-heading .triangle,
+.card.highlight .card-heading .triangle {
   position: absolute;
   bottom: -16px;
   height: 12px;
@@ -18717,15 +19084,18 @@ hr.hr-light {
   width: 24px;
 }
 
-.panel-group .panel + .panel, .card-group .card + .card {
+.panel-group .panel + .panel,
+.card-group .card + .card {
   margin-top: 24px;
 }
 
-.panel-heading, .card-heading {
+.panel-heading,
+.card-heading {
   padding: 10px 15px;
 }
 
-.panel-body, .card-body {
+.panel-body,
+.card-body {
   padding: 15px;
 }
 
@@ -19028,6 +19398,7 @@ figcaption {
   min-height: 1px;
   padding-left: 0.75rem;
   padding-right: 0.75rem;
+  padding-bottom: 0.75rem;
 }
 
 @media (min-width: 768px) {
@@ -19047,7 +19418,7 @@ figcaption {
 @media (min-width: 1200px) {
   .news-item .thumbnail {
     float: left;
-    width: 20%;
+    width: 25%;
   }
 }
 
@@ -19070,6 +19441,12 @@ figcaption {
   width: 100% \9;
   max-width: 100%;
   height: auto;
+  position: relative;
+  top: 0.5rem;
+}
+
+.news-item .description p {
+  margin-bottom: 0.2rem;
 }
 
 .news-detail h1, .news-detail .h1 {
@@ -19148,9 +19525,11 @@ figcaption {
   transform: scale(1.1);
 }
 
-[class*="block-hover"], [class*="block-hover"]::before, [class*="block-hover"]::after {
-  -webkit-transition: all .3s ease;
-  transition: all .3s ease;
+[class*="block-hover"],
+[class*="block-hover"]::before,
+[class*="block-hover"]::after {
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
 }
 
 .block-hover_zoom {
@@ -21176,11 +21555,17 @@ ul.list-overstated a {
    /source/scss/cagov/blockquote.scss
 ----------------------------------------- */
 blockquote {
-  font-size: 19.2px;
-  font-size: 1.2rem;
+  font-size: 18px;
+  font-size: 1.125rem;
   padding: 11px 22px;
   margin: 0 0 22px;
   border-left: 5px solid #d6d6d6;
+}
+
+@media (min-width: 576px) {
+  blockquote {
+    font-size: calc(1.125rem + 0.3vw);
+  }
 }
 
 blockquote footer {
@@ -21205,14 +21590,14 @@ blockquote.blockquote-reverse footer:before,
 blockquote.blockquote-reverse small:before,
 blockquote.blockquote-reverse .small:before,
 blockquote.blockquote-reverse .small:before {
-  content: '';
+  content: "";
 }
 
 blockquote.blockquote-reverse footer:after,
 blockquote.blockquote-reverse small:after,
 blockquote.blockquote-reverse .small:after,
 blockquote.blockquote-reverse .small:after {
-  content: '\00A0 \2014';
+  content: "\00A0 \2014";
 }
 
 /* -----------------------------------------

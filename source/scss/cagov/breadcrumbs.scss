@@ -6,6 +6,9 @@
     padding-left: 0;
     background-color: transparent;
     @include font-size(1);
+    @include media-breakpoint-up(sm) {
+        font-size: calc(1rem + 0.3vw);
+    }
 
     li {
         &:before {
@@ -26,6 +29,6 @@
     }
 }
 
-    .breadcrumb > li + li:before {
-        padding: 0; // Overrides Bootstraps injected content
-    }
+.breadcrumb > li + li:before {
+    padding: 0; // Overrides Bootstraps injected content
+}

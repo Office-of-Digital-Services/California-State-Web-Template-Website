@@ -58,7 +58,10 @@
     .nav-item {
         // equivalent to .nav-item
         position: relative;
-        @include font-size(1);
+        font-size: 1rem;
+        @include media-breakpoint-up(sm) {
+            font-size: calc(1rem + 0.3vw);
+        }
     }
 }
 
@@ -122,7 +125,7 @@
     z-index: 1;
 
     &.has-sub {
-        padding-right: 20px; // extra room for arrow
+        padding-right: 24px; // extra room for arrow
     }
 
     &:hover,
@@ -512,7 +515,7 @@
         .top-level-nav {
             .nav-item {
                 // equivalent to .nav-item
-                @include font-size(0.9);
+                @include font-size(1);
             }
         }
     }
