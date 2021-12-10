@@ -58,9 +58,9 @@
     .nav-item {
         // equivalent to .nav-item
         position: relative;
-        font-size: 1rem;
+        font-size: $font-size-base;
         @include media-breakpoint-up(sm) {
-            font-size: calc(1rem + 0.3vw);
+            font-size: calc(#{$font-size-base} + #{$ratio});
         }
     }
 }

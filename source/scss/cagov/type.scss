@@ -123,12 +123,11 @@
 
 body {
     font-family: $font-family-sans-serif;
-    font-size: 1.125rem;
+    font-size: $font-size-regular;
     line-height: $line-height-base;
     color: $text-color;
-    min-height: 100vh;
     @include media-breakpoint-up(sm) {
-        font-size: calc(1.125rem + 0.3vw);
+        font-size: calc(#{$font-size-regular} + #{$ratio});
     }
 }
 
@@ -162,45 +161,45 @@ a {
 p {
     margin-bottom: 0.7rem;
     @include media-breakpoint-up(sm) {
-        margin-bottom: calc(0.7rem + 0.5vw);
+        margin-bottom: calc(0.7rem + #{$ratio});
     }
 }
 
 .lead {
-    font-size: 1.25rem;
+    font-size: $font-size-large;
     margin-bottom: 1rem;
     @include media-breakpoint-up(sm) {
-        font-size: calc(1.25rem + 0.3vw);
-        margin-bottom: calc(1rem + 0.5vw);
+        font-size: calc(#{$font-size-large} + #{$ratio});
+        margin-bottom: calc(1rem + #{$ratio});
     }
 }
 
 .small {
-    font-size: 1rem;
+    font-size: $font-size-base;
     margin-bottom: 0.65rem;
     @include media-breakpoint-up(sm) {
-        font-size: calc(1rem + 0.3vw);
-        margin-bottom: calc(0.65rem + 0.5vw);
+        font-size: calc(#{$font-size-base} + #{$ratio});
+        margin-bottom: calc(0.65rem + #{$ratio});
     }
 }
 
 .btn {
-    font-size: 1rem;
+    font-size: $font-size-base;
     @include media-breakpoint-up(sm) {
-        font-size: calc(1rem + 0.3vw);
+        font-size: calc(#{$font-size-base} + #{$ratio});
     }
 }
 
 .btn-lg {
     font-size: 1.125rem;
     @include media-breakpoint-up(sm) {
-        font-size: calc(1.125rem + 0.3vw);
+        font-size: calc(#{$font-size-regular} + #{$ratio});
     }
 }
 .btn-sm {
     font-size: 0.9rem;
     @include media-breakpoint-up(sm) {
-        font-size: calc(0.9rem + 0.3vw);
+        font-size: calc(0.9rem + #{$ratio});
     }
 }
 
@@ -224,53 +223,57 @@ h1,
 // Responsive Font Sizes
 h1,
 .h1 {
-    @include font-size(2.4);
+    // @include font-size(2.4);
+    font-size: $font-size-h1;
     margin-top: 3rem;
     margin-bottom: 1.6rem;
     @include media-breakpoint-up(sm) {
-        font-size: calc(2.4rem + 0.5vw);
-        margin-top: calc(3rem + 0.5vw);
-        margin-bottom: calc(1.6rem + 0.5vw);
+        font-size: calc(#{$font-size-h1} + #{$ratio-headers});
+        margin-top: calc(3rem + #{$ratio-headers});
+        margin-bottom: calc(1.6rem + #{$ratio-headers});
     }
     font-family: $headings-font-family;
 }
 
 h2,
 .h2 {
-    @include font-size(1.94);
+    // @include font-size(1.94);
+    font-size: $font-size-h2;
     margin-top: 2.7rem;
     margin-bottom: 1.4rem;
 
     @include media-breakpoint-up(sm) {
-        font-size: calc(1.94rem + 0.5vw);
-        margin-top: calc(2.7rem + 0.5vw);
-        margin-bottom: calc(1.4rem + 0.5vw);
+        font-size: calc(#{$font-size-h2} + #{$ratio-headers});
+        margin-top: calc(2.7rem + #{$ratio-headers});
+        margin-bottom: calc(1.4rem + #{$ratio-headers});
     }
     font-family: $headings-font-family;
 }
 
 h3,
 .h3 {
-    @include font-size(1.54);
+    // @include font-size(1.54);
+    font-size: $font-size-h3;
     margin-top: 2.4rem;
     margin-bottom: 1.2rem;
     @include media-breakpoint-up(sm) {
-        font-size: calc(1.54rem + 0.5vw);
-        margin-top: calc(2.4rem + 0.9vw);
-        margin-bottom: calc(1.2rem + 0.9vw);
+        font-size: calc(#{$font-size-h3} + #{$ratio-headers});
+        margin-top: calc(2.4rem + #{$ratio-headers});
+        margin-bottom: calc(1.2rem + #{$ratio-headers});
     }
     font-family: $headings-font-family;
 }
 
 h4,
 .h4 {
-    @include font-size(1.25);
+    // @include font-size(1.25);
+    font-size: $font-size-h4;
     margin-top: 2rem;
     margin-bottom: 1rem;
     @include media-breakpoint-up(sm) {
-        font-size: calc(1.25rem + 0.5vw);
-        margin-top: calc(2rem + 0.9vw);
-        margin-bottom: calc(1rem + 0.9vw);
+        font-size: calc(#{$font-size-h4} + #{$ratio-headers});
+        margin-top: calc(2rem + #{$ratio-headers});
+        margin-bottom: calc(1rem + #{$ratio-headers});
     }
 
     font-family: $headings-font-family;
@@ -278,27 +281,29 @@ h4,
 
 h5,
 .h5 {
-    @include font-size(1);
+    // @include font-size(1);
+    font-size: $font-size-h5;
     margin-top: 1.7rem;
     margin-bottom: 0.8rem;
 
     @include media-breakpoint-up(sm) {
-        font-size: calc(1rem + 0.5vw);
-        margin-top: calc(1.7rem + 0.9vw);
-        margin-bottom: calc(0.8rem + 0.9vw);
+        font-size: calc(#{$font-size-h5} + #{$ratio-headers});
+        margin-top: calc(1.7rem + #{$ratio-headers});
+        margin-bottom: calc(0.8rem + #{$ratio-headers});
     }
     font-family: $headings-font-family;
 }
 
 h6,
 .h6 {
-    @include font-size(0.8);
+    // @include font-size(0.8);
+    font-size: $font-size-h6;
     margin-top: 1.4rem;
     margin-bottom: 0.6rem;
     @include media-breakpoint-up(sm) {
-        font-size: calc(0.8rem + 0.5vw);
-        margin-top: calc(1.4rem + 0.5vw);
-        margin-bottom: calc(0.6rem + 0.5vw);
+        font-size: calc(#{$font-size-h6} + #{$ratio-headers});
+        margin-top: calc(1.4rem + #{$ratio-headers});
+        margin-bottom: calc(0.6rem + #{$ratio-headers});
     }
 
     font-family: $headings-font-family;

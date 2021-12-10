@@ -81,14 +81,16 @@
     }
 
     .settings-links {
-        @include font-size(1); // font size
+        // @include font-size(1); // font size
+        font-size: $font-size-base;
         @include media-breakpoint-up(sm) {
-            font-size: calc(1rem + 0.3vw);
+            font-size: calc(#{$font-size-base} + #{$ratio});
         }
 
         @include text-right();
         @media (max-width: $screen-xs-max) {
-            @include font-size(1); // font size
+            // @include font-size(1); // font size
+            font-size: $font-size-base;
             @include text-right(); // beta 5.0 addition
             padding-right: 0;
         }

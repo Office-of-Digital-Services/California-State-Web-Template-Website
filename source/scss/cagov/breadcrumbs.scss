@@ -5,9 +5,10 @@
 .breadcrumb {
     padding-left: 0;
     background-color: transparent;
-    @include font-size(1);
+    // @include font-size(1);
+    font-size: $font-size-base;
     @include media-breakpoint-up(sm) {
-        font-size: calc(1rem + 0.3vw);
+        font-size: calc(#{$font-size-base} + #{$ratio});
     }
 
     li {
