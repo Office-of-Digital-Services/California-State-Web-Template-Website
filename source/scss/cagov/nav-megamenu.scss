@@ -160,9 +160,10 @@
 // --------------------------------------------------
 
 a.second-level-link {
-    @include font-size(1.1);
+    //  @include font-size(1.1);
+    font-size: $font-size-regular;
     @include media-breakpoint-up(sm) {
-        font-size: calc(1.1rem + 0.3vw);
+        font-size: calc(#{$font-size-regular} + #{$ratio});
     }
     padding: 10px;
 
@@ -189,9 +190,10 @@ a.second-level-link {
 
 .link-description {
     display: block;
-    @include font-size(1);
+    // @include font-size(1);
+    font-size: $font-size-base;
     @include media-breakpoint-up(sm) {
-        font-size: calc(1rem + 0.3vw);
+        font-size: calc(#{$font-size-base} + #{$ratio});
     }
 }
 

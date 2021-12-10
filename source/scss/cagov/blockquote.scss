@@ -4,9 +4,10 @@
 ----------------------------------------- */
 
 blockquote {
-  @include font-size(1.125);
+  // @include font-size(1.125);
+  font-size: $font-size-regular;
   @include media-breakpoint-up(sm) {
-    font-size: calc(1.125rem + 0.3vw);
+    font-size: calc(#{$font-size-regular} + #{$ratio});
   }
   padding: 11px 22px;
   margin: 0 0 22px;
