@@ -1,60 +1,62 @@
-$(document).ready(function () {
-    $('.number-counter').each(initCountUp);
-});
+"use strict"
 
-function initCountUp() {
-    // our main component
-    var counter = $(this);
+document.addEventListener("DOMContentLoaded", function () {
+    // You can change this class to specify which elements are going to behave as counters.
+    var elements = document.querySelectorAll(".scroll-counter")
 
-    // get our values the user has configured
-    var endCount = counter.text().trim();
+    elements.forEach(function (item) {
+        // Add new attributes to the elements with the '.scroll-counter' HTML class
+        item.counterAlreadyFired = false
+        item.counterSpeed = item.getAttribute("data-counter-time") / 45
+        item.counterTarget = +item.innerText
+        item.counterCount = 0
+        item.counterStep = item.counterTarget / item.counterSpeed
 
-    // prepare the dom
-    counter.text('0');
-    counter.css({'visibility': 'visible'});
+        item.updateCounter = function () {
+            item.counterCount = item.counterCount + item.counterStep
+            item.innerText = Math.ceil(item.counterCount)
 
-
-
-    // countUp lib options
-    var options = {
-        "useEasing": true,
-        "useGrouping": false,
-        "separator": "",
-        "decimal": ".",
-        "prefix": ""
-    };
-
-
-    // handle if user has set decimal precision
-    var decimals = 0;
-    if (endCount.indexOf('.') !== -1) {
-        decimals = endCount.split('.')[1].length;
-    }
-
-    // handle if user has set a comma
-    if (endCount.indexOf(',') !== -1) {
-        options.useGrouping = true;
-        options.separator = ',';
-        endCount = parseFloat(endCount.replace(/,/g, ''));
-    }
-
-    // target, startVal, endVal, decimals, duration, options
-    var demo = new CountUp(counter.get(0), 0, endCount, decimals, 3.5, options);
-
-    var waypoint = new Waypoint({
-        element: counter.get(0),
-        // start when it appears at the bottom
-        offset: '100%',
-        handler: function () {
-            demo.start();
+            if (item.counterCount < item.counterTarget) {
+                setTimeout(item.updateCounter, item.counterSpeed)
+            } else {
+                item.innerText = item.counterTarget
+            }
         }
+    })
+
+    // Function to determine if an element is visible in the web page
+    var isElementVisible = function isElementVisible(el) {
+        var scroll = window.scrollY || window.pageYOffset
+        var boundsTop = el.getBoundingClientRect().top + scroll
+        var viewport = {
+            top: scroll,
+            bottom: scroll + window.innerHeight,
+        }
+        var bounds = {
+            top: boundsTop,
+            bottom: boundsTop + el.clientHeight,
+        }
+        return (
+            (bounds.bottom >= viewport.top && bounds.bottom <= viewport.bottom) ||
+            (bounds.top <= viewport.bottom && bounds.top >= viewport.top)
+        )
+    }
+
+    // Funciton that will get fired uppon scrolling
+    var handleScroll = function handleScroll() {
+        elements.forEach(function (item, id) {
+            if (true === item.counterAlreadyFired) return;
+            if (!isElementVisible(item)) return;
+            item.updateCounter();
+            item.counterAlreadyFired = true;
+        });
+    }
+
+    // Fire the function on load and scroll
+    window.addEventListener("load", function () {
+        handleScroll();
     });
-}
-
-
-// polyfill for ie8
-if (!String.prototype.trim) {
-  String.prototype.trim = function () {
-    return this.replace(/^[\s\uFEFF\xA0]+|[\s\uFEFF\xA0]+$/g, '');
-  };
-}
+    window.addEventListener("scroll", function () {
+        handleScroll();
+    });
+});

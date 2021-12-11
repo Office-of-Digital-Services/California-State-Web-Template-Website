@@ -7,7 +7,8 @@
 <html class="no-js" lang="en">
  <!--<![endif]-->
 <head>    
-<!--    California State Template
+ <!--    California State Template (beta)
+ 
 
     Based on Twitter Bootstrap
     -->
@@ -20,7 +21,9 @@
     <meta name="Keywords" content="California, government" />
 
     <!--#include virtual="/ssi/head-css-js.html" -->
-
+    <script type="text/javascript">
+var defaultActiveLink = "Components";
+    </script>
 </head>
 
 <body>
@@ -38,13 +41,11 @@
 
         <div class="navigation-search">
             <!-- Include Navigation -->
-            <!--#include virtual="/ssi/navigation.html" -->
-
+            <!--#include virtual="/sample/modules/nav-flex.html" -->
             <div id="head-search" class="search-container">
                 <!-- Include Search -->
                 <!--#include virtual="/ssi/search.html" -->
             </div>
-
         </div>
 
         <div class="header-decoration"></div>
@@ -55,7 +56,7 @@
             <main class="main-primary">            
                 <ol class="breadcrumb">
                     <li><a href="../index.html" title="Home page">Home</a></li>
-                    <li><a href="index.html" title="Examples landing page">Examples</a></li>
+                    <li><a href="/sample/navsamples.html" title="Navigation Samples page">Navigation Samples</a></li>
                     <li class="active">Flex Megamenu</li>
                 </ol>
 
@@ -65,11 +66,11 @@
                     This style of menu can be set by including the <code>.megadropdown</code>
                     class in the <code>&lt;nav&gt;</code> element.
                 </p>
-                <h4>Example:</h4>
+                <h2 class="h4">Example:</h2>
 
                 <pre>&lt;nav id="navigation" class="main-navigation megadropdown"&gt;</pre>
                 <p>
-                    In the template distribution this markup can be found in <code>/ssi/navigation.html</code>.
+                    In the template distribution this markup can be found in <code>/sample/modules/nav-flex.html</code>.
 
                     <h2>Flex Units</h2>
                 <p>
@@ -79,7 +80,7 @@
                     iside of <code>.second-level-nav</code> div.
                 </p>
 
-                <h4>Example:</h4>
+                <h2 class="h4">Example:</h2>
                 <pre>&lt;div class="sub-nav"&gt;
     &lt;div class="second-level-nav flex"&gt;
         &lt;a href="/" class="second-level-link"&gt;Link 1&lt;/a>
@@ -101,14 +102,14 @@
                     or <code>.with-image-right</code> on the div container containing the media.
                 </p>
 
-                <h4>Link with large icon:</h4>
+                <h3 class="h4">Link with large icon:</h4>
 <pre><code><a href="/" class="second-level-link">
     <span class="ca-gov-icon-home font-size-40" aria-hidden="true"></span>
     <p class="h3 sub-nav-link">First Link</p>
     <p class="link-description">Some link description.</p>
 </a>
 </code></pre>
-                <h4>Link with left image:</h4>
+                <h3 class="h4">Link with left image:</h4>
 <pre><code><a href="/" class="second-level-link">
         <div class="media-left">
         <img class="media-object" src="/sample/images/70x70.gif" alt="...">
@@ -130,6 +131,7 @@
                     <li><a href="navigation-megamenu.html">State Template v5 Megamenu</a></li>
                     <li><a href="navigation-megamenu-original.html">State Template v4 Megamenu</a></li>
                     <li><a href="navigation-dropdown.html">Dropdown Navigation</a></li>
+                    <li><a href="navigation-sidebar.html">Side navigation menu</a></li>
 
 
                 </ul>

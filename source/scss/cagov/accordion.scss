@@ -3,98 +3,134 @@
    /source/scss/cagov/accordion.scss
 ----------------------------------------- */
 
-/* Adds open and closed icons to accordion */
-.accordion, .panel-group, .service-tile-content {
-    /* Move padding from container to the href so the entire panel is clickable */
-    .panel-heading {
-        padding: 0;
+/* accordion component specific classes */
+cagov-accordion .cagov-accordion-card {
+  border-radius: 0.3rem !important;
+  margin-bottom: 0;
+  min-height: 3rem;
+  margin-top: 1rem;
+  border: solid 1px #ededef !important;
+}
 
-        a {
-            padding: 15px;
-            padding-right: 30px;
-        }
+cagov-accordion .accordion-card-container {
+  display: block;
+  overflow: hidden;
+}
+
+cagov-accordion button.accordion-card-header {
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  padding: 0 0 0 1rem;
+  background-clip: border-box;
+  background-color: #f5f5f5;
+  border: none;
+  position: relative;
+  width: 100%;
+  line-height: 3rem;
+  padding-right: 0.5rem;
+  &:hover {
+    .accordion-title {
+      text-decoration: none !important;
     }
-
-    .panel-heading .panel-title {
-        margin-top: 0; // Remove the top margin on panel groups that are responsive. e.g. tabs2accordion
-        display: block; // Force the title and a tag to be block to make the hit box larger
-        @include font-size(1.125);
-
-        a {
-            display: block;
-            position: relative;
-            outline: none;
-
-            &:hover, &:focus {
-                text-decoration: none;
-                background: lighten($gray-lighter, 10%); // beta 5.0 addition
-            }
-            /* Adds open and closed icons to responsive tab panels */
-            span[aria-hidden="true"] {
-                position: absolute;
-                right: 10px;
-                top: 50%;
-                margin-top: -11px;
-                color: $gray-light;
-
-                &:after {
-                    content: "\43"; // .ca-gov-icon-triangle-down
-                    font-family: 'CaGov';
-                }
-            }
-
-            &.collapsed {
-                span[aria-hidden="true"] {
-
-                    &:after {
-                        content: "\45"; // .ca-gov-icon-triangle-right
-                    }
-                }
-            }
-        }
-    }
+  }
 }
 
-
-.accordion {
-    .panel {
-        overflow: visible; // to display focus outline for accessibility
-        a {
-            &:focus {
-                @include outline(2px);
-            }
-        }
-    }
+cagov-accordion.prog-enhanced button.accordion-card-header {
+  cursor: pointer;
 }
 
+cagov-accordion .accordion-title {
+  text-align: left;
+  margin-bottom: 0;
+  color: $link-color;
+  margin-right: auto;
+  width: 90%;
+  padding: 0.8rem 0.5rem 0.8rem 0 !important;
+  font-size: $font-size-regular;
+  @include media-breakpoint-up(sm) {
+    font-size: calc(#{$font-size-regular} + #{$ratio});
+  }
+  font-weight: 700;
+  line-height: 1.5;
+}
 
-/* list accordion */
-.accordion-list {
-	list-style: none;
-	li.tab {
-		cursor: pointer;
-		padding-bottom: 0;
-		margin-top: 13px;
-		a {
-			color: $link-color;
-			
-			&:hover {
-				color: $link-hover-color;
-				}
-			}
-	}
-	.panel {
-		padding-left: 1em;
-		margin-bottom: 10px;
-		border:none;
-	}
+cagov-accordion.prog-enhanced .accordion-card-container {
+  height: 0px;
+  transition: height 0.3s ease;
 }
-.accordion-list.list-standout {
-	li.tab {
-		padding-left: 1em;
-		margin-top: 0;
-	}
+cagov-accordion.prog-enhanced .accordion-card-container .card-body {
+  padding-left: 1rem;
+  margin-top: 8px;
 }
-.accordion-list.list-understated {
-	padding-left: 0;
+
+cagov-accordion.prog-enhanced .accordion-card-container .card-body ul {
+  margin-left: 16px;
+  margin-right: 16px;
+}
+
+cagov-accordion .collapsed {
+  display: block;
+  overflow: hidden;
+  visibility: hidden;
+}
+
+.accordion-title h4,
+.accordion-title h3,
+.accordion-title h2 {
+  padding: 0 !important;
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+  font-size: 1.2rem !important;
+  font-weight: 700;
+  color: $link-color;
+  text-align: left !important;
+}
+
+button.accordion-card-header:hover {
+  background-color: #f9f9fa;
+}
+button.accordion-card-header:hover .accordion-title {
+  text-decoration: underline;
+}
+button.accordion-card-header:hover .accordion-title:hover {
+  text-decoration: underline;
+}
+
+button.accordion-card-header:focus {
+  outline-offset: -2px;
+}
+
+.accordion-icon svg line {
+  stroke-width: 4px;
+}
+
+cagov-accordion.prog-enhanced .accordion-alpha .plus-minus {
+  width: 2.125rem;
+  height: 2.125rem;
+  border: none;
+  overflow: hidden;
+  margin-top: 0.15rem;
+  margin-left: 1rem;
+  color: $link-color;
+  align-self: flex-start;
+}
+
+.prog-enhanced .accordion-alpha .plus-minus svg {
+  fill: $link-color;
+  width: 25px;
+  height: 25px;
+}
+
+.prog-enhanced .accordion-alpha-open cagov-plus .accordion-icon {
+  display: none !important;
+}
+.prog-enhanced .accordion-alpha-open cagov-minus .accordion-icon {
+  display: block !important;
+}
+
+@media only screen and (max-width: 767px) {
+  .accordion-alpha-open + .accordion-card-container {
+    height: 100% !important;
+  }
 }

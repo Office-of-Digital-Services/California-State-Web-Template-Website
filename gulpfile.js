@@ -3,7 +3,7 @@
 var gulp = require('gulp'), // Gulp
     sass = require('gulp-sass'), // SASS,
     autoprefixer = require('gulp-autoprefixer'), // Add the desired vendor prefixes and remove unnecessary in SASS-files
-    uglify = require('gulp-uglify'),
+    uglify = require('gulp-uglify-es').default,
     gutil = require('gulp-util');
 csso = require('gulp-csso');
 concat = require('gulp-concat');
@@ -28,60 +28,23 @@ var jssrc = [
     // MODERNIZR
     'source/js/libs/modernizr.js',
 
-    // NO CONFLICT
-    'source/js/cagov/noconflict.js',
-
     // BOOTSTRAP 
-    'source/js/bootstrap/bootstrap.bundle.js',
+    'source/js/bootstrap/bootstrap.bundle.min.js',
 
-    // BOOTSTRAP ACCESSIBILITY PLUGIN
-    'source/js/bootstrap-accessibility-plugin/functions.js',
-    'source/js/bootstrap-accessibility-plugin/collapse.js',
-    'source/js/bootstrap-accessibility-plugin/dropdown.js',
-    'source/js/bootstrap-accessibility-plugin/tab.js',
-
-    // THIRD PARTY LIBS
-    'source/js/libs/owl.carousel.js',
-    'source/js/libs/jquery.fancybox.js',
-    'source/js/libs/jquery.eqheight.js',
-    'source/js/libs/countUp.js', // updated
-    'source/js/libs/jquery.waypoints.js',
-    'source/js/libs/Vague.js',
-    'source/js/libs/circles.min.js',
 
     // CAGOV CORE
-
-    'source/js/cagov/header.js',
     'source/js/cagov/fixed-header.js',
-    'source/js/cagov/helpers.js',
-    'source/js/cagov/gatag.js',
-    'source/js/cagov/navigation.js',
     'source/js/cagov/accordion.js',
-    'source/js/cagov/panel.js',
-    'source/js/cagov/cards.js',
+    'source/js/cagov/accordion-list.js',
+    'source/js/cagov/navigation.js',
     'source/js/cagov/search.js',
-    'source/js/cagov/plugins.js',
-    'source/js/cagov/gallery.js',
-    'source/js/cagov/profile-banners.js',
-    'source/js/cagov/carousel.js',
-    'source/js/cagov/jobs.js',
-    'source/js/cagov/locations.js',
-    'source/js/cagov/socialsharer.js',
-    'source/js/cagov/breadcrumb.js',
-    'source/js/cagov/service-tiles.js',
-    'source/js/cagov/number-counter.js',
-    'source/js/cagov/parallax.js',
-    'source/js/cagov/animations.js',
-    'source/js/cagov/more.js',
-    'source/js/cagov/high-contrast.js',
-    'source/js/cagov/ask-group.js',
-    'source/js/cagov/panes.js',
     'source/js/cagov/sourcecode.js',
     'source/js/cagov/tabs.js',
-    'source/js/cagov/utility-header.js'
+    'source/js/cagov/number-counter.js',
+    'source/js/cagov/settings.js',
 ];
 
-
+var jssrcmap = ['source/js/bootstrap/bootstrap.bundle.min.js.map',];
 // creating assets folder and copiing index file in there.
 //gulp.task('copy', function() {
 // gulp.src('index.html')  //src where we put the name of the file we want to work with and use as an input
@@ -146,7 +109,7 @@ gulp.task('delta', function () {
 
 });
 // delta min
-gulp.task('deltamin',  function () {
+gulp.task('deltamin', function () {
     return gulp.src('source/scss/colorscheme/colorscheme-delta-import.scss')
         .pipe(sass({ outputStyle: 'expanded' }))
         // .pipe(autoprefixer(['last 3 versions', '> 1%'], { cascade: true }))
@@ -229,7 +192,7 @@ gulp.task('oceanside', function () {
 
 });
 // oceanside min
-gulp.task('oceansidemin',  function () {
+gulp.task('oceansidemin', function () {
     return gulp.src('source/scss/colorscheme/colorscheme-oceanside-import.scss')
         .pipe(sass({ outputStyle: 'expanded' }))
         // .pipe(autoprefixer(['last 3 versions', '> 1%'], { cascade: true }))
@@ -274,7 +237,7 @@ gulp.task('orangecountymin', function () {
 
 
 // PASO ROBLES
-gulp.task('pasorobles',  function () {
+gulp.task('pasorobles', function () {
     return gulp.src('source/scss/colorscheme/colorscheme-pasorobles-import.scss')
         .pipe(sass({ outputStyle: 'expanded' }))
         .pipe(header(banner, { pkg: pkg }))
@@ -512,17 +475,17 @@ gulp.task('js', done => {
         .pipe(concat('cagov.core.js'))
         .pipe(header(bannerjs, { pkg: pkg }))
         .pipe(gulp.dest('js'));
-        done();
+    done();
 });
 
 // JS Core Min 
-gulp.task('jsmin', done => {
-    gulp.src(jssrc)
+gulp.task('jsmin', function () {
+    return gulp.src(jssrc)
         .pipe(concat('cagov.core.min.js'))
         .pipe(uglify())
         .pipe(header(bannerjs, { pkg: pkg }))
         .pipe(gulp.dest('js'));
-        done();
+    done();
 });
 
 

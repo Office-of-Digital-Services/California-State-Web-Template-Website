@@ -8,8 +8,7 @@
     top: 0;
     width: 100%;
     min-height: 38px; // beta 6.0 addition
-    
-
+    transition: all 0.3s ease;
 
     @media (max-width: $screen-xs-max) {
         min-height: 40px; // beta 6.0 addition
@@ -42,8 +41,11 @@
     a {
         display: inline-block;
         padding: 0;
+        text-decoration: none;
 
-        &:hover, &:focus, &.hovered {
+        &:hover,
+        &:focus,
+        &.hovered {
             text-decoration: none;
         }
     }
@@ -68,7 +70,8 @@
                     font-size: 100% !important;
                 }
 
-                &:hover, &:focus {
+                &:hover,
+                &:focus {
                     color: lighten($color-p1, 25%);
                     background-color: transparent;
                     border: none;
@@ -78,10 +81,16 @@
     }
 
     .settings-links {
-        @include font-size(1); // font size
+        // @include font-size(1); // font size
+        font-size: $font-size-base;
+        @include media-breakpoint-up(sm) {
+            font-size: calc(#{$font-size-base} + #{$ratio});
+        }
+
         @include text-right();
         @media (max-width: $screen-xs-max) {
-            @include font-size(0.9); // font size
+            // @include font-size(1); // font size
+            font-size: $font-size-base;
             @include text-right(); // beta 5.0 addition
             padding-right: 0;
         }
@@ -101,7 +110,6 @@
     }
 
     @media (max-width: $screen-xs-max) {
-
         .social-media-links {
             li {
                 padding: 0 5px;
@@ -127,17 +135,14 @@
     }
 }
 
-
-.header-cagov-logo img { // Beta 5.0 addition
+.header-cagov-logo img {
+    // Beta 5.0 addition
     left: 27px;
 
     @media (max-width: $screen-md-max) {
         left: 5px;
     }
 }
-
-
-
 
 /* Utility header when using full width menu with icons */
 
@@ -167,10 +172,8 @@
     }
 }
 
-
 // Desktop view
 @media (min-width: $screen-sm-min) {
-
     .nav-full-width-icons .header-organization-banner a img {
         width: 100%;
         max-width: 300px;
@@ -188,17 +191,18 @@
         }
     }
 
-
     .nav-full-width-icons .settings-links {
         margin-top: -52px;
 
-        a, button {
+        a,
+        button {
             padding: 8px 10px 8px 10px;
             border: 1px solid #fff;
             border-radius: 3px;
             color: #fff;
 
-            &:hover, &:focus {
+            &:hover,
+            &:focus {
                 border: 1px solid #fff;
             }
         }
@@ -208,7 +212,6 @@
 // Mobile view
 @media (max-width: $screen-xs-max) {
     .nav-full-width-icons {
-
         .header-organization-banner img {
             width: 100%;
             max-width: 300px;
@@ -228,7 +231,8 @@
                 top: 20px;
                 z-index: 9;
 
-                a, button {
+                a,
+                button {
                     padding: 8px 10px 8px 10px;
                     border: 1px solid $color-p2;
                     border-radius: 3px;
@@ -247,7 +251,6 @@
     }
 }
 
-
 //
 // FLEX UTILITY
 // --------------------------------------------------
@@ -264,7 +267,6 @@
             align-items: center; // make items vertically centered
             .header-cagov-logo {
                 margin-right: 20px;
-                margin-left: 20px;
 
                 img {
                     left: 0;
@@ -273,12 +275,11 @@
 
                 @media (min-width: $screen-xs-max) and (max-width: $screen-sm-max) {
                     margin-right: 15px;
-                    margin-left: 15px;
                 }
 
                 @media (max-width: $screen-xs-max) {
-                    margin-right: 15px;
-                    margin-left: 15px;
+                    margin-right: 12px;
+                    margin-left: 0;
                 }
 
                 a {
@@ -290,12 +291,10 @@
             a {
                 margin: 0px 10px 0 10px;
 
-
                 @media (max-width: $screen-xs-max) {
                     margin: 4px 4px 0 4px;
                 }
             }
-
 
             @media (max-width: $screen-xs-max) {
                 [class^="ca-gov-icon-"] {
@@ -314,10 +313,7 @@
 
             a {
                 margin: 0 10px 0 10px;
-                font-size: .9em;
-
-
-
+                font-size: 0.9em;
 
                 @media (max-width: $screen-xs-max) {
                     margin: 0 4px 0 4px;

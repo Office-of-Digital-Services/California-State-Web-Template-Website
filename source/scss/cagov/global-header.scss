@@ -27,7 +27,6 @@
         border-bottom-right-radius: 7px;
         overflow: hidden;
 
-
         &:focus {
             width: 160px;
             height: 27px;
@@ -35,15 +34,16 @@
     }
 }
 
-.global-header { // Extends bootstrap .container class to .global-header
+.global-header {
+    // Extends bootstrap .container class to .global-header
     position: relative; // Allows children to be absolute positioned within .global-header
     z-index: 1;
     padding: 0;
     background: $white;
     width: auto;
-    -webkit-box-shadow: 0px 0px 15px 0px rgba(189,189,189,0.4); // Beta 6.0 addition
-    -moz-box-shadow: 0px 0px 15px 0px rgba(189,189,189,0.4); // Beta 6.0 addition
-    box-shadow: 0px 0px 15px 0px rgba(189,189,189,0.4); // Beta 6.0 addition
+    -webkit-box-shadow: 0px 0px 15px 0px rgba(189, 189, 189, 0.4); // Beta 6.0 addition
+    -moz-box-shadow: 0px 0px 15px 0px rgba(189, 189, 189, 0.4); // Beta 6.0 addition
+    box-shadow: 0px 0px 15px 0px rgba(189, 189, 189, 0.4); // Beta 6.0 addition
     @media (min-width: $screen-md-min) {
         // Hide mobile controls in desktop view
         .mobile-controls {
@@ -52,15 +52,14 @@
     }
 }
 
-
-
 //
 // BRANDING
 // --------------------------------------------------
 
-
 .branding {
     @include container;
+    padding-left: 0;
+    padding-right: 0;
     position: relative;
 
     @media (min-width: $screen-md-min) {
@@ -68,11 +67,13 @@
     }
 
     .header-organization-banner {
-        line-height: 82px; // Beta 6.0 addition
+        line-height: 5.125rem; // Beta 6.0 addition
         -webkit-transition: all 0.3s;
         transition: all 0.3s; // Smooth transition for compact header
+        padding-left: 15px;
         @media (max-width: $screen-sm-max) {
             max-width: 400px;
+            padding-left: 0;
         }
 
         img {
@@ -82,12 +83,12 @@
             object-fit: contain !important;
             object-position: left;
 
-            @media (max-width: $screen-md) and (min-width: $screen-sm-min) { // Beta 5.0 addition
+            @media (max-width: $screen-md) and (min-width: $screen-sm-min) {
+                // Beta 5.0 addition
                 max-width: 225px;
             }
         }
 
-        
         // Move logo above navigation
         a {
             display: inline-block;
@@ -99,7 +100,7 @@
 
             .logo-assets {
                 display: flex;
-                align-items:center;
+                align-items: center;
                 height: 80px;
 
                 .logo-img {
@@ -107,73 +108,71 @@
                     width: 80px;
                     height: auto;
                     display: inline-block;
-                    transition: all .3s;
+                    transition: all 0.3s;
                 }
-            
+
                 .logo-text {
                     padding-left: 5px;
                     .logo-state {
-                        font-size: 1rem; 
+                        font-size: 1rem;
                         font-family: "Asap Condensed", sans-serif;
-                        margin: 0; 
+                        margin: 0;
                         padding: 0;
                         color: $gray-dark;
                         height: 20px;
                         line-height: 1.2em;
-                        transition: all .3s;
+                        transition: all 0.3s;
                         display: block;
-                     @media (max-width: $screen-xs-max) { 
-                         margin-top: 5px;
-                        font-size: .9rem;
-                       }
+                        @media (max-width: $screen-xs-max) {
+                            margin-top: 5px;
+                            font-size: 0.9rem;
+                        }
                     }
                     .logo-dept {
                         font-size: 1.54rem;
                         font-family: "Asap Condensed", sans-serif;
                         font-weight: 700;
-                        margin: 0; 
+                        margin: 0;
                         padding: 0;
                         color: $gray-dark;
                         height: 24px;
                         line-height: 1.2em;
-                       transition: all .3s;
-                       display: block;
-                       @media (max-width: $screen-xs-max) { 
-                        font-size: 1.1rem;
-                        min-width: 200px;
-                       }
+                        transition: all 0.3s;
+                        display: block;
+                        @media (max-width: $screen-xs-max) {
+                            font-size: 1.1rem;
+                            min-width: 200px;
+                        }
                     }
                 }
             }
         }
 
-        @media (max-width: $screen-sm-max) { // Beta 5.0 addition
+        @media (max-width: $screen-sm-max) {
+            // Beta 5.0 addition
             position: absolute;
             margin-top: -5px;
-            padding-right: 150px;
+            margin-left: 15px;
         }
     }
-// Goes full width on 767 breakpoint
-    @media (max-width: $screen-xs-max) { 
-        max-width:100%;
+    // Goes full width on 767 breakpoint
+    @media (max-width: $screen-xs-max) {
+        max-width: 100%;
     }
 }
-
-    
-
 
 // FIXED HEADER LOGO
 .fixed.compact .branding .header-organization-banner {
     .logo-assets {
         height: 60px;
-    
+
         .logo-img {
             width: 70px;
         }
-    
+
         .logo-text {
             .logo-state {
-                font-size: .8rem; 
+                font-size: 0.8rem;
                 line-height: 1em;
                 height: 16px;
                 min-width: 200px;
@@ -186,8 +185,6 @@
         }
     }
 }
-
-
 
 //
 // MOBILE
@@ -211,7 +208,9 @@
     }
 }
 
-.header-single-banner, .header-large-banner, .header-primary-banner {
+.header-single-banner,
+.header-large-banner,
+.header-primary-banner {
     width: 100%;
     /* Will be overriden with js */
     height: auto;
@@ -221,7 +220,7 @@
     display: block;
     /* Preserve aspect ratio */
     min-width: 100%;
-    min-height: 100%
+    min-height: 100%;
 }
 
 .header-slideshow-banner {
@@ -232,14 +231,6 @@
     overflow: hidden;
 }
 
-.fixed {
-    & + .header-single-banner, & + .header-large-banner, & + .header-primary-banner {
-        margin-top: 120px;
-    }
-
-    
-}
-
 .carousel-banner,
 .carousel-banner .owl-stage-outer,
 .carousel-banner .owl-stage,
@@ -248,13 +239,11 @@
     height: 100%;
 }
 
-
 .nav-full-width-icons {
     a {
-
         .logo-assets {
             display: flex;
-            align-items:center;
+            align-items: center;
             height: 55px;
 
             .logo-img {
@@ -262,35 +251,33 @@
                 width: 80px;
                 height: auto;
                 display: inline-block;
-                transition: all .3s;
+                transition: all 0.3s;
             }
-        
+
             .logo-text {
                 padding-left: 5px;
                 .logo-state {
-                    font-size: .9rem; 
+                    font-size: 0.9rem;
                     font-family: "Asap Condensed", sans-serif;
-                    margin: 0; 
+                    margin: 0;
                     padding: 0;
                     color: $white;
                     height: 17px;
                     line-height: 1em;
-                    transition: all .3s;
+                    transition: all 0.3s;
                     display: block;
-                
                 }
                 .logo-dept {
                     font-size: 1.4rem;
                     font-family: "Asap Condensed", sans-serif;
                     font-weight: 700;
-                    margin: 0; 
+                    margin: 0;
                     padding: 0;
                     color: $white;
                     height: 24px;
                     line-height: 1em;
-                   transition: all .3s;
-                   display: block;
-                   
+                    transition: all 0.3s;
+                    display: block;
                 }
             }
         }

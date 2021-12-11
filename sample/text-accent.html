@@ -5,9 +5,11 @@
 <!--[if IE 9]>    <html class="no-js ie9 oldie" lang="en"> <![endif]-->
 <!--[if (gt IE 9)]><!-->
 <html class="no-js" lang="en">
- <!--<![endif]-->
-<head>    
-<!--    California State Template
+<!--<![endif]-->
+
+<head>
+    <!--    California State Template (beta)
+ 
 
     Based on Twitter Bootstrap
     -->
@@ -20,7 +22,9 @@
     <meta name="Keywords" content="California, government" />
 
     <!--#include virtual="/ssi/head-css-js.html" -->
-
+    <script type="text/javascript">
+        var defaultActiveLink = "Components";
+    </script>
 </head>
 
 <body>
@@ -33,19 +37,17 @@
         <!-- Settings Bar -->
         <!--#include virtual="/ssi/settings-bar.html" -->
         <!-- Include Branding -->
-        <!--#include virtual="/ssi/branding.html" -->
+        <!--#include virtual="/ssi/branding-lightgrey.html" -->
         <!-- Include Mobile Controls -->
         <!--#include virtual="/ssi/mobile-controls.html" -->
 
-        <div class="navigation-search">
-            <!-- Include Navigation -->
-            <!--#include virtual="/ssi/navigation.html" -->
-
-            <div id="head-search" class="search-container">
+        <div class="navigation-search full-width-nav container">
+            <div id="head-search" class="search-container featured-search">
                 <!-- Include Search -->
                 <!--#include virtual="/ssi/search.html" -->
             </div>
-
+            <!-- Include Navigation -->
+            <!--#include virtual="/ssi/navigation.html" -->
         </div>
 
         <div class="header-decoration"></div>
@@ -53,18 +55,21 @@
 
 
     <div id="main-content" class="main-content">
-        <div class="section">
+        <div class="container p-b-lg p-t-md">
             <main class="main-primary">
                 <ol class="breadcrumb">
                     <li><a href="../index.html" title="Home page">Home</a></li>
-                    <li><a href="index.html" title="Examples landing page">Examples</a></li>
+                    <li><a href="/sample/" title="Content Modules landing page">Content Modules</a></li>
                     <li class="active">Text Accent</li>
                 </ol>
 
-                <div class="group">
+                <div class="row">
                     <div class="half">
                         <h1>Text Accent Colors</h1>
-                        <p>Convey meaning through color with a handful of emphasis utility classes. Accent colors were designed to applied to components like the number counter or charts. It is best to exercise restraint when using these classes on general body copy as color contrast may be insufficient for the visually impaired.</p>
+                        <p>Convey meaning through color with a handful of emphasis utility classes. Accent colors were
+                            designed to applied to components like the number counter or charts. It is best to exercise
+                            restraint when using these classes on general body copy as color contrast may be
+                            insufficient for the visually impaired.</p>
                         <h2>Examples:</h2>
                         <!--#include virtual="/sample/modules/text-accent.html" -->
                     </div>
@@ -82,4 +87,5 @@
     <!--#include virtual="/ssi/scripts.html" -->
 
 </body>
+
 </html>

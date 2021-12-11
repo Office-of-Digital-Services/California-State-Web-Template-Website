@@ -7,17 +7,21 @@
 <html class="no-js" lang="en">
 <!--<![endif]-->
 
-<head>    
-<!--    California State Template
+<head>
+    <!--    California State Template (beta)
+ 
 
-            Based on Twitter Bootstrap
-        -->
+                Based on Twitter Bootstrap
+            -->
     <meta charset="utf-8">
     <title>Sample - Animations</title>
     <meta name="Author" content="State of California" />
     <meta name="Description" content="State of California" />
     <meta name="Keywords" content="California, government" />
     <!--#include virtual="/ssi/head-css-js.html" -->
+    <script type="text/javascript">
+        var defaultActiveLink = "Components";
+    </script>
 </head>
 
 <body>
@@ -29,58 +33,63 @@
         <!-- Settings Bar -->
         <!--#include virtual="/ssi/settings-bar.html" -->
         <!-- Include Branding -->
-        <!--#include virtual="/ssi/branding.html" -->
+        <!--#include virtual="/ssi/branding-lightgrey.html" -->
         <!-- Include Mobile Controls -->
         <!--#include virtual="/ssi/mobile-controls.html" -->
 
-        <div class="navigation-search">
-            <!-- Include Navigation -->
-            <!--#include virtual="/ssi/navigation.html" -->
-
-            <div id="head-search" class="search-container">
+        <div class="navigation-search full-width-nav container">
+            <div id="head-search" class="search-container featured-search">
                 <!-- Include Search -->
                 <!--#include virtual="/ssi/search.html" -->
             </div>
-
+            <!-- Include Navigation -->
+            <!--#include virtual="/ssi/navigation.html" -->
         </div>
         <div class="header-decoration"></div>
     </header>
 
     <div id="main-content" class="main-content">
-        <div class="section">
+        <div class="container p-b-lg p-t-md">
             <main class="main-primary">
                 <ol class="breadcrumb">
                     <li><a href="../index.html" title="Home page">Home</a></li>
-                    <li><a href="index.html" title="Examples landing page">Examples</a></li>
+                    <li><a href="/sample/" title="Content Modules landing page">Content Modules</a></li>
                     <li class="active">Lists</li>
                 </ol>
 
                 <div class="container">
-                    <div class="two-thirds">
-                        <h1>Animations</h1>
-                        <p>Animations are for adding motion or effects as they scroll into view. We recommend using animations both sparingly and only on elements which need to have a visual impact or emphasis. Common use cases are  images, charts, call to actions, etc.</p>
-                        <p>The available animations are configured by including the specified animation name directly on the element or a containing element.</p>
-                        <ul>
-                            <li> <code>.animate-bounceInLeft</code> </li>
-                            <li> <code>.animate-bounceInRight</code> </li>
-                            <li> <code>.animate-bounceInUp</code> </li>
-                            <li> <code>.animate-fadeInUp</code> </li>
-                            <li> <code>.animate-slideInLeft</code> </li>
-                            <li> <code>.animate-slideInRight</code> </li>
-                            <li> <code>.animate-slideInUp</code> </li>
-                            <li> <code>.animate-pulse</code> </li>
-                            <li> <code>.animate-shake</code> </li>
-                            <li> <code>.animate-jello</code> </li>
-                        </ul>
+                    <div class="row">
+                        <div class="col-md-8">
+                            <h1>Animations</h1>
+                            <p>Animations are for adding motion or effects as they scroll into view. We recommend using
+                                animations both sparingly and only on elements which need to have a visual impact or
+                                emphasis. Common use cases are images, charts, call to actions, etc.</p>
+                            <p>The available animations are configured by including the specified animation name
+                                directly on
+                                the element or a containing element.</p>
+                            <ul>
+                                <li> <code>.animate-bounceInLeft</code> </li>
+                                <li> <code>.animate-bounceInRight</code> </li>
+                                <li> <code>.animate-bounceInUp</code> </li>
+                                <li> <code>.animate-fadeInUp</code> </li>
+                                <li> <code>.animate-slideInLeft</code> </li>
+                                <li> <code>.animate-slideInRight</code> </li>
+                                <li> <code>.animate-slideInUp</code> </li>
+                                <li> <code>.animate-pulse</code> </li>
+                                <li> <code>.animate-shake</code> </li>
+                                <li> <code>.animate-jello</code> </li>
+                            </ul>
+                        </div>
+                        <div class="col-md-4">
+                            <h2>Source Code:</h2>
+                            <pre><code class="overflow-auto"><!--#include virtual="/sample/modules/animation-simple.html" --></code></pre>
+                        </div>
                     </div>
-                    <div class="third">
-                        <h2>Source Code:</h2>
-                        <pre><code class="overflow-auto"><!--#include virtual="/sample/modules/animation-simple.html" --></code></pre>
-                    </div>
+
                 </div>
                 <h1>Animation Playground</h1>
-                <div class="group">
-                    <div class="third">
+                <div class="row">
+                    <div class="col-md-4">
                         <div class="form-group">
                             <label for="animation-select"><span class="required-label">*</span> Choose Animation</label>
                             <select class="form-control js--animations" id="animation-select">
@@ -110,8 +119,10 @@
                             <button class="btn btn-default js--triggerAnimation">Replay Animation</button>
                         </div>
                     </div>
-                    <div class="two-thirds">
-                        <div id="animationSandbox" style="display: block;" class=""><span class="ca-gov-icon-logo text-accent3 text-center" style="font-size:250px;display:block;"></span></div>
+                    <div class="col-md-8">
+                        <div id="animationSandbox" style="display: block;" class=""><span
+                                class="ca-gov-icon-logo text-accent3 text-center"
+                                style="font-size:250px;display:block;"></span></div>
                     </div>
                 </div>
             </main>
@@ -140,4 +151,5 @@
         });
     </script>
 </body>
+
 </html>

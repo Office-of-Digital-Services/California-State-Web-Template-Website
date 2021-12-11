@@ -6,8 +6,10 @@
 <!--[if (gt IE 9)]><!-->
 <html class="no-js" lang="en">
 <!--<![endif]-->
-<head>    
-<!--    California State Template
+
+<head>
+    <!--    California State Template (beta)
+ 
 
     Based on Twitter Bootstrap
     -->
@@ -20,7 +22,9 @@
     <meta name="Keywords" content="California, government" />
 
     <!--#include virtual="/ssi/head-css-js.html" -->
-
+    <script type="text/javascript">
+        var defaultActiveLink = "Components";
+    </script>
 </head>
 
 <body>
@@ -33,19 +37,17 @@
         <!-- Settings Bar -->
         <!--#include virtual="/ssi/settings-bar.html" -->
         <!-- Include Branding -->
-        <!--#include virtual="/ssi/branding.html" -->
+        <!--#include virtual="/ssi/branding-lightgrey.html" -->
         <!-- Include Mobile Controls -->
         <!--#include virtual="/ssi/mobile-controls.html" -->
 
-        <div class="navigation-search">
-            <!-- Include Navigation -->
-            <!--#include virtual="/ssi/navigation.html" -->
-
-            <div id="head-search" class="search-container">
+        <div class="navigation-search full-width-nav container">
+            <div id="head-search" class="search-container featured-search">
                 <!-- Include Search -->
                 <!--#include virtual="/ssi/search.html" -->
             </div>
-
+            <!-- Include Navigation -->
+            <!--#include virtual="/ssi/navigation.html" -->
         </div>
 
         <div class="header-decoration"></div>
@@ -56,26 +58,40 @@
             <div class="container">
                 <ol class="breadcrumb">
                     <li><a href="../index.html" title="Home page">Home</a></li>
-                    <li><a href="index.html" title="Examples landing page">Examples</a></li>
+                    <li><a href="/sample/" title="Content Modules landing page">Content Modules</a></li>
                     <li class="active">Tables</li>
                 </ol>
             </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-8">
+                        <h1>Sections</h1>
+                        <p>Sections are a new layout tool that was introduced in the CA Gov template v5 that provide
+                            authors with a means of creating modern looking pages often associated with promotion pages
+                            or homepages. Because sections fill the entire horizontal space it's important to note that
+                            they were intended to be used as a full page layout component and should not be used inside
+                            v4 columns.</p>
 
-            <div class="section">
-                <div class="container">
-                    <div class="group">
-                        <div class="two-thirds">
-                            <h1>Sections</h1>
-                            <p>Sections are a new layout tool that was introduced in the CA Gov template v5 that provide authors with a means of creating modern looking pages often associated with promotion pages or homepages. Because sections fill the entire horizontal space it's important to note that they were intended to be used as a full page layout component and should not be used inside v4 columns.</p>
+                        <h2>Backwards Compatability</h2>
+                        <p>A slight change was made to the v5 template to accomodate this full width layout while
+                            maintaining backwards compatability with v4 templates. Specifically v4 templates have a
+                            <code>.wrapper</code> div just inside the <code>.main-content</code> div. The
+                            <code>.wrapper</code> class is not used in this layout.
+                        </p>
 
-                            <h2>Backwards Compatability</h2>
-                            <p>A slight change was made to the v5 template to accomodate this full width layout while maintaining backwards compatability with v4 templates. Specifically v4 templates have a <code>.wrapper</code> div just inside the <code>.main-content</code> div. The <code>.wrapper</code> class is not used in this layout.</p>
+                        <p>If organizations wish to use the new <code>.section</code> feature within pages already
+                            created using the v4 methodology there are some things that can be done but they are not
+                            without limitations for some systems.</p>
+                        <p><strong>1)</strong> Webmasters can manually remove the <code>.wrapper</code> class and wrap
+                            <code>.section</code>'s around the content. Note: Failing to put content into a section will
+                            cause the content to fill the full horizontal space.
+                        </p>
+                        <p><strong>2)</strong> If changing the html is not possible the following javascript can be
+                            included. Note: Templates using <code>.two-column</code> layout will display the
+                            <code>.main-secondary</code> below the main content.
+                        </p>
 
-                            <p>If organizations wish to use the new <code>.section</code> feature within pages already created using the v4 methodology there are some things that can be done but they are not without limitations for some systems.</p>
-                            <p><strong>1)</strong> Webmasters can manually remove the <code>.wrapper</code> class and wrap <code>.section</code>'s around the content. Note: Failing to put content into a section will cause the content to fill the full horizontal space.</p>
-                            <p><strong>2)</strong> If changing the html is not possible the following javascript can be included. Note: Templates using <code>.two-column</code> layout will display the <code>.main-secondary</code> below the main content. </p>
-
-                            <pre>
+                        <pre>
 &lt;script&gt;
 $(document).ready(function() {
     // Backward compatability fix swapping deprecated wrapper with new sections classe
@@ -84,29 +100,30 @@ $(document).ready(function() {
 &lt;/script&gt;
                         </pre>
 
-                            <h2>Section Variations</h2>
-                            <p>Like many other components, a <code>.section</code> can be styled with a number of extension classes. Append one of the following classes to the <code>.section</code> div. </p>
-                            <ul>
-                                <li><code>.section-default</code></li>
-                                <li><code>.section-understated</code></li>
-                                <li><code>.section-primary</code></li>
-                                <li><code>.section-standout</code></li>
-                                <li><code>.section-inverted</code></li>
-                                <li><code>.collapsed</code> (can be applied in tandom with all the above to remove the top and bottom padding)</li>
-                            </ul>
+                        <h2>Section Variations</h2>
+                        <p>Like many other components, a <code>.section</code> can be styled with a number of extension
+                            classes. Append one of the following classes to the <code>.section</code> div. </p>
+                        <ul>
+                            <li><code>.section-default</code></li>
+                            <li><code>.section-understated</code></li>
+                            <li><code>.section-primary</code></li>
+                            <li><code>.section-standout</code></li>
+                            <li><code>.section-inverted</code></li>
+                            <li><code>.collapsed</code> (can be applied in tandom with all the above to remove the top
+                                and bottom padding)</li>
+                        </ul>
 
-                            <p>A <code>.section</code> without any additional style classes will be white.</p>
+                        <p>A <code>.section</code> without any additional style classes will be white.</p>
 
-                        </div>
-                        <div class="third">
-                            <h2>Source Code:</h2>
-                            <pre><code class="overflow-auto"><!--#include virtual="/sample/modules/section-default.html" --></code></pre>
-                        </div>
                     </div>
-
-
-
+                    <div class="col-md-4">
+                        <h2>Source Code:</h2>
+                        <pre><code class="overflow-auto"><!--#include virtual="/sample/modules/section-default.html" --></code></pre>
+                    </div>
                 </div>
+
+
+
             </div>
 
             <style>
@@ -120,7 +137,7 @@ $(document).ready(function() {
             <!-- SECTION DEFAULT -->
             <div class="section section-default">
                 <div class="container">
-                    <div class="group">
+                    <div class="row">
                         <div class="half">
                             <h2>Section Default</h2>
                             <!--#include virtual="/sample/modules/section-content-test.html" -->
@@ -141,7 +158,7 @@ $(document).ready(function() {
             <!-- SECTION PRIMARY -->
             <div class="section section-primary">
                 <div class="container">
-                    <div class="group">
+                    <div class="row">
                         <div class="half">
                             <h2>Section Primary</h2>
                             <!--#include virtual="/sample/modules/section-content-test.html" -->
@@ -163,7 +180,7 @@ $(document).ready(function() {
             <!-- SECTION STANDOUT -->
             <div class="section section-standout">
                 <div class="container">
-                    <div class="group">
+                    <div class="row">
                         <div class="half">
                             <h2>Section Standout</h2>
                             <!--#include virtual="/sample/modules/section-content-test.html" -->
@@ -184,7 +201,7 @@ $(document).ready(function() {
             <!-- SECTION UNDERSTATED -->
             <div class="section section-understated">
                 <div class="container">
-                    <div class="group">
+                    <div class="row">
                         <div class="half">
                             <h2>Section Understated</h2>
                             <!--#include virtual="/sample/modules/section-content-test.html" -->
@@ -201,28 +218,12 @@ $(document).ready(function() {
                 </div>
             </div>
 
-            <!-- PARALLAX BACKGROUND -->
-            <div class="section section-standout">
-                <div class="parallax-bg" style="background-image:url(images/background.jpg)"></div>
-                <div class="container">
-                    <div class="group">
-                        <div class="half">
-                            <h2>Parallax Background</h2>
-                            <p>A parallax effect is a popular effect where the background appears to scroll at a sligtly slower speed than the foreground. To achieve this effect place a div inside <code class="color-s1">.section</code> just before the <code class="color-s1">.container</code> Depending on the amount of content (height of the section) some background images may look better than others. You may need a taller image for long sections. <em>The recommended approach is to use parallax sections only for short content areas.</em></p>
-                        </div>
-                        <div class="half">
-                            <h2>Source Code:</h2>
-                            <pre><code class="overflow-auto"><!--#include virtual="/sample/modules/section-parallax.html" --></code></pre>
-                        </div>
-                    </div>
-                </div>
-            </div>
 
 
             <!-- SECTION INVERTED -->
             <div class="section section-inverted">
                 <div class="container">
-                    <div class="group">
+                    <div class="row">
                         <div class="half">
                             <h2>Section Inverted</h2>
                             <!--#include virtual="/sample/modules/section-content-test.html" -->
@@ -243,7 +244,7 @@ $(document).ready(function() {
             <!-- SECTION COLLAPSED -->
             <div class="section collapsed">
                 <div class="container">
-                    <div class="group">
+                    <div class="row">
                         <div class="half">
                             <h2>Section Collapsed</h2>
                             <!--#include virtual="/sample/modules/section-content-test.html" -->
@@ -270,4 +271,5 @@ $(document).ready(function() {
     <!--#include virtual="/ssi/scripts.html" -->
 
 </body>
+
 </html>

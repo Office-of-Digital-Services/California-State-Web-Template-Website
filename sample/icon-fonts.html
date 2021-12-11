@@ -1,11 +1,6 @@
 ﻿<!doctype html>
 
-<!--
-State of California 2014 master template
-Version 2014.xx.xx
 
-Based on Twitter Bootstrap
--->
 <!--[if lt IE 7]> <html class="no-js ie6 oldie" lang="en"> <![endif]-->
 <!--[if IE 7]>    <html class="no-js ie7 oldie" lang="en"> <![endif]-->
 <!--[if IE 8]>    <html class="no-js ie8 oldie" lang="en"> <![endif]-->
@@ -15,10 +10,11 @@ Based on Twitter Bootstrap
 <!--<![endif]-->
 
 <head>
-    <!--    California State Template
+    <!--    California State Template (beta)
+ 
 
-    Based on Twitter Bootstrap
-    -->
+        Based on Twitter Bootstrap
+        -->
     <meta charset="utf-8">
 
     <title>Sample - Icon Font Library</title>
@@ -41,7 +37,7 @@ Based on Twitter Bootstrap
         }
 
         .glyph {
-            font-size: 16px;
+            font-size: 1rem;
             width: 50%;
             padding-bottom: 1em;
             padding-right: 4em;
@@ -162,11 +158,11 @@ Based on Twitter Bootstrap
         }
 
         .fs0 {
-            font-size: 16px;
+            font-size: 1rem;
         }
 
         .fs1 {
-            font-size: 24px;
+            font-size: 1.5rem;
         }
 
         .icon-value {
@@ -186,14 +182,16 @@ Based on Twitter Bootstrap
             }
         }
     </style>
-
+    <script type="text/javascript">
+        var defaultActiveLink = "Components";
+    </script>
 </head>
 
 <!-- possible body classes are "primary" and "two-column" -->
 
 <body>
 
-    <header role="banner" id="header" class="global-header">
+    <header role="banner" id="header" class="global-header fixed">
         <div id="skip-to-content"><a href="#main-content">Skip to Main Content</a></div>
 
         <!-- Include Utility Header -->
@@ -201,26 +199,23 @@ Based on Twitter Bootstrap
         <!-- Settings Bar -->
         <!--#include virtual="/ssi/settings-bar.html" -->
         <!-- Include Branding -->
-        <!--#include virtual="/ssi/branding.html" -->
+        <!--#include virtual="/ssi/branding-lightgrey.html" -->
         <!-- Include Mobile Controls -->
         <!--#include virtual="/ssi/mobile-controls.html" -->
 
-        <div class="navigation-search">
-            <!-- Include Navigation -->
-            <!--#include virtual="/ssi/navigation.html" -->
-
-            <div id="head-search" class="search-container">
+        <div class="navigation-search full-width-nav container">
+            <div id="head-search" class="search-container featured-search">
                 <!-- Include Search -->
                 <!--#include virtual="/ssi/search.html" -->
             </div>
-
+            <!-- Include Navigation -->
+            <!--#include virtual="/ssi/navigation.html" -->
         </div>
 
-        <div class="header-decoration"></div>
     </header>
 
     <div id="main-content" class="main-content">
-        <div class="section">
+        <div class="container p-b-lg p-t-md">
             <main class="main-primary">
                 <ol class="breadcrumb">
                     <li><a href="../index.html" title="Home page">Home</a></li>
@@ -230,7 +225,8 @@ Based on Twitter Bootstrap
 
                 <h1>Icon Font Library</h1>
 
-                <p>The CaGov icon font includes <strong>500 icons</strong>  you can use in your site. Four different formats of the font
+                <p>The CaGov icon font includes over <strong>500 icons</strong> you can use in your site. Four different
+                    formats of the font
                     are included for compatibility with all popular browsers. You may need to add a mime map to your
                     webserver for the WOFF font. To determine if your webserver needs it, upload the /fonts/CaGov.woff
                     file to your webserver. Try downloading the WOFF in your browser by visiting:
@@ -1056,8 +1052,8 @@ Based on Twitter Bootstrap
                         <p class="icon-value">e970</p>
                     </div>
                     <div class="glyph fs1">
-                        <div class="clearfix bshadow0 pbs"><span class="ca-gov-icon-collapse1"></span><span class="mls">
-                                ca-gov-icon-collapse1</span></div>
+                        <div class="clearfix bshadow0 pbs"><span class="ca-gov-icon-collapse"></span><span class="mls">
+                                ca-gov-icon-collapse</span></div>
                         <p class="icon-value">58</p>
                     </div>
                     <div class="glyph fs1">
@@ -1071,9 +1067,9 @@ Based on Twitter Bootstrap
                         <p class="icon-value">e621</p>
                     </div>
                     <div class="glyph fs1">
-                        <div class="clearfix bshadow0 pbs"><span class="ca-gov-icon-construction1"></span><span
+                        <div class="clearfix bshadow0 pbs"><span class="ca-gov-icon-construction"></span><span
                                 class="mls">
-                                ca-gov-icon-construction1</span></div>
+                                ca-gov-icon-construction</span></div>
                         <p class="icon-value">e628</p>
                     </div>
                     <div class="glyph fs1">
@@ -1275,8 +1271,8 @@ Based on Twitter Bootstrap
                         <p class="icon-value">e991</p>
                     </div>
                     <div class="glyph fs1">
-                        <div class="clearfix bshadow0 pbs"><span class="ca-gov-icon-expand1"></span><span class="mls">
-                                ca-gov-icon-expand1</span></div>
+                        <div class="clearfix bshadow0 pbs"><span class="ca-gov-icon-expand"></span><span class="mls">
+                                ca-gov-icon-expand</span></div>
                         <p class="icon-value">59</p>
                     </div>
                     <div class="glyph fs1">
@@ -1535,6 +1531,11 @@ Based on Twitter Bootstrap
                         <div class="clearfix bshadow0 pbs"><span class="ca-gov-icon-gears"></span><span class="mls">
                                 ca-gov-icon-gears</span></div>
                         <p class="icon-value">e900</p>
+                    </div>
+                    <div class="glyph fs1">
+                        <div class="clearfix bshadow0 pbs"><span class="ca-gov-icon-github"></span><span class="mls">
+                                ca-gov-icon-github</span></div>
+                        <p class="icon-value">ea21</p>
                     </div>
                     <div class="glyph fs1">
                         <div class="clearfix bshadow0 pbs"><span class="ca-gov-icon-glass"></span><span class="mls">
@@ -1862,11 +1863,12 @@ Based on Twitter Bootstrap
                         <p class="icon-value">e9fc</p>
                     </div>
                     <div class="glyph fs1">
-                        <div class="clearfix bshadow0 pbs"><span class="ca-gov-icon-mask-light"></span><span class="mls">
+                        <div class="clearfix bshadow0 pbs"><span class="ca-gov-icon-mask-light"></span><span
+                                class="mls">
                                 ca-gov-icon-mask-light</span></div>
                         <p class="icon-value">e9fb</p>
                     </div>
-                    
+
                     <div class="glyph fs1">
                         <div class="clearfix bshadow0 pbs"><span class="ca-gov-icon-mastercard"></span><span
                                 class="mls">
@@ -2130,6 +2132,11 @@ Based on Twitter Bootstrap
                         <div class="clearfix bshadow0 pbs"><span class="ca-gov-icon-pdf"></span><span class="mls">
                                 ca-gov-icon-pdf</span></div>
                         <p class="icon-value">e614</p>
+                    </div>
+                    <div class="glyph fs1">
+                        <div class="clearfix bshadow0 pbs"><span class="ca-gov-icon-pdf-text"></span><span class="mls">
+                                ca-gov-icon-pdf-text</span></div>
+                        <p class="icon-value">ea20</p>
                     </div>
                     <div class="glyph fs1">
                         <div class="clearfix bshadow0 pbs"><span class="ca-gov-icon-pencil"></span><span class="mls">
@@ -2919,17 +2926,19 @@ Based on Twitter Bootstrap
                     <p class="h1 group-heading" id="group-V">V</p>
                     <div class="glyph fs1">
                         <div class="clearfix bshadow0 pbs"><span class="ca-gov-icon-vaccine"></span><span class="mls">
-                            ca-gov-icon-vaccine</span></div>
+                                ca-gov-icon-vaccine</span></div>
                         <p class="icon-value">ea17</p>
                     </div>
                     <div class="glyph fs1">
-                        <div class="clearfix bshadow0 pbs"><span class="ca-gov-icon-vaccine-check"></span><span class="mls">
-                            ca-gov-icon-vaccine-check</span></div>
+                        <div class="clearfix bshadow0 pbs"><span class="ca-gov-icon-vaccine-check"></span><span
+                                class="mls">
+                                ca-gov-icon-vaccine-check</span></div>
                         <p class="icon-value">e9fe</p>
                     </div>
                     <div class="glyph fs1">
-                        <div class="clearfix bshadow0 pbs"><span class="ca-gov-icon-vaccine-patient"></span><span class="mls">
-                            ca-gov-icon-vaccine-patient</span></div>
+                        <div class="clearfix bshadow0 pbs"><span class="ca-gov-icon-vaccine-patient"></span><span
+                                class="mls">
+                                ca-gov-icon-vaccine-patient</span></div>
                         <p class="icon-value">ea19</p>
                     </div>
                     <div class="glyph fs1">
