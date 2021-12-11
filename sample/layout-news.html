@@ -9,63 +9,64 @@
 
 <head>
 
-    <!--    California State Template
+
+    <!--    California State Template (beta)
  
-Based on Twitter Bootstrap
--->
+
+            Based on Twitter Bootstrap
+            -->
     <meta charset="utf-8">
 
-    <title>News page template</title>
+    <title>Sample layout - News page</title>
 
     <meta name="Author" content="State of California" />
     <meta name="Description" content="State of California" />
     <meta name="Keywords" content="California, government" />
 
     <!--#include virtual="/ssi/head-css-js.html" -->
-
+    <script type="text/javascript">
+        var defaultActiveLink = "Pages";
+    </script>
 </head>
 
 <body>
-
-    <header role="banner" id="header" class="global-header">
+    <header role="banner" id="header" class="global-header fixed">
         <div id="skip-to-content"><a href="#main-content">Skip to Main Content</a></div>
 
         <!-- Include Utility Header -->
         <!--#include virtual="/ssi/utility-header.html" -->
-
         <!-- Settings Bar -->
         <!--#include virtual="/ssi/settings-bar.html" -->
-
         <!-- Include Branding -->
-        <!--#include virtual="/ssi/branding.html" -->
-
+        <!--#include virtual="/ssi/branding-lightgrey.html" -->
         <!-- Include Mobile Controls -->
         <!--#include virtual="/ssi/mobile-controls.html" -->
 
-        <div class="navigation-search">
-            <!-- Include Navigation -->
-            <!--#include virtual="/ssi/navigation.html" -->
-
-            <div id="head-search" class="search-container">
+        <div class="navigation-search full-width-nav container">
+            <div id="head-search" class="search-container featured-search">
                 <!-- Include Search -->
                 <!--#include virtual="/ssi/search.html" -->
             </div>
-
+            <!-- Include Navigation -->
+            <!--#include virtual="/ssi/navigation.html" -->
         </div>
-
         <div class="header-decoration"></div>
     </header>
 
     <div id="main-content" class="main-content">
 
         <main class="main-primary">
-            <div class="section-default p-y-md"><div class="container"><h1 class="m-y-0">News</h1></div></div>
+            <div class="section-default p-y-md">
+                <div class="container">
+                    <h1 class="m-y-0">News</h1>
+                </div>
+            </div>
             <div class="container p-y-lg">
 
                 <h2 class="m-t-0">News Blocks</h2>
 
-                <div class="group">
-                    <div class="quarter m-b-md">
+                <div class="row">
+                    <div class="col-md-3 m-b-md">
                         <!-- Article -->
                         <article class="shadow">
                             <figure class="pos-rel m-b-0">
@@ -77,7 +78,7 @@ Based on Twitter Bootstrap
                             </figure>
 
                             <div class="p-a">
-                                <ul class="list-inline font-size-sm m-y-0">
+                                <ul class="list-inline small m-y-0">
                                     <li class="list-inline-item">
                                         <span class="color-gray">By:</span>
                                         <a class="color-gray-dark color-primary-hover" href="#">Alex</a>
@@ -89,21 +90,25 @@ Based on Twitter Bootstrap
                                 </ul>
 
                                 <h3 class="h4 m-t-0 m-b-sm">
-                                    <a class="u-link-v5 color-gray-dark color-primary-hover" href="#">Incredible standard post</a>
+                                    <a class="u-link-v5 color-gray-dark color-primary-hover" href="#">Incredible
+                                        standard post</a>
                                 </h3>
 
-                                <p>Nullam elementum tincidunt massa, a pulvinar leo ultricies ut. Ut fringilla lectus tellusimp imperdiet molestie est volutpat at. Sed viverra cursus nibh.</p>
+                                <p>Nullam elementum tincidunt massa, a pulvinar leo ultricies ut. Ut fringilla lectus
+                                    tellusimp imperdiet molestie est volutpat at. Sed viverra cursus nibh.</p>
 
                                 <hr class="hr-light m-y">
 
                                 <ul class="list-inline m-y-0">
                                     <li class="list-inline-item m-r m-y-0">
-                                        <a class="news-icon bg-gray-light bg-primary-hover color-gray-dark rounded-50x" href="#" aria-label="Email DMV">
+                                        <a class="news-icon bg-gray-light bg-primary-hover color-gray-dark rounded-50x"
+                                            href="#" aria-label="Email DMV">
                                             <span class="ca-gov-icon-email"></span><span class="sr-only">Email</span>
                                         </a>
                                     </li>
                                     <li class="list-inline-item m-r m-y-0">
-                                        <a class="news-icon bg-gray-light bg-primary-hover color-gray-dark rounded-50x" href="#">
+                                        <a class="news-icon bg-gray-light bg-primary-hover color-gray-dark rounded-50x"
+                                            href="#">
                                             <span class="ca-gov-icon-youtube"></span><span class="sr-only">Share</span>
                                         </a>
                                     </li>
@@ -113,7 +118,7 @@ Based on Twitter Bootstrap
                         <!-- End Article -->
                     </div>
 
-                    <div class="quarter m-b-md">
+                    <div class="col-md-3 m-b-md">
                         <!-- Article -->
                         <article class="shadow">
                             <figure class="pos-rel m-b-0">
@@ -125,7 +130,7 @@ Based on Twitter Bootstrap
                             </figure>
 
                             <div class="p-a">
-                                <ul class="list-inline font-size-sm m-y-0">
+                                <ul class="list-inline small m-y-0">
                                     <li class="list-inline-item">
                                         <span class="color-gray">By:</span>
                                         <a class="color-gray-dark color-primary-hover" href="#">Kathy</a>
@@ -137,21 +142,25 @@ Based on Twitter Bootstrap
                                 </ul>
 
                                 <h3 class="h4 m-t-0 m-b-sm">
-                                    <a class="u-link-v5 color-gray-dark color-primary-hover" href="#">Demperdiet molesti volutpa</a>
+                                    <a class="u-link-v5 color-gray-dark color-primary-hover" href="#">Demperdiet molesti
+                                        volutpa</a>
                                 </h3>
 
-                                <p>Nullam elementum tincidunt massa, a pulvinar leo ultricies ut. Ut fringilla lectus tellusimp imperdiet molestie est volutpat at. Sed viverra cursus nibh.</p>
+                                <p>Nullam elementum tincidunt massa, a pulvinar leo ultricies ut. Ut fringilla lectus
+                                    tellusimp imperdiet molestie est volutpat at. Sed viverra cursus nibh.</p>
 
                                 <hr class="hr-light m-y">
 
                                 <ul class="list-inline m-y-0">
                                     <li class="list-inline-item m-r m-y-0">
-                                        <a class="news-icon bg-gray-light bg-primary-hover color-gray-dark rounded-50x" href="#" aria-label="Email CDT">
+                                        <a class="news-icon bg-gray-light bg-primary-hover color-gray-dark rounded-50x"
+                                            href="#" aria-label="Email CDT">
                                             <span class="ca-gov-icon-email"></span><span class="sr-only">Email</span>
                                         </a>
                                     </li>
                                     <li class="list-inline-item m-r m-y-0">
-                                        <a class="news-icon bg-gray-light bg-primary-hover color-gray-dark rounded-50x" href="#">
+                                        <a class="news-icon bg-gray-light bg-primary-hover color-gray-dark rounded-50x"
+                                            href="#">
                                             <span class="ca-gov-icon-twitter"></span><span class="sr-only">Share</span>
                                         </a>
                                     </li>
@@ -161,7 +170,7 @@ Based on Twitter Bootstrap
                         <!-- End Article -->
                     </div>
 
-                    <div class="quarter m-b-md">
+                    <div class="col-md-3 m-b-md">
                         <!-- Article -->
                         <article class="shadow">
                             <figure class="pos-rel m-b-0">
@@ -173,7 +182,7 @@ Based on Twitter Bootstrap
                             </figure>
 
                             <div class="p-a">
-                                <ul class="list-inline font-size-sm m-y-0">
+                                <ul class="list-inline small m-y-0">
                                     <li class="list-inline-item">
                                         <span class="color-gray">By:</span>
                                         <a class="color-gray-dark color-primary-hover" href="#">James</a>
@@ -185,21 +194,25 @@ Based on Twitter Bootstrap
                                 </ul>
 
                                 <h3 class="h4 m-t-0 m-b-sm">
-                                    <a class="u-link-v5 color-gray-dark color-primary-hover" href="#">Nullam non metus inmi</a>
+                                    <a class="u-link-v5 color-gray-dark color-primary-hover" href="#">Nullam non metus
+                                        inmi</a>
                                 </h3>
 
-                                <p>Nullam elementum tincidunt massa, a pulvinar leo ultricies ut. Ut fringilla lectus tellusimp imperdiet molestie est volutpat at. Sed viverra cursus nibh.</p>
+                                <p>Nullam elementum tincidunt massa, a pulvinar leo ultricies ut. Ut fringilla lectus
+                                    tellusimp imperdiet molestie est volutpat at. Sed viverra cursus nibh.</p>
 
                                 <hr class="hr-light m-y">
 
                                 <ul class="list-inline m-y-0">
                                     <li class="list-inline-item m-r m-y-0">
-                                        <a class="news-icon bg-gray-light bg-primary-hover color-gray-dark rounded-50x" href="#" aria-label="Email CDTFA">
+                                        <a class="news-icon bg-gray-light bg-primary-hover color-gray-dark rounded-50x"
+                                            href="#" aria-label="Email CDTFA">
                                             <span class="ca-gov-icon-email"></span><span class="sr-only">Email</span>
                                         </a>
                                     </li>
                                     <li class="list-inline-item m-r m-y-0">
-                                        <a class="news-icon bg-gray-light bg-primary-hover color-gray-dark rounded-50x" href="#">
+                                        <a class="news-icon bg-gray-light bg-primary-hover color-gray-dark rounded-50x"
+                                            href="#">
                                             <span class="ca-gov-icon-facebook"></span><span class="sr-only">Share</span>
                                         </a>
                                     </li>
@@ -209,7 +222,7 @@ Based on Twitter Bootstrap
                         <!-- End Article -->
                     </div>
 
-                    <div class="quarter m-b-md">
+                    <div class="col-md-3 m-b-md">
                         <!-- Article -->
                         <article class="shadow">
                             <figure class="pos-rel m-b-0">
@@ -221,7 +234,7 @@ Based on Twitter Bootstrap
                             </figure>
 
                             <div class="p-a">
-                                <ul class="list-inline font-size-sm m-y-0">
+                                <ul class="list-inline small m-y-0">
                                     <li class="list-inline-item">
                                         <span class="color-gray">By:</span>
                                         <a class="color-gray-dark color-primary-hover" href="#">John</a>
@@ -233,22 +246,27 @@ Based on Twitter Bootstrap
                                 </ul>
 
                                 <h4 class="m-t-0 m-b-sm">
-                                    <a class="u-link-v5 color-gray-dark color-primary-hover" href="#">Nullam non metus inmi</a>
+                                    <a class="u-link-v5 color-gray-dark color-primary-hover" href="#">Nullam non metus
+                                        inmi</a>
                                 </h4>
 
-                                <p>Nullam elementum tincidunt massa, a pulvinar leo ultricies ut. Ut fringilla lectus tellusimp imperdiet molestie est volutpat at. Sed viverra cursus nibh.</p>
+                                <p>Nullam elementum tincidunt massa, a pulvinar leo ultricies ut. Ut fringilla lectus
+                                    tellusimp imperdiet molestie est volutpat at. Sed viverra cursus nibh.</p>
 
                                 <hr class="hr-light m-y">
 
                                 <ul class="list-inline m-y-0">
                                     <li class="list-inline-item m-r m-y-0">
-                                        <a class="news-icon bg-gray-light bg-primary-hover color-gray-dark rounded-50x" href="#" aria-label="Email CDTFA">
+                                        <a class="news-icon bg-gray-light bg-primary-hover color-gray-dark rounded-50x"
+                                            href="#" aria-label="Email CDTFA">
                                             <span class="ca-gov-icon-email"></span><span class="sr-only">Email</span>
                                         </a>
                                     </li>
                                     <li class="list-inline-item m-r m-y-0">
-                                        <a class="news-icon bg-gray-light bg-primary-hover color-gray-dark rounded-50x" href="#">
-                                            <span class="ca-gov-icon-instagram"></span><span class="sr-only">Share</span>
+                                        <a class="news-icon bg-gray-light bg-primary-hover color-gray-dark rounded-50x"
+                                            href="#">
+                                            <span class="ca-gov-icon-instagram"></span><span
+                                                class="sr-only">Share</span>
                                         </a>
                                     </li>
                                 </ul>
@@ -265,12 +283,13 @@ Based on Twitter Bootstrap
 
 
                 <h2>Image News Blocks</h2>
-                <div class="group">
-                    <div class="quarter m-b-md">
+                <div class="row">
+                    <div class="col-md-3 m-b-md">
                         <!-- Article -->
                         <article class="block-hover section-standout">
                             <figure class="bg-overlay">
-                                <img class="img-fluid w-100 block-hover_zoom" src="/images/news-image5.jpg" alt="News Image 5">
+                                <img class="img-fluid w-100 block-hover_zoom" src="/images/news-image5.jpg"
+                                    alt="News Image 5">
                             </figure>
 
                             <header class="w-100 text-center absolute-centered p-x">
@@ -289,11 +308,12 @@ Based on Twitter Bootstrap
                         <!-- End Article -->
 
                     </div>
-                    <div class="quarter m-b-md">
+                    <div class="col-md-3 m-b-md">
                         <!-- Article -->
                         <article class="block-hover section-standout">
                             <figure class="bg-overlay">
-                                <img class="img-fluid w-100 block-hover_zoom" src="/images/news-image6.jpg" alt="News Image 6">
+                                <img class="img-fluid w-100 block-hover_zoom" src="/images/news-image6.jpg"
+                                    alt="News Image 6">
                             </figure>
 
                             <header class="w-100 text-center absolute-centered p-x">
@@ -312,11 +332,12 @@ Based on Twitter Bootstrap
                         <!-- End Article -->
 
                     </div>
-                    <div class="quarter m-b-md">
+                    <div class="col-md-3 m-b-md">
                         <!-- Article -->
                         <article class="block-hover section-standout">
                             <figure class="bg-overlay">
-                                <img class="img-fluid w-100 block-hover_zoom"  src="/images/news-image7.jpg" alt="News Image 7">
+                                <img class="img-fluid w-100 block-hover_zoom" src="/images/news-image7.jpg"
+                                    alt="News Image 7">
                             </figure>
 
                             <header class="w-100 text-center absolute-centered p-x">
@@ -335,11 +356,12 @@ Based on Twitter Bootstrap
                         <!-- End Article -->
 
                     </div>
-                    <div class="quarter m-b-md">
+                    <div class="col-md-3 m-b-md">
                         <!-- Article -->
                         <article class="block-hover section-standout">
                             <figure class="bg-overlay">
-                                <img class="img-fluid w-100 block-hover_zoom" src="/images/news-image8.jpg" alt="News Image 8">
+                                <img class="img-fluid w-100 block-hover_zoom" src="/images/news-image8.jpg"
+                                    alt="News Image 8">
                             </figure>
 
                             <header class="w-100 text-center absolute-centered p-x">
@@ -368,9 +390,13 @@ Based on Twitter Bootstrap
                             <article class="news-item">
                                 <div class="thumbnail"><img src="images/event1.jpg" alt="sample image 1"></div>
                                 <div class="info">
-                                    <div class="headline"><a href="">Duis mollis, est non commodo luctus, nisi erat.</a></div>
-                                    <div class="description"><p>Integer posuere erat a ante venenatis dapibus aliquet.</p></div>
-                                    <div class="published font-size-90x">Published: <time datetime="2014-10-20">Oct 20, 2020</time></div>
+                                    <div class="headline"><a href="">Duis mollis, est non commodo luctus, nisi erat.</a>
+                                    </div>
+                                    <div class="description">
+                                        <p>Integer posuere erat a ante venenatis dapibus aliquet.</p>
+                                    </div>
+                                    <div class="published font-size-90x">Published: <time datetime="2014-10-20">Oct 20,
+                                            2020</time></div>
                                 </div>
                             </article>
                             <!-- End news item -->
@@ -378,9 +404,13 @@ Based on Twitter Bootstrap
                             <article class="news-item">
                                 <div class="thumbnail"><img src="images/event2.jpg" alt="sample image 2"></div>
                                 <div class="info">
-                                    <div class="headline"><a href="">Duis mollis, est non commodo luctus, nisi erat porttitor ligula.</a></div>
-                                    <div class="description"><p>Integer posuere erat a ante venenatis dapibus posuere velit aliquet.</p></div>
-                                    <div class="published font-size-90x">Published: <time datetime="2014-10-20">Oct 21, 2020</time></div>
+                                    <div class="headline"><a href="">Duis mollis, est non commodo luctus, nisi erat
+                                            porttitor ligula.</a></div>
+                                    <div class="description">
+                                        <p>Integer posuere erat a ante venenatis dapibus posuere velit aliquet.</p>
+                                    </div>
+                                    <div class="published font-size-90x">Published: <time datetime="2014-10-20">Oct 21,
+                                            2020</time></div>
                                 </div>
                             </article>
                             <!-- End news item -->
@@ -392,15 +422,18 @@ Based on Twitter Bootstrap
                                 <div class="thumbnail"><img src="images/event3.jpg" alt="sample image 3"></div>
                                 <div class="info">
                                     <div class="headline"><a href="">Duis mollis, est non commodo.</a></div>
-                                    <div class="published font-size-sm">Published: <time datetime="2014-10-20">Oct 22, 2020</time></div>
+                                    <div class="published small">Published: <time datetime="2014-10-20">Oct 22,
+                                            2020</time></div>
                                 </div>
                             </article>
 
                             <article class="news-item">
                                 <div class="thumbnail"><img src="images/event1.jpg" alt="sample image 5"></div>
                                 <div class="info">
-                                    <div class="headline"><a href="">Duis mollis, est non commodo luctus, nisi erat.</a></div>
-                                    <div class="published font-size-sm">Published: <time datetime="2014-10-20">Oct 20, 2020</time></div>
+                                    <div class="headline"><a href="">Duis mollis, est non commodo luctus, nisi erat.</a>
+                                    </div>
+                                    <div class="published small">Published: <time datetime="2014-10-20">Oct 20,
+                                            2020</time></div>
                                 </div>
                             </article>
 
@@ -408,7 +441,8 @@ Based on Twitter Bootstrap
                                 <div class="thumbnail"><img src="images/event2.jpg" alt="sample image 4"></div>
                                 <div class="info">
                                     <div class="headline"><a href="">Duis mollis, est non commodo luctus.</a></div>
-                                    <div class="published font-size-sm">Published: <time datetime="2014-10-20">Oct 20, 2020</time></div>
+                                    <div class="published small">Published: <time datetime="2014-10-20">Oct 20,
+                                            2020</time></div>
                                 </div>
                             </article>
                         </section>
@@ -419,7 +453,7 @@ Based on Twitter Bootstrap
 
 
 
-                </div><!-- End Container -->
+            </div><!-- End Container -->
         </main>
 
     </div>
@@ -429,4 +463,5 @@ Based on Twitter Bootstrap
 
 
 </body>
+
 </html>

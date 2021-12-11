@@ -3,29 +3,32 @@
 ----------------------------------------- */
 
 @font-face {
-    font-family: 'CaGov';
-    src: url('../fonts/CaGov.eot?ocljyw');
-    src: url('../fonts/CaGov.eot?ocljyw#iefix') format('embedded-opentype'), url('../fonts/CaGov.ttf?ocljyw') format('truetype'), url('../fonts/CaGov.woff?ocljyw') format('woff'), url('../fonts/CaGov.svg??ocljyw#CaGov') format('svg');
-    font-weight: normal;
-    font-style: normal;
-    font-display: block;
+  font-family: "CaGov";
+  src: url("../fonts/CaGov.ttf?ocljyw") format("truetype"), url("fonts/ca-gov-icon.woff?t3czrh") format("woff"),
+    url("../fonts/CaGov.woff2?ocljyw") format("woff2"), url("../fonts/CaGov.svg??ocljyw#CaGov") format("svg");
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
 }
 
-[class^="ca-gov-icon-"], [class*=" ca-gov-icon-"] {
-    /* use !important to prevent issues with browser extensions that change fonts */
-    font-family: 'CaGov' !important;
-    speak: never;
-    font-style: normal;
-    font-weight: normal;
-    font-variant: normal;
-    text-transform: none;
-  
-    /* Better Font Rendering =========== */
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-  }
-  
-  
+[class^="ca-gov-icon-"],
+[class*=" ca-gov-icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: "CaGov" !important;
+  speak: never;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.ca-gov-icon-github:before {
+  content: "\ea21";
+}
 .ca-gov-icon-pdf-text:before {
   content: "\ea20";
 }

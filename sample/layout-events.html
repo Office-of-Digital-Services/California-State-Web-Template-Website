@@ -9,50 +9,47 @@
 
 <head>
 
-    <!--    California State Template
+
+    <!--    California State Template (beta)
  
-Based on Twitter Bootstrap
--->
+
+            Based on Twitter Bootstrap
+            -->
     <meta charset="utf-8">
 
-    <title>Events page template</title>
+    <title>Sample layout - Events page</title>
 
     <meta name="Author" content="State of California" />
     <meta name="Description" content="State of California" />
     <meta name="Keywords" content="California, government" />
 
     <!--#include virtual="/ssi/head-css-js.html" -->
-
+    <script type="text/javascript">
+        var defaultActiveLink = "Pages";
+    </script>
 </head>
 
 <body>
-
-    <header role="banner" id="header" class="global-header">
+    <header role="banner" id="header" class="global-header fixed">
         <div id="skip-to-content"><a href="#main-content">Skip to Main Content</a></div>
 
         <!-- Include Utility Header -->
         <!--#include virtual="/ssi/utility-header.html" -->
-
         <!-- Settings Bar -->
         <!--#include virtual="/ssi/settings-bar.html" -->
-
         <!-- Include Branding -->
-        <!--#include virtual="/ssi/branding.html" -->
-
+        <!--#include virtual="/ssi/branding-lightgrey.html" -->
         <!-- Include Mobile Controls -->
         <!--#include virtual="/ssi/mobile-controls.html" -->
 
-        <div class="navigation-search">
-            <!-- Include Navigation -->
-            <!--#include virtual="/ssi/navigation.html" -->
-
-            <div id="head-search" class="search-container">
+        <div class="navigation-search full-width-nav container">
+            <div id="head-search" class="search-container featured-search">
                 <!-- Include Search -->
                 <!--#include virtual="/ssi/search.html" -->
             </div>
-
+            <!-- Include Navigation -->
+            <!--#include virtual="/ssi/navigation.html" -->
         </div>
-
         <div class="header-decoration"></div>
     </header>
 
@@ -83,7 +80,8 @@ Based on Twitter Bootstrap
                             <span id="seconds"></span>
                         </div>
                     </div>
-                    <a href="https://census.ca.gov/" class="m-t btn btn-default btn-next"><span>Volunteer with us!</span></a>
+                    <a href="https://census.ca.gov/" class="m-t btn btn-default btn-next"><span>Volunteer with
+                            us!</span></a>
                 </div>
             </div>
 
@@ -91,7 +89,7 @@ Based on Twitter Bootstrap
 
 
             <div class="container p-y-lg">
-            <hr />
+                <hr />
                 <h2 class="m-b-0">In-Person Seminars, Classes, Clinics, and Workshops</h2>
                 <p class="lead">For more resources, please see Online Seminars.</p>
                 <div class="row m-t-md">
@@ -102,7 +100,8 @@ Based on Twitter Bootstrap
                                 <div class="info">
                                     <h3 class="h5"><a href="" class="title">Sample Event Title</a></h3>
                                     <div class="description">Optional Short Description </div>
-                                    <div class="start-date"><time datetime="2016-04-21 20:00">Thu, 04/21/20 8:00 p.m.</time></div>
+                                    <div class="start-date"><time datetime="2016-04-21 20:00">Thu, 04/21/20 8:00
+                                            p.m.</time></div>
                                 </div>
                             </article>
 
@@ -111,7 +110,8 @@ Based on Twitter Bootstrap
                                 <div class="info">
                                     <h3 class="h5"><a href="" class="title">Sample Event Title</a></h3>
                                     <div class="description">Optional Short Description</div>
-                                    <div class="start-date"><time datetime="2016-04-21 20:00">Thu, 04/21/20 8:00 p.m.</time></div>
+                                    <div class="start-date"><time datetime="2016-04-21 20:00">Thu, 04/21/20 8:00
+                                            p.m.</time></div>
                                 </div>
                             </article>
 
@@ -120,7 +120,8 @@ Based on Twitter Bootstrap
                                 <div class="info">
                                     <h3 class="h5"><a href="" class="title">Sample Event Title</a></h3>
                                     <div class="description">Optional Short Description</div>
-                                    <div class="start-date"><time datetime="2016-04-21 20:00">Thu, 04/21/20 8:00 p.m.</time></div>
+                                    <div class="start-date"><time datetime="2016-04-21 20:00">Thu, 04/21/20 8:00
+                                            p.m.</time></div>
                                 </div>
                             </article>
                         </section>
@@ -131,19 +132,22 @@ Based on Twitter Bootstrap
                             <article class="event-item">
                                 <h3 class="h5"><a href="" class="title">Sample Event Title</a></h3>
                                 <div class="description">Optional Short Description</div>
-                                <div class="start-date"><time datetime="2016-04-21 20:00">Thu, 04/21/20 8:00 p.m.</time></div>
+                                <div class="start-date"><time datetime="2016-04-21 20:00">Thu, 04/21/20 8:00 p.m.</time>
+                                </div>
                             </article>
 
                             <article class="event-item">
                                 <h3 class="h5"><a href="" class="title">Sample Event Title</a></h3>
                                 <div class="description">Optional Short Description</div>
-                                <div class="start-date"><time datetime="2016-04-21 20:00">Thu, 04/21/20 8:00 p.m.</time></div>
+                                <div class="start-date"><time datetime="2016-04-21 20:00">Thu, 04/21/20 8:00 p.m.</time>
+                                </div>
                             </article>
 
                             <article class="event-item">
                                 <h3 class="h5"><a href="" class="title">Sample Event Title</a></h3>
                                 <div class="description">Optional Short Description</div>
-                                <div class="start-date"><time datetime="2016-04-21 20:00">Thu, 04/21/20 8:00 p.m.</time></div>
+                                <div class="start-date"><time datetime="2016-04-21 20:00">Thu, 04/21/20 8:00 p.m.</time>
+                                </div>
                             </article>
                         </section>
                     </div>
@@ -153,77 +157,9 @@ Based on Twitter Bootstrap
 
 
 
-            </div><!--end container-->
-            <!--Panes-->
-            <div class="container">
-                <h2>Upcoming Events:</h2>
             </div>
-            <div class="pane odd">
-                <div class="group-left">
-                    <a class="pane-img" href="http://ca.gov/Agencies/Employment-Development-Department" aria-label="Employment Development Department" style="background: url('/sample/images/event-big1.jpg')"></a>
-                </div>
-                <div class="group-right section-standout">
-                    <div class="pane-content">
-                        <h3 class="m-b-0">File for Paid Family Leave Seminar</h3>
-                        <h4 class="m-t-0">Sponsored by <a href="http://ca.gov/Agencies/Employment-Development-Department">EDD</a></h4>
+            <!--end container-->
 
-                        <p>
-                            Learn how California State provides Paid Family Leave (PFL) wage replacement benefits to eligible workers
-                            who need time off work.
-                        </p>
-                        <p><strong>Thusday, July 20, 2020<br />8:00am - 4:00pm</strong></p>
-
-                        <a href="/profile-landing.html" class="btn btn-default"><span class="ca-gov-icon-online-services" aria-hidden="true"></span> Register <span class="sr-only">for event 1</span> </a>
-                        <ul class="m-0 p-0 list-inline text-right social">
-                            <li class="list-inline-item"><a href="https://twitter.com/" aria-label="EDD twitter" class="no-underline"><span class="ca-gov-icon-twitter" aria-hidden="true"><span class="sr-only">Twitter</span></span></a></li>
-                            <li class="list-inline-item"><a href="https://www.facebook.com/" aria-label="EDD facebook" class="no-underline"><span class="ca-gov-icon-facebook" aria-hidden="true"><span class="sr-only">Facebook</span></span></a></li>
-                            <li class="list-inline-item"><a href="https://www.google.com/" aria-label="EDD google +" class="no-underline"><span class="ca-gov-icon-google-plus" aria-hidden="true"><span class="sr-only">Google+</span></span></a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            <div class="pane even">
-                <div class="group-left bg-highlight">
-                    <div class="pane-content">
-                        <h3 class="m-b-0">File for Unemployment Online Seminar</h3>
-                        <h4 class="m-t-0">Sponsored by <a href="http://ca.gov/Agencies/Employment-Development-Department">EDD</a></h4>
-                        <a href="/profile-landing.html" class="btn btn-default"><span class="ca-gov-icon-info" aria-hidden="true"></span> See <span class="sr-only">Employment Development Department</span> Details</a>
-                        <a href="/profile-landing.html#locations-near-you" class="btn btn-default"><span class="ca-gov-icon-online-services" aria-hidden="true"></span>  Register <span class="sr-only"> for online EDD class</span></a>
-                        <p class="m-t-md">
-                            This is an online seminar offered by the Employment Development Department (EDD).
-                            You will learn about fast, convenient, and secure ways for customers to file and manage claims.
-                        </p>
-                        <p>General Information: 877-238-4373</p>
-                        <ul class="m-0 p-0 list-inline text-right social">
-                            <li class="list-inline-item"><a href="https://twitter.com/" aria-label="EDD twitter link" class="no-underline"><span class="ca-gov-icon-twitter" aria-hidden="true"><span class="sr-only">Twitter</span></span></a></li>
-                            <li class="list-inline-item"><a href="https://www.facebook.com/" aria-label="EDD facebook link" class="no-underline"><span class="ca-gov-icon-facebook" aria-hidden="true"><span class="sr-only">Facebook</span></span></a></li>
-                            <li class="list-inline-item"><a href="https://www.google.com/" aria-label="EDD google plus link" class="no-underline"><span class="ca-gov-icon-google-plus" aria-hidden="true"><span class="sr-only">Google+</span></span></a></li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="group-right">
-                    <a class="pane-img" aria-label="Employment Development Department (EDD)" href="http://ca.gov/Agencies/Employment-Development-Department" style="background: url('/sample/images/event-big2.jpg')"></a>
-                </div>
-            </div>
-            <div class="pane odd">
-                <div class="group-left">
-                    <a class="pane-img" aria-label="New Business Orientation (CDTFA)" href="http://ca.gov/Agencies/Parks-and-Recreation-Department-of" style="background: url('/sample/images/event-big3.jpg')"></a>
-                </div>
-                <div class="group-right section-primary">
-                    <div class="pane-content">
-                        <h3 class="m-b-0">New Business Orientation Class</h3>
-                        <h4 class="m-t-0">Sponsored by <a href="https://www.cdtfa.ca.gov/seminar/">CDTFA</a></h4>
-                        <p>These one hour sessions are designed for new business owners. These informal sessions will give a brief demonstration of our resources and how to file your taxes online. CDTFA staff will be available to answer your sales and use tax questions as it relates to your business or industry.</p>
-                        <p><strong>Friday, August 9, 2020<br />11:00am - 12:00pm</strong></p>
-                        <a href="/profile-landing.html" class="btn btn-default"><span class="ca-gov-icon-online-services" aria-hidden="true"></span> Register Online</a>
-                        <ul class="m-0 p-0 list-inline text-right social">
-                            <li class="list-inline-item"><a href="https://twitter.com/" aria-label="PARKS twitter link" class="no-underline"><span class="ca-gov-icon-twitter" aria-hidden="true"><span class="sr-only">Twitter</span></span></a></li>
-                            <li class="list-inline-item"><a href="https://www.facebook.com/" aria-label="PARKS facebook link" class="no-underline"><span class="ca-gov-icon-facebook" aria-hidden="true"><span class="sr-only">Facebook</span></span></a></li>
-                            <li class="list-inline-item"><a href="https://www.google.com/" aria-label="PARKS google plus link" class="no-underline"><span class="ca-gov-icon-google-plus" aria-hidden="true"><span class="sr-only">Google+</span></span></a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
 
 
             <div class="section-default p-a-lg text-center">
@@ -231,7 +167,8 @@ Based on Twitter Bootstrap
                     Join us in building the statewide web resource you expect and deserve.
                     We encourage your feedback and suggestions!
                 </h2>
-                <a href="https://webstandards.ca.gov/contact-us/" class="btn btn-default btn-lg btn-next"><span>Leave Feedback</span></a>
+                <a href="https://webstandards.ca.gov/contact-us/" class="btn btn-default btn-lg btn-next"><span>Leave
+                        Feedback</span></a>
             </div>
 
 
@@ -267,7 +204,7 @@ Based on Twitter Bootstrap
             document.getElementById("hours").innerHTML = hours;
             document.getElementById("minutes").innerHTML = minutes;
             document.getElementById("seconds").innerHTML = seconds;
-            
+
             // If the count down is over, write some text
             if (distance < 0) {
                 clearInterval(x);
@@ -277,4 +214,5 @@ Based on Twitter Bootstrap
     </script>
 
 </body>
+
 </html>

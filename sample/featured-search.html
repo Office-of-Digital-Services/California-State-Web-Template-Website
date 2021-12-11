@@ -9,7 +9,8 @@
 
 <head>
 
-    <!--    California State Template
+    <!--    California State Template (beta)
+ 
  
 Based on Twitter Bootstrap
 -->
@@ -22,10 +23,13 @@ Based on Twitter Bootstrap
     <meta name="Keywords" content="California, government" />
 
     <!--#include virtual="/ssi/head-css-js.html" -->
-
+    <script type="text/javascript">
+        var defaultActiveLink = "Components";
+    </script>
 </head>
 
 <body>
+
 
     <header role="banner" id="header" class="global-header fixed">
         <div id="skip-to-content"><a href="#main-content">Skip to Main Content</a></div>
@@ -35,15 +39,17 @@ Based on Twitter Bootstrap
         <!-- Settings Bar -->
         <!--#include virtual="/ssi/settings-bar.html" -->
         <!-- Include Branding -->
-        <!--#include virtual="/ssi/branding.html" -->
+        <!--#include virtual="/ssi/branding-lightgrey.html" -->
         <!-- Include Mobile Controls -->
         <!--#include virtual="/ssi/mobile-controls.html" -->
 
         <div class="navigation-search">
             <!-- Include Navigation -->
-            <!--#include virtual="/ssi/navigation.html" -->
+            <!--#include virtual="/sample/modules/nav-flex.html" -->
 
-            <div id="head-search" class="search-container featured-search">
+
+
+            <div id="featured-search" class="search-container featured-search">
                 <!-- Include Search -->
                 <!--#include virtual="/ssi/search.html" -->
             </div>
@@ -61,36 +67,41 @@ Based on Twitter Bootstrap
 
 
     <!-- Ask Bar -->
-    <!--#include virtual="/ssi/ask-bar.html" -->
-
-
-    <!-- Include Page Template -->
-    <section aria-label="hero banner">
-        <!--#include virtual="/ssi/header-single-banner.html" -->
+    <section aria-label="ask bar">
+        <!--#include virtual="/ssi/ask-bar.html" -->
     </section>
-    <div id="main-content" class="main-content">
 
-        <main class="main-primary">
-            <div class="container p-t-md p-b-lg">
+
+
+
+    <div id="main-content" class="main-content">
+        <!-- Include Page Template -->
+        <section aria-label="hero banner">
+            <!--#include virtual="/ssi/header-single-banner.html" -->
+        </section>
+
+        <div class="container p-b-lg">
+            <main class="main-primary">
                 <ol class="breadcrumb">
                     <li><a href="../index.html" title="Home page">Home</a></li>
-                    <li><a href="index.html" title="Examples landing page">Examples</a></li>
+                    <li><a href="/sample/" title="Content Modules landing page">Content Modules</a></li>
                     <li class="active">Featured Search</li>
                 </ol>
 
-                <div class="group">
+                <div class="row">
                     <div class="half">
                         <h1>Featured Search</h1>
                         <p>The header above is an example of the featured search bar. It's location and size make it a
                             prominent feature on this layout option. The
                             <code>.search-container</code>and<code>.featured-search</code> classes need to be added to
-                            the <code>#head-search</code> div in the header of your page.</p>
+                            the <code>#head-search</code> div in the header of your page.
+                        </p>
                         <p>More information on using search results categories and instant search as seen on the <a
                                 href="http://www.ca.gov">ca.gov</a> portal will be available in the near future.</p>
 
 
 
-                        <p><span class="label label-info">NOTE:</span> Featured search can be used with any page
+                        <p><span class="badge label-info">NOTE:</span> Featured search can be used with any page
                             template, see available options by viewing <a href="page-templates.html"> page
                                 templates</a>.</p>
                         <p>&nbsp;</p>
@@ -108,9 +119,9 @@ Based on Twitter Bootstrap
                             purposes depending on your business needs. To use this feature you must utilize the SSI
                             include method right below the header of the desired page.</p>
                         <pre>
-                        &lt;!-- Ask Bar --&gt;
-                        &lt;!--#include virtual=&quot;/ssi/ask-bar.html&quot; --&gt; 
-                        </pre>
+&lt;!-- Ask Bar --&gt;
+&lt;!--#include virtual=&quot;/ssi/ask-bar.html&quot; --&gt; 
+</pre>
                         <p>The number of buttons can be customized from two to six including the menu options for each
                             one. All of the configurations are located in the <code>ask-bar.html</code> file located in
                             the <code>ssi</code> folder. Remember to update the <code>&lt;a&gt;</code>class right below
@@ -136,8 +147,8 @@ Based on Twitter Bootstrap
                     </div>
 
                 </div>
-            </div>
-        </main>
+            </main>
+        </div>
     </div>
 
 

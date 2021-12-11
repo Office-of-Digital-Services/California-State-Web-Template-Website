@@ -8,56 +8,48 @@
 <!--<![endif]-->
 
 <head>
-
-    <!--    California State Template
+    <!--    California State Template (beta)
  
-Based on Twitter Bootstrap
--->
+        
+        Based on Twitter Bootstrap
+    -->
     <meta charset="utf-8">
-
-    <title>Layouts</title>
-
+    <title>Page Layouts</title>
     <meta name="Author" content="State of California" />
     <meta name="Description" content="State of California" />
     <meta name="Keywords" content="California, government" />
-
     <!--#include virtual="/ssi/head-css-js.html" -->
-
+    <script type="text/javascript">
+        var defaultActiveLink = "Pages";
+    </script>
 </head>
 
 <body>
-
-    <header role="banner" id="header" class="global-header">
+    <header role="banner" id="header" class="global-header fixed">
         <div id="skip-to-content"><a href="#main-content">Skip to Main Content</a></div>
 
         <!-- Include Utility Header -->
         <!--#include virtual="/ssi/utility-header.html" -->
-
         <!-- Settings Bar -->
         <!--#include virtual="/ssi/settings-bar.html" -->
-
         <!-- Include Branding -->
-        <!--#include virtual="/ssi/branding.html" -->
-
+        <!--#include virtual="/ssi/branding-lightgrey.html" -->
         <!-- Include Mobile Controls -->
         <!--#include virtual="/ssi/mobile-controls.html" -->
 
-        <div class="navigation-search">
-            <!-- Include Navigation -->
-            <!--#include virtual="/ssi/navigation.html" -->
-
-            <div id="head-search" class="search-container">
+        <div class="navigation-search full-width-nav container">
+            <div id="head-search" class="search-container featured-search">
                 <!-- Include Search -->
                 <!--#include virtual="/ssi/search.html" -->
             </div>
-
+            <!-- Include Navigation -->
+            <!--#include virtual="/ssi/navigation.html" -->
         </div>
 
-        <div class="header-decoration"></div>
     </header>
 
     <div id="main-content" class="main-content">
-        <div class="container p-b-lg">
+        <div class="container p-b-lg p-t-md">
             <div class="row">
                 <div class="col-md-8">
                     <main class="main-primary">
@@ -67,7 +59,8 @@ Based on Twitter Bootstrap
                         </ol>
                         <h1>Page Layouts</h1>
                         <p>
-                            State Template page layouts are pre-made content-based pages that cover specific business areas such as services, events, profiles, FAQs, News etc.
+                            State Template page layouts are pre-made content-based pages that cover specific business
+                            areas such as services, events, profiles, FAQs, News etc.
                         </p>
 
 
@@ -77,7 +70,7 @@ Based on Twitter Bootstrap
                             <li><a href="/sample/layout-about.html">About</a></li>
                             <li><a href="/business-profile.html">Agency profile</a></li>
                             <li><a href="/sample/layout-contact.html">Contact</a></li>
-                            <li><a href="/sample/layout-events.html">Events</a></li>
+                            <li><a href="/sample/layout-event.html">Events</a></li>
                             <li><a href="/sample/layout-faq.html">FAQ</a>
                             <li><a href="/general-landing.html">General Landing Page</a>
                             <li><a href="/">Homepage</a></li>
@@ -105,17 +98,21 @@ Based on Twitter Bootstrap
                     <h3>Other examples:</h3>
                     <!-- Side navigation -->
                     <div class="accordion-list list-group">
-                        <a href="/sample/" class="list-group-item list-group-item-action"><span class="ca-gov-icon-gears" aria-hidden="true"></span> Content Modules</a>
-                        <a href="/sample/color-schemes.html" class="list-group-item list-group-item-action"><span class="ca-gov-icon-grid" aria-hidden="true"></span> Color Schemes</a>
-                        <a href="/sample/navsamples.html" class="list-group-item list-group-item-action"><span class="ca-gov-icon-menu" aria-hidden="true"></span> Navigation Samples</a>
+                        <a href="/sample/" class="list-group-item list-group-item-action"><span
+                                class="ca-gov-icon-gears" aria-hidden="true"></span> Content Modules</a>
+                        <a href="/sample/color-schemes.html" class="list-group-item list-group-item-action"><span
+                                class="ca-gov-icon-grid" aria-hidden="true"></span> Color Schemes</a>
+                        <a href="/sample/navsamples.html" class="list-group-item list-group-item-action"><span
+                                class="ca-gov-icon-menu" aria-hidden="true"></span> Navigation Samples</a>
                     </div>
                 </div>
             </div>
         </div>
 
-        </div>
+    </div>
 
-        <!--#include virtual="/ssi/global-footer.html" -->
-        <!--#include virtual="/ssi/scripts.html" -->
+    <!--#include virtual="/ssi/global-footer.html" -->
+    <!--#include virtual="/ssi/scripts.html" -->
 </body>
+
 </html>

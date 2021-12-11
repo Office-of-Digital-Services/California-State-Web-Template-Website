@@ -12,10 +12,11 @@ Based on Twitter Bootstrap
 <!--[if IE 9]>    <html class="no-js ie9 oldie" lang="en"> <![endif]-->
 <!--[if (gt IE 9)]><!-->
 <html class="no-js" lang="en">
- <!--<![endif]-->
+<!--<![endif]-->
 
-<head>    
-<!--    California State Template
+<head>
+    <!--    California State Template (beta)
+ 
 
     Based on Twitter Bootstrap
     -->
@@ -28,10 +29,13 @@ Based on Twitter Bootstrap
     <meta name="Keywords" content="California, government" />
 
     <!--#include virtual="/ssi/head-css-js.html" -->
-
+    <script type="text/javascript">
+        var defaultActiveLink = "Components";
+    </script>
 </head>
 
 <!-- possible body classes are "primary" and "two-column" -->
+
 <body>
 
     <header role="banner" id="header" class="global-header">
@@ -42,19 +46,17 @@ Based on Twitter Bootstrap
         <!-- Settings Bar -->
         <!--#include virtual="/ssi/settings-bar.html" -->
         <!-- Include Branding -->
-        <!--#include virtual="/ssi/branding.html" -->
+        <!--#include virtual="/ssi/branding-lightgrey.html" -->
         <!-- Include Mobile Controls -->
         <!--#include virtual="/ssi/mobile-controls.html" -->
 
-        <div class="navigation-search">
-            <!-- Include Navigation -->
-            <!--#include virtual="/ssi/navigation.html" -->
-
-            <div id="head-search" class="search-container">
+        <div class="navigation-search full-width-nav container">
+            <div id="head-search" class="search-container featured-search">
                 <!-- Include Search -->
                 <!--#include virtual="/ssi/search.html" -->
             </div>
-
+            <!-- Include Navigation -->
+            <!--#include virtual="/ssi/navigation.html" -->
         </div>
 
         <div class="header-decoration"></div>
@@ -62,40 +64,43 @@ Based on Twitter Bootstrap
 
 
     <div id="main-content" class="main-content">
-        <div class="section">
+        <div class="container p-b-lg p-t-md">
             <main class="main-primary">
                 <ol class="breadcrumb">
                     <li><a href="../index.html" title="Home page">Home</a></li>
-                    <li><a href="index.html" title="Examples landing page">Examples</a></li>
+                    <li><a href="/sample/" title="Content Modules landing page">Content Modules</a></li>
                     <li class="active">Forms</li>
                 </ol>
 
-                <div class="group">
+                <div class="row">
                     <div class="half">
                         <h1>Forms</h1>
-                        <p>All form controls automatically receive some global styling. Form elements with <code>.form-control</code> are set to <code>width: 100%;</code> by default. Wrap labels and controls in <code>.form-group</code> for optimum spacing.</p>
+                        <p>All form controls automatically receive some global styling. Form elements with
+                            <code>.form-control</code> are set to <code>width: 100%;</code> by default. Wrap labels and
+                            controls in <code>.form-group</code> for optimum spacing.
+                        </p>
 
                         <h2>Example:</h2>
                         <!--#include virtual="/sample/modules/form.html" -->
                     </div>
                     <div class="half">
                         <h2>Source Code:</h2>
-                        <pre><code><!--#include virtual="/sample/modules/form.html" --></code></pre>
+                        <pre><code class="overflow-auto"><!--#include virtual="/sample/modules/form.html" --></code></pre>
                     </div>
                 </div>
 
                 <hr>
 
-                <div class="group">
+                <div class="row">
                     <div class="half">
                         <h2>Sample contact form:</h2>
                         <!--#include virtual="/sample/modules/form-contact.html" -->
                     </div>
                     <div class="half">
                         <h2>Source Code:</h2>
-                        <pre ><code>
+                        <pre><code class="overflow-auto">
 <form role="form">
-                        <div class="group">
+                        <div class="row">
                         <div class="form-group half">
                         <label for="exampleInputName" class="form-control-label"><span class="required-label">*</span> Name</label>
                         <input type="text" class="form-control" id="exampleInputName" placeholder="Name">
@@ -133,18 +138,18 @@ Based on Twitter Bootstrap
 
                 <hr>
 
-                <div class="group">
+                <div class="row">
                     <div class="half">
                         <h2>Form states and sizes:</h2>
                         <!--#include virtual="/sample/modules/form-states.html" -->
                     </div>
                     <div class="half">
                         <h2>Source Code:</h2>
-                        <pre><code><!--#include virtual="/sample/modules/form-states.html" --></code></pre>
+                        <pre><code class="overflow-auto"><!--#include virtual="/sample/modules/form-states.html" --></code></pre>
                     </div>
                 </div>
                 <hr />
-                <div class="group">
+                <div class="row">
                     <div class="half">
 
 
@@ -153,13 +158,13 @@ Based on Twitter Bootstrap
                     </div>
                     <div class="half">
                         <h2>Source Code:</h2>
-                        <pre><code><!--#include virtual="/sample/modules/form-file-input.html" --></code></pre>
+                        <pre><code class="overflow-auto"><!--#include virtual="/sample/modules/form-file-input.html" --></code></pre>
                     </div>
                 </div>
 
 
                 <hr />
-                <div class="group">
+                <div class="row">
                     <div class="half">
                         <h2>Custom radio buttons and checkboxes:</h2>
                         <!--#include virtual="/sample/modules/form-radios.html" -->
@@ -170,7 +175,7 @@ Based on Twitter Bootstrap
                     </div>
                     <div class="half">
                         <h2>Source Code:</h2>
-                        <pre><code><!--#include virtual="/sample/modules/form-radios.html" -->
+                        <pre><code class="overflow-auto"><!--#include virtual="/sample/modules/form-radios.html" -->
 <!--#include virtual="/sample/modules/form-checkboxes.html" -->
                         </code></pre>
                     </div>
@@ -185,7 +190,7 @@ Based on Twitter Bootstrap
                     </div>
                     <div class="half">
                         <h2>Source Code:</h2>
-                        <pre><code><!--#include virtual="/sample/modules/form-select.html" --></code></pre>
+                        <pre><code class="overflow-auto"><!--#include virtual="/sample/modules/form-select.html" --></code></pre>
                     </div>
 
                 </div>
@@ -198,4 +203,5 @@ Based on Twitter Bootstrap
     <!--#include virtual="/ssi/scripts.html" -->
 
 </body>
+
 </html>

@@ -5,7 +5,11 @@
 .breadcrumb {
     padding-left: 0;
     background-color: transparent;
-    @include font-size(1);
+    // @include font-size(1);
+    font-size: $font-size-base;
+    @include media-breakpoint-up(sm) {
+        font-size: calc(#{$font-size-base} + #{$ratio});
+    }
 
     li {
         &:before {
@@ -26,6 +30,6 @@
     }
 }
 
-    .breadcrumb > li + li:before {
-        padding: 0; // Overrides Bootstraps injected content
-    }
+.breadcrumb > li + li:before {
+    padding: 0; // Overrides Bootstraps injected content
+}

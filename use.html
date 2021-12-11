@@ -8,10 +8,12 @@
 <!--<![endif]-->
 
 <head>
-<!--    California State Template
+    <!--    California State Template (beta)
+ 
 
     Based on Twitter Bootstrap
     -->
+    <meta charset="utf-8">
 
     <title>Conditions of Use</title>
 
@@ -37,19 +39,17 @@
         <!-- Settings Bar -->
         <!--#include virtual="/ssi/settings-bar.html" -->
         <!-- Include Branding -->
-        <!--#include virtual="/ssi/branding.html" -->
+        <!--#include virtual="/ssi/branding-lightgrey.html" -->
         <!-- Include Mobile Controls -->
         <!--#include virtual="/ssi/mobile-controls.html" -->
 
-        <div class="navigation-search">
-            <!-- Include Navigation -->
-            <!--#include virtual="/ssi/navigation.html" -->
-
-            <div id="head-search" class="search-container">
+        <div class="navigation-search full-width-nav container">
+            <div id="head-search" class="search-container featured-search">
                 <!-- Include Search -->
                 <!--#include virtual="/ssi/search.html" -->
             </div>
-
+            <!-- Include Navigation -->
+            <!--#include virtual="/ssi/navigation.html" -->
         </div>
 
 
@@ -58,9 +58,8 @@
     </header>
 
 
-
     <div id="main-content" class="main-content">
-        <div class="container p-b-lg">
+        <div class="container p-b-lg p-t-md">
 
             <main class="main-primary">
                 <!-- InstanceBeginEditable name="MainContent" -->
@@ -71,7 +70,11 @@
                 </ol>
                 <h1>Conditions of Use</h1>
                 <h2>Use Policy</h2>
-                <p>Thank you for visiting the State of California’s web site and reviewing our Use Policy. You should also be aware that the State has a Privacy Policy, also available on this web site. The State wants you to know about the collection, use, security, and access to information that may be obtained through use of the State’s web portal. By visiting this web site, you are accepting the policies and practices described in this Notice. This Notice covers the following topics:</p>
+                <p>Thank you for visiting the State of California’s web site and reviewing our Use Policy. You should
+                    also be aware that the State has a Privacy Policy, also available on this web site. The State wants
+                    you to know about the collection, use, security, and access to information that may be obtained
+                    through use of the State’s web portal. By visiting this web site, you are accepting the policies and
+                    practices described in this Notice. This Notice covers the following topics:</p>
                 <ul class="list-understated">
                     <li><a href="#choice">Personal Information and Choice</a></li>
                     <li><a href="#children">A Special Note about Children</a></li>
@@ -87,70 +90,199 @@
                     <li><a href="#liability">Limitation of Liability</a></li>
                     <li><a href="#ownership">Ownership</a></li>
                 </ul>
-                <p>Please note that this Use Policy is subject to change without notice, and that it reflects the State’s current business practices. This Use policy is dated December 7, 2000.</p>
-                <p>Also note that each department within the State may have additional privacy and use policies specific to the mission and needs of their work. Be sure to review those policies as you access additional sites within the State.</p>
+                <p>Please note that this Use Policy is subject to change without notice, and that it reflects the
+                    State’s current business practices. This Use policy is dated December 7, 2000.</p>
+                <p>Also note that each department within the State may have additional privacy and use policies specific
+                    to the mission and needs of their work. Be sure to review those policies as you access additional
+                    sites within the State.</p>
                 <p><a id="choice"></a></p>
-                <h3 style="border-bottom-width: 2px; border-bottom-style: solid; border-bottom-color: #bcbcbc;">PERSONAL INFORMATION AND CHOICE</h3>
-                <p>“Personal information” is information about a natural person that identifies or describes an individual, including, but not limited to, his or her name, social security number, physical description, home address, home telephone number, education, financial matters, and medical or employment history, readily identifiable to that specific individual. A domain name or Internet Protocol address is not considered personal information, however, it is considered “electronically collected personal information.”</p>
-                <p>According to Government Code § 11015.5., “electronically collected personal information” means any information that is maintained by an agency that identifies or describes an individual user, including, but not limited to, his or her name, social security number, physical description, home address, home telephone number, education, financial matters, medical or employment history, password, electronic mail address, and information that reveals any network location or identity, but excludes any information manually submitted to a State agency by a user, whether electronically or in written form, and information on or relating to individuals who are users, serving in a business capacity, including, but not limited to, business owners, officers, or principals of that business.</p>
-                <p>“Electronically collected personal information” that we automatically collect includes your domain name or Internet Protocol address, and statistical information about which web pages you visit. If you voluntarily participate in an activity that asks for specific information (i.e., completing a request for assistance, personalizing the content of the web site, sending an e-mail, or participating in a survey) more detailed data will be collected. If you choose not to participate in these activities, your choice will in no way affect your ability to use any other feature of the web site.</p>
-                <p>If any type of personal information is requested on the web site or volunteered by the user, State law, including the Information Practices Act of 1977, Government Code Section 11015.5., and the federal Privacy Act of 1974 may protect it. However, this information may be a public record once you provide it, and may be subject to public inspection and copying if not otherwise protected by federal or State law.</p>
-                <p>Additionally, departments and agencies of the State of California under the authority of the Governor are required to adhere to the Privacy Policy which is also accessible on this web site.</p>
+                <h3 style="border-bottom-width: 2px; border-bottom-style: solid; border-bottom-color: #bcbcbc;">PERSONAL
+                    INFORMATION AND CHOICE</h3>
+                <p>“Personal information” is information about a natural person that identifies or describes an
+                    individual, including, but not limited to, his or her name, social security number, physical
+                    description, home address, home telephone number, education, financial matters, and medical or
+                    employment history, readily identifiable to that specific individual. A domain name or Internet
+                    Protocol address is not considered personal information, however, it is considered “electronically
+                    collected personal information.”</p>
+                <p>According to Government Code § 11015.5., “electronically collected personal information” means any
+                    information that is maintained by an agency that identifies or describes an individual user,
+                    including, but not limited to, his or her name, social security number, physical description, home
+                    address, home telephone number, education, financial matters, medical or employment history,
+                    password, electronic mail address, and information that reveals any network location or identity,
+                    but excludes any information manually submitted to a State agency by a user, whether electronically
+                    or in written form, and information on or relating to individuals who are users, serving in a
+                    business capacity, including, but not limited to, business owners, officers, or principals of that
+                    business.</p>
+                <p>“Electronically collected personal information” that we automatically collect includes your domain
+                    name or Internet Protocol address, and statistical information about which web pages you visit. If
+                    you voluntarily participate in an activity that asks for specific information (i.e., completing a
+                    request for assistance, personalizing the content of the web site, sending an e-mail, or
+                    participating in a survey) more detailed data will be collected. If you choose not to participate in
+                    these activities, your choice will in no way affect your ability to use any other feature of the web
+                    site.</p>
+                <p>If any type of personal information is requested on the web site or volunteered by the user, State
+                    law, including the Information Practices Act of 1977, Government Code Section 11015.5., and the
+                    federal Privacy Act of 1974 may protect it. However, this information may be a public record once
+                    you provide it, and may be subject to public inspection and copying if not otherwise protected by
+                    federal or State law.</p>
+                <p>Additionally, departments and agencies of the State of California under the authority of the Governor
+                    are required to adhere to the Privacy Policy which is also accessible on this web site.</p>
                 <p><a id="children"></a></p>
-                <h3 style="border-bottom-width: 2px; border-bottom-style: solid; border-bottom-color: #bcbcbc;">A SPECIAL NOTE ABOUT CHILDREN</h3>
-                <p>Children are not eligible to use services that require submission of personal information, and we require that minors (under the age of 18) do not submit any personal information to us. This includes submitting personal information to the State as part of a user profile or personalization profile. If you are a minor, you can use these services only if used together with your parents or guardians. If you are a minor, you should seek guidance from your parents.</p>
-                <p>If the State decides to begin collecting personal information from children, it will notify parents that it is being requested, disclose the reasons for collecting it, and disclose our intended use of it. The State will seek parental consent before collecting any personally identifiable information. If it does collect it, parents may request information on the type of data being collected, view their child’s information, and, if they choose, prohibit the State from making further use of their child’s information. The State will not provide personal information about children to third parties.</p>
+                <h3 style="border-bottom-width: 2px; border-bottom-style: solid; border-bottom-color: #bcbcbc;">A
+                    SPECIAL NOTE ABOUT CHILDREN</h3>
+                <p>Children are not eligible to use services that require submission of personal information, and we
+                    require that minors (under the age of 18) do not submit any personal information to us. This
+                    includes submitting personal information to the State as part of a user profile or personalization
+                    profile. If you are a minor, you can use these services only if used together with your parents or
+                    guardians. If you are a minor, you should seek guidance from your parents.</p>
+                <p>If the State decides to begin collecting personal information from children, it will notify parents
+                    that it is being requested, disclose the reasons for collecting it, and disclose our intended use of
+                    it. The State will seek parental consent before collecting any personally identifiable information.
+                    If it does collect it, parents may request information on the type of data being collected, view
+                    their child’s information, and, if they choose, prohibit the State from making further use of their
+                    child’s information. The State will not provide personal information about children to third
+                    parties.</p>
                 <p><a id="info"></a></p>
-                <h3 style="border-bottom-width: 2px; border-bottom-style: solid; border-bottom-color: #bcbcbc;">INFORMATION COLLECTED AND HOW IT IS USED</h3>
-                <p>We do collect personal information directly from individuals who volunteer to use some of our services. Collection of this information is required to deliver the specific services, but use of these services is voluntary.</p>
-                <p>The information we automatically collect or store is used to improve the content of our web services and to help us understand how people are using our services. This information does not identify you personally and is used for gathering web site statistics. The information we automatically collect and store in our logs about your visit helps us to analyze our web site to continually improve the value of the materials available. Our web site logs do not identify a visitor by personal information, and we make no attempt to link other web sites with the individuals that browse the State’s web site.</p>
-                <p>Government Code § 11015.5.(a)(6) prohibits all state agencies from distributing or selling any electronically collected personal information, as defined above, about users to any third party without the permission of the user. The State does not sell any “electronically collected personal information.” Any distribution of “electronically collected personal information” will be solely for the purposes for which it was provided to us.</p>
-                <p>The State may provide or distribute certain lists and statistical reports of regulatory information as provided by law, but no personal information is sold or distributed, and all relevant legal protections still apply to the State’s web sites.</p>
+                <h3 style="border-bottom-width: 2px; border-bottom-style: solid; border-bottom-color: #bcbcbc;">
+                    INFORMATION COLLECTED AND HOW IT IS USED</h3>
+                <p>We do collect personal information directly from individuals who volunteer to use some of our
+                    services. Collection of this information is required to deliver the specific services, but use of
+                    these services is voluntary.</p>
+                <p>The information we automatically collect or store is used to improve the content of our web services
+                    and to help us understand how people are using our services. This information does not identify you
+                    personally and is used for gathering web site statistics. The information we automatically collect
+                    and store in our logs about your visit helps us to analyze our web site to continually improve the
+                    value of the materials available. Our web site logs do not identify a visitor by personal
+                    information, and we make no attempt to link other web sites with the individuals that browse the
+                    State’s web site.</p>
+                <p>Government Code § 11015.5.(a)(6) prohibits all state agencies from distributing or selling any
+                    electronically collected personal information, as defined above, about users to any third party
+                    without the permission of the user. The State does not sell any “electronically collected personal
+                    information.” Any distribution of “electronically collected personal information” will be solely for
+                    the purposes for which it was provided to us.</p>
+                <p>The State may provide or distribute certain lists and statistical reports of regulatory information
+                    as provided by law, but no personal information is sold or distributed, and all relevant legal
+                    protections still apply to the State’s web sites.</p>
                 <p><a id="submit"></a></p>
-                <h3 style="border-bottom-width: 2px; border-bottom-style: solid; border-bottom-color: #bcbcbc;">WHAT HAPPENS TO INFORMATION YOU SUBMIT TO US?</h3>
-                <p>If you choose to submit information to us, the information will be transmitted through secure lines to our departmental database. Any private information will only be used for the purposes for which it was provided and will not be shared with another entity except as prescribed by law. Please see our Privacy Policy for additional information.</p>
+                <h3 style="border-bottom-width: 2px; border-bottom-style: solid; border-bottom-color: #bcbcbc;">WHAT
+                    HAPPENS TO INFORMATION YOU SUBMIT TO US?</h3>
+                <p>If you choose to submit information to us, the information will be transmitted through secure lines
+                    to our departmental database. Any private information will only be used for the purposes for which
+                    it was provided and will not be shared with another entity except as prescribed by law. Please see
+                    our Privacy Policy for additional information.</p>
                 <p><a id="form"></a></p>
-                <h3 style="border-bottom-width: 2px; border-bottom-style: solid; border-bottom-color: #bcbcbc;">USE OF INTERNET REQUEST FOR ASSISTANCE FORM INFORMATION</h3>
-                <p>Any information you provide to us will only be shared with entities involved in your case as necessary. Information you provide may be included with other consumers’ information to be used for statistical reporting, trending data, and/or investigative actions. For example, we may need to retain information that becomes part of an enforcement action or consumer complaint case for a period of time after the closing date of the case.</p>
-                <p>If you provide us with information regarding an issue that does not fall within our regulatory jurisdiction, we may refer your information to the appropriate local, State, or federal agency on your behalf.</p>
+                <h3 style="border-bottom-width: 2px; border-bottom-style: solid; border-bottom-color: #bcbcbc;">USE OF
+                    INTERNET REQUEST FOR ASSISTANCE FORM INFORMATION</h3>
+                <p>Any information you provide to us will only be shared with entities involved in your case as
+                    necessary. Information you provide may be included with other consumers’ information to be used for
+                    statistical reporting, trending data, and/or investigative actions. For example, we may need to
+                    retain information that becomes part of an enforcement action or consumer complaint case for a
+                    period of time after the closing date of the case.</p>
+                <p>If you provide us with information regarding an issue that does not fall within our regulatory
+                    jurisdiction, we may refer your information to the appropriate local, State, or federal agency on
+                    your behalf.</p>
                 <p><a id="surveys"></a></p>
-                <h3 style="border-bottom-width: 2px; border-bottom-style: solid; border-bottom-color: #bcbcbc;">SURVEYS</h3>
-                <p>If during your visit to the State’s web site you participate in a survey or send an e-mail, the following additional information will be collected:</p>
+                <h3 style="border-bottom-width: 2px; border-bottom-style: solid; border-bottom-color: #bcbcbc;">SURVEYS
+                </h3>
+                <p>If during your visit to the State’s web site you participate in a survey or send an e-mail, the
+                    following additional information will be collected:</p>
                 <ol style="color: #222222; margin: 1em 0px; padding: 0px 0px 0px 40px;">
                     <li>The e-mail address and contents of the e-mail; and</li>
                     <li>Information volunteered in response to the survey.</li>
                 </ol>
-                <p>The information collected is not limited to text characters and may include audio, video, and graphic information formats you send us.</p>
+                <p>The information collected is not limited to text characters and may include audio, video, and graphic
+                    information formats you send us.</p>
                 <p>The information is retained in accordance with Government Code § 11015.5.</p>
                 <p><a id="email"></a></p>
-                <h3 style="border-bottom-width: 2px; border-bottom-style: solid; border-bottom-color: #bcbcbc;">IF YOU SEND US E-MAIL</h3>
-                <p>You may choose to provide us with personal information, as in e-mail with a comment or question. We use the information to improve our service to you or to respond to your request. Sometimes we forward your e-mail to other State employees who may be better able to help you, and this staff may be employed by a different agency within the State. Except for authorized law enforcement investigations or, as required by law, we do not share our e-mail with any other organizations.</p>
-                <p>We use your e-mail to respond appropriately. This may be to respond to you, to address issues you identify, to further improve our web site, or to forward the e-mail to another agency for appropriate action.</p>
+                <h3 style="border-bottom-width: 2px; border-bottom-style: solid; border-bottom-color: #bcbcbc;">IF YOU
+                    SEND US E-MAIL</h3>
+                <p>You may choose to provide us with personal information, as in e-mail with a comment or question. We
+                    use the information to improve our service to you or to respond to your request. Sometimes we
+                    forward your e-mail to other State employees who may be better able to help you, and this staff may
+                    be employed by a different agency within the State. Except for authorized law enforcement
+                    investigations or, as required by law, we do not share our e-mail with any other organizations.</p>
+                <p>We use your e-mail to respond appropriately. This may be to respond to you, to address issues you
+                    identify, to further improve our web site, or to forward the e-mail to another agency for
+                    appropriate action.</p>
                 <p><a id="disclose" style="color: #1f70a7;"></a></p>
-                <h3 style="border-bottom-width: 2px; border-bottom-style: solid; border-bottom-color: #bcbcbc;">PUBLIC DISCLOSURE</h3>
-                <p>In the State of California, laws exist to ensure that government is open and that the public has a right to access appropriate records and information possessed by State government. At the same time, there are exceptions to the public’s right to access public records. These exceptions serve various needs including maintaining the privacy of individuals. Both State and federal laws provide exceptions.</p>
-                <p>All information collected at this site becomes public record that may be subject to inspection and copying by the public, unless an exemption in law exists. In the event of a conflict between this Use Policy and the Public Records Act, the Information Practices Act, or other law governing the disclosure of records, the Public Records Act, the Information Practices Act, or other applicable law will control.</p>
-                <h3 style="border-bottom-width: 2px; border-bottom-style: solid; border-bottom-color: #bcbcbc;">PERSONAL INFORMATION</h3>
-                <p>Under Government Code § 11015.5., if you choose, you may have any personal information collected about you discarded without reuse or distribution, provided we are contacted in a timely fashion.</p>
+                <h3 style="border-bottom-width: 2px; border-bottom-style: solid; border-bottom-color: #bcbcbc;">PUBLIC
+                    DISCLOSURE</h3>
+                <p>In the State of California, laws exist to ensure that government is open and that the public has a
+                    right to access appropriate records and information possessed by State government. At the same time,
+                    there are exceptions to the public’s right to access public records. These exceptions serve various
+                    needs including maintaining the privacy of individuals. Both State and federal laws provide
+                    exceptions.</p>
+                <p>All information collected at this site becomes public record that may be subject to inspection and
+                    copying by the public, unless an exemption in law exists. In the event of a conflict between this
+                    Use Policy and the Public Records Act, the Information Practices Act, or other law governing the
+                    disclosure of records, the Public Records Act, the Information Practices Act, or other applicable
+                    law will control.</p>
+                <h3 style="border-bottom-width: 2px; border-bottom-style: solid; border-bottom-color: #bcbcbc;">PERSONAL
+                    INFORMATION</h3>
+                <p>Under Government Code § 11015.5., if you choose, you may have any personal information collected
+                    about you discarded without reuse or distribution, provided we are contacted in a timely fashion.
+                </p>
                 <p><a id="cookies"></a></p>
-                <h3 style="border-bottom-width: 2px; border-bottom-style: solid; border-bottom-color: #bcbcbc;">AUTOMATIC COLLECTION OF INFORMATION/COOKIES</h3>
-                <p>When you visit a State of California website, you should be aware that data linking your computer to a particular website (a “cookie”) may be created. Temporary cookies may be used when necessary to complete a transaction, to process data submitted to us online, to facilitate an ongoing Internet interaction, or to understand trends in the use of State websites. Cookies do not compromise your privacy or security. Using web browser settings, you can refuse the cookies or delete the cookie file from your computer by using any of the widely available methods.</p>
+                <h3 style="border-bottom-width: 2px; border-bottom-style: solid; border-bottom-color: #bcbcbc;">
+                    AUTOMATIC COLLECTION OF INFORMATION/COOKIES</h3>
+                <p>When you visit a State of California website, you should be aware that data linking your computer to
+                    a particular website (a “cookie”) may be created. Temporary cookies may be used when necessary to
+                    complete a transaction, to process data submitted to us online, to facilitate an ongoing Internet
+                    interaction, or to understand trends in the use of State websites. Cookies do not compromise your
+                    privacy or security. Using web browser settings, you can refuse the cookies or delete the cookie
+                    file from your computer by using any of the widely available methods.</p>
                 <p><a id="security"></a></p>
-                <h3 style="border-bottom-width: 2px; border-bottom-style: solid; border-bottom-color: #bcbcbc;">SECURITY</h3>
-                <p>The State, as developer and manager of this web site, has taken several steps to safeguard the integrity of its telecommunications and computing infrastructure, including but not limited to authentication, monitoring, auditing, and encryption. Security measures have been integrated into the design, implementation, and day-to-day practices of the entire State operating environment as part of its continuing commitment to risk management. This information should not be construed in any way as giving business, legal, or other advice, or warranting as fail proof, the security of information provided via the State’s supported web site. The technical standards governing security are enforced by the Department of Finance.</p>
+                <h3 style="border-bottom-width: 2px; border-bottom-style: solid; border-bottom-color: #bcbcbc;">SECURITY
+                </h3>
+                <p>The State, as developer and manager of this web site, has taken several steps to safeguard the
+                    integrity of its telecommunications and computing infrastructure, including but not limited to
+                    authentication, monitoring, auditing, and encryption. Security measures have been integrated into
+                    the design, implementation, and day-to-day practices of the entire State operating environment as
+                    part of its continuing commitment to risk management. This information should not be construed in
+                    any way as giving business, legal, or other advice, or warranting as fail proof, the security of
+                    information provided via the State’s supported web site. The technical standards governing security
+                    are enforced by the Department of Finance.</p>
                 <p><a id="links"></a></p>
-                <h3 style="border-bottom-width: 2px; border-bottom-style: solid; border-bottom-color: #bcbcbc;">LINKS TO OTHER SITES</h3>
-                <p>Our web site has links to sites we feel might be useful to you and which may provide services. When you link to another site, you are no longer on our site and are subject to the privacy policy of the new site.</p>
-                <p>The State of California accepts no responsibility for the content or accessibility of the external websites or external documents linked to on this website.</p>
-                <p>This web site and the information it contains are provided as a public service by the State of California. This system is monitored to ensure proper operation, to verify the functioning of applicable security features, and for comparable purposes. Anyone using this system expressly consents to such monitoring. Unauthorized attempts to modify any information stored on this system, to defeat or circumvent security features, or to utilize this system for other than its intended purposes are prohibited and may result in criminal prosecution.</p>
+                <h3 style="border-bottom-width: 2px; border-bottom-style: solid; border-bottom-color: #bcbcbc;">LINKS TO
+                    OTHER SITES</h3>
+                <p>Our web site has links to sites we feel might be useful to you and which may provide services. When
+                    you link to another site, you are no longer on our site and are subject to the privacy policy of the
+                    new site.</p>
+                <p>The State of California accepts no responsibility for the content or accessibility of the external
+                    websites or external documents linked to on this website.</p>
+                <p>This web site and the information it contains are provided as a public service by the State of
+                    California. This system is monitored to ensure proper operation, to verify the functioning of
+                    applicable security features, and for comparable purposes. Anyone using this system expressly
+                    consents to such monitoring. Unauthorized attempts to modify any information stored on this system,
+                    to defeat or circumvent security features, or to utilize this system for other than its intended
+                    purposes are prohibited and may result in criminal prosecution.</p>
                 <p><a id="liability"></a></p>
-                <h3 style="border-bottom-width: 2px; border-bottom-style: solid; border-bottom-color: #bcbcbc;">LIMITATION OF LIABILITY</h3>
-                <p>The State attempts to maintain the highest accuracy of content on its web site. Any errors or omissions should be reported for investigation.</p>
-                <p>The State makes no claims, promises, or guarantees about the absolute accuracy, completeness, or adequacy of the contents of this web site and expressly disclaims liability for errors and omissions in the contents of this web site. No warranty of any kind, implied, expressed, or statutory, including but not limited to the warranties of non-infringement of third party rights, title, merchantability, fitness for a particular purpose, and freedom from computer virus, is given with respect to the contents of this web site or its hyperlinks to other Internet resources. References or links in this web site to any specific commercial products, processes, or services, or the use of any trade, firm, or corporation name are for the information and convenience of the public, and do not constitute endorsement, recommendation, or favoring by the State of California, or its employees or agents.</p>
+                <h3 style="border-bottom-width: 2px; border-bottom-style: solid; border-bottom-color: #bcbcbc;">
+                    LIMITATION OF LIABILITY</h3>
+                <p>The State attempts to maintain the highest accuracy of content on its web site. Any errors or
+                    omissions should be reported for investigation.</p>
+                <p>The State makes no claims, promises, or guarantees about the absolute accuracy, completeness, or
+                    adequacy of the contents of this web site and expressly disclaims liability for errors and omissions
+                    in the contents of this web site. No warranty of any kind, implied, expressed, or statutory,
+                    including but not limited to the warranties of non-infringement of third party rights, title,
+                    merchantability, fitness for a particular purpose, and freedom from computer virus, is given with
+                    respect to the contents of this web site or its hyperlinks to other Internet resources. References
+                    or links in this web site to any specific commercial products, processes, or services, or the use of
+                    any trade, firm, or corporation name are for the information and convenience of the public, and do
+                    not constitute endorsement, recommendation, or favoring by the State of California, or its employees
+                    or agents.</p>
                 <p>This Use Policy is subject to change without notice.</p>
                 <p><a id="ownership"></a></p>
-                <h3 style="border-bottom-width: 2px; border-bottom-style: solid; border-bottom-color: #bcbcbc;">OWNERSHIP</h3>
-                <p>In general, information presented on this web site, unless otherwise indicated, is considered in the public domain. It may be distributed or copied as permitted by law. However, the State does make use of copyrighted data (e.g., photographs) which may require additional permissions prior to your use. In order to use any information on this web site not owned or created by the State, you must seek permission directly from the owning (or holding) sources. The State shall have the unlimited right to use for any purpose, free of any charge, all information submitted via this site except those submissions made under separate legal contract. The State shall be free to use, for any purpose, any ideas, concepts, or techniques contained in information provided through this site.</p>
+                <h3 style="border-bottom-width: 2px; border-bottom-style: solid; border-bottom-color: #bcbcbc;">
+                    OWNERSHIP</h3>
+                <p>In general, information presented on this web site, unless otherwise indicated, is considered in the
+                    public domain. It may be distributed or copied as permitted by law. However, the State does make use
+                    of copyrighted data (e.g., photographs) which may require additional permissions prior to your use.
+                    In order to use any information on this web site not owned or created by the State, you must seek
+                    permission directly from the owning (or holding) sources. The State shall have the unlimited right
+                    to use for any purpose, free of any charge, all information submitted via this site except those
+                    submissions made under separate legal contract. The State shall be free to use, for any purpose, any
+                    ideas, concepts, or techniques contained in information provided through this site.</p>
                 <p></p>
 
 

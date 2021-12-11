@@ -5,12 +5,14 @@
 <!--[if IE 9]>    <html class="no-js ie9 oldie" lang="en"> <![endif]-->
 <!--[if (gt IE 9)]><!-->
 <html class="no-js" lang="en">
- <!--<![endif]-->
-<head>    
-<!--    California State Template
+<!--<![endif]-->
 
-    Based on Twitter Bootstrap
-    -->
+<head>
+    <!--    California State Template (beta)
+ 
+
+        Based on Twitter Bootstrap
+        -->
     <meta charset="utf-8">
 
     <title>Sample - Cards</title>
@@ -20,7 +22,9 @@
     <meta name="Keywords" content="California, government" />
 
     <!--#include virtual="/ssi/head-css-js.html" -->
-
+    <script type="text/javascript">
+        var defaultActiveLink = "Components";
+    </script>
 </head>
 
 <body>
@@ -33,55 +37,63 @@
         <!-- Settings Bar -->
         <!--#include virtual="/ssi/settings-bar.html" -->
         <!-- Include Branding -->
-        <!--#include virtual="/ssi/branding.html" -->
+        <!--#include virtual="/ssi/branding-lightgrey.html" -->
         <!-- Include Mobile Controls -->
         <!--#include virtual="/ssi/mobile-controls.html" -->
 
-        <div class="navigation-search">
-            <!-- Include Navigation -->
-            <!--#include virtual="/ssi/navigation.html" -->
-
-            <div id="head-search" class="search-container">
+        <div class="navigation-search full-width-nav container">
+            <div id="head-search" class="search-container featured-search">
                 <!-- Include Search -->
                 <!--#include virtual="/ssi/search.html" -->
             </div>
-
+            <!-- Include Navigation -->
+            <!--#include virtual="/ssi/navigation.html" -->
         </div>
 
         <div class="header-decoration"></div>
     </header>
 
     <div id="main-content" class="main-content">
-        <div class="section">
+        <div class="container p-b-lg p-t-md">
             <main class="main-primary">
                 <ol class="breadcrumb">
                     <li><a href="../index.html" title="Home page">Home</a></li>
-                    <li><a href="index.html" title="Examples landing page">Examples</a></li>
+                    <li><a href="/sample/" title="Content Modules landing page">Content Modules</a></li>
                     <li class="active">Cards</li>
                 </ol>
-                <div class="group">
+                <div class="row">
                     <div class="three-quarters">
                         <h1>Cards</h1>
-                        <p>A card is a flexible and extensible content container. It includes options for headers and footers, a wide variety of content, contextual background colors, and powerful display options.</p>
-                        <p>Cards require a small amount of markup and classes to provide you with as much control as possible. These classes and markup are flexible though and can typically be remixed and extended with ease. For example, if your card has no flush content like images, feel free to put the <code>.card-block</code> class on the <code>.card element</code> to consolidate your markup.</p>
+                        <p>A card is a flexible and extensible content container. It includes options for headers and
+                            footers, a wide variety of content, contextual background colors, and powerful display
+                            options.</p>
+                        <p>Cards require a small amount of markup and classes to provide you with as much control as
+                            possible. These classes and markup are flexible though and can typically be remixed and
+                            extended with ease. For example, if your card has no flush content like images, feel free to
+                            put the <code>.card-block</code> class on the <code>.card element</code> to consolidate your
+                            markup.</p>
                         <h2 class="h3">Example:</h2>
                         <!--#include virtual="/sample/modules/cards.html" -->
                         <!-- Trigger the modal with a button -->
-                        <button type="button" class="btn btn-default btn-sm m-t" data-toggle="modal" data-target="#cards">Show Source Code</button>
+                        <button type="button" class="btn btn-default btn-sm m-t" data-bs-toggle="modal"
+                            data-bs-target="#cards">Show Source Code</button>
                         <!-- Modal -->
                         <div class="modal fade" id="cards" role="dialog">
                             <div class="modal-dialog modal-lg">
                                 <div class="modal-content">
                                     <div class="modal-header">
                                         <h4 class="modal-title">HTML Markup</h4>
-                                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                        <button type="button" class="close btn btn-secondary"
+                                            data-bs-dismiss="modal"><span class="sr-only">Close modal</span><span
+                                                class="ca-gov-icon-close-mark" aria-hidden="true"></span></button>
                                     </div>
                                     <div class="modal-body">
                                         <h4>Source Code:</h4>
                                         <pre><code class="overflow-auto"><!--#include virtual="/sample/modules/cards.html" --></code></pre>
                                     </div>
                                     <div class="modal-footer">
-                                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                        <button type="button" class="btn btn-default"
+                                            data-bs-dismiss="modal">Close</button>
                                     </div>
                                 </div>
                             </div>
@@ -93,20 +105,24 @@
                         <p><code>.card-img-top</code> places an image to the top of the card.</p>
                         <!--#include virtual="/sample/modules/card-image.html" -->
                         <!-- Trigger the modal with a button -->
-                        <button type="button" class="btn btn-default btn-sm m-t" data-toggle="modal" data-target="#card-image">Show Source Code</button>
+                        <button type="button" class="btn btn-default btn-sm m-t" data-bs-toggle="modal"
+                            data-bs-target="#card-image">Show Source Code</button>
                         <div class="modal fade" id="card-image" role="dialog">
                             <div class="modal-dialog modal-lg">
                                 <div class="modal-content">
                                     <div class="modal-header">
-                                        <h4 class="modal-title">HTML Markup</h4>
-                                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                        <h3 class="h4 modal-title">HTML Markup</h3>
+                                        <button type="button" class="close btn btn-secondary"
+                                            data-bs-dismiss="modal"><span class="sr-only">Close modal</span><span
+                                                class="ca-gov-icon-close-mark" aria-hidden="true"></span></button>
                                     </div>
                                     <div class="modal-body">
-                                        <h4>Source Code:</h4>
+                                        <h3 class="h4">Source Code:</h3>
                                         <pre><code class="overflow-auto"><!--#include virtual="/sample/modules/card-image.html" --></code></pre>
                                     </div>
                                     <div class="modal-footer">
-                                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                        <button type="button" class="btn btn-default"
+                                            data-bs-dismiss="modal">Close</button>
                                     </div>
                                 </div>
                             </div>
@@ -114,7 +130,8 @@
 
                         <hr />
                         <h2>Card Variations:</h2>
-                        <p>As with most components, cards can be extended to display with a different style. Apply one of the following supported class names to the <code>.card</code> div:</p>
+                        <p>As with most components, cards can be extended to display with a different style. Apply one
+                            of the following supported class names to the <code>.card</code> div:</p>
                         <ul>
                             <li><code>.card-default</code></li>
                             <li><code>.card-understated</code></li>
@@ -129,25 +146,28 @@
 
                 <hr>
 
-                <h2>Card decks</h2>
-                <p>Need a set of equal width and height cards that aren’t attached to one another? Use card decks.</p>
+                <h2>Grid cards</h2>
+                <p>Need a set of equal width and height cards that aren’t attached to one another? Use Grid cards.</p>
 
                 <!--#include virtual="/sample/modules/card-deck.html" -->
                 <!-- Trigger the modal with a button -->
-                <button type="button" class="btn btn-default btn-sm m-t" data-toggle="modal" data-target="#card-deck">Show Source Code</button>
+                <button type="button" class="btn btn-default btn-sm m-t" data-bs-toggle="modal"
+                    data-bs-target="#card-deck">Show Source Code</button>
                 <div class="modal fade" id="card-deck" role="dialog">
                     <div class="modal-dialog modal-lg">
                         <div class="modal-content">
                             <div class="modal-header">
-                                <h4 class="modal-title">HTML Markup</h4>
-                                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                <h3 class="h4 modal-title">HTML Markup</h3>
+                                <button type="button" class="close btn btn-secondary" data-bs-dismiss="modal"><span
+                                        class="sr-only">Close modal</span><span class="ca-gov-icon-close-mark"
+                                        aria-hidden="true"></span></button>
                             </div>
                             <div class="modal-body">
-                                <h4>Source Code:</h4>
+                                <h3 class="h4">Source Code:</h3>
                                 <pre><code class="overflow-auto"><!--#include virtual="/sample/modules/card-deck.html" --></code></pre>
                             </div>
                             <div class="modal-footer">
-                                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                <button type="button" class="btn btn-default" data-bs-dismiss="modal">Close</button>
                             </div>
                         </div>
                     </div>
@@ -155,25 +175,34 @@
 
                 <hr />
                 <h2>Card with Photos</h2>
-                <p>Cards can be extended to include an optional photo background on the left or right. Add a <code>.photo-right</code> or <code>.photo-left</code> class to the <code>.card</code> div.</p>
-                <p class="m-b-md">Before the closing .card-body div, add a new div with a class of <code>.photo</code> and also an inline style with a link to your background-image. e.g. <code>style="background-image: url('/path/to/photo.jpg');"</code> Alternatively, webmasters can move this inline style to their own custom stylesheet if that is more preferable.</p>
+                <p>Cards can be extended to include an optional photo background on the left or right. Add a
+                    <code>.photo-right</code> or <code>.photo-left</code> class to the <code>.card</code> div.
+                </p>
+                <p class="m-b-md">Before the closing .card-body div, add a new div with a class of <code>.photo</code>
+                    and also an inline style with a link to your background-image. e.g.
+                    <code>style="background-image: url('/path/to/photo.jpg');"</code> Alternatively, webmasters can move
+                    this inline style to their own custom stylesheet if that is more preferable.
+                </p>
 
                 <!--#include virtual="/sample/modules/card-photo.html" -->
                 <!-- Trigger the modal with a button -->
-                <button type="button" class="btn btn-default btn-sm m-t" data-toggle="modal" data-target="#card-photo">Show Source Code</button>
+                <button type="button" class="btn btn-default btn-sm m-t" data-bs-toggle="modal"
+                    data-bs-target="#card-photo">Show Source Code</button>
                 <div class="modal fade" id="card-photo" role="dialog">
                     <div class="modal-dialog modal-lg">
                         <div class="modal-content">
                             <div class="modal-header">
-                                <h4 class="modal-title">HTML Markup</h4>
-                                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                <h3 class="h4 modal-title">HTML Markup</h3>
+                                <button type="button" class="close btn btn-secondary" data-bs-dismiss="modal"><span
+                                        class="sr-only">Close modal</span><span class="ca-gov-icon-close-mark"
+                                        aria-hidden="true"></span></button>
                             </div>
                             <div class="modal-body">
-                                <h4>Source Code:</h4>
+                                <h3 class="h4">Source Code:</h3>
                                 <pre><code class="overflow-auto"><!--#include virtual="/sample/modules/card-photo.html" --></code></pre>
                             </div>
                             <div class="modal-footer">
-                                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                <button type="button" class="btn btn-default" data-bs-dismiss="modal">Close</button>
                             </div>
                         </div>
                     </div>
@@ -187,4 +216,5 @@
     <!--#include virtual="/ssi/scripts.html" -->
 
 </body>
+
 </html>
