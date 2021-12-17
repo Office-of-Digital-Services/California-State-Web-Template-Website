@@ -8,21 +8,24 @@
 <!--<![endif]-->
 
 <head>
-  
-<!--    California State Template
 
-Based on Twitter Bootstrap
--->
-  <meta charset="utf-8">
+    <!--    California State Template (beta)
+ 
 
-  <title>Service Directory</title>
+    Based on Twitter Bootstrap
+    -->
+    <meta charset="utf-8">
 
-  <meta name="Author" content="State of California" />
-  <meta name="Description" content="State of California" />
-  <meta name="Keywords" content="California, government" />
+    <title>Service Directory</title>
 
-  <!--#include virtual="/ssi/head-css-js.html" -->
+    <meta name="Author" content="State of California" />
+    <meta name="Description" content="State of California" />
+    <meta name="Keywords" content="California, government" />
 
+    <!--#include virtual="/ssi/head-css-js.html" -->
+    <script type="text/javascript">
+        var defaultActiveLink = "Pages";
+    </script>
 </head>
 
 <!-- possible body classes are "primary" and "two-column" -->
@@ -37,19 +40,17 @@ Based on Twitter Bootstrap
         <!-- Settings Bar -->
         <!--#include virtual="/ssi/settings-bar.html" -->
         <!-- Include Branding -->
-        <!--#include virtual="/ssi/branding.html" -->
+        <!--#include virtual="/ssi/branding-lightgrey.html" -->
         <!-- Include Mobile Controls -->
         <!--#include virtual="/ssi/mobile-controls.html" -->
 
-        <div class="navigation-search">
-            <!-- Include Navigation -->
-            <!--#include virtual="/ssi/navigation.html" -->
-
-            <div id="head-search" class="search-container">
+        <div class="navigation-search full-width-nav container">
+            <div id="head-search" class="search-container featured-search">
                 <!-- Include Search -->
                 <!--#include virtual="/ssi/search.html" -->
             </div>
-
+            <!-- Include Navigation -->
+            <!--#include virtual="/ssi/navigation.html" -->
         </div>
 
         <div class="header-decoration"></div>
@@ -68,20 +69,29 @@ Based on Twitter Bootstrap
 
             <div class="section section-search collapsed">
                 <div class="container">
-                    <div class="group">
+                    <div class="row">
                         <div class="three-quarters">
                             <form id="agency_form" class="agency-form">
                                 <div class="textfield-container">
-                                    <label for="search_local_textfield" accesskey="s" class="sr-only">Agency Search: </label>
-                                    <input type="text" name="q" id="search_local_textfield" class="search-textfield" size="35" autocomplete="off" value="Search" onfocus="if(this.value=='Search')this.value=''" onblur="if(this.value=='')this.value='Search'" />
+                                    <label for="search_local_textfield" accesskey="s" class="sr-only">Agency Search:
+                                    </label>
+                                    <input type="text" name="q" id="search_local_textfield" class="search-textfield"
+                                        size="35" autocomplete="off" value="Search"
+                                        onfocus="if(this.value=='Search')this.value=''"
+                                        onblur="if(this.value=='')this.value='Search'" />
                                 </div>
                                 <div class="submit-container">
-                                    <button type="submit"><span class="ca-gov-icon-search"><span class="sr-only">Search</span></span></button>
+                                    <button type="submit"><span class="ca-gov-icon-search"><span
+                                                class="sr-only">Search</span></span></button>
                                 </div>
                             </form>
                         </div>
                         <div class="quarter">
-                            <a href="#serviceFilters" class="btn btn-secondary filter-toggle toggle-more m-y btn-block-xs" role="button" data-toggle="collapse" data-parent="#serviceFilters" aria-expanded="false" aria-controls="serviceFilters"><span class="toggle-more">Show Filters <span class="ca-gov-icon-filter" aria-hidden="true"></span></span></a>
+                            <a href="#serviceFilters"
+                                class="btn btn-secondary filter-toggle toggle-more m-y btn-block-xs" role="button"
+                                data-bs-toggle="collapse" data-parent="#serviceFilters" aria-expanded="false"
+                                aria-controls="serviceFilters"><span class="toggle-more">Show Filters <span
+                                        class="ca-gov-icon-filter" aria-hidden="true"></span></span></a>
                         </div>
                     </div>
 
@@ -92,7 +102,8 @@ Based on Twitter Bootstrap
                         <div class="btn-row">
                             <a href="" class="btn btn-secondary"><span class="ca-gov-icon-computer"></span> Online</a>
                             <a href="" class="btn btn-secondary"><span class="ca-gov-icon-apps"></span> Applications</a>
-                            <a href="" class="btn btn-secondary"><span class="ca-gov-icon-location"></span> Field Office</a>
+                            <a href="" class="btn btn-secondary"><span class="ca-gov-icon-location"></span> Field
+                                Office</a>
                         </div>
 
                         Categories:
@@ -138,15 +149,17 @@ Based on Twitter Bootstrap
                     </div>
                     <!-- End results header -->
                     <!-- Start Cards -->
-                    <div class="group">
+                    <div class="row">
                         <div class="half">
                             <!-- CARD -->
                             <div class="card card-default">
-                                <div class="card-block" id="collapse1234" itemscope itemtype="http://schema.org/Organization">
+                                <div class="card-block" id="collapse1234" itemscope
+                                    itemtype="http://schema.org/Organization">
                                     <div class="row">
                                         <div class="col-md-2">
                                             <!-- If image is availabele show it -->
-                                            <img src="http://www.elegantthemes.com/preview/Divi/wp-content/uploads/2014/04/rock-trail.jpg" alt="" class="img-responsive">
+                                            <img src="http://www.elegantthemes.com/preview/Divi/wp-content/uploads/2014/04/rock-trail.jpg"
+                                                alt="" class="img-responsive">
                                             <!-- If no image but icon is available show it instead -->
                                             <!-- <div class="service-icon-thumbnail ca-gov-icon-travel-car"></div> -->
                                             <!-- If nothing is selected show service icon -->
@@ -156,27 +169,44 @@ Based on Twitter Bootstrap
                                             <div class="row">
                                                 <div class="col-md-7">
                                                     <p itemprop="name"><a href="">Department of Motor Vehicles</a></p>
-                                                    <p itemprop="description">Register your vehicle or renew registration</p>
+                                                    <p itemprop="description">Register your vehicle or renew
+                                                        registration</p>
                                                     <div class="collapse collapse1234">
-                                                        <div class="location" itemscope itemtype="http://schema.org/Organization">
+                                                        <div class="location" itemscope
+                                                            itemtype="http://schema.org/Organization">
                                                             <meta itemprop="name" content="Organization Name Here">
                                                             <p class="other">
-                                                                General Information: <span itemprop="telephone">(916)323-5400</span><br>
-                                                                Hearing Impaired: <span itemprop="telephone">(916)323-5400</span><br>
+                                                                General Information: <span
+                                                                    itemprop="telephone">(916)323-5400</span><br>
+                                                                Hearing Impaired: <span
+                                                                    itemprop="telephone">(916)323-5400</span><br>
                                                                 Fax <span itemprop="faxNumber">(916)323-5400</span><br>
                                                             </p>
                                                         </div>
                                                     </div>
                                                 </div>
                                                 <div class="col-md-5">
-                                                    <a href="" class="btn btn-secondary btn-block btn-sm">Service Details</a>
+                                                    <a href="" class="btn btn-secondary btn-block btn-sm">Service
+                                                        Details</a>
                                                     <div class="collapse collapse1234">
-                                                        <a href="/service-profile.html#locations-near-you" class="btn btn-secondary btn-block btn-sm">Locations</a>
-                                                        <a href="/service-profile.html#frequently-asked-questions" class="btn btn-secondary btn-block btn-sm">FAQ's</a>
+                                                        <a href="/service-profile.html#locations-near-you"
+                                                            class="btn btn-secondary btn-block btn-sm">Locations</a>
+                                                        <a href="/service-profile.html#frequently-asked-questions"
+                                                            class="btn btn-secondary btn-block btn-sm">FAQ's</a>
                                                         <ul class="list-inline list-unstyled">
-                                                            <li class="list-inline-item"><a href=""><span class="ca-gov-icon-twitter" aria-hidden="true"><span class="sr-only">Twitter DMV</span></span></a></li>
-                                                            <li class="list-inline-item"><a href=""><span class="ca-gov-icon-facebook" aria-hidden="true"><span class="sr-only">Facebook DMV</span></span></a></li>
-                                                            <li class="list-inline-item"><a href=""><span class="ca-gov-icon-google-plus" aria-hidden="true"><span class="sr-only">Google+ DMV</span></span></a></li>
+                                                            <li class="list-inline-item"><a href=""><span
+                                                                        class="ca-gov-icon-twitter"
+                                                                        aria-hidden="true"><span class="sr-only">Twitter
+                                                                            DMV</span></span></a></li>
+                                                            <li class="list-inline-item"><a href=""><span
+                                                                        class="ca-gov-icon-facebook"
+                                                                        aria-hidden="true"><span
+                                                                            class="sr-only">Facebook
+                                                                            DMV</span></span></a></li>
+                                                            <li class="list-inline-item"><a href=""><span
+                                                                        class="ca-gov-icon-google-plus"
+                                                                        aria-hidden="true"><span class="sr-only">Google+
+                                                                            DMV</span></span></a></li>
                                                         </ul>
                                                     </div>
                                                 </div>
@@ -185,7 +215,9 @@ Based on Twitter Bootstrap
                                     </div>
                                 </div>
                                 <div class="card-block text-center">
-                                    <a href="javascript:;" role="button" data-toggle="collapse" data-parent="#collapse1234" aria-expanded="false" aria-controls="collapse1234" data-target=".collapse1234">
+                                    <a href="javascript:;" role="button" data-bs-toggle="collapse"
+                                        data-parent="#collapse1234" aria-expanded="false" aria-controls="collapse1234"
+                                        data-bs-target=".collapse1234">
                                         <span class="toggle-more"></span><span class="sr-only">Open</span>
                                     </a>
                                 </div>
@@ -195,7 +227,8 @@ Based on Twitter Bootstrap
                         <div class="half">
                             <!-- Repeat CARD -->
                             <div class="card card-default card-block">
-                                <br><br><br><br><div class="text-center">...</div><br><br><br><br>
+                                <br><br><br><br>
+                                <div class="text-center">...</div><br><br><br><br>
                             </div>
                         </div>
                     </div>

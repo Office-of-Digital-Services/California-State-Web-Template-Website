@@ -3,109 +3,118 @@
 <!--[if IE 7]>    <html class="no-js ie7 oldie" lang="en"> <![endif]-->
 <!--[if IE 8]>    <html class="no-js ie8 oldie" lang="en"> <![endif]-->
 <!--[if IE 9]>    <html class="no-js ie9 oldie" lang="en"> <![endif]-->
-<!--[if (gt IE 9)]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+<!--[if (gt IE 9)]><!-->
+<html class="no-js" lang="en">
+<!--<![endif]-->
+
 <head>
 
-<!--    California State Template
+    <!--    California State Template (beta)
+ 
  
 Based on Twitter Bootstrap
 -->
-<meta charset="utf-8">
+    <meta charset="utf-8">
 
-<title>Sample - Exam Detail (Option 1)</title>
+    <title>Sample - Exam Detail (Option 1)</title>
 
-<meta name="Author" content="State of California" />
-<meta name="Description" content="State of California" />
-<meta name="Keywords" content="California, government" />
+    <meta name="Author" content="State of California" />
+    <meta name="Description" content="State of California" />
+    <meta name="Keywords" content="California, government" />
 
-<!--#include virtual="/ssi/head-css-js.html" -->
-
+    <!--#include virtual="/ssi/head-css-js.html" -->
+    <script type="text/javascript">
+        var defaultActiveLink = "Components";
+    </script>
 </head>
 
 <body>
 
-<header role="banner" id="header" class="global-header">
-	<div id="skip-to-content"><a href="#main-content">Skip to Main Content</a></div>
-        
+    <header role="banner" id="header" class="global-header">
+        <div id="skip-to-content"><a href="#main-content">Skip to Main Content</a></div>
+
         <!-- Include Utility Header -->
-		<!--#include virtual="/ssi/utility-header.html" -->	
-        
-        <!-- Settings Bar -->	
-		<!--#include virtual="/ssi/settings-bar.html" -->
+        <!--#include virtual="/ssi/utility-header.html" -->
 
-		<!-- Include Branding -->
-		<!--#include virtual="/ssi/branding.html" -->
-    
-    <!-- Include Mobile Controls -->
-    <!--#include virtual="/ssi/mobile-controls.html" -->
+        <!-- Settings Bar -->
+        <!--#include virtual="/ssi/settings-bar.html" -->
 
-    <div class="navigation-search">
-        <!-- Include Navigation -->
-        <!--#include virtual="/ssi/navigation.html" -->
+        <!-- Include Branding -->
+        <!--#include virtual="/ssi/branding-lightgrey.html" -->
 
-        <div id="head-search" class="search-container">
-            <!-- Include Search -->
-            <!--#include virtual="/ssi/search.html" -->
+        <!-- Include Mobile Controls -->
+        <!--#include virtual="/ssi/mobile-controls.html" -->
+
+        <div class="navigation-search full-width-nav container">
+            <div id="head-search" class="search-container featured-search">
+                <!-- Include Search -->
+                <!--#include virtual="/ssi/search.html" -->
+            </div>
+            <!-- Include Navigation -->
+            <!--#include virtual="/ssi/navigation.html" -->
         </div>
 
-    </div>
+        <div class="header-decoration"></div>
+    </header>
 
-	<div class="header-decoration"></div>
-</header>
+    <div id="main-content" class="main-content">
+        <div class="container p-b-lg p-t-md">
+            <main class="main-primary">
+                <ol class="breadcrumb">
+                    <li><a href="../index.html" title="Home page">Home</a></li>
+                    <li><a href="/sample/" title="Content Modules landing page">Content Modules</a></li>
+                    <li class="active">Exam Detail</li>
+                </ol>
 
-<div id="main-content" class="main-content">
-    <div class="section">
-        <main class="main-primary">            
-            <ol class="breadcrumb">
-                <li><a href="../index.html" title="Home page">Home</a></li>
-                <li><a href="index.html" title="Examples landing page">Examples</a></li>
-                <li class="active">Exam Detail</li>
-            </ol>
-            <h1>Exam Detail</h1>
-            <p><code>.exam-detail</code> is an end page content module for exams.  To begin, wrap the contents of the page in a <code>&lt;article class="exam-detail"&gt;</code> tag.</p>
-            <p>This module makes use of the <code>&lt;header&gt;</code> tag and locates the h1 within it.</p>
-            <p>The exam detail module contains a number of predefined sections that may or may not be used. For example:</p>
-            <ul>
-                <li><code>.description</code> - Should be included for every exam</li>
-                <li><code>.presenter</code> - Contains the presenter's name, photo, and bio</li>
-                <li>Participants will recieve - Certificates and or credits</li>
-                <li>Organizer - date, time, location and cost</li>
-            </ul>
-            
-            <div class="group">
-                <div class="half">
-                    <h2>Example Exam Detail:</h2>
-                    <!--#include virtual="/sample/modules/exam-detail.html" -->
-                </div>
-                 <div class="half">
-                    <h2>Source Code:</h2>
-                    
-                    <div class="tab-group">
-                        <ul id="sourceCode" class="nav nav-tabs" role="tablist">
-                            <li class="active"><a href="#html" role="tab" data-toggle="tab">HTML Markup</a></li>
-                            <li><a href="#microdata" role="tab" data-toggle="tab">Microdata</a></li>
-                        </ul>
-                        <!-- Tab panes -->
-                        <div class="tab-content responsive">
-                            <div class="tab-pane active" id="html">
-                                <pre><code class="overflow-auto"><!--#include virtual="/sample/modules/exam-detail.html" --></code></pre>
-                            </div>
-                            <div class="tab-pane" id="microdata">
-                                <p class="alert alert-info">NOTE: This module makes use of a <code>datetime</code> property set in the <strong>ISO 8601</strong> format. Be sure to set the time correctly.</p>
-                                <pre><code class="overflow-auto"><!--#include virtual="/sample/modules/exam-detail-schema.html" --></code></pre>
+                <p><code>.exam-detail</code> is an end page content module for exams. To begin, wrap the contents of the
+                    page in a <code>&lt;article class="exam-detail"&gt;</code> tag.</p>
+                <p>This module makes use of the <code>&lt;header&gt;</code> tag and locates the h1 within it.</p>
+                <p>The exam detail module contains a number of predefined sections that may or may not be used. For
+                    example:</p>
+                <ul>
+                    <li><code>.description</code> - Should be included for every exam</li>
+                    <li><code>.presenter</code> - Contains the presenter's name, photo, and bio</li>
+                    <li>Participants will recieve - Certificates and or credits</li>
+                    <li>Organizer - date, time, location and cost</li>
+                </ul>
+
+                <div class="row">
+                    <div class="half">
+                        <h2>Example Exam Detail:</h2>
+                        <!--#include virtual="/sample/modules/exam-detail.html" -->
+                    </div>
+                    <div class="half">
+                        <h2>Source Code:</h2>
+
+                        <div class="tab-group">
+                            <ul id="sourceCode" class="nav nav-tabs" role="tablist">
+                                <li class="active"><a href="#html" role="tab" data-bs-toggle="tab">HTML Markup</a></li>
+                                <li><a href="#microdata" role="tab" data-bs-toggle="tab">Microdata</a></li>
+                            </ul>
+                            <!-- Tab panes -->
+                            <div class="tab-content responsive">
+                                <div class="tab-pane active" id="html">
+                                    <pre><code class="overflow-auto"><!--#include virtual="/sample/modules/exam-detail.html" --></code></pre>
+                                </div>
+                                <div class="tab-pane" id="microdata">
+                                    <p class="alert alert-info">NOTE: This module makes use of a <code>datetime</code>
+                                        property set in the <strong>ISO 8601</strong> format. Be sure to set the time
+                                        correctly.</p>
+                                    <pre><code class="overflow-auto"><!--#include virtual="/sample/modules/exam-detail-schema.html" --></code></pre>
+                                </div>
                             </div>
                         </div>
+
                     </div>
-                    
-                </div> 
-            </div>
-        </main>
+                </div>
+            </main>
+        </div>
     </div>
-</div>
 
-<!--#include virtual="/ssi/global-footer.html" -->
+    <!--#include virtual="/ssi/global-footer.html" -->
 
-<!--#include virtual="/ssi/scripts.html" -->
+    <!--#include virtual="/ssi/scripts.html" -->
 
 </body>
+
 </html>

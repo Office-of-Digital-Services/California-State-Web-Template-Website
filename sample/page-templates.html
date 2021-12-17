@@ -5,9 +5,11 @@
 <!--[if IE 9]>    <html class="no-js ie9 oldie" lang="en"> <![endif]-->
 <!--[if (gt IE 9)]><!-->
 <html class="no-js" lang="en">
- <!--<![endif]-->
-<head>    
-<!--    California State Template
+<!--<![endif]-->
+
+<head>
+    <!--    California State Template (beta)
+ 
 
     Based on Twitter Bootstrap
     -->
@@ -20,7 +22,9 @@
     <meta name="Keywords" content="California, government" />
 
     <!--#include virtual="/ssi/head-css-js.html" -->
-
+    <script type="text/javascript">
+        var defaultActiveLink = "Components";
+    </script>
 </head>
 
 <body>
@@ -33,19 +37,17 @@
         <!-- Settings Bar -->
         <!--#include virtual="/ssi/settings-bar.html" -->
         <!-- Include Branding -->
-        <!--#include virtual="/ssi/branding.html" -->
+        <!--#include virtual="/ssi/branding-lightgrey.html" -->
         <!-- Include Mobile Controls -->
         <!--#include virtual="/ssi/mobile-controls.html" -->
 
-        <div class="navigation-search">
-            <!-- Include Navigation -->
-            <!--#include virtual="/ssi/navigation.html" -->
-
-            <div id="head-search" class="search-container">
+        <div class="navigation-search full-width-nav container">
+            <div id="head-search" class="search-container featured-search">
                 <!-- Include Search -->
                 <!--#include virtual="/ssi/search.html" -->
             </div>
-
+            <!-- Include Navigation -->
+            <!--#include virtual="/ssi/navigation.html" -->
         </div>
 
     </header>
@@ -54,55 +56,44 @@
 
     <div id="main-content" class="main-content">
         <!-- Include Page Template -->
-        <!--#include virtual="/ssi/header-primary-banner.html" -->
-        <div class="section">
-            <main class="main-primary">            
+        <section aria-label="hero banner">
+            <!--#include virtual="/ssi/header-primary-banner.html" -->
+        </section>
+
+        <div class="section p-b-lg p-t-md">
+            <main class="main-primary">
                 <ol class="breadcrumb">
                     <li><a href="../index.html" title="Home page">Home</a></li>
-                    <li><a href="index.html" title="Examples landing page">Examples</a></li>
+                    <li><a href="/sample/layouts.html" title="Page Layouts landing page">Page Layouts</a></li>
                     <li class="active">Page Templates</li>
                 </ol>
 
-                <h1>Page Templates</h1>
-                <div class="half" style="padding-left: 0px;">
-                    <p>There are two (2) master template page layouts to choose from. The page layout can be controlled by applying one (1) class to the <code>&lt;body&gt;</code> element. By default pages will have a single column layout and will not have any <code>&lt;body&gt;</code> class applied to them. Adding a class of <code>.two-column</code> will add a side column on the Right side of the page. If you would like the secondary column on the Left side of the page, swap the order of the  <code>&lt;div class=&quot;main-secondary&quot;&gt; </code>to be positioned above the <code>&lt;main class=&quot;main-primary&quot;&gt;</code> content area.</p>
+                <h1>Primary Banner</h1>
 
-                    <p>Optional hero image banners can be added to any page but are commonly used on landing and  home pages. There are several banner options including a primary <code>header-primary-banner</code>, large <code>header-large-banner</code> and slideshow <code>header-slideshow-banner</code>. </p>
-                    <p>To use the various banner types add them using the SSI include method right below the header of the desired page. For each option, a corresponding HTML file nees to be used with the proper elements and CSS class names which can be seen in the demonstration links below.</p>
 
-                    <p>All of the page template options are demonstrated below in addition to the two-column page layout.</p>
 
-                </div>
-                <div class="half">
-                    <pre>
-&lt;div class=&quot;section&quot;&gt;
-    &lt;div class=&quot;<strong>main-primary</strong>&quot;&gt;...&lt;/div&gt;
-    &lt;div class=&quot;<strong>main-secondar</strong>y&quot;&gt;...&lt;/div&gt;
-&lt;/div&gt;
-            </pre>
-                    <p><br></p>
-                    <pre>
+
+                <p>Primary banner can be added to any page but are commonly used on landing and home pages.
+                    There are several banner options including a primary <code>header-primary-banner</code>, large
+                    <code>header-large-banner</code>.
+                </p>
+                <p>To use the various banner types add them using the SSI include method right below the header of the
+                    desired page. For each option, a corresponding HTML file nees to be used with the proper elements
+                    and CSS class names which can be seen in the demonstration links below.</p>
+
+                <pre>
 &lt;/header&gt; <br>&lt;!-- Include Page Template --&gt;
  &lt;!--#include virtual=&quot;/ssi/<strong>header-large-banner.html</strong>&quot; --&gt;
- &lt;!--#include virtual=&quot;/ssi/<strong>header-primary-banner.html</strong>&quot; --&gt;
- &lt;!--#include virtual=&quot;/ssi/<strong>header-slideshow-banner.html</strong>&quot; --&gt;</pre>
-                    <p><span class="label label-info">Note:</span> You can view the source code for each banner type by downloading the template package and inspecting the template files or using the links below.</p>
-                </div>
-                <div class="clearfix"></div>
+ &lt;!--#include virtual=&quot;/ssi/<strong>header-primary-banner.html</strong>&quot; --&gt;</pre>
+                <p><span class="badge label-info">Note:</span> You can view the source code for each banner type by
+                    downloading the template package and inspecting the template files or using the links below.</p>
 
-                <h2>Demonstration </h2>
-                <p>Toggle the buttons to add or remove the appropriate <code>&lt;body&gt;</code> classes and server side inscludes. </p>
-                <button class="togglePrimary btn btn-secondary m-r-sm m-b-sm">Add Primary Banner </button>
-                <button class="toggleTwoCol btn btn-secondary m-r-sm m-b-sm">Add .two-column</button>
-                <a href="large-header-banner.html" class="toggleBanner btn btn-secondary m-r-sm m-b-sm">See Large Banner</a>
-                <a href="slideshow-header-banner.html" class="btn btn-secondary m-r-sm m-b-sm">See Slideshow Banner</a>
-
-                <p><span class="label label-info">Note:</span> Some examples go to a new page.</p>
-                <h2>Backwards Compatability</h2>
-                <p> In v4 of the State Template page layouts were controlled by applying the <code>.primary</code> class to the <code>&lt;body&gt;</code> element which enabled the taller header image. For greater flexibility and control over header images, the layout was changed to use a more modular approach. The <code>.primary</code> class is now used to determine if the various banner types remain on the page in the mobile screen sizes. </p>
-                <p>&nbsp;</p>
 
             </main>
+            <div class="main-secondary hidden">
+                <h2>Two column layout</h2>
+                <!--#include virtual="/sample/modules/profile-banners.html" -->
+            </div>
         </div>
     </div>
 
@@ -110,40 +101,6 @@
     <!--#include virtual="/ssi/global-footer.html" -->
     <!--#include virtual="/ssi/scripts.html" -->
 
-    <script>
-// -- DEMONSTRATION ONLY! -- //
-$(document).ready(function(){
-	 $(".header-primary-banner").addClass("d-none");
-	$(".togglePrimary").html("Add Primary Banner");
-    // Toggle .primary class
-    $(".togglePrimary").click(function() {
-        var btnLabel = $(this);
-        // Toggle body class and button text when clicked
-        if ($(this).html() == 'Add Primary Banner') {
-            btnLabel.html('Remove Primary Banner');
-            $(".header-primary-banner").removeClass("d-none");
-		window.scrollTo(0, 0);
-        } else {
-            btnLabel.html('Add Primary Banner');
-            $(".header-primary-banner").addClass("d-none");
-		window.scrollTo(0, 0);
-        }
-    });
-
-    // Toggle .two-column class
-    $(".toggleTwoCol").click(function() {
-        var btnLabel = $(this);
-        // Toggle body class and button text when clicked
-        if ($(this).html() == 'Add .two-column') {
-            btnLabel.html('Remove .two-column');
-            $("body").addClass("two-column");
-        } else {
-            btnLabel.html('Add .two-column');
-            $("body").removeClass("two-column");
-        }
-    });
-});
-    </script>
-
 </body>
+
 </html>

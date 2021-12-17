@@ -3,7 +3,6 @@
    /source/scss/cagov/nav-mobile-controls.scss
 ----------------------------------------- */
 
-
 // CONTAINER
 .mobile-controls {
     padding: 5px;
@@ -19,7 +18,9 @@
     padding-right: 0; // IOS fix 5.0 addition
     @include container;
 
-    .ca-gov-icon-menu-toggle-open, .ca-gov-icon-menu-toggle-closed { // Dynamic elements included in toggle-sub-nav
+    .ca-gov-icon-menu-toggle-open,
+    .ca-gov-icon-menu-toggle-closed {
+        // Dynamic elements included in toggle-sub-nav
         padding-left: 16px;
         padding-right: 16px;
         line-height: 2.75rem;
@@ -56,17 +57,16 @@
     }
 }
 
-
 // Mobile controls inside main navigation
 .main-navigation .mobile-controls {
-		text-align: left;
-		background-color: $body-bg;
-	}
-
+    text-align: left;
+    background-color: $body-bg;
+}
 
 // INDIVIDUAL CONTROLS
 .mobile-control {
-    &.toggle-sub-nav { // Dynamic element $toggleSubNav placed before each .sub-nav element
+    &.toggle-sub-nav {
+        // Dynamic element $toggleSubNav placed before each .sub-nav element
         position: absolute;
         top: 0;
         right: 2px;
@@ -79,7 +79,8 @@
         height: 100%;
 
         &:active {
-            .rotate { // preventing icon shifting on active state in IE and FF
+            .rotate {
+                // preventing icon shifting on active state in IE and FF
                 position: absolute;
                 top: 20px;
                 left: 30px;
@@ -97,10 +98,7 @@
     align-items: center;
     z-index: 1;
 }
-	
-	
-	
-	
+
 // Hamburger menu to X transition
 .toggle-menu {
     width: 55px;
@@ -110,10 +108,10 @@
     -moz-transform: rotate(0deg);
     -o-transform: rotate(0deg);
     transform: rotate(0deg);
-    -webkit-transition: .5s ease-in-out;
-    -moz-transition: .5s ease-in-out;
-    -o-transition: .5s ease-in-out;
-    transition: .5s ease-in-out;
+    -webkit-transition: 0.5s ease-in-out;
+    -moz-transition: 0.5s ease-in-out;
+    -o-transition: 0.5s ease-in-out;
+    transition: 0.5s ease-in-out;
     cursor: pointer;
     color: $white;
     top: 4px;
@@ -133,16 +131,17 @@
         -moz-transform: rotate(0deg);
         -o-transform: rotate(0deg);
         transform: rotate(0deg);
-        -webkit-transition: .25s ease-in-out;
-        -moz-transition: .25s ease-in-out;
-        -o-transition: .25s ease-in-out;
-        transition: .25s ease-in-out;
+        -webkit-transition: 0.25s ease-in-out;
+        -moz-transition: 0.25s ease-in-out;
+        -o-transition: 0.25s ease-in-out;
+        transition: 0.25s ease-in-out;
 
         &:nth-child(1) {
             top: 10px;
         }
 
-        &:nth-child(2), &:nth-child(3) {
+        &:nth-child(2),
+        &:nth-child(3) {
             top: 22px;
         }
 
@@ -196,8 +195,6 @@
     }
 }*/
 
-
-
 // HAS SUB CARROT
 // 991px
 @media (max-width: $screen-sm-max) {
@@ -214,9 +211,9 @@
         text-align: center;
         cursor: pointer;
         border: none;
-        -moz-transition: all .2s ease !important;
-        -webkit-transition: all .2s ease !important;
-        transition: all .2s ease !important;
+        -moz-transition: all 0.2s ease !important;
+        -webkit-transition: all 0.2s ease !important;
+        transition: all 0.2s ease !important;
     }
 
     .first-level-btn[aria-expanded="true"] .rotate {
@@ -231,26 +228,25 @@
         top: 0;
         right: 0;
         text-align: center;
-        -moz-transition: all .2s ease !important;
-        -webkit-transition: all .2s ease !important;
-        transition: all .2s ease !important;
+        -moz-transition: all 0.2s ease !important;
+        -webkit-transition: all 0.2s ease !important;
+        transition: all 0.2s ease !important;
     }
-
 }
 
 /* mobile controls hack for IE because IE never dies */
-@media all and (-ms-high-contrast:none) {
+@media all and (-ms-high-contrast: none) {
     .mobile-controls .toggle-search {
         position: absolute;
         right: 70px;
         top: 10px;
     }
     /* IE10 */
-    *::-ms-backdrop, .mobile-controls .toggle-search {
+    *::-ms-backdrop,
+    .mobile-controls .toggle-search {
         position: absolute;
         right: 70px;
         top: 10px;
     }
     /* IE11 */
 }
-

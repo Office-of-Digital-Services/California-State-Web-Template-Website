@@ -8,22 +8,26 @@
 <!--<![endif]-->
 
 <head>
-  
-<!--    California State Template
 
-Based on Twitter Bootstrap
--->
-  <meta charset="utf-8">
+    <!--    California State Template (beta)
+ 
 
-  <title>Sample - Countdown</title>
+    Based on Twitter Bootstrap
+    -->
+    <meta charset="utf-8">
 
-  <meta name="Author" content="State of California" />
-  <meta name="Description" content="State of California" />
-  <meta name="Keywords" content="California, government" />
+    <title>Sample - Countdown</title>
 
-  <!--#include virtual="/ssi/head-css-js.html" -->
+    <meta name="Author" content="State of California" />
+    <meta name="Description" content="State of California" />
+    <meta name="Keywords" content="California, government" />
+
+    <!--#include virtual="/ssi/head-css-js.html" -->
     <style>
-        #demo, #demo2, #demo3, #demo4 {
+        #demo,
+        #demo2,
+        #demo3,
+        #demo4 {
             text-align: center;
             font-size: 1.875rem;
             margin-top: 0px;
@@ -38,102 +42,107 @@ Based on Twitter Bootstrap
             font-weight: 400;
         }
     </style>
+    <script type="text/javascript">
+        var defaultActiveLink = "Components";
+    </script>
 </head>
 
 <body>
 
-  <header role="banner" id="header" class="global-header">
-    <div id="skip-to-content"><a href="#main-content">Skip to Main Content</a></div>
-        
+    <header role="banner" id="header" class="global-header">
+        <div id="skip-to-content"><a href="#main-content">Skip to Main Content</a></div>
+
         <!-- Include Utility Header -->
-		<!--#include virtual="/ssi/utility-header.html" -->	
-        
-        <!-- Settings Bar -->	
-		<!--#include virtual="/ssi/settings-bar.html" -->
+        <!--#include virtual="/ssi/utility-header.html" -->
+        <!-- Settings Bar -->
+        <!--#include virtual="/ssi/settings-bar.html" -->
+        <!-- Include Branding -->
+        <!--#include virtual="/ssi/branding-lightgrey.html" -->
+        <!-- Include Mobile Controls -->
+        <!--#include virtual="/ssi/mobile-controls.html" -->
 
-		<!-- Include Branding -->
-		<!--#include virtual="/ssi/branding.html" -->
+        <div class="navigation-search full-width-nav container">
+            <div id="head-search" class="search-container featured-search">
+                <!-- Include Search -->
+                <!--#include virtual="/ssi/search.html" -->
+            </div>
+            <!-- Include Navigation -->
+            <!--#include virtual="/ssi/navigation.html" -->
+        </div>
 
-    <!-- Include Mobile Controls -->
-    <!--#include virtual="/ssi/mobile-controls.html" -->
+        <div class="header-decoration"></div>
+    </header>
 
-      <div class="navigation-search">
-          <!-- Include Navigation -->
-          <!--#include virtual="/ssi/navigation.html" -->
+    <div id="main-content" class="main-content">
+        <div class="container p-b-lg p-t-md">
+            <main class="main-primary">
+                <ol class="breadcrumb">
+                    <li><a href="../index.html" title="Home page">Home</a></li>
+                    <li><a href="/sample/" title="Content Modules landing page">Content Modules</a></li>
+                    <li class="active">Countdown</li>
+                </ol>
 
-          <div id="head-search" class="search-container">
-              <!-- Include Search -->
-              <!--#include virtual="/ssi/search.html" -->
-          </div>
 
-      </div>
 
-    <div class="header-decoration"></div>
-  </header>
+                <h1>Countdown</h1>
 
-  <div id="main-content" class="main-content">
-    <div class="section">
-        <main class="main-primary">            
-            <ol class="breadcrumb">
-                <li><a href="../index.html" title="Home page">Home</a></li>
-                <li><a href="index.html" title="Examples landing page">Examples</a></li>
-                <li class="active">Countdown</li>
-            </ol>
+                <hr>
 
-         
+                <h2 class="h3">Countdown primary</h2>
 
-                    <h1>Countdown</h1>
 
-                    <hr>
-
-            <h2>Countdown primary</h2>
-                    
-
-                    <div class="row section-primary countdown">
-                        <div class="col-sm-3 text-center p-b-md p-l-0 p-r-0">
-                            <span class="countdown-text">days<br></span>
-                            <span id="days"></span>
-                        </div>
-                        <div class="col-sm-3 text-center p-b-md p-l-0 p-r-0">
-                            <span class="countdown-text">hrs<br></span>
-                            <span id="hours"></span>
-                        </div>
-                        <div class="col-sm-3 text-center p-b-md p-l-0 p-r-0">
-                            <span class="countdown-text">min<br></span>
-                            <span id="minutes"></span>
-                        </div>
-                        <div class="col-sm-3 text-center p-b-md p-l-0 p-r-0">
-                            <span class="countdown-text">sec<br></span>
-                            <span id="seconds"></span>
-                        </div>
+                <div class="row section-primary countdown">
+                    <div class="col-sm-3 text-center p-b-md p-l-0 p-r-0">
+                        <span class="countdown-text">days<br></span>
+                        <span id="days"></span>
                     </div>
+                    <div class="col-sm-3 text-center p-b-md p-l-0 p-r-0">
+                        <span class="countdown-text">hrs<br></span>
+                        <span id="hours"></span>
+                    </div>
+                    <div class="col-sm-3 text-center p-b-md p-l-0 p-r-0">
+                        <span class="countdown-text">min<br></span>
+                        <span id="minutes"></span>
+                    </div>
+                    <div class="col-sm-3 text-center p-b-md p-l-0 p-r-0">
+                        <span class="countdown-text">sec<br></span>
+                        <span id="seconds"></span>
+                    </div>
+                </div>
 
 
-            <!-- Trigger the modal with a button -->
-            <button type="button" class="btn btn-default btn-sm m-t-md" data-toggle="modal" data-target="#countdown1">Show Source Code</button>
-            <!-- Modal -->
-            <div class="modal fade" id="countdown1" role="dialog">
-                <div class="modal-dialog modal-lg">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h3 class=" h4modal-title">HTML Markup</h3>
-                            <button type="button" class="close" data-dismiss="modal">&times;</button>
-                        </div>
-                        <div class="modal-body">
-                            <h3 class="h4">Source Code:</h3>
+                <!-- Trigger the modal with a button -->
+                <button type="button" class="btn btn-default btn-sm m-t-md" data-bs-toggle="modal"
+                    data-bs-target="#countdown1">Show Source Code</button>
+                <!-- Modal -->
+                <div class="modal fade" id="countdown1" role="dialog">
+                    <div class="modal-dialog modal-lg">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h3 class="h4 modal-title">HTML Markup</h3>
+                                <button type="button" class="close btn btn-secondary" data-bs-dismiss="modal"><span
+                                        class="sr-only">Close modal</span><span class="ca-gov-icon-close-mark"
+                                        aria-hidden="true"></span></button>
+                            </div>
+                            <div class="modal-body">
+                                <h3 class="h4">Source Code:</h3>
 
-                            <div class="tab-group">
-                                <span class="ca-gov-icon-favorite"></span>
-                                <!-- Nav tabs - NOTE: UNIQUE ID IS REQUIRED -->
-                                <ul class="nav nav-tabs responsive" role="tablist" id="primary">
-                                    <li class="nav-item" role="tab"><a href="#html" data-toggle="tab" class="nav-link active">HTML <span class="sr-only"> for countdown primary</span></a></li>
-                                    <li class="nav-item" role="tab"><a href="#scirpt" data-toggle="tab" class="nav-link">Script <span class="sr-only"> for countdown primary</span></a></li>
+                                <div class="tab-group">
+                                    <span class="ca-gov-icon-favorite"></span>
+                                    <!-- Nav tabs - NOTE: UNIQUE ID IS REQUIRED -->
+                                    <ul class="nav nav-tabs responsive" role="tablist" id="primary">
+                                        <li class="nav-item" role="tab"><a href="#html" data-bs-toggle="tab"
+                                                class="nav-link active">HTML <span class="sr-only"> for countdown
+                                                    primary</span></a></li>
+                                        <li class="nav-item" role="tab"><a href="#scirpt" data-bs-toggle="tab"
+                                                class="nav-link">Script <span class="sr-only"> for countdown
+                                                    primary</span></a></li>
 
-                                </ul>
-                                <!-- Tab panes -->
-                                <div class="tab-content responsive">
-                                    <div class="tab-pane active" id="html" role="tabpanel">
-                                        <pre><code class="overflow-auto">
+                                    </ul>
+                                    <!-- Tab panes -->
+                                    <div class="tab-content responsive">
+                                        <div class="tab-pane active" id="html" role="tabpanel">
+                                            <pre><code class="overflow-auto">
                                         <div class="row section-primary countdown">
                                         <div class="col-sm-3 text-center p-b-md p-l-0 p-r-0">
                                         <span class="countdown-text">days<br></span>
@@ -153,11 +162,11 @@ Based on Twitter Bootstrap
                                                 </div>
                                             </div>
                                         </code></pre>
-                                    </div>
-                                    <div class="tab-pane" id="scirpt" role="tabpanel">
-<pre><code class="overflow-auto">
+                                        </div>
+                                        <div class="tab-pane" id="scirpt" role="tabpanel">
+                                            <pre><code class="overflow-auto">
     // Set the date we're counting down to
-    var countDownDate = new Date("Apr 1, 2020 00:00:00").getTime();
+    var countDownDate = new Date("Apr 1, 2030 00:00:00").getTime();
 
     // Update the count down every 1 second
     var x = setInterval(function() {
@@ -187,70 +196,77 @@ Based on Twitter Bootstrap
     }
     }, 1000);
 </code></pre>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-default" data-bs-dismiss="modal">Close</button>
+                            </div>
                         </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                        </div>
+                    </div>
+                </div><!-- / End Modal -->
+
+
+                <hr />
+
+                <h2 class="h3">Countdown default</h2>
+                <div class="row section-default countdown">
+                    <div class="col-sm-3 text-center p-b-md p-l-0 p-r-0">
+                        <span class="countdown-text">days<br></span>
+                        <span id="days1"></span>
+                    </div>
+                    <div class="col-sm-3 text-center p-b-md p-l-0 p-r-0">
+                        <span class="countdown-text">hrs<br></span>
+                        <span id="hours1"></span>
+                    </div>
+                    <div class="col-sm-3 text-center p-b-md p-l-0 p-r-0">
+                        <span class="countdown-text">min<br></span>
+                        <span id="minutes1"></span>
+                    </div>
+                    <div class="col-sm-3 text-center p-b-md p-l-0 p-r-0">
+                        <span class="countdown-text">sec<br></span>
+                        <span id="seconds1"></span>
                     </div>
                 </div>
-            </div><!-- / End Modal -->
-
-
-            <hr />
-
-                    <h3>Countdown default</h3>
-                    <div class="row section-default countdown">
-                        <div class="col-sm-3 text-center p-b-md p-l-0 p-r-0">
-                            <span class="countdown-text">days<br></span>
-                            <span id="days1"></span>
-                        </div>
-                        <div class="col-sm-3 text-center p-b-md p-l-0 p-r-0">
-                            <span class="countdown-text">hrs<br></span>
-                            <span id="hours1"></span>
-                        </div>
-                        <div class="col-sm-3 text-center p-b-md p-l-0 p-r-0">
-                            <span class="countdown-text">min<br></span>
-                            <span id="minutes1"></span>
-                        </div>
-                        <div class="col-sm-3 text-center p-b-md p-l-0 p-r-0">
-                            <span class="countdown-text">sec<br></span>
-                            <span id="seconds1"></span>
-                        </div>
-                    </div>
 
 
 
 
-           
 
-            <!-- Trigger the modal with a button -->
-            <button type="button" class="btn btn-default btn-sm m-t-md" data-toggle="modal" data-target="#countdown2">Show Source Code</button>
-            <!-- Modal -->
-            <div class="modal fade" id="countdown2" role="dialog">
-                <div class="modal-dialog modal-lg">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h4 class="modal-title">HTML Markup</h4>
-                            <button type="button" class="close" data-dismiss="modal">&times;</button>
-                        </div>
-                        <div class="modal-body">
-                            <h4>Source Code:</h4>
 
-                            <div class="tab-group">
-                                <span class="ca-gov-icon-favorite"></span>
-                                <!-- Nav tabs - NOTE: UNIQUE ID IS REQUIRED -->
-                                <ul class="nav nav-tabs responsive" role="tablist" id="default">
-                                    <li class="nav-item" role="tab"><a href="#html2" data-toggle="tab" class="nav-link active">HTML <span class="sr-only"> for countdown default</span></a></li>
-                                    <li class="nav-item" role="tab"><a href="#scirpt2" data-toggle="tab" class="nav-link">Script <span class="sr-only"> for countdown default</span></a></li>
-                                   
-                                </ul>
-                                <!-- Tab panes -->
-                                <div class="tab-content responsive">
-<div class="tab-pane active" id="html2" role="tabpanel">
-    <pre><code class="overflow-auto">
+                <!-- Trigger the modal with a button -->
+                <button type="button" class="btn btn-default btn-sm m-t-md" data-bs-toggle="modal"
+                    data-bs-target="#countdown2">Show Source Code</button>
+                <!-- Modal -->
+                <div class="modal fade" id="countdown2" role="dialog">
+                    <div class="modal-dialog modal-lg">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h3 class="h4 modal-title">HTML Markup</h3>
+                                <button type="button" class="close btn btn-secondary" data-bs-dismiss="modal"><span
+                                        class="sr-only">Close modal</span><span class="ca-gov-icon-close-mark"
+                                        aria-hidden="true"></span></button>
+                            </div>
+                            <div class="modal-body">
+                                <h3 class="h4">Source Code:</h3>
+
+                                <div class="tab-group">
+                                    <span class="ca-gov-icon-favorite"></span>
+                                    <!-- Nav tabs - NOTE: UNIQUE ID IS REQUIRED -->
+                                    <ul class="nav nav-tabs responsive" role="tablist" id="default">
+                                        <li class="nav-item" role="tab"><a href="#html2" data-bs-toggle="tab"
+                                                class="nav-link active">HTML <span class="sr-only"> for countdown
+                                                    default</span></a></li>
+                                        <li class="nav-item" role="tab"><a href="#scirpt2" data-bs-toggle="tab"
+                                                class="nav-link">Script <span class="sr-only"> for countdown
+                                                    default</span></a></li>
+
+                                    </ul>
+                                    <!-- Tab panes -->
+                                    <div class="tab-content responsive">
+                                        <div class="tab-pane active" id="html2" role="tabpanel">
+                                            <pre><code class="overflow-auto">
     <div class="row section-default countdown">
     <div class="col-sm-3 text-center p-b-md p-l-0 p-r-0">
     <span class="countdown-text">days<br></span>
@@ -270,11 +286,11 @@ Based on Twitter Bootstrap
             </div>
         </div>
     </code></pre>
-                                    </div>
-<div class="tab-pane" id="scirpt2" role="tabpanel">
-<pre><code class="overflow-auto">
+                                        </div>
+                                        <div class="tab-pane" id="scirpt2" role="tabpanel">
+                                            <pre><code class="overflow-auto">
 // Set the date we're counting down to
-var countDownDate = new Date("Apr 1, 2020 00:00:00").getTime();
+var countDownDate = new Date("Apr 1, 2030 00:00:00").getTime();
 
 // Update the count down every 1 second
 var x = setInterval(function() {
@@ -304,64 +320,64 @@ if (distance < 0) {
     }
 }, 1000);
 </code></pre>
-</div>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-default" data-bs-dismiss="modal">Close</button>
+                            </div>
                         </div>
                     </div>
-                </div>
-            </div><!-- / End Modal -->
+                </div><!-- / End Modal -->
 
-        </main>
+            </main>
+        </div>
     </div>
-  </div>
 
-  <!--#include virtual="/ssi/global-footer.html" -->
+    <!--#include virtual="/ssi/global-footer.html" -->
 
-  <!--#include virtual="/ssi/scripts.html" -->
+    <!--#include virtual="/ssi/scripts.html" -->
 
-<script>
-    // Set the date we're counting down to
-    var countDownDate = new Date("June 15, 2021 00:00:00").getTime();
+    <script>
+        // Set the date we're counting down to
+        var countDownDate = new Date("Apr 1, 2030 00:00:00").getTime();
 
-    // Update the count down every 1 second
-    var x = setInterval(function () {
+        // Update the count down every 1 second
+        var x = setInterval(function () {
 
-        // Get todays date and time
-        var now = new Date().getTime();
+            // Get todays date and time
+            var now = new Date().getTime();
 
-        // Find the distance between now an the count down date
-        var distance = countDownDate - now;
+            // Find the distance between now an the count down date
+            var distance = countDownDate - now;
 
-        // Time calculations for days, hours, minutes and seconds
-        var days = Math.floor(distance / (1000 * 60 * 60 * 24));
-        var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-        var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-        var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+            // Time calculations for days, hours, minutes and seconds
+            var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            var seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
-        // Output the result in the elements with id="days", id="hours" etc.
-
-
-        document.getElementById("days").innerHTML = days;
-        document.getElementById("hours").innerHTML = hours;
-        document.getElementById("minutes").innerHTML = minutes;
-        document.getElementById("seconds").innerHTML = seconds;
+            // Output the result in the elements with id="days", id="hours" etc.
 
 
-        document.getElementById("days1").innerHTML = days;
-        document.getElementById("hours1").innerHTML = hours;
-        document.getElementById("minutes1").innerHTML = minutes;
-        document.getElementById("seconds1").innerHTML = seconds;
-        // If the count down is over, write some text
-        if (distance < 0) {
-            clearInterval(x);
-            document.getElementById("days").innerHTML = "EXPIRED";
-        }
-    }, 1000);
-</script>
+            document.getElementById("days").innerHTML = days;
+            document.getElementById("hours").innerHTML = hours;
+            document.getElementById("minutes").innerHTML = minutes;
+            document.getElementById("seconds").innerHTML = seconds;
+
+
+            document.getElementById("days1").innerHTML = days;
+            document.getElementById("hours1").innerHTML = hours;
+            document.getElementById("minutes1").innerHTML = minutes;
+            document.getElementById("seconds1").innerHTML = seconds;
+            // If the count down is over, write some text
+            if (distance < 0) {
+                clearInterval(x);
+                document.getElementById("days").innerHTML = "EXPIRED";
+            }
+        }, 1000);
+    </script>
 
 
 

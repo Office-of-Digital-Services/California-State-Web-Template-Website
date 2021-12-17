@@ -5,13 +5,15 @@
 <!--[if IE 9]>    <html class="no-js ie9 oldie" lang="en"> <![endif]-->
 <!--[if (gt IE 9)]><!-->
 <html class="no-js" lang="en">
- <!--<![endif]-->
+<!--<![endif]-->
+
 <head>
 
-    <!--    California State Template
-
-    Based on Twitter Bootstrap
-    -->
+    <!--    California State Template (beta)
+ 
+ 
+Based on Twitter Bootstrap
+-->
     <meta charset="utf-8">
 
     <title>Sample - Sticky Footer</title>
@@ -26,36 +28,37 @@
     </script>
 </head>
 
-<body class="sticky-footer two-column">
+<body class="sticky-footer">
 
     <header role="banner" id="header" class="global-header">
         <div id="skip-to-content"><a href="#main-content">Skip to Main Content</a></div>
 
         <!-- Include Utility Header -->
         <!--#include virtual="/ssi/utility-header.html" -->
+
         <!-- Settings Bar -->
         <!--#include virtual="/ssi/settings-bar.html" -->
+
         <!-- Include Branding -->
-        <!--#include virtual="/ssi/branding.html" -->
+        <!--#include virtual="/ssi/branding-lightgrey.html" -->
+
         <!-- Include Mobile Controls -->
         <!--#include virtual="/ssi/mobile-controls.html" -->
 
-        <div class="navigation-search">
-            <!-- Include Navigation -->
-            <!--#include virtual="/ssi/navigation.html" -->
-
-            <div id="head-search" class="search-container">
+        <div class="navigation-search full-width-nav container">
+            <div id="head-search" class="search-container featured-search">
                 <!-- Include Search -->
                 <!--#include virtual="/ssi/search.html" -->
             </div>
-
+            <!-- Include Navigation -->
+            <!--#include virtual="/ssi/navigation.html" -->
         </div>
 
         <div class="header-decoration"></div>
     </header>
 
-    <div id="main-content" class="main-content">
-        <div class="container p-b-lg">
+    <div id="main-content">
+        <div class="container p-b-lg p-t-md">
             <main class="main-primary">
                 <ol class="breadcrumb">
                     <li><a href="../index.html" title="Home page">Home</a></li>
@@ -63,23 +66,24 @@
                     <li class="active">Sticky Footer</li>
                 </ol>
                 <h1>Sticky Footer</h1>
-                <p>The purpose of a sticky footer is that it "sticks" to the bottom of the browser window. But not always, if there is enough content on the page to push the footer lower, it still does that. But if the content on the page is short, a sticky footer will still hang to the bottom of the browser window. To acheive that add <code>.sticky-footer</code> to the <code>&lt;body&gt;</code> tag and <code>.mt-auto</code> class to your <code>&lt;footer&gt;</code> tag. <button class="btn btn-default btn-xs m-l" id="add">Add more content</button><button class="btn btn-default btn-xs m-l" id="remove">Remove content</button></p>
+                <p>The purpose of a sticky footer is that it "sticks" to the bottom of the browser window. But not
+                    always, if there is enough content on the page to push the footer lower, it still does that. But if
+                    the content on the page is short, a sticky footer will still hang to the bottom of the browser
+                    window. To acheive that add <code>.sticky-footer</code> to the <code>&lt;body&gt;</code> tag and
+                    <code>.mt-auto</code> class to your <code>&lt;footer&gt;</code> tag. <button
+                        class="btn btn-default btn-xs m-l" id="add">Add more content</button><button
+                        class="btn btn-default btn-xs m-l" id="remove">Remove content</button>
+                </p>
 
                 <div class="content">
                 <h2>Content</h2>
                 </div>
             </main>
-
-
-<!--Secondary -->
-    <div class="main-secondary m-t-lg" role="complementary">
-         <!--#include virtual="/sample/modules/profile-banners.html" -->
-    </div>
-
         </div>
     </div>
 
     <!--#include virtual="/sample/modules/sticky-footer.html" -->
+
     <!--#include virtual="/ssi/scripts.html" -->
     <script>
         $(document).ready(function () {
@@ -93,4 +97,5 @@
     </script>
 
 </body>
+
 </html>

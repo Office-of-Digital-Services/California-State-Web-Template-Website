@@ -30,8 +30,9 @@
 .navigation-search {
     border: none;
     position: relative;
+    padding-left: 0;
+    padding-right: 0;
 }
-
 
 //
 // NAVIGATION DEFAULT STYLING
@@ -42,7 +43,6 @@
     position: relative;
     margin-top: -82px;
     padding-left: 80px;
-
 
     @media (max-width: $screen-xs-max) {
         max-width: 100%;
@@ -55,12 +55,15 @@
     padding: 0;
     -webkit-transition: 0.3s; // beta 5.0 addition (adds smoother transistion on scroll for fixed headers)
     transition: all 0.3s; // beta 5.0 addition
-    .nav-item { // equivalent to .nav-item
+    .nav-item {
+        // equivalent to .nav-item
         position: relative;
-        @include font-size(1);
+        font-size: $font-size-base;
+        @include media-breakpoint-up(sm) {
+            font-size: calc(#{$font-size-base} + #{$ratio});
+        }
     }
 }
-
 
 .nav-item {
     .sub-nav.open {
@@ -83,7 +86,6 @@
         opacity: 0;
     }
 
-
     .sub-nav-decoration {
         display: none;
     }
@@ -97,6 +99,9 @@
     list-style: none;
     margin: 0;
     padding: 0;
+    a {
+        text-decoration: none;
+    }
 
     [class^="unit"] {
         .second-level-link {
@@ -105,14 +110,14 @@
     }
 }
 
-
 //
 // Main Navigation links
 // --------------------------------------------------
 
-.first-level-link, .first-level-btn {
+.first-level-link,
+.first-level-btn {
     display: block;
-    padding: 5px 5px 12px 5px;
+    padding: 5px 16px 12px 16px;
     font-family: $headings-font-family;
     font-weight: 400;
     // white-space: nowrap;
@@ -120,25 +125,26 @@
     z-index: 1;
 
     &.has-sub {
-        padding-right: 10px; // extra room for arrow
+        padding-right: 24px; // extra room for arrow
     }
 
-    &:hover, &:focus {
+    &:hover,
+    &:focus {
         text-decoration: none;
     }
 
     > span[class^="ca-gov-icon"]:not(.carrot) {
-         // 992px
+        // 992px
         @media (min-width: $screen-md-min) {
             /* Navigation icons */
             display: block;
             font-size: 32px;
         }
     }
- // 991px
+    // 991px
     @media (max-width: $screen-sm-max) {
         &:first-child {
-            margin-top: 2px
+            margin-top: 2px;
         }
         // to make outline visible
         display: block;
@@ -154,175 +160,170 @@
     }
 }
 
+// 1200px and 991px
+@media (max-width: $screen-lg) and (min-width: $screen-md-min) {
+    .first-level-link,
+    .first-level-btn {
+        padding: 5px 9px 12px 9px;
 
- // 1200px and 991px
-    @media (max-width: $screen-lg) and (min-width: $screen-md-min) {
-        .first-level-link, .first-level-btn {
-            padding: 5px 9px 12px 9px;
+        &.has-sub {
+            padding-right: 13px; // extra room for arrow
+        }
+    }
+}
+//
+// TOP LEVEL NAVIGATION FOR DESKTOP
+// --------------------------------------------------
+// 992px
+@media (min-width: $screen-md-min) {
+    .main-navigation {
+        z-index: 25;
+        // handle the edge case when their is no nav links
+        min-height: 85px; // beta 6.0 addition
+        padding-left: 350px; // beta 5.0 addition
+    }
 
-            &.has-sub {
-                padding-right: 13px; // extra room for arrow
+    .top-level-nav {
+        display: table; // Use table and table-cell method to space top level navigation items
+        table-layout: auto;
+        display: -webkit-box;
+        display: -moz-box;
+        display: -ms-flexbox;
+        display: -webkit-flex;
+        display: flex;
+        min-height: 80px; // beta 6.0 addition
+        .nav-item {
+            padding: 0;
+            margin-top: 0;
+            background: none;
+            width: auto;
+            display: table-cell;
+            display: block;
+            -webkit-box-flex: 1;
+            -moz-box-flex: 1;
+            -webkit-flex: 1 1 auto;
+            -ms-flex: 1 1 auto;
+            flex: 1 1 auto;
+
+            .noflex &,
+            .oldie & {
+                display: table-cell;
+            }
+
+            .sub-nav {
+                top: 100%; // Positioning for flexbox layout
+                box-shadow: 0px 8px 7px 0px rgba(0, 0, 0, 0.06); // beta 6.0 addition
+            }
+
+            > a {
+                text-align: center; // Center only top level navigation links
+                min-height: 50px; // beta 5.0 addition
+                text-decoration: none;
+            }
+        }
+        // Search button in navigation
+        #nav-item-search button.first-level-link {
+            background: none;
+            text-align: center;
+            border: none;
+            padding: 5px 16px 12px 16px;
+            width: 100%;
+        }
+        // beta 5.0 addition
+        .main-navigation.dropdown .nav-arrow-down {
+            left: auto;
+            margin-left: auto;
+        }
+    }
+    // shared styles megamenu and dropdown menu
+    .nav-item {
+        .sub-nav {
+            position: absolute;
+        }
+    }
+    /* sub-navigation panel open state */
+    .main-navigation.dropdown .dropdown,
+    .no-js .main-navigation.dropdown,
+    .no-js .main-navigation.megadropdown {
+        .nav-item:hover .sub-nav {
+            display: block;
+
+            .touch & {
+                display: none;
             }
         }
     }
-    //
-    // TOP LEVEL NAVIGATION FOR DESKTOP
-    // --------------------------------------------------
-    // 992px
-    @media (min-width: $screen-md-min) {
-        .main-navigation {
-            z-index: 25;
-            // handle the edge case when their is no nav links
-            min-height: 85px; // beta 6.0 addition
-            padding-left: 350px; // beta 5.0 addition
-        }
 
+    .no-icons {
         .top-level-nav {
-            display: table; // Use table and table-cell method to space top level navigation items
-            table-layout: auto;
-            display: -webkit-box;
-            display: -moz-box;
-            display: -ms-flexbox;
-            display: -webkit-flex;
-            display: flex;
-            width: 100%;
-            min-height: 80px; // beta 6.0 addition
             .nav-item {
-                padding: 0;
-                margin-top: 0;
-                background: none;
-                width: auto;
-                display: table-cell;
-                display: block;
-                -webkit-box-flex: 1;
-                -moz-box-flex: 1;
-                -webkit-flex: 1 1 auto;
-                -ms-flex: 1 1 auto;
-                flex: 1 1 auto;
-
-                .noflex &, .oldie & {
-                    display: table-cell;
-                }
-
-                .sub-nav {
-                    top: 100%; // Positioning for flexbox layout
-                    box-shadow: 0px 8px 7px 0px rgba(0,0,0,0.06) // beta 6.0 addition
-                }
-
                 > a {
-                    text-align: center; // Center only top level navigation links
-                    min-height: 50px; // beta 5.0 addition
-                }
-            }
-            // Search button in navigation
-            #nav-item-search button.first-level-link {
-                background: none;
-                text-align: center;
-                border: none;
-                padding: 5px 5px 12px 5px;
-                width: 100%;
-            }
-            // beta 5.0 addition
-            .main-navigation.dropdown .nav-arrow-down {
-                left: auto;
-                margin-left: auto;
-            }
-        }
-        // shared styles megamenu and dropdown menu
-        .nav-item {
-            .sub-nav {
-                position: absolute;
-            }
-        }
-        /* sub-navigation panel open state */
-        .main-navigation.dropdown .dropdown,
-        .no-js .main-navigation.dropdown,
-        .no-js .main-navigation.megadropdown {
-            .nav-item:hover .sub-nav {
-                display: block;
-
-                .touch & {
-                    display: none;
+                    min-height: 86px; // beta 6.0 addition
+                    padding-top: 2rem;
                 }
             }
         }
+    }
 
+    .first-level-btn {
+        text-align: center;
+        border: none;
+        background: none;
+        width: 100%;
+    }
+
+    .home-link {
+        @include sr-only();
+    }
+
+    /* FIXED */
+    .fixed.compact {
         .no-icons {
             .top-level-nav {
                 .nav-item {
                     > a {
-                        min-height: 86px; // beta 6.0 addition
-                        padding-top: 2rem;
+                        padding-top: 12px;
+                        min-height: 50px;
                     }
                 }
             }
         }
 
+        .top-level-nav {
+            // Beta 5.0 addition
+            min-height: 55px; // Beta 6.0 addition
+            .nav-item {
+                .first-level-link,
+                .first-level-btn {
+                    padding-top: 17px;
+                    padding-bottom: 8px;
 
-       
-
-        .first-level-btn {
-            text-align: center;
-            border: none;
-            background: none;
-            width: 100%;
-
-            
-        }
-
-        .home-link {
-            @include sr-only();
-        }
-
-
-
-        /* FIXED */
-        .fixed.compact {
-            .no-icons {
-                .top-level-nav {
-                    .nav-item {
-                        > a {
-                            padding-top: 12px;
-                            min-height: 50px;
-                        }
+                    .carrot {
+                        bottom: 9px;
                     }
                 }
             }
 
-            .top-level-nav { // Beta 5.0 addition
-                min-height: 55px; // Beta 6.0 addition
-                .nav-item {
-                    .first-level-link, .first-level-btn {
-                        padding-top: 17px;
-                        padding-bottom: 8px;
-
-                        .carrot {
-                            bottom: 9px;
-                        }
-                    }
-                }
-
-                #nav-item-search {
-                    button.first-level-link {
-                        padding-top: 17px;
-                    }
+            #nav-item-search {
+                button.first-level-link {
+                    padding-top: 17px;
                 }
             }
-
-            .main-navigation {
-                margin-top: -55px; // Beta 6.0 addition
-                min-height: 55px; // Beta 6.0 addition
-            }
-
-            .first-level-link [class^="ca-gov-icon-"], .first-level-btn [class^="ca-gov-icon-"]:not(.carrot) {
-                display: none;
-            }
         }
-            // End of FIXED
+
+        .main-navigation {
+            margin-top: -55px; // Beta 6.0 addition
+            min-height: 55px; // Beta 6.0 addition
         }
+
+        .first-level-link [class^="ca-gov-icon-"],
+        .first-level-btn [class^="ca-gov-icon-"]:not(.carrot) {
+            display: none;
+        }
+    }
+    // End of FIXED
+}
 // End of TOP LEVEL NAVIGATION FOR DESKTOP
-
-
 
 /* MOBILE NAVIGATION */
 // 991px
@@ -333,13 +334,13 @@
     }
 
     .nav-item {
-        [aria-hidden=true].sub-nav {
+        [aria-hidden="true"].sub-nav {
             max-height: 0;
         }
     }
 
-
-    .nav-full-width .main-navigation .first-level-link, .nav-full-width .main-navigation .first-level-btn {
+    .nav-full-width .main-navigation .first-level-link,
+    .nav-full-width .main-navigation .first-level-btn {
         padding: 20px 0 20px 15px;
     }
 
@@ -379,7 +380,8 @@
         background-color: $white;
         margin-top: 0;
 
-        .first-level-link.has-sub, .first-level-btn.has-sub {
+        .first-level-link.has-sub,
+        .first-level-btn.has-sub {
             padding-right: 82px; // allow room for sub nav toggle arrow
         }
         // Sub nav transition
@@ -407,7 +409,8 @@
         display: none;
     }
     // For off canvas menu
-    .oc-outer { //Dynamically added wrapper div
+    .oc-outer {
+        //Dynamically added wrapper div
         position: relative;
         overflow: hidden;
         width: 100%;
@@ -423,7 +426,8 @@
         }
     }
 
-    .oc-inner { // Dynamically added wrapper div
+    .oc-inner {
+        // Dynamically added wrapper div
         position: relative;
         width: 100%;
         height: 100%;
@@ -462,9 +466,9 @@
         height: auto;
         width: 100%;
         background: none;
-        -webkit-box-shadow: -6px -1px 30px 0px rgba(5, 5, 5, .5);
-        -moz-box-shadow: -6px -1px 30px 0px rgba(5, 5, 5, .5);
-        box-shadow: -6px -1px 30px 0px rgba(5, 5, 5, .5);
+        -webkit-box-shadow: -6px -1px 30px 0px rgba(5, 5, 5, 0.5);
+        -moz-box-shadow: -6px -1px 30px 0px rgba(5, 5, 5, 0.5);
+        box-shadow: -6px -1px 30px 0px rgba(5, 5, 5, 0.5);
         cursor: alias;
     }
 
@@ -480,7 +484,6 @@
         display: none;
     }
 
-
     .oc-menu .mobile-control.cagov-logo {
         display: block;
         line-height: 1;
@@ -490,189 +493,147 @@
 }
 // END MOBILE NAVIGATION
 
+// beta 5.0 addition
+.main-navigation.dropdown .nav-arrow-down {
+    width: 100%;
+}
 
-    // beta 5.0 addition
-    .main-navigation.dropdown .nav-arrow-down {
-        width: 100%;
+// 1200px
+@media (min-width: $screen-lg) {
+    // Beta 5.0 addition
+    .main-navigation {
+        padding-left: 350px;
     }
-
-    // 1200px
-    @media (min-width: $screen-lg) { // Beta 5.0 addition
-        .main-navigation {
-            padding-left: 350px;
-        }
-    }
+}
 
 //1200px and 992px
-    @media (max-width: $screen-lg) and (min-width: $screen-md-min) { // Beta 5.0 addition
-        .main-navigation {
-            padding-left: 250px;
+@media (max-width: $screen-lg) and (min-width: $screen-md-min) {
+    // Beta 5.0 addition
+    .main-navigation {
+        padding-left: 250px;
 
-            .top-level-nav {
-                .nav-item { // equivalent to .nav-item
-                    @include font-size(0.9);
-                }
+        .top-level-nav {
+            .nav-item {
+                // equivalent to .nav-item
+                @include font-size(1);
             }
         }
     }
+}
 
-    // 1280px
-    @media (min-width: $screen-xl) {
-        .main-navigation {
-            padding-left: 350px;
-        }
+// 1280px
+@media (min-width: $screen-xl) {
+    .main-navigation {
+        padding-left: 350px;
     }
-    // Second-level-link toggle button
-    .nav-item .toggle-sub-nav {
-        &.closed .ca-gov-icon-menu-toggle-open {
-            display: none;
-        }
-
-        &.open .ca-gov-icon-menu-toggle-closed {
-            display: none;
-        }
-        //992px
-        @media (min-width: $screen-md-min) {
-            display: none; // Hide menu dropdown button from desktop view
-        }
+}
+// Second-level-link toggle button
+.nav-item .toggle-sub-nav {
+    &.closed .ca-gov-icon-menu-toggle-open {
+        display: none;
     }
 
-    //
-    // Minor divsions or sub sections
-    // --------------------------------------------------
-    // 992px
-    @media (min-width: $screen-md-min) {
-        
-
-        .fixed.top-level-nav .nav-item { // beta 5.0 addition
-            min-height: 50px;
-        }
+    &.open .ca-gov-icon-menu-toggle-closed {
+        display: none;
     }
-    /* Need a little extra specificity for IE to override display: table-cell */
-    .oldie .home-link {
-        @include sr-only();
-    }
-
-
-
-
-
-    /*full width navigation*/
-    // 992px
-    @media (min-width: $screen-md-min) {
-        .nav-full-width {
-            .main-navigation {
-                min-height: 30px;
-                margin-top: 0;
-                padding-left: 0;
-                padding-right: 0;
-
-                .top-level-nav, .top-level-nav .nav-item > a {
-                    min-height: 30px;
-                    text-decoration: none;
-                    color: #fff;
-                }
-
-                .first-level-link, .first-level-btn {
-                    padding: 5px 0 7px 0;
-
-                    &.has-sub {
-                        padding-right: 5px;
-
-                        .carrot {
-                            bottom: 7px;
-                            color: $white;
-                        }
-                    }
-                }
-            }
-        }
-        // fixed
-        .fixed.compact {
-            .branding {
-                transition: all 0.3s
-            }
-
-            .nav-full-width .main-navigation {
-                margin-top: 0;
-                min-height: 30px;
-
-                .top-level-nav .first-level-link, .top-level-nav .first-level-btn {
-                    padding: 5px 0 7px 0;
-
-                    &.has-sub {
-                        padding-right: 5px;
-                    }
-                }
-            }
-        }
-    }
-
-
-
-
-
-
-
-
-    /* FULL WIDTH MENU WITH ICONS */
     //992px
     @media (min-width: $screen-md-min) {
-        .nav-full-width-icons .main-navigation {
-            padding-left: 0px;
-            margin-top: 0px;
-        }
-        // fixed
-        .nav-full-width-icons.fixed.compact .main-navigation {
-            margin-top: 0px;
-        }
-        /* full width menu with icons BUT with .no-icons class */
-        .nav-full-width-icons .no-icons, .nav-full-width-icons.fixed.compact .no-icons {
-            min-height: 55px;
+        display: none; // Hide menu dropdown button from desktop view
+    }
+}
 
-            .top-level-nav {
-                min-height: 55px;
+//
+// Minor divsions or sub sections
+// --------------------------------------------------
+// 992px
+@media (min-width: $screen-md-min) {
+    .fixed.top-level-nav .nav-item {
+        // beta 5.0 addition
+        min-height: 50px;
+    }
+}
+/* Need a little extra specificity for IE to override display: table-cell */
+.oldie .home-link {
+    @include sr-only();
+}
 
-                .nav-item {
-                    > a {
-                        min-height: 55px;
-                        padding-top: 1rem;
+/*full width navigation*/
+// 992px
+@media (min-width: $screen-md-min) {
+    .nav-full-width {
+        .main-navigation {
+            min-height: 30px;
+            margin-top: 0;
+            padding-left: 0;
+            padding-right: 0;
 
-                        &.has-sub {
-                            .carrot {
-                                bottom: 16px;
-                            }
-                        }
+            .top-level-nav,
+            .top-level-nav .nav-item > a {
+                min-height: 30px;
+                text-decoration: none;
+                color: #fff;
+            }
+
+            .first-level-link,
+            .first-level-btn {
+                padding: 5px 0 7px 0;
+
+                &.has-sub {
+                    padding-right: 5px;
+
+                    .carrot {
+                        bottom: 7px;
+                        color: $white;
                     }
-
-                    .first-level-btn {
-                        padding-top: 15px;
-                    }
-                }
-
-                #nav-item-search button.first-level-link {
-                    padding-top: 15px;
                 }
             }
         }
     }
+    // fixed
+    .fixed.compact {
+        .branding {
+            transition: all 0.3s;
+        }
 
+        .nav-full-width .main-navigation {
+            margin-top: 0;
+            min-height: 30px;
 
+            .top-level-nav .first-level-link,
+            .top-level-nav .first-level-btn {
+                padding: 5px 0 7px 0;
 
-    /* FULL WIDTH MENU WITH REGULAR UTILITY BAR */
-    // 992px
-    @media (min-width: $screen-md-min) {
-        .full-width-nav .main-navigation {
-            padding-left: 0px;
-            margin-top: 0px;
+                &.has-sub {
+                    padding-right: 5px;
+                }
+            }
+        }
+    }
+}
+
+/* FULL WIDTH MENU WITH ICONS */
+//992px
+@media (min-width: $screen-md-min) {
+    .nav-full-width-icons .main-navigation {
+        padding-left: 0px;
+        margin-top: 0px;
+    }
+    // fixed
+    .nav-full-width-icons.fixed.compact .main-navigation {
+        margin-top: 0px;
+    }
+    /* full width menu with icons BUT with .no-icons class */
+    .nav-full-width-icons .no-icons,
+    .nav-full-width-icons.fixed.compact .no-icons {
+        min-height: 55px;
+
+        .top-level-nav {
             min-height: 55px;
 
-            .top-level-nav {
-                min-height: 55px;
-
-                .first-level-btn {
+            .nav-item {
+                > a {
                     min-height: 55px;
-                    padding-top: 12px;
+                    padding-top: 1rem;
 
                     &.has-sub {
                         .carrot {
@@ -681,107 +642,133 @@
                     }
                 }
 
-                .first-level-link {
-                    min-height: 55px;
-                    padding-top: 17px;
-                }
-
-                #nav-item-search button.first-level-link {
-                    background: none;
-                    text-align: center;
-                    border: none;
-                    padding-top: 12px;
-                    width: 100%;
+                .first-level-btn {
+                    padding-top: 15px;
                 }
             }
+
+            #nav-item-search button.first-level-link {
+                padding-top: 15px;
+            }
         }
+    }
+}
 
-        .fixed.compact {
-            .full-width-nav {
-                .main-navigation {
-                    .nav-item {
-                        .first-level-link {
-                            padding-top: 17px;
-                        }
+/* FULL WIDTH MENU WITH REGULAR UTILITY BAR */
+// 992px
+@media (min-width: $screen-md-min) {
+    .full-width-nav .main-navigation {
+        padding-left: 0px;
+        margin-top: 0px;
+        min-height: 55px;
 
-                        .first-level-btn {
-                            padding-top: 10px;
-                        }
+        .top-level-nav {
+            min-height: 55px;
 
-                        #nav-item-search button.first-level-link {
-                            padding-top: 17px;
-                            padding-bottom: 8px;
-                        }
+            .first-level-btn {
+                min-height: 55px;
+                padding-top: 12px;
+
+                &.has-sub {
+                    .carrot {
+                        bottom: 16px;
                     }
                 }
             }
 
-            .full-width-nav .main-navigation {
-                margin-top: 0;
+            .first-level-link {
+                min-height: 55px;
+                padding-top: 17px;
+            }
 
-                #nav-item-search button.first-level-link {
-                    padding-top: 9px;
-                    padding-bottom: 8px;
-                }
+            #nav-item-search button.first-level-link {
+                background: none;
+                text-align: center;
+                border: none;
+                padding-top: 12px;
+                width: 100%;
             }
         }
     }
 
+    .fixed.compact {
+        .full-width-nav {
+            .main-navigation {
+                .nav-item {
+                    .first-level-link {
+                        padding-top: 17px;
+                    }
 
+                    .first-level-btn {
+                        padding-top: 10px;
+                    }
 
-
-
-
-    /* Side nav */
-    .accordion-list.list-group {
-        .list-group-item {
-            cursor: pointer;
-
-            &:focus {
-                @include outline(2px);
-                outline-offset: -2px;
-                background-color: $gray-lightest;
-            }
-
-            &:hover {
-                background-color: $gray-lightest;
-            }
-
-            &.open {
-                background-color: $gray-lightest;
-
-                .rotate {
-                    -moz-transform: rotate(90deg) !important;
-                    -webkit-transform: rotate(90deg) !important;
-                    transform: rotate(90deg) !important;
+                    #nav-item-search button.first-level-link {
+                        padding-top: 17px;
+                        padding-bottom: 8px;
+                    }
                 }
             }
+        }
+
+        .full-width-nav .main-navigation {
+            margin-top: 0;
+
+            #nav-item-search button.first-level-link {
+                padding-top: 9px;
+                padding-bottom: 8px;
+            }
+        }
+    }
+}
+
+/* Side nav */
+.accordion-list.list-group {
+    .list-group-item {
+        cursor: pointer;
+
+        &:focus {
+            @include outline(2px);
+            outline-offset: -2px;
+            background-color: $gray-lightest;
+        }
+
+        &:hover {
+            background-color: $gray-lightest;
+        }
+
+        &.open {
+            background-color: $gray-lightest;
 
             .rotate {
-                position: absolute;
-                right: 0;
-                top: 0;
-                font-size: 1.3rem;
-                line-height: 3rem;
-                text-align: center;
-                width: 3rem;
-                height: 3rem;
-                border: none;
-                display: block !important;
-                -moz-transition: all .2s ease !important;
-                -webkit-transition: all .2s ease !important;
-                transition: all .2s ease !important;
+                -moz-transform: rotate(90deg) !important;
+                -webkit-transform: rotate(90deg) !important;
+                transform: rotate(90deg) !important;
             }
         }
+
+        .rotate {
+            position: absolute;
+            right: 0;
+            top: 0;
+            font-size: 1.3rem;
+            line-height: 3rem;
+            text-align: center;
+            width: 3rem;
+            height: 3rem;
+            border: none;
+            display: block !important;
+            -moz-transition: all 0.2s ease !important;
+            -webkit-transition: all 0.2s ease !important;
+            transition: all 0.2s ease !important;
+        }
     }
+}
 
-
-    /* v6 Nav Button */
-    .first-level-btn > * {
-        pointer-events: none;
-    }
-
-
+/* v6 Nav Button */
+.first-level-btn > * {
+    pointer-events: none;
+}
 
 /* Navigation button mobile */
 // 991px
@@ -799,7 +786,6 @@
         &:focus {
             outline-offset: -2px;
         }
-
     }
 
     .first-level-btn .carrot {
@@ -807,7 +793,8 @@
     }
 
     /* Some weird bug in mobile */
-    .no-js .megadropdown .top-level-nav .nav-item:hover .sub-nav, .megadropdown .top-level-nav .nav-item:hover .sub-nav {
+    .no-js .megadropdown .top-level-nav .nav-item:hover .sub-nav,
+    .megadropdown .top-level-nav .nav-item:hover .sub-nav {
         position: relative !important;
     }
 }
@@ -815,10 +802,10 @@
 // Adding carrot if nav item has sub nav
 // 992px
 @media (min-width: $screen-md-min) {
-    .nav-item .first-level-link.has-sub, .first-level-btn {
-
+    .nav-item .first-level-link.has-sub,
+    .first-level-btn {
         .carrot {
-            font-size: .8rem;
+            font-size: 0.8rem;
             position: absolute;
             bottom: 13px;
             display: inline-block;

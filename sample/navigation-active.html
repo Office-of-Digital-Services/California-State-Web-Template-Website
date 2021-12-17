@@ -3,38 +3,36 @@
 <!--[if IE 7]>    <html class="no-js ie7 oldie" lang="en"> <![endif]-->
 <!--[if IE 8]>    <html class="no-js ie8 oldie" lang="en"> <![endif]-->
 <!--[if IE 9]>    <html class="no-js ie9 oldie" lang="en"> <![endif]-->
-<!--[if (gt IE 9)]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+<!--[if (gt IE 9)]><!-->
+<html class="no-js" lang="en">
+<!--<![endif]-->
+
 <head>
 
-<!--    California State Template
+  <!--    California State Template (beta)
+ 
 
 Based on Twitter Bootstrap
 -->
-<meta charset="utf-8">
+  <meta charset="utf-8">
 
-<title>Megamenu Navigation</title>
+  <title>Megamenu Navigation</title>
 
-<meta name="Author" content="State of California" />
-<meta name="Description" content="State of California" />
-<meta name="Keywords" content="California, government" />
+  <meta name="Author" content="State of California" />
+  <meta name="Description" content="State of California" />
+  <meta name="Keywords" content="California, government" />
 
-<!--#include virtual="/ssi/head-css-js.html" -->
-
-<script type="text/javascript">
-  var defaultActiveLink = "Components";
-</script>
+  <!--#include virtual="/ssi/head-css-js.html" -->
+  <script type="text/javascript">
+    var defaultActiveLink = "Components";
+  </script>
 </head>
 
 <body>
 
-<header role="banner" id="header" class="global-header">
-  <div id="skip-to-content"><a href="#main-content">Skip to Main Content</a></div>
-        <!-- Include Utility Header -->
-        <!--#include virtual="/ssi/utility-header.html" -->
+  <header role="banner" id="header" class="global-header">
+    <div id="skip-to-content"><a href="#main-content">Skip to Main Content</a></div>
 
-        <!-- Settings Bar -->
-        <!--#include virtual="/ssi/settings-bar.html" -->
-        
     <!-- Include Branding -->
     <!--#include virtual="/ssi/branding.html" -->
 
@@ -42,59 +40,70 @@ Based on Twitter Bootstrap
     <!--#include virtual="/ssi/mobile-controls.html" -->
 
     <div class="navigation-search">
-        <!-- Include Navigation -->
-        <!--#include virtual="/ssi/navigation.html" -->
 
-        <div id="head-search" class="search-container">
-            <!-- Include Search -->
-            <!--#include virtual="/ssi/search.html" -->
-        </div>
-
+      <!-- Include Navigation -->
+      <!--#include virtual="/sample/modules/nav-singlelevel.html" -->
+      <div id="head-search" class="search-container">
+        <!-- Include Search -->
+        <!--#include virtual="/ssi/search.html" -->
+      </div>
     </div>
 
 
-  <div class="header-decoration"></div>
-</header>
+    <div class="header-decoration"></div>
+  </header>
 
-<div id="main-content" class="main-content">
-    <div class="section">
-        <main class="main-primary">            
-            <ol class="breadcrumb">
-                <li><a href="../index.html" title="Home page">Home</a></li>
-                <li><a href="index.html" title="Examples landing page">Examples</a></li>
-                <li class="active">Active Navigation Item</li>
-            </ol>
+  <div id="main-content" class="main-content">
+    <div class="container p-t-md p-b-lg">
+      <main class="main-primary">
+        <ol class="breadcrumb">
+          <li><a href="../index.html" title="Home page">Home</a></li>
+          <li><a href="/sample/navsamples.html" title="Navigation Samples page">Navigation Samples</a></li>
+          <li class="active">Active Navigation Item</li>
+        </ol>
 
-          <h1>Active Navigation Item</h1>
-            <p>The active navigation item is a highlighted first level link in the main navigation that represents either the current page, or a parent of the current page.<p>
-            <p>By default, the active item is automatically determined by the location of a file in the folder structure of the site. For example, if a page has the url <code>http://example.com/sample/page.html</code>, then the navigation item linking to <code>http://example.com/sample/</code>, which is the main page of the sub-folder (and the parent page), will be highlighted.</p>
-            <p>This default behavior can be disabled by removing the class <code>auto-highlight</code> from the main navigation element <code>&lt;nav id="navigation" class="main-navigation ... <strong>auto-highlight</strong>" &gt;</code></p>
+        <h1>Active Navigation Item</h1>
+        <p>The active navigation item is a highlighted first level link in the main navigation that represents either
+          the current page, or a parent of the current page.
+        <p>
+        <p>By default, the active item is automatically determined by the location of a file in the folder structure of
+          the site. For example, if a page has the url <code>http://example.com/sample/page.html</code>, then the
+          navigation item linking to <code>http://example.com/sample/</code>, which is the main page of the sub-folder
+          (and the parent page), will be highlighted.</p>
+        <p>This default behavior can be disabled by removing the class <code>auto-highlight</code> from the main
+          navigation element
+          <code>&lt;nav id="navigation" class="main-navigation ... <strong>auto-highlight</strong>" &gt;</code>
+        </p>
 
-            <h2>Setting the Active Navigation Item Manually</h2>
-            <p>The active link in the main navigation can be set manually on a page by page basis by adding a bit of javascript that overrides the <code>defaultActiveLink</code> variable.</p>
-            <p>Add the following snippet of javascript to the <code>head</code> of the page. When this variable is present, it will override the automatic setting described above.</p>
+        <h2>Setting the Active Navigation Item Manually</h2>
+        <p>The active link in the main navigation can be set manually on a page by page basis by adding a bit of
+          javascript that overrides the <code>defaultActiveLink</code> variable.</p>
+        <p>Add the following snippet of javascript to the <code>head</code> of the page. When this variable is present,
+          it will override the automatic setting described above.</p>
 
-     
 
-            <h3 class="h5"><strong>Example:</strong></h3>
 
-<pre>
+        <h3 class="h5"><strong>Example:</strong></h3>
+
+        <pre>
 &lt;script type="text/javascript"&gt;
-  var defaultActiveLink = "Components";
+  var defaultActiveLink = "Examples";
 &lt;/script&gt;
 </pre>
-      <p><span class="label label-info">NOTE:</span> This example finds the navigation item with the text "Components" and set it as the active item (as seen on this page). </p>
+        <p><span class="badge label-info">NOTE:</span> This example finds the link with the text "Services" and set it
+          as the active item (as seen on this page). </p>
 
-        </main>
+      </main>
 
-       
+
     </div>
-</div>
+  </div>
 
 
-<!--#include virtual="/ssi/global-footer.html" -->
+  <!--#include virtual="/ssi/global-footer.html" -->
 
-<!--#include virtual="/ssi/scripts.html" -->
+  <!--#include virtual="/ssi/scripts.html" -->
 
 </body>
+
 </html>

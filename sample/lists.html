@@ -3,156 +3,171 @@
 <!--[if IE 7]>    <html class="no-js ie7 oldie" lang="en"> <![endif]-->
 <!--[if IE 8]>    <html class="no-js ie8 oldie" lang="en"> <![endif]-->
 <!--[if IE 9]>    <html class="no-js ie9 oldie" lang="en"> <![endif]-->
-<!--[if (gt IE 9)]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+<!--[if (gt IE 9)]><!-->
+<html class="no-js" lang="en">
+<!--<![endif]-->
+
 <head>
 
-<!--    California State Template
+    <!--    California State Template (beta)
+ 
  
 Based on Twitter Bootstrap
 -->
-<meta charset="utf-8">
+    <meta charset="utf-8">
 
-<title>Sample - Lists (Bulleted &amp; Expanding)</title>
+    <title>Sample - Lists (Bulleted &amp; Expanding)</title>
 
-<meta name="Author" content="State of California" />
-<meta name="Description" content="State of California" />
-<meta name="Keywords" content="California, government" />
+    <meta name="Author" content="State of California" />
+    <meta name="Description" content="State of California" />
+    <meta name="Keywords" content="California, government" />
 
-<!--#include virtual="/ssi/head-css-js.html" -->
-
+    <!--#include virtual="/ssi/head-css-js.html" -->
+    <script type="text/javascript">
+        var defaultActiveLink = "Components";
+    </script>
 </head>
 
 <body>
 
-<header role="banner" id="header" class="global-header">
-	<div id="skip-to-content"><a href="#main-content">Skip to Main Content</a></div>
-        
+    <header role="banner" id="header" class="global-header">
+        <div id="skip-to-content"><a href="#main-content">Skip to Main Content</a></div>
+
         <!-- Include Utility Header -->
-		<!--#include virtual="/ssi/utility-header.html" -->	
-        
-        <!-- Settings Bar -->	
-		<!--#include virtual="/ssi/settings-bar.html" -->
+        <!--#include virtual="/ssi/utility-header.html" -->
 
-		<!-- Include Branding -->
-		<!--#include virtual="/ssi/branding.html" -->
-    
-    <!-- Include Mobile Controls -->
-    <!--#include virtual="/ssi/mobile-controls.html" -->
+        <!-- Settings Bar -->
+        <!--#include virtual="/ssi/settings-bar.html" -->
 
-    <div class="navigation-search">
-        <!-- Include Navigation -->
-        <!--#include virtual="/ssi/navigation.html" -->
+        <!-- Include Branding -->
+        <!--#include virtual="/ssi/branding-lightgrey.html" -->
 
-        <div id="head-search" class="search-container">
-            <!-- Include Search -->
-            <!--#include virtual="/ssi/search.html" -->
+        <!-- Include Mobile Controls -->
+        <!--#include virtual="/ssi/mobile-controls.html" -->
+
+        <div class="navigation-search full-width-nav container">
+            <div id="head-search" class="search-container featured-search">
+                <!-- Include Search -->
+                <!--#include virtual="/ssi/search.html" -->
+            </div>
+            <!-- Include Navigation -->
+            <!--#include virtual="/ssi/navigation.html" -->
         </div>
 
+        <div class="header-decoration"></div>
+    </header>
+
+    <div id="main-content" class="main-content">
+        <div class="container p-b-lg p-t-md">
+            <main class="main-primary">
+                <ol class="breadcrumb">
+                    <li><a href="../index.html" title="Home page">Home</a></li>
+                    <li><a href="/sample/" title="Content Modules landing page">Content Modules</a></li>
+                    <li class="active">Lists</li>
+                </ol>
+
+                <h1>Lists (Bulleted &amp; Expanding)</h1>
+                <div class="row">
+                    <div class="half">
+                        <h2>.list-overstated</h2>
+                        <p>Adding <code>.list-overstated</code> to a <code>ul</code> will render the list with bullet
+                            icons and bold hyperlinks.</p>
+                        <!--#include virtual="/sample/modules/list-overstated.html" -->
+                    </div>
+                    <div class="half">
+                        <h2><strong aria-label="Source code for List Overstated">Source Code:</strong></h2>
+                        <pre><code class="overflow-auto"><!--#include virtual="/sample/modules/list-overstated.html" --></code></pre>
+                    </div>
+                </div>
+
+                <hr>
+
+                <div class="row">
+                    <div class="half">
+                        <h2>.list-understated</h2>
+                        <p>Adding <code>.list-understated</code> to a <code>ul</code> will render the list with bullet
+                            icons and normal weighted hyperlinks.</p>
+                        <!--#include virtual="/sample/modules/list-understated.html" -->
+                    </div>
+                    <div class="half">
+                        <h2><strong aria-label="Source code for List Understated">Source Code:</strong></h2>
+                        <pre><code class="overflow-auto"><!--#include virtual="/sample/modules/list-understated.html" --></code></pre>
+                    </div>
+                </div>
+
+                <hr>
+
+                <div class="row">
+                    <div class="half">
+                        <h2>.list-standout</h2>
+                        <p>Adding <code>.list-standout</code> to a <code>ul</code> will render the list with large
+                            inward pointing arrows.</p>
+                        <!--#include virtual="/sample/modules/list-standout.html" -->
+                    </div>
+                    <div class="half">
+                        <h2><strong aria-label="Source code for List Standout">Source Code:</strong></h2>
+                        <pre><code class="overflow-auto"><!--#include virtual="/sample/modules/list-standout.html" --></code></pre>
+                    </div>
+                </div>
+
+                <hr>
+
+                <div class="row">
+                    <div class="half">
+                        <h2>List as Accordion</h2>
+
+                        <p>Accordion lists can be toggled open and close by clicking the toggle link. Add id
+                            <code>#accordion</code> and class <code>.accordion-list</code> to a <code>ul</code> to
+                            create the accordion list. Add <code>.tab</code> to the <code>li</code> tag. Finally, wrap
+                            the content to be toggled open and closed in a <code>.card</code> div. You can use
+                            <code>.accordion-list</code> in conjunction with any list style provided.
+                        </p>
+
+                        <p><span class="badge label-info">Note:</span> Accordion List uses HTML5 roles, some ARIA
+                            properties, and IDs for accessibility. For best accessibility paractices certain keyboard
+                            shortcuts are also implemented.</p>
+
+                        <!--#include virtual="/sample/modules/accordion-list.html" -->
+                    </div>
+                    <div class="half">
+                        <h2><strong aria-label="Source code for Accordion List">Source Code:</strong></h2>
+                        <pre><code class="overflow-auto"><!--#include virtual="/sample/modules/accordion-list.html" --></code></pre>
+                    </div>
+                </div>
+
+                <hr>
+
+                <div class="row">
+                    <div class="half">
+                        <h2>Multi-Tiered Ordered Lists</h2>
+                        <!--#include virtual="/sample/modules/list-multi-ordered.html" -->
+                    </div>
+                    <div class="half">
+                        <h2><strong aria-label="Source code for Multi-Tiered Ordered List">Source Code:</strong></h2>
+                        <pre><code class="overflow-auto"><!--#include virtual="/sample/modules/list-multi-ordered.html" --></code></pre>
+                    </div>
+                </div>
+
+                <hr>
+
+                <div class="row">
+                    <div class="half">
+                        <h2>Multi-Tiered Unordered Lists</h2>
+                        <!--#include virtual="/sample/modules/list-multi-unordered.html" -->
+                    </div>
+                    <div class="half">
+                        <h2><strong aria-label="Source code for Multi-Tiered Unordered List">Source Code:</strong></h2>
+                        <pre><code class="overflow-auto"><!--#include virtual="/sample/modules/list-multi-unordered.html" --></code></pre>
+                    </div>
+                </div>
+            </main>
+        </div>
     </div>
 
-	<div class="header-decoration"></div>
-</header>
+    <!--#include virtual="/ssi/global-footer.html" -->
 
-<div id="main-content" class="main-content">
-    <div class="section">
-        <main class="main-primary">            
-            <ol class="breadcrumb">
-                <li><a href="../index.html" title="Home page">Home</a></li>
-                <li><a href="index.html" title="Examples landing page">Examples</a></li>
-                <li class="active">Lists</li>
-            </ol>
-            
-         <h1>Lists (Bulleted &amp; Expanding)</h1>
-            <div class="group">
-                <div class="half">
-                    <h2>.list-overstated</h2>
-                    <p>Adding <code>.list-overstated</code> to a <code>ul</code> will render the list with bullet icons and bold hyperlinks.</p>
-                    <!--#include virtual="/sample/modules/list-overstated.html" -->
-                </div>
-                <div class="half">
-                    <h2><strong aria-label="Source code for List Overstated">Source Code:</strong></h2>
-                    <pre><code class="overflow-auto"><!--#include virtual="/sample/modules/list-overstated.html" --></code></pre>
-                </div> 
-            </div>
-            
-            <hr>
-            
-            <div class="group">
-                <div class="half">
-                    <h2>.list-understated</h2>
-                    <p>Adding <code>.list-understated</code> to a <code>ul</code> will render the list with bullet icons and normal weighted hyperlinks.</p>
-                    <!--#include virtual="/sample/modules/list-understated.html" -->
-                </div>
-                <div class="half">
-                    <h2><strong aria-label="Source code for List Understated">Source Code:</strong></h2>
-                    <pre><code class="overflow-auto"><!--#include virtual="/sample/modules/list-understated.html" --></code></pre>
-                </div> 
-            </div>
-            
-            <hr>
-            
-            <div class="group">
-                <div class="half">
-                    <h2>.list-standout</h2>
-                    <p>Adding <code>.list-standout</code> to a <code>ul</code> will render the list with large inward pointing arrows.</p>
-                    <!--#include virtual="/sample/modules/list-standout.html" -->
-                </div>
-                <div class="half">
-                    <h2><strong aria-label="Source code for List Standout">Source Code:</strong></h2>
-                    <pre><code class="overflow-auto"><!--#include virtual="/sample/modules/list-standout.html" --></code></pre>
-                </div> 
-            </div>
-            
-            <hr>
-            
-            <div class="group">
-                <div class="half">
-                    <h2>List as Accordion</h2>
-
-                    <p>Accordion lists can be toggled open and close by clicking the toggle link. Add id <code>#accordion</code> and class <code>.accordion-list</code> to a <code>ul</code> to create the accordion list. Add <code>.tab</code> to the <code>li</code> tag. Finally, wrap the content to be toggled open and closed in a <code>.card</code> div. You can use <code>.accordion-list</code> in conjunction with any list style provided.</p>
-                    
-                    <p><span class="label label-info">Note:</span> Accordion List uses HTML5 roles, some ARIA properties, and IDs for accessibility. For best accessibility paractices certain keyboard shortcuts are also implemented.</p>
-                   
-                    <!--#include virtual="/sample/modules/accordion-list.html" -->
-                </div>
-                <div class="half">
-                    <h2><strong aria-label="Source code for Accordion List">Source Code:</strong></h2>
-                    <pre><code class="overflow-auto"><!--#include virtual="/sample/modules/accordion-list.html" --></code></pre>
-                </div> 
-            </div>
-            
-            <hr>
-            
-            <div class="group">
-                <div class="half">
-                    <h2>Multi-Tiered Ordered Lists</h2>
-                    <!--#include virtual="/sample/modules/list-multi-ordered.html" -->
-                </div>
-                <div class="half">
-                    <h2><strong aria-label="Source code for Multi-Tiered Ordered List">Source Code:</strong></h2>
-                    <pre><code class="overflow-auto"><!--#include virtual="/sample/modules/list-multi-ordered.html" --></code></pre>
-                </div> 
-            </div>
-            
-            <hr>
-            
-            <div class="group">
-                <div class="half">
-                    <h2>Multi-Tiered Unordered Lists</h2>
-                    <!--#include virtual="/sample/modules/list-multi-unordered.html" -->
-                </div>
-                <div class="half">
-                    <h2><strong aria-label="Source code for Multi-Tiered Unordered List">Source Code:</strong></h2>
-                    <pre><code class="overflow-auto"><!--#include virtual="/sample/modules/list-multi-unordered.html" --></code></pre>
-                </div> 
-            </div>
-        </main>
-    </div>
-</div>
-
-<!--#include virtual="/ssi/global-footer.html" -->
-
-<!--#include virtual="/ssi/scripts.html" -->
+    <!--#include virtual="/ssi/scripts.html" -->
 
 </body>
+
 </html>

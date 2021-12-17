@@ -3,60 +3,60 @@
 <!--[if IE 7]>    <html class="no-js ie7 oldie" lang="en"> <![endif]-->
 <!--[if IE 8]>    <html class="no-js ie8 oldie" lang="en"> <![endif]-->
 <!--[if IE 9]>    <html class="no-js ie9 oldie" lang="en"> <![endif]-->
-<!--[if (gt IE 9)]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+<!--[if (gt IE 9)]><!-->
+<html class="no-js" lang="en">
+<!--<![endif]-->
+
 <head>
 
-<!--    California State Template
+    <!--    California State Template (beta)
+ 
  
 Based on Twitter Bootstrap
 -->
-<meta charset="utf-8">
+    <meta charset="utf-8">
 
-<title>Sample - Parallax</title>
+    <title>Sample - Parallax</title>
 
-<meta name="Author" content="State of California" />
-<meta name="Description" content="State of California" />
-<meta name="Keywords" content="California, government" />
+    <meta name="Author" content="State of California" />
+    <meta name="Description" content="State of California" />
+    <meta name="Keywords" content="California, government" />
 
-<!--#include virtual="/ssi/head-css-js.html" -->
-
+    <!--#include virtual="/ssi/head-css-js.html" -->
+    <script type="text/javascript">
+        var defaultActiveLink = "Components";
+    </script>
 </head>
 
-<body>
+<body class="two-column">
 
-<header role="banner" id="header" class="global-header">
-	<div id="skip-to-content"><a href="#main-content">Skip to Main Content</a></div>
-        
+    <header role="banner" id="header" class="global-header">
+        <div id="skip-to-content"><a href="#main-content">Skip to Main Content</a></div>
+
         <!-- Include Utility Header -->
-		<!--#include virtual="/ssi/utility-header.html" -->	
-        
-        <!-- Settings Bar -->	
-		<!--#include virtual="/ssi/settings-bar.html" -->
+        <!--#include virtual="/ssi/utility-header.html" -->
+        <!-- Settings Bar -->
+        <!--#include virtual="/ssi/settings-bar.html" -->
+        <!-- Include Branding -->
+        <!--#include virtual="/ssi/branding-lightgrey.html" -->
+        <!-- Include Mobile Controls -->
+        <!--#include virtual="/ssi/mobile-controls.html" -->
 
-		<!-- Include Branding -->
-		<!--#include virtual="/ssi/branding.html" -->
-    
-    <!-- Include Mobile Controls -->
-    <!--#include virtual="/ssi/mobile-controls.html" -->
-
-    <div class="navigation-search">
-        <!-- Include Navigation -->
-        <!--#include virtual="/ssi/navigation.html" -->
-
-        <div id="head-search" class="search-container">
-            <!-- Include Search -->
-            <!--#include virtual="/ssi/search.html" -->
+        <div class="navigation-search full-width-nav container">
+            <div id="head-search" class="search-container featured-search">
+                <!-- Include Search -->
+                <!--#include virtual="/ssi/search.html" -->
+            </div>
+            <!-- Include Navigation -->
+            <!--#include virtual="/ssi/navigation.html" -->
         </div>
 
-    </div>
+        <div class="header-decoration"></div>
+    </header>
 
-	<div class="header-decoration"></div>
-</header>
-
-<div id="main-content">
-    
+    <div id="main-content">
         <main class="main-primary">
-            <div class="container p-b-lg">
+            <div class="container p-b-lg p-t-md">
 
                 <ol class="breadcrumb">
                     <li><a href="../index.html" title="Home page">Home</a></li>
@@ -65,25 +65,33 @@ Based on Twitter Bootstrap
                 </ol>
 
                 <h1>Parallax</h1>
-                <p>Parallax scrolling is a web site trend where the background content image is moved at a different speed than the foreground content while scrolling. To implement parallax effect use div with <code>.parallax-bg</code> class and with <code>data-image-src</code> attribute that will point to your backgound image. You can add your webpage content inside of the <code>.parallax-bg</code> div.</p>
+                <p>Parallax scrolling is a web site trend where the background content image is moved at a different
+                    speed than the foreground content while scrolling. To implement parallax effect use div with
+                    <code>.parallax-bg</code> class and with <code>style="background-image: url()"</code> attribute that
+                    will point to
+                    your backgound image. You can add your webpage content inside of the <code>.parallax-bg</code> div.
+                </p>
             </div>
 
 
-            <div class="parallax-bg" id="parallax-1" data-image-src="/images/background-primary.jpg">
+            <div class="parallax-bg" style="background-image: url(/images/background-primary.jpg)">
                 <div class="section-impact width-200 height-80 brd-gray-light brd-solid-1 relative-centered">
                     <h2 class="h3 text-center m-0 relative-centered">SCROLL DOWN</h2>
                 </div>
             </div>
-            <div class="parallax-bg height-300" id="parallax-2" data-image-src="/images/bg-open-data.jpg">
+            <div class="parallax-bg height-300" style="background-image: url(/images/bg-open-data.jpg)">
                 <div class="container p-y-lg">
                     <h2 class="text-center">Parallax Height</h2>
-                    <p class="text-center">height can be specified by adding height class, such as <code>.height-300</code></p>
+                    <p class="text-center">height can be specified by adding height class, such as
+                        <code>.height-300</code>
+                    </p>
                 </div>
             </div>
-            <div class="parallax-bg height-300 bg-dark" id="parallax-3" data-image-src="/images/main-banner4.jpg">
+            <div class="parallax-bg height-300 bg-dark" style="background-image: url(/images/main-banner4.jpg)">
                 <div class="container p-y-lg">
                     <h2 class="text-center color-white">Light Text Color</h2>
-                    <p class="text-center color-white">Make light text on dark backgrounds by adding class .color-white</p>
+                    <p class="text-center color-white">Make light text on dark backgrounds by adding class .color-white
+                    </p>
                 </div>
             </div>
 
@@ -92,23 +100,23 @@ Based on Twitter Bootstrap
 
 
             <div class="container p-b-lg">
-                <h2><label for="sample-accordion-list">Source Code:</label></h2>
+                <h2><label for="sample-panels">Source Code:</label></h2>
                 <div class="form-group">
-<textarea id="sample-accordion-list" class="form-control" rows="17" cols="80"><div class="parallax-bg" id="parallax-1" data-image-src="/images/background-primary.jpg">
-                    <div class="section-impact width-200 height-80 brd-gray-light brd-solid-1 relative-centered">
-                    <h3 class="text-center m-0 relative-centered">SCROLL DOWN</h3>
+                    <textarea id="sample-panels" class="form-control" rows="17" cols="80"><div class="parallax-bg" style="background-image: url(/images/background-primary.jpg)">
+    <div class="section-impact width-200 height-80 brd-gray-light brd-solid-1 relative-centered">
+        <h3 class="text-center m-0 relative-centered">SCROLL DOWN</h3>
     </div>
 </div>
-<div class="parallax-bg height-300" id="parallax-2" data-image-src="/images/bg-open-data.jpg">
-                    <div class="container p-y-lg">
-                    <h2 class="text-center">Parallax Height</h2>
-                    <p class="text-center">height can be specified by adding height class, such as <code>.height-300</code></p>
+<div class="parallax-bg height-300" style="background-image: url(/images/bg-open-data.jpg)">
+    <div class="container p-y-lg">
+        <h2 class="text-center">Parallax Height</h2>
+        <p class="text-center">height can be specified by adding height class, such as <code>.height-300</code></p>
     </div>
 </div>
-<div class="parallax-bg height-300 bg-dark" id="parallax-3" data-image-src="/images/main-banner4.jpg">
-                    <div class="container p-y-lg">
-                    <h2 class="text-center color-white">Light Text Color</h2>
-                    <p class="text-center color-white">Make light text on dark backgrounds by adding class .color-white</p>
+<div class="parallax-bg height-300 bg-dark" style="background-image: url(images/main-banner4.jpg)">
+    <div class="container p-y-lg">
+        <h2 class="text-center color-white">Light Text Color</h2>
+        <p class="text-center color-white">Make light text on dark backgrounds by adding class .color-white</p>
     </div>
 </div></textarea>
 
@@ -124,8 +132,10 @@ Based on Twitter Bootstrap
     </div>
 
 
+
     <!--#include virtual="/ssi/global-footer.html" -->
     <!--#include virtual="/ssi/scripts.html" -->
 
 </body>
+
 </html>
