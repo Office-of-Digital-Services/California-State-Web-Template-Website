@@ -42,6 +42,7 @@ var jssrc = [
     'source/js/cagov/tabs.js',
     'source/js/cagov/number-counter.js',
     'source/js/cagov/settings.js',
+    'source/js/cagov/return-top.js',
 ];
 
 var jssrcmap = ['source/js/bootstrap/bootstrap.bundle.min.js.map',];

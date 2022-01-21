@@ -17929,9 +17929,10 @@ html {
 .return-top {
   position: fixed;
   z-index: 99999;
-  right: 0;
+  right: -100px;
   bottom: 125px;
   padding: 0 5px;
+  border: 1px solid #d6d6d6;
   border-top-left-radius: 5px;
   border-bottom-left-radius: 5px;
   opacity: 0;
@@ -17942,6 +17943,7 @@ html {
   text-align: center;
   text-decoration: none;
   cursor: pointer;
+  transition: all 0.5s ease;
 }
 
 .return-top:before {
@@ -17954,8 +17956,7 @@ html {
   opacity: 1;
   visibility: visible;
   display: inline;
-  -webkit-animation: fadeInRight 1s 1 cubic-bezier(0.77, 0, 0.175, 1);
-  animation: fadeInRight 1s 1 cubic-bezier(0.77, 0, 0.175, 1);
+  right: 0;
 }
 
 @media (max-width: 767px) {
