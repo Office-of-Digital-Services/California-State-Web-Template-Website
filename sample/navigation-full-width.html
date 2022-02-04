@@ -10,7 +10,7 @@
 
 <head>
 
-    <!--    California State Template (beta)
+    <!--    California State Template
  
  
 Based on Twitter Bootstrap
@@ -58,11 +58,14 @@ Based on Twitter Bootstrap
     <div id="main-content" class="main-content">
         <div class="section">
             <main class="main-primary">
-                <ol class="breadcrumb">
-                    <li><a href="../index.html" title="Home page">Home</a></li>
-                    <li><a href="/sample/navsamples.html" title="Navigation Samples page">Navigation Samples</a></li>
-                    <li class="active">Full Width Navigation</li>
-                </ol>
+                <nav aria-label="You are here">
+                    <ol class="breadcrumb">
+                        <li><a href="../index.html" title="Home page">Home</a></li>
+                        <li><a href="/sample/navsamples.html" title="Navigation Samples page">Navigation Samples</a>
+                        </li>
+                        <li class="active">Full Width Navigation</li>
+                    </ol>
+                </nav>
 
                 <h1>Full Width Navigation (with no icons)</h1>
                 <p>
@@ -73,7 +76,8 @@ Based on Twitter Bootstrap
                     instead of <code>utility-header.html</code> server side include.
                 </p>
                 <p>If you don't want to use icons on top of menu items simply add class <code>.no-icons</code> to the
-                    <code>nav</code> tag.</p>
+                    <code>nav</code> tag.
+                </p>
                 <p>
                     <span class="badge label-info">Note:</span> Please note that there are no social icons links in the
                     <code>branding-full-width-icons.html</code>

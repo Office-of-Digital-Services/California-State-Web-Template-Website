@@ -8,25 +8,25 @@
     background-color: $white;
     border: $card-border-width solid $card-border-color;
     border-radius: $card-border-radius;
-    
+
     .btn-block {
-            margin-top:5px;
+        margin-top: 5px;
     }
-    
+
     .toggle-more {
         display: inline-block;
         color: $gray-light;
-        font-family: 'CaGov';
+        font-family: "CaGov";
         font-size: 22px;
         margin-left: -11px;
-        
+
         &:before {
-            content:"\e050";       // .ca-gov-icon-plus-fill
+            content: "\e050"; // .ca-gov-icon-plus-fill
         }
-        
+
         /* Change icon to minus */
         &.active:before {
-            content:"\e04f";       // .ca-gov-icon-minus-fill
+            content: "\e04f"; // .ca-gov-icon-minus-fill
         }
     }
 }
@@ -37,7 +37,7 @@
 
 .card-title {
     margin-bottom: $card-spacer-y;
-    margin-top:0;
+    margin-top: 0;
 }
 
 .card-subtitle {
@@ -59,8 +59,6 @@
     }
 }
 
-
-
 //
 // Optional textual caps
 //
@@ -71,7 +69,7 @@
     //border-bottom: $card-border-width solid $card-border-color;
 
     &:first-child {
-            border-radius:$card-border-radius-inner $card-border-radius-inner 0 0;
+        border-radius: $card-border-radius-inner $card-border-radius-inner 0 0;
     }
 }
 
@@ -84,7 +82,6 @@
         border-radius: 0 0 $card-border-radius-inner $card-border-radius-inner;
     }
 }
-
 
 // Card image caps
 .card-img-top {

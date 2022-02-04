@@ -8,7 +8,7 @@
 <!--<![endif]-->
 
 <head>
-    <!--    California State Template (beta)
+    <!--    California State Template
  
 
     Based on Twitter Bootstrap
@@ -57,11 +57,14 @@
     <div id="main-content" class="main-content">
         <div class="container p-b-lg p-t-md">
             <main class="main-primary">
-                <ol class="breadcrumb">
-                    <li><a href="../index.html" title="Home page">Home</a></li>
-                    <li><a href="/sample/" title="Content Modules landing page">Content Modules</a></li>
-                    <li class="active">Text Accent</li>
-                </ol>
+                <nav aria-label="You are here">
+                    <ol class="breadcrumb">
+                        <li><a href="../index.html" title="Home page">Home</a></li>
+                        <li><a href="/sample/" title="Content Modules landing page">Content Modules</a></li>
+                        <li class="active">Text Accent</li>
+                    </ol>
+                </nav>
+
 
                 <div class="row">
                     <div class="half">
@@ -75,7 +78,8 @@
                     </div>
                     <div class="half">
                         <h2>Source Code:</h2>
-                        <pre class="section-default"><code><!--#include virtual="/sample/modules/text-accent.html"--></code></pre>
+                        <pre
+                            class="section-default"><code><!--#include virtual="/sample/modules/text-accent.html"--></code></pre>
                     </div>
                 </div>
             </main>
