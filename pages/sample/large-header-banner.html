@@ -1,0 +1,53 @@
+﻿---
+title: Hero Banner
+layout: landing.njk
+permalink: "sample/large-header-banner.html"
+---
+
+
+{% include "../../src/_includes/modules/header-large-banner.html" %}
+
+
+<div class="container p-b-lg p-t-md">
+    <nav aria-label="You are here">
+        <ol class="breadcrumb">
+            <li><a href="../index.html" title="Home page">Home</a></li>
+            <li><a href="/sample/" title="Content Modules landing page">Content Modules</a></li>
+            <li class="active">Large Header Banner</li>
+        </ol>
+    </nav>
+
+
+    <h1>Large Hero Banner</h1>
+    <p>The large header banner is a full screen hero banner that will dynamically calculate the height of
+        the window and fill it with the chosen image. To use this banner type add
+        <code>/src/_includes/modules/header-large-banner.html</code> using the eleventy, or any other include method
+        right below the main tag
+        of
+        the desired page.
+    </p>
+
+    <pre>
+&lt;main&gt; <br>&lt;!-- Include Header Banner--&gt;
+&#10100;% include "../../src/_includes/modules/header-large-banner.html" %&#10101;</pre>
+
+    <p><span class="badge label-info">Note:</span> To have the banner dissapear in a mobile viewport add the
+        <code>.primary</code> class to the <code>&lt;body&gt;</code> element of the page otherwise the
+        banner will remain in all screen sizes.
+    </p>
+
+    <p>To change the background image edit the <strong>header-large-banner.html</strong> include file
+        located in the <strong>/src/_includes/modules/ </strong>directory. The image is set by changing the
+        <code>background</code> property in the style attribute for
+        <code>&lt;div class="header-large-banner" style="background-image: url('<strong>/sample/images/background_2.jpg</strong>');"&gt;</code>.
+        The recommended dimensions of the banner images are 1500 by 500 pixels.
+    </p>
+
+
+    <h2>Source Code:</h2>
+    <pre><code class="overflow-auto">{% include "../../src/_includes/modules/header-large-banner.html" %}</code></pre>
+
+    <h2>Other hero banner options</h2>
+
+    <a href="primary-banner.html" class="btn btn-secondary m-r-sm m-b-sm">Primary Banner</a>
+</div>

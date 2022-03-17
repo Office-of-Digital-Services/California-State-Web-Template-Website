@@ -1,0 +1,35 @@
+/* -----------------------------------------
+   BREADCRUMBS -  /source/scss/cagov/breadcrumbs.scss
+----------------------------------------- */
+
+.breadcrumb {
+    padding-left: 0;
+    background-color: transparent;
+    // @include font-size(1);
+    font-size: $font-size-base;
+    @include media-breakpoint-up(sm) {
+        font-size: calc(#{$font-size-base} + #{$ratio});
+    }
+
+    li {
+        &:before {
+            content: "";
+            border-left: 1px dotted $gray-light;
+            margin: 0 calc($grid-gutter-width / 2);
+            font-size: 10px;
+            position: relative;
+            top: -2px;
+        }
+
+        &:first-child {
+            &:before {
+                border-left: none; // Removes the border from the first item in the breadcrumb
+                margin: 0 0;
+            }
+        }
+    }
+}
+
+.breadcrumb > li + li:before {
+    padding: 0; // Overrides Bootstraps injected content
+}

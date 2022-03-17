@@ -1,0 +1,73 @@
+﻿---
+title: Profile Banners
+layout: page.njk
+permalink: "sample/profile-banners.html"
+---
+
+<nav aria-label="You are here">
+    <ol class="breadcrumb">
+        <li><a href="../index.html" title="Home page">Home</a></li>
+        <li><a href="/sample/" title="Content Modules landing page">Content Modules</a></li>
+        <li class="active">Profile Banners</li>
+    </ol>
+</nav>
+
+<h1>Profile Banners</h1>
+<div class="row">
+    <div class="col-md-4">
+        <h2>Example:</h2>
+        {% include "../../src/_includes/modules/profile-banners.html" %}
+    </div>
+    <div class="col-md-8">
+        <h3>Source Code:</h3>
+
+        <div class="tab-group">
+            <ul id="sourceCode" class="nav nav-tabs" role="tablist">
+                <li class="active"><a href="#html" role="tab" data-bs-toggle="tab"
+                        aria-label="HTML Markup for Profile Banner" class="active">HTML Markup</a></li>
+                <li><a href="#microdata" role="tab" data-bs-toggle="tab"
+                        aria-label="Microdata for Profile Banner">Microdata</a></li>
+            </ul>
+            <!-- Tab panes -->
+            <div class="tab-content responsive">
+                <div class="tab-pane active" id="html">
+                    <pre><code class="overflow-auto">{% include "../../src/_includes/modules/profile-banners.html" %}</code></pre>
+                </div>
+                <div class="tab-pane" id="microdata">
+                    <pre><code class="overflow-auto">{% include "../../src/_includes/modules/profile-banners-schema.html" %}</code></pre>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<hr />
+
+
+<div class="row">
+    <div class="col-md-4">
+        <h2>Vertical Layout:</h2>
+        {% include "../../src/_includes/modules/profile-banners-vertical.html" %}
+    </div>
+    <div class="col-md-8">
+        <h3>Source Code:</h3>
+
+        <div class="tab-group">
+            <ul id="sourceCode2" class="nav nav-tabs" role="tablist">
+                <li class="active"><a href="#html2" class="active" role="tab" data-bs-toggle="tab"
+                        aria-label="HTML Markup for Profile Banner Vertical Layout">HTML Markup</a></li>
+                <li><a href="#microdata2" role="tab" data-bs-toggle="tab"
+                        aria-label="Microdata for Profile Banner Vertical Layout">Microdata</a></li>
+            </ul>
+            <!-- Tab panes -->
+            <div class="tab-content responsive">
+                <div class="tab-pane active" id="html2">
+                    <pre><code class="overflow-auto">{% include "../../src/_includes/modules/profile-banners-vertical.html" %}</code></pre>
+                </div>
+                <div class="tab-pane" id="microdata2">
+                    <pre><code class="overflow-auto">{% include "../../src/_includes/modules/profile-banners-vertical-schema.html" %}</code></pre>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>

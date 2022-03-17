@@ -1,0 +1,122 @@
+﻿---
+title: Location Widgets
+layout: page.njk
+permalink: "sample/location-widgets.html"
+---
+<nav aria-label="You are here">
+    <ol class="breadcrumb">
+        <li><a href="../index.html" title="Home page">Home</a></li>
+        <li><a href="/sample/" title="Content Modules landing page">Content Modules</a></li>
+        <li class="active">Location Widgets</li>
+    </ol>
+</nav>
+
+<div class="row">
+    <div class="col-md-8">
+        <h1>Location Widgets</h1>
+
+        <p>Location widgets display organizational contact information in a variety of ways. Start with a div
+            with a class of <code>.location</code> each different version extends the default module with an
+            additional class. For example: <code>.contact</code> displays the address with an email icon on the
+            left. <code>.mini</code> is a more compact address format best used as a list. <code>.banner</code>
+            works best as a footer or section divider as it is a full width banner that includes the option for
+            a photo and description in addition to the address.</p>
+
+        {% include "../../src/_includes/modules/schema-boilerplate.html" %}
+
+
+
+        <h2>Example Contact Location:</h2>
+        {% include "../../src/_includes/modules/location.html" %}
+
+
+        <h2>Source Code:</h2>
+
+        <div class="tab-group">
+            <ul id="sourceCode" class="nav nav-tabs" role="tablist">
+                <li class="active"><a href="#html" role="tab" data-bs-toggle="tab"
+                        aria-label="HTML Markup for Contact Location">HTML Markup</a></li>
+                <li><a href="#microdata" role="tab" data-bs-toggle="tab"
+                        aria-label="Microdata for Contact Location">Microdata</a></li>
+            </ul>
+            <!-- Tab panes -->
+            <div class="tab-content responsive">
+                <div class="tab-pane active" id="html">
+                    <pre><code class="overflow-auto">{% include "../../src/_includes/modules/location.html" %}</code></pre>
+                </div>
+                <div class="tab-pane" id="microdata">
+                    <pre><code class="overflow-auto">{% include "../../src/_includes/modules/location-schema.html" %}</code></pre>
+                </div>
+            </div>
+        </div>
+
+
+
+        <hr>
+
+
+        <h2>Example Mini Location:</h2>
+        {% include "../../src/_includes/modules/location-mini.html" %}
+
+        <h2>Source Code:</h2>
+
+        <div class="tab-group">
+            <ul id="sourceCode2" class="nav nav-tabs" role="tablist">
+                <li class="active"><a href="#minihtml" role="tab" data-bs-toggle="tab"
+                        aria-label="HTML Markup for Contact Mini Location">HTML Markup</a></li>
+                <li><a href="#minimicrodata" role="tab" data-bs-toggle="tab"
+                        aria-label="Microdata for Contact Mini Location">Microdata</a></li>
+            </ul>
+            <!-- Tab panes -->
+            <div class="tab-content responsive">
+                <div class="tab-pane active" id="minihtml">
+                    <pre><code class="overflow-auto">{% include "../../src/_includes/modules/location-mini.html" %}</code></pre>
+                </div>
+                <div class="tab-pane" id="minimicrodata">
+                    <pre><code class="overflow-auto">{% include "../../src/_includes/modules/location-mini-schema.html" %}</code></pre>
+                </div>
+            </div>
+        </div>
+
+
+        <hr>
+
+
+        <h2>Example Location Banner:</h2>
+        {% include "../../src/_includes/modules/location-banner.html" %}
+
+        <h2>Source Code:</h2>
+
+        <div class="tab-group">
+            <ul id="sourceCode3" class="nav nav-tabs" role="tablist">
+                <li class="active"><a href="#bannerhtml" role="tab" data-bs-toggle="tab"
+                        aria-label="HTML Markup for Contact Location Banner">HTML Markup</a></li>
+                <li><a href="#bannermicrodata" role="tab" data-bs-toggle="tab"
+                        aria-label="Microdata for Contact Location Banner">Microdata</a></li>
+            </ul>
+            <!-- Tab panes -->
+            <div class="tab-content responsive">
+                <div class="tab-pane active" id="bannerhtml">
+                    <pre><code class="overflow-auto">{% include "../../src/_includes/modules/location-banner.html" %}</code></pre>
+                </div>
+                <div class="tab-pane" id="bannermicrodata">
+                    <pre><code class="overflow-auto">{% include "../../src/_includes/modules/location-banner-schema.html" %}</code></pre>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="main-secondary" role="complementary">
+            {% include "../../src/_includes/modules/location.html" %}
+
+            <div class="card card-overstated">
+                <div class="card-heading">
+                    <h2 class="h4"><span class="ca-gov-icon-road-pin"></span> Mini Locations</h2>
+                </div>
+                <div class="card-body">
+                    {% include "../../src/_includes/modules/location-mini.html" %}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

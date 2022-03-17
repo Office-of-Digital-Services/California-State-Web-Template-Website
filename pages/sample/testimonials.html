@@ -1,0 +1,79 @@
+﻿---
+title: Testimonials
+layout: page.njk
+permalink: "sample/testimonials.html"
+---
+
+<nav aria-label="You are here">
+    <ol class="breadcrumb">
+        <li><a href="../index.html" title="Home page">Home</a></li>
+        <li><a href="/sample/" title="Content Modules landing page">Content Modules</a></li>
+        <li class="active">Testimonials</li>
+    </ol>
+</nav>
+
+
+<h1>Testimonials</h1>
+<p>The Testimonial <code>.thumbnail</code> can be positioned within the testimonial to fit various
+    styles. Use classes <code>.thumbnail-left</code>, <code>.thumbnail-right</code> to control the
+    horizontal alignment. Use <code>.thumbnail-middle</code>, <code>.thumbnail-bottom</code> to control
+    it'ts vertical alignment. This is helpful when it's desirable to align the image with the middle or
+    bottom of the testimonial. <code>.thumbnail-top</code> will place the image above the testimonail
+    text and center it within the testimonial panel.</p>
+
+<p>Thumbnail images can also have classes applied to change the look and feel. <code>.img-circle</code>
+    and <code>.img-rounded</code> can be used to round the corders of the image.</p>
+
+<div class="row">
+    <div class="half">
+        <h2>Image Left Aligned:</h2>
+        {% include "../../src/_includes/modules/testimonial-default.html" %}
+    </div>
+    <div class="half">
+        <h2>Source Code:</h2>
+        <pre><code class="overflow-auto">{% include "../../src/_includes/modules/testimonial-default.html" %}</code></pre>
+    </div>
+</div>
+
+<hr>
+
+<div class="row">
+    <div class="half">
+        <h2>Thumnail Right Aligned:</h2>
+        {% include "../../src/_includes/modules/testimonial-danger.html" %}
+        <p><span class="badge label-info">Note:</span> The source order for <code>.thumbnail</code> and
+            <code>.testimonial-body</code> have been reversed. Source order is important when using this
+            component with this configuration.
+        </p>
+    </div>
+    <div class="half">
+        <h2>Source Code:</h2>
+        <pre><code class="overflow-auto">{% include "../../src/_includes/modules/testimonial-danger.html" %}</code></pre>
+    </div>
+</div>
+
+<hr>
+
+<div class="row">
+    <div class="half">
+        <h2>Thumbnail Bottom Aligned:</h2>
+        {% include "../../src/_includes/modules/testimonial-standout.html" %}
+    </div>
+    <div class="half">
+        <h2>Source Code:</h2>
+        <pre><code class="overflow-auto">{% include "../../src/_includes/modules/testimonial-standout.html" %}</code></pre>
+    </div>
+</div>
+
+<hr>
+
+<div class="row">
+    <div class="half">
+        <h2>Thumbnail Top:</h2>
+        {% include "../../src/_includes/modules/testimonial-top.html" %}
+    </div>
+    <div class="half">
+        <h2>Source Code:</h2>
+        <pre><code class="overflow-auto">{% include "../../src/_includes/modules/testimonial-top.html" %}</code></pre>
+    </div>
+</div>

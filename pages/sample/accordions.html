@@ -1,0 +1,63 @@
+﻿---
+title: Accordions
+layout: page.njk
+permalink: "sample/accordions.html"
+---
+<nav aria-label="You are here">
+    <ol class="breadcrumb">
+        <li><a href="../index.html" title="Home page">Home</a></li>
+        <li><a href="/sample/" title="Content Modules landing page">Content Modules</a></li>
+        <li class="active">Accordions</li>
+    </ol>
+</nav>
+<div class="row">
+    <div class="col-md-6">
+        <h1>Accordion</h1>
+        <h2>Example:</h2>
+        {% include "../../src/_includes/modules/accordion.html" %}
+    </div>
+    <div class="col-md-6">
+        <h3><label for="sample-accordion">Source Code:</label></h3>
+        <textarea id="sample-accordion" class="form-control" rows="10"
+            cols="80">{% include "../../src/_includes/modules/accordion.html" %}</textarea>
+    </div>
+</div>
+<hr class="m-t-md" />
+
+<div class="row p-b-lg">
+    <div class="col-md-6">
+        <h2>Accordion Side Menu</h2>
+        <p>
+            Accordion side menu is a vertical navigation component which apart from traditional, text
+            links, might embed icons, dropdowns, images or even forms. For more information and examples
+            visit <a href="navigation-sidebar.html">side menu navigation</a> page.
+        </p>
+
+
+        <h2>Example:</h2>
+        {% include "../../src/_includes/modules/nav-side.html" %}
+    </div>
+    <div class="col-md-6">
+        <h3><label for="sample-side-menu">Source Code:</label></h3>
+        <textarea id="sample-side-menu" class="form-control" rows="10" cols="80">{% include "../../src/_includes/modules/nav-side.html" %}
+                                                 </textarea>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-6">
+        <h2>Accordion List</h2>
+        <p>
+            Accordion lists are commonly used for things like FAQ's where the title exposes the
+            description in an expanding menu fashion.
+            Accordion List uses HTML5 roles, some ARIA properties, and IDs for accessibility.
+        </p>
+        <h2>Example:</h2>
+        {% include "../../src/_includes/modules/accordion-list.html" %}
+    </div>
+    <div class="col-md-6">
+        <h3><label for="sample-accordion-list">Source Code:</label></h3>
+        <textarea id="sample-accordion-list" class="form-control" rows="10" cols="80">{% include "../../src/_includes/modules/accordion-list.html" %}
+</textarea>
+    </div>
+</div>
