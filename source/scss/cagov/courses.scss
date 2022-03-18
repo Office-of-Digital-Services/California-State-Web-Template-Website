@@ -4,12 +4,13 @@
 
 .course-item {
     @include card();
-    
-    .thumbnail~.header, .thumbnail~.body {
-        margin-left:(($grid-gutter-width / 2)+70);      // 70 is the width of the thumbnail in pixels
+
+    .thumbnail ~ .header,
+    .thumbnail ~ .body {
+        margin-left: 5.125rem;
     }
-    
+
     .datetime {
-        clear:both;
+        clear: both;
     }
 }
