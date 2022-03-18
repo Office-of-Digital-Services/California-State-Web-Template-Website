@@ -1,27 +1,42 @@
 /* -----------------------------------------
    Version History
 ----------------------------------------- */
-v5.0.1 
+v5.6.0
         
-    1)  Added unit values to .second-level-nav > li to control absolute height.
-    
-    2)  Added icons to navigation and sub-navigation
+Framework and components updates:
+- No more jQuery dependency and jQuery plugins.
+- Updated bootstrap to v5.1.3.
+- Removed some of the jQuery dependent components such as: owl-carousels and slideshows (replaced it with native bootstrap carousel), Service Tiles, Panes.
+- Converted following jQuery components to the vanilla JavaScript: Accordion, Accordion List, Fixed Header, Navigation, Number Counter, Parallax, Search, Site Settings, Tabs.
+- Updated bootstrap's collapse/expand data toggle attributes in collapse buttons and modals throughout the site. (for example: changed data-toggle="collapse" to data-bs-toggle="collapse", changed data-toggle="modal" to data-bs-toggle="modal").
+- Completely changed accordion's structure and code. Now it is running on CAGgov Design System's accordion script.
+- Updated side navigation structure to work with new accordion component.
+- Removed jQuery owl-carousels and sliders and replaced it with bootstrap's native slider.
+Layout and structure Updates:
+- Added featured search header and icon-less navigation layout to every sample page. (Old v5.5 header and navigation layout are still in the navigation samples).
+- Updated badges classes to reflect new bootstrap 5 markup (changed "label" class to "badge").
+- Replaced outdated State Template's grid classes to the native Bootstrap grid classes (for example, changed "group" class to "row", or "quarter" to "col-md-3". etc.).
+- Updated main banner height property (removed jQuery calculation and replaced it with pure css properties).
+- Updated header's position to sticky instead of fixed. The fixed-header.js script is now hiding utility header on scroll instead of adding compact class to header.
+Font updates:
+- Added site's google font files into the local /fonts/ folder to have local font loading to limit http requests.
+- Updated CaGov icon Font: added GitHub icon and updated pdf-text icon
+- Added responsive font size calculation functionality. Body text and headings font sizes and their top and bottom margins are automatically calculated into appropriate values based on the dimensions of the browser viewport.
 
-    3)  Added the following new components:
-        • Accordions
-        • Animations (Helper Classes)
-        • Blockquotes
-        • Cards
-        • Content Sliders
-        • Charts
-        • Media Object
-        • Number Counter
-        • Progress Bars
-        • Sections
-        • Service Group
-        • Spacing (Helper Classes)
-        • Bottom Tabs
-        • Testimonials
-        • Text Accent Colors
+v5.6.1 
+- Icons update: fixed badminton typo, added delete (trash can) icon
+- Added back-to-top button component
+- Fixed .btn-hover rounder corners on hover
+- Enclosed breadcrumbs into nav element, added aria-label="you are here" to it.
+- Removed outdated IE 10 SVG hack that throws css error
+- Restored panes component (it's now using pure css)
+- Fixed negative border radius value for Cards
 
-v5.0.1 Initialize v5 template using v4 source code
+v5.6.2
+- Updated State Web Template Google Analytics code
+- Added line-height property to the headings
+- Fixed News Blocks page layout issue
+- Fixed Course List page layout issue (updated courses.scss)
+- Removed broken link on Layouts landing page
+- Fixed broken link to Events page that was in Layouts landing page
+- Removed old carousel section from General Landing page
