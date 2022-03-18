@@ -379,11 +379,11 @@
 </p>
 
 <h2>CDN example using core CSS files</h2>
-<pre><span class="text-accent-p2">&lt;link</span> <span class="text-info">href=</span><span class="text-accent7">"https://california.azureedge.net/cdt/statetemplate/5.6.1/css/cagov.core.css" <span class="text-info">rel=</span><span class="text-accent7">"stylesheet"</span></span><span class="text-accent-p2">&gt;</span>
-<span class="text-accent-p2">&lt;link</span> <span class="text-info">href=</span><span class="text-accent7">"https://california.azureedge.net/cdt/statetemplate/5.6.1/css/colorscheme-oceanside.css"</span> <span class="text-info">rel=</span><span class="text-accent7">"stylesheet"</span><span class="text-accent-p2">&gt;</span><br /></pre>
+<pre><span class="text-accent-p2">&lt;link</span> <span class="text-info">href=</span><span class="text-accent7">"https://california.azureedge.net/cdt/statetemplate/6.0.8/css/cagov.core.css" <span class="text-info">rel=</span><span class="text-accent7">"stylesheet"</span></span><span class="text-accent-p2">&gt;</span>
+<span class="text-accent-p2">&lt;link</span> <span class="text-info">href=</span><span class="text-accent7">"https://california.azureedge.net/cdt/statetemplate/6.0.8/css/colorscheme-oceanside.css"</span> <span class="text-info">rel=</span><span class="text-accent7">"stylesheet"</span><span class="text-accent-p2">&gt;</span><br /></pre>
 
 <h2>CDN example using JS files</h2>
-<pre><span class="text-accent-p2">&lt;script</span> <span class="text-info">src=</span><span class="text-accent7">"https://california.azureedge.net/cdt/statetemplate/5.6.1/js/cagov.core.js"</span><span class="text-accent-p2">&gt;&lt;/script&gt;</span></pre>
+<pre><span class="text-accent-p2">&lt;script</span> <span class="text-info">src=</span><span class="text-accent7">"https://california.azureedge.net/cdt/statetemplate/6.0.8/js/cagov.core.js"</span><span class="text-accent-p2">&gt;&lt;/script&gt;</span></pre>
 
 
 <h2>Sample page using State Template CDN</h2>
@@ -401,22 +401,22 @@
 <span class="text-accent-p2">&lt;meta</span> <span class="text-info">name=</span><span class="text-accent7">"viewport"</span> <span class="text-info">content=</span><span class="text-accent7">"width=device-width, initial-scale=1, shrink-to-fit=no"</span><span class="text-accent-p2">&gt;</span>
 
 <span class="text-muted">&lt;!-- State Template CDN CSS --&gt;</span>
-<span class="text-accent-p2">&lt;link</span> <span class="text-info">rel=</span><span class="text-accent7">"stylesheet"</span> <span class="text-info">href=</span><span class="text-accent7">"https://california.azureedge.net/cdt/statetemplate/5.6.1/css/cagov.core.css"</span><span class="text-accent-p2">&gt;</span>
-<span class="text-accent-p2">&lt;link</span> <span class="text-info">rel=</span><span class="text-accent7">"stylesheet"</span> <span class="text-info">href=</span><span class="text-accent7">"https://california.azureedge.net/cdt/statetemplate/5.6.1/css/colorscheme-oceanside.css"</span><span class="text-accent-p2">&gt;</span>
+<span class="text-accent-p2">&lt;link</span> <span class="text-info">rel=</span><span class="text-accent7">"stylesheet"</span> <span class="text-info">href=</span><span class="text-accent7">"https://california.azureedge.net/cdt/statetemplate/6.0.8/css/cagov.core.css"</span><span class="text-accent-p2">&gt;</span>
+<span class="text-accent-p2">&lt;link</span> <span class="text-info">rel=</span><span class="text-accent7">"stylesheet"</span> <span class="text-info">href=</span><span class="text-accent7">"https://california.azureedge.net/cdt/statetemplate/6.0.8/css/colorscheme-oceanside.css"</span><span class="text-accent-p2">&gt;</span>
 
 <span class="text-accent-p2">&lt;/head&gt;</span>
 <span class="text-accent-p2">&lt;body&gt;</span>
 <span class="text-accent-p2">&lt;header</span> <span class="text-info">role=</span><span class="text-accent7">"banner"</span> <span class="text-info">id=</span><span class="text-accent7">"header"</span> <span class="text-info">class=</span><span class="text-accent7">"global-header fixed"</span><span class="text-accent-p2">&gt;</span>
 <span class="text-accent-p2">&lt;div</span> <span class="text-info">id=</span><span class="text-accent7">"skip-to-content"</span><span class="text-accent-p2">&gt;&lt;a </span><span class="text-info">href=</span><span class="text-accent7">"#main-content"</span><span class="text-accent-p2">&gt;</span>Skip to Main Content<span class="text-accent-p2">&lt;/a&gt;&lt;/div&gt;</span>
-<span class="text-success">&lt;!--#include virtual="/ssi/utility-header.html" --&gt;</span>
-<span class="text-success">&lt;!--#include virtual="/ssi/settings-bar.html" --&gt;</span>
-<span class="text-success">&lt;!--#include virtual="/ssi/branding-lightgrey.html" --&gt;</span>
-<span class="text-success">&lt;!--#include virtual="/ssi/mobile-controls.html" --&gt;</span>
+<span class="text-success">&lt;!-- utility header goes here --&gt;</span>
+<span class="text-success">&lt;!-- settings bar goes here --&gt;</span>
+<span class="text-success">&lt;!-- site branding goes here --&gt;</span>
+<span class="text-success">&lt;!-- mobile controls go here --&gt;</span>
 <span class="text-accent-p2">&lt;div</span> <span class="text-info">class=</span><span class="text-accent7">"navigation-search full-width-nav"</span><span class="text-accent-p2">&gt;</span>
 	<span class="text-accent-p2">&lt;div</span> <span class="text-info">id=</span><span class="text-accent7">"head-search"</span> <span class="text-info">class=</span><span class="text-accent7">"search-container featured-search"</span><span class="text-accent-p2">&gt;</span>
-		 <span class="text-success">&lt;!--#include virtual="/ssi/search.html" --&gt;</span>
+		 <span class="text-success">&lt;!-- search goes here --&gt;</span>
 	<span class="text-accent-p2">&lt;/div&gt;</span>
-	<span class="text-success">&lt;!--#include virtual="/ssi/navigation.html" --&gt;</span>
+	<span class="text-success">&lt;!-- site navigation goes here --&gt;</span>
 <span class="text-accent-p2">&lt;/div&gt;</span>
 <span class="text-accent-p2">&lt;div </span><span class="text-info">class=</span><span class="text-accent7">"header-decoration"</span><span class="text-accent-p2">&gt;</span><span class="text-accent-p2">&lt;/div&gt;</span>
 <span class="text-accent-p2">&lt;/header&gt;</span>
@@ -427,10 +427,10 @@
 	<span class="text-accent-p2">&lt;/main&gt;</span>
 <span class="text-accent-p2">&lt;/div&gt;</span>
 <span class="text-accent-p2">&lt;/div&gt;</span>
-<span class="text-success">&lt;!--#include virtual="/ssi/global-footer.html" --&gt;</span>
+<span class="text-success">&lt;!-- global footer goes here --&gt;</span>
 
 <span class="text-muted">&lt;!-- State Template JavaScript CDN --&gt;</span>
-<span class="text-accent-p2">&lt;script </span><span class="text-info">src=</span><span class="text-accent7">"https://california.azureedge.net/cdt/statetemplate/5.6.1/js/cagov.core.js"</span><span class="text-accent-p2">&gt;&lt;/script&gt;</span>
+<span class="text-accent-p2">&lt;script </span><span class="text-info">src=</span><span class="text-accent7">"https://california.azureedge.net/cdt/statetemplate/6.0.8/js/cagov.core.js"</span><span class="text-accent-p2">&gt;&lt;/script&gt;</span>
 <span class="text-accent-p2">&lt;/body&gt;</span>
 <span class="text-accent-p2">&lt;/html&gt;</span>
 </pre>
