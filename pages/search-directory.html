@@ -1,0 +1,358 @@
+﻿---
+title: Search Directory Page
+layout: landing.njk
+permalink: "search-directory.html"
+---
+
+
+<div class="section section-default">
+    <div class="container">
+        <h1 class="m-b-0">Search Directory Page</h1>
+    </div>
+</div>
+
+<div class="section section-search collapsed">
+    <div class="container">
+        <div class="row">
+            <div class="three-quarters">
+                <form id="agency_form" class="agency-form">
+                    <div class="textfield-container">
+                        <label for="search_local_textfield" accesskey="s" class="sr-only">Agency Search:
+                        </label>
+                        <input type="text" name="q" id="search_local_textfield" class="search-textfield" size="35"
+                            autocomplete="off" value="Search" onfocus="if(this.value=='Search')this.value=''"
+                            onblur="if(this.value=='')this.value='Search'" aria-label="Agency Search" />
+                    </div>
+                    <div class="submit-container">
+                        <button type="submit"><span class="ca-gov-icon-search"><span
+                                    class="sr-only">Search</span></span></button>
+                    </div>
+                </form>
+            </div>
+            <div class="quarter">
+                <a href="#agencyFilters" class="btn btn-secondary filter-toggle toggle-more m-y btn-block-xs"
+                    role="button" data-bs-toggle="collapse" data-parent="#agencyFilters" aria-expanded="false"
+                    aria-controls="agencyFilters"><span class="toggle-more">Show Filters <span
+                            class="ca-gov-icon-filter" aria-hidden="true"></span></span></a>
+            </div>
+        </div>
+
+        <!-- Filters expand only when requested -->
+        <!-- Use .active class on buttons when selected by user -->
+        <div class="collapse agencyFilters filter-group m-b-sm" id="agencyFilters">
+            Business Area:
+            <div class="btn-row">
+                <a href="" class="btn btn-secondary">Agency</a>
+                <a href="" class="btn btn-secondary">Department</a>
+                <a href="" class="btn btn-secondary">Board</a>
+                <a href="" class="btn btn-secondary">City</a>
+                <a href="" class="btn btn-secondary">Special District</a>
+                <a href="" class="btn btn-secondary">Federal</a>
+            </div>
+
+            Categories:
+            <div class="btn-row">
+                <a href="" class="btn btn-secondary">Business</a>
+                <a href="" class="btn btn-secondary">Civil Duty</a>
+                <a href="" class="btn btn-secondary">Employment</a>
+                <a href="" class="btn btn-secondary">Family</a>
+                <a href="" class="btn btn-secondary">Health</a>
+                <a href="" class="btn btn-secondary">Real Estate</a>
+                <a href="" class="btn btn-secondary">Records</a>
+                <a href="" class="btn btn-secondary">Recreation</a>
+                <a href="" class="btn btn-secondary">Taxes</a>
+                <a href="" class="btn btn-secondary">Transportation</a>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<div class="container p-y-lg">
+
+    <!-- Results header -->
+    <div class="group m-b">
+        <div class="half">
+            <p>xx of xxx results for "keyword"</p>
+        </div>
+        <div class="half">
+            <div class="form-inline float-sm-right">
+                <div class="form-group">
+                    <label for="sortResultsBy" class="m-r-sm">Sort By:</label>
+                    <select class="form-control" id="sortResultsBy">
+                        <option>Relevance</option>
+                        <option>Alphabetical: (A-Z)</option>
+                        <option>Alphabetical: (Z-A)</option>
+                        <option>Last Updated</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End results header -->
+    <!-- Start Cards -->
+    <div class="row">
+        <div class="half">
+            <div class="card">
+                <div class="card-block" id="collapse1234" itemscope itemtype="http://schema.org/Organization">
+                    <div class="row">
+                        <div class="col-md-2">
+                            <img class="img-responsive hidden-xs" src="/images/sample/images/logo-dmv.png" alt="">
+                        </div>
+                        <div class="col-md-10">
+                            <a href="" class="lead" itemprop="name">Department of Motor Vehicles</a>
+                            <div class="row">
+                                <div class="col-md-7">
+                                    <p>Some short teaser content</p>
+                                    <div class="collapse collapse1234">
+                                        <p itemprop="description">Cras justo odio, dapibus ac facilisis in,
+                                            egestas eget quam. Donec ullamcorper nulla non metus auctor
+                                            fringilla. Aenean eu leo quam. Pellentesque ornare sem lacinia
+                                            quam venenatis vestibulum. Donec id elit non mi porta gravida at
+                                            eget metus.</p>
+                                        <p class="other">
+                                            General Information: <span itemprop="telephone">(916)323-5400</span><br>
+                                            Hearing Impaired: <span itemprop="telephone">(916)323-5400</span><br>
+                                            Fax <span itemprop="faxNumber">(916)323-5400</span><br>
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="col-md-5">
+                                    <a href="" class="btn btn-secondary btn-block btn-sm">Agency Profile</a>
+                                    <div class="collapse collapse1234">
+                                        <a href="" class="btn btn-secondary btn-block btn-sm">Contact
+                                            Agency</a>
+                                        <a href="" class="btn btn-secondary btn-block btn-sm">Show on
+                                            Map</a>
+                                        <a href="" class="btn btn-secondary btn-block btn-sm">Live Chat</a>
+                                        <ul class="list-inline list-unstyled social">
+                                            <li class="list-inline-item"><a href=""><span
+                                                        class="ca-gov-icon-share-twitter" aria-hidden="true"><span
+                                                            class="sr-only">Twitter
+                                                            DMV</span></span></a></li>
+                                            <li class="list-inline-item"><a href=""><span
+                                                        class="ca-gov-icon-share-facebook" aria-hidden="true"><span
+                                                            class="sr-only">Facebook
+                                                            DMV</span></span></a></li>
+                                            <li class="list-inline-item"><a href=""><span
+                                                        class="ca-gov-icon-share-googleplus" aria-hidden="true"><span
+                                                            class="sr-only">Google+
+                                                            DMV</span></span></a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-block text-center">
+                    <button data-bs-toggle="collapse" data-bs-target=".collapse1234" class="border-0 bg-transparent">
+                        <span class="toggle-more m-0"></span><span class="sr-only">Open</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- New Column -->
+        <div class="half">
+            <div class="card">
+                <div class="card-block" id="collapse1235" itemscope itemtype="http://schema.org/Organization">
+                    <div class="row">
+                        <div class="col-md-2">
+                            <img class="img-responsive hidden-xs" src="/images/sample/images/logo-calhr.png"
+                                alt="PARKS logo">
+                        </div>
+                        <div class="col-md-10">
+                            <a href="" class="lead" itemprop="name">CalHR</a>
+                            <div class="row">
+                                <div class="col-md-7">
+                                    <p>The California Department of Human Resources (CalHR)</p>
+                                    <div class="collapse collapse1235">
+                                        <p itemprop="description">The California Department of Human
+                                            Resources (CalHR) was created on July 1, 2012, by Governor
+                                            Brown's Reorganization Plan Number 1 of 2011. The reorganization
+                                            plan consolidated the State of California's two personnel
+                                            departments, combining the Department of Personnel
+                                            Administration with certain programs of the State Personnel
+                                            Board.</p>
+                                        <p class="other">
+                                            General Information: <span itemprop="telephone">(916)323-5400</span><br>
+                                            Hearing Impaired: <span itemprop="telephone">(916)323-5400</span><br>
+                                            Fax <span itemprop="faxNumber">(916)323-5400</span><br>
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="col-md-5">
+                                    <a href="" class="btn btn-secondary btn-block btn-sm">Agency Profile</a>
+                                    <div class="collapse collapse1235">
+                                        <a href="" class="btn btn-secondary btn-block btn-sm">Contact
+                                            Agency</a>
+                                        <a href="" class="btn btn-secondary btn-block btn-sm">Show on
+                                            Map</a>
+                                        <a href="" class="btn btn-secondary btn-block btn-sm">Live Chat</a>
+                                        <ul class="list-inline list-unstyled social">
+                                            <li class="list-inline-item"><a href=""><span
+                                                        class="ca-gov-icon-share-twitter" aria-hidden="true"><span
+                                                            class="sr-only">Twitter
+                                                            CDTFA</span></span></a></li>
+                                            <li class="list-inline-item"><a href=""><span
+                                                        class="ca-gov-icon-share-facebook" aria-hidden="true"><span
+                                                            class="sr-only">Facebook
+                                                            CDTFA</span></span></a></li>
+                                            <li class="list-inline-item"><a href=""><span
+                                                        class="ca-gov-icon-share-googleplus" aria-hidden="true"><span
+                                                            class="sr-only">Google+
+                                                            CDTFA</span></span></a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-block text-center">
+                    <button data-bs-toggle="collapse" data-bs-target=".collapse1235" class="border-0 bg-transparent">
+                        <span class="toggle-more m-0"></span><span class="sr-only">Open</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <nav aria-label="Page navigation example">
+        <ul class="pagination">
+            <li class="page-item"><a class="page-link color-gray-dark no-underline" href="#">Previous</a>
+            </li>
+            <li class="page-item"><a class="page-link color-gray-dark no-underline" href="#">1</a></li>
+            <li class="page-item"><a class="page-link color-gray-dark no-underline" href="#">2</a></li>
+            <li class="page-item"><a class="page-link color-gray-dark no-underline" href="#">3</a></li>
+            <li class="page-item"><a class="page-link color-gray-dark no-underline" href="#">4</a></li>
+            <li class="page-item"><a class="page-link color-gray-dark no-underline" href="#">5</a></li>
+            <li class="page-item"><a class="page-link color-gray-dark no-underline" href="#">6</a></li>
+            <li class="page-item"><a class="page-link color-gray-dark no-underline" href="#">7</a></li>
+            <li class="page-item"><a class="page-link color-gray-dark no-underline" href="#">8</a></li>
+            <li class="page-item"><a class="page-link color-gray-dark no-underline" href="#">9</a></li>
+            <li class="page-item"><a class="page-link color-gray-dark no-underline" href="#">10</a></li>
+            <li class="page-item"><a class="page-link color-gray-dark no-underline" href="#">Next</a></li>
+        </ul>
+    </nav>
+
+    <p class="m-t-md"><span class="badge label-info">Note:</span> This is a sample layout for a search
+        directory page which requires additional programing for functionality based on your business needs.
+    </p>
+    <hr />
+    <div class="clearfix p-t-lg">
+        <h2 class="float-sm-left m-t-0">California Agencies</h2>
+        <div class="form-inline float-sm-right">
+            <div class="form-group">
+                <label for="sortResults" class="m-r-sm">Sort By:</label>
+                <select class="form-control" id="sortResults">
+                    <option>Alphabetical: (A-Z)</option>
+                    <option>Alphabetical: (Z-A)</option>
+                    <option>Relevance</option>
+                    <option>Last Updated</option>
+                </select>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="offset-md-1 col-md-9">
+            <h3 class="text-2-5rem m-b-0">A</h3>
+
+            <ul class="m-t-0 list-group list-group-flush">
+                <li class="list-group-item">
+                    California Board of Accountancy
+                    <div class="socialsharer-container">
+                        <a class="ca-gov-icon-share-facebook" title="Share via Facebook"></a>
+                        <a class="ca-gov-icon-share-twitter" title="Share via Twitter"></a>
+                        <a class="ca-gov-icon-share-snapchat" title="Share via Snapchat"></a>
+                        <a class="ca-gov-icon-share-email" title="Share via email"></a>
+                    </div>
+                </li>
+                <li class="list-group-item">
+                    California Achieving a Better Life Experience
+                    <div class="socialsharer-container">
+                        <a class="ca-gov-icon-share-youtube" title="Share via Youtube"></a>
+                        <a class="ca-gov-icon-share-email" title="Share via email"></a>
+                    </div>
+                </li>
+                <li class="list-group-item">
+                    Acupuncture Board
+                    <div class="socialsharer-container">
+                        <a class="ca-gov-icon-share-facebook" title="Share via Facebook"></a>
+                        <a class="ca-gov-icon-share-twitter" title="Share via Twitter"></a>
+                        <a class="ca-gov-icon-share-email" title="Share via email"></a>
+                    </div>
+                </li>
+                <li class="list-group-item">
+                    Office of Administrative Hearings
+                    <div class="socialsharer-container">
+                        <a class="ca-gov-icon-share-linkedin" title="Share via Linkedin"></a>
+                        <a class="ca-gov-icon-share-email" title="Share via email"></a>
+                    </div>
+                </li>
+                <li class="list-group-item">
+                    Astibulum at eros
+                    <div class="socialsharer-container">
+                        <a class="ca-gov-icon-share-email" title="Share via email"></a>
+                    </div>
+                </li>
+            </ul>
+
+            <h3 class="text-2-5rem m-b-0">B</h3>
+
+            <ul class="m-t-0 list-group list-group-flush">
+                <li class="list-group-item">
+                    Board of Accountancy
+                    <div class="socialsharer-container">
+                        <a class="ca-gov-icon-share-linkedin" title="Share via Linkedin"></a>
+                        <a class="ca-gov-icon-share-email" title="Share via email"></a>
+                    </div>
+                </li>
+                <li class="list-group-item">
+                    Better Life Experience
+                    <div class="socialsharer-container">
+                        <a class="ca-gov-icon-share-youtube" title="Share via Youtube"></a>
+                        <a class="ca-gov-icon-share-facebook" title="Share via Facebook"></a>
+                        <a class="ca-gov-icon-share-twitter" title="Share via Twitter"></a>
+                        <a class="ca-gov-icon-share-snapchat" title="Share via Snapchat"></a>
+                        <a class="ca-gov-icon-share-email" title="Share via email"></a>
+                    </div>
+                </li>
+                <li class="list-group-item">
+                    Board of Acupuncture
+                    <div class="socialsharer-container">
+                        <a class="ca-gov-icon-share-facebook" title="Share via Facebook"></a>
+                        <a class="ca-gov-icon-share-twitter" title="Share via Twitter"></a>
+                        <a class="ca-gov-icon-share-email" title="Share via email"></a>
+                    </div>
+                </li>
+                <li class="list-group-item">
+                    Board of Equaliztion
+                    <div class="socialsharer-container">
+                        <a class="ca-gov-icon-share-youtube" title="Share via Youtube"></a>
+                        <a class="ca-gov-icon-share-facebook" title="Share via Facebook"></a>
+                        <a class="ca-gov-icon-share-twitter" title="Share via Twitter"></a>
+                        <a class="ca-gov-icon-share-snapchat" title="Share via Snapchat"></a>
+                        <a class="ca-gov-icon-share-linkedin" title="Share via Linkedin"></a>
+                        <a class="ca-gov-icon-share-email" title="Share via email"></a>
+                    </div>
+                </li>
+                <li class="list-group-item">
+                    Board of Athletics
+                    <div class="socialsharer-container">
+                        <a class="ca-gov-icon-share-linkedin" title="Share via Linkedin"></a>
+                        <a class="ca-gov-icon-share-email" title="Share via email"></a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+
+    </div>
+
+</div>
+
+
+
+</div>

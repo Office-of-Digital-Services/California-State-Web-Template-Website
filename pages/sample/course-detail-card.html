@@ -1,0 +1,43 @@
+﻿---
+title: Course Detail (Card)
+layout: page.njk
+permalink: "sample/course-detail-card.html"
+---
+
+<nav aria-label="You are here">
+    <ol class="breadcrumb">
+        <li><a href="../index.html" title="Home page">Home</a></li>
+        <li><a href="/sample/" title="Content Modules landing page">Content Modules</a></li>
+        <li class="active">Course Detail (Card)</li>
+    </ol>
+</nav>
+<h1>Course Detail (Card)</h1>
+<p>This is an alternative layout for the course detail page. See also <a href="course-detail.html">Course Details</a>
+    main page for more information on the usage and
+    options for this module.</p>
+
+<div class="row">
+    <div class="col-md-6">
+        {% include "../../src/_includes/modules/course-detail-card.html" %}
+    </div>
+    <div class="col-md-6">
+        <h2>Source Code:</h2>
+
+        <div class="tab-group">
+            <ul id="sourceCode" class="nav nav-tabs" role="tablist">
+                <li class="active"><a href="#html" role="tab" data-bs-toggle="tab">HTML Markup</a></li>
+                <li><a href="#microdata" role="tab" data-bs-toggle="tab">Microdata</a></li>
+            </ul>
+            <!-- Tab panes -->
+            <div class="tab-content responsive">
+                <div class="tab-pane active" id="html">
+                    <pre><code class="overflow-auto">{% include "../../src/_includes/modules/course-detail-card.html" %}</code></pre>
+                </div>
+                <div class="tab-pane" id="microdata">
+                    <pre><code class="overflow-auto">{% include "../../src/_includes/modules/course-detail-card-schema.html" %}</code></pre>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>

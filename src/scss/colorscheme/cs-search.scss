@@ -1,0 +1,50 @@
+/* -----------------------------------------
+   SEARCH
+   /source/scss/colorscheme.search.scss
+----------------------------------------- */
+
+
+.search-container {
+
+    .search-textfield {
+        background-color: $text-field-color;
+    }
+
+    .submit-container {
+        button {
+            color: $mobile-controls;
+            border-color: $text-field-color;
+        }
+    }
+
+    &:hover, &:focus, &.active {
+        .search-textfield {
+            background-color: #fff;
+        }
+
+        .submit-container button {
+            border-color: #fff;
+        }
+    }
+
+    &.active {
+        @include rgba (#000, .7);
+
+        .submit-container button {
+            border-color: darken($gray-lighter, 10%);
+            background: $gray;
+        }
+
+        .search-textfield {
+            border-color: darken($gray-lighter, 10%);
+        }
+
+        &.focus, &:hover {
+            .search-textfield {
+                //border-color: $color-p2;
+            }
+        }
+    }
+}
+
+

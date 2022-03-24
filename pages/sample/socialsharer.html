@@ -1,0 +1,34 @@
+﻿---
+title: Social Sharer
+layout: page.njk
+permalink: "sample/socialsharer.html"
+---
+
+<nav aria-label="You are here">
+    <ol class="breadcrumb">
+        <li><a href="../index.html" title="Home page">Home</a></li>
+        <li><a href="/sample/" title="Content Modules landing page">Content Modules</a></li>
+        <li class="active">Social Sharer</li>
+    </ol>
+</nav>
+
+
+<div class="row">
+    <div class="half">
+        <h1>SocialSharer</h1>
+        <p>This module adds a group of buttons to your page that allows visitors to share the page via
+            various social media services. You may customize the appearance and position of the buttons
+            by altering the socialsharer.less. You may also remove a button by deleting its
+            <code>&lt;a&gt;</code> tag.
+        </p>
+
+        <h2>Example:</h2>
+        <div class="clearfix">
+            {% include "../../src/_includes/modules/socialsharer.html" %}
+        </div>
+    </div>
+    <div class="half">
+        <h2>Source Code:</h2>
+        <pre><code class="overflow-auto">{% include "../../src/_includes/modules/socialsharer.html" %}</code></pre>
+    </div>
+</div>

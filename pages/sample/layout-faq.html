@@ -1,0 +1,471 @@
+﻿---
+title: FAQ page
+layout: page.njk
+permalink: "sample/layout-faq.html"
+---
+
+<main class="main-primary">
+    <div class="container p-y-lg">
+        <div class="text-center">
+            <h1 class="m-y-0">Frequently Asked Questions</h1>
+            <ul class="list-inline mb-0">
+                <li class="list-inline-item brd-right brd-gray-light px-4 mx-0">
+                    <a id="link-started" href="#STARTED">
+                        GETTING STARTED
+                    </a>
+                </li>
+                <li class="list-inline-item brd-right brd-gray-light px-4 mx-0">
+                    <a id="link-installation" href="#INSTALLATION">
+                        INSTALLATION
+                    </a>
+                </li>
+                <li class="list-inline-item px-4 mx-0">
+                    <a id="link-update" href="#UPDATE">
+                        UPDATE
+                    </a>
+                </li>
+            </ul>
+        </div>
+
+        <div class="row m-t-md">
+
+            <div class="offset-md-2 col-md-8">
+                <h2 class="text-center" id="STARTED">GETTING STARTED</h2>
+
+
+
+
+                <cagov-accordion>
+                    <div class="cagov-accordion-card">
+                        <button class="accordion-card-header accordion-alpha" type="button" aria-expanded="false">
+                            <div class="accordion-title">How do i get started?</div>
+                            <div class="plus-minus">
+                                <cagov-plus>
+                                    <div class="accordion-icon" aria-hidden="true">
+                                        <svg viewbox="0 0 25 25">
+                                            <title>Plus</title>
+                                            <line x1="6" y1="12.5" x2="19" y2="12.5" fill="none" stroke="currentColor"
+                                                stroke-width="6" stroke-linecap="round"
+                                                vector-effect="non-scaling-stroke" />
+                                            <line y1="6" x1="12.5" y2="19" x2="12.5" fill="none" stroke="currentColor"
+                                                stroke-width="6" stroke-linecap="round"
+                                                vector-effect="non-scaling-stroke" />
+                                        </svg>
+                                    </div>
+                                </cagov-plus>
+                                <cagov-minus>
+                                    <div class="accordion-icon" aria-hidden="true">
+                                        <svg viewbox="0 0 25 25">
+                                            <title>Minus</title>
+                                            <line x1="6" y1="12.5" x2="19" y2="12.5" fill="none" stroke="currentColor"
+                                                stroke-width="6" stroke-linecap="round"
+                                                vector-effect="non-scaling-stroke" />
+                                        </svg>
+                                    </div>
+                                </cagov-minus>
+                            </div>
+                        </button>
+                        <div class="accordion-card-container" aria-hidden=" true" style="height: 0px;">
+                            <div class="card-body">
+                                <p> To get started you need to download our State Template from <a
+                                        href="https://github.com/Office-of-Digital-Innovation/California-State-Template-v5">GitHub</a>.
+                                    Also, you can refer to our <a href="/Getting-started.html">Getting Started
+                                        page</a>.</p>
+                            </div>
+                        </div>
+                    </div>
+                </cagov-accordion>
+
+
+
+
+
+
+                <cagov-accordion>
+                    <div class="cagov-accordion-card">
+                        <button class="accordion-card-header accordion-alpha" type="button" aria-expanded="false">
+                            <div class="accordion-title">What what essential files do
+                                i need for clean State Tempale template?</div>
+                            <div class="plus-minus">
+                                <cagov-plus>
+                                    <div class="accordion-icon" aria-hidden="true">
+                                        <svg viewbox="0 0 25 25">
+                                            <title>Plus</title>
+                                            <line x1="6" y1="12.5" x2="19" y2="12.5" fill="none" stroke="currentColor"
+                                                stroke-width="6" stroke-linecap="round"
+                                                vector-effect="non-scaling-stroke" />
+                                            <line y1="6" x1="12.5" y2="19" x2="12.5" fill="none" stroke="currentColor"
+                                                stroke-width="6" stroke-linecap="round"
+                                                vector-effect="non-scaling-stroke" />
+                                        </svg>
+                                    </div>
+                                </cagov-plus>
+                                <cagov-minus>
+                                    <div class="accordion-icon" aria-hidden="true">
+                                        <svg viewbox="0 0 25 25">
+                                            <title>Minus</title>
+                                            <line x1="6" y1="12.5" x2="19" y2="12.5" fill="none" stroke="currentColor"
+                                                stroke-width="6" stroke-linecap="round"
+                                                vector-effect="non-scaling-stroke" />
+                                        </svg>
+                                    </div>
+                                </cagov-minus>
+                            </div>
+                        </button>
+                        <div class="accordion-card-container" aria-hidden=" true" style="height: 0px;">
+                            <div class="card-body">
+                                <ol>
+                                    <li>Core css and colorscheme files from /css folder (see our <a
+                                            href="/update.html">update page <span class="sr-only">CSS</span></a>)
+                                    </li>
+                                    <li>Core js files and other js libraries from /js folder (see our <a
+                                            href="/update.html">update page</a>)</li>
+                                    <li>Fonts files from /fonts folder</li>
+                                    <li>Structure includes in /ssi folder (see our <a href="/structure.html">structure
+                                            page</a>)</li>
+                                </ol>
+                            </div>
+                        </div>
+                    </div>
+                </cagov-accordion>
+
+
+
+
+
+
+
+                <cagov-accordion>
+                    <div class="cagov-accordion-card">
+                        <button class="accordion-card-header accordion-alpha" type="button" aria-expanded="false">
+                            <div class="accordion-title">What do I need to make
+                                server side includes (SSI) to work?</div>
+                            <div class="plus-minus">
+                                <cagov-plus>
+                                    <div class="accordion-icon" aria-hidden="true">
+                                        <svg viewbox="0 0 25 25">
+                                            <title>Plus</title>
+                                            <line x1="6" y1="12.5" x2="19" y2="12.5" fill="none" stroke="currentColor"
+                                                stroke-width="6" stroke-linecap="round"
+                                                vector-effect="non-scaling-stroke" />
+                                            <line y1="6" x1="12.5" y2="19" x2="12.5" fill="none" stroke="currentColor"
+                                                stroke-width="6" stroke-linecap="round"
+                                                vector-effect="non-scaling-stroke" />
+                                        </svg>
+                                    </div>
+                                </cagov-plus>
+                                <cagov-minus>
+                                    <div class="accordion-icon" aria-hidden="true">
+                                        <svg viewbox="0 0 25 25">
+                                            <title>Minus</title>
+                                            <line x1="6" y1="12.5" x2="19" y2="12.5" fill="none" stroke="currentColor"
+                                                stroke-width="6" stroke-linecap="round"
+                                                vector-effect="non-scaling-stroke" />
+                                        </svg>
+                                    </div>
+                                </cagov-minus>
+                            </div>
+                        </button>
+                        <div class="accordion-card-container" aria-hidden=" true" style="height: 0px;">
+                            <div class="card-body">
+                                <p> SSI must be set up on your server for them to work. You are unlikely to have
+                                    SSI
+                                    enabled if you do not have a CGI-BIN but if you do it is very likely that
+                                    the
+                                    server administrator will have enabled SSI.</p>
+                            </div>
+                        </div>
+                    </div>
+                </cagov-accordion>
+
+
+
+
+
+                <h2 class="text-center" id="INSTALLATION">INSTALLATION</h2>
+
+                <cagov-accordion>
+                    <div class="cagov-accordion-card">
+                        <button class="accordion-card-header accordion-alpha" type="button" aria-expanded="false">
+                            <div class="accordion-title">How can I clone State Template
+                                from GitHub and bring it into my Visual Studio?</div>
+                            <div class="plus-minus">
+                                <cagov-plus>
+                                    <div class="accordion-icon" aria-hidden="true">
+                                        <svg viewbox="0 0 25 25">
+                                            <title>Plus</title>
+                                            <line x1="6" y1="12.5" x2="19" y2="12.5" fill="none" stroke="currentColor"
+                                                stroke-width="6" stroke-linecap="round"
+                                                vector-effect="non-scaling-stroke" />
+                                            <line y1="6" x1="12.5" y2="19" x2="12.5" fill="none" stroke="currentColor"
+                                                stroke-width="6" stroke-linecap="round"
+                                                vector-effect="non-scaling-stroke" />
+                                        </svg>
+                                    </div>
+                                </cagov-plus>
+                                <cagov-minus>
+                                    <div class="accordion-icon" aria-hidden="true">
+                                        <svg viewbox="0 0 25 25">
+                                            <title>Minus</title>
+                                            <line x1="6" y1="12.5" x2="19" y2="12.5" fill="none" stroke="currentColor"
+                                                stroke-width="6" stroke-linecap="round"
+                                                vector-effect="non-scaling-stroke" />
+                                        </svg>
+                                    </div>
+                                </cagov-minus>
+                            </div>
+                        </button>
+                        <div class="accordion-card-container" aria-hidden=" true" style="height: 0px;">
+                            <div class="card-body">
+                                <ol>
+                                    <li>Go to State Template <a
+                                            href="https://github.com/Office-of-Digital-Innovation/California-State-Template-v5">GitHub
+                                            repository</a> page and click on "clone or download" button, then
+                                        copy GitHub repository web URL</li>
+                                    <li>Open your Visual Studio and go to the Team Explorer. Make sure your
+                                        Visual Studio has GitHub extension.</li>
+                                    <li>Click on the "Manage Connections" icon then in your GitHub connections
+                                        section click on "clone" link. That will open up the "Open from GitHub"
+                                        popup.</li>
+                                    <li>Paste in State template GitHub repository web URL and click "Clone".
+                                        That will clone the State Template from our GitHub repository to your
+                                        local machine. Once it's cloned you can open the cloned website from
+                                        your Visual Studio.</li>
+                                </ol>
+                            </div>
+                        </div>
+                    </div>
+                </cagov-accordion>
+
+
+                <cagov-accordion>
+                    <div class="cagov-accordion-card">
+                        <button class="accordion-card-header accordion-alpha" type="button" aria-expanded="false">
+                            <div class="accordion-title">How do I set up local Docker
+                                container?</div>
+                            <div class="plus-minus">
+                                <cagov-plus>
+                                    <div class="accordion-icon" aria-hidden="true">
+                                        <svg viewbox="0 0 25 25">
+                                            <title>Plus</title>
+                                            <line x1="6" y1="12.5" x2="19" y2="12.5" fill="none" stroke="currentColor"
+                                                stroke-width="6" stroke-linecap="round"
+                                                vector-effect="non-scaling-stroke" />
+                                            <line y1="6" x1="12.5" y2="19" x2="12.5" fill="none" stroke="currentColor"
+                                                stroke-width="6" stroke-linecap="round"
+                                                vector-effect="non-scaling-stroke" />
+                                        </svg>
+                                    </div>
+                                </cagov-plus>
+                                <cagov-minus>
+                                    <div class="accordion-icon" aria-hidden="true">
+                                        <svg viewbox="0 0 25 25">
+                                            <title>Minus</title>
+                                            <line x1="6" y1="12.5" x2="19" y2="12.5" fill="none" stroke="currentColor"
+                                                stroke-width="6" stroke-linecap="round"
+                                                vector-effect="non-scaling-stroke" />
+                                        </svg>
+                                    </div>
+                                </cagov-minus>
+                            </div>
+                        </button>
+                        <div class="accordion-card-container" aria-hidden=" true" style="height: 0px;">
+                            <div class="card-body">
+                                <ol>
+                                    <li>Install <a href="https://docs.docker.com/install/">Docker</a></li>
+                                    <li>Download nginx Dockerfile and place this file in the same directory as
+                                        your directory of content</li>
+                                    <li>Run your docker image</li>
+                                </ol>
+                            </div>
+                        </div>
+                    </div>
+                </cagov-accordion>
+
+
+                <cagov-accordion>
+                    <div class="cagov-accordion-card">
+                        <button class="accordion-card-header accordion-alpha" type="button" aria-expanded="false">
+                            <div class="accordion-title">Do I need to bring a boostrap
+                                library on top of State template?</div>
+                            <div class="plus-minus">
+                                <cagov-plus>
+                                    <div class="accordion-icon" aria-hidden="true">
+                                        <svg viewbox="0 0 25 25">
+                                            <title>Plus</title>
+                                            <line x1="6" y1="12.5" x2="19" y2="12.5" fill="none" stroke="currentColor"
+                                                stroke-width="6" stroke-linecap="round"
+                                                vector-effect="non-scaling-stroke" />
+                                            <line y1="6" x1="12.5" y2="19" x2="12.5" fill="none" stroke="currentColor"
+                                                stroke-width="6" stroke-linecap="round"
+                                                vector-effect="non-scaling-stroke" />
+                                        </svg>
+                                    </div>
+                                </cagov-plus>
+                                <cagov-minus>
+                                    <div class="accordion-icon" aria-hidden="true">
+                                        <svg viewbox="0 0 25 25">
+                                            <title>Minus</title>
+                                            <line x1="6" y1="12.5" x2="19" y2="12.5" fill="none" stroke="currentColor"
+                                                stroke-width="6" stroke-linecap="round"
+                                                vector-effect="non-scaling-stroke" />
+                                        </svg>
+                                    </div>
+                                </cagov-minus>
+                            </div>
+                        </button>
+                        <div class="accordion-card-container" aria-hidden=" true" style="height: 0px;">
+                            <div class="card-body">
+                                No. State Template already uses the latest Bootsrap framework.
+                            </div>
+                        </div>
+                    </div>
+                </cagov-accordion>
+
+
+
+
+
+
+
+                <h2 class="text-center" id="UPDATE">UPDATE</h2>
+
+                <cagov-accordion>
+                    <div class="cagov-accordion-card">
+                        <button class="accordion-card-header accordion-alpha" type="button" aria-expanded="false">
+                            <div class="accordion-title">How can I update my existing
+                                website with the most currest State Tempalte version?</div>
+                            <div class="plus-minus">
+                                <cagov-plus>
+                                    <div class="accordion-icon" aria-hidden="true">
+                                        <svg viewbox="0 0 25 25">
+                                            <title>Plus</title>
+                                            <line x1="6" y1="12.5" x2="19" y2="12.5" fill="none" stroke="currentColor"
+                                                stroke-width="6" stroke-linecap="round"
+                                                vector-effect="non-scaling-stroke" />
+                                            <line y1="6" x1="12.5" y2="19" x2="12.5" fill="none" stroke="currentColor"
+                                                stroke-width="6" stroke-linecap="round"
+                                                vector-effect="non-scaling-stroke" />
+                                        </svg>
+                                    </div>
+                                </cagov-plus>
+                                <cagov-minus>
+                                    <div class="accordion-icon" aria-hidden="true">
+                                        <svg viewbox="0 0 25 25">
+                                            <title>Minus</title>
+                                            <line x1="6" y1="12.5" x2="19" y2="12.5" fill="none" stroke="currentColor"
+                                                stroke-width="6" stroke-linecap="round"
+                                                vector-effect="non-scaling-stroke" />
+                                        </svg>
+                                    </div>
+                                </cagov-minus>
+                            </div>
+                        </button>
+                        <div class="accordion-card-container" aria-hidden=" true" style="height: 0px;">
+                            <div class="card-body">
+                                <p>If your website is using a State Template that is perhaps couple of revisions
+                                    back go to our <a href="/update.html">update page</a> where you will find
+                                    all the necessary steps and details.</p>
+                            </div>
+                        </div>
+                    </div>
+                </cagov-accordion>
+
+
+
+
+                <cagov-accordion>
+                    <div class="cagov-accordion-card">
+                        <button class="accordion-card-header accordion-alpha" type="button" aria-expanded="false">
+                            <div class="accordion-title">Is my old website will be
+                                compatible with State template latest vesrion?</div>
+                            <div class="plus-minus">
+                                <cagov-plus>
+                                    <div class="accordion-icon" aria-hidden="true">
+                                        <svg viewbox="0 0 25 25">
+                                            <title>Plus</title>
+                                            <line x1="6" y1="12.5" x2="19" y2="12.5" fill="none" stroke="currentColor"
+                                                stroke-width="6" stroke-linecap="round"
+                                                vector-effect="non-scaling-stroke" />
+                                            <line y1="6" x1="12.5" y2="19" x2="12.5" fill="none" stroke="currentColor"
+                                                stroke-width="6" stroke-linecap="round"
+                                                vector-effect="non-scaling-stroke" />
+                                        </svg>
+                                    </div>
+                                </cagov-plus>
+                                <cagov-minus>
+                                    <div class="accordion-icon" aria-hidden="true">
+                                        <svg viewbox="0 0 25 25">
+                                            <title>Minus</title>
+                                            <line x1="6" y1="12.5" x2="19" y2="12.5" fill="none" stroke="currentColor"
+                                                stroke-width="6" stroke-linecap="round"
+                                                vector-effect="non-scaling-stroke" />
+                                        </svg>
+                                    </div>
+                                </cagov-minus>
+                            </div>
+                        </button>
+                        <div class="accordion-card-container" aria-hidden=" true" style="height: 0px;">
+                            <div class="card-body">
+                                <p>Most likely. State Template was designed with backward compatibility in mind.
+                                    The most current version that runs on Bootstrap 4 is mostly compatible with
+                                    previous Boostrap 3 versions. </p>
+                            </div>
+                        </div>
+                    </div>
+                </cagov-accordion>
+
+
+
+
+                <cagov-accordion>
+                    <div class="cagov-accordion-card">
+                        <button class="accordion-card-header accordion-alpha" type="button" aria-expanded="false">
+                            <div class="accordion-title">How can I get notifications
+                                about State template updates?</div>
+                            <div class="plus-minus">
+                                <cagov-plus>
+                                    <div class="accordion-icon" aria-hidden="true">
+                                        <svg viewbox="0 0 25 25">
+                                            <title>Plus</title>
+                                            <line x1="6" y1="12.5" x2="19" y2="12.5" fill="none" stroke="currentColor"
+                                                stroke-width="6" stroke-linecap="round"
+                                                vector-effect="non-scaling-stroke" />
+                                            <line y1="6" x1="12.5" y2="19" x2="12.5" fill="none" stroke="currentColor"
+                                                stroke-width="6" stroke-linecap="round"
+                                                vector-effect="non-scaling-stroke" />
+                                        </svg>
+                                    </div>
+                                </cagov-plus>
+                                <cagov-minus>
+                                    <div class="accordion-icon" aria-hidden="true">
+                                        <svg viewbox="0 0 25 25">
+                                            <title>Minus</title>
+                                            <line x1="6" y1="12.5" x2="19" y2="12.5" fill="none" stroke="currentColor"
+                                                stroke-width="6" stroke-linecap="round"
+                                                vector-effect="non-scaling-stroke" />
+                                        </svg>
+                                    </div>
+                                </cagov-minus>
+                            </div>
+                        </button>
+                        <div class="accordion-card-container" aria-hidden=" true" style="height: 0px;">
+                            <div class="card-body">
+                                Leave your feedback on our <a href="https://webstandards.ca.gov/contact-us/">contact
+                                    form</a> and will add
+                                you to our notifications list.
+                            </div>
+                        </div>
+                    </div>
+                </cagov-accordion>
+
+
+
+
+
+
+
+            </div>
+        </div>
+    </div>
+    <!--end container-->

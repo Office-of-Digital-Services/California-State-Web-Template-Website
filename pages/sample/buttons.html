@@ -1,0 +1,111 @@
+﻿---
+title: Buttons
+layout: page.njk
+permalink: "sample/buttons.html"
+---
+
+<nav aria-label="You are here">
+    <ol class="breadcrumb">
+        <li><a href="../index.html" title="Home page">Home</a></li>
+        <li><a href="/sample/" title="Content Modules landing page">Content Modules</a></li>
+        <li class="active">Buttons</li>
+    </ol>
+</nav>
+<div class="row">
+    <div class="col-md-8">
+        <h1>Buttons</h1>
+        <p>Buttons can be created by adding <code>.btn</code> class to a link or button element. By it's
+            self the <code>.btn</code> class does not do much besides create some basic structure. To
+            apply styles to the button we need to add an extender class like <code>.btn-default</code>
+            or <code>.btn-primary</code></p>
+        {% include "../../src/_includes/modules/buttons.html" %}
+    </div>
+    <div class="col-md-4">
+        <h3>Source Code:</h3>
+        <pre><code class="overflow-auto">{% include "../../src/_includes/modules/buttons.html" %}</code></pre>
+    </div>
+</div>
+
+<hr>
+
+<div class="row">
+    <div class="col-md-8">
+        <p>For webmasters needing to add application behavior there are a few additional classes that
+            might be useful. <code>.active</code> will make buttons appear pressed.</p>
+        {% include "../../src/_includes/modules/buttons-active.html" %}
+    </div>
+    <div class="col-md-4">
+        <h3>Source Code:</h3>
+        <pre><code class="overflow-auto">{% include "../../src/_includes/modules/buttons-active.html" %}</code></pre>
+    </div>
+</div>
+
+<hr>
+
+<div class="row">
+    <div class="col-md-8">
+        <p>Add the <code>.disabled</code> class to make buttons appear unclickable by fading them back
+            50%. Add the <code>disabled="disabled"</code> attribute to <code>&lt;button&gt;</code>
+            buttons instead of the class.</p>
+        {% include "../../src/_includes/modules/buttons-disabled.html" %}
+    </div>
+    <div class="col-md-4">
+        <h3>Source Code:</h3>
+        <pre><code class="overflow-auto">{% include "../../src/_includes/modules/buttons-disabled.html" %}</code></pre>
+    </div>
+</div>
+
+
+<hr>
+
+
+<div class="row">
+    <div class="col-md-8">
+        <h2>Other Button Variations</h2>
+        {% include "../../src/_includes/modules/buttons-outline.html" %}
+    </div>
+    <div class="col-md-4">
+        <h3>Source Code:</h3>
+        <pre><code class="overflow-auto">{% include "../../src/_includes/modules/buttons-outline.html" %}</code></pre>
+    </div>
+</div>
+
+<hr>
+<div class="row">
+    <div class="col-md-8">
+        <h2>Hover Effects</h2>
+        <p class="m-t-md">Add a class <code>.btn-hover</code> to add shutter out horisontal hover
+            effect.</p>
+        {% include "../../src/_includes/modules/buttons-hover.html" %}
+    </div>
+    <div class="col-md-4">
+        <h3>Source Code:</h3>
+        <pre><code class="overflow-auto">{% include "../../src/_includes/modules/buttons-hover.html" %}</code></pre>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-8">
+        <p class="m-t-md">Add classes <code>.btn-next</code>, <code>.btn-prev</code> to add previous and
+            next icons hover effect. Also button's content needs to be inclosed in the <code>span</code>
+            tag.</p>
+        {% include "../../src/_includes/modules/buttons-hover-icon.html" %}
+    </div>
+    <div class="col-md-4">
+        <h3>Source Code:</h3>
+        <pre><code class="overflow-auto">{% include "../../src/_includes/modules/buttons-hover-icon.html" %}</code></pre>
+    </div>
+</div>
+
+
+<hr>
+<div class="row">
+    <div class="col-md-8">
+        <h2>Sizes</h2>
+        {% include "../../src/_includes/modules/buttons-sizes.html" %}
+    </div>
+    <div class="col-md-4">
+        <h3>Source Code:</h3>
+        <pre><code class="overflow-auto">{% include "../../src/_includes/modules/buttons-sizes.html" %}</code></pre>
+    </div>
+</div>

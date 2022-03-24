@@ -1,0 +1,41 @@
+﻿---
+title: Exam List
+layout: page.njk
+permalink: "sample/exam-list.html"
+---
+
+<nav aria-label="You are here">
+    <ol class="breadcrumb">
+        <li><a href="../index.html" title="Home page">Home</a></li>
+        <li><a href="/sample/" title="Content Modules landing page">Content Modules</a></li>
+        <li class="active">Exam List</li>
+    </ol>
+</nav>
+
+<div class="row">
+    <div class="half">
+        <h1>Exam List</h1>
+        <p>An exam list contains a repeating group of exam items. To begin, wrap this module in a
+            <code>&lt;section class="exam-list"&gt;</code>. Then use
+            <code>&lt;article class="exam-item"&gt;</code> to group intividual exams.
+        </p>
+        <p>Like similar widgets, the list item contains the following child elements.
+            <code>.header</code>, <code>.body</code>, and <code>.footer</code>
+        </p>
+
+        <p><span class="badge label-info">Note:</span> Exam items have additional classes on sub
+            elements that may not be used in the current design, however they could be used in the
+            future.</p>
+
+        <hr>
+
+        <h2>Example:</h2>
+        {% include "../../src/_includes/modules/exam-list.html" %}
+    </div>
+    <div class="half">
+        <h2>Source Code:</h2>
+
+        <pre><code class="overflow-auto">{% include "../../src/_includes/modules/exam-list.html" %}</code></pre>
+
+    </div>
+</div>

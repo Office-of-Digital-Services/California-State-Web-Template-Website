@@ -1,0 +1,151 @@
+---
+title: State Web Template Structure
+layout: page.njk
+permalink: "structure.html"
+---
+
+<nav aria-label="You are here">
+  <ol class="breadcrumb">
+    <li><a href="index.html" title="Home page">Home</a></li>
+    <li class="active">Structure</li>
+  </ol>
+</nav>
+
+<h1>State Template Structure</h1>
+<h2>Web Page Structure</h2>
+<p>
+  The image below shows the basic structure of a State Template web page, consisting of various
+  elements and building blocks. In our case Nunjucks Includes (njk) are used as our webpage
+  structure main building blocks.</p>
+</p>Several common components (such as page headers, footers, navigation, etc.) are included in pages
+using njk includes.
+</p>
+<img src="/images/structure.jpg" class="img-fluid"
+  alt="Web Page Template Structure: Global Header (which includes Utility header, Setting Bar, Branding, Navigation and Search), Main Content and Footer." />
+
+<p>
+  Code below shows basic State Template web page structure:
+</p>
+<pre>
+<span class="text-success">&lt;!doctype html&gt;</span>
+<span class="text-accent-p2">&lt;html</span> <span class="text-info">lang=</span><span class="text-accent7">"en"</span><span class="text-accent-p2">&gt;</span>
+     <span class="text-accent-p2">&lt;head&gt;</span>
+            <span class="text-accent-p2">&lt;meta </span><span class="text-info">charset=</span><span class="text-accent7">"utf-8"</span><span class="text-accent-p2">&gt;</span>
+            <span class="text-accent-p2">&lt;title&gt;</span>State Template<span class="text-accent-p2">&lt;/title&gt;</span>
+            <span class="text-accent-p2">&lt;meta</span> <span class="text-info">name=</span><span class="text-accent7">"Author"</span> <span class="text-info">content=</span><span class="text-accent7">"State of California"</span><span class="text-accent-p2"> /&gt;</span>
+            <span class="text-accent-p2">&lt;meta</span> <span class="text-info">name=</span><span class="text-accent7">"Description"</span> <span class="text-info">content=</span><span class="text-accent7">"State of California"</span><span class="text-accent-p2"> /&gt;</span>
+            <span class="text-accent-p2">&lt;meta</span> <span class="text-info">name=</span><span class="text-accent7">"Keywords"</span> <span class="text-info">content=</span><span class="text-accent7">"California, government"</span><span class="text-accent-p2"> /&gt;</span>
+            <span class="text-success">&#10100;% include "/src/_includes/head-css-js.njk" %&#10101;</span>
+    <span class="text-accent-p2">&lt;/head&gt;</span>
+    <span class="text-accent-p2">&lt;body&gt;</span>
+          <span class="text-accent-p2">&lt;header</span> <span class="text-info">role=</span><span class="text-accent7">"banner"</span> <span class="text-info">id=</span><span class="text-accent7">"header"</span> <span class="text-info">class=</span><span class="text-accent7">"global-header fixed"</span><span class="text-accent-p2">&gt;</span>
+                <span class="text-accent-p2">&lt;div</span> <span class="text-info">id=</span><span class="text-accent7">"skip-to-content"</span><span class="text-accent-p2">&gt;&lt;a </span><span class="text-info">href=</span><span class="text-accent7">"#main-content"</span><span class="text-accent-p2">&gt;</span>Skip to Main Content<span class="text-accent-p2">&lt;/a&gt;&lt;/div&gt;</span>
+                <span class="text-success">&#10100;% include "/src/_includes/utility-header.njk" %&#10101;/span>
+                <span class="text-success">&#10100;% include "/src/_includes/settings-bar.njk" %&#10101;</span>
+                <span class="text-success">&#10100;% include "/src/_includes/branding-lightgrey.njk" %&#10101;</span>
+                <span class="text-success">&#10100;% include "/src/_includes/mobile-controls.njk" %&#10101;</span>
+                <span class="text-accent-p2">&lt;div</span> <span class="text-info">class=</span><span class="text-accent7">"navigation-search full-width-nav container"</span><span class="text-accent-p2">&gt;</span>
+		<span class="text-accent-p2">&lt;div</span> <span class="text-info">id=</span><span class="text-accent7">"head-search"</span> <span class="text-info">class=</span><span class="text-accent7">"search-container search-container featured-search"</span><span class="text-accent-p2">&gt;</span>
+			<span class="text-success">&#10100;% include "/src/_includes/search.njk" %&#10101;</span>
+		<span class="text-accent-p2">&lt;/div&gt;</span>
+                    <span class="text-success">&#10100;% include "/src/_includes/navigation.njk" %&#10101;</span>
+                <span class="text-accent-p2">&lt;/div&gt;</span>
+            <span class="text-accent-p2">&lt;/header&gt;</span>
+            <span class="text-accent-p2">&lt;div</span> <span class="text-info">id=</span><span class="text-accent7">"main-content"</span> <span class="text-info">class=</span><span class="text-accent7">"main-content"</span><span class="text-accent-p2">&gt;</span>
+                <span class="text-accent-p2">&lt;div </span><span class="text-info">class=</span><span class="text-accent7">"container"</span><span class="text-accent-p2">&gt;</span>
+                    <span class="text-accent-p2">&lt;main </span><span class="text-info">class=</span><span class="text-accent7">"main-primary"</span><span class="text-accent-p2">&gt;</span>
+                    Page content
+                    <span class="text-accent-p2">&lt;/main&gt;</span>
+               <span class="text-accent-p2">&lt;/div&gt;</span>
+           <span class="text-accent-p2">&lt;/div&gt;</span>
+            <span class="text-success">&#10100;% include "/src/_includes/global-footer.njk" %&#10101;</span>
+            <span class="text-success">&#10100;% include "/src/_includes/scripts.njk" %&#10101;</span>
+    <span class="text-accent-p2">&lt;/body&gt;</span>
+<span class="text-accent-p2">&lt;/html&gt;</span>
+</pre>
+<p><span class="badge label-info">Note:</span> Path to the includes will be relative to the directory of your page.</p>
+
+</pre>
+<h2>File and Folder Structure</h2>
+<p>The following is the file and folder structure for the 2018 State Template package.</p>
+<div class="row">
+  <div class="col-md-6">
+    <pre><code class="language-plaintext" data-lang="plaintext">StateTemplate/
+ ├── _site/
+ └── pages/
+   ├── index.html
+   └── etc...
+ └── sample/
+   ├── accordions.html
+   ├── color-schemes.html
+   └── etc...
+ └── src/
+   └── _includes/
+   ├── global-footer.njk
+   ├── etc...
+   └── layouts/
+	  ├── base.njc
+	  └── etc...
+   └── modules/
+     ├── accordion.html
+     └── etc...
+   └── fonts
+   └── images
+   └── js
+   └── scss
+ ├── eleventy.js
+ ├── package.json
+ └── rollup.config.js
+			 </code></pre>
+  </div>
+  <div class="col-md-6">
+
+
+    <ul class="list-standout">
+      <li><strong>_site</strong> – This folder contains website's output files.</li>
+      <li><strong>pages</strong> – Contains website's input pages that a developer or e content editor can edit.
+      </li>
+      <li><strong>src</strong> – The &ldquo;src&rdquo; folder contains includes, modules, fonts, images, SCSS and
+        JavaScript files.</li>
+      <li><strong>images</strong> – This folder contains all the images used by the State
+        Template.</li>
+      <li><strong>js</strong> – Contains JavaScript files that are used by
+        the State Template. Third party JavaScript libraries are also included in this folder.
+      </li>
+      <li><strong>_includes</strong> – This folder contains the common template components used on
+        various pages in the State Template (for example, header, footers, navigation, etc.).
+      </li>
+    </ul>
+    <p></p>
+
+  </div>
+</div>
+
+
+
+<h2>Eleventy page generator</h2>
+<p>6.0 State Web Template is using eleventy framework to build and generate pages. This framework gives web developers
+  and content editors options to specify a page's permalinks, layout, color scheme, title, metadata etc. You can
+  find more details about using these options on our <a href="/sample/page-templates.html">template page</a>.
+</p>
+
+<pre><code>---
+title: Your page title
+layout: page.njk
+colorscheme: "/css/colorscheme-sierra.css"
+permalink: "sample/cards.html"
+alert: "../modules/alert-banner.html"
+description: State Web Template sample page
+keywords: about, about us, history, mission, vision
+---</code>
+</pre>
+</p>
+
+
+<h2>Icon Fonts</h2>
+<p><a href="/sample/icon-fonts.html">Icon Fonts</a> are also included as part of the State
+  Template. These icon fonts were developed by the California Department of Technology, with some additions from other
+  sources.
+</p>
+<p>The Sample Pages included with the State Template package include a list of available icon
+  fonts, as well as instructions on how to use them in page markup. </p>

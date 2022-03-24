@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>News Detail</title> 
+  <meta charset="utf-8">
+  <meta name="Author" content="State of California" />
+  <meta name="Description" content="State of California" />
+  <meta name="Keywords" content="California, government" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
+
+<link rel="stylesheet" href="/css/cagov.core.css">
+
+		<link rel="stylesheet" href="/css/colorscheme-oceanside.css">
+
+
+<link rel="apple-touch-icon-precomposed" sizes="100x100" href="/images/apple-touch-icon-precomposed.png">
+<link rel="icon" sizes="192x192" href="/images/apple-touch-icon-192x192.png">
+<link rel="apple-touch-icon-precomposed" sizes="180x180" href="/images/apple-touch-icon-180x180.png">
+<link rel="apple-touch-icon-precomposed" sizes="152x152" href="/images/apple-touch-icon-152x152.png">
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="/images/apple-touch-icon-144x144.png">
+<link rel="apple-touch-icon-precomposed" sizes="120x120" href="/images/apple-touch-icon-120x120.png">
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="/images/apple-touch-icon-114x114.png">
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="/images/apple-touch-icon-72x72.png">
+<link rel="apple-touch-icon-precomposed" href="/images/apple-touch-icon-57x57.png">
+<link rel="shortcut icon" href="/images/apple-touch-icon-57x57.png">
+<link rel="apple-touch-icon" href="/images/apple-touch-icon.png">
+<link rel="shortcut icon" href="/favicon.ico">
+
+<!-- Include Google Analytics -->
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-20973992-30"></script>
+
+<script>
+
+  window.dataLayer = window.dataLayer || [];
+  function gtag() { dataLayer.push(arguments); }
+  gtag('js', new Date());
+
+//statewide GA property
+//update state department UA code in the line below before deployment
+  gtag('config', 'UA-20973992-30');
+
+
+  var getOutboundLink = function (url) {
+    gtag('event', 'click', {
+      'event_category': 'navigation',
+      'event_label': 'outbound link: ' + url,
+      'transport_type': 'beacon',
+      'event_callback': function () { document.location = url; }
+    });
+  }
+
+  var trackDownload = function (filename) {
+    gtag('event', 'click', {
+      'event_category': 'download',
+      'event_label': 'file: ' + filename,
+      'transport_type': 'beacon',
+      'event_callback': function () { document.location = url; }
+    });
+  }
+</script>
+</head>
+<body class="primary">
+  <header role="banner" id="header" class="global-header fixed">
+    <div id="skip-to-content">
+        <a href="#main-content">Skip to Main Content</a>
+    </div>
+    
+    <div class="utility-header">
+    <div class="container">
+        <div class="group flex-row">
+            <div class="social-media-links">
+                <div class="header-cagov-logo"><a href="https://ca.gov"><span class="sr-only">CA.gov</span><img
+                            src="/images/Ca-Gov-Logo-Gold.svg" class="pos-rel" alt="" aria-hidden="true" /></a></div>
+                <a href="/" class="ca-gov-icon-home"><span class="sr-only">Home</span></a>
+                <a href="/" class="ca-gov-icon-facebook"><span class="sr-only">Facebook</span></a>
+                <a href="/" class="ca-gov-icon-twitter"><span class="sr-only">Twitter</span></a>
+                <a href="/" class="ca-gov-icon-email"><span class="sr-only">Email</span></a>
+            </div>
+            <div class="settings-links">
+                <a href="/contact.html"><span class="ca-gov-icon-contact-us" aria-hidden="true"></span> Contact Us</a>
+                <button class="btn btn-sm btn-primary" data-bs-toggle="collapse" data-bs-target="#siteSettings"
+                    aria-expanded="false" aria-controls="siteSettings"><span class="ca-gov-icon-gear"
+                        aria-hidden="true"></span> Settings</button>
+            </div>
+        </div>
+    </div>
+</div>
+    <div class="site-settings section section-standout collapse collapsed" id="siteSettings">
+    <div class="container p-y">
+        <div class="btn-group btn-group-justified-sm" aria-label="contrastMode">
+            <div class="btn-group"><button type="button"
+                    class="btn btn-standout disableHighContrastMode">Default</button></div>
+            <div class="btn-group"><button type="button" class="btn btn-standout enableHighContrastMode">High
+                    Contrast</button></div>
+        </div>
+
+        <div class="btn-group" aria-label="textSizeMode">
+            <div class="btn-group"><button type="button" class="btn btn-standout resetTextSize">Reset</button></div>
+            <div class="btn-group"><button type="button" class="btn btn-standout increaseTextSize"><span
+                        class="hidden-xs">Increase Font Size</span><span class="visible-xs">Font <span
+                            class="sr-only">Increase</span><span class="ca-gov-icon-plus-line small"
+                            aria-hidden="true"></span></span></button></div>
+            <div class="btn-group"><button type="button" class="btn btn-standout decreaseTextSize"><span
+                        class="hidden-xs">Decrease Font Size</span><span class="visible-xs">Font <span
+                            class="sr-only">Decrease</span><span class="ca-gov-icon-minus-line small"
+                            aria-hidden="true"></span></span></button></div>
+            <div class="btn-group"><button type="button" class="btn btn-standout dyslexicFont">Dyslexic Font</button>
+            </div>
+        </div>
+        <button type="button" class="close" data-bs-toggle="collapse" data-bs-target="#siteSettings"
+            aria-label="Close"><span aria-hidden="true" class=" ca-gov-icon-close-mark"></span></button>
+    </div>
+</div>
+    <!-- header branding with light gray background -->
+<div class="section-default">
+    <div class="branding">
+        <div class="header-organization-banner">
+            <a href="/">
+                <div class="logo-assets">
+                    <img src="/images/template-logo.png" class="logo-img" alt="State Template Logo" />
+                    <div class="logo-text">
+                        <span class="logo-state">State of California</span>
+                        <span class="logo-dept">Web Template</span>
+                    </div>
+                </div>
+            </a>
+        </div>
+    </div>
+</div>
+    <!-- mobile navigation controls -->
+<div class="mobile-controls">
+    <span class="mobile-control-group mobile-header-icons">
+        <!-- Add more mobile controls here. These will be on the right side of the mobile page header section -->
+    </span>
+    <div class="mobile-control-group main-nav-icons">
+        <button class="mobile-control toggle-search">
+            <span class="ca-gov-icon-search hidden-print" aria-hidden="true"></span><span class="sr-only">Search</span>
+        </button>
+        <button id="nav-icon3" class="mobile-control toggle-menu" aria-expanded="false" aria-controls="navigation"
+            data-bs-toggle="collapse" data-bs-target="#navigation">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span class="sr-only">Menu</span>
+        </button>
+    </div>
+</div>
+
+    <div class="navigation-search full-width-nav container">
+      <div id="head-search" class="search-container featured-search">
+          <div class="container">
+    <form id="Search" class="pos-rel" action="/serp.html">
+        <span class="sr-only" id="SearchInput">Custom Google Search</span>
+        <input type="text" name="q" aria-labelledby="SearchInput" placeholder="Search this website"
+            class="height-50 border-0 p-x-sm w-100 search-textfield" />
+        <button type="submit" class="pos-abs gsc-search-button top-0 width-50 height-50 border-0 bg-transparent"><span
+                class="ca-gov-icon-search font-size-30 color-gray" aria-hidden="true"></span><span
+                class="sr-only">Submit</span></button>
+        <div class="width-50 height-50 close-search-btn"><button
+                class="close-search gsc-clear-button width-50 height-50 border-0 bg-transparent pos-rel"
+                type="reset"><span class="sr-only">Close Search</span><span class="ca-gov-icon-close-mark"
+                    aria-hidden="true"></span></button></div>
+    </form>
+</div>
+      </div>
+      <nav id="navigation" class="main-navigation megadropdown auto-highlight">
+    <ul id="nav_list" class="top-level-nav">
+        <li class="nav-item">
+            <a class="first-level-link">Getting Started</a>
+            <div class="sub-nav">
+                <div class="second-level-nav flex">
+                    <a href="/getting-started.html" class="second-level-link">
+                        <span class="ca-gov-icon-online-services font-size-40" aria-hidden="true"></span>
+                        <p class="h3 sub-nav-link">Getting Started
+                            <span class="sr-only">page</span>
+                        </p>
+                        <p class="link-description">How to apply California State Template css, js and ssi</p>
+                    </a>
+                    <a href="/update.html" class="second-level-link">
+                        <span class="ca-gov-icon-file-check font-size-40" aria-hidden="true"></span>
+                        <p class="h3 sub-nav-link">Update</p>
+                        <p class="link-description">Update your State Template to most current version</p>
+                    </a>
+                    <a href="/cdn.html" class="second-level-link">
+                        <span class="ca-gov-icon-globe font-size-40" aria-hidden="true"></span>
+                        <p class="h3 sub-nav-link">CDN</p>
+                        <p class="link-description">Load your website faster by using State Template CDN</p>
+                    </a>
+                </div>
+                <div class="second-level-nav flex with-border">
+
+                    <a href="/structure.html" class="second-level-link">
+                        <span class="ca-gov-icon-flowchart" aria-hidden="true"></span>Structure
+                        <div class="link-description">Find out more about State Template structure</div>
+                    </a>
+                    <a href="https://github.com/Office-of-Digital-Innovation/California-State-Template"
+                        class="second-level-link" target="_blank">
+                        <span class="ca-gov-icon-download-cloud" aria-hidden="true"></span>Download
+                        <div class="link-description">Download or clone State Template on GitHub
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </li>
+
+        <li class="nav-item">
+            <a href="/sample/" class="first-level-link">Branding Set</a>
+            <div class="sub-nav">
+                <div class="second-level-nav flex">
+                    <a href="/sample/typography.html" class="second-level-link">
+                        <img class="image-icon rounded-50x m-b-md" src="/images/type.png" alt="Typography Icon">
+                        <p class="h3 sub-nav-link">Typography</p>
+                    </a>
+                    <a href="/sample/color-schemes.html" class="second-level-link">
+                        <img class="image-icon rounded-50x m-b-md" src="/images/color.png" alt="Color Schemes Icon">
+                        <p class="h3 sub-nav-link">Color Schemes</p>
+                    </a>
+                    <a href="/sample/icon-fonts.html" class="second-level-link">
+                        <img class="image-icon rounded-50x m-b-md" src="/images/icons.png" alt="Bear Icon">
+                        <p class="h3 sub-nav-link">Icons</p>
+                    </a>
+                </div>
+
+            </div>
+        </li>
+        <li class="nav-item">
+            <a href="/sample/" class="first-level-link">Components</a>
+            <div class="sub-nav">
+                <div class="second-level-nav flex">
+                    <a href="/sample/navsamples.html" class="second-level-link">
+                        <img class="image-icon rounded-50x m-b-md" src="/images/sample/images/03.png" alt="Navigation Icon">
+                        <p class="h3 sub-nav-link">Navigation Samples</p>
+                        <p class="link-description">Main navigation types and variations examples</p>
+                    </a>
+                    <a href="/sample/" class="second-level-link">
+                        <img class="image-icon rounded-50x m-b-md" src="/images/sample/images/features-icon.png"
+                            alt="Components Icon">
+                        <p class="h3 sub-nav-link">Content Modules & Components</p>
+                        <p class="link-description">Working modules and web components examples with their documentation
+                        </p>
+                    </a>
+                    <a href="/shortcuts.html" class="second-level-link">
+                        <img class="image-icon rounded-50x m-b-md" src="/images/sample/images/css-icon.png" alt="CSS Icon">
+                        <p class="h3 sub-nav-link">CSS Shortcuts</p>
+                        <p class="link-description">State Template's custom css classes shortcuts list</p>
+                    </a>
+                </div>
+
+            </div>
+        </li>
+
+        <li class="nav-item">
+            <a href="/sample/" class="first-level-link">Template Pages</a>
+            <div class="sub-nav">
+                <div class="second-level-nav flex">
+                    <a href="/sample/layout-about.html" class="second-level-link">
+                        <span class="ca-gov-icon-thumb-up" aria-hidden="true"></span>
+                        <span class="h4">About</span>
+                        <div class="link-description">About us sample page</div>
+                    </a>
+                    <a href="/business-profile.html" class="second-level-link">
+                        <span class="ca-gov-icon-users-alt" aria-hidden="true"></span>
+                        <span class="h4">Agency Profile</span>
+                        <div class="link-description">Agency profile sample page
+                        </div>
+                    </a>
+                    <a href="/sample/layout-contact.html" class="second-level-link">
+                        <span class="ca-gov-icon-contact-us" aria-hidden="true"></span>
+                        <span class="h4">Contact
+                            <span class="sr-only">us page</span></span>
+                        <div class="link-description">Contact us sample page</div>
+                    </a>
+                    <a href="/sample/layout-events.html" class="second-level-link">
+                        <span class="ca-gov-icon-info-bubble" aria-hidden="true"></span>
+                        <span class="h4">Events</span>
+                        <div class="link-description">Events sample page</div>
+                    </a>
+                    <a href="/sample/layout-faq.html" class="second-level-link">
+                        <span class="ca-gov-icon-question-fill" aria-hidden="true"></span>FAQ
+                        <div class="link-description">FAQs sample page</div>
+                    </a>
+                </div>
+                <div class="second-level-nav flex">
+                    <a href="/" class="second-level-link">
+                        <span class="ca-gov-icon-home" aria-hidden="true"></span>
+                        <span class="h4">Homepage</span>
+                        <div class="link-description">Home page layout
+                        </div>
+                    </a>
+                    <a href="/sample/layout-news.html" class="second-level-link">
+                        <span class="ca-gov-icon-loud-speaker" aria-hidden="true"></span>
+                        <span class="h4">News</span>
+                        <div class="link-description">News sample page
+                        </div>
+                    </a>
+                    <a href="/sample/layout-services.html" class="second-level-link">
+                        <span class="ca-gov-icon-gears" aria-hidden="true"></span>
+                        <span class="h4">Services</span>
+                        <div class="link-description">Services sample page</div>
+                    </a>
+                    <a href="/search-directory.html" class="second-level-link" target="_blank">
+                        <span class="ca-gov-icon-searching" aria-hidden="true"></span>
+                        <span class="h4">Search Results</span>
+                        <div class="link-description">Search directory sample page</div>
+                    </a>
+                    <a href="/sample/layout-profile.html" class="second-level-link">
+                        <span class="ca-gov-icon-person" aria-hidden="true"></span>
+                        <span class="h4">User Profile</span>
+                        <div class="link-description">User profile sample page</div>
+                    </a>
+                </div>
+            </div>
+        </li>
+
+        <li class="nav-item">
+            <a href="/sample/" class="first-level-link">About</a>
+            <div class="sub-nav">
+                <div class="second-level-nav flex with-border">
+                    <a href="/about.html" class="second-level-link">
+                        <div class="media-left">
+                            <img class="media-object width-80 height-80" src="/images/sample/images/02.png" alt="About icon">
+                        </div>
+                        <div class="media-body">
+                            <div class="title text-left">About State Template</div>
+                            <div class="teaser link-description text-left">California State Template overview</div>
+                        </div>
+                    </a>
+                    <a href="https://webstandards.ca.gov/" class="second-level-link" target="_blank">
+                        <div class="media-left">
+                            <img class="media-object width-80 height-80" src="/images/sample/images/01.png"
+                                alt="Web Standards icon">
+                        </div>
+                        <div class="media-body">
+                            <div class="title text-left">Web Standards</div>
+                            <div class="teaser link-description text-left">Web Standards and Design System for
+                                California Government</div>
+                        </div>
+                    </a>
+
+                </div>
+
+            </div>
+        </li>
+
+    </ul>
+</nav>
+    </div>
+  </header>
+
+  
+<div id="main-content" class="main-content">
+	<div class="container p-b-lg p-t-md">
+		<main class="main-primary" id="main">
+
+			
+<nav aria-label="You are here">
+    <ol class="breadcrumb">
+        <li><a href="../index.html" title="Home page">Home</a></li>
+        <li><a href="/sample/" title="Content Modules landing page">Content Modules</a></li>
+        <li class="active">News Detail</li>
+    </ol>
+</nav>
+
+<div class="row">
+    <div class="half">
+        <h1>News Detail</h1>
+        <p><code>.news-detail</code> is an end page content module for news articles. To begin, wrap the
+            contents of the page in a <code>&lt;article class="news-detail"&gt;</code> tag.</p>
+        <p>This module makes use of the <code>&lt;header&gt;</code> tag and locates the h1 and the
+            publishing date within it.</p>
+        <p>The keywords section uses an unordered list within a <code>div</code> or <code>footer</code>
+            element with the class of <code>.keywords</code> The keywords themselves could be linked or
+            not linked.</p>
+        <h2>Schema Options (microdata)</h2>
+<p>This module is also available as a schema.org formatted module. Many applications, especially search engines, can benefit greatly from this structured data. Pages marked up using microdata enable search engines to understand the information on web pages and provide richer search results in order to make it easier for users to find relevant information on the web.</p>
+<p>Using microdata is optional, but highly encouraged. In the source code section, samples for plain html and the microdata version are both included.</p>
+
+        <h2>Example:</h2>
+        <article class="news-detail">
+    <header>
+        <h2 class="h1">News Title</h2>
+        <div class="published">Published: <time datetime="2014-08-26">Aug 26, 2014</time></div>
+    </header>
+
+    <p><img src="/images/sample/images/75x75.gif" class="img-left" alt="">Full Article Text - Cras justo odio, dapibus
+        ac facilisis in, egestas eget quam. Curabitur blandit tempus porttitor. Vestibulum id ligula porta felis euismod
+        semper. Donec sed odio dui. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum.
+        Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+
+    <footer class="keywords">
+        Tags or Keywords
+        <ul>
+            <li><a href="">tag 1</a></li>
+            <li><a href="">tag 2</a></li>
+            <li><a href="">tag 3</a></li>
+            <li><a href="">tag 4</a></li>
+        </ul>
+    </footer>
+</article>
+    </div>
+    <div class="half">
+        <h2>Source Code:</h2>
+        <div class="tab-group">
+            <ul id="sourceCode" class="nav nav-tabs" role="tablist">
+                <li class="active"><a href="#html" role="tab" data-bs-toggle="tab">HTML Markup</a></li>
+                <li><a href="#microdata" role="tab" data-bs-toggle="tab">Microdata</a></li>
+            </ul>
+            <!-- Tab panes -->
+            <div class="tab-content responsive">
+                <div class="tab-pane active" id="html">
+                    <pre><code class="overflow-auto"><article class="news-detail">
+    <header>
+        <h2 class="h1">News Title</h2>
+        <div class="published">Published: <time datetime="2014-08-26">Aug 26, 2014</time></div>
+    </header>
+
+    <p><img src="/images/sample/images/75x75.gif" class="img-left" alt="">Full Article Text - Cras justo odio, dapibus
+        ac facilisis in, egestas eget quam. Curabitur blandit tempus porttitor. Vestibulum id ligula porta felis euismod
+        semper. Donec sed odio dui. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum.
+        Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+
+    <footer class="keywords">
+        Tags or Keywords
+        <ul>
+            <li><a href="">tag 1</a></li>
+            <li><a href="">tag 2</a></li>
+            <li><a href="">tag 3</a></li>
+            <li><a href="">tag 4</a></li>
+        </ul>
+    </footer>
+</article></code></pre>
+                </div>
+                <div class="tab-pane" id="microdata">
+                    <p class="alert alert-info">NOTE: This module makes use of a <code>datetime</code>
+                        property set in the <strong>ISO 8601</strong> format. Be sure to set the time
+                        correctly for each news-item.</p>
+                    <pre><code class="overflow-auto"><article class="news-detail" itemscope itemtype="http://schema.org/NewsArticle">
+    <header>
+        <h2 class="h1" itemprop="headline">News Title</h2>
+        <div class="published">Published: <time class="date" itemprop="datePublished"
+                datetime="2014-10-20T00:00:00-08:00">Oct 20, 2014</time></div>
+    </header>
+
+    <div itemprop="articleBody">
+        <p><img src="/images/sample/images/75x75.gif" class="img-left" alt="" itemprop="thumbnailUrl">Full Article Text
+            - Cras justo odio, dapibus ac facilisis in, egestas eget quam. Curabitur blandit tempus porttitor.
+            Vestibulum id ligula porta felis euismod semper. Donec sed odio dui. Aenean eu leo quam. Pellentesque ornare
+            sem lacinia quam venenatis vestibulum. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+    </div>
+
+    <footer class="keywords">
+        Tags or Keywords
+        <ul itemprop="keywords">
+            <li><a href="">tag 1</a></li>
+            <li><a href="">tag 2</a></li>
+            <li><a href="">tag 3</a></li>
+            <li><a href="">tag 4</a></li>
+        </ul>
+    </footer>
+</article></code></pre>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+		</main>
+	</div>
+</div>
+
+
+  <!-- Global Footer -->
+<footer id="footer" class="global-footer">
+    <button class="return-top"><span class="sr-only">Back to top</span></button>
+    <cagov-back-to-top data-hide-after="7000" data-label="Back to top">
+    </cagov-back-to-top>
+    <div class="container">
+        <div class="row">
+            <div class="three-quarters">
+                <ul class="footer-links">
+                    <li><a href="#skip-to-content">Back to Top</a></li>
+                    <li><a href="/use.html">Conditions of Use</a></li>
+                    <li><a href="/privacy.html">Privacy Policy</a></li>
+                    <li><a href="/accessibility.html">Accessibility</a></li>
+                    <li><a href="/images/WebAccessibilityCert-beta.template.webstandards.ca.gov.pdf">Accessibility
+                            Certification</a></li>
+                    <li><a href="/contact.html">Contact Us</a></li>
+                </ul>
+            </div>
+            <div class="quarter text-right">
+                <ul class="socialsharer-container">
+                    <li><a href="https://www.flickr.com/groups/californiagovernment"><span class="ca-gov-icon-flickr"
+                                aria-hidden="true"></span><span class="sr-only">Flickr</span></a></li>
+                    <li><a href="https://www.pinterest.com/cagovernment/"><span class="ca-gov-icon-pinterest"
+                                aria-hidden="true"></span><span class="sr-only">Pinterest</span></a></li>
+                </ul>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Copyright Statement -->
+    <div class="copyright">
+        <div class="container">
+            Copyright &copy;
+            <span id="thisyear">
+        <script>document.getElementById('thisyear').appendChild(document.createTextNode(new Date().getFullYear()))</script>
+    </span> State of California
+        </div>
+    </div>
+</footer>
+
+<!-- Extra Decorative Content -->
+<div class="decoration-last">&nbsp;</div>
+  <script src="/js/cagov.core.js"></script>
+</body>
+</html>

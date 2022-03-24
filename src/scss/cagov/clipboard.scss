@@ -1,0 +1,214 @@
+.clipboard-saved-count {
+    font-size: 1.5em;
+    line-height: 1;
+}
+.clipboard-tooltip, .clipboard-toggle {
+    cursor: pointer;
+}
+.clipboard-tooltip {
+    $tooltip-arrow-color: $gray-lightest;
+    .tooltip-inner {
+        box-shadow: 0 0 10px 0 #999;
+    }
+    .tooltip-inner {
+        background-color: $tooltip-arrow-color;
+        color: $gray-dark;
+    }
+    .saved {
+        color: $color-p1;
+    }
+    .tooltip-arrow {
+        position: absolute;
+        width: 0;
+        height: 0;
+        border-color: transparent;
+        border-style: solid;
+    }
+    &.top .tooltip-arrow {
+        border-top-color: $tooltip-arrow-color;
+    }
+    &.top-left .tooltip-arrow {
+        border-top-color: $tooltip-arrow-color;
+    }
+    &.top-right .tooltip-arrow {
+        border-top-color: $tooltip-arrow-color;
+    }
+    &.right .tooltip-arrow {
+        border-right-color: $tooltip-arrow-color;
+    }
+    &.left .tooltip-arrow {
+        border-left-color: $tooltip-arrow-color;
+    }
+    &.bottom .tooltip-arrow {
+        border-bottom-color: $tooltip-arrow-color;
+    }
+    &.bottom-left .tooltip-arrow {
+        border-bottom-color: $tooltip-arrow-color;
+    }
+    &.bottom-right .tooltip-arrow {
+        border-bottom-color: $tooltip-arrow-color;
+    }
+}
+.clipboard-details-msg {
+    font-size: @include 9em;
+}
+.clipboard-settings {
+    $handleSize: 50px;
+    $backgroundColor: rgba(0,0,0,0.65);
+    $marginContainer: $handleSize / 2;
+    $clipColors: white;
+    $darkendColor: darken($clipColors,30%);
+    $maxSize: 100px;
+    $maxWidth: 350px;
+    background: #000;
+    background-color: $backgroundColor;
+    color: $clipColors;
+    z-index: 100;
+     @media (min-width:$screen-sm-min) {
+    
+    @media (min-width:$screen-sm-min) {
+        max-width: 350px;
+        position: absolute;
+        right: 0;
+        top: 220px;
+        transform: translateX(100%);
+        transition: transform 300ms ease-in-out;
+        border-bottom-left-radius: 5px;
+        &.in {
+            transform: translateX(0%);
+        }
+        .clipboard__handle {
+            cursor: pointer;
+            background: #000;
+            background-color: $backgroundColor;
+            position: absolute;
+            left: -$handleSize;
+            width: $handleSize;
+            height: $handleSize;
+            border-top-right-radius: 0;
+            border-bottom-right-radius: 0;
+            border-top-left-radius: 5px;
+            border-bottom-left-radius: 5px;
+            &:hover, &:focus {
+                color: $clipColors;
+            }
+        }
+        .clipboard__clip-count {
+            position: absolute;
+            top: 0;
+            right: 0;
+            background: #046B99;
+            border-radius: 10px;
+            width: 20px;
+        }
+        .ca-gov-icon-link {
+            font-size: 1.6em;
+            font-weight: 300;
+            color: $darkendColor;
+            &:hover {
+                color: $clipColors;
+            }
+        }
+        .close {
+            display: none;
+        }
+        .clipboard__heading {
+            line-height: $handleSize;
+            h4 {
+                margin: 0;
+                margin-left: 10px;
+                display: inline-block;
+            }
+            .clipboard__help {
+                font-size: 1.6em;
+                float: right;
+                margin-right: 10px;
+                color: $darkendColor;
+                cursor: pointer;
+                &:hover {
+                    color: $clipColors;
+                }
+            }
+        }
+        .clipboard__help-text {
+            margin: $handleSize/4;
+            max-width: 300px;
+            color: $darkendColor;
+            font-size: 0.9em;
+        }
+        .clipboard__actions {
+            button, a {
+                margin: $marginContainer;
+            }
+            .clipboard-removeall {
+                color: $darkendColor;
+                &:hover {
+                    color: $clipColors;
+                }
+            }
+        }
+    }
+    .settings-title {
+        display: inline-block;
+        margin-right: 10px;
+    }
+    button.close {
+        position: relative;
+        right: -10px;
+        color: #fff;
+        text-shadow: none;
+        opacity: @include 5;
+    }
+    .clipboard-list {
+        overflow: hidden;
+        list-style: none;
+        margin: 20px 0 0;
+        padding: 0;
+        text-align: center;
+        display: flex;
+        flex-wrap: wrap;
+        width: 100%;
+    }
+    .clipboard-item {
+        padding-left: 0;
+        padding-right: 0;
+        max-width: $maxWidth / 2;
+        text-align: center;
+        img {
+            max-width: $maxSize;
+        }
+        .title {
+            //  width: $maxSize;
+             max-width: $maxWidth / 2;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+           
+        }
+        .remove {
+            position: relative;
+            display: none;
+            span {
+                color: $brand-warning;
+                position: absolute;
+                font-size: 2em;
+                line-height: 1em;
+                right: 1em;
+                margin: 0;
+                background: #FFF;
+                padding: 0px 10px;
+                box-shadow: black;
+                box-shadow: 0 0 10px 0 #999;
+            }
+        }
+        &:hover {
+            .remove {
+                display: block;
+            }
+        }
+    }
+    .clipboard-temp-icon {
+        font-size: $maxSize;
+        line-height: $maxSize / 1.1;
+    }
+}

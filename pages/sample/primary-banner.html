@@ -1,0 +1,33 @@
+---
+title: Primary Banner
+layout: landing.njk
+permalink: "sample/primary-banner.html"
+---
+
+
+{% include "../../src/_includes/modules/header-primary-banner.html" %}
+
+<div class="container p-b-lg p-t-md">
+	<nav aria-label="You are here">
+		<ol class="breadcrumb">
+			<li><a href="../index.html" title="Home page">Home</a></li>
+			<li><a href="/sample/" title="Content Modules landing page">Content Modules</a></li>
+			<li class="active">Page Templates</li>
+		</ol>
+	</nav>
+	<h1>Primary Banner</h1>
+	<p>Primary banner can be added to any page but are commonly used on landing and home pages.
+		There are several banner options including a primary <code>header-primary-banner</code>, large
+		<code>header-large-banner</code>.
+	</p>
+	<p>To use the various banner types add them using the eleventy or any other include method right below the header or
+		the
+		main tag of the
+		desired page.</p>
+
+	<pre>&lt;main&gt; <br>&lt;!-- Include Banner --&gt;
+&#10100;% include "../../src/_includes/modules/<strong>header-large-banner.html</strong>" %&#10101;
+&#10100;% include "../../src/_includes/modules/<strong>header-primary-banner.html</strong>" %&#10101;</pre>
+	<p><span class="badge label-info">Note:</span> You can view the source code for each banner type by
+		downloading the template package and inspecting the template files or using the links below.</p>
+</div>

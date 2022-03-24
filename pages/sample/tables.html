@@ -1,0 +1,99 @@
+﻿---
+title: Tables
+layout: page.njk
+permalink: "sample/tables.html"
+---
+
+<nav aria-label="You are here">
+    <ol class="breadcrumb">
+        <li><a href="../index.html" title="Home page">Home</a></li>
+        <li><a href="/sample/" title="Content Modules landing page">Content Modules</a></li>
+        <li class="active">Tables</li>
+    </ol>
+</nav>
+
+<div class="row">
+    <div class="half">
+        <h1>Basic Table</h1>
+        <p>For basic styling—light padding and only horizontal dividers—add the base class
+            <code>.table</code> to any <code>&lt;table&gt;</code>. It may seem super redundant, but
+            given the widespread use of tables for other plugins like calendars and date pickers, we've
+            opted to isolate table styles.
+        </p>
+
+        <h2>Example:</h2>
+        {% include "../../src/_includes/modules/table.html" %}
+    </div>
+    <div class="half">
+        <h2>Source Code:</h2>
+        <pre><code class="overflow-auto">{% include "../../src/_includes/modules/table.html" %}</code></pre>
+    </div>
+</div>
+
+<hr>
+
+<div class="row">
+    <div class="half">
+        <h1>Default Table</h1>
+        <p>The official table design for ca.gov. Use <code>.table-default</code></p>
+
+        <h2>Example:</h2>
+        {% include "../../src/_includes/modules/table-default.html" %}
+    </div>
+    <div class="half">
+        <h2>Source Code:</h2>
+        <pre><code class="overflow-auto">{% include "../../src/_includes/modules/table-default.html" %}</code></pre>
+    </div>
+</div>
+
+<hr>
+
+<div class="row">
+    <div class="half">
+        <h1>Zebra Striped Table</h1>
+        <p>Use <code>.table-striped</code> to add zebra-striping to any table row within the
+            <code>&lt;tbody&gt;</code>.
+        </p>
+
+        <h2>Example:</h2>
+        {% include "../../src/_includes/modules/table-striped.html" %}
+    </div>
+    <div class="half">
+        <h2>Source Code:</h2>
+        <pre><code class="overflow-auto">{% include "../../src/_includes/modules/table-striped.html" %}</code></pre>
+    </div>
+</div>
+
+<hr>
+
+<div class="row">
+    <div class="half">
+        <h1>Bordered Table</h1>
+        <p>Add <code>.table-bordered</code> for borders on all sides of the table and cells.</p>
+
+        <h2>Example:</h2>
+        {% include "../../src/_includes/modules/table-bordered.html" %}
+    </div>
+    <div class="half">
+        <h2>Source Code:</h2>
+        <pre><code class="overflow-auto">{% include "../../src/_includes/modules/table-bordered.html" %}</code></pre>
+    </div>
+</div>
+
+<div class="row">
+    <div class="half">
+        <h1>Responsive Table</h1>
+        <p>Create responsive tables by wrapping any <code>.table</code> in
+            <code>.table-responsive</code> div to make them scroll horizontally on small devices (under
+            768px). When viewing on anything larger than 768px wide, you will not see any difference in
+            these tables.
+        </p>
+
+        <h2>Example:</h2>
+        {% include "../../src/_includes/modules/table-responsive.html" %}
+    </div>
+    <div class="half">
+        <h2>Source Code:</h2>
+        <pre><code class="overflow-auto">{% include "../../src/_includes/modules/table-responsive.html" %}</code></pre>
+    </div>
+</div>

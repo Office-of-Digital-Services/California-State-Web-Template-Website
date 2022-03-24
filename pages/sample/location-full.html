@@ -1,0 +1,33 @@
+﻿---
+title: Location Widget (Full)
+layout: page.njk
+permalink: "sample/location-full.html"
+---
+<nav aria-label="You are here">
+    <ol class="breadcrumb">
+        <li><a href="../index.html" title="Home page">Home</a></li>
+        <li><a href="/sample/" title="Content Modules landing page">Content Modules</a></li>
+        <li class="active">Location Full</li>
+    </ol>
+</nav>
+
+
+{% include "../../src/_includes/modules/location-full.html" %}
+<hr>
+<h2>Source Code:</h2>
+
+<div class="tab-group">
+    <ul id="sourceCode" class="nav nav-tabs" role="tablist">
+        <li class="active"><a href="#html" role="tab" data-bs-toggle="tab">HTML Markup</a></li>
+        <li><a href="#microdata" role="tab" data-bs-toggle="tab">Microdata</a></li>
+    </ul>
+    <!-- Tab panes -->
+    <div class="tab-content responsive">
+        <div class="tab-pane active" id="html">
+            <pre><code class="overflow-auto">{% include "../../src/_includes/modules/location-full.html" %}</code></pre>
+        </div>
+        <div class="tab-pane" id="microdata">
+            <pre><code class="overflow-auto">{% include "../../src/_includes/modules/location-full-schema.html" %}</code></pre>
+        </div>
+    </div>
+</div>
