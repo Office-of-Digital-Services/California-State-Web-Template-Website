@@ -21,6 +21,9 @@ module.exports = function (eleventyConfig) {
 	// sitemap
 	eleventyConfig.addPassthroughCopy('sitemap.xml');
 
+	// web.config
+	eleventyConfig.addPassthroughCopy('web.config');
+
 	// Markdown rendering onfigurarion
 	eleventyConfig.addPairedShortcode("markdown", (content) => {
 		return md.render(content);
