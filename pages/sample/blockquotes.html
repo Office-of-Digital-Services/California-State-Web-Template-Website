@@ -1,0 +1,34 @@
+﻿---
+title: Blockquotes
+layout: page.njk
+permalink: "sample/blockquotes.html"
+---
+<nav aria-label="You are here">
+    <ol class="breadcrumb">
+        <li><a href="../index.html" title="Home page">Home</a></li>
+        <li><a href="/sample/" title="Content Modules landing page">Content Modules</a></li>
+        <li class="active">Blockquotes</li>
+    </ol>
+</nav>
+<div class="row">
+    <div class="half">
+        <h1>Blockquotes</h1>
+        <p>For quoting blocks of content from another source within your document.</p>
+        <p>Wrap <code>&lt;blockquote&gt;</code> around any HTML as the quote. For straight quotes, we
+            recommend a <code>&lt;p&gt;</code>.</p>
+
+        <h2>Example:</h2>
+        {% include "../../src/_includes/modules/blockquote.html" %}
+
+        <h3>Naming a source</h3>
+        <p>Add a <code>&lt;footer&gt;</code> for identifying the source. Wrap the name of the source
+            work in <code>&lt;cite&gt;</code>.</p>
+
+        <h3>Alternate displays</h3>
+        <p>Add <code>.blockquote-reverse</code> for a blockquote with right-aligned content.</p>
+    </div>
+    <div class="half">
+        <h2>Source Code:</h2>
+        <pre><code class="overflow-auto">{% include "../../src/_includes/modules/blockquote.html" %}</code></pre>
+    </div>
+</div>

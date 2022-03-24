@@ -1,0 +1,110 @@
+﻿---
+title: Side Navigation
+layout: page.njk
+permalink: "sample/navigation-sidebar.html"
+---
+
+
+<nav aria-label="You are here">
+    <ol class="breadcrumb">
+        <li><a href="../index.html" title="Home page">Home</a></li>
+        <li><a href="/sample/navsamples.html" title="Navigation Samples page">Navigation Samples</a>
+        </li>
+        <li class="active">Side Navigation</li>
+    </ol>
+</nav>
+
+
+<h1>Side Navigation Menu</h1>
+<p>
+    Side navigation is a vertical navigation component which apart from traditional, text links, might
+    embed icons, dropdowns, images or even forms.
+</p>
+
+<p>
+    Its clarity and simplicity remarkably increases User Experience. It allows you to navigate through
+    small applications as well as vast portals swiftly. Multiple link embedding functionality enables
+    you to implement more advanced content categorization, which is almost essential within bigger
+    projects.
+</p>
+
+<p>
+    Side navigation uses <a href="/sample/accordions.html">accordion list</a> component's structure and
+    properties. But also, it incorporates the bootstrap list group component's styles.
+</p>
+
+<p>
+    Like many other components, a Side navigation can be styled with a number of extension classes.
+    Append one of the following classes to the <code>.list-group</code> element:
+    <code>.section-default</code>, <code>.section-understated</code>, <code>.section-primary</code>,
+    <code>.section-standout</code>, <code>.section-inverted</code>, <code>.section-impact</code>,
+    <code>.section-danger</code>.
+
+</p>
+
+
+
+
+<div class="row">
+    <div class="col-md-4">
+        <h2>Side navigation:</h2>
+        {% include "../../src/_includes/modules/nav-side.html" %}
+
+    </div>
+    <div class="col-md-8">
+        <h2>Source Code:</h2>
+        <pre><code class="overflow-auto">{% include "../../src/_includes/modules/nav-side.html" %}</code></pre>
+    </div>
+</div>
+<hr />
+
+<div class="row">
+    <div class="col-md-4">
+        <h2>Side navigation (standout):</h2>
+        {% include "../../src/_includes/modules/nav-side-standout.html" %}
+
+
+    </div>
+    <div class="col-md-8">
+        <h2>Source Code:</h2>
+        <pre><code class="overflow-auto">{% include "../../src/_includes/modules/nav-side-standout.html" %}</code></pre>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-4">
+        <h2>Side navigation (primary):</h2>
+        {% include "../../src/_includes/modules/nav-side-primary.html" %}
+
+
+    </div>
+    <div class="col-md-8">
+        <h2>Source Code:</h2>
+        <pre><code class="overflow-auto">{% include "../../src/_includes/modules/nav-side-primary.html" %}</code></pre>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-4">
+        <h2>Side navigation (understated):</h2>
+        {% include "../../src/_includes/modules/nav-side-understated.html" %}
+
+
+    </div>
+    <div class="col-md-8">
+        <h2>Source Code:</h2>
+        <pre><code class="overflow-auto">{% include "../../src/_includes/modules/nav-side-understated.html" %}</code></pre>
+    </div>
+</div>
+
+
+<h2>More Navigation Samples</h2>
+<ul>
+
+    <li><a href="navigation-full-width-utility.html">Full Width Navigation with Active Search</a></li>
+    <li><a href="navigation-full-width-icons.html">Full Width Navigation with Icons</a></li>
+    <li><a href="navigation-megamenu-flex.html">State Template v5.5 Flex Megamenu</a></li>
+    <li><a href="navigation-megamenu.html">State Template v5 Megamenu</a></li>
+    <li><a href="navigation-megamenu-original.html">State Template v4 Megamenu</a></li>
+    <li><a href="navigation-dropdown.html">Dropdown Navigation</a></li>
+</ul>

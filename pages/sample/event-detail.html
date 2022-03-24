@@ -1,0 +1,54 @@
+﻿---
+title: Event Detail
+layout: page.njk
+permalink: "sample/event-detail.html"
+---
+<nav aria-label="You are here">
+    <ol class="breadcrumb">
+        <li><a href="../index.html" title="Home page">Home</a></li>
+        <li><a href="/sample/" title="Content Modules landing page">Content Modules</a></li>
+        <li class="active">Event Detail</li>
+    </ol>
+</nav>
+
+
+<h1>Event Detail</h1>
+<p><code>.event-detail</code> is an end page content module for events. To begin, wrap the contents of
+    the page in a <code>&lt;article class="event-detail"&gt;</code> tag.</p>
+<p>This module makes use of the <code>&lt;header&gt;</code> tag and locates the h1 within it.</p>
+<p>The event detail module contains a number of predefined sections that may or may not be used. For
+    example:</p>
+<ul>
+    <li><code>.description</code> - Minimum information that should be included for every event</li>
+    <li><code>.presenter</code> - Contains the presenter's name, photo, and bio</li>
+    <li>Participants will recieve - Certificates and or credits</li>
+    <li>Organizer - date, time, location and cost</li>
+</ul>
+
+
+{% include "../../src/_includes/modules/schema-boilerplate.html" %}
+
+<h2>Example:</h2>
+
+{% include "../../src/_includes/modules/event-detail.html" %}
+<hr>
+<h2>Source Code:</h2>
+
+<div class="tab-group">
+    <ul id="sourceCode" class="nav nav-tabs" role="tablist">
+        <li class="active"><a href="#html" role="tab" data-bs-toggle="tab">HTML Markup</a></li>
+        <li><a href="#microdata" role="tab" data-bs-toggle="tab">Microdata</a></li>
+    </ul>
+    <!-- Tab panes -->
+    <div class="tab-content responsive">
+        <div class="tab-pane active" id="html">
+            <pre><code class="overflow-auto">{% include "../../src/_includes/modules/event-detail.html" %}</code></pre>
+        </div>
+        <div class="tab-pane" id="microdata">
+            <p class="alert alert-info">NOTE: This module makes use of a <code>datetime</code> property
+                set in the <strong>ISO 8601</strong> format. Be sure to set the time correctly for each
+                event item.</p>
+            <pre><code class="overflow-auto">{% include "../../src/_includes/modules/event-detail-schema.html" %}</code></pre>
+        </div>
+    </div>
+</div>

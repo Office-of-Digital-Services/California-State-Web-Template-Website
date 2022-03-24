@@ -1,0 +1,115 @@
+﻿---
+title: Updating State Web Template
+layout: page.njk
+permalink: "update.html"
+---
+
+
+<nav aria-label="You are here">
+    <ol class="breadcrumb">
+        <li><a href="index.html" title="Home page">Home</a></li>
+        <li class="active">Update</li>
+    </ol>
+</nav>
+
+<h1>Update your State Web Template to most current version</h1>
+<p>If your website is using a State Web Template that is perhaps couple of revisions back, you may be able
+    to use the following method to update. Make extra backups if you plan to use the methods outlined
+    below. </p>
+<h2>Before you start</h2>
+<p>Make a backup of your current site before you start. This way if you make any errors you still have
+    your current site. Most template updates are made to make State Template more ADA compliant and for
+    better compatibility in mobile devices.</p>
+
+
+
+
+<h2>Updating steps</h2>
+<ol>
+    <li class="m-t-md">Download the latest release of the State Web Template release from
+        our <a href="https://github.com/Office-of-Digital-Innovation/California-State-Template/releases">GitHub
+            repository</a> </li>
+    <li class="m-t-md">
+        Copy over the core SASS files from /src/scss/ folder or compare the old and new SASS
+        files. Compile/generate CSS from those updated SASS files and review your site.<br />
+        <pre class="m-t"><code class="language-plaintext" data-lang="plaintext">StateTemplate/
+├── src/
+  ├── scss/
+  |   └── bootstrap/
+  |   └── cagov/
+  |   └── colorscheme/
+  |   ├── cagov.core.scss
+  |   └── variables.scss
+  └── _includes/
+  └── fonts/
+  └── images/
+  └── js/
+</code></pre>
+
+    </li>
+    <li class="m-t-md">
+        Copy over the js source files from /src/js/ folder or compare the old and new js
+        files. Generate the output cagov.core.js file and run your website to test. <br />
+        <pre class="m-t"><code class="language-plaintext" data-lang="plaintext">
+├── src/
+  ├── js/
+  |   └── bootstrap/
+  |   └── cagov/
+  |   └── libs/
+  |   └── index.js
+  └── _includes/
+  └── fonts/
+  └── images/
+  └── scss/
+</code></pre>
+    </li>
+    <li class="m-t-md">
+        Compare the structure of old and new page structure includes in /src/_includes/ folder. Here is the list of
+        <a href="structure.html">State Template webpage structure</a> essential includes:<br />
+        <!--<ul class="list-primary">
+            <li><code>utility-header.html</code></li>
+            <li><code>settings-bar.html</code></li>
+            <li><code>branding.html</code></li>
+            <li><code>mobile-controls.html</code></li>
+            <li><code>navigation.html</code></li>
+            <li><code>search.html</code></li>
+            <li><code>global-footer.html</code></li>
+                                </ul> -->
+
+        <pre class="m-t"><code class="language-plaintext" data-lang="plaintext">
+StateTemplate/
+├── src/
+    ├── _includes/
+    |   └── layouts/
+    |   └── modules/
+    |   ├── analytics.njk
+    |   ├── branding-lightgrey.njk
+    |   ├── global-footer.njk
+    |   ├── head-js-css.njk
+    |   ├── mobile-controls.njk
+    |   ├── navigation.njk
+    |   ├── scripts.njk
+    |   ├── search.njk
+    |   ├── settings-bar.njk
+    |   └── utility-header.njk
+    └── _includes/
+    └── fonts/
+    └── images/
+    └── scss/
+</code></pre> Make sure your code patters and structure matches the new includes code.
+    </li>
+    <li class="m-t-md">
+        Copy over the fonts files from /src/fonts/ folder<br />
+    </li>
+    <li class="m-t-md">Compare structure and code patterns of your State Tempalte /src/_includes/modules/
+        that you are using in your website with new <a href="sample/index.html">components/modules</a>
+        structures. Update your code if nessesary.</li>
+    <li class="m-t-md">Test all your pages.</li>
+</ol>
+
+
+<h2>Use State Template CDN</h2>
+<p>Update your website faster by using <a href="/cdn.html">State Template CDN</a>. You will only need to
+    update CSS and JavaScript CDN links. No manual copying over files is needed. Instead, you can
+    replace copying over files described in steps 2 and 3 with CDN. By doing so you will eliminate step
+    5 because fonts are already referenced in CDN import calls.</p>
