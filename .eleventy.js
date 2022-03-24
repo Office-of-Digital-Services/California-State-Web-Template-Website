@@ -6,10 +6,20 @@ module.exports = function (eleventyConfig) {
 		html: true
 	});
 
-	// Copy `src/fonts/` to `_site/fonts`
-	eleventyConfig.addPassthroughCopy({ "src/fonts": "fonts" });
-	// Copy `src/images/` to `_site/images`
-	eleventyConfig.addPassthroughCopy({ "src/images": "images" });
+	// Copy `src/fonts/` to `_site/fonts`, `src/images/` to `_site/images`
+	eleventyConfig.addPassthroughCopy({
+		"src/fonts": "fonts",
+		"src/images": "images"
+	});
+
+	// site crawler
+	eleventyConfig.addPassthroughCopy('robots.txt');
+
+	// site icon
+	eleventyConfig.addPassthroughCopy('favicon.ico');
+
+	// sitemap
+	eleventyConfig.addPassthroughCopy('sitemap.xml');
 
 	// Markdown rendering onfigurarion
 	eleventyConfig.addPairedShortcode("markdown", (content) => {
