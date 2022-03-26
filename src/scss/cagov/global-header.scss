@@ -41,170 +41,27 @@
     padding: 0;
     background: $white;
     width: auto;
-    -webkit-box-shadow: 0px 0px 15px 0px rgba(189, 189, 189, 0.4); // Beta 6.0 addition
-    -moz-box-shadow: 0px 0px 15px 0px rgba(189, 189, 189, 0.4); // Beta 6.0 addition
-    box-shadow: 0px 0px 15px 0px rgba(189, 189, 189, 0.4); // Beta 6.0 addition
+    .section-default {
+        background-color: $white;
+        &:after {
+            content: "";
+            border-bottom: 1px solid $gray-200;
+            position: absolute;
+            width: 100%;
+            left: 0;
+        }
+    }
     @media (min-width: $screen-md-min) {
+        border-bottom: 1px solid $gray-200;
+        .section-default {
+            &:after {
+                bottom: 55px;
+            }
+        }
         // Hide mobile controls in desktop view
         .mobile-controls {
             display: none !important; // Javascript also uses this style to detect if page is in mobile view
         }
-    }
-}
-
-//
-// BRANDING
-// --------------------------------------------------
-
-.branding {
-    @include container;
-    padding-left: 0;
-    padding-right: 0;
-    position: relative;
-
-    @media (min-width: $screen-md-min) {
-        height: 82px !important; // Beta 6.0 addition
-    }
-
-    .header-organization-banner {
-        line-height: 5.125rem; // Beta 6.0 addition
-        -webkit-transition: all 0.3s;
-        transition: all 0.3s; // Smooth transition for compact header
-        padding-left: 15px;
-        @media (max-width: $screen-sm-max) {
-            max-width: 400px;
-            padding-left: 0;
-        }
-
-        img {
-            width: 100%;
-            max-width: 300px;
-            max-height: 70px;
-            object-fit: contain !important;
-            object-position: left;
-
-            @media (max-width: $screen-md) and (min-width: $screen-sm-min) {
-                // Beta 5.0 addition
-                max-width: 225px;
-            }
-        }
-
-        // Move logo above navigation
-        a {
-            display: inline-block;
-            z-index: 26; // navigation is 25
-            position: relative;
-            text-decoration: none;
-            color: black;
-            background-image: none;
-
-            .logo-assets {
-                display: flex;
-                align-items: center;
-                height: 80px;
-
-                .logo-img {
-                    max-width: 100%;
-                    width: 80px;
-                    height: auto;
-                    display: inline-block;
-                    transition: all 0.3s;
-                }
-
-                .logo-text {
-                    padding-left: 5px;
-                    .logo-state {
-                        font-size: 1rem;
-                        font-family: "Asap Condensed", sans-serif;
-                        margin: 0;
-                        padding: 0;
-                        color: $gray-dark;
-                        height: 20px;
-                        line-height: 1.2em;
-                        transition: all 0.3s;
-                        display: block;
-                        @media (max-width: $screen-xs-max) {
-                            margin-top: 5px;
-                            font-size: 0.9rem;
-                        }
-                    }
-                    .logo-dept {
-                        font-size: 1.54rem;
-                        font-family: "Asap Condensed", sans-serif;
-                        font-weight: 700;
-                        margin: 0;
-                        padding: 0;
-                        color: $gray-dark;
-                        height: 24px;
-                        line-height: 1.2em;
-                        transition: all 0.3s;
-                        display: block;
-                        @media (max-width: $screen-xs-max) {
-                            font-size: 1.1rem;
-                            min-width: 200px;
-                        }
-                    }
-                }
-            }
-        }
-
-        @media (max-width: $screen-sm-max) {
-            // Beta 5.0 addition
-            position: absolute;
-            margin-top: -5px;
-            margin-left: 15px;
-        }
-    }
-    // Goes full width on 767 breakpoint
-    @media (max-width: $screen-xs-max) {
-        max-width: 100%;
-    }
-}
-
-// FIXED HEADER LOGO
-.fixed.compact .branding .header-organization-banner {
-    .logo-assets {
-        height: 60px;
-
-        .logo-img {
-            width: 70px;
-        }
-
-        .logo-text {
-            .logo-state {
-                font-size: 0.8rem;
-                line-height: 1em;
-                height: 16px;
-                min-width: 200px;
-            }
-            .logo-dept {
-                font-size: 1.2rem;
-                line-height: 1em;
-                min-width: 200px;
-            }
-        }
-    }
-}
-
-//
-// MOBILE
-// --------------------------------------------------
-.mobile-controls toggle-menu {
-    position: absolute;
-    top: 5px;
-    right: 10px; // Beta 5.0 addition
-    left: auto; // Beta 5.0 addition
-}
-
-.mobile-controls toggle-search {
-    position: absolute;
-    top: 5px;
-    right: 0;
-}
-// Banner Carousel Styles
-@media (min-width: $screen-sm-min) {
-    .header-slideshow-banner.enabled {
-        display: block;
     }
 }
 
@@ -221,65 +78,4 @@
     /* Preserve aspect ratio */
     min-width: 100%;
     min-height: 100%;
-}
-
-.header-slideshow-banner {
-    position: absolute;
-    top: 0;
-    height: 100%;
-    width: 100%;
-    overflow: hidden;
-}
-
-.carousel-banner,
-.carousel-banner .owl-stage-outer,
-.carousel-banner .owl-stage,
-.carousel-banner .owl-item,
-.carousel-banner .slide {
-    height: 100%;
-}
-
-.nav-full-width-icons {
-    a {
-        .logo-assets {
-            display: flex;
-            align-items: center;
-            height: 55px;
-
-            .logo-img {
-                max-width: 100%;
-                width: 80px;
-                height: auto;
-                display: inline-block;
-                transition: all 0.3s;
-            }
-
-            .logo-text {
-                padding-left: 5px;
-                .logo-state {
-                    font-size: 0.9rem;
-                    font-family: "Asap Condensed", sans-serif;
-                    margin: 0;
-                    padding: 0;
-                    color: $white;
-                    height: 17px;
-                    line-height: 1em;
-                    transition: all 0.3s;
-                    display: block;
-                }
-                .logo-dept {
-                    font-size: 1.4rem;
-                    font-family: "Asap Condensed", sans-serif;
-                    font-weight: 700;
-                    margin: 0;
-                    padding: 0;
-                    color: $white;
-                    height: 24px;
-                    line-height: 1em;
-                    transition: all 0.3s;
-                    display: block;
-                }
-            }
-        }
-    }
 }

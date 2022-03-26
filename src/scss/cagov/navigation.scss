@@ -32,6 +32,9 @@
     position: relative;
     padding-left: 0;
     padding-right: 0;
+    @media (max-width: $screen-sm-max) {
+        border-bottom: 1px solid $gray-200;
+    }
 }
 
 //
@@ -818,5 +821,44 @@
 @media (max-width: $screen-sm-max) {
     .nav-item .first-level-link.has-sub .carrot {
         display: none;
+    }
+}
+
+// HAS SUB CARROT
+// 991px
+@media (max-width: $screen-sm-max) {
+    /*button carrot*/
+    .first-level-btn[aria-expanded="false"] .rotate {
+        display: block;
+        position: absolute;
+        top: 0;
+        right: 0;
+        font-size: 1.5rem !important;
+        line-height: 4rem !important;
+        width: 64px !important;
+        height: 64px !important;
+        text-align: center;
+        cursor: pointer;
+        border: none;
+        -moz-transition: all 0.2s ease !important;
+        -webkit-transition: all 0.2s ease !important;
+        transition: all 0.2s ease !important;
+    }
+
+    .first-level-btn[aria-expanded="true"] .rotate {
+        -moz-transform: rotate(90deg) !important;
+        -webkit-transform: rotate(90deg) !important;
+        transform: rotate(90deg) !important;
+        position: absolute;
+        width: 64px !important;
+        height: 64px !important;
+        line-height: 4rem !important;
+        font-size: 1.5rem !important;
+        top: 0;
+        right: 0;
+        text-align: center;
+        -moz-transition: all 0.2s ease !important;
+        -webkit-transition: all 0.2s ease !important;
+        transition: all 0.2s ease !important;
     }
 }
