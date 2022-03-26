@@ -3,19 +3,19 @@
    /source/scss/cagov/nav-mobile-controls.scss
 ----------------------------------------- */
 
+//
+// MOBILE
+// --------------------------------------------------
+
 // CONTAINER
 .mobile-controls {
-    padding: 5px;
-    cursor: pointer;
     text-align: right; // move most menu controls to right
     position: relative;
     color: $color-p2;
     background: $white;
     top: 0;
-    width: 100%;
-    height: 100%;
-    min-height: 80px;
-    padding-right: 0; // IOS fix 5.0 addition
+    padding-right: 0;
+    height: 0;
     @include container;
 
     .ca-gov-icon-menu-toggle-open,
@@ -26,26 +26,130 @@
         line-height: 2.75rem;
     }
 
+    // Hamburger menu to X transition
     .toggle-menu {
         padding: 0;
-        width: 52px;
-        height: 61px;
         cursor: pointer;
         color: $white;
+        position: relative;
+        -webkit-transform: rotate(0deg);
+        -moz-transform: rotate(0deg);
+        -o-transform: rotate(0deg);
+        transform: rotate(0deg);
+        -webkit-transition: 0.5s ease-in-out;
+        -moz-transition: 0.5s ease-in-out;
+        -o-transition: 0.5s ease-in-out;
+        transition: 0.5s ease-in-out;
+        cursor: pointer;
+        color: $white;
+        top: 4px;
+
+        // Overvriting sr-only class to avoid strucural changes in mobile controls
+        span.sr-only {
+            height: unset !important;
+            width: unset !important;
+            position: relative !important;
+            clip: unset !important;
+            background: none !important;
+            color: $color-p2;
+            right: 0 !important;
+            display: inline-block !important;
+            padding-left: 28px !important;
+            bottom: 4px;
+        }
+
+        span {
+            margin-left: 0;
+            margin-right: 0;
+            height: 2px;
+            width: 20px;
+            display: block;
+            position: absolute;
+            background: $color-p2;
+            border-radius: 5px;
+            opacity: 1;
+            -webkit-transform: rotate(0deg);
+            -moz-transform: rotate(0deg);
+            -o-transform: rotate(0deg);
+            transform: rotate(0deg);
+            -webkit-transition: 0.25s ease-in-out;
+            -moz-transition: 0.25s ease-in-out;
+            -o-transition: 0.25s ease-in-out;
+            transition: 0.25s ease-in-out;
+
+            &:nth-child(1) {
+                top: 2px;
+            }
+
+            &:nth-child(2),
+            &:nth-child(3) {
+                top: 9px;
+            }
+
+            &:nth-child(4) {
+                top: 16px;
+            }
+        }
+
+        &[aria-expanded="true"] {
+            span:nth-child(1) {
+                top: 12px;
+                width: 0%;
+            }
+
+            span:nth-child(2) {
+                -webkit-transform: rotate(45deg);
+                -moz-transform: rotate(45deg);
+                -o-transform: rotate(45deg);
+                transform: rotate(45deg);
+            }
+
+            span:nth-child(3) {
+                -webkit-transform: rotate(-45deg);
+                -moz-transform: rotate(-45deg);
+                -o-transform: rotate(-45deg);
+                transform: rotate(-45deg);
+            }
+
+            span:nth-child(4) {
+                top: 12px;
+                width: 0%;
+            }
+        }
     }
 
     .toggle-search {
         padding: 0;
-        width: 52px;
-        height: 61px;
-        font-size: 40px;
         border: none;
         background: none;
         cursor: pointer;
         position: relative;
         margin-left: auto;
+        margin-right: 1.5rem;
         text-align: center;
         z-index: 99;
+        display: flex;
+
+        span.ca-gov-icon-search {
+            position: absolute;
+            right: 3.8rem;
+            top: -6px;
+            font-size: 1.4rem;
+        }
+
+        // Overvriting sr-only class to avoid strucural changes in mobile controls
+        span.sr-only {
+            height: unset !important;
+            width: unset !important;
+            position: relative !important;
+            clip: unset !important;
+            background: none !important;
+            color: $color-p2;
+            right: 0 !important;
+            display: inline-block !important;
+            padding-left: 5px !important;
+            bottom: 4px;
+        }
 
         &:focus {
             @include outline(2px);
@@ -91,147 +195,12 @@
 
 // IOS Icons FIX
 .main-nav-icons {
-    width: 100%;
-    height: 70px;
     display: flex;
     justify-content: flex-end;
     align-items: center;
     z-index: 1;
-}
-
-// Hamburger menu to X transition
-.toggle-menu {
-    width: 55px;
-    height: 50px;
     position: relative;
-    -webkit-transform: rotate(0deg);
-    -moz-transform: rotate(0deg);
-    -o-transform: rotate(0deg);
-    transform: rotate(0deg);
-    -webkit-transition: 0.5s ease-in-out;
-    -moz-transition: 0.5s ease-in-out;
-    -o-transition: 0.5s ease-in-out;
-    transition: 0.5s ease-in-out;
-    cursor: pointer;
-    color: $white;
-    top: 4px;
-
-    span {
-        display: block;
-        margin-left: 10px;
-        margin-right: 10px;
-        position: absolute;
-        height: 5px;
-        width: 35px;
-        background: $color-p2;
-        border-radius: 5px;
-        opacity: 1;
-        left: 0;
-        -webkit-transform: rotate(0deg);
-        -moz-transform: rotate(0deg);
-        -o-transform: rotate(0deg);
-        transform: rotate(0deg);
-        -webkit-transition: 0.25s ease-in-out;
-        -moz-transition: 0.25s ease-in-out;
-        -o-transition: 0.25s ease-in-out;
-        transition: 0.25s ease-in-out;
-
-        &:nth-child(1) {
-            top: 10px;
-        }
-
-        &:nth-child(2),
-        &:nth-child(3) {
-            top: 22px;
-        }
-
-        &:nth-child(4) {
-            top: 34px;
-        }
-    }
-
-    &[aria-expanded="true"] {
-        span:nth-child(1) {
-            top: 12px;
-            width: 0%;
-            left: 50%;
-        }
-
-        span:nth-child(2) {
-            -webkit-transform: rotate(45deg);
-            -moz-transform: rotate(45deg);
-            -o-transform: rotate(45deg);
-            transform: rotate(45deg);
-        }
-
-        span:nth-child(3) {
-            -webkit-transform: rotate(-45deg);
-            -moz-transform: rotate(-45deg);
-            -o-transform: rotate(-45deg);
-            transform: rotate(-45deg);
-        }
-
-        span:nth-child(4) {
-            top: 12px;
-            width: 0%;
-            left: 50%;
-        }
-    }
-}
-
-/*.rotate {
-    -moz-transition: all .2s ease !important;
-    -webkit-transition: all .2s ease !important;
-    transition: all .2s ease !important;
-    position: absolute;
-    top: 20px;
-    left: 30px;
-
-
-    &.down {
-        -moz-transform: rotate(90deg) !important;
-        -webkit-transform: rotate(90deg) !important;
-        transform: rotate(90deg) !important;
-    }
-}*/
-
-// HAS SUB CARROT
-// 991px
-@media (max-width: $screen-sm-max) {
-    /*button carrot*/
-    .first-level-btn[aria-expanded="false"] .rotate {
-        display: block;
-        position: absolute;
-        top: 0;
-        right: 0;
-        font-size: 1.5rem !important;
-        line-height: 4rem !important;
-        width: 64px !important;
-        height: 64px !important;
-        text-align: center;
-        cursor: pointer;
-        border: none;
-        -moz-transition: all 0.2s ease !important;
-        -webkit-transition: all 0.2s ease !important;
-        transition: all 0.2s ease !important;
-    }
-
-    .first-level-btn[aria-expanded="true"] .rotate {
-        -moz-transform: rotate(90deg) !important;
-        -webkit-transform: rotate(90deg) !important;
-        transform: rotate(90deg) !important;
-        position: absolute;
-        width: 64px !important;
-        height: 64px !important;
-        line-height: 4rem !important;
-        font-size: 1.5rem !important;
-        top: 0;
-        right: 0;
-        text-align: center;
-        -moz-transition: all 0.2s ease !important;
-        -webkit-transition: all 0.2s ease !important;
-        transition: all 0.2s ease !important;
-    }
+    top: -55px;
 }
 
 /* mobile controls hack for IE because IE never dies */

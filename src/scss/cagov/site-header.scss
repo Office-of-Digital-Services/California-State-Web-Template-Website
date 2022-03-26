@@ -1,0 +1,162 @@
+//
+// BRANDING
+// --------------------------------------------------
+
+.branding {
+	@include container;
+	padding-left: 0;
+	padding-right: 0;
+	position: relative;
+
+	// 992px
+	@media (min-width: $screen-md-min) {
+		position: unset;
+		height: 82px !important;
+	}
+
+	.header-organization-banner {
+		line-height: 5.125rem;
+		-webkit-transition: all 0.3s;
+		transition: all 0.3s; // Smooth transition for compact header
+		padding-left: 15px;
+		@media (max-width: $screen-sm-max) {
+			position: relative;
+			max-width: 400px;
+			margin-left: 15px;
+			padding-bottom: 16px;
+			padding-top: 8px;
+			padding-left: 0;
+		}
+
+		img {
+			width: 100%;
+			max-width: 300px;
+			max-height: 70px;
+			object-fit: contain !important;
+			object-position: left;
+
+			@media (max-width: $screen-md) and (min-width: $screen-sm-min) {
+				// Beta 5.0 addition
+				max-width: 225px;
+			}
+		}
+
+		// Move logo above navigation
+		a {
+			z-index: 26; // navigation is 25
+			position: relative;
+			text-decoration: none;
+			color: black;
+			background-image: none;
+
+			.logo-assets {
+				display: flex;
+				align-content: center;
+				flex-direction: column;
+				@media (min-width: $screen-sm-min) {
+					flex-direction: row;
+				}
+
+				.logo-img {
+					max-width: 100%;
+					width: 80px;
+					height: auto;
+					display: inline-block;
+					transition: all 0.3s;
+				}
+
+				.logo-text {
+					padding-left: 5px;
+					@media (max-width: $screen-sm-max) {
+						padding-top: 8px;
+					}
+					.logo-state {
+						font-size: 1rem;
+						font-family: "Asap Condensed", sans-serif;
+						margin: 0;
+						padding: 0;
+						color: $gray-dark;
+						height: 20px;
+						line-height: 1.2em;
+						transition: all 0.3s;
+						display: block;
+					}
+					.logo-dept {
+						font-size: 1.54rem;
+						font-family: "Asap Condensed", sans-serif;
+						font-weight: 700;
+						margin: 0;
+						padding: 0;
+						color: $gray-dark;
+						height: 24px;
+						line-height: 1.2em;
+						transition: all 0.3s;
+						display: block;
+					}
+				}
+
+				// 992px
+				@media (min-width: $screen-md-min) {
+					align-items: center;
+					height: 80px;
+				}
+			}
+		}
+	}
+	// Goes full width on 767 breakpoint
+	@media (max-width: $screen-xs-max) {
+		max-width: 100%;
+	}
+}
+
+// FIXED HEADER LOGO
+.fixed.compact .branding .header-organization-banner {
+	.logo-assets {
+		height: 60px;
+
+		.logo-img {
+			width: 70px;
+		}
+
+		.logo-text {
+			.logo-state {
+				font-size: 0.8rem;
+				line-height: 1em;
+				height: 16px;
+				min-width: 200px;
+			}
+			.logo-dept {
+				font-size: 1.2rem;
+				line-height: 1em;
+				min-width: 200px;
+			}
+		}
+	}
+}
+
+//
+// COMPACT MENU LOOK AND FEEL
+// --------------------------------------------------
+
+@media (min-width: $screen-sm-min) {
+	.fixed.compact {
+		// .search-container {
+		//   top: 51px;
+		// }
+		// covering edge case  where no links are set. Need this to maintain
+		// search box and ask group positioning
+
+		.branding {
+			height: 57px !important; // Beta 5.0 addition
+		}
+
+		.header-organization-banner {
+			height: 55px; // Beta 5.0 addition
+			max-height: 45px; // Beta 5.0 addition
+			line-height: 3.4375rem; // Beta 5.0 addition
+			a {
+				max-width: 225px; // Beta 5.0 addition
+			}
+		}
+	}
+}
