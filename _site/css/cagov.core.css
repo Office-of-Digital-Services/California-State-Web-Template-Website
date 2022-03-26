@@ -13785,7 +13785,7 @@ a.list-group-item {
 }
 /* Remove the left and right border for mobile */
 @media (max-width: 768px) {
-  .global-header, .main-content, .global-footer {
+  .main-content {
     border: none !important;
     width: 100%;
   }
@@ -13895,7 +13895,7 @@ a.list-group-item {
 }
 @media (min-width: 1280px) {
   .container {
-    max-width: 1280px;
+    max-width: 1176px;
   }
 }
 
@@ -14066,7 +14066,7 @@ a.list-group-item {
 @media (min-width: 1280px) {
   .main-content > .section,
 .two-column .main-content > .section {
-    max-width: 1280px;
+    max-width: 1176px;
   }
 }
 
@@ -14109,186 +14109,29 @@ a.list-group-item {
   padding: 0;
   background: #fff;
   width: auto;
-  -webkit-box-shadow: 0px 0px 15px 0px rgba(189, 189, 189, 0.4);
-  -moz-box-shadow: 0px 0px 15px 0px rgba(189, 189, 189, 0.4);
-  box-shadow: 0px 0px 15px 0px rgba(189, 189, 189, 0.4);
+}
+.global-header .section-default {
+  background-color: #fff;
+}
+.global-header .section-default:after {
+  content: "";
+  border-bottom: 1px solid #d4d4d7;
+  position: absolute;
+  width: 100%;
+  left: 0;
 }
 @media (min-width: 992px) {
+  .global-header {
+    border-bottom: 1px solid #d4d4d7;
+  }
+  .global-header .section-default:after {
+    bottom: 55px;
+  }
   .global-header .mobile-controls {
     display: none !important;
   }
 }
 
-.branding {
-  margin-right: auto;
-  margin-left: auto;
-  padding-left: 15px;
-  padding-right: 15px;
-  padding-left: 0;
-  padding-right: 0;
-  position: relative;
-}
-@media (min-width: 576px) {
-  .branding {
-    max-width: 540px;
-  }
-}
-@media (min-width: 768px) {
-  .branding {
-    max-width: 720px;
-  }
-}
-@media (min-width: 992px) {
-  .branding {
-    max-width: 960px;
-  }
-}
-@media (min-width: 1200px) {
-  .branding {
-    max-width: 1140px;
-  }
-}
-@media (min-width: 1280px) {
-  .branding {
-    max-width: 1280px;
-  }
-}
-@media (min-width: 992px) {
-  .branding {
-    height: 82px !important;
-  }
-}
-.branding .header-organization-banner {
-  line-height: 5.125rem;
-  -webkit-transition: all 0.3s;
-  transition: all 0.3s;
-  padding-left: 15px;
-}
-@media (max-width: 991px) {
-  .branding .header-organization-banner {
-    max-width: 400px;
-    padding-left: 0;
-  }
-}
-.branding .header-organization-banner img {
-  width: 100%;
-  max-width: 300px;
-  max-height: 70px;
-  object-fit: contain !important;
-  object-position: left;
-}
-@media (max-width: 992px) and (min-width: 768px) {
-  .branding .header-organization-banner img {
-    max-width: 225px;
-  }
-}
-.branding .header-organization-banner a {
-  display: inline-block;
-  z-index: 26;
-  position: relative;
-  text-decoration: none;
-  color: black;
-  background-image: none;
-}
-.branding .header-organization-banner a .logo-assets {
-  display: flex;
-  align-items: center;
-  height: 80px;
-}
-.branding .header-organization-banner a .logo-assets .logo-img {
-  max-width: 100%;
-  width: 80px;
-  height: auto;
-  display: inline-block;
-  transition: all 0.3s;
-}
-.branding .header-organization-banner a .logo-assets .logo-text {
-  padding-left: 5px;
-}
-.branding .header-organization-banner a .logo-assets .logo-text .logo-state {
-  font-size: 1rem;
-  font-family: "Asap Condensed", sans-serif;
-  margin: 0;
-  padding: 0;
-  color: #333333;
-  height: 20px;
-  line-height: 1.2em;
-  transition: all 0.3s;
-  display: block;
-}
-@media (max-width: 767px) {
-  .branding .header-organization-banner a .logo-assets .logo-text .logo-state {
-    margin-top: 5px;
-    font-size: 0.9rem;
-  }
-}
-.branding .header-organization-banner a .logo-assets .logo-text .logo-dept {
-  font-size: 1.54rem;
-  font-family: "Asap Condensed", sans-serif;
-  font-weight: 700;
-  margin: 0;
-  padding: 0;
-  color: #333333;
-  height: 24px;
-  line-height: 1.2em;
-  transition: all 0.3s;
-  display: block;
-}
-@media (max-width: 767px) {
-  .branding .header-organization-banner a .logo-assets .logo-text .logo-dept {
-    font-size: 1.1rem;
-    min-width: 200px;
-  }
-}
-@media (max-width: 991px) {
-  .branding .header-organization-banner {
-    position: absolute;
-    margin-top: -5px;
-    margin-left: 15px;
-  }
-}
-@media (max-width: 767px) {
-  .branding {
-    max-width: 100%;
-  }
-}
-
-.fixed.compact .branding .header-organization-banner .logo-assets {
-  height: 60px;
-}
-.fixed.compact .branding .header-organization-banner .logo-assets .logo-img {
-  width: 70px;
-}
-.fixed.compact .branding .header-organization-banner .logo-assets .logo-text .logo-state {
-  font-size: 0.8rem;
-  line-height: 1em;
-  height: 16px;
-  min-width: 200px;
-}
-.fixed.compact .branding .header-organization-banner .logo-assets .logo-text .logo-dept {
-  font-size: 1.2rem;
-  line-height: 1em;
-  min-width: 200px;
-}
-
-.mobile-controls toggle-menu {
-  position: absolute;
-  top: 5px;
-  right: 10px;
-  left: auto;
-}
-
-.mobile-controls toggle-search {
-  position: absolute;
-  top: 5px;
-  right: 0;
-}
-
-@media (min-width: 768px) {
-  .header-slideshow-banner.enabled {
-    display: block;
-  }
-}
 .header-single-banner,
 .header-large-banner,
 .header-primary-banner {
@@ -14302,61 +14145,6 @@ a.list-group-item {
   /* Preserve aspect ratio */
   min-width: 100%;
   min-height: 100%;
-}
-
-.header-slideshow-banner {
-  position: absolute;
-  top: 0;
-  height: 100%;
-  width: 100%;
-  overflow: hidden;
-}
-
-.carousel-banner,
-.carousel-banner .owl-stage-outer,
-.carousel-banner .owl-stage,
-.carousel-banner .owl-item,
-.carousel-banner .slide {
-  height: 100%;
-}
-
-.nav-full-width-icons a .logo-assets {
-  display: flex;
-  align-items: center;
-  height: 55px;
-}
-.nav-full-width-icons a .logo-assets .logo-img {
-  max-width: 100%;
-  width: 80px;
-  height: auto;
-  display: inline-block;
-  transition: all 0.3s;
-}
-.nav-full-width-icons a .logo-assets .logo-text {
-  padding-left: 5px;
-}
-.nav-full-width-icons a .logo-assets .logo-text .logo-state {
-  font-size: 0.9rem;
-  font-family: "Asap Condensed", sans-serif;
-  margin: 0;
-  padding: 0;
-  color: #fff;
-  height: 17px;
-  line-height: 1em;
-  transition: all 0.3s;
-  display: block;
-}
-.nav-full-width-icons a .logo-assets .logo-text .logo-dept {
-  font-size: 1.4rem;
-  font-family: "Asap Condensed", sans-serif;
-  font-weight: 700;
-  margin: 0;
-  padding: 0;
-  color: #fff;
-  height: 24px;
-  line-height: 1em;
-  transition: all 0.3s;
-  display: block;
 }
 
 /* -----------------------------------------
@@ -14501,6 +14289,164 @@ a.list-group-item {
   margin: -140px 0 0;
 }
 
+.is-hidden,
+.scrolled {
+  top: -40px !important;
+}
+
+.branding {
+  margin-right: auto;
+  margin-left: auto;
+  padding-left: 15px;
+  padding-right: 15px;
+  padding-left: 0;
+  padding-right: 0;
+  position: relative;
+}
+@media (min-width: 576px) {
+  .branding {
+    max-width: 540px;
+  }
+}
+@media (min-width: 768px) {
+  .branding {
+    max-width: 720px;
+  }
+}
+@media (min-width: 992px) {
+  .branding {
+    max-width: 960px;
+  }
+}
+@media (min-width: 1200px) {
+  .branding {
+    max-width: 1140px;
+  }
+}
+@media (min-width: 1280px) {
+  .branding {
+    max-width: 1176px;
+  }
+}
+@media (min-width: 992px) {
+  .branding {
+    position: unset;
+    height: 82px !important;
+  }
+}
+.branding .header-organization-banner {
+  line-height: 5.125rem;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+  padding-left: 15px;
+}
+@media (max-width: 991px) {
+  .branding .header-organization-banner {
+    position: relative;
+    max-width: 400px;
+    margin-left: 15px;
+    padding-bottom: 16px;
+    padding-top: 8px;
+    padding-left: 0;
+  }
+}
+.branding .header-organization-banner img {
+  width: 100%;
+  max-width: 300px;
+  max-height: 70px;
+  object-fit: contain !important;
+  object-position: left;
+}
+@media (max-width: 992px) and (min-width: 768px) {
+  .branding .header-organization-banner img {
+    max-width: 225px;
+  }
+}
+.branding .header-organization-banner a {
+  z-index: 26;
+  position: relative;
+  text-decoration: none;
+  color: black;
+  background-image: none;
+}
+.branding .header-organization-banner a .logo-assets {
+  display: flex;
+  align-content: center;
+  flex-direction: column;
+}
+@media (min-width: 768px) {
+  .branding .header-organization-banner a .logo-assets {
+    flex-direction: row;
+  }
+}
+.branding .header-organization-banner a .logo-assets .logo-img {
+  max-width: 100%;
+  width: 80px;
+  height: auto;
+  display: inline-block;
+  transition: all 0.3s;
+}
+.branding .header-organization-banner a .logo-assets .logo-text {
+  padding-left: 5px;
+}
+@media (max-width: 991px) {
+  .branding .header-organization-banner a .logo-assets .logo-text {
+    padding-top: 8px;
+  }
+}
+.branding .header-organization-banner a .logo-assets .logo-text .logo-state {
+  font-size: 1rem;
+  font-family: "Asap Condensed", sans-serif;
+  margin: 0;
+  padding: 0;
+  color: #333333;
+  height: 20px;
+  line-height: 1.2em;
+  transition: all 0.3s;
+  display: block;
+}
+.branding .header-organization-banner a .logo-assets .logo-text .logo-dept {
+  font-size: 1.54rem;
+  font-family: "Asap Condensed", sans-serif;
+  font-weight: 700;
+  margin: 0;
+  padding: 0;
+  color: #333333;
+  height: 24px;
+  line-height: 1.2em;
+  transition: all 0.3s;
+  display: block;
+}
+@media (min-width: 992px) {
+  .branding .header-organization-banner a .logo-assets {
+    align-items: center;
+    height: 80px;
+  }
+}
+@media (max-width: 767px) {
+  .branding {
+    max-width: 100%;
+  }
+}
+
+.fixed.compact .branding .header-organization-banner .logo-assets {
+  height: 60px;
+}
+.fixed.compact .branding .header-organization-banner .logo-assets .logo-img {
+  width: 70px;
+}
+.fixed.compact .branding .header-organization-banner .logo-assets .logo-text .logo-state {
+  font-size: 0.8rem;
+  line-height: 1em;
+  height: 16px;
+  min-width: 200px;
+}
+.fixed.compact .branding .header-organization-banner .logo-assets .logo-text .logo-dept {
+  font-size: 1.2rem;
+  line-height: 1em;
+  min-width: 200px;
+}
+
 @media (min-width: 768px) {
   .fixed.compact .branding {
     height: 57px !important;
@@ -14514,11 +14460,6 @@ a.list-group-item {
     max-width: 225px;
   }
 }
-.is-hidden,
-.scrolled {
-  top: -40px !important;
-}
-
 /* -----------------------------------------
    EXPLORE BANNER
    /source/scss/cagov/explore-banner.scss
@@ -15461,6 +15402,11 @@ table.gsc-search-box td {
   padding-left: 0;
   padding-right: 0;
 }
+@media (max-width: 991px) {
+  .navigation-search {
+    border-bottom: 1px solid #d4d4d7;
+  }
+}
 
 .main-navigation {
   margin-right: auto;
@@ -15493,7 +15439,7 @@ table.gsc-search-box td {
 }
 @media (min-width: 1280px) {
   .main-navigation {
-    max-width: 1280px;
+    max-width: 1176px;
   }
 }
 @media (max-width: 767px) {
@@ -16151,6 +16097,42 @@ table.gsc-search-box td {
     display: none;
   }
 }
+@media (max-width: 991px) {
+  /*button carrot*/
+  .first-level-btn[aria-expanded=false] .rotate {
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    font-size: 1.5rem !important;
+    line-height: 4rem !important;
+    width: 64px !important;
+    height: 64px !important;
+    text-align: center;
+    cursor: pointer;
+    border: none;
+    -moz-transition: all 0.2s ease !important;
+    -webkit-transition: all 0.2s ease !important;
+    transition: all 0.2s ease !important;
+  }
+
+  .first-level-btn[aria-expanded=true] .rotate {
+    -moz-transform: rotate(90deg) !important;
+    -webkit-transform: rotate(90deg) !important;
+    transform: rotate(90deg) !important;
+    position: absolute;
+    width: 64px !important;
+    height: 64px !important;
+    line-height: 4rem !important;
+    font-size: 1.5rem !important;
+    top: 0;
+    right: 0;
+    text-align: center;
+    -moz-transition: all 0.2s ease !important;
+    -webkit-transition: all 0.2s ease !important;
+    transition: all 0.2s ease !important;
+  }
+}
 /* -----------------------------------------
    MEGA MENU
    /source/scss/cagov/nav-megamenu.scss
@@ -16657,17 +16639,13 @@ a.second-level-link [class^=ca-gov-icon-] {
    /source/scss/cagov/nav-mobile-controls.scss
 ----------------------------------------- */
 .mobile-controls {
-  padding: 5px;
-  cursor: pointer;
   text-align: right;
   position: relative;
   color: #046B99;
   background: #fff;
   top: 0;
-  width: 100%;
-  height: 100%;
-  min-height: 80px;
   padding-right: 0;
+  height: 0;
   margin-right: auto;
   margin-left: auto;
   padding-left: 15px;
@@ -16695,7 +16673,7 @@ a.second-level-link [class^=ca-gov-icon-] {
 }
 @media (min-width: 1280px) {
   .mobile-controls {
-    max-width: 1280px;
+    max-width: 1176px;
   }
 }
 .mobile-controls .ca-gov-icon-menu-toggle-open,
@@ -16706,23 +16684,110 @@ a.second-level-link [class^=ca-gov-icon-] {
 }
 .mobile-controls .toggle-menu {
   padding: 0;
-  width: 52px;
-  height: 61px;
   cursor: pointer;
   color: #fff;
+  position: relative;
+  -webkit-transform: rotate(0deg);
+  -moz-transform: rotate(0deg);
+  -o-transform: rotate(0deg);
+  transform: rotate(0deg);
+  -webkit-transition: 0.5s ease-in-out;
+  -moz-transition: 0.5s ease-in-out;
+  -o-transition: 0.5s ease-in-out;
+  transition: 0.5s ease-in-out;
+  cursor: pointer;
+  color: #fff;
+  top: 4px;
+}
+.mobile-controls .toggle-menu span.sr-only {
+  height: unset !important;
+  width: unset !important;
+  position: relative !important;
+  clip: unset !important;
+  background: none !important;
+  color: #046B99;
+  right: 0 !important;
+  display: inline-block !important;
+  padding-left: 28px !important;
+  bottom: 4px;
+}
+.mobile-controls .toggle-menu span {
+  margin-left: 0;
+  margin-right: 0;
+  height: 2px;
+  width: 20px;
+  display: block;
+  position: absolute;
+  background: #046B99;
+  border-radius: 5px;
+  opacity: 1;
+  -webkit-transform: rotate(0deg);
+  -moz-transform: rotate(0deg);
+  -o-transform: rotate(0deg);
+  transform: rotate(0deg);
+  -webkit-transition: 0.25s ease-in-out;
+  -moz-transition: 0.25s ease-in-out;
+  -o-transition: 0.25s ease-in-out;
+  transition: 0.25s ease-in-out;
+}
+.mobile-controls .toggle-menu span:nth-child(1) {
+  top: 2px;
+}
+.mobile-controls .toggle-menu span:nth-child(2), .mobile-controls .toggle-menu span:nth-child(3) {
+  top: 9px;
+}
+.mobile-controls .toggle-menu span:nth-child(4) {
+  top: 16px;
+}
+.mobile-controls .toggle-menu[aria-expanded=true] span:nth-child(1) {
+  top: 12px;
+  width: 0%;
+}
+.mobile-controls .toggle-menu[aria-expanded=true] span:nth-child(2) {
+  -webkit-transform: rotate(45deg);
+  -moz-transform: rotate(45deg);
+  -o-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+.mobile-controls .toggle-menu[aria-expanded=true] span:nth-child(3) {
+  -webkit-transform: rotate(-45deg);
+  -moz-transform: rotate(-45deg);
+  -o-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+}
+.mobile-controls .toggle-menu[aria-expanded=true] span:nth-child(4) {
+  top: 12px;
+  width: 0%;
 }
 .mobile-controls .toggle-search {
   padding: 0;
-  width: 52px;
-  height: 61px;
-  font-size: 40px;
   border: none;
   background: none;
   cursor: pointer;
   position: relative;
   margin-left: auto;
+  margin-right: 1.5rem;
   text-align: center;
   z-index: 99;
+  display: flex;
+}
+.mobile-controls .toggle-search span.ca-gov-icon-search {
+  position: absolute;
+  right: 3.8rem;
+  top: -6px;
+  font-size: 1.4rem;
+}
+.mobile-controls .toggle-search span.sr-only {
+  height: unset !important;
+  width: unset !important;
+  position: relative !important;
+  clip: unset !important;
+  background: none !important;
+  color: #046B99;
+  right: 0 !important;
+  display: inline-block !important;
+  padding-left: 5px !important;
+  bottom: 4px;
 }
 .mobile-controls .toggle-search:focus {
   outline: solid 2px #2ea3f2 !important;
@@ -16757,133 +16822,14 @@ a.second-level-link [class^=ca-gov-icon-] {
 }
 
 .main-nav-icons {
-  width: 100%;
-  height: 70px;
   display: flex;
   justify-content: flex-end;
   align-items: center;
   z-index: 1;
-}
-
-.toggle-menu {
-  width: 55px;
-  height: 50px;
   position: relative;
-  -webkit-transform: rotate(0deg);
-  -moz-transform: rotate(0deg);
-  -o-transform: rotate(0deg);
-  transform: rotate(0deg);
-  -webkit-transition: 0.5s ease-in-out;
-  -moz-transition: 0.5s ease-in-out;
-  -o-transition: 0.5s ease-in-out;
-  transition: 0.5s ease-in-out;
-  cursor: pointer;
-  color: #fff;
-  top: 4px;
-}
-.toggle-menu span {
-  display: block;
-  margin-left: 10px;
-  margin-right: 10px;
-  position: absolute;
-  height: 5px;
-  width: 35px;
-  background: #046B99;
-  border-radius: 5px;
-  opacity: 1;
-  left: 0;
-  -webkit-transform: rotate(0deg);
-  -moz-transform: rotate(0deg);
-  -o-transform: rotate(0deg);
-  transform: rotate(0deg);
-  -webkit-transition: 0.25s ease-in-out;
-  -moz-transition: 0.25s ease-in-out;
-  -o-transition: 0.25s ease-in-out;
-  transition: 0.25s ease-in-out;
-}
-.toggle-menu span:nth-child(1) {
-  top: 10px;
-}
-.toggle-menu span:nth-child(2), .toggle-menu span:nth-child(3) {
-  top: 22px;
-}
-.toggle-menu span:nth-child(4) {
-  top: 34px;
-}
-.toggle-menu[aria-expanded=true] span:nth-child(1) {
-  top: 12px;
-  width: 0%;
-  left: 50%;
-}
-.toggle-menu[aria-expanded=true] span:nth-child(2) {
-  -webkit-transform: rotate(45deg);
-  -moz-transform: rotate(45deg);
-  -o-transform: rotate(45deg);
-  transform: rotate(45deg);
-}
-.toggle-menu[aria-expanded=true] span:nth-child(3) {
-  -webkit-transform: rotate(-45deg);
-  -moz-transform: rotate(-45deg);
-  -o-transform: rotate(-45deg);
-  transform: rotate(-45deg);
-}
-.toggle-menu[aria-expanded=true] span:nth-child(4) {
-  top: 12px;
-  width: 0%;
-  left: 50%;
+  top: -55px;
 }
 
-/*.rotate {
-    -moz-transition: all .2s ease !important;
-    -webkit-transition: all .2s ease !important;
-    transition: all .2s ease !important;
-    position: absolute;
-    top: 20px;
-    left: 30px;
-
-
-    &.down {
-        -moz-transform: rotate(90deg) !important;
-        -webkit-transform: rotate(90deg) !important;
-        transform: rotate(90deg) !important;
-    }
-}*/
-@media (max-width: 991px) {
-  /*button carrot*/
-  .first-level-btn[aria-expanded=false] .rotate {
-    display: block;
-    position: absolute;
-    top: 0;
-    right: 0;
-    font-size: 1.5rem !important;
-    line-height: 4rem !important;
-    width: 64px !important;
-    height: 64px !important;
-    text-align: center;
-    cursor: pointer;
-    border: none;
-    -moz-transition: all 0.2s ease !important;
-    -webkit-transition: all 0.2s ease !important;
-    transition: all 0.2s ease !important;
-  }
-
-  .first-level-btn[aria-expanded=true] .rotate {
-    -moz-transform: rotate(90deg) !important;
-    -webkit-transform: rotate(90deg) !important;
-    transform: rotate(90deg) !important;
-    position: absolute;
-    width: 64px !important;
-    height: 64px !important;
-    line-height: 4rem !important;
-    font-size: 1.5rem !important;
-    top: 0;
-    right: 0;
-    text-align: center;
-    -moz-transition: all 0.2s ease !important;
-    -webkit-transition: all 0.2s ease !important;
-    transition: all 0.2s ease !important;
-  }
-}
 /* mobile controls hack for IE because IE never dies */
 @media all and (-ms-high-contrast: none) {
   .mobile-controls .toggle-search {
