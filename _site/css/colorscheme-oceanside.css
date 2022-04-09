@@ -589,12 +589,23 @@ nav-item-search:focus .first-level-link > span[class^=ca-gov-icon] {
    SEARCH
    /source/scss/colorscheme.search.scss
 ----------------------------------------- */
-.search-container .search-textfield {
-  background-color: rgba(255, 255, 255, 0.8);
-}
 .search-container .submit-container button {
   color: #046B99;
   border-color: rgba(255, 255, 255, 0.8);
+}
+.search-container .search-textfield {
+  border-color: #046B99 !important;
+}
+.search-container .gsc-search-button {
+  background-color: #046B99;
+  border-color: #046B99;
+}
+.search-container .gsc-search-button:hover, .search-container .gsc-search-button:focus {
+  background-color: #035376;
+  border-color: #035376;
+}
+.search-container .gsc-search-button .ca-gov-icon-search {
+  color: #fff;
 }
 .search-container:hover .search-textfield, .search-container:focus .search-textfield, .search-container.active .search-textfield {
   background-color: #fff;
@@ -603,15 +614,25 @@ nav-item-search:focus .first-level-link > span[class^=ca-gov-icon] {
   border-color: #fff;
 }
 .search-container.active {
-  background: rgba(0, 0, 0, 0.7);
+  background-color: #ededef;
 }
 .search-container.active .submit-container button {
   border-color: #bdbdbd;
   background: #555555;
 }
-.search-container.active .search-textfield {
-  border-color: #bdbdbd;
+
+.featured-search.active .container #Search .close-search-btn .sr-only,
+.search-container .close-search .sr-only {
+  color: #046B99;
+  text-decoration: underline;
 }
+.featured-search.active .container #Search .close-search-btn .sr-only:hover, .featured-search.active .container #Search .close-search-btn .sr-only:focus,
+.search-container .close-search .sr-only:hover,
+.search-container .close-search .sr-only:focus {
+  color: #035376;
+  text-decoration: none;
+}
+
 /* -----------------------------------------
    TABS
    /source/scss/colorscheme/cs-tabs.scss

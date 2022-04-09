@@ -12,7 +12,7 @@ $search-dt: 0.5s;
 // default delay time for transitions
 $search-dft: 0.1s;
 
-$search-absolute-height: 87px;
+$search-absolute-height: 96px;
 
 $search-input-height: 40px;
 
@@ -60,20 +60,25 @@ $search-input-border-width: 3px;
     .search-textfield {
         // increases font size to approx 16.5px
         @include font-size(1.1);
-
-        height: $search-input-height;
         width: 100%;
-
-        // hard sharp edges for the search-box
-        border-radius: 0;
-
+        max-height: 38px;
         // makes border transparent but maintains height for hover effect
-        border: $search-input-border-width solid transparent;
-
+        border: 1px solid;
+        border-radius: 5px;
+        border-top-right-radius: 0;
+        border-bottom-right-radius: 0;
         // Padding can control size of small search box
         padding: 0 10px;
         -webkit-transition: border $search-ft;
         transition: border $search-ft;
+
+        &::placeholder {
+            color: $black;
+            opacity: 1;
+        }
+        &::-ms-input-placeholder {
+            color: $black;
+        }
     }
 
     .submit-container {
@@ -143,12 +148,18 @@ $search-input-border-width: 3px;
 
     .close-search {
         display: none;
-        @include font-size(3);
         position: absolute;
         right: -10px;
-        line-height: 2.75rem;
         cursor: pointer;
-        color: $gray-light;
+        .sr-only {
+            height: unset !important;
+            width: unset !important;
+            position: relative !important;
+            clip: unset !important;
+            background: none !important;
+            margin: 0 !important;
+            font-size: 1.125rem !important;
+        }
 
         // 991px
         @media (max-width: $screen-sm-max) {
@@ -169,7 +180,8 @@ $search-input-border-width: 3px;
 
     /* Active on mobile // 991px // */
     @media (max-width: $screen-sm-max) {
-        padding: 10px;
+        padding-top: 1.125rem;
+        padding-bottom: 1.125rem;
     }
 
     .close-search {
@@ -207,7 +219,6 @@ $search-input-border-width: 3px;
 
         max-height: 100%;
         border-radius: 0;
-        min-height: 55px;
 
         width: 60%;
         left: 20%;
@@ -232,7 +243,7 @@ $search-input-border-width: 3px;
         .search-textfield {
             padding: 14px; // Increases padding on large search to make it appear bigger.
             @include font-size(1.1); // increases font size to approx 16.5px
-            height: 55px; // Large search box overides default from above
+            height: 38px; // Large search box overides default from above
         }
 
         -webkit-transition: all $search-ft;
@@ -303,8 +314,8 @@ $search-input-border-width: 3px;
 .search-container.featured-search {
     // 991px
     @media (max-width: $screen-sm-max) {
-        padding-right: 10px;
-        padding-left: 10px;
+        padding-right: 1rem;
+        padding-left: 1rem;
     }
 }
 
@@ -484,7 +495,8 @@ $search-input-border-width: 3px;
     }
 
     &.active {
-        @include rgba(#000, 0.5);
+        background-color: $gray-100;
+        border-top: 1px solid $gray-300;
     }
 }
 
@@ -528,23 +540,15 @@ $search-input-border-width: 3px;
     }
 }
 
-/* Search Icon */
-td.gsc-search-button {
-    position: relative;
-
-    &::before {
-        font-family: "CaGov";
-        content: "\e604";
-        color: #666;
-        position: absolute;
-        font-size: 2.5rem;
-        right: 10px;
-        line-height: 0.01rem;
-    }
-}
+/* Search Button */
 
 button.gsc-search-button {
     cursor: pointer;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    padding: 0px 12px 0px 12px;
+    border: 1px solid;
+    min-height: 38px;
 }
 
 /* ------------- Custom search box (not google) --------------*/
@@ -561,16 +565,21 @@ button.gsc-search-button {
         }
 
         .close-search {
-            font-size: 2rem;
             display: block;
             right: 0;
-
-            .ca-gov-icon-close-mark {
-                color: $gray-lightest;
-            }
             // 991px
             @media (max-width: $screen-sm-max) {
                 display: block;
+                cursor: pointer;
+                .sr-only {
+                    height: unset !important;
+                    width: unset !important;
+                    position: relative !important;
+                    clip: unset !important;
+                    background: none !important;
+                    margin: 0 !important;
+                    font-size: 1.125rem !important;
+                }
             }
         }
     }
@@ -772,17 +781,17 @@ table.gsc-search-box td {
 /* Full Width navigation search */
 @media (min-width: 992px) {
     .full-width-nav .featured-search {
-        top: -65px !important;
+        top: -60px !important;
         right: 15px;
         left: unset !important;
-        width: 40%;
+        width: 32%;
     }
 
     .full-width-nav .featured-search input.search-textfield {
-        border: 1px solid !important;
-        border-color: #ccc !important;
-        border-radius: 4px;
-        padding: 0 10px 0 10px;
+        border-radius: 5px;
+        border-top-right-radius: 0;
+        border-bottom-right-radius: 0;
+        padding: 0 8px 0 8px;
     }
 
     /* full width featured search hack for IE */
@@ -842,17 +851,7 @@ table.gsc-search-box td {
 
 /* search box icons for mobile */
 @media (max-width: $screen-sm-max) {
-    .gsc-search-button .ca-gov-icon-search {
-        font-size: 34px !important;
-    }
-
     .search-container #Search .close-search {
-        font-size: 34px !important;
         padding-left: 10px;
-    }
-
-    .search-container #Search .gsc-search-button {
-        padding-left: 10px;
-        padding-right: 10px;
     }
 }

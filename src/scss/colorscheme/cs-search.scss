@@ -3,21 +3,33 @@
    /source/scss/colorscheme.search.scss
 ----------------------------------------- */
 
-
 .search-container {
-
-    .search-textfield {
-        background-color: $text-field-color;
-    }
-
     .submit-container {
         button {
             color: $mobile-controls;
             border-color: $text-field-color;
         }
     }
+    .search-textfield {
+        border-color: $color-p2 !important;
+    }
 
-    &:hover, &:focus, &.active {
+    .gsc-search-button {
+        background-color: $color-p2;
+        border-color: $color-p2;
+        &:hover,
+        &:focus {
+            background-color: darken($color-p2, 7%);
+            border-color: darken($color-p2, 7%);
+        }
+        .ca-gov-icon-search {
+            color: $white;
+        }
+    }
+
+    &:hover,
+    &:focus,
+    &.active {
         .search-textfield {
             background-color: #fff;
         }
@@ -28,23 +40,22 @@
     }
 
     &.active {
-        @include rgba (#000, .7);
+        background-color: $gray-100;
 
         .submit-container button {
             border-color: darken($gray-lighter, 10%);
             background: $gray;
         }
-
-        .search-textfield {
-            border-color: darken($gray-lighter, 10%);
-        }
-
-        &.focus, &:hover {
-            .search-textfield {
-                //border-color: $color-p2;
-            }
-        }
     }
 }
 
-
+.featured-search.active .container #Search .close-search-btn .sr-only,
+.search-container .close-search .sr-only {
+    color: $color-p2;
+    text-decoration: underline;
+    &:hover,
+    &:focus {
+        color: darken($color-p2, 7%);
+        text-decoration: none;
+    }
+}

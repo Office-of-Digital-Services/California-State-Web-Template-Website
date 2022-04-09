@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Flex Megamenu Navigation</title> 
+  <title>Featured Search</title> 
   <meta charset="utf-8">
   <meta name="Author" content="State of California" />
   <meta name="Description" content="State of California" />
@@ -331,8 +331,8 @@ Options are: megadropdown dropdown singlelevel
 </nav>
 		        
               
-              <div id="head-search" class="search-container">
-             
+              <div id="head-search" class="search-container featured-search">
+              
               <div class="container">
     <form id="Search" class="pos-rel" action="/serp.html">
         <span class="sr-only" id="SearchInput">Custom Google Search</span>
@@ -352,102 +352,63 @@ Options are: megadropdown dropdown singlelevel
 
 
 <div id="main-content" class="main-content">
-	<div class="container p-b-lg p-t-md">
-		<main class="main-primary" id="main">
+	<main class="main-primary" id="main">
+		
+<div id="main-content" class="main-content">
+	<!-- Include Page Template -->
+	<div class="parallax-bg height-300" style="background-image: url(/images/bg-open-data.jpg)">
+	</div>
 
-			
-<nav aria-label="You are here">
-    <ol class="breadcrumb">
-        <li><a href="../index.html" title="Home page">Home</a></li>
-        <li><a href="/sample/navsamples.html" title="Navigation Samples page">Navigation Samples</a>
-        </li>
-        <li class="active">Flex Megamenu</li>
-    </ol>
-</nav>
+	<div class="container p-b-lg">
+		<main class="main-primary">
+			<nav aria-label="You are here">
+				<ol class="breadcrumb">
+					<li><a href="../index.html" title="Home page">Home</a></li>
+					<li><a href="/sample/" title="Content Modules landing page">Content Modules</a></li>
+					<li class="active">Featured Search</li>
+				</ol>
+			</nav>
 
-<h1>Flex Megamenu Navigation</h1>
-<p>
-    The flex megamenu displays dropdown panels for sub navigation when the user hovers over a primary
-    link.
-    This style of menu can be set by including the <code>.megadropdown</code>
-    class in the <code>&lt;nav&gt;</code> element.
-</p>
-<h2 class="h4">Example:</h2>
-
-<pre>&lt;nav id="navigation" class="main-navigation megadropdown"&gt;</pre>
-<p>
-    In the template distribution this markup can be found in <code>/sample/modules/nav-flex.html</code>.
-
-<h2>Flex Units</h2>
-<p>
-    Sub navigation uses flex properties to layout sub-navigation items inside of the megadropdown menu.
-    Inside <code>.sub-nav</code> container use flexbox row div <code>.second-level-nav</code> with class
-    <code>.flex</code>
-    added to it. Class <code>flex</code> will ensure equal inline distribution of <code>a</code>
-    sub-navigation items
-    iside of <code>.second-level-nav</code> div.
-</p>
-
-<h2 class="h4">Example:</h2>
-<pre>&lt;div class="sub-nav"&gt;
-    &lt;div class="second-level-nav flex"&gt;
-        &lt;a href="/" class="second-level-link"&gt;Link 1&lt;/a>
-        &lt;a href="/" class="second-level-link"&gt;Link 2&lt;/a>
-        &lt;a href="/" class="second-level-link"&gt;Link 3&lt;/a>
-    &lt;/div&gt;
-&lt;/div&gt;
-</pre>
-<p>To add border around sub-navigation link units add class <code>.with-border</code> to the
-    <code>.second-level-nav</code> div container.
-</p>
+			<div class="row">
+				<div class="col-md-6">
+					<h1>Featured Search</h1>
+					<p>The header above is an example of the featured search bar. It's location and size make it a
+						prominent feature on this layout option. The <code>.featured-search</code> classes need to be added to
+						the <code>#head-search</code> div in the header of your page. It can be done by adding
+						<code>search: Featured</code> paramenter to your page Front matter data.
+					</p>
 
 
-<h2>Mixed Content Within Navigation</h2>
-<p>
-    The megamenu allows for the display optional icons or images with sub navigation links.
-    It is also possible to display a short description below each sub navigation link. To display icon
-    on top
-    of the link use <code>span</code> with appropriate ca-gov-icon icon class from our CA Gov icon font
-    library.
-    To make an icon bigger use desired font size class such as <code>.font-size-40</code>.
-    To display small images on the left or right side of the link use <code>.with-image-left</code>
-    or <code>.with-image-right</code> on the div container containing the media.
-</p>
-
-<h3 class="h4">Link with large icon:</h4>
-    <pre><code><a href="/" class="second-level-link">
-    <span class="ca-gov-icon-home font-size-40" aria-hidden="true"></span>
-    <p class="h3 sub-nav-link">First Link</p>
-    <p class="link-description">Some link description.</p>
-</a>
-</code></pre>
-    <h3 class="h4">Link with left image:</h4>
-        <pre><code><a href="/" class="second-level-link">
-        <div class="media-left">
-        <img class="media-object" src="/images/sample/images/70x70.gif" alt="...">
-    </div>
-    <div class="media-body">
-        <div class="title text-left">News Title</div>
-        <div class="teaser link-description text-left">Some link description.</div>
-    </div>
-</a>
-</code></pre>
+					<p><span class="badge label-info">NOTE:</span> Featured search can be only used with
+						<code>navicons.njk</code>
+						or
+						<code>navicons-landing.njk</code> layouts, since <code>paga.njk</code>, <code>landing.njk</code> page
+						layout are already using featured search in their page header by default. See page template available
+						options by
+						viewing <a href="page-templates.html"> page
+							templates</a>.
+					</p>
+				</div>
+				<div class="col-md-6">
+					<h2>Front matter data:</h2>
+					<pre><code class="overflow-auto">---
+title: Featured Search
+layout: navicons-landing.njk
+permalink: "sample/featured-search.html"
+navigation: "../modules/nav-flex.html"
+search: Featured
+---
+							  </code></pre>
+				</div>
+				<div class="clearfix"></div>
 
 
 
-        <h2>More Navigation Samples</h2>
-        <ul>
-            <li><a href="navigation-full-width-utility.html">Full Width Navigation with Active
-                    Search</a></li>
-            <li><a href="navigation-single.html">Single Level Navigation</a></li>
-            <li><a href="navigation-dropdown.html">Dropdown Navigation</a></li>
-            <li><a href="navigation-sidebar.html">Side navigation menu</a></li>
-
-
-        </ul>
-
+			</div>
 		</main>
 	</div>
+</div>
+	</main>
 </div>
 
 
