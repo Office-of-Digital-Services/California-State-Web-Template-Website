@@ -14294,6 +14294,9 @@ a.list-group-item {
   top: -40px !important;
 }
 
+/* -----------------------------------------
+   SITE HEADER -  /source/scss/cagov/site-header.scss
+----------------------------------------- */
 .branding {
   margin-right: auto;
   margin-left: auto;
@@ -14368,6 +14371,7 @@ a.list-group-item {
   text-decoration: none;
   color: black;
   background-image: none;
+  display: inline-block;
 }
 .branding .header-organization-banner a .logo-assets {
   display: flex;
@@ -14595,7 +14599,7 @@ a.list-group-item {
   .search-container,
 .featured-search.active {
     position: absolute;
-    top: 87px;
+    top: 96px;
   }
 }
 .search-container::after,
@@ -14607,13 +14611,24 @@ a.list-group-item {
 .search-container .search-textfield,
 .featured-search.active .search-textfield {
   font-size: 1.1rem;
-  height: 40px;
   width: 100%;
-  border-radius: 0;
-  border: 3px solid transparent;
+  max-height: 38px;
+  border: 1px solid;
+  border-radius: 5px;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
   padding: 0 10px;
   -webkit-transition: border 0.4s;
   transition: border 0.4s;
+}
+.search-container .search-textfield::placeholder,
+.featured-search.active .search-textfield::placeholder {
+  color: #000;
+  opacity: 1;
+}
+.search-container .search-textfield::-ms-input-placeholder,
+.featured-search.active .search-textfield::-ms-input-placeholder {
+  color: #000;
 }
 .search-container .submit-container,
 .featured-search.active .submit-container {
@@ -14674,12 +14689,19 @@ a.list-group-item {
 .search-container .close-search,
 .featured-search.active .close-search {
   display: none;
-  font-size: 3rem;
   position: absolute;
   right: -10px;
-  line-height: 2.75rem;
   cursor: pointer;
-  color: #777777;
+}
+.search-container .close-search .sr-only,
+.featured-search.active .close-search .sr-only {
+  height: unset !important;
+  width: unset !important;
+  position: relative !important;
+  clip: unset !important;
+  background: none !important;
+  margin: 0 !important;
+  font-size: 1.125rem !important;
 }
 @media (max-width: 991px) {
   .search-container .close-search,
@@ -14700,7 +14722,8 @@ a.list-group-item {
 }
 @media (max-width: 991px) {
   .search-container.active {
-    padding: 10px;
+    padding-top: 1.125rem;
+    padding-bottom: 1.125rem;
   }
 }
 .search-container.active .close-search {
@@ -14730,7 +14753,6 @@ a.list-group-item {
     padding: 0;
     max-height: 100%;
     border-radius: 0;
-    min-height: 55px;
     width: 60%;
     left: 20%;
     -webkit-transition: all 0.4s;
@@ -14754,7 +14776,7 @@ a.list-group-item {
   .featured-search .search-textfield {
     padding: 14px;
     font-size: 1.1rem;
-    height: 55px;
+    height: 38px;
   }
   .featured-search .submit-container {
     height: 55px;
@@ -14780,7 +14802,7 @@ a.list-group-item {
     opacity: 1;
     -webkit-transition: top 0.4s, left 0.2s 0.4s, width 0.2s 0.4s, background-color 0.6s, border 0.4s, padding 0.2s 0.4s;
     transition: top 0.4s, left 0.2s 0.4s, width 0.2s 0.4s, background-color 0.6s, border 0.4s, padding 0.2s 0.4s;
-    top: 87px;
+    top: 96px;
     left: 0;
     padding: 20px 0;
     width: 100%;
@@ -14816,8 +14838,8 @@ a.list-group-item {
 }
 @media (max-width: 991px) {
   .search-container.featured-search {
-    padding-right: 10px;
-    padding-left: 10px;
+    padding-right: 1rem;
+    padding-left: 1rem;
   }
 }
 
@@ -14980,7 +15002,8 @@ a.list-group-item {
   background: none;
 }
 .search-container.featured-search.active {
-  background: rgba(0, 0, 0, 0.5);
+  background-color: #ededef;
+  border-top: 1px solid #bcbbc1;
 }
 
 @media (min-width: 992px) {
@@ -15019,22 +15042,14 @@ a.list-group-item {
     top: 32px;
   }
 }
-/* Search Icon */
-td.gsc-search-button {
-  position: relative;
-}
-td.gsc-search-button::before {
-  font-family: "CaGov";
-  content: "\e604";
-  color: #666;
-  position: absolute;
-  font-size: 2.5rem;
-  right: 10px;
-  line-height: 0.01rem;
-}
-
+/* Search Button */
 button.gsc-search-button {
   cursor: pointer;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+  padding: 0px 12px 0px 12px;
+  border: 1px solid;
+  min-height: 38px;
 }
 
 /* ------------- Custom search box (not google) --------------*/
@@ -15048,16 +15063,22 @@ button.gsc-search-button {
   display: block;
 }
 .search-container #Search .close-search {
-  font-size: 2rem;
   display: block;
   right: 0;
-}
-.search-container #Search .close-search .ca-gov-icon-close-mark {
-  color: whitesmoke;
 }
 @media (max-width: 991px) {
   .search-container #Search .close-search {
     display: block;
+    cursor: pointer;
+  }
+  .search-container #Search .close-search .sr-only {
+    height: unset !important;
+    width: unset !important;
+    position: relative !important;
+    clip: unset !important;
+    background: none !important;
+    margin: 0 !important;
+    font-size: 1.125rem !important;
   }
 }
 
@@ -15225,17 +15246,17 @@ table.gsc-search-box td {
 /* Full Width navigation search */
 @media (min-width: 992px) {
   .full-width-nav .featured-search {
-    top: -65px !important;
+    top: -60px !important;
     right: 15px;
     left: unset !important;
-    width: 40%;
+    width: 32%;
   }
 
   .full-width-nav .featured-search input.search-textfield {
-    border: 1px solid !important;
-    border-color: #ccc !important;
-    border-radius: 4px;
-    padding: 0 10px 0 10px;
+    border-radius: 5px;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    padding: 0 8px 0 8px;
   }
 
   /* full width featured search hack for IE */
@@ -15291,18 +15312,8 @@ table.gsc-search-box td {
 }
 /* search box icons for mobile */
 @media (max-width: 991px) {
-  .gsc-search-button .ca-gov-icon-search {
-    font-size: 34px !important;
-  }
-
   .search-container #Search .close-search {
-    font-size: 34px !important;
     padding-left: 10px;
-  }
-
-  .search-container #Search .gsc-search-button {
-    padding-left: 10px;
-    padding-right: 10px;
   }
 }
 /* -----------------------------------------
@@ -16773,7 +16784,7 @@ a.second-level-link [class^=ca-gov-icon-] {
 }
 .mobile-controls .toggle-search span.ca-gov-icon-search {
   position: absolute;
-  right: 3.8rem;
+  right: 3.5rem;
   top: -6px;
   font-size: 1.4rem;
 }

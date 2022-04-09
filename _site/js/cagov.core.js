@@ -1362,6 +1362,21 @@ window.addEventListener('scroll', function () {
             searchTop();
         }, 400);
 
+        // remove featured search on scroll in desktop
+        const FeaturedSearch = document.querySelector("nav ~ #head-search");
+        if (document.body.scrollTop >= 100 || document.documentElement.scrollTop >= 100) {
+            if (FeaturedSearch) {
+                FeaturedSearch.classList.add("hidden-up");
+            }
+
+        }
+        else {
+            if (FeaturedSearch) {
+                FeaturedSearch.classList.remove("hidden-up");
+            }
+
+        }
+
     }
 
 });
