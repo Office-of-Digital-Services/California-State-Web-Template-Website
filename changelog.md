@@ -1,7 +1,6 @@
 # Version History
 
 
-
 ## 6.0.7
 - Added responsive font size calculation functionality
 - Adjusted some of the components to responsive font sizing
