@@ -113,67 +113,98 @@
     }
 }
 
-//
-// Main Navigation links
-// --------------------------------------------------
-
-.first-level-link,
-.first-level-btn {
-    display: block;
-    padding: 5px 16px 12px 16px;
-    font-family: $headings-font-family;
-    font-weight: 400;
-    // white-space: nowrap;
-    position: relative;
-    z-index: 1;
-
-    &.has-sub {
-        padding-right: 24px; // extra room for arrow
-    }
-
-    &:hover,
-    &:focus {
+// Main Navigation with Icons
+@media (min-width: $screen-md-min) {
+    .first-level-link,
+    .first-level-btn {
+        display: block;
+        padding: 5px 16px 12px 16px;
+        position: relative;
+        text-align: center;
         text-decoration: none;
-    }
 
-    > span[class^="ca-gov-icon"]:not(.carrot) {
-        // 992px
-        @media (min-width: $screen-md-min) {
-            /* Navigation icons */
+        &:focus {
+            @include outline(2px);
+            outline-offset: -2px;
+        }
+
+        > span[class^="ca-gov-icon"]:not(.carrot) {
             display: block;
             font-size: 32px;
         }
-    }
-    // 991px
-    @media (max-width: $screen-sm-max) {
-        &:first-child {
-            margin-top: 2px;
-        }
-        // to make outline visible
-        display: block;
-        padding: 20px 0 20px 15px;
-        margin-right: 2px; // to make outline visible
-        margin-left: 2px; // to make outline visible
-        span[class^="ca-gov-icon"]:not(.carrot) {
-            @include font-size(1.5);
-            display: inline-block;
-            vertical-align: -2px;
-            padding-right: 5px;
+
+        .carrot {
+            font-size: 1rem;
         }
     }
 }
 
-// 1200px and 991px
-@media (max-width: $screen-lg) and (min-width: $screen-md-min) {
-    .first-level-link,
-    .first-level-btn {
-        padding: 5px 9px 12px 9px;
+//
+// Main Navigation links (full width)
+// --------------------------------------------------
+.full-width-nav {
+    .nav-item {
+        &:hover,
+        &:focus {
+            background-color: transparent;
+        }
 
-        &.has-sub {
-            padding-right: 13px; // extra room for arrow
+        .first-level-link,
+        .first-level-btn {
+            display: block;
+            padding: 0.7rem 1rem 0.75rem 1rem;
+            font-family: $headings-font-family;
+            font-weight: 400;
+            // white-space: nowrap;
+            position: relative;
+            z-index: 1;
+
+            &.has-sub {
+                padding-right: 2.3rem; // extra room for arrow
+            }
+
+            &:hover,
+            &:focus {
+                text-decoration: underline !important;
+                text-decoration-thickness: from-font;
+            }
+
+            &:focus {
+                @include outline(2px);
+                outline-offset: -2px;
+            }
+            .carrot {
+                font-size: 1.7rem;
+                position: absolute;
+                display: inline-block;
+            }
+
+            > span[class^="ca-gov-icon"]:not(.carrot) {
+                // 992px
+                @media (min-width: $screen-md-min) {
+                    /* Navigation icons */
+                    display: block;
+                    font-size: 32px;
+                }
+            }
+            // 991px
         }
     }
 }
+
+// Mobile first level nav
+
+// // 1200px and 991px
+// @media (max-width: $screen-lg) and (min-width: $screen-md-min) {
+//     .first-level-link,
+//     .first-level-btn {
+//         padding: 5px 9px 12px 9px;
+
+//         &.has-sub {
+//             padding-right: 13px; // extra room for arrow
+//         }
+//     }
+// }
 //
 // TOP LEVEL NAVIGATION FOR DESKTOP
 // --------------------------------------------------
@@ -194,7 +225,7 @@
         display: -ms-flexbox;
         display: -webkit-flex;
         display: flex;
-        min-height: 80px; // beta 6.0 addition
+        // min-height: 80px; // beta 6.0 addition
         .nav-item {
             padding: 0;
             margin-top: 0;
@@ -215,12 +246,12 @@
 
             .sub-nav {
                 top: 100%; // Positioning for flexbox layout
-                box-shadow: 0px 8px 7px 0px rgba(0, 0, 0, 0.06); // beta 6.0 addition
+                border: solid 1px #ccc;
+                box-shadow: 0 4px 4px rgb(0 0 0 / 25%);
             }
 
             > a {
                 text-align: center; // Center only top level navigation links
-                min-height: 50px; // beta 5.0 addition
                 text-decoration: none;
             }
         }
@@ -286,30 +317,25 @@
                 .nav-item {
                     > a {
                         padding-top: 12px;
-                        min-height: 50px;
+                        // min-height: 50px;
                     }
                 }
             }
         }
 
         .top-level-nav {
-            // Beta 5.0 addition
-            min-height: 55px; // Beta 6.0 addition
+            // min-height: 55px; // Beta 6.0 addition
             .nav-item {
                 .first-level-link,
                 .first-level-btn {
-                    padding-top: 17px;
-                    padding-bottom: 8px;
-
                     .carrot {
-                        bottom: 9px;
+                        bottom: 0;
                     }
                 }
             }
 
             #nav-item-search {
                 button.first-level-link {
-                    padding-top: 17px;
                 }
             }
         }
@@ -330,6 +356,7 @@
 
 /* MOBILE NAVIGATION */
 // 991px
+
 @media (max-width: $screen-sm-max) {
     #navigation {
         clear: both;
@@ -340,11 +367,6 @@
         [aria-hidden="true"].sub-nav {
             max-height: 0;
         }
-    }
-
-    .nav-full-width .main-navigation .first-level-link,
-    .nav-full-width .main-navigation .first-level-btn {
-        padding: 20px 0 20px 15px;
     }
 
     .main-navigation {
@@ -382,6 +404,28 @@
     .top-level-nav .nav-item {
         background-color: $white;
         margin-top: 0;
+        border-top: 1px solid $gray-200;
+
+        &:first-child {
+            border-top: none;
+        }
+
+        .first-level-link,
+        .first-level-btn {
+            &:first-child {
+                margin-top: 2px;
+            }
+            display: block;
+            padding: 20px 0 20px 15px;
+            margin-right: 2px;
+            margin-left: 2px;
+            span[class^="ca-gov-icon"]:not(.carrot) {
+                @include font-size(1.5);
+                display: inline-block;
+                vertical-align: -2px;
+                padding-right: 5px;
+            }
+        }
 
         .first-level-link.has-sub,
         .first-level-btn.has-sub {
@@ -549,112 +593,10 @@
 // Minor divsions or sub sections
 // --------------------------------------------------
 // 992px
-@media (min-width: $screen-md-min) {
-    .fixed.top-level-nav .nav-item {
-        // beta 5.0 addition
-        min-height: 50px;
-    }
-}
+
 /* Need a little extra specificity for IE to override display: table-cell */
 .oldie .home-link {
     @include sr-only();
-}
-
-/*full width navigation*/
-// 992px
-@media (min-width: $screen-md-min) {
-    .nav-full-width {
-        .main-navigation {
-            min-height: 30px;
-            margin-top: 0;
-            padding-left: 0;
-            padding-right: 0;
-
-            .top-level-nav,
-            .top-level-nav .nav-item > a {
-                min-height: 30px;
-                text-decoration: none;
-                color: #fff;
-            }
-
-            .first-level-link,
-            .first-level-btn {
-                padding: 5px 0 7px 0;
-
-                &.has-sub {
-                    padding-right: 5px;
-
-                    .carrot {
-                        bottom: 7px;
-                        color: $white;
-                    }
-                }
-            }
-        }
-    }
-    // fixed
-    .fixed.compact {
-        .branding {
-            transition: all 0.3s;
-        }
-
-        .nav-full-width .main-navigation {
-            margin-top: 0;
-            min-height: 30px;
-
-            .top-level-nav .first-level-link,
-            .top-level-nav .first-level-btn {
-                padding: 5px 0 7px 0;
-
-                &.has-sub {
-                    padding-right: 5px;
-                }
-            }
-        }
-    }
-}
-
-/* FULL WIDTH MENU WITH ICONS */
-//992px
-@media (min-width: $screen-md-min) {
-    .nav-full-width-icons .main-navigation {
-        padding-left: 0px;
-        margin-top: 0px;
-    }
-    // fixed
-    .nav-full-width-icons.fixed.compact .main-navigation {
-        margin-top: 0px;
-    }
-    /* full width menu with icons BUT with .no-icons class */
-    .nav-full-width-icons .no-icons,
-    .nav-full-width-icons.fixed.compact .no-icons {
-        min-height: 55px;
-
-        .top-level-nav {
-            min-height: 55px;
-
-            .nav-item {
-                > a {
-                    min-height: 55px;
-                    padding-top: 1rem;
-
-                    &.has-sub {
-                        .carrot {
-                            bottom: 16px;
-                        }
-                    }
-                }
-
-                .first-level-btn {
-                    padding-top: 15px;
-                }
-            }
-
-            #nav-item-search button.first-level-link {
-                padding-top: 15px;
-            }
-        }
-    }
 }
 
 /* FULL WIDTH MENU WITH REGULAR UTILITY BAR */
@@ -666,29 +608,37 @@
         min-height: 55px;
 
         .top-level-nav {
-            min-height: 55px;
+            // min-height: 55px;
 
             .first-level-btn {
-                min-height: 55px;
-                padding-top: 12px;
+                // min-height: 55px;
 
                 &.has-sub {
                     .carrot {
-                        bottom: 16px;
+                        bottom: 0;
+                        top: 0.3rem;
+                        transition: all 0.5s cubic-bezier(0.57, 0.2, 0.21, 0.89);
+                        //  transform: translateY(-50%);
+                    }
+                }
+
+                &[aria-expanded="true"] {
+                    .carrot {
+                        transform: rotate(180deg);
+                        bottom: 0.3rem;
                     }
                 }
             }
 
             .first-level-link {
-                min-height: 55px;
-                padding-top: 17px;
+                // min-height: 55px;
             }
 
             #nav-item-search button.first-level-link {
                 background: none;
                 text-align: center;
                 border: none;
-                padding-top: 12px;
+                // padding-top: 12px;
                 width: 100%;
             }
         }
@@ -792,7 +742,7 @@
     }
 
     .first-level-btn .carrot {
-        display: none;
+        display: none !important;
     }
 
     /* Some weird bug in mobile */
@@ -802,25 +752,10 @@
     }
 }
 
-// Adding carrot if nav item has sub nav
-// 992px
-@media (min-width: $screen-md-min) {
-    .nav-item .first-level-link.has-sub,
-    .first-level-btn {
-        .carrot {
-            font-size: 0.8rem;
-            position: absolute;
-            bottom: 13px;
-            display: inline-block;
-            color: $gray;
-        }
-    }
-}
-
 // 991px
 @media (max-width: $screen-sm-max) {
     .nav-item .first-level-link.has-sub .carrot {
-        display: none;
+        display: none !important;
     }
 }
 

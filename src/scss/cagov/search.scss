@@ -79,6 +79,10 @@ $search-input-border-width: 3px;
         &::-ms-input-placeholder {
             color: $black;
         }
+        &:focus {
+            @include outline(2px);
+            outline-offset: -2px;
+        }
     }
 
     .submit-container {

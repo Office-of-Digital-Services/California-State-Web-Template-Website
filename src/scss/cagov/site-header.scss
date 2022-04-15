@@ -15,17 +15,16 @@
 	}
 
 	.header-organization-banner {
-		line-height: 5.125rem;
 		-webkit-transition: all 0.3s;
 		transition: all 0.3s; // Smooth transition for compact header
 		padding-left: 15px;
 		@media (max-width: $screen-sm-max) {
 			position: relative;
 			max-width: 400px;
-			margin-left: 15px;
-			padding-bottom: 16px;
-			padding-top: 8px;
+			margin-left: 1rem;
+			padding-top: 0.5rem;
 			padding-left: 0;
+			padding-bottom: 1rem;
 		}
 
 		img {
@@ -49,6 +48,9 @@
 			color: black;
 			background-image: none;
 			display: inline-block;
+			&:focus {
+				@include outline(2px);
+			}
 
 			.logo-assets {
 				display: flex;
@@ -69,7 +71,7 @@
 				.logo-text {
 					padding-left: 5px;
 					@media (max-width: $screen-sm-max) {
-						padding-top: 8px;
+						padding-top: 0.5rem;
 					}
 					.logo-state {
 						font-size: 1rem;
@@ -154,7 +156,6 @@
 		.header-organization-banner {
 			height: 55px; // Beta 5.0 addition
 			max-height: 45px; // Beta 5.0 addition
-			line-height: 3.4375rem; // Beta 5.0 addition
 			a {
 				max-width: 225px; // Beta 5.0 addition
 			}
