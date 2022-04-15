@@ -1,5 +1,13 @@
 # Version History
 
+## 6.0.8
+- Updated site structure and rebuild framework to use eleventy site generation #191
+- Replaced server site includes with njk includes and templates
+- Changed website output folder to /_site/ #206
+- Updated branding include (site header) to look like CA Design System's site header #194
+- Updated mobile controls styles to look like CA Design System
+- Updated search component's styles to look like search component in the CA Design System #197
+- Updated main navigation styles to resemble the CA Design System navigation #196
 
 ## 6.0.7
 - Added responsive font size calculation functionality
@@ -134,5 +142,6 @@
 - Cleaned up scss files (moved color properties and their variable to the color schemes section, updated globals.scss files)
 - Added new full width active search navigation option
 - Made new dyslexic font option available in the settings
-- Redesigned template's navigation structure focusing on how to get started with the State Template, also to showcase layout pages, color schemes and content modules 
+- Redesigned template's navigation structure focusing on how to get started with the State Template, also to showcase layout pages, color schemes and content modules
 - Added new icons to CAGov font library
+
