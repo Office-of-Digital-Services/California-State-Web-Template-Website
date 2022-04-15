@@ -443,7 +443,7 @@ var plugin = function plugin() {
 
     //Change all the links next to sub-navs to first-level-btn
     document.querySelectorAll('.main-navigation .sub-nav').forEach(function (node) {
-        node.parentElement.querySelector('a').className=className;
+        node.parentElement.querySelector('a').className = className;
     });
 
     var CONFIG = _extends({
@@ -499,14 +499,14 @@ var plugin = function plugin() {
             var prefixClassName = accordion_node.hasAttribute(CONFIG.ACCORDION_DATA_PREFIX_CLASS) === true ? accordion_node.getAttribute(CONFIG.ACCORDION_DATA_PREFIX_CLASS) + '-' : '';
             var coolSelectors = CONFIG.ACCORDION_DATA_COOL_SELECTORS === true;
             var childClassName = 'first-level-btn';
-            
+
             // Init attributes accordion
             if (!mobileView$1()) {
                 accordion_node.setAttribute(CONFIG.ATTR_MULTISELECTABLE, 'false');
             } else {
                 accordion_node.setAttribute(CONFIG.ATTR_MULTISELECTABLE, 'true');
             }
-           // accordion_node.setAttribute(CONFIG.ATTR_ROLE, CONFIG.ACCORDION_ROLE_TABLIST);
+            // accordion_node.setAttribute(CONFIG.ATTR_ROLE, CONFIG.ACCORDION_ROLE_TABLIST);
             // We already have main navigation id
             // accordion_node.setAttribute('id', iLisible);
             accordion_node.setAttribute(DATA_HASH_ID, HASH_ID);
@@ -553,16 +553,16 @@ var plugin = function plugin() {
                     accordionButton.setAttribute(CONFIG.ATTR_EXPANDED, 'true');
                     header_node.removeAttribute(CONFIG.ACCORDION_DATA_OPENED);
                     accordionPanel.setAttribute(CONFIG.ATTR_HIDDEN, 'false');
-                    
+
                     //$(accordionPanel).find(".second-level-link").removeAttr("tabindex"); //JQ
-                    accordionPanel.querySelectorAll(".second-level-link").forEach(function(item) {item.removeAttribute('tabindex');}); //JS
+                    accordionPanel.querySelectorAll(".second-level-link").forEach(function (item) { item.removeAttribute('tabindex'); }); //JS
                 } else {
                     accordionButton.setAttribute(CONFIG.ATTR_EXPANDED, 'false');
                     accordionPanel.setAttribute(CONFIG.ATTR_HIDDEN, 'true');
                     // making sure all second level links are not tabable
-                    
+
                     //$(accordionPanel).find(".second-level-link").attr("tabindex", "-1"); //JQ
-                    accordionPanel.querySelectorAll(".second-level-link").forEach(function(item) {item.setAttribute('tabindex', '-1');}); //JS
+                    accordionPanel.querySelectorAll(".second-level-link").forEach(function (item) { item.setAttribute('tabindex', '-1'); }); //JS
 
                 }
             });
@@ -592,27 +592,27 @@ var main = function main() {
 
                     // loading config from element
                     var CONFIG = pluginConfig.get(hashId);
-/*
-                    // focus on button
-                    if (hasClass(e.target, 'first-level-btn') === true && eventName === 'focus') {
-                        (function () {
-                            var buttonTag = e.target;
-                            var accordionContainer = findById(searchParent(buttonTag, CONFIG.ACCORDION_JS, hashId), hashId);
-                            var coolSelectors = CONFIG.ACCORDION_DATA_COOL_SELECTORS === true;
-                            var accordionAllHeaders = [].slice.call(accordionContainer.querySelectorAll('.first-level-btn'));
-
-                            if (coolSelectors === false) {
-                                accordionAllHeaders = accordionAllHeaders.filter(function (element) {
-                                    return element.parentNode.parentNode === accordionContainer;
-                                });
-                            }
-
-                           // unSelectHeaders(accordionAllHeaders, CONFIG.ATTR_SELECTED);
-
-                           // selectHeader(buttonTag, CONFIG.ATTR_SELECTED);
-                        })();
-                    }
-*/
+                    /*
+                                        // focus on button
+                                        if (hasClass(e.target, 'first-level-btn') === true && eventName === 'focus') {
+                                            (function () {
+                                                var buttonTag = e.target;
+                                                var accordionContainer = findById(searchParent(buttonTag, CONFIG.ACCORDION_JS, hashId), hashId);
+                                                var coolSelectors = CONFIG.ACCORDION_DATA_COOL_SELECTORS === true;
+                                                var accordionAllHeaders = [].slice.call(accordionContainer.querySelectorAll('.first-level-btn'));
+                    
+                                                if (coolSelectors === false) {
+                                                    accordionAllHeaders = accordionAllHeaders.filter(function (element) {
+                                                        return element.parentNode.parentNode === accordionContainer;
+                                                    });
+                                                }
+                    
+                                               // unSelectHeaders(accordionAllHeaders, CONFIG.ATTR_SELECTED);
+                    
+                                               // selectHeader(buttonTag, CONFIG.ATTR_SELECTED);
+                                            })();
+                                        }
+                    */
                     // click on button
                     if (hasClass(e.target, 'first-level-btn') === true && eventName === 'click') {
                         (function () {
@@ -636,18 +636,18 @@ var main = function main() {
                                 buttonTag.setAttribute(CONFIG.ATTR_EXPANDED, true);
                                 destination.removeAttribute(CONFIG.ATTR_HIDDEN);
                                 //$(destination).addClass("open"); //JQ
-                                addClass(destination,"open"); //JS
+                                addClass(destination, "open"); //JS
                                 // making second level links tabbable if sub nav panel is opened
                                 //$(destination).find(".second-level-link").removeAttr("tabindex"); //JQ
-                                destination.querySelectorAll(".second-level-link").forEach(function(item) {item.removeAttribute('tabindex');}); //JS
+                                destination.querySelectorAll(".second-level-link").forEach(function (item) { item.removeAttribute('tabindex'); }); //JS
                             } else {
                                 buttonTag.setAttribute(CONFIG.ATTR_EXPANDED, false);
                                 destination.setAttribute(CONFIG.ATTR_HIDDEN, true);
-                                removeClass(destination,"open"); //JS
+                                removeClass(destination, "open"); //JS
                                 //$(destination).removeClass("open"); //JQ
                                 // adding tabindex to links to make sure they are not tabable if sub nav panel is closed
                                 //$(destination).find(".second-level-link").attr("tabindex", "-1");
-                                destination.querySelectorAll(".second-level-link").forEach(function(item) {item.setAttribute('tabindex', '-1');}); //JS
+                                destination.querySelectorAll(".second-level-link").forEach(function (item) { item.setAttribute('tabindex', '-1'); }); //JS
                             }
 
                             if (!mobileView$1()) {
@@ -657,16 +657,16 @@ var main = function main() {
                                     var destinationPanel = findById(header_node.getAttribute(CONFIG.ATTR_CONTROLS), hashId);
 
                                     if (header_node !== buttonTag) {
-                                       // header_node.setAttribute(CONFIG.ATTR_SELECTED, false);
+                                        // header_node.setAttribute(CONFIG.ATTR_SELECTED, false);
                                         header_node.setAttribute(CONFIG.ATTR_EXPANDED, false);
                                         //$(destinationPanel).removeClass("open"); //JQ
 
-                                        removeClass(destinationPanel,"open"); //JS
+                                        removeClass(destinationPanel, "open"); //JS
                                         //destinationPanel.setAttribute(CONFIG.ATTR_HIDDEN, true);
 
-                                       //Added fix to make closed panels non-tabbable
-                                       destinationPanel.querySelectorAll(".second-level-link").forEach(function(item) {item.setAttribute('tabindex', '-1');}); //JS
-                                    } 
+                                        //Added fix to make closed panels non-tabbable
+                                        destinationPanel.querySelectorAll(".second-level-link").forEach(function (item) { item.setAttribute('tabindex', '-1'); }); //JS
+                                    }
                                 });
                             }
 
@@ -768,22 +768,22 @@ document.addEventListener('DOMContentLoaded', onLoad);
 
 
 function NavReset$1() {
-    
+
     //RESET
     //JS
-    document.querySelectorAll(".first-level-btn").forEach(function(el) {el.setAttribute("aria-expanded", "false");});
-    document.querySelectorAll(".sub-nav").forEach(function(el) {
+    document.querySelectorAll(".first-level-btn").forEach(function (el) { el.setAttribute("aria-expanded", "false"); });
+    document.querySelectorAll(".sub-nav").forEach(function (el) {
         el.setAttribute("aria-hidden", "true");
-        removeClass(el,"open");
+        removeClass(el, "open");
     });
-    document.querySelectorAll(".second-level-link").forEach(function(el) {el.setAttribute("tabindex", "-1");});
+    document.querySelectorAll(".second-level-link").forEach(function (el) { el.setAttribute("tabindex", "-1"); });
 
     if (window.innerWidth <= 991) {
-        document.querySelectorAll(".rotate").forEach(function(el) {el.style.display="block";});
-     } else {
-        document.querySelectorAll(".rotate").forEach(function(el) {el.style.display="none";});
+        document.querySelectorAll(".rotate").forEach(function (el) { el.style.display = "block"; });
+    } else {
+        document.querySelectorAll(".rotate").forEach(function (el) { el.style.display = "none"; });
         var nav = document.querySelector("#navigation");
-        removeClass(nav,"collapse");
+        removeClass(nav, "collapse");
         nav.removeAttribute("aria-hidden");
     }
 
@@ -793,7 +793,7 @@ function NavReset$1() {
     //$(".sub-nav").attr("aria-hidden", "true").removeClass("open");
     //$(".second-level-link").attr("tabindex", "-1");
     //var toggleSubNav = $('<div class="ca-gov-icon-caret-right rotate" aria-hidden="true"></div>');
-    
+
     //if (window.innerWidth <= 991) {
     //    //$('.has-sub').append(toggleSubNav);
     //    $(".rotate").css("display", "block");
@@ -801,19 +801,19 @@ function NavReset$1() {
     //else {
     //    $("#navigation").removeClass("collapse").removeAttr("aria-hidden");
     //    $(".rotate").css("display", "none");
-   // }
+    // }
 
 }
 
-var mobileView$1 = function() {
+var mobileView$1 = function () {
     //JQ
     //return $('.global-header .mobile-controls').css('display') !== "none"; // mobile view uses arrow to show subnav instead of first touch
     //JS
     return getComputedStyle(document.querySelector('.global-header .mobile-controls'))['display'] !== 'none';
 };
 
-function AlmostJQueryDocumentReady(callbackFunction){
-    if(document.readyState != 'loading')
+function AlmostJQueryDocumentReady(callbackFunction) {
+    if (document.readyState != 'loading')
         callbackFunction();
     else
         document.addEventListener("DOMContentLoaded", callbackFunction);
@@ -821,7 +821,7 @@ function AlmostJQueryDocumentReady(callbackFunction){
 
 // Remove href if <a> has a link
 AlmostJQueryDocumentReady(function () { //JS
-//$(document).ready(function () { //JQ
+    //$(document).ready(function () { //JQ
     var navigationJS = document.querySelector(".main-navigation");
 
     var subnavbtnJS = document.querySelectorAll(".main-navigation .nav-item a.has-sub-btn");
@@ -859,13 +859,13 @@ AlmostJQueryDocumentReady(function () { //JS
 
     // Variables JQ
     //var $navigation = $('.main-navigation'),
-        //$navItems = $navigation.find('.nav-item'), // JQ first level link containers'
-        //$navItemsWithSubs = $navItems.has('.sub-nav'), //JQ
-        //$subNavs = $navigation.find('.sub-nav'),//JQ
-        //megamenu = $navigation.hasClass('megadropdown'),//JQ
-        //dropdown = $navigation.hasClass('dropdown'),//JQ
-     //   singleLevel = $navigation.hasClass('singleLevel'),
-     //   setActiveLinkByFolder = $navigation.hasClass('auto-highlight'); // Use new folder matching method to highlight the current navigation tab
+    //$navItems = $navigation.find('.nav-item'), // JQ first level link containers'
+    //$navItemsWithSubs = $navItems.has('.sub-nav'), //JQ
+    //$subNavs = $navigation.find('.sub-nav'),//JQ
+    //megamenu = $navigation.hasClass('megadropdown'),//JQ
+    //dropdown = $navigation.hasClass('dropdown'),//JQ
+    //   singleLevel = $navigation.hasClass('singleLevel'),
+    //   setActiveLinkByFolder = $navigation.hasClass('auto-highlight'); // Use new folder matching method to highlight the current navigation tab
 
     // Variables JS
 
@@ -873,7 +873,7 @@ AlmostJQueryDocumentReady(function () { //JS
     var setActiveLinkByFolder = navigationJS.classList.contains('auto-highlight');
 
     var navItemsJS = document.querySelectorAll(".main-navigation .nav-item");
-    var navItemsWithSubsJS = [].slice.call(document.querySelectorAll(".main-navigation .nav-item")).filter(function (x) {return x.querySelector('.sub-nav');});
+    var navItemsWithSubsJS = [].slice.call(document.querySelectorAll(".main-navigation .nav-item")).filter(function (x) { return x.querySelector('.sub-nav'); });
 
     // HIGHLIGHT APPROPRIATE NAV ITEM
     var reMainNav = "";
@@ -894,13 +894,13 @@ AlmostJQueryDocumentReady(function () { //JS
             var arrCurrentURL = location.href.split("/");
 
             if (arrNavLink.length > 4 && arrCurrentURL[3] === arrNavLink[3]) { // folder of current URL matches this nav link
-            //if (arrNavLink.length > 1 && arrNavLink[arrNavLink.length - 1].trim().toLowerCase() === arrCurrentURL[arrCurrentURL.length - 1].trim().toLowerCase() ) { 
+                //if (arrNavLink.length > 1 && arrNavLink[arrNavLink.length - 1].trim().toLowerCase() === arrCurrentURL[arrCurrentURL.length - 1].trim().toLowerCase() ) { 
                 // folder of current URL matches this nav link
                 navItem.classList.add('active');
             }
         }
     });
-    
+
     /* JQ
     $navItems.each(function () { // loop through top level links
         var $this = $(this),
@@ -921,7 +921,7 @@ AlmostJQueryDocumentReady(function () { //JS
 
     // Reset if click outside of nav
     document.addEventListener("mouseup", function (e) { //JS
-    //$(document).mouseup(function (e) { //JQ
+        //$(document).mouseup(function (e) { //JQ
 
         //var navContainer = $(".main-navigation"); //JQ
         var navContainer = document.querySelector(".main-navigation"); //JS
@@ -931,7 +931,7 @@ AlmostJQueryDocumentReady(function () { //JS
         if (navContainer !== e.target && !navContainer.contains(e.target)) { //JS
             NavReset$1();
         }
-    //}); //JQ
+        //}); //JQ
     }); //JS
 
 
@@ -944,11 +944,11 @@ AlmostJQueryDocumentReady(function () { //JS
     //    }
     //});
     //JS
-    navItemsWithSubsJS.forEach(function(el) {
+    navItemsWithSubsJS.forEach(function (el) {
         var itemCount = el.querySelectorAll('.second-level-nav > li').length;
         if (itemCount <= 2) {
             var subnav = el.querySelector('.sub-nav');
-            addClass(subnav,'with-few-items');
+            addClass(subnav, 'with-few-items');
         }
     });
 
@@ -956,55 +956,55 @@ AlmostJQueryDocumentReady(function () { //JS
     // Add class has-sub, then add carrots
     if (!singleLevel) {
         //$navItemsWithSubs.each(function () { //JQ
-        
-            //$(this).find('.first-level-btn').addClass('has-sub'); //JQ
-            document.querySelectorAll(".first-level-btn").forEach(function(el) { //JS
-                addClass(el,"has-sub"); //JS
 
-                //JQ
-                //var carrot = $('<span class="ca-gov-icon-triangle-down carrot" aria-hidden="true"></span>');
-                //var toggleSubNav = $('<div class="ca-gov-icon-caret-right rotate" aria-hidden="true"></div>');
-                
-                //if (mobileView()) {
-                //    toggleSubNav.css("display", "block");
-                //  } else {
-                //    toggleSubNav.css("display", "none");
-                //}
-                //$(this).find('.has-sub').append(toggleSubNav);
-                //$(this).find('.has-sub').append(carrot);
+        //$(this).find('.first-level-btn').addClass('has-sub'); //JQ
+        document.querySelectorAll(".first-level-btn").forEach(function (el) { //JS
+            addClass(el, "has-sub"); //JS
+
+            //JQ
+            //var carrot = $('<span class="ca-gov-icon-triangle-down carrot" aria-hidden="true"></span>');
+            //var toggleSubNav = $('<div class="ca-gov-icon-caret-right rotate" aria-hidden="true"></div>');
+
+            //if (mobileView()) {
+            //    toggleSubNav.css("display", "block");
+            //  } else {
+            //    toggleSubNav.css("display", "none");
+            //}
+            //$(this).find('.has-sub').append(toggleSubNav);
+            //$(this).find('.has-sub').append(carrot);
 
 
-                //JS
-                var carrot = document.createElement("span");
-                addClass(carrot,"ca-gov-icon-triangle-down");
-                addClass(carrot,"carrot");
-                carrot.setAttribute("aria-hidden","true");
+            //JS
+            var carrot = document.createElement("span");
+            addClass(carrot, "ca-gov-icon-caret-down");
+            addClass(carrot, "carrot");
+            carrot.setAttribute("aria-hidden", "true");
 
-                var toggleSubNav = document.createElement("div");
-                addClass(toggleSubNav,"ca-gov-icon-caret-right");
-                addClass(toggleSubNav,"rotate");
-                toggleSubNav.setAttribute("aria-hidden","true");
+            var toggleSubNav = document.createElement("div");
+            addClass(toggleSubNav, "ca-gov-icon-caret-right");
+            addClass(toggleSubNav, "rotate");
+            toggleSubNav.setAttribute("aria-hidden", "true");
 
-                if (mobileView$1()) {
-                    toggleSubNav.style.display="block";
-                } else {
-                    toggleSubNav.style.display="none";
-                }
+            if (mobileView$1()) {
+                toggleSubNav.style.display = "block";
+            } else {
+                toggleSubNav.style.display = "none";
+            }
 
-                el.appendChild(toggleSubNav);
-                el.appendChild(carrot);
-            });
+            el.appendChild(toggleSubNav);
+            el.appendChild(carrot);
+        });
         //}); //JQ
     }
 
     // Addig class first-level-btn to first-level-link to make sure left and right keyboard keys work for all navigation links
-  //$(".first-level-link").addClass("first-level-btn");
+    //$(".first-level-link").addClass("first-level-btn");
 
 });
 
 // Do Navigation Reset function on window resize uless it's mobile device.
-window.addEventListener('resize', function() { //JS
-//$(window).on('resize', function () { //JQ
+window.addEventListener('resize', function () { //JS
+    //$(window).on('resize', function () { //JQ
     if (navigator.userAgent.match(/Android/i)
         || navigator.userAgent.match(/webOS/i)
         || navigator.userAgent.match(/iPhone/i)
@@ -1016,16 +1016,16 @@ window.addEventListener('resize', function() { //JS
         return false;
     }
     else {
-//JS
-        document.querySelector(".toggle-menu").setAttribute("aria-expanded","false");
+        //JS
+        document.querySelector(".toggle-menu").setAttribute("aria-expanded", "false");
 
         //Collapse the nav when narrow
         var nav = document.querySelector("#navigation");
-        addClass(nav,"collapse");
-        removeClass(nav,"show");
+        addClass(nav, "collapse");
+        removeClass(nav, "show");
         nav.setAttribute("aria-hidden", "true");
 
-//JQ
+        //JQ
         //$("#navigation").addClass("collapse").removeClass("show").attr("aria-hidden", "true");
         //$(".toggle-menu").attr('aria-expanded', 'false');
 
