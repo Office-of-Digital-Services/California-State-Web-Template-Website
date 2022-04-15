@@ -142,5 +142,6 @@
 - Cleaned up scss files (moved color properties and their variable to the color schemes section, updated globals.scss files)
 - Added new full width active search navigation option
 - Made new dyslexic font option available in the settings
-- Redesigned template's navigation structure focusing on how to get started with the State Template, also to showcase layout pages, color schemes and content modules 
+- Redesigned template's navigation structure focusing on how to get started with the State Template, also to showcase layout pages, color schemes and content modules
 - Added new icons to CAGov font library
+
