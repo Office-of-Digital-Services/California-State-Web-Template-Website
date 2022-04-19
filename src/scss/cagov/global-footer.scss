@@ -3,18 +3,43 @@
 ----------------------------------------- */
 
 .global-footer {
-    @include link-variant($gray-lightest, $color-p1, none, underline);
-    padding-top: 0;
+    background-color: $gray-100;
+    padding-top: 1rem;
+    .container .d-flex {
+        flex-direction: column;
+    }
+
+    .cagov-logo {
+        margin-right: 1.5rem;
+        svg {
+            .ca {
+                fill: #fec02f;
+            }
+            .gov {
+                fill: #003484;
+            }
+        }
+    }
+
+    .footer-links {
+        padding-left: 0;
+        margin-top: 1rem;
+    }
+
+    .socialsharer-container {
+        padding-left: 0;
+        margin-top: 1rem;
+        li {
+            display: inline-block;
+        }
+    }
 
     ul {
-        @include list-unstyled(); // Remove styling from list
-        @extend .list-inline; // Make list inline
-        @include clearfix();
+        list-style: none;
         margin-left: -5px;
         margin: 5px 0;
 
         > li {
-            display: inline-block;
             padding-left: 5px;
             padding-right: 5px;
         }
@@ -22,20 +47,6 @@
             display: inline-block;
             &:not(:last-child) {
                 margin-right: 5px;
-            }
-        }
-
-        @media (max-width: $screen-xs-max) {
-            // For xs screens, convert the list to two columns
-            li {
-                width: 50%;
-                float: left;
-                margin-right: 0 !important;
-            }
-
-            a {
-                display: block; // For xs screens make the link block so it fills the column
-                margin-bottom: calc($line-height-computed / 2);
             }
         }
     }
@@ -46,28 +57,36 @@
 
         li {
             margin-right: 20px;
+            a {
+                color: $black;
+                &:hover {
+                    text-decoration: none;
+                }
+            }
         }
     }
 
     .copyright {
         font-size: 1rem;
-        background: #efefef;
         padding: 5px 0 $line-height-computed;
     }
 
-    @media (max-width: $screen-xs-max) {
-        .socialsharer-container {
-            width: 100%;
-            float: inherit !important;
-
-            li {
-                width: auto;
-                margin-left: 0;
-            }
+    @media (min-width: $screen-md-min) {
+        .container .d-flex {
+            flex-direction: row;
         }
 
         .footer-links {
-            margin-top: $spacer-y !important;
+            margin-right: auto;
+            margin-top: 5px;
+        }
+
+        .socialsharer-container {
+            margin-top: 5px;
+        }
+
+        ul > li {
+            display: inline-block;
         }
     }
 }
