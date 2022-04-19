@@ -552,7 +552,7 @@ progress {
   list-style: none;
 }
 
-.list-inline, .global-footer ul {
+.list-inline {
   padding-left: 0;
   list-style: none;
 }
@@ -14498,34 +14498,38 @@ a.list-group-item {
    FOOTER - /source/scss/cagov/global-footer.scss
 ----------------------------------------- */
 .global-footer {
-  padding-top: 0;
+  background-color: #ededef;
+  padding-top: 1rem;
 }
-.global-footer a:not(.btn) {
-  color: whitesmoke;
-  text-decoration: none;
+.global-footer .container .d-flex {
+  flex-direction: column;
 }
-.global-footer a:not(.btn):hover, .global-footer a:not(.btn):focus {
-  color: #FDB81E;
-  text-decoration: underline;
+.global-footer .cagov-logo {
+  margin-right: 1.5rem;
 }
-.global-footer a:not(.btn):focus {
-  outline: thin dotted;
-  outline: 5px auto -webkit-focus-ring-color;
-  outline-offset: -2px;
+.global-footer .cagov-logo svg .ca {
+  fill: #fec02f;
+}
+.global-footer .cagov-logo svg .gov {
+  fill: #003484;
+}
+.global-footer .footer-links {
+  padding-left: 0;
+  margin-top: 1rem;
+}
+.global-footer .socialsharer-container {
+  padding-left: 0;
+  margin-top: 1rem;
+}
+.global-footer .socialsharer-container li {
+  display: inline-block;
 }
 .global-footer ul {
-  padding-left: 0;
   list-style: none;
   margin-left: -5px;
   margin: 5px 0;
 }
-.global-footer ul::after {
-  display: block;
-  clear: both;
-  content: "";
-}
 .global-footer ul > li {
-  display: inline-block;
   padding-left: 5px;
   padding-right: 5px;
 }
@@ -14535,17 +14539,6 @@ a.list-group-item {
 .global-footer ul .list-inline-item:not(:last-child) {
   margin-right: 5px;
 }
-@media (max-width: 767px) {
-  .global-footer ul li {
-    width: 50%;
-    float: left;
-    margin-right: 0 !important;
-  }
-  .global-footer ul a {
-    display: block;
-    margin-bottom: 12px;
-  }
-}
 .global-footer .footer-links {
   font-size: 1.125rem;
   line-height: 1.6rem;
@@ -14553,22 +14546,29 @@ a.list-group-item {
 .global-footer .footer-links li {
   margin-right: 20px;
 }
+.global-footer .footer-links li a {
+  color: #000;
+}
+.global-footer .footer-links li a:hover {
+  text-decoration: none;
+}
 .global-footer .copyright {
   font-size: 1rem;
-  background: #efefef;
   padding: 5px 0 24px;
 }
-@media (max-width: 767px) {
-  .global-footer .socialsharer-container {
-    width: 100%;
-    float: inherit !important;
-  }
-  .global-footer .socialsharer-container li {
-    width: auto;
-    margin-left: 0;
+@media (min-width: 992px) {
+  .global-footer .container .d-flex {
+    flex-direction: row;
   }
   .global-footer .footer-links {
-    margin-top: 1rem !important;
+    margin-right: auto;
+    margin-top: 5px;
+  }
+  .global-footer .socialsharer-container {
+    margin-top: 5px;
+  }
+  .global-footer ul > li {
+    display: inline-block;
   }
 }
 
@@ -21212,20 +21212,20 @@ ul.list-overstated a {
   padding-bottom: 10px;
 }
 
-.list-inline, .global-footer ul {
+.list-inline {
   padding-left: 0;
   list-style: none;
   margin-left: -5px;
 }
-.list-inline > li, .global-footer ul > li {
+.list-inline > li {
   display: inline-block;
   padding-left: 5px;
   padding-right: 5px;
 }
-.list-inline .list-inline-item, .global-footer ul .list-inline-item {
+.list-inline .list-inline-item {
   display: inline-block;
 }
-.list-inline .list-inline-item:not(:last-child), .global-footer ul .list-inline-item:not(:last-child) {
+.list-inline .list-inline-item:not(:last-child) {
   margin-right: 5px;
 }
 
