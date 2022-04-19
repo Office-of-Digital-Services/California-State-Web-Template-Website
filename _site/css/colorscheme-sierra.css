@@ -293,10 +293,6 @@
    GLOBAL FOOTER
    /source/scss/colorscheme/global-footer.scss
 ----------------------------------------- */
-.global-footer {
-  background: #222222;
-}
-
 /* Targets icon of first h1 on the page  */
 h1 span[class^=ca-gov-icon-]:first-child {
   color: #447766;
@@ -386,7 +382,7 @@ nav-item-search:focus .first-level-link > span[class^=ca-gov-icon] {
 
 .first-level-link,
 .first-level-btn {
-  color: #555555;
+  color: #447766;
 }
 .first-level-link > span[class^=ca-gov-icon]:not(.carrot),
 .first-level-btn > span[class^=ca-gov-icon]:not(.carrot) {
@@ -396,7 +392,7 @@ nav-item-search:focus .first-level-link > span[class^=ca-gov-icon] {
 .first-level-link:hover, .first-level-link:focus,
 .first-level-btn:hover,
 .first-level-btn:focus {
-  color: #02374e;
+  color: #376053 !important;
 }
 @media (max-width: 767px) {
   .first-level-link,
@@ -434,7 +430,7 @@ nav-item-search:focus .first-level-link > span[class^=ca-gov-icon] {
 }
 
 .sub-nav {
-  background: #f7fcfa;
+  background: #fff;
 }
 
 @media (max-width: 767px) {
@@ -482,7 +478,7 @@ nav-item-search:focus .first-level-link > span[class^=ca-gov-icon] {
   }
 }
 .has-sub .rotate {
-  color: #a1cca1;
+  color: #447766;
 }
 
 /* side navigation */
@@ -589,12 +585,23 @@ nav-item-search:focus .first-level-link > span[class^=ca-gov-icon] {
    SEARCH
    /source/scss/colorscheme.search.scss
 ----------------------------------------- */
-.search-container .search-textfield {
-  background-color: rgba(255, 255, 255, 0.8);
-}
 .search-container .submit-container button {
   color: #447766;
   border-color: rgba(255, 255, 255, 0.8);
+}
+.search-container .search-textfield {
+  border-color: #447766 !important;
+}
+.search-container .gsc-search-button {
+  background-color: #447766;
+  border-color: #447766;
+}
+.search-container .gsc-search-button:hover, .search-container .gsc-search-button:focus {
+  background-color: #376053;
+  border-color: #376053;
+}
+.search-container .gsc-search-button .ca-gov-icon-search {
+  color: #fff;
 }
 .search-container:hover .search-textfield, .search-container:focus .search-textfield, .search-container.active .search-textfield {
   background-color: #fff;
@@ -603,15 +610,25 @@ nav-item-search:focus .first-level-link > span[class^=ca-gov-icon] {
   border-color: #fff;
 }
 .search-container.active {
-  background: rgba(0, 0, 0, 0.7);
+  background-color: #ededef;
 }
 .search-container.active .submit-container button {
   border-color: #bdbdbd;
   background: #555555;
 }
-.search-container.active .search-textfield {
-  border-color: #bdbdbd;
+
+.featured-search.active .container #Search .close-search-btn .sr-only,
+.search-container .close-search .sr-only {
+  color: #447766;
+  text-decoration: underline;
 }
+.featured-search.active .container #Search .close-search-btn .sr-only:hover, .featured-search.active .container #Search .close-search-btn .sr-only:focus,
+.search-container .close-search .sr-only:hover,
+.search-container .close-search .sr-only:focus {
+  color: #376053;
+  text-decoration: none;
+}
+
 /* -----------------------------------------
    TABS
    /source/scss/colorscheme/cs-tabs.scss
