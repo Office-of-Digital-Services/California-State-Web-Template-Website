@@ -99,38 +99,57 @@ $spacer-y: $spacer;
 //
 //## Font, line-height, and color for body text, headings, and more.
 
-$font-family-sans-serif: "Source Sans Pro", sans-serif; // CAgov Font
+$font-family-sans-serif: "Public Sans", sans-serif; // CAgov Font
 $font-family-serif: "Merriweather", serif;
 // Default monospace fonts for `<code>`, `<kbd>`, and `<pre>`.
 $font-family-monospace: Menlo, Monaco, Consolas, "Courier New", monospace !default;
 $font-family-base: $font-family-sans-serif !default;
 
 $font-size-base: 1rem;
-$font-size-regular: $font-size-base * 1.125; // ~ 16px
-$font-size-large: $font-size-base * 1.25; // ~18px
+$font-size-regular: $font-size-base * 1.125; // ~ 18px
+$font-size-large: $font-size-base * 1.25; // ~20px
 $font-size-small: $font-size-base * 0.85; // ~12px
 $font-size-x-small: $font-size-base * 0.8; // ~11px
 
-$font-size-h1: $font-size-base * 2.4; // ~36px
-$font-size-h2: $font-size-base * 1.94; // ~30px
-$font-size-h3: $font-size-base * 1.54; // ~24px
-$font-size-h4: $font-size-base * 1.25; // ~18px
-$font-size-h5: $font-size-base;
-$font-size-h6: $font-size-base * 0.8; // ~12px
+$font-size-h1: $font-size-base * 2.9375; // ~47px
+$font-size-h2: $font-size-base * 2.3175; // ~37px
+$font-size-h3: $font-size-base * 1.8125; // ~29px
+$font-size-h4: $font-size-base * 1.4375; // ~23px
+$font-size-h5: $font-size-base * 1.125; // ~18px
+$font-size-h6: $font-size-base * 0.875; // ~14px
 
 // Responsive Font Ratio (for responsive typography (body))
-$ratio: 0.2vw;
+$ratio: 0.1vw;
 
 // Responsive Font Ratio (for headers)
-$ratio-headers: 0.5vw;
+$ratio-headers: 0.1vw;
 
 // Unit-less `line-height` for use in components like buttons.
 $line-height-base: 1.5; // 20/14
+$font-lineheight-xs: 0.95;
+$font-lineheight-sm: 1.1;
+$font-lineheight-1: 1.25;
+$font-lineheight-2: 1.375;
+$font-lineheight-3: 1.5;
+$font-lineheight-4: 1.625;
+$font-lineheight-5: 1.75;
+$font-lineheight-6: 2;
 // Computed "line-height" (`font-size` * `line-height`) for use with `margin`, `padding`, etc.
 $line-height-computed: floor((16px * $line-height-base)) !default; // ~20px
 
+// Font weight variables
+$font-weight-1: 100;
+$font-weight-2: 200;
+$font-weight-3: 300;
+$font-weight-4: 400;
+$font-weight-5: 500;
+$font-weight-6: 600;
+$font-weight-7: 700;
+$font-weight-8: 800;
+$font-weight-9: 900;
+
 // By default, this inherits from the `<body>`.
-$headings-font-family: "Asap Condensed", sans-serif;
+$headings-font-family: "Public Sans", sans-serif;
 $headings-font-weight: 400 !default;
 $headings-line-height: $line-height-base;
 $headings-color: inherit !default;
