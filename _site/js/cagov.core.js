@@ -1801,7 +1801,10 @@ window.onscroll = function (ev) {
 
 // Back to top link in the global footer
 const backToTop = document.querySelector("a[href='#skip-to-content']");
-backToTop.addEventListener("click", backToTopFunction);
+if (backToTop) {
+	backToTop.addEventListener("click", backToTopFunction);
+}
+
 
 function backToTopFunction(event) {
 	event.preventDefault();
