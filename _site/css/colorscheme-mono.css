@@ -2781,28 +2781,29 @@ input[type=radio]:checked + * i {
    /source/scss/colorscheme/utility.scss
 ----------------------------------------- */
 .utility-header {
-  background: #545351;
-  color: #ffffff;
+  background: #fafafa;
+  color: #000;
+}
+.utility-header .social-media-links a {
+  color: #000;
+  text-decoration: none;
+}
+.utility-header .social-media-links a:hover, .utility-header .social-media-links a:focus {
+  color: #5e5e6a;
 }
 .utility-header a {
-  color: #ffffff;
+  color: #000;
 }
 .utility-header a:hover, .utility-header a:focus, .utility-header a.hovered {
-  color: #fff7de;
+  color: #000;
 }
 .utility-header ul li {
   padding: 0 8px;
 }
 .utility-header ul li button:hover, .utility-header ul li button:focus {
-  color: #ffebab;
+  color: #5e5e6a;
 }
 
-@media (max-width: 767px) {
-  .nav-full-width-icons .settings-links .utility-links a, .nav-full-width-icons .settings-links .utility-links button {
-    border: 1px solid #545351;
-    color: #545351;
-  }
-}
 /* -----------------------------------------
    HIGH CONTRAST MODE
    /source/scss/cagov/file.scss

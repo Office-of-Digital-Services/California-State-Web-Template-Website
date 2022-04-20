@@ -7,7 +7,7 @@
     //position:absolute;
     top: 0;
     width: 100%;
-    min-height: 38px; // beta 6.0 addition
+    min-height: 42px; // beta 6.0 addition
     transition: all 0.3s ease;
 
     @media (max-width: $screen-xs-max) {
@@ -41,7 +41,7 @@
     a {
         display: inline-block;
         padding: 0;
-        text-decoration: none;
+        text-decoration: underline;
 
         &:hover,
         &:focus,
@@ -107,6 +107,9 @@
     [class^="ca-gov-icon-"] {
         @include font-size(1.1);
         vertical-align: -2px;
+        display: inline-block;
+        text-decoration: none;
+        padding-right: 4px;
     }
 
     @media (max-width: $screen-xs-max) {
@@ -136,118 +139,11 @@
 }
 
 .header-cagov-logo img {
-    // Beta 5.0 addition
     left: 27px;
+    height: 1.7rem;
 
     @media (max-width: $screen-md-max) {
         left: 5px;
-    }
-}
-
-/* Utility header when using full width menu with icons */
-
-.nav-full-width-icons .utility-header {
-    min-height: 60px;
-
-    a {
-        padding: 0px;
-    }
-
-    .header-cagov-logo {
-        position: relative;
-        width: 1px;
-        height: 1px;
-
-        img {
-            height: 45px;
-            position: relative;
-            top: 5px;
-            left: 0px;
-        }
-    }
-
-    .header-organization-banner {
-        padding-left: 90px;
-        min-height: 60px;
-    }
-}
-
-// Desktop view
-@media (min-width: $screen-sm-min) {
-    .nav-full-width-icons .header-organization-banner a img {
-        width: 100%;
-        max-width: 300px;
-        max-height: 60px;
-        object-fit: contain !important;
-        object-position: left;
-    }
-
-    // fixed mode
-    .nav-full-width-icons.fixed.compact .header-organization-banner a {
-        max-width: inherit;
-
-        img {
-            max-height: 60px !important;
-        }
-    }
-
-    .nav-full-width-icons .settings-links {
-        margin-top: -52px;
-
-        a,
-        button {
-            padding: 8px 10px 8px 10px;
-            border: 1px solid #fff;
-            border-radius: 3px;
-            color: #fff;
-
-            &:hover,
-            &:focus {
-                border: 1px solid #fff;
-            }
-        }
-    }
-}
-
-// Mobile view
-@media (max-width: $screen-xs-max) {
-    .nav-full-width-icons {
-        .header-organization-banner img {
-            width: 100%;
-            max-width: 300px;
-            max-height: 70px;
-            object-fit: contain !important;
-            object-position: left;
-        }
-
-        .utility-header {
-            height: 60px;
-        }
-
-        .settings-links {
-            .utility-links {
-                text-align: left;
-                position: relative;
-                top: 20px;
-                z-index: 9;
-
-                a,
-                button {
-                    padding: 8px 10px 8px 10px;
-                    border: 1px solid $color-p2;
-                    border-radius: 3px;
-                    color: $color-p2;
-                }
-            }
-        }
-
-        .mobile-controls {
-            background-color: transparent;
-            float: right;
-            width: 50%;
-            position: relative;
-            z-index: 9;
-        }
     }
 }
 
@@ -266,11 +162,13 @@
             min-height: 38px;
             align-items: center; // make items vertically centered
             .header-cagov-logo {
-                margin-right: 20px;
+                margin-right: 0.5rem;
 
                 img {
                     left: 0;
-                    height: 34px;
+                    height: 24px;
+                    vertical-align: top;
+                    margin-top: 6px;
                 }
 
                 @media (min-width: $screen-xs-max) and (max-width: $screen-sm-max) {
@@ -285,6 +183,17 @@
                 a {
                     margin: 0;
                     padding-top: 0;
+                }
+            }
+
+            .official-tag {
+                margin: 0;
+                margin-right: 1rem;
+                font-size: 0.95rem;
+                @media (max-width: $screen-xs-max) {
+                    .desktop-only {
+                        display: none;
+                    }
                 }
             }
 
@@ -313,7 +222,7 @@
 
             a {
                 margin: 0 10px 0 10px;
-                font-size: 0.9em;
+                font-size: 0.95rem;
 
                 @media (max-width: $screen-xs-max) {
                     margin: 0 4px 0 4px;
@@ -323,6 +232,12 @@
 
             button {
                 margin: 0 4px 0 4px;
+                text-decoration: underline;
+                font-size: 0.95rem;
+                &:hover,
+                &:focus {
+                    text-decoration: none;
+                }
             }
         }
     }
