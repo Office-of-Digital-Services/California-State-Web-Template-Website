@@ -2847,28 +2847,29 @@ input[type=radio]:focus + div {
    /source/scss/colorscheme/utility.scss
 ----------------------------------------- */
 .utility-header {
-  background: #336c39;
-  color: #ffffff;
+  background: #fafafa;
+  color: #000;
+}
+.utility-header .social-media-links a {
+  color: #000;
+  text-decoration: none;
+}
+.utility-header .social-media-links a:hover, .utility-header .social-media-links a:focus {
+  color: #5e5e6a;
 }
 .utility-header a {
-  color: #ffffff;
+  color: #000;
 }
 .utility-header a:hover, .utility-header a:focus, .utility-header a.hovered {
-  color: #feeed2;
+  color: #000;
 }
 .utility-header ul li {
   padding: 0 8px;
 }
 .utility-header ul li button:hover, .utility-header ul li button:focus {
-  color: #fddca0;
+  color: #5e5e6a;
 }
 
-@media (max-width: 767px) {
-  .nav-full-width-icons .settings-links .utility-links a, .nav-full-width-icons .settings-links .utility-links button {
-    border: 1px solid #336c39;
-    color: #336c39;
-  }
-}
 /* -----------------------------------------
    HIGH CONTRAST MODE
    /source/scss/cagov/file.scss
