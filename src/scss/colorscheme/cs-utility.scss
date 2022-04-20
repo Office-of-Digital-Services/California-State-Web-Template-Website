@@ -4,45 +4,40 @@
 ----------------------------------------- */
 
 .utility-header {
-    background: $color-p2;
-    color: contrast($color-p2);
+    background: $gray-50;
+    color: $black;
+
+    .social-media-links {
+        a {
+            color: $black;
+            text-decoration: none;
+            &:hover,
+            &:focus {
+                color: $gray-700;
+            }
+        }
+    }
 
     a {
-        color: contrast($color-p2);
+        color: $black;
 
-        &:hover, &:focus, &.hovered {
-            color: $utility-link-hover-color;
+        &:hover,
+        &:focus,
+        &.hovered {
+            color: $black;
         }
     }
 
     ul {
-
         li {
             padding: 0 8px;
 
             button {
-
-                &:hover, &:focus {
-                    color: lighten($color-p1, 25%);
+                &:hover,
+                &:focus {
+                    color: $gray-700;
                 }
             }
         }
     }
 }
-
-// Mobile view
-@media (max-width: $screen-xs-max) {
-    .nav-full-width-icons {
-
-        .settings-links {
-            .utility-links {
-                a, button {
-                    border: 1px solid $color-p2;
-                    color: $color-p2;
-                }
-            }
-        }
-    }
-}
-
-
