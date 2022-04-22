@@ -127,7 +127,7 @@
     color: $color;
     background-color: $background;
     border-color: $border;
-
+    font-weight: $font-weight-6;
     &:hover,
     &:focus,
     &:not(:disabled):not(.disabled):active,
@@ -137,6 +137,10 @@
         color: $hover-color;
         background-color: $hover-bg;
         border-color: $hover-border;
+        box-shadow: 0 2px 4px rgb(0 0 0 / 50%);
+    }
+    &:focus {
+            @include outline(2px);
     }
 
     &:not(:disabled):not(.disabled):active,
