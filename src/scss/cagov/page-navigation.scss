@@ -1,0 +1,67 @@
+/* -----------------------------------------
+   PAGE NAVIGATION - /source/scss/cagov/page-navigation.scss
+----------------------------------------- */
+
+// List navigation
+.list-navigation {
+	li {
+		list-style: none;
+		margin: 1.5rem 0;
+		font-size: 1, 25rem;
+		padding-left: 1rem;
+		&.active {
+			border-left: 2px solid $color-p1;
+		}
+		a:hover,
+		a:focus {
+			text-decoration: none;
+		}
+		a:focus {
+			@include outline(2px);
+		}
+
+		ul {
+			padding-left: 0;
+			li {
+				margin: 1rem 0;
+			}
+		}
+	}
+}
+
+// Page navigation (On this page)
+.page-navigation {
+	.label {
+		font-weight: $font-weight-7;
+		font-size: 1.5rem;
+		line-height: $font-lineheight-5;
+		padding: 0;
+		margin: 0;
+		padding-bottom: 1rem;
+	}
+	ul {
+		margin: 0;
+		text-indent: 0;
+		padding: 0;
+		li {
+			list-style: none;
+			padding-top: 0.875rem;
+			padding-bottom: 1.125rem;
+			margin: 0;
+			border-bottom: 1px solid $gray-200;
+			&:first-child {
+				border-top: 1px solid $gray-200;
+			}
+			a {
+				text-decoration: none !important;
+				&:hover,
+				&:focus {
+					text-decoration: underline !important;
+				}
+				&:focus {
+					@include outline(2px);
+				}
+			}
+		}
+	}
+}
