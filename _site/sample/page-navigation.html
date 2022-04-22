@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Navigation Samples</title> 
+  <title>Page navigation</title> 
   <meta charset="utf-8">
   <meta name="Author" content="State of California" />
   <meta name="Description" content="State of California" />
@@ -353,41 +353,120 @@
 		<main class="main-primary" id="main">
 
 			
+<nav aria-label="You are here">
+    <ol class="breadcrumb">
+        <li><a href="../index.html" title="Home page">Home</a></li>
+        <li><a href="navsamples.html" title="Examples landing page">Navigation Samples</a></li>
+        <li class="active">Parallax</li>
+    </ol>
+</nav>
 
-<div class="row p-b-lg">
-    <div class="col-md-8">
-        <nav aria-label="You are here">
-            <ol class="breadcrumb">
-                <li><a href="../index.html" title="Home page">Home</a></li>
-                <li class="active">Navigation Samples</li>
-            </ol>
-        </nav>
+<h1>Page navigation</h1>
+<p>Page navigation is a list of links to the current page sections or to other web pages. It is placed at the top of
+    the page on the left. Page navigation makes it easy to see what content is available.
+</p>
+<h2>List navigation</h2>
+<p>List navigation displays links to the webpages that can be tied into one content category, such as list
+    of web components, for example. Links with class
+    <code>active</code> will indicate the currently open page, which allows people to scan a page and know if
+    they’re in the right place.
+</p>
+<div class="row">
+    <div class="col-md-4">
 
-        <h1>Navigation Samples</h1>
-        <p>Here are the main navigation types and variations:</p>
 
-        <ul class="list-primary">
-            <li><a href="navigation-megamenu-flex.html">Flex Megamenu Navigation</a></li>
-            <li><a href="navigation-full-width-utility.html">Full Width Navigation with Active
-                    Search</a></li>
-            <li><a href="navigation-single.html">Single Level Navigation</a></li>
-            <li><a href="navigation-dropdown.html">Dropdown Navigation</a></li>
-            <li><a href="page-navigation.html">Page navigation</a></li>
-            <li><a href="navigation-sidebar.html">Side navigation (accordion)</a></li>
-            <li><a href="navigation-active.html">Setting the Active Navigation Item</a></li>
-        </ul>
+        <nav aria-label="list navigation">
+	<h3 class="h4">Content components</h3>
+	<ul class="list-navigation">
+		<li><a href="#">Accordions</a></li>
+		<li><a href="#">Alert Banner</a></li>
+		<li class="active">Banner</li>
+		<li><a href="#">Blockquotes</a></li>
+		<li><a href="#">Blurb </a></li>
+	</ul>
+</nav>
     </div>
-    <div class="col-md-4 p-t-lg" role="complementary">
-        <h2 class="h3">Other examples:</h2>
-        <!-- Side navigation -->
-        <div class="accordion-list list-group">
-            <a href="/sample/layouts.html" class="list-group-item list-group-item-action"><span
-                    class="ca-gov-icon-responsive-alt" aria-hidden="true"></span> Page Layouts</a>
-            <a href="/sample/" class="list-group-item list-group-item-action"><span class="ca-gov-icon-gears"
-                    aria-hidden="true"></span> Content Modules</a>
-            <a href="/sample/color-schemes.html" class="list-group-item list-group-item-action"><span
-                    class="ca-gov-icon-grid" aria-hidden="true"></span> Color Schemes</a>
-        </div>
+    <div class="col-md-8">
+        <h3>Source Code:</h3>
+        <pre><code class="overflow-auto"><nav aria-label="list navigation">
+	<h3 class="h4">Content components</h3>
+	<ul class="list-navigation">
+		<li><a href="#">Accordions</a></li>
+		<li><a href="#">Alert Banner</a></li>
+		<li class="active">Banner</li>
+		<li><a href="#">Blockquotes</a></li>
+		<li><a href="#">Blurb </a></li>
+	</ul>
+</nav></code></pre>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-4">
+        <nav aria-label="list navigation with second level">
+	<h3 class="h4">List navigation with sub navigation</h3>
+	<ul class="list-navigation">
+		<li><a href="#">Breadcrumbs</a></li>
+		<li><a href="#">Side navigation</a>
+			<ul>
+				<li class="active">Readme</li>
+				<li><a href="#">Changelog</a></li>
+			</ul>
+		</li>
+		<li><a href="#">Dropdown Navigation</a></li>
+	</ul>
+</nav>
+    </div>
+    <div class="col-md-8">
+        <h3>Source Code:</h3>
+        <pre><code class="overflow-auto"><nav aria-label="list navigation with second level">
+	<h3 class="h4">List navigation with sub navigation</h3>
+	<ul class="list-navigation">
+		<li><a href="#">Breadcrumbs</a></li>
+		<li><a href="#">Side navigation</a>
+			<ul>
+				<li class="active">Readme</li>
+				<li><a href="#">Changelog</a></li>
+			</ul>
+		</li>
+		<li><a href="#">Dropdown Navigation</a></li>
+	</ul>
+</nav></code></pre>
+    </div>
+</div>
+
+<style>
+
+</style>
+
+<h2>"On this page" navigation</h2>
+<p>This type of navigation lists and links to the level 2 headings (H2) of a webpage. It is placed at the top of the
+    page on the
+    left. People can select a link to go directly to that section. The links are introduced by the text On this page by
+    default. The page navigation does not show if there are zero or one H2’s on the page.</p>
+
+
+<div class="row">
+    <div class="col-md-4">
+        <nav aria-labelledby="page-navigation-label" class="page-navigation">
+	<div id="page-navigation-label" class="label">On this page</div>
+	<ul>
+		<li><a href="#first-heading">First heading</a></li>
+		<li><a href="#second-heading">Second heading</a></li>
+		<li><a href="#third-heading">Third heading</a></li>
+	</ul>
+</nav>
+    </div>
+    <div class="col-md-8">
+        <h3>Source Code:</h3>
+        <pre><code class="overflow-auto"><nav aria-labelledby="page-navigation-label" class="page-navigation">
+	<div id="page-navigation-label" class="label">On this page</div>
+	<ul>
+		<li><a href="#first-heading">First heading</a></li>
+		<li><a href="#second-heading">Second heading</a></li>
+		<li><a href="#third-heading">Third heading</a></li>
+	</ul>
+</nav></code></pre>
     </div>
 </div>
 

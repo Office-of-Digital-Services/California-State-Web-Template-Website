@@ -13554,8 +13554,6 @@ code {
 
 .main-content a:not(.btn) {
   text-decoration: underline;
-  text-decoration-style: dotted;
-  text-decoration-thickness: from-font;
 }
 
 .tab-group .nav-tabs li > a,
@@ -15569,7 +15567,7 @@ table.gsc-search-box td {
 .full-width-nav .nav-item .first-level-link,
 .full-width-nav .nav-item .first-level-btn {
   display: block;
-  padding: 0.7rem 1rem 0.75rem 1rem;
+  padding: 0.85rem 1rem 0.9rem 1rem;
   font-family: "Public Sans", sans-serif;
   font-weight: 400;
   position: relative;
@@ -15938,12 +15936,12 @@ table.gsc-search-box td {
   }
   .full-width-nav .main-navigation .top-level-nav .first-level-btn.has-sub .carrot {
     bottom: 0;
-    top: 0.3rem;
+    top: 0.35rem;
     transition: all 0.5s cubic-bezier(0.57, 0.2, 0.21, 0.89);
   }
   .full-width-nav .main-navigation .top-level-nav .first-level-btn[aria-expanded=true] .carrot {
     transform: rotate(180deg);
-    bottom: 0.3rem;
+    bottom: 0.35rem;
   }
   .full-width-nav .main-navigation .top-level-nav #nav-item-search button.first-level-link {
     background: none;
@@ -22551,6 +22549,65 @@ html:not(.ie8) .stats-highlight img {
     margin-left: -20px;
   }
 }
+/* -----------------------------------------
+   PAGE NAVIGATION - /source/scss/cagov/page-navigation.scss
+----------------------------------------- */
+.list-navigation li {
+  list-style: none;
+  margin: 1.5rem 0;
+  font-size: 1, 25rem;
+  padding-left: 1rem;
+}
+.list-navigation li.active {
+  border-left: 2px solid #FDB81E;
+}
+.list-navigation li a:hover,
+.list-navigation li a:focus {
+  text-decoration: none;
+}
+.list-navigation li a:focus {
+  outline: solid 2px #2ea3f2 !important;
+}
+.list-navigation li ul {
+  padding-left: 0;
+}
+.list-navigation li ul li {
+  margin: 1rem 0;
+}
+
+.page-navigation .label {
+  font-weight: 700;
+  font-size: 1.5rem;
+  line-height: 1.75;
+  padding: 0;
+  margin: 0;
+  padding-bottom: 1rem;
+}
+.page-navigation ul {
+  margin: 0;
+  text-indent: 0;
+  padding: 0;
+}
+.page-navigation ul li {
+  list-style: none;
+  padding-top: 0.875rem;
+  padding-bottom: 1.125rem;
+  margin: 0;
+  border-bottom: 1px solid #d4d4d7;
+}
+.page-navigation ul li:first-child {
+  border-top: 1px solid #d4d4d7;
+}
+.page-navigation ul li a {
+  text-decoration: none !important;
+}
+.page-navigation ul li a:hover, .page-navigation ul li a:focus {
+  text-decoration: underline !important;
+}
+.page-navigation ul li a:focus {
+  outline: solid 2px #2ea3f2 !important;
+}
+
 /* -----------------------------------------
    PROGRESS BAR - /source/scss/cagov/progress-bar.scss
 ----------------------------------------- */
