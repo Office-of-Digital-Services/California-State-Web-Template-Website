@@ -1,0 +1,27 @@
+{% extends "./base.njk" %}
+{% block content %}
+<div id="main-content" class="main-content">
+	<div class="container p-b-lg p-t-md">
+		<main class="main-primary" id="main">
+			<div class="row">
+				<div class="col-md-3">
+					<nav aria-label="list navigation">
+						<ul class="list-navigation">
+        {% for item in navigation.items %}
+        <li>
+            <a href="">{{ item.text }}</a>
+        </li>
+		  
+        {% endfor %}
+		  <li>bla</li>
+						</ul>
+					</nav>
+				</div>
+				<div class="col-md-9">
+					{{ content | safe }}
+				</div>
+			</div>
+		</main>
+	</div>
+</div>
+{% endblock %}
