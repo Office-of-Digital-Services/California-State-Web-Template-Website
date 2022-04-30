@@ -24,7 +24,12 @@
       <div id="head-search" class="search-container featured-search">
           {% include "../search.njk" %}
       </div>
-      {% include "../navigation.njk" %}
+      <!-- navigation types -->
+            {% if navigation %}
+              {% include navigation %}
+		        {% else %}
+		          {% include "../navigation.njk" %}
+            {% endif %}
     </div>
   </header>
 
