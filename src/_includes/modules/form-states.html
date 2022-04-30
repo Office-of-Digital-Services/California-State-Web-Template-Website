@@ -1,0 +1,59 @@
+<!--form states-->
+<div class="row">
+ <div class="col-md-4 mb-3">
+  <label for="validationFirstName">First name</label>
+  <div class="input-group">
+   <div class="input-group-prepend">
+    <span class="input-group-text"><i class="ca-gov-icon-person"></i></span>
+   </div>
+   <input type="text" class="form-control" id="validationFirstName" placeholder="First name" value="Mark" disabled>
+  </div>
+  <div class="feedback text-muted">
+   <small>Disabled.</small>
+  </div>
+ </div>
+ <div class="col-md-4 mb-3">
+  <label for="validationServerLastName">Last name</label>
+  <div class="input-group">
+   <div class="input-group-prepend">
+    <span class="input-group-text is-valid"><i class="ca-gov-icon-person"></i></span>
+   </div>
+   <input type="text" class="form-control is-valid" id="validationServerLastName" placeholder="Last Name" required>
+   <div class="valid-feedback">
+    Looks Good.
+   </div>
+  </div>
+ </div>
+ <div class="col-md-4 mb-3">
+  <label for="validationServerUsername">Username</label>
+  <div class="input-group">
+   <div class="input-group-prepend">
+    <span class="input-group-text is-invalid"><i class="ca-gov-icon-person"></i></span>
+   </div>
+   <input type="text" class="form-control is-invalid" id="validationServerUsername" placeholder="Username" required>
+   <div class="invalid-feedback">
+    Please choose a username.
+   </div>
+  </div>
+ </div>
+</div>
+<!--form input field sizes-->
+<div class="form-group row">
+ <label for="inputEmail3" class="col-sm-2 form-control-label">Email</label>
+ <div class="col-sm-10">
+  <input type="email" class="form-control form-control-lg" id="inputEmail3" placeholder="Email">
+ </div>
+</div>
+<div class="form-group row">
+ <label for="inputPhone" class="col-sm-2 form-control-label">Phone</label>
+ <div class="col-sm-10">
+  <input type="email" class="form-control form-control" id="inputPhone" placeholder="Phone">
+ </div>
+</div>
+
+<div class="form-group row">
+ <label for="inputPassword3" class="col-sm-2 form-control-label">Password</label>
+ <div class="col-sm-10">
+  <input type="password" class="form-control form-control-sm" id="inputPassword3" placeholder="Password">
+ </div>
+</div>

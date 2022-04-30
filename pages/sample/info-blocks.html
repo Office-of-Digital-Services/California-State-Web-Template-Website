@@ -1,0 +1,66 @@
+---
+title: Info Blocks
+layout: components.njk
+permalink: "sample/info-blocks.html"
+---
+
+
+<nav aria-label="You are here">
+	<ol class="breadcrumb">
+		<li><a href="../index.html" title="Home page">Home</a></li>
+		<li><a href="/sample/" title="Content Modules landing page">Content Modules</a></li>
+		<li class="active">Info Blocks</li>
+	</ol>
+</nav>
+
+<h1>Info Blocks</h1>
+<p>Info blocks can be used to highlight and organize information into modular content that easy to read
+	and navigate.</p>
+
+<h2>Example:</h2>
+
+
+
+<div class="section-default">
+	<div class="container p-y-lg">
+		{% include "../../src/_includes/modules/info-blocks.html" %}
+
+		<button type="button" class="btn btn-default btn-sm m-t-lg" data-bs-toggle="modal"
+			data-bs-target="#news-headlines">Show Source Code</button>
+	</div>
+</div>
+
+
+
+
+
+<!-- Modal -->
+<div class="modal fade" id="news-headlines" role="dialog">
+	<div class="modal-dialog modal-lg">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h4 class="modal-title">HTML Markup</h4>
+				<button type="button" class="close btn btn-secondary" data-bs-dismiss="modal"><span class="sr-only">Close
+						modal</span><span class="ca-gov-icon-close-mark" aria-hidden="true"></span></button>
+
+			</div>
+			<div class="modal-body">
+				<strong aria-label="Source code for Info Blocks">Source Code:</strong>
+				<pre><code class="overflow-auto">{% include "../../src/_includes/modules/info-blocks.html" %}</code></pre>
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-default" data-bs-dismiss="modal">Close</button>
+			</div>
+		</div>
+	</div>
+</div><!-- / End Modal -->
+
+<div class="m-b-lg">
+	<h3>More News Samples</h3>
+	<ul class="list-primary">
+
+		<li><a href="news-blocks.html">News Blocks</a></li>
+		<li><a href="news-list.html">News List</a></li>
+
+	</ul>
+</div>

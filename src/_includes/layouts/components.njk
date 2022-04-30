@@ -1,0 +1,41 @@
+{% extends "./base.njk" %}
+{% block content %}
+<div id="main-content" class="main-content">
+	<main class="main-primary" id="main">
+		<div class="container p-b-lg p-t-md">
+			<div class="row">
+				<div class="col-md-3">
+					<nav aria-labelledby="components-list">
+						<div class="h4 m-t-0" id="components-list">Components</div>
+						<ul class="list-navigation">
+						{% for item in components.components %}
+						<li {{ helpers.getLinkActiveState(item.url,
+								page.url) | safe }}>
+								<a href="{{ item.url }}">{{ item.text }}</a>
+						</li>
+						{% endfor %}
+						<div class="h4">Navigation</div>
+						{% for item in navsamples.navsamples %}
+						<li {{ helpers.getLinkActiveState(item.url,
+								page.url) | safe }}>
+								<a href="{{ item.url }}">{{ item.text }}</a>
+						</li>
+						{% endfor %}
+						<div class="h4">CSS Units</div>
+						{% for item in cssunits.cssunits %}
+						<li {{ helpers.getLinkActiveState(item.url,
+								page.url) | safe }}>
+								<a href="{{ item.url }}">{{ item.text }}</a>
+						</li>
+						{% endfor %}
+						</ul>
+					</nav>
+				</div>
+				<div class="col-md-9">
+					{{ content | safe }}
+				</div>
+			</div>
+		</div>
+	</main>
+</div>
+{% endblock %}

@@ -481,106 +481,6 @@ nav-item-search:focus .first-level-link > span[class^=ca-gov-icon] {
   color: #691808;
 }
 
-/* side navigation */
-.list-group.section-standout .list-group-item,
-.list-group.section-standout .list-group-item > button {
-  background-color: #313131 !important;
-  color: #ffffff !important;
-}
-.list-group.section-standout .list-group-item:hover, .list-group.section-standout .list-group-item:focus, .list-group.section-standout .list-group-item.open,
-.list-group.section-standout .list-group-item > button:hover,
-.list-group.section-standout .list-group-item > button:focus,
-.list-group.section-standout .list-group-item > button.open {
-  background: #1f1f1f !important;
-  color: #ffffff !important;
-}
-
-.list-group.section-overstated .list-group-item,
-.list-group.section-overstated .list-group-item > button {
-  background: #691808 !important;
-  color: #ffffff !important;
-}
-.list-group.section-overstated .list-group-item:hover, .list-group.section-overstated .list-group-item:focus, .list-group.section-overstated .list-group-item.open,
-.list-group.section-overstated .list-group-item > button:hover,
-.list-group.section-overstated .list-group-item > button:focus,
-.list-group.section-overstated .list-group-item > button.open {
-  background: #481005 !important;
-  color: #ffffff !important;
-}
-
-.list-group.section-impact .list-group-item,
-.list-group.section-impact .list-group-item > button {
-  background: #313131 !important;
-  color: #ffffff !important;
-}
-.list-group.section-impact .list-group-item:hover, .list-group.section-impact .list-group-item:focus,
-.list-group.section-impact .list-group-item > button:hover,
-.list-group.section-impact .list-group-item > button:focus {
-  background: #1f1f1f !important;
-  color: #ffffff !important;
-}
-
-.list-group.section-primary .list-group-item,
-.list-group.section-primary .list-group-item > button {
-  background: #691808 !important;
-  color: #ffffff !important;
-}
-.list-group.section-primary .list-group-item:hover, .list-group.section-primary .list-group-item:focus, .list-group.section-primary .list-group-item.open,
-.list-group.section-primary .list-group-item > button:hover,
-.list-group.section-primary .list-group-item > button:focus,
-.list-group.section-primary .list-group-item > button.open {
-  background: #481005 !important;
-  color: #ffffff !important;
-}
-
-.list-group.section-inverted .list-group-item,
-.list-group.section-inverted .list-group-item > button {
-  background: #222222 !important;
-  color: #fff !important;
-}
-.list-group.section-inverted .list-group-item:hover, .list-group.section-inverted .list-group-item:focus, .list-group.section-inverted .list-group-item.open,
-.list-group.section-inverted .list-group-item > button:hover,
-.list-group.section-inverted .list-group-item > button:focus,
-.list-group.section-inverted .list-group-item > button.open {
-  background: #111111 !important;
-  color: #fff !important;
-}
-
-.list-group.section-danger .list-group-item,
-.list-group.section-danger .list-group-item > button {
-  background: #d24532 !important;
-  color: #000000 !important;
-}
-.list-group.section-danger .list-group-item:hover, .list-group.section-danger .list-group-item:focus, .list-group.section-danger .list-group-item.open,
-.list-group.section-danger .list-group-item > button:hover,
-.list-group.section-danger .list-group-item > button:focus,
-.list-group.section-danger .list-group-item > button.open {
-  background: #b83928 !important;
-  color: #000000 !important;
-}
-
-.list-group.section-understated .list-group-item,
-.list-group.section-understated .list-group-item > button {
-  background: #f5f5f5 !important;
-}
-.list-group.section-understated .list-group-item:hover, .list-group.section-understated .list-group-item:focus, .list-group.section-understated .list-group-item.open,
-.list-group.section-understated .list-group-item > button:hover,
-.list-group.section-understated .list-group-item > button:focus,
-.list-group.section-understated .list-group-item > button.open {
-  background: #e3e3e3 !important;
-}
-
-.list-group.section-default .list-group-item,
-.list-group.section-default .list-group-item > button {
-  background: whitesmoke !important;
-}
-.list-group.section-default .list-group-item:hover, .list-group.section-default .list-group-item:focus, .list-group.section-default .list-group-item.open,
-.list-group.section-default .list-group-item > button:hover,
-.list-group.section-default .list-group-item > button:focus,
-.list-group.section-default .list-group-item > button.open {
-  background: #e3e3e3 !important;
-}
-
 /* -----------------------------------------
    SEARCH
    /source/scss/colorscheme.search.scss
@@ -2967,6 +2867,211 @@ input[type=radio]:focus + div {
 
 .list-navigation li.active {
   border-color: #fbad23;
+}
+
+/* side navigation */
+.list-group-item.active {
+  background-color: #691808;
+  border-color: #691808;
+}
+.list-group-item.active:hover {
+  background-color: #481005 !important;
+  border-color: #481005;
+}
+
+.list-group.section-standout .list-group-item,
+.list-group.section-standout .list-group-item > button {
+  background-color: #313131 !important;
+  color: #ffffff !important;
+}
+.list-group.section-standout .list-group-item:hover, .list-group.section-standout .list-group-item:focus, .list-group.section-standout .list-group-item.open,
+.list-group.section-standout .list-group-item > button:hover,
+.list-group.section-standout .list-group-item > button:focus,
+.list-group.section-standout .list-group-item > button.open {
+  background: #1f1f1f !important;
+  color: #ffffff !important;
+}
+.list-group.section-standout .list-group-item.active,
+.list-group.section-standout .list-group-item > button.active {
+  background-color: #fff !important;
+  border-color: #313131;
+  color: #313131 !important;
+}
+.list-group.section-standout .list-group-item.active:hover, .list-group.section-standout .list-group-item.active:focus,
+.list-group.section-standout .list-group-item > button.active:hover,
+.list-group.section-standout .list-group-item > button.active:focus {
+  background-color: #f8f9fa !important;
+  border-color: #313131;
+}
+
+.list-group.section-overstated .list-group-item,
+.list-group.section-overstated .list-group-item > button {
+  background: #691808 !important;
+  color: #ffffff !important;
+}
+.list-group.section-overstated .list-group-item:hover, .list-group.section-overstated .list-group-item:focus, .list-group.section-overstated .list-group-item.open,
+.list-group.section-overstated .list-group-item > button:hover,
+.list-group.section-overstated .list-group-item > button:focus,
+.list-group.section-overstated .list-group-item > button.open {
+  background: #481005 !important;
+  color: #ffffff !important;
+}
+.list-group.section-overstated .list-group-item.active,
+.list-group.section-overstated .list-group-item > button.active {
+  background-color: #fff !important;
+  border-color: #691808;
+  color: #691808 !important;
+}
+.list-group.section-overstated .list-group-item.active:hover, .list-group.section-overstated .list-group-item.active:focus,
+.list-group.section-overstated .list-group-item > button.active:hover,
+.list-group.section-overstated .list-group-item > button.active:focus {
+  background-color: #f8f9fa !important;
+  border-color: #691808;
+}
+
+.list-group.section-impact .list-group-item,
+.list-group.section-impact .list-group-item > button {
+  background: #313131 !important;
+  color: #ffffff !important;
+}
+.list-group.section-impact .list-group-item:hover, .list-group.section-impact .list-group-item:focus,
+.list-group.section-impact .list-group-item > button:hover,
+.list-group.section-impact .list-group-item > button:focus {
+  background: #1f1f1f !important;
+  color: #ffffff !important;
+}
+.list-group.section-impact .list-group-item.active,
+.list-group.section-impact .list-group-item > button.active {
+  background-color: #fff !important;
+  border-color: #313131;
+  color: #313131 !important;
+}
+.list-group.section-impact .list-group-item.active:hover, .list-group.section-impact .list-group-item.active:focus,
+.list-group.section-impact .list-group-item > button.active:hover,
+.list-group.section-impact .list-group-item > button.active:focus {
+  background-color: #f8f9fa !important;
+  border-color: #313131;
+}
+
+.list-group.section-primary .list-group-item,
+.list-group.section-primary .list-group-item > button {
+  background: #691808 !important;
+  color: #ffffff !important;
+}
+.list-group.section-primary .list-group-item:hover, .list-group.section-primary .list-group-item:focus, .list-group.section-primary .list-group-item.open,
+.list-group.section-primary .list-group-item > button:hover,
+.list-group.section-primary .list-group-item > button:focus,
+.list-group.section-primary .list-group-item > button.open {
+  background: #481005 !important;
+  color: #ffffff !important;
+}
+.list-group.section-primary .list-group-item.active,
+.list-group.section-primary .list-group-item > button.active {
+  background-color: #fff !important;
+  border-color: #691808;
+  color: #691808 !important;
+}
+.list-group.section-primary .list-group-item.active:hover, .list-group.section-primary .list-group-item.active:focus,
+.list-group.section-primary .list-group-item > button.active:hover,
+.list-group.section-primary .list-group-item > button.active:focus {
+  background-color: #f8f9fa !important;
+  border-color: #691808;
+}
+
+.list-group.section-inverted .list-group-item,
+.list-group.section-inverted .list-group-item > button {
+  background: #222222 !important;
+  color: #fff !important;
+}
+.list-group.section-inverted .list-group-item:hover, .list-group.section-inverted .list-group-item:focus, .list-group.section-inverted .list-group-item.open,
+.list-group.section-inverted .list-group-item > button:hover,
+.list-group.section-inverted .list-group-item > button:focus,
+.list-group.section-inverted .list-group-item > button.open {
+  background: #111111 !important;
+  color: #fff !important;
+}
+.list-group.section-inverted .list-group-item.active,
+.list-group.section-inverted .list-group-item > button.active {
+  background-color: #fff !important;
+  border-color: #313131;
+  color: #313131 !important;
+}
+.list-group.section-inverted .list-group-item.active:hover, .list-group.section-inverted .list-group-item.active:focus,
+.list-group.section-inverted .list-group-item > button.active:hover,
+.list-group.section-inverted .list-group-item > button.active:focus {
+  background-color: #f8f9fa !important;
+  border-color: #313131;
+}
+
+.list-group.section-danger .list-group-item,
+.list-group.section-danger .list-group-item > button {
+  background: #d24532 !important;
+  color: #000000 !important;
+}
+.list-group.section-danger .list-group-item:hover, .list-group.section-danger .list-group-item:focus, .list-group.section-danger .list-group-item.open,
+.list-group.section-danger .list-group-item > button:hover,
+.list-group.section-danger .list-group-item > button:focus,
+.list-group.section-danger .list-group-item > button.open {
+  background: #b83928 !important;
+  color: #000000 !important;
+}
+.list-group.section-danger .list-group-item.active,
+.list-group.section-danger .list-group-item > button.active {
+  background-color: #fff !important;
+  border-color: #d24532;
+  color: #d24532 !important;
+}
+.list-group.section-danger .list-group-item.active:hover, .list-group.section-danger .list-group-item.active:focus,
+.list-group.section-danger .list-group-item > button.active:hover,
+.list-group.section-danger .list-group-item > button.active:focus {
+  background-color: #f8f9fa !important;
+  border-color: #d24532;
+}
+
+.list-group.section-understated .list-group-item,
+.list-group.section-understated .list-group-item > button {
+  background: #f5f5f5 !important;
+}
+.list-group.section-understated .list-group-item:hover, .list-group.section-understated .list-group-item:focus, .list-group.section-understated .list-group-item.open,
+.list-group.section-understated .list-group-item > button:hover,
+.list-group.section-understated .list-group-item > button:focus,
+.list-group.section-understated .list-group-item > button.open {
+  background: #e3e3e3 !important;
+}
+.list-group.section-understated .list-group-item.active,
+.list-group.section-understated .list-group-item > button.active {
+  background-color: #691808 !important;
+  border-color: #691808;
+  color: #fff !important;
+}
+.list-group.section-understated .list-group-item.active:hover, .list-group.section-understated .list-group-item.active:focus,
+.list-group.section-understated .list-group-item > button.active:hover,
+.list-group.section-understated .list-group-item > button.active:focus {
+  background-color: #481005 !important;
+  border-color: #481005 !important;
+}
+
+.list-group.section-default .list-group-item,
+.list-group.section-default .list-group-item > button {
+  background: whitesmoke !important;
+}
+.list-group.section-default .list-group-item:hover, .list-group.section-default .list-group-item:focus, .list-group.section-default .list-group-item.open,
+.list-group.section-default .list-group-item > button:hover,
+.list-group.section-default .list-group-item > button:focus,
+.list-group.section-default .list-group-item > button.open {
+  background: #e3e3e3 !important;
+}
+.list-group.section-default .list-group-item.active,
+.list-group.section-default .list-group-item > button.active {
+  background-color: #691808 !important;
+  border-color: #691808;
+  color: #fff !important;
+}
+.list-group.section-default .list-group-item.active:hover, .list-group.section-default .list-group-item.active:focus,
+.list-group.section-default .list-group-item > button.active:hover,
+.list-group.section-default .list-group-item > button.active:focus {
+  background-color: #481005 !important;
+  border-color: #481005 !important;
 }
 
 /* -----------------------------------------

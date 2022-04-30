@@ -6,39 +6,43 @@ navigation: "../modules/nav-flex.html"
 ---
 
 <nav aria-label="You are here">
-    <ol class="breadcrumb">
-        <li><a href="../index.html" title="Home page">Home</a></li>
-        <li><a href="/sample/navsamples.html" title="Navigation Samples page">Navigation Samples</a>
-        </li>
-        <li class="active">Flex Megamenu</li>
-    </ol>
+ <ol class="breadcrumb">
+  <li><a href="../index.html" title="Home page">Home</a></li>
+  <li><a href="/sample/navsamples.html" title="Navigation Samples page">Navigation Samples</a>
+  </li>
+  <li class="active">Flex Megamenu</li>
+ </ol>
 </nav>
 
-<h1>Flex Megamenu Navigation</h1>
-<p>
-    The flex megamenu displays dropdown panels for sub navigation when the user hovers over a primary
-    link.
-    This style of menu can be set by including the <code>.megadropdown</code>
-    class in the <code>&lt;nav&gt;</code> element.
-</p>
-<h2 class="h4">Example:</h2>
 
-<pre>&lt;nav id="navigation" class="main-navigation megadropdown"&gt;</pre>
-<p>
-    In the template distribution this markup can be found in <code>/sample/modules/nav-flex.html</code>.
+<div class="row p-b-lg">
+ <div class="col-md-8">
 
-<h2>Flex Units</h2>
-<p>
-    Sub navigation uses flex properties to layout sub-navigation items inside of the megadropdown menu.
-    Inside <code>.sub-nav</code> container use flexbox row div <code>.second-level-nav</code> with class
-    <code>.flex</code>
-    added to it. Class <code>flex</code> will ensure equal inline distribution of <code>a</code>
-    sub-navigation items
-    iside of <code>.second-level-nav</code> div.
-</p>
+  <h1>Flex Megamenu Navigation</h1>
+  <p>
+   The flex megamenu displays dropdown panels for sub navigation when the user hovers over a primary
+   link.
+   This style of menu can be set by including the <code>.megadropdown</code>
+   class in the <code>&lt;nav&gt;</code> element.
+  </p>
+  <h2 class="h4">Example:</h2>
 
-<h2 class="h4">Example:</h2>
-<pre>&lt;div class="sub-nav"&gt;
+  <pre>&lt;nav id="navigation" class="main-navigation megadropdown"&gt;</pre>
+  <p>
+   In the template distribution this markup can be found in <code>/sample/modules/nav-flex.html</code>.
+
+  <h2>Flex Units</h2>
+  <p>
+   Sub navigation uses flex properties to layout sub-navigation items inside of the megadropdown menu.
+   Inside <code>.sub-nav</code> container use flexbox row div <code>.second-level-nav</code> with class
+   <code>.flex</code>
+   added to it. Class <code>flex</code> will ensure equal inline distribution of <code>a</code>
+   sub-navigation items
+   iside of <code>.second-level-nav</code> div.
+  </p>
+
+  <h2 class="h4">Example:</h2>
+  <pre>&lt;div class="sub-nav"&gt;
     &lt;div class="second-level-nav flex"&gt;
         &lt;a href="/" class="second-level-link"&gt;Link 1&lt;/a>
         &lt;a href="/" class="second-level-link"&gt;Link 2&lt;/a>
@@ -46,32 +50,32 @@ navigation: "../modules/nav-flex.html"
     &lt;/div&gt;
 &lt;/div&gt;
 </pre>
-<p>To add border around sub-navigation link units add class <code>.with-border</code> to the
-    <code>.second-level-nav</code> div container.
-</p>
+  <p>To add border around sub-navigation link units add class <code>.with-border</code> to the
+   <code>.second-level-nav</code> div container.
+  </p>
 
 
-<h2>Mixed Content Within Navigation</h2>
-<p>
-    The megamenu allows for the display optional icons or images with sub navigation links.
-    It is also possible to display a short description below each sub navigation link. To display icon
-    on top
-    of the link use <code>span</code> with appropriate ca-gov-icon icon class from our CA Gov icon font
-    library.
-    To make an icon bigger use desired font size class such as <code>.font-size-40</code>.
-    To display small images on the left or right side of the link use <code>.with-image-left</code>
-    or <code>.with-image-right</code> on the div container containing the media.
-</p>
+  <h2>Mixed Content Within Navigation</h2>
+  <p>
+   The megamenu allows for the display optional icons or images with sub navigation links.
+   It is also possible to display a short description below each sub navigation link. To display icon
+   on top
+   of the link use <code>span</code> with appropriate ca-gov-icon icon class from our CA Gov icon font
+   library.
+   To make an icon bigger use desired font size class such as <code>.font-size-40</code>.
+   To display small images on the left or right side of the link use <code>.with-image-left</code>
+   or <code>.with-image-right</code> on the div container containing the media.
+  </p>
 
-<h3 class="h4">Link with large icon:</h4>
-    <pre><code><a href="/" class="second-level-link">
+  <h3 class="h4">Link with large icon:</h4>
+   <pre><code><a href="/" class="second-level-link">
     <span class="ca-gov-icon-home font-size-40" aria-hidden="true"></span>
     <p class="h3 sub-nav-link">First Link</p>
     <p class="link-description">Some link description.</p>
 </a>
 </code></pre>
-    <h3 class="h4">Link with left image:</h4>
-        <pre><code><a href="/" class="second-level-link">
+   <h3 class="h4">Link with left image:</h4>
+    <pre><code><a href="/" class="second-level-link">
         <div class="media-left">
         <img class="media-object" src="/images/sample/images/70x70.gif" alt="...">
     </div>
@@ -83,14 +87,21 @@ navigation: "../modules/nav-flex.html"
 </code></pre>
 
 
+ </div>
+ <div class="col-md-4" role="complementary">
+  <h2 class="h3">Other examples:</h2>
+  <!-- Side navigation -->
+  <div class="accordion-list list-group">
+   <a href="/sample/navigation-dropdown.html" class="list-group-item list-group-item-action">Dropdown</a>
+   <a href="/sample/navigation-full-width-utility.html" class="list-group-item list-group-item-action">Full
+    Width/Active
+    Search</a>
+   <a href="/sample/navigation-megamenu-flex.html" class="active list-group-item list-group-item-action">Flex
+    Megamenu</a>
+   <a href="/sample/page-navigation.html" class="list-group-item list-group-item-action">Page Navigation</a>
+   <a href="/sample/navigation-sidebar.html" class="list-group-item list-group-item-action">Side Menu</a>
+   <a href="/sample/navigation-single.html" class="list-group-item list-group-item-action">Single Level</a>
+  </div>
 
-        <h2>More Navigation Samples</h2>
-        <ul>
-            <li><a href="navigation-full-width-utility.html">Full Width Navigation with Active
-                    Search</a></li>
-            <li><a href="navigation-single.html">Single Level Navigation</a></li>
-            <li><a href="navigation-dropdown.html">Dropdown Navigation</a></li>
-            <li><a href="navigation-sidebar.html">Side navigation menu</a></li>
-
-
-        </ul>
+ </div>
+</div>
