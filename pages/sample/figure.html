@@ -1,0 +1,51 @@
+---
+title: Figure
+layout: page.njk
+permalink: "sample/figure.html"
+---
+
+<nav aria-label="You are here">
+	<ol class="breadcrumb">
+		<li><a href="../index.html" title="Home page">Home</a></li>
+		<li><a href="/sample/" title="Content Modules landing page">Content Modules</a></li>
+		<li class="active">Figure with Caption</li>
+	</ol>
+</nav>
+
+<div class="row">
+	<div class="half">
+		<h1>Figure with Captions</h1>
+		<p>Figure with captions displays a photo with a short title/description below it. Wrap the image
+			and description in a <code>&lt;figure&gt;</code> tag. The <code>&lt;figcaption&gt;</code>
+			element is optional. Omit if the caption is not needed. </p>
+		<p><strong>NOTE:</strong> Images used within this element will fill the entire width of the
+			container.</p>
+
+
+		{% include "../../src/_includes/modules/schema-boilerplate.html" %}
+		<hr>
+
+		<h2>Example:</h2>
+		{% include "../../src/_includes/modules/figure.html" %}
+	</div>
+	<div class="half">
+		<h2>Source Code:</h2>
+
+		<div class="tab-group">
+			<ul id="sourceCode" class="nav nav-tabs" role="tablist">
+				<li class="active"><a href="#html" role="tab" data-bs-toggle="tab">HTML Markup</a></li>
+				<li><a href="#microdata" role="tab" data-bs-toggle="tab">Microdata</a></li>
+			</ul>
+			<!-- Tab panes -->
+			<div class="tab-content responsive">
+				<div class="tab-pane active" id="html">
+					<pre><code class="overflow-auto">{% include "../../src/_includes/modules/figure.html" %}</code></pre>
+				</div>
+				<div class="tab-pane" id="microdata">
+					<pre><code class="overflow-auto">{% include "../../src/_includes/modules/media-schema.html" %}</code></pre>
+				</div>
+			</div>
+		</div>
+
+	</div>
+</div>

@@ -22555,11 +22555,19 @@ html:not(.ie8) .stats-highlight img {
 .list-navigation li {
   list-style: none;
   margin: 1.5rem 0;
-  font-size: 1, 25rem;
+  font-size: 1.25rem;
   padding-left: 1rem;
 }
 .list-navigation li.active {
   border-left: 2px solid #FDB81E;
+}
+.list-navigation li.active a {
+  color: #000;
+  text-decoration: none;
+}
+.list-navigation li.active a:hover, .list-navigation li.active a:focus {
+  color: #5e5e6a;
+  text-decoration: underline;
 }
 .list-navigation li a:hover,
 .list-navigation li a:focus {

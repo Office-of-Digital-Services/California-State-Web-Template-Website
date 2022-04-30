@@ -33,6 +33,7 @@ module.exports = function (eleventyConfig) {
 		dir: {
 			// site content pages
 			input: "pages",
+			data: "../src/_data",
 			// site structure pages (path is realtive to input directory)
 			includes: "../src/_includes",
 			layouts: "../src/_includes/layouts",
