@@ -1,52 +1,47 @@
 ﻿---
 title: News Detail
-layout: page.njk
+layout: templates.njk
 permalink: "sample/news-detail.html"
 ---
 
 <nav aria-label="You are here">
-    <ol class="breadcrumb">
-        <li><a href="../index.html" title="Home page">Home</a></li>
-        <li><a href="/sample/" title="Content Modules landing page">Content Modules</a></li>
-        <li class="active">News Detail</li>
-    </ol>
+ <ol class="breadcrumb">
+  <li><a href="../index.html" title="Home page">Home</a></li>
+  <li><a href="/sample/content-patterns.html" title="Content Modules landing page">Content Patterns</a></li>
+  <li class="active">News Detail</li>
+ </ol>
 </nav>
 
-<div class="row">
-    <div class="half">
-        <h1>News Detail</h1>
-        <p><code>.news-detail</code> is an end page content module for news articles. To begin, wrap the
-            contents of the page in a <code>&lt;article class="news-detail"&gt;</code> tag.</p>
-        <p>This module makes use of the <code>&lt;header&gt;</code> tag and locates the h1 and the
-            publishing date within it.</p>
-        <p>The keywords section uses an unordered list within a <code>div</code> or <code>footer</code>
-            element with the class of <code>.keywords</code> The keywords themselves could be linked or
-            not linked.</p>
-        {% include "../../src/_includes/modules/schema-boilerplate.html" %}
 
-        <h2>Example:</h2>
-        {% include "../../src/_includes/modules/news-detail.html" %}
-    </div>
-    <div class="half">
-        <h2>Source Code:</h2>
-        <div class="tab-group">
-            <ul id="sourceCode" class="nav nav-tabs" role="tablist">
-                <li class="active"><a href="#html" role="tab" data-bs-toggle="tab">HTML Markup</a></li>
-                <li><a href="#microdata" role="tab" data-bs-toggle="tab">Microdata</a></li>
-            </ul>
-            <!-- Tab panes -->
-            <div class="tab-content responsive">
-                <div class="tab-pane active" id="html">
-                    <pre><code class="overflow-auto">{% include "../../src/_includes/modules/news-detail.html" %}</code></pre>
-                </div>
-                <div class="tab-pane" id="microdata">
-                    <p class="alert alert-info">NOTE: This module makes use of a <code>datetime</code>
-                        property set in the <strong>ISO 8601</strong> format. Be sure to set the time
-                        correctly for each news-item.</p>
-                    <pre><code class="overflow-auto">{% include "../../src/_includes/modules/news-detail-schema.html" %}</code></pre>
-                </div>
-            </div>
-        </div>
+<h1>News Detail</h1>
+<p><code>.news-detail</code> is an end page content module for news articles. To begin, wrap the
+ contents of the page in a <code>&lt;article class="news-detail"&gt;</code> tag.</p>
+<p>This module makes use of the <code>&lt;header&gt;</code> tag and locates the h1 and the
+ publishing date within it.</p>
+<p>The keywords section uses an unordered list within a <code>div</code> or <code>footer</code>
+ element with the class of <code>.keywords</code> The keywords themselves could be linked or
+ not linked.</p>
+{% include "../../src/_includes/modules/schema-boilerplate.html" %}
 
-    </div>
+<h2>Example:</h2>
+{% include "../../src/_includes/modules/news-detail.html" %}
+
+<h2>Source Code:</h2>
+<div class="tab-group">
+ <ul id="sourceCode" class="nav nav-tabs" role="tablist">
+  <li class="active"><a href="#html" role="tab" data-bs-toggle="tab">HTML Markup</a></li>
+  <li><a href="#microdata" role="tab" data-bs-toggle="tab">Microdata</a></li>
+ </ul>
+ <!-- Tab panes -->
+ <div class="tab-content responsive">
+  <div class="tab-pane active" id="html">
+   <pre><code class="overflow-auto">{% include "../../src/_includes/modules/news-detail.html" %}</code></pre>
+  </div>
+  <div class="tab-pane" id="microdata">
+   <p class="alert alert-info">NOTE: This module makes use of a <code>datetime</code>
+    property set in the <strong>ISO 8601</strong> format. Be sure to set the time
+    correctly for each news-item.</p>
+   <pre><code class="overflow-auto">{% include "../../src/_includes/modules/news-detail-schema.html" %}</code></pre>
+  </div>
+ </div>
 </div>
