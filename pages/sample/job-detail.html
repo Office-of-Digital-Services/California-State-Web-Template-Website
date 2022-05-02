@@ -4,27 +4,27 @@ layout: page.njk
 permalink: "sample/job-detail.html"
 ---
 <nav aria-label="You are here">
-    <ol class="breadcrumb">
-        <li><a href="../index.html" title="Home page">Home</a></li>
-        <li><a href="/sample/" title="Content Modules landing page">Content Modules</a></li>
-        <li class="active">Job Detail</li>
-    </ol>
+ <ol class="breadcrumb">
+  <li><a href="../index.html" title="Home page">Home</a></li>
+  <li><a href="/sample/" title="Components landing page">Components</a></li>
+  <li class="active">Job Detail</li>
+ </ol>
 </nav>
 
 <h1>Job Detail</h1>
 <p><code>.job-detail</code> is an end page content module for jobs. To begin, wrap the contents of the
-    page in a <code>&lt;article class="job-detail"&gt;</code> tag.</p>
+ page in a <code>&lt;article class="job-detail"&gt;</code> tag.</p>
 <p>This module makes use of the <code>&lt;header&gt;</code> tag and locates the h1 within it.</p>
 <p>The job detail module contains a number of predefined sections that may or may not be used. For
-    example:</p>
+ example:</p>
 <ul>
-    <li><code>.sub-header</code> - Contains basic information about the organization, address, and
-        publish date</li>
-    <li><code>.job-description</code> - Job description details</li>
-    <li><code>.skills-experience </code> - List of required skills or experience</li>
-    <li><code>.about-department</code> - A panel with information about the hiring organization</li>
-    <li><code>additional-information</code> - Free-form space for anything else that does not fit in
-        other sections</li>
+ <li><code>.sub-header</code> - Contains basic information about the organization, address, and
+  publish date</li>
+ <li><code>.job-description</code> - Job description details</li>
+ <li><code>.skills-experience </code> - List of required skills or experience</li>
+ <li><code>.about-department</code> - A panel with information about the hiring organization</li>
+ <li><code>additional-information</code> - Free-form space for anything else that does not fit in
+  other sections</li>
 </ul>
 
 {% include "../../src/_includes/modules/schema-boilerplate.html" %}
@@ -38,19 +38,19 @@ permalink: "sample/job-detail.html"
 <h2>Source Code:</h2>
 
 <div class="tab-group">
-    <ul id="sourceCode" class="nav nav-tabs" role="tablist">
-        <li class="active"><a href="#html" role="tab" data-bs-toggle="tab">HTML Markup</a></li>
-        <li><a href="#microdata" role="tab" data-bs-toggle="tab">Microdata</a></li>
-    </ul>
-    <!-- Tab panes -->
-    <div class="tab-content responsive">
-        <div class="tab-pane active" id="html">
-            <pre><code class="overflow-auto">{% include "../../src/_includes/modules/job-detail.html" %}</code></pre>
-        </div>
-        <div class="tab-pane" id="microdata">
-            <p class="alert alert-info">NOTE: This module makes use of a <code>datetime</code> property
-                set in the <strong>ISO 8601</strong> format. Be sure to set the time correctly.</p>
-            <pre><code class="overflow-auto">{% include "../../src/_includes/modules/job-detail-schema.html" %}</code></pre>
-        </div>
-    </div>
+ <ul id="sourceCode" class="nav nav-tabs" role="tablist">
+  <li class="active"><a href="#html" role="tab" data-bs-toggle="tab">HTML Markup</a></li>
+  <li><a href="#microdata" role="tab" data-bs-toggle="tab">Microdata</a></li>
+ </ul>
+ <!-- Tab panes -->
+ <div class="tab-content responsive">
+  <div class="tab-pane active" id="html">
+   <pre><code class="overflow-auto">{% include "../../src/_includes/modules/job-detail.html" %}</code></pre>
+  </div>
+  <div class="tab-pane" id="microdata">
+   <p class="alert alert-info">NOTE: This module makes use of a <code>datetime</code> property
+    set in the <strong>ISO 8601</strong> format. Be sure to set the time correctly.</p>
+   <pre><code class="overflow-auto">{% include "../../src/_includes/modules/job-detail-schema.html" %}</code></pre>
+  </div>
+ </div>
 </div>

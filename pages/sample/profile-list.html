@@ -1,24 +1,24 @@
 ﻿---
 title: Profile List
-layout: page.njk
+layout: templates.njk
 permalink: "sample/profile-list.html"
 ---
 
 <nav aria-label="You are here">
-    <ol class="breadcrumb">
-        <li><a href="../index.html" title="Home page">Home</a></li>
-        <li><a href="/sample/" title="Content Modules landing page">Content Modules</a></li>
-        <li class="active">Profile List</li>
-    </ol>
+ <ol class="breadcrumb">
+  <li><a href="../index.html" title="Home page">Home</a></li>
+  <li><a href="/sample/content-patterns.html" title="Content Modules landing page">Content Patterns</a></li>
+  <li class="active">Profile List</li>
+ </ol>
 </nav>
 
 <h1>Public Profile List</h1>
 <p>Use the <code>.profile-item</code> class on an <code>article</code> element. Like other similar
-    widgets, the list item contains the following child elements. <code>.thumbnail</code>,
-    <code>.header</code>, <code>.body</code>, and <code>.footer</code>
+ widgets, the list item contains the following child elements. <code>.thumbnail</code>,
+ <code>.header</code>, <code>.body</code>, and <code>.footer</code>
 </p>
 <p><span class="badge label-info">Note:</span> List items have additional classes on sub elements that
-    are not being used in the current design, however they could be used in the future.</p>
+ are not being used in the current design, however they could be used in the future.</p>
 
 {% include "../../src/_includes/modules/schema-boilerplate.html" %}
 
@@ -30,17 +30,17 @@ permalink: "sample/profile-list.html"
 <h2>Source Code:</h2>
 
 <div class="tab-group">
-    <ul id="sourceCode" class="nav nav-tabs" role="tablist">
-        <li class="active"><a href="#html" role="tab" data-bs-toggle="tab">HTML Markup</a></li>
-        <li><a href="#microdata" role="tab" data-bs-toggle="tab">Microdata</a></li>
-    </ul>
-    <!-- Tab panes -->
-    <div class="tab-content responsive">
-        <div class="tab-pane active" id="html">
-            <pre><code class="overflow-auto">{% include "../../src/_includes/modules/profile-list.html" %}</code></pre>
-        </div>
-        <div class="tab-pane" id="microdata">
-            <pre><code class="overflow-auto">{% include "../../src/_includes/modules/profile-list-schema.html" %}</code></pre>
-        </div>
-    </div>
+ <ul id="sourceCode" class="nav nav-tabs" role="tablist">
+  <li class="active"><a href="#html" role="tab" data-bs-toggle="tab">HTML Markup</a></li>
+  <li><a href="#microdata" role="tab" data-bs-toggle="tab">Microdata</a></li>
+ </ul>
+ <!-- Tab panes -->
+ <div class="tab-content responsive">
+  <div class="tab-pane active" id="html">
+   <pre><code class="overflow-auto">{% include "../../src/_includes/modules/profile-list.html" %}</code></pre>
+  </div>
+  <div class="tab-pane" id="microdata">
+   <pre><code class="overflow-auto">{% include "../../src/_includes/modules/profile-list-schema.html" %}</code></pre>
+  </div>
+ </div>
 </div>

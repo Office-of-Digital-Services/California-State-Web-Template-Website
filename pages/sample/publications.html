@@ -1,24 +1,24 @@
 ﻿---
 title: Publications
-layout: page.njk
+layout: templates.njk
 permalink: "sample/publications.html"
 ---
 
 <nav aria-label="You are here">
-    <ol class="breadcrumb">
-        <li><a href="../index.html" title="Home page">Home</a></li>
-        <li><a href="/sample/" title="Content Modules landing page">Content Modules</a></li>
-        <li class="active">Publications</li>
-    </ol>
+ <ol class="breadcrumb">
+  <li><a href="../index.html" title="Home page">Home</a></li>
+  <li><a href="/sample/content-patterns.html" title="Content Modules landing page">Content Patterns</a></li>
+  <li class="active">Publications</li>
+ </ol>
 </nav>
 
 
 <h1>Publications</h1>
 <p>Publication items can be used with or without thumbnails. If thumbnails are used, it is recommended
-    to crop all images to a consistent size for optimal formatting. It's recommended to limit the width
-    to 70px.</p>
+ to crop all images to a consistent size for optimal formatting. It's recommended to limit the width
+ to 70px.</p>
 <p>The alternating color rows are achieved by applying an <code>.odd</code> or <code>.even</code> class
-    to the <code>.pub-item</code> div</p>
+ to the <code>.pub-item</code> div</p>
 
 {% include "../../src/_includes/modules/schema-boilerplate.html" %}
 
@@ -30,17 +30,17 @@ permalink: "sample/publications.html"
 <h2>Source Code:</h2>
 
 <div class="tab-group">
-    <ul id="sourceCode" class="nav nav-tabs" role="tablist">
-        <li class="active"><a href="#html" role="tab" data-bs-toggle="tab">HTML Markup</a></li>
-        <li><a href="#microdata" role="tab" data-bs-toggle="tab">Microdata</a></li>
-    </ul>
-    <!-- Tab panes -->
-    <div class="tab-content responsive">
-        <div class="tab-pane active" id="html">
-            <pre><code class="overflow-auto">{% include "../../src/_includes/modules/publications.html" %}</code></pre>
-        </div>
-        <div class="tab-pane" id="microdata">
-            <pre><code class="overflow-auto">{% include "../../src/_includes/modules/publications-schema.html" %}</code></pre>
-        </div>
-    </div>
+ <ul id="sourceCode" class="nav nav-tabs" role="tablist">
+  <li class="active"><a href="#html" role="tab" data-bs-toggle="tab">HTML Markup</a></li>
+  <li><a href="#microdata" role="tab" data-bs-toggle="tab">Microdata</a></li>
+ </ul>
+ <!-- Tab panes -->
+ <div class="tab-content responsive">
+  <div class="tab-pane active" id="html">
+   <pre><code class="overflow-auto">{% include "../../src/_includes/modules/publications.html" %}</code></pre>
+  </div>
+  <div class="tab-pane" id="microdata">
+   <pre><code class="overflow-auto">{% include "../../src/_includes/modules/publications-schema.html" %}</code></pre>
+  </div>
+ </div>
 </div>

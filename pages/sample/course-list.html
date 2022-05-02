@@ -1,61 +1,52 @@
 ﻿---
 title: Course List
-layout: page.njk
+layout: templates.njk
 permalink: "sample/course-list.html"
 ---
-<div class="row p-b-lg">
-    <div class="col-md-8">
-        <nav aria-label="You are here">
-            <ol class="breadcrumb">
-                <li><a href="../index.html" title="Home page">Home</a></li>
-                <li><a href="/sample/" title="Content Modules landing page">Content Modules</a></li>
-                <li class="active">Course List</li>
-            </ol>
-        </nav>
 
-        <h1>Course List</h1>
-        <p>A course list contains a repeating group of courses. To begin, wrap this module in a
-            <code>&lt;section class="course-list"&gt;</code>. Then use
-            <code>&lt;article class="course-item"&gt;</code> to group intividual courses together.
-        </p>
-        <p>A <code>.course-item</code> has the following primary child elements.</p>
-        <ul>
-            <li><code>.thumbnail</code> - Optional, Requires a thumbnail that is 70px wide</li>
-            <li><code>.title</code> - A short title that is linkable to the detail page</li>
-            <li><code>.datetime</code> - Date and time the course is offered</li>
-            <li><code>.description</code> - A short summary or teaser for the event</li>
-            <li><code>.location</code> - Address where course is offered</li>
-        </ul>
+<nav aria-label="You are here">
+ <ol class="breadcrumb">
+  <li><a href="../index.html" title="Home page">Home</a></li>
+  <li><a href="/sample/content-patterns.html" title="Content Modules landing page">Content Patterns</a></li>
+  <li class="active">Course List</li>
+ </ol>
+</nav>
 
-        {% include "../../src/_includes/modules/schema-boilerplate.html" %}
+<h1>Course List</h1>
+<p>A course list contains a repeating group of courses. To begin, wrap this module in a
+ <code>&lt;section class="course-list"&gt;</code>. Then use
+ <code>&lt;article class="course-item"&gt;</code> to group intividual courses together.
+</p>
+<p>A <code>.course-item</code> has the following primary child elements.</p>
+<ul>
+ <li><code>.thumbnail</code> - Optional, Requires a thumbnail that is 70px wide</li>
+ <li><code>.title</code> - A short title that is linkable to the detail page</li>
+ <li><code>.datetime</code> - Date and time the course is offered</li>
+ <li><code>.description</code> - A short summary or teaser for the event</li>
+ <li><code>.location</code> - Address where course is offered</li>
+</ul>
 
-        <h2>Example:</h2>
-        {% include "../../src/_includes/modules/course-list.html" %}
+{% include "../../src/_includes/modules/schema-boilerplate.html" %}
 
-        <h2>Source Code:</h2>
+<h2>Example:</h2>
+{% include "../../src/_includes/modules/course-list.html" %}
 
-        <div class="tab-group">
-            <ul id="sourceCode" class="nav nav-tabs" role="tablist">
-                <li class="active"><a href="#html" role="tab" data-bs-toggle="tab">HTML Markup</a></li>
-                <li><a href="#microdata" role="tab" data-bs-toggle="tab">Microdata</a></li>
-            </ul>
-            <!-- Tab panes -->
-            <div class="tab-content responsive">
-                <div class="tab-pane active" id="html">
-                    <pre><code class="overflow-auto">{% include "../../src/_includes/modules/course-list.html" %}</code></pre>
-                </div>
-                <div class="tab-pane" id="microdata">
-                    <p class="alert alert-info">NOTE: This module makes use of a <code>datetime</code> property
-                        set in the <strong>ISO 8601</strong> format. Be sure to set the time correctly.</p>
-                    <pre><code class="overflow-auto">{% include "../../src/_includes/modules/course-list-schema.html" %}</code></pre>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="col-md-4">
-        <div class="main-secondary" role="complementary">
-            {% include "../../src/_includes/modules/profile-banners.html" %}
-            {% include "../../src/_includes/modules/cards-sidebar.html" %}
-        </div>
-    </div>
+<h2>Source Code:</h2>
+
+<div class="tab-group">
+ <ul id="sourceCode" class="nav nav-tabs" role="tablist">
+  <li class="active"><a href="#html" role="tab" data-bs-toggle="tab">HTML Markup</a></li>
+  <li><a href="#microdata" role="tab" data-bs-toggle="tab">Microdata</a></li>
+ </ul>
+ <!-- Tab panes -->
+ <div class="tab-content responsive">
+  <div class="tab-pane active" id="html">
+   <pre><code class="overflow-auto">{% include "../../src/_includes/modules/course-list.html" %}</code></pre>
+  </div>
+  <div class="tab-pane" id="microdata">
+   <p class="alert alert-info">NOTE: This module makes use of a <code>datetime</code> property
+    set in the <strong>ISO 8601</strong> format. Be sure to set the time correctly.</p>
+   <pre><code class="overflow-auto">{% include "../../src/_includes/modules/course-list-schema.html" %}</code></pre>
+  </div>
+ </div>
 </div>
