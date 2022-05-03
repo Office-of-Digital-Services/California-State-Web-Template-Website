@@ -4,10 +4,26 @@
 - Updated site structure and rebuild framework to use eleventy site generation #191
 - Replaced server site includes with njk includes and templates
 - Changed website output folder to /_site/ #206
+- Updated utility header include to look like design system #192
 - Updated branding include (site header) to look like CA Design System's site header #194
 - Updated mobile controls styles to look like CA Design System
 - Updated search component's styles to look like search component in the CA Design System #197
 - Updated main navigation styles to resemble the CA Design System navigation #196
+- Update global footer in beta to look like CA Design System's statewide footer #193
+- Added page navigation and list navigation samples #224
+- Updated side navigation styles #223
+- Aligned buttons look and feel with Design System look and feel #246
+- Updated back-to-top component to look like Design System #245
+- Replace site font in beta with Public Sans that is used by CA Design System #195
+- Updated navigation structure, information architecture and content flow #232
+- Introduced code samples categories, such as components, templates and CSS units. Sorted out code sample pages based on those categories, added side navigation (list navigation) on each of those pages #253
+- Addwd new CA.gov color scheme #225
+- Added new Fearure Card content template (into Content Patterns samples) #220
+- Added new Link Grid content template (into Content Patterns samples) #221
+- Updated tabs component styles to resemble design system #219
+- Updated accordion component with the latest code from Design System #199
+- Added new Step List component #222
+
 
 ## 6.0.7
 - Added responsive font size calculation functionality
