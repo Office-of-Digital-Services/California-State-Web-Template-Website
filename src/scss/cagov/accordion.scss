@@ -35,6 +35,18 @@ cagov-accordion details {
    content: "";
   }
 
+  &:after {
+   content: "";
+   position: absolute;
+   top: 0;
+   left: 0;
+   background: transparent;
+   height: 100%;
+   width: 100%;
+   // top-left | top-right | bottom-right | bottom-left
+   border-radius: 4px 4px 4px 4px;
+  }
+
   .cagov-open-indicator {
    position: absolute;
    left: 0.85rem;
@@ -88,10 +100,12 @@ cagov-accordion:defined {
   // top-left | top-right | bottom-right | bottom-left
   border-radius: 4px 4px 4px 4px;
   &:focus {
-   outline-offset: -2px;
-   @include outline(2px);
    &:before {
     background-color: $gray-100;
+   }
+   &:after {
+    @include outline(2px);
+    outline-offset: -2px;
    }
   }
  }
@@ -114,6 +128,12 @@ cagov-accordion:defined {
     // top-left | top-right | bottom-right | bottom-left
     border-radius: 4px 0 0 0;
     background-color: $gray-100;
+   }
+   &:focus {
+    &::after {
+     // top-left | top-right | bottom-right | bottom-left
+     border-radius: 4px 4px 0 0;
+    }
    }
   }
  }
