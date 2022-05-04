@@ -18268,6 +18268,16 @@ cagov-accordion details summary:before {
   border-radius: 4px 0 0 4px;
   content: "";
 }
+cagov-accordion details summary:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: transparent;
+  height: 100%;
+  width: 100%;
+  border-radius: 4px 4px 4px 4px;
+}
 cagov-accordion details summary .cagov-open-indicator {
   position: absolute;
   left: 0.85rem;
@@ -18316,12 +18326,12 @@ cagov-accordion:defined details summary {
   /* hide default expansion triangle after js executes */
   border-radius: 4px 4px 4px 4px;
 }
-cagov-accordion:defined details summary:focus {
-  outline-offset: -2px;
-  outline: solid 2px #2ea3f2 !important;
-}
 cagov-accordion:defined details summary:focus:before {
   background-color: #ededef;
+}
+cagov-accordion:defined details summary:focus:after {
+  outline: solid 2px #2ea3f2 !important;
+  outline-offset: -2px;
 }
 cagov-accordion:defined details[open] {
   height: auto;
@@ -18339,6 +18349,9 @@ cagov-accordion:defined details[open] summary {
 cagov-accordion:defined details[open] summary:before {
   border-radius: 4px 0 0 0;
   background-color: #ededef;
+}
+cagov-accordion:defined details[open] summary:focus::after {
+  border-radius: 4px 4px 0 0;
 }
 
 /* -----------------------------------------
