@@ -20,8 +20,8 @@
 - Addwd new CA.gov color scheme #225
 - Added new Fearure Card content template (into Content Patterns samples) #220
 - Added new Link Grid content template (into Content Patterns samples) #221
-- Updated tabs component styles to resemble design system #219
-- Updated accordion component with the latest code from Design System #199
+- Updated Tabs component styles to resemble design system #219
+- Updated accordion component with a new design and the latest code from Design System #199
 - Added new Step List component #222
 
 
