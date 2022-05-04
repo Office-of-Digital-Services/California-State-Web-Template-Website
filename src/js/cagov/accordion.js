@@ -1,142 +1,86 @@
-(function (exports) {
-  'use strict';
 
 
-  /**
-   * Accordion web component that collapses and expands content inside itself on click.
-   * 
-   * @element cagov-accordion
-   * 
-   * @prop {class string} prog-enhanced - The element is open before any javascript executes so content can be read if an error occurs that prevents js execution. The prog-enhanced class is added to the element once javascript begins to execute. This triggers default collabsed state.
-   * 
-   * @fires click - Default value, will be defined by this.dataset.eventType.
-   * 
-   * @attr {string} [data-event-type=click] - dataset defined value for event type fired on click.
-   * @attr {string} aria=expanded=true - set on the internal element .accordion-card-header. If this is true the accordion will be open before any user interaction.
-   * 
-   * @cssprop --primary-color - Default value of #1f2574, used for all colors of borders and fills
-   * @cssprop --hover-color - Default value of #F9F9FA, used for background on hover
-   * 
-   */
+/**
+ * Accordion web component that collapses and expands content inside itself on click.
+ *
+ * @element cagov-accordion
+ *
+ *
+ * @fires click - Default events which may be listened to in order to discover most popular accordions
+ *
+ * @attr {string} open - set on the internal details element
+ * If this is true the accordion will be open before any user interaction.
+ *
+ * @cssprop --primary-700 - Default value of #165ac2, used for all colors of borders and fills
+ * @cssprop --primary-900 - Default value of #003588, used for background on hover
+ *
+ */
+export class CaGovAccordion extends window.HTMLElement {
+ connectedCallback() {
+  this.summaryEl = this.querySelector('summary');
+  // trigger the opening and closing height change animation on summary click
+  this.setHeight();
+  this.summaryEl.addEventListener('click', this.listen.bind(this));
+  this.summaryEl.insertAdjacentHTML(
+   'beforeend',
+   `<div class="cagov-open-indicator" aria-hidden="true" />`,
+  );
+  this.detailsEl = this.querySelector('details');
+  this.bodyEl = this.querySelector('.accordion-body');
 
-  class CaGovAccordion extends window.HTMLElement {
-    constructor() {
-      super();
-    }
+  window.addEventListener(
+   'resize',
+   this.debounce(() => this.setHeight()).bind(this),
+  );
+ }
 
-    connectedCallback() {
-      this.classList.add('prog-enhanced');
-      // console.log(this.classList)
-      // console.log(this.querySelector('.prog-enhanced'))
-      this.expandTarget = this.querySelector('.accordion-card-container');
-      this.expandButton = this.querySelector('.accordion-card-header');
+ setHeight() {
+  requestAnimationFrame(() => {
+   // delay so the desired height is readable in all browsers
+   this.closedHeightInt = parseInt(this.summaryEl.scrollHeight + 2, 10);
+   this.closedHeight = `${this.closedHeightInt}px`;
 
+   // apply initial height
+   if (this.detailsEl.hasAttribute('open')) {
+    // if open get scrollHeight
+    this.detailsEl.style.height = `${parseInt(
+     this.bodyEl.scrollHeight + this.closedHeightInt,
+     10,
+    )}px`;
+   } else {
+    // else apply closed height
+    this.detailsEl.style.height = this.closedHeight;
+   }
+  });
+ }
 
-      if (this.expandButton) {
-        this.expandButton.addEventListener('click', this.listen.bind(this));
-      } else {
-        // console.log('could not attach expan dlistener')
-      }
-
-      this.activateButton = this.querySelector('.accordion-card-header');
-      // console.log(this)
-      // console.log(document.querySelector('.accordion-card-header'))
-      this.eventType = this.dataset.eventType ? this.dataset.eventType : 'click'; // Detect if accordion should open by default
-
-      let expanded = (this.activateButton) ? this.activateButton.getAttribute('aria-expanded') : false;
-
-      if (expanded === "true") {
-        this.triggerAccordionClick(); // Open the accordion.
-
-        let allLinks = this.querySelectorAll(".accordion-card-container a");
-        let allbuttons = this.querySelectorAll(".accordion-card-container button");
-
-        for (var i = 0; i < allLinks.length; i++) {
-          allLinks[i].removeAttribute("tabindex"); // remove tabindex from all the links
-        }
-
-        for (var i = 0; i < allbuttons.length; i++) {
-          allbuttons[i].removeAttribute("tabindex"); // remove tabindex from all the buttons
-        }
-      } // making sure that all links inside of the accordion container are having tabindex -1
-      else {
-        // console.log('doing something else')
-        let allLinks = this.querySelectorAll(".accordion-card-container a");
-        let allbuttons = this.querySelectorAll(".accordion-card-container button");
-
-        for (var i = 0; i < allLinks.length; i++) {
-          allLinks[i].setAttribute('tabindex', '-1');
-        }
-
-        for (var i = 0; i < allbuttons.length; i++) {
-          allbuttons[i].setAttribute('tabindex', '-1');
-        }
-      }
-    }
-
-    listen() {
-      if (!this.cardBodyHeight) {
-        this.cardBodyHeight = this.querySelector('.card-body').clientHeight + 24;
-      }
-
-      if (this.expandTarget.clientHeight > 0) {
-        this.closeAccordion();
-      } else {
-        this.expandAccordion();
-      }
-    }
-
-    triggerAccordionClick() {
-      const event = new MouseEvent(this.eventType, {
-        view: window,
-        bubbles: true,
-        cancelable: true
-      });
-      this.expandButton.dispatchEvent(event);
-    }
-
-    closeAccordion() {
-      this.expandTarget.style.height = '0px';
-      this.expandTarget.setAttribute('aria-hidden', 'true');
-      this.querySelector('.accordion-card-header').classList.remove('accordion-alpha-open');
-      this.activateButton.setAttribute('aria-expanded', 'false');
-      let allLinks = this.querySelectorAll(".accordion-card-container a");
-      let allbuttons = this.querySelectorAll(".accordion-card-container button");
-
-      for (var i = 0; i < allLinks.length; i++) {
-        allLinks[i].setAttribute('tabindex', '-1'); // tabindex to all links
-      }
-
-      for (var i = 0; i < allbuttons.length; i++) {
-        allbuttons[i].setAttribute('tabindex', '-1'); // tabindex to all buttons
-      }
-    }
-
-    expandAccordion() {
-      this.expandTarget.style.height = this.cardBodyHeight + 'px';
-      this.expandTarget.setAttribute('aria-hidden', 'false');
-      this.querySelector('.accordion-card-header').classList.add('accordion-alpha-open');
-      this.querySelector('.accordion-card-container').classList.remove('collapsed');
-      this.activateButton.setAttribute('aria-expanded', 'true');
-      let allLinks = this.querySelectorAll(".accordion-card-container a");
-      let allbuttons = this.querySelectorAll(".accordion-card-container button");
-
-      for (var i = 0; i < allLinks.length; i++) {
-        allLinks[i].removeAttribute("tabindex"); // remove tabindex from all the links
-      }
-
-      for (var i = 0; i < allbuttons.length; i++) {
-        allbuttons[i].removeAttribute("tabindex"); // remove tabindex from all the buttons
-      }
-    }
-
+ listen() {
+  if (this.detailsEl.hasAttribute('open')) {
+   // was open, now closing
+   this.detailsEl.style.height = this.closedHeight;
+  } else {
+   // was closed, opening
+   requestAnimationFrame(() => {
+    // delay so the desired height is readable in all browsers
+    this.detailsEl.style.height = `${parseInt(
+     this.bodyEl.scrollHeight + this.closedHeightInt,
+     10,
+    )}px`;
+   });
   }
-  window.customElements.define('cagov-accordion', CaGovAccordion);
+ }
 
-  exports.CaGovAccordion = CaGovAccordion;
+ debounce(func, timeout = 300) {
+  let timer;
+  return (...args) => {
+   clearTimeout(timer);
+   timer = setTimeout(() => {
+    func.apply(this, args);
+   }, timeout);
+  };
+ }
+}
+window.customElements.define('cagov-accordion', CaGovAccordion);
 
-  Object.defineProperty(exports, '__esModule', { value: true });
 
-  return exports;
-
-}({}));
+//document.querySelector('head').appendChild(style);
