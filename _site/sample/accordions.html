@@ -460,178 +460,96 @@
   <li class="active">Accordions</li>
  </ol>
 </nav>
-<div class="row">
- <div class="col-md-6">
-  <h1>Accordion</h1>
-  <h2>Example:</h2>
-  
 
+<h1>Accordion</h1>
+<p>Accordions are expandable sections of content. Each section contains a summary element, and more body text when
+ opened.</p>
+
+<p>Accordions keep pages looking clean by hiding information that most people do not need to see.</p>
+<h2>Example:</h2>
 <cagov-accordion>
-    <div class="cagov-accordion-card">
-      <button class="accordion-card-header accordion-alpha" type="button" aria-expanded="false">
-        <div class="accordion-title">Lorem ipsum</div>
-        <div class="plus-minus">
-          <cagov-plus>
-            <div class="accordion-icon" aria-hidden="true">
-              <svg viewbox="0 0 25 25">
-                <title>Plus</title>
-                <line x1="6" y1="12.5" x2="19" y2="12.5" fill="none" stroke="currentColor" stroke-width="6" stroke-linecap="round" vector-effect="non-scaling-stroke" />
-                <line y1="6" x1="12.5" y2="19" x2="12.5" fill="none" stroke="currentColor" stroke-width="6" stroke-linecap="round" vector-effect="non-scaling-stroke" />
-              </svg>
-            </div>
-          </cagov-plus>
-          <cagov-minus>
-            <div class="accordion-icon" aria-hidden="true">
-              <svg viewbox="0 0 25 25">
-                <title>Minus</title>
-                <line x1="6" y1="12.5" x2="19" y2="12.5"  fill="none" stroke="currentColor" stroke-width="6" stroke-linecap="round" vector-effect="non-scaling-stroke" />
-              </svg>
-            </div>
-          </cagov-minus>
-        </div>
-      </button>
-      <div class="accordion-card-container" aria-hidden=" true" style="height: 0px;">
-        <div class="card-body">
-          <p>Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf
-            moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod.
-            Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda
-            shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea
-            proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim
-            aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.</p>
-        </div>
-      </div>
-    </div>
+ <details>
+  <summary>Title 1</summary>
+  <div class="accordion-body">
+   <p>A couple buttons are included inside this accordion to demonstrate that when the accordion is closed they are
+    automatically not in the keyboard focus order but when the accordion opens they become the next available elements
+    in the keyboard navigation sequence after the accordion's summary element.</p>
+   <p><button class="btn-primary">Button 1</button></p>
+   <p><button class="btn-primary">Button 2</button></p>
+  </div>
+ </details>
 </cagov-accordion>
 <cagov-accordion>
-    <div class="cagov-accordion-card">
-        <button class="accordion-card-header accordion-alpha" type="button" aria-expanded="false">
-          <div class="accordion-title">Lorem ipsum 2</div>
-          <div class="plus-minus">
-            <cagov-plus>
-              <div class="accordion-icon" aria-hidden="true">
-                <svg viewbox="0 0 25 25">
-                  <title>Plus</title>
-                  <line x1="6" y1="12.5" x2="19" y2="12.5" fill="none" stroke="currentColor" stroke-width="6" stroke-linecap="round" vector-effect="non-scaling-stroke" />
-                  <line y1="6" x1="12.5" y2="19" x2="12.5" fill="none" stroke="currentColor" stroke-width="6" stroke-linecap="round" vector-effect="non-scaling-stroke" />
-                </svg>
-              </div>
-            </cagov-plus>
-            <cagov-minus>
-              <div class="accordion-icon" aria-hidden="true">
-                <svg viewbox="0 0 25 25">
-                  <title>Minus</title>
-                  <line x1="6" y1="12.5" x2="19" y2="12.5"  fill="none" stroke="currentColor" stroke-width="6" stroke-linecap="round" vector-effect="non-scaling-stroke" />
-                </svg>
-              </div>
-            </cagov-minus>
-          </div>
-        </button>
-        <div class="accordion-card-container" aria-hidden=" true" style="height: 0px;">
-          <div class="card-body">
-            <p>Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf
-              moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod.
-              Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda
-              shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea
-              proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim
-              aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.</p>
-          </div>
-        </div>
-      </div>
-  </cagov-accordion>
- </div>
- <div class="col-md-6">
-  <h3><label for="sample-accordion">Source Code:</label></h3>
-  <textarea id="sample-accordion" class="form-control" rows="10"
-   cols="80">
-
-<cagov-accordion>
-    <div class="cagov-accordion-card">
-      <button class="accordion-card-header accordion-alpha" type="button" aria-expanded="false">
-        <div class="accordion-title">Lorem ipsum</div>
-        <div class="plus-minus">
-          <cagov-plus>
-            <div class="accordion-icon" aria-hidden="true">
-              <svg viewbox="0 0 25 25">
-                <title>Plus</title>
-                <line x1="6" y1="12.5" x2="19" y2="12.5" fill="none" stroke="currentColor" stroke-width="6" stroke-linecap="round" vector-effect="non-scaling-stroke" />
-                <line y1="6" x1="12.5" y2="19" x2="12.5" fill="none" stroke="currentColor" stroke-width="6" stroke-linecap="round" vector-effect="non-scaling-stroke" />
-              </svg>
-            </div>
-          </cagov-plus>
-          <cagov-minus>
-            <div class="accordion-icon" aria-hidden="true">
-              <svg viewbox="0 0 25 25">
-                <title>Minus</title>
-                <line x1="6" y1="12.5" x2="19" y2="12.5"  fill="none" stroke="currentColor" stroke-width="6" stroke-linecap="round" vector-effect="non-scaling-stroke" />
-              </svg>
-            </div>
-          </cagov-minus>
-        </div>
-      </button>
-      <div class="accordion-card-container" aria-hidden=" true" style="height: 0px;">
-        <div class="card-body">
-          <p>Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf
-            moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod.
-            Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda
-            shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea
-            proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim
-            aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.</p>
-        </div>
-      </div>
-    </div>
+ <details>
+  <summary>Title 2 multiline lorem ipsum is useful because it has a more-or-less normal distribution of letters
+  </summary>
+  <div class="accordion-body">
+   <ul>
+    <li>Anim pariatur cliche reprehenderit</li>
+    <li>moon officia aute, non cupidatat</li>
+   </ul>
+  </div>
+ </details>
 </cagov-accordion>
 <cagov-accordion>
-    <div class="cagov-accordion-card">
-        <button class="accordion-card-header accordion-alpha" type="button" aria-expanded="false">
-          <div class="accordion-title">Lorem ipsum 2</div>
-          <div class="plus-minus">
-            <cagov-plus>
-              <div class="accordion-icon" aria-hidden="true">
-                <svg viewbox="0 0 25 25">
-                  <title>Plus</title>
-                  <line x1="6" y1="12.5" x2="19" y2="12.5" fill="none" stroke="currentColor" stroke-width="6" stroke-linecap="round" vector-effect="non-scaling-stroke" />
-                  <line y1="6" x1="12.5" y2="19" x2="12.5" fill="none" stroke="currentColor" stroke-width="6" stroke-linecap="round" vector-effect="non-scaling-stroke" />
-                </svg>
-              </div>
-            </cagov-plus>
-            <cagov-minus>
-              <div class="accordion-icon" aria-hidden="true">
-                <svg viewbox="0 0 25 25">
-                  <title>Minus</title>
-                  <line x1="6" y1="12.5" x2="19" y2="12.5"  fill="none" stroke="currentColor" stroke-width="6" stroke-linecap="round" vector-effect="non-scaling-stroke" />
-                </svg>
-              </div>
-            </cagov-minus>
-          </div>
-        </button>
-        <div class="accordion-card-container" aria-hidden=" true" style="height: 0px;">
-          <div class="card-body">
-            <p>Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf
-              moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod.
-              Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda
-              shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea
-              proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim
-              aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.</p>
-          </div>
-        </div>
-      </div>
-  </cagov-accordion></textarea>
- </div>
-</div>
+ <details>
+  <summary>Title 3 lorem ipsum dolor sit amet</summary>
+  <div class="accordion-body">
+   <p>moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod.</p>
+   <p>Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda</p>
+  </div>
+ </details>
+</cagov-accordion>
+
+<h3><label for="sample-accordion">Source Code:</label></h3>
+<textarea id="sample-accordion" class="form-control" rows="10"
+ cols="80"><cagov-accordion>
+ <details>
+  <summary>Title 1</summary>
+  <div class="accordion-body">
+   <p>A couple buttons are included inside this accordion to demonstrate that when the accordion is closed they are
+    automatically not in the keyboard focus order but when the accordion opens they become the next available elements
+    in the keyboard navigation sequence after the accordion's summary element.</p>
+   <p><button class="btn-primary">Button 1</button></p>
+   <p><button class="btn-primary">Button 2</button></p>
+  </div>
+ </details>
+</cagov-accordion>
+<cagov-accordion>
+ <details>
+  <summary>Title 2 multiline lorem ipsum is useful because it has a more-or-less normal distribution of letters
+  </summary>
+  <div class="accordion-body">
+   <ul>
+    <li>Anim pariatur cliche reprehenderit</li>
+    <li>moon officia aute, non cupidatat</li>
+   </ul>
+  </div>
+ </details>
+</cagov-accordion>
+<cagov-accordion>
+ <details>
+  <summary>Title 3 lorem ipsum dolor sit amet</summary>
+  <div class="accordion-body">
+   <p>moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod.</p>
+   <p>Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda</p>
+  </div>
+ </details>
+</cagov-accordion></textarea>
+
 <hr class="m-t-md" />
 
-<div class="row p-b-lg">
- <div class="col-md-6">
-  <h2>Accordion Side Menu</h2>
-  <p>
-   Accordion side menu is a vertical navigation component which apart from traditional, text
-   links, might embed icons, dropdowns, images or even forms. For more information and examples
-   visit <a href="navigation-sidebar.html">side menu navigation</a> page.
-  </p>
+
+<h2>Accordion Side Menu</h2>
+<p>
+ Accordion side menu is a vertical navigation component which apart from traditional, text
+ links, might embed icons, dropdowns, images or even forms. For more information and examples
+ visit <a href="navigation-sidebar.html">side menu navigation</a> page.
+</p>
 
 
-  <h2>Example:</h2>
-  <!-- Side navigation -->
+<h2>Example:</h2>
+<!-- Side navigation -->
 <div class="side-nav">
     <div data-aria-accordion data-multi data-transition data-default="none">
 
@@ -694,10 +612,9 @@
                 aria-hidden="true"></span> Regular link 2</a>
     </div>
 </div>
- </div>
- <div class="col-md-6">
-  <h3><label for="sample-side-menu">Source Code:</label></h3>
-  <textarea id="sample-side-menu" class="form-control" rows="10" cols="80"><!-- Side navigation -->
+
+<h3><label for="sample-side-menu">Source Code:</label></h3>
+<textarea id="sample-side-menu" class="form-control" rows="10" cols="80"><!-- Side navigation -->
 <div class="side-nav">
     <div data-aria-accordion data-multi data-transition data-default="none">
 
@@ -761,19 +678,17 @@
     </div>
 </div>
                                                  </textarea>
- </div>
-</div>
 
-<div class="row">
- <div class="col-md-6">
-  <h2>Accordion List</h2>
-  <p>
-   Accordion lists are commonly used for things like FAQ's where the title exposes the
-   description in an expanding menu fashion.
-   Accordion List uses HTML5 roles, some ARIA properties, and IDs for accessibility.
-  </p>
-  <h2>Example:</h2>
-  <ol data-aria-accordion data-multi data-transition data-default="none">
+
+
+<h2>Accordion List</h2>
+<p>
+ Accordion lists are commonly used for things like FAQ's where the title exposes the
+ description in an expanding menu fashion.
+ Accordion List uses HTML5 roles, some ARIA properties, and IDs for accessibility.
+</p>
+<h2>Example:</h2>
+<ol data-aria-accordion data-multi data-transition data-default="none">
   <li>
     <h3 data-aria-accordion-heading>
       Consectetur Fusce Euismod
@@ -806,10 +721,9 @@
     </div>
   </li>
 </ol>
- </div>
- <div class="col-md-6">
-  <h3><label for="sample-accordion-list">Source Code:</label></h3>
-  <textarea id="sample-accordion-list" class="form-control" rows="10" cols="80"><ol data-aria-accordion data-multi data-transition data-default="none">
+
+<h3><label for="sample-accordion-list">Source Code:</label></h3>
+<textarea id="sample-accordion-list" class="form-control" rows="10" cols="80"><ol data-aria-accordion data-multi data-transition data-default="none">
   <li>
     <h3 data-aria-accordion-heading>
       Consectetur Fusce Euismod
@@ -843,8 +757,6 @@
   </li>
 </ol>
 </textarea>
- </div>
-</div>
 				</div>
 			</div>
 		</div>
