@@ -319,27 +319,27 @@
 			
 
 <nav aria-label="You are here">
-	<ol class="breadcrumb">
-		<li><a href="index.html" title="Home page">Home</a></li>
-		<li class="active">Getting Started</li>
-	</ol>
+ <ol class="breadcrumb">
+  <li><a href="index.html" title="Home page">Home</a></li>
+  <li class="active">Getting Started</li>
+ </ol>
 </nav>
 
 <h1>Getting Started with California State Template</h1>
 
 <p>The following page includes examples of applying California State Template css, js and includes files to a
-	web page. Here are the steps you need to quickly set you your site with California State Template.
+ web page. Here are the steps you need to quickly set you your site with California State Template.
 </p>
-<p><span class="badge label-info">Note:</span> Load your website faster by using <a href="/cdn.html">State Template
-		CDN</a></p>
+<p><span class="badge label-primary">Note:</span> Load your website faster by using <a href="/cdn.html">State Template
+  CDN</a></p>
 <h2>Contents</h2>
 <p>To get started you need to download Californis State Template from <a
-		href="https://github.com/Office-of-Digital-Innovation/California-State-Template" target="_blank">GitHub</a>.
-	Once downloaded, unzip the compressed folder and you’ll see
-	something like this:</p>
+  href="https://github.com/Office-of-Digital-Innovation/California-State-Template" target="_blank">GitHub</a>.
+ Once downloaded, unzip the compressed folder and you’ll see
+ something like this:</p>
 <div class="row">
-	<div class="col-md-6">
-		<pre><code class="language-plaintext" data-lang="plaintext">/State Web Template/
+ <div class="col-md-6">
+  <pre><code class="language-plaintext" data-lang="plaintext">/State Web Template/
 ├── /_site/
 └── /pages/
   ├── index.html
@@ -363,28 +363,28 @@
 ├── package.json
 └── rollup.config.js
 			</code></pre>
-	</div>
-	<div class="col-md-6">
+ </div>
+ <div class="col-md-6">
 
 
-		<ul class="list-standout">
-			<li><strong>_site</strong> – This folder contains website's output files.</li>
-			<li><strong>pages</strong> – Contains website's input pages that a developer or e content editor can edit.
-			</li>
-			<li><strong>src</strong> – The &ldquo;src&rdquo; folder contains includes, modules, fonts, images, SCSS and
-				JavaScript files.</li>
-			<li><strong>images</strong> – This folder contains all the images used by the State
-				Template.</li>
-			<li><strong>js</strong> – Contains JavaScript files that are used by
-				the State Template. Third party JavaScript libraries are also included in this folder.
-			</li>
-			<li><strong>_includes</strong> – This folder contains the common template components used on
-				various pages in the State Template (for example, header, footers, navigation, etc.).
-			</li>
-		</ul>
-		<p></p>
+  <ul class="list-standout">
+   <li><strong>_site</strong> – This folder contains website's output files.</li>
+   <li><strong>pages</strong> – Contains website's input pages that a developer or e content editor can edit.
+   </li>
+   <li><strong>src</strong> – The &ldquo;src&rdquo; folder contains includes, modules, fonts, images, SCSS and
+    JavaScript files.</li>
+   <li><strong>images</strong> – This folder contains all the images used by the State
+    Template.</li>
+   <li><strong>js</strong> – Contains JavaScript files that are used by
+    the State Template. Third party JavaScript libraries are also included in this folder.
+   </li>
+   <li><strong>_includes</strong> – This folder contains the common template components used on
+    various pages in the State Template (for example, header, footers, navigation, etc.).
+   </li>
+  </ul>
+  <p></p>
 
-	</div>
+ </div>
 </div>
 <p>For more information about State Template's structure go to our <a href="structure.html">Structure</a> page.
 </p>
@@ -394,87 +394,87 @@
 
 <h3>Download Node.js</h3>
 <p>Make sure your local machine has Node installed. To see if Node is installed, open the Windows
-	Command Prompt,
-	Powershell or a similar command line tool, and type:</p>
+ Command Prompt,
+ Powershell or a similar command line tool, and type:</p>
 <pre>node -v</pre>
 <p>This should print the version number. Othervise you can download it from <a href="https://nodejs.org/en/download/"
-		target="_blank">nodejs.org</a></p>
+  target="_blank">nodejs.org</a></p>
 
 <h3>Using npm to start the website locally</h3>
 <p>Once Node is installed, and once you are in your State Web Template local directory run following npm
-	commands to
-	build and run the website locally:</p>
+ commands to
+ build and run the website locally:</p>
 
 <div class="row">
-	<div class="col-md-6">
-		<pre>npm install</pre>
-	</div>
-	<div class="col-md-6">
-		This command will install all the nessesary npm packages to your local website directory.
-	</div>
+ <div class="col-md-6">
+  <pre>npm install</pre>
+ </div>
+ <div class="col-md-6">
+  This command will install all the nessesary npm packages to your local website directory.
+ </div>
 </div>
 <div class="row">
-	<div class="col-md-6">
-		<pre>npm run build</pre>
-	</div>
-	<div class="col-md-6">
-		This command will build and generate website's pages, css and js files.
-	</div>
+ <div class="col-md-6">
+  <pre>npm run build</pre>
+ </div>
+ <div class="col-md-6">
+  This command will build and generate website's pages, css and js files.
+ </div>
 </div>
 <div class="row">
-	<div class="col-md-6">
-		<pre>npm run start</pre>
-	</div>
-	<div class="col-md-6">
-		This command will run the website in your http://localhost:8080/ and watch for any updates you
-		are making to
-		webpages or scss and js files.
-	</div>
+ <div class="col-md-6">
+  <pre>npm run start</pre>
+ </div>
+ <div class="col-md-6">
+  This command will run the website in your http://localhost:8080/ and watch for any updates you
+  are making to
+  webpages or scss and js files.
+ </div>
 </div>
 <h3>Output</h3>
 <p>All the web content is generated into <code>/_site/</code> folder, which is website's final output
-	folder.</p>
+ folder.</p>
 
 
 
 <h2>CSS</h2>
 <p>State Web Templagte core css files are generated from SASS files that can be found in <code>/src/scss/</code>
-	folder. Multiple SASS files are compiled during the build process into core output CSS files that
-	are generated in <code>/_site/css/</code> folder. A State Web Template webpage requires these two CSS
-	files:</p>
+ folder. Multiple SASS files are compiled during the build process into core output CSS files that
+ are generated in <code>/_site/css/</code> folder. A State Web Template webpage requires these two CSS
+ files:</p>
 <pre>
 <span class="text-accent-p2">&lt;link</span> <span class="text-info">rel=</span><span class="text-accent7">"stylesheet"</span> <span class="text-info">href=</span><span class="text-accent7">"/css/cagov.core.css"</span><span class="text-accent-p2">&gt;</span>
 <span class="text-accent-p2">&lt;link</span> <span class="text-info">rel=</span><span class="text-accent7">"stylesheet"</span> <span class="text-info">href=</span><span class="text-accent7">"/css/colorscheme-oceanside.css"</span><span class="text-accent-p2">&gt;</span></pre>
 <p>If your website doesn't use a site generator you can simply copy-paste the stylesheet links into your
-	<code>&lt;head&gt;</head></code> before all other stylesheets to load our CSS.
-	please note that you can replace <code>colorscheme-oceanside.css</code> with color scheme file of
-	your choice.
+ <code>&lt;head&gt;</head></code> before all other stylesheets to load our CSS.
+ please note that you can replace <code>colorscheme-oceanside.css</code> with color scheme file of
+ your choice.
 </p>
 
 <h2>JS</h2>
 <p>
-	A State Web Template webpage requires <code>cagov.core.js</code> JavaScript file to
-	function. That file is generated by rollup.js processor from multiple JavaScript files that can be found in
-	<code>/src/js/</code> folder. If your website doesn't use a site generator place the following
-	near the end of your pages, right before the closing
-	<code>&lt;/body&gt;</code> tag.
+ A State Web Template webpage requires <code>cagov.core.js</code> JavaScript file to
+ function. That file is generated by rollup.js processor from multiple JavaScript files that can be found in
+ <code>/src/js/</code> folder. If your website doesn't use a site generator place the following
+ near the end of your pages, right before the closing
+ <code>&lt;/body&gt;</code> tag.
 </p>
 <div class="row">
-	<div class="col-6">
-		<pre>
+ <div class="col-6">
+  <pre>
 <span class="text-accent-p2">&lt;script</span> <span class="text-info">src=</span><span class="text-accent7">"/js/cagov.core.js"</span><span class="text-accent-p2">&gt;&lt;/script&gt;</span></pre>
-	</div>
+ </div>
 </div>
-<p><span class="badge label-info">Note:</span> Starting from release 5.6.0 State Template
-	stopped using any
-	jQuery libraries, or any components that are using jQuery.</p>
+<p><span class="badge label-primary">Note:</span> Starting from release 5.6.0 State Template
+ stopped using any
+ jQuery libraries, or any components that are using jQuery.</p>
 
 
 <h2>Clean Starter Template</h2>
 <p>
-	Be sure to have your pages set up with the latest design and development standards.
-	That means using an HTML5 doctype and including a viewport meta tag for proper responsive behaviors.
-	Put it all together and your pages should look like this:
+ Be sure to have your pages set up with the latest design and development standards.
+ That means using an HTML5 doctype and including a viewport meta tag for proper responsive behaviors.
+ Put it all together and your pages should look like this:
 </p>
 
 
@@ -501,15 +501,15 @@
   <span class="text-accent-p2">&lt;/body&gt;</span>
 <span class="text-accent-p2">&lt;/html&gt;</span></pre>
 
-<p><span class="badge label-info">Note:</span> Template above does not include any State Template
-	content, modules or server side includes.</p>
+<p><span class="badge label-primary">Note:</span> Template above does not include any State Template
+ content, modules or server side includes.</p>
 
 <h2>Using Includes</h2>
 <p>
-	Another way to set up the Californisa State Template web page is by using eleventy includes. Since 6.0 State Web
-	Template is using eleventy framework to build and generate webpages the most essential
-	components such as page headers, footers, navigation are already included in our webpage structure.
-	Here is code example of our base.njk layout page that is using essential njk includes:
+ Another way to set up the Californisa State Template web page is by using eleventy includes. Since 6.0 State Web
+ Template is using eleventy framework to build and generate webpages the most essential
+ components such as page headers, footers, navigation are already included in our webpage structure.
+ Here is code example of our base.njk layout page that is using essential njk includes:
 </p>
 <pre>
 <span class="text-success">&lt;!doctype html&gt;</span>
@@ -548,8 +548,9 @@
    <span class="text-accent-p2">&lt;/body&gt;</span>
 <span class="text-accent-p2">&lt;/html&gt;</span>
 </pre>
-<p><span class="badge label-info">Note:</span> Path to the includes will be relative to the directory of your base.njk
-	page.</p>
+<p><span class="badge label-primary">Note:</span> Path to the includes will be relative to the directory of your
+ base.njk
+ page.</p>
 
 		</main>
 	</div>
