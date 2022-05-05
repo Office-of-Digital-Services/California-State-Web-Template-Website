@@ -3,11 +3,18 @@
    /source/scss/colorscheme/cs-tabs.scss
 ----------------------------------------- */
 
-
 .tab-group {
-    background:$nav-tabs-active-link-hover-bg;
-    
-    .nav-tabs {
-        background:$panel-default-header-bg;
-    }
+ background: $nav-tabs-active-link-hover-bg;
+
+ .nav-tabs {
+  background: $panel-default-header-bg;
+ }
+}
+
+.tabs {
+ [role="tablist"] [aria-selected] {
+  &::after {
+   border-color: $color-p1;
+  }
+ }
 }
