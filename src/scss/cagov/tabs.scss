@@ -3,250 +3,261 @@
 ----------------------------------------- */
 
 .tab-group {
+ position: relative;
+ border: 1px solid $nav-tabs-border-color;
+
+ @media (max-width: $screen-xs-max) {
+  border: none;
+ }
+
+ > [class^="ca-gov-icon-"] {
+  @include hide();
+ }
+
+ .nav-tabs {
+  border-radius: 0;
+
+  li:first-child a,
+  li:first-child a:hover,
+  li:first-child a:focus,
+  li:first-child a:active {
+   border-left: 0 !important;
+  }
+
+  li {
+   &.active {
+    border-top: 0;
+   }
+
+   > a {
+    padding: 3px calc($grid-gutter-width / 2);
+    border-top: 0;
     position: relative;
-    border: 1px solid $nav-tabs-border-color;
+    display: block;
+    color: $link-color;
 
-    @media (max-width: $screen-xs-max) {
-        border: none;
+    &,
+    &:hover {
+     border: 1px solid #f5f5f5;
+     border-top: none !important;
+     text-decoration: none;
+     border-bottom: 1px solid #dee2e6;
     }
+   }
+  }
+ }
 
-    > [class^="ca-gov-icon-"] {
-        @include hide();
-    }
-
-    .nav-tabs {
-        border-radius: 0;
-
-        li:first-child a,
-        li:first-child a:hover,
-        li:first-child a:focus,
-        li:first-child a:active {
-            border-left: 0 !important;
-        }
-
-        li {
-            &.active {
-                border-top: 0;
-            }
-
-            > a {
-                padding: 3px calc($grid-gutter-width / 2);
-                border-top: 0;
-                position: relative;
-                display: block;
-                color: $link-color;
-
-                &,
-                &:hover {
-                    border: 1px solid #f5f5f5;
-                    border-top: none !important;
-                    text-decoration: none;
-                    border-bottom: 1px solid #dee2e6;
-                }
-            }
-        }
-    }
-
-    .tab-pane {
-        padding: calc($grid-gutter-width / 2);
-    }
+ .tab-pane {
+  padding: calc($grid-gutter-width / 2);
+ }
 }
 
 /* Bottom Tabs */
 // If left and right solutions are required see: http://www.bootply.com/74926
 .tabs-bottom {
-    .tab-content {
-        padding-bottom: 30px; // Approx height of tabs
-    }
+ .tab-content {
+  padding-bottom: 30px; // Approx height of tabs
+ }
 
-    .nav-tabs {
-        position: absolute;
-        bottom: 0;
-        width: 100%;
-        border-bottom: none;
-        margin-bottom: 0;
+ .nav-tabs {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  border-bottom: none;
+  margin-bottom: 0;
 
-        > li {
-            margin-bottom: 0;
-            display: block;
-        }
-    }
+  > li {
+   margin-bottom: 0;
+   display: block;
+  }
+ }
 }
 
 .panel-group.responsive {
-    margin-bottom: 0;
+ margin-bottom: 0;
 }
 
 /* Responsive tabs bootstrap 4 fix */
 @mixin d-none {
-    display: none !important;
+ display: none !important;
 }
 
 @mixin d-block {
-    display: block !important;
+ display: block !important;
 }
 
 @mixin d-flex {
-    display: flex !important;
+ display: flex !important;
 }
 
 .panel-group {
-    &.responsive {
-        &.hidden-xs.hidden-sm {
-            @include media-breakpoint-down(sm) {
-                @include d-none;
-            }
+ &.responsive {
+  &.hidden-xs.hidden-sm {
+   @include media-breakpoint-down(sm) {
+    @include d-none;
+   }
 
-            @include media-breakpoint-up(md) {
-                @include d-block;
-            }
-        }
+   @include media-breakpoint-up(md) {
+    @include d-block;
+   }
+  }
 
-        &.visible-xs.visible-sm {
-            @include media-breakpoint-down(sm) {
-                @include d-block;
-            }
+  &.visible-xs.visible-sm {
+   @include media-breakpoint-down(sm) {
+    @include d-block;
+   }
 
-            @include media-breakpoint-up(md) {
-                @include d-none;
-            }
-        }
-    }
+   @include media-breakpoint-up(md) {
+    @include d-none;
+   }
+  }
+ }
 }
 
 // In Tabs bootstap 4 uses active class in a elements (not parent li)
 .nav-tabs > li {
-    margin-bottom: -1px;
-    margin-left: 1px;
+ margin-bottom: -1px;
+ margin-left: 1px;
 
-    &:first-child {
-        margin-left: 0;
-    }
+ &:first-child {
+  margin-left: 0;
+ }
 }
 
 .nav-tabs > li > a.active,
 .nav-tabs > li > a.active:hover {
-    color: #555555;
-    background-color: #fff;
-    border: 1px solid #ddd;
-    border-bottom-color: transparent;
-    cursor: default;
-    border-bottom: 1px solid #fff;
+ color: #555555;
+ background-color: #fff;
+ border: 1px solid #ddd;
+ border-bottom-color: transparent;
+ cursor: default;
+ border-bottom: 1px solid #fff;
 }
 
 .nav-tabs > li > a:hover {
-    color: #555555;
+ color: #555555;
 }
 
 .nav-tabs > li > a.active:focus {
-    outline: solid 2px $outline-default-color !important;
+ outline: solid 2px $outline-default-color !important;
 }
 
 // Rmoving :after content from bootstrap4 tabs.
 
 .nav-tabs {
-    .nav-item {
-        margin-left: 2px;
+ .nav-item {
+  margin-left: 2px;
 
-        &:hover {
-            background-color: transparent;
-        }
+  &:hover {
+   background-color: transparent;
+  }
 
-        &:first-child {
-            margin-left: 0;
-        }
+  &:first-child {
+   margin-left: 0;
+  }
 
-        &::after {
-            display: none;
-        }
-    }
+  &::after {
+   display: none;
+  }
+ }
 }
 
 /* Responsive tabs*/
 
 .responsive {
-    .nav-tabs {
-        display: none;
-    }
+ .nav-tabs {
+  display: none;
+ }
 }
 
 @media (min-width: $screen-sm-min) {
-    .responsive {
-        .nav-tabs {
-            display: flex;
-        }
+ .responsive {
+  .nav-tabs {
+   display: flex;
+  }
 
-        &.tab-group .card {
-            border: none;
-            padding: 0;
-            margin-bottom: 0;
-            background-color: transparent;
+  &.tab-group .card {
+   border: none;
+   padding: 0;
+   margin-bottom: 0;
+   background-color: transparent;
 
-            .card-header {
-                display: none;
-            }
+   .card-header {
+    display: none;
+   }
 
-            .collapse {
-                display: block;
-            }
-        }
-    }
+   .collapse {
+    display: block;
+   }
+  }
+ }
 }
 
 @media (max-width: $screen-xs-max) {
-    .responsive .tab-pane {
-        display: block !important;
-        opacity: 1 !important;
-        padding: 0 !important;
-    }
+ .responsive .tab-pane {
+  display: block !important;
+  opacity: 1 !important;
+  padding: 0 !important;
+ }
 }
 
 /* ACCESSIBLE tabs*/
 
 .tabs {
-    position: relative;
+ position: relative;
 
-    [role="tablist"] {
-        padding: 0;
-        margin-bottom: 0;
-    }
+ [role="tablist"] {
+  padding: 0;
+  margin-bottom: 0;
+ }
 
-    [role="tablist"] li,
-    [role="tablist"] a {
-        display: inline-block;
-    }
+ [role="tablist"] li,
+ [role="tablist"] a {
+  display: inline-block;
+ }
 
-    [role="tablist"] a {
-        text-decoration: none;
-        padding: 7px 15px;
-        margin: 1px 1px;
+ [role="tablist"] a {
+  text-decoration: none;
+  padding: 7px 15px;
+  margin: 0;
+  font-weight: 600;
 
-        &:focus {
-            outline-offset: -2px;
-        }
-    }
+  &:focus {
+   @include outline(2px);
+   outline-offset: -2px;
+  }
+ }
 
-    [role="tablist"] [aria-selected] {
-        border: 1px solid $nav-tabs-border-color;
-        background: #fff;
-        border-bottom: 0;
-        position: relative;
-        margin: 0 0;
-        // top: 1px;
-    }
+ [role="tablist"] [aria-selected] {
+  border: none;
+  position: relative;
+  margin: 0 0;
+  color: $black;
+  &::after {
+   left: 0;
+   bottom: 0;
+   position: absolute;
+   content: "";
+   width: 100%;
+   border-bottom: 3px solid;
+  }
+ }
 
-    [role="tabpanel"] {
-        border: 1px solid $nav-tabs-border-color;
-        padding: 1.1rem;
-        margin-top: -2px;
+ [role="tabpanel"] {
+  border: 1px solid $nav-tabs-border-color;
+  padding: 1.1rem;
+  margin-top: -2px;
+  a:focus {
+   @include outline(2px);
+  }
 
-        &:focus {
-            @include outline(2px);
-            outline-offset: -2px;
-        }
-    }
+  &:focus {
+   @include outline(2px);
+   outline-offset: -2px;
+  }
+ }
 
-    [role="tabpanel"] * + * {
-        margin-top: 0.75rem;
-    }
+ [role="tabpanel"] * + * {
+  margin-top: 0.75rem;
+ }
 }
