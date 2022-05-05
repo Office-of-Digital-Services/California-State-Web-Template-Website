@@ -18209,22 +18209,34 @@ html {
 .tabs [role=tablist] a {
   text-decoration: none;
   padding: 7px 15px;
-  margin: 1px 1px;
+  margin: 0;
+  font-weight: 600;
 }
 .tabs [role=tablist] a:focus {
+  outline: solid 2px #2ea3f2 !important;
   outline-offset: -2px;
 }
 .tabs [role=tablist] [aria-selected] {
-  border: 1px solid #dee2e6;
-  background: #fff;
-  border-bottom: 0;
+  border: none;
   position: relative;
   margin: 0 0;
+  color: #000;
+}
+.tabs [role=tablist] [aria-selected]::after {
+  left: 0;
+  bottom: 0;
+  position: absolute;
+  content: "";
+  width: 100%;
+  border-bottom: 3px solid;
 }
 .tabs [role=tabpanel] {
   border: 1px solid #dee2e6;
   padding: 1.1rem;
   margin-top: -2px;
+}
+.tabs [role=tabpanel] a:focus {
+  outline: solid 2px #2ea3f2 !important;
 }
 .tabs [role=tabpanel]:focus {
   outline: solid 2px #2ea3f2 !important;
