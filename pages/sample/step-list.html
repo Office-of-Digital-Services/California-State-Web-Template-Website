@@ -1,0 +1,177 @@
+﻿---
+title: Step List
+layout: components.njk
+permalink: "sample/step-list.html"
+---
+<nav aria-label="You are here">
+ <ol class="breadcrumb">
+  <li><a href="../index.html" title="Home page">Home</a></li>
+  <li><a href="/sample/" title="Components landing page">Components</a></li>
+  <li class="active">Step List</li>
+ </ol>
+</nav>
+
+<div class="cagov-content content-cell">
+	<h1 class="page-title">Step list</h1>
+
+	<p>The step list is a numbered list. It has:</p>
+	<ul>
+		<li>A number for each item in the list, enclosed in a circle</li>
+		<li>Lines connecting all the circled numbers</li>
+		<li>A title for each step</li>
+		<li>Detail for each step
+			<ul>
+				<li>You can use hyperlinks in the detail space</li>
+				<li>You cannot use bullet points in the detail space</li>
+			</ul>
+		</li>
+	</ul>
+	<p>State processes can be complicated and opaque. The step list shows all the steps in a process. The step list makes these processes visible, even when some steps do not require people to act.</p>
+	<h2 id="when-and-how-to-use-it" tabindex="-1">When and how to use it</h2>
+	<p>Use the step list when you need more than one sentence to explain the steps in a process.</p>
+	<p>Introduce the step list with a heading so people know what process the step list describes. You can add a paragraph block between the heading and the step list, but this is optional. Keep this paragraph concise.</p>
+	<p>The step list emphasizes important processes. Use it sparingly on your website. If you have a process where most steps can be explained in one sentence, use a regular numbered list instead.</p>
+	<h3 id="how-not-to-use-it" tabindex="-1">How not to use it</h3>
+	<p>Do not use the step list to create a list of items that are not ordered. Use bullet points instead.</p>
+	<h2 id="demo-and-sample-markup" tabindex="-1">Demo and sample markup</h2>
+	<html-preview>
+		<cagov-code-preview data-instructions="">
+			<div class="code-preview">
+				<div class="code-preview-demo">
+
+                    {% include "../../src/_includes/modules/step-list.html" %}
+
+ 				</div>
+				<div class="code-block">
+                    <h3><label for="sample-accordion-list">Source Code:</label></h3>
+                    <textarea id="sample-accordion-list" class="form-control" rows="10" cols="80">{% include "../../src/_includes/modules/step-list.html" %}
+                    </textarea>
+
+				</div>
+			</div>
+		</cagov-code-preview>
+	</html-preview>
+	<h2 id="specs" tabindex="-1">Specs</h2>
+	<div class="cagov-table">
+		<table>
+			<thead>
+				<tr>
+					<th>Property</th>
+					<th>Value</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>Machine name</td>
+					<td>ds-step-list</td>
+				</tr>
+				<tr>
+					<td>JavaScript</td>
+					<td>no</td>
+				</tr>
+				<tr>
+					<td>SCSS</td>
+					<td>./src/index.scss</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+	<h2 id="project-installation" tabindex="-1">Project installation</h2>
+	<p>The instructions assume familiarity with 
+		<a href="https://npmjs.com">npm
+		</a> package management tool and 
+		<a href="https://sass-lang.com/">Sass
+		</a>.</p>
+	<ol>
+		<li>Include 
+			<strong>SCSS</strong> in your compiler.</li>
+		<li>Add the 
+			<strong>sample markup</strong> from the component to your HTML.</li>
+		<li>Adjust text as needed.</li>
+	</ol>
+	<h2 id="css-variables" tabindex="-1">CSS variables</h2>
+	<p>The following 
+		<a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_custom_properties">CSS variables
+		</a> are used in this component:</p>
+	<ul>
+		<li>
+			<code>--accent2-300</code>
+		</li>
+		<li>
+			<code>--font-size-5</code>
+		</li>
+		<li>
+			<code>--font-size-2</code>
+		</li>
+		<li>
+			<code>--font-weight-7</code>
+		</li>
+		<li>
+			<code>--font-weight-5</code>
+		</li>
+		<li>
+			<code>--font-lineheight-3</code>
+		</li>
+		<li>
+			<code>--s-2</code>
+		</li>
+	</ul>
+	<p>All CSS variables define their own fallback value so you do not have to use additional CSS unless you want to change them. You may define your own value for the variable by adding your own style rules. Here is an example defining the global hex value for a CSS variable named “--primary-700”:</p>
+	<div class="code-block">
+		<p class="code-block-language">CSS</p>
+		<pre>
+			<code tabindex="0" class="hljs">
+				<span class="hljs-selector-pseudo">:root</span> {
+				<span class="hljs-attr">--primary-700</span>: 
+				<span class="hljs-number">#165ac2</span>;
+}
+			</code>
+		</pre>
+	</div>
+	<h2 id="accessibility" tabindex="-1">Accessibility</h2>
+	<h3 id="standard-accessibility-review" tabindex="-1">Standard accessibility review</h3>
+	<p>As a component in Alpha status, this component must pass the following accessibility reviews every time a new version is published:</p>
+	<ul>
+		<li>Tested with the 
+			<a href="https://www.deque.com/axe/">axe
+			</a> accessibility tool and passes all automated 
+			<a href="https://www.w3.org/TR/WCAG21/">WCAG
+			</a> Level AA checks</li>
+		<li>Reviewed with the 
+			<a href="https://www.apple.com/voiceover/info/guide/_1121.html">VoiceOver
+			</a> screen reader on desktop</li>
+		<li>Verified keyboard navigation and that all actionable elements of the component are reachable via keyboard commands only</li>
+		<li>Reviewed component layout on a variety of screen sizes</li>
+	</ul>
+	<h2 id="progressive-enhancement" tabindex="-1">Progressive enhancement</h2>
+	<p>This is an HTML- and CSS-only component. JavaScript is not required. It uses 
+		<a href="https://developer.mozilla.org/en-US/docs/Web/CSS/var()#syntax">CSS variables
+		</a> to inherit design token values. Token definitions are not required because these style rules provide fallback values.</p>
+	<h2 id="content-model" tabindex="-1">Content model</h2>
+	<p>This component uses the 
+		<code>ol.cagov-step-list</code> class. It will work on 
+		<code>ul</code> elements, but would not be semantically correct. Use 
+		<code>ol</code> with this component.</p>
+	<h2 id="contributor%2Fdeveloper-documentation" tabindex="-1">Contributor/developer documentation</h2>
+	<ul>
+		<li>
+			<p>
+				<a href="https://github.com/cagov/design-system/blob/main/components/README.md">Component information
+				</a>
+			</p>
+		</li>
+		<li>
+			<p>
+				<a href="https://www.notion.so/odi-engineering/Component-documentation-template-2da3975cc0954174ace43004d151451c">Component README template
+				</a>
+			</p>
+		</li>
+		<li>
+			<p>
+				<a href="https://github.com/cagov/design-system/blob/main/components/UNIT-TESTS.md">Unit tests
+				</a>
+			</p>
+		</li>
+	</ul>
+</div>
+
