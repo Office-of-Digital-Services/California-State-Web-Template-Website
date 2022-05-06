@@ -6,207 +6,226 @@ colorscheme: "/css/colorscheme-shasta.css"
 ---
 
 <div class="container p-t-md">
-    <nav aria-label="You are here">
-        <ol class="breadcrumb">
-            <li><a href="../index.html" title="Home page">Home</a></li>
-            <li><a href="color-schemes.html" title="Color schemes landing page">Color Schemes</a></li>
-            <li class="active">Shasta</li>
-        </ol>
-    </nav>
-</div>
-<div class="section">
-    <!-- Content Demonstration -->
-    <div class="container">
-        <h1>Shasta Theme</h1>
-        <h2>Theme Main Colors</h2>
+ <div class="row">
+  <div class="col-md-3" role="complementary">
+   <!-- Side navigation -->
+   <nav aria-label="List of color schemes">
+    <h3 class="h4 m-t-0">Color Schemes</h3>
+    <ul class="list-navigation">
+     <li><a href="/sample/colorscheme-delta.html">Delta theme</a></li>
+     <li><a href="/sample/colorscheme-eureka.html">Eureka theme</a></li>
+     <li><a href="/sample/colorscheme-mono.html">Mono theme</a></li>
+     <li><a href="/sample/colorscheme-oceanside.html">Oceanside theme</a></li>
+     <li><a href="/sample/colorscheme-orangecounty.html">Orange County theme</a></li>
+     <li><a href="/sample/colorscheme-pasorobles.html">Paso Robles theme</a></li>
+     <li><a href="/sample/colorscheme-sacramento.html">Sacramento theme</a></li>
+     <li><a href="/sample/colorscheme-santabarbara.html">Santa Barbara theme</a></li>
+     <li><a href="/sample/colorscheme-santacruz.html">Santa Cruz theme</a></li>
+     <li class="active"><a href="/sample/colorscheme-shasta.html">Shasta theme</a></li>
+     <li><a href="/sample/colorscheme-sierra.html">Sierra theme</a></li>
+     <li><a href="/sample/colorscheme-trinity.html">Trinity theme</a></li>
+    </ul>
+   </nav>
+  </div>
+  <div class="col-md-9">
+   <nav aria-label="You are here">
+    <ol class="breadcrumb">
+     <li><a href="../index.html" title="Home page">Home</a></li>
+     <li><a href="color-schemes.html" title="Color schemes landing page">Color Schemes</a></li>
+     <li class="active">Shasta</li>
+    </ol>
+   </nav>
 
-        <div class="group m-b-lg text-center font-size-14">
-            <div class="quarter">
-                <div class="outer m-auto width-80">
-                    <div class="height-80 shadow" style="border:1px solid #c58f2f;background-color:#e7a126;">
-                        <div class="color" style="background-color:#fbad23;"></div>
-                    </div>
-                </div>
-                <div class="caption">
-                    <h3 class="h4">.color-highlight<br />@color-p1</h3>HEX: #fbad23<br>RGB: 251,173,35
-                </div>
-            </div>
-            <div class="quarter">
-                <div class="outer m-auto width-80">
-                    <div class="height-80 shadow" style="border:1px solid #284139;background-color:#355d50;">
-                        <div class="color" style="background-color:#336c39;"></div>
-                    </div>
-                </div>
-                <div class="caption">
-                    <h3 class="h4">.color-primary<br />@color-p2</h3>HEX: #336c39<br />RGB: 51,108,57
-                </div>
-            </div>
+   <h1>Shasta Theme</h1>
+   <h2>Theme Main Colors</h2>
 
-            <div class="quarter">
-                <div class="outer m-auto width-80">
-                    <div class="height-80 shadow" style="border:1px solid #122a2a;background-color:#143939;">
-                        <div class="color" style="background-color:#3c4543;"></div>
-                    </div>
-                </div>
-                <div class="caption">
-                    <h3 class="h4">.color-standout<br />@color-p3</h3>HEX: #3c4543<br />RGB: 60,69,67
-                </div>
-            </div>
-            <div class="quarter">
-                <div class="outer m-auto width-80">
-                    <div class="height-80 shadow" style="border:1px solid #ceded8;background-color:#dbece6;">
-                        <div class="color" style="background-color:#effaf6;"></div>
-                    </div>
-                </div>
-                <div class="caption">
-                    <h3 class="h4">.color-s1<br />@color-s1</h3>HEX: #effaf6<br />RGB: 239,250,246
-                </div>
-            </div>
-        </div>
-
-
-        <div class="card card-understated">
-            <div class="card-heading">
-                <h2 class="h4"><span class="ca-gov-icon-info"></span> Theme Colors Customization</h2>
-            </div>
-            <div class="card-body">
-                <p>
-                    There are two ways to customize theme main colors. One way is to change primary and
-                    secondary theme color variables
-                    in the colorscheme-[yourcolorshceme].scss file. This method will require you to
-                    re-compile the state template, you
-                    can find instructions in the readme file. After the compilation you will have updated
-                    colorscheme-[yourcolorshceme].css file.
-                </p>
-
-                <p>
-                    Another way is to manually find and replace all main theme colors and their variations
-                    in colorscheme-[yourcolorshceme].css.
-                    Main theme colors classes will be listed at the top of the CSS file. You can copy their
-                    values and use find/replace feature
-                    in your web editor software to replace all those colors references with your custom
-                    colors throughout entire css file.
-                </p>
-
-                <p>
-                    <span class="font-size-sm"><strong>Note:</strong> Before changing your colors make sure
-                        that your custom theme colors have sufficient color cotrast ratios.</span>
-                </p>
-            </div>
-        </div>
-
+   <div class="group m-b-lg text-center font-size-14">
+    <div class="quarter">
+     <div class="outer m-auto width-80">
+      <div class="height-80 shadow" style="border:1px solid #c58f2f;background-color:#e7a126;">
+       <div class="color" style="background-color:#fbad23;"></div>
+      </div>
+     </div>
+     <div class="caption">
+      <h3 class="h4">.color-highlight<br />@color-p1</h3>HEX: #fbad23<br>RGB: 251,173,35
+     </div>
     </div>
+    <div class="quarter">
+     <div class="outer m-auto width-80">
+      <div class="height-80 shadow" style="border:1px solid #284139;background-color:#355d50;">
+       <div class="color" style="background-color:#336c39;"></div>
+      </div>
+     </div>
+     <div class="caption">
+      <h3 class="h4">.color-primary<br />@color-p2</h3>HEX: #336c39<br />RGB: 51,108,57
+     </div>
+    </div>
+
+    <div class="quarter">
+     <div class="outer m-auto width-80">
+      <div class="height-80 shadow" style="border:1px solid #122a2a;background-color:#143939;">
+       <div class="color" style="background-color:#3c4543;"></div>
+      </div>
+     </div>
+     <div class="caption">
+      <h3 class="h4">.color-standout<br />@color-p3</h3>HEX: #3c4543<br />RGB: 60,69,67
+     </div>
+    </div>
+    <div class="quarter">
+     <div class="outer m-auto width-80">
+      <div class="height-80 shadow" style="border:1px solid #ceded8;background-color:#dbece6;">
+       <div class="color" style="background-color:#effaf6;"></div>
+      </div>
+     </div>
+     <div class="caption">
+      <h3 class="h4">.color-s1<br />@color-s1</h3>HEX: #effaf6<br />RGB: 239,250,246
+     </div>
+    </div>
+   </div>
+
+
+   <div class="card card-understated">
+    <div class="card-heading">
+     <h2 class="h4"><span class="ca-gov-icon-info"></span> Theme Colors Customization</h2>
+    </div>
+    <div class="card-body">
+     <p>
+      There are two ways to customize theme main colors. One way is to change primary and
+      secondary theme color variables
+      in the colorscheme-[yourcolorshceme].scss file. This method will require you to
+      re-compile the state template, you
+      can find instructions in the readme file. After the compilation you will have updated
+      colorscheme-[yourcolorshceme].css file.
+     </p>
+
+     <p>
+      Another way is to manually find and replace all main theme colors and their variations
+      in colorscheme-[yourcolorshceme].css.
+      Main theme colors classes will be listed at the top of the CSS file. You can copy their
+      values and use find/replace feature
+      in your web editor software to replace all those colors references with your custom
+      colors throughout entire css file.
+     </p>
+
+     <p>
+      <span class="font-size-sm"><strong>Note:</strong> Before changing your colors make sure
+       that your custom theme colors have sufficient color cotrast ratios.</span>
+     </p>
+    </div>
+   </div>
+
+  </div>
+ </div>
 </div>
 
 <div class="section section-primary">
-    <div class="container">
-        <div class="half">
-            <h2>Section Primary</h2>
-            <h3>Buttons</h3>
-            <div class="btn-row">
-                <a href="" class="btn btn-default">.btn-default</a>
-                <a href="" class="btn btn-default active">.btn-default.active</a>
-                <a href="" class="btn btn-default disabled">.btn-default.disabled</a>
-            </div>
-            <div class="btn-row">
-                <a href="" class="btn btn-primary">.btn-primary</a>
-                <a href="" class="btn btn-primary active">.btn-primary.active</a>
-                <a href="" class="btn btn-primary disabled">.btn-primary.disabled</a>
-            </div>
-            <div class="btn-row">
-                <a href="" class="btn btn-highlight">.btn-highlight</a>
-                <a href="" class="btn btn-highlight active">.btn-highlight.active</a>
-                <a href="" class="btn btn-highlight disabled">.btn-highlight.disabled</a>
-            </div>
-            <div class="btn-row">
-                <a href="" class="btn btn-standout">.btn-standout</a>
-                <a href="" class="btn btn-standout active">.btn-standout.active</a>
-                <a href="" class="btn btn-standout disabled">.btn-standout.disabled</a>
-            </div>
-            <div class="btn-row">
-                <a href="" class="btn btn-secondary">.btn-secondary</a>
-                <a href="" class="btn btn-secondary active">.btn-secondary.active</a>
-                <a href="" class="btn btn-secondary disabled">.btn-secondary.disabled</a>
-            </div>
-            <hr>
+ <div class="container">
+  <div class="half">
+   <h2>Section Primary</h2>
+   <h3>Buttons</h3>
+   <div class="btn-row">
+    <a href="" class="btn btn-default">.btn-default</a>
+    <a href="" class="btn btn-default active">.btn-default.active</a>
+    <a href="" class="btn btn-default disabled">.btn-default.disabled</a>
+   </div>
+   <div class="btn-row">
+    <a href="" class="btn btn-primary">.btn-primary</a>
+    <a href="" class="btn btn-primary active">.btn-primary.active</a>
+    <a href="" class="btn btn-primary disabled">.btn-primary.disabled</a>
+   </div>
+   <div class="btn-row">
+    <a href="" class="btn btn-highlight">.btn-highlight</a>
+    <a href="" class="btn btn-highlight active">.btn-highlight.active</a>
+    <a href="" class="btn btn-highlight disabled">.btn-highlight.disabled</a>
+   </div>
+   <div class="btn-row">
+    <a href="" class="btn btn-standout">.btn-standout</a>
+    <a href="" class="btn btn-standout active">.btn-standout.active</a>
+    <a href="" class="btn btn-standout disabled">.btn-standout.disabled</a>
+   </div>
+   <div class="btn-row">
+    <a href="" class="btn btn-secondary">.btn-secondary</a>
+    <a href="" class="btn btn-secondary active">.btn-secondary.active</a>
+    <a href="" class="btn btn-secondary disabled">.btn-secondary.disabled</a>
+   </div>
+   <hr>
 
 
-            <h3>Cards</h3>
+   <h3>Cards</h3>
 
-            <div class="card card-overstated">
-                <div class="card-heading">
-                    <h3><span class="ca-gov-icon-info"></span> Card (Overstated)</h3>
-                    <div class="options">
-                        <a href="" class="btn btn-default">button</a>
-                    </div>
-                </div>
-                <div class="card-body">
-                    Card Body
-                </div>
-            </div>
+   <div class="card card-overstated">
+    <div class="card-heading">
+     <h3><span class="ca-gov-icon-info"></span> Card (Overstated)</h3>
+     <div class="options">
+      <a href="" class="btn btn-default">button</a>
+     </div>
+    </div>
+    <div class="card-body">
+     Card Body
+    </div>
+   </div>
 
-            <div class="card card-standout">
-                <div class="card-heading">
-                    <h2><span class="ca-gov-icon-info"></span> Card (Standout)</h2>
-                    <div class="options">
-                        <a href="" class="btn btn-default">button</a>
-                    </div>
-                </div>
-                <div class="card-body">
-                    Card Body
-                </div>
-            </div>
+   <div class="card card-standout">
+    <div class="card-heading">
+     <h2><span class="ca-gov-icon-info"></span> Card (Standout)</h2>
+     <div class="options">
+      <a href="" class="btn btn-default">button</a>
+     </div>
+    </div>
+    <div class="card-body">
+     Card Body
+    </div>
+   </div>
 
-        </div>
+  </div>
 
-        <div class="half">
-            <!-- Article -->
-            <h3>News block</h3>
-            <article class="block-hover">
-                <figure class="bg-overlay">
-                    <img class="img-fluid w-100 block-hover_zoom"
-                        src="/images/sample/images/service-tiles/service-paid-family-leave.jpg" alt="Image Description">
-                </figure>
+  <div class="half">
+   <!-- Article -->
+   <h3>News block</h3>
+   <article class="block-hover">
+    <figure class="bg-overlay">
+     <img class="img-fluid w-100 block-hover_zoom"
+      src="/images/sample/images/service-tiles/service-paid-family-leave.jpg" alt="Image Description">
+    </figure>
 
-                <header class="w-100 text-center absolute-centered p-x">
-                    <span class="btn btn-xs btn-primary rounded-0" href="#">EDD</span>
-                    <h4 class="m-y-sm">
-                        File for paid family leave insurance
-                    </h4>
+    <header class="w-100 text-center absolute-centered p-x">
+     <span class="btn btn-xs btn-primary rounded-0" href="#">EDD</span>
+     <h4 class="m-y-sm">
+      File for paid family leave insurance
+     </h4>
 
-                    <small class="color-white">
-                        <i class="ca-gov-icon-time pos-rel"></i> July 04, 2016
-                    </small>
-                </header>
+     <small class="color-white">
+      <i class="ca-gov-icon-time pos-rel"></i> July 04, 2016
+     </small>
+    </header>
 
-                <a class="news-link" href="#">File for paid family leave insurance</a>
-            </article>
-            <!-- End Article -->
-            <!--<ul class="list-inline list-unstyled m-t-md">
+    <a class="news-link" href="#">File for paid family leave insurance</a>
+   </article>
+   <!-- End Article -->
+   <!--<ul class="list-inline list-unstyled m-t-md">
                             <li><span class="ca-gov-icon-twitter" aria-hidden="true"><span class="sr-only">Twitter</span></span></li>
                             <li><span class="ca-gov-icon-facebook" aria-hidden="true"><span class="sr-only">Facebook</span></span></li>
                             <li><span class="ca-gov-icon-google-plus" aria-hidden="true"><span class="sr-only">Google+</span></span></li>
                         </ul>-->
 
-            <h3 class="m-t-lg">Testimonials</h3>
+   <h3 class="m-t-lg">Testimonials</h3>
 
-            <blockquote class="testimonial testimonial-highlight m-t-md">
-                <div class="testimonial-body">
-                    <p>Maecenas sed diam eget risus varius blandit sit amet non magna. Morbi leo risus,
-                        porta ac consectetur ac, vestibulum at eros.</p>
-                    <footer>
-                        <cite>
-                            <a href="">John Smith</a> Some Awesome Company
-                        </cite>
-                    </footer>
-                </div>
-                <div class="thumbnail thumbnail-right">
-                    <a href="#"><img class="thumbnail-img img-rounded" src="/images/sample/images/70x70.gif"
-                            alt="..."></a>
-                </div>
-            </blockquote>
-
-        </div>
-
+   <blockquote class="testimonial testimonial-highlight m-t-md">
+    <div class="testimonial-body">
+     <p>Maecenas sed diam eget risus varius blandit sit amet non magna. Morbi leo risus,
+      porta ac consectetur ac, vestibulum at eros.</p>
+     <footer>
+      <cite>
+       <a href="">John Smith</a> Some Awesome Company
+      </cite>
+     </footer>
     </div>
+    <div class="thumbnail thumbnail-right">
+     <a href="#"><img class="thumbnail-img img-rounded" src="/images/sample/images/70x70.gif" alt="..."></a>
+    </div>
+   </blockquote>
+
+  </div>
+
+ </div>
 </div>
