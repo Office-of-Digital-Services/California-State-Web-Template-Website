@@ -803,84 +803,105 @@
 
 
   <h2 id="opdate">Update your template</h2>
-
-  <ol>
-   <li><span class="h4">Save backup of your current site</span>
-    <p>Before updating your version of State Web Template save a backup of your current site. This will ensure a
-     functional site if system errors occurs.</p>
+  <ol class="cagov-step-list">
+   <li><strong>Save backup of your current site</strong>
+    <br />
+    <span class="cagov-step-list-content">
+     <p>Before updating your version of State Web Template save a backup of your current site. This will ensure a
+      functional site if system errors occurs.</p>
+    </span>
    </li>
-
-   <li><span class="h4">Download the latest State Web Template release</span>
-    <p>Use our <a href="https://github.com/Office-of-Digital-Innovation/California-State-Template/releases">GitHub
-      repository</a> to download the latest release. If you are using <a href="/cdn.html">State Web template CDN</a>
-     update your CDN links to the latest release. </p>
+   <li><strong>Download the latest State Web Template release</strong>
+    <br />
+    <span class="cagov-step-list-content">
+     <p>Use our <a href="https://github.com/Office-of-Digital-Innovation/California-State-Template/releases">GitHub
+       repository</a> to download the latest release. If you are using <a href="/cdn.html">State Web template CDN</a>
+      update your CDN links to the latest release.</p>
+    </span>
    </li>
-
-   <li><span class="h4">Compare changes</span>
-    <p>Check our version release update notes above and see if any changes might affect your website. If they do,
-     complete a thorough code
-     comparison. You have several options to compare your files:
-    <ul>
-     <li>
+   <li><strong>Compare changes</strong>
+    <br />
+    <span class="cagov-step-list-content">
+     <p>Check our version release update notes above and see if any changes might affect your website. If they do,
+      complete a thorough code
+      comparison. You have several options to compare your files:
+     <p>
       <span class="text-bold">Option 1.</span> Compare files locally against downloaded State Web Template latest
       release.
-     </li>
-     <li>
+     </p>
+     <p>
       <span class="text-bold">Option 2.</span> Compare your local files with the latest State Web Template code on
       GitHub.
-     </li>
-     <li>
+     </p>
+     <p>
       <span class="text-bold">Option 3.</span> Compare between specific State Web Template release branches on GitHub.
-      <p>To do so you need to make new pull request then can select a release branch name from the compare drop down
-       menu
-       at the top of the page. Here's an example of a comparison between two State Web Template release branches.</p>
-      <img src="/images/GitHub-compare.jpg" alt="comparison between two State Web Template release branches example"
-       class="img-fluid m-b-md">
-     </li>
-    </ul>
+     </p>
+     <p>To do so you need to make new pull request then can select a release branch name from the compare drop down
+      menu
+      at the top of the page. Here's an example of a comparison between two State Web Template release branches.</p>
+     <img src="/images/GitHub-compare.jpg" alt="comparison between two State Web Template release branches example"
+      class="img-fluid m-b-md">
+    </span>
    </li>
-
-
-   <li><span class="h4">Inspect CSS and JavaScript changes</span>
-    <p>Most of the changes are usually made in the CSS and JavaScript files. Check and compare those changes thoroughly.
-     You will find the State Web Template CSS and JavaScript source files in <code>/src/scss/</code> and
-     <code>/src/js/</code>
-     folders. Update your source CSS and JS files if necessary.
-    </p>
+   <li><strong>Inspect CSS and JavaScript changes</strong>
+    <br />
+    <span class="cagov-step-list-content">
+     <p>Most of the changes are usually made in the CSS and JavaScript files. Check and compare those changes
+      thoroughly.
+      You will find the State Web Template CSS and JavaScript source files in <code>/src/scss/</code> and
+      <code>/src/js/</code>
+      folders. Update your source CSS and JS files if necessary.
+     </p>
+    </span>
    </li>
-
-
-   <li><span class="h4">Look for structural changes</span>
-    <p>Look for any code changes in your structural components, such as utility-header, site-header, global-footer. You
-     will find those
-     components in State Web Template <code>/src/_includes/</code> folder. Update your code if necessary.
-    </p>
+   <li><strong>Look for structural changes</strong>
+    <br />
+    <span class="cagov-step-list-content">
+     <p>Look for any code changes in your structural components, such as utility-header, site-header, global-footer. You
+      will find those
+      components in State Web Template <code>/src/_includes/</code> folder. Update your code if necessary.
+     </p>
+    </span>
    </li>
-
-   <li><span class="h4">Look for components and content patterns code changes</span>
-    <p>Look for any structural code changes inside of your components or content patterns such as accordion, tabs,
-     cards. You
-     will find those
-     components in State Web Template <code>/src/_includes/modules/</code> folder. Update your code if necessary.
-    </p>
+   <li><strong>Look for components and content patterns code changes</strong>
+    <br />
+    <span class="cagov-step-list-content">
+     <p>Look for any structural code changes inside of your components or content patterns such as accordion, tabs,
+      cards. You
+      will find those
+      components in State Web Template <code>/src/_includes/modules/</code> folder. Update your code if necessary.
+     </p>
+    </span>
    </li>
-
-   <li><span class="h4">Copy over the site fonts and icons fonts files</span>
-    <p>Copy over the fonts files from <code>/src/fonts/</code> folder</p>
+   <li><strong>Copy over the site fonts and icons fonts files</strong>
+    <br />
+    <span class="cagov-step-list-content">
+     <p>Copy over the fonts files from <code>/src/fonts/</code> folder</p>
+    </span>
    </li>
-
-   <li>
-    <span class="h4">Build and run your site</span>
-    <p>Build and run your site locally. Make sure your site doesn't have NPM or other errors when using build commands.
-     Also, check if there are any errors in your browser's console log.</p>
+   <li><strong>Build and run your site</strong>
+    <br />
+    <span class="cagov-step-list-content">
+     <p>Build and run your site locally. Make sure your site doesn't have NPM or other errors when using build commands.
+      Also, check if there are any errors in your browser's console log.</p>
+    </span>
    </li>
-
-   <li><span class="h4">Test all your pages</span>
-    <p>After finishing updating your website do regression testing. Also, make sure you do automatic and manual
-     accessibility testing of all updated pages.
-    </p>
+   <li><strong>Test all your pages</strong>
+    <br />
+    <span class="cagov-step-list-content">
+     <p>After finishing updating your website do regression testing. Also, make sure you do automatic and manual
+      accessibility testing of all updated pages.
+     </p>
+    </span>
    </li>
   </ol>
+
+
+  <ol>
+
+
+
+
  </div>
 </div>
 
@@ -907,8 +928,8 @@
                 </ul>
           
                 <ul class="socialsharer-container">
-                    <li><a href="https://www.flickr.com/groups/californiagovernment"><span class="ca-gov-icon-flickr"
-                                aria-hidden="true"></span><span class="sr-only">Flickr</span></a></li>
+                    <li><a href="https://github.com/Office-of-Digital-Innovation/California-State-Web-Template"><span class="ca-gov-icon-github"
+                                aria-hidden="true"></span><span class="sr-only">GitHub</span></a></li>
                     <li><a href="https://www.pinterest.com/cagovernment/"><span class="ca-gov-icon-pinterest"
                                 aria-hidden="true"></span><span class="sr-only">Pinterest</span></a></li>
                 </ul>
