@@ -13,6 +13,7 @@
   a {
    position: relative;
    display: block;
+   text-decoration: none !important;
    &.active {
     color: $black;
     text-decoration: none;
@@ -20,7 +21,7 @@
     &:hover,
     &:focus {
      color: $gray-700;
-     text-decoration: underline;
+     text-decoration: none;
     }
     &:before {
      content: "";
@@ -53,7 +54,7 @@
      &:hover,
      &:focus {
       color: $gray-700;
-      text-decoration: underline;
+      text-decoration: none;
      }
      &:before {
       content: "";
@@ -98,7 +99,7 @@
     text-decoration: none !important;
     &:hover,
     &:focus {
-     text-decoration: underline !important;
+     text-decoration: none !important;
     }
     &:focus {
      @include outline(2px);
@@ -114,6 +115,7 @@ a.sidenav {
  display: block;
  padding-left: 1rem;
  position: relative;
+ text-decoration: none !important;
  &:hover,
  &:focus {
   text-decoration: none;
@@ -128,7 +130,7 @@ a.sidenav {
 
   &:hover,
   &:focus {
-   text-decoration: underline !important;
+   text-decoration: none !important;
    color: $gray-700;
   }
   &:before {
