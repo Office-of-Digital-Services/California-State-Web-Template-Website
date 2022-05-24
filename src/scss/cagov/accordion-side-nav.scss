@@ -69,7 +69,7 @@ cagov-accordion.sidenav {
    font-size: calc($font-size-regular + $ratio);
    font-weight: 400;
    //color: #046b99;
-   text-decoration: underline;
+   text-decoration: none;
    &:before {
     border: none !important;
     width: 3px;
@@ -106,7 +106,7 @@ cagov-accordion.sidenav {
     &:hover,
     &:focus {
      color: $gray-700 !important;
-     text-decoration: underline;
+     text-decoration: none;
     }
     &:focus {
      @include outline(2px);
@@ -168,6 +168,7 @@ cagov-accordion.sidenav {
   a {
    position: relative;
    display: block;
+   text-decoration: none !important;
    &:hover,
    &:focus {
     text-decoration: none;
@@ -193,7 +194,7 @@ cagov-accordion.sidenav {
     &:hover,
     &:focus {
      color: $gray-700;
-     text-decoration: underline;
+     text-decoration: none;
     }
    }
   }
