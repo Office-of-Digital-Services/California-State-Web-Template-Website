@@ -14145,21 +14145,6 @@ a.list-group-item {
   }
 }
 
-.header-single-banner,
-.header-large-banner,
-.header-primary-banner {
-  width: 100%;
-  /* Will be overriden with js */
-  height: auto;
-  overflow: hidden;
-  background-position: center;
-  background-size: cover;
-  display: block;
-  /* Preserve aspect ratio */
-  min-width: 100%;
-  min-height: 100%;
-}
-
 /* -----------------------------------------
    SLIDESHOW BANNER
    /source/scss/cagov/header-banner.scss
@@ -14176,8 +14161,7 @@ a.list-group-item {
   }
 }
 .header-single-banner,
-.header-large-banner,
-.header-primary-banner {
+.header-large-banner {
   width: 100%;
   height: 80vh;
   overflow: hidden;
@@ -14190,8 +14174,7 @@ a.list-group-item {
 }
 @media (max-width: 767px) {
   .header-single-banner,
-.header-large-banner,
-.header-primary-banner {
+.header-large-banner {
     height: unset;
     padding-top: 70px;
     padding-bottom: 80px;
@@ -14221,8 +14204,7 @@ a.list-group-item {
     display: none;
   }
 
-  .primary .header-primary-banner,
-.primary .header-large-banner,
+  .primary .header-large-banner,
 .primary .header-slideshow-banner {
     display: none;
   }
@@ -14240,6 +14222,15 @@ a.list-group-item {
   position: relative;
   color: #fff;
   padding: 1rem 0 1.5rem 0;
+}
+
+.header-primary-banner {
+  overflow: hidden;
+  background-position: center !important;
+  background-size: cover !important;
+  display: block;
+  position: relative;
+  height: 400px;
 }
 
 /* -----------------------------------------
@@ -18536,6 +18527,131 @@ cagov-accordion:defined details[open] summary:focus::after {
 .side-nav .accordion .accordion__heading .accordion__trigger[aria-expanded=true]:after {
   transform: rotate(90deg);
 }
+.side-nav .accordion .accordion__heading.active .accordion__trigger {
+  color: #fff !important;
+}
+
+cagov-accordion.sidenav details {
+  border: none;
+  min-height: 2rem;
+  margin-top: 1.125rem;
+}
+cagov-accordion.sidenav details summary {
+  border: none;
+  background: transparent;
+  padding-left: 1rem;
+  padding: 0 2rem 0 1rem;
+  font-size: calc(1.125rem + 0.1vw);
+  font-weight: 400;
+  text-decoration: underline;
+}
+cagov-accordion.sidenav details summary:before {
+  border: none !important;
+  width: 3px;
+  background-color: transparent !important;
+}
+cagov-accordion.sidenav details summary::after {
+  display: none;
+}
+cagov-accordion.sidenav details summary:hover, cagov-accordion.sidenav details summary:focus {
+  text-decoration: none;
+}
+cagov-accordion.sidenav details summary:hover:before, cagov-accordion.sidenav details summary:focus:before {
+  border: none;
+  background-color: transparent;
+}
+cagov-accordion.sidenav details summary:focus {
+  outline: solid 2px #2ea3f2 !important;
+  outline-offset: -2px;
+}
+cagov-accordion.sidenav details summary.active {
+  font-weight: 700;
+  color: #000 !important;
+  text-decoration: none;
+}
+cagov-accordion.sidenav details summary.active:before {
+  border: none;
+  width: 3px;
+  border-radius: 0;
+}
+cagov-accordion.sidenav details summary.active:hover, cagov-accordion.sidenav details summary.active:focus {
+  color: #5e5e6a !important;
+  text-decoration: underline;
+}
+cagov-accordion.sidenav details summary.active:focus {
+  outline: solid 2px #2ea3f2 !important;
+  outline-offset: -2px;
+}
+cagov-accordion.sidenav details summary[open] summary {
+  color: #000;
+  font-weight: 700;
+}
+cagov-accordion.sidenav details summary[open] summary::after {
+  display: none;
+}
+cagov-accordion.sidenav details summary .cagov-open-indicator {
+  left: unset !important;
+  right: 1rem;
+  top: 0.7rem !important;
+}
+cagov-accordion.sidenav details .cagov-open-indicator {
+  left: unset;
+  right: 1rem;
+  top: 0.7rem !important;
+}
+cagov-accordion.sidenav details .accordion-body {
+  border: none;
+  outline: none;
+}
+cagov-accordion.sidenav details .accordion-body .side-subnav {
+  margin-bottom: 0;
+}
+cagov-accordion.sidenav details .accordion-body .side-subnav li:first-child {
+  margin-top: 0;
+}
+cagov-accordion.sidenav details .accordion-body .side-subnav li:last-child {
+  margin-bottom: 0;
+}
+
+.side-subnav {
+  padding-left: 0;
+}
+.side-subnav li {
+  margin: 1rem 0;
+  padding-left: 1rem;
+  list-style: none;
+  font-size: 1.125rem;
+}
+.side-subnav li a {
+  position: relative;
+  display: block;
+}
+.side-subnav li a:hover, .side-subnav li a:focus {
+  text-decoration: none;
+  color: #000;
+}
+.side-subnav li a:focus {
+  outline: solid 2px #2ea3f2 !important;
+}
+.side-subnav li a.active {
+  font-weight: 700;
+  color: #000;
+  text-decoration: none;
+}
+.side-subnav li a.active:before {
+  content: "";
+  border-left: 3px solid;
+  position: absolute;
+  top: 0;
+  left: -1rem;
+  width: 3px;
+  height: 100%;
+  border-radius: 0;
+}
+.side-subnav li a.active:hover, .side-subnav li a.active:focus {
+  color: #5e5e6a;
+  text-decoration: underline;
+}
 
 /* -----------------------------------------
    BREADCRUMBS -  /source/scss/cagov/breadcrumbs.scss
@@ -22551,16 +22667,28 @@ html:not(.ie8) .stats-highlight img {
   font-size: 1.25rem;
   padding-left: 1rem;
 }
-.list-navigation li.active {
-  border-left: 2px solid #FDB81E;
+.list-navigation li a {
+  position: relative;
+  display: block;
 }
-.list-navigation li.active a {
+.list-navigation li a.active {
   color: #000;
   text-decoration: none;
+  font-weight: 700;
 }
-.list-navigation li.active a:hover, .list-navigation li.active a:focus {
+.list-navigation li a.active:hover, .list-navigation li a.active:focus {
   color: #5e5e6a;
   text-decoration: underline;
+}
+.list-navigation li a.active:before {
+  content: "";
+  border-left: 3px solid;
+  position: absolute;
+  top: 0;
+  left: -1rem;
+  width: 3px;
+  height: 100%;
+  border-radius: 0;
 }
 .list-navigation li a:hover,
 .list-navigation li a:focus {
@@ -22574,6 +22702,25 @@ html:not(.ie8) .stats-highlight img {
 }
 .list-navigation li ul li {
   margin: 1rem 0;
+}
+.list-navigation li ul li a.active {
+  color: #000;
+  text-decoration: none;
+  font-weight: 700;
+}
+.list-navigation li ul li a.active:hover, .list-navigation li ul li a.active:focus {
+  color: #5e5e6a;
+  text-decoration: underline;
+}
+.list-navigation li ul li a.active:before {
+  content: "";
+  border-left: 3px solid;
+  position: absolute;
+  top: 0;
+  left: -1rem;
+  width: 3px;
+  height: 100%;
+  border-radius: 0;
 }
 
 .page-navigation .label {
@@ -22607,6 +22754,43 @@ html:not(.ie8) .stats-highlight img {
 }
 .page-navigation ul li a:focus {
   outline: solid 2px #2ea3f2 !important;
+}
+
+a.sidenav {
+  font-size: calc(1.125rem + 0.1vw);
+  margin: 1.5rem 0;
+  display: block;
+  padding-left: 1rem;
+  position: relative;
+}
+a.sidenav:hover, a.sidenav:focus {
+  text-decoration: none;
+}
+a.sidenav:focus {
+  outline-offset: -2px;
+}
+a.sidenav.active {
+  color: #000;
+  font-weight: 700;
+  text-decoration: none;
+}
+a.sidenav.active:hover, a.sidenav.active:focus {
+  text-decoration: underline !important;
+  color: #5e5e6a;
+}
+a.sidenav.active:before {
+  content: "";
+  border-left: 3px solid;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 3px;
+  height: 100%;
+  border-radius: 0;
+}
+
+a.nav-heading {
+  font-size: 1.5rem;
 }
 
 /* -----------------------------------------
