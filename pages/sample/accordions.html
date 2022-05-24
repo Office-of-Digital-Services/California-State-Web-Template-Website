@@ -16,6 +16,8 @@ permalink: "sample/accordions.html"
  opened.</p>
 
 <p>Accordions keep pages looking clean by hiding information that most people do not need to see.</p>
+
+<h2>Basic accordion</h2>
 <h2>Example:</h2>
 {% include "../../src/_includes/modules/accordion.html" %}
 
@@ -25,10 +27,24 @@ permalink: "sample/accordions.html"
 
 <hr class="m-t-md" />
 
-
 <h2>Accordion Side Menu</h2>
 <p>
- Accordion side menu is a vertical navigation component which apart from traditional, text
+ Accordion side menu is a list navigation with expandable sub navigation. For more information and examples
+ visit <a href="navigation-sidebar.html">side menu navigation</a> page.
+</p>
+
+
+<h2>Example:</h2>
+{% include "../../src/_includes/modules/accordion-sidenav.html" %}
+
+<h3><label for="sample-side-menu">Source Code:</label></h3>
+<textarea id="sample-side-menu" class="form-control" rows="10" cols="80">{% include "../../src/_includes/modules/accordion-sidenav.html" %}
+</textarea>
+
+
+<h2>Bootstrap Accordion Side Menu</h2>
+<p>
+ Bootstrap accordion side menu is a vertical navigation component which apart from traditional, text
  links, might embed icons, dropdowns, images or even forms. For more information and examples
  visit <a href="navigation-sidebar.html">side menu navigation</a> page.
 </p>
@@ -39,8 +55,7 @@ permalink: "sample/accordions.html"
 
 <h3><label for="sample-side-menu">Source Code:</label></h3>
 <textarea id="sample-side-menu" class="form-control" rows="10" cols="80">{% include "../../src/_includes/modules/nav-side.html" %}
-                                                 </textarea>
-
+</textarea>
 
 
 <h2>Accordion List</h2>

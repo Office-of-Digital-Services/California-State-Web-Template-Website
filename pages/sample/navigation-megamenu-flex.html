@@ -1,37 +1,62 @@
 ﻿---
 title: Flex Megamenu Navigation
-layout: navicons.njk
+layout: page.njk
 permalink: "sample/navigation-megamenu-flex.html"
 navigation: "../modules/nav-flex.html"
 ---
 
-<nav aria-label="You are here">
- <ol class="breadcrumb">
-  <li><a href="../index.html" title="Home page">Home</a></li>
-  <li><a href="/sample/navsamples.html" title="Navigation Samples page">Navigation Samples</a>
-  </li>
-  <li class="active">Flex Megamenu</li>
- </ol>
-</nav>
 
 
-<div class="row p-b-lg">
- <div class="col-md-8">
+
+<div class="row">
+ <div class="col-md-3">
+  <!-- Side navigation -->
+  <nav aria-labelledby="navigation-list">
+   <div class="h4 m-t-0" id="navigation-list"><a href="/sample/navsamples.html"
+     class="sidenav nav-heading m-t-0">Navigation
+     samples</a></div>
+   <ul class="list-navigation">
+    <li><a href="navigation-dropdown.html">Dropdown Navigation</a></li>
+    <li><a href="navigation-megamenu-flex.html" class="active">Flex Megamenu Navigation</a></li>
+    <li><a href="navigation-full-width-utility.html">Full Width Navigation with Active
+      Search</a></li>
+    <li><a href="navigation-icons.html">Navigation with icons</a></li>
+    <li><a href="page-navigation.html">Page navigation</a></li>
+    <li><a href="navigation-sidebar.html">Side navigation</a></li>
+    <li><a href="navigation-single.html">Single Level Navigation</a></li>
+   </ul>
+  </nav>
+
+ </div>
+ <div class="col-md-9">
+  <nav aria-label="You are here">
+   <ol class="breadcrumb">
+    <li><a href="../index.html" title="Home page">Home</a></li>
+    <li><a href="/sample/navsamples.html" title="Navigation Samples page">Navigation Samples</a>
+    </li>
+    <li class="active">Flex Megamenu</li>
+   </ol>
+  </nav>
+
 
   <h1>Flex Megamenu Navigation</h1>
   <p>
-   The flex megamenu displays dropdown panels for sub navigation when the user hovers over a primary
+   The flex megamenu displays dropdown panels for sub navigation when the user clicks on a primary
    link.
    This style of menu can be set by including the <code>.megadropdown</code>
-   class in the <code>&lt;nav&gt;</code> element.
+   class in the <code>&lt;nav&gt;</code> element like this:
+   <code>&lt;nav id="navigation" class="main-navigation megadropdown"&gt;</code>.
   </p>
-  <h2 class="h4">Example:</h2>
 
-  <pre>&lt;nav id="navigation" class="main-navigation megadropdown"&gt;</pre>
-  <p>
-   In the template distribution this markup can be found in <code>/sample/modules/nav-flex.html</code>.
 
-  <h2>Flex Units</h2>
+  <h2>Example Screenshot</h2>
+  <img src="/images/navigation-flex.jpg" alt="Naviagiton with icons"
+   class="img-fluid brd-solid-1 brd-gray-light shadow2 m-b-md">
+
+
+
+  <h2>Magamenu Structure</h2>
+  <h3>Flex Units</h3>
   <p>
    Sub navigation uses flex properties to layout sub-navigation items inside of the megadropdown menu.
    Inside <code>.sub-nav</code> container use flexbox row div <code>.second-level-nav</code> with class
@@ -41,7 +66,7 @@ navigation: "../modules/nav-flex.html"
    iside of <code>.second-level-nav</code> div.
   </p>
 
-  <h2 class="h4">Example:</h2>
+  <h3 class="h4">Markup example:</h3>
   <pre>&lt;div class="sub-nav"&gt;
     &lt;div class="second-level-nav flex"&gt;
         &lt;a href="/" class="second-level-link"&gt;Link 1&lt;/a>
@@ -55,7 +80,7 @@ navigation: "../modules/nav-flex.html"
   </p>
 
 
-  <h2>Mixed Content Within Navigation</h2>
+  <h3>Mixed Content Within Navigation</h3>
   <p>
    The megamenu allows for the display optional icons or images with sub navigation links.
    It is also possible to display a short description below each sub navigation link. To display icon
@@ -67,14 +92,14 @@ navigation: "../modules/nav-flex.html"
    or <code>.with-image-right</code> on the div container containing the media.
   </p>
 
-  <h3 class="h4">Link with large icon:</h4>
+  <h3 class="h4">Link with large icon markup example:</h4>
    <pre><code><a href="/" class="second-level-link">
     <span class="ca-gov-icon-home font-size-40" aria-hidden="true"></span>
     <p class="h3 sub-nav-link">First Link</p>
     <p class="link-description">Some link description.</p>
 </a>
 </code></pre>
-   <h3 class="h4">Link with left image:</h4>
+   <h3 class="h4">Link with left image markup example:</h4>
     <pre><code><a href="/" class="second-level-link">
         <div class="media-left">
         <img class="media-object" src="/images/sample/images/70x70.gif" alt="...">
@@ -87,21 +112,10 @@ navigation: "../modules/nav-flex.html"
 </code></pre>
 
 
- </div>
- <div class="col-md-4" role="complementary">
-  <h2 class="h3">Other examples:</h2>
-  <!-- Side navigation -->
-  <div class="accordion-list list-group">
-   <a href="/sample/navigation-dropdown.html" class="list-group-item list-group-item-action">Dropdown</a>
-   <a href="/sample/navigation-full-width-utility.html" class="list-group-item list-group-item-action">Full
-    Width/Active
-    Search</a>
-   <a href="/sample/navigation-megamenu-flex.html" class="active list-group-item list-group-item-action">Flex
-    Megamenu</a>
-   <a href="/sample/page-navigation.html" class="list-group-item list-group-item-action">Page Navigation</a>
-   <a href="/sample/navigation-sidebar.html" class="list-group-item list-group-item-action">Side Menu</a>
-   <a href="/sample/navigation-single.html" class="list-group-item list-group-item-action">Single Level</a>
-  </div>
-
+    <h2>Source Code:</h2>
+    <p>
+     In the template distribution Flex menu full HTML markup can be found in
+     <code>/src/_includes/modules/nav-flex.html</code>.
+    </p>
  </div>
 </div>

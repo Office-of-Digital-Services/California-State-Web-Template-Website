@@ -196,158 +196,41 @@
 
   
 <div id="main-content" class="main-content">
-	<main class="main-primary" id="main">
-		<div class="container p-b-lg p-t-md">
-			<div class="row">
-				<div class="col-md-3">
-					<nav aria-labelledby="components-list">
-						<div class="h4 m-t-0" id="components-list">Components</div>
-						<ul class="list-navigation">
-						
-						<li >
-								<a href="/sample/accordions.html">Accordions</a>
-						</li>
-						
-						<li >
-								<a href="/sample/alert-banner.html">Alert Banner</a>
-						</li>
-						
-						<li >
-								<a href="/sample/large-header-banner.html">Banner</a>
-						</li>
-						
-						<li >
-								<a href="/sample/breadcrumb.html">Breadcrumb</a>
-						</li>
-						
-						<li >
-								<a href="/sample/buttons.html">Buttons</a>
-						</li>
-						
-						<li >
-								<a href="/sample/countdown.html">Countdown</a>
-						</li>
-						
-						<li >
-								<a href="/sample/featured-narrative.html">Featured Narrative</a>
-						</li>
-						
-						<li >
-								<a href="/sample/featured-search.html">Featured Search</a>
-						</li>
-						
-						<li >
-								<a href="/sample/form.html">Form Styles</a>
-						</li>
-						
-						<li >
-								<a href="/sample/horizontal-rules.html">Horizontal Rules</a>
-						</li>
-						
-						<li >
-								<a href="/sample/lists.html">Lists</a>
-						</li>
-						
-						<li >
-								<a href="/sample/modal.html">Modal</a>
-						</li>
-						
-						<li >
-								<a href="/sample/number-counter.html">Number Counter</a>
-						</li>
-						
-						<li >
-								<a href="/sample/progress-bars.html">Progress Bars</a>
-						</li>
-						
-						<li >
-								<a href="/sample/progress-blocks.html">Progress Blocks</a>
-						</li>
-						
-						<li >
-								<a href="/sample/socialsharer.html">SocialSharer</a>
-						</li>
-						
-						<li >
-								<a href="/sample/step-list.html">Step List</a>
-						</li>
-						
-						<li >
-								<a href="/sample/tabs.html">Tabs</a>
-						</li>
-						
-						<li >
-								<a href="/sample/tables.html">Tables</a>
-						</li>
-						
-						<li >
-								<a href="/sample/timeline.html">Timeline</a>
-						</li>
-						
-						<div class="h4">Navigation</div>
-						
-						<li >
-								<a href="/sample/navigation-full-width-utility.html">Full Width/Active Search</a>
-						</li>
-						
-						<li >
-								<a href="/sample/navigation-megamenu-flex.html">Flex Megamenu</a>
-						</li>
-						
-						<li  aria-current="page"  class="active" >
-								<a href="/sample/navigation-single.html">Single Level</a>
-						</li>
-						
-						<li >
-								<a href="/sample/navigation-dropdown.html">Dropdown</a>
-						</li>
-						
-						<li >
-								<a href="/sample/page-navigation.html">Page Navigation</a>
-						</li>
-						
-						<li >
-								<a href="/sample/navigation-sidebar.html">Side Menu</a>
-						</li>
-						
-						<div class="h4">CSS Units</div>
-						
-						<li >
-								<a href="/shortcuts.html">CSS Shortcuts</a>
-						</li>
-						
-						<li >
-								<a href="/sample/gradient-backgrounds.html">Gradient Backgrounds</a>
-						</li>
-						
-						<li >
-								<a href="/sample/icon-fonts.html">Icons</a>
-						</li>
-						
-						<li >
-								<a href="/sample/text-accent.html">Text Accent</a>
-						</li>
-						
-						<li >
-								<a href="/sample/spacing.html">Spacing</a>
-						</li>
-						
-						</ul>
-					</nav>
-				</div>
-				<div class="col-md-9">
-					
-<nav aria-label="You are here">
- <ol class="breadcrumb">
-  <li><a href="../index.html" title="Home page">Home</a></li>
-  <li><a href="/sample/navsamples.html" title="Navigation Samples page">Navigation Samples</a>
-  </li>
-  <li class="active">Single Level Nav</li>
- </ol>
-</nav>
+	<div class="container p-b-lg p-t-md">
+		<main class="main-primary" id="main">
 
-<div class="row p-b-lg">
- <div class="col-md-8">
+			
+<div class="row">
+ <div class="col-md-3">
+  <!-- Side navigation -->
+  <nav aria-labelledby="navigation-list">
+   <div class="h4 m-t-0" id="navigation-list"><a href="/sample/navsamples.html"
+     class="sidenav nav-heading m-t-0">Navigation
+     samples</a></div>
+   <ul class="list-navigation">
+    <li><a href="navigation-dropdown.html">Dropdown Navigation</a></li>
+    <li><a href="navigation-megamenu-flex.html">Flex Megamenu Navigation</a></li>
+    <li><a href="navigation-full-width-utility.html">Full Width Navigation with Active
+      Search</a></li>
+    <li><a href="navigation-icons.html">Navigation with icons</a></li>
+    <li><a href="page-navigation.html">Page navigation</a></li>
+    <li><a href="navigation-sidebar.html">Side navigation</a></li>
+    <li><a href="navigation-single.html" class="active">Single Level Navigation</a></li>
+   </ul>
+  </nav>
+
+ </div>
+ <div class="col-md-9">
+
+  <nav aria-label="You are here">
+   <ol class="breadcrumb">
+    <li><a href="../index.html" title="Home page">Home</a></li>
+    <li><a href="/sample/navsamples.html" title="Navigation Samples page">Navigation Samples</a>
+    </li>
+    <li class="active">Single Level Nav</li>
+   </ol>
+  </nav>
+
 
 
   <h1>Single Level Navigation</h1>
@@ -355,33 +238,30 @@
    sub navigation items.</p>
 
   <p>This style of menu can be set by including the <code>.singlelevel</code> class in the
-   <code>&lt;nav&gt;</code> element.
+   <code>&lt;nav&gt;</code> element like this
+   <code>&lt;nav id="navigation" class="main-navigation singlelevel"&gt;</code>.
   </p>
 
-  <p><strong>Example:</strong>
-   <br><code>&lt;nav id="navigation" class="main-navigation singlelevel"&gt;</code> .
-  </p>
-  <p>In the template distribution this markup can be found in <code>/ssi/navigation.html</code>.
 
- </div>
- <div class="col-md-4" role="complementary">
-  <h2 class="h3">Other examples:</h2>
-  <!-- Side navigation -->
-  <div class="accordion-list list-group">
-   <a href="/sample/navigation-dropdown.html" class="list-group-item list-group-item-action">Dropdown</a>
-   <a href="/sample/navigation-full-width-utility.html" class="list-group-item list-group-item-action">Full Width/Active
-    Search</a>
-   <a href="/sample/navigation-megamenu-flex.html" class="list-group-item list-group-item-action">Flex Megamenu</a>
-   <a href="/sample/page-navigation.html" class="list-group-item list-group-item-action">Page Navigation</a>
-   <a href="/sample/navigation-sidebar.html" class="list-group-item list-group-item-action">Side Menu</a>
-   <a href="/sample/navigation-single.html" class="active list-group-item list-group-item-action">Single Level</a>
-  </div>
+
+  <h2>Example Screenshot</h2>
+  <img src="/images/navigation-single.jpg" alt="Single level naviagiton"
+   class="img-fluid brd-solid-1 brd-gray-light shadow2 m-b-md">
+
+
+
+
+  <h3>Source Code:</h3>
+  <p>In the template distribution Understated Bootstrap Accordion Side Navigation full HTML markup can be found in
+   <code>/src/_includes/modules/nav-singlelevel.html</code> file.
+  </p>
+
+
  </div>
 </div>
-				</div>
-			</div>
-		</div>
-	</main>
+
+		</main>
+	</div>
 </div>
 
 

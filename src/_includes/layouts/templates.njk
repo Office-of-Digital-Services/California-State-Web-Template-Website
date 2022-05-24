@@ -5,23 +5,37 @@
 		<div class="container p-b-lg p-t-md">
 			<div class="row">
 				<div class="col-md-3">
-					<nav aria-labelledby="components-list">
-						<div class="h4 m-t-0" id="components-list">Content Patterns</div>
-						<ul class="list-navigation">
-						{% for item in templates.templates %}
-						<li {{ helpers.getLinkActiveState(item.url,
-								page.url) | safe }}>
-								<a href="{{ item.url }}">{{ item.text }}</a>
-						</li>
-						{% endfor %}
-						<div class="h4">Page Templates</div>
+					<nav aria-labelledby="components-list" style="max-height:800px; overflow:auto" class="side-navigation">
+						<div class="h4 m-t-0" id="components-list"><a href="/sample/content-patterns.html" class="sidenav nav-heading">Content Patterns</a></div>
+		   <!--Links with subnav-->
+					{% for item in templates.templates %}
+      {% if 'subnav' in item %}
+        <cagov-accordion class="sidenav">
+         <details {{ helpers.getOpenAttr(item.url, page.url) | safe }}>
+          <summary {{ helpers.getLinkActiveState(item.url, page.url) | safe }}>{{ item.text }}</summary>
+          <div class="accordion-body">
+            <!--subnav-->
+           <ul class="side-subnav">
+            {% for subitem in item.subnav %}
+            <li>
+             <a href="{{ subitem.url }}">{{ subitem.text }}</a>
+            </li>
+            {% endfor %}
+           </ul>
+          </div>
+         </details>
+        </cagov-accordion>
+        <!--Links with subnav-->
+       {% else %}
+         <a href="{{ item.url }}" {{ helpers.getSidenav(item.url, page.url) | safe }} class="sidenav">{{ item.text }}</a>
+       {% endif %}
+      {% endfor %}
+
+						<div class="h4"><a href="/sample/page-templates.html" class="sidenav nav-heading">Page Templates</a></div>
 						{% for item in pages.pages %}
-						<li {{ helpers.getLinkActiveState(item.url,
-								page.url) | safe }}>
-								<a href="{{ item.url }}">{{ item.text }}</a>
-						</li>
+						  <a href="{{ item.url }}" {{ helpers.getLinkActiveState(item.url, page.url) | safe }}  class="sidenav">{{ item.text }}</a>
 						{% endfor %}
-						</ul>
+
 					</nav>
 				</div>
 				<div class="col-md-9">

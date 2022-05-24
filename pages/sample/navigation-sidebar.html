@@ -1,21 +1,41 @@
 ﻿---
 title: Side Navigation
-layout: components.njk
+layout: page.njk
 permalink: "sample/navigation-sidebar.html"
 ---
 
 
-<nav aria-label="You are here">
- <ol class="breadcrumb">
-  <li><a href="../index.html" title="Home page">Home</a></li>
-  <li><a href="/sample/navsamples.html" title="Navigation Samples page">Navigation Samples</a>
-  </li>
-  <li class="active">Side Navigation</li>
- </ol>
-</nav>
+<div class="row">
+ <div class="col-md-3">
+  <!-- Side navigation -->
+  <nav aria-labelledby="navigation-list">
+   <div class="h4 m-t-0" id="navigation-list"><a href="/sample/navsamples.html"
+     class="sidenav nav-heading m-t-0">Navigation
+     samples</a></div>
+   <ul class="list-navigation">
+    <li><a href="navigation-dropdown.html">Dropdown Navigation</a></li>
+    <li><a href="navigation-megamenu-flex.html">Flex Megamenu Navigation</a></li>
+    <li><a href="navigation-full-width-utility.html">Full Width Navigation with Active
+      Search</a></li>
+    <li><a href="navigation-icons.html">Navigation with icons</a></li>
+    <li><a href="page-navigation.html">Page navigation</a></li>
+    <li><a href="navigation-sidebar.html" class="active">Side navigation</a></li>
+    <li><a href="navigation-single.html">Single Level Navigation</a></li>
+   </ul>
+  </nav>
 
-<div class="row p-b-lg">
- <div class="col-md-8">
+ </div>
+ <div class="col-md-9">
+
+  <nav aria-label="You are here">
+   <ol class="breadcrumb">
+    <li><a href="../index.html" title="Home page">Home</a></li>
+    <li><a href="/sample/navsamples.html" title="Navigation Samples page">Navigation Samples</a>
+    </li>
+    <li class="active">Side Navigation</li>
+   </ol>
+  </nav>
+
 
   <h1>Side Navigation Menu</h1>
   <p>
@@ -29,9 +49,50 @@ permalink: "sample/navigation-sidebar.html"
    you to implement more advanced content categorization, which is almost essential within bigger
    projects.
   </p>
+  <h2>Accordion side navigation</h2>
+  <p>Accordion side navigation uses basic accordion component's structure and
+   properties but it is styled to be used as side navigation. </p>
+  <h3>Example:</h3>
+  <div class="row">
+   <div class="col-md-5">
+    {% include "../../src/_includes/modules/nav-side-accordion.html" %}
+   </div>
+  </div>
 
+
+  <h3>Source Code:</h3>
+  <p>In the template distribution Accordion Side Navigation full HTML markup can be found in
+   <code>/src/_includes/modules/nav-side-accordion.html</code> file.
+  </p>
+
+  <hr />
+
+  <h2>List navigation</h2>
+  <p>List navigation displays links to the webpages that can be tied into one content category, such as list
+   of web components, for example. Links with class
+   <code>active</code> will indicate the currently open page, which allows people to scan a page and know if
+   they’re in the right place.
+  </p>
+
+
+
+  {% include "../../src/_includes/modules/list-navigation.html" %}
+
+  <h3>Source Code:</h3>
+  <pre><code class="overflow-auto">{% include "../../src/_includes/modules/list-navigation.html" %}</code></pre>
+
+
+  {% include "../../src/_includes/modules/list-navigation-sub.html" %}
+
+  <h3>Source Code:</h3>
+  <pre><code class="overflow-auto">{% include "../../src/_includes/modules/list-navigation-sub.html" %}</code></pre>
+
+
+
+
+  <h2>Bootstrap side navigation</h2>
   <p>
-   Side navigation uses <a href="/sample/accordions.html">accordion list</a> component's structure and
+   Bootstrap Side navigation uses <a href="/sample/accordions.html">accordion list</a> component's structure and
    properties. But also, it incorporates the bootstrap list group component's styles.
   </p>
 
@@ -47,50 +108,67 @@ permalink: "sample/navigation-sidebar.html"
 
 
 
-  <h2>Side navigation:</h2>
-  {% include "../../src/_includes/modules/nav-side.html" %}
+  <h3>Example:</h3>
+  <div class="row">
+   <div class="col-md-4">
+    {% include "../../src/_includes/modules/nav-side.html" %}
+   </div>
+  </div>
 
-  <h2>Source Code:</h2>
-  <pre><code class="overflow-auto">{% include "../../src/_includes/modules/nav-side.html" %}</code></pre>
+
+  <h3>Source Code:</h3>
+  <p>In the template distribution Bootstrap Accordion Side Navigation full HTML markup can be found in
+   <code>/src/_includes/modules/nav-side.html</code> file.
+  </p>
+
 
   <hr />
 
-  <h2>Side navigation (standout):</h2>
-  {% include "../../src/_includes/modules/nav-side-standout.html" %}
+  <h3>Standout version example:</h3>
 
-
-  <h2>Source Code:</h2>
-  <pre><code class="overflow-auto">{% include "../../src/_includes/modules/nav-side-standout.html" %}</code></pre>
-
-  <h2>Side navigation (primary):</h2>
-  {% include "../../src/_includes/modules/nav-side-primary.html" %}
-
-
-  <h2>Source Code:</h2>
-  <pre><code class="overflow-auto">{% include "../../src/_includes/modules/nav-side-primary.html" %}</code></pre>
-
-
-  <h2>Side navigation (understated):</h2>
-  {% include "../../src/_includes/modules/nav-side-understated.html" %}
-
-
-  <h2>Source Code:</h2>
-  <pre><code class="overflow-auto">{% include "../../src/_includes/modules/nav-side-understated.html" %}</code></pre>
-
-
-
- </div>
- <div class="col-md-4" role="complementary">
-  <h2 class="h3">Other examples:</h2>
-  <!-- Side navigation -->
-  <div class="accordion-list list-group">
-   <a href="/sample/navigation-dropdown.html" class="list-group-item list-group-item-action">Dropdown</a>
-   <a href="/sample/navigation-full-width-utility.html" class="list-group-item list-group-item-action">Full Width/Active
-    Search</a>
-   <a href="/sample/navigation-megamenu-flex.html" class="list-group-item list-group-item-action">Flex Megamenu</a>
-   <a href="/sample/page-navigation.html" class="list-group-item list-group-item-action">Page Navigation</a>
-   <a href="/sample/navigation-sidebar.html" class="active list-group-item list-group-item-action">Side Menu</a>
-   <a href="/sample/navigation-single.html" class="list-group-item list-group-item-action">Single Level</a>
+  <div class="row">
+   <div class="col-md-4">
+    {% include "../../src/_includes/modules/nav-side-standout.html" %}
+   </div>
   </div>
+
+
+  <h3>Source Code:</h3>
+  <p>In the template distribution Standout Bootstrap Accordion Side Navigation full HTML markup can be found in
+   <code>/src/_includes/modules/nav-side-standout.html</code> file.
+  </p>
+
+  <hr />
+
+
+  <h3>Primary version example:</h3>
+  <div class="row">
+   <div class="col-md-4">
+    {% include "../../src/_includes/modules/nav-side-primary.html" %}
+   </div>
+  </div>
+
+
+  <h3>Source Code:</h3>
+  <p>In the template distribution Primary Bootstrap Accordion Side Navigation full HTML markup can be found in
+   <code>/src/_includes/modules/nav-side-primary.html</code> file.
+  </p>
+
+  <hr />
+
+  <h3>Understated version example:</h3>
+  <div class="row">
+   <div class="col-md-4">
+    {% include "../../src/_includes/modules/nav-side-understated.html" %}
+   </div>
+  </div>
+
+
+  <h3>Source Code:</h3>
+  <p>In the template distribution Understated Bootstrap Accordion Side Navigation full HTML markup can be found in
+   <code>/src/_includes/modules/nav-side-understated.html</code> file.
+  </p>
+
+
  </div>
 </div>

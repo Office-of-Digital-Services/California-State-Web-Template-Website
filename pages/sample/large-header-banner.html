@@ -1,11 +1,11 @@
 ﻿---
 title: Hero Banner
-layout: landing.njk
+layout: components.njk
 permalink: "sample/large-header-banner.html"
 ---
 
 
-{% include "../../src/_includes/modules/header-large-banner.html" %}
+
 
 
 <div class="container p-b-lg p-t-md">
@@ -27,25 +27,27 @@ permalink: "sample/large-header-banner.html"
   the desired page.
  </p>
 
- <pre>
-&lt;main&gt; <br>&lt;!-- Include Header Banner--&gt;
-&#10100;% include "../../src/_includes/modules/header-large-banner.html" %&#10101;</pre>
 
- <p><span class="badge label-primary">Note:</span> To have the banner dissapear in a mobile viewport add the
-  <code>.primary</code> class to the <code>&lt;body&gt;</code> element of the page otherwise the
-  banner will remain in all screen sizes.
- </p>
+ {% include "../../src/_includes/modules/header-large-banner.html" %}
 
- <p>To change the background image edit the <strong>header-large-banner.html</strong> include file
+
+
+
+
+ <p class="m-t-lg">To change the background image edit the <strong>header-large-banner.html</strong> include file
   located in the <strong>/src/_includes/modules/ </strong>directory. The image is set by changing the
   <code>background</code> property in the style attribute for
   <code>&lt;div class="header-large-banner" style="background-image: url('<strong>/sample/images/background_2.jpg</strong>');"&gt;</code>.
   The recommended dimensions of the banner images are 1500 by 500 pixels.
  </p>
 
+ <p><span class="badge label-primary">Note:</span> To have the banner dissapear in a mobile viewport add the
+  <code>.primary</code> class to the <code>&lt;body&gt;</code> element of the page otherwise the
+  banner will remain in all screen sizes.
+ </p>
 
  <h2>Source Code:</h2>
- <pre><code class="overflow-auto">{% include "../../src/_includes/modules/header-large-banner.html" %}</code></pre>
+ <pre><code class="overflow-auto">&#10100;% include "../../src/_includes/modules/header-large-banner.html" %&#10101;</code></pre>
 
  <h2>Other hero banner options</h2>
 
