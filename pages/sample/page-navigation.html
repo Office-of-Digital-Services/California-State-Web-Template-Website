@@ -1,76 +1,64 @@
 ﻿---
 title: Page navigation
-layout: components.njk
+layout: page.njk
 permalink: "sample/page-navigation.html"
 ---
 
-<nav aria-label="You are here">
- <ol class="breadcrumb">
-  <li><a href="../index.html" title="Home page">Home</a></li>
-  <li><a href="navsamples.html" title="Examples landing page">Navigation Samples</a></li>
-  <li class="active">Page navigation</li>
- </ol>
-</nav>
+
+<div class="row">
+ <div class="col-md-3">
+  <!-- Side navigation -->
+  <nav aria-labelledby="navigation-list">
+   <div class="h4 m-t-0" id="navigation-list"><a href="/sample/navsamples.html"
+     class="sidenav nav-heading m-t-0">Navigation
+     samples</a></div>
+   <ul class="list-navigation">
+    <li><a href="navigation-dropdown.html">Dropdown Navigation</a></li>
+    <li><a href="navigation-megamenu-flex.html">Flex Megamenu Navigation</a></li>
+    <li><a href="navigation-full-width-utility.html">Full Width Navigation with Active
+      Search</a></li>
+    <li><a href="navigation-icons.html">Navigation with icons</a></li>
+    <li><a href="page-navigation.html" class="active">Page navigation</a></li>
+    <li><a href="navigation-sidebar.html">Side navigation</a></li>
+    <li><a href="navigation-single.html">Single Level Navigation</a></li>
+   </ul>
+  </nav>
+
+ </div>
+ <div class="col-md-9">
+  <nav aria-label="You are here">
+   <ol class="breadcrumb">
+    <li><a href="../index.html" title="Home page">Home</a></li>
+    <li><a href="navsamples.html" title="Examples landing page">Navigation Samples</a></li>
+    <li class="active">Page navigation</li>
+   </ol>
+  </nav>
 
 
-<div class="row p-b-lg">
- <div class="col-md-8">
 
   <h1>Page navigation</h1>
-  <p>Page navigation is a list of links to the current page sections or to other web pages. It is placed at the
-   top of
-   the page on the left. Page navigation makes it easy to see what content is available.
-  </p>
-  <h2>List navigation</h2>
-  <p>List navigation displays links to the webpages that can be tied into one content category, such as list
-   of web components, for example. Links with class
-   <code>active</code> will indicate the currently open page, which allows people to scan a page and know if
-   they’re in the right place.
-  </p>
-
-
-
-  {% include "../../src/_includes/modules/list-navigation.html" %}
-
-  <h3>Source Code:</h3>
-  <pre><code class="overflow-auto">{% include "../../src/_includes/modules/list-navigation.html" %}</code></pre>
-
-
-  {% include "../../src/_includes/modules/list-navigation-sub.html" %}
-
-  <h3>Source Code:</h3>
-  <pre><code class="overflow-auto">{% include "../../src/_includes/modules/list-navigation-sub.html" %}</code></pre>
-
-
-  <h2>"On this page" navigation</h2>
-  <p>This type of navigation lists and links to the level 2 headings (H2) of a webpage. It is placed at the top of
+  <p>Page navigation is a lists and links to the level 2 headings (H2) of a webpage. It is placed at the top of
    the
    page on the
-   left. People can select a link to go directly to that section. The links are introduced by the text On this
-   page by
-   default. The page navigation does not show if there are zero or one H2’s on the page.</p>
+   left. People can select a link to go directly to H2 section. The links are usually introduced by the text "On this
+   page". Page navigation makes it easy to see what content is available.</p>
+
+  <p><span class="badge label-primary">Note:</span> The page navigation should not show if there are zero or one H2’s on
+   the page.</p>
+
+  <h2>Example:</h2>
+  <div class="row">
+   <div class="col-md-4">
+    {% include "../../src/_includes/modules/page-navigation.html" %}
+   </div>
+  </div>
 
 
-  {% include "../../src/_includes/modules/page-navigation.html" %}
-
-  <h3>Source Code:</h3>
+  <h2>Source Code:</h2>
   <pre><code class="overflow-auto">{% include "../../src/_includes/modules/page-navigation.html" %}</code></pre>
 
 
 
 
- </div>
- <div class="col-md-4" role="complementary">
-  <h2 class="h3">Other examples:</h2>
-  <!-- Side navigation -->
-  <div class="accordion-list list-group">
-   <a href="/sample/navigation-dropdown.html" class="list-group-item list-group-item-action">Dropdown</a>
-   <a href="/sample/navigation-full-width-utility.html" class="list-group-item list-group-item-action">Full Width/Active
-    Search</a>
-   <a href="/sample/navigation-megamenu-flex.html" class="list-group-item list-group-item-action">Flex Megamenu</a>
-   <a href="/sample/page-navigation.html" class="active list-group-item list-group-item-action">Page Navigation</a>
-   <a href="/sample/navigation-sidebar.html" class="list-group-item list-group-item-action">Side Menu</a>
-   <a href="/sample/navigation-single.html" class="list-group-item list-group-item-action">Single Level</a>
-  </div>
  </div>
 </div>

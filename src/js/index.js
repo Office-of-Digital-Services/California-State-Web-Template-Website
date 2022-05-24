@@ -10,3 +10,4 @@ import './cagov/tabs.js';
 import './cagov/number-counter.js';
 import './cagov/settings.js';
 import './cagov/return-top.js';
+import './cagov/side-navigation.js';

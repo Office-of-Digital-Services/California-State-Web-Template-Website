@@ -1,7 +1,32 @@
 .list-navigation {
  li {
-  &.active {
-   border-color: $color-p1;
+  a {
+   color: $color-p2;
+   &:hover,
+   &:hover {
+    color: darken($color-p2, 7%);
+   }
+   &.active {
+    &:before {
+     border-left-color: $color-p1;
+    }
+   }
+  }
+  ul li a.active::before {
+   border-left-color: $color-p1;
+  }
+ }
+}
+
+a.sidenav {
+ color: $color-p2;
+ &:hover,
+ &:hover {
+  color: darken($color-p2, 7%);
+ }
+ &.active {
+  &:before {
+   border-left-color: $color-p1;
   }
  }
 }
