@@ -211,7 +211,7 @@
            <ul class="side-subnav">
             
             <li>
-             <a href="/sample/accordions.html#basic">Basic Accordionders</a>
+             <a href="/sample/accordions.html#basic">Basic Accordion</a>
             </li>
             
             <li>
@@ -235,6 +235,10 @@
       
       
          <a href="/sample/large-header-banner.html"  class="sidenav">Banner</a>
+       
+      
+      
+         <a href="/sample/blockquotes.html"  class="sidenav">Blockquote</a>
        
       
       
@@ -278,6 +282,10 @@
        
       
       
+         <a href="/sample/parallax.html"  class="sidenav">Parallax</a>
+       
+      
+      
          <a href="/sample/progress-bars.html"  class="sidenav">Progress Bars</a>
        
       
@@ -314,9 +322,9 @@
 						
 						  <a href="/sample/icon-fonts.html"   class="sidenav">Icons</a>
 						
-						  <a href="/sample/text-accent.html"   class="sidenav">Text Accent</a>
-						
 						  <a href="/sample/spacing.html"   class="sidenav">Spacing</a>
+						
+						  <a href="/sample/text-accent.html"   class="sidenav">Text Accent</a>
 						
 
 					</nav>
@@ -331,43 +339,43 @@
 </nav>
 
 <h1>Accordion</h1>
-<p>Accordions are expandable sections of content. Each section contains a summary element, and more body text when
+<p>Accordions are expandable sections of content. Each section contains a summary element and more body text when
  opened.</p>
 
-<p>Accordions keep pages looking clean by hiding information that most people do not need to see.</p>
+<p>Accordions keep pages clean by hiding information that most people do not need to see.</p>
 
 <h2>Basic accordion</h2>
-<h2>Example:</h2>
+<h3>Example:</h3>
 <cagov-accordion>
  <details>
-  <summary>Title 1</summary>
+  <summary>Add a short, descriptive heading for your topic</summary>
   <div class="accordion-body">
-   <p>A couple buttons are included inside this accordion to demonstrate that when the accordion is closed they are
+   <p>A couple link are included inside this accordion to demonstrate that when the accordion is closed they are
     automatically not in the keyboard focus order but when the accordion opens they become the next available elements
     in the keyboard navigation sequence after the accordion's summary element.</p>
-   <button class="btn  btn-primary">Button 1</button>
-   <button class="btn btn-primary">Button 2</button>
-  </div>
- </details>
-</cagov-accordion>
-<cagov-accordion>
- <details>
-  <summary>Title 2 multiline lorem ipsum is useful because it has a more-or-less normal distribution of letters
-  </summary>
-  <div class="accordion-body">
-   <ul>
-    <li>Anim pariatur cliche reprehenderit</li>
-    <li>moon officia aute, non cupidatat</li>
+   <ul class="list-primary">
+    <li><a href="#">Link one</a></li>
+    <li><a href="#">Link two</a></li>
    </ul>
   </div>
  </details>
 </cagov-accordion>
 <cagov-accordion>
  <details>
-  <summary>Title 3 lorem ipsum dolor sit amet</summary>
+  <summary>If your heading must be longer, the accordion will wrap to multiple lines within the container like this
+  </summary>
   <div class="accordion-body">
-   <p>moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod.</p>
-   <p>Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda</p>
+   <p>Once open, the content within the accordion should describe the topic in more detail. It should not repeat the
+    heading.</p>
+  </div>
+ </details>
+</cagov-accordion>
+<cagov-accordion>
+ <details>
+  <summary>This heading tells users what’s inside the accordion</summary>
+  <div class="accordion-body">
+   <p>Once open, the content within the accordion should describe the topic in more detail. It should not repeat the
+    heading.</p>
   </div>
  </details>
 </cagov-accordion>
@@ -376,34 +384,34 @@
 <textarea id="sample-accordion" class="form-control" rows="10"
  cols="80"><cagov-accordion>
  <details>
-  <summary>Title 1</summary>
+  <summary>Add a short, descriptive heading for your topic</summary>
   <div class="accordion-body">
-   <p>A couple buttons are included inside this accordion to demonstrate that when the accordion is closed they are
+   <p>A couple link are included inside this accordion to demonstrate that when the accordion is closed they are
     automatically not in the keyboard focus order but when the accordion opens they become the next available elements
     in the keyboard navigation sequence after the accordion's summary element.</p>
-   <button class="btn  btn-primary">Button 1</button>
-   <button class="btn btn-primary">Button 2</button>
-  </div>
- </details>
-</cagov-accordion>
-<cagov-accordion>
- <details>
-  <summary>Title 2 multiline lorem ipsum is useful because it has a more-or-less normal distribution of letters
-  </summary>
-  <div class="accordion-body">
-   <ul>
-    <li>Anim pariatur cliche reprehenderit</li>
-    <li>moon officia aute, non cupidatat</li>
+   <ul class="list-primary">
+    <li><a href="#">Link one</a></li>
+    <li><a href="#">Link two</a></li>
    </ul>
   </div>
  </details>
 </cagov-accordion>
 <cagov-accordion>
  <details>
-  <summary>Title 3 lorem ipsum dolor sit amet</summary>
+  <summary>If your heading must be longer, the accordion will wrap to multiple lines within the container like this
+  </summary>
   <div class="accordion-body">
-   <p>moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod.</p>
-   <p>Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda</p>
+   <p>Once open, the content within the accordion should describe the topic in more detail. It should not repeat the
+    heading.</p>
+  </div>
+ </details>
+</cagov-accordion>
+<cagov-accordion>
+ <details>
+  <summary>This heading tells users what’s inside the accordion</summary>
+  <div class="accordion-body">
+   <p>Once open, the content within the accordion should describe the topic in more detail. It should not repeat the
+    heading.</p>
   </div>
  </details>
 </cagov-accordion></textarea>
