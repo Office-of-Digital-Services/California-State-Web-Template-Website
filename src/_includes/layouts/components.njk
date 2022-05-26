@@ -33,7 +33,7 @@
 
 						<div class="h4"><a href="/sample/css-units.html" class="sidenav nav-heading">CSS Units</a></div>
 						{% for item in cssunits.cssunits %}
-						  <a href="{{ item.url }}" {{ helpers.getLinkActiveState(item.url, page.url) | safe }}  class="sidenav">{{ item.text }}</a>
+						  <a href="{{ item.url }}" {{ helpers.getSidenav(item.url, page.url) | safe }}  class="sidenav">{{ item.text }}</a>
 						{% endfor %}
 
 					</nav>
