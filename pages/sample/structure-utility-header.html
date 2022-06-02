@@ -1,0 +1,144 @@
+---
+title: Utility Header
+layout: page.njk
+permalink: "sample/structure-utility-header.html"
+---
+
+
+<div class="row">
+ <div class="col-md-3" role="complementary">
+  <!-- Side navigation -->
+  <nav aria-labelledby="navigation-list">
+   <div class="h4 m-t-0" id="navigation-list"><a href="/structure.html" class="sidenav nav-heading m-t-0">Strucutral
+     components</a></div>
+   <ul class="list-navigation">
+    <li><a href="/sample/structure-global-footer.html">Global Footer</a></li>
+    <li><a href="/sample/structure-mobile-controls.html">Mobile Controls</a></li>
+    <li><a href="/sample/structure-search.html">Search</a></li>
+    <li><a href="/sample/structure-settings.html">Settings</a></li>
+    <li><a href="/sample/structure-site-header.html">Site Header</a></li>
+    <li><a href="/sample/navsamples.html">Site Navigation</a></li>
+    <li><a href="/sample/structure-utility-header.html" class="active">Utility Header</a></li>
+   </ul>
+  </nav>
+ </div>
+ <div class="col-md-9">
+
+
+  <nav aria-label="You are here">
+   <ol class="breadcrumb">
+    <li><a href="/index.html" title="Home page">Home</a></li>
+    <li><a href="/structure.html">Structure</a></li>
+    <li class="active">Utility Header</li>
+   </ol>
+  </nav>
+
+  <h1>Utility Header</h1>
+  <p>The Utility Header puts a standard header at the very top of your site. Having a common header tells people that
+   the website is an official product of the State of California, which increases user trust.</p>
+
+  <p>It includes:</p>
+  <ul>
+   <li>The CA.gov logo, which links to https://www.ca.gov</li>
+   <li>The text “Official website of the State of California” (on desktop) or “State of California” (on mobile)</li>
+   <li>The Settings Bar toggle button</li>
+  </ul>
+  </p>
+
+  <h2>When and how to use it</h2>
+
+  <p>The Utility Heaqder is a required State Web Template component. Place it at the top of the website, above the
+   Site Header, Settings and all other content.</p>
+
+  <p>You can include a translation widget or other optional utility links next to Settings Bar toggle button in the
+   Utility Header. </p>
+
+  <h3>How not to use it</h3>
+
+  <p>Do not add other elements to or change the utility header. Use it only as designed.</p>
+
+  <p>Do not combine the utility header with depatment name or logo, navigation, or information. This is contained in
+   the site header.</p>
+
+  <h2>Demo</h2>
+
+  <div class="tab-group responsive">
+   <ul id="tabs2" class="nav nav-tabs" role="tablist">
+    <li class="nav-item">
+     <a id="tab-example2" href="#pane-example2" class="nav-link active" data-bs-toggle="tab" role="tab">Example</a>
+    </li>
+    <li class="nav-item">
+     <a id="tab-html2" href="#pane-html2" class="nav-link" data-bs-toggle="tab" role="tab">Source Code</a>
+    </li>
+    <li class="nav-item">
+     <a id="tab-include2" href="#pane-include2" class="nav-link" data-bs-toggle="tab" role="tab">Nunjucks Include</a>
+    </li>
+   </ul>
+
+
+   <div id="tab-example2" class="tab-content">
+    <div id="pane-example2" class="card tab-pane fade show active" role="tabpanel" aria-labelledby="tab-example2">
+     <div class="card-header" id="heading-example2">
+      <h4 class="my-0">
+       <a data-bs-toggle="collapse" href="#collapse-home" data-parent="#tab-content" aria-expanded="true"
+        aria-controls="collapse-example2" title="Example tab header">
+        Example
+       </a>
+      </h4>
+     </div>
+     <div id="collapse-example2" class="collapse show" role="tabpanel" aria-labelledby="heading-example2">
+      <div class="card-body">
+       <h3 class="h4 m-t-0">Screenshot</h3>
+       <img src="/images/components/strucutre-utility-header.jpg" alt="Utility Header screenshot" class="img-fluid">
+      </div>
+     </div>
+    </div>
+
+    <div id="pane-html2" class="card tab-pane fade" role="tabpanel" aria-labelledby="tab-html2">
+     <div class="card-header" id="heading-html2">
+      <h4 class="my-0">
+       <a class="collapsed" data-bs-toggle="collapse" href="#collapse-html2" data-parent="#tab-content"
+        aria-expanded="false" aria-controls="collapse-html2" title="HTML Source Code tab header">
+        HTML Source Code
+       </a>
+      </h4>
+     </div>
+     <div id="collapse-html2" class="collapse" role="tabpanel" aria-labelledby="heading-html2">
+      <div class="card-body">
+       <h3 class="h4 m-t-0">HTML</h3>
+       <pre><code>{% include "../../src/_includes/utility-header.njk" %}</code>
+       </pre>
+      </div>
+     </div>
+    </div>
+
+    <div id="pane-include2" class="card tab-pane fade" role="tabpanel" aria-labelledby="tab-include2">
+     <div class="card-header" id="heading-include1">
+      <h4 class="my-0">
+       <a class="collapsed" data-bs-toggle="collapse" href="#collapse-include2" data-parent="#tab-include2"
+        aria-expanded="false" aria-controls="collapse-include2" title="Nunjucks Include tab header">
+        Nunjucks Include
+       </a>
+      </h4>
+     </div>
+     <div id="collapse-include2" class="collapse" role="tabpanel" aria-labelledby="heading-include2">
+      <div class="card-body">
+       <h3 class="h4 m-t-0">Include path</h3>
+       <p>Add this <code>njk</code> include code above the
+        Site Header, Settings and all other content:
+       </p>
+       <pre><code>&#123;% include "src/_includes/utility-header.njk" %&#125;</code></pre>
+
+       <p><span class="badge label-primary">Note:</span> Path to the include will be relative to the directory of your
+        page.</p>
+      </div>
+     </div>
+    </div>
+   </div>
+  </div>
+
+
+
+
+ </div>
+</div>

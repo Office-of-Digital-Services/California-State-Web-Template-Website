@@ -18036,7 +18036,7 @@ html {
 ----------------------------------------- */
 .tab-group {
   position: relative;
-  border: 1px solid #dee2e6;
+  border: none;
 }
 @media (max-width: 767px) {
   .tab-group {
@@ -18048,6 +18048,7 @@ html {
 }
 .tab-group .nav-tabs {
   border-radius: 0;
+  border-bottom: none;
 }
 .tab-group .nav-tabs li:first-child a,
 .tab-group .nav-tabs li:first-child a:hover,
@@ -18059,20 +18060,30 @@ html {
   border-top: 0;
 }
 .tab-group .nav-tabs li > a {
-  padding: 3px 0.75rem;
-  border-top: 0;
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 0;
   position: relative;
   display: block;
   color: #046b99;
+  font-weight: 600;
 }
 .tab-group .nav-tabs li > a, .tab-group .nav-tabs li > a:hover {
-  border: 1px solid #f5f5f5;
+  border: none;
   border-top: none !important;
   text-decoration: none;
-  border-bottom: 1px solid #dee2e6;
+  border-bottom: none;
 }
 .tab-group .tab-pane {
   padding: 0.75rem;
+}
+.tab-group .tab-content {
+  border: 1px solid #d4d4d7;
+}
+@media (max-width: 767px) {
+  .tab-group .tab-content {
+    border: none;
+  }
 }
 
 /* Bottom Tabs */
@@ -18125,22 +18136,37 @@ html {
   margin-left: 0;
 }
 
-.nav-tabs > li > a.active,
-.nav-tabs > li > a.active:hover {
-  color: #555555;
-  background-color: #fff;
-  border: 1px solid #ddd;
-  border-bottom-color: transparent;
+.nav-tabs > li > a.active {
+  background-color: transparent !important;
+  border: none !important;
   cursor: default;
-  border-bottom: 1px solid #fff;
+  color: #000 !important;
+  position: relative;
+}
+.nav-tabs > li > a.active:hover {
+  color: #4a4958 !important;
+}
+.nav-tabs > li > a.active::after {
+  left: 0;
+  bottom: 0;
+  position: absolute;
+  content: "";
+  width: 100%;
+  border-bottom: 3px solid;
 }
 
 .nav-tabs > li > a:hover {
-  color: #555555;
+  color: #035376;
+}
+
+.nav-tabs > li > a:focus {
+  outline: solid 2px #2ea3f2 !important;
+  outline-offset: -2px;
 }
 
 .nav-tabs > li > a.active:focus {
   outline: solid 2px #2ea3f2 !important;
+  outline-offset: -2px;
 }
 
 .nav-tabs .nav-item {
@@ -18164,6 +18190,7 @@ html {
 @media (min-width: 768px) {
   .responsive .nav-tabs {
     display: flex;
+    background-color: transparent !important;
   }
   .responsive.tab-group .card {
     border: none;
@@ -19231,12 +19258,12 @@ hr.hr-light {
 
 .panel-heading,
 .card-heading {
-  padding: 10px 15px;
+  padding: 10px 1rem;
 }
 
 .panel-body,
 .card-body {
-  padding: 15px;
+  padding: 1rem;
 }
 
 /* -----------------------------------------
