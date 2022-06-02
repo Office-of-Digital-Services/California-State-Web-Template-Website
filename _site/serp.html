@@ -125,19 +125,19 @@
 </div>
     <!-- header branding with light gray background -->
 <div class="section-default">
-    <div class="branding">
-        <div class="header-organization-banner">
-            <a href="/">
-                <div class="logo-assets">
-                    <img src="/images/template-logo.png" class="logo-img" alt="State Template Logo" />
-                    <div class="logo-text">
-                        <span class="logo-state">State of California</span>
-                        <span class="logo-dept">Web Template <sup>BETA</sup></span>
-                    </div>
-                </div>
-            </a>
-        </div>
+ <div class="branding">
+  <div class="header-organization-banner">
+   <a href="/">
+    <div class="logo-assets">
+     <img src="/images/template-logo.png" class="logo-img" alt="State Template Logo" />
+     <div class="logo-text">
+      <span class="logo-state">State of California</span>
+      <span class="logo-dept">Web Template <sup>BETA</sup></span>
+     </div>
     </div>
+   </a>
+  </div>
+ </div>
 </div>
     <!-- mobile navigation controls -->
 <div class="mobile-controls">
@@ -174,7 +174,7 @@
        <a class="first-level-link" href="/visual-design.html">Visual Design</a>
    </li>
      <li class="nav-item">
-       <a class="first-level-link" href="/sample/navsamples.html">Navigation</a>
+       <a class="first-level-link" href="/structure.html">Structure</a>
    </li>
    <li class="nav-item">
        <a href="/sample/" class="first-level-link">Components</a>
@@ -230,41 +230,39 @@
 
   <!-- Global Footer -->
 <footer id="footer" class="global-footer">
-    <button class="return-top"><span class="sr-only">Back to top</span></button>
+  <button class="return-top"><span class="sr-only">Back to top</span></button>
+  <div class="container">
+   <div class="d-flex">
+     <a href="https://ca.gov" class="cagov-logo" target="_blank">
+     <img src="/images/Ca-Gov-Logo-Blue.svg" alt="CA.gov logo">
+     </a>
+ 
+     <ul class="footer-links">
+         <li><a href="/use.html">Conditions of Use</a></li>
+         <li><a href="/privacy.html">Privacy Policy</a></li>
+         <li><a href="/images/WebAccessibilityCert-beta.template.webstandards.ca.gov.pdf">Accessibility</a></li>
+         <li><a href="/contact.html">Contact Us</a></li>
+         <li><a href="/about.html">About</a></li>
+     </ul>
+
+     <ul class="socialsharer-container">
+         <li><a href="https://github.com/Office-of-Digital-Innovation/California-State-Web-Template"><span class="ca-gov-icon-github"
+                     aria-hidden="true"></span><span class="sr-only">GitHub</span></a></li>
+         <li><a href="https://www.pinterest.com/cagovernment/"><span class="ca-gov-icon-pinterest"
+                     aria-hidden="true"></span><span class="sr-only">Pinterest</span></a></li>
+     </ul>
+   </div>
+  </div>
+
+  <!-- Copyright Statement -->
+  <div class="copyright">
     <div class="container">
-        <div class="d-flex">
-                <a href="https://ca.gov" class="cagov-logo" target="_blank">
-                <img src="/images/Ca-Gov-Logo-Blue.svg" alt="CA.gov logo">
-                </a>
-            
-                <ul class="footer-links">
-                    <li><a href="/use.html">Conditions of Use</a></li>
-                    <li><a href="/privacy.html">Privacy Policy</a></li>
-                    <li><a href="/images/WebAccessibilityCert-beta.template.webstandards.ca.gov.pdf">Accessibility</a></li>
-                    <li><a href="/contact.html">Contact Us</a></li>
-                    <li><a href="/about.html">About</a></li>
-                </ul>
-          
-                <ul class="socialsharer-container">
-                    <li><a href="https://github.com/Office-of-Digital-Innovation/California-State-Web-Template"><span class="ca-gov-icon-github"
-                                aria-hidden="true"></span><span class="sr-only">GitHub</span></a></li>
-                    <li><a href="https://www.pinterest.com/cagovernment/"><span class="ca-gov-icon-pinterest"
-                                aria-hidden="true"></span><span class="sr-only">Pinterest</span></a></li>
-                </ul>
-          
-        </div>
-
+        Copyright &copy;
+        <span id="thisyear">
+    <script>document.getElementById('thisyear').appendChild(document.createTextNode(new Date().getFullYear()))</script>
+</span> State of California
     </div>
-
-    <!-- Copyright Statement -->
-    <div class="copyright">
-        <div class="container">
-            Copyright &copy;
-            <span id="thisyear">
-        <script>document.getElementById('thisyear').appendChild(document.createTextNode(new Date().getFullYear()))</script>
-    </span> State of California
-        </div>
-    </div>
+  </div>
 </footer>
 
 <!-- Extra Decorative Content -->

@@ -4,7 +4,7 @@
 
 .tab-group {
  position: relative;
- border: 1px solid $nav-tabs-border-color;
+ border: none;
 
  @media (max-width: $screen-xs-max) {
   border: none;
@@ -16,6 +16,7 @@
 
  .nav-tabs {
   border-radius: 0;
+  border-bottom: none;
 
   li:first-child a,
   li:first-child a:hover,
@@ -30,18 +31,20 @@
    }
 
    > a {
-    padding: 3px calc($grid-gutter-width / 2);
-    border-top: 0;
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 0;
     position: relative;
     display: block;
     color: $link-color;
+    font-weight: 600;
 
     &,
     &:hover {
-     border: 1px solid #f5f5f5;
+     border: none;
      border-top: none !important;
      text-decoration: none;
-     border-bottom: 1px solid #dee2e6;
+     border-bottom: none;
     }
    }
   }
@@ -49,6 +52,12 @@
 
  .tab-pane {
   padding: calc($grid-gutter-width / 2);
+ }
+ .tab-content {
+  border: 1px solid $gray-200;
+  @media (max-width: $screen-xs-max) {
+   border: none;
+  }
  }
 }
 
@@ -124,22 +133,38 @@
  }
 }
 
-.nav-tabs > li > a.active,
-.nav-tabs > li > a.active:hover {
- color: #555555;
- background-color: #fff;
- border: 1px solid #ddd;
- border-bottom-color: transparent;
+.nav-tabs > li > a.active {
+ background-color: transparent !important;
+ border: none !important;
  cursor: default;
- border-bottom: 1px solid #fff;
+ color: $black !important;
+ position: relative;
+
+ &:hover {
+  color: $gray-800 !important;
+ }
+
+ &::after {
+  left: 0;
+  bottom: 0;
+  position: absolute;
+  content: "";
+  width: 100%;
+  border-bottom: 3px solid;
+ }
 }
 
 .nav-tabs > li > a:hover {
- color: #555555;
+ color: darken($link-color, 7%);
 }
 
+.nav-tabs > li > a:focus {
+ @include outline(2px);
+ outline-offset: -2px;
+}
 .nav-tabs > li > a.active:focus {
- outline: solid 2px $outline-default-color !important;
+ @include outline(2px);
+ outline-offset: -2px;
 }
 
 // Rmoving :after content from bootstrap4 tabs.
@@ -174,6 +199,7 @@
  .responsive {
   .nav-tabs {
    display: flex;
+   background-color: transparent !important;
   }
 
   &.tab-group .card {
