@@ -23,6 +23,7 @@
 - Updated Tabs component styles to resemble design system #219
 - Updated accordion component with a new design and the latest code from Design System #199
 - Added new Step List component #222
+- Added new structural components pages (Utility Header #320, Settings Bar #318, Mobile Controls #316, Site Header #319, Search Bar #317, Global Footer #315)
 
 
 ## 6.0.7
