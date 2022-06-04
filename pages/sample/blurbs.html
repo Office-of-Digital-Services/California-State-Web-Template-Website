@@ -4,102 +4,60 @@ layout: templates.njk
 permalink: "sample/blurbs.html"
 ---
 
-<div class="container p-b-lg p-t-md">
- <nav aria-label="You are here">
-  <ol class="breadcrumb">
-   <li><a href="../index.html" title="Home page">Home</a></li>
-   <li><a href="/sample/content-patterns.html" title="Content Modules landing page">Content Patterns</a></li>
-   <li class="active">Blurbs</li>
-  </ol>
- </nav>
 
- <h1>Blurbs</h1>
- <p>The blurb module is a simple and elegant combination of text and imagery. Blurbs are a great way to
-  showcase small bits of important information, and are often used in rows to display services or
-  features. Image or icon can either appear above the blurb's text, or to the left of the text. </p>
 
- <hr />
+<h1>Blurbs</h1>
+<p>The blurb module is a simple and elegant combination of text and imagery. Blurbs are a great way to
+ showcase small bits of important information, and are often used in rows to display services or
+ features. Image or icon can either appear above the blurb's text, or to the left of the text. </p>
 
- <h2>No margin blurbs</h2>
+<hr />
+
+<h2>No margin blurbs</h2>
 
 
 
 
 
- {% include "../../src/_includes/modules/blurb-no-margin.html" %}
- <!-- Trigger the modal with a button -->
- <button type="button" class="btn btn-default btn-sm m-t-md" data-bs-toggle="modal" data-bs-target="#icon-blocks">Show
-  Source Code</button>
- <!-- Modal -->
- <div class="modal fade" id="icon-blocks" role="dialog">
-  <div class="modal-dialog modal-lg">
-   <div class="modal-content">
-    <div class="modal-header">
-     <h4 class="modal-title">HTML Markup</h4>
-     <button type="button" class="close btn btn-secondary" data-bs-dismiss="modal"><span class="sr-only">Close
-       modal</span><span class="ca-gov-icon-close-mark" aria-hidden="true"></span></button>
-    </div>
-    <div class="modal-body">
-     <strong aria-label="Source Code for Icon Blocks">Source Code:</strong>
-     <pre><code class="overflow-auto">{% include "../../src/_includes/modules/blurb-no-margin.html" %}</code></pre>
-    </div>
-    <div class="modal-footer">
-     <button type="button" class="btn btn-default" data-bs-dismiss="modal">Close</button>
-    </div>
+{% include "../../src/_includes/modules/blurb-no-margin.html" %}
+<!-- Trigger the modal with a button -->
+<button type="button" class="btn btn-default btn-sm m-t-md" data-bs-toggle="modal" data-bs-target="#icon-blocks">Show
+ Source Code</button>
+<!-- Modal -->
+<div class="modal fade" id="icon-blocks" role="dialog">
+ <div class="modal-dialog modal-lg">
+  <div class="modal-content">
+   <div class="modal-header">
+    <h4 class="modal-title">HTML Markup</h4>
+    <button type="button" class="close btn btn-secondary" data-bs-dismiss="modal"><span class="sr-only">Close
+      modal</span><span class="ca-gov-icon-close-mark" aria-hidden="true"></span></button>
+   </div>
+   <div class="modal-body">
+    <strong aria-label="Source Code for Icon Blocks">Source Code:</strong>
+    <pre><code class="overflow-auto">{% include "../../src/_includes/modules/blurb-no-margin.html" %}</code></pre>
+   </div>
+   <div class="modal-footer">
+    <button type="button" class="btn btn-default" data-bs-dismiss="modal">Close</button>
    </div>
   </div>
- </div><!-- / End Modal -->
-
-
-
-
- <div class="container m-b-lg">
-  <hr>
-  <h2>Left justified </h2>
-  {% include "../../src/_includes/modules/blurb-left-justified.html" %}
-
-  <button type="button" class="btn btn-default btn-sm m-t-md" data-bs-toggle="modal" data-bs-target="#icon-link">Show
-   Source Code</button>
-
-
-
-  <!-- Modal -->
-  <div class="modal fade" id="icon-link" role="dialog">
-   <div class="modal-dialog modal-lg">
-    <div class="modal-content">
-     <div class="modal-header">
-      <h4 class="modal-title">HTML Markup</h4>
-      <button type="button" class="close btn btn-secondary" data-bs-dismiss="modal"><span class="sr-only">Close
-        modal</span><span class="ca-gov-icon-close-mark" aria-hidden="true"></span></button>
-     </div>
-     <div class="modal-body">
-      <strong aria-label="Source Code for Icon Links">Source Code:</strong>
-      <pre><code class="overflow-auto">{% include "../../src/_includes/modules/blurb-left-justified.html" %}</code></pre>
-     </div>
-     <div class="modal-footer">
-      <button type="button" class="btn btn-default" data-bs-dismiss="modal">Close</button>
-     </div>
-    </div>
-   </div>
-  </div><!-- / End Modal -->
-
  </div>
- <!--/end container-->
+</div><!-- / End Modal -->
 
 
 
+
+<div class="container m-b-lg">
  <hr>
+ <h2>Left justified </h2>
+ {% include "../../src/_includes/modules/blurb-left-justified.html" %}
 
-
- <h2>Image blurbs</h2>
-
-
- {% include "../../src/_includes/modules/icon-image-blocks.html" %}
- <!-- Trigger the modal with a button -->
- <button type="button" class="btn btn-default btn-sm" data-bs-toggle="modal" data-bs-target="#icon-image-blocks">Show
+ <button type="button" class="btn btn-default btn-sm m-t-md" data-bs-toggle="modal" data-bs-target="#icon-link">Show
   Source Code</button>
+
+
+
  <!-- Modal -->
- <div class="modal fade" id="icon-image-blocks" role="dialog">
+ <div class="modal fade" id="icon-link" role="dialog">
   <div class="modal-dialog modal-lg">
    <div class="modal-content">
     <div class="modal-header">
@@ -108,8 +66,8 @@ permalink: "sample/blurbs.html"
        modal</span><span class="ca-gov-icon-close-mark" aria-hidden="true"></span></button>
     </div>
     <div class="modal-body">
-     <strong aria-label="Source Code for Icon Image Blocks">Source Code:</strong>
-     <pre><code class="overflow-auto">{% include "../../src/_includes/modules/icon-image-blocks.html" %}</code></pre>
+     <strong aria-label="Source Code for Icon Links">Source Code:</strong>
+     <pre><code class="overflow-auto">{% include "../../src/_includes/modules/blurb-left-justified.html" %}</code></pre>
     </div>
     <div class="modal-footer">
      <button type="button" class="btn btn-default" data-bs-dismiss="modal">Close</button>
@@ -117,10 +75,43 @@ permalink: "sample/blurbs.html"
    </div>
   </div>
  </div><!-- / End Modal -->
-
 
 </div>
-<!--/end section-->
+<!--/end container-->
+
+
+
+<hr>
+
+
+<h2>Image blurbs</h2>
+
+
+{% include "../../src/_includes/modules/icon-image-blocks.html" %}
+<!-- Trigger the modal with a button -->
+<button type="button" class="btn btn-default btn-sm" data-bs-toggle="modal" data-bs-target="#icon-image-blocks">Show
+ Source Code</button>
+<!-- Modal -->
+<div class="modal fade" id="icon-image-blocks" role="dialog">
+ <div class="modal-dialog modal-lg">
+  <div class="modal-content">
+   <div class="modal-header">
+    <h4 class="modal-title">HTML Markup</h4>
+    <button type="button" class="close btn btn-secondary" data-bs-dismiss="modal"><span class="sr-only">Close
+      modal</span><span class="ca-gov-icon-close-mark" aria-hidden="true"></span></button>
+   </div>
+   <div class="modal-body">
+    <strong aria-label="Source Code for Icon Image Blocks">Source Code:</strong>
+    <pre><code class="overflow-auto">{% include "../../src/_includes/modules/icon-image-blocks.html" %}</code></pre>
+   </div>
+   <div class="modal-footer">
+    <button type="button" class="btn btn-default" data-bs-dismiss="modal">Close</button>
+   </div>
+  </div>
+ </div>
+</div><!-- / End Modal -->
+
+
 
 
 
