@@ -196,37 +196,190 @@
 <div id="main-content" class="main-content">
 	<main class="main-primary" id="main">
 		<div class="container p-b-lg p-t-md">
+  
+    <nav aria-label="You are here">
+ <ol class="breadcrumb">
+  <li><a href="../index.html" title="Home page">Home</a></li>
+   
+     
+   
+     
+      
+      <li><a href="/sample/" title="Components landing page">Components</a></li>
+       
+      <li>Accordions</li>
+       
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+ </ol>
+</nav>
+
 			<div class="row">
 				<div class="col-md-3">
+     
 					<nav aria-labelledby="components-list" style="max-height:800px; overflow:auto" class="side-navigation">
 						<div class="h4 m-t-0" id="components-list"><a href="/sample/" class="sidenav nav-heading">Components</a></div>
-		   <!--Links with subnav-->
+		   
 					
       
-        <cagov-accordion class="sidenav">
-         <details  open  class="current" >
-          <summary  aria-current="page"  class="active" >Accordions</summary>
-          <div class="accordion-body">
-            <!--subnav-->
-           <ul class="side-subnav">
-            
-            <li>
-             <a href="/sample/accordions.html#basic">Basic Accordion</a>
-            </li>
-            
-            <li>
-             <a href="/sample/accordions.html#side">Accordion Side Menu</a>
-            </li>
-            
-            <li>
-             <a href="/sample/accordions.html#list">Accordion List</a>
-            </li>
-            
-           </ul>
-          </div>
-         </details>
-        </cagov-accordion>
-        <!--Links with subnav-->
+         <a href="/sample/accordions.html"  class="active sidenav"  class="active sidenav"  class="sidenav">Accordions</a>
        
       
       
@@ -330,23 +483,47 @@
 					</nav>
 				</div>
 				<div class="col-md-9">
-					<nav aria-label="You are here">
- <ol class="breadcrumb">
-  <li><a href="../index.html" title="Home page">Home</a></li>
-  <li><a href="/sample/" title="Components landing page">Components</a></li>
-  <li class="active">Accordions</li>
- </ol>
-</nav>
+					
 
-<h1>Accordion</h1>
+<h1 class="m-t-0">Accordions</h1>
 <p>Accordions are expandable sections of content. Each section contains a summary element and more body text when
  opened.</p>
 
 <p>Accordions keep pages clean by hiding information that most people do not need to see.</p>
 
-<h2>Basic accordion</h2>
-<h3>Example:</h3>
-<cagov-accordion>
+<!--TABS-->
+<div class="tab-group responsive m-t-lg">
+ <ul id="tabs1" class="nav nav-tabs" role="tablist">
+  <li class="nav-item">
+   <a id="tab-example1" href="#pane-example1" class="nav-link active" data-bs-toggle="tab" role="tab">Example</a>
+  </li>
+  <li class="nav-item">
+   <a id="tab-usage1" href="#pane-usage1" class="nav-link" data-bs-toggle="tab" role="tab">Usage</a>
+  </li>
+  <li class="nav-item">
+   <a id="tab-html1" href="#pane-html1" class="nav-link" data-bs-toggle="tab" role="tab">Source Code</a>
+  </li>
+  <li class="nav-item">
+   <a id="tab-a11y" href="#pane-a11y" class="nav-link" data-bs-toggle="tab" role="tab">Accessibility</a>
+  </li>
+ </ul>
+
+
+ <div id="tab-content" class="tab-content">
+  <!--Examples-->
+  <div id="pane-example1" class="card tab-pane fade show active" role="tabpanel" aria-labelledby="tab-example1">
+   <div class="card-header" id="heading-example1">
+    <h4 class="my-0">
+     <a data-bs-toggle="collapse" href="#collapse-example1" data-parent="#tab-content" aria-expanded="true"
+      aria-controls="collapse-example1" data-hash="#pane-example1" title="Example tab header">
+      Example
+     </a>
+    </h4>
+   </div>
+   <div id="collapse-example1" class="collapse show" role="tabpanel" aria-labelledby="heading-example1">
+    <div class="card-body p-b-lg">
+     <h3>Basic Accordion</h3>
+     <cagov-accordion>
  <details>
   <summary>Add a short, descriptive heading for your topic</summary>
   <div class="accordion-body">
@@ -379,54 +556,51 @@
   </div>
  </details>
 </cagov-accordion>
+     <a href="#basic" data-hash="#pane-html1" class="tab-link m-t-md btn btn-default btn-xs">Vidw Source
+      Code</a>
 
-<h3><label for="sample-accordion">Source Code:</label></h3>
-<textarea id="sample-accordion" class="form-control" rows="10"
- cols="80"><cagov-accordion>
- <details>
-  <summary>Add a short, descriptive heading for your topic</summary>
-  <div class="accordion-body">
-   <p>A couple link are included inside this accordion to demonstrate that when the accordion is closed they are
-    automatically not in the keyboard focus order but when the accordion opens they become the next available elements
-    in the keyboard navigation sequence after the accordion's summary element.</p>
-   <ul class="list-primary">
-    <li><a href="#">Link one</a></li>
-    <li><a href="#">Link two</a></li>
-   </ul>
-  </div>
- </details>
-</cagov-accordion>
-<cagov-accordion>
- <details>
-  <summary>If your heading must be longer, the accordion will wrap to multiple lines within the container like this
-  </summary>
-  <div class="accordion-body">
-   <p>Once open, the content within the accordion should describe the topic in more detail. It should not repeat the
-    heading.</p>
-  </div>
- </details>
-</cagov-accordion>
-<cagov-accordion>
- <details>
-  <summary>This heading tells users what’s inside the accordion</summary>
-  <div class="accordion-body">
-   <p>Once open, the content within the accordion should describe the topic in more detail. It should not repeat the
-    heading.</p>
-  </div>
- </details>
-</cagov-accordion></textarea>
+     <h3>Accordion List</h3>
 
-<hr class="m-t-md" />
+     <ol data-aria-accordion data-multi data-transition data-default="none">
+  <li>
+    <h3 data-aria-accordion-heading>
+      Consectetur Fusce Euismod
+    </h3>
+    <div data-aria-accordion-panel>
+      <p>
+        Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. <a
+          href="#">Link</a>.
+      </p>
+    </div>
+  </li>
+  <li>
+    <h3 data-aria-accordion-heading>
+      Pellentesque Justo Nibh Inceptos
+    </h3>
+    <div data-aria-accordion-panel>
+      <p>
+        Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper.
+      </p>
+    </div>
+  </li>
+  <li>
+    <h2 data-aria-accordion-heading>
+      Nullam Nibh Fermentum Vehicula
+    </h2>
+    <div data-aria-accordion-panel>
+      <p>
+        Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper.
+      </p>
+    </div>
+  </li>
+</ol>
+     <a href="#list" data-hash="#pane-html1" class="tab-link m-t-md btn btn-default btn-xs">Vidw Source
+      Code</a>
 
-<h2>Accordion Side Menu</h2>
-<p>
- Accordion side menu is a list navigation with expandable sub navigation. For more information and examples
- visit <a href="navigation-sidebar.html">side menu navigation</a> page.
-</p>
-
-
-<h2>Example:</h2>
-<cagov-accordion class="sidenav">
+     <h3>Accordion Side Menu</h3>
+     <div class="row">
+      <div class="col-md-5">
+       <cagov-accordion class="sidenav">
  <details open>
   <summary class="active">Accordion</summary>
   <div class="accordion-body">
@@ -480,75 +654,15 @@
   </div>
  </details>
 </cagov-accordion>
+       <a href="#side" data-hash="#pane-html1" class="tab-link m-t-md btn btn-default btn-xs">Vidw Source
+        Code</a>
+      </div>
+     </div>
 
-<h3><label for="sample-side-menu">Source Code:</label></h3>
-<textarea id="sample-side-menu" class="form-control" rows="10" cols="80"><cagov-accordion class="sidenav">
- <details open>
-  <summary class="active">Accordion</summary>
-  <div class="accordion-body">
-   <ul class="side-subnav">
-    <li>
-     <a href="#">Basic Accordion</a>
-    </li>
-    <li>
-     <a href="#">Side navigation accordion</a>
-    </li>
-    <li>
-     <a href="#">List Accordion</a>
-    </li>
-   </ul>
-  </div>
- </details>
-</cagov-accordion>
-<cagov-accordion class="sidenav">
- <details>
-  <summary>Buttons</summary>
-  <div class="accordion-body">
-   <ul class="side-subnav">
-    <li>
-     <a href="#" class="active">Links as Buttons</a>
-    </li>
-    <li>
-     <a href="#">Buttons as Buttons</a>
-    </li>
-    <li>
-     <a href="#">Disabled Buttons</a>
-    </li>
-   </ul>
-  </div>
- </details>
-</cagov-accordion>
-<cagov-accordion class="sidenav">
- <details>
-  <summary>Form Styles</summary>
-  <div class="accordion-body">
-   <ul class="side-subnav">
-    <li>
-     <a href="#">Contact form sample</a>
-    </li>
-    <li>
-     <a href="#">File input</a>
-    </li>
-    <li>
-     <a href="#">Radio buttons and checkboxes</a>
-    </li>
-   </ul>
-  </div>
- </details>
-</cagov-accordion>
-</textarea>
-
-
-<h2>Bootstrap Accordion Side Menu</h2>
-<p>
- Bootstrap accordion side menu is a vertical navigation component which apart from traditional, text
- links, might embed icons, dropdowns, images or even forms. For more information and examples
- visit <a href="navigation-sidebar.html">side menu navigation</a> page.
-</p>
-
-
-<h2>Example:</h2>
-<!-- Side navigation -->
+     <h3>Bootstrap Accordion Side Menu</h3>
+     <div class="row">
+      <div class="col-md-5">
+       <!-- Side navigation -->
 <div class="side-nav">
  <div data-aria-accordion data-multi data-transition data-default="none">
 
@@ -611,9 +725,206 @@
     aria-hidden="true"></span> Regular link 2</a>
  </div>
 </div>
+       <a href="#bs" data-hash="#pane-html1" class="tab-link m-t-md btn btn-default btn-xs">Vidw Source
+        Code</a>
+      </div>
+     </div>
+    </div>
+   </div>
+  </div>
 
-<h3><label for="sample-side-menu">Source Code:</label></h3>
-<textarea id="sample-side-menu" class="form-control" rows="10" cols="80"><!-- Side navigation -->
+  <!--USAGE-->
+  <div id="pane-usage1" class="card tab-pane fade" role="tabpanel" aria-labelledby="tab-usage1">
+   <div class="card-header" id="heading-usage1">
+    <h4 class="my-0">
+     <a class="collapsed" data-bs-toggle="collapse" href="#collapse-usage1" data-parent="#tab-content"
+      aria-expanded="false" aria-controls="collapse-usage1" data-hash="#pane-usage1" title="Usage tab header">
+      Usage
+     </a>
+    </h4>
+   </div>
+   <div id="collapse-usage1" class="collapse" role="tabpanel" aria-labelledby="heading-usage1">
+    <div class="card-body">
+     <h3>When and how to use it</h3>
+     <p>Use accordions to hide content most people do not need.</p>
+     <p>Headings can be a:</p>
+
+     <ul>
+      <li>Word or phrase</li>
+      <li>Sentence</li>
+      <li>Question</li>
+     </ul>
+
+
+
+     <p>Write headings that are brief and descriptive.</p>
+     <p>Only use accordions when:</p>
+     <ul>
+      <li>A small group of people needs the information</li>
+      <li>People only need certain information (like selecting one of several license types)</li>
+      <li>Providing notes or disclaimers</li>
+     </ul>
+
+     <h3>How not to use it</h3>
+
+     <p>Do not use accordions:</p>
+     <ul>
+      <li>If more than a third of your visitors need the information in the accordion</li>
+      <li>To make a page look shorter</li>
+      <li>Inside other accordions</li>
+     </ul>
+     <p>Accordions hide information unless someone opens them. This requires an extra action, which means visitors have
+      to
+      do extra work to get this information. If most people need to see the content, do not put it in an accordion; keep
+      it in the body content.</p>
+
+    </div>
+   </div>
+  </div>
+
+  <!--HTML-->
+  <div id="pane-html1" class="card tab-pane fade" role="tabpanel" aria-labelledby="tab-html1">
+   <div class="card-header" id="heading-html1">
+    <h4 class="my-0">
+     <a class="collapsed" data-bs-toggle="collapse" href="#collapse-html1" data-parent="#tab-content"
+      aria-expanded="false" aria-controls="collapse-html1" data-hash="#pane-html1" title="HTML Source Code tab header">
+      Source Code
+     </a>
+    </h4>
+   </div>
+   <div id="collapse-html1" class="collapse" role="tabpanel" aria-labelledby="heading-html1">
+    <div class="card-body">
+     <h3 id="basic">Basic Accodion</h3>
+     <pre style="max-height: 300px;"><code><cagov-accordion>
+ <details>
+  <summary>Add a short, descriptive heading for your topic</summary>
+  <div class="accordion-body">
+   <p>A couple link are included inside this accordion to demonstrate that when the accordion is closed they are
+    automatically not in the keyboard focus order but when the accordion opens they become the next available elements
+    in the keyboard navigation sequence after the accordion's summary element.</p>
+   <ul class="list-primary">
+    <li><a href="#">Link one</a></li>
+    <li><a href="#">Link two</a></li>
+   </ul>
+  </div>
+ </details>
+</cagov-accordion>
+<cagov-accordion>
+ <details>
+  <summary>If your heading must be longer, the accordion will wrap to multiple lines within the container like this
+  </summary>
+  <div class="accordion-body">
+   <p>Once open, the content within the accordion should describe the topic in more detail. It should not repeat the
+    heading.</p>
+  </div>
+ </details>
+</cagov-accordion>
+<cagov-accordion>
+ <details>
+  <summary>This heading tells users what’s inside the accordion</summary>
+  <div class="accordion-body">
+   <p>Once open, the content within the accordion should describe the topic in more detail. It should not repeat the
+    heading.</p>
+  </div>
+ </details>
+</cagov-accordion></code>
+    </pre>
+
+     <h3 id="list">Accordion list</h3>
+     <pre style="max-height: 300px;"><code><ol data-aria-accordion data-multi data-transition data-default="none">
+  <li>
+    <h3 data-aria-accordion-heading>
+      Consectetur Fusce Euismod
+    </h3>
+    <div data-aria-accordion-panel>
+      <p>
+        Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. <a
+          href="#">Link</a>.
+      </p>
+    </div>
+  </li>
+  <li>
+    <h3 data-aria-accordion-heading>
+      Pellentesque Justo Nibh Inceptos
+    </h3>
+    <div data-aria-accordion-panel>
+      <p>
+        Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper.
+      </p>
+    </div>
+  </li>
+  <li>
+    <h2 data-aria-accordion-heading>
+      Nullam Nibh Fermentum Vehicula
+    </h2>
+    <div data-aria-accordion-panel>
+      <p>
+        Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper.
+      </p>
+    </div>
+  </li>
+</ol></code>
+   </pre>
+
+     <h3 id="side">Accordion Side Menu</h3>
+     <pre style="max-height: 300px;"><code><cagov-accordion class="sidenav">
+ <details open>
+  <summary class="active">Accordion</summary>
+  <div class="accordion-body">
+   <ul class="side-subnav">
+    <li>
+     <a href="#">Basic Accordion</a>
+    </li>
+    <li>
+     <a href="#">Side navigation accordion</a>
+    </li>
+    <li>
+     <a href="#">List Accordion</a>
+    </li>
+   </ul>
+  </div>
+ </details>
+</cagov-accordion>
+<cagov-accordion class="sidenav">
+ <details>
+  <summary>Buttons</summary>
+  <div class="accordion-body">
+   <ul class="side-subnav">
+    <li>
+     <a href="#" class="active">Links as Buttons</a>
+    </li>
+    <li>
+     <a href="#">Buttons as Buttons</a>
+    </li>
+    <li>
+     <a href="#">Disabled Buttons</a>
+    </li>
+   </ul>
+  </div>
+ </details>
+</cagov-accordion>
+<cagov-accordion class="sidenav">
+ <details>
+  <summary>Form Styles</summary>
+  <div class="accordion-body">
+   <ul class="side-subnav">
+    <li>
+     <a href="#">Contact form sample</a>
+    </li>
+    <li>
+     <a href="#">File input</a>
+    </li>
+    <li>
+     <a href="#">Radio buttons and checkboxes</a>
+    </li>
+   </ul>
+  </div>
+ </details>
+</cagov-accordion></code>
+ </pre>
+
+     <h3 id="bs">Bootstrap Accordion Side Menu</h3>
+     <pre style="max-height: 300px;"><code><!-- Side navigation -->
 <div class="side-nav">
  <div data-aria-accordion data-multi data-transition data-default="none">
 
@@ -675,86 +986,40 @@
   <a href="#" class="list-group-item list-group-item-action"><span class="ca-gov-icon-info-bubble"
     aria-hidden="true"></span> Regular link 2</a>
  </div>
+</div></code>
+</pre>
+    </div>
+   </div>
+  </div>
+
+
+  <!--A11y-->
+  <div id="pane-a11y" class="card tab-pane fade" role="tabpanel" aria-labelledby="tab-a11y">
+   <div class="card-header" id="heading-a11y">
+    <h4 class="my-0">
+     <a class="collapsed" data-bs-toggle="collapse" href="#collapse-a11y" data-parent="#tab-a11y" aria-expanded="false"
+      aria-controls="collapse-a11y" data-hash="#pane-a11y" title="Accessibility tab header">
+      Accessibility
+     </a>
+    </h4>
+   </div>
+   <div id="collapse-a11y" class="collapse" role="tabpanel" aria-labelledby="heading-a11y">
+    <div class="card-body">
+     <h3>Accessibility</h3>
+     <p>Each time a new component version is published:</p>
+     <ul>
+      <li>Test with the <a href="https://www.deque.com/axe/" target="_blank">axe
+        accessibility tool</a>.</li>
+      <li>Review with the <a href="https://www.apple.com/voiceover/info/guide/_1121.html" target="_blank">VoiceOver</a>
+       or <a href="https://www.nvaccess.org/download/" target="_blank">NVDA</a> screen reader.</li>
+      <li>Ensure all actionable elements are accessible by keyboard command and tab in a logical order. </li>
+      <li>Check the component layout on a variety of screen sizes.</li>
+     </ul>
+    </div>
+   </div>
+  </div>
+ </div>
 </div>
-</textarea>
-
-
-<h2>Accordion List</h2>
-<p>
- Accordion lists are commonly used for things like FAQ's where the title exposes the
- description in an expanding menu fashion.
- Accordion List uses HTML5 roles, some ARIA properties, and IDs for accessibility.
-</p>
-<h2>Example:</h2>
-<ol data-aria-accordion data-multi data-transition data-default="none">
-  <li>
-    <h3 data-aria-accordion-heading>
-      Consectetur Fusce Euismod
-    </h3>
-    <div data-aria-accordion-panel>
-      <p>
-        Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. <a
-          href="#">Link</a>.
-      </p>
-    </div>
-  </li>
-  <li>
-    <h3 data-aria-accordion-heading>
-      Pellentesque Justo Nibh Inceptos
-    </h3>
-    <div data-aria-accordion-panel>
-      <p>
-        Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper.
-      </p>
-    </div>
-  </li>
-  <li>
-    <h2 data-aria-accordion-heading>
-      Nullam Nibh Fermentum Vehicula
-    </h2>
-    <div data-aria-accordion-panel>
-      <p>
-        Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper.
-      </p>
-    </div>
-  </li>
-</ol>
-
-<h3><label for="sample-accordion-list">Source Code:</label></h3>
-<textarea id="sample-accordion-list" class="form-control" rows="10" cols="80"><ol data-aria-accordion data-multi data-transition data-default="none">
-  <li>
-    <h3 data-aria-accordion-heading>
-      Consectetur Fusce Euismod
-    </h3>
-    <div data-aria-accordion-panel>
-      <p>
-        Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. <a
-          href="#">Link</a>.
-      </p>
-    </div>
-  </li>
-  <li>
-    <h3 data-aria-accordion-heading>
-      Pellentesque Justo Nibh Inceptos
-    </h3>
-    <div data-aria-accordion-panel>
-      <p>
-        Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper.
-      </p>
-    </div>
-  </li>
-  <li>
-    <h2 data-aria-accordion-heading>
-      Nullam Nibh Fermentum Vehicula
-    </h2>
-    <div data-aria-accordion-panel>
-      <p>
-        Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper.
-      </p>
-    </div>
-  </li>
-</ol>
-</textarea>
 				</div>
 			</div>
 		</div>
