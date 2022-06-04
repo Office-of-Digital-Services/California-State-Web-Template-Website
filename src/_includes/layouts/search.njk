@@ -45,6 +45,9 @@
 			<!--Search result section-->
             <div class="section section-default">
                 <div class="container search-results-header">
+
+                   {# Breadcrumbs (rendering data from /src/_data/breadcrumbs.json and /src/_data/helpers.js  #}
+    {% include "../modules/breadcrumbs.njk" %}
                     <!--Uncomment if you prefer to use original google search box. Be advided that original custom search box is not meeting WCAG accessibility standards. -->
                     <!--<gcse:searchbox-only resultsUrl="/serp.html" enableAutoComplete="true"></gcse:searchbox-only>-->
 

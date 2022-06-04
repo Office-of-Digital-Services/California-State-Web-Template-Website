@@ -18686,23 +18686,28 @@ cagov-accordion.sidenav details .accordion-body .side-subnav li:last-child {
 ----------------------------------------- */
 .breadcrumb {
   padding-left: 0;
-  background-color: transparent;
-  font-size: 1rem;
+  background-color: #fafafa;
+  padding: 0.5em 1rem;
+  margin-bottom: 2rem;
+  font-size: 0.85rem;
 }
 @media (min-width: 576px) {
   .breadcrumb {
-    font-size: calc(1rem + 0.1vw);
+    font-size: calc(0.85rem + 0.1vw);
   }
 }
 .breadcrumb li:before {
-  content: "";
-  border-left: 1px dotted #777777;
+  content: "/";
+  color: #bcbbc1;
+  border: none;
   margin: 0 0.75rem;
-  font-size: 10px;
+  font-size: 1.125rem;
+  font-weight: 200;
   position: relative;
-  top: -2px;
+  top: 1px;
 }
 .breadcrumb li:first-child:before {
+  content: "";
   border-left: none;
   margin: 0 0;
 }

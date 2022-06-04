@@ -21,6 +21,16 @@ module.exports = {
   return response;
  },
 
+ getActiveClass(itemUrl, pageUrl) {
+  let response = '';
+
+  if (itemUrl === pageUrl) {
+   response = ' class="active" ';
+  }
+
+  return response;
+ },
+
  getOpenAttr(itemUrl, pageUrl) {
   let response = '';
 
@@ -45,6 +55,17 @@ module.exports = {
   if (itemUrl.length > 1 && pageUrl.indexOf(itemUrl) === 0) {
    response += ' class="active sidenav" ';
   }
+
+  return response;
+ },
+
+ getURL(itemUrl, pageUrl) {
+  let response = '';
+
+  if (itemUrl === pageUrl) {
+   response = pageUrl;
+  }
+
 
   return response;
  }

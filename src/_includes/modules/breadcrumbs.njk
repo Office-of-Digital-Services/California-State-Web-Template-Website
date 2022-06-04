@@ -1,0 +1,13 @@
+<nav aria-label="You are here">
+ <ol class="breadcrumb">
+  <li><a href="../index.html" title="Home page">Home</a></li>
+   {% for nav in breadcrumbs.pages %}
+    {% if helpers.getURL(nav.url, page.url) %} 
+     {% if nav.parent %} 
+      <li><a href="{{nav.parentURL }}" title="{{ nav.parent }} landing page">{{ nav.parent }}</a></li>
+      {% endif %} 
+      <li>{{ nav.text }}</li>
+      {% endif %} 
+   {% endfor %}
+ </ol>
+</nav>

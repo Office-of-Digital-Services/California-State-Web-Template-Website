@@ -3,18 +3,24 @@
 <div id="main-content" class="main-content">
 	<main class="main-primary" id="main">
 		<div class="container p-b-lg p-t-md">
+  {# Breadcrumbs (rendering data from /src/_data/breadcrumbs.json and /src/_data/helpers.js  #}
+    {% include "../modules/breadcrumbs.njk" %}
+
+  </ol></nav>
+
 			<div class="row">
 				<div class="col-md-3">
+      {# Side navigation (rendering data from /src/_data/template.json  and /src/_data/helpers.js  #}
 					<nav aria-labelledby="components-list" style="max-height:800px; overflow:auto" class="side-navigation">
 						<div class="h4 m-t-0" id="components-list"><a href="/sample/content-patterns.html" class="sidenav nav-heading">Content Patterns</a></div>
-		   <!--Links with subnav-->
+		   {# Links with subnav #}
 					{% for item in templates.templates %}
       {% if 'subnav' in item %}
         <cagov-accordion class="sidenav">
          <details {{ helpers.getOpenAttr(item.url, page.url) | safe }}>
           <summary {{ helpers.getLinkActiveState(item.url, page.url) | safe }}>{{ item.text }}</summary>
           <div class="accordion-body">
-            <!--subnav-->
+            {# subnav #}
            <ul class="side-subnav">
             {% for subitem in item.subnav %}
             <li>
@@ -25,17 +31,11 @@
           </div>
          </details>
         </cagov-accordion>
-        <!--Links with subnav-->
+        {# Links with subnav #}
        {% else %}
          <a href="{{ item.url }}" {{ helpers.getSidenav(item.url, page.url) | safe }} class="sidenav">{{ item.text }}</a>
        {% endif %}
       {% endfor %}
-
-						<div class="h4"><a href="/sample/page-templates.html" class="sidenav nav-heading">Page Templates</a></div>
-						{% for item in pages.pages %}
-						  <a href="{{ item.url }}" {{ helpers.getSidenav(item.url, page.url) | safe }}  class="sidenav">{{ item.text }}</a>
-						{% endfor %}
-
 					</nav>
 				</div>
 				<div class="col-md-9">
