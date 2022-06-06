@@ -4,12 +4,12 @@
 	<main class="main-primary" id="main">
 		<div class="container p-b-lg p-t-md">
   {# Breadcrumbs (rendering data from /src/_data/breadcrumbs.json and /src/_data/helpers.js  #}
-    {% include "../modules/breadcrumbs.njk" %}
+    {% include "../breadcrumbs.njk" %}
 
 			<div class="row">
 				<div class="col-md-3">
      {# SIde navigation (rendering data from /src/_data/components.json  and /src/_data/helpers.js  #}
-					<nav aria-labelledby="components-list" style="max-height:800px; overflow:auto" class="side-navigation">
+					<nav aria-labelledby="components-list" class="side-navigation">
 						<div class="h4 m-t-0" id="components-list"><a href="/sample/" class="sidenav nav-heading">Components</a></div>
 		   {# Links with subnav #}
 					{% for item in components.components %}

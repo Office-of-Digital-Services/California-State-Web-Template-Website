@@ -1,0 +1,330 @@
+﻿---
+title: Accordions
+layout: components.njk
+permalink: "/sample/accordions2.html"
+---
+
+
+<h1 class="m-t-0">Accordions</h1>
+<p>Accordions are expandable sections of content. Each section contains a summary element and more body text when
+ opened.</p>
+
+<p>Accordions keep pages clean by hiding information that most people do not need to see.</p>
+
+<h2>When and how to use it</h2>
+<p>Use accordions to hide content most people do not need.</p>
+<p>Headings can be a:</p>
+
+<ul>
+ <li>Word or phrase</li>
+ <li>Sentence</li>
+ <li>Question</li>
+</ul>
+
+
+
+<p>Write headings that are brief and descriptive.</p>
+<p>Only use accordions when:</p>
+<ul>
+ <li>A small group of people needs the information</li>
+ <li>People only need certain information (like selecting one of several license types)</li>
+ <li>Providing notes or disclaimers</li>
+</ul>
+
+<h3>How not to use it</h3>
+
+<p>Do not use accordions:</p>
+<ul>
+ <li>If more than a third of your visitors need the information in the accordion</li>
+ <li>To make a page look shorter</li>
+ <li>Inside other accordions</li>
+</ul>
+<p>Accordions hide information unless someone opens them. This requires an extra action, which means visitors have
+ to
+ do extra work to get this information. If most people need to see the content, do not put it in an accordion; keep
+ it in the body content.</p>
+
+<h2>Accessibility</h2>
+<p>Each time a new component version is published:</p>
+<ul>
+ <li>Test with the <a href="https://www.deque.com/axe/" target="_blank">axe
+   accessibility tool</a>.</li>
+ <li>Review with the <a href="https://www.apple.com/voiceover/info/guide/_1121.html" target="_blank">VoiceOver</a>
+  or <a href="https://www.nvaccess.org/download/" target="_blank">NVDA</a> screen reader.</li>
+ <li>Ensure all actionable elements are accessible by keyboard command and tab in a logical order. </li>
+ <li>Check the component layout on a variety of screen sizes.</li>
+</ul>
+
+<h2>Demo</h2>
+<h3>Basic Accordion</h3>
+
+
+
+<!--TABS-->
+<div class="tab-group responsive">
+ <ul id="tabs1" class="nav nav-tabs" role="tablist">
+  <li class="nav-item">
+   <a id="tab-example1" href="#pane-example1" class="nav-link active" data-bs-toggle="tab" role="tab">Example</a>
+  </li>
+  <li class="nav-item">
+   <a id="tab-html1" href="#pane-html1" class="nav-link" data-bs-toggle="tab" role="tab">Source Code</a>
+  </li>
+
+ </ul>
+
+
+ <div id="tab-content" class="tab-content">
+  <!--Examples-->
+  <div id="pane-example1" class="card tab-pane fade show active" role="tabpanel" aria-labelledby="tab-example1">
+   <div class="card-header" id="heading-example1">
+    <h4 class="my-0">
+     <a data-bs-toggle="collapse" href="#collapse-example1" data-parent="#tab-content" aria-expanded="true"
+      aria-controls="collapse-example1" data-hash="#pane-example1" title="Example tab header">
+      Example
+     </a>
+    </h4>
+   </div>
+   <div id="collapse-example1" class="collapse show" role="tabpanel" aria-labelledby="heading-example1">
+    <div class="card-body p-b-lg">
+
+     {% include "../../src/_includes/modules/accordion.html" %}
+
+
+    </div>
+   </div>
+  </div>
+
+
+
+  <!--HTML-->
+  <div id="pane-html1" class="card tab-pane fade" role="tabpanel" aria-labelledby="tab-html1">
+   <div class="card-header" id="heading-html1">
+    <h4 class="my-0">
+     <a class="collapsed" data-bs-toggle="collapse" href="#collapse-html1" data-parent="#tab-content"
+      aria-expanded="false" aria-controls="collapse-html1" data-hash="#pane-html1" title="HTML Source Code tab header">
+      Source Code
+     </a>
+    </h4>
+   </div>
+   <div id="collapse-html1" class="collapse" role="tabpanel" aria-labelledby="heading-html1">
+    <div class="card-body">
+     <pre style="max-height: 300px;"><code>{% include "../../src/_includes/modules/accordion.html" %}</code>
+    </pre>
+
+    </div>
+   </div>
+  </div>
+
+
+ </div>
+</div>
+<!--END TABS-->
+
+
+
+
+
+
+<h3>Accordion List</h3>
+<!--TABS-->
+<div class="tab-group responsive">
+ <ul id="tabs1" class="nav nav-tabs" role="tablist">
+  <li class="nav-item">
+   <a id="tab-example3" href="#pane-example3" class="nav-link active" data-bs-toggle="tab" role="tab">Example</a>
+  </li>
+  <li class="nav-item">
+   <a id="tab-html3" href="#pane-html3" class="nav-link" data-bs-toggle="tab" role="tab">Source Code</a>
+  </li>
+
+ </ul>
+
+
+ <div id="tab-content" class="tab-content">
+  <!--Examples-->
+  <div id="pane-example3" class="card tab-pane fade show active" role="tabpanel" aria-labelledby="tab-example3">
+   <div class="card-header" id="heading-example3">
+    <h4 class="my-0">
+     <a data-bs-toggle="collapse" href="#collapse-example2" data-parent="#tab-content" aria-expanded="true"
+      aria-controls="collapse-example3" data-hash="#pane-example3" title="Example tab header">
+      Example
+     </a>
+    </h4>
+   </div>
+   <div id="collapse-example3" class="collapse show" role="tabpanel" aria-labelledby="heading-example3">
+    <div class="card-body p-b-lg">
+
+     {% include "../../src/_includes/modules/accordion-list.html" %}
+
+
+    </div>
+   </div>
+  </div>
+
+
+
+  <!--HTML-->
+  <div id="pane-html3" class="card tab-pane fade" role="tabpanel" aria-labelledby="tab-html3">
+   <div class="card-header" id="heading-html3">
+    <h4 class="my-0">
+     <a class="collapsed" data-bs-toggle="collapse" href="#collapse-html3" data-parent="#tab-content"
+      aria-expanded="false" aria-controls="collapse-html3" data-hash="#pane-html3" title="HTML Source Code tab header">
+      Source Code
+     </a>
+    </h4>
+   </div>
+   <div id="collapse-html3" class="collapse" role="tabpanel" aria-labelledby="heading-html3">
+    <div class="card-body">
+     <pre style="max-height: 300px;"><code>{% include "../../src/_includes/modules/accordion-list.html" %}</code>
+   </pre>
+
+    </div>
+   </div>
+  </div>
+
+
+ </div>
+</div>
+<!--END TABS-->
+
+
+
+
+
+<h3>Accordion Side Menu</h3>
+
+<!--TABS-->
+<div class="tab-group responsive">
+ <ul id="tabs1" class="nav nav-tabs" role="tablist">
+  <li class="nav-item">
+   <a id="tab-example2" href="#pane-example2" class="nav-link active" data-bs-toggle="tab" role="tab">Example</a>
+  </li>
+  <li class="nav-item">
+   <a id="tab-html2" href="#pane-html2" class="nav-link" data-bs-toggle="tab" role="tab">Source Code</a>
+  </li>
+
+ </ul>
+
+
+ <div id="tab-content" class="tab-content">
+  <!--Examples-->
+  <div id="pane-example2" class="card tab-pane fade show active" role="tabpanel" aria-labelledby="tab-example2">
+   <div class="card-header" id="heading-example2">
+    <h4 class="my-0">
+     <a data-bs-toggle="collapse" href="#collapse-example2" data-parent="#tab-content" aria-expanded="true"
+      aria-controls="collapse-example2" data-hash="#pane-example2" title="Example tab header">
+      Example
+     </a>
+    </h4>
+   </div>
+   <div id="collapse-example2" class="collapse show" role="tabpanel" aria-labelledby="heading-example2">
+    <div class="card-body p-b-lg">
+
+     <div class="row">
+      <div class="col-md-5">
+       {% include "../../src/_includes/modules/accordion-sidenav.html" %}
+      </div>
+     </div>
+
+
+    </div>
+   </div>
+  </div>
+
+
+
+  <!--HTML-->
+  <div id="pane-html2" class="card tab-pane fade" role="tabpanel" aria-labelledby="tab-html2">
+   <div class="card-header" id="heading-html2">
+    <h4 class="my-0">
+     <a class="collapsed" data-bs-toggle="collapse" href="#collapse-html2" data-parent="#tab-content"
+      aria-expanded="false" aria-controls="collapse-html2" data-hash="#pane-html2" title="HTML Source Code tab header">
+      Source Code
+     </a>
+    </h4>
+   </div>
+   <div id="collapse-html2" class="collapse" role="tabpanel" aria-labelledby="heading-html2">
+    <div class="card-body">
+
+     <pre style="max-height: 300px;"><code>{% include "../../src/_includes/modules/accordion-sidenav.html" %}</code>
+ </pre>
+
+    </div>
+   </div>
+  </div>
+
+
+ </div>
+</div>
+<!--END TABS-->
+
+
+
+
+
+
+<h3>Bootstrap Accordion Side Menu</h3>
+
+<!--TABS-->
+<div class="tab-group responsive">
+ <ul id="tabs1" class="nav nav-tabs" role="tablist">
+  <li class="nav-item">
+   <a id="tab-example4" href="#pane-example4" class="nav-link active" data-bs-toggle="tab" role="tab">Example</a>
+  </li>
+  <li class="nav-item">
+   <a id="tab-html4" href="#pane-html4" class="nav-link" data-bs-toggle="tab" role="tab">Source Code</a>
+  </li>
+
+ </ul>
+
+
+ <div id="tab-content" class="tab-content">
+  <!--Examples-->
+  <div id="pane-example4" class="card tab-pane fade show active" role="tabpanel" aria-labelledby="tab-example4">
+   <div class="card-header" id="heading-example4">
+    <h4 class="my-0">
+     <a data-bs-toggle="collapse" href="#collapse-example4" data-parent="#tab-content" aria-expanded="true"
+      aria-controls="collapse-example4" data-hash="#pane-example4" title="Example tab header">
+      Example
+     </a>
+    </h4>
+   </div>
+   <div id="collapse-example4" class="collapse show" role="tabpanel" aria-labelledby="heading-example4">
+    <div class="card-body p-b-lg">
+
+     <div class="row">
+      <div class="col-md-5">
+       {% include "../../src/_includes/modules/nav-side.html" %}
+      </div>
+     </div>
+
+
+    </div>
+   </div>
+  </div>
+
+
+
+  <!--HTML-->
+  <div id="pane-html4" class="card tab-pane fade" role="tabpanel" aria-labelledby="tab-html4">
+   <div class="card-header" id="heading-html4">
+    <h4 class="my-0">
+     <a class="collapsed" data-bs-toggle="collapse" href="#collapse-html4" data-parent="#tab-content"
+      aria-expanded="false" aria-controls="collapse-html4" data-hash="#pane-html4" title="HTML Source Code tab header">
+      Source Code
+     </a>
+    </h4>
+   </div>
+   <div id="collapse-html4" class="collapse" role="tabpanel" aria-labelledby="heading-html4">
+    <div class="card-body">
+
+     <pre style="max-height: 300px;"><code>{% include "../../src/_includes/modules/nav-side.html" %}</code>
+ </pre>
+
+    </div>
+   </div>
+  </div>
+
+
+ </div>
+</div>
+<!--END TABS-->
