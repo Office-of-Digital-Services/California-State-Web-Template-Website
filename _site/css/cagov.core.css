@@ -23094,6 +23094,36 @@ a.nav-heading {
 }
 
 /* -----------------------------------------
+   LINK GRID
+   /source/scss/cagov/link-grid.scss
+----------------------------------------- */
+.link-grid {
+  display: block;
+  border: 1px solid #d4d4d7;
+  border-radius: 5px;
+  font-size: 1.4rem;
+  padding: 1rem;
+  padding-right: 1.75rem;
+  position: relative;
+  text-decoration: none !important;
+  height: 100%;
+}
+.link-grid:hover, .link-grid:focus {
+  background: #ededef;
+}
+.link-grid:focus {
+  outline: solid 2px #2ea3f2 !important;
+}
+.link-grid::after {
+  font-family: "CaGov";
+  content: "5";
+  position: absolute;
+  top: 0.8rem;
+  right: 0.7rem;
+  font-size: 1.6rem;
+}
+
+/* -----------------------------------------
    GLOBALS - /source/scss/cagov/globals.scss
 ----------------------------------------- */
 .overflow-hidden {
@@ -23541,43 +23571,63 @@ a.nav-heading {
   background-color: #ebebeb !important;
 }
 
-.bg-gray-50 {
+.bg-gray-50,
+.bg-gray-50-hover:hover,
+.bg-gray-50-hover:focus {
   background-color: #fafafa !important;
 }
 
-.bg-gray-100 {
+.bg-gray-100,
+.bg-gray-100-hover:hover,
+.bg-gray-100-hover:focus {
   background-color: #ededef !important;
 }
 
-.bg-gray-200 {
+.bg-gray-200,
+.bg-gray-200-hover:hover,
+.bg-gray-200-hover:focus {
   background-color: #d4d4d7 !important;
 }
 
-.bg-gray-300 {
+.bg-gray-300,
+.bg-gray-300-hover:hover,
+.bg-gray-300-hover:focus {
   background-color: #bcbbc1 !important;
 }
 
-.bg-gray-400 {
+.bg-gray-400,
+.bg-gray-400-hover:hover,
+.bg-gray-400-hover:focus {
   background-color: #a4a3ab !important;
 }
 
-.bg-gray-500 {
+.bg-gray-500,
+.bg-gray-500-hover:hover,
+.bg-gray-500-hover:focus {
   background-color: #898891 !important;
 }
 
-.bg-gray-600 {
+.bg-gray-600,
+.bg-gray-600-hover:hover,
+.bg-gray-600-hover:focus {
   background-color: #72717c !important;
 }
 
-.bg-gray-700 {
+.bg-gray-700,
+.bg-gray-700-hover:hover,
+.bg-gray-700-hover:focus {
   background-color: #5e5e6a !important;
 }
 
-.bg-gray-800 {
+.bg-gray-800,
+.bg-gray-800-hover:hover,
+.bg-gray-800-hover:focus {
   background-color: #4a4958 !important;
 }
 
-.bg-gray-900 {
+.bg-gray-900,
+.bg-gray-900-hover:hover,
+.bg-gray-900-hover:focus {
   background-color: #3b3a48 !important;
 }
 
