@@ -1,11 +1,11 @@
 ﻿---
-title: Accordions
+title: Accordion
 layout: components.njk
 permalink: "/sample/accordions.html"
 ---
 
 
-<h1 class="m-t-0">Accordions</h1>
+<h1 class="m-t-0">Accordion</h1>
 <p>Accordions are expandable sections of content. Each section contains a summary element and more body text when
  opened.</p>
 
@@ -21,7 +21,7 @@ permalink: "/sample/accordions.html"
    <a id="tab-usage1" href="#pane-usage1" class="nav-link" data-bs-toggle="tab" role="tab">Usage</a>
   </li>
   <li class="nav-item">
-   <a id="tab-html1" href="#pane-html1" class="nav-link" data-bs-toggle="tab" role="tab">Source Code</a>
+   <a id="tab-html1" href="#pane-html1" class="nav-link" data-bs-toggle="tab" role="tab">Source code</a>
   </li>
   <li class="nav-item">
    <a id="tab-a11y" href="#pane-a11y" class="nav-link" data-bs-toggle="tab" role="tab">Accessibility</a>
@@ -42,34 +42,16 @@ permalink: "/sample/accordions.html"
    </div>
    <div id="collapse-example1" class="collapse show" role="tabpanel" aria-labelledby="heading-example1">
     <div class="card-body p-b-lg">
-     <h3>Basic Accordion</h3>
+     <h3 class="m-t">Basic accordion</h3>
      {% include "../../src/_includes/modules/accordion.html" %}
-     <a href="#basic" data-hash="#pane-html1" class="tab-link m-t-md btn btn-default btn-xs">Vidw Source
-      Code</a>
+     <a href="#basic" data-hash="#pane-html1" class="tab-link m-t-md btn btn-default btn-xs">View source code</a>
 
-     <h3>Accordion List</h3>
+     <h3>Accordion list</h3>
 
      {% include "../../src/_includes/modules/accordion-list.html" %}
-     <a href="#list" data-hash="#pane-html1" class="tab-link m-t-md btn btn-default btn-xs">Vidw Source
-      Code</a>
+     <a href="#list" data-hash="#pane-html1" class="tab-link m-t-md btn btn-default btn-xs">View source code</a>
 
-     <h3>Accordion Side Menu</h3>
-     <div class="row">
-      <div class="col-md-5">
-       {% include "../../src/_includes/modules/accordion-sidenav.html" %}
-       <a href="#side" data-hash="#pane-html1" class="tab-link m-t-md btn btn-default btn-xs">Vidw Source
-        Code</a>
-      </div>
-     </div>
 
-     <h3>Bootstrap Accordion Side Menu</h3>
-     <div class="row">
-      <div class="col-md-5">
-       {% include "../../src/_includes/modules/nav-side.html" %}
-       <a href="#bs" data-hash="#pane-html1" class="tab-link m-t-md btn btn-default btn-xs">Vidw Source
-        Code</a>
-      </div>
-     </div>
     </div>
    </div>
   </div>
@@ -86,7 +68,7 @@ permalink: "/sample/accordions.html"
    </div>
    <div id="collapse-usage1" class="collapse" role="tabpanel" aria-labelledby="heading-usage1">
     <div class="card-body">
-     <h3>When and how to use it</h3>
+     <h3 class="m-t">When and how to use it</h3>
      <p>Use accordions to hide content most people do not need.</p>
      <p>Headings can be a:</p>
 
@@ -129,27 +111,19 @@ permalink: "/sample/accordions.html"
     <h4 class="my-0">
      <a class="collapsed" data-bs-toggle="collapse" href="#collapse-html1" data-parent="#tab-content"
       aria-expanded="false" aria-controls="collapse-html1" data-hash="#pane-html1" title="HTML Source Code tab header">
-      Source Code
+      Source code
      </a>
     </h4>
    </div>
    <div id="collapse-html1" class="collapse" role="tabpanel" aria-labelledby="heading-html1">
     <div class="card-body">
-     <h3 id="basic">Basic Accodion</h3>
+     <h3 id="basic" class="m-t">Basic accodion</h3>
      <pre style="max-height: 300px;"><code>{% include "../../src/_includes/modules/accordion.html" %}</code>
     </pre>
 
      <h3 id="list">Accordion list</h3>
      <pre style="max-height: 300px;"><code>{% include "../../src/_includes/modules/accordion-list.html" %}</code>
    </pre>
-
-     <h3 id="side">Accordion Side Menu</h3>
-     <pre style="max-height: 300px;"><code>{% include "../../src/_includes/modules/accordion-sidenav.html" %}</code>
- </pre>
-
-     <h3 id="bs">Bootstrap Accordion Side Menu</h3>
-     <pre style="max-height: 300px;"><code>{% include "../../src/_includes/modules/nav-side.html" %}</code>
-</pre>
     </div>
    </div>
   </div>
@@ -167,13 +141,13 @@ permalink: "/sample/accordions.html"
    </div>
    <div id="collapse-a11y" class="collapse" role="tabpanel" aria-labelledby="heading-a11y">
     <div class="card-body">
-     <h3>Accessibility</h3>
+     <h3 class="m-t">Standard accessibility review</h3>
      <p>Each time a new component version is published:</p>
      <ul>
       <li>Test with the <a href="https://www.deque.com/axe/" target="_blank">axe
         accessibility tool</a>.</li>
       <li>Review with the <a href="https://www.apple.com/voiceover/info/guide/_1121.html" target="_blank">VoiceOver</a>
-       or <a href="https://www.nvaccess.org/download/" target="_blank">NVDA</a> screen reader.</li>
+       screen reader.</li>
       <li>Ensure all actionable elements are accessible by keyboard command and tab in a logical order. </li>
       <li>Check the component layout on a variety of screen sizes.</li>
      </ul>

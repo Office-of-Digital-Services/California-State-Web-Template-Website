@@ -14572,9 +14572,10 @@ a.list-group-item {
 }
 .global-footer .footer-links li a {
   color: #000;
+  text-decoration: none;
 }
 .global-footer .footer-links li a:hover {
-  text-decoration: none;
+  color: #4a4958;
 }
 .global-footer .copyright {
   font-size: 1rem;
@@ -14617,8 +14618,6 @@ a.list-group-item {
   width: 100%;
   max-height: 0;
   border: none;
-  -webkit-transition: all 0.5s 0.1s;
-  transition: all 0.5s 0.1s;
 }
 @media (min-width: 992px) {
   .search-container,
@@ -16887,7 +16886,7 @@ a.second-level-link [class^=ca-gov-icon-] {
   font-size: 100% !important;
 }
 .utility-header ul li button:hover, .utility-header ul li button:focus {
-  color: #fee09c;
+  color: #4a4958;
   background-color: transparent;
   border: none;
 }
@@ -16941,7 +16940,7 @@ a.second-level-link [class^=ca-gov-icon-] {
   vertical-align: initial;
   line-height: 120%;
   background: white;
-  color: black;
+  color: #000;
 }
 
 .header-cagov-logo img {
@@ -17029,7 +17028,6 @@ a.second-level-link [class^=ca-gov-icon-] {
 }
 .utility-header .flex-row .settings-links button {
   margin: 0 4px 0 4px;
-  text-decoration: underline;
   font-size: 0.95rem;
 }
 .utility-header .flex-row .settings-links button:hover, .utility-header .flex-row .settings-links button:focus {
@@ -18577,13 +18575,13 @@ cagov-accordion:defined details[open] summary:focus::after {
 cagov-accordion.sidenav details {
   border: none;
   min-height: 2rem;
-  margin-top: 1.125rem;
+  margin-top: 0;
 }
 cagov-accordion.sidenav details summary {
   border: none;
   background: transparent;
   padding-left: 1rem;
-  padding: 0 2rem 0 1rem;
+  padding: 0.7rem 2rem 0.7rem 1rem;
   font-size: calc(1.125rem + 0.1vw);
   font-weight: 400;
   text-decoration: none;
@@ -18635,19 +18633,21 @@ cagov-accordion.sidenav details summary[open] summary::after {
 cagov-accordion.sidenav details summary .cagov-open-indicator {
   left: unset !important;
   right: 1rem;
-  top: 0.7rem !important;
+  top: 1.4rem !important;
 }
 cagov-accordion.sidenav details .cagov-open-indicator {
   left: unset;
   right: 1rem;
-  top: 0.7rem !important;
+  top: 1.4rem !important;
 }
 cagov-accordion.sidenav details .accordion-body {
+  padding: 0;
   border: none;
   outline: none;
 }
 cagov-accordion.sidenav details .accordion-body .side-subnav {
   margin-bottom: 0;
+  margin-left: 1rem;
 }
 cagov-accordion.sidenav details .accordion-body .side-subnav li:first-child {
   margin-top: 0;
@@ -18660,14 +18660,17 @@ cagov-accordion.sidenav details .accordion-body .side-subnav li:last-child {
   padding-left: 0;
 }
 .side-subnav li {
-  margin: 1rem 0;
-  padding-left: 1rem;
+  margin: 0;
+  padding-left: 0;
   list-style: none;
   font-size: 1.125rem;
 }
 .side-subnav li a {
   position: relative;
   display: block;
+  padding-top: 0.7rem;
+  padding-bottom: 0.7rem;
+  padding-left: 1rem;
   text-decoration: none !important;
 }
 .side-subnav li a:hover, .side-subnav li a:focus {
@@ -18676,10 +18679,11 @@ cagov-accordion.sidenav details .accordion-body .side-subnav li:last-child {
 }
 .side-subnav li a:focus {
   outline: solid 2px #2ea3f2 !important;
+  outline-offset: -2px;
 }
 .side-subnav li a.active {
   font-weight: 700;
-  color: #000;
+  color: #4a4958;
   text-decoration: none;
 }
 .side-subnav li a.active:before {
@@ -18687,13 +18691,13 @@ cagov-accordion.sidenav details .accordion-body .side-subnav li:last-child {
   border-left: 3px solid;
   position: absolute;
   top: 0;
-  left: -1rem;
+  left: 0;
   width: 3px;
   height: 100%;
   border-radius: 0;
 }
 .side-subnav li a.active:hover, .side-subnav li a.active:focus {
-  color: #5e5e6a;
+  color: #000;
   text-decoration: none;
 }
 
@@ -22720,7 +22724,7 @@ html:not(.ie8) .stats-highlight img {
 ----------------------------------------- */
 .list-navigation li {
   list-style: none;
-  margin: 1.5rem 0;
+  margin: 0;
   font-size: 1.25rem;
   padding-left: 1rem;
 }
@@ -22728,14 +22732,17 @@ html:not(.ie8) .stats-highlight img {
   position: relative;
   display: block;
   text-decoration: none !important;
+  color: #4a4958;
+  padding-bottom: 0.7rem;
+  padding-top: 0.7rem;
 }
 .list-navigation li a.active {
-  color: #000;
+  color: #4a4958;
   text-decoration: none;
   font-weight: 700;
 }
 .list-navigation li a.active:hover, .list-navigation li a.active:focus {
-  color: #5e5e6a;
+  color: #000;
   text-decoration: none;
 }
 .list-navigation li a.active:before {
@@ -22759,15 +22766,15 @@ html:not(.ie8) .stats-highlight img {
   padding-left: 0;
 }
 .list-navigation li ul li {
-  margin: 1rem 0;
+  margin: 0;
 }
 .list-navigation li ul li a.active {
-  color: #000;
+  color: #4a4958;
   text-decoration: none;
   font-weight: 700;
 }
 .list-navigation li ul li a.active:hover, .list-navigation li ul li a.active:focus {
-  color: #5e5e6a;
+  color: #000;
   text-decoration: none;
 }
 .list-navigation li ul li a.active:before {
@@ -22816,8 +22823,10 @@ html:not(.ie8) .stats-highlight img {
 
 a.sidenav {
   font-size: calc(1.125rem + 0.1vw);
-  margin: 1.5rem 0;
+  margin: 0;
   display: block;
+  padding-top: 0.7rem;
+  padding-bottom: 0.7rem;
   padding-left: 1rem;
   position: relative;
   text-decoration: none !important;
@@ -22846,10 +22855,6 @@ a.sidenav.active:before {
   width: 3px;
   height: 100%;
   border-radius: 0;
-}
-
-a.nav-heading {
-  font-size: 1.5rem;
 }
 
 /* -----------------------------------------

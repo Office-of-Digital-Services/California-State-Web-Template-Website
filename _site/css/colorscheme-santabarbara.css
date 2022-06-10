@@ -2300,6 +2300,19 @@ a.text-white:not(.btn):hover {
   background-color: #FF9B53;
 }
 
+.text-highlight-primary {
+  background-color: #FFEBD7;
+}
+
+.text-highlight-warning {
+  background-color: #fffaf6;
+}
+
+.text-highlight-dark {
+  color: #fff;
+  background-color: #664945;
+}
+
 /* -----------------------------------------
    IMAGE HELPERS
    /source/scss/cagov/image.scss
@@ -2885,10 +2898,10 @@ input[type=radio]:focus + div {
 }
 
 .list-navigation li a {
-  color: #834B1E;
+  color: #4a4958;
 }
 .list-navigation li a:hover, .list-navigation li a:hover {
-  color: #663a17;
+  color: #000;
 }
 .list-navigation li a.active:before {
   border-left-color: #FF9B53;
@@ -2898,10 +2911,10 @@ input[type=radio]:focus + div {
 }
 
 a.sidenav {
-  color: #834B1E;
+  color: #4a4958;
 }
 a.sidenav:hover, a.sidenav:hover {
-  color: #663a17;
+  color: #000;
 }
 a.sidenav.active:before {
   border-left-color: #FF9B53;
@@ -3128,13 +3141,16 @@ a.sidenav.active:before {
    /source/scss/colorscheme/cs-accordion-sidenav.scss
 ----------------------------------------- */
 cagov-accordion.sidenav details summary {
-  color: #834B1E;
+  color: #4a4958;
 }
 cagov-accordion.sidenav details summary:hover, cagov-accordion.sidenav details summary:focus {
-  color: #663a17;
+  color: #000;
 }
 cagov-accordion.sidenav details summary.active {
   font-weight: 700;
+  color: #4a4958 !important;
+}
+cagov-accordion.sidenav details summary.active:hover, cagov-accordion.sidenav details summary.active:focus {
   color: #000 !important;
 }
 cagov-accordion.sidenav details summary.active:before {
@@ -3142,10 +3158,10 @@ cagov-accordion.sidenav details summary.active:before {
 }
 
 .side-subnav li a {
-  color: #834B1E;
+  color: #4a4958;
 }
-.side-subnav li a:hover {
-  color: #663a17;
+.side-subnav li a:hover, .side-subnav li a:focus {
+  color: #000;
 }
 .side-subnav li a.active:before {
   border-left-color: #FF9B53;
@@ -3214,19 +3230,28 @@ cagov-accordion.sidenav details summary.active:before {
   text-decoration: none;
 }
 .utility-header .social-media-links a:hover, .utility-header .social-media-links a:focus {
-  color: #5e5e6a;
+  color: #4a4958;
+}
+.utility-header .settings-links button {
+  color: #000;
+}
+.utility-header .settings-links button:hover, .utility-header .settings-links button:focus {
+  color: #4a4958;
 }
 .utility-header a {
   color: #000;
 }
 .utility-header a:hover, .utility-header a:focus, .utility-header a.hovered {
-  color: #000;
+  color: #4a4958;
 }
 .utility-header ul li {
   padding: 0 8px;
 }
+.utility-header ul li button {
+  color: #000;
+}
 .utility-header ul li button:hover, .utility-header ul li button:focus {
-  color: #5e5e6a;
+  color: #4a4958;
 }
 
 /* -----------------------------------------
