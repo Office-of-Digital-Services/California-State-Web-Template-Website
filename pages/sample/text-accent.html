@@ -1,49 +1,71 @@
 ﻿---
 title: Text Accent
-layout: components.njk
+layout: page.njk
 permalink: "sample/text-accent.html"
 ---
-
-
-
-
 <div class="row">
- <div class="half">
-  <h1>Text Accent Colors</h1>
-  <p>Convey meaning through color with a handful of emphasis utility classes. Accent colors were
-   designed to applied to components like the number counter or charts. It is best to exercise
-   restraint when using these classes on general body copy as color contrast may be
-   insufficient for the visually impaired.</p>
-  <h2>Examples:</h2>
-  {% include "../../src/_includes/modules/text-accent.html" %}
+ <div class="col-md-3" role="complementary">
+  <!-- Side navigation -->
+  <nav aria-labelledby="color-schemes-list">
+   <ul class="list-navigation">
+    <li><a href="/sample/css-units.html" id="color-schemes-list">CSS Style Shortcuts</a>
+     <ul>
+      <li><a href="/shortcuts.html">CSS Shortcuts</a></li>
+      <li><a href="/sample/gradient-backgrounds.html">Gradient Backgrounds</a></li>
+      <li><a href="/sample/icon-fonts.html">Icons</a></li>
+      <li><a href="/sample/spacing.html">Spacing</a></li>
+      <li><a href="/sample/text-accent.html" class="active">Text Accent</a></li>
+     </ul>
+    </li>
+    <li><a href="/sample/">Available Components</a>
+   </ul>
+  </nav>
  </div>
- <div class="half">
-  <h2>Source Code:</h2>
-  <pre class="section-default"><code>{% include "../../src/_includes/modules/text-accent.html" %}</code>
+
+ <div class="col-md-9">
+
+
+
+  <div class="row">
+   <div class="half">
+    <h1 class="m-t-0">Text Accent Colors</h1>
+    <p>Convey meaning through color with a handful of emphasis utility classes. Accent colors were
+     designed to applied to components like the number counter or charts. It is best to exercise
+     restraint when using these classes on general body copy as color contrast may be
+     insufficient for the visually impaired.</p>
+    <h2>Examples:</h2>
+    {% include "../../src/_includes/modules/text-accent.html" %}
+   </div>
+   <div class="half">
+    <h2>Source Code:</h2>
+    <pre class="section-default"><code>{% include "../../src/_includes/modules/text-accent.html" %}</code>
     </pre>
- </div>
-</div>
+   </div>
+  </div>
 
 
-<div class="row">
- <div class="half">
-  <h2>Text Highlight</h2>
-  <p>Use <code>text-highlight</code> class to highlight a word or text portion. Also, to specify the text highlight's
-   color
-   use following classes: </p>
-  <ul>
-   <li><code>text-highlight</code></li>
-   <li><code>text-highlight-primary</code></li>
-   <li><code>text-highlight-warning</code></li>
-   <li><code>text-highlight-dark</code></li>
-  </ul>
-  <h2>Examples:</h2>
-  {% include "../../src/_includes/modules/text-highlight.html" %}
+  <div class="row">
+   <div class="half">
+    <h2>Text Highlight</h2>
+    <p>Use <code>text-highlight</code> class to highlight a word or text portion. Also, to specify the text highlight's
+     color
+     use following classes: </p>
+    <ul>
+     <li><code>text-highlight</code></li>
+     <li><code>text-highlight-primary</code></li>
+     <li><code>text-highlight-warning</code></li>
+     <li><code>text-highlight-dark</code></li>
+    </ul>
+    <h2>Examples:</h2>
+    {% include "../../src/_includes/modules/text-highlight.html" %}
 
- </div>
- <div class="half">
-  <h2>Source Code:</h2>
-  <pre class="section-default"><code>{% include "../../src/_includes/modules/text-highlight.html" %}</code>
+   </div>
+   <div class="half">
+    <h2>Source Code:</h2>
+    <pre class="section-default"><code>{% include "../../src/_includes/modules/text-highlight.html" %}</code>
     </pre>
+   </div>
+  </div>
+
  </div>
 </div>

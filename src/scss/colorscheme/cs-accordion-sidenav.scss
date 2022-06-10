@@ -6,14 +6,18 @@
 cagov-accordion.sidenav {
  details {
   summary {
-   color: $color-p2;
+   color: $gray-800;
    &:hover,
    &:focus {
-    color: darken($color-p2, 7%);
+    color: $black;
    }
    &.active {
     font-weight: $font-weight-7;
-    color: $black !important;
+    color: $gray-800 !important;
+    &:hover,
+    &:focus {
+     color: $black !important;
+    }
     &:before {
      background-color: $color-p1 !important;
     }
@@ -25,9 +29,10 @@ cagov-accordion.sidenav {
 .side-subnav {
  li {
   a {
-   color: $color-p2;
-   &:hover {
-    color: darken($color-p2, 7%);
+   color: $gray-800;
+   &:hover,
+   &:focus {
+    color: $black;
    }
    &.active {
     &:before {

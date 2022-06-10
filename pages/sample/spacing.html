@@ -1,14 +1,31 @@
 ﻿---
 title: Spacing
-layout: components.njk
+layout: page.njk
 permalink: "sample/spacing.html"
 ---
 
-
-<h1>Generic Spacing Classes</h1>
-
 <div class="row">
- <div class="col-md-8">
+ <div class="col-md-3" role="complementary">
+  <!-- Side navigation -->
+  <nav aria-labelledby="color-schemes-list">
+   <ul class="list-navigation">
+    <li><a href="/sample/css-units.html" id="color-schemes-list">CSS Style Shortcuts</a>
+     <ul>
+      <li><a href="/shortcuts.html">CSS Shortcuts</a></li>
+      <li><a href="/sample/gradient-backgrounds.html">Gradient Backgrounds</a></li>
+      <li><a href="/sample/icon-fonts.html">Icons</a></li>
+      <li><a href="/sample/spacing.html" class="active">Spacing</a></li>
+      <li><a href="/sample/text-accent.html">Text Accent</a></li>
+     </ul>
+    </li>
+    <li><a href="/sample/">Available Components</a>
+   </ul>
+  </nav>
+ </div>
+
+ <div class="col-md-9">
+  <h1 class="m-t-0">Generic Spacing Classes</h1>
+
   <p>Assign <code>margin</code> or <code>padding</code> to an element or a subset of it’s sides
    with shorthand classes. Includes support for individual properties, all properties, vertical
    only and horizontal only properties.</p>

@@ -10,35 +10,37 @@
 				<div class="col-md-3">
      {# SIde navigation (rendering data from /src/_data/components.json  and /src/_data/helpers.js  #}
 					<nav aria-labelledby="components-list" class="side-navigation">
-						<div class="h4 m-t-0" id="components-list"><a href="/sample/" class="sidenav nav-heading">Components</a></div>
 		   {# Links with subnav #}
-					{% for item in components.components %}
+
+
+<ul class="list-navigation">
+  <li><a href="/sample/" class="nav-heading" id="components-list">Available Components</a>
+  <ul>
+  				{% for item in components.components %}
       {% if 'subnav' in item %}
-        <cagov-accordion class="sidenav">
-         <details {{ helpers.getOpenAttr(item.url, page.url) | safe }}>
-          <summary {{ helpers.getLinkActiveState(item.url, page.url) | safe }}>{{ item.text }}</summary>
-          <div class="accordion-body">
-            {# subnav #}
-           <ul class="side-subnav">
+        <li><a href="{{ item.url }}" {{ helpers.getLinkActiveState(item.url, page.url) | safe }}>{{ item.text }}</a>
+         {# subnav #}
+         {% if helpers.getURL(item.url, page.url) %} 
+           <ul>
             {% for subitem in item.subnav %}
             <li>
-             <a href="{{ subitem.url }}">{{ subitem.text }}</a>
+             <a href="{{ subitem.url }}" data-hash="{{ subitem.dataHash }}" class="tab-link">{{ subitem.text }}</a>
             </li>
             {% endfor %}
            </ul>
-          </div>
-         </details>
-        </cagov-accordion>
-        {# Links with subnav #}
+           {% endif %}
+        </li>
        {% else %}
-         <a href="{{ item.url }}" {{ helpers.getSidenav(item.url, page.url) | safe }} class="sidenav">{{ item.text }}</a>
+          <li><a href="{{ item.url }}" {{ helpers.getLinkActiveState(item.url, page.url) | safe }}>{{ item.text }}</a></li>
        {% endif %}
       {% endfor %}
+      </ul>
+  </li>
+  <li><a href="/sample/css-units.html" class="nav-heading" id="components-list">CSS Style Shortcuts</a>
+ </ul>
 
-						<div class="h4"><a href="/sample/css-units.html" class="sidenav nav-heading">CSS Units</a></div>
-						{% for item in cssunits.cssunits %}
-						  <a href="{{ item.url }}" {{ helpers.getSidenav(item.url, page.url) | safe }}  class="sidenav">{{ item.text }}</a>
-						{% endfor %}
+
+
 
 					</nav>
 				</div>
