@@ -6,7 +6,7 @@
 .list-navigation {
  li {
   list-style: none;
-  margin: 1.5rem 0;
+  margin: 0;
   font-size: 1.25rem;
   padding-left: 1rem;
 
@@ -14,13 +14,16 @@
    position: relative;
    display: block;
    text-decoration: none !important;
+   color: $gray-800;
+   padding-bottom: 0.7rem;
+   padding-top: 0.7rem;
    &.active {
-    color: $black;
+    color: $gray-800;
     text-decoration: none;
     font-weight: $font-weight-7;
     &:hover,
     &:focus {
-     color: $gray-700;
+     color: $black;
      text-decoration: none;
     }
     &:before {
@@ -46,14 +49,14 @@
   ul {
    padding-left: 0;
    li {
-    margin: 1rem 0;
+    margin: 0;
     a.active {
-     color: $black;
+     color: $gray-800;
      text-decoration: none;
      font-weight: $font-weight-7;
      &:hover,
      &:focus {
-      color: $gray-700;
+      color: $black;
       text-decoration: none;
      }
      &:before {
@@ -111,8 +114,10 @@
 
 a.sidenav {
  font-size: calc($font-size-regular + $ratio);
- margin: 1.5rem 0;
+ margin: 0;
  display: block;
+ padding-top: 0.7rem;
+ padding-bottom: 0.7rem;
  padding-left: 1rem;
  position: relative;
  text-decoration: none !important;
@@ -144,8 +149,4 @@ a.sidenav {
    border-radius: 0;
   }
  }
-}
-
-a.nav-heading {
- font-size: 1.5rem;
 }

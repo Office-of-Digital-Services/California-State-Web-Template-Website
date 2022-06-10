@@ -1,0 +1,477 @@
+---
+title: D3
+layout: page.njk
+permalink: "d3.html"
+---
+
+
+<!--half donuts-->
+<div class="row">
+ <div class="col-lg-6 brd-right brd-gray-light">
+  <h2 class="h3 text-center">ACP eligible households <br class="d-none d-lg-block" />
+   in California</h2>
+  <!--START eligible housholds percentage-->
+  <div class="row">
+   <div class="col-md-5 offset-1 mt-auto">
+    <span class="text-bold eligible-total lead"></span><br>
+    <span>eligible households</span><br>
+    <span class="font-size-13">out of</span><br>
+    <span class="text-bold households-total lead"></span><br>
+    <span>households</span>
+    <span class="sr-only">which is <span class="eligible-total-percent"></span></span>
+   </div>
+   <div class="col-md-6 mt-auto p-0">
+    <div class="half-donut-eligible d-flex justify-content-center justify-content-lg-start"></div>
+   </div>
+  </div>
+  <!--END eligible housholds percentage-->
+ </div>
+ <div class="col-lg-6">
+  <h2 class="h3 text-center">Eligible California households <br class="d-none d-lg-block" />
+   enrolled in ACP</h2>
+  <!--START enrollment percentage-->
+  <div class="row">
+   <div class="col-md-5 offset-1 mt-auto">
+    <span class="text-bold enrollment-total lead"></span><br>
+    <span>households enrolled</span><br>
+    <span class="font-size-13">out of</span><br>
+    <span class="text-bold eligible-total-state lead"></span><br>
+    <span>eligible households</span>
+    <span class="sr-only">which is <span class="enrollment-total-percent"></span></span>
+   </div>
+   <div class="col-md-6 mt-auto">
+    <div class="half-donut-enrollment d-flex  justify-content-center justify-content-lg-start"></div>
+   </div>
+  </div>
+  <p style="text-align: left; padding-top:15px; padding-bottom:0px; margin-left: 40px;">
+   <!--END enrollment percentage-->
+ </div>
+</div>
+<div class="errorMessage"></div>
+
+
+<!--BAR CHAR -->
+<hr>
+
+<h3 class="text-center">Households Enrollment by Month</h3>
+<div id='vis-container'></div>
+
+
+
+<!--data viz styles-->
+<style>
+ .half-donut .label {
+  font-size: 2rem;
+ }
+
+ #vis-container select {
+  display: block;
+ }
+
+
+ /*---Coloring*/
+ #vis-container svg .bar {
+  fill: #4D8DBB;
+  opacity: 1;
+  transition: all ease .2s;
+ }
+
+
+
+ /*---Hover coloring*/
+ #vis-container svg .bar:hover {
+  fill: #20367C;
+  opacity: 1;
+ }
+
+ .axis path,
+ .axis line {
+  fill: none;
+  stroke: #000;
+  shape-rendering: crispEdges;
+ }
+
+
+
+ #vis-container svg {
+  position: relative;
+  overflow: visible;
+  left: 30px;
+ }
+
+
+ #vis-container svg text {
+  font-size: 14px;
+ }
+
+ #vis-container svg .bar:hover {
+  font-size: 14px;
+ }
+
+ #vis-container label,
+ #vis-container select {
+  display: none;
+ }
+</style>
+
+
+<!--data viz script-->
+<script src="https://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+<script>
+
+ /////////////* DONUT CHARTS SCRIPT *//////////////
+
+ const enrollmentTotal = document.querySelector(".enrollment-total");
+
+ ///* Eligible housholds percentage function *///
+ async function makeDonutEligible() {
+
+  const eligibleTotal = document.querySelector(".eligible-total");
+  const eligibleTotalPct = document.querySelector(".eligible-total-percent");
+  const householdsTotal = document.querySelector(".households-total");
+  const errorMesssage = document.querySelector('errorMessage');
+
+  // Requesting JSON with statewide data
+  const server = 'https://california.azureedge.net/cdt/bbfa/bbfa-data-statewide-5-22.json';
+  const response = await fetch(server, { method: 'GET', });
+  const responseResult = await response.json();
+
+  if (response.ok) {
+   getData(responseResult);
+  } else {
+   errorMesssage.innerHTML = responseResult.message;
+  }
+
+  eligibleTotal.innerHTML = statewideEligible;
+  householdsTotal.innerHTML = statewideHouseholds;
+  // Getting Data (see function getData(data))
+  var value = statewideEligiblePct;
+  var text = Math.round(value * 100) + '%';
+  var data = [value, 1 - value];
+  // percent text for screen reade
+  eligibleTotalPct.innerHTML = text;
+
+
+  // Settings
+  var width = 250;
+  var height = 125;
+  var anglesRange = 0.5 * Math.PI;
+  var radis = Math.min(width, 2 * height) / 2;
+  var thickness = 40;
+  var colors = ["#F17F2C", "#DAD9D9"];
+
+  var pies = d3.layout.pie()
+   .value(d => d)
+   .sort(null)
+   .startAngle(anglesRange * -1)
+   .endAngle(anglesRange)
+
+  var arc = d3.svg.arc()
+   .outerRadius(radis)
+   .innerRadius(radis - thickness)
+
+  var translation = (x, y) => `translate(${x}, ${y})`
+
+  // div where dataviz will show up
+  var eligible = document.querySelector(".half-donut-eligible");
+  var svg = d3.select(eligible).append("svg")
+   .attr("width", width)
+   .attr("height", height)
+   .attr("class", "half-donut")
+   .append("g")
+   .attr("transform", translation(width / 2, height))
+
+
+  svg.selectAll("path")
+   .data(pies(data))
+   .enter()
+   .append("path")
+   .attr("fill", (d, i) => colors[i])
+   .attr("d", arc)
+
+  svg.append("text")
+   .text(d => text)
+   .attr("dy", "-0.2rem")
+   .attr("class", "label")
+   .attr("text-anchor", "middle")
+
+ };
+
+
+
+
+
+
+
+
+
+ ////* Enrollment percentage function function *////
+
+ async function makeDonutEnrolled() {
+
+
+  const enrolmentTotal = document.querySelector(".enrollment-total");
+  const eligibleTotalState = document.querySelector(".eligible-total-state");
+  const enrollmentTotalPct = document.querySelector(".enrollment-total-percent")
+
+
+  // Requesting JSON with statewide data
+  const server = 'https://california.azureedge.net/cdt/bbfa/bbfa-data-statewide-6-10-2022.json';
+  const response = await fetch(server, { method: 'GET', });
+  const responseResult = await response.json();
+
+  if (response.ok) {
+   getData(responseResult);
+  } else {
+   errorMesssage.innerHTML = responseResult.message;
+  }
+  enrolmentTotal.innerHTML = statewideEnrolled;
+  eligibleTotalState.innerHTML = statewideEligible;
+
+
+  // Getting Data (see function getData(data))
+  var value = statewideEnrolledPct;
+  var text = Math.round(value * 100) + '%';
+  var data = [value, 1 - value];
+
+  enrollmentTotalPct.innerHTML = text;
+  // Settings
+  var width = 250;
+  var height = 125;
+  var anglesRange = 0.5 * Math.PI;
+  var radis = Math.min(width, 2 * height) / 2;
+  var thickness = 40;
+  var colors = ["#243C7A", "#DAD9D9"];
+
+  var pies = d3.layout.pie()
+   .value(d => d)
+   .sort(null)
+   .startAngle(anglesRange * -1)
+   .endAngle(anglesRange)
+
+  var arc = d3.svg.arc()
+   .outerRadius(radis)
+   .innerRadius(radis - thickness)
+
+  var translation = (x, y) => `translate(${x}, ${y})`
+
+  // div where dataviz will show up
+  var enrollment = document.querySelector(".half-donut-enrollment");
+  var svg = d3.select(enrollment).append("svg")
+   .attr("width", width)
+   .attr("height", height)
+   .attr("class", "half-donut")
+   .append("g")
+   .attr("transform", translation(width / 2, height))
+
+
+  svg.selectAll("path")
+   .data(pies(data))
+   .enter()
+   .append("path")
+   .attr("fill", (d, i) => colors[i])
+   .attr("d", arc)
+
+  svg.append("text")
+   .text(d => text)
+   .attr("dy", "-0.2rem")
+   .attr("class", "label")
+   .attr("text-anchor", "middle")
+
+ };
+
+ // Getting our data from the JSON
+ function getData(data) {
+  statewideHouseholds = data.TotalHouseholds.toLocaleString("en-US");
+  statewideEligible = data.TotalEligibleHouseholds.toLocaleString("en-US");
+  statewideEligiblePct = data.PercentageOfEligibleHouseholds;
+  statewideEnrolled = data.TotalHouseEnrolled.toLocaleString("en-US");
+  statewideEnrolledPct = data.PercentageOfEligibleHouseholdsEnrolled;
+ }
+
+ // Run donut chart functions
+ makeDonutEligible();
+ makeDonutEnrolled();
+
+
+
+
+
+ ///////////////* BAR CHART *///////////////
+ // Load and munge data, then make the visualization.
+ var fileName = "https://california.azureedge.net/cdt/bbfa/zip-code-data-6-10-2022.csv";
+
+ // TODO: Once we have more data for more months we need to add those months fields here.
+ var monthsFields = ["EBB_HH_JLY", "EBB_HH_AUG", "EBB_HH_SEP", "EBB_HH_OCT", "EBB_HH_DEC", "ACT_HH_JAN", "ACP_HH_FEB", "ACP_HH_MAR", "ACP_HH_APR"];
+
+ // TODO: Once we have more data for more months we need to add those months names here.
+ var months = ["Jul 2021", "Aug 2021", "Sep 2021", "Oct 2021", "Dec 2021", "Jan 2022", "Feb 2022", "Mar 2022", "Apr 2022"];
+
+ d3.csv(fileName, function (error, data) {
+  var californiaMap = {};
+  data.forEach(function (d) {
+   // Field that determine options
+   var california = d.ZIP_CODE;
+   californiaMap[california] = [];
+
+   // { californiaName: [ bar1Val, bar2Val, ... ] }
+   monthsFields.forEach(function (field) {
+    californiaMap[california].push(+d[field]);
+   });
+  });
+  makeVis(californiaMap);
+ });
+
+ var makeVis = function (californiaMap) {
+  // Define dimensions of vis
+  var margin = { top: 30, right: 50, bottom: 30, left: 50 },
+   width = 900 - margin.left - margin.right,
+   height = 450 - margin.top - margin.bottom;
+
+  // Make x scale
+  var xScale = d3.scale.ordinal()
+   .domain(months)
+   .rangeRoundBands([0, width], 0.1);
+
+  // Make y scale, the domain will be defined on bar update
+  var yScale = d3.scale.linear()
+   .range([height, 0]);
+
+  // Create canvas
+  var canvas = d3.select("#vis-container")
+   .append("svg")
+   .attr("id", "barchart")
+   .attr("preserveAspectRatio", "xMinYMin meet")
+   .attr("viewBox", "0 0 900 450")
+   //class to make it responsive
+   .classed("svg-content-responsive", true)
+   //.attr("width", width + margin.left + margin.right)
+   //.attr("height", height + margin.top + margin.bottom)
+   .append("g")
+   .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+
+  // Make x-axis and add to canvas
+  var xAxis = d3.svg.axis()
+   .scale(xScale)
+   .orient("bottom");
+
+  canvas.append("g")
+   .attr("class", "x axis")
+   .attr("transform", "translate(0," + height + ")")
+   .call(xAxis);
+
+  // Make y-axis and add to canvas
+  var yAxis = d3.svg.axis()
+   .scale(yScale)
+   .orient("left");
+
+  var yAxisHandleForUpdate = canvas.append("g")
+   .attr("class", "y axis")
+   .call(yAxis);
+
+  yAxisHandleForUpdate.append("text")
+   .attr("transform", "rotate(-90)")
+   .attr("y", 6)
+   .attr("dy", ".71em")
+   .style("text-anchor", "end")
+   .text("Households");
+
+  var updateBars = function (data) {
+   var maxValue = d3.max(data);
+   // First update the y-axis domain to match data
+   yScale.domain([0, maxValue]);
+   // Static y-axis numbers
+   // yScale.domain([0, 1270000]);
+   yAxisHandleForUpdate.call(yAxis);
+
+   var bars = canvas.selectAll(".bar").data(data);
+   var labels = canvas.selectAll(".bartext").data(data);
+   var yTextPadding = 20;
+   var rotate = "rotate(-90)";
+   var zero = "rotate(0)";
+
+   // Add bars for new data
+   bars.enter()
+    .append("rect")
+    .attr("class", "bar")
+    .attr("x", function (d, i) { return xScale(months[i]); })
+    .attr("width", xScale.rangeBand())
+    .attr("y", function (d, i) { return yScale(d); })
+    .attr("height", function (d, i) { return height - yScale(d); })
+
+
+   // Add labels on top of bars
+   labels.enter()
+    .append("text")
+    .attr("class", "bartext")
+    .attr("text-anchor", "middle")
+    .attr("fill", "black")
+    .attr("x", function (d, i) { return xScale(months[i]) + xScale.rangeBand() / 2;; })
+    .attr("y", function (d, i) { return yScale(d) - 10; })
+    .text(function (d) { return d; })
+
+
+
+   // Update old bars, already have x / width from before
+   bars
+    .transition().duration(250)
+    .attr("y", function (d, i) { return yScale(d); })
+    .attr("height", function (d, i) { return height - yScale(d); });
+
+   // Update old labels
+   labels
+    .transition().duration(250)
+    .text(function (d) { return d.toLocaleString("en-US"); })
+    // .attr("transform", function () { if (mobileView()) { rotate } else { zero } })
+
+    .attr("y", function (d, i) { return yScale(d) - 10; });
+
+   // Remove old ones
+   bars.exit().remove();
+   labels.exit().remove();
+  };
+
+  // Handler for dropdown value change
+  var dropdownChange = function () {
+   var newcalifornia = d3.select(this).property('value'),
+    newData = californiaMap[newcalifornia];
+
+   updateBars(newData);
+  };
+
+  // Get areas, for dropdown
+  var areas = Object.keys(californiaMap).reverse();
+  // Add label for accessibility
+  var dropdownlabel = d3.select("#vis-container").insert("label", "svg")
+   .text("Select area")
+   .attr("for", "areas");
+  var dropdown = d3.select("#vis-container")
+   .insert("select", "svg")
+   .attr("id", "areas")
+   .on("change", dropdownChange);
+
+
+  dropdown.selectAll("option")
+   .data(areas)
+   .enter().append("option")
+   .attr("value", function (d) { return d; })
+   .text(function (d) {
+    return d[0].toUpperCase() + d.slice(1, d.length); // capitalize 1st letter
+   });
+
+
+  var aspect = width / height,
+   chart = d3.select('#chart');
+  d3.select(window)
+   .on("resize", function () {
+    var targetWidth = chart.node();
+    chart.attr("width", targetWidth);
+    chart.attr("height", targetWidth / aspect);
+   });
+
+
+  var initialData = californiaMap[areas[0]];
+  updateBars(initialData);
+ };
+
+</script>
