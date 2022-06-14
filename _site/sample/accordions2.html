@@ -166,17 +166,17 @@
             
 		          <nav id="navigation" class="main-navigation auto-highlight">
  <ul id="nav_list" class="top-level-nav">
-   <li class="nav-item">
-       <a class="first-level-link" href="/getting-started.html">Getting Started</a>
-   </li>
   <li class="nav-item">
-       <a class="first-level-link" href="/update.html">Template Updates</a>
+       <a class="first-level-link" href="/update.html">What's new</a>
    </li>
    <li class="nav-item">
-       <a class="first-level-link" href="/visual-design.html">Visual Design</a>
+       <a class="first-level-link" href="/getting-started.html">Get started</a>
    </li>
-     <li class="nav-item">
+   <li class="nav-item">
        <a class="first-level-link" href="/structure.html">Structure</a>
+   </li>
+   <li class="nav-item">
+       <a class="first-level-link" href="/visual-design.html">Visual design</a>
    </li>
    <li class="nav-item">
        <a href="/sample/" class="first-level-link">Components</a>
@@ -373,13 +373,16 @@
    
      
    
+     
+   
  </ol>
 </nav>
 
 			<div class="row">
 				<div class="col-md-3">
      
-					<nav aria-labelledby="components-list" class="side-navigation">
+					<nav aria-labelledby="components-list" class="side-navigation sticky-6" style="max-height: 70vh;
+  overflow-y: auto;">
 		   
 
 
@@ -799,12 +802,13 @@
  it in the body content.</p>
 
 <h2>Accessibility</h2>
+<h3 class="m-t">Standard accessibility review</h3>
 <p>Each time a new component version is published:</p>
 <ul>
  <li>Test with the <a href="https://www.deque.com/axe/" target="_blank">axe
    accessibility tool</a>.</li>
  <li>Review with the <a href="https://www.apple.com/voiceover/info/guide/_1121.html" target="_blank">VoiceOver</a>
-  screen reader.</li>
+  screen reader or <a href="https://www.nvaccess.org/download/" target="_blank">NVDA</a>.</li>
  <li>Ensure all actionable elements are accessible by keyboard command and tab in a logical order. </li>
  <li>Check the component layout on a variety of screen sizes.</li>
 </ul>
