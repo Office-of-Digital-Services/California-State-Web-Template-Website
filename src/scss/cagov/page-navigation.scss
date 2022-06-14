@@ -91,21 +91,28 @@
   padding: 0;
   li {
    list-style: none;
-   padding-top: 0.875rem;
-   padding-bottom: 1.125rem;
+   padding: 0;
    margin: 0;
    border-bottom: 1px solid $gray-200;
    &:first-child {
     border-top: 1px solid $gray-200;
    }
    a {
+    color: $gray-800;
     text-decoration: none !important;
+    padding-top: 1rem;
+    padding-bottom: 1.25rem;
+    display: block;
     &:hover,
     &:focus {
      text-decoration: none !important;
+     color: $black;
     }
     &:focus {
      @include outline(2px);
+    }
+    &.active {
+     font-weight: $font-weight-7;
     }
    }
   }
