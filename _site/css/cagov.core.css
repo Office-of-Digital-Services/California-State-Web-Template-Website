@@ -11126,10 +11126,6 @@ textarea.form-control-lg {
    RESET /source/scss/cagov/reset.scss
 ----------------------------------------- */
 /* Additional resets not covered by bootstrap, or styles that are preferential */
-html {
-  overflow-y: scroll;
-}
-
 /* Accessibility backward compatibility */
 .sr-only {
   position: absolute !important;
@@ -22801,8 +22797,7 @@ html:not(.ie8) .stats-highlight img {
 }
 .page-navigation ul li {
   list-style: none;
-  padding-top: 0.875rem;
-  padding-bottom: 1.125rem;
+  padding: 0;
   margin: 0;
   border-bottom: 1px solid #d4d4d7;
 }
@@ -22810,13 +22805,21 @@ html:not(.ie8) .stats-highlight img {
   border-top: 1px solid #d4d4d7;
 }
 .page-navigation ul li a {
+  color: #4a4958;
   text-decoration: none !important;
+  padding-top: 1rem;
+  padding-bottom: 1.25rem;
+  display: block;
 }
 .page-navigation ul li a:hover, .page-navigation ul li a:focus {
   text-decoration: none !important;
+  color: #000;
 }
 .page-navigation ul li a:focus {
   outline: solid 2px #2ea3f2 !important;
+}
+.page-navigation ul li a.active {
+  font-weight: 700;
 }
 
 a.sidenav {
@@ -24287,4 +24290,39 @@ a.sidenav.active:before {
 
 .transform-scale-1_05--hover:hover {
   transform: scale3d(1.05, 1.05, 1.05);
+}
+
+.sticky {
+  position: sticky;
+  top: 0;
+}
+
+.sticky-1 {
+  position: sticky;
+  top: 3.125rem;
+}
+
+.sticky-2 {
+  position: sticky;
+  top: 6.25rem;
+}
+
+.sticky-3 {
+  position: sticky;
+  top: 7.8rem;
+}
+
+.sticky-4 {
+  position: sticky;
+  top: 9.375rem;
+}
+
+.sticky-5 {
+  position: sticky;
+  top: 10.93rem;
+}
+
+.sticky-6 {
+  position: sticky;
+  top: 12.5rem;
 }
