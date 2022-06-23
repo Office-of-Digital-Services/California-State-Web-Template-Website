@@ -741,19 +741,19 @@
 
 // Creates a wrapper for a series of columns
 @mixin make-row($gutter: $grid-gutter-width) {
-    margin-left: ceil(calc($gutter / -2));
-    margin-right: floor(calc($gutter / -2));
+    margin-left: -1rem;
+    margin-right: -1rem;
     @include clearfix;
 }
 
 // Generate the extra small columns
 @mixin make-xs-column($columns, $gutter: $grid-gutter-width) {
     position: relative;
-    float: left;
-    width: percentage(calc($columns / $grid-columns));
+    float: unset;
+    width: 100%;
     min-height: 1px;
-    padding-left: calc($gutter / 2);
-    padding-right: calc($gutter / 2);
+    padding-left: 1rem;
+    padding-right: 1rem;
 }
 
 @mixin make-xs-column-offset($columns) {
@@ -772,8 +772,10 @@
 @mixin make-sm-column($columns, $gutter: $grid-gutter-width) {
     position: relative;
     min-height: 1px;
-    padding-left: calc($gutter / 2);
-    padding-right: calc($gutter / 2);
+    padding-left: 1rem;
+    padding-right: 1rem;
+    float: unset;
+    width: 100%;
 
     @media (min-width: $screen-sm-min) {
         float: left;
@@ -803,8 +805,10 @@
 @mixin make-md-column($columns, $gutter: $grid-gutter-width) {
     position: relative;
     min-height: 1px;
-    padding-left: calc($gutter / 2);
-    padding-right: calc($gutter / 2);
+    padding-left: 1rem;
+    padding-right: 1rem;
+    width: 100%;
+    float: unset;
 
     @media (min-width: $screen-md-min) {
         float: left;
@@ -834,8 +838,8 @@
 @mixin make-lg-column($columns, $gutter: $grid-gutter-width) {
     position: relative;
     min-height: 1px;
-    padding-left: calc($gutter / 2);
-    padding-right: calc($gutter / 2);
+    padding-left: 1rem;
+    padding-right: 1rem;
 
     @media (min-width: $screen-lg-min) {
         float: left;

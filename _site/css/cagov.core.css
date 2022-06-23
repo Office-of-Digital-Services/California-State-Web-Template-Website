@@ -13768,8 +13768,10 @@ a.list-group-item {
   .two-column .main-content .main-primary {
     position: relative;
     min-height: 1px;
-    padding-left: 0.75rem;
-    padding-right: 0.75rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    width: 100%;
+    float: unset;
   }
 }
 @media (min-width: 992px) and (min-width: 992px) {
@@ -13782,8 +13784,10 @@ a.list-group-item {
   .two-column .main-content .main-secondary {
     position: relative;
     min-height: 1px;
-    padding-left: 0.75rem;
-    padding-right: 0.75rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    width: 100%;
+    float: unset;
   }
 }
 @media (min-width: 992px) and (min-width: 992px) {
@@ -13925,7 +13929,7 @@ a.list-group-item {
 }
 
 .group {
-  margin-left: 0rem;
+  margin-left: -1rem;
   margin-right: -1rem;
 }
 .group::after {
@@ -13935,18 +13939,20 @@ a.list-group-item {
 }
 .full-width {
   position: relative;
-  float: left;
+  float: unset;
   width: 100%;
   min-height: 1px;
-  padding-left: 0.75rem;
-  padding-right: 0.75rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
 }
 
 .half {
   position: relative;
   min-height: 1px;
-  padding-left: 0.75rem;
-  padding-right: 0.75rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  float: unset;
+  width: 100%;
 }
 @media (min-width: 768px) {
   .half {
@@ -13958,8 +13964,10 @@ a.list-group-item {
 .third {
   position: relative;
   min-height: 1px;
-  padding-left: 0.75rem;
-  padding-right: 0.75rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  float: unset;
+  width: 100%;
 }
 @media (min-width: 768px) {
   .third {
@@ -13971,8 +13979,10 @@ a.list-group-item {
 .two-thirds {
   position: relative;
   min-height: 1px;
-  padding-left: 0.75rem;
-  padding-right: 0.75rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  float: unset;
+  width: 100%;
 }
 @media (min-width: 768px) {
   .two-thirds {
@@ -13983,15 +13993,17 @@ a.list-group-item {
 
 .quarter {
   position: relative;
-  float: left;
-  width: 50%;
+  float: unset;
+  width: 100%;
   min-height: 1px;
-  padding-left: 0.75rem;
-  padding-right: 0.75rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
   position: relative;
   min-height: 1px;
-  padding-left: 0.75rem;
-  padding-right: 0.75rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  width: 100%;
+  float: unset;
 }
 @media (min-width: 992px) {
   .quarter {
@@ -14003,8 +14015,10 @@ a.list-group-item {
 .three-quarters {
   position: relative;
   min-height: 1px;
-  padding-left: 0.75rem;
-  padding-right: 0.75rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  float: unset;
+  width: 100%;
 }
 @media (min-width: 768px) {
   .three-quarters {
@@ -16814,8 +16828,10 @@ a.second-level-link [class^=ca-gov-icon-] {
 .utility-header .half {
   position: relative;
   min-height: 1px;
-  padding-left: 0.75rem;
-  padding-right: 0.75rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  float: unset;
+  width: 100%;
   padding-top: 0;
   padding-left: 15px;
 }
@@ -17021,7 +17037,8 @@ a.second-level-link [class^=ca-gov-icon-] {
   }
 }
 .utility-header .flex-row .settings-links button {
-  margin: 0 4px 0 4px;
+  margin: 0;
+  padding-right: 0;
   font-size: 0.95rem;
 }
 .utility-header .flex-row .settings-links button:hover, .utility-header .flex-row .settings-links button:focus {
@@ -17245,11 +17262,11 @@ pre {
 
   .ask-group {
     position: relative;
-    float: left;
+    float: unset;
     width: 100%;
     min-height: 1px;
-    padding-left: 0.75rem;
-    padding-right: 0.75rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
     padding-top: 24px;
     float: none;
     padding-bottom: 1px;
@@ -18190,11 +18207,12 @@ html {
   display: none;
 }
 
-/* Responsive tabs*/
+/* Responsive tabs */
 .responsive .nav-tabs {
   display: none;
 }
 
+/* Responsive desctop view */
 @media (min-width: 768px) {
   .responsive .nav-tabs {
     display: flex;
@@ -18213,11 +18231,63 @@ html {
     display: block;
   }
 }
+/* Responsive tabs mobile view */
 @media (max-width: 767px) {
   .responsive .tab-pane {
     display: block !important;
     opacity: 1 !important;
     padding: 0 !important;
+  }
+  .responsive .tab-pane .card-header {
+    padding: 0;
+    background: none;
+  }
+  .responsive .tab-pane .card-header a {
+    display: block;
+    width: 100%;
+    padding: 0.5rem 1rem;
+    font-size: 1.25rem;
+    font-weight: 600;
+    background-color: #fafafa;
+    text-decoration: none;
+    position: relative;
+  }
+  .responsive .tab-pane .card-header a:hover, .responsive .tab-pane .card-header a:focus {
+    background-color: #ededef;
+  }
+  .responsive .tab-pane .card-header a:focus {
+    outline: solid 2 #2ea3f2 !important;
+    outline-offset: -2px;
+  }
+  .responsive .tab-pane .card-header a::after {
+    content: "";
+    position: absolute;
+    top: 1.125rem;
+    right: 1rem;
+    border-right: 2px solid black;
+    border-top: 2px solid black;
+    border-radius: 3px;
+    width: 10px;
+    height: 10px;
+    transform: rotate(45deg);
+    transition: all 0.2s ease;
+  }
+  .responsive .tab-pane .card-header a[aria-expanded=true] {
+    color: #000;
+  }
+  .responsive .tab-pane .card-header a[aria-expanded=true]:hover, .responsive .tab-pane .card-header a[aria-expanded=true]:focus {
+    color: #4a4958;
+  }
+  .responsive .tab-pane .card-header a[aria-expanded=true]::before {
+    content: "";
+    border-left: 3px solid;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+  }
+  .responsive .tab-pane .card-header a[aria-expanded=true]::after {
+    transform: rotate(135deg);
   }
 }
 /* ACCESSIBLE tabs*/
@@ -19524,7 +19594,7 @@ figcaption {
 ----------------------------------------- */
 .news-item {
   clear: both;
-  margin-left: 0rem;
+  margin-left: -1rem;
   margin-right: -1rem;
   margin-bottom: 24px;
   padding: 0 0.75rem;
@@ -19540,23 +19610,27 @@ figcaption {
 .news-item .thumbnail {
   margin-left: -0.75rem;
   position: relative;
-  float: left;
-  width: 41.6666666667%;
+  float: unset;
+  width: 100%;
   min-height: 1px;
-  padding-left: 0.75rem;
-  padding-right: 0.75rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
   position: relative;
   min-height: 1px;
-  padding-left: 0.75rem;
-  padding-right: 0.75rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  float: unset;
+  width: 100%;
   position: relative;
   min-height: 1px;
-  padding-left: 0.75rem;
-  padding-right: 0.75rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  width: 100%;
+  float: unset;
   position: relative;
   min-height: 1px;
-  padding-left: 0.75rem;
-  padding-right: 0.75rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
   padding-bottom: 0.75rem;
 }
 @media (min-width: 768px) {
@@ -19580,8 +19654,10 @@ figcaption {
 .two-column .news-item .thumbnail {
   position: relative;
   min-height: 1px;
-  padding-left: 0.75rem;
-  padding-right: 0.75rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  width: 100%;
+  float: unset;
 }
 @media (min-width: 992px) {
   .two-column .news-item .thumbnail {
@@ -19761,19 +19837,23 @@ figcaption {
 }
 .event-item > .thumbnail {
   position: relative;
-  float: left;
-  width: 33.3333333333%;
+  float: unset;
+  width: 100%;
   min-height: 1px;
-  padding-left: 0.75rem;
-  padding-right: 0.75rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
   position: relative;
   min-height: 1px;
-  padding-left: 0.75rem;
-  padding-right: 0.75rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  float: unset;
+  width: 100%;
   position: relative;
   min-height: 1px;
-  padding-left: 0.75rem;
-  padding-right: 0.75rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  width: 100%;
+  float: unset;
   padding: 0;
 }
 @media (min-width: 768px) {
@@ -19795,19 +19875,23 @@ figcaption {
 }
 .event-item .thumbnail + .info {
   position: relative;
-  float: left;
-  width: 66.6666666667%;
+  float: unset;
+  width: 100%;
   min-height: 1px;
-  padding-left: 0.75rem;
-  padding-right: 0.75rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
   position: relative;
   min-height: 1px;
-  padding-left: 0.75rem;
-  padding-right: 0.75rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  float: unset;
+  width: 100%;
   position: relative;
   min-height: 1px;
-  padding-left: 0.75rem;
-  padding-right: 0.75rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  width: 100%;
+  float: unset;
 }
 @media (min-width: 768px) {
   .event-item .thumbnail + .info {
@@ -20413,16 +20497,20 @@ select:focus {
 .location.banner .thumbnail {
   position: relative;
   min-height: 1px;
-  padding-left: 0.75rem;
-  padding-right: 0.75rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  float: unset;
+  width: 100%;
   position: relative;
   min-height: 1px;
-  padding-left: 0.75rem;
-  padding-right: 0.75rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  width: 100%;
+  float: unset;
   position: relative;
   min-height: 1px;
-  padding-left: 0.75rem;
-  padding-right: 0.75rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
 }
 @media (min-width: 768px) {
   .location.banner .thumbnail {
@@ -20450,16 +20538,20 @@ select:focus {
 .location.banner .contact {
   position: relative;
   min-height: 1px;
-  padding-left: 0.75rem;
-  padding-right: 0.75rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  float: unset;
+  width: 100%;
   position: relative;
   min-height: 1px;
-  padding-left: 0.75rem;
-  padding-right: 0.75rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  width: 100%;
+  float: unset;
   position: relative;
   min-height: 1px;
-  padding-left: 0.75rem;
-  padding-right: 0.75rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
   position: relative;
 }
 @media (min-width: 768px) {
@@ -20483,16 +20575,20 @@ select:focus {
 .location.banner .summary {
   position: relative;
   min-height: 1px;
-  padding-left: 0.75rem;
-  padding-right: 0.75rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  float: unset;
+  width: 100%;
   position: relative;
   min-height: 1px;
-  padding-left: 0.75rem;
-  padding-right: 0.75rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  width: 100%;
+  float: unset;
   position: relative;
   min-height: 1px;
-  padding-left: 0.75rem;
-  padding-right: 0.75rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
 }
 @media (min-width: 768px) {
   .location.banner .summary {
@@ -20590,8 +20686,10 @@ select:focus {
 .location.full .contact {
   position: relative;
   min-height: 1px;
-  padding-left: 0.75rem;
-  padding-right: 0.75rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  float: unset;
+  width: 100%;
   margin-top: 24px;
 }
 @media (min-width: 768px) {
@@ -20611,8 +20709,10 @@ select:focus {
 .location.full .summary {
   position: relative;
   min-height: 1px;
-  padding-left: 0.75rem;
-  padding-right: 0.75rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  float: unset;
+  width: 100%;
   margin-top: 24px;
 }
 @media (min-width: 768px) {
@@ -20626,7 +20726,7 @@ select:focus {
    LIGHTBOX GALLERY - /source/scss/cagov/gallery.scss
 ----------------------------------------- */
 .gallery {
-  margin-left: 0rem;
+  margin-left: -1rem;
   margin-right: -1rem;
 }
 .gallery::after {
@@ -20646,11 +20746,11 @@ select:focus {
 @media (max-width: 576px) {
   .gallery .item {
     position: relative;
-    float: left;
+    float: unset;
     width: 100%;
     min-height: 1px;
-    padding-left: 0.75rem;
-    padding-right: 0.75rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
   }
 }
 .gallery a.gallery-item {
@@ -20714,12 +20814,16 @@ select:focus {
 .gallery.three-up .item {
   position: relative;
   min-height: 1px;
-  padding-left: 0.75rem;
-  padding-right: 0.75rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  float: unset;
+  width: 100%;
   position: relative;
   min-height: 1px;
-  padding-left: 0.75rem;
-  padding-right: 0.75rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  width: 100%;
+  float: unset;
 }
 @media (min-width: 768px) {
   .gallery.three-up .item {
@@ -20736,12 +20840,16 @@ select:focus {
 .gallery.four-up .item {
   position: relative;
   min-height: 1px;
-  padding-left: 0.75rem;
-  padding-right: 0.75rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  float: unset;
+  width: 100%;
   position: relative;
   min-height: 1px;
-  padding-left: 0.75rem;
-  padding-right: 0.75rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  width: 100%;
+  float: unset;
 }
 @media (min-width: 768px) {
   .gallery.four-up .item {
@@ -20757,15 +20865,17 @@ select:focus {
 }
 .gallery.gallery-small .item {
   position: relative;
-  float: left;
-  width: 33.3333333333%;
+  float: unset;
+  width: 100%;
   min-height: 1px;
-  padding-left: 0.75rem;
-  padding-right: 0.75rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
   position: relative;
   min-height: 1px;
-  padding-left: 0.75rem;
-  padding-right: 0.75rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  width: 100%;
+  float: unset;
 }
 @media (min-width: 992px) {
   .gallery.gallery-small .item {
@@ -22093,9 +22203,6 @@ blockquote.blockquote-reverse .small:after {
    SITE SETTINGS
    /source/scss/cagov/settings-bar.scss
 ----------------------------------------- */
-.site-settings {
-  padding-right: 20px;
-}
 .site-settings button.close {
   position: relative;
   right: -15px;
@@ -22201,20 +22308,24 @@ blockquote.blockquote-reverse .small:after {
 ----------------------------------------- */
 .service-tile {
   position: relative;
-  float: left;
+  float: unset;
   width: 100%;
   min-height: 1px;
-  padding-left: 0;
-  padding-right: 0;
+  padding-left: 1rem;
+  padding-right: 1rem;
   /* Need to keep the two column longer than bootstrap has .make-*-column for */
   position: relative;
   min-height: 1px;
-  padding-left: 0;
-  padding-right: 0;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  float: unset;
+  width: 100%;
   position: relative;
   min-height: 1px;
-  padding-left: 0;
-  padding-right: 0;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  width: 100%;
+  float: unset;
   position: relative;
   padding: 0;
   margin: 0;

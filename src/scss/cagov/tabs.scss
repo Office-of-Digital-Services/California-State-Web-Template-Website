@@ -187,14 +187,14 @@
  }
 }
 
-/* Responsive tabs*/
+/* Responsive tabs */
 
 .responsive {
  .nav-tabs {
   display: none;
  }
 }
-
+/* Responsive desctop view */
 @media (min-width: $screen-sm-min) {
  .responsive {
   .nav-tabs {
@@ -219,11 +219,65 @@
  }
 }
 
+/* Responsive tabs mobile view */
 @media (max-width: $screen-xs-max) {
  .responsive .tab-pane {
   display: block !important;
   opacity: 1 !important;
   padding: 0 !important;
+  .card-header {
+   padding: 0;
+   background: none;
+   a {
+    display: block;
+    width: 100%;
+    padding: 0.5rem 1rem;
+    font-size: 1.25rem;
+    font-weight: 600;
+    background-color: $gray-50;
+    text-decoration: none;
+    position: relative;
+    &:hover,
+    &:focus {
+     background-color: $gray-100;
+    }
+    &:focus {
+     @include outline(2);
+     outline-offset: -2px;
+    }
+    &::after {
+     content: "";
+     position: absolute;
+     top: 1.125rem;
+     right: 1rem;
+     border-right: 2px solid black;
+     border-top: 2px solid black;
+     border-radius: 3px;
+     width: 10px;
+     height: 10px;
+     transform: rotate(45deg);
+     transition: all 0.2s ease;
+    }
+    &[aria-expanded="true"] {
+     color: $black;
+     &:hover,
+     &:focus {
+      color: $gray-800;
+     }
+     &::before {
+      content: "";
+      border-left: 3px solid;
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+     }
+     &::after {
+      transform: rotate(135deg);
+     }
+    }
+   }
+  }
  }
 }
 

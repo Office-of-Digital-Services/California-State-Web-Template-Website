@@ -71,7 +71,7 @@
     
     <div class="utility-header">
     <div class="container">
-        <div class="group flex-row">
+        <div class="flex-row">
             <div class="social-media-links">
                 <div class="header-cagov-logo"><a href="https://ca.gov"><span class="sr-only">CA.gov</span><img
                             src="/images/Ca-Gov-Logo-Blue.svg" class="pos-rel" alt="" aria-hidden="true" /></a></div>
@@ -179,10 +179,10 @@
        <a class="first-level-link" href="/visual-design.html">Visual design</a>
    </li>
    <li class="nav-item">
-       <a href="/sample/" class="first-level-link">Components</a>
+       <a class="first-level-link" href="/sample/">Components</a>
    </li>
    <li class="nav-item">
-       <a href="/sample/content-patterns.html" class="first-level-link">Templates</a>
+       <a class="first-level-link" href="/sample/content-patterns.html" >Templates</a>
    </li>
  </ul>
 
@@ -194,7 +194,7 @@
   
 <div id="main-content" class="main-content">
 	<main class="main-primary" id="main">
-		<div class="container p-b-lg p-t-md">
+		<div class="container p-t-md">
   
     <nav aria-label="You are here">
  <ol class="breadcrumb">
@@ -381,13 +381,12 @@
 			<div class="row">
 				<div class="col-md-3">
      
-					<nav aria-labelledby="components-list" class="side-navigation sticky-6" style="max-height: 70vh;
-  overflow-y: auto;">
+					<nav aria-labelledby="components-list" class="side-navigation sticky-6">
 		   
 
 
 <ul class="list-navigation">
-  <li><a href="/sample/" class="nav-heading" id="components-list">Available Components</a>
+  <li><a href="/sample/" id="components-list">Available Components</a>
   <ul>
   				
       
@@ -483,7 +482,7 @@
       
       </ul>
   </li>
-  <li><a href="/sample/css-units.html" class="nav-heading" id="components-list">CSS Style Shortcuts</a>
+  <li><a href="/sample/css-units.html" id="components-list">CSS Style Shortcuts</a>
  </ul>
 
 
@@ -491,11 +490,11 @@
 
 					</nav>
 				</div>
-				<div class="col-md-9">
+				<div class="col-md-9 p-b-lg">
 					
 
 
-<h1>Tabs</h1>
+<h1 class="mt-lg-0">Tabs</h1>
 <p>
 
 </p>
@@ -657,137 +656,123 @@
  mobile devices:
 </p>
 <div class="tab-group responsive">
-    <ul id="tabs" class="nav nav-tabs" role="tablist">
-        <li class="nav-item">
-            <a id="tab-home" href="#pane-home" class="nav-link active" data-bs-toggle="tab" role="tab">Location</a>
-        </li>
-        <li class="nav-item">
-            <a id="tab-profile" href="#pane-profile" class="nav-link" data-bs-toggle="tab" role="tab">Context</a>
-        </li>
-        <li class="nav-item">
-            <a id="tab-messages" href="#pane-messages" class="nav-link" data-bs-toggle="tab"
-                role="tab">Communication</a>
-        </li>
-    </ul>
+ <ul id="tabs" class="nav nav-tabs" role="tablist">
+  <li class="nav-item">
+   <a id="tab-home" href="#pane-home" class="nav-link active" data-bs-toggle="tab" role="tab">Location</a>
+  </li>
+  <li class="nav-item">
+   <a id="tab-profile" href="#pane-profile" class="nav-link" data-bs-toggle="tab" role="tab">Context</a>
+  </li>
+  <li class="nav-item">
+   <a id="tab-messages" href="#pane-messages" class="nav-link" data-bs-toggle="tab" role="tab">Communication</a>
+  </li>
+ </ul>
 
 
-    <div id="tab-content" class="tab-content">
-        <div id="pane-home" class="card tab-pane fade show active" role="tabpanel" aria-labelledby="tab-home">
-            <div class="card-header" id="heading-home">
-                <h5 class="my-0">
-                    <a data-bs-toggle="collapse" href="#collapse-home" data-parent="#tab-content" aria-expanded="true"
-                        aria-controls="collapse-home" title="Location tab header">
-                        Location
-                    </a>
-                </h5>
-            </div>
-            <div id="collapse-home" class="collapse show" role="tabpanel" aria-labelledby="heading-home">
-                <div class="card-body">
-                    Location Tab
-                </div>
-            </div>
-        </div>
-
-        <div id="pane-profile" class="card tab-pane fade" role="tabpanel" aria-labelledby="tab-profile">
-            <div class="card-header" id="heading-profile">
-                <h5 class="my-0">
-                    <a class="collapsed" data-bs-toggle="collapse" href="#collapse-profile" data-parent="#tab-content"
-                        aria-expanded="false" aria-controls="collapse-profile" title="Context tab header">
-                        Context
-                    </a>
-                </h5>
-            </div>
-            <div id="collapse-profile" class="collapse" role="tabpanel" aria-labelledby="heading-profile">
-                <div class="card-body">
-                    Context Tab
-                </div>
-            </div>
-        </div>
-
-        <div id="pane-messages" class="card tab-pane fade" role="tabpanel" aria-labelledby="tab-messages">
-            <div class="card-header" id="heading-messages">
-                <h5 class="my-0">
-                    <a class="collapsed" data-bs-toggle="collapse" href="#collapse-messages" data-parent="#tab-content"
-                        aria-expanded="false" aria-controls="collapse-messages" title="Communication tab header">
-                        Communication
-                    </a>
-                </h5>
-            </div>
-            <div id="collapse-messages" class="collapse" role="tabpanel" aria-labelledby="heading-messages">
-                <div class="card-body">
-                    Communication Tab
-                </div>
-            </div>
-        </div>
+ <div id="tab-content" class="tab-content">
+  <div id="pane-home" class="card tab-pane fade show active" role="tabpanel" aria-labelledby="tab-home">
+   <div class="card-header" id="heading-home">
+    <a data-bs-toggle="collapse" href="#collapse-home" data-parent="#tab-content" aria-expanded="true"
+     aria-controls="collapse-home" title="Location tab header">
+     Location
+    </a>
+   </div>
+   <div id="collapse-home" class="collapse show" role="tabpanel" aria-labelledby="heading-home">
+    <div class="card-body">
+     Location Tab
     </div>
+   </div>
+  </div>
+
+  <div id="pane-profile" class="card tab-pane fade" role="tabpanel" aria-labelledby="tab-profile">
+   <div class="card-header" id="heading-profile">
+    <a class="collapsed" data-bs-toggle="collapse" href="#collapse-profile" data-parent="#tab-content"
+     aria-expanded="false" aria-controls="collapse-profile" title="Context tab header">
+     Context
+    </a>
+   </div>
+   <div id="collapse-profile" class="collapse" role="tabpanel" aria-labelledby="heading-profile">
+    <div class="card-body">
+     Context Tab
+    </div>
+   </div>
+  </div>
+
+  <div id="pane-messages" class="card tab-pane fade" role="tabpanel" aria-labelledby="tab-messages">
+   <div class="card-header" id="heading-messages">
+    <a class="collapsed" data-bs-toggle="collapse" href="#collapse-messages" data-parent="#tab-content"
+     aria-expanded="false" aria-controls="collapse-messages" title="Communication tab header">
+     Communication
+    </a>
+   </div>
+   <div id="collapse-messages" class="collapse" role="tabpanel" aria-labelledby="heading-messages">
+    <div class="card-body">
+     Communication Tab
+    </div>
+   </div>
+  </div>
+ </div>
 </div>
 
 <h2><label for="responsive-tabs">Source Code (responsive):</label></h2>
 <textarea id="responsive-tabs" class="form-control" rows="10"
  cols="80"><div class="tab-group responsive">
-    <ul id="tabs" class="nav nav-tabs" role="tablist">
-        <li class="nav-item">
-            <a id="tab-home" href="#pane-home" class="nav-link active" data-bs-toggle="tab" role="tab">Location</a>
-        </li>
-        <li class="nav-item">
-            <a id="tab-profile" href="#pane-profile" class="nav-link" data-bs-toggle="tab" role="tab">Context</a>
-        </li>
-        <li class="nav-item">
-            <a id="tab-messages" href="#pane-messages" class="nav-link" data-bs-toggle="tab"
-                role="tab">Communication</a>
-        </li>
-    </ul>
+ <ul id="tabs" class="nav nav-tabs" role="tablist">
+  <li class="nav-item">
+   <a id="tab-home" href="#pane-home" class="nav-link active" data-bs-toggle="tab" role="tab">Location</a>
+  </li>
+  <li class="nav-item">
+   <a id="tab-profile" href="#pane-profile" class="nav-link" data-bs-toggle="tab" role="tab">Context</a>
+  </li>
+  <li class="nav-item">
+   <a id="tab-messages" href="#pane-messages" class="nav-link" data-bs-toggle="tab" role="tab">Communication</a>
+  </li>
+ </ul>
 
 
-    <div id="tab-content" class="tab-content">
-        <div id="pane-home" class="card tab-pane fade show active" role="tabpanel" aria-labelledby="tab-home">
-            <div class="card-header" id="heading-home">
-                <h5 class="my-0">
-                    <a data-bs-toggle="collapse" href="#collapse-home" data-parent="#tab-content" aria-expanded="true"
-                        aria-controls="collapse-home" title="Location tab header">
-                        Location
-                    </a>
-                </h5>
-            </div>
-            <div id="collapse-home" class="collapse show" role="tabpanel" aria-labelledby="heading-home">
-                <div class="card-body">
-                    Location Tab
-                </div>
-            </div>
-        </div>
-
-        <div id="pane-profile" class="card tab-pane fade" role="tabpanel" aria-labelledby="tab-profile">
-            <div class="card-header" id="heading-profile">
-                <h5 class="my-0">
-                    <a class="collapsed" data-bs-toggle="collapse" href="#collapse-profile" data-parent="#tab-content"
-                        aria-expanded="false" aria-controls="collapse-profile" title="Context tab header">
-                        Context
-                    </a>
-                </h5>
-            </div>
-            <div id="collapse-profile" class="collapse" role="tabpanel" aria-labelledby="heading-profile">
-                <div class="card-body">
-                    Context Tab
-                </div>
-            </div>
-        </div>
-
-        <div id="pane-messages" class="card tab-pane fade" role="tabpanel" aria-labelledby="tab-messages">
-            <div class="card-header" id="heading-messages">
-                <h5 class="my-0">
-                    <a class="collapsed" data-bs-toggle="collapse" href="#collapse-messages" data-parent="#tab-content"
-                        aria-expanded="false" aria-controls="collapse-messages" title="Communication tab header">
-                        Communication
-                    </a>
-                </h5>
-            </div>
-            <div id="collapse-messages" class="collapse" role="tabpanel" aria-labelledby="heading-messages">
-                <div class="card-body">
-                    Communication Tab
-                </div>
-            </div>
-        </div>
+ <div id="tab-content" class="tab-content">
+  <div id="pane-home" class="card tab-pane fade show active" role="tabpanel" aria-labelledby="tab-home">
+   <div class="card-header" id="heading-home">
+    <a data-bs-toggle="collapse" href="#collapse-home" data-parent="#tab-content" aria-expanded="true"
+     aria-controls="collapse-home" title="Location tab header">
+     Location
+    </a>
+   </div>
+   <div id="collapse-home" class="collapse show" role="tabpanel" aria-labelledby="heading-home">
+    <div class="card-body">
+     Location Tab
     </div>
+   </div>
+  </div>
+
+  <div id="pane-profile" class="card tab-pane fade" role="tabpanel" aria-labelledby="tab-profile">
+   <div class="card-header" id="heading-profile">
+    <a class="collapsed" data-bs-toggle="collapse" href="#collapse-profile" data-parent="#tab-content"
+     aria-expanded="false" aria-controls="collapse-profile" title="Context tab header">
+     Context
+    </a>
+   </div>
+   <div id="collapse-profile" class="collapse" role="tabpanel" aria-labelledby="heading-profile">
+    <div class="card-body">
+     Context Tab
+    </div>
+   </div>
+  </div>
+
+  <div id="pane-messages" class="card tab-pane fade" role="tabpanel" aria-labelledby="tab-messages">
+   <div class="card-header" id="heading-messages">
+    <a class="collapsed" data-bs-toggle="collapse" href="#collapse-messages" data-parent="#tab-content"
+     aria-expanded="false" aria-controls="collapse-messages" title="Communication tab header">
+     Communication
+    </a>
+   </div>
+   <div id="collapse-messages" class="collapse" role="tabpanel" aria-labelledby="heading-messages">
+    <div class="card-body">
+     Communication Tab
+    </div>
+   </div>
+  </div>
+ </div>
 </div></textarea>
 				</div>
 			</div>
