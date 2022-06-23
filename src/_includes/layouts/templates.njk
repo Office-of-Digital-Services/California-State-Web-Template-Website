@@ -2,7 +2,7 @@
 {% block content %}
 <div id="main-content" class="main-content">
 	<main class="main-primary" id="main">
-		<div class="container p-b-lg p-t-md">
+		<div class="container p-t-md">
   {# Breadcrumbs (rendering data from /src/_data/breadcrumbs.json and /src/_data/helpers.js  #}
     {% include "../breadcrumbs.njk" %}
 
@@ -42,7 +42,7 @@
 
 
 				</div>
-				<div class="col-md-9">
+				<div class="col-md-9 p-b-lg body-content">
 					{{ content | safe }}
 				</div>
 			</div>
