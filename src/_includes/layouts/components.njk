@@ -2,20 +2,19 @@
 {% block content %}
 <div id="main-content" class="main-content">
 	<main class="main-primary" id="main">
-		<div class="container p-b-lg p-t-md">
+		<div class="container p-t-md">
   {# Breadcrumbs (rendering data from /src/_data/breadcrumbs.json and /src/_data/helpers.js  #}
     {% include "../breadcrumbs.njk" %}
 
 			<div class="row">
 				<div class="col-md-3">
      {# SIde navigation (rendering data from /src/_data/components.json  and /src/_data/helpers.js  #}
-					<nav aria-labelledby="components-list" class="side-navigation sticky-6" style="max-height: 70vh;
-  overflow-y: auto;">
+					<nav aria-labelledby="components-list" class="side-navigation sticky-6">
 		   {# Links with subnav #}
 
 
 <ul class="list-navigation">
-  <li><a href="/sample/" class="nav-heading" id="components-list">Available Components</a>
+  <li><a href="/sample/" id="components-list">Available Components</a>
   <ul>
   				{% for item in components.components %}
       {% if 'subnav' in item %}
@@ -25,7 +24,7 @@
            <ul>
             {% for subitem in item.subnav %}
             <li>
-             <a href="{{ subitem.url }}" data-hash="{{ subitem.dataHash }}" class="tab-link">{{ subitem.text }}</a>
+             <a href="{{ subitem.url }}" class="tab-link">{{ subitem.text }}</a>
             </li>
             {% endfor %}
            </ul>
@@ -37,7 +36,7 @@
       {% endfor %}
       </ul>
   </li>
-  <li><a href="/sample/css-units.html" class="nav-heading" id="components-list">CSS Style Shortcuts</a>
+  <li><a href="/sample/css-units.html" id="components-list">CSS Style Shortcuts</a>
  </ul>
 
 
@@ -45,7 +44,7 @@
 
 					</nav>
 				</div>
-				<div class="col-md-9">
+				<div class="col-md-9 p-b-lg">
 					{{ content | safe }}
 				</div>
 			</div>
