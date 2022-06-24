@@ -1,22 +1,46 @@
 <nav id="navigation" class="main-navigation auto-highlight">
  <ul id="nav_list" class="top-level-nav">
   <li class="nav-item">
+       {% if landing === "What's new" %}
+       <a class="first-level-link active" href="/update.html">What's new</a>
+       {% else %}
        <a class="first-level-link" href="/update.html">What's new</a>
+       {% endif %} 
    </li>
    <li class="nav-item">
+       {% if landing === "Get started" %}
+       <a class="first-level-link active" href="/getting-started.html">Get started</a>
+       {% else %}
        <a class="first-level-link" href="/getting-started.html">Get started</a>
+       {% endif %} 
    </li>
-   <li class="nav-item">
+   <li class="nav-item">       
+       {% if landing === "Structure" %}
+       <a class="first-level-link active" href="/structure.html">Structure</a>
+       {% else %}
        <a class="first-level-link" href="/structure.html">Structure</a>
+       {% endif %} 
    </li>
    <li class="nav-item">
+       {% if landing === "Visual design" %}
+       <a class="first-level-link active" href="/visual-design.html">Visual design</a>
+       {% else %}
        <a class="first-level-link" href="/visual-design.html">Visual design</a>
+       {% endif %} 
    </li>
    <li class="nav-item">
+       {% if landing === "Components" %}
+       <a class="first-level-link active" href="/sample/">Components</a>
+       {% else %}
        <a class="first-level-link" href="/sample/">Components</a>
+       {% endif %} 
    </li>
    <li class="nav-item">
+       {% if landing === "Templates" %}
+       <a class="first-level-link active" href="/sample/content-patterns.html" >Templates</a>
+       {% else %}
        <a class="first-level-link" href="/sample/content-patterns.html" >Templates</a>
+       {% endif %} 
    </li>
  </ul>
 
