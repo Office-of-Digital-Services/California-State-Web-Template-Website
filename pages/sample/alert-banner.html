@@ -11,64 +11,173 @@ alert: "../modules/alert-banner.html"
 <h1 class="mt-lg-0">Alert Banner</h1>
 
 
-<p>You can now add an alert banner at the top of your website for communicating important
- information which is meant to alert users. The Alert banner can be closed by the user using
- the x button in the top right corner.</p>
-<h2>Usage</h2>
-<p>
- Generally an Alert Banner will be added to your page although it can be included on any
- page. Add the alert key with the path to your alert html file
- <code>alert: "../modules/alert-banner.html"</code>
- after your
- eleventy layout key
- declaration in
- the front matter data on your page.
-<pre>---
+<p>The alert banner is for important, sometimes time-sensitive
+ information. Reserve alerts for information the audience must read before anything else. It goes above the site
+ navigation on any page.
+</p>
+<p>The alert banner is a band that extends across the width of the page. </p>
+<p>It includes:</p>
+<ul>
+ <li>An optional icon, selected from a list of font icon options</li>
+ <li>A text field, which includes the ability to link to other pages</li>
+ <li>An “X” close icon that allows people to dismiss the alert</li>
+</ul>
+
+<h2 id="demo">Demo and source code</h2>
+
+<!--TABS-->
+<div class="tab-group responsive">
+ <ul id="tabs1" class="nav nav-tabs" role="tablist">
+  <li class="nav-item">
+   <a id="tab-example1" href="#pane-example1" class="nav-link active" data-bs-toggle="tab" role="tab">Example</a>
+  </li>
+  <li class="nav-item">
+   <a id="tab-html1" href="#pane-html1" class="nav-link" data-bs-toggle="tab" role="tab">Source Code</a>
+  </li>
+  <li class="nav-item">
+   <a id="tab-njk1" href="#pane-njk1" class="nav-link" data-bs-toggle="tab" role="tab">Nunjucks include</a>
+  </li>
+ </ul>
+
+
+ <div id="tab-content" class="tab-content">
+  <!--Examples-->
+  <div id="pane-example1" class="card tab-pane fade show active" role="tabpanel" aria-labelledby="tab-example1">
+   <div class="card-header" id="heading-example1">
+    <a data-bs-toggle="collapse" href="#collapse-example1" data-parent="#tab-content" aria-expanded="true"
+     aria-controls="collapse-example1" data-hash="#pane-example1" title="Example tab header">
+     Example
+    </a>
+   </div>
+   <div id="collapse-example1" class="collapse show" role="tabpanel" aria-labelledby="heading-example1">
+    <div class="card-body p-b-lg">
+     <h3>Default alert</h3>
+     {% include "../../src/_includes/modules/alert-banner.html" %}
+
+     <h3>Other alerts and alert states</h3>
+     <p>Alert Success</p>
+     <div class="alert alert-success">
+      <strong>Well done!</strong> You successfully read this important alert message.
+      <a href="" class="alert-link btn btn-default btn-xs">Alert Success</a>
+     </div>
+     <p>Alert Warning</p>
+     <div class="alert alert-warning">
+      <strong>Warning!</strong> Better check yourself, you're not looking too good.
+      <a href="" class="alert-link btn btn-default btn-xs">Alert Warning</a>
+     </div>
+     <p>Alert Danger</p>
+     <div class="alert alert-danger">
+      <strong>Oh snap!</strong> Change a few things up and try submitting again.
+      <a href="" class="alert-link btn btn-default btn-xs">Alert Danger</a>
+     </div>
+     <p>Alert Severe</p>
+     <div class="alert alert-severe" role="alert">
+      <span class="alert-level"><span class="ca-gov-icon-important" aria-hidden="true"></span>SEVERE
+       ALERT!</span><span class="alert-text"> Flash Flood
+       in Sacramento until 12:15 PM.</span> <a href="" class="alert-link btn btn-default btn-xs">Alert
+       Severe</a>
+
+     </div>
+     <p>Alert Info</p>
+     <div class="alert alert-info" role="alert">
+      <strong>Heads up!</strong> This alert needs your attention.
+      <a href="" class="alert-link btn btn-default btn-xs">Alert Info</a>
+     </div>
+    </div>
+   </div>
+  </div>
+
+
+
+  <!--HTML-->
+  <div id="pane-html1" class="card tab-pane fade" role="tabpanel" aria-labelledby="tab-html1">
+   <div class="card-header" id="heading-html1">
+    <a class="collapsed" data-bs-toggle="collapse" href="#collapse-html1" data-parent="#tab-content"
+     aria-expanded="false" aria-controls="collapse-html1" data-hash="#pane-html1" title="HTML Source Code tab header">
+     Source code
+    </a>
+   </div>
+   <div id="collapse-html1" class="collapse" role="tabpanel" aria-labelledby="heading-html1">
+    <div class="card-body">
+     <pre style="max-height: 300px;"><code>{% include "../../src/_includes/modules/alert-banner.html" %}</code>
+    </pre>
+
+    </div>
+   </div>
+  </div>
+
+
+  <!--NJK-->
+  <div id="pane-njk1" class="card tab-pane fade" role="tabpanel" aria-labelledby="tab-njk1">
+   <div class="card-header" id="heading-njk1">
+    <a class="collapsed" data-bs-toggle="collapse" href="#collapse-njk1" data-parent="#tab-content"
+     aria-expanded="false" aria-controls="collapse-njk1" data-hash="#pane-njk1" title="Nunjucks include tab header">
+     Nunjucks include
+    </a>
+   </div>
+   <div id="collapse-njk1" class="collapse" role="tabpanel" aria-labelledby="heading-njk1">
+    <div class="card-body">
+     Add the alert key with the path to your alert html file
+     <code>alert: "../modules/alert-banner.html"</code>
+     after your
+     eleventy layout key
+     declaration in
+     the front matter data on your page.
+     <pre>---
 title: Alert Banner
 layout: page.njk
 alert: "../modules/alert-banner.html"
 ---</pre>
 
 
-<p>Or include alert banner module into your page directly after skip-to-content component:</p>
-<pre>
-&lt;header role="banner" id="header" class="global-header"&gt;
-&lt;div id="skip-to-content"&gt;
-    &lt;a href="#main-content"&gt;Skip to Main Content&lt;/a&gt;
-&lt;/div&gt;<br>
-&lt;!-- Alert Banner --&gt;
-&#10100;% include "../modules/alert-banner.html" %&#10101;
-...
-&lt;/header&gt;
-</pre>
+     <p>Or include alert banner module into your page directly after skip-to-content component:</p>
+     <pre>
+ &lt;header role="banner" id="header" class="global-header"&gt;
+   &lt;div id="skip-to-content"&gt;
+       &lt;a href="#main-content"&gt;Skip to Main Content&lt;/a&gt;
+     &lt;/div&gt;<br>
+     &lt;!-- Alert Banner --&gt;
+     &#10100;% include "../modules/alert-banner.html" %&#10101;
+   ...
+ &lt;/header&gt;
+ </pre>
+    </div>
+   </div>
+  </div>
 
 
-<h2>Other alerts and alert states</h2>
-<p>Alert Success</p>
-<div class="alert alert-success">
- <strong>Well done!</strong> You successfully read this important alert message.
- <a href="" class="alert-link btn btn-default btn-xs">Alert Success</a>
+ </div>
 </div>
-<p>Alert Warning</p>
-<div class="alert alert-warning">
- <strong>Warning!</strong> Better check yourself, you're not looking too good.
- <a href="" class="alert-link btn btn-default btn-xs">Alert Warning</a>
-</div>
-<p>Alert Danger</p>
-<div class="alert alert-danger">
- <strong>Oh snap!</strong> Change a few things up and try submitting again.
- <a href="" class="alert-link btn btn-default btn-xs">Alert Danger</a>
-</div>
-<p>Alert Severe</p>
-<div class="alert alert-severe" role="alert">
- <span class="alert-level"><span class="ca-gov-icon-important" aria-hidden="true"></span>SEVERE
-  ALERT!</span><span class="alert-text"> Flash Flood
-  in Sacramento until 12:15 PM.</span> <a href="" class="alert-link btn btn-default btn-xs">Alert
-  Severe</a>
+<!--END TABS-->
 
-</div>
-<p>Alert Info</p>
-<div class="alert alert-info" role="alert">
- <strong>Heads up!</strong> This alert needs your attention.
- <a href="" class="alert-link btn btn-default btn-xs">Alert Info</a>
-</div>
+
+
+
+<h2 id="usage">Usage</h2>
+<h3>When and how to use it</h3>
+<p>Use alert banners sparingly. They alarm people and distract from other content.</p>
+<p>Be concise with your alert banner content. Use a link to send people to a page with the details.</p>
+<p>Only use one alert banner on a page. Make sure the alert is relevant to the page it is on. Only duplicate the alert
+ on other pages if it applies to those pages.</p>
+<p>Use alert banners to tell people about:</p>
+<ul>
+ <li>Open application periods (informational)</li>
+ <li>Planned maintenance (informational)</li>
+ <li>Approaching deadlines (warning)</li>
+ <li>Services that are down (danger)</li>
+ <li>Positive feedback (success)</li>
+</ul>
+<p>Choose an icon that supports the tone of your alert.</p>
+
+
+<h3>How not to use it</h3>
+<p>Do not put an alert banner on every page on your site. If people see alerts too often, they will start to ignore them
+ and not read the content.
+</p>
+<p>Do not put more than one alert banner on a page.</p>
+<p>Do not use alert banners to simply highlight important content. They are for information that is new, relevant, and
+ temporary.</p>
+
+
+<h2 id="Accessibility">Accessibility</h2>
+{% include "../../src/_includes/modules/accessibility.html" %}
