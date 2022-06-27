@@ -462,17 +462,7 @@
  single column.</p>
 
 
-<h2 id="when-and-how-to-use-it">When and how to use it</h2>
-<p>Use the link grid to highlight the top things people need. Organize the links in a way that makes sense for people’s
- primary needs.</p>
-<p>The link grid is typically used on the homepage of a site so visitors can find and get to useful content quickly.</p>
-<p>Only use the link grid if you have two or more links to add to it.</p>
-<h3 id="how-not-to-use-it">How not to use it</h3>
-<p>Avoid using more than 9 links. The link grid is intended to highlight the most important content. The recommended
- maximum grid size is 3 rows by 3 columns.</p>
-<p>Because the grid collapses into one column on mobile, large grids may occupy several screens. This can hide lower
- links.</p>
-<h2 id="demo-and-sample-markup">Demo and sample markup</h2>
+<h2 id="demo">Demo and sample markup</h2>
 
 
 <!--TABS-->
@@ -500,20 +490,18 @@
     </h4>
    </div>
    <div id="collapse-example1" class="collapse show" role="tabpanel" aria-labelledby="heading-example1">
-    <div class="card-body p-b-lg">
-     <dic class="container">
- <div class="row">
-  <div class="col-md-4">
-   <a href="#" class="link-grid">Link 1</a>
-  </div>
-  <div class="col-md-4">
-   <a href="#" class="link-grid">Link 2, showing what longer text looks like</a>
-  </div>
-  <div class="col-md-4">
-   <a href="#" class="link-grid">Link 3</a>
-  </div>
+    <div class="card-body p-b-lg p-t-lg">
+     <div class="row">
+ <div class="col-md-4 mb-4">
+  <a href="javascript:;" class="link-grid">Link 1</a>
  </div>
-</dic>
+ <div class="col-md-4 mb-4">
+  <a href="javascript:;" class="link-grid">Link 2, showing what longer text looks like</a>
+ </div>
+ <div class="col-md-4 mb-4">
+  <a href="javascript:;" class="link-grid">Link 3</a>
+ </div>
+</div>
     </div>
    </div>
   </div>
@@ -532,19 +520,17 @@
    </div>
    <div id="collapse-html1" class="collapse" role="tabpanel" aria-labelledby="heading-html1">
     <div class="card-body">
-     <pre style="max-height: 300px;"><code><dic class="container">
- <div class="row">
-  <div class="col-md-4">
-   <a href="#" class="link-grid">Link 1</a>
-  </div>
-  <div class="col-md-4">
-   <a href="#" class="link-grid">Link 2, showing what longer text looks like</a>
-  </div>
-  <div class="col-md-4">
-   <a href="#" class="link-grid">Link 3</a>
-  </div>
+     <pre style="max-height: 300px;"><code><div class="row">
+ <div class="col-md-4 mb-4">
+  <a href="javascript:;" class="link-grid">Link 1</a>
  </div>
-</dic></code></pre>
+ <div class="col-md-4 mb-4">
+  <a href="javascript:;" class="link-grid">Link 2, showing what longer text looks like</a>
+ </div>
+ <div class="col-md-4 mb-4">
+  <a href="javascript:;" class="link-grid">Link 3</a>
+ </div>
+</div></code></pre>
 
     </div>
    </div>
@@ -554,6 +540,29 @@
  </div>
 </div>
 <!--END TABS-->
+<h2 id="usage">Usage</h2>
+<h3>When and how to use it</h3>
+<p>Use the link grid to highlight the top things people need. Organize the links in a way that makes sense for people’s
+ primary needs.</p>
+<p>The link grid is typically used on the homepage of a site so visitors can find and get to useful content quickly.</p>
+<p>Only use the link grid if you have two or more links to add to it.</p>
+<h3 id="how-not-to-use-it">How not to use it</h3>
+<p>Avoid using more than 9 links. The link grid is intended to highlight the most important content. The recommended
+ maximum grid size is 3 rows by 3 columns.</p>
+<p>Because the grid collapses into one column on mobile, large grids may occupy several screens. This can hide lower
+ links.</p>
+
+<h2 id="Accessibility">Accessibility</h2>
+<h3 class="m-t">Standard accessibility review</h3>
+<p>Each time a new component version is published:</p>
+<ul>
+ <li>Test with the <a href="https://www.deque.com/axe/" target="_blank">axe
+   accessibility tool</a>.</li>
+ <li>Review with the <a href="https://www.apple.com/voiceover/info/guide/_1121.html" target="_blank">VoiceOver</a>
+  screen reader or <a href="https://www.nvaccess.org/download/" target="_blank">NVDA</a>.</li>
+ <li>Ensure all actionable elements are accessible by keyboard command and tab in a logical order. </li>
+ <li>Check the component layout on a variety of screen sizes.</li>
+</ul>
 				</div>
 			</div>
 		</div>
