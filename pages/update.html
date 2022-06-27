@@ -7,7 +7,7 @@ permalink: "update.html"
 
 
 <div class="row">
- <div class="col-md-3">
+ <div class="col-md-3 p-b-lg">
   <nav aria-labelledby="page-navigation-label" class="page-navigation  sticky-6">
    <div id="page-navigation-label" class="label">On this page</div>
    <ul>
@@ -16,589 +16,133 @@ permalink: "update.html"
    </ul>
   </nav>
  </div>
- <div class="col-md-9">
+ <div class="col-md-9 p-b-lg">
 
 
-  <h1 class="mt-lg-0">What’s New</h1>
+  <h1 class="mt-lg-0">What’s new</h1>
   <p class="lead">We are continually improving the California State Template. View release features by date for items
    that
    have been added or updated in the State Template. </p>
-  <p>f you are new here, you may find it helpful to begin with <a href="/getting-started.html">getting started</a>.</p>
+  <p>If you are new here, you may find it helpful to begin with <a href="/getting-started.html">getting started</a>.</p>
+
+  <h2 id="v6">Version 6 releases</h2>
+
+  <table class="table">
+   <caption class="sr-only">State Web Template release updates table featuring version number, release date, and the
+    release high level description</caption>
+   <thead>
+    <tr>
+     <th scope="col">Version</th>
+     <th scope="col" style="min-width:120px">Date</th>
+     <th scope="col">Description</th>
+    </tr>
+   </thead>
+   <tbody>
+    <tr>
+     <td class="text-bold">6.0.8</td>
+     <td>7-30-22</td>
+     <td>
+      <ul class="font-size-16">
+       <li>Updated site structure and framework to use eleventy site generation and replaced server site
+        includes with njk includes and templates</li>
+       <li>Added new components such as feature card, link grid, and side navigation</li>
+       <li>Updated State Web Template's styles to make structural components to look like CA Design System</li>
+      </ul>
+
+     </td>
+    </tr>
+    <tr>
+     <td class="text-bold">6.0.7</td>
+     <td>12-16-21</td>
+     <td>
+      <ul class="font-size-16">
+       <li>Added responsive font size calculation functionality and adjusted some of the components to responsive font
+        sizing
+       </li>
+      </ul>
+
+     </td>
+    </tr>
+    <tr>
+     <td class="text-bold">6.0.6</td>
+     <td>11-24-21</td>
+     <td>
+      <ul class="font-size-16">
+       <li>Made State Web template jQuery-less</li>
+      </ul>
+     </td>
+    </tr>
+
+    <tr>
+     <td class="text-bold">6.0.5</td>
+     <td>06-02-21</td>
+     <td>
+      <ul class="font-size-16">
+       <li>Removed unused JS libraries and made fixes to service tites and carousel components</li>
+      </ul>
+     </td>
+    </tr>
+
+    <tr>
+     <td class="text-bold">6.0.4</td>
+     <td>04-21-21</td>
+     <td>
+      <ul class="font-size-16">
+       <li>Fixed links accessibility issues and updated jQuery version</li>
+      </ul>
+     </td>
+    </tr>
+
+    <tr>
+     <td class="text-bold">6.0.3</td>
+     <td>03-26-21</td>
+     <td>
+      <ul class="font-size-16">
+       <li>Fixed multiple accessibility issues</li>
+      </ul>
+     </td>
+    </tr>
+
+    <tr>
+     <td class="text-bold">6.0.2</td>
+     <td>04-28-20</td>
+     <td>
+      <ul class="font-size-16">
+       <li>Added 22 more new icons (including COVID-19 icons) to the CaGov font library</li>
+      </ul>
+     </td>
+    </tr>
+
+    <tr>
+     <td class="text-bold">6.0.1</td>
+     <td>01-31-20</td>
+     <td>
+      <ul class="font-size-16">
+       <li>Updated accordion keyboard accessibility</li>
+       <li>Added parallax sample page</li>
+      </ul>
+     </td>
+    </tr>
+
+    <tr>
+     <td class="text-bold">6.0.0</td>
+     <td>01-31-20</td>
+     <td>
+      <ul class="font-size-16">
+       <li>Added new pages that provide more usability directions</li>
+       <li>Added new modules such as blurb, modal and timeline</li>
+       <li>Added new color schemes such as Delta, Santa Cruz and Shasta</li>
+       <li>Added new icons to CAGov font library</li>
+      </ul>
+     </td>
+    </tr>
+   </tbody>
+  </table>
 
 
-
-  <h2 id="v6">Version 6 updates</h2>
-  <cagov-accordion>
-   <details open>
-    <summary>Version 6.0.8</summary>
-    <div class="accordion-body">
-     <table class="table">
-      <thead>
-       <tr>
-        <th scope="col" style=" min-width: 100px">Date</th>
-        <th scope="col">Updated Items</th>
-        <th scope="col">Description</th>
-       </tr>
-      </thead>
-      <tbody>
-       <tr>
-        <td>6-30-22</td>
-        <td>
-         <ul class="list-primary">
-          <li>Structure/framework</li>
-          <li>New njk includes</li>
-          <li>New site output folder</li>
-          <li>Utility header</li>
-          <li>Branding/site header</li>
-          <li>Mobile controls</li>
-          <li>Search component</li>
-          <li>Main navigation</li>
-          <li>Global footer </li>
-          <li>New page navigation</li>
-          <li>Side navigation</li>
-          <li>Buttons</li>
-          <li>Back-to-top</li>
-          <li>New Fonts</li>
-          <li>New CA.gov color scheme</li>
-          <li>New Fearure Card pattern</li>
-          <li>New Link Grid pattern</li>
-          <li>New Step List component</li>
-          <li>Tabs</li>
-          <li>Accordion</li>
-          <li>New information architecture</li>
-        <td>
-         <ul class="list-primary">
-          <li>Updated site structure and rebuild framework to use eleventy site generation #191</li>
-          <li>Replaced server site includes with njk includes and templates</li>
-          <li>Changed website output folder to /_site/ #206</li>
-          <li>Updated utility header include to look like design system #192</li>
-          <li>Updated branding include (site header) to look like CA Design System's site header #194</li>
-          <li>Updated mobile controls styles to look like CA Design System</li>
-          <li>Updated search component's styles to look like search component in the CA Design System #197</li>
-          <li>Updated main navigation styles to resemble the CA Design System navigation #196</li>
-          <li>Update global footer in beta to look like CA Design System's statewide footer #193</li>
-          <li>Added page navigation and list navigation samples #224</li>
-          <li>Updated side navigation styles #223</li>
-          <li>Aligned buttons look and feel with Design System look and feel #246</li>
-          <li>Updated back-to-top component to look like Design System #245</li>
-          <li>Replace site font in beta with Public Sans that is used by CA Design System #195</li>
-          <li>Updated navigation structure, information architecture and content flow #232</li>
-          <li>Introduced code samples categories, such as components, templates and CSS units. Sorted out code sample
-           pages based on those categories, added side navigation (list navigation) on each of those pages #253</li>
-          <li>Addwd new CA.gov color scheme #225</li>
-          <li>Added new Fearure Card content template (into Content Patterns samples) #220</li>
-          <li>Added new Link Grid content template (into Content Patterns samples) #221</li>
-          <li>Updated Tabs component styles to resemble design system #219</li>
-          <li>Updated accordion component with a new design and the latest code from Design System #199</li>
-          <li>Added new Step List component #222</li>
-         </ul>
-        </td>
-       </tr>
-      </tbody>
-     </table>
-    </div>
-   </details>
-  </cagov-accordion>
-
-
-
-  <cagov-accordion>
-   <details>
-    <summary>Version 6.0.7</summary>
-    <div class="accordion-body">
-     <table class="table">
-      <thead>
-       <tr>
-        <th scope="col" style=" min-width: 100px">Date</th>
-        <th scope="col">Updated Items</th>
-        <th scope="col">Description</th>
-       </tr>
-      </thead>
-      <tbody>
-       <tr>
-        <td>12-16-21</td>
-        <td>
-         <ul class="list-primary">
-          <li>Typography</li>
-          <li>Fonts</li>
-          <li>Icons</li>
-          <li>Number counter</li>
-          <li>Settings</li>
-          <li>Search</li>
-        <td>
-         <ul class="list-primary">
-          <li>Added responsive font size calculation functionality</li>
-          <li>Adjusted some of the components to responsive font sizing</li>
-          <li>Updated CaGov Font: added GitHub icon and updated pdf-text icon</li>
-          <li>Moved site fonts into the local /fonts/ folder and made local font loading instead of google to limit http
-           requests</li>
-          <li>Added number counter on load function to fire it when visible on load</li>
-          <li>Added settings.js into gulpfile.js to activate utility header's settings</li>
-          <li>Fixed search.js console error that was firing when search widget was not in the page</li>
-         </ul>
-        </td>
-       </tr>
-      </tbody>
-     </table>
-    </div>
-   </details>
-  </cagov-accordion>
-
-
-
-  <cagov-accordion>
-   <details>
-    <summary>Version 6.0.6</summary>
-    <div class="accordion-body">
-     <table class="table">
-      <thead>
-       <tr>
-        <th scope="col" style=" min-width: 100px">Date</th>
-        <th scope="col">Updated Items</th>
-        <th scope="col">Description</th>
-       </tr>
-      </thead>
-      <tbody>
-       <tr>
-        <td>11-24-21</td>
-        <td>
-         <ul class="list-primary">
-          <li>Bootstrap</li>
-          <li>Core JavaScript</li>
-          <li>Main navigation</li>
-          <li>Accordion</li>
-          <li>gulp</li>
-          <li>Site Header</li>
-          <li>Utility header</li>
-          <li>Global footer</li>
-          <li>Global header</li>
-          <li>Branding</li>
-          <li>Settings</li>
-          <li>Branding</li>
-          <li>Removed owl carousel</li>
-          <li>Modal</li>
-          <li>Search</li>
-          <li>Mobile controls</li>
-          <li>Banner</li>
-          <li>Profile banners</li>
-          <li>Links</li>
-          <li>Accordion</li>
-          <li>Accordion list</li>
-          <li>Grid</li>
-          <li>Badge</li>
-          <li>Side navigation</li>
-          <li>CDN page</li>
-          <li>Getting Started page</li>
-          <li>Update page</li>
-          <li>Business-profile page</li>
-          <li>Contact page</li>
-          <li>FAQ page</li>
-          <li>User profile layout page</li>
-          <li>Alert banner</li>
-          <li>Form elements</li>
-          <li>Icons</li>
-          <li>Number counter</li>
-          <li>Parallax</li>
-        <td>
-         <ul class="list-primary">
-          <li>Updated core files with new jQuery-less navigation.js</li>
-          <li>Removed jQuery and jQuery plugins</li>
-          <li>Updated accordion file (took it from cagov design system)</li>
-          <li>Fixed gulp js uglify functions</li>
-          <li>Updated utility header, settings, and branding section styles</li>
-          <li>Updated header's position to sticky instead of fixed</li>
-          <li>Fixed header.js script that hides utility header on scroll</li>
-          <li>Updated main nav layout, updated main banner height property</li>
-          <li>Removed owl carousels modules, added bootstrap carousel sample</li>
-          <li>Updated modal box in carousel page</li>
-          <li>Made search to expand in mobile</li>
-          <li>Fixed search in mobile</li>
-          <li>Fixed explore button on the homepage</li>
-          <li>Fixed profile banners</li>
-          <li>Removed text-decoration from main menu links</li>
-          <li>Added mobile search include on most pages</li>
-          <li>removed jumps from mobile search expand and collapse transitions</li>
-          <li>Made side padding consistent across main shell components</li>
-          <li>Updated outdated grid classes</li>
-          <li>Changed label class to badge</li>
-          <li>Updated badges in samples landing page</li>
-          <li>Added pure JS accordion-list component</li>
-          <li>Changed accordion list heading font to source sans</li>
-          <li>fixed duplicate id issue in search components</li>
-          <li>Added jssrcmap task to gulpfile to make sure it bings bootstrap map</li>
-          <li>Updated side nav accordion</li>
-          <li>Updated CDN page</li>
-          <li>Updated getting started page</li>
-          <li>Updated update page</li>
-          <li>Updated search.js, side navigation, and other navigation pages</li>
-          <li>Updated accordion styles, removed js styles from accordion script</li>
-          <li>Updated alert banner close button styles and structure</li>
-          <li>Updated modal markup, fixed tabs markup, fixed tabs styles</li>
-          <li>Updated form elements and styles, added icons to the images folder</li>
-          <li>Updated icons</li>
-          <li>Added number counter and parallax code</li>
-          <li>Updated business-profile and contact pages</li>
-          <li>Updated FAQ template page and adjusted accordion styles</li>
-          <li>Updated Bootstrap to v5.1.3, fixed user profile layout page</li>
-         </ul>
-        </td>
-       </tr>
-      </tbody>
-     </table>
-    </div>
-   </details>
-  </cagov-accordion>
-
-
-
-  <cagov-accordion>
-   <details>
-    <summary>Version 6.0.5</summary>
-    <div class="accordion-body">
-     <table class="table">
-      <thead>
-       <tr>
-        <th scope="col" style=" min-width: 100px">Date</th>
-        <th scope="col">Updated Items</th>
-        <th scope="col">Description</th>
-       </tr>
-      </thead>
-      <tbody>
-       <tr>
-        <td>06-02-21</td>
-        <td>
-         <ul class="list-primary">
-          <li>Service tiles</li>
-          <li>Carousel</li>
-        <td>
-         <ul class="list-primary">
-          <li>Removed plotly.js and d3.js from js/libs</li>
-          <li>Removed background opacity for service tiles to fix color contrast false positives</li>
-          <li>Updated carousels backgrounds to fix color contrast false positives.</li>
-         </ul>
-        </td>
-       </tr>
-      </tbody>
-     </table>
-    </div>
-   </details>
-  </cagov-accordion>
-
-
-
-
-  <cagov-accordion>
-   <details>
-    <summary>Version 6.0.4</summary>
-    <div class="accordion-body">
-     <table class="table">
-      <thead>
-       <tr>
-        <th scope="col" style=" min-width: 100px">Date</th>
-        <th scope="col">Updated Items</th>
-        <th scope="col">Description</th>
-       </tr>
-      </thead>
-      <tbody>
-       <tr>
-        <td>04-21-21</td>
-        <td>
-         <ul class="list-primary">
-          <li>Accessibility</li>
-          <li>Links</li>
-          <li>jQuery</li>
-          <li>Search</li>
-          <li>Slideshow banner</li>
-        <td>
-         <ul class="list-primary">
-          <li>Fixed "Links are not clearly identifiable" issue by replacing background image links underlining technique
-           with original text underline property</li>
-          <li>Increased links color and surrounding text contrast ratio to 3.1</li>
-          <li>Fixed "fixed Link without a text alternative issue"</li>
-          <li>Updated jQuery to v3.6.0</li>
-          <li>Updated search reset button selection variable</li>
-          <li>Fixed sliders overflow scrollbars</li>
-          <li>Fixed full width nav active search bar on focus placement</li>
-         </ul>
-        </td>
-       </tr>
-      </tbody>
-     </table>
-    </div>
-   </details>
-  </cagov-accordion>
-
-
-
-  <cagov-accordion>
-   <details>
-    <summary>Version 6.0.3</summary>
-    <div class="accordion-body">
-     <table class="table">
-      <thead>
-       <tr>
-        <th scope="col" style=" min-width: 100px">Date</th>
-        <th scope="col">Updated Items</th>
-        <th scope="col">Description</th>
-       </tr>
-      </thead>
-      <tbody>
-       <tr>
-        <td>03-26-21</td>
-        <td>
-         <ul class="list-primary">
-          <li>Accessibility</li>
-          <li>Main navigation</li>
-          <li>Headings structure</li>
-          <li>COntent landmarks</li>
-          <li>Slideshow banner</li>
-          <li>Removed charts</li>
-          <li>Forms markup</li>
-          <li>Fonts</li>
-          <li>Search</li>
-          <li>Icons</li>
-        <td>
-         <ul class="list-primary">
-          <li>Removed role tablist attribute from tag, and collapse extension</li>
-          <li>Fixed "Visible label and accessible name do not match" a11y error</li>
-          <li>Fixed "Text is clipped when zoomed in" a11y error</li>
-          <li>Fixed "State or property not supported" in main navigation</li>
-          <li>Fixed "Headings are not structured" issue</li>
-          <li>Fixed missing landmark issue</li>
-          <li>Fixed "Scrollable element is not keyboard accessible"</li>
-          <li>Fixed color contrast issues on some pages</li>
-          <li>Fixed "Hidden element has focusable content" issue</li>
-          <li>Fixed Container element is empty issue</li>
-          <li>Removed charts examples (for lack of a11y)</li>
-          <li>Fixed "Form field is not labeled" issue</li>
-          <li>Fixed "Line height is fixed" issue</li>
-          <li>Addressed "Font size is fixed issue"</li>
-          <li>Removed content fade-in script from home page and featured search page</li>
-          <li>Fixed "line-hight below minimum value" and fixed font size issues</li>
-          <li>Fixed "Decorative element is exposed to assistive technologies" issue</li>
-          <li>Fixed some icon font class names that were accidentally renamed during icon font update process. Removed
-           "1"
-           at the end of the following icon font classes: ca-gov-icon-collapse1, ca-gov-icon-construction1 and
-           ca-gov-icon-expand1</li>
-         </ul>
-        </td>
-       </tr>
-      </tbody>
-     </table>
-    </div>
-   </details>
-  </cagov-accordion>
-
-
-
-
-  <cagov-accordion>
-   <details>
-    <summary>Version 6.0.2</summary>
-    <div class="accordion-body">
-     <table class="table">
-      <thead>
-       <tr>
-        <th scope="col" style=" min-width: 100px">Date</th>
-        <th scope="col">Updated Items</th>
-        <th scope="col">Description</th>
-       </tr>
-      </thead>
-      <tbody>
-       <tr>
-        <td>04-28-20</td>
-        <td>
-         <ul class="list-primary">
-          <li>Main navigation</li>
-          <li>Icons</li>
-          <li>CSS shortcuts</li>
-          <li>Section footer</li>
-          <li>Mobile controls</li>
-          <li>Privacy policy page</li>
-          <li>Conditions of use page</li>
-          <li>Accessibility page</li>
-
-        <td>
-         <ul class="list-primary">
-          <li>Fixed aria-expanded attribute for search link button in the main navigation.</li>
-          <li>Added 22 more new icons (including COVID-19 icons) to the CaGov font library.</li>
-          <li>Added more CSS shortcuts classes to the CS Shortcuts page.</li>
-          <li>Updated section footer include columns.</li>
-          <li>Fixed nav mobile control and featured search positioning for IE 11.</li>
-          <li>Updated GovOps secretary name</li>
-          <li>Added privacy policy, conditions of use and accessibility pages.</li>
-         </ul>
-        </td>
-       </tr>
-      </tbody>
-     </table>
-    </div>
-   </details>
-  </cagov-accordion>
-
-
-
-
-
-
-  <cagov-accordion>
-   <details>
-    <summary>Version 6.0.1</summary>
-    <div class="accordion-body">
-     <table class="table">
-      <thead>
-       <tr>
-        <th scope="col" style=" min-width: 100px">Date</th>
-        <th scope="col">Updated Items</th>
-        <th scope="col">Description</th>
-       </tr>
-      </thead>
-      <tbody>
-       <tr>
-        <td>01-31-20</td>
-        <td>
-         <ul class="list-primary">
-          <li>Side navigation</li>
-          <li>Parallax</li>
-          <li>Two column layouts</li>
-          <li>Accordion</li>
-
-        <td>
-         <ul class="list-primary">
-          <li>Fixed side navigation border bottom style</li>
-          <li>Revised parallax js plugin and parallax-bg class implementation</li>
-          <li>Added parallax sample page</li>
-          <li>Fixed two column layouts on some pages</li>
-          <li>Updated accordion keyboard accessibility</li>
-         </ul>
-        </td>
-       </tr>
-      </tbody>
-     </table>
-    </div>
-   </details>
-  </cagov-accordion>
-
-
-
-
-
-
-  <cagov-accordion>
-   <details>
-    <summary>Version 6.0.0</summary>
-    <div class="accordion-body">
-     <table class="table">
-      <thead>
-       <tr>
-        <th scope="col" style=" min-width: 100px">Date</th>
-        <th scope="col">Updated Items</th>
-        <th scope="col">Description</th>
-       </tr>
-      </thead>
-      <tbody>
-       <tr>
-        <td>01-09-20</td>
-        <td>
-         <ul class="list-primary">
-          <li>New Layout pages</li>
-          <li>New usability directions pages</li>
-          <li>Blurb</li>
-          <li>Modal</li>
-          <li>Side navigation</li>
-          <li>Sticky footer</li>
-          <li>Timeline</li>
-
-        <td>
-         <ul>
-          <li>
-           <p>Added new pre-made content-based layout pages that showcase specific business areas such as</p>
-           <ul>
-            <li>About</li>
-            <li>Agency Profile</li>
-            <li>Contact</li>
-            <li>Events</li>
-            <li>FAQs</li>
-            <li>Homepage</li>
-            <li>News</li>
-            <li>Services</li>
-            <li>Search Results</li>
-            <li>User profile</li>
-            <li>Accordions</li>
-            <li>Icon blocks</li>
-            <li>Info blocks</li>
-            <li>Lists</li>
-            <li>Tabs</li>
-            <li>New color schemes</li>
-            <li>Search</li>
-            <li>Settings</li>
-            <li>Fonts</li>
-            <li>Icons</li>
-           </ul>
-          </li>
-          <li>
-           <p>Added new pages that provide more State Template usability directions:</p>
-           <ul>
-            <li>CSS Shortcuts</li>
-            <li>Layouts</li>
-            <li>Navigation Samples</li>
-            <li>Update State Template</li>
-           </ul>
-          </li>
-          <li>
-           <p>Added new modules:</p>
-           <ul>
-            <li>Blurb</li>
-            <li>Modal</li>
-            <li>Side navigation</li>
-            <li>Sticky footer</li>
-            <li>Timeline</li>
-           </ul>
-          </li>
-          <li>
-           <p>Updated existing modules and components</p>
-           <ul>
-            <li>Accordions</li>
-            <li>Icon blocks</li>
-            <li>Info blocks</li>
-            <li>Lists</li>
-            <li>Tabs</li>
-           </ul>
-          </li>
-          <li>
-           <p>Added new color schemes</p>
-           <ul>
-            <li>Delta</li>
-            <li>Santa Cruz</li>
-            <li>Shasta</li>
-           </ul>
-          </li>
-          <li>
-           <p>Cleaned up scss files (moved color properties and their variable to the color schemes section, updated
-            globals.scss files)</p>
-          </li>
-          <li>
-           <p>Added new full width active search navigation option</p>
-          </li>
-          <li>
-           <p>Made new dyslexic font option available in the settings</p>
-          </li>
-          <li>
-           <p>Redesigned template's navigation structure focusing on how to get started with the State Template, also to
-            showcase layout pages, color schemes and content modules</p>
-          </li>
-          <li>
-           <p>Added new icons to CAGov font library</p>
-          </li>
-         </ul>
-        </td>
-       </tr>
-      </tbody>
-     </table>
-    </div>
-   </details>
-  </cagov-accordion>
-
+  <p>Complete releases changelogs you can find on <a
+    href="https://github.com/Office-of-Digital-Innovation/California-State-Web-Template/releases">GitHub release
+    page</a></p>
 
 
 
