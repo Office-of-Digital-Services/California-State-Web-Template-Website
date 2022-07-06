@@ -418,7 +418,26 @@
        
       
       
-          <li><a href="/sample/alert-banner.html"  aria-current="page"  class="active" >Alert Banner</a></li>
+        <li><a href="/sample/alert-banner.html"  aria-current="page"  class="active" >Alert banner</a>
+         
+          
+           <ul>
+            
+            <li>
+             <a href="#Sample" class="tab-link">Sample</a>
+            </li>
+            
+            <li>
+             <a href="#Usage" class="tab-link">Usage</a>
+            </li>
+            
+            <li>
+             <a href="#Accessibility" class="tab-link">Accessibility</a>
+            </li>
+            
+           </ul>
+           
+        </li>
        
       
       
@@ -445,19 +464,19 @@
        
       
       
-          <li><a href="/sample/featured-narrative.html" >Featured Narrative</a></li>
+          <li><a href="/sample/featured-narrative.html" >Featured narrative</a></li>
        
       
       
-          <li><a href="/sample/featured-search.html" >Featured Search</a></li>
+          <li><a href="/sample/featured-search.html" >Featured search</a></li>
        
       
       
-          <li><a href="/sample/form.html" >Form Styles</a></li>
+          <li><a href="/sample/form.html" >Form styles</a></li>
        
       
       
-          <li><a href="/sample/horizontal-rules.html" >Horizontal Rules</a></li>
+          <li><a href="/sample/horizontal-rules.html" >Horizontal rules</a></li>
        
       
       
@@ -469,7 +488,7 @@
        
       
       
-          <li><a href="/sample/number-counter.html" >Number Counter</a></li>
+          <li><a href="/sample/number-counter.html" >Number counter</a></li>
        
       
       
@@ -477,11 +496,11 @@
        
       
       
-          <li><a href="/sample/progress-bars.html" >Progress Bars</a></li>
+          <li><a href="/sample/progress-bars.html" >Progress bars</a></li>
        
       
       
-          <li><a href="/sample/progress-blocks.html" >Progress Blocks</a></li>
+          <li><a href="/sample/progress-blocks.html" >Progress blocks</a></li>
        
       
       
@@ -489,7 +508,7 @@
        
       
       
-          <li><a href="/sample/step-list.html" >Step List</a></li>
+          <li><a href="/sample/step-list.html" >Step list</a></li>
        
       
       
@@ -533,7 +552,7 @@
  <li>An “X” close icon that allows people to dismiss the alert</li>
 </ul>
 
-<h2 id="demo">Demo and source code</h2>
+<h2 id="Sample">Sample</h2>
 
 <!--TABS-->
 <div class="tab-group responsive">
@@ -542,7 +561,7 @@
    <a id="tab-example1" href="#pane-example1" class="nav-link active" data-bs-toggle="tab" role="tab">Example</a>
   </li>
   <li class="nav-item">
-   <a id="tab-html1" href="#pane-html1" class="nav-link" data-bs-toggle="tab" role="tab">Source Code</a>
+   <a id="tab-html1" href="#pane-html1" class="nav-link" data-bs-toggle="tab" role="tab">Source code</a>
   </li>
   <li class="nav-item">
    <a id="tab-njk1" href="#pane-njk1" class="nav-link" data-bs-toggle="tab" role="tab">Nunjucks include</a>
@@ -561,47 +580,60 @@
    </div>
    <div id="collapse-example1" class="collapse show" role="tabpanel" aria-labelledby="heading-example1">
     <div class="card-body p-b-lg">
-     <h3>Default alert</h3>
+     <h3>Success</h3>
+     <div class="alert alert-success alert-dismissible alert-banner" role="alert">
+      <div class="container">
+       <button type="button" class="close ms-lg-auto" data-bs-dismiss="alert" aria-label="Close"><span
+         class="ca-gov-icon-close-mark" aria-hidden="true"></span></button>
+       <strong>Well done!</strong> Your form has been submitted successfully
+      </div>
+     </div>
+
+
+     <h3>Warning</h3>
      <div class="alert alert-warning alert-dismissible alert-banner" role="alert">
-    <div class="container">
-        <button type="button" class="close" data-bs-dismiss="alert" aria-label="Close"><span
-                class="ca-gov-icon-close-mark" aria-hidden="true"></span></button>
-        <span class="alert-level"><span class="ca-gov-icon-important" aria-hidden="true"></span>SEVERE
-            ALERT!</span><span class="alert-text">2015-12-21, 10:17 AM - Flash Flood in Sacramento and Placer Counties
-            until 12:15 PM.</span>
-        <a href="" class="alert-link btn btn-default btn-xs">More Information</a>
+      <div class="container">
+       <button type="button" class="close ms-lg-auto" data-bs-dismiss="alert" aria-label="Close"><span
+         class="ca-gov-icon-close-mark" aria-hidden="true"></span></button>
+       <strong>Your browser is outdated.</strong> Your experience may be degraded.
+       <a href="" class="btn btn-default btn-xs">More information</a>
+      </div>
+     </div>
 
-    </div>
-</div>
 
-     <h3>Other alerts and alert states</h3>
-     <p>Alert Success</p>
-     <div class="alert alert-success">
-      <strong>Well done!</strong> You successfully read this important alert message.
-      <a href="" class="alert-link btn btn-default btn-xs">Alert Success</a>
+     <h3>Danger</h3>
+     <div class="alert alert-danger alert-dismissible alert-banner" role="alert">
+      <div class="container">
+       <button type="button" class="close ms-lg-auto" data-bs-dismiss="alert" aria-label="Close"><span
+         class="ca-gov-icon-close-mark" aria-hidden="true"></span></button>
+       Your browser is currently not supported
+       <a href="" class="btn btn-default btn-xs">Learn more <span class="sr-only">about the problem</span></a>
+      </div>
      </div>
-     <p>Alert Warning</p>
-     <div class="alert alert-warning">
-      <strong>Warning!</strong> Better check yourself, you're not looking too good.
-      <a href="" class="alert-link btn btn-default btn-xs">Alert Warning</a>
-     </div>
-     <p>Alert Danger</p>
-     <div class="alert alert-danger">
-      <strong>Oh snap!</strong> Change a few things up and try submitting again.
-      <a href="" class="alert-link btn btn-default btn-xs">Alert Danger</a>
-     </div>
-     <p>Alert Severe</p>
-     <div class="alert alert-severe" role="alert">
-      <span class="alert-level"><span class="ca-gov-icon-important" aria-hidden="true"></span>SEVERE
-       ALERT!</span><span class="alert-text"> Flash Flood
-       in Sacramento until 12:15 PM.</span> <a href="" class="alert-link btn btn-default btn-xs">Alert
-       Severe</a>
 
+
+     <h3>Severe</h3>
+     <div class="alert alert-severe alert-dismissible alert-banner" role="alert">
+      <div class="container">
+       <button type="button" class="close ms-lg-auto" data-bs-dismiss="alert" aria-label="Close"><span
+         class="ca-gov-icon-close-mark" aria-hidden="true"></span></button>
+       <span class="alert-level"><span class="ca-gov-icon-important" aria-hidden="true"></span>SEVERE
+        ALERT!</span><span class="alert-text"> Flash Flood in Sacramento until 12:15 PM.</span> <a href=""
+        class="btn btn-default btn-xs">Alert
+        Severe</a>
+      </div>
      </div>
-     <p>Alert Info</p>
-     <div class="alert alert-info" role="alert">
-      <strong>Heads up!</strong> This alert needs your attention.
-      <a href="" class="alert-link btn btn-default btn-xs">Alert Info</a>
+
+
+     <h3>Info</h3>
+
+     <div class="alert alert-info alert-dismissible alert-banner" role="alert">
+      <div class="container">
+       <button type="button" class="close ms-lg-auto" data-bs-dismiss="alert" aria-label="Close"><span
+         class="ca-gov-icon-close-mark" aria-hidden="true"></span></button>
+       We’ve made some changes that might impact your experience.
+       <a href="" class="btn btn-default btn-xs">Learn more <span class="sr-only">about the changes</span></a>
+      </div>
      </div>
     </div>
    </div>
@@ -613,7 +645,7 @@
   <div id="pane-html1" class="card tab-pane fade" role="tabpanel" aria-labelledby="tab-html1">
    <div class="card-header" id="heading-html1">
     <a class="collapsed" data-bs-toggle="collapse" href="#collapse-html1" data-parent="#tab-content"
-     aria-expanded="false" aria-controls="collapse-html1" data-hash="#pane-html1" title="HTML Source Code tab header">
+     aria-expanded="false" aria-controls="collapse-html1" data-hash="#pane-html1" title="HTML Source code tab header">
      Source code
     </a>
    </div>
