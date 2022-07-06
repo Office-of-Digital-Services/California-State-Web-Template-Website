@@ -1822,7 +1822,7 @@ var mobileView$3 = function () {
 };
 function sidenavOverflow() {
  var viewportheight = document.documentElement.clientHeight;
- var viewportMinusHeader = viewportheight - siteHeaderHeight - 20;
+ var viewportMinusHeader = viewportheight - siteHeaderHeight - 100;
 
  if (sidenavigation) {
   var sidenavHeight = sidenavigation.clientHeight;
