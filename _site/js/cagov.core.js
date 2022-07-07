@@ -1820,22 +1820,23 @@ if (siteFooter) {
 var mobileView$3 = function () {
  return getComputedStyle(document.querySelector('.global-header .mobile-controls'))['display'] !== 'none';
 };
+
 function sidenavOverflow() {
- var sidenavHeight = sidenavigation.clientHeight;
- var viewportheight = document.documentElement.clientHeight;
- var viewportMinusHeader = viewportheight - siteHeaderHeight - 100;
  if (!mobileView$3()) {
-  if (sidenavigation) {
-   if (viewportMinusHeader <= sidenavHeight) {
-    sidenavigation.classList.add("overflow-auto");
-    sidenavigation.setAttribute("style", "max-height:" + viewportMinusHeader + "px");
-   }
-   else {
-    sidenavigation.classList.remove("overflow-auto");
-    sidenavigation.removeAttribute("style");
-   }
+
+  var sidenavHeight = sidenavigation.clientHeight;
+  var viewportheight = document.documentElement.clientHeight;
+  var viewportMinusHeader = viewportheight - siteHeaderHeight - 100;
+  if (viewportMinusHeader <= sidenavHeight) {
+   sidenavigation.classList.add("overflow-auto");
+   sidenavigation.setAttribute("style", "max-height:" + viewportMinusHeader + "px");
+  }
+  else {
+   sidenavigation.classList.remove("overflow-auto");
+   sidenavigation.removeAttribute("style");
   }
  }
+
  else {
   sidenavigation.classList.remove("overflow-auto");
   sidenavigation.removeAttribute("style");
@@ -1853,7 +1854,19 @@ function sidenavOverflow() {
 }
 
 
+if (sidenavigation) {
+ sidenavOverflow();
+ window.onresize = sidenavOverflow;
+}
 
-
-sidenavOverflow();
-window.onresize = sidenavOverflow;
+// Sidenav height
+const ro = new ResizeObserver(entries => {
+ for (let entry of entries) {
+  const cr = entry.contentRect;
+  entry.target.style.borderRadius =
+   console.log(`${cr.height}px`);
+ }
+});
+if (sidenavigation) {
+ ro.observe(sidenavigation);
+}
