@@ -37,14 +37,12 @@ var mobileView$3 = function () {
  return getComputedStyle(document.querySelector('.global-header .mobile-controls'))['display'] !== 'none';
 };
 function sidenavOverflow() {
+ var sidenavHeight = sidenavigation.clientHeight;
  var viewportheight = document.documentElement.clientHeight;
  var viewportMinusHeader = viewportheight - siteHeaderHeight - 100;
-
- if (sidenavigation) {
-  var sidenavHeight = sidenavigation.clientHeight;
-  // Add overflow scroll bar to the sidenav if it's taller than viewport
-  if (!mobileView$3()) {
-   if (viewportMinusHeader < sidenavHeight) {
+ if (!mobileView$3()) {
+  if (sidenavigation) {
+   if (viewportMinusHeader <= sidenavHeight) {
     sidenavigation.classList.add("overflow-auto");
     sidenavigation.setAttribute("style", "max-height:" + viewportMinusHeader + "px")
    }
@@ -53,23 +51,25 @@ function sidenavOverflow() {
     sidenavigation.removeAttribute("style");
    }
   }
-  else {
-   sidenavigation.classList.remove("overflow-auto");
-   sidenavigation.removeAttribute("style");
-  }
-
-
-  // Remebemering scrolling position
-  if (topposition !== null) {
-   sidenavigation.scrollTop = parseInt(topposition, 10);
-  }
-  window.addEventListener("beforeunload", () => {
-   localStorage.setItem("sidebar-scroll", sidenavigation.scrollTop);
-  });
-
+ }
+ else {
+  sidenavigation.classList.remove("overflow-auto");
+  sidenavigation.removeAttribute("style");
  }
 
+
+ // Remebemering scrolling position
+ if (topposition !== null) {
+  sidenavigation.scrollTop = parseInt(topposition, 10);
+ }
+ window.addEventListener("beforeunload", () => {
+  localStorage.setItem("sidebar-scroll", sidenavigation.scrollTop);
+ });
+
 }
+
+
+
 
 sidenavOverflow();
 window.onresize = sidenavOverflow;
