@@ -162,68 +162,69 @@ permalink: "sample/icon-fonts.html"
   }
  }
 
-#iconSearchForm input {
+ #iconSearchForm input {
   border-radius: 5px;
-  border:1px solid #046B99 !important;
-}
-#iconSearchForm button {
+  border: 1px solid #046B99 !important;
+ }
+
+ #iconSearchForm button {
   border-radius: 5px;
-  border:1px solid #046B99 !important;
+  border: 1px solid #046B99 !important;
   color: #fff;
   background-color: #046B99;
-}
+ }
 </style>
 
 <script type="text/javascript">
 
-var iconData = [];
+ var iconData = [];
 
-function buildList() {
+ function buildList() {
   var listHtml = "";
   var jumpToHtml = "<li><strong>Jump to:</strong></li>";
   var letter = "0";
   var numberOfResults = 0;
   var numberOfHeadings = 0;
   for (const icon of iconData.icons) {
-    if (document.querySelector("#iconSearchForm input").value.length == 0 || icon.properties.name.search(document.querySelector("#iconSearchForm input").value) > -1) {
-      if (letter != icon.properties.name.charAt(0)) {
-        // First letter changed, so display a heading
-        letter = icon.properties.name.charAt(0);
-        listHtml += '<p class="h1 group-heading py-3" id="group-' + letter.toUpperCase() + '">' + letter.toUpperCase() + '</p>';
-        jumpToHtml += '<li><a href="#group-' + letter.toUpperCase() + '">' + letter.toUpperCase() + '</a></li>';
-        numberOfHeadings++;
-      }
-      listHtml += '<div class="glyph fs1"> \
+   if (document.querySelector("#iconSearchForm input").value.length == 0 || icon.properties.name.search(document.querySelector("#iconSearchForm input").value) > -1) {
+    if (letter != icon.properties.name.charAt(0)) {
+     // First letter changed, so display a heading
+     letter = icon.properties.name.charAt(0);
+     listHtml += '<p class="h1 group-heading py-3" id="group-' + letter.toUpperCase() + '">' + letter.toUpperCase() + '</p>';
+     jumpToHtml += '<li><a href="#group-' + letter.toUpperCase() + '">' + letter.toUpperCase() + '</a></li>';
+     numberOfHeadings++;
+    }
+    listHtml += '<div class="glyph fs1"> \
         <div class="clearfix bshadow0 pbs"><span class="ca-gov-icon-' + icon.properties.name + '"></span><span class="mls"> \
           ca-gov-icon-' + icon.properties.name + '</span></div> \
         <p class="icon-value">' + icon.properties.code.toString(16) + '</p> \
       </div>';
-      numberOfResults++;
-    }
+    numberOfResults++;
+   }
   }
   if (numberOfHeadings > 1) {
-    document.querySelector('#jumpToHeading').style.display = "block";
-    document.querySelector('#jumpToHeading ol').innerHTML = jumpToHtml;
+   document.querySelector('#jumpToHeading').style.display = "block";
+   document.querySelector('#jumpToHeading ol').innerHTML = jumpToHtml;
   } else {
-    document.querySelector('#jumpToHeading').style.display = "none";
+   document.querySelector('#jumpToHeading').style.display = "none";
   }
   document.querySelector('#fontlist').innerHTML = (numberOfResults) ? listHtml : '<div class="fs1">No icons found.</div>';
-}
+ }
 
-const myRequest = new Request('/fonts/selection.json');
-fetch(myRequest)
+ const myRequest = new Request('https://california.azureedge.net/cdt/statetemplate/6.0.7/fonts/selection.json');
+ fetch(myRequest)
   .then(response => response.json())
   .then(data => {
-    data.icons.sort((a, b) => a.properties.name > b.properties.name ? -1 : b.properties.name < a.properties.name ? 1 : 0).reverse() // sort by name
-    iconData = data;
-    buildList();
+   data.icons.sort((a, b) => a.properties.name > b.properties.name ? -1 : b.properties.name < a.properties.name ? 1 : 0).reverse() // sort by name
+   iconData = data;
+   buildList();
 
-    // add event listeners to form field and button
-    document.querySelector("#iconSearchForm input").oninput = function() { buildList()  };
-    document.querySelector("#iconSearchForm button").onclick = function() {
-      document.querySelector("#iconSearchForm input").value="";
-      buildList();
-    };
+   // add event listeners to form field and button
+   document.querySelector("#iconSearchForm input").oninput = function () { buildList() };
+   document.querySelector("#iconSearchForm button").onclick = function () {
+    document.querySelector("#iconSearchForm input").value = "";
+    buildList();
+   };
 
   })
   .catch(console.error);
@@ -258,21 +259,21 @@ fetch(myRequest)
  icon.</p>
 
 <form id="iconSearchForm" class="">
-  <span class="sr-only" id="IconInput">Search icons</span>
-  <input type="text" name="iconsearch" aria-labelledby="IconInput" placeholder="Search icons" class="search-textfield">
-  <button type="reset" class=""><span class="">Reset</span></button>
+ <span class="sr-only" id="IconInput">Search icons</span>
+ <input type="text" name="iconsearch" aria-labelledby="IconInput" placeholder="Search icons" class="search-textfield">
+ <button type="reset" class=""><span class="">Reset</span></button>
 </form>
 
 <div id="jumpToHeading">
-  <hr>
-  <ol class="breadcrumb">
-  </ol>
-  <hr>
+ <hr>
+ <ol class="breadcrumb">
+ </ol>
+ <hr>
 </div>
 
 <!-- START ICOMOON DEMO -->
 <div class="clearfix mhl ptl">
 
-  <div id="fontlist"></div>
+ <div id="fontlist"></div>
 
 </div>
