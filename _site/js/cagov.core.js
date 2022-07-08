@@ -1789,6 +1789,7 @@ function backToTopFunction(event) {
 // Remebemer scrolling position
 let sidenavigation = document.querySelector(".side-navigation");
 let topposition = localStorage.getItem("sidebar-scroll");
+let sidenavHeight = sidenavigation.clientHeight;
 
 // Set active class on nav-heading links:
 function addActiveClass() {
@@ -1821,19 +1822,29 @@ var mobileView$3 = function () {
  return getComputedStyle(document.querySelector('.global-header .mobile-controls'))['display'] !== 'none';
 };
 
+var timeout = false;
+var delay = 250; // delay between calls 
+
+
+
 function sidenavOverflow() {
  if (!mobileView$3()) {
 
-  var sidenavHeight = sidenavigation.clientHeight;
+
   var viewportheight = document.documentElement.clientHeight;
   var viewportMinusHeader = viewportheight - siteHeaderHeight - 100;
+
   if (viewportMinusHeader <= sidenavHeight) {
    sidenavigation.classList.add("overflow-auto");
-   sidenavigation.setAttribute("style", "max-height:" + viewportMinusHeader + "px");
+   // sidenavigation.setAttribute("style", "max-height:" + viewportMinusHeader + "px")
   }
   else {
    sidenavigation.classList.remove("overflow-auto");
    sidenavigation.removeAttribute("style");
+  }
+
+  if ([...sidenavigation.classList].includes("overflow-auto")) {
+   sidenavigation.setAttribute("style", "max-height:" + viewportMinusHeader + "px");
   }
  }
 
@@ -1851,22 +1862,17 @@ function sidenavOverflow() {
   localStorage.setItem("sidebar-scroll", sidenavigation.scrollTop);
  });
 
+
 }
 
-
+// Debouncing on resize
 if (sidenavigation) {
+ window.addEventListener('resize', function () {
+  // clear the timeout
+  clearTimeout(timeout);
+  // start timing for event "completion"
+  timeout = setTimeout(sidenavOverflow, delay);
+
+ });
  sidenavOverflow();
- window.onresize = sidenavOverflow;
-}
-
-// Sidenav height
-const ro = new ResizeObserver(entries => {
- for (let entry of entries) {
-  const cr = entry.contentRect;
-  entry.target.style.borderRadius =
-   console.log(`${cr.height}px`);
- }
-});
-if (sidenavigation) {
- ro.observe(sidenavigation);
 }
