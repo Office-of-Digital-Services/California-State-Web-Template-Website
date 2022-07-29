@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Cards</title> 
+  <title>Card</title> 
   <meta charset="utf-8">
   <meta name="Author" content="State of California" />
   <meta name="Description" content="State of California" />
@@ -188,12 +188,12 @@
    </li>
    <li class="nav-item">
        
-       <a class="first-level-link" href="/sample/">Components</a>
+       <a class="first-level-link active" href="/sample/">Components</a>
         
    </li>
    <li class="nav-item">
        
-       <a class="first-level-link active" href="/sample/content-patterns.html" >Templates</a>
+       <a class="first-level-link" href="/sample/content-patterns.html" >Templates</a>
         
    </li>
  </ul>
@@ -230,6 +230,13 @@
      
    
      
+   
+     
+      
+      <li><a href="/sample/" title="Components landing page">Components</a></li>
+       
+      <li>Card</li>
+       
    
      
    
@@ -382,453 +389,259 @@
  </ol>
 </nav>
 
-
 			<div class="row">
 				<div class="col-lg-3">
-
      
 					<nav aria-labelledby="components-list" class="side-navigation sticky-6">
 		   
 
+
 <ul class="list-navigation">
-  <li><a href="/sample/content-patterns.html" class="nav-heading" id="components-list">Content Patterns</a>
+  <li><a href="/sample/" id="components-list">Available Components</a>
   <ul>
   				
       
-        <li><a href="/sample/blurbs.html" >Blurbs</a>
+        <li><a href="/sample/accordions.html" >Accordion</a>
          
          
         </li>
        
       
       
-          <li><a href="/sample/hero-info.html" >Hero Info</a></li>
-       
-      
-      
-        <li><a href="/sample/feature-card.html" >Feature Card</a>
+        <li><a href="/sample/alert-banner.html" >Alert banner</a>
          
          
         </li>
        
       
       
-          <li><a href="/sample/figure.html" >Figure with Captions</a></li>
+          <li><a href="/sample/large-header-banner.html" >Banner</a></li>
        
       
       
-        <li><a href="/sample/link-grid.html" >Link Grid</a>
+          <li><a href="/sample/blockquotes.html" >Blockquote</a></li>
+       
+      
+      
+        <li><a href="/sample/breadcrumb.html" >Breadcrumb</a>
          
          
         </li>
        
       
       
-          <li><a href="/sample/news-blocks.html" >News Blocks</a></li>
+          <li><a href="/sample/buttons.html" >Buttons</a></li>
        
       
       
-          <li><a href="/sample/news-list.html" >News List</a></li>
+        <li><a href="/sample/cards.html"  aria-current="page"  class="active" >Card</a>
+         
+          
+           <ul>
+            
+            <li>
+             <a href="#Sample" class="tab-link">Sample</a>
+            </li>
+            
+            <li>
+             <a href="#Usage" class="tab-link">Usage</a>
+            </li>
+            
+            <li>
+             <a href="#Accessibility" class="tab-link">Accessibility</a>
+            </li>
+            
+           </ul>
+           
+        </li>
        
       
       
-          <li><a href="/sample/news-detail.html" >News Detail</a></li>
+          <li><a href="/sample/countdown.html" >Countdown</a></li>
        
       
       
-          <li><a href="/sample/panes.html" >Panes</a></li>
+          <li><a href="/sample/featured-narrative.html" >Featured narrative</a></li>
        
       
       
-          <li><a href="/sample/profile-banners.html" >Profile Banners</a></li>
+          <li><a href="/sample/featured-search.html" >Featured search</a></li>
        
       
       
-          <li><a href="/sample/testimonials.html" >Testimonials</a></li>
+          <li><a href="/sample/form.html" >Form styles</a></li>
+       
+      
+      
+          <li><a href="/sample/horizontal-rules.html" >Horizontal rules</a></li>
+       
+      
+      
+          <li><a href="/sample/lists.html" >Lists</a></li>
+       
+      
+      
+          <li><a href="/sample/modal.html" >Modal</a></li>
+       
+      
+      
+          <li><a href="/sample/number-counter.html" >Number counter</a></li>
+       
+      
+      
+          <li><a href="/sample/parallax.html" >Parallax</a></li>
+       
+      
+      
+          <li><a href="/sample/progress-bars.html" >Progress bars</a></li>
+       
+      
+      
+          <li><a href="/sample/progress-blocks.html" >Progress blocks</a></li>
+       
+      
+      
+          <li><a href="/sample/socialsharer.html" >SocialSharer</a></li>
+       
+      
+      
+          <li><a href="/sample/step-list.html" >Step list</a></li>
+       
+      
+      
+          <li><a href="/sample/tabs.html" >Tabs</a></li>
+       
+      
+      
+          <li><a href="/sample/tables.html" >Tables</a></li>
+       
+      
+      
+          <li><a href="/sample/timeline.html" >Timeline</a></li>
        
       
       </ul>
   </li>
-  </ul>
-  </nav>
+  <li><a href="/sample/css-units.html" id="components-list">CSS Style Shortcuts</a>
+ </ul>
 
 
+
+
+					</nav>
 				</div>
-				<div class="col-lg-9 p-b-lg body-content">
+				<div class="col-lg-9 p-b-lg">
 					
-<h1 class="mt-lg-0">Cards</h1>
-<p>A card is a flexible and extensible content container. It includes options for headers and
- footers, a wide variety of content, contextual background colors, and powerful display
- options.</p>
-<p>Cards require a small amount of markup and classes to provide you with as much control as
- possible. These classes and markup are flexible though and can typically be remixed and
- extended with ease. For example, if your card has no flush content like images, feel free to
- put the <code>.card-block</code> class on the <code>.card element</code> to consolidate your
- markup.</p>
-<h2 class="h3">Example:</h2>
-<div class="card card-default">
-    <div class="card-heading">
-        <h3><span class="ca-gov-icon-info"></span> Card (Default)</h3>
-        <div class="options">
-            <a href="" class="btn btn-default">button</a>
-        </div>
-    </div>
-    <div class="card-body">
-        Card Body
-    </div>
-</div>
+<h1 class="mt-lg-0">Card</h1>
+<p>A card is a flexible, customizable container for content.
+ It displays a snippet of information and can link to more details upon interaction.</p>
 
-<div class="card card-understated">
-    <div class="card-heading">
-        <h3><span class="ca-gov-icon-info" aria-hidden="true"></span> Card (Understated)</h3>
-        <div class="options">
-            <a href="" class="btn btn-default">button</a>
-        </div>
-    </div>
-    <div class="card-body">
-        Card Body
-    </div>
-</div>
 
-<div class="card card-standout highlight">
-    <div class="card-heading">
-        <h3><span class="ca-gov-icon-info" aria-hidden="true"></span> Card (Standout Highlight)</h3>
-        <div class="options">
-            <a href="" class="btn btn-default">button</a>
-        </div>
-    </div>
-    <div class="card-body">
-        Card Body
-    </div>
-</div>
+<h2 id="Sample">Sample</h2>
 
-<div class="card card-overstated">
-    <div class="card-heading">
-        <h3><span class="ca-gov-icon-info" aria-hidden="true">]</span> Card (Overstated)</h3>
-        <div class="options">
-            <a href="" class="btn btn-default">button</a>
-        </div>
-    </div>
-    <div class="card-body">
-        Card Body
-    </div>
-</div>
+<!--TABS-->
+<div class="tab-group responsive">
+ <ul id="tabs1" class="nav nav-tabs" role="tablist">
+  <li class="nav-item">
+   <a id="tab-example1" href="#pane-example1" class="nav-link active" data-bs-toggle="tab" role="tab">Example</a>
+  </li>
+  <li class="nav-item">
+   <a id="tab-html1" href="#pane-html1" class="nav-link" data-bs-toggle="tab" role="tab">Source code</a>
+  </li>
 
-<div class="card card-primary">
-    <div class="card-header">
-        <h3><span class="ca-gov-icon-info"></span> Card (Primary)</h3>
-        <div class="options">
-            <a href="" class="btn btn-default">button</a>
-        </div>
-</div>
-    <div class="card-body">
-        Card Body
-    </div>
-</div>
-<!-- Trigger the modal with a button -->
-<button type="button" class="btn btn-default btn-sm m-t" data-bs-toggle="modal" data-bs-target="#cards">Show
- Source Code</button>
-<!-- Modal -->
-<div class="modal fade" id="cards" role="dialog">
- <div class="modal-dialog modal-lg">
-  <div class="modal-content">
-   <div class="modal-header">
-    <h4 class="modal-title">HTML Markup</h4>
-    <button type="button" class="close btn btn-secondary" data-bs-dismiss="modal"><span class="sr-only">Close
-      modal</span><span class="ca-gov-icon-close-mark" aria-hidden="true"></span></button>
+ </ul>
+
+
+ <div id="tab-content" class="tab-content">
+  <!--Examples-->
+  <div id="pane-example1" class="card tab-pane fade show active" role="tabpanel" aria-labelledby="tab-example1">
+   <div class="card-header" id="heading-example1">
+    <a data-bs-toggle="collapse" href="#collapse-example1" data-parent="#tab-content" aria-expanded="true"
+     aria-controls="collapse-example1" data-hash="#pane-example1" title="Example tab header">
+     Example
+    </a>
    </div>
-   <div class="modal-body">
-    <h4>Source Code:</h4>
-    <pre><code class="overflow-auto"><div class="card card-default">
-    <div class="card-heading">
-        <h3><span class="ca-gov-icon-info"></span> Card (Default)</h3>
-        <div class="options">
-            <a href="" class="btn btn-default">button</a>
-        </div>
-    </div>
-    <div class="card-body">
-        Card Body
-    </div>
+   <div id="collapse-example1" class="collapse show" role="tabpanel" aria-labelledby="heading-example1">
+    <div class="card-body p-b-md">
+     <div class="col-md-4">
+      <div class="card">
+ <img class="card-img" src="/images/sample/images/placeholder/207x136.gif" alt="Card image size">
+ <div class="card-body bg-gray-50">
+  <h3 class="card-title"><a href="#">Card title</a></h3>
+  <p>This is short card description that goes after card title.</p>
+ </div>
 </div>
-
-<div class="card card-understated">
-    <div class="card-heading">
-        <h3><span class="ca-gov-icon-info" aria-hidden="true"></span> Card (Understated)</h3>
-        <div class="options">
-            <a href="" class="btn btn-default">button</a>
-        </div>
+     </div>
     </div>
-    <div class="card-body">
-        Card Body
-    </div>
-</div>
-
-<div class="card card-standout highlight">
-    <div class="card-heading">
-        <h3><span class="ca-gov-icon-info" aria-hidden="true"></span> Card (Standout Highlight)</h3>
-        <div class="options">
-            <a href="" class="btn btn-default">button</a>
-        </div>
-    </div>
-    <div class="card-body">
-        Card Body
-    </div>
-</div>
-
-<div class="card card-overstated">
-    <div class="card-heading">
-        <h3><span class="ca-gov-icon-info" aria-hidden="true">]</span> Card (Overstated)</h3>
-        <div class="options">
-            <a href="" class="btn btn-default">button</a>
-        </div>
-    </div>
-    <div class="card-body">
-        Card Body
-    </div>
-</div>
-
-<div class="card card-primary">
-    <div class="card-header">
-        <h3><span class="ca-gov-icon-info"></span> Card (Primary)</h3>
-        <div class="options">
-            <a href="" class="btn btn-default">button</a>
-        </div>
-</div>
-    <div class="card-body">
-        Card Body
-    </div>
-</div></code></pre>
-   </div>
-   <div class="modal-footer">
-    <button type="button" class="btn btn-default" data-bs-dismiss="modal">Close</button>
    </div>
   </div>
+
+
+
+  <!--HTML-->
+  <div id="pane-html1" class="card tab-pane fade" role="tabpanel" aria-labelledby="tab-html1">
+   <div class="card-header" id="heading-html1">
+    <a class="collapsed" data-bs-toggle="collapse" href="#collapse-html1" data-parent="#tab-content"
+     aria-expanded="false" aria-controls="collapse-html1" data-hash="#pane-html1" title="HTML Source code tab header">
+     Source code
+    </a>
+   </div>
+   <div id="collapse-html1" class="collapse" role="tabpanel" aria-labelledby="heading-html1">
+    <div class="card-body">
+
+     <pre style="max-height: 300px;"><code><div class="card">
+ <img class="card-img" src="/images/sample/images/placeholder/207x136.gif" alt="Card image size">
+ <div class="card-body bg-gray-50">
+  <h3 class="card-title"><a href="#">Card title</a></h3>
+  <p>This is short card description that goes after card title.</p>
  </div>
-</div><!-- / End Modal -->
-
-
-
-<h2>Card with an Image</h2>
-<p><code>.card-img-top</code> places an image to the top of the card.</p>
-<div class="card card-default">
-    <img class="card-img-top" src="/images/sample/images/placeholder/207x136.gif" alt="Card image cap">
-    <div class="card-body">
-        <h3 class="card-title h5">Card title</h3>
-        <p>Some example text. <a href="">This is a sample link</a></p>
-        <a href="#" class="btn btn-primary">Button</a>
-    </div>
-    <div class="card-footer">
-        Footer
-    </div>
-</div>
-<!-- Trigger the modal with a button -->
-<button type="button" class="btn btn-default btn-sm m-t" data-bs-toggle="modal" data-bs-target="#card-image">Show
- Source Code</button>
-<div class="modal fade" id="card-image" role="dialog">
- <div class="modal-dialog modal-lg">
-  <div class="modal-content">
-   <div class="modal-header">
-    <h3 class="h4 modal-title">HTML Markup</h3>
-    <button type="button" class="close btn btn-secondary" data-bs-dismiss="modal"><span class="sr-only">Close
-      modal</span><span class="ca-gov-icon-close-mark" aria-hidden="true"></span></button>
-   </div>
-   <div class="modal-body">
-    <h3 class="h4">Source Code:</h3>
-    <pre><code class="overflow-auto"><div class="card card-default">
-    <img class="card-img-top" src="/images/sample/images/placeholder/207x136.gif" alt="Card image cap">
-    <div class="card-body">
-        <h3 class="card-title h5">Card title</h3>
-        <p>Some example text. <a href="">This is a sample link</a></p>
-        <a href="#" class="btn btn-primary">Button</a>
-    </div>
-    <div class="card-footer">
-        Footer
-    </div>
 </div></code></pre>
-   </div>
-   <div class="modal-footer">
-    <button type="button" class="btn btn-default" data-bs-dismiss="modal">Close</button>
+
+    </div>
    </div>
   </div>
- </div>
-</div><!-- / End Modal -->
 
-<hr />
-<h2>Card Variations:</h2>
-<p>As with most components, cards can be extended to display with a different style. Apply one
- of the following supported class names to the <code>.card</code> div:</p>
+
+ </div>
+</div>
+<!--END TABS-->
+
+<h2 id="Usage">Usage</h2>
+<h3>When and how to use it </h3>
+<p>Use cards to:</p>
 <ul>
- <li><code>.card-default</code></li>
- <li><code>.card-understated</code></li>
- <li><code>.card-overstated</code></li>
- <li><code>.card-standout</code></li>
- <li><code>.card-primary</code></li>
- <li><code>.card-danger</code></li>
- <li><code>.card-inverted</code></li>
+ <li>Highlight an action you want people to take</li>
+ <li>Group related content</li>
+ <li>Add imagery to blocks of text</li>
+ <li>Showcase an important bit of information</li>
 </ul>
+<p>All cards include container text. Cards can also include a(n):</p>
+<ul>
+ <li>Title</li>
+ <li>Image</li>
+ <li>Link</li>
+ <li>Button</li>
+</ul>
+<p>Be clear in the text about what someone will find at the card’s destination, especially in the title and button.</p>
+<p>Use sentence case capitalization for titles, action menus, and buttons.</p>
+<h3>
+ How not to use it
+</h3>
+<p>Avoid misrepresenting the content visitors will find at the card’s destination.</p>
+<p>Do not overload the card content. The visitor expects to find more detailed information elsewhere, so it is okay to
+ keep it brief.</p>
 
-
-<hr>
-
-<h2>Grid cards</h2>
-<p>Need a set of equal width and height cards that aren’t attached to one another? Use Grid cards.</p>
-
-<div class="row row-cols-1 row-cols-md-3 g-4">
-    <div class="col">
-        <div class="card card-primary h-100">
-            <img class="card-img-top" src="/images/sample/images/service-tiles/service-find-job.jpg"
-                alt="Card image cap">
-            <div class="card-body">
-                <h3 class="card-title h5">Card title</h3>
-                <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional
-                    content. This content is a little bit longer.</p>
-                <p class="card-text"><small>Last updated 3 mins ago</small></p>
-            </div>
-        </div>
-    </div>
-    <div class="col">
-        <div class="card card-primary h-100">
-            <img class="card-img-top" src="/images/sample/images/service-tiles/redwoods.jpg" alt="Card image cap">
-            <div class="card-body">
-                <h3 class="card-title h5">Card title</h3>
-                <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
-                <p class="card-text"><small>Last updated 3 mins ago</small></p>
-            </div>
-        </div>
-    </div>
-    <div class="col">
-        <div class="card card-primary h-100">
-            <img class="card-img-top" src="/images/sample/images/service-tiles/driving-test.jpg" alt="Card image cap">
-            <div class="card-body">
-                <h3 class="card-title h5">Card title</h3>
-                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional
-                    content. This card has even longer content than the first to show that equal height action.</p>
-                <p class="card-text"><small>Last updated 3 mins ago</small></p>
-            </div>
-        </div>
-    </div>
-</div>
-<!-- Trigger the modal with a button -->
-<button type="button" class="btn btn-default btn-sm m-t" data-bs-toggle="modal" data-bs-target="#card-deck">Show
- Source Code</button>
-<div class="modal fade" id="card-deck" role="dialog">
- <div class="modal-dialog modal-lg">
-  <div class="modal-content">
-   <div class="modal-header">
-    <h3 class="h4 modal-title">HTML Markup</h3>
-    <button type="button" class="close btn btn-secondary" data-bs-dismiss="modal"><span class="sr-only">Close
-      modal</span><span class="ca-gov-icon-close-mark" aria-hidden="true"></span></button>
-   </div>
-   <div class="modal-body">
-    <h3 class="h4">Source Code:</h3>
-    <pre><code class="overflow-auto"><div class="row row-cols-1 row-cols-md-3 g-4">
-    <div class="col">
-        <div class="card card-primary h-100">
-            <img class="card-img-top" src="/images/sample/images/service-tiles/service-find-job.jpg"
-                alt="Card image cap">
-            <div class="card-body">
-                <h3 class="card-title h5">Card title</h3>
-                <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional
-                    content. This content is a little bit longer.</p>
-                <p class="card-text"><small>Last updated 3 mins ago</small></p>
-            </div>
-        </div>
-    </div>
-    <div class="col">
-        <div class="card card-primary h-100">
-            <img class="card-img-top" src="/images/sample/images/service-tiles/redwoods.jpg" alt="Card image cap">
-            <div class="card-body">
-                <h3 class="card-title h5">Card title</h3>
-                <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
-                <p class="card-text"><small>Last updated 3 mins ago</small></p>
-            </div>
-        </div>
-    </div>
-    <div class="col">
-        <div class="card card-primary h-100">
-            <img class="card-img-top" src="/images/sample/images/service-tiles/driving-test.jpg" alt="Card image cap">
-            <div class="card-body">
-                <h3 class="card-title h5">Card title</h3>
-                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional
-                    content. This card has even longer content than the first to show that equal height action.</p>
-                <p class="card-text"><small>Last updated 3 mins ago</small></p>
-            </div>
-        </div>
-    </div>
-</div></code></pre>
-   </div>
-   <div class="modal-footer">
-    <button type="button" class="btn btn-default" data-bs-dismiss="modal">Close</button>
-   </div>
-  </div>
- </div>
-</div><!-- / End Modal -->
-
-<hr />
-<h2>Card with Photos</h2>
-<p>Cards can be extended to include an optional photo background on the left or right. Add a
- <code>.photo-right</code> or <code>.photo-left</code> class to the <code>.card</code> div.
-</p>
-<p class="m-b-md">Before the closing .card-body div, add a new div with a class of <code>.photo</code>
- and also an inline style with a link to your background-image. e.g.
- <code>style="background-image: url('/path/to/photo.jpg');"</code> Alternatively, webmasters can move
- this inline style to their own custom stylesheet if that is more preferable.
-</p>
-
-<div class="card card-default photo-left">
-    <div class="card-heading">
-        <h3>Card Default with Photo Left</h3>
-    </div>
-    <div class="card-body">
-        <p>This card uses the <code>.photo-left</code> class. Maecenas faucibus mollis interdum. Aenean lacinia bibendum
-            nulla sed consectetur. Vestibulum id ligula porta felis euismod semper. Donec ullamcorper nulla non metus
-            auctor fringilla. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.</p>
-        <ul class="list-primary">
-            <li><a href="">link</a></li>
-            <li><a href="">link</a></li>
-            <li><a href="">link</a></li>
-            <li><a href="">link</a></li>
-        </ul>
-        <div class="photo" style="background-image: url('/images/sample/images/sample-nav-image.jpg');"></div>
-    </div>
-</div>
-<!-- Trigger the modal with a button -->
-<button type="button" class="btn btn-default btn-sm m-t" data-bs-toggle="modal" data-bs-target="#card-photo">Show
- Source Code</button>
-<div class="modal fade" id="card-photo" role="dialog">
- <div class="modal-dialog modal-lg">
-  <div class="modal-content">
-   <div class="modal-header">
-    <h3 class="h4 modal-title">HTML Markup</h3>
-    <button type="button" class="close btn btn-secondary" data-bs-dismiss="modal"><span class="sr-only">Close
-      modal</span><span class="ca-gov-icon-close-mark" aria-hidden="true"></span></button>
-   </div>
-   <div class="modal-body">
-    <h3 class="h4">Source Code:</h3>
-    <pre><code class="overflow-auto"><div class="card card-default photo-left">
-    <div class="card-heading">
-        <h3>Card Default with Photo Left</h3>
-    </div>
-    <div class="card-body">
-        <p>This card uses the <code>.photo-left</code> class. Maecenas faucibus mollis interdum. Aenean lacinia bibendum
-            nulla sed consectetur. Vestibulum id ligula porta felis euismod semper. Donec ullamcorper nulla non metus
-            auctor fringilla. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.</p>
-        <ul class="list-primary">
-            <li><a href="">link</a></li>
-            <li><a href="">link</a></li>
-            <li><a href="">link</a></li>
-            <li><a href="">link</a></li>
-        </ul>
-        <div class="photo" style="background-image: url('/images/sample/images/sample-nav-image.jpg');"></div>
-    </div>
-</div></code></pre>
-   </div>
-   <div class="modal-footer">
-    <button type="button" class="btn btn-default" data-bs-dismiss="modal">Close</button>
-   </div>
-  </div>
- </div>
-</div><!-- / End Modal -->
+<h2 id="Accessibility">Accessibility</h2>
+<h3 class="m-t">Standard accessibility review</h3>
+<p>Each time a new component version is published:</p>
+<ul>
+ <li>Test with the <a href="https://www.deque.com/axe/" target="_blank">axe
+   accessibility tool</a>.</li>
+ <li>Review with the <a href="https://www.apple.com/voiceover/info/guide/_1121.html" target="_blank">VoiceOver</a>
+  screen reader or <a href="https://www.nvaccess.org/download/" target="_blank">NVDA</a>.</li>
+ <li>Ensure all actionable elements are accessible by keyboard command and tab in a logical order. </li>
+ <li>Check the component layout on a variety of screen sizes.</li>
+</ul>
 				</div>
 			</div>
 		</div>

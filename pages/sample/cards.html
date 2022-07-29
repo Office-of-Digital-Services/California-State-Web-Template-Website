@@ -1,144 +1,96 @@
 ﻿---
-title: Cards
-landing: Templates
-layout: templates.njk
+title: Card
+landing: Components
+layout: components.njk
 permalink: "sample/cards.html"
 ---
 
-<h1 class="mt-lg-0">Cards</h1>
-<p>A card is a flexible and extensible content container. It includes options for headers and
- footers, a wide variety of content, contextual background colors, and powerful display
- options.</p>
-<p>Cards require a small amount of markup and classes to provide you with as much control as
- possible. These classes and markup are flexible though and can typically be remixed and
- extended with ease. For example, if your card has no flush content like images, feel free to
- put the <code>.card-block</code> class on the <code>.card element</code> to consolidate your
- markup.</p>
-<h2 class="h3">Example:</h2>
-{% include "../../src/_includes/modules/cards.html" %}
-<!-- Trigger the modal with a button -->
-<button type="button" class="btn btn-default btn-sm m-t" data-bs-toggle="modal" data-bs-target="#cards">Show
- Source Code</button>
-<!-- Modal -->
-<div class="modal fade" id="cards" role="dialog">
- <div class="modal-dialog modal-lg">
-  <div class="modal-content">
-   <div class="modal-header">
-    <h4 class="modal-title">HTML Markup</h4>
-    <button type="button" class="close btn btn-secondary" data-bs-dismiss="modal"><span class="sr-only">Close
-      modal</span><span class="ca-gov-icon-close-mark" aria-hidden="true"></span></button>
+<h1 class="mt-lg-0">Card</h1>
+<p>A card is a flexible, customizable container for content.
+ It displays a snippet of information and can link to more details upon interaction.</p>
+
+
+<h2 id="Sample">Sample</h2>
+
+<!--TABS-->
+<div class="tab-group responsive">
+ <ul id="tabs1" class="nav nav-tabs" role="tablist">
+  <li class="nav-item">
+   <a id="tab-example1" href="#pane-example1" class="nav-link active" data-bs-toggle="tab" role="tab">Example</a>
+  </li>
+  <li class="nav-item">
+   <a id="tab-html1" href="#pane-html1" class="nav-link" data-bs-toggle="tab" role="tab">Source code</a>
+  </li>
+
+ </ul>
+
+
+ <div id="tab-content" class="tab-content">
+  <!--Examples-->
+  <div id="pane-example1" class="card tab-pane fade show active" role="tabpanel" aria-labelledby="tab-example1">
+   <div class="card-header" id="heading-example1">
+    <a data-bs-toggle="collapse" href="#collapse-example1" data-parent="#tab-content" aria-expanded="true"
+     aria-controls="collapse-example1" data-hash="#pane-example1" title="Example tab header">
+     Example
+    </a>
    </div>
-   <div class="modal-body">
-    <h4>Source Code:</h4>
-    <pre><code class="overflow-auto">{% include "../../src/_includes/modules/cards.html" %}</code></pre>
-   </div>
-   <div class="modal-footer">
-    <button type="button" class="btn btn-default" data-bs-dismiss="modal">Close</button>
+   <div id="collapse-example1" class="collapse show" role="tabpanel" aria-labelledby="heading-example1">
+    <div class="card-body p-b-md">
+     <div class="col-md-4">
+      {% include "../../src/_includes/modules/card-image.html" %}
+     </div>
+    </div>
    </div>
   </div>
- </div>
-</div><!-- / End Modal -->
 
 
 
-<h2>Card with an Image</h2>
-<p><code>.card-img-top</code> places an image to the top of the card.</p>
-{% include "../../src/_includes/modules/card-image.html" %}
-<!-- Trigger the modal with a button -->
-<button type="button" class="btn btn-default btn-sm m-t" data-bs-toggle="modal" data-bs-target="#card-image">Show
- Source Code</button>
-<div class="modal fade" id="card-image" role="dialog">
- <div class="modal-dialog modal-lg">
-  <div class="modal-content">
-   <div class="modal-header">
-    <h3 class="h4 modal-title">HTML Markup</h3>
-    <button type="button" class="close btn btn-secondary" data-bs-dismiss="modal"><span class="sr-only">Close
-      modal</span><span class="ca-gov-icon-close-mark" aria-hidden="true"></span></button>
+  <!--HTML-->
+  <div id="pane-html1" class="card tab-pane fade" role="tabpanel" aria-labelledby="tab-html1">
+   <div class="card-header" id="heading-html1">
+    <a class="collapsed" data-bs-toggle="collapse" href="#collapse-html1" data-parent="#tab-content"
+     aria-expanded="false" aria-controls="collapse-html1" data-hash="#pane-html1" title="HTML Source code tab header">
+     Source code
+    </a>
    </div>
-   <div class="modal-body">
-    <h3 class="h4">Source Code:</h3>
-    <pre><code class="overflow-auto">{% include "../../src/_includes/modules/card-image.html" %}</code></pre>
-   </div>
-   <div class="modal-footer">
-    <button type="button" class="btn btn-default" data-bs-dismiss="modal">Close</button>
+   <div id="collapse-html1" class="collapse" role="tabpanel" aria-labelledby="heading-html1">
+    <div class="card-body">
+
+     <pre style="max-height: 300px;"><code>{% include "../../src/_includes/modules/card-image.html" %}</code></pre>
+
+    </div>
    </div>
   </div>
- </div>
-</div><!-- / End Modal -->
 
-<hr />
-<h2>Card Variations:</h2>
-<p>As with most components, cards can be extended to display with a different style. Apply one
- of the following supported class names to the <code>.card</code> div:</p>
+
+ </div>
+</div>
+<!--END TABS-->
+
+<h2 id="Usage">Usage</h2>
+<h3>When and how to use it </h3>
+<p>Use cards to:</p>
 <ul>
- <li><code>.card-default</code></li>
- <li><code>.card-understated</code></li>
- <li><code>.card-overstated</code></li>
- <li><code>.card-standout</code></li>
- <li><code>.card-primary</code></li>
- <li><code>.card-danger</code></li>
- <li><code>.card-inverted</code></li>
+ <li>Highlight an action you want people to take</li>
+ <li>Group related content</li>
+ <li>Add imagery to blocks of text</li>
+ <li>Showcase an important bit of information</li>
 </ul>
+<p>All cards include container text. Cards can also include a(n):</p>
+<ul>
+ <li>Title</li>
+ <li>Image</li>
+ <li>Link</li>
+ <li>Button</li>
+</ul>
+<p>Be clear in the text about what someone will find at the card’s destination, especially in the title and button.</p>
+<p>Use sentence case capitalization for titles, action menus, and buttons.</p>
+<h3>
+ How not to use it
+</h3>
+<p>Avoid misrepresenting the content visitors will find at the card’s destination.</p>
+<p>Do not overload the card content. The visitor expects to find more detailed information elsewhere, so it is okay to
+ keep it brief.</p>
 
-
-<hr>
-
-<h2>Grid cards</h2>
-<p>Need a set of equal width and height cards that aren’t attached to one another? Use Grid cards.</p>
-
-{% include "../../src/_includes/modules/card-deck.html" %}
-<!-- Trigger the modal with a button -->
-<button type="button" class="btn btn-default btn-sm m-t" data-bs-toggle="modal" data-bs-target="#card-deck">Show
- Source Code</button>
-<div class="modal fade" id="card-deck" role="dialog">
- <div class="modal-dialog modal-lg">
-  <div class="modal-content">
-   <div class="modal-header">
-    <h3 class="h4 modal-title">HTML Markup</h3>
-    <button type="button" class="close btn btn-secondary" data-bs-dismiss="modal"><span class="sr-only">Close
-      modal</span><span class="ca-gov-icon-close-mark" aria-hidden="true"></span></button>
-   </div>
-   <div class="modal-body">
-    <h3 class="h4">Source Code:</h3>
-    <pre><code class="overflow-auto">{% include "../../src/_includes/modules/card-deck.html" %}</code></pre>
-   </div>
-   <div class="modal-footer">
-    <button type="button" class="btn btn-default" data-bs-dismiss="modal">Close</button>
-   </div>
-  </div>
- </div>
-</div><!-- / End Modal -->
-
-<hr />
-<h2>Card with Photos</h2>
-<p>Cards can be extended to include an optional photo background on the left or right. Add a
- <code>.photo-right</code> or <code>.photo-left</code> class to the <code>.card</code> div.
-</p>
-<p class="m-b-md">Before the closing .card-body div, add a new div with a class of <code>.photo</code>
- and also an inline style with a link to your background-image. e.g.
- <code>style="background-image: url('/path/to/photo.jpg');"</code> Alternatively, webmasters can move
- this inline style to their own custom stylesheet if that is more preferable.
-</p>
-
-{% include "../../src/_includes/modules/card-photo.html" %}
-<!-- Trigger the modal with a button -->
-<button type="button" class="btn btn-default btn-sm m-t" data-bs-toggle="modal" data-bs-target="#card-photo">Show
- Source Code</button>
-<div class="modal fade" id="card-photo" role="dialog">
- <div class="modal-dialog modal-lg">
-  <div class="modal-content">
-   <div class="modal-header">
-    <h3 class="h4 modal-title">HTML Markup</h3>
-    <button type="button" class="close btn btn-secondary" data-bs-dismiss="modal"><span class="sr-only">Close
-      modal</span><span class="ca-gov-icon-close-mark" aria-hidden="true"></span></button>
-   </div>
-   <div class="modal-body">
-    <h3 class="h4">Source Code:</h3>
-    <pre><code class="overflow-auto">{% include "../../src/_includes/modules/card-photo.html" %}</code></pre>
-   </div>
-   <div class="modal-footer">
-    <button type="button" class="btn btn-default" data-bs-dismiss="modal">Close</button>
-   </div>
-  </div>
- </div>
-</div><!-- / End Modal -->
+<h2 id="Accessibility">Accessibility</h2>
+{% include "../../src/_includes/modules/accessibility.html" %}
