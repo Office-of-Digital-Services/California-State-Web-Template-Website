@@ -1,62 +1,28 @@
 /* -----------------------------------------
    CARDS - /source/scss/cagov/cards.scss
 ----------------------------------------- */
-.card {
-    position: relative;
-    display: block;
-    margin-bottom: $card-spacer-y;
-    background-color: $white;
-    border: $card-border-width solid $card-border-color;
-    border-radius: $card-border-radius;
-
-    .btn-block {
-        margin-top: 5px;
-    }
-
-    .toggle-more {
-        display: inline-block;
-        color: $gray-light;
-        font-family: "CaGov";
-        font-size: 22px;
-        margin-left: -11px;
-
-        &:before {
-            content: "\e050"; // .ca-gov-icon-plus-fill
-        }
-
-        /* Change icon to minus */
-        &.active:before {
-            content: "\e04f"; // .ca-gov-icon-minus-fill
-        }
-    }
-}
 
 .card-block {
-    padding: $card-spacer-x;
-}
-
-.card-title {
-    margin-bottom: $card-spacer-y;
-    margin-top: 0;
+ padding: $card-spacer-x;
 }
 
 .card-subtitle {
-    margin-top: -0.25rem;
-    margin-bottom: 0;
+ margin-top: -0.25rem;
+ margin-bottom: 0;
 }
 
 .card-text:last-child {
-    margin-bottom: 0;
+ margin-bottom: 0;
 }
 
 .card-link {
-    &:hover {
-        text-decoration: none;
-    }
+ &:hover {
+  text-decoration: none;
+ }
 
-    + .card-link {
-        margin-left: $card-spacer-x;
-    }
+ + .card-link {
+  margin-left: $card-spacer-x;
+ }
 }
 
 //
@@ -64,29 +30,268 @@
 //
 
 .card-header {
-    padding: $card-spacer-y $card-spacer-x;
-    //background-color: $card-cap-bg;
-    //border-bottom: $card-border-width solid $card-border-color;
+ padding: $card-spacer-y $card-spacer-x;
+ //background-color: $card-cap-bg;
+ //border-bottom: $card-border-width solid $card-border-color;
 
-    &:first-child {
-        border-radius: $card-border-radius-inner $card-border-radius-inner 0 0;
-    }
+ &:first-child {
+  border-radius: $card-border-radius-inner $card-border-radius-inner 0 0;
+ }
 }
 
 .card-footer {
-    padding: $card-spacer-y $card-spacer-x;
-    //background-color: $card-cap-bg;
-    //border-top: $card-border-width solid $card-border-color;
+ padding: $card-spacer-y $card-spacer-x;
+ //background-color: $card-cap-bg;
+ //border-top: $card-border-width solid $card-border-color;
 
-    &:last-child {
-        border-radius: 0 0 $card-border-radius-inner $card-border-radius-inner;
-    }
+ &:last-child {
+  border-radius: 0 0 $card-border-radius-inner $card-border-radius-inner;
+ }
 }
 
 // Card image caps
 .card-img-top {
-    border-radius: $card-border-radius-inner $card-border-radius-inner 0 0;
+ border-radius: $card-border-radius-inner $card-border-radius-inner 0 0;
 }
 .card-img-bottom {
-    border-radius: 0 0 $card-border-radius-inner $card-border-radius-inner;
+ border-radius: 0 0 $card-border-radius-inner $card-border-radius-inner;
+}
+
+/* Old panel styles */
+.panel,
+.card {
+ border-width: 1px;
+ border-style: solid;
+ overflow: hidden; // fixes disappearing rounded corner
+ box-shadow: none;
+ margin-bottom: 22px;
+
+ .panel-heading,
+ .card-heading,
+ .card-header {
+  @include clearfix;
+  //padding: 4px 5px 4px 15px;    // Makes header padding match original design
+
+  h2,
+  h3,
+  h4,
+  h5 {
+   @include h4(); // Make all headings appear the same size as h4
+   font-weight: normal;
+   border: none; // Remove heading border decoration
+   display: inline-block;
+   margin: -8px 0 0 0;
+
+   span[class^="ca-gov-icon-"] {
+    @include font-size(2);
+    position: relative; // Aligns icon with heading text
+    top: 4px;
+   }
+  }
+
+  .options {
+   display: inline-block;
+   float: right;
+
+   .btn {
+    @include btn-sm;
+   }
+  }
+ }
+
+ //
+ // SET UP PANEL FOR BACKGROUND IMAGES
+ // --------------------------------------------------
+
+ &.photo-left,
+ &.photo-right {
+  position: relative;
+
+  .panel-body,
+  .card-body {
+   position: relative; // Need position relative so bg images can be positioned absolutly
+  }
+ }
+
+ &.photo-left .panel-body,
+ &.photo-left .card-body {
+  padding-left: 27%; // .photo is 25%, add a few % to the padding to prevent it from overlapping
+
+  .photo {
+   left: 0;
+  }
+ }
+
+ &.photo-right .panel-body,
+ &.photo-right .card-body {
+  padding-right: 27%; // .photo is 25%, add a few % to the padding to prevent it from overlapping
+
+  .photo {
+   right: 0;
+  }
+ }
+
+ .photo {
+  background-position: 50% 50%; // set the photo to the center
+  background-size: cover; // Allows background fill the available space
+  height: 100%;
+  overflow: hidden;
+  position: absolute;
+  top: 0;
+  width: 25%;
+ }
+
+ // Remove .photo-left and .photo-right background images for mobile
+ @media (max-width: $screen-xs-max) {
+  .panel-body,
+  .card-body {
+   padding: calc($grid-gutter-width / 2) !important;
+  }
+
+  .photo {
+   background-image: none !important;
+  }
+ }
+}
+
+//
+// SPECIAL CASE FOR H1 WITH ICON IN PANELS
+// --------------------------------------------------
+
+.panel-body h1 span[class^="ca-gov-icon-"],
+.card-body h1 span[class^="ca-gov-icon-"] {
+ margin-left: 0 !important;
+}
+
+//
+// SPECIAL CASE FOR PANELS IN SIDEBARS
+// --------------------------------------------------
+
+.main-secondary .panel,
+.main-secondary .card {
+ background: none;
+ box-shadow: none;
+ //border: none;
+ border-radius: 0;
+
+ //@media (min-width: $screen-sm-min) and (max-width: $screen-sm-max) {
+ //	margin-left: ($grid-gutter-width-sm / -2);
+ //	margin-right: ($grid-gutter-width-sm / -2);
+ //}
+
+ .panel-heading,
+ .card-heading {
+  border-radius: 0;
+  padding: 0;
+
+  h2,
+  h3,
+  h4,
+  h5 {
+   margin: 0;
+   display: block;
+   text-align: center;
+   padding: 10px 15px 10px 40px;
+   position: relative;
+
+   span[class^="ca-gov-icon-"] {
+    @include font-size(1.8);
+    position: absolute;
+    left: 10px;
+   }
+  }
+ }
+
+ .panel-body,
+ .card-body {
+  background: transparent;
+ }
+}
+
+//
+// ADDS TRIANGLE TO PANEL
+// --------------------------------------------------
+/* NOTE: although any panel could have a triangle, at this time, only .panel-standout has css and an image */
+
+.panel.highlight,
+.card.highlight {
+ .panel-heading,
+ .card-heading {
+  position: relative;
+
+  // .triangle class injected into DOM by js
+  .triangle {
+   position: absolute;
+   bottom: -16px;
+   height: 12px;
+   left: 50%;
+   margin-left: -12px;
+   width: 24px;
+  }
+ }
+}
+
+//
+// Additional padding between panels in group
+// --------------------------------------------------
+
+.panel-group .panel + .panel,
+.card-group .card + .card {
+ margin-top: $line-height-computed;
+}
+
+.panel-heading,
+.card-heading {
+ padding: 10px 1rem;
+}
+.panel-body,
+.card-body {
+ padding: 1rem;
+}
+
+/* DEFAULT CARD */
+.card {
+ position: relative;
+ display: block;
+ margin-bottom: $card-spacer-y;
+ background-color: $white;
+ border: none;
+ border-radius: $card-border-radius;
+
+ .card-body {
+  padding: 1.5rem;
+  p {
+   margin-bottom: 0;
+  }
+ }
+
+ .btn-block {
+  margin-top: 5px;
+ }
+
+ .toggle-more {
+  display: inline-block;
+  color: $gray-light;
+  font-family: "CaGov";
+  font-size: 22px;
+  margin-left: -11px;
+
+  &:before {
+   content: "\e050"; // .ca-gov-icon-plus-fill
+  }
+
+  /* Change icon to minus */
+  &.active:before {
+   content: "\e04f"; // .ca-gov-icon-minus-fill
+  }
+ }
+}
+
+.card-title {
+ margin-bottom: $card-spacer-y;
+ margin-top: 0;
+ font-size: $font-size-h4;
+ a {
+  text-decoration: none !important;
+ }
 }
