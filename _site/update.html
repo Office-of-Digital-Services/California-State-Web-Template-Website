@@ -401,10 +401,9 @@
 
 
   <h1 class="mt-lg-0">What’s new</h1>
-  <p class="lead">We are continually improving the California State Template. View release features by date for items
-   that
-   have been added or updated in the State Template. </p>
-  <p>If you are new here, you may find it helpful to begin with <a href="/getting-started.html">getting started</a>.</p>
+  <p class="lead">We are continually improving the California State Web Template. View release features by date for
+   items that have been added or updated. </p>
+  <p>If you are new here, you may find our <a href="/getting-started.html">getting started</a> page helpful.</p>
 
   <h2 id="v6">Release features</h2>
 
@@ -531,100 +530,80 @@
 
   <h2 id="opdate">Update your template</h2>
   <ol class="cagov-step-list">
-   <li><strong>Save backup of your current site</strong>
+   <li><strong>Save a backup</strong>
     <br />
     <span class="cagov-step-list-content">
-     <p>Before updating your version of State Web Template save a backup of your current site. This will ensure a
-      functional site if system errors occurs.</p>
+     <p>Before updating the latest State Web Template version, save a backup of your current site. This will enable you
+      to restore your current site if system errors occur during the update.</p>
     </span>
    </li>
    <li><strong>Download the latest State Web Template release</strong>
     <br />
     <span class="cagov-step-list-content">
      <p>Use our <a href="https://github.com/Office-of-Digital-Innovation/California-State-Template/releases">GitHub
-       repository</a> to download the latest release. If you are using <a href="/cdn.html">State Web template CDN</a>
+       repository</a> to download the latest release. If you are using <a href="/cdn.html">State Web Template CDN</a>,
       update your CDN links to the latest release.</p>
     </span>
    </li>
-   <li><strong>Compare changes</strong>
+   <li><strong>Compare release changes</strong>
     <br />
     <span class="cagov-step-list-content">
-     <p>Check our version release update notes above and see if any changes might affect your website. If they do,
-      complete a thorough code
-      comparison. You have several options to compare your files:
-     <p>
-      <span class="text-bold">Option 1.</span> Compare files locally against downloaded State Web Template latest
-      release.
-     </p>
-     <p>
-      <span class="text-bold">Option 2.</span> Compare your local files with the latest State Web Template code on
-      GitHub.
-     </p>
-     <p>
-      <span class="text-bold">Option 3.</span> Compare between specific State Web Template release branches on GitHub.
-     </p>
-     <p>To do so you need to make new pull request then can select a release branch name from the compare drop down
+
+     <p>After downloading the latest state template files, complete a thorough code comparison by:</p>
+
+     <p><span aria-hidden="true" class="">&#x25cf;</span> <span class="text-bold">Option 1.</span> Locally comparing
+      files
+      side-by-side.</p>
+     <p><span aria-hidden="true" class="">&#x25cf;</span> <span class="text-bold">Option 2.</span> Comparing your local
+      files to State Web Template files in GitHub.</p>
+     <p><span aria-hidden="true" class="">&#x25cf;</span> Comparing release branches on GitHub.</p>
+     <p class="p-l-md">To do so you need to make new pull request then can select a release branch name from the compare
+      drop down
       menu
       at the top of the page. Here's an example of a comparison between two State Web Template release branches.</p>
      <img src="/images/GitHub-compare.jpg" alt="comparison between two State Web Template release branches example"
-      class="img-fluid m-b-md">
+      class="img-fluid m-b-md m-l-md">
+
+
     </span>
    </li>
    <li><strong>Inspect CSS and JavaScript changes</strong>
     <br />
     <span class="cagov-step-list-content">
-     <p>Most of the changes are usually made in the CSS and JavaScript files. Check and compare those changes
-      thoroughly.
-      You will find the State Web Template CSS and JavaScript source files in <code>/src/scss/</code> and
-      <code>/src/js/</code>
-      folders. Update your source CSS and JS files if necessary.
+     <p>Most changes are made in the CSS and JavaScript files. Compare those changes thoroughly. Look for the State Web
+      Template CSS and JavaScript source files in <code>/src/scss/</code> and
+      <code>/src/js/</code> folders. Update your source CSS and JS files if necessary.
      </p>
     </span>
    </li>
-   <li><strong>Look for structural changes</strong>
+   <li><strong>Check for structural changes</strong>
     <br />
     <span class="cagov-step-list-content">
-     <p>Look for any code changes in your structural components, such as utility-header, site-header, global-footer. You
-      will find those
-      components in State Web Template <code>/src/_includes/</code> folder. Update your code if necessary.
+     <p>Look for structural code changes to your components in one of these folders:</p>
+     <p><span aria-hidden="true" class="">&#x25cf;</span> State Web Template
+      <code>/src/_includes/</code>
      </p>
-    </span>
-   </li>
-   <li><strong>Look for components and content patterns code changes</strong>
-    <br />
-    <span class="cagov-step-list-content">
-     <p>Look for any structural code changes inside of your components or content patterns such as accordion, tabs,
-      cards. You
-      will find those
-      components in State Web Template <code>/src/_includes/modules/</code> folder. Update your code if necessary.
+     <p><span aria-hidden="true" class="">&#x25cf;</span> State Web Template
+      <code>/src/_includes/modules/</code>
      </p>
+     <p>Update your code if necessary.</p>
     </span>
    </li>
-   <li><strong>Copy over the site fonts and icons fonts files</strong>
+   <li><strong>Copy site fonts</strong>
     <br />
     <span class="cagov-step-list-content">
-     <p>Copy over the fonts files from <code>/src/fonts/</code> folder</p>
+     <p>Copy the fonts files from <code>/src/fonts/</code> folder.</p>
     </span>
    </li>
-   <li><strong>Build and run your site</strong>
+   <li><strong>Build and test your site</strong>
     <br />
     <span class="cagov-step-list-content">
-     <p>Build and run your site locally. Make sure your site doesn't have NPM or other errors when using build commands.
-      Also, check if there are any errors in your browser's console log.</p>
+     <p>Build and run your site locally. Make sure there are no NPM or other errors when using build commands. Test your
+      site with manual and automatic accessibility testing of all updated pages. </p>
     </span>
    </li>
-   <li><strong>Test all your pages</strong>
-    <br />
-    <span class="cagov-step-list-content">
-     <p>After finishing updating your website do regression testing. Also, make sure you do automatic and manual
-      accessibility testing of all updated pages.
-     </p>
-    </span>
-   </li>
+
   </ol>
-
-
-  <ol>
 
 
 
