@@ -29,38 +29,55 @@
 <link rel="apple-touch-icon" href="/images/apple-touch-icon.png">
 <link rel="shortcut icon" href="/favicon.ico">
 
-<!-- Include Google Analytics -->
 <!-- Global site tag (gtag.js) - Google Analytics -->
+<!-- Universal Analytics -->
+
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-20973992-30"></script>
 
 <script>
+ window.dataLayer = window.dataLayer || [];
+ function gtag() { dataLayer.push(arguments); }
+ gtag('js', new Date());
 
-  window.dataLayer = window.dataLayer || [];
-  function gtag() { dataLayer.push(arguments); }
-  gtag('js', new Date());
+ //statewide GA property
+ gtag('config', 'UA-3419582-2');
 
-//statewide GA property
-//update state department UA code in the line below before deployment
-  gtag('config', 'UA-20973992-30');
+ //please update state department UA code in line below before deployment  
+ gtag('config', 'UA-20973992-30');
 
 
-  var getOutboundLink = function (url) {
-    gtag('event', 'click', {
-      'event_category': 'navigation',
-      'event_label': 'outbound link: ' + url,
-      'transport_type': 'beacon',
-      'event_callback': function () { document.location = url; }
-    });
-  }
 
-  var trackDownload = function (filename) {
-    gtag('event', 'click', {
-      'event_category': 'download',
-      'event_label': 'file: ' + filename,
-      'transport_type': 'beacon',
-      'event_callback': function () { document.location = url; }
-    });
-  }
+ var getOutboundLink = function (url) {
+  gtag('event', 'click', {
+   'event_category': 'navigation',
+   'event_label': 'outbound link: ' + url,
+   'transport_type': 'beacon',
+   'event_callback': function () { document.location = url; }
+  });
+ }
+
+ var trackDownload = function (filename) {
+  gtag('event', 'click', {
+   'event_category': 'download',
+   'event_label': 'file: ' + filename,
+   'transport_type': 'beacon',
+   'event_callback': function () { document.location = url; }
+  });
+ }
+</script>
+
+
+
+<!-- Google Analytics 4 -->
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-75V2BNQ3DR"></script>
+
+<script>
+ window.dataLayer = window.dataLayer || [];
+ function gtag() { dataLayer.push(arguments); }
+ gtag('js', new Date());
+ gtag('config', 'G-69TD0KNT0F'); // statewide GA4 Property ID
+ gtag('config', 'G-75V2BNQ3DR'); // update individual agency GA4 Property ID code before deployment
 </script>
 </head>
 <body class="primary">
