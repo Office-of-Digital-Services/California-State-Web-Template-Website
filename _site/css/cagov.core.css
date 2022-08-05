@@ -18406,7 +18406,8 @@ html {
 cagov-accordion details {
   margin-bottom: 0;
   min-height: 3rem;
-  margin-top: 0.5rem;
+  margin-top: 1rem;
+  overflow: visible;
 }
 cagov-accordion details summary {
   cursor: pointer;
@@ -18468,9 +18469,8 @@ cagov-accordion details .accordion-body {
   padding: 1rem;
   border: none;
   border-radius: 0 0 4px 4px;
-  outline: 1px solid #d4d4d7;
-  outline-offset: -1px;
-  margin-top: -1px;
+  border: 1px solid #d4d4d7;
+  border-top: none;
 }
 
 /* styles applied after custom element javascript runs */
@@ -18480,7 +18480,7 @@ cagov-accordion:defined {
 cagov-accordion:defined details {
   transition: height 0.2s;
   height: 3rem;
-  overflow: hidden;
+  overflow: visible;
 }
 cagov-accordion:defined summary::-webkit-details-marker {
   display: none;
