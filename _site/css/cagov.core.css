@@ -21595,23 +21595,46 @@ blockquote {
   font-size: 1.125rem;
   padding: 11px 22px;
   margin: 0 0 22px;
-  border-left: 5px solid #d6d6d6;
+  border-left: 4px solid #d6d6d6;
 }
 @media (min-width: 576px) {
   blockquote {
     font-size: calc(1.125rem + 0.1vw);
   }
 }
-
+blockquote::before {
+  content: "\ea29";
+  font-family: "CaGov";
+  font-size: 3rem;
+  line-height: 2rem;
+}
 blockquote footer {
   display: block;
   font-size: 80%;
   color: #555555;
+  font-weight: 700;
+  margin-top: 1rem;
 }
 blockquote footer::before {
   content: "— ";
 }
-
+blockquote.no-quotation-mark::before {
+  display: none;
+}
+blockquote.pull-quote, blockquote.prominent {
+  text-align: center;
+  border-left: none;
+}
+blockquote.pull-quote p, blockquote.prominent p {
+  text-align: left;
+}
+blockquote.pull-quote footer, blockquote.prominent footer {
+  text-align: left;
+}
+blockquote.prominent {
+  border-radius: 1rem;
+  padding: 2rem;
+}
 blockquote.blockquote-reverse {
   padding-right: 15px;
   padding-left: 0;
