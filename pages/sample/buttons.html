@@ -6,101 +6,117 @@ permalink: "sample/buttons.html"
 ---
 
 
-<div class="row">
- <div class="col-md-8">
-  <h1 class="mt-lg-0">Buttons</h1>
-  <p>Buttons can be created by adding <code>.btn</code> class to a link or button element. By it's
-   self the <code>.btn</code> class does not do much besides create some basic structure. To
-   apply styles to the button we need to add an extender class like <code>.btn-default</code>
-   or <code>.btn-primary</code></p>
-  {% include "../../src/_includes/modules/buttons.html" %}
- </div>
- <div class="col-md-4">
-  <h3>Source code:</h3>
-  <pre><code class="overflow-auto">{% include "../../src/_includes/modules/buttons.html" %}</code></pre>
+<h1 class="mt-lg-0">Button</h1>
+<p>A button triggers an event or action. It informs the visitor that something will happen next.</p>
+<p>Buttons add visual prominence to the call to action and provide feedback on completed actions.</p>
+<p>Buttons can:</p>
+<ul>
+ <li>Move visitors through a process: <span class="text-bold">Submit, Next, Search, Save</span></li>
+ <li>Highlight a top task: <span class="text-bold">Learn more, Get started, Join us, Visit</span></li>
+ <li>Reverse an action: <span class="text-bold">Cancel, Previous, Reset, Delete</span></li>
+ <li>Pause a process: <span class="text-bold">Save as draft</span></li>
+</ul>
+
+
+<h2 id="Sample">Sample</h2>
+<p>Available button colors are based on your selected <a href="color-schemes.html">color theme</a>.</p>
+
+<!--TABS-->
+<div class="tab-group responsive">
+ <ul id="tabs1" class="nav nav-tabs" role="tablist">
+  <li class="nav-item">
+   <a id="tab-example1" href="#pane-example1" class="nav-link active" data-bs-toggle="tab" role="tab">Example</a>
+  </li>
+  <li class="nav-item">
+   <a id="tab-html1" href="#pane-html1" class="nav-link" data-bs-toggle="tab" role="tab">Source code</a>
+  </li>
+
+ </ul>
+
+
+ <div id="tab-content" class="tab-content">
+  <!--Examples-->
+  <div id="pane-example1" class="card tab-pane fade show active" role="tabpanel" aria-labelledby="tab-example1">
+   <div class="card-header" id="heading-example1">
+    <a data-bs-toggle="collapse" href="#collapse-example1" data-parent="#tab-content" aria-expanded="true"
+     aria-controls="collapse-example1" data-hash="#pane-example1" title="Example tab header">
+     Example
+    </a>
+   </div>
+   <div id="collapse-example1" class="collapse show" role="tabpanel" aria-labelledby="heading-example1">
+    <div class="card-body p-b-md">
+     <p class="lead bold m-b">Primary action buttons</p>
+     {% include "../../src/_includes/modules/buttons.html" %}
+
+     <p class="lead bold m-b">Secondary action buttons </p>
+     {% include "../../src/_includes/modules/buttons-outline.html" %}
+
+     <p class="lead bold m-b">Disabled buttons</p>
+     {% include "../../src/_includes/modules/buttons-disabled.html" %}
+
+     <p class="lead bold m-b">Buttons sizes</p>
+     {% include "../../src/_includes/modules/buttons-sizes.html" %}
+    </div>
+   </div>
+  </div>
+
+
+
+  <!--HTML-->
+  <div id="pane-html1" class="card tab-pane fade" role="tabpanel" aria-labelledby="tab-html1">
+   <div class="card-header" id="heading-html1">
+    <a class="collapsed" data-bs-toggle="collapse" href="#collapse-html1" data-parent="#tab-content"
+     aria-expanded="false" aria-controls="collapse-html1" data-hash="#pane-html1" title="HTML Source code tab header">
+     Source code
+    </a>
+   </div>
+   <div id="collapse-html1" class="collapse" role="tabpanel" aria-labelledby="heading-html1">
+    <div class="card-body">
+     <p class="lead bold m-b">Primary action buttons</p>
+     <pre style="max-height: 300px;"><code>{% include "../../src/_includes/modules/buttons.html" %}</code></pre>
+
+     <p class="lead bold m-b">Secondary action buttons </p>
+     <pre style="max-height: 300px;"><code>{% include "../../src/_includes/modules/buttons-outline.html" %}</code></pre>
+
+     <p class="lead bold m-b">Disabled buttons</p>
+     <pre
+      style="max-height: 300px;"><code>{% include "../../src/_includes/modules/buttons-disabled.html" %}</code></pre>
+
+     <p class="lead bold m-b">Buttons sizes</p>
+     <pre style="max-height: 300px;"><code>{% include "../../src/_includes/modules/buttons-sizes.html" %}</code></pre>
+    </div>
+   </div>
+  </div>
+
+
  </div>
 </div>
+<!--END TABS-->
 
-<hr>
-
-<div class="row">
- <div class="col-md-8">
-  <p>For webmasters needing to add application behavior there are a few additional classes that
-   might be useful. <code>.active</code> will make buttons appear pressed.</p>
-  {% include "../../src/_includes/modules/buttons-active.html" %}
- </div>
- <div class="col-md-4">
-  <h3>Source code:</h3>
-  <pre><code class="overflow-auto">{% include "../../src/_includes/modules/buttons-active.html" %}</code></pre>
- </div>
-</div>
-
-<hr>
-
-<div class="row">
- <div class="col-md-8">
-  <p>Add the <code>.disabled</code> class to make buttons appear unclickable by fading them back
-   50%. Add the <code>disabled="disabled"</code> attribute to <code>&lt;button&gt;</code>
-   buttons instead of the class.</p>
-  {% include "../../src/_includes/modules/buttons-disabled.html" %}
- </div>
- <div class="col-md-4">
-  <h3>Source code:</h3>
-  <pre><code class="overflow-auto">{% include "../../src/_includes/modules/buttons-disabled.html" %}</code></pre>
- </div>
-</div>
+<h2 id="Usage">Usage</h2>
+<h3>When and how to use it </h3>
+<p>Use buttons to communicate actions users can take to interact with a page.</p>
+<p>A primary action button (filled in button) has the highest emphasis. Try to limit the number of primary action
+ buttons on a page as they are distracting. </p>
+<p>The secondary action button (outlined button) has a lower emphasis, but should still be used sparingly.</p>
+<p>Buttons should be used to help people:</p>
+<ul>
+ <li>Submit a form</li>
+ <li>Begin a task</li>
+ <li>Make new elements appear on the page</li>
+ <li>Identify a new or next step in a process</li>
+</ul>
+<p>Color alone does not convey the meaning of buttons. Be sure to match your button text with the meaning you are trying
+ to communicate with color. </p>
+<p>Keep in mind that not everyone will be able to see your button color, so the message should be clear without it.</p>
+<h3>
+ How not to use it
+</h3>
+<p>Avoid using multiple buttons on a single page.</p>
+</p>Avoid using disabled buttons as they can be inaccessible and confusing to some visitors. If you must use a disabled
+button, inform visitors why the button is disabled and how to enable it.</p>
 
 
-<hr>
 
-
-<div class="row">
- <div class="col-md-8">
-  <h2>Other Button Variations</h2>
-  {% include "../../src/_includes/modules/buttons-outline.html" %}
- </div>
- <div class="col-md-4">
-  <h3>Source code:</h3>
-  <pre><code class="overflow-auto">{% include "../../src/_includes/modules/buttons-outline.html" %}</code></pre>
- </div>
-</div>
-
-<hr>
-<div class="row">
- <div class="col-md-8">
-  <h2>Hover Effects</h2>
-  <p class="m-t-md">Add a class <code>.btn-hover</code> to add shutter out horisontal hover
-   effect.</p>
-  {% include "../../src/_includes/modules/buttons-hover.html" %}
- </div>
- <div class="col-md-4">
-  <h3>Source code:</h3>
-  <pre><code class="overflow-auto">{% include "../../src/_includes/modules/buttons-hover.html" %}</code></pre>
- </div>
-</div>
-
-<div class="row">
- <div class="col-md-8">
-  <p class="m-t-md">Add classes <code>.btn-next</code>, <code>.btn-prev</code> to add previous and
-   next icons hover effect. Also button's content needs to be inclosed in the <code>span</code>
-   tag.</p>
-  {% include "../../src/_includes/modules/buttons-hover-icon.html" %}
- </div>
- <div class="col-md-4">
-  <h3>Source code:</h3>
-  <pre><code class="overflow-auto">{% include "../../src/_includes/modules/buttons-hover-icon.html" %}</code></pre>
- </div>
-</div>
-
-
-<hr>
-<div class="row">
- <div class="col-md-8">
-  <h2>Sizes</h2>
-  {% include "../../src/_includes/modules/buttons-sizes.html" %}
- </div>
- <div class="col-md-4">
-  <h3>Source code:</h3>
-  <pre><code class="overflow-auto">{% include "../../src/_includes/modules/buttons-sizes.html" %}</code></pre>
- </div>
-</div>
+<h2 id="Accessibility">Accessibility</h2>
+{% include "../../src/_includes/modules/accessibility.html" %}
