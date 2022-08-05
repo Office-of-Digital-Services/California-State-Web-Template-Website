@@ -436,7 +436,34 @@
        
       
       
-          <li><a href="/sample/blockquotes.html"  aria-current="page"  class="active" >Blockquote</a></li>
+        <li><a href="/sample/blockquotes.html"  aria-current="page"  class="active" >Blockquote</a>
+         
+          
+           <ul>
+            
+            <li>
+             <a href="#Basic-blockquote" class="tab-link">Basic blockquote</a>
+            </li>
+            
+            <li>
+             <a href="#Pull-quote" class="tab-link">Pull quote</a>
+            </li>
+            
+            <li>
+             <a href="#Prominent-blockquote" class="tab-link">Prominent blockquote</a>
+            </li>
+            
+            <li>
+             <a href="#Usage" class="tab-link">Usage</a>
+            </li>
+            
+            <li>
+             <a href="#Accessibility" class="tab-link">Accessibility</a>
+            </li>
+            
+           </ul>
+           
+        </li>
        
       
       
@@ -536,30 +563,259 @@
 				</div>
 				<div class="col-lg-9 p-b-lg">
 					
+<style>
 
-<h1 class="mt-lg-0">Blockquotes</h1>
-<p>For quoting blocks of content from another source within your document.</p>
-<p>Wrap <code>&lt;blockquote&gt;</code> around any HTML as the quote. For straight quotes, we
- recommend a <code>&lt;p&gt;</code>.</p>
+</style>
 
-<h2>Example:</h2>
-<blockquote>
-    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
-    <footer>Someone famous in <cite title="Source Title">Source Title</cite></footer>
+<h1 class="mt-lg-0">Blockquote</h1>
+<p>A blockquote emphasizes quotes or excerpts related to the page content.</p>
+<p>Blockquote text is styled differently from the main text and is typically used for important quotations.</p>
+
+<h2 id="Basic-blockquote">Basic blockquote:</h2>
+
+<!--TABS-->
+<div class="tab-group responsive">
+ <ul id="tabs1" class="nav nav-tabs" role="tablist">
+  <li class="nav-item">
+   <a id="tab-example1" href="#pane-example1" class="nav-link active" data-bs-toggle="tab" role="tab">Example</a>
+  </li>
+  <li class="nav-item">
+   <a id="tab-html1" href="#pane-html1" class="nav-link" data-bs-toggle="tab" role="tab">Source Code</a>
+  </li>
+
+ </ul>
+
+
+ <div id="tab-content" class="tab-content">
+  <!--Examples-->
+  <div id="pane-example1" class="card tab-pane fade show active" role="tabpanel" aria-labelledby="tab-example1">
+   <div class="card-header" id="heading-example1">
+    <a data-bs-toggle="collapse" href="#collapse-example1" data-parent="#tab-content" aria-expanded="true"
+     aria-controls="collapse-example1" data-hash="#pane-example1" title="Example tab header">
+     Example
+    </a>
+   </div>
+   <div id="collapse-example1" class="collapse show" role="tabpanel" aria-labelledby="heading-example1">
+    <div class="card-body p-b-lg">
+
+     <blockquote>
+ <p>Good quotes help to tell a story and enhance the credibility of a press release, news story, or speech. Words that
+  are crafted well can leave a lasting impact on the world. </p>
+ <footer>Holly Zuluaga</footer>
 </blockquote>
 
-<h3>Naming a source</h3>
-<p>Add a <code>&lt;footer&gt;</code> for identifying the source. Wrap the name of the source
- work in <code>&lt;cite&gt;</code>.</p>
+<p class="lead bold m-b">Without graphic</p>
 
-<h3>Alternate displays</h3>
-<p>Add <code>.blockquote-reverse</code> for a blockquote with right-aligned content.</p>
+<blockquote class="no-quotation-mark">
+ <p>Good quotes help to tell a story and enhance the credibility of a press release, news story, or speech. Words that
+  are crafted well can leave a lasting impact on the world. </p>
+ <footer>Holly Zuluaga</footer>
+</blockquote>
 
-<h2>Source Code:</h2>
-<pre><code class="overflow-auto"><blockquote>
-    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
-    <footer>Someone famous in <cite title="Source Title">Source Title</cite></footer>
-</blockquote></code></pre>
+    </div>
+   </div>
+  </div>
+
+
+
+  <!--HTML-->
+  <div id="pane-html1" class="card tab-pane fade" role="tabpanel" aria-labelledby="tab-html1">
+   <div class="card-header" id="heading-html1">
+    <a class="collapsed" data-bs-toggle="collapse" href="#collapse-html1" data-parent="#tab-content"
+     aria-expanded="false" aria-controls="collapse-html1" data-hash="#pane-html1" title="HTML Source Code tab header">
+     Source code
+    </a>
+   </div>
+   <div id="collapse-html1" class="collapse" role="tabpanel" aria-labelledby="heading-html1">
+    <div class="card-body">
+     <pre style="max-height: 300px;"><code><blockquote>
+ <p>Good quotes help to tell a story and enhance the credibility of a press release, news story, or speech. Words that
+  are crafted well can leave a lasting impact on the world. </p>
+ <footer>Holly Zuluaga</footer>
+</blockquote>
+
+<p class="lead bold m-b">Without graphic</p>
+
+<blockquote class="no-quotation-mark">
+ <p>Good quotes help to tell a story and enhance the credibility of a press release, news story, or speech. Words that
+  are crafted well can leave a lasting impact on the world. </p>
+ <footer>Holly Zuluaga</footer>
+</blockquote></code>
+    </pre>
+
+    </div>
+   </div>
+  </div>
+
+
+ </div>
+</div>
+<!--END TABS-->
+
+
+
+
+
+<h2 id="Pull-quote">Pull quote</h2>
+
+<!--TABS-->
+<div class="tab-group responsive">
+ <ul id="tabs2" class="nav nav-tabs" role="tablist">
+  <li class="nav-item">
+   <a id="tab-example2" href="#pane-example2" class="nav-link active" data-bs-toggle="tab" role="tab">Example</a>
+  </li>
+  <li class="nav-item">
+   <a id="tab-html2" href="#pane-html2" class="nav-link" data-bs-toggle="tab" role="tab">Source Code</a>
+  </li>
+
+ </ul>
+
+
+ <div id="tab-content" class="tab-content">
+  <!--Examples-->
+  <div id="pane-example2" class="card tab-pane fade show active" role="tabpanel" aria-labelledby="tab-example2">
+   <div class="card-header" id="heading-example2">
+    <a data-bs-toggle="collapse" href="#collapse-example2" data-parent="#tab-content" aria-expanded="true"
+     aria-controls="collapse-example2" data-hash="#pane-example2" title="Example tab header">
+     Example
+    </a>
+   </div>
+   <div id="collapse-example2" class="collapse show" role="tabpanel" aria-labelledby="heading-example2">
+    <div class="card-body p-b-lg">
+
+
+     <blockquote class="pull-quote">
+ <p>Good quotes help to tell a story and enhance the credibility of a press release, news story, or speech. Words that
+  are crafted well can leave a lasting impact on the world. </p>
+ <footer>Holly Zuluaga</footer>
+</blockquote>
+
+    </div>
+   </div>
+  </div>
+
+
+
+  <!--HTML-->
+  <div id="pane-html2" class="card tab-pane fade" role="tabpanel" aria-labelledby="tab-html2">
+   <div class="card-header" id="heading-html2">
+    <a class="collapsed" data-bs-toggle="collapse" href="#collapse-html2" data-parent="#tab-content"
+     aria-expanded="false" aria-controls="collapse-html2" data-hash="#pane-html2" title="HTML Source Code tab header">
+     Source code
+    </a>
+   </div>
+   <div id="collapse-html2" class="collapse" role="tabpanel" aria-labelledby="heading-html2">
+    <div class="card-body">
+     <pre style="max-height: 300px;"><code><blockquote class="pull-quote">
+ <p>Good quotes help to tell a story and enhance the credibility of a press release, news story, or speech. Words that
+  are crafted well can leave a lasting impact on the world. </p>
+ <footer>Holly Zuluaga</footer>
+</blockquote></code>
+    </pre>
+    </div>
+   </div>
+  </div>
+
+
+ </div>
+</div>
+<!--END TABS-->
+
+
+
+<h2 id="Prominent-blockquote">Prominent blockquote</h2>
+
+
+<!--TABS-->
+<div class="tab-group responsive">
+ <ul id="tabs1" class="nav nav-tabs" role="tablist">
+  <li class="nav-item">
+   <a id="tab-example3" href="#pane-example3" class="nav-link active" data-bs-toggle="tab" role="tab">Example</a>
+  </li>
+  <li class="nav-item">
+   <a id="tab-html3" href="#pane-html3" class="nav-link" data-bs-toggle="tab" role="tab">Source code</a>
+  </li>
+
+ </ul>
+
+
+ <div id="tab-content" class="tab-content">
+  <!--Examples-->
+  <div id="pane-example3" class="card tab-pane fade show active" role="tabpanel" aria-labelledby="tab-example3">
+   <div class="card-header" id="heading-example3">
+    <a data-bs-toggle="collapse" href="#collapse-example3" data-parent="#tab-content" aria-expanded="true"
+     aria-controls="collapse-example3" data-hash="#pane-example3" title="Example tab header">
+     Example
+    </a>
+   </div>
+   <div id="collapse-example3" class="collapse show" role="tabpanel" aria-labelledby="heading-example3">
+    <div class="card-body p-b">
+
+
+     <blockquote class="prominent">
+ <p>Good quotes help to tell a story and enhance the credibility of a press release, news story, or speech. Words that
+  are crafted well can leave a lasting impact on the world. </p>
+ <footer>Holly Zuluaga</footer>
+</blockquote>
+
+
+    </div>
+   </div>
+  </div>
+
+
+
+  <!--HTML-->
+  <div id="pane-html3" class="card tab-pane fade" role="tabpanel" aria-labelledby="tab-html3">
+   <div class="card-header" id="heading-html3">
+    <a class="collapsed" data-bs-toggle="collapse" href="#collapse-html3" data-parent="#tab-content"
+     aria-expanded="false" aria-controls="collapse-html3" data-hash="#pane-html3" title="HTML Source code tab header">
+     Source code
+    </a>
+   </div>
+   <div id="collapse-html3" class="collapse" role="tabpanel" aria-labelledby="heading-html3">
+    <div class="card-body">
+     <pre style="max-height: 300px;"><code><blockquote class="prominent">
+ <p>Good quotes help to tell a story and enhance the credibility of a press release, news story, or speech. Words that
+  are crafted well can leave a lasting impact on the world. </p>
+ <footer>Holly Zuluaga</footer>
+</blockquote></code>
+   </pre>
+
+    </div>
+   </div>
+  </div>
+
+
+ </div>
+</div>
+<!--END TABS-->
+
+
+<h2 id="Usage">Usage</h2>
+
+<h3 class="m-t">When and how to use it</h3>
+<p>Use blockquotes to display a quote from a person or a source.</p>
+<p>List the speaker or author of the quote with their relevant title. </p>
+
+
+
+<h3>How not to use it</h3>
+
+<p>Do not use more than one block quote variation on a single page. </p>
+<p>Avoid hyperlinks inside the blockquote. Use the body content to link to additional information from the speaker.</p>
+
+<h2 id="Accessibility">Accessibility</h2>
+<h3 class="m-t">Standard accessibility review</h3>
+<p>Each time a new component version is published:</p>
+<ul>
+ <li>Test with the <a href="https://www.deque.com/axe/" target="_blank">axe
+   accessibility tool</a>.</li>
+ <li>Review with the <a href="https://www.apple.com/voiceover/info/guide/_1121.html" target="_blank">VoiceOver</a> or <a
+   href="https://www.nvaccess.org/download/" target="_blank">NVDA</a> screen reader.</li>
+ <li>Ensure all actionable elements are accessible by keyboard command and tab in a logical order. </li>
+ <li>Check the component layout on a variety of screen sizes.</li>
+</ul>
 				</div>
 			</div>
 		</div>
