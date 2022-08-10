@@ -6,43 +6,160 @@ permalink: "sample/large-header-banner.html"
 ---
 
 
+<h1 class="mt-lg-0">Hero banner</h1>
+<p>The hero banner is the first thing a visitor sees and often spans the full width of the screen. It usually includes:
+</p>
+<ul>
+ <li>Title</li>
+ <li>Brief description</li>
+ <li>Image</li>
+ <li>Optional image caption</li>
+ <li>Button</li>
+</ul>
+
+
+<p>The hero banner features an action you want people to take or important information on the homepage. </p>
+
+<h2 id="Hero-banner">Hero banner</h2>
+
+<!--TABS-->
+<div class="tab-group responsive">
+ <ul id="tabs1" class="nav nav-tabs" role="tablist">
+  <li class="nav-item">
+   <a id="tab-example1" href="#pane-example1" class="nav-link active" data-bs-toggle="tab" role="tab">Example</a>
+  </li>
+  <li class="nav-item">
+   <a id="tab-html1" href="#pane-html1" class="nav-link" data-bs-toggle="tab" role="tab">Source code</a>
+  </li>
+
+ </ul>
+
+
+ <div id="tab-content" class="tab-content">
+  <!--Examples-->
+  <div id="pane-example1" class="card tab-pane fade show active" role="tabpanel" aria-labelledby="tab-example1">
+   <div class="card-header" id="heading-example1">
+    <a data-bs-toggle="collapse" href="#collapse-example1" data-parent="#tab-content" aria-expanded="true"
+     aria-controls="collapse-example1" data-hash="#pane-example1" title="Example tab header">
+     Example
+    </a>
+   </div>
+   <div id="collapse-example1" class="collapse show" role="tabpanel" aria-labelledby="heading-example1">
+    <div class="card-body p-b-lg">
+
+     {% include "../../src/_includes/modules/header-large-banner.html" %}
+
+    </div>
+   </div>
+  </div>
 
 
 
-<div class="container">
+  <!--HTML-->
+  <div id="pane-html1" class="card tab-pane fade" role="tabpanel" aria-labelledby="tab-html1">
+   <div class="card-header" id="heading-html1">
+    <a class="collapsed" data-bs-toggle="collapse" href="#collapse-html1" data-parent="#tab-content"
+     aria-expanded="false" aria-controls="collapse-html1" data-hash="#pane-html1" title="HTML Source code tab header">
+     Source code
+    </a>
+   </div>
+   <div id="collapse-html1" class="collapse" role="tabpanel" aria-labelledby="heading-html1">
+    <div class="card-body">
+     <pre style="max-height: 300px;"><code>{% include "../../src/_includes/modules/header-large-banner.html" %}</code>
+    </pre>
 
- <h1 class="mt-lg-0">Large Hero Banner</h1>
- <p>The large header banner is a full screen hero banner that will dynamically calculate the height of
-  the window and fill it with the chosen image. To use this banner type add
-  <code>/src/_includes/modules/header-large-banner.html</code> using the eleventy, or any other include method
-  right below the main tag
-  of
-  the desired page.
- </p>
+    </div>
+   </div>
+  </div>
 
 
- {% include "../../src/_includes/modules/header-large-banner.html" %}
-
-
-
-
-
- <p class="m-t-lg">To change the background image edit the <strong>header-large-banner.html</strong> include file
-  located in the <strong>/src/_includes/modules/ </strong>directory. The image is set by changing the
-  <code>background</code> property in the style attribute for
-  <code>&lt;div class="header-large-banner" style="background-image: url('<strong>/sample/images/background_2.jpg</strong>');"&gt;</code>.
-  The recommended dimensions of the banner images are 1500 by 500 pixels.
- </p>
-
- <p><span class="text-highlight-primary">Note:</span> To have the banner dissapear in a mobile viewport add the
-  <code>.primary</code> class to the <code>&lt;body&gt;</code> element of the page otherwise the
-  banner will remain in all screen sizes.
- </p>
-
- <h2>Source code:</h2>
- <pre><code class="overflow-auto">&#10100;% include "../../src/_includes/modules/header-large-banner.html" %&#10101;</code></pre>
-
- <h2>Other hero banner options</h2>
-
- <a href="primary-banner.html" class="btn btn-secondary m-r-sm m-b-sm">Primary Banner</a>
+ </div>
 </div>
+<!--END TABS-->
+
+
+
+<h2 id="Hero-info">Hero info</h2>
+
+<!--TABS-->
+<div class="tab-group responsive">
+ <ul id="tabs2" class="nav nav-tabs" role="tablist">
+  <li class="nav-item">
+   <a id="tab-example2" href="#pane-example2" class="nav-link active" data-bs-toggle="tab" role="tab">Example</a>
+  </li>
+  <li class="nav-item">
+   <a id="tab-html2" href="#pane-html2" class="nav-link" data-bs-toggle="tab" role="tab">Source code</a>
+  </li>
+
+ </ul>
+
+
+ <div id="tab-content" class="tab-content">
+  <!--Examples-->
+  <div id="pane-example2" class="card tab-pane fade show active" role="tabpanel" aria-labelledby="tab-example2">
+   <div class="card-header" id="heading-example2">
+    <a data-bs-toggle="collapse" href="#collapse-example2" data-parent="#tab-content" aria-expanded="true"
+     aria-controls="collapse-example2" data-hash="#pane-example2" title="Example tab header">
+     Example
+    </a>
+   </div>
+   <div id="collapse-example2" class="collapse show" role="tabpanel" aria-labelledby="heading-example2">
+    <div class="card-body p-b-lg">
+
+
+     {% include "../../src/_includes/modules/hero-info.html" %}
+
+    </div>
+   </div>
+  </div>
+
+
+
+  <!--HTML-->
+  <div id="pane-html2" class="card tab-pane fade" role="tabpanel" aria-labelledby="tab-html2">
+   <div class="card-header" id="heading-html2">
+    <a class="collapsed" data-bs-toggle="collapse" href="#collapse-html2" data-parent="#tab-content"
+     aria-expanded="false" aria-controls="collapse-html2" data-hash="#pane-html2" title="HTML Source code tab header">
+     Source code
+    </a>
+   </div>
+   <div id="collapse-html2" class="collapse" role="tabpanel" aria-labelledby="heading-html2">
+    <div class="card-body">
+     <pre style="max-height: 300px;"><code>{% include "../../src/_includes/modules/hero-info.html" %}</code>
+    </pre>
+    </div>
+   </div>
+  </div>
+
+
+ </div>
+</div>
+<!--END TABS-->
+
+
+
+
+
+
+<h2 id="Usage">Usage</h2>
+
+<h3 class="m-t">When and how to use it</h3>
+<p>Use the hero banner to catch visitors' attention and highlight the top task or need.</p>
+<p>Place it at the top of the homepage so it appears below the statewide header, site header, and site navigation.
+ Learn more in our guidance on <a href="/structure.html">webpage structure</a>.</p>
+<p>Include a concise title, description, image, and at least one button. Choose an image that’s in harmony with your
+ brand identity, mission, and tone. The minimum image size is 776 x 517 pixels. For best results, use images with this
+ aspect ratio.</p>
+
+
+<h3>How not to use it</h3>
+
+<p>Do not use more than one hero banner on your homepage. </p>
+<p>Do not use more than one primary call-to-action within your hero banner.</p>
+<p>Do not use the hero banner to make an image carousel. Carousels frustrate people more than they help them and do not
+ meet accessibility standards.</p>
+<p>Do not put a lot of content in your hero banner. Too much content is hard to read. It will also lengthen the hero
+ banner and cause awkward whitespace.</p>
+
+<h2 id="Accessibility">Accessibility</h2>
+{% include "../../src/_includes/modules/accessibility.html" %}
