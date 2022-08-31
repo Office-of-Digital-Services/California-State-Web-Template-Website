@@ -2,14 +2,14 @@
 title: Page Layouts
 landing: Structure
 layout: page.njk
-permalink: "sample/layouts.html"
+permalink: "structure/layouts.html"
 ---
 
 
 
 
 <div class="row">
- <div class="col-md-8">
+ <div class="col-md-8 p-b-lg">
   <h1 class="mt-lg-0">Page Layouts</h1>
   <p>State Web Template eleventy page generation codebase uses several layout page options:</p>
   <ul>
@@ -18,7 +18,7 @@ permalink: "sample/layouts.html"
    <li><code>navicons-landing.njk</code> (full width that has main navigation with icons)</li>
    <li><code>navicons.njk</code> (has main navigation with icons)</li>
    <li><code>search.njk</code> (search results page)</li>
-   <li><code>components.njk</code> or <code>templates.njk</code> (page with dynamic left side navigation)</li>
+   <li><code>components.njk</code> or <code>patterns.njk</code> (page with dynamic left side navigation)</li>
   </ul>
 
   <p>To use use one of those option you need to specify <code>layout</code> key in your front matter data at the
@@ -31,7 +31,7 @@ title: Your page title
 layout: page.njk
 ---</code></pre>
 
-  <p><span class="text-highlight-primary">Note:</span> You can inspect page templates source code in
+  <p><span class="text-highlight-primary">Note:</span> You can inspect page layouts source code in
    <code>/src/_includes/layouts/</code> folder or download source code zip file at the State Web Template <a
     href="https://github.com/Office-of-Digital-Innovation/California-State-Web-Template/releases"> GitHub
     releases page</a>.
@@ -50,15 +50,17 @@ layout: page.njk
  </div>
 
  <div class="col-md-4 p-t-lg" role="complementary">
-  <h3>Templates:</h3>
+  <h3>Template's structure:</h3>
   <!-- Side navigation -->
   <div class="accordion-list list-group">
-   <a href="/sample/content-patterns.html" class="list-group-item list-group-item-action"><span class="ca-gov-icon-apps"
+   <a href="/structure.html" class="list-group-item list-group-item-action"><span class="ca-gov-icon-grid"
+     aria-hidden="true"></span> Structure</a>
+   <a href="/components.html" class="list-group-item list-group-item-action"><span class="ca-gov-icon-gears"
+     aria-hidden="true"></span> Components</a>
+   <a href="/patterns.html" class="list-group-item list-group-item-action"><span class="ca-gov-icon-apps"
      aria-hidden="true"></span> Content Patterns</a>
-   <a href="/sample/page-templates.html" class="list-group-item list-group-item-action"><span
-     class="ca-gov-icon-responsive-alt" aria-hidden="true"></span> Page templates</a>
-   <a href="/sample/layouts.html" class="active list-group-item list-group-item-action"><span class="ca-gov-icon-menu"
-     aria-hidden="true"></span> Page layouts</a>
+
+
   </div>
  </div>
 </div>
