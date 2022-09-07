@@ -8,9 +8,9 @@ permalink: "updates.html"
 
 <div class="row">
  <div class="col-md-3">
-  <nav aria-labelledby="page-navigation-label" class="page-navigation  sticky-6">
-   <div id="page-navigation-label" class="label">On this page</div>
-   <ul>
+  <nav aria-labelledby="page-navigation-label" class="side-navigation sticky-6 overflow-auto">
+   <div id="page-navigation-label" class="label h4 m-t">On this page:</div>
+   <ul class="list-navigation">
     <li><a href="#v6">Release features</a></li>
     <li><a href="#update">Update your template</a></li>
    </ul>
@@ -19,7 +19,7 @@ permalink: "updates.html"
  <div class="col-md-9 p-b-lg">
 
 
-  <h1 class="mt-lg-0">What’s new</h1>
+  <h1 class="mt-lg-0">Template updates</h1>
   <p class="lead">We are continually improving the California State Web Template. View release features by date for
    items that have been added or updated. </p>
   <p>If you are new here, you may find our <a href="/getting-started.html">getting started</a> page helpful.</p>
@@ -139,7 +139,7 @@ permalink: "updates.html"
   </table>
 
 
-  <p>Find complete release changelogs on <a
+  <p>Find changelogs for V6 and earlier on the <a
     href="https://github.com/Office-of-Digital-Innovation/California-State-Web-Template/releases">GitHub production
     release page</a></p>
 
@@ -152,15 +152,16 @@ permalink: "updates.html"
    <li><strong>Save a backup</strong>
     <br />
     <span class="cagov-step-list-content">
-     <p>Before updating the latest State Web Template version, save a backup of your current site. This will enable you
-      to restore your current site if system errors occur during the update.</p>
+     <p>Before updating to the latest State Web Template version, save a backup of your current site. Use the backup to
+      restore your current site if the update fails.</p>
     </span>
    </li>
    <li><strong>Download the latest State Web Template release</strong>
     <br />
     <span class="cagov-step-list-content">
      <p>Use our <a href="https://github.com/Office-of-Digital-Innovation/California-State-Template/releases">GitHub
-       repository</a> to download the latest release. If you are using <a href="/cdn.html">State Web Template CDN</a>,
+       repository</a> to download the latest release. If you are using the <a href="/cdn.html">State Web Template
+       CDN</a>,
       update your CDN links to the latest release.</p>
     </span>
    </li>
@@ -168,30 +169,22 @@ permalink: "updates.html"
     <br />
     <span class="cagov-step-list-content">
 
-     <p>After downloading the latest state template files, complete a thorough code comparison by:</p>
-
-     <p><span aria-hidden="true" class="">&#x25cf;</span> <span class="text-bold">Option 1.</span> Locally comparing
-      files
-      side-by-side.</p>
-     <p><span aria-hidden="true" class="">&#x25cf;</span> <span class="text-bold">Option 2.</span> Comparing your local
-      files to State Web Template files in GitHub.</p>
-     <p><span aria-hidden="true" class="">&#x25cf;</span> Comparing release branches on GitHub.</p>
-     <p class="p-l-md">To do so you need to make new pull request then can select a release branch name from the compare
-      drop down
-      menu
-      at the top of the page. Here's an example of a comparison between two State Web Template release branches.</p>
-     <img src="/images/GitHub-compare.jpg" alt="comparison between two State Web Template release branches example"
-      class="img-fluid m-b-md m-l-md">
-
+     <p>Use GitHub to <a
+       href="https://docs.github.com/en/repositories/releasing-projects-on-github/comparing-releases">compare
+       releases</a> and view code changes at a glance. This works best if you are
+      already using a published GitHub version of the state template.
+     </p>
+     <p>You can also locally compare code files to the latest release.
+     </p>
 
     </span>
    </li>
    <li><strong>Inspect CSS and JavaScript changes</strong>
     <br />
     <span class="cagov-step-list-content">
-     <p>Most changes are made in the CSS and JavaScript files. Compare those changes thoroughly. Look for the State Web
-      Template CSS and JavaScript source files in <code>/src/scss/</code> and
-      <code>/src/js/</code> folders. Update your source CSS and JS files if necessary.
+     <p>Most changes are made in the CSS and JavaScript source files in the <code>/src/scss/</code> and
+      <code>/src/js/</code> folders. Inspect those files thoroughly. Update your source CSS and JavaScript files if
+      necessary.
      </p>
     </span>
    </li>
@@ -217,8 +210,8 @@ permalink: "updates.html"
    <li><strong>Build and test your site</strong>
     <br />
     <span class="cagov-step-list-content">
-     <p>Build and run your site locally. Make sure there are no NPM or other errors when using build commands. Test your
-      site with manual and automatic accessibility testing of all updated pages. </p>
+     <p>Build and run your site locally. Make sure there are no NPM (Node Package Manager) or other errors when using
+      build commands. Perform manual and automatic accessibility testing of all updated pages.</p>
     </span>
    </li>
 
