@@ -615,7 +615,7 @@
   document.querySelector('#fontlist').innerHTML = (numberOfResults) ? listHtml : '<div class="fs1">No icons found.</div>';
  }
 
- const myRequest = new Request('https://california.azureedge.net/cdt/statetemplate/6.0.7/fonts/selection.json');
+ const myRequest = new Request('https://california.azureedge.net/fonts/selection.json');
  fetch(myRequest)
   .then(response => response.json())
   .then(data => {
