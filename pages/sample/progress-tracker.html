@@ -1,14 +1,14 @@
 ﻿---
-title: Progress Bars
+title: Progress tracker
 landing: Components
 layout: components.njk
-permalink: "components/progress-bars.html"
+permalink: "components/progress-tracker.html"
 ---
 
 
 <div class="row">
  <div class="half">
-  <h1 class="mt-lg-0">Progress Bar</h1>
+  <h1 class="mt-lg-0">Progress tracker</h1>
   <p>Provide up-to-date feedback on the progress of a workflow or action with simple yet flexible
    progress bars.</p>
   <p>The progress bars can be colored with traditional theme colors plus new accent colors. Below
@@ -92,3 +92,58 @@ permalink: "components/progress-bars.html"
   <pre><code class="overflow-auto">{% include "../../src/_includes/modules/progress-bar-stacked.html" %}</code></pre>
  </div>
 </div>
+
+
+<h2>Progress block</h2>
+
+<p>Progress block is progress trackers (or progress indicators) display progress through a sequence by
+ breaking it up into multiple logical and numbered steps. They guide the user through a number of
+ steps in order to complete a specified task.</p>
+
+<h2>Example:</h2>
+{% include "../../src/_includes/modules/progress-block.html" %}
+
+
+
+<h2>Example #2:</h2>
+<p class="m-b-lg">Following example uses <code>.bg-primary-light</code>,
+ <code>.brd-primary-light</code>, etc. classes to specify colors for the specific progress block
+ elements. To change the color of the block elements change <code>-primary-</code> part of the class
+ name to either <code>-highlight-</code>, <code>-standout-</code>, or <code>-secondary-</code>.
+ {% include "../../src/_includes/modules/progress-block-bold.html" %}
+
+
+
+
+
+
+<h2 id="timeline">Timeline</h2>
+<p>Timeline is a display of a list of events (or milestones) in chronological order. in our case it
+ could be a line with dots labelled with dates and events paralleling it.</p>
+
+<h2>Example:</h2>
+{% include "../../src/_includes/modules/timeline.html" %}
+
+
+<button type="button" class="btn btn-default btn-sm" data-bs-toggle="modal" data-bs-target="#progress-block">Show Source
+ Code</button>
+<!-- Modal -->
+<div class="modal fade" id="progress-block" role="dialog">
+ <div class="modal-dialog modal-lg">
+  <div class="modal-content">
+   <div class="modal-header">
+    <h3 class="h4 modal-title">HTML Markup</h3>
+    <button type="button" class="close btn btn-secondary" data-bs-dismiss="modal"><span class="sr-only">Close
+      modal</span><span class="ca-gov-icon-close-mark" aria-hidden="true"></span></button>
+
+   </div>
+   <div class="modal-body">
+    <h3 class="h4">Source code:</h3>
+    <pre><code class="overflow-auto">{% include "../../src/_includes/modules/timeline.html" %}</code></pre>
+   </div>
+   <div class="modal-footer">
+    <button type="button" class="btn btn-default" data-bs-dismiss="modal">Close</button>
+   </div>
+  </div>
+ </div>
+</div><!-- / End Modal -->

@@ -101,3 +101,47 @@ permalink: "components/lists.html"
   <pre><code class="overflow-auto">{% include "../../src/_includes/modules/list-multi-unordered.html" %}</code></pre>
  </div>
 </div>
+
+
+<h2 class="step-list">Step list</h2>
+
+<p>The step list is a numbered list. It has:</p>
+<ul>
+ <li>A number for each item in the list, enclosed in a circle</li>
+ <li>Lines connecting all the circled numbers</li>
+ <li>A title for each step</li>
+ <li>Detail for each step
+  <ul>
+   <li>You can use hyperlinks in the detail space</li>
+   <li>You cannot use bullet points in the detail space</li>
+  </ul>
+ </li>
+</ul>
+<p>State processes can be complicated and opaque. The step list shows all the steps in a process. The step list makes
+ these processes visible, even when some steps do not require people to act.</p>
+<h2 id="when-and-how-to-use-it" tabindex="-1">When and how to use it</h2>
+<p>Use the step list when you need more than one sentence to explain the steps in a process.</p>
+<p>Introduce the step list with a heading so people know what process the step list describes. You can add a paragraph
+ block between the heading and the step list, but this is optional. Keep this paragraph concise.</p>
+<p>The step list emphasizes important processes. Use it sparingly on your website. If you have a process where most
+ steps can be explained in one sentence, use a regular numbered list instead.</p>
+<h3 id="how-not-to-use-it" tabindex="-1">How not to use it</h3>
+<p>Do not use the step list to create a list of items that are not ordered. Use bullet points instead.</p>
+<h2 id="demo-and-sample-markup" tabindex="-1">Demo and sample markup</h2>
+<html-preview>
+ <cagov-code-preview data-instructions="">
+  <div class="code-preview">
+   <div class="code-preview-demo">
+
+    {% include "../../src/_includes/modules/step-list.html" %}
+
+   </div>
+   <div class="code-block">
+    <h3><label for="sample-accordion-list">Source code:</label></h3>
+    <textarea id="sample-accordion-list" class="form-control" rows="10" cols="80">{% include "../../src/_includes/modules/step-list.html" %}
+                    </textarea>
+
+   </div>
+  </div>
+ </cagov-code-preview>
+</html-preview>
