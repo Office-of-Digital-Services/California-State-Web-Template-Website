@@ -18,7 +18,7 @@ permalink: "structure/structure-search.html"
       <li><a href="/structure/structure-search.html" class="active">Search</a></li>
       <li><a href="/structure/structure-settings.html">Settings</a></li>
       <li><a href="/structure/structure-site-header.html">Site Header</a></li>
-      <li><a href="/structure/navsamples.html">Site Navigation</a></li>
+      <li><a href="/structure/site-navigation.html">Site Navigation</a></li>
       <li><a href="/structure/structure-utility-header.html">Utility Header</a></li>
      </ul>
     </li>
@@ -35,24 +35,10 @@ permalink: "structure/structure-search.html"
    your website.</p>
 
 
-
-  <h2>When and how to use it</h2>
-
-  <p>Search component is placed into <code>navigation-search</code> container which goes after Mobile Controls. Search
-   box usually displays to the right of the site name.</p>
-  <p>On mobile, the search box becomes a search button that opens
-   a search box. It also displays to the right of the site name.</p>
-
-  <p>There
-   are two kinds of search bar implementations in State Web Template.</p>
-
-  <h3>Active search</h3>
+  <h2>Active search</h2>
   <p>The active (featured) search is
    default search bar implementation on most State Web Template pages. This
    implementation makes search bar visible and available in the right side of the site header.</p>
-
-
-
 
   <div class="tab-group responsive">
    <ul id="tabs1" class="nav nav-tabs" role="tablist">
@@ -100,7 +86,7 @@ permalink: "structure/structure-search.html"
       <div class="card-body">
        <h3 class="h4 m-t-0">HTML</h3>
        <pre><code>{% include "../../src/_includes/search.njk" %}</code>
-      </pre>
+       </pre>
       </div>
      </div>
     </div>
@@ -127,12 +113,12 @@ permalink: "structure/structure-search.html"
         <code>&lt;/header&gt;</code> tag
        </p>
        <pre><code><div class="navigation-search full-width-nav container">
-    <div id="head-search" class="search-container featured-search">
-     &#123;% include "src/_includes/search.njk" %&#125;
-    </div>
-    &#123;% include "src/_includes/navigation.njk" %&#125;
- </div>
- </code></pre>
+     <div id="head-search" class="search-container featured-search">
+      &#123;% include "src/_includes/search.njk" %&#125;
+     </div>
+     &#123;% include "src/_includes/navigation.njk" %&#125;
+  </div>
+  </code></pre>
 
 
        <p><span class="text-highlight-primary">Note:</span> Path to the include will be relative to the directory of
@@ -147,12 +133,7 @@ permalink: "structure/structure-search.html"
 
 
 
-
-
-
-
-
-  <h3>Inactive search</h3>
+  <h2>Inactive search</h2>
   Another search implementation is
   the inactive (hidden) search bar. This implementation is used in mobile view and in pages that use <a
    href="/sample/navigation-icons.html">Navigation with Icons</a> site navigation type option. To activate the search
@@ -254,11 +235,16 @@ permalink: "structure/structure-search.html"
 
 
 
+  <h2>Usage</h2>
+  <h3>When and how to use it</h3>
 
+  <p>Search component is placed into <code>navigation-search</code> container which goes after Mobile Controls. Search
+   box usually displays to the right of the site name.</p>
+  <p>On mobile, the search box becomes a search button that opens
+   a search box. It also displays to the right of the site name.</p>
 
-
-
-
+  <p>There
+   are two kinds of search bar implementations in State Web Template.</p>
 
 
 
