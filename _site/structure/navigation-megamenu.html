@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Navigation Samples</title> 
+  <title>Megamenu</title> 
   <meta charset="utf-8">
   <meta name="Author" content="State of California" />
   <meta name="Description" content="State of California" />
@@ -181,43 +181,148 @@
       </div>
       <!-- navigation types -->
             
-		          <nav id="navigation" class="main-navigation auto-highlight">
+              <nav id="navigation" class="main-navigation megadropdown auto-highlight">
  <ul id="nav_list" class="top-level-nav">
   <li class="nav-item">
-       
-       <a class="first-level-link" href="/updates.html">Template updates</a>
-        
-   </li>
-   <li class="nav-item">
-       
-       <a class="first-level-link" href="/getting-started.html">Get started</a>
-        
-   </li>
-   <li class="nav-item">       
-       
-       <a class="first-level-link active" href="/structure.html">Structure</a>
-        
-   </li>
-   <li class="nav-item">
-       
-       <a class="first-level-link" href="/visual-design.html">Visual design</a>
-        
-   </li>
-   <li class="nav-item">
-       
-       <a class="first-level-link" href="/components.html">Components</a>
-        
-   </li>
-   <li class="nav-item">
-       
-       <a class="first-level-link" href="/patterns.html" >Patterns</a>
-        
-   </li>
+   <a class="first-level-link">Getting Started</a>
+   <div class="sub-nav">
+    <div class="second-level-nav flex">
+     <a href="/getting-started.html" class="second-level-link">
+      <span class="ca-gov-icon-online-services font-size-40" aria-hidden="true"></span>
+      <p class="h3 sub-nav-link">Getting Started
+       <span class="sr-only">page</span>
+      </p>
+      <p class="link-description">How to apply California State Template css, js and ssi</p>
+     </a>
+     <a href="/updates.html" class="second-level-link">
+      <span class="ca-gov-icon-file-check font-size-40" aria-hidden="true"></span>
+      <p class="h3 sub-nav-link">Update</p>
+      <p class="link-description">Update your State Template to most current version</p>
+     </a>
+     <a href="/cdn.html" class="second-level-link">
+      <span class="ca-gov-icon-globe font-size-40" aria-hidden="true"></span>
+      <p class="h3 sub-nav-link">CDN</p>
+      <p class="link-description">Load your website faster by using State Template CDN</p>
+     </a>
+    </div>
+    <div class="second-level-nav flex with-border">
+
+     <a href="/structure.html" class="second-level-link">
+      <span class="ca-gov-icon-flowchart" aria-hidden="true"></span>Structure
+      <div class="link-description">Find out more about State Template structure</div>
+     </a>
+     <a href="https://github.com/Office-of-Digital-Innovation/California-State-Template-v5" class="second-level-link"
+      target="_blank">
+      <span class="ca-gov-icon-download-cloud" aria-hidden="true"></span>Download
+      <div class="link-description">Download or clone State Template on GitHub
+      </div>
+     </a>
+    </div>
+   </div>
+  </li>
+
+  <li class="nav-item">
+   <a href="/visual-design.html" class="first-level-link">Visual Desing</a>
+   <div class="sub-nav">
+    <div class="second-level-nav flex">
+     <a href="/visual-design/typography.html" class="second-level-link">
+      <img class="image-icon rounded-50x m-b-md" src="/images/type.png" alt="Typography Icon">
+      <p class="h3 sub-nav-link">Typography</p>
+     </a>
+     <a href="/visual-design/color-schemes.html" class="second-level-link">
+      <img class="image-icon rounded-50x m-b-md" src="/images/color.png" alt="Color Schemes Icon">
+      <p class="h3 sub-nav-link">Color Schemes</p>
+     </a>
+     <a href="/visual-design/icon-fonts.html" class="second-level-link">
+      <img class="image-icon rounded-50x m-b-md" src="/images/icons.png" alt="Bear Icon">
+      <p class="h3 sub-nav-link">Icons</p>
+     </a>
+    </div>
+
+   </div>
+  </li>
+  <li class="nav-item">
+   <a href="/components.html" class="first-level-link">Components</a>
+   <div class="sub-nav">
+    <div class="second-level-nav flex">
+     <a href="/structure/site-navigation.html" class="second-level-link">
+      <img class="image-icon rounded-50x m-b-md" src="/images/sample/images/03.png" alt="Navigation Icon">
+      <p class="h3 sub-nav-link">Navigation Samples</p>
+      <p class="link-description">Main navigation types and variations examples</p>
+     </a>
+     <a href="/components.html" class="second-level-link">
+      <img class="image-icon rounded-50x m-b-md" src="/images/sample/images/features-icon.png" alt="Components Icon">
+      <p class="h3 sub-nav-link">Components</p>
+      <p class="link-description">Working web components examples with their documentation
+      </p>
+     </a>
+     <a href="/css-shortcuts/shortcuts.html" class="second-level-link">
+      <img class="image-icon rounded-50x m-b-md" src="/images/sample/images/css-icon.png" alt="CSS Icon">
+      <p class="h3 sub-nav-link">CSS Shortcuts</p>
+      <p class="link-description">State Template's custom css classes shortcuts list</p>
+     </a>
+    </div>
+
+   </div>
+  </li>
+
+  <li class="nav-item">
+   <a href="/patterns.html" class="first-level-link">Patterns</a>
+   <div class="sub-nav">
+    <div class="second-level-nav flex">
+     <a href="/" class="second-level-link">
+      <span class="ca-gov-icon-home" aria-hidden="true"></span>
+      <span class="h4">Homepage</span>
+      <div class="link-description">Home page layout
+      </div>
+     </a>
+     <a href="/structure/layout-page.html" class="second-level-link">
+      <span class="ca-gov-icon-loud-grid" aria-hidden="true"></span>
+      <span class="h4">Layouts</span>
+      <div class="link-description">Page layouts options
+      </div>
+     </a>
+     <a href="//serp.html?q=components" class="second-level-link" target="_blank">
+      <span class="ca-gov-icon-searching" aria-hidden="true"></span>
+      <span class="h4">Search Results</span>
+      <div class="link-description">Search directory sample page</div>
+     </a>
+    </div>
+   </div>
+  </li>
+
+  <li class="nav-item">
+   <a href="/about.html" class="first-level-link">About</a>
+   <div class="sub-nav">
+    <div class="second-level-nav flex with-border">
+     <a href="/about.html" class="second-level-link">
+      <div class="media-left">
+       <img class="media-object width-80 height-80" src="/sample/images/02.png" alt="About icon">
+      </div>
+      <div class="media-body">
+       <div class="title text-left">About State Template</div>
+       <div class="teaser link-description text-left">California State Template overview</div>
+      </div>
+     </a>
+     <a href="https://webstandards.ca.gov/" class="second-level-link" target="_blank">
+      <div class="media-left">
+       <img class="media-object width-80 height-80" src="/sample/images/01.png" alt="Web Standards icon">
+      </div>
+      <div class="media-body">
+       <div class="title text-left">Web Standards</div>
+       <div class="teaser link-description text-left">Web Standards and Design System for
+        California Government</div>
+      </div>
+     </a>
+
+    </div>
+
+   </div>
+  </li>
+
  </ul>
-
 </nav>
-
-            
+		        
     </div>
   </header>
 
@@ -291,49 +396,52 @@
      
    
      
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
       
-      <li><a href="/structure.html" title="Structure landing page">Structure</a></li>
+      <li><a href="/structure.html" title="Strucure landing page">Strucure</a></li>
+        
+         <li><a href="/structure/site-navigation.html" title="Site navigation landing page">Site navigation</a></li>
+        
        
-      <li>Navigation samples</li>
+      <li>Megamenu</li>
        
-   
-     
-   
-     
-   
-     
-   
-     
-   
-     
-   
-     
-   
-     
-   
-     
-   
-     
-   
-     
-   
-     
-   
-     
-   
-     
-   
-     
-   
-     
-   
-     
-   
-     
-   
-     
-   
-     
    
      
    
@@ -407,7 +515,7 @@
 
 
 <div class="row">
- <div class="col-md-3" role="complementary">
+ <div class="col-md-3">
   <!-- Side navigation -->
   <nav aria-labelledby="navigation-list" class="side-navigation sticky-6">
    <ul class="list-navigation">
@@ -418,120 +526,30 @@
       <li><a href="/structure/structure-search.html">Search</a></li>
       <li><a href="/structure/structure-settings.html">Settings</a></li>
       <li><a href="/structure/structure-site-header.html">Site Header</a></li>
-      <li><a href="/structure/navsamples.html" class="active">Site Navigation</a></li>
+      <li><a href="/structure/site-navigation.html">Site Navigation</a>
+       <ul>
+        <li><a href="/structure/site-navigation.html#Single-level-menu">Single level menu</a></li>
+        <li><a href="/structure/site-navigation.html#Dropdown-menu">Dropdown menu</a></li>
+        <li><a href="/structure/site-navigation.html#Megamenu" class="active">Megamenu</a></li>
+        <li><a href="/structure/site-navigation.html#Icon-menu">Icon menu</a></li>
+       </ul>
+      </li>
       <li><a href="/structure/structure-utility-header.html">Utility Header</a></li>
      </ul>
     </li>
    </ul>
   </nav>
  </div>
- <div class="col-md-9">
+ <div class="col-md-9 m-b-lg">
 
 
-  <h1 class="mt-lg-0 m-b-lg">Navigation Samples</h1>
-  <p>Here are the State Web Template navigation types and variations:</p>
-
-  <div class="row m-t-md">
-   <div class="col-md-6 text-center">
-    <a href="/structure/navigation-dropdown.html"
-     class="no-underline d-block p-a-md brd-solid-1 brd-gray-light rounded-15 color-gray-dark  h-100 transition-0_3 shadow2-hover"
-     title="Dropdown navigation example">
-     <h2 class="h4 m-y-0">Dropdown navigation</h2>
-     <p class="font-size-16">The dropdown menu displays a simple dropdown for sub navigation elements. Click on the
-      image to experiense
-      the Dropdown Navigation.</p>
-     <img src="/images/nav-dropdown.jpg" alt="Dropdown naviagiton"
-      class="img-fluid brd-solid-1 brd-gray-light shadow2 m-b-md">
-    </a>
-
-   </div>
-   <div class="col-md-6 text-center">
-    <a href="/structure/navigation-megamenu-flex.html"
-     class="no-underline d-block p-a-md brd-solid-1 brd-gray-light rounded-15 color-gray-dark  h-100 transition-0_3 shadow2-hover"
-     title="Flex megamenu example">
-     <h2 class="h4  m-y-0">Flex megamenu</h2>
-     <p class="font-size-16">The Flex Megamenu displays dropdown panels for sub navigation. Click on the image to
-      experiense
-      the Flex Megamenu Navigation.</p>
-     <img src="/images/nav-mega.jpg" alt="Flex megamenu naviagiton"
-      class="img-fluid brd-solid-1 brd-gray-light shadow2 m-b-md">
-    </a>
-
-   </div>
-  </div>
-
-
-
-  <div class="row m-t-md">
-   <div class="col-md-6 text-center">
-    <a href="/structure/navigation-full-width-utility.html"
-     class="no-underline d-block p-a-md brd-solid-1 brd-gray-light rounded-15 color-gray-dark  h-100 transition-0_3 shadow2-hover"
-     title="Dropdown navigation example">
-     <h2 class="h4 m-y-0">Full Width Navigation with Active Search</h2>
-     <p class="font-size-16">This wull width navigation layout uses featured search that is placed to the right of the
-      website's logo.</p>
-     <img src="/images/nav-search.jpg" alt="Full width navigation with active search"
-      class="img-fluid brd-solid-1 brd-gray-light shadow2 m-b-md">
-    </a>
-
-   </div>
-   <div class="col-md-6 text-center">
-    <a href="/structure/navigation-icons.html"
-     class="no-underline d-block p-a-md brd-solid-1 brd-gray-light rounded-15 color-gray-dark  h-100 transition-0_3 shadow2-hover"
-     title="Flex megamenu example">
-     <h2 class="h4  m-y-0">Navigation with Icons</h2>
-     <p class="font-size-16">Navigation with Icons uses icons from CAGov font library inside of the first level
-      navigation items. This navigation appears to the right of the site logo.</p>
-     <img src="/images/nav-icon.jpg" alt=">Navigation with icons example"
-      class="img-fluid brd-solid-1 brd-gray-light shadow2 m-b-md">
-    </a>
-
-   </div>
-  </div>
-
-
-  <div class="row m-t-md">
-   <div class="col-md-6 text-center">
-    <a href="/structure/page-navigation.html"
-     class="no-underline d-block p-a-md brd-solid-1 brd-gray-light rounded-15 color-gray-dark  h-100 transition-0_3 shadow2-hover"
-     title="Page navigation example">
-     <h2 class="h4 m-y-0">Page Navigation</h2>
-     <p class="font-size-16">Page navigation is a lists of anchor links to the level 2 headings (H2) of a webpage. It is
-      placed at the top of the page on the left.</p>
-     <img src="/images/nav-page.jpg" alt="Page navigation example"
-      class="img-fluid brd-solid-1 brd-gray-light shadow2 m-b-md">
-    </a>
-
-   </div>
-   <div class="col-md-6 text-center">
-    <a href="/structure/navigation-sidebar.html"
-     class="no-underline d-block p-a-md brd-solid-1 brd-gray-light rounded-15 color-gray-dark  h-100 transition-0_3 shadow2-hover"
-     title="Side navigation example">
-     <h2 class="h4  m-y-0">Side Navigation</h2>
-     <p class="font-size-16">Side navigation is a vertical navigation component that is placed at the top of the page on
-      the left.</p>
-     <img src="/images/nav-side.jpg" alt="Side naviagiton example"
-      class="img-fluid brd-solid-1 brd-gray-light shadow2 m-b-md">
-    </a>
-
-   </div>
-  </div>
-
-
-  <div class="row m-t-md">
-   <div class="col-md-6 text-center">
-    <a href="/structure/navigation-single.html"
-     class="no-underline d-block p-a-md brd-solid-1 brd-gray-light rounded-15 color-gray-dark  h-100 transition-0_3 shadow2-hover"
-     title="Page navigation example">
-     <h2 class="h4 m-y-0">Single Level Navigation</h2>
-     <p class="font-size-16">This navigation type does not have a dropdown for sub navigation items.</p>
-     <img src="/images/nav-single.jpg" alt="Single level navigation example"
-      class="img-fluid brd-solid-1 brd-gray-light shadow2 m-b-md">
-    </a>
-
-   </div>
-
-  </div>
+  <h1 class="mt-lg-0">Megamenu</h1>
+  <p>
+   The flex megamenu displays dropdown panels for sub navigation when the user clicks on a primary
+   link.
+  </p>
+  <a href="/structure/site-navigation.html#Megamenu" class="btn btn-outline-primary"><span
+    class="ca-gov-icon-arrow-prev" aria-hidden="true"></span> Back to site navigation</a>
 
  </div>
 </div>

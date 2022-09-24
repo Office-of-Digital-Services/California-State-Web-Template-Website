@@ -5,6 +5,9 @@
     {% if helpers.getURL(nav.url, page.url) %} 
      {% if nav.parent %} 
       <li><a href="{{nav.parentURL }}" title="{{ nav.parent }} landing page">{{ nav.parent }}</a></li>
+       {% if nav.subparent %} 
+         <li><a href="{{nav.subparentURL }}" title="{{ nav.subparent }} landing page">{{ nav.subparent }}</a></li>
+       {% endif %} 
       {% endif %} 
       <li>{{ nav.text }}</li>
       {% endif %} 
