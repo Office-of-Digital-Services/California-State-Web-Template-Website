@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Components</title> 
+  <title>Alert</title> 
   <meta charset="utf-8">
   <meta name="Author" content="State of California" />
   <meta name="Description" content="State of California" />
@@ -231,15 +231,18 @@
   <li><a href="../index.html" title="Home page">Home</a></li>
    
      
+   
+     
+   
+     
+   
+     
       
-      <li>Components</li>
+      <li><a href="/components.html" title="Components landing page">Components</a></li>
+        
        
-   
-     
-   
-     
-   
-     
+      <li>Alert</li>
+       
    
      
    
@@ -419,9 +422,25 @@
        
       
       
-        <li><a href="/components/alert.html" >Alert</a>
+        <li><a href="/components/alert.html"  aria-current="page"  class="active" >Alert</a>
          
-         
+          
+           <ul>
+            
+            <li>
+             <a href="#Sample" class="tab-link">Sample</a>
+            </li>
+            
+            <li>
+             <a href="#Usage" class="tab-link">Usage</a>
+            </li>
+            
+            <li>
+             <a href="#Accessibility" class="tab-link">Accessibility</a>
+            </li>
+            
+           </ul>
+           
         </li>
        
       
@@ -514,355 +533,226 @@
 				<div class="col-lg-9 p-b-lg">
 					
 
-<h1 class="mt-lg-0">Components</h1>
-<p>Components are the reusable building blocks of the California State Template.</p>
-<p>Each component is designed to enhance user experiences, and has been created to work together to create patterns.</p>
-<p>Our components are:</p>
+
+<h1 class="mt-lg-0">Alert</h1>
+
+
+<p>The alert is for important, sometimes time-sensitive
+ information. Reserve alerts for information the audience must read before anything else.</p>
+<p>The alert is a band that extends across the width of the <a href="/structure/structure-utility-header.html">utility
+  header</a>. </p>
+<p>It includes:</p>
 <ul>
- <li>Created with performance and accessibility in mind</li>
- <li>Usable in any framework</li>
+ <li>An optional icon, selected from a list of font icon options</li>
+ <li>A text field, which includes the ability to link to other pages</li>
+ <li>An “X” close icon that allows people to dismiss the alert</li>
 </ul>
 
-<h2>All components </h2>
+<h2 id="Sample">Sample</h2>
 
-<p>Use these components to present information and images.</p>
+<!--TABS-->
+<div class="tab-group responsive">
+ <ul id="tabs1" class="nav nav-tabs" role="tablist">
+  <li class="nav-item">
+   <a id="tab-example1" href="#pane-example1" class="nav-link active" data-bs-toggle="tab" role="tab">Example</a>
+  </li>
+  <li class="nav-item">
+   <a id="tab-html1" href="#pane-html1" class="nav-link" data-bs-toggle="tab" role="tab">Source code</a>
+  </li>
+  <li class="nav-item">
+   <a id="tab-njk1" href="#pane-njk1" class="nav-link" data-bs-toggle="tab" role="tab">Nunjucks include</a>
+  </li>
+ </ul>
 
-<div class="row">
- <div class="col-md-4 m-t-md">
-  <a href="/components/accordions.html"
-   class="no-underline d-block color-gray-dark brd-gray-light brd-solid-1 rounded-5 h-100 transition-0_3 shadow2-hover color-primary color-primary-hover"
-   title="Accordion component example">
-   <div class="p-a-md d-flex align-content-center">
-    <img src="/images/components/icon-accordion.jpg" alt="accordion component" class="img-fluid">
+
+ <div id="tab-content" class="tab-content">
+  <!--Examples-->
+  <div id="pane-example1" class="card tab-pane fade show active" role="tabpanel" aria-labelledby="tab-example1">
+   <div class="card-header" id="heading-example1">
+    <a data-bs-toggle="collapse" href="#collapse-example1" data-parent="#tab-content" aria-expanded="true"
+     aria-controls="collapse-example1" data-hash="#pane-example1" title="Example tab header">
+     Example
+    </a>
    </div>
-   <div class="p-a">
-    <h3 class="h5 m-t-0">Accordion</h3>
-    <p class="font-size-16 color-black">An accordion is a list of headings that hide or reveal additional content when
-     selected.
-    </p>
+   <div id="collapse-example1" class="collapse show" role="tabpanel" aria-labelledby="heading-example1">
+    <div class="card-body p-b-lg">
+
+
+     <h3>Info</h3>
+     <div class="alert alert-info alert-dismissible alert-banner" role="alert">
+      <div class="container">
+       <button type="button" class="close ms-lg-auto" data-bs-dismiss="alert" aria-label="Close"><span
+         class="ca-gov-icon-close-mark" aria-hidden="true"></span></button>
+       We’ve made some changes that might impact your experience.
+       <a href="" class="btn btn-default btn-xs">Learn more <span class="sr-only">about the changes</span></a>
+      </div>
+     </div>
+
+
+
+     <h3>Warning</h3>
+     <div class="alert alert-warning alert-dismissible alert-banner" role="alert">
+      <div class="container">
+       <button type="button" class="close ms-lg-auto" data-bs-dismiss="alert" aria-label="Close"><span
+         class="ca-gov-icon-close-mark" aria-hidden="true"></span></button>
+       <strong>Your browser is outdated.</strong> Your experience may be degraded.
+       <a href="" class="btn btn-default btn-xs">More information</a>
+      </div>
+     </div>
+
+
+     <h3>Danger</h3>
+     <div class="alert alert-danger alert-dismissible alert-banner" role="alert">
+      <div class="container">
+       <button type="button" class="close ms-lg-auto" data-bs-dismiss="alert" aria-label="Close"><span
+         class="ca-gov-icon-close-mark" aria-hidden="true"></span></button>
+       Your browser is currently not supported.
+       <a href="" class="btn btn-default btn-xs">Learn more <span class="sr-only">about the problem</span></a>
+      </div>
+     </div>
+
+
+     <h3>Success</h3>
+     <div class="alert alert-success alert-dismissible alert-banner" role="alert">
+      <div class="container">
+       <button type="button" class="close ms-lg-auto" data-bs-dismiss="alert" aria-label="Close"><span
+         class="ca-gov-icon-close-mark" aria-hidden="true"></span></button>
+       <strong>Well done!</strong> Your form has been submitted successfully.
+      </div>
+     </div>
+
+
+     <h3>Severe</h3>
+     <div class="alert alert-severe alert-dismissible alert-banner" role="alert">
+      <div class="container">
+       <button type="button" class="close ms-lg-auto" data-bs-dismiss="alert" aria-label="Close"><span
+         class="ca-gov-icon-close-mark" aria-hidden="true"></span></button>
+       <span class="alert-level"><span class="ca-gov-icon-important" aria-hidden="true"></span>SEVERE
+        ALERT!</span><span class="alert-text"> Flash Flood in Sacramento until 12:15 PM.</span> <a href=""
+        class="btn btn-default btn-xs">Alert
+        Severe</a>
+      </div>
+     </div>
+
+
+
+    </div>
    </div>
-  </a>
- </div>
- <div class="col-md-4 m-t-md">
-  <a href="/components/alert-banner.html"
-   class="no-underline d-block color-gray-dark brd-gray-light brd-solid-1 rounded-5 h-100 transition-0_3 shadow2-hover color-primary color-primary-hover"
-   title="Alert banner component example">
-   <div class="p-a-md d-flex align-content-center">
-    <img src="/images/components/icon-alert.jpg" alt="Alert banner component" class="img-fluid">
+  </div>
+
+
+
+  <!--HTML-->
+  <div id="pane-html1" class="card tab-pane fade" role="tabpanel" aria-labelledby="tab-html1">
+   <div class="card-header" id="heading-html1">
+    <a class="collapsed" data-bs-toggle="collapse" href="#collapse-html1" data-parent="#tab-content"
+     aria-expanded="false" aria-controls="collapse-html1" data-hash="#pane-html1" title="HTML Source code tab header">
+     Source code
+    </a>
    </div>
-   <div class="p-a">
-    <h3 class="h5 m-t-0">Alert</h3>
-    <p class="font-size-16 color-black">An alert keeps users informed of important and sometimes time-sensitive changes.
-    </p>
+   <div id="collapse-html1" class="collapse" role="tabpanel" aria-labelledby="heading-html1">
+    <div class="card-body">
+     <pre style="max-height: 300px;"><code><div class="alert alert-warning alert-dismissible alert-banner" role="alert">
+    <div class="container">
+        <button type="button" class="close" data-bs-dismiss="alert" aria-label="Close"><span
+                class="ca-gov-icon-close-mark" aria-hidden="true"></span></button>
+        <span class="alert-level"><span class="ca-gov-icon-important" aria-hidden="true"></span>SEVERE
+            ALERT!</span><span class="alert-text">2015-12-21, 10:17 AM - Flash Flood in Sacramento and Placer Counties
+            until 12:15 PM.</span>
+        <a href="" class="alert-link btn btn-default btn-xs">More Information</a>
+
+    </div>
+</div></code>
+    </pre>
+
+    </div>
    </div>
-  </a>
- </div>
- <div class="col-md-4 m-t-md">
-  <a href="/components/blockquotes.html"
-   class="no-underline d-block color-gray-dark brd-gray-light brd-solid-1 rounded-5 h-100 transition-0_3 shadow2-hover color-primary color-primary-hover"
-   title="Blockquotes component example">
-   <div class="p-a-md d-flex align-content-center">
-    <img src="/images/components/icon-blockquote.jpg" alt="Blockquotes component" class="img-fluid">
+  </div>
+
+
+  <!--NJK-->
+  <div id="pane-njk1" class="card tab-pane fade" role="tabpanel" aria-labelledby="tab-njk1">
+   <div class="card-header" id="heading-njk1">
+    <a class="collapsed" data-bs-toggle="collapse" href="#collapse-njk1" data-parent="#tab-content"
+     aria-expanded="false" aria-controls="collapse-njk1" data-hash="#pane-njk1" title="Nunjucks include tab header">
+     Nunjucks include
+    </a>
    </div>
-   <div class="p-a">
-    <h3 class="h5 m-t-0">Blockquote</h3>
-    <p class="font-size-16 color-black">A blockquote emphasizes important speaker quotes or content excerpts.
-    </p>
+   <div id="collapse-njk1" class="collapse" role="tabpanel" aria-labelledby="heading-njk1">
+    <div class="card-body">
+     Add the alert key with the path to your alert html file
+     <code>alert: "../modules/alert-banner.html"</code>
+     after your
+     eleventy layout key
+     declaration in
+     the front matter data on your page.
+     <pre>---
+title: Alert Banner
+layout: page.njk
+alert: "../modules/alert-banner.html"
+---</pre>
+
+
+     <p>Or include alert banner module into your page directly after skip-to-content component:</p>
+     <pre>
+ &lt;header role="banner" id="header" class="global-header"&gt;
+   &lt;div id="skip-to-content"&gt;
+       &lt;a href="#main-content"&gt;Skip to Main Content&lt;/a&gt;
+     &lt;/div&gt;<br>
+     &lt;!-- Alert Banner --&gt;
+     &#10100;% include "../modules/alert-banner.html" %&#10101;
+   ...
+ &lt;/header&gt;
+ </pre>
+    </div>
    </div>
-  </a>
- </div>
-
-</div>
+  </div>
 
 
-
-
-<div class="row">
-
- <div class="col-md-4 m-t-md">
-  <a href="/components/breadcrumb.html"
-   class="no-underline d-block color-gray-dark brd-gray-light brd-solid-1 rounded-5 h-100 transition-0_3 shadow2-hover color-primary color-primary-hover"
-   title="Breadcrumb component example">
-   <div class="p-a-md d-flex align-content-center">
-    <img src="/images/components/icon-breadcrumbs.jpg" alt="Breadcrumb component" class="img-fluid">
-   </div>
-   <div class="p-a">
-    <h3 class="h5 m-t-0">Breadcrumb</h3>
-    <p class="font-size-16 color-black">A breadcrumb indicates the current page's location within a navigational
-     hierarchy.</p>
-   </div>
-  </a>
- </div>
-
- <div class="col-md-4 m-t-md">
-  <a href="/components/buttons.html"
-   class="no-underline d-block color-gray-dark brd-gray-light brd-solid-1 rounded-5 h-100 transition-0_3 shadow2-hover color-primary color-primary-hover"
-   title="Buttons example">
-   <div class="p-a-md d-flex align-content-center">
-    <img src="/images/components/icon-buttons.jpg" alt="Buttons component" class="img-fluid">
-   </div>
-   <div class="p-a">
-    <h3 class="h5 m-t-0">Button</h3>
-    <p class="font-size-16 color-black">A button draws attention to your primary call to action with a large clickable
-     surface.
-    </p>
-   </div>
-  </a>
- </div>
-
- <div class="col-md-4 m-t-md">
-  <a href="/components/cards.html"
-   class="no-underline d-block color-gray-dark brd-gray-light brd-solid-1 rounded-5 h-100 transition-0_3 shadow2-hover color-primary color-primary-hover"
-   title="Card component example">
-   <div class="p-a-md d-flex align-content-center">
-    <img src="/images/components/icon-card.png" alt="Card component" class="img-fluid">
-   </div>
-   <div class="p-a">
-    <h3 class="h5 m-t-0">Card</h3>
-    <p class="font-size-16 color-black">A card displays a snippet of information and can link to more details upon
-     interaction.
-    </p>
-   </div>
-  </a>
- </div>
-</div>
-
-
-
-
-<div class="row">
-
- <div class="col-md-4 m-t-md">
-  <a href="/components/countdown.html"
-   class="no-underline d-block color-gray-dark brd-gray-light brd-solid-1 rounded-5 h-100 transition-0_3 shadow2-hover color-primary color-primary-hover"
-   title="Countdown component example">
-   <div class="p-a-md d-flex align-content-center">
-    <img src="/images/components/icon-countdown.jpg" alt="Countdown component" class="img-fluid">
-   </div>
-   <div class="p-a">
-    <h3 class="h5 m-t-0">Countdown timer</h3>
-    <p class="font-size-16 color-black">A countdown timer emphasizes an important event by counting toward or away from
-     a fixed point in time.
-    </p>
-   </div>
-  </a>
- </div>
- <div class="col-md-4 m-t-md">
-  <a href="/components/form.html"
-   class="no-underline d-block color-gray-dark brd-gray-light brd-solid-1 rounded-5 h-100 transition-0_3 shadow2-hover color-primary color-primary-hover"
-   title="Form styles example">
-   <div class="p-a-md d-flex align-content-center">
-    <img src="/images/components/icon-form.jpg" alt="Form components" class="img-fluid">
-   </div>
-   <div class="p-a">
-    <h3 class="h5 m-t-0">Form elements</h3>
-    <p class="font-size-16 color-black">A form allows visitors to enter and submit information to a server.
-    </p>
-   </div>
-  </a>
- </div>
- <div class="col-md-4 m-t-md">
-  <a href="/components/horizontal-rules.html"
-   class="no-underline d-block color-gray-dark brd-gray-light brd-solid-1 rounded-5 h-100 transition-0_3 shadow2-hover color-primary color-primary-hover"
-   title="Horizontal separator component example">
-   <div class="p-a-md d-flex align-content-center">
-    <img src="/images/components/icon-rule.jpg" alt="Horizontal separator component" class="img-fluid">
-   </div>
-   <div class="p-a">
-    <h3 class="h5 m-t-0">Horizontal separator</h3>
-    <p class="font-size-16 color-black">The horizontal separator is a style component that uses a line to separate
-     content into sections.</p>
-   </div>
-  </a>
- </div>
-
-
-</div>
-
-
-
-
-
-<div class="row">
- <div class="col-md-4 m-t-md">
-  <a href="/components/lists.html"
-   class="no-underline d-block color-gray-dark brd-gray-light brd-solid-1 rounded-5 h-100 transition-0_3 shadow2-hover color-primary color-primary-hover"
-   title="List component example">
-   <div class="p-a-md d-flex align-content-center">
-    <img src="/images/components/icon-lists.jpg" alt="List component" class="img-fluid">
-   </div>
-   <div class="p-a">
-    <h3 class="h5 m-t-0">Lists</h3>
-    <p class="font-size-16 color-black">A list is a vertical grouping of related content.
-    </p>
-   </div>
-  </a>
- </div>
- <div class="col-md-4 m-t-md">
-  <a href="/components/modal.html"
-   class="no-underline d-block color-gray-dark brd-gray-light brd-solid-1 rounded-5 h-100 transition-0_3 shadow2-hover color-primary color-primary-hover"
-   title="Modal component example">
-   <div class="p-a-md d-flex align-content-center">
-    <img src="/images/components/icon-modal.jpg" alt="Modal components" class="img-fluid">
-   </div>
-   <div class="p-a">
-    <h3 class="h5 m-t-0">Modal</h3>
-    <p class="font-size-16 color-black">A modal displays content in a temporary window that appears over the page
-     content
-    </p>
-   </div>
-  </a>
- </div>
-
- <div class="col-md-4 m-t-md">
-  <a href="/components/number-counter.html"
-   class="no-underline d-block color-gray-dark brd-gray-light brd-solid-1 rounded-5 h-100 transition-0_3 shadow2-hover color-primary color-primary-hover"
-   title="Number counter component example">
-   <div class="p-a-md d-flex align-content-center">
-    <img src="/images/components/icon-number.jpg" alt="Number counter component" class="img-fluid">
-   </div>
-   <div class="p-a">
-    <h3 class="h5 m-t-0">Number counter</h3>
-    <p class="font-size-16 color-black">The number counter adds animation to numbers.</p>
-   </div>
-  </a>
- </div>
-
-
-
-
-</div>
-
-
-
-
-<div class="row">
-
- <div class="col-md-4 m-t-md">
-  <a href="/components/parallax.html"
-   class="no-underline d-block color-gray-dark brd-gray-light brd-solid-1 rounded-5 h-100 transition-0_3 shadow2-hover color-primary color-primary-hover"
-   title="Parallax component example">
-   <div class="p-a-md d-flex align-content-center">
-    <img src="/images/components/icon-parallax.jpg" alt="Parallax component" class="img-fluid">
-   </div>
-   <div class="p-a">
-    <h3 class="h5 m-t-0">Parallax</h3>
-    <p class="font-size-16 color-black">The parallax is a visual design component. When scrolling, it allows background
-     and foreground elements to move at different speeds.
-    </p>
-   </div>
-  </a>
- </div>
-
-
- <div class="col-md-4 m-t-md">
-  <a href="/components/progress-tracker.html"
-   class="no-underline d-block color-gray-dark brd-gray-light brd-solid-1 rounded-5 h-100 transition-0_3 shadow2-hover color-primary color-primary-hover"
-   title="Progress tracker component example">
-   <div class="p-a-md d-flex align-content-center">
-    <img src="/images/components/icon-bar.jpg" alt="Progress tracker component" class="img-fluid">
-   </div>
-   <div class="p-a">
-    <h3 class="h5 m-t-0">Progress tracker</h3>
-    <p class="font-size-16 color-black">A progress tracker displays the steps and progress through a journey.</p>
-   </div>
-  </a>
- </div>
-
- <div class="col-md-4 m-t-md">
-  <a href="/components/featured-search.html"
-   class="no-underline d-block color-gray-dark brd-gray-light brd-solid-1 rounded-5 h-100 transition-0_3 shadow2-hover color-primary color-primary-hover"
-   title="Search bar component example">
-   <div class="p-a-md d-flex align-content-center">
-    <img src="/images/components/icon-search.jpg" alt="Search bar component" class="img-fluid">
-   </div>
-   <div class="p-a">
-    <h3 class="h5 m-t-0">Search bar</h3>
-    <p class="font-size-16 color-black">The search bar allows visitors to search for specific content using keywords or
-     phrases.
-    </p>
-   </div>
-  </a>
  </div>
 </div>
+<!--END TABS-->
 
 
 
 
-
-<div class="row">
- <div class="col-md-4 m-t-md">
-  <a href="/components/socialsharer.html"
-   class="no-underline d-block color-gray-dark brd-gray-light brd-solid-1 rounded-5 h-100 transition-0_3 shadow2-hover color-primary color-primary-hover"
-   title="Social media icons example">
-   <div class="p-a-md d-flex align-content-center">
-    <img src="/images/components/icon-social.jpg" alt="Social media icons component" class="img-fluid">
-   </div>
-   <div class="p-a">
-    <h3 class="h5 m-t-0">Social media icons </h3>
-    <p class="font-size-16 color-black">The social media icons component lets you share your agency’s social media pages
-     with visitors.
-    </p>
-   </div>
-  </a>
- </div>
- <div class="col-md-4 m-t-md">
-  <a href="/components/tables.html"
-   class="no-underline d-block color-gray-dark brd-gray-light brd-solid-1 rounded-5 h-100 transition-0_3 shadow2-hover color-primary color-primary-hover"
-   title="Social Sharer example">
-   <div class="p-a-md d-flex align-content-center">
-    <img src="/images/components/icon-table.jpg" alt="Table component" class="img-fluid">
-   </div>
-   <div class="p-a">
-    <h3 class="h5 m-t-0">Table</h3>
-    <p class="font-size-16 color-black">A table displays large amounts of data in rows and columns.
-    </p>
-   </div>
-  </a>
- </div>
- <div class="col-md-4 m-t-md">
-  <a href="/components/tabs.html"
-   class="no-underline d-block color-gray-dark brd-gray-light brd-solid-1 rounded-5 h-100 transition-0_3 shadow2-hover color-primary color-primary-hover"
-   title="Tabs component example">
-   <div class="p-a-md d-flex align-content-center">
-    <img src="/images/components/icon-tabs.jpg" alt="Tabs component" class="img-fluid">
-   </div>
-   <div class="p-a">
-    <h3 class="h5 m-t-0">Tabs</h3>
-    <p class="font-size-16 color-black">Tabs organize related content into panels and enable visitors to navigate
-     between them.</p>
-   </div>
-  </a>
- </div>
+<h2 id="usage">Usage</h2>
+<h3>When and how to use it</h3>
+<p>Use the alert sparingly. They alarm people and distract from other content.</p>
+<p>Be concise with your alert content. Use a link to send people to a page with the details.</p>
+<p>Only use one alert on a page. Make sure the alert is relevant to the page it is on. Only duplicate the alert on other
+ pages if it applies to those pages.</p>
+<p>Use alerts to tell people about:</p>
+<ul>
+ <li>Open application periods (informational)</li>
+ <li>Planned maintenance (informational)</li>
+ <li>Approaching deadlines (warning)</li>
+ <li>Services that are down (danger)</li>
+ <li>Positive feedback (success)</li>
+</ul>
+<p>Choose an icon that supports the tone of your alert.</p>
 
 
-</div>
-
-
-
-
-
-
-
-
-
-
-<h3>Additional Bootstrap CSS & Components</h3>
-<p>
- We strongly recommend using the documented State Web Template components and
- patterns
- whenever possible; however, for more CSS classes and options as well as components
- we suggest
- utilizing what is available in Bootstrap first, before developing your own custom
- code.
+<h3>How not to use it</h3>
+<p>Do not put an alert on every page on your site. If people see alerts too often, they will start to ignore them and
+ not read the content.
 </p>
-<p>
- <span class="text-highlight-primary">NOTE:</span> When using custom components and
- content
- modules that are not documented as part of the State Template, migration to future
- versions
- of the State Template may require additional work.
-</p>
+<p>Do not put more than one alert on a page.</p>
+<p>Do not use alerts to simply highlight important content. They are for information that is new, relevant, and
+ temporary.</p>
+
+
+<h2 id="Accessibility">Accessibility</h2>
+<h3 class="m-t">Standard accessibility review</h3>
+<p>Each time a new component version is published:</p>
+<ul>
+ <li>Test with the <a href="https://www.deque.com/axe/" target="_blank">axe
+   accessibility tool</a>.</li>
+ <li>Review with the <a href="https://www.apple.com/voiceover/info/guide/_1121.html" target="_blank">VoiceOver</a> or <a
+   href="https://www.nvaccess.org/download/" target="_blank">NVDA</a> screen reader.</li>
+ <li>Ensure all actionable elements are accessible by keyboard command and tab in a logical order. </li>
+ <li>Check the component layout on a variety of screen sizes.</li>
+</ul>
 				</div>
 			</div>
 		</div>
