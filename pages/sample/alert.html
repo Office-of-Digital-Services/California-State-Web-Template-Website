@@ -1,20 +1,19 @@
 ﻿---
-title: Alert Banner
+title: Alert
 landing: Components
 layout: components.njk
-permalink: "components/alert-banner.html"
+permalink: "components/alert.html"
 ---
 
 
 
-<h1 class="mt-lg-0">Alert banner</h1>
+<h1 class="mt-lg-0">Alert</h1>
 
 
 <p>The alert is for important, sometimes time-sensitive
- information. Reserve alerts for information the audience must read before anything else. It goes above the site
- navigation on any page.
-</p>
-<p>The alert is a band that extends across the width of the page. </p>
+ information. Reserve alerts for information the audience must read before anything else.</p>
+<p>The alert is a band that extends across the width of the <a href="/structure/structure-utility-header.html">utility
+  header</a>. </p>
 <p>It includes:</p>
 <ul>
  <li>An optional icon, selected from a list of font icon options</li>
@@ -50,14 +49,18 @@ permalink: "components/alert-banner.html"
    </div>
    <div id="collapse-example1" class="collapse show" role="tabpanel" aria-labelledby="heading-example1">
     <div class="card-body p-b-lg">
-     <h3>Success</h3>
-     <div class="alert alert-success alert-dismissible alert-banner" role="alert">
+
+
+     <h3>Info</h3>
+     <div class="alert alert-info alert-dismissible alert-banner" role="alert">
       <div class="container">
        <button type="button" class="close ms-lg-auto" data-bs-dismiss="alert" aria-label="Close"><span
          class="ca-gov-icon-close-mark" aria-hidden="true"></span></button>
-       <strong>Well done!</strong> Your form has been submitted successfully
+       We’ve made some changes that might impact your experience.
+       <a href="" class="btn btn-default btn-xs">Learn more <span class="sr-only">about the changes</span></a>
       </div>
      </div>
+
 
 
      <h3>Warning</h3>
@@ -82,6 +85,16 @@ permalink: "components/alert-banner.html"
      </div>
 
 
+     <h3>Success</h3>
+     <div class="alert alert-success alert-dismissible alert-banner" role="alert">
+      <div class="container">
+       <button type="button" class="close ms-lg-auto" data-bs-dismiss="alert" aria-label="Close"><span
+         class="ca-gov-icon-close-mark" aria-hidden="true"></span></button>
+       <strong>Well done!</strong> Your form has been submitted successfully.
+      </div>
+     </div>
+
+
      <h3>Severe</h3>
      <div class="alert alert-severe alert-dismissible alert-banner" role="alert">
       <div class="container">
@@ -95,16 +108,7 @@ permalink: "components/alert-banner.html"
      </div>
 
 
-     <h3>Info</h3>
 
-     <div class="alert alert-info alert-dismissible alert-banner" role="alert">
-      <div class="container">
-       <button type="button" class="close ms-lg-auto" data-bs-dismiss="alert" aria-label="Close"><span
-         class="ca-gov-icon-close-mark" aria-hidden="true"></span></button>
-       We’ve made some changes that might impact your experience.
-       <a href="" class="btn btn-default btn-xs">Learn more <span class="sr-only">about the changes</span></a>
-      </div>
-     </div>
     </div>
    </div>
   </div>
@@ -177,11 +181,11 @@ alert: "../modules/alert-banner.html"
 
 <h2 id="usage">Usage</h2>
 <h3>When and how to use it</h3>
-<p>Use alert banners sparingly. They alarm people and distract from other content.</p>
-<p>Be concise with your alert banner content. Use a link to send people to a page with the details.</p>
-<p>Only use one alert banner on a page. Make sure the alert is relevant to the page it is on. Only duplicate the alert
- on other pages if it applies to those pages.</p>
-<p>Use alert banners to tell people about:</p>
+<p>Use the alert sparingly. They alarm people and distract from other content.</p>
+<p>Be concise with your alert content. Use a link to send people to a page with the details.</p>
+<p>Only use one alert on a page. Make sure the alert is relevant to the page it is on. Only duplicate the alert on other
+ pages if it applies to those pages.</p>
+<p>Use alerts to tell people about:</p>
 <ul>
  <li>Open application periods (informational)</li>
  <li>Planned maintenance (informational)</li>
@@ -193,11 +197,11 @@ alert: "../modules/alert-banner.html"
 
 
 <h3>How not to use it</h3>
-<p>Do not put an alert banner on every page on your site. If people see alerts too often, they will start to ignore them
- and not read the content.
+<p>Do not put an alert on every page on your site. If people see alerts too often, they will start to ignore them and
+ not read the content.
 </p>
-<p>Do not put more than one alert banner on a page.</p>
-<p>Do not use alert banners to simply highlight important content. They are for information that is new, relevant, and
+<p>Do not put more than one alert on a page.</p>
+<p>Do not use alerts to simply highlight important content. They are for information that is new, relevant, and
  temporary.</p>
 
 
