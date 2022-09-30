@@ -5,7 +5,8 @@
 // Remebemer scrolling position
 let sidenavigation = document.querySelector(".side-navigation");
 let topposition = localStorage.getItem("sidebar-scroll");
-let sidenavHeight = sidenavigation.clientHeight;
+
+
 
 // Set active class on nav-heading links:
 function addActiveClass() {
@@ -50,7 +51,7 @@ function sidenavOverflow() {
   var viewportheight = document.documentElement.clientHeight;
   var viewportMinusHeader = viewportheight - siteHeaderHeight - 100;
 
-  if (viewportMinusHeader <= sidenavHeight) {
+  if (viewportMinusHeader <= document.querySelector(".side-navigation").clientHeight) {
    sidenavigation.classList.add("overflow-auto");
    // sidenavigation.setAttribute("style", "max-height:" + viewportMinusHeader + "px")
   }

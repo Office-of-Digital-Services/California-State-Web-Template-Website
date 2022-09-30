@@ -213,6 +213,34 @@
    }
    // 991px
   }
+  &.active {
+   .first-level-link, .first-level-btn {
+    background-color: $gray-50;
+    position: relative;
+    color: $black;
+    &:hover,
+    &:focus {
+     color: $gray-800 !important;
+     background-color: $gray-100;
+    }
+    &::before {
+     content: "";
+     position: absolute;
+     top: 0;
+     left: 0;
+     height: 100%;
+     border-left: 1px solid $gray-200;
+    }
+    &::after {
+     content: "";
+     position: absolute;
+     top: 0;
+     right: 0;
+     height: 100%;
+     border-left: 1px solid $gray-200;
+    }
+   }
+  }
  }
 }
 
@@ -652,10 +680,6 @@
       bottom: 0.35rem;
      }
     }
-   }
-
-   .first-level-link {
-    // min-height: 55px;
    }
 
    #nav-item-search button.first-level-link {
