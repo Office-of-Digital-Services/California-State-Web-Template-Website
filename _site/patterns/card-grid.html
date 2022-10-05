@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>News Blocks</title> 
+  <title>Card grid</title> 
   <meta charset="utf-8">
   <meta name="Author" content="State of California" />
   <meta name="Description" content="State of California" />
@@ -295,22 +295,22 @@
      
    
      
-   
-     
-   
-     
-   
-     
-   
-     
-   
-     
       
       <li><a href="/patterns.html" title="Patterns landing page">Patterns</a></li>
         
        
-      <li>News blocks</li>
+      <li>Card grid</li>
        
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
    
      
    
@@ -412,13 +412,33 @@
 		   
 
 <ul class="list-navigation">
-  <li><a href="/patterns.html" class="nav-heading" id="components-list">Content Patterns</a>
+  <li><a href="/patterns.html" class="nav-heading" id="components-list">Patterns</a>
   <ul>
   				
       
-        <li><a href="/patterns/blurbs.html" >Blurbs</a>
+        <li><a href="/patterns/card-grid.html"  aria-current="page"  class="active" >Card grid</a>
          
-         
+          
+           <ul>
+            
+            <li>
+             <a href="#Basic" data-hash="" class="tab-link">Basic</a>
+            </li>
+            
+            <li>
+             <a href="#With-icons" data-hash="" class="tab-link">With icons</a>
+            </li>
+            
+            <li>
+             <a href="#With-images" data-hash="" class="tab-link">With images</a>
+            </li>
+            
+            <li>
+             <a href="#News-block" data-hash="" class="tab-link">News block</a>
+            </li>
+            
+           </ul>
+           
         </li>
        
       
@@ -430,7 +450,7 @@
        
       
       
-        <li><a href="/patterns/feature-card.html" >Feature Card</a>
+        <li><a href="/patterns/feature-card.html" >Feature card</a>
          
          
         </li>
@@ -441,34 +461,22 @@
        
       
       
-        <li><a href="/patterns/link-grid.html" >Link Grid</a>
+        <li><a href="/patterns/link-grid.html" >Link grid</a>
          
          
         </li>
        
       
       
-          <li><a href="/patterns/news-blocks.html"  aria-current="page"  class="active" >News Blocks</a></li>
+          <li><a href="/patterns/news-list.html" >News list</a></li>
        
       
       
-          <li><a href="/patterns/news-list.html" >News List</a></li>
+          <li><a href="/patterns/news-article.html" >News article</a></li>
        
       
       
-          <li><a href="/patterns/news-detail.html" >News Detail</a></li>
-       
-      
-      
-          <li><a href="/patterns/panes.html" >Panes</a></li>
-       
-      
-      
-          <li><a href="/patterns/profile-banners.html" >Profile Banners</a></li>
-       
-      
-      
-          <li><a href="/patterns/testimonials.html" >Testimonials</a></li>
+          <li><a href="/patterns/profile-banners.html" >Profile banner</a></li>
        
       
       </ul>
@@ -481,12 +489,441 @@
 				<div class="col-lg-9 p-b-lg body-content">
 					
 
-<h1 class="mt-lg-0">News Blocks</h1>
-<p>A news blocks contains a repeating group of news items. </p>
+
+<h1 class="mt-lg-0">Card grid</h1>
+<p>The card grid is grid layout of two or more cards. Card grid is a great way to
+ showcase small bits of important information, and are often used in rows to display services or
+ features. Image or icon can either appear above the card's text, or to the left of the text. </p>
+
+<hr />
+
+<h2 id="Basic">Basic</h2>
 
 
-<h2>Example:</h2>
+
+<!--TABS-->
+<div class="tab-group responsive">
+ <ul id="tabs1" class="nav nav-tabs" role="tablist">
+  <li class="nav-item">
+   <a id="tab-example1" href="#pane-example1" class="nav-link active" data-bs-toggle="tab" role="tab">Example</a>
+  </li>
+  <li class="nav-item">
+   <a id="tab-html1" href="#pane-html1" class="nav-link" data-bs-toggle="tab" role="tab">Source code</a>
+  </li>
+
+ </ul>
+
+
+ <div id="tab-content" class="tab-content">
+  <!--Examples-->
+  <div id="pane-example1" class="card tab-pane fade show active" role="tabpanel" aria-labelledby="tab-example1">
+   <div class="card-header" id="heading-example1">
+    <a data-bs-toggle="collapse" href="#collapse-example1" data-parent="#tab-content" aria-expanded="true"
+     aria-controls="collapse-example1" data-hash="#pane-example1" title="Example tab header">
+     Example
+    </a>
+   </div>
+   <div id="collapse-example1" class="collapse show" role="tabpanel" aria-labelledby="heading-example1">
+    <div class="p-a-md p-b-lg">
+
+     <!--ICON BLOCKS-->
 <div class="row">
+ <div class="col-md-4">
+  <div class="card text-center">
+   <div class="card-body bg-gray-50">
+    <h3 class="h4 m-y-sm">Elegant Design</h3>
+    <p class="m-b">Curabitur ut augue at mi eleifend lobortis. Ut tincidunt lacinia nisi pharetra.</p>
+    <a class="btn btn-sm btn-default" href="#">Read More <span class="sr-only">about Elegant Design</span></a>
+   </div>
+  </div>
+
+
+ </div>
+ <div class="col-md-4">
+  <div class="card text-center">
+   <div class="card-body bg-gray-50">
+    <h3 class="h4 m-y-sm">ADA Compliant</h3>
+    <p class="m-b">Curabitur ut augue at mi eleifend lobortis. Ut tincidunt lacinia nisi pharetra.</p>
+    <a class="btn btn-sm btn-default" href="#">Read More <span class="sr-only">about ADA
+      Compliant</span></a>
+   </div>
+  </div>
+
+ </div>
+ <div class="col-md-4">
+  <!-- Icon Blocks -->
+  <div class="card text-center">
+   <div class="card-body bg-gray-50">
+    <h3 class="h4 m-y-sm">Fully Responsive</h3>
+    <p class="m-b">Curabitur ut augue at mi eleifend lobortis. Ut tincidunt lacinia nisi pharetra.</p>
+    <a class="btn btn-sm btn-default" href="#">Read More <span class="sr-only">about Fully
+      Responsiven</span></a>
+   </div>
+  </div>
+
+
+ </div>
+</div><!-- End Group-->
+
+
+    </div>
+   </div>
+  </div>
+
+
+
+  <!--HTML-->
+  <div id="pane-html1" class="card tab-pane fade" role="tabpanel" aria-labelledby="tab-html1">
+   <div class="card-header" id="heading-html1">
+    <a class="collapsed" data-bs-toggle="collapse" href="#collapse-html1" data-parent="#tab-content"
+     aria-expanded="false" aria-controls="collapse-html1" data-hash="#pane-html1" title="HTML Source code tab header">
+     Source code
+    </a>
+   </div>
+   <div id="collapse-html1" class="collapse" role="tabpanel" aria-labelledby="heading-html1">
+    <div class="card-body">
+     <pre style="max-height: 300px;"><code><!--ICON BLOCKS-->
+<div class="row">
+ <div class="col-md-4">
+  <div class="card text-center">
+   <div class="card-body bg-gray-50">
+    <h3 class="h4 m-y-sm">Elegant Design</h3>
+    <p class="m-b">Curabitur ut augue at mi eleifend lobortis. Ut tincidunt lacinia nisi pharetra.</p>
+    <a class="btn btn-sm btn-default" href="#">Read More <span class="sr-only">about Elegant Design</span></a>
+   </div>
+  </div>
+
+
+ </div>
+ <div class="col-md-4">
+  <div class="card text-center">
+   <div class="card-body bg-gray-50">
+    <h3 class="h4 m-y-sm">ADA Compliant</h3>
+    <p class="m-b">Curabitur ut augue at mi eleifend lobortis. Ut tincidunt lacinia nisi pharetra.</p>
+    <a class="btn btn-sm btn-default" href="#">Read More <span class="sr-only">about ADA
+      Compliant</span></a>
+   </div>
+  </div>
+
+ </div>
+ <div class="col-md-4">
+  <!-- Icon Blocks -->
+  <div class="card text-center">
+   <div class="card-body bg-gray-50">
+    <h3 class="h4 m-y-sm">Fully Responsive</h3>
+    <p class="m-b">Curabitur ut augue at mi eleifend lobortis. Ut tincidunt lacinia nisi pharetra.</p>
+    <a class="btn btn-sm btn-default" href="#">Read More <span class="sr-only">about Fully
+      Responsiven</span></a>
+   </div>
+  </div>
+
+
+ </div>
+</div><!-- End Group--></code>
+    </pre>
+
+    </div>
+   </div>
+  </div>
+
+
+ </div>
+</div>
+<!--END TABS-->
+
+
+
+<h2 id="With-icons">With icons</h2>
+<!--TABS-->
+<div class="tab-group responsive">
+ <ul id="tabs2" class="nav nav-tabs" role="tablist">
+  <li class="nav-item">
+   <a id="tab-example2" href="#pane-example2" class="nav-link active" data-bs-toggle="tab" role="tab">Example</a>
+  </li>
+  <li class="nav-item">
+   <a id="tab-html2" href="#pane-html2" class="nav-link" data-bs-toggle="tab" role="tab">Source code</a>
+  </li>
+
+ </ul>
+
+
+ <div id="tab-content" class="tab-content">
+  <!--Examples-->
+  <div id="pane-example2" class="card tab-pane fade show active" role="tabpanel" aria-labelledby="tab-example2">
+   <div class="card-header" id="heading-example2">
+    <a data-bs-toggle="collapse" href="#collapse-example2" data-parent="#tab-content" aria-expanded="true"
+     aria-controls="collapse-example2" data-hash="#pane-example2" title="Example tab header">
+     Example
+    </a>
+   </div>
+   <div id="collapse-example2" class="collapse show" role="tabpanel" aria-labelledby="heading-example2">
+    <div class="card-body p-b-lg">
+
+
+     <div class="row">
+ <div class="col-md-4">
+  <!-- Icon Blocks -->
+  <a href="/visual-design/color-schemes.html" class="no-underline d-block bg-gray-50 bg-grey-lightest-hover p-a-md"
+   title="Features">
+   <div class="text-center">
+    <span class="ca-gov-icon-features text-4rem d-block" aria-hidden="true"></span>
+    <h2 class="h4 m-t-0 m-b-sm color-gray-dark">Features</h2>
+
+    <p class="color-gray-dark">This template includes 12 color themes and multiple page layouts
+     samples</p>
+   </div>
+  </a>
+  <!-- End Icon Blocks -->
+ </div>
+ <div class="col-md-4">
+  <!-- Icon Blocks -->
+  <a href="/accessibility.html" class="no-underline d-block bg-gray-50 bg-grey-lightest-hover p-a-md"
+   title="Accessibility">
+   <div class="text-center">
+    <span class="ca-gov-icon-accessibility text-4rem d-block" aria-hidden="true"></span>
+    <h2 class="h4 m-t-0 m-b-sm color-gray-dark">Accessibility</h2>
+    <p class="color-gray-dark">State Web Template is designed, developed and maintained to be ADA compliant
+    </p>
+   </div>
+  </a>
+  <!-- End Icon Blocks -->
+ </div>
+ <div class="col-md-4">
+  <!-- Icon Blocks -->
+  <a href="/components.html" class="no-underline d-block bg-gray-50 bg-grey-lightest-hover p-a-md" title="Code">
+   <div class="text-center">
+    <span class="ca-gov-icon-code text-4rem d-block" aria-hidden="true"></span>
+    <h2 class="h4 m-t-0 m-b-sm color-gray-dark">Code</h2>
+    <p class="color-gray-dark">State Web Template emplate includes over 180 ready to use code samples</p>
+   </div>
+  </a>
+  <!-- End Icon Blocks -->
+ </div>
+</div>
+
+    </div>
+   </div>
+  </div>
+
+
+
+  <!--HTML-->
+  <div id="pane-html2" class="card tab-pane fade" role="tabpanel" aria-labelledby="tab-html2">
+   <div class="card-header" id="heading-html2">
+    <a class="collapsed" data-bs-toggle="collapse" href="#collapse-html2" data-parent="#tab-content"
+     aria-expanded="false" aria-controls="collapse-html2" data-hash="#pane-html2" title="HTML Source code tab header">
+     Source code
+    </a>
+   </div>
+   <div id="collapse-html2" class="collapse" role="tabpanel" aria-labelledby="heading-html2">
+    <div class="card-body">
+     <pre style="max-height: 300px;"><code><div class="row">
+ <div class="col-md-4">
+  <!-- Icon Blocks -->
+  <a href="/visual-design/color-schemes.html" class="no-underline d-block bg-gray-50 bg-grey-lightest-hover p-a-md"
+   title="Features">
+   <div class="text-center">
+    <span class="ca-gov-icon-features text-4rem d-block" aria-hidden="true"></span>
+    <h2 class="h4 m-t-0 m-b-sm color-gray-dark">Features</h2>
+
+    <p class="color-gray-dark">This template includes 12 color themes and multiple page layouts
+     samples</p>
+   </div>
+  </a>
+  <!-- End Icon Blocks -->
+ </div>
+ <div class="col-md-4">
+  <!-- Icon Blocks -->
+  <a href="/accessibility.html" class="no-underline d-block bg-gray-50 bg-grey-lightest-hover p-a-md"
+   title="Accessibility">
+   <div class="text-center">
+    <span class="ca-gov-icon-accessibility text-4rem d-block" aria-hidden="true"></span>
+    <h2 class="h4 m-t-0 m-b-sm color-gray-dark">Accessibility</h2>
+    <p class="color-gray-dark">State Web Template is designed, developed and maintained to be ADA compliant
+    </p>
+   </div>
+  </a>
+  <!-- End Icon Blocks -->
+ </div>
+ <div class="col-md-4">
+  <!-- Icon Blocks -->
+  <a href="/components.html" class="no-underline d-block bg-gray-50 bg-grey-lightest-hover p-a-md" title="Code">
+   <div class="text-center">
+    <span class="ca-gov-icon-code text-4rem d-block" aria-hidden="true"></span>
+    <h2 class="h4 m-t-0 m-b-sm color-gray-dark">Code</h2>
+    <p class="color-gray-dark">State Web Template emplate includes over 180 ready to use code samples</p>
+   </div>
+  </a>
+  <!-- End Icon Blocks -->
+ </div>
+</div></code>
+    </pre>
+    </div>
+   </div>
+  </div>
+
+
+ </div>
+</div>
+<!--END TABS-->
+
+
+
+
+<h2 id="With-images">With images</h2>
+
+<!--TABS-->
+<div class="tab-group responsive">
+ <ul id="tabs2" class="nav nav-tabs" role="tablist">
+  <li class="nav-item">
+   <a id="tab-example3" href="#pane-example3" class="nav-link active" data-bs-toggle="tab" role="tab">Example</a>
+  </li>
+  <li class="nav-item">
+   <a id="tab-html3" href="#pane-html3" class="nav-link" data-bs-toggle="tab" role="tab">Source code</a>
+  </li>
+
+ </ul>
+
+
+ <div id="tab-content" class="tab-content">
+  <!--Examples-->
+  <div id="pane-example3" class="card tab-pane fade show active" role="tabpanel" aria-labelledby="tab-example3">
+   <div class="card-header" id="heading-example3">
+    <a data-bs-toggle="collapse" href="#collapse-example3" data-parent="#tab-content" aria-expanded="true"
+     aria-controls="collapse-example3" data-hash="#pane-example3" title="Example tab header">
+     Example
+    </a>
+   </div>
+   <div id="collapse-example3" class="collapse show" role="tabpanel" aria-labelledby="heading-example3">
+    <div class="card-body p-b">
+
+
+     <div class="row">
+ <div class="col-md-4">
+  <a href="/visual-design/color-schemes.html" class="no-underline d-block bg-gray-50 bg-grey-lightest-hover p-a-md"
+   title="Features">
+   <div class="text-center">
+    <img class="image-icon rounded-50x m-b" src="/images/sample/images/features-icon.png" alt="Features icon">
+    <h2 class="h4 m-t-0 m-b-sm color-gray-dark">Features</h2>
+    <p class="color-gray-dark">This template includes 12 color themes and multiple page layouts
+     samples</p>
+   </div>
+  </a>
+ </div>
+ <div class="col-md-4">
+  <a href="/accessibility.html" class="no-underline d-block bg-gray-50 bg-grey-lightest-hover p-a-md"
+   title="Accessibility">
+   <div class="text-center">
+    <img class="image-icon rounded-50x m-b" src="/images/sample/images/accessibility-icon.png" alt="Accessibility Icon">
+    <h2 class="h4 m-t-0 m-b-sm color-gray-dark">Accessibility</h2>
+    <p class="color-gray-dark">State Web Template is designed, developed and maintained to be ADA compliant
+    </p>
+   </div>
+  </a>
+ </div>
+ <div class="col-md-4">
+  <a href="/components.html" class="no-underline d-block bg-gray-50 bg-grey-lightest-hover p-a-md" title="Code">
+   <div class="text-center">
+    <img class="image-icon rounded-50x m-b" src="/images/sample/images/code-icon.png" alt="Code icon">
+    <h2 class="h4 m-t-0 m-b-sm color-gray-dark">Code</h2>
+    <p class="color-gray-dark">State Web Template emplate includes over 180 ready to use code samples</p>
+   </div>
+  </a>
+ </div>
+</div>
+
+
+    </div>
+   </div>
+  </div>
+
+
+
+  <!--HTML-->
+  <div id="pane-html3" class="card tab-pane fade" role="tabpanel" aria-labelledby="tab-html3">
+   <div class="card-header" id="heading-html3">
+    <a class="collapsed" data-bs-toggle="collapse" href="#collapse-html3" data-parent="#tab-content"
+     aria-expanded="false" aria-controls="collapse-html3" data-hash="#pane-html3" title="HTML Source code tab header">
+     Source code
+    </a>
+   </div>
+   <div id="collapse-html3" class="collapse" role="tabpanel" aria-labelledby="heading-html3">
+    <div class="card-body">
+     <pre style="max-height: 300px;"><code><div class="row">
+ <div class="col-md-4">
+  <a href="/visual-design/color-schemes.html" class="no-underline d-block bg-gray-50 bg-grey-lightest-hover p-a-md"
+   title="Features">
+   <div class="text-center">
+    <img class="image-icon rounded-50x m-b" src="/images/sample/images/features-icon.png" alt="Features icon">
+    <h2 class="h4 m-t-0 m-b-sm color-gray-dark">Features</h2>
+    <p class="color-gray-dark">This template includes 12 color themes and multiple page layouts
+     samples</p>
+   </div>
+  </a>
+ </div>
+ <div class="col-md-4">
+  <a href="/accessibility.html" class="no-underline d-block bg-gray-50 bg-grey-lightest-hover p-a-md"
+   title="Accessibility">
+   <div class="text-center">
+    <img class="image-icon rounded-50x m-b" src="/images/sample/images/accessibility-icon.png" alt="Accessibility Icon">
+    <h2 class="h4 m-t-0 m-b-sm color-gray-dark">Accessibility</h2>
+    <p class="color-gray-dark">State Web Template is designed, developed and maintained to be ADA compliant
+    </p>
+   </div>
+  </a>
+ </div>
+ <div class="col-md-4">
+  <a href="/components.html" class="no-underline d-block bg-gray-50 bg-grey-lightest-hover p-a-md" title="Code">
+   <div class="text-center">
+    <img class="image-icon rounded-50x m-b" src="/images/sample/images/code-icon.png" alt="Code icon">
+    <h2 class="h4 m-t-0 m-b-sm color-gray-dark">Code</h2>
+    <p class="color-gray-dark">State Web Template emplate includes over 180 ready to use code samples</p>
+   </div>
+  </a>
+ </div>
+</div></code>
+   </pre>
+
+    </div>
+   </div>
+  </div>
+
+
+ </div>
+</div>
+<!--END TABS-->
+
+
+
+<h2 id="News-block">News block</h2>
+
+<!--TABS-->
+<div class="tab-group responsive">
+ <ul id="tabs4" class="nav nav-tabs" role="tablist">
+  <li class="nav-item">
+   <a id="tab-example4" href="#pane-example4" class="nav-link active" data-bs-toggle="tab" role="tab">Example</a>
+  </li>
+  <li class="nav-item">
+   <a id="tab-html4" href="#pane-html4" class="nav-link" data-bs-toggle="tab" role="tab">Source code</a>
+  </li>
+
+ </ul>
+
+
+ <div id="tab-content" class="tab-content">
+  <!--Examples-->
+  <div id="pane-example4" class="card tab-pane fade show active" role="tabpanel" aria-labelledby="tab-example4">
+   <div class="card-header" id="heading-example4">
+    <a data-bs-toggle="collapse" href="#collapse-example4" data-parent="#tab-content" aria-expanded="true"
+     aria-controls="collapse-example4" data-hash="#pane-example4" title="Example tab header">
+     Example
+    </a>
+   </div>
+   <div id="collapse-example4" class="collapse show" role="tabpanel" aria-labelledby="heading-example4">
+    <div class="card-body p-b">
+
+
+     <div class="row">
     <div class="col-md-4 m-b-md">
         <!-- Article -->
         <article class="shadow">
@@ -638,21 +1075,25 @@
     </div>
 </div>
 <!-- End News Block -->
-<!-- Trigger the modal with a button -->
-<button type="button" class="btn btn-default btn-sm" data-bs-toggle="modal" data-bs-target="#news-block">Show Source
- Code</button>
-<!-- Modal -->
-<div class="modal fade" id="news-block" role="dialog">
- <div class="modal-dialog modal-lg">
-  <div class="modal-content">
-   <div class="modal-header">
-    <h4 class="modal-title">HTML Markup</h4>
-    <button type="button" class="close btn btn-secondary" data-bs-dismiss="modal"><span class="sr-only">Close
-      modal</span><span class="ca-gov-icon-close-mark" aria-hidden="true"></span></button>
+
+
+    </div>
    </div>
-   <div class="modal-body">
-    <strong aria-label="Source code for News Block">Source code:</strong>
-    <pre><code class="overflow-auto"><div class="row">
+  </div>
+
+
+
+  <!--HTML-->
+  <div id="pane-html4" class="card tab-pane fade" role="tabpanel" aria-labelledby="tab-html4">
+   <div class="card-header" id="heading-html4">
+    <a class="collapsed" data-bs-toggle="collapse" href="#collapse-html4" data-parent="#tab-content"
+     aria-expanded="false" aria-controls="collapse-html4" data-hash="#pane-html4" title="HTML Source code tab header">
+     Source code
+    </a>
+   </div>
+   <div id="collapse-html4" class="collapse" role="tabpanel" aria-labelledby="heading-html4">
+    <div class="card-body">
+     <pre style="max-height: 300px;"><code><div class="row">
     <div class="col-md-4 m-b-md">
         <!-- Article -->
         <article class="shadow">
@@ -803,184 +1244,17 @@
         <!-- End Article -->
     </div>
 </div>
-<!-- End News Block --></code></pre>
-   </div>
-   <div class="modal-footer">
-    <button type="button" class="btn btn-default" data-bs-dismiss="modal">Close</button>
-   </div>
-  </div>
- </div>
-</div><!-- / End Modal -->
+<!-- End News Block --></code>
+   </pre>
 
-<hr>
-
-<h2>Image News Blocks</h2>
-<div class="row">
-    <div class="col-md-4 m-b-md">
-        <!-- Article -->
-        <article class="block-hover section-standout">
-            <figure class="bg-overlay">
-                <img class="img-fluid w-100 block-hover_zoom" src="/images/sample/images/500x450.jpg"
-                    alt="Image Description">
-            </figure>
-
-            <header class="w-100 text-center absolute-centered p-x">
-                <span class="btn btn-xs btn-primary rounded-0" href="#">DMV</span>
-                <h3 class="h4 m-y-sm">
-                    Incredible Image post
-                </h3>
-
-                <small class="color-white">
-                    <i class="ca-gov-icon-time pos-rel"></i> July 04, 2016
-                </small>
-            </header>
-
-            <a class="news-link" href="#">Read More about DMV</a>
-        </article>
-        <!-- End Article -->
     </div>
-    <div class="col-md-4 m-b-md">
-        <!-- Article -->
-        <article class="block-hover section-standout">
-            <figure class="bg-overlay">
-                <img class="img-fluid w-100 block-hover_zoom" src="/images/sample/images/500x450.jpg"
-                    alt="Image Description">
-            </figure>
-
-            <header class="w-100 text-center absolute-centered p-x">
-                <span class="btn btn-xs btn-primary rounded-0" href="#">CDT</span>
-                <h3 class="h4 m-y-sm">
-                    Demperdiet molesti volutpa
-                </h3>
-
-                <small class="color-white">
-                    <i class="ca-gov-icon-time pos-rel"></i> July 04, 2016
-                </small>
-            </header>
-
-            <a class="news-link" href="#">Read More about CDT</a>
-        </article>
-        <!-- End Article -->
-    </div>
-    <div class="col-md-4 m-b-md">
-        <!-- Article -->
-        <article class="block-hover section-standout">
-            <figure class="bg-overlay">
-                <img class="img-fluid w-100 block-hover_zoom" src="/images/sample/images/500x450.jpg"
-                    alt="Image Description">
-            </figure>
-
-            <header class="w-100 text-center absolute-centered p-x">
-                <span class="btn btn-xs btn-primary rounded-0" href="#">CDTFA</span>
-                <h3 class="h4 m-y-sm">
-                    Nullam non metus inmi
-                </h3>
-
-                <small class="color-white">
-                    <i class="ca-gov-icon-time pos-rel"></i> July 04, 2016
-                </small>
-            </header>
-
-            <a class="news-link" href="#">Read More about CDTFA</a>
-        </article>
-        <!-- End Article -->
-    </div>
-</div>
-
-<!-- End Image Block -->
-<button type="button" class="btn btn-default btn-sm" data-bs-toggle="modal" data-bs-target="#image-blocks">Show Source
- Code</button>
-<!-- Modal -->
-<div class="modal fade" id="image-blocks" role="dialog">
- <div class="modal-dialog modal-lg">
-  <div class="modal-content">
-   <div class="modal-header">
-    <h4 class="modal-title">HTML Markup</h4>
-    <button type="button" class="close btn btn-secondary" data-bs-dismiss="modal"><span class="sr-only">Close
-      modal</span><span class="ca-gov-icon-close-mark" aria-hidden="true"></span></button>
-   </div>
-   <div class="modal-body">
-    <strong aria-label="Source code for News Images Blocks">Source code:</strong>
-    <pre><code class="overflow-auto"><div class="row">
-    <div class="col-md-4 m-b-md">
-        <!-- Article -->
-        <article class="block-hover section-standout">
-            <figure class="bg-overlay">
-                <img class="img-fluid w-100 block-hover_zoom" src="/images/sample/images/500x450.jpg"
-                    alt="Image Description">
-            </figure>
-
-            <header class="w-100 text-center absolute-centered p-x">
-                <span class="btn btn-xs btn-primary rounded-0" href="#">DMV</span>
-                <h3 class="h4 m-y-sm">
-                    Incredible Image post
-                </h3>
-
-                <small class="color-white">
-                    <i class="ca-gov-icon-time pos-rel"></i> July 04, 2016
-                </small>
-            </header>
-
-            <a class="news-link" href="#">Read More about DMV</a>
-        </article>
-        <!-- End Article -->
-    </div>
-    <div class="col-md-4 m-b-md">
-        <!-- Article -->
-        <article class="block-hover section-standout">
-            <figure class="bg-overlay">
-                <img class="img-fluid w-100 block-hover_zoom" src="/images/sample/images/500x450.jpg"
-                    alt="Image Description">
-            </figure>
-
-            <header class="w-100 text-center absolute-centered p-x">
-                <span class="btn btn-xs btn-primary rounded-0" href="#">CDT</span>
-                <h3 class="h4 m-y-sm">
-                    Demperdiet molesti volutpa
-                </h3>
-
-                <small class="color-white">
-                    <i class="ca-gov-icon-time pos-rel"></i> July 04, 2016
-                </small>
-            </header>
-
-            <a class="news-link" href="#">Read More about CDT</a>
-        </article>
-        <!-- End Article -->
-    </div>
-    <div class="col-md-4 m-b-md">
-        <!-- Article -->
-        <article class="block-hover section-standout">
-            <figure class="bg-overlay">
-                <img class="img-fluid w-100 block-hover_zoom" src="/images/sample/images/500x450.jpg"
-                    alt="Image Description">
-            </figure>
-
-            <header class="w-100 text-center absolute-centered p-x">
-                <span class="btn btn-xs btn-primary rounded-0" href="#">CDTFA</span>
-                <h3 class="h4 m-y-sm">
-                    Nullam non metus inmi
-                </h3>
-
-                <small class="color-white">
-                    <i class="ca-gov-icon-time pos-rel"></i> July 04, 2016
-                </small>
-            </header>
-
-            <a class="news-link" href="#">Read More about CDTFA</a>
-        </article>
-        <!-- End Article -->
-    </div>
-</div>
-
-<!-- End Image Block --></code></pre>
-   </div>
-   <div class="modal-footer">
-    <button type="button" class="btn btn-default" data-bs-dismiss="modal">Close</button>
    </div>
   </div>
+
+
  </div>
-</div><!-- / End Modal -->
+</div>
+<!--END TABS-->
 				</div>
 			</div>
 		</div>
