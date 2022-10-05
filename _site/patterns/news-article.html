@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Testimonials</title> 
+  <title>News article</title> 
   <meta charset="utf-8">
   <meta name="Author" content="State of California" />
   <meta name="Description" content="State of California" />
@@ -309,18 +309,18 @@
      
    
      
-   
-     
-   
-     
-   
-     
       
       <li><a href="/patterns.html" title="Patterns landing page">Patterns</a></li>
         
        
-      <li>Testimonials</li>
+      <li>News article</li>
        
+   
+     
+   
+     
+   
+     
    
      
    
@@ -412,11 +412,11 @@
 		   
 
 <ul class="list-navigation">
-  <li><a href="/patterns.html" class="nav-heading" id="components-list">Content Patterns</a>
+  <li><a href="/patterns.html" class="nav-heading" id="components-list">Patterns</a>
   <ul>
   				
       
-        <li><a href="/patterns/blurbs.html" >Blurbs</a>
+        <li><a href="/patterns/card-grid.html" >Card grid</a>
          
          
         </li>
@@ -430,7 +430,7 @@
        
       
       
-        <li><a href="/patterns/feature-card.html" >Feature Card</a>
+        <li><a href="/patterns/feature-card.html" >Feature card</a>
          
          
         </li>
@@ -441,34 +441,22 @@
        
       
       
-        <li><a href="/patterns/link-grid.html" >Link Grid</a>
+        <li><a href="/patterns/link-grid.html" >Link grid</a>
          
          
         </li>
        
       
       
-          <li><a href="/patterns/news-blocks.html" >News Blocks</a></li>
+          <li><a href="/patterns/news-list.html" >News list</a></li>
        
       
       
-          <li><a href="/patterns/news-list.html" >News List</a></li>
+          <li><a href="/patterns/news-article.html"  aria-current="page"  class="active" >News article</a></li>
        
       
       
-          <li><a href="/patterns/news-detail.html" >News Detail</a></li>
-       
-      
-      
-          <li><a href="/patterns/panes.html" >Panes</a></li>
-       
-      
-      
-          <li><a href="/patterns/profile-banners.html" >Profile Banners</a></li>
-       
-      
-      
-          <li><a href="/patterns/testimonials.html"  aria-current="page"  class="active" >Testimonials</a></li>
+          <li><a href="/patterns/profile-banners.html" >Profile banner</a></li>
        
       
       </ul>
@@ -482,164 +470,103 @@
 					
 
 
+<h1 class="mt-lg-0">News article</h1>
+<p><code>.news-detail</code> is an end page content module for news articles. To begin, wrap the
+ contents of the page in a <code>&lt;article class="news-detail"&gt;</code> tag.</p>
+<p>This module makes use of the <code>&lt;header&gt;</code> tag and locates the h1 and the
+ publishing date within it.</p>
+<p>The keywords section uses an unordered list within a <code>div</code> or <code>footer</code>
+ element with the class of <code>.keywords</code> The keywords themselves could be linked or
+ not linked.</p>
+<h2>Schema Options (microdata)</h2>
+<p>This module is also available as a schema.org formatted module. Many applications, especially search engines, can benefit greatly from this structured data. Pages marked up using microdata enable search engines to understand the information on web pages and provide richer search results in order to make it easier for users to find relevant information on the web.</p>
+<p>Using microdata is optional, but highly encouraged. In the source code section, samples for plain html and the microdata version are both included.</p>
 
-<h1 class="mt-lg-0">Testimonials</h1>
-<p>The Testimonial <code>.thumbnail</code> can be positioned within the testimonial to fit various
- styles. Use classes <code>.thumbnail-left</code>, <code>.thumbnail-right</code> to control the
- horizontal alignment. Use <code>.thumbnail-middle</code>, <code>.thumbnail-bottom</code> to control
- it'ts vertical alignment. This is helpful when it's desirable to align the image with the middle or
- bottom of the testimonial. <code>.thumbnail-top</code> will place the image above the testimonail
- text and center it within the testimonial panel.</p>
+<h2>Example:</h2>
+<article class="news-detail">
+    <header>
+        <h2 class="h1">News Title</h2>
+        <div class="published">Published: <time datetime="2014-08-26">Aug 26, 2014</time></div>
+    </header>
 
-<p>Thumbnail images can also have classes applied to change the look and feel. <code>.img-circle</code>
- and <code>.img-rounded</code> can be used to round the corders of the image.</p>
+    <p><img src="/images/sample/images/75x75.gif" class="img-left" alt="">Full Article Text - Cras justo odio, dapibus
+        ac facilisis in, egestas eget quam. Curabitur blandit tempus porttitor. Vestibulum id ligula porta felis euismod
+        semper. Donec sed odio dui. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum.
+        Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
 
-
-<h2>Image Left Aligned:</h2>
-<blockquote class="testimonial testimonial-default">
-    <div class="thumbnail thumbnail-left">
-        <a href="#"><img class="thumbnail-img img-circle" src="/images/sample/images/70x70.gif" alt="..."></a>
-    </div>
-    <div class="testimonial-body">
-        <p>Maecenas sed diam eget risus varius blandit sit amet non magna. Morbi leo risus, porta ac consectetur ac,
-            vestibulum at eros.</p>
-        <footer>
-            <cite>
-                <a href="">John Smith</a> Some Awesome Company
-            </cite>
-        </footer>
-    </div>
-</blockquote>
-
-<h2>Source code:</h2>
-<pre><code class="overflow-auto"><blockquote class="testimonial testimonial-default">
-    <div class="thumbnail thumbnail-left">
-        <a href="#"><img class="thumbnail-img img-circle" src="/images/sample/images/70x70.gif" alt="..."></a>
-    </div>
-    <div class="testimonial-body">
-        <p>Maecenas sed diam eget risus varius blandit sit amet non magna. Morbi leo risus, porta ac consectetur ac,
-            vestibulum at eros.</p>
-        <footer>
-            <cite>
-                <a href="">John Smith</a> Some Awesome Company
-            </cite>
-        </footer>
-    </div>
-</blockquote></code></pre>
-
-
-<hr>
-
-
-<h2>Thumnail Right Aligned:</h2>
-<blockquote class="testimonial testimonial-danger">
-    <div class="testimonial-body">
-        <p>Maecenas sed diam eget risus varius blandit sit amet non magna. Morbi leo risus, porta ac consectetur ac,
-            vestibulum at eros.</p>
-        <footer>
-            <cite>
-                <a href="">John Smith</a> Some Awesome Company
-            </cite>
-        </footer>
-    </div>
-    <div class="thumbnail thumbnail-right">
-        <a href="#"><img class="thumbnail-img img-rounded" src="/images/sample/images/70x70.gif" alt="..."></a>
-    </div>
-</blockquote>
-<p><span class="text-highlight-primary">Note:</span> The source order for <code>.thumbnail</code> and
- <code>.testimonial-body</code> have been reversed. Source order is important when using this
- component with this configuration.
-</p>
+    <footer class="keywords">
+        Tags or Keywords
+        <ul>
+            <li><a href="">tag 1</a></li>
+            <li><a href="">tag 2</a></li>
+            <li><a href="">tag 3</a></li>
+            <li><a href="">tag 4</a></li>
+        </ul>
+    </footer>
+</article>
 
 <h2>Source code:</h2>
-<pre><code class="overflow-auto"><blockquote class="testimonial testimonial-danger">
-    <div class="testimonial-body">
-        <p>Maecenas sed diam eget risus varius blandit sit amet non magna. Morbi leo risus, porta ac consectetur ac,
-            vestibulum at eros.</p>
-        <footer>
-            <cite>
-                <a href="">John Smith</a> Some Awesome Company
-            </cite>
-        </footer>
-    </div>
-    <div class="thumbnail thumbnail-right">
-        <a href="#"><img class="thumbnail-img img-rounded" src="/images/sample/images/70x70.gif" alt="..."></a>
-    </div>
-</blockquote></code></pre>
+<div class="tab-group">
+ <ul id="sourceCode" class="nav nav-tabs" role="tablist">
+  <li class="active"><a href="#html" role="tab" data-bs-toggle="tab">HTML Markup</a></li>
+  <li><a href="#microdata" role="tab" data-bs-toggle="tab">Microdata</a></li>
+ </ul>
+ <!-- Tab panes -->
+ <div class="tab-content responsive">
+  <div class="tab-pane active" id="html">
+   <pre><code class="overflow-auto"><article class="news-detail">
+    <header>
+        <h2 class="h1">News Title</h2>
+        <div class="published">Published: <time datetime="2014-08-26">Aug 26, 2014</time></div>
+    </header>
 
+    <p><img src="/images/sample/images/75x75.gif" class="img-left" alt="">Full Article Text - Cras justo odio, dapibus
+        ac facilisis in, egestas eget quam. Curabitur blandit tempus porttitor. Vestibulum id ligula porta felis euismod
+        semper. Donec sed odio dui. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum.
+        Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
 
-<hr>
+    <footer class="keywords">
+        Tags or Keywords
+        <ul>
+            <li><a href="">tag 1</a></li>
+            <li><a href="">tag 2</a></li>
+            <li><a href="">tag 3</a></li>
+            <li><a href="">tag 4</a></li>
+        </ul>
+    </footer>
+</article></code></pre>
+  </div>
+  <div class="tab-pane" id="microdata">
+   <p class="alert alert-info">NOTE: This module makes use of a <code>datetime</code>
+    property set in the <strong>ISO 8601</strong> format. Be sure to set the time
+    correctly for each news-item.</p>
+   <pre><code class="overflow-auto"><article class="news-detail" itemscope itemtype="http://schema.org/NewsArticle">
+    <header>
+        <h2 class="h1" itemprop="headline">News Title</h2>
+        <div class="published">Published: <time class="date" itemprop="datePublished"
+                datetime="2014-10-20T00:00:00-08:00">Oct 20, 2014</time></div>
+    </header>
 
-
-<h2>Thumbnail Bottom Aligned:</h2>
-<blockquote class="testimonial testimonial-standout">
-    <div class="thumbnail thumbnail-left thumbnail-bottom">
-        <a href="#"><img class="thumbnail-img" src="/images/sample/images/70x70.gif" alt="..."></a>
+    <div itemprop="articleBody">
+        <p><img src="/images/sample/images/75x75.gif" class="img-left" alt="" itemprop="thumbnailUrl">Full Article Text
+            - Cras justo odio, dapibus ac facilisis in, egestas eget quam. Curabitur blandit tempus porttitor.
+            Vestibulum id ligula porta felis euismod semper. Donec sed odio dui. Aenean eu leo quam. Pellentesque ornare
+            sem lacinia quam venenatis vestibulum. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
     </div>
-    <div class="testimonial-body">
-        <p>Maecenas sed diam eget risus varius blandit sit amet non magna. Morbi leo risus, porta ac consectetur ac,
-            vestibulum at eros. Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Morbi leo risus,
-            porta ac consectetur ac, vestibulum at eros.</p>
-        <footer>
-            <cite>
-                <a href="">John Smith</a> Some Awesome Company
-            </cite>
-        </footer>
-    </div>
-</blockquote>
 
-<h2>Source code:</h2>
-<pre><code class="overflow-auto"><blockquote class="testimonial testimonial-standout">
-    <div class="thumbnail thumbnail-left thumbnail-bottom">
-        <a href="#"><img class="thumbnail-img" src="/images/sample/images/70x70.gif" alt="..."></a>
-    </div>
-    <div class="testimonial-body">
-        <p>Maecenas sed diam eget risus varius blandit sit amet non magna. Morbi leo risus, porta ac consectetur ac,
-            vestibulum at eros. Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Morbi leo risus,
-            porta ac consectetur ac, vestibulum at eros.</p>
-        <footer>
-            <cite>
-                <a href="">John Smith</a> Some Awesome Company
-            </cite>
-        </footer>
-    </div>
-</blockquote></code></pre>
-
-
-<hr>
-
-
-<h2>Thumbnail Top:</h2>
-<blockquote class="testimonial testimonial-default">
-    <div class="thumbnail thumbnail-top">
-        <a href="#"><img class="thumbnail-img img-circle" src="/images/sample/images/70x70.gif" alt="..."></a>
-    </div>
-    <div class="testimonial-body">
-        <p>Maecenas sed diam eget risus varius blandit sit amet non magna. Morbi leo risus, porta ac consectetur ac,
-            vestibulum at eros.</p>
-        <footer>
-            <cite>
-                <a href="">John Smith</a> Some Awesome Company
-            </cite>
-        </footer>
-    </div>
-</blockquote>
-
-<h2>Source code:</h2>
-<pre><code class="overflow-auto"><blockquote class="testimonial testimonial-default">
-    <div class="thumbnail thumbnail-top">
-        <a href="#"><img class="thumbnail-img img-circle" src="/images/sample/images/70x70.gif" alt="..."></a>
-    </div>
-    <div class="testimonial-body">
-        <p>Maecenas sed diam eget risus varius blandit sit amet non magna. Morbi leo risus, porta ac consectetur ac,
-            vestibulum at eros.</p>
-        <footer>
-            <cite>
-                <a href="">John Smith</a> Some Awesome Company
-            </cite>
-        </footer>
-    </div>
-</blockquote></code></pre>
+    <footer class="keywords">
+        Tags or Keywords
+        <ul itemprop="keywords">
+            <li><a href="">tag 1</a></li>
+            <li><a href="">tag 2</a></li>
+            <li><a href="">tag 3</a></li>
+            <li><a href="">tag 4</a></li>
+        </ul>
+    </footer>
+</article></code></pre>
+  </div>
+ </div>
+</div>
 				</div>
 			</div>
 		</div>

@@ -1,13 +1,13 @@
 ﻿---
-title: News Detail
+title: News article
 landing: Patterns
 layout: patterns.njk
-permalink: "patterns/news-detail.html"
+permalink: "patterns/news-article.html"
 ---
 
 
 
-<h1 class="mt-lg-0">News Detail</h1>
+<h1 class="mt-lg-0">News article</h1>
 <p><code>.news-detail</code> is an end page content module for news articles. To begin, wrap the
  contents of the page in a <code>&lt;article class="news-detail"&gt;</code> tag.</p>
 <p>This module makes use of the <code>&lt;header&gt;</code> tag and locates the h1 and the
@@ -18,7 +18,7 @@ permalink: "patterns/news-detail.html"
 {% include "../../src/_includes/modules/schema-boilerplate.html" %}
 
 <h2>Example:</h2>
-{% include "../../src/_includes/modules/news-detail.html" %}
+{% include "../../src/_includes/modules/news-article.html" %}
 
 <h2>Source code:</h2>
 <div class="tab-group">
@@ -29,13 +29,13 @@ permalink: "patterns/news-detail.html"
  <!-- Tab panes -->
  <div class="tab-content responsive">
   <div class="tab-pane active" id="html">
-   <pre><code class="overflow-auto">{% include "../../src/_includes/modules/news-detail.html" %}</code></pre>
+   <pre><code class="overflow-auto">{% include "../../src/_includes/modules/news-article.html" %}</code></pre>
   </div>
   <div class="tab-pane" id="microdata">
    <p class="alert alert-info">NOTE: This module makes use of a <code>datetime</code>
     property set in the <strong>ISO 8601</strong> format. Be sure to set the time
     correctly for each news-item.</p>
-   <pre><code class="overflow-auto">{% include "../../src/_includes/modules/news-detail-schema.html" %}</code></pre>
+   <pre><code class="overflow-auto">{% include "../../src/_includes/modules/news-article-schema.html" %}</code></pre>
   </div>
  </div>
 </div>
