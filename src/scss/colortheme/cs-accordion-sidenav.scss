@@ -1,0 +1,128 @@
+/* -----------------------------------------
+   ACCORDION SIDE NAVIGATION
+   /source/scss/colortheme/cs-accordion-sidenav.scss
+----------------------------------------- */
+
+cagov-accordion.sidenav {
+ details {
+  summary {
+   color: $gray-800;
+   &:hover,
+   &:focus {
+    color: $black;
+   }
+   &.active {
+    font-weight: $font-weight-7;
+    color: $gray-800 !important;
+    &:hover,
+    &:focus {
+     color: $black !important;
+    }
+    &:before {
+     background-color: $color-p1 !important;
+    }
+   }
+  }
+ }
+}
+
+.side-subnav {
+ li {
+  a {
+   color: $gray-800;
+   &:hover,
+   &:focus {
+    color: $black;
+   }
+   &.active {
+    &:before {
+     border-left-color: $color-p1;
+    }
+   }
+  }
+ }
+}
+
+// BOOTSTRAP VERSION
+// active state
+.side-nav {
+ .accordion {
+  .accordion__heading {
+   .accordion__trigger {
+    color: $gray-800;
+   }
+   // active
+   &.active {
+    .accordion__trigger {
+     background-color: $color-p2, 7%;
+     &:hover,
+     &:focus {
+      background-color: darken($color-p2, 7%) !important;
+     }
+    }
+   }
+  }
+ }
+}
+
+// standout
+.side-nav.section-standout {
+ .accordion {
+  .accordion__heading {
+   // active
+   &.active {
+    .accordion__trigger {
+     color: $gray-800 !important;
+     background-color: $gray-50 !important;
+     &:hover,
+     &:focus {
+      color: $black !important;
+      background-color: $gray-100 !important;
+     }
+    }
+   }
+  }
+ }
+}
+
+// primary
+.side-nav.section-primary {
+ .accordion {
+  .accordion__heading {
+   // active
+   &.active {
+    .accordion__trigger {
+     color: $gray-800 !important;
+     background-color: $gray-50 !important;
+     &:hover,
+     &:focus {
+      color: $black !important;
+      background-color: $gray-100 !important;
+     }
+    }
+   }
+  }
+ }
+}
+
+// understated
+// active state
+.side-nav.section-understated {
+ .accordion {
+  .accordion__heading {
+   .accordion__trigger {
+    color: $gray-800;
+   }
+   // active
+   &.active {
+    .accordion__trigger {
+     background-color: $color-p2 !important;
+     &:hover,
+     &:focus {
+      background-color: darken($color-p2, 7%) !important;
+     }
+    }
+   }
+  }
+ }
+}
