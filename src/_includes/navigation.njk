@@ -1,4 +1,4 @@
-<nav id="navigation" class="main-navigation auto-highlight">
+<nav id="navigation" class="main-navigation dropdown">
  <ul id="nav_list" class="top-level-nav">
   <li class="nav-item">
        {% if landing === "Template updates" %}
@@ -21,12 +21,25 @@
        <a class="first-level-link" href="/structure.html">Structure</a>
        {% endif %} 
    </li>
-   <li class="nav-item">
-       {% if landing === "Visual design" %}
+   {% if landing === "Visual design" %}
+   <li class="nav-item active">
+    {% else %} 
+    <li class="nav-item">
+     {% endif %}  
        <a class="first-level-link active" href="/visual-design.html">Visual design</a>
-       {% else %}
-       <a class="first-level-link" href="/visual-design.html">Visual design</a>
-       {% endif %} 
+       <div class="sub-nav">
+         <ul class="second-level-nav">
+          <li class="unit1">
+            <a href="/visual-design/icons.html" class="second-level-link">Icons</a>
+           </li>
+           <li class="unit1">
+            <a href="/visual-design/color.html" class="second-level-link">Color</a>
+           </li>
+           <li class="unit1">
+            <a href="/visual-design/typography.html" class="second-level-link">Typography</a>
+           </li>
+          </ul>
+       </div>
    </li>
    <li class="nav-item">
        {% if landing === "Components" %}
