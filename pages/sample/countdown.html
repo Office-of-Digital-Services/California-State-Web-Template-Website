@@ -39,7 +39,7 @@ permalink: "components/countdown.html"
 </ul>
 
 
-<h2 id="Countdown-default">Countdown default</h2>
+<h2 id="Sample">Sample</h2>
 
 
 <!--TABS-->
@@ -66,7 +66,7 @@ permalink: "components/countdown.html"
    </div>
    <div id="collapse-example1" class="collapse show" role="tabpanel" aria-labelledby="heading-example1">
     <div class="card-body p-b-lg">
-
+     <h3>Counrdown default</h3>
      <div class="row section-default countdown">
       <div class="col-sm-3 text-center p-b-md p-l-0 p-r-0">
        <span class="countdown-text">days<br></span>
@@ -87,119 +87,7 @@ permalink: "components/countdown.html"
      </div>
 
 
-    </div>
-   </div>
-  </div>
-
-
-
-  <!--HTML-->
-  <div id="pane-html1" class="card tab-pane fade" role="tabpanel" aria-labelledby="tab-html1">
-   <div class="card-header" id="heading-html1">
-    <a class="collapsed" data-bs-toggle="collapse" href="#collapse-html1" data-parent="#tab-content"
-     aria-expanded="false" aria-controls="collapse-html1" data-hash="#pane-html1" title="HTML Source code tab header">
-     Source code
-    </a>
-   </div>
-   <div id="collapse-html1" class="collapse" role="tabpanel" aria-labelledby="heading-html1">
-    <div class="card-body">
-     <pre style="max-height: 300px;"><code><!--HTML-->
-      <div class="row section-default countdown">
-       <div class="col-sm-3 text-center p-b-md p-l-0 p-r-0">
-        <span class="countdown-text">days<br></span>
-        <span id="days1"></span>
-       </div>
-       <div class="col-sm-3 text-center p-b-md p-l-0 p-r-0">
-        <span class="countdown-text">hrs<br></span>
-        <span id="hours1"></span>
-       </div>
-       <div class="col-sm-3 text-center p-b-md p-l-0 p-r-0">
-        <span class="countdown-text">min<br></span>
-        <span id="minutes1"></span>
-       </div>
-       <div class="col-sm-3 text-center p-b-md p-l-0 p-r-0">
-        <span class="countdown-text">sec<br></span>
-        <span id="seconds1"></span>
-       </div>
-      </div>
-
-<!--JavaScript-->
-<script>
- // Set the date we're counting down to
- var countDownDate = new Date("Apr 1, 2030 00:00:00").getTime();
-
- // Update the count down every 1 second
- var x = setInterval(function () {
-
-  // Get todays date and time
-  var now = new Date().getTime();
-
-  // Find the distance between now an the count down date
-  var distance = countDownDate - now;
-
-  // Time calculations for days, hours, minutes and seconds
-  var days = Math.floor(distance / (1000 * 60 * 60 * 24));
-  var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-  var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-  var seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
-  // Output the result in the elements with id="days1", id="hours1" etc.
-  document.getElementById("days1").innerHTML = days;
-  document.getElementById("hours1").innerHTML = hours;
-  document.getElementById("minutes1").innerHTML = minutes;
-  document.getElementById("seconds1").innerHTML = seconds;
-
-  // If the count down is over, write some text
-  if (distance < 0) {
-   clearInterval(x);
-   document.getElementById("days1").innerHTML = "EXPIRED";
-  }
- }, 1000);
-</script>
-     </code>
-    </pre>
-
-    </div>
-   </div>
-  </div>
-
-
- </div>
-</div>
-<!--END TABS-->
-
-
-
-
-
-
-<h2 id="Countdown-primary">Countdown primary</h2>
-<!--TABS-->
-<div class="tab-group responsive">
- <ul id="tabs1" class="nav nav-tabs" role="tablist">
-  <li class="nav-item">
-   <a id="tab-example3" href="#pane-example3" class="nav-link active" data-bs-toggle="tab" role="tab">Example</a>
-  </li>
-  <li class="nav-item">
-   <a id="tab-html3" href="#pane-html3" class="nav-link" data-bs-toggle="tab" role="tab">Source code</a>
-  </li>
-
- </ul>
-
-
- <div id="tab-content" class="tab-content">
-  <!--Examples-->
-  <div id="pane-example3" class="card tab-pane fade show active" role="tabpanel" aria-labelledby="tab-example3">
-   <div class="card-header" id="heading-example3">
-    <a data-bs-toggle="collapse" href="#collapse-example3" data-parent="#tab-content" aria-expanded="true"
-     aria-controls="collapse-example3" data-hash="#pane-example3" title="Example tab header">
-     Example
-    </a>
-   </div>
-   <div id="collapse-example3" class="collapse show" role="tabpanel" aria-labelledby="heading-example3">
-    <div class="card-body p-b">
-
-
+     <h3>Countdown primary</h3>
      <div class="row section-primary countdown">
       <div class="col-sm-3 text-center p-b-md p-l-0 p-r-0">
        <span class="countdown-text">days<br></span>
@@ -227,71 +115,129 @@ permalink: "components/countdown.html"
 
 
   <!--HTML-->
-  <div id="pane-html3" class="card tab-pane fade" role="tabpanel" aria-labelledby="tab-html3">
-   <div class="card-header" id="heading-html3">
-    <a class="collapsed" data-bs-toggle="collapse" href="#collapse-html3" data-parent="#tab-content"
-     aria-expanded="false" aria-controls="collapse-html3" data-hash="#pane-html3" title="HTML Source code tab header">
+  <div id="pane-html1" class="card tab-pane fade" role="tabpanel" aria-labelledby="tab-html1">
+   <div class="card-header" id="heading-html1">
+    <a class="collapsed" data-bs-toggle="collapse" href="#collapse-html1" data-parent="#tab-content"
+     aria-expanded="false" aria-controls="collapse-html1" data-hash="#pane-html1" title="HTML Source code tab header">
      Source code
     </a>
    </div>
-   <div id="collapse-html3" class="collapse" role="tabpanel" aria-labelledby="heading-html3">
+   <div id="collapse-html1" class="collapse" role="tabpanel" aria-labelledby="heading-html1">
     <div class="card-body">
+     <h3>Countdown default</h3>
      <pre style="max-height: 300px;"><code><!--HTML-->
-      <div class="row section-primary countdown">
+      <div class="row section-default countdown">
        <div class="col-sm-3 text-center p-b-md p-l-0 p-r-0">
         <span class="countdown-text">days<br></span>
-        <span id="days"></span>
+        <span id="days1"></span>
        </div>
        <div class="col-sm-3 text-center p-b-md p-l-0 p-r-0">
         <span class="countdown-text">hrs<br></span>
-        <span id="hours"></span>
+        <span id="hours1"></span>
        </div>
        <div class="col-sm-3 text-center p-b-md p-l-0 p-r-0">
         <span class="countdown-text">min<br></span>
-        <span id="minutes"></span>
+        <span id="minutes1"></span>
        </div>
        <div class="col-sm-3 text-center p-b-md p-l-0 p-r-0">
         <span class="countdown-text">sec<br></span>
-        <span id="seconds"></span>
+        <span id="seconds1"></span>
        </div>
       </div>
 
-<!--JavaScript-->
-<script>
- // Set the date we're counting down to
- var countDownDate = new Date("Apr 1, 2030 00:00:00").getTime();
+           <!--JavaScript-->
+           <script>
+            // Set the date we're counting down to
+            var countDownDate = new Date("Apr 1, 2030 00:00:00").getTime();
 
- // Update the count down every 1 second
- var x = setInterval(function () {
+            // Update the count down every 1 second
+            var x = setInterval(function () {
 
-  // Get todays date and time
-  var now = new Date().getTime();
+             // Get todays date and time
+             var now = new Date().getTime();
 
-  // Find the distance between now an the count down date
-  var distance = countDownDate - now;
+             // Find the distance between now an the count down date
+             var distance = countDownDate - now;
 
-  // Time calculations for days, hours, minutes and seconds
-  var days = Math.floor(distance / (1000 * 60 * 60 * 24));
-  var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-  var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-  var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+             // Time calculations for days, hours, minutes and seconds
+             var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+             var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+             var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+             var seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
-  // Output the result in the elements with id="days", id="hours" etc.
-  document.getElementById("days").innerHTML = days;
-  document.getElementById("hours").innerHTML = hours;
-  document.getElementById("minutes").innerHTML = minutes;
-  document.getElementById("seconds").innerHTML = seconds;
+             // Output the result in the elements with id="days1", id="hours1" etc.
+             document.getElementById("days1").innerHTML = days;
+             document.getElementById("hours1").innerHTML = hours;
+             document.getElementById("minutes1").innerHTML = minutes;
+             document.getElementById("seconds1").innerHTML = seconds;
 
-  // If the count down is over, write some text
-  if (distance < 0) {
-   clearInterval(x);
-   document.getElementById("days").innerHTML = "EXPIRED";
-  }
- }, 1000);
-</script>
-     </code>
-   </pre>
+             // If the count down is over, write some text
+             if (distance < 0) {
+              clearInterval(x);
+              document.getElementById("days1").innerHTML = "EXPIRED";
+             }
+            }, 1000);
+           </script>
+          </code>
+         </pre>
 
+
+     <h3>Countdown primary</h3>
+     <pre style="max-height: 300px;"><code><!--HTML-->
+          <div class="row section-primary countdown">
+           <div class="col-sm-3 text-center p-b-md p-l-0 p-r-0">
+            <span class="countdown-text">days<br></span>
+            <span id="days"></span>
+           </div>
+           <div class="col-sm-3 text-center p-b-md p-l-0 p-r-0">
+            <span class="countdown-text">hrs<br></span>
+            <span id="hours"></span>
+           </div>
+           <div class="col-sm-3 text-center p-b-md p-l-0 p-r-0">
+            <span class="countdown-text">min<br></span>
+            <span id="minutes"></span>
+           </div>
+           <div class="col-sm-3 text-center p-b-md p-l-0 p-r-0">
+            <span class="countdown-text">sec<br></span>
+            <span id="seconds"></span>
+           </div>
+          </div>
+    
+        <!--JavaScript-->
+        <script>
+         // Set the date we're counting down to
+         var countDownDate = new Date("Apr 1, 2030 00:00:00").getTime();
+
+         // Update the count down every 1 second
+         var x = setInterval(function () {
+
+          // Get todays date and time
+          var now = new Date().getTime();
+
+          // Find the distance between now an the count down date
+          var distance = countDownDate - now;
+
+          // Time calculations for days, hours, minutes and seconds
+          var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+          var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+          var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+          var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+          // Output the result in the elements with id="days", id="hours" etc.
+          document.getElementById("days").innerHTML = days;
+          document.getElementById("hours").innerHTML = hours;
+          document.getElementById("minutes").innerHTML = minutes;
+          document.getElementById("seconds").innerHTML = seconds;
+
+          // If the count down is over, write some text
+          if (distance < 0) {
+           clearInterval(x);
+           document.getElementById("days").innerHTML = "EXPIRED";
+          }
+         }, 1000);
+        </script>
+          </code>
+        </pre>
     </div>
    </div>
   </div>
@@ -300,6 +246,10 @@ permalink: "components/countdown.html"
  </div>
 </div>
 <!--END TABS-->
+
+
+
+
 
 
 <h2 id="Usage">Usage</h2>
