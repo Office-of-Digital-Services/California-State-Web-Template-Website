@@ -193,15 +193,15 @@ permalink: "visual-design/icons.html"
 
   for (const icon of iconData.icons) {
   const iconStrings = [...new Set([icon.properties.name, ...icon.icon.tags])].filter(x=>x.length);
-  const firstLetter = icon.properties.name.charAt(0);
 
   if (searchInput.length == 0) {
-   if (letter !== firstLetter) {
-    letter = firstLetter
-    listHtml += '<p class="h1 group-heading py-3" id="group-' + letter + '">' + letter.toUpperCase() + '</p>';
-    jumpToHtml += '<li><a href="#group-' + letter + '">' + letter.toUpperCase() + '</a></li>';
-    numberOfHeadings++;
-   }
+    if (letter != icon.properties.name.charAt(0)) {
+     // First letter changed, so display a heading
+     letter = icon.properties.name.charAt(0);
+     listHtml += '<p class="h1 group-heading py-3" id="group-' + letter.toUpperCase() + '">' + letter.toUpperCase() + '</p>';
+     jumpToHtml += '<li><a href="#group-' + letter.toUpperCase() + '">' + letter.toUpperCase() + '</a></li>';
+     numberOfHeadings++;
+    }
   }
 
   if (searchInput.length == 0 || iconStrings.find(x=>x.search(searchInput) > -1)) {
