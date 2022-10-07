@@ -590,48 +590,44 @@
  var iconData = [];
 
  function buildList() {
-   var listHtml = "";
-   var jumpToHtml = "<li><strong>Jump to:</strong></li>";
-   var numberOfResults = 0;
-   var numberOfHeadings = 0;
+  var listHtml = "";
+  var jumpToHtml = "<li><strong>Jump to:</strong></li>";
+  var letter = "0";
+  var numberOfResults = 0;
+  var numberOfHeadings = 0;
+  var inputBox = document.querySelector("#iconSearchForm input");
+  var searchInput = inputBox ? inputBox.value.trim().toLowerCase() : "";
 
-   /**@type {HTMLInputElement | null}*/ 
-   var inputBox = document.querySelector("#iconSearchForm input");
+  for (const icon of iconData.icons) {
+   const iconStrings = [...new Set([icon.properties.name, ...icon.icon.tags])].filter(x=>x.length);
 
-   var searchInput = inputBox ? inputBox.value.trim().toLowerCase() : "";
-
-   var currentLetter = "";
-
-   for (const icon of iconData.icons) {
-    const iconStrings = [...new Set([icon.properties.name, ...icon.icon.tags])].filter(x=>x.length);
-    const firstLetter = icon.properties.name.charAt(0);
-
-    if (searchInput.length == 0) {
-      if (currentLetter !== firstLetter) {
-        currentLetter = firstLetter
-        listHtml += '<p class="h1 group-heading py-3" id="group-' + currentLetter + '">' + currentLetter.toUpperCase() + '</p>';
-        jumpToHtml += '<li><a href="#group-' + currentLetter + '">' + currentLetter.toUpperCase() + '</a></li>';
-        numberOfHeadings++;
-      }
-    }
-
-    if (searchInput.length == 0 || iconStrings.find(x=>x.search(searchInput) > -1)) {
-     listHtml += '<div class="glyph fs1"> \
-         <div class="clearfix bshadow0 pbs"><span class="ca-gov-icon-' + icon.properties.name + '"></span><span class="mls"> \
-           ca-gov-icon-' + icon.properties.name + '</span></div> \
-         <p class="icon-value">' + icon.properties.code.toString(16) + '</p> \
-       </div>';
-     numberOfResults++;
+   if (searchInput.length == 0) {
+    if (letter != icon.properties.name.charAt(0)) {
+     // First letter changed, so display a heading
+     letter = icon.properties.name.charAt(0);
+     listHtml += '<p class="h1 group-heading py-3" id="group-' + letter.toUpperCase() + '">' + letter.toUpperCase() + '</p>';
+     jumpToHtml += '<li><a href="#group-' + letter.toUpperCase() + '">' + letter.toUpperCase() + '</a></li>';
+     numberOfHeadings++;
     }
    }
-   if (numberOfHeadings > 1) {
-    document.querySelector('#jumpToHeading').style.display = "block";
-    document.querySelector('#jumpToHeading ol').innerHTML = jumpToHtml;
-   } else {
-    document.querySelector('#jumpToHeading').style.display = "none";
+
+   if (searchInput.length == 0 || iconStrings.find(x=>x.search(searchInput) > -1)) {
+    listHtml += '<div class="glyph fs1"> \
+        <div class="clearfix bshadow0 pbs"><span class="ca-gov-icon-' + icon.properties.name + '"></span><span class="mls"> \
+          ca-gov-icon-' + icon.properties.name + '</span></div> \
+        <p class="icon-value">' + icon.properties.code.toString(16) + '</p> \
+      </div>';
+    numberOfResults++;
    }
-   document.querySelector('#fontlist').innerHTML = (numberOfResults) ? listHtml : '<div class="fs1">No icons found.</div>';
   }
+  if (numberOfHeadings > 1) {
+   document.querySelector('#jumpToHeading').style.display = "block";
+   document.querySelector('#jumpToHeading ol').innerHTML = jumpToHtml;
+  } else {
+   document.querySelector('#jumpToHeading').style.display = "none";
+  }
+  document.querySelector('#fontlist').innerHTML = (numberOfResults) ? listHtml : '<div class="fs1">No icons found.</div>';
+ }
 
  const myRequest = new Request('https://california.azureedge.net/fonts/selection.json');
  fetch(myRequest)
