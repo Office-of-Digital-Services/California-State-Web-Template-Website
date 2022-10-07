@@ -182,6 +182,7 @@ permalink: "visual-design/icons.html"
  function buildList() {
   var listHtml = "";
   var jumpToHtml = "<li><strong>Jump to:</strong></li>";
+  var letter = "0";
   var numberOfResults = 0;
   var numberOfHeadings = 0;
 
@@ -190,19 +191,17 @@ permalink: "visual-design/icons.html"
 
   var searchInput = inputBox ? inputBox.value.trim().toLowerCase() : "";
 
-  var currentLetter = "";
-
   for (const icon of iconData.icons) {
   const iconStrings = [...new Set([icon.properties.name, ...icon.icon.tags])].filter(x=>x.length);
   const firstLetter = icon.properties.name.charAt(0);
 
   if (searchInput.length == 0) {
-    if (currentLetter !== firstLetter) {
-      currentLetter = firstLetter
-      listHtml += '<p class="h1 group-heading py-3" id="group-' + currentLetter + '">' + currentLetter.toUpperCase() + '</p>';
-      jumpToHtml += '<li><a href="#group-' + currentLetter + '">' + currentLetter.toUpperCase() + '</a></li>';
-      numberOfHeadings++;
-    }
+   if (letter !== firstLetter) {
+    letter = firstLetter
+    listHtml += '<p class="h1 group-heading py-3" id="group-' + letter + '">' + letter.toUpperCase() + '</p>';
+    jumpToHtml += '<li><a href="#group-' + letter + '">' + letter.toUpperCase() + '</a></li>';
+    numberOfHeadings++;
+   }
   }
 
   if (searchInput.length == 0 || iconStrings.find(x=>x.search(searchInput) > -1)) {
