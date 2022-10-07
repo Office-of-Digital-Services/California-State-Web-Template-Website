@@ -185,14 +185,11 @@ permalink: "visual-design/icons.html"
   var letter = "0";
   var numberOfResults = 0;
   var numberOfHeadings = 0;
-
-  /**@type {HTMLInputElement | null}*/ 
   var inputBox = document.querySelector("#iconSearchForm input");
-
   var searchInput = inputBox ? inputBox.value.trim().toLowerCase() : "";
 
   for (const icon of iconData.icons) {
-  const iconStrings = [...new Set([icon.properties.name, ...icon.icon.tags])].filter(x=>x.length);
+   const iconStrings = [...new Set([icon.properties.name, ...icon.icon.tags])].filter(x=>x.length);
 
    if (searchInput.length == 0) {
     if (letter != icon.properties.name.charAt(0)) {
