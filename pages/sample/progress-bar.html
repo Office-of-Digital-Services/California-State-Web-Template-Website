@@ -1,0 +1,33 @@
+﻿---
+title: Progress bar
+landing: Components
+layout: components.njk
+permalink: "components/progress-bar.html"
+---
+
+  <h1 class="mt-lg-0">Progress bar</h1>
+  <p>The progress bar displays the current status of a multi-step task. It is usually updated continuously as the task progresses and shows the level of completeness.</p>
+
+  <h2>Sample</h2>
+  {% include "../../src/_includes/modules/progress-bar.html" %}
+
+  <h2>Usage</h2>
+  <h3>When and how to use it</h3>
+  <p>Use a progress bar to display completeness of a multi-step task. Completeness is often shown as a percentage or number completed out of a total number of steps.</p>
+  <p>Steps can include uploading files or submitting an application.</p>
+
+  <h3>How not to use it</h3>
+  <p>Do not use the progress bar to display progress of unrelated tasks.</p>
+
+  <h3>Source code</h3>
+  <pre><code class="overflow-auto">{% include "../../src/_includes/modules/progress-bar.html" %}</code></pre>
+
+  <h2>Accessibility</h2>
+  <h3>Standard accessibility review</h3>
+  <p>Each time a new component version is published:</p>
+  <ul>
+    <li>Test with the <a href="https://www.deque.com/axe/">axe accessibility tool</a>.</li>
+    <li>Review with the <a href="https://www.apple.com/voiceover/info/guide/_1121.html">VoiceOver</a> or <a href="https://www.nvaccess.org/download/">NVDA</a> screen reader.</li>
+    <li>Ensure all actionable elements are accessible by keyboard command and tab in a logical order. </li>
+    <li>Check the component layout on a variety of screen sizes.</li>
+  </ul>

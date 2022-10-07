@@ -5,145 +5,65 @@ layout: components.njk
 permalink: "components/progress-tracker.html"
 ---
 
+<h1 class="mt-lg-0">Progress tracker</h1>
+<p style="color: gray"><i>Other names: process indicator, step list</i></p>
+<p>A progress tracker displays the steps and progress through a journey.</p>
+<p>Use the progress tracker to show:</p>
+<ul>
+  <li>Milestones</li>
+  <li>Timelines</li>
+  <li>Chronological steps</li>
+</ul>
 
-<div class="row">
- <div class="half">
-  <h1 class="mt-lg-0">Progress tracker</h1>
-  <p>Provide up-to-date feedback on the progress of a workflow or action with simple yet flexible
-   progress bars.</p>
-  <p>The progress bars can be colored with traditional theme colors plus new accent colors. Below
-   is a list of possible color class names:</p>
-  <ul>
-   <li><code>.bg-success</code></li>
-   <li><code>.bg-info</code></li>
-   <li><code>.bg-warning</code></li>
-   <li><code>.bg-danger</code></li>
-   <li><code>.bg-dark</code></li>
-   <li><code>.bg-primary</code></li>
-   <li><code>.bg-highlight</code></li>
-   <li><code>.bg-standout</code></li>
-  </ul>
-  <h2>Example:</h2>
-  {% include "../../src/_includes/modules/progress-bar.html" %}
+<h3>Horizontal tracker:</h3>
+{#% include "../../src/_includes/modules/horizontal-tracker.html" %#}
 
- </div>
- <div class="half">
+<h3>Vertical tracker</h3>
+{#% include "../../src/_includes/modules/vertical-tracker.html" %#}
 
+<h3>Step list</h3>
+{#% include "../../src/_includes/modules/step-list.html" %#}
 
-  <h2>Source code:</h2>
-  <pre><code class="overflow-auto">{% include "../../src/_includes/modules/progress-bar.html" %}</code></pre>
- </div>
-</div>
+<h2>Usage</h2>
+<h3>When and how to use it</h3>
+<p>
+  The progress tracker shows visitors where they are in a process. It can be
+  used to help visitors navigate through processes by selecting steps.
+</p>
+<p>
+  Progress trackers should display three or more steps or events in a sequence.
+</p>
 
-<hr>
+<h3>How not to use it</h3>
+<p>
+  Do not use the progress tracker to display items that are out of order or
+  unrelated. Use bullet points instead.
+</p>
 
+<h3>Source code</h3>
+<pre><code class="overflow-auto">{#% include "../../src/_includes/modules/horizontal-separator.html" %#}</code></pre>
 
-<div class="row">
- <div class="half">
-  <h2>Progress Bars Variety</h2>
-  <p>Progress bars sizes and variations.</p>
-  {% include "../../src/_includes/modules/progress-bar-variety.html" %}
- </div>
- <div class="half">
-  <h2>Source code:</h2>
-  <pre><code class="overflow-auto">{% include "../../src/_includes/modules/progress-bar-variety.html" %}</code></pre>
- </div>
-</div>
-
-<hr>
-
-<div class="row">
- <div class="half">
-  <h2>Striped Progress Bars</h2>
-  <p>Uses a gradient to create a striped effect. Not available in IE9 and below.</p>
-  {% include "../../src/_includes/modules/progress-bar-striped.html" %}
- </div>
- <div class="half">
-  <h2>Source code:</h2>
-  <pre><code class="overflow-auto">{% include "../../src/_includes/modules/progress-bar-striped.html" %}</code></pre>
- </div>
-</div>
-
-<hr>
-
-<div class="row">
- <div class="half">
-  <h2>Animated Progress Bars</h2>
-  <p>Add <code>.active</code> to <code>.progress-bar-striped</code> to animate the stripes right
-   to left. Not available in IE9 and below.</p>
-  {% include "../../src/_includes/modules/progress-bar-animated.html" %}
- </div>
- <div class="half">
-  <h2>Source code:</h2>
-  <pre><code class="overflow-auto">{% include "../../src/_includes/modules/progress-bar-animated.html" %}</code></pre>
- </div>
-</div>
-
-<hr>
-
-<div class="row">
- <div class="half">
-  <h2>Stacked Progress Bars</h2>
-  <p>Place multiple bars into the same <code>.progress</code> to stack them.</p>
-  {% include "../../src/_includes/modules/progress-bar-stacked.html" %}
- </div>
- <div class="half">
-  <h2>Source code:</h2>
-  <pre><code class="overflow-auto">{% include "../../src/_includes/modules/progress-bar-stacked.html" %}</code></pre>
- </div>
-</div>
-
-
-<h2>Progress block</h2>
-
-<p>Progress block is progress trackers (or progress indicators) display progress through a sequence by
- breaking it up into multiple logical and numbered steps. They guide the user through a number of
- steps in order to complete a specified task.</p>
-
-<h2>Example:</h2>
-{% include "../../src/_includes/modules/progress-block.html" %}
-
-
-
-<h2>Example #2:</h2>
-<p class="m-b-lg">Following example uses <code>.bg-primary-light</code>,
- <code>.brd-primary-light</code>, etc. classes to specify colors for the specific progress block
- elements. To change the color of the block elements change <code>-primary-</code> part of the class
- name to either <code>-highlight-</code>, <code>-standout-</code>, or <code>-secondary-</code>.
- {% include "../../src/_includes/modules/progress-block-bold.html" %}
-
-
-
-
-
-
-<h2 id="timeline">Timeline</h2>
-<p>Timeline is a display of a list of events (or milestones) in chronological order. in our case it
- could be a line with dots labelled with dates and events paralleling it.</p>
-
-<h2>Example:</h2>
-{% include "../../src/_includes/modules/timeline.html" %}
-
-
-<button type="button" class="btn btn-default btn-sm" data-bs-toggle="modal" data-bs-target="#progress-block">Show Source
- Code</button>
-<!-- Modal -->
-<div class="modal fade" id="progress-block" role="dialog">
- <div class="modal-dialog modal-lg">
-  <div class="modal-content">
-   <div class="modal-header">
-    <h3 class="h4 modal-title">HTML Markup</h3>
-    <button type="button" class="close btn btn-secondary" data-bs-dismiss="modal"><span class="sr-only">Close
-      modal</span><span class="ca-gov-icon-close-mark" aria-hidden="true"></span></button>
-
-   </div>
-   <div class="modal-body">
-    <h3 class="h4">Source code:</h3>
-    <pre><code class="overflow-auto">{% include "../../src/_includes/modules/timeline.html" %}</code></pre>
-   </div>
-   <div class="modal-footer">
-    <button type="button" class="btn btn-default" data-bs-dismiss="modal">Close</button>
-   </div>
-  </div>
- </div>
-</div><!-- / End Modal -->
+<h2>Accessibility</h2>
+<h3>Standard accessibility review</h3>
+<p>Each time a new component version is published:</p>
+<ul>
+  <li>
+    Test with the
+    <a href="https://www.deque.com/axe/">axe accessibility tool</a>
+    .
+  </li>
+  <li>
+    Review with the
+    <a href="https://www.apple.com/voiceover/info/guide/_1121.html">
+      VoiceOver
+    </a>
+    or
+    <a href="https://www.nvaccess.org/download/">NVDA</a>
+    screen reader.
+  </li>
+  <li>
+    Ensure all actionable elements are accessible by keyboard command and tab in
+    a logical order.
+  </li>
+  <li>Check the component layout on a variety of screen sizes.</li>
+</ul>

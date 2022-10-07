@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Horizontal separator</title> 
+  <title>Progress bar</title> 
   <meta charset="utf-8">
   <meta name="Author" content="State of California" />
   <meta name="Description" content="State of California" />
@@ -255,12 +255,6 @@
      
    
      
-      
-      <li><a href="/components.html" title="Components landing page">Components</a></li>
-        
-       
-      <li>Horizontal separator</li>
-       
    
      
    
@@ -465,7 +459,7 @@
        
       
       
-          <li><a href="/components/horizontal-separator.html"  aria-current="page"  class="active" >Horizontal separator</a></li>
+          <li><a href="/components/horizontal-separator.html" >Horizontal separator</a></li>
        
       
       
@@ -515,37 +509,41 @@
 					</nav>
 				</div>
 				<div class="col-lg-9 p-b-lg">
-					<h1 class="mt-lg-0">Horizontal separator</h1>
-<p>The horizontal separator is a style component that uses a line to separate content into sections.</p>
+					
+  <h1 class="mt-lg-0">Progress bar</h1>
+  <p>The progress bar displays the current status of a multi-step task. It is usually updated continuously as the task progresses and shows the level of completeness.</p>
 
-<h2>Default:</h2>
-<hr>
+  <h2>Sample</h2>
+  <div class="progress">
+    <div class="progress-bar bg-highlight color-gray-dark overflow-auto" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%;"  tabindex="0">
+        60%
+    </div>
+</div>
 
-<h2>Dotted Rule:</h2>
-<p> Add class <code>.hr-understated</code></p>
-<hr class="hr-understated">
+  <h2>Usage</h2>
+  <h3>When and how to use it</h3>
+  <p>Use a progress bar to display completeness of a multi-step task. Completeness is often shown as a percentage or number completed out of a total number of steps.</p>
+  <p>Steps can include uploading files or submitting an application.</p>
 
-<h2>Usage</h2>
-<p>When and how to use it <br>
-Use the horizontal separator to divide sections of content. This breaks up long pages of text and allows visitors to process your most important message first.
-</p>
-<h3>How not to use it</h3>
-<p>Do not use horizontal separators to build a pseudo table.<br>
-Do not abuse horizontal separators and avoid separating content that belongs together. If a section is lengthy, consider adding headings and removing unnecessary words. </p>
+  <h3>How not to use it</h3>
+  <p>Do not use the progress bar to display progress of unrelated tasks.</p>
 
-<h2>Source code:</h2>
-<pre><code class="overflow-auto"><hr>
-<hr class="hr-understated"></code></pre>
+  <h3>Source code</h3>
+  <pre><code class="overflow-auto"><div class="progress">
+    <div class="progress-bar bg-highlight color-gray-dark overflow-auto" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%;"  tabindex="0">
+        60%
+    </div>
+</div></code></pre>
 
-<h2>Accessibility</h2>
-<h3>Standard accessibility review</h3>
-<p>Each time a new component version is published:</p>
-<ul>
-  <li>Test with the <a href="https://www.deque.com/axe/">axe accessibility tool</a>.</li>
-  <li>Review with the <a href="https://www.apple.com/voiceover/info/guide/_1121.html">VoiceOver</a> or <a href="https://www.nvaccess.org/download/">NVDA</a> screen reader.</li>
-  <li>Ensure all actionable elements are accessible by keyboard command and tab in a logical order. </li>
-  <li>Check the component layout on a variety of screen sizes.</li>
-</ul>
+  <h2>Accessibility</h2>
+  <h3>Standard accessibility review</h3>
+  <p>Each time a new component version is published:</p>
+  <ul>
+    <li>Test with the <a href="https://www.deque.com/axe/">axe accessibility tool</a>.</li>
+    <li>Review with the <a href="https://www.apple.com/voiceover/info/guide/_1121.html">VoiceOver</a> or <a href="https://www.nvaccess.org/download/">NVDA</a> screen reader.</li>
+    <li>Ensure all actionable elements are accessible by keyboard command and tab in a logical order. </li>
+    <li>Check the component layout on a variety of screen sizes.</li>
+  </ul>
 				</div>
 			</div>
 		</div>
