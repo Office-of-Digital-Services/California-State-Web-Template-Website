@@ -7,30 +7,64 @@ permalink: "components/horizontal-separator.html"
 <h1 class="mt-lg-0">Horizontal separator</h1>
 <p>The horizontal separator is a style component that uses a line to separate content into sections.</p>
 
-<h2>Default:</h2>
-<hr>
+<h2 id="Sample">Sample</h2>
 
-<h2>Dotted Rule:</h2>
-<p> Add class <code>.hr-understated</code></p>
-<hr class="hr-understated">
+<!--TABS-->
+<div class="tab-group responsive">
+  <ul id="tabs1" class="nav nav-tabs" role="tablist">
+    <li class="nav-item">
+      <a id="tab-example1" href="#pane-example1" class="nav-link active" data-bs-toggle="tab" role="tab">Example</a>
+    </li>
+    <li class="nav-item">
+      <a id="tab-html1" href="#pane-html1" class="nav-link" data-bs-toggle="tab" role="tab">Source code</a>
+    </li>
+
+  </ul>
+
+  <div id="tab-content" class="tab-content">
+    <!--Examples-->
+    <div id="pane-example1" class="card tab-pane fade show active" role="tabpanel" aria-labelledby="tab-example1">
+      <div class="card-header" id="heading-example1">
+        <a data-bs-toggle="collapse" href="#collapse-example1" data-parent="#tab-content" aria-expanded="true"
+     aria-controls="collapse-example1" data-hash="#pane-example1" title="Example tab header">
+     Example
+    </a>
+      </div>
+      <div id="collapse-example1" class="collapse show" role="tabpanel" aria-labelledby="heading-example1">
+        <div class="card-body p-b-md">
+          {% include "../../src/_includes/modules/horizontal-separator.html" %}
+        </div>
+      </div>
+    </div>
+
+    <!--HTML-->
+    <div id="pane-html1" class="card tab-pane fade" role="tabpanel" aria-labelledby="tab-html1">
+      <div class="card-header" id="heading-html1">
+        <a class="collapsed" data-bs-toggle="collapse" href="#collapse-html1" data-parent="#tab-content"
+     aria-expanded="false" aria-controls="collapse-html1" data-hash="#pane-html1" title="HTML Source code tab header">
+     Source code
+    </a>
+      </div>
+      <div id="collapse-html1" class="collapse" role="tabpanel" aria-labelledby="heading-html1">
+        <div class="card-body">
+          <pre style="max-height: 300px;"><code>{% include "../../src/_includes/modules/horizontal-separator.html" %}</code>
+      </pre>
+
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+<!--END TABS-->
 
 <h2>Usage</h2>
-<p>When and how to use it <br>
-Use the horizontal separator to divide sections of content. This breaks up long pages of text and allows visitors to process your most important message first.
+<h3>When and how to use it</h3>
+<p>Use the horizontal separator to divide sections of content. This breaks up long pages of text and allows visitors to process your most important message first.
 </p>
 <h3>How not to use it</h3>
 <p>Do not use horizontal separators to build a pseudo table.<br>
 Do not abuse horizontal separators and avoid separating content that belongs together. If a section is lengthy, consider adding headings and removing unnecessary words. </p>
 
-<h2>Source code:</h2>
-<pre><code class="overflow-auto">{% include "../../src/_includes/modules/horizontal-separator.html" %}</code></pre>
-
 <h2>Accessibility</h2>
-<h3>Standard accessibility review</h3>
-<p>Each time a new component version is published:</p>
-<ul>
-  <li>Test with the <a href="https://www.deque.com/axe/">axe accessibility tool</a>.</li>
-  <li>Review with the <a href="https://www.apple.com/voiceover/info/guide/_1121.html">VoiceOver</a> or <a href="https://www.nvaccess.org/download/">NVDA</a> screen reader.</li>
-  <li>Ensure all actionable elements are accessible by keyboard command and tab in a logical order. </li>
-  <li>Check the component layout on a variety of screen sizes.</li>
-</ul>
+{% include "../../src/_includes/modules/accessibility.html" %}

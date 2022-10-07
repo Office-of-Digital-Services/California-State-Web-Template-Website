@@ -15,16 +15,116 @@ permalink: "components/progress-tracker.html"
   <li>Chronological steps</li>
 </ul>
 
-<h3>Horizontal tracker:</h3>
-{#% include "../../src/_includes/modules/horizontal-tracker.html" %#}
+<h2 id="Sample">Sample</h2>
 
-<h3>Vertical tracker</h3>
+<!--TABS-->
+<div class="tab-group responsive">
+  <ul id="tabs1" class="nav nav-tabs" role="tablist">
+    <li class="nav-item">
+      <a
+        id="tab-example1"
+        href="#pane-example1"
+        class="nav-link active"
+        data-bs-toggle="tab"
+        role="tab"
+      >
+        Example
+      </a>
+    </li>
+    <li class="nav-item">
+      <a
+        id="tab-html1"
+        href="#pane-html1"
+        class="nav-link"
+        data-bs-toggle="tab"
+        role="tab"
+      >
+        Source code
+      </a>
+    </li>
+  </ul>
+
+  <div id="tab-content" class="tab-content">
+    <!--Examples-->
+    <div
+      id="pane-example1"
+      class="card tab-pane fade show active"
+      role="tabpanel"
+      aria-labelledby="tab-example1"
+    >
+      <div class="card-header" id="heading-example1">
+        <a
+          data-bs-toggle="collapse"
+          href="#collapse-example1"
+          data-parent="#tab-content"
+          aria-expanded="true"
+          aria-controls="collapse-example1"
+          data-hash="#pane-example1"
+          title="Example tab header"
+        >
+          Example
+        </a>
+      </div>
+      <div
+        id="collapse-example1"
+        class="collapse show"
+        role="tabpanel"
+        aria-labelledby="heading-example1"
+      >
+        <div class="card-body p-b-md">
+          <h3>Horizontal tracker:</h3>
+          {#% include "../../src/_includes/modules/horizontal-tracker.html" %#}
+
+          <h3>Vertical tracker</h3>
+          {#% include "../../src/_includes/modules/vertical-tracker.html" %#}
+
+          <h3>Step list</h3>
+          {#% include "../../src/_includes/modules/step-list.html" %#}
+        </div>
+      </div>
+    </div>
+
+    <!--HTML-->
+    <div
+      id="pane-html1"
+      class="card tab-pane fade"
+      role="tabpanel"
+      aria-labelledby="tab-html1"
+    >
+      <div class="card-header" id="heading-html1">
+        <a
+          class="collapsed"
+          data-bs-toggle="collapse"
+          href="#collapse-html1"
+          data-parent="#tab-content"
+          aria-expanded="false"
+          aria-controls="collapse-html1"
+          data-hash="#pane-html1"
+          title="HTML Source code tab header"
+        >
+          Source code
+        </a>
+      </div>
+      <div
+        id="collapse-html1"
+        class="collapse"
+        role="tabpanel"
+        aria-labelledby="heading-html1"
+      >
+        <div class="card-body">
+          <pre
+            style="max-height: 300px"
+          ><code>{#% include "../../src/_includes/modules/horizontal-tracker.html" %#}
 {#% include "../../src/_includes/modules/vertical-tracker.html" %#}
+{#% include "../../src/_includes/modules/step-list.html" %#}</code></pre>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!--END TABS-->
 
-<h3>Step list</h3>
-{#% include "../../src/_includes/modules/step-list.html" %#}
-
-<h2>Usage</h2>
+<h2 id="Usage">Usage</h2>
 <h3>When and how to use it</h3>
 <p>
   The progress tracker shows visitors where they are in a process. It can be
@@ -40,30 +140,5 @@ permalink: "components/progress-tracker.html"
   unrelated. Use bullet points instead.
 </p>
 
-<h3>Source code</h3>
-<pre><code class="overflow-auto">{#% include "../../src/_includes/modules/horizontal-separator.html" %#}</code></pre>
-
-<h2>Accessibility</h2>
-<h3>Standard accessibility review</h3>
-<p>Each time a new component version is published:</p>
-<ul>
-  <li>
-    Test with the
-    <a href="https://www.deque.com/axe/">axe accessibility tool</a>
-    .
-  </li>
-  <li>
-    Review with the
-    <a href="https://www.apple.com/voiceover/info/guide/_1121.html">
-      VoiceOver
-    </a>
-    or
-    <a href="https://www.nvaccess.org/download/">NVDA</a>
-    screen reader.
-  </li>
-  <li>
-    Ensure all actionable elements are accessible by keyboard command and tab in
-    a logical order.
-  </li>
-  <li>Check the component layout on a variety of screen sizes.</li>
-</ul>
+<h2 id="Accessibility">Accessibility</h2>
+{% include "../../src/_includes/modules/accessibility.html" %}
