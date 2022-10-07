@@ -11,9 +11,9 @@
 <meta name="MobileOptimized" content="320">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
 
-<link rel="stylesheet" href="/css/cagov.core.css">
+<link rel="stylesheet" href="/css/cagov.core.min.css">
 
-		<link rel="stylesheet" href="/css/colorscheme-oceanside.css">
+		<link rel="stylesheet" href="/css/colortheme-oceanside.min.css">
 
 
 <link rel="apple-touch-icon-precomposed" sizes="100x100" href="/images/apple-touch-icon-precomposed.png">
@@ -181,7 +181,7 @@
       </div>
       <!-- navigation types -->
             
-		          <nav id="navigation" class="main-navigation auto-highlight">
+		          <nav id="navigation" class="main-navigation dropdown">
  <ul id="nav_list" class="top-level-nav">
   <li class="nav-item">
        
@@ -198,10 +198,23 @@
        <a class="first-level-link" href="/structure.html">Structure</a>
         
    </li>
-   <li class="nav-item">
+    
+    <li class="nav-item">
        
-       <a class="first-level-link" href="/visual-design.html">Visual design</a>
-        
+       <a class="first-level-link active" href="/visual-design.html">Visual design</a>
+       <div class="sub-nav">
+         <ul class="second-level-nav">
+          <li class="unit1">
+            <a href="/visual-design/icons.html" class="second-level-link">Icons</a>
+           </li>
+           <li class="unit1">
+            <a href="/visual-design/color.html" class="second-level-link">Color</a>
+           </li>
+           <li class="unit1">
+            <a href="/visual-design/typography.html" class="second-level-link">Typography</a>
+           </li>
+          </ul>
+       </div>
    </li>
    <li class="nav-item">
        
@@ -229,8 +242,6 @@
     <nav aria-label="You are here">
  <ol class="breadcrumb">
   <li><a href="../index.html" title="Home page">Home</a></li>
-   
-     
    
      
    
@@ -411,7 +422,7 @@
 
 
 <ul class="list-navigation">
-  <li><a href="/components.html" class="nav-heading" id="components-list">Available Components</a>
+  <li><a href="/components.html" class="nav-heading" id="components-list">Components</a>
   <ul>
   				
       
@@ -469,11 +480,37 @@
        
       
       
-          <li><a href="/components/lists.html"  aria-current="page"  class="active" >Lists</a></li>
+        <li><a href="/components/lists.html"  aria-current="page"  class="active" >Lists</a>
+         
+          
+           <ul>
+            
+            <li>
+             <a href="#Unordered-list" class="tab-link">Unordered list</a>
+            </li>
+            
+            <li>
+             <a href="#Ordered-list" class="tab-link">Ordered list</a>
+            </li>
+            
+            <li>
+             <a href="#Usage" class="tab-link">Usage</a>
+            </li>
+            
+            <li>
+             <a href="#Accessibility" class="tab-link">Accessibility</a>
+            </li>
+            
+           </ul>
+           
+        </li>
        
       
       
-          <li><a href="/components/modal.html" >Modal</a></li>
+        <li><a href="/components/modal.html" >Modal</a>
+         
+         
+        </li>
        
       
       
@@ -481,7 +518,10 @@
        
       
       
-          <li><a href="/components/parallax.html" >Parallax</a></li>
+        <li><a href="/components/parallax.html" >Parallax</a>
+         
+         
+        </li>
        
       
       
@@ -493,7 +533,10 @@
        
       
       
-          <li><a href="/components/social-media-icons.html" >Social media icons</a></li>
+        <li><a href="/components/social-media-icons.html" >Social media icons</a>
+         
+         
+        </li>
        
       
       
@@ -518,386 +561,185 @@
 					
 
 
-<h1 class="mt-lg-0">Lists (Bulleted &amp; Expanding)</h1>
-<div class="row">
- <div class="half">
-  <h2>.list-overstated</h2>
-  <p>Adding <code>.list-overstated</code> to a <code>ul</code> will render the list with bullet
-   icons and bold hyperlinks.</p>
-  <ul class="list-overstated">
-    <li>Use: list-overstated</li>
-    <li><a href="/">Facts</a></li>
-    <li><a href="/">Government</a></li>
-    <li><a href="/">History</a></li>
-</ul>
- </div>
- <div class="half">
-  <h2><strong aria-label="Source code for List Overstated">Source code:</strong></h2>
-  <pre><code class="overflow-auto"><ul class="list-overstated">
-    <li>Use: list-overstated</li>
-    <li><a href="/">Facts</a></li>
-    <li><a href="/">Government</a></li>
-    <li><a href="/">History</a></li>
-</ul></code></pre>
- </div>
-</div>
+<h1 class="mt-lg-0">Lists</h1>
+<p>A list is a vertical grouping of related content. They are typically bulleted or numbered.</p>
 
-<hr>
-
-<div class="row">
- <div class="half">
-  <h2>.list-understated</h2>
-  <p>Adding <code>.list-understated</code> to a <code>ul</code> will render the list with bullet
-   icons and normal weighted hyperlinks.</p>
-  <ul class="list-understated">
-    <li>Use: list-understated</li>
-    <li><a href="/">Facts</a></li>
-    <li><a href="/">Government</a></li>
-    <li><a href="/">History</a></li>
-</ul>
- </div>
- <div class="half">
-  <h2><strong aria-label="Source code for List Understated">Source code:</strong></h2>
-  <pre><code class="overflow-auto"><ul class="list-understated">
-    <li>Use: list-understated</li>
-    <li><a href="/">Facts</a></li>
-    <li><a href="/">Government</a></li>
-    <li><a href="/">History</a></li>
-</ul></code></pre>
- </div>
-</div>
-
-<hr>
-
-<div class="row">
- <div class="half">
-  <h2>.list-standout</h2>
-  <p>Adding <code>.list-standout</code> to a <code>ul</code> will render the list with large
-   inward pointing arrows.</p>
-  <ul class="list-standout">
-    <li>Use: <br>
-        list-standout</li>
-    <li><a href="/">Lorem ipsum dolor sit amet</a><br>
-        Nam ultrices vulputate orci id faucibus.
-    </li>
-    <li><a href="/">consectetur adipiscing elit</a><br>
-        Sed eget massa ut nulla sodales ullamcorper nec vel nisi.
-    </li>
-
-</ul>
- </div>
- <div class="half">
-  <h2><strong aria-label="Source code for List Standout">Source code:</strong></h2>
-  <pre><code class="overflow-auto"><ul class="list-standout">
-    <li>Use: <br>
-        list-standout</li>
-    <li><a href="/">Lorem ipsum dolor sit amet</a><br>
-        Nam ultrices vulputate orci id faucibus.
-    </li>
-    <li><a href="/">consectetur adipiscing elit</a><br>
-        Sed eget massa ut nulla sodales ullamcorper nec vel nisi.
-    </li>
-
-</ul></code></pre>
- </div>
-</div>
-
-<hr>
-
-<div class="row">
- <div class="half">
-  <h2>List as Accordion</h2>
-
-  <p>Accordion lists can be toggled open and close by clicking the toggle link. Add id
-   <code>#accordion</code> and class <code>.accordion-list</code> to a <code>ul</code> to
-   create the accordion list. Add <code>.tab</code> to the <code>li</code> tag. Finally, wrap
-   the content to be toggled open and closed in a <code>.card</code> div. You can use
-   <code>.accordion-list</code> in conjunction with any list style provided.
-  </p>
-
-  <p><span class="text-highlight-primary">Note:</span> Accordion List uses HTML5 roles, some ARIA
-   properties, and IDs for accessibility. For best accessibility paractices certain keyboard
-   shortcuts are also implemented.</p>
-
-  <ol data-aria-accordion data-multi data-transition data-default="none">
- <li>
-  <h3 data-aria-accordion-heading>
-   List heading number 1
-  </h3>
-  <div data-aria-accordion-panel>
-   <p>
-    Use this space to offer visitors more detail. You can also link to additional resources.
-   </p>
-  </div>
- </li>
- <li>
-  <h3 data-aria-accordion-heading>
-   List heading number 2
-  </h3>
-  <div data-aria-accordion-panel>
-   <p>
-    Use this space to offer visitors more detail. You can also link to additional resources.
-   </p>
-  </div>
- </li>
- <li>
-  <h2 data-aria-accordion-heading>
-   List heading number 3
-  </h2>
-  <div data-aria-accordion-panel>
-   <p>
-    Use this space to offer visitors more detail. You can also link to additional resources.
-   </p>
-  </div>
- </li>
-</ol>
- </div>
- <div class="half">
-  <h2><strong aria-label="Source code for Accordion List">Source code:</strong></h2>
-  <pre><code class="overflow-auto"><ol data-aria-accordion data-multi data-transition data-default="none">
- <li>
-  <h3 data-aria-accordion-heading>
-   List heading number 1
-  </h3>
-  <div data-aria-accordion-panel>
-   <p>
-    Use this space to offer visitors more detail. You can also link to additional resources.
-   </p>
-  </div>
- </li>
- <li>
-  <h3 data-aria-accordion-heading>
-   List heading number 2
-  </h3>
-  <div data-aria-accordion-panel>
-   <p>
-    Use this space to offer visitors more detail. You can also link to additional resources.
-   </p>
-  </div>
- </li>
- <li>
-  <h2 data-aria-accordion-heading>
-   List heading number 3
-  </h2>
-  <div data-aria-accordion-panel>
-   <p>
-    Use this space to offer visitors more detail. You can also link to additional resources.
-   </p>
-  </div>
- </li>
-</ol></code></pre>
- </div>
-</div>
-
-<hr>
-
-<div class="row">
- <div class="half">
-  <h2>Multi-Tiered Ordered Lists</h2>
-  <ol>
-    <li>This is how top-level ordered list items will appear
-        <ul>
-            <li>This is how lower-level unordered list items will appear
-                <ol>
-                    <li>This is how your lower-level ordered list items will appear</li>
-                </ol>
-            </li>
-        </ul>
-    </li>
-    <li>This is how top-level ordered list items will appear
-        <ul>
-            <li>This is how lower-level unordered list items will appear
-                <ol>
-                    <li>This is how your lower-level ordered list items will appear</li>
-                </ol>
-            </li>
-        </ul>
-    </li>
-   
-</ol>
- </div>
- <div class="half">
-  <h2><strong aria-label="Source code for Multi-Tiered Ordered List">Source code:</strong></h2>
-  <pre><code class="overflow-auto"><ol>
-    <li>This is how top-level ordered list items will appear
-        <ul>
-            <li>This is how lower-level unordered list items will appear
-                <ol>
-                    <li>This is how your lower-level ordered list items will appear</li>
-                </ol>
-            </li>
-        </ul>
-    </li>
-    <li>This is how top-level ordered list items will appear
-        <ul>
-            <li>This is how lower-level unordered list items will appear
-                <ol>
-                    <li>This is how your lower-level ordered list items will appear</li>
-                </ol>
-            </li>
-        </ul>
-    </li>
-   
-</ol></code></pre>
- </div>
-</div>
-
-<hr>
-
-<div class="row">
- <div class="half">
-  <h2>Multi-Tiered Unordered Lists</h2>
-  <ul>
-    <li>This is how top-level ordered list items will appear
-        <ol>
-            <li>This is how lower-level unordered list items will appear
-                <ul>
-                    <li>This is how your lower-level ordered list items will appear</li>
-                </ul>
-            </li>
-        </ol>
-    </li>
-    <li>This is how top-level ordered list items will appear
-        <ol>
-            <li>This is how lower-level unordered list items will appear
-                <ul>
-                    <li>This is how your lower-level ordered list items will appear</li>
-                </ul>
-            </li>
-        </ol>
-    </li>
-</ul>
-
- </div>
- <div class="half">
-  <h2><strong aria-label="Source code for Multi-Tiered Unordered List">Source code:</strong></h2>
-  <pre><code class="overflow-auto"><ul>
-    <li>This is how top-level ordered list items will appear
-        <ol>
-            <li>This is how lower-level unordered list items will appear
-                <ul>
-                    <li>This is how your lower-level ordered list items will appear</li>
-                </ul>
-            </li>
-        </ol>
-    </li>
-    <li>This is how top-level ordered list items will appear
-        <ol>
-            <li>This is how lower-level unordered list items will appear
-                <ul>
-                    <li>This is how your lower-level ordered list items will appear</li>
-                </ul>
-            </li>
-        </ol>
-    </li>
-</ul>
-</code></pre>
- </div>
-</div>
-
-
-<h2 class="step-list">Step list</h2>
-
-<p>The step list is a numbered list. It has:</p>
+<h2 id="Unordered-list">Unordered list</h2>
+<p>Use an unordered list (bulleted) if the order of grouped items does not matter.</p>
 <ul>
- <li>A number for each item in the list, enclosed in a circle</li>
- <li>Lines connecting all the circled numbers</li>
- <li>A title for each step</li>
- <li>Detail for each step
+ <li>Arrange list items in a logical order that makes sense to the audience (such as days of the week).
   <ul>
-   <li>You can use hyperlinks in the detail space</li>
-   <li>You cannot use bullet points in the detail space</li>
+   <li>If a logical order does not apply, then default to alphabetical order.</li>
   </ul>
  </li>
+ <li>For very long lists, where only one option is likely to be chosen (such as “United States” from a list of
+  countries), place the likely option at the top of the list.</li>
+ <li>Generic list items (like “other”) should be placed as the last option on the list.</li>
 </ul>
-<p>State processes can be complicated and opaque. The step list shows all the steps in a process. The step list makes
- these processes visible, even when some steps do not require people to act.</p>
-<h2 id="when-and-how-to-use-it" tabindex="-1">When and how to use it</h2>
-<p>Use the step list when you need more than one sentence to explain the steps in a process.</p>
-<p>Introduce the step list with a heading so people know what process the step list describes. You can add a paragraph
- block between the heading and the step list, but this is optional. Keep this paragraph concise.</p>
-<p>The step list emphasizes important processes. Use it sparingly on your website. If you have a process where most
- steps can be explained in one sentence, use a regular numbered list instead.</p>
-<h3 id="how-not-to-use-it" tabindex="-1">How not to use it</h3>
-<p>Do not use the step list to create a list of items that are not ordered. Use bullet points instead.</p>
-<h2 id="demo-and-sample-markup" tabindex="-1">Demo and sample markup</h2>
-<html-preview>
- <cagov-code-preview data-instructions="">
-  <div class="code-preview">
-   <div class="code-preview-demo">
 
-    <ol class="cagov-step-list">
- <li>
-  <strong>Complete local permitting processes</strong>
-  <br />
-  <span class="cagov-step-list-content">
-   Many cities and counties have rules and permitting for cannabis
-   businesses. Some do not allow cannabis businesses. Make sure you set up
-   your business in an area that allows commercial cannabis activity.
-   Complete any permitting requirements your city or county requires before
-   you apply for a state cannabis license.
-  </span>
- </li>
- <li>
-  <strong>Understand the state regulations for cannabis businesses</strong>
-  <br />
-  <span class="cagov-step-list-content">
-   The Department of Cannabis Control (DCC) has requirements
-   for standard operating procedures, training employees and how facilities
-   must be set up. Make sure you understand and can meet these rules.
-  </span>
- </li>
- <li>
-  <strong>Gather your application information and documents</strong>
-  <br />
-  <span class="cagov-step-list-content">
-   DCC has resources to help you create the documents you need during the
-   license process. If you have questions about the requirements, email the
-   <a href="mailto:licensing@cannabis.ca.gov">DCC licensing team</a>.
-  </span>
- </li>
-</ol>
 
+<!--TABS-->
+<div class="tab-group responsive">
+ <ul id="tabs1" class="nav nav-tabs" role="tablist">
+  <li class="nav-item">
+   <a id="tab-example1" href="#pane-example1" class="nav-link active" data-bs-toggle="tab" role="tab">Example</a>
+  </li>
+  <li class="nav-item">
+   <a id="tab-html1" href="#pane-html1" class="nav-link" data-bs-toggle="tab" role="tab">Source code</a>
+  </li>
+
+ </ul>
+
+
+ <div id="tab-content" class="tab-content">
+  <!--Examples-->
+  <div id="pane-example1" class="card tab-pane fade show active" role="tabpanel" aria-labelledby="tab-example1">
+   <div class="card-header" id="heading-example1">
+    <a data-bs-toggle="collapse" href="#collapse-example1" data-parent="#tab-content" aria-expanded="true"
+     aria-controls="collapse-example1" data-hash="#pane-example1" title="Example tab header">
+     Example
+    </a>
    </div>
-   <div class="code-block">
-    <h3><label for="sample-accordion-list">Source code:</label></h3>
-    <textarea id="sample-accordion-list" class="form-control" rows="10" cols="80"><ol class="cagov-step-list">
- <li>
-  <strong>Complete local permitting processes</strong>
-  <br />
-  <span class="cagov-step-list-content">
-   Many cities and counties have rules and permitting for cannabis
-   businesses. Some do not allow cannabis businesses. Make sure you set up
-   your business in an area that allows commercial cannabis activity.
-   Complete any permitting requirements your city or county requires before
-   you apply for a state cannabis license.
-  </span>
- </li>
- <li>
-  <strong>Understand the state regulations for cannabis businesses</strong>
-  <br />
-  <span class="cagov-step-list-content">
-   The Department of Cannabis Control (DCC) has requirements
-   for standard operating procedures, training employees and how facilities
-   must be set up. Make sure you understand and can meet these rules.
-  </span>
- </li>
- <li>
-  <strong>Gather your application information and documents</strong>
-  <br />
-  <span class="cagov-step-list-content">
-   DCC has resources to help you create the documents you need during the
-   license process. If you have questions about the requirements, email the
-   <a href="mailto:licensing@cannabis.ca.gov">DCC licensing team</a>.
-  </span>
- </li>
-</ol>
-                    </textarea>
+   <div id="collapse-example1" class="collapse show" role="tabpanel" aria-labelledby="heading-example1">
+    <div class="p-a-md p-b-lg">
 
+     <ul>
+ <li>List your first unrelated item here</li>
+ <li>Continue your list of unrelated items.</li>
+ <li>Complete your list of unrelated items.</li>
+</ul>
+
+
+    </div>
    </div>
   </div>
- </cagov-code-preview>
-</html-preview>
+
+
+
+  <!--HTML-->
+  <div id="pane-html1" class="card tab-pane fade" role="tabpanel" aria-labelledby="tab-html1">
+   <div class="card-header" id="heading-html1">
+    <a class="collapsed" data-bs-toggle="collapse" href="#collapse-html1" data-parent="#tab-content"
+     aria-expanded="false" aria-controls="collapse-html1" data-hash="#pane-html1" title="HTML Source code tab header">
+     Source code
+    </a>
+   </div>
+   <div id="collapse-html1" class="collapse" role="tabpanel" aria-labelledby="heading-html1">
+    <div class="card-body">
+     <pre style="max-height: 300px;"><code><ul>
+ <li>List your first unrelated item here</li>
+ <li>Continue your list of unrelated items.</li>
+ <li>Complete your list of unrelated items.</li>
+</ul></code>
+    </pre>
+
+    </div>
+   </div>
+  </div>
+
+
+ </div>
+</div>
+<!--END TABS-->
+
+
+
+
+
+
+<h2 id="Ordered-list">Ordered list</h2>
+<p>Use an ordered list (numbered or alphabetical) to group a set of related items in a specific order.
+</p>
+<p>Ordered lists use letters or numbers at the beginning of a list in sequential order. They usually start at 1, I, or
+ A.</p>
+<p>The ordered list style is useful for a series of steps where order is important. Your list should contain all the
+ steps in a process so that your reader can complete the task.</p>
+<!--TABS-->
+<div class="tab-group responsive">
+ <ul id="tabs1" class="nav nav-tabs" role="tablist">
+  <li class="nav-item">
+   <a id="tab-example3" href="#pane-example3" class="nav-link active" data-bs-toggle="tab" role="tab">Example</a>
+  </li>
+  <li class="nav-item">
+   <a id="tab-html3" href="#pane-html3" class="nav-link" data-bs-toggle="tab" role="tab">Source code</a>
+  </li>
+
+ </ul>
+
+
+ <div id="tab-content" class="tab-content">
+  <!--Examples-->
+  <div id="pane-example3" class="card tab-pane fade show active" role="tabpanel" aria-labelledby="tab-example3">
+   <div class="card-header" id="heading-example3">
+    <a data-bs-toggle="collapse" href="#collapse-example3" data-parent="#tab-content" aria-expanded="true"
+     aria-controls="collapse-example3" data-hash="#pane-example3" title="Example tab header">
+     Example
+    </a>
+   </div>
+   <div id="collapse-example3" class="collapse show" role="tabpanel" aria-labelledby="heading-example3">
+    <div class="card-body p-b">
+
+     <ol>
+ <li>List step 1 of your process.</li>
+ <li>List the second step of your process.</li>
+ <li>List the third step of your process.</li>
+</ol>
+
+
+    </div>
+   </div>
+  </div>
+
+
+
+  <!--HTML-->
+  <div id="pane-html3" class="card tab-pane fade" role="tabpanel" aria-labelledby="tab-html3">
+   <div class="card-header" id="heading-html3">
+    <a class="collapsed" data-bs-toggle="collapse" href="#collapse-html3" data-parent="#tab-content"
+     aria-expanded="false" aria-controls="collapse-html3" data-hash="#pane-html3" title="HTML Source code tab header">
+     Source code
+    </a>
+   </div>
+   <div id="collapse-html3" class="collapse" role="tabpanel" aria-labelledby="heading-html3">
+    <div class="card-body">
+     <pre style="max-height: 300px;"><code><ol>
+ <li>List step 1 of your process.</li>
+ <li>List the second step of your process.</li>
+ <li>List the third step of your process.</li>
+</ol></code>
+   </pre>
+
+    </div>
+   </div>
+  </div>
+
+
+ </div>
+</div>
+<!--END TABS-->
+
+<h2 id="Usage">Usage</h2>
+<h3>When and how to use it</h3>
+<p>Use lists to make blocks of text easier to read, and to break information into manageable chunks.</p>
+<p>Use bulleted lists when you don’t need to convey a specific order for list items.</p>
+<p>Use numbered lists when you need to convey a priority, hierarchy, or sequence between list items.</p>
+<p>Use the step list when you need more than one sentence to explain the steps in a process.</p>
+<h3>How not to use it</h3>
+<p>Do not use the list pattern for a single-step process.</p>
+<p>Do not use Roman numerals, which are not read properly by screen readers.</p>
+
+
+<h2 id="Accessibility">Accessibility</h2>
+<h3 class="m-t">Standard accessibility review</h3>
+<p>Each time a new component version is published:</p>
+<ul>
+ <li>Test with the <a href="https://www.deque.com/axe/" target="_blank">axe
+   accessibility tool</a>.</li>
+ <li>Review with the <a href="https://www.apple.com/voiceover/info/guide/_1121.html" target="_blank">VoiceOver</a> or <a
+   href="https://www.nvaccess.org/download/" target="_blank">NVDA</a> screen reader.</li>
+ <li>Ensure all actionable elements are accessible by keyboard command and tab in a logical order. </li>
+ <li>Check the component layout on a variety of screen sizes.</li>
+</ul>
 				</div>
 			</div>
 		</div>
@@ -942,6 +784,6 @@
 
 <!-- Extra Decorative Content -->
 <div class="decoration-last">&nbsp;</div>
-  <script src="/js/cagov.core.js"></script>
+  <script src="/js/cagov.core.min.js"></script>
 </body>
 </html>

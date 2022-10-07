@@ -11,9 +11,9 @@
 <meta name="MobileOptimized" content="320">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
 
-<link rel="stylesheet" href="/css/cagov.core.css">
+<link rel="stylesheet" href="/css/cagov.core.min.css">
 
-		<link rel="stylesheet" href="/css/colorscheme-oceanside.css">
+		<link rel="stylesheet" href="/css/colortheme-oceanside.min.css">
 
 
 <link rel="apple-touch-icon-precomposed" sizes="100x100" href="/images/apple-touch-icon-precomposed.png">
@@ -181,7 +181,7 @@
       </div>
       <!-- navigation types -->
             
-		          <nav id="navigation" class="main-navigation auto-highlight">
+		          <nav id="navigation" class="main-navigation dropdown">
  <ul id="nav_list" class="top-level-nav">
   <li class="nav-item">
        
@@ -198,10 +198,23 @@
        <a class="first-level-link" href="/structure.html">Structure</a>
         
    </li>
-   <li class="nav-item">
+    
+    <li class="nav-item">
        
-       <a class="first-level-link" href="/visual-design.html">Visual design</a>
-        
+       <a class="first-level-link active" href="/visual-design.html">Visual design</a>
+       <div class="sub-nav">
+         <ul class="second-level-nav">
+          <li class="unit1">
+            <a href="/visual-design/icons.html" class="second-level-link">Icons</a>
+           </li>
+           <li class="unit1">
+            <a href="/visual-design/color.html" class="second-level-link">Color</a>
+           </li>
+           <li class="unit1">
+            <a href="/visual-design/typography.html" class="second-level-link">Typography</a>
+           </li>
+          </ul>
+       </div>
    </li>
    <li class="nav-item">
        
@@ -229,8 +242,6 @@
     <nav aria-label="You are here">
  <ol class="breadcrumb">
   <li><a href="../index.html" title="Home page">Home</a></li>
-   
-     
    
      
    
@@ -697,6 +708,6 @@
 
 <!-- Extra Decorative Content -->
 <div class="decoration-last">&nbsp;</div>
-  <script src="/js/cagov.core.js"></script>
+  <script src="/js/cagov.core.min.js"></script>
 </body>
 </html>

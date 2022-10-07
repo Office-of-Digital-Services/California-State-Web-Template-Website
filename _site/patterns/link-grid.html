@@ -11,9 +11,9 @@
 <meta name="MobileOptimized" content="320">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
 
-<link rel="stylesheet" href="/css/cagov.core.css">
+<link rel="stylesheet" href="/css/cagov.core.min.css">
 
-		<link rel="stylesheet" href="/css/colorscheme-oceanside.css">
+		<link rel="stylesheet" href="/css/colortheme-oceanside.min.css">
 
 
 <link rel="apple-touch-icon-precomposed" sizes="100x100" href="/images/apple-touch-icon-precomposed.png">
@@ -181,7 +181,7 @@
       </div>
       <!-- navigation types -->
             
-		          <nav id="navigation" class="main-navigation auto-highlight">
+		          <nav id="navigation" class="main-navigation dropdown">
  <ul id="nav_list" class="top-level-nav">
   <li class="nav-item">
        
@@ -198,10 +198,23 @@
        <a class="first-level-link" href="/structure.html">Structure</a>
         
    </li>
-   <li class="nav-item">
+    
+    <li class="nav-item">
        
-       <a class="first-level-link" href="/visual-design.html">Visual design</a>
-        
+       <a class="first-level-link active" href="/visual-design.html">Visual design</a>
+       <div class="sub-nav">
+         <ul class="second-level-nav">
+          <li class="unit1">
+            <a href="/visual-design/icons.html" class="second-level-link">Icons</a>
+           </li>
+           <li class="unit1">
+            <a href="/visual-design/color.html" class="second-level-link">Color</a>
+           </li>
+           <li class="unit1">
+            <a href="/visual-design/typography.html" class="second-level-link">Typography</a>
+           </li>
+          </ul>
+       </div>
    </li>
    <li class="nav-item">
        
@@ -229,8 +242,6 @@
     <nav aria-label="You are here">
  <ol class="breadcrumb">
   <li><a href="../index.html" title="Home page">Home</a></li>
-   
-     
    
      
    
@@ -412,11 +423,11 @@
 		   
 
 <ul class="list-navigation">
-  <li><a href="/patterns.html" class="nav-heading" id="components-list">Content Patterns</a>
+  <li><a href="/patterns.html" class="nav-heading" id="components-list">Patterns</a>
   <ul>
   				
       
-        <li><a href="/patterns/blurbs.html" >Blurbs</a>
+        <li><a href="/patterns/card-grid.html" >Card grid</a>
          
          
         </li>
@@ -430,7 +441,7 @@
        
       
       
-        <li><a href="/patterns/feature-card.html" >Feature Card</a>
+        <li><a href="/patterns/feature-card.html" >Feature card</a>
          
          
         </li>
@@ -441,7 +452,7 @@
        
       
       
-        <li><a href="/patterns/link-grid.html"  aria-current="page"  class="active" >Link Grid</a>
+        <li><a href="/patterns/link-grid.html"  aria-current="page"  class="active" >Link grid</a>
          
           
            <ul>
@@ -464,27 +475,15 @@
        
       
       
-          <li><a href="/patterns/news-blocks.html" >News Blocks</a></li>
+          <li><a href="/patterns/news-list.html" >News list</a></li>
        
       
       
-          <li><a href="/patterns/news-list.html" >News List</a></li>
+          <li><a href="/patterns/news-article.html" >News article</a></li>
        
       
       
-          <li><a href="/patterns/news-detail.html" >News Detail</a></li>
-       
-      
-      
-          <li><a href="/patterns/panes.html" >Panes</a></li>
-       
-      
-      
-          <li><a href="/patterns/profile-banners.html" >Profile Banners</a></li>
-       
-      
-      
-          <li><a href="/patterns/testimonials.html" >Testimonials</a></li>
+          <li><a href="/patterns/profile-banners.html" >Profile banner</a></li>
        
       
       </ul>
@@ -648,6 +647,6 @@
 
 <!-- Extra Decorative Content -->
 <div class="decoration-last">&nbsp;</div>
-  <script src="/js/cagov.core.js"></script>
+  <script src="/js/cagov.core.min.js"></script>
 </body>
 </html>

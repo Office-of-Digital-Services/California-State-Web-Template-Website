@@ -15673,6 +15673,31 @@ table.gsc-search-box td {
     font-size: 32px;
   }
 }
+.full-width-nav .nav-item.active .first-level-link, .full-width-nav .nav-item.active .first-level-btn {
+  background-color: #fafafa;
+  position: relative;
+  color: #000;
+}
+.full-width-nav .nav-item.active .first-level-link:hover, .full-width-nav .nav-item.active .first-level-link:focus, .full-width-nav .nav-item.active .first-level-btn:hover, .full-width-nav .nav-item.active .first-level-btn:focus {
+  color: #4a4958 !important;
+  background-color: #ededef;
+}
+.full-width-nav .nav-item.active .first-level-link::before, .full-width-nav .nav-item.active .first-level-btn::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  border-left: 1px solid #d4d4d7;
+}
+.full-width-nav .nav-item.active .first-level-link::after, .full-width-nav .nav-item.active .first-level-btn::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 100%;
+  border-left: 1px solid #d4d4d7;
+}
 
 @media (min-width: 992px) {
   .main-navigation {

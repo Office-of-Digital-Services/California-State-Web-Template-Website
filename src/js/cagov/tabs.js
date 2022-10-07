@@ -80,26 +80,4 @@
 })();
 
 
-// linking to tab pannel from outside link (works for responsive and bootstrap tabs)
-var otsidelinks = document.querySelectorAll(".tab-link");
-otsidelinks.forEach(otsidelink => {
- // on click event
- otsidelink.addEventListener('click', function (event) {
-  // event.preventDefault();
-  var dataHash = otsidelink.getAttribute('data-hash');
-  // console.log(dataHash);
-  // select tab item
-  var tabElement = document.querySelector('[data-bs-toggle="tab"][href="' + dataHash + '"]');
-  var tabElementMobile = document.querySelector('[data-bs-toggle="collapse"][data-hash="' + dataHash + '"]');
-  // tab event action
-  var tabevent = document.createEvent('Event');
-  tabevent.initEvent('click', true, true);
-  // apply tab event to tab element
-  tabElement.dispatchEvent(tabevent);
-  tabElementMobile.dispatchEvent(tabevent);
-
- }, false);
-});
-
-
 

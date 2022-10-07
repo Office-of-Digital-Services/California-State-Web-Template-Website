@@ -1420,6 +1420,21 @@ function escapeHtml(string) {
     });
 }
 
+function copyCode(btnElem) {
+    var codeblock = btnElem.previousElementSibling.querySelector("code");
+    if (codeblock) {
+      // copy the text
+      navigator.clipboard.writeText(codeblock.innerText);
+      // select the text
+      var range = document.createRange();
+      range.selectNode(codeblock);
+      window.getSelection().removeAllRanges();
+      window.getSelection().addRange(range);
+      // replace the button icon
+      btnElem.querySelector("span").classList.remove("ca-gov-icon-copy");
+      btnElem.querySelector("span").classList.add("ca-gov-icon-check-mark");
+    }
+}
 
 window.onload = function init() {
     var codeblock = document.querySelectorAll("pre code");
@@ -1430,6 +1445,12 @@ window.onload = function init() {
             var html = dom.innerHTML;
             html = escapeHtml(html);
             dom.innerHTML = html;
+            // Create a 'copy code' button, insert it after the <pre> tag
+            var newDiv = document.createElement("button");
+            newDiv.onclick = function() { copyCode(this); };
+            newDiv.classList.add("btn", "btn-outline-primary");
+            newDiv.innerHTML = "<span class='ca-gov-icon-copy'></span> Copy code";
+            dom.parentElement.after(newDiv);
         }
     }
 };
@@ -1514,28 +1535,6 @@ window.onload = function init() {
   panels[0].hidden = false;
  }
 })();
-
-
-// linking to tab pannel from outside link (works for responsive and bootstrap tabs)
-var otsidelinks = document.querySelectorAll(".tab-link");
-otsidelinks.forEach(otsidelink => {
- // on click event
- otsidelink.addEventListener('click', function (event) {
-  // event.preventDefault();
-  var dataHash = otsidelink.getAttribute('data-hash');
-  // console.log(dataHash);
-  // select tab item
-  var tabElement = document.querySelector('[data-bs-toggle="tab"][href="' + dataHash + '"]');
-  var tabElementMobile = document.querySelector('[data-bs-toggle="collapse"][data-hash="' + dataHash + '"]');
-  // tab event action
-  var tabevent = document.createEvent('Event');
-  tabevent.initEvent('click', true, true);
-  // apply tab event to tab element
-  tabElement.dispatchEvent(tabevent);
-  tabElementMobile.dispatchEvent(tabevent);
-
- }, false);
-});
 
 document.addEventListener("DOMContentLoaded", function () {
     // You can change this class to specify which elements are going to behave as counters.
@@ -1789,7 +1788,8 @@ function backToTopFunction(event) {
 // Remebemer scrolling position
 let sidenavigation = document.querySelector(".side-navigation");
 let topposition = localStorage.getItem("sidebar-scroll");
-let sidenavHeight = sidenavigation.clientHeight;
+
+
 
 // Set active class on nav-heading links:
 function addActiveClass() {
@@ -1834,7 +1834,7 @@ function sidenavOverflow() {
   var viewportheight = document.documentElement.clientHeight;
   var viewportMinusHeader = viewportheight - siteHeaderHeight - 100;
 
-  if (viewportMinusHeader <= sidenavHeight) {
+  if (viewportMinusHeader <= document.querySelector(".side-navigation").clientHeight) {
    sidenavigation.classList.add("overflow-auto");
    // sidenavigation.setAttribute("style", "max-height:" + viewportMinusHeader + "px")
   }

@@ -11,9 +11,9 @@
 <meta name="MobileOptimized" content="320">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
 
-<link rel="stylesheet" href="/css/cagov.core.css">
+<link rel="stylesheet" href="/css/cagov.core.min.css">
 
-		<link rel="stylesheet" href="/css/colorscheme-oceanside.css">
+		<link rel="stylesheet" href="/css/colortheme-oceanside.min.css">
 
 
 <link rel="apple-touch-icon-precomposed" sizes="100x100" href="/images/apple-touch-icon-precomposed.png">
@@ -181,7 +181,7 @@
       </div>
       <!-- navigation types -->
             
-		          <nav id="navigation" class="main-navigation auto-highlight">
+		          <nav id="navigation" class="main-navigation dropdown">
  <ul id="nav_list" class="top-level-nav">
   <li class="nav-item">
        
@@ -198,10 +198,23 @@
        <a class="first-level-link" href="/structure.html">Structure</a>
         
    </li>
-   <li class="nav-item">
+    
+    <li class="nav-item">
        
-       <a class="first-level-link" href="/visual-design.html">Visual design</a>
-        
+       <a class="first-level-link active" href="/visual-design.html">Visual design</a>
+       <div class="sub-nav">
+         <ul class="second-level-nav">
+          <li class="unit1">
+            <a href="/visual-design/icons.html" class="second-level-link">Icons</a>
+           </li>
+           <li class="unit1">
+            <a href="/visual-design/color.html" class="second-level-link">Color</a>
+           </li>
+           <li class="unit1">
+            <a href="/visual-design/typography.html" class="second-level-link">Typography</a>
+           </li>
+          </ul>
+       </div>
    </li>
    <li class="nav-item">
        
@@ -229,8 +242,6 @@
     <nav aria-label="You are here">
  <ol class="breadcrumb">
   <li><a href="../index.html" title="Home page">Home</a></li>
-   
-     
    
      
    
@@ -411,7 +422,7 @@
 
 
 <ul class="list-navigation">
-  <li><a href="/components.html" class="nav-heading" id="components-list">Available Components</a>
+  <li><a href="/components.html" class="nav-heading" id="components-list">Components</a>
   <ul>
   				
       
@@ -469,11 +480,17 @@
        
       
       
-          <li><a href="/components/lists.html" >Lists</a></li>
+        <li><a href="/components/lists.html" >Lists</a>
+         
+         
+        </li>
        
       
       
-          <li><a href="/components/modal.html" >Modal</a></li>
+        <li><a href="/components/modal.html" >Modal</a>
+         
+         
+        </li>
        
       
       
@@ -481,7 +498,26 @@
        
       
       
-          <li><a href="/components/parallax.html"  aria-current="page"  class="active" >Parallax</a></li>
+        <li><a href="/components/parallax.html"  aria-current="page"  class="active" >Parallax</a>
+         
+          
+           <ul>
+            
+            <li>
+             <a href="#Sample" class="tab-link">Sample</a>
+            </li>
+            
+            <li>
+             <a href="#Usage" class="tab-link">Usage</a>
+            </li>
+            
+            <li>
+             <a href="#Accessibility" class="tab-link">Accessibility</a>
+            </li>
+            
+           </ul>
+           
+        </li>
        
       
       
@@ -493,7 +529,10 @@
        
       
       
-          <li><a href="/components/social-media-icons.html" >Social media icons</a></li>
+        <li><a href="/components/social-media-icons.html" >Social media icons</a>
+         
+         
+        </li>
        
       
       
@@ -516,69 +555,131 @@
 				</div>
 				<div class="col-lg-9 p-b-lg">
 					
-<div class="container p-b-lg p-t-md">
-
-
- <h1 class="mt-lg-0">Parallax</h1>
- <p>Parallax scrolling is a web site trend where the background content image is moved at a different
-  speed than the foreground content while scrolling. To implement parallax effect use div with
-  <code>.parallax-bg</code> class and with <code>style="background-image: url()"</code> attribute that
-  will point to
-  your backgound image. You can add your webpage content inside of the <code>.parallax-bg</code> div.
- </p>
-</div>
-
-
-<div class="parallax-bg" style="background-image: url(/images/background-primary.jpg)">
- <div class="section-impact width-200 height-80 brd-gray-light brd-solid-1 relative-centered">
-  <h2 class="h3 text-center m-0 relative-centered">SCROLL DOWN</h2>
- </div>
-</div>
-<div class="parallax-bg height-300" style="background-image: url(/images/bg-open-data.jpg)">
- <div class="container p-y-lg">
-  <h2 class="text-center">Parallax Height</h2>
-  <p class="text-center">height can be specified by adding height class, such as
-   <code>.height-300</code>
-  </p>
- </div>
-</div>
-<div class="parallax-bg height-300 bg-dark" style="background-image: url(/images/main-banner4.jpg)">
- <div class="container p-y-lg">
-  <h2 class="text-center color-white">Light Text Color</h2>
-  <p class="text-center color-white">Make light text on dark backgrounds by adding class .color-white
-  </p>
- </div>
-</div>
 
 
 
+<h1 class="mt-lg-0">Parallax</h1>
+<p>The parallax is a visual design component. When scrolling, it allows background and foreground elements to move at
+ different speeds, creating a 3D effect. </p>
+<h2 id="Sample">Sample</h2>
+
+<!--TABS-->
+<div class="tab-group responsive">
+ <ul id="tabs1" class="nav nav-tabs" role="tablist">
+  <li class="nav-item">
+   <a id="tab-example1" href="#pane-example1" class="nav-link active" data-bs-toggle="tab" role="tab">Example</a>
+  </li>
+  <li class="nav-item">
+   <a id="tab-html1" href="#pane-html1" class="nav-link" data-bs-toggle="tab" role="tab">Source code</a>
+  </li>
+
+ </ul>
 
 
-<div class="container p-b-lg">
- <h2><label for="sample-panels">Source code:</label></h2>
- <div class="form-group">
-  <textarea id="sample-panels" class="form-control" rows="17" cols="80"><div class="parallax-bg" style="background-image: url(/images/background-primary.jpg)">
-    <div class="section-impact width-200 height-80 brd-gray-light brd-solid-1 relative-centered">
-        <h3 class="text-center m-0 relative-centered">SCROLL DOWN</h3>
+ <div id="tab-content" class="tab-content">
+  <!--Examples-->
+  <div id="pane-example1" class="card tab-pane fade show active" role="tabpanel" aria-labelledby="tab-example1">
+   <div class="card-header" id="heading-example1">
+    <a data-bs-toggle="collapse" href="#collapse-example1" data-parent="#tab-content" aria-expanded="true"
+     aria-controls="collapse-example1" data-hash="#pane-example1" title="Example tab header">
+     Example
+    </a>
+   </div>
+   <div id="collapse-example1" class="collapse show" role="tabpanel" aria-labelledby="heading-example1">
+    <div class="card-body p-b-lg">
+     <div class="parallax-bg height-400" style="background-image: url(/images/background-primary.jpg)">
+      <div class="section-impact width-200 height-80 brd-gray-light brd-solid-1 relative-centered">
+       <h2 class="h5 text-center m-0 p-a-md relative-centered">SCROLL DOWN</h2>
+      </div>
+     </div>
+     <div class="parallax-bg height-300" style="background-image: url(/images/bg-open-data.jpg)">
+      <div class="container p-y-lg">
+       <h2 class="text-center">Parallax Height</h2>
+       <p class="text-center">height can be specified by adding height class, such as
+        <code>.height-300</code>
+       </p>
+      </div>
+     </div>
+     <div class="parallax-bg height-300 bg-dark" style="background-image: url(/images/main-banner4.jpg)">
+      <div class="container p-y-lg">
+       <h2 class="text-center color-white">Light Text Color</h2>
+       <p class="text-center color-white">Make light text on dark backgrounds by adding class .color-white
+       </p>
+      </div>
+     </div>
+
     </div>
-</div>
-<div class="parallax-bg height-300" style="background-image: url(/images/bg-open-data.jpg)">
-    <div class="container p-y-lg">
-        <h2 class="text-center">Parallax Height</h2>
-        <p class="text-center">height can be specified by adding height class, such as <code>.height-300</code></p>
+   </div>
+  </div>
+
+
+
+  <!--HTML-->
+  <div id="pane-html1" class="card tab-pane fade" role="tabpanel" aria-labelledby="tab-html1">
+   <div class="card-header" id="heading-html1">
+    <a class="collapsed" data-bs-toggle="collapse" href="#collapse-html1" data-parent="#tab-content"
+     aria-expanded="false" aria-controls="collapse-html1" data-hash="#pane-html1" title="HTML Source code tab header">
+     Source code
+    </a>
+   </div>
+   <div id="collapse-html1" class="collapse" role="tabpanel" aria-labelledby="heading-html1">
+    <div class="card-body">
+     <pre style="max-height: 300px;"><code><div class="parallax-bg height-400" style="background-image: url(/images/background-primary.jpg)">
+        <div class="section-impact width-200 height-80 brd-gray-light brd-solid-1 relative-centered">
+         <h2 class="h5 text-center m-0 p-a-md relative-centered">SCROLL DOWN</h2>
+        </div>
+       </div>
+       <div class="parallax-bg height-300" style="background-image: url(/images/bg-open-data.jpg)">
+        <div class="container p-y-lg">
+         <h2 class="text-center">Parallax Height</h2>
+         <p class="text-center">height can be specified by adding height class, such as
+          <code>.height-300</code>
+         </p>
+        </div>
+       </div>
+       <div class="parallax-bg height-300 bg-dark" style="background-image: url(/images/main-banner4.jpg)">
+        <div class="container p-y-lg">
+         <h2 class="text-center color-white">Light Text Color</h2>
+         <p class="text-center color-white">Make light text on dark backgrounds by adding class .color-white
+         </p>
+        </div>
+       </div>       
+      </code></pre>
+
     </div>
-</div>
-<div class="parallax-bg height-300 bg-dark" style="background-image: url(images/main-banner4.jpg)">
-    <div class="container p-y-lg">
-        <h2 class="text-center color-white">Light Text Color</h2>
-        <p class="text-center color-white">Make light text on dark backgrounds by adding class .color-white</p>
-    </div>
-</div></textarea>
+   </div>
+  </div>
 
 
  </div>
-
 </div>
+<!--END TABS-->
+
+<h2 id="Usage">Usage</h2>
+<h3>When and how to use it </h3>
+<p>Use the parallax component to add depth and visual interest to a page. The movement of the parallax component will
+ draw attention to the content in that section. </p>
+<p>The parallax design component is often used on long-scrolling pages.</p>
+
+<h3>
+ How not to use it
+</h3>
+<p>Do not use the parallax component on multiple pages of your site. Use it sparingly to avoid distracting visitors from
+ your main message.</p>
+
+<p>A parallax may cause dizziness or motion sickness in some people, use caution when adding this to your design.</p>
+
+<h2 id="Accessibility">Accessibility</h2>
+<h3 class="m-t">Standard accessibility review</h3>
+<p>Each time a new component version is published:</p>
+<ul>
+ <li>Test with the <a href="https://www.deque.com/axe/" target="_blank">axe
+   accessibility tool</a>.</li>
+ <li>Review with the <a href="https://www.apple.com/voiceover/info/guide/_1121.html" target="_blank">VoiceOver</a> or <a
+   href="https://www.nvaccess.org/download/" target="_blank">NVDA</a> screen reader.</li>
+ <li>Ensure all actionable elements are accessible by keyboard command and tab in a logical order. </li>
+ <li>Check the component layout on a variety of screen sizes.</li>
+</ul>
 				</div>
 			</div>
 		</div>
@@ -623,6 +724,6 @@
 
 <!-- Extra Decorative Content -->
 <div class="decoration-last">&nbsp;</div>
-  <script src="/js/cagov.core.js"></script>
+  <script src="/js/cagov.core.min.js"></script>
 </body>
 </html>
