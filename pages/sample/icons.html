@@ -194,7 +194,7 @@ permalink: "visual-design/icons.html"
   for (const icon of iconData.icons) {
   const iconStrings = [...new Set([icon.properties.name, ...icon.icon.tags])].filter(x=>x.length);
 
-  if (searchInput.length == 0) {
+   if (searchInput.length == 0) {
     if (letter != icon.properties.name.charAt(0)) {
      // First letter changed, so display a heading
      letter = icon.properties.name.charAt(0);
@@ -202,9 +202,9 @@ permalink: "visual-design/icons.html"
      jumpToHtml += '<li><a href="#group-' + letter.toUpperCase() + '">' + letter.toUpperCase() + '</a></li>';
      numberOfHeadings++;
     }
-  }
+   }
 
-  if (searchInput.length == 0 || iconStrings.find(x=>x.search(searchInput) > -1)) {
+   if (searchInput.length == 0 || iconStrings.find(x=>x.search(searchInput) > -1)) {
     listHtml += '<div class="glyph fs1"> \
         <div class="clearfix bshadow0 pbs"><span class="ca-gov-icon-' + icon.properties.name + '"></span><span class="mls"> \
           ca-gov-icon-' + icon.properties.name + '</span></div> \
