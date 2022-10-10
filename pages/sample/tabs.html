@@ -8,64 +8,97 @@ permalink: "components/tabs.html"
 
 
 <h1 class="mt-lg-0">Tabs</h1>
-<p>
-
-</p>
-<p>
- Tabs lets you create content using an <code>ul</code> list of links that are linked to an
- unique <code>id</code> of a <code>section</code> elements with each tab having its own
- content. Wrapping all of it is a <code>div</code> with <code>tabs</code> class.
-</p>
-<h2 class="h4 m-b-sm">Keyboard navigation</h2>
-<p>
- The user is able to select and activate tabs using the left and right <strong>arrow
-  keys</strong>, while the <strong>Tab</strong> key is preserved for focusing contents
- within and below the active tab panel. Pressing <strong>Shift + Tab</strong> returns the
- user to the selected tab.
-</p>
-
-{% include "../../src/_includes/modules/tabs.html" %}
-
-<h2><label for="sample-tabs">Source code:</label></h2>
-<textarea id="sample-tabs" class="form-control" rows="10"
- cols="80">{% include "../../src/_includes/modules/tabs.html" %}</textarea>
+<p>Tabs organize related content into panels and enable visitors to navigate between them. Each panel displays one at a
+ time.</p>
+<p>Tabs reduce clutter by forming a unit of related content and fitting more information into a smaller space.</p>
 
 
-<hr>
+<h2 id="Sample">Sample</h2>
+
+<!--TABS-->
+<div class="tab-group responsive">
+ <ul id="tabs1" class="nav nav-tabs" role="tablist">
+  <li class="nav-item">
+   <a id="tab-example1" href="#pane-example1" class="nav-link active" data-bs-toggle="tab" role="tab">Example</a>
+  </li>
+  <li class="nav-item">
+   <a id="tab-html1" href="#pane-html1" class="nav-link" data-bs-toggle="tab" role="tab">Source code</a>
+  </li>
+
+ </ul>
+
+
+ <div id="tab-content" class="tab-content">
+  <!--Examples-->
+  <div id="pane-example1" class="card tab-pane fade show active" role="tabpanel" aria-labelledby="tab-example1">
+   <div class="card-header" id="heading-example1">
+    <a data-bs-toggle="collapse" href="#collapse-example1" data-parent="#tab-content" aria-expanded="true"
+     aria-controls="collapse-example1" data-hash="#pane-example1" title="Example tab header">
+     Example
+    </a>
+   </div>
+   <div id="collapse-example1" class="collapse show" role="tabpanel" aria-labelledby="heading-example1">
+    <div class="card-body p-b-lg">
+
+     {% include "../../src/_includes/modules/tabs.html" %}
+
+    </div>
+   </div>
+  </div>
+
+
+
+  <!--HTML-->
+  <div id="pane-html1" class="card tab-pane fade" role="tabpanel" aria-labelledby="tab-html1">
+   <div class="card-header" id="heading-html1">
+    <a class="collapsed" data-bs-toggle="collapse" href="#collapse-html1" data-parent="#tab-content"
+     aria-expanded="false" aria-controls="collapse-html1" data-hash="#pane-html1" title="HTML Source code tab header">
+     Source code
+    </a>
+   </div>
+   <div id="collapse-html1" class="collapse" role="tabpanel" aria-labelledby="heading-html1">
+    <div class="card-body">
+     <pre style="max-height: 300px;"><code>{% include "../../src/_includes/modules/tabs.html" %}</code>
+    </pre>
+
+    </div>
+   </div>
+  </div>
+
+
+ </div>
+</div>
+<!--END TABS-->
 
 
 
 
+<h2 id="Usage">Usage</h2>
+<h3>When and how to use it</h3>
+<p>Use tabs to group similar information on the same page. This allows visitors to switch between content without
+ navigating away from that page or workflow to complete a task.</p>
+<p>Use tabs when:</p>
+<ul>
+ <li>Content can be logically separated into labeled sections</li>
+ <li>Visitors do not need to view all the sections at once</li>
+</ul>
+<p>Test your content without tabs first. It might be better to:</p>
+<ul>
+ <li>Split the content across multiple pages</li>
+ <li>Keep the content on a single page, separated by headings</li>
+ <li>Use <a href="/structure/site-navigation.html">side navigation</a> to let users navigate quickly to specific
+  sections of content</li>
+</ul>
+
+<h3>How not to use it</h3>
+<p>Do not use the tabs component as a form of page navigation. </p>
+<p>Tabs hide content and not everyone will notice them or understand how they work.</p>
+<p>Do not use tabs if your visitors need to:</p>
+<ul>
+ <li>Read through all of the content in order, like a step-by-step process</li>
+ <li>Compare information in different tabs</li>
+</ul>
 
 
-
-<h2>Bootsrap Tabs</h2>
-<p>
-<p>
- Bootstrap tabs component uses <code>.nav-tabs</code> class and requires the
- <code>.nav</code> base class. Tabs also uses HTML5 roles for accessibility.
- Add <code>role="tablist"</code> to the ul that contains the tab links,
- and add <code>role="tab"</code> to the anchor tag that is the tab link.
- The tab link also requires an HTML5 <code>data-bs-toggle="tab"</code> attribute
- be applied to instantiate the javascript behavior.
-</p>
-</p>
-{% include "../../src/_includes/modules/tabs-bootstrap.html" %}
-
-<h2><label for="sample-tabs-bottom">Source code:</label></h2>
-<textarea id="sample-tabs-bottom" class="form-control" rows="10"
- cols="80">{% include "../../src/_includes/modules/tabs-bootstrap.html" %}</textarea>
-
-<h2>Responsive Tabs</h2>
-<p>
- Tabs on small mobile devices can be a really bad experience. By applying the
- <code>.responsive</code> class to the <code>.tab-group</code>
- element, the tab will transform from a tab list to an accordion list on small mobile
- devices. Following example is using bootstrap cards to display tabs as accordion list in
- mobile devices:
-</p>
-{% include "../../src/_includes/modules/tabs-responsive.html" %}
-
-<h2><label for="responsive-tabs">Source code (responsive):</label></h2>
-<textarea id="responsive-tabs" class="form-control" rows="10"
- cols="80">{% include "../../src/_includes/modules/tabs-responsive.html" %}</textarea>
+<h2 id="Accessibility">Accessibility</h2>
+{% include "../../src/_includes/modules/accessibility.html" %}
