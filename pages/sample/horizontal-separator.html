@@ -7,7 +7,7 @@ permalink: "components/horizontal-separator.html"
 <h1 class="mt-lg-0">Horizontal separator</h1>
 <p>The horizontal separator is a style component that uses a line to separate content into sections.</p>
 
-<h2 id="Sample">Sample</h2>
+<h2 id="default-seperator">Default seperator</h2>
 
 <!--TABS-->
 <div class="tab-group responsive">
@@ -32,7 +32,7 @@ permalink: "components/horizontal-separator.html"
       </div>
       <div id="collapse-example1" class="collapse show" role="tabpanel" aria-labelledby="heading-example1">
         <div class="card-body p-b-md">
-          {% include "../../src/_includes/modules/horizontal-separator.html" %}
+          {% include "../../src/_includes/modules/horizontal-separator-default.html" %}
         </div>
       </div>
     </div>
@@ -47,7 +47,58 @@ permalink: "components/horizontal-separator.html"
       </div>
       <div id="collapse-html1" class="collapse" role="tabpanel" aria-labelledby="heading-html1">
         <div class="card-body">
-          <pre style="max-height: 300px;"><code>{% include "../../src/_includes/modules/horizontal-separator.html" %}</code>
+          <pre style="max-height: 300px;"><code>{% include "../../src/_includes/modules/horizontal-separator-default.html" %}</code>
+      </pre>
+
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+<!--END TABS-->
+
+<h2 id="dotted-seperator">Dotted seperator</h2>
+
+<!--TABS-->
+<div class="tab-group responsive">
+  <ul id="tabs2" class="nav nav-tabs" role="tablist">
+    <li class="nav-item">
+      <a id="tab-example2" href="#pane-example2" class="nav-link active" data-bs-toggle="tab" role="tab">Example</a>
+    </li>
+    <li class="nav-item">
+      <a id="tab-html2" href="#pane-html2" class="nav-link" data-bs-toggle="tab" role="tab">Source code</a>
+    </li>
+
+  </ul>
+
+  <div id="tab-content2" class="tab-content">
+    <!--Examples-->
+    <div id="pane-example2" class="card tab-pane fade show active" role="tabpanel" aria-labelledby="tab-example2">
+      <div class="card-header" id="heading-example2">
+        <a data-bs-toggle="collapse" href="#collapse-example2" data-parent="#tab-content2" aria-expanded="true"
+     aria-controls="collapse-example2" data-hash="#pane-example2" title="Example tab header">
+     Example
+    </a>
+      </div>
+      <div id="collapse-example2" class="collapse show" role="tabpanel" aria-labelledby="heading-example2">
+        <div class="card-body p-b-md">
+          {% include "../../src/_includes/modules/horizontal-separator-dotted.html" %}
+        </div>
+      </div>
+    </div>
+
+    <!--HTML-->
+    <div id="pane-html2" class="card tab-pane fade" role="tabpanel" aria-labelledby="tab-html2">
+      <div class="card-header" id="heading-html2">
+        <a class="collapsed" data-bs-toggle="collapse" href="#collapse-html2" data-parent="#tab-content2"
+     aria-expanded="false" aria-controls="collapse-html2" data-hash="#pane-html2" title="HTML Source code tab header">
+     Source code
+    </a>
+      </div>
+      <div id="collapse-html2" class="collapse" role="tabpanel" aria-labelledby="heading-html2">
+        <div class="card-body">
+          <pre style="max-height: 300px;"><code>{% include "../../src/_includes/modules/horizontal-separator-dotted.html" %}</code>
       </pre>
 
         </div>
