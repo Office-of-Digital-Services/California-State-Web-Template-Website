@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Timeline</title> 
+  <title>Progress tracker</title> 
   <meta charset="utf-8">
   <meta name="Author" content="State of California" />
   <meta name="Description" content="State of California" />
@@ -218,12 +218,12 @@
    </li>
    <li class="nav-item">
        
-       <a class="first-level-link active" href="/components.html">Components</a>
+       <a class="first-level-link" href="/components.html">Components</a>
         
    </li>
    <li class="nav-item">
        
-       <a class="first-level-link" href="/patterns.html" >Patterns</a>
+       <a class="first-level-link active" href="/patterns.html" >Patterns</a>
         
    </li>
  </ul>
@@ -286,12 +286,6 @@
      
    
      
-      
-      <li><a href="/components.html" title="Components landing page">Components</a></li>
-        
-       
-      <li>Timeline</li>
-       
    
      
    
@@ -414,149 +408,258 @@
  </ol>
 </nav>
 
+
 			<div class="row">
 				<div class="col-lg-3">
+
      
 					<nav aria-labelledby="components-list" class="side-navigation sticky-6">
 		   
 
-
 <ul class="list-navigation">
-  <li><a href="/components.html" class="nav-heading" id="components-list">Components</a>
+  <li><a href="/patterns.html" class="nav-heading" id="components-list">Patterns</a>
   <ul>
   				
       
-        <li><a href="/components/accordions.html" >Accordion</a>
+        <li><a href="/patterns/card-grid.html" >Card grid</a>
          
          
         </li>
        
       
       
-        <li><a href="/components/alert.html" >Alert</a>
+        <li><a href="/patterns/hero-banner.html" >Hero banner</a>
          
          
         </li>
        
       
       
-        <li><a href="/components/blockquotes.html" >Blockquote</a>
+        <li><a href="/patterns/feature-card.html" >Feature card</a>
          
          
         </li>
        
       
       
-        <li><a href="/components/breadcrumb.html" >Breadcrumb</a>
+          <li><a href="/patterns/figure.html" >Figure with Captions</a></li>
+       
+      
+      
+        <li><a href="/patterns/link-grid.html" >Link grid</a>
          
          
         </li>
        
       
       
-          <li><a href="/components/buttons.html" >Button</a></li>
+          <li><a href="/patterns/news-list.html" >News list</a></li>
        
       
       
-        <li><a href="/components/cards.html" >Card</a>
+          <li><a href="/patterns/news-article.html" >News article</a></li>
+       
+      
+      
+          <li><a href="/patterns/profile-banners.html" >Profile banner</a></li>
+       
+      
+      
+        <li><a href="/patterns/progress-tracker.html"  aria-current="page"  class="active" >Progress tracker</a>
          
-         
+          
+           <ul>
+            
+            <li>
+             <a href="#horizontal-tracker" data-hash="" class="tab-link">Horizontal tracker</a>
+            </li>
+            
+            <li>
+             <a href="#vertical-tracker" data-hash="" class="tab-link">Vertical tracker</a>
+            </li>
+            
+            <li>
+             <a href="#step-list" data-hash="" class="tab-link">Step list</a>
+            </li>
+            
+            <li>
+             <a href="#Accessibility" data-hash="" class="tab-link">Accessibility</a>
+            </li>
+            
+           </ul>
+           
         </li>
-       
-      
-      
-        <li><a href="/components/countdown.html" >Countdown timer</a>
-         
-         
-        </li>
-       
-      
-      
-          <li><a href="/components/form-elements.html" >Form elements</a></li>
-       
-      
-      
-        <li><a href="/components/horizontal-separator.html" >Horizontal separator</a>
-         
-         
-        </li>
-       
-      
-      
-        <li><a href="/components/lists.html" >Lists</a>
-         
-         
-        </li>
-       
-      
-      
-        <li><a href="/components/modal.html" >Modal</a>
-         
-         
-        </li>
-       
-      
-      
-        <li><a href="/components/number-counter.html" >Number counter</a>
-         
-         
-        </li>
-       
-      
-      
-        <li><a href="/components/parallax.html" >Parallax</a>
-         
-         
-        </li>
-       
-      
-      
-        <li><a href="/components/progress-bar.html" >Progress bar</a>
-         
-         
-        </li>
-       
-      
-      
-          <li><a href="/components/search-bar.html" >Search bar</a></li>
-       
-      
-      
-        <li><a href="/components/social-media-icons.html" >Social media icons</a>
-         
-         
-        </li>
-       
-      
-      
-          <li><a href="/components/tables.html" >Table</a></li>
-       
-      
-      
-          <li><a href="/components/tabs.html" >Tabs</a></li>
        
       
       </ul>
   </li>
-  <li><a href="/css-shortcuts/css-units.html" id="components-list">CSS Style Shortcuts</a>
- </ul>
+  </ul>
+  </nav>
 
 
-
-
-					</nav>
 				</div>
-				<div class="col-lg-9 p-b-lg">
-					
+				<div class="col-lg-9 p-b-lg body-content">
+					<h1 class="mt-lg-0">Progress tracker</h1>
+<p> A progress tracker displays the steps and progress through a journey.</p>
 
+<h2 id="horizontal-tracker">Horizontal tracker</h2>
+<div class="tab-group responsive">
+  <ul id="tabs1" class="nav nav-tabs" role="tablist">
+    <li class="nav-item">
+      <a id="tab-example1" href="#pane-example1" class="nav-link active" data-bs-toggle="tab" role="tab">Example</a>
+    </li>
+    <li class="nav-item">
+      <a id="tab-html1" href="#pane-html1" class="nav-link" data-bs-toggle="tab" role="tab">Source code</a>
+    </li>
+  </ul>
+  <div id="tab-content" class="tab-content">
+    <div id="pane-example1" class="card tab-pane fade show active" role="tabpanel" aria-labelledby="tab-example1">
+      <div class="card-header" id="heading-example1">
+        <a data-bs-toggle="collapse" href="#collapse-example1" data-parent="#tab-content" aria-expanded="true" aria-controls="collapse-example1" data-hash="#pane-example1" title="Example tab header">
+          Example
+        </a>
+      </div>
+      <div id="collapse-example1" class="collapse show" role="tabpanel" aria-labelledby="heading-example1">
+        <div class="p-a-md p-b-lg">
+          <!-- Static Process Bold -->
+<div class="row">
+    <div class="col-sm-3 m-b-60">
+        <!-- Static Process -->
+        <div class="text-center">
+            <i class="dot-line progress-bold brd-transparent-before brd-primary-light-after">
+                <span class="dot-line-inner bg-primary-light bg-primary-before brd-primary-light"></span>
+            </i>
+            <h3 class="h5 m-b">Step 1</h3>
+            <p class="m-b-0">This is where we sit down, grab a cup of coffee and do step 1.</p>
+        </div>
+        <!-- End Static Process -->
+    </div>
 
+    <div class="col-sm-3 m-b-60">
+        <!-- Static Process -->
+        <div class="text-center">
+            <i class="dot-line progress-bold brd-primary-light-before brd-primary-light-after">
+                <span class="dot-line-inner bg-primary-light bg-primary-before brd-primary-light"></span>
+            </i>
+            <h3 class="h5 m-b">Step 2</h3>
+            <p class="m-b-0">Now that we've have some ideas, it's time for step 2.</p>
+        </div>
+        <!-- End Static Process -->
+    </div>
 
-<h1 class="mt-lg-0">Timeline</h1>
-<p>Timeline is a display of a list of events (or milestones) in chronological order. in our case it
- could be a line with dots labelled with dates and events paralleling it.</p>
+    <div class="col-sm-3 m-b-60">
+        <!-- Static Process -->
+        <div class="text-center">
+            <i class="dot-line progress-bold brd-primary-light-before brd-gray-light-after">
+                <span class="dot-line-inner bg-primary-light bg-primary-before brd-primary-light"></span>
+            </i>
+            <h3 class="h5 m-b">Step 3</h3>
+            <p class="m-b-0">We begin to visualize concepts and dive into step 3.</p>
+        </div>
+        <!-- End Static Process -->
+    </div>
 
-<h2>Example:</h2>
-<!--Experience-->
+    <div class="col-sm-3 m-b-60">
+        <!-- Static Process -->
+        <div class="text-center">
+            <i class="dot-line progress-bold brd-gray-light-before brd-transparent-after">
+                <span class="dot-line-inner bg-grey-light brd-gray-light"></span>
+            </i>
+            <h3 class="h5 m-b">Step 4</h3>
+            <p class="m-b-0">Your product is all dressed up and ready to go, it's time to do step 4.</p>
+        </div>
+        <!-- End Static Process -->
+    </div>
+</div>
+<!-- End Static Process -->
+        </div>
+      </div>
+    </div>
+    <div id="pane-html1" class="card tab-pane fade" role="tabpanel" aria-labelledby="tab-html1">
+      <div class="card-header" id="heading-html1">
+        <a class="collapsed" data-bs-toggle="collapse" href="#collapse-html1" data-parent="#tab-content" aria-expanded="false" aria-controls="collapse-html1" data-hash="#pane-html1" title="HTML Source code tab header">
+          Source code
+        </a>
+      </div>
+      <div id="collapse-html1" class="collapse" role="tabpanel" aria-labelledby="heading-html1">
+        <div class="card-body">
+          <pre style="max-height: 300px;"><code><!-- Static Process Bold -->
+<div class="row">
+    <div class="col-sm-3 m-b-60">
+        <!-- Static Process -->
+        <div class="text-center">
+            <i class="dot-line progress-bold brd-transparent-before brd-primary-light-after">
+                <span class="dot-line-inner bg-primary-light bg-primary-before brd-primary-light"></span>
+            </i>
+            <h3 class="h5 m-b">Step 1</h3>
+            <p class="m-b-0">This is where we sit down, grab a cup of coffee and do step 1.</p>
+        </div>
+        <!-- End Static Process -->
+    </div>
+
+    <div class="col-sm-3 m-b-60">
+        <!-- Static Process -->
+        <div class="text-center">
+            <i class="dot-line progress-bold brd-primary-light-before brd-primary-light-after">
+                <span class="dot-line-inner bg-primary-light bg-primary-before brd-primary-light"></span>
+            </i>
+            <h3 class="h5 m-b">Step 2</h3>
+            <p class="m-b-0">Now that we've have some ideas, it's time for step 2.</p>
+        </div>
+        <!-- End Static Process -->
+    </div>
+
+    <div class="col-sm-3 m-b-60">
+        <!-- Static Process -->
+        <div class="text-center">
+            <i class="dot-line progress-bold brd-primary-light-before brd-gray-light-after">
+                <span class="dot-line-inner bg-primary-light bg-primary-before brd-primary-light"></span>
+            </i>
+            <h3 class="h5 m-b">Step 3</h3>
+            <p class="m-b-0">We begin to visualize concepts and dive into step 3.</p>
+        </div>
+        <!-- End Static Process -->
+    </div>
+
+    <div class="col-sm-3 m-b-60">
+        <!-- Static Process -->
+        <div class="text-center">
+            <i class="dot-line progress-bold brd-gray-light-before brd-transparent-after">
+                <span class="dot-line-inner bg-grey-light brd-gray-light"></span>
+            </i>
+            <h3 class="h5 m-b">Step 4</h3>
+            <p class="m-b-0">Your product is all dressed up and ready to go, it's time to do step 4.</p>
+        </div>
+        <!-- End Static Process -->
+    </div>
+</div>
+<!-- End Static Process --></code></pre>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<h2 id="vertical-tracker">Vertical tracker</h2>
+<div class="tab-group responsive">
+  <ul id="tabs2" class="nav nav-tabs" role="tablist">
+    <li class="nav-item">
+      <a id="tab-example2" href="#pane-example2" class="nav-link active" data-bs-toggle="tab" role="tab">Example</a>
+    </li>
+    <li class="nav-item">
+      <a id="tab-html2" href="#pane-html2" class="nav-link" data-bs-toggle="tab" role="tab">Source code</a>
+    </li>
+  </ul>
+  <div id="tab-content" class="tab-content">
+    <div id="pane-example2" class="card tab-pane fade show active" role="tabpanel" aria-labelledby="tab-example2">
+      <div class="card-header" id="heading-example2">
+        <a data-bs-toggle="collapse" href="#collapse-example2" data-parent="#tab-content" aria-expanded="true" aria-controls="collapse-example2" data-hash="#pane-example2" title="Example tab header">
+          Example
+        </a>
+      </div>
+      <div id="collapse-example2" class="collapse show" role="tabpanel" aria-labelledby="heading-example2">
+        <div class="card-body p-b-md">
+          <!--Experience-->
 <div class="card overflow-visible">
     <!-- Panel Header -->
     <div class="card-heading bg-grey-lightest">
@@ -668,23 +771,18 @@
     <!-- End Panel Body -->
 </div>
 <!--End Experience-->
-
-
-<button type="button" class="btn btn-default btn-sm" data-bs-toggle="modal" data-bs-target="#progress-block">Show Source
- Code</button>
-<!-- Modal -->
-<div class="modal fade" id="progress-block" role="dialog">
- <div class="modal-dialog modal-lg">
-  <div class="modal-content">
-   <div class="modal-header">
-    <h3 class="h4 modal-title">HTML Markup</h3>
-    <button type="button" class="close btn btn-secondary" data-bs-dismiss="modal"><span class="sr-only">Close
-      modal</span><span class="ca-gov-icon-close-mark" aria-hidden="true"></span></button>
-
-   </div>
-   <div class="modal-body">
-    <h3 class="h4">Source code:</h3>
-    <pre><code class="overflow-auto"><!--Experience-->
+        </div>
+      </div>
+    </div>
+    <div id="pane-html2" class="card tab-pane fade" role="tabpanel" aria-labelledby="tab-html2">
+      <div class="card-header" id="heading-html2">
+        <a class="collapsed" data-bs-toggle="collapse" href="#collapse-html2" data-parent="#tab-content" aria-expanded="false" aria-controls="collapse-html2" data-hash="#pane-html2" title="HTML Source code tab header">
+          Source code
+        </a>
+      </div>
+      <div id="collapse-html2" class="collapse" role="tabpanel" aria-labelledby="heading-html2">
+        <div class="card-body">
+          <pre style="max-height: 300px;"><code><!--Experience-->
 <div class="card overflow-visible">
     <!-- Panel Header -->
     <div class="card-heading bg-grey-lightest">
@@ -796,13 +894,129 @@
     <!-- End Panel Body -->
 </div>
 <!--End Experience--></code></pre>
-   </div>
-   <div class="modal-footer">
-    <button type="button" class="btn btn-default" data-bs-dismiss="modal">Close</button>
-   </div>
+        </div>
+      </div>
+    </div>
   </div>
- </div>
-</div><!-- / End Modal -->
+</div>
+
+<h2 id="step-list">Step list</h2>
+<div class="tab-group responsive">
+  <ul id="tabs3" class="nav nav-tabs" role="tablist">
+    <li class="nav-item">
+      <a id="tab-example3" href="#pane-example3" class="nav-link active" data-bs-toggle="tab" role="tab">Example</a>
+    </li>
+    <li class="nav-item">
+      <a id="tab-html3" href="#pane-html3" class="nav-link" data-bs-toggle="tab" role="tab">Source code</a>
+    </li>
+  </ul>
+  <div id="tab-content" class="tab-content">
+    <div id="pane-example3" class="card tab-pane fade show active" role="tabpanel" aria-labelledby="tab-example3">
+      <div class="card-header" id="heading-example3">
+        <a data-bs-toggle="collapse" href="#collapse-example3" data-parent="#tab-content" aria-expanded="true" aria-controls="collapse-example3" data-hash="#pane-example3" title="Example tab header">
+                        Example
+                      </a>
+      </div>
+      <div id="collapse-example3" class="collapse show" role="tabpanel" aria-labelledby="heading-example3">
+        <div class="p-a-md p-b-lg">
+          <ol class="cagov-step-list">
+ <li>
+  <strong>Complete local permitting processes</strong>
+  <br />
+  <span class="cagov-step-list-content">
+   Many cities and counties have rules and permitting for cannabis
+   businesses. Some do not allow cannabis businesses. Make sure you set up
+   your business in an area that allows commercial cannabis activity.
+   Complete any permitting requirements your city or county requires before
+   you apply for a state cannabis license.
+  </span>
+ </li>
+ <li>
+  <strong>Understand the state regulations for cannabis businesses</strong>
+  <br />
+  <span class="cagov-step-list-content">
+   The Department of Cannabis Control (DCC) has requirements
+   for standard operating procedures, training employees and how facilities
+   must be set up. Make sure you understand and can meet these rules.
+  </span>
+ </li>
+ <li>
+  <strong>Gather your application information and documents</strong>
+  <br />
+  <span class="cagov-step-list-content">
+   DCC has resources to help you create the documents you need during the
+   license process. If you have questions about the requirements, email the
+   <a href="mailto:licensing@cannabis.ca.gov">DCC licensing team</a>.
+  </span>
+ </li>
+</ol>
+        </div>
+      </div>
+    </div>
+    <div id="pane-html3" class="card tab-pane fade" role="tabpanel" aria-labelledby="tab-html3">
+      <div class="card-header" id="heading-html3">
+        <a class="collapsed" data-bs-toggle="collapse" href="#collapse-html3" data-parent="#tab-content" aria-expanded="false" aria-controls="collapse-html3" data-hash="#pane-html3" title="HTML Source code tab header">
+          Source code
+        </a>
+      </div>
+      <div id="collapse-html3" class="collapse" role="tabpanel" aria-labelledby="heading-html3">
+        <div class="card-body">
+          <pre style="max-height: 300px;"><code><ol class="cagov-step-list">
+ <li>
+  <strong>Complete local permitting processes</strong>
+  <br />
+  <span class="cagov-step-list-content">
+   Many cities and counties have rules and permitting for cannabis
+   businesses. Some do not allow cannabis businesses. Make sure you set up
+   your business in an area that allows commercial cannabis activity.
+   Complete any permitting requirements your city or county requires before
+   you apply for a state cannabis license.
+  </span>
+ </li>
+ <li>
+  <strong>Understand the state regulations for cannabis businesses</strong>
+  <br />
+  <span class="cagov-step-list-content">
+   The Department of Cannabis Control (DCC) has requirements
+   for standard operating procedures, training employees and how facilities
+   must be set up. Make sure you understand and can meet these rules.
+  </span>
+ </li>
+ <li>
+  <strong>Gather your application information and documents</strong>
+  <br />
+  <span class="cagov-step-list-content">
+   DCC has resources to help you create the documents you need during the
+   license process. If you have questions about the requirements, email the
+   <a href="mailto:licensing@cannabis.ca.gov">DCC licensing team</a>.
+  </span>
+ </li>
+</ol></code></pre>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<h2 id="Usage">Usage</h2>
+<h3>When and how to use it</h3>
+<p>The progress tracker shows visitors where they are in a process. It can be used to help visitors navigate through processes by selecting steps.</p>
+<p>Progress trackers should display three or more steps or events in a sequence.</p>
+
+<h3>How not to use it</h3>
+<p>Do not use the progress tracker to display items that are out of order or unrelated. Use bullet points instead.</p>
+
+<h2 id="Accessibility">Accessibility</h2>
+<h3 class="m-t">Standard accessibility review</h3>
+<p>Each time a new component version is published:</p>
+<ul>
+ <li>Test with the <a href="https://www.deque.com/axe/" target="_blank">axe
+   accessibility tool</a>.</li>
+ <li>Review with the <a href="https://www.apple.com/voiceover/info/guide/_1121.html" target="_blank">VoiceOver</a> or <a
+   href="https://www.nvaccess.org/download/" target="_blank">NVDA</a> screen reader.</li>
+ <li>Ensure all actionable elements are accessible by keyboard command and tab in a logical order. </li>
+ <li>Check the component layout on a variety of screen sizes.</li>
+</ul>
 				</div>
 			</div>
 		</div>

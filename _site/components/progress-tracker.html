@@ -465,7 +465,7 @@
        
       
       
-        <li><a href="/components/countdown-timer.html" >Countdown timer</a>
+        <li><a href="/components/countdown.html" >Countdown timer</a>
          
          
         </li>
@@ -476,7 +476,10 @@
        
       
       
-          <li><a href="/components/horizontal-separator.html" >Horizontal separator</a></li>
+        <li><a href="/components/horizontal-separator.html" >Horizontal separator</a>
+         
+         
+        </li>
        
       
       
@@ -542,549 +545,153 @@
 				</div>
 				<div class="col-lg-9 p-b-lg">
 					
+<h1 class="mt-lg-0">Progress tracker</h1>
+<p style="color: gray"><i>Other names: process indicator, step list</i></p>
+<p>A progress tracker displays the steps and progress through a journey.</p>
+<p>Use the progress tracker to show:</p>
+<ul>
+  <li>Milestones</li>
+  <li>Timelines</li>
+  <li>Chronological steps</li>
+</ul>
 
-<div class="row">
- <div class="half">
-  <h1 class="mt-lg-0">Progress tracker</h1>
-  <p>Provide up-to-date feedback on the progress of a workflow or action with simple yet flexible
-   progress bars.</p>
-  <p>The progress bars can be colored with traditional theme colors plus new accent colors. Below
-   is a list of possible color class names:</p>
-  <ul>
-   <li><code>.bg-success</code></li>
-   <li><code>.bg-info</code></li>
-   <li><code>.bg-warning</code></li>
-   <li><code>.bg-danger</code></li>
-   <li><code>.bg-dark</code></li>
-   <li><code>.bg-primary</code></li>
-   <li><code>.bg-highlight</code></li>
-   <li><code>.bg-standout</code></li>
+<h2 id="Sample">Sample</h2>
+
+<!--TABS-->
+<div class="tab-group responsive">
+  <ul id="tabs1" class="nav nav-tabs" role="tablist">
+    <li class="nav-item">
+      <a
+        id="tab-example1"
+        href="#pane-example1"
+        class="nav-link active"
+        data-bs-toggle="tab"
+        role="tab"
+      >
+        Example
+      </a>
+    </li>
+    <li class="nav-item">
+      <a
+        id="tab-html1"
+        href="#pane-html1"
+        class="nav-link"
+        data-bs-toggle="tab"
+        role="tab"
+      >
+        Source code
+      </a>
+    </li>
   </ul>
-  <h2>Example:</h2>
-  <div class="progress">
-    <div class="progress-bar bg-highlight color-gray-dark overflow-auto" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%;"  tabindex="0">
-        60%
-    </div>
-</div>
 
- </div>
- <div class="half">
+  <div id="tab-content" class="tab-content">
+    <!--Examples-->
+    <div
+      id="pane-example1"
+      class="card tab-pane fade show active"
+      role="tabpanel"
+      aria-labelledby="tab-example1"
+    >
+      <div class="card-header" id="heading-example1">
+        <a
+          data-bs-toggle="collapse"
+          href="#collapse-example1"
+          data-parent="#tab-content"
+          aria-expanded="true"
+          aria-controls="collapse-example1"
+          data-hash="#pane-example1"
+          title="Example tab header"
+        >
+          Example
+        </a>
+      </div>
+      <div
+        id="collapse-example1"
+        class="collapse show"
+        role="tabpanel"
+        aria-labelledby="heading-example1"
+      >
+        <div class="card-body p-b-md">
+          <h3>Horizontal tracker:</h3>
+          {#% include "../../src/_includes/modules/horizontal-tracker.html" %#}
 
+          <h3>Vertical tracker</h3>
+          {#% include "../../src/_includes/modules/vertical-tracker.html" %#}
 
-  <h2>Source code:</h2>
-  <pre><code class="overflow-auto"><div class="progress">
-    <div class="progress-bar bg-highlight color-gray-dark overflow-auto" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%;"  tabindex="0">
-        60%
-    </div>
-</div></code></pre>
- </div>
-</div>
-
-<hr>
-
-
-<div class="row">
- <div class="half">
-  <h2>Progress Bars Variety</h2>
-  <p>Progress bars sizes and variations.</p>
-  <div class="progress m-b-md  min-height-50 rounded-50">
-    <div class="progress-bar bg-success overflow-auto" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%;" tabindex="0">
-        <span class="font-size-25">60%</span>
-    </div>
-</div>
-
-<h3 class="m-b-sm h6">Project Completeness</h3>
-<div class="progress min-height-20 m-b-md overflow-visible">
-    <div class="progress-bar pos-rel bg-primary overflow-auto" role="progressbar" style="width: 83%" aria-valuenow="83" aria-valuemin="0" aria-valuemax="100" tabindex="0">
-        <div class="text-center progress-pointer bg-primary font-size-12">83%</div>
-    </div>
-</div>
-
-
-<h3 class="m-b-sm h6">Project Completeness <span class="float-right ml-10">73%</span></h3>
-<div class="progress min-height-5 m-b-md">
-    <div class="progress-bar bg-dark" role="progressbar" style="width: 73%" aria-valuenow="73" aria-valuemin="0" aria-valuemax="100"></div>
-</div>
- </div>
- <div class="half">
-  <h2>Source code:</h2>
-  <pre><code class="overflow-auto"><div class="progress m-b-md  min-height-50 rounded-50">
-    <div class="progress-bar bg-success overflow-auto" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%;" tabindex="0">
-        <span class="font-size-25">60%</span>
-    </div>
-</div>
-
-<h3 class="m-b-sm h6">Project Completeness</h3>
-<div class="progress min-height-20 m-b-md overflow-visible">
-    <div class="progress-bar pos-rel bg-primary overflow-auto" role="progressbar" style="width: 83%" aria-valuenow="83" aria-valuemin="0" aria-valuemax="100" tabindex="0">
-        <div class="text-center progress-pointer bg-primary font-size-12">83%</div>
-    </div>
-</div>
-
-
-<h3 class="m-b-sm h6">Project Completeness <span class="float-right ml-10">73%</span></h3>
-<div class="progress min-height-5 m-b-md">
-    <div class="progress-bar bg-dark" role="progressbar" style="width: 73%" aria-valuenow="73" aria-valuemin="0" aria-valuemax="100"></div>
-</div></code></pre>
- </div>
-</div>
-
-<hr>
-
-<div class="row">
- <div class="half">
-  <h2>Striped Progress Bars</h2>
-  <p>Uses a gradient to create a striped effect. Not available in IE9 and below.</p>
-  <div class="progress">
-    <div class="progress-bar progress-bar-striped bg-standout overflow-auto" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%;" tabindex="0">
-        60%
-    </div>
-</div>
- </div>
- <div class="half">
-  <h2>Source code:</h2>
-  <pre><code class="overflow-auto"><div class="progress">
-    <div class="progress-bar progress-bar-striped bg-standout overflow-auto" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%;" tabindex="0">
-        60%
-    </div>
-</div></code></pre>
- </div>
-</div>
-
-<hr>
-
-<div class="row">
- <div class="half">
-  <h2>Animated Progress Bars</h2>
-  <p>Add <code>.active</code> to <code>.progress-bar-striped</code> to animate the stripes right
-   to left. Not available in IE9 and below.</p>
-  <div class="progress">
-    <div class="progress-bar progress-bar-striped progress-bar-animated bg-primary overflow-auto" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%;" tabindex="0">
-        60%
-    </div>
-</div>
- </div>
- <div class="half">
-  <h2>Source code:</h2>
-  <pre><code class="overflow-auto"><div class="progress">
-    <div class="progress-bar progress-bar-striped progress-bar-animated bg-primary overflow-auto" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%;" tabindex="0">
-        60%
-    </div>
-</div></code></pre>
- </div>
-</div>
-
-<hr>
-
-<div class="row">
- <div class="half">
-  <h2>Stacked Progress Bars</h2>
-  <p>Place multiple bars into the same <code>.progress</code> to stack them.</p>
-  <div class="progress">
-    <div class="progress-bar bg-highlight" style="width: 35%">
-        <span class="sr-only">35% Complete (success)</span>
-    </div>
-    <div class="progress-bar bg-danger progress-bar-striped" style="width: 20%">
-        <span class="sr-only">20% Complete (warning)</span>
-    </div>
-    <div class="progress-bar bg-primary" style="width: 10%">
-        <span class="sr-only">10% Complete (danger)</span>
-    </div>
-</div>
- </div>
- <div class="half">
-  <h2>Source code:</h2>
-  <pre><code class="overflow-auto"><div class="progress">
-    <div class="progress-bar bg-highlight" style="width: 35%">
-        <span class="sr-only">35% Complete (success)</span>
-    </div>
-    <div class="progress-bar bg-danger progress-bar-striped" style="width: 20%">
-        <span class="sr-only">20% Complete (warning)</span>
-    </div>
-    <div class="progress-bar bg-primary" style="width: 10%">
-        <span class="sr-only">10% Complete (danger)</span>
-    </div>
-</div></code></pre>
- </div>
-</div>
-
-
-<h2>Progress block</h2>
-
-<p>Progress block is progress trackers (or progress indicators) display progress through a sequence by
- breaking it up into multiple logical and numbered steps. They guide the user through a number of
- steps in order to complete a specified task.</p>
-
-<h2>Example:</h2>
-<!-- Static Process -->
-<div class="row">
-    <div class="col-sm-3 m-b-60">
-        <!-- Static Process -->
-        <div class="text-center">
-            <i class="dot-line brd-transparent-before brd-gray-light-after m-b-md">
-                <span class="dot-line-inner bg-white bg-primary-before brd-gray-light"></span>
-            </i>
-            <h3 class="h5 m-b">Brainstorming</h3>
-            <p class="m-b-0">This is where we sit down, grab a cup of coffee and do some brainstorming.</p>
+          <h3>Step list</h3>
+          {#% include "../../src/_includes/modules/step-list.html" %#}
         </div>
-        <!-- End Static Process -->
+      </div>
     </div>
 
-    <div class="col-sm-3 m-b-60">
-        <!-- Static Process -->
-        <div class="text-center">
-            <i class="dot-line brd-gray-light-before brd-gray-light-after m-b-md">
-                <span class="dot-line-inner bg-white bg-primary-before brd-gray-light"></span>
-            </i>
-            <h3 class="h5 m-b">Research</h3>
-            <p class="m-b-0">Now that we've have some ideas, it's time to research.</p>
+    <!--HTML-->
+    <div
+      id="pane-html1"
+      class="card tab-pane fade"
+      role="tabpanel"
+      aria-labelledby="tab-html1"
+    >
+      <div class="card-header" id="heading-html1">
+        <a
+          class="collapsed"
+          data-bs-toggle="collapse"
+          href="#collapse-html1"
+          data-parent="#tab-content"
+          aria-expanded="false"
+          aria-controls="collapse-html1"
+          data-hash="#pane-html1"
+          title="HTML Source code tab header"
+        >
+          Source code
+        </a>
+      </div>
+      <div
+        id="collapse-html1"
+        class="collapse"
+        role="tabpanel"
+        aria-labelledby="heading-html1"
+      >
+        <div class="card-body">
+          <pre
+            style="max-height: 300px"
+          ><code>{#% include "../../src/_includes/modules/horizontal-tracker.html" %#}
+{#% include "../../src/_includes/modules/vertical-tracker.html" %#}
+{#% include "../../src/_includes/modules/step-list.html" %#}</code></pre>
         </div>
-        <!-- End Static Process -->
+      </div>
     </div>
-
-    <div class="col-sm-3 m-b-60">
-        <!-- Static Process -->
-        <div class="text-center">
-            <i class="dot-line brd-gray-light-before brd-gray-light-after m-b-md">
-                <span class="dot-line-inner bg-white bg-primary-before brd-gray-light"></span>
-            </i>
-            <h3 class="h5 m-b">Design</h3>
-            <p class="m-b-0">We begin to visualize concepts and dive into details.</p>
-        </div>
-        <!-- End Static Process -->
-    </div>
-
-    <div class="col-sm-3 m-b-60">
-        <!-- Static Process -->
-        <div class="text-center">
-            <i class="dot-line brd-gray-light-before brd-transparent-after m-b-md">
-                <span class="dot-line-inner bg-white brd-gray-light"></span>
-            </i>
-            <h3 class="h5 m-b">Release</h3>
-            <p class="m-b-0">Your product is all dressed up and ready to go, it's time to release.</p>
-        </div>
-        <!-- End Static Process -->
-    </div>
-</div>
-<!-- End Static Process -->
-
-
-
-
-<h2>Example #2:</h2>
-<p class="m-b-lg">Following example uses <code>.bg-primary-light</code>,
- <code>.brd-primary-light</code>, etc. classes to specify colors for the specific progress block
- elements. To change the color of the block elements change <code>-primary-</code> part of the class
- name to either <code>-highlight-</code>, <code>-standout-</code>, or <code>-secondary-</code>.
- <!-- Static Process Bold -->
-<div class="row">
-    <div class="col-sm-3 m-b-60">
-        <!-- Static Process -->
-        <div class="text-center">
-            <i class="dot-line progress-bold brd-transparent-before brd-primary-light-after">
-                <span class="dot-line-inner bg-primary-light bg-primary-before brd-primary-light"></span>
-            </i>
-            <h3 class="h5 m-b">Step 1</h3>
-            <p class="m-b-0">This is where we sit down, grab a cup of coffee and do step 1.</p>
-        </div>
-        <!-- End Static Process -->
-    </div>
-
-    <div class="col-sm-3 m-b-60">
-        <!-- Static Process -->
-        <div class="text-center">
-            <i class="dot-line progress-bold brd-primary-light-before brd-primary-light-after">
-                <span class="dot-line-inner bg-primary-light bg-primary-before brd-primary-light"></span>
-            </i>
-            <h3 class="h5 m-b">Step 2</h3>
-            <p class="m-b-0">Now that we've have some ideas, it's time for step 2.</p>
-        </div>
-        <!-- End Static Process -->
-    </div>
-
-    <div class="col-sm-3 m-b-60">
-        <!-- Static Process -->
-        <div class="text-center">
-            <i class="dot-line progress-bold brd-primary-light-before brd-gray-light-after">
-                <span class="dot-line-inner bg-primary-light bg-primary-before brd-primary-light"></span>
-            </i>
-            <h3 class="h5 m-b">Step 3</h3>
-            <p class="m-b-0">We begin to visualize concepts and dive into step 3.</p>
-        </div>
-        <!-- End Static Process -->
-    </div>
-
-    <div class="col-sm-3 m-b-60">
-        <!-- Static Process -->
-        <div class="text-center">
-            <i class="dot-line progress-bold brd-gray-light-before brd-transparent-after">
-                <span class="dot-line-inner bg-grey-light brd-gray-light"></span>
-            </i>
-            <h3 class="h5 m-b">Step 4</h3>
-            <p class="m-b-0">Your product is all dressed up and ready to go, it's time to do step 4.</p>
-        </div>
-        <!-- End Static Process -->
-    </div>
-</div>
-<!-- End Static Process -->
-
-
-
-
-
-
-<h2 id="timeline">Timeline</h2>
-<p>Timeline is a display of a list of events (or milestones) in chronological order. in our case it
- could be a line with dots labelled with dates and events paralleling it.</p>
-
-<h2>Example:</h2>
-<!--Experience-->
-<div class="card overflow-visible">
-    <!-- Panel Header -->
-    <div class="card-heading bg-grey-lightest">
-        <h3 class="h4"><span class="ca-gov-icon-briefcase" aria-hidden="true"></span> Experience</h3>
-    </div>
-    <!-- End Panel Header -->
-    <!-- Panel Body -->
-    <div class="card-block">
-        <ul class="row list-unstyled">
-            <li class="col-md-12">
-                <article class="row">
-                    <!-- Timeline Date -->
-                    <div class="col-md-3 text-md-end p-r-md">
-                        <div class="h5 m-t m-b-0">Project Manager</div>
-                        <div class="h6 m-y-0">2016 - Current</div>
-                    </div>
-                    <!-- End Timeline Date -->
-                    <!-- Timeline Content -->
-                    <div class="col-md-9 pos-rel p-l-md brd-md-left brd-gray-light">
-                        <!-- Timeline Dot -->
-                        <div class="timeline-dot d-none d-md-block">
-                            <span class="dot-line-inner bg-white bg-primary-before brd-gray-light"></span>
-                        </div>
-                        <!-- End Timeline Dot -->
-
-                        <div class="h4 m-t m-b-0">State of California</div>
-                        <p class="m-b-md">Finally! Johne Doe got his dream job! He can work in the State now for the
-                            rest of his
-                            life.</p>
-
-                    </div>
-                    <!-- End Timeline Content -->
-                </article>
-            </li>
-            <li class="col-md-12">
-                <article class="row">
-                    <!-- Timeline Date -->
-                    <div class="col-md-3  text-md-end p-r-md">
-                        <div class="h5 m-t m-b-0">Full Stack Developer</div>
-                        <div class="h6 m-y-0">2014 - 2016</div>
-                    </div>
-                    <!-- End Timeline Date -->
-                    <!-- Timeline Content -->
-                    <div class="col-md-9 align-self-center pos-rel p-l-md brd-md-left brd-gray-light">
-                        <!-- Timeline Dot -->
-                        <div class="timeline-dot d-none d-md-block">
-                            <span class="dot-line-inner bg-white bg-primary-before brd-gray-light"></span>
-                        </div>
-                        <!-- End Timeline Dot -->
-
-                        <h3 class="h4 m-t m-b-0">Google</h3>
-                        <p class="m-b-md">Winter purslane courgette pumpkin quandong komatsuna fennel green bean
-                            cucumber. Pea
-                            cress potato sprouts wattle seed rutabaga.</p>
-
-                    </div>
-                    <!-- End Timeline Content -->
-                </article>
-            </li>
-            <li class="col-md-12">
-                <article class="row">
-                    <!-- Timeline Date -->
-                    <div class="col-md-3 text-md-end p-r-md">
-                        <h4 class="h5 m-t m-b-0">Frontend Developer</h4>
-                        <h5 class="h6 m-y-0">2012 - 2014</h5>
-                    </div>
-                    <!-- End Timeline Date -->
-                    <!-- Timeline Content -->
-                    <div class="col-md-9 align-self-center pos-rel  p-l-md brd-md-left brd-gray-light">
-                        <!-- Timeline Dot -->
-                        <div class="timeline-dot d-none d-md-block">
-                            <span class="dot-line-inner bg-white bg-primary-before brd-gray-light"></span>
-                        </div>
-                        <!-- End Timeline Dot -->
-
-                        <h3 class="h4 m-t m-b-0">Amazon Inc.</h3>
-                        <p class="m-b-md">Winter purslane courgette pumpkin quandong komatsuna fennel green bean
-                            cucumber. Pea cress potato sprouts wattle seed rutabaga.</p>
-
-                    </div>
-                    <!-- End Timeline Content -->
-                </article>
-            </li>
-            <li class="col-md-12">
-                <article class="row">
-                    <!-- Timeline Date -->
-                    <div class="col-md-3 text-md-end p-r-md">
-                        <div class="h5 m-t m-b-0">UX/UI Designer</div>
-                        <div class="h6 m-y-0">2010 - 2012</div>
-                    </div>
-                    <!-- End Timeline Date -->
-                    <!-- Timeline Content -->
-                    <div class="col-md-9 align-self-center pos-rel p-l-md brd-md-left brd-gray-light">
-                        <!-- Timeline Dot -->
-                        <div class="timeline-dot d-none d-md-block">
-                            <span class="dot-line-inner bg-white bg-primary-before brd-gray-light"></span>
-                        </div>
-                        <!-- End Timeline Dot -->
-                        <div class="h4 m-t m-b-0">Apple Inc.</div>
-                        <p class="m-b-md">Winter purslane courgette pumpkin quandong komatsuna fennel green bean
-                            cucumber. Pea cress potato sprouts wattle seed rutabaga.</p>
-
-                    </div>
-                    <!-- End Timeline Content -->
-                </article>
-            </li>
-        </ul>
-    </div>
-    <!-- End Panel Body -->
-</div>
-<!--End Experience-->
-
-
-<button type="button" class="btn btn-default btn-sm" data-bs-toggle="modal" data-bs-target="#progress-block">Show Source
- Code</button>
-<!-- Modal -->
-<div class="modal fade" id="progress-block" role="dialog">
- <div class="modal-dialog modal-lg">
-  <div class="modal-content">
-   <div class="modal-header">
-    <h3 class="h4 modal-title">HTML Markup</h3>
-    <button type="button" class="close btn btn-secondary" data-bs-dismiss="modal"><span class="sr-only">Close
-      modal</span><span class="ca-gov-icon-close-mark" aria-hidden="true"></span></button>
-
-   </div>
-   <div class="modal-body">
-    <h3 class="h4">Source code:</h3>
-    <pre><code class="overflow-auto"><!--Experience-->
-<div class="card overflow-visible">
-    <!-- Panel Header -->
-    <div class="card-heading bg-grey-lightest">
-        <h3 class="h4"><span class="ca-gov-icon-briefcase" aria-hidden="true"></span> Experience</h3>
-    </div>
-    <!-- End Panel Header -->
-    <!-- Panel Body -->
-    <div class="card-block">
-        <ul class="row list-unstyled">
-            <li class="col-md-12">
-                <article class="row">
-                    <!-- Timeline Date -->
-                    <div class="col-md-3 text-md-end p-r-md">
-                        <div class="h5 m-t m-b-0">Project Manager</div>
-                        <div class="h6 m-y-0">2016 - Current</div>
-                    </div>
-                    <!-- End Timeline Date -->
-                    <!-- Timeline Content -->
-                    <div class="col-md-9 pos-rel p-l-md brd-md-left brd-gray-light">
-                        <!-- Timeline Dot -->
-                        <div class="timeline-dot d-none d-md-block">
-                            <span class="dot-line-inner bg-white bg-primary-before brd-gray-light"></span>
-                        </div>
-                        <!-- End Timeline Dot -->
-
-                        <div class="h4 m-t m-b-0">State of California</div>
-                        <p class="m-b-md">Finally! Johne Doe got his dream job! He can work in the State now for the
-                            rest of his
-                            life.</p>
-
-                    </div>
-                    <!-- End Timeline Content -->
-                </article>
-            </li>
-            <li class="col-md-12">
-                <article class="row">
-                    <!-- Timeline Date -->
-                    <div class="col-md-3  text-md-end p-r-md">
-                        <div class="h5 m-t m-b-0">Full Stack Developer</div>
-                        <div class="h6 m-y-0">2014 - 2016</div>
-                    </div>
-                    <!-- End Timeline Date -->
-                    <!-- Timeline Content -->
-                    <div class="col-md-9 align-self-center pos-rel p-l-md brd-md-left brd-gray-light">
-                        <!-- Timeline Dot -->
-                        <div class="timeline-dot d-none d-md-block">
-                            <span class="dot-line-inner bg-white bg-primary-before brd-gray-light"></span>
-                        </div>
-                        <!-- End Timeline Dot -->
-
-                        <h3 class="h4 m-t m-b-0">Google</h3>
-                        <p class="m-b-md">Winter purslane courgette pumpkin quandong komatsuna fennel green bean
-                            cucumber. Pea
-                            cress potato sprouts wattle seed rutabaga.</p>
-
-                    </div>
-                    <!-- End Timeline Content -->
-                </article>
-            </li>
-            <li class="col-md-12">
-                <article class="row">
-                    <!-- Timeline Date -->
-                    <div class="col-md-3 text-md-end p-r-md">
-                        <h4 class="h5 m-t m-b-0">Frontend Developer</h4>
-                        <h5 class="h6 m-y-0">2012 - 2014</h5>
-                    </div>
-                    <!-- End Timeline Date -->
-                    <!-- Timeline Content -->
-                    <div class="col-md-9 align-self-center pos-rel  p-l-md brd-md-left brd-gray-light">
-                        <!-- Timeline Dot -->
-                        <div class="timeline-dot d-none d-md-block">
-                            <span class="dot-line-inner bg-white bg-primary-before brd-gray-light"></span>
-                        </div>
-                        <!-- End Timeline Dot -->
-
-                        <h3 class="h4 m-t m-b-0">Amazon Inc.</h3>
-                        <p class="m-b-md">Winter purslane courgette pumpkin quandong komatsuna fennel green bean
-                            cucumber. Pea cress potato sprouts wattle seed rutabaga.</p>
-
-                    </div>
-                    <!-- End Timeline Content -->
-                </article>
-            </li>
-            <li class="col-md-12">
-                <article class="row">
-                    <!-- Timeline Date -->
-                    <div class="col-md-3 text-md-end p-r-md">
-                        <div class="h5 m-t m-b-0">UX/UI Designer</div>
-                        <div class="h6 m-y-0">2010 - 2012</div>
-                    </div>
-                    <!-- End Timeline Date -->
-                    <!-- Timeline Content -->
-                    <div class="col-md-9 align-self-center pos-rel p-l-md brd-md-left brd-gray-light">
-                        <!-- Timeline Dot -->
-                        <div class="timeline-dot d-none d-md-block">
-                            <span class="dot-line-inner bg-white bg-primary-before brd-gray-light"></span>
-                        </div>
-                        <!-- End Timeline Dot -->
-                        <div class="h4 m-t m-b-0">Apple Inc.</div>
-                        <p class="m-b-md">Winter purslane courgette pumpkin quandong komatsuna fennel green bean
-                            cucumber. Pea cress potato sprouts wattle seed rutabaga.</p>
-
-                    </div>
-                    <!-- End Timeline Content -->
-                </article>
-            </li>
-        </ul>
-    </div>
-    <!-- End Panel Body -->
-</div>
-<!--End Experience--></code></pre>
-   </div>
-   <div class="modal-footer">
-    <button type="button" class="btn btn-default" data-bs-dismiss="modal">Close</button>
-   </div>
   </div>
- </div>
-</div><!-- / End Modal -->
+</div>
+<!--END TABS-->
+
+<h2 id="Usage">Usage</h2>
+<h3>When and how to use it</h3>
+<p>
+  The progress tracker shows visitors where they are in a process. It can be
+  used to help visitors navigate through processes by selecting steps.
+</p>
+<p>
+  Progress trackers should display three or more steps or events in a sequence.
+</p>
+
+<h3>How not to use it</h3>
+<p>
+  Do not use the progress tracker to display items that are out of order or
+  unrelated. Use bullet points instead.
+</p>
+
+<h2 id="Accessibility">Accessibility</h2>
+<h3 class="m-t">Standard accessibility review</h3>
+<p>Each time a new component version is published:</p>
+<ul>
+ <li>Test with the <a href="https://www.deque.com/axe/" target="_blank">axe
+   accessibility tool</a>.</li>
+ <li>Review with the <a href="https://www.apple.com/voiceover/info/guide/_1121.html" target="_blank">VoiceOver</a> or <a
+   href="https://www.nvaccess.org/download/" target="_blank">NVDA</a> screen reader.</li>
+ <li>Ensure all actionable elements are accessible by keyboard command and tab in a logical order. </li>
+ <li>Check the component layout on a variety of screen sizes.</li>
+</ul>
+
 				</div>
 			</div>
 		</div>

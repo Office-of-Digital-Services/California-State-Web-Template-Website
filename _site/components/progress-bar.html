@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Buttons</title> 
+  <title>Progress bar</title> 
   <meta charset="utf-8">
   <meta name="Author" content="State of California" />
   <meta name="Description" content="State of California" />
@@ -256,12 +256,6 @@
      
    
      
-      
-      <li><a href="/components.html" title="Components landing page">Components</a></li>
-        
-       
-      <li>Button</li>
-       
    
      
    
@@ -454,7 +448,7 @@
        
       
       
-          <li><a href="/components/buttons.html"  aria-current="page"  class="active" >Button</a></li>
+          <li><a href="/components/buttons.html" >Button</a></li>
        
       
       
@@ -511,9 +505,25 @@
        
       
       
-        <li><a href="/components/progress-bar.html" >Progress bar</a>
+        <li><a href="/components/progress-bar.html"  aria-current="page"  class="active" >Progress bar</a>
          
-         
+          
+           <ul>
+            
+            <li>
+             <a href="#Sample" class="tab-link">Sample</a>
+            </li>
+            
+            <li>
+             <a href="#Usage" class="tab-link">Usage</a>
+            </li>
+            
+            <li>
+             <a href="#Accessibility" class="tab-link">Accessibility</a>
+            </li>
+            
+           </ul>
+           
         </li>
        
       
@@ -548,152 +558,74 @@
 				</div>
 				<div class="col-lg-9 p-b-lg">
 					
-
-<h1 class="mt-lg-0">Button</h1>
-<p>A button triggers an event or action. It informs the visitor that something will happen next.</p>
-<p>Buttons add visual prominence to the call to action and provide feedback on completed actions.</p>
-<p>Buttons can:</p>
-<ul>
- <li>Move visitors through a process: <span class="text-bold">Submit, Next, Search, Save</span></li>
- <li>Highlight a top task: <span class="text-bold">Learn more, Get started, Join us, Visit</span></li>
- <li>Reverse an action: <span class="text-bold">Cancel, Previous, Reset, Delete</span></li>
- <li>Pause a process: <span class="text-bold">Save as draft</span></li>
-</ul>
-
+<h1 class="mt-lg-0">Progress bar</h1>
+<p>The progress bar displays the current status of a multi-step task. It is usually updated continuously as the task progresses and shows the level of completeness.</p>
 
 <h2 id="Sample">Sample</h2>
-<p>Available button colors are based on your selected <a href="color-schemes.html">color theme</a>.</p>
 
 <!--TABS-->
 <div class="tab-group responsive">
- <ul id="tabs1" class="nav nav-tabs" role="tablist">
-  <li class="nav-item">
-   <a id="tab-example1" href="#pane-example1" class="nav-link active" data-bs-toggle="tab" role="tab">Example</a>
-  </li>
-  <li class="nav-item">
-   <a id="tab-html1" href="#pane-html1" class="nav-link" data-bs-toggle="tab" role="tab">Source code</a>
-  </li>
+  <ul id="tabs1" class="nav nav-tabs" role="tablist">
+    <li class="nav-item">
+      <a id="tab-example1" href="#pane-example1" class="nav-link active" data-bs-toggle="tab" role="tab">Example</a>
+    </li>
+    <li class="nav-item">
+      <a id="tab-html1" href="#pane-html1" class="nav-link" data-bs-toggle="tab" role="tab">Source code</a>
+    </li>
 
- </ul>
+  </ul>
 
-
- <div id="tab-content" class="tab-content">
-  <!--Examples-->
-  <div id="pane-example1" class="card tab-pane fade show active" role="tabpanel" aria-labelledby="tab-example1">
-   <div class="card-header" id="heading-example1">
-    <a data-bs-toggle="collapse" href="#collapse-example1" data-parent="#tab-content" aria-expanded="true"
+  <div id="tab-content" class="tab-content">
+    <!--Examples-->
+    <div id="pane-example1" class="card tab-pane fade show active" role="tabpanel" aria-labelledby="tab-example1">
+      <div class="card-header" id="heading-example1">
+        <a data-bs-toggle="collapse" href="#collapse-example1" data-parent="#tab-content" aria-expanded="true"
      aria-controls="collapse-example1" data-hash="#pane-example1" title="Example tab header">
      Example
     </a>
-   </div>
-   <div id="collapse-example1" class="collapse show" role="tabpanel" aria-labelledby="heading-example1">
-    <div class="card-body p-b-md">
-     <p class="lead bold m-b">Primary action buttons</p>
-     <div class="btn-row p-b">
- <button class="btn btn-primary">Primary color</button>
- <button class="btn btn-highlight">Highlight color</button>
- <button class="btn btn-standout">Standout color</button>
-</div>
-
-     <p class="lead bold m-b">Secondary action buttons </p>
-     <div class="btn-row p-b">
- <a href="" class="btn btn-outline-primary" role="button">Primary color</a>
- <a href="" class="btn btn-outline-highlight" role="button">Highlight color</a>
- <a href="" class="btn btn-outline-standout" role="button">Standout color</a>
-</div>
-
-     <p class="lead bold m-b">Disabled buttons</p>
-     <div class="btn-row p-b">
- <a class="btn btn-primary disabled" role="button">Primary color</a>
- <a class="btn btn-highlight disabled" role="button">Highlight color</a>
- <a class="btn btn-standout disabled" role="button">Standout color</a>
-</div>
-
-     <p class="lead bold m-b">Buttons sizes</p>
-     <div class="btn-row m-b-lg">
- <a href="" class="btn btn-default btn-lg" role="button">large</a>
- <a href="" class="btn btn-default" role="button">default</a>
- <a href="" class="btn btn-default btn-sm" role="button">small</a>
- <a href="" class="btn btn-default btn-xs" role="button">extra small</a>
-</div>
+      </div>
+      <div id="collapse-example1" class="collapse show" role="tabpanel" aria-labelledby="heading-example1">
+        <div class="card-body p-b-md">
+          <div class="progress">
+    <div class="progress-bar bg-highlight color-gray-dark overflow-auto" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%;"  tabindex="0">
+        60%
     </div>
-   </div>
-  </div>
+</div>
+        </div>
+      </div>
+    </div>
 
-
-
-  <!--HTML-->
-  <div id="pane-html1" class="card tab-pane fade" role="tabpanel" aria-labelledby="tab-html1">
-   <div class="card-header" id="heading-html1">
-    <a class="collapsed" data-bs-toggle="collapse" href="#collapse-html1" data-parent="#tab-content"
+    <!--HTML-->
+    <div id="pane-html1" class="card tab-pane fade" role="tabpanel" aria-labelledby="tab-html1">
+      <div class="card-header" id="heading-html1">
+        <a class="collapsed" data-bs-toggle="collapse" href="#collapse-html1" data-parent="#tab-content"
      aria-expanded="false" aria-controls="collapse-html1" data-hash="#pane-html1" title="HTML Source code tab header">
      Source code
     </a>
-   </div>
-   <div id="collapse-html1" class="collapse" role="tabpanel" aria-labelledby="heading-html1">
-    <div class="card-body">
-     <p class="lead bold m-b">Primary action buttons</p>
-     <pre style="max-height: 300px;"><code><div class="btn-row p-b">
- <button class="btn btn-primary">Primary color</button>
- <button class="btn btn-highlight">Highlight color</button>
- <button class="btn btn-standout">Standout color</button>
-</div></code></pre>
-
-     <p class="lead bold m-b">Secondary action buttons </p>
-     <pre style="max-height: 300px;"><code><div class="btn-row p-b">
- <a href="" class="btn btn-outline-primary" role="button">Primary color</a>
- <a href="" class="btn btn-outline-highlight" role="button">Highlight color</a>
- <a href="" class="btn btn-outline-standout" role="button">Standout color</a>
-</div></code></pre>
-
-     <p class="lead bold m-b">Disabled buttons</p>
-     <pre
-      style="max-height: 300px;"><code><div class="btn-row p-b">
- <a class="btn btn-primary disabled" role="button">Primary color</a>
- <a class="btn btn-highlight disabled" role="button">Highlight color</a>
- <a class="btn btn-standout disabled" role="button">Standout color</a>
-</div></code></pre>
-
-     <p class="lead bold m-b">Buttons sizes</p>
-     <pre style="max-height: 300px;"><code><div class="btn-row m-b-lg">
- <a href="" class="btn btn-default btn-lg" role="button">large</a>
- <a href="" class="btn btn-default" role="button">default</a>
- <a href="" class="btn btn-default btn-sm" role="button">small</a>
- <a href="" class="btn btn-default btn-xs" role="button">extra small</a>
-</div></code></pre>
+      </div>
+      <div id="collapse-html1" class="collapse" role="tabpanel" aria-labelledby="heading-html1">
+        <div class="card-body">
+          <pre style="max-height: 300px;"><code><div class="progress">
+    <div class="progress-bar bg-highlight color-gray-dark overflow-auto" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%;"  tabindex="0">
+        60%
     </div>
-   </div>
+</div></code></pre>
+
+        </div>
+      </div>
+    </div>
+
   </div>
-
-
- </div>
 </div>
 <!--END TABS-->
 
 <h2 id="Usage">Usage</h2>
-<h3>When and how to use it </h3>
-<p>Use buttons to communicate actions users can take to interact with a page.</p>
-<p>A primary action button (filled in button) has the highest emphasis. Try to limit the number of primary action
- buttons on a page as they are distracting. </p>
-<p>The secondary action button (outlined button) has a lower emphasis, but should still be used sparingly.</p>
-<p>Buttons should be used to help people:</p>
-<ul>
- <li>Submit a form</li>
- <li>Begin a task</li>
- <li>Make new elements appear on the page</li>
- <li>Identify a new or next step in a process</li>
-</ul>
-<p>Color alone does not convey the meaning of buttons. Be sure to match your button text with the meaning you are trying
- to communicate with color. </p>
-<p>Keep in mind that not everyone will be able to see your button color, so the message should be clear without it.</p>
-<h3>
- How not to use it
-</h3>
-<p>Avoid using multiple buttons on a single page.</p>
-</p>Avoid using disabled buttons as they can be inaccessible and confusing to some visitors. If you must use a disabled
-button, inform visitors why the button is disabled and how to enable it.</p>
+<h3>When and how to use it</h3>
+<p>Use a progress bar to display completeness of a multi-step task. Completeness is often shown as a percentage or number completed out of a total number of steps.</p>
+<p>Steps can include uploading files or submitting an application.</p>
 
-
+<h3>How not to use it</h3>
+<p>Do not use the progress bar to display progress of unrelated tasks.</p>
 
 <h2 id="Accessibility">Accessibility</h2>
 <h3 class="m-t">Standard accessibility review</h3>
