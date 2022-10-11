@@ -341,6 +341,17 @@ h6,
  font-family: $headings-font-family;
 }
 
+.subtitle {
+ font-size: $font-size-large;
+ margin-bottom: 3rem;
+ font-weight: 600;
+ color: $gray-700;
+ @include media-breakpoint-up(sm) {
+  font-size: calc(#{$font-size-large} + #{$ratio});
+  margin-bottom: calc(3rem + #{$ratio});
+ }
+}
+
 // ICON SIZING
 [class*="icon-"] {
  &.big {
