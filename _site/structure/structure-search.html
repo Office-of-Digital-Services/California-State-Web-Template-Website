@@ -294,14 +294,14 @@
      
    
      
-   
-     
       
       <li><a href="/structure.html" title="Structure landing page">Structure</a></li>
         
        
       <li>Search</li>
        
+   
+     
    
      
    
@@ -425,7 +425,13 @@
      <ul>
       <li><a href="/structure/structure-global-footer.html">Global footer</a></li>
       <li><a href="/structure/structure-mobile-controls.html">Mobile controls</a></li>
-      <li><a href="/structure/structure-search.html" class="active">Search</a></li>
+      <li><a href="/structure/structure-search.html" class="active">Search</a>
+       <ul>
+        <li><a href="#Active-search">Active search</a></li>
+        <li><a href="#Inactive-search">Inactive search</a></li>
+        <li><a href="#Featured-search">Featured search</a></li>
+       </ul>
+      </li>
       <li><a href="/structure/structure-settings.html">Settings</a></li>
       <li><a href="/structure/structure-site-header.html">Site header</a></li>
       <li><a href="/structure/site-navigation.html">Site navigation</a></li>
@@ -445,7 +451,7 @@
    your website.</p>
 
 
-  <h2>Active search</h2>
+  <h2 id="Active-search">Active search</h2>
   <p>The active (featured) search is
    default search bar implementation on most State Web Template pages. This
    implementation makes search bar visible and available in the right side of the site header.</p>
@@ -555,16 +561,16 @@
 
 
 
-  <h2>Inactive search</h2>
+  <h2 id="Inactive-search">Inactive search</h2>
   Another search implementation is
   the inactive (hidden) search bar. This implementation is used in mobile view and in pages that use <a
-   href="/sample/navigation-icons.html">Navigation with Icons</a> site navigation type option. To activate the search
+   href="/structure/navigation-icons.html">Navigation with Icons</a> site navigation type option. To activate the search
   bar users need to press search menu item first.
   </p>
 
 
 
-
+  <!--start tabs2-->
   <div class="tab-group responsive">
    <ul id="tabs2" class="nav nav-tabs" role="tablist">
     <li class="nav-item">
@@ -594,6 +600,9 @@
        <h3 class="h4 m-t-0">Screenshot</h3>
        <img src="/images/components/structure-search-inactive.jpg" class="img-fluid"
         alt="Inactive search component screenshot">
+
+       <a href="/structure/navigation-icons.html" class="btn btn-outline-primary m-t-md">Live example <span
+         class="ca-gov-icon-arrow-next" aria-hidden="true"></span></a>
       </div>
      </div>
     </div>
@@ -629,7 +638,7 @@
     </div>
 
     <div id="pane-include2" class="card tab-pane fade" role="tabpanel" aria-labelledby="tab-include2">
-     <div class="card-header" id="heading-include1">
+     <div class="card-header" id="heading-include2">
       <h4 class="my-0 w-100">
        <a class="collapsed" data-bs-toggle="collapse" href="#collapse-include2" data-parent="#tab-include2"
         aria-expanded="false" aria-controls="collapse-include2" title="Nunjucks Include tab header">
@@ -665,6 +674,141 @@
     </div>
    </div>
   </div>
+  <!--end tabs2-->
+
+
+
+  <h2 id="Featured-search">Featured search</h2>
+  Another search implementation is
+  the featured search bar. It's location and size make it a
+  prominent feature on this layout option. Featured search can be only used with
+  <code>navicons.njk</code>
+  or
+  <code>navicons-landing.njk</code> layouts, since <code>paga.njk</code>, <code>landing.njk</code> page
+  layout are already using active search in their page header by default. The <code>.featured-search</code> classes
+  need to be added to
+  the <code>#head-search</code> div in the header of your page. It can be done by adding
+  <code>search: Featured</code> paramenter to your page Front matter data.
+  </p>
+
+
+
+  <!--start tabs3-->
+  <div class="tab-group responsive">
+   <ul id="tabs3" class="nav nav-tabs" role="tablist">
+    <li class="nav-item">
+     <a id="tab-example3" href="#pane-example3" class="nav-link active" data-bs-toggle="tab" role="tab">Example</a>
+    </li>
+    <li class="nav-item">
+     <a id="tab-html3" href="#pane-html3" class="nav-link" data-bs-toggle="tab" role="tab">Source code</a>
+    </li>
+    <li class="nav-item">
+     <a id="tab-include3" href="#pane-include3" class="nav-link" data-bs-toggle="tab" role="tab">Nunjucks Include</a>
+    </li>
+   </ul>
+
+
+   <div class="tab-content">
+    <div id="pane-example3" class="card tab-pane fade show active" role="tabpanel" aria-labelledby="tab-example3">
+     <div class="card-header" id="heading-example3">
+      <h4 class="my-0 w-100">
+       <a data-bs-toggle="collapse" href="#collapse-home" data-parent="#tab-content" aria-expanded="true"
+        aria-controls="collapse-example3" title="Example tab header">
+        Example
+       </a>
+      </h4>
+     </div>
+     <div id="collapse-example3" class="collapse show" role="tabpanel" aria-labelledby="heading-example3">
+      <div class="card-body">
+       <h3 class="h4 m-t-0">Screenshot</h3>
+       <img src="/images/featured-search.jpg" class="img-fluid" alt="Featured search">
+       <a href="/structure/featured-search.html" class="btn btn-outline-primary m-t-md">Live example <span
+         class="ca-gov-icon-arrow-next" aria-hidden="true"></span> <span class="sr-only">of the featured
+         search</span></a>
+      </div>
+     </div>
+    </div>
+
+    <div id="pane-html3" class="card tab-pane fade" role="tabpanel" aria-labelledby="tab-html3">
+     <div class="card-header" id="heading-html2">
+      <h4 class="my-0 w-100">
+       <a class="collapsed" data-bs-toggle="collapse" href="#collapse-html3" data-parent="#tab-content"
+        aria-expanded="false" aria-controls="collapse-html3" title="HTML Source code tab header">
+        HTML Source code
+       </a>
+      </h4>
+     </div>
+     <div id="collapse-html3" class="collapse" role="tabpanel" aria-labelledby="heading-html3">
+      <div class="card-body">
+       <h3 class="h4 m-t-0">HTML</h3>
+       <pre><code><div class="container">
+    <form id="Search" class="pos-rel" action="/serp.html">
+        <span class="sr-only" id="SearchInput">Custom Google Search</span>
+        <input type="text" name="q" aria-labelledby="SearchInput" placeholder="Search"
+            class="search-textfield" />
+        <button type="submit" class="gsc-search-button"><span
+                class="ca-gov-icon-search" aria-hidden="true"></span><span
+                class="sr-only">Submit</span></button>
+        <div class="close-search-btn"><button
+                class="close-search gsc-clear-button border-0 bg-transparent pos-rel"
+                type="reset"><span class="sr-only">Close</span></button></div>
+    </form>
+</div></code>
+      </pre>
+      </div>
+     </div>
+    </div>
+
+    <div id="pane-include3" class="card tab-pane fade" role="tabpanel" aria-labelledby="tab-include3">
+     <div class="card-header" id="heading-include3">
+      <h4 class="my-0 w-100">
+       <a class="collapsed" data-bs-toggle="collapse" href="#collapse-include3" data-parent="#tab-include3"
+        aria-expanded="false" aria-controls="collapse-include3" title="Nunjucks Include tab header">
+        Nunjucks Include
+       </a>
+      </h4>
+     </div>
+     <div id="collapse-include3" class="collapse" role="tabpanel" aria-labelledby="heading-include3">
+      <div class="card-body">
+       <h3 class="h4 m-t-0">Include path and usage</h3>
+       <p>The Search <code>njk</code> include code markup:</p>
+       <pre><code>&#123;% include "src/_includes/search.njk" %&#125;</code></pre>
+
+
+       <h3 class="h4">Using inactive search include in site header</h3>
+       <p>Following code (that has both the search and the site navigation includes) needs to be placed right
+        before closing
+        <code>&lt;/header&gt;</code> tag
+       </p>
+       <pre><code><div class="navigation-search">
+  &#123;% include "src/_includes/navigation.njk" %&#125;
+ <div id="head-search" class="search-container featured-search">
+  &#123;% include "src/_includes/search.njk" %&#125;
+ </div>
+</div></code></pre>
+
+
+       <h3 class="h4">Activating Featured Search in front matter data</h3>
+       <pre><code class="overflow-auto">---
+title: Featured Search
+layout: navicons-landing.njk
+permalink: "components/featured-search.html"
+navigation: "../modules/nav-flex.html"
+search: Featured
+---
+							  </code></pre>
+
+
+       <p class="m-t-lg"><span class="text-highlight-primary">Note:</span> Path to the include will be relative to the
+        directory of
+        your
+        page.</p>
+      </div>
+     </div>
+    </div>
+   </div>
+  </div>
+  <!--end tabs-->
 
 
 
