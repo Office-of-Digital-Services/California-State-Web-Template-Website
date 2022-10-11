@@ -1,149 +1,133 @@
 ﻿---
 title: Progress tracker
-landing: Components
-layout: components.njk
-permalink: "components/progress-tracker.html"
+landing: Patterns
+layout: patterns.njk
+permalink: "patterns/progress-tracker.html"
 ---
+<h1 class="mt-lg-0">Progress tracker</h1>
+<p> A progress tracker displays the steps and progress through a journey.</p>
 
-
-<div class="row">
- <div class="half">
-  <h1 class="mt-lg-0">Progress tracker</h1>
-  <p>Provide up-to-date feedback on the progress of a workflow or action with simple yet flexible
-   progress bars.</p>
-  <p>The progress bars can be colored with traditional theme colors plus new accent colors. Below
-   is a list of possible color class names:</p>
-  <ul>
-   <li><code>.bg-success</code></li>
-   <li><code>.bg-info</code></li>
-   <li><code>.bg-warning</code></li>
-   <li><code>.bg-danger</code></li>
-   <li><code>.bg-dark</code></li>
-   <li><code>.bg-primary</code></li>
-   <li><code>.bg-highlight</code></li>
-   <li><code>.bg-standout</code></li>
+<h2 id="horizontal-tracker">Horizontal tracker</h2>
+<div class="tab-group responsive">
+  <ul id="tabs1" class="nav nav-tabs" role="tablist">
+    <li class="nav-item">
+      <a id="tab-example1" href="#pane-example1" class="nav-link active" data-bs-toggle="tab" role="tab">Example</a>
+    </li>
+    <li class="nav-item">
+      <a id="tab-html1" href="#pane-html1" class="nav-link" data-bs-toggle="tab" role="tab">Source code</a>
+    </li>
   </ul>
-  <h2>Example:</h2>
-  {% include "../../src/_includes/modules/progress-bar.html" %}
-
- </div>
- <div class="half">
-
-
-  <h2>Source code:</h2>
-  <pre><code class="overflow-auto">{% include "../../src/_includes/modules/progress-bar.html" %}</code></pre>
- </div>
-</div>
-
-<hr>
-
-
-<div class="row">
- <div class="half">
-  <h2>Progress Bars Variety</h2>
-  <p>Progress bars sizes and variations.</p>
-  {% include "../../src/_includes/modules/progress-bar-variety.html" %}
- </div>
- <div class="half">
-  <h2>Source code:</h2>
-  <pre><code class="overflow-auto">{% include "../../src/_includes/modules/progress-bar-variety.html" %}</code></pre>
- </div>
-</div>
-
-<hr>
-
-<div class="row">
- <div class="half">
-  <h2>Striped Progress Bars</h2>
-  <p>Uses a gradient to create a striped effect. Not available in IE9 and below.</p>
-  {% include "../../src/_includes/modules/progress-bar-striped.html" %}
- </div>
- <div class="half">
-  <h2>Source code:</h2>
-  <pre><code class="overflow-auto">{% include "../../src/_includes/modules/progress-bar-striped.html" %}</code></pre>
- </div>
-</div>
-
-<hr>
-
-<div class="row">
- <div class="half">
-  <h2>Animated Progress Bars</h2>
-  <p>Add <code>.active</code> to <code>.progress-bar-striped</code> to animate the stripes right
-   to left. Not available in IE9 and below.</p>
-  {% include "../../src/_includes/modules/progress-bar-animated.html" %}
- </div>
- <div class="half">
-  <h2>Source code:</h2>
-  <pre><code class="overflow-auto">{% include "../../src/_includes/modules/progress-bar-animated.html" %}</code></pre>
- </div>
-</div>
-
-<hr>
-
-<div class="row">
- <div class="half">
-  <h2>Stacked Progress Bars</h2>
-  <p>Place multiple bars into the same <code>.progress</code> to stack them.</p>
-  {% include "../../src/_includes/modules/progress-bar-stacked.html" %}
- </div>
- <div class="half">
-  <h2>Source code:</h2>
-  <pre><code class="overflow-auto">{% include "../../src/_includes/modules/progress-bar-stacked.html" %}</code></pre>
- </div>
-</div>
-
-
-<h2>Progress block</h2>
-
-<p>Progress block is progress trackers (or progress indicators) display progress through a sequence by
- breaking it up into multiple logical and numbered steps. They guide the user through a number of
- steps in order to complete a specified task.</p>
-
-<h2>Example:</h2>
-{% include "../../src/_includes/modules/progress-block.html" %}
-
-
-
-<h2>Example #2:</h2>
-<p class="m-b-lg">Following example uses <code>.bg-primary-light</code>,
- <code>.brd-primary-light</code>, etc. classes to specify colors for the specific progress block
- elements. To change the color of the block elements change <code>-primary-</code> part of the class
- name to either <code>-highlight-</code>, <code>-standout-</code>, or <code>-secondary-</code>.
- {% include "../../src/_includes/modules/progress-block-bold.html" %}
-
-
-
-
-
-
-<h2 id="timeline">Timeline</h2>
-<p>Timeline is a display of a list of events (or milestones) in chronological order. in our case it
- could be a line with dots labelled with dates and events paralleling it.</p>
-
-<h2>Example:</h2>
-{% include "../../src/_includes/modules/timeline.html" %}
-
-
-<button type="button" class="btn btn-default btn-sm" data-bs-toggle="modal" data-bs-target="#progress-block">Show Source
- Code</button>
-<!-- Modal -->
-<div class="modal fade" id="progress-block" role="dialog">
- <div class="modal-dialog modal-lg">
-  <div class="modal-content">
-   <div class="modal-header">
-    <h3 class="h4 modal-title">HTML Markup</h3>
-    <button type="button" class="close btn btn-secondary" data-bs-dismiss="modal"><span class="sr-only">Close
-      modal</span><span class="ca-gov-icon-close-mark" aria-hidden="true"></span></button>
-
-   </div>
-   <div class="modal-body">
-    <h3 class="h4">Source code:</h3>
-    <pre><code class="overflow-auto">{% include "../../src/_includes/modules/timeline.html" %}</code></pre>
-   </div>
-   <div class="modal-footer">
-    <button type="button" class="btn btn-default" data-bs-dismiss="modal">Close</button>
-   </div>
+  <div id="tab-content" class="tab-content">
+    <div id="pane-example1" class="card tab-pane fade show active" role="tabpanel" aria-labelledby="tab-example1">
+      <div class="card-header" id="heading-example1">
+        <a data-bs-toggle="collapse" href="#collapse-example1" data-parent="#tab-content" aria-expanded="true" aria-controls="collapse-example1" data-hash="#pane-example1" title="Example tab header">
+          Example
+        </a>
+      </div>
+      <div id="collapse-example1" class="collapse show" role="tabpanel" aria-labelledby="heading-example1">
+        <div class="p-a-md p-b-lg">
+          {% include "../../src/_includes/modules/progress-block-bold.html" %}
+        </div>
+      </div>
+    </div>
+    <div id="pane-html1" class="card tab-pane fade" role="tabpanel" aria-labelledby="tab-html1">
+      <div class="card-header" id="heading-html1">
+        <a class="collapsed" data-bs-toggle="collapse" href="#collapse-html1" data-parent="#tab-content" aria-expanded="false" aria-controls="collapse-html1" data-hash="#pane-html1" title="HTML Source code tab header">
+          Source code
+        </a>
+      </div>
+      <div id="collapse-html1" class="collapse" role="tabpanel" aria-labelledby="heading-html1">
+        <div class="card-body">
+          <pre style="max-height: 300px;"><code>{% include "../../src/_includes/modules/progress-block-bold.html" %}</code></pre>
+        </div>
+      </div>
+    </div>
   </div>
- </div>
-</div><!-- / End Modal -->
+</div>
+
+<h2 id="vertical-tracker">Vertical tracker</h2>
+<div class="tab-group responsive">
+  <ul id="tabs2" class="nav nav-tabs" role="tablist">
+    <li class="nav-item">
+      <a id="tab-example2" href="#pane-example2" class="nav-link active" data-bs-toggle="tab" role="tab">Example</a>
+    </li>
+    <li class="nav-item">
+      <a id="tab-html2" href="#pane-html2" class="nav-link" data-bs-toggle="tab" role="tab">Source code</a>
+    </li>
+  </ul>
+  <div id="tab-content" class="tab-content">
+    <div id="pane-example2" class="card tab-pane fade show active" role="tabpanel" aria-labelledby="tab-example2">
+      <div class="card-header" id="heading-example2">
+        <a data-bs-toggle="collapse" href="#collapse-example2" data-parent="#tab-content" aria-expanded="true" aria-controls="collapse-example2" data-hash="#pane-example2" title="Example tab header">
+          Example
+        </a>
+      </div>
+      <div id="collapse-example2" class="collapse show" role="tabpanel" aria-labelledby="heading-example2">
+        <div class="card-body p-b-md">
+          {% include "../../src/_includes/modules/timeline.html" %}
+        </div>
+      </div>
+    </div>
+    <div id="pane-html2" class="card tab-pane fade" role="tabpanel" aria-labelledby="tab-html2">
+      <div class="card-header" id="heading-html2">
+        <a class="collapsed" data-bs-toggle="collapse" href="#collapse-html2" data-parent="#tab-content" aria-expanded="false" aria-controls="collapse-html2" data-hash="#pane-html2" title="HTML Source code tab header">
+          Source code
+        </a>
+      </div>
+      <div id="collapse-html2" class="collapse" role="tabpanel" aria-labelledby="heading-html2">
+        <div class="card-body">
+          <pre style="max-height: 300px;"><code>{% include "../../src/_includes/modules/timeline.html" %}</code></pre>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<h2 id="step-list">Step list</h2>
+<div class="tab-group responsive">
+  <ul id="tabs3" class="nav nav-tabs" role="tablist">
+    <li class="nav-item">
+      <a id="tab-example3" href="#pane-example3" class="nav-link active" data-bs-toggle="tab" role="tab">Example</a>
+    </li>
+    <li class="nav-item">
+      <a id="tab-html3" href="#pane-html3" class="nav-link" data-bs-toggle="tab" role="tab">Source code</a>
+    </li>
+  </ul>
+  <div id="tab-content" class="tab-content">
+    <div id="pane-example3" class="card tab-pane fade show active" role="tabpanel" aria-labelledby="tab-example3">
+      <div class="card-header" id="heading-example3">
+        <a data-bs-toggle="collapse" href="#collapse-example3" data-parent="#tab-content" aria-expanded="true" aria-controls="collapse-example3" data-hash="#pane-example3" title="Example tab header">
+                        Example
+                      </a>
+      </div>
+      <div id="collapse-example3" class="collapse show" role="tabpanel" aria-labelledby="heading-example3">
+        <div class="p-a-md p-b-lg">
+          {% include "../../src/_includes/modules/step-list.html" %}
+        </div>
+      </div>
+    </div>
+    <div id="pane-html3" class="card tab-pane fade" role="tabpanel" aria-labelledby="tab-html3">
+      <div class="card-header" id="heading-html3">
+        <a class="collapsed" data-bs-toggle="collapse" href="#collapse-html3" data-parent="#tab-content" aria-expanded="false" aria-controls="collapse-html3" data-hash="#pane-html3" title="HTML Source code tab header">
+          Source code
+        </a>
+      </div>
+      <div id="collapse-html3" class="collapse" role="tabpanel" aria-labelledby="heading-html3">
+        <div class="card-body">
+          <pre style="max-height: 300px;"><code>{% include "../../src/_includes/modules/step-list.html" %}</code></pre>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<h2 id="Usage">Usage</h2>
+<h3>When and how to use it</h3>
+<p>The progress tracker shows visitors where they are in a process. It can be used to help visitors navigate through processes by selecting steps.</p>
+<p>Progress trackers should display three or more steps or events in a sequence.</p>
+
+<h3>How not to use it</h3>
+<p>Do not use the progress tracker to display items that are out of order or unrelated. Use bullet points instead.</p>
+
+<h2 id="Accessibility">Accessibility</h2>
+{% include "../../src/_includes/modules/accessibility.html" %}

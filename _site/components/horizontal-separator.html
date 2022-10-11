@@ -465,7 +465,7 @@
        
       
       
-        <li><a href="/components/countdown-timer.html" >Countdown timer</a>
+        <li><a href="/components/countdown.html" >Countdown timer</a>
          
          
         </li>
@@ -476,7 +476,26 @@
        
       
       
-          <li><a href="/components/horizontal-separator.html"  aria-current="page"  class="active" >Horizontal separator</a></li>
+        <li><a href="/components/horizontal-separator.html"  aria-current="page"  class="active" >Horizontal separator</a>
+         
+          
+           <ul>
+            
+            <li>
+             <a href="#Sample" class="tab-link">Sample</a>
+            </li>
+            
+            <li>
+             <a href="#Usage" class="tab-link">Usage</a>
+            </li>
+            
+            <li>
+             <a href="#Accessibility" class="tab-link">Accessibility</a>
+            </li>
+            
+           </ul>
+           
+        </li>
        
       
       
@@ -508,7 +527,10 @@
        
       
       
-          <li><a href="/components/progress-tracker.html" >Progress tracker</a></li>
+        <li><a href="/components/progress-bar.html" >Progress bar</a>
+         
+         
+        </li>
        
       
       
@@ -541,23 +563,87 @@
 					</nav>
 				</div>
 				<div class="col-lg-9 p-b-lg">
-					
+					<h1 class="mt-lg-0">Horizontal separator</h1>
+<p>The horizontal separator is a style component that uses a line to separate content into sections.</p>
 
+<h2 id="Sample">Sample</h2>
 
-<h1 class="mt-lg-0">Horizontal separator</h1>
-<p>Horizontal separator <code>&lt;hr&gt;</code>'s get some styling by default. They will appear as a
- thin 1 pixel gray line. with margins top and bottom.</p>
+<!--TABS-->
+<div class="tab-group responsive">
+  <ul id="tabs1" class="nav nav-tabs" role="tablist">
+    <li class="nav-item">
+      <a id="tab-example1" href="#pane-example1" class="nav-link active" data-bs-toggle="tab" role="tab">Example</a>
+    </li>
+    <li class="nav-item">
+      <a id="tab-html1" href="#pane-html1" class="nav-link" data-bs-toggle="tab" role="tab">Source code</a>
+    </li>
 
-<h2>Default:</h2>
+  </ul>
+
+  <div id="tab-content" class="tab-content">
+    <!--Examples-->
+    <div id="pane-example1" class="card tab-pane fade show active" role="tabpanel" aria-labelledby="tab-example1">
+      <div class="card-header" id="heading-example1">
+        <a data-bs-toggle="collapse" href="#collapse-example1" data-parent="#tab-content" aria-expanded="true"
+     aria-controls="collapse-example1" data-hash="#pane-example1" title="Example tab header">
+     Example
+    </a>
+      </div>
+      <div id="collapse-example1" class="collapse show" role="tabpanel" aria-labelledby="heading-example1">
+        <div class="card-body p-b-md">
+          <p class="lead bold m-b">Default</p>
 <hr>
 
-<h2>Dotted Rule</h2>
-<p> Adding a class of <code>.hr-understated</code> to the <code>hr</code> will give you a dotted
- line version of the rorizontal rule.</p>
+<p class="lead bold m-b">Dotted</p>
 <hr class="hr-understated">
+        </div>
+      </div>
+    </div>
 
-<h2>Source code:</h2>
-<pre><code class="overflow-auto"><hr class="hr-understated"></code></pre>
+    <!--HTML-->
+    <div id="pane-html1" class="card tab-pane fade" role="tabpanel" aria-labelledby="tab-html1">
+      <div class="card-header" id="heading-html1">
+        <a class="collapsed" data-bs-toggle="collapse" href="#collapse-html1" data-parent="#tab-content"
+     aria-expanded="false" aria-controls="collapse-html1" data-hash="#pane-html1" title="HTML Source code tab header">
+     Source code
+    </a>
+      </div>
+      <div id="collapse-html1" class="collapse" role="tabpanel" aria-labelledby="heading-html1">
+        <div class="card-body">
+          <pre style="max-height: 300px;"><code><p class="lead bold m-b">Default</p>
+<hr>
+
+<p class="lead bold m-b">Dotted</p>
+<hr class="hr-understated"></code>
+      </pre>
+
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+<!--END TABS-->
+
+<h2 id="Usage">Usage</h2>
+<h3>When and how to use it</h3>
+<p>Use the horizontal separator to divide sections of content. This breaks up long pages of text and allows visitors to process your most important message first.
+</p>
+<h3>How not to use it</h3>
+<p>Do not use horizontal separators to build a pseudo table.<br>
+Do not abuse horizontal separators and avoid separating content that belongs together. If a section is lengthy, consider adding headings and removing unnecessary words. </p>
+
+<h2 id="Accessibility">Accessibility</h2>
+<h3 class="m-t">Standard accessibility review</h3>
+<p>Each time a new component version is published:</p>
+<ul>
+ <li>Test with the <a href="https://www.deque.com/axe/" target="_blank">axe
+   accessibility tool</a>.</li>
+ <li>Review with the <a href="https://www.apple.com/voiceover/info/guide/_1121.html" target="_blank">VoiceOver</a> or <a
+   href="https://www.nvaccess.org/download/" target="_blank">NVDA</a> screen reader.</li>
+ <li>Ensure all actionable elements are accessible by keyboard command and tab in a logical order. </li>
+ <li>Check the component layout on a variety of screen sizes.</li>
+</ul>
 				</div>
 			</div>
 		</div>

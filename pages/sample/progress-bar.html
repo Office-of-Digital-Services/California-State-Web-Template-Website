@@ -1,11 +1,12 @@
----
-title: Horizontal separator
+﻿---
+title: Progress bar
 landing: Components
 layout: components.njk
-permalink: "components/horizontal-separator.html"
+permalink: "components/progress-bar.html"
 ---
-<h1 class="mt-lg-0">Horizontal separator</h1>
-<p>The horizontal separator is a style component that uses a line to separate content into sections.</p>
+
+<h1 class="mt-lg-0">Progress bar</h1>
+<p>The progress bar displays the current status of a multi-step task. It is usually updated continuously as the task progresses and shows the level of completeness.</p>
 
 <h2 id="Sample">Sample</h2>
 
@@ -32,7 +33,7 @@ permalink: "components/horizontal-separator.html"
       </div>
       <div id="collapse-example1" class="collapse show" role="tabpanel" aria-labelledby="heading-example1">
         <div class="card-body p-b-md">
-          {% include "../../src/_includes/modules/horizontal-separator.html" %}
+          {% include "../../src/_includes/modules/progress-bar.html" %}
         </div>
       </div>
     </div>
@@ -47,8 +48,7 @@ permalink: "components/horizontal-separator.html"
       </div>
       <div id="collapse-html1" class="collapse" role="tabpanel" aria-labelledby="heading-html1">
         <div class="card-body">
-          <pre style="max-height: 300px;"><code>{% include "../../src/_includes/modules/horizontal-separator.html" %}</code>
-      </pre>
+          <pre style="max-height: 300px;"><code>{% include "../../src/_includes/modules/progress-bar.html" %}</code></pre>
 
         </div>
       </div>
@@ -60,11 +60,11 @@ permalink: "components/horizontal-separator.html"
 
 <h2 id="Usage">Usage</h2>
 <h3>When and how to use it</h3>
-<p>Use the horizontal separator to divide sections of content. This breaks up long pages of text and allows visitors to process your most important message first.
-</p>
+<p>Use a progress bar to display completeness of a multi-step task. Completeness is often shown as a percentage or number completed out of a total number of steps.</p>
+<p>Steps can include uploading files or submitting an application.</p>
+
 <h3>How not to use it</h3>
-<p>Do not use horizontal separators to build a pseudo table.<br>
-Do not abuse horizontal separators and avoid separating content that belongs together. If a section is lengthy, consider adding headings and removing unnecessary words. </p>
+<p>Do not use the progress bar to display progress of unrelated tasks.</p>
 
 <h2 id="Accessibility">Accessibility</h2>
 {% include "../../src/_includes/modules/accessibility.html" %}
