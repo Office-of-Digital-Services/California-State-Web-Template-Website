@@ -227,7 +227,7 @@ permalink: "visual-design/icons.html"
    document.querySelector('#jumpToHeading ol').innerHTML = jumpToHtml;
   }
   document.querySelector('#fontlist').innerHTML = listHtml;
-  document.querySelector('#resultcount').innerHTML = numberOfResults ? `${numberOfResults} icon(s) found.` : 'No icons found.';
+  document.querySelector('#resultcount').innerHTML = numberOfResults ? `<p>${numberOfResults} icons found.</p>` : '<p>No icons found.</p>';
  }
 
  const myRequest = new Request('https://california.azureedge.net/fonts/selection.json');
@@ -292,7 +292,6 @@ permalink: "visual-design/icons.html"
 
 <!-- START ICOMOON DEMO -->
 <div class="clearfix mhl ptl">
-<div id="resultcount" class="fs1"></div>
-<div id="fontlist"></div>
-
+ <div id="resultcount" class="fs1" aria-live="polite"></div>
+ <div id="fontlist" ></div>
 </div>
