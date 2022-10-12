@@ -193,11 +193,15 @@ permalink: "visual-design/icons.html"
 
   for (const letter of letterList
    .filter(l=>!filterLetter || l===filterLetter)) {
+
+    const iconsByLetter = iconData.icons.filter(l=>l.properties.name.charAt(0)===letter);
+
+
     if (!searchInput.length) {
-      listHtml += `<p class="h1 group-heading py-3">${letter.toUpperCase()}</p>`;
+      listHtml += `<p class="h1 group-heading py-3">${letter.toUpperCase()}&nbsp;<span style="font-size:large">(${iconsByLetter.length} icons)</span></p>`;
     }
 
-    for (const icon of iconData.icons.filter(l=>l.properties.name.charAt(0)===letter)) {
+    for (const icon of iconsByLetter) {
       const iconStrings = [...new Set([icon.properties.name, ...icon.icon.tags])].filter(x=>x.length);
 
       if (!searchInput.length || iconStrings.find(x=>x.search(searchInput) > -1)) {
@@ -273,7 +277,7 @@ permalink: "visual-design/icons.html"
  page. For example <code>color:</code> and <code>font-size:</code> change the color and size of the
  icon.</p>
 
-<form id="iconSearchForm" class="">
+<form id="iconSearchForm" class="" onsubmit="return false">
  <span class="sr-only" id="IconInput">Search icons</span>
  <input type="text" name="iconsearch" aria-labelledby="IconInput" placeholder="Search icons" class="search-textfield">
  <button type="reset" class=""><span class="">Reset</span></button>
