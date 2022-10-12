@@ -179,42 +179,52 @@ permalink: "visual-design/icons.html"
 
  var iconData = [];
 
- function buildList() {
+ function buildList(filterLetter) {
   var listHtml = "";
-  var jumpToHtml = "<li><strong>Jump to:</strong></li>";
   var letter = "0";
   var numberOfResults = 0;
-  var numberOfHeadings = 0;
   var inputBox = document.querySelector("#iconSearchForm input");
   var searchInput = inputBox ? inputBox.value.trim().toLowerCase() : "";
+
+  const letterList = [...new Set(iconData.icons.map(x=>x.properties.name.charAt(0)) )];
+  const jumpToHtml = "<li><strong>Only show starting with:</strong></li>" 
+   + letterList.map(l=>`<li><a href=javascript:buildList('${l}')>${l.toUpperCase()}</a></li>`).join('')
+
+  if (filterLetter) {
+    listHtml += `<p class="h1 group-heading py-3">${filterLetter.toUpperCase()}</p>`
+  }
 
   for (const icon of iconData.icons) {
    const iconStrings = [...new Set([icon.properties.name, ...icon.icon.tags])].filter(x=>x.length);
 
-   if (searchInput.length == 0) {
-    if (letter != icon.properties.name.charAt(0)) {
+   const iconFirstLetter = icon.properties.name.charAt(0);
+
+   const iconHtml = '\
+    <div class="glyph fs1"> \
+     <div class="clearfix bshadow0 pbs"><span class="ca-gov-icon-' + icon.properties.name + '"></span><span class="mls"> \
+       ca-gov-icon-' + icon.properties.name + '</span></div> \
+     <p class="icon-value">' + icon.properties.code.toString(16) + '</p> \
+    </div> \
+    '
+
+   if (!searchInput.length && !filterLetter) {
+    if (letter != iconFirstLetter) {
      // First letter changed, so display a heading
-     letter = icon.properties.name.charAt(0);
-     listHtml += '<p class="h1 group-heading py-3" id="group-' + letter.toUpperCase() + '">' + letter.toUpperCase() + '</p>';
-     jumpToHtml += '<li><a href="#group-' + letter.toUpperCase() + '">' + letter.toUpperCase() + '</a></li>';
-     numberOfHeadings++;
+     letter = iconFirstLetter;
+     listHtml += `<p class="h1 group-heading py-3">${letter.toUpperCase()}</p>`
     }
    }
 
-   if (searchInput.length == 0 || iconStrings.find(x=>x.search(searchInput) > -1)) {
-    listHtml += '<div class="glyph fs1"> \
-        <div class="clearfix bshadow0 pbs"><span class="ca-gov-icon-' + icon.properties.name + '"></span><span class="mls"> \
-          ca-gov-icon-' + icon.properties.name + '</span></div> \
-        <p class="icon-value">' + icon.properties.code.toString(16) + '</p> \
-      </div>';
+   if ((!filterLetter && !searchInput.length) || (searchInput && iconStrings.find(x=>x.search(searchInput) > -1)) || iconFirstLetter === filterLetter)  {
+    listHtml += iconHtml;
     numberOfResults++;
    }
   }
-  if (numberOfHeadings > 1) {
+  if (searchInput.length) {
+   document.querySelector('#jumpToHeading').style.display = "none";
+  } else {
    document.querySelector('#jumpToHeading').style.display = "block";
    document.querySelector('#jumpToHeading ol').innerHTML = jumpToHtml;
-  } else {
-   document.querySelector('#jumpToHeading').style.display = "none";
   }
   document.querySelector('#fontlist').innerHTML = (numberOfResults) ? listHtml : '<div class="fs1">No icons found.</div>';
  }
