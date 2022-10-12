@@ -486,3 +486,35 @@ a.list-group-item {
  vertical-align: baseline;
  background-color: $gray-100;
 }
+
+
+/* external link */
+
+
+/* External link icon */
+.external-link-icon {
+ display: inline-block;
+ padding: 0;
+ position: relative;
+ text-decoration: none;
+&::after {
+ content: "\e9ed";
+ font-family: "CaGov" !important;
+ font-size: 75%;
+ margin-left: 1px;
+}
+}
+
+
+/* external link exeptions */
+.cagov-card,
+.wp-block-button__link,
+.footer-social-links a,
+img ~,
+svg ~,
+[class*="ca-gov-icon-"] ~,
+.pdf-link-icon ~ {
+  .external-link-icon {
+    display: none;
+  }
+}
