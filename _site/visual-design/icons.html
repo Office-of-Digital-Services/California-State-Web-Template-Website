@@ -613,8 +613,11 @@
       if (!searchInput.length || iconStrings.find(x=>x.search(searchInput) > -1)) {
         listHtml += `
 <div class="glyph fs1">
-  <div class="clearfix bshadow0 pbs"><span class="ca-gov-icon-${icon.properties.name}"></span><span class="mls">
-  ca-gov-icon-${icon.properties.name}</span></div>
+  <div class="clearfix bshadow0 pbs">
+    <span class="ca-gov-icon-${icon.properties.name}"></span>
+    <span style="text-transform:capitalize">${icon.properties.name.replace('-',' ')}</span><br/>
+    <span class="mls">ca-gov-icon-${icon.properties.name}</span>
+  </div>
   <p class="icon-value">${icon.properties.code.toString(16)}</p>
 </div>
         `;
