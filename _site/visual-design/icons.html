@@ -589,36 +589,55 @@
 
  var iconData = [];
 
- function buildList() {
+ function buildList(filterLetter) {
   var listHtml = "";
-  var jumpToHtml = "<li><strong>Jump to:</strong></li>";
-  var letter = "0";
   var numberOfResults = 0;
-  var numberOfHeadings = 0;
-  for (const icon of iconData.icons) {
-   if (document.querySelector("#iconSearchForm input").value.length == 0 || icon.properties.name.search(document.querySelector("#iconSearchForm input").value) > -1) {
-    if (letter != icon.properties.name.charAt(0)) {
-     // First letter changed, so display a heading
-     letter = icon.properties.name.charAt(0);
-     listHtml += '<p class="h1 group-heading py-3" id="group-' + letter.toUpperCase() + '">' + letter.toUpperCase() + '</p>';
-     jumpToHtml += '<li><a href="#group-' + letter.toUpperCase() + '">' + letter.toUpperCase() + '</a></li>';
-     numberOfHeadings++;
+  var inputBox = document.querySelector("#iconSearchForm input");
+  var searchInput = inputBox ? inputBox.value.trim().toLowerCase() : "";
+
+  const letterList = [...new Set(iconData.icons.map(x=>x.properties.name.charAt(0)))];
+  const jumpToHtml = `<li><strong>First letter:</strong></li>`
+   + letterList
+    .map(l=>`<li><a href="javascript:buildList('${l}')" ${filterLetter===l ? 'style="font-weight:bold"' : ''}>${l.toUpperCase()}</a></li>`)
+    .join('');
+
+  for (const letter of letterList
+   .filter(l=>!filterLetter || l===filterLetter)) {
+
+    const iconsByLetter = iconData.icons.filter(l=>l.properties.name.charAt(0)===letter);
+
+
+    if (!searchInput.length) {
+      listHtml += `<p class="h1 group-heading py-3">${letter.toUpperCase()}&nbsp;<span style="font-size:large">(${iconsByLetter.length} icons)</span></p>`;
     }
-    listHtml += '<div class="glyph fs1"> \
-        <div class="clearfix bshadow0 pbs"><span class="ca-gov-icon-' + icon.properties.name + '"></span><span class="mls"> \
-          ca-gov-icon-' + icon.properties.name + '</span></div> \
-        <p class="icon-value">' + icon.properties.code.toString(16) + '</p> \
-      </div>';
-    numberOfResults++;
-   }
+
+    for (const icon of iconsByLetter) {
+      const iconStrings = [...new Set([icon.properties.name, ...icon.icon.tags])].filter(x=>x.length);
+
+      if (!searchInput.length || iconStrings.find(x=>x.search(searchInput) > -1)) {
+        listHtml += `
+<div class="glyph fs1">
+  <div class="clearfix bshadow0 pbs">
+    <span class="ca-gov-icon-${icon.properties.name}"></span>
+    <span style="text-transform:capitalize">${icon.properties.name.replace('-',' ')}</span><br/>
+    <span class="mls">ca-gov-icon-${icon.properties.name}</span>
+  </div>
+  <p class="icon-value">${icon.properties.code.toString(16)}</p>
+</div>
+        `;
+        numberOfResults++;
+      }
+    }
   }
-  if (numberOfHeadings > 1) {
+
+  if (searchInput.length) {
+   document.querySelector('#jumpToHeading').style.display = "none";
+  } else {
    document.querySelector('#jumpToHeading').style.display = "block";
    document.querySelector('#jumpToHeading ol').innerHTML = jumpToHtml;
-  } else {
-   document.querySelector('#jumpToHeading').style.display = "none";
   }
-  document.querySelector('#fontlist').innerHTML = (numberOfResults) ? listHtml : '<div class="fs1">No icons found.</div>';
+  document.querySelector('#fontlist').innerHTML = listHtml;
+  document.querySelector('#resultcount').innerHTML = numberOfResults ? `<p>${numberOfResults} icons found.</p>` : '<p>No icons found.</p>';
  }
 
  const myRequest = new Request('https://california.azureedge.net/fonts/selection.json');
@@ -668,7 +687,7 @@
  page. For example <code>color:</code> and <code>font-size:</code> change the color and size of the
  icon.</p>
 
-<form id="iconSearchForm" class="">
+<form id="iconSearchForm" class="" onsubmit="return false">
  <span class="sr-only" id="IconInput">Search icons</span>
  <input type="text" name="iconsearch" aria-labelledby="IconInput" placeholder="Search icons" class="search-textfield">
  <button type="reset" class=""><span class="">Reset</span></button>
@@ -683,9 +702,8 @@
 
 <!-- START ICOMOON DEMO -->
 <div class="clearfix mhl ptl">
-
- <div id="fontlist"></div>
-
+ <div id="resultcount" class="fs1" aria-live="polite"></div>
+ <div id="fontlist" ></div>
 </div>
 
 		</main>
