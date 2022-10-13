@@ -475,7 +475,38 @@
        
       
       
-          <li><a href="/components/form-elements.html"  aria-current="page"  class="active" >Form elements</a></li>
+        <li><a href="/components/form-elements.html"  aria-current="page"  class="active" >Form elements</a>
+         
+          
+           <ul>
+            
+            <li>
+             <a href="#Text-field" class="tab-link">Text field</a>
+            </li>
+            
+            <li>
+             <a href="#Text-area" class="tab-link">Text area</a>
+            </li>
+            
+            <li>
+             <a href="#Checkbox" class="tab-link">Checkbox</a>
+            </li>
+            
+            <li>
+             <a href="#Radio-button" class="tab-link">Radio button</a>
+            </li>
+            
+            <li>
+             <a href="#Dropdown-menu" class="tab-link">Dropdown-menu</a>
+            </li>
+            
+            <li>
+             <a href="#File-input" class="tab-link">File input</a>
+            </li>
+            
+           </ul>
+           
+        </li>
        
       
       
@@ -562,502 +593,555 @@
 <ul>
  <li>Labels</li>
  <li>Text fields</li>
+ <li>Text areas</li>
  <li>Checkboxes</li>
- <li>Buttons</li>
- <li>Dropdown menus</li>
  <li>Radio buttons</li>
+ <li>Dropdown menus (select)</li>
+ <li>File inputs</li>
 </ul>
 
-<h2>Example:</h2>
-<form role="form">
- <div class="form-group">
-  <label for="exampleInputEmail" class="form-control-label"><span class="required-label">*</span> Email
-   address</label>
-  <input type="email" class="form-control" id="exampleInputEmail" placeholder="Enter email">
- </div>
- <div class="form-group">
-  <label for="exampleInputPassword" class="form-control-label"><span class="required-label">*</span>
-   Password</label>
-  <input type="password" class="form-control" id="exampleInputPassword" placeholder="Password">
- </div>
- <div class="form-group">
-  <label for="exampleInputFile">File input</label>
-  <div class="input-group mb-3">
-   <input type="file" class="form-control" id="inputGroupFile02">
-   <label class="input-group-text section-primary" for="inputGroupFile02">Upload</label>
-  </div>
-  <div class="feedback small">Feedback text.</div>
- </div>
- <button type="submit" class="btn btn-default">Submit</button>
-</form>
-
-<h2>Source code:</h2>
-<pre><code class="overflow-auto"><form role="form">
- <div class="form-group">
-  <label for="exampleInputEmail" class="form-control-label"><span class="required-label">*</span> Email
-   address</label>
-  <input type="email" class="form-control" id="exampleInputEmail" placeholder="Enter email">
- </div>
- <div class="form-group">
-  <label for="exampleInputPassword" class="form-control-label"><span class="required-label">*</span>
-   Password</label>
-  <input type="password" class="form-control" id="exampleInputPassword" placeholder="Password">
- </div>
- <div class="form-group">
-  <label for="exampleInputFile">File input</label>
-  <div class="input-group mb-3">
-   <input type="file" class="form-control" id="inputGroupFile02">
-   <label class="input-group-text section-primary" for="inputGroupFile02">Upload</label>
-  </div>
-  <div class="feedback small">Feedback text.</div>
- </div>
- <button type="submit" class="btn btn-default">Submit</button>
-</form></code></pre>
 
 
-<hr>
+
+<h2 id="Text-field">Text field</h2>
+<p>A text field allows visitors to write or edit text. Text field should always have a label that is assosiated with it.
+</p>
+<p>The label should:</p>
+<ul>
+ <li>Describe the purpose of the text field.</li>
+ <li>Use sentence-style capitalization—only capitalize the first word. </li>
+ <li>Be short and concise.</li>
+ <li>Use nouns or short noun phrases.</li>
+ <li>Inform visitors whether or not the form input is required (represented by an asterisk).</li>
+ <li>Avoid instructional text like "Click to get started".</li>
+</ul>
+
+<p>Text field can have optional text container for instructions or error messages.</p>
 
 
-<h2>Sample contact form:</h2>
-<!-- Contact Form -->
-<form role="form">
- <div class="row">
-  <div class="form-group col-md-6">
-   <label class="form-control-label" for="exampleInputName"><span class="required-label">*</span> Name</label>
-   <input type="text" class="form-control" id="exampleInputName" placeholder="Name">
-  </div>
-  <div class="form-group col-md-6">
-   <label class="form-control-label" for="exampleInputEmail2"><span class="required-label">*</span> Email
-    address</label>
-   <input type="email" class="form-control" id="exampleInputEmail2" placeholder="Enter email">
-  </div>
- </div>
- <div class="form-group">
-  <label class="form-control-label" for="exampleInputComment">Your Message</label>
-  <textarea id="exampleInputComment" class="form-control" rows="5" cols="80"></textarea>
- </div>
- <button type="submit" class="btn btn-default">Submit</button>
-</form>
+<!--TABS-->
+<div class="tab-group responsive">
+ <ul id="tabs2" class="nav nav-tabs" role="tablist">
+  <li class="nav-item">
+   <a id="tab-example2" href="#pane-example2" class="nav-link active" data-bs-toggle="tab" role="tab">Example</a>
+  </li>
+  <li class="nav-item">
+   <a id="tab-html2" href="#pane-html2" class="nav-link" data-bs-toggle="tab" role="tab">Source code</a>
+  </li>
 
-<h2>Source code:</h2>
-<pre><code class="overflow-auto"><!-- Contact Form -->
-<form role="form">
- <div class="row">
-  <div class="form-group col-md-6">
-   <label class="form-control-label" for="exampleInputName"><span class="required-label">*</span> Name</label>
-   <input type="text" class="form-control" id="exampleInputName" placeholder="Name">
-  </div>
-  <div class="form-group col-md-6">
-   <label class="form-control-label" for="exampleInputEmail2"><span class="required-label">*</span> Email
-    address</label>
-   <input type="email" class="form-control" id="exampleInputEmail2" placeholder="Enter email">
-  </div>
- </div>
- <div class="form-group">
-  <label class="form-control-label" for="exampleInputComment">Your Message</label>
-  <textarea id="exampleInputComment" class="form-control" rows="5" cols="80"></textarea>
- </div>
- <button type="submit" class="btn btn-default">Submit</button>
-</form></code></pre>
+ </ul>
 
-<hr>
 
-<h2>Form states and sizes:</h2>
-<!--form states-->
-<div class="row">
- <div class="col-md-4 mb-3">
-  <label for="validationFirstName">First name</label>
-  <div class="input-group">
-   <div class="input-group-prepend">
-    <span class="input-group-text"><i class="ca-gov-icon-person"></i></span>
+ <div id="tab-content" class="tab-content">
+  <!--Examples-->
+  <div id="pane-example2" class="card tab-pane fade show active" role="tabpanel" aria-labelledby="tab-example2">
+   <div class="card-header" id="heading-example2">
+    <a data-bs-toggle="collapse" href="#collapse-example2" data-parent="#tab-content" aria-expanded="true"
+     aria-controls="collapse-example2" data-hash="#pane-example2" title="Example tab header">
+     Example
+    </a>
    </div>
-   <input type="text" class="form-control" id="validationFirstName" placeholder="First name" value="Mark" disabled>
-  </div>
-  <div class="feedback text-muted">
-   <small>Disabled.</small>
-  </div>
- </div>
- <div class="col-md-4 mb-3">
-  <label for="validationServerLastName">Last name</label>
-  <div class="input-group">
-   <div class="input-group-prepend">
-    <span class="input-group-text is-valid"><i class="ca-gov-icon-person"></i></span>
-   </div>
-   <input type="text" class="form-control is-valid" id="validationServerLastName" placeholder="Last Name" required>
-   <div class="valid-feedback">
-    Looks Good.
-   </div>
-  </div>
- </div>
- <div class="col-md-4 mb-3">
-  <label for="validationServerUsername">Username</label>
-  <div class="input-group">
-   <div class="input-group-prepend">
-    <span class="input-group-text is-invalid"><i class="ca-gov-icon-person"></i></span>
-   </div>
-   <input type="text" class="form-control is-invalid" id="validationServerUsername" placeholder="Username" required>
-   <div class="invalid-feedback">
-    Please choose a username.
-   </div>
-  </div>
- </div>
-</div>
-<!--form input field sizes-->
-<div class="form-group row">
- <label for="inputEmail3" class="col-sm-2 form-control-label">Email</label>
- <div class="col-sm-10">
-  <input type="email" class="form-control form-control-lg" id="inputEmail3" placeholder="Email">
- </div>
-</div>
-<div class="form-group row">
- <label for="inputPhone" class="col-sm-2 form-control-label">Phone</label>
- <div class="col-sm-10">
-  <input type="email" class="form-control form-control" id="inputPhone" placeholder="Phone">
- </div>
+   <div id="collapse-example2" class="collapse show" role="tabpanel" aria-labelledby="heading-example2">
+    <div class="card-body p-b-lg">
+
+
+     <h3 class="h4 mt-0">Default</h3>
+<label class="form-control-label" for="InputName">Name</label>
+<input type="text" class="form-control" id="InputName" placeholder="Enter your name here">
+<div class="feedback text-muted">
+ <small>Use this space for error messages or instruction text</small>
 </div>
 
-<div class="form-group row">
- <label for="inputPassword3" class="col-sm-2 form-control-label">Password</label>
- <div class="col-sm-10">
-  <input type="password" class="form-control form-control-sm" id="inputPassword3" placeholder="Password">
- </div>
+<h3 class="h4">Required</h3>
+<label class="form-control-label" for="InputNameRequired"><span class="required-label">*</span> Name</label>
+<input type="text" class="form-control" id="InputNameRequired" placeholder="Enter your name here">
+<div class="invalid-feedback d-block">
+ This field is required
 </div>
 
-<h2>Source code:</h2>
-<pre><code class="overflow-auto"><!--form states-->
-<div class="row">
- <div class="col-md-4 mb-3">
-  <label for="validationFirstName">First name</label>
-  <div class="input-group">
-   <div class="input-group-prepend">
-    <span class="input-group-text"><i class="ca-gov-icon-person"></i></span>
-   </div>
-   <input type="text" class="form-control" id="validationFirstName" placeholder="First name" value="Mark" disabled>
-  </div>
-  <div class="feedback text-muted">
-   <small>Disabled.</small>
-  </div>
- </div>
- <div class="col-md-4 mb-3">
-  <label for="validationServerLastName">Last name</label>
-  <div class="input-group">
-   <div class="input-group-prepend">
-    <span class="input-group-text is-valid"><i class="ca-gov-icon-person"></i></span>
-   </div>
-   <input type="text" class="form-control is-valid" id="validationServerLastName" placeholder="Last Name" required>
-   <div class="valid-feedback">
-    Looks Good.
+    </div>
    </div>
   </div>
- </div>
- <div class="col-md-4 mb-3">
-  <label for="validationServerUsername">Username</label>
-  <div class="input-group">
-   <div class="input-group-prepend">
-    <span class="input-group-text is-invalid"><i class="ca-gov-icon-person"></i></span>
+
+
+
+  <!--HTML-->
+  <div id="pane-html2" class="card tab-pane fade" role="tabpanel" aria-labelledby="tab-html2">
+   <div class="card-header" id="heading-html2">
+    <a class="collapsed" data-bs-toggle="collapse" href="#collapse-html2" data-parent="#tab-content"
+     aria-expanded="false" aria-controls="collapse-html2" data-hash="#pane-html2" title="HTML Source code tab header">
+     Source code
+    </a>
    </div>
-   <input type="text" class="form-control is-invalid" id="validationServerUsername" placeholder="Username" required>
-   <div class="invalid-feedback">
-    Please choose a username.
-   </div>
-  </div>
- </div>
-</div>
-<!--form input field sizes-->
-<div class="form-group row">
- <label for="inputEmail3" class="col-sm-2 form-control-label">Email</label>
- <div class="col-sm-10">
-  <input type="email" class="form-control form-control-lg" id="inputEmail3" placeholder="Email">
- </div>
-</div>
-<div class="form-group row">
- <label for="inputPhone" class="col-sm-2 form-control-label">Phone</label>
- <div class="col-sm-10">
-  <input type="email" class="form-control form-control" id="inputPhone" placeholder="Phone">
- </div>
+   <div id="collapse-html2" class="collapse" role="tabpanel" aria-labelledby="heading-html2">
+    <div class="card-body">
+     <pre style="max-height: 300px;"><code><h3 class="h4 mt-0">Default</h3>
+<label class="form-control-label" for="InputName">Name</label>
+<input type="text" class="form-control" id="InputName" placeholder="Enter your name here">
+<div class="feedback text-muted">
+ <small>Use this space for error messages or instruction text</small>
 </div>
 
-<div class="form-group row">
- <label for="inputPassword3" class="col-sm-2 form-control-label">Password</label>
- <div class="col-sm-10">
-  <input type="password" class="form-control form-control-sm" id="inputPassword3" placeholder="Password">
+<h3 class="h4">Required</h3>
+<label class="form-control-label" for="InputNameRequired"><span class="required-label">*</span> Name</label>
+<input type="text" class="form-control" id="InputNameRequired" placeholder="Enter your name here">
+<div class="invalid-feedback d-block">
+ This field is required
+</div></code>
+    </pre>
+    </div>
+   </div>
+  </div>
+
+
  </div>
-</div></code></pre>
+</div>
+<!--END TABS-->
 
-<hr />
 
-<h2>Custom file input:</h2>
-<!--Custom file Input-->
+<h2 id="Text-area">Text area</h2>
+<p>A text are allows visitors to write or edit multiple lines of text. Same as text field the text area should always
+ have a label that is assosiated with it.
+</p>
+
+<!--TABS-->
+<div class="tab-group responsive">
+ <ul id="tabs1" class="nav nav-tabs" role="tablist">
+  <li class="nav-item">
+   <a id="tab-example1" href="#pane-example1" class="nav-link active" data-bs-toggle="tab" role="tab">Example</a>
+  </li>
+  <li class="nav-item">
+   <a id="tab-html1" href="#pane-html1" class="nav-link" data-bs-toggle="tab" role="tab">Source code</a>
+  </li>
+
+ </ul>
+
+
+ <div id="tab-content" class="tab-content">
+  <!--Examples-->
+  <div id="pane-example1" class="card tab-pane fade show active" role="tabpanel" aria-labelledby="tab-example1">
+   <div class="card-header" id="heading-example1">
+    <a data-bs-toggle="collapse" href="#collapse-example1" data-parent="#tab-content" aria-expanded="true"
+     aria-controls="collapse-example1" data-hash="#pane-example1" title="Example tab header">
+     Example
+    </a>
+   </div>
+   <div id="collapse-example1" class="collapse show" role="tabpanel" aria-labelledby="heading-example1">
+    <div class="card-body p-b-lg">
+
+     <h3 class="h4 mt-0">Default</h3>
+<label class="form-control-label" for="exampleInputComment">Your Message</label>
+<textarea id="exampleInputComment" class="form-control" rows="5" cols="80"></textarea>
+<small>Use this space for error messages or instruction text</small>
+
+<h3 class="h4">Required</h3>
+<label class="form-control-label" for="exampleInputCommentRequired"><span class="required-label">*</span> Your
+ Message</label>
+<textarea id="exampleInputCommentRequired" class="form-control" rows="5" cols="80"></textarea>
+<div class="invalid-feedback d-block">
+ This field is required</div>
+
+    </div>
+   </div>
+  </div>
+
+
+
+  <!--HTML-->
+  <div id="pane-html1" class="card tab-pane fade" role="tabpanel" aria-labelledby="tab-html1">
+   <div class="card-header" id="heading-html1">
+    <a class="collapsed" data-bs-toggle="collapse" href="#collapse-html1" data-parent="#tab-content"
+     aria-expanded="false" aria-controls="collapse-html1" data-hash="#pane-html1" title="HTML Source code tab header">
+     Source code
+    </a>
+   </div>
+   <div id="collapse-html1" class="collapse" role="tabpanel" aria-labelledby="heading-html1">
+    <div class="card-body">
+     <pre style="max-height: 300px;"><code><h3 class="h4 mt-0">Default</h3>
+<label class="form-control-label" for="exampleInputComment">Your Message</label>
+<textarea id="exampleInputComment" class="form-control" rows="5" cols="80"></textarea>
+<small>Use this space for error messages or instruction text</small>
+
+<h3 class="h4">Required</h3>
+<label class="form-control-label" for="exampleInputCommentRequired"><span class="required-label">*</span> Your
+ Message</label>
+<textarea id="exampleInputCommentRequired" class="form-control" rows="5" cols="80"></textarea>
+<div class="invalid-feedback d-block">
+ This field is required</div></code>
+    </pre>
+
+    </div>
+   </div>
+  </div>
+
+
+ </div>
+</div>
+<!--END TABS-->
+
+
+
+
+<h2 id="Checkbox">Checkbox</h2>
+<p>A checkbox allows visitors to select one or more options from a number of choices.</p>
+
+<!--TABS-->
+<div class="tab-group responsive">
+ <ul id="tabs3" class="nav nav-tabs" role="tablist">
+  <li class="nav-item">
+   <a id="tab-example3" href="#pane-example3" class="nav-link active" data-bs-toggle="tab" role="tab">Example</a>
+  </li>
+  <li class="nav-item">
+   <a id="tab-html3" href="#pane-html3" class="nav-link" data-bs-toggle="tab" role="tab">Source code</a>
+  </li>
+
+ </ul>
+
+
+ <div id="tab-content" class="tab-content">
+  <!--Examples-->
+  <div id="pane-example3" class="card tab-pane fade show active" role="tabpanel" aria-labelledby="tab-example3">
+   <div class="card-header" id="heading-example3">
+    <a data-bs-toggle="collapse" href="#collapse-example3" data-parent="#tab-content" aria-expanded="true"
+     aria-controls="collapse-example3" data-hash="#pane-example3" title="Example tab header">
+     Example
+    </a>
+   </div>
+   <div id="collapse-example3" class="collapse show" role="tabpanel" aria-labelledby="heading-example3">
+    <div class="card-body p-b">
+
+
+     <!--checkboxes-->
+
+<h3 class="h4 mt-0 m-b-0">Which types of waste do you transport?</h3>
+<small class="m-b d-block">Select all that apply</small>
+
+<div class="form-check m-b">
+ <input class="form-check-input" type="checkbox" value="" id="animalCarcassesCheck">
+ <label class="form-check-label" for="animalCarcassesCheck">
+  Waste from animal carcasses
+ </label>
+</div>
+<div class="form-check m-b">
+ <input class="form-check-input" type="checkbox" value="" id="minesCheck">
+ <label class="form-check-label" for="minesCheck">
+  Waste from mines or quarries
+ </label>
+</div>
+<div class="form-check m-b">
+ <input class="form-check-input" type="checkbox" value="" id="farmCheck">
+ <label class="form-check-label" for="farmCheck">
+  Farm or agricultural waste
+ </label>
+</div>
+
+
+    </div>
+   </div>
+  </div>
+
+
+
+  <!--HTML-->
+  <div id="pane-html3" class="card tab-pane fade" role="tabpanel" aria-labelledby="tab-html3">
+   <div class="card-header" id="heading-html3">
+    <a class="collapsed" data-bs-toggle="collapse" href="#collapse-html3" data-parent="#tab-content"
+     aria-expanded="false" aria-controls="collapse-html3" data-hash="#pane-html3" title="HTML Source code tab header">
+     Source code
+    </a>
+   </div>
+   <div id="collapse-html3" class="collapse" role="tabpanel" aria-labelledby="heading-html3">
+    <div class="card-body">
+     <pre style="max-height: 300px;"><code><!--checkboxes-->
+
+<h3 class="h4 mt-0 m-b-0">Which types of waste do you transport?</h3>
+<small class="m-b d-block">Select all that apply</small>
+
+<div class="form-check m-b">
+ <input class="form-check-input" type="checkbox" value="" id="animalCarcassesCheck">
+ <label class="form-check-label" for="animalCarcassesCheck">
+  Waste from animal carcasses
+ </label>
+</div>
+<div class="form-check m-b">
+ <input class="form-check-input" type="checkbox" value="" id="minesCheck">
+ <label class="form-check-label" for="minesCheck">
+  Waste from mines or quarries
+ </label>
+</div>
+<div class="form-check m-b">
+ <input class="form-check-input" type="checkbox" value="" id="farmCheck">
+ <label class="form-check-label" for="farmCheck">
+  Farm or agricultural waste
+ </label>
+</div></code>
+   </pre>
+
+    </div>
+   </div>
+  </div>
+
+
+ </div>
+</div>
+<!--END TABS-->
+
+
+
+
+
+
+<h2 id="Radio-button">Radio button</h2>
+<p>A radio button allows visitors to select only one option from a number of choices.</p>
+
+<!--TABS-->
+<div class="tab-group responsive">
+ <ul id="tabs4" class="nav nav-tabs" role="tablist">
+  <li class="nav-item">
+   <a id="tab-example4" href="#pane-example4" class="nav-link active" data-bs-toggle="tab" role="tab">Example</a>
+  </li>
+  <li class="nav-item">
+   <a id="tab-html4" href="#pane-html4" class="nav-link" data-bs-toggle="tab" role="tab">Source code</a>
+  </li>
+
+ </ul>
+
+
+ <div id="tab-content" class="tab-content">
+  <!--Examples-->
+  <div id="pane-example4" class="card tab-pane fade show active" role="tabpanel" aria-labelledby="tab-example4">
+   <div class="card-header" id="heading-example4">
+    <a data-bs-toggle="collapse" href="#collapse-example4" data-parent="#tab-content" aria-expanded="true"
+     aria-controls="collapse-example4" data-hash="#pane-example4" title="Example tab header">
+     Example
+    </a>
+   </div>
+   <div id="collapse-example4" class="collapse show" role="tabpanel" aria-labelledby="heading-example4">
+    <div class="card-body p-b">
+
+
+     <h3 class="h4 m-y-0">What is your favorite pet?</h3>
+<small class="m-b d-block">Select one</small>
+<div class="form-check m-b">
+ <input class="form-check-input" type="radio" name="favorite_pet" id="customRadio1">
+ <label class="form-check-label" for="customRadio1">
+  Cats
+ </label>
+</div>
+<div class="form-check m-b">
+ <input class="form-check-input" type="radio" name="favorite_pet" id="customRadio2">
+ <label class="form-check-label" for="customRadio2">
+  Dogs
+ </label>
+</div>
+<div class="form-check m-b">
+ <input class="form-check-input" type="radio" name="favorite_pet" id="customRadio3">
+ <label class="form-check-label" for="customRadio3">
+  Birds
+ </label>
+</div>
+
+
+    </div>
+   </div>
+  </div>
+
+
+
+  <!--HTML-->
+  <div id="pane-html4" class="card tab-pane fade" role="tabpanel" aria-labelledby="tab-html4">
+   <div class="card-header" id="heading-html4">
+    <a class="collapsed" data-bs-toggle="collapse" href="#collapse-html4" data-parent="#tab-content"
+     aria-expanded="false" aria-controls="collapse-html4" data-hash="#pane-html4" title="HTML Source code tab header">
+     Source code
+    </a>
+   </div>
+   <div id="collapse-html4" class="collapse" role="tabpanel" aria-labelledby="heading-html4">
+    <div class="card-body">
+     <pre style="max-height: 300px;"><code><h3 class="h4 m-y-0">What is your favorite pet?</h3>
+<small class="m-b d-block">Select one</small>
+<div class="form-check m-b">
+ <input class="form-check-input" type="radio" name="favorite_pet" id="customRadio1">
+ <label class="form-check-label" for="customRadio1">
+  Cats
+ </label>
+</div>
+<div class="form-check m-b">
+ <input class="form-check-input" type="radio" name="favorite_pet" id="customRadio2">
+ <label class="form-check-label" for="customRadio2">
+  Dogs
+ </label>
+</div>
+<div class="form-check m-b">
+ <input class="form-check-input" type="radio" name="favorite_pet" id="customRadio3">
+ <label class="form-check-label" for="customRadio3">
+  Birds
+ </label>
+</div></code>
+   </pre>
+
+    </div>
+   </div>
+  </div>
+
+
+ </div>
+</div>
+<!--END TABS-->
+
+
+
+
+
+<h2 id="Dropdown-menu" class=" m-b-0">Dropdown menu</h2>
+<p class="subtitle mb-4">Other names: select</p>
+<p>A dropdown menu hides options by default. When interacted with, the dropdown menu displays a list of options visitors
+ may select.</p>
+
+<!--TABS-->
+<div class="tab-group responsive">
+ <ul id="tabs5" class="nav nav-tabs" role="tablist">
+  <li class="nav-item">
+   <a id="tab-example5" href="#pane-example5" class="nav-link active" data-bs-toggle="tab" role="tab">Example</a>
+  </li>
+  <li class="nav-item">
+   <a id="tab-html5" href="#pane-html5" class="nav-link" data-bs-toggle="tab" role="tab">Source code</a>
+  </li>
+
+ </ul>
+
+
+ <div id="tab-content" class="tab-content">
+  <!--Examples-->
+  <div id="pane-example5" class="card tab-pane fade show active" role="tabpanel" aria-labelledby="tab-example5">
+   <div class="card-header" id="heading-example5">
+    <a data-bs-toggle="collapse" href="#collapse-example5" data-parent="#tab-content" aria-expanded="true"
+     aria-controls="collapse-example5" data-hash="#pane-example5" title="Example tab header">
+     Example
+    </a>
+   </div>
+   <div id="collapse-example5" class="collapse show" role="tabpanel" aria-labelledby="heading-example5">
+    <div class="card-body p-b">
+
+
+     <label for="Select" class="mb-1">Choose a car:</label>
+<select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example" id="Select">
+ <option selected>Buick</option>
+ <option value="3">Chevrolet</option>
+ <option value="2">Chrysler</option>
+ <option value="1">Ford</option>
+</select>
+
+
+    </div>
+   </div>
+  </div>
+
+
+
+  <!--HTML-->
+  <div id="pane-html5" class="card tab-pane fade" role="tabpanel" aria-labelledby="tab-html5">
+   <div class="card-header" id="heading-html5">
+    <a class="collapsed" data-bs-toggle="collapse" href="#collapse-html5" data-parent="#tab-content"
+     aria-expanded="false" aria-controls="collapse-html5" data-hash="#pane-html5" title="HTML Source code tab header">
+     Source code
+    </a>
+   </div>
+   <div id="collapse-html5" class="collapse" role="tabpanel" aria-labelledby="heading-html5">
+    <div class="card-body">
+     <pre style="max-height: 300px;"><code><label for="Select" class="mb-1">Choose a car:</label>
+<select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example" id="Select">
+ <option selected>Buick</option>
+ <option value="3">Chevrolet</option>
+ <option value="2">Chrysler</option>
+ <option value="1">Ford</option>
+</select></code>
+   </pre>
+
+    </div>
+   </div>
+  </div>
+
+
+ </div>
+</div>
+<!--END TABS-->
+
+
+
+
+
+
+<h2 id="File-input" class=" m-b-0">File input</h2>
+<p>A file input let the user choose one or more files from their device storage. Once chosen, the files can be uploaded
+ to a server using form submission.</p>
+
+<!--TABS-->
+<div class="tab-group responsive">
+ <ul id="tabs6" class="nav nav-tabs" role="tablist">
+  <li class="nav-item">
+   <a id="tab-example6" href="#pane-example6" class="nav-link active" data-bs-toggle="tab" role="tab">Example</a>
+  </li>
+  <li class="nav-item">
+   <a id="tab-html6" href="#pane-html6" class="nav-link" data-bs-toggle="tab" role="tab">Source code</a>
+  </li>
+
+ </ul>
+
+
+ <div id="tab-content" class="tab-content">
+  <!--Examples-->
+  <div id="pane-example6" class="card tab-pane fade show active" role="tabpanel" aria-labelledby="tab-example6">
+   <div class="card-header" id="heading-example6">
+    <a data-bs-toggle="collapse" href="#collapse-example6" data-parent="#tab-content" aria-expanded="true"
+     aria-controls="collapse-example6" data-hash="#pane-example6" title="Example tab header">
+     Example
+    </a>
+   </div>
+   <div id="collapse-example6" class="collapse show" role="tabpanel" aria-labelledby="heading-example6">
+    <div class="card-body p-b">
+
+
+     <!--Custom file Input-->
+<label for="inputGroupFile02" class="mb-1">Upload your file:</label>
 <div class="input-group mb-3">
  <input type="file" class="form-control" id="inputGroupFile02">
- <label class="input-group-text section-primary" for="inputGroupFile02">Upload</label>
 </div>
 <div class="feedback small">Feedback text.</div>
 
-<h2>Source code:</h2>
-<pre><code class="overflow-auto"><!--Custom file Input-->
+
+    </div>
+   </div>
+  </div>
+
+
+
+  <!--HTML-->
+  <div id="pane-html6" class="card tab-pane fade" role="tabpanel" aria-labelledby="tab-html6">
+   <div class="card-header" id="heading-html6">
+    <a class="collapsed" data-bs-toggle="collapse" href="#collapse-html6" data-parent="#tab-content"
+     aria-expanded="false" aria-controls="collapse-html6" data-hash="#pane-html6" title="HTML Source code tab header">
+     Source code
+    </a>
+   </div>
+   <div id="collapse-html6" class="collapse" role="tabpanel" aria-labelledby="heading-html6">
+    <div class="card-body">
+     <pre style="max-height: 300px;"><code><!--Custom file Input-->
+<label for="inputGroupFile02" class="mb-1">Upload your file:</label>
 <div class="input-group mb-3">
  <input type="file" class="form-control" id="inputGroupFile02">
- <label class="input-group-text section-primary" for="inputGroupFile02">Upload</label>
 </div>
-<div class="feedback small">Feedback text.</div></code></pre>
+<div class="feedback small">Feedback text.</div></code>
+   </pre>
 
-
-
-<hr />
-
-<h2>Custom radio buttons and checkboxes:</h2>
-<!--Radios-->
-<div class="m-b">
- <label class="form-check-inline p-l-md m-l-0 m-r-md">
-  <input class="hidden-up pos-abs" name="radInline1_1" checked="" type="radio">
-  <div class="check-icon-radio">
-   <i></i>
+    </div>
+   </div>
   </div>
-  USA
- </label>
- <label class="form-check-inline p-l-md m-l-0 m-r-md">
-  <input class="hidden-up  pos-abs" name="radInline1_1" type="radio">
-  <div class="check-icon-radio">
-   <i></i>
-  </div>
-  Canada
- </label>
- <label class="form-check-inline p-l-md m-l-0 m-r-md">
-  <input class="hidden-up pos-abs" name="radInline1_1" type="radio">
-  <div class="check-icon-radio">
-   <i></i>
-  </div>
-  United Kingdom
- </label>
- <label class="form-check-inline p-l-md m-l-0 m-r-md">
-  <input class="hidden-up pos-abs" name="radInline1_1" type="radio">
-  <div class="check-icon-radio">
-   <i></i>
-  </div>
-  Sweden
- </label>
+
+
+ </div>
 </div>
-
-<div class="m-b">
- <label class="check">
-  <input class="hidden-up pos-abs top-0 left-0" name="radGroupBtn1_1" checked="" type="radio">
-  <span class="btn btn-lg btn-block bg-highlight--checked rounded-0 w-100">Italy</span>
- </label>
-
- <label class="check">
-  <input class="hidden-up pos-abs top-0 left-0" name="radGroupBtn1_1" type="radio">
-  <span class="btn btn-lg btn-block bg-highlight--checked rounded-0 w-100">UK</span>
- </label>
-
- <label class="check">
-  <input class="hidden-up pos-abs top-0 left-0" name="radGroupBtn1_1" type="radio">
-  <span class="btn btn-lg btn-block bg-highlight--checked rounded-0 w-100">USA</span>
- </label>
-</div>
-
-<!--Bootstrap4 Custom Radios-->
-<div class="form-check">
- <input class="form-check-input" type="radio" name="flexRadioDefault" id="customRadio1">
- <label class="form-check-label" for="customRadio1">
-  Toggle this custom radio
- </label>
-</div>
-<div class="form-check">
- <input class="form-check-input" type="radio" name="flexRadioDefault" id="customRadio2" checked>
- <label class="form-check-label" for="customRadio2">
-  Or toggle this other custom radio
- </label>
-</div>
-<!--checkboxes-->
-<div class="m-b m-t">
- <label class="form-check-inline p-l-md m-l-0 m-r-md">
-  <input class="hidden-up pos-abs" type="checkbox">
-  <div class="check-icon-checkbox">
-   <i class="ca-gov-icon-check-mark"></i>
-  </div>
-  USA
- </label>
-
- <label class="form-check-inline p-l-md m-l-0 m-r-md">
-  <input class="hidden-up pos-abs" type="checkbox" checked>
-  <div class="check-icon-checkbox">
-   <i class="ca-gov-icon-check-mark"></i>
-  </div>
-  USA
- </label>
-</div>
-
-<div class="m-b">
- <label class="check">
-  <input class="hidden-up pos-abs top-0 left-0" checked="" type="checkbox">
-  <span class="btn btn-md btn-block color-white--checked bg-primary--checked rounded-0 w-100">Canada</span>
- </label>
-
- <label class="check">
-  <input class="hidden-up pos-abs top-0 left-0" type="checkbox">
-  <span class="btn btn-md btn-block color-white--checked bg-primary--checked rounded-0 w-100">UK</span>
- </label>
-
- <label class="check">
-  <input class="hidden-up pos-abs top-0 left-0" type="checkbox">
-  <span class="btn btn-md btn-block color-white--checked bg-primary--checked rounded-0 w-100">Mexico</span>
- </label>
-</div>
-
-
-<div class="form-check m-b">
- <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
- <label class="form-check-label" for="flexCheckDefault">
-  Check this checkbox
- </label>
-</div>
-
-
-
-<h2>Source code:</h2>
-<pre><code class="overflow-auto"><!--Radios-->
-<div class="m-b">
- <label class="form-check-inline p-l-md m-l-0 m-r-md">
-  <input class="hidden-up pos-abs" name="radInline1_1" checked="" type="radio">
-  <div class="check-icon-radio">
-   <i></i>
-  </div>
-  USA
- </label>
- <label class="form-check-inline p-l-md m-l-0 m-r-md">
-  <input class="hidden-up  pos-abs" name="radInline1_1" type="radio">
-  <div class="check-icon-radio">
-   <i></i>
-  </div>
-  Canada
- </label>
- <label class="form-check-inline p-l-md m-l-0 m-r-md">
-  <input class="hidden-up pos-abs" name="radInline1_1" type="radio">
-  <div class="check-icon-radio">
-   <i></i>
-  </div>
-  United Kingdom
- </label>
- <label class="form-check-inline p-l-md m-l-0 m-r-md">
-  <input class="hidden-up pos-abs" name="radInline1_1" type="radio">
-  <div class="check-icon-radio">
-   <i></i>
-  </div>
-  Sweden
- </label>
-</div>
-
-<div class="m-b">
- <label class="check">
-  <input class="hidden-up pos-abs top-0 left-0" name="radGroupBtn1_1" checked="" type="radio">
-  <span class="btn btn-lg btn-block bg-highlight--checked rounded-0 w-100">Italy</span>
- </label>
-
- <label class="check">
-  <input class="hidden-up pos-abs top-0 left-0" name="radGroupBtn1_1" type="radio">
-  <span class="btn btn-lg btn-block bg-highlight--checked rounded-0 w-100">UK</span>
- </label>
-
- <label class="check">
-  <input class="hidden-up pos-abs top-0 left-0" name="radGroupBtn1_1" type="radio">
-  <span class="btn btn-lg btn-block bg-highlight--checked rounded-0 w-100">USA</span>
- </label>
-</div>
-
-<!--Bootstrap4 Custom Radios-->
-<div class="form-check">
- <input class="form-check-input" type="radio" name="flexRadioDefault" id="customRadio1">
- <label class="form-check-label" for="customRadio1">
-  Toggle this custom radio
- </label>
-</div>
-<div class="form-check">
- <input class="form-check-input" type="radio" name="flexRadioDefault" id="customRadio2" checked>
- <label class="form-check-label" for="customRadio2">
-  Or toggle this other custom radio
- </label>
-</div>
-<!--checkboxes-->
-<div class="m-b m-t">
- <label class="form-check-inline p-l-md m-l-0 m-r-md">
-  <input class="hidden-up pos-abs" type="checkbox">
-  <div class="check-icon-checkbox">
-   <i class="ca-gov-icon-check-mark"></i>
-  </div>
-  USA
- </label>
-
- <label class="form-check-inline p-l-md m-l-0 m-r-md">
-  <input class="hidden-up pos-abs" type="checkbox" checked>
-  <div class="check-icon-checkbox">
-   <i class="ca-gov-icon-check-mark"></i>
-  </div>
-  USA
- </label>
-</div>
-
-<div class="m-b">
- <label class="check">
-  <input class="hidden-up pos-abs top-0 left-0" checked="" type="checkbox">
-  <span class="btn btn-md btn-block color-white--checked bg-primary--checked rounded-0 w-100">Canada</span>
- </label>
-
- <label class="check">
-  <input class="hidden-up pos-abs top-0 left-0" type="checkbox">
-  <span class="btn btn-md btn-block color-white--checked bg-primary--checked rounded-0 w-100">UK</span>
- </label>
-
- <label class="check">
-  <input class="hidden-up pos-abs top-0 left-0" type="checkbox">
-  <span class="btn btn-md btn-block color-white--checked bg-primary--checked rounded-0 w-100">Mexico</span>
- </label>
-</div>
-
-
-<div class="form-check m-b">
- <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
- <label class="form-check-label" for="flexCheckDefault">
-  Check this checkbox
- </label>
-</div>
-     </code></pre>
-
-
-<hr />
-
-
-<h2>Custom select:</h2>
-<label for="Select" class="sr-only">Please select your options:</label>
-<select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example" id="Select">
-	<option selected>Open this select menu</option>
-	<option value="1">One</option>
-	<option value="2">Two</option>
-	<option value="3">Three</option>
-</select>
-
-<select class="form-select form-select-sm" aria-label=".form-select-sm example">
-	<option selected>Open this select menu</option>
-	<option value="1">One</option>
-	<option value="2">Two</option>
-	<option value="3">Three</option>
-</select>
-
-<h2>Source code:</h2>
-<pre><code class="overflow-auto"><label for="Select" class="sr-only">Please select your options:</label>
-<select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example" id="Select">
-	<option selected>Open this select menu</option>
-	<option value="1">One</option>
-	<option value="2">Two</option>
-	<option value="3">Three</option>
-</select>
-
-<select class="form-select form-select-sm" aria-label=".form-select-sm example">
-	<option selected>Open this select menu</option>
-	<option value="1">One</option>
-	<option value="2">Two</option>
-	<option value="3">Three</option>
-</select></code></pre>
+<!--END TABS-->
 				</div>
 			</div>
 		</div>
