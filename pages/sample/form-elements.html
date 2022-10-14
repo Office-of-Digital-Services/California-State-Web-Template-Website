@@ -5,7 +5,27 @@ layout: components.njk
 permalink: "components/form-elements.html"
 ---
 
+<style>
+ .blue-arrow {
+  position: relative;
+  padding-right: 3.5rem;
+ }
 
+ .blue-arrow::before {
+  position: absolute;
+  font-family: "CaGov" !important;
+  content: "\e669";
+  font-size: 0.65rem;
+  bottom: .8rem;
+  right: 0rem;
+  border-bottom: 2px solid;
+  width: 50px;
+  text-align: end;
+  line-height: 50px;
+  letter-spacing: -6px;
+  height: 26px;
+ }
+</style>
 
 
 <h1 class="mt-lg-0">Forms elements</h1>
@@ -22,11 +42,7 @@ permalink: "components/form-elements.html"
 </ul>
 
 
-
-
-<h2 id="Text-field">Text field</h2>
-<p>A text field allows visitors to write or edit text. Text field should always have a label that is assosiated with it.
-</p>
+<h2 id="File-input" class=" m-b-0">Label</h2>
 <p>The label should:</p>
 <ul>
  <li>Describe the purpose of the text field.</li>
@@ -37,7 +53,74 @@ permalink: "components/form-elements.html"
  <li>Avoid instructional text like "Click to get started".</li>
 </ul>
 
-<p>Additional instructions or error messages can be incorporated below the text field.</p>
+<!--TABS-->
+<div class="tab-group responsive">
+ <ul id="tabs7" class="nav nav-tabs" role="tablist">
+  <li class="nav-item">
+   <a id="tab-example7" href="#pane-example7" class="nav-link active" data-bs-toggle="tab" role="tab">Example</a>
+  </li>
+  <li class="nav-item">
+   <a id="tab-html7" href="#pane-html7" class="nav-link" data-bs-toggle="tab" role="tab">Source code</a>
+  </li>
+
+ </ul>
+
+
+ <div id="tab-content" class="tab-content">
+  <!--Examples-->
+  <div id="pane-example7" class="card tab-pane fade show active" role="tabpanel" aria-labelledby="tab-example7">
+   <div class="card-header" id="heading-example7">
+    <a data-bs-toggle="collapse" href="#collapse-example7" data-parent="#tab-content" aria-expanded="true"
+     aria-controls="collapse-example7" data-hash="#pane-example7" title="Example tab header">
+     Example
+    </a>
+   </div>
+   <div id="collapse-example7" class="collapse show" role="tabpanel" aria-labelledby="heading-example7">
+    <div class="card-body p-b">
+     <div class="bg-gray-50 p-a">
+      <div class="row">
+       <div class="col-sm-3">
+        <p class="color-s3 blue-arrow text-right">Label</p>
+       </div>
+       <div class="col-sm-9">{% include "../../src/_includes/modules/form-label.html" %}</div>
+      </div>
+     </div>
+
+
+
+
+    </div>
+   </div>
+  </div>
+
+
+
+  <!--HTML-->
+  <div id="pane-html7" class="card tab-pane fade" role="tabpanel" aria-labelledby="tab-html7">
+   <div class="card-header" id="heading-html7">
+    <a class="collapsed" data-bs-toggle="collapse" href="#collapse-html7" data-parent="#tab-content"
+     aria-expanded="false" aria-controls="collapse-html7" data-hash="#pane-html7" title="HTML Source code tab header">
+     Source code
+    </a>
+   </div>
+   <div id="collapse-html7" class="collapse" role="tabpanel" aria-labelledby="heading-html7">
+    <div class="card-body">
+     <pre style="max-height: 300px;"><code>{% include "../../src/_includes/modules/form-label.html" %}</code>
+   </pre>
+
+    </div>
+   </div>
+  </div>
+
+
+ </div>
+</div>
+<!--END TABS-->
+
+
+
+<h2 id="Text-field">Text field</h2>
+<p>A text field allows visitors to write or edit text.</p>
 
 
 <!--TABS-->
@@ -49,7 +132,6 @@ permalink: "components/form-elements.html"
   <li class="nav-item">
    <a id="tab-html2" href="#pane-html2" class="nav-link" data-bs-toggle="tab" role="tab">Source code</a>
   </li>
-
  </ul>
 
 
@@ -64,9 +146,16 @@ permalink: "components/form-elements.html"
    </div>
    <div id="collapse-example2" class="collapse show" role="tabpanel" aria-labelledby="heading-example2">
     <div class="card-body p-b-lg">
+     <div class="bg-gray-50 p-a">
+      <div class="row">
+       <div class="col-sm-3">
+        <p class="mt-4 pt-2 color-s3 blue-arrow text-right">Text field</p>
+       </div>
+       <div class="col-sm-9">{% include "../../src/_includes/modules/form-textfield.html" %}</div>
+      </div>
+     </div>
 
 
-     {% include "../../src/_includes/modules/form-textfield.html" %}
 
     </div>
    </div>
