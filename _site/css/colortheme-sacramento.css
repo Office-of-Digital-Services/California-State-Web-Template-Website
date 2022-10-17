@@ -2627,14 +2627,48 @@ a.text-white:not(.btn):hover {
   background-color: #555555;
 }
 .btn-secondary.active {
-  background: #555555;
-  color: #fff;
-  box-shadow: none;
+  background: #fff;
+  color: #000;
 }
 .btn-secondary:disabled {
   color: #000;
 }
 .btn-secondary.disabled {
+  color: #000;
+}
+
+.btn-s1 {
+  color: #555555;
+  background-color: #E1ECF7;
+  border-color: #555555;
+  font-weight: 600;
+}
+.btn-s1:hover, .btn-s1:focus, .btn-s1:not(:disabled):not(.disabled):active, .btn-s1:not(:disabled):not(.disabled).active,
+.btn-s1 .show > .dropdown-toggle, .open > .dropdown-toggle .btn-s1 {
+  color: #000;
+  background-color: #fff;
+  border-color: #000;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+.btn-s1:focus {
+  outline: solid 2px #2ea3f2 !important;
+}
+.btn-s1:not(:disabled):not(.disabled):active, .btn-s1:not(:disabled):not(.disabled).active, .open > .dropdown-toggle .btn-s1 {
+  background-image: none;
+}
+.btn-s1.disabled, .btn-s1.disabled:hover, .btn-s1.disabled:focus, .btn-s1.disabled:active, .btn-s1.disabled.active, .btn-s1[disabled], .btn-s1[disabled]:hover, .btn-s1[disabled]:focus, .btn-s1[disabled]:active, .btn-s1[disabled].active, fieldset[disabled] .btn-s1, fieldset[disabled] .btn-s1:hover, fieldset[disabled] .btn-s1:focus, fieldset[disabled] .btn-s1:active, fieldset[disabled] .btn-s1.active {
+  background-color: #E1ECF7 !important;
+  border-color: #555555;
+}
+.btn-s1 .badge {
+  color: #E1ECF7;
+  background-color: #555555;
+}
+.btn-s1.active {
+  background: #fff;
+  color: #000;
+}
+.btn-s1:disabled {
   color: #000;
 }
 
