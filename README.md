@@ -1,7 +1,13 @@
-# California-State-Template-v6-Beta
+# California-State-Template-Website
 
-The California State Template is an HTML template and website standard offered by the California Department of Technology to state agencies and departments within the State of California and beyond. Please visit webstandards.ca.gov for more information.
+The California State Web Template is an HTML template and website standard offered by the California Department of Technology to state agencies and departments within the State of California and beyond. Please visit webstandards.ca.gov for more information on California web publishing guidelines.
 
-This is a Beta release which means it is a pre-release of software that is given out to a large group of users to try under real conditions. Beta versions have gone through alpha testing inhouse and are generally fairly close in look, feel and function to the final product; however, design changes often occur as a result. 
+This repository is the state web template sample website showcasing all of the components, functionality, and implementation guidence. To download a version of the state web template without the sample content, please select a framework and visit the corresponding repository. 
 
-We encourage you to utilize GitHub to provide feedback and collaborate on the development of the next California state template! For questions please email Info.Eservices@state.ca.gov
+## Available sate web template frameworks 
+
+- [California-State-Web-Template-HTML](https://github.com/Office-of-Digital-Services/California-State-Web-Template-HTML)
+- [California-State-Web-Template-eleventy](https://github.com/Office-of-Digital-Services/California-State-Web-Template-eleventy)
+- [California-State-Template-NET-core](https://github.com/Office-of-Digital-Services/California-State-Template-NET-core)
+- [California-State-Template-MVC](https://github.com/Office-of-Digital-Services/California-State-Template-MVC-v5)
+- [California-State-Web-Template-react](https://github.com/Office-of-Digital-Services/California-State-Web-Template-react)
