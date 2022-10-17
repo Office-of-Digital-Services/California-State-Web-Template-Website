@@ -71,9 +71,8 @@
  @include better-button($gray, $gray-lightest, $gray, $link-hover-color, #fff, $gray-base);
 
  &.active {
-  background: $gray;
-  color: #fff;
-  box-shadow: none;
+  background: #fff;
+  color: $black;
  }
 
  &:disabled {
@@ -81,6 +80,20 @@
  }
 
  &.disabled {
+  color: $gray-base;
+ }
+}
+
+// better-button = color; background; border, hover-color; hover-background; hover-border
+.btn-s1 {
+ @include better-button($gray, $color-s1, $gray, $black, #fff, $gray-base);
+
+ &.active {
+  background: #fff;
+  color: $black;
+ }
+
+ &:disabled {
   color: $gray-base;
  }
 }

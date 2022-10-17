@@ -440,10 +440,12 @@
 
  .icon-reset {
   position: relative;
-  right: 3.125rem;
+  right: 10px;
   top: 1px;
-  font-size: 1.5rem;
+  font-size: 1.33rem;
   background: transparent;
+  border-top-right-radius: 4px;
+  border-bottom-right-radius: 4px;
 
  }
 
@@ -492,7 +494,7 @@
   const letterList = [...new Set(iconData.icons.map(x => x.properties.name.charAt(0)))];
   const jumpToHtml = `<li><strong><a href="javascript:buildList()">All</a></strong></li>`
    + letterList
-    .map(l => `<li><a href="javascript:buildList('${l}')" ${filterLetter === l ? 'style="font-weight:bold; color:#000"' : ''}>${l.toUpperCase()}</a></li>`)
+    .map(l => `<li><a href="javascript:buildList('${l}')" ${filterLetter === l ? 'style="font-weight:bold; color:#4a4958"' : ''}>${l.toUpperCase()}</a></li>`)
     .join('');
 
   for (const letter of letterList
@@ -502,7 +504,7 @@
 
 
    if (!searchInput.length) {
-    listHtml += `<p class="h1 icons-alpha py-3 mb-0 m-t-md color-p2 p-b-0">${letter.toUpperCase()}&nbsp;<span style="font-size:1rem; font-weight:400; color:#000">(${iconsByLetter.length} icons)</span></p>`;
+    listHtml += `<p class="h1 icons-alpha py-3 mb-0 m-t-md color-p2 p-b-0">${letter.toUpperCase()}&nbsp;<span style="font-size:1rem; font-weight:400; color:#4a4958">(${iconsByLetter.length} icons)</span></p>`;
    }
 
    for (const icon of iconsByLetter) {
@@ -558,11 +560,14 @@
 <div class="row">
  <div class="col-md-3">
   <nav aria-labelledby="page-navigation-label" class="side-navigation sticky-6 overflow-auto">
-   <div id="page-navigation-label" class="label h4 m-t">On this page:</div>
    <ul class="list-navigation">
-    <li><a href="#How-to-use-icons">How to use icons</a></li>
-    <li><a href="#Dos-and-donts-for-icon-use">Do's and don'ts for icon use</a></li>
-    <li><a href="#Search-icons">Search icons</a></li>
+    <li><a href="/visual-design/color.html" id="page-navigation-label" class="active">Icons</a>
+     <ul>
+      <li><a href="#How-to-use-icons">How to use icons</a></li>
+      <li><a href="#Dos-and-donts-for-icon-use">Do's and don'ts for icon use</a></li>
+      <li><a href="#Search-icons">Search icons</a></li>
+     </ul>
+    </li>
    </ul>
   </nav>
  </div>
@@ -577,13 +582,10 @@
 
   <h2 id="How-to-use-icons">How to use icons</h2>
   <p>Icon color and font can be styled using the same CSS rules used to style other text on a page. Copy the CSS code to
-   your clipboard or manually type it into your code to use your desired icons</p>
+   your clipboard or manually type it into your code to use your desired icons.
+  </p>
   <p>Keep in mind, color and font size will change the size of the icon. </p>
-  <p>To use an icon, insert an empty span tag with the corresponding class name. Here's an example:</p>
-  <div class="bg-gray-50 d-flex p-a-md">
-   <span class="ca-gov-icon-info font-size-30 color-p2 d-block" aria-hidden="true"></span>
-   <pre class="m-l-md w-100 m-b-0">&lt;span class="ca-gov-icon-info" aria-hidden="true">&lt;/span></pre>
-  </div>
+
 
 
 
@@ -591,7 +593,8 @@
 
   <div class="row">
    <div class="col-md-6">
-    <h3 class="h5">Do</h3>
+    <h3 class="h5 m-b-sm">Do</h3>
+    <hr class="m-t-0 p-t-0">
     <ul>
      <li>Use icons with meaningful text labels</li>
      <li>Use a single icon for a group of related content</li>
@@ -599,7 +602,8 @@
     </ul>
    </div>
    <div class="col-md-6">
-    <h3 class="h5">Don't</h3>
+    <h3 class="h5 m-b m-b-sm">Don't</h3>
+    <hr class="m-t-0 p-t-0">
     <ul>
      <li>Use icons without labels</li>
      <li>Use too many icons and create visual clutter</li>
@@ -612,12 +616,25 @@
   <h2 id="Search-icons">Search icons</h2>
   <p>Use the search to find a specific icon, or browse icons alphabetically with the menu.</p>
 
+
+  <div class="bg-gray-50 d-flex p-a-sm p-x-md">
+   <span class="ca-gov-icon-info font-size-30 color-p2 d-block" aria-hidden="true"></span>
+   <div class="m-l">
+    <p class="m-b-0">To use an icon, insert an empty span tag with the corresponding class name. Here's an example:
+     <code class="font-size-14">&lt;span class="ca-gov-icon-info" aria-hidden="true">&lt;/span></code>
+    </p>
+
+   </div>
+
+  </div>
+
   <form id="iconSearchForm" class="m-y-lg" onsubmit="return false">
    <span class="sr-only" id="IconInput">Search icons</span>
    <input type="text" name="iconsearch" aria-labelledby="IconInput" placeholder="Search icons"
-    class="search-textfield rounded-50 brd-solid-1 brd-primary p-y-sm p-x icons-searchbox">
-   <button type="reset" title="reset" class="border-0 p-x-sm rounded-50 color-p2 color-primary-hover icon-reset"><span
-     class="ca-gov-icon-close-line" aria-hidden="true"></span><span class="sr-only">Reset</span></button>
+    class="search-textfield rounded-5 py-1 brd-solid-1 brd-primary icons-searchbox">
+   <button type="reset" title="reset"
+    class="border-0 p-x-sm py-1 color-white bg-primary bg-primary-hover icon-reset"><span class="ca-gov-icon-close-mark"
+     aria-hidden="true"></span><span class="sr-only">Reset</span></button>
   </form>
 
   <div id="jumpToHeading">
@@ -652,10 +669,10 @@
      </a>
  
      <ul class="footer-links">
-         <li><a href="/use.html">Conditions of Use</a></li>
-         <li><a href="/privacy.html">Privacy Policy</a></li>
+         <li><a href="/conditions-of-use.html">Conditions of use</a></li>
+         <li><a href="/privacy-policy.html">Privacy policy</a></li>
          <li><a href="/images/WebAccessibilityCert-beta.template.webstandards.ca.gov.pdf">Accessibility</a></li>
-         <li><a href="/contact.html">Contact Us</a></li>
+         <li><a href="/contact-us.html">Contact us</a></li>
          <li><a href="/about.html">About</a></li>
      </ul>
 
