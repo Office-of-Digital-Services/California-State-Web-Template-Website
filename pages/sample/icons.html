@@ -6,46 +6,84 @@ permalink: "visual-design/icons.html"
 ---
 
 <style>
+ #jumpToHeading {}
+
  .icons {
   list-style: none;
   display: flex;
-  justify-content: space-between;
+  flex-wrap: wrap;
   padding-left: 0;
   margin-bottom: 0;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  font-size: 1.14286rem;
+ }
+
+ .icons li {
+  line-height: 3rem;
  }
 
  .icons li a {
   text-decoration: none !important;
+  position: relative;
+  padding: 10px 9px 10px 9px;
+  border-top: 1px solid #d4d4d7;
+  border-bottom: 1px solid #d4d4d7;
  }
 
- hr {
-  opacity: 1;
-  height: 1px !important;
-  border-top: 1px solid #D4D4D7;
-  color: transparent;
-  margin: 0.5rem 0 0.5rem 0;
+ .icons li a::after {
+  content: "";
+  border-right: 1px solid #ededef;
+  height: 100%;
+  position: relative;
+  left: 10px;
+ }
+
+ .icons li a.letter-selected {
+  border-right: 1px solid #d4d4d7;
+  border-left: 1px solid #d4d4d7;
+ }
+
+
+ #iconSearchForm {
+  width: 80%;
+  position: relative;
+ }
+
+ @media (min-width: 992px) {
+  #iconSearchForm {
+   width: 40%;
+  }
  }
 
  .icon-reset {
-  position: relative;
-  right: 10px;
-  top: 1px;
+  position: absolute;
+  right: 0;
+  top: 0;
   font-size: 1.33rem;
   background: transparent;
   border-top-right-radius: 4px;
   border-bottom-right-radius: 4px;
+  height: 2.375rem;
+  background-color: #72717C;
+  padding-left: 13px;
+  padding-right: 13px;
+ }
 
+ .icon-reset:hover,
+ .icon-reset:focus {
+  background-color: #4a4958;
  }
 
  .icons-searchbox {
-  width: 80%;
+  width: 100%;
+  border: solid 1px #72717C;
+  height: 2.375rem;
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
  }
 
- @media (min-width: 992px) {
-  .icons-searchbox {
-   width: 40%;
-  }
- }
+
 
  #fontlist {
   display: flex;
@@ -80,9 +118,9 @@ permalink: "visual-design/icons.html"
   var searchInput = inputBox ? inputBox.value.trim().toLowerCase() : "";
 
   const letterList = [...new Set(iconData.icons.map(x => x.properties.name.charAt(0)))];
-  const jumpToHtml = `<li><strong><a href="javascript:buildList()">All</a></strong></li>`
+  const jumpToHtml = `<li><a href="javascript:buildList()" ${!filterLetter ? 'class="gray-900 letter-selected"' : ''}>All</a></li>`
    + letterList
-    .map(l => `<li><a href="javascript:buildList('${l}')" ${filterLetter === l ? 'style="font-weight:bold; color:#4a4958"' : ''}>${l.toUpperCase()}</a></li>`)
+    .map(l => `<li><a href="javascript:buildList('${l}')" ${filterLetter === l ? 'class="gray-900 bg-gray-50 text-bold letter-selected"' : ''}>${l.toUpperCase()}</a></li>`)
     .join('');
 
   for (const letter of letterList
@@ -101,10 +139,10 @@ permalink: "visual-design/icons.html"
     if (!searchInput.length || iconStrings.find(x => x.search(searchInput) > -1)) {
      listHtml += `
 <div class="d-flex icon-item">
-  <div class="text-3rem p-r">
+  <div class="text-3rem p-r gray-900">
     <span class="ca-gov-icon-${icon.properties.name}" aria-hidden="true"></span>
   </div>
-  <div class="icon-specs p-r">
+  <div class="icon-specs p-r  gray-900">
   <p style="text-transform:capitalize" class="bold m-t m-b-0 font-size-16">${icon.properties.name.replace('-', ' ')}</p>
     <p class="font-size-12 m-0">ca-gov-icon-${icon.properties.name}</p>
     </div>
@@ -122,7 +160,7 @@ permalink: "visual-design/icons.html"
    document.querySelector('#jumpToHeading ol').innerHTML = jumpToHtml;
   }
   document.querySelector('#fontlist').innerHTML = listHtml;
-  document.querySelector('#resultcount').innerHTML = numberOfResults ? `<p class="m-t">${numberOfResults} icons found.</p>` : '<p>No icons found.</p>';
+  document.querySelector('#resultcount').innerHTML = numberOfResults ? `<p class="m-t">${numberOfResults} icons <span class="sr-only">found.</span></p>` : '<p>No icons found.</p>';
  }
 
  const myRequest = new Request('https://california.azureedge.net/fonts/selection.json');
@@ -209,7 +247,7 @@ permalink: "visual-design/icons.html"
    <span class="ca-gov-icon-info font-size-30 color-p2 d-block" aria-hidden="true"></span>
    <div class="m-l">
     <p class="m-b-0">To use an icon, insert an empty span tag with the corresponding class name. Here's an example:
-     <code class="font-size-14">&lt;span class="ca-gov-icon-info" aria-hidden="true">&lt;/span></code>
+     <code class="font-size-14 gray-900">&lt;span class="ca-gov-icon-info" aria-hidden="true">&lt;/span></code>
     </p>
 
    </div>
@@ -218,18 +256,15 @@ permalink: "visual-design/icons.html"
 
   <form id="iconSearchForm" class="m-y-lg" onsubmit="return false">
    <span class="sr-only" id="IconInput">Search icons</span>
-   <input type="text" name="iconsearch" aria-labelledby="IconInput" placeholder="Search icons"
-    class="search-textfield rounded-5 py-1 brd-solid-1 brd-primary icons-searchbox">
-   <button type="reset" title="reset"
-    class="border-0 p-x-sm py-1 color-white bg-primary bg-primary-hover icon-reset"><span class="ca-gov-icon-close-mark"
+   <input type="text" name="iconsearch" aria-labelledby="IconInput" placeholder="Browse icons"
+    class="search-textfield rounded-5 icons-searchbox">
+   <button type="reset" title="reset" class="border-0 color-white icon-reset"><span class="ca-gov-icon-close-mark"
      aria-hidden="true"></span><span class="sr-only">Reset</span></button>
   </form>
 
   <div id="jumpToHeading">
-   <hr>
    <ol class="icons">
    </ol>
-   <hr>
   </div>
 
   <!-- START ICOMOON DEMO -->
