@@ -153,6 +153,8 @@ permalink: "visual-design/icons.html"
    }
   }
 
+  document.querySelector('#searchSummary').innerHTML = searchInput.length ? searchInput : filterLetter ? filterLetter.toUpperCase() : "All";
+
   if (searchInput.length) {
    document.querySelector('#jumpToHeading').style.display = "none";
   } else {
@@ -269,6 +271,7 @@ permalink: "visual-design/icons.html"
 
   <!-- START ICOMOON DEMO -->
   <div class="clearfix mhl ptl">
+   <div class="fs1" aria-live="polite">Showing results for "<span id="searchSummary"></span>"</div>
    <div id="resultcount" class="fs1" aria-live="polite"></div>
    <div id="fontlist"></div>
   </div>
