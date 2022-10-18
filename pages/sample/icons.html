@@ -6,8 +6,6 @@ permalink: "visual-design/icons.html"
 ---
 
 <style>
- #jumpToHeading {}
-
  .icons {
   list-style: none;
   display: flex;
@@ -42,6 +40,9 @@ permalink: "visual-design/icons.html"
  .icons li a.letter-selected {
   border-right: 1px solid #d4d4d7;
   border-left: 1px solid #d4d4d7;
+  font-weight: 700;
+  background-color: #fafafa;
+  color: #3b3a48;
  }
 
 
@@ -94,6 +95,10 @@ permalink: "visual-design/icons.html"
   flex-basis: 100%;
  }
 
+ .icons-alpha:first-child {
+  margin-top: 0 !important;
+ }
+
  .icon-item {
   flex-basis: 100%;
   padding-top: 1rem;
@@ -120,7 +125,7 @@ permalink: "visual-design/icons.html"
   const letterList = [...new Set(iconData.icons.map(x => x.properties.name.charAt(0)))];
   const jumpToHtml = `<li><a href="javascript:buildList()" ${!filterLetter ? 'class="gray-900 letter-selected"' : ''}>All</a></li>`
    + letterList
-    .map(l => `<li><a href="javascript:buildList('${l}')" ${filterLetter === l ? 'class="gray-900 bg-gray-50 text-bold letter-selected"' : ''}>${l.toUpperCase()}</a></li>`)
+    .map(l => `<li><a href="javascript:buildList('${l}')" ${filterLetter === l ? 'class="letter-selected"' : ''}>${l.toUpperCase()}</a></li>`)
     .join('');
 
   for (const letter of letterList
@@ -162,7 +167,7 @@ permalink: "visual-design/icons.html"
    document.querySelector('#jumpToHeading ol').innerHTML = jumpToHtml;
   }
   document.querySelector('#fontlist').innerHTML = listHtml;
-  document.querySelector('#resultcount').innerHTML = numberOfResults ? `<p class="m-t">${numberOfResults} icons <span class="sr-only">found.</span></p>` : '<p>No icons found.</p>';
+  document.querySelector('#resultcount').innerHTML = numberOfResults ? `<p class="m-t-0">${numberOfResults} icons <span class="sr-only">found.</span></p>` : '<p>No icons found.</p>';
  }
 
  const myRequest = new Request('https://california.azureedge.net/fonts/selection.json');
@@ -271,7 +276,7 @@ permalink: "visual-design/icons.html"
 
   <!-- START ICOMOON DEMO -->
   <div class="clearfix mhl ptl">
-   <div class="fs1" aria-live="polite">Showing results for "<span id="searchSummary"></span>"</div>
+   <div class="h4 m-t-md m-b-0" aria-live="polite">Showing results for "<span id="searchSummary"></span>"</div>
    <div id="resultcount" class="fs1" aria-live="polite"></div>
    <div id="fontlist"></div>
   </div>
