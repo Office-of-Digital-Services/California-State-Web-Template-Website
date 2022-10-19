@@ -281,9 +281,9 @@
 <div style="background:#F5F5F5;">
 	<div class="container p-t-lg">
 		<div class="row">
-			<div class="third m-b-lg">
+			<div class="third m-b-lg round-card">
 				<!-- Icon Blocks -->
-				<a href="/sample/color-schemes.html" class="no-underline d-block bg-grey-lightest-hover p-a-md"
+				<a href="/sample/color-schemes.html" class="no-underline d-block p-a-md"
 					title="Browse components">
 					<div class="text-center">
 						<img class="image-icon rounded-50x m-b" src="/images/browse-components.svg" alt="" style="width:138px;">
@@ -292,9 +292,9 @@
 				</a>
 				<!-- End Icon Blocks -->
 			</div>
-			<div class="third m-b-lg">
+			<div class="third m-b-lg round-card">
 				<!-- Icon Blocks -->
-				<a href="/accessibility.html" class="no-underline d-block bg-grey-lightest-hover p-a-md" title="Search icons">
+				<a href="/accessibility.html" class="no-underline d-block p-a-md" title="Search icons">
 					<div class="text-center">
 						<img class="image-icon rounded-50x m-b" src="/images/search-icons.svg" alt="" style="width:138px;">
 						<h2 class="h5 m-b-sm color-gray-dark m-t-0">Search icons</h2>
@@ -302,9 +302,9 @@
 				</a>
 				<!-- End Icon Blocks -->
 			</div>
-			<div class="third m-b-lg">
+			<div class="third m-b-lg round-card">
 				<!-- Icon Blocks -->
-				<a href="/sample/" class="no-underline d-block bg-grey-lightest-hover p-a-md" title="Color themes">
+				<a href="/sample/" class="no-underline d-block p-a-md" title="Color themes">
 					<div class="text-center">
 						<img class="image-icon rounded-50x m-b" src="/images/explore-color-themes.svg" alt="" style="width:138px;">
 						<h2 class="h5 m-b-sm color-gray-dark m-t-0">Explore color themes</h2>
@@ -316,15 +316,20 @@
 		<!-- End group -->
 	</div>
 </div>
+<style>
+	.round-card:hover {
+		background: white;
+	}
+</style>
 <div class="container">
 	<h2 class="p-t-1 p-b-3">What's new in V6</h2>
 	<div class="row">
-		<div class="third m-b-md">
+		<div class="third m-b-md bg-white-hover p-4">
 			<div class="pos-rel m-b-0" style="max-height: 155px;overflow: hidden;background: linear-gradient(180deg, #046B99 0%, #4993B5 100%);text-align: center;">
 				<img class="p-4" src="/images/pattern-icon.svg" alt="Image Description">
 			</div>
 
-			<div class="p-a" style="min-height: 236px; background:#fafafa">
+			<div class="p-a " style="min-height: 236px; background:#fafafa">
 				<h3 class="h4 m-t-0 m-b-sm">
 					<a class="color-gray-dark color-primary-hover text-decoration-none" href="#">New patterns</a>
 				</h3>
@@ -332,7 +337,7 @@
 			</div>
 		</div>
 
-		<div class="third m-b-md">
+		<div class="third m-b-md bg-white-hover p-4">
 			<div class="pos-rel m-b-0" style="max-height: 155px;overflow: hidden;background: linear-gradient(180deg, #046B99 0%, #4993B5 100%);text-align: center;">
 				<img class="p-4" src="/images/nav-icon.svg" alt="Image Description">
 			</div>
@@ -345,7 +350,7 @@
 			</div>
 		</div>
 
-		<div class="third m-b-md">
+		<div class="third m-b-md bg-white-hover p-4">
 			<div style="max-height: 155px;overflow: hidden;background: linear-gradient(180deg, #046B99 0%, #4993B5 100%);text-align: center;">
 				<img class="p-4" src="/images/refreshed-icon.svg" alt="Image Description">
 			</div>
@@ -359,26 +364,34 @@
 	</div>
 	<div class="container">
 		<p class="link-action m-b-md">
-			<span class="ca-gov-icon-right"></span> Visit <a href="">what’s new</a> for more on V6 template and website updates.
+			<span class="ca-gov-icon-right" style="color:#046b99;vertical-align:sub;font-size:1.71875rem;"></span> Visit <a href="">what’s new</a> for more on V6 template and website updates.
 		</p>
 	</div>
 </div>
+<style>
+	.bg-white-hover {
+		border: 1px solid #ffffff;
+	}
+	.bg-white-hover:hover {
+		border: 1px solid #cecece;
+	}
+</style>
 <!-- Static Process Bold -->
 
 <div style="background:linear-gradient(83.81deg, rgba(73, 147, 181, 0.2) 4.53%, rgba(73, 147, 181, 0) 100%);overflow:hidden;">
-    <div class="container" style="margin-bottom:3rem;">
+    <div class="container mb-3">
         <div style="margin-bottom:6rem;max-width:876px;">
             <h2>The State Template is one step closer to the Design System</h2>
             <p>The final release (V6) of the State Web Template is part of a planned move to the Design System. V6 of the State Template moves us one step closer to a new statewide digital standard. This timeline describes our planned activities and release dates.</p>
         </div>
-        <div class="row" style="transform: rotate(-6deg);">
+        <div class="row timeline-lines">
             <div class="col-sm-3 m-b-60" style="margin-top:-1rem;">
                 <!-- Static Process -->
                 <div class="text-center">
                     <i class="dot-line brd-transparent-before brd-primary-light-after">
                         <span class="dot-line-inner bg-white bg-primary-before brd-gray-light"></span>
                     </i>
-                    <div style="transform: rotate(6deg);">
+                    <div class="dot-text">
                         <h3 class="h5 m-b">2021</h3>
                         <p class="m-b-0">Release the beta version of the new statewide Design System</p>
                     </div>
@@ -392,7 +405,7 @@
                     <i class="dot-line brd-primary-light-before brd-primary-light-after">
                         <span class="dot-line-inner bg-white bg-primary-before brd-gray-light"></span>
                     </i>
-                    <div style="transform: rotate(6deg);">
+                    <div class="dot-text">
                         <h3 class="h5 m-b">2022</h3>
                         <p class="m-b-0">Update the State Web Template V6 to align with the Design System</p>
                     </div>
@@ -406,7 +419,7 @@
                     <i class="dot-line brd-primary-light-before brd-gray-light-after">
                         <span class="dot-line-inner bg-white bg-primary-before brd-gray-light"></span>
                     </i>
-                    <div style="transform: rotate(6deg);">
+                    <div class="dot-text">
                         <h3 class="h5 m-b">2023</h3>
                         <p class="m-b-0">Release the first production version of the Design System</p>
                     </div>
@@ -420,7 +433,7 @@
                     <i class="dot-line brd-gray-light-before brd-transparent-after">
                         <span class="dot-line-inner bg-grey-light brd-gray-light"></span>
                     </i>
-                    <div style="transform: rotate(6deg);">
+                    <div class="dot-text">
                         <h3 class="h5 m-b">2024+</h3>
                         <p class="m-b-0">Continue to improve the Design System and support a transition to it</p>
                     </div>
@@ -431,6 +444,20 @@
     </div>
 </div>
 <!-- End Static Process -->
+<style>
+    .timeline-lines {
+        transform: rotate(-6deg);
+    }
+    .dot-text {
+        transform: rotate(6deg);
+    }
+    @media (max-width: 767px) {
+        .dot-text,
+        .timeline-lines {
+            transform: rotate(0deg);
+        }
+    }
+</style>
 <div class="container">
 	<h2 class="p-t-1 p-b-3">Who's using the new design</h2>
 	<div class="row">
@@ -444,10 +471,14 @@
 					<a class="color-gray-dark color-primary-hover text-decoration-none" href="#">Broadband for All</a>
 				</h3>
 				<p>The State Web Template enabled a plug-and-play approach with components on the homepage. With less time spent on engineering, the team could focus more on content and design.</p>
-				<a href="">
-					<span class="ca-gov-icon-right"></span>
+
+				<span>
+					<span class="ca-gov-icon-right" style="color:#046b99;vertical-align: middle;font-size:2rem;"></span>
+					<a href="">
 					broadbandforall.cdt.ca.gov
 				</a>
+
+				</span>
 			</div>
 		</div>
 
@@ -461,10 +492,12 @@
 					<a class="color-gray-dark color-primary-hover text-decoration-none" href="#">California abortion access</a>
 				</h3>
 				<p>This site launched in three weeks! The new template gave the design team an ability to fast track the design and information architecture. The template proved critical in sharing official information on women’s health.</p>
-				<a href="">
-					<span class="ca-gov-icon-right"></span>
+				<span>
+					<span class="ca-gov-icon-right" style="color:#046b99;vertical-align: middle;font-size:2rem;"></span>
+					<a href="">
 					abortion.ca.gov
 				</a>
+				</span>
 			</div>
 		</div>
 	</div>
