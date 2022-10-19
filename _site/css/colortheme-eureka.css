@@ -92,39 +92,27 @@
   background-color: #111416 !important;
 }
 
-.bg-s1 {
+.bg-s1, .bg-s1-hover:hover, .bg-s1-hover:focus {
   background-color: #f9f4f0 !important;
 }
 
-.bg-s1-hover-color {
+.bg-s1-hover-color, .bg-s1-hover-color:hover, .bg-s1-hover-color:focus {
   background-color: #efe1d7 !important;
 }
 
-.bg-s1-hover:hover, .bg-s1-hover:focus {
-  background-color: #efe1d7 !important;
-}
-
-.bg-s2-hover-color {
-  background-color: #d2cec6 !important;
-}
-
-.bg-s2 {
+.bg-s2, .bg-s2-hover:hover, .bg-s2-hover:focus {
   background-color: #e2dfda !important;
 }
 
-.bg-s3-hover-color {
-  background-color: #bcb7ab !important;
-}
-
-.bg-s2-hover:hover, .bg-s2-hover:focus {
+.bg-s2-hover-color, .bg-s2-hover-color:hover, .bg-s2-hover-color:focus {
   background-color: #d2cec6 !important;
 }
 
-.bg-s3 {
+.bg-s3, .bg-s3-hover:hover, .bg-s3-hover:focus {
   background-color: #ccc8bf !important;
 }
 
-.bg-s3-hover:hover, .bg-s3-hover:focus {
+.bg-s3-hover-color, .bg-s3-hover-color:hover, .bg-s3-hover-color:focus {
   background-color: #bcb7ab !important;
 }
 
@@ -809,7 +797,7 @@ fieldset[disabled] .card-overstated .btn-standout.active {
 }
 .section-standout a:not(.btn),
 .card-standout a:not(.btn) {
-  color: #ccc8bf;
+  color: #fff;
   text-decoration: none;
 }
 .section-standout a:not(.btn):hover, .section-standout a:not(.btn):focus,
@@ -827,6 +815,16 @@ fieldset[disabled] .card-overstated .btn-standout.active {
 .section-standout a:not(.btn),
 .card-standout a:not(.btn) {
   text-decoration: underline;
+}
+.section-standout a:not(.btn),
+.card-standout a:not(.btn) {
+  color: #fff;
+}
+.section-standout a:not(.btn):hover, .section-standout a:not(.btn):focus,
+.card-standout a:not(.btn):hover,
+.card-standout a:not(.btn):focus {
+  text-decoration: underline;
+  color: #D9B295;
 }
 .section-standout .half-gauge-chart .donut-background,
 .card-standout .half-gauge-chart .donut-background {
@@ -3380,6 +3378,10 @@ blockquote.prominent footer {
 }
 .utility-header ul li button:hover, .utility-header ul li button:focus {
   color: #4a4958;
+}
+
+.site-settings {
+  background-color: #efe1d7 !important;
 }
 
 /* -----------------------------------------
