@@ -22356,6 +22356,15 @@ blockquote.blockquote-reverse .small:after {
    SITE SETTINGS
    /source/scss/cagov/settings-bar.scss
 ----------------------------------------- */
+.site-settings .settings-bar-buttons {
+  display: flex;
+  flex-wrap: wrap;
+}
+.site-settings .btn-group {
+  margin-right: 0.75rem;
+  margin-top: 0.35rem;
+  margin-bottom: 0.35rem;
+}
 .site-settings button.close {
   position: relative;
   right: -15px;
@@ -22363,14 +22372,14 @@ blockquote.blockquote-reverse .small:after {
   color: #000;
   text-shadow: none;
   opacity: 1;
-  font-size: 2.5em;
+  font-size: 2rem;
   border: none;
   background: none;
   float: right;
 }
 @media (min-width: 992px) {
   .site-settings button.close {
-    margin-top: -15px;
+    margin-top: -5px;
   }
 }
 .site-settings button.close:hover, .site-settings button.close:focus {
@@ -23988,7 +23997,11 @@ a.sidenav.active:before {
 }
 
 .bg-none {
-  background: none;
+  background: none !important;
+}
+
+.bg-transparent {
+  background: transparent !important;
 }
 
 .bg-alpha-40 {
