@@ -51,8 +51,15 @@
     }
 
     &-standout {
-        @include link-variant($color-s3, darken($color-s2, 15%));
+        @include link-variant($white, darken($color-s2, 15%));
         @include underline($color-s3, darken($color-s2, 15%));
+        a:not(.btn) {
+         color: $white;
+         &:hover, &:focus {
+          text-decoration: underline;
+          color: $color-p1;
+         }
+        }
 
         @include donut-color-variants($donut-background: $gray-lighter, $donut-halfmark: $gray-lightest);
         background: $color-p3;
@@ -85,6 +92,7 @@
 
     &-impact {
         // SAME AS STANDOUT
+        // $link-color, $link-hover-color, $decoration: none, $hover-decoration: underline
         @include link-variant($color-s3, darken($color-s2, 15%));
         @include underline($color-s3, darken($color-s2, 15%));
 
