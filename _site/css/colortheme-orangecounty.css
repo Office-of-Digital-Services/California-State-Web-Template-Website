@@ -92,39 +92,27 @@
   background-color: #302517 !important;
 }
 
-.bg-s1 {
+.bg-s1, .bg-s1-hover:hover, .bg-s1-hover:focus {
   background-color: #fbf0e7 !important;
 }
 
-.bg-s1-hover-color {
+.bg-s1-hover-color, .bg-s1-hover-color:hover, .bg-s1-hover-color:focus {
   background-color: #f6ddc8 !important;
 }
 
-.bg-s1-hover:hover, .bg-s1-hover:focus {
-  background-color: #f6ddc8 !important;
-}
-
-.bg-s2-hover-color {
-  background-color: #f1d9ae !important;
-}
-
-.bg-s2 {
+.bg-s2, .bg-s2-hover:hover, .bg-s2-hover:focus {
   background-color: #f6e7cc !important;
 }
 
-.bg-s3-hover-color {
-  background-color: #f4c885 !important;
-}
-
-.bg-s2-hover:hover, .bg-s2-hover:focus {
+.bg-s2-hover-color, .bg-s2-hover-color:hover, .bg-s2-hover-color:focus {
   background-color: #f1d9ae !important;
 }
 
-.bg-s3 {
+.bg-s3, .bg-s3-hover:hover, .bg-s3-hover:focus {
   background-color: #f7d7a6 !important;
 }
 
-.bg-s3-hover:hover, .bg-s3-hover:focus {
+.bg-s3-hover-color, .bg-s3-hover-color:hover, .bg-s3-hover-color:focus {
   background-color: #f4c885 !important;
 }
 
@@ -553,15 +541,15 @@ nav-item-search:focus .first-level-link > span[class^=ca-gov-icon] {
   border-color: rgba(255, 255, 255, 0.8);
 }
 .search-container .search-textfield {
-  border-color: #A15801 !important;
+  border-color: #72717c !important;
 }
 .search-container .gsc-search-button {
-  background-color: #A15801;
-  border-color: #A15801;
+  background-color: #72717c;
+  border-color: #72717c;
 }
 .search-container .gsc-search-button:hover, .search-container .gsc-search-button:focus {
-  background-color: #7e4501;
-  border-color: #7e4501;
+  background-color: #4a4958;
+  border-color: #4a4958;
 }
 .search-container .gsc-search-button .ca-gov-icon-search {
   color: #fff;
@@ -809,7 +797,7 @@ fieldset[disabled] .card-overstated .btn-standout.active {
 }
 .section-standout a:not(.btn),
 .card-standout a:not(.btn) {
-  color: #f7d7a6;
+  color: #fff;
   text-decoration: none;
 }
 .section-standout a:not(.btn):hover, .section-standout a:not(.btn):focus,
@@ -827,6 +815,16 @@ fieldset[disabled] .card-overstated .btn-standout.active {
 .section-standout a:not(.btn),
 .card-standout a:not(.btn) {
   text-decoration: underline;
+}
+.section-standout a:not(.btn),
+.card-standout a:not(.btn) {
+  color: #fff;
+}
+.section-standout a:not(.btn):hover, .section-standout a:not(.btn):focus,
+.card-standout a:not(.btn):hover,
+.card-standout a:not(.btn):focus {
+  text-decoration: underline;
+  color: #fbad23;
 }
 .section-standout .half-gauge-chart .donut-background,
 .card-standout .half-gauge-chart .donut-background {
@@ -3380,6 +3378,10 @@ blockquote.prominent footer {
 }
 .utility-header ul li button:hover, .utility-header ul li button:focus {
   color: #4a4958;
+}
+
+.site-settings {
+  background-color: #f6ddc8 !important;
 }
 
 /* -----------------------------------------
