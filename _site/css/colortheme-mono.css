@@ -41,11 +41,23 @@
   color: #ededef !important;
 }
 
+.color-s1-hover:hover, .color-s1-hover:focus {
+  color: #ededef !important;
+}
+
 .color-s2 {
   color: #d4d4cd !important;
 }
 
+.color-s2-hover:hover, .color-s2-hover:focus {
+  color: #d4d4cd !important;
+}
+
 .color-s3 {
+  color: #b3b2ac !important;
+}
+
+.color-s3-hover:hover, .color-s3-hover:focus {
   color: #b3b2ac !important;
 }
 
@@ -84,12 +96,36 @@
   background-color: #ededef !important;
 }
 
+.bg-s1-hover-color {
+  background-color: #dadade !important;
+}
+
+.bg-s1-hover:hover, .bg-s1-hover:focus {
+  background-color: #dadade !important;
+}
+
+.bg-s2-hover-color {
+  background-color: #c3c3ba !important;
+}
+
 .bg-s2 {
   background-color: #d4d4cd !important;
 }
 
+.bg-s3-hover-color {
+  background-color: #a2a199 !important;
+}
+
+.bg-s2-hover:hover, .bg-s2-hover:focus {
+  background-color: #c3c3ba !important;
+}
+
 .bg-s3 {
   background-color: #b3b2ac !important;
+}
+
+.bg-s3-hover:hover, .bg-s3-hover:focus {
+  background-color: #a2a199 !important;
 }
 
 .bg-primary-light {
@@ -2627,14 +2663,48 @@ a.text-white:not(.btn):hover {
   background-color: #555555;
 }
 .btn-secondary.active {
-  background: #555555;
-  color: #fff;
-  box-shadow: none;
+  background: #fff;
+  color: #000;
 }
 .btn-secondary:disabled {
   color: #000;
 }
 .btn-secondary.disabled {
+  color: #000;
+}
+
+.btn-s1 {
+  color: #555555;
+  background-color: #ededef;
+  border-color: #555555;
+  font-weight: 600;
+}
+.btn-s1:hover, .btn-s1:focus, .btn-s1:not(:disabled):not(.disabled):active, .btn-s1:not(:disabled):not(.disabled).active,
+.btn-s1 .show > .dropdown-toggle, .open > .dropdown-toggle .btn-s1 {
+  color: #000;
+  background-color: #fff;
+  border-color: #000;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+.btn-s1:focus {
+  outline: solid 2px #2ea3f2 !important;
+}
+.btn-s1:not(:disabled):not(.disabled):active, .btn-s1:not(:disabled):not(.disabled).active, .open > .dropdown-toggle .btn-s1 {
+  background-image: none;
+}
+.btn-s1.disabled, .btn-s1.disabled:hover, .btn-s1.disabled:focus, .btn-s1.disabled:active, .btn-s1.disabled.active, .btn-s1[disabled], .btn-s1[disabled]:hover, .btn-s1[disabled]:focus, .btn-s1[disabled]:active, .btn-s1[disabled].active, fieldset[disabled] .btn-s1, fieldset[disabled] .btn-s1:hover, fieldset[disabled] .btn-s1:focus, fieldset[disabled] .btn-s1:active, fieldset[disabled] .btn-s1.active {
+  background-color: #ededef !important;
+  border-color: #555555;
+}
+.btn-s1 .badge {
+  color: #ededef;
+  background-color: #555555;
+}
+.btn-s1.active {
+  background: #fff;
+  color: #000;
+}
+.btn-s1:disabled {
   color: #000;
 }
 

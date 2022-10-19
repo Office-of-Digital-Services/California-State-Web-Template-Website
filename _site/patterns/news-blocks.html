@@ -185,12 +185,12 @@
  <ul id="nav_list" class="top-level-nav">
   <li class="nav-item">
        
-       <a class="first-level-link" href="/updates.html">Template updates</a>
+       <a class="first-level-link" href="/template-updates.html">Template updates</a>
         
    </li>
    <li class="nav-item">
        
-       <a class="first-level-link" href="/getting-started.html">Get started</a>
+       <a class="first-level-link" href="/get-started.html">Get started</a>
         
    </li>
    <li class="nav-item">       
@@ -242,8 +242,6 @@
     <nav aria-label="You are here">
  <ol class="breadcrumb">
   <li><a href="../index.html" title="Home page">Home</a></li>
-   
-     
    
      
    
@@ -411,6 +409,10 @@
    
      
    
+     
+   
+     
+   
  </ol>
 </nav>
 
@@ -427,6 +429,13 @@
   <ul>
   				
       
+        <li><a href="/patterns/card.html" >Card</a>
+         
+         
+        </li>
+       
+      
+      
         <li><a href="/patterns/card-grid.html" >Card grid</a>
          
          
@@ -434,40 +443,10 @@
        
       
       
-        <li><a href="/patterns/hero-banner.html" >Hero banner</a>
-         
-         
-        </li>
-       
-      
-      
-        <li><a href="/patterns/feature-card.html" >Feature card</a>
-         
-         
-        </li>
-       
-      
-      
-          <li><a href="/patterns/figure.html" >Figure with Captions</a></li>
-       
-      
-      
         <li><a href="/patterns/link-grid.html" >Link grid</a>
          
          
         </li>
-       
-      
-      
-          <li><a href="/patterns/news-list.html" >News list</a></li>
-       
-      
-      
-          <li><a href="/patterns/news-article.html" >News article</a></li>
-       
-      
-      
-          <li><a href="/patterns/profile-banners.html" >Profile banner</a></li>
        
       
       
@@ -493,155 +472,106 @@
 
 <h2>Example:</h2>
 <div class="row">
-    <div class="col-md-4 m-b-md">
-        <!-- Article -->
-        <article class="shadow">
-            <figure class="pos-rel m-b-0">
-                <img class="img-fluid w-100" src="/images/sample/images/500x450.jpg" alt="Image Description">
+ <div class="col-md-4 m-b-md">
+  <!-- Article -->
+  <article class="bg-gray-50-hover p-b-md brd-solid-1 brd-gray-light pos-rel">
+   <figure class="pos-rel m-b-0">
+    <img class="img-fluid w-100" src="/images/news-grid1.jpg" alt="Image Description">
+    <figcaption class="pos-abs top-sm p-l-0 rounded-3">
+     <span class="btn btn-sm btn-standout rounded-0" href="#">Month DD, YYYY</span>
+    </figcaption>
+   </figure>
 
-                <figcaption class="pos-abs top-sm left-sm">
-                    <a class="btn btn-sm btn-standout rounded-0" href="#">July 18, 2017</a>
-                </figcaption>
-            </figure>
+   <div class="p-a">
+    <ul class="list-inline small m-y-0">
+     <li class="list-inline-item">
+      <span class="color-gray">By:</span>
+      <span class="color-gray-dark color-primary-hover" href="#">Author</span>
+     </li>
+     <li class="list-inline-item">
+      <span class="color-gray">In:</span>
+      <span class="color-gray-dark color-primary-hover" href="#">Agency</span>
+     </li>
+    </ul>
 
-            <div class="p-a">
-                <ul class="list-inline small m-y-0">
-                    <li class="list-inline-item">
-                        <span class="color-gray">By:</span>
-                        <a class="color-gray-dark color-primary-hover" href="#">Alex</a>
-                    </li>
-                    <li class="list-inline-item">
-                        <span class="color-gray">In:</span>
-                        <a class="color-gray-dark color-primary-hover" href="#">DMV</a>
-                    </li>
-                </ul>
+    <h3 class="h4 m-t-0 m-b-sm">
+     <a class="u-link-v5 color-gray-dark color-primary-hover link-before no-underline" href="#">Short title</a>
+    </h3>
 
-                <h3 class="h4 m-t-0 m-b-sm">
-                    <a class="u-link-v5 color-gray-dark color-primary-hover" href="#">Incredible standard post</a>
-                </h3>
+    <p>Briefly tell your reader what they will find at the card's destination then link to the official news release or
+     news section within your site.</p>
+   </div>
+  </article>
+  <!-- End Article -->
+ </div>
 
-                <p>Nullam elementum tincidunt massa, a pulvinar leo ultricies ut. Ut fringilla lectus tellusimp
-                    imperdiet molestie est volutpat at. Sed viverra cursus nibh.</p>
+ <div class="col-md-4 m-b-md">
+  <!-- Article -->
+  <article class="bg-gray-50-hover p-b-md brd-solid-1 brd-gray-light pos-rel">
+   <figure class="pos-rel m-b-0">
+    <img class="img-fluid w-100" src="/images/news-grid2.jpg" alt="Image description #2">
+    <figcaption class="pos-abs top-sm p-l-0 rounded-3">
+     <span class="btn btn-sm btn-standout rounded-0" href="#">Month DD, YYYY</span>
+    </figcaption>
+   </figure>
 
-                <hr class="hr-light m-y">
+   <div class="p-a">
+    <ul class="list-inline small m-y-0">
+     <li class="list-inline-item">
+      <span class="color-gray">By:</span>
+      <span class="color-gray-dark color-primary-hover" href="#">Author</span>
+     </li>
+     <li class="list-inline-item">
+      <span class="color-gray">In:</span>
+      <span class="color-gray-dark color-primary-hover" href="#">Agency</span>
+     </li>
+    </ul>
 
-                <ul class="list-inline m-y-0">
-                    <li class="list-inline-item m-r m-y-0">
-                        <a class="news-icon bg-gray-light bg-primary-hover color-gray-dark rounded-50x" href="#"
-                            aria-label="Email DMV">
-                            <span class="ca-gov-icon-email" aria-hidden="true"></span><span class="sr-only">Email</span>
-                        </a>
-                    </li>
-                    <li class="list-inline-item m-r m-y-0">
-                        <a class="news-icon bg-gray-light bg-primary-hover color-gray-dark rounded-50x" href="#">
-                            <span class="ca-gov-icon-share" aria-hidden="true"></span><span class="sr-only">Share</span>
-                        </a>
-                    </li>
-                </ul>
-            </div>
-        </article>
-        <!-- End Article -->
-    </div>
+    <h3 class="h4 m-t-0 m-b-sm">
+     <a class="u-link-v5 color-gray-dark color-primary-hover link-before no-underline" href="#">Short title <span
+       class="sr-only">#2</span></a>
+    </h3>
 
-    <div class="col-md-4 m-b-md">
-        <!-- Article -->
-        <article class="shadow">
-            <figure class="pos-rel m-b-0">
-                <img class="img-fluid w-100" src="/images/sample/images/500x450.jpg" alt="Image Description">
+    <p>Briefly tell your reader what they will find at the card's destination then link to the official news release or
+     news section within your site.</p>
+   </div>
+  </article>
+  <!-- End Article -->
+ </div>
 
-                <figcaption class="pos-abs top-sm left-sm">
-                    <a class="btn btn-sm btn-standout rounded-0" href="#">July 12, 2017</a>
-                </figcaption>
-            </figure>
+ <div class="col-md-4 m-b-md">
+  <!-- Article -->
+  <article class="bg-gray-50-hover p-b-md brd-solid-1 brd-gray-light pos-rel">
+   <figure class="pos-rel m-b-0">
+    <img class="img-fluid w-100" src="/images/news-grid3.jpg" alt="Image description #3">
+    <figcaption class="pos-abs top-sm p-l-0 rounded-3">
+     <span class="btn btn-sm btn-standout rounded-0" href="#">Month DD, YYYY</span>
+    </figcaption>
+   </figure>
 
-            <div class="p-a">
-                <ul class="list-inline small m-y-0">
-                    <li class="list-inline-item">
-                        <span class="color-gray">By:</span>
-                        <a class="color-gray-dark color-primary-hover" href="#">Kathy</a>
-                    </li>
-                    <li class="list-inline-item">
-                        <span class="color-gray">In:</span>
-                        <a class="color-gray-dark color-primary-hover" href="#">CDT</a>
-                    </li>
-                </ul>
+   <div class="p-a">
+    <ul class="list-inline small m-y-0">
+     <li class="list-inline-item">
+      <span class="color-gray">By:</span>
+      <span class="color-gray-dark color-primary-hover" href="#">Author</span>
+     </li>
+     <li class="list-inline-item">
+      <span class="color-gray">In:</span>
+      <span class="color-gray-dark color-primary-hover" href="#">Agency</span>
+     </li>
+    </ul>
 
-                <h3 class="h4 m-t-0 m-b-sm">
-                    <a class="u-link-v5 color-gray-dark color-primary-hover" href="#">Demperdiet molesti volutpa</a>
-                </h3>
+    <h3 class="h4 m-t-0 m-b-sm">
+     <a class="u-link-v5 color-gray-dark color-primary-hover link-before no-underline" href="#">Short title <span
+       class="sr-only">#3</span></a>
+    </h3>
 
-                <p>Nullam elementum tincidunt massa, a pulvinar leo ultricies ut. Ut fringilla lectus tellusimp
-                    imperdiet molestie est volutpat at. Sed viverra cursus nibh.</p>
-
-                <hr class="hr-light m-y">
-
-                <ul class="list-inline m-y-0">
-                    <li class="list-inline-item m-r m-y-0">
-                        <a class="news-icon bg-gray-light bg-primary-hover color-gray-dark rounded-50x" href="#"
-                            aria-label="Email CDT">
-                            <span class="ca-gov-icon-email" aria-hidden="true"></span><span class="sr-only">Email</span>
-                        </a>
-                    </li>
-                    <li class="list-inline-item m-r m-y-0">
-                        <a class="news-icon bg-gray-light bg-primary-hover color-gray-dark rounded-50x" href="#">
-                            <span class="ca-gov-icon-share" aria-hidden="true"></span><span class="sr-only">Share</span>
-                        </a>
-                    </li>
-                </ul>
-            </div>
-        </article>
-        <!-- End Article -->
-    </div>
-
-    <div class="col-md-4 m-b-md">
-        <!-- Article -->
-        <article class="shadow">
-            <figure class="pos-rel m-b-0">
-                <img class="img-fluid w-100" src="/images/sample/images/500x450.jpg" alt="Image Description">
-
-                <figcaption class="pos-abs top-sm left-sm">
-                    <a class="btn btn-sm btn-standout rounded-0" href="#">July 07, 2017</a>
-                </figcaption>
-            </figure>
-
-            <div class="p-a">
-                <ul class="list-inline small m-y-0">
-                    <li class="list-inline-item">
-                        <span class="color-gray">By:</span>
-                        <a class="color-gray-dark color-primary-hover" href="#">John</a>
-                    </li>
-                    <li class="list-inline-item">
-                        <span class="color-gray">In:</span>
-                        <a class="color-gray-dark color-primary-hover" href="#">CDTFA</a>
-                    </li>
-                </ul>
-
-                <h3 class="h4 m-t-0 m-b-sm">
-                    <a class="u-link-v5 color-gray-dark color-primary-hover" href="#">Nullam non metus inmi</a>
-                </h3>
-
-                <p>Nullam elementum tincidunt massa, a pulvinar leo ultricies ut. Ut fringilla lectus tellusimp
-                    imperdiet molestie est volutpat at. Sed viverra cursus nibh.</p>
-
-                <hr class="hr-light m-y">
-
-                <ul class="list-inline m-y-0">
-                    <li class="list-inline-item m-r m-y-0">
-                        <a class="news-icon bg-gray-light bg-primary-hover color-gray-dark rounded-50x" href="#"
-                            aria-label="Email CDTFA">
-                            <span class="ca-gov-icon-email" aria-hidden="true"></span><span class="sr-only">Email</span>
-                        </a>
-                    </li>
-                    <li class="list-inline-item m-r m-y-0">
-                        <a class="news-icon bg-gray-light bg-primary-hover color-gray-dark rounded-50x" href="#">
-                            <span class="ca-gov-icon-share" aria-hidden="true"></span><span class="sr-only">Share</span>
-                        </a>
-                    </li>
-                </ul>
-            </div>
-        </article>
-        <!-- End Article -->
-    </div>
+    <p>Briefly tell your reader what they will find at the card's destination then link to the official news release or
+     news section within your site.</p>
+   </div>
+  </article>
+  <!-- End Article -->
+ </div>
 </div>
 <!-- End News Block -->
 <!-- Trigger the modal with a button -->
@@ -659,155 +589,106 @@
    <div class="modal-body">
     <strong aria-label="Source code for News Block">Source code:</strong>
     <pre><code class="overflow-auto"><div class="row">
-    <div class="col-md-4 m-b-md">
-        <!-- Article -->
-        <article class="shadow">
-            <figure class="pos-rel m-b-0">
-                <img class="img-fluid w-100" src="/images/sample/images/500x450.jpg" alt="Image Description">
+ <div class="col-md-4 m-b-md">
+  <!-- Article -->
+  <article class="bg-gray-50-hover p-b-md brd-solid-1 brd-gray-light pos-rel">
+   <figure class="pos-rel m-b-0">
+    <img class="img-fluid w-100" src="/images/news-grid1.jpg" alt="Image Description">
+    <figcaption class="pos-abs top-sm p-l-0 rounded-3">
+     <span class="btn btn-sm btn-standout rounded-0" href="#">Month DD, YYYY</span>
+    </figcaption>
+   </figure>
 
-                <figcaption class="pos-abs top-sm left-sm">
-                    <a class="btn btn-sm btn-standout rounded-0" href="#">July 18, 2017</a>
-                </figcaption>
-            </figure>
+   <div class="p-a">
+    <ul class="list-inline small m-y-0">
+     <li class="list-inline-item">
+      <span class="color-gray">By:</span>
+      <span class="color-gray-dark color-primary-hover" href="#">Author</span>
+     </li>
+     <li class="list-inline-item">
+      <span class="color-gray">In:</span>
+      <span class="color-gray-dark color-primary-hover" href="#">Agency</span>
+     </li>
+    </ul>
 
-            <div class="p-a">
-                <ul class="list-inline small m-y-0">
-                    <li class="list-inline-item">
-                        <span class="color-gray">By:</span>
-                        <a class="color-gray-dark color-primary-hover" href="#">Alex</a>
-                    </li>
-                    <li class="list-inline-item">
-                        <span class="color-gray">In:</span>
-                        <a class="color-gray-dark color-primary-hover" href="#">DMV</a>
-                    </li>
-                </ul>
+    <h3 class="h4 m-t-0 m-b-sm">
+     <a class="u-link-v5 color-gray-dark color-primary-hover link-before no-underline" href="#">Short title</a>
+    </h3>
 
-                <h3 class="h4 m-t-0 m-b-sm">
-                    <a class="u-link-v5 color-gray-dark color-primary-hover" href="#">Incredible standard post</a>
-                </h3>
+    <p>Briefly tell your reader what they will find at the card's destination then link to the official news release or
+     news section within your site.</p>
+   </div>
+  </article>
+  <!-- End Article -->
+ </div>
 
-                <p>Nullam elementum tincidunt massa, a pulvinar leo ultricies ut. Ut fringilla lectus tellusimp
-                    imperdiet molestie est volutpat at. Sed viverra cursus nibh.</p>
+ <div class="col-md-4 m-b-md">
+  <!-- Article -->
+  <article class="bg-gray-50-hover p-b-md brd-solid-1 brd-gray-light pos-rel">
+   <figure class="pos-rel m-b-0">
+    <img class="img-fluid w-100" src="/images/news-grid2.jpg" alt="Image description #2">
+    <figcaption class="pos-abs top-sm p-l-0 rounded-3">
+     <span class="btn btn-sm btn-standout rounded-0" href="#">Month DD, YYYY</span>
+    </figcaption>
+   </figure>
 
-                <hr class="hr-light m-y">
+   <div class="p-a">
+    <ul class="list-inline small m-y-0">
+     <li class="list-inline-item">
+      <span class="color-gray">By:</span>
+      <span class="color-gray-dark color-primary-hover" href="#">Author</span>
+     </li>
+     <li class="list-inline-item">
+      <span class="color-gray">In:</span>
+      <span class="color-gray-dark color-primary-hover" href="#">Agency</span>
+     </li>
+    </ul>
 
-                <ul class="list-inline m-y-0">
-                    <li class="list-inline-item m-r m-y-0">
-                        <a class="news-icon bg-gray-light bg-primary-hover color-gray-dark rounded-50x" href="#"
-                            aria-label="Email DMV">
-                            <span class="ca-gov-icon-email" aria-hidden="true"></span><span class="sr-only">Email</span>
-                        </a>
-                    </li>
-                    <li class="list-inline-item m-r m-y-0">
-                        <a class="news-icon bg-gray-light bg-primary-hover color-gray-dark rounded-50x" href="#">
-                            <span class="ca-gov-icon-share" aria-hidden="true"></span><span class="sr-only">Share</span>
-                        </a>
-                    </li>
-                </ul>
-            </div>
-        </article>
-        <!-- End Article -->
-    </div>
+    <h3 class="h4 m-t-0 m-b-sm">
+     <a class="u-link-v5 color-gray-dark color-primary-hover link-before no-underline" href="#">Short title <span
+       class="sr-only">#2</span></a>
+    </h3>
 
-    <div class="col-md-4 m-b-md">
-        <!-- Article -->
-        <article class="shadow">
-            <figure class="pos-rel m-b-0">
-                <img class="img-fluid w-100" src="/images/sample/images/500x450.jpg" alt="Image Description">
+    <p>Briefly tell your reader what they will find at the card's destination then link to the official news release or
+     news section within your site.</p>
+   </div>
+  </article>
+  <!-- End Article -->
+ </div>
 
-                <figcaption class="pos-abs top-sm left-sm">
-                    <a class="btn btn-sm btn-standout rounded-0" href="#">July 12, 2017</a>
-                </figcaption>
-            </figure>
+ <div class="col-md-4 m-b-md">
+  <!-- Article -->
+  <article class="bg-gray-50-hover p-b-md brd-solid-1 brd-gray-light pos-rel">
+   <figure class="pos-rel m-b-0">
+    <img class="img-fluid w-100" src="/images/news-grid3.jpg" alt="Image description #3">
+    <figcaption class="pos-abs top-sm p-l-0 rounded-3">
+     <span class="btn btn-sm btn-standout rounded-0" href="#">Month DD, YYYY</span>
+    </figcaption>
+   </figure>
 
-            <div class="p-a">
-                <ul class="list-inline small m-y-0">
-                    <li class="list-inline-item">
-                        <span class="color-gray">By:</span>
-                        <a class="color-gray-dark color-primary-hover" href="#">Kathy</a>
-                    </li>
-                    <li class="list-inline-item">
-                        <span class="color-gray">In:</span>
-                        <a class="color-gray-dark color-primary-hover" href="#">CDT</a>
-                    </li>
-                </ul>
+   <div class="p-a">
+    <ul class="list-inline small m-y-0">
+     <li class="list-inline-item">
+      <span class="color-gray">By:</span>
+      <span class="color-gray-dark color-primary-hover" href="#">Author</span>
+     </li>
+     <li class="list-inline-item">
+      <span class="color-gray">In:</span>
+      <span class="color-gray-dark color-primary-hover" href="#">Agency</span>
+     </li>
+    </ul>
 
-                <h3 class="h4 m-t-0 m-b-sm">
-                    <a class="u-link-v5 color-gray-dark color-primary-hover" href="#">Demperdiet molesti volutpa</a>
-                </h3>
+    <h3 class="h4 m-t-0 m-b-sm">
+     <a class="u-link-v5 color-gray-dark color-primary-hover link-before no-underline" href="#">Short title <span
+       class="sr-only">#3</span></a>
+    </h3>
 
-                <p>Nullam elementum tincidunt massa, a pulvinar leo ultricies ut. Ut fringilla lectus tellusimp
-                    imperdiet molestie est volutpat at. Sed viverra cursus nibh.</p>
-
-                <hr class="hr-light m-y">
-
-                <ul class="list-inline m-y-0">
-                    <li class="list-inline-item m-r m-y-0">
-                        <a class="news-icon bg-gray-light bg-primary-hover color-gray-dark rounded-50x" href="#"
-                            aria-label="Email CDT">
-                            <span class="ca-gov-icon-email" aria-hidden="true"></span><span class="sr-only">Email</span>
-                        </a>
-                    </li>
-                    <li class="list-inline-item m-r m-y-0">
-                        <a class="news-icon bg-gray-light bg-primary-hover color-gray-dark rounded-50x" href="#">
-                            <span class="ca-gov-icon-share" aria-hidden="true"></span><span class="sr-only">Share</span>
-                        </a>
-                    </li>
-                </ul>
-            </div>
-        </article>
-        <!-- End Article -->
-    </div>
-
-    <div class="col-md-4 m-b-md">
-        <!-- Article -->
-        <article class="shadow">
-            <figure class="pos-rel m-b-0">
-                <img class="img-fluid w-100" src="/images/sample/images/500x450.jpg" alt="Image Description">
-
-                <figcaption class="pos-abs top-sm left-sm">
-                    <a class="btn btn-sm btn-standout rounded-0" href="#">July 07, 2017</a>
-                </figcaption>
-            </figure>
-
-            <div class="p-a">
-                <ul class="list-inline small m-y-0">
-                    <li class="list-inline-item">
-                        <span class="color-gray">By:</span>
-                        <a class="color-gray-dark color-primary-hover" href="#">John</a>
-                    </li>
-                    <li class="list-inline-item">
-                        <span class="color-gray">In:</span>
-                        <a class="color-gray-dark color-primary-hover" href="#">CDTFA</a>
-                    </li>
-                </ul>
-
-                <h3 class="h4 m-t-0 m-b-sm">
-                    <a class="u-link-v5 color-gray-dark color-primary-hover" href="#">Nullam non metus inmi</a>
-                </h3>
-
-                <p>Nullam elementum tincidunt massa, a pulvinar leo ultricies ut. Ut fringilla lectus tellusimp
-                    imperdiet molestie est volutpat at. Sed viverra cursus nibh.</p>
-
-                <hr class="hr-light m-y">
-
-                <ul class="list-inline m-y-0">
-                    <li class="list-inline-item m-r m-y-0">
-                        <a class="news-icon bg-gray-light bg-primary-hover color-gray-dark rounded-50x" href="#"
-                            aria-label="Email CDTFA">
-                            <span class="ca-gov-icon-email" aria-hidden="true"></span><span class="sr-only">Email</span>
-                        </a>
-                    </li>
-                    <li class="list-inline-item m-r m-y-0">
-                        <a class="news-icon bg-gray-light bg-primary-hover color-gray-dark rounded-50x" href="#">
-                            <span class="ca-gov-icon-share" aria-hidden="true"></span><span class="sr-only">Share</span>
-                        </a>
-                    </li>
-                </ul>
-            </div>
-        </article>
-        <!-- End Article -->
-    </div>
+    <p>Briefly tell your reader what they will find at the card's destination then link to the official news release or
+     news section within your site.</p>
+   </div>
+  </article>
+  <!-- End Article -->
+ </div>
 </div>
 <!-- End News Block --></code></pre>
    </div>
@@ -993,7 +874,37 @@
 	</main>
 </div>
 
-
+<div class="p-b-md p-t-sm section-standout">
+ <div class="container">
+  <div class="row">
+   <div class="col-md-4">
+    <h3 class="h4 w-100 brd-bottom brd-highlight p-b">More on V6</h3>
+    <a href="/about.html" class="d-block no-underline m-y font-size-16">About</a>
+    <a href="/contact-us.html" class="d-block no-underline m-y font-size-16">Contact us</a>
+   </div>
+   <div class="col-md-4">
+    <h3 class="h4 w-100 brd-bottom  brd-highlight p-b">Related websites</h3>
+    <a href="https://webstandards.ca.gov" class="d-block no-underline m-y font-size-16">State Web Standards</a>
+    <a href="https://designsystem.webstandards.ca.gov" class="d-block no-underline m-y font-size-16">California Design
+     System</a>
+    <a href="https://github.com/Office-of-Digital-Services/California-State-Web-Template-Website"
+     class="d-block no-underline m-y font-size-16">State Web Template GitHub</a>
+   </div>
+   <div class="col-md-4">
+    <h3 class="h4 w-100 brd-bottom brd-highlight p-b">Resources</h3>
+    <a href="https://designsystem.webstandards.ca.gov/style/content"
+     class="d-block no-underline m-y font-size-16">Content Style
+     Guide</a>
+    <a href="https://designsystem.webstandards.ca.gov/style/design" class="d-block no-underline m-y font-size-16">Design
+     style
+     guide</a>
+    <a href="https://designsystem.webstandards.ca.gov/why-web-components"
+     class="d-block no-underline m-y font-size-16">Why web
+     components</a>
+   </div>
+  </div>
+ </div>
+</div>
   <!-- Global Footer -->
 <footer id="footer" class="global-footer">
   <button class="return-top"><span class="sr-only">Back to top</span></button>
@@ -1004,11 +915,11 @@
      </a>
  
      <ul class="footer-links">
-         <li><a href="/use.html">Conditions of Use</a></li>
-         <li><a href="/privacy.html">Privacy Policy</a></li>
+         <li><a href="/conditions-of-use.html">Conditions of use</a></li>
+         <li><a href="/privacy-policy.html">Privacy policy</a></li>
          <li><a href="/images/WebAccessibilityCert-beta.template.webstandards.ca.gov.pdf">Accessibility</a></li>
-         <li><a href="/contact.html">Contact Us</a></li>
-         <li><a href="/about.html">About</a></li>
+         
+         
      </ul>
 
      <ul class="socialsharer-container">

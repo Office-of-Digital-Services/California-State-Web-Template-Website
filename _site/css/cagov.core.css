@@ -13539,6 +13539,19 @@ h6,
   }
 }
 
+.subtitle {
+  font-size: 1.25rem;
+  margin-bottom: 3rem;
+  font-weight: 600;
+  color: #5e5e6a;
+}
+@media (min-width: 576px) {
+  .subtitle {
+    font-size: calc(1.25rem + 0.1vw);
+    margin-bottom: calc(3rem + 0.1vw);
+  }
+}
+
 [class*=icon-].big {
   font-size: 1.94rem;
 }
@@ -13656,6 +13669,32 @@ a.list-group-item {
   white-space: nowrap;
   vertical-align: baseline;
   background-color: #ededef;
+}
+
+/* external link */
+/* External link icon */
+.external-link-icon {
+  display: inline-block;
+  padding: 0;
+  position: relative;
+  text-decoration: none;
+}
+.external-link-icon::after {
+  content: "\e9ed";
+  font-family: "CaGov" !important;
+  font-size: 75%;
+  margin-left: 1px;
+}
+
+/* external link exeptions */
+.cagov-card .external-link-icon,
+.wp-block-button__link .external-link-icon,
+.footer-social-links a .external-link-icon,
+img ~ .external-link-icon,
+svg ~ .external-link-icon,
+[class*=ca-gov-icon-] ~ .external-link-icon,
+.pdf-link-icon ~ .external-link-icon {
+  display: none;
 }
 
 /* -----------------------------------------
@@ -19737,7 +19776,8 @@ figcaption {
 }
 
 label {
-  font-weight: 700;
+  font-weight: 600;
+  font-size: 1.125rem;
 }
 
 .input-group-text {
@@ -23215,7 +23255,7 @@ a.sidenav.active:before {
 
 .bg-secondary-gradient {
   background-repeat: repeat-x;
-  background-image: linear-gradient(225deg, #50aee4, #eef8fb);
+  background-image: linear-gradient(225deg, #4993B5, #eef8fb);
 }
 
 .bg-primary-standout-gradient {
@@ -23270,7 +23310,7 @@ a.sidenav.active:before {
 }
 
 .bg-secondary-radialgradient {
-  background-image: radial-gradient(circle farthest-side at 50% 50%, #eef8fb, #50aee4);
+  background-image: radial-gradient(circle farthest-side at 50% 50%, #eef8fb, #4993B5);
   background-repeat: no-repeat;
 }
 
@@ -23367,6 +23407,15 @@ a.sidenav.active:before {
   top: 0.8rem;
   right: 0.7rem;
   font-size: 1.6rem;
+}
+
+.link-before::before {
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
 }
 
 /* -----------------------------------------
@@ -23765,6 +23814,46 @@ a.sidenav.active:before {
   color: #555555;
 }
 
+.gray-50, .gray-50-hover:hover, .gray-50-hover:focus {
+  color: #fafafa;
+}
+
+.gray-100, .gray-100-hover:hover, .gray-100-hover:focus {
+  color: #ededef !important;
+}
+
+.gray-200, .gray-200-hover:hover, .gray-200-hover:focus {
+  color: #d4d4d7 !important;
+}
+
+.gray-300, .gray-300-hover:hover, .gray-300-hover:focus {
+  color: #bcbbc1 !important;
+}
+
+.gray-400, .gray-400-hover:hover, .gray-400-hover:focus {
+  color: #a4a3ab !important;
+}
+
+.gray-500, .gray-500-hover:hover, .gray-500-hover:focus {
+  color: #898891 !important;
+}
+
+.gray-600, .gray-600-hover:hover, .gray-600-hover:focus {
+  color: #72717c !important;
+}
+
+.gray-700, .gray-700-hover:hover, .gray-700-hover:focus {
+  color: #5e5e6a !important;
+}
+
+.gray-800, .gray-800-hover:hover, .gray-800-hover:focus {
+  color: #4a4958 !important;
+}
+
+.gray-900, .gray-900-hover:hover, .gray-900-hover:focus {
+  color: #4a4958 !important;
+}
+
 .color-light {
   color: #777777;
 }
@@ -23793,8 +23882,16 @@ a.sidenav.active:before {
   color: #555555 !important;
 }
 
+.outline-color, .outline-color:hover, .outline-color:focus {
+  color: #2ea3f2 !important;
+}
+
 .bg-white {
   background-color: #fff !important;
+}
+
+.bg-outline-color, .bg-outline-color:hover, .bg-outline-color:focus {
+  background-color: #2ea3f2 !important;
 }
 
 .bg-white-hover:hover,

@@ -185,12 +185,12 @@
  <ul id="nav_list" class="top-level-nav">
   <li class="nav-item">
        
-       <a class="first-level-link" href="/updates.html">Template updates</a>
+       <a class="first-level-link" href="/template-updates.html">Template updates</a>
         
    </li>
    <li class="nav-item">
        
-       <a class="first-level-link" href="/getting-started.html">Get started</a>
+       <a class="first-level-link" href="/get-started.html">Get started</a>
         
    </li>
    <li class="nav-item">       
@@ -411,177 +411,116 @@
    
      
    
+     
+   
  </ol>
 </nav>
 
 			
-
-<style type="text/css">
- html {
-  scroll-behavior: smooth;
+<style>
+ .icons {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  padding-left: 0;
+  margin-bottom: 0;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  font-size: 1.14286rem;
  }
 
- .bshadow0,
- input {
-  box-shadow: inset 0 -2px #e7e7e7;
+ .icons li {
+  line-height: 3rem;
  }
 
- .glyph {
-  font-size: 1rem;
-  width: 50%;
-  padding-bottom: 1em;
-  padding-right: 4em;
-  margin-bottom: 1em;
-  float: left;
-  overflow: hidden;
+ .icons li a {
+  text-decoration: none !important;
+  position: relative;
+  padding: 10px 9px 10px 9px;
+  border-top: 1px solid #d4d4d7;
+  border-bottom: 1px solid #d4d4d7;
  }
 
- .talign-right {
-  text-align: right;
+ .icons li a::after {
+  content: "";
+  border-right: 1px solid #ededef;
+  height: 100%;
+  position: relative;
+  left: 10px;
  }
 
- .talign-center {
-  text-align: center;
+ .icons li a.letter-selected {
+  border-right: 1px solid #d4d4d7;
+  border-left: 1px solid #d4d4d7;
+  font-weight: 700;
+  background-color: #fafafa;
+  color: #3b3a48;
  }
 
- .bgc1 {
-  background: #f1f1f1;
+
+ #iconSearchForm {
+  width: 80%;
+  position: relative;
  }
 
- .fgc1 {
-  color: #999;
- }
-
- .fgc0 {
-  color: #000;
- }
-
- p {
-  margin-top: 1em;
-  margin-bottom: 1em;
- }
-
- .mvm {
-  margin-top: .75em;
-  margin-bottom: .75em;
- }
-
- .mtn {
-  margin-top: 0;
- }
-
- .mtl,
- .mal {
-  margin-top: 1.5em;
- }
-
- .mbl,
- .mal {
-  margin-bottom: 1.5em;
- }
-
- .mhmm {
-  margin-left: 1em;
-  margin-right: 1em;
- }
-
- .mls {
-  margin-left: .25em;
- }
-
- .ptl {
-  padding-top: 1.5em;
- }
-
- .pbs,
- .pvs {
-  padding-bottom: .25em;
- }
-
- .pvs,
- .pts {
-  padding-top: .25em;
- }
-
- .unit {
-  float: left;
- }
-
- .unitRight {
-  float: right;
- }
-
- .size1of2 {
-  width: 50%;
- }
-
- .size1of1 {
-  width: 100%;
- }
-
- .clearfix:before,
- .clearfix:after {
-  content: " ";
-  display: table;
- }
-
- .clearfix:after {
-  clear: both;
- }
-
- .hidden-true {
-  display: none;
- }
-
- .textbox0 {
-  width: 3em;
-  background: #f1f1f1;
-  padding: .25em .5em;
-  line-height: 1.5;
-  height: 1.5em;
- }
-
- #testDrive {
-  display: block;
-  padding-top: 24px;
-  line-height: 1.5;
- }
-
- .fs0 {
-  font-size: 1rem;
- }
-
- .fs1 {
-  font-size: 1.5rem;
- }
-
- .icon-value {
-  font-size: 1rem;
-  margin: 0 !important;
- }
-
- .group-heading {
-  width: 100%;
-  float: left;
-  box-shadow: inset 0 -4px #333333;
- }
-
- @media (max-width: 767px) {
-  .glyph {
-   width: 100%;
+ @media (min-width: 992px) {
+  #iconSearchForm {
+   width: 40%;
   }
  }
 
- #iconSearchForm input {
-  border-radius: 5px;
-  border: 1px solid #046B99 !important;
+ .icon-reset {
+  position: absolute;
+  right: 0;
+  top: 0;
+  font-size: 1.33rem;
+  background: transparent;
+  border-top-right-radius: 4px;
+  border-bottom-right-radius: 4px;
+  height: 2.375rem;
+  background-color: #72717C;
+  padding-left: 13px;
+  padding-right: 13px;
  }
 
- #iconSearchForm button {
-  border-radius: 5px;
-  border: 1px solid #046B99 !important;
-  color: #fff;
-  background-color: #046B99;
+ .icon-reset:hover,
+ .icon-reset:focus {
+  background-color: #4a4958;
+ }
+
+ .icons-searchbox {
+  width: 100%;
+  border: solid 1px #72717C;
+  height: 2.375rem;
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+ }
+
+
+
+ #fontlist {
+  display: flex;
+  flex-wrap: wrap;
+ }
+
+ .icons-alpha {
+  flex-basis: 100%;
+ }
+
+ .icons-alpha:first-child {
+  margin-top: 0 !important;
+ }
+
+ .icon-item {
+  flex-basis: 100%;
+  padding-top: 1rem;
+ }
+
+ @media (min-width: 992px) {
+  .icon-item {
+   flex-basis: 33%;
+   padding-top: 1rem;
+  }
  }
 </style>
 
@@ -595,40 +534,43 @@
   var inputBox = document.querySelector("#iconSearchForm input");
   var searchInput = inputBox ? inputBox.value.trim().toLowerCase() : "";
 
-  const letterList = [...new Set(iconData.icons.map(x=>x.properties.name.charAt(0)))];
-  const jumpToHtml = `<li><strong>First letter:</strong></li>`
+  const letterList = [...new Set(iconData.icons.map(x => x.properties.name.charAt(0)))];
+  const jumpToHtml = `<li><a href="javascript:buildList()" ${!filterLetter ? 'class="gray-900 letter-selected"' : ''}>All</a></li>`
    + letterList
-    .map(l=>`<li><a href="javascript:buildList('${l}')" ${filterLetter===l ? 'style="font-weight:bold"' : ''}>${l.toUpperCase()}</a></li>`)
+    .map(l => `<li><a href="javascript:buildList('${l}')" ${filterLetter === l ? 'class="letter-selected"' : ''}>${l.toUpperCase()}</a></li>`)
     .join('');
 
   for (const letter of letterList
-   .filter(l=>!filterLetter || l===filterLetter)) {
+   .filter(l => !filterLetter || l === filterLetter)) {
 
-    const iconsByLetter = iconData.icons.filter(l=>l.properties.name.charAt(0)===letter);
+   const iconsByLetter = iconData.icons.filter(l => l.properties.name.charAt(0) === letter);
 
 
-    if (!searchInput.length) {
-      listHtml += `<p class="h1 group-heading py-3">${letter.toUpperCase()}&nbsp;<span style="font-size:large">(${iconsByLetter.length} icons)</span></p>`;
-    }
+   if (!searchInput.length) {
+    listHtml += `<p class="h1 icons-alpha py-3 mb-0 m-t-md color-p2 p-b-0">${letter.toUpperCase()}&nbsp;<span style="font-size:1rem; font-weight:400; color:#4a4958">(${iconsByLetter.length} icons)</span></p>`;
+   }
 
-    for (const icon of iconsByLetter) {
-      const iconStrings = [...new Set([icon.properties.name, ...icon.icon.tags])].filter(x=>x.length);
+   for (const icon of iconsByLetter) {
+    const iconStrings = [...new Set([icon.properties.name, ...icon.icon.tags])].filter(x => x.length);
 
-      if (!searchInput.length || iconStrings.find(x=>x.search(searchInput) > -1)) {
-        listHtml += `
-<div class="glyph fs1">
-  <div class="clearfix bshadow0 pbs">
-    <span class="ca-gov-icon-${icon.properties.name}"></span>
-    <span style="text-transform:capitalize">${icon.properties.name.replace('-',' ')}</span><br/>
-    <span class="mls">ca-gov-icon-${icon.properties.name}</span>
+    if (!searchInput.length || iconStrings.find(x => x.search(searchInput) > -1)) {
+     listHtml += `
+<div class="d-flex icon-item">
+  <div class="text-3rem p-r gray-900">
+    <span class="ca-gov-icon-${icon.properties.name}" aria-hidden="true"></span>
   </div>
-  <p class="icon-value">${icon.properties.code.toString(16)}</p>
+  <div class="icon-specs p-r  gray-900">
+  <p style="text-transform:capitalize" class="bold m-t m-b-0 font-size-16">${icon.properties.name.replace('-', ' ')}</p>
+    <p class="font-size-12 m-0">ca-gov-icon-${icon.properties.name}</p>
+    </div>
 </div>
         `;
-        numberOfResults++;
-      }
+     numberOfResults++;
     }
+   }
   }
+
+  document.querySelector('#searchSummary').innerHTML = searchInput.length ? searchInput : filterLetter ? filterLetter.toUpperCase() : "All";
 
   if (searchInput.length) {
    document.querySelector('#jumpToHeading').style.display = "none";
@@ -637,7 +579,7 @@
    document.querySelector('#jumpToHeading ol').innerHTML = jumpToHtml;
   }
   document.querySelector('#fontlist').innerHTML = listHtml;
-  document.querySelector('#resultcount').innerHTML = numberOfResults ? `<p>${numberOfResults} icons found.</p>` : '<p>No icons found.</p>';
+  document.querySelector('#resultcount').innerHTML = numberOfResults ? `<p class="m-t-0">${numberOfResults} icons <span class="sr-only">found.</span></p>` : '<p>No icons found.</p>';
  }
 
  const myRequest = new Request('https://california.azureedge.net/fonts/selection.json');
@@ -660,57 +602,136 @@
 
 </script>
 
+<div class="row">
+ <div class="col-md-3">
+  <nav aria-labelledby="page-navigation-label" class="side-navigation sticky-6 overflow-auto">
+   <ul class="list-navigation">
+    <li><a href="/visual-design/color.html" id="page-navigation-label" class="active">Icons</a>
+     <ul>
+      <li><a href="#How-to-use-icons">How to use icons</a></li>
+      <li><a href="#Dos-and-donts-for-icon-use">Do's and don'ts for icon use</a></li>
+      <li><a href="#Search-icons">Search icons</a></li>
+     </ul>
+    </li>
+   </ul>
+  </nav>
+ </div>
+ <div class="col-md-9 p-b-lg">
+
+
+  <h1 class="mt-lg-0">Icons</h1>
+  <p class="lead">Icons are visual representations of commands, devices, directories, or common actions.
+  </p>
+  <p>The State Web Template uses CSS classes to customize icon color for compatibility with all popular browsers.</p>
+
+
+  <h2 id="How-to-use-icons">How to use icons</h2>
+  <p>Icon color and font can be styled using the same CSS rules used to style other text on a page. Copy the CSS code to
+   your clipboard or manually type it into your code to use your desired icons.
+  </p>
+  <p>Keep in mind, color and font size will change the size of the icon. </p>
 
 
 
-<h1 class="mt-lg-0">Icons</h1>
+
+  <h2 id="Dos-and-donts-for-icon-use" class="m-b-0">Do's and don'ts for icon use</h2>
+
+  <div class="row">
+   <div class="col-md-6">
+    <h3 class="h5 m-b-sm">Do</h3>
+    <hr class="m-t-0 p-t-0">
+    <ul>
+     <li>Use icons with meaningful text labels</li>
+     <li>Use a single icon for a group of related content</li>
+     <li>Use a single icon per concept</li>
+    </ul>
+   </div>
+   <div class="col-md-6">
+    <h3 class="h5 m-b m-b-sm">Don't</h3>
+    <hr class="m-t-0 p-t-0">
+    <ul>
+     <li>Use icons without labels</li>
+     <li>Use too many icons and create visual clutter</li>
+     <li>Use multiple icon variations to represent the same concept</li>
+    </ul>
+   </div>
+  </div>
 
 
-<p>The CaGov icon font includes over <strong>500 icons</strong> you can use in your site. Four different
- formats of the font
- are included for compatibility with all popular browsers. You may need to add a mime map to your
- webserver for the WOFF font. To determine if your webserver needs it, upload the /fonts/CaGov.woff
- file to your webserver. Try downloading the WOFF in your browser by visiting:
- http://yourwebsite.ca.gov/fonts/CaGov.woff . If it prompts you to download the font, your server is
- configured correctly. If you get a 404 or other error, you'll need to add a mime map for extension
- ".woff", and the mimetype is "application/font-woff". Ask your server admin if you need assistance.
-</p>
-<hr>
-<p>To insert an icon into your page, insert an empty span tag with the class name for the icon you wish
- to use, for example:</p>
-<code>&lt;h2&gt;&lt;span class=&quot;ca-gov-icon-arrow-down&quot;&gt;&lt;/span&gt; Heading&lt;/h2&gt;</code>
-<p>will appear as:</p>
-<h2><span class="ca-gov-icon-arrow-down"></span> Heading</h2>
-<p>When icons are used with H1 to H5 headings and some pre-configured modules, styles for font-size and
- color are included. When used anywhere else you'll need to add styles for the font-size and color
- yourself. Icon fonts can be styled using the same css rules used to style any other text on the
- page. For example <code>color:</code> and <code>font-size:</code> change the color and size of the
- icon.</p>
+  <h2 id="Search-icons">Search icons</h2>
+  <p>Use the search to find a specific icon, or browse icons alphabetically with the menu.</p>
 
-<form id="iconSearchForm" class="" onsubmit="return false">
- <span class="sr-only" id="IconInput">Search icons</span>
- <input type="text" name="iconsearch" aria-labelledby="IconInput" placeholder="Search icons" class="search-textfield">
- <button type="reset" class=""><span class="">Reset</span></button>
-</form>
 
-<div id="jumpToHeading">
- <hr>
- <ol class="breadcrumb">
- </ol>
- <hr>
-</div>
+  <div class="bg-gray-50 d-flex p-a-sm p-x-md">
+   <span class="ca-gov-icon-info font-size-30 color-p2 d-block" aria-hidden="true"></span>
+   <div class="m-l">
+    <p class="m-b-0">To use an icon, insert an empty span tag with the corresponding class name. Here's an example:
+     <code class="font-size-14 gray-900">&lt;span class="ca-gov-icon-info" aria-hidden="true">&lt;/span></code>
+    </p>
 
-<!-- START ICOMOON DEMO -->
-<div class="clearfix mhl ptl">
- <div id="resultcount" class="fs1" aria-live="polite"></div>
- <div id="fontlist" ></div>
+   </div>
+
+  </div>
+
+  <form id="iconSearchForm" class="m-y-lg" onsubmit="return false">
+   <span class="sr-only" id="IconInput">Search icons</span>
+   <input type="text" name="iconsearch" aria-labelledby="IconInput" placeholder="Browse icons"
+    class="search-textfield rounded-5 icons-searchbox">
+   <button type="reset" title="reset" class="border-0 color-white icon-reset"><span class="ca-gov-icon-close-mark"
+     aria-hidden="true"></span><span class="sr-only">Reset</span></button>
+  </form>
+
+  <div id="jumpToHeading">
+   <ol class="icons">
+   </ol>
+  </div>
+
+  <!-- START ICOMOON DEMO -->
+  <div class="clearfix mhl ptl">
+   <div class="h4 m-t-md m-b-0">Showing results for "<span id="searchSummary"></span>"</div>
+   <div id="resultcount" class="fs1" aria-live="polite"></div>
+   <div id="fontlist"></div>
+  </div>
+
+
+ </div>
 </div>
 
 		</main>
 	</div>
 </div>
 
-
+<div class="p-b-md p-t-sm section-standout">
+ <div class="container">
+  <div class="row">
+   <div class="col-md-4">
+    <h3 class="h4 w-100 brd-bottom brd-highlight p-b">More on V6</h3>
+    <a href="/about.html" class="d-block no-underline m-y font-size-16">About</a>
+    <a href="/contact-us.html" class="d-block no-underline m-y font-size-16">Contact us</a>
+   </div>
+   <div class="col-md-4">
+    <h3 class="h4 w-100 brd-bottom  brd-highlight p-b">Related websites</h3>
+    <a href="https://webstandards.ca.gov" class="d-block no-underline m-y font-size-16">State Web Standards</a>
+    <a href="https://designsystem.webstandards.ca.gov" class="d-block no-underline m-y font-size-16">California Design
+     System</a>
+    <a href="https://github.com/Office-of-Digital-Services/California-State-Web-Template-Website"
+     class="d-block no-underline m-y font-size-16">State Web Template GitHub</a>
+   </div>
+   <div class="col-md-4">
+    <h3 class="h4 w-100 brd-bottom brd-highlight p-b">Resources</h3>
+    <a href="https://designsystem.webstandards.ca.gov/style/content"
+     class="d-block no-underline m-y font-size-16">Content Style
+     Guide</a>
+    <a href="https://designsystem.webstandards.ca.gov/style/design" class="d-block no-underline m-y font-size-16">Design
+     style
+     guide</a>
+    <a href="https://designsystem.webstandards.ca.gov/why-web-components"
+     class="d-block no-underline m-y font-size-16">Why web
+     components</a>
+   </div>
+  </div>
+ </div>
+</div>
   <!-- Global Footer -->
 <footer id="footer" class="global-footer">
   <button class="return-top"><span class="sr-only">Back to top</span></button>
@@ -721,11 +742,11 @@
      </a>
  
      <ul class="footer-links">
-         <li><a href="/use.html">Conditions of Use</a></li>
-         <li><a href="/privacy.html">Privacy Policy</a></li>
+         <li><a href="/conditions-of-use.html">Conditions of use</a></li>
+         <li><a href="/privacy-policy.html">Privacy policy</a></li>
          <li><a href="/images/WebAccessibilityCert-beta.template.webstandards.ca.gov.pdf">Accessibility</a></li>
-         <li><a href="/contact.html">Contact Us</a></li>
-         <li><a href="/about.html">About</a></li>
+         
+         
      </ul>
 
      <ul class="socialsharer-container">
