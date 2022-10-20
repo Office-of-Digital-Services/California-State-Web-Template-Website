@@ -10,6 +10,7 @@
 <meta name="HandheldFriendly" content="True">
 <meta name="MobileOptimized" content="320">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
+<meta property="og:image" content="https://as-cdt-pub-migr-betaws-ww-p-001-stage.azurewebsites.net/images/social_media_preview_image.png"/>
 
 <link rel="stylesheet" href="/css/cagov.core.min.css">
 
@@ -624,9 +625,9 @@
 
 
 <h1 class="mt-lg-0">Forms elements</h1>
-<p>A form allows visitors to submit information to a server.</p>
-<p>Common form elements include:</p>
-<ul>
+<p class="lead">A form allows visitors to submit information to a server.</p>
+<p class="lead">Common form elements include:</p>
+<ul class="lead">
  <li>Labels</li>
  <li>Text fields</li>
  <li>Text areas</li>
@@ -677,8 +678,8 @@
        <div class="col-sm-3">
         <p class="outline-color blue-arrow text-right">Label</p>
        </div>
-       <div class="col-sm-9"><label class="form-control-label" for="InputName">Name</label>
-<input type="text" class="form-control" id="InputName" placeholder="Enter your name here"></div>
+       <div class="col-sm-9"><label class="form-control-label" for="InputName">Full name</label>
+<input type="text" class="form-control" id="InputName" placeholder="Name"></div>
       </div>
      </div>
 
@@ -701,8 +702,8 @@
    </div>
    <div id="collapse-html7" class="collapse" role="tabpanel" aria-labelledby="heading-html7">
     <div class="card-body">
-     <pre style="max-height: 300px;"><code><label class="form-control-label" for="InputName">Name</label>
-<input type="text" class="form-control" id="InputName" placeholder="Enter your name here"></code>
+     <pre style="max-height: 300px;"><code><label class="form-control-label" for="InputName">Full name</label>
+<input type="text" class="form-control" id="InputName" placeholder="Name"></code>
    </pre>
 
     </div>
@@ -744,18 +745,27 @@
    <div id="collapse-example2" class="collapse show" role="tabpanel" aria-labelledby="heading-example2">
     <div class="card-body p-b-lg">
      <div class="bg-gray-50 p-a">
+      <h3 class="h4 m-t-0">Basic</h3>
       <div class="row">
        <div class="col-sm-3">
         <p class="mt-4 pt-2 outline-color blue-arrow text-right">Text field</p>
        </div>
-       <div class="col-sm-9"><label class="form-control-label" for="InputName">Name</label>
-<input type="text" class="form-control" id="InputName" placeholder="Enter your name here">
+       <div class="col-sm-9"><label class="form-control-label" for="InputName">Full name</label>
+<input type="text" class="form-control" id="InputName" placeholder="Name">
 <div class="feedback text-muted">
-</div>
+</div></div>
+      </div>
+     </div>
 
-<h3 class="h4">Required</h3>
-<label class="form-control-label" for="InputNameRequired"><span class="required-label">*</span> Name</label>
-<input type="text" class="form-control" id="InputNameRequired" placeholder="Enter your name here">
+
+     <div class="bg-gray-50 p-a m-t-md">
+      <h3 class="h4 m-t-0">Required</h3>
+      <div class="row">
+       <div class="col-sm-3">
+        <p class="mt-4 pt-2 outline-color blue-arrow text-right">Text field</p>
+       </div>
+       <div class="col-sm-9"><label class="form-control-label" for="InputNameRequired"><span class="required-label">*</span> Full name</label>
+<input type="text" class="form-control" id="InputNameRequired" placeholder="Name">
 <div class="invalid-feedback d-block">
  This field is required
 </div></div>
@@ -780,18 +790,20 @@
    </div>
    <div id="collapse-html2" class="collapse" role="tabpanel" aria-labelledby="heading-html2">
     <div class="card-body">
-     <pre style="max-height: 300px;"><code><label class="form-control-label" for="InputName">Name</label>
-<input type="text" class="form-control" id="InputName" placeholder="Enter your name here">
+     <h3 class="h4 m-t-0">Basic</h3>
+     <pre style="max-height: 300px;"><code><label class="form-control-label" for="InputName">Full name</label>
+<input type="text" class="form-control" id="InputName" placeholder="Name">
 <div class="feedback text-muted">
-</div>
+</div></code>
+    </pre>
 
-<h3 class="h4">Required</h3>
-<label class="form-control-label" for="InputNameRequired"><span class="required-label">*</span> Name</label>
-<input type="text" class="form-control" id="InputNameRequired" placeholder="Enter your name here">
+     <h3 class="h4">Required</h3>
+     <pre style="max-height: 300px;"><code><label class="form-control-label" for="InputNameRequired"><span class="required-label">*</span> Full name</label>
+<input type="text" class="form-control" id="InputNameRequired" placeholder="Name">
 <div class="invalid-feedback d-block">
  This field is required
 </div></code>
-    </pre>
+   </pre>
     </div>
    </div>
   </div>
@@ -832,13 +844,13 @@
    <div id="collapse-example1" class="collapse show" role="tabpanel" aria-labelledby="heading-example1">
     <div class="card-body p-b-lg">
 
-     <label class="form-control-label" for="exampleInputComment">Your Message</label>
+     <label class="form-control-label" for="exampleInputComment">Your message</label>
 <textarea id="exampleInputComment" class="form-control" rows="5" cols="80"></textarea>
 <small>Use this space for error messages or instructions text</small>
 
 <h3 class="h4">Required</h3>
 <label class="form-control-label" for="exampleInputCommentRequired"><span class="required-label">*</span> Your
- Message</label>
+ message</label>
 <textarea id="exampleInputCommentRequired" class="form-control" rows="5" cols="80"></textarea>
 <div class="invalid-feedback d-block">
  This field is required</div>
@@ -859,13 +871,13 @@
    </div>
    <div id="collapse-html1" class="collapse" role="tabpanel" aria-labelledby="heading-html1">
     <div class="card-body">
-     <pre style="max-height: 300px;"><code><label class="form-control-label" for="exampleInputComment">Your Message</label>
+     <pre style="max-height: 300px;"><code><label class="form-control-label" for="exampleInputComment">Your message</label>
 <textarea id="exampleInputComment" class="form-control" rows="5" cols="80"></textarea>
 <small>Use this space for error messages or instructions text</small>
 
 <h3 class="h4">Required</h3>
 <label class="form-control-label" for="exampleInputCommentRequired"><span class="required-label">*</span> Your
- Message</label>
+ message</label>
 <textarea id="exampleInputCommentRequired" class="form-control" rows="5" cols="80"></textarea>
 <div class="invalid-feedback d-block">
  This field is required</div></code>
