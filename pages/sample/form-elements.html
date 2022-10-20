@@ -147,11 +147,23 @@ permalink: "components/form-elements.html"
    <div id="collapse-example2" class="collapse show" role="tabpanel" aria-labelledby="heading-example2">
     <div class="card-body p-b-lg">
      <div class="bg-gray-50 p-a">
+      <h3 class="h4 m-t-0">Basic</h3>
       <div class="row">
        <div class="col-sm-3">
         <p class="mt-4 pt-2 outline-color blue-arrow text-right">Text field</p>
        </div>
        <div class="col-sm-9">{% include "../../src/_includes/modules/form-textfield.html" %}</div>
+      </div>
+     </div>
+
+
+     <div class="bg-gray-50 p-a">
+      <h3 class="h4 m-t-0">Required</h3>
+      <div class="row">
+       <div class="col-sm-3">
+        <p class="mt-4 pt-2 outline-color blue-arrow text-right">Text field</p>
+       </div>
+       <div class="col-sm-9">{% include "../../src/_includes/modules/form-textfield-required.html" %}</div>
       </div>
      </div>
 
@@ -173,8 +185,13 @@ permalink: "components/form-elements.html"
    </div>
    <div id="collapse-html2" class="collapse" role="tabpanel" aria-labelledby="heading-html2">
     <div class="card-body">
+     <h3 class="h4 m-t-0">Basic</h3>
      <pre style="max-height: 300px;"><code>{% include "../../src/_includes/modules/form-textfield.html" %}</code>
     </pre>
+
+     <h3 class="h4">Required</h3>
+     <pre style="max-height: 300px;"><code>{% include "../../src/_includes/modules/form-textfield-required.html" %}</code>
+   </pre>
     </div>
    </div>
   </div>
