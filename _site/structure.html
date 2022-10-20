@@ -444,10 +444,10 @@
   <!-- Side navigation -->
   <nav aria-labelledby="navigation-list" class="side-navigation sticky-6">
    <ul class="list-navigation">
-    <li><a href="/structure.html" id="navigation-list" class="active">Strucutral components</a>
+    <li><a href="/structure.html" id="navigation-list" class="active">Strucutral elements</a>
      <ul>
       <li><a href="/structure/utility-header.html">Utility header</a></li>
-      <li><a href="/structure/settings-bar.html">Settings bar</a></li>
+      <li><a href="/structure/settings-bar.html">Settings</a></li>
       <!-- <li><a href="/structure/mobile-controls.html">Mobile controls</a></li> -->
       <li><a href="/structure/site-header.html">Site header</a></li>
       <li><a href="/structure/search.html">Search</a></li>
@@ -463,87 +463,102 @@
 
 
   <h1 class="mt-lg-0">Structure</h1>
-  <h2>Web page structure</h2>
+  <p class="lead">Our structural components form the basic structure of a website utilizing the State Web Template. </p>
+  <h2>Webpage structure</h2>
   <p>
-   The image below shows the basic structure of a State Template web page, consisting of various
-   elements and building blocks. In our case Nunjucks Includes (njk) are used as our webpage
-   structure main building blocks.</p>
-  </p>Several common components (such as page headers, footers, navigation, etc.) are included in pages
-  using njk includes.
-  </p>
-  <img src="/images/structure.jpg" class="img-fluid"
-   alt="Web Page Template Structure: Global Header (which includes Utility header, Setting Bar, Site Header, Navigation and Search), Main Content and Footer." />
+   The State Web Template uses includes as our main building components.</p>
 
-  <p>
-   Code below shows basic State Template web page structure:
-  </p>
 
-  <button type="button" class="btn btn-default btn-sm" data-bs-toggle="modal" data-bs-target="#news-headlines">Show HTML
-   Code</button>
 
-  <!-- Modal -->
-  <div class="modal fade" id="news-headlines" role="dialog">
-   <div class="modal-dialog modal-lg">
-    <div class="modal-content">
-     <div class="modal-header">
-      <h4 class="modal-title">Structure source code</h4>
-      <button type="button" class="close btn btn-secondary" data-bs-dismiss="modal"><span class="sr-only">Close
-        modal</span><span class="ca-gov-icon-close-mark" aria-hidden="true"></span></button>
+  <!--TABS-->
 
+
+  <div class="tab-group responsive">
+   <ul id="tabs2" class="nav nav-tabs" role="tablist">
+    <li class="nav-item">
+     <a id="tab-example2" href="#pane-example2" class="nav-link active" data-bs-toggle="tab" role="tab">Example</a>
+    </li>
+    <li class="nav-item">
+     <a id="tab-html2" href="#pane-html2" class="nav-link" data-bs-toggle="tab" role="tab">Source code</a>
+    </li>
+   </ul>
+
+
+   <div class="tab-content">
+    <div id="pane-example2" class="card tab-pane fade show active" role="tabpanel" aria-labelledby="tab-example2">
+     <div class="card-header" id="heading-example2">
+      <h4 class="my-0 w-100">
+       <a data-bs-toggle="collapse" href="#collapse-home" data-parent="#tab-content" aria-expanded="true"
+        aria-controls="collapse-example2" title="Example tab header">
+        Example
+       </a>
+      </h4>
      </div>
-     <div class="modal-body">
-      <p aria-label="Source code for state web template structure"><span class="text-highlight-primary">Note:</span> The
-       file path
-       to the
-       includes will be relative
-       to the directory of your page.
-      </p>
-      <pre>
-<span class="text-success">&lt;!doctype html&gt;</span>
-<span class="text-accent-p2">&lt;html</span> <span class="text-info">lang=</span><span class="text-accent7">"en"</span><span class="text-accent-p2">&gt;</span>
-   <span class="text-accent-p2">&lt;head&gt;</span>
-      <span class="text-accent-p2">&lt;meta </span><span class="text-info">charset=</span><span class="text-accent7">"utf-8"</span><span class="text-accent-p2">&gt;</span>
-      <span class="text-accent-p2">&lt;title&gt;</span>State Template<span class="text-accent-p2">&lt;/title&gt;</span>
-      <span class="text-accent-p2">&lt;meta</span> <span class="text-info">name=</span><span class="text-accent7">"Author"</span> <span class="text-info">content=</span><span class="text-accent7">"State of California"</span><span class="text-accent-p2"> /&gt;</span>
-      <span class="text-accent-p2">&lt;meta</span> <span class="text-info">name=</span><span class="text-accent7">"Description"</span> <span class="text-info">content=</span><span class="text-accent7">"State of California"</span><span class="text-accent-p2"> /&gt;</span>
-      <span class="text-accent-p2">&lt;meta</span> <span class="text-info">name=</span><span class="text-accent7">"Keywords"</span> <span class="text-info">content=</span><span class="text-accent7">"California, government"</span><span class="text-accent-p2"> /&gt;</span>
-      <span class="text-success">&#10100;% include "/src/_includes/head-css-js.njk" %&#10101;</span>
-  <span class="text-accent-p2">&lt;/head&gt;</span>
-  <span class="text-accent-p2">&lt;body&gt;</span>
-     <span class="text-accent-p2">&lt;header</span> <span class="text-info">role=</span><span class="text-accent7">"banner"</span> <span class="text-info">id=</span><span class="text-accent7">"header"</span> <span class="text-info">class=</span><span class="text-accent7">"global-header fixed"</span><span class="text-accent-p2">&gt;</span>
-       <span class="text-accent-p2">&lt;div</span> <span class="text-info">id=</span><span class="text-accent7">"skip-to-content"</span><span class="text-accent-p2">&gt;&lt;a </span><span class="text-info">href=</span><span class="text-accent7">"#main-content"</span><span class="text-accent-p2">&gt;</span>Skip to Main Content<span class="text-accent-p2">&lt;/a&gt;&lt;/div&gt;</span>
-       <span class="text-success">&#10100;% include "/src/_includes/utility-header.njk" %&#10101;/span>
-       <span class="text-success">&#10100;% include "/src/_includes/settings-bar.njk" %&#10101;</span>
-       <span class="text-success">&#10100;% include "/src/_includes/site-header.njk" %&#10101;</span>
-       <span class="text-success">&#10100;% include "/src/_includes/mobile-controls.njk" %&#10101;</span>
-       <span class="text-accent-p2">&lt;div</span> <span class="text-info">class=</span><span class="text-accent7">"navigation-search full-width-nav container"</span><span class="text-accent-p2">&gt;</span>
-         <span class="text-accent-p2">&lt;div</span> <span class="text-info">id=</span><span class="text-accent7">"head-search"</span> <span class="text-info">class=</span><span class="text-accent7">"search-container search-container featured-search"</span><span class="text-accent-p2">&gt;</span>
-         <span class="text-success">&#10100;% include "/src/_includes/search.njk" %&#10101;</span>
-         <span class="text-accent-p2">&lt;/div&gt;</span>
-           <span class="text-success">&#10100;% include "/src/_includes/navigation.njk" %&#10101;</span>
-        <span class="text-accent-p2">&lt;/div&gt;</span>
-      <span class="text-accent-p2">&lt;/header&gt;</span>
-      <span class="text-accent-p2">&lt;div</span> <span class="text-info">id=</span><span class="text-accent7">"main-content"</span> <span class="text-info">class=</span><span class="text-accent7">"main-content"</span><span class="text-accent-p2">&gt;</span>
-          <span class="text-accent-p2">&lt;div </span><span class="text-info">class=</span><span class="text-accent7">"container"</span><span class="text-accent-p2">&gt;</span>
-              <span class="text-accent-p2">&lt;main </span><span class="text-info">class=</span><span class="text-accent7">"main-primary"</span><span class="text-accent-p2">&gt;</span>
-                 Page content
-              <span class="text-accent-p2">&lt;/main&gt;</span>
-         <span class="text-accent-p2">&lt;/div&gt;</span>
-     <span class="text-accent-p2">&lt;/div&gt;</span>
-     <span class="text-success">&#10100;% include "/src/_includes/global-footer.njk" %&#10101;</span>
-     <span class="text-success">&#10100;% include "/src/_includes/scripts.njk" %&#10101;</span>
-  <span class="text-accent-p2">&lt;/body&gt;</span>
-<span class="text-accent-p2">&lt;/html&gt;</span></pre>
-
-
-      </pre>
-     </div>
-     <div class="modal-footer">
-      <button type="button" class="btn btn-default" data-bs-dismiss="modal">Close</button>
+     <div id="collapse-example2" class="collapse show" role="tabpanel" aria-labelledby="heading-example2">
+      <div class="card-body">
+       <img src="/images/structure.jpg" class="img-fluid"
+        alt="Web Page Template Structure: Global Header (which includes Utility header, Setting Bar, Site Header, Navigation and Search), Main Content and Footer." />
+      </div>
      </div>
     </div>
+
+    <div id="pane-html2" class="card tab-pane fade" role="tabpanel" aria-labelledby="tab-html2">
+     <div class="card-header" id="heading-html2">
+      <h4 class="my-0 w-100">
+       <a class="collapsed" data-bs-toggle="collapse" href="#collapse-html2" data-parent="#tab-content"
+        aria-expanded="false" aria-controls="collapse-html2" title="HTML Source code tab header">
+        HTML Source code
+       </a>
+      </h4>
+     </div>
+     <div id="collapse-html2" class="collapse" role="tabpanel" aria-labelledby="heading-html2">
+      <div class="card-body">
+       <h3 class="h4 m-t-0">HTML</h3>
+       <pre class="copy-code"><span class="text-success">&lt;!doctype html&gt;</span>
+        <span class="text-accent-p2">&lt;html</span> <span class="text-info">lang=</span><span class="text-accent7">"en"</span><span class="text-accent-p2">&gt;</span>
+           <span class="text-accent-p2">&lt;head&gt;</span>
+              <span class="text-accent-p2">&lt;meta </span><span class="text-info">charset=</span><span class="text-accent7">"utf-8"</span><span class="text-accent-p2">&gt;</span>
+              <span class="text-accent-p2">&lt;title&gt;</span>State Template<span class="text-accent-p2">&lt;/title&gt;</span>
+              <span class="text-accent-p2">&lt;meta</span> <span class="text-info">name=</span><span class="text-accent7">"Author"</span> <span class="text-info">content=</span><span class="text-accent7">"State of California"</span><span class="text-accent-p2"> /&gt;</span>
+              <span class="text-accent-p2">&lt;meta</span> <span class="text-info">name=</span><span class="text-accent7">"Description"</span> <span class="text-info">content=</span><span class="text-accent7">"State of California"</span><span class="text-accent-p2"> /&gt;</span>
+              <span class="text-accent-p2">&lt;meta</span> <span class="text-info">name=</span><span class="text-accent7">"Keywords"</span> <span class="text-info">content=</span><span class="text-accent7">"California, government"</span><span class="text-accent-p2"> /&gt;</span>
+              <span class="text-success">&#10100;% include "/src/_includes/head-css-js.njk" %&#10101;</span>
+          <span class="text-accent-p2">&lt;/head&gt;</span>
+          <span class="text-accent-p2">&lt;body&gt;</span>
+             <span class="text-accent-p2">&lt;header</span> <span class="text-info">role=</span><span class="text-accent7">"banner"</span> <span class="text-info">id=</span><span class="text-accent7">"header"</span> <span class="text-info">class=</span><span class="text-accent7">"global-header fixed"</span><span class="text-accent-p2">&gt;</span>
+               <span class="text-accent-p2">&lt;div</span> <span class="text-info">id=</span><span class="text-accent7">"skip-to-content"</span><span class="text-accent-p2">&gt;&lt;a </span><span class="text-info">href=</span><span class="text-accent7">"#main-content"</span><span class="text-accent-p2">&gt;</span>Skip to Main Content<span class="text-accent-p2">&lt;/a&gt;&lt;/div&gt;</span>
+               <span class="text-success">&#10100;% include "/src/_includes/utility-header.njk" %&#10101;/span>
+               <span class="text-success">&#10100;% include "/src/_includes/settings-bar.njk" %&#10101;</span>
+               <span class="text-success">&#10100;% include "/src/_includes/site-header.njk" %&#10101;</span>
+               <span class="text-success">&#10100;% include "/src/_includes/mobile-controls.njk" %&#10101;</span>
+               <span class="text-accent-p2">&lt;div</span> <span class="text-info">class=</span><span class="text-accent7">"navigation-search full-width-nav container"</span><span class="text-accent-p2">&gt;</span>
+                 <span class="text-accent-p2">&lt;div</span> <span class="text-info">id=</span><span class="text-accent7">"head-search"</span> <span class="text-info">class=</span><span class="text-accent7">"search-container search-container featured-search"</span><span class="text-accent-p2">&gt;</span>
+                 <span class="text-success">&#10100;% include "/src/_includes/search.njk" %&#10101;</span>
+                 <span class="text-accent-p2">&lt;/div&gt;</span>
+                   <span class="text-success">&#10100;% include "/src/_includes/navigation.njk" %&#10101;</span>
+                <span class="text-accent-p2">&lt;/div&gt;</span>
+              <span class="text-accent-p2">&lt;/header&gt;</span>
+              <span class="text-accent-p2">&lt;div</span> <span class="text-info">id=</span><span class="text-accent7">"main-content"</span> <span class="text-info">class=</span><span class="text-accent7">"main-content"</span><span class="text-accent-p2">&gt;</span>
+                  <span class="text-accent-p2">&lt;div </span><span class="text-info">class=</span><span class="text-accent7">"container"</span><span class="text-accent-p2">&gt;</span>
+                      <span class="text-accent-p2">&lt;main </span><span class="text-info">class=</span><span class="text-accent7">"main-primary"</span><span class="text-accent-p2">&gt;</span>
+                         Page content
+                      <span class="text-accent-p2">&lt;/main&gt;</span>
+                 <span class="text-accent-p2">&lt;/div&gt;</span>
+             <span class="text-accent-p2">&lt;/div&gt;</span>
+             <span class="text-success">&#10100;% include "/src/_includes/global-footer.njk" %&#10101;</span>
+             <span class="text-success">&#10100;% include "/src/_includes/scripts.njk" %&#10101;</span>
+          <span class="text-accent-p2">&lt;/body&gt;</span>
+        <span class="text-accent-p2">&lt;/html&gt;</span>
+         </pre>
+      </div>
+     </div>
+    </div>
+
+
    </div>
-  </div><!-- / End Modal -->
+  </div>
+  <!--end tabs-->
+
 
 
   <h2>Strucutral components</h2>
@@ -551,7 +566,7 @@
 
   <div class="row">
    <div class="col-md-4 m-t-md">
-    <a href="/structure/structure-utility-header.html"
+    <a href="/structure/utility-header.html"
      class="no-underline d-block color-gray-dark brd-gray-light brd-solid-1 rounded-5 h-100 transition-0_3 shadow2-hover color-primary color-primary-hover"
      title="Utility Header component">
      <div class="p-a-md d-flex align-content-center">
@@ -559,15 +574,13 @@
      </div>
      <div class="p-a">
       <h3 class="h5 m-t-0">Utility header</h3>
-      <p class="font-size-16 color-black">Utility Header is the top most content bar in the template header area that
-       contains the
-       CA.gov logo, setting button and utility links
+      <p class="font-size-16 color-black">Places a standard header at the very top of your website.
       </p>
      </div>
     </a>
    </div>
    <div class="col-md-4 m-t-md">
-    <a href="/structure/structure-settings.html"
+    <a href="/structure/settings-bar.html"
      class="no-underline d-block color-gray-dark brd-gray-light brd-solid-1 rounded-5 h-100 transition-0_3 shadow2-hover color-primary color-primary-hover"
      title="Settings component">
      <div class="p-a-md d-flex align-content-center">
@@ -575,15 +588,13 @@
      </div>
      <div class="p-a">
       <h3 class="h5 m-t-0">Settings</h3>
-      <p class="font-size-16 color-black">Settings expandable pannel allows users to increase and decrease the font size
-       as well as
-       toggle to a high contrast viewing mode</p>
+      <p class="font-size-16 color-black">Gives visitors different visual options for viewing the website.</p>
      </div>
     </a>
    </div>
 
    <div class="col-md-4 m-t-md">
-    <a href="/structure/structure-site-header.html"
+    <a href="/structure/site-header.html"
      class="no-underline d-block color-gray-dark brd-gray-light brd-solid-1 rounded-5 h-100 transition-0_3 shadow2-hover color-primary color-primary-hover"
      title="Site Header component">
      <div class="p-a-md d-flex align-content-center">
@@ -591,7 +602,7 @@
      </div>
      <div class="p-a">
       <h3 class="h5 m-t-0">Site header</h3>
-      <p class="font-size-16 color-black">The Site Header contains the site name and logo
+      <p class="font-size-16 color-black">Provides space for your site’s name at the top of your website.
       </p>
      </div>
     </a>
@@ -602,8 +613,8 @@
 
 
   <div class="row">
-   <div class="col-md-4 m-t-md">
-    <a href="/structure/structure-mobile-controls.html"
+   <!-- <div class="col-md-4 m-t-md">
+    <a href="/structure/mobile-controls.html"
      class="no-underline d-block color-gray-dark brd-gray-light brd-solid-1 rounded-5 h-100 transition-0_3 shadow2-hover color-primary color-primary-hover"
      title="Mobile Controls component">
      <div class="p-a-md d-flex align-content-center">
@@ -618,9 +629,9 @@
       </p>
      </div>
     </a>
-   </div>
+   </div> -->
    <div class="col-md-4 m-t-md">
-    <a href="/structure/structure-search.html"
+    <a href="/structure/search.html"
      class="no-underline d-block color-gray-dark brd-gray-light brd-solid-1 rounded-5 h-100 transition-0_3 shadow2-hover color-primary color-primary-hover"
      title="Search component">
      <div class="p-a-md d-flex align-content-center">
@@ -628,9 +639,7 @@
      </div>
      <div class="p-a">
       <h3 class="h5 m-t-0">Search</h3>
-      <p class="font-size-16 color-black">Optional google search bar that usually appears at the top of all pages in the
-       Site Header
-       section</p>
+      <p class="font-size-16 color-black">Allows visitors to search for specific content using keywords or phrases.</p>
      </div>
     </a>
    </div>
@@ -644,9 +653,22 @@
      </div>
      <div class="p-a">
       <h3 class="h5 m-t-0">Site navigation</h3>
-      <p class="font-size-16 color-black">Site Navigation contains links and dropdown menus at the top of every page
-       that let people
-       move around the site
+      <p class="font-size-16 color-black">Appears at the top of every page on your website and links to pages in the
+       site.
+      </p>
+     </div>
+    </a>
+   </div>
+   <div class="col-md-4 m-t-md">
+    <a href="/structure/footer.html"
+     class="no-underline d-block color-gray-dark brd-gray-light brd-solid-1 rounded-5 h-100 transition-0_3 shadow2-hover color-primary color-primary-hover"
+     title="Global Footer component">
+     <div class="p-a-md d-flex align-content-center">
+      <img src="/images/components/icon-footer.jpg" alt="Global Footer component illustration" class="img-fluid">
+     </div>
+     <div class="p-a">
+      <h3 class="h5 m-t-0">Footer</h3>
+      <p class="font-size-16 color-black">Places a standard footer at the very bottom of your website.
       </p>
      </div>
     </a>
@@ -656,22 +678,7 @@
 
 
   <div class="row">
-   <div class="col-md-4 m-t-md">
-    <a href="/structure/structure-global-footer.html"
-     class="no-underline d-block color-gray-dark brd-gray-light brd-solid-1 rounded-5 h-100 transition-0_3 shadow2-hover color-primary color-primary-hover"
-     title="Global Footer component">
-     <div class="p-a-md d-flex align-content-center">
-      <img src="/images/components/icon-footer.jpg" alt="Global Footer component illustration" class="img-fluid">
-     </div>
-     <div class="p-a">
-      <h3 class="h5 m-t-0">Global footer</h3>
-      <p class="font-size-16 color-black">The Global Footer contains customizable links and social media icons at the
-       bottom of all
-       pages
-      </p>
-     </div>
-    </a>
-   </div>
+
 
 
 
