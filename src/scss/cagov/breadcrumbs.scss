@@ -3,9 +3,8 @@
 ----------------------------------------- */
 
 .breadcrumb {
- padding-left: 0;
- background-color: $gray-50;
  padding: 0.5em 1rem;
+ padding-left: 0;
  margin-bottom: 2rem;
  // @include font-size(1);
  font-size: $font-size-small;
@@ -14,19 +13,29 @@
  }
 
  li {
-  &:before {
-   content: "/";
+  position: relative;
+  padding-left: .75rem;
+  padding-right: .75rem;
+  &:first-child {
+   padding-left: 0;
+  }
+  &:after {
+   content: "";
    color: $gray-300;
    border: none;
    margin: 0 calc($grid-gutter-width / 2);
    font-size: 1.125rem;
    font-weight: 200;
-   position: relative;
-   top: 1px;
+   position: absolute;
+   border-left: 1px solid $gray-900;
+   height: 70%;
+   top: 5px;
+   right:-12px;
+   transform: rotate(15deg);
   }
 
-  &:first-child {
-   &:before {
+  &:last-child {
+   &:after {
     content: "";
     border-left: none; // Removes the border from the first item in the breadcrumb
     margin: 0 0;
