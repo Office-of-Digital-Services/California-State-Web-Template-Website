@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Profile Banners</title> 
+  <title>Banner</title> 
   <meta charset="utf-8">
   <meta name="Author" content="State of California" />
   <meta name="Description" content="State of California" />
@@ -245,7 +245,7 @@
    </li>
    <li class="nav-item">
        
-       <a class="first-level-link active" href="/patterns.html" >Patterns</a>
+       <a class="first-level-link" href="/patterns.html" >Patterns</a>
         
    </li>
  </ul>
@@ -328,30 +328,30 @@
      
    
      
-   
-     
-   
-     
-   
-     
-   
-     
-   
-     
-   
-     
-   
-     
-   
-     
       
       
      <li><a href="/patterns.html" title="Patterns landing page">Patterns</a></li>
       
         
        
-      <li>Profile banners</li>
+      <li>Banner</li>
        
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
    
      
    
@@ -457,9 +457,29 @@
   <ul>
   				
       
-        <li><a href="/patterns/banner.html" >Banner</a>
+        <li><a href="/patterns/banner.html"  aria-current="page"  class="active" >Banner</a>
          
-         
+          
+           <ul>
+            
+            <li>
+             <a href="#Full-span-banner" data-hash="" class="tab-link">Full span banner</a>
+            </li>
+            
+            <li>
+             <a href="#Feature-banner" data-hash="" class="tab-link">Feature banner</a>
+            </li>
+            
+            <li>
+             <a href="#Usage" data-hash="" class="tab-link">Usage</a>
+            </li>
+            
+            <li>
+             <a href="#Accessibility" data-hash="" class="tab-link">Accessibility</a>
+            </li>
+            
+           </ul>
+           
         </li>
        
       
@@ -501,281 +521,241 @@
 				<div class="col-lg-9 p-b-lg body-content">
 					
 
+<h1 class="mt-lg-0">Banner</h1>
+<p class="lead">The banner is the first thing a visitor sees on the homepage of a website. It often spans the full width
+ of the screen or the main content area.</p>
+<p>It usually includes:</p>
+<ul>
+ <li>Title</li>
+ <li>Brief description</li>
+ <li>Image or visual graphic</li>
+ <li>Optional image caption</li>
+ <li>Button</li>
+</ul>
 
-<h1 class="mt-lg-0">Profile Banners</h1>
 
-<h2>Example:</h2>
-<!-- Figure -->
-<figure class="bg-greylight-radialgradient p-a border-0">
-	<div class="media d-flex">
-		<div class="d-flex m-r-md">
-			<!-- Figure Image -->
-			<img class="rounded-circle width-80 height-80" src="../images/125x125.jpg" alt="Image Description">
-			<!-- Figure Image -->
-		</div>
-		<div class="media-body">
-			<!-- Figure Info -->
-			<h3 class="h4 m-0">Official Name</h3>
-			<div class="d-block">
-				<span class="small">Government Entity Title</span>
+<p>A banner displays an action you want people to take or highlights the most important information on a page. </p>
 
-			</div>
-			<hr class=" m-t-sm m-b-0" />
-			<a href="" class="font-size-16" aria-label="Link to Official's Website">Website</a>
-			<!-- End Figure Info -->
-		</div>
-	</div>
+<h2 id="Full-span-banner">Full span banner</h2>
 
-</figure>
-<!-- End Figure -->
-<!-- Figure -->
-<figure class="rounded-4 p-a card m-b-md">
-	<div class="d-flex">
-		<!-- Figure Image -->
-		<img class="width-100 height-100 m-r" src="../images/125x125.jpg" alt="Image Description">
-		<!-- Figure Image -->
-		<!-- Figure Info -->
-		<div class="d-block">
-			<div class="m-b-sm">
-				<h3 class="h4 m-0">Official Name</h3>
-				<em class="d-block small">Government Entity Title</em>
-			</div>
-			<em class="d-block font-size-16">Website</em>
-			<em class="d-block font-size-15">Phone Number</em>
-		</div>
-		<!-- End Figure Info -->
-	</div>
-</figure>
-<!-- End Figure -->
-
-<h3>Source code:</h3>
-
-<div class="tab-group">
- <ul id="sourceCode" class="nav nav-tabs" role="tablist">
-  <li class="active"><a href="#html" role="tab" data-bs-toggle="tab" aria-label="HTML Markup for Profile Banner"
-    class="active">HTML Markup</a></li>
-  <li><a href="#microdata" role="tab" data-bs-toggle="tab" aria-label="Microdata for Profile Banner">Microdata</a>
+<!--TABS-->
+<div class="tab-group responsive">
+ <ul id="tabs1" class="nav nav-tabs" role="tablist">
+  <li class="nav-item">
+   <a id="tab-example1" href="#pane-example1" class="nav-link active" data-bs-toggle="tab" role="tab">Example</a>
   </li>
+  <li class="nav-item">
+   <a id="tab-html1" href="#pane-html1" class="nav-link" data-bs-toggle="tab" role="tab">Source code</a>
+  </li>
+
  </ul>
- <!-- Tab panes -->
- <div class="tab-content responsive">
-  <div class="tab-pane active" id="html">
-   <pre><code class="overflow-auto"><!-- Figure -->
-<figure class="bg-greylight-radialgradient p-a border-0">
-	<div class="media d-flex">
-		<div class="d-flex m-r-md">
-			<!-- Figure Image -->
-			<img class="rounded-circle width-80 height-80" src="../images/125x125.jpg" alt="Image Description">
-			<!-- Figure Image -->
-		</div>
-		<div class="media-body">
-			<!-- Figure Info -->
-			<h3 class="h4 m-0">Official Name</h3>
-			<div class="d-block">
-				<span class="small">Government Entity Title</span>
-
-			</div>
-			<hr class=" m-t-sm m-b-0" />
-			<a href="" class="font-size-16" aria-label="Link to Official's Website">Website</a>
-			<!-- End Figure Info -->
-		</div>
-	</div>
-
-</figure>
-<!-- End Figure -->
-<!-- Figure -->
-<figure class="rounded-4 p-a card m-b-md">
-	<div class="d-flex">
-		<!-- Figure Image -->
-		<img class="width-100 height-100 m-r" src="../images/125x125.jpg" alt="Image Description">
-		<!-- Figure Image -->
-		<!-- Figure Info -->
-		<div class="d-block">
-			<div class="m-b-sm">
-				<h3 class="h4 m-0">Official Name</h3>
-				<em class="d-block small">Government Entity Title</em>
-			</div>
-			<em class="d-block font-size-16">Website</em>
-			<em class="d-block font-size-15">Phone Number</em>
-		</div>
-		<!-- End Figure Info -->
-	</div>
-</figure>
-<!-- End Figure --></code></pre>
-  </div>
-  <div class="tab-pane" id="microdata">
-   <pre><code class="overflow-auto"><!-- Figure -->
-<figure class="bg-greylight-radialgradient p-a border-0" itemscope itemtype="http://schema.org/Person">
-    <div class="media d-flex">
-        <div class="d-flex m-r-md">
-            <!-- Figure Image -->
-            <img class="rounded-circle width-80 height-80" src="../images/125x125.jpg" alt="Image Description"
-                itemprop="photo">
-            <!-- Figure Image -->
-        </div>
-        <div class="media-body">
-            <!-- Figure Info -->
-            <h3 class="m-0 h4" itemprop="name">Official Name</h3>
-            <div class="d-block">
-                <span class="small" itemprop="jobTitle">Government Entity Title</span>
-
-            </div>
-            <hr class="m-t-sm m-b-0" />
-            <a href="" class="font-size-16" itemprop="url">Website</a>
-            <!-- End Figure Info -->
-        </div>
-    </div>
-</figure>
-<!-- End Figure -->
-<!-- Figure -->
-<figure class="rounded-4 p-a card m-b-md" itemscope itemtype="http://schema.org/Person">
-    <div class="d-flex">
-        <!-- Figure Image -->
-        <img class="width-100 height-100 m-r" src="../images/125x125.jpg" alt="Image Description" itemprop="photo">
-        <!-- Figure Image -->
-        <!-- Figure Info -->
-        <div class="d-block">
-            <div class="m-b-sm">
-                <h3 class="m-0 h4" itemprop="name">Official Name</h3>
-                <em class="d-block" itemprop="jobTitle">Government Entity Title</em>
-            </div>
-            <em class="d-block font-size-16" itemprop="url"><a href="#">Website</a></em>
-            <em class="d-block font-size-15" itemprop="telephone">Phone Number</em>
-        </div>
-        <!-- End Figure Info -->
-    </div>
-</figure>
-<!-- End Figure --></code></pre>
-  </div>
- </div>
-</div>
-
-<hr />
 
 
-<div class="row">
- <div class="col-md-6">
-  <h2>Vertical Layout:</h2>
+ <div id="tab-content" class="tab-content">
+  <!--Examples-->
+  <div id="pane-example1" class="card tab-pane fade show active" role="tabpanel" aria-labelledby="tab-example1">
+   <div class="card-header" id="heading-example1">
+    <a data-bs-toggle="collapse" href="#collapse-example1" data-parent="#tab-content" aria-expanded="true"
+     aria-controls="collapse-example1" data-hash="#pane-example1" title="Example tab header">
+     Example
+    </a>
+   </div>
+   <div id="collapse-example1" class="collapse show" role="tabpanel" aria-labelledby="heading-example1">
+    <div class="card-body p-b-lg">
+
+     <div class="header-primary-banner" style="background-image: url('/images/main-banner10.jpg');">
+ <div class="container">
   <div class="row">
-    <div class="col-md-6 m-b-md">
-        <figure class="bg-greylight-radialgradient p-a border-0 text-center">
-            <!-- Figure Image -->
-            <img class="rounded-circle width-100 height-100" src="../images/125x125.jpg" alt="Image Description">
-            <!-- Figure Image -->
-            <!-- Figure Info -->
-            <h3 class="m-b-0 m-t h4">Official Name</h3>
-            <span class="small">Government Entity Title</span>
-            <hr class="m-t-sm m-b-0" />
-            <a href="#" class="font-size-16">Website</a>
-            <!-- End Figure Info -->
-        </figure>
+   <div class="col-sm my-auto text-center color-white">
+    <div class="m-a-lg p-t-lg">
+     <h2 class="text-3rem m-t-0">Title</h2>
+     <p class="text-1-5rem line-height-1-5em">Highlight an action you want people to take or important information on
+      the
+      homepage.</p>
+     <div class="btn-row p-b">
+      <a href="#" class="btn btn-lg btn-highlight m-t">Short link</a>
+     </div>
     </div>
 
-    <div class="col-md-6 m-b-md">
-        <figure class="rounded-4 p-a text-center card p-t-md">
-            <!-- Figure Image -->
-            <img class="width-100 height-100" src="../images/125x125.jpg" alt="Image Description">
-            <!-- Figure Image -->
-            <!-- Figure Info -->
-
-            <div class="m-b-sm">
-                <h3 class="m-b-0 m-t h4">Official Name</h3>
-                <em class="d-block small">Government Entity Title</em>
-            </div>
-            <em class="d-block font-size-16">Website</em>
-            <em class="d-block font-size-15">Phone Number</em>
-            <!-- End Figure Info -->
-        </figure>
-    </div>
-</div>
- </div>
- <div class="col-md-6">
-  <h3>Source code:</h3>
-
-  <div class="tab-group">
-   <ul id="sourceCode2" class="nav nav-tabs" role="tablist">
-    <li class="active"><a href="#html2" class="active" role="tab" data-bs-toggle="tab"
-      aria-label="HTML Markup for Profile Banner Vertical Layout">HTML Markup</a></li>
-    <li><a href="#microdata2" role="tab" data-bs-toggle="tab"
-      aria-label="Microdata for Profile Banner Vertical Layout">Microdata</a></li>
-   </ul>
-   <!-- Tab panes -->
-   <div class="tab-content responsive">
-    <div class="tab-pane active" id="html2">
-     <pre><code class="overflow-auto"><div class="row">
-    <div class="col-md-6 m-b-md">
-        <figure class="bg-greylight-radialgradient p-a border-0 text-center">
-            <!-- Figure Image -->
-            <img class="rounded-circle width-100 height-100" src="../images/125x125.jpg" alt="Image Description">
-            <!-- Figure Image -->
-            <!-- Figure Info -->
-            <h3 class="m-b-0 m-t h4">Official Name</h3>
-            <span class="small">Government Entity Title</span>
-            <hr class="m-t-sm m-b-0" />
-            <a href="#" class="font-size-16">Website</a>
-            <!-- End Figure Info -->
-        </figure>
-    </div>
-
-    <div class="col-md-6 m-b-md">
-        <figure class="rounded-4 p-a text-center card p-t-md">
-            <!-- Figure Image -->
-            <img class="width-100 height-100" src="../images/125x125.jpg" alt="Image Description">
-            <!-- Figure Image -->
-            <!-- Figure Info -->
-
-            <div class="m-b-sm">
-                <h3 class="m-b-0 m-t h4">Official Name</h3>
-                <em class="d-block small">Government Entity Title</em>
-            </div>
-            <em class="d-block font-size-16">Website</em>
-            <em class="d-block font-size-15">Phone Number</em>
-            <!-- End Figure Info -->
-        </figure>
-    </div>
-</div></code></pre>
-    </div>
-    <div class="tab-pane" id="microdata2">
-     <pre><code class="overflow-auto"><div class="row">
-    <div class="col-md-6 m-b-md">
-        <figure class="bg-greylight-radialgradient p-a border-0 text-center" itemscope
-            itemtype="http://schema.org/Person">
-            <!-- Figure Image -->
-            <img class="rounded-circle width-100 height-100" src="../images/125x125.jpg" alt="Image Description"
-                itemprop="photo">
-            <!-- Figure Image -->
-            <!-- Figure Info -->
-            <h3 class="m-b-0 m-t h4" itemprop="name">Official Name</h3>
-            <span class="small" itemprop="jobTitle">Government Entity Title</span>
-            <hr class="m-t-sm m-b-0" />
-            <a href="#" class="font-size-16" itemprop="url">Website</a>
-            <!-- End Figure Info -->
-        </figure>
-    </div>
-
-    <div class="col-md-6 m-b-md">
-        <figure class="rounded-4 p-a text-center card p-t-md" itemscope itemtype="http://schema.org/Person">
-            <!-- Figure Image -->
-            <img class="width-100 height-100" src="../images/125x125.jpg" alt="Image Description" itemprop="photo">
-            <!-- Figure Image -->
-            <!-- Figure Info -->
-
-            <div class="m-b-sm">
-                <h3 class="m-b-0 m-t h4" itemprop="name">Official Name</h3>
-                <em class="d-block" itemprop="jobTitle">Government Entity Title</em>
-            </div>
-            <em class="d-block font-size-16" itemprop="url"><a href="#">Website</a></em>
-            <em class="d-block font-size-15" itemprop="telephone">Phone Number</em>
-            <!-- End Figure Info -->
-        </figure>
-    </div>
-</div></code></pre>
-    </div>
    </div>
   </div>
  </div>
-
 </div>
+
+    </div>
+   </div>
+  </div>
+
+
+
+  <!--HTML-->
+  <div id="pane-html1" class="card tab-pane fade" role="tabpanel" aria-labelledby="tab-html1">
+   <div class="card-header" id="heading-html1">
+    <a class="collapsed" data-bs-toggle="collapse" href="#collapse-html1" data-parent="#tab-content"
+     aria-expanded="false" aria-controls="collapse-html1" data-hash="#pane-html1" title="HTML Source code tab header">
+     Source code
+    </a>
+   </div>
+   <div id="collapse-html1" class="collapse" role="tabpanel" aria-labelledby="heading-html1">
+    <div class="card-body">
+     <pre style="max-height: 300px;"><code><div class="header-primary-banner" style="background-image: url('/images/main-banner10.jpg');">
+ <div class="container">
+  <div class="row">
+   <div class="col-sm my-auto text-center color-white">
+    <div class="m-a-lg p-t-lg">
+     <h2 class="text-3rem m-t-0">Title</h2>
+     <p class="text-1-5rem line-height-1-5em">Highlight an action you want people to take or important information on
+      the
+      homepage.</p>
+     <div class="btn-row p-b">
+      <a href="#" class="btn btn-lg btn-highlight m-t">Short link</a>
+     </div>
+    </div>
+
+   </div>
+  </div>
+ </div>
+</div></code>
+    </pre>
+
+    </div>
+   </div>
+  </div>
+
+
+ </div>
+</div>
+<!--END TABS-->
+
+
+
+
+
+<h2 id="Feature-banner">Feature banner</h2>
+<p>The feature banner spans the full width of the content area on desktop and full width of the screen on mobile. On
+ mobile, the feature card will stack in this order:</p>
+<ul>
+ <li>Image</li>
+ <li>Image caption</li>
+ <li>Title</li>
+ <li>Description</li>
+ <li>Button</li>
+</ul>
+
+<div class="tab-group responsive">
+ <ul id="tabs1" class="nav nav-tabs" role="tablist">
+  <li class="nav-item">
+   <a id="tab-example3" href="#pane-example3" class="nav-link active" data-bs-toggle="tab" role="tab">Example</a>
+  </li>
+  <li class="nav-item">
+   <a id="tab-html3" href="#pane-html3" class="nav-link" data-bs-toggle="tab" role="tab">Source code</a>
+  </li>
+
+ </ul>
+
+
+ <div id="tab-content" class="tab-content">
+  <!--Examples-->
+  <div id="pane-example3" class="card tab-pane fade show active" role="tabpanel" aria-labelledby="tab-example3">
+   <div class="card-header" id="heading-example3">
+    <a data-bs-toggle="collapse" href="#collapse-example3" data-parent="#tab-content" aria-expanded="true"
+     aria-controls="collapse-example3" data-hash="#pane-example3" title="Example tab header">
+     Example
+    </a>
+   </div>
+   <div id="collapse-example3" class="collapse show" role="tabpanel" aria-labelledby="heading-example3">
+    <div class="card-body p-b">
+
+     <div class="container">
+ <div class="row bg-gray-100">
+  <div class="col-md-6 col-lg-4 p-a-md order-2 order-md-1">
+   <h2 class="h3 m-t-0">Title</h2>
+   <p>Highlight an action you want people to take or important information on the homepage.
+   </p>
+   <a href="#" class="btn btn-primary m-y-md">Short link <span class="sr-only">(feature)</span></a>
+  </div>
+  <div class="col-lg-8 col-md-6 p-0 text-right order-1 order-md-2 d-flex justify-content-center">
+   <a href="#" class="feature-img" style="background: url('/images/ocean.jpg')" aria-label="Feature card example image">
+   </a>
+  </div>
+ </div>
+</div>
+
+
+    </div>
+   </div>
+  </div>
+
+
+
+  <!--HTML-->
+  <div id="pane-html3" class="card tab-pane fade" role="tabpanel" aria-labelledby="tab-html3">
+   <div class="card-header" id="heading-html3">
+    <a class="collapsed" data-bs-toggle="collapse" href="#collapse-html3" data-parent="#tab-content"
+     aria-expanded="false" aria-controls="collapse-html3" data-hash="#pane-html3" title="HTML Source code tab header">
+     Source code
+    </a>
+   </div>
+   <div id="collapse-html3" class="collapse" role="tabpanel" aria-labelledby="heading-html3">
+    <div class="card-body">
+     <pre style="max-height: 300px;"><code><div class="container">
+ <div class="row bg-gray-100">
+  <div class="col-md-6 col-lg-4 p-a-md order-2 order-md-1">
+   <h2 class="h3 m-t-0">Title</h2>
+   <p>Highlight an action you want people to take or important information on the homepage.
+   </p>
+   <a href="#" class="btn btn-primary m-y-md">Short link <span class="sr-only">(feature)</span></a>
+  </div>
+  <div class="col-lg-8 col-md-6 p-0 text-right order-1 order-md-2 d-flex justify-content-center">
+   <a href="#" class="feature-img" style="background: url('/images/ocean.jpg')" aria-label="Feature card example image">
+   </a>
+  </div>
+ </div>
+</div></code>
+   </pre>
+
+    </div>
+   </div>
+  </div>
+
+
+ </div>
+</div>
+<!--END TABS-->
+
+<h2 id="Usage">Usage</h2>
+
+<h3 class="m-t">When and how to use it</h3>
+<p>Use the hero banner to catch visitors' attention and highlight the top task or need.</p>
+<p>Place it at the top of the homepage so it appears below the statewide header, site header, and site navigation. Learn
+ more in our guidance on <a href="/structure.html">webpage structure</a>.</p>
+<p>Include a concise title, description, image, and at least one button. Choose an image that’s in harmony with your
+ brand identity, mission, and tone. The minimum image size is 776 x 517 pixels. For best results, use images with this
+ aspect ratio.
+</p>
+
+
+<h3>How not to use it</h3>
+
+<p>Do not use more than one hero banner on your homepage.</p>
+<p>Do not use more than one primary call-to-action within your hero banner.</p>
+<p>Do not use the hero banner to make an image carousel. Carousels frustrate people more than they help them and do not
+ meet accessibility standards.</p>
+<p>Do not put a lot of content in your hero banner. Too much content is hard to read. It will also lengthen the hero
+ banner and cause awkward whitespace.</p>
+<p>Do not use busy images or graphics behind content.</p>
+
+<h2 id="Accessibility">Accessibility</h2>
+<h3 class="m-t">Standard accessibility review</h3>
+<p>Each time a new component version is published:</p>
+<ul>
+ <li>Test with the <a href="https://www.deque.com/axe/" target="_blank">axe
+   accessibility tool</a></li>
+ <li>Review with the <a href="https://www.apple.com/voiceover/info/guide/_1121.html" target="_blank">VoiceOver</a> or <a
+   href="https://www.nvaccess.org/download/" target="_blank">NVDA</a> screen reader</li>
+ <li>Ensure all actionable elements are accessible by keyboard command and tab in a logical order</li>
+ <li>Check the component layout on a variety of screen sizes</li>
+</ul>
 				</div>
 			</div>
 		</div>
