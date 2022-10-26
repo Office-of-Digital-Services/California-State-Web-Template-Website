@@ -13328,7 +13328,7 @@ body {
   font-family: "Public Sans", sans-serif;
   font-size: 1.125rem;
   line-height: 1.5;
-  color: #111111;
+  color: #3b3a48;
   overflow-y: scroll;
 }
 @media (min-width: 576px) {
@@ -14300,7 +14300,7 @@ svg ~ .external-link-icon,
   width: 100%;
   height: auto;
   overflow: hidden;
-  background-image: url("/images/main-banner9.jpg");
+  background-image: url("/images/main-banner.svg");
   background-position: center;
   background-size: cover;
   display: block;
@@ -14313,11 +14313,22 @@ svg ~ .external-link-icon,
 
 .header-primary-banner {
   overflow: hidden;
+  background-color: #395567;
   background-position: center !important;
   background-size: cover !important;
   display: block;
   position: relative;
-  height: 400px;
+  height: 500px;
+}
+.header-primary-banner p {
+  font-size: 2.9375rem;
+  color: #ffffff;
+  font-weight: 200;
+  line-height: 3.675rem;
+  margin-bottom: 2rem;
+}
+.header-primary-banner p span {
+  font-weight: 600;
 }
 
 /* -----------------------------------------
@@ -15045,7 +15056,7 @@ h2, .h2 {
 }
 .search-container .search-locator,
 .search-container.featured-search.active .search-locator {
-  color: #111111;
+  color: #3b3a48;
   float: left;
   text-align: center;
   width: 100px;
@@ -18889,9 +18900,8 @@ cagov-accordion.sidenav details .accordion-body .side-subnav li:last-child {
    BREADCRUMBS -  /source/scss/cagov/breadcrumbs.scss
 ----------------------------------------- */
 .breadcrumb {
-  padding-left: 0;
-  background-color: #fafafa;
   padding: 0.5em 1rem;
+  padding-left: 0;
   margin-bottom: 2rem;
   font-size: 0.85rem;
 }
@@ -18900,17 +18910,29 @@ cagov-accordion.sidenav details .accordion-body .side-subnav li:last-child {
     font-size: calc(0.85rem + 0.1vw);
   }
 }
-.breadcrumb li:before {
-  content: "/";
+.breadcrumb li {
+  position: relative;
+  padding-left: 0.75rem;
+  padding-right: 0.75rem;
+}
+.breadcrumb li:first-child {
+  padding-left: 0;
+}
+.breadcrumb li:after {
+  content: "";
   color: #bcbbc1;
   border: none;
   margin: 0 0.75rem;
   font-size: 1.125rem;
   font-weight: 200;
-  position: relative;
-  top: 1px;
+  position: absolute;
+  border-left: 1px solid #3b3a48;
+  height: 70%;
+  top: 5px;
+  right: -12px;
+  transform: rotate(15deg);
 }
-.breadcrumb li:first-child:before {
+.breadcrumb li:last-child:after {
   content: "";
   border-left: none;
   margin: 0 0;
@@ -18951,7 +18973,7 @@ cagov-accordion.sidenav details .accordion-body .side-subnav li:last-child {
   vertical-align: baseline;
   border-radius: 0.25em;
   background-color: #ccc;
-  color: #111111;
+  color: #3b3a48;
   margin-left: 5px;
   margin-right: 5px;
 }
@@ -18971,7 +18993,7 @@ a .keywords ul li:hover, a .keywords ul li:focus, a .keywords ol li:hover, a .ke
   background-color: #b3b3b3;
 }
 .keywords ul a, .keywords ol a {
-  color: #111111;
+  color: #3b3a48;
 }
 
 /* -----------------------------------------
@@ -21871,7 +21893,7 @@ blockquote.blockquote-reverse .small:after {
 }
 
 .btn-highlight {
-  color: #111111;
+  color: #3b3a48;
   background-color: #FDB81E;
   border-color: #FDB81E;
   font-weight: 600;
@@ -21895,7 +21917,7 @@ blockquote.blockquote-reverse .small:after {
 }
 .btn-highlight .badge {
   color: #FDB81E;
-  background-color: #111111;
+  background-color: #3b3a48;
 }
 
 .btn-outline-highlight {
@@ -22361,7 +22383,7 @@ blockquote.blockquote-reverse .small:after {
   flex-wrap: wrap;
 }
 .site-settings .btn-group {
-  margin-right: 0.75rem;
+  margin-right: 12px;
   margin-top: 0.35rem;
   margin-bottom: 0.35rem;
 }
@@ -22369,10 +22391,10 @@ blockquote.blockquote-reverse .small:after {
   position: relative;
   right: -15px;
   right: -10px;
-  color: #000;
+  color: #3b3a48;
   text-shadow: none;
   opacity: 1;
-  font-size: 2rem;
+  font-size: 1.75rem;
   border: none;
   background: none;
   float: right;
@@ -22383,7 +22405,7 @@ blockquote.blockquote-reverse .small:after {
   }
 }
 .site-settings button.close:hover, .site-settings button.close:focus {
-  color: #5e5e6a !important;
+  color: #000 !important;
 }
 
 /* -----------------------------------------
@@ -22919,7 +22941,7 @@ html:not(.ie8) .stats-highlight img {
 }
 
 .bg-highlight a {
-  color: #111111;
+  color: #3b3a48;
   text-decoration: underline;
 }
 .bg-highlight .btn {
@@ -23397,6 +23419,7 @@ a.sidenav.active:before {
   border: 1px solid #d4d4d7;
   border-radius: 5px;
   font-size: 1.4rem;
+  font-weight: 700;
   padding: 1rem;
   padding-right: 2.25rem;
   position: relative;
@@ -23470,7 +23493,7 @@ a.sidenav.active:before {
 }
 
 .underline-text-color {
-  background-image: linear-gradient(to right, #111111 50%, transparent 50%);
+  background-image: linear-gradient(to right, #3b3a48 50%, transparent 50%);
   background-repeat: repeat-x;
   background-size: 2px 1px;
   background-position: center bottom 4%;
@@ -23480,7 +23503,7 @@ a.sidenav.active:before {
 
 .underline-hover-text-color:hover,
 .underline-hover-text-color:focus {
-  background-image: linear-gradient(to right, #111111 50%, transparent 50%);
+  background-image: linear-gradient(to right, #3b3a48 50%, transparent 50%);
   background-repeat: repeat-x;
   background-size: 2px 1px;
   background-position: center bottom 4%;
@@ -23815,7 +23838,7 @@ a.sidenav.active:before {
 
 .color-gray-dark,
 .color-grey-dark {
-  color: #111111;
+  color: #3b3a48;
 }
 
 .color-gray,
@@ -24394,43 +24417,43 @@ a.sidenav.active:before {
   Font Sizes
 ------------------------------------*/
 .text-huge {
-  font-size: 6rem;
+  font-size: 6rem !important;
 }
 
 .text-5rem {
-  font-size: 5rem;
+  font-size: 5rem !important;
 }
 
 .text-4rem {
-  font-size: 4rem;
+  font-size: 4rem !important;
 }
 
 .text-3-5rem {
-  font-size: 3.5rem;
+  font-size: 3.5rem !important;
 }
 
 .text-3rem {
-  font-size: 3rem;
+  font-size: 3rem !important;
 }
 
 .text-2-5rem {
-  font-size: 2.5rem;
+  font-size: 2.5rem !important;
 }
 
 .text-2rem {
-  font-size: 2rem;
+  font-size: 2rem !important;
 }
 
 .text-1-5rem {
-  font-size: 1.5rem;
+  font-size: 1.5rem !important;
 }
 
 .text-1rem {
-  font-size: 1rem;
+  font-size: 1rem !important;
 }
 
 .font-size-sm {
-  font-size: 0.75rem;
+  font-size: 0.75rem !important;
 }
 
 .font-size-70x {
@@ -24563,35 +24586,35 @@ a.sidenav.active:before {
   Rounded borders
 ------------------------------------*/
 .rounded-20 {
-  border-radius: 20px;
+  border-radius: 20px !important;
 }
 
 .rounded-15 {
-  border-radius: 15px;
+  border-radius: 15px !important;
 }
 
 .rounded-10 {
-  border-radius: 10px;
+  border-radius: 10px !important;
 }
 
 .rounded-5 {
-  border-radius: 5px;
+  border-radius: 5px !important;
 }
 
 .rounded-4 {
-  border-radius: 4px;
+  border-radius: 4px !important;
 }
 
 .rounded-3 {
-  border-radius: 3px;
+  border-radius: 3px !important;
 }
 
 .rounded-2 {
-  border-radius: 2px;
+  border-radius: 2px !important;
 }
 
 .rounded-50 {
-  border-radius: 50px;
+  border-radius: 50px !important;
 }
 
 .rounded-0 {
@@ -24599,7 +24622,7 @@ a.sidenav.active:before {
 }
 
 .rounded-50x {
-  border-radius: 50%;
+  border-radius: 50% !important;
 }
 
 /*------------------------------------

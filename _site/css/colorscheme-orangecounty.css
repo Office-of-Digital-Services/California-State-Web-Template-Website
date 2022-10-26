@@ -2,8 +2,8 @@
    ORANGE COUNTY
 ----------------------------------------- */
 /* -----------------------------------------
-   COLOR SCHEME GLOBALS
-   /source/scss/colorscheme/global.scss
+   COLOR THEME GLOBALS
+   /source/scss/colortheme/cs-global.scss
 ----------------------------------------- */
 /* ----- THEME COLORS -----  */
 .color-highlight,
@@ -41,11 +41,23 @@
   color: #fbf0e7 !important;
 }
 
+.color-s1-hover:hover, .color-s1-hover:focus {
+  color: #fbf0e7 !important;
+}
+
 .color-s2 {
   color: #f6e7cc !important;
 }
 
+.color-s2-hover:hover, .color-s2-hover:focus {
+  color: #f6e7cc !important;
+}
+
 .color-s3 {
+  color: #f7d7a6 !important;
+}
+
+.color-s3-hover:hover, .color-s3-hover:focus {
   color: #f7d7a6 !important;
 }
 
@@ -80,16 +92,28 @@
   background-color: #302517 !important;
 }
 
-.bg-s1 {
+.bg-s1, .bg-s1-hover:hover, .bg-s1-hover:focus {
   background-color: #fbf0e7 !important;
 }
 
-.bg-s2 {
+.bg-s1-hover-color, .bg-s1-hover-color:hover, .bg-s1-hover-color:focus {
+  background-color: #f6ddc8 !important;
+}
+
+.bg-s2, .bg-s2-hover:hover, .bg-s2-hover:focus {
   background-color: #f6e7cc !important;
 }
 
-.bg-s3 {
+.bg-s2-hover-color, .bg-s2-hover-color:hover, .bg-s2-hover-color:focus {
+  background-color: #f1d9ae !important;
+}
+
+.bg-s3, .bg-s3-hover:hover, .bg-s3-hover:focus {
   background-color: #f7d7a6 !important;
+}
+
+.bg-s3-hover-color, .bg-s3-hover-color:hover, .bg-s3-hover-color:focus {
+  background-color: #f4c885 !important;
 }
 
 .bg-primary-light {
@@ -277,7 +301,7 @@
 
 /* -----------------------------------------
    LAYOUT
-   /source/scss/colorscheme/layout.scss
+   /source/scss/colortheme/cs-layout.scss
 ----------------------------------------- */
 /* Primary page with/without two-column */
 .primary {
@@ -292,7 +316,7 @@
 
 /* -----------------------------------------
    GLOBAL HEADER
-   /source/scss/colorscheme/global-header.scss
+   /source/scss/colortheme/cs-global-header.scss
 ----------------------------------------- */
 .utility-header {
   background: #A15801;
@@ -318,7 +342,7 @@
 
 /* -----------------------------------------
    GLOBAL FOOTER
-   /source/scss/colorscheme/global-footer.scss
+   /source/scss/colortheme/cs-global-footer.scss
 ----------------------------------------- */
 /* Targets icon of first h1 on the page  */
 h1 span[class^=ca-gov-icon-]:first-child {
@@ -327,7 +351,7 @@ h1 span[class^=ca-gov-icon-]:first-child {
 
 /* -----------------------------------------
    NAVIGATION
-   /source/scss/colorscheme/cs-navigation.scss
+   /source/scss/colortheme/cs-navigation.scss
 ----------------------------------------- */
 .mobile-controls {
   background: #fff;
@@ -510,22 +534,22 @@ nav-item-search:focus .first-level-link > span[class^=ca-gov-icon] {
 
 /* -----------------------------------------
    SEARCH
-   /source/scss/colorscheme.search.scss
+   /source/scss/colortheme/cs-search.scss
 ----------------------------------------- */
 .search-container .submit-container button {
   color: #A15801;
   border-color: rgba(255, 255, 255, 0.8);
 }
 .search-container .search-textfield {
-  border-color: #A15801 !important;
+  border-color: #72717c !important;
 }
 .search-container .gsc-search-button {
-  background-color: #A15801;
-  border-color: #A15801;
+  background-color: #72717c;
+  border-color: #72717c;
 }
 .search-container .gsc-search-button:hover, .search-container .gsc-search-button:focus {
-  background-color: #7e4501;
-  border-color: #7e4501;
+  background-color: #4a4958;
+  border-color: #4a4958;
 }
 .search-container .gsc-search-button .ca-gov-icon-search {
   color: #fff;
@@ -558,7 +582,7 @@ nav-item-search:focus .first-level-link > span[class^=ca-gov-icon] {
 
 /* -----------------------------------------
    TABS
-   /source/scss/colorscheme/cs-tabs.scss
+   /source/scss/colortheme/cs-tabs.scss
 ----------------------------------------- */
 .tab-group {
   background: #fff;
@@ -582,7 +606,7 @@ nav-item-search:focus .first-level-link > span[class^=ca-gov-icon] {
 }
 /* -----------------------------------------
    MEDIA
-   /source/scss/colorscheme/media.scss
+   /source/scss/colortheme/cs-media.scss
 ----------------------------------------- */
 figure {
   background-color: #fbf0e7;
@@ -591,7 +615,7 @@ figure {
 
 /* -----------------------------------------
    PANELS
-   /source/scss/colorscheme/location.scss
+   /source/scss/colortheme/cs-location.scss
 ----------------------------------------- */
 .location.mini [class^=ca-gov-icon] {
   background: #483723;
@@ -600,7 +624,7 @@ figure {
 
 /* -----------------------------------------
    TYPOGRAPHY
-   /source/scss/colorscheme/typography.scss
+   /source/scss/colortheme/typography.scss
 ----------------------------------------- */
 .published {
   color: #555555;
@@ -618,7 +642,7 @@ a:focus {
 
 /* -----------------------------------------
    SECTIONS
-   /source/scss/colorscheme/sections.scss
+   /source/scss/colortheme/cs-sections.scss
 ----------------------------------------- */
 .section-default,
 .card-default {
@@ -773,7 +797,7 @@ fieldset[disabled] .card-overstated .btn-standout.active {
 }
 .section-standout a:not(.btn),
 .card-standout a:not(.btn) {
-  color: #f7d7a6;
+  color: #fff;
   text-decoration: none;
 }
 .section-standout a:not(.btn):hover, .section-standout a:not(.btn):focus,
@@ -791,6 +815,16 @@ fieldset[disabled] .card-overstated .btn-standout.active {
 .section-standout a:not(.btn),
 .card-standout a:not(.btn) {
   text-decoration: underline;
+}
+.section-standout a:not(.btn),
+.card-standout a:not(.btn) {
+  color: #fff;
+}
+.section-standout a:not(.btn):hover, .section-standout a:not(.btn):focus,
+.card-standout a:not(.btn):hover,
+.card-standout a:not(.btn):focus {
+  text-decoration: underline;
+  color: #fbad23;
 }
 .section-standout .half-gauge-chart .donut-background,
 .card-standout .half-gauge-chart .donut-background {
@@ -1406,7 +1440,7 @@ fieldset[disabled] .card-inverted .btn-standout.active {
 }
 
 .bg-highlight a:not(.btn) {
-  color: #111111;
+  color: #3b3a48;
   text-decoration: none;
 }
 .bg-highlight a:not(.btn):hover, .bg-highlight a:not(.btn):focus {
@@ -1471,7 +1505,7 @@ a.text-white:not(.btn):hover {
 
 /* -----------------------------------------
    HEADER SLIDESHOW BANNER
-   /source/scss/colorscheme/cs-header-slideshow-banner.scss
+   /source/scss/colortheme/cs-header-slideshow-banner.scss
 ----------------------------------------- */
 .header-slideshow-banner {
   background: #000;
@@ -1479,7 +1513,7 @@ a.text-white:not(.btn):hover {
 
 /* -----------------------------------------
    PROGRESS BARS
-   /source/scss/cagov/cs-progress-bar.scss
+   /source/scss/colortheme/cs-progress-bar.scss
 ----------------------------------------- */
 /* Traditional Colors */
 .progress-bar-default {
@@ -1590,7 +1624,7 @@ a.text-white:not(.btn):hover {
 
 /* -----------------------------------------
    COMMENT
-   /source/scss/colorscheme/cs-testimonials.scss
+   /source/scss/colortheme/cs-testimonials.scss
 ----------------------------------------- */
 .testimonial-default {
   background: whitesmoke;
@@ -1600,10 +1634,10 @@ a.text-white:not(.btn):hover {
 }
 .testimonial-overstated {
   background: #f7d7a6;
-  color: #111111;
+  color: #3b3a48;
 }
 .testimonial-overstated a:not(.btn) {
-  color: #111111;
+  color: #3b3a48;
   text-decoration: none;
 }
 .testimonial-overstated a:not(.btn):hover, .testimonial-overstated a:not(.btn):focus {
@@ -1669,10 +1703,10 @@ a.text-white:not(.btn):hover {
 }
 .testimonial-highlight {
   background: #fbad23;
-  color: #111111;
+  color: #3b3a48;
 }
 .testimonial-highlight a:not(.btn) {
-  color: #111111;
+  color: #3b3a48;
   text-decoration: none;
 }
 .testimonial-highlight a:not(.btn):hover, .testimonial-highlight a:not(.btn):focus {
@@ -1739,7 +1773,7 @@ a.text-white:not(.btn):hover {
 
 /* -----------------------------------------
    CARDS
-   /source/scss/colorscheme/cs-cards.scss
+   /source/scss/colortheme/cs-cards.scss
 ----------------------------------------- */
 .card-primary {
   background-color: #046b99;
@@ -1807,7 +1841,7 @@ a.text-white:not(.btn):hover {
   color: #ffffff;
 }
 .card-success a:not(.btn) {
-  color: #111111;
+  color: #3b3a48;
   text-decoration: none;
 }
 .card-success a:not(.btn):hover, .card-success a:not(.btn):focus {
@@ -1867,7 +1901,7 @@ a.text-white:not(.btn):hover {
   color: #ffffff;
 }
 .card-warning a:not(.btn) {
-  color: #111111;
+  color: #3b3a48;
   text-decoration: none;
 }
 .card-warning a:not(.btn):hover, .card-warning a:not(.btn):focus {
@@ -1937,7 +1971,7 @@ a.text-white:not(.btn):hover {
   border-color: #ddd;
 }
 .panel-default > .panel-heading, .panel-default > .card-heading, .card-default > .panel-heading, .card-default > .card-heading {
-  color: #111111;
+  color: #3b3a48;
   background-color: #f7d7a6;
   border-color: #ddd;
 }
@@ -1950,7 +1984,7 @@ a.text-white:not(.btn):hover {
 }
 .panel-default > .panel-heading .badge, .panel-default > .card-heading .badge, .card-default > .panel-heading .badge, .card-default > .card-heading .badge {
   color: #f7d7a6;
-  background-color: #111111;
+  background-color: #3b3a48;
 }
 .panel-default > .panel-footer + .panel-collapse > .panel-body,
 .panel-default > .panel-footer + .card-collapse > .card-body, .panel-default > .card-footer + .panel-collapse > .panel-body,
@@ -1993,7 +2027,7 @@ a.text-white:not(.btn):hover {
 }
 .panel-default .panel-body, .panel-default .card-body, .card-default .panel-body, .card-default .card-body {
   background: #fff;
-  color: #111111;
+  color: #3b3a48;
 }
 
 /* Overstated Cards */
@@ -2061,7 +2095,7 @@ a.text-white:not(.btn):hover {
 }
 .panel-overstated .panel-body, .panel-overstated .card-body, .card-overstated .panel-body, .card-overstated .card-body {
   background: #fbf0e7;
-  color: #111111;
+  color: #3b3a48;
 }
 .panel-overstated .panel-body a:not(.btn), .panel-overstated .card-body a:not(.btn), .card-overstated .panel-body a:not(.btn), .card-overstated .card-body a:not(.btn) {
   color: #046b99;
@@ -2085,7 +2119,7 @@ a.text-white:not(.btn):hover {
   border-color: #ddd;
 }
 .panel-understated > .panel-heading, .panel-understated > .card-heading, .card-understated > .panel-heading, .card-understated > .card-heading {
-  color: #111111;
+  color: #3b3a48;
   background-color: #fbf0e7;
   border-color: #fbf0e7;
 }
@@ -2098,7 +2132,7 @@ a.text-white:not(.btn):hover {
 }
 .panel-understated > .panel-heading .badge, .panel-understated > .card-heading .badge, .card-understated > .panel-heading .badge, .card-understated > .card-heading .badge {
   color: #fbf0e7;
-  background-color: #111111;
+  background-color: #3b3a48;
 }
 .panel-understated > .panel-footer + .panel-collapse > .panel-body,
 .panel-understated > .panel-footer + .card-collapse > .card-body, .panel-understated > .card-footer + .panel-collapse > .panel-body,
@@ -2145,7 +2179,7 @@ a.text-white:not(.btn):hover {
 }
 .panel-understated .panel-body, .panel-understated .card-body, .card-understated .panel-body, .card-understated .card-body {
   background: #fff;
-  color: #111111;
+  color: #3b3a48;
 }
 
 /* Standout Cards */
@@ -2213,7 +2247,7 @@ a.text-white:not(.btn):hover {
 }
 .panel-standout .panel-body, .panel-standout .card-body, .card-standout .panel-body, .card-standout .card-body {
   background: #fff;
-  color: #111111;
+  color: #3b3a48;
 }
 .panel-standout .panel-body a:not(.btn), .panel-standout .card-body a:not(.btn), .card-standout .panel-body a:not(.btn), .card-standout .card-body a:not(.btn) {
   color: #046b99;
@@ -2245,52 +2279,52 @@ a.text-white:not(.btn):hover {
 
 /* -----------------------------------------
    ACCENT TEXT
-   /source/scss/colorscheme/cs-text-accent.scss
+   /source/scss/colortheme/cs-text-accent.scss
 ----------------------------------------- */
 .text-accent1 {
-  color: #1B79C0;
+  color: #1B79C0 !important;
 }
 .text-accent2 {
-  color: #077CBB;
+  color: #077CBB !important;
 }
 .text-accent3 {
-  color: #258378;
+  color: #258378 !important;
 }
 .text-accent4 {
-  color: #32852E;
+  color: #32852E !important;
 }
 .text-accent5 {
-  color: #815ab4;
+  color: #815ab4 !important;
 }
 .text-accent6 {
-  color: #BE37CD;
+  color: #BE37CD !important;
 }
 .text-accent7 {
-  color: #C93E2C;
+  color: #C93E2C !important;
 }
 .text-accent8 {
-  color: #BB520C;
+  color: #BB520C !important;
 }
 .text-accent9 {
-  color: #f7e455;
+  color: #f7e455 !important;
 }
 .text-accent-p1 {
-  color: #fbad23;
+  color: #fbad23 !important;
 }
 .text-accent-p2 {
-  color: #A15801;
+  color: #A15801 !important;
 }
 .text-accent-p3 {
-  color: #483723;
+  color: #483723 !important;
 }
 .text-accent-s1 {
-  color: #fbf0e7;
+  color: #fbf0e7 !important;
 }
 .text-accent-s2 {
-  color: #f6e7cc;
+  color: #f6e7cc !important;
 }
 .text-accent-s3 {
-  color: #f7d7a6;
+  color: #f7d7a6 !important;
 }
 
 .color-primary--hover:hover {
@@ -2313,12 +2347,12 @@ a.text-white:not(.btn):hover {
 }
 
 .label-secondary {
-  color: #111111;
+  color: #3b3a48;
   background-color: #f6e7cc;
 }
 
 .label-light {
-  color: #111111;
+  color: #3b3a48;
   background-color: #fbf0e7;
 }
 
@@ -2328,7 +2362,7 @@ a.text-white:not(.btn):hover {
 }
 
 .label-warning {
-  color: #111111;
+  color: #3b3a48;
   background-color: #fbad23;
 }
 
@@ -2347,7 +2381,7 @@ a.text-white:not(.btn):hover {
 
 /* -----------------------------------------
    IMAGE HELPERS
-   /source/scss/cagov/image.scss
+   /source/scss/colortheme/cs-image.scss
 ----------------------------------------- */
 .section-understated .img-thumbnail, .card-understated .img-thumbnail {
   padding: 0.25rem;
@@ -2389,7 +2423,7 @@ a.text-white:not(.btn):hover {
 
 /* -----------------------------------------
    COMMENT
-   /source/scss/colorscheme/cs-buttons.scss
+   /source/scss/colortheme/cs-buttons.scss
 ----------------------------------------- */
 .btn-primary {
   color: #fff;
@@ -2627,14 +2661,48 @@ a.text-white:not(.btn):hover {
   background-color: #555555;
 }
 .btn-secondary.active {
-  background: #555555;
-  color: #fff;
-  box-shadow: none;
+  background: #fff;
+  color: #000;
 }
 .btn-secondary:disabled {
   color: #000;
 }
 .btn-secondary.disabled {
+  color: #000;
+}
+
+.btn-s1 {
+  color: #555555;
+  background-color: #fbf0e7;
+  border-color: #555555;
+  font-weight: 600;
+}
+.btn-s1:hover, .btn-s1:focus, .btn-s1:not(:disabled):not(.disabled):active, .btn-s1:not(:disabled):not(.disabled).active,
+.btn-s1 .show > .dropdown-toggle, .open > .dropdown-toggle .btn-s1 {
+  color: #000;
+  background-color: #fff;
+  border-color: #000;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+.btn-s1:focus {
+  outline: solid 2px #2ea3f2 !important;
+}
+.btn-s1:not(:disabled):not(.disabled):active, .btn-s1:not(:disabled):not(.disabled).active, .open > .dropdown-toggle .btn-s1 {
+  background-image: none;
+}
+.btn-s1.disabled, .btn-s1.disabled:hover, .btn-s1.disabled:focus, .btn-s1.disabled:active, .btn-s1.disabled.active, .btn-s1[disabled], .btn-s1[disabled]:hover, .btn-s1[disabled]:focus, .btn-s1[disabled]:active, .btn-s1[disabled].active, fieldset[disabled] .btn-s1, fieldset[disabled] .btn-s1:hover, fieldset[disabled] .btn-s1:focus, fieldset[disabled] .btn-s1:active, fieldset[disabled] .btn-s1.active {
+  background-color: #fbf0e7 !important;
+  border-color: #555555;
+}
+.btn-s1 .badge {
+  color: #fbf0e7;
+  background-color: #555555;
+}
+.btn-s1.active {
+  background: #fff;
+  color: #000;
+}
+.btn-s1:disabled {
   color: #000;
 }
 
@@ -2747,7 +2815,7 @@ input[type=radio]:checked + * i {
 
 /* -----------------------------------------
    FORM
-   /source/scss/colorscheme/cs-form.scss
+   /source/scss/colortheme/cs-form.scss
 ----------------------------------------- */
 .custom-file-label:after {
   background-color: #A15801;
@@ -2813,7 +2881,7 @@ input[type=radio]:focus + div {
 
 /* -----------------------------------------
    COMMENT
-   /source/scss/colorscheme/cs-blocks.scss
+   /source/scss/colortheme/cs-blocks.scss
 ----------------------------------------- */
 .bg-blue-gradient {
   background-repeat: repeat-x;
@@ -2842,7 +2910,7 @@ input[type=radio]:focus + div {
 
 /* -----------------------------------------
    PANES
-   /source/scss/cagov/cs-panes.scss
+   /source/scss/colortheme/cs-panes.scss
 ----------------------------------------- */
 @media (min-width: 768px) {
   .bg-highlight.group-right:before, .bg-p1.group-right:before {
@@ -2918,7 +2986,7 @@ input[type=radio]:focus + div {
 }
 /* -----------------------------------------
    BACK-TO-TOP / RETURN TOP
-   /source/scss/colorscheme/cs-return-top.scss
+   /source/scss/colortheme/cs-return-top.scss
 ----------------------------------------- */
 .return-top {
   border-color: #A15801;
@@ -2929,11 +2997,15 @@ input[type=radio]:focus + div {
   border-color: #7e4501;
 }
 
+/* -----------------------------------------
+   PAGE NAVIGATION
+   /source/scss/colortheme/cs-page-navigation.scss
+----------------------------------------- */
 .list-navigation li a {
-  color: #4a4958;
+  color: #5e5e6a;
 }
 .list-navigation li a:hover, .list-navigation li a:hover {
-  color: #000;
+  color: #3b3a48;
 }
 .list-navigation li a.active:before {
   border-left-color: #fbad23;
@@ -2943,10 +3015,10 @@ input[type=radio]:focus + div {
 }
 
 a.sidenav {
-  color: #4a4958;
+  color: #5e5e6a;
 }
 a.sidenav:hover, a.sidenav:hover {
-  color: #000;
+  color: #3b3a48;
 }
 a.sidenav.active:before {
   border-left-color: #fbad23;
@@ -3159,7 +3231,7 @@ a.sidenav.active:before {
 
 /* -----------------------------------------
    STEP LIST
-   /source/scss/colorscheme/cs-step-list.scss
+   /source/scss/colortheme/cs-step-list.scss
 ----------------------------------------- */
 .cagov-step-list li {
   border-color: #fbad23;
@@ -3170,7 +3242,7 @@ a.sidenav.active:before {
 
 /* -----------------------------------------
    ACCORDION SIDE NAVIGATION
-   /source/scss/colorscheme/cs-accordion-sidenav.scss
+   /source/scss/colortheme/cs-accordion-sidenav.scss
 ----------------------------------------- */
 cagov-accordion.sidenav details summary {
   color: #4a4958;
@@ -3239,7 +3311,7 @@ cagov-accordion.sidenav details summary.active:before {
 
 /* -----------------------------------------
    LINK GRID
-   /source/scss/colorscheme/cs-link-grid.scss
+   /source/scss/colortheme/cs-link-grid.scss
 ----------------------------------------- */
 .link-grid {
   color: #A15801;
@@ -3251,7 +3323,7 @@ cagov-accordion.sidenav details summary.active:before {
 
 /* -----------------------------------------
    COMMENT
-   /source/scss/colorscheme/cs-blockquote.scss
+   /source/scss/colortheme/cs-blockquote.scss
 ----------------------------------------- */
 blockquote {
   border-color: #A15801;
@@ -3273,7 +3345,7 @@ blockquote.prominent footer {
 
 /* -----------------------------------------
    UTILITY HEADER
-   /source/scss/colorscheme/utility.scss
+   /source/scss/colortheme/cs-utility.scss
 ----------------------------------------- */
 .utility-header {
   background: #fbf0e7;
@@ -3308,9 +3380,13 @@ blockquote.prominent footer {
   color: #4a4958;
 }
 
+.site-settings {
+  background-color: #f6ddc8 !important;
+}
+
 /* -----------------------------------------
    HIGH CONTRAST MODE
-   /source/scss/cagov/file.scss
+   /source/scss/colortheme/cs-high-contrast.scss
 ----------------------------------------- */
 html.high-contrast {
   /* General Reset */
