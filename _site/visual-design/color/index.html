@@ -414,18 +414,18 @@
 
       <h3>Dark background</h3>
 
-      <div class="dark-background p-5 mb-4">
+      <div class="bg-primary p-5 mb-4">
         <h4 class="mt-0">Link grid</h4>
 
         <div class="row">
           <div class="col-md-4 mb-4">
-            <a href="javascript:;" class="link-grid bg-s1">Short link 1</a>
+            <a href="javascript:;" class="link-grid">Short link 1</a>
           </div>
           <div class="col-md-4 mb-4">
-            <a href="javascript:;" class="link-grid bg-s1">Short link 2</a>
+            <a href="javascript:;" class="link-grid">Short link 2</a>
           </div>
           <div class="col-md-4 mb-4">
-            <a href="javascript:;" class="link-grid bg-s1">Short link 3</a>
+            <a href="javascript:;" class="link-grid">Short link 3</a>
           </div>
         </div>
 
@@ -487,9 +487,6 @@
 }
 .insertColorPrimaryHex, .insertColorHighlightHex, .insertColorS1Hex, .insertColorStandoutHex {
   text-transform: uppercase;
-}
-.dark-background h4, .dark-background h5 {
-  color:#fff;
 }
 </style>
 
@@ -621,9 +618,6 @@ var nameElements = document.querySelectorAll(".insertThemeName");
 for (let el of nameElements) {
   el.innerHTML = themeData[queryString].name;
 }
-
-// set dark-background to primary color
-document.querySelector(".dark-background").style.backgroundColor = "#" + themeData[queryString].colorPrimary;
 
 // display color codes and set border colors
 document.querySelector(".insertColorHighlightHex").innerHTML = themeData[queryString].colorHighlight;
