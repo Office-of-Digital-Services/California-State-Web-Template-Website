@@ -504,11 +504,11 @@
            <ul>
             
             <li>
-             <a href="#Text-field" class="tab-link">Text field</a>
+             <a href="#Label" class="tab-link">Label</a>
             </li>
             
             <li>
-             <a href="#Text-area" class="tab-link">Text area</a>
+             <a href="#Text-field-or-text-area" class="tab-link">Text field or text area</a>
             </li>
             
             <li>
@@ -525,6 +525,14 @@
             
             <li>
              <a href="#File-input" class="tab-link">File input</a>
+            </li>
+            
+            <li>
+             <a href="#Usage" class="tab-link">Usage</a>
+            </li>
+            
+            <li>
+             <a href="#Accessibility" class="tab-link">Accessibility</a>
             </li>
             
            </ul>
@@ -634,24 +642,25 @@
 <p class="lead">A form allows visitors to submit information to a server.</p>
 <p class="lead">Common form elements include:</p>
 <ul class="lead">
- <li>Labels</li>
- <li>Text fields</li>
- <li>Text areas</li>
- <li>Checkboxes</li>
- <li>Radio buttons</li>
- <li>Dropdown menus (select)</li>
- <li>File inputs</li>
+ <li>Label</li>
+ <li>Text field</li>
+ <li>Text area</li>
+ <li>Checkboxe</li>
+ <li>Radio button</li>
+ <li>Dropdown menu</li>
+ <li>File input</li>
+ <li>Buttons</li>
 </ul>
 
 
-<h2 id="File-input" class=" m-b-0">Label</h2>
+<h2 id="Label" class=" m-b-0">Label</h2>
 <p>The label should:</p>
 <ul>
- <li>Describe the purpose of the text field.</li>
- <li>Use sentence-style capitalization—only capitalize the first word. </li>
+ <li>Describe the purpose of the text field or other item.</li>
+ <li>Use sentence-style capitalization &mdash; only capitalize the first word. </li>
  <li>Be short and concise.</li>
  <li>Use nouns or short noun phrases.</li>
- <li>Inform visitors whether or not the form input is required (represented by an asterisk).</li>
+ <li>Inform visitors whether or not the form input is required or optional.</li>
  <li>Avoid instructional text like "Click to get started".</li>
 </ul>
 
@@ -723,8 +732,8 @@
 
 
 
-<h2 id="Text-field">Text field</h2>
-<p>A text field allows visitors to write or edit text.</p>
+<h2 id="Text-field-or-text-area">Text field or text area</h2>
+<p>A text field allows visitors to write or edit one line of text.</p>
 
 
 <!--TABS-->
@@ -749,7 +758,7 @@
     </a>
    </div>
    <div id="collapse-example2" class="collapse show" role="tabpanel" aria-labelledby="heading-example2">
-    <div class="card-body p-b-lg">
+    <div class="card-body">
      <div class="bg-gray-50 p-a">
       <h3 class="h4 m-t-0">Basic</h3>
       <div class="row">
@@ -819,11 +828,13 @@
 </div>
 <!--END TABS-->
 
-
-<h2 id="Text-area">Text area</h2>
-<p>A text area allows visitors to write or edit multiple lines of text. Same as text field the text area should always
- have a label that is assosiated with it.
-</p>
+<p class="p-t-md">A text area allows visitors to write or edit multiple lines of text. Same as the text field, the text
+ area should
+ always have a label that is associated with it.</p>
+<p>You can include instructional or error messages beneath the field.</p>
+<p>You can also include placeholder text in the field. Placeholder text disappears when the visitor interacts with the
+ text field, so make sure they don't need it to fill in the text field.</p>
+<p>Instructional, error messages, and placeholder text should not provide the same message as the label.</p>
 
 <!--TABS-->
 <div class="tab-group responsive">
@@ -848,18 +859,35 @@
     </a>
    </div>
    <div id="collapse-example1" class="collapse show" role="tabpanel" aria-labelledby="heading-example1">
-    <div class="card-body p-b-lg">
+    <div class="card-body">
 
-     <label class="form-control-label" for="exampleInputComment">Your message</label>
+
+     <div class="bg-gray-50 p-a">
+      <h3 class="h4 m-t-0">Basic</h3>
+      <div class="row">
+       <div class="col-sm-3">
+        <p class="mt-4 pt-2 outline-color blue-arrow text-right">Text area</p>
+       </div>
+       <div class="col-sm-9"><label class="form-control-label" for="exampleInputComment">Your message</label>
 <textarea id="exampleInputComment" class="form-control" rows="5" cols="80"></textarea>
-<small>Use this space for error messages or instructions text</small>
+<small>Use this space for error messages or instructions text</small></div>
+      </div>
+     </div>
 
-<h3 class="h4">Required</h3>
-<label class="form-control-label" for="exampleInputCommentRequired"><span class="required-label">*</span> Your
+
+     <div class="bg-gray-50 p-a m-t-md">
+      <h3 class="h4 m-t-0">Required</h3>
+      <div class="row">
+       <div class="col-sm-3">
+        <p class="mt-4 pt-2 outline-color blue-arrow text-right">Text area</p>
+       </div>
+       <div class="col-sm-9"><label class="form-control-label" for="exampleInputCommentRequired"><span class="required-label">*</span> Your
  message</label>
 <textarea id="exampleInputCommentRequired" class="form-control" rows="5" cols="80"></textarea>
 <div class="invalid-feedback d-block">
- This field is required</div>
+ This field is required</div></div>
+      </div>
+     </div>
 
     </div>
    </div>
@@ -877,17 +905,19 @@
    </div>
    <div id="collapse-html1" class="collapse" role="tabpanel" aria-labelledby="heading-html1">
     <div class="card-body">
+     <h3 class="h4 m-t-0">Basic</h3>
      <pre style="max-height: 300px;"><code><label class="form-control-label" for="exampleInputComment">Your message</label>
 <textarea id="exampleInputComment" class="form-control" rows="5" cols="80"></textarea>
-<small>Use this space for error messages or instructions text</small>
+<small>Use this space for error messages or instructions text</small></code>
+    </pre>
 
-<h3 class="h4">Required</h3>
-<label class="form-control-label" for="exampleInputCommentRequired"><span class="required-label">*</span> Your
+     <h3 class="h4">Required</h3>
+     <pre style="max-height: 300px;"><code><label class="form-control-label" for="exampleInputCommentRequired"><span class="required-label">*</span> Your
  message</label>
 <textarea id="exampleInputCommentRequired" class="form-control" rows="5" cols="80"></textarea>
 <div class="invalid-feedback d-block">
  This field is required</div></code>
-    </pre>
+   </pre>
 
     </div>
    </div>
@@ -1192,7 +1222,7 @@
 
 
 <h2 id="File-input" class=" m-b-0">File input</h2>
-<p>A file input let the user choose one or more files from their device storage. Once chosen, the files can be uploaded
+<p>A file input lets the user choose one or more files from their device storage. Once chosen, the files can be uploaded
  to a server using form submission.</p>
 
 <!--TABS-->
@@ -1261,6 +1291,47 @@
  </div>
 </div>
 <!--END TABS-->
+
+
+<h2 id="Usage">Usage</h2>
+
+<h3 class="m-t">When and how to use it</h3>
+<p>Use a form when visitor input is required to complete an action. </p>
+<p>Forms direct visitors to provide and submit relevant information. Use them to let visitors change their personal
+ settings or submit an application.</p>
+<p>Forms work well when you:</p>
+<ul>
+ <li>Use clear feedback alerts to inform visitors of their progress.</li>
+ <li>Auto-save form progress so data is not lost.</li>
+ <li>Group related sections into logical sets (like name, address, phone number).</li>
+ <li>State the action the buttons perform when selected.</li>
+</ul>
+
+
+
+<p>Start mobile first, single column when designing a form. Where practical, combine related fields using two columns.
+ Form elements should stack one on top of the other.</p>
+<p>Keep in mind the mobile and screen magnification experience. </p>
+
+
+<h3>How not to use it</h3>
+
+<p>Do not use a form if it is not needed.</p>
+<p>Do not use confusing error messages or place them away from the problem. As close to the field in error as possible,
+ explain why the visitor cannot progress in the form with a clear, concise error message.</p>
+
+
+<h2 id="Accessibility">Accessibility</h2>
+<h3 class="m-t">Standard accessibility review</h3>
+<p>Each time a new component version is published:</p>
+<ul>
+ <li>Test with the <a href="https://www.deque.com/axe/" target="_blank">axe
+   accessibility tool</a></li>
+ <li>Review with the <a href="https://www.apple.com/voiceover/info/guide/_1121.html" target="_blank">VoiceOver</a> or <a
+   href="https://www.nvaccess.org/download/" target="_blank">NVDA</a> screen reader</li>
+ <li>Ensure all actionable elements are accessible by keyboard command and tab in a logical order</li>
+ <li>Check the component layout on a variety of screen sizes</li>
+</ul>
 				</div>
 			</div>
 		</div>
