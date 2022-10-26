@@ -23289,6 +23289,11 @@ a.sidenav.active:before {
   background-image: linear-gradient(225deg, #4993B5, #eef8fb);
 }
 
+.bg-secondary-light-gradient {
+  background-repeat: repeat-x;
+  background-image: linear-gradient(90deg, #87B8CE, #eef8fb);
+}
+
 .bg-primary-standout-gradient {
   background-repeat: repeat-x;
   background-image: linear-gradient(225deg, #046B99, #323A45);
@@ -23297,6 +23302,11 @@ a.sidenav.active:before {
 .bg-primary-highlight-gradient {
   background-repeat: repeat-x;
   background-image: linear-gradient(225deg, #046B99, #FDB81E);
+}
+
+.bg-primary-secondary-gradient {
+  background-repeat: repeat-x;
+  background: linear-gradient(180deg, #046B99, #4993B5);
 }
 
 .bg-standout-highlight-gradient {
@@ -23547,6 +23557,38 @@ a.sidenav.active:before {
   background-position: center bottom 4%;
   background-origin: padding-box;
   text-decoration: none !important;
+}
+
+.outline-1-gray-100-hover:hover, .outline-1-gray-100-hover:hover {
+  outline: 1px solid #ededef;
+}
+
+.outline-2-gray-100-hover:hover, .outline-2-gray-100-hover:hover {
+  outline: 2px solid #ededef;
+}
+
+.outline-1-gray-200-hover:hover, .outline-1-gray-200-hover:hover {
+  outline: 1px solid #d4d4d7;
+}
+
+.outline-2-gray-200-hover:hover, .outline-2-gray-200-hover:hover {
+  outline: 2px solid #d4d4d7;
+}
+
+.outline-1-gray-300-hover:hover, .outline-1-gray-300-hover:hover {
+  outline: 1px solid #bcbbc1;
+}
+
+.outline-2-gray-300-hover:hover, .outline-2-gray-300-hover:hover {
+  outline: 2px solid #bcbbc1;
+}
+
+.outline-1-gray-400-hover:hover, .outline-1-gray-400-hover:hover {
+  outline: 1px solid #a4a3ab;
+}
+
+.outline-2-gray-400-hover:hover, .outline-2-gray-400-hover:hover {
+  outline: 2px solid #a4a3ab;
 }
 
 .outline-focus:focus {
@@ -24059,15 +24101,15 @@ a.sidenav.active:before {
   border-color: #fff !important;
 }
 
-.brd-gray-light {
+.brd-gray-light, .brd-gray-light-hover:hover, .brd-gray-light-hover:focus {
   border-color: #ddd !important;
 }
 
-.brd-gray-dark {
+.brd-gray-dark, .brd-gray-dark-hover:hover, .brd-gray-dark-hover:focus {
   border-color: #333333 !important;
 }
 
-.brd-gray {
+.brd-gray, .brd-gray-hover:hover, .brd-gray-hover:focus {
   border-color: #555555 !important;
 }
 
@@ -24103,42 +24145,42 @@ a.sidenav.active:before {
 
 .brd-dotted-1,
 .brd-dotted-1-before::before,
-.brd-dotted-1-after::after {
+.brd-dotted-1-after::after, .brd-dotted-1-hover:hover, .brd-dotted-1-hover:focus {
   border-width: 1px;
   border-style: dotted;
 }
 
 .brd-solid-1,
 .brd-solid-1-before::before,
-.brd-solid-1-after::after {
+.brd-solid-1-after::after, .brd-solid-1-hover:hover, .brd-solid-1-hover:focus {
   border-width: 1px !important;
   border-style: solid !important;
 }
 
 .brd-solid-2,
 .brd-solid-2-before::before,
-.brd-solid-2-after::after {
+.brd-solid-2-after::after, .brd-dotted-2-hover:hover, .brd-dotted-2-hover:focus {
   border-width: 2px !important;
   border-style: solid !important;
 }
 
 .brd-solid-3,
 .brd-solid-3-before::before,
-.brd-solid-3-after::after {
+.brd-solid-3-after::after, .brd-dotted-3-hover:hover, .brd-dotted-3-hover:focus {
   border-width: 3px !important;
   border-style: solid !important;
 }
 
 .brd-solid-4,
 .brd-solid-4-before::before,
-.brd-solid-4-after::after {
+.brd-solid-4-after::after, .brd-dotted-4-hover:hover, .brd-dotted-4-hover:focus {
   border-width: 4px !important;
   border-style: solid !important;
 }
 
 .brd-solid-5,
 .brd-solid-5-before::before,
-.brd-solid-5-after::after {
+.brd-solid-5-after::after, .brd-dotted-5-hover:hover, .brd-dotted-5-hover:focus {
   border-width: 5px !important;
   border-style: solid !important;
 }
