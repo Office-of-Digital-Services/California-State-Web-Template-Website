@@ -455,11 +455,17 @@
      <ul>
       <li><a href="/structure/utility-header.html">Utility header</a></li>
       <li><a href="/structure/settings-bar.html">Settings</a></li>
-      <!-- <li><a href="/structure/mobile-controls.html">Mobile controls</a></li> -->
       <li><a href="/structure/site-header.html">Site header</a></li>
+      <li><a href="/structure/mobile-controls.html">Mobile controls</a></li>
       <li><a href="/structure/search.html">Search</a></li>
       <li><a href="/structure/site-navigation.html">Site navigation</a></li>
-      <li><a href="/structure/footer.html" class="active">Footer</a></li>
+      <li><a href="/structure/footer.html" class="active">Footer</a>
+       <ul>
+        <li><a href="#Sample">Sample</a></li>
+        <li><a href="#Usage">Usage</a></li>
+        <li><a href="#Accessibility">Accessibility</a></li>
+       </ul>
+      </li>
      </ul>
     </li>
    </ul>
@@ -468,32 +474,44 @@
  <div class="col-md-9 m-b-lg">
 
   <h1 class="mt-lg-0">Footer</h1>
-  <p>The footer is a structural component that puts the state's standard footer at the very bottom of your site. Having
-   a common footer tells people that the website is an official product of the State of California, which increases user
-   trust.
-  </p>
-  <p>The footer contains a set of links that go on all the pages of the website.
-  </p>
-
+  <p class="lead">The footer is a structural component that puts the state's standard footer at the very bottom of your
+   site. Having a common footer tells people that the website is an official product of the State of California, which
+   increases user trust.</p>
+  <p>The footer contains a set of links that go on all the pages of the website.</p>
+  <p>The footer always includes:</p>
   <ul>
    <li>The CA<span>.</span>gov logo on the left that links to the CA<span>.</span>gov site.</li>
    <li>A set of standard links:<ul>
      <li>Conditions of use</li>
      <li>Privacy policy</li>
-     <li>Accessibility</li>
+     <li>Accessibility certification</li>
      <li>Contact page for your organization</li>
     </ul>
    </li>
 
-   <li>The copyright notice. It appears at the very bottom of the statewide footer.</li>
+   <li>The copyright notice.</li>
   </ul>
 
-  <p>Opional features:</p>
+
+  <p>The footer can also include:</p>
   <ul>
-   <li>Back-to-top component button.</li>
-   <li>Social media icon links.</li>
+   <li>An optional logo on the left that links back to the homepage for the website.</li>
+   <li>Customizable links.</li>
+   <li>Social media icons that link to official social media accounts. These could be for a department or a campaign.
+    The available social media icons include:
+    <ul>
+     <li>Facebook</li>
+     <li>Twitter</li>
+     <li>Instagram</li>
+     <li>YouTube</li>
+     <li>Github</li>
+     <li>LinkedIn</li>
+     <li>Email</li>
+    </ul>
+   </li>
   </ul>
 
+  <h2 id="Sample">Sample</h2>
 
   <div class="tab-group responsive">
    <ul id="tabs2" class="nav nav-tabs" role="tablist">
@@ -520,10 +538,22 @@
       </h4>
      </div>
      <div id="collapse-example2" class="collapse show" role="tabpanel" aria-labelledby="heading-example2">
+
+
+
+
       <div class="card-body">
-       <h3 class="h4 m-t-0">Screenshot</h3>
+       <h3 class="h4 m-t-0">Desktop</h3>
        <img src="/images/components/strucutre-global-footer.jpg" alt="global footer screenshot" class="img-fluid">
+
+       <h3 class="h4">Mobile</h3>
+       <div class="col-md-6">
+        <img src="/images/components/strucutre-global-footer-mobile.jpg" alt="Mobile global footer screenshot"
+         class="img-fluid">
+       </div>
+
       </div>
+
      </div>
     </div>
 
@@ -593,11 +623,12 @@
      <div id="collapse-include2" class="collapse" role="tabpanel" aria-labelledby="heading-include2">
       <div class="card-body">
        <h3 class="h4 m-t-0">Include path</h3>
-       <p>Add Global Footer <code>njk</code> include code before closing <code>&lt;/body&gt;</code> tag:
+       <p class="m-b">Add Global Footer <code>njk</code> include code before closing <code>&lt;/body&gt;</code> tag:
        </p>
        <pre><code>&#123;% include "src/_includes/global-footer.njk" %&#125;</code></pre>
 
-       <p><span class="text-highlight-primary">Note:</span> Path to the include will be relative to the directory of
+       <p class="m-t"><span class="text-highlight-primary">Note:</span> Path to the include will be relative to the
+        directory of
         your
         page.</p>
       </div>
@@ -608,19 +639,45 @@
 
 
 
-  <h2>Usage</h2>
+  <h2 id="Usage">Usage</h2>
   <h3>When and how to use it</h3>
+  <p>The footer goes on all pages of your website.</p>
+  <p>Examples of links that go in the site footer include:</p>
+  <ul>
+   <li>General department info</li>
+   <li>Department accessibility information</li>
+   <li>Careers page</li>
+   <li>Contact page for the site</li>
+  </ul>
+  <p>Make sure you do not duplicate link text in the footer. Using different link text that takes visitors to the same
+   place confuses people and causes accessibility issues. </p>
+  <p>Link the social media icons to your official social media accounts.</p>
+  <p>Provide a contact page that's relevant to your site. </p>
+  <h3>How not to use it</h3>
 
-  <p>The statewide footer is a required State Web Template structural component. Place it at the bottom of the website,
-   below the agency
-   footer and all other content.</p>
-  <p>Add social media links if needed after footer links. Make sure you list them inside of <code>ul</code> container
-   with class <code>socialsharer-container</code>. Use CAWeb icon font library icons to display social media links. </p>
+  <p>Do not use the site footer:</p>
 
+  <ul>
+   <li>For primary calls to action.</li>
+   <li>For information to primary user needs.</li>
+   <li>As secondary navigation.</li>
+  </ul>
+  <p>Do not add other elements to or change the footer. Use it only as designed. </p>
+  <p>Do not send them to the general <a href="https://www.ca.gov/contact/">CA.gov contact page</a> unless it's
+   appropriate to do so.</p>
+  <p>Do not include more than one social media account per platform.</p>
 
-
-
-
+  <h2 id="Accessibility">Accessibility</h2>
+  <h3 class="m-t">Standard accessibility review</h3>
+<p>Each time a new component version is published:</p>
+<ul>
+ <li>Test with the <a href="https://www.deque.com/axe/" target="_blank">axe
+   accessibility tool</a></li>
+ <li>Review with the <a href="https://www.apple.com/voiceover/info/guide/_1121.html" target="_blank">VoiceOver</a> or <a
+   href="https://www.nvaccess.org/download/" target="_blank">NVDA</a> screen reader</li>
+ <li>Ensure all actionable elements are accessible by keyboard command and tab in a logical order</li>
+ <li>Check the component layout on a variety of screen sizes</li>
+</ul>
 
 
 
