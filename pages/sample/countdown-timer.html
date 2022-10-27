@@ -29,9 +29,11 @@ permalink: "components/countdown-timer.html"
 
 <h1 class="mt-lg-0">Countdown timer</h1>
 
-<p>The countdown timer component helps visitors visualize the counting toward or away from a fixed point in time. </p>
-<p>Time intervals displayed by the countdown timer can include:</p>
-<ul>
+<p class="lead">The countdown timer component helps visitors visualize the counting toward or away from a fixed point in
+ time. </p>
+<p class="lead">Time intervals displayed by the countdown timer can include:</p>
+<ul class="lead">
+ <li>Weeks</li>
  <li>Days</li>
  <li>Hours</li>
  <li>Minutes</li>
@@ -67,20 +69,24 @@ permalink: "components/countdown-timer.html"
    <div id="collapse-example1" class="collapse show" role="tabpanel" aria-labelledby="heading-example1">
     <div class="card-body p-b-lg">
      <h3>Countdown default</h3>
-     <div class="row section-default countdown">
-      <div class="col-sm-3 text-center p-b-md p-l-0 p-r-0">
+     <div class="group countdown p-x">
+      <div class="fifth bg-gray-100 text-center p-b-md p-l-0 p-r-0">
+       <span class="countdown-text">wks<br></span>
+       <span id="weeks1"></span>
+      </div>
+      <div class="fifth bg-gray-100 text-center p-b-md p-l-0 p-r-0">
        <span class="countdown-text">days<br></span>
        <span id="days1"></span>
       </div>
-      <div class="col-sm-3 text-center p-b-md p-l-0 p-r-0">
+      <div class="fifth bg-gray-100 text-center p-b-md p-l-0 p-r-0">
        <span class="countdown-text">hrs<br></span>
        <span id="hours1"></span>
       </div>
-      <div class="col-sm-3 text-center p-b-md p-l-0 p-r-0">
+      <div class="fifth bg-gray-100 text-center p-b-md p-l-0 p-r-0">
        <span class="countdown-text">min<br></span>
        <span id="minutes1"></span>
       </div>
-      <div class="col-sm-3 text-center p-b-md p-l-0 p-r-0">
+      <div class="fifth bg-gray-100 text-center p-b-md p-l-0 p-r-0">
        <span class="countdown-text">sec<br></span>
        <span id="seconds1"></span>
       </div>
@@ -88,20 +94,24 @@ permalink: "components/countdown-timer.html"
 
 
      <h3>Countdown primary</h3>
-     <div class="row section-primary countdown">
-      <div class="col-sm-3 text-center p-b-md p-l-0 p-r-0">
+     <div class="group countdown p-x">
+      <div class="fifth text-center section-primary p-b-md p-l-0 p-r-0">
+       <span class="countdown-text">wks<br></span>
+       <span id="weeks"></span>
+      </div>
+      <div class="fifth text-center section-primary p-b-md p-l-0 p-r-0">
        <span class="countdown-text">days<br></span>
        <span id="days"></span>
       </div>
-      <div class="col-sm-3 text-center p-b-md p-l-0 p-r-0">
+      <div class="fifth text-center section-primary p-b-md p-l-0 p-r-0">
        <span class="countdown-text">hrs<br></span>
        <span id="hours"></span>
       </div>
-      <div class="col-sm-3 text-center p-b-md p-l-0 p-r-0">
+      <div class="fifth text-center section-primary p-b-md p-l-0 p-r-0">
        <span class="countdown-text">min<br></span>
        <span id="minutes"></span>
       </div>
-      <div class="col-sm-3 text-center p-b-md p-l-0 p-r-0">
+      <div class="fifth text-center section-primary p-b-md p-l-0 p-r-0">
        <span class="countdown-text">sec<br></span>
        <span id="seconds"></span>
       </div>
@@ -126,20 +136,24 @@ permalink: "components/countdown-timer.html"
     <div class="card-body">
      <h3>Countdown default</h3>
      <pre style="max-height: 300px;"><code><!--HTML-->
-      <div class="row section-default countdown">
-       <div class="col-sm-3 text-center p-b-md p-l-0 p-r-0">
+      <div class="group countdown p-x">
+       <div class="fifth bg-gray-100 text-center p-b-md p-l-0 p-r-0">
+        <span class="countdown-text">wks<br></span>
+        <span id="weeks1"></span>
+       </div>
+       <div class="fifth bg-gray-100 text-center p-b-md p-l-0 p-r-0">
         <span class="countdown-text">days<br></span>
         <span id="days1"></span>
        </div>
-       <div class="col-sm-3 text-center p-b-md p-l-0 p-r-0">
+       <div class="fifth bg-gray-100 text-center p-b-md p-l-0 p-r-0">
         <span class="countdown-text">hrs<br></span>
         <span id="hours1"></span>
        </div>
-       <div class="col-sm-3 text-center p-b-md p-l-0 p-r-0">
+       <div class="fifth bg-gray-100 text-center p-b-md p-l-0 p-r-0">
         <span class="countdown-text">min<br></span>
         <span id="minutes1"></span>
        </div>
-       <div class="col-sm-3 text-center p-b-md p-l-0 p-r-0">
+       <div class="fifth bg-gray-100 text-center p-b-md p-l-0 p-r-0">
         <span class="countdown-text">sec<br></span>
         <span id="seconds1"></span>
        </div>
@@ -148,7 +162,7 @@ permalink: "components/countdown-timer.html"
            <!--JavaScript-->
            <script>
             // Set the date we're counting down to
-            var countDownDate = new Date("Apr 1, 2030 00:00:00").getTime();
+            var countDownDate = new Date("Jan 1, 2023 00:00:00").getTime();
 
             // Update the count down every 1 second
             var x = setInterval(function () {
@@ -159,13 +173,15 @@ permalink: "components/countdown-timer.html"
              // Find the distance between now an the count down date
              var distance = countDownDate - now;
 
-             // Time calculations for days, hours, minutes and seconds
+             // Time calculations for weeks, days, hours, minutes and seconds
+             var weeks = Math.floor(distance / (1000 * 60 * 60 * 24 * 7));
              var days = Math.floor(distance / (1000 * 60 * 60 * 24));
              var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
              var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
              var seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
              // Output the result in the elements with id="days1", id="hours1" etc.
+             document.getElementById("weeks1").innerHTML = weeks;
              document.getElementById("days1").innerHTML = days;
              document.getElementById("hours1").innerHTML = hours;
              document.getElementById("minutes1").innerHTML = minutes;
@@ -184,29 +200,33 @@ permalink: "components/countdown-timer.html"
 
      <h3>Countdown primary</h3>
      <pre style="max-height: 300px;"><code><!--HTML-->
-          <div class="row section-primary countdown">
-           <div class="col-sm-3 text-center p-b-md p-l-0 p-r-0">
-            <span class="countdown-text">days<br></span>
-            <span id="days"></span>
-           </div>
-           <div class="col-sm-3 text-center p-b-md p-l-0 p-r-0">
-            <span class="countdown-text">hrs<br></span>
-            <span id="hours"></span>
-           </div>
-           <div class="col-sm-3 text-center p-b-md p-l-0 p-r-0">
-            <span class="countdown-text">min<br></span>
-            <span id="minutes"></span>
-           </div>
-           <div class="col-sm-3 text-center p-b-md p-l-0 p-r-0">
-            <span class="countdown-text">sec<br></span>
-            <span id="seconds"></span>
-           </div>
-          </div>
+      <div class="group countdown p-x">
+       <div class="fifth text-center section-primary p-b-md p-l-0 p-r-0">
+        <span class="countdown-text">wks<br></span>
+        <span id="weeks"></span>
+       </div>
+       <div class="fifth text-center section-primary p-b-md p-l-0 p-r-0">
+        <span class="countdown-text">days<br></span>
+        <span id="days"></span>
+       </div>
+       <div class="fifth text-center section-primary p-b-md p-l-0 p-r-0">
+        <span class="countdown-text">hrs<br></span>
+        <span id="hours"></span>
+       </div>
+       <div class="fifth text-center section-primary p-b-md p-l-0 p-r-0">
+        <span class="countdown-text">min<br></span>
+        <span id="minutes"></span>
+       </div>
+       <div class="fifth text-center section-primary p-b-md p-l-0 p-r-0">
+        <span class="countdown-text">sec<br></span>
+        <span id="seconds"></span>
+       </div>
+      </div>
     
         <!--JavaScript-->
         <script>
          // Set the date we're counting down to
-         var countDownDate = new Date("Apr 1, 2030 00:00:00").getTime();
+         var countDownDate = new Date("Jan 1, 2023 00:00:00").getTime();
 
          // Update the count down every 1 second
          var x = setInterval(function () {
@@ -217,13 +237,15 @@ permalink: "components/countdown-timer.html"
           // Find the distance between now an the count down date
           var distance = countDownDate - now;
 
-          // Time calculations for days, hours, minutes and seconds
+          // Time calculations for weeks, days, hours, minutes and seconds
+          var weeks = Math.floor(distance / (1000 * 60 * 60 * 24 * 7));
           var days = Math.floor(distance / (1000 * 60 * 60 * 24));
           var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
           var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
           var seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
           // Output the result in the elements with id="days", id="hours" etc.
+          document.getElementById("weeks").innerHTML = weeks;
           document.getElementById("days").innerHTML = days;
           document.getElementById("hours").innerHTML = hours;
           document.getElementById("minutes").innerHTML = minutes;
@@ -254,9 +276,8 @@ permalink: "components/countdown-timer.html"
 
 <h2 id="Usage">Usage</h2>
 
-<h3 class="m-t">When and how to use it</h3>
+<h3>When and how to use it</h3>
 <p>Use the countdown timer to emphasize important events. These events might include:</p>
-<p>Headings can be a:</p>
 
 <ul>
  <li>Release dates</li>
@@ -268,7 +289,7 @@ permalink: "components/countdown-timer.html"
 
 <h3>How not to use it</h3>
 
-<p>Try not to use months in your countdown as they present a fluctuating metric of time. </p>
+<p>Try not to use months in your countdown as they present a fluctuating metric of time.</p>
 <p>Avoid excessive timeframes (more than 1 year) as this renders the countdown useless to visitors.</p>
 
 <h2 id="Accessibility">Accessibility</h2>
@@ -289,6 +310,7 @@ permalink: "components/countdown-timer.html"
   var distance = countDownDate - now;
 
   // Time calculations for days, hours, minutes and seconds
+  var weeks = Math.floor(distance / (1000 * 60 * 60 * 24 * 7));
   var days = Math.floor(distance / (1000 * 60 * 60 * 24));
   var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
   var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
@@ -296,13 +318,13 @@ permalink: "components/countdown-timer.html"
 
   // Output the result in the elements with id="days", id="hours" etc.
 
-
+  document.getElementById("weeks").innerHTML = weeks;
   document.getElementById("days").innerHTML = days;
   document.getElementById("hours").innerHTML = hours;
   document.getElementById("minutes").innerHTML = minutes;
   document.getElementById("seconds").innerHTML = seconds;
 
-
+  document.getElementById("weeks1").innerHTML = weeks;
   document.getElementById("days1").innerHTML = days;
   document.getElementById("hours1").innerHTML = hours;
   document.getElementById("minutes1").innerHTML = minutes;
