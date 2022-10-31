@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Text Accent</title> 
+  <title>Gradient Gackgrounds</title> 
   <meta charset="utf-8">
   <meta name="Author" content="State of California" />
   <meta name="Description" content="State of California" />
@@ -365,18 +365,20 @@
      
    
      
-   
-     
-   
-     
       
       
-     <li><a href="/css-shortcuts/css-classes-shortcuts.html" title="CSS classes shortcuts landing page">CSS classes shortcuts</a></li>
+     <li><a href="/get-started.html" title="Get started landing page">Get started</a></li>
       
         
+         <li><a href="/get-started/css-classes-shortcuts/" title="CSS classes shortcuts landing page">CSS classes shortcuts</a></li>
+        
        
-      <li>Text accent</li>
+      <li>Gradient backgrounds</li>
        
+   
+     
+   
+     
    
      
    
@@ -460,218 +462,269 @@
   <!-- Side navigation -->
   <nav aria-labelledby="color-schemes-list" class="side-navigation sticky-6">
    <ul class="list-navigation">
-    <li><a href="/css-shortcuts/css-classes-shortcuts.html" id="color-schemes-list">CSS classes shortcuts</a>
+    <li><a href="/get-started/css-classes-shortcuts/" id="color-schemes-list">CSS classes shortcuts</a>
      <ul>
-      <li><a href="/css-shortcuts/utility-css-classes.html">Utility CSS classes</a></li>
-      <li><a href="/css-shortcuts/gradient-backgrounds.html">Gradient backgrounds</a></li>
-      <li><a href="/css-shortcuts/spacing.html">Spacing</a></li>
-      <li><a href="/css-shortcuts/text-accent.html" class="active">Text accent</a>
+      <li><a href="/get-started/css-classes-shortcuts/utility-css-classes.html">Utility CSS classes</a></li>
+      <li><a href="/get-started/css-classes-shortcuts/gradient-backgrounds.html" class="active">Gradient
+        backgrounds</a>
        <ul>
-        <li><a href="#Accent-colors">Accent colors</a></li>
-        <li><a href="#Text-highlight">Text highlight</a></li>
+        <li><a href="#Linear-gradients">Linear gradients</a></li>
+        <li><a href="#Radial-gradients">Radial gradients</a></li>
        </ul>
       </li>
+      <li><a href="/get-started/css-classes-shortcuts/spacing.html">Spacing</a></li>
+      <li><a href="/get-started/css-classes-shortcuts/text-accent.html">Text accent</a></li>
      </ul>
     </li>
-    <li><a href="/components.html">All components</a>
    </ul>
   </nav>
  </div>
+ <div class="col-md-9 m-b-lg">
+  <h1 class="mt-lg-0">Gradient backgrounds</h1>
+  <h2 id="Linear-gradients">Linear gradients</h2>
+  <!-- Gradients -->
+  <div class="row">
+   <div class="col-sm-3">
+    <h3 class="m-t-0">Primary</h3>
+    <h4 class="h4 m-b-sm">Source code:</h4>
+    <pre><code class="overflow-auto"><div class="container height-300 bg-primary-gradient"></div></code></pre>
+   </div>
 
- <div class="col-md-9 p-b-lg">
-  <h1 class="mt-lg-0">Text accent colors</h1>
-  <p>Change text colors with a handful of emphasis utility classes. It is best to exercise
-   restraint when using these classes on general body copy as color contrast may be
-   insufficient for the visually impaired.</p>
-  <h2 id="Accent-colors">Accent colors</h2>
-
-
-  <!--TABS-->
-  <div class="tab-group responsive">
-   <ul id="tabs1" class="nav nav-tabs" role="tablist">
-    <li class="nav-item">
-     <a id="tab-example1" href="#pane-example1" class="nav-link active" data-bs-toggle="tab" role="tab">Example</a>
-    </li>
-    <li class="nav-item">
-     <a id="tab-html1" href="#pane-html1" class="nav-link" data-bs-toggle="tab" role="tab">Source code</a>
-    </li>
-
-   </ul>
-
-
-   <div id="tab-content" class="tab-content">
-    <!--Examples-->
-    <div id="pane-example1" class="card tab-pane fade show active" role="tabpanel" aria-labelledby="tab-example1">
-     <div class="card-header" id="heading-example1">
-      <a data-bs-toggle="collapse" href="#collapse-example1" data-parent="#tab-content" aria-expanded="true"
-       aria-controls="collapse-example1" data-hash="#pane-example1" title="Example tab header">
-       Example
-      </a>
-     </div>
-     <div id="collapse-example1" class="collapse show" role="tabpanel" aria-labelledby="heading-example1">
-      <div class="p-a-md">
-       <p class="text-accent1">Accent Text 1</p>
-<p class="text-accent2">Accent Text 2</p>
-<p class="text-accent3">Accent Text 3</p>
-<p class="text-accent4">Accent Text 4</p>
-<p class="text-accent5">Accent Text 5</p>
-<p class="text-accent6">Accent Text 6</p>
-<p class="text-accent7">Accent Text 7</p>
-<p class="text-accent8">Accent Text 8</p>
-<p class="text-accent9 bg-dark">Accent Text 9</p>
-<!-- Color Scheme Styles -->
-<p class="text-accent-p1 bg-dark">Accent Text Primary 1</p>
-<p class="text-accent-p2">Accent Text Primary 2</p>
-<p class="text-accent-p3">Accent Text Primary 3</p>
-<p class="text-accent-s1 bg-dark">Accent Text Secondary 1</p>
-<p class="text-accent-s2 bg-dark">Accent Text Secondary 2</p>
-<p class="text-accent-s3 bg-dark">Accent Text Secondary 3</p>
-<!-- Additional Helper Styles -->
-<p class="text-muted">Muted Text</p>
-<p class="text-primary">Primary Text</p>
-<p class="text-success">Success Text</p>
-<p class="text-info">Info Text</p>
-<p class="text-warning bg-dark">Warning Text</p>
-<p class="text-danger">Danger Text</p>
-<!-- -->
-      </div>
-     </div>
-    </div>
-
-
-
-    <!--HTML-->
-    <div id="pane-html1" class="card tab-pane fade" role="tabpanel" aria-labelledby="tab-html1">
-     <div class="card-header" id="heading-html1">
-      <a class="collapsed" data-bs-toggle="collapse" href="#collapse-html1" data-parent="#tab-content"
-       aria-expanded="false" aria-controls="collapse-html1" data-hash="#pane-html1" title="HTML Source code tab header">
-       Source code
-      </a>
-     </div>
-     <div id="collapse-html1" class="collapse" role="tabpanel" aria-labelledby="heading-html1">
-      <div class="card-body">
-       <pre style="max-height: 300px;"><code><p class="text-accent1">Accent Text 1</p>
-<p class="text-accent2">Accent Text 2</p>
-<p class="text-accent3">Accent Text 3</p>
-<p class="text-accent4">Accent Text 4</p>
-<p class="text-accent5">Accent Text 5</p>
-<p class="text-accent6">Accent Text 6</p>
-<p class="text-accent7">Accent Text 7</p>
-<p class="text-accent8">Accent Text 8</p>
-<p class="text-accent9 bg-dark">Accent Text 9</p>
-<!-- Color Scheme Styles -->
-<p class="text-accent-p1 bg-dark">Accent Text Primary 1</p>
-<p class="text-accent-p2">Accent Text Primary 2</p>
-<p class="text-accent-p3">Accent Text Primary 3</p>
-<p class="text-accent-s1 bg-dark">Accent Text Secondary 1</p>
-<p class="text-accent-s2 bg-dark">Accent Text Secondary 2</p>
-<p class="text-accent-s3 bg-dark">Accent Text Secondary 3</p>
-<!-- Additional Helper Styles -->
-<p class="text-muted">Muted Text</p>
-<p class="text-primary">Primary Text</p>
-<p class="text-success">Success Text</p>
-<p class="text-info">Info Text</p>
-<p class="text-warning bg-dark">Warning Text</p>
-<p class="text-danger">Danger Text</p>
-<!-- --></code>
-    </pre>
-      </div>
-     </div>
-    </div>
-
-
+   <div class="col-sm-9">
+    <div class="container height-300 bg-primary-gradient"></div>
    </div>
   </div>
-  <!--END TABS-->
 
+  <hr class="m-y-lg" />
 
-  <h2 id="Text-highlight">Text highlight</h2>
-  <p>Use <code>text-highlight</code> class to highlight a word or text portion. Also, to specify the text
-   highlight's
-   color
-   use following classes: </p>
+  <div class="row">
+   <div class="col-sm-3">
+    <h3 class="m-t-0">Highlight</h3>
+    <h4 class="h4 m-b-sm">Source code:</h4>
+    <pre><code class="overflow-auto"><div class="container height-300 bg-highlight-gradient"></div></code></pre>
+   </div>
 
-  <!--TABS-->
-  <div class="tab-group responsive">
-   <ul id="tabs4" class="nav nav-tabs" role="tablist">
-    <li class="nav-item">
-     <a id="tab-example4" href="#pane-example4" class="nav-link active" data-bs-toggle="tab" role="tab">Example</a>
-    </li>
-    <li class="nav-item">
-     <a id="tab-html4" href="#pane-html4" class="nav-link" data-bs-toggle="tab" role="tab">Source code</a>
-    </li>
-
-   </ul>
-
-
-   <div id="tab-content" class="tab-content">
-    <!--Examples-->
-    <div id="pane-example4" class="card tab-pane fade show active" role="tabpanel" aria-labelledby="tab-example4">
-     <div class="card-header" id="heading-example4">
-      <a data-bs-toggle="collapse" href="#collapse-example4" data-parent="#tab-content" aria-expanded="true"
-       aria-controls="collapse-example4" data-hash="#pane-example4" title="Example tab header">
-       Example
-      </a>
-     </div>
-     <div id="collapse-example4" class="collapse show" role="tabpanel" aria-labelledby="heading-example4">
-      <div class="p-a-md">
-
-       <p><span class="text-highlight">Note:</span> Path to the include will be relative to the directory
- of
- your page.</p>
-<p><span class="text-highlight-primary">Note:</span> Path to the include will be relative to the directory
- of
- your page.</p>
-<p><span class="text-highlight-warning">Note:</span> Path to the include will be relative to the
- directory of
- your page.</p>
-<p><span class="text-highlight-dark">Note:</span> Path to the include will be relative to the directory
- of
- your page.</p>
-
-
-      </div>
-     </div>
-    </div>
-
-
-
-    <!--HTML-->
-    <div id="pane-html4" class="card tab-pane fade" role="tabpanel" aria-labelledby="tab-html4">
-     <div class="card-header" id="heading-html4">
-      <a class="collapsed" data-bs-toggle="collapse" href="#collapse-html4" data-parent="#tab-content"
-       aria-expanded="false" aria-controls="collapse-html4" data-hash="#pane-html4" title="HTML Source code tab header">
-       Source code
-      </a>
-     </div>
-     <div id="collapse-html4" class="collapse" role="tabpanel" aria-labelledby="heading-html4">
-      <div class="card-body">
-       <pre style="max-height: 300px;"><code><p><span class="text-highlight">Note:</span> Path to the include will be relative to the directory
- of
- your page.</p>
-<p><span class="text-highlight-primary">Note:</span> Path to the include will be relative to the directory
- of
- your page.</p>
-<p><span class="text-highlight-warning">Note:</span> Path to the include will be relative to the
- directory of
- your page.</p>
-<p><span class="text-highlight-dark">Note:</span> Path to the include will be relative to the directory
- of
- your page.</p></code>
-   </pre>
-
-      </div>
-     </div>
-    </div>
-
-
+   <div class="col-sm-9">
+    <div class="container height-300 bg-highlight-gradient"></div>
    </div>
   </div>
-  <!--END TABS-->
+
+  <hr class="m-y-lg" />
+
+  <div class="row">
+   <div class="col-sm-3">
+    <h3 class="m-t-0">Standout</h3>
+    <h4 class="h4 m-b-sm">Source code:</h4>
+    <pre><code class="overflow-auto"><div class="container height-300 bg-standout-gradient"></div></code></pre>
+   </div>
+
+   <div class="col-sm-9">
+    <div class="container height-300 bg-standout-gradient"></div>
+   </div>
+  </div>
+
+  <hr class="m-y-lg" />
+
+  <div class="row">
+   <div class="col-sm-3">
+    <h3 class="m-t-0">Secondary</h3>
+    <h4 class="h4 m-b-sm">Source code:</h4>
+    <pre><code class="overflow-auto"><div class="container height-300 bg-secondary-gradient"></div></code></pre>
+   </div>
+
+   <div class="col-sm-9">
+    <div class="container height-300 bg-secondary-gradient"></div>
+   </div>
+  </div>
+
+  <hr class="m-y-lg" />
+
+  <div class="row">
+   <div class="col-sm-3">
+    <h3 class="m-t-0">Primary-standout</h3>
+    <h4 class="h4 m-b-sm">Source code:</h4>
+    <pre><code class="overflow-auto"><div class="container height-300 bg-primary-standout-gradient"></div></code></pre>
+   </div>
+
+   <div class="col-sm-9">
+    <div class="container height-300 bg-primary-standout-gradient"></div>
+   </div>
+  </div>
+
+  <hr class="m-y-lg" />
+
+  <div class="row">
+   <div class="col-sm-3">
+    <h3 class="m-t-0">Primary-highlight</h3>
+    <h4 class="h4 m-b-sm">Source code:</h4>
+    <pre><code class="overflow-auto"><div class="container height-300 bg-primary-highlight-gradient"></div></code></pre>
+   </div>
+
+   <div class="col-sm-9">
+    <div class="container height-300 bg-primary-highlight-gradient"></div>
+   </div>
+  </div>
 
 
+  <hr class="m-y-lg" />
+
+  <div class="row">
+   <div class="col-sm-3">
+    <h3 class="m-t-0">Primary-secondary</h3>
+    <h4 class="h4 m-b-sm">Source code:</h4>
+    <pre><code class="overflow-auto"><div class="container height-300 bg-primary-secondary-gradient"></div></code></pre>
+   </div>
+
+   <div class="col-sm-9">
+    <div class="container height-300 bg-primary-secondary-gradient"></div>
+   </div>
+  </div>
+
+  <hr class="m-y-lg" />
+
+  <div class="row">
+   <div class="col-sm-3">
+    <h3 class="m-t-0">Standout-highlight</h3>
+    <h4 class="h4 m-b-sm">Source code:</h4>
+    <pre><code class="overflow-auto"><div class="container height-300 bg-standout-highlight-gradient"></div></code></pre>
+   </div>
+
+   <div class="col-sm-9">
+    <div class="container height-300 bg-standout-highlight-gradient"></div>
+   </div>
+  </div>
+
+  <hr class="m-y-lg" />
+
+  <div class="row">
+   <div class="col-sm-3">
+    <h3 class="m-t-0">Danger-warning</h3>
+    <h4 class="h4 m-b-sm">Source code:</h4>
+    <pre><code class="overflow-auto"><div class="container height-300 bg-danger-warning-gradient"></div></code></pre>
+   </div>
+
+   <div class="col-sm-9">
+    <div class="container height-300 bg-danger-warning-gradient"></div>
+   </div>
+  </div>
+
+  <hr class="m-y-lg" />
+
+  <div class="row">
+   <div class="col-sm-3">
+    <h3 class="m-t-0">Info-success</h3>
+    <h4 class="h4 m-b-sm">Source code:</h4>
+    <pre><code class="overflow-auto"><div class="container height-300 bg-info-success-gradient"></div></code></pre>
+   </div>
+
+   <div class="col-sm-9">
+    <div class="container height-300 bg-info-success-gradient"></div>
+   </div>
+  </div>
+
+  <hr class="m-y-lg" />
 
 
+  <h2 id="Radial-gradients">Radial gradients</h2>
+
+
+  <div class="row">
+   <div class="col-sm-3">
+    <h3 class="m-t-0">Gray</h3>
+    <h4 class="h4 m-b-sm">Source code:</h4>
+    <pre><code class="overflow-auto"><div class="container height-300 bg-grey-radialgradient"></div></code></pre>
+   </div>
+
+   <div class="col-sm-9">
+    <div class="container height-300 bg-grey-radialgradient"></div>
+   </div>
+  </div>
+
+  <hr class="m-y-lg" />
+
+  <div class="row">
+   <div class="col-sm-3">
+    <h3 class="m-t-0">Gray light</h3>
+    <h4 class="h4 m-b-sm">Source code:</h4>
+    <pre><code class="overflow-auto"><div class="container height-300 bg-greylight-radialgradient"></div></code></pre>
+   </div>
+
+   <div class="col-sm-9">
+    <div class="container height-300 bg-greylight-radialgradient"></div>
+   </div>
+  </div>
+
+  <hr class="m-y-lg" />
+
+  <div class="row">
+   <div class="col-sm-3">
+    <h3 class="m-t-0">Primary</h3>
+    <h4 class="h4 m-b-sm">Source code:</h4>
+    <pre><code class="overflow-auto"><div class="container height-300 bg-primary-radialgradient"></div></code></pre>
+   </div>
+
+   <div class="col-sm-9">
+    <div class="container height-300 bg-primary-radialgradient"></div>
+   </div>
+  </div>
+
+  <hr class="m-y-lg" />
+
+  <div class="row">
+   <div class="col-sm-3">
+    <h3 class="m-t-0">Highlight</h3>
+    <h4 class="h4 m-b-sm">Source code:</h4>
+    <pre><code class="overflow-auto"><div class="container height-300 bg-highlight-radialgradient"></div></code></pre>
+   </div>
+
+   <div class="col-sm-9">
+    <div class="container height-300 bg-highlight-radialgradient"></div>
+   </div>
+  </div>
+
+  <hr class="m-y-lg" />
+
+  <div class="row">
+   <div class="col-sm-3">
+    <h3 class="m-t-0">Standout</h3>
+    <h4 class="h4 m-b-sm">Source code:</h4>
+    <pre><code class="overflow-auto"><div class="container height-300 bg-standout-radialgradient"></div></code></pre>
+   </div>
+
+   <div class="col-sm-9">
+    <div class="container height-300 bg-standout-radialgradient"></div>
+   </div>
+  </div>
+
+  <hr class="m-y-lg" />
+
+  <div class="row">
+   <div class="col-sm-3">
+    <h3 class="m-t-0">Secondary</h3>
+    <h4 class="h4 m-b-sm">Source code:</h4>
+    <pre><code class="overflow-auto"><div class="container height-300 bg-secondary-radialgradient"></div></code></pre>
+   </div>
+
+   <div class="col-sm-9">
+    <div class="container height-300 bg-secondary-radialgradient"></div>
+   </div>
+  </div>
+
+  <hr class="m-y-lg" />
+
+  <div class="row">
+   <div class="col-sm-3">
+    <h3 class="m-t-0">Secondary light</h3>
+    <h4 class="h4 m-b-sm">Source code:</h4>
+    <pre><code class="overflow-auto"><div class="container height-300 bg-secondarylight-radialgradient"></div></code></pre>
+   </div>
+
+   <div class="col-sm-9">
+    <div class="container height-300 bg-secondarylight-radialgradient"></div>
+   </div>
+  </div>
+
+  <hr class="m-y-lg" />
 
  </div>
 </div>
