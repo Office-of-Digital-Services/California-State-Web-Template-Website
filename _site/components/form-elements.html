@@ -10,7 +10,7 @@
 <meta name="HandheldFriendly" content="True">
 <meta name="MobileOptimized" content="320">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
-<meta property="og:image" content="https://as-cdt-pub-migr-betaws-ww-p-001-stage.azurewebsites.net/images/social_media_preview_image.png"/>
+<meta property="og:image" content="https://california.azureedge.net/cdt/statetemplate/global/images/social_media_preview_image.png">
 
 <link rel="stylesheet" href="/css/cagov.core.min.css">
 
@@ -86,6 +86,15 @@
     <div id="skip-to-content">
         <a href="#main-content">Skip to Main Content</a>
     </div>
+    <!-- /src/_includes/modules/alert-banner-beta-feedback.html -->
+<div class="alert alert-banner bg-standout" role="alert" style="padding:7px 0;">
+    <div class="container" style="height:32px;">
+        <span class="alert-level border brd-s1 px-3 m-r-md" style="position:relative; top:-1px;">BETA</span><span class="alert-text text-1rem">We’d love your feedback
+            to make the template better. You have from November 4 to November 11. </span>
+        <a href="https://airtable.com/shro9V6ry2Cf4mpgG" class="alert-link btn btn-default btn-xs bg-s1" style="position:relative;top:3px;">Send feedback</a>
+    </div>
+</div>
+
     
     <div class="utility-header">
     <div class="container">
@@ -159,7 +168,7 @@
      <img src="/images/template-logo.png" class="logo-img" alt="State Template Logo" />
      <div class="logo-text">
       <span class="logo-state">State of California</span>
-      <span class="logo-dept">Web Template <sup>BETA</sup></span>
+      <span class="logo-dept">Web Template</span>
      </div>
     </div>
    </a>
@@ -439,6 +448,10 @@
    
      
    
+     
+   
+     
+   
  </ol>
 </nav>
 
@@ -468,7 +481,7 @@
        
       
       
-        <li><a href="/components/blockquotes.html" >Blockquote</a>
+        <li><a href="/components/blockquote.html" >Blockquote</a>
          
          
         </li>
@@ -502,11 +515,11 @@
            <ul>
             
             <li>
-             <a href="#Text-field" class="tab-link">Text field</a>
+             <a href="#Label" class="tab-link">Label</a>
             </li>
             
             <li>
-             <a href="#Text-area" class="tab-link">Text area</a>
+             <a href="#Text-field-or-text-area" class="tab-link">Text field or text area</a>
             </li>
             
             <li>
@@ -523,6 +536,14 @@
             
             <li>
              <a href="#File-input" class="tab-link">File input</a>
+            </li>
+            
+            <li>
+             <a href="#Usage" class="tab-link">Usage</a>
+            </li>
+            
+            <li>
+             <a href="#Accessibility" class="tab-link">Accessibility</a>
             </li>
             
            </ul>
@@ -580,7 +601,7 @@
        
       
       
-        <li><a href="/components/tables.html" >Table</a>
+        <li><a href="/components/table.html" >Table</a>
          
          
         </li>
@@ -595,7 +616,7 @@
       
       </ul>
   </li>
-  <li><a href="/css-shortcuts/css-units.html" id="components-list">CSS style shortcuts</a>
+  <li><a href="/css-shortcuts/css-classes-shortcuts.html" id="components-list">CSS classes shortcuts</a>
  </ul>
 
 
@@ -632,24 +653,25 @@
 <p class="lead">A form allows visitors to submit information to a server.</p>
 <p class="lead">Common form elements include:</p>
 <ul class="lead">
- <li>Labels</li>
- <li>Text fields</li>
- <li>Text areas</li>
- <li>Checkboxes</li>
- <li>Radio buttons</li>
- <li>Dropdown menus (select)</li>
- <li>File inputs</li>
+ <li>Label</li>
+ <li>Text field</li>
+ <li>Text area</li>
+ <li>Checkbox</li>
+ <li>Radio button</li>
+ <li>Dropdown menu</li>
+ <li>File input</li>
+ <li>Buttons</li>
 </ul>
 
 
-<h2 id="File-input" class=" m-b-0">Label</h2>
+<h2 id="Label" class=" m-b-0">Label</h2>
 <p>The label should:</p>
 <ul>
- <li>Describe the purpose of the text field.</li>
- <li>Use sentence-style capitalization—only capitalize the first word. </li>
+ <li>Describe the purpose of the text field or other item.</li>
+ <li>Use sentence-style capitalization &mdash; only capitalize the first word. </li>
  <li>Be short and concise.</li>
  <li>Use nouns or short noun phrases.</li>
- <li>Inform visitors whether or not the form input is required (represented by an asterisk).</li>
+ <li>Inform visitors whether or not the form input is required or optional.</li>
  <li>Avoid instructional text like "Click to get started".</li>
 </ul>
 
@@ -721,8 +743,8 @@
 
 
 
-<h2 id="Text-field">Text field</h2>
-<p>A text field allows visitors to write or edit text.</p>
+<h2 id="Text-field-or-text-area">Text field or text area</h2>
+<p>A text field allows visitors to write or edit one line of text.</p>
 
 
 <!--TABS-->
@@ -747,7 +769,7 @@
     </a>
    </div>
    <div id="collapse-example2" class="collapse show" role="tabpanel" aria-labelledby="heading-example2">
-    <div class="card-body p-b-lg">
+    <div class="card-body">
      <div class="bg-gray-50 p-a">
       <h3 class="h4 m-t-0">Basic</h3>
       <div class="row">
@@ -817,11 +839,13 @@
 </div>
 <!--END TABS-->
 
-
-<h2 id="Text-area">Text area</h2>
-<p>A text area allows visitors to write or edit multiple lines of text. Same as text field the text area should always
- have a label that is assosiated with it.
-</p>
+<p class="p-t-md">A text area allows visitors to write or edit multiple lines of text. Same as the text field, the text
+ area should
+ always have a label that is associated with it.</p>
+<p>You can include instructional or error messages beneath the field.</p>
+<p>You can also include placeholder text in the field. Placeholder text disappears when the visitor interacts with the
+ text field, so make sure they don't need it to fill in the text field.</p>
+<p>Instructional, error messages, and placeholder text should not provide the same message as the label.</p>
 
 <!--TABS-->
 <div class="tab-group responsive">
@@ -846,18 +870,35 @@
     </a>
    </div>
    <div id="collapse-example1" class="collapse show" role="tabpanel" aria-labelledby="heading-example1">
-    <div class="card-body p-b-lg">
+    <div class="card-body">
 
-     <label class="form-control-label" for="exampleInputComment">Your message</label>
+
+     <div class="bg-gray-50 p-a">
+      <h3 class="h4 m-t-0">Basic</h3>
+      <div class="row">
+       <div class="col-sm-3">
+        <p class="mt-4 pt-2 outline-color blue-arrow text-right">Text area</p>
+       </div>
+       <div class="col-sm-9"><label class="form-control-label" for="exampleInputComment">Your message</label>
 <textarea id="exampleInputComment" class="form-control" rows="5" cols="80"></textarea>
-<small>Use this space for error messages or instructions text</small>
+<small>Use this space for error messages or instructions text</small></div>
+      </div>
+     </div>
 
-<h3 class="h4">Required</h3>
-<label class="form-control-label" for="exampleInputCommentRequired"><span class="required-label">*</span> Your
+
+     <div class="bg-gray-50 p-a m-t-md">
+      <h3 class="h4 m-t-0">Required</h3>
+      <div class="row">
+       <div class="col-sm-3">
+        <p class="mt-4 pt-2 outline-color blue-arrow text-right">Text area</p>
+       </div>
+       <div class="col-sm-9"><label class="form-control-label" for="exampleInputCommentRequired"><span class="required-label">*</span> Your
  message</label>
 <textarea id="exampleInputCommentRequired" class="form-control" rows="5" cols="80"></textarea>
 <div class="invalid-feedback d-block">
- This field is required</div>
+ This field is required</div></div>
+      </div>
+     </div>
 
     </div>
    </div>
@@ -875,17 +916,19 @@
    </div>
    <div id="collapse-html1" class="collapse" role="tabpanel" aria-labelledby="heading-html1">
     <div class="card-body">
+     <h3 class="h4 m-t-0">Basic</h3>
      <pre style="max-height: 300px;"><code><label class="form-control-label" for="exampleInputComment">Your message</label>
 <textarea id="exampleInputComment" class="form-control" rows="5" cols="80"></textarea>
-<small>Use this space for error messages or instructions text</small>
+<small>Use this space for error messages or instructions text</small></code>
+    </pre>
 
-<h3 class="h4">Required</h3>
-<label class="form-control-label" for="exampleInputCommentRequired"><span class="required-label">*</span> Your
+     <h3 class="h4">Required</h3>
+     <pre style="max-height: 300px;"><code><label class="form-control-label" for="exampleInputCommentRequired"><span class="required-label">*</span> Your
  message</label>
 <textarea id="exampleInputCommentRequired" class="form-control" rows="5" cols="80"></textarea>
 <div class="invalid-feedback d-block">
  This field is required</div></code>
-    </pre>
+   </pre>
 
     </div>
    </div>
@@ -930,25 +973,23 @@
 
      <!--checkboxes-->
 
-<h3 class="h4 mt-0 m-b-0">Which types of waste do you transport?</h3>
-<small class="m-b d-block">Select all that apply</small>
-
+<h3 class="h4 mt-0 m-b ">Pick one or more of these items:</h3>
 <div class="form-check m-b">
  <input class="form-check-input" type="checkbox" value="" id="animalCarcassesCheck">
  <label class="form-check-label" for="animalCarcassesCheck">
-  Waste from animal carcasses
+  Option 1
  </label>
 </div>
 <div class="form-check m-b">
  <input class="form-check-input" type="checkbox" value="" id="minesCheck">
  <label class="form-check-label" for="minesCheck">
-  Waste from mines or quarries
+  Option 2
  </label>
 </div>
 <div class="form-check m-b">
  <input class="form-check-input" type="checkbox" value="" id="farmCheck">
  <label class="form-check-label" for="farmCheck">
-  Farm or agricultural waste
+  Option 3
  </label>
 </div>
 
@@ -971,25 +1012,23 @@
     <div class="card-body">
      <pre style="max-height: 300px;"><code><!--checkboxes-->
 
-<h3 class="h4 mt-0 m-b-0">Which types of waste do you transport?</h3>
-<small class="m-b d-block">Select all that apply</small>
-
+<h3 class="h4 mt-0 m-b ">Pick one or more of these items:</h3>
 <div class="form-check m-b">
  <input class="form-check-input" type="checkbox" value="" id="animalCarcassesCheck">
  <label class="form-check-label" for="animalCarcassesCheck">
-  Waste from animal carcasses
+  Option 1
  </label>
 </div>
 <div class="form-check m-b">
  <input class="form-check-input" type="checkbox" value="" id="minesCheck">
  <label class="form-check-label" for="minesCheck">
-  Waste from mines or quarries
+  Option 2
  </label>
 </div>
 <div class="form-check m-b">
  <input class="form-check-input" type="checkbox" value="" id="farmCheck">
  <label class="form-check-label" for="farmCheck">
-  Farm or agricultural waste
+  Option 3
  </label>
 </div></code>
    </pre>
@@ -1037,24 +1076,23 @@
     <div class="card-body p-b">
 
 
-     <h3 class="h4 m-y-0">What is your favorite pet?</h3>
-<small class="m-b d-block">Select one</small>
+     <h3 class="h4 m-t-0 m-b">Pick only one of these items:</h3>
 <div class="form-check m-b">
  <input class="form-check-input" type="radio" name="favorite_pet" id="customRadio1">
  <label class="form-check-label" for="customRadio1">
-  Cats
+  Option 1
  </label>
 </div>
 <div class="form-check m-b">
  <input class="form-check-input" type="radio" name="favorite_pet" id="customRadio2">
  <label class="form-check-label" for="customRadio2">
-  Dogs
+  Option 2
  </label>
 </div>
 <div class="form-check m-b">
  <input class="form-check-input" type="radio" name="favorite_pet" id="customRadio3">
  <label class="form-check-label" for="customRadio3">
-  Birds
+  Option 3
  </label>
 </div>
 
@@ -1075,24 +1113,23 @@
    </div>
    <div id="collapse-html4" class="collapse" role="tabpanel" aria-labelledby="heading-html4">
     <div class="card-body">
-     <pre style="max-height: 300px;"><code><h3 class="h4 m-y-0">What is your favorite pet?</h3>
-<small class="m-b d-block">Select one</small>
+     <pre style="max-height: 300px;"><code><h3 class="h4 m-t-0 m-b">Pick only one of these items:</h3>
 <div class="form-check m-b">
  <input class="form-check-input" type="radio" name="favorite_pet" id="customRadio1">
  <label class="form-check-label" for="customRadio1">
-  Cats
+  Option 1
  </label>
 </div>
 <div class="form-check m-b">
  <input class="form-check-input" type="radio" name="favorite_pet" id="customRadio2">
  <label class="form-check-label" for="customRadio2">
-  Dogs
+  Option 2
  </label>
 </div>
 <div class="form-check m-b">
  <input class="form-check-input" type="radio" name="favorite_pet" id="customRadio3">
  <label class="form-check-label" for="customRadio3">
-  Birds
+  Option 3
  </label>
 </div></code>
    </pre>
@@ -1141,12 +1178,12 @@
     <div class="card-body p-b">
 
 
-     <label for="Select" class="mb-1">Choose a car:</label>
+     <label for="Select" class="mb-1">Custom select</label>
 <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example" id="Select">
- <option selected>Buick</option>
- <option value="3">Chevrolet</option>
- <option value="2">Chrysler</option>
- <option value="1">Ford</option>
+ <option selected>Select an option</option>
+ <option value="3">Option 1</option>
+ <option value="2">Option 2</option>
+ <option value="1">Option 3</option>
 </select>
 
 
@@ -1166,12 +1203,12 @@
    </div>
    <div id="collapse-html5" class="collapse" role="tabpanel" aria-labelledby="heading-html5">
     <div class="card-body">
-     <pre style="max-height: 300px;"><code><label for="Select" class="mb-1">Choose a car:</label>
+     <pre style="max-height: 300px;"><code><label for="Select" class="mb-1">Custom select</label>
 <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example" id="Select">
- <option selected>Buick</option>
- <option value="3">Chevrolet</option>
- <option value="2">Chrysler</option>
- <option value="1">Ford</option>
+ <option selected>Select an option</option>
+ <option value="3">Option 1</option>
+ <option value="2">Option 2</option>
+ <option value="1">Option 3</option>
 </select></code>
    </pre>
 
@@ -1190,7 +1227,7 @@
 
 
 <h2 id="File-input" class=" m-b-0">File input</h2>
-<p>A file input let the user choose one or more files from their device storage. Once chosen, the files can be uploaded
+<p>A file input lets the user choose one or more files from their device storage. Once chosen, the files can be uploaded
  to a server using form submission.</p>
 
 <!--TABS-->
@@ -1220,7 +1257,7 @@
 
 
      <!--Custom file Input-->
-<label for="inputGroupFile02" class="mb-1">Upload your file:</label>
+<label for="inputGroupFile02" class="mb-1">Upload your file</label>
 <div class="input-group mb-3">
  <input type="file" class="form-control" id="inputGroupFile02">
 </div>
@@ -1244,7 +1281,7 @@
    <div id="collapse-html6" class="collapse" role="tabpanel" aria-labelledby="heading-html6">
     <div class="card-body">
      <pre style="max-height: 300px;"><code><!--Custom file Input-->
-<label for="inputGroupFile02" class="mb-1">Upload your file:</label>
+<label for="inputGroupFile02" class="mb-1">Upload your file</label>
 <div class="input-group mb-3">
  <input type="file" class="form-control" id="inputGroupFile02">
 </div>
@@ -1259,6 +1296,47 @@
  </div>
 </div>
 <!--END TABS-->
+
+
+<h2 id="Usage">Usage</h2>
+
+<h3 class="m-t">When and how to use it</h3>
+<p>Use a form when visitor input is required to complete an action. </p>
+<p>Forms direct visitors to provide and submit relevant information. Use them to let visitors change their personal
+ settings or submit an application.</p>
+<p>Forms work well when you:</p>
+<ul>
+ <li>Use clear feedback alerts to inform visitors of their progress.</li>
+ <li>Auto-save form progress so data is not lost.</li>
+ <li>Group related sections into logical sets (like name, address, phone number).</li>
+ <li>State the action the buttons perform when selected.</li>
+</ul>
+
+
+
+<p>Start mobile first, single column when designing a form. Where practical, combine related fields using two columns.
+ Form elements should stack one on top of the other.</p>
+<p>Keep in mind the mobile and screen magnification experience. </p>
+
+
+<h3>How not to use it</h3>
+
+<p>Do not use a form if it is not needed.</p>
+<p>Do not use confusing error messages or place them away from the problem. As close to the field in error as possible,
+ explain why the visitor cannot progress in the form with a clear, concise error message.</p>
+
+
+<h2 id="Accessibility">Accessibility</h2>
+<h3 class="m-t">Standard accessibility review</h3>
+<p>Each time a new component version is published:</p>
+<ul>
+ <li>Test with the <a href="https://www.deque.com/axe/" target="_blank">axe
+   accessibility tool</a></li>
+ <li>Review with the <a href="https://www.apple.com/voiceover/info/guide/_1121.html" target="_blank">VoiceOver</a> or <a
+   href="https://www.nvaccess.org/download/" target="_blank">NVDA</a> screen reader</li>
+ <li>Ensure all actionable elements are accessible by keyboard command and tab in a logical order</li>
+ <li>Check the component layout on a variety of screen sizes</li>
+</ul>
 				</div>
 			</div>
 		</div>
@@ -1309,7 +1387,7 @@
          <li><a href="/conditions-of-use.html">Conditions of use</a></li>
          <li><a href="/privacy-policy.html">Privacy policy</a></li>
          <li><a href="/images/WebAccessibilityCert-beta.template.webstandards.ca.gov.pdf">Accessibility</a></li>
-         
+         <li><a href="/sitemap.html">Sitemap</a></li>
          
      </ul>
 

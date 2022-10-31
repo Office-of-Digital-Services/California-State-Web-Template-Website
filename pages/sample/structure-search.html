@@ -15,13 +15,15 @@ permalink: "structure/search.html"
      <ul>
       <li><a href="/structure/utility-header.html">Utility header</a></li>
       <li><a href="/structure/settings-bar.html">Settings</a></li>
-      <!-- <li><a href="/structure/mobile-controls.html">Mobile controls</a></li> -->
       <li><a href="/structure/site-header.html">Site header</a></li>
+      <li><a href="/structure/mobile-controls.html">Mobile controls</a></li>
       <li><a href="/structure/search.html" class="active">Search</a>
        <ul>
         <li><a href="#Active-search">Active search</a></li>
         <li><a href="#Inactive-search">Inactive search</a></li>
         <li><a href="#Featured-search">Featured search</a></li>
+        <li><a href="#Usage">Usage</a></li>
+        <li><a href="#Accessibility">Accessibility</a></li>
        </ul>
       </li>
     </li>
@@ -35,17 +37,25 @@ permalink: "structure/search.html"
  <div class="col-md-9 m-b-lg">
 
 
-  <h1 class="mt-lg-0">Search</h1>
-  <p>The Google Search component allows users to quickly find website content. Search component is optional feature but
-   we have included it in State Web Template. Search component requires several parts to work together. In addition to
-   the search bar form you need to set up the Google Search ID for your domain as well as the search results page for
-   your website.</p>
+  <h1 class="mt-lg-0 m-b-0">Search</h1>
+  <p class="subtitle">Other names: searchbox, search field</p>
+  <p class="lead">A search input provides visitors an input field to search for specific content within a site or
+   database. </p>
+  <p>With search, visitors can filter content using different keywords or phrases.
+  </p>
+  <p>The search component includes:</p>
+  <ul>
+   <li>A concise label</li>
+   <li>Some placeholder text</li>
+   <li>A magnifying glass icon</li>
+  </ul>
+
+  <p>Search is an optional element. For search to work, you'll need to have a Google Search ID for your domain and
+   include a search results page for your website.</p>
 
 
   <h2 id="Active-search">Active search</h2>
-  <p>The active (featured) search is
-   default search bar implementation on most State Web Template pages. This
-   implementation makes search bar visible and available in the right side of the site header.</p>
+  <p>This search bar appears on the right side of the header. This is the default search bar in the template.</p>
 
   <div class="tab-group responsive">
    <ul id="tabs1" class="nav nav-tabs" role="tablist">
@@ -73,9 +83,10 @@ permalink: "structure/search.html"
      </div>
      <div id="collapse-example1" class="collapse show" role="tabpanel" aria-labelledby="heading-example1">
       <div class="card-body">
-       <h3 class="h4 m-t-0">Screenshot</h3>
-       <img src="/images/components/structure-search-active.jpg" class="img-fluid"
-        alt="Active search component screenshot">
+       <h3 class="h4 m-t-0">Desktop</h3>
+       <img src="/images/components/strucutre-site-header.jpg" alt="Site header screenshot" class="img-fluid">
+
+
       </div>
      </div>
     </div>
@@ -110,12 +121,13 @@ permalink: "structure/search.html"
      <div id="collapse-include1" class="collapse" role="tabpanel" aria-labelledby="heading-include1">
       <div class="card-body">
        <h3 class="h4 m-t-0">Include path and usage</h3>
-       <p>The Search <code>njk</code> include code markup:</p>
+       <p class="m-b">The Search <code>njk</code> include code markup:</p>
        <pre><code>&#123;% include "src/_includes/search.njk" %&#125;</code></pre>
 
 
        <h3 class="h4">Using active search include in site header</h3>
-       <p>Following code (that has both the search and the site navigation includes) needs to be placed right
+       <p class="m-b">Following code (that has both the search and the site navigation includes) needs to be placed
+        right
         before closing
         <code>&lt;/header&gt;</code> tag
        </p>
@@ -128,7 +140,8 @@ permalink: "structure/search.html"
   </code></pre>
 
 
-       <p><span class="text-highlight-primary">Note:</span> Path to the include will be relative to the directory of
+       <p class="m-t"><span class="text-highlight-primary">Note:</span> Path to the include will be relative to the
+        directory of
         your
         page.</p>
       </div>
@@ -141,10 +154,9 @@ permalink: "structure/search.html"
 
 
   <h2 id="Inactive-search">Inactive search</h2>
-  Another search implementation is
-  the inactive (hidden) search bar. This implementation is used in mobile view and in pages that use <a
-   href="/structure/navigation-icons.html">Navigation with Icons</a> site navigation type option. To activate the search
-  bar users need to press search menu item first.
+  <p>This search bar is hidden (inactive) and becomes active when people select the search menu icon. This search is
+   used on mobile and for sites that use <a href="/structure/navigation-icons.html">icon menu</a> (which includes the
+   search icon).
   </p>
 
 
@@ -176,11 +188,11 @@ permalink: "structure/search.html"
      </div>
      <div id="collapse-example2" class="collapse show" role="tabpanel" aria-labelledby="heading-example2">
       <div class="card-body">
-       <h3 class="h4 m-t-0">Screenshot</h3>
+       <h3 class="h4 m-t-0">Desktop</h3>
        <img src="/images/components/structure-search-inactive.jpg" class="img-fluid"
         alt="Inactive search component screenshot">
 
-       <a href="/structure/navigation-icons.html" class="btn btn-outline-primary m-t-md">Live example <span
+       <a href="/structure/search-inactive.html" class="btn btn-outline-primary m-t-md">Live example <span
          class="ca-gov-icon-arrow-next" aria-hidden="true"></span></a>
       </div>
      </div>
@@ -246,18 +258,8 @@ permalink: "structure/search.html"
 
 
   <h2 id="Featured-search">Featured search</h2>
-  Another search implementation is
-  the featured search bar. It's location and size make it a
-  prominent feature on this layout option. Featured search can be only used with
-  <code>navicons.njk</code>
-  or
-  <code>navicons-landing.njk</code> layouts, since <code>paga.njk</code>, <code>landing.njk</code> page
-  layout are already using active search in their page header by default. The <code>.featured-search</code> classes
-  need to be added to
-  the <code>#head-search</code> div in the header of your page. It can be done by adding
-  <code>search: Featured</code> paramenter to your page Front matter data.
-  </p>
-
+  <p>This search is directly under the main menu in a prominent container. It's size and location means the website is
+   intentionally showcasing search as a top task.</p>
 
 
   <!--start tabs3-->
@@ -287,8 +289,8 @@ permalink: "structure/search.html"
      </div>
      <div id="collapse-example3" class="collapse show" role="tabpanel" aria-labelledby="heading-example3">
       <div class="card-body">
-       <h3 class="h4 m-t-0">Screenshot</h3>
-       <img src="/images/featured-search.jpg" class="img-fluid" alt="Featured search">
+       <h3 class="h4 m-t-0">Desktop</h3>
+       <img src="/images/components/structure-search-featured.jpg" class="img-fluid" alt="Featured search">
        <a href="/structure/featured-search.html" class="btn btn-outline-primary m-t-md">Live example <span
          class="ca-gov-icon-arrow-next" aria-hidden="true"></span> <span class="sr-only">of the featured
          search</span></a>
@@ -325,13 +327,23 @@ permalink: "structure/search.html"
      </div>
      <div id="collapse-include3" class="collapse" role="tabpanel" aria-labelledby="heading-include3">
       <div class="card-body">
-       <h3 class="h4 m-t-0">Include path and usage</h3>
-       <p>The Search <code>njk</code> include code markup:</p>
+       <h3 class="h4 m-t-0">Implementation notes</h3>
+
+       <p>Featured search can be only used with <code>navicons.njk</code> or <code>navicons-landing.njk</code> layouts,
+        since <code>page.njk</code> and <code>landing.njk</code>
+        page layouts already use active search in their page header by default. The <code>.featured-search</code> class
+        needs to be added
+        to the <code>#head-search</code> div in the header of your page. To do this, add the search: Featured parameter
+        to your page front
+        matter data.</p>
+
+       <h3 class="h4">Include path</h3>
        <pre><code>&#123;% include "src/_includes/search.njk" %&#125;</code></pre>
 
 
-       <h3 class="h4">Using inactive search include in site header</h3>
-       <p>Following code (that has both the search and the site navigation includes) needs to be placed right
+       <h3 class="h4">Using search include in site header</h3>
+       <p class="m-b">Following code (that has both the search and the site navigation includes) needs to be placed
+        right
         before closing
         <code>&lt;/header&gt;</code> tag
        </p>
@@ -354,7 +366,7 @@ search: Featured
 							  </code></pre>
 
 
-       <p class="m-t-lg"><span class="text-highlight-primary">Note:</span> Path to the include will be relative to the
+       <p class="m-t"><span class="text-highlight-primary">Note:</span> Path to the include will be relative to the
         directory of
         your
         page.</p>
@@ -368,18 +380,30 @@ search: Featured
 
 
 
-  <h2>Usage</h2>
+  <h2 id="Usage">Usage</h2>
   <h3>When and how to use it</h3>
 
-  <p>Search component is placed into <code>navigation-search</code> container which goes after Mobile Controls. Search
-   box usually displays to the right of the site name.</p>
-  <p>On mobile, the search box becomes a search button that opens
-   a search box. It also displays to the right of the site name.</p>
+  <p>Always use a clear and concise label for your search bar. Visitors should readily understand what the search is
+   for.</p>
+  <p>Try to use just one search per page. If you need multiple searches, clearly label them to indicate their purpose.
+  </p>
 
-  <p>There
-   are two kinds of search bar implementations in State Web Template.</p>
+  <p>For the best search optimization, evolve your content with search results. If visitors frequently use terms that
+   are not in your content, consider working those search terms into the page content. </p>
 
+  <p>Place search into the navigation-search container, which is after Mobile Controls. </p>
 
+  <p>On mobile, the search box becomes a search icon button. When selected, it opens a full-width search box under the
+   header.</p>
+
+  <h3>How not to use it</h3>
+
+  <p>Search field input should fit into one line. Do not use multiline search inputs.</p>
+
+  <p>Do not default to an advanced search. The majority of visitors will want to do a simple keyword search.</p>
+
+  <h2 id="Accessibility">Accessibility</h2>
+  {% include "../../src/_includes/modules/accessibility.html" %}
 
  </div>
 </div>

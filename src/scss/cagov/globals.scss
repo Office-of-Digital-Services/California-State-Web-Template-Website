@@ -81,6 +81,38 @@
  text-decoration: none !important;
 }
 
+.outline-1-gray-100-hover:hover, .outline-1-gray-100-hover:hover {
+ outline: 1px solid $gray-100;
+ }
+ 
+ .outline-2-gray-100-hover:hover, .outline-2-gray-100-hover:hover {
+  outline: 2px solid $gray-100;
+  }
+
+.outline-1-gray-200-hover:hover, .outline-1-gray-200-hover:hover {
+outline: 1px solid $gray-200;
+}
+
+.outline-2-gray-200-hover:hover, .outline-2-gray-200-hover:hover {
+ outline: 2px solid $gray-200;
+ }
+
+ .outline-1-gray-300-hover:hover, .outline-1-gray-300-hover:hover {
+  outline: 1px solid $gray-300;
+  }
+  
+  .outline-2-gray-300-hover:hover, .outline-2-gray-300-hover:hover {
+   outline: 2px solid $gray-300;
+   }
+
+   .outline-1-gray-400-hover:hover, .outline-1-gray-400-hover:hover {
+    outline: 1px solid $gray-400;
+    }
+    
+    .outline-2-gray-400-hover:hover, .outline-2-gray-400-hover:hover {
+     outline: 2px solid $gray-400;
+     }
+
 .outline-focus:focus {
  @include outline(2px);
 }
@@ -247,8 +279,14 @@
 .height-300 {
  height: 300px !important;
 }
+.height-350 {
+ height: 350px !important;
+}
 .height-400 {
  height: 400px !important;
+}
+.height-450 {
+ height: 450px !important;
 }
 .height-500 {
  height: 500px !important;
@@ -490,13 +528,13 @@ background-color: $outline-default-color !important;
 .brd-white-after::after {
  border-color: $white !important;
 }
-.brd-gray-light {
+.brd-gray-light, .brd-gray-light-hover:hover, .brd-gray-light-hover:focus  {
  border-color: $card-border-color !important;
 }
-.brd-gray-dark {
+.brd-gray-dark, .brd-gray-dark-hover:hover, .brd-gray-dark-hover:focus  {
  border-color: $gray-dark !important;
 }
-.brd-gray {
+.brd-gray, .brd-gray-hover:hover, .brd-gray-hover:focus {
  border-color: $gray !important;
 }
 .brd-gray-light-before::before,
@@ -525,39 +563,39 @@ background-color: $outline-default-color !important;
 //Border styles
 .brd-dotted-1,
 .brd-dotted-1-before::before,
-.brd-dotted-1-after::after {
+.brd-dotted-1-after::after, .brd-dotted-1-hover:hover, .brd-dotted-1-hover:focus {
  border-width: 1px;
  border-style: dotted;
 }
 
 .brd-solid-1,
 .brd-solid-1-before::before,
-.brd-solid-1-after::after {
+.brd-solid-1-after::after, .brd-solid-1-hover:hover, .brd-solid-1-hover:focus {
  border-width: 1px !important;
  border-style: solid !important;
 }
 
 .brd-solid-2,
 .brd-solid-2-before::before,
-.brd-solid-2-after::after {
+.brd-solid-2-after::after, .brd-dotted-2-hover:hover, .brd-dotted-2-hover:focus {
  border-width: 2px !important;
  border-style: solid !important;
 }
 .brd-solid-3,
 .brd-solid-3-before::before,
-.brd-solid-3-after::after {
+.brd-solid-3-after::after, .brd-dotted-3-hover:hover, .brd-dotted-3-hover:focus {
  border-width: 3px !important;
  border-style: solid !important;
 }
 .brd-solid-4,
 .brd-solid-4-before::before,
-.brd-solid-4-after::after {
+.brd-solid-4-after::after, .brd-dotted-4-hover:hover, .brd-dotted-4-hover:focus {
  border-width: 4px !important;
  border-style: solid !important;
 }
 .brd-solid-5,
 .brd-solid-5-before::before,
-.brd-solid-5-after::after {
+.brd-solid-5-after::after, .brd-dotted-5-hover:hover, .brd-dotted-5-hover:focus {
  border-width: 5px !important;
  border-style: solid !important;
 }
@@ -713,6 +751,19 @@ background-color: $outline-default-color !important;
  top: 40% !important;
 }
 
+.top-0 {
+ top: 0 !important;
+}
+.bottom-0 {
+ bottom: 0 !important;
+}
+.right-0 {
+ right: 0 !important;
+}
+.left-0 {
+ left: 0 !important;
+}
+
 @media (max-width: $screen-xs-max) {
  .top-sm-rel-40pct {
   position: relative;
@@ -842,43 +893,43 @@ background-color: $outline-default-color !important;
   Font Sizes
 ------------------------------------*/
 .text-huge {
- font-size: 6rem;
+ font-size: 6rem !important;
 }
 
 .text-5rem {
- font-size: 5rem;
+ font-size: 5rem !important;
 }
 
 .text-4rem {
- font-size: 4rem;
+ font-size: 4rem !important;
 }
 
 .text-3-5rem {
- font-size: 3.5rem;
+ font-size: 3.5rem !important;
 }
 
 .text-3rem {
- font-size: 3rem;
+ font-size: 3rem !important;
 }
 
 .text-2-5rem {
- font-size: 2.5rem;
+ font-size: 2.5rem !important;
 }
 
 .text-2rem {
- font-size: 2rem;
+ font-size: 2rem !important;
 }
 
 .text-1-5rem {
- font-size: 1.5rem;
+ font-size: 1.5rem !important;
 }
 
 .text-1rem {
- font-size: 1rem;
+ font-size: 1rem !important;
 }
 
 .font-size-sm {
- font-size: ($font-size-base * 0.75);
+ font-size: ($font-size-base * 0.75) !important;
 }
 
 .font-size-70x {
@@ -1012,35 +1063,35 @@ background-color: $outline-default-color !important;
   Rounded borders
 ------------------------------------*/
 .rounded-20 {
- border-radius: 20px;
+ border-radius: 20px !important;
 }
 
 .rounded-15 {
- border-radius: 15px;
+ border-radius: 15px !important;
 }
 
 .rounded-10 {
- border-radius: 10px;
+ border-radius: 10px !important;
 }
 
 .rounded-5 {
- border-radius: 5px;
+ border-radius: 5px !important;
 }
 
 .rounded-4 {
- border-radius: 4px;
+ border-radius: 4px !important;
 }
 
 .rounded-3 {
- border-radius: 3px;
+ border-radius: 3px !important;
 }
 
 .rounded-2 {
- border-radius: 2px;
+ border-radius: 2px !important;
 }
 
 .rounded-50 {
- border-radius: 50px;
+ border-radius: 50px !important;
 }
 
 .rounded-0 {
@@ -1048,7 +1099,7 @@ background-color: $outline-default-color !important;
 }
 
 .rounded-50x {
- border-radius: 50%;
+ border-radius: 50% !important;
 }
 
 /*------------------------------------

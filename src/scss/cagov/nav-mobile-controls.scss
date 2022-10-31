@@ -11,7 +11,7 @@
 .mobile-controls {
     text-align: right; // move most menu controls to right
     position: relative;
-    color: $color-p2;
+    color: $gray-600;
     background: $white;
     top: 0;
     padding-right: 0;
@@ -28,7 +28,9 @@
 
     // Hamburger menu to X transition
     .toggle-menu {
-        padding: 0;
+     padding: 16px 8px;
+     display: flex;
+     flex-direction: column;
         cursor: pointer;
         color: $white;
         position: relative;
@@ -51,21 +53,21 @@
             position: relative !important;
             clip: unset !important;
             background: none !important;
-            color: $color-p2;
+            color: $gray-600;
             right: 0 !important;
             display: inline-block !important;
-            padding-left: 28px !important;
-            bottom: 4px;
+            padding-left: 0 !important;
+            top: 10px;
         }
 
         span {
-            margin-left: 0;
+            margin-left: .75rem;
             margin-right: 0;
             height: 2px;
             width: 20px;
             display: block;
             position: absolute;
-            background: $color-p2;
+            background: $gray-600;
             border-radius: 5px;
             opacity: 1;
             -webkit-transform: rotate(0deg);
@@ -125,16 +127,18 @@
         cursor: pointer;
         position: relative;
         margin-left: auto;
-        margin-right: 1.5rem;
+        margin-right: 1rem;
         text-align: center;
         z-index: 99;
         display: flex;
+        flex-direction: column;
 
         span.ca-gov-icon-search {
-            position: absolute;
-            right: 3.8rem;
-            top: -6px;
+            position: relative;
             font-size: 1.4rem;
+            display: block;
+            margin: 0 auto;
+           
         }
 
         // Overvriting sr-only class to avoid strucural changes in mobile controls
@@ -144,7 +148,7 @@
             position: relative !important;
             clip: unset !important;
             background: none !important;
-            color: $color-p2;
+            color: $gray-600;
             right: 0 !important;
             display: inline-block !important;
             padding-left: 5px !important;

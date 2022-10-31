@@ -10,7 +10,7 @@
 <meta name="HandheldFriendly" content="True">
 <meta name="MobileOptimized" content="320">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
-<meta property="og:image" content="https://as-cdt-pub-migr-betaws-ww-p-001-stage.azurewebsites.net/images/social_media_preview_image.png"/>
+<meta property="og:image" content="https://california.azureedge.net/cdt/statetemplate/global/images/social_media_preview_image.png">
 
 <link rel="stylesheet" href="/css/cagov.core.min.css">
 
@@ -86,6 +86,15 @@
     <div id="skip-to-content">
         <a href="#main-content">Skip to Main Content</a>
     </div>
+    <!-- /src/_includes/modules/alert-banner-beta-feedback.html -->
+<div class="alert alert-banner bg-standout" role="alert" style="padding:7px 0;">
+    <div class="container" style="height:32px;">
+        <span class="alert-level border brd-s1 px-3 m-r-md" style="position:relative; top:-1px;">BETA</span><span class="alert-text text-1rem">We’d love your feedback
+            to make the template better. You have from November 4 to November 11. </span>
+        <a href="https://airtable.com/shro9V6ry2Cf4mpgG" class="alert-link btn btn-default btn-xs bg-s1" style="position:relative;top:3px;">Send feedback</a>
+    </div>
+</div>
+
     
     <div class="utility-header">
     <div class="container">
@@ -159,7 +168,7 @@
      <img src="/images/template-logo.png" class="logo-img" alt="State Template Logo" />
      <div class="logo-text">
       <span class="logo-state">State of California</span>
-      <span class="logo-dept">Web Template <sup>BETA</sup></span>
+      <span class="logo-dept">Web Template</span>
      </div>
     </div>
    </a>
@@ -439,6 +448,10 @@
    
      
    
+     
+   
+     
+   
  </ol>
 </nav>
 
@@ -453,8 +466,14 @@
      <ul>
       <li><a href="/structure/utility-header.html">Utility header</a></li>
       <li><a href="/structure/settings-bar.html">Settings</a></li>
-      <!-- <li><a href="/structure/mobile-controls.html" class="active">Mobile controls</a></li> -->
       <li><a href="/structure/site-header.html">Site header</a></li>
+      <li><a href="/structure/mobile-controls.html" class="active">Mobile controls</a>
+       <ul>
+        <li><a href="#Sample">Sample</a></li>
+        <li><a href="#Usage">Usage</a></li>
+        <li><a href="#Accessibility">Accessibility</a></li>
+       </ul>
+      </li>
       <li><a href="/structure/search.html">Search</a></li>
       <li><a href="/structure/site-navigation.html">Site navigation</a></li>
       <li><a href="/structure/footer.html">Footer</a></li>
@@ -467,16 +486,16 @@
 
 
   <h1 class="mt-lg-0">Mobile controls</h1>
-  <p>Mobile Controls are the search and navigation toggle buttons that expand and collapse
-   search and navigation sections in mobile view.</p>
+  <p class="lead">Mobile controls are mobile-friendly website search and navigation. Search and navigation toggle
+   buttons expand and collapse when interacted with in mobile view.</p>
   <p>It includes:</p>
 
   <ul>
-   <li>Search toggle button.</li>
-   <li>Navigation toggle button.</li>
+   <li>Search toggle button</li>
+   <li>Navigation toggle button</li>
   </ul>
 
-
+  <h2 id="Sample">Sample</h2>
 
   <div class="tab-group responsive">
    <ul id="tabs2" class="nav nav-tabs" role="tablist">
@@ -504,8 +523,12 @@
      </div>
      <div id="collapse-example2" class="collapse show" role="tabpanel" aria-labelledby="heading-example2">
       <div class="card-body">
-       <h3 class="h4 m-t-0">Screenshot</h3>
-       <img src="/images/components/strucutre-mobile-controls.jpg" alt="Mobile Controls screenshot" class="img-fluid">
+       <h3 class="h4 m-t-0">Mobile</h3>
+       <div class="col-md-6">
+        <img src="/images/components/strucutre-site-header-mobile.jpg" alt="Mobile Controls screenshot"
+         class="img-fluid">
+       </div>
+
       </div>
      </div>
     </div>
@@ -558,10 +581,11 @@
      <div id="collapse-include2" class="collapse" role="tabpanel" aria-labelledby="heading-include2">
       <div class="card-body">
        <h3 class="h4 m-t-0">Include path</h3>
-       <p>Add Mobile Controls <code>njk</code> include code after Site Header content:</p>
+       <p class="p-b">Add Mobile Controls <code>njk</code> include code after Site Header content:</p>
        <pre><code>&#123;% include "src/_includes/mobile-controls.njk" %&#125;</code></pre>
 
-       <p><span class="text-highlight-primary">Note:</span> Path to the include will be relative to the directory of
+       <p class="p-t"><span class="text-highlight-primary">Note:</span> Path to the include will be relative to the
+        directory of
         your
         page.</p>
       </div>
@@ -574,17 +598,30 @@
 
 
 
-  <h2>Usage</h2>
+  <h2 id="Usage">Usage</h2>
+
   <h3>When and how to use it</h3>
 
-  <p>The Mobile Control one of the essential State Web Template structural components. Without it users would not be
-   able to open site navigation or search bar in mobile view. It should be placed right below the site header.</p>
-  <p>By default, text identifier for search button is "Search" and text identifier for navigation button is "Menu".
+  <p>This is an essential template structural component. Without it, people could not open the site navigation or search
+   bar in mobile view. It should be placed right below the site header.</p>
+  <p>By default, the text identifier for the search button is "Search" and text identifier for the navigation button is
+   "Menu."
   </p>
 
 
 
 
+  <h2 id="Accessibility">Accessibility</h2>
+  <h3 class="m-t">Standard accessibility review</h3>
+<p>Each time a new component version is published:</p>
+<ul>
+ <li>Test with the <a href="https://www.deque.com/axe/" target="_blank">axe
+   accessibility tool</a></li>
+ <li>Review with the <a href="https://www.apple.com/voiceover/info/guide/_1121.html" target="_blank">VoiceOver</a> or <a
+   href="https://www.nvaccess.org/download/" target="_blank">NVDA</a> screen reader</li>
+ <li>Ensure all actionable elements are accessible by keyboard command and tab in a logical order</li>
+ <li>Check the component layout on a variety of screen sizes</li>
+</ul>
 
 
  </div>
@@ -638,7 +675,7 @@
          <li><a href="/conditions-of-use.html">Conditions of use</a></li>
          <li><a href="/privacy-policy.html">Privacy policy</a></li>
          <li><a href="/images/WebAccessibilityCert-beta.template.webstandards.ca.gov.pdf">Accessibility</a></li>
-         
+         <li><a href="/sitemap.html">Sitemap</a></li>
          
      </ul>
 

@@ -10,7 +10,7 @@
 <meta name="HandheldFriendly" content="True">
 <meta name="MobileOptimized" content="320">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
-<meta property="og:image" content="https://as-cdt-pub-migr-betaws-ww-p-001-stage.azurewebsites.net/images/social_media_preview_image.png"/>
+<meta property="og:image" content="https://california.azureedge.net/cdt/statetemplate/global/images/social_media_preview_image.png">
 
 <link rel="stylesheet" href="/css/cagov.core.min.css">
 
@@ -86,6 +86,15 @@
     <div id="skip-to-content">
         <a href="#main-content">Skip to Main Content</a>
     </div>
+    <!-- /src/_includes/modules/alert-banner-beta-feedback.html -->
+<div class="alert alert-banner bg-standout" role="alert" style="padding:7px 0;">
+    <div class="container" style="height:32px;">
+        <span class="alert-level border brd-s1 px-3 m-r-md" style="position:relative; top:-1px;">BETA</span><span class="alert-text text-1rem">We’d love your feedback
+            to make the template better. You have from November 4 to November 11. </span>
+        <a href="https://airtable.com/shro9V6ry2Cf4mpgG" class="alert-link btn btn-default btn-xs bg-s1" style="position:relative;top:3px;">Send feedback</a>
+    </div>
+</div>
+
     
     <div class="utility-header">
     <div class="container">
@@ -159,7 +168,7 @@
      <img src="/images/template-logo.png" class="logo-img" alt="State Template Logo" />
      <div class="logo-text">
       <span class="logo-state">State of California</span>
-      <span class="logo-dept">Web Template <sup>BETA</sup></span>
+      <span class="logo-dept">Web Template</span>
      </div>
     </div>
    </a>
@@ -358,14 +367,18 @@
      
    
      
+   
+     
       
       
-     <li><a href="/css-shortcuts/css-units.html" title="CSS style shortcuts landing page">CSS style shortcuts</a></li>
+     <li><a href="/css-shortcuts/css-classes-shortcuts.html" title="CSS classes shortcuts landing page">CSS classes shortcuts</a></li>
       
         
        
       <li>Text accent</li>
        
+   
+     
    
      
    
@@ -447,32 +460,57 @@
   <!-- Side navigation -->
   <nav aria-labelledby="color-schemes-list" class="side-navigation sticky-6">
    <ul class="list-navigation">
-    <li><a href="/css-shortcuts/css-units.html" id="color-schemes-list">CSS style shortcuts</a>
+    <li><a href="/css-shortcuts/css-classes-shortcuts.html" id="color-schemes-list">CSS classes shortcuts</a>
      <ul>
-      <li><a href="/css-shortcuts/shortcuts.html">CSS classes shortcuts</a></li>
+      <li><a href="/css-shortcuts/utility-css-classes.html">Utility CSS classes</a></li>
       <li><a href="/css-shortcuts/gradient-backgrounds.html">Gradient backgrounds</a></li>
       <li><a href="/css-shortcuts/spacing.html">Spacing</a></li>
-      <li><a href="/css-shortcuts/text-accent.html" class="active">Text accent</a></li>
+      <li><a href="/css-shortcuts/text-accent.html" class="active">Text accent</a>
+       <ul>
+        <li><a href="#Accent-colors">Accent colors</a></li>
+        <li><a href="#Text-highlight">Text highlight</a></li>
+       </ul>
+      </li>
      </ul>
     </li>
-    <li><a href="/components.html">Available components</a>
+    <li><a href="/components.html">All components</a>
    </ul>
   </nav>
  </div>
 
  <div class="col-md-9 p-b-lg">
+  <h1 class="mt-lg-0">Text accent colors</h1>
+  <p>Change text colors with a handful of emphasis utility classes. It is best to exercise
+   restraint when using these classes on general body copy as color contrast may be
+   insufficient for the visually impaired.</p>
+  <h2 id="Accent-colors">Accent colors</h2>
 
 
+  <!--TABS-->
+  <div class="tab-group responsive">
+   <ul id="tabs1" class="nav nav-tabs" role="tablist">
+    <li class="nav-item">
+     <a id="tab-example1" href="#pane-example1" class="nav-link active" data-bs-toggle="tab" role="tab">Example</a>
+    </li>
+    <li class="nav-item">
+     <a id="tab-html1" href="#pane-html1" class="nav-link" data-bs-toggle="tab" role="tab">Source code</a>
+    </li>
 
-  <div class="row">
-   <div class="half">
-    <h1 class="mt-lg-0">Text accent colors</h1>
-    <p>Convey meaning through color with a handful of emphasis utility classes. Accent colors were
-     designed to applied to components like the number counter or charts. It is best to exercise
-     restraint when using these classes on general body copy as color contrast may be
-     insufficient for the visually impaired.</p>
-    <h2>Examples:</h2>
-    <p class="text-accent1">Accent Text 1</p>
+   </ul>
+
+
+   <div id="tab-content" class="tab-content">
+    <!--Examples-->
+    <div id="pane-example1" class="card tab-pane fade show active" role="tabpanel" aria-labelledby="tab-example1">
+     <div class="card-header" id="heading-example1">
+      <a data-bs-toggle="collapse" href="#collapse-example1" data-parent="#tab-content" aria-expanded="true"
+       aria-controls="collapse-example1" data-hash="#pane-example1" title="Example tab header">
+       Example
+      </a>
+     </div>
+     <div id="collapse-example1" class="collapse show" role="tabpanel" aria-labelledby="heading-example1">
+      <div class="p-a-md">
+       <p class="text-accent1">Accent Text 1</p>
 <p class="text-accent2">Accent Text 2</p>
 <p class="text-accent3">Accent Text 3</p>
 <p class="text-accent4">Accent Text 4</p>
@@ -496,10 +534,23 @@
 <p class="text-warning bg-dark">Warning Text</p>
 <p class="text-danger">Danger Text</p>
 <!-- -->
-   </div>
-   <div class="half">
-    <h2>Source code:</h2>
-    <pre class="section-default"><code><p class="text-accent1">Accent Text 1</p>
+      </div>
+     </div>
+    </div>
+
+
+
+    <!--HTML-->
+    <div id="pane-html1" class="card tab-pane fade" role="tabpanel" aria-labelledby="tab-html1">
+     <div class="card-header" id="heading-html1">
+      <a class="collapsed" data-bs-toggle="collapse" href="#collapse-html1" data-parent="#tab-content"
+       aria-expanded="false" aria-controls="collapse-html1" data-hash="#pane-html1" title="HTML Source code tab header">
+       Source code
+      </a>
+     </div>
+     <div id="collapse-html1" class="collapse" role="tabpanel" aria-labelledby="heading-html1">
+      <div class="card-body">
+       <pre style="max-height: 300px;"><code><p class="text-accent1">Accent Text 1</p>
 <p class="text-accent2">Accent Text 2</p>
 <p class="text-accent3">Accent Text 3</p>
 <p class="text-accent4">Accent Text 4</p>
@@ -524,24 +575,48 @@
 <p class="text-danger">Danger Text</p>
 <!-- --></code>
     </pre>
+      </div>
+     </div>
+    </div>
+
+
    </div>
   </div>
+  <!--END TABS-->
 
 
-  <div class="row">
-   <div class="half">
-    <h2>Text Highlight</h2>
-    <p>Use <code>text-highlight</code> class to highlight a word or text portion. Also, to specify the text highlight's
-     color
-     use following classes: </p>
-    <ul>
-     <li><code>text-highlight</code></li>
-     <li><code>text-highlight-primary</code></li>
-     <li><code>text-highlight-warning</code></li>
-     <li><code>text-highlight-dark</code></li>
-    </ul>
-    <h2>Examples:</h2>
-    <p><span class="text-highlight">Note:</span> Path to the include will be relative to the directory
+  <h2 id="Text-highlight">Text highlight</h2>
+  <p>Use <code>text-highlight</code> class to highlight a word or text portion. Also, to specify the text
+   highlight's
+   color
+   use following classes: </p>
+
+  <!--TABS-->
+  <div class="tab-group responsive">
+   <ul id="tabs4" class="nav nav-tabs" role="tablist">
+    <li class="nav-item">
+     <a id="tab-example4" href="#pane-example4" class="nav-link active" data-bs-toggle="tab" role="tab">Example</a>
+    </li>
+    <li class="nav-item">
+     <a id="tab-html4" href="#pane-html4" class="nav-link" data-bs-toggle="tab" role="tab">Source code</a>
+    </li>
+
+   </ul>
+
+
+   <div id="tab-content" class="tab-content">
+    <!--Examples-->
+    <div id="pane-example4" class="card tab-pane fade show active" role="tabpanel" aria-labelledby="tab-example4">
+     <div class="card-header" id="heading-example4">
+      <a data-bs-toggle="collapse" href="#collapse-example4" data-parent="#tab-content" aria-expanded="true"
+       aria-controls="collapse-example4" data-hash="#pane-example4" title="Example tab header">
+       Example
+      </a>
+     </div>
+     <div id="collapse-example4" class="collapse show" role="tabpanel" aria-labelledby="heading-example4">
+      <div class="p-a-md">
+
+       <p><span class="text-highlight">Note:</span> Path to the include will be relative to the directory
  of
  your page.</p>
 <p><span class="text-highlight-primary">Note:</span> Path to the include will be relative to the directory
@@ -554,10 +629,24 @@
  of
  your page.</p>
 
-   </div>
-   <div class="half">
-    <h2>Source code:</h2>
-    <pre class="section-default"><code><p><span class="text-highlight">Note:</span> Path to the include will be relative to the directory
+
+      </div>
+     </div>
+    </div>
+
+
+
+    <!--HTML-->
+    <div id="pane-html4" class="card tab-pane fade" role="tabpanel" aria-labelledby="tab-html4">
+     <div class="card-header" id="heading-html4">
+      <a class="collapsed" data-bs-toggle="collapse" href="#collapse-html4" data-parent="#tab-content"
+       aria-expanded="false" aria-controls="collapse-html4" data-hash="#pane-html4" title="HTML Source code tab header">
+       Source code
+      </a>
+     </div>
+     <div id="collapse-html4" class="collapse" role="tabpanel" aria-labelledby="heading-html4">
+      <div class="card-body">
+       <pre style="max-height: 300px;"><code><p><span class="text-highlight">Note:</span> Path to the include will be relative to the directory
  of
  your page.</p>
 <p><span class="text-highlight-primary">Note:</span> Path to the include will be relative to the directory
@@ -569,9 +658,20 @@
 <p><span class="text-highlight-dark">Note:</span> Path to the include will be relative to the directory
  of
  your page.</p></code>
-    </pre>
+   </pre>
+
+      </div>
+     </div>
+    </div>
+
+
    </div>
   </div>
+  <!--END TABS-->
+
+
+
+
 
  </div>
 </div>
@@ -624,7 +724,7 @@
          <li><a href="/conditions-of-use.html">Conditions of use</a></li>
          <li><a href="/privacy-policy.html">Privacy policy</a></li>
          <li><a href="/images/WebAccessibilityCert-beta.template.webstandards.ca.gov.pdf">Accessibility</a></li>
-         
+         <li><a href="/sitemap.html">Sitemap</a></li>
          
      </ul>
 
