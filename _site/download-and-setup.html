@@ -488,9 +488,9 @@
 
             <div class="flex-container" style="justify-content:space-between;gap:1rem;">
                 <div class="brd-solid-1 brd-gray-light bg-white p-3">
-                    <a
+                    <strong><a
                         href="https://github.com/Office-of-Digital-Services/California-State-Web-Template-Website#available-state-web-template-frameworks">Template
-                        frameworks</a> core code without sample content
+                        frameworks</a> core code without sample content</strong>
                     <ul class="mt-2" style="columns:2;">
                         <li><a
                                 href="https://github.com/Office-of-Digital-Services/California-State-Web-Template-HTML">HTML</a>
@@ -509,7 +509,7 @@
                     </ul>
                 </div>
                 <div class="brd-solid-1 brd-gray-light bg-white p-3">
-                    State web template website with all sample content
+                    <strong>State web template website with all sample content</strong>
                     <ul class="mt-2">
                         <li><a
                                 href="https://github.com/Office-of-Digital-Services/California-State-Web-Template-Website/">Github
@@ -520,7 +520,7 @@
                     </ul>
                 </div>
                 <div class="brd-solid-1 brd-gray-light bg-white p-3">
-                    CDN (content delivery network)
+                    <strong>CDN (content delivery network)</strong>
                     <ul class="mt-2">
                         <li><a href="https://template.webstandards.ca.gov/cdn.html">V6 Beta CSS/ JS core CDN links</a>
                         </li>
@@ -568,7 +568,7 @@
             <li><strong>Download or clone the State Web Template from GitHub</strong>
                 <br />
                 <span class="cagov-step-list-content">
-                    <p>You can clone it from our Template GitHub Repository.</p>
+                    <p>You can clone it from our <a href="https://github.com/Office-of-Digital-Services/California-State-Web-Template-Website/">Template GitHub Repository</a>.</p>
                     <img src="/images/download-and-setup-github-clone.png" alt="Github cloning screenshot"
                         style="width:500px;">
                     <p>Or you can download or access the different frameworks. Review <a
@@ -714,10 +714,10 @@
 
         <p>To start, you can use the sample State Template web pages. If your website doesn’t use NPM or Eleventy, you can
             use these clear starter template code:</p>
-        <p><button type="button" class="btn btn-default d-block m-b-md" data-bs-toggle="modal"
-                data-bs-target="#template-blocks">Clean HTML template source code</button></p>
-        <p><button type="button" class="btn btn-default d-block m-b-md" data-bs-toggle="modal"
-                data-bs-target="#with-includes">HTML page that uses nunjucks includes source code</button></p>
+        <button type="button" class="btn btn-default d-block m-b-md brd-primary" style="color:#046B99;" data-bs-toggle="modal"
+                data-bs-target="#template-blocks">Clean HTML template source code</button>
+        <button type="button" class="btn btn-default d-block m-b-md brd-primary" style="color:#046B99;" data-bs-toggle="modal"
+                data-bs-target="#with-includes">HTML page that uses nunjucks includes source code</button>
 
         <h3>Step 3. Install Node.js</h3>
 
@@ -790,7 +790,7 @@
             files. The template offers several common components (such as page headers, footers, navigation, etc.) using
             njk includes.</p>
 
-        <button type="button" class="btn btn-default d-block m-b-md" data-bs-toggle="modal"
+        <button type="button" class="btn btn-default d-block m-b-md brd-primary" style="color:#046B99;" data-bs-toggle="modal"
                 data-bs-target="#using-includes">Show sample includes code</button>
 
         <p>You can also add any other html or njk includes to your page like this:</p>
@@ -1011,6 +1011,9 @@ Page content
 <!-- / End Modal -->
 
 <style>
+    strong {
+        font-weight: bold;
+    }
     .flex-container {
         display: flex;
         flex-direction: row;
