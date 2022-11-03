@@ -723,7 +723,8 @@
 </div></code></pre>
 
 
-       <p><span class="text-highlight-primary">Note:</span> Path to the include will be relative to the directory of
+       <p class="m-t"><span class="text-highlight-primary">Note:</span> Path to the include will be relative to the
+        directory of
         your
         page.</p>
       </div>
@@ -823,9 +824,11 @@
         since <code>page.njk</code> and <code>landing.njk</code>
         page layouts already use active search in their page header by default. The <code>.featured-search</code> class
         needs to be added
-        to the <code>#head-search</code> div in the header of your page. To do this, add the search: Featured parameter
+        to the <code>#head-search</code> div in the header of your page. To do this, add the
+        <code>search: Featured</code> parameter
         to your page front
-        matter data.</p>
+        matter data.
+       </p>
 
        <h3 class="h4">Include path</h3>
        <pre><code>&#123;% include "src/_includes/search.njk" %&#125;</code></pre>
