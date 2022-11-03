@@ -19,7 +19,7 @@
  var curScroll;
  var direction = 0;
  var prevDirection = 0;
-
+ var headerAlert = document.querySelector('header .alert');
  var header = document.querySelector('.utility-header');
  var mainheader = document.querySelector('header');
 
@@ -50,13 +50,24 @@
  var toggleHeader = function (direction, curScroll) {
   if (direction === 2 && curScroll > 40) {
 
-   mainheader.classList.add('scrolled');
-   header.classList.add('is-hidden');
+   // mainheader.classList.add('scrolled');
+   // header.classList.add('is-hidden');
+   var hiddenheight = "";
+   if (headerAlert) {
+    var hiddenheight = headerAlert.clientHeight + header.clientHeight;
+    mainheader.style.top = "-" + hiddenheight + "px";
+   }
+   else {
+    var hiddenheight = header.clientHeight;
+    mainheader.style.top = "-" + hiddenheight + "px";
+   }
    prevDirection = direction;
   }
   else if (direction === 1) {
-   mainheader.classList.remove('scrolled');
-   header.classList.remove('is-hidden');
+   // mainheader.classList.remove('scrolled');
+   // header.classList.remove('is-hidden');
+   // header.removeAttribute("style");
+   mainheader.removeAttribute("style");
    prevDirection = direction;
   }
  };
