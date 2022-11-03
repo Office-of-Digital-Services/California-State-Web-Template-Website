@@ -87,14 +87,15 @@
         <a href="#main-content">Skip to Main Content</a>
     </div>
     <!-- /src/_includes/modules/alert-banner-beta-feedback.html -->
-<div class="alert alert-banner bg-standout" role="alert" style="padding:7px 0;">
-    <div class="container" style="height:32px;">
-        <span class="alert-level border brd-s1 px-3 m-r-md" style="position:relative; top:-1px;">BETA</span><span class="alert-text text-1rem">We’d love your feedback
-            to make the template better. You have from November 4 to November 11. </span>
-        <a href="https://airtable.com/shro9V6ry2Cf4mpgG" class="alert-link btn btn-default btn-xs bg-s1" style="position:relative;top:3px;">Send feedback</a>
-    </div>
+<div class="alert alert-banner bg-standout p-x-0 p-y-sm" role="alert">
+ <div class="container">
+  <span class="alert-level border brd-s1 px-3 m-r-md">BETA</span><span class="alert-text text-1rem">We'd love your
+   feedback
+   to make the template better. You have from November 4 to November 11. </span>
+  <a href="https://airtable.com/shro9V6ry2Cf4mpgG" class="btn btn-default btn-xs bg-s1 pos-rel m-l">Send
+   feedback</a>
+ </div>
 </div>
-
     
     <div class="utility-header">
     <div class="container">
@@ -452,6 +453,8 @@
    
      
    
+     
+   
  </ol>
 </nav>
 
@@ -524,20 +527,20 @@
   <!--Tabs 1-->
   <div class="tab-group responsive">
    <ul id="tabs1" class="nav nav-tabs" role="tablist">
-    <li class="nav-item">
+    <li class="nav-item" role="presentation">
      <a id="tab-example1" href="#pane-example1" class="nav-link active" data-bs-toggle="tab" role="tab">Example</a>
     </li>
-    <li class="nav-item">
+    <li class="nav-item" role="presentation">
      <a id="tab-html1" href="#pane-html1" class="nav-link" data-bs-toggle="tab" role="tab">Source code</a>
     </li>
-    <li class="nav-item">
+    <li class="nav-item" role="presentation">
      <a id="tab-include1" href="#pane-include1" class="nav-link" data-bs-toggle="tab" role="tab">Implementation
       notes</a>
     </li>
    </ul>
 
 
-   <div class="tab-content">
+   <div class="tab-content" role="presentation">
     <div id="pane-example1" class="card tab-pane fade show active" role="tabpanel" aria-labelledby="tab-example1">
      <div class="card-header" id="heading-example1">
       <h4 class="my-0 w-100">
@@ -549,11 +552,7 @@
      </div>
      <div id="collapse-example1" class="collapse show" role="tabpanel" aria-labelledby="heading-example1">
       <div class="card-body">
-       <h3 class="h4 m-t-0">Screenshot</h3>
-       <img src="/images/navigation-single.jpg" alt="Single level naviagiton" class="img-fluid m-b-md">
-
-       <!-- <a href="/structure/navigation-single.html" class="btn btn-outline-primary">Live example <span
-         class="ca-gov-icon-arrow-next" aria-hidden="true"></span></a> -->
+       <img src="/images/navigation-single.jpg" alt="Single level naviagiton" class="img-fluid">
       </div>
      </div>
     </div>
@@ -608,13 +607,13 @@
   <!--Tabs 2-->
   <div class="tab-group responsive">
    <ul id="tabs2" class="nav nav-tabs" role="tablist">
-    <li class="nav-item">
+    <li class="nav-item" role="presentation">
      <a id="tab-example2" href="#pane-example2" class="nav-link active" data-bs-toggle="tab" role="tab">Example</a>
     </li>
-    <li class="nav-item">
+    <li class="nav-item" role="presentation">
      <a id="tab-html2" href="#pane-html2" class="nav-link" data-bs-toggle="tab" role="tab">Source code</a>
     </li>
-    <li class="nav-item">
+    <li class="nav-item" role="presentation">
      <a id="tab-include2" href="#pane-include2" class="nav-link" data-bs-toggle="tab" role="tab">Implementation
       notes</a>
     </li>
@@ -633,13 +632,8 @@
      </div>
      <div id="collapse-example2" class="collapse show" role="tabpanel" aria-labelledby="heading-example2">
       <div class="card-body">
-       <h3 class="h4 m-t-0">Screenshot</h3>
        <img src="/images/navigation-dropdown.jpg" alt="Dropdown Naviagiton"
-        class="img-fluid brd-solid-1 brd-gray-light shadow2 m-b-md">
-
-       <!-- <a href="/structure/navigation-dropdown.html" class="btn btn-outline-primary"
-        title="dropdown menu live example'">Live example <span class="ca-gov-icon-arrow-next"
-         aria-hidden="true"></span></a> -->
+        class="img-fluid brd-solid-1 brd-gray-light">
       </div>
      </div>
     </div>
@@ -693,13 +687,13 @@
   <!--Tabs 3-->
   <div class="tab-group responsive">
    <ul id="tabs3" class="nav nav-tabs" role="tablist">
-    <li class="nav-item">
+    <li class="nav-item" role="presentation">
      <a id="tab-example3" href="#pane-example3" class="nav-link active" data-bs-toggle="tab" role="tab">Example</a>
     </li>
-    <li class="nav-item">
+    <li class="nav-item" role="presentation">
      <a id="tab-html3" href="#pane-html3" class="nav-link" data-bs-toggle="tab" role="tab">Source code</a>
     </li>
-    <li class="nav-item">
+    <li class="nav-item" role="presentation">
      <a id="tab-include3" href="#pane-include3" class="nav-link" data-bs-toggle="tab" role="tab">Implementation
       notes</a>
     </li>
@@ -718,12 +712,7 @@
      </div>
      <div id="collapse-example3" class="collapse show" role="tabpanel" aria-labelledby="heading-example3">
       <div class="card-body">
-       <h3 class="h4 m-t-0">Screenshot</h3>
-       <img src="/images/navigation-flex.jpg" alt="Naviagiton with icons"
-        class="img-fluid brd-solid-1 brd-gray-light shadow2 m-b-md">
-
-       <!-- <a href="/structure/navigation-megamenu.html" class="btn btn-outline-primary" title="megamenu live example'">Live
-        example <span class="ca-gov-icon-arrow-next" aria-hidden="true"></span></a> -->
+       <img src="/images/navigation-flex.jpg" alt="Naviagiton with icons" class="img-fluid brd-solid-1 brd-gray-light">
       </div>
      </div>
     </div>
@@ -827,13 +816,13 @@
   <!--Tabs 4-->
   <div class="tab-group responsive">
    <ul id="tabs4" class="nav nav-tabs" role="tablist">
-    <li class="nav-item">
+    <li class="nav-item" role="presentation">
      <a id="tab-example4" href="#pane-example4" class="nav-link active" data-bs-toggle="tab" role="tab">Example</a>
     </li>
-    <li class="nav-item">
+    <li class="nav-item" role="presentation">
      <a id="tab-html4" href="#pane-html4" class="nav-link" data-bs-toggle="tab" role="tab">Source code</a>
     </li>
-    <li class="nav-item">
+    <li class="nav-item" role="presentation">
      <a id="tab-include4" href="#pane-include4" class="nav-link" data-bs-toggle="tab" role="tab">Implementation
       notes</a>
     </li>
@@ -852,12 +841,7 @@
      </div>
      <div id="collapse-example4" class="collapse show" role="tabpanel" aria-labelledby="heading-example4">
       <div class="card-body">
-       <h3 class="h4 m-t-0">Screenshot</h3>
-       <img src="/images/navigation-icons.jpg" alt="Naviagiton with icons" class="img-fluid m-b-md">
-
-       <!-- <a href="/structure/navigation-icons.html" class="btn btn-outline-primary"
-        title="Naviagitonwith icons live example'">Live
-        example <span class="ca-gov-icon-arrow-next" aria-hidden="true"></span></a> -->
+       <img src="/images/navigation-icons.jpg" alt="Naviagiton with icons" class="img-fluid">
       </div>
      </div>
     </div>
@@ -935,7 +919,7 @@
    <li>Audience or user groups</li>
   </ul>
 
-  <p>You can use a <a href="https://www.usability.gov/how-to-and-tools/methods/card-sorting.html">card sorting
+  <p>You can use a <a href="https://methods.18f.gov/validate/card-sorting/">card sorting
     activity</a> to determine what should go in and how to organize your site navigation.</p>
   <h3>How not to use it</h3>
   <p>Do not overload the site navigation with too many pages. And avoid using more than a handful of navigational items.
@@ -961,7 +945,7 @@
 	</div>
 </div>
 
-<div class="p-b-md p-t-sm section-standout">
+<aside class="p-b-md p-t-sm section-standout">
  <div class="container">
   <div class="row">
    <div class="col-md-4">
@@ -980,8 +964,8 @@
    <div class="col-md-4">
     <h3 class="h4 w-100 brd-bottom brd-highlight p-b">Resources</h3>
     <a href="https://designsystem.webstandards.ca.gov/style/content"
-     class="d-block no-underline m-y font-size-16">Content Style
-     Guide</a>
+     class="d-block no-underline m-y font-size-16">Content style
+     guide</a>
     <a href="https://designsystem.webstandards.ca.gov/style/design" class="d-block no-underline m-y font-size-16">Design
      style
      guide</a>
@@ -991,7 +975,7 @@
    </div>
   </div>
  </div>
-</div>
+</aside>
   <!-- Global Footer -->
 <footer id="footer" class="global-footer">
   <button class="return-top"><span class="sr-only">Back to top</span></button>
@@ -1004,7 +988,7 @@
      <ul class="footer-links">
          <li><a href="/conditions-of-use.html">Conditions of use</a></li>
          <li><a href="/privacy-policy.html">Privacy policy</a></li>
-         <li><a href="/images/WebAccessibilityCert-beta.template.webstandards.ca.gov.pdf">Accessibility</a></li>
+         <li><a href="/images/WebAccessibilityCert-beta.template.webstandards.ca.gov.pdf" aria-label="Accessibility Certification">Accessibility</a></li>
          <li><a href="/sitemap.html">Sitemap</a></li>
          
      </ul>

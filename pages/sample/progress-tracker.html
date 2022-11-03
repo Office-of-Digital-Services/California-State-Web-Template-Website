@@ -4,132 +4,141 @@ landing: Patterns
 layout: patterns.njk
 permalink: "patterns/progress-tracker.html"
 ---
-<h1 class="mt-lg-0">Progress tracker</h1>
+<h1 class="mt-lg-0 m-b-0">Progress tracker</h1>
+<p class="subtitle">Other names: process indicator, step list</p>
 <p> A progress tracker displays the steps and progress through a journey.</p>
 <p>Use the progress tracker to show:</p>
 <ul>
-  <li>Milestones</li>
-  <li>Timelines</li>
-  <li>Chronological steps</li>
+ <li>Milestones</li>
+ <li>Timelines</li>
+ <li>Chronological steps</li>
 </ul>
 
 <h2 id="horizontal-tracker">Horizontal tracker</h2>
 <div class="tab-group responsive">
-  <ul id="tabs1" class="nav nav-tabs" role="tablist">
-    <li class="nav-item">
-      <a id="tab-example1" href="#pane-example1" class="nav-link active" data-bs-toggle="tab" role="tab">Example</a>
-    </li>
-    <li class="nav-item">
-      <a id="tab-html1" href="#pane-html1" class="nav-link" data-bs-toggle="tab" role="tab">Source code</a>
-    </li>
-  </ul>
-  <div id="tab-content" class="tab-content">
-    <div id="pane-example1" class="card tab-pane fade show active" role="tabpanel" aria-labelledby="tab-example1">
-      <div class="card-header" id="heading-example1">
-        <a data-bs-toggle="collapse" href="#collapse-example1" data-parent="#tab-content" aria-expanded="true" aria-controls="collapse-example1" data-hash="#pane-example1" title="Example tab header">
-          Example
-        </a>
-      </div>
-      <div id="collapse-example1" class="collapse show" role="tabpanel" aria-labelledby="heading-example1">
-        <div class="p-a-md p-b-lg">
-          {% include "../../src/_includes/modules/progress-block-bold.html" %}
-        </div>
-      </div>
+ <ul id="tabs1" class="nav nav-tabs" role="tablist">
+  <li class="nav-item" role="presentation">
+   <a id="tab-example1" href="#pane-example1" class="nav-link active" data-bs-toggle="tab" role="tab">Example</a>
+  </li>
+  <li class="nav-item" role="presentation">
+   <a id="tab-html1" href="#pane-html1" class="nav-link" data-bs-toggle="tab" role="tab">Source code</a>
+  </li>
+ </ul>
+ <div id="tab-content1" class="tab-content">
+  <div id="pane-example1" class="card tab-pane fade show active" role="tabpanel" aria-labelledby="tab-example1">
+   <div class="card-header" id="heading-example1">
+    <a data-bs-toggle="collapse" href="#collapse-example1" data-parent="#tab-content1" aria-expanded="true"
+     aria-controls="collapse-example1" data-hash="#pane-example1" title="Example tab header">
+     Example
+    </a>
+   </div>
+   <div id="collapse-example1" class="collapse show" role="tabpanel" aria-labelledby="heading-example1">
+    <div class="p-a-md p-b-lg">
+     {% include "../../src/_includes/modules/progress-block-bold.html" %}
     </div>
-    <div id="pane-html1" class="card tab-pane fade" role="tabpanel" aria-labelledby="tab-html1">
-      <div class="card-header" id="heading-html1">
-        <a class="collapsed" data-bs-toggle="collapse" href="#collapse-html1" data-parent="#tab-content" aria-expanded="false" aria-controls="collapse-html1" data-hash="#pane-html1" title="HTML Source code tab header">
-          Source code
-        </a>
-      </div>
-      <div id="collapse-html1" class="collapse" role="tabpanel" aria-labelledby="heading-html1">
-        <div class="card-body">
-          <pre style="max-height: 300px;"><code>{% include "../../src/_includes/modules/progress-block-bold.html" %}</code></pre>
-        </div>
-      </div>
-    </div>
+   </div>
   </div>
+  <div id="pane-html1" class="card tab-pane fade" role="tabpanel" aria-labelledby="tab-html1">
+   <div class="card-header" id="heading-html1">
+    <a class="collapsed" data-bs-toggle="collapse" href="#collapse-html1" data-parent="#tab-content1"
+     aria-expanded="false" aria-controls="collapse-html1" data-hash="#pane-html1" title="HTML Source code tab header">
+     Source code
+    </a>
+   </div>
+   <div id="collapse-html1" class="collapse" role="tabpanel" aria-labelledby="heading-html1">
+    <div class="card-body">
+     <pre
+      style="max-height: 300px;"><code>{% include "../../src/_includes/modules/progress-block-bold.html" %}</code></pre>
+    </div>
+   </div>
+  </div>
+ </div>
 </div>
 
 <h2 id="vertical-tracker">Vertical tracker</h2>
 <div class="tab-group responsive">
-  <ul id="tabs2" class="nav nav-tabs" role="tablist">
-    <li class="nav-item">
-      <a id="tab-example2" href="#pane-example2" class="nav-link active" data-bs-toggle="tab" role="tab">Example</a>
-    </li>
-    <li class="nav-item">
-      <a id="tab-html2" href="#pane-html2" class="nav-link" data-bs-toggle="tab" role="tab">Source code</a>
-    </li>
-  </ul>
-  <div id="tab-content" class="tab-content">
-    <div id="pane-example2" class="card tab-pane fade show active" role="tabpanel" aria-labelledby="tab-example2">
-      <div class="card-header" id="heading-example2">
-        <a data-bs-toggle="collapse" href="#collapse-example2" data-parent="#tab-content" aria-expanded="true" aria-controls="collapse-example2" data-hash="#pane-example2" title="Example tab header">
-          Example
-        </a>
-      </div>
-      <div id="collapse-example2" class="collapse show" role="tabpanel" aria-labelledby="heading-example2">
-        <div class="card-body p-b-md">
-          {% include "../../src/_includes/modules/timeline.html" %}
-        </div>
-      </div>
+ <ul id="tabs2" class="nav nav-tabs" role="tablist">
+  <li class="nav-item" role="presentation">
+   <a id="tab-example2" href="#pane-example2" class="nav-link active" data-bs-toggle="tab" role="tab">Example</a>
+  </li>
+  <li class="nav-item" role="presentation">
+   <a id="tab-html2" href="#pane-html2" class="nav-link" data-bs-toggle="tab" role="tab">Source code</a>
+  </li>
+ </ul>
+ <div id="tab-content2" class="tab-content">
+  <div id="pane-example2" class="card tab-pane fade show active" role="tabpanel" aria-labelledby="tab-example2">
+   <div class="card-header" id="heading-example2">
+    <a data-bs-toggle="collapse" href="#collapse-example2" data-parent="#tab-content2" aria-expanded="true"
+     aria-controls="collapse-example2" data-hash="#pane-example2" title="Example tab header">
+     Example
+    </a>
+   </div>
+   <div id="collapse-example2" class="collapse show" role="tabpanel" aria-labelledby="heading-example2">
+    <div class="card-body p-b-md">
+     {% include "../../src/_includes/modules/timeline.html" %}
     </div>
-    <div id="pane-html2" class="card tab-pane fade" role="tabpanel" aria-labelledby="tab-html2">
-      <div class="card-header" id="heading-html2">
-        <a class="collapsed" data-bs-toggle="collapse" href="#collapse-html2" data-parent="#tab-content" aria-expanded="false" aria-controls="collapse-html2" data-hash="#pane-html2" title="HTML Source code tab header">
-          Source code
-        </a>
-      </div>
-      <div id="collapse-html2" class="collapse" role="tabpanel" aria-labelledby="heading-html2">
-        <div class="card-body">
-          <pre style="max-height: 300px;"><code>{% include "../../src/_includes/modules/timeline.html" %}</code></pre>
-        </div>
-      </div>
-    </div>
+   </div>
   </div>
+  <div id="pane-html2" class="card tab-pane fade" role="tabpanel" aria-labelledby="tab-html2">
+   <div class="card-header" id="heading-html2">
+    <a class="collapsed" data-bs-toggle="collapse" href="#collapse-html2" data-parent="#tab-content2"
+     aria-expanded="false" aria-controls="collapse-html2" data-hash="#pane-html2" title="HTML Source code tab header">
+     Source code
+    </a>
+   </div>
+   <div id="collapse-html2" class="collapse" role="tabpanel" aria-labelledby="heading-html2">
+    <div class="card-body">
+     <pre style="max-height: 300px;"><code>{% include "../../src/_includes/modules/timeline.html" %}</code></pre>
+    </div>
+   </div>
+  </div>
+ </div>
 </div>
 
 <h2 id="step-list">Step list</h2>
 <div class="tab-group responsive">
-  <ul id="tabs3" class="nav nav-tabs" role="tablist">
-    <li class="nav-item">
-      <a id="tab-example3" href="#pane-example3" class="nav-link active" data-bs-toggle="tab" role="tab">Example</a>
-    </li>
-    <li class="nav-item">
-      <a id="tab-html3" href="#pane-html3" class="nav-link" data-bs-toggle="tab" role="tab">Source code</a>
-    </li>
-  </ul>
-  <div id="tab-content" class="tab-content">
-    <div id="pane-example3" class="card tab-pane fade show active" role="tabpanel" aria-labelledby="tab-example3">
-      <div class="card-header" id="heading-example3">
-        <a data-bs-toggle="collapse" href="#collapse-example3" data-parent="#tab-content" aria-expanded="true" aria-controls="collapse-example3" data-hash="#pane-example3" title="Example tab header">
-                        Example
-                      </a>
-      </div>
-      <div id="collapse-example3" class="collapse show" role="tabpanel" aria-labelledby="heading-example3">
-        <div class="p-a-md p-b-lg">
-          {% include "../../src/_includes/modules/step-list.html" %}
-        </div>
-      </div>
+ <ul id="tabs3" class="nav nav-tabs" role="tablist">
+  <li class="nav-item" role="presentation">
+   <a id="tab-example3" href="#pane-example3" class="nav-link active" data-bs-toggle="tab" role="tab">Example</a>
+  </li>
+  <li class="nav-item" role="presentation">
+   <a id="tab-html3" href="#pane-html3" class="nav-link" data-bs-toggle="tab" role="tab">Source code</a>
+  </li>
+ </ul>
+ <div id="tab-content3" class="tab-content">
+  <div id="pane-example3" class="card tab-pane fade show active" role="tabpanel" aria-labelledby="tab-example3">
+   <div class="card-header" id="heading-example3">
+    <a data-bs-toggle="collapse" href="#collapse-example3" data-parent="#tab-content3" aria-expanded="true"
+     aria-controls="collapse-example3" data-hash="#pane-example3" title="Example tab header">
+     Example
+    </a>
+   </div>
+   <div id="collapse-example3" class="collapse show" role="tabpanel" aria-labelledby="heading-example3">
+    <div class="p-a-md p-b-lg">
+     {% include "../../src/_includes/modules/step-list.html" %}
     </div>
-    <div id="pane-html3" class="card tab-pane fade" role="tabpanel" aria-labelledby="tab-html3">
-      <div class="card-header" id="heading-html3">
-        <a class="collapsed" data-bs-toggle="collapse" href="#collapse-html3" data-parent="#tab-content" aria-expanded="false" aria-controls="collapse-html3" data-hash="#pane-html3" title="HTML Source code tab header">
-          Source code
-        </a>
-      </div>
-      <div id="collapse-html3" class="collapse" role="tabpanel" aria-labelledby="heading-html3">
-        <div class="card-body">
-          <pre style="max-height: 300px;"><code>{% include "../../src/_includes/modules/step-list.html" %}</code></pre>
-        </div>
-      </div>
-    </div>
+   </div>
   </div>
+  <div id="pane-html3" class="card tab-pane fade" role="tabpanel" aria-labelledby="tab-html3">
+   <div class="card-header" id="heading-html3">
+    <a class="collapsed" data-bs-toggle="collapse" href="#collapse-html3" data-parent="#tab-content3"
+     aria-expanded="false" aria-controls="collapse-html3" data-hash="#pane-html3" title="HTML Source code tab header">
+     Source code
+    </a>
+   </div>
+   <div id="collapse-html3" class="collapse" role="tabpanel" aria-labelledby="heading-html3">
+    <div class="card-body">
+     <pre style="max-height: 300px;"><code>{% include "../../src/_includes/modules/step-list.html" %}</code></pre>
+    </div>
+   </div>
+  </div>
+ </div>
 </div>
 
 <h2 id="Usage">Usage</h2>
 <h3>When and how to use it</h3>
-<p>The progress tracker shows visitors where they are in a process. It can be used to help visitors navigate through processes by selecting steps.</p>
+<p>The progress tracker shows visitors where they are in a process. It can be used to help visitors navigate through
+ processes by selecting steps.</p>
 <p>Progress trackers should display three or more steps or events in a sequence.</p>
 
 <h3>How not to use it</h3>

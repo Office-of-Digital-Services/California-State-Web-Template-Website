@@ -87,14 +87,15 @@
         <a href="#main-content">Skip to Main Content</a>
     </div>
     <!-- /src/_includes/modules/alert-banner-beta-feedback.html -->
-<div class="alert alert-banner bg-standout" role="alert" style="padding:7px 0;">
-    <div class="container" style="height:32px;">
-        <span class="alert-level border brd-s1 px-3 m-r-md" style="position:relative; top:-1px;">BETA</span><span class="alert-text text-1rem">We’d love your feedback
-            to make the template better. You have from November 4 to November 11. </span>
-        <a href="https://airtable.com/shro9V6ry2Cf4mpgG" class="alert-link btn btn-default btn-xs bg-s1" style="position:relative;top:3px;">Send feedback</a>
-    </div>
+<div class="alert alert-banner bg-standout p-x-0 p-y-sm" role="alert">
+ <div class="container">
+  <span class="alert-level border brd-s1 px-3 m-r-md">BETA</span><span class="alert-text text-1rem">We'd love your
+   feedback
+   to make the template better. You have from November 4 to November 11. </span>
+  <a href="https://airtable.com/shro9V6ry2Cf4mpgG" class="btn btn-default btn-xs bg-s1 pos-rel m-l">Send
+   feedback</a>
+ </div>
 </div>
-
     
     <div class="utility-header">
     <div class="container">
@@ -452,6 +453,8 @@
    
      
    
+     
+   
  </ol>
 </nav>
 
@@ -510,13 +513,13 @@
 
   <div class="tab-group responsive">
    <ul id="tabs1" class="nav nav-tabs" role="tablist">
-    <li class="nav-item">
+    <li class="nav-item" role="presentation">
      <a id="tab-example1" href="#pane-example1" class="nav-link active" data-bs-toggle="tab" role="tab">Example</a>
     </li>
-    <li class="nav-item">
+    <li class="nav-item" role="presentation">
      <a id="tab-html1" href="#pane-html1" class="nav-link" data-bs-toggle="tab" role="tab">Source code</a>
     </li>
-    <li class="nav-item">
+    <li class="nav-item" role="presentation">
      <a id="tab-include1" href="#pane-include1" class="nav-link" data-bs-toggle="tab" role="tab">Nunjucks include</a>
     </li>
    </ul>
@@ -627,13 +630,13 @@
   <!--start tabs2-->
   <div class="tab-group responsive">
    <ul id="tabs2" class="nav nav-tabs" role="tablist">
-    <li class="nav-item">
+    <li class="nav-item" role="presentation">
      <a id="tab-example2" href="#pane-example2" class="nav-link active" data-bs-toggle="tab" role="tab">Example</a>
     </li>
-    <li class="nav-item">
+    <li class="nav-item" role="presentation">
      <a id="tab-html2" href="#pane-html2" class="nav-link" data-bs-toggle="tab" role="tab">Source code</a>
     </li>
-    <li class="nav-item">
+    <li class="nav-item" role="presentation">
      <a id="tab-include2" href="#pane-include2" class="nav-link" data-bs-toggle="tab" role="tab">Nunjucks include</a>
     </li>
    </ul>
@@ -720,7 +723,8 @@
 </div></code></pre>
 
 
-       <p><span class="text-highlight-primary">Note:</span> Path to the include will be relative to the directory of
+       <p class="m-t"><span class="text-highlight-primary">Note:</span> Path to the include will be relative to the
+        directory of
         your
         page.</p>
       </div>
@@ -740,13 +744,13 @@
   <!--start tabs3-->
   <div class="tab-group responsive">
    <ul id="tabs3" class="nav nav-tabs" role="tablist">
-    <li class="nav-item">
+    <li class="nav-item" role="presentation">
      <a id="tab-example3" href="#pane-example3" class="nav-link active" data-bs-toggle="tab" role="tab">Example</a>
     </li>
-    <li class="nav-item">
+    <li class="nav-item" role="presentation">
      <a id="tab-html3" href="#pane-html3" class="nav-link" data-bs-toggle="tab" role="tab">Source code</a>
     </li>
-    <li class="nav-item">
+    <li class="nav-item" role="presentation">
      <a id="tab-include3" href="#pane-include3" class="nav-link" data-bs-toggle="tab" role="tab">Nunjucks include</a>
     </li>
    </ul>
@@ -774,7 +778,7 @@
     </div>
 
     <div id="pane-html3" class="card tab-pane fade" role="tabpanel" aria-labelledby="tab-html3">
-     <div class="card-header" id="heading-html2">
+     <div class="card-header" id="heading-html3">
       <h4 class="my-0 w-100">
        <a class="collapsed" data-bs-toggle="collapse" href="#collapse-html3" data-parent="#tab-content"
         aria-expanded="false" aria-controls="collapse-html3" title="HTML Source code tab header">
@@ -820,9 +824,11 @@
         since <code>page.njk</code> and <code>landing.njk</code>
         page layouts already use active search in their page header by default. The <code>.featured-search</code> class
         needs to be added
-        to the <code>#head-search</code> div in the header of your page. To do this, add the search: Featured parameter
+        to the <code>#head-search</code> div in the header of your page. To do this, add the
+        <code>search: Featured</code> parameter
         to your page front
-        matter data.</p>
+        matter data.
+       </p>
 
        <h3 class="h4">Include path</h3>
        <pre><code>&#123;% include "src/_includes/search.njk" %&#125;</code></pre>
@@ -908,7 +914,7 @@ search: Featured
 	</div>
 </div>
 
-<div class="p-b-md p-t-sm section-standout">
+<aside class="p-b-md p-t-sm section-standout">
  <div class="container">
   <div class="row">
    <div class="col-md-4">
@@ -927,8 +933,8 @@ search: Featured
    <div class="col-md-4">
     <h3 class="h4 w-100 brd-bottom brd-highlight p-b">Resources</h3>
     <a href="https://designsystem.webstandards.ca.gov/style/content"
-     class="d-block no-underline m-y font-size-16">Content Style
-     Guide</a>
+     class="d-block no-underline m-y font-size-16">Content style
+     guide</a>
     <a href="https://designsystem.webstandards.ca.gov/style/design" class="d-block no-underline m-y font-size-16">Design
      style
      guide</a>
@@ -938,7 +944,7 @@ search: Featured
    </div>
   </div>
  </div>
-</div>
+</aside>
   <!-- Global Footer -->
 <footer id="footer" class="global-footer">
   <button class="return-top"><span class="sr-only">Back to top</span></button>
@@ -951,7 +957,7 @@ search: Featured
      <ul class="footer-links">
          <li><a href="/conditions-of-use.html">Conditions of use</a></li>
          <li><a href="/privacy-policy.html">Privacy policy</a></li>
-         <li><a href="/images/WebAccessibilityCert-beta.template.webstandards.ca.gov.pdf">Accessibility</a></li>
+         <li><a href="/images/WebAccessibilityCert-beta.template.webstandards.ca.gov.pdf" aria-label="Accessibility Certification">Accessibility</a></li>
          <li><a href="/sitemap.html">Sitemap</a></li>
          
      </ul>
