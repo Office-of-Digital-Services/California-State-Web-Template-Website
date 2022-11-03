@@ -15,7 +15,7 @@
 
     .close {
         position: relative;
-        top: 0;
+        top: 4px;
         right: -5px;
         padding: 0 10px;
         text-shadow: none;
@@ -27,10 +27,25 @@
         background: none;
     }
 
+    .container {
+        font-size: 1rem;
+        min-height:30px;
+    }
+
     .container:after {
         content: " ";
         display: table;
         clear: both;
+    }
+
+    .alert-text {
+        position: relative;
+        top:2px;
+    }
+
+    .btn {
+        position: relative;
+        top:-2px;
     }
 }
 
@@ -57,11 +72,6 @@
 
     .close {
         color: $gray-base;
-        position: relative;
-        top: 0;
-        right: -5px;
-        padding: 0 10px;
-        text-shadow: none;
     }
 
     .alert-level {
