@@ -9,7 +9,7 @@ permalink: "download-and-setup.html"
     <div class="col-md-3">
         <nav aria-labelledby="page-navigation-label" class="side-navigation sticky-6 overflow-auto">
             <ul class="list-navigation">
-                <li><a href="/get-started.html" id="page-navigation-label">Get started</a>
+                <li><a href="/get-started.html" id="page-navigation-label"><strong>Get started</strong></a>
                     <ul>
                         <li><a href="/whats-new.html">What’s new in V6</a></li>
                         <li><a href="#Downloadandsetup" class="active">Download and setup</a>
@@ -103,7 +103,7 @@ permalink: "download-and-setup.html"
             <li><strong>Understand the updates and discover the differences in your template code</strong>
                 <br />
                 <span class="cagov-step-list-content">
-                    <p>Review Template updates. Do a code comparison in the <a
+                    <p>Review template updates. Do a code comparison in the <a
                             href="https://github.com/Office-of-Digital-Services/California-State-Web-Template-Website/">state
                             web template website repo</a> to understand
                         structural and component changes. This helps you understand the work you need to do. Learn how
@@ -128,10 +128,21 @@ permalink: "download-and-setup.html"
                 </span>
             </li>
 
+            <li><strong>Look for CSS, JavaScript, and structural changes</strong>
+                <br />
+                <span class="cagov-step-list-content">
+                    <p>Most changes are made in:</p>
+                    <ul>
+                        <li>The CSS and JavaScript source files in the <code>/src/scss/</code> and <code>/src/js/</code> folders</li>
+                        <li>Includes and modules folders <code>/src/_includes/</code> and <code>/src/_includes/modules/</code></li>
+                    </ul>
+                </span>
+            </li>
+
             <li><strong>Replace older template library files with the updated ones</strong>
                 <br />
                 <span class="cagov-step-list-content">
-                    <p>The web template has CSS and Javascript (JS) code base. You will replace these source files with
+                    <p>The web template has CSS and JavaScript (JS) code base. You will replace these source files with
                         newer ones or
                         point to the corresponding CDN links found on the <a
                             href="https://as-cdt-pub-migr-betaws-ww-p-001-stage.azurewebsites.net/cdn.html">state web
@@ -597,4 +608,17 @@ Page content
     .table-bordered td:nth-child(2) {
         background-color: #f5f5f5;
     }
+
+    /* Make the list within the step list look normal */
+    .cagov-step-list li ul li {
+        border:none;
+        font-size:calc(1.125rem + .1vw);
+        font-weight: normal;
+        list-style-type:disc;
+        padding-left:unset;
+    }
+    .cagov-step-list li ul li:before {
+        content: none;
+    }
+
 </style>
