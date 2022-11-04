@@ -18627,7 +18627,7 @@ html {
 }
 .alert-banner .close {
   position: relative;
-  top: 0;
+  top: 4px;
   right: -5px;
   padding: 0 10px;
   text-shadow: none;
@@ -18638,10 +18638,22 @@ html {
   border: none;
   background: none;
 }
+.alert-banner .container {
+  font-size: 1rem;
+  min-height: 30px;
+}
 .alert-banner .container:after {
   content: " ";
   display: table;
   clear: both;
+}
+.alert-banner .alert-text {
+  position: relative;
+  top: 2px;
+}
+.alert-banner .btn {
+  position: relative;
+  top: -2px;
 }
 
 .alert-level {
@@ -18666,11 +18678,6 @@ html {
 }
 .alert-severe .close {
   color: #000;
-  position: relative;
-  top: 0;
-  right: -5px;
-  padding: 0 10px;
-  text-shadow: none;
 }
 .alert-severe .alert-level {
   color: #000;
