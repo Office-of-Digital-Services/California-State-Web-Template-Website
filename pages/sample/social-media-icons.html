@@ -1,0 +1,89 @@
+﻿---
+title: Social media icons
+landing: Components
+layout: components.njk
+permalink: "components/social-media-icons.html"
+---
+
+
+<h1 class="mt-lg-0">Social media icons</h1>
+<p>The social media icons component lets you share your agency’s social media pages with visitors.</p>
+<h2 id="Sample">Sample</h2>
+
+<!--TABS-->
+<div class="tab-group responsive">
+ <ul id="tabs1" class="nav nav-tabs" role="tablist">
+  <li class="nav-item">
+   <a id="tab-example1" href="#pane-example1" class="nav-link active" data-bs-toggle="tab" role="tab">Example</a>
+  </li>
+  <li class="nav-item">
+   <a id="tab-html1" href="#pane-html1" class="nav-link" data-bs-toggle="tab" role="tab">Source code</a>
+  </li>
+
+ </ul>
+
+
+ <div id="tab-content" class="tab-content">
+  <!--Examples-->
+  <div id="pane-example1" class="card tab-pane fade show active" role="tabpanel" aria-labelledby="tab-example1">
+   <div class="card-header" id="heading-example1">
+    <a data-bs-toggle="collapse" href="#collapse-example1" data-parent="#tab-content" aria-expanded="true"
+     aria-controls="collapse-example1" data-hash="#pane-example1" title="Example tab header">
+     Example
+    </a>
+   </div>
+   <div id="collapse-example1" class="collapse show" role="tabpanel" aria-labelledby="heading-example1">
+    <div class="card-body p-b-lg">
+     {% include "../../src/_includes/modules/social-media-icons.html" %}
+    </div>
+   </div>
+  </div>
+
+
+
+  <!--HTML-->
+  <div id="pane-html1" class="card tab-pane fade" role="tabpanel" aria-labelledby="tab-html1">
+   <div class="card-header" id="heading-html1">
+    <a class="collapsed" data-bs-toggle="collapse" href="#collapse-html1" data-parent="#tab-content"
+     aria-expanded="false" aria-controls="collapse-html1" data-hash="#pane-html1" title="HTML Source code tab header">
+     Source code
+    </a>
+   </div>
+   <div id="collapse-html1" class="collapse" role="tabpanel" aria-labelledby="heading-html1">
+    <div class="card-body">
+     <pre
+      style="max-height: 300px;"><code>{% include "../../src/_includes/modules/social-media-icons.html" %}</code></pre>
+
+    </div>
+   </div>
+  </div>
+
+
+ </div>
+</div>
+<!--END TABS-->
+
+<h2 id="Usage">Usage</h2>
+<h3>When and how to use it </h3>
+<p>Use social media icons in the site footer. These icons should link to your official social media accounts. </p>
+<p>The available social media icons include:</p>
+<ul>
+ <li>Facebook</li>
+ <li>Twitter</li>
+ <li>Instagram</li>
+ <li>YouTube</li>
+ <li>GitHub</li>
+ <li>LinkedIn</li>
+ <li>Email</li>
+</ul>
+<p>Browse our <a href="/visual-design/icons.html">State Web Template icons</a>.</p>
+<h3>
+ How not to use it
+</h3>
+<p>Do not include more than one social media account per platform. Do not link to social media accounts that are not
+ updated or monitored regularly.</p>
+
+
+
+<h2 id="Accessibility">Accessibility</h2>
+{% include "../../src/_includes/modules/accessibility.html" %}

@@ -1,0 +1,83 @@
+/* -----------------------------------------
+   PROGRESS BLOCK - /source/scss/cagov/progress-block.scss
+----------------------------------------- */
+
+.dot-line {
+    position: relative;
+    display: block;
+    width: 100%;
+    font-size: 0;
+    &::before,
+    &::after {
+        content: "";
+        position: absolute;
+        top: 50%;
+        display: block;
+        width: calc(50% + 30px);
+        border-top-width: 1px;
+        border-top-style: solid;
+        margin-top: -1px;
+    }
+
+    &::after {
+        right: -30px;
+    }
+    &::before {
+        left: -30px;
+    }
+}
+
+@media (min-width: $screen-xs-min) {
+    .dot-line::before,
+    .dot-line::after {
+        display: block;
+    }
+}
+@media (max-width: $screen-xxs-max) {
+    .dot-line::before,
+    .dot-line::after {
+        display: none;
+    }
+}
+
+// bold border progress block
+.progress-bold::before,
+.progress-bold::after {
+    top: 40%;
+    border-top-width: 8px;
+}
+
+.dot-line-inner {
+    position: relative;
+    z-index: 2;
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    border-width: 1px;
+    border-style: solid;
+    border-radius: 50%;
+
+    &::before {
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 12px;
+        height: 12px;
+        -webkit-transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
+        border-radius: 50%;
+    }
+}
+
+//Vertical timeline
+.timeline-dot {
+    left: -$spacer;
+    position: absolute;
+    top: 2.5rem;
+    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+    -webkit-backface-visibility: hidden;
+}

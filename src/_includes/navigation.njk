@@ -1,0 +1,60 @@
+<nav id="navigation" class="main-navigation dropdown">
+ <ul id="nav_list" class="top-level-nav">
+  <li class="nav-item">
+       {% if landing === "Template updates" %}
+       <a class="first-level-link active" href="/template-updates.html">Template updates</a>
+       {% else %}
+       <a class="first-level-link" href="/template-updates.html">Template updates</a>
+       {% endif %} 
+   </li>
+   <li class="nav-item">
+       {% if landing === "Get started" %}
+       <a class="first-level-link active" href="/get-started.html">Get started</a>
+       {% else %}
+       <a class="first-level-link" href="/get-started.html">Get started</a>
+       {% endif %} 
+   </li>
+   <li class="nav-item">       
+       {% if landing === "Structure" %}
+       <a class="first-level-link active" href="/structure.html">Structure</a>
+       {% else %}
+       <a class="first-level-link" href="/structure.html">Structure</a>
+       {% endif %} 
+   </li>
+   {% if landing === "Visual design" %}
+   <li class="nav-item active">
+    {% else %} 
+    <li class="nav-item">
+     {% endif %}  
+       <a class="first-level-link active" href="/visual-design.html">Visual design</a>
+       <div class="sub-nav">
+         <ul class="second-level-nav">
+          <li class="unit1">
+            <a href="/visual-design/icons.html" class="second-level-link">Icons</a>
+           </li>
+           <li class="unit1">
+            <a href="/visual-design/color.html" class="second-level-link">Color</a>
+           </li>
+           <li class="unit1">
+            <a href="/visual-design/typography.html" class="second-level-link">Typography</a>
+           </li>
+          </ul>
+       </div>
+   </li>
+   <li class="nav-item">
+       {% if landing === "Components" %}
+       <a class="first-level-link active" href="/components.html">Components</a>
+       {% else %}
+       <a class="first-level-link" href="/components.html">Components</a>
+       {% endif %} 
+   </li>
+   <li class="nav-item">
+       {% if landing === "Patterns" %}
+       <a class="first-level-link active" href="/patterns.html" >Patterns</a>
+       {% else %}
+       <a class="first-level-link" href="/patterns.html" >Patterns</a>
+       {% endif %} 
+   </li>
+ </ul>
+
+</nav>

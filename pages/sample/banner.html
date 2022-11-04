@@ -1,0 +1,174 @@
+﻿---
+title: Banner
+landing: patterns
+layout: patterns.njk
+permalink: "patterns/banner.html"
+---
+
+
+<h1 class="mt-lg-0">Banner</h1>
+<p class="lead">The banner is the first thing a visitor sees on the homepage of a website. It often spans the full width
+ of the screen or the main content area.</p>
+<p>It usually includes:</p>
+<ul>
+ <li>Title</li>
+ <li>Brief description</li>
+ <li>Image or visual graphic</li>
+ <li>Optional image caption</li>
+ <li>Button</li>
+</ul>
+
+
+<p>A banner displays an action you want people to take or highlights the most important information on a page. </p>
+
+<h2 id="Full-span-banner">Full span banner</h2>
+
+<!--TABS-->
+<div class="tab-group responsive">
+ <ul id="tabs1" class="nav nav-tabs" role="tablist">
+  <li class="nav-item" role="presentation">
+   <a id="tab-example1" href="#pane-example1" class="nav-link active" data-bs-toggle="tab" role="tab">Example</a>
+  </li>
+  <li class="nav-item" role="presentation">
+   <a id="tab-html1" href="#pane-html1" class="nav-link" data-bs-toggle="tab" role="tab">Source code</a>
+  </li>
+
+ </ul>
+
+
+ <div id="tab-content1" class="tab-content">
+  <!--Examples-->
+  <div id="pane-example1" class="card tab-pane fade show active" role="tabpanel" aria-labelledby="tab-example1">
+   <div class="card-header" id="heading-example1">
+    <a data-bs-toggle="collapse" href="#collapse-example1" data-parent="#tab-content1" aria-expanded="true"
+     aria-controls="collapse-example1" data-hash="#pane-example1" title="Example tab header">
+     Example
+    </a>
+   </div>
+   <div id="collapse-example1" class="collapse show" role="tabpanel" aria-labelledby="heading-example1">
+    <div class="card-body">
+
+     {% include "../../src/_includes/modules/banner.html" %}
+     <p class="m-t m-b-0 font-size-16">Minimum width: 1600px</p>
+    </div>
+   </div>
+  </div>
+
+
+
+  <!--HTML-->
+  <div id="pane-html1" class="card tab-pane fade" role="tabpanel" aria-labelledby="tab-html1">
+   <div class="card-header" id="heading-html1">
+    <a class="collapsed" data-bs-toggle="collapse" href="#collapse-html1" data-parent="#tab-content1"
+     aria-expanded="false" aria-controls="collapse-html1" data-hash="#pane-html1" title="HTML Source code tab header">
+     Source code
+    </a>
+   </div>
+   <div id="collapse-html1" class="collapse" role="tabpanel" aria-labelledby="heading-html1">
+    <div class="card-body">
+     <pre style="max-height: 300px;"><code>{% include "../../src/_includes/modules/banner.html" %}</code>
+    </pre>
+
+    </div>
+   </div>
+  </div>
+
+
+ </div>
+</div>
+<!--END TABS-->
+
+
+
+
+
+<h2 id="Feature-banner">Feature banner</h2>
+<p>The feature banner spans the full width of the content area on desktop and full width of the screen on mobile. On
+ mobile, the feature card will stack in this order:</p>
+<ul>
+ <li>Image</li>
+ <li>Image caption</li>
+ <li>Title</li>
+ <li>Description</li>
+ <li>Button</li>
+</ul>
+
+<div class="tab-group responsive">
+ <ul id="tabs3" class="nav nav-tabs" role="tablist">
+  <li class="nav-item" role="presentation">
+   <a id="tab-example3" href="#pane-example3" class="nav-link active" data-bs-toggle="tab" role="tab">Example</a>
+  </li>
+  <li class="nav-item" role="presentation">
+   <a id="tab-html3" href="#pane-html3" class="nav-link" data-bs-toggle="tab" role="tab">Source code</a>
+  </li>
+
+ </ul>
+
+
+ <div id="3" class="tab-content">
+  <!--Examples-->
+  <div id="pane-example3" class="card tab-pane fade show active" role="tabpanel" aria-labelledby="tab-example3">
+   <div class="card-header" id="heading-example3">
+    <a data-bs-toggle="collapse" href="#collapse-example3" data-parent="#tab-content3" aria-expanded="true"
+     aria-controls="collapse-example3" data-hash="#pane-example3" title="Example tab header">
+     Example
+    </a>
+   </div>
+   <div id="collapse-example3" class="collapse show" role="tabpanel" aria-labelledby="heading-example3">
+    <div class="card-body p-b">
+
+     {% include "../../src/_includes/modules/feature-card.html" %}
+     <p class="m-t m-b-0 font-size-16">Maximum width: 1176px</p>
+
+    </div>
+   </div>
+  </div>
+
+
+
+  <!--HTML-->
+  <div id="pane-html3" class="card tab-pane fade" role="tabpanel" aria-labelledby="tab-html3">
+   <div class="card-header" id="heading-html3">
+    <a class="collapsed" data-bs-toggle="collapse" href="#collapse-html3" data-parent="#tab-content3"
+     aria-expanded="false" aria-controls="collapse-html3" data-hash="#pane-html3" title="HTML Source code tab header">
+     Source code
+    </a>
+   </div>
+   <div id="collapse-html3" class="collapse" role="tabpanel" aria-labelledby="heading-html3">
+    <div class="card-body">
+     <pre style="max-height: 300px;"><code>{% include "../../src/_includes/modules/feature-card.html" %}</code>
+   </pre>
+
+    </div>
+   </div>
+  </div>
+
+
+ </div>
+</div>
+<!--END TABS-->
+
+<h2 id="Usage">Usage</h2>
+
+<h3 class="m-t">When and how to use it</h3>
+<p>Use the hero banner to catch visitors' attention and highlight the top task or need.</p>
+<p>Place it at the top of the homepage so it appears below the statewide header, site header, and site navigation. Learn
+ more in our guidance on <a href="/structure.html">Webpage structure</a>.</p>
+<p>Include a concise title, description, image, and at least one button. Choose an image that’s in harmony with your
+ brand identity, mission, and tone. The minimum image size is 776 x 517 pixels. For best results, use images with this
+ aspect ratio.
+</p>
+
+
+<h3>How not to use it</h3>
+
+<p>Do not use more than one hero banner on your homepage.</p>
+<p>Do not use more than one primary call-to-action within your hero banner.</p>
+<p>Do not use the hero banner to make an image carousel. Carousels frustrate people more than they help them and do not
+ meet accessibility standards.</p>
+<p>Do not put a lot of content in your hero banner. Too much content is hard to read. It will also lengthen the hero
+ banner and cause awkward whitespace.</p>
+<p>Do not use busy images or graphics behind content.</p>
+
+<h2 id="Accessibility">Accessibility</h2>
+{% include "../../src/_includes/modules/accessibility.html" %}

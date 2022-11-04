@@ -1,0 +1,297 @@
+﻿---
+title: Icon font library
+landing: Visual design
+layout: page.njk
+permalink: "visual-design/icons.html"
+---
+
+<style>
+ .icons {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  padding-left: 0;
+  margin-bottom: 0;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  font-size: 1.14286rem;
+ }
+
+ .icons li {
+  line-height: 3rem;
+ }
+
+ .icons li a {
+  text-decoration: none !important;
+  position: relative;
+  padding: 10px 9px 10px 9px;
+  border-top: 1px solid #d4d4d7;
+  border-bottom: 1px solid #d4d4d7;
+ }
+
+ .icons li a::after {
+  content: "";
+  border-right: 1px solid #ededef;
+  height: 100%;
+  position: relative;
+  left: 10px;
+ }
+
+ .icons li a.letter-selected {
+  border-right: 1px solid #d4d4d7;
+  border-left: 1px solid #d4d4d7;
+  font-weight: 700;
+  background-color: #fafafa;
+  color: #3b3a48;
+ }
+
+
+ #iconSearchForm {
+  width: 80%;
+  position: relative;
+ }
+
+ @media (min-width: 992px) {
+  #iconSearchForm {
+   width: 40%;
+  }
+ }
+
+ .icon-reset {
+  position: absolute;
+  right: 0;
+  top: 0;
+  font-size: 1.33rem;
+  background: transparent;
+  border-top-right-radius: 4px;
+  border-bottom-right-radius: 4px;
+  height: 2.375rem;
+  background-color: #72717C;
+  padding-left: 13px;
+  padding-right: 13px;
+ }
+
+ .icon-reset:hover,
+ .icon-reset:focus {
+  background-color: #4a4958;
+ }
+
+ .icons-searchbox {
+  width: 100%;
+  border: solid 1px #72717C;
+  height: 2.375rem;
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+ }
+
+
+
+ #fontlist {
+  display: flex;
+  flex-wrap: wrap;
+ }
+
+ .icons-alpha {
+  flex-basis: 100%;
+ }
+
+ .icons-alpha:first-child {
+  margin-top: 0 !important;
+ }
+
+ .icon-item {
+  flex-basis: 100%;
+  padding-top: 1rem;
+ }
+
+ @media (min-width: 992px) {
+  .icon-item {
+   flex-basis: 33%;
+   padding-top: 1rem;
+  }
+ }
+</style>
+
+<script type="text/javascript">
+
+ var iconData = [];
+
+ function buildList(filterLetter) {
+  var listHtml = "";
+  var numberOfResults = 0;
+  var inputBox = document.querySelector("#iconSearchForm input");
+  var searchInput = inputBox ? inputBox.value.trim().toLowerCase() : "";
+
+  const letterList = [...new Set(iconData.icons.map(x => x.properties.name.charAt(0)))];
+  const jumpToHtml = `<li><a href="javascript:buildList()" ${!filterLetter ? 'class="gray-900 letter-selected"' : ''}>All</a></li>`
+   + letterList
+    .map(l => `<li><a href="javascript:buildList('${l}')" ${filterLetter === l ? 'class="letter-selected"' : ''}>${l.toUpperCase()}</a></li>`)
+    .join('');
+
+  for (const letter of letterList
+   .filter(l => !filterLetter || l === filterLetter)) {
+
+   const iconsByLetter = iconData.icons.filter(l => l.properties.name.charAt(0) === letter);
+
+
+   if (!searchInput.length) {
+    listHtml += `<p class="h1 icons-alpha py-3 mb-0 m-t-md color-p2 p-b-0">${letter.toUpperCase()}&nbsp;<span style="font-size:1rem; font-weight:400; color:#4a4958">(${iconsByLetter.length} icons)</span></p>`;
+   }
+
+   for (const icon of iconsByLetter) {
+    const iconStrings = [...new Set([icon.properties.name, ...icon.icon.tags])].filter(x => x.length);
+
+    if (!searchInput.length || iconStrings.find(x => x.search(searchInput) > -1)) {
+     listHtml += `
+<div class="d-flex icon-item">
+  <div class="text-3rem p-r gray-900">
+    <span class="ca-gov-icon-${icon.properties.name}" aria-hidden="true"></span>
+  </div>
+  <div class="icon-specs p-r  gray-900">
+  <p style="text-transform:capitalize" class="bold m-t m-b-0 font-size-16">${icon.properties.name.replace('-', ' ')}</p>
+    <p class="font-size-12 m-0">ca-gov-icon-${icon.properties.name}</p>
+    </div>
+</div>
+        `;
+     numberOfResults++;
+    }
+   }
+  }
+
+  document.querySelector('#searchSummary').innerHTML = searchInput.length ? searchInput : filterLetter ? filterLetter.toUpperCase() : "All";
+
+  if (searchInput.length) {
+   document.querySelector('#jumpToHeading').style.display = "none";
+  } else {
+   document.querySelector('#jumpToHeading').style.display = "block";
+   document.querySelector('#jumpToHeading ol').innerHTML = jumpToHtml;
+  }
+  document.querySelector('#fontlist').innerHTML = listHtml;
+  document.querySelector('#resultcount').innerHTML = numberOfResults ? `<p class="m-t-0">${numberOfResults} icons <span class="sr-only">found.</span></p>` : '<p>No icons found.</p>';
+ }
+
+ const myRequest = new Request('https://california.azureedge.net/fonts/selection.json');
+ fetch(myRequest)
+  .then(response => response.json())
+  .then(data => {
+
+    function compareStrings(a, b) {
+      // Assuming you want case-insensitive comparison
+      a = a.toLowerCase();
+      b = b.toLowerCase();
+      return (a < b) ? -1 : (a > b) ? 1 : 0;
+    }
+
+    data.icons.sort(function (a, b) {
+    return compareStrings(a.properties.name, b.properties.name);
+   })
+   iconData = data;
+   
+   buildList();
+
+   // add event listeners to form field and button
+   document.querySelector("#iconSearchForm input").oninput = function () { buildList() };
+   document.querySelector("#iconSearchForm button").onclick = function () {
+    document.querySelector("#iconSearchForm input").value = "";
+    buildList();
+   };
+
+  })
+  .catch(console.error);
+
+</script>
+
+<div class="row">
+ <div class="col-md-3">
+  <nav aria-labelledby="page-navigation-label" class="side-navigation sticky-6 overflow-auto">
+   <ul class="list-navigation">
+    <li><a href="#Icons" id="page-navigation-label" class="active">Icons</a>
+     <ul>
+      <li><a href="#How-to-use-icons">How to use icons</a></li>
+      <li><a href="#Dos-and-donts-for-icon-use">Do's and don'ts for icon use</a></li>
+      <li><a href="#Search-icons">Search icons</a></li>
+     </ul>
+    </li>
+   </ul>
+  </nav>
+ </div>
+ <div class="col-md-9 p-b-lg">
+
+
+  <h1 class="mt-lg-0" id="Icons">Icons</h1>
+  <p class="lead">Icons are visual representations of commands, devices, directories, or common actions.
+  </p>
+  <p>The State Web Template uses CSS classes to customize icon color for compatibility with all popular browsers.</p>
+
+
+  <h2 id="How-to-use-icons">How to use icons</h2>
+  <p>Icon color and font can be styled using the same CSS rules used to style other text on a page. Copy the CSS code to
+   your clipboard or manually type it into your code to use your desired icons.
+  </p>
+  <p>Keep in mind, color and font size will change the size of the icon. </p>
+
+
+
+
+  <h2 id="Dos-and-donts-for-icon-use" class="m-b-0">Do's and don'ts for icon use</h2>
+
+  <div class="row">
+   <div class="col-md-6">
+    <h3 class="h5 m-b-sm">Do</h3>
+    <hr class="m-t-0 p-t-0">
+    <ul>
+     <li>Use icons with meaningful text labels</li>
+     <li>Use a single icon for a group of related content</li>
+     <li>Use a single icon per concept</li>
+    </ul>
+   </div>
+   <div class="col-md-6">
+    <h3 class="h5 m-b m-b-sm">Don't</h3>
+    <hr class="m-t-0 p-t-0">
+    <ul>
+     <li>Use icons without labels</li>
+     <li>Use too many icons and create visual clutter</li>
+     <li>Use multiple icon variations to represent the same concept</li>
+    </ul>
+   </div>
+  </div>
+
+
+  <h2 id="Search-icons">Search icons</h2>
+  <p>Use the search to find a specific icon, or browse icons alphabetically with the menu.</p>
+
+
+  <div class="bg-gray-50 d-flex p-a-sm p-x-md">
+   <span class="ca-gov-icon-info font-size-30 color-p2 d-block" aria-hidden="true"></span>
+   <div class="m-l">
+    <p class="m-b-0">To use an icon, insert an empty span tag with the corresponding class name. Here's an example:
+     <code class="font-size-14 gray-900">&lt;span class="ca-gov-icon-info" aria-hidden="true">&lt;/span></code>
+    </p>
+
+   </div>
+
+  </div>
+
+  <form id="iconSearchForm" class="m-y-lg" onsubmit="return false">
+   <span class="sr-only" id="IconInput">Search icons</span>
+   <input type="text" name="iconsearch" aria-labelledby="IconInput" placeholder="Browse icons"
+    class="search-textfield rounded-5 icons-searchbox">
+   <button type="reset" title="reset" class="border-0 color-white icon-reset"><span class="ca-gov-icon-close-mark"
+     aria-hidden="true"></span><span class="sr-only">Reset</span></button>
+  </form>
+
+  <div id="jumpToHeading">
+   <ol class="icons">
+   </ol>
+  </div>
+
+  <!-- START ICOMOON DEMO -->
+  <div class="clearfix mhl ptl">
+   <div class="h4 m-t-md m-b-0">Showing results for "<span id="searchSummary"></span>"</div>
+   <div id="resultcount" class="fs1" aria-live="polite"></div>
+   <div id="fontlist"></div>
+  </div>
+
+
+ </div>
+</div>

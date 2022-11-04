@@ -1,0 +1,78 @@
+---
+title: Full Width Navigation with Active Search
+landing: Structure
+layout: page.njk
+permalink: "structure/navigation-full-width-utility.html"
+---
+
+
+<div class="row">
+ <div class="col-md-3">
+  <!-- Side navigation -->
+  <nav aria-labelledby="navigation-list" class="side-navigation sticky-6">
+   <ul class="list-navigation">
+    <li><a href="/structure/site-navigation.html" id="navigation-list">Navigation samples</a>
+     <ul>
+      <li><a href="/structure/navigation-dropdown.html">Dropdown Navigation</a></li>
+      <li><a href="/structure/navigation-megamenu-flex.html">Flex Megamenu Navigation</a></li>
+      <li><a href="/structure/navigation-full-width-utility.html" class="active">Full Width Navigation with Active
+        Search</a></li>
+      <li><a href="/structure/navigation-icons.html">Navigation with icons</a></li>
+      <li><a href="/structure/page-navigation.html">Page navigation</a></li>
+      <li><a href="/structure/navigation-sidebar.html">Side navigation</a></li>
+      <li><a href="/structure/navigation-single.html">Single Level Navigation</a></li>
+     </ul>
+    </li>
+   </ul>
+  </nav>
+ </div>
+ <div class="col-md-9 m-b-lg">
+
+
+  <h1 class="mt-lg-0">Full Width Navigation with Active Search</h1>
+  <p>
+   Sometimes there is a need to fit more navigation items in main navigation.
+   This is when full width navigation could be handy. This menu style can be set by adding classes
+   <code>.full-width-nav</code> and <code>.container</code> to the
+   <code>.navigation-search</code> div tag. This layout uses featured search that is placed to the
+   right of the website's logo. Please note, that the logo include (<code>branding.html</code>) is
+   placed inside of the <code>.section-default</code> div to show visual separation between branding
+   and navigation sections. Make sure to switch order of search include with the navigation because
+   search include in this case needs to go before the navigation include to match visual tabbing order.
+   Also, <code>.featured-search</code> class needs to be added to the <code>#head-search</code> div to
+   keep search visible.
+
+  <h2>Example Screenshot</h2>
+  <img src="/images/navigation-full.jpg" alt="Naviagiton with icons"
+   class="img-fluid brd-solid-1 brd-gray-light shadow2 m-b-md">
+
+
+
+
+  <h2>Full width navigation with active search header markup example:</h2>
+  <pre><span class="text-accent-p2">&lt;header</span> <span class="text-info">class=</span><span class="text-accent7">"global-header fixed"</span><span class="text-accent-p2">&gt;</span>
+ <span class="text-accent-p2">&lt;div</span> <span class="text-info">id=</span><span class="text-accent7">"skip-to-content"</span><span class="text-accent-p2">&gt;&lt;a </span><span class="text-info">href=</span><span class="text-accent7">"#main-content"</span><span class="text-accent-p2">&gt;</span>Skip to Main Content<span class="text-accent-p2">&lt;/a&gt;&lt;/div&gt;</span>
+   <span class="text-success">&#10100;% include "/src/_includes/utility-header.njk" %&#10101;</span>
+   <span class="text-success">&#10100;% include"/src/_includes/settings-bar.njk" %&#10101;</span>
+  <span class="text-accent-p2">&lt;div</span> <span class="text-info">class=</span><span class="text-accent7">"section-default"</span><span class="text-accent-p2">&gt;</span>
+   <span class="text-success">&#10100;% include "/src/_includes/branding.njk" %&#10101;</span>
+  <span class="text-accent-p2">&lt;/div&gt;</span>
+   <span class="text-success">&#10100;% include "/src/_includes/mobile-controls.njk" %&#10101;</span>
+  <span class="text-accent-p2">&lt;div</span> <span class="text-info">class=</span><span class="text-accent7">"navigation-search"</span><span class="text-accent-p2">&gt;</span>
+   <span class="text-accent-p2">&lt;div</span> <span class="text-info">id=</span><span class="text-accent7">"head-search"</span> <span class="text-info">class=</span><span class="text-accent7">"search-container"</span><span class="text-accent-p2">&gt;</span>
+    <span class="text-success">&#10100;% include "/src/_includes/search.njk" %&#10101;</span>
+   <span class="text-accent-p2">&lt;/div&gt;</span>
+  <span class="text-success">&#10100;% include "/src/_includes/navigation.njk" %&#10101;</span>
+ <span class="text-accent-p2">&lt;/div&gt;</span>
+<span class="text-accent-p2">&lt;/header&gt;</span>
+</pre>
+
+
+  <h2>Source code:</h2>
+  <p>In the template distribution Navigation with Icons full HTML markup can be found in
+   <code>/src/_includes/navigation.njk</code> file.
+  </p>
+
+
+ </div>
+</div>

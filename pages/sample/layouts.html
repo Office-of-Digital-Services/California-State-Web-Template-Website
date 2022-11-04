@@ -1,0 +1,66 @@
+---
+title: Page Layouts
+landing: Structure
+layout: page.njk
+permalink: "structure/layouts.html"
+---
+
+
+
+
+<div class="row">
+ <div class="col-md-8 p-b-lg">
+  <h1 class="mt-lg-0">Page Layouts</h1>
+  <p>State Web Template eleventy page generation codebase uses several layout page options:</p>
+  <ul>
+   <li><code>landing.njk</code> (full width page)</li>
+   <li><code>page.njk</code> (standard page)</li>
+   <li><code>navicons-landing.njk</code> (full width that has main navigation with icons)</li>
+   <li><code>navicons.njk</code> (has main navigation with icons)</li>
+   <li><code>search.njk</code> (search results page)</li>
+   <li><code>components.njk</code> or <code>patterns.njk</code> (page with dynamic left side navigation)</li>
+  </ul>
+
+  <p>To use use one of those option you need to specify <code>layout</code> key in your front matter data at the
+   beginnig
+   of your page.
+  </p>
+
+  <pre><code>---
+title: Your page title
+layout: page.njk
+---</code></pre>
+
+  <p><span class="text-highlight-primary">Note:</span> You can inspect page layouts source code in
+   <code>/src/_includes/layouts/</code> folder or download source code zip file at the State Web Template <a
+    href="https://github.com/Office-of-Digital-Innovation/California-State-Web-Template/releases"> GitHub
+    releases page</a>.
+  </p>
+
+
+  <h2>Using includes</h2>
+  <p>You can build your page by using the State Web Template includes. Several common
+   components (such as page headers, footers, navigation, etc.) are already included in pages using <code>njk</code>
+   includes.
+   You can also add <code>html</code> or <code>njk</code> includes to your apge like this:</p>
+  <pre>&#10100;% include &quot;../../src/_includes/modules/<strong>header-primary-banner.html</strong>&quot; %&#10101;</pre>
+  <p><span class="text-highlight-primary">Note:</span> Path to the module include will be relative to the directory of
+   your
+   page.</p>
+ </div>
+
+ <div class="col-md-4 p-t-lg" role="complementary">
+  <h3>Template's structure:</h3>
+  <!-- Side navigation -->
+  <div class="accordion-list list-group">
+   <a href="/structure.html" class="list-group-item list-group-item-action"><span class="ca-gov-icon-grid"
+     aria-hidden="true"></span> Structure</a>
+   <a href="/components.html" class="list-group-item list-group-item-action"><span class="ca-gov-icon-gears"
+     aria-hidden="true"></span> Components</a>
+   <a href="/patterns.html" class="list-group-item list-group-item-action"><span class="ca-gov-icon-apps"
+     aria-hidden="true"></span> Content Patterns</a>
+
+
+  </div>
+ </div>
+</div>

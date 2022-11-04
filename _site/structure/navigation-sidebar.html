@@ -1,0 +1,1072 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Side Navigation</title> 
+  <meta charset="utf-8">
+  <meta name="Author" content="State of California" />
+  <meta name="Description" content="State of California" />
+  <meta name="Keywords" content="California, government" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
+<meta property="og:image" content="https://california.azureedge.net/cdt/statetemplate/global/images/social_media_preview_image.png">
+
+<link rel="stylesheet" href="/css/cagov.core.min.css">
+
+		<link rel="stylesheet" href="/css/colortheme-oceanside.min.css">
+
+
+<link rel="apple-touch-icon-precomposed" sizes="100x100" href="/images/apple-touch-icon-precomposed.png">
+<link rel="icon" sizes="192x192" href="/images/apple-touch-icon-192x192.png">
+<link rel="apple-touch-icon-precomposed" sizes="180x180" href="/images/apple-touch-icon-180x180.png">
+<link rel="apple-touch-icon-precomposed" sizes="152x152" href="/images/apple-touch-icon-152x152.png">
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="/images/apple-touch-icon-144x144.png">
+<link rel="apple-touch-icon-precomposed" sizes="120x120" href="/images/apple-touch-icon-120x120.png">
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="/images/apple-touch-icon-114x114.png">
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="/images/apple-touch-icon-72x72.png">
+<link rel="apple-touch-icon-precomposed" href="/images/apple-touch-icon-57x57.png">
+<link rel="shortcut icon" href="/images/apple-touch-icon-57x57.png">
+<link rel="apple-touch-icon" href="/images/apple-touch-icon.png">
+<link rel="shortcut icon" href="/favicon.ico">
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<!-- Universal Analytics -->
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-20973992-30"></script>
+
+<script>
+ window.dataLayer = window.dataLayer || [];
+ function gtag() { dataLayer.push(arguments); }
+ gtag('js', new Date());
+
+ //statewide GA property
+ gtag('config', 'UA-3419582-2');
+
+ //please update state department UA code in line below before deployment  
+ gtag('config', 'UA-20973992-30');
+
+
+
+ var getOutboundLink = function (url) {
+  gtag('event', 'click', {
+   'event_category': 'navigation',
+   'event_label': 'outbound link: ' + url,
+   'transport_type': 'beacon',
+   'event_callback': function () { document.location = url; }
+  });
+ }
+
+ var trackDownload = function (filename) {
+  gtag('event', 'click', {
+   'event_category': 'download',
+   'event_label': 'file: ' + filename,
+   'transport_type': 'beacon',
+   'event_callback': function () { document.location = url; }
+  });
+ }
+</script>
+
+
+
+<!-- Google Analytics 4 -->
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-75V2BNQ3DR"></script>
+
+<script>
+ window.dataLayer = window.dataLayer || [];
+ function gtag() { dataLayer.push(arguments); }
+ gtag('js', new Date());
+ gtag('config', 'G-69TD0KNT0F'); // statewide GA4 Property ID
+ gtag('config', 'G-75V2BNQ3DR'); // update individual agency GA4 Property ID code before deployment
+</script>
+</head>
+<body class="primary">
+  <header role="banner" id="header" class="global-header fixed">
+    <div id="skip-to-content">
+        <a href="#main-content">Skip to Main Content</a>
+    </div>
+    <!-- /src/_includes/modules/alert-banner-beta-feedback.html -->
+<div class="alert alert-banner bg-standout p-x-0 p-y-sm" role="alert">
+ <div class="container">
+  <span class="alert-level border brd-s1 px-3 m-r-md">BETA</span><span class="alert-text text-1rem">We'd love your
+   feedback
+   to make the template better. You have from November 4 to November 11. </span>
+  <a href="https://airtable.com/shro9V6ry2Cf4mpgG" class="btn btn-default btn-xs bg-s1 pos-rel m-l">Send
+   feedback</a>
+ </div>
+</div>
+    
+    <div class="utility-header">
+    <div class="container">
+        <div class="flex-row">
+            <div class="social-media-links">
+                <div class="header-cagov-logo"><a href="https://ca.gov"><span class="sr-only">CA.gov</span><img
+                            src="/images/Ca-Gov-Logo-Gold.svg" class="pos-rel" alt="" aria-hidden="true" /></a></div>
+               <p class="official-tag"><span class="desktop-only">Official website of the</span> State of California</p>
+            </div>
+            <div class="settings-links">
+                <button class="btn btn-sm" data-bs-toggle="collapse" data-bs-target="#siteSettings"
+                    aria-expanded="false" aria-controls="siteSettings"><span class="ca-gov-icon-gear"
+                        aria-hidden="true"></span>Settings</button>
+            </div>
+        </div>
+    </div>
+</div>
+    <div class="site-settings section collapse collapsed" id="siteSettings">
+ <div class="container p-y">
+
+  <div class="settings-bar-buttons">
+
+   <div class="btn-group" aria-label="contrastMode">
+    <button type="button"
+     class="btn btn-default btn-lg bg-transparent bg-s1-hover disableHighContrastMode">Reset</button>
+   </div>
+
+   <div class="btn-group"><button type="button" class="btn btn-s1 btn-lg brd-s1 enableHighContrastMode">High
+     contrast</button>
+   </div>
+
+
+
+   <div class="btn-group">
+    <button type="button" class="btn btn-s1 btn-lg brd-s1 increaseTextSize">
+     <span class="hidden-xs">Increase font size</span>
+     <span class="visible-xs">Font
+      <span class="sr-only">increase</span>
+      <span class="ca-gov-icon-plus-line small" aria-hidden="true"></span>
+     </span>
+    </button>
+   </div>
+
+   <div class="btn-group">
+    <button type="button" class="btn btn-s1 btn-lg brd-s1 decreaseTextSize">
+     <span class="hidden-xs">Decrease font size</span>
+     <span class="visible-xs">Font <span class="sr-only">decrease</span>
+      <span class="ca-gov-icon-minus-line small" aria-hidden="true"></span>
+     </span>
+    </button>
+   </div>
+
+   <div class="btn-group">
+    <button type="button" class="btn btn-s1 btn-lg brd-s1 dyslexicFont">Dyslexic font</button>
+   </div>
+
+   <button type="button" class="close ms-auto" data-bs-toggle="collapse" data-bs-target="#siteSettings"
+    aria-label="Close">
+    <span aria-hidden="true" class=" ca-gov-icon-close-mark"></span>
+   </button>
+
+  </div>
+ </div>
+</div>
+    <!-- header branding with light gray background -->
+<div class="section-default">
+ <div class="branding">
+  <div class="header-organization-banner">
+   <a href="/">
+    <div class="logo-assets">
+     <img src="/images/template-logo.png" class="logo-img" alt="State Template Logo" />
+     <div class="logo-text">
+      <span class="logo-state">State of California</span>
+      <span class="logo-dept">Web Template</span>
+     </div>
+    </div>
+   </a>
+  </div>
+ </div>
+</div>
+    <!-- mobile navigation controls -->
+<div class="mobile-controls">
+    <span class="mobile-control-group mobile-header-icons">
+        <!-- Add more mobile controls here. These will be on the right side of the mobile page header section -->
+    </span>
+    <div class="mobile-control-group main-nav-icons">
+        <button class="mobile-control toggle-search">
+            <span class="ca-gov-icon-search hidden-print" aria-hidden="true"></span><span class="sr-only">Search</span>
+        </button>
+        <button id="nav-icon3" class="mobile-control toggle-menu" aria-expanded="false" aria-controls="navigation"
+            data-bs-toggle="collapse" data-bs-target="#navigation">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span class="sr-only">Menu</span>
+        </button>
+    </div>
+</div>
+    <div class="navigation-search full-width-nav container">
+      <div id="head-search" class="search-container featured-search">
+          <div class="container">
+    <form id="Search" class="pos-rel" action="/serp.html">
+        <span class="sr-only" id="SearchInput">Custom Google Search</span>
+        <input type="text" name="q" aria-labelledby="SearchInput" placeholder="Search"
+            class="search-textfield" />
+        <button type="submit" class="gsc-search-button"><span
+                class="ca-gov-icon-search" aria-hidden="true"></span><span
+                class="sr-only">Submit</span></button>
+        <div class="close-search-btn"><button
+                class="close-search gsc-clear-button border-0 bg-transparent pos-rel"
+                type="reset"><span class="sr-only">Close</span></button></div>
+    </form>
+</div>
+      </div>
+      <!-- navigation types -->
+            
+		          <nav id="navigation" class="main-navigation dropdown">
+ <ul id="nav_list" class="top-level-nav">
+  <li class="nav-item">
+       
+       <a class="first-level-link" href="/template-updates.html">Template updates</a>
+        
+   </li>
+   <li class="nav-item">
+       
+       <a class="first-level-link" href="/get-started.html">Get started</a>
+        
+   </li>
+   <li class="nav-item">       
+       
+       <a class="first-level-link active" href="/structure.html">Structure</a>
+        
+   </li>
+    
+    <li class="nav-item">
+       
+       <a class="first-level-link active" href="/visual-design.html">Visual design</a>
+       <div class="sub-nav">
+         <ul class="second-level-nav">
+          <li class="unit1">
+            <a href="/visual-design/icons.html" class="second-level-link">Icons</a>
+           </li>
+           <li class="unit1">
+            <a href="/visual-design/color.html" class="second-level-link">Color</a>
+           </li>
+           <li class="unit1">
+            <a href="/visual-design/typography.html" class="second-level-link">Typography</a>
+           </li>
+          </ul>
+       </div>
+   </li>
+   <li class="nav-item">
+       
+       <a class="first-level-link" href="/components.html">Components</a>
+        
+   </li>
+   <li class="nav-item">
+       
+       <a class="first-level-link" href="/patterns.html" >Patterns</a>
+        
+   </li>
+ </ul>
+
+</nav>
+
+            
+    </div>
+  </header>
+
+  
+<div id="main-content" class="main-content">
+	<div class="container p-t-md">
+		<main class="main-primary" id="main">
+     
+    <nav aria-label="You are here">
+ <ol class="breadcrumb">
+  <li><a href="../index.html" title="Home page">Home</a></li>
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+      
+      
+     <li><a href="/structure.html" title="Strucure landing page">Strucure</a></li>
+      
+        
+         <li><a href="/structure/site-navigation.html" title="Site navigation landing page">Site navigation</a></li>
+        
+       
+      <li>Side menu</li>
+       
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+ </ol>
+</nav>
+
+			
+
+<div class="row">
+ <div class="col-md-3">
+  <!-- Side navigation -->
+  <nav aria-labelledby="navigation-list" class="side-navigation sticky-6">
+   <ul class="list-navigation">
+    <li><a href="/structure/site-navigation.html" id="navigation-list">Navigation samples</a>
+     <ul>
+      <li><a href="/structure/navigation-dropdown.html">Dropdown Navigation</a></li>
+      <li><a href="/structure/navigation-megamenu-flex.html">Flex Megamenu Navigation</a></li>
+      <li><a href="/structure/navigation-full-width-utility.html">Full Width Navigation with Active Search</a></li>
+      <li><a href="/structure/navigation-icons.html">Navigation with icons</a></li>
+      <li><a href="/structure/page-navigation.html">Page navigation</a></li>
+      <li><a href="/structure/navigation-sidebar.html" class="active">Side navigation</a></li>
+      <li><a href="/structure/navigation-single.html">Single Level Navigation</a></li>
+     </ul>
+    </li>
+   </ul>
+  </nav>
+ </div>
+ <div class="col-md-9 m-b-lg">
+
+
+  <h1 class="mt-lg-0">Side Navigation Menu</h1>
+  <p>
+   Side navigation is a vertical navigation component which apart from traditional, text links, might
+   embed icons, dropdowns, images or even forms.
+  </p>
+
+  <p>
+   Its clarity and simplicity remarkably increases User Experience. It allows you to navigate through
+   small applications as well as vast portals swiftly. Multiple link embedding functionality enables
+   you to implement more advanced content categorization, which is almost essential within bigger
+   projects.
+  </p>
+  <h2>Accordion side navigation</h2>
+  <p>Accordion side navigation uses basic accordion component's structure and
+   properties but it is styled to be used as side navigation. </p>
+  <h3>Example:</h3>
+  <div class="row">
+   <div class="col-md-5">
+    <nav aria-labelledby="components-list">
+ <div class="h4 m-t-0" id="components-list">Accordion side navigation</div>
+ <cagov-accordion class="sidenav">
+  <details open>
+   <summary class="active">Accordions</summary>
+   <div class="accordion-body">
+    <ul class="side-subnav">
+     <li>
+      <a href="#">Basic accordion</a>
+     </li>
+     <li>
+      <a href="#">List accodion</a>
+     </li>
+     <li>
+      <a href="#">Side accordion</a>
+     </li>
+    </ul>
+   </div>
+  </details>
+ </cagov-accordion>
+
+ <cagov-accordion class="sidenav">
+  <details>
+   <summary>Blurb</summary>
+   <div class="accordion-body">
+    <ul class="side-subnav">
+     <li>
+      <a href="#" class="active">Cards</a>
+     </li>
+     <li>
+      <a href="#">Icon blocks</a>
+     </li>
+     <li>
+      <a href="#">Info blocks</a>
+     </li>
+    </ul>
+   </div>
+  </details>
+ </cagov-accordion>
+ <cagov-accordion class="sidenav">
+  <details>
+   <summary>News blocks</summary>
+   <div class="accordion-body">
+    <ul class="side-subnav">
+     <li>
+      <a href="#">Basic news block</a>
+     </li>
+     <li>
+      <a href="#">Imagenews block</a>
+     </li>
+    </ul>
+   </div>
+  </details>
+ </cagov-accordion>
+ <cagov-accordion class="sidenav">
+  <details>
+   <summary>Forms</summary>
+   <div class="accordion-body">
+    <ul class="side-subnav">
+     <li>
+      <a href="#">Textarea</a>
+     </li>
+     <li>
+      <a href="#">File input</a>
+     </li>
+     <li>
+      <a href="#">Radio buttons</a>
+     </li>
+    </ul>
+   </div>
+  </details>
+ </cagov-accordion>
+ <!--single sidenav links-->
+ <a class="sidenav" href="#">Breadcrumb</a>
+ <a class="sidenav" href="#">Modal</a>
+</nav>
+   </div>
+  </div>
+
+
+  <h3>Source code:</h3>
+  <p>In the template distribution Accordion Side Navigation full HTML markup can be found in
+   <code>/src/_includes/modules/nav-side-accordion.html</code> file.
+  </p>
+
+  <hr />
+
+  <h2>List navigation</h2>
+  <p>List navigation displays links to the webpages that can be tied into one content category, such as list
+   of web components, for example. Links with class
+   <code>active</code> will indicate the currently open page, which allows people to scan a page and know if
+   they’re in the right place.
+  </p>
+
+
+
+  <nav aria-label="list navigation">
+ <h3 class="h4">Content components</h3>
+ <ul class="list-navigation">
+  <li><a href="#">Accordions</a></li>
+  <li><a href="#">Alert Banner</a></li>
+  <li><a href="#" class="active">Banner</a></li>
+  <li><a href="#">Blockquotes</a></li>
+  <li><a href="#">Blurb </a></li>
+ </ul>
+</nav>
+
+  <h3>Source code:</h3>
+  <pre><code class="overflow-auto"><nav aria-label="list navigation">
+ <h3 class="h4">Content components</h3>
+ <ul class="list-navigation">
+  <li><a href="#">Accordions</a></li>
+  <li><a href="#">Alert Banner</a></li>
+  <li><a href="#" class="active">Banner</a></li>
+  <li><a href="#">Blockquotes</a></li>
+  <li><a href="#">Blurb </a></li>
+ </ul>
+</nav></code></pre>
+
+
+  <nav aria-label="list navigation with second level">
+ <h3 class="h4">List navigation with sub navigation</h3>
+ <ul class="list-navigation">
+  <li><a href="#">Breadcrumbs</a></li>
+  <li><a href="#">Side navigation</a>
+   <ul>
+    <li><a href="#" class="active">Readme</a></li>
+    <li><a href="#">Changelog</a></li>
+   </ul>
+  </li>
+  <li><a href="#">Dropdown Navigation</a></li>
+ </ul>
+</nav>
+
+
+
+  <h3>Source code:</h3>
+  <pre><code class="overflow-auto"><nav aria-label="list navigation with second level">
+ <h3 class="h4">List navigation with sub navigation</h3>
+ <ul class="list-navigation">
+  <li><a href="#">Breadcrumbs</a></li>
+  <li><a href="#">Side navigation</a>
+   <ul>
+    <li><a href="#" class="active">Readme</a></li>
+    <li><a href="#">Changelog</a></li>
+   </ul>
+  </li>
+  <li><a href="#">Dropdown Navigation</a></li>
+ </ul>
+</nav></code></pre>
+
+
+
+
+  <h2>Bootstrap side navigation</h2>
+  <p>
+   Bootstrap Side navigation uses <a href="/sample/accordions.html">accordion list</a> component's structure and
+   properties. But also, it incorporates the bootstrap list group component's styles.
+  </p>
+
+  <p>
+   Like many other components, a Side navigation can be styled with a number of extension classes.
+   Append one of the following classes to the <code>.list-group</code> element:
+   <code>.section-default</code>, <code>.section-understated</code>, <code>.section-primary</code>,
+   <code>.section-standout</code>, <code>.section-inverted</code>, <code>.section-impact</code>,
+   <code>.section-danger</code>.
+
+  </p>
+
+
+
+
+  <h3>Example:</h3>
+  <div class="row">
+   <div class="col-md-4">
+    <!-- Side navigation -->
+<div class="side-nav">
+ <div data-aria-accordion data-multi data-transition data-default="none">
+
+  <div data-aria-accordion-heading class="tab list-group-item">
+   <div class="ca-gov-icon-hand" aria-hidden="true"></div>
+   Link with sub-nav 1
+  </div>
+  <div data-aria-accordion-panel class="p-0 m-0">
+   <div class="list-group m-0">
+    <a href="#" class="list-group-item list-group-item-action"><span class="ca-gov-icon-apps" aria-hidden="true"></span>
+     Sub navigation link 1</a>
+    <a href="#" class="list-group-item list-group-item-action"><span class="ca-gov-icon-chat" aria-hidden="true"></span>
+     Sub navigation link 2</a>
+    <a href="#" class="list-group-item list-group-item-action"><span class="ca-gov-icon-phone"
+      aria-hidden="true"></span> Sub navigation link 3</a>
+    <a href="#" class="list-group-item list-group-item-action"><span class="ca-gov-icon-email"
+      aria-hidden="true"></span> Sub navigation link 4</a>
+    <a href="#" class="list-group-item list-group-item-action"><span class="ca-gov-icon-calendar"
+      aria-hidden="true"></span> Sub navigation link 5</a>
+   </div>
+  </div>
+
+  <div data-aria-accordion-heading class="tab list-group-item border-bottom-0 active">
+   <span class="ca-gov-icon-fingerprint" aria-hidden="true"></span>
+   Link with sub-nav 2
+  </div>
+  <div data-aria-accordion-panel class="m-0 border border-bottom-0">
+   <ul class="list-primary pb-4">
+    <li><a href="#">Sub-navigation list link 1</a></li>
+    <li><a href="#">Sub-navigation list link 2</a></li>
+    <li><a href="#">Sub-navigation list link 3</a></li>
+   </ul>
+  </div>
+  <a href="#" class="list-group-item list-group-item-action"><span class="ca-gov-icon-calendar"
+    aria-hidden="true"></span> Regular link</a>
+  <div data-aria-accordion-heading class="tab list-group-item border-bottom-0">
+   <span class="ca-gov-icon-puzzle-piece" aria-hidden="true"></span> Link with sub-nav 3
+  </div>
+  <div data-aria-accordion-panel class="m-0 border border-bottom-0">
+   <form class="p-y-md">
+    <div class="form-group">
+     <label for="exampleInputEmail-1">Email address</label>
+     <input type="email" class="form-control" id="exampleInputEmail-1" aria-describedby="emailHelp-1"
+      placeholder="Enter email">
+     <small id="emailHelp-1" class="form-text text-muted">We'll never share your email with anyone
+      else.</small>
+    </div>
+    <div class="form-group">
+     <label for="exampleInputPassword-1">Password</label>
+     <input type="password" class="form-control" id="exampleInputPassword-1" placeholder="Password">
+    </div>
+    <div class="form-check">
+     <input type="checkbox" class="form-check-input" id="exampleCheck-1">
+     <label class="form-check-label" for="exampleCheck-1">Check me out</label>
+    </div>
+    <button type="submit" class="btn btn-primary m-t">Submit</button>
+   </form>
+  </div>
+  <a href="#" class="list-group-item list-group-item-action"><span class="ca-gov-icon-info-bubble"
+    aria-hidden="true"></span> Regular link 2</a>
+ </div>
+</div>
+   </div>
+  </div>
+
+
+  <h3>Source code:</h3>
+  <p>In the template distribution Bootstrap Accordion Side Navigation full HTML markup can be found in
+   <code>/src/_includes/modules/nav-side.html</code> file.
+  </p>
+
+
+  <hr />
+
+  <h3>Standout version example:</h3>
+
+  <div class="row">
+   <div class="col-md-4">
+    <!-- Side navigation (standout) -->
+<!-- Side navigation -->
+<div class="side-nav list-group section-standout">
+ <div data-aria-accordion data-multi data-transition data-default="none">
+
+  <div data-aria-accordion-heading class="tab list-group-item">
+   <div class="ca-gov-icon-hand" aria-hidden="true"></div>
+   Link with sub-nav 1
+  </div>
+  <div data-aria-accordion-panel class="p-0 m-0">
+   <div class="list-group m-0">
+    <a href="#" class="list-group-item list-group-item-action"><span class="ca-gov-icon-apps" aria-hidden="true"></span>
+     Sub navigation link 1</a>
+    <a href="#" class="list-group-item list-group-item-action"><span class="ca-gov-icon-chat" aria-hidden="true"></span>
+     Sub navigation link 2</a>
+    <a href="#" class="list-group-item list-group-item-action"><span class="ca-gov-icon-phone"
+      aria-hidden="true"></span> Sub navigation link 3</a>
+    <a href="#" class="list-group-item list-group-item-action"><span class="ca-gov-icon-email"
+      aria-hidden="true"></span> Sub navigation link 4</a>
+    <a href="#" class="list-group-item list-group-item-action"><span class="ca-gov-icon-calendar"
+      aria-hidden="true"></span> Sub navigation link 5</a>
+   </div>
+  </div>
+
+  <div data-aria-accordion-heading class="active tab list-group-item border-bottom-0">
+   <span class="ca-gov-icon-fingerprint" aria-hidden="true"></span>
+   Link with sub-nav 2
+  </div>
+  <div data-aria-accordion-panel class="m-0 border border-bottom-0">
+   <ul class="list-primary pb-4">
+    <li><a href="#">Sub-navigation list link 1</a></li>
+    <li><a href="#">Sub-navigation list link 2</a></li>
+    <li><a href="#">Sub-navigation list link 3</a></li>
+   </ul>
+  </div>
+  <a href="#" class="list-group-item list-group-item-action"><span class="ca-gov-icon-calendar"
+    aria-hidden="true"></span> Regular link</a>
+  <div data-aria-accordion-heading class="tab list-group-item border-bottom-0">
+   <span class="ca-gov-icon-puzzle-piece" aria-hidden="true"></span> Link with sub-nav 3
+  </div>
+  <div data-aria-accordion-panel class="m-0 border border-bottom-0">
+   <form class="p-y-md">
+    <div class="form-group">
+     <label for="exampleInputEmail-1">Email address</label>
+     <input type="email" class="form-control" id="exampleInputEmail-1" aria-describedby="emailHelp-1"
+      placeholder="Enter email">
+     <small id="emailHelp-1" class="form-text text-white">We'll never share your email with
+      anyone
+      else.</small>
+    </div>
+    <div class="form-group">
+     <label for="exampleInputPassword-1">Password</label>
+     <input type="password" class="form-control" id="exampleInputPassword-1" placeholder="Password">
+    </div>
+    <div class="form-check">
+     <input type="checkbox" class="form-check-input" id="exampleCheck-1">
+     <label class="form-check-label" for="exampleCheck-1">Check me out</label>
+    </div>
+    <button type="submit" class="btn btn-standout m-t">Submit</button>
+   </form>
+  </div>
+  <a href="#" class="list-group-item list-group-item-action"><span class="ca-gov-icon-info-bubble"
+    aria-hidden="true"></span> Regular link 2</a>
+ </div>
+</div>
+   </div>
+  </div>
+
+
+  <h3>Source code:</h3>
+  <p>In the template distribution Standout Bootstrap Accordion Side Navigation full HTML markup can be found in
+   <code>/src/_includes/modules/nav-side-standout.html</code> file.
+  </p>
+
+  <hr />
+
+
+  <h3>Primary version example:</h3>
+  <div class="row">
+   <div class="col-md-4">
+    <!-- Side navigation (primary) -->
+<!-- Side navigation -->
+<div class="side-nav section-primary list-group section-primary">
+ <div data-aria-accordion data-multi data-transition data-default="none">
+
+  <div data-aria-accordion-heading class="tab list-group-item">
+   <div class="ca-gov-icon-hand" aria-hidden="true"></div>
+   Link with sub-nav 1
+  </div>
+  <div data-aria-accordion-panel class="p-0 m-0">
+   <div class="list-group m-0">
+    <a href="#" class="list-group-item list-group-item-action"><span class="ca-gov-icon-apps" aria-hidden="true"></span>
+     Sub navigation link 1</a>
+    <a href="#" class="list-group-item list-group-item-action"><span class="ca-gov-icon-chat" aria-hidden="true"></span>
+     Sub navigation link 2</a>
+    <a href="#" class="list-group-item list-group-item-action"><span class="ca-gov-icon-phone"
+      aria-hidden="true"></span> Sub navigation link 3</a>
+    <a href="#" class="list-group-item list-group-item-action"><span class="ca-gov-icon-email"
+      aria-hidden="true"></span> Sub navigation link 4</a>
+    <a href="#" class="list-group-item list-group-item-action"><span class="ca-gov-icon-calendar"
+      aria-hidden="true"></span> Sub navigation link 5</a>
+   </div>
+  </div>
+
+  <div data-aria-accordion-heading class="active tab list-group-item border-bottom-0">
+   <span class="ca-gov-icon-fingerprint" aria-hidden="true"></span>
+   Link with sub-nav 2
+  </div>
+  <div data-aria-accordion-panel class="m-0 border border-bottom-0">
+   <ul class="list-primary pb-4">
+    <li><a href="#">Sub-navigation list link 1</a></li>
+    <li><a href="#">Sub-navigation list link 2</a></li>
+    <li><a href="#">Sub-navigation list link 3</a></li>
+   </ul>
+  </div>
+  <a href="#" class="list-group-item list-group-item-action"><span class="ca-gov-icon-calendar"
+    aria-hidden="true"></span> Regular link</a>
+  <div data-aria-accordion-heading class="tab list-group-item border-bottom-0">
+   <span class="ca-gov-icon-puzzle-piece" aria-hidden="true"></span> Link with sub-nav 3
+  </div>
+  <div data-aria-accordion-panel class="m-0 border border-bottom-0">
+   <form class="p-y-md">
+    <div class="form-group">
+     <label for="exampleInputEmail-1">Email address</label>
+     <input type="email" class="form-control" id="exampleInputEmail-1" aria-describedby="emailHelp-1"
+      placeholder="Enter email">
+     <small id="emailHelp-1" class="form-text text-white">We'll never share your email with
+      anyone
+      else.</small>
+    </div>
+    <div class="form-group">
+     <label for="exampleInputPassword-1">Password</label>
+     <input type="password" class="form-control" id="exampleInputPassword-1" placeholder="Password">
+    </div>
+    <div class="form-check">
+     <input type="checkbox" class="form-check-input" id="exampleCheck-1">
+     <label class="form-check-label" for="exampleCheck-1">Check me out</label>
+    </div>
+    <button type="submit" class="btn btn-primary m-t">Submit</button>
+   </form>
+  </div>
+  <a href="#" class="list-group-item list-group-item-action"><span class="ca-gov-icon-info-bubble"
+    aria-hidden="true"></span> Regular link 2</a>
+ </div>
+</div>
+   </div>
+  </div>
+
+
+  <h3>Source code:</h3>
+  <p>In the template distribution Primary Bootstrap Accordion Side Navigation full HTML markup can be found in
+   <code>/src/_includes/modules/nav-side-primary.html</code> file.
+  </p>
+
+  <hr />
+
+  <h3>Understated version example:</h3>
+  <div class="row">
+   <div class="col-md-4">
+    <!-- Side navigation (understated) -->
+<!-- Side navigation -->
+<div class="side-nav list-group section-understated">
+ <div data-aria-accordion data-multi data-transition data-default="none">
+
+  <div data-aria-accordion-heading class="tab list-group-item">
+   <div class="ca-gov-icon-hand" aria-hidden="true"></div>
+   Link with sub-nav 1
+  </div>
+  <div data-aria-accordion-panel class="p-0 m-0">
+   <div class="list-group m-0">
+    <a href="#" class="list-group-item list-group-item-action"><span class="ca-gov-icon-apps" aria-hidden="true"></span>
+     Sub navigation link 1</a>
+    <a href="#" class="list-group-item list-group-item-action"><span class="ca-gov-icon-chat" aria-hidden="true"></span>
+     Sub navigation link 2</a>
+    <a href="#" class="list-group-item list-group-item-action"><span class="ca-gov-icon-phone"
+      aria-hidden="true"></span> Sub navigation link 3</a>
+    <a href="#" class="list-group-item list-group-item-action"><span class="ca-gov-icon-email"
+      aria-hidden="true"></span> Sub navigation link 4</a>
+    <a href="#" class="list-group-item list-group-item-action"><span class="ca-gov-icon-calendar"
+      aria-hidden="true"></span> Sub navigation link 5</a>
+   </div>
+  </div>
+
+  <div data-aria-accordion-heading class="active tab list-group-item border-bottom-0">
+   <span class="ca-gov-icon-fingerprint" aria-hidden="true"></span>
+   Link with sub-nav 2
+  </div>
+  <div data-aria-accordion-panel class="m-0 border border-bottom-0">
+   <ul class="list-primary pb-4">
+    <li><a href="#">Sub-navigation list link 1</a></li>
+    <li><a href="#">Sub-navigation list link 2</a></li>
+    <li><a href="#">Sub-navigation list link 3</a></li>
+   </ul>
+  </div>
+  <a href="#" class="list-group-item list-group-item-action"><span class="ca-gov-icon-calendar"
+    aria-hidden="true"></span> Regular link</a>
+  <div data-aria-accordion-heading class="tab list-group-item border-bottom-0">
+   <span class="ca-gov-icon-puzzle-piece" aria-hidden="true"></span> Link with sub-nav 3
+  </div>
+  <div data-aria-accordion-panel class="m-0 border border-bottom-0">
+   <form class="p-y-md">
+    <div class="form-group">
+     <label for="exampleInputEmail-1">Email address</label>
+     <input type="email" class="form-control" id="exampleInputEmail-1" aria-describedby="emailHelp-1"
+      placeholder="Enter email">
+     <small id="emailHelp-1" class="form-text text-muted">We'll never share your email with
+      anyone
+      else.</small>
+    </div>
+    <div class="form-group">
+     <label for="exampleInputPassword-1">Password</label>
+     <input type="password" class="form-control" id="exampleInputPassword-1" placeholder="Password">
+    </div>
+    <div class="form-check">
+     <input type="checkbox" class="form-check-input" id="exampleCheck-1">
+     <label class="form-check-label" for="exampleCheck-1">Check me out</label>
+    </div>
+    <button type="submit" class="btn btn-default m-t">Submit</button>
+   </form>
+  </div>
+  <a href="#" class="list-group-item list-group-item-action"><span class="ca-gov-icon-info-bubble"
+    aria-hidden="true"></span> Regular link 2</a>
+ </div>
+</div>
+   </div>
+  </div>
+
+
+  <h3>Source code:</h3>
+  <p>In the template distribution Understated Bootstrap Accordion Side Navigation full HTML markup can be found in
+   <code>/src/_includes/modules/nav-side-understated.html</code> file.
+  </p>
+
+
+ </div>
+</div>
+
+		</main>
+	</div>
+</div>
+
+<aside class="p-b-md p-t-sm section-standout">
+ <div class="container">
+  <div class="row">
+   <div class="col-md-4">
+    <h3 class="h4 w-100 brd-bottom brd-highlight p-b">State Web Template</h3>
+    <a href="/about.html" class="d-block no-underline m-y font-size-16">About</a>
+    <a href="/contact-us.html" class="d-block no-underline m-y font-size-16">Contact us</a>
+   </div>
+   <div class="col-md-4">
+    <h3 class="h4 w-100 brd-bottom  brd-highlight p-b">Related websites</h3>
+    <a href="https://webstandards.ca.gov" class="d-block no-underline m-y font-size-16">State Web Standards</a>
+    <a href="https://designsystem.webstandards.ca.gov" class="d-block no-underline m-y font-size-16">California Design
+     System</a>
+    <a href="https://github.com/Office-of-Digital-Services/California-State-Web-Template-Website"
+     class="d-block no-underline m-y font-size-16">State Web Template GitHub</a>
+   </div>
+   <div class="col-md-4">
+    <h3 class="h4 w-100 brd-bottom brd-highlight p-b">Resources</h3>
+    <a href="https://designsystem.webstandards.ca.gov/style/content"
+     class="d-block no-underline m-y font-size-16">Content style
+     guide</a>
+    <a href="https://designsystem.webstandards.ca.gov/style/design" class="d-block no-underline m-y font-size-16">Design
+     style
+     guide</a>
+    <a href="https://designsystem.webstandards.ca.gov/why-web-components"
+     class="d-block no-underline m-y font-size-16">Why web
+     components</a>
+   </div>
+  </div>
+ </div>
+</aside>
+  <!-- Global Footer -->
+<footer id="footer" class="global-footer">
+  <button class="return-top"><span class="sr-only">Back to top</span></button>
+  <div class="container">
+   <div class="d-flex">
+     <a href="https://ca.gov" class="cagov-logo" target="_blank">
+     <img src="/images/Ca-Gov-Logo-Gold.svg" alt="CA.gov logo">
+     </a>
+ 
+     <ul class="footer-links">
+         <li><a href="/conditions-of-use.html">Conditions of use</a></li>
+         <li><a href="/privacy-policy.html">Privacy policy</a></li>
+         <li><a href="/images/WebAccessibilityCert-beta.template.webstandards.ca.gov.pdf" aria-label="Accessibility Certification">Accessibility</a></li>
+         <li><a href="/sitemap.html">Sitemap</a></li>
+         
+     </ul>
+
+     <ul class="socialsharer-container">
+         <li><a href="https://github.com/Office-of-Digital-Innovation/California-State-Web-Template"><span class="ca-gov-icon-github"
+                     aria-hidden="true"></span><span class="sr-only">GitHub</span></a></li>
+     </ul>
+   </div>
+  </div>
+
+  <!-- Copyright Statement -->
+  <div class="copyright">
+    <div class="container text-right">
+        Copyright &copy;
+        <span id="thisyear">
+    <script>document.getElementById('thisyear').appendChild(document.createTextNode(new Date().getFullYear()))</script>
+</span> State of California
+    </div>
+  </div>
+</footer>
+
+<!-- Extra Decorative Content -->
+<div class="decoration-last">&nbsp;</div>
+  <script src="/js/cagov.core.min.js"></script>
+</body>
+</html>

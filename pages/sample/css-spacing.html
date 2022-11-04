@@ -1,0 +1,59 @@
+﻿---
+title: Spacing
+landing: Get started
+layout: page.njk
+permalink: "get-started/css-classes-shortcuts/spacing.html"
+---
+
+<div class="row">
+ <div class="col-md-3" role="complementary">
+  <!-- Side navigation -->
+  <nav aria-labelledby="color-schemes-list" class="side-navigation sticky-6">
+   <ul class="list-navigation">
+    <li><a href="/get-started/css-classes-shortcuts/" id="color-schemes-list">CSS classes shortcuts</a>
+     <ul>
+      <li><a href="/get-started/css-classes-shortcuts/utility-css-classes.html">Utility CSS classes</a></li>
+      <li><a href="/get-started/css-classes-shortcuts/gradient-backgrounds.html">Gradient backgrounds</a></li>
+      <li><a href="/get-started/css-classes-shortcuts/spacing.html" class="active">Spacing</a></li>
+      <li><a href="/get-started/css-classes-shortcuts/text-accent-colors.html">Text accent colors</a></li>
+     </ul>
+    </li>
+   </ul>
+  </nav>
+ </div>
+
+ <div class="col-md-9 m-b-lg">
+  <h1 class="mt-lg-0">Generic spacing classes</h1>
+
+  <p>Assign <code>margin</code> or <code>padding</code> to an element or a subset of it’s sides
+   with shorthand classes. Includes support for individual properties, all properties, vertical
+   only and horizontal only properties.</p>
+  <h2>Naming Convention</h2>
+  <p>The naming convention used can be broken down into three parts. </p>
+  <p><strong>Part 1:</strong> can be <code>m</code> or <code>p</code> and relates to Margin or
+   Padding respectivly.</p>
+  <p><strong>Part 2:</strong> corolates to the margin or padding position. </p>
+
+  <ul class="list-unstyled m-x-md m-b-md">
+   <li><code>a</code> = All</li>
+   <li><code>t</code> = Top</li>
+   <li><code>r</code> = Right</li>
+   <li><code>b</code> = Bottom</li>
+   <li><code>l</code> = Left</li>
+   <li><code>x</code> = x axis or Left &amp; Right</li>
+   <li><code>y</code> = y axis or Top &amp; Bottom</li>
+  </ul>
+
+  <p><strong>Part 3:</strong> refers to how much padding or margin an element receives and is
+   based on multiples of the base font size. (Currently 16px) It can have the following
+   arguments <code>0</code> = None, <code>md</code> = x1.5, <code>lg</code> = x3</p>
+  <pre>
+&lt;ul class=&quot;list-unstyled <strong>m-x-md m-b-md</strong>&quot;&gt;
+</pre>
+  <p>This code sample illustrates the spacing classes used in the Part 2 unordered list above.
+   <code>m-x-md</code> defines a medium margin for the left and right axis. <code>m-b-md</code>
+   is setting the bottom margin to a medium height.
+  </p>
+
+ </div>
+</div>

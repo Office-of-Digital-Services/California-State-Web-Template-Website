@@ -1,0 +1,847 @@
+/* -----------------------------------------
+   GLOBAL NAVIGATION - /source/scss/cagov/navigation.scss
+----------------------------------------- */
+
+//
+// MIXINS - MENU ONLY
+// --------------------------------------------------
+
+@mixin nav-columns($count: 3) {
+ -moz-column-count: $count;
+ -ms-column-count: $count;
+ -webkit-column-count: $count;
+ -moz-column-gap: 0;
+ -ms-column-gap: 0;
+ -webkit-column-gap: 0;
+ -webkit-column-count: $count;
+ -moz-column-count: $count;
+ column-count: $count;
+ -webkit-column-gap: 0;
+ -moz-column-gap: 0;
+ column-gap: 0;
+}
+
+@mixin nav-column-group() {
+ -webkit-column-break-inside: avoid; /* for Safari, Chrome, Opera */
+ page-break-inside: avoid; /* for Firefox */
+ break-inside: avoid; /* for IE 10+ */
+}
+
+.navigation-search {
+ border: none;
+ position: relative;
+ padding-left: 0;
+ padding-right: 0;
+ @media (max-width: $screen-sm-max) {
+  border-bottom: 1px solid $gray-200;
+ }
+}
+
+//
+// NAVIGATION DEFAULT STYLING
+// --------------------------------------------------
+
+.main-navigation {
+ @include container();
+ position: relative;
+ margin-top: -82px;
+ padding-left: 80px;
+
+ @media (max-width: $screen-xs-max) {
+  max-width: 100%;
+ }
+}
+
+.top-level-nav {
+ list-style: none;
+ margin: 0;
+ padding: 0;
+ -webkit-transition: 0.3s; // beta 5.0 addition (adds smoother transistion on scroll for fixed headers)
+ transition: all 0.3s; // beta 5.0 addition
+ .nav-item {
+  // equivalent to .nav-item
+  position: relative;
+  font-size: $font-size-base;
+  @include media-breakpoint-up(sm) {
+   font-size: calc(#{$font-size-base} + #{$ratio});
+  }
+ }
+}
+
+.nav-item {
+ .sub-nav.open {
+  display: block;
+  overflow: hidden;
+  opacity: 1;
+  max-height: 1000px !important;
+  // 991px
+  @media (max-width: $screen-sm-max) {
+   max-height: 1000px;
+   -webkit-transition: max-height 0.5s ease-in-out;
+   -moz-transition: max-height 0.5s ease-in-out;
+   -o-transition: max-height 0.5s ease-in-out;
+   transition: max-height 0.5s ease-in-out;
+  }
+ }
+
+ .sub-nav {
+  display: block;
+  opacity: 0;
+ }
+
+ .sub-nav-decoration {
+  display: none;
+ }
+}
+
+#navigation .nav-item .sub-nav {
+ max-height: 0;
+}
+
+.second-level-nav {
+ list-style: none;
+ margin: 0;
+ padding: 0;
+ a {
+  text-decoration: none;
+ }
+
+ [class^="unit"] {
+  .second-level-link {
+   display: block;
+  }
+ }
+}
+
+// Main Navigation with Icons
+@media (min-width: $screen-md-min) {
+ .first-level-link,
+ .first-level-btn {
+  display: block;
+  padding: 5px 16px 12px 16px;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+
+  &:focus {
+   @include outline(2px);
+   outline-offset: -2px;
+  }
+
+  > span[class^="ca-gov-icon"]:not(.carrot) {
+   display: block;
+   font-size: 32px;
+  }
+
+  .carrot {
+   font-size: 1rem;
+  }
+ }
+}
+
+//
+// Main Navigation links (full width)
+// --------------------------------------------------
+.full-width-nav {
+ .nav-item {
+  &:hover,
+  &:focus {
+   background-color: transparent;
+  }
+
+  .first-level-link,
+  .first-level-btn {
+   display: block;
+   padding: 0.85rem 1rem 0.9rem 1rem;
+   font-family: $headings-font-family;
+   font-weight: 400;
+   // white-space: nowrap;
+   position: relative;
+   z-index: 1;
+   height: 100%;
+   &:hover,
+   &:focus {
+    background-color: $gray-50;
+   }
+   &.active {
+    background-color: $gray-50;
+    position: relative;
+    color: $black;
+    &:hover,
+    &:focus {
+     color: $gray-800 !important;
+     background-color: $gray-100;
+    }
+    &::before {
+     content: "";
+     position: absolute;
+     top: 0;
+     left: 0;
+     height: 100%;
+     border-left: 1px solid $gray-200;
+    }
+    &::after {
+     content: "";
+     position: absolute;
+     top: 0;
+     right: 0;
+     height: 100%;
+     border-left: 1px solid $gray-200;
+    }
+   }
+   &.has-sub {
+    padding-right: 2.3rem; // extra room for arrow
+   }
+
+   &:focus {
+    @include outline(2px);
+    outline-offset: -2px;
+   }
+   .carrot {
+    font-size: 1.7rem;
+    position: absolute;
+    display: inline-block;
+   }
+
+   > span[class^="ca-gov-icon"]:not(.carrot) {
+    // 992px
+    @media (min-width: $screen-md-min) {
+     /* Navigation icons */
+     display: block;
+     font-size: 32px;
+    }
+   }
+   // 991px
+  }
+  &.active {
+   .first-level-link, .first-level-btn {
+    background-color: $gray-50;
+    position: relative;
+    color: $black;
+    &:hover,
+    &:focus {
+     color: $gray-800 !important;
+     background-color: $gray-100;
+    }
+    &::before {
+     content: "";
+     position: absolute;
+     top: 0;
+     left: 0;
+     height: 100%;
+     border-left: 1px solid $gray-200;
+    }
+    &::after {
+     content: "";
+     position: absolute;
+     top: 0;
+     right: 0;
+     height: 100%;
+     border-left: 1px solid $gray-200;
+    }
+   }
+  }
+ }
+}
+
+// Mobile first level nav
+
+// // 1200px and 991px
+// @media (max-width: $screen-lg) and (min-width: $screen-md-min) {
+//     .first-level-link,
+//     .first-level-btn {
+//         padding: 5px 9px 12px 9px;
+
+//         &.has-sub {
+//             padding-right: 13px; // extra room for arrow
+//         }
+//     }
+// }
+//
+// TOP LEVEL NAVIGATION FOR DESKTOP
+// --------------------------------------------------
+// 992px
+@media (min-width: $screen-md-min) {
+ .main-navigation {
+  z-index: 25;
+  // handle the edge case when their is no nav links
+  min-height: 85px; // beta 6.0 addition
+  padding-left: 350px; // beta 5.0 addition
+ }
+
+ .top-level-nav {
+  display: table; // Use table and table-cell method to space top level navigation items
+  table-layout: auto;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  // min-height: 80px; // beta 6.0 addition
+  .nav-item {
+   padding: 0;
+   margin-top: 0;
+   background: none;
+   width: auto;
+   display: table-cell;
+   display: block;
+   -webkit-box-flex: 1;
+   -moz-box-flex: 1;
+   -webkit-flex: 1 1 auto;
+   -ms-flex: 1 1 auto;
+   flex: 1 1 auto;
+
+   .noflex &,
+   .oldie & {
+    display: table-cell;
+   }
+
+   .sub-nav {
+    top: 100%; // Positioning for flexbox layout
+    border: solid 1px #ccc;
+    box-shadow: 0 4px 4px rgb(0 0 0 / 25%);
+   }
+
+   > a {
+    text-align: center; // Center only top level navigation links
+    text-decoration: none;
+   }
+  }
+  // Search button in navigation
+  #nav-item-search button.first-level-link {
+   background: none;
+   text-align: center;
+   border: none;
+   padding: 5px 16px 12px 16px;
+   width: 100%;
+  }
+  // beta 5.0 addition
+  .main-navigation.dropdown .nav-arrow-down {
+   left: auto;
+   margin-left: auto;
+  }
+ }
+ // shared styles megamenu and dropdown menu
+ .nav-item {
+  .sub-nav {
+   position: absolute;
+  }
+ }
+ /* sub-navigation panel open state */
+ .main-navigation.dropdown .dropdown,
+ .no-js .main-navigation.dropdown,
+ .no-js .main-navigation.megadropdown {
+  .nav-item:hover .sub-nav {
+   display: block;
+
+   .touch & {
+    display: none;
+   }
+  }
+ }
+
+ .no-icons {
+  .top-level-nav {
+   .nav-item {
+    > a {
+     min-height: 86px; // beta 6.0 addition
+     padding-top: 2rem;
+    }
+   }
+  }
+ }
+
+ .first-level-btn {
+  text-align: center;
+  border: none;
+  background: none;
+  width: 100%;
+ }
+
+ .home-link {
+  @include sr-only();
+ }
+
+ /* FIXED */
+ .fixed.compact {
+  .no-icons {
+   .top-level-nav {
+    .nav-item {
+     > a {
+      padding-top: 12px;
+      // min-height: 50px;
+     }
+    }
+   }
+  }
+
+  .top-level-nav {
+   // min-height: 55px; // Beta 6.0 addition
+   .nav-item {
+    .first-level-link,
+    .first-level-btn {
+     .carrot {
+      bottom: 0;
+     }
+    }
+   }
+
+   #nav-item-search {
+    button.first-level-link {
+    }
+   }
+  }
+
+  .main-navigation {
+   margin-top: -55px; // Beta 6.0 addition
+   min-height: 55px; // Beta 6.0 addition
+  }
+
+  .first-level-link [class^="ca-gov-icon-"],
+  .first-level-btn [class^="ca-gov-icon-"]:not(.carrot) {
+   display: none;
+  }
+ }
+ // End of FIXED
+}
+// End of TOP LEVEL NAVIGATION FOR DESKTOP
+
+/* MOBILE NAVIGATION */
+// 991px
+
+@media (max-width: $screen-sm-max) {
+ #navigation {
+  clear: both;
+  width: 100%;
+ }
+
+ .nav-item {
+  [aria-hidden="true"].sub-nav {
+   max-height: 0;
+  }
+ }
+
+ .main-navigation {
+  #nav-item-search button.first-level-link {
+   background: none;
+   border: none;
+   width: 99.5%;
+   text-align: left;
+   outline-offset: -2px;
+  }
+ }
+
+ .full-width-nav {
+  max-width: 100%;
+  padding: 0;
+
+  #nav-item-search button.first-level-link {
+   background: none;
+   border: none;
+   width: 99.5%;
+   text-align: left;
+  }
+ }
+
+ // For standard mobile menu
+ .mobile-closed {
+  max-height: 0;
+ }
+
+ .subnav-closed {
+  max-height: 0;
+  overflow-y: hidden;
+ }
+ // For standard mobile menu and off canvas menu
+ .top-level-nav .nav-item {
+  background-color: $white;
+  margin-top: 0;
+  border-top: 1px solid $gray-200;
+
+  &:first-child {
+   border-top: none;
+  }
+
+  .first-level-link,
+  .first-level-btn {
+   &:first-child {
+    margin-top: 2px;
+   }
+   display: block;
+   padding: 20px 0 20px 15px;
+   margin-right: 2px;
+   margin-left: 2px;
+   text-decoration: none;
+   span[class^="ca-gov-icon"]:not(.carrot) {
+    @include font-size(1.5);
+    display: inline-block;
+    vertical-align: -2px;
+   }
+  }
+
+  .first-level-link.has-sub,
+  .first-level-btn.has-sub {
+   padding-right: 82px; // allow room for sub nav toggle arrow
+  }
+  // Sub nav transition
+  .sub-nav {
+   display: block;
+   -webkit-transition: max-height 0.5s ease-in-out;
+   -moz-transition: max-height 0.5s ease-in-out;
+   -o-transition: max-height 0.5s ease-in-out;
+   transition: max-height 0.5s ease-in-out;
+   border-left: none;
+   border-right: none;
+  }
+ }
+
+ .nav-item .sub-nav.secondary-open {
+  display: block;
+ }
+
+ .nav-item.focus .sub-nav {
+  display: block;
+ }
+
+ .nav-item.focus:active .sub-nav,
+ .nav-item.focus.clickedFocus .sub-nav {
+  display: none;
+ }
+ // For off canvas menu
+ .oc-outer {
+  //Dynamically added wrapper div
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+  // Prevent scrolling of content when menu is open
+  &.scroll-menu-only.oc-menu-open {
+   position: absolute;
+   left: 0;
+   right: 0;
+   top: 0;
+   bottom: 0;
+   overflow: hidden;
+  }
+ }
+
+ .oc-inner {
+  // Dynamically added wrapper div
+  position: relative;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  margin-left: 0;
+  -webkit-transition: margin-left 0.5s ease;
+  -moz-transition: margin-left 0.5s ease;
+  -o-transition: margin-left 0.5s ease;
+  transition: margin-left 0.5s ease;
+
+  .oc-menu-open & {
+   margin-left: 70%;
+  }
+ }
+
+ .global-header .navigation-search.oc-menu {
+  position: absolute;
+  width: 70%;
+  //height: 100%;
+  left: -70%;
+  top: 0;
+  -webkit-transition: left 0.5s ease;
+  transition: left 0.5s ease;
+  overflow-y: auto; // allow menu to scroll if dynamic height reaches beyond page height
+  overflow-x: hidden;
+ }
+ // .header-decoration is placed on top of regular page, produces dropshadow, prevents clicks on main page, and when clicked closes the menu.
+ .header-decoration {
+  display: none; // hide in mobile view by default
+ }
+
+ .oc-outer .header-decoration {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  height: auto;
+  width: 100%;
+  background: none;
+  -webkit-box-shadow: -6px -1px 30px 0px rgba(5, 5, 5, 0.5);
+  -moz-box-shadow: -6px -1px 30px 0px rgba(5, 5, 5, 0.5);
+  box-shadow: -6px -1px 30px 0px rgba(5, 5, 5, 0.5);
+  cursor: alias;
+ }
+
+ .oc-outer.oc-menu-open .header-decoration {
+  display: block;
+ }
+
+ .navigation-search.oc-menu {
+  padding-top: 60px;
+ }
+
+ .oc-menu .mobile-control.toggle-search {
+  display: none;
+ }
+
+ .oc-menu .mobile-control.cagov-logo {
+  display: block;
+  line-height: 1;
+  position: absolute;
+  top: 5px;
+ }
+}
+// END MOBILE NAVIGATION
+
+// beta 5.0 addition
+.main-navigation.dropdown .nav-arrow-down {
+ width: 100%;
+}
+
+// 1200px
+@media (min-width: $screen-lg) {
+ // Beta 5.0 addition
+ .main-navigation {
+  padding-left: 350px;
+ }
+}
+
+//1200px and 992px
+@media (max-width: $screen-lg) and (min-width: $screen-md-min) {
+ // Beta 5.0 addition
+ .main-navigation {
+  padding-left: 250px;
+
+  .top-level-nav {
+   .nav-item {
+    // equivalent to .nav-item
+    @include font-size(1);
+   }
+  }
+ }
+}
+
+// 1280px
+@media (min-width: $screen-xl) {
+ .main-navigation {
+  padding-left: 350px;
+ }
+}
+// Second-level-link toggle button
+.nav-item .toggle-sub-nav {
+ &.closed .ca-gov-icon-menu-toggle-open {
+  display: none;
+ }
+
+ &.open .ca-gov-icon-menu-toggle-closed {
+  display: none;
+ }
+ //992px
+ @media (min-width: $screen-md-min) {
+  display: none; // Hide menu dropdown button from desktop view
+ }
+}
+
+//
+// Minor divsions or sub sections
+// --------------------------------------------------
+// 992px
+
+/* Need a little extra specificity for IE to override display: table-cell */
+.oldie .home-link {
+ @include sr-only();
+}
+
+/* FULL WIDTH MENU WITH REGULAR UTILITY BAR */
+// 992px
+@media (min-width: $screen-md-min) {
+ .full-width-nav .main-navigation {
+  padding-left: 0px;
+  margin-top: 0px;
+  min-height: 55px;
+
+  .top-level-nav {
+   // min-height: 55px;
+
+   .first-level-btn {
+    // min-height: 55px;
+
+    &.has-sub {
+     .carrot {
+      bottom: 0;
+      top: 0.35rem;
+      transition: all 0.5s cubic-bezier(0.57, 0.2, 0.21, 0.89);
+      //  transform: translateY(-50%);
+     }
+    }
+
+    &[aria-expanded="true"] {
+     .carrot {
+      transform: rotate(180deg);
+      bottom: 0.35rem;
+     }
+    }
+   }
+
+   #nav-item-search button.first-level-link {
+    background: none;
+    text-align: center;
+    border: none;
+    // padding-top: 12px;
+    width: 100%;
+   }
+  }
+ }
+
+ .fixed.compact {
+  .full-width-nav {
+   .main-navigation {
+    .nav-item {
+     .first-level-link {
+      padding-top: 17px;
+     }
+
+     .first-level-btn {
+      padding-top: 10px;
+     }
+
+     #nav-item-search button.first-level-link {
+      padding-top: 17px;
+      padding-bottom: 8px;
+     }
+    }
+   }
+  }
+
+  .full-width-nav .main-navigation {
+   margin-top: 0;
+
+   #nav-item-search button.first-level-link {
+    padding-top: 9px;
+    padding-bottom: 8px;
+   }
+  }
+ }
+}
+
+/* Side nav */
+.accordion-list.list-group {
+ .list-group-item {
+  cursor: pointer;
+
+  &:focus {
+   @include outline(2px);
+   outline-offset: -2px;
+   background-color: $gray-lightest;
+  }
+
+  &:hover {
+   background-color: $gray-lightest;
+  }
+
+  &.open {
+   background-color: $gray-lightest;
+
+   .rotate {
+    -moz-transform: rotate(90deg) !important;
+    -webkit-transform: rotate(90deg) !important;
+    transform: rotate(90deg) !important;
+   }
+  }
+
+  .rotate {
+   position: absolute;
+   right: 0;
+   top: 0;
+   font-size: 1.3rem;
+   line-height: 3rem;
+   text-align: center;
+   width: 3rem;
+   height: 3rem;
+   border: none;
+   display: block !important;
+   -moz-transition: all 0.2s ease !important;
+   -webkit-transition: all 0.2s ease !important;
+   transition: all 0.2s ease !important;
+  }
+ }
+}
+
+/* v6 Nav Button */
+.first-level-btn > * {
+ pointer-events: none;
+}
+
+/* Navigation button mobile */
+// 991px
+@media (max-width: $screen-sm-max) {
+ .top-level-nav {
+  width: 100%;
+ }
+
+ .first-level-btn {
+  border: none;
+  background: none;
+  width: 99.5%;
+  text-align: left;
+
+  &:focus {
+   outline-offset: -2px;
+  }
+ }
+
+ .first-level-btn .carrot {
+  display: none !important;
+ }
+
+ /* Some weird bug in mobile */
+ .no-js .megadropdown .top-level-nav .nav-item:hover .sub-nav,
+ .megadropdown .top-level-nav .nav-item:hover .sub-nav {
+  position: relative !important;
+ }
+}
+
+// 991px
+@media (max-width: $screen-sm-max) {
+ .nav-item .first-level-link.has-sub .carrot {
+  display: none !important;
+ }
+}
+
+// HAS SUB CARROT
+// 991px
+@media (max-width: $screen-sm-max) {
+ /*button carrot*/
+ .first-level-btn[aria-expanded="false"] .rotate {
+  display: block;
+  position: absolute;
+  top: 0;
+  right: 0;
+  font-size: 1.5rem !important;
+  line-height: 4rem !important;
+  width: 64px !important;
+  height: 64px !important;
+  text-align: center;
+  cursor: pointer;
+  border: none;
+  -moz-transition: all 0.2s ease !important;
+  -webkit-transition: all 0.2s ease !important;
+  transition: all 0.2s ease !important;
+ }
+
+ .first-level-btn[aria-expanded="true"] .rotate {
+  -moz-transform: rotate(90deg) !important;
+  -webkit-transform: rotate(90deg) !important;
+  transform: rotate(90deg) !important;
+  position: absolute;
+  width: 64px !important;
+  height: 64px !important;
+  line-height: 4rem !important;
+  font-size: 1.5rem !important;
+  top: 0;
+  right: 0;
+  text-align: center;
+  -moz-transition: all 0.2s ease !important;
+  -webkit-transition: all 0.2s ease !important;
+  transition: all 0.2s ease !important;
+ }
+}

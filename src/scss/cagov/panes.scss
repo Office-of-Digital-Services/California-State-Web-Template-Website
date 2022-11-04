@@ -1,0 +1,118 @@
+/* -----------------------------------------
+   PANES - /source/scss/cagov/panes.scss
+----------------------------------------- */
+
+.pane {
+  display: flex;
+  flex-direction: column;
+}
+
+.group-left,
+.group-right {
+  float: none;
+  min-height: 320px;
+  vertical-align: middle;
+  position: relative;
+  margin: 0;
+  padding: 0;
+  justify-content: center;
+  display: flex;
+}
+
+.group-left .pane-img,
+.group-right .pane-img {
+  display: block;
+  min-height: 320px;
+  width: 100%;
+  background-repeat: no-repeat !important;
+  background-size: cover !important;
+  background-position: 50% 50% !important;
+}
+
+.pane-content {
+  padding: 10px 30px 20px 40px;
+}
+
+.odd .group-right:before,
+.even .group-left:after {
+  border: solid transparent;
+  content: " ";
+  height: 0;
+  width: 0;
+  position: absolute;
+  pointer-events: none;
+  z-index: 2;
+}
+
+.bg-highlight {
+  a {
+    color: $text-color;
+    text-decoration: underline;
+  }
+  .btn {
+    text-decoration: none;
+  }
+}
+
+// DESKTOP VERSION
+@media (min-width: $screen-sm-min) {
+  .pane {
+    display: flex;
+    flex-direction: row;
+  }
+  .group-left,
+  .group-right {
+    width: 50%;
+    justify-content: center;
+    display: flex;
+    top: 0;
+  }
+  .odd .group-right:before {
+    right: 100%;
+    top: 50%;
+    border-width: 30px;
+    margin-top: -30px;
+  }
+  .even {
+    .group-left {
+      order: 1;
+      &:after {
+        left: 100%;
+        top: 50%;
+        border-width: 30px;
+        margin-top: -30px;
+      }
+    }
+    .group-right {
+      order: 2;
+    }
+  }
+}
+
+// MOBILE VERSION
+@media (max-width: $screen-xs-max) {
+  .even {
+    .group-left {
+      order: 2;
+    }
+    .group-right {
+      order: 1;
+    }
+  }
+  .odd .group-right:before {
+    bottom: 100%;
+    left: 25%;
+    border-width: 20px;
+    margin-left: -20px;
+  }
+  .even .group-left:after {
+    bottom: 100%;
+    left: 25%;
+    border-width: 20px;
+    margin-left: -20px;
+    bottom: 100%;
+    left: 25%;
+    border-width: 20px;
+    margin-left: -20px;
+  }
+}

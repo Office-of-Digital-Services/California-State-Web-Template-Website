@@ -1,0 +1,86 @@
+﻿---
+title: News List
+landing: Patterns
+layout: patterns.njk
+permalink: "patterns/news-list.html"
+---
+
+
+
+<h1 class="mt-lg-0">News Lists</h1>
+<p>A news list contains a repeating group of news items. To begin, wrap this module in a
+ <code>&lt;section class="news-list"&gt;</code>. Then use
+ <code>&lt;article class="news-item"&gt;</code> to group each intividual article.
+</p>
+<p>A <code>.news-item</code> has the following primary child elements.</p>
+<ul>
+ <li><code>.thumbnail</code> - Contains an image that is at least 150px wide</li>
+ <li><code>.headline</code> - A short article title that is linkable to article detail</li>
+ <li><code>.description</code> - A short summary or teaser for the article</li>
+ <li><code>.published</code> - Date the article was published</li>
+</ul>
+
+
+
+{% include "../../src/_includes/modules/schema-boilerplate.html" %}
+<hr>
+
+
+<h2>Example:</h2>
+{% include "../../src/_includes/modules/news-list.html" %}
+
+<h3>Source code:</h3>
+<div class="tab-group">
+ <ul id="sourceCode" class="nav nav-tabs" role="tablist">
+  <li class="active"><a href="#html" role="tab" data-bs-toggle="tab">HTML Markup</a></li>
+  <li><a href="#microdata" role="tab" data-bs-toggle="tab">Microdata</a></li>
+ </ul>
+ <!-- Tab panes -->
+ <div class="tab-content responsive">
+  <div class="tab-pane active" id="html">
+   <pre><code class="overflow-auto">{% include "../../src/_includes/modules/news-list.html" %}</code></pre>
+  </div>
+  <div class="tab-pane" id="microdata">
+   <p class="alert alert-info">NOTE: This module makes use of a <code>datetime</code>
+    property set in the <strong>ISO 8601</strong> format. Be sure to set the time
+    correctly for each news-item.</p>
+   <pre><code class="overflow-auto">{% include "../../src/_includes/modules/news-list-schema.html" %}</code></pre>
+  </div>
+ </div>
+</div>
+
+
+<h2>Sidebar Example:</h2>
+<p>Using the <code>.news-item</code> module in the sidebar makes use of the same markup however
+ it omits the <code>.description</code> node for sake of saving space.</p>
+<div class="card card-standout highlight">
+ <div class="card-heading">
+  <h3 class="h4"><span class="ca-gov-icon-info"></span> Latest News Headlines</h3>
+ </div>
+ <div class="card-body">
+  {% include "../../src/_includes/modules/news-list-sidebar.html" %}
+  <hr>
+ </div>
+</div>
+<button type="button" class="btn btn-default btn-sm" data-bs-toggle="modal" data-bs-target="#news-headlines">Show
+ Source code</button>
+
+<!-- Modal -->
+<div class="modal fade" id="news-headlines" role="dialog">
+ <div class="modal-dialog modal-lg">
+  <div class="modal-content">
+   <div class="modal-header">
+    <h3 class="modal-title">HTML Markup</h3>
+    <button type="button" class="close btn btn-secondary" data-bs-dismiss="modal"><span class="sr-only">Close
+      modal</span><span class="ca-gov-icon-close-mark" aria-hidden="true"></span></button>
+   </div>
+   <div class="modal-body">
+    <strong aria-label="Source code for News List">Source code:</strong>
+    <pre><code class="overflow-auto">{% include "../../src/_includes/modules/news-list-sidebar.html" %}</code></pre>
+   </div>
+   <div class="modal-footer">
+    <button type="button" class="btn btn-default" data-bs-dismiss="modal">Close</button>
+   </div>
+  </div>
+ </div>
+</div><!-- / End Modal -->

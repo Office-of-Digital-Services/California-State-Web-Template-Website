@@ -1,0 +1,95 @@
+/* -----------------------------------------
+   ALERT BANNER
+   /source/scss/cagov/alert-banner.scss
+----------------------------------------- */
+
+.alert-banner {
+    margin-bottom: 0;
+    padding: 5px 0;
+    border-radius: 0;
+    -webkit-column-rule: $text-field-color;
+    -moz-column-rule: $text-field-color;
+    column-rule: $text-field-color;
+    -webkit-transition: all 0.2s;
+    transition: all 0.2s;
+
+    .close {
+        position: relative;
+        top: 4px;
+        right: -5px;
+        padding: 0 10px;
+        text-shadow: none;
+        float: right;
+        font-size: 1.5rem;
+        font-weight: 700;
+        line-height: 1;
+        border: none;
+        background: none;
+    }
+
+    .container {
+        font-size: 1rem;
+        min-height:30px;
+    }
+
+    .container:after {
+        content: " ";
+        display: table;
+        clear: both;
+    }
+
+    .alert-text {
+        position: relative;
+        top:2px;
+    }
+
+    .btn {
+        position: relative;
+        top:-1px;
+    }
+}
+
+.alert-level {
+    display: inline-block;
+    font-weight: bold;
+    padding: 0 5px;
+    margin: 0 5px;
+    @include font-size(0.87);
+
+    [class^="ca-gov-icon-"] {
+        margin-right: 3px;
+    }
+}
+
+.alert-link {
+    line-height: 1.2em;
+    @include float-right();
+    font-weight: 400;
+}
+
+.alert-severe {
+    background: $brand-highlight;
+
+    .close {
+        color: $gray-base;
+    }
+
+    .alert-level {
+        color: $gray-base;
+        background: rgba(0, 0, 0, 0.15);
+    }
+
+    .alert-text {
+        color: $gray-base;
+    }
+}
+
+//
+// HIDE ALERTS AFTER PAGE SCROLLS & HEADER COMPACTS
+// --------------------------------------------------
+
+.global-header.compact {
+    .alert-banner {
+        display: none;
+    }
+}

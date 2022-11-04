@@ -1,0 +1,338 @@
+﻿---
+title: Countdown timer
+landing: Components
+layout: components.njk
+permalink: "components/countdown-timer.html"
+---
+
+
+<style>
+ #demo,
+ #demo2,
+ #demo3,
+ #demo4 {
+  text-align: center;
+  font-size: 1.875rem;
+  margin-top: 0px;
+  font-weight: 700;
+  background-color: #153554;
+  color: #fff;
+  border-left: 3px solid #fff;
+ }
+
+ .countdown-text {
+  font-size: 1rem;
+  font-weight: 400;
+ }
+</style>
+
+
+<h1 class="mt-lg-0">Countdown timer</h1>
+
+<p class="lead">The countdown timer component helps visitors visualize the counting toward or away from a fixed point in
+ time. </p>
+<p class="lead">Time intervals displayed by the countdown timer can include:</p>
+<ul class="lead">
+ <li>Weeks</li>
+ <li>Days</li>
+ <li>Hours</li>
+ <li>Minutes</li>
+ <li>Seconds</li>
+</ul>
+
+
+<h2 id="Sample">Sample</h2>
+
+
+<!--TABS-->
+<div class="tab-group responsive">
+ <ul id="tabs1" class="nav nav-tabs" role="tablist">
+  <li class="nav-item">
+   <a id="tab-example1" href="#pane-example1" class="nav-link active" data-bs-toggle="tab" role="tab">Example</a>
+  </li>
+  <li class="nav-item">
+   <a id="tab-html1" href="#pane-html1" class="nav-link" data-bs-toggle="tab" role="tab">Source code</a>
+  </li>
+
+ </ul>
+
+
+ <div id="tab-content" class="tab-content">
+  <!--Examples-->
+  <div id="pane-example1" class="card tab-pane fade show active" role="tabpanel" aria-labelledby="tab-example1">
+   <div class="card-header" id="heading-example1">
+    <a data-bs-toggle="collapse" href="#collapse-example1" data-parent="#tab-content" aria-expanded="true"
+     aria-controls="collapse-example1" data-hash="#pane-example1" title="Example tab header">
+     Example
+    </a>
+   </div>
+   <div id="collapse-example1" class="collapse show" role="tabpanel" aria-labelledby="heading-example1">
+    <div class="card-body">
+     <h3 class="m-t-0">Default</h3>
+     <div class="group countdown p-x">
+      <div class="fifth bg-gray-100 text-center p-b-md p-l-0 p-r-0">
+       <span class="countdown-text"><abbr title="weeks" aria-label="weeks" class="text-decoration-none">wks</abbr><br></span>
+       <span id="weeks1"></span>
+      </div>
+      <div class="fifth bg-gray-100 text-center p-b-md p-l-0 p-r-0">
+       <span class="countdown-text">days<br></span>
+       <span id="days1"></span>
+      </div>
+      <div class="fifth bg-gray-100 text-center p-b-md p-l-0 p-r-0">
+       <span class="countdown-text"><abbr title="hours" aria-label="hours" class="text-decoration-none">hrs</abbr> <br></span>
+       <span id="hours1"></span>
+      </div>
+      <div class="fifth bg-gray-100 text-center p-b-md p-l-0 p-r-0">
+       <span class="countdown-text"><abbr title="minutes" aria-label="minutes" class="text-decoration-none">mins</abbr><br></span>
+       <span id="minutes1"></span>
+      </div>
+      <div class="fifth bg-gray-100 text-center p-b-md p-l-0 p-r-0">
+       <span class="countdown-text"><abbr title="seconds" aria-label="seconds" class="text-decoration-none">secs</abbr><br></span>
+       <span id="seconds1"></span>
+      </div>
+     </div>
+
+
+     <h3>Primary</h3>
+     <div class="group countdown p-x">
+      <div class="fifth text-center section-primary p-b-md p-l-0 p-r-0">
+       <span class="countdown-text"><abbr title="weeks" aria-label="weeks" class="text-decoration-none">wks</abbr><br></span>
+       <span id="weeks"></span>
+      </div>
+      <div class="fifth text-center section-primary p-b-md p-l-0 p-r-0">
+       <span class="countdown-text">days<br></span>
+       <span id="days"></span>
+      </div>
+      <div class="fifth text-center section-primary p-b-md p-l-0 p-r-0">
+       <span class="countdown-text"><abbr title="hours" aria-label="hours" class="text-decoration-none">hrs</abbr><br></span>
+       <span id="hours"></span>
+      </div>
+      <div class="fifth text-center section-primary p-b-md p-l-0 p-r-0">
+       <span class="countdown-text"><abbr title="minutes" aria-label="minutes" class="text-decoration-none">mins</abbr><br></span>
+       <span id="minutes"></span>
+      </div>
+      <div class="fifth text-center section-primary p-b-md p-l-0 p-r-0">
+       <span class="countdown-text"><abbr title="seconds" aria-label="seconds" class="text-decoration-none">secs</abbr><br></span>
+       <span id="seconds"></span>
+      </div>
+     </div>
+
+
+    </div>
+   </div>
+  </div>
+
+
+
+  <!--HTML-->
+  <div id="pane-html1" class="card tab-pane fade" role="tabpanel" aria-labelledby="tab-html1">
+   <div class="card-header" id="heading-html1">
+    <a class="collapsed" data-bs-toggle="collapse" href="#collapse-html1" data-parent="#tab-content"
+     aria-expanded="false" aria-controls="collapse-html1" data-hash="#pane-html1" title="HTML Source code tab header">
+     Source code
+    </a>
+   </div>
+   <div id="collapse-html1" class="collapse" role="tabpanel" aria-labelledby="heading-html1">
+    <div class="card-body">
+     <h3 class="m-t-0">Default</h3>
+     <pre style="max-height: 300px;"><code><!--HTML-->
+      <div class="group countdown p-x">
+       <div class="fifth bg-gray-100 text-center p-b-md p-l-0 p-r-0">
+        <span class="countdown-text"><abbr title="weeks" aria-label="weeks" class="text-decoration-none">wks</abbr><br></span>
+        <span id="weeks1"></span>
+       </div>
+       <div class="fifth bg-gray-100 text-center p-b-md p-l-0 p-r-0">
+        <span class="countdown-text">days<br></span>
+        <span id="days1"></span>
+       </div>
+       <div class="fifth bg-gray-100 text-center p-b-md p-l-0 p-r-0">
+        <span class="countdown-text"><abbr title="hours" aria-label="hours" class="text-decoration-none">hrs</abbr> <br></span>
+        <span id="hours1"></span>
+       </div>
+       <div class="fifth bg-gray-100 text-center p-b-md p-l-0 p-r-0">
+        <span class="countdown-text"><abbr title="minutes" aria-label="minutes" class="text-decoration-none">mins</abbr><br></span>
+        <span id="minutes1"></span>
+       </div>
+       <div class="fifth bg-gray-100 text-center p-b-md p-l-0 p-r-0">
+        <span class="countdown-text"><abbr title="seconds" aria-label="seconds" class="text-decoration-none">secs</abbr><br></span>
+        <span id="seconds1"></span>
+       </div>
+      </div>
+
+           <!--JavaScript-->
+           <script>
+            // Set the date we're counting down to
+            var countDownDate = new Date("Jan 1, 2023 00:00:00").getTime();
+
+            // Update the count down every 1 second
+            var x = setInterval(function () {
+
+             // Get todays date and time
+             var now = new Date().getTime();
+
+             // Find the distance between now an the count down date
+             var distance = countDownDate - now;
+
+             // Time calculations for weeks, days, hours, minutes and seconds
+             var weeks = Math.floor(distance / (1000 * 60 * 60 * 24 * 7));
+             var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+             var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+             var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+             var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+             // Output the result in the elements with id="days1", id="hours1" etc.
+             document.getElementById("weeks1").innerHTML = weeks;
+             document.getElementById("days1").innerHTML = days;
+             document.getElementById("hours1").innerHTML = hours;
+             document.getElementById("minutes1").innerHTML = minutes;
+             document.getElementById("seconds1").innerHTML = seconds;
+
+             // If the count down is over, write some text
+             if (distance < 0) {
+              clearInterval(x);
+              document.getElementById("days1").innerHTML = "EXPIRED";
+             }
+            }, 1000);
+           </script>
+          </code>
+         </pre>
+
+
+     <h3>Primary</h3>
+     <pre style="max-height: 300px;"><code><!--HTML-->
+      <div class="group countdown p-x">
+       <div class="fifth text-center section-primary p-b-md p-l-0 p-r-0">
+        <span class="countdown-text"><abbr title="weeks" aria-label="weeks" class="text-decoration-none">wks</abbr><br></span>
+        <span id="weeks"></span>
+       </div>
+       <div class="fifth text-center section-primary p-b-md p-l-0 p-r-0">
+        <span class="countdown-text">days<br></span>
+        <span id="days"></span>
+       </div>
+       <div class="fifth text-center section-primary p-b-md p-l-0 p-r-0">
+        <span class="countdown-text"><abbr title="hours" aria-label="hours" class="text-decoration-none">hrs</abbr><br></span>
+        <span id="hours"></span>
+       </div>
+       <div class="fifth text-center section-primary p-b-md p-l-0 p-r-0">
+        <span class="countdown-text"><abbr title="minutes" aria-label="minutes" class="text-decoration-none">mins</abbr><br></span>
+        <span id="minutes"></span>
+       </div>
+       <div class="fifth text-center section-primary p-b-md p-l-0 p-r-0">
+        <span class="countdown-text"><abbr title="seconds" aria-label="seconds" class="text-decoration-none">secs</abbr><br></span>
+        <span id="seconds"></span>
+       </div>
+      </div>
+    
+        <!--JavaScript-->
+        <script>
+         // Set the date we're counting down to
+         var countDownDate = new Date("Jan 1, 2023 00:00:00").getTime();
+
+         // Update the count down every 1 second
+         var x = setInterval(function () {
+
+          // Get todays date and time
+          var now = new Date().getTime();
+
+          // Find the distance between now an the count down date
+          var distance = countDownDate - now;
+
+          // Time calculations for weeks, days, hours, minutes and seconds
+          var weeks = Math.floor(distance / (1000 * 60 * 60 * 24 * 7));
+          var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+          var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+          var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+          var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+          // Output the result in the elements with id="days", id="hours" etc.
+          document.getElementById("weeks").innerHTML = weeks;
+          document.getElementById("days").innerHTML = days;
+          document.getElementById("hours").innerHTML = hours;
+          document.getElementById("minutes").innerHTML = minutes;
+          document.getElementById("seconds").innerHTML = seconds;
+
+          // If the count down is over, write some text
+          if (distance < 0) {
+           clearInterval(x);
+           document.getElementById("days").innerHTML = "EXPIRED";
+          }
+         }, 1000);
+        </script>
+          </code>
+        </pre>
+    </div>
+   </div>
+  </div>
+
+
+ </div>
+</div>
+<!--END TABS-->
+
+
+
+
+
+
+<h2 id="Usage">Usage</h2>
+
+<h3>When and how to use it</h3>
+<p>Use the countdown timer to emphasize important events. These events might include:</p>
+
+<ul>
+ <li>Release dates</li>
+ <li>Application openings and/or deadlines</li>
+ <li>The launch of new products or services</li>
+</ul>
+
+
+
+<h3>How not to use it</h3>
+
+<p>Try not to use months in your countdown as they present a fluctuating metric of time.</p>
+<p>Avoid excessive timeframes (more than 1 year) as this renders the countdown useless to visitors.</p>
+
+<h2 id="Accessibility">Accessibility</h2>
+{% include "../../src/_includes/modules/accessibility.html" %}
+
+
+<script>
+ // Set the date we're counting down to
+ var countDownDate = new Date("Jan 1, 2023 00:00:00").getTime();
+
+ // Update the count down every 1 second
+ var x = setInterval(function () {
+
+  // Get todays date and time
+  var now = new Date().getTime();
+
+  // Find the distance between now an the count down date
+  var distance = countDownDate - now;
+
+  // Time calculations for days, hours, minutes and seconds
+  var weeks = Math.floor(distance / (1000 * 60 * 60 * 24 * 7));
+  var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+  var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+  var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+  // Output the result in the elements with id="days", id="hours" etc.
+
+  document.getElementById("weeks").innerHTML = weeks;
+  document.getElementById("days").innerHTML = days;
+  document.getElementById("hours").innerHTML = hours;
+  document.getElementById("minutes").innerHTML = minutes;
+  document.getElementById("seconds").innerHTML = seconds;
+
+  document.getElementById("weeks1").innerHTML = weeks;
+  document.getElementById("days1").innerHTML = days;
+  document.getElementById("hours1").innerHTML = hours;
+  document.getElementById("minutes1").innerHTML = minutes;
+  document.getElementById("seconds1").innerHTML = seconds;
+  // If the count down is over, write some text
+  if (distance < 0) {
+   clearInterval(x);
+   document.getElementById("days").innerHTML = "EXPIRED";
+  }
+ }, 1000);
+</script>
