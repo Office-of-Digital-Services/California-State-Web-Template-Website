@@ -1914,9 +1914,14 @@ function linkAnnotator() {
   return window.location.host.indexOf(linkElement.host) > -1;
  }
 
+ // Add any exceptions to not render here
+const cssExceptions = `:not(
+ code *
+)`;
+
  // Looping thru all links inside of the main content body, agency footer and statewide footer
  const externalLink = document.querySelectorAll(
-  'main a, .agency-footer a, .site-footer a, footer a',
+  `main a${cssExceptions}, .agency-footer a${cssExceptions}, .site-footer a${cssExceptions}, footer a${cssExceptions}`,
  );
  externalLink.forEach((element) => {
   const anchorLink = element.href.indexOf('#') === 0;
