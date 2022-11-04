@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>About State Web Template</title> 
+  <title>CSS classes shortcuts</title> 
   <meta charset="utf-8">
   <meta name="Author" content="State of California" />
   <meta name="Description" content="State of California" />
@@ -87,15 +87,14 @@
         <a href="#main-content">Skip to Main Content</a>
     </div>
     <!-- /src/_includes/modules/alert-banner-beta-feedback.html -->
-<div class="alert alert-banner bg-standout p-x-0 p-y-sm" role="alert">
- <div class="container">
-  <span class="alert-level border brd-s1 px-3 m-r-md">BETA</span><span class="alert-text text-1rem">We'd love your
-   feedback
-   to make the template better. You have from November 4 to November 11. </span>
-  <a href="https://airtable.com/shro9V6ry2Cf4mpgG" class="btn btn-default btn-xs bg-s1 pos-rel m-l">Send
-   feedback</a>
- </div>
+<div class="alert alert-banner bg-standout" role="alert" style="padding:7px 0;">
+    <div class="container" style="height:32px;">
+        <span class="alert-level border brd-s1 px-3 m-r-md" style="position:relative; top:-1px;">BETA</span><span class="alert-text text-1rem">We’d love your feedback
+            to make the template better. You have from November 4 to November 11. </span>
+        <a href="https://airtable.com/shro9V6ry2Cf4mpgG" class="alert-link btn btn-default btn-xs bg-s1" style="position:relative;top:3px;">Send feedback</a>
+    </div>
 </div>
+
     
     <div class="utility-header">
     <div class="container">
@@ -250,7 +249,7 @@
    </li>
    <li class="nav-item">
        
-       <a class="first-level-link" href="/components.html">Components</a>
+       <a class="first-level-link active" href="/components.html">Components</a>
         
    </li>
    <li class="nav-item">
@@ -432,13 +431,6 @@
      
    
      
-      
-      <li>About</li>
-       
-   
-     
-   
-     
    
      
    
@@ -456,80 +448,113 @@
 </nav>
 
 			
+
+
 <div class="row">
-  <div class="col-md-3" role="complementary">
-    <!-- Side navigation -->
-    <nav aria-labelledby="navigation-list" class="side-navigation sticky-6">
-      <ul class="list-navigation">
-        <li>
-          <a href="/about.html" id="navigation-list" class="active">About</a>
-          <ul>
-            <li>
-              <a href="#Our-mission">Our mission</a>
-            </li>
-            <li>
-              <a href="#Our-vision">Our vision</a>
-            </li>
-            <li>
-              <a href="#History">History</a>
-            </li>
-            <li>
-              <a href="#Looking-ahead">Looking ahead </a>
-            </li>
-          </ul>
-        </li>
-      </ul>
-    </nav>
-  </div>
+ <div class="col-md-3" role="complementary">
+  <!-- Side navigation -->
+  <nav aria-labelledby="color-schemes-list" class="side-navigation sticky-6">
+   <ul class="list-navigation">
+    <li><a href="/css-shortcuts/css-classes-shortcuts.html" id="color-schemes-list" class="active">CSS classes
+      shortcuts</a>
+     <ul>
+      <li><a href="/css-shortcuts/utility-css-classes.html">Utility CSS classes</a></li>
+      <li><a href="/css-shortcuts/gradient-backgrounds.html">Gradient backgrounds</a></li>
+      <li><a href="/css-shortcuts/spacing.html">Spacing</a></li>
+      <li><a href="/css-shortcuts/text-accent.html">Text accent</a></li>
+     </ul>
+    </li>
+    <li><a href="/components.html">All components</a>
+   </ul>
+  </nav>
+ </div>
+ <div class="col-md-9 m-b-lg">
 
-  <article class="col-md-9 m-b-lg">
-    <h1 class="mt-lg-0">About the State Web Template</h1>
-    <p class="lead" style="font-size:1.5rem;font-weight:400;line-height:2.5rem">Digitally connecting Californians to the government services they need has become increasingly more
-   critical. Great design is central to succeeding in that effort. We offer this web template to help make digital
-   information and services easier to use. </p>
-    <p>The State Web Template is an open source web template maintained by the Office of Digital Services within the
-   Department of Technology. Our components are designed to enhance the user experience and help digital teams create
-   attractive, consistent, and accessible digital products. The State Web Template will always be open source,
-   collaborative and evolving. </p>
 
-    <h2 id="Our-mission">Our mission</h2>
-    <p>Enhance the delivery of digital services for California residents through user experience design. </p>
-
-    <h2 id="Our-vision">Our vision</h2>
-    <p>Create excellent digital state services for California residents that are inclusive, accessible and performant.</p>
-
-    <h2 id="History">History</h2>
-    <p>A long time ago, the eServices Office was established to lead statewide initiatives providing leadership in
-   statewide web policy, CA.gov portal and the digital government footprint. We have come a long way but our core vision
-   and mission has not changed.</p>
-    <p>The creation of a statewide web template was a strategy and framework to align on California's digital touchpoint.
-   The state web template has evolved from a technical toolset to a digital standard and tactical playbook on delivering
-   useful, accessible, and performant user experiences.</p>
-
-    <h2 id="Looking-ahead ">Looking ahead</h2>
-    <p>Over the years, and with each state web template release, we've improved the access of online government services
-   with:</p>
-    <ul>
-      <li>Updated best practices</li>
-      <li>Responsive design elements</li>
-      <li>Web accessibility</li>
-      <li>Improved performance</li>
-    </ul>
-    <p>Version 6 of the State Web Template gets us one step closer to a production version of the <a
-    href="https://designsystem.webstandards.ca.gov/">California
-    Design
-    System</a>. We are excited to iterate on our digital toolset and evolve the state template to a design standard for
-   california. We want to improve the digital experience of Californians and improve how we partner with State agencies.
+  <h1 class="mt-lg-0">CSS classes shortcuts</h1>
+  <p class="lead">
+   The template uses CSS classes to display a consistent look and feel. We provide these so you can easily find and use
+   these classes.
   </p>
 
-  </article>
+  <h2>Available CSS units</h2>
+
+  <div class="row">
+   <div class="col-md-6 m-t-md">
+    <a href="/css-shortcuts/utility-css-classes.html"
+     class="no-underline d-block color-gray-dark brd-gray-light brd-solid-1 rounded-5 h-100 transition-0_3 shadow2-hover color-primary color-primary-hover"
+     title="Utility CSS classes">
+     <div class="p-a">
+      <h3 class="h5 m-t-0">Utility CSS classes</h3>
+      <p class="font-size-16 color-black">A list of the template’s custom CSS classes.
+      </p>
+     </div>
+    </a>
+   </div>
+   <div class="col-md-6 m-t-md">
+    <a href="/css-shortcuts/gradient-backgrounds.html"
+     class="no-underline d-block color-gray-dark brd-gray-light brd-solid-1 rounded-5 h-100 transition-0_3 shadow2-hover color-primary color-primary-hover"
+     title="Gradient Backgrounds">
+     <div class="p-a">
+      <h3 class="h5 m-t-0">Gradient backgrounds</h3>
+      <p class="font-size-16 color-black">Gradient background examples and their CSS classes.</p>
+     </div>
+    </a>
+   </div>
+
+  </div>
+
+
+
+
+  <div class="row">
+   <div class="col-md-6 m-t-md">
+    <a href="/css-shortcuts/spacing.html"
+     class="no-underline d-block color-gray-dark brd-gray-light brd-solid-1 rounded-5 h-100 transition-0_3 shadow2-hover color-primary color-primary-hover"
+     title="Spacing">
+     <div class="p-a">
+      <h3 class="h5 m-t-0">Spacing</h3>
+      <p class="font-size-16 color-black">Spacing CSS classes you can assign to an element.
+      </p>
+     </div>
+    </a>
+   </div>
+
+   <div class="col-md-6 m-t-md">
+    <a href="/css-shortcuts/text-accent.html"
+     class="no-underline d-block color-gray-dark brd-gray-light brd-solid-1 rounded-5 h-100 transition-0_3 shadow2-hover color-primary color-primary-hover"
+     title="Text Accent Colors">
+     <div class="p-a">
+      <h3 class="h5 m-t-0">Text accent colors</h3>
+      <p class="font-size-16 color-black">Change text colors with a handful of emphasis utility classes.</p>
+     </div>
+    </a>
+   </div>
+
+  </div>
+
+
+
+
+
+
+  <h2>Bootstrap CSS and components or custom code</h2>
+  <p>We recommend that you primarily use the template styles and components.
+   However, if you have a need for more CSS classes or components, we recommend using what's available in Bootstrap
+   first before developing custom code.
+  </p>
+  <p>When you use custom code that is not part of the template, it causes you extra work when it’s time to go to the
+   next version of the template or design system.</p>
+
+
+ </div>
 </div>
 
 		</main>
 	</div>
 </div>
 
-<aside class="p-b-md p-t-sm section-standout">
+<div class="p-b-md p-t-sm section-standout">
  <div class="container">
   <div class="row">
    <div class="col-md-4">
@@ -548,8 +573,8 @@
    <div class="col-md-4">
     <h3 class="h4 w-100 brd-bottom brd-highlight p-b">Resources</h3>
     <a href="https://designsystem.webstandards.ca.gov/style/content"
-     class="d-block no-underline m-y font-size-16">Content style
-     guide</a>
+     class="d-block no-underline m-y font-size-16">Content Style
+     Guide</a>
     <a href="https://designsystem.webstandards.ca.gov/style/design" class="d-block no-underline m-y font-size-16">Design
      style
      guide</a>
@@ -559,7 +584,7 @@
    </div>
   </div>
  </div>
-</aside>
+</div>
   <!-- Global Footer -->
 <footer id="footer" class="global-footer">
   <button class="return-top"><span class="sr-only">Back to top</span></button>
@@ -572,7 +597,7 @@
      <ul class="footer-links">
          <li><a href="/conditions-of-use.html">Conditions of use</a></li>
          <li><a href="/privacy-policy.html">Privacy policy</a></li>
-         <li><a href="/images/WebAccessibilityCert-beta.template.webstandards.ca.gov.pdf" aria-label="Accessibility Certification">Accessibility</a></li>
+         <li><a href="/images/WebAccessibilityCert-beta.template.webstandards.ca.gov.pdf">Accessibility</a></li>
          <li><a href="/sitemap.html">Sitemap</a></li>
          
      </ul>
