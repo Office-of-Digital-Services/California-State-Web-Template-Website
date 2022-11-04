@@ -324,6 +324,8 @@
      
    
      
+   
+     
       
       
      <li><a href="/structure.html" title="Structure landing page">Structure</a></li>
@@ -723,7 +725,8 @@
 </div></code></pre>
 
 
-       <p><span class="text-highlight-primary">Note:</span> Path to the include will be relative to the directory of
+       <p class="m-t"><span class="text-highlight-primary">Note:</span> Path to the include will be relative to the
+        directory of
         your
         page.</p>
       </div>
@@ -777,7 +780,7 @@
     </div>
 
     <div id="pane-html3" class="card tab-pane fade" role="tabpanel" aria-labelledby="tab-html3">
-     <div class="card-header" id="heading-html2">
+     <div class="card-header" id="heading-html3">
       <h4 class="my-0 w-100">
        <a class="collapsed" data-bs-toggle="collapse" href="#collapse-html3" data-parent="#tab-content"
         aria-expanded="false" aria-controls="collapse-html3" title="HTML Source code tab header">
@@ -823,9 +826,11 @@
         since <code>page.njk</code> and <code>landing.njk</code>
         page layouts already use active search in their page header by default. The <code>.featured-search</code> class
         needs to be added
-        to the <code>#head-search</code> div in the header of your page. To do this, add the search: Featured parameter
+        to the <code>#head-search</code> div in the header of your page. To do this, add the
+        <code>search: Featured</code> parameter
         to your page front
-        matter data.</p>
+        matter data.
+       </p>
 
        <h3 class="h4">Include path</h3>
        <pre><code>&#123;% include "src/_includes/search.njk" %&#125;</code></pre>
