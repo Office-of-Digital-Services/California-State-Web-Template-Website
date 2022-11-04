@@ -628,8 +628,19 @@
  fetch(myRequest)
   .then(response => response.json())
   .then(data => {
-   data.icons.sort((a, b) => a.properties.name > b.properties.name ? -1 : b.properties.name < a.properties.name ? 1 : 0).reverse() // sort by name
+
+    function compareStrings(a, b) {
+      // Assuming you want case-insensitive comparison
+      a = a.toLowerCase();
+      b = b.toLowerCase();
+      return (a < b) ? -1 : (a > b) ? 1 : 0;
+    }
+
+    data.icons.sort(function (a, b) {
+    return compareStrings(a.properties.name, b.properties.name);
+   })
    iconData = data;
+   
    buildList();
 
    // add event listeners to form field and button
