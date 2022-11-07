@@ -30,6 +30,7 @@
   ** 0 - initial, 1 - up, 2 - down
   */
 
+
   curScroll = w.scrollY || doc.scrollTop;
   if (curScroll > prevScroll) {
    //scrolled up
@@ -50,8 +51,6 @@
  var toggleHeader = function (direction, curScroll) {
   if (direction === 2 && curScroll > 40) {
 
-   // mainheader.classList.add('scrolled');
-   // header.classList.add('is-hidden');
    var hiddenheight = "";
    if (headerAlert) {
     var hiddenheight = headerAlert.clientHeight + header.clientHeight;
@@ -63,7 +62,7 @@
    }
    prevDirection = direction;
   }
-  else if (direction === 1) {
+  else if (direction === 1 && curScroll < 40) {
    // mainheader.classList.remove('scrolled');
    // header.classList.remove('is-hidden');
    // header.removeAttribute("style");
