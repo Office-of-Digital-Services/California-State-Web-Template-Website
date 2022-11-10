@@ -556,7 +556,7 @@
                 </span>
             </li>
 
-            <li><strong>Understand the updates and discover the differences in your template code</strong>
+            <li><strong>Understand the differences in the code</strong>
                 <br />
                 <span class="cagov-step-list-content">
                     <p>Review template updates. Do a code comparison in the <a
@@ -574,8 +574,6 @@
                 <br />
                 <span class="cagov-step-list-content">
                     <p>You can clone it from our <a href="https://github.com/Office-of-Digital-Services/California-State-Web-Template-Website/">Template GitHub Repository</a>.</p>
-                    <img src="/images/download-and-setup-github-clone.png" alt="Github cloning screenshot"
-                        style="width:500px;">
                     <p>Or you can download or access the different frameworks. Review <a
                             href="https://docs.google.com/document/d/1A--CplY-8qepW4dG_jG0Bdg-eiDgqZ5RQgt7lD8jVPo/edit#heading=h.213onhd5id1o">Common
                             V6 State Web Template file
@@ -595,7 +593,7 @@
                 </span>
             </li>
 
-            <li><strong>Replace older template library files with the updated ones</strong>
+            <li><strong>Replace older library files with the updated ones</strong>
                 <br />
                 <span class="cagov-step-list-content">
                     <p>The web template has CSS and JavaScript (JS) code base. You will replace these source files with
@@ -713,8 +711,6 @@
 
         <h2 id="Eleventy">Using Eleventy</h2>
 
-        <p>These are the high-level steps to take when you upgrade to the latest template.</p>
-
         <h3>Step 1. Clone or download the template for GitHub</h3>
 
         <p>Clone: <a href="https://github.com/Office-of-Digital-Services/California-State-Web-Template-Website/">State
@@ -729,7 +725,7 @@
         <h3>Step 2. Set up your pages</h3>
 
         <p>To start, you can use the sample State Template web pages. If your website doesn’t use NPM or Eleventy, you can
-            use these clear starter template code:</p>
+            use these clear starter template codes:</p>
         <button type="button" class="btn btn-default d-block m-b-md brd-primary" style="color:#046B99;" data-bs-toggle="modal"
                 data-bs-target="#template-blocks">Clean HTML template source code</button>
         <button type="button" class="btn btn-default d-block m-b-md brd-primary" style="color:#046B99;" data-bs-toggle="modal"
@@ -754,7 +750,7 @@
             <pre>npm install
             </pre>
             <div>
-                2. Use this command to build and generate website's pages, css and js files.
+                2. Use this command to build and generate your website's pages, css and js files.
             </div>
             <pre>npm run build
             </pre>
@@ -769,7 +765,7 @@
 
         <h3>Output</h3>
 
-        <p>All web content is generated into the <code>/_site/</code> folder, which is website's
+        <p>All web content is generated into the <code>/_site/</code> folder, which is the website's
             final output folder.</p>
 
         <h3>Documentation for Eleventy</h3>
@@ -1043,6 +1039,9 @@ Page content
         .flex-container>div {
             width: 100%;
         }
+    }
+    .flex-container > .bg-white {
+        flex: 1 1 33%;
     }
 
     .grid-container {
