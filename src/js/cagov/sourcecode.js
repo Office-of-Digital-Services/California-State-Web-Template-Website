@@ -1,3 +1,8 @@
+/* -----------------------------------------
+   SOURCE CODE
+   /source/js/cagov/sourcecode.js
+----------------------------------------- */
+
 // Displaying HTML Source code in HTML Page
 
 var entityMap = {
@@ -16,10 +21,14 @@ function escapeHtml(string) {
 }
 
 function copyCode(btnElem) {
- var codeblock = btnElem.previousElementSibling.querySelector("code");
+ var codeblock = btnElem.parentElement.querySelector("pre code, textarea.sourcecode");
  if (codeblock) {
   // copy the text
-  navigator.clipboard.writeText(codeblock.innerText);
+  if (codeblock.tagName.toLowerCase() == "code") {
+    navigator.clipboard.writeText(codeblock.innerText);
+  } else {
+    navigator.clipboard.writeText(codeblock.value);
+  }
   // select the text
   var range = document.createRange();
   range.selectNode(codeblock);
@@ -31,21 +40,27 @@ function copyCode(btnElem) {
  }
 }
 
-window.onload = function init() {
- var codeblock = document.querySelectorAll("pre code");
+window.addEventListener('load', function() {
+ var codeblock = document.querySelectorAll("pre code, textarea.sourcecode");
 
  if (codeblock.length) {
   for (var i = 0, len = codeblock.length; i < len; i++) {
    var dom = codeblock[i];
-   var html = dom.innerHTML;
-   html = escapeHtml(html);
-   dom.innerHTML = html;
+   if (dom.tagName.toLowerCase() == "code") {
+    var html = dom.innerHTML;
+    html = escapeHtml(html);
+    dom.innerHTML = html;
+   }
    // Create a 'copy code' button, insert it after the <pre> tag
    var newDiv = document.createElement("button");
    newDiv.onclick = function () { copyCode(this); };
    newDiv.classList.add("btn", "btn-outline-primary");
    newDiv.innerHTML = "<span class='ca-gov-icon-copy'></span> Copy code";
-   dom.parentElement.after(newDiv);
+   if (dom.tagName.toLowerCase() == "code") {
+    dom.parentElement.after(newDiv);
+   } else {
+    dom.after(newDiv);
+   }
   }
  }
-};
+});
