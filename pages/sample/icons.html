@@ -170,23 +170,23 @@ permalink: "visual-design/icons.html"
   document.querySelector('#resultcount').innerHTML = numberOfResults ? `<p class="m-t-0">${numberOfResults} icons <span class="sr-only">found.</span></p>` : '<p>No icons found.</p>';
  }
 
- const myRequest = new Request('https://california.azureedge.net/fonts/selection.json');
+ const myRequest = new Request('https://california.azureedge.net/fonts/icons.json');
  fetch(myRequest)
   .then(response => response.json())
   .then(data => {
 
-    function compareStrings(a, b) {
-      // Assuming you want case-insensitive comparison
-      a = a.toLowerCase();
-      b = b.toLowerCase();
-      return (a < b) ? -1 : (a > b) ? 1 : 0;
-    }
+   function compareStrings(a, b) {
+    // Assuming you want case-insensitive comparison
+    a = a.toLowerCase();
+    b = b.toLowerCase();
+    return (a < b) ? -1 : (a > b) ? 1 : 0;
+   }
 
-    data.icons.sort(function (a, b) {
+   data.icons.sort(function (a, b) {
     return compareStrings(a.properties.name, b.properties.name);
    })
    iconData = data;
-   
+
    buildList();
 
    // add event listeners to form field and button
