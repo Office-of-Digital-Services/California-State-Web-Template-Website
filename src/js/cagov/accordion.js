@@ -35,32 +35,28 @@ export class CaGovAccordion extends window.HTMLElement {
  }
 
  setHeight() {
-  const codeParent = this.summaryEl.parentNode.closest('code');
-  if (!codeParent) {
-   requestAnimationFrame(() => {
-    // delay so the desired height is readable in all browsers
-    this.closedHeightInt = parseInt(this.summaryEl.scrollHeight + 2, 10);
-    this.closedHeight = `${this.closedHeightInt}px`;
+  requestAnimationFrame(() => {
+   // delay so the desired height is readable in all browsers
+   this.closedHeightInt = parseInt(this.summaryEl.scrollHeight + 2, 10);
+   this.closedHeight = `${this.closedHeightInt}px`;
 
-    // apply initial height
-    if (this.detailsEl.hasAttribute('open')) {
-     // if open get scrollHeight
-     this.detailsEl.style.height = `${parseInt(
-      this.bodyEl.scrollHeight + this.closedHeightInt,
-      10,
-     )}px`;
-    } else {
-     // else apply closed height
-     this.detailsEl.style.height = this.closedHeight;
-    }
-   });
-  }
+   // apply initial height
+   if (this.detailsEl.hasAttribute('open')) {
+    // if open get scrollHeight
+    this.detailsEl.style.height = `${parseInt(
+     this.bodyEl.scrollHeight + this.closedHeightInt,
+     10,
+    )}px`;
+   } else {
+    // else apply closed height
+    this.detailsEl.style.height = this.closedHeight;
+   }
+  });
 
  }
 
  listen() {
-  const codeParent = this.summaryEl.parentNode.closest('code');
-  if (!codeParent && this.detailsEl.hasAttribute('open')) {
+  if (this.detailsEl.hasAttribute('open')) {
    // was open, now closing
    this.detailsEl.style.height = this.closedHeight;
   } else {
