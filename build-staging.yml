@@ -12,15 +12,15 @@ steps:
 - task: PublishBuildArtifacts@1
   displayName: 'Publish Artifact: drop'
   inputs:
-    PathtoPublish: 'd:\a\1\s\'
+    PathtoPublish: '$(Build.ArtifactStagingDirectory)'
 
 - task: ArchiveFiles@2
   displayName: 'Archive files'
   inputs:
-    rootFolderOrFile: 'd:\a\1\s\'
+    rootFolderOrFile: '$(Build.ArtifactStagingDirectory)'
     includeRootFolder: true
     archiveType: 'zip'
-    archiveFile: 'd:\a\1\s\$(Build.BuildId).zip'
+    archiveFile: '$(Build.ArtifactStagingDirectory)/$(Build.BuildId).zip'
     replaceExistingArchive: true
 
 
@@ -30,7 +30,7 @@ steps:
     AnalysisService: 'VeraCode'
     veracodeAppProfile: '$(system.teamProject)'
     version: '$(build.buildNumber)'
-    filepath: 'd:\a\1\s\$(Build.BuildId).zip'
+    filepath: '$(Build.ArtifactStagingDirectory)/$(Build.BuildId).zip'
     createProfile: true
     maximumWaitTime: '360'
 
