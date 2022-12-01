@@ -1,0 +1,193 @@
+﻿---
+title: Contact us form
+layout: page.njk
+permalink: "contact-us-form.html"
+---
+
+<h1 class="mt-lg-0">Contact us form</h1>
+
+<form autocomplete="on" method="POST" id="ContactUsForm">
+  <fieldset>
+    <legend>Contact Us Form</legend>
+    <label class="form-control-label" for="InputName"
+      ><span class="required-label">*</span> Full name</label
+    >
+    <input
+      type="text"
+      class="form-control"
+      id="InputName"
+      placeholder="Full Name"
+      name="Name"
+      autocomplete="name"
+      required
+    />
+    <div class="invalid-feedback d-block">This field is required</div>
+    <br />
+    <label class="form-control-label" for="InputEmail">Email Address</label>
+    <input
+      type="email"
+      class="form-control"
+      id="InputEmail"
+      placeholder="Email Address"
+      name="Email"
+      autocomplete="email"
+    />
+    <br />
+    <label class="form-control-label" for="InputRole">Your Role</label>
+    <input
+      type="text"
+      class="form-control"
+      id="InputRole"
+      placeholder="Your Role"
+      name="Role"
+      autocomplete="organization-title"
+    />
+    <br />
+    <label class="form-control-label" for="InputDepartment"
+      >Your Department</label
+    >
+    <input
+      type="text"
+      class="form-control"
+      id="InputDepartment"
+      placeholder="Your Department"
+      name="Department"
+      autocomplete="organization"
+    />
+    <br />
+    <label class="form-control-label" for="InputComments"
+      ><span class="required-label">*</span> Your comment</label
+    >
+    <textarea
+      id="InputComments"
+      class="form-control"
+      rows="5"
+      cols="80"
+      name="Comments"
+      required
+    ></textarea>
+    <div class="invalid-feedback d-block">This field is required</div>
+
+    <input type="hidden" name="Form Source" value="contact-us.html" />
+    <input
+      type="submit"
+      value="Submit Contact Form"
+      class="btn btn-outline-primary"
+    />
+  </fieldset>
+</form>
+
+<div class="modal fade" id="modalResponse" role="dialog" tabindex="-1">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3 class="h4 modal-title">Thank you for your response.</h3>
+        <button
+          type="button"
+          class="close btn btn-secondary"
+          data-bs-dismiss="modal"
+        >
+          <span class="sr-only">Close modal</span
+          ><span class="ca-gov-icon-close-mark" aria-hidden="true"></span>
+        </button>
+      </div>
+      <div class="modal-body" id="modalBody">Contact form submitted.</div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-bs-dismiss="modal">
+          Close
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+<button
+  type="button"
+  id="btnModal"
+  class="btn btn-default btn-lg m-t-lg"
+  data-bs-toggle="modal"
+  data-bs-target="#modalResponse"
+>
+  Open modal
+</button>
+
+<script>
+  const url =
+    "https://fa-cdt-pub-migr-betaws-w-p-001.azurewebsites.net/api/air-table";
+  const formId = "ContactUsForm";
+  const modalButtonId = "btnModal";
+  const modalBodyId = "modalBody";
+
+  {
+    const sampleForm = /** @type {HTMLFormElement} */ (
+      document.getElementById(formId)
+    );
+    if (sampleForm) {
+      sampleForm.action = "";
+      sampleForm.addEventListener("submit", submitForm);
+    } else {
+      console.error("No form on page.");
+    }
+  }
+  ({});
+
+  function showModalResponse(text) {
+    if (text) {
+      /** @type { HTMLDivElement } */
+      const modalBody = document.getElementById(modalBodyId);
+      modalBody.innerHTML = text;
+    }
+
+    /** @type { HTMLButtonElement } */
+    const modalButton = document.getElementById(modalButtonId);
+    modalButton.click();
+  }
+
+  async function submitForm(/** @type { SubmitEvent } */ e) {
+    e.preventDefault();
+
+    document
+      .querySelectorAll("form input[type=submit]")
+      .forEach((/** @type { HTMLButtonElement } */ btnSubmit) => {
+        btnSubmit.disabled = true;
+        setTimeout(() => (btnSubmit.disabled = false), 2000);
+      });
+
+    const form = /** @type { HTMLFormElement } */ (e.target);
+
+    const jsonFormData = {};
+    for (const pair of new FormData(form)) {
+      jsonFormData[pair[0]] = pair[1];
+    }
+
+    /** @type { RequestInit } */
+    const request = {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(jsonFormData),
+    };
+
+    fetch(url, request)
+      .then((response) => {
+        if (response.ok) {
+          return response.json();
+        }
+        console.error(response);
+
+        throw new Error(
+          `Can't submit - ${response.status}:${response.statusText}`
+        );
+      })
+      .then((responseJson) => {
+        console.log(responseJson);
+
+        showModalResponse();
+      })
+      .catch((error) => {
+        console.error(error);
+
+        showModalResponse(error);
+      });
+  }
+</script>
