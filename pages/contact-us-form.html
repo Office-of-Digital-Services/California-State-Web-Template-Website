@@ -81,7 +81,7 @@ permalink: "contact-us-form.html"
   <div class="modal-dialog modal-lg">
     <div class="modal-content">
       <div class="modal-header">
-        <h3 class="h4 modal-title">Thank you for your response.</h3>
+        <h3 class="h4 modal-title">Problem with submission.</h3>
         <button
           type="button"
           class="close btn btn-secondary"
@@ -91,7 +91,10 @@ permalink: "contact-us-form.html"
           ><span class="ca-gov-icon-close-mark" aria-hidden="true"></span>
         </button>
       </div>
-      <div class="modal-body" id="modalBody">Contact form submitted.</div>
+      <div class="modal-body">
+        There was a problem with your submission. Please wait a moment and try
+        again.
+      </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-default" data-bs-dismiss="modal">
           Close
@@ -103,19 +106,20 @@ permalink: "contact-us-form.html"
 <button
   type="button"
   id="btnModal"
-  class="btn btn-default btn-lg m-t-lg"
+  class="btn btn-default btn-lg m-t-lg hidden"
   data-bs-toggle="modal"
   data-bs-target="#modalResponse"
 >
   Open modal
 </button>
+<a href="contact-us-thankyou.html" id="urlThankyou" class="hidden">thanks</a>
 
 <script>
   const url =
     "https://fa-cdt-pub-migr-betaws-w-p-001.azurewebsites.net/api/air-table";
   const formId = "ContactUsForm";
   const modalButtonId = "btnModal";
-  const modalBodyId = "modalBody";
+  const urlThankyouId = "urlThankyou";
 
   {
     const sampleForm = /** @type {HTMLFormElement} */ (
@@ -130,18 +134,6 @@ permalink: "contact-us-form.html"
   }
   ({});
 
-  function showModalResponse(text) {
-    if (text) {
-      /** @type { HTMLDivElement } */
-      const modalBody = document.getElementById(modalBodyId);
-      modalBody.innerHTML = text;
-    }
-
-    /** @type { HTMLButtonElement } */
-    const modalButton = document.getElementById(modalButtonId);
-    modalButton.click();
-  }
-
   async function submitForm(/** @type { SubmitEvent } */ e) {
     e.preventDefault();
 
@@ -149,7 +141,7 @@ permalink: "contact-us-form.html"
       .querySelectorAll("form input[type=submit]")
       .forEach((/** @type { HTMLButtonElement } */ btnSubmit) => {
         btnSubmit.disabled = true;
-        setTimeout(() => (btnSubmit.disabled = false), 2000);
+        setTimeout(() => (btnSubmit.disabled = false), 5000);
       });
 
     const form = /** @type { HTMLFormElement } */ (e.target);
@@ -182,12 +174,16 @@ permalink: "contact-us-form.html"
       .then((responseJson) => {
         console.log(responseJson);
 
-        showModalResponse();
+        /** @type { HTMLAnchorElement } */
+        const lnk = document.getElementById(urlThankyouId);
+        lnk.click();
       })
       .catch((error) => {
         console.error(error);
 
-        showModalResponse(error);
+        /** @type { HTMLButtonElement } */
+        const modalButton = document.getElementById(modalButtonId);
+        modalButton.click();
       });
   }
 </script>
