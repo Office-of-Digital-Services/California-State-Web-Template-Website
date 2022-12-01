@@ -62,16 +62,16 @@ steps:
     maximumWaitTime: '360'
 
 
-# - task: SonarQubePrepare@5
-#   inputs:
-#     SonarQube: 'sonar'
-#     scannerMode: 'CLI'
-#     configMode: 'manual'
-#     cliProjectKey: 'beta.template.webtools.website' 
-#     cliProjectName: 'beta.template.webtools.website'
-#     cliSources: '$(build.artifactstagingdirectory)'
-# - task: SonarQubeAnalyze@5
+- task: SonarQubePrepare@5
+  inputs:
+    SonarQube: 'SonarQube'
+    scannerMode: 'CLI'
+    configMode: 'manual'
+    cliProjectKey: 'beta.template.webtools.website' 
+    cliProjectName: 'beta.template.webtools.website'
+    cliSources: '$(build.artifactstagingdirectory)'
+- task: SonarQubeAnalyze@5
     
-# - task: SonarQubePublish@5
-#   inputs:
-#     pollingTimeoutSec: '300'
+- task: SonarQubePublish@5
+  inputs:
+    pollingTimeoutSec: '300'
