@@ -1,0 +1,167 @@
+﻿---
+title: Side Navigation
+landing: Structure
+layout: page.njk
+permalink: "structure/navigation-sidebar.html"
+---
+
+
+<div class="row">
+ <div class="col-md-3">
+  <!-- Side navigation -->
+  <nav aria-labelledby="navigation-list" class="side-navigation sticky-6">
+   <ul class="list-navigation">
+    <li><a href="/structure/site-navigation.html" id="navigation-list">Navigation samples</a>
+     <ul>
+      <li><a href="/structure/navigation-dropdown.html">Dropdown Navigation</a></li>
+      <li><a href="/structure/navigation-megamenu-flex.html">Flex Megamenu Navigation</a></li>
+      <li><a href="/structure/navigation-full-width-utility.html">Full Width Navigation with Active Search</a></li>
+      <li><a href="/structure/navigation-icons.html">Navigation with icons</a></li>
+      <li><a href="/structure/page-navigation.html">Page navigation</a></li>
+      <li><a href="/structure/navigation-sidebar.html" class="active">Side navigation</a></li>
+      <li><a href="/structure/navigation-single.html">Single Level Navigation</a></li>
+     </ul>
+    </li>
+   </ul>
+  </nav>
+ </div>
+ <div class="col-md-9 m-b-lg">
+
+
+  <h1 class="mt-lg-0">Side Navigation Menu</h1>
+  <p>
+   Side navigation is a vertical navigation component which apart from traditional, text links, might
+   embed icons, dropdowns, images or even forms.
+  </p>
+
+  <p>
+   Its clarity and simplicity remarkably increases User Experience. It allows you to navigate through
+   small applications as well as vast portals swiftly. Multiple link embedding functionality enables
+   you to implement more advanced content categorization, which is almost essential within bigger
+   projects.
+  </p>
+  <h2>Accordion side navigation</h2>
+  <p>Accordion side navigation uses basic accordion component's structure and
+   properties but it is styled to be used as side navigation. </p>
+  <h3>Example:</h3>
+  <div class="row">
+   <div class="col-md-5">
+    {% include "../../src/_includes/modules/nav-side-accordion.html" %}
+   </div>
+  </div>
+
+
+  <h3>Source code:</h3>
+  <p>In the template distribution Accordion Side Navigation full HTML markup can be found in
+   <code>/src/_includes/modules/nav-side-accordion.html</code> file.
+  </p>
+
+  <hr />
+
+  <h2>List navigation</h2>
+  <p>List navigation displays links to the webpages that can be tied into one content category, such as list
+   of web components, for example. Links with class
+   <code>active</code> will indicate the currently open page, which allows people to scan a page and know if
+   they’re in the right place.
+  </p>
+
+
+
+  {% include "../../src/_includes/modules/list-navigation.html" %}
+
+  <h3>Source code:</h3>
+  <pre><code class="overflow-auto">{% include "../../src/_includes/modules/list-navigation.html" %}</code></pre>
+
+
+  {% include "../../src/_includes/modules/list-navigation-sub.html" %}
+
+
+
+  <h3>Source code:</h3>
+  <pre><code class="overflow-auto">{% include "../../src/_includes/modules/list-navigation-sub.html" %}</code></pre>
+
+
+
+
+  <h2>Bootstrap side navigation</h2>
+  <p>
+   Bootstrap Side navigation uses <a href="/sample/accordions.html">accordion list</a> component's structure and
+   properties. But also, it incorporates the bootstrap list group component's styles.
+  </p>
+
+  <p>
+   Like many other components, a Side navigation can be styled with a number of extension classes.
+   Append one of the following classes to the <code>.list-group</code> element:
+   <code>.section-default</code>, <code>.section-understated</code>, <code>.section-primary</code>,
+   <code>.section-standout</code>, <code>.section-inverted</code>, <code>.section-impact</code>,
+   <code>.section-danger</code>.
+
+  </p>
+
+
+
+
+  <h3>Example:</h3>
+  <div class="row">
+   <div class="col-md-4">
+    {% include "../../src/_includes/modules/nav-side.html" %}
+   </div>
+  </div>
+
+
+  <h3>Source code:</h3>
+  <p>In the template distribution Bootstrap Accordion Side Navigation full HTML markup can be found in
+   <code>/src/_includes/modules/nav-side.html</code> file.
+  </p>
+
+
+  <hr />
+
+  <h3>Standout version example:</h3>
+
+  <div class="row">
+   <div class="col-md-4">
+    {% include "../../src/_includes/modules/nav-side-standout.html" %}
+   </div>
+  </div>
+
+
+  <h3>Source code:</h3>
+  <p>In the template distribution Standout Bootstrap Accordion Side Navigation full HTML markup can be found in
+   <code>/src/_includes/modules/nav-side-standout.html</code> file.
+  </p>
+
+  <hr />
+
+
+  <h3>Primary version example:</h3>
+  <div class="row">
+   <div class="col-md-4">
+    {% include "../../src/_includes/modules/nav-side-primary.html" %}
+   </div>
+  </div>
+
+
+  <h3>Source code:</h3>
+  <p>In the template distribution Primary Bootstrap Accordion Side Navigation full HTML markup can be found in
+   <code>/src/_includes/modules/nav-side-primary.html</code> file.
+  </p>
+
+  <hr />
+
+  <h3>Understated version example:</h3>
+  <div class="row">
+   <div class="col-md-4">
+    {% include "../../src/_includes/modules/nav-side-understated.html" %}
+   </div>
+  </div>
+
+
+  <h3>Source code:</h3>
+  <p>In the template distribution Understated Bootstrap Accordion Side Navigation full HTML markup can be found in
+   <code>/src/_includes/modules/nav-side-understated.html</code> file.
+  </p>
+
+
+ </div>
+</div>

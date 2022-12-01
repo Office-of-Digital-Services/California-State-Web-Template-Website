@@ -1,0 +1,208 @@
+﻿---
+title: Alert
+landing: Components
+layout: components.njk
+permalink: "components/alert.html"
+---
+
+
+
+<h1 class="mt-lg-0">Alert</h1>
+
+
+<p>The alert is for important, sometimes time-sensitive
+ information. Reserve alerts for information the audience must read before anything else.</p>
+<p>The alert is a band that extends across the width of the <a href="/structure/structure-utility-header.html">utility
+  header</a>. </p>
+<p>It includes:</p>
+<ul>
+ <li>An optional icon, selected from a list of font icon options</li>
+ <li>A text field, which includes the ability to link to other pages</li>
+ <li>An “X” close icon that allows people to dismiss the alert</li>
+</ul>
+
+<h2 id="Sample">Sample</h2>
+
+<!--TABS-->
+<div class="tab-group responsive">
+ <ul id="tabs1" class="nav nav-tabs" role="tablist">
+  <li class="nav-item">
+   <a id="tab-example1" href="#pane-example1" class="nav-link active" data-bs-toggle="tab" role="tab">Example</a>
+  </li>
+  <li class="nav-item">
+   <a id="tab-html1" href="#pane-html1" class="nav-link" data-bs-toggle="tab" role="tab">Source code</a>
+  </li>
+  <li class="nav-item">
+   <a id="tab-njk1" href="#pane-njk1" class="nav-link" data-bs-toggle="tab" role="tab">Nunjucks include</a>
+  </li>
+ </ul>
+
+
+ <div id="tab-content" class="tab-content">
+  <!--Examples-->
+  <div id="pane-example1" class="card tab-pane fade show active" role="tabpanel" aria-labelledby="tab-example1">
+   <div class="card-header" id="heading-example1">
+    <a data-bs-toggle="collapse" href="#collapse-example1" data-parent="#tab-content" aria-expanded="true"
+     aria-controls="collapse-example1" data-hash="#pane-example1" title="Example tab header">
+     Example
+    </a>
+   </div>
+   <div id="collapse-example1" class="collapse show" role="tabpanel" aria-labelledby="heading-example1">
+    <div class="card-body p-b-lg">
+
+
+     <h3>Info</h3>
+     <div class="alert alert-info alert-dismissible alert-banner" role="alert">
+      <div class="container">
+       <button type="button" class="close ms-lg-auto" data-bs-dismiss="alert" aria-label="Close"><span
+         class="ca-gov-icon-close-mark" aria-hidden="true"></span></button>
+       <span class="alert-text">We’ve made some changes that might impact your experience.</span>
+       <a href="" class="btn btn-default btn-xs">Learn more <span class="sr-only">about the changes</span></a>
+      </div>
+     </div>
+
+
+
+     <h3>Warning</h3>
+     <div class="alert alert-warning alert-dismissible alert-banner" role="alert">
+      <div class="container">
+       <button type="button" class="close ms-lg-auto" data-bs-dismiss="alert" aria-label="Close"><span
+         class="ca-gov-icon-close-mark" aria-hidden="true"></span></button>
+       <span class="alert-text"><strong>Your browser is outdated.</strong> Your experience may be degraded.</span>
+       <a href="" class="btn btn-default btn-xs">More information</a>
+      </div>
+     </div>
+
+
+     <h3>Danger</h3>
+     <div class="alert alert-danger alert-dismissible alert-banner" role="alert">
+      <div class="container">
+       <button type="button" class="close ms-lg-auto" data-bs-dismiss="alert" aria-label="Close"><span
+         class="ca-gov-icon-close-mark" aria-hidden="true"></span></button>
+       <span class="alert-text">Your browser is currently not supported.</span>
+       <a href="" class="btn btn-default btn-xs">Learn more <span class="sr-only">about the problem</span></a>
+      </div>
+     </div>
+
+
+     <h3>Success</h3>
+     <div class="alert alert-success alert-dismissible alert-banner" role="alert">
+      <div class="container">
+       <button type="button" class="close ms-lg-auto" data-bs-dismiss="alert" aria-label="Close"><span
+         class="ca-gov-icon-close-mark" aria-hidden="true"></span></button>
+       <span class="alert-text"><strong>Well done!</strong> Your form has been submitted successfully.</span>
+      </div>
+     </div>
+
+
+     <h3>Severe</h3>
+     <div class="alert alert-severe alert-dismissible alert-banner" role="alert">
+      <div class="container">
+       <button type="button" class="close ms-lg-auto" data-bs-dismiss="alert" aria-label="Close"><span
+         class="ca-gov-icon-close-mark" aria-hidden="true"></span></button>
+       <span class="alert-level"><span class="ca-gov-icon-important" aria-hidden="true"></span>SEVERE
+        ALERT!</span><span class="alert-text"> Flash flood in Sacramento until 12:15 PM.</span> <a href=""
+        class="btn btn-default btn-xs">Severe Alert</a>
+      </div>
+     </div>
+
+
+
+    </div>
+   </div>
+  </div>
+
+
+
+  <!--HTML-->
+  <div id="pane-html1" class="card tab-pane fade" role="tabpanel" aria-labelledby="tab-html1">
+   <div class="card-header" id="heading-html1">
+    <a class="collapsed" data-bs-toggle="collapse" href="#collapse-html1" data-parent="#tab-content"
+     aria-expanded="false" aria-controls="collapse-html1" data-hash="#pane-html1" title="HTML Source code tab header">
+     Source code
+    </a>
+   </div>
+   <div id="collapse-html1" class="collapse" role="tabpanel" aria-labelledby="heading-html1">
+    <div class="card-body">
+     <pre style="max-height: 300px;"><code>{% include "../../src/_includes/modules/alert-banner.html" %}</code>
+    </pre>
+
+    </div>
+   </div>
+  </div>
+
+
+  <!--NJK-->
+  <div id="pane-njk1" class="card tab-pane fade" role="tabpanel" aria-labelledby="tab-njk1">
+   <div class="card-header" id="heading-njk1">
+    <a class="collapsed" data-bs-toggle="collapse" href="#collapse-njk1" data-parent="#tab-content"
+     aria-expanded="false" aria-controls="collapse-njk1" data-hash="#pane-njk1" title="Nunjucks include tab header">
+     Nunjucks include
+    </a>
+   </div>
+   <div id="collapse-njk1" class="collapse" role="tabpanel" aria-labelledby="heading-njk1">
+    <div class="card-body">
+     Add the alert key with the path to your alert html file
+     <code>alert: "../modules/alert-banner.html"</code>
+     after your
+     eleventy layout key
+     declaration in
+     the front matter data on your page.
+     <pre>---
+title: Alert Banner
+layout: page.njk
+alert: "../modules/alert-banner.html"
+---</pre>
+
+
+     <p>Or include alert banner module into your page directly after skip-to-content component:</p>
+     <pre>
+ &lt;header role="banner" id="header" class="global-header"&gt;
+   &lt;div id="skip-to-content"&gt;
+       &lt;a href="#main-content"&gt;Skip to Main Content&lt;/a&gt;
+     &lt;/div&gt;<br>
+     &lt;!-- Alert Banner --&gt;
+     &#10100;% include "../modules/alert-banner.html" %&#10101;
+   ...
+ &lt;/header&gt;
+ </pre>
+    </div>
+   </div>
+  </div>
+
+
+ </div>
+</div>
+<!--END TABS-->
+
+
+
+
+<h2 id="Usage">Usage</h2>
+<h3>When and how to use it</h3>
+<p>Use the alert sparingly. They alarm people and distract from other content.</p>
+<p>Be concise with your alert content. Use a link to send people to a page with the details.</p>
+<p>Only use one alert on a page. Make sure the alert is relevant to the page it is on. Only duplicate the alert on other
+ pages if it applies to those pages.</p>
+<p>Use alerts to tell people about:</p>
+<ul>
+ <li>Open application periods (informational)</li>
+ <li>Planned maintenance (informational)</li>
+ <li>Approaching deadlines (warning)</li>
+ <li>Services that are down (danger)</li>
+ <li>Positive feedback (success)</li>
+</ul>
+<p>Choose an icon that supports the tone of your alert.</p>
+
+
+<h3>How not to use it</h3>
+<p>Do not put an alert on every page on your site. If people see alerts too often, they will start to ignore them and
+ not read the content.
+</p>
+<p>Do not put more than one alert on a page.</p>
+<p>Do not use alerts to simply highlight important content. They are for information that is new, relevant, and
+ temporary.</p>
+
+
+<h2 id="Accessibility">Accessibility</h2>
+{% include "../../src/_includes/modules/accessibility.html" %}

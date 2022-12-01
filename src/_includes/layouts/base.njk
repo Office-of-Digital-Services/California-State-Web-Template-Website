@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>{{ title }}</title> 
+  <meta charset="utf-8">
+  <meta name="Author" content="State of California" />
+  <meta name="Description" content="State of California" />
+  <meta name="Keywords" content="California, government" />
+  {% include "../head-js-css.njk" %}
+</head>
+<body class="primary">
+  <header role="banner" id="header" class="global-header fixed">
+    <div id="skip-to-content">
+        <a href="#main-content">Skip to Main Content</a>
+    </div>
+    {% include "../modules/alert-banner-beta-feedback.html" %}
+    {% if alert %}
+      {% include alert %}
+    {% endif %}
+    {% include "../utility-header.njk" %}
+    {% include "../settings-bar.njk" %}
+    {% include "../site-header.njk" %}
+    {% include "../mobile-controls.njk" %}
+    <div class="navigation-search full-width-nav container">
+      <div id="head-search" class="search-container featured-search">
+          {% include "../search.njk" %}
+      </div>
+      <!-- navigation types -->
+            {% if navigation %}
+              {% include navigation %}
+		        {% else %}
+		          {% include "../navigation.njk" %}
+            {% endif %}
+    </div>
+  </header>
+
+  {% block content %}
+    {{ content | safe }}
+  {% endblock %}
+{% include "modules/site-footer.html" %}
+  {% include "../global-footer.njk" %}
+  {% include "../scripts.njk" %}
+</body>
+</html>

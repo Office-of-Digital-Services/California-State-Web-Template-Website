@@ -1,0 +1,159 @@
+/* -----------------------------------------
+   PAGE NAVIGATION - /source/scss/cagov/page-navigation.scss
+----------------------------------------- */
+
+// List navigation
+.list-navigation {
+ li {
+  list-style: none;
+  margin: 0;
+  font-size: 1.25rem;
+  padding-left: 1rem;
+
+  a {
+   position: relative;
+   display: block;
+   text-decoration: none !important;
+   color: $gray-800;
+   padding-bottom: 0.7rem;
+   padding-top: 0.7rem;
+   &.active {
+    color: $gray-800;
+    text-decoration: none;
+    font-weight: $font-weight-7;
+    &:hover,
+    &:focus {
+     color: $black;
+     text-decoration: none;
+    }
+    &:before {
+     content: "";
+     border-left: 3px solid;
+     position: absolute;
+     top: 0;
+     left: -1rem;
+     width: 3px;
+     height: 100%;
+     border-radius: 0;
+    }
+   }
+  }
+  a:hover,
+  a:focus {
+   text-decoration: none;
+  }
+  a:focus {
+   @include outline(2px);
+  }
+
+  ul {
+   padding-left: 0;
+   li {
+    margin: 0;
+    a.active {
+     color: $gray-800;
+     text-decoration: none;
+     font-weight: $font-weight-7;
+     &:hover,
+     &:focus {
+      color: $black;
+      text-decoration: none;
+     }
+     &:before {
+      content: "";
+      border-left: 3px solid;
+      position: absolute;
+      top: 0;
+      left: -1rem;
+      width: 3px;
+      height: 100%;
+      border-radius: 0;
+     }
+    }
+   }
+  }
+ }
+}
+
+// Page navigation (On this page)
+.page-navigation {
+ .label {
+  font-weight: $font-weight-7;
+  font-size: 1.5rem;
+  line-height: $font-lineheight-5;
+  padding: 0;
+  margin: 0;
+  padding-bottom: 1rem;
+ }
+ ul {
+  margin: 0;
+  text-indent: 0;
+  padding: 0;
+  li {
+   list-style: none;
+   padding: 0;
+   margin: 0;
+   border-bottom: 1px solid $gray-200;
+   &:first-child {
+    border-top: 1px solid $gray-200;
+   }
+   a {
+    color: $gray-800;
+    text-decoration: none !important;
+    padding-top: 1rem;
+    padding-bottom: 1.25rem;
+    display: block;
+    &:hover,
+    &:focus {
+     text-decoration: none !important;
+     color: $black;
+    }
+    &:focus {
+     @include outline(2px);
+    }
+    &.active {
+     font-weight: $font-weight-7;
+    }
+   }
+  }
+ }
+}
+
+a.sidenav {
+ font-size: calc($font-size-regular + $ratio);
+ margin: 0;
+ display: block;
+ padding-top: 0.7rem;
+ padding-bottom: 0.7rem;
+ padding-left: 1rem;
+ position: relative;
+ text-decoration: none !important;
+ &:hover,
+ &:focus {
+  text-decoration: none;
+ }
+ &:focus {
+  outline-offset: -2px;
+ }
+ &.active {
+  color: $black;
+  font-weight: $font-weight-7;
+  text-decoration: none;
+
+  &:hover,
+  &:focus {
+   text-decoration: none !important;
+   color: $gray-700;
+  }
+  &:before {
+   content: "";
+   border-left: 3px solid;
+   position: absolute;
+   top: 0;
+   left: 0;
+   width: 3px;
+   height: 100%;
+   border-radius: 0;
+  }
+ }
+}

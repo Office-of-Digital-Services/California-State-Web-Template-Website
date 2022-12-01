@@ -1,0 +1,89 @@
+﻿---
+title: Breadcrumb
+landing: Components
+layout: components.njk
+permalink: "components/breadcrumb.html"
+---
+
+<h1 class="mt-lg-0">Breadcrumb</h1>
+<p class="lead">The breadcrumb component helps visitors understand where they are within a website’s structure and move
+ between
+ levels. </p>
+
+
+<h2 id="Sample">Sample</h2>
+
+<!--TABS-->
+<div class="tab-group responsive">
+ <ul id="tabs1" class="nav nav-tabs" role="tablist">
+  <li class="nav-item">
+   <a id="tab-example1" href="#pane-example1" class="nav-link active" data-bs-toggle="tab" role="tab">Example</a>
+  </li>
+  <li class="nav-item">
+   <a id="tab-html1" href="#pane-html1" class="nav-link" data-bs-toggle="tab" role="tab">Source code</a>
+  </li>
+
+ </ul>
+
+
+ <div id="tab-content" class="tab-content">
+  <!--Examples-->
+  <div id="pane-example1" class="card tab-pane fade show active" role="tabpanel" aria-labelledby="tab-example1">
+   <div class="card-header" id="heading-example1">
+    <a data-bs-toggle="collapse" href="#collapse-example1" data-parent="#tab-content" aria-expanded="true"
+     aria-controls="collapse-example1" data-hash="#pane-example1" title="Example tab header">
+     Example
+    </a>
+   </div>
+   <div id="collapse-example1" class="collapse show" role="tabpanel" aria-labelledby="heading-example1">
+    <div class="card-body p-y-0 p-t-md">
+     {% include "../../src/_includes/modules/breadcrumb.html" %}
+    </div>
+   </div>
+  </div>
+
+
+
+  <!--HTML-->
+  <div id="pane-html1" class="card tab-pane fade" role="tabpanel" aria-labelledby="tab-html1">
+   <div class="card-header" id="heading-html1">
+    <a class="collapsed" data-bs-toggle="collapse" href="#collapse-html1" data-parent="#tab-content"
+     aria-expanded="false" aria-controls="collapse-html1" data-hash="#pane-html1" title="HTML Source code tab header">
+     Source code
+    </a>
+   </div>
+   <div id="collapse-html1" class="collapse" role="tabpanel" aria-labelledby="heading-html1">
+    <div class="card-body">
+     <pre style="max-height: 300px;"><code>{% include "../../src/_includes/modules/breadcrumb.html" %}</code></pre>
+
+    </div>
+   </div>
+  </div>
+
+
+ </div>
+</div>
+<!--END TABS-->
+
+<h2 id="Usage">Usage</h2>
+<h3>When and how to use it </h3>
+<p>Use the breadcrumb component to help visitors orient themselves and move between multiple levels of a website.</p>
+<p>Use breadcrumbs to illustrate:</p>
+<ul>
+ <li>Progress</li>
+ <li>Page levels</li>
+ <li>Steps</li>
+</ul>
+<p>Place breadcrumbs at the top left corner of a page, above the title.</p>
+<p>The breadcrumb should start with your 'home' page and end with the H1 of the current page.</p>
+<h3>
+ How not to use it
+</h3>
+<p>The breadcrumb component should not replace the main navigation on a page. </p>
+</p>Do not use the breadcrumb component on websites with a flat structure. There should be at least two levels of page
+structure.</p>
+
+
+
+<h2 id="Accessibility">Accessibility</h2>
+{% include "../../src/_includes/modules/accessibility.html" %}

@@ -1,0 +1,57 @@
+﻿---
+title: Page navigation
+landing: Structure
+layout: page.njk
+permalink: "structure/page-navigation.html"
+---
+
+
+<div class="row">
+ <div class="col-md-3">
+  <!-- Side navigation -->
+  <nav aria-labelledby="navigation-list">
+   <ul class="list-navigation">
+    <li><a href="/structure/site-navigation.html" id="navigation-list">Navigation samples</a>
+     <ul>
+      <li><a href="/structure/navigation-dropdown.html">Dropdown Navigation</a></li>
+      <li><a href="/structure/navigation-megamenu-flex.html">Flex Megamenu Navigation</a></li>
+      <li><a href="/structure/navigation-full-width-utility.html">Full Width Navigation with Active Search</a></li>
+      <li><a href="/structure/navigation-icons.html">Navigation with icons</a></li>
+      <li><a href="/structure/page-navigation.html" class="active">Page navigation</a></li>
+      <li><a href="/structure/navigation-sidebar.html">Side navigation</a></li>
+      <li><a href="/structure/navigation-single.html">Single Level Navigation</a></li>
+     </ul>
+    </li>
+   </ul>
+  </nav>
+ </div>
+ <div class="col-md-9 p-b-lg">
+
+
+  <h1 class="mt-lg-0">Page navigation</h1>
+  <p>Page navigation is a lists and links to the level 2 headings (H2) of a webpage. It is placed at the top of
+   the
+   page on the
+   left. People can select a link to go directly to H2 section. The links are usually introduced by the text "On this
+   page". Page navigation makes it easy to see what content is available.</p>
+
+  <p><span class="text-highlight-primary">Note:</span> The page navigation should not show if there are zero or one H2’s
+   on
+   the page.</p>
+
+  <h2>Example:</h2>
+  <div class="row">
+   <div class="col-md-4">
+    {% include "../../src/_includes/modules/page-navigation.html" %}
+   </div>
+  </div>
+
+
+  <h2>Source code:</h2>
+  <pre><code class="overflow-auto">{% include "../../src/_includes/modules/page-navigation.html" %}</code></pre>
+
+
+
+
+ </div>
+</div>

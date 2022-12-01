@@ -4,47 +4,74 @@
 # https://docs.microsoft.com/azure/devops/pipelines/languages/javascript
 
 trigger:
-- dev
+- beta-dev
 
 pool:
-  name: Azure Pipelines
-steps:
-- task: PublishBuildArtifacts@1
-  displayName: 'Publish Artifact: drop'
-  inputs:
-    PathtoPublish: '$(Build.SourcesDirectory)'
+  vmImage: 'ubuntu-latest'
 
-- task: ArchiveFiles@2
-  displayName: 'Archive files'
+steps:
+
+- task: NodeTool@0
   inputs:
-    rootFolderOrFile: '$(Build.SourcesDirectory)'
+    versionSpec: '18.x'
+  displayName: 'Install Node.js'
+
+- task: Npm@1
+  inputs:
+    command: 'install'
+  displayName: "npm install"
+
+# - script: npm run test
+#   displayName: "npm test"
+#   env:
+#     CI: true
+
+# - task: PublishCodeCoverageResults@1
+#   inputs:
+#     codeCoverageTool: 'Cobertura'
+#     summaryFileLocation: 'coverage/cobertura-coverage.xml'
+#     reportDirectory: 'coverage'
+#   displayName: 'Publish Code Coverage'
+    
+- script: npm run build
+  displayName: "npm build"
+
+- task: CopyFiles@2
+  inputs:
+    Contents: '_site/**' # Pull the build directory
+    TargetFolder: '$(Build.ArtifactStagingDirectory)'
+- task: PublishBuildArtifacts@1
+  inputs: 
+    PathtoPublish: '$(Build.ArtifactStagingDirectory)/_site' # build files
+    ArtifactName: 'drop' # output artifact named drop
+- task: ArchiveFiles@2
+  inputs:
+    rootFolderOrFile: '$(Build.ArtifactStagingDirectory)'
     includeRootFolder: true
     archiveType: 'zip'
-    archiveFile: '$(Build.SourcesDirectory)/$(Build.BuildId).zip'
+    archiveFile: '$(Build.ArtifactStagingDirectory)/$(Build.BuildId).zip'
     replaceExistingArchive: true
-
-
 - task: Veracode@3
   inputs:
     ConnectionDetailsSelection: 'Endpoint'
-    AnalysisService: 'VeraCode'
+    AnalysisService: 'veracode'
     veracodeAppProfile: '$(system.teamProject)'
     version: '$(build.buildNumber)'
-    filepath: '$(Build.SourcesDirectory)/$(Build.BuildId).zip'
+    filepath: '$(Build.ArtifactStagingDirectory)/$(Build.BuildId).zip'
     createProfile: true
     maximumWaitTime: '360'
 
 
-#- task: SonarQubePrepare@5
-# inputs:
- #  SonarQube: 'sonar'
-  #  scannerMode: 'CLI'
-  #  configMode: 'manual'
-   # cliProjectKey: 'beta.template.webtools.website'
-    #cliProjectName: 'beta.template.webtools.website'
-   # cliSources: '$(Build.SourcesDirectory)'
-#- task: SonarQubeAnalyze@5
+- task: SonarQubePrepare@5
+  inputs:
+    SonarQube: 'sonar'
+    scannerMode: 'CLI'
+    configMode: 'manual'
+    cliProjectKey: 'beta.template.webtools.website'
+    cliProjectName: 'beta.template.webtools.website'
+    cliSources: '$(build.artifactstagingdirectory)'
+- task: SonarQubeAnalyze@5
     
-#- task: SonarQubePublish@5
-  #inputs:
-   # pollingTimeoutSec: '300'
+- task: SonarQubePublish@5
+  inputs:
+    pollingTimeoutSec: '300'

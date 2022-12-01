@@ -1,0 +1,583 @@
+---
+title: Form elements
+landing: Components
+layout: components.njk
+permalink: "components/form-elements.html"
+---
+
+<style>
+ .blue-arrow {
+  position: relative;
+  padding-right: 2.1rem;
+ }
+
+ .blue-arrow::before {
+  position: absolute;
+  font-family: "CaGov" !important;
+  content: "\e669";
+  font-size: 0.65rem;
+  bottom: 0.8rem;
+  right: -1.3rem;
+  border-bottom: 2px solid;
+  width: 50px;
+  text-align: end;
+  line-height: 50px;
+  letter-spacing: -4px;
+  height: 26px;
+ }
+</style>
+
+
+<h1 class="mt-lg-0">Forms elements</h1>
+<p class="lead">A form allows visitors to submit information to a server.</p>
+<p class="lead">Common form elements include:</p>
+<ul class="lead">
+ <li>Label</li>
+ <li>Text field</li>
+ <li>Text area</li>
+ <li>Checkbox</li>
+ <li>Radio button</li>
+ <li>Dropdown menu</li>
+ <li>File input</li>
+ <li>Buttons</li>
+</ul>
+
+
+<h2 id="Label" class=" m-b-0">Label</h2>
+<p>The label should:</p>
+<ul>
+ <li>Describe the purpose of the text field or other item.</li>
+ <li>Use sentence-style capitalization &mdash; only capitalize the first word. </li>
+ <li>Be short and concise.</li>
+ <li>Use nouns or short noun phrases.</li>
+ <li>Inform visitors whether or not the form input is required or optional.</li>
+ <li>Avoid instructional text like "Click to get started".</li>
+</ul>
+
+<!--TABS-->
+<div class="tab-group responsive">
+ <ul id="tabs7" class="nav nav-tabs" role="tablist">
+  <li class="nav-item">
+   <a id="tab-example7" href="#pane-example7" class="nav-link active" data-bs-toggle="tab" role="tab">Example</a>
+  </li>
+  <li class="nav-item">
+   <a id="tab-html7" href="#pane-html7" class="nav-link" data-bs-toggle="tab" role="tab">Source code</a>
+  </li>
+
+ </ul>
+
+
+ <div id="tab-content" class="tab-content">
+  <!--Examples-->
+  <div id="pane-example7" class="card tab-pane fade show active" role="tabpanel" aria-labelledby="tab-example7">
+   <div class="card-header" id="heading-example7">
+    <a data-bs-toggle="collapse" href="#collapse-example7" data-parent="#tab-content" aria-expanded="true"
+     aria-controls="collapse-example7" data-hash="#pane-example7" title="Example tab header">
+     Example
+    </a>
+   </div>
+   <div id="collapse-example7" class="collapse show" role="tabpanel" aria-labelledby="heading-example7">
+    <div class="card-body p-b">
+     <div class="bg-gray-50 p-a">
+      <div class="row">
+       <div class="col-sm-3">
+        <p class="outline-color blue-arrow text-right">Label</p>
+       </div>
+       <div class="col-sm-9">{% include "../../src/_includes/modules/form-label.html" %}</div>
+      </div>
+     </div>
+
+
+
+
+    </div>
+   </div>
+  </div>
+
+
+
+  <!--HTML-->
+  <div id="pane-html7" class="card tab-pane fade" role="tabpanel" aria-labelledby="tab-html7">
+   <div class="card-header" id="heading-html7">
+    <a class="collapsed" data-bs-toggle="collapse" href="#collapse-html7" data-parent="#tab-content"
+     aria-expanded="false" aria-controls="collapse-html7" data-hash="#pane-html7" title="HTML Source code tab header">
+     Source code
+    </a>
+   </div>
+   <div id="collapse-html7" class="collapse" role="tabpanel" aria-labelledby="heading-html7">
+    <div class="card-body">
+     <pre style="max-height: 300px;"><code>{% include "../../src/_includes/modules/form-label.html" %}</code>
+   </pre>
+
+    </div>
+   </div>
+  </div>
+
+
+ </div>
+</div>
+<!--END TABS-->
+
+
+
+<h2 id="Text-field-or-text-area">Text field or text area</h2>
+<p>A text field allows visitors to write or edit one line of text.</p>
+
+
+<!--TABS-->
+<div class="tab-group responsive">
+ <ul id="tabs2" class="nav nav-tabs" role="tablist">
+  <li class="nav-item">
+   <a id="tab-example2" href="#pane-example2" class="nav-link active" data-bs-toggle="tab" role="tab">Example</a>
+  </li>
+  <li class="nav-item">
+   <a id="tab-html2" href="#pane-html2" class="nav-link" data-bs-toggle="tab" role="tab">Source code</a>
+  </li>
+ </ul>
+
+
+ <div id="tab-content" class="tab-content">
+  <!--Examples-->
+  <div id="pane-example2" class="card tab-pane fade show active" role="tabpanel" aria-labelledby="tab-example2">
+   <div class="card-header" id="heading-example2">
+    <a data-bs-toggle="collapse" href="#collapse-example2" data-parent="#tab-content" aria-expanded="true"
+     aria-controls="collapse-example2" data-hash="#pane-example2" title="Example tab header">
+     Example
+    </a>
+   </div>
+   <div id="collapse-example2" class="collapse show" role="tabpanel" aria-labelledby="heading-example2">
+    <div class="card-body">
+     <div class="bg-gray-50 p-a">
+      <h3 class="h4 m-t-0">Basic</h3>
+      <div class="row">
+       <div class="col-sm-3">
+        <p class="mt-4 pt-2 outline-color blue-arrow text-right">Text field</p>
+       </div>
+       <div class="col-sm-9">{% include "../../src/_includes/modules/form-textfield.html" %}</div>
+      </div>
+     </div>
+
+
+     <div class="bg-gray-50 p-a m-t-md">
+      <h3 class="h4 m-t-0">Required</h3>
+      <div class="row">
+       <div class="col-sm-3">
+        <p class="mt-4 pt-2 outline-color blue-arrow text-right">Text field</p>
+       </div>
+       <div class="col-sm-9">{% include "../../src/_includes/modules/form-textfield-required.html" %}</div>
+      </div>
+     </div>
+
+
+
+    </div>
+   </div>
+  </div>
+
+
+
+  <!--HTML-->
+  <div id="pane-html2" class="card tab-pane fade" role="tabpanel" aria-labelledby="tab-html2">
+   <div class="card-header" id="heading-html2">
+    <a class="collapsed" data-bs-toggle="collapse" href="#collapse-html2" data-parent="#tab-content"
+     aria-expanded="false" aria-controls="collapse-html2" data-hash="#pane-html2" title="HTML Source code tab header">
+     Source code
+    </a>
+   </div>
+   <div id="collapse-html2" class="collapse" role="tabpanel" aria-labelledby="heading-html2">
+    <div class="card-body">
+     <h3 class="h4 m-t-0">Basic</h3>
+     <pre style="max-height: 300px;"><code>{% include "../../src/_includes/modules/form-textfield.html" %}</code>
+    </pre>
+
+     <h3 class="h4">Required</h3>
+     <pre style="max-height: 300px;"><code>{% include "../../src/_includes/modules/form-textfield-required.html" %}</code>
+   </pre>
+    </div>
+   </div>
+  </div>
+
+
+ </div>
+</div>
+<!--END TABS-->
+
+<p class="p-t-md">A text area allows visitors to write or edit multiple lines of text. Same as the text field, the text
+ area should
+ always have a label that is associated with it.</p>
+<p>You can include instructional or error messages beneath the field.</p>
+<p>You can also include placeholder text in the field. Placeholder text disappears when the visitor interacts with the
+ text field, so make sure they don't need it to fill in the text field.</p>
+<p>Instructional, error messages, and placeholder text should not provide the same message as the label.</p>
+
+<!--TABS-->
+<div class="tab-group responsive">
+ <ul id="tabs1" class="nav nav-tabs" role="tablist">
+  <li class="nav-item">
+   <a id="tab-example1" href="#pane-example1" class="nav-link active" data-bs-toggle="tab" role="tab">Example</a>
+  </li>
+  <li class="nav-item">
+   <a id="tab-html1" href="#pane-html1" class="nav-link" data-bs-toggle="tab" role="tab">Source code</a>
+  </li>
+
+ </ul>
+
+
+ <div id="tab-content" class="tab-content">
+  <!--Examples-->
+  <div id="pane-example1" class="card tab-pane fade show active" role="tabpanel" aria-labelledby="tab-example1">
+   <div class="card-header" id="heading-example1">
+    <a data-bs-toggle="collapse" href="#collapse-example1" data-parent="#tab-content" aria-expanded="true"
+     aria-controls="collapse-example1" data-hash="#pane-example1" title="Example tab header">
+     Example
+    </a>
+   </div>
+   <div id="collapse-example1" class="collapse show" role="tabpanel" aria-labelledby="heading-example1">
+    <div class="card-body">
+
+
+     <div class="bg-gray-50 p-a">
+      <h3 class="h4 m-t-0">Basic</h3>
+      <div class="row">
+       <div class="col-sm-3">
+        <p class="mt-4 pt-2 outline-color blue-arrow text-right">Text area</p>
+       </div>
+       <div class="col-sm-9">{% include "../../src/_includes/modules/form-textarea.html" %}</div>
+      </div>
+     </div>
+
+
+     <div class="bg-gray-50 p-a m-t-md">
+      <h3 class="h4 m-t-0">Required</h3>
+      <div class="row">
+       <div class="col-sm-3">
+        <p class="mt-4 pt-2 outline-color blue-arrow text-right">Text area</p>
+       </div>
+       <div class="col-sm-9">{% include "../../src/_includes/modules/form-textarea-required.html" %}</div>
+      </div>
+     </div>
+
+    </div>
+   </div>
+  </div>
+
+
+
+  <!--HTML-->
+  <div id="pane-html1" class="card tab-pane fade" role="tabpanel" aria-labelledby="tab-html1">
+   <div class="card-header" id="heading-html1">
+    <a class="collapsed" data-bs-toggle="collapse" href="#collapse-html1" data-parent="#tab-content"
+     aria-expanded="false" aria-controls="collapse-html1" data-hash="#pane-html1" title="HTML Source code tab header">
+     Source code
+    </a>
+   </div>
+   <div id="collapse-html1" class="collapse" role="tabpanel" aria-labelledby="heading-html1">
+    <div class="card-body">
+     <h3 class="h4 m-t-0">Basic</h3>
+     <pre style="max-height: 300px;"><code>{% include "../../src/_includes/modules/form-textarea.html" %}</code>
+    </pre>
+
+     <h3 class="h4">Required</h3>
+     <pre style="max-height: 300px;"><code>{% include "../../src/_includes/modules/form-textarea-required.html" %}</code>
+   </pre>
+
+    </div>
+   </div>
+  </div>
+
+
+ </div>
+</div>
+<!--END TABS-->
+
+
+
+
+<h2 id="Checkbox">Checkbox</h2>
+<p>A checkbox allows visitors to select one or more options from a number of choices.</p>
+
+<!--TABS-->
+<div class="tab-group responsive">
+ <ul id="tabs3" class="nav nav-tabs" role="tablist">
+  <li class="nav-item">
+   <a id="tab-example3" href="#pane-example3" class="nav-link active" data-bs-toggle="tab" role="tab">Example</a>
+  </li>
+  <li class="nav-item">
+   <a id="tab-html3" href="#pane-html3" class="nav-link" data-bs-toggle="tab" role="tab">Source code</a>
+  </li>
+
+ </ul>
+
+
+ <div id="tab-content" class="tab-content">
+  <!--Examples-->
+  <div id="pane-example3" class="card tab-pane fade show active" role="tabpanel" aria-labelledby="tab-example3">
+   <div class="card-header" id="heading-example3">
+    <a data-bs-toggle="collapse" href="#collapse-example3" data-parent="#tab-content" aria-expanded="true"
+     aria-controls="collapse-example3" data-hash="#pane-example3" title="Example tab header">
+     Example
+    </a>
+   </div>
+   <div id="collapse-example3" class="collapse show" role="tabpanel" aria-labelledby="heading-example3">
+    <div class="card-body p-b">
+
+
+     {% include "../../src/_includes/modules/form-checkbox.html" %}
+
+
+    </div>
+   </div>
+  </div>
+
+
+
+  <!--HTML-->
+  <div id="pane-html3" class="card tab-pane fade" role="tabpanel" aria-labelledby="tab-html3">
+   <div class="card-header" id="heading-html3">
+    <a class="collapsed" data-bs-toggle="collapse" href="#collapse-html3" data-parent="#tab-content"
+     aria-expanded="false" aria-controls="collapse-html3" data-hash="#pane-html3" title="HTML Source code tab header">
+     Source code
+    </a>
+   </div>
+   <div id="collapse-html3" class="collapse" role="tabpanel" aria-labelledby="heading-html3">
+    <div class="card-body">
+     <pre style="max-height: 300px;"><code>{% include "../../src/_includes/modules/form-checkbox.html" %}</code>
+   </pre>
+
+    </div>
+   </div>
+  </div>
+
+
+ </div>
+</div>
+<!--END TABS-->
+
+
+
+
+
+
+<h2 id="Radio-button">Radio button</h2>
+<p>A radio button allows visitors to select only one option from a number of choices.</p>
+
+<!--TABS-->
+<div class="tab-group responsive">
+ <ul id="tabs4" class="nav nav-tabs" role="tablist">
+  <li class="nav-item">
+   <a id="tab-example4" href="#pane-example4" class="nav-link active" data-bs-toggle="tab" role="tab">Example</a>
+  </li>
+  <li class="nav-item">
+   <a id="tab-html4" href="#pane-html4" class="nav-link" data-bs-toggle="tab" role="tab">Source code</a>
+  </li>
+
+ </ul>
+
+
+ <div id="tab-content" class="tab-content">
+  <!--Examples-->
+  <div id="pane-example4" class="card tab-pane fade show active" role="tabpanel" aria-labelledby="tab-example4">
+   <div class="card-header" id="heading-example4">
+    <a data-bs-toggle="collapse" href="#collapse-example4" data-parent="#tab-content" aria-expanded="true"
+     aria-controls="collapse-example4" data-hash="#pane-example4" title="Example tab header">
+     Example
+    </a>
+   </div>
+   <div id="collapse-example4" class="collapse show" role="tabpanel" aria-labelledby="heading-example4">
+    <div class="card-body p-b">
+
+
+     {% include "../../src/_includes/modules/form-radio.html" %}
+
+
+    </div>
+   </div>
+  </div>
+
+
+
+  <!--HTML-->
+  <div id="pane-html4" class="card tab-pane fade" role="tabpanel" aria-labelledby="tab-html4">
+   <div class="card-header" id="heading-html4">
+    <a class="collapsed" data-bs-toggle="collapse" href="#collapse-html4" data-parent="#tab-content"
+     aria-expanded="false" aria-controls="collapse-html4" data-hash="#pane-html4" title="HTML Source code tab header">
+     Source code
+    </a>
+   </div>
+   <div id="collapse-html4" class="collapse" role="tabpanel" aria-labelledby="heading-html4">
+    <div class="card-body">
+     <pre style="max-height: 300px;"><code>{% include "../../src/_includes/modules/form-radio.html" %}</code>
+   </pre>
+
+    </div>
+   </div>
+  </div>
+
+
+ </div>
+</div>
+<!--END TABS-->
+
+
+
+
+
+<h2 id="Dropdown-menu" class=" m-b-0">Dropdown menu</h2>
+<p class="subtitle mb-4">Other names: select</p>
+<p>A dropdown menu hides options by default. When interacted with, the dropdown menu displays a list of options visitors
+ may select.</p>
+
+<!--TABS-->
+<div class="tab-group responsive">
+ <ul id="tabs5" class="nav nav-tabs" role="tablist">
+  <li class="nav-item">
+   <a id="tab-example5" href="#pane-example5" class="nav-link active" data-bs-toggle="tab" role="tab">Example</a>
+  </li>
+  <li class="nav-item">
+   <a id="tab-html5" href="#pane-html5" class="nav-link" data-bs-toggle="tab" role="tab">Source code</a>
+  </li>
+
+ </ul>
+
+
+ <div id="tab-content" class="tab-content">
+  <!--Examples-->
+  <div id="pane-example5" class="card tab-pane fade show active" role="tabpanel" aria-labelledby="tab-example5">
+   <div class="card-header" id="heading-example5">
+    <a data-bs-toggle="collapse" href="#collapse-example5" data-parent="#tab-content" aria-expanded="true"
+     aria-controls="collapse-example5" data-hash="#pane-example5" title="Example tab header">
+     Example
+    </a>
+   </div>
+   <div id="collapse-example5" class="collapse show" role="tabpanel" aria-labelledby="heading-example5">
+    <div class="card-body p-b">
+
+
+     {% include "../../src/_includes/modules/form-dropdown.html" %}
+
+
+    </div>
+   </div>
+  </div>
+
+
+
+  <!--HTML-->
+  <div id="pane-html5" class="card tab-pane fade" role="tabpanel" aria-labelledby="tab-html5">
+   <div class="card-header" id="heading-html5">
+    <a class="collapsed" data-bs-toggle="collapse" href="#collapse-html5" data-parent="#tab-content"
+     aria-expanded="false" aria-controls="collapse-html5" data-hash="#pane-html5" title="HTML Source code tab header">
+     Source code
+    </a>
+   </div>
+   <div id="collapse-html5" class="collapse" role="tabpanel" aria-labelledby="heading-html5">
+    <div class="card-body">
+     <pre style="max-height: 300px;"><code>{% include "../../src/_includes/modules/form-dropdown.html" %}</code>
+   </pre>
+
+    </div>
+   </div>
+  </div>
+
+
+ </div>
+</div>
+<!--END TABS-->
+
+
+
+
+
+
+<h2 id="File-input" class=" m-b-0">File input</h2>
+<p>A file input lets the user choose one or more files from their device storage. Once chosen, the files can be uploaded
+ to a server using form submission.</p>
+
+<!--TABS-->
+<div class="tab-group responsive">
+ <ul id="tabs6" class="nav nav-tabs" role="tablist">
+  <li class="nav-item">
+   <a id="tab-example6" href="#pane-example6" class="nav-link active" data-bs-toggle="tab" role="tab">Example</a>
+  </li>
+  <li class="nav-item">
+   <a id="tab-html6" href="#pane-html6" class="nav-link" data-bs-toggle="tab" role="tab">Source code</a>
+  </li>
+
+ </ul>
+
+
+ <div id="tab-content" class="tab-content">
+  <!--Examples-->
+  <div id="pane-example6" class="card tab-pane fade show active" role="tabpanel" aria-labelledby="tab-example6">
+   <div class="card-header" id="heading-example6">
+    <a data-bs-toggle="collapse" href="#collapse-example6" data-parent="#tab-content" aria-expanded="true"
+     aria-controls="collapse-example6" data-hash="#pane-example6" title="Example tab header">
+     Example
+    </a>
+   </div>
+   <div id="collapse-example6" class="collapse show" role="tabpanel" aria-labelledby="heading-example6">
+    <div class="card-body p-b">
+
+
+     {% include "../../src/_includes/modules/form-file-input.html" %}
+
+
+    </div>
+   </div>
+  </div>
+
+
+
+  <!--HTML-->
+  <div id="pane-html6" class="card tab-pane fade" role="tabpanel" aria-labelledby="tab-html6">
+   <div class="card-header" id="heading-html6">
+    <a class="collapsed" data-bs-toggle="collapse" href="#collapse-html6" data-parent="#tab-content"
+     aria-expanded="false" aria-controls="collapse-html6" data-hash="#pane-html6" title="HTML Source code tab header">
+     Source code
+    </a>
+   </div>
+   <div id="collapse-html6" class="collapse" role="tabpanel" aria-labelledby="heading-html6">
+    <div class="card-body">
+     <pre style="max-height: 300px;"><code>{% include "../../src/_includes/modules/form-file-input.html" %}</code>
+   </pre>
+
+    </div>
+   </div>
+  </div>
+
+
+ </div>
+</div>
+<!--END TABS-->
+
+
+<h2 id="Usage">Usage</h2>
+
+<h3 class="m-t">When and how to use it</h3>
+<p>Use a form when visitor input is required to complete an action. </p>
+<p>Forms direct visitors to provide and submit relevant information. Use them to let visitors change their personal
+ settings or submit an application.</p>
+<p>Forms work well when you:</p>
+<ul>
+ <li>Use clear feedback alerts to inform visitors of their progress.</li>
+ <li>Auto-save form progress so data is not lost.</li>
+ <li>Group related sections into logical sets (like name, address, phone number).</li>
+ <li>State the action the buttons perform when selected.</li>
+</ul>
+
+
+
+<p>Start mobile first, single column when designing a form. Where practical, combine related fields using two columns.
+ Form elements should stack one on top of the other.</p>
+<p>Keep in mind the mobile and screen magnification experience. </p>
+
+
+<h3>How not to use it</h3>
+
+<p>Do not use a form if it is not needed.</p>
+<p>Do not use confusing error messages or place them away from the problem. As close to the field in error as possible,
+ explain why the visitor cannot progress in the form with a clear, concise error message.</p>
+
+
+<h2 id="Accessibility">Accessibility</h2>
+{% include "../../src/_includes/modules/accessibility.html" %}

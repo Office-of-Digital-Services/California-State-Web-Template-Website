@@ -1,0 +1,78 @@
+/* -----------------------------------------
+   BLOCKQUOTE
+   /source/scss/cagov/blockquote.scss
+----------------------------------------- */
+
+blockquote {
+ // @include font-size(1.125);
+ font-size: $font-size-regular;
+ @include media-breakpoint-up(sm) {
+  font-size: calc(#{$font-size-regular} + #{$ratio});
+ }
+ padding: 11px 22px;
+ margin: 0 0 22px;
+ border-left: 4px solid #d6d6d6;
+
+ &::before {
+  content: "\ea29";
+  font-family: "CaGov";
+  font-size: 3rem;
+  line-height: 2rem;
+ }
+
+ footer {
+  display: block;
+  font-size: 80%; // back to default font-size
+  color: $blockquote-small-color;
+  font-weight: $font-weight-7;
+  margin-top: 1rem;
+
+  &::before {
+   content: "\2014 \00A0"; // em dash, nbsp
+  }
+ }
+
+ // No quotation mark
+ &.no-quotation-mark {
+  &::before {
+   display: none;
+  }
+ }
+
+ // Pull quote, prominent
+ &.pull-quote,
+ &.prominent {
+  text-align: center;
+  p {
+   text-align: left;
+  }
+  footer {
+   text-align: left;
+  }
+  border-left: none;
+ }
+
+ &.prominent {
+  border-radius: 1rem;
+  padding: 2rem;
+ }
+
+ // blockquote reverse
+ &.blockquote-reverse {
+  padding-right: 15px;
+  padding-left: 0;
+  border-right: 5px solid $blockquote-border-color;
+  border-left: 0;
+  text-align: right;
+  footer,
+  small,
+  .small {
+   &:before {
+    content: "";
+   }
+   &:after {
+    content: "\00A0 \2014"; // nbsp, em dash
+   }
+  }
+ }
+}

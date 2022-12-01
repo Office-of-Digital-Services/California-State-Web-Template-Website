@@ -1,0 +1,63 @@
+---
+title: Active Navigation Item
+landing: Structure
+layout: page.njk
+permalink: "structure/navigation-active.html"
+---
+
+<div class="row">
+ <div class="col-md-3">
+  <!-- Side navigation -->
+  <nav aria-labelledby="navigation-list" class="side-navigation sticky-6">
+   <ul class="list-navigation">
+    <li><a href="/structure/site-navigation.html" id="navigation-list">Navigation samples</a>
+     <ul>
+      <li><a href="/structure/navigation-active.html" class="active">Active Navigation Item</a></li>
+      <li><a href="/structure/navigation-dropdown.html">Dropdown Navigation</a></li>
+      <li><a href="/structure/navigation-megamenu-flex.html">Flex Megamenu Navigation</a></li>
+      <li><a href="/structure/navigation-full-width-utility.html">Full Width Navigation with Active Search</a></li>
+      <li><a href="/structure/navigation-icons.html">Navigation with icons</a></li>
+      <li><a href="/structure/page-navigation.html">Page navigation</a></li>
+      <li><a href="/structure/navigation-sidebar.html">Side navigation</a></li>
+      <li><a href="/structure/navigation-single.html">Single Level Navigation</a></li>
+     </ul>
+    </li>
+   </ul>
+  </nav>
+ </div>
+ <div class="col-md-9 m-b-lg">
+
+
+  <h1 class="mt-lg-0">Active Navigation Item</h1>
+  <p>The active navigation item is a highlighted first level link in the main navigation that represents either
+   the current page, or a parent of the current page.
+  <p>
+  <p>By default, the active item is automatically determined by the location of a file in the folder structure of
+   the site. For example, if a page has the url <code>http://example.com/sample/page.html</code>, then the
+   navigation item linking to <code>http://example.com/sample/</code>, which is the main page of the sub-folder
+   (and the parent page), will be highlighted.</p>
+  <p>This default behavior can be disabled by removing the class <code>auto-highlight</code> from the main
+   navigation element
+   <code>&lt;nav id="navigation" class="main-navigation ... <strong>auto-highlight</strong>" &gt;</code>
+  </p>
+
+  <h2>Setting the Active Navigation Item Manually</h2>
+  <p>The active link in the main navigation can be set manually on a page by page basis by adding a bit of
+   javascript that overrides the <code>defaultActiveLink</code> variable.</p>
+  <p>Add the following snippet of javascript to the <code>head</code> of the page. When this variable is present,
+   it will override the automatic setting described above.</p>
+
+
+
+  <h3 class="h5"><strong>Example:</strong></h3>
+
+  <pre>
+&lt;script type="text/javascript"&gt;
+var defaultActiveLink = "Examples";
+&lt;/script&gt;
+</pre>
+  <p><span class="text-highlight-primary">NOTE:</span> This example finds the link with the text "Services" and set it
+   as the active item (as seen on this page). </p>
+
+ </div>
+</div>
