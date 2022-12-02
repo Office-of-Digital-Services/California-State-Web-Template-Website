@@ -26,13 +26,13 @@ permalink: "components/alert.html"
 <!--TABS-->
 <div class="tab-group responsive">
  <ul id="tabs1" class="nav nav-tabs" role="tablist">
-  <li class="nav-item">
+  <li class="nav-item" role="presentation">
    <a id="tab-example1" href="#pane-example1" class="nav-link active" data-bs-toggle="tab" role="tab">Example</a>
   </li>
-  <li class="nav-item">
+  <li class="nav-item" role="presentation">
    <a id="tab-html1" href="#pane-html1" class="nav-link" data-bs-toggle="tab" role="tab">Source code</a>
   </li>
-  <li class="nav-item">
+  <li class="nav-item" role="presentation">
    <a id="tab-njk1" href="#pane-njk1" class="nav-link" data-bs-toggle="tab" role="tab">Nunjucks include</a>
   </li>
  </ul>
@@ -52,59 +52,59 @@ permalink: "components/alert.html"
 
 
      <h3>Info</h3>
-     <div class="alert alert-info alert-dismissible alert-banner" role="alert">
+     <div class="alert alert-dismissible alert-banner" role="alert">
       <div class="container">
+       <span class="alert-icon ca-gov-icon-info text-primary" aria-hidden="true"></span>
+       <span class="alert-text"><span class="text-bold">New!</span> A new version of the State Web Template has
+        launched. <span class="ca-gov-icon-pipe" aria-hidden="true"></span>
+        <a href="#">Upgrade now</a></span>
        <button type="button" class="close ms-lg-auto" data-bs-dismiss="alert" aria-label="Close"><span
          class="ca-gov-icon-close-mark" aria-hidden="true"></span></button>
-       <span class="alert-text">We’ve made some changes that might impact your experience.</span>
-       <a href="" class="btn btn-default btn-xs">Learn more <span class="sr-only">about the changes</span></a>
       </div>
      </div>
-
 
 
      <h3>Warning</h3>
-     <div class="alert alert-warning alert-dismissible alert-banner" role="alert">
+     <div class="alert alert-dismissible alert-banner" role="alert">
       <div class="container">
+       <span class="alert-icon ca-gov-icon-warning-triangle text-warning" aria-hidden="true"></span>
+       <span class="alert-text"><span class="text-bold">Warning:</span> Our website may be impacted during upgrade.
+        <span class="ca-gov-icon-pipe" aria-hidden="true"></span>
+
+        <a href="#">Learn more <span class="sr-only">about the impact</span></a></span>
        <button type="button" class="close ms-lg-auto" data-bs-dismiss="alert" aria-label="Close"><span
          class="ca-gov-icon-close-mark" aria-hidden="true"></span></button>
-       <span class="alert-text"><strong>Your browser is outdated.</strong> Your experience may be degraded.</span>
-       <a href="" class="btn btn-default btn-xs">More information</a>
       </div>
      </div>
+
+
 
 
      <h3>Danger</h3>
-     <div class="alert alert-danger alert-dismissible alert-banner" role="alert">
+     <div class="alert alert-dismissible alert-banner" role="alert">
       <div class="container">
+       <span class="alert-icon ca-gov-icon-warning-diamond text-danger" aria-hidden="true"></span>
+       <span class="alert-text"><span class="text-bold">Alert:</span> Our systems are currently down. <span
+         class="ca-gov-icon-pipe" aria-hidden="true"></span>
+        <a href="#">Learn more <span class="sr-only">about the incident</span></a></span>
        <button type="button" class="close ms-lg-auto" data-bs-dismiss="alert" aria-label="Close"><span
          class="ca-gov-icon-close-mark" aria-hidden="true"></span></button>
-       <span class="alert-text">Your browser is currently not supported.</span>
-       <a href="" class="btn btn-default btn-xs">Learn more <span class="sr-only">about the problem</span></a>
       </div>
      </div>
 
 
-     <h3>Success</h3>
-     <div class="alert alert-success alert-dismissible alert-banner" role="alert">
+     <h3>Resolution</h3>
+     <div class="alert alert-dismissible alert-banner" role="alert">
       <div class="container">
+       <span class="alert-icon ca-gov-icon-check-fill text-success" aria-hidden="true"></span>
+       <span class="alert-text"><span class="text-bold">Fixed.</span> Our systems are back up again. <span
+         class="ca-gov-icon-pipe" aria-hidden="true"></span>
+        <a href="#">Learn more <span class="sr-only">about the resolution</span></a></span>
        <button type="button" class="close ms-lg-auto" data-bs-dismiss="alert" aria-label="Close"><span
          class="ca-gov-icon-close-mark" aria-hidden="true"></span></button>
-       <span class="alert-text"><strong>Well done!</strong> Your form has been submitted successfully.</span>
       </div>
      </div>
 
-
-     <h3>Severe</h3>
-     <div class="alert alert-severe alert-dismissible alert-banner" role="alert">
-      <div class="container">
-       <button type="button" class="close ms-lg-auto" data-bs-dismiss="alert" aria-label="Close"><span
-         class="ca-gov-icon-close-mark" aria-hidden="true"></span></button>
-       <span class="alert-level"><span class="ca-gov-icon-important" aria-hidden="true"></span>SEVERE
-        ALERT!</span><span class="alert-text"> Flash flood in Sacramento until 12:15 PM.</span> <a href=""
-        class="btn btn-default btn-xs">Severe Alert</a>
-      </div>
-     </div>
 
 
 
@@ -124,8 +124,66 @@ permalink: "components/alert.html"
    </div>
    <div id="collapse-html1" class="collapse" role="tabpanel" aria-labelledby="heading-html1">
     <div class="card-body">
-     <pre style="max-height: 300px;"><code>{% include "../../src/_includes/modules/alert-banner.html" %}</code>
-    </pre>
+
+     <h3>Info</h3>
+     <pre><code><div class="alert alert-dismissible alert-banner" role="alert">
+  <div class="container">
+   <span class="alert-icon ca-gov-icon-info text-primary" aria-hidden="true"></span>
+   <span class="alert-text"><span class="text-bold">New!</span> A new version of the State Web Template has
+    launched. <span class="ca-gov-icon-pipe" aria-hidden="true"></span>
+    <a href="#">Upgrade now</a></span>
+   <button type="button" class="close ms-lg-auto" data-bs-dismiss="alert" aria-label="Close"><span
+     class="ca-gov-icon-close-mark" aria-hidden="true"></span></button>
+  </div>
+ </div>
+     </code></pre>
+
+
+
+     <h3>Warning</h3>
+     <pre><code><div class="alert alert-dismissible alert-banner" role="alert">
+<div class="container">
+ <span class="alert-icon ca-gov-icon-warning-triangle text-warning" aria-hidden="true"></span>
+ <span class="alert-text"><span class="text-bold">Warning:</span> Our website may be impacted during upgrade.
+  <span class="ca-gov-icon-pipe" aria-hidden="true"></span>
+  <a href="#">Learn more <span class="sr-only">about the impact</span></a></span>
+ <button type="button" class="close ms-lg-auto" data-bs-dismiss="alert" aria-label="Close"><span
+   class="ca-gov-icon-close-mark" aria-hidden="true"></span></button>
+</div>
+</div></code></pre>
+
+
+
+
+
+     <h3>Danger</h3>
+     <pre><code><div class="alert alert-dismissible alert-banner" role="alert">
+  <div class="container">
+   <span class="alert-icon ca-gov-icon-warning-diamond text-danger" aria-hidden="true"></span>
+   <span class="alert-text"><span class="text-bold">Alert:</span> Our systems are currently down. <span
+     class="ca-gov-icon-pipe" aria-hidden="true"></span>
+    <a href="#">Learn more <span class="sr-only">about the incident</span></a></span>
+   <button type="button" class="close ms-lg-auto" data-bs-dismiss="alert" aria-label="Close"><span
+     class="ca-gov-icon-close-mark" aria-hidden="true"></span></button>
+  </div>
+ </div>
+     </code></pre>
+
+
+
+     <h3>Resolution</h3>
+     <pre><code><div class="alert alert-dismissible alert-banner" role="alert">
+  <div class="container">
+   <span class="alert-icon ca-gov-icon-check-fill text-success" aria-hidden="true"></span>
+   <span class="alert-text"><span class="text-bold">Fixed.</span> Our systems are back up again. <span
+     class="ca-gov-icon-pipe" aria-hidden="true"></span>
+    <a href="#">Learn more <span class="sr-only">about the resolution</span></a></span>
+   <button type="button" class="close ms-lg-auto" data-bs-dismiss="alert" aria-label="Close"><span
+     class="ca-gov-icon-close-mark" aria-hidden="true"></span></button>
+  </div>
+ </div>
+     </code></pre>
+
 
     </div>
    </div>

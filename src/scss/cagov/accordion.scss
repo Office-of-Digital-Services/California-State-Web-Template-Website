@@ -50,26 +50,26 @@ cagov-accordion details {
 
   .cagov-open-indicator {
    position: absolute;
-   left: 0.85rem;
-   top: 1.15rem;
-   border-right: 2px solid black;
-   border-top: 2px solid black;
-   border-radius: 2px;
-   width: 10px;
-   height: 10px;
-   transform: rotate(45deg);
+   left: 0.5rem;
+   top: 0.4rem;
+   width: 0;
+   height: 0;
    transition-property: transform;
-   transition: top 0.2s, left 0.2s, transform 0.2s;
+   transition: transform 0.2s;
+   &::before {
+    font-family: "CaGov";
+    content: "5";
+    position: absolute;
+    font-size: 1.6rem;
+    transition-property: transform, left;
+    transition: transform 0.2s, 0.2s;
+   }
   }
 
   &:hover {
    color: black;
    &:before {
     background-color: $gray-100;
-   }
-   .cagov-open-indicator {
-    border-right: 3px solid black;
-    border-top: 3px solid black;
    }
   }
  }
@@ -114,11 +114,11 @@ cagov-accordion:defined {
  details[open] {
   height: auto;
   .cagov-open-indicator {
-   border-right: 3px solid black;
-   border-top: 3px solid black;
-   transform: rotate(135deg);
-   top: 1rem;
-   left: 1rem;
+
+    &::before {
+     transform: rotate(90deg) translateY(-0.2rem); 
+
+    }
   }
 
   summary {
