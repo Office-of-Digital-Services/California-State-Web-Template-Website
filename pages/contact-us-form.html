@@ -13,20 +13,22 @@ permalink: "contact-us-form.html"
 
 <form autocomplete="on" method="POST" id="ContactUsForm">
   <label class="form-control-label" for="InputName"
-    ><span class="required-label">*</span> Your name</label
+    ><span class="required-label" aria-hidden="true">*</span> Your name</label
   >
   <input
+    autofocus
     type="text"
     class="form-control"
     id="InputName"
     name="Name"
     autocomplete="name"
     required
+    aria-required="true"
   />
   <div class="invalid-feedback d-block">This field is required</div>
   <br />
   <label class="form-control-label" for="InputEmail"
-    ><span class="required-label">*</span> Email</label
+    ><span class="required-label" aria-hidden="true">*</span> Email</label
   >
   <input
     type="email"
@@ -35,11 +37,13 @@ permalink: "contact-us-form.html"
     name="Email"
     autocomplete="email"
     required
+    aria-required="true"
   />
   <div class="invalid-feedback d-block">This field is required</div>
   <br />
   <label class="form-control-label" for="InputDepartment"
-    ><span class="required-label">*</span> Department or agency</label
+    ><span class="required-label" aria-hidden="true">*</span> Department or
+    agency</label
   >
   <input
     type="text"
@@ -48,11 +52,12 @@ permalink: "contact-us-form.html"
     name="Department"
     autocomplete="organization"
     required
+    aria-required="true"
   />
   <div class="invalid-feedback d-block">This field is required</div>
   <br />
   <label class="form-control-label" for="InputRole"
-    ><span class="required-label">*</span> Main role</label
+    ><span class="required-label" aria-hidden="true">*</span> Main role</label
   >
   <input
     type="text"
@@ -62,6 +67,8 @@ permalink: "contact-us-form.html"
     autocomplete="organization-title"
     list="roleSuggestions"
     required
+    aria-required="true"
+    aria-autocomplete="both"
   />
   <div class="invalid-feedback d-block">This field is required</div>
   <datalist id="roleSuggestions">
@@ -76,7 +83,8 @@ permalink: "contact-us-form.html"
 
   <br />
   <label class="form-control-label" for="InputComments"
-    ><span class="required-label">*</span> How can we help?</label
+    ><span class="required-label" aria-hidden="true">*</span> How can we
+    help?</label
   >
   <textarea
     id="InputComments"
@@ -84,6 +92,7 @@ permalink: "contact-us-form.html"
     rows="5"
     cols="80"
     name="Comments"
+    aria-required="true"
     required
   ></textarea>
   <div class="invalid-feedback d-block">This field is required</div>
@@ -99,6 +108,17 @@ permalink: "contact-us-form.html"
   leverage our digital community.
 </p>
 <br />
+
+<style type="text/css">
+  input:invalid + .invalid-feedback,
+  textarea:invalid + .invalid-feedback {
+    display: initial;
+  }
+  input:required:valid + .invalid-feedback,
+  textarea:required:valid + .invalid-feedback {
+    display: none !important;
+  }
+</style>
 
 <div class="modal fade" id="modalResponse" role="dialog" tabindex="-1">
   <div class="modal-dialog modal-lg">
