@@ -4,85 +4,101 @@ layout: page.njk
 permalink: "contact-us-form.html"
 ---
 
-<h1 class="mt-lg-0">Contact us form</h1>
+<h1 class="mt-lg-0">Contact us</h1>
+<p>
+  Have a question? Contact us for help with general inquiries, feedback, or
+  bugs.
+</p>
+<br />
 
 <form autocomplete="on" method="POST" id="ContactUsForm">
-  <fieldset>
-    <legend>What would you like to say?</legend>
-    <label class="form-control-label" for="InputName"
-      ><span class="required-label">*</span> Full Name</label
-    >
-    <input
-      type="text"
-      class="form-control"
-      id="InputName"
-      name="Name"
-      autocomplete="name"
-      required
-    />
-    <div class="invalid-feedback d-block">This field is required</div>
-    <br />
-    <label class="form-control-label" for="InputEmail">Email Address</label>
-    <input
-      type="email"
-      class="form-control"
-      id="InputEmail"
-      name="Email"
-      autocomplete="email"
-    />
-    <br />
-    <label class="form-control-label" for="InputRole">Your Role</label>
-    <input
-      type="text"
-      class="form-control"
-      id="InputRole"
-      name="Role"
-      autocomplete="organization-title"
-      list="roleSuggestions"
-    />
-    <datalist id="roleSuggestions">
-      <option>Analytics</option>
-      <option>Content</option>
-      <option>Design</option>
-      <option>Development</option>
-      <option>Product</option>
-      <option>Program</option>
-      <option>Research</option>
-    </datalist>
+  <label class="form-control-label" for="InputName"
+    ><span class="required-label">*</span> Your name</label
+  >
+  <input
+    type="text"
+    class="form-control"
+    id="InputName"
+    name="Name"
+    autocomplete="name"
+    required
+  />
+  <div class="invalid-feedback d-block">This field is required</div>
+  <br />
+  <label class="form-control-label" for="InputEmail"
+    ><span class="required-label">*</span> Email</label
+  >
+  <input
+    type="email"
+    class="form-control"
+    id="InputEmail"
+    name="Email"
+    autocomplete="email"
+    required
+  />
+  <div class="invalid-feedback d-block">This field is required</div>
+  <br />
+  <label class="form-control-label" for="InputDepartment"
+    ><span class="required-label">*</span> Department or agency</label
+  >
+  <input
+    type="text"
+    class="form-control"
+    id="InputDepartment"
+    name="Department"
+    autocomplete="organization"
+    required
+  />
+  <div class="invalid-feedback d-block">This field is required</div>
+  <br />
+  <label class="form-control-label" for="InputRole"
+    ><span class="required-label">*</span> Main role</label
+  >
+  <input
+    type="text"
+    class="form-control"
+    id="InputRole"
+    name="Role"
+    autocomplete="organization-title"
+    list="roleSuggestions"
+    required
+  />
+  <div class="invalid-feedback d-block">This field is required</div>
+  <datalist id="roleSuggestions">
+    <option>Analytics</option>
+    <option>Content</option>
+    <option>Design</option>
+    <option>Development</option>
+    <option>Product</option>
+    <option>Program</option>
+    <option>Research</option>
+  </datalist>
 
-    <br />
-    <label class="form-control-label" for="InputDepartment"
-      >Your Department</label
-    >
-    <input
-      type="text"
-      class="form-control"
-      id="InputDepartment"
-      name="Department"
-      autocomplete="organization"
-    />
-    <br />
-    <label class="form-control-label" for="InputComments"
-      ><span class="required-label">*</span> Your Comment</label
-    >
-    <textarea
-      id="InputComments"
-      class="form-control"
-      rows="5"
-      cols="80"
-      name="Comments"
-      required
-    ></textarea>
-    <div class="invalid-feedback d-block">This field is required</div>
-
-    <input type="hidden" name="Form Source" value="contact-us.html" />
-    <input
-      type="submit"
-      value="Submit Contact Form"
-      class="btn btn-outline-primary"
-    />
-  </fieldset>
+  <br />
+  <label class="form-control-label" for="InputComments"
+    ><span class="required-label">*</span> How can we help?</label
+  >
+  <textarea
+    id="InputComments"
+    class="form-control"
+    rows="5"
+    cols="80"
+    name="Comments"
+    required
+  ></textarea>
+  <div class="invalid-feedback d-block">This field is required</div>
+  <br />
+  <input type="hidden" name="Form Source" value="contact-us.html" />
+  <input type="submit" value="Submit" class="btn btn-outline-primary" />
 </form>
+
+<h2>Get support from developers</h2>
+<p>
+  Post questions on
+  <a href="https://github.com/Office-of-Digital-Services/">GitHub</a> and
+  leverage our digital community.
+</p>
+<br />
 
 <div class="modal fade" id="modalResponse" role="dialog" tabindex="-1">
   <div class="modal-dialog modal-lg">
