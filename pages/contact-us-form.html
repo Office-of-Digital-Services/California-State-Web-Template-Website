@@ -12,6 +12,10 @@ permalink: "contact-us-form.html"
 <br />
 
 <form autocomplete="on" method="POST" id="ContactUsForm">
+  <div class="alert alert-danger alert-banner" role="alert">
+    <div class="container">Correct the errors to continue</div>
+  </div>
+
   <label class="form-control-label" for="InputName"
     ><span class="required-label" aria-hidden="true">*</span> Your name</label
   >
@@ -39,7 +43,7 @@ permalink: "contact-us-form.html"
     required
     aria-required="true"
   />
-  <div class="invalid-feedback d-block">This field is required</div>
+  <div class="invalid-feedback d-block">A valid email is required</div>
   <br />
   <label class="form-control-label" for="InputDepartment"
     ><span class="required-label" aria-hidden="true">*</span> Department or
@@ -110,12 +114,17 @@ permalink: "contact-us-form.html"
 <br />
 
 <style type="text/css">
-  input:invalid + .invalid-feedback,
-  textarea:invalid + .invalid-feedback {
-    display: initial;
+  form[submit_attempted] input:invalid,
+  form[submit_attempted] textarea:invalid {
+    border-bottom: 4px solid red;
   }
-  input:required:valid + .invalid-feedback,
-  textarea:required:valid + .invalid-feedback {
+
+  form:not(form[submit_attempted]) input + .invalid-feedback,
+  form:not(form[submit_attempted]) textarea + .invalid-feedback,
+  form:not(form[submit_attempted]) .alert,
+  input:valid + .invalid-feedback,
+  textarea:valid + .invalid-feedback,
+  form:valid .alert {
     display: none !important;
   }
 </style>
@@ -171,6 +180,11 @@ permalink: "contact-us-form.html"
     if (sampleForm) {
       sampleForm.action = "";
       sampleForm.addEventListener("submit", submitForm);
+      sampleForm
+        .querySelector("input[type=submit]")
+        .addEventListener("click", () =>
+          sampleForm.setAttribute("submit_attempted", "")
+        );
     } else {
       console.error("No form on page.");
     }
@@ -180,14 +194,14 @@ permalink: "contact-us-form.html"
   async function submitForm(/** @type { SubmitEvent } */ e) {
     e.preventDefault();
 
-    document
+    const form = /** @type { HTMLFormElement } */ (e.target);
+
+    form
       .querySelectorAll("form input[type=submit]")
       .forEach((/** @type { HTMLButtonElement } */ btnSubmit) => {
         btnSubmit.disabled = true;
         setTimeout(() => (btnSubmit.disabled = false), 5000);
       });
-
-    const form = /** @type { HTMLFormElement } */ (e.target);
 
     const jsonFormData = {};
     for (const pair of new FormData(form)) {
