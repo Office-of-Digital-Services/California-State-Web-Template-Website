@@ -11,99 +11,92 @@ permalink: "contact-us-form.html"
 </p>
 <br />
 
-<form autocomplete="on" method="POST" id="ContactUsForm">
-  <div class="alert alert-danger alert-banner" role="alert">
-    <div class="container">Correct the errors to continue</div>
-  </div>
-
-  <label class="form-control-label" for="InputName"
-    ><span class="required-label" aria-hidden="true">*</span> Your name</label
-  >
-  <input
-    autofocus
-    type="text"
-    class="form-control"
-    id="InputName"
-    name="Name"
-    autocomplete="name"
-    required
-    aria-required="true"
-  />
-  <div class="invalid-feedback d-block">This field is required</div>
-  <br />
-  <label class="form-control-label" for="InputEmail"
-    ><span class="required-label" aria-hidden="true">*</span> Email</label
-  >
-  <input
-    type="email"
-    class="form-control"
-    id="InputEmail"
-    name="Email"
-    autocomplete="email"
-    required
-    aria-required="true"
-  />
-  <div class="invalid-feedback d-block">A valid email is required</div>
-  <br />
-  <label class="form-control-label" for="InputDepartment"
-    ><span class="required-label" aria-hidden="true">*</span> Department or
-    agency</label
-  >
-  <input
-    type="text"
-    class="form-control"
-    id="InputDepartment"
-    name="Department"
-    autocomplete="organization"
-    required
-    aria-required="true"
-  />
-  <div class="invalid-feedback d-block">This field is required</div>
-  <br />
-  <label class="form-control-label" for="InputRole"
-    ><span class="required-label" aria-hidden="true">*</span> Main role</label
-  >
-  <input
-    type="text"
-    class="form-control"
-    id="InputRole"
-    name="Role"
-    autocomplete="organization-title"
-    list="roleSuggestions"
-    required
-    aria-required="true"
-    aria-autocomplete="both"
-  />
-  <div class="invalid-feedback d-block">This field is required</div>
-  <datalist id="roleSuggestions">
-    <option>Analytics</option>
-    <option>Content</option>
-    <option>Design</option>
-    <option>Development</option>
-    <option>Product</option>
-    <option>Program</option>
-    <option>Research</option>
-  </datalist>
-
-  <br />
-  <label class="form-control-label" for="InputComments"
-    ><span class="required-label" aria-hidden="true">*</span> How can we
-    help?</label
-  >
-  <textarea
-    id="InputComments"
-    class="form-control"
-    rows="5"
-    cols="80"
-    name="Comments"
-    aria-required="true"
-    required
-  ></textarea>
-  <div class="invalid-feedback d-block">This field is required</div>
-  <br />
-  <input type="hidden" name="Form Source" value="contact-us.html" />
-  <input type="submit" value="Submit" class="btn btn-outline-primary" />
-</form>
+<div class="col-md-10 container">
+  <form autocomplete="on" method="POST" id="ContactUsForm">
+    <div class="alert alert-danger alert-banner" role="alert">
+      <div class="container">Correct the errors to continue</div>
+    </div>
+    <label class="form-control-label" for="InputName"
+      ><span class="required-label" aria-hidden="true">*</span> Your name</label
+    >
+    <input
+      autofocus
+      type="text"
+      class="form-control"
+      id="InputName"
+      name="Name"
+      autocomplete="name"
+      required
+      aria-required="true"
+    />
+    <div class="invalid-feedback d-block">This field is required</div>
+    <br />
+    <label class="form-control-label" for="InputEmail"
+      ><span class="required-label" aria-hidden="true">*</span> Email</label
+    >
+    <input
+      type="email"
+      class="form-control"
+      id="InputEmail"
+      name="Email"
+      autocomplete="email"
+      required
+      aria-required="true"
+    />
+    <div class="invalid-feedback d-block">A valid email is required</div>
+    <br />
+    <label class="form-control-label" for="InputDepartment"
+      >Department or agency</label
+    >
+    <input
+      type="text"
+      class="form-control"
+      id="InputDepartment"
+      name="Department"
+      autocomplete="organization"
+      aria-required="false"
+    />
+    <br />
+    <label class="form-control-label" for="InputRole">Main role</label>
+    <input
+      type="text"
+      class="form-control"
+      id="InputRole"
+      name="Role"
+      autocomplete="organization-title"
+      list="roleSuggestions"
+      aria-required="false"
+      aria-autocomplete="both"
+    />
+    <datalist id="roleSuggestions">
+      <option>Analytics</option>
+      <option>Content</option>
+      <option>Design</option>
+      <option>Development</option>
+      <option>Product</option>
+      <option>Program</option>
+      <option>Research</option>
+    </datalist>
+    <br />
+    <label class="form-control-label" for="InputComments"
+      ><span class="required-label" aria-hidden="true">*</span> How can we
+      help?</label
+    >
+    <textarea
+      id="InputComments"
+      class="form-control"
+      rows="5"
+      cols="80"
+      name="Comments"
+      aria-required="true"
+      required
+    ></textarea>
+    <div class="invalid-feedback d-block">This field is required</div>
+    <br />
+    <input type="hidden" name="Form Source" value="contact-us.html" />
+    <input type="submit" value="Submit" class="btn btn-outline-primary" />
+  </form>
+</div>
 
 <h2>Get support from developers</h2>
 <p>
