@@ -28,6 +28,7 @@ permalink: "contact-us-form.html"
       autocomplete="name"
       required
       aria-required="true"
+      size="35"
     />
     <div class="invalid-feedback d-block">This field is required</div>
     <br />
@@ -42,6 +43,7 @@ permalink: "contact-us-form.html"
       autocomplete="email"
       required
       aria-required="true"
+      size="35"
     />
     <div class="invalid-feedback d-block">A valid email is required</div>
     <br />
@@ -55,6 +57,7 @@ permalink: "contact-us-form.html"
       name="Department"
       autocomplete="organization"
       aria-required="false"
+      size="35"
     />
     <br />
     <label class="form-control-label" for="InputRole">Main role</label>
@@ -67,6 +70,7 @@ permalink: "contact-us-form.html"
       list="roleSuggestions"
       aria-required="false"
       aria-autocomplete="both"
+      size="35"
     />
     <datalist id="roleSuggestions">
       <option>Analytics</option>
@@ -119,6 +123,14 @@ permalink: "contact-us-form.html"
   textarea:valid + .invalid-feedback,
   form:valid .alert {
     display: none !important;
+  }
+
+  textarea {
+    width: 100%;
+  }
+  input {
+    width: inherit !important;
+    max-width: 100%;
   }
 </style>
 
