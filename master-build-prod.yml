@@ -4,7 +4,9 @@
 # https://docs.microsoft.com/azure/devops/pipelines/languages/javascript
 
 trigger:
-  - beta
+- master
+pr:
+- master
   
 pool:
   vmImage: 'ubuntu-latest'
@@ -15,11 +17,11 @@ variables:
 
 ##veracode connection Name
   veracode: 'Veracode'
-  veracodeAppProfile: 'CDT.beta.template.webtools.website'
+  veracodeAppProfile: 'CDT.StateTemplate.Website'
 
 ##sonarqube connection name and project name
-  SonarQubeConnection: 'sonar'
-  SonarQubeProjectName: 'CDT.beta.template.webtools.website'
+  SonarQubeConnection: 'SonarQube'
+  SonarQubeProjectName: 'CDT.StateTemplate.Website'
 
 name: $(major).$(minor)$(Rev:.r)
   
