@@ -98,7 +98,7 @@ permalink: "contact-us-form.html"
     <div class="invalid-feedback d-block">This field is required</div>
     <br />
     <input type="hidden" name="Form Source" value="contact-us.html" />
-    <input type="submit" value="Submit" class="btn btn-outline-primary" />
+    <input type="submit" value="Submit" class="btn btn-primary" />
   </form>
 </div>
 
@@ -113,7 +113,8 @@ permalink: "contact-us-form.html"
 <style type="text/css">
   form[submit_attempted] input:invalid,
   form[submit_attempted] textarea:invalid {
-    border-bottom: 4px solid red;
+    border-bottom: 4px solid #dc3545;
+    background-position: right top;
   }
 
   form:not(form[submit_attempted]) input + .invalid-feedback,
@@ -123,6 +124,19 @@ permalink: "contact-us-form.html"
   textarea:valid + .invalid-feedback,
   form:valid .alert {
     display: none !important;
+  }
+
+  form[submit_attempted] .alert,
+  form[submit_attempted] input:invalid,
+  form[submit_attempted] textarea:invalid {
+    background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAABmJLR0QA/wD/AP+gvaeTAAACKElEQVRIie2Wz0sUYRjHP9931lveAxdRdpf2bipdQwUT1E5Rq0R0r+jQMfBfCDoGgeFNwl9YO9C1H2N0lFgVQau7Hhvn6WDRzrozOyu7dfF7m+/78Hze52GeZwYu9I+krIG7Q2P95jGDaQpsQCgPYNghaB+zdeRWikH1oCPgr9eu93mhewq6D3gtwiPBsvO8J4Mf3uyfG7wzMjELtohxqdUF47JjM82VtvzVpAiXdLA7PP4Qs+X2oQDqlXi9MzzxIDGimbkzMjGL2XLaxTIqMuNms8rPgGujk3lZuN2i0kiwBGBQaZbnr+w4DFUuf/G/17tnK7KfC63aK1gqBP58IfDnDVtKiwX15nIsNLox8O7QWL9Md9MTnUv3aqOT+XojV/9wOqctRwaDSm14TOAk7HYGsMdJOAM8/2PEW23uRoYkABKqCLtDxiUkRyx3HCwrZgS3L7NCMhguZ81TDHwVAz/zykXqSwN3T0aUDDZis9ZZLmlzrL1ugSViuRsqjja6BjZbTwbLrQAnXeCGketZSwQXg+qBjJcdx4oXpY+bh3GrQb8//Nug3g5hj3KRKw98fvuj3jwzTlfev/uGuVt0puWRoblGaFMwQHGrugl6DPHZaxeK7FEpqK41O0zdPLWr49OSvTpH248kVQqfqutJAambq7Tlr1rYUwCeAWEGYIRYzEWunAaFNn5va6OTeU7CGYkpg0GJ099b41Biz0wbOG+18e290H/XLx5Juu14SzOoAAAAAElFTkSuQmCC);
+    background-repeat: no-repeat;
+  }
+
+  form[submit_attempted] .alert {
+    border-left: 4px solid #dc3545;
+    background-position: left center;
+    padding-left: 0.8em;
   }
 
   textarea {
