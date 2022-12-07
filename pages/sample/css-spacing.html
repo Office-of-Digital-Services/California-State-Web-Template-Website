@@ -6,54 +6,139 @@ permalink: "get-started/css-classes-shortcuts/spacing.html"
 ---
 
 <div class="row">
- <div class="col-md-3" role="complementary">
-  <!-- Side navigation -->
-  <nav aria-labelledby="color-schemes-list" class="side-navigation sticky-6">
-   <ul class="list-navigation">
-    <li><a href="/get-started/css-classes-shortcuts/" id="color-schemes-list">CSS classes shortcuts</a>
-     <ul>
-      <li><a href="/get-started/css-classes-shortcuts/utility-css-classes.html">Utility CSS classes</a></li>
-      <li><a href="/get-started/css-classes-shortcuts/gradient-backgrounds.html">Gradient backgrounds</a></li>
-      <li><a href="/get-started/css-classes-shortcuts/spacing.html" class="active">Spacing</a></li>
-      <li><a href="/get-started/css-classes-shortcuts/text-accent-colors.html">Text accent colors</a></li>
-     </ul>
-    </li>
-   </ul>
-  </nav>
- </div>
+  <div class="col-md-3" role="complementary">
+    <!-- Side navigation -->
+    <nav aria-labelledby="color-schemes-list" class="side-navigation sticky-6">
+      <ul class="list-navigation">
+        <li><a href="/get-started/css-classes-shortcuts/" id="color-schemes-list">CSS classes shortcuts</a>
+          <ul>
+            <li><a href="/get-started/css-classes-shortcuts/utility-css-classes.html">Utility CSS classes</a></li>
+            <li><a href="/get-started/css-classes-shortcuts/gradient-backgrounds.html">Gradient backgrounds</a></li>
+            <li><a href="/get-started/css-classes-shortcuts/spacing.html" class="active">Spacing</a></li>
+            <li><a href="/get-started/css-classes-shortcuts/text-accent-colors.html">Text accent colors</a></li>
+          </ul>
+        </li>
+      </ul>
+    </nav>
+  </div>
 
- <div class="col-md-9 m-b-lg">
-  <h1 class="mt-lg-0">Generic spacing classes</h1>
+  <div class="col-md-9 m-b-lg">
+    <h1 class="mt-lg-0">Spacing</h1>
 
-  <p>Assign <code>margin</code> or <code>padding</code> to an element or a subset of it’s sides
-   with shorthand classes. Includes support for individual properties, all properties, vertical
-   only and horizontal only properties.</p>
-  <h2>Naming Convention</h2>
-  <p>The naming convention used can be broken down into three parts. </p>
-  <p><strong>Part 1:</strong> can be <code>m</code> or <code>p</code> and relates to Margin or
-   Padding respectivly.</p>
-  <p><strong>Part 2:</strong> corolates to the margin or padding position. </p>
+    <!-- TEMPORARY -->
+    <!-- This section will be replaced by component -->
+    <div>
+      <strong>On this page</strong>
+      <ul>
+        <li><a href="#spacing_using">Using the spacing class</a></li>
+        <li><a href="#spacing_sample">Sample</a></li>
+      </ul>
+      <hr />
+    </div>
+    <!-- End of replacement section -->
 
-  <ul class="list-unstyled m-x-md m-b-md">
-   <li><code>a</code> = All</li>
-   <li><code>t</code> = Top</li>
-   <li><code>r</code> = Right</li>
-   <li><code>b</code> = Bottom</li>
-   <li><code>l</code> = Left</li>
-   <li><code>x</code> = x axis or Left &amp; Right</li>
-   <li><code>y</code> = y axis or Top &amp; Bottom</li>
-  </ul>
+    <div>
+      <p>
+        The spacing class uses:
+      <ul>
+        <li>Margins that create space around elements, and</li>
+        <li>Padding that creates space around an element’s content</li>
+      </ul>
+      Assign shorthand classes <code>margin</code> or <code>padding</code> to add additional spacing to webpage
+      elements.
+      </p>
+    </div>
 
-  <p><strong>Part 3:</strong> refers to how much padding or margin an element receives and is
-   based on multiples of the base font size. (Currently 16px) It can have the following
-   arguments <code>0</code> = None, <code>md</code> = x1.5, <code>lg</code> = x3</p>
-  <pre>
-&lt;ul class=&quot;list-unstyled <strong>m-x-md m-b-md</strong>&quot;&gt;
+    <h2 id="#spacing_using">Using the spacing class</h2>
+    <p>The spacing class is made of three parts:</p>
+
+    <div class="m-b-lg">
+      <table>
+        <tr class="font-size-40 text-center">
+          <th class="w-25">m</th>
+          <th>-</th>
+          <th class="w-25">a</th>
+          <th>-</th>
+          <th class="w-25">lg</th>
+        </tr>
+        <tr>
+          <td class="border border-dark border-top-0">&nbsp;</td>
+          <td></td>
+          <td class="border border-dark border-top-0"></td>
+          <td></td>
+          <td class="border border-dark border-top-0"></td>
+        </tr>
+        <tr class="text-center">
+          <td>|</td>
+          <td></td>
+          <td>|</td>
+          <td></td>
+          <td>|</td>
+        </tr>
+        <tr class="text-center">
+          <td class="w-25">type</td>
+          <td></td>
+          <td class="w-25">position</td>
+          <td></td>
+          <td class="w-25">size</td>
+        </tr>
+      </table>
+    </div>
+
+    <ol>
+      <li><strong>Type:</strong> Either <code>margin</code> (m) or <code>padding</code> (p)</li>
+      <li>
+        <strong>Position:</strong>
+        <ul class="list-unstyled m-x-md m-b-md">
+          <li><code>a</code> = All</li>
+          <li><code>t</code> = Top</li>
+          <li><code>r</code> = Right</li>
+          <li><code>b</code> = Bottom</li>
+          <li><code>l</code> = Left</li>
+          <li><code>x</code> = x axis or Left &amp; Right</li>
+          <li><code>y</code> = y axis or Top &amp; Bottom</li>
+        </ul>
+      </li>
+      <li><strong>Size:</strong> You can specify how much padding or margin an element receives. In addition to a custom
+        size, you can use these common sizes:
+        <ul>
+          <li>0: no spacing</li>
+          <li>Blank: Base size or 1rem</li>
+          <li>sm: .5rem</li>
+          <li>md: 1.5rem</li>
+          <li>lg: 3rem</li>
+        </ul>
+      </li>
+    </ol>
+
+    <h2 id="spacing_sample">Sample</h2>
+    <p>Here is a sample of a card using the spacing class with all three parts.</p>
+
+    <pre>
+&lt;card class=&quot;m-a-lg p-x-100 p-y-lg&quot;&gt;
 </pre>
-  <p>This code sample illustrates the spacing classes used in the Part 2 unordered list above.
-   <code>m-x-md</code> defines a medium margin for the left and right axis. <code>m-b-md</code>
-   is setting the bottom margin to a medium height.
-  </p>
 
- </div>
+    <p>Margin is 3 rem on all sides. Padding is 6 rem on the x-axis and 3 rem on the y-axis.</p>
+
+    <div style="background: #e9ecef; padding: 1rem 6rem 3rem 6rem; text-align: center;">
+      <span style="font-family: monospace;">Margin</span>
+      <div style="background: #f8f9fa; padding: 1rem 6rem 3rem 6rem; text-align: center;">
+        <span style="font-family: monospace;">Padding</span>
+        <div style="background: #ffffff; padding: 1rem 6rem 3rem 6rem; text-align: center;">
+          <span style="font-family: monospace;">Content</span>
+        </div>
+      </div>
+    </div>
+
+    <p>This code sample illustrates the spacing classes used in the example</p>
+    <ul>
+      <li><code>m-a-lg</code> defines a large margin for all axis</li>
+      <li><code>p-x-100</code> is setting the left and right padding to 6 rem</li>
+      <li><code>p-y-lg</code> is setting the top and bottom padding to a large height (3 rem)</li>
+    </ul>
+    <p>For more shortcuts, review <a
+        href="https://beta.template.webstandards.ca.gov/get-started/css-classes-shortcuts/utility-css-classes.html">Utility
+        CSS classes</a>.</p>
+
+  </div>
 </div>
