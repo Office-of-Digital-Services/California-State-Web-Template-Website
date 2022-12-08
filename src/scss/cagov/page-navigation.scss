@@ -7,8 +7,8 @@
  li {
   list-style: none;
   margin: 0;
-  font-size: 1.25rem;
-  padding-left: 1rem;
+  font-size: calc(1rem + #{$ratio});
+  padding-left: 0;
 
   a {
    position: relative;
@@ -17,21 +17,43 @@
    color: $gray-800;
    padding-bottom: 0.7rem;
    padding-top: 0.7rem;
+   padding-left: 1rem;
+   border-bottom: 1px solid $gray-100;
+&.landing {
+ font-weight: $font-weight-7;
+ &.active {
+  background-color: $white;
+  &:hover, &:focus {
+   background-color: $gray-50;
+  }
+ }
+ &.back {
+  padding-left: 1.5rem;
+  &::after {
+   content: "\e668";
+   position: absolute;
+   font-family: "CaGov";
+   left:0;
+   top: .65rem;
+  }
+ }
+}
    &.active {
     color: $gray-800;
     text-decoration: none;
-    font-weight: $font-weight-7;
+    background-color: $gray-75;
     &:hover,
     &:focus {
      color: $black;
      text-decoration: none;
+     background-color: $gray-100;
     }
     &:before {
      content: "";
      border-left: 3px solid;
      position: absolute;
      top: 0;
-     left: -1rem;
+     left: 0;
      width: 3px;
      height: 100%;
      border-radius: 0;
@@ -41,33 +63,27 @@
   a:hover,
   a:focus {
    text-decoration: none;
+   background-color: $gray-50;
   }
   a:focus {
    @include outline(2px);
   }
 
+// second level
   ul {
    padding-left: 0;
    li {
     margin: 0;
-    a.active {
-     color: $gray-800;
-     text-decoration: none;
-     font-weight: $font-weight-7;
-     &:hover,
-     &:focus {
-      color: $black;
+    a {
+     padding-left: 2.5rem;
+     &.active {
+      color: $gray-800;
       text-decoration: none;
-     }
-     &:before {
-      content: "";
-      border-left: 3px solid;
-      position: absolute;
-      top: 0;
-      left: -1rem;
-      width: 3px;
-      height: 100%;
-      border-radius: 0;
+      &:hover,
+      &:focus {
+       color: $black;
+       text-decoration: none;
+      }
      }
     }
    }
@@ -120,7 +136,7 @@
 }
 
 a.sidenav {
- font-size: calc($font-size-regular + $ratio);
+ font-size: calc(1rem + $ratio);
  margin: 0;
  display: block;
  padding-top: 0.7rem;
@@ -128,22 +144,28 @@ a.sidenav {
  padding-left: 1rem;
  position: relative;
  text-decoration: none !important;
+ color: $gray-700;
+ border-bottom: 1px solid $gray-100;
+ background-color: $white;
  &:hover,
  &:focus {
   text-decoration: none;
+  background-color: $gray-50;
+  color: $black;
  }
  &:focus {
   outline-offset: -2px;
  }
  &.active {
-  color: $black;
-  font-weight: $font-weight-7;
+  color: $gray-700;
   text-decoration: none;
+  background-color: $gray-75;
 
   &:hover,
   &:focus {
    text-decoration: none !important;
-   color: $gray-700;
+   color: $black;
+   background-color: $gray-100;
   }
   &:before {
    content: "";
@@ -154,6 +176,22 @@ a.sidenav {
    width: 3px;
    height: 100%;
    border-radius: 0;
+  }
+ }
+&.landing {
+ font-weight: $font-weight-7;
+}
+&.subnav {
+ padding-left: 2.5rem;
+}
+ &.back {
+  padding-left: 1.5rem;
+  &::after {
+   content: "\e668";
+   position: absolute;
+   font-family: "CaGov";
+   left:0;
+   top: .65rem;
   }
  }
 }
