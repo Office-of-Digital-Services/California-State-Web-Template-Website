@@ -4,14 +4,14 @@ layout: page.njk
 permalink: "contact-us-form.html"
 ---
 
-<h1 class="mt-lg-0">Contact us</h1>
-<p>
-  Have a question? Contact us for help with general inquiries, feedback, or
-  bugs.
-</p>
-<br />
-
 <div class="col-md-10 container">
+  <h1 class="mt-lg-0">Contact us</h1>
+  <p>
+    Have a question? Contact us for help with general inquiries, feedback, or
+    bugs.
+  </p>
+  <br />
+
   <form autocomplete="on" method="POST" id="ContactUsForm">
     <div class="alert alert-danger alert-banner" role="alert">
       <div class="container">Correct the errors to continue</div>
@@ -28,7 +28,7 @@ permalink: "contact-us-form.html"
       autocomplete="name"
       required
       aria-required="true"
-      size="35"
+      size="65"
     />
     <div class="invalid-feedback d-block">This field is required</div>
     <br />
@@ -43,7 +43,7 @@ permalink: "contact-us-form.html"
       autocomplete="email"
       required
       aria-required="true"
-      size="35"
+      size="65"
     />
     <div class="invalid-feedback d-block">A valid email is required</div>
     <br />
@@ -57,7 +57,7 @@ permalink: "contact-us-form.html"
       name="Department"
       autocomplete="organization"
       aria-required="false"
-      size="35"
+      size="65"
     />
     <br />
     <label class="form-control-label" for="InputRole">Main role</label>
@@ -70,7 +70,7 @@ permalink: "contact-us-form.html"
       list="roleSuggestions"
       aria-required="false"
       aria-autocomplete="both"
-      size="35"
+      size="65"
     />
     <datalist id="roleSuggestions">
       <option>Analytics</option>
@@ -100,25 +100,22 @@ permalink: "contact-us-form.html"
     <input type="hidden" name="Form Source" value="contact-us.html" />
     <input type="submit" value="Submit" class="btn btn-primary" />
   </form>
+
+  <h2>Get support from developers</h2>
+  <p>
+    Post questions on
+    <a href="https://github.com/Office-of-Digital-Services/">GitHub</a> and
+    leverage our digital community.
+  </p>
+  <br />
 </div>
-
-<h2>Get support from developers</h2>
-<p>
-  Post questions on
-  <a href="https://github.com/Office-of-Digital-Services/">GitHub</a> and
-  leverage our digital community.
-</p>
-<br />
-
 <style type="text/css">
-  form[submit_attempted] input:invalid,
-  form[submit_attempted] textarea:invalid {
+  form[submit_attempted] .form-control:invalid {
     border-bottom: 4px solid #dc3545;
     background-position: right top;
   }
 
-  form:not(form[submit_attempted]) input + .invalid-feedback,
-  form:not(form[submit_attempted]) textarea + .invalid-feedback,
+  form:not(form[submit_attempted]) .form-control + .invalid-feedback,
   form:not(form[submit_attempted]) .alert,
   input:valid + .invalid-feedback,
   textarea:valid + .invalid-feedback,
@@ -127,8 +124,7 @@ permalink: "contact-us-form.html"
   }
 
   form[submit_attempted] .alert,
-  form[submit_attempted] input:invalid,
-  form[submit_attempted] textarea:invalid {
+  form[submit_attempted] .form-control:invalid {
     background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAABmJLR0QA/wD/AP+gvaeTAAACKElEQVRIie2Wz0sUYRjHP9931lveAxdRdpf2bipdQwUT1E5Rq0R0r+jQMfBfCDoGgeFNwl9YO9C1H2N0lFgVQau7Hhvn6WDRzrozOyu7dfF7m+/78Hze52GeZwYu9I+krIG7Q2P95jGDaQpsQCgPYNghaB+zdeRWikH1oCPgr9eu93mhewq6D3gtwiPBsvO8J4Mf3uyfG7wzMjELtohxqdUF47JjM82VtvzVpAiXdLA7PP4Qs+X2oQDqlXi9MzzxIDGimbkzMjGL2XLaxTIqMuNms8rPgGujk3lZuN2i0kiwBGBQaZbnr+w4DFUuf/G/17tnK7KfC63aK1gqBP58IfDnDVtKiwX15nIsNLox8O7QWL9Md9MTnUv3aqOT+XojV/9wOqctRwaDSm14TOAk7HYGsMdJOAM8/2PEW23uRoYkABKqCLtDxiUkRyx3HCwrZgS3L7NCMhguZ81TDHwVAz/zykXqSwN3T0aUDDZis9ZZLmlzrL1ugSViuRsqjja6BjZbTwbLrQAnXeCGketZSwQXg+qBjJcdx4oXpY+bh3GrQb8//Nug3g5hj3KRKw98fvuj3jwzTlfev/uGuVt0puWRoblGaFMwQHGrugl6DPHZaxeK7FEpqK41O0zdPLWr49OSvTpH248kVQqfqutJAambq7Tlr1rYUwCeAWEGYIRYzEWunAaFNn5va6OTeU7CGYkpg0GJ099b41Biz0wbOG+18e290H/XLx5Juu14SzOoAAAAAElFTkSuQmCC);
     background-repeat: no-repeat;
   }
@@ -139,11 +135,8 @@ permalink: "contact-us-form.html"
     padding-left: 0.8em;
   }
 
-  textarea {
-    width: 100%;
-  }
-  input {
-    width: inherit !important;
+  .form-control {
+    width: auto;
     max-width: 100%;
   }
 </style>
