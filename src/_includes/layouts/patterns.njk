@@ -15,8 +15,7 @@
 		   {# Links with subnav #}
 
 <ul class="list-navigation">
-  <li><a href="/patterns.html" class="nav-heading" id="components-list">All patterns</a>
-  <ul>
+  <li><a href="/patterns.html" class="nav-heading landing" id="components-list">All patterns</a></li>
   				{% for item in patterns.patterns %}
       {% if 'subnav' in item %}
         <li><a href="{{ item.url }}" {{ helpers.getLinkActiveState(item.url, page.url) | safe }}>{{ item.text }}</a>
@@ -35,8 +34,6 @@
           <li><a href="{{ item.url }}" {{ helpers.getLinkActiveState(item.url, page.url) | safe }}>{{ item.text }}</a></li>
        {% endif %}
       {% endfor %}
-      </ul>
-  </li>
   </ul>
   </nav>
 

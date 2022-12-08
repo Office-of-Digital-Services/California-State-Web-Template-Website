@@ -14,8 +14,7 @@
 
 
 <ul class="list-navigation">
-  <li><a href="/components.html" class="nav-heading" id="components-list">All components</a>
-  <ul>
+  <li><a href="/components.html" class="nav-heading landing" id="components-list">All components</a></li>
   				{% for item in components.components %}
       {% if 'subnav' in item %}
         <li><a href="{{ item.url }}" {{ helpers.getLinkActiveState(item.url, page.url) | safe }}>{{ item.text }}</a>
@@ -34,8 +33,6 @@
           <li><a href="{{ item.url }}" {{ helpers.getLinkActiveState(item.url, page.url) | safe }}>{{ item.text }}</a></li>
        {% endif %}
       {% endfor %}
-      </ul>
-  </li>
  </ul>
 
 
