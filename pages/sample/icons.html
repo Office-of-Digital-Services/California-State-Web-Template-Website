@@ -115,40 +115,41 @@ permalink: "visual-design/icons.html"
     margin-top: 2.6em;
   }
 
-  #pagenumbers a {
+  .pagenumbers a {
     text-decoration: none;
     padding: 6px 14px;
   }
 
-  #pagenumbers .pagePreviousNext {
+  .pagenumbers .pagePreviousNext {
     color: #72717c;
     /* Gray-600 */
   }
 
-  #pagenumbers .pagePreviousNext span {
+  .pagenumbers .pagePreviousNext span {
     font-size: 0.86em;
   }
 
-  #pagenumbers .pageLink {
+  .pagenumbers .pageLink {
     color: #4a4958;
     /* Gray-900 */
   }
 
-  #pagenumbers .pageDots {
+  .pagenumbers .pageDots {
     color: #72717c;
   }
 
-  #pagenumbers .currentPage {
+  .pagenumbers .currentPage {
     color: #4a4958;
     box-shadow: inset 0 0 0 1px #d4d4d7;
     /* Gray-200 */
     padding: 6px 14px;
   }
 
-  #pagenumbers a:hover {
+  .pagenumbers a:hover {
     box-shadow: inset 0 0 0 3px #d4d4d7;
   }
 
+  /* 
   #pagenumbers .viewAll {
     margin-top: 1em;
   }
@@ -160,6 +161,11 @@ permalink: "visual-design/icons.html"
 
   #pagenumbers .viewAll a:hover {
     box-shadow: none;
+  }
+  */
+
+  #viewfulllist {
+    margin-top: 1em;
   }
 </style>
 
@@ -177,7 +183,7 @@ permalink: "visual-design/icons.html"
     const letterList = [...new Set(iconData.icons.map(x => x.properties.name.charAt(0)))];
     const jumpToHtml = `<li><a href="javascript:buildList(true,0)" ${!filterLetter ? 'class="gray-900 letter-selected"' : ''}>All</a></li>`
       + letterList
-        .map(l => `<li><a href="javascript:buildList(true,0,'${l}')" ${filterLetter === l ? 'class="letter-selected"' : ''}>${l.toUpperCase()}</a></li>`)
+        .map(l => `<li><a href="javascript:buildList(false,0,'${l}')" ${filterLetter === l ? 'class="letter-selected"' : ''}>${l.toUpperCase()}</a></li>`)
         .join('');
 
     var iconsByLetter;
@@ -196,7 +202,7 @@ permalink: "visual-design/icons.html"
       if (!searchInput.length || iconStrings.find(x => x.search(searchInput) > -1)) {
         if (!paginate || (numberOfResults >= (pageNumber * iconsPerPage) && numberOfResults < ((pageNumber + 1) * iconsPerPage))) {
           const firstLetter = icon.properties.name.charAt(0);
-          if (!filterLetter && !searchInput.length && letter !== firstLetter) {
+          if (!paginate && !filterLetter && !searchInput.length && letter !== firstLetter) {
             // show the blue letter heading
             letter = firstLetter;
             listHtml += `<p class="h1 icons-alpha py-3 mb-0 m-t-md color-p2 p-b-0">${letter.toUpperCase()}</p>`;
@@ -225,7 +231,7 @@ permalink: "visual-design/icons.html"
       const letterParameter = filterLetter ? ",'" + filterLetter + "'" : "";
       const lastPage = Math.ceil(numberOfResults / iconsPerPage) - 1;
 
-      // is current page >1 :  prev | page 1
+      // is current page > 1 :  prev | page 1
       if (pageNumber > 0) {
         pageNumbersHtml = '<a href="javascript:goToPage(' + (pageNumber - 1) + letterParameter + ')" class="pagePreviousNext"><span class="ca-gov-icon-arrow-prev" aria-hidden="true"></span> Previous</a> ';
         pageNumbersHtml += '<a href="javascript:goToPage(' + (0) + letterParameter + ')" class="pageLink">' + (1) + "</a> ";
@@ -263,7 +269,7 @@ permalink: "visual-design/icons.html"
       if (lastPage > pageNumber) {
         pageNumbersHtml += '<a href="javascript:goToPage(' + (pageNumber + 1) + letterParameter + ');" class="pagePreviousNext">Next <span class="ca-gov-icon-arrow-next" aria-hidden="true"></span></a>';
       }
-      pageNumbersHtml += '<div class="viewAll"><a href="javascript:buildList(false,0' + letterParameter + ')">View all</a></div>';
+      //pageNumbersHtml += '<div class="viewAll"><a href="javascript:buildList(false,0' + letterParameter + ')">View all</a></div>';
     }
 
 
@@ -276,15 +282,18 @@ permalink: "visual-design/icons.html"
       document.querySelector('#jumpToHeading ol').innerHTML = jumpToHtml;
     }
     document.querySelector('#fontlist').innerHTML = listHtml;
-    document.querySelector('#resultcount').innerHTML = numberOfResults ? `<p class="m-t-0">${numberOfResults} icons <span class="sr-only">found.</span></p>` : '<p>No icons found.</p>';
+    document.querySelector('#resultcount').innerHTML = numberOfResults ? `<span class="m-t-0">${numberOfResults} icons <span class="sr-only">found.</span></span>` : '<span>No icons found.</span>';
 
     document.querySelector('#pagenumbers').innerHTML = pageNumbersHtml;
+    document.querySelector('#pagenumberstop').innerHTML = pageNumbersHtml;
+
+    document.querySelector('#viewfulllist').innerHTML = (filterLetter || paginate) ? '<div class="viewAll"><a href="javascript:buildList(false,0);window.scrollTo(0, document.getElementById(\'searchSummary\').offsetTop - 146);">View full list</a></div>' : '';
   }
 
   // click handler for pagination
   function goToPage(pageNumber, letterParameter) {
     buildList(true, pageNumber, letterParameter);
-    window.scrollTo(0, document.getElementById('fontlist').offsetTop - 124); // subtract height of header
+    window.scrollTo(0, document.getElementById('searchSummary').offsetTop - 146); // subtract height of header
   }
 
   const myRequest = new Request('https://california.azureedge.net/fonts/icons.json');
@@ -304,7 +313,7 @@ permalink: "visual-design/icons.html"
       })
       iconData = data;
 
-      buildList(true, 0);
+      buildList(true, 0, "a");
 
       // add event listeners to form field and button
       document.querySelector("#iconSearchForm input").oninput = function () { buildList(false) };
@@ -384,8 +393,7 @@ permalink: "visual-design/icons.html"
 
 
     <h2 id="Search-icons">Search icons</h2>
-    <p>Use the search to find a specific icon. You can also browse icons or <a href="javascript:buildList(false,0)">view
-        all icons</a>.</p>
+    <p>Use the search to find a specific icon. You can also browse icons below.</p>
 
 
     <form id="iconSearchForm" class="m-y-lg" onsubmit="return false">
@@ -402,10 +410,17 @@ permalink: "visual-design/icons.html"
     </div>
 
     <div class="clearfix mhl ptl">
-      <div class="h4 m-t-md m-b-0">Showing results for "<span id="searchSummary"></span>"</div>
-      <div id="resultcount" class="fs1" aria-live="polite"></div>
+      <div class="d-md-flex flex-row justify-content-between m-t-md">
+        <div>
+          <span class="h4 m-t-0 m-b-0 p-r-sm">"<span id="searchSummary"></span>"</span>
+          <span id="resultcount" class="fs1" aria-live="polite"></span>
+        </div>
+        <div id="pagenumberstop" class="pagenumbers"></div>
+      </div>
+      
       <div id="fontlist"></div>
-      <div id="pagenumbers"></div>
+      <div id="pagenumbers" class="pagenumbers"></div>
+      <div id="viewfulllist"></div>
     </div>
 
   </div>
