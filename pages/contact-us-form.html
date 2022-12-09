@@ -101,14 +101,11 @@ permalink: "contact-us-form.html"
     <input type="submit" value="Submit" class="btn btn-primary" />
 
     <button
-      id="recapchaSubmit"
       class="g-recaptcha hidden"
       data-sitekey="6Lcf3GYjAAAAAGPae1QeEf0jJ8xjTwrwPAHOhZIJ"
-      data-callback="onSubmit"
+      data-callback="recaptchaCallback"
       data-action="submit"
-    >
-      Recapcha Submit
-    </button>
+    ></button>
   </form>
 
   <h2>Get support from developers</h2>
@@ -181,69 +178,69 @@ permalink: "contact-us-form.html"
 <button
   type="button"
   id="btnModal"
-  class="btn btn-default btn-lg m-t-lg hidden"
+  class="hidden"
   data-bs-toggle="modal"
   data-bs-target="#modalResponse"
->
-  blank
-</button>
-<a href="contact-us-thankyou.html" id="urlThankyou" class="hidden">thanks</a>
+></button>
+<a href="contact-us-thankyou.html" id="urlThankyou" class="hidden"></a>
 
 <script>
-  const url =
+  const serviceUrl =
     "https://fa-cdt-pub-migr-betaws-w-p-001-stage.azurewebsites.net/api/air-table";
-  const formId = "ContactUsForm";
-  const modalButtonId = "btnModal";
-  const urlThankyouId = "urlThankyou";
-  const btnRecapchaSubmit = "recapchaSubmit";
-
-  function getForm() {
-    return /** @type {HTMLFormElement} */ (document.getElementById(formId));
-  }
 
   {
-    const sampleForm = getForm();
-
-    if (sampleForm) {
-      sampleForm.action = "";
-      sampleForm.addEventListener("submit", submitForm);
-      sampleForm
-        .querySelector("input[type=submit]")
-        .addEventListener("click", () =>
-          sampleForm.setAttribute("submit_attempted", "")
-        );
-    } else {
-      console.error("No form on page.");
-    }
+    //This code runs first
+    getForm().addEventListener("submit", submitForm);
+    getSubmitButton().addEventListener("click", () =>
+      getForm().setAttribute("submit_attempted", "")
+    );
   }
   ({});
+
+  function getForm() {
+    return /** @type {HTMLFormElement} */ (
+      document.getElementById("ContactUsForm")
+    );
+  }
+
+  function getSubmitButton() {
+    return /** @type { HTMLButtonElement } */ (
+      getForm().querySelector("input[type=submit]")
+    );
+  }
+
+  function goToThanksPage() {
+    document.getElementById("urlThankyou").click();
+  }
+
+  function openModal() {
+    document.getElementById("btnModal").click();
+  }
+
+  function triggerRecaptcha() {
+    document.querySelector(".g-recaptcha").click(); //will trigger recaptchaCallback when complete
+  }
 
   async function submitForm(/** @type { SubmitEvent } */ e) {
     e.preventDefault();
 
-    const form = getForm();
+    getSubmitButton().disabled = true;
+    setTimeout(() => (getSubmitButton().disabled = false), 5000);
 
-    form
-      .querySelectorAll("input[type=submit]")
-      .forEach((/** @type { HTMLButtonElement } */ btnSubmit) => {
-        btnSubmit.disabled = true;
-        setTimeout(() => (btnSubmit.disabled = false), 5000);
-        document.getElementById(btnRecapchaSubmit).click();
-      });
+    triggerRecaptcha();
   }
 
-  function onSubmit(/** @type { string } */ g_recaptcha_response) {
-    const form = getForm();
-
+  function recaptchaCallback(/** @type { string } */ g_recaptcha_response) {
     const postBody = {
       captcha: { "g-recaptcha-response": g_recaptcha_response },
       fields: {},
     };
-    for (const pair of new FormData(form)) {
+
+    for (const pair of new FormData(getForm())) {
       postBody.fields[pair[0]] = pair[1];
     }
 
-    delete postBody.fields["g-recaptcha-response"]; //we already have it
+    delete postBody.fields["g-recaptcha-response"]; //we already have it from the callback
 
     /** @type { RequestInit } */
     const request = {
@@ -254,7 +251,7 @@ permalink: "contact-us-form.html"
       body: JSON.stringify(postBody),
     };
 
-    fetch(url, request)
+    fetch(serviceUrl, request)
       .then((response) => {
         if (response.ok) {
           return response.json();
@@ -268,16 +265,12 @@ permalink: "contact-us-form.html"
       .then((responseJson) => {
         console.log(responseJson);
 
-        /** @type { HTMLAnchorElement } */
-        const lnk = document.getElementById(urlThankyouId);
-        lnk.click();
+        goToThanksPage();
       })
       .catch((error) => {
         console.error(error);
 
-        /** @type { HTMLButtonElement } */
-        const modalButton = document.getElementById(modalButtonId);
-        modalButton.click();
+        openModal();
       });
   }
 </script>
