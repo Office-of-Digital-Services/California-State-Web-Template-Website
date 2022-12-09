@@ -1,9 +1,10 @@
 ﻿---
-title: Contact us form
+title: Contact us
 layout: page.njk
 permalink: "contact-us-form.html"
 ---
 
+<script src="https://www.google.com/recaptcha/api.js"></script>
 <div class="col-md-10 container">
   <h1 class="mt-lg-0">Contact us</h1>
   <p>
@@ -97,8 +98,17 @@ permalink: "contact-us-form.html"
     ></textarea>
     <div class="invalid-feedback d-block">This field is required</div>
     <br />
-    <input type="hidden" name="Form Source" value="contact-us.html" />
     <input type="submit" value="Submit" class="btn btn-primary" />
+
+    <button
+      id="recapchaSubmit"
+      class="g-recaptcha hidden"
+      data-sitekey="6Lcf3GYjAAAAAGPae1QeEf0jJ8xjTwrwPAHOhZIJ"
+      data-callback="onSubmit"
+      data-action="submit"
+    >
+      Recapcha Submit
+    </button>
   </form>
 
   <h2>Get support from developers</h2>
@@ -185,11 +195,15 @@ permalink: "contact-us-form.html"
   const formId = "ContactUsForm";
   const modalButtonId = "btnModal";
   const urlThankyouId = "urlThankyou";
+  const btnRecapchaSubmit = "recapchaSubmit";
+
+  function getForm() {
+    return /** @type {HTMLFormElement} */ (document.getElementById(formId));
+  }
 
   {
-    const sampleForm = /** @type {HTMLFormElement} */ (
-      document.getElementById(formId)
-    );
+    const sampleForm = getForm();
+
     if (sampleForm) {
       sampleForm.action = "";
       sampleForm.addEventListener("submit", submitForm);
@@ -207,19 +221,29 @@ permalink: "contact-us-form.html"
   async function submitForm(/** @type { SubmitEvent } */ e) {
     e.preventDefault();
 
-    const form = /** @type { HTMLFormElement } */ (e.target);
+    const form = getForm();
 
     form
-      .querySelectorAll("form input[type=submit]")
+      .querySelectorAll("input[type=submit]")
       .forEach((/** @type { HTMLButtonElement } */ btnSubmit) => {
         btnSubmit.disabled = true;
         setTimeout(() => (btnSubmit.disabled = false), 5000);
+        document.getElementById(btnRecapchaSubmit).click();
       });
+  }
 
-    const jsonFormData = {};
+  function onSubmit(/** @type { string } */ g_recaptcha_response) {
+    const form = getForm();
+
+    const postBody = {
+      captcha: { "g-recaptcha-response": g_recaptcha_response },
+      fields: {},
+    };
     for (const pair of new FormData(form)) {
-      jsonFormData[pair[0]] = pair[1];
+      postBody.fields[pair[0]] = pair[1];
     }
+
+    delete postBody.fields["g-recaptcha-response"]; //we already have it
 
     /** @type { RequestInit } */
     const request = {
@@ -227,7 +251,7 @@ permalink: "contact-us-form.html"
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify(jsonFormData),
+      body: JSON.stringify(postBody),
     };
 
     fetch(url, request)
