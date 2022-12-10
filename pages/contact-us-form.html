@@ -117,16 +117,10 @@ permalink: "contact-us-form.html"
   <br />
 </div>
 <style type="text/css">
-  form[submit_attempted] .form-control:invalid {
-    border-bottom: 4px solid #dc3545;
-    background-position: right top;
-  }
-
   form:not(form[submit_attempted]) .form-control + .invalid-feedback,
   form:not(form[submit_attempted]) .alert,
-  input:valid + .invalid-feedback,
-  textarea:valid + .invalid-feedback,
-  form:valid .alert {
+  form:valid .alert,
+  .form-control:valid + .invalid-feedback {
     display: none !important;
   }
 
@@ -139,8 +133,13 @@ permalink: "contact-us-form.html"
 
   form[submit_attempted] .alert {
     border-left: 4px solid #dc3545;
-    background-position: left center;
-    padding-left: 1em;
+    background-position: left 0.25em center;
+    padding-left: 1.25em;
+  }
+
+  form[submit_attempted] .form-control:invalid {
+    border-bottom: 4px solid #dc3545;
+    background-position: right 0.25em top 0.25em;
   }
 
   .form-control {
