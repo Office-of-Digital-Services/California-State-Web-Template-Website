@@ -5,6 +5,141 @@ layout: page.njk
 permalink: "get-started/css-classes-shortcuts/gradient-backgrounds.html"
 ---
 <div class="row">
+<<<<<<< HEAD
+  <div class="col-md-3" role="complementary">
+    <!-- Side navigation -->
+    <nav aria-labelledby="color-schemes-list" class="side-navigation sticky-6">
+      <ul class="list-navigation">
+        <li>
+          <a href="/get-started/css-classes-shortcuts/" id="color-schemes-list">CSS classes shortcuts</a>
+          <ul>
+            <li>
+              <a href="/get-started/css-classes-shortcuts/utility-css-classes.html">Utility CSS classes</a>
+            </li>
+            <li>
+              <a href="/get-started/css-classes-shortcuts/gradient-backgrounds.html" class="active">Gradient
+        backgrounds</a>
+              <ul>
+                <li>
+                  <a href="#Linear-gradients">Linear gradients</a>
+                </li>
+                <li>
+                  <a href="#Radial-gradients">Radial gradients</a>
+                </li>
+              </ul>
+            </li>
+            <li>
+              <a href="/get-started/css-classes-shortcuts/spacing.html">Spacing</a>
+            </li>
+            <li>
+              <a href="/get-started/css-classes-shortcuts/text-accent-colors.html">Text accent colors</a>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </nav>
+  </div>
+  <div class="col-md-9 m-b-lg">
+    <h1 class="mt-lg-0">Gradient Gackgrounds</h1>
+    <p>You can use gradient backgrounds to help with your website design. These are typically used within featured
+      content banners and cards.
+    </p>
+    <h2 id="Linear-gradients">Linear gradients</h2>
+
+    <!--TABS-->
+    <div class="tab-group responsive">
+      <ul id="tabs1" class="nav nav-tabs" role="tablist">
+        <li class="nav-item" role="presentation">
+          <a id="tab-example1" href="#pane-example1" class="nav-link active" data-bs-toggle="tab" role="tab">Example</a>
+        </li>
+        <li class="nav-item" role="presentation">
+          <a id="tab-html1" href="#pane-html1" class="nav-link" data-bs-toggle="tab" role="tab">Source code</a>
+        </li>
+      </ul>
+
+      <div id="tab-content" class="tab-content">
+        <!--Examples-->
+        <div id="pane-example1" class="card tab-pane fade show active" role="tabpanel" aria-labelledby="tab-example1">
+          <div class="card-header" id="heading-example1">
+            <a data-bs-toggle="collapse" href="#collapse-example1" data-parent="#tab-content" aria-expanded="true"
+       aria-controls="collapse-example1" data-hash="#pane-example1" title="Example tab header">
+       Example
+      </a>
+          </div>
+          <div id="collapse-example1" class="collapse show" role="tabpanel" aria-labelledby="heading-example1">
+            <div class="p-a-md">
+              {% include "../../src/_includes/modules/gradient-linear.html" %}
+            </div>
+          </div>
+        </div>
+
+        <!--HTML-->
+        <div id="pane-html1" class="card tab-pane fade" role="tabpanel" aria-labelledby="tab-html1">
+          <div class="card-header" id="heading-html1">
+            <a class="collapsed" data-bs-toggle="collapse" href="#collapse-html1" data-parent="#tab-content"
+       aria-expanded="false" aria-controls="collapse-html1" data-hash="#pane-html1" title="HTML Source code tab header">
+       Source code
+      </a>
+          </div>
+          <div id="collapse-html1" class="collapse" role="tabpanel" aria-labelledby="heading-html1">
+            <div class="card-body">
+              <pre style="max-height: 300px;"><code>{% include "../../src/_includes/modules/gradient-linear.html" %}</code>
+                     </pre>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+    <!--END TABS-->
+
+    <h2 id="Radial-gradients">Radial gradients</h2>
+    <!--TABS-->
+    <div class="tab-group responsive">
+      <ul id="tabs1" class="nav nav-tabs" role="tablist">
+        <li class="nav-item" role="presentation">
+          <a id="tab-example1" href="#pane-example1" class="nav-link active" data-bs-toggle="tab" role="tab">Example</a>
+        </li>
+        <li class="nav-item" role="presentation">
+          <a id="tab-html1" href="#pane-html1" class="nav-link" data-bs-toggle="tab" role="tab">Source code</a>
+        </li>
+      </ul>
+
+      <div id="tab-content" class="tab-content">
+        <!--Examples-->
+        <div id="pane-example1" class="card tab-pane fade show active" role="tabpanel" aria-labelledby="tab-example1">
+          <div class="card-header" id="heading-example1">
+            <a data-bs-toggle="collapse" href="#collapse-example1" data-parent="#tab-content" aria-expanded="true"
+       aria-controls="collapse-example1" data-hash="#pane-example1" title="Example tab header">
+       Example
+      </a>
+          </div>
+          <div id="collapse-example1" class="collapse show" role="tabpanel" aria-labelledby="heading-example1">
+            <div class="p-a-md">
+              {% include "../../src/_includes/modules/gradient-radial.html" %}
+            </div>
+          </div>
+        </div>
+
+        <!--HTML-->
+        <div id="pane-html1" class="card tab-pane fade" role="tabpanel" aria-labelledby="tab-html1">
+          <div class="card-header" id="heading-html1">
+            <a class="collapsed" data-bs-toggle="collapse" href="#collapse-html1" data-parent="#tab-content"
+       aria-expanded="false" aria-controls="collapse-html1" data-hash="#pane-html1" title="HTML Source code tab header">
+       Source code
+      </a>
+          </div>
+          <div id="collapse-html1" class="collapse" role="tabpanel" aria-labelledby="heading-html1">
+            <div class="card-body">
+              <pre style="max-height: 300px;"><code>{% include "../../src/_includes/modules/gradient-radial.html" %}</code>
+                     </pre>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+=======
  <div class="col-md-3" role="complementary">
   <!-- Side navigation -->
   <nav aria-labelledby="color-schemes-list" class="side-navigation sticky-6">
@@ -142,139 +277,6 @@ permalink: "get-started/css-classes-shortcuts/gradient-backgrounds.html"
    <div class="col-sm-9">
     <div class="container height-300 bg-standout-highlight-gradient"></div>
    </div>
+>>>>>>> c444c3f4876d066b3c5708b8f2c2f2ac099015c6
   </div>
-
-  <hr class="m-y-lg" />
-
-  <div class="row">
-   <div class="col-sm-3">
-    <h3 class="m-t-0">Danger-warning</h3>
-    <h4 class="h4 m-b-sm">Source code:</h4>
-    <pre><code class="overflow-auto"><div class="container height-300 bg-danger-warning-gradient"></div></code></pre>
-   </div>
-
-   <div class="col-sm-9">
-    <div class="container height-300 bg-danger-warning-gradient"></div>
-   </div>
-  </div>
-
-  <hr class="m-y-lg" />
-
-  <div class="row">
-   <div class="col-sm-3">
-    <h3 class="m-t-0">Info-success</h3>
-    <h4 class="h4 m-b-sm">Source code:</h4>
-    <pre><code class="overflow-auto"><div class="container height-300 bg-info-success-gradient"></div></code></pre>
-   </div>
-
-   <div class="col-sm-9">
-    <div class="container height-300 bg-info-success-gradient"></div>
-   </div>
-  </div>
-
-  <hr class="m-y-lg" />
-
-
-  <h2 id="Radial-gradients">Radial gradients</h2>
-
-
-  <div class="row">
-   <div class="col-sm-3">
-    <h3 class="m-t-0">Gray</h3>
-    <h4 class="h4 m-b-sm">Source code:</h4>
-    <pre><code class="overflow-auto"><div class="container height-300 bg-grey-radialgradient"></div></code></pre>
-   </div>
-
-   <div class="col-sm-9">
-    <div class="container height-300 bg-grey-radialgradient"></div>
-   </div>
-  </div>
-
-  <hr class="m-y-lg" />
-
-  <div class="row">
-   <div class="col-sm-3">
-    <h3 class="m-t-0">Gray light</h3>
-    <h4 class="h4 m-b-sm">Source code:</h4>
-    <pre><code class="overflow-auto"><div class="container height-300 bg-greylight-radialgradient"></div></code></pre>
-   </div>
-
-   <div class="col-sm-9">
-    <div class="container height-300 bg-greylight-radialgradient"></div>
-   </div>
-  </div>
-
-  <hr class="m-y-lg" />
-
-  <div class="row">
-   <div class="col-sm-3">
-    <h3 class="m-t-0">Primary</h3>
-    <h4 class="h4 m-b-sm">Source code:</h4>
-    <pre><code class="overflow-auto"><div class="container height-300 bg-primary-radialgradient"></div></code></pre>
-   </div>
-
-   <div class="col-sm-9">
-    <div class="container height-300 bg-primary-radialgradient"></div>
-   </div>
-  </div>
-
-  <hr class="m-y-lg" />
-
-  <div class="row">
-   <div class="col-sm-3">
-    <h3 class="m-t-0">Highlight</h3>
-    <h4 class="h4 m-b-sm">Source code:</h4>
-    <pre><code class="overflow-auto"><div class="container height-300 bg-highlight-radialgradient"></div></code></pre>
-   </div>
-
-   <div class="col-sm-9">
-    <div class="container height-300 bg-highlight-radialgradient"></div>
-   </div>
-  </div>
-
-  <hr class="m-y-lg" />
-
-  <div class="row">
-   <div class="col-sm-3">
-    <h3 class="m-t-0">Standout</h3>
-    <h4 class="h4 m-b-sm">Source code:</h4>
-    <pre><code class="overflow-auto"><div class="container height-300 bg-standout-radialgradient"></div></code></pre>
-   </div>
-
-   <div class="col-sm-9">
-    <div class="container height-300 bg-standout-radialgradient"></div>
-   </div>
-  </div>
-
-  <hr class="m-y-lg" />
-
-  <div class="row">
-   <div class="col-sm-3">
-    <h3 class="m-t-0">Secondary</h3>
-    <h4 class="h4 m-b-sm">Source code:</h4>
-    <pre><code class="overflow-auto"><div class="container height-300 bg-secondary-radialgradient"></div></code></pre>
-   </div>
-
-   <div class="col-sm-9">
-    <div class="container height-300 bg-secondary-radialgradient"></div>
-   </div>
-  </div>
-
-  <hr class="m-y-lg" />
-
-  <div class="row">
-   <div class="col-sm-3">
-    <h3 class="m-t-0">Secondary light</h3>
-    <h4 class="h4 m-b-sm">Source code:</h4>
-    <pre><code class="overflow-auto"><div class="container height-300 bg-secondarylight-radialgradient"></div></code></pre>
-   </div>
-
-   <div class="col-sm-9">
-    <div class="container height-300 bg-secondarylight-radialgradient"></div>
-   </div>
-  </div>
-
-  <hr class="m-y-lg" />
-
- </div>
 </div>
