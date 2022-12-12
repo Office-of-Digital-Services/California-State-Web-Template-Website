@@ -110,53 +110,168 @@ permalink: "visual-design/icons.html"
    padding-top: 1rem;
   }
  }
+
+ #pagenumbers {
+  margin-top: 2.6em;
+ }
+
+ .pagenumbers a {
+  text-decoration: none;
+  padding: 6px 14px;
+ }
+
+ .pagenumbers .pagePreviousNext {
+  color: #72717c;
+  /* Gray-600 */
+ }
+
+ .pagenumbers .pagePreviousNext span {
+  font-size: 0.86em;
+ }
+
+ .pagenumbers .pageLink {
+  color: #4a4958;
+  /* Gray-900 */
+ }
+
+ .pagenumbers .pageDots {
+  color: #72717c;
+ }
+
+ .pagenumbers .currentPage {
+  color: #4a4958;
+  box-shadow: inset 0 0 0 1px #d4d4d7;
+  /* Gray-200 */
+  padding: 6px 14px;
+ }
+
+ .pagenumbers a:hover {
+  box-shadow: inset 0 0 0 3px #d4d4d7;
+ }
+
+ /* 
+  #pagenumbers .viewAll {
+    margin-top: 1em;
+  }
+
+  #pagenumbers .viewAll a {
+    text-decoration: underline;
+    padding: 0;
+  }
+
+  #pagenumbers .viewAll a:hover {
+    box-shadow: none;
+  }
+  */
+
+ #viewfulllist {
+  margin-top: 1em;
+ }
 </style>
 
 <script type="text/javascript">
 
  var iconData = [];
 
- function buildList(filterLetter) {
+ function buildList(paginate = true, pageNumber = 0, filterLetter) {
   var listHtml = "";
   var numberOfResults = 0;
   var inputBox = document.querySelector("#iconSearchForm input");
   var searchInput = inputBox ? inputBox.value.trim().toLowerCase() : "";
+  const iconsPerPage = 60;
 
   const letterList = [...new Set(iconData.icons.map(x => x.properties.name.charAt(0)))];
-  const jumpToHtml = `<li><a href="javascript:buildList()" ${!filterLetter ? 'class="gray-900 letter-selected"' : ''}>All</a></li>`
+  const jumpToHtml = `<li><a href="javascript:buildList(true,0)" ${!filterLetter ? 'class="gray-900 letter-selected"' : ''}>All</a></li>`
    + letterList
-    .map(l => `<li><a href="javascript:buildList('${l}')" ${filterLetter === l ? 'class="letter-selected"' : ''}>${l.toUpperCase()}</a></li>`)
+    .map(l => `<li><a href="javascript:buildList(false,0,'${l}')" ${filterLetter === l ? 'class="letter-selected"' : ''}>${l.toUpperCase()}</a></li>`)
     .join('');
 
-  for (const letter of letterList
-   .filter(l => !filterLetter || l === filterLetter)) {
+  var iconsByLetter;
+  if (filterLetter) {
+   iconsByLetter = iconData.icons.filter(l => l.properties.name.charAt(0) === filterLetter);
+  } else {
+   iconsByLetter = iconData.icons;
+  }
+  var letter = "";
 
-   const iconsByLetter = iconData.icons.filter(l => l.properties.name.charAt(0) === letter);
 
+  // loop over icons
+  for (const icon of iconsByLetter) {
+   const iconStrings = [...new Set([icon.properties.name, ...icon.icon.tags])].filter(x => x.length);
 
-   if (!searchInput.length) {
-    listHtml += `<p class="h1 icons-alpha py-3 mb-0 m-t-md color-p2 p-b-0">${letter.toUpperCase()}&nbsp;<span style="font-size:1rem; font-weight:400; color:#4a4958">(${iconsByLetter.length} icons)</span></p>`;
-   }
+   if (!searchInput.length || iconStrings.find(x => x.search(searchInput) > -1)) {
+    if (!paginate || (numberOfResults >= (pageNumber * iconsPerPage) && numberOfResults < ((pageNumber + 1) * iconsPerPage))) {
+     const firstLetter = icon.properties.name.charAt(0);
+     if (!paginate && !filterLetter && !searchInput.length && letter !== firstLetter) {
+      // show the blue letter heading
+      letter = firstLetter;
+      listHtml += `<p class="h1 icons-alpha py-3 mb-0 m-t-md color-p2 p-b-0">${letter.toUpperCase()}</p>`;
+     }
 
-   for (const icon of iconsByLetter) {
-    const iconStrings = [...new Set([icon.properties.name, ...icon.icon.tags])].filter(x => x.length);
-
-    if (!searchInput.length || iconStrings.find(x => x.search(searchInput) > -1)) {
      listHtml += `
-<div class="d-flex icon-item">
-  <div class="text-3rem p-r gray-900">
-    <span class="ca-gov-icon-${icon.properties.name}" aria-hidden="true"></span>
-  </div>
-  <div class="icon-specs p-r  gray-900">
-  <p style="text-transform:capitalize" class="bold m-t m-b-0 font-size-16">${icon.properties.name.replace('-', ' ')}</p>
-    <p class="font-size-12 m-0">ca-gov-icon-${icon.properties.name}</p>
-    </div>
-</div>
-        `;
-     numberOfResults++;
+          <div class="d-flex icon-item">
+            <div class="text-3rem p-r gray-900">
+              <span class="ca-gov-icon-${icon.properties.name}" aria-hidden="true"></span>
+            </div>
+            <div class="icon-specs p-r  gray-900">
+              <p style="text-transform:capitalize" class="bold m-t m-b-0 font-size-16">${icon.properties.name.replace('-', ' ')}</p>
+              <p class="font-size-12 m-0">ca-gov-icon-${icon.properties.name}</p>
+            </div>
+          </div>
+          `;
     }
+    numberOfResults++;
    }
   }
+
+
+  // Page numbers
+  var pageNumbersHtml = "";
+  if (paginate && numberOfResults > iconsPerPage) {
+   const letterParameter = filterLetter ? ",'" + filterLetter + "'" : "";
+   const lastPage = Math.ceil(numberOfResults / iconsPerPage) - 1;
+
+   // is current page > 1 :  prev | page 1
+   if (pageNumber > 0) {
+    pageNumbersHtml = '<a href="javascript:goToPage(' + (pageNumber - 1) + letterParameter + ')" class="pagePreviousNext"><span class="ca-gov-icon-arrow-prev" aria-hidden="true"></span> Previous</a> ';
+    pageNumbersHtml += '<a href="javascript:goToPage(' + (0) + letterParameter + ')" class="pageLink">' + (1) + "</a> ";
+   }
+
+   // is current page > 3 : ...
+   if (pageNumber > 2) {
+    pageNumbersHtml += '<span class="pageDots">...</span> ';
+   }
+
+   // is current page > 2 : previous #
+   if (pageNumber > 1) {
+    pageNumbersHtml += '<a href="javascript:goToPage(' + (pageNumber - 1) + letterParameter + ')" class="pageLink">' + (pageNumber) + "</a> ";
+   }
+
+   // current page
+   pageNumbersHtml += '<span class="currentPage">' + (pageNumber + 1) + "</span> ";
+
+   // is last page > current page : next page #
+   if (lastPage > pageNumber) {
+    pageNumbersHtml += '<a href="javascript:goToPage(' + (pageNumber + 1) + letterParameter + ')" class="pageLink">' + (pageNumber + 2) + "</a> ";
+   }
+
+   // is last page - current page > 2 : ...
+   if (lastPage - pageNumber > 2) {
+    pageNumbersHtml += '<span class="pageDots">...</span> ';
+   }
+
+   // is last page - current page > 1 : last page #
+   if (lastPage - pageNumber > 1) {
+    pageNumbersHtml += '<a href="javascript:goToPage(' + (lastPage) + letterParameter + ');" class="pageLink">' + (lastPage + 1) + "</a> ";
+   }
+
+   // is last page > current page : next page
+   if (lastPage > pageNumber) {
+    pageNumbersHtml += '<a href="javascript:goToPage(' + (pageNumber + 1) + letterParameter + ');" class="pagePreviousNext">Next <span class="ca-gov-icon-arrow-next" aria-hidden="true"></span></a>';
+   }
+   //pageNumbersHtml += '<div class="viewAll"><a href="javascript:buildList(false,0' + letterParameter + ')">View all</a></div>';
+  }
+
 
   document.querySelector('#searchSummary').innerHTML = searchInput.length ? searchInput : filterLetter ? filterLetter.toUpperCase() : "All";
 
@@ -167,10 +282,21 @@ permalink: "visual-design/icons.html"
    document.querySelector('#jumpToHeading ol').innerHTML = jumpToHtml;
   }
   document.querySelector('#fontlist').innerHTML = listHtml;
-  document.querySelector('#resultcount').innerHTML = numberOfResults ? `<p class="m-t-0">${numberOfResults} icons <span class="sr-only">found.</span></p>` : '<p>No icons found.</p>';
+  document.querySelector('#resultcount').innerHTML = numberOfResults ? `<span class="m-t-0">${numberOfResults} icons <span class="sr-only">found.</span></span>` : '<span>No icons found.</span>';
+
+  document.querySelector('#pagenumbers').innerHTML = pageNumbersHtml;
+  document.querySelector('#pagenumberstop').innerHTML = pageNumbersHtml;
+
+  document.querySelector('#viewfulllist').innerHTML = (filterLetter || paginate) ? '<div class="viewAll"><a href="javascript:buildList(false,0);window.scrollTo(0, document.getElementById(\'searchSummary\').offsetTop - 146);">View full list</a></div>' : '';
  }
 
- const myRequest = new Request('https://california.azureedge.net/fonts/icons.json');
+ // click handler for pagination
+ function goToPage(pageNumber, letterParameter) {
+  buildList(true, pageNumber, letterParameter);
+  window.scrollTo(0, document.getElementById('searchSummary').offsetTop - 146); // subtract height of header
+ }
+
+ const myRequest = new Request('https://california.azureedge.net/fonts/icons-6.1.0.json');
  fetch(myRequest)
   .then(response => response.json())
   .then(data => {
@@ -187,10 +313,10 @@ permalink: "visual-design/icons.html"
    })
    iconData = data;
 
-   buildList();
+   buildList(true, 0, "a");
 
    // add event listeners to form field and button
-   document.querySelector("#iconSearchForm input").oninput = function () { buildList() };
+   document.querySelector("#iconSearchForm input").oninput = function () { buildList(false) };
    document.querySelector("#iconSearchForm button").onclick = function () {
     document.querySelector("#iconSearchForm input").value = "";
     buildList();
@@ -205,13 +331,9 @@ permalink: "visual-design/icons.html"
  <div class="col-md-3">
   <nav aria-labelledby="page-navigation-label" class="side-navigation sticky-6 overflow-auto">
    <ul class="list-navigation">
-    <li><a href="#Icons" id="page-navigation-label" class="active">Icons</a>
-     <ul>
-      <li><a href="#How-to-use-icons">How to use icons</a></li>
-      <li><a href="#Dos-and-donts-for-icon-use">Do's and don'ts for icon use</a></li>
-      <li><a href="#Search-icons">Search icons</a></li>
-     </ul>
-    </li>
+    <li><a href="/visual-design/color.html">Colors</a></li>
+    <li><a href="/visual-design/icons.html" class="active">Icons</a></li>
+    <li><a href="/visual-design/typography.html">Typography</a></li>
    </ul>
   </nav>
  </div>
@@ -219,22 +341,35 @@ permalink: "visual-design/icons.html"
 
 
   <h1 class="mt-lg-0" id="Icons">Icons</h1>
-  <p>Icons are visual representations of commands, devices, directories, or common actions.
-  </p>
-  <p>The State Web Template uses CSS classes to customize icon color for compatibility with all popular browsers.</p>
+
+  <nav aria-labelledby="page-navigation-label" class="page-navigation">
+   <div id="page-navigation-label" class="label">On this page</div>
+   <ul>
+    <li><a href="#How-to-use-icons">How to use icons</a></li>
+    <li><a href="#Dos-and-donts-for-icon-use">Do's and don'ts for icon use</a></li>
+    <li><a href="#Search-icons">Search icons</a></li>
+   </ul>
+  </nav>
+
+
+  <p>Icons are visual representations of commands, devices, directories, or common actions. We use CSS classes to
+   customize icon color for compatibility with all popular browsers.</p>
 
 
   <h2 id="How-to-use-icons">How to use icons</h2>
-  <p>Icon color and font can be styled using the same CSS rules used to style other text on a page. Copy the CSS code to
-   your clipboard or manually type it into your code to use your desired icons.
-  </p>
-  <p>Keep in mind, color and font size will change the size of the icon. </p>
+  <p>Icon color and font can be styled using the same CSS rules used to style other text on a page. Keep in mind,
+   color and font size will change the size of the icon.</p>
 
+  <div class="bg-gray-50 d-flex p-a-sm p-x-md">
+   <span class="ca-gov-icon-info font-size-30 color-p2 d-block" aria-hidden="true"></span>
+   <div class="m-l">
+    <p class="m-b-0">To use an icon, insert an empty span tag with the corresponding class name. Here's an example:
+     <code class="font-size-14 gray-900">&lt;span class="ca-gov-icon-info" aria-hidden="true">&lt;/span></code>
+    </p>
+   </div>
+  </div>
 
-
-
-  <h2 id="Dos-and-donts-for-icon-use" class="m-b-0">Do's and don'ts for icon use</h2>
-
+  <span id="Dos-and-donts-for-icon-use" class="h2 d-inline"></span>
   <div class="row">
    <div class="col-md-6">
     <h3 class="h5 m-b-sm">Do</h3>
@@ -258,19 +393,8 @@ permalink: "visual-design/icons.html"
 
 
   <h2 id="Search-icons">Search icons</h2>
-  <p>Use the search to find a specific icon, or browse icons alphabetically with the menu.</p>
+  <p>Use the search to find a specific icon. You can also browse icons below.</p>
 
-
-  <div class="bg-gray-50 d-flex p-a-sm p-x-md">
-   <span class="ca-gov-icon-info font-size-30 color-p2 d-block" aria-hidden="true"></span>
-   <div class="m-l">
-    <p class="m-b-0">To use an icon, insert an empty span tag with the corresponding class name. Here's an example:
-     <code class="font-size-14 gray-900">&lt;span class="ca-gov-icon-info" aria-hidden="true">&lt;/span></code>
-    </p>
-
-   </div>
-
-  </div>
 
   <form id="iconSearchForm" class="m-y-lg" onsubmit="return false">
    <span class="sr-only" id="IconInput">Search icons</span>
@@ -285,13 +409,19 @@ permalink: "visual-design/icons.html"
    </ol>
   </div>
 
-  <!-- START ICOMOON DEMO -->
   <div class="clearfix mhl ptl">
-   <div class="h4 m-t-md m-b-0">Showing results for "<span id="searchSummary"></span>"</div>
-   <div id="resultcount" class="fs1" aria-live="polite"></div>
-   <div id="fontlist"></div>
-  </div>
+   <div class="d-md-flex flex-row justify-content-between m-t-md">
+    <div>
+     <span class="h4 m-t-0 m-b-0 p-r-sm">"<span id="searchSummary"></span>"</span>
+     <span id="resultcount" class="fs1" aria-live="polite"></span>
+    </div>
+    <div id="pagenumberstop" class="pagenumbers"></div>
+   </div>
 
+   <div id="fontlist"></div>
+   <div id="pagenumbers" class="pagenumbers"></div>
+   <div id="viewfulllist"></div>
+  </div>
 
  </div>
 </div>

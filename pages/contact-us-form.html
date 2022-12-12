@@ -1,131 +1,150 @@
 ﻿---
-title: Contact us form
+title: Contact us
 layout: page.njk
 permalink: "contact-us-form.html"
 ---
 
-<h1 class="mt-lg-0">Contact us</h1>
-<p>
-  Have a question? Contact us for help with general inquiries, feedback, or
-  bugs.
-</p>
-<br />
-
-<form autocomplete="on" method="POST" id="ContactUsForm">
-  <div class="alert alert-danger alert-banner" role="alert">
-    <div class="container">Correct the errors to continue</div>
-  </div>
-
-  <label class="form-control-label" for="InputName"
-    ><span class="required-label" aria-hidden="true">*</span> Your name</label
-  >
-  <input
-    autofocus
-    type="text"
-    class="form-control"
-    id="InputName"
-    name="Name"
-    autocomplete="name"
-    required
-    aria-required="true"
-  />
-  <div class="invalid-feedback d-block">This field is required</div>
+<script src="https://www.google.com/recaptcha/api.js"></script>
+<div class="col-md-10 container">
+  <h1 class="mt-lg-0">Contact us</h1>
+  <p>
+    Have a question? Contact us for help with general inquiries, feedback, or
+    bugs.
+  </p>
   <br />
-  <label class="form-control-label" for="InputEmail"
-    ><span class="required-label" aria-hidden="true">*</span> Email</label
-  >
-  <input
-    type="email"
-    class="form-control"
-    id="InputEmail"
-    name="Email"
-    autocomplete="email"
-    required
-    aria-required="true"
-  />
-  <div class="invalid-feedback d-block">A valid email is required</div>
-  <br />
-  <label class="form-control-label" for="InputDepartment"
-    ><span class="required-label" aria-hidden="true">*</span> Department or
-    agency</label
-  >
-  <input
-    type="text"
-    class="form-control"
-    id="InputDepartment"
-    name="Department"
-    autocomplete="organization"
-    required
-    aria-required="true"
-  />
-  <div class="invalid-feedback d-block">This field is required</div>
-  <br />
-  <label class="form-control-label" for="InputRole"
-    ><span class="required-label" aria-hidden="true">*</span> Main role</label
-  >
-  <input
-    type="text"
-    class="form-control"
-    id="InputRole"
-    name="Role"
-    autocomplete="organization-title"
-    list="roleSuggestions"
-    required
-    aria-required="true"
-    aria-autocomplete="both"
-  />
-  <div class="invalid-feedback d-block">This field is required</div>
-  <datalist id="roleSuggestions">
-    <option>Analytics</option>
-    <option>Content</option>
-    <option>Design</option>
-    <option>Development</option>
-    <option>Product</option>
-    <option>Program</option>
-    <option>Research</option>
-  </datalist>
 
-  <br />
-  <label class="form-control-label" for="InputComments"
-    ><span class="required-label" aria-hidden="true">*</span> How can we
-    help?</label
-  >
-  <textarea
-    id="InputComments"
-    class="form-control"
-    rows="5"
-    cols="80"
-    name="Comments"
-    aria-required="true"
-    required
-  ></textarea>
-  <div class="invalid-feedback d-block">This field is required</div>
-  <br />
-  <input type="hidden" name="Form Source" value="contact-us.html" />
-  <input type="submit" value="Submit" class="btn btn-outline-primary" />
-</form>
+  <form autocomplete="on" method="POST" id="ContactUsForm">
+    <div class="alert alert-danger alert-banner" role="alert">
+      <div class="container">Correct the errors to continue</div>
+    </div>
+    <label class="form-control-label" for="InputName"
+      ><span class="required-label" aria-hidden="true">*</span> Your name</label
+    >
+    <input
+      autofocus
+      type="text"
+      class="form-control"
+      id="InputName"
+      name="Name"
+      autocomplete="name"
+      required
+      aria-required="true"
+      size="65"
+    />
+    <div class="invalid-feedback d-block">This field is required</div>
+    <br />
+    <label class="form-control-label" for="InputEmail"
+      ><span class="required-label" aria-hidden="true">*</span> Email</label
+    >
+    <input
+      type="email"
+      class="form-control"
+      id="InputEmail"
+      name="Email"
+      autocomplete="email"
+      required
+      aria-required="true"
+      size="65"
+    />
+    <div class="invalid-feedback d-block">A valid email is required</div>
+    <br />
+    <label class="form-control-label" for="InputDepartment"
+      >Department or agency</label
+    >
+    <input
+      type="text"
+      class="form-control"
+      id="InputDepartment"
+      name="Department"
+      autocomplete="organization"
+      aria-required="false"
+      size="65"
+    />
+    <br />
+    <label class="form-control-label" for="InputRole">Main role</label>
+    <input
+      type="text"
+      class="form-control"
+      id="InputRole"
+      name="Role"
+      autocomplete="organization-title"
+      list="roleSuggestions"
+      aria-required="false"
+      aria-autocomplete="both"
+      size="65"
+    />
+    <datalist id="roleSuggestions">
+      <option>Analytics</option>
+      <option>Content</option>
+      <option>Design</option>
+      <option>Development</option>
+      <option>Product</option>
+      <option>Program</option>
+      <option>Research</option>
+    </datalist>
+    <br />
+    <label class="form-control-label" for="InputComments"
+      ><span class="required-label" aria-hidden="true">*</span> How can we
+      help?</label
+    >
+    <textarea
+      id="InputComments"
+      class="form-control"
+      rows="5"
+      cols="80"
+      name="Comments"
+      aria-required="true"
+      required
+    ></textarea>
+    <div class="invalid-feedback d-block">This field is required</div>
+    <br />
+    <input type="submit" value="Submit" class="btn btn-primary" />
 
-<h2>Get support from developers</h2>
-<p>
-  Post questions on
-  <a href="https://github.com/Office-of-Digital-Services/">GitHub</a> and
-  leverage our digital community.
-</p>
-<br />
+    <button
+      class="g-recaptcha hidden"
+      data-sitekey="6Lcf3GYjAAAAAGPae1QeEf0jJ8xjTwrwPAHOhZIJ"
+      data-callback="recaptchaCallback"
+      data-action="submit"
+    ></button>
+  </form>
 
+  <h2>Get support from developers</h2>
+  <p>
+    Post questions on
+    <a href="https://github.com/Office-of-Digital-Services/">GitHub</a> and
+    leverage our digital community.
+  </p>
+  <br />
+</div>
 <style type="text/css">
-  form[submit_attempted] input:invalid,
-  form[submit_attempted] textarea:invalid {
-    border-bottom: 4px solid red;
+  form:not(form[submit_attempted]) .form-control + .invalid-feedback,
+  form:not(form[submit_attempted]) .alert,
+  form:valid .alert,
+  .form-control:valid + .invalid-feedback {
+    display: none !important;
   }
 
-  form:not(form[submit_attempted]) input + .invalid-feedback,
-  form:not(form[submit_attempted]) textarea + .invalid-feedback,
-  form:not(form[submit_attempted]) .alert,
-  input:valid + .invalid-feedback,
-  textarea:valid + .invalid-feedback,
-  form:valid .alert {
-    display: none !important;
+  form[submit_attempted] .alert,
+  form[submit_attempted] .form-control:invalid {
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 240"><path fill="rgb(220,53,69)" d="M120 15C62 15 16 62 16 120S62 224 120 224S225 178 225 120S178 15 120 15z M133 180c0 7-6 13-13 13s-13-6-13-13v-80c0-7 6-13 13-13s13 6 13 13V180z M120 75c-8 0-15-7-15-15s7-15 15-15s15 7 15 15S128 75 120 75z"/></svg>');
+    background-size: 1.75em;
+    background-repeat: no-repeat;
+  }
+
+  form[submit_attempted] .alert {
+    border-left: 4px solid #dc3545;
+    background-position: left 0.25em center;
+    padding-left: 1.25em;
+  }
+
+  form[submit_attempted] .form-control:invalid {
+    border-bottom: 4px solid #dc3545;
+    background-position: right 0.25em top 0.25em;
+  }
+
+  .form-control {
+    width: auto;
+    max-width: 100%;
   }
 </style>
 
@@ -158,55 +177,69 @@ permalink: "contact-us-form.html"
 <button
   type="button"
   id="btnModal"
-  class="btn btn-default btn-lg m-t-lg hidden"
+  class="hidden"
   data-bs-toggle="modal"
   data-bs-target="#modalResponse"
->
-  blank
-</button>
-<a href="contact-us-thankyou.html" id="urlThankyou" class="hidden">thanks</a>
+></button>
+<a href="contact-us-thankyou.html" id="urlThankyou" class="hidden"></a>
 
 <script>
-  const url =
-    "https://fa-cdt-pub-migr-betaws-w-p-001.azurewebsites.net/api/air-table";
-  const formId = "ContactUsForm";
-  const modalButtonId = "btnModal";
-  const urlThankyouId = "urlThankyou";
+  const serviceUrl =
+    "https://fa-cdt-pub-migr-betaws-w-p-001-stage.azurewebsites.net/api/air-table";
 
   {
-    const sampleForm = /** @type {HTMLFormElement} */ (
-      document.getElementById(formId)
+    //This code runs first
+    getForm().addEventListener("submit", submitForm);
+    getSubmitButton().addEventListener("click", () =>
+      getForm().setAttribute("submit_attempted", "")
     );
-    if (sampleForm) {
-      sampleForm.action = "";
-      sampleForm.addEventListener("submit", submitForm);
-      sampleForm
-        .querySelector("input[type=submit]")
-        .addEventListener("click", () =>
-          sampleForm.setAttribute("submit_attempted", "")
-        );
-    } else {
-      console.error("No form on page.");
-    }
   }
   ({});
+
+  function getForm() {
+    return /** @type {HTMLFormElement} */ (
+      document.getElementById("ContactUsForm")
+    );
+  }
+
+  function getSubmitButton() {
+    return /** @type { HTMLButtonElement } */ (
+      getForm().querySelector("input[type=submit]")
+    );
+  }
+
+  function goToThanksPage() {
+    document.getElementById("urlThankyou").click();
+  }
+
+  function openModal() {
+    document.getElementById("btnModal").click();
+  }
+
+  function triggerRecaptcha() {
+    document.querySelector(".g-recaptcha").click(); //will trigger recaptchaCallback when complete
+  }
 
   async function submitForm(/** @type { SubmitEvent } */ e) {
     e.preventDefault();
 
-    const form = /** @type { HTMLFormElement } */ (e.target);
+    getSubmitButton().disabled = true;
+    setTimeout(() => (getSubmitButton().disabled = false), 5000);
 
-    form
-      .querySelectorAll("form input[type=submit]")
-      .forEach((/** @type { HTMLButtonElement } */ btnSubmit) => {
-        btnSubmit.disabled = true;
-        setTimeout(() => (btnSubmit.disabled = false), 5000);
-      });
+    triggerRecaptcha();
+  }
 
-    const jsonFormData = {};
-    for (const pair of new FormData(form)) {
-      jsonFormData[pair[0]] = pair[1];
+  function recaptchaCallback(/** @type { string } */ g_recaptcha_response) {
+    const postBody = {
+      captcha: { "g-recaptcha-response": g_recaptcha_response },
+      fields: {},
+    };
+
+    for (const pair of new FormData(getForm())) {
+      postBody.fields[pair[0]] = pair[1];
     }
+
+    delete postBody.fields["g-recaptcha-response"]; //we already have it from the callback
 
     /** @type { RequestInit } */
     const request = {
@@ -214,10 +247,10 @@ permalink: "contact-us-form.html"
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify(jsonFormData),
+      body: JSON.stringify(postBody),
     };
 
-    fetch(url, request)
+    fetch(serviceUrl, request)
       .then((response) => {
         if (response.ok) {
           return response.json();
@@ -231,16 +264,12 @@ permalink: "contact-us-form.html"
       .then((responseJson) => {
         console.log(responseJson);
 
-        /** @type { HTMLAnchorElement } */
-        const lnk = document.getElementById(urlThankyouId);
-        lnk.click();
+        goToThanksPage();
       })
       .catch((error) => {
         console.error(error);
 
-        /** @type { HTMLButtonElement } */
-        const modalButton = document.getElementById(modalButtonId);
-        modalButton.click();
+        openModal();
       });
   }
 </script>
