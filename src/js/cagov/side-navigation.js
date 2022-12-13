@@ -1,5 +1,5 @@
 /* -----------------------------------------
-   SEARCH - /source/js/cagov/side-navigation.js
+   SIDE NAVIGATION - /source/js/cagov/side-navigation.js
 ----------------------------------------- */
 
 // Remebemer scrolling position
