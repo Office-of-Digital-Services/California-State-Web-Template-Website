@@ -1,57 +1,126 @@
 ﻿---
-title: Page navigation
-landing: Structure
-layout: page.njk
-permalink: "structure/page-navigation.html"
+title: page navigation
+landing: Components
+layout: components.njk
+permalink: "/components/page-navigation.html"
 ---
 
 
-<div class="row">
- <div class="col-md-3">
-  <!-- Side navigation -->
-  <nav aria-labelledby="navigation-list">
-   <ul class="list-navigation">
-    <li><a href="/structure/site-navigation.html" id="navigation-list">Navigation samples</a>
-     <ul>
-      <li><a href="/structure/navigation-dropdown.html">Dropdown Navigation</a></li>
-      <li><a href="/structure/navigation-megamenu-flex.html">Flex Megamenu Navigation</a></li>
-      <li><a href="/structure/navigation-full-width-utility.html">Full Width Navigation with Active Search</a></li>
-      <li><a href="/structure/navigation-icons.html">Navigation with icons</a></li>
-      <li><a href="/structure/page-navigation.html" class="active">Page navigation</a></li>
-      <li><a href="/structure/navigation-sidebar.html">Side navigation</a></li>
-      <li><a href="/structure/navigation-single.html">Single Level Navigation</a></li>
-     </ul>
-    </li>
-   </ul>
-  </nav>
- </div>
- <div class="col-md-9 p-b-lg">
+<h1 class="mt-lg-0">Page navigation</h1>
+
+<nav class="page-navigation"></nav>
+
+<p>Page navigation lists and links to the level 2 headings (H2) of a webpage. It is placed at the top of the page.
+ People can select a link to go directly to that section.</p>
+
+<p>This makes it easy to see what's on a page. It allows people to scan a page and know if they're in the right place.
+</p>
+
+<h2>Sample</h2>
+
+<!--TABS-->
+<div class="tab-group responsive">
+ <ul id="tabs1" class="nav nav-tabs" role="tablist">
+  <li class="nav-item" role="presentation">
+   <a id="tab-example1" href="#pane-example1" class="nav-link active" data-bs-toggle="tab" role="tab">Example</a>
+  </li>
+  <li class="nav-item" role="presentation">
+   <a id="tab-html1" href="#pane-html1" class="nav-link" data-bs-toggle="tab" role="tab">Source code</a>
+  </li>
+
+  <li class="nav-item" role="presentation">
+   <a id="tab-html2" href="#pane-html2" class="nav-link" data-bs-toggle="tab" role="tab">Implementation notes</a>
+  </li>
+
+ </ul>
 
 
-  <h1 class="mt-lg-0">Page navigation</h1>
-  <p>Page navigation is a lists and links to the level 2 headings (H2) of a webpage. It is placed at the top of
-   the
-   page on the
-   left. People can select a link to go directly to H2 section. The links are usually introduced by the text "On this
-   page". Page navigation makes it easy to see what content is available.</p>
+ <div id="tab-content1" class="tab-content">
+  <!--Examples-->
+  <div id="pane-example1" class="card tab-pane fade show active" role="tabpanel" aria-labelledby="tab-example1">
+   <div class="card-header" id="heading-example1">
+    <a data-bs-toggle="collapse" href="#collapse-example1" data-parent="#tab-content1" aria-expanded="true"
+     aria-controls="collapse-example1" data-hash="#pane-example1" title="Example tab header">
+     Example
+    </a>
+   </div>
+   <div id="collapse-example1" class="collapse show" role="tabpanel" aria-labelledby="heading-example1">
+    <div class="p-a-md">
+     <h3 class="h4 m-t-0">Two to five links</h3>
+     {% include "../../src/_includes/modules/page-navigation.html" %}
 
-  <p><span class="text-highlight-primary">Note:</span> The page navigation should not show if there are zero or one H2’s
-   on
-   the page.</p>
-
-  <h2>Example:</h2>
-  <div class="row">
-   <div class="col-md-4">
-    {% include "../../src/_includes/modules/page-navigation.html" %}
+     <h3 class="h4">Six or more links</h3>
+     {% include "../../src/_includes/modules/page-navigation-more.html" %}
+    </div>
    </div>
   </div>
 
 
-  <h2>Source code:</h2>
-  <pre><code class="overflow-auto">{% include "../../src/_includes/modules/page-navigation.html" %}</code></pre>
+
+  <!--HTML-->
+  <div id="pane-html1" class="card tab-pane fade" role="tabpanel" aria-labelledby="tab-html1">
+   <div class="card-header" id="heading-html1">
+    <a class="collapsed" data-bs-toggle="collapse" href="#collapse-html1" data-parent="#tab-content1"
+     aria-expanded="false" aria-controls="collapse-html1" data-hash="#pane-html1" title="HTML Source code tab header">
+     Source code
+    </a>
+   </div>
+   <div id="collapse-html1" class="collapse" role="tabpanel" aria-labelledby="heading-html1">
+    <div class="card-body">
+     <h3 class="h4 m-t-0">Two to five links</h3>
+     <pre style="max-height: 300px;"><code>{% include "../../src/_includes/modules/page-navigation.html" %}</pre></code>
+
+
+     <h3 class="h4">Six or more links</h3>
+     <pre style="max-height: 300px;"><code>{% include "../../src/_includes/modules/page-navigation-more.html" %}</pre>
+     </code>
+    </div>
+   </div>
+  </div>
+
+
+  <!--Implementation notes-->
+  <div id="pane-html2" class="card tab-pane fade" role="tabpanel" aria-labelledby="tab-html2">
+   <div class="card-header" id="heading-html2">
+    <a class="collapsed" data-bs-toggle="collapse" href="#collapse-html2" data-parent="#tab-content2"
+     aria-expanded="false" aria-controls="collapse-html2" data-hash="#pane-html2"
+     title="Implementation notes tab header">
+     Implementation notes
+    </a>
+   </div>
+   <div id="collapse-html2" class="collapse" role="tabpanel" aria-labelledby="heading-html2">
+    <div class="card-body">
+     <h3 class="h4 m-t-0">Automatic generation</h3>
+     <p class="m-b">To generate "On this page" navigation automatically insert following code after your h1 heading:
+     </p>
+     <pre><code><nav class="page-navigation"></nav></code></pre>
+
+     <h3 class="h4">Headings IDs</h3>
+     <p>With automatic page generation you don't have to add ID attributes into your h2 headings. Those IDs will be
+      added automatically
+      based on h2 heading text. For instance, if h2 text is "List accordion" the corresponding ID attribute will be
+      <code>id="List-accordion"</code>. But if you prefer to use non-automatic page navigation then you will have to add
+      IDs to each h2 heading and add anchor links to those h2 headings in your page navigation manually.
+     </p>
+    </div>
+   </div>
+  </div>
 
 
 
 
  </div>
 </div>
+<!--END TABS-->
+
+<h2>Usage</h2>
+<h3>When and how to use it</h3>
+<p>Use page navigation when you have at least two sections of content on your page. Anchor links are split into two
+ columns if there are six or more sections. If the section is uneven, the second column will have one less link.</p>
+
+<h3>How not to use it</h3>
+<p>Do not use the page navigation to anchor to H3s or H4s on your page. This is for navigation, not outlining content.
+</p>
+
+<h2>Accessibility</h2>
+{% include "../../src/_includes/modules/accessibility.html" %}

@@ -31,17 +31,7 @@ permalink: "structure/site-navigation.html"
 
   <h1 class="mt-lg-0">Site navigation</h1>
 
-  <nav aria-labelledby="page-navigation-label" class="page-navigation">
-   <div id="page-navigation-label" class="label">On this page</div>
-   <ul class="columns-2">
-    <li><a href="#Single-level-menu">Single-level menu</a></li>
-    <li><a href="#Dropdown-menu">Dropdown menu</a></li>
-    <li><a href="#Megamenu">Megamenu</a></li>
-    <li><a href="#Icon-menu">Icon menu</a></li>
-    <li><a href="#Usage">Usage</a></li>
-    <li><a href="#Accessibility">Accessibility</a></li>
-   </ul>
-  </nav>
+  <nav class="page-navigation"></nav>
 
   <p>Site navigation appears at the top of every page on your site. It gives links to pages in the site,
    sometimes ordered by topic, task, or user type. This makes it easier for people to navigate the website.</p>
@@ -64,7 +54,7 @@ permalink: "structure/site-navigation.html"
    expand. The links in the hamburger menu are stacked.</p>
 
 
-  <h2 id="Single-level-menu">Single level menu</h2>
+  <h2>Single level menu</h2>
   <p>This page is using the Single Level Navigation. This navigation style does not include a dropdown for sub
    navigation items.</p>
 
@@ -147,7 +137,7 @@ permalink: "structure/site-navigation.html"
 
 
 
-  <h2 id="Dropdown-menu">Dropdown menu</h2>
+  <h2>Dropdown menu</h2>
   <p>Dropdown menu is using the dropdown sub navigation.</p>
 
 
@@ -227,7 +217,7 @@ permalink: "structure/site-navigation.html"
 
 
 
-  <h2 id="Megamenu">Megamenu</h2>
+  <h2>Megamenu</h2>
   <p>The flex megamenu displays dropdown panels for sub navigation when the user clicks on a primary link.</p>
 
 
@@ -355,7 +345,7 @@ permalink: "structure/site-navigation.html"
 
 
 
-  <h2 id="Icon-menu">Icon menu</h2>
+  <h2>Icon menu</h2>
   <p>Navigation with icons usually appears to the right of the site logo. It uses icons from CAGov font library inside
    of the first level navigation items.</p>
 
@@ -430,7 +420,7 @@ permalink: "structure/site-navigation.html"
 
        </pre>
 
-       <h2 class="h4">Navigation with icons markup:</h2>
+       <h3 class="h4">Navigation with icons markup:</h3>
        <pre><span class="text-accent-p2">&lt;div</span> <span class="text-info">class=</span><span class="text-accent7">"navigation-search"</span><span class="text-accent-p2">&gt;</span>
       <span class="text-success">&#10100;% include "/src/_includes/navigation.njk" %&#10101;</span>
       <span class="text-accent-p2">&lt;div</span> <span class="text-info">id=</span><span class="text-accent7">"head-search"</span> <span class="text-info">class=</span><span class="text-accent7">"search-container"</span><span class="text-accent-p2">&gt;</span>
@@ -439,7 +429,7 @@ permalink: "structure/site-navigation.html"
      <span class="text-accent-p2">&lt;/div&gt;</span>
      </pre>
 
-       <h2 class="h4">Full width navigation markup:</h2>
+       <h3 class="h4">Full width navigation markup:</h3>
        <pre><span class="text-accent-p2">&lt;div</span> <span class="text-info">class=</span><span class="text-accent7">"navigation-search full-width-nav container"</span><span class="text-accent-p2">&gt;</span>
       <span class="text-accent-p2">&lt;div</span> <span class="text-info">id=</span><span class="text-accent7">"head-search"</span> <span class="text-info">class=</span><span class="text-accent7">"search-container featured-search"</span><span class="text-accent-p2">&gt;</span>
        <span class="text-success">&#10100;% include "/src/_includes/search.njk" %&#10101;</span>
@@ -454,7 +444,7 @@ permalink: "structure/site-navigation.html"
   </div>
   <!--End tabs 4-->
 
-  <h2 id="Usage">Usage</h2>
+  <h2>Usage</h2>
   <h3>When and how to use it</h3>
   <p>Use site navigation to help people find pages on your website. It should list or lead to the most helpful content
    on your website.</p>
@@ -474,7 +464,7 @@ permalink: "structure/site-navigation.html"
    can be reached through a page in the site navigation or the site footer.</p>
   <p>Do not link to PDFs or external sites in the site navigation.</p>
 
-  <h2 id="Accessibility">Accessibility</h2>
+  <h2>Accessibility</h2>
   {% include "../../src/_includes/modules/accessibility.html" %}
  </div>
 </div>
