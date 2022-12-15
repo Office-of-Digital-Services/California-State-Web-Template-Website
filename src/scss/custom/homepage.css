@@ -37,14 +37,20 @@
 }
 .partner-link:hover {
   text-decoration: underline !important;
+  color: #EEF8FB !important;
 }
 
 @media (max-width: 575px) {
-  .header-primary-banner .row {
+  .header-primary-banner p {
+    font-size: 1.9375rem;
+    line-height: 2.675rem;
+    padding-top: 2rem;
+  }
+  .header-primary-banner .row, .partner-with-us .row {
     flex-direction: column-reverse;
   }
-  .header-primary-banner img {
-    width: 100%;
+  .header-primary-banner img, .partner-with-us svg {
+    width: auto;
   }
   .dot-line {
     position: relative;
