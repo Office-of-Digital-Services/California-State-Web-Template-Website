@@ -45,7 +45,7 @@ function pageNav() {
   });
 
   // create on this page label
-  var onthispage = '<div id="page-navigation-label" class="label">On this page</div>';
+  var onthispage = '<div id="on-this-page-navigation-label" class="label">On this page</div>';
   pagenav.innerHTML = onthispage;
 
   // add ul item to the nav and set aria labelledby
