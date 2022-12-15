@@ -13,9 +13,9 @@ permalink: "structure/site-navigation.html"
   <!-- Side navigation -->
   <nav aria-labelledby="navigation-list" class="side-navigation sticky-6">
    <ul class="list-navigation">
-    <li><a href="/structure.html" id="navigation-list" class="landing">Structural elements</a></li>
+    <li><a href="/structure.html" id="navigation-list" class="landing">Structure</a></li>
     <li><a href="/structure/utility-header.html">Utility header</a></li>
-    <li><a href="/structure/settings-bar.html">Settings</a></li>
+    <li><a href="/structure/settings.html">Settings</a></li>
     <li><a href="/structure/site-header.html">Site header</a></li>
     <li><a href="/structure/mobile-controls.html">Mobile controls</a></li>
     <li><a href="/structure/search.html">Search</a></li>
@@ -31,17 +31,7 @@ permalink: "structure/site-navigation.html"
 
   <h1 class="mt-lg-0">Site navigation</h1>
 
-  <nav aria-labelledby="page-navigation-label" class="page-navigation">
-   <div id="page-navigation-label" class="label">On this page</div>
-   <ul class="columns-2">
-    <li><a href="#Single-level-menu">Single-level menu</a></li>
-    <li><a href="#Dropdown-menu">Dropdown menu</a></li>
-    <li><a href="#Megamenu">Megamenu</a></li>
-    <li><a href="#Icon-menu">Icon menu</a></li>
-    <li><a href="#Usage">Usage</a></li>
-    <li><a href="#Accessibility">Accessibility</a></li>
-   </ul>
-  </nav>
+  <nav class="page-navigation"></nav>
 
   <p>Site navigation appears at the top of every page on your site. It gives links to pages in the site,
    sometimes ordered by topic, task, or user type. This makes it easier for people to navigate the website.</p>
@@ -64,7 +54,7 @@ permalink: "structure/site-navigation.html"
    expand. The links in the hamburger menu are stacked.</p>
 
 
-  <h2 id="Single-level-menu">Single level menu</h2>
+  <h2>Single level menu</h2>
   <p>This page is using the Single Level Navigation. This navigation style does not include a dropdown for sub
    navigation items.</p>
 
@@ -75,24 +65,27 @@ permalink: "structure/site-navigation.html"
   <div class="tab-group responsive">
    <ul id="tabs1" class="nav nav-tabs" role="tablist">
     <li class="nav-item" role="presentation">
-     <a id="tab-example1" href="#pane-example1" class="nav-link active" data-bs-toggle="tab" role="tab">Example</a>
+     <a id="tab-example1" href="#pane-example1" class="nav-link active" data-bs-toggle="tab" role="tab"><span
+       class="sr-only">Single level menu</span> Example</a>
     </li>
     <li class="nav-item" role="presentation">
-     <a id="tab-html1" href="#pane-html1" class="nav-link" data-bs-toggle="tab" role="tab">Source code</a>
+     <a id="tab-html1" href="#pane-html1" class="nav-link" data-bs-toggle="tab" role="tab"><span class="sr-only">Single
+       level menu</span> Source code</a>
     </li>
     <li class="nav-item" role="presentation">
-     <a id="tab-include1" href="#pane-include1" class="nav-link" data-bs-toggle="tab" role="tab">Implementation
+     <a id="tab-include1" href="#pane-include1" class="nav-link" data-bs-toggle="tab" role="tab"><span
+       class="sr-only">Single level menu</span> Implementation
       notes</a>
     </li>
    </ul>
 
 
-   <div class="tab-content" role="presentation">
+   <div class="tab-content" id="tab-content1">
     <div id="pane-example1" class="card tab-pane fade show active" role="tabpanel" aria-labelledby="tab-example1">
      <div class="card-header" id="heading-example1">
       <h4 class="my-0 w-100">
-       <a data-bs-toggle="collapse" href="#collapse-home" data-parent="#tab-content" aria-expanded="true"
-        aria-controls="collapse-example1" title="Example tab header">
+       <a data-bs-toggle="collapse" href="#collapse-example1" data-parent="#tab-content1" aria-expanded="true"
+        aria-controls="collapse-example1" title="Single level menu example tab header">
         Example
        </a>
       </h4>
@@ -107,8 +100,8 @@ permalink: "structure/site-navigation.html"
     <div id="pane-html1" class="card tab-pane fade" role="tabpanel" aria-labelledby="tab-html1">
      <div class="card-header" id="heading-html1">
       <h4 class="my-0 w-100">
-       <a class="collapsed" data-bs-toggle="collapse" href="#collapse-html1" data-parent="#tab-content"
-        aria-expanded="false" aria-controls="collapse-html1" title="HTML Source code tab header">
+       <a class="collapsed" data-bs-toggle="collapse" href="#collapse-html1" data-parent="#tab-content1"
+        aria-expanded="false" aria-controls="collapse-html1" title="Single level menu HTML Source code tab header">
         HTML Source code
        </a>
       </h4>
@@ -116,9 +109,8 @@ permalink: "structure/site-navigation.html"
      <div id="collapse-html1" class="collapse" role="tabpanel" aria-labelledby="heading-html1">
       <div class="card-body">
        <h3 class="h4 m-t-0">HTML Source code</h3>
-       <p>Get single level navigation full HTML markup in the template's repository in
-        <code>/src/_includes/modules/nav-singlelevel.html</code> file.
-       </p>
+       <textarea class="sourcecode" aria-label="source code"
+        disabled>{% include "../../src/_includes/modules/nav-singlelevel.html" %}</textarea>
       </div>
      </div>
     </div>
@@ -127,7 +119,8 @@ permalink: "structure/site-navigation.html"
      <div class="card-header" id="heading-include1">
       <h4 class="my-0 w-100">
        <a class="collapsed" data-bs-toggle="collapse" href="#collapse-include1" data-parent="#tab-include1"
-        aria-expanded="false" aria-controls="collapse-include1" title="Implementation notes tab header">
+        aria-expanded="false" aria-controls="collapse-include1"
+        title="Single level menu Implementation notes tab header">
         Implementation notes</a>
       </h4>
      </div>
@@ -147,7 +140,7 @@ permalink: "structure/site-navigation.html"
 
 
 
-  <h2 id="Dropdown-menu">Dropdown menu</h2>
+  <h2>Dropdown menu</h2>
   <p>Dropdown menu is using the dropdown sub navigation.</p>
 
 
@@ -155,32 +148,34 @@ permalink: "structure/site-navigation.html"
   <div class="tab-group responsive">
    <ul id="tabs2" class="nav nav-tabs" role="tablist">
     <li class="nav-item" role="presentation">
-     <a id="tab-example2" href="#pane-example2" class="nav-link active" data-bs-toggle="tab" role="tab">Example</a>
+     <a id="tab-example2" href="#pane-example2" class="nav-link active" data-bs-toggle="tab" role="tab"><span
+       class="sr-only">Dropdown menu </span>Example</a>
     </li>
     <li class="nav-item" role="presentation">
-     <a id="tab-html2" href="#pane-html2" class="nav-link" data-bs-toggle="tab" role="tab">Source code</a>
+     <a id="tab-html2" href="#pane-html2" class="nav-link" data-bs-toggle="tab" role="tab"><span
+       class="sr-only">Dropdown menu </span>Source code</a>
     </li>
     <li class="nav-item" role="presentation">
-     <a id="tab-include2" href="#pane-include2" class="nav-link" data-bs-toggle="tab" role="tab">Implementation
+     <a id="tab-include2" href="#pane-include2" class="nav-link" data-bs-toggle="tab" role="tab"><span
+       class="sr-only">Dropdown menu </span>Implementation
       notes</a>
     </li>
    </ul>
 
 
-   <div class="tab-content">
+   <div class="tab-content" id="tab-content2">
     <div id="pane-example2" class="card tab-pane fade show active" role="tabpanel" aria-labelledby="tab-example2">
      <div class="card-header" id="heading-example2">
       <h4 class="my-0 w-100">
-       <a data-bs-toggle="collapse" href="#collapse-home" data-parent="#tab-content" aria-expanded="true"
-        aria-controls="collapse-example2" title="Example tab header">
+       <a data-bs-toggle="collapse" href="#collapse-example2" data-parent="#tab-content2" aria-expanded="true"
+        aria-controls="collapse-example2" title="Dropdown menu Example tab header">
         Example
        </a>
       </h4>
      </div>
      <div id="collapse-example2" class="collapse show" role="tabpanel" aria-labelledby="heading-example2">
       <div class="card-body">
-       <img src="/images/navigation-dropdown.jpg" alt="Dropdown Naviagiton"
-        class="img-fluid brd-solid-1 brd-gray-light">
+       <img src="/images/navigation-dropdown.jpg" alt="Dropdown Naviagiton" class="img-fluid">
       </div>
      </div>
     </div>
@@ -188,18 +183,16 @@ permalink: "structure/site-navigation.html"
     <div id="pane-html2" class="card tab-pane fade" role="tabpanel" aria-labelledby="tab-html2">
      <div class="card-header" id="heading-html2">
       <h4 class="my-0 w-100">
-       <a class="collapsed" data-bs-toggle="collapse" href="#collapse-html2" data-parent="#tab-content"
-        aria-expanded="false" aria-controls="collapse-html2" title="HTML Source code tab header">
+       <a class="collapsed" data-bs-toggle="collapse" href="#collapse-html2" data-parent="#tab-content2"
+        aria-expanded="false" aria-controls="collapse-html2" title="Dropdown menu HTML Source code tab header">
         HTML Source code
        </a>
       </h4>
      </div>
      <div id="collapse-html2" class="collapse" role="tabpanel" aria-labelledby="heading-html2">
       <div class="card-body">
-       <h3 class="h4 m-t-0">HTML Source code</h3>
-       <p>Get single level navigation full HTML markup in the template's repository in
-        <code>/src/_includes/modules/nav-dropdown.html</code>. file.
-       </p>
+       <textarea class="sourcecode" aria-label="source code"
+        disabled>{% include "../../src/_includes/modules/nav-dropdown.html" %}</textarea>
       </div>
      </div>
     </div>
@@ -208,7 +201,7 @@ permalink: "structure/site-navigation.html"
      <div class="card-header" id="heading-include2">
       <h4 class="my-0 w-100">
        <a class="collapsed" data-bs-toggle="collapse" href="#collapse-include2" data-parent="#tab-include2"
-        aria-expanded="false" aria-controls="collapse-include2" title="Implementation notes tab header">
+        aria-expanded="false" aria-controls="collapse-include2" title="Dropdown menu Implementation notes tab header">
         Implementation notes</a>
       </h4>
      </div>
@@ -227,7 +220,7 @@ permalink: "structure/site-navigation.html"
 
 
 
-  <h2 id="Megamenu">Megamenu</h2>
+  <h2>Megamenu</h2>
   <p>The flex megamenu displays dropdown panels for sub navigation when the user clicks on a primary link.</p>
 
 
@@ -235,31 +228,34 @@ permalink: "structure/site-navigation.html"
   <div class="tab-group responsive">
    <ul id="tabs3" class="nav nav-tabs" role="tablist">
     <li class="nav-item" role="presentation">
-     <a id="tab-example3" href="#pane-example3" class="nav-link active" data-bs-toggle="tab" role="tab">Example</a>
+     <a id="tab-example3" href="#pane-example3" class="nav-link active" data-bs-toggle="tab" role="tab"><span
+       class="sr-only">Megamenu </span>Example</a>
     </li>
     <li class="nav-item" role="presentation">
-     <a id="tab-html3" href="#pane-html3" class="nav-link" data-bs-toggle="tab" role="tab">Source code</a>
+     <a id="tab-html3" href="#pane-html3" class="nav-link" data-bs-toggle="tab" role="tab"><span
+       class="sr-only">Megamenu </span>Source code</a>
     </li>
     <li class="nav-item" role="presentation">
-     <a id="tab-include3" href="#pane-include3" class="nav-link" data-bs-toggle="tab" role="tab">Implementation
+     <a id="tab-include3" href="#pane-include3" class="nav-link" data-bs-toggle="tab" role="tab"><span
+       class="sr-only">Megamenu </span>Implementation
       notes</a>
     </li>
    </ul>
 
 
-   <div class="tab-content">
+   <div class="tab-content" id="tab-content3">
     <div id="pane-example3" class="card tab-pane fade show active" role="tabpanel" aria-labelledby="tab-example3">
      <div class="card-header" id="heading-example3">
       <h4 class="my-0 w-100">
-       <a data-bs-toggle="collapse" href="#collapse-home" data-parent="#tab-content" aria-expanded="true"
-        aria-controls="collapse-example3" title="Example tab header">
+       <a data-bs-toggle="collapse" href="#collapse-example3" data-parent="#tab-content3" aria-expanded="true"
+        aria-controls="collapse-example3" title="Megamenu Example tab header">
         Example
        </a>
       </h4>
      </div>
      <div id="collapse-example3" class="collapse show" role="tabpanel" aria-labelledby="heading-example3">
       <div class="card-body">
-       <img src="/images/navigation-flex.jpg" alt="Naviagiton with icons" class="img-fluid brd-solid-1 brd-gray-light">
+       <img src="/images/navigation-flex.jpg" alt="Naviagiton with icons" class="img-fluid">
       </div>
      </div>
     </div>
@@ -267,18 +263,16 @@ permalink: "structure/site-navigation.html"
     <div id="pane-html3" class="card tab-pane fade" role="tabpanel" aria-labelledby="tab-html3">
      <div class="card-header" id="heading-html3">
       <h4 class="my-0 w-100">
-       <a class="collapsed" data-bs-toggle="collapse" href="#collapse-html3" data-parent="#tab-content"
-        aria-expanded="false" aria-controls="collapse-html3" title="HTML Source code tab header">
+       <a class="collapsed" data-bs-toggle="collapse" href="#collapse-html3" data-parent="#tab-content3"
+        aria-expanded="false" aria-controls="collapse-html3" title="Megamenu HTML Source code tab header">
         HTML Source code
        </a>
       </h4>
      </div>
      <div id="collapse-html3" class="collapse" role="tabpanel" aria-labelledby="heading-html3">
       <div class="card-body">
-       <h3 class="h4 m-t-0">HTML Source code</h3>
-       <p>Get single level navigation full HTML markup in the template's repository in
-        <code>/src/_includes/modules/nav-flex.html.</code>. file.
-       </p>
+       <textarea class="sourcecode" aria-label="source code"
+        disabled>{% include "../../src/_includes/modules/nav-flex.html" %}</textarea>
       </div>
      </div>
     </div>
@@ -287,7 +281,7 @@ permalink: "structure/site-navigation.html"
      <div class="card-header" id="heading-include3">
       <h4 class="my-0 w-100">
        <a class="collapsed" data-bs-toggle="collapse" href="#collapse-include3" data-parent="#tab-include3"
-        aria-expanded="false" aria-controls="collapse-include3" title="Implementation notes tab header">
+        aria-expanded="false" aria-controls="collapse-include3" title="Megamenu Implementation notes tab header">
         Implementation notes</a>
       </h4>
      </div>
@@ -355,7 +349,7 @@ permalink: "structure/site-navigation.html"
 
 
 
-  <h2 id="Icon-menu">Icon menu</h2>
+  <h2>Icon menu</h2>
   <p>Navigation with icons usually appears to the right of the site logo. It uses icons from CAGov font library inside
    of the first level navigation items.</p>
 
@@ -364,24 +358,27 @@ permalink: "structure/site-navigation.html"
   <div class="tab-group responsive">
    <ul id="tabs4" class="nav nav-tabs" role="tablist">
     <li class="nav-item" role="presentation">
-     <a id="tab-example4" href="#pane-example4" class="nav-link active" data-bs-toggle="tab" role="tab">Example</a>
+     <a id="tab-example4" href="#pane-example4" class="nav-link active" data-bs-toggle="tab" role="tab"><span
+       class="sr-only">Icon menu </span>Example</a>
     </li>
     <li class="nav-item" role="presentation">
-     <a id="tab-html4" href="#pane-html4" class="nav-link" data-bs-toggle="tab" role="tab">Source code</a>
+     <a id="tab-html4" href="#pane-html4" class="nav-link" data-bs-toggle="tab" role="tab"><span class="sr-only">Icon
+       menu </span>Source code</a>
     </li>
     <li class="nav-item" role="presentation">
-     <a id="tab-include4" href="#pane-include4" class="nav-link" data-bs-toggle="tab" role="tab">Implementation
+     <a id="tab-include4" href="#pane-include4" class="nav-link" data-bs-toggle="tab" role="tab"><span
+       class="sr-only">Icon menu </span>Implementation
       notes</a>
     </li>
    </ul>
 
 
-   <div class="tab-content">
+   <div class="tab-content" id="tab-content4">
     <div id="pane-example4" class="card tab-pane fade show active" role="tabpanel" aria-labelledby="tab-example4">
      <div class="card-header" id="heading-example4">
       <h4 class="my-0 w-100">
-       <a data-bs-toggle="collapse" href="#collapse-home" data-parent="#tab-content" aria-expanded="true"
-        aria-controls="collapse-example4" title="Example tab header">
+       <a data-bs-toggle="collapse" href="#collapse-example4" data-parent="#tab-content4" aria-expanded="true"
+        aria-controls="collapse-example4" title="Icon menu Example tab header">
         Example
        </a>
       </h4>
@@ -396,8 +393,8 @@ permalink: "structure/site-navigation.html"
     <div id="pane-html4" class="card tab-pane fade" role="tabpanel" aria-labelledby="tab-html4">
      <div class="card-header" id="heading-html4">
       <h4 class="my-0 w-100">
-       <a class="collapsed" data-bs-toggle="collapse" href="#collapse-html4" data-parent="#tab-content"
-        aria-expanded="false" aria-controls="collapse-html4" title="HTML Source code tab header">
+       <a class="collapsed" data-bs-toggle="collapse" href="#collapse-html4" data-parent="#tab-content4"
+        aria-expanded="false" aria-controls="collapse-html4" title="Icon menu HTML Source code tab header">
         HTML Source code
        </a>
       </h4>
@@ -405,9 +402,8 @@ permalink: "structure/site-navigation.html"
      <div id="collapse-html4" class="collapse" role="tabpanel" aria-labelledby="heading-html4">
       <div class="card-body">
        <h3 class="h4 m-t-0">HTML Source code</h3>
-       <p>Get single level navigation full HTML markup in the template's repository in
-        <code>/src/_includes/modules/nav-icons.html</code>. file.
-       </p>
+       <textarea class="sourcecode" aria-label="source code"
+        disabled>{% include "../../src/_includes/modules/nav-icons.html" %}</textarea>
       </div>
      </div>
     </div>
@@ -416,7 +412,7 @@ permalink: "structure/site-navigation.html"
      <div class="card-header" id="heading-include4">
       <h4 class="my-0 w-100">
        <a class="collapsed" data-bs-toggle="collapse" href="#collapse-include4" data-parent="#tab-include4"
-        aria-expanded="false" aria-controls="collapse-include4" title="Implementation notes tab header">
+        aria-expanded="false" aria-controls="collapse-include4" title="Icon menu Implementation notes tab header">
         Implementation notes</a>
       </h4>
      </div>
@@ -430,7 +426,7 @@ permalink: "structure/site-navigation.html"
 
        </pre>
 
-       <h2 class="h4">Navigation with icons markup:</h2>
+       <h3 class="h4">Navigation with icons markup:</h3>
        <pre><span class="text-accent-p2">&lt;div</span> <span class="text-info">class=</span><span class="text-accent7">"navigation-search"</span><span class="text-accent-p2">&gt;</span>
       <span class="text-success">&#10100;% include "/src/_includes/navigation.njk" %&#10101;</span>
       <span class="text-accent-p2">&lt;div</span> <span class="text-info">id=</span><span class="text-accent7">"head-search"</span> <span class="text-info">class=</span><span class="text-accent7">"search-container"</span><span class="text-accent-p2">&gt;</span>
@@ -439,7 +435,7 @@ permalink: "structure/site-navigation.html"
      <span class="text-accent-p2">&lt;/div&gt;</span>
      </pre>
 
-       <h2 class="h4">Full width navigation markup:</h2>
+       <h3 class="h4">Full width navigation markup:</h3>
        <pre><span class="text-accent-p2">&lt;div</span> <span class="text-info">class=</span><span class="text-accent7">"navigation-search full-width-nav container"</span><span class="text-accent-p2">&gt;</span>
       <span class="text-accent-p2">&lt;div</span> <span class="text-info">id=</span><span class="text-accent7">"head-search"</span> <span class="text-info">class=</span><span class="text-accent7">"search-container featured-search"</span><span class="text-accent-p2">&gt;</span>
        <span class="text-success">&#10100;% include "/src/_includes/search.njk" %&#10101;</span>
@@ -454,7 +450,7 @@ permalink: "structure/site-navigation.html"
   </div>
   <!--End tabs 4-->
 
-  <h2 id="Usage">Usage</h2>
+  <h2>Usage</h2>
   <h3>When and how to use it</h3>
   <p>Use site navigation to help people find pages on your website. It should list or lead to the most helpful content
    on your website.</p>
@@ -474,7 +470,7 @@ permalink: "structure/site-navigation.html"
    can be reached through a page in the site navigation or the site footer.</p>
   <p>Do not link to PDFs or external sites in the site navigation.</p>
 
-  <h2 id="Accessibility">Accessibility</h2>
+  <h2>Accessibility</h2>
   {% include "../../src/_includes/modules/accessibility.html" %}
  </div>
 </div>

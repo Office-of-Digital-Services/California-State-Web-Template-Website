@@ -14,9 +14,10 @@ permalink: "structure.html"
   <!-- Side navigation -->
   <nav aria-labelledby="navigation-list" class="side-navigation sticky-6">
    <ul class="list-navigation">
-    <li><a href="/structure.html" id="navigation-list" class="active landing">Structural elements</a></li>
+    <li><a href="/structure.html" id="navigation-list" class="active landing">Structure <span class="sr-only">landing
+       page</span></a></li>
     <li><a href="/structure/utility-header.html">Utility header</a></li>
-    <li><a href="/structure/settings-bar.html">Settings</a></li>
+    <li><a href="/structure/settings.html">Settings</a></li>
     <li><a href="/structure/site-header.html">Site header</a></li>
     <li><a href="/structure/mobile-controls.html">Mobile controls</a></li>
     <li><a href="/structure/search.html">Search</a></li>
@@ -31,17 +32,11 @@ permalink: "structure.html"
 
   <h1 class="mt-lg-0">Structure</h1>
 
-  <nav aria-labelledby="page-navigation-label" class="page-navigation">
-   <div id="page-navigation-label" class="label">On this page</div>
-   <ul>
-    <li><a href="#Webpage-structure">Webpage structure</a></li>
-    <li><a href="#Structural-elements">Structural elements</a></li>
-   </ul>
-  </nav>
+  <nav class="page-navigation"></nav>
 
   <p class="lead">Our structural components form the basic structure of a website using the State Web Template. This
    structure contains elements that connect web pages and can lead to a smooth user experience.</p>
-  <h2 id="Webpage-structure">Webpage structure</h2>
+  <h2>Webpage structure</h2>
   <p>
    The State Web Template uses includes as our main building components.</p>
 
@@ -65,7 +60,7 @@ permalink: "structure.html"
     <div id="pane-example2" class="card tab-pane fade show active" role="tabpanel" aria-labelledby="tab-example2">
      <div class="card-header" id="heading-example2">
       <h4 class="my-0 w-100">
-       <a data-bs-toggle="collapse" href="#collapse-home" data-parent="#tab-content" aria-expanded="true"
+       <a data-bs-toggle="collapse" href="#collapse-example2" data-parent="#tab-content" aria-expanded="true"
         aria-controls="collapse-example2" title="Example tab header">
         Example
        </a>
@@ -74,7 +69,7 @@ permalink: "structure.html"
      <div id="collapse-example2" class="collapse show" role="tabpanel" aria-labelledby="heading-example2">
       <div class="card-body">
        <img src="/images/structure.jpg" class="img-fluid"
-        alt="Web Page Template Structure: Global Header (which includes Utility header, Setting Bar, Site Header, Navigation and Search), Main Content and Footer." />
+        alt="Web Page Template Structure: Global Header (which includes Utility header, Setting, Site Header, Navigation and Search), Main Content and Footer." />
       </div>
      </div>
     </div>
@@ -104,7 +99,7 @@ permalink: "structure.html"
              <span class="text-accent-p2">&lt;header</span> <span class="text-info">role=</span><span class="text-accent7">"banner"</span> <span class="text-info">id=</span><span class="text-accent7">"header"</span> <span class="text-info">class=</span><span class="text-accent7">"global-header fixed"</span><span class="text-accent-p2">&gt;</span>
                <span class="text-accent-p2">&lt;div</span> <span class="text-info">id=</span><span class="text-accent7">"skip-to-content"</span><span class="text-accent-p2">&gt;&lt;a </span><span class="text-info">href=</span><span class="text-accent7">"#main-content"</span><span class="text-accent-p2">&gt;</span>Skip to Main Content<span class="text-accent-p2">&lt;/a&gt;&lt;/div&gt;</span>
                <span class="text-success">&#10100;% include "/src/_includes/utility-header.njk" %&#10101;/span>
-               <span class="text-success">&#10100;% include "/src/_includes/settings-bar.njk" %&#10101;</span>
+               <span class="text-success">&#10100;% include "/src/_includes/settings.njk" %&#10101;</span>
                <span class="text-success">&#10100;% include "/src/_includes/site-header.njk" %&#10101;</span>
                <span class="text-success">&#10100;% include "/src/_includes/mobile-controls.njk" %&#10101;</span>
                <span class="text-accent-p2">&lt;div</span> <span class="text-info">class=</span><span class="text-accent7">"navigation-search full-width-nav container"</span><span class="text-accent-p2">&gt;</span>
@@ -137,7 +132,7 @@ permalink: "structure.html"
 
 
 
-  <h2 id="Structural-elements">Structural elements</h2>
+  <h2>Structural elements</h2>
 
 
   <div class="row">
@@ -156,7 +151,7 @@ permalink: "structure.html"
     </a>
    </div>
    <div class="col-md-4 m-t-md">
-    <a href="/structure/settings-bar.html"
+    <a href="/structure/settings.html"
      class="no-underline d-block color-gray-dark brd-gray-light brd-solid-1 rounded-5 h-100 transition-0_3 shadow2-hover color-primary color-primary-hover"
      title="Settings component">
      <div class="p-a-md d-flex align-content-center">

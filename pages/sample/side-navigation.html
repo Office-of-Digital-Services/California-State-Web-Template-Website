@@ -7,27 +7,18 @@ permalink: "/components/side-navigation.html"
 
 
 <h1 class="mt-lg-0 m-b-0">Side navigation</h1>
-<p class="subtitle">Other names: page index</p>
+<p class="subtitle">Other names: Left navigation, side menu</p>
 
 
-<nav aria-labelledby="page-navigation-label" class="page-navigation">
- <div id="page-navigation-label" class="label">On this page</div>
- <ul class="columns-2">
-  <li><a href="#Single-level-list">Single-level list</a></li>
-  <li><a href="#Multi-level-list">Multi-level list</a></li>
-  <li><a href="#Accordion-list">Accordion list</a></li>
-  <li><a href="#Scroll-bar">Scroll bar</a></li>
-  <li><a href="#Usage">Usage</a></li>
-  <li><a href="#Accessibility">Accessibility</a></li>
- </ul>
-</nav>
+
+<nav class="page-navigation"></nav>
 
 
 <p>The side navigation menu allows visitors to find related pages within a topic. It provides a deeper level of
  navigation for larger websites. Selecting a side menu item will take the visitor to that page.</p>
 
 
-<h2 id="Single-level-list">Single-level list</h2>
+<h2>Single-level list</h2>
 
 <!--TABS-->
 <div class="tab-group responsive">
@@ -98,7 +89,7 @@ permalink: "/components/side-navigation.html"
      <p class="m-b">Add class <code>landing</code> to your landing page link to indicate the landing page. Use
       <code>active</code> class on your link to indicate the current page if the page is currently open.
      </p>
-     <pre><code><li><a href="#" class="landing active">Landing page</a></li></code></pre>
+     <pre><code><li><a href="javascript:;" class="landing active">Landing page</a></li></code></pre>
     </div>
    </div>
   </div>
@@ -115,7 +106,7 @@ permalink: "/components/side-navigation.html"
 
 
 
-<h2 id="Multi-level-list">Multi-level list</h2>
+<h2>Multi-level list</h2>
 <!--TABS-->
 <div class="tab-group responsive">
  <ul id="tabs2" class="nav nav-tabs" role="tablist">
@@ -206,7 +197,7 @@ permalink: "/components/side-navigation.html"
       sublanding page link
       to add back arrow icon. Don't use <code>back</code> class if the page is current.
      </p>
-     <pre><code><li><a href="#" class="landing back">Page 4 section landing</a></li></code></pre>
+     <pre><code><li><a href="javascript:;" class="landing back">Page 4 section landing</a></li></code></pre>
 
     </div>
    </div>
@@ -218,7 +209,7 @@ permalink: "/components/side-navigation.html"
 <!--END TABS-->
 
 
-<h2 id="Accordion-list">Accordion list</h2>
+<h2>Accordion list</h2>
 
 
 <!--Tabs 4-->
@@ -241,7 +232,7 @@ permalink: "/components/side-navigation.html"
   <div id="pane-example4" class="card tab-pane fade show active" role="tabpanel" aria-labelledby="tab-example4">
    <div class="card-header" id="heading-example4">
     <h4 class="my-0 w-100">
-     <a data-bs-toggle="collapse" href="#collapse-home" data-parent="#tab-content" aria-expanded="true"
+     <a data-bs-toggle="collapse" href="#collapse-example4" data-parent="#tab-content" aria-expanded="true"
       aria-controls="collapse-example4" title="Example tab header">
       Example
      </a>
@@ -295,7 +286,7 @@ permalink: "/components/side-navigation.html"
    <div class="accordion-body">
     <ul class="side-subnav">
      <li>
-      <a href="#">Subpage 1</a>
+      <a href="javascript:;">Subpage 1</a>
      </li>
     </ul>
    </div>
@@ -311,12 +302,15 @@ permalink: "/components/side-navigation.html"
 <!--End tabs 4-->
 
 
+
 <h2 id="Scroll-bar">Scroll bar</h2>
-<p>This built-in feature will only activate when side navigation is longer than the current viewport area.</p>
+<p>This built-in feature only activates when side navigation is longer than the current viewport area.</p>
 
 
 
-<h2 id="Usage">Usage</h2>
+
+
+<h2>Usage</h2>
 
 <h3 class="m-t">When and how to use it</h3>
 <p>The side navigation component helps visitors find pages within a website. It complements site navigation. It helps
@@ -328,7 +322,7 @@ permalink: "/components/side-navigation.html"
  <li>Top level navigation isn’t enough to support your site hierarchy</li>
 </ul>
 
-<p>Use a <span class="bold">single level</span> when navigation is simple and direct.</p>
+<p>Use <span class="bold">single level</span> when navigation is simple and direct.</p>
 <p>Use <span class="bold">multi-level</span> when there are a lot of pages and/or hierarchical.</p>
 
 
@@ -421,7 +415,7 @@ permalink: "/components/side-navigation.html"
      <li><a href="javascript:;">Invitations</a></li>
      <li><a href="javascript:;">Decor</a></li>
      <li><a href="javascript:;">Food and drinks</a></li>
-     <li><a href="javascript:;">Surprise?</a></li>
+     <li><a href="javascript:;">Surprise</a></li>
      <li><a href="javascript:;">Activities</a></li>
      <li><a href="javascript:;">Gifts</a></li>
     </ul>
@@ -432,5 +426,5 @@ permalink: "/components/side-navigation.html"
  </div>
 </div>
 <hr>
-<h2 id="Accessibility">Accessibility</h2>
+<h2>Accessibility</h2>
 {% include "../../src/_includes/modules/accessibility.html" %}
