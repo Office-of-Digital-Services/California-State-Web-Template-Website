@@ -1,1 +1,94 @@
 /* THIS IS CUSTOM CSS */
+.timeline-lines {
+  transform: rotate(-3deg);
+}
+.dot-text {
+  transform: rotate(3deg);
+  padding-bottom: 1rem;
+  padding-right: 1rem;
+}
+.dot-line::after,
+.dot-line::before {
+  width: 100%;
+}
+.brd-primary-light-after::after,
+.brd-primary-light-before::before {
+  border-color: #bcbbc1 !important;
+}
+.dot-line::after,
+.dot-line::before {
+  border-top-width: 2px;
+}
+.dot-line-inner {
+  border-width: 2px;
+  border-color: #bcbbc1 !important;
+}
+.round-card > a:hover {
+  color: #5e5e6a;
+}
+.round-card:hover .image-icon {
+  opacity: 0.8;
+}
+.font-weight-bold {
+  font-weight: 500;
+}
+.partner-link {
+  text-decoration: none !important;
+}
+.partner-link:hover {
+  text-decoration: underline !important;
+  color: #EEF8FB !important;
+}
+
+@media (max-width: 575px) {
+  .header-primary-banner p {
+    font-size: 1.9375rem;
+    line-height: 2.675rem;
+    padding-top: 2rem;
+  }
+  .header-primary-banner .row, .partner-with-us .row {
+    flex-direction: column-reverse;
+  }
+  .header-primary-banner img, .partner-with-us svg {
+    width: auto;
+  }
+  .dot-line {
+    position: relative;
+  }
+  .dot-text {
+    margin-left: 3.25rem;
+    margin-top: -3.75rem;
+    margin-bottom: 3rem;
+    position: relative;
+  }
+  .dot-text::before {
+    display: block;
+    content: "";
+    height: 200%;
+    width: 2px;
+    background: #bcbbc1;
+    position: absolute;
+    left: calc(-38px);
+    top: 6px;
+  }
+  .timeline-lines .col-sm-3:nth-last-of-type(2) .dot-text::before,
+  .timeline-lines .col-sm-3:last-of-type .dot-text::before {
+    background: #dddddd;
+  }
+}
+
+@media (max-width: 767px) {
+  .dot-text,
+  .timeline-lines {
+    transform: rotate(0deg);
+  }
+}
+
+@media (max-width: 991px) {
+  .header-primary-banner .row {
+    flex-direction: column-reverse;
+  }
+  .header-primary-banner img {
+    width: 100%;
+  }
+}

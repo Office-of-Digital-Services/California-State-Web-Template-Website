@@ -15,7 +15,7 @@ permalink: "contact-us-form.html"
 
   <form autocomplete="on" method="POST" id="ContactUsForm">
     <div class="alert alert-danger alert-banner" role="alert">
-      <div class="container">Correct the errors to continue</div>
+      <div class="container px-4">Correct the errors to continue</div>
     </div>
     <label class="form-control-label" for="InputName"
       ><span class="required-label" aria-hidden="true">*</span> Your name</label
@@ -33,7 +33,7 @@ permalink: "contact-us-form.html"
       maxlength="200"
       minlength="3"
     />
-    <div class="invalid-feedback d-block">This field is required</div>
+    <div class="mt-2 invalid-feedback d-block font-weight-bold">Enter your name</div>
     <br />
     <label class="form-control-label" for="InputEmail"
       ><span class="required-label" aria-hidden="true">*</span> Email</label
@@ -50,10 +50,10 @@ permalink: "contact-us-form.html"
       maxlength="200"
       minlength="5"
     />
-    <div class="invalid-feedback d-block">A valid email is required</div>
+    <div class="mt-2 invalid-feedback d-block font-weight-bold">Enter your email</div>
     <br />
     <label class="form-control-label" for="InputDepartment"
-      >Department or agency</label
+      ><span class="required-label" aria-hidden="true">*</span> Department or agency</label
     >
     <input
       type="text"
@@ -61,13 +61,15 @@ permalink: "contact-us-form.html"
       id="InputDepartment"
       name="Department"
       autocomplete="organization"
-      aria-required="false"
+      aria-required="true"
       size="65"
+      required
       maxlength="200"
       minlength="1"
     />
+    <div class="mt-2 invalid-feedback d-block font-weight-bold">Enter your department or agency</div>
     <br />
-    <label class="form-control-label" for="InputRole">Main role</label>
+    <label class="form-control-label" for="InputRole"><span class="required-label" aria-hidden="true">*</span> Main role</label>
     <input
       type="text"
       class="form-control"
@@ -75,12 +77,14 @@ permalink: "contact-us-form.html"
       name="Role"
       autocomplete="organization-title"
       list="roleSuggestions"
-      aria-required="false"
+      aria-required="true"
       aria-autocomplete="both"
       size="65"
+      required
       maxlength="200"
       minlength="3"
     />
+    <div class="mt-2 invalid-feedback d-block font-weight-bold">Select a topic</div>
     <datalist id="roleSuggestions">
       <option>Analytics</option>
       <option>Content</option>
@@ -106,7 +110,7 @@ permalink: "contact-us-form.html"
       maxlength="1000"
       minlength="10"
     ></textarea>
-    <div class="invalid-feedback d-block">This field is required</div>
+    <div class="mt-2 invalid-feedback d-block font-weight-bold">Provide information about why you're contacting us.</div>
     <br />
     <input type="submit" value="Submit" class="btn btn-primary" />
 
@@ -136,7 +140,7 @@ permalink: "contact-us-form.html"
 
   form[submit_attempted] .alert,
   form[submit_attempted] .form-control:invalid {
-    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 240"><path fill="rgb(220,53,69)" d="M120 15C62 15 16 62 16 120S62 224 120 224S225 178 225 120S178 15 120 15z M133 180c0 7-6 13-13 13s-13-6-13-13v-80c0-7 6-13 13-13s13 6 13 13V180z M120 75c-8 0-15-7-15-15s7-15 15-15s15 7 15 15S128 75 120 75z"/></svg>');
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 208 208"><path fill="rgb(220,53,69)" d="M202 89.3 118.6 6.1a20.8 20.8 0 0 0-29.4 0L6.1 89.3a20.8 20.8 0 0 0 0 29.4l83.2 83.2a20.8 20.8 0 0 0 29.4 0l83.2-83.2a20.8 20.8 0 0 0 0-29.4ZM117 164a13 13 0 0 1-26 0V84a13 13 0 0 1 26 0ZM104 59a15.4 15.4 0 0 1-15-15 15 15 0 0 1 30 0 15.4 15.4 0 0 1-15 15Z"/></svg>');
     background-size: 1.75em;
     background-repeat: no-repeat;
   }
@@ -155,6 +159,9 @@ permalink: "contact-us-form.html"
   .form-control {
     width: auto;
     max-width: 100%;
+  }
+  .font-weight-bold {
+    font-weight: 600;
   }
 </style>
 
