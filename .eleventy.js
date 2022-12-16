@@ -6,6 +6,7 @@ module.exports = function (eleventyConfig) {
 		html: true
 	});
 
+<<<<<<< HEAD
 	// Copy `src/fonts/` to `_site/fonts`, `src/images/` to `_site/images`
 	eleventyConfig.addPassthroughCopy({
 		"src/fonts": "fonts",
@@ -23,6 +24,12 @@ module.exports = function (eleventyConfig) {
 
 	// web.config
 	eleventyConfig.addPassthroughCopy('web.config');
+=======
+	// Copy `src/fonts/` to `_site/fonts`
+	eleventyConfig.addPassthroughCopy({ "src/fonts": "fonts" });
+	// Copy `src/images/` to `_site/images`
+	eleventyConfig.addPassthroughCopy({ "src/images": "images" });
+>>>>>>> dev
 
 	// Markdown rendering onfigurarion
 	eleventyConfig.addPairedShortcode("markdown", (content) => {
@@ -33,7 +40,10 @@ module.exports = function (eleventyConfig) {
 		dir: {
 			// site content pages
 			input: "pages",
+<<<<<<< HEAD
 			data: "../src/_data",
+=======
+>>>>>>> dev
 			// site structure pages (path is realtive to input directory)
 			includes: "../src/_includes",
 			layouts: "../src/_includes/layouts",
@@ -41,4 +51,9 @@ module.exports = function (eleventyConfig) {
 			output: "_site",
 		},
 	};
+<<<<<<< HEAD
 };
+=======
+};
+
+>>>>>>> dev

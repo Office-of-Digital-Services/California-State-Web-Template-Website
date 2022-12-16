@@ -1,0 +1,1777 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>State Web Template CDN</title> 
+  <meta charset="utf-8">
+  <meta name="Author" content="State of California" />
+  <meta name="Description" content="State of California" />
+  <meta name="Keywords" content="California, government" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
+<meta property="og:image" content="https://california.azureedge.net/cdt/statetemplate/global/images/social_media_preview_image.png">
+
+<link rel="stylesheet" href="/css/cagov.core.min.css">
+
+		<link rel="stylesheet" href="/css/colortheme-oceanside.min.css">
+
+
+<link rel="apple-touch-icon-precomposed" sizes="100x100" href="/images/apple-touch-icon-precomposed.png">
+<link rel="icon" sizes="192x192" href="/images/apple-touch-icon-192x192.png">
+<link rel="apple-touch-icon-precomposed" sizes="180x180" href="/images/apple-touch-icon-180x180.png">
+<link rel="apple-touch-icon-precomposed" sizes="152x152" href="/images/apple-touch-icon-152x152.png">
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="/images/apple-touch-icon-144x144.png">
+<link rel="apple-touch-icon-precomposed" sizes="120x120" href="/images/apple-touch-icon-120x120.png">
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="/images/apple-touch-icon-114x114.png">
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="/images/apple-touch-icon-72x72.png">
+<link rel="apple-touch-icon-precomposed" href="/images/apple-touch-icon-57x57.png">
+<link rel="shortcut icon" href="/images/apple-touch-icon-57x57.png">
+<link rel="apple-touch-icon" href="/images/apple-touch-icon.png">
+<link rel="shortcut icon" href="/favicon.ico">
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<!-- Universal Analytics -->
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-20973992-30"></script>
+
+<script>
+ window.dataLayer = window.dataLayer || [];
+ function gtag() { dataLayer.push(arguments); }
+ gtag('js', new Date());
+
+ //statewide GA property
+ gtag('config', 'UA-3419582-2');
+
+ //please update state department UA code in line below before deployment  
+ gtag('config', 'UA-20973992-30');
+
+
+
+ var getOutboundLink = function (url) {
+  gtag('event', 'click', {
+   'event_category': 'navigation',
+   'event_label': 'outbound link: ' + url,
+   'transport_type': 'beacon',
+   'event_callback': function () { document.location = url; }
+  });
+ }
+
+ var trackDownload = function (filename) {
+  gtag('event', 'click', {
+   'event_category': 'download',
+   'event_label': 'file: ' + filename,
+   'transport_type': 'beacon',
+   'event_callback': function () { document.location = url; }
+  });
+ }
+</script>
+
+
+
+<!-- Google Analytics 4 -->
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-75V2BNQ3DR"></script>
+
+<script>
+ window.dataLayer = window.dataLayer || [];
+ function gtag() { dataLayer.push(arguments); }
+ gtag('js', new Date());
+ gtag('config', 'G-69TD0KNT0F'); // statewide GA4 Property ID
+ gtag('config', 'G-75V2BNQ3DR'); // update individual agency GA4 Property ID code before deployment
+</script>
+</head>
+<body class="primary">
+  <header role="banner" id="header" class="global-header fixed">
+    <div id="skip-to-content">
+        <a href="#main-content">Skip to Main Content</a>
+    </div>
+    <!-- /src/_includes/modules/alert-banner-beta-feedback.html -->
+<div class="alert alert-banner bg-standout p-x-0 p-y-sm" role="alert">
+ <div class="container">
+  <span class="alert-level border brd-s1 px-3 m-r-md">BETA</span><span class="alert-text text-1rem">We'd love your
+   feedback
+   to make the template better. You have from November 4 to November 11. </span>
+  <a href="https://airtable.com/shro9V6ry2Cf4mpgG" class="btn btn-default btn-xs bg-s1 pos-rel m-l">Send
+   feedback</a>
+ </div>
+</div>
+    
+    <div class="utility-header">
+    <div class="container">
+        <div class="flex-row">
+            <div class="social-media-links">
+                <div class="header-cagov-logo"><a href="https://ca.gov"><span class="sr-only">CA.gov</span><img
+                            src="/images/Ca-Gov-Logo-Gold.svg" class="pos-rel" alt="" aria-hidden="true" /></a></div>
+               <p class="official-tag"><span class="desktop-only">Official website of the</span> State of California</p>
+            </div>
+            <div class="settings-links">
+                <button class="btn btn-sm" data-bs-toggle="collapse" data-bs-target="#siteSettings"
+                    aria-expanded="false" aria-controls="siteSettings"><span class="ca-gov-icon-gear"
+                        aria-hidden="true"></span>Settings</button>
+            </div>
+        </div>
+    </div>
+</div>
+    <div class="site-settings section collapse collapsed" id="siteSettings">
+ <div class="container p-y">
+
+  <div class="settings-bar-buttons">
+
+   <div class="btn-group" aria-label="contrastMode">
+    <button type="button"
+     class="btn btn-default btn-lg bg-transparent bg-s1-hover disableHighContrastMode">Reset</button>
+   </div>
+
+   <div class="btn-group"><button type="button" class="btn btn-s1 btn-lg brd-s1 enableHighContrastMode">High
+     contrast</button>
+   </div>
+
+
+
+   <div class="btn-group">
+    <button type="button" class="btn btn-s1 btn-lg brd-s1 increaseTextSize">
+     <span class="hidden-xs">Increase font size</span>
+     <span class="visible-xs">Font
+      <span class="sr-only">increase</span>
+      <span class="ca-gov-icon-plus-line small" aria-hidden="true"></span>
+     </span>
+    </button>
+   </div>
+
+   <div class="btn-group">
+    <button type="button" class="btn btn-s1 btn-lg brd-s1 decreaseTextSize">
+     <span class="hidden-xs">Decrease font size</span>
+     <span class="visible-xs">Font <span class="sr-only">decrease</span>
+      <span class="ca-gov-icon-minus-line small" aria-hidden="true"></span>
+     </span>
+    </button>
+   </div>
+
+   <div class="btn-group">
+    <button type="button" class="btn btn-s1 btn-lg brd-s1 dyslexicFont">Dyslexic font</button>
+   </div>
+
+   <button type="button" class="close ms-auto" data-bs-toggle="collapse" data-bs-target="#siteSettings"
+    aria-label="Close">
+    <span aria-hidden="true" class=" ca-gov-icon-close-mark"></span>
+   </button>
+
+  </div>
+ </div>
+</div>
+    <!-- header branding with light gray background -->
+<div class="section-default">
+ <div class="branding">
+  <div class="header-organization-banner">
+   <a href="/">
+    <div class="logo-assets">
+     <img src="/images/template-logo.png" class="logo-img" alt="State Template Logo" />
+     <div class="logo-text">
+      <span class="logo-state">State of California</span>
+      <span class="logo-dept">Web Template</span>
+     </div>
+    </div>
+   </a>
+  </div>
+ </div>
+</div>
+    <!-- mobile navigation controls -->
+<div class="mobile-controls">
+    <span class="mobile-control-group mobile-header-icons">
+        <!-- Add more mobile controls here. These will be on the right side of the mobile page header section -->
+    </span>
+    <div class="mobile-control-group main-nav-icons">
+        <button class="mobile-control toggle-search">
+            <span class="ca-gov-icon-search hidden-print" aria-hidden="true"></span><span class="sr-only">Search</span>
+        </button>
+        <button id="nav-icon3" class="mobile-control toggle-menu" aria-expanded="false" aria-controls="navigation"
+            data-bs-toggle="collapse" data-bs-target="#navigation">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span class="sr-only">Menu</span>
+        </button>
+    </div>
+</div>
+    <div class="navigation-search full-width-nav container">
+      <div id="head-search" class="search-container featured-search">
+          <div class="container">
+    <form id="Search" class="pos-rel" action="/serp.html">
+        <span class="sr-only" id="SearchInput">Custom Google Search</span>
+        <input type="text" name="q" aria-labelledby="SearchInput" placeholder="Search"
+            class="search-textfield" />
+        <button type="submit" class="gsc-search-button"><span
+                class="ca-gov-icon-search" aria-hidden="true"></span><span
+                class="sr-only">Submit</span></button>
+        <div class="close-search-btn"><button
+                class="close-search gsc-clear-button border-0 bg-transparent pos-rel"
+                type="reset"><span class="sr-only">Close</span></button></div>
+    </form>
+</div>
+      </div>
+      <!-- navigation types -->
+            
+		          <nav id="navigation" class="main-navigation dropdown">
+ <ul id="nav_list" class="top-level-nav">
+  <li class="nav-item">
+       
+       <a class="first-level-link" href="/template-updates.html">Template updates</a>
+        
+   </li>
+   <li class="nav-item">
+       
+       <a class="first-level-link active" href="/get-started.html">Get started</a>
+        
+   </li>
+   <li class="nav-item">       
+       
+       <a class="first-level-link" href="/structure.html">Structure</a>
+        
+   </li>
+    
+    <li class="nav-item">
+       
+       <a class="first-level-link active" href="/visual-design.html">Visual design</a>
+       <div class="sub-nav">
+         <ul class="second-level-nav">
+          <li class="unit1">
+            <a href="/visual-design/color.html" class="second-level-link">Color</a>
+           </li>
+          <li class="unit1">
+            <a href="/visual-design/icons.html" class="second-level-link">Icons</a>
+           </li>
+           <li class="unit1">
+            <a href="/visual-design/typography.html" class="second-level-link">Typography</a>
+           </li>
+          </ul>
+       </div>
+   </li>
+   <li class="nav-item">
+       
+       <a class="first-level-link" href="/components.html">Components</a>
+        
+   </li>
+   <li class="nav-item">
+       
+       <a class="first-level-link" href="/patterns.html" >Patterns</a>
+        
+   </li>
+ </ul>
+
+</nav>
+
+            
+    </div>
+  </header>
+
+  
+<div id="main-content" class="main-content">
+	<div class="container p-t-md">
+		<main class="main-primary" id="main">
+     
+    <nav aria-label="You are here">
+ <ol class="breadcrumb">
+  <li><a href="../index.html" title="Home page">Home</a></li>
+   
+ </ol>
+</nav>
+
+			
+
+
+<h1 class="mt-lg-0">State Template CDN</h1>
+
+<p>
+ Users can load your website faster by serving State Template's static resources such as css,
+ JavaScript, fonts, and images in nodes all around the world.
+ When a user requests your site, the node closest in proximity to user will deliver the static
+ content,
+ ensuring the shortest distance for the data to travel (reduced latency), therefore providing the
+ fastest
+ site experience.
+</p>
+
+<h2>CDN example using core CSS files</h2>
+<pre><span class="text-accent-p2">&lt;link</span> <span class="text-info">href=</span><span class="text-accent7">"https://california.azureedge.net/cdt/statetemplate/6.0.8/css/cagov.core.css" <span class="text-info">rel=</span><span class="text-accent7">"stylesheet"</span></span><span class="text-accent-p2">&gt;</span>
+<span class="text-accent-p2">&lt;link</span> <span class="text-info">href=</span><span class="text-accent7">"https://california.azureedge.net/cdt/statetemplate/6.0.8/css/colortheme-oceanside.css"</span> <span class="text-info">rel=</span><span class="text-accent7">"stylesheet"</span><span class="text-accent-p2">&gt;</span><br /></pre>
+
+<h2>CDN example using JS files</h2>
+<pre><span class="text-accent-p2">&lt;script</span> <span class="text-info">src=</span><span class="text-accent7">"https://california.azureedge.net/cdt/statetemplate/6.0.8/js/cagov.core.js"</span><span class="text-accent-p2">&gt;&lt;/script&gt;</span></pre>
+
+
+<h2>Sample page using State Template CDN</h2>
+<p>Here is the example of using CDN for core CSS/JS State Template files together with Server Side
+ Includes (ssi):</p>
+<pre>
+<span class="text-success">&lt;!doctype html&gt;</span>
+ <span class="text-accent-p2">&lt;html</span> <span class="text-info">lang=</span><span class="text-accent7">"en"</span><span class="text-accent-p2">&gt;</span>
+  <span class="text-accent-p2">&lt;head&gt;</span>
+   <span class="text-accent-p2">&lt;meta </span><span class="text-info">charset=</span><span class="text-accent7">"utf-8"</span><span class="text-accent-p2">&gt;</span>
+   <span class="text-accent-p2">&lt;title&gt;</span>State Template<span class="text-accent-p2">&lt;/title&gt;</span>
+   <span class="text-accent-p2">&lt;meta</span> <span class="text-info">name=</span><span class="text-accent7">"Author"</span> <span class="text-info">content=</span><span class="text-accent7">"State of California"</span><span class="text-accent-p2"> /&gt;</span>
+   <span class="text-accent-p2">&lt;meta</span> <span class="text-info">name=</span><span class="text-accent7">"Description"</span> <span class="text-info">content=</span><span class="text-accent7">"State of California"</span><span class="text-accent-p2"> /&gt;</span>
+   <span class="text-accent-p2">&lt;meta</span> <span class="text-info">name=</span><span class="text-accent7">"Keywords"</span> <span class="text-info">content=</span><span class="text-accent7">"California, government"</span><span class="text-accent-p2"> /&gt;</span>
+   <span class="text-accent-p2">&lt;meta</span> <span class="text-info">name=</span><span class="text-accent7">"viewport"</span> <span class="text-info">content=</span><span class="text-accent7">"width=device-width, initial-scale=1, shrink-to-fit=no"</span><span class="text-accent-p2">&gt;</span>
+
+   <span class="text-muted">&lt;!-- State Template CDN CSS --&gt;</span>
+   <span class="text-accent-p2">&lt;link</span> <span class="text-info">rel=</span><span class="text-accent7">"stylesheet"</span> <span class="text-info">href=</span><span class="text-accent7">"https://california.azureedge.net/cdt/statetemplate/6.0.8/css/cagov.core.css"</span><span class="text-accent-p2">&gt;</span>
+   <span class="text-accent-p2">&lt;link</span> <span class="text-info">rel=</span><span class="text-accent7">"stylesheet"</span> <span class="text-info">href=</span><span class="text-accent7">"https://california.azureedge.net/cdt/statetemplate/6.0.8/css/colortheme-oceanside.css"</span><span class="text-accent-p2">&gt;</span>
+
+  <span class="text-accent-p2">&lt;/head&gt;</span>
+ <span class="text-accent-p2">&lt;body&gt;</span>
+  <span class="text-accent-p2">&lt;header</span> <span class="text-info">role=</span><span class="text-accent7">"banner"</span> <span class="text-info">id=</span><span class="text-accent7">"header"</span> <span class="text-info">class=</span><span class="text-accent7">"global-header fixed"</span><span class="text-accent-p2">&gt;</span>
+    <span class="text-accent-p2">&lt;div</span> <span class="text-info">id=</span><span class="text-accent7">"skip-to-content"</span><span class="text-accent-p2">&gt;&lt;a </span><span class="text-info">href=</span><span class="text-accent7">"#main-content"</span><span class="text-accent-p2">&gt;</span>Skip to Main Content<span class="text-accent-p2">&lt;/a&gt;&lt;/div&gt;</span>
+     <span class="text-success">&lt;!-- utility header goes here --&gt;</span>
+     <span class="text-success">&lt;!-- settings bar goes here --&gt;</span>
+     <span class="text-success">&lt;!-- site header goes here --&gt;</span>
+     <span class="text-success">&lt;!-- mobile controls go here --&gt;</span>
+     <span class="text-accent-p2">&lt;div</span> <span class="text-info">class=</span><span class="text-accent7">"navigation-search full-width-nav"</span><span class="text-accent-p2">&gt;</span>
+      <span class="text-accent-p2">&lt;div</span> <span class="text-info">id=</span><span class="text-accent7">"head-search"</span> <span class="text-info">class=</span><span class="text-accent7">"search-container featured-search"</span><span class="text-accent-p2">&gt;</span>
+        <span class="text-success">&lt;!-- search goes here --&gt;</span>
+      <span class="text-accent-p2">&lt;/div&gt;</span>
+      <span class="text-success">&lt;!-- site navigation goes here --&gt;</span>
+     <span class="text-accent-p2">&lt;/div&gt;</span>
+    <span class="text-accent-p2">&lt;div </span><span class="text-info">class=</span><span class="text-accent7">"header-decoration"</span><span class="text-accent-p2">&gt;</span><span class="text-accent-p2">&lt;/div&gt;</span>
+   <span class="text-accent-p2">&lt;/header&gt;</span>
+   <span class="text-accent-p2">&lt;div</span> <span class="text-info">id=</span><span class="text-accent7">"main-content"</span> <span class="text-info">class=</span><span class="text-accent7">"main-content"</span><span class="text-accent-p2">&gt;</span>
+   <span class="text-accent-p2">&lt;div </span><span class="text-info">class=</span><span class="text-accent7">"container"</span><span class="text-accent-p2">&gt;</span>
+    <span class="text-accent-p2">&lt;main </span><span class="text-info">class=</span><span class="text-accent7">"main-primary"</span><span class="text-accent-p2">&gt;</span>
+      Page content
+    <span class="text-accent-p2">&lt;/main&gt;</span>
+   <span class="text-accent-p2">&lt;/div&gt;</span>
+   <span class="text-accent-p2">&lt;/div&gt;</span>
+   <span class="text-success">&lt;!-- global footer goes here --&gt;</span>
+
+   <span class="text-muted">&lt;!-- State Template JavaScript CDN --&gt;</span>
+   <span class="text-accent-p2">&lt;script </span><span class="text-info">src=</span><span class="text-accent7">"https://california.azureedge.net/cdt/statetemplate/6.0.8/js/cagov.core.js"</span><span class="text-accent-p2">&gt;&lt;/script&gt;</span>
+ <span class="text-accent-p2">&lt;/body&gt;</span>
+ <span class="text-accent-p2">&lt;/html&gt;</span>
+</pre>
+<p><span class="text-highlight-primary">Note:</span> The web server that hosts the State Template should be
+ configured to process SSI's with the .html extension.</p>
+
+
+
+<h2>State Template core files CDN by version</h2>
+<h3>State Template v5.6 (production)</h3>
+<ol data-aria-accordion data-multi data-transition data-default="none">
+ <li>
+  <h4 data-aria-accordion-heading>
+   Version 5.6.1
+  </h4>
+  <div data-aria-accordion-panel>
+   <p>CSS</p>
+   <pre>
+<code class="overflow-auto">https://california.azureedge.net/cdt/statetemplate/5.6.1/css/cagov.core.css
+https://california.azureedge.net/cdt/statetemplate/5.6.1/css/cagov.core.min.css
+https://california.azureedge.net/cdt/statetemplate/5.6.1/css/cagov.font-only.css
+https://california.azureedge.net/cdt/statetemplate/5.6.1/css/cagov.font-only.min.css
+https://california.azureedge.net/cdt/statetemplate/5.6.1/css/colorscheme-delta.css
+https://california.azureedge.net/cdt/statetemplate/5.6.1/css/colorscheme-delta.min.css
+https://california.azureedge.net/cdt/statetemplate/5.6.1/css/colorscheme-eureka.css
+https://california.azureedge.net/cdt/statetemplate/5.6.1/css/colorscheme-eureka.min.css
+https://california.azureedge.net/cdt/statetemplate/5.6.1/css/colorscheme-mono.css
+https://california.azureedge.net/cdt/statetemplate/5.6.1/css/colorscheme-mono.min.css
+https://california.azureedge.net/cdt/statetemplate/5.6.1/css/colorscheme-oceanside.css
+https://california.azureedge.net/cdt/statetemplate/5.6.1/css/colorscheme-oceanside.min.css
+https://california.azureedge.net/cdt/statetemplate/5.6.1/css/colorscheme-orangecounty.css
+https://california.azureedge.net/cdt/statetemplate/5.6.1/css/colorscheme-orangecounty.min.css
+https://california.azureedge.net/cdt/statetemplate/5.6.1/css/colorscheme-pasorobles.css
+https://california.azureedge.net/cdt/statetemplate/5.6.1/css/colorscheme-pasorobles.min.css
+https://california.azureedge.net/cdt/statetemplate/5.6.1/css/colorscheme-sacramento.css
+https://california.azureedge.net/cdt/statetemplate/5.6.1/css/colorscheme-sacramento.min.css
+https://california.azureedge.net/cdt/statetemplate/5.6.1/css/colorscheme-santabarbara.css
+https://california.azureedge.net/cdt/statetemplate/5.6.1/css/colorscheme-santabarbara.min.css
+https://california.azureedge.net/cdt/statetemplate/5.6.1/css/colorscheme-santacruz.css
+https://california.azureedge.net/cdt/statetemplate/5.6.1/css/colorscheme-santacruz.min.css
+https://california.azureedge.net/cdt/statetemplate/5.6.1/css/colorscheme-sierra.css
+https://california.azureedge.net/cdt/statetemplate/5.6.1/css/colorscheme-sierra.min.css
+https://california.azureedge.net/cdt/statetemplate/5.6.1/css/colorscheme-shasta.css
+https://california.azureedge.net/cdt/statetemplate/5.6.1/css/colorscheme-shasta.min.css
+https://california.azureedge.net/cdt/statetemplate/5.6.1/css/colorscheme-trinity.css
+https://california.azureedge.net/cdt/statetemplate/5.6.1/css/colorscheme-trinity.min.css
+</code></pre>
+   <p>JS</p>
+   <pre><code class="overflow-auto">https://california.azureedge.net/cdt/statetemplate/5.6.1/js/cagov.core.js
+https://california.azureedge.net/cdt/statetemplate/5.6.1/js/cagov.core.min.js</code></pre>
+  </div>
+ </li>
+ <li>
+  <h4 data-aria-accordion-heading>
+   Version 5.6.0
+  </h4>
+  <div data-aria-accordion-panel>
+   <p>CSS</p>
+   <pre>
+<code class="overflow-auto">https://california.azureedge.net/cdt/statetemplate/5.6.0/css/cagov.core.css
+https://california.azureedge.net/cdt/statetemplate/5.6.0/css/cagov.core.min.css
+https://california.azureedge.net/cdt/statetemplate/5.6.0/css/cagov.font-only.css
+https://california.azureedge.net/cdt/statetemplate/5.6.0/css/cagov.font-only.min.css
+https://california.azureedge.net/cdt/statetemplate/5.6.0/css/colorscheme-delta.css
+https://california.azureedge.net/cdt/statetemplate/5.6.0/css/colorscheme-delta.min.css
+https://california.azureedge.net/cdt/statetemplate/5.6.0/css/colorscheme-eureka.css
+https://california.azureedge.net/cdt/statetemplate/5.6.0/css/colorscheme-eureka.min.css
+https://california.azureedge.net/cdt/statetemplate/5.6.0/css/colorscheme-mono.css
+https://california.azureedge.net/cdt/statetemplate/5.6.0/css/colorscheme-mono.min.css
+https://california.azureedge.net/cdt/statetemplate/5.6.0/css/colorscheme-oceanside.css
+https://california.azureedge.net/cdt/statetemplate/5.6.0/css/colorscheme-oceanside.min.css
+https://california.azureedge.net/cdt/statetemplate/5.6.0/css/colorscheme-orangecounty.css
+https://california.azureedge.net/cdt/statetemplate/5.6.0/css/colorscheme-orangecounty.min.css
+https://california.azureedge.net/cdt/statetemplate/5.6.0/css/colorscheme-pasorobles.css
+https://california.azureedge.net/cdt/statetemplate/5.6.0/css/colorscheme-pasorobles.min.css
+https://california.azureedge.net/cdt/statetemplate/5.6.0/css/colorscheme-sacramento.css
+https://california.azureedge.net/cdt/statetemplate/5.6.0/css/colorscheme-sacramento.min.css
+https://california.azureedge.net/cdt/statetemplate/5.6.0/css/colorscheme-santabarbara.css
+https://california.azureedge.net/cdt/statetemplate/5.6.0/css/colorscheme-santabarbara.min.css
+https://california.azureedge.net/cdt/statetemplate/5.6.0/css/colorscheme-santacruz.css
+https://california.azureedge.net/cdt/statetemplate/5.6.0/css/colorscheme-santacruz.min.css
+https://california.azureedge.net/cdt/statetemplate/5.6.0/css/colorscheme-sierra.css
+https://california.azureedge.net/cdt/statetemplate/5.6.0/css/colorscheme-sierra.min.css
+https://california.azureedge.net/cdt/statetemplate/5.6.0/css/colorscheme-shasta.css
+https://california.azureedge.net/cdt/statetemplate/5.6.0/css/colorscheme-shasta.min.css
+https://california.azureedge.net/cdt/statetemplate/5.6.0/css/colorscheme-trinity.css
+https://california.azureedge.net/cdt/statetemplate/5.6.0/css/colorscheme-trinity.min.css
+</code></pre>
+   <p>JS</p>
+   <pre><code class="overflow-auto">https://california.azureedge.net/cdt/statetemplate/5.6.0/js/cagov.core.js
+https://california.azureedge.net/cdt/statetemplate/5.6.0/js/cagov.core.min.js</code></pre>
+  </div>
+ </li>
+
+
+</ol>
+
+<h3>State Template v6 (beta)</h3>
+
+
+
+<ol data-aria-accordion data-multi data-transition data-default="none">
+ <li>
+  <h4 data-aria-accordion-heading>
+   Version 6.0.7
+  </h4>
+  <div data-aria-accordion-panel>
+   <p>CSS</p>
+   <pre>
+<code class="overflow-auto">https://california.azureedge.net/cdt/statetemplate/6.0.7/css/cagov.core.css
+https://california.azureedge.net/cdt/statetemplate/6.0.7/css/cagov.core.min.css
+https://california.azureedge.net/cdt/statetemplate/6.0.7/css/cagov.font-only.css
+https://california.azureedge.net/cdt/statetemplate/6.0.7/css/cagov.font-only.min.css
+https://california.azureedge.net/cdt/statetemplate/6.0.7/css/colorscheme-delta.css
+https://california.azureedge.net/cdt/statetemplate/6.0.7/css/colorscheme-delta.min.css
+https://california.azureedge.net/cdt/statetemplate/6.0.7/css/colorscheme-eureka.css
+https://california.azureedge.net/cdt/statetemplate/6.0.7/css/colorscheme-eureka.min.css
+https://california.azureedge.net/cdt/statetemplate/6.0.7/css/colorscheme-mono.css
+https://california.azureedge.net/cdt/statetemplate/6.0.7/css/colorscheme-mono.min.css
+https://california.azureedge.net/cdt/statetemplate/6.0.7/css/colorscheme-oceanside.css
+https://california.azureedge.net/cdt/statetemplate/6.0.7/css/colorscheme-oceanside.min.css
+https://california.azureedge.net/cdt/statetemplate/6.0.7/css/colorscheme-orangecounty.css
+https://california.azureedge.net/cdt/statetemplate/6.0.7/css/colorscheme-orangecounty.min.css
+https://california.azureedge.net/cdt/statetemplate/6.0.7/css/colorscheme-pasorobles.css
+https://california.azureedge.net/cdt/statetemplate/6.0.7/css/colorscheme-pasorobles.min.css
+https://california.azureedge.net/cdt/statetemplate/6.0.7/css/colorscheme-sacramento.css
+https://california.azureedge.net/cdt/statetemplate/6.0.7/css/colorscheme-sacramento.min.css
+https://california.azureedge.net/cdt/statetemplate/6.0.7/css/colorscheme-santabarbara.css
+https://california.azureedge.net/cdt/statetemplate/6.0.7/css/colorscheme-santabarbara.min.css
+https://california.azureedge.net/cdt/statetemplate/6.0.7/css/colorscheme-santacruz.css
+https://california.azureedge.net/cdt/statetemplate/6.0.7/css/colorscheme-santacruz.min.css
+https://california.azureedge.net/cdt/statetemplate/6.0.7/css/colorscheme-sierra.css
+https://california.azureedge.net/cdt/statetemplate/6.0.7/css/colorscheme-sierra.min.css
+https://california.azureedge.net/cdt/statetemplate/6.0.7/css/colorscheme-shasta.css
+https://california.azureedge.net/cdt/statetemplate/6.0.7/css/colorscheme-shasta.min.css
+https://california.azureedge.net/cdt/statetemplate/6.0.7/css/colorscheme-trinity.css
+https://california.azureedge.net/cdt/statetemplate/6.0.7/css/colorscheme-trinity.min.css
+</code></pre>
+   <p>JS</p>
+   <pre><code class="overflow-auto">https://california.azureedge.net/cdt/statetemplate/6.0.7/js/cagov.core.js
+https://california.azureedge.net/cdt/statetemplate/6.0.7/js/cagov.core.min.js</code></pre>
+  </div>
+ </li>
+ <li>
+  <h4 data-aria-accordion-heading>
+   Version 6.0.6
+  </h4>
+  <div data-aria-accordion-panel>
+   <p>CSS</p>
+   <pre>
+<code class="overflow-auto">https://california.azureedge.net/cdt/statetemplate/6.0.6/css/cagov.core.css
+https://california.azureedge.net/cdt/statetemplate/6.0.6/css/cagov.core.min.css
+https://california.azureedge.net/cdt/statetemplate/6.0.6/css/cagov.font-only.css
+https://california.azureedge.net/cdt/statetemplate/6.0.6/css/cagov.font-only.min.css
+https://california.azureedge.net/cdt/statetemplate/6.0.6/css/colorscheme-delta.css
+https://california.azureedge.net/cdt/statetemplate/6.0.6/css/colorscheme-delta.min.css
+https://california.azureedge.net/cdt/statetemplate/6.0.6/css/colorscheme-eureka.css
+https://california.azureedge.net/cdt/statetemplate/6.0.6/css/colorscheme-eureka.min.css
+https://california.azureedge.net/cdt/statetemplate/6.0.6/css/colorscheme-mono.css
+https://california.azureedge.net/cdt/statetemplate/6.0.6/css/colorscheme-mono.min.css
+https://california.azureedge.net/cdt/statetemplate/6.0.6/css/colorscheme-oceanside.css
+https://california.azureedge.net/cdt/statetemplate/6.0.6/css/colorscheme-oceanside.min.css
+https://california.azureedge.net/cdt/statetemplate/6.0.6/css/colorscheme-orangecounty.css
+https://california.azureedge.net/cdt/statetemplate/6.0.6/css/colorscheme-orangecounty.min.css
+https://california.azureedge.net/cdt/statetemplate/6.0.6/css/colorscheme-pasorobles.css
+https://california.azureedge.net/cdt/statetemplate/6.0.6/css/colorscheme-pasorobles.min.css
+https://california.azureedge.net/cdt/statetemplate/6.0.6/css/colorscheme-sacramento.css
+https://california.azureedge.net/cdt/statetemplate/6.0.6/css/colorscheme-sacramento.min.css
+https://california.azureedge.net/cdt/statetemplate/6.0.6/css/colorscheme-santabarbara.css
+https://california.azureedge.net/cdt/statetemplate/6.0.6/css/colorscheme-santabarbara.min.css
+https://california.azureedge.net/cdt/statetemplate/6.0.6/css/colorscheme-santacruz.css
+https://california.azureedge.net/cdt/statetemplate/6.0.6/css/colorscheme-santacruz.min.css
+https://california.azureedge.net/cdt/statetemplate/6.0.6/css/colorscheme-sierra.css
+https://california.azureedge.net/cdt/statetemplate/6.0.6/css/colorscheme-sierra.min.css
+https://california.azureedge.net/cdt/statetemplate/6.0.6/css/colorscheme-shasta.css
+https://california.azureedge.net/cdt/statetemplate/6.0.6/css/colorscheme-shasta.min.css
+https://california.azureedge.net/cdt/statetemplate/6.0.6/css/colorscheme-trinity.css
+https://california.azureedge.net/cdt/statetemplate/6.0.6/css/colorscheme-trinity.min.css
+</code></pre>
+   <p>JS</p>
+   <pre><code class="overflow-auto">https://california.azureedge.net/cdt/statetemplate/6.0.6/js/cagov.core.js
+https://california.azureedge.net/cdt/statetemplate/6.0.6/js/cagov.core.min.js</code></pre>
+  </div>
+ </li>
+ <li>
+  <h4 data-aria-accordion-heading>
+   Version 6.0.5
+  </h4>
+  <div data-aria-accordion-panel>
+   <p>CSS</p>
+   <pre>
+<code class="overflow-auto">https://california.azureedge.net/cdt/statetemplate/6.0.5/css/cagov.core.css
+https://california.azureedge.net/cdt/statetemplate/6.0.5/css/cagov.core.min.css
+https://california.azureedge.net/cdt/statetemplate/6.0.5/css/cagov.font-only.css
+https://california.azureedge.net/cdt/statetemplate/6.0.5/css/cagov.font-only.min.css
+https://california.azureedge.net/cdt/statetemplate/6.0.5/css/colorscheme-delta.css
+https://california.azureedge.net/cdt/statetemplate/6.0.5/css/colorscheme-delta.min.css
+https://california.azureedge.net/cdt/statetemplate/6.0.5/css/colorscheme-eureka.css
+https://california.azureedge.net/cdt/statetemplate/6.0.5/css/colorscheme-eureka.min.css
+https://california.azureedge.net/cdt/statetemplate/6.0.5/css/colorscheme-mono.css
+https://california.azureedge.net/cdt/statetemplate/6.0.5/css/colorscheme-mono.min.css
+https://california.azureedge.net/cdt/statetemplate/6.0.5/css/colorscheme-oceanside.css
+https://california.azureedge.net/cdt/statetemplate/6.0.5/css/colorscheme-oceanside.min.css
+https://california.azureedge.net/cdt/statetemplate/6.0.5/css/colorscheme-orangecounty.css
+https://california.azureedge.net/cdt/statetemplate/6.0.5/css/colorscheme-orangecounty.min.css
+https://california.azureedge.net/cdt/statetemplate/6.0.5/css/colorscheme-pasorobles.css
+https://california.azureedge.net/cdt/statetemplate/6.0.5/css/colorscheme-pasorobles.min.css
+https://california.azureedge.net/cdt/statetemplate/6.0.5/css/colorscheme-sacramento.css
+https://california.azureedge.net/cdt/statetemplate/6.0.5/css/colorscheme-sacramento.min.css
+https://california.azureedge.net/cdt/statetemplate/6.0.5/css/colorscheme-santabarbara.css
+https://california.azureedge.net/cdt/statetemplate/6.0.5/css/colorscheme-santabarbara.min.css
+https://california.azureedge.net/cdt/statetemplate/6.0.5/css/colorscheme-santacruz.css
+https://california.azureedge.net/cdt/statetemplate/6.0.5/css/colorscheme-santacruz.min.css
+https://california.azureedge.net/cdt/statetemplate/6.0.5/css/colorscheme-sierra.css
+https://california.azureedge.net/cdt/statetemplate/6.0.5/css/colorscheme-sierra.min.css
+https://california.azureedge.net/cdt/statetemplate/6.0.5/css/colorscheme-shasta.css
+https://california.azureedge.net/cdt/statetemplate/6.0.5/css/colorscheme-shasta.min.css
+https://california.azureedge.net/cdt/statetemplate/6.0.5/css/colorscheme-trinity.css
+https://california.azureedge.net/cdt/statetemplate/6.0.5/css/colorscheme-trinity.min.css
+</code></pre>
+   <p>JS</p>
+   <pre><code class="overflow-auto">https://california.azureedge.net/cdt/statetemplate/6.0.5/js/cagov.core.js
+https://california.azureedge.net/cdt/statetemplate/6.0.5/js/cagov.core.min.js</code></pre>
+  </div>
+ </li>
+ <li>
+  <h4 data-aria-accordion-heading>
+   Version 6.0.4
+  </h4>
+  <div data-aria-accordion-panel>
+   <p>CSS</p>
+   <pre>
+<code class="overflow-auto">https://california.azureedge.net/cdt/statetemplate/6.0.4/css/cagov.core.css
+https://california.azureedge.net/cdt/statetemplate/6.0.4/css/cagov.core.min.css
+https://california.azureedge.net/cdt/statetemplate/6.0.4/css/cagov.font-only.css
+https://california.azureedge.net/cdt/statetemplate/6.0.4/css/cagov.font-only.min.css
+https://california.azureedge.net/cdt/statetemplate/6.0.4/css/colorscheme-delta.css
+https://california.azureedge.net/cdt/statetemplate/6.0.4/css/colorscheme-delta.min.css
+https://california.azureedge.net/cdt/statetemplate/6.0.4/css/colorscheme-eureka.css
+https://california.azureedge.net/cdt/statetemplate/6.0.4/css/colorscheme-eureka.min.css
+https://california.azureedge.net/cdt/statetemplate/6.0.4/css/colorscheme-mono.css
+https://california.azureedge.net/cdt/statetemplate/6.0.4/css/colorscheme-mono.min.css
+https://california.azureedge.net/cdt/statetemplate/6.0.4/css/colorscheme-oceanside.css
+https://california.azureedge.net/cdt/statetemplate/6.0.4/css/colorscheme-oceanside.min.css
+https://california.azureedge.net/cdt/statetemplate/6.0.4/css/colorscheme-orangecounty.css
+https://california.azureedge.net/cdt/statetemplate/6.0.4/css/colorscheme-orangecounty.min.css
+https://california.azureedge.net/cdt/statetemplate/6.0.4/css/colorscheme-pasorobles.css
+https://california.azureedge.net/cdt/statetemplate/6.0.4/css/colorscheme-pasorobles.min.css
+https://california.azureedge.net/cdt/statetemplate/6.0.4/css/colorscheme-sacramento.css
+https://california.azureedge.net/cdt/statetemplate/6.0.4/css/colorscheme-sacramento.min.css
+https://california.azureedge.net/cdt/statetemplate/6.0.4/css/colorscheme-santabarbara.css
+https://california.azureedge.net/cdt/statetemplate/6.0.4/css/colorscheme-santabarbara.min.css
+https://california.azureedge.net/cdt/statetemplate/6.0.4/css/colorscheme-santacruz.css
+https://california.azureedge.net/cdt/statetemplate/6.0.4/css/colorscheme-santacruz.min.css
+https://california.azureedge.net/cdt/statetemplate/6.0.4/css/colorscheme-sierra.css
+https://california.azureedge.net/cdt/statetemplate/6.0.4/css/colorscheme-sierra.min.css
+https://california.azureedge.net/cdt/statetemplate/6.0.4/css/colorscheme-shasta.css
+https://california.azureedge.net/cdt/statetemplate/6.0.4/css/colorscheme-shasta.min.css
+https://california.azureedge.net/cdt/statetemplate/6.0.4/css/colorscheme-trinity.css
+https://california.azureedge.net/cdt/statetemplate/6.0.4/css/colorscheme-trinity.min.css
+</code></pre>
+   <p>JS</p>
+   <pre><code class="overflow-auto">https://california.azureedge.net/cdt/statetemplate/6.0.4/js/cagov.core.js
+https://california.azureedge.net/cdt/statetemplate/6.0.4/js/cagov.core.min.js</code></pre>
+  </div>
+ </li>
+ <li>
+  <h4 data-aria-accordion-heading>
+   Version 6.0.3
+  </h4>
+  <div data-aria-accordion-panel>
+   <p>CSS</p>
+   <pre>
+<code class="overflow-auto">https://california.azureedge.net/cdt/statetemplate/6.0.3/css/cagov.core.css
+https://california.azureedge.net/cdt/statetemplate/6.0.3/css/cagov.core.min.css
+https://california.azureedge.net/cdt/statetemplate/6.0.3/css/cagov.font-only.css
+https://california.azureedge.net/cdt/statetemplate/6.0.3/css/cagov.font-only.min.css
+https://california.azureedge.net/cdt/statetemplate/6.0.3/css/colorscheme-delta.css
+https://california.azureedge.net/cdt/statetemplate/6.0.3/css/colorscheme-delta.min.css
+https://california.azureedge.net/cdt/statetemplate/6.0.3/css/colorscheme-eureka.css
+https://california.azureedge.net/cdt/statetemplate/6.0.3/css/colorscheme-eureka.min.css
+https://california.azureedge.net/cdt/statetemplate/6.0.3/css/colorscheme-mono.css
+https://california.azureedge.net/cdt/statetemplate/6.0.3/css/colorscheme-mono.min.css
+https://california.azureedge.net/cdt/statetemplate/6.0.3/css/colorscheme-oceanside.css
+https://california.azureedge.net/cdt/statetemplate/6.0.3/css/colorscheme-oceanside.min.css
+https://california.azureedge.net/cdt/statetemplate/6.0.3/css/colorscheme-orangecounty.css
+https://california.azureedge.net/cdt/statetemplate/6.0.3/css/colorscheme-orangecounty.min.css
+https://california.azureedge.net/cdt/statetemplate/6.0.3/css/colorscheme-pasorobles.css
+https://california.azureedge.net/cdt/statetemplate/6.0.3/css/colorscheme-pasorobles.min.css
+https://california.azureedge.net/cdt/statetemplate/6.0.3/css/colorscheme-sacramento.css
+https://california.azureedge.net/cdt/statetemplate/6.0.3/css/colorscheme-sacramento.min.css
+https://california.azureedge.net/cdt/statetemplate/6.0.3/css/colorscheme-santabarbara.css
+https://california.azureedge.net/cdt/statetemplate/6.0.3/css/colorscheme-santabarbara.min.css
+https://california.azureedge.net/cdt/statetemplate/6.0.3/css/colorscheme-santacruz.css
+https://california.azureedge.net/cdt/statetemplate/6.0.3/css/colorscheme-santacruz.min.css
+https://california.azureedge.net/cdt/statetemplate/6.0.3/css/colorscheme-sierra.css
+https://california.azureedge.net/cdt/statetemplate/6.0.3/css/colorscheme-sierra.min.css
+https://california.azureedge.net/cdt/statetemplate/6.0.3/css/colorscheme-shasta.css
+https://california.azureedge.net/cdt/statetemplate/6.0.3/css/colorscheme-shasta.min.css
+https://california.azureedge.net/cdt/statetemplate/6.0.3/css/colorscheme-trinity.css
+https://california.azureedge.net/cdt/statetemplate/6.0.3/css/colorscheme-trinity.min.css
+</code></pre>
+   <p>JS</p>
+   <pre><code class="overflow-auto">https://california.azureedge.net/cdt/statetemplate/6.0.3/js/cagov.core.js
+https://california.azureedge.net/cdt/statetemplate/6.0.3/js/cagov.core.min.js
+</code></pre>
+  </div>
+ </li>
+ <li>
+  <h4 data-aria-accordion-heading>Version 6.0.2</h4>
+  <div data-aria-accordion-panel>
+   <p>CSS</p>
+   <pre>
+<code class="overflow-auto">https://california.azureedge.net/cdt/statetemplate/6.0.2/css/cagov.core.css
+https://california.azureedge.net/cdt/statetemplate/6.0.2/css/cagov.core.min.css
+https://california.azureedge.net/cdt/statetemplate/6.0.2/css/cagov.font-only.css
+https://california.azureedge.net/cdt/statetemplate/6.0.2/css/cagov.font-only.min.css
+https://california.azureedge.net/cdt/statetemplate/6.0.2/css/colorscheme-delta.css
+https://california.azureedge.net/cdt/statetemplate/6.0.2/css/colorscheme-delta.min.css
+https://california.azureedge.net/cdt/statetemplate/6.0.2/css/colorscheme-eureka.css
+https://california.azureedge.net/cdt/statetemplate/6.0.2/css/colorscheme-eureka.min.css
+https://california.azureedge.net/cdt/statetemplate/6.0.2/css/colorscheme-mono.css
+https://california.azureedge.net/cdt/statetemplate/6.0.2/css/colorscheme-mono.min.css
+https://california.azureedge.net/cdt/statetemplate/6.0.2/css/colorscheme-oceanside.css
+https://california.azureedge.net/cdt/statetemplate/6.0.2/css/colorscheme-oceanside.min.css
+https://california.azureedge.net/cdt/statetemplate/6.0.2/css/colorscheme-orangecounty.css
+https://california.azureedge.net/cdt/statetemplate/6.0.2/css/colorscheme-orangecounty.min.css
+https://california.azureedge.net/cdt/statetemplate/6.0.2/css/colorscheme-pasorobles.css
+https://california.azureedge.net/cdt/statetemplate/6.0.2/css/colorscheme-pasorobles.min.css
+https://california.azureedge.net/cdt/statetemplate/6.0.2/css/colorscheme-sacramento.css
+https://california.azureedge.net/cdt/statetemplate/6.0.2/css/colorscheme-sacramento.min.css
+https://california.azureedge.net/cdt/statetemplate/6.0.2/css/colorscheme-santabarbara.css
+https://california.azureedge.net/cdt/statetemplate/6.0.2/css/colorscheme-santabarbara.min.css
+https://california.azureedge.net/cdt/statetemplate/6.0.2/css/colorscheme-santacruz.css
+https://california.azureedge.net/cdt/statetemplate/6.0.2/css/colorscheme-santacruz.min.css
+https://california.azureedge.net/cdt/statetemplate/6.0.2/css/colorscheme-sierra.css
+https://california.azureedge.net/cdt/statetemplate/6.0.2/css/colorscheme-sierra.min.css
+https://california.azureedge.net/cdt/statetemplate/6.0.2/css/colorscheme-shasta.css
+https://california.azureedge.net/cdt/statetemplate/6.0.2/css/colorscheme-shasta.min.css
+https://california.azureedge.net/cdt/statetemplate/6.0.2/css/colorscheme-trinity.css
+https://california.azureedge.net/cdt/statetemplate/6.0.2/css/colorscheme-trinity.min.css
+</code></pre>
+   <p>JS</p>
+   <pre><code class="overflow-auto">https://california.azureedge.net/cdt/statetemplate/6.0.2/js/cagov.core.js
+https://california.azureedge.net/cdt/statetemplate/6.0.2/js/cagov.core.min.js
+</code></pre>
+  </div>
+ </li>
+ <li>
+  <h4 data-aria-accordion-heading>Version 6.0.1</h4>
+  <div data-aria-accordion-panel>
+   <p>CSS</p>
+   <pre>
+<code class="overflow-auto">https://california.azureedge.net/cdt/statetemplate/6.0.1/css/cagov.core.css
+https://california.azureedge.net/cdt/statetemplate/6.0.1/css/cagov.core.min.css
+https://california.azureedge.net/cdt/statetemplate/6.0.1/css/cagov.font-only.css
+https://california.azureedge.net/cdt/statetemplate/6.0.1/css/cagov.font-only.min.css
+https://california.azureedge.net/cdt/statetemplate/6.0.1/css/colorscheme-delta.css
+https://california.azureedge.net/cdt/statetemplate/6.0.1/css/colorscheme-delta.min.css
+https://california.azureedge.net/cdt/statetemplate/6.0.1/css/colorscheme-eureka.css
+https://california.azureedge.net/cdt/statetemplate/6.0.1/css/colorscheme-eureka.min.css
+https://california.azureedge.net/cdt/statetemplate/6.0.1/css/colorscheme-mono.css
+https://california.azureedge.net/cdt/statetemplate/6.0.1/css/colorscheme-mono.min.css
+https://california.azureedge.net/cdt/statetemplate/6.0.1/css/colorscheme-oceanside.css
+https://california.azureedge.net/cdt/statetemplate/6.0.1/css/colorscheme-oceanside.min.css
+https://california.azureedge.net/cdt/statetemplate/6.0.1/css/colorscheme-orangecounty.css
+https://california.azureedge.net/cdt/statetemplate/6.0.1/css/colorscheme-orangecounty.min.css
+https://california.azureedge.net/cdt/statetemplate/6.0.1/css/colorscheme-pasorobles.css
+https://california.azureedge.net/cdt/statetemplate/6.0.1/css/colorscheme-pasorobles.min.css
+https://california.azureedge.net/cdt/statetemplate/6.0.1/css/colorscheme-sacramento.css
+https://california.azureedge.net/cdt/statetemplate/6.0.1/css/colorscheme-sacramento.min.css
+https://california.azureedge.net/cdt/statetemplate/6.0.1/css/colorscheme-santabarbara.css
+https://california.azureedge.net/cdt/statetemplate/6.0.1/css/colorscheme-santabarbara.min.css
+https://california.azureedge.net/cdt/statetemplate/6.0.1/css/colorscheme-santacruz.css
+https://california.azureedge.net/cdt/statetemplate/6.0.1/css/colorscheme-santacruz.min.css
+https://california.azureedge.net/cdt/statetemplate/6.0.1/css/colorscheme-sierra.css
+https://california.azureedge.net/cdt/statetemplate/6.0.1/css/colorscheme-sierra.min.css
+https://california.azureedge.net/cdt/statetemplate/6.0.1/css/colorscheme-shasta.css
+https://california.azureedge.net/cdt/statetemplate/6.0.1/css/colorscheme-shasta.min.css
+https://california.azureedge.net/cdt/statetemplate/6.0.1/css/colorscheme-trinity.css
+https://california.azureedge.net/cdt/statetemplate/6.0.1/css/colorscheme-trinity.min.css
+</code></pre>
+   <p>JS</p>
+   <pre><code class="overflow-auto">https://california.azureedge.net/cdt/statetemplate/6.0.1/js/cagov.core.js
+https://california.azureedge.net/cdt/statetemplate/6.0.1/js/cagov.core.min.js
+</code></pre>
+  </div>
+ </li>
+ <li>
+  <h4 data-aria-accordion-heading>Version 6.0.0</h4>
+  <div data-aria-accordion-panel>
+   <p>CSS</p>
+   <pre>
+<code class="overflow-auto">https://california.azureedge.net/cdt/statetemplate/6.0.0/css/cagov.core.css
+https://california.azureedge.net/cdt/statetemplate/6.0.0/css/cagov.core.min.css
+https://california.azureedge.net/cdt/statetemplate/6.0.0/css/cagov.font-only.css
+https://california.azureedge.net/cdt/statetemplate/6.0.0/css/cagov.font-only.min.css
+https://california.azureedge.net/cdt/statetemplate/6.0.0/css/colorscheme-delta.css
+https://california.azureedge.net/cdt/statetemplate/6.0.0/css/colorscheme-delta.min.css
+https://california.azureedge.net/cdt/statetemplate/6.0.0/css/colorscheme-eureka.css
+https://california.azureedge.net/cdt/statetemplate/6.0.0/css/colorscheme-eureka.min.css
+https://california.azureedge.net/cdt/statetemplate/6.0.0/css/colorscheme-mono.css
+https://california.azureedge.net/cdt/statetemplate/6.0.0/css/colorscheme-mono.min.css
+https://california.azureedge.net/cdt/statetemplate/6.0.0/css/colorscheme-oceanside.css
+https://california.azureedge.net/cdt/statetemplate/6.0.0/css/colorscheme-oceanside.min.css
+https://california.azureedge.net/cdt/statetemplate/6.0.0/css/colorscheme-orangecounty.css
+https://california.azureedge.net/cdt/statetemplate/6.0.0/css/colorscheme-orangecounty.min.css
+https://california.azureedge.net/cdt/statetemplate/6.0.0/css/colorscheme-pasorobles.css
+https://california.azureedge.net/cdt/statetemplate/6.0.0/css/colorscheme-pasorobles.min.css
+https://california.azureedge.net/cdt/statetemplate/6.0.0/css/colorscheme-sacramento.css
+https://california.azureedge.net/cdt/statetemplate/6.0.0/css/colorscheme-sacramento.min.css
+https://california.azureedge.net/cdt/statetemplate/6.0.0/css/colorscheme-santabarbara.css
+https://california.azureedge.net/cdt/statetemplate/6.0.0/css/colorscheme-santabarbara.min.css
+https://california.azureedge.net/cdt/statetemplate/6.0.0/css/colorscheme-santacruz.css
+https://california.azureedge.net/cdt/statetemplate/6.0.0/css/colorscheme-santacruz.min.css
+https://california.azureedge.net/cdt/statetemplate/6.0.0/css/colorscheme-shasta.css
+https://california.azureedge.net/cdt/statetemplate/6.0.0/css/colorscheme-shasta.min.css
+https://california.azureedge.net/cdt/statetemplate/6.0.0/css/colorscheme-sierra.css
+https://california.azureedge.net/cdt/statetemplate/6.0.0/css/colorscheme-sierra.min.css
+https://california.azureedge.net/cdt/statetemplate/6.0.0/css/colorscheme-trinity.css
+https://california.azureedge.net/cdt/statetemplate/6.0.0/css/colorscheme-trinity.min.css
+</code></pre>
+   <p>JS</p>
+   <pre><code class="overflow-auto">https://california.azureedge.net/cdt/statetemplate/6.0.0/js/cagov.core.js
+https://california.azureedge.net/cdt/statetemplate/6.0.0/js/cagov.core.min.js
+</code></pre>
+  </div>
+ </li>
+</ol>
+
+
+
+
+
+
+
+
+<h3>State Template v5.5 (legacy)</h3>
+
+<ol data-aria-accordion data-multi data-transition data-default="none">
+ <li>
+  <h4 data-aria-accordion-heading>Version 5.5.24</h4>
+  <div data-aria-accordion-panel>
+   <p>CSS</p>
+   <pre>
+<code class="overflow-auto">https://california.azureedge.net/cdt/statetemplate/5.5.24/css/cagov.core.css
+https://california.azureedge.net/cdt/statetemplate/5.5.24/css/cagov.core.min.css
+https://california.azureedge.net/cdt/statetemplate/5.5.24/css/cagov.font-only.css
+https://california.azureedge.net/cdt/statetemplate/5.5.24/css/cagov.font-only.min.css
+https://california.azureedge.net/cdt/statetemplate/5.5.24/css/colorscheme-delta.css
+https://california.azureedge.net/cdt/statetemplate/5.5.24/css/colorscheme-delta.min.css
+https://california.azureedge.net/cdt/statetemplate/5.5.24/css/colorscheme-eureka.css
+https://california.azureedge.net/cdt/statetemplate/5.5.24/css/colorscheme-eureka.min.css
+https://california.azureedge.net/cdt/statetemplate/5.5.24/css/colorscheme-mono.css
+https://california.azureedge.net/cdt/statetemplate/5.5.24/css/colorscheme-mono.min.css
+https://california.azureedge.net/cdt/statetemplate/5.5.24/css/colorscheme-oceanside.css
+https://california.azureedge.net/cdt/statetemplate/5.5.24/css/colorscheme-oceanside.min.css
+https://california.azureedge.net/cdt/statetemplate/5.5.24/css/colorscheme-orangecounty.css
+https://california.azureedge.net/cdt/statetemplate/5.5.24/css/colorscheme-orangecounty.min.css
+https://california.azureedge.net/cdt/statetemplate/5.5.24/css/colorscheme-pasorobles.css
+https://california.azureedge.net/cdt/statetemplate/5.5.24/css/colorscheme-pasorobles.min.css
+https://california.azureedge.net/cdt/statetemplate/5.5.24/css/colorscheme-sacramento.css
+https://california.azureedge.net/cdt/statetemplate/5.5.24/css/colorscheme-sacramento.min.css
+https://california.azureedge.net/cdt/statetemplate/5.5.24/css/colorscheme-santabarbara.css
+https://california.azureedge.net/cdt/statetemplate/5.5.24/css/colorscheme-santabarbara.min.css
+https://california.azureedge.net/cdt/statetemplate/5.5.24/css/colorscheme-santacruz.css
+https://california.azureedge.net/cdt/statetemplate/5.5.24/css/colorscheme-santacruz.min.css
+https://california.azureedge.net/cdt/statetemplate/5.5.24/css/colorscheme-shasta.css
+https://california.azureedge.net/cdt/statetemplate/5.5.24/css/colorscheme-shasta.min.css
+https://california.azureedge.net/cdt/statetemplate/5.5.24/css/colorscheme-sierra.css
+https://california.azureedge.net/cdt/statetemplate/5.5.24/css/colorscheme-sierra.min.css
+https://california.azureedge.net/cdt/statetemplate/5.5.24/css/colorscheme-trinity.css
+https://california.azureedge.net/cdt/statetemplate/5.5.24/css/colorscheme-trinity.min.css
+</code></pre>
+   <p>JS</p>
+   <pre><code class="overflow-auto">https://california.azureedge.net/cdt/statetemplate/5.5.24/js/cagov.core.js
+https://california.azureedge.net/cdt/statetemplate/5.5.24/js/cagov.core.min.js
+</code></pre>
+  </div>
+ </li>
+ <li>
+  <h4 data-aria-accordion-heading>Version 5.5.23</h4>
+  <div data-aria-accordion-panel>
+   <p>CSS</p>
+   <pre>
+<code class="overflow-auto">https://california.azureedge.net/cdt/statetemplate/5.5.23/css/cagov.core.css
+https://california.azureedge.net/cdt/statetemplate/5.5.23/css/cagov.core.min.css
+https://california.azureedge.net/cdt/statetemplate/5.5.23/css/cagov.font-only.css
+https://california.azureedge.net/cdt/statetemplate/5.5.23/css/cagov.font-only.min.css
+https://california.azureedge.net/cdt/statetemplate/5.5.23/css/colorscheme-delta.css
+https://california.azureedge.net/cdt/statetemplate/5.5.23/css/colorscheme-delta.min.css
+https://california.azureedge.net/cdt/statetemplate/5.5.23/css/colorscheme-eureka.css
+https://california.azureedge.net/cdt/statetemplate/5.5.23/css/colorscheme-eureka.min.css
+https://california.azureedge.net/cdt/statetemplate/5.5.23/css/colorscheme-mono.css
+https://california.azureedge.net/cdt/statetemplate/5.5.23/css/colorscheme-mono.min.css
+https://california.azureedge.net/cdt/statetemplate/5.5.23/css/colorscheme-oceanside.css
+https://california.azureedge.net/cdt/statetemplate/5.5.23/css/colorscheme-oceanside.min.css
+https://california.azureedge.net/cdt/statetemplate/5.5.23/css/colorscheme-orangecounty.css
+https://california.azureedge.net/cdt/statetemplate/5.5.23/css/colorscheme-orangecounty.min.css
+https://california.azureedge.net/cdt/statetemplate/5.5.23/css/colorscheme-pasorobles.css
+https://california.azureedge.net/cdt/statetemplate/5.5.23/css/colorscheme-pasorobles.min.css
+https://california.azureedge.net/cdt/statetemplate/5.5.23/css/colorscheme-sacramento.css
+https://california.azureedge.net/cdt/statetemplate/5.5.23/css/colorscheme-sacramento.min.css
+https://california.azureedge.net/cdt/statetemplate/5.5.23/css/colorscheme-santabarbara.css
+https://california.azureedge.net/cdt/statetemplate/5.5.23/css/colorscheme-santabarbara.min.css
+https://california.azureedge.net/cdt/statetemplate/5.5.23/css/colorscheme-santacruz.css
+https://california.azureedge.net/cdt/statetemplate/5.5.23/css/colorscheme-santacruz.min.css
+https://california.azureedge.net/cdt/statetemplate/5.5.23/css/colorscheme-shasta.css
+https://california.azureedge.net/cdt/statetemplate/5.5.23/css/colorscheme-shasta.min.css
+https://california.azureedge.net/cdt/statetemplate/5.5.23/css/colorscheme-sierra.css
+https://california.azureedge.net/cdt/statetemplate/5.5.23/css/colorscheme-sierra.min.css
+https://california.azureedge.net/cdt/statetemplate/5.5.23/css/colorscheme-trinity.css
+https://california.azureedge.net/cdt/statetemplate/5.5.23/css/colorscheme-trinity.min.css
+</code></pre>
+   <p>JS</p>
+   <pre><code class="overflow-auto">https://california.azureedge.net/cdt/statetemplate/5.5.23/js/cagov.core.js
+https://california.azureedge.net/cdt/statetemplate/5.5.23/js/cagov.core.min.js
+</code></pre>
+  </div>
+ </li>
+ <li>
+  <h4 data-aria-accordion-heading>Version 5.5.22</h4>
+  <div data-aria-accordion-panel>
+   <p>CSS</p>
+   <pre>
+<code class="overflow-auto">https://california.azureedge.net/cdt/statetemplate/5.5.22/css/cagov.core.css
+https://california.azureedge.net/cdt/statetemplate/5.5.22/css/cagov.core.min.css
+https://california.azureedge.net/cdt/statetemplate/5.5.22/css/cagov.font-only.css
+https://california.azureedge.net/cdt/statetemplate/5.5.22/css/cagov.font-only.min.css
+https://california.azureedge.net/cdt/statetemplate/5.5.22/css/colorscheme-delta.css
+https://california.azureedge.net/cdt/statetemplate/5.5.22/css/colorscheme-delta.min.css
+https://california.azureedge.net/cdt/statetemplate/5.5.22/css/colorscheme-eureka.css
+https://california.azureedge.net/cdt/statetemplate/5.5.22/css/colorscheme-eureka.min.css
+https://california.azureedge.net/cdt/statetemplate/5.5.22/css/colorscheme-mono.css
+https://california.azureedge.net/cdt/statetemplate/5.5.22/css/colorscheme-mono.min.css
+https://california.azureedge.net/cdt/statetemplate/5.5.22/css/colorscheme-oceanside.css
+https://california.azureedge.net/cdt/statetemplate/5.5.22/css/colorscheme-oceanside.min.css
+https://california.azureedge.net/cdt/statetemplate/5.5.22/css/colorscheme-orangecounty.css
+https://california.azureedge.net/cdt/statetemplate/5.5.22/css/colorscheme-orangecounty.min.css
+https://california.azureedge.net/cdt/statetemplate/5.5.22/css/colorscheme-pasorobles.css
+https://california.azureedge.net/cdt/statetemplate/5.5.22/css/colorscheme-pasorobles.min.css
+https://california.azureedge.net/cdt/statetemplate/5.5.22/css/colorscheme-sacramento.css
+https://california.azureedge.net/cdt/statetemplate/5.5.22/css/colorscheme-sacramento.min.css
+https://california.azureedge.net/cdt/statetemplate/5.5.22/css/colorscheme-santabarbara.css
+https://california.azureedge.net/cdt/statetemplate/5.5.22/css/colorscheme-santabarbara.min.css
+https://california.azureedge.net/cdt/statetemplate/5.5.22/css/colorscheme-santacruz.css
+https://california.azureedge.net/cdt/statetemplate/5.5.22/css/colorscheme-santacruz.min.css
+https://california.azureedge.net/cdt/statetemplate/5.5.22/css/colorscheme-shasta.css
+https://california.azureedge.net/cdt/statetemplate/5.5.22/css/colorscheme-shasta.min.css
+https://california.azureedge.net/cdt/statetemplate/5.5.22/css/colorscheme-sierra.css
+https://california.azureedge.net/cdt/statetemplate/5.5.22/css/colorscheme-sierra.min.css
+https://california.azureedge.net/cdt/statetemplate/5.5.22/css/colorscheme-trinity.css
+https://california.azureedge.net/cdt/statetemplate/5.5.22/css/colorscheme-trinity.min.css
+</code></pre>
+   <p>JS</p>
+   <pre><code class="overflow-auto">https://california.azureedge.net/cdt/statetemplate/5.5.22/js/cagov.core.js
+https://california.azureedge.net/cdt/statetemplate/5.5.22/js/cagov.core.min.js
+</code></pre>
+  </div>
+ </li>
+ <li>
+  <h4 data-aria-accordion-heading>Version 5.5.21</h4>
+  <div data-aria-accordion-panel>
+   <p>CSS</p>
+   <pre>
+<code class="overflow-auto">https://california.azureedge.net/cdt/statetemplate/5.5.21/css/cagov.core.css
+https://california.azureedge.net/cdt/statetemplate/5.5.21/css/cagov.core.min.css
+https://california.azureedge.net/cdt/statetemplate/5.5.21/css/cagov.font-only.css
+https://california.azureedge.net/cdt/statetemplate/5.5.21/css/cagov.font-only.min.css
+https://california.azureedge.net/cdt/statetemplate/5.5.21/css/colorscheme-delta.css
+https://california.azureedge.net/cdt/statetemplate/5.5.21/css/colorscheme-delta.min.css
+https://california.azureedge.net/cdt/statetemplate/5.5.21/css/colorscheme-eureka.css
+https://california.azureedge.net/cdt/statetemplate/5.5.21/css/colorscheme-eureka.min.css
+https://california.azureedge.net/cdt/statetemplate/5.5.21/css/colorscheme-mono.css
+https://california.azureedge.net/cdt/statetemplate/5.5.21/css/colorscheme-mono.min.css
+https://california.azureedge.net/cdt/statetemplate/5.5.21/css/colorscheme-oceanside.css
+https://california.azureedge.net/cdt/statetemplate/5.5.21/css/colorscheme-oceanside.min.css
+https://california.azureedge.net/cdt/statetemplate/5.5.21/css/colorscheme-orangecounty.css
+https://california.azureedge.net/cdt/statetemplate/5.5.21/css/colorscheme-orangecounty.min.css
+https://california.azureedge.net/cdt/statetemplate/5.5.21/css/colorscheme-pasorobles.css
+https://california.azureedge.net/cdt/statetemplate/5.5.21/css/colorscheme-pasorobles.min.css
+https://california.azureedge.net/cdt/statetemplate/5.5.21/css/colorscheme-sacramento.css
+https://california.azureedge.net/cdt/statetemplate/5.5.21/css/colorscheme-sacramento.min.css
+https://california.azureedge.net/cdt/statetemplate/5.5.21/css/colorscheme-santabarbara.css
+https://california.azureedge.net/cdt/statetemplate/5.5.21/css/colorscheme-santabarbara.min.css
+https://california.azureedge.net/cdt/statetemplate/5.5.21/css/colorscheme-santacruz.css
+https://california.azureedge.net/cdt/statetemplate/5.5.21/css/colorscheme-santacruz.min.css
+https://california.azureedge.net/cdt/statetemplate/5.5.21/css/colorscheme-shasta.css
+https://california.azureedge.net/cdt/statetemplate/5.5.21/css/colorscheme-shasta.min.css
+https://california.azureedge.net/cdt/statetemplate/5.5.21/css/colorscheme-sierra.css
+https://california.azureedge.net/cdt/statetemplate/5.5.21/css/colorscheme-sierra.min.css
+https://california.azureedge.net/cdt/statetemplate/5.5.21/css/colorscheme-trinity.css
+https://california.azureedge.net/cdt/statetemplate/5.5.21/css/colorscheme-trinity.min.css
+</code></pre>
+   <p>JS</p>
+   <pre><code class="overflow-auto">https://california.azureedge.net/cdt/statetemplate/5.5.21/js/cagov.core.js
+https://california.azureedge.net/cdt/statetemplate/5.5.21/js/cagov.core.min.js
+</code></pre>
+  </div>
+ </li>
+ <li>
+  <h4 data-aria-accordion-heading>Version 5.5.20</h4>
+  <div data-aria-accordion-panel>
+   <p>CSS</p>
+   <pre>
+<code class="overflow-auto">https://california.azureedge.net/cdt/statetemplate/5.5.20/css/cagov.core.css
+https://california.azureedge.net/cdt/statetemplate/5.5.20/css/cagov.core.min.css
+https://california.azureedge.net/cdt/statetemplate/5.5.20/css/cagov.font-only.css
+https://california.azureedge.net/cdt/statetemplate/5.5.20/css/cagov.font-only.min.css
+https://california.azureedge.net/cdt/statetemplate/5.5.20/css/colorscheme-delta.css
+https://california.azureedge.net/cdt/statetemplate/5.5.20/css/colorscheme-delta.min.css
+https://california.azureedge.net/cdt/statetemplate/5.5.20/css/colorscheme-eureka.css
+https://california.azureedge.net/cdt/statetemplate/5.5.20/css/colorscheme-eureka.min.css
+https://california.azureedge.net/cdt/statetemplate/5.5.20/css/colorscheme-mono.css
+https://california.azureedge.net/cdt/statetemplate/5.5.20/css/colorscheme-mono.min.css
+https://california.azureedge.net/cdt/statetemplate/5.5.20/css/colorscheme-oceanside.css
+https://california.azureedge.net/cdt/statetemplate/5.5.20/css/colorscheme-oceanside.min.css
+https://california.azureedge.net/cdt/statetemplate/5.5.20/css/colorscheme-orangecounty.css
+https://california.azureedge.net/cdt/statetemplate/5.5.20/css/colorscheme-orangecounty.min.css
+https://california.azureedge.net/cdt/statetemplate/5.5.20/css/colorscheme-pasorobles.css
+https://california.azureedge.net/cdt/statetemplate/5.5.20/css/colorscheme-pasorobles.min.css
+https://california.azureedge.net/cdt/statetemplate/5.5.20/css/colorscheme-sacramento.css
+https://california.azureedge.net/cdt/statetemplate/5.5.20/css/colorscheme-sacramento.min.css
+https://california.azureedge.net/cdt/statetemplate/5.5.20/css/colorscheme-santabarbara.css
+https://california.azureedge.net/cdt/statetemplate/5.5.20/css/colorscheme-santabarbara.min.css
+https://california.azureedge.net/cdt/statetemplate/5.5.20/css/colorscheme-santacruz.css
+https://california.azureedge.net/cdt/statetemplate/5.5.20/css/colorscheme-santacruz.min.css
+https://california.azureedge.net/cdt/statetemplate/5.5.20/css/colorscheme-shasta.css
+https://california.azureedge.net/cdt/statetemplate/5.5.20/css/colorscheme-shasta.min.css
+https://california.azureedge.net/cdt/statetemplate/5.5.20/css/colorscheme-sierra.css
+https://california.azureedge.net/cdt/statetemplate/5.5.20/css/colorscheme-sierra.min.css
+https://california.azureedge.net/cdt/statetemplate/5.5.20/css/colorscheme-trinity.css
+https://california.azureedge.net/cdt/statetemplate/5.5.20/css/colorscheme-trinity.min.css
+</code></pre>
+   <p>JS</p>
+   <pre><code class="overflow-auto">https://california.azureedge.net/cdt/statetemplate/5.5.20/js/cagov.core.js
+https://california.azureedge.net/cdt/statetemplate/5.5.20/js/cagov.core.min.js
+</code></pre>
+  </div>
+ </li>
+ <li>
+  <h4 data-aria-accordion-heading>Version 5.5.19</h4>
+  <div data-aria-accordion-panel>
+   <p>CSS</p>
+   <pre>
+<code class="overflow-auto">https://california.azureedge.net/cdt/statetemplate/5.5.19/css/cagov.core.css
+https://california.azureedge.net/cdt/statetemplate/5.5.19/css/cagov.core.min.css
+https://california.azureedge.net/cdt/statetemplate/5.5.19/css/cagov.font-only.css
+https://california.azureedge.net/cdt/statetemplate/5.5.19/css/cagov.font-only.min.css
+https://california.azureedge.net/cdt/statetemplate/5.5.19/css/colorscheme-delta.css
+https://california.azureedge.net/cdt/statetemplate/5.5.19/css/colorscheme-delta.min.css
+https://california.azureedge.net/cdt/statetemplate/5.5.19/css/colorscheme-eureka.css
+https://california.azureedge.net/cdt/statetemplate/5.5.19/css/colorscheme-eureka.min.css
+https://california.azureedge.net/cdt/statetemplate/5.5.19/css/colorscheme-mono.css
+https://california.azureedge.net/cdt/statetemplate/5.5.19/css/colorscheme-mono.min.css
+https://california.azureedge.net/cdt/statetemplate/5.5.19/css/colorscheme-oceanside.css
+https://california.azureedge.net/cdt/statetemplate/5.5.19/css/colorscheme-oceanside.min.css
+https://california.azureedge.net/cdt/statetemplate/5.5.19/css/colorscheme-orangecounty.css
+https://california.azureedge.net/cdt/statetemplate/5.5.19/css/colorscheme-orangecounty.min.css
+https://california.azureedge.net/cdt/statetemplate/5.5.19/css/colorscheme-pasorobles.css
+https://california.azureedge.net/cdt/statetemplate/5.5.19/css/colorscheme-pasorobles.min.css
+https://california.azureedge.net/cdt/statetemplate/5.5.19/css/colorscheme-sacramento.css
+https://california.azureedge.net/cdt/statetemplate/5.5.19/css/colorscheme-sacramento.min.css
+https://california.azureedge.net/cdt/statetemplate/5.5.19/css/colorscheme-santabarbara.css
+https://california.azureedge.net/cdt/statetemplate/5.5.19/css/colorscheme-santabarbara.min.css
+https://california.azureedge.net/cdt/statetemplate/5.5.19/css/colorscheme-santacruz.css
+https://california.azureedge.net/cdt/statetemplate/5.5.19/css/colorscheme-santacruz.min.css
+https://california.azureedge.net/cdt/statetemplate/5.5.19/css/colorscheme-shasta.css
+https://california.azureedge.net/cdt/statetemplate/5.5.19/css/colorscheme-shasta.min.css
+https://california.azureedge.net/cdt/statetemplate/5.5.19/css/colorscheme-sierra.css
+https://california.azureedge.net/cdt/statetemplate/5.5.19/css/colorscheme-sierra.min.css
+https://california.azureedge.net/cdt/statetemplate/5.5.19/css/colorscheme-trinity.css
+https://california.azureedge.net/cdt/statetemplate/5.5.19/css/colorscheme-trinity.min.css
+</code></pre>
+   <p>JS</p>
+   <pre><code class="overflow-auto">https://california.azureedge.net/cdt/statetemplate/5.5.19/js/cagov.core.js
+https://california.azureedge.net/cdt/statetemplate/5.5.19/js/cagov.core.min.js
+</code></pre>
+  </div>
+ </li>
+ <li>
+  <h4 data-aria-accordion-heading>Version 5.5.18</h4>
+  <div data-aria-accordion-panel>
+   <p>CSS</p>
+   <pre>
+<code class="overflow-auto">https://california.azureedge.net/cdt/statetemplate/5.5.18/css/cagov.core.css
+https://california.azureedge.net/cdt/statetemplate/5.5.18/css/cagov.core.min.css
+https://california.azureedge.net/cdt/statetemplate/5.5.18/css/cagov.font-only.css
+https://california.azureedge.net/cdt/statetemplate/5.5.18/css/cagov.font-only.min.css
+https://california.azureedge.net/cdt/statetemplate/5.5.18/css/colorscheme-delta.css
+https://california.azureedge.net/cdt/statetemplate/5.5.18/css/colorscheme-delta.min.css
+https://california.azureedge.net/cdt/statetemplate/5.5.18/css/colorscheme-eureka.css
+https://california.azureedge.net/cdt/statetemplate/5.5.18/css/colorscheme-eureka.min.css
+https://california.azureedge.net/cdt/statetemplate/5.5.18/css/colorscheme-mono.css
+https://california.azureedge.net/cdt/statetemplate/5.5.18/css/colorscheme-mono.min.css
+https://california.azureedge.net/cdt/statetemplate/5.5.18/css/colorscheme-oceanside.css
+https://california.azureedge.net/cdt/statetemplate/5.5.18/css/colorscheme-oceanside.min.css
+https://california.azureedge.net/cdt/statetemplate/5.5.18/css/colorscheme-orangecounty.css
+https://california.azureedge.net/cdt/statetemplate/5.5.18/css/colorscheme-orangecounty.min.css
+https://california.azureedge.net/cdt/statetemplate/5.5.18/css/colorscheme-pasorobles.css
+https://california.azureedge.net/cdt/statetemplate/5.5.18/css/colorscheme-pasorobles.min.css
+https://california.azureedge.net/cdt/statetemplate/5.5.18/css/colorscheme-sacramento.css
+https://california.azureedge.net/cdt/statetemplate/5.5.18/css/colorscheme-sacramento.min.css
+https://california.azureedge.net/cdt/statetemplate/5.5.18/css/colorscheme-santabarbara.css
+https://california.azureedge.net/cdt/statetemplate/5.5.18/css/colorscheme-santabarbara.min.css
+https://california.azureedge.net/cdt/statetemplate/5.5.18/css/colorscheme-santacruz.css
+https://california.azureedge.net/cdt/statetemplate/5.5.18/css/colorscheme-santacruz.min.css
+https://california.azureedge.net/cdt/statetemplate/5.5.18/css/colorscheme-shasta.css
+https://california.azureedge.net/cdt/statetemplate/5.5.18/css/colorscheme-shasta.min.css
+https://california.azureedge.net/cdt/statetemplate/5.5.18/css/colorscheme-sierra.css
+https://california.azureedge.net/cdt/statetemplate/5.5.18/css/colorscheme-sierra.min.css
+https://california.azureedge.net/cdt/statetemplate/5.5.18/css/colorscheme-trinity.css
+https://california.azureedge.net/cdt/statetemplate/5.5.18/css/colorscheme-trinity.min.css
+</code></pre>
+   <p>JS</p>
+   <pre><code class="overflow-auto">https://california.azureedge.net/cdt/statetemplate/5.5.18/js/cagov.core.js
+https://california.azureedge.net/cdt/statetemplate/5.5.18/js/cagov.core.min.js
+</code></pre>
+  </div>
+ </li>
+ <li>
+  <h4 data-aria-accordion-heading>Version 5.5.17</h4>
+  <div data-aria-accordion-panel>
+   <p>CSS</p>
+   <pre>
+<code class="overflow-auto">https://california.azureedge.net/cdt/statetemplate/5.5.17/css/cagov.core.css
+https://california.azureedge.net/cdt/statetemplate/5.5.17/css/cagov.core.min.css
+https://california.azureedge.net/cdt/statetemplate/5.5.17/css/cagov.font-only.css
+https://california.azureedge.net/cdt/statetemplate/5.5.17/css/cagov.font-only.min.css
+https://california.azureedge.net/cdt/statetemplate/5.5.17/css/colorscheme-delta.css
+https://california.azureedge.net/cdt/statetemplate/5.5.17/css/colorscheme-delta.min.css
+https://california.azureedge.net/cdt/statetemplate/5.5.17/css/colorscheme-eureka.css
+https://california.azureedge.net/cdt/statetemplate/5.5.17/css/colorscheme-eureka.min.css
+https://california.azureedge.net/cdt/statetemplate/5.5.17/css/colorscheme-mono.css
+https://california.azureedge.net/cdt/statetemplate/5.5.17/css/colorscheme-mono.min.css
+https://california.azureedge.net/cdt/statetemplate/5.5.17/css/colorscheme-oceanside.css
+https://california.azureedge.net/cdt/statetemplate/5.5.17/css/colorscheme-oceanside.min.css
+https://california.azureedge.net/cdt/statetemplate/5.5.17/css/colorscheme-orangecounty.css
+https://california.azureedge.net/cdt/statetemplate/5.5.17/css/colorscheme-orangecounty.min.css
+https://california.azureedge.net/cdt/statetemplate/5.5.17/css/colorscheme-pasorobles.css
+https://california.azureedge.net/cdt/statetemplate/5.5.17/css/colorscheme-pasorobles.min.css
+https://california.azureedge.net/cdt/statetemplate/5.5.17/css/colorscheme-sacramento.css
+https://california.azureedge.net/cdt/statetemplate/5.5.17/css/colorscheme-sacramento.min.css
+https://california.azureedge.net/cdt/statetemplate/5.5.17/css/colorscheme-santabarbara.css
+https://california.azureedge.net/cdt/statetemplate/5.5.17/css/colorscheme-santabarbara.min.css
+https://california.azureedge.net/cdt/statetemplate/5.5.17/css/colorscheme-santacruz.css
+https://california.azureedge.net/cdt/statetemplate/5.5.17/css/colorscheme-santacruz.min.css
+https://california.azureedge.net/cdt/statetemplate/5.5.17/css/colorscheme-shasta.css
+https://california.azureedge.net/cdt/statetemplate/5.5.17/css/colorscheme-shasta.min.css
+https://california.azureedge.net/cdt/statetemplate/5.5.17/css/colorscheme-sierra.css
+https://california.azureedge.net/cdt/statetemplate/5.5.17/css/colorscheme-sierra.min.css
+https://california.azureedge.net/cdt/statetemplate/5.5.17/css/colorscheme-trinity.css
+https://california.azureedge.net/cdt/statetemplate/5.5.17/css/colorscheme-trinity.min.css
+</code></pre>
+   <p>JS</p>
+   <pre><code class="overflow-auto">https://california.azureedge.net/cdt/statetemplate/5.5.17/js/cagov.core.js
+https://california.azureedge.net/cdt/statetemplate/5.5.17/js/cagov.core.min.js
+</code></pre>
+  </div>
+ </li>
+ <li>
+  <h4 data-aria-accordion-heading>Version 5.5.16</h4>
+  <div data-aria-accordion-panel>
+   <p>CSS</p>
+   <pre>
+<code class="overflow-auto">https://california.azureedge.net/cdt/statetemplate/5.5.16/css/cagov.core.css
+https://california.azureedge.net/cdt/statetemplate/5.5.16/css/cagov.core.min.css
+https://california.azureedge.net/cdt/statetemplate/5.5.16/css/cagov.font-only.css
+https://california.azureedge.net/cdt/statetemplate/5.5.16/css/cagov.font-only.min.css
+https://california.azureedge.net/cdt/statetemplate/5.5.16/css/colorscheme-delta.css
+https://california.azureedge.net/cdt/statetemplate/5.5.16/css/colorscheme-delta.min.css
+https://california.azureedge.net/cdt/statetemplate/5.5.16/css/colorscheme-eureka.css
+https://california.azureedge.net/cdt/statetemplate/5.5.16/css/colorscheme-eureka.min.css
+https://california.azureedge.net/cdt/statetemplate/5.5.16/css/colorscheme-mono.css
+https://california.azureedge.net/cdt/statetemplate/5.5.16/css/colorscheme-mono.min.css
+https://california.azureedge.net/cdt/statetemplate/5.5.16/css/colorscheme-oceanside.css
+https://california.azureedge.net/cdt/statetemplate/5.5.16/css/colorscheme-oceanside.min.css
+https://california.azureedge.net/cdt/statetemplate/5.5.16/css/colorscheme-orangecounty.css
+https://california.azureedge.net/cdt/statetemplate/5.5.16/css/colorscheme-orangecounty.min.css
+https://california.azureedge.net/cdt/statetemplate/5.5.16/css/colorscheme-pasorobles.css
+https://california.azureedge.net/cdt/statetemplate/5.5.16/css/colorscheme-pasorobles.min.css
+https://california.azureedge.net/cdt/statetemplate/5.5.16/css/colorscheme-sacramento.css
+https://california.azureedge.net/cdt/statetemplate/5.5.16/css/colorscheme-sacramento.min.css
+https://california.azureedge.net/cdt/statetemplate/5.5.16/css/colorscheme-santabarbara.css
+https://california.azureedge.net/cdt/statetemplate/5.5.16/css/colorscheme-santabarbara.min.css
+https://california.azureedge.net/cdt/statetemplate/5.5.16/css/colorscheme-santacruz.css
+https://california.azureedge.net/cdt/statetemplate/5.5.16/css/colorscheme-santacruz.min.css
+https://california.azureedge.net/cdt/statetemplate/5.5.16/css/colorscheme-shasta.css
+https://california.azureedge.net/cdt/statetemplate/5.5.16/css/colorscheme-shasta.min.css
+https://california.azureedge.net/cdt/statetemplate/5.5.16/css/colorscheme-sierra.css
+https://california.azureedge.net/cdt/statetemplate/5.5.16/css/colorscheme-sierra.min.css
+https://california.azureedge.net/cdt/statetemplate/5.5.16/css/colorscheme-trinity.css
+https://california.azureedge.net/cdt/statetemplate/5.5.16/css/colorscheme-trinity.min.css
+</code></pre>
+   <p>JS</p>
+   <pre><code class="overflow-auto">https://california.azureedge.net/cdt/statetemplate/5.5.16/js/cagov.core.js
+https://california.azureedge.net/cdt/statetemplate/5.5.16/js/cagov.core.min.js
+</code></pre>
+  </div>
+ </li>
+ <li>
+  <h4 data-aria-accordion-heading>Version 5.5.15</h4>
+  <div data-aria-accordion-panel>
+   <p>CSS</p>
+   <pre>
+<code class="overflow-auto">https://california.azureedge.net/cdt/statetemplate/5.5.15/css/cagov.core.css
+https://california.azureedge.net/cdt/statetemplate/5.5.15/css/cagov.core.min.css
+https://california.azureedge.net/cdt/statetemplate/5.5.15/css/cagov.font-only.css
+https://california.azureedge.net/cdt/statetemplate/5.5.15/css/cagov.font-only.min.css
+https://california.azureedge.net/cdt/statetemplate/5.5.15/css/colorscheme-delta.css
+https://california.azureedge.net/cdt/statetemplate/5.5.15/css/colorscheme-delta.min.css
+https://california.azureedge.net/cdt/statetemplate/5.5.15/css/colorscheme-eureka.css
+https://california.azureedge.net/cdt/statetemplate/5.5.15/css/colorscheme-eureka.min.css
+https://california.azureedge.net/cdt/statetemplate/5.5.15/css/colorscheme-mono.css
+https://california.azureedge.net/cdt/statetemplate/5.5.15/css/colorscheme-mono.min.css
+https://california.azureedge.net/cdt/statetemplate/5.5.15/css/colorscheme-oceanside.css
+https://california.azureedge.net/cdt/statetemplate/5.5.15/css/colorscheme-oceanside.min.css
+https://california.azureedge.net/cdt/statetemplate/5.5.15/css/colorscheme-orangecounty.css
+https://california.azureedge.net/cdt/statetemplate/5.5.15/css/colorscheme-orangecounty.min.css
+https://california.azureedge.net/cdt/statetemplate/5.5.15/css/colorscheme-pasorobles.css
+https://california.azureedge.net/cdt/statetemplate/5.5.15/css/colorscheme-pasorobles.min.css
+https://california.azureedge.net/cdt/statetemplate/5.5.15/css/colorscheme-sacramento.css
+https://california.azureedge.net/cdt/statetemplate/5.5.15/css/colorscheme-sacramento.min.css
+https://california.azureedge.net/cdt/statetemplate/5.5.15/css/colorscheme-santabarbara.css
+https://california.azureedge.net/cdt/statetemplate/5.5.15/css/colorscheme-santabarbara.min.css
+https://california.azureedge.net/cdt/statetemplate/5.5.15/css/colorscheme-santacruz.css
+https://california.azureedge.net/cdt/statetemplate/5.5.15/css/colorscheme-santacruz.min.css
+https://california.azureedge.net/cdt/statetemplate/5.5.15/css/colorscheme-shasta.css
+https://california.azureedge.net/cdt/statetemplate/5.5.15/css/colorscheme-shasta.min.css
+https://california.azureedge.net/cdt/statetemplate/5.5.15/css/colorscheme-sierra.css
+https://california.azureedge.net/cdt/statetemplate/5.5.15/css/colorscheme-sierra.min.css
+https://california.azureedge.net/cdt/statetemplate/5.5.15/css/colorscheme-trinity.css
+https://california.azureedge.net/cdt/statetemplate/5.5.15/css/colorscheme-trinity.min.css
+</code></pre>
+   <p>JS</p>
+   <pre><code class="overflow-auto">https://california.azureedge.net/cdt/statetemplate/5.5.15/js/cagov.core.js
+https://california.azureedge.net/cdt/statetemplate/5.5.15/js/cagov.core.min.js
+</code></pre>
+  </div>
+ </li>
+ <li>
+  <h4 data-aria-accordion-heading>Version 5.5.14</h4>
+  <div data-aria-accordion-panel>
+   <p>CSS</p>
+   <pre>
+<code class="overflow-auto">https://california.azureedge.net/cdt/statetemplate/5.5.14/css/cagov.core.css
+https://california.azureedge.net/cdt/statetemplate/5.5.14/css/cagov.core.min.css
+https://california.azureedge.net/cdt/statetemplate/5.5.14/css/cagov.font-only.css
+https://california.azureedge.net/cdt/statetemplate/5.5.14/css/cagov.font-only.min.css
+https://california.azureedge.net/cdt/statetemplate/5.5.14/css/colorscheme-eureka.css
+https://california.azureedge.net/cdt/statetemplate/5.5.14/css/colorscheme-eureka.min.css
+https://california.azureedge.net/cdt/statetemplate/5.5.14/css/colorscheme-mono.css
+https://california.azureedge.net/cdt/statetemplate/5.5.14/css/colorscheme-mono.min.css
+https://california.azureedge.net/cdt/statetemplate/5.5.14/css/colorscheme-oceanside.css
+https://california.azureedge.net/cdt/statetemplate/5.5.14/css/colorscheme-oceanside.min.css
+https://california.azureedge.net/cdt/statetemplate/5.5.14/css/colorscheme-orangecounty.css
+https://california.azureedge.net/cdt/statetemplate/5.5.14/css/colorscheme-orangecounty.min.css
+https://california.azureedge.net/cdt/statetemplate/5.5.14/css/colorscheme-pasorobles.css
+https://california.azureedge.net/cdt/statetemplate/5.5.14/css/colorscheme-pasorobles.min.css
+https://california.azureedge.net/cdt/statetemplate/5.5.14/css/colorscheme-sacramento.css
+https://california.azureedge.net/cdt/statetemplate/5.5.14/css/colorscheme-sacramento.min.css
+https://california.azureedge.net/cdt/statetemplate/5.5.14/css/colorscheme-santabarbara.css
+https://california.azureedge.net/cdt/statetemplate/5.5.14/css/colorscheme-santabarbara.min.css
+https://california.azureedge.net/cdt/statetemplate/5.5.14/css/colorscheme-sierra.css
+https://california.azureedge.net/cdt/statetemplate/5.5.14/css/colorscheme-sierra.min.css
+https://california.azureedge.net/cdt/statetemplate/5.5.14/css/colorscheme-trinity.css
+https://california.azureedge.net/cdt/statetemplate/5.5.14/css/colorscheme-trinity.min.css
+</code></pre>
+   <p>JS</p>
+   <pre><code class="overflow-auto">https://california.azureedge.net/cdt/statetemplate/5.5.14/js/cagov.core.js
+https://california.azureedge.net/cdt/statetemplate/5.5.14/js/cagov.core.min.js
+</code></pre>
+  </div>
+ </li>
+ <li>
+  <h4 data-aria-accordion-heading>Version 5.5.13</h4>
+  <div data-aria-accordion-panel>
+   <p>CSS</p>
+   <pre>
+<code class="overflow-auto">https://california.azureedge.net/cdt/statetemplate/5.5.13/css/cagov.core.css
+https://california.azureedge.net/cdt/statetemplate/5.5.13/css/cagov.core.min.css
+https://california.azureedge.net/cdt/statetemplate/5.5.13/css/cagov.font-only.css
+https://california.azureedge.net/cdt/statetemplate/5.5.13/css/cagov.font-only.min.css
+https://california.azureedge.net/cdt/statetemplate/5.5.13/css/colorscheme-eureka.css
+https://california.azureedge.net/cdt/statetemplate/5.5.13/css/colorscheme-eureka.min.css
+https://california.azureedge.net/cdt/statetemplate/5.5.13/css/colorscheme-mono.css
+https://california.azureedge.net/cdt/statetemplate/5.5.13/css/colorscheme-mono.min.css
+https://california.azureedge.net/cdt/statetemplate/5.5.13/css/colorscheme-oceanside.css
+https://california.azureedge.net/cdt/statetemplate/5.5.13/css/colorscheme-oceanside.min.css
+https://california.azureedge.net/cdt/statetemplate/5.5.13/css/colorscheme-orangecounty.css
+https://california.azureedge.net/cdt/statetemplate/5.5.13/css/colorscheme-orangecounty.min.css
+https://california.azureedge.net/cdt/statetemplate/5.5.13/css/colorscheme-pasorobles.css
+https://california.azureedge.net/cdt/statetemplate/5.5.13/css/colorscheme-pasorobles.min.css
+https://california.azureedge.net/cdt/statetemplate/5.5.13/css/colorscheme-sacramento.css
+https://california.azureedge.net/cdt/statetemplate/5.5.13/css/colorscheme-sacramento.min.css
+https://california.azureedge.net/cdt/statetemplate/5.5.13/css/colorscheme-santabarbara.css
+https://california.azureedge.net/cdt/statetemplate/5.5.13/css/colorscheme-santabarbara.min.css
+https://california.azureedge.net/cdt/statetemplate/5.5.13/css/colorscheme-sierra.css
+https://california.azureedge.net/cdt/statetemplate/5.5.13/css/colorscheme-sierra.min.css
+https://california.azureedge.net/cdt/statetemplate/5.5.13/css/colorscheme-trinity.css
+https://california.azureedge.net/cdt/statetemplate/5.5.13/css/colorscheme-trinity.min.css
+</code></pre>
+   <p>JS</p>
+   <pre><code class="overflow-auto">https://california.azureedge.net/cdt/statetemplate/5.5.13/js/cagov.core.js
+https://california.azureedge.net/cdt/statetemplate/5.5.13/js/cagov.core.min.js
+</code></pre>
+  </div>
+ </li>
+ <li>
+  <h4 data-aria-accordion-heading>Version 5.5.12</h4>
+  <div data-aria-accordion-panel>
+   <p>CSS</p>
+   <pre>
+<code class="overflow-auto">https://california.azureedge.net/cdt/statetemplate/5.5.12/css/cagov.core.css
+https://california.azureedge.net/cdt/statetemplate/5.5.12/css/cagov.core.min.css
+https://california.azureedge.net/cdt/statetemplate/5.5.12/css/cagov.font-only.css
+https://california.azureedge.net/cdt/statetemplate/5.5.12/css/cagov.font-only.min.css
+https://california.azureedge.net/cdt/statetemplate/5.5.12/css/colorscheme-eureka.css
+https://california.azureedge.net/cdt/statetemplate/5.5.12/css/colorscheme-eureka.min.css
+https://california.azureedge.net/cdt/statetemplate/5.5.12/css/colorscheme-mono.css
+https://california.azureedge.net/cdt/statetemplate/5.5.12/css/colorscheme-mono.min.css
+https://california.azureedge.net/cdt/statetemplate/5.5.12/css/colorscheme-oceanside.css
+https://california.azureedge.net/cdt/statetemplate/5.5.12/css/colorscheme-oceanside.min.css
+https://california.azureedge.net/cdt/statetemplate/5.5.12/css/colorscheme-orangecounty.css
+https://california.azureedge.net/cdt/statetemplate/5.5.12/css/colorscheme-orangecounty.min.css
+https://california.azureedge.net/cdt/statetemplate/5.5.12/css/colorscheme-pasorobles.css
+https://california.azureedge.net/cdt/statetemplate/5.5.12/css/colorscheme-pasorobles.min.css
+https://california.azureedge.net/cdt/statetemplate/5.5.12/css/colorscheme-sacramento.css
+https://california.azureedge.net/cdt/statetemplate/5.5.12/css/colorscheme-sacramento.min.css
+https://california.azureedge.net/cdt/statetemplate/5.5.12/css/colorscheme-santabarbara.css
+https://california.azureedge.net/cdt/statetemplate/5.5.12/css/colorscheme-santabarbara.min.css
+https://california.azureedge.net/cdt/statetemplate/5.5.12/css/colorscheme-sierra.css
+https://california.azureedge.net/cdt/statetemplate/5.5.12/css/colorscheme-sierra.min.css
+https://california.azureedge.net/cdt/statetemplate/5.5.12/css/colorscheme-trinity.css
+https://california.azureedge.net/cdt/statetemplate/5.5.12/css/colorscheme-trinity.min.css
+</code></pre>
+   <p>JS</p>
+   <pre><code class="overflow-auto">https://california.azureedge.net/cdt/statetemplate/5.5.12/js/cagov.core.js
+https://california.azureedge.net/cdt/statetemplate/5.5.12/js/cagov.core.min.js
+</code></pre>
+  </div>
+ </li>
+ <li>
+  <h4 data-aria-accordion-heading>Version 5.5.11</h4>
+  <div data-aria-accordion-panel>
+   <p>CSS</p>
+   <pre>
+<code class="overflow-auto">https://california.azureedge.net/cdt/statetemplate/5.5.11/css/cagov.core.css
+https://california.azureedge.net/cdt/statetemplate/5.5.11/css/cagov.core.min.css
+https://california.azureedge.net/cdt/statetemplate/5.5.11/css/cagov.font-only.css
+https://california.azureedge.net/cdt/statetemplate/5.5.11/css/cagov.font-only.min.css
+https://california.azureedge.net/cdt/statetemplate/5.5.11/css/colorscheme-eureka.css
+https://california.azureedge.net/cdt/statetemplate/5.5.11/css/colorscheme-eureka.min.css
+https://california.azureedge.net/cdt/statetemplate/5.5.11/css/colorscheme-mono.css
+https://california.azureedge.net/cdt/statetemplate/5.5.11/css/colorscheme-mono.min.css
+https://california.azureedge.net/cdt/statetemplate/5.5.11/css/colorscheme-oceanside.css
+https://california.azureedge.net/cdt/statetemplate/5.5.11/css/colorscheme-oceanside.min.css
+https://california.azureedge.net/cdt/statetemplate/5.5.11/css/colorscheme-orangecounty.css
+https://california.azureedge.net/cdt/statetemplate/5.5.11/css/colorscheme-orangecounty.min.css
+https://california.azureedge.net/cdt/statetemplate/5.5.11/css/colorscheme-pasorobles.css
+https://california.azureedge.net/cdt/statetemplate/5.5.11/css/colorscheme-pasorobles.min.css
+https://california.azureedge.net/cdt/statetemplate/5.5.11/css/colorscheme-sacramento.css
+https://california.azureedge.net/cdt/statetemplate/5.5.11/css/colorscheme-sacramento.min.css
+https://california.azureedge.net/cdt/statetemplate/5.5.11/css/colorscheme-santabarbara.css
+https://california.azureedge.net/cdt/statetemplate/5.5.11/css/colorscheme-santabarbara.min.css
+https://california.azureedge.net/cdt/statetemplate/5.5.11/css/colorscheme-sierra.css
+https://california.azureedge.net/cdt/statetemplate/5.5.11/css/colorscheme-sierra.min.css
+https://california.azureedge.net/cdt/statetemplate/5.5.11/css/colorscheme-trinity.css
+https://california.azureedge.net/cdt/statetemplate/5.5.11/css/colorscheme-trinity.min.css
+</code></pre>
+   <p>JS</p>
+   <pre><code class="overflow-auto">https://california.azureedge.net/cdt/statetemplate/5.5.11/js/cagov.core.js
+https://california.azureedge.net/cdt/statetemplate/5.5.11/js/cagov.core.min.js
+</code></pre>
+  </div>
+ </li>
+ <li>
+  <h4 data-aria-accordion-heading>Version 5.5.10</h4>
+  <div data-aria-accordion-panel>
+   <p>CSS</p>
+   <pre>
+<code class="overflow-auto">https://california.azureedge.net/cdt/statetemplate/5.5.10/css/cagov.core.css
+https://california.azureedge.net/cdt/statetemplate/5.5.10/css/cagov.core.min.css
+https://california.azureedge.net/cdt/statetemplate/5.5.10/css/cagov.font-only.css
+https://california.azureedge.net/cdt/statetemplate/5.5.10/css/cagov.font-only.min.css
+https://california.azureedge.net/cdt/statetemplate/5.5.10/css/colorscheme-eureka.css
+https://california.azureedge.net/cdt/statetemplate/5.5.10/css/colorscheme-eureka.min.css
+https://california.azureedge.net/cdt/statetemplate/5.5.10/css/colorscheme-mono.css
+https://california.azureedge.net/cdt/statetemplate/5.5.10/css/colorscheme-mono.min.css
+https://california.azureedge.net/cdt/statetemplate/5.5.10/css/colorscheme-oceanside.css
+https://california.azureedge.net/cdt/statetemplate/5.5.10/css/colorscheme-oceanside.min.css
+https://california.azureedge.net/cdt/statetemplate/5.5.10/css/colorscheme-orangecounty.css
+https://california.azureedge.net/cdt/statetemplate/5.5.10/css/colorscheme-orangecounty.min.css
+https://california.azureedge.net/cdt/statetemplate/5.5.10/css/colorscheme-pasorobles.css
+https://california.azureedge.net/cdt/statetemplate/5.5.10/css/colorscheme-pasorobles.min.css
+https://california.azureedge.net/cdt/statetemplate/5.5.10/css/colorscheme-sacramento.css
+https://california.azureedge.net/cdt/statetemplate/5.5.10/css/colorscheme-sacramento.min.css
+https://california.azureedge.net/cdt/statetemplate/5.5.10/css/colorscheme-santabarbara.css
+https://california.azureedge.net/cdt/statetemplate/5.5.10/css/colorscheme-santabarbara.min.css
+https://california.azureedge.net/cdt/statetemplate/5.5.10/css/colorscheme-sierra.css
+https://california.azureedge.net/cdt/statetemplate/5.5.10/css/colorscheme-sierra.min.css
+https://california.azureedge.net/cdt/statetemplate/5.5.10/css/colorscheme-trinity.css
+https://california.azureedge.net/cdt/statetemplate/5.5.10/css/colorscheme-trinity.min.css
+</code></pre>
+   <p>JS</p>
+   <pre><code class="overflow-auto">https://california.azureedge.net/cdt/statetemplate/5.5.10/js/cagov.core.js
+https://california.azureedge.net/cdt/statetemplate/5.5.10/js/cagov.core.min.js
+</code></pre>
+  </div>
+ </li>
+ <li>
+  <h4 data-aria-accordion-heading>Version 5.5.9</h4>
+  <div data-aria-accordion-panel>
+   <p>CSS</p>
+   <pre>
+<code class="overflow-auto">https://california.azureedge.net/cdt/statetemplate/5.5.9/css/cagov.core.css
+https://california.azureedge.net/cdt/statetemplate/5.5.9/css/cagov.core.min.css
+https://california.azureedge.net/cdt/statetemplate/5.5.9/css/cagov.font-only.css
+https://california.azureedge.net/cdt/statetemplate/5.5.9/css/cagov.font-only.min.css
+https://california.azureedge.net/cdt/statetemplate/5.5.9/css/colorscheme-eureka.css
+https://california.azureedge.net/cdt/statetemplate/5.5.9/css/colorscheme-eureka.min.css
+https://california.azureedge.net/cdt/statetemplate/5.5.9/css/colorscheme-mono.css
+https://california.azureedge.net/cdt/statetemplate/5.5.9/css/colorscheme-mono.min.css
+https://california.azureedge.net/cdt/statetemplate/5.5.9/css/colorscheme-oceanside.css
+https://california.azureedge.net/cdt/statetemplate/5.5.9/css/colorscheme-oceanside.min.css
+https://california.azureedge.net/cdt/statetemplate/5.5.9/css/colorscheme-orangecounty.css
+https://california.azureedge.net/cdt/statetemplate/5.5.9/css/colorscheme-orangecounty.min.css
+https://california.azureedge.net/cdt/statetemplate/5.5.9/css/colorscheme-pasorobles.css
+https://california.azureedge.net/cdt/statetemplate/5.5.9/css/colorscheme-pasorobles.min.css
+https://california.azureedge.net/cdt/statetemplate/5.5.9/css/colorscheme-sacramento.css
+https://california.azureedge.net/cdt/statetemplate/5.5.9/css/colorscheme-sacramento.min.css
+https://california.azureedge.net/cdt/statetemplate/5.5.9/css/colorscheme-santabarbara.css
+https://california.azureedge.net/cdt/statetemplate/5.5.9/css/colorscheme-santabarbara.min.css
+https://california.azureedge.net/cdt/statetemplate/5.5.9/css/colorscheme-sierra.css
+https://california.azureedge.net/cdt/statetemplate/5.5.9/css/colorscheme-sierra.min.css
+https://california.azureedge.net/cdt/statetemplate/5.5.9/css/colorscheme-trinity.css
+https://california.azureedge.net/cdt/statetemplate/5.5.9/css/colorscheme-trinity.min.css
+</code></pre>
+   <p>JS</p>
+   <pre><code class="overflow-auto">https://california.azureedge.net/cdt/statetemplate/5.5.9/js/cagov.core.js
+https://california.azureedge.net/cdt/statetemplate/5.5.9/js/cagov.core.min.js
+</code></pre>
+  </div>
+ </li>
+ <li>
+  <h4 data-aria-accordion-heading>Version 5.5.8</h4>
+  <div data-aria-accordion-panel>
+   <p>CSS</p>
+   <pre>
+<code class="overflow-auto">https://california.azureedge.net/cdt/statetemplate/5.5.8/css/cagov.core.css
+https://california.azureedge.net/cdt/statetemplate/5.5.8/css/cagov.core.min.css
+https://california.azureedge.net/cdt/statetemplate/5.5.8/css/cagov.font-only.css
+https://california.azureedge.net/cdt/statetemplate/5.5.8/css/cagov.font-only.min.css
+https://california.azureedge.net/cdt/statetemplate/5.5.8/css/colorscheme-eureka.css
+https://california.azureedge.net/cdt/statetemplate/5.5.8/css/colorscheme-eureka.min.css
+https://california.azureedge.net/cdt/statetemplate/5.5.8/css/colorscheme-mono.css
+https://california.azureedge.net/cdt/statetemplate/5.5.8/css/colorscheme-mono.min.css
+https://california.azureedge.net/cdt/statetemplate/5.5.8/css/colorscheme-oceanside.css
+https://california.azureedge.net/cdt/statetemplate/5.5.8/css/colorscheme-oceanside.min.css
+https://california.azureedge.net/cdt/statetemplate/5.5.8/css/colorscheme-orangecounty.css
+https://california.azureedge.net/cdt/statetemplate/5.5.8/css/colorscheme-orangecounty.min.css
+https://california.azureedge.net/cdt/statetemplate/5.5.8/css/colorscheme-pasorobles.css
+https://california.azureedge.net/cdt/statetemplate/5.5.8/css/colorscheme-pasorobles.min.css
+https://california.azureedge.net/cdt/statetemplate/5.5.8/css/colorscheme-sacramento.css
+https://california.azureedge.net/cdt/statetemplate/5.5.8/css/colorscheme-sacramento.min.css
+https://california.azureedge.net/cdt/statetemplate/5.5.8/css/colorscheme-santabarbara.css
+https://california.azureedge.net/cdt/statetemplate/5.5.8/css/colorscheme-santabarbara.min.css
+https://california.azureedge.net/cdt/statetemplate/5.5.8/css/colorscheme-sierra.css
+https://california.azureedge.net/cdt/statetemplate/5.5.8/css/colorscheme-sierra.min.css
+https://california.azureedge.net/cdt/statetemplate/5.5.8/css/colorscheme-trinity.css
+https://california.azureedge.net/cdt/statetemplate/5.5.8/css/colorscheme-trinity.min.css
+</code></pre>
+   <p>JS</p>
+   <pre><code class="overflow-auto">https://california.azureedge.net/cdt/statetemplate/5.5.8/js/cagov.core.js
+https://california.azureedge.net/cdt/statetemplate/5.5.8/js/cagov.core.min.js
+</code></pre>
+  </div>
+ </li>
+ <li>
+  <h4 data-aria-accordion-heading>Version 5.5.7</h4>
+  <div data-aria-accordion-panel>
+   <p>CSS</p>
+   <pre>
+<code class="overflow-auto">https://california.azureedge.net/cdt/statetemplate/5.5.7/css/cagov.core.css
+https://california.azureedge.net/cdt/statetemplate/5.5.7/css/cagov.core.min.css
+https://california.azureedge.net/cdt/statetemplate/5.5.7/css/cagov.font-only.css
+https://california.azureedge.net/cdt/statetemplate/5.5.7/css/cagov.font-only.min.css
+https://california.azureedge.net/cdt/statetemplate/5.5.7/css/colorscheme-eureka.css
+https://california.azureedge.net/cdt/statetemplate/5.5.7/css/colorscheme-eureka.min.css
+https://california.azureedge.net/cdt/statetemplate/5.5.7/css/colorscheme-mono.css
+https://california.azureedge.net/cdt/statetemplate/5.5.7/css/colorscheme-mono.min.css
+https://california.azureedge.net/cdt/statetemplate/5.5.7/css/colorscheme-oceanside.css
+https://california.azureedge.net/cdt/statetemplate/5.5.7/css/colorscheme-oceanside.min.css
+https://california.azureedge.net/cdt/statetemplate/5.5.7/css/colorscheme-orangecounty.css
+https://california.azureedge.net/cdt/statetemplate/5.5.7/css/colorscheme-orangecounty.min.css
+https://california.azureedge.net/cdt/statetemplate/5.5.7/css/colorscheme-pasorobles.css
+https://california.azureedge.net/cdt/statetemplate/5.5.7/css/colorscheme-pasorobles.min.css
+https://california.azureedge.net/cdt/statetemplate/5.5.7/css/colorscheme-sacramento.css
+https://california.azureedge.net/cdt/statetemplate/5.5.7/css/colorscheme-sacramento.min.css
+https://california.azureedge.net/cdt/statetemplate/5.5.7/css/colorscheme-santabarbara.css
+https://california.azureedge.net/cdt/statetemplate/5.5.7/css/colorscheme-santabarbara.min.css
+https://california.azureedge.net/cdt/statetemplate/5.5.7/css/colorscheme-sierra.css
+https://california.azureedge.net/cdt/statetemplate/5.5.7/css/colorscheme-sierra.min.css
+https://california.azureedge.net/cdt/statetemplate/5.5.7/css/colorscheme-trinity.css
+https://california.azureedge.net/cdt/statetemplate/5.5.7/css/colorscheme-trinity.min.css
+</code></pre>
+   <p>JS</p>
+   <pre><code class="overflow-auto">https://california.azureedge.net/cdt/statetemplate/5.5.7/js/cagov.core.js
+https://california.azureedge.net/cdt/statetemplate/5.5.7/js/cagov.core.min.js
+</code></pre>
+  </div>
+ </li>
+ <li>
+  <h4 data-aria-accordion-heading>Version 5.5.6</h4>
+  <div data-aria-accordion-panel>
+   <p>CSS</p>
+   <pre>
+<code class="overflow-auto">https://california.azureedge.net/cdt/statetemplate/5.5.6/css/cagov.core.css
+https://california.azureedge.net/cdt/statetemplate/5.5.6/css/cagov.core.min.css
+https://california.azureedge.net/cdt/statetemplate/5.5.6/css/cagov.font-only.css
+https://california.azureedge.net/cdt/statetemplate/5.5.6/css/cagov.font-only.min.css
+https://california.azureedge.net/cdt/statetemplate/5.5.6/css/colorscheme-eureka.css
+https://california.azureedge.net/cdt/statetemplate/5.5.6/css/colorscheme-eureka.min.css
+https://california.azureedge.net/cdt/statetemplate/5.5.6/css/colorscheme-mono.css
+https://california.azureedge.net/cdt/statetemplate/5.5.6/css/colorscheme-mono.min.css
+https://california.azureedge.net/cdt/statetemplate/5.5.6/css/colorscheme-oceanside.css
+https://california.azureedge.net/cdt/statetemplate/5.5.6/css/colorscheme-oceanside.min.css
+https://california.azureedge.net/cdt/statetemplate/5.5.6/css/colorscheme-orangecounty.css
+https://california.azureedge.net/cdt/statetemplate/5.5.6/css/colorscheme-orangecounty.min.css
+https://california.azureedge.net/cdt/statetemplate/5.5.6/css/colorscheme-pasorobles.css
+https://california.azureedge.net/cdt/statetemplate/5.5.6/css/colorscheme-pasorobles.min.css
+https://california.azureedge.net/cdt/statetemplate/5.5.6/css/colorscheme-sacramento.css
+https://california.azureedge.net/cdt/statetemplate/5.5.6/css/colorscheme-sacramento.min.css
+https://california.azureedge.net/cdt/statetemplate/5.5.6/css/colorscheme-santabarbara.css
+https://california.azureedge.net/cdt/statetemplate/5.5.6/css/colorscheme-santabarbara.min.css
+https://california.azureedge.net/cdt/statetemplate/5.5.6/css/colorscheme-sierra.css
+https://california.azureedge.net/cdt/statetemplate/5.5.6/css/colorscheme-sierra.min.css
+https://california.azureedge.net/cdt/statetemplate/5.5.6/css/colorscheme-trinity.css
+https://california.azureedge.net/cdt/statetemplate/5.5.6/css/colorscheme-trinity.min.css
+</code></pre>
+   <p>JS</p>
+   <pre><code class="overflow-auto">https://california.azureedge.net/cdt/statetemplate/5.5.6/js/cagov.core.js
+https://california.azureedge.net/cdt/statetemplate/5.5.6/js/cagov.core.min.js
+</code></pre>
+  </div>
+ </li>
+ <li>
+  <h4 data-aria-accordion-heading>Version 5.5.5</h4>
+  <div data-aria-accordion-panel>
+   <p>CSS</p>
+   <pre>
+<code class="overflow-auto">https://california.azureedge.net/cdt/statetemplate/5.5.5/css/cagov.core.css
+https://california.azureedge.net/cdt/statetemplate/5.5.5/css/cagov.core.min.css
+https://california.azureedge.net/cdt/statetemplate/5.5.5/css/cagov.font-only.css
+https://california.azureedge.net/cdt/statetemplate/5.5.5/css/cagov.font-only.min.css
+https://california.azureedge.net/cdt/statetemplate/5.5.5/css/colorscheme-eureka.css
+https://california.azureedge.net/cdt/statetemplate/5.5.5/css/colorscheme-eureka.min.css
+https://california.azureedge.net/cdt/statetemplate/5.5.5/css/colorscheme-mono.css
+https://california.azureedge.net/cdt/statetemplate/5.5.5/css/colorscheme-mono.min.css
+https://california.azureedge.net/cdt/statetemplate/5.5.5/css/colorscheme-oceanside.css
+https://california.azureedge.net/cdt/statetemplate/5.5.5/css/colorscheme-oceanside.min.css
+https://california.azureedge.net/cdt/statetemplate/5.5.5/css/colorscheme-orangecounty.css
+https://california.azureedge.net/cdt/statetemplate/5.5.5/css/colorscheme-orangecounty.min.css
+https://california.azureedge.net/cdt/statetemplate/5.5.5/css/colorscheme-pasorobles.css
+https://california.azureedge.net/cdt/statetemplate/5.5.5/css/colorscheme-pasorobles.min.css
+https://california.azureedge.net/cdt/statetemplate/5.5.5/css/colorscheme-sacramento.css
+https://california.azureedge.net/cdt/statetemplate/5.5.5/css/colorscheme-sacramento.min.css
+https://california.azureedge.net/cdt/statetemplate/5.5.5/css/colorscheme-santabarbara.css
+https://california.azureedge.net/cdt/statetemplate/5.5.5/css/colorscheme-santabarbara.min.css
+https://california.azureedge.net/cdt/statetemplate/5.5.5/css/colorscheme-sierra.css
+https://california.azureedge.net/cdt/statetemplate/5.5.5/css/colorscheme-sierra.min.css
+https://california.azureedge.net/cdt/statetemplate/5.5.5/css/colorscheme-trinity.css
+https://california.azureedge.net/cdt/statetemplate/5.5.5/css/colorscheme-trinity.min.css
+</code></pre>
+   <p>JS</p>
+   <pre><code class="overflow-auto">https://california.azureedge.net/cdt/statetemplate/5.5.5/js/cagov.core.js
+https://california.azureedge.net/cdt/statetemplate/5.5.5/js/cagov.core.min.js
+</code></pre>
+  </div>
+ </li>
+ <li>
+  <h4 data-aria-accordion-heading>Version 5.5.4</h4>
+  <div data-aria-accordion-panel>
+   <p>CSS</p>
+   <pre>
+<code class="overflow-auto">https://california.azureedge.net/cdt/statetemplate/5.5.4/css/cagov.core.css
+https://california.azureedge.net/cdt/statetemplate/5.5.4/css/cagov.core.min.css
+https://california.azureedge.net/cdt/statetemplate/5.5.4/css/cagov.font-only.css
+https://california.azureedge.net/cdt/statetemplate/5.5.4/css/cagov.font-only.min.css
+https://california.azureedge.net/cdt/statetemplate/5.5.4/css/colorscheme-eureka.css
+https://california.azureedge.net/cdt/statetemplate/5.5.4/css/colorscheme-eureka.min.css
+https://california.azureedge.net/cdt/statetemplate/5.5.4/css/colorscheme-mono.css
+https://california.azureedge.net/cdt/statetemplate/5.5.4/css/colorscheme-mono.min.css
+https://california.azureedge.net/cdt/statetemplate/5.5.4/css/colorscheme-oceanside.css
+https://california.azureedge.net/cdt/statetemplate/5.5.4/css/colorscheme-oceanside.min.css
+https://california.azureedge.net/cdt/statetemplate/5.5.4/css/colorscheme-orangecounty.css
+https://california.azureedge.net/cdt/statetemplate/5.5.4/css/colorscheme-orangecounty.min.css
+https://california.azureedge.net/cdt/statetemplate/5.5.4/css/colorscheme-pasorobles.css
+https://california.azureedge.net/cdt/statetemplate/5.5.4/css/colorscheme-pasorobles.min.css
+https://california.azureedge.net/cdt/statetemplate/5.5.4/css/colorscheme-sacramento.css
+https://california.azureedge.net/cdt/statetemplate/5.5.4/css/colorscheme-sacramento.min.css
+https://california.azureedge.net/cdt/statetemplate/5.5.4/css/colorscheme-santabarbara.css
+https://california.azureedge.net/cdt/statetemplate/5.5.4/css/colorscheme-santabarbara.min.css
+https://california.azureedge.net/cdt/statetemplate/5.5.4/css/colorscheme-sierra.css
+https://california.azureedge.net/cdt/statetemplate/5.5.4/css/colorscheme-sierra.min.css
+https://california.azureedge.net/cdt/statetemplate/5.5.4/css/colorscheme-trinity.css
+https://california.azureedge.net/cdt/statetemplate/5.5.4/css/colorscheme-trinity.min.css
+</code></pre>
+   <p>JS</p>
+   <pre><code class="overflow-auto">https://california.azureedge.net/cdt/statetemplate/5.5.4/js/cagov.core.js
+https://california.azureedge.net/cdt/statetemplate/5.5.4/js/cagov.core.min.js
+</code></pre>
+  </div>
+ </li>
+ <li>
+  <h4 data-aria-accordion-heading>Version 5.5.3</h4>
+  <div data-aria-accordion-panel>
+   <p>CSS</p>
+   <pre>
+<code class="overflow-auto">https://california.azureedge.net/cdt/statetemplate/5.5.3/css/cagov.core.css
+https://california.azureedge.net/cdt/statetemplate/5.5.3/css/cagov.core.min.css
+https://california.azureedge.net/cdt/statetemplate/5.5.3/css/cagov.font-only.css
+https://california.azureedge.net/cdt/statetemplate/5.5.3/css/cagov.font-only.min.css
+https://california.azureedge.net/cdt/statetemplate/5.5.3/css/colorscheme-eureka.css
+https://california.azureedge.net/cdt/statetemplate/5.5.3/css/colorscheme-eureka.min.css
+https://california.azureedge.net/cdt/statetemplate/5.5.3/css/colorscheme-mono.css
+https://california.azureedge.net/cdt/statetemplate/5.5.3/css/colorscheme-mono.min.css
+https://california.azureedge.net/cdt/statetemplate/5.5.3/css/colorscheme-oceanside.css
+https://california.azureedge.net/cdt/statetemplate/5.5.3/css/colorscheme-oceanside.min.css
+https://california.azureedge.net/cdt/statetemplate/5.5.3/css/colorscheme-orangecounty.css
+https://california.azureedge.net/cdt/statetemplate/5.5.3/css/colorscheme-orangecounty.min.css
+https://california.azureedge.net/cdt/statetemplate/5.5.3/css/colorscheme-pasorobles.css
+https://california.azureedge.net/cdt/statetemplate/5.5.3/css/colorscheme-pasorobles.min.css
+https://california.azureedge.net/cdt/statetemplate/5.5.3/css/colorscheme-sacramento.css
+https://california.azureedge.net/cdt/statetemplate/5.5.3/css/colorscheme-sacramento.min.css
+https://california.azureedge.net/cdt/statetemplate/5.5.3/css/colorscheme-santabarbara.css
+https://california.azureedge.net/cdt/statetemplate/5.5.3/css/colorscheme-santabarbara.min.css
+https://california.azureedge.net/cdt/statetemplate/5.5.3/css/colorscheme-sierra.css
+https://california.azureedge.net/cdt/statetemplate/5.5.3/css/colorscheme-sierra.min.css
+https://california.azureedge.net/cdt/statetemplate/5.5.3/css/colorscheme-trinity.css
+https://california.azureedge.net/cdt/statetemplate/5.5.3/css/colorscheme-trinity.min.css
+</code></pre>
+   <p>JS</p>
+   <pre><code class="overflow-auto">https://california.azureedge.net/cdt/statetemplate/5.5.3/js/cagov.core.js
+https://california.azureedge.net/cdt/statetemplate/5.5.3/js/cagov.core.min.js
+</code></pre>
+  </div>
+ </li>
+ <li>
+  <h4 data-aria-accordion-heading>Version 5.5.2</h4>
+  <div data-aria-accordion-panel>
+   <p>CSS</p>
+   <pre>
+<code class="overflow-auto">https://california.azureedge.net/cdt/statetemplate/5.5.2/css/cagov.core.css
+https://california.azureedge.net/cdt/statetemplate/5.5.2/css/cagov.core.min.css
+https://california.azureedge.net/cdt/statetemplate/5.5.2/css/cagov.font-only.css
+https://california.azureedge.net/cdt/statetemplate/5.5.2/css/cagov.font-only.min.css
+https://california.azureedge.net/cdt/statetemplate/5.5.2/css/colorscheme-eureka.css
+https://california.azureedge.net/cdt/statetemplate/5.5.2/css/colorscheme-eureka.min.css
+https://california.azureedge.net/cdt/statetemplate/5.5.2/css/colorscheme-mono.css
+https://california.azureedge.net/cdt/statetemplate/5.5.2/css/colorscheme-mono.min.css
+https://california.azureedge.net/cdt/statetemplate/5.5.2/css/colorscheme-oceanside.css
+https://california.azureedge.net/cdt/statetemplate/5.5.2/css/colorscheme-oceanside.min.css
+https://california.azureedge.net/cdt/statetemplate/5.5.2/css/colorscheme-orangecounty.css
+https://california.azureedge.net/cdt/statetemplate/5.5.2/css/colorscheme-orangecounty.min.css
+https://california.azureedge.net/cdt/statetemplate/5.5.2/css/colorscheme-pasorobles.css
+https://california.azureedge.net/cdt/statetemplate/5.5.2/css/colorscheme-pasorobles.min.css
+https://california.azureedge.net/cdt/statetemplate/5.5.2/css/colorscheme-sacramento.css
+https://california.azureedge.net/cdt/statetemplate/5.5.2/css/colorscheme-sacramento.min.css
+https://california.azureedge.net/cdt/statetemplate/5.5.2/css/colorscheme-santabarbara.css
+https://california.azureedge.net/cdt/statetemplate/5.5.2/css/colorscheme-santabarbara.min.css
+https://california.azureedge.net/cdt/statetemplate/5.5.2/css/colorscheme-sierra.css
+https://california.azureedge.net/cdt/statetemplate/5.5.2/css/colorscheme-sierra.min.css
+https://california.azureedge.net/cdt/statetemplate/5.5.2/css/colorscheme-trinity.css
+https://california.azureedge.net/cdt/statetemplate/5.5.2/css/colorscheme-trinity.min.css
+</code></pre>
+   <p>JS</p>
+   <pre><code class="overflow-auto">https://california.azureedge.net/cdt/statetemplate/5.5.2/js/cagov.core.js
+https://california.azureedge.net/cdt/statetemplate/5.5.2/js/cagov.core.min.js
+</code></pre>
+  </div>
+ </li>
+ <li>
+  <h4 data-aria-accordion-heading>Version 5.5.1</h4>
+  <div data-aria-accordion-panel>
+   <p>CSS</p>
+   <pre>
+<code class="overflow-auto">https://california.azureedge.net/cdt/statetemplate/5.5.1/css/cagov.core.css
+https://california.azureedge.net/cdt/statetemplate/5.5.1/css/cagov.core.min.css
+https://california.azureedge.net/cdt/statetemplate/5.5.1/css/cagov.font-only.css
+https://california.azureedge.net/cdt/statetemplate/5.5.1/css/cagov.font-only.min.css
+https://california.azureedge.net/cdt/statetemplate/5.5.1/css/colorscheme-eureka.css
+https://california.azureedge.net/cdt/statetemplate/5.5.1/css/colorscheme-eureka.min.css
+https://california.azureedge.net/cdt/statetemplate/5.5.1/css/colorscheme-mono.css
+https://california.azureedge.net/cdt/statetemplate/5.5.1/css/colorscheme-mono.min.css
+https://california.azureedge.net/cdt/statetemplate/5.5.1/css/colorscheme-oceanside.css
+https://california.azureedge.net/cdt/statetemplate/5.5.1/css/colorscheme-oceanside.min.css
+https://california.azureedge.net/cdt/statetemplate/5.5.1/css/colorscheme-orangecounty.css
+https://california.azureedge.net/cdt/statetemplate/5.5.1/css/colorscheme-orangecounty.min.css
+https://california.azureedge.net/cdt/statetemplate/5.5.1/css/colorscheme-pasorobles.css
+https://california.azureedge.net/cdt/statetemplate/5.5.1/css/colorscheme-pasorobles.min.css
+https://california.azureedge.net/cdt/statetemplate/5.5.1/css/colorscheme-sacramento.css
+https://california.azureedge.net/cdt/statetemplate/5.5.1/css/colorscheme-sacramento.min.css
+https://california.azureedge.net/cdt/statetemplate/5.5.1/css/colorscheme-santabarbara.css
+https://california.azureedge.net/cdt/statetemplate/5.5.1/css/colorscheme-santabarbara.min.css
+https://california.azureedge.net/cdt/statetemplate/5.5.1/css/colorscheme-sierra.css
+https://california.azureedge.net/cdt/statetemplate/5.5.1/css/colorscheme-sierra.min.css
+https://california.azureedge.net/cdt/statetemplate/5.5.1/css/colorscheme-trinity.css
+https://california.azureedge.net/cdt/statetemplate/5.5.1/css/colorscheme-trinity.min.css
+</code></pre>
+   <p>JS</p>
+   <pre><code class="overflow-auto">https://california.azureedge.net/cdt/statetemplate/5.5.1/js/cagov.core.js
+https://california.azureedge.net/cdt/statetemplate/5.5.1/js/cagov.core.min.js
+</code></pre>
+  </div>
+ </li>
+ <li>
+  <h4 data-aria-accordion-heading>Version 5.5.0</h4>
+  <div data-aria-accordion-panel>
+   <p>CSS</p>
+   <pre>
+<code class="overflow-auto">https://california.azureedge.net/cdt/statetemplate/5.5.0/css/cagov.core.css
+https://california.azureedge.net/cdt/statetemplate/5.5.0/css/cagov.core.min.css
+https://california.azureedge.net/cdt/statetemplate/5.5.0/css/cagov.font-only.css
+https://california.azureedge.net/cdt/statetemplate/5.5.0/css/cagov.font-only.min.css
+https://california.azureedge.net/cdt/statetemplate/5.5.0/css/colorscheme-eureka.css
+https://california.azureedge.net/cdt/statetemplate/5.5.0/css/colorscheme-eureka.min.css
+https://california.azureedge.net/cdt/statetemplate/5.5.0/css/colorscheme-mono.css
+https://california.azureedge.net/cdt/statetemplate/5.5.0/css/colorscheme-mono.min.css
+https://california.azureedge.net/cdt/statetemplate/5.5.0/css/colorscheme-oceanside.css
+https://california.azureedge.net/cdt/statetemplate/5.5.0/css/colorscheme-oceanside.min.css
+https://california.azureedge.net/cdt/statetemplate/5.5.0/css/colorscheme-orangecounty.css
+https://california.azureedge.net/cdt/statetemplate/5.5.0/css/colorscheme-orangecounty.min.css
+https://california.azureedge.net/cdt/statetemplate/5.5.0/css/colorscheme-pasorobles.css
+https://california.azureedge.net/cdt/statetemplate/5.5.0/css/colorscheme-pasorobles.min.css
+https://california.azureedge.net/cdt/statetemplate/5.5.0/css/colorscheme-sacramento.css
+https://california.azureedge.net/cdt/statetemplate/5.5.0/css/colorscheme-sacramento.min.css
+https://california.azureedge.net/cdt/statetemplate/5.5.0/css/colorscheme-santabarbara.css
+https://california.azureedge.net/cdt/statetemplate/5.5.0/css/colorscheme-santabarbara.min.css
+https://california.azureedge.net/cdt/statetemplate/5.5.0/css/colorscheme-sierra.css
+https://california.azureedge.net/cdt/statetemplate/5.5.0/css/colorscheme-sierra.min.css
+https://california.azureedge.net/cdt/statetemplate/5.5.0/css/colorscheme-trinity.css
+https://california.azureedge.net/cdt/statetemplate/5.5.0/css/colorscheme-trinity.min.css
+</code></pre>
+   <p>JS</p>
+   <pre><code class="overflow-auto">https://california.azureedge.net/cdt/statetemplate/5.5.0/js/cagov.core.js
+https://california.azureedge.net/cdt/statetemplate/5.5.0/js/cagov.core.min.js
+</code></pre>
+  </div>
+ </li>
+</ol>
+
+<hr class="m-b-lg">
+
+		</main>
+	</div>
+</div>
+
+<aside class="p-b-md p-t-sm section-standout site-footer">
+ <div class="container">
+  <div class="row">
+   <div class="col-md-4">
+    <h3 class="h4 w-100 brd-bottom brd-highlight p-b">State Web Template</h3>
+    <a href="/about.html" class="d-block no-underline m-y font-size-16">About</a>
+    <a href="/contact-us.html" class="d-block no-underline m-y font-size-16">Contact us</a>
+   </div>
+   <div class="col-md-4">
+    <h3 class="h4 w-100 brd-bottom  brd-highlight p-b">Related websites</h3>
+    <a href="https://webstandards.ca.gov" class="d-block no-underline m-y font-size-16">State Web Standards</a>
+    <a href="https://designsystem.webstandards.ca.gov" class="d-block no-underline m-y font-size-16">California Design
+     System</a>
+    <a href="https://github.com/Office-of-Digital-Services/California-State-Web-Template-Website"
+     class="d-block no-underline m-y font-size-16">State Web Template GitHub</a>
+   </div>
+   <div class="col-md-4">
+    <h3 class="h4 w-100 brd-bottom brd-highlight p-b">Resources</h3>
+    <a href="https://designsystem.webstandards.ca.gov/style/content"
+     class="d-block no-underline m-y font-size-16">Content style
+     guide</a>
+    <a href="https://designsystem.webstandards.ca.gov/style/design" class="d-block no-underline m-y font-size-16">Design
+     style
+     guide</a>
+    <a href="https://designsystem.webstandards.ca.gov/why-web-components"
+     class="d-block no-underline m-y font-size-16">Why web
+     components</a>
+   </div>
+  </div>
+ </div>
+</aside>
+  <!-- Global Footer -->
+<footer id="footer" class="global-footer">
+  <button class="return-top"><span class="sr-only">Back to top</span></button>
+  <div class="container">
+   <div class="d-flex">
+     <a href="https://ca.gov" class="cagov-logo" target="_blank">
+     <img src="/images/Ca-Gov-Logo-Gold.svg" alt="CA.gov logo">
+     </a>
+ 
+     <ul class="footer-links">
+         <li><a href="/conditions-of-use.html">Conditions of use</a></li>
+         <li><a href="/privacy-policy.html">Privacy policy</a></li>
+         <li><a href="/images/WebAccessibilityCert-beta.template.webstandards.ca.gov.pdf" aria-label="Accessibility Certification">Accessibility</a></li>
+         <li><a href="/sitemap.html">Sitemap</a></li>
+         
+     </ul>
+
+     <ul class="socialsharer-container">
+         <li><a href="https://github.com/Office-of-Digital-Innovation/California-State-Web-Template"><span class="ca-gov-icon-github"
+                     aria-hidden="true"></span><span class="sr-only">GitHub</span></a></li>
+     </ul>
+   </div>
+  </div>
+
+  <!-- Copyright Statement -->
+  <div class="copyright">
+    <div class="container text-right">
+        Copyright &copy;
+        <span id="thisyear">
+    <script>document.getElementById('thisyear').appendChild(document.createTextNode(new Date().getFullYear()))</script>
+</span> State of California
+    </div>
+  </div>
+</footer>
+
+<!-- Extra Decorative Content -->
+<div class="decoration-last">&nbsp;</div>
+  <script src="/js/cagov.core.min.js"></script>
+</body>
+</html>
