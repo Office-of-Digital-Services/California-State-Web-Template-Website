@@ -178,7 +178,7 @@ permalink: "visual-design/icons.html"
   var listHtml = "";
   var numberOfResults = 0;
   var inputBox = document.querySelector("#iconSearchForm input");
-  var searchInput = inputBox ? inputBox.value.trim().toLowerCase().replace(/[<>]/g,'') : "";
+  var searchInput = inputBox ? inputBox.value.trim().toLowerCase().replace(/[<>]/g, '') : "";
   const iconsPerPage = 60;
 
   const letterList = [...new Set(iconData.icons.map(x => x.properties.name.charAt(0)))];
@@ -330,7 +330,8 @@ permalink: "visual-design/icons.html"
 
 <div class="row">
  <div class="col-md-3">
-  <nav aria-labelledby="page-navigation-label" class="side-navigation sticky-6 overflow-auto">
+  <nav aria-labelledby="side-navigation-label" class="side-navigation sticky-6 overflow-auto">
+   <span class="sr-only" id="side-navigation-label">Side navigation</span>
    <ul class="list-navigation">
     <li><a href="/visual-design/color.html">Colors</a></li>
     <li><a href="/visual-design/icons.html" class="active">Icons</a></li>
