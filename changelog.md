@@ -1,11 +1,12 @@
 # Version History
 
+
 ## 6.0.9
 - Updated alert banner
 - Added 8 new icons to the CAGov icons font
 - Added side navigation component
 - Added pagination to the icon search page
-
+- Added automatic "on this page" navigation component
 ## 6.0.8
 - Updated site structure and rebuild framework to use eleventy site generation #191
 - Replaced server site includes with njk includes and templates

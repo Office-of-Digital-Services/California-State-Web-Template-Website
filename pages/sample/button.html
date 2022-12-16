@@ -2,10 +2,13 @@
 title: Buttons
 landing: Components
 layout: components.njk
-permalink: "components/buttons.html"
+permalink: "components/button.html"
 ---
 
 <h1 class="mt-lg-0">Button</h1>
+
+<nav class="page-navigation"></nav>
+
 <p>A button triggers an event or action. It informs the visitor that something will happen next.</p>
 <p>Buttons add visual prominence to the call to action and provide feedback on completed actions.</p>
 <p>Buttons can:</p>
@@ -16,16 +19,16 @@ permalink: "components/buttons.html"
  <li>Pause a process: <span class="text-bold">Save as draft</span></li>
 </ul>
 
-<h2 id="Sample">Sample</h2>
+<h2>Sample</h2>
 <p>Available button colors are based on your selected <a href="/visual-design/color.html">color theme</a>.</p>
 
 <!--TABS-->
 <div class="tab-group responsive">
  <ul id="tabs1" class="nav nav-tabs" role="tablist">
-  <li class="nav-item">
+  <li class="nav-item" role="presentation">
    <a id="tab-example1" href="#pane-example1" class="nav-link active" data-bs-toggle="tab" role="tab">Example</a>
   </li>
-  <li class="nav-item">
+  <li class="nav-item" role="presentation">
    <a id="tab-html1" href="#pane-html1" class="nav-link" data-bs-toggle="tab" role="tab">Source code</a>
   </li>
 
@@ -88,7 +91,7 @@ permalink: "components/buttons.html"
 </div>
 <!--END TABS-->
 
-<h2 id="Usage">Usage</h2>
+<h2>Usage</h2>
 <h3>When and how to use it </h3>
 <p>Use buttons to communicate actions users can take to interact with a page. Buttons should be used consistently for
  the same types of tasks.</p>
@@ -117,5 +120,5 @@ permalink: "components/buttons.html"
 </p>Avoid using disabled buttons as they can be inaccessible and confusing to some visitors. If you must use a disabled
 button, inform visitors why the button is disabled and how to enable it.</p>
 
-<h2 id="Accessibility">Accessibility</h2>
+<h2>Accessibility</h2>
 {% include "../../src/_includes/modules/accessibility.html" %}

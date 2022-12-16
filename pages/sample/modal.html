@@ -10,6 +10,10 @@ permalink: "components/modal.html"
 <h1 class="mt-lg-0 m-b-0">Modal</h1>
 <p class="subtitle">Other names: popup window, overlay, dialog</p>
 
+
+<nav class="page-navigation"></nav>
+
+
 <p>A modal displays content in a temporary window that appears over the current page. </p>
 <p>Modals require an interaction (acknowledge, submit, close) from the visitor before they can return to the content
  underneath.</p>
@@ -27,15 +31,23 @@ permalink: "components/modal.html"
  <li>User feedback</li>
 </ul>
 
-<h2 id="Sample">Sample</h2>
+<h2>How it works</h2>
+<p>To trigger the modal, you'll need to include a link or a button that will trigger the modal. The trigger button
+ element has two custom data attributes: <code>data-bs-toggle</code> and <code>data-bs-target</code>. The
+ toggle attribute tells framework what to do and the target tells framework which element to open. So,
+ whenever a link button that is clicked, a modal with an ID specified in the <code>data-bs-target</code> attribute will
+ appear.
+
+</p>
+<h2>Sample</h2>
 
 <!--TABS-->
 <div class="tab-group responsive">
  <ul id="tabs1" class="nav nav-tabs" role="tablist">
-  <li class="nav-item">
+  <li class="nav-item" role="presentation">
    <a id="tab-example1" href="#pane-example1" class="nav-link active" data-bs-toggle="tab" role="tab">Example</a>
   </li>
-  <li class="nav-item">
+  <li class="nav-item" role="presentation">
    <a id="tab-html1" href="#pane-html1" class="nav-link" data-bs-toggle="tab" role="tab">Source code</a>
   </li>
 
@@ -75,6 +87,11 @@ permalink: "components/modal.html"
    </div>
    <div id="collapse-html1" class="collapse" role="tabpanel" aria-labelledby="heading-html1">
     <div class="card-body">
+     <h3 class="h4 m-t-0">Modal trigger button</h3>
+     <pre><code><button type="button" class="btn btn-default btn-lg m-t-lg" data-bs-toggle="modal"
+      data-bs-target="#news-headlines">Open modal</button></code></pre>
+
+     <h3 class="h4">Modal</h3>
      <pre style="max-height: 300px;"><code>{% include "../../src/_includes/modules/modal.html" %}</code></pre>
 
     </div>
@@ -86,7 +103,7 @@ permalink: "components/modal.html"
 </div>
 <!--END TABS-->
 
-<h2 id="Usage">Usage</h2>
+<h2>Usage</h2>
 <h3>When and how to use it </h3>
 <p>Modals interrupt your visitor. Use them sparingly and only when the content or interaction is critical to your
  visitors’ success. </p>
@@ -101,7 +118,7 @@ permalink: "components/modal.html"
 
 
 
-<h2 id="Accessibility">Accessibility</h2>
+<h2>Accessibility</h2>
 {% include "../../src/_includes/modules/accessibility.html" %}
 
 

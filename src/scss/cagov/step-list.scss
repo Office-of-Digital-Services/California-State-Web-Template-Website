@@ -4,7 +4,7 @@
 
 .cagov-step-list {
  padding-left: 0 !important;
- margin-left: 30px !important;
+ margin-left: 1.5rem !important;
  counter-reset: step-list-count;
 
  li {
@@ -59,3 +59,17 @@
   margin-left: 6px;
  }
 }
+
+
+ /* Make the list within the step list look normal */
+ .cagov-step-list li ul li {
+  border: none;
+  font-size: calc(1.125rem + .1vw);
+  font-weight: normal;
+  list-style-type: disc;
+  padding-left: unset;
+ }
+
+ .cagov-step-list li ul li:before {
+  content: none;
+ }

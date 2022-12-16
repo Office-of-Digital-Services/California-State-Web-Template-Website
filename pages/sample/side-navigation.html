@@ -1,0 +1,430 @@
+﻿---
+title: Side navigation
+landing: Components
+layout: components.njk
+permalink: "/components/side-navigation.html"
+---
+
+
+<h1 class="mt-lg-0 m-b-0">Side navigation</h1>
+<p class="subtitle">Other names: Left navigation, side menu</p>
+
+
+
+<nav class="page-navigation"></nav>
+
+
+<p>The side navigation menu allows visitors to find related pages within a topic. It provides a deeper level of
+ navigation for larger websites. Selecting a side menu item will take the visitor to that page.</p>
+
+
+<h2>Single-level list</h2>
+
+<!--TABS-->
+<div class="tab-group responsive">
+ <ul id="tabs1" class="nav nav-tabs" role="tablist">
+  <li class="nav-item" role="presentation">
+   <a id="tab-example1" href="#pane-example1" class="nav-link active" data-bs-toggle="tab" role="tab">Example</a>
+  </li>
+  <li class="nav-item" role="presentation">
+   <a id="tab-html1" href="#pane-html1" class="nav-link" data-bs-toggle="tab" role="tab">Source code</a>
+  </li>
+
+  <li class="nav-item" role="presentation">
+   <a id="tab-html2" href="#pane-html2" class="nav-link" data-bs-toggle="tab" role="tab">Implementation notes</a>
+  </li>
+
+ </ul>
+
+
+ <div id="tab-content1" class="tab-content">
+  <!--Examples-->
+  <div id="pane-example1" class="card tab-pane fade show active" role="tabpanel" aria-labelledby="tab-example1">
+   <div class="card-header" id="heading-example1">
+    <a data-bs-toggle="collapse" href="#collapse-example1" data-parent="#tab-content1" aria-expanded="true"
+     aria-controls="collapse-example1" data-hash="#pane-example1" title="Example tab header">
+     Example
+    </a>
+   </div>
+   <div id="collapse-example1" class="collapse show" role="tabpanel" aria-labelledby="heading-example1">
+    <div class="p-a-md p-b-lg col-md-5">
+
+     {% include "../../src/_includes/modules/side-navigation.html" %}
+
+
+    </div>
+   </div>
+  </div>
+
+
+
+  <!--HTML-->
+  <div id="pane-html1" class="card tab-pane fade" role="tabpanel" aria-labelledby="tab-html1">
+   <div class="card-header" id="heading-html1">
+    <a class="collapsed" data-bs-toggle="collapse" href="#collapse-html1" data-parent="#tab-content1"
+     aria-expanded="false" aria-controls="collapse-html1" data-hash="#pane-html1" title="HTML Source code tab header">
+     Source code
+    </a>
+   </div>
+   <div id="collapse-html1" class="collapse" role="tabpanel" aria-labelledby="heading-html1">
+    <div class="card-body">
+     <pre style="max-height: 300px;"><code>{% include "../../src/_includes/modules/side-navigation.html" %}</pre></code>
+
+    </div>
+   </div>
+  </div>
+
+
+  <!--Implementation notes-->
+  <div id="pane-html2" class="card tab-pane fade" role="tabpanel" aria-labelledby="tab-html2">
+   <div class="card-header" id="heading-html2">
+    <a class="collapsed" data-bs-toggle="collapse" href="#collapse-html2" data-parent="#tab-content2"
+     aria-expanded="false" aria-controls="collapse-html2" data-hash="#pane-html2"
+     title="Implementation notes tab header">
+     Implementation notes
+    </a>
+   </div>
+   <div id="collapse-html2" class="collapse" role="tabpanel" aria-labelledby="heading-html2">
+    <div class="card-body">
+     <p class="m-b">Add class <code>landing</code> to your landing page link to indicate the landing page. Use
+      <code>active</code> class on your link to indicate the current page if the page is currently open.
+     </p>
+     <pre><code><li><a href="javascript:;" class="landing active">Landing page</a></li></code></pre>
+    </div>
+   </div>
+  </div>
+
+
+
+
+ </div>
+</div>
+<!--END TABS-->
+
+
+
+
+
+
+<h2>Multi-level list</h2>
+<!--TABS-->
+<div class="tab-group responsive">
+ <ul id="tabs2" class="nav nav-tabs" role="tablist">
+  <li class="nav-item" role="presentation">
+   <a id="tab-example3" href="#pane-example3" class="nav-link active" data-bs-toggle="tab" role="tab"
+    aria-label="Accordion list example">Example</a>
+  </li>
+  <li class="nav-item" role="presentation">
+   <a id="tab-html3" href="#pane-html3" class="nav-link" data-bs-toggle="tab" role="tab"
+    aria-label="Accordion list source code">Source code</a>
+  </li>
+  <li class="nav-item" role="presentation">
+   <a id="tab-notes3" href="#pane-notes3" class="nav-link" data-bs-toggle="tab" role="tab"
+    aria-label="Accordion list source code">Implementation notes</a>
+  </li>
+
+ </ul>
+
+
+ <div id="tab-content2" class="tab-content">
+  <!--Examples-->
+  <div id="pane-example3" class="card tab-pane fade show active" role="tabpanel" aria-labelledby="tab-example3">
+   <div class="card-header" id="heading-example3">
+    <a data-bs-toggle="collapse" href="#collapse-example3" data-parent="#tab-content2" aria-expanded="true"
+     aria-controls="collapse-example3" data-hash="#pane-example3" title="Example tab header">
+     Example
+    </a>
+   </div>
+   <div id="collapse-example3" class="collapse show" role="tabpanel" aria-labelledby="heading-example3">
+    <div class="card-body p-b">
+     <div class="row">
+      <div class="col-lg-4">
+       <p class="bold m-b">Level 1a:</p>
+       <p class="m-b-lg font-size-16">With landing page<br> selected.</p>
+       {% include "../../src/_includes/modules/side-navigation-level1.html" %}
+      </div>
+      <div class="col-lg-4">
+       <p class="bold m-b">Level 1b:</p>
+       <p class="m-b-lg font-size-16">With sublanding page selected.</p>
+       {% include "../../src/_includes/modules/side-navigation-level2.html" %}
+      </div>
+      <div class="col-lg-4">
+       <p class="bold m-b">Level 2:</p>
+       <p class="m-b-lg font-size-16">With page under the sublanding page selected.</p>
+       {% include "../../src/_includes/modules/side-navigation-level3.html" %}
+      </div>
+     </div>
+
+
+
+    </div>
+   </div>
+  </div>
+
+
+
+  <!--HTML-->
+  <div id="pane-html3" class="card tab-pane fade" role="tabpanel" aria-labelledby="tab-html3">
+   <div class="card-header" id="heading-html3">
+    <a class="collapsed" data-bs-toggle="collapse" href="#collapse-html3" data-parent="#tab-content2"
+     aria-expanded="false" aria-controls="collapse-html3" data-hash="#pane-html3" title="HTML Source code tab header">
+     Source code
+    </a>
+   </div>
+   <div id="collapse-html3" class="collapse" role="tabpanel" aria-labelledby="heading-html3">
+    <div class="card-body">
+     <pre
+      style="max-height: 300px;"><code>{% include "../../src/_includes/modules/side-navigation-level2.html" %}</code></pre>
+
+    </div>
+   </div>
+  </div>
+
+
+
+  <!--Implementation notes-->
+  <div id="pane-notes3" class="card tab-pane fade" role="tabpanel" aria-labelledby="tab-notes3">
+   <div class="card-header" id="heading-notes3">
+    <a class="collapsed" data-bs-toggle="collapse" href="#collapse-notes3" data-parent="#tab-content2"
+     aria-expanded="false" aria-controls="collapse-notes3" data-hash="#pane-notes3"
+     title="Implementation notes tab header">
+     Implementation notes
+    </a>
+   </div>
+   <div id="collapse-notes3" class="collapse" role="tabpanel" aria-labelledby="heading-notes3">
+    <div class="card-body">
+     <p class="m-b">In Level 2 example in addition to <code>landing</code> class add class <code>back</code> to your
+      sublanding page link
+      to add back arrow icon. Don't use <code>back</code> class if the page is current.
+     </p>
+     <pre><code><li><a href="javascript:;" class="landing back">Page 4 section landing</a></li></code></pre>
+
+    </div>
+   </div>
+  </div>
+
+
+ </div>
+</div>
+<!--END TABS-->
+
+
+<h2>Accordion list</h2>
+
+
+<!--Tabs 4-->
+<div class="tab-group responsive">
+ <ul id="tabs4" class="nav nav-tabs" role="tablist">
+  <li class="nav-item" role="presentation">
+   <a id="tab-example4" href="#pane-example4" class="nav-link active" data-bs-toggle="tab" role="tab">Example</a>
+  </li>
+  <li class="nav-item" role="presentation">
+   <a id="tab-html4" href="#pane-html4" class="nav-link" data-bs-toggle="tab" role="tab">Source code</a>
+  </li>
+  <li class="nav-item" role="presentation">
+   <a id="tab-include4" href="#pane-include4" class="nav-link" data-bs-toggle="tab" role="tab">Implementation
+    notes</a>
+  </li>
+ </ul>
+
+
+ <div class="tab-content">
+  <div id="pane-example4" class="card tab-pane fade show active" role="tabpanel" aria-labelledby="tab-example4">
+   <div class="card-header" id="heading-example4">
+    <h4 class="my-0 w-100">
+     <a data-bs-toggle="collapse" href="#collapse-example4" data-parent="#tab-content" aria-expanded="true"
+      aria-controls="collapse-example4" title="Example tab header">
+      Example
+     </a>
+    </h4>
+   </div>
+   <div id="collapse-example4" class="collapse show" role="tabpanel" aria-labelledby="heading-example4">
+    <div class="card-body">
+     <div class="col-lg-5">
+      {% include "../../src/_includes/modules/nav-side-accordion.html" %}
+     </div>
+    </div>
+   </div>
+  </div>
+
+  <div id="pane-html4" class="card tab-pane fade" role="tabpanel" aria-labelledby="tab-html4">
+   <div class="card-header" id="heading-html4">
+    <h4 class="my-0 w-100">
+     <a class="collapsed" data-bs-toggle="collapse" href="#collapse-html4" data-parent="#tab-content"
+      aria-expanded="false" aria-controls="collapse-html4" title="HTML Source code tab header">
+      HTML Source code
+     </a>
+    </h4>
+   </div>
+   <div id="collapse-html4" class="collapse" role="tabpanel" aria-labelledby="heading-html4">
+    <div class="card-body">
+     <textarea class="sourcecode" aria-label="source code"
+      disabled>{% include "../../src/_includes/modules/nav-side-accordion.html" %}</textarea>
+    </div>
+   </div>
+  </div>
+
+  <div id="pane-include4" class="card tab-pane fade" role="tabpanel" aria-labelledby="tab-include4">
+   <div class="card-header" id="heading-include4">
+    <h4 class="my-0 w-100">
+     <a class="collapsed" data-bs-toggle="collapse" href="#collapse-include4" data-parent="#tab-include4"
+      aria-expanded="false" aria-controls="collapse-include4" title="Implementation notes tab header">
+      Implementation notes</a>
+    </h4>
+   </div>
+   <div id="collapse-include4" class="collapse" role="tabpanel" aria-labelledby="heading-include4">
+    <div class="card-body">
+     <p>To add accordion functionality to your side navigation use <code>cagov-accordion</code> tag with class
+      <code>sidenav</code>. If you want your accordion to be open on default use attribute <code>open</code> in your
+      <code>details</code> tag. You can also use class <code>active</code> in your <code>summary</code> tag to indicate
+      current page.
+     </p>
+     <textarea class="sourcecode m-t" aria-label="source code" disabled>
+<cagov-accordion class="sidenav">
+  <details open>
+   <summary class="active">Page 2</summary>
+   <div class="accordion-body">
+    <ul class="side-subnav">
+     <li>
+      <a href="javascript:;">Subpage 1</a>
+     </li>
+    </ul>
+   </div>
+  </details>
+ </cagov-accordion>
+</textarea>
+
+    </div>
+   </div>
+  </div>
+ </div>
+</div>
+<!--End tabs 4-->
+
+
+
+<h2 id="Scroll-bar">Scroll bar</h2>
+<p>This built-in feature only activates when side navigation is longer than the current viewport area.</p>
+
+
+
+
+
+<h2>Usage</h2>
+
+<h3 class="m-t">When and how to use it</h3>
+<p>The side navigation component helps visitors find pages within a website. It complements site navigation. It helps
+ visitors scan and choose the content they need.</p>
+<p>Use this component when:</p>
+
+<ul>
+ <li>Visitors need to navigate between multiple pages within a website</li>
+ <li>Top level navigation isn’t enough to support your site hierarchy</li>
+</ul>
+
+<p>Use <span class="bold">single level</span> when navigation is simple and direct.</p>
+<p>Use <span class="bold">multi-level</span> when there are a lot of pages and/or hierarchical.</p>
+
+
+<h3>How not to use it</h3>
+
+<p>When possible, avoid complex and deep navigation menus.</p>
+
+<p>Do not go more than 2 levels deep. This makes the interaction simple for our visitors.</p>
+
+<p>Do not link to pages outside of the parent website. You can do that within content.</p>
+
+
+<h3>Multi-level behavior</h3>
+
+<hr>
+
+<div class="row">
+ <div class="col-md-7">
+  <ol class="m-t-md">
+   <li>A multi-level side menu will start with a single level list of parent pages.</li>
+  </ol>
+ </div>
+ <div class="col-md-5">
+  <ul class="list-navigation">
+   <li><a href="javascript:;" class="landing active">Types of parties</a></li>
+   <li><a href="javascript:;">Birthday</a></li>
+   <li><a href="javascript:;">Dance party</a></li>
+   <li><a href="javascript:;">Holiday party</a></li>
+   <li><a href="javascript:;">New year's eve</a></li>
+   <li><a href="javascript:;">Office party</a></li>
+  </ul>
+ </div>
+</div>
+
+
+<hr>
+
+<div class="row">
+ <div class="col-md-7">
+  <ol start="2" class="m-t-md">
+   <li>When you select a parent page with children, the same menu displays. It also displays links to the children
+    pages, which are indented under that item. This displays two levels of navigation.</li>
+  </ol>
+ </div>
+ <div class="col-md-5">
+  <ul class="list-navigation">
+   <li><a href="javascript:;" class="landing">Types of parties</a></li>
+   <li><a href="javascript:;" class="active">Birthday</a>
+    <ul>
+     <li><a href="javascript:;">Picking a theme</a></li>
+     <li><a href="javascript:;">Planning</a></li>
+     <li><a href="javascript:;">Day of the party</a></li>
+     <li><a href="javascript:;">After the party</a></li>
+    </ul>
+   </li>
+   <li><a href="javascript:;">Dance party</a></li>
+   <li><a href="javascript:;">Holiday party</a></li>
+   <li><a href="javascript:;">New year's eve</a></li>
+   <li><a href="javascript:;">Office party</a></li>
+  </ul>
+ </div>
+</div>
+
+
+
+<hr>
+
+<div class="row">
+ <div class="col-md-7">
+  <ol start="3" class="m-t-md">
+   <li>If a child page has subpages (grandchildren):
+    <ol style="list-style:lower-latin" class="m-t-md">
+     <li>The parent menu is gone</li>
+     <li>The children items remain</li>
+     <li>The grandchildren are added in</li>
+     <li>A “back to” the parent menu link is added to the top of the menu</li>
+    </ol>
+   </li>
+  </ol>
+  <p class="m-t-md">This logic can go as deep as needed, following this pattern.</p>
+ </div>
+ <div class="col-md-5">
+  <ul class="list-navigation">
+   <li><a href="javascript:;" class="landing back">Birthday</a></li>
+   <li><a href="javascript:;">Picking a theme</a></li>
+   <li><a href="javascript:;" class="active">Planning</a>
+    <ul>
+     <li><a href="javascript:;">Budget</a></li>
+     <li><a href="javascript:;">Guest list</a></li>
+     <li><a href="javascript:;">Invitations</a></li>
+     <li><a href="javascript:;">Decor</a></li>
+     <li><a href="javascript:;">Food and drinks</a></li>
+     <li><a href="javascript:;">Surprise</a></li>
+     <li><a href="javascript:;">Activities</a></li>
+     <li><a href="javascript:;">Gifts</a></li>
+    </ul>
+   </li>
+   <li><a href="javascript:;">Day of the party</a></li>
+   <li><a href="javascript:;">After the party</a></li>
+  </ul>
+ </div>
+</div>
+<hr>
+<h2>Accessibility</h2>
+{% include "../../src/_includes/modules/accessibility.html" %}
