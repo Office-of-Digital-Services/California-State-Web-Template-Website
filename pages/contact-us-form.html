@@ -13,7 +13,7 @@ permalink: "contact-us-form.html"
   </p>
   <br />
 
-  <form autocomplete="on" method="POST" id="ContactUsForm">
+  <form autocomplete="on" method="POST" id="ContactUsForm" role="form">
     <div class="alert alert-danger alert-banner" role="alert">
       <div class="container px-4">Correct the errors to continue</div>
     </div>
@@ -30,8 +30,9 @@ permalink: "contact-us-form.html"
       required
       aria-required="true"
       size="65"
-      maxlength="200"
-      minlength="3"
+      maxlength="150"
+      minlength="1"
+      role="textbox"
     />
     <div class="mt-2 invalid-feedback d-block font-weight-bold">
       Enter your name
@@ -49,16 +50,16 @@ permalink: "contact-us-form.html"
       required
       aria-required="true"
       size="65"
-      maxlength="200"
-      minlength="5"
+      maxlength="250"
+      minlength="1"
+      role="textbox"
     />
     <div class="mt-2 invalid-feedback d-block font-weight-bold">
-      Enter your email
+      Enter a valid email. Example: email@email.com
     </div>
     <br />
     <label class="form-control-label" for="InputDepartment"
-      ><span class="required-label" aria-hidden="true">*</span> Department or
-      agency</label
+      >Department or agency</label
     >
     <input
       type="text"
@@ -66,19 +67,14 @@ permalink: "contact-us-form.html"
       id="InputDepartment"
       name="Department"
       autocomplete="organization"
-      aria-required="true"
+      aria-required="false"
       size="65"
-      required
-      maxlength="200"
+      maxlength="150"
       minlength="1"
+      role="textbox"
     />
-    <div class="mt-2 invalid-feedback d-block font-weight-bold">
-      Enter your department or agency
-    </div>
     <br />
-    <label class="form-control-label" for="InputRole"
-      ><span class="required-label" aria-hidden="true">*</span> Main role</label
-    >
+    <label class="form-control-label" for="InputRole">Main role</label>
     <input
       type="text"
       class="form-control"
@@ -86,16 +82,14 @@ permalink: "contact-us-form.html"
       name="Role"
       autocomplete="organization-title"
       list="roleSuggestions"
-      aria-required="true"
+      aria-required="false"
       aria-autocomplete="both"
       size="65"
-      required
-      maxlength="200"
-      minlength="3"
+      maxlength="150"
+      minlength="1"
+      role="combobox"
+      placeholder="Select an option or type your own"
     />
-    <div class="mt-2 invalid-feedback d-block font-weight-bold">
-      Select a topic
-    </div>
     <datalist id="roleSuggestions">
       <option>Analytics</option>
       <option>Content</option>
@@ -118,8 +112,9 @@ permalink: "contact-us-form.html"
       name="Comments"
       aria-required="true"
       required
-      maxlength="1000"
+      maxlength="100000"
       minlength="10"
+      role="textbox"
     ></textarea>
     <div class="mt-2 invalid-feedback d-block font-weight-bold">
       Provide information about why you're contacting us.
