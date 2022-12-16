@@ -8,31 +8,32 @@ permalink: "components/alert.html"
 
 
 <h1 class="mt-lg-0">Alert</h1>
-
+<nav class="page-navigation"></nav>
 
 <p>The alert is for important, sometimes time-sensitive
  information. Reserve alerts for information the audience must read before anything else.</p>
-<p>The alert is a band that extends across the width of the <a href="/structure/structure-utility-header.html">utility
+<p>The alert is a band that extends across the width of the <a href="/structure/utility-header.html">utility
   header</a>. </p>
 <p>It includes:</p>
 <ul>
  <li>An optional icon, selected from a list of font icon options</li>
  <li>A text field, which includes the ability to link to other pages</li>
  <li>An “X” close icon that allows people to dismiss the alert</li>
+ <li>Your theme's standout color as the background color</li>
 </ul>
 
-<h2 id="Sample">Sample</h2>
+<h2>Sample</h2>
 
 <!--TABS-->
 <div class="tab-group responsive">
  <ul id="tabs1" class="nav nav-tabs" role="tablist">
-  <li class="nav-item">
+  <li class="nav-item" role="presentation">
    <a id="tab-example1" href="#pane-example1" class="nav-link active" data-bs-toggle="tab" role="tab">Example</a>
   </li>
-  <li class="nav-item">
+  <li class="nav-item" role="presentation">
    <a id="tab-html1" href="#pane-html1" class="nav-link" data-bs-toggle="tab" role="tab">Source code</a>
   </li>
-  <li class="nav-item">
+  <li class="nav-item" role="presentation">
    <a id="tab-njk1" href="#pane-njk1" class="nav-link" data-bs-toggle="tab" role="tab">Nunjucks include</a>
   </li>
  </ul>
@@ -51,60 +52,60 @@ permalink: "components/alert.html"
     <div class="card-body p-b-lg">
 
 
-     <h3>Info</h3>
-     <div class="alert alert-info alert-dismissible alert-banner" role="alert">
+     <h3 class="h4 m-t-0">Info</h3>
+     <div class="alert alert-dismissible alert-banner" role="alert">
       <div class="container">
+       <img src="/images/alert-info.svg" alt="alert info icon">
+       <span class="alert-text"><span class="text-bold">New!</span> A new version of the State Web Template has
+        launched. <span class="ca-gov-icon-pipe" aria-hidden="true"></span>
+        <a href="javascript:;">Upgrade now</a></span>
        <button type="button" class="close ms-lg-auto" data-bs-dismiss="alert" aria-label="Close"><span
          class="ca-gov-icon-close-mark" aria-hidden="true"></span></button>
-       <span class="alert-text">We’ve made some changes that might impact your experience.</span>
-       <a href="" class="btn btn-default btn-xs">Learn more <span class="sr-only">about the changes</span></a>
+      </div>
+     </div>
+
+
+     <h3 class="h4">Warning</h3>
+     <div class="alert alert-dismissible alert-banner" role="alert">
+      <div class="container">
+       <span class="alert-icon ca-gov-icon-warning-triangle text-warning" aria-hidden="true"></span>
+       <span class="alert-text"><span class="text-bold">Warning:</span> Our website may be impacted during upgrade.
+        <span class="ca-gov-icon-pipe" aria-hidden="true"></span>
+
+        <a href="javascript:;">Learn more <span class="sr-only">about the impact</span></a></span>
+       <button type="button" class="close ms-lg-auto" data-bs-dismiss="alert" aria-label="Close"><span
+         class="ca-gov-icon-close-mark" aria-hidden="true"></span></button>
       </div>
      </div>
 
 
 
-     <h3>Warning</h3>
-     <div class="alert alert-warning alert-dismissible alert-banner" role="alert">
+
+     <h3 class="h4">Danger</h3>
+     <div class="alert alert-dismissible alert-banner" role="alert">
       <div class="container">
+       <img src="/images/alert-warning-diamond.svg" alt="alert warning icon">
+       <span class="alert-text"><span class="text-bold">Alert:</span> Our systems are currently down. <span
+         class="ca-gov-icon-pipe" aria-hidden="true"></span>
+        <a href="javascript:;">Learn more <span class="sr-only">about the incident</span></a></span>
        <button type="button" class="close ms-lg-auto" data-bs-dismiss="alert" aria-label="Close"><span
          class="ca-gov-icon-close-mark" aria-hidden="true"></span></button>
-       <span class="alert-text"><strong>Your browser is outdated.</strong> Your experience may be degraded.</span>
-       <a href="" class="btn btn-default btn-xs">More information</a>
       </div>
      </div>
 
 
-     <h3>Danger</h3>
-     <div class="alert alert-danger alert-dismissible alert-banner" role="alert">
+     <h3 class="h4">Resolution</h3>
+     <div class="alert alert-dismissible alert-banner" role="alert">
       <div class="container">
+       <img src="/images/alert-success.svg" alt="alert success icon">
+       <span class="alert-text"><span class="text-bold">Fixed.</span> Our systems are back up again. <span
+         class="ca-gov-icon-pipe" aria-hidden="true"></span>
+        <a href="javascript:;">Learn more <span class="sr-only">about the resolution</span></a></span>
        <button type="button" class="close ms-lg-auto" data-bs-dismiss="alert" aria-label="Close"><span
          class="ca-gov-icon-close-mark" aria-hidden="true"></span></button>
-       <span class="alert-text">Your browser is currently not supported.</span>
-       <a href="" class="btn btn-default btn-xs">Learn more <span class="sr-only">about the problem</span></a>
       </div>
      </div>
 
-
-     <h3>Success</h3>
-     <div class="alert alert-success alert-dismissible alert-banner" role="alert">
-      <div class="container">
-       <button type="button" class="close ms-lg-auto" data-bs-dismiss="alert" aria-label="Close"><span
-         class="ca-gov-icon-close-mark" aria-hidden="true"></span></button>
-       <span class="alert-text"><strong>Well done!</strong> Your form has been submitted successfully.</span>
-      </div>
-     </div>
-
-
-     <h3>Severe</h3>
-     <div class="alert alert-severe alert-dismissible alert-banner" role="alert">
-      <div class="container">
-       <button type="button" class="close ms-lg-auto" data-bs-dismiss="alert" aria-label="Close"><span
-         class="ca-gov-icon-close-mark" aria-hidden="true"></span></button>
-       <span class="alert-level"><span class="ca-gov-icon-important" aria-hidden="true"></span>SEVERE
-        ALERT!</span><span class="alert-text"> Flash flood in Sacramento until 12:15 PM.</span> <a href=""
-        class="btn btn-default btn-xs">Severe Alert</a>
-      </div>
-     </div>
 
 
 
@@ -124,8 +125,66 @@ permalink: "components/alert.html"
    </div>
    <div id="collapse-html1" class="collapse" role="tabpanel" aria-labelledby="heading-html1">
     <div class="card-body">
-     <pre style="max-height: 300px;"><code>{% include "../../src/_includes/modules/alert-banner.html" %}</code>
-    </pre>
+
+     <h3 class="h4 m-t-0">Info</h3>
+     <pre><code><div class="alert alert-dismissible alert-banner" role="alert">
+  <div class="container">
+   <img src="/images/alert-info.svg" alt="alert info icon">
+   <span class="alert-text"><span class="text-bold">New!</span> A new version of the State Web Template has
+    launched. <span class="ca-gov-icon-pipe" aria-hidden="true"></span>
+    <a href="javascript:;">Upgrade now</a></span>
+   <button type="button" class="close ms-lg-auto" data-bs-dismiss="alert" aria-label="Close"><span
+     class="ca-gov-icon-close-mark" aria-hidden="true"></span></button>
+  </div>
+ </div>
+     </code></pre>
+
+
+
+     <h3 class="h4">Warning</h3>
+     <pre><code><div class="alert alert-dismissible alert-banner" role="alert">
+<div class="container">
+ <span class="alert-icon ca-gov-icon-warning-triangle text-warning" aria-hidden="true"></span>
+ <span class="alert-text"><span class="text-bold">Warning:</span> Our website may be impacted during upgrade.
+  <span class="ca-gov-icon-pipe" aria-hidden="true"></span>
+  <a href="javascript:;">Learn more <span class="sr-only">about the impact</span></a></span>
+ <button type="button" class="close ms-lg-auto" data-bs-dismiss="alert" aria-label="Close"><span
+   class="ca-gov-icon-close-mark" aria-hidden="true"></span></button>
+</div>
+</div></code></pre>
+
+
+
+
+
+     <h3 class="h4">Danger</h3>
+     <pre><code><div class="alert alert-dismissible alert-banner" role="alert">
+  <div class="container">
+   <img src="/images/alert-warning-diamond.svg" alt="alert warning icon">
+   <span class="alert-text"><span class="text-bold">Alert:</span> Our systems are currently down. <span
+     class="ca-gov-icon-pipe" aria-hidden="true"></span>
+    <a href="javascript:;">Learn more <span class="sr-only">about the incident</span></a></span>
+   <button type="button" class="close ms-lg-auto" data-bs-dismiss="alert" aria-label="Close"><span
+     class="ca-gov-icon-close-mark" aria-hidden="true"></span></button>
+  </div>
+ </div>
+     </code></pre>
+
+
+
+     <h3 class="h4">Resolution</h3>
+     <pre><code><div class="alert alert-dismissible alert-banner" role="alert">
+  <div class="container">
+   <img src="/images/alert-success.svg" alt="alert success icon">
+   <span class="alert-text"><span class="text-bold">Fixed.</span> Our systems are back up again. <span
+     class="ca-gov-icon-pipe" aria-hidden="true"></span>
+    <a href="javascript:;">Learn more <span class="sr-only">about the resolution</span></a></span>
+   <button type="button" class="close ms-lg-auto" data-bs-dismiss="alert" aria-label="Close"><span
+     class="ca-gov-icon-close-mark" aria-hidden="true"></span></button>
+  </div>
+ </div>
+     </code></pre>
+
 
     </div>
    </div>
@@ -178,7 +237,7 @@ alert: "../modules/alert-banner.html"
 
 
 
-<h2 id="Usage">Usage</h2>
+<h2>Usage</h2>
 <h3>When and how to use it</h3>
 <p>Use the alert sparingly. They alarm people and distract from other content.</p>
 <p>Be concise with your alert content. Use a link to send people to a page with the details.</p>
@@ -204,5 +263,5 @@ alert: "../modules/alert-banner.html"
  temporary.</p>
 
 
-<h2 id="Accessibility">Accessibility</h2>
+<h2>Accessibility</h2>
 {% include "../../src/_includes/modules/accessibility.html" %}

@@ -1,59 +1,48 @@
 const markdownIt = require("markdown-it");
 
 module.exports = function (eleventyConfig) {
-	// Markdown onfigurarion
-	const md = new markdownIt({
-		html: true
-	});
+ // Markdown onfigurarion
+ const md = new markdownIt({
+  html: true
+ });
 
-<<<<<<< HEAD
-	// Copy `src/fonts/` to `_site/fonts`, `src/images/` to `_site/images`
-	eleventyConfig.addPassthroughCopy({
-		"src/fonts": "fonts",
-		"src/images": "images"
-	});
+ // Copy `src/fonts/` to `_site/fonts`, `src/images/` to `_site/images`
+ eleventyConfig.addPassthroughCopy({
+  "src/fonts": "fonts",
+  "src/images": "images",
+  "src/scss/custom": "css/custom"
+ });
 
-	// site crawler
-	eleventyConfig.addPassthroughCopy('robots.txt');
 
-	// site icon
-	eleventyConfig.addPassthroughCopy('favicon.ico');
+ // site crawler
+ eleventyConfig.addPassthroughCopy('robots.txt');
 
-	// sitemap
-	eleventyConfig.addPassthroughCopy('sitemap.xml');
+ // site icon
+ eleventyConfig.addPassthroughCopy('favicon.ico');
 
-	// web.config
-	eleventyConfig.addPassthroughCopy('web.config');
-=======
-	// Copy `src/fonts/` to `_site/fonts`
-	eleventyConfig.addPassthroughCopy({ "src/fonts": "fonts" });
-	// Copy `src/images/` to `_site/images`
-	eleventyConfig.addPassthroughCopy({ "src/images": "images" });
->>>>>>> dev
+ // sitemap
+ eleventyConfig.addPassthroughCopy('sitemap.xml');
 
-	// Markdown rendering onfigurarion
-	eleventyConfig.addPairedShortcode("markdown", (content) => {
-		return md.render(content);
-	});
+ // web.config
+ eleventyConfig.addPassthroughCopy('web.config');
 
-	return {
-		dir: {
-			// site content pages
-			input: "pages",
-<<<<<<< HEAD
-			data: "../src/_data",
-=======
->>>>>>> dev
-			// site structure pages (path is realtive to input directory)
-			includes: "../src/_includes",
-			layouts: "../src/_includes/layouts",
-			// site final outpuut directory
-			output: "_site",
-		},
-	};
-<<<<<<< HEAD
-};
-=======
+ // Markdown rendering onfigurarion
+ eleventyConfig.addPairedShortcode("markdown", (content) => {
+  return md.render(content);
+ });
+
+ return {
+  dir: {
+   // site content pages
+   input: "pages",
+   data: "../src/_data",
+   // site structure pages (path is realtive to input directory)
+   includes: "../src/_includes",
+   layouts: "../src/_includes/layouts",
+   // site final outpuut directory
+   output: "_site",
+  },
+ };
 };
 
 >>>>>>> dev
