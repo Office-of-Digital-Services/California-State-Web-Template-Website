@@ -49,7 +49,8 @@ function pageNav() {
   pagenav.innerHTML = onthispage;
 
   // add ul item to the nav and set aria labelledby
-  pagenav.appendChild(pagenavUL).setAttribute("aria-labelledby", "page-navigation-label");
+  pagenav.appendChild(pagenavUL);
+  pagenav.setAttribute("aria-labelledby", "page-navigation-label");
 
  }
 }
