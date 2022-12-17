@@ -130,6 +130,7 @@ class CaGovAccordion extends window.HTMLElement {
     this.detailsEl.style.height = this.closedHeight;
    }
   });
+
  }
 
  listen() {
@@ -147,6 +148,7 @@ class CaGovAccordion extends window.HTMLElement {
    });
   }
  }
+
 
  debounce(func, timeout = 300) {
   let timer;
@@ -243,24 +245,24 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
 var loadConfig = function loadConfig() {
 
-    var CACHE = {};
+ var CACHE = {};
 
-    var set = function set(id, config) {
+ var set = function set(id, config) {
 
-        CACHE[id] = config;
-    };
-    var get = function get(id) {
-        return CACHE[id];
-    };
-    var remove = function remove(id) {
-        return CACHE[id];
-    };
+  CACHE[id] = config;
+ };
+ var get = function get(id) {
+  return CACHE[id];
+ };
+ var remove = function remove(id) {
+  return CACHE[id];
+ };
 
-    return {
-        set: set,
-        get: get,
-        remove: remove
-    };
+ return {
+  set: set,
+  get: get,
+  remove: remove
+ };
 };
 
 var DATA_HASH_ID = 'data-nav-id';
@@ -273,7 +275,7 @@ var pluginConfig = loadConfig();
  * @return {Node} the element with the specified id
  */
 var findById = function findById(id, hash) {
-    return document.querySelector('#' + id + '[' + DATA_HASH_ID + '="' + hash + '"]');
+ return document.querySelector('#' + id + '[' + DATA_HASH_ID + '="' + hash + '"]');
 };
 
 /** add a class to a node
@@ -281,11 +283,11 @@ var findById = function findById(id, hash) {
  * @param  {String} className the class to add
  */
 var addClass = function addClass(el, className) {
-    if (el.classList) {
-        el.classList.add(className); // IE 10+
-    } else {
-        el.className += ' ' + className; // IE 8+
-    }
+ if (el.classList) {
+  el.classList.add(className); // IE 10+
+ } else {
+  el.className += ' ' + className; // IE 8+
+ }
 };
 
 /** remove class from node
@@ -293,11 +295,11 @@ var addClass = function addClass(el, className) {
  * @param  {String} className the class to remove
  */
 var removeClass = function removeClass(el, className) {
-    if (el.classList) {
-        el.classList.remove(className); // IE 10+
-    } else {
-        el.className = el.className.replace(new RegExp('(^|\\b)' + className.split(' ').join('|') + '(\\b|$)', 'gi'), ' '); // IE 8+
-    }
+ if (el.classList) {
+  el.classList.remove(className); // IE 10+
+ } else {
+  el.className = el.className.replace(new RegExp('(^|\\b)' + className.split(' ').join('|') + '(\\b|$)', 'gi'), ' '); // IE 8+
+ }
 };
 
 // check if node has specified class
@@ -305,17 +307,17 @@ var removeClass = function removeClass(el, className) {
 // @param  {String} className the class
 
 var hasClass = function hasClass(el, className) {
-    if (el.classList) {
-        return el.classList.contains(className); // IE 10+
-    } else {
-        return new RegExp('(^| )' + className + '( |$)', 'gi').test(el.className); // IE 8+ ?
-    }
+ if (el.classList) {
+  return el.classList.contains(className); // IE 10+
+ } else {
+  return new RegExp('(^| )' + className + '( |$)', 'gi').test(el.className); // IE 8+ ?
+ }
 };
 
 var setAttributes = function setAttributes(node, attrs) {
-    Object.keys(attrs).forEach(function (attribute) {
-        node.setAttribute(attribute, attrs[attribute]);
-    });
+ Object.keys(attrs).forEach(function (attribute) {
+  node.setAttribute(attribute, attrs[attribute]);
+ });
 };
 
 /** search if element is or is contained in another element with attribute data-nav-id
@@ -324,39 +326,39 @@ var setAttributes = function setAttributes(node, attrs) {
  * @return {String} the value of attribute data-hashtooltip-id
  */
 var searchParentHashId = function searchParentHashId(el, hashId) {
-    var found = false;
+ var found = false;
 
-    var parentElement = el;
-    while (parentElement.nodeType === 1 && parentElement && found === false) {
+ var parentElement = el;
+ while (parentElement.nodeType === 1 && parentElement && found === false) {
 
-        if (parentElement.hasAttribute(hashId) === true) {
-            found = true;
-        } else {
-            parentElement = parentElement.parentNode;
-        }
-    }
-    if (found === true) {
-        return parentElement.getAttribute(hashId);
-    } else {
-        return '';
-    }
+  if (parentElement.hasAttribute(hashId) === true) {
+   found = true;
+  } else {
+   parentElement = parentElement.parentNode;
+  }
+ }
+ if (found === true) {
+  return parentElement.getAttribute(hashId);
+ } else {
+  return '';
+ }
 };
 var searchParent = function searchParent(el, parentClass, hashId) {
-    var found = false;
+ var found = false;
 
-    var parentElement = el;
-    while (parentElement && found === false) {
-        if (hasClass(parentElement, parentClass) === true && parentElement.getAttribute(DATA_HASH_ID) === hashId) {
-            found = true;
-        } else {
-            parentElement = parentElement.parentNode;
-        }
-    }
-    if (found === true) {
-        return parentElement.getAttribute('id');
-    } else {
-        return '';
-    }
+ var parentElement = el;
+ while (parentElement && found === false) {
+  if (hasClass(parentElement, parentClass) === true && parentElement.getAttribute(DATA_HASH_ID) === hashId) {
+   found = true;
+  } else {
+   parentElement = parentElement.parentNode;
+  }
+ }
+ if (found === true) {
+  return parentElement.getAttribute('id');
+ } else {
+  return '';
+ }
 };
 
 //var unSelectHeaders = function unSelectHeaders(elts, attrSelected) {
@@ -393,602 +395,586 @@ var selectHeaderInList = function selectHeaderInList(elts, param, attrSelected) 
 };
 */
 var plugin = function plugin() {
-    var config = arguments.length <= 0 || arguments[0] === undefined ? {} : arguments[0];
-    // Findig if first-level-link has sub-nav then changing its clasee to first-level-btn
-    //JQuery
-    //var $navItemsWithSubs = $('.main-navigation').find('.sub-nav').siblings('.first-level-link');
-    var className = "first-level-btn";
+ var config = arguments.length <= 0 || arguments[0] === undefined ? {} : arguments[0];
+ // Findig if first-level-link has sub-nav then changing its clasee to first-level-btn
+ //JQuery
+ //var $navItemsWithSubs = $('.main-navigation').find('.sub-nav').siblings('.first-level-link');
+ var className = "first-level-btn";
 
-    //Change all the links next to sub-navs to first-level-btn
-    document.querySelectorAll('.main-navigation .sub-nav').forEach(function (node) {
-        node.parentElement.querySelector('a').className = className;
-    });
+ //Change all the links next to sub-navs to first-level-btn
+ document.querySelectorAll('.main-navigation .sub-nav').forEach(function (node) {
+  node.parentElement.querySelector('a').className = className;
+ });
 
-    var CONFIG = _extends({
-        ACCORDION_JS: 'main-navigation',
-        ACCORDION_JS_HEADER: className, // Assigning button class to link that has sub-nav
-        ACCORDION_JS_PANEL: 'nav-panel',
+ var CONFIG = _extends({
+  ACCORDION_JS: 'main-navigation',
+  ACCORDION_JS_HEADER: className, // Assigning button class to link that has sub-nav
+  ACCORDION_JS_PANEL: 'nav-panel',
 
-        ACCORDION_DATA_PREFIX_CLASS: 'data-nav-prefix-classes',
-        ACCORDION_DATA_OPENED: 'data-nav-opened',
-        ACCORDION_DATA_MULTISELECTABLE: 'data-nav-multiselectable',
-        ACCORDION_DATA_COOL_SELECTORS: true,
+  ACCORDION_DATA_PREFIX_CLASS: 'data-nav-prefix-classes',
+  ACCORDION_DATA_OPENED: 'data-nav-opened',
+  ACCORDION_DATA_MULTISELECTABLE: 'data-nav-multiselectable',
+  ACCORDION_DATA_COOL_SELECTORS: true,
 
-        ACCORDION_PREFIX_IDS: 'nav',
-        ACCORDION_BUTTON_ID: '_tab',
-        ACCORDION_PANEL_ID: '_panel',
+  ACCORDION_PREFIX_IDS: 'nav',
+  ACCORDION_BUTTON_ID: '_tab',
+  ACCORDION_PANEL_ID: '_panel',
 
-        ACCORDION_STYLE: 'nav',
-        ACCORDION_TITLE_STYLE: 'has-sub-btn',
-        ACCORDION_HEADER_STYLE: 'nav-header',
-        ACCORDION_PANEL_STYLE: 'sub-nav',
+  ACCORDION_STYLE: 'nav',
+  ACCORDION_TITLE_STYLE: 'has-sub-btn',
+  ACCORDION_HEADER_STYLE: 'nav-header',
+  ACCORDION_PANEL_STYLE: 'sub-nav',
 
-        ACCORDION_ROLE_TABLIST: 'tablist',
-        ACCORDION_ROLE_TAB: 'tab',
-        ACCORDION_ROLE_TABPANEL: 'tabpanel',
+  ACCORDION_ROLE_TABLIST: 'tablist',
+  ACCORDION_ROLE_TAB: 'tab',
+  ACCORDION_ROLE_TABPANEL: 'tabpanel',
 
-        ATTR_ROLE: 'role',
-        ATTR_MULTISELECTABLE: 'data-multiselectable',
-        ATTR_EXPANDED: 'aria-expanded',
-        ATTR_LABELLEDBY: 'aria-labelledby',
-        ATTR_HIDDEN: 'aria-hidden',
-        ATTR_CONTROLS: 'aria-controls',
-        ATTR_SELECTED: 'aria-selected'
-    }, config);
+  ATTR_ROLE: 'role',
+  ATTR_MULTISELECTABLE: 'data-multiselectable',
+  ATTR_EXPANDED: 'aria-expanded',
+  ATTR_LABELLEDBY: 'aria-labelledby',
+  ATTR_HIDDEN: 'aria-hidden',
+  ATTR_CONTROLS: 'aria-controls',
+  ATTR_SELECTED: 'aria-selected'
+ }, config);
 
-    var HASH_ID = Math.random().toString(32).slice(2, 12);
+ var HASH_ID = Math.random().toString(32).slice(2, 12);
 
-    pluginConfig.set(HASH_ID, CONFIG);
-    // Find all accordions inside a container
-    // @param  {Node} node Default document
-    // @return {Array}
-    var listAccordions = function listAccordions() {
-        var node = arguments.length <= 0 || arguments[0] === undefined ? document : arguments[0];
-        return [].slice.call(node.querySelectorAll('.' + CONFIG.ACCORDION_JS));
-    };
+ pluginConfig.set(HASH_ID, CONFIG);
+ // Find all accordions inside a container
+ // @param  {Node} node Default document
+ // @return {Array}
+ var listAccordions = function listAccordions() {
+  var node = arguments.length <= 0 || arguments[0] === undefined ? document : arguments[0];
+  return [].slice.call(node.querySelectorAll('.' + CONFIG.ACCORDION_JS));
+ };
 
-    // Build accordions for a container
-    // @param  {Node} node
-    // @param  {addListeners} boolean
-    var attach = function attach(node) {
+ // Build accordions for a container
+ // @param  {Node} node
+ // @param  {addListeners} boolean
+ var attach = function attach(node) {
 
-        listAccordions(node).forEach(function (accordion_node) {
-            var iLisible = 'z' + Math.random().toString(32).slice(2, 12); // avoid selector exception when starting by a number
-            var prefixClassName = accordion_node.hasAttribute(CONFIG.ACCORDION_DATA_PREFIX_CLASS) === true ? accordion_node.getAttribute(CONFIG.ACCORDION_DATA_PREFIX_CLASS) + '-' : '';
-            var coolSelectors = CONFIG.ACCORDION_DATA_COOL_SELECTORS === true;
-            var childClassName = 'first-level-btn';
+  listAccordions(node).forEach(function (accordion_node) {
+   var iLisible = 'z' + Math.random().toString(32).slice(2, 12); // avoid selector exception when starting by a number
+   var prefixClassName = accordion_node.hasAttribute(CONFIG.ACCORDION_DATA_PREFIX_CLASS) === true ? accordion_node.getAttribute(CONFIG.ACCORDION_DATA_PREFIX_CLASS) + '-' : '';
+   var coolSelectors = CONFIG.ACCORDION_DATA_COOL_SELECTORS === true;
+   var childClassName = 'first-level-btn';
 
-            // Init attributes accordion
-            if (!mobileView$1()) {
-                accordion_node.setAttribute(CONFIG.ATTR_MULTISELECTABLE, 'false');
-            } else {
-                accordion_node.setAttribute(CONFIG.ATTR_MULTISELECTABLE, 'true');
-            }
-            // accordion_node.setAttribute(CONFIG.ATTR_ROLE, CONFIG.ACCORDION_ROLE_TABLIST);
-            // We already have main navigation id
-            // accordion_node.setAttribute('id', iLisible);
-            accordion_node.setAttribute(DATA_HASH_ID, HASH_ID);
+   // Init attributes accordion
+   if (!mobileView$1()) {
+    accordion_node.setAttribute(CONFIG.ATTR_MULTISELECTABLE, 'false');
+   } else {
+    accordion_node.setAttribute(CONFIG.ATTR_MULTISELECTABLE, 'true');
+   }
+   // accordion_node.setAttribute(CONFIG.ATTR_ROLE, CONFIG.ACCORDION_ROLE_TABLIST);
+   // We already have main navigation id
+   // accordion_node.setAttribute('id', iLisible);
+   accordion_node.setAttribute(DATA_HASH_ID, HASH_ID);
 
-            addClass(accordion_node, prefixClassName + CONFIG.ACCORDION_STYLE);
+   addClass(accordion_node, prefixClassName + CONFIG.ACCORDION_STYLE);
 
-            var listAccordionsHeader = [].slice.call(accordion_node.querySelectorAll('.' + childClassName));
-            listAccordionsHeader.forEach(function (header_node, index_header) {
-                var _setAttributes2, _setAttributes3;
+   var listAccordionsHeader = [].slice.call(accordion_node.querySelectorAll('.' + childClassName));
+   listAccordionsHeader.forEach(function (header_node, index_header) {
+    var _setAttributes2, _setAttributes3;
 
-                // if we do not have cool selectors enabled,
-                // it is not a direct child, we ignore it
-                if (header_node.parentNode !== accordion_node && coolSelectors === false) {
-                    return;
-                }
+    // if we do not have cool selectors enabled,
+    // it is not a direct child, we ignore it
+    if (header_node.parentNode !== accordion_node && coolSelectors === false) {
+     return;
+    }
 
-                var indexHeaderLisible = index_header + 1;
-                var accordionPanel = header_node.nextElementSibling;
-                var accordionHeaderText = header_node.innerHTML;
-                var accordionButton = document.createElement("BUTTON");
-                var accordionOpenedAttribute = header_node.hasAttribute(CONFIG.ACCORDION_DATA_OPENED) === true ? header_node.getAttribute(CONFIG.ACCORDION_DATA_OPENED) : '';
+    var indexHeaderLisible = index_header + 1;
+    var accordionPanel = header_node.nextElementSibling;
+    var accordionHeaderText = header_node.innerHTML;
+    var accordionButton = document.createElement("BUTTON");
+    var accordionOpenedAttribute = header_node.hasAttribute(CONFIG.ACCORDION_DATA_OPENED) === true ? header_node.getAttribute(CONFIG.ACCORDION_DATA_OPENED) : '';
 
-                // set button with attributes
-                accordionButton.innerHTML = accordionHeaderText;
-                addClass(accordionButton, childClassName);
-                addClass(accordionButton, prefixClassName + CONFIG.ACCORDION_HEADER_STYLE);
-                setAttributes(accordionButton, (_setAttributes2 = {}, _defineProperty(_setAttributes2, 'id', CONFIG.ACCORDION_PREFIX_IDS + iLisible + CONFIG.ACCORDION_BUTTON_ID + indexHeaderLisible), _defineProperty(_setAttributes2, CONFIG.ATTR_CONTROLS, CONFIG.ACCORDION_PREFIX_IDS + iLisible + CONFIG.ACCORDION_PANEL_ID + indexHeaderLisible), _defineProperty(_setAttributes2, DATA_HASH_ID, HASH_ID), _setAttributes2));
+    // set button with attributes
+    accordionButton.innerHTML = accordionHeaderText;
+    addClass(accordionButton, childClassName);
+    addClass(accordionButton, prefixClassName + CONFIG.ACCORDION_HEADER_STYLE);
+    setAttributes(accordionButton, (_setAttributes2 = {}, _defineProperty(_setAttributes2, 'id', CONFIG.ACCORDION_PREFIX_IDS + iLisible + CONFIG.ACCORDION_BUTTON_ID + indexHeaderLisible), _defineProperty(_setAttributes2, CONFIG.ATTR_CONTROLS, CONFIG.ACCORDION_PREFIX_IDS + iLisible + CONFIG.ACCORDION_PANEL_ID + indexHeaderLisible), _defineProperty(_setAttributes2, DATA_HASH_ID, HASH_ID), _setAttributes2));
 
-                // place button
-                header_node.innerHTML = '';
-                header_node.appendChild(accordionButton);
+    // place button
+    header_node.innerHTML = '';
+    header_node.appendChild(accordionButton);
 
-                // move title into panel
-                //accordionPanel.insertBefore(header_node, accordionPanel.firstChild);
-                // set title with attributes
-                addClass(header_node, prefixClassName + CONFIG.ACCORDION_TITLE_STYLE);
-                removeClass(header_node, childClassName);
+    // move title into panel
+    //accordionPanel.insertBefore(header_node, accordionPanel.firstChild);
+    // set title with attributes
+    addClass(header_node, prefixClassName + CONFIG.ACCORDION_TITLE_STYLE);
+    removeClass(header_node, childClassName);
 
-                // set attributes to panels
-                addClass(accordionPanel, prefixClassName + CONFIG.ACCORDION_PANEL_STYLE);
-                setAttributes(accordionPanel, (_setAttributes3 = {}, _defineProperty(_setAttributes3, CONFIG.ATTR_ROLE, CONFIG.ACCORDION_ROLE_TABPANEL), _defineProperty(_setAttributes3, CONFIG.ATTR_LABELLEDBY, CONFIG.ACCORDION_PREFIX_IDS + iLisible + CONFIG.ACCORDION_BUTTON_ID + indexHeaderLisible), _defineProperty(_setAttributes3, 'id', CONFIG.ACCORDION_PREFIX_IDS + iLisible + CONFIG.ACCORDION_PANEL_ID + indexHeaderLisible), _defineProperty(_setAttributes3, DATA_HASH_ID, HASH_ID), _setAttributes3));
+    // set attributes to panels
+    addClass(accordionPanel, prefixClassName + CONFIG.ACCORDION_PANEL_STYLE);
+    setAttributes(accordionPanel, (_setAttributes3 = {}, _defineProperty(_setAttributes3, CONFIG.ATTR_ROLE, CONFIG.ACCORDION_ROLE_TABPANEL), _defineProperty(_setAttributes3, CONFIG.ATTR_LABELLEDBY, CONFIG.ACCORDION_PREFIX_IDS + iLisible + CONFIG.ACCORDION_BUTTON_ID + indexHeaderLisible), _defineProperty(_setAttributes3, 'id', CONFIG.ACCORDION_PREFIX_IDS + iLisible + CONFIG.ACCORDION_PANEL_ID + indexHeaderLisible), _defineProperty(_setAttributes3, DATA_HASH_ID, HASH_ID), _setAttributes3));
 
-                if (accordionOpenedAttribute === 'true') {
-                    accordionButton.setAttribute(CONFIG.ATTR_EXPANDED, 'true');
-                    header_node.removeAttribute(CONFIG.ACCORDION_DATA_OPENED);
-                    accordionPanel.setAttribute(CONFIG.ATTR_HIDDEN, 'false');
+    if (accordionOpenedAttribute === 'true') {
+     accordionButton.setAttribute(CONFIG.ATTR_EXPANDED, 'true');
+     header_node.removeAttribute(CONFIG.ACCORDION_DATA_OPENED);
+     accordionPanel.setAttribute(CONFIG.ATTR_HIDDEN, 'false');
 
-                    //$(accordionPanel).find(".second-level-link").removeAttr("tabindex"); //JQ
-                    accordionPanel.querySelectorAll(".second-level-link").forEach(function (item) { item.removeAttribute('tabindex'); }); //JS
-                } else {
-                    accordionButton.setAttribute(CONFIG.ATTR_EXPANDED, 'false');
-                    accordionPanel.setAttribute(CONFIG.ATTR_HIDDEN, 'true');
-                    // making sure all second level links are not tabable
+     //$(accordionPanel).find(".second-level-link").removeAttr("tabindex"); //JQ
+     accordionPanel.querySelectorAll(".second-level-link").forEach(function (item) { item.removeAttribute('tabindex'); }); //JS
+    } else {
+     accordionButton.setAttribute(CONFIG.ATTR_EXPANDED, 'false');
+     accordionPanel.setAttribute(CONFIG.ATTR_HIDDEN, 'true');
+     // making sure all second level links are not tabable
 
-                    //$(accordionPanel).find(".second-level-link").attr("tabindex", "-1"); //JQ
-                    accordionPanel.querySelectorAll(".second-level-link").forEach(function (item) { item.setAttribute('tabindex', '-1'); }); //JS
+     //$(accordionPanel).find(".second-level-link").attr("tabindex", "-1"); //JQ
+     accordionPanel.querySelectorAll(".second-level-link").forEach(function (item) { item.setAttribute('tabindex', '-1'); }); //JS
 
-                }
-            });
-        });
-    };
+    }
+   });
+  });
+ };
 
-    return {
-        attach: attach
-        /*,
-                destroy*/
-    };
+ return {
+  attach: attach
+  /*,
+          destroy*/
+ };
 };
 
 var main = function main() {
 
-    /* listeners for all configs */
-    ['click', 'keydown', 'focus'].forEach(function (eventName) {
+ /* listeners for all configs */
+ ['click', 'keydown', 'focus'].forEach(function (eventName) {
 
-        document.body.addEventListener(eventName, function (e) {
+  document.body.addEventListener(eventName, function (e) {
 
-            var hashId = searchParentHashId(e.target, DATA_HASH_ID); //e.target.dataset.hashId;
-            // search if click on button or on element in a button contains data-hash-id (it is needed to load config and know which class to search)
-
-
-            if (hashId !== '') {
-                (function () {
-
-                    // loading config from element
-                    var CONFIG = pluginConfig.get(hashId);
-                    /*
-                                        // focus on button
-                                        if (hasClass(e.target, 'first-level-btn') === true && eventName === 'focus') {
-                                            (function () {
-                                                var buttonTag = e.target;
-                                                var accordionContainer = findById(searchParent(buttonTag, CONFIG.ACCORDION_JS, hashId), hashId);
-                                                var coolSelectors = CONFIG.ACCORDION_DATA_COOL_SELECTORS === true;
-                                                var accordionAllHeaders = [].slice.call(accordionContainer.querySelectorAll('.first-level-btn'));
-                    
-                                                if (coolSelectors === false) {
-                                                    accordionAllHeaders = accordionAllHeaders.filter(function (element) {
-                                                        return element.parentNode.parentNode === accordionContainer;
-                                                    });
-                                                }
-                    
-                                               // unSelectHeaders(accordionAllHeaders, CONFIG.ATTR_SELECTED);
-                    
-                                               // selectHeader(buttonTag, CONFIG.ATTR_SELECTED);
-                                            })();
-                                        }
-                    */
-                    // click on button
-                    if (hasClass(e.target, 'first-level-btn') === true && eventName === 'click') {
-                        (function () {
-                            var buttonTag = e.target;
-                            var accordionContainer = findById(searchParent(buttonTag, CONFIG.ACCORDION_JS, hashId), hashId);
-                            var coolSelectors = CONFIG.ACCORDION_DATA_COOL_SELECTORS === true;
-                            var accordionAllHeaders = [].slice.call(accordionContainer.querySelectorAll('.first-level-btn'));
-                            //var accordionMultiSelectable = accordionContainer.getAttribute(CONFIG.ATTR_MULTISELECTABLE);
-                            var destination = findById(buttonTag.getAttribute(CONFIG.ATTR_CONTROLS), hashId);
-                            var stateButton = buttonTag.getAttribute(CONFIG.ATTR_EXPANDED);
+   var hashId = searchParentHashId(e.target, DATA_HASH_ID); //e.target.dataset.hashId;
+   // search if click on button or on element in a button contains data-hash-id (it is needed to load config and know which class to search)
 
 
-                            if (coolSelectors === false) {
-                                accordionAllHeaders = accordionAllHeaders.filter(function (element) {
-                                    return element.parentNode.parentNode === accordionContainer;
-                                });
-                            }
+   if (hashId !== '') {
+    (function () {
 
-                            // if closed
-                            if (stateButton === 'false') {
-                                buttonTag.setAttribute(CONFIG.ATTR_EXPANDED, true);
-                                destination.removeAttribute(CONFIG.ATTR_HIDDEN);
-                                //$(destination).addClass("open"); //JQ
-                                addClass(destination, "open"); //JS
-                                // making second level links tabbable if sub nav panel is opened
-                                //$(destination).find(".second-level-link").removeAttr("tabindex"); //JQ
-                                destination.querySelectorAll(".second-level-link").forEach(function (item) { item.removeAttribute('tabindex'); }); //JS
-                            } else {
-                                buttonTag.setAttribute(CONFIG.ATTR_EXPANDED, false);
-                                destination.setAttribute(CONFIG.ATTR_HIDDEN, true);
-                                removeClass(destination, "open"); //JS
-                                //$(destination).removeClass("open"); //JQ
-                                // adding tabindex to links to make sure they are not tabable if sub nav panel is closed
-                                //$(destination).find(".second-level-link").attr("tabindex", "-1");
-                                destination.querySelectorAll(".second-level-link").forEach(function (item) { item.setAttribute('tabindex', '-1'); }); //JS
-                            }
+     // loading config from element
+     var CONFIG = pluginConfig.get(hashId);
+     /*
+                         // focus on button
+                         if (hasClass(e.target, 'first-level-btn') === true && eventName === 'focus') {
+                             (function () {
+                                 var buttonTag = e.target;
+                                 var accordionContainer = findById(searchParent(buttonTag, CONFIG.ACCORDION_JS, hashId), hashId);
+                                 var coolSelectors = CONFIG.ACCORDION_DATA_COOL_SELECTORS === true;
+                                 var accordionAllHeaders = [].slice.call(accordionContainer.querySelectorAll('.first-level-btn'));
+     
+                                 if (coolSelectors === false) {
+                                     accordionAllHeaders = accordionAllHeaders.filter(function (element) {
+                                         return element.parentNode.parentNode === accordionContainer;
+                                     });
+                                 }
+     
+                                // unSelectHeaders(accordionAllHeaders, CONFIG.ATTR_SELECTED);
+     
+                                // selectHeader(buttonTag, CONFIG.ATTR_SELECTED);
+                             })();
+                         }
+     */
+     // click on button
+     if (hasClass(e.target, 'first-level-btn') === true && eventName === 'click') {
+      (function () {
+       var buttonTag = e.target;
+       var accordionContainer = findById(searchParent(buttonTag, CONFIG.ACCORDION_JS, hashId), hashId);
+       var coolSelectors = CONFIG.ACCORDION_DATA_COOL_SELECTORS === true;
+       var accordionAllHeaders = [].slice.call(accordionContainer.querySelectorAll('.first-level-btn'));
+       //var accordionMultiSelectable = accordionContainer.getAttribute(CONFIG.ATTR_MULTISELECTABLE);
+       var destination = findById(buttonTag.getAttribute(CONFIG.ATTR_CONTROLS), hashId);
+       var stateButton = buttonTag.getAttribute(CONFIG.ATTR_EXPANDED);
 
-                            if (!mobileView$1()) {
-                                accordionAllHeaders.forEach(function (header_node) {
-                                    //Close all the other panels
 
-                                    var destinationPanel = findById(header_node.getAttribute(CONFIG.ATTR_CONTROLS), hashId);
+       if (coolSelectors === false) {
+        accordionAllHeaders = accordionAllHeaders.filter(function (element) {
+         return element.parentNode.parentNode === accordionContainer;
+        });
+       }
 
-                                    if (header_node !== buttonTag) {
-                                        // header_node.setAttribute(CONFIG.ATTR_SELECTED, false);
-                                        header_node.setAttribute(CONFIG.ATTR_EXPANDED, false);
-                                        //$(destinationPanel).removeClass("open"); //JQ
+       // if closed
+       if (stateButton === 'false') {
+        buttonTag.setAttribute(CONFIG.ATTR_EXPANDED, true);
+        destination.removeAttribute(CONFIG.ATTR_HIDDEN);
+        //$(destination).addClass("open"); //JQ
+        addClass(destination, "open"); //JS
+        // making second level links tabbable if sub nav panel is opened
+        //$(destination).find(".second-level-link").removeAttr("tabindex"); //JQ
+        destination.querySelectorAll(".second-level-link").forEach(function (item) { item.removeAttribute('tabindex'); }); //JS
+       } else {
+        buttonTag.setAttribute(CONFIG.ATTR_EXPANDED, false);
+        destination.setAttribute(CONFIG.ATTR_HIDDEN, true);
+        removeClass(destination, "open"); //JS
+        //$(destination).removeClass("open"); //JQ
+        // adding tabindex to links to make sure they are not tabable if sub nav panel is closed
+        //$(destination).find(".second-level-link").attr("tabindex", "-1");
+        destination.querySelectorAll(".second-level-link").forEach(function (item) { item.setAttribute('tabindex', '-1'); }); //JS
+       }
 
-                                        removeClass(destinationPanel, "open"); //JS
-                                        //destinationPanel.setAttribute(CONFIG.ATTR_HIDDEN, true);
+       if (!mobileView$1()) {
+        accordionAllHeaders.forEach(function (header_node) {
+         //Close all the other panels
 
-                                        //Added fix to make closed panels non-tabbable
-                                        destinationPanel.querySelectorAll(".second-level-link").forEach(function (item) { item.setAttribute('tabindex', '-1'); }); //JS
-                                    }
-                                });
-                            }
+         var destinationPanel = findById(header_node.getAttribute(CONFIG.ATTR_CONTROLS), hashId);
 
-                            setTimeout(function () {
-                                buttonTag.focus();
-                            }, 0);
-                            e.stopPropagation(); // making icons and other buttons elements clickable  https://css-tricks.com/slightly-careful-sub-elements-clickable-things/
-                            e.preventDefault();
-                        })();
-                    }
+         if (header_node !== buttonTag) {
+          // header_node.setAttribute(CONFIG.ATTR_SELECTED, false);
+          header_node.setAttribute(CONFIG.ATTR_EXPANDED, false);
+          //$(destinationPanel).removeClass("open"); //JQ
 
-                    // keyboard management for headers
-                    //if (hasClass(e.target, 'first-level-btn') === true && eventName === 'keydown') {
-                    //    (function () {
-                    //        var buttonTag = e.target;
-                    //        var idAccordionContainer = searchParent(buttonTag, CONFIG.ACCORDION_JS, hashId);
-                    //        var accordionContainer = findById(idAccordionContainer, hashId);
+          removeClass(destinationPanel, "open"); //JS
+          //destinationPanel.setAttribute(CONFIG.ATTR_HIDDEN, true);
 
-                    //        var coolSelectors = CONFIG.ACCORDION_DATA_COOL_SELECTORS === true;
-                    //        var accordionAllHeaders = [].slice.call(accordionContainer.querySelectorAll('.first-level-btn'));
+          //Added fix to make closed panels non-tabbable
+          destinationPanel.querySelectorAll(".second-level-link").forEach(function (item) { item.setAttribute('tabindex', '-1'); }); //JS
+         }
+        });
+       }
 
-                    //        if (coolSelectors === false) {
-                    //            accordionAllHeaders = accordionAllHeaders.filter(function (element) {
-                    //                return element.parentNode.parentNode === accordionContainer;
-                    //            });
-                    //        }
+       setTimeout(function () {
+        buttonTag.focus();
+       }, 0);
+       e.stopPropagation(); // making icons and other buttons elements clickable  https://css-tricks.com/slightly-careful-sub-elements-clickable-things/
+       e.preventDefault();
+      })();
+     }
 
-                    //        // strike home on a tab => 1st tab
-                    //        if (e.keyCode === 36) {
-                    //            unSelectHeaders(accordionAllHeaders, CONFIG.ATTR_SELECTED);
-                    //            selectHeader(accordionAllHeaders[0], CONFIG.ATTR_SELECTED);
-                    //            setTimeout(function () {
-                    //                accordionAllHeaders[0].focus();
-                    //            }, 0);
-                    //            e.preventDefault();
-                    //        }
-                    //        // strike end on the tab => last tab
-                    //        else if (e.keyCode === 35) {
-                    //            unSelectHeaders(accordionAllHeaders, CONFIG.ATTR_SELECTED);
-                    //            selectHeader(accordionAllHeaders[accordionAllHeaders.length - 1], CONFIG.ATTR_SELECTED);
-                    //            setTimeout(function () {
-                    //                accordionAllHeaders[accordionAllHeaders.length - 1].focus();
-                    //            }, 0);
-                    //            e.preventDefault();
-                    //        }
-                    //        // strike up or left on the tab => previous tab
-                    //        else if ((e.keyCode === 37 || e.keyCode === 38) && !e.ctrlKey) {
+     // keyboard management for headers
+     //if (hasClass(e.target, 'first-level-btn') === true && eventName === 'keydown') {
+     //    (function () {
+     //        var buttonTag = e.target;
+     //        var idAccordionContainer = searchParent(buttonTag, CONFIG.ACCORDION_JS, hashId);
+     //        var accordionContainer = findById(idAccordionContainer, hashId);
 
-                    //            // if first selected = select last
-                    //            if (accordionAllHeaders[0].getAttribute(CONFIG.ATTR_SELECTED) === 'true') {
-                    //                unSelectHeaders(accordionAllHeaders, CONFIG.ATTR_SELECTED);
-                    //                selectHeader(accordionAllHeaders[accordionAllHeaders.length - 1], CONFIG.ATTR_SELECTED);
-                    //                setTimeout(function () {
-                    //                    accordionAllHeaders[accordionAllHeaders.length - 1].focus();
-                    //                }, 0);
-                    //                e.preventDefault();
-                    //            } else {
-                    //                selectHeaderInList(accordionAllHeaders, 'prev', CONFIG.ATTR_SELECTED);
-                    //                e.preventDefault();
-                    //            }
-                    //        }
-                    //        // strike down or right in the tab => next tab
-                    //        else if ((e.keyCode === 40 || e.keyCode === 39) && !e.ctrlKey) {
+     //        var coolSelectors = CONFIG.ACCORDION_DATA_COOL_SELECTORS === true;
+     //        var accordionAllHeaders = [].slice.call(accordionContainer.querySelectorAll('.first-level-btn'));
 
-                    //            // if last selected = select first
-                    //            if (accordionAllHeaders[accordionAllHeaders.length - 1].getAttribute(CONFIG.ATTR_SELECTED) === 'true') {
-                    //                unSelectHeaders(accordionAllHeaders, CONFIG.ATTR_SELECTED);
-                    //                selectHeader(accordionAllHeaders[0], CONFIG.ATTR_SELECTED);
-                    //                setTimeout(function () {
-                    //                    accordionAllHeaders[0].focus();
-                    //                }, 0);
-                    //                e.preventDefault();
-                    //            } else {
-                    //                selectHeaderInList(accordionAllHeaders, 'next', CONFIG.ATTR_SELECTED);
-                    //                e.preventDefault();
-                    //            }
-                    //        }
-                    //    })();
-                    //}
-                })();
-            }
-        }, true);
-    });
+     //        if (coolSelectors === false) {
+     //            accordionAllHeaders = accordionAllHeaders.filter(function (element) {
+     //                return element.parentNode.parentNode === accordionContainer;
+     //            });
+     //        }
 
-    return plugin;
+     //        // strike home on a tab => 1st tab
+     //        if (e.keyCode === 36) {
+     //            unSelectHeaders(accordionAllHeaders, CONFIG.ATTR_SELECTED);
+     //            selectHeader(accordionAllHeaders[0], CONFIG.ATTR_SELECTED);
+     //            setTimeout(function () {
+     //                accordionAllHeaders[0].focus();
+     //            }, 0);
+     //            e.preventDefault();
+     //        }
+     //        // strike end on the tab => last tab
+     //        else if (e.keyCode === 35) {
+     //            unSelectHeaders(accordionAllHeaders, CONFIG.ATTR_SELECTED);
+     //            selectHeader(accordionAllHeaders[accordionAllHeaders.length - 1], CONFIG.ATTR_SELECTED);
+     //            setTimeout(function () {
+     //                accordionAllHeaders[accordionAllHeaders.length - 1].focus();
+     //            }, 0);
+     //            e.preventDefault();
+     //        }
+     //        // strike up or left on the tab => previous tab
+     //        else if ((e.keyCode === 37 || e.keyCode === 38) && !e.ctrlKey) {
+
+     //            // if first selected = select last
+     //            if (accordionAllHeaders[0].getAttribute(CONFIG.ATTR_SELECTED) === 'true') {
+     //                unSelectHeaders(accordionAllHeaders, CONFIG.ATTR_SELECTED);
+     //                selectHeader(accordionAllHeaders[accordionAllHeaders.length - 1], CONFIG.ATTR_SELECTED);
+     //                setTimeout(function () {
+     //                    accordionAllHeaders[accordionAllHeaders.length - 1].focus();
+     //                }, 0);
+     //                e.preventDefault();
+     //            } else {
+     //                selectHeaderInList(accordionAllHeaders, 'prev', CONFIG.ATTR_SELECTED);
+     //                e.preventDefault();
+     //            }
+     //        }
+     //        // strike down or right in the tab => next tab
+     //        else if ((e.keyCode === 40 || e.keyCode === 39) && !e.ctrlKey) {
+
+     //            // if last selected = select first
+     //            if (accordionAllHeaders[accordionAllHeaders.length - 1].getAttribute(CONFIG.ATTR_SELECTED) === 'true') {
+     //                unSelectHeaders(accordionAllHeaders, CONFIG.ATTR_SELECTED);
+     //                selectHeader(accordionAllHeaders[0], CONFIG.ATTR_SELECTED);
+     //                setTimeout(function () {
+     //                    accordionAllHeaders[0].focus();
+     //                }, 0);
+     //                e.preventDefault();
+     //            } else {
+     //                selectHeaderInList(accordionAllHeaders, 'next', CONFIG.ATTR_SELECTED);
+     //                e.preventDefault();
+     //            }
+     //        }
+     //    })();
+     //}
+    })();
+   }
+  }, true);
+ });
+
+ return plugin;
 };
 
 window.van11yAccessibleAccordionAria = main();
 
 var onLoad = function onLoad() {
-    var expand_default = window.van11yAccessibleAccordionAria();
-    expand_default.attach();
+ var expand_default = window.van11yAccessibleAccordionAria();
+ expand_default.attach();
 
-    document.removeEventListener('DOMContentLoaded', onLoad);
+ document.removeEventListener('DOMContentLoaded', onLoad);
 };
 
 document.addEventListener('DOMContentLoaded', onLoad);
 //window.addEventListener("resize", navreset);
 
 
-function NavReset$1() {
+function NavReset() {
 
-    //RESET
-    //JS
-    document.querySelectorAll(".first-level-btn").forEach(function (el) { el.setAttribute("aria-expanded", "false"); });
-    document.querySelectorAll(".sub-nav").forEach(function (el) {
-        el.setAttribute("aria-hidden", "true");
-        removeClass(el, "open");
-    });
-    document.querySelectorAll(".second-level-link").forEach(function (el) { el.setAttribute("tabindex", "-1"); });
+ //RESET
+ //JS
+ document.querySelectorAll(".first-level-btn").forEach(function (el) { el.setAttribute("aria-expanded", "false"); });
+ document.querySelectorAll(".sub-nav").forEach(function (el) {
+  el.setAttribute("aria-hidden", "true");
+  removeClass(el, "open");
+ });
+ document.querySelectorAll(".second-level-link").forEach(function (el) { el.setAttribute("tabindex", "-1"); });
 
-    if (window.innerWidth <= 991) {
-        document.querySelectorAll(".rotate").forEach(function (el) { el.style.display = "block"; });
-    } else {
-        document.querySelectorAll(".rotate").forEach(function (el) { el.style.display = "none"; });
-        var nav = document.querySelector("#navigation");
-        removeClass(nav, "collapse");
-        nav.removeAttribute("aria-hidden");
-    }
-
-    //JQ
-    //$(".first-level-btn").attr("aria-expanded", "false");
-    // // $(".first-level-btn").attr("aria-selected", "false");
-    //$(".sub-nav").attr("aria-hidden", "true").removeClass("open");
-    //$(".second-level-link").attr("tabindex", "-1");
-    //var toggleSubNav = $('<div class="ca-gov-icon-caret-right rotate" aria-hidden="true"></div>');
-
-    //if (window.innerWidth <= 991) {
-    //    //$('.has-sub').append(toggleSubNav);
-    //    $(".rotate").css("display", "block");
-    // }
-    //else {
-    //    $("#navigation").removeClass("collapse").removeAttr("aria-hidden");
-    //    $(".rotate").css("display", "none");
-    // }
+ if (window.innerWidth <= 991) {
+  document.querySelectorAll(".rotate").forEach(function (el) { el.style.display = "block"; });
+ } else {
+  document.querySelectorAll(".rotate").forEach(function (el) { el.style.display = "none"; });
+  var nav = document.querySelector("#navigation");
+  removeClass(nav, "collapse");
+  nav.removeAttribute("aria-hidden");
+ }
 
 }
 
 var mobileView$1 = function () {
-    //JQ
-    //return $('.global-header .mobile-controls').css('display') !== "none"; // mobile view uses arrow to show subnav instead of first touch
-    //JS
-    return getComputedStyle(document.querySelector('.global-header .mobile-controls'))['display'] !== 'none';
+ //JQ
+ //return $('.global-header .mobile-controls').css('display') !== "none"; // mobile view uses arrow to show subnav instead of first touch
+ //JS
+ return getComputedStyle(document.querySelector('.global-header .mobile-controls'))['display'] !== 'none';
 };
 
 function AlmostJQueryDocumentReady(callbackFunction) {
-    if (document.readyState != 'loading')
-        callbackFunction();
-    else
-        document.addEventListener("DOMContentLoaded", callbackFunction);
+ if (document.readyState != 'loading')
+  callbackFunction();
+ else
+  document.addEventListener("DOMContentLoaded", callbackFunction);
 }
 
 // Remove href if <a> has a link
 AlmostJQueryDocumentReady(function () { //JS
-    //$(document).ready(function () { //JQ
-    var navigationJS = document.querySelector(".main-navigation");
+ //$(document).ready(function () { //JQ
+ var navigationJS = document.querySelector(".main-navigation");
 
-    var subnavbtnJS = document.querySelectorAll(".main-navigation .nav-item a.has-sub-btn");
-    subnavbtnJS.forEach(function (item) {
-        // Change <a> tag to div since you can't place button into <a> tag
-        var newDiv = document.createElement("div");
-        newDiv.innerHTML = item.innerHTML;
-        newDiv.classList.add('has-sub-btn');
-        item.replaceWith(newDiv);
-    });
+ var subnavbtnJS = document.querySelectorAll(".main-navigation .nav-item a.has-sub-btn");
+ subnavbtnJS.forEach(function (item) {
+  // Change <a> tag to div since you can't place button into <a> tag
+  var newDiv = document.createElement("div");
+  newDiv.innerHTML = item.innerHTML;
+  newDiv.classList.add('has-sub-btn');
+  item.replaceWith(newDiv);
+ });
 
-    // Change <a> tag to div since you can't place button into <a> tag
-    /*
-     //JQ//
-    var subnavbtn = $(".nav-item .has-sub-btn");
-    $(".has-sub-btn").removeAttr("href");
-    subnavbtn.replaceWith(function () {
-        
-        return $('<div/>', {
-            class: 'has-sub-btn',
-            html: this.innerHTML
-        });
-    });
-    */
+ // Change <a> tag to div since you can't place button into <a> tag
+ /*
+  //JQ//
+ var subnavbtn = $(".nav-item .has-sub-btn");
+ $(".has-sub-btn").removeAttr("href");
+ subnavbtn.replaceWith(function () {
+     
+     return $('<div/>', {
+         class: 'has-sub-btn',
+         html: this.innerHTML
+     });
+ });
+ */
 
-    if (mobileView$1()) {
-        //JS
-        navigationJS.classList.add('collapse');
-        /*
-        JQ
-        $('#navigation').addClass('collapse');
-        $('#navigation').addClass('collapse');
-        */
-    }
+ if (mobileView$1()) {
+  //JS
+  navigationJS.classList.add('collapse');
+  /*
+  JQ
+  $('#navigation').addClass('collapse');
+  $('#navigation').addClass('collapse');
+  */
+ }
 
-    // Variables JQ
-    //var $navigation = $('.main-navigation'),
-    //$navItems = $navigation.find('.nav-item'), // JQ first level link containers'
-    //$navItemsWithSubs = $navItems.has('.sub-nav'), //JQ
-    //$subNavs = $navigation.find('.sub-nav'),//JQ
-    //megamenu = $navigation.hasClass('megadropdown'),//JQ
-    //dropdown = $navigation.hasClass('dropdown'),//JQ
-    //   singleLevel = $navigation.hasClass('singleLevel'),
-    //   setActiveLinkByFolder = $navigation.hasClass('auto-highlight'); // Use new folder matching method to highlight the current navigation tab
+ // Variables JQ
+ //var $navigation = $('.main-navigation'),
+ //$navItems = $navigation.find('.nav-item'), // JQ first level link containers'
+ //$navItemsWithSubs = $navItems.has('.sub-nav'), //JQ
+ //$subNavs = $navigation.find('.sub-nav'),//JQ
+ //megamenu = $navigation.hasClass('megadropdown'),//JQ
+ //dropdown = $navigation.hasClass('dropdown'),//JQ
+ //   singleLevel = $navigation.hasClass('singleLevel'),
+ //   setActiveLinkByFolder = $navigation.hasClass('auto-highlight'); // Use new folder matching method to highlight the current navigation tab
 
-    // Variables JS
+ // Variables JS
 
-    var singleLevel = navigationJS.classList.contains('singleLevel');
-    var setActiveLinkByFolder = navigationJS.classList.contains('auto-highlight');
+ var singleLevel = navigationJS.classList.contains('singleLevel');
+ var setActiveLinkByFolder = navigationJS.classList.contains('auto-highlight');
 
-    var navItemsJS = document.querySelectorAll(".main-navigation .nav-item");
-    var navItemsWithSubsJS = [].slice.call(document.querySelectorAll(".main-navigation .nav-item")).filter(function (x) { return x.querySelector('.sub-nav'); });
+ var navItemsJS = document.querySelectorAll(".main-navigation .nav-item");
+ var navItemsWithSubsJS = [].slice.call(document.querySelectorAll(".main-navigation .nav-item")).filter(function (x) { return x.querySelector('.sub-nav'); });
 
-    // HIGHLIGHT APPROPRIATE NAV ITEM
-    var reMainNav = "";
-    if (typeof defaultActiveLink !== "undefined") { //Globally set var
-        // eslint-disable-next-line no-undef
-        reMainNav = new RegExp("^" + defaultActiveLink + "$", "i"); // Regex for finding the index of the default main list item
-    }
+ // HIGHLIGHT APPROPRIATE NAV ITEM
+ var reMainNav = "";
+ if (typeof defaultActiveLink !== "undefined") { //Globally set var
+  // eslint-disable-next-line no-undef
+  reMainNav = new RegExp("^" + defaultActiveLink + "$", "i"); // Regex for finding the index of the default main list item
+ }
 
-    navItemsJS.forEach(function (navItem) {
-        var link = navItem.querySelector(".first-level-btn, .first-level-link");
+ navItemsJS.forEach(function (navItem) {
+  var link = navItem.querySelector(".first-level-btn, .first-level-link");
 
-        if (reMainNav) {
-            if (link.textContent.match(reMainNav)) {
-                navItem.classList.add('active');
-            }
-        } else if (setActiveLinkByFolder && link.getAttribute('href')) {
-            var arrNavLink = link.getAttribute('href').split("/");
-            var arrCurrentURL = location.href.split("/");
+  if (reMainNav) {
+   if (link.textContent.match(reMainNav)) {
+    navItem.classList.add('active');
+   }
+  } else if (setActiveLinkByFolder && link.getAttribute('href')) {
+   var arrNavLink = link.getAttribute('href').split("/");
+   var arrCurrentURL = location.href.split("/");
 
-            if (arrNavLink.length > 4 && arrCurrentURL[3] === arrNavLink[3]) { // folder of current URL matches this nav link
-                //if (arrNavLink.length > 1 && arrNavLink[arrNavLink.length - 1].trim().toLowerCase() === arrCurrentURL[arrCurrentURL.length - 1].trim().toLowerCase() ) { 
-                // folder of current URL matches this nav link
-                navItem.classList.add('active');
-            }
-        }
-    });
+   if (arrNavLink.length > 4 && arrCurrentURL[3] === arrNavLink[3]) { // folder of current URL matches this nav link
+    //if (arrNavLink.length > 1 && arrNavLink[arrNavLink.length - 1].trim().toLowerCase() === arrCurrentURL[arrCurrentURL.length - 1].trim().toLowerCase() ) { 
+    // folder of current URL matches this nav link
+    navItem.classList.add('active');
+   }
+  }
+ });
 
-    /* JQ
-    $navItems.each(function () { // loop through top level links
-        var $this = $(this),
-            $a = $this.find('.first-level-btn, .first-level-link');
+ /* JQ
+ $navItems.each(function () { // loop through top level links
+     var $this = $(this),
+         $a = $this.find('.first-level-btn, .first-level-link');
 
-        if (reMainNav) {
-            if ($a.text().match(reMainNav)) {
-                $this.addClass('active');
-            }
-        } else if (setActiveLinkByFolder && $a.attr('href')) {
-            var arrNavLink = $a[0].href.split("/");
-            if (arrNavLink.length > 4 && arrCurrentURL[3] === arrNavLink[3]) { // folder of current URL matches this nav link
-                $this.addClass('active');
-            }
-        }
-    });
+     if (reMainNav) {
+         if ($a.text().match(reMainNav)) {
+             $this.addClass('active');
+         }
+     } else if (setActiveLinkByFolder && $a.attr('href')) {
+         var arrNavLink = $a[0].href.split("/");
+         if (arrNavLink.length > 4 && arrCurrentURL[3] === arrNavLink[3]) { // folder of current URL matches this nav link
+             $this.addClass('active');
+         }
+     }
+ });
 */
 
-    // Reset if click outside of nav
-    document.addEventListener("mouseup", function (e) { //JS
-        //$(document).mouseup(function (e) { //JQ
+ // Reset if click outside of nav
+ document.addEventListener("mouseup", function (e) { //JS
+  //$(document).mouseup(function (e) { //JQ
 
-        //var navContainer = $(".main-navigation"); //JQ
-        var navContainer = document.querySelector(".main-navigation"); //JS
+  //var navContainer = $(".main-navigation"); //JQ
+  var navContainer = document.querySelector(".main-navigation"); //JS
 
-        // if the target of the click isn't the navigation container nor a descendant of the navigation
-        //if (!navContainer.is(e.target) && navContainer.has(e.target).length === 0) { //JQ
-        if (navContainer !== e.target && !navContainer.contains(e.target)) { //JS
-            NavReset$1();
-        }
-        //}); //JQ
-    }); //JS
-
-
-    // Nav items with subs
-    //JQ
-    //$navItemsWithSubs.each(function () {
-    //    var itemCount = $(this).find('.second-level-nav > li').length;
-    //    if (itemCount <= 2) {
-    //        $(this).find('.sub-nav').addClass('with-few-items');
-    //    }
-    //});
-    //JS
-    navItemsWithSubsJS.forEach(function (el) {
-        var itemCount = el.querySelectorAll('.second-level-nav > li').length;
-        if (itemCount <= 2) {
-            var subnav = el.querySelector('.sub-nav');
-            addClass(subnav, 'with-few-items');
-        }
-    });
+  // if the target of the click isn't the navigation container nor a descendant of the navigation
+  //if (!navContainer.is(e.target) && navContainer.has(e.target).length === 0) { //JQ
+  if (navContainer !== e.target && !navContainer.contains(e.target)) { //JS
+   NavReset();
+  }
+  //}); //JQ
+ }); //JS
 
 
-    // Add class has-sub, then add carrots
-    if (!singleLevel) {
-        //$navItemsWithSubs.each(function () { //JQ
-
-        //$(this).find('.first-level-btn').addClass('has-sub'); //JQ
-        document.querySelectorAll(".first-level-btn").forEach(function (el) { //JS
-            addClass(el, "has-sub"); //JS
-
-            //JQ
-            //var carrot = $('<span class="ca-gov-icon-triangle-down carrot" aria-hidden="true"></span>');
-            //var toggleSubNav = $('<div class="ca-gov-icon-caret-right rotate" aria-hidden="true"></div>');
-
-            //if (mobileView()) {
-            //    toggleSubNav.css("display", "block");
-            //  } else {
-            //    toggleSubNav.css("display", "none");
-            //}
-            //$(this).find('.has-sub').append(toggleSubNav);
-            //$(this).find('.has-sub').append(carrot);
+ // Nav items with subs
+ //JQ
+ //$navItemsWithSubs.each(function () {
+ //    var itemCount = $(this).find('.second-level-nav > li').length;
+ //    if (itemCount <= 2) {
+ //        $(this).find('.sub-nav').addClass('with-few-items');
+ //    }
+ //});
+ //JS
+ navItemsWithSubsJS.forEach(function (el) {
+  var itemCount = el.querySelectorAll('.second-level-nav > li').length;
+  if (itemCount <= 2) {
+   var subnav = el.querySelector('.sub-nav');
+   addClass(subnav, 'with-few-items');
+  }
+ });
 
 
-            //JS
-            var carrot = document.createElement("span");
-            addClass(carrot, "ca-gov-icon-caret-down");
-            addClass(carrot, "carrot");
-            carrot.setAttribute("aria-hidden", "true");
+ // Add class has-sub, then add carrots
+ if (!singleLevel) {
+  //$navItemsWithSubs.each(function () { //JQ
 
-            var toggleSubNav = document.createElement("div");
-            addClass(toggleSubNav, "ca-gov-icon-caret-right");
-            addClass(toggleSubNav, "rotate");
-            toggleSubNav.setAttribute("aria-hidden", "true");
+  //$(this).find('.first-level-btn').addClass('has-sub'); //JQ
+  document.querySelectorAll(".first-level-btn").forEach(function (el) { //JS
+   addClass(el, "has-sub"); //JS
 
-            if (mobileView$1()) {
-                toggleSubNav.style.display = "block";
-            } else {
-                toggleSubNav.style.display = "none";
-            }
+   //JQ
+   //var carrot = $('<span class="ca-gov-icon-triangle-down carrot" aria-hidden="true"></span>');
+   //var toggleSubNav = $('<div class="ca-gov-icon-caret-right rotate" aria-hidden="true"></div>');
 
-            el.appendChild(toggleSubNav);
-            el.appendChild(carrot);
-        });
-        //}); //JQ
-    }
+   //if (mobileView()) {
+   //    toggleSubNav.css("display", "block");
+   //  } else {
+   //    toggleSubNav.css("display", "none");
+   //}
+   //$(this).find('.has-sub').append(toggleSubNav);
+   //$(this).find('.has-sub').append(carrot);
 
-    // Addig class first-level-btn to first-level-link to make sure left and right keyboard keys work for all navigation links
-    //$(".first-level-link").addClass("first-level-btn");
+
+   //JS
+   var carrot = document.createElement("span");
+   addClass(carrot, "ca-gov-icon-caret-down");
+   addClass(carrot, "carrot");
+   carrot.setAttribute("aria-hidden", "true");
+
+   var toggleSubNav = document.createElement("div");
+   addClass(toggleSubNav, "ca-gov-icon-caret-right");
+   addClass(toggleSubNav, "rotate");
+   toggleSubNav.setAttribute("aria-hidden", "true");
+
+   if (mobileView$1()) {
+    toggleSubNav.style.display = "block";
+   } else {
+    toggleSubNav.style.display = "none";
+   }
+
+   el.appendChild(toggleSubNav);
+   el.appendChild(carrot);
+  });
+  //}); //JQ
+ }
+
+ // Addig class first-level-btn to first-level-link to make sure left and right keyboard keys work for all navigation links
+ //$(".first-level-link").addClass("first-level-btn");
 
 });
 
 // Do Navigation Reset function on window resize uless it's mobile device.
 window.addEventListener('resize', function () { //JS
-    //$(window).on('resize', function () { //JQ
-    if (navigator.userAgent.match(/Android/i)
-        || navigator.userAgent.match(/webOS/i)
-        || navigator.userAgent.match(/iPhone/i)
-        || navigator.userAgent.match(/iPad/i)
-        || navigator.userAgent.match(/iPod/i)
-        || navigator.userAgent.match(/BlackBerry/i)
-        || navigator.userAgent.match(/Windows Phone/i)
-    ) {
-        return false;
-    }
-    else {
-        //JS
-        document.querySelector(".toggle-menu").setAttribute("aria-expanded", "false");
+ //$(window).on('resize', function () { //JQ
+ if (navigator.userAgent.match(/Android/i)
+  || navigator.userAgent.match(/webOS/i)
+  || navigator.userAgent.match(/iPhone/i)
+  || navigator.userAgent.match(/iPad/i)
+  || navigator.userAgent.match(/iPod/i)
+  || navigator.userAgent.match(/BlackBerry/i)
+  || navigator.userAgent.match(/Windows Phone/i)
+ ) {
+  return false;
+ }
+ else {
+  //JS
+  document.querySelector(".toggle-menu").setAttribute("aria-expanded", "false");
 
-        //Collapse the nav when narrow
-        var nav = document.querySelector("#navigation");
-        addClass(nav, "collapse");
-        removeClass(nav, "show");
-        nav.setAttribute("aria-hidden", "true");
+  //Collapse the nav when narrow
+  var nav = document.querySelector("#navigation");
+  addClass(nav, "collapse");
+  removeClass(nav, "show");
+  nav.setAttribute("aria-hidden", "true");
 
-        //JQ
-        //$("#navigation").addClass("collapse").removeClass("show").attr("aria-hidden", "true");
-        //$(".toggle-menu").attr('aria-expanded', 'false');
+  //JQ
+  //$("#navigation").addClass("collapse").removeClass("show").attr("aria-hidden", "true");
+  //$(".toggle-menu").attr('aria-expanded', 'false');
 
-        NavReset$1();
-    }
+  NavReset();
+ }
 
 });
 
@@ -1001,311 +987,327 @@ window.addEventListener('resize', function () { //JS
 //});
 //JS
 document.addEventListener('keyup', function (e) {
-    if (e.keyCode === 27) {
-        NavReset$1();
-    }
+ if (e.keyCode === 27) {
+  NavReset();
+ }
 });
 
 /* Mobile Controls fix */
 //Doesn't appear to do anything
 //$(document).ready(function () {
-    //$("#navigation .mobile-controls").removeClass("nav-menu");
-    //$("#navigation .mobile-control a").removeAttr("aria-hidden aria-expanded role id").removeClass("sub-nav with-few-items subnav-closed");
-    //$("#navigation .mobile-control .sr-only").removeAttr("aria-hidden aria-expanded role id").removeClass("sub-nav with-few-items subnav-closed");
+//$("#navigation .mobile-controls").removeClass("nav-menu");
+//$("#navigation .mobile-control a").removeAttr("aria-hidden aria-expanded role id").removeClass("sub-nav with-few-items subnav-closed");
+//$("#navigation .mobile-control .sr-only").removeAttr("aria-hidden aria-expanded role id").removeClass("sub-nav with-few-items subnav-closed");
 //});
+
+
+// Add bold to current subnav link
+function addActive() {
+ var activeLink = document.querySelectorAll(".second-level-link"),
+  i = 0, len = activeLink.length,
+  full_path = location.href.split('#')[0]; //Ignore hashes?
+
+ // Loop through each link.
+ for (; i < len; i++) {
+  if (activeLink[i].href.split("#")[0] == full_path) {
+   activeLink[i].className += " bold";
+  }
+ }
+}
+addActive();
 
 /* -----------------------------------------
    SEARCH - /source/js/cagov/search.js
 ----------------------------------------- */
-
 window.addEventListener('load', function () {
-    var searchContainer = document.querySelector("#head-search");		// contains the search form
-    var searchText = document.querySelector(".search-textfield"); // search textfield, unique
-    var resultsContainer = document.querySelector('.search-results-container'); // /sample/featured-search.html -- maybe not used?
-    var searchInput = document.querySelector("#head-search #Search .search-textfield");		// search textfield -- same as searchText ?
-    var searchSubmit = document.querySelector("#head-search #Search .gsc-search-button");		// search button, unique
-    var searchReset = document.querySelector("#head-search #Search .close-search");		// hide search form on subpages, unique
-    var featuredsearch = searchContainer.classList.contains("featured-search");		// only exists on the home page (featured search) layout, and /sample/navigation-full-width-utility.html
-    searchContainer.classList.contains("active");		// "active" is applied on subpages when search form is visible
-    var searchlabel = document.querySelector("#SearchInput");		// label for textfield
-    var globalHeader = document.querySelector('.global-header');		// header, contains nav, search form, etc, unique
-    var searchbox = document.querySelector(".search-container:not(.featured-search)");		// only on subpages, unique, same as #head-search
-    var headerHeight = globalHeader.innerHeight;		// header height
-    var utility = document.querySelector(".utility-header");		// utility header, unique
-    if (utility) {
-        var utilityHeight = utility.innerHeight;
-    }
-    else {
-        var utilityHeight = 0;
-    }
-    // utility header height
-    var alertBanner = document.querySelectorAll(".alert-banner");		// page can have multiple
-    var alertClose = document.querySelectorAll(".alert-banner .close");
-    var alertbannerHeight = 0;
-    var navigationHeight = 0;
-    document.querySelector(".top-level-nav");		// navigation ul tag, unique
-    var navsearch = document.querySelector(".navigation-search");		// contains navigation and search form, unique
+ var searchContainer = document.querySelector("#head-search");		// contains the search form
+ var searchText = document.querySelector(".search-textfield"); // search textfield, unique
+ var resultsContainer = document.querySelector('.search-results-container'); // /sample/featured-search.html -- maybe not used?
+ var searchInput = document.querySelector("#head-search #Search .search-textfield");		// search textfield -- same as searchText ?
+ var searchSubmit = document.querySelector("#head-search #Search .gsc-search-button");		// search button, unique
+ var searchReset = document.querySelector("#head-search #Search .close-search");		// hide search form on subpages, unique
+ if (searchContainer) {
+  var featuredsearch = searchContainer.classList.contains("featured-search");		// only exists on the home page (featured search) layout, and /sample/navigation-full-width-utility.html
+  searchContainer.classList.contains("active");		// "active" is applied on subpages when search form is visible 
+ }
+ var searchlabel = document.querySelector("#SearchInput");		// label for textfield
+ var globalHeader = document.querySelector('.global-header');		// header, contains nav, search form, etc, unique
+ var searchbox = document.querySelector(".search-container:not(.featured-search)");		// only on subpages, unique, same as #head-search
+ var headerHeight = globalHeader.innerHeight;		// header height
+ var utility = document.querySelector(".utility-header");		// utility header, unique
+ if (utility) {
+  var utilityHeight = utility.innerHeight;
+ }
+ else {
+  var utilityHeight = 0;
+ }
+ // utility header height
+ var alertBanner = document.querySelectorAll(".alert-banner");		// page can have multiple
+ var alertClose = document.querySelectorAll(".alert-banner .close");
+ var alertbannerHeight = 0;
+ var navigationHeight = 0;
+ document.querySelector(".top-level-nav");		// navigation ul tag, unique
+ var navsearch = document.querySelector(".navigation-search");		// contains navigation and search form, unique
 
-    var body = document.querySelector("body");
+ var body = document.querySelector("body");
 
-    //		not used:
-    //    var $specialIcon =
-    //        // setup the tabs
-    //        $('.search-tabs button').on("click", function (e) {
-    //            $(this).siblings().removeClass('active');
-    //            $(this).tab('show').addClass('active');
-    //            e.preventDefault();
-    //        });
+ //		not used:
+ //    var $specialIcon =
+ //        // setup the tabs
+ //        $('.search-tabs button').on("click", function (e) {
+ //            $(this).siblings().removeClass('active');
+ //            $(this).tab('show').addClass('active');
+ //            e.preventDefault();
+ //        });
 
-    if (searchText) {
-        // Unfreeze search width when blured.
-        var unfreezeSearchWidth = function (event) {
-            searchContainer.classList.remove('focus');
-            document.querySelector(".search-container").classList.add('focus'); // search-container is unique
-        };
-        searchText.addEventListener('blur', unfreezeSearchWidth, false);
-        searchText.addEventListener('focus', unfreezeSearchWidth, false);
-        var chgHandler = function (event) {
-            if (this.value) {
-                addSearchResults();
-            }
-        };
-        searchText.addEventListener('change', chgHandler, false);
-        searchText.addEventListener('keyup', chgHandler, false);
-        searchText.addEventListener('paste', chgHandler, false);
-    }
-
-
-
-
-
-
-    if (!featuredsearch) {
-        // added aria expaned attr for accessibility
-        var firstLevelBtn = document.querySelector("button.first-level-link");
-        if (firstLevelBtn) {
-            document.querySelector("button.first-level-link").setAttribute("aria-expanded", "false");
-        }
-    }
-
-    //  search box top position
-    if (!mobileView()) {
-        // taking into account multiple alert banners
-        alertBanner.forEach((oneBanner) => {
-            alertbannerHeight += oneBanner.innerHeight;
-        });
-        //fullwidth navigation
-        if (navsearch.classList.contains("full-width-nav")) {
-            navigationHeight = 82;
-        }
-        // calulation search box top position
-        var searchtop = headerHeight - utilityHeight - alertbannerHeight - navigationHeight;
-        if (!mobileView() && searchbox) {
-            searchbox.style.top = Math.max(searchtop, 82);
-        }
-    }
-
-    // have the close button remove search results and the applied classes
-    //resultsContainer.find('.close').on('click', removeSearchResults);
-    var resContainClose = document.querySelector(".search-results-container .close");
-    if (resContainClose) {
-        resContainClose.addEventListener('click', removeSearchResults, false);
-    }
-
-    //searchContainer.find('.close').on('click', removeSearchResults);
-    var hsClose = document.querySelector("#head-search .close");
-    if (hsClose) {
-        hsClose.addEventListener('click', removeSearchResults, false);
-    }
-
-    // Our special nav icon which we need to hook into for starting the search
-    // $('#nav-item-search')
-
-    // so instead we are binding to what I'm assuming will aslways be the search
-    var searchButton = document.querySelector('#nav-item-search');
-    if (searchButton) {
-        document.querySelector('#nav-item-search').addEventListener("click", function (e) {
-            e.preventDefault();
-            searchText.focus();
-
-            // mobile
-            if (mobileView() && !searchContainer.classList.contains('active')) {
-                window.scrollTo({
-                    top: searchContainer.getBoundingClientRect().top,
-                    left: 0,
-                    behavior: 'smooth'
-                });
-            }
-
-            if (!featuredsearch && document.querySelector('.search-container:not(.featured-search)')) {
-                document.querySelector('.search-container:not(.featured-search)').classList.toggle('active');
-            }
-
-            var featuredsearch = searchContainer.classList.contains("featured-search");
-            var searchactive = searchContainer.classList.contains("active");
-            // hide Search form if it's not active
-            if (searchactive) {
-                // added aria expanded attr for accessibility
-                this.querySelector("button").setAttribute("aria-expanded", "true");
-                removeSearchAttr();
-            }
-            else {
-                // added aria expaned attr for accessibility
-                this.querySelector("button").setAttribute("aria-expanded", "false");
-                setSearchAttr();
-            }
-
-            if (featuredsearch) {
-                removeSearchAttr();
-            }
-
-            if (mobileView() && featuredsearch) {
-                searchContainer.classList.toggle('active');
-                ariaHidden();
-            }
-            // Reset the nav
-            NavReset();
-
-            // let the user know the input box is where they should search
-            searchContainer.classList.add('play-animation');
-            searchContainer.addEventListener('animationend', function () {
-                this.classList.remove('play-animation');
-
-            });
-
-        }, false);
-    }
+ if (searchText) {
+  // Unfreeze search width when blured.
+  var unfreezeSearchWidth = function (event) {
+   searchContainer.classList.remove('focus');
+   document.querySelector(".search-container").classList.add('focus'); // search-container is unique
+  };
+  searchText.addEventListener('blur', unfreezeSearchWidth, false);
+  searchText.addEventListener('focus', unfreezeSearchWidth, false);
+  var chgHandler = function (event) {
+   if (this.value) {
+    addSearchResults();
+   }
+  };
+  searchText.addEventListener('change', chgHandler, false);
+  searchText.addEventListener('keyup', chgHandler, false);
+  searchText.addEventListener('paste', chgHandler, false);
+ }
 
 
 
-    // SEE navitgation.js for mobile click handlers
-
-    // Close search when close icon is clicked
-    if (searchReset) {
-        searchReset.addEventListener('click', function () {
-            removeSearchResults();
-        });
-    }
-
-    // Helpers
-    function addSearchResults() {
-        body.classList.add("active-search");
-        //searchContainer.addClass('active');
-        //resultsContainer.addClass('visible');
-        // close the the menu when we are search
-        //$('#navigation').addClass('mobile-closed');
-        // hide the ask group as well
-        // $('.ask-group').addClass('fade-out');
-
-        // fire a scroll event to help update headers if need be
-        // $(window).scroll();
-
-        // $.event.trigger('cagov.searchresults.show');
-    }
-
-    function removeSearchResults() {
-        body.classList.remove("active-search");
-        searchText.value = "";
-        searchContainer.classList.remove('active');
-        searchContainer.setAttribute("aria-hidden", "true");
-        if (resultsContainer) { resultsContainer.classList.remove('visible'); }        if (document.querySelector('.ask-group')) { document.querySelector('.ask-group').classList.remove('fade-out'); }
-        if (!featuredsearch) {
-            // added aria expaned attr for accessibility
-            document.querySelector("button.first-level-link").setAttribute("aria-expanded", "false");
-            setSearchAttr();
-        }
-        // fire a scroll event to help update headers if need be
-        window.dispatchEvent(new CustomEvent('scroll'));
-
-        //        document.dispatchEvent('cagov.searchresults.hide'); // ???
-
-        if (mobileView()) {
-            window.scrollTo({
-                top: 0,
-                left: 0,
-                behavior: 'smooth'
-            });
-            ariaHidden();
-        }
-    }
-
-    function removeSearchAttr() {
-        if (searchInput) {
-            searchInput.removeAttribute('tabindex');
-            searchInput.removeAttribute('aria-hidden');
-        }
-        if (searchSubmit) {
-            searchSubmit.removeAttribute('tabindex');
-            searchSubmit.removeAttribute('aria-hidden');
-        }
-        if (searchReset) {
-            searchReset.removeAttribute('tabindex');
-            searchReset.removeAttribute('aria-hidden');
-        }
-        if (searchlabel) searchlabel.removeAttribute('aria-hidden');
-
-        if (searchContainer) searchContainer.removeAttribute('aria-hidden');
-    }
-
-    function setSearchAttr() {
-        if (searchInput) {
-            searchInput.setAttribute("tabindex", '-1');
-            searchInput.setAttribute("aria-hidden", 'true');
-        }
-        if (searchSubmit) {
-            searchSubmit.setAttribute("tabindex", '-1');
-            searchSubmit.setAttribute("aria-hidden", 'true');
-        }
-        if (searchReset) {
-            searchReset.setAttribute("tabindex", '-1');
-            searchReset.setAttribute("aria-hidden", 'true');
-        }
-        if (searchlabel) searchlabel.setAttribute("aria-hidden", 'true');
-
-        if (searchContainer) searchContainer.setAttribute("aria-hidden", "true");
-    }
 
 
-    // Mobile Search toggle
-    document.querySelector('.toggle-search').addEventListener('click', function () {
-        document.querySelector('.search-container').classList.toggle('active');
-        var searchactive = searchContainer.classList.contains("active");
-        if (searchactive) {
-            removeSearchAttr();
 
-            searchText.focus();
-            window.scrollTo({
-                top: searchContainer.getBoundingClientRect().top,
-                left: 0,
-                behavior: 'smooth'
-            });
-        }
-        else {
-            setSearchAttr();
-        }
+ if (!featuredsearch) {
+  // added aria expaned attr for accessibility
+  var firstLevelBtn = document.querySelector("button.first-level-link");
+  if (firstLevelBtn) {
+   document.querySelector("button.first-level-link").setAttribute("aria-expanded", "false");
+  }
+ }
+
+ //  search box top position
+ if (!mobileView()) {
+  // taking into account multiple alert banners
+  alertBanner.forEach((oneBanner) => {
+   alertbannerHeight += oneBanner.innerHeight;
+  });
+  //fullwidth navigation
+  if (navsearch.classList.contains("full-width-nav")) {
+   navigationHeight = 82;
+  }
+  // calulation search box top position
+  var searchtop = headerHeight - utilityHeight - alertbannerHeight - navigationHeight;
+  if (!mobileView() && searchbox) {
+   searchbox.style.top = Math.max(searchtop, 82);
+  }
+ }
+
+ // have the close button remove search results and the applied classes
+ //resultsContainer.find('.close').on('click', removeSearchResults);
+ var resContainClose = document.querySelector(".search-results-container .close");
+ if (resContainClose) {
+  resContainClose.addEventListener('click', removeSearchResults, false);
+ }
+
+ //searchContainer.find('.close').on('click', removeSearchResults);
+ var hsClose = document.querySelector("#head-search .close");
+ if (hsClose) {
+  hsClose.addEventListener('click', removeSearchResults, false);
+ }
+
+ // Our special nav icon which we need to hook into for starting the search
+ // $('#nav-item-search')
+
+ // so instead we are binding to what I'm assuming will aslways be the search
+ var searchButton = document.querySelector('#nav-item-search');
+ if (searchButton) {
+  document.querySelector('#nav-item-search').addEventListener("click", function (e) {
+   e.preventDefault();
+   searchText.focus();
+   // mobile
+   if (mobileView() && !searchContainer.classList.contains('active')) {
+    window.scrollTo({
+     top: searchContainer.getBoundingClientRect().top,
+     left: 0,
+     behavior: 'smooth'
     });
+   }
 
+   if (!featuredsearch && document.querySelector('.search-container:not(.featured-search)')) {
+    document.querySelector('.search-container:not(.featured-search)').classList.toggle('active');
+   }
 
+   var featuredsearch = searchContainer.classList.contains("featured-search");
+   var searchactive = searchContainer.classList.contains("active");
+   // hide Search form if it's not active
+   if (searchactive) {
+    // added aria expanded attr for accessibility
+    this.querySelector("button").setAttribute("aria-expanded", "true");
+    removeSearchAttr();
+   }
+   else {
+    // added aria expaned attr for accessibility
+    this.querySelector("button").setAttribute("aria-expanded", "false");
+    setSearchAttr();
+   }
 
-    // Make Search form tabable if it's featured
-    if (searchContainer.classList.contains('featured-search')) {
-        removeSearchAttr();
+   if (featuredsearch) {
+    removeSearchAttr();
+   }
 
-    } else {
-        setSearchAttr();
-    }
-
-
-
-    // on alert close event
-    alertClose.forEach((oneClose) => {
-        oneClose.addEventListener("click", function () {
-            searchTop();
-        });
-    });
-
-
+   if (mobileView() && featuredsearch) {
+    searchContainer.classList.toggle('active');
     ariaHidden();
+   }
+
+   // let the user know the input box is where they should search
+   searchContainer.classList.add('play-animation');
+   searchContainer.addEventListener('animationend', function () {
+    this.classList.remove('play-animation');
+
+   });
+  }, false);
+ }
+
+
+
+ // SEE navitgation.js for mobile click handlers
+
+ // Close search when close icon is clicked
+ if (searchReset) {
+  searchReset.addEventListener('click', function () {
+   removeSearchResults();
+  });
+ }
+
+ // Helpers
+ function addSearchResults() {
+  body.classList.add("active-search");
+  //searchContainer.addClass('active');
+  //resultsContainer.addClass('visible');
+  // close the the menu when we are search
+  //$('#navigation').addClass('mobile-closed');
+  // hide the ask group as well
+  // $('.ask-group').addClass('fade-out');
+
+  // fire a scroll event to help update headers if need be
+  // $(window).scroll();
+
+  // $.event.trigger('cagov.searchresults.show');
+ }
+
+ function removeSearchResults() {
+  body.classList.remove("active-search");
+  searchText.value = "";
+  searchContainer.classList.remove('active');
+  searchContainer.setAttribute("aria-hidden", "true");
+  if (resultsContainer) { resultsContainer.classList.remove('visible'); }  if (document.querySelector('.ask-group')) { document.querySelector('.ask-group').classList.remove('fade-out'); }
+  if (!featuredsearch) {
+   // added aria expaned attr for accessibility
+   document.querySelector("button.first-level-link").setAttribute("aria-expanded", "false");
+   setSearchAttr();
+  }
+  // fire a scroll event to help update headers if need be
+  window.dispatchEvent(new CustomEvent('scroll'));
+
+  //        document.dispatchEvent('cagov.searchresults.hide'); // ???
+
+  if (mobileView()) {
+   window.scrollTo({
+    top: 0,
+    left: 0,
+    behavior: 'smooth'
+   });
+   ariaHidden();
+  }
+ }
+
+ function removeSearchAttr() {
+  if (searchInput) {
+   searchInput.removeAttribute('tabindex');
+   searchInput.removeAttribute('aria-hidden');
+  }
+  if (searchSubmit) {
+   searchSubmit.removeAttribute('tabindex');
+   searchSubmit.removeAttribute('aria-hidden');
+  }
+  if (searchReset) {
+   searchReset.removeAttribute('tabindex');
+   searchReset.removeAttribute('aria-hidden');
+  }
+  if (searchlabel) searchlabel.removeAttribute('aria-hidden');
+
+  if (searchContainer) searchContainer.removeAttribute('aria-hidden');
+ }
+
+ function setSearchAttr() {
+  if (searchInput) {
+   searchInput.setAttribute("tabindex", '-1');
+   searchInput.setAttribute("aria-hidden", 'true');
+  }
+  if (searchSubmit) {
+   searchSubmit.setAttribute("tabindex", '-1');
+   searchSubmit.setAttribute("aria-hidden", 'true');
+  }
+  if (searchReset) {
+   searchReset.setAttribute("tabindex", '-1');
+   searchReset.setAttribute("aria-hidden", 'true');
+  }
+  if (searchlabel) searchlabel.setAttribute("aria-hidden", 'true');
+
+  if (searchContainer) searchContainer.setAttribute("aria-hidden", "true");
+ }
+
+
+ // Mobile Search toggle
+ document.querySelector('.toggle-search').addEventListener('click', function () {
+  document.querySelector('.search-container').classList.toggle('active');
+  var searchactive = searchContainer.classList.contains("active");
+  if (searchactive) {
+   removeSearchAttr();
+
+   searchText.focus();
+   window.scrollTo({
+    top: searchContainer.getBoundingClientRect().top,
+    left: 0,
+    behavior: 'smooth'
+   });
+  }
+  else {
+   setSearchAttr();
+  }
+ });
+
+
+
+ // Make Search form tabable if it's featured
+ if (searchContainer) {
+  if (searchContainer.classList.contains('featured-search')) {
+   removeSearchAttr();
+
+  } else {
+   setSearchAttr();
+  }
+ }
+
+
+
+
+ // on alert close event
+ alertClose.forEach((oneClose) => {
+  oneClose.addEventListener("click", function () {
+   searchTop();
+  });
+ });
+
+
+ ariaHidden();
 
 });
 
@@ -1313,29 +1315,29 @@ window.addEventListener('load', function () {
 // Calculation search box top property on the scroll for the fixed nav
 window.addEventListener('scroll', function () {
 
-    if (!mobileView()) {
+ if (!mobileView()) {
 
-        // setting timeout before calculating the search box top property otherwise it can take into account transitional values.
-        setTimeout(function () {
-            searchTop();
-        }, 400);
+  // setting timeout before calculating the search box top property otherwise it can take into account transitional values.
+  setTimeout(function () {
+   searchTop();
+  }, 400);
 
-        // remove featured search on scroll in desktop
-        const FeaturedSearch = document.querySelector("nav ~ #head-search");
-        if (document.body.scrollTop >= 100 || document.documentElement.scrollTop >= 100) {
-            if (FeaturedSearch) {
-                FeaturedSearch.classList.add("hidden-up");
-            }
+  // remove featured search on scroll in desktop
+  const FeaturedSearch = document.querySelector("nav ~ #head-search");
+  if (document.body.scrollTop >= 100 || document.documentElement.scrollTop >= 100) {
+   if (FeaturedSearch) {
+    FeaturedSearch.classList.add("hidden-up");
+   }
 
-        }
-        else {
-            if (FeaturedSearch) {
-                FeaturedSearch.classList.remove("hidden-up");
-            }
+  }
+  else {
+   if (FeaturedSearch) {
+    FeaturedSearch.classList.remove("hidden-up");
+   }
 
-        }
+  }
 
-    }
+ }
 
 });
 
@@ -1343,58 +1345,59 @@ window.addEventListener('scroll', function () {
 
 //  search box top position if browser window is resized
 window.addEventListener('resize', function () {
-    searchTop();
-    ariaHidden();
+ searchTop();
+ ariaHidden();
 });
 
 
 function searchTop() {
-    var globalHeader = document.querySelector('.global-header');
-    var searchbox = document.querySelector(".search-container:not(.featured-search)");
-    var headerHeight = globalHeader.innerHeight;
-    var utility = document.querySelector(".utility-header");
-    var utilityHeight = utility.innerHeight;
-    var alertBanner = document.querySelectorAll(".alert-banner");
+ var globalHeader = document.querySelector('.global-header');
+ var searchbox = document.querySelector(".search-container:not(.featured-search)");
+ var headerHeight = globalHeader.innerHeight;
+ var utility = document.querySelector(".utility-header");
+ var utilityHeight = utility.innerHeight;
+ var alertBanner = document.querySelectorAll(".alert-banner");
 
-    var alertbannerHeight = 0;
+ var alertbannerHeight = 0;
 
-    var navsearch = document.querySelector(".navigation-search");
-    // taking into account multiple alert banners
-    alertBanner.forEach((oneBanner) => {
-        alertbannerHeight += oneBanner.innerHeight;
-    });
-    // Full width navigation
-    if (navsearch.classList.contains("full-width-nav")) {
-        navigationHeight = 82;
-    }
-    else { navigationHeight = 0; }
-    // calulation search box top position
-    var searchtop = headerHeight - utilityHeight - alertbannerHeight - navigationHeight;
-    if (!mobileView() && searchbox) {
-        searchbox.style.top = Math.max(searchtop, 55);
-    }
+ var navsearch = document.querySelector(".navigation-search");
+ // taking into account multiple alert banners
+ alertBanner.forEach((oneBanner) => {
+  alertbannerHeight += oneBanner.innerHeight;
+ });
+ // Full width navigation
+ if (navsearch.classList.contains("full-width-nav")) {
+  navigationHeight = 82;
+ }
+ else { navigationHeight = 0; }
+ // calulation search box top position
+ var searchtop = headerHeight - utilityHeight - alertbannerHeight - navigationHeight;
+ if (!mobileView() && searchbox) {
+  searchbox.style.top = Math.max(searchtop, 55);
+ }
 }
 
 function ariaHidden() {
-    var searchContainer = document.querySelector("#head-search");
-    var featuredsearch = searchContainer.classList.contains("featured-search");
-    if (featuredsearch) {
-        if (mobileView()) {
-            searchContainer.setAttribute("aria-hidden", "true");
-            document.querySelector("[name='q']").setAttribute("tabindex", "-1");
-            document.querySelector(".gsc-search-button").setAttribute("tabindex", "-1");
-        }
+ var searchContainer = document.querySelector("#head-search");
+ if (searchContainer) {
+  var featuredsearch = searchContainer.classList.contains("featured-search");
+  if (featuredsearch) {
+   if (mobileView()) {
+    searchContainer.setAttribute("aria-hidden", "true");
+    document.querySelector("[name='q']").setAttribute("tabindex", "-1");
+    document.querySelector(".gsc-search-button").setAttribute("tabindex", "-1");
+   }
 
-        else {
-            searchContainer.removeAttribute('aria-hidden');
-            document.querySelector("[name='q']").removeAttribute("tabindex");
-            document.querySelector(".gsc-search-button").removeAttribute("tabindex");
-        }
-    }
-    else {
-        searchContainer.setAttribute("aria-hidden", "true");
-    }
-
+   else {
+    searchContainer.removeAttribute('aria-hidden');
+    document.querySelector("[name='q']").removeAttribute("tabindex");
+    document.querySelector(".gsc-search-button").removeAttribute("tabindex");
+   }
+  }
+  else {
+   searchContainer.setAttribute("aria-hidden", "true");
+  }
+ }
 }
 
 
@@ -1402,68 +1405,83 @@ function ariaHidden() {
 
 
 var mobileView = function () {
-    var mobileElement = document.querySelector('.global-header .mobile-controls');
+ var mobileElement = document.querySelector('.global-header .mobile-controls');
 
-    if (mobileElement) {
-        return getComputedStyle(mobileElement)['display'] !== 'none';
+ if (mobileElement) {
+  return getComputedStyle(mobileElement)['display'] !== 'none';
 
-    } else {
-        return false; // or whatever is supposed to be returned when there is no header
+ } else {
+  return false; // or whatever is supposed to be returned when there is no header
 
-    }
+ }
 };
+
+/* -----------------------------------------
+   SOURCE CODE
+   /source/js/cagov/sourcecode.js
+----------------------------------------- */
 
 // Displaying HTML Source code in HTML Page
 
 var entityMap = {
- "&": "&amp;",
- "<": "&lt;",
- ">": "&gt;",
- '"': '&quot;',
- "'": '&#39;',
- "/": '&#x2F;'
-};
-
-function escapeHtml(string) {
- return String(string).replace(/[&<>"'/]/g, function (s) {
-  return entityMap[s];
- });
-}
-
-function copyCode(btnElem) {
- var codeblock = btnElem.previousElementSibling.querySelector("code");
- if (codeblock) {
-  // copy the text
-  navigator.clipboard.writeText(codeblock.innerText);
-  // select the text
-  var range = document.createRange();
-  range.selectNode(codeblock);
-  window.getSelection().removeAllRanges();
-  window.getSelection().addRange(range);
-  // replace the button icon
-  btnElem.querySelector("span").classList.remove("ca-gov-icon-copy");
-  btnElem.querySelector("span").classList.add("ca-gov-icon-check-mark");
+  "&": "&amp;",
+  "<": "&lt;",
+  ">": "&gt;",
+  '"': '&quot;',
+  "'": '&#39;',
+  "/": '&#x2F;'
+ };
+ 
+ function escapeHtml(string) {
+  return String(string).replace(/[&<>"'/]/g, function (s) {
+   return entityMap[s];
+  });
  }
-}
-
-window.onload = function init() {
- var codeblock = document.querySelectorAll("pre code");
-
- if (codeblock.length) {
-  for (var i = 0, len = codeblock.length; i < len; i++) {
-   var dom = codeblock[i];
-   var html = dom.innerHTML;
-   html = escapeHtml(html);
-   dom.innerHTML = html;
-   // Create a 'copy code' button, insert it after the <pre> tag
-   var newDiv = document.createElement("button");
-   newDiv.onclick = function () { copyCode(this); };
-   newDiv.classList.add("btn", "btn-outline-primary");
-   newDiv.innerHTML = "<span class='ca-gov-icon-copy'></span> Copy code";
-   dom.parentElement.after(newDiv);
+ 
+ function copyCode(btnElem) {
+  var codeblock = btnElem.parentElement.querySelector("pre code, textarea.sourcecode");
+  if (codeblock) {
+   // copy the text
+   if (codeblock.tagName.toLowerCase() == "code") {
+     navigator.clipboard.writeText(codeblock.innerText);
+   } else {
+     navigator.clipboard.writeText(codeblock.value);
+   }
+   // select the text
+   var range = document.createRange();
+   range.selectNode(codeblock);
+   window.getSelection().removeAllRanges();
+   window.getSelection().addRange(range);
+   // replace the button icon
+   btnElem.querySelector("span").classList.remove("ca-gov-icon-copy");
+   btnElem.querySelector("span").classList.add("ca-gov-icon-check-mark");
   }
  }
-};
+ 
+ window.addEventListener('load', function() {
+  var codeblock = document.querySelectorAll("pre code, textarea.sourcecode");
+ 
+  if (codeblock.length) {
+   for (var i = 0, len = codeblock.length; i < len; i++) {
+    var dom = codeblock[i];
+    if (dom.tagName.toLowerCase() == "code") {
+     var html = dom.innerHTML;
+     html = escapeHtml(html);
+     dom.innerHTML = html;
+    }
+    // Create a 'copy code' button, insert it after the <pre> tag
+    var newDiv = document.createElement("button");
+    newDiv.onclick = function () { copyCode(this); };
+    newDiv.classList.add("btn", "btn-outline-primary");
+    newDiv.innerHTML = "<span class='ca-gov-icon-copy'></span> Copy code";
+    if (dom.tagName.toLowerCase() == "code") {
+     dom.parentElement.after(newDiv);
+    } else {
+     dom.after(newDiv);
+    }
+   }
+  }
+ });
 
 /* -----------------------------------------
    TABS -- custom accessible tabs
@@ -1808,7 +1826,7 @@ function backToTopFunction(event) {
 }
 
 /* -----------------------------------------
-   SEARCH - /source/js/cagov/side-navigation.js
+   SIDE NAVIGATION - /source/js/cagov/side-navigation.js
 ----------------------------------------- */
 
 // Remebemer scrolling position
@@ -1939,3 +1957,63 @@ const cssExceptions = `:not(
 }
 
 linkAnnotator();
+
+/* -----------------------------------------
+   PAGE NAVIGATION - /source/js/cagov/page-navigation.js
+----------------------------------------- */
+
+function pageNav() {
+ const headings = document.querySelectorAll('h2');
+ const h2heading = document.querySelector("h2");
+ const pagenav = document.querySelector(".page-navigation");
+ // check if page navigation is empty and page has h2 headings
+ if (pagenav && pagenav.childNodes.length === 0 && h2heading) {
+
+  pagenavUL = document.createElement("ul");
+
+  headings.forEach(h2 => {
+
+   // find each h2 and their innter text
+   innertext = h2.innerHTML;
+
+   // add dashes for inner text for IDs
+   innertextID = h2.innerHTML.replace(/\s+/g, '-');
+
+   // set ID for each h2 based on inner taxt
+   h2.setAttribute("id", innertextID);
+
+   // Create anchor links
+   var anchorlinks = '<a href="#' + innertextID + '">' + innertext + '</a>';
+
+   // create li element
+   var listnav = document.createElement("li");
+
+   // Add achor links into list item
+   listnav.innerHTML = anchorlinks;
+
+   // appned list item to the UL
+   pagenavUL.appendChild(listnav);
+
+   // count number of h2 and add columns class to the ul if there are too many list items
+   var h2number = headings.length;
+   if (h2number > 5) {
+    pagenavUL.classList.add("columns-2");
+   }
+   else if (h2number > 8) {
+    pagenavUL.classList.add("columns-3");
+   }
+  });
+
+  // create on this page label
+  var onthispage = '<div id="on-this-page-navigation-label" class="label">On this page</div>';
+  pagenav.innerHTML = onthispage;
+
+  // add ul item to the nav and set aria labelledby
+  pagenav.appendChild(pagenavUL);
+  pagenav.setAttribute("aria-labelledby", "page-navigation-label");
+
+ }
+}
+
+// call out the function on the page load
+pageNav();

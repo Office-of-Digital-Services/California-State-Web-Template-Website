@@ -17,6 +17,8 @@
 		<link rel="stylesheet" href="/css/colortheme-oceanside.min.css">
 
 
+
+
 <link rel="apple-touch-icon-precomposed" sizes="100x100" href="/images/apple-touch-icon-precomposed.png">
 <link rel="icon" sizes="192x192" href="/images/apple-touch-icon-192x192.png">
 <link rel="apple-touch-icon-precomposed" sizes="180x180" href="/images/apple-touch-icon-180x180.png">
@@ -91,7 +93,7 @@
  <div class="container">
   <span class="alert-level border brd-s1 px-3 m-r-md">BETA</span><span class="alert-text text-1rem">We'd love your
    feedback
-   to make the template better. You have from November 4 to November 11. </span>
+   to make the template better.</span>
   <a href="https://airtable.com/shro9V6ry2Cf4mpgG" class="btn btn-default btn-xs bg-s1 pos-rel m-l">Send
    feedback</a>
  </div>
@@ -213,7 +215,7 @@
       </div>
       <!-- navigation types -->
             
-		          <nav id="navigation" class="main-navigation dropdown">
+		          <nav id="navigation" class="main-navigation dropdown" aria-label="Main navigation">
  <ul id="nav_list" class="top-level-nav">
   <li class="nav-item">
        
@@ -275,6 +277,194 @@
  <ol class="breadcrumb">
   <li><a href="../index.html" title="Home page">Home</a></li>
    
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+      
+      
+     <li><a href="/components.html" title="Components landing page">Components</a></li>
+      
+        
+       
+      <li>Modal</li>
+       
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
  </ol>
 </nav>
 
@@ -286,11 +476,80 @@
 
 
 <ul class="list-navigation">
-  <li><a href="/components.html" class="nav-heading" id="components-list">All components</a>
-  <ul>
+  <li><a href="/components.html" class="nav-heading landing" id="components-list">All components</a></li>
   				
-      </ul>
-  </li>
+      
+          <li><a href="/components/accordion.html" >Accordion</a></li>
+       
+      
+      
+          <li><a href="/components/alert.html" >Alert</a></li>
+       
+      
+      
+          <li><a href="/components/blockquote.html" >Blockquote</a></li>
+       
+      
+      
+          <li><a href="/components/breadcrumb.html" >Breadcrumb</a></li>
+       
+      
+      
+          <li><a href="/components/button.html" >Button</a></li>
+       
+      
+      
+          <li><a href="/components/countdown-timer.html" >Countdown timer</a></li>
+       
+      
+      
+          <li><a href="/components/form-elements.html" >Form elements</a></li>
+       
+      
+      
+          <li><a href="/components/horizontal-separator.html" >Horizontal separator</a></li>
+       
+      
+      
+          <li><a href="/components/lists.html" >Lists</a></li>
+       
+      
+      
+          <li><a href="/components/modal.html"  aria-current="page"  class="active" >Modal</a></li>
+       
+      
+      
+          <li><a href="/components/number-counter.html" >Number counter</a></li>
+       
+      
+      
+          <li><a href="/components/page-navigation.html" >Page navigation</a></li>
+       
+      
+      
+          <li><a href="/components/parallax.html" >Parallax</a></li>
+       
+      
+      
+          <li><a href="/components/progress-bar.html" >Progress bar</a></li>
+       
+      
+      
+          <li><a href="/components/side-navigation.html" >Side navigation</a></li>
+       
+      
+      
+          <li><a href="/components/social-media-icons.html" >Social media icons</a></li>
+       
+      
+      
+          <li><a href="/components/table.html" >Table</a></li>
+       
+      
+      
+          <li><a href="/components/tabs.html" >Tabs</a></li>
+       
+      
  </ul>
 
 
@@ -304,6 +563,10 @@
 
 <h1 class="mt-lg-0 m-b-0">Modal</h1>
 <p class="subtitle">Other names: popup window, overlay, dialog</p>
+
+
+<nav class="page-navigation"></nav>
+
 
 <p>A modal displays content in a temporary window that appears over the current page. </p>
 <p>Modals require an interaction (acknowledge, submit, close) from the visitor before they can return to the content
@@ -322,15 +585,23 @@
  <li>User feedback</li>
 </ul>
 
-<h2 id="Sample">Sample</h2>
+<h2>How it works</h2>
+<p>To trigger the modal, you'll need to include a link or a button that will trigger the modal. The trigger button
+ element has two custom data attributes: <code>data-bs-toggle</code> and <code>data-bs-target</code>. The
+ toggle attribute tells framework what to do and the target tells framework which element to open. So,
+ whenever a link button that is clicked, a modal with an ID specified in the <code>data-bs-target</code> attribute will
+ appear.
+
+</p>
+<h2>Sample</h2>
 
 <!--TABS-->
 <div class="tab-group responsive">
  <ul id="tabs1" class="nav nav-tabs" role="tablist">
-  <li class="nav-item">
+  <li class="nav-item" role="presentation">
    <a id="tab-example1" href="#pane-example1" class="nav-link active" data-bs-toggle="tab" role="tab">Example</a>
   </li>
-  <li class="nav-item">
+  <li class="nav-item" role="presentation">
    <a id="tab-html1" href="#pane-html1" class="nav-link" data-bs-toggle="tab" role="tab">Source code</a>
   </li>
 
@@ -370,6 +641,11 @@
    </div>
    <div id="collapse-html1" class="collapse" role="tabpanel" aria-labelledby="heading-html1">
     <div class="card-body">
+     <h3 class="h4 m-t-0">Modal trigger button</h3>
+     <pre><code><button type="button" class="btn btn-default btn-lg m-t-lg" data-bs-toggle="modal"
+      data-bs-target="#news-headlines">Open modal</button></code></pre>
+
+     <h3 class="h4">Modal</h3>
      <pre style="max-height: 300px;"><code><div class="modal fade" id="modal" role="dialog" tabindex="-1">
  <div class="modal-dialog modal-lg">
   <div class="modal-content">
@@ -397,7 +673,7 @@
 </div>
 <!--END TABS-->
 
-<h2 id="Usage">Usage</h2>
+<h2>Usage</h2>
 <h3>When and how to use it </h3>
 <p>Modals interrupt your visitor. Use them sparingly and only when the content or interaction is critical to your
  visitors’ success. </p>
@@ -412,7 +688,7 @@
 
 
 
-<h2 id="Accessibility">Accessibility</h2>
+<h2>Accessibility</h2>
 <h3 class="m-t">Standard accessibility review</h3>
 <p>Each time a new component version is published:</p>
 <ul>
@@ -455,12 +731,12 @@
  <div class="container">
   <div class="row">
    <div class="col-md-4">
-    <h3 class="h4 w-100 brd-bottom brd-highlight p-b">State Web Template</h3>
+    <div class="h4 w-100 brd-bottom brd-highlight p-b" role="heading" aria-level="2">State Web Template</div>
     <a href="/about.html" class="d-block no-underline m-y font-size-16">About</a>
     <a href="/contact-us.html" class="d-block no-underline m-y font-size-16">Contact us</a>
    </div>
    <div class="col-md-4">
-    <h3 class="h4 w-100 brd-bottom  brd-highlight p-b">Related websites</h3>
+    <div class="h4 w-100 brd-bottom  brd-highlight p-b" role="heading" aria-level="2">Related websites</div>
     <a href="https://webstandards.ca.gov" class="d-block no-underline m-y font-size-16">State Web Standards</a>
     <a href="https://designsystem.webstandards.ca.gov" class="d-block no-underline m-y font-size-16">California Design
      System</a>
@@ -468,7 +744,7 @@
      class="d-block no-underline m-y font-size-16">State Web Template GitHub</a>
    </div>
    <div class="col-md-4">
-    <h3 class="h4 w-100 brd-bottom brd-highlight p-b">Resources</h3>
+    <div class="h4 w-100 brd-bottom brd-highlight p-b" role="heading" aria-level="2">Resources</div>
     <a href="https://designsystem.webstandards.ca.gov/style/content"
      class="d-block no-underline m-y font-size-16">Content style
      guide</a>

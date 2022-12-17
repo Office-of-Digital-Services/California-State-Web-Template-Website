@@ -608,8 +608,8 @@ nav-item-search:focus .first-level-link > span[class^=ca-gov-icon] {
    /source/scss/colortheme/cs-media.scss
 ----------------------------------------- */
 figure {
-  background-color: #E1ECF7;
-  border-color: #c7d9ea;
+  background-color: #fff;
+  border-color: #d4d4d7;
 }
 
 /* -----------------------------------------
@@ -3230,14 +3230,13 @@ a.sidenav.active:before {
    /source/scss/colortheme/cs-accordion-sidenav.scss
 ----------------------------------------- */
 cagov-accordion.sidenav details summary {
-  color: #4a4958;
+  color: #5e5e6a;
 }
 cagov-accordion.sidenav details summary:hover, cagov-accordion.sidenav details summary:focus {
   color: #000;
 }
 cagov-accordion.sidenav details summary.active {
-  font-weight: 700;
-  color: #4a4958 !important;
+  color: #5e5e6a !important;
 }
 cagov-accordion.sidenav details summary.active:hover, cagov-accordion.sidenav details summary.active:focus {
   color: #000 !important;
@@ -3292,6 +3291,146 @@ cagov-accordion.sidenav details summary.active:before {
 }
 .side-nav.section-understated .accordion .accordion__heading.active .accordion__trigger:hover, .side-nav.section-understated .accordion .accordion__heading.active .accordion__trigger:focus {
   background-color: #0e2337 !important;
+}
+
+/* -----------------------------------------
+   ALERT
+   /source/scss/colortheme/cs-alert.scss
+----------------------------------------- */
+.alert-banner {
+  background-color: #730000;
+  color: #fff;
+}
+.alert-banner a:not(.btn), .alert-banner .close {
+  color: #fff;
+}
+.alert-banner a:not(.btn):focus, .alert-banner a:not(.btn):hover, .alert-banner .close:focus, .alert-banner .close:hover {
+  color: #7bb0da;
+}
+
+.alert-warning {
+  color: #8a6d3b;
+  background-color: #fcf8e3;
+}
+.alert-warning a:not(.btn), .alert-warning .close {
+  color: #8a6d3b;
+}
+.alert-warning a:not(.btn):focus, .alert-warning a:not(.btn):hover, .alert-warning .close:focus, .alert-warning .close:hover {
+  color: #715930;
+}
+
+.alert-info {
+  color: #31708f;
+  background-color: #d9edf7;
+}
+.alert-info a:not(.btn), .alert-info .close {
+  color: #31708f;
+}
+.alert-info a:not(.btn):focus, .alert-info a:not(.btn):hover, .alert-info .close:focus, .alert-info .close:hover {
+  color: #1f465a;
+}
+
+.alert-danger {
+  color: #a94442;
+  background-color: #f2dede;
+}
+.alert-danger a:not(.btn), .alert-danger .close {
+  color: #a94442;
+}
+.alert-danger a:not(.btn):focus, .alert-danger a:not(.btn):hover, .alert-danger .close:focus, .alert-danger .close:hover {
+  color: #762f2e;
+}
+
+.alert-success {
+  color: #3c763d;
+  background-color: #dff0d8;
+}
+.alert-success a:not(.btn), .alert-success .close {
+  color: #3c763d;
+}
+.alert-success a:not(.btn):focus, .alert-success a:not(.btn):hover, .alert-success .close:focus, .alert-success .close:hover {
+  color: #244725;
+}
+
+.alert-severe {
+  color: #4a4958 !important;
+  background-color: #7bb0da;
+}
+.alert-severe a:not(.btn), .alert-severe .close {
+  color: #4a4958 !important;
+}
+.alert-severe a:not(.btn):focus, .alert-severe a:not(.btn):hover, .alert-severe .close:focus, .alert-severe .close:hover {
+  color: #000 !important;
+}
+
+/* -----------------------------------------
+   ALERT
+   /source/scss/colortheme/cs-alert.scss
+----------------------------------------- */
+.alert-banner {
+  background-color: #730000;
+  color: #fff;
+}
+.alert-banner a:not(.btn), .alert-banner .close {
+  color: #fff;
+}
+.alert-banner a:not(.btn):focus, .alert-banner a:not(.btn):hover, .alert-banner .close:focus, .alert-banner .close:hover {
+  color: #7bb0da;
+}
+
+.alert-warning {
+  color: #8a6d3b;
+  background-color: #fcf8e3;
+}
+.alert-warning a:not(.btn), .alert-warning .close {
+  color: #8a6d3b;
+}
+.alert-warning a:not(.btn):focus, .alert-warning a:not(.btn):hover, .alert-warning .close:focus, .alert-warning .close:hover {
+  color: #715930;
+}
+
+.alert-info {
+  color: #31708f;
+  background-color: #d9edf7;
+}
+.alert-info a:not(.btn), .alert-info .close {
+  color: #31708f;
+}
+.alert-info a:not(.btn):focus, .alert-info a:not(.btn):hover, .alert-info .close:focus, .alert-info .close:hover {
+  color: #1f465a;
+}
+
+.alert-danger {
+  color: #a94442;
+  background-color: #f2dede;
+}
+.alert-danger a:not(.btn), .alert-danger .close {
+  color: #a94442;
+}
+.alert-danger a:not(.btn):focus, .alert-danger a:not(.btn):hover, .alert-danger .close:focus, .alert-danger .close:hover {
+  color: #762f2e;
+}
+
+.alert-success {
+  color: #3c763d;
+  background-color: #dff0d8;
+}
+.alert-success a:not(.btn), .alert-success .close {
+  color: #3c763d;
+}
+.alert-success a:not(.btn):focus, .alert-success a:not(.btn):hover, .alert-success .close:focus, .alert-success .close:hover {
+  color: #244725;
+}
+
+.alert-severe {
+  color: #4a4958 !important;
+  background-color: #7bb0da;
+}
+.alert-severe a:not(.btn), .alert-severe .close {
+  color: #4a4958 !important;
+}
+.alert-severe a:not(.btn):focus, .alert-severe a:not(.btn):hover, .alert-severe .close:focus, .alert-severe .close:hover {
+  color: #000 !important;
 }
 
 /* -----------------------------------------

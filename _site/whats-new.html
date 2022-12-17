@@ -17,6 +17,8 @@
 		<link rel="stylesheet" href="/css/colortheme-oceanside.min.css">
 
 
+
+
 <link rel="apple-touch-icon-precomposed" sizes="100x100" href="/images/apple-touch-icon-precomposed.png">
 <link rel="icon" sizes="192x192" href="/images/apple-touch-icon-192x192.png">
 <link rel="apple-touch-icon-precomposed" sizes="180x180" href="/images/apple-touch-icon-180x180.png">
@@ -91,7 +93,7 @@
  <div class="container">
   <span class="alert-level border brd-s1 px-3 m-r-md">BETA</span><span class="alert-text text-1rem">We'd love your
    feedback
-   to make the template better. You have from November 4 to November 11. </span>
+   to make the template better.</span>
   <a href="https://airtable.com/shro9V6ry2Cf4mpgG" class="btn btn-default btn-xs bg-s1 pos-rel m-l">Send
    feedback</a>
  </div>
@@ -213,7 +215,7 @@
       </div>
       <!-- navigation types -->
             
-		          <nav id="navigation" class="main-navigation dropdown">
+		          <nav id="navigation" class="main-navigation dropdown" aria-label="Main navigation">
  <ul id="nav_list" class="top-level-nav">
   <li class="nav-item">
        
@@ -275,6 +277,189 @@
  <ol class="breadcrumb">
   <li><a href="../index.html" title="Home page">Home</a></li>
    
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+      
+      <li>What&#39;s new</li>
+       
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
  </ol>
 </nav>
 
@@ -283,18 +468,21 @@
 
 <div class="row">
  <div class="col-md-3">
-  <nav aria-labelledby="page-navigation-label" class="side-navigation sticky-6 overflow-auto">
+  <nav aria-labelledby="side-navigation-label" class="side-navigation sticky-6 overflow-auto">
+   <span class="sr-only" id="side-navigation-label">Side navigation</span>
    <ul class="list-navigation">
-    <li><a href="/template-updates.html" class="active" id="page-navigation-label">What's new in V6</a>
-     <ul>
-      <li><a href="#Patterns">Patterns</a></li>
-      <li><a href="#Code">Code</a></li>
-      <li><a href="#Navigation">Navigation</a></li>
-      <li><a href="#Visual-design">Visual design</a></li>
-      <li><a href="#Components">Components</a></li>
-      <li><a href="#User-experience">User experience</a></li>
-      <li><a href="#Brand-new-content">Brand new content</a></li>
-     </ul>
+    <li>
+     <a href="/get-started.html" class="landing">Get started</a>
+    </li>
+
+    <li>
+     <a href="/whats-new.html" class="active">What's new in V6</a>
+    </li>
+    <li>
+     <a href="/download-and-setup.html">Download and setup</a>
+    </li>
+    <li>
+     <a href="/get-started/css-classes-shortcuts/">CSS classes shortcuts</a>
     </li>
    </ul>
   </nav>
@@ -302,15 +490,18 @@
  <div class="col-md-9 p-b-lg">
 
   <h1 class="mt-lg-0">What's new in V6</h1>
-  <p class="lead">Version 6 of the State Web Template has a new look and feel. With improvements that align with the
+
+  <nav class="page-navigation"></nav>
+
+  <p>Version 6 of the State Web Template has a new look and feel. With improvements that align with the
    <a href="https://designsystem.webstandards.ca.gov/">California Design System</a>, V6 sets a modern digital standard.
   </p>
-  <h2 id="Patterns">Patterns</h2>
+  <h2>Patterns</h2>
   <p>Content patterns are a brand new addition to the State Web Template. Patterns are reusable combinations of
    components that solve common user problems. These best practice solutions help users achieve their goals and help
    ensure consistency across experiences.</p>
 
-  <h2 id="Code">Code</h2>
+  <h2>Code</h2>
   <p>The template code was updated to modernize your site's structure and framework. These updates include:</p>
   <ul>
    <li>Rebuilding the framework to use eleventy site generation.</li>
@@ -318,19 +509,19 @@
    <li>Using json files and eleventy logic to generate side navigation and breadcrumbs.</li>
    <li>Separating the sample website from the core code base allowing for a quick and easy start of a new web project.
    </li>
-   <li>Enabled site to render markdown files in html</li>
+   <li>Enabled sites to render markdown files in HTML.</li>
   </ul>
 
-  <h2 id="Navigation">Navigation</h2>
+  <h2>Navigation</h2>
   <p>With better wayfinding and new side navigation, developing user-friendly websites is easier than ever. Some of
    these improvements include:</p>
   <ul>
    <li>Active page highlight in the <a href="/structure/site-navigation.html">site navigation</a>.</li>
-   <li>Robust new side navigation, with more enhancements planned.</li>
-   <li>An improved <a href="/compoents/breadcrumb.html">breadcrumb component</a>.</li>
+   <li>Robust new <a href="/components/side-navigation.html">side navigation</a>, with more enhancements planned.</li>
+   <li>An improved <a href="/components/breadcrumb.html">breadcrumb component</a>.</li>
   </ul>
 
-  <h2 id="Visual-design">Visual design</h2>
+  <h2>Visual design</h2>
   <p>The template, website, and most components have been redesigned to:</p>
   <ul>
    <li>Visually align the <a href="/structure.html">structure</a>, <a
@@ -341,7 +532,7 @@
    <li>Added new icons to the icons font library (copy, cut, paste, save, and quotation mark).</li>
   </ul>
 
-  <h2 id="Components">Components</h2>
+  <h2>Components</h2>
   <p>We improved the overall design and functionality of all our components.</p>
   <p>Components in the V6 release:</p>
   <ul>
@@ -350,18 +541,17 @@
    <li>Improve blockquote, tabs, and accordion components.</li>
   </ul>
 
-  <h2 id="User-experience">User experience</h2>
+  <h2>User experience</h2>
   <p>V6 includes new page layouts and features to help you find and use the template content you need. Some user
    experience improvements include:</p>
   <ul>
    <li>A dynamic icon search feature and enhanced icon navigation.</li>
    <li>A sticky side menu to simplify browsing and reduce scrolling.</li>
-   <li>Forms to request new components, patterns, and icons.</li>
-   <li>Collaboration channels so you can provide feedback, report bugs, and request a new component, pattern, or icon.
+   <li>Collaboration channels so you can provide feedback and report bugs.
    </li>
   </ul>
 
-  <h2 id="Brand-new-content">Brand new content</h2>
+  <h2>Brand new content</h2>
   <p>The website content was completely rewritten and expanded, with a focus on usability and plain language. These
    updates include:</p>
   <ul>
@@ -387,12 +577,12 @@
  <div class="container">
   <div class="row">
    <div class="col-md-4">
-    <h3 class="h4 w-100 brd-bottom brd-highlight p-b">State Web Template</h3>
+    <div class="h4 w-100 brd-bottom brd-highlight p-b" role="heading" aria-level="2">State Web Template</div>
     <a href="/about.html" class="d-block no-underline m-y font-size-16">About</a>
     <a href="/contact-us.html" class="d-block no-underline m-y font-size-16">Contact us</a>
    </div>
    <div class="col-md-4">
-    <h3 class="h4 w-100 brd-bottom  brd-highlight p-b">Related websites</h3>
+    <div class="h4 w-100 brd-bottom  brd-highlight p-b" role="heading" aria-level="2">Related websites</div>
     <a href="https://webstandards.ca.gov" class="d-block no-underline m-y font-size-16">State Web Standards</a>
     <a href="https://designsystem.webstandards.ca.gov" class="d-block no-underline m-y font-size-16">California Design
      System</a>
@@ -400,7 +590,7 @@
      class="d-block no-underline m-y font-size-16">State Web Template GitHub</a>
    </div>
    <div class="col-md-4">
-    <h3 class="h4 w-100 brd-bottom brd-highlight p-b">Resources</h3>
+    <div class="h4 w-100 brd-bottom brd-highlight p-b" role="heading" aria-level="2">Resources</div>
     <a href="https://designsystem.webstandards.ca.gov/style/content"
      class="d-block no-underline m-y font-size-16">Content style
      guide</a>

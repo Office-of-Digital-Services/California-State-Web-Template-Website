@@ -17,6 +17,8 @@
 		<link rel="stylesheet" href="/css/colortheme-oceanside.min.css">
 
 
+
+
 <link rel="apple-touch-icon-precomposed" sizes="100x100" href="/images/apple-touch-icon-precomposed.png">
 <link rel="icon" sizes="192x192" href="/images/apple-touch-icon-192x192.png">
 <link rel="apple-touch-icon-precomposed" sizes="180x180" href="/images/apple-touch-icon-180x180.png">
@@ -91,7 +93,7 @@
  <div class="container">
   <span class="alert-level border brd-s1 px-3 m-r-md">BETA</span><span class="alert-text text-1rem">We'd love your
    feedback
-   to make the template better. You have from November 4 to November 11. </span>
+   to make the template better.</span>
   <a href="https://airtable.com/shro9V6ry2Cf4mpgG" class="btn btn-default btn-xs bg-s1 pos-rel m-l">Send
    feedback</a>
  </div>
@@ -213,7 +215,7 @@
       </div>
       <!-- navigation types -->
             
-		          <nav id="navigation" class="main-navigation dropdown">
+		          <nav id="navigation" class="main-navigation dropdown" aria-label="Main navigation">
  <ul id="nav_list" class="top-level-nav">
   <li class="nav-item">
        
@@ -275,6 +277,196 @@
  <ol class="breadcrumb">
   <li><a href="../index.html" title="Home page">Home</a></li>
    
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+      
+      
+     <li><a href="/get-started.html" title="Get started landing page">Get started</a></li>
+      
+        
+         <li><a href="/get-started/css-classes-shortcuts/" title="CSS classes shortcuts landing page">CSS classes shortcuts</a></li>
+        
+       
+      <li>Text accent colors</li>
+       
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
  </ol>
 </nav>
 
@@ -283,18 +475,22 @@
   <!-- Side navigation -->
   <nav aria-labelledby="color-schemes-list" class="side-navigation sticky-6">
    <ul class="list-navigation">
-    <li><a href="/get-started/css-classes-shortcuts/" id="color-schemes-list">CSS classes shortcuts</a>
-     <ul>
-      <li><a href="/get-started/css-classes-shortcuts/utility-css-classes.html">Utility CSS classes</a></li>
-      <li><a href="/get-started/css-classes-shortcuts/gradient-backgrounds.html">Gradient backgrounds</a></li>
-      <li><a href="/get-started/css-classes-shortcuts/spacing.html">Spacing</a></li>
-      <li><a href="/get-started/css-classes-shortcuts/text-accent-colors.html" class="active">Text accent colors</a>
-       <ul>
-        <li><a href="#Accent-colors">Accent colors</a></li>
-        <li><a href="#Text-highlight">Text highlight</a></li>
-       </ul>
-      </li>
-     </ul>
+    <li>
+     <a class="landing back" href="/get-started/css-classes-shortcuts/" id="color-schemes-list">CSS classes
+      shortcuts</a>
+    </li>
+    <li>
+     <a href="/get-started/css-classes-shortcuts/utility-css-classes.html">Utility CSS classes</a>
+    </li>
+    <li>
+     <a href="/get-started/css-classes-shortcuts/spacing.html">Spacing</a>
+    </li>
+    <li>
+     <a href="/get-started/css-classes-shortcuts/gradient-backgrounds.html">Gradient backgrounds</a>
+    </li>
+    <li>
+     <a href="/get-started/css-classes-shortcuts/text-accent-colors.html" class="active">Text accent colors</a>
+    </li>
     </li>
    </ul>
   </nav>
@@ -302,24 +498,27 @@
 
  <div class="col-md-9 p-b-lg">
   <h1 class="mt-lg-0">Text accent colors</h1>
-  <p>Change text colors with a handful of emphasis utility classes. It is best to exercise
-   restraint when using these classes on general body copy as color contrast may be
-   insufficient for the visually impaired.</p>
-  <h2 id="Accent-colors">Accent colors</h2>
 
+  <nav class="page-navigation"></nav>
+
+  <p>Avoid changing text color, especially on regular content. If needed, you can change text color with these classes.
+   This
+   may not have enough color contrast and may not be accessible. If you change the text color, check to make sure there
+   is
+   enough <a href="https://accessibleweb.com/color-contrast-checker/">color contrast</a>.
+  </p>
+  <h2>Accent colors</h2>
 
   <!--TABS-->
   <div class="tab-group responsive">
    <ul id="tabs1" class="nav nav-tabs" role="tablist">
-    <li class="nav-item">
+    <li class="nav-item" role="presentation">
      <a id="tab-example1" href="#pane-example1" class="nav-link active" data-bs-toggle="tab" role="tab">Example</a>
     </li>
-    <li class="nav-item">
+    <li class="nav-item" role="presentation">
      <a id="tab-html1" href="#pane-html1" class="nav-link" data-bs-toggle="tab" role="tab">Source code</a>
     </li>
-
    </ul>
-
 
    <div id="tab-content" class="tab-content">
     <!--Examples-->
@@ -332,7 +531,8 @@
      </div>
      <div id="collapse-example1" class="collapse show" role="tabpanel" aria-labelledby="heading-example1">
       <div class="p-a-md">
-       <p class="text-accent1">Accent Text 1</p>
+       <!-- Accent Text Styles -->
+<p class="text-accent1">Accent Text 1</p>
 <p class="text-accent2">Accent Text 2</p>
 <p class="text-accent3">Accent Text 3</p>
 <p class="text-accent4">Accent Text 4</p>
@@ -341,6 +541,7 @@
 <p class="text-accent7">Accent Text 7</p>
 <p class="text-accent8">Accent Text 8</p>
 <p class="text-accent9 bg-dark">Accent Text 9</p>
+
 <!-- Color Scheme Styles -->
 <p class="text-accent-p1 bg-dark">Accent Text Primary 1</p>
 <p class="text-accent-p2">Accent Text Primary 2</p>
@@ -348,6 +549,7 @@
 <p class="text-accent-s1 bg-dark">Accent Text Secondary 1</p>
 <p class="text-accent-s2 bg-dark">Accent Text Secondary 2</p>
 <p class="text-accent-s3 bg-dark">Accent Text Secondary 3</p>
+
 <!-- Additional Helper Styles -->
 <p class="text-muted">Muted Text</p>
 <p class="text-primary">Primary Text</p>
@@ -355,12 +557,9 @@
 <p class="text-info">Info Text</p>
 <p class="text-warning bg-dark">Warning Text</p>
 <p class="text-danger">Danger Text</p>
-<!-- -->
       </div>
      </div>
     </div>
-
-
 
     <!--HTML-->
     <div id="pane-html1" class="card tab-pane fade" role="tabpanel" aria-labelledby="tab-html1">
@@ -372,7 +571,8 @@
      </div>
      <div id="collapse-html1" class="collapse" role="tabpanel" aria-labelledby="heading-html1">
       <div class="card-body">
-       <pre style="max-height: 300px;"><code><p class="text-accent1">Accent Text 1</p>
+       <pre style="max-height: 300px;"><code><!-- Accent Text Styles -->
+<p class="text-accent1">Accent Text 1</p>
 <p class="text-accent2">Accent Text 2</p>
 <p class="text-accent3">Accent Text 3</p>
 <p class="text-accent4">Accent Text 4</p>
@@ -381,6 +581,7 @@
 <p class="text-accent7">Accent Text 7</p>
 <p class="text-accent8">Accent Text 8</p>
 <p class="text-accent9 bg-dark">Accent Text 9</p>
+
 <!-- Color Scheme Styles -->
 <p class="text-accent-p1 bg-dark">Accent Text Primary 1</p>
 <p class="text-accent-p2">Accent Text Primary 2</p>
@@ -388,112 +589,82 @@
 <p class="text-accent-s1 bg-dark">Accent Text Secondary 1</p>
 <p class="text-accent-s2 bg-dark">Accent Text Secondary 2</p>
 <p class="text-accent-s3 bg-dark">Accent Text Secondary 3</p>
+
 <!-- Additional Helper Styles -->
 <p class="text-muted">Muted Text</p>
 <p class="text-primary">Primary Text</p>
 <p class="text-success">Success Text</p>
 <p class="text-info">Info Text</p>
 <p class="text-warning bg-dark">Warning Text</p>
-<p class="text-danger">Danger Text</p>
-<!-- --></code>
-    </pre>
+<p class="text-danger">Danger Text</p></code>
+                     </pre>
       </div>
      </div>
     </div>
-
 
    </div>
   </div>
   <!--END TABS-->
 
-
-  <h2 id="Text-highlight">Text highlight</h2>
-  <p>Use <code>text-highlight</code> class to highlight a word or text portion. Also, to specify the text
-   highlight's
-   color
-   use following classes: </p>
+  <h2>Text highlight</h2>
+  <p>Use this class to highlight a word or text portion.</p>
 
   <!--TABS-->
   <div class="tab-group responsive">
    <ul id="tabs4" class="nav nav-tabs" role="tablist">
-    <li class="nav-item">
-     <a id="tab-example4" href="#pane-example4" class="nav-link active" data-bs-toggle="tab" role="tab">Example</a>
+    <li class="nav-item" role="presentation">
+     <a id="tab-example2" href="#pane-example2" class="nav-link active" data-bs-toggle="tab" role="tab">Example</a>
     </li>
-    <li class="nav-item">
-     <a id="tab-html4" href="#pane-html4" class="nav-link" data-bs-toggle="tab" role="tab">Source code</a>
+    <li class="nav-item" role="presentation">
+     <a id="tab-html2" href="#pane-html2" class="nav-link" data-bs-toggle="tab" role="tab">Source code</a>
     </li>
 
    </ul>
 
-
    <div id="tab-content" class="tab-content">
     <!--Examples-->
-    <div id="pane-example4" class="card tab-pane fade show active" role="tabpanel" aria-labelledby="tab-example4">
-     <div class="card-header" id="heading-example4">
-      <a data-bs-toggle="collapse" href="#collapse-example4" data-parent="#tab-content" aria-expanded="true"
-       aria-controls="collapse-example4" data-hash="#pane-example4" title="Example tab header">
+    <div id="pane-example2" class="card tab-pane fade show active" role="tabpanel" aria-labelledby="tab-example2">
+     <div class="card-header" id="heading-example2">
+      <a data-bs-toggle="collapse" href="#collapse-example2" data-parent="#tab-content" aria-expanded="true"
+       aria-controls="collapse-example2" data-hash="#pane-example2" title="Example tab header">
        Example
       </a>
      </div>
-     <div id="collapse-example4" class="collapse show" role="tabpanel" aria-labelledby="heading-example4">
+     <div id="collapse-example2" class="collapse show" role="tabpanel" aria-labelledby="heading-example2">
       <div class="p-a-md">
 
-       <p><span class="text-highlight">Note:</span> Path to the include will be relative to the directory
- of
- your page.</p>
-<p><span class="text-highlight-primary">Note:</span> Path to the include will be relative to the directory
- of
- your page.</p>
-<p><span class="text-highlight-warning">Note:</span> Path to the include will be relative to the
- directory of
- your page.</p>
-<p><span class="text-highlight-dark">Note:</span> Path to the include will be relative to the directory
- of
- your page.</p>
-
+       <p><span class="text-highlight">Note:</span> Path to the include will be relative to the directory of your page.</p>
+<p><span class="text-highlight-primary">Note:</span> Path to the include will be relative to the directory of your page.</p>
+<p><span class="text-highlight-warning">Note:</span> Path to the include will be relative to the directory of your page.</p>
+<p><span class="text-highlight-dark">Note:</span> Path to the include will be relative to the directory of your page.</p>
 
       </div>
      </div>
     </div>
 
-
-
     <!--HTML-->
-    <div id="pane-html4" class="card tab-pane fade" role="tabpanel" aria-labelledby="tab-html4">
-     <div class="card-header" id="heading-html4">
-      <a class="collapsed" data-bs-toggle="collapse" href="#collapse-html4" data-parent="#tab-content"
-       aria-expanded="false" aria-controls="collapse-html4" data-hash="#pane-html4" title="HTML Source code tab header">
+    <div id="pane-html2" class="card tab-pane fade" role="tabpanel" aria-labelledby="tab-html2">
+     <div class="card-header" id="heading-html2">
+      <a class="collapsed" data-bs-toggle="collapse" href="#collapse-html2" data-parent="#tab-content"
+       aria-expanded="false" aria-controls="collapse-html2" data-hash="#pane-html2" title="HTML Source code tab header">
        Source code
       </a>
      </div>
-     <div id="collapse-html4" class="collapse" role="tabpanel" aria-labelledby="heading-html4">
+     <div id="collapse-html2" class="collapse" role="tabpanel" aria-labelledby="heading-html2">
       <div class="card-body">
-       <pre style="max-height: 300px;"><code><p><span class="text-highlight">Note:</span> Path to the include will be relative to the directory
- of
- your page.</p>
-<p><span class="text-highlight-primary">Note:</span> Path to the include will be relative to the directory
- of
- your page.</p>
-<p><span class="text-highlight-warning">Note:</span> Path to the include will be relative to the
- directory of
- your page.</p>
-<p><span class="text-highlight-dark">Note:</span> Path to the include will be relative to the directory
- of
- your page.</p></code>
+       <pre style="max-height: 300px;"><code><p><span class="text-highlight">Note:</span> Path to the include will be relative to the directory of your page.</p>
+<p><span class="text-highlight-primary">Note:</span> Path to the include will be relative to the directory of your page.</p>
+<p><span class="text-highlight-warning">Note:</span> Path to the include will be relative to the directory of your page.</p>
+<p><span class="text-highlight-dark">Note:</span> Path to the include will be relative to the directory of your page.</p></code>
    </pre>
 
       </div>
      </div>
     </div>
 
-
    </div>
   </div>
   <!--END TABS-->
-
-
-
-
 
  </div>
 </div>
@@ -506,12 +677,12 @@
  <div class="container">
   <div class="row">
    <div class="col-md-4">
-    <h3 class="h4 w-100 brd-bottom brd-highlight p-b">State Web Template</h3>
+    <div class="h4 w-100 brd-bottom brd-highlight p-b" role="heading" aria-level="2">State Web Template</div>
     <a href="/about.html" class="d-block no-underline m-y font-size-16">About</a>
     <a href="/contact-us.html" class="d-block no-underline m-y font-size-16">Contact us</a>
    </div>
    <div class="col-md-4">
-    <h3 class="h4 w-100 brd-bottom  brd-highlight p-b">Related websites</h3>
+    <div class="h4 w-100 brd-bottom  brd-highlight p-b" role="heading" aria-level="2">Related websites</div>
     <a href="https://webstandards.ca.gov" class="d-block no-underline m-y font-size-16">State Web Standards</a>
     <a href="https://designsystem.webstandards.ca.gov" class="d-block no-underline m-y font-size-16">California Design
      System</a>
@@ -519,7 +690,7 @@
      class="d-block no-underline m-y font-size-16">State Web Template GitHub</a>
    </div>
    <div class="col-md-4">
-    <h3 class="h4 w-100 brd-bottom brd-highlight p-b">Resources</h3>
+    <div class="h4 w-100 brd-bottom brd-highlight p-b" role="heading" aria-level="2">Resources</div>
     <a href="https://designsystem.webstandards.ca.gov/style/content"
      class="d-block no-underline m-y font-size-16">Content style
      guide</a>

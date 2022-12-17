@@ -17,6 +17,8 @@
 		<link rel="stylesheet" href="/css/colortheme-oceanside.min.css">
 
 
+
+
 <link rel="apple-touch-icon-precomposed" sizes="100x100" href="/images/apple-touch-icon-precomposed.png">
 <link rel="icon" sizes="192x192" href="/images/apple-touch-icon-192x192.png">
 <link rel="apple-touch-icon-precomposed" sizes="180x180" href="/images/apple-touch-icon-180x180.png">
@@ -91,7 +93,7 @@
  <div class="container">
   <span class="alert-level border brd-s1 px-3 m-r-md">BETA</span><span class="alert-text text-1rem">We'd love your
    feedback
-   to make the template better. You have from November 4 to November 11. </span>
+   to make the template better.</span>
   <a href="https://airtable.com/shro9V6ry2Cf4mpgG" class="btn btn-default btn-xs bg-s1 pos-rel m-l">Send
    feedback</a>
  </div>
@@ -213,7 +215,7 @@
       </div>
       <!-- navigation types -->
             
-		          <nav id="navigation" class="main-navigation dropdown">
+		          <nav id="navigation" class="main-navigation dropdown" aria-label="Main navigation">
  <ul id="nav_list" class="top-level-nav">
   <li class="nav-item">
        
@@ -275,6 +277,194 @@
  <ol class="breadcrumb">
   <li><a href="../index.html" title="Home page">Home</a></li>
    
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+      
+      
+     <li><a href="/structure.html" title="Structure landing page">Structure</a></li>
+      
+        
+       
+      <li>Site navigation</li>
+       
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
  </ol>
 </nav>
 
@@ -287,26 +477,14 @@
   <!-- Side navigation -->
   <nav aria-labelledby="navigation-list" class="side-navigation sticky-6">
    <ul class="list-navigation">
-    <li><a href="/structure.html" id="navigation-list">Structural elements</a>
-     <ul>
-      <li><a href="/structure/utility-header.html">Utility header</a></li>
-      <li><a href="/structure/settings-bar.html">Settings</a></li>
-      <li><a href="/structure/site-header.html">Site header</a></li>
-      <li><a href="/structure/mobile-controls.html">Mobile controls</a></li>
-      <li><a href="/structure/search.html">Search</a></li>
-      <li><a href="/structure/site-navigation.html" class="active">Site navigation</a>
-       <ul>
-        <li><a href="#Single-level-menu">Single level menu</a></li>
-        <li><a href="#Dropdown-menu">Dropdown menu</a></li>
-        <li><a href="#Megamenu">Megamenu</a></li>
-        <li><a href="#Icon-menu">Icon menu</a></li>
-        <li><a href="#Usage">Usage</a></li>
-        <li><a href="#Accessibility">Accessibility</a></li>
-       </ul>
-      </li>
-      <li><a href="/structure/footer.html">Footer</a></li>
-     </ul>
-    </li>
+    <li><a href="/structure.html" id="navigation-list" class="landing">Structure</a></li>
+    <li><a href="/structure/utility-header.html">Utility header</a></li>
+    <li><a href="/structure/settings.html">Settings</a></li>
+    <li><a href="/structure/site-header.html">Site header</a></li>
+    <li><a href="/structure/mobile-controls.html">Mobile controls</a></li>
+    <li><a href="/structure/search.html">Search</a></li>
+    <li><a href="/structure/site-navigation.html" class="active">Site navigation</a></li>
+    <li><a href="/structure/footer.html">Footer</a></li>
    </ul>
   </nav>
  </div>
@@ -315,8 +493,11 @@
  <div class="col-md-9 p-b-lg">
 
 
-  <h1 class="mt-lg-0 m-b-lg">Site navigation</h1>
-  <p class="lead">Site navigation appears at the top of every page on your site. It gives links to pages in the site,
+  <h1 class="mt-lg-0">Site navigation</h1>
+
+  <nav class="page-navigation"></nav>
+
+  <p>Site navigation appears at the top of every page on your site. It gives links to pages in the site,
    sometimes ordered by topic, task, or user type. This makes it easier for people to navigate the website.</p>
   <p>There are two options for each site navigation item:</p>
   <ul>
@@ -337,7 +518,7 @@
    expand. The links in the hamburger menu are stacked.</p>
 
 
-  <h2 id="Single-level-menu">Single level menu</h2>
+  <h2>Single level menu</h2>
   <p>This page is using the Single Level Navigation. This navigation style does not include a dropdown for sub
    navigation items.</p>
 
@@ -348,24 +529,27 @@
   <div class="tab-group responsive">
    <ul id="tabs1" class="nav nav-tabs" role="tablist">
     <li class="nav-item" role="presentation">
-     <a id="tab-example1" href="#pane-example1" class="nav-link active" data-bs-toggle="tab" role="tab">Example</a>
+     <a id="tab-example1" href="#pane-example1" class="nav-link active" data-bs-toggle="tab" role="tab"><span
+       class="sr-only">Single level menu</span> Example</a>
     </li>
     <li class="nav-item" role="presentation">
-     <a id="tab-html1" href="#pane-html1" class="nav-link" data-bs-toggle="tab" role="tab">Source code</a>
+     <a id="tab-html1" href="#pane-html1" class="nav-link" data-bs-toggle="tab" role="tab"><span class="sr-only">Single
+       level menu</span> Source code</a>
     </li>
     <li class="nav-item" role="presentation">
-     <a id="tab-include1" href="#pane-include1" class="nav-link" data-bs-toggle="tab" role="tab">Implementation
+     <a id="tab-include1" href="#pane-include1" class="nav-link" data-bs-toggle="tab" role="tab"><span
+       class="sr-only">Single level menu</span> Implementation
       notes</a>
     </li>
    </ul>
 
 
-   <div class="tab-content" role="presentation">
+   <div class="tab-content" id="tab-content1">
     <div id="pane-example1" class="card tab-pane fade show active" role="tabpanel" aria-labelledby="tab-example1">
      <div class="card-header" id="heading-example1">
       <h4 class="my-0 w-100">
-       <a data-bs-toggle="collapse" href="#collapse-home" data-parent="#tab-content" aria-expanded="true"
-        aria-controls="collapse-example1" title="Example tab header">
+       <a data-bs-toggle="collapse" href="#collapse-example1" data-parent="#tab-content1" aria-expanded="true"
+        aria-controls="collapse-example1" title="Single level menu example tab header">
         Example
        </a>
       </h4>
@@ -380,8 +564,8 @@
     <div id="pane-html1" class="card tab-pane fade" role="tabpanel" aria-labelledby="tab-html1">
      <div class="card-header" id="heading-html1">
       <h4 class="my-0 w-100">
-       <a class="collapsed" data-bs-toggle="collapse" href="#collapse-html1" data-parent="#tab-content"
-        aria-expanded="false" aria-controls="collapse-html1" title="HTML Source code tab header">
+       <a class="collapsed" data-bs-toggle="collapse" href="#collapse-html1" data-parent="#tab-content1"
+        aria-expanded="false" aria-controls="collapse-html1" title="Single level menu HTML Source code tab header">
         HTML Source code
        </a>
       </h4>
@@ -389,9 +573,32 @@
      <div id="collapse-html1" class="collapse" role="tabpanel" aria-labelledby="heading-html1">
       <div class="card-body">
        <h3 class="h4 m-t-0">HTML Source code</h3>
-       <p>Get single level navigation full HTML markup in the template's repository in
-        <code>/src/_includes/modules/nav-singlelevel.html</code> file.
-       </p>
+       <textarea class="sourcecode" aria-label="source code"
+        disabled><!-- Top Level Navigation Only -->
+<nav id="navigation" class="main-navigation singlelevel auto-highlight">
+ <ul id="nav_list" class="top-level-nav">
+  <li class="nav-item" role="presentation">
+   <a href="/getting-started.html" class="first-level-link">Getting Started</a>
+  </li>
+  <li class="nav-item" role="presentation">
+   <a href="/visual-design/color-schemes.html" class="first-level-link">Color Schemes</a>
+  </li>
+
+  <li class="nav-item" role="presentation">
+   <a href="/components.html" class="first-level-link">Components</a>
+  </li>
+  <li class="nav-item" role="presentation">
+   <a href="/patterns.html" target="_blank" class="first-level-link">Patterns</a>
+  </li>
+  <li class="nav-item" role="presentation">
+   <a href="/about.html" target="_blank" class="first-level-link">About</a>
+  </li>
+  <li class="nav-item" role="presentation">
+   <a href="/contact.html" class="first-level-link">Contact Us</a>
+  </li>
+
+ </ul>
+</nav></textarea>
       </div>
      </div>
     </div>
@@ -400,7 +607,8 @@
      <div class="card-header" id="heading-include1">
       <h4 class="my-0 w-100">
        <a class="collapsed" data-bs-toggle="collapse" href="#collapse-include1" data-parent="#tab-include1"
-        aria-expanded="false" aria-controls="collapse-include1" title="Implementation notes tab header">
+        aria-expanded="false" aria-controls="collapse-include1"
+        title="Single level menu Implementation notes tab header">
         Implementation notes</a>
       </h4>
      </div>
@@ -420,7 +628,7 @@
 
 
 
-  <h2 id="Dropdown-menu">Dropdown menu</h2>
+  <h2>Dropdown menu</h2>
   <p>Dropdown menu is using the dropdown sub navigation.</p>
 
 
@@ -428,32 +636,34 @@
   <div class="tab-group responsive">
    <ul id="tabs2" class="nav nav-tabs" role="tablist">
     <li class="nav-item" role="presentation">
-     <a id="tab-example2" href="#pane-example2" class="nav-link active" data-bs-toggle="tab" role="tab">Example</a>
+     <a id="tab-example2" href="#pane-example2" class="nav-link active" data-bs-toggle="tab" role="tab"><span
+       class="sr-only">Dropdown menu </span>Example</a>
     </li>
     <li class="nav-item" role="presentation">
-     <a id="tab-html2" href="#pane-html2" class="nav-link" data-bs-toggle="tab" role="tab">Source code</a>
+     <a id="tab-html2" href="#pane-html2" class="nav-link" data-bs-toggle="tab" role="tab"><span
+       class="sr-only">Dropdown menu </span>Source code</a>
     </li>
     <li class="nav-item" role="presentation">
-     <a id="tab-include2" href="#pane-include2" class="nav-link" data-bs-toggle="tab" role="tab">Implementation
+     <a id="tab-include2" href="#pane-include2" class="nav-link" data-bs-toggle="tab" role="tab"><span
+       class="sr-only">Dropdown menu </span>Implementation
       notes</a>
     </li>
    </ul>
 
 
-   <div class="tab-content">
+   <div class="tab-content" id="tab-content2">
     <div id="pane-example2" class="card tab-pane fade show active" role="tabpanel" aria-labelledby="tab-example2">
      <div class="card-header" id="heading-example2">
       <h4 class="my-0 w-100">
-       <a data-bs-toggle="collapse" href="#collapse-home" data-parent="#tab-content" aria-expanded="true"
-        aria-controls="collapse-example2" title="Example tab header">
+       <a data-bs-toggle="collapse" href="#collapse-example2" data-parent="#tab-content2" aria-expanded="true"
+        aria-controls="collapse-example2" title="Dropdown menu Example tab header">
         Example
        </a>
       </h4>
      </div>
      <div id="collapse-example2" class="collapse show" role="tabpanel" aria-labelledby="heading-example2">
       <div class="card-body">
-       <img src="/images/navigation-dropdown.jpg" alt="Dropdown Naviagiton"
-        class="img-fluid brd-solid-1 brd-gray-light">
+       <img src="/images/navigation-dropdown.jpg" alt="Dropdown Naviagiton" class="img-fluid">
       </div>
      </div>
     </div>
@@ -461,18 +671,121 @@
     <div id="pane-html2" class="card tab-pane fade" role="tabpanel" aria-labelledby="tab-html2">
      <div class="card-header" id="heading-html2">
       <h4 class="my-0 w-100">
-       <a class="collapsed" data-bs-toggle="collapse" href="#collapse-html2" data-parent="#tab-content"
-        aria-expanded="false" aria-controls="collapse-html2" title="HTML Source code tab header">
+       <a class="collapsed" data-bs-toggle="collapse" href="#collapse-html2" data-parent="#tab-content2"
+        aria-expanded="false" aria-controls="collapse-html2" title="Dropdown menu HTML Source code tab header">
         HTML Source code
        </a>
       </h4>
      </div>
      <div id="collapse-html2" class="collapse" role="tabpanel" aria-labelledby="heading-html2">
       <div class="card-body">
-       <h3 class="h4 m-t-0">HTML Source code</h3>
-       <p>Get single level navigation full HTML markup in the template's repository in
-        <code>/src/_includes/modules/nav-dropdown.html</code>. file.
-       </p>
+       <textarea class="sourcecode" aria-label="source code"
+        disabled><!-- Dropdown Navigation  -->
+<nav id="navigation" class="main-navigation dropdown">
+ <ul id="nav_list" class="top-level-nav">
+
+
+  <li class="nav-item" role="presentation">
+   <a href="/getting-started.html" class="first-level-link">Getting Started</a>
+   <div class="sub-nav">
+
+    <ul class="second-level-nav">
+     <li class="unit1">
+      <a href="/getting-started.html" class="second-level-link">Getting Started</a>
+     </li>
+     <li class="unit1">
+      <a href="/updates.html" class="second-level-link">Update</a>
+     </li>
+     <li class="unit1">
+      <a href="/cdn.html" class="second-level-link">CDN</a>
+     </li>
+     <li class="unit1">
+      <a href="/structure.html" class="second-level-link">Structure</a>
+     </li>
+     <li class="unit1">
+      <a href="/https://github.com/Office-of-Digital-Innovation/California-State-Template" class="second-level-link"
+       target="_blank">Download</a>
+     </li>
+    </ul>
+   </div>
+  </li>
+
+
+  <li class="nav-item" role="presentation">
+   <a href="/visual-design.html" class="first-level-link">Visual Design</a>
+   <div class="sub-nav">
+
+    <ul class="second-level-nav">
+     <li class="unit1">
+      <a href="/visual-design/typography.html" class="second-level-link">Typography</a>
+     </li>
+     <li class="unit1">
+      <a href="/visual-design/color-schemes.html" class="second-level-link">Color Schemes</a>
+     </li>
+     <li class="unit1">
+      <a href="/visual-design/icon-fonts.html" class="second-level-link">Icons</a>
+     </li>
+    </ul>
+   </div>
+  </li>
+
+
+  <li class="nav-item" role="presentation">
+   <a href="/" class="first-level-link">Components</a>
+   <div class="sub-nav">
+
+    <ul class="second-level-nav">
+     <li class="unit1">
+      <a href="/components.html" class="second-level-link">Components</a>
+     </li>
+     <li class="unit1">
+      <a href="/structure/site-navigation.html" class="second-level-link">Navigation</a>
+     </li>
+     <li class="unit1">
+      <a href="/css-shortcuts/css-units.html" class="second-level-link">CSS shortcuts</a>
+     </li>
+    </ul>
+   </div>
+
+
+
+  <li class="nav-item" role="presentation">
+   <a href="/patterns.html" class="first-level-link">Patterns</a>
+   <div class="sub-nav">
+    <ul class="second-level-nav">
+     <li class="unit1">
+      <a href="/patterns.html" class="second-level-link"><span class="ca-gov-icon-apps"
+        aria-hidden="true"></span>Content patterns</a>
+     </li>
+     <li class="unit1">
+      <a href="/structure/layouts.html" class="second-level-link"><span class="ca-gov-icon-desktop-checklist"
+        aria-hidden="true"></span>Page layouts</a>
+     </li>
+    </ul>
+   </div>
+  </li>
+
+
+
+  <li class="nav-item" role="presentation">
+   <a href="/about.html" class="first-level-link">About</a>
+   <div class="sub-nav">
+    <ul class="second-level-nav">
+     <li class="unit1">
+      <a href="/about.html" class="second-level-link"><span class="ca-gov-icon-thumb-up"
+        aria-hidden="true"></span>About</a>
+     </li>
+     <li class="unit1">
+      <a href="https://webstandards.ca.gov/" class="second-level-link"><span class="ca-gov-icon-gear"
+        aria-hidden="true"></span>Web Standards</a>
+     </li>
+    </ul>
+   </div>
+  </li>
+
+ </ul>
+</nav>
+<!-- end dropdown --></textarea>
       </div>
      </div>
     </div>
@@ -481,7 +794,7 @@
      <div class="card-header" id="heading-include2">
       <h4 class="my-0 w-100">
        <a class="collapsed" data-bs-toggle="collapse" href="#collapse-include2" data-parent="#tab-include2"
-        aria-expanded="false" aria-controls="collapse-include2" title="Implementation notes tab header">
+        aria-expanded="false" aria-controls="collapse-include2" title="Dropdown menu Implementation notes tab header">
         Implementation notes</a>
       </h4>
      </div>
@@ -500,7 +813,7 @@
 
 
 
-  <h2 id="Megamenu">Megamenu</h2>
+  <h2>Megamenu</h2>
   <p>The flex megamenu displays dropdown panels for sub navigation when the user clicks on a primary link.</p>
 
 
@@ -508,31 +821,34 @@
   <div class="tab-group responsive">
    <ul id="tabs3" class="nav nav-tabs" role="tablist">
     <li class="nav-item" role="presentation">
-     <a id="tab-example3" href="#pane-example3" class="nav-link active" data-bs-toggle="tab" role="tab">Example</a>
+     <a id="tab-example3" href="#pane-example3" class="nav-link active" data-bs-toggle="tab" role="tab"><span
+       class="sr-only">Megamenu </span>Example</a>
     </li>
     <li class="nav-item" role="presentation">
-     <a id="tab-html3" href="#pane-html3" class="nav-link" data-bs-toggle="tab" role="tab">Source code</a>
+     <a id="tab-html3" href="#pane-html3" class="nav-link" data-bs-toggle="tab" role="tab"><span
+       class="sr-only">Megamenu </span>Source code</a>
     </li>
     <li class="nav-item" role="presentation">
-     <a id="tab-include3" href="#pane-include3" class="nav-link" data-bs-toggle="tab" role="tab">Implementation
+     <a id="tab-include3" href="#pane-include3" class="nav-link" data-bs-toggle="tab" role="tab"><span
+       class="sr-only">Megamenu </span>Implementation
       notes</a>
     </li>
    </ul>
 
 
-   <div class="tab-content">
+   <div class="tab-content" id="tab-content3">
     <div id="pane-example3" class="card tab-pane fade show active" role="tabpanel" aria-labelledby="tab-example3">
      <div class="card-header" id="heading-example3">
       <h4 class="my-0 w-100">
-       <a data-bs-toggle="collapse" href="#collapse-home" data-parent="#tab-content" aria-expanded="true"
-        aria-controls="collapse-example3" title="Example tab header">
+       <a data-bs-toggle="collapse" href="#collapse-example3" data-parent="#tab-content3" aria-expanded="true"
+        aria-controls="collapse-example3" title="Megamenu Example tab header">
         Example
        </a>
       </h4>
      </div>
      <div id="collapse-example3" class="collapse show" role="tabpanel" aria-labelledby="heading-example3">
       <div class="card-body">
-       <img src="/images/navigation-flex.jpg" alt="Naviagiton with icons" class="img-fluid brd-solid-1 brd-gray-light">
+       <img src="/images/navigation-flex.jpg" alt="Naviagiton with icons" class="img-fluid">
       </div>
      </div>
     </div>
@@ -540,18 +856,156 @@
     <div id="pane-html3" class="card tab-pane fade" role="tabpanel" aria-labelledby="tab-html3">
      <div class="card-header" id="heading-html3">
       <h4 class="my-0 w-100">
-       <a class="collapsed" data-bs-toggle="collapse" href="#collapse-html3" data-parent="#tab-content"
-        aria-expanded="false" aria-controls="collapse-html3" title="HTML Source code tab header">
+       <a class="collapsed" data-bs-toggle="collapse" href="#collapse-html3" data-parent="#tab-content3"
+        aria-expanded="false" aria-controls="collapse-html3" title="Megamenu HTML Source code tab header">
         HTML Source code
        </a>
       </h4>
      </div>
      <div id="collapse-html3" class="collapse" role="tabpanel" aria-labelledby="heading-html3">
       <div class="card-body">
-       <h3 class="h4 m-t-0">HTML Source code</h3>
-       <p>Get single level navigation full HTML markup in the template's repository in
-        <code>/src/_includes/modules/nav-flex.html.</code>. file.
-       </p>
+       <textarea class="sourcecode" aria-label="source code"
+        disabled><nav id="navigation" class="main-navigation megadropdown auto-highlight">
+ <ul id="nav_list" class="top-level-nav">
+  <li class="nav-item" role="presentation">
+   <a class="first-level-link">Getting Started</a>
+   <div class="sub-nav">
+    <div class="second-level-nav flex">
+     <a href="/getting-started.html" class="second-level-link">
+      <span class="ca-gov-icon-online-services font-size-40" aria-hidden="true"></span>
+      <p class="h3 sub-nav-link">Getting Started
+       <span class="sr-only">page</span>
+      </p>
+      <p class="link-description">How to apply California State Template css, js and ssi</p>
+     </a>
+     <a href="/updates.html" class="second-level-link">
+      <span class="ca-gov-icon-file-check font-size-40" aria-hidden="true"></span>
+      <p class="h3 sub-nav-link">Update</p>
+      <p class="link-description">Update your State Template to most current version</p>
+     </a>
+     <a href="/cdn.html" class="second-level-link">
+      <span class="ca-gov-icon-globe font-size-40" aria-hidden="true"></span>
+      <p class="h3 sub-nav-link">CDN</p>
+      <p class="link-description">Load your website faster by using State Template CDN</p>
+     </a>
+    </div>
+    <div class="second-level-nav flex with-border">
+
+     <a href="/structure.html" class="second-level-link">
+      <span class="ca-gov-icon-flowchart" aria-hidden="true"></span>Structure
+      <div class="link-description">Find out more about State Template structure</div>
+     </a>
+     <a href="https://github.com/Office-of-Digital-Innovation/California-State-Template-v5" class="second-level-link"
+      target="_blank">
+      <span class="ca-gov-icon-download-cloud" aria-hidden="true"></span>Download
+      <div class="link-description">Download or clone State Template on GitHub
+      </div>
+     </a>
+    </div>
+   </div>
+  </li>
+
+  <li class="nav-item" role="presentation">
+   <a href="/visual-design.html" class="first-level-link">Visual Desing</a>
+   <div class="sub-nav">
+    <div class="second-level-nav flex">
+     <a href="/visual-design/typography.html" class="second-level-link">
+      <img class="image-icon rounded-50x m-b-md" src="/images/type.png" alt="Typography Icon">
+      <p class="h3 sub-nav-link">Typography</p>
+     </a>
+     <a href="/visual-design/color-schemes.html" class="second-level-link">
+      <img class="image-icon rounded-50x m-b-md" src="/images/color.png" alt="Color Schemes Icon">
+      <p class="h3 sub-nav-link">Color Schemes</p>
+     </a>
+     <a href="/visual-design/icon-fonts.html" class="second-level-link">
+      <img class="image-icon rounded-50x m-b-md" src="/images/icons.png" alt="Bear Icon">
+      <p class="h3 sub-nav-link">Icons</p>
+     </a>
+    </div>
+
+   </div>
+  </li>
+  <li class="nav-item" role="presentation">
+   <a href="/components.html" class="first-level-link">Components</a>
+   <div class="sub-nav">
+    <div class="second-level-nav flex">
+     <a href="/structure/site-navigation.html" class="second-level-link">
+      <img class="image-icon rounded-50x m-b-md" src="/images/sample/images/03.png" alt="Navigation Icon">
+      <p class="h3 sub-nav-link">Navigation Samples</p>
+      <p class="link-description">Main navigation types and variations examples</p>
+     </a>
+     <a href="/components.html" class="second-level-link">
+      <img class="image-icon rounded-50x m-b-md" src="/images/sample/images/features-icon.png" alt="Components Icon">
+      <p class="h3 sub-nav-link">Components</p>
+      <p class="link-description">Working web components examples with their documentation
+      </p>
+     </a>
+     <a href="/css-shortcuts/shortcuts.html" class="second-level-link">
+      <img class="image-icon rounded-50x m-b-md" src="/images/sample/images/css-icon.png" alt="CSS Icon">
+      <p class="h3 sub-nav-link">CSS Shortcuts</p>
+      <p class="link-description">State Template's custom css classes shortcuts list</p>
+     </a>
+    </div>
+
+   </div>
+  </li>
+
+  <li class="nav-item" role="presentation">
+   <a href="/patterns.html" class="first-level-link">Patterns</a>
+   <div class="sub-nav">
+    <div class="second-level-nav flex">
+     <a href="/" class="second-level-link">
+      <span class="ca-gov-icon-home" aria-hidden="true"></span>
+      <span class="h4">Homepage</span>
+      <div class="link-description">Home page layout
+      </div>
+     </a>
+     <a href="/structure/layout-page.html" class="second-level-link">
+      <span class="ca-gov-icon-loud-grid" aria-hidden="true"></span>
+      <span class="h4">Layouts</span>
+      <div class="link-description">Page layouts options
+      </div>
+     </a>
+     <a href="//serp.html?q=components" class="second-level-link" target="_blank">
+      <span class="ca-gov-icon-searching" aria-hidden="true"></span>
+      <span class="h4">Search Results</span>
+      <div class="link-description">Search directory sample page</div>
+     </a>
+    </div>
+   </div>
+  </li>
+
+  <li class="nav-item" role="presentation">
+   <a href="/about.html" class="first-level-link">About</a>
+   <div class="sub-nav">
+    <div class="second-level-nav flex with-border">
+     <a href="/about.html" class="second-level-link">
+      <div class="media-left">
+       <img class="media-object width-80 height-80" src="/sample/images/02.png" alt="About icon">
+      </div>
+      <div class="media-body">
+       <div class="title text-left">About State Template</div>
+       <div class="teaser link-description text-left">California State Template overview</div>
+      </div>
+     </a>
+     <a href="https://webstandards.ca.gov/" class="second-level-link" target="_blank">
+      <div class="media-left">
+       <img class="media-object width-80 height-80" src="/sample/images/01.png" alt="Web Standards icon">
+      </div>
+      <div class="media-body">
+       <div class="title text-left">Web Standards</div>
+       <div class="teaser link-description text-left">Web Standards and Design System for
+        California Government</div>
+      </div>
+     </a>
+
+    </div>
+
+   </div>
+  </li>
+
+ </ul>
+</nav></textarea>
       </div>
      </div>
     </div>
@@ -560,7 +1014,7 @@
      <div class="card-header" id="heading-include3">
       <h4 class="my-0 w-100">
        <a class="collapsed" data-bs-toggle="collapse" href="#collapse-include3" data-parent="#tab-include3"
-        aria-expanded="false" aria-controls="collapse-include3" title="Implementation notes tab header">
+        aria-expanded="false" aria-controls="collapse-include3" title="Megamenu Implementation notes tab header">
         Implementation notes</a>
       </h4>
      </div>
@@ -628,7 +1082,7 @@
 
 
 
-  <h2 id="Icon-menu">Icon menu</h2>
+  <h2>Icon menu</h2>
   <p>Navigation with icons usually appears to the right of the site logo. It uses icons from CAGov font library inside
    of the first level navigation items.</p>
 
@@ -637,24 +1091,27 @@
   <div class="tab-group responsive">
    <ul id="tabs4" class="nav nav-tabs" role="tablist">
     <li class="nav-item" role="presentation">
-     <a id="tab-example4" href="#pane-example4" class="nav-link active" data-bs-toggle="tab" role="tab">Example</a>
+     <a id="tab-example4" href="#pane-example4" class="nav-link active" data-bs-toggle="tab" role="tab"><span
+       class="sr-only">Icon menu </span>Example</a>
     </li>
     <li class="nav-item" role="presentation">
-     <a id="tab-html4" href="#pane-html4" class="nav-link" data-bs-toggle="tab" role="tab">Source code</a>
+     <a id="tab-html4" href="#pane-html4" class="nav-link" data-bs-toggle="tab" role="tab"><span class="sr-only">Icon
+       menu </span>Source code</a>
     </li>
     <li class="nav-item" role="presentation">
-     <a id="tab-include4" href="#pane-include4" class="nav-link" data-bs-toggle="tab" role="tab">Implementation
+     <a id="tab-include4" href="#pane-include4" class="nav-link" data-bs-toggle="tab" role="tab"><span
+       class="sr-only">Icon menu </span>Implementation
       notes</a>
     </li>
    </ul>
 
 
-   <div class="tab-content">
+   <div class="tab-content" id="tab-content4">
     <div id="pane-example4" class="card tab-pane fade show active" role="tabpanel" aria-labelledby="tab-example4">
      <div class="card-header" id="heading-example4">
       <h4 class="my-0 w-100">
-       <a data-bs-toggle="collapse" href="#collapse-home" data-parent="#tab-content" aria-expanded="true"
-        aria-controls="collapse-example4" title="Example tab header">
+       <a data-bs-toggle="collapse" href="#collapse-example4" data-parent="#tab-content4" aria-expanded="true"
+        aria-controls="collapse-example4" title="Icon menu Example tab header">
         Example
        </a>
       </h4>
@@ -669,8 +1126,8 @@
     <div id="pane-html4" class="card tab-pane fade" role="tabpanel" aria-labelledby="tab-html4">
      <div class="card-header" id="heading-html4">
       <h4 class="my-0 w-100">
-       <a class="collapsed" data-bs-toggle="collapse" href="#collapse-html4" data-parent="#tab-content"
-        aria-expanded="false" aria-controls="collapse-html4" title="HTML Source code tab header">
+       <a class="collapsed" data-bs-toggle="collapse" href="#collapse-html4" data-parent="#tab-content4"
+        aria-expanded="false" aria-controls="collapse-html4" title="Icon menu HTML Source code tab header">
         HTML Source code
        </a>
       </h4>
@@ -678,9 +1135,30 @@
      <div id="collapse-html4" class="collapse" role="tabpanel" aria-labelledby="heading-html4">
       <div class="card-body">
        <h3 class="h4 m-t-0">HTML Source code</h3>
-       <p>Get single level navigation full HTML markup in the template's repository in
-        <code>/src/_includes/modules/nav-icons.html</code>. file.
-       </p>
+       <textarea class="sourcecode" aria-label="source code"
+        disabled><!--
+Step 2
+Select Navigation Type:
+
+Options are: megadropdown dropdown singlelevel
+-->
+
+<nav id="navigation" class="main-navigation singlelevel justify-content-end">
+ <ul id="nav_list" class="top-level-nav">
+  <li class="nav-item" role="presentation">
+   <a href="javascript:;" target="_blank" class="first-level-link"><span class="ca-gov-icon-ca-state"
+     aria-hidden="true"></span>Link
+    1</a>
+  </li>
+  <li class="nav-item" role="presentation">
+   <a href="javascript:;" class="first-level-link"><span class="ca-gov-icon-ca-capitol" aria-hidden="true"></span>link
+    2</a>
+  </li>
+  <li class="nav-item" id='nav-item-search'>
+   <button class="first-level-link"><span class="ca-gov-icon-search" aria-hidden="true"></span>Search</button>
+  </li>
+ </ul>
+</nav></textarea>
       </div>
      </div>
     </div>
@@ -689,7 +1167,7 @@
      <div class="card-header" id="heading-include4">
       <h4 class="my-0 w-100">
        <a class="collapsed" data-bs-toggle="collapse" href="#collapse-include4" data-parent="#tab-include4"
-        aria-expanded="false" aria-controls="collapse-include4" title="Implementation notes tab header">
+        aria-expanded="false" aria-controls="collapse-include4" title="Icon menu Implementation notes tab header">
         Implementation notes</a>
       </h4>
      </div>
@@ -703,7 +1181,7 @@
 
        </pre>
 
-       <h2 class="h4">Navigation with icons markup:</h2>
+       <h3 class="h4">Navigation with icons markup:</h3>
        <pre><span class="text-accent-p2">&lt;div</span> <span class="text-info">class=</span><span class="text-accent7">"navigation-search"</span><span class="text-accent-p2">&gt;</span>
       <span class="text-success">&#10100;% include "/src/_includes/navigation.njk" %&#10101;</span>
       <span class="text-accent-p2">&lt;div</span> <span class="text-info">id=</span><span class="text-accent7">"head-search"</span> <span class="text-info">class=</span><span class="text-accent7">"search-container"</span><span class="text-accent-p2">&gt;</span>
@@ -712,7 +1190,7 @@
      <span class="text-accent-p2">&lt;/div&gt;</span>
      </pre>
 
-       <h2 class="h4">Full width navigation markup:</h2>
+       <h3 class="h4">Full width navigation markup:</h3>
        <pre><span class="text-accent-p2">&lt;div</span> <span class="text-info">class=</span><span class="text-accent7">"navigation-search full-width-nav container"</span><span class="text-accent-p2">&gt;</span>
       <span class="text-accent-p2">&lt;div</span> <span class="text-info">id=</span><span class="text-accent7">"head-search"</span> <span class="text-info">class=</span><span class="text-accent7">"search-container featured-search"</span><span class="text-accent-p2">&gt;</span>
        <span class="text-success">&#10100;% include "/src/_includes/search.njk" %&#10101;</span>
@@ -727,7 +1205,7 @@
   </div>
   <!--End tabs 4-->
 
-  <h2 id="Usage">Usage</h2>
+  <h2>Usage</h2>
   <h3>When and how to use it</h3>
   <p>Use site navigation to help people find pages on your website. It should list or lead to the most helpful content
    on your website.</p>
@@ -747,7 +1225,7 @@
    can be reached through a page in the site navigation or the site footer.</p>
   <p>Do not link to PDFs or external sites in the site navigation.</p>
 
-  <h2 id="Accessibility">Accessibility</h2>
+  <h2>Accessibility</h2>
   <h3 class="m-t">Standard accessibility review</h3>
 <p>Each time a new component version is published:</p>
 <ul>
@@ -769,12 +1247,12 @@
  <div class="container">
   <div class="row">
    <div class="col-md-4">
-    <h3 class="h4 w-100 brd-bottom brd-highlight p-b">State Web Template</h3>
+    <div class="h4 w-100 brd-bottom brd-highlight p-b" role="heading" aria-level="2">State Web Template</div>
     <a href="/about.html" class="d-block no-underline m-y font-size-16">About</a>
     <a href="/contact-us.html" class="d-block no-underline m-y font-size-16">Contact us</a>
    </div>
    <div class="col-md-4">
-    <h3 class="h4 w-100 brd-bottom  brd-highlight p-b">Related websites</h3>
+    <div class="h4 w-100 brd-bottom  brd-highlight p-b" role="heading" aria-level="2">Related websites</div>
     <a href="https://webstandards.ca.gov" class="d-block no-underline m-y font-size-16">State Web Standards</a>
     <a href="https://designsystem.webstandards.ca.gov" class="d-block no-underline m-y font-size-16">California Design
      System</a>
@@ -782,7 +1260,7 @@
      class="d-block no-underline m-y font-size-16">State Web Template GitHub</a>
    </div>
    <div class="col-md-4">
-    <h3 class="h4 w-100 brd-bottom brd-highlight p-b">Resources</h3>
+    <div class="h4 w-100 brd-bottom brd-highlight p-b" role="heading" aria-level="2">Resources</div>
     <a href="https://designsystem.webstandards.ca.gov/style/content"
      class="d-block no-underline m-y font-size-16">Content style
      guide</a>

@@ -1728,15 +1728,15 @@ progress {
 .table {
   --bs-table-bg: transparent;
   --bs-table-accent-bg: transparent;
-  --bs-table-striped-color: #212529;
+  --bs-table-striped-color: #343a40;
   --bs-table-striped-bg: rgba(0, 0, 0, 0.05);
-  --bs-table-active-color: #212529;
+  --bs-table-active-color: #343a40;
   --bs-table-active-bg: rgba(0, 0, 0, 0.1);
-  --bs-table-hover-color: #212529;
+  --bs-table-hover-color: #343a40;
   --bs-table-hover-bg: rgba(0, 0, 0, 0.075);
   width: 100%;
   margin-bottom: 1rem;
-  color: #212529;
+  color: #343a40;
   vertical-align: top;
   border-color: #dee2e6;
 }
@@ -10147,6 +10147,46 @@ textarea.form-control-lg {
   -moz-osx-font-smoothing: grayscale;
 }
 
+.ca-gov-icon-bullet:before {
+  content: "\ea32";
+}
+
+.ca-gov-icon-dot:before {
+  content: "\ea33";
+}
+
+.ca-gov-icon-water:before {
+  content: "\ea2a";
+}
+
+.ca-gov-icon-wind-power:before {
+  content: "\ea2b";
+}
+
+.ca-gov-icon-connection:before {
+  content: "\ea2c";
+}
+
+.ca-gov-icon-transport:before {
+  content: "\ea2d";
+}
+
+.ca-gov-icon-maintenance:before {
+  content: "\ea2e";
+}
+
+.ca-gov-icon-warning-diamond:before {
+  content: "\ea2f";
+}
+
+.ca-gov-icon-pipe-angle:before {
+  content: "\ea30";
+}
+
+.ca-gov-icon-pipe:before {
+  content: "\ea31";
+}
+
 .ca-gov-icon-quotation-mark:before {
   content: "\ea29";
 }
@@ -12352,12 +12392,13 @@ p {
 }
 
 .lead {
-  font-size: 1.25rem;
+  font-size: 1.4375rem;
   margin-bottom: 1rem;
+  font-weight: 500;
 }
 @media (min-width: 576px) {
   .lead {
-    font-size: calc(1.25rem + 0.1vw);
+    font-size: calc(1.4375rem + 0.1vw);
     margin-bottom: calc(1rem + 0.1vw);
   }
 }
@@ -12524,14 +12565,14 @@ h6,
 }
 
 .subtitle {
-  font-size: 1.25rem;
+  font-size: 1.4375rem;
   margin-bottom: 3rem;
   font-weight: 600;
   color: #5e5e6a;
 }
 @media (min-width: 576px) {
   .subtitle {
-    font-size: calc(1.25rem + 0.1vw);
+    font-size: calc(1.4375rem + 0.1vw);
     margin-bottom: calc(3rem + 0.1vw);
   }
 }
@@ -13147,6 +13188,10 @@ svg ~ .external-link-icon,
   .two-column .main-content > .section {
     max-width: 1176px;
   }
+}
+
+.grid-columns-auto {
+  grid-template-columns: auto auto;
 }
 
 /* -----------------------------------------
@@ -14588,6 +14633,9 @@ table.gsc-search-box td {
 }
 .second-level-nav a {
   text-decoration: none;
+}
+.second-level-nav a:focus {
+  outline-offset: -2px;
 }
 .second-level-nav [class^=unit] .second-level-link {
   display: block;
@@ -16144,6 +16192,14 @@ pre {
   padding: 1rem;
 }
 
+textarea.sourcecode {
+  font-family: var(--bs-font-monospace);
+  width: 100%;
+  height: 300px;
+  font-size: 0.875em;
+  white-space: pre;
+}
+
 .parallax-bg {
   position: relative;
   background-attachment: fixed;
@@ -17036,7 +17092,7 @@ html {
 ----------------------------------------- */
 .alert-banner {
   margin-bottom: 0;
-  padding: 5px 0;
+  padding: 0.6rem 0 0.5rem 0;
   border-radius: 0;
   -webkit-column-rule: rgba(255, 255, 255, 0.8);
   -moz-column-rule: rgba(255, 255, 255, 0.8);
@@ -17044,16 +17100,29 @@ html {
   -webkit-transition: all 0.2s;
   transition: all 0.2s;
 }
+.alert-banner .alert-icon {
+  font-size: 1.75rem;
+  position: absolute;
+  top: 2px;
+}
+.alert-banner .alert-icon ~ .alert-text {
+  margin-left: 2.5rem;
+}
+.alert-banner img, .alert-banner .alert-img {
+  max-width: 28px;
+  max-height: 28px;
+  margin-right: 0.5rem;
+  margin-top: -3px;
+}
 .alert-banner .close {
-  position: relative;
-  top: 4px;
-  right: -5px;
+  position: absolute;
+  top: 5px;
+  right: 5px;
   padding: 0 10px;
   text-shadow: none;
   float: right;
   font-size: 1.5rem;
   font-weight: 700;
-  line-height: 1;
   border: none;
   background: none;
 }
@@ -17068,7 +17137,6 @@ html {
 }
 .alert-banner .alert-text {
   position: relative;
-  top: 2px;
 }
 .alert-banner .btn {
   position: relative;
@@ -17219,11 +17287,11 @@ html {
   background-color: transparent !important;
   border: none !important;
   cursor: default;
-  color: #000 !important;
+  color: #3b3a48 !important;
   position: relative;
 }
 .nav-tabs > li > a.active:hover {
-  color: #4a4958 !important;
+  color: #5e5e6a !important;
 }
 .nav-tabs > li > a.active::after {
   left: 0;
@@ -17443,26 +17511,26 @@ cagov-accordion details summary:after {
 }
 cagov-accordion details summary .cagov-open-indicator {
   position: absolute;
-  left: 0.85rem;
-  top: 1.15rem;
-  border-right: 2px solid black;
-  border-top: 2px solid black;
-  border-radius: 2px;
-  width: 10px;
-  height: 10px;
-  transform: rotate(45deg);
+  left: 0.5rem;
+  top: 0.4rem;
+  width: 0;
+  height: 0;
   transition-property: transform;
-  transition: top 0.2s, left 0.2s, transform 0.2s;
+  transition: transform 0.2s;
+}
+cagov-accordion details summary .cagov-open-indicator::before {
+  font-family: "CaGov";
+  content: "5";
+  position: absolute;
+  font-size: 1.6rem;
+  transition-property: transform, left;
+  transition: transform 0.2s, 0.2s;
 }
 cagov-accordion details summary:hover {
   color: black;
 }
 cagov-accordion details summary:hover:before {
   background-color: #ededef;
-}
-cagov-accordion details summary:hover .cagov-open-indicator {
-  border-right: 3px solid black;
-  border-top: 3px solid black;
 }
 cagov-accordion details .accordion-body {
   padding: 1rem;
@@ -17498,12 +17566,8 @@ cagov-accordion:defined details summary:focus:after {
 cagov-accordion:defined details[open] {
   height: auto;
 }
-cagov-accordion:defined details[open] .cagov-open-indicator {
-  border-right: 3px solid black;
-  border-top: 3px solid black;
-  transform: rotate(135deg);
-  top: 1rem;
-  left: 1rem;
+cagov-accordion:defined details[open] .cagov-open-indicator::before {
+  transform: rotate(90deg) translateY(-0.2rem);
 }
 cagov-accordion:defined details[open] summary {
   border-radius: 4px 4px 0 0;
@@ -17696,12 +17760,13 @@ cagov-accordion.sidenav details {
 }
 cagov-accordion.sidenav details summary {
   border: none;
-  background: transparent;
+  background: #fff;
   padding-left: 1rem;
   padding: 0.7rem 2rem 0.7rem 1rem;
-  font-size: calc(1.125rem + 0.1vw);
+  font-size: calc(1rem + 0.1vw);
   font-weight: 400;
   text-decoration: none;
+  border-bottom: 1px solid #ededef;
 }
 cagov-accordion.sidenav details summary:before {
   border: none !important;
@@ -17713,6 +17778,7 @@ cagov-accordion.sidenav details summary::after {
 }
 cagov-accordion.sidenav details summary:hover, cagov-accordion.sidenav details summary:focus {
   text-decoration: none;
+  background-color: #fafafa;
 }
 cagov-accordion.sidenav details summary:hover:before, cagov-accordion.sidenav details summary:focus:before {
   border: none;
@@ -17723,9 +17789,10 @@ cagov-accordion.sidenav details summary:focus {
   outline-offset: -2px;
 }
 cagov-accordion.sidenav details summary.active {
-  font-weight: 700;
   color: #000 !important;
   text-decoration: none;
+  background-color: #f3f3f4;
+  font-weight: 400;
 }
 cagov-accordion.sidenav details summary.active:before {
   border: none;
@@ -17735,6 +17802,7 @@ cagov-accordion.sidenav details summary.active:before {
 cagov-accordion.sidenav details summary.active:hover, cagov-accordion.sidenav details summary.active:focus {
   color: #5e5e6a !important;
   text-decoration: none;
+  background-color: #ededef;
 }
 cagov-accordion.sidenav details summary.active:focus {
   outline: solid 2px #2ea3f2 !important;
@@ -17742,20 +17810,22 @@ cagov-accordion.sidenav details summary.active:focus {
 }
 cagov-accordion.sidenav details summary[open] summary {
   color: #000;
-  font-weight: 700;
 }
 cagov-accordion.sidenav details summary[open] summary::after {
   display: none;
 }
 cagov-accordion.sidenav details summary .cagov-open-indicator {
   left: unset !important;
-  right: 1rem;
-  top: 1.4rem !important;
+  right: 2.7rem;
+  top: 0.6rem !important;
+}
+cagov-accordion.sidenav details summary .cagov-open-indicator::before {
+  font-size: 2.4rem;
 }
 cagov-accordion.sidenav details .cagov-open-indicator {
   left: unset;
-  right: 1rem;
-  top: 1.4rem !important;
+  right: 2.7rem;
+  top: 0.6rem !important;
 }
 cagov-accordion.sidenav details .accordion-body {
   padding: 0;
@@ -17764,7 +17834,7 @@ cagov-accordion.sidenav details .accordion-body {
 }
 cagov-accordion.sidenav details .accordion-body .side-subnav {
   margin-bottom: 0;
-  margin-left: 1rem;
+  margin-left: 0;
 }
 cagov-accordion.sidenav details .accordion-body .side-subnav li:first-child {
   margin-top: 0;
@@ -17787,21 +17857,23 @@ cagov-accordion.sidenav details .accordion-body .side-subnav li:last-child {
   display: block;
   padding-top: 0.7rem;
   padding-bottom: 0.7rem;
-  padding-left: 1rem;
+  padding-left: 2.5rem;
   text-decoration: none !important;
+  border-bottom: 1px solid #ededef;
 }
 .side-subnav li a:hover, .side-subnav li a:focus {
   text-decoration: none;
   color: #000;
+  background-color: #fafafa;
 }
 .side-subnav li a:focus {
   outline: solid 2px #2ea3f2 !important;
   outline-offset: -2px;
 }
 .side-subnav li a.active {
-  font-weight: 700;
-  color: #4a4958;
+  color: #5e5e6a;
   text-decoration: none;
+  background-color: #f3f3f4;
 }
 .side-subnav li a.active:before {
   content: "";
@@ -17816,6 +17888,7 @@ cagov-accordion.sidenav details .accordion-body .side-subnav li:last-child {
 .side-subnav li a.active:hover, .side-subnav li a.active:focus {
   color: #000;
   text-decoration: none;
+  background-color: #ededef;
 }
 
 /* -----------------------------------------
@@ -20403,16 +20476,23 @@ table.editor-table-striped > tbody > tr:nth-child(odd) > td {
 }
 
 /* End Rich Text Editor */
+.table {
+  color: #3b3a48;
+}
 .table.table-default {
   border: none;
 }
 .table.table-default > thead > tr > th, .table.table-default > thead > tr > td, .table.table-default > tbody > tr > th, .table.table-default > tbody > tr > td, .table.table-default > tfoot > tr > th, .table.table-default > tfoot > tr > td {
-  background: #f2f2f2;
+  background: #f3f3f4;
   border: 2px solid #fff;
 }
 .table.table-default > thead > tr > th, .table.table-default > thead > tr > td {
   background: #d9d9d9;
   border: 2px solid #fff;
+}
+
+.table-striped > tbody > tr:nth-of-type(2n+1) > * {
+  color: #3b3a48;
 }
 
 /* -----------------------------------------
@@ -21302,7 +21382,7 @@ blockquote.blockquote-reverse .small:after {
 
 /* -----------------------------------------
    SITE SETTINGS
-   /source/scss/cagov/settings-bar.scss
+   /source/scss/cagov/settings.scss
 ----------------------------------------- */
 .site-settings .settings-bar-buttons {
   display: flex;
@@ -21935,8 +22015,8 @@ html:not(.ie8) .stats-highlight img {
 .list-navigation li {
   list-style: none;
   margin: 0;
-  font-size: 1.25rem;
-  padding-left: 1rem;
+  font-size: calc(1rem + 0.1vw);
+  padding-left: 0;
 }
 .list-navigation li a {
   position: relative;
@@ -21945,22 +22025,44 @@ html:not(.ie8) .stats-highlight img {
   color: #4a4958;
   padding-bottom: 0.7rem;
   padding-top: 0.7rem;
+  padding-left: 1rem;
+  border-bottom: 1px solid #ededef;
+}
+.list-navigation li a.landing {
+  font-weight: 700;
+}
+.list-navigation li a.landing.active {
+  background-color: #f3f3f4;
+}
+.list-navigation li a.landing.active:hover, .list-navigation li a.landing.active:focus {
+  background-color: #ededef;
+}
+.list-navigation li a.landing.back {
+  padding-left: 1.5rem;
+}
+.list-navigation li a.landing.back::after {
+  content: "\e668";
+  position: absolute;
+  font-family: "CaGov";
+  left: 0;
+  top: 0.65rem;
 }
 .list-navigation li a.active {
   color: #4a4958;
   text-decoration: none;
-  font-weight: 700;
+  background-color: #f3f3f4;
 }
 .list-navigation li a.active:hover, .list-navigation li a.active:focus {
   color: #000;
   text-decoration: none;
+  background-color: #ededef;
 }
 .list-navigation li a.active:before {
   content: "";
   border-left: 3px solid;
   position: absolute;
   top: 0;
-  left: -1rem;
+  left: 0;
   width: 3px;
   height: 100%;
   border-radius: 0;
@@ -21968,6 +22070,7 @@ html:not(.ie8) .stats-highlight img {
 .list-navigation li a:hover,
 .list-navigation li a:focus {
   text-decoration: none;
+  background-color: #fafafa;
 }
 .list-navigation li a:focus {
   outline: solid 2px #2ea3f2 !important;
@@ -21978,68 +22081,66 @@ html:not(.ie8) .stats-highlight img {
 .list-navigation li ul li {
   margin: 0;
 }
+.list-navigation li ul li a {
+  padding-left: 2.5rem;
+}
 .list-navigation li ul li a.active {
   color: #4a4958;
   text-decoration: none;
-  font-weight: 700;
 }
 .list-navigation li ul li a.active:hover, .list-navigation li ul li a.active:focus {
   color: #000;
   text-decoration: none;
 }
-.list-navigation li ul li a.active:before {
-  content: "";
-  border-left: 3px solid;
-  position: absolute;
-  top: 0;
-  left: -1rem;
-  width: 3px;
-  height: 100%;
-  border-radius: 0;
-}
 
+.page-navigation {
+  margin-bottom: 1.5rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid #d4d4d7;
+}
 .page-navigation .label {
+  color: #5e5e6a;
   font-weight: 700;
-  font-size: 1.5rem;
+  font-size: 1.125rem;
   line-height: 1.75;
   padding: 0;
   margin: 0;
-  padding-bottom: 1rem;
+  padding-bottom: 0;
 }
 .page-navigation ul {
   margin: 0;
   text-indent: 0;
   padding: 0;
 }
+.page-navigation ul.columns-2 {
+  columns: 2;
+}
+.page-navigation ul.columns-3 {
+  columns: 3;
+}
 .page-navigation ul li {
   list-style: none;
   padding: 0;
   margin: 0;
-  border-bottom: 1px solid #d4d4d7;
-}
-.page-navigation ul li:first-child {
-  border-top: 1px solid #d4d4d7;
+  margin-bottom: 0.3rem;
+  font-size: 0.875rem;
 }
 .page-navigation ul li a {
-  color: #4a4958;
-  text-decoration: none !important;
-  padding-top: 1rem;
-  padding-bottom: 1.25rem;
-  display: block;
+  display: inline-block;
+  position: relative;
+  padding-left: 1.5rem;
 }
-.page-navigation ul li a:hover, .page-navigation ul li a:focus {
-  text-decoration: none !important;
-  color: #000;
-}
-.page-navigation ul li a:focus {
-  outline: solid 2px #2ea3f2 !important;
-}
-.page-navigation ul li a.active {
-  font-weight: 700;
+.page-navigation ul li a::before {
+  content: "\ea33";
+  font-family: "CaGov";
+  position: absolute;
+  font-size: 1.5rem;
+  left: 0;
+  top: -0.4rem;
 }
 
 a.sidenav {
-  font-size: calc(1.125rem + 0.1vw);
+  font-size: calc(1rem + 0.1vw);
   margin: 0;
   display: block;
   padding-top: 0.7rem;
@@ -22047,21 +22148,27 @@ a.sidenav {
   padding-left: 1rem;
   position: relative;
   text-decoration: none !important;
+  color: #5e5e6a;
+  border-bottom: 1px solid #ededef;
+  background-color: #fff;
 }
 a.sidenav:hover, a.sidenav:focus {
   text-decoration: none;
+  background-color: #fafafa;
+  color: #000;
 }
 a.sidenav:focus {
   outline-offset: -2px;
 }
 a.sidenav.active {
-  color: #000;
-  font-weight: 700;
+  color: #5e5e6a;
   text-decoration: none;
+  background-color: #f3f3f4;
 }
 a.sidenav.active:hover, a.sidenav.active:focus {
   text-decoration: none !important;
-  color: #5e5e6a;
+  color: #000;
+  background-color: #ededef;
 }
 a.sidenav.active:before {
   content: "";
@@ -22072,6 +22179,22 @@ a.sidenav.active:before {
   width: 3px;
   height: 100%;
   border-radius: 0;
+}
+a.sidenav.landing {
+  font-weight: 700;
+}
+a.sidenav.subnav {
+  padding-left: 2.5rem;
+}
+a.sidenav.back {
+  padding-left: 1.5rem;
+}
+a.sidenav.back::after {
+  content: "\e668";
+  position: absolute;
+  font-family: "CaGov";
+  left: 0;
+  top: 0.65rem;
 }
 
 /* -----------------------------------------
@@ -22286,7 +22409,7 @@ a.sidenav.active:before {
 ----------------------------------------- */
 .cagov-step-list {
   padding-left: 0 !important;
-  margin-left: 30px !important;
+  margin-left: 1.5rem !important;
   counter-reset: step-list-count;
 }
 .cagov-step-list li {
@@ -22339,6 +22462,19 @@ a.sidenav.active:before {
 }
 .cagov-step-list li:last-child:before {
   margin-left: 6px;
+}
+
+/* Make the list within the step list look normal */
+.cagov-step-list li ul li {
+  border: none;
+  font-size: calc(1.125rem + 0.1vw);
+  font-weight: normal;
+  list-style-type: disc;
+  padding-left: unset;
+}
+
+.cagov-step-list li ul li:before {
+  content: none;
 }
 
 /* -----------------------------------------
@@ -22854,7 +22990,7 @@ a.sidenav.active:before {
 }
 
 .gray-900, .gray-900-hover:hover, .gray-900-hover:focus {
-  color: #4a4958 !important;
+  color: #3b3a48 !important;
 }
 
 .color-light {
@@ -22934,6 +23070,12 @@ a.sidenav.active:before {
 .bg-gray-50-hover:hover,
 .bg-gray-50-hover:focus {
   background-color: #fafafa !important;
+}
+
+.bg-gray-75,
+.bg-gray-75-hover:hover,
+.bg-gray-75-hover:focus {
+  background-color: #f3f3f4 !important;
 }
 
 .bg-gray-100,
@@ -23050,6 +23192,42 @@ a.sidenav.active:before {
 .brd-transparent-before::before,
 .brd-transparent-after::after {
   border-color: transparent !important;
+}
+
+.brd-gray-100 {
+  border-color: #ededef !important;
+}
+
+.brd-gray-200 {
+  border-color: #d4d4d7 !important;
+}
+
+.brd-gray-300 {
+  border-color: #bcbbc1 !important;
+}
+
+.brd-gray-400 {
+  border-color: #a4a3ab !important;
+}
+
+.brd-gray-500 {
+  border-color: #898891 !important;
+}
+
+.brd-gray-600 {
+  border-color: #72717c !important;
+}
+
+.brd-gray-700 {
+  border-color: #5e5e6a !important;
+}
+
+.brd-gray-800 {
+  border-color: #4a4958 !important;
+}
+
+.brd-gray-900 {
+  border-color: #3b3a48 !important;
 }
 
 .brd-0 {
@@ -23528,6 +23706,38 @@ a.sidenav.active:before {
   line-height: 1.6em !important;
 }
 
+.font-weight-200 {
+  font-weight: 200 !important;
+}
+
+.font-weight-300 {
+  font-weight: 300 !important;
+}
+
+.font-weight-400 {
+  font-weight: 400 !important;
+}
+
+.font-weight-500 {
+  font-weight: 500 !important;
+}
+
+.font-weight-600 {
+  font-weight: 600 !important;
+}
+
+.font-weight-700 {
+  font-weight: 700 !important;
+}
+
+.font-weight-800 {
+  font-weight: 800 !important;
+}
+
+.font-weight-900 {
+  font-weight: 900 !important;
+}
+
 .bold,
 .text-bold {
   font-weight: 700 !important;
@@ -23668,3 +23878,8 @@ a.sidenav.active:before {
   position: sticky;
   top: 12.5rem;
 }
+
+/* -----------------------------------------
+   Global custom styles
+   /source/scss/custom/custom.scss
+----------------------------------------- */

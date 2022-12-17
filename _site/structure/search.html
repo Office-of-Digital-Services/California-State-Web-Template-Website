@@ -17,6 +17,8 @@
 		<link rel="stylesheet" href="/css/colortheme-oceanside.min.css">
 
 
+
+
 <link rel="apple-touch-icon-precomposed" sizes="100x100" href="/images/apple-touch-icon-precomposed.png">
 <link rel="icon" sizes="192x192" href="/images/apple-touch-icon-192x192.png">
 <link rel="apple-touch-icon-precomposed" sizes="180x180" href="/images/apple-touch-icon-180x180.png">
@@ -91,7 +93,7 @@
  <div class="container">
   <span class="alert-level border brd-s1 px-3 m-r-md">BETA</span><span class="alert-text text-1rem">We'd love your
    feedback
-   to make the template better. You have from November 4 to November 11. </span>
+   to make the template better.</span>
   <a href="https://airtable.com/shro9V6ry2Cf4mpgG" class="btn btn-default btn-xs bg-s1 pos-rel m-l">Send
    feedback</a>
  </div>
@@ -213,7 +215,7 @@
       </div>
       <!-- navigation types -->
             
-		          <nav id="navigation" class="main-navigation dropdown">
+		          <nav id="navigation" class="main-navigation dropdown" aria-label="Main navigation">
  <ul id="nav_list" class="top-level-nav">
   <li class="nav-item">
        
@@ -275,6 +277,194 @@
  <ol class="breadcrumb">
   <li><a href="../index.html" title="Home page">Home</a></li>
    
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+      
+      
+     <li><a href="/structure.html" title="Structure landing page">Structure</a></li>
+      
+        
+       
+      <li>Search</li>
+       
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
+     
+   
  </ol>
 </nav>
 
@@ -285,26 +475,14 @@
   <!-- Side navigation -->
   <nav aria-labelledby="navigation-list" class="side-navigation sticky-6">
    <ul class="list-navigation">
-    <li><a href="/structure.html" id="navigation-list">Structural elements</a>
-     <ul>
-      <li><a href="/structure/utility-header.html">Utility header</a></li>
-      <li><a href="/structure/settings-bar.html">Settings</a></li>
-      <li><a href="/structure/site-header.html">Site header</a></li>
-      <li><a href="/structure/mobile-controls.html">Mobile controls</a></li>
-      <li><a href="/structure/search.html" class="active">Search</a>
-       <ul>
-        <li><a href="#Active-search">Active search</a></li>
-        <li><a href="#Inactive-search">Inactive search</a></li>
-        <li><a href="#Featured-search">Featured search</a></li>
-        <li><a href="#Usage">Usage</a></li>
-        <li><a href="#Accessibility">Accessibility</a></li>
-       </ul>
-      </li>
-    </li>
+    <li><a href="/structure.html" id="navigation-list" class="landing">Structure</a></li>
+    <li><a href="/structure/utility-header.html">Utility header</a></li>
+    <li><a href="/structure/settings.html">Settings</a></li>
+    <li><a href="/structure/site-header.html">Site header</a></li>
+    <li><a href="/structure/mobile-controls.html">Mobile controls</a></li>
+    <li><a href="/structure/search.html" class="active">Search</a></li>
     <li><a href="/structure/site-navigation.html">Site navigation</a></li>
     <li><a href="/structure/footer.html">Footer</a></li>
-   </ul>
-   </li>
    </ul>
   </nav>
  </div>
@@ -313,7 +491,11 @@
 
   <h1 class="mt-lg-0 m-b-0">Search</h1>
   <p class="subtitle">Other names: searchbox, search field</p>
-  <p class="lead">A search input provides visitors an input field to search for specific content within a site or
+
+  <nav class="page-navigation"></nav>
+
+
+  <p>A search input provides visitors an input field to search for specific content within a site or
    database. </p>
   <p>With search, visitors can filter content using different keywords or phrases.
   </p>
@@ -328,7 +510,7 @@
    include a search results page for your website.</p>
 
 
-  <h2 id="Active-search">Active search</h2>
+  <h2>Active search</h2>
   <p>This search bar appears on the right side of the header. This is the default search bar in the template.</p>
 
   <div class="tab-group responsive">
@@ -349,8 +531,8 @@
     <div id="pane-example1" class="card tab-pane fade show active" role="tabpanel" aria-labelledby="tab-example1">
      <div class="card-header" id="heading-example1">
       <h4 class="my-0 w-100">
-       <a data-bs-toggle="collapse" href="#collapse-home" data-parent="#tab-content" aria-expanded="true"
-        aria-controls="collapse-example1" title="Example tab header">
+       <a data-bs-toggle="collapse" href="#collapse-example1" data-parent="#tab-content" aria-expanded="true"
+        aria-controls="collapse-example1" title="Example active search tab header">
         Example
        </a>
       </h4>
@@ -369,7 +551,7 @@
      <div class="card-header" id="heading-html1">
       <h4 class="my-0 w-100">
        <a class="collapsed" data-bs-toggle="collapse" href="#collapse-html1" data-parent="#tab-content"
-        aria-expanded="false" aria-controls="collapse-html1" title="HTML Source code tab header">
+        aria-expanded="false" aria-controls="collapse-html1" title="Active search HTML source code tab header">
         HTML Source code
        </a>
       </h4>
@@ -399,7 +581,7 @@
      <div class="card-header" id="heading-include1">
       <h4 class="my-0 w-100">
        <a class="collapsed" data-bs-toggle="collapse" href="#collapse-include1" data-parent="#tab-include1"
-        aria-expanded="false" aria-controls="collapse-include1" title="Nunjucks Include tab header">
+        aria-expanded="false" aria-controls="collapse-include1" title="Active search Nunjucks Include tab header">
         Nunjucks include
        </a>
       </h4>
@@ -439,7 +621,7 @@
 
 
 
-  <h2 id="Inactive-search">Inactive search</h2>
+  <h2>Inactive search</h2>
   <p>This search bar is hidden (inactive) and becomes active when people select the search menu icon. This search is
    used on mobile and for sites that use <a href="/structure/navigation-icons.html">icon menu</a> (which includes the
    search icon).
@@ -451,13 +633,16 @@
   <div class="tab-group responsive">
    <ul id="tabs2" class="nav nav-tabs" role="tablist">
     <li class="nav-item" role="presentation">
-     <a id="tab-example2" href="#pane-example2" class="nav-link active" data-bs-toggle="tab" role="tab">Example</a>
+     <a id="tab-example2" href="#pane-example2" class="nav-link active" data-bs-toggle="tab" role="tab"><span
+       class="sr-only">Inactive search</span> Example</a>
     </li>
     <li class="nav-item" role="presentation">
-     <a id="tab-html2" href="#pane-html2" class="nav-link" data-bs-toggle="tab" role="tab">Source code</a>
+     <a id="tab-html2" href="#pane-html2" class="nav-link" data-bs-toggle="tab" role="tab"><span
+       class="sr-only">Inactive search</span> Source code</a>
     </li>
     <li class="nav-item" role="presentation">
-     <a id="tab-include2" href="#pane-include2" class="nav-link" data-bs-toggle="tab" role="tab">Nunjucks include</a>
+     <a id="tab-include2" href="#pane-include2" class="nav-link" data-bs-toggle="tab" role="tab"><span
+       class="sr-only">Inactive search</span> Nunjucks include</a>
     </li>
    </ul>
 
@@ -466,8 +651,8 @@
     <div id="pane-example2" class="card tab-pane fade show active" role="tabpanel" aria-labelledby="tab-example2">
      <div class="card-header" id="heading-example2">
       <h4 class="my-0 w-100">
-       <a data-bs-toggle="collapse" href="#collapse-home" data-parent="#tab-content" aria-expanded="true"
-        aria-controls="collapse-example2" title="Example tab header">
+       <a data-bs-toggle="collapse" href="#collapse-example2" data-parent="#tab-content" aria-expanded="true"
+        aria-controls="collapse-example2" title="Example inactive search tab header">
         Example
        </a>
       </h4>
@@ -488,7 +673,7 @@
      <div class="card-header" id="heading-html2">
       <h4 class="my-0 w-100">
        <a class="collapsed" data-bs-toggle="collapse" href="#collapse-html2" data-parent="#tab-content"
-        aria-expanded="false" aria-controls="collapse-html2" title="HTML Source code tab header">
+        aria-expanded="false" aria-controls="collapse-html2" title="Inactive search HTML source code tab header">
         HTML Source code
        </a>
       </h4>
@@ -518,7 +703,7 @@
      <div class="card-header" id="heading-include2">
       <h4 class="my-0 w-100">
        <a class="collapsed" data-bs-toggle="collapse" href="#collapse-include2" data-parent="#tab-include2"
-        aria-expanded="false" aria-controls="collapse-include2" title="Nunjucks Include tab header">
+        aria-expanded="false" aria-controls="collapse-include2" title="Inactive search Nunjucks Include tab header">
         Nunjucks include
        </a>
       </h4>
@@ -556,7 +741,7 @@
 
 
 
-  <h2 id="Featured-search">Featured search</h2>
+  <h2>Featured search</h2>
   <p>This search is directly under the main menu in a prominent container. It's size and location means the website is
    intentionally showcasing search as a top task.</p>
 
@@ -565,13 +750,16 @@
   <div class="tab-group responsive">
    <ul id="tabs3" class="nav nav-tabs" role="tablist">
     <li class="nav-item" role="presentation">
-     <a id="tab-example3" href="#pane-example3" class="nav-link active" data-bs-toggle="tab" role="tab">Example</a>
+     <a id="tab-example3" href="#pane-example3" class="nav-link active" data-bs-toggle="tab" role="tab"><span
+       class="sr-only">Featured search</span> Example</a>
     </li>
     <li class="nav-item" role="presentation">
-     <a id="tab-html3" href="#pane-html3" class="nav-link" data-bs-toggle="tab" role="tab">Source code</a>
+     <a id="tab-html3" href="#pane-html3" class="nav-link" data-bs-toggle="tab" role="tab"><span
+       class="sr-only">Featured search</span> Source code</a>
     </li>
     <li class="nav-item" role="presentation">
-     <a id="tab-include3" href="#pane-include3" class="nav-link" data-bs-toggle="tab" role="tab">Nunjucks include</a>
+     <a id="tab-include3" href="#pane-include3" class="nav-link" data-bs-toggle="tab" role="tab"><span
+       class="sr-only">Featured search</span> Nunjucks include</a>
     </li>
    </ul>
 
@@ -580,8 +768,8 @@
     <div id="pane-example3" class="card tab-pane fade show active" role="tabpanel" aria-labelledby="tab-example3">
      <div class="card-header" id="heading-example3">
       <h4 class="my-0 w-100">
-       <a data-bs-toggle="collapse" href="#collapse-home" data-parent="#tab-content" aria-expanded="true"
-        aria-controls="collapse-example3" title="Example tab header">
+       <a data-bs-toggle="collapse" href="#collapse-example3" data-parent="#tab-content" aria-expanded="true"
+        aria-controls="collapse-example3" title="Example featured search tab header">
         Example
        </a>
       </h4>
@@ -601,7 +789,7 @@
      <div class="card-header" id="heading-html3">
       <h4 class="my-0 w-100">
        <a class="collapsed" data-bs-toggle="collapse" href="#collapse-html3" data-parent="#tab-content"
-        aria-expanded="false" aria-controls="collapse-html3" title="HTML Source code tab header">
+        aria-expanded="false" aria-controls="collapse-html3" title="Featured search HTML source code tab header">
         HTML Source code
        </a>
       </h4>
@@ -631,7 +819,7 @@
      <div class="card-header" id="heading-include3">
       <h4 class="my-0 w-100">
        <a class="collapsed" data-bs-toggle="collapse" href="#collapse-include3" data-parent="#tab-include3"
-        aria-expanded="false" aria-controls="collapse-include3" title="Nunjucks Include tab header">
+        aria-expanded="false" aria-controls="collapse-include3" title="Featured search Nunjucks Include tab header">
         Nunjucks include
        </a>
       </h4>
@@ -693,7 +881,7 @@ search: Featured
 
 
 
-  <h2 id="Usage">Usage</h2>
+  <h2>Usage</h2>
   <h3>When and how to use it</h3>
 
   <p>Always use a clear and concise label for your search bar. Visitors should readily understand what the search is
@@ -715,7 +903,7 @@ search: Featured
 
   <p>Do not default to an advanced search. The majority of visitors will want to do a simple keyword search.</p>
 
-  <h2 id="Accessibility">Accessibility</h2>
+  <h2>Accessibility</h2>
   <h3 class="m-t">Standard accessibility review</h3>
 <p>Each time a new component version is published:</p>
 <ul>
@@ -738,12 +926,12 @@ search: Featured
  <div class="container">
   <div class="row">
    <div class="col-md-4">
-    <h3 class="h4 w-100 brd-bottom brd-highlight p-b">State Web Template</h3>
+    <div class="h4 w-100 brd-bottom brd-highlight p-b" role="heading" aria-level="2">State Web Template</div>
     <a href="/about.html" class="d-block no-underline m-y font-size-16">About</a>
     <a href="/contact-us.html" class="d-block no-underline m-y font-size-16">Contact us</a>
    </div>
    <div class="col-md-4">
-    <h3 class="h4 w-100 brd-bottom  brd-highlight p-b">Related websites</h3>
+    <div class="h4 w-100 brd-bottom  brd-highlight p-b" role="heading" aria-level="2">Related websites</div>
     <a href="https://webstandards.ca.gov" class="d-block no-underline m-y font-size-16">State Web Standards</a>
     <a href="https://designsystem.webstandards.ca.gov" class="d-block no-underline m-y font-size-16">California Design
      System</a>
@@ -751,7 +939,7 @@ search: Featured
      class="d-block no-underline m-y font-size-16">State Web Template GitHub</a>
    </div>
    <div class="col-md-4">
-    <h3 class="h4 w-100 brd-bottom brd-highlight p-b">Resources</h3>
+    <div class="h4 w-100 brd-bottom brd-highlight p-b" role="heading" aria-level="2">Resources</div>
     <a href="https://designsystem.webstandards.ca.gov/style/content"
      class="d-block no-underline m-y font-size-16">Content style
      guide</a>
