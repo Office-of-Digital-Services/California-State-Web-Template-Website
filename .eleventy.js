@@ -44,5 +44,3 @@ module.exports = function (eleventyConfig) {
   },
  };
 };
-
->>>>>>> dev
