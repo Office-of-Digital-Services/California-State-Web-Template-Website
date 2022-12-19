@@ -50,7 +50,7 @@ function pageNav() {
 
   // add ul item to the nav and set aria labelledby
   pagenav.appendChild(pagenavUL);
-  pagenav.setAttribute("aria-labelledby", "page-navigation-label");
+  pagenav.setAttribute("aria-labelledby", "on-this-page-navigation-label");
 
  }
 }
