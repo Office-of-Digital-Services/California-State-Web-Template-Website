@@ -1,299 +1,273 @@
 ﻿---
 title: Contact us
-layout: page.njk
-permalink: "contact-us-form.html"
+layout: one-col.njk
+permalink: "contact-us.html"
 ---
 
 <script src="https://www.google.com/recaptcha/api.js"></script>
-<div class="col-md-10 container">
-  <h1 class="mt-lg-0">Contact us</h1>
-  <p>
-    Have a question? Contact us for help with general inquiries, feedback, or
-    bugs.
-  </p>
-  <br />
 
+<h1 class="mt-lg-0">Contact us</h1>
+<p>
+ Have a question? Contact us for help with general inquiries, feedback, or
+ bugs.
+</p>
+
+
+<div class="row">
+ <div class="col-lg-8">
   <form autocomplete="on" method="POST" id="ContactUsForm" role="form">
-    <div class="alert alert-danger alert-banner" role="alert">
-      <div class="container px-4">Correct the errors to continue</div>
-    </div>
-    <label class="form-control-label" for="InputName"
-      ><span class="required-label" aria-hidden="true">*</span> Your name</label
-    >
-    <input
-      autofocus
-      type="text"
-      class="form-control"
-      id="InputName"
-      name="Name"
-      autocomplete="name"
-      required
-      aria-required="true"
-      size="65"
-      maxlength="150"
-      minlength="1"
-      role="textbox"
-    />
-    <div class="mt-2 invalid-feedback d-block font-weight-bold">
-      Enter your name
-    </div>
-    <br />
-    <label class="form-control-label" for="InputEmail"
-      ><span class="required-label" aria-hidden="true">*</span> Email</label
-    >
-    <input
-      type="email"
-      class="form-control"
-      id="InputEmail"
-      name="Email"
-      autocomplete="email"
-      required
-      aria-required="true"
-      size="65"
-      maxlength="250"
-      minlength="1"
-      role="textbox"
-    />
-    <div class="mt-2 invalid-feedback d-block font-weight-bold">
-      Enter a valid email. Example: email@email.com
-    </div>
-    <br />
-    <label class="form-control-label" for="InputDepartment"
-      >Department or agency</label
-    >
-    <input
-      type="text"
-      class="form-control"
-      id="InputDepartment"
-      name="Department"
-      autocomplete="organization"
-      aria-required="false"
-      size="65"
-      maxlength="150"
-      minlength="1"
-      role="textbox"
-    />
-    <br />
-    <label class="form-control-label" for="InputRole">Main role</label>
-    <input
-      type="text"
-      class="form-control"
-      id="InputRole"
-      name="Role"
-      autocomplete="organization-title"
-      list="roleSuggestions"
-      aria-required="false"
-      aria-autocomplete="both"
-      size="65"
-      maxlength="150"
-      minlength="1"
-      role="combobox"
-      placeholder="Select an option or type your own"
-    />
+   <div class="alert alert-danger alert-banner brd-0 brd-red p-l m-t-md" role="alert">
+    <span class="alert-icon ca-gov-icon-warning-diamond color-red" aria-hidden="true"></span>
+    <div class="container m-l-md"><span class="alert-text gray-900">Correct the errors to continue</span></div>
+   </div>
+   <label class="form-control-label m-t-md" for="InputName">
+    Your name <span class="required-label" aria-hidden="true">*</span></label>
+   <input autofocus type="text" class="form-control rounded-5" id="InputName" name="Name" autocomplete="name" required
+    aria-required="true" size="65" maxlength="150" minlength="1" role="textbox" />
+   <span class="error-icon ca-gov-icon-warning-diamond color-red" aria-hidden="true"></span>
+   <div class="mt-2 invalid-feedback d-block font-weight-600">
+    Enter your name
+   </div>
+
+
+   <label class="form-control-label m-t-lg" for="InputEmail">
+    Email <span class="required-label" aria-hidden="true">*</span></label>
+   <input type="email" class="form-control rounded-5" id="InputEmail" name="Email" autocomplete="email" required
+    aria-required="true" size="65" maxlength="250" minlength="1" role="textbox" />
+   <span class="error-icon ca-gov-icon-warning-diamond color-red" aria-hidden="true"></span>
+   <div class="mt-2 invalid-feedback d-block font-weight-600">
+    Enter a valid email. Example: email@email.com
+   </div>
+
+   <label class="form-control-label  m-t-lg" for="InputDepartment">Department or agency</label>
+   <input type="text" class="form-control rounded-5" id="InputDepartment" name="Department" autocomplete="organization"
+    aria-required="false" size="65" maxlength="150" minlength="1" role="textbox" />
+
+   <label class="form-control-label  m-t-lg" for="InputRole">Main role</label>
+   <div class="combobox pos-rel">
+    <input type="text" class="form-control rounded-5" id="InputRole" name="Role" autocomplete="organization-title"
+     list="roleSuggestions" aria-required="false" aria-autocomplete="both" size="65" maxlength="150" minlength="1"
+     role="combobox" placeholder="Select an option or type your own" />
     <datalist id="roleSuggestions">
-      <option>Analytics</option>
-      <option>Content</option>
-      <option>Design</option>
-      <option>Development</option>
-      <option>Product</option>
-      <option>Program</option>
-      <option>Research</option>
+     <option>Analytics</option>
+     <option>Content</option>
+     <option>Design</option>
+     <option>Development</option>
+     <option>Product</option>
+     <option>Program</option>
+     <option>Research</option>
     </datalist>
-    <br />
-    <label class="form-control-label" for="InputComments"
-      ><span class="required-label" aria-hidden="true">*</span> How can we
-      help?</label
-    >
-    <textarea
-      id="InputComments"
-      class="form-control"
-      rows="5"
-      cols="80"
-      name="Comments"
-      aria-required="true"
-      required
-      maxlength="100000"
-      minlength="10"
-      role="textbox"
-    ></textarea>
-    <div class="mt-2 invalid-feedback d-block font-weight-bold">
-      Provide information about why you're contacting us.
-    </div>
-    <br />
-    <input type="submit" value="Submit" class="btn btn-primary" />
+   </div>
 
-    <button
-      class="g-recaptcha hidden"
-      data-sitekey="6Lcf3GYjAAAAAGPae1QeEf0jJ8xjTwrwPAHOhZIJ"
-      data-callback="recaptchaCallback"
-      data-action="submit"
-    ></button>
+
+   <label class="form-control-label  m-t-lg" for="InputComments"> How can we help? <span class="required-label"
+     aria-hidden="true">*</span></label>
+   <textarea id="InputComments" class="form-control rounded-5" rows="5" cols="80" name="Comments" aria-required="true"
+    required maxlength="100000" minlength="10" role="textbox"></textarea>
+   <span class="error-icon ca-gov-icon-warning-diamond color-red" aria-hidden="true"></span>
+   <div class="mt-2 invalid-feedback d-block font-weight-600">
+    Provide information about why you're contacting us.
+   </div>
+
+   <input type="submit" value="Submit" class="btn btn-primary m-t-lg" />
+
+   <button class="g-recaptcha hidden" data-sitekey="6Lcf3GYjAAAAAGPae1QeEf0jJ8xjTwrwPAHOhZIJ"
+    data-callback="recaptchaCallback" data-action="submit"></button>
   </form>
-
-  <h2>Get support from developers</h2>
-  <p>
-    Post questions on
-    <a href="https://github.com/Office-of-Digital-Services/">GitHub</a> and
-    leverage our digital community.
-  </p>
-  <br />
+ </div>
 </div>
+
+
+
+<h2>Get support from developers</h2>
+<p>
+ Post questions on
+ <a href="https://github.com/Office-of-Digital-Services/">GitHub</a> and
+ leverage our digital community.
+</p>
+
+
+<h2>Technical feedback</h2>
+<p>To provide State Web Template V6 code level feedback, visit our <a
+  href="https://github.com/Office-of-Digital-Services/California-State-Web-Template-Website">State Web Template GitHub
+  Repo</a>.</p>
+
+
+<h2>Subscribe to our network</h2>
+<p>Join our community of digital teams and share your own best practices. From product managers to content designers,
+ the <a href="https://cdt.ca.gov/dwsn/">Digital Web Services
+  Network</a> offers a collaborative space for all members of state digital teams.</p>
+
+
+
+
+
+
+
 <style type="text/css">
-  form:not(form[submit_attempted]) .form-control + .invalid-feedback,
-  form:not(form[submit_attempted]) .alert,
-  form:valid .alert,
-  .form-control:valid + .invalid-feedback {
-    display: none !important;
-  }
+ form:not(form[submit_attempted]) .form-control~.invalid-feedback,
+ form:not(form[submit_attempted]) .alert,
+ form:valid .alert,
+ .form-control:valid~.invalid-feedback {
+  display: none !important;
+ }
 
-  form[submit_attempted] .alert,
-  form[submit_attempted] .form-control:invalid {
-    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 208 208"><path fill="rgb(220,53,69)" d="M202 89.3 118.6 6.1a20.8 20.8 0 0 0-29.4 0L6.1 89.3a20.8 20.8 0 0 0 0 29.4l83.2 83.2a20.8 20.8 0 0 0 29.4 0l83.2-83.2a20.8 20.8 0 0 0 0-29.4ZM117 164a13 13 0 0 1-26 0V84a13 13 0 0 1 26 0ZM104 59a15.4 15.4 0 0 1-15-15 15 15 0 0 1 30 0 15.4 15.4 0 0 1-15 15Z"/></svg>');
-    background-size: 1.75em;
-    background-repeat: no-repeat;
-  }
 
-  form[submit_attempted] .alert {
-    border-left: 4px solid #dc3545;
-    background-position: left 0.25em center;
-    padding-left: 1.25em;
-  }
 
-  form[submit_attempted] .form-control:invalid {
-    border-bottom: 4px solid #dc3545;
-    background-position: right 0.25em top 0.25em;
-  }
+ form[submit_attempted] .alert {
+  border-left: 5px solid;
+ }
 
-  .form-control {
-    width: auto;
-    max-width: 100%;
-  }
-  .font-weight-bold {
-    font-weight: 600;
-  }
+ form[submit_attempted] .form-control:invalid {
+  border-bottom: 4px solid #cd402d;
+  position: relative;
+ }
+
+ .alert-cont {
+  font-size: 1.6rem;
+ }
+
+ .error-icon {
+  display: none;
+  float: right;
+  position: relative;
+  top: -2.7rem !important;
+  right: 10px;
+  font-size: 1.5rem;
+ }
+
+ form[submit_attempted] .form-control:invalid~.error-icon {
+  display: block;
+ }
+
+ .form-control[role="combobox"]::placeholder {
+  font-size: 1.1rem !important;
+ }
+
+ /* masking combobox carrot */
+ .combobox::before {
+  content: "\33";
+  position: absolute;
+  font-family: "CaGov";
+  font-size: 1.4rem;
+  width: 30px;
+  height: 30px;
+  background-color: white;
+  right: 5px;
+  top: 8px;
+ }
 </style>
 
 <div class="modal fade" id="modalResponse" role="dialog" tabindex="-1">
-  <div class="modal-dialog modal-lg">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h3 class="h4 modal-title">Problem with submission.</h3>
-        <button
-          type="button"
-          class="close btn btn-secondary"
-          data-bs-dismiss="modal"
-        >
-          <span class="sr-only">Close modal</span
-          ><span class="ca-gov-icon-close-mark" aria-hidden="true"></span>
-        </button>
-      </div>
-      <div class="modal-body">
-        There was a problem with your submission. Please wait a moment and try
-        again.
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-bs-dismiss="modal">
-          Close
-        </button>
-      </div>
-    </div>
+ <div class="modal-dialog modal-lg">
+  <div class="modal-content">
+   <div class="modal-header">
+    <h3 class="h4 modal-title">Problem with submission.</h3>
+    <button type="button" class="close btn btn-secondary" data-bs-dismiss="modal">
+     <span class="sr-only">Close modal</span><span class="ca-gov-icon-close-mark" aria-hidden="true"></span>
+    </button>
+   </div>
+   <div class="modal-body">
+    There was a problem with your submission. Please wait a moment and try
+    again.
+   </div>
+   <div class="modal-footer">
+    <button type="button" class="btn btn-default" data-bs-dismiss="modal">
+     Close
+    </button>
+   </div>
   </div>
+ </div>
 </div>
-<button
-  type="button"
-  id="btnModal"
-  class="hidden"
-  data-bs-toggle="modal"
-  data-bs-target="#modalResponse"
-></button>
+<button type="button" id="btnModal" class="hidden" data-bs-toggle="modal" data-bs-target="#modalResponse"></button>
 <a href="contact-us-thankyou.html" id="urlThankyou" class="hidden"></a>
 
 <script>
-  const serviceUrl = "https://api.template.webstandards.ca.gov/api/air-table";
+ const serviceUrl = "https://api.template.webstandards.ca.gov/api/air-table";
 
-  {
-    //This code runs first
-    getForm().addEventListener("submit", submitForm);
-    getSubmitButton().addEventListener("click", () =>
-      getForm().setAttribute("submit_attempted", "")
-    );
+ {
+  //This code runs first
+  getForm().addEventListener("submit", submitForm);
+  getSubmitButton().addEventListener("click", () =>
+   getForm().setAttribute("submit_attempted", "")
+  );
+ }
+ ({});
+
+ function getForm() {
+  return /** @type {HTMLFormElement} */ (
+   document.getElementById("ContactUsForm")
+  );
+ }
+
+ function getSubmitButton() {
+  return /** @type { HTMLButtonElement } */ (
+   getForm().querySelector("input[type=submit]")
+  );
+ }
+
+ function goToThanksPage() {
+  document.getElementById("urlThankyou").click();
+ }
+
+ function openModal() {
+  document.getElementById("btnModal").click();
+ }
+
+ function triggerRecaptcha() {
+  document.querySelector(".g-recaptcha").click(); //will trigger recaptchaCallback when complete
+ }
+
+ async function submitForm(/** @type { SubmitEvent } */ e) {
+  e.preventDefault();
+
+  getSubmitButton().disabled = true;
+  setTimeout(() => (getSubmitButton().disabled = false), 5000);
+
+  triggerRecaptcha();
+ }
+
+ function recaptchaCallback(/** @type { string } */ g_recaptcha_response) {
+  const postBody = {
+   captcha: { "g-recaptcha-response": g_recaptcha_response },
+   fields: {},
+  };
+
+  for (const pair of new FormData(getForm())) {
+   postBody.fields[pair[0]] = pair[1];
   }
-  ({});
 
-  function getForm() {
-    return /** @type {HTMLFormElement} */ (
-      document.getElementById("ContactUsForm")
-    );
-  }
+  delete postBody.fields["g-recaptcha-response"]; //we already have it from the callback
 
-  function getSubmitButton() {
-    return /** @type { HTMLButtonElement } */ (
-      getForm().querySelector("input[type=submit]")
-    );
-  }
+  /** @type { RequestInit } */
+  const request = {
+   method: "POST",
+   headers: {
+    "Content-Type": "application/json",
+   },
+   body: JSON.stringify(postBody),
+  };
 
-  function goToThanksPage() {
-    document.getElementById("urlThankyou").click();
-  }
-
-  function openModal() {
-    document.getElementById("btnModal").click();
-  }
-
-  function triggerRecaptcha() {
-    document.querySelector(".g-recaptcha").click(); //will trigger recaptchaCallback when complete
-  }
-
-  async function submitForm(/** @type { SubmitEvent } */ e) {
-    e.preventDefault();
-
-    getSubmitButton().disabled = true;
-    setTimeout(() => (getSubmitButton().disabled = false), 5000);
-
-    triggerRecaptcha();
-  }
-
-  function recaptchaCallback(/** @type { string } */ g_recaptcha_response) {
-    const postBody = {
-      captcha: { "g-recaptcha-response": g_recaptcha_response },
-      fields: {},
-    };
-
-    for (const pair of new FormData(getForm())) {
-      postBody.fields[pair[0]] = pair[1];
+  fetch(serviceUrl, request)
+   .then((response) => {
+    if (response.ok) {
+     return response.json();
     }
+    console.error(response);
 
-    delete postBody.fields["g-recaptcha-response"]; //we already have it from the callback
+    throw new Error(
+     `Can't submit - ${response.status}:${response.statusText}`
+    );
+   })
+   .then((responseJson) => {
+    console.log(responseJson);
 
-    /** @type { RequestInit } */
-    const request = {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(postBody),
-    };
+    goToThanksPage();
+   })
+   .catch((error) => {
+    console.error(error);
 
-    fetch(serviceUrl, request)
-      .then((response) => {
-        if (response.ok) {
-          return response.json();
-        }
-        console.error(response);
-
-        throw new Error(
-          `Can't submit - ${response.status}:${response.statusText}`
-        );
-      })
-      .then((responseJson) => {
-        console.log(responseJson);
-
-        goToThanksPage();
-      })
-      .catch((error) => {
-        console.error(error);
-
-        openModal();
-      });
-  }
+    openModal();
+   });
+ }
 </script>
