@@ -24,8 +24,7 @@ permalink: "contact-us.html"
     Your name <span class="required-label" aria-hidden="true">*</span></label>
    <input autofocus type="text" class="form-control rounded-5" id="InputName" name="Name" autocomplete="name" required
     aria-required="true" size="65" maxlength="150" minlength="1" role="textbox" />
-   <span class="error-icon ca-gov-icon-warning-diamond color-red" aria-hidden="true"></span>
-   <div class="mt-2 invalid-feedback font-weight-600">
+   <div class="mt-2 invalid-feedback font-weight-600 d-block">
     Enter your name
    </div>
 
@@ -34,8 +33,7 @@ permalink: "contact-us.html"
     Email <span class="required-label" aria-hidden="true">*</span></label>
    <input type="email" class="form-control rounded-5" id="InputEmail" name="Email" autocomplete="email" required
     aria-required="true" size="65" maxlength="250" minlength="1" role="textbox" />
-   <span class="error-icon ca-gov-icon-warning-diamond color-red" aria-hidden="true"></span>
-   <div class="mt-2 invalid-feedback font-weight-600">
+   <div class="mt-2 invalid-feedback font-weight-600 d-block">
     Enter a valid email. Example: email@email.com
    </div>
 
@@ -64,8 +62,7 @@ permalink: "contact-us.html"
      aria-hidden="true">*</span></label>
    <textarea id="InputComments" class="form-control rounded-5" rows="5" cols="80" name="Comments" aria-required="true"
     required maxlength="100000" minlength="10" role="textbox"></textarea>
-   <span class="error-icon ca-gov-icon-warning-diamond color-red" aria-hidden="true"></span>
-   <div class="mt-2 invalid-feedback font-weight-600">
+   <div class="mt-2 invalid-feedback font-weight-600 d-block">
     Provide information about why you're contacting us.
    </div>
 
@@ -99,25 +96,28 @@ permalink: "contact-us.html"
   Network</a> offers a collaborative space for all members of state digital teams.</p>
 
 
-
-
-
-
-
 <style type="text/css">
- form:not(form[submit_attempted]) .form-control~.invalid-feedback,
+ form:not(form[submit_attempted]) .form-control+.invalid-feedback,
  form:not(form[submit_attempted]) .alert,
  form:valid .alert,
- form:not(form[submit_attempted]) textarea.form-control:valid~.invalid-feedback {
-  display: none;
+ .form-control:valid+.invalid-feedback {
+  display: none !important;
  }
 
- .form-control:valid~.invalid-feedback {
-  display: none;
+
+ /* new */
+
+ .invalid-feedback {
+  position: relative;
  }
 
- form[submit_attempted] .form-control:invalid~.invalid-feedback {
-  display: block;
+ .invalid-feedback::before {
+  content: "\ea2f";
+  position: absolute;
+  font-family: "CaGov";
+  font-size: 1.5rem;
+  right: 10px;
+  top: -51px;
  }
 
  form[submit_attempted] .alert {
