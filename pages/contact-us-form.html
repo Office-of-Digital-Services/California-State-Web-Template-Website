@@ -25,7 +25,7 @@ permalink: "contact-us.html"
    <input autofocus type="text" class="form-control rounded-5" id="InputName" name="Name" autocomplete="name" required
     aria-required="true" size="65" maxlength="150" minlength="1" role="textbox" />
    <span class="error-icon ca-gov-icon-warning-diamond color-red" aria-hidden="true"></span>
-   <div class="mt-2 invalid-feedback d-block font-weight-600">
+   <div class="mt-2 invalid-feedback font-weight-600">
     Enter your name
    </div>
 
@@ -35,7 +35,7 @@ permalink: "contact-us.html"
    <input type="email" class="form-control rounded-5" id="InputEmail" name="Email" autocomplete="email" required
     aria-required="true" size="65" maxlength="250" minlength="1" role="textbox" />
    <span class="error-icon ca-gov-icon-warning-diamond color-red" aria-hidden="true"></span>
-   <div class="mt-2 invalid-feedback d-block font-weight-600">
+   <div class="mt-2 invalid-feedback font-weight-600">
     Enter a valid email. Example: email@email.com
    </div>
 
@@ -65,7 +65,7 @@ permalink: "contact-us.html"
    <textarea id="InputComments" class="form-control rounded-5" rows="5" cols="80" name="Comments" aria-required="true"
     required maxlength="100000" minlength="10" role="textbox"></textarea>
    <span class="error-icon ca-gov-icon-warning-diamond color-red" aria-hidden="true"></span>
-   <div class="mt-2 invalid-feedback d-block font-weight-600">
+   <div class="mt-2 invalid-feedback font-weight-600">
     Provide information about why you're contacting us.
    </div>
 
@@ -109,9 +109,16 @@ permalink: "contact-us.html"
  form:not(form[submit_attempted]) .alert,
  form:valid .alert,
  form:not(form[submit_attempted]) textarea.form-control:valid~.invalid-feedback {
-  display: none !important;
+  display: none;
  }
 
+ .form-control:valid~.invalid-feedback {
+  display: none;
+ }
+
+ form[submit_attempted] .form-control:invalid~.invalid-feedback {
+  display: block;
+ }
 
  form[submit_attempted] .alert {
   border-left: 5px solid;
@@ -121,6 +128,8 @@ permalink: "contact-us.html"
   border-bottom: 4px solid #cd402d;
   position: relative;
  }
+
+
 
  .error-icon {
   display: none;
