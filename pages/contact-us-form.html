@@ -108,10 +108,9 @@ permalink: "contact-us.html"
  form:not(form[submit_attempted]) .form-control~.invalid-feedback,
  form:not(form[submit_attempted]) .alert,
  form:valid .alert,
- .form-control:valid~.invalid-feedback {
+ form:not(form[submit_attempted]) textarea.form-control:valid~.invalid-feedback {
   display: none !important;
  }
-
 
 
  form[submit_attempted] .alert {
@@ -121,10 +120,6 @@ permalink: "contact-us.html"
  form[submit_attempted] .form-control:invalid {
   border-bottom: 4px solid #cd402d;
   position: relative;
- }
-
- .alert-cont {
-  font-size: 1.6rem;
  }
 
  .error-icon {
