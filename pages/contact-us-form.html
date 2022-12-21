@@ -18,14 +18,14 @@ permalink: "contact-us.html"
   <form autocomplete="on" method="POST" id="ContactUsForm" role="form">
    <div class="alert alert-danger alert-banner brd-0 brd-red p-l m-t-md" role="alert">
     <span class="alert-icon ca-gov-icon-warning-diamond color-red" aria-hidden="true"></span>
-    <div class="container m-l-md"><span class="alert-text gray-900">Correct the errors to continue</span></div>
+    <div class="container m-l-md"><span class="alert-text gray-900 font-weight-600">Correct the errors to
+      continue</span></div>
    </div>
    <label class="form-control-label m-t-md" for="InputName">
     Your name <span class="required-label" aria-hidden="true">*</span></label>
    <input autofocus type="text" class="form-control rounded-5" id="InputName" name="Name" autocomplete="name" required
     aria-required="true" size="65" maxlength="150" minlength="1" role="textbox" />
-   <span class="error-icon ca-gov-icon-warning-diamond color-red" aria-hidden="true"></span>
-   <div class="mt-2 invalid-feedback d-block font-weight-600">
+   <div class="mt-2 invalid-feedback font-weight-600 d-block">
     Enter your name
    </div>
 
@@ -34,9 +34,8 @@ permalink: "contact-us.html"
     Email <span class="required-label" aria-hidden="true">*</span></label>
    <input type="email" class="form-control rounded-5" id="InputEmail" name="Email" autocomplete="email" required
     aria-required="true" size="65" maxlength="250" minlength="1" role="textbox" />
-   <span class="error-icon ca-gov-icon-warning-diamond color-red" aria-hidden="true"></span>
-   <div class="mt-2 invalid-feedback d-block font-weight-600">
-    Enter a valid email. Example: email@email.com
+   <div class="mt-2 invalid-feedback font-weight-600 d-block">
+    Enter a valid email. Example: name@email.com
    </div>
 
    <label class="form-control-label  m-t-lg" for="InputDepartment">Department or agency</label>
@@ -44,28 +43,26 @@ permalink: "contact-us.html"
     aria-required="false" size="65" maxlength="150" minlength="1" role="textbox" />
 
    <label class="form-control-label  m-t-lg" for="InputRole">Main role</label>
-   <div class="combobox pos-rel">
-    <input type="text" class="form-control rounded-5" id="InputRole" name="Role" autocomplete="organization-title"
-     list="roleSuggestions" aria-required="false" aria-autocomplete="both" size="65" maxlength="150" minlength="1"
-     role="combobox" placeholder="Select an option or type your own" />
-    <datalist id="roleSuggestions">
-     <option>Analytics</option>
-     <option>Content</option>
-     <option>Design</option>
-     <option>Development</option>
-     <option>Product</option>
-     <option>Program</option>
-     <option>Research</option>
-    </datalist>
-   </div>
+
+   <select class="form-select form-select-lg mb-3" id="InputRole" name="Role">
+    <option selected="">Select an option</option>
+    <option value="Analytics">Analytics</option>
+    <option value="Content">Content</option>
+    <option value="Design">Design</option>
+    <option value="Development">Development</option>
+    <option value="Product">Product</option>
+    <option value="Program">Program</option>
+    <option value="Research">Research</option>
+    <option value="Other">Other</option>
+   </select>
+
 
 
    <label class="form-control-label  m-t-lg" for="InputComments"> How can we help? <span class="required-label"
      aria-hidden="true">*</span></label>
    <textarea id="InputComments" class="form-control rounded-5" rows="5" cols="80" name="Comments" aria-required="true"
     required maxlength="100000" minlength="10" role="textbox"></textarea>
-   <span class="error-icon ca-gov-icon-warning-diamond color-red" aria-hidden="true"></span>
-   <div class="mt-2 invalid-feedback d-block font-weight-600">
+   <div class="mt-2 invalid-feedback font-weight-600 d-block">
     Provide information about why you're contacting us.
    </div>
 
@@ -99,23 +96,36 @@ permalink: "contact-us.html"
   Network</a> offers a collaborative space for all members of state digital teams.</p>
 
 
-
-
-
-
-
 <style type="text/css">
- form:not(form[submit_attempted]) .form-control~.invalid-feedback,
+ form:not(form[submit_attempted]) .form-control+.invalid-feedback,
  form:not(form[submit_attempted]) .alert,
  form:valid .alert,
- .form-control:valid~.invalid-feedback {
+ .form-control:valid+.invalid-feedback {
   display: none !important;
  }
 
 
+ /* new */
+
+ .invalid-feedback {
+  position: relative;
+ }
+
+ .invalid-feedback::before {
+  content: "\ea2f";
+  position: absolute;
+  font-family: "CaGov";
+  font-size: 1.5rem;
+  right: 10px;
+  top: -51px;
+ }
 
  form[submit_attempted] .alert {
   border-left: 5px solid;
+ }
+
+ form[submit_attempted] .alert .container {
+  padding-top: 2px;
  }
 
  form[submit_attempted] .form-control:invalid {
@@ -123,9 +133,7 @@ permalink: "contact-us.html"
   position: relative;
  }
 
- .alert-cont {
-  font-size: 1.6rem;
- }
+
 
  .error-icon {
   display: none;
