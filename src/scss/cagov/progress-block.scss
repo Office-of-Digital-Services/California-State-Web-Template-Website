@@ -1,7 +1,9 @@
 /* -----------------------------------------
    PROGRESS BLOCK - /source/scss/cagov/progress-block.scss
 ----------------------------------------- */
-
+.progress-text {
+    text-align: center;
+}
 .dot-line {
     position: relative;
     display: block;
@@ -34,9 +36,21 @@
     }
 }
 @media (max-width: $screen-xxs-max) {
-    .dot-line::before,
-    .dot-line::after {
-        display: none;
+    .progress-text {
+        text-align: left;
+        position: relative;
+        p, h2, h3, h4, h5, h6 {
+            margin-left: 3rem!important;
+        }
+    }
+    .dot-line {
+        rotate: 90deg;
+        left: -50%;
+        top: 282px;
+        &::before,
+        &::after {
+            width: calc(100% + 30px);
+        }
     }
 }
 
