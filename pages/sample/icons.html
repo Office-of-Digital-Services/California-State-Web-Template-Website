@@ -57,7 +57,7 @@ permalink: "visual-design/icons.html"
   }
  }
 
- .icon-reset {
+ .icon-submit {
   position: absolute;
   right: 0;
   top: 0;
@@ -71,8 +71,8 @@ permalink: "visual-design/icons.html"
   padding-right: 13px;
  }
 
- .icon-reset:hover,
- .icon-reset:focus {
+ .icon-submit:hover,
+ .icon-submit:focus {
   background-color: #4a4958;
  }
 
@@ -84,6 +84,13 @@ permalink: "visual-design/icons.html"
   padding-bottom: 0 !important;
  }
 
+ .reset-button {
+  position:absolute;
+  border:0;
+  background-color: transparent;
+  right:2.5em;
+  top:0.2em;
+ }
 
 
  #fontlist {
@@ -278,9 +285,11 @@ permalink: "visual-design/icons.html"
 
   if (searchInput.length) {
    document.querySelector('#jumpToHeading').style.display = "none";
+   document.querySelector('#iconSearchForm .reset-button').style.display = "block";
   } else {
    document.querySelector('#jumpToHeading').style.display = "block";
    document.querySelector('#jumpToHeading ol').innerHTML = jumpToHtml;
+   document.querySelector('#iconSearchForm .reset-button').style.display = "none";
   }
   document.querySelector('#fontlist').innerHTML = listHtml;
   document.querySelector('#resultcount').innerHTML = numberOfResults ? `<span class="m-t-0">${numberOfResults} icons <span class="sr-only">found.</span></span>` : '<span>No icons found.</span>';
@@ -318,7 +327,7 @@ permalink: "visual-design/icons.html"
 
    // add event listeners to form field and button
    document.querySelector("#iconSearchForm input").oninput = function () { buildList(false) };
-   document.querySelector("#iconSearchForm button").onclick = function () {
+   document.querySelector("#iconSearchForm .reset-button").onclick = function () {
     document.querySelector("#iconSearchForm input").value = "";
     buildList();
    };
@@ -395,9 +404,8 @@ permalink: "visual-design/icons.html"
    <span class="sr-only" id="IconInput">Search icons</span>
    <input type="text" name="iconsearch" aria-labelledby="IconInput" placeholder="Browse icons"
     class="search-textfield rounded-5 icons-searchbox">
-   <button type="reset" title="reset" class="border-0 color-white icon-reset"><span class="ca-gov-icon-close-mark"
-     aria-hidden="true"></span><span class="sr-only">Reset</span></button>
-   <button type="submit" value="Submit" onclick="javascript:buildList(false,0);" class="sr-only" aria-label="Submit"></button>
+   <button type="submit" title="submit" class="border-0 color-white icon-submit" aria-label="Submit" onclick="javascript:buildList(false,0);"><span class="ca-gov-icon-search" aria-hidden="true"></span><span class="sr-only">Submit</span></button>
+   <button type="reset" title="clear" value="reset"  class="reset-button" aria-label="Reset"><span class="ca-gov-icon-close-mark" aria-hidden="true"></span><span class="sr-only">Reset</span></button>
   </form>
 
   <div id="jumpToHeading">
