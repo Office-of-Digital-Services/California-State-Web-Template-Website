@@ -13,6 +13,7 @@ module.exports = function (eleventyConfig) {
   "src/scss/custom": "css/custom"
  });
 
+
  // site crawler
  eleventyConfig.addPassthroughCopy('robots.txt');
 

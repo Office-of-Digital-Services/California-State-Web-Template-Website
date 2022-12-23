@@ -7,10 +7,11 @@ permalink: "download-and-setup.html"
 
 <div class="row">
  <div class="col-md-3">
-  <nav aria-labelledby="page-navigation-label" class="side-navigation sticky-6 overflow-auto">
+  <nav aria-labelledby="side-navigation-label" class="side-navigation sticky-6 overflow-auto">
+   <span class="sr-only" id="side-navigation-label">Side navigation</span>
    <ul class="list-navigation">
     <li>
-     <a href="/get-started.html" class="landing" id="page-navigation-label">Get started</a>
+     <a href="/get-started.html" class="landing">Get started</a>
     </li>
 
     <li>
@@ -36,10 +37,10 @@ permalink: "download-and-setup.html"
 
   <div class="p-a-md p-b-lg bg-gray-75">
 
-   <h2 class="h3 mt-0">Common web template files</h2>
+   <h2 class="h3 mt-0">Common web template resources</h2>
 
-   <div class="flex-container justify-content-between gap-3 font-size-14">
-    <div class="brd-solid-1 brd-gray-light bg-white p-3 rounded-5">
+   <div class="d-flex flex-row flex-wrap flex-lg-nowrap justify-content-between gap-3 font-size-14">
+    <div class="brd-solid-1 brd-gray-light bg-white p-3 rounded-5 w-100 flex-fill">
      <span class="bold"><a
        href="https://github.com/Office-of-Digital-Services/California-State-Web-Template-Website#available-state-web-template-frameworks">Template
        frameworks</a> core code without sample content</span>
@@ -48,16 +49,13 @@ permalink: "download-and-setup.html"
       </li>
       <li><a href="https://github.com/Office-of-Digital-Services/California-State-Web-Template-eleventy">Eleventy</a>
       </li>
-      <li><a href="https://github.com/Office-of-Digital-Services/California-State-Template-NET-core">NET
-        core</a></li>
-      <li class="m-l"><a href="https://github.com/Office-of-Digital-Services/California-State-Template-MVC-v5">MVC</a>
-      </li>
-      <li class="m-l"><a
-        href="https://github.com/Office-of-Digital-Services/California-State-Web-Template-react">React</a>
+      <li><a href="https://github.com/Office-of-Digital-Services/California-State-Web-Template-NET-Core-MVC">NET Core
+        MVC</a></li>
+      <li><a href="https://github.com/Office-of-Digital-Services/California-State-Web-Template-react">React</a>
       </li>
      </ul>
     </div>
-    <div class="brd-solid-1 brd-gray-light bg-white p-3 rounded-5">
+    <div class="brd-solid-1 brd-gray-light bg-white p-3 rounded-5  w-100 flex-fill">
      <span class="bold">State web template website with all sample content</span>
      <ul class="mt-2 p-l-md">
       <li><a href="https://github.com/Office-of-Digital-Services/California-State-Web-Template-Website/">Github
@@ -66,7 +64,7 @@ permalink: "download-and-setup.html"
         template releases for download</a></li>
      </ul>
     </div>
-    <div class="brd-solid-1 brd-gray-light bg-white p-3 rounded-5">
+    <div class="brd-solid-1 brd-gray-light bg-white p-3 rounded-5  w-100 flex-fill">
      <span class="bold">CDN (content delivery network)</span>
      <ul class="mt-2 p-l-md">
       <li><a href="/cdn.html">V6 CSS/JS core CDN links</a>
@@ -99,17 +97,21 @@ permalink: "download-and-setup.html"
     </span>
    </li>
 
-   <li><span class="bold">Understand the differences in the code</span>
+   <li><span class="bold">Understand the differences in the code and HTML structure</span>
     <br />
     <span class="cagov-step-list-content">
-     <p>Review template updates. Do a code comparison in the <a
-       href="https://github.com/Office-of-Digital-Services/California-State-Web-Template-Website/">state
-       web template website repo</a> to understand
-      structural and component changes. This helps you understand the work you need to do. Learn how
-      to do
-      a <a
-       href="https://docs.github.com/en/pull-requests/committing-changes-to-your-project/viewing-and-comparing-commits/comparing-commits">code
-       comparison in GitHub</a>.</p>
+      <p>
+        You’ll want to compare your current CSS and JS files to the state template’s files (especially if you have custom styles). This helps you understand the work you need to do. Learn how to do a <a href="https://docs.github.com/en/pull-requests/committing-changes-to-your-project/viewing-and-comparing-commits/comparing-commits">code comparison in GitHub</a>.
+      </p>
+
+<ul>
+  <li><a href="./structure.html">Structural elements</a> </li>
+    <li><a href="./components.html">Components</a></li>
+      <li><a href="./patterns.html">Patterns</a></li>
+
+</ul>
+<p>This may affect your HTML, requiring structural code updates.</p>
+
     </span>
    </li>
 
@@ -119,9 +121,9 @@ permalink: "download-and-setup.html"
      <p>You can clone it from our <a
        href="https://github.com/Office-of-Digital-Services/California-State-Web-Template-Website/">Template GitHub
        Repository</a>.</p>
-     <p>You can also download or access the different frameworks. Review <a href="#Commonlinks">Common
-       V6 State Web Template file
-       links</a>. This is
+     <p>You can also download or access the different frameworks. Review <a href="#Common-web-template-resources">Common
+       web template
+       resources</a>. This is
       also a good time to have your security office perform a scan of the files.</p>
     </span>
    </li>
@@ -195,9 +197,6 @@ permalink: "download-and-setup.html"
 
   <h2>Folder structure and files</h2>
 
-  <p>Discover what’s in the V6 State Template package. Review <a href="/download-and-setup.html">Download
-    and setup</a> for more details.</p>
-
   <div class="flex-container">
    <div class="brd-solid-1 brd-gray-light p-3">
     <ul class="folder-structure-list">
@@ -269,7 +268,7 @@ permalink: "download-and-setup.html"
   <h3>Step 2. Set up your pages</h3>
 
   <p>To start, you can use the sample State Template web pages. If your website doesn’t use NPM or Eleventy, you can
-   use these clear starter template codes:</p>
+   use these clean starter template codes:</p>
   <button type="button" class="btn btn-default d-block m-b-md brd-primary" style="color:#046B99;" data-bs-toggle="modal"
    data-bs-target="#template-blocks">Clean HTML template source code</button>
   <button type="button" class="btn btn-default d-block m-b-md brd-primary" style="color:#046B99;" data-bs-toggle="modal"
@@ -287,23 +286,24 @@ permalink: "download-and-setup.html"
 
   <h3>Step 4. Use NPM to run the state web template locally</h3>
 
-  <div class="grid-container">
-   <div>
+
+  <div class="d-grid grid-columns-auto brd-top brd-left brd-gray-200">
+   <div class="p-a brd-bottom brd-gray-200 m-a-0">
     1. Use this command to install all the necessary npm packages to your local website directory.
    </div>
-   <pre>npm install
+   <pre class="p-a m-a-0">npm install
             </pre>
-   <div>
+   <div class="p-a brd-bottom brd-gray-200 m-a-0">
     2. Use this command to build and generate your website's pages, css and js files.
    </div>
-   <pre>npm run build
+   <pre class="p-a m-a-0">npm run build
             </pre>
-   <div>
+   <div class="p-a brd-bottom brd-gray-200 m-a-0">
     3. Use this command to run the website in your <code>http://localhost:8080/</code>
     and watch for any updates you are making
     to webpages or scss and js files.
    </div>
-   <pre>npm run start
+   <pre class="p-a m-a-0">npm run start
             </pre>
   </div>
 
@@ -327,11 +327,17 @@ permalink: "download-and-setup.html"
   <pre>&lt;link rel="stylesheet" href="/css/cagov.core.css">
 &lt;link rel="stylesheet" href="/css/colortheme-oceanside.css"></pre>
 
-  <p>If your website doesn't use a site generator, you can copy and paste the stylesheet links into your
-   <code>&lt;head></code> before all other stylesheets to load our CSS. Note: you can
-   replace <code>colortheme-oceanside.css</code> with a color
-   theme file of your choice.
-  </p>
+  <h5>Custom CSS</h5>
+  <p>You can add global custom CSS into <code>/src/scss/custom/custom.scss</code> file. Those styles will be compiled
+   into <code>cagov.core.css</code> file. There is also an option to apply custom CSS to a specific page. To do that you
+   need to add your custom CSS file into <code>/src/scss/custom/</code> folder and make reference to it in the page's
+   front matter under <code>customcss</code> key. Here is an example: </p>
+  <pre>---
+title: California State Web Template
+layout: landing.njk
+customcss: /css/custom/homepage.css
+---</pre>
+
 
   <h4>JavaScript</h4>
 
@@ -350,7 +356,7 @@ permalink: "download-and-setup.html"
   <button type="button" class="btn btn-default d-block m-b-md brd-primary" style="color:#046B99;" data-bs-toggle="modal"
    data-bs-target="#using-includes">Show sample includes code</button>
 
-  <p>You can also add any other html or njk includes to your page like this:</p>
+  <p>You can also add any other <code>html</code> or <code>njk</code> includes to your page like this:</p>
 
   <pre>{{ '{% include "../../src/_includes/modules/header-primary-banner.html" %}' }}</pre>
 
@@ -372,6 +378,10 @@ permalink: "download-and-setup.html"
    <tr>
     <td>Standard page</td>
     <td class="bg-gray-75"><code>page.njk</code></td>
+   </tr>
+   <tr>
+    <td>Narrower standard page version</td>
+    <td class="bg-gray-75"><code>one-col.njk</code></td>
    </tr>
    <tr>
     <td>Full width page with main navigation with icons</td>
@@ -564,39 +574,3 @@ Page content
  </div>
 </div>
 <!-- / End Modal -->
-
-<style>
- .flex-container {
-  display: flex;
-  flex-direction: row;
- }
-
- @media (max-width: 800px) {
-  .flex-container {
-   flex-wrap: wrap;
-  }
-
-  .flex-container>div {
-   width: 100%;
-  }
- }
-
- .flex-container>.bg-white {
-  flex: 1 1 33%;
- }
-
- .grid-container {
-  display: grid;
-  grid-template-columns: auto auto;
-  border-top: 1px solid #aaa;
-  border-left: 1px solid #aaa;
- }
-
- .grid-container>div,
- .grid-container>pre {
-  padding: 1rem;
-  border-bottom: 1px solid #aaa;
-  border-right: 1px solid #aaa;
-  margin: 0;
- }
-</style>

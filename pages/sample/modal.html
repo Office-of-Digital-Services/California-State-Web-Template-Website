@@ -31,14 +31,6 @@ permalink: "components/modal.html"
  <li>User feedback</li>
 </ul>
 
-<h2>How it works</h2>
-<p>To trigger the modal, you'll need to include a link or a button that will trigger the modal. The trigger button
- element has two custom data attributes: <code>data-bs-toggle</code> and <code>data-bs-target</code>. The
- toggle attribute tells framework what to do and the target tells framework which element to open. So,
- whenever a link button that is clicked, a modal with an ID specified in the <code>data-bs-target</code> attribute will
- appear.
-
-</p>
 <h2>Sample</h2>
 
 <!--TABS-->
@@ -50,7 +42,9 @@ permalink: "components/modal.html"
   <li class="nav-item" role="presentation">
    <a id="tab-html1" href="#pane-html1" class="nav-link" data-bs-toggle="tab" role="tab">Source code</a>
   </li>
-
+  <li class="nav-item" role="presentation">
+   <a id="tab-include1" href="#pane-include1" class="nav-link" data-bs-toggle="tab" role="tab">Implementation notes</a>
+  </li>
  </ul>
 
 
@@ -93,6 +87,37 @@ permalink: "components/modal.html"
 
      <h3 class="h4">Modal</h3>
      <pre style="max-height: 300px;"><code>{% include "../../src/_includes/modules/modal.html" %}</code></pre>
+
+    </div>
+   </div>
+  </div>
+
+
+  <!--Implementation-->
+  <div id="pane-include1" class="card tab-pane fade" role="tabpanel" aria-labelledby="tab-include1">
+   <div class="card-header" id="heading-include1">
+    <a class="collapsed" data-bs-toggle="collapse" href="#collapse-include1" data-parent="#tab-content"
+     aria-expanded="false" aria-controls="collapse-include1" data-hash="#pane-include1"
+     title="Implementation notes tab header">
+     Implementation notes
+    </a>
+   </div>
+   <div id="collapse-include1" class="collapse" role="tabpanel" aria-labelledby="heading-include1">
+    <div class="card-body">
+     <p class="m-b">Each modal has it's own ID. To trigger the modal, you'll need to include a link or a button that
+      refers to the
+      modal's ID. The markup for the trigger element might look like this:</p>
+
+     <pre><code><button type="button" class="btn btn-default btn-lg m-t-lg" data-bs-toggle="modal"
+       data-bs-target="#news-headlines">Open modal</button></code></pre>
+
+     <p class="m-t">The button element has two custom data attributes:</p>
+     <ul>
+      <li><code>data-bs-toggle</code> tells Bootstrap to open the modal.</li>
+      <li><code>data-bs-target</code> tells Bootstrap which element will open. When a person selects a link or button
+       with that ID (<code>#modalid</code>), that
+       modal will appear.</li>
+     </ul>
 
     </div>
    </div>
