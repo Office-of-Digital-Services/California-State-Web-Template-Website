@@ -1,7 +1,7 @@
 # Version History
 
 
-## 6.0.9
+## 6.1.0
 - Updated alert banner
 - Added 8 new icons to the CAGov icons font
 - Added side navigation component
