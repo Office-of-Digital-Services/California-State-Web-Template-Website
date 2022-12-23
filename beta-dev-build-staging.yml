@@ -3,53 +3,20 @@
 # Add steps that analyze code, save build artifacts, deploy, and more:
 # https://docs.microsoft.com/azure/devops/pipelines/languages/javascript
 
-<<<<<<< HEAD:beta-dev-build-staging.yml
 trigger: 
 - beta-dev
-=======
-trigger:
-- beta
-
-pr: none
->>>>>>> ab731d9abd8153b72eb888127e674d0d27ac4dce:beta-build-prod.yml
 
 pr: none
 
 pool:
   vmImage: 'ubuntu-latest'
 
-variables:
-  major: 1
-  minor: 0
-
-##veracode connection Name
-  veracode: 'Veracode'
-  veracodeAppProfile: 'CDT.beta.template.webtools.website'
-
-##sonarqube connection name and project name
-  SonarQubeConnection: 'sonar'
-  SonarQubeProjectName: 'CDT.beta.template.webtools.website'
-
-name: $(major).$(minor)$(Rev:.r)
-  
 steps:
-- script: |
-    echo '##vso[task.setvariable variable=REACT_APP_VERSION]$(Build.BuildNumber)'
-  displayName: set environment variable for subsequent steps
-  
+
 - task: NodeTool@0
   inputs:
     versionSpec: '18.x'
   displayName: 'Install Node.js'
-
-- task: SonarQubePrepare@5
-  displayName: 'SonarQube Prepare Analysis Configuration'
-  inputs:
-    SonarQube: '$(SonarQubeConnection)'
-    scannerMode: 'CLI'
-    configMode: 'manual'
-    cliProjectKey: '$(SonarQubeProjectName)'
-    cliProjectName: '$(SonarQubeProjectName)'
 
 - task: Npm@1
   inputs:
@@ -75,52 +42,40 @@ steps:
   inputs:
     Contents: '_site/**' # Pull the build directory
     TargetFolder: '$(Build.ArtifactStagingDirectory)'
-
 - task: PublishBuildArtifacts@1
   inputs: 
     PathtoPublish: '$(Build.ArtifactStagingDirectory)/_site' # build files
     ArtifactName: 'drop' # output artifact named drop
-
 - task: ArchiveFiles@2
-  displayName: 'Archive Build Folder'
   inputs:
-<<<<<<< HEAD:beta-dev-build-staging.yml
     rootFolderOrFile: '$(Build.ArtifactStagingDirectory)'
     includeRootFolder: true
     archiveType: 'zip'
     archiveFile: '$(Build.ArtifactStagingDirectory)/$(Build.BuildId).zip'
     replaceExistingArchive: true
-=======
-    rootFolderOrFile: '$(Build.ArtifactStagingDirectory)/_site'
-    archiveFile: '$(Build.ArtifactStagingDirectory)/app.zip' 
-    includeRootFolder: false
->>>>>>> ab731d9abd8153b72eb888127e674d0d27ac4dce:beta-build-prod.yml
 
 - task: Veracode@3
-  displayName: 'Veracode upload and scan: $(build.artifactstagingdirectory)'
   inputs:
     ConnectionDetailsSelection: 'Endpoint'
-<<<<<<< HEAD:beta-dev-build-staging.yml
     AnalysisService: 'Veracode'
     veracodeAppProfile: '$(system.teamProject)'
-=======
-    AnalysisService: '$(veracode)'
-    veracodeAppProfile: '$(veracodeAppProfile)'
->>>>>>> ab731d9abd8153b72eb888127e674d0d27ac4dce:beta-build-prod.yml
     version: '$(build.buildNumber)'
-    filepath: '$(build.artifactstagingdirectory)/app.zip'
+    filepath: '$(Build.ArtifactStagingDirectory)/$(Build.BuildId).zip'
     createProfile: true
     maximumWaitTime: '360'
-  continueOnError: true
 
-- task: SonarQubeAnalyze@5
-  displayName: Run code quality analysis
 
-- task: SonarQubePublish@5
-  displayName: Publish code quality analysis
+- task: SonarQubePrepare@5
   inputs:
-<<<<<<< HEAD:beta-dev-build-staging.yml
+    SonarQube: 'sonar'
+    scannerMode: 'CLI'
+    configMode: 'manual'
+    cliProjectKey: 'beta.template.webtools.website'
+    cliProjectName: 'beta.template.webtools.website'
+    cliSources: '$(build.artifactstagingdirectory)'
+- task: SonarQubeAnalyze@5
+    
+- task: SonarQubePublish@5
+  inputs:
 
-=======
->>>>>>> ab731d9abd8153b72eb888127e674d0d27ac4dce:beta-build-prod.yml
     pollingTimeoutSec: '300'
