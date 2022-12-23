@@ -1,24 +1,54 @@
 {
-  "name": "cagov-template-v6",
-  "version": "5.6.2",
-  "description": "CA State Template v5.6",
-  "devDependencies": {
-    "gulp-autoprefixer": "^3.1.1",
-    "gulp-coffee": "latest",
-    "gulp-concat": "^2.6.1",
-    "gulp-connect": "latest",
-    "gulp-csso": "^2.0.0",
-    "gulp-header": "^2.0.5",
-    "gulp-htmlmin": "^3.0.0",
-    "gulp-install": "^1.1.0",
-    "gulp-sass": "^4.1.1",
-    "gulp-uglify": "^3.0.2",
-    "gulp-uglify-es": "^3.0.0",
-    "gulp-util": "latest",
-    "run-sequence": "^1.2.2"
-  },
-  "dependencies": {
-    "gulp": "^4.0.2",
-    "gulp-inject-version": "^1.0.1"
-  }
+ "name": "cagov-template-v6",
+ "version": "6.0.8",
+ "description": "CA State Web Template Beta",
+ "scripts": {
+  "watch:js": "rollup --config rollup.config.js --watch",
+  "watch:eleventy": "npx @11ty/eleventy --serve",
+  "watch:sass": "npx sass --no-source-map src/scss/cagov.core.scss:_site/css/cagov.core.min.css --watch  --style compressed",
+  "watch:sass-oceanside": "npx sass --no-source-map src/scss/colortheme/oceanside-import.scss:_site/css/colortheme-oceanside.min.css --watch --style compressed",
+  "build:js": "rollup --config rollup.config.js",
+  "build:eleventy": "npx @11ty/eleventy",
+  "build:sass": "npx sass --no-source-map src/scss/cagov.core.scss:_site/css/cagov.core.css",
+  "build:sass-min": "npx sass --no-source-map src/scss/cagov.core.scss:_site/css/cagov.core.min.css --style compressed",
+  "build:sass-delta": "npx sass --no-source-map src/scss/colortheme/delta-import.scss:_site/css/colortheme-delta.css",
+  "build:sass-delta-min": "npx sass --no-source-map src/scss/colortheme/delta-import.scss:_site/css/colortheme-delta.min.css --style compressed",
+  "build:sass-eureka": "npx sass --no-source-map src/scss/colortheme/eureka-import.scss:_site/css/colortheme-eureka.css",
+  "build:sass-eureka-min": "npx sass --no-source-map src/scss/colortheme/eureka-import.scss:_site/css/colortheme-eureka.min.css --style compressed",
+  "build:sass-mono": "npx sass --no-source-map src/scss/colortheme/mono-import.scss:_site/css/colortheme-mono.css",
+  "build:sass-mono-min": "npx sass --no-source-map src/scss/colortheme/mono-import.scss:_site/css/colortheme-mono.min.css --style compressed",
+  "build:sass-oceanside": "npx sass --no-source-map src/scss/colortheme/oceanside-import.scss:_site/css/colortheme-oceanside.css",
+  "build:sass-oceanside-min": "npx sass --no-source-map src/scss/colortheme/oceanside-import.scss:_site/css/colortheme-oceanside.min.css --style compressed",
+  "build:sass-orangecounty": "npx sass --no-source-map src/scss/colortheme/orangecounty-import.scss:_site/css/colortheme-orangecounty.css",
+  "build:sass-orangecounty-min": "npx sass --no-source-map src/scss/colortheme/orangecounty-import.scss:_site/css/colortheme-orangecounty.min.css --style compressed",
+  "build:sass-pasorobles": "npx sass --no-source-map src/scss/colortheme/pasorobles-import.scss:_site/css/colortheme-pasorobles.css",
+  "build:sass-pasorobles-min": "npx sass --no-source-map src/scss/colortheme/pasorobles-import.scss:_site/css/colortheme-pasorobles.min.css --style compressed",
+  "build:sass-sacramento": "npx sass --no-source-map src/scss/colortheme/sacramento-import.scss:_site/css/colortheme-sacramento.css",
+  "build:sass-sacramento-min": "npx sass --no-source-map src/scss/colortheme/sacramento-import.scss:_site/css/colortheme-sacramento.min.css --style compressed",
+  "build:sass-santabarbara": "npx sass --no-source-map src/scss/colortheme/santabarbara-import.scss:_site/css/colortheme-santabarbara.css",
+  "build:sass-santabarbara-min": "npx sass --no-source-map src/scss/colortheme/santabarbara-import.scss:_site/css/colortheme-santabarbara.min.css --style compressed",
+  "build:sass-santacruz": "npx sass --no-source-map src/scss/colortheme/santacruz-import.scss:_site/css/colortheme-santacruz.css",
+  "build:sass-santacruz-min": "npx sass --no-source-map src/scss/colortheme/santacruz-import.scss:_site/css/colortheme-santacruz.min.css --style compressed",
+  "build:sass-shasta": "npx sass --no-source-map src/scss/colortheme/shasta-import.scss:_site/css/colortheme-shasta.css",
+  "build:sass-shasta-min": "npx sass --no-source-map src/scss/colortheme/shasta-import.scss:_site/css/colortheme-shasta.min.css --style compressed",
+  "build:sass-sierra": "npx sass --no-source-map src/scss/colortheme/sierra-import.scss:_site/css/colortheme-sierra.css",
+  "build:sass-sierra-min": "npx sass --no-source-map src/scss/colortheme/sierra-import.scss:_site/css/colortheme-sierra.min.css --style compressed",
+  "build:sass-trinity": "npx sass --no-source-map src/scss/colortheme/trinity-import.scss:_site/css/colortheme-trinity.css",
+  "build:sass-trinity-min": "npx sass --no-source-map src/scss/colortheme/trinity-import.scss:_site/css/colortheme-trinity.min.css --style compressed",
+  "start": "npm run watch:eleventy & npm run watch:sass & npm run watch:sass-oceanside & npm run watch:js",
+  "build": "npm run build:eleventy & npm run build:js & npm run build:sass & npm run build:sass-min & npm run build:sass-delta & npm run build:sass-delta-min & npm run build:sass-eureka & npm run build:sass-eureka-min & npm run build:sass-mono & npm run build:sass-mono-min & npm run build:sass-oceanside & npm run build:sass-oceanside-min & npm run build:sass-orangecounty & npm run build:sass-orangecounty-min & npm run build:sass-pasorobles & npm run build:sass-pasorobles-min & npm run build:sass-sacramento & npm run build:sass-sacramento-min & npm run build:sass-santabarbara & npm run build:sass-santabarbara-min & npm run build:sass-santacruz & npm run build:sass-santacruz-min & npm run build:sass-shasta & npm run build:sass-shasta-min & npm run build:sass-sierra & npm run build:sass-sierra-min & npm run build:sass-trinity & npm run build:sass-trinity-min"
+ },
+ "keywords": [],
+ "author": "",
+ "license": "ISC",
+ "devDependencies": {
+  "@11ty/eleventy": "^1.0.0",
+  "rollup": "^2.52.2",
+  "rollup-plugin-import-css": "^2.0.1",
+  "rollup-plugin-terser": "^7.0.2",
+  "sass": "^1.38.1"
+ },
+ "dependencies": {
+  "markdown-it": "^12.3.2"
+ }
 }

@@ -1,0 +1,136 @@
+/* -----------------------------------------
+   COMMENT
+   /source/scss/colortheme/cs-buttons.scss
+----------------------------------------- */
+
+// better-button = color; background; border, hover-color; hover-background; hover-border
+
+.btn-primary {
+ @include better-button($white, $color-p2, $color-p2, $white, darken($color-p2, 7%), darken($color-p2, 7%));
+ &:disabled {
+  color: $white !important;
+ }
+
+ &.disabled {
+  color: $white !important;
+ }
+}
+
+// better-button = color; background; border, hover-color; hover-background; hover-border
+.btn-outline-primary {
+ @include better-button($color-p2, $white, $color-p2, darken($color-p2, 7%), $white, darken($color-p2, 7%));
+}
+
+.btn-default {
+ @include better-button(
+  $gray-700,
+  rgba(255, 255, 255, 0.65),
+  $gray-700,
+  $gray-base,
+  rgba(255, 255, 255, 1),
+  $gray-base
+ );
+}
+
+// beta 5.0 addition
+.btn-standout {
+ @include better-button($white, $color-p3, $color-p3, $white, darken($color-p3, 7%), darken($color-p3, 7%));
+
+ &:disabled {
+  color: $white !important;
+ }
+
+ &.disabled {
+  color: $white !important;
+ }
+}
+
+// better-button = color; background; border, hover-color; hover-background; hover-border
+.btn-outline-standout {
+ @include better-button($color-p3, $white, $color-p3, darken($color-p3, 7%), $white, darken($color-p3, 7%));
+}
+
+// beta 5.0 addition
+.btn-highlight {
+ @include better-button(
+  $black,
+  lighten($color-p1, 7%),
+  lighten($color-p1, 7%),
+  $gray-900,
+  lighten($color-p1, 14%),
+  lighten($color-p1, 14%)
+ );
+}
+
+// better-button = color; background; border, hover-color; hover-background; hover-border
+.btn-outline-highlight {
+ @include better-button($black, transparent, lighten($color-p1, 7%), $gray-900, $gray-50, lighten($color-p1, 14%));
+}
+
+.btn-secondary {
+ @include better-button($gray, $gray-lightest, $gray, $link-hover-color, #fff, $gray-base);
+
+ &.active {
+  background: #fff;
+  color: $black;
+ }
+
+ &:disabled {
+  color: $gray-base;
+ }
+
+ &.disabled {
+  color: $gray-base;
+ }
+}
+
+// better-button = color; background; border, hover-color; hover-background; hover-border
+.btn-s1 {
+ @include better-button($gray, $color-s1, $gray, $black, #fff, $gray-base);
+
+ &.active {
+  background: #fff;
+  color: $black;
+ }
+
+ &:disabled {
+  color: $gray-base;
+ }
+}
+
+// better-button = color; background; border, hover-color; hover-background; hover-border
+.btn-outline-secondary {
+ @include better-button($gray, $white, $gray, darken($gray, 7%), $white, darken($gray, 7%));
+}
+
+// better-button = color; background; border, hover-color; hover-background; hover-border
+.btn-light {
+ @include better-button($gray-700, $white, $white, $black, $gray-100, $gray-100);
+}
+
+.btn-outline-light {
+ @include better-button($white, transparent, $white, $gray-100, transparent, $gray-100);
+}
+
+.check-icon-radio {
+ color: $color-p2;
+ border-color: $color-p2;
+}
+
+.check-icon-checkbox {
+ border-color: $color-p2;
+}
+
+input[type="checkbox"]:checked + i,
+input[type="radio"]:checked + i,
+input[type="checkbox"]:checked + * i,
+input[type="radio"]:checked + * i {
+ color: #fff;
+ background-color: $color-p2;
+ border-color: $color-p2;
+}
+
+.bg-primary--checked.checked,
+.checked .bg-primary--checked {
+ background-color: $color-p2 !important;
+}

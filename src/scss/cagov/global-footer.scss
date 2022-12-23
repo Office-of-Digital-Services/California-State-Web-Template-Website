@@ -1,0 +1,103 @@
+/* -----------------------------------------
+   FOOTER - /source/scss/cagov/global-footer.scss
+----------------------------------------- */
+
+.global-footer {
+ background-color: $gray-50;
+ border-top: 1px solid $gray-200;
+ padding-top: 1rem;
+ .container .d-flex {
+  flex-direction: column;
+ }
+
+ .cagov-logo {
+  margin-right: 1.5rem;
+  img {
+   height: 1.7rem;
+  }
+  svg {
+   .ca {
+    fill: #fec02f;
+   }
+   .gov {
+    fill: #003484;
+   }
+  }
+ }
+
+ .footer-links {
+  padding-left: 0;
+  margin-top: 1rem;
+ }
+
+ .socialsharer-container {
+  padding-left: 0;
+  margin-top: 1rem;
+  li {
+   display: inline-block;
+  }
+ }
+
+ ul {
+  list-style: none;
+  margin-left: -5px;
+  margin: 5px 0;
+
+  > li {
+   padding-left: 5px;
+   padding-right: 5px;
+  }
+  .list-inline-item {
+   display: inline-block;
+   &:not(:last-child) {
+    margin-right: 5px;
+   }
+  }
+ }
+
+ .footer-links {
+  font-size: 1.125rem;
+  line-height: 1.6rem; // Keeps links centered verticaly by compensating for larger social media icons
+
+  li {
+   margin-right: 20px;
+   a {
+    color: $black;
+    text-decoration: none;
+    &:hover {
+     color: $gray-800;
+    }
+   }
+  }
+ }
+
+ .copyright {
+  font-size: 1rem;
+  padding: 5px 0 $line-height-computed;
+ }
+
+ @media (min-width: $screen-md-min) {
+  .container .d-flex {
+   flex-direction: row;
+  }
+
+  .footer-links {
+   margin-right: auto;
+   margin-top: 5px;
+  }
+
+  .socialsharer-container {
+   margin-top: 5px;
+  }
+
+  ul > li {
+   display: inline-block;
+  }
+ }
+}
+
+.sticky-footer {
+ display: flex;
+ flex-direction: column;
+ height: 100vh; // Avoid the IE 10-11 `min-height` bug
+}

@@ -1,0 +1,216 @@
+/* -----------------------------------------
+   ACCORDIONS SIDE NAV
+   /source/scss/cagov/accordion-side-nav.scss
+----------------------------------------- */
+
+// BOOTSTRAP VERSION
+
+.side-nav {
+ .accordion {
+  position: relative;
+  .list-group-item {
+   border-radius: 0;
+   &:focus {
+    @include outline(2px);
+    outline-offset: -2px;
+   }
+  }
+
+  .accordion__heading {
+   padding: 0 !important;
+   .accordion__trigger {
+    padding-top: 0.75rem !important;
+    padding-bottom: 0.75rem !important;
+    padding-left: 1.25rem !important;
+    padding-right: 1.25rem !important;
+    color: #212529;
+    text-decoration: none;
+    font-weight: 500;
+    &:hover,
+    &:focus {
+     background-color: #f8f9fa;
+    }
+    &::before {
+     display: none;
+    }
+    &:after {
+     position: absolute;
+     font-family: "CaGov" !important;
+     content: "\35";
+     right: 15px;
+     transition: transform 0.2s ease-in-out;
+    }
+    &[aria-expanded="true"]:after {
+     transform: rotate(90deg);
+    }
+   }
+   // active
+   &.active {
+    .accordion__trigger {
+     color: $white !important;
+    }
+   }
+  }
+ }
+}
+
+// DS VERSION
+cagov-accordion.sidenav {
+ details {
+  border: none;
+  min-height: 2rem;
+  margin-top: 0;
+  //SUMMARY
+  summary {
+   border: none;
+   background: $white;
+   padding-left: 1rem;
+   padding: 0.7rem 2rem 0.7rem 1rem;
+   font-size: calc(1rem + $ratio);
+   font-weight: 400;
+   text-decoration: none;
+   border-bottom: 1px solid $gray-100;
+   &:before {
+    border: none !important;
+    width: 3px;
+    background-color: transparent !important;
+   }
+   &::after {
+    display: none;
+   }
+   // hover, focus
+   &:hover,
+   &:focus {
+    text-decoration: none;
+    background-color: $gray-50;
+    &:before {
+     border: none;
+     background-color: transparent;
+    }
+   }
+
+   &:focus {
+    @include outline(2px);
+    outline-offset: -2px;
+   }
+
+   // ACTIVE STATE
+   &.active {
+    color: $black !important;
+    text-decoration: none;
+    background-color: $gray-75;
+    font-weight: 400;
+    &:before {
+     border: none;
+     width: 3px;
+     border-radius: 0;
+    }
+    &:hover,
+    &:focus {
+     color: $gray-700 !important;
+     text-decoration: none;
+     background-color: $gray-100;
+    }
+    &:focus {
+     @include outline(2px);
+     outline-offset: -2px;
+    }
+   }
+
+   // OPEN STATE
+   &[open] {
+    summary {
+     color: $black;
+
+     &::after {
+      display: none;
+     }
+    }
+   }
+
+   .cagov-open-indicator {
+    left: unset !important;
+    right: 2.7rem;
+    top: 0.6rem !important;
+     &::before {
+      font-size: 2.4rem;
+     }
+    }
+  }
+
+  .cagov-open-indicator {
+   left: unset;
+   right: 2.7rem;
+   top: 0.6rem !important;
+  }
+
+  .accordion-body {
+   padding: 0;
+   border: none;
+   outline: none;
+
+   .side-subnav {
+    margin-bottom: 0;
+    margin-left: 0;
+    li {
+     &:first-child {
+      margin-top: 0;
+     }
+     &:last-child {
+      margin-bottom: 0;
+     }
+    }
+   }
+  }
+ }
+}
+
+.side-subnav {
+ padding-left: 0;
+ li {
+  margin: 0;
+  padding-left: 0;
+  list-style: none;
+  font-size: 1.125rem;
+  a {
+   position: relative;
+   display: block;
+   padding-top: 0.7rem;
+   padding-bottom: 0.7rem;
+   padding-left: 2.5rem;
+   text-decoration: none !important;
+   border-bottom: 1px solid $gray-100;
+   &:hover,
+   &:focus {
+    text-decoration: none;
+    color: $black;
+    background-color: $gray-50;
+   }
+   &:focus {
+    @include outline(2px);
+    outline-offset: -2px;
+   }
+   &.active {
+    color: $gray-700;
+    text-decoration: none;
+    background-color: $gray-75;
+    &:before {
+     content: "";
+     border-left: 3px solid;
+     position: absolute;
+     top: 0;
+     left: 0;
+     width: 3px;
+     height: 100%;
+     border-radius: 0;
+    }
+    &:hover,
+    &:focus {
+     color: $black;
+     text-decoration: none;
+     background-color: $gray-100;
+    }
+   }
+  }
+ }
+}

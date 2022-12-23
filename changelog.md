@@ -1,49 +1,172 @@
 # Version History
 
 
-## v5.6.2
+## 6.0.9
+- Updated alert banner
+- Added 8 new icons to the CAGov icons font
+- Added side navigation component
+- Added pagination to the icon search page
+- Added automatic "on this page" navigation component
+- Added new contact us form that posts feedback to airtable
+## 6.0.8
+- Updated site structure and rebuild framework to use eleventy site generation #191
+- Replaced server site includes with njk includes and templates
+- Changed website output folder to /_site/ #206
+- Updated utility header include to look like design system #192
+- Updated branding include (site header) to look like CA Design System's site header #194
+- Updated mobile controls styles to look like CA Design System
+- Updated search component's styles to look like search component in the CA Design System #197
+- Updated main navigation styles to resemble the CA Design System navigation #196
+- Update global footer in beta to look like CA Design System's statewide footer #193
+- Added page navigation and list navigation samples #224
+- Updated side navigation styles #223
+- Aligned buttons look and feel with Design System look and feel #246
+- Updated back-to-top component to look like Design System #245
+- Replace site font in beta with Public Sans that is used by CA Design System #195
+- Updated navigation structure, information architecture and content flow #232
+- Introduced code samples categories, such as components, templates and CSS units. Sorted out code sample pages based on those categories, added side navigation (list navigation) on each of those pages #253
+- Addwd new CA.gov color scheme #225
+- Added new Fearure Card content template (into Content Patterns samples) #220
+- Added new Link Grid content template (into Content Patterns samples) #221
+- Updated Tabs component styles to resemble design system #219
+- Updated accordion component with a new design and the latest code from Design System #199
+- Added new Step List component #222
+- Added new structural components pages (Utility Header #320, Settings Bar #318, Mobile Controls #316, Site Header #319, Search Bar #317, Global Footer #315)
 
-- Updated the Google Analytics code. #189
-- Added line-height properties to the headings. #190
-- Fixed the page layout issue for the news blocks component. #201
-- Fixed the page layout issue for the course list page (updated courses.scss). #202
-- Removed a broken link on the Layouts landing page. #200
-- Fixed a broken link to the Events page on the Layouts landing page. #203
-- Removed an old carousel section from General Landing page. #204
-- Fixed header stacking order bug in mobile. #209
+
+## 6.0.7
+- Added responsive font size calculation functionality
+- Adjusted some of the components to responsive font sizing
+- Updated CaGov Font: added GitHub icon and updated pdf-text icon
+- Moved site fonts into the local /fonts/ folder and made local font loading instead of google to limit http requests
+- Added number counter on load function to fire it when visible on load
+- Added settings.js into gulpfile.js to activate utility header's settings
+- Fixed search.js console error that was firing when search widget was not in the page
 
 
-## v5.6.1
+## 6.0.6 (jQuery-less Beta Release)
+- Updated core files with new jQuery-less navigation.js
+- Removed jQuery and jQuery plugins
+- Updated accordion file (took it from cagov design system)
+- Fixed gulp js uglify functions
+- Updated utility header, settings, and branding section styles
+- Updated header's position to sticky instead of fixed
+- Fixed header.js script that hides utility header on scroll
+- Updated main nav layout, updated main banner height property
+- Removed owl carousels modules, added bootstrap carousel sample
+- Updated modal box in carousel page
+- Made search to expand in mobile
+- Fixed search in mobile
+- Fixed explore button on the homepage
+- Fixed profile banners
+- Removed text-decoration from main menu links
+- Added mobile search include on most pages
+- removed jumps from mobile search expand and collapse transitions
+- Made side padding consistent across main shell components
+- Updated outdated grid classes
+- Changed label class to badge
+- Updated badges in samples landing page
+- Added pure JS accordion-list component
+- Changed accordion list heading font to source sans
+- fixed duplicate id issue in search components
+- Added jssrcmap task to gulpfile to make sure it bings bootstrap map
+- Updated side nav accordion
+- Updated CDN page
+- Updated getting started page
+- Updated update page
+- Updated search.js, side navigation, and other navigation pages
+- Updated accordion styles, removed js styles from accordion script
+- Updated alert banner close button styles and structure
+- Updated modal markup, fixed tabs markup, fixed tabs styles
+- Updated form elements and styles, added icons to the images folder
+- Updated icons
+- Added number counter and parallax code
+- Updated business-profile and contact pages
+- Updated FAQ template page and adjusted accordion styles
+- Updated Bootstrap to v5.1.3, fixed user profile layout page
 
-- Icon updates: fixed badminton typo, added delete (trash can) icon.
-- Added back-to-top button component.
-- Fixed .btn-hover rounded corners on hover.
-- Enclosed breadcrumbs in nav element and added aria-label="you are here".
-- Removed outdated IE 10 SVG hack that throws CSS error.
-- Restored panes component (it's now using pure CSS).
-- Fixed the negative border radius value for cards.
+## 6.0.5
+- Removed plotly.js and d3.js from js/libs
+- Removed background opacity for service tiles to fix color contrast false positives
+- Updated carousels backgrounds to fix color contrast false positives.
+
+## 6.0.4
+- Fixed "Links are not clearly identifiable" issue by replacing background image links underlining technique with original text underline property
+- Increased links color and surrounding text contrast ratio to 3.1
+- Fixed "fixed Link without a text alternative issue"
+- Updated jQuery to v3.6.0
+- Updated search reset button selection variable
+- Fixed sliders overflow scrollbars
+- Fixed full width nav active search bar on focus placement 
+
+## 6.0.3
+- Removed role tablist attribute from tag, and collapse extension
+- Fixed "Visible label and accessible name do not match" a11y error
+- Fixed "Text is clipped when zoomed in" a11y error
+- Fixed "State or property not supported" in main navigation
+- Fixed "Headings are not structured" issue
+- Fixed missing landmark issue
+- Fixed "Scrollable element is not keyboard accessible"
+- Fixed color contrast issues on some pages
+- Fixed "Hidden element has focusable content" issue
+- Fixed Container element is empty issue
+- Removed charts examples (for lack of a11y)
+- Fixed "Form field is not labeled" issue
+- Fixed "Line height is fixed" issue
+- Addressed "Font size is fixed issue"
+- Removed content fade-in script from home page and featured search page
+- Fixed "line-hight below minimum value" and fixed font size issues
+- Fixed "Decorative element is exposed to assistive technologies" issue
+- Fixed some icon font class names that were accidentally renamed during icon font update process. Removed "1" at the end of the following icon font classes: ca-gov-icon-collapse1, ca-gov-icon-construction1 and ca-gov-icon-expand1
 
 
-## v5.6.0
-        
-Framework and components updates:
-- Removed jQuery dependency and jQuery plugins.
-- Updated Bootstrap to v5.1.3.
-- Removed some jQuery dependent components such as: owl-carousels and slideshows (replaced with the native Bootstrap carousel), service tiles, and panes.
-- Converted the following jQuery components to Vanilla JS: accordion, accordion list, fixed header, navigation, number counter, parallax, search, site settings, and tabs.
-- Updated Bootstrap's collapse/expand data toggle attributes in collapse buttons and modals throughout the site. (For example, changed data-toggle="collapse" to data-bs-toggle="collapse", changed data-toggle="modal" to data-bs-toggle="modal".)
-- Completely changed the accordion structure and code. It is now using the California Design System's accordion script.
-- Updated side navigation structure to work with the new accordion component.
-- Removed jQuery owl-carousels and slideshows and replaced them with the native Bootstrap carousel. 
+## 6.0.1
+- Fixed side navigation border bottom style
+- Revised parallax js plugin and parallax-bg class implementation
+- Added parallax sample page
+- Fixed two column layouts on some pages
+- Updated accordion keyboard accessibility
 
-Layout and structure updates:
-- Added featured search header and icon-less navigation layout to every sample page. (Old v5.5 header and navigation layout are still in the navigation samples.)
-- Updated badge classes to reflect new Bootstrap 5 markup (changed "label" class to "badge").
-- Replaced outdated grid classes with the native Bootstrap grid classes. (For example, changed "group" class to "row", or "quarter" to "col-md-3".)
-- Updated main banner height property (removed jQuery calculation and replaced it with pure CSS properties).
-- Updated header position to sticky instead of fixed. The fixed-header.js script is now hiding utility header on scroll instead of adding compact class to header.
 
-Font updates:
-- Added Google font files to the local /fonts/ folder to limit http requests.
-- Updated the icon font (added a GitHub icon and updated the pdf-text icon).
-- Added responsive font size calculation functionality. Body text and heading font sizes and their top and bottom margins are automatically calculated into appropriate values based on the dimensions of the browser viewport.
+## 6.0.0
+- Added new pre-made content-based layout pages that showcase specific business areas such as 
+	- About 
+	- Agency Profile
+	- Contact
+	- Events
+	- FAQs
+	- Homepage
+	- News
+	- Services
+	- Search Results
+	- User profile
+- Added new pages that provide more State Template usability directions: 
+	- CSS Shortcuts
+	- Layouts
+	- Navigation Samples 
+	- Update State Template
+
+- Added new modules:
+	- Blurb
+	- Modal
+	- Side navigation
+	- Sticky footer
+	- Timeline
+
+- Updated existing modules and components
+	- Accordions
+	- Icon blocks
+	- Info blocks
+	- Lists
+	- Tabs
+
+- Added new color schemes
+	- Delta
+	- Santa Cruz
+	- Shasta
+- Cleaned up scss files (moved color properties and their variable to the color schemes section, updated globals.scss files)
+- Added new full width active search navigation option
+- Made new dyslexic font option available in the settings
+- Redesigned template's navigation structure focusing on how to get started with the State Template, also to showcase layout pages, color schemes and content modules
+- Added new icons to CAGov font library
+

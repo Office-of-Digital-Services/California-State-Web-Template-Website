@@ -1,0 +1,61 @@
+/* -----------------------------------------
+   SEARCH
+   /source/scss/colortheme/cs-search.scss
+----------------------------------------- */
+
+.search-container {
+    .submit-container {
+        button {
+            color: $mobile-controls;
+            border-color: $text-field-color;
+        }
+    }
+    .search-textfield {
+        border-color: $gray-600 !important;
+    }
+
+    .gsc-search-button {
+        background-color: $gray-600;
+        border-color: $gray-600;
+        &:hover,
+        &:focus {
+            background-color: $gray-800;
+            border-color: $gray-800;
+        }
+        .ca-gov-icon-search {
+            color: $white;
+        }
+    }
+
+    &:hover,
+    &:focus,
+    &.active {
+        .search-textfield {
+            background-color: #fff;
+        }
+
+        .submit-container button {
+            border-color: #fff;
+        }
+    }
+
+    &.active {
+        background-color: $gray-100;
+
+        .submit-container button {
+            border-color: darken($gray-lighter, 10%);
+            background: $gray;
+        }
+    }
+}
+
+.featured-search.active .container #Search .close-search-btn .sr-only,
+.search-container .close-search .sr-only {
+    color: $color-p2;
+    text-decoration: underline;
+    &:hover,
+    &:focus {
+        color: darken($color-p2, 7%);
+        text-decoration: none;
+    }
+}

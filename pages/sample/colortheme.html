@@ -1,0 +1,389 @@
+---
+title: Color Theme
+landing: Visual design
+layout: landing.njk
+permalink: "visual-design/color/index.html"
+---
+
+<div class="container p-t-md">
+ <nav aria-label="You are here">
+  <ol class="breadcrumb">
+   <li><a href="/index.html" title="Home page">Home</a></li>
+   <li><a href="/visual-design/color.html" title="Color themes landing page">Colors</a></li>
+   <li class="active insertThemeName"></li>
+  </ol>
+ </nav>
+ <div class="row">
+  <div class="col-md-3" role="complementary">
+   <!-- Side navigation -->
+   <nav aria-labelledby="color-themes-list" class="side-navigation sticky-6">
+    <ul class="list-navigation">
+     <li><a href="/visual-design/color.html" id="color-themes-list" class="landing back">Color themes</a></li>
+
+     <li><a href="/visual-design/color/?delta">Delta</a></li>
+     <li><a href="/visual-design/color/?eureka">Eureka</a></li>
+     <li><a href="/visual-design/color/?mono">Mono</a></li>
+     <li><a href="/visual-design/color/?oceanside">Oceanside</a></li>
+     <li><a href="/visual-design/color/?orangecounty">Orange County</a></li>
+     <li><a href="/visual-design/color/?pasorobles">Paso Robles</a></li>
+     <li><a href="/visual-design/color/?sacramento">Sacramento</a></li>
+     <li><a href="/visual-design/color/?santabarbara">Santa Barbara</a></li>
+     <li><a href="/visual-design/color/?santacruz">Santa Cruz</a></li>
+     <li><a href="/visual-design/color/?shasta">Shasta</a></li>
+     <li><a href="/visual-design/color/?sierra">Sierra</a></li>
+     <li><a href="/visual-design/color/?trinity">Trinity</a></li>
+    </ul>
+   </nav>
+  </div>
+  <div class="col-md-9">
+
+   <h1 class="mt-lg-0"><span class="insertThemeName"></span></h1>
+
+   <div class="group font-size-14 color-palettes">
+
+    <div class="quarter m-b-lg">
+     <div class="palette-disc bg-primary rounded-circle mb-3">
+     </div>
+     <div class="caption">
+      <h2 class="h3">Primary</h2>
+      <strong>Class:</strong> .color-primary<br>
+      <strong>CSS:</strong> @color-p2<br>
+      <strong>HEX:</strong> #<span class="insertColorPrimaryHex"></span><br>
+      <strong>RGB:</strong> <span class="insertColorPrimaryDec"></span>
+     </div>
+    </div>
+
+    <div class="quarter m-b-lg">
+     <div class="palette-disc bg-highlight rounded-circle mb-3">
+     </div>
+     <div class="caption">
+      <h2 class="h3">Highlight</h2>
+      <strong>Class:</strong> .color-highlight<br>
+      <strong>CSS:</strong> @color-p1<br>
+      <strong>HEX:</strong> #<span class="insertColorHighlightHex"></span><br>
+      <strong>RGB:</strong> <span class="insertColorHighlightDec"></span>
+     </div>
+    </div>
+
+    <div class="quarter m-b-lg">
+     <div class="palette-disc bg-s1 rounded-circle mb-3">
+     </div>
+     <div class="caption">
+      <h2 class="h3">Secondary</h2>
+      <strong>Class:</strong> .color-s1<br>
+      <strong>CSS:</strong> @color-s1<br>
+      <strong>HEX:</strong> #<span class="insertColorS1Hex"></span><br>
+      <strong>RGB:</strong> <span class="insertColorS1Dec"></span>
+     </div>
+    </div>
+
+    <div class="quarter m-b-lg">
+     <div class="palette-disc bg-standout rounded-circle mb-3">
+     </div>
+     <div class="caption">
+      <h2 class="h3">Standout</h2>
+      <strong>Class:</strong> .color-standout<br>
+      <strong>CSS:</strong> @color-p3<br>
+      <strong>HEX:</strong> #<span class="insertColorStandoutHex"></span><br>
+      <strong>RGB:</strong> <span class="insertColorStandoutDec"></span>
+     </div>
+    </div>
+
+   </div>
+
+   <h2 class="mt-0">Samples</h2>
+   <h3>Light background</h3>
+
+   <div style="border: 1px solid #D4D4D7;" class="p-5">
+    <h4 class="mt-0">Link grid</h4>
+
+    <div class="row">
+     <div class="col-md-4 mb-4">
+      <a href="javascript:;" class="link-grid">Short link 1</a>
+     </div>
+     <div class="col-md-4 mb-4">
+      <a href="javascript:;" class="link-grid">Short link 2</a>
+     </div>
+     <div class="col-md-4 mb-4">
+      <a href="javascript:;" class="link-grid">Short link 3</a>
+     </div>
+    </div>
+
+    <h4>Buttons</h4>
+    <h5>Default</h5>
+    <div class="btn-row">
+     <a href="" class="btn btn-default">.btn-default</a>
+     <a href="" class="btn btn-primary">.btn-primary</a>
+     <a href="" class="btn btn-highlight">.btn-highlight</a>
+     <a href="" class="btn btn-standout">.btn-standout</a>
+     <a href="" class="btn btn-secondary">.btn-secondary</a>
+    </div>
+    <h5>Hover</h5>
+    <div class="btn-row">
+     <a href="" class="btn btn-default active">.btn-default.active</a>
+     <a href="" class="btn btn-primary active">.btn-primary.active</a>
+     <a href="" class="btn btn-highlight active">.btn-highlight.active</a>
+     <a href="" class="btn btn-standout active">.btn-standout.active</a>
+     <a href="" class="btn btn-secondary active">.btn-secondary.active</a>
+    </div>
+
+    <h4>Cards</h4>
+
+    <div class="card card-overstated w-75">
+     <div class="card-heading">
+      <h3><span class="ca-gov-icon-info"></span> Card (Overstated)</h3>
+      <div class="options">
+       <a href="" class="btn btn-default">button</a>
+      </div>
+     </div>
+     <div class="card-body">
+      Card Body
+     </div>
+    </div>
+
+    <div class="card card-standout w-75">
+     <div class="card-heading">
+      <h2><span class="ca-gov-icon-info"></span> Card (Standout)</h2>
+      <div class="options">
+       <a href="" class="btn btn-default">button</a>
+      </div>
+     </div>
+     <div class="card-body">
+      Card Body
+     </div>
+    </div>
+
+   </div>
+
+   <h3>Dark background</h3>
+
+   <div class="bg-primary p-5 mb-4">
+    <h4 class="mt-0">Link grid</h4>
+
+    <div class="row">
+     <div class="col-md-4 mb-4">
+      <a href="javascript:;" class="link-grid">Short link 1</a>
+     </div>
+     <div class="col-md-4 mb-4">
+      <a href="javascript:;" class="link-grid">Short link 2</a>
+     </div>
+     <div class="col-md-4 mb-4">
+      <a href="javascript:;" class="link-grid">Short link 3</a>
+     </div>
+    </div>
+
+    <h4>Buttons</h4>
+    <h5>Default</h5>
+    <div class="btn-row">
+     <a href="" class="btn btn-default">.btn-default</a>
+     <a href="" class="btn btn-primary border-light">.btn-primary</a>
+     <a href="" class="btn btn-highlight">.btn-highlight</a>
+     <a href="" class="btn btn-standout border-light">.btn-standout</a>
+     <a href="" class="btn btn-secondary">.btn-secondary</a>
+    </div>
+    <h5>Hover</h5>
+    <div class="btn-row">
+     <a href="" class="btn btn-default active">.btn-default.active</a>
+     <a href="" class="btn btn-primary active border-light">.btn-primary.active</a>
+     <a href="" class="btn btn-highlight active">.btn-highlight.active</a>
+     <a href="" class="btn btn-standout active border-light">.btn-standout.active</a>
+     <a href="" class="btn btn-secondary active">.btn-secondary.active</a>
+    </div>
+
+    <h4>Cards</h4>
+
+    <div class="card card-overstated w-75  border border-light">
+     <div class="card-heading">
+      <h3><span class="ca-gov-icon-info"></span> Card (Overstated)</h3>
+      <div class="options">
+       <a href="" class="btn btn-default">button</a>
+      </div>
+     </div>
+     <div class="card-body">
+      Card Body
+     </div>
+    </div>
+
+    <div class="card card-standout w-75">
+     <div class="card-heading">
+      <h2><span class="ca-gov-icon-info"></span> Card (Standout)</h2>
+      <div class="options">
+       <a href="" class="btn btn-default">button</a>
+      </div>
+     </div>
+     <div class="card-body">
+      Card Body
+     </div>
+    </div>
+
+   </div>
+
+  </div>
+ </div>
+</div>
+
+
+<style>
+ .palette-disc {
+  width: 134px;
+  height: 134px;
+ }
+
+ .insertColorPrimaryHex,
+ .insertColorHighlightHex,
+ .insertColorS1Hex,
+ .insertColorStandoutHex {
+  text-transform: uppercase;
+ }
+</style>
+
+<script>
+ function hexToDec(hex) {
+  var colorR = parseInt(hex.substring(0, 2), 16);
+  var colorG = parseInt(hex.substring(2, 4), 16);
+  var colorB = parseInt(hex.substring(4, 6), 16);
+  return [colorR, colorG, colorB];
+ }
+
+ function calcBorder(dec) {
+  // give light colors a darker border
+  var colorR = Math.round(dec[0] * 0.7)
+  var colorG = Math.round(dec[1] * 0.7)
+  var colorB = Math.round(dec[2] * 0.7)
+  return [colorR, colorG, colorB];
+ }
+
+ const themeData = {
+  delta: {
+   name: "Delta",
+   colorHighlight: "A5BDC5",
+   colorPrimary: "577786",
+   colorStandout: "46565E",
+   colorS1: "f5f9fa"
+  },
+  eureka: {
+   name: "Eureka",
+   colorHighlight: "D9B295",
+   colorPrimary: "3E4B4D",
+   colorStandout: "21272A",
+   colorS1: "f9f4f0"
+  },
+  mono: {
+   name: "Mono",
+   colorHighlight: "ffce2b",
+   colorPrimary: "545351",
+   colorStandout: "191919",
+   colorS1: "ededef"
+  },
+  oceanside: {
+   name: "Oceanside",
+   colorHighlight: "FDB81E",
+   colorPrimary: "046B99",
+   colorStandout: "323A45",
+   colorS1: "eef8fb"
+  },
+  orangecounty: {
+   name: "Orange County",
+   colorHighlight: "fbad23",
+   colorPrimary: "A15801",
+   colorStandout: "483723",
+   colorS1: "fbf0e7"
+  },
+  pasorobles: {
+   name: "Paso Robles",
+   colorHighlight: "fbad23",
+   colorPrimary: "691808",
+   colorStandout: "313131",
+   colorS1: "f5f5f5"
+  },
+  sacramento: {
+   name: "Sacramento",
+   colorHighlight: "7bb0da",
+   colorPrimary: "153554",
+   colorStandout: "730000",
+   colorS1: "e1ecf7"
+  },
+  santabarbara: {
+   name: "Santa Barbara",
+   colorHighlight: "FF9B53",
+   colorPrimary: "834B1E",
+   colorStandout: "3c2c29",
+   colorS1: "f8eee4"
+  },
+  santacruz: {
+   name: "Santa Cruz",
+   colorHighlight: "f5811b",
+   colorPrimary: "0f4f94",
+   colorStandout: "2c2c4f",
+   colorS1: "eff4fa"
+  },
+  shasta: {
+   name: "Shasta",
+   colorHighlight: "fbad23",
+   colorPrimary: "336c39",
+   colorStandout: "3c4543",
+   colorS1: "e4f1e5"
+  },
+  sierra: {
+   name: "Sierra",
+   colorHighlight: "fbad23",
+   colorPrimary: "447766",
+   colorStandout: "194949",
+   colorS1: "e8f1ee"
+  },
+  trinity: {
+   name: "Trinity",
+   colorHighlight: "c19e73",
+   colorPrimary: "446a7c",
+   colorStandout: "21272a",
+   colorS1: "eff5f8"
+  }
+ };
+ var queryString = window.location.search.split('?')[1];
+
+ if (!queryString || !themeData[queryString]) {
+  queryString = "delta"; // set a default theme
+ }
+
+ // remove the current color theme css
+ document.querySelector('link[rel=stylesheet][href*="colortheme-"]').remove();
+
+ // insert new color theme css
+ var link = document.createElement("link");
+ link.href = "/css/colortheme-" + queryString + ".css";
+ link.type = "text/css";
+ link.rel = "stylesheet";
+ link.media = "screen,print";
+ document.getElementsByTagName("head")[0].appendChild(link);
+
+ // add css class "active" to active nav item
+ var themeNavItem = document.querySelector("nav.side-navigation a[href*='" + queryString + "']");
+ themeNavItem.classList.add("active");
+
+ // insert theme name into breadcrumbs and heading
+ var nameElements = document.querySelectorAll(".insertThemeName");
+ for (let el of nameElements) {
+  el.innerHTML = themeData[queryString].name;
+ }
+
+ // display color codes and set border colors
+ document.querySelector(".insertColorHighlightHex").innerHTML = themeData[queryString].colorHighlight;
+ arrayDec = hexToDec(themeData[queryString].colorHighlight);
+ document.querySelector(".insertColorHighlightDec").innerHTML = arrayDec;
+ document.querySelector(".color-palettes .bg-highlight").style.border = "1px solid rgb(" + calcBorder(arrayDec) + ")"
+
+ document.querySelector(".insertColorPrimaryHex").innerHTML = themeData[queryString].colorPrimary;
+ arrayDec = hexToDec(themeData[queryString].colorPrimary);
+ document.querySelector(".insertColorPrimaryDec").innerHTML = arrayDec;
+ document.querySelector(".color-palettes .bg-primary").style.border = "1px solid rgb(" + calcBorder(arrayDec) + ")"
+
+ document.querySelector(".insertColorStandoutHex").innerHTML = themeData[queryString].colorStandout;
+ arrayDec = hexToDec(themeData[queryString].colorStandout);
+ document.querySelector(".insertColorStandoutDec").innerHTML = arrayDec;
+ document.querySelector(".color-palettes .bg-standout").style.border = "1px solid rgb(" + calcBorder(arrayDec) + ")"
+
+ document.querySelector(".insertColorS1Hex").innerHTML = themeData[queryString].colorS1;
+ arrayDec = hexToDec(themeData[queryString].colorS1);
+ document.querySelector(".insertColorS1Dec").innerHTML = arrayDec;
+ document.querySelector(".color-palettes .bg-s1").style.border = "1px solid rgb(" + calcBorder(arrayDec) + ")"
+</script>

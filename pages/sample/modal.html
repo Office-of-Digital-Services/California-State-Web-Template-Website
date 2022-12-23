@@ -1,0 +1,169 @@
+﻿---
+title: Modal
+landing: Components
+layout: components.njk
+permalink: "components/modal.html"
+---
+
+
+
+<h1 class="mt-lg-0 m-b-0">Modal</h1>
+<p class="subtitle">Other names: popup window, overlay, dialog</p>
+
+
+<nav class="page-navigation"></nav>
+
+
+<p>A modal displays content in a temporary window that appears over the current page. </p>
+<p>Modals require an interaction (acknowledge, submit, close) from the visitor before they can return to the content
+ underneath.</p>
+<p>Modals can display:</p>
+<ul>
+ <li>Privacy statements</li>
+ <li>Licensing agreements</li>
+ <li>Alerts</li>
+ <li>Videos</li>
+ <li>Images</li>
+ <li>Forms</li>
+ <li>Help text</li>
+ <li>System timeout</li>
+ <li>Tooltips</li>
+ <li>User feedback</li>
+</ul>
+
+<h2>Sample</h2>
+
+<!--TABS-->
+<div class="tab-group responsive">
+ <ul id="tabs1" class="nav nav-tabs" role="tablist">
+  <li class="nav-item" role="presentation">
+   <a id="tab-example1" href="#pane-example1" class="nav-link active" data-bs-toggle="tab" role="tab">Example</a>
+  </li>
+  <li class="nav-item" role="presentation">
+   <a id="tab-html1" href="#pane-html1" class="nav-link" data-bs-toggle="tab" role="tab">Source code</a>
+  </li>
+  <li class="nav-item" role="presentation">
+   <a id="tab-include1" href="#pane-include1" class="nav-link" data-bs-toggle="tab" role="tab">Implementation notes</a>
+  </li>
+ </ul>
+
+
+ <div id="tab-content" class="tab-content">
+  <!--Examples-->
+  <div id="pane-example1" class="card tab-pane fade show active" role="tabpanel" aria-labelledby="tab-example1">
+   <div class="card-header" id="heading-example1">
+    <a data-bs-toggle="collapse" href="#collapse-example1" data-parent="#tab-content" aria-expanded="true"
+     aria-controls="collapse-example1" data-hash="#pane-example1" title="Example tab header">
+     Example
+    </a>
+   </div>
+   <div id="collapse-example1" class="collapse show" role="tabpanel" aria-labelledby="heading-example1">
+    <div class="card-body p-b-lg">
+     <div class="section-default">
+      <div class="container p-b-lg text-center">
+       <button type="button" class="btn btn-default btn-lg m-t-lg" data-bs-toggle="modal"
+        data-bs-target="#news-headlines">Open modal</button>
+      </div>
+     </div>
+    </div>
+   </div>
+  </div>
+
+
+
+  <!--HTML-->
+  <div id="pane-html1" class="card tab-pane fade" role="tabpanel" aria-labelledby="tab-html1">
+   <div class="card-header" id="heading-html1">
+    <a class="collapsed" data-bs-toggle="collapse" href="#collapse-html1" data-parent="#tab-content"
+     aria-expanded="false" aria-controls="collapse-html1" data-hash="#pane-html1" title="HTML Source code tab header">
+     Source code
+    </a>
+   </div>
+   <div id="collapse-html1" class="collapse" role="tabpanel" aria-labelledby="heading-html1">
+    <div class="card-body">
+     <h3 class="h4 m-t-0">Modal trigger button</h3>
+     <pre><code><button type="button" class="btn btn-default btn-lg m-t-lg" data-bs-toggle="modal"
+      data-bs-target="#news-headlines">Open modal</button></code></pre>
+
+     <h3 class="h4">Modal</h3>
+     <pre style="max-height: 300px;"><code>{% include "../../src/_includes/modules/modal.html" %}</code></pre>
+
+    </div>
+   </div>
+  </div>
+
+
+  <!--Implementation-->
+  <div id="pane-include1" class="card tab-pane fade" role="tabpanel" aria-labelledby="tab-include1">
+   <div class="card-header" id="heading-include1">
+    <a class="collapsed" data-bs-toggle="collapse" href="#collapse-include1" data-parent="#tab-content"
+     aria-expanded="false" aria-controls="collapse-include1" data-hash="#pane-include1"
+     title="Implementation notes tab header">
+     Implementation notes
+    </a>
+   </div>
+   <div id="collapse-include1" class="collapse" role="tabpanel" aria-labelledby="heading-include1">
+    <div class="card-body">
+     <p class="m-b">Each modal has it's own ID. To trigger the modal, you'll need to include a link or a button that
+      refers to the
+      modal's ID. The markup for the trigger element might look like this:</p>
+
+     <pre><code><button type="button" class="btn btn-default btn-lg m-t-lg" data-bs-toggle="modal"
+       data-bs-target="#news-headlines">Open modal</button></code></pre>
+
+     <p class="m-t">The button element has two custom data attributes:</p>
+     <ul>
+      <li><code>data-bs-toggle</code> tells Bootstrap to open the modal.</li>
+      <li><code>data-bs-target</code> tells Bootstrap which element will open. When a person selects a link or button
+       with that ID (<code>#modalid</code>), that
+       modal will appear.</li>
+     </ul>
+
+    </div>
+   </div>
+  </div>
+
+
+ </div>
+</div>
+<!--END TABS-->
+
+<h2>Usage</h2>
+<h3>When and how to use it </h3>
+<p>Modals interrupt your visitor. Use them sparingly and only when the content or interaction is critical to your
+ visitors’ success. </p>
+<p>Always provide a clear way for people to dismiss the modal (close icon, close button). </p>
+
+<h3>How not to use it</h3>
+<p>Do not use the modal for complex decision making that requires additional sources of information. </p>
+<p>Do not use for nonessential or unrelated information. </p>
+<p>Do not use modals to show confirmation, success, or error messages.</p>
+<p>Avoid multiple steps that require navigation within the modal.</p>
+<p>Simplify by removing unnecessary elements or content that does not support the task.</p>
+
+
+
+<h2>Accessibility</h2>
+{% include "../../src/_includes/modules/accessibility.html" %}
+
+
+<!-- Modal -->
+<div class="modal fade" id="news-headlines" role="dialog" tabindex="-1">
+ <div class="modal-dialog modal-lg">
+  <div class="modal-content">
+   <div class="modal-header">
+    <h4 class="modal-title">This is the modal container's heading.</h4>
+    <button type="button" class="close btn btn-secondary" data-bs-dismiss="modal"><span class="sr-only">Close
+      modal</span><span class="ca-gov-icon-close-mark" aria-hidden="true"></span></button>
+
+   </div>
+   <div class="modal-body">
+    This is the modal container's body.
+   </div>
+   <div class="modal-footer">
+    <button type="button" class="btn btn-default" data-bs-dismiss="modal">Close</button>
+   </div>
+  </div>
+ </div>
+</div><!-- / End Modal -->
+<hr />
