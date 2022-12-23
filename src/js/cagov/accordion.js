@@ -52,6 +52,7 @@ export class CaGovAccordion extends window.HTMLElement {
     this.detailsEl.style.height = this.closedHeight;
    }
   });
+
  }
 
  listen() {
@@ -69,6 +70,7 @@ export class CaGovAccordion extends window.HTMLElement {
    });
   }
  }
+
 
  debounce(func, timeout = 300) {
   let timer;

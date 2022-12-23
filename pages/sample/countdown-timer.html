@@ -29,10 +29,12 @@ permalink: "components/countdown-timer.html"
 
 <h1 class="mt-lg-0">Countdown timer</h1>
 
-<p class="lead">The countdown timer component helps visitors visualize the counting toward or away from a fixed point in
+<nav class="page-navigation"></nav>
+
+<p>The countdown timer component helps visitors visualize the counting toward or away from a fixed point in
  time. </p>
-<p class="lead">Time intervals displayed by the countdown timer can include:</p>
-<ul class="lead">
+<p>Time intervals displayed by the countdown timer can include:</p>
+<ul>
  <li>Weeks</li>
  <li>Days</li>
  <li>Hours</li>
@@ -41,16 +43,16 @@ permalink: "components/countdown-timer.html"
 </ul>
 
 
-<h2 id="Sample">Sample</h2>
+<h2>Sample</h2>
 
 
 <!--TABS-->
 <div class="tab-group responsive">
  <ul id="tabs1" class="nav nav-tabs" role="tablist">
-  <li class="nav-item">
+  <li class="nav-item" role="presentation">
    <a id="tab-example1" href="#pane-example1" class="nav-link active" data-bs-toggle="tab" role="tab">Example</a>
   </li>
-  <li class="nav-item">
+  <li class="nav-item" role="presentation">
    <a id="tab-html1" href="#pane-html1" class="nav-link" data-bs-toggle="tab" role="tab">Source code</a>
   </li>
 
@@ -71,7 +73,8 @@ permalink: "components/countdown-timer.html"
      <h3 class="m-t-0">Default</h3>
      <div class="group countdown p-x">
       <div class="fifth bg-gray-100 text-center p-b-md p-l-0 p-r-0">
-       <span class="countdown-text"><abbr title="weeks" aria-label="weeks" class="text-decoration-none">wks</abbr><br></span>
+       <span class="countdown-text"><abbr title="weeks" aria-label="weeks"
+         class="text-decoration-none">wks</abbr><br></span>
        <span id="weeks1"></span>
       </div>
       <div class="fifth bg-gray-100 text-center p-b-md p-l-0 p-r-0">
@@ -79,15 +82,18 @@ permalink: "components/countdown-timer.html"
        <span id="days1"></span>
       </div>
       <div class="fifth bg-gray-100 text-center p-b-md p-l-0 p-r-0">
-       <span class="countdown-text"><abbr title="hours" aria-label="hours" class="text-decoration-none">hrs</abbr> <br></span>
+       <span class="countdown-text"><abbr title="hours" aria-label="hours" class="text-decoration-none">hrs</abbr>
+        <br></span>
        <span id="hours1"></span>
       </div>
       <div class="fifth bg-gray-100 text-center p-b-md p-l-0 p-r-0">
-       <span class="countdown-text"><abbr title="minutes" aria-label="minutes" class="text-decoration-none">mins</abbr><br></span>
+       <span class="countdown-text"><abbr title="minutes" aria-label="minutes"
+         class="text-decoration-none">mins</abbr><br></span>
        <span id="minutes1"></span>
       </div>
       <div class="fifth bg-gray-100 text-center p-b-md p-l-0 p-r-0">
-       <span class="countdown-text"><abbr title="seconds" aria-label="seconds" class="text-decoration-none">secs</abbr><br></span>
+       <span class="countdown-text"><abbr title="seconds" aria-label="seconds"
+         class="text-decoration-none">secs</abbr><br></span>
        <span id="seconds1"></span>
       </div>
      </div>
@@ -96,7 +102,8 @@ permalink: "components/countdown-timer.html"
      <h3>Primary</h3>
      <div class="group countdown p-x">
       <div class="fifth text-center section-primary p-b-md p-l-0 p-r-0">
-       <span class="countdown-text"><abbr title="weeks" aria-label="weeks" class="text-decoration-none">wks</abbr><br></span>
+       <span class="countdown-text"><abbr title="weeks" aria-label="weeks"
+         class="text-decoration-none">wks</abbr><br></span>
        <span id="weeks"></span>
       </div>
       <div class="fifth text-center section-primary p-b-md p-l-0 p-r-0">
@@ -104,15 +111,18 @@ permalink: "components/countdown-timer.html"
        <span id="days"></span>
       </div>
       <div class="fifth text-center section-primary p-b-md p-l-0 p-r-0">
-       <span class="countdown-text"><abbr title="hours" aria-label="hours" class="text-decoration-none">hrs</abbr><br></span>
+       <span class="countdown-text"><abbr title="hours" aria-label="hours"
+         class="text-decoration-none">hrs</abbr><br></span>
        <span id="hours"></span>
       </div>
       <div class="fifth text-center section-primary p-b-md p-l-0 p-r-0">
-       <span class="countdown-text"><abbr title="minutes" aria-label="minutes" class="text-decoration-none">mins</abbr><br></span>
+       <span class="countdown-text"><abbr title="minutes" aria-label="minutes"
+         class="text-decoration-none">mins</abbr><br></span>
        <span id="minutes"></span>
       </div>
       <div class="fifth text-center section-primary p-b-md p-l-0 p-r-0">
-       <span class="countdown-text"><abbr title="seconds" aria-label="seconds" class="text-decoration-none">secs</abbr><br></span>
+       <span class="countdown-text"><abbr title="seconds" aria-label="seconds"
+         class="text-decoration-none">secs</abbr><br></span>
        <span id="seconds"></span>
       </div>
      </div>
@@ -274,7 +284,7 @@ permalink: "components/countdown-timer.html"
 
 
 
-<h2 id="Usage">Usage</h2>
+<h2>Usage</h2>
 
 <h3>When and how to use it</h3>
 <p>Use the countdown timer to emphasize important events. These events might include:</p>
@@ -292,7 +302,7 @@ permalink: "components/countdown-timer.html"
 <p>Try not to use months in your countdown as they present a fluctuating metric of time.</p>
 <p>Avoid excessive timeframes (more than 1 year) as this renders the countdown useless to visitors.</p>
 
-<h2 id="Accessibility">Accessibility</h2>
+<h2>Accessibility</h2>
 {% include "../../src/_includes/modules/accessibility.html" %}
 
 
