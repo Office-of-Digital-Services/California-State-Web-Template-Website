@@ -1,0 +1,140 @@
+/* -----------------------------------------
+   ACCORDIONS
+   /source/scss/cagov/accordion.scss
+----------------------------------------- */
+
+/* accordion component specific classes */
+/* initial styles */
+cagov-accordion details {
+ margin-bottom: 0;
+ min-height: 3rem;
+ margin-top: 1rem;
+ overflow: visible;
+
+ summary {
+  cursor: pointer;
+  padding: 0.5rem 3rem 0.5rem 3.75rem;
+  background-color: $gray-50;
+  position: relative;
+  line-height: 2rem;
+  margin: 0;
+  color: $gray-800;
+  font-size: 1.125rem;
+  font-weight: bold;
+  border: 1px solid $gray-200;
+
+  &:before {
+   position: absolute;
+   height: 100%;
+   width: 2.75rem;
+   border-right: 1px solid $gray-200;
+   top: 0;
+   left: 0;
+   background-color: $gray-50;
+   // top-left | top-right | bottom-right | bottom-left
+   border-radius: 3px 0 0 3px;
+   content: "";
+  }
+
+  &:after {
+   content: "";
+   position: absolute;
+   top: 0;
+   left: 0;
+   background: transparent;
+   height: 100%;
+   width: 100%;
+   // top-left | top-right | bottom-right | bottom-left
+   border-radius: 3px 3px 3px 3px;
+  }
+
+  .cagov-open-indicator {
+   position: absolute;
+   left: 0.5rem;
+   top: 0.4rem;
+   width: 0;
+   height: 0;
+   transition-property: transform;
+   transition: transform 0.2s;
+   &::before {
+    font-family: "CaGov";
+    content: "5";
+    position: absolute;
+    font-size: 1.6rem;
+    transition-property: transform, left;
+    transition: transform 0.2s, 0.2s;
+   }
+  }
+
+  &:hover {
+   color: black;
+   &:before {
+    background-color: $gray-100;
+   }
+  }
+ }
+ .accordion-body {
+  padding: 1rem;
+  border: none;
+  // top-left | top-right | bottom-right | bottom-left
+  border-radius: 0 0 4px 4px;
+  border: 1px solid $gray-200;
+  border-top: none;
+ }
+}
+
+/* styles applied after custom element javascript runs */
+cagov-accordion:defined {
+ details {
+  transition: height 0.2s;
+  height: 3rem;
+  overflow: visible;
+ }
+
+ summary::-webkit-details-marker {
+  display: none;
+ }
+
+ details summary {
+  list-style: none; /* hide default expansion triangle after js executes */
+  // top-left | top-right | bottom-right | bottom-left
+  border-radius: 4px 4px 4px 4px;
+  &:focus {
+   &:before {
+    background-color: $gray-100;
+   }
+   &:after {
+    @include outline(2px);
+    outline-offset: -2px;
+   }
+  }
+ }
+
+ /* let it be open initially if details has open attribute */
+ details[open] {
+  height: auto;
+  .cagov-open-indicator {
+
+    &::before {
+     transform: rotate(90deg) translateY(-0.2rem); 
+
+    }
+  }
+
+  summary {
+   // top-left | top-right | bottom-right | bottom-left
+   border-radius: 4px 4px 0 0;
+   &:before {
+    // top-left | top-right | bottom-right | bottom-left
+    border-radius: 3px 0 0 0;
+    background-color: $gray-100;
+   }
+   &:focus {
+    &::after {
+     // top-left | top-right | bottom-right | bottom-left
+     border-radius: 3px 3px 0 0;
+    }
+   }
+  }
+ }
+}

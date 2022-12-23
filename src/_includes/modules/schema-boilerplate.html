@@ -1,0 +1,3 @@
+<h2>Schema Options (microdata)</h2>
+<p>This module is also available as a schema.org formatted module. Many applications, especially search engines, can benefit greatly from this structured data. Pages marked up using microdata enable search engines to understand the information on web pages and provide richer search results in order to make it easier for users to find relevant information on the web.</p>
+<p>Using microdata is optional, but highly encouraged. In the source code section, samples for plain html and the microdata version are both included.</p>

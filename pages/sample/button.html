@@ -1,0 +1,124 @@
+﻿---
+title: Buttons
+landing: Components
+layout: components.njk
+permalink: "components/button.html"
+---
+
+<h1 class="mt-lg-0">Button</h1>
+
+<nav class="page-navigation"></nav>
+
+<p>A button triggers an event or action. It informs the visitor that something will happen next.</p>
+<p>Buttons add visual prominence to the call to action and provide feedback on completed actions.</p>
+<p>Buttons can:</p>
+<ul>
+ <li>Move visitors through a process: <span class="text-bold">Submit, Next, Search, Save</span></li>
+ <li>Highlight a top task: <span class="text-bold">Learn more, Get started, Join us, Visit</span></li>
+ <li>Reverse an action: <span class="text-bold">Cancel, Previous, Reset, Delete</span></li>
+ <li>Pause a process: <span class="text-bold">Save as draft</span></li>
+</ul>
+
+<h2>Sample</h2>
+<p>Available button colors are based on your selected <a href="/visual-design/color.html">color theme</a>.</p>
+
+<!--TABS-->
+<div class="tab-group responsive">
+ <ul id="tabs1" class="nav nav-tabs" role="tablist">
+  <li class="nav-item" role="presentation">
+   <a id="tab-example1" href="#pane-example1" class="nav-link active" data-bs-toggle="tab" role="tab">Example</a>
+  </li>
+  <li class="nav-item" role="presentation">
+   <a id="tab-html1" href="#pane-html1" class="nav-link" data-bs-toggle="tab" role="tab">Source code</a>
+  </li>
+
+ </ul>
+
+ <div id="tab-content" class="tab-content">
+  <!--Examples-->
+  <div id="pane-example1" class="card tab-pane fade show active" role="tabpanel" aria-labelledby="tab-example1">
+   <div class="card-header" id="heading-example1">
+    <a data-bs-toggle="collapse" href="#collapse-example1" data-parent="#tab-content" aria-expanded="true"
+     aria-controls="collapse-example1" data-hash="#pane-example1" title="Example tab header">
+     Example
+    </a>
+   </div>
+   <div id="collapse-example1" class="collapse show" role="tabpanel" aria-labelledby="heading-example1">
+    <div class="card-body p-b-md">
+     <p class="lead bold m-b">Primary action buttons</p>
+     {% include "../../src/_includes/modules/buttons.html" %}
+
+     <p class="lead bold m-b">Secondary action buttons </p>
+     {% include "../../src/_includes/modules/buttons-outline.html" %}
+
+     <p class="lead bold m-b">Disabled buttons</p>
+     {% include "../../src/_includes/modules/buttons-disabled.html" %}
+
+     <p class="lead bold m-b">Button sizes</p>
+     {% include "../../src/_includes/modules/buttons-sizes.html" %}
+    </div>
+   </div>
+  </div>
+
+  <!--HTML-->
+  <div id="pane-html1" class="card tab-pane fade" role="tabpanel" aria-labelledby="tab-html1">
+   <div class="card-header" id="heading-html1">
+    <a class="collapsed" data-bs-toggle="collapse" href="#collapse-html1" data-parent="#tab-content"
+     aria-expanded="false" aria-controls="collapse-html1" data-hash="#pane-html1" title="HTML Source code tab header">
+     Source code
+    </a>
+   </div>
+   <div id="collapse-html1" class="collapse" role="tabpanel" aria-labelledby="heading-html1">
+    <div class="card-body">
+     <p class="lead bold m-b">Primary action buttons</p>
+     <pre style="max-height: 300px;"><code>{% include "../../src/_includes/modules/buttons.html" %}</code></pre>
+
+     <p class="lead bold m-b">Secondary action buttons </p>
+     <pre style="max-height: 300px;"><code>{% include "../../src/_includes/modules/buttons-outline.html" %}</code></pre>
+
+     <p class="lead bold m-b">Disabled buttons</p>
+     <pre
+      style="max-height: 300px;"><code>{% include "../../src/_includes/modules/buttons-disabled.html" %}</code></pre>
+
+     <p class="lead bold m-b">Button sizes</p>
+     <pre style="max-height: 300px;"><code>{% include "../../src/_includes/modules/buttons-sizes.html" %}</code></pre>
+    </div>
+   </div>
+
+  </div>
+
+ </div>
+</div>
+<!--END TABS-->
+
+<h2>Usage</h2>
+<h3>When and how to use it </h3>
+<p>Use buttons to communicate actions users can take to interact with a page. Buttons should be used consistently for
+ the same types of tasks.</p>
+
+<p>A primary action button (filled in button) has the highest emphasis. Try to limit the number of primary action
+ buttons on a page as they are distracting.</p>
+
+<p>The secondary action button (outlined button) has a lower emphasis, but should still be used sparingly.</p>
+
+<p>Buttons should be used to help people:</p>
+<ul>
+ <li>Submit a form</li>
+ <li>Begin a task</li>
+ <li>Make new elements appear on the page</li>
+ <li>Identify a new or next step in a process</li>
+</ul>
+
+<p>Color alone does not convey the meaning of buttons. Be sure to match your button text with the meaning you are trying
+ to communicate with color.</p>
+<p>Keep in mind that not everyone will be able to see your button color, so the message should be clear without it.</p>
+
+<h3>
+ How not to use it
+</h3>
+<p>Avoid using multiple buttons on a single page.</p>
+</p>Avoid using disabled buttons as they can be inaccessible and confusing to some visitors. If you must use a disabled
+button, inform visitors why the button is disabled and how to enable it.</p>
+
+<h2>Accessibility</h2>
+{% include "../../src/_includes/modules/accessibility.html" %}

@@ -1,0 +1,68 @@
+/* -----------------------------------------
+   FILTER GROUP
+   /source/scss/cagov/filter-group.scss
+----------------------------------------- */
+
+// Assumes that filter group is contained in section-default
+
+.filter-group:before {
+    content: "";
+    display: block;
+    @include m-b();
+}
+
+.filter-toggle.active {
+    position: relative;
+    z-index: 1;
+    
+    &:before {
+        position: absolute;
+        left: 50%;
+        margin-left: -10px;
+        bottom: -18px;
+    }
+    
+    &:after {
+        position: absolute;
+        left: 50%;
+        margin-left: -9px;
+        bottom: -19px;
+    }
+}
+
+
+
+// MIXIN
+@mixin section-filter($border, $background){
+    .filter-group:before {
+        border-top: 1px solid $border;
+    }
+    
+    .filter-toggle.active {
+        &:before {
+            @include triangle(up, 10px, $border);
+        }
+        
+        &:after {
+            @include triangle(up, 9px, $background);
+        }
+    }
+}
+
+
+
+//
+// VARIATIONS BASED ON SECTIONS
+// --------------------------------------------------
+
+.section, .card {
+    @include section-filter($gray-lighter, #fff);
+    
+    &-search {
+        @include section-filter(darken($gray-lighter, 10%), $gray-lighter);
+    }
+    
+    &-default {
+        @include section-filter($gray-lighter, $gray-lightest);
+    }
+}

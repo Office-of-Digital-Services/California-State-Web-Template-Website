@@ -1,0 +1,166 @@
+﻿---
+title: Lists
+landing: Components
+layout: components.njk
+permalink: "components/lists.html"
+---
+
+
+
+<h1 class="mt-lg-0">Lists</h1>
+
+<nav class="page-navigation"></nav>
+
+<p>A list is a vertical grouping of related content. They are typically bulleted or numbered.</p>
+
+<h2>Unordered list</h2>
+<p>Use an unordered list (bulleted) if the order of grouped items does not matter.</p>
+<ul>
+ <li>Arrange list items in a logical order that makes sense to the audience (such as days of the week).
+  <ul>
+   <li>If a logical order does not apply, then default to alphabetical order.</li>
+  </ul>
+ </li>
+ <li>For very long lists, where only one option is likely to be chosen (such as “United States” from a list of
+  countries), place the likely option at the top of the list.</li>
+ <li>Generic list items (like “other”) should be placed as the last option on the list.</li>
+</ul>
+
+
+<!--TABS-->
+<div class="tab-group responsive">
+ <ul id="tabs1" class="nav nav-tabs" role="tablist">
+  <li class="nav-item" role="presentation">
+   <a id="tab-example1" href="#pane-example1" class="nav-link active" data-bs-toggle="tab" role="tab">Example</a>
+  </li>
+  <li class="nav-item" role="presentation">
+   <a id="tab-html1" href="#pane-html1" class="nav-link" data-bs-toggle="tab" role="tab">Source code</a>
+  </li>
+
+ </ul>
+
+
+ <div id="tab-content" class="tab-content">
+  <!--Examples-->
+  <div id="pane-example1" class="card tab-pane fade show active" role="tabpanel" aria-labelledby="tab-example1">
+   <div class="card-header" id="heading-example1">
+    <a data-bs-toggle="collapse" href="#collapse-example1" data-parent="#tab-content" aria-expanded="true"
+     aria-controls="collapse-example1" data-hash="#pane-example1" title="Example tab header">
+     Example
+    </a>
+   </div>
+   <div id="collapse-example1" class="collapse show" role="tabpanel" aria-labelledby="heading-example1">
+    <div class="card-body p-t-md p-b-sm p-x-md">
+
+     {% include "../../src/_includes/modules/list-unordered.html" %}
+
+
+    </div>
+   </div>
+  </div>
+
+
+
+  <!--HTML-->
+  <div id="pane-html1" class="card tab-pane fade" role="tabpanel" aria-labelledby="tab-html1">
+   <div class="card-header" id="heading-html1">
+    <a class="collapsed" data-bs-toggle="collapse" href="#collapse-html1" data-parent="#tab-content"
+     aria-expanded="false" aria-controls="collapse-html1" data-hash="#pane-html1" title="HTML Source code tab header">
+     Source code
+    </a>
+   </div>
+   <div id="collapse-html1" class="collapse" role="tabpanel" aria-labelledby="heading-html1">
+    <div class="card-body">
+     <pre style="max-height: 300px;"><code>{% include "../../src/_includes/modules/list-unordered.html" %}</code>
+    </pre>
+
+    </div>
+   </div>
+  </div>
+
+
+ </div>
+</div>
+<!--END TABS-->
+
+
+
+
+
+
+<h2>Ordered list</h2>
+<p>Use an ordered list (numbered or alphabetical) to group a set of related items in a specific order.
+</p>
+<p>Ordered lists use letters or numbers at the beginning of a list in sequential order. They usually start at 1, I, or
+ A.</p>
+<p>The ordered list style is useful for a series of steps where order is important. Your list should contain all the
+ steps in a process so that your reader can complete the task.</p>
+<!--TABS-->
+<div class="tab-group responsive">
+ <ul id="tabs1" class="nav nav-tabs" role="tablist">
+  <li class="nav-item" role="presentation">
+   <a id="tab-example3" href="#pane-example3" class="nav-link active" data-bs-toggle="tab" role="tab">Example</a>
+  </li>
+  <li class="nav-item" role="presentation">
+   <a id="tab-html3" href="#pane-html3" class="nav-link" data-bs-toggle="tab" role="tab">Source code</a>
+  </li>
+
+ </ul>
+
+
+ <div id="tab-content" class="tab-content">
+  <!--Examples-->
+  <div id="pane-example3" class="card tab-pane fade show active" role="tabpanel" aria-labelledby="tab-example3">
+   <div class="card-header" id="heading-example3">
+    <a data-bs-toggle="collapse" href="#collapse-example3" data-parent="#tab-content" aria-expanded="true"
+     aria-controls="collapse-example3" data-hash="#pane-example3" title="Example tab header">
+     Example
+    </a>
+   </div>
+   <div id="collapse-example3" class="collapse show" role="tabpanel" aria-labelledby="heading-example3">
+    <div class="card-body p-t-md p-b-sm p-x-md">
+
+     {% include "../../src/_includes/modules/list-ordered.html" %}
+
+
+    </div>
+   </div>
+  </div>
+
+
+
+  <!--HTML-->
+  <div id="pane-html3" class="card tab-pane fade" role="tabpanel" aria-labelledby="tab-html3">
+   <div class="card-header" id="heading-html3">
+    <a class="collapsed" data-bs-toggle="collapse" href="#collapse-html3" data-parent="#tab-content"
+     aria-expanded="false" aria-controls="collapse-html3" data-hash="#pane-html3" title="HTML Source code tab header">
+     Source code
+    </a>
+   </div>
+   <div id="collapse-html3" class="collapse" role="tabpanel" aria-labelledby="heading-html3">
+    <div class="card-body">
+     <pre style="max-height: 300px;"><code>{% include "../../src/_includes/modules/list-ordered.html" %}</code>
+   </pre>
+
+    </div>
+   </div>
+  </div>
+
+
+ </div>
+</div>
+<!--END TABS-->
+
+<h2>Usage</h2>
+<h3>When and how to use it</h3>
+<p>Use lists to make blocks of text easier to read, and to break information into manageable chunks.</p>
+<p>Use bulleted lists when you don't need to convey a specific order for list items.</p>
+<p>Use numbered lists when you need to convey a priority, hierarchy, or sequence between list items.</p>
+<p>Use the step list when you need more than one sentence to explain the steps in a process.</p>
+<h3>How not to use it</h3>
+<p>Do not use the list pattern for a single-step process.</p>
+<p>Do not use Roman numerals, which are not read properly by screen readers.</p>
+
+
+<h2>Accessibility</h2>
+{% include "../../src/_includes/modules/accessibility.html" %}

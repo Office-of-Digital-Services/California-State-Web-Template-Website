@@ -1,0 +1,100 @@
+﻿---
+title: Card
+landing: Patterns
+layout: patterns.njk
+permalink: "patterns/card.html"
+---
+
+<h1 class="mt-lg-0">Card</h1>
+
+<nav class="page-navigation"></nav>
+
+<p>A card is a flexible, customizable container for content.
+ It displays a snippet of information and can link to more details upon interaction.</p>
+
+
+<h2>Sample</h2>
+
+<!--TABS-->
+<div class="tab-group responsive">
+ <ul id="tabs1" class="nav nav-tabs" role="tablist">
+  <li class="nav-item" role="presentation">
+   <a id="tab-example1" href="#pane-example1" class="nav-link active" data-bs-toggle="tab" role="tab">Example</a>
+  </li>
+  <li class="nav-item" role="presentation">
+   <a id="tab-html1" href="#pane-html1" class="nav-link" data-bs-toggle="tab" role="tab">Source code</a>
+  </li>
+
+ </ul>
+
+
+ <div id="tab-content" class="tab-content">
+  <!--Examples-->
+  <div id="pane-example1" class="card tab-pane fade show active" role="tabpanel" aria-labelledby="tab-example1">
+   <div class="card-header" id="heading-example1">
+    <a data-bs-toggle="collapse" href="#collapse-example1" data-parent="#tab-content" aria-expanded="true"
+     aria-controls="collapse-example1" data-hash="#pane-example1" title="Example tab header">
+     Example
+    </a>
+   </div>
+   <div id="collapse-example1" class="collapse show" role="tabpanel" aria-labelledby="heading-example1">
+    <div class="card-body p-b-md">
+     <div class="col-md-4">
+      {% include "../../src/_includes/modules/card-image.html" %}
+     </div>
+    </div>
+   </div>
+  </div>
+
+
+
+  <!--HTML-->
+  <div id="pane-html1" class="card tab-pane fade" role="tabpanel" aria-labelledby="tab-html1">
+   <div class="card-header" id="heading-html1">
+    <a class="collapsed" data-bs-toggle="collapse" href="#collapse-html1" data-parent="#tab-content"
+     aria-expanded="false" aria-controls="collapse-html1" data-hash="#pane-html1" title="HTML Source code tab header">
+     Source code
+    </a>
+   </div>
+   <div id="collapse-html1" class="collapse" role="tabpanel" aria-labelledby="heading-html1">
+    <div class="card-body">
+
+     <pre style="max-height: 300px;"><code>{% include "../../src/_includes/modules/card-image.html" %}</code></pre>
+
+    </div>
+   </div>
+  </div>
+
+
+ </div>
+</div>
+<!--END TABS-->
+
+
+<h2>Usage</h2>
+<h3>When and how to use it </h3>
+<p>Use cards to:</p>
+<ul>
+ <li>Highlight an action you want people to take</li>
+ <li>Group related content</li>
+ <li>Add imagery to blocks of text</li>
+ <li>Showcase an important bit of information</li>
+</ul>
+<p>All cards include container text. Cards can also include a(n):</p>
+<ul>
+ <li>Title</li>
+ <li>Image</li>
+ <li>Link</li>
+ <li>Button</li>
+</ul>
+<p>Be clear in the text about what someone will find at the card’s destination, especially in the title and button.</p>
+<p>Use sentence case capitalization for titles, action menus, and buttons.</p>
+<h3>
+ How not to use it
+</h3>
+<p>Avoid misrepresenting the content visitors will find at the card’s destination.</p>
+<p>Do not overload the card content. The visitor expects to find more detailed information elsewhere, so it is okay to
+ keep it brief.</p>
+
+<h2>Accessibility</h2>
+{% include "../../src/_includes/modules/accessibility.html" %}

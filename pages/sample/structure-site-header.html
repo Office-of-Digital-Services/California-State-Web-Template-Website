@@ -1,0 +1,155 @@
+---
+title: Site Header
+landing: Structure
+layout: page.njk
+permalink: "structure/site-header.html"
+---
+
+
+<div class="row">
+ <div class="col-md-3" role="complementary">
+  <!-- Side navigation -->
+  <nav aria-labelledby="navigation-list" class="side-navigation sticky-6">
+   <ul class="list-navigation">
+    <li><a href="/structure.html" id="navigation-list" class="landing">Structure</a></li>
+    <li><a href="/structure/utility-header.html">Utility header</a></li>
+    <li><a href="/structure/settings.html">Settings</a></li>
+    <li><a href="/structure/site-header.html" class="active">Site header</a></li>
+    <li><a href="/structure/mobile-controls.html">Mobile controls</a></li>
+    <li><a href="/structure/search.html">Search</a></li>
+    <li><a href="/structure/site-navigation.html">Site navigation</a></li>
+    <li><a href="/structure/footer.html">Footer</a></li>
+   </ul>
+  </nav>
+ </div>
+ <div class="col-md-9 m-b-lg">
+
+
+  <h1 class="mt-lg-0">Site header</h1>
+
+  <nav class="page-navigation"></nav>
+
+  <p>The site header puts your site's name at the top of your website, under the utility header. This
+   allows people to
+   readily identify the site they're visiting. If they interact with the site's name, it returns them to the site's
+   homepage.
+  </p>
+
+  <p>The site name or branding must be in the header. It includes “State of California” to identify its association with
+   the state. When selected, it returns people to the site's homepage. It must include at least one of these options:
+  </p>
+  <ul>
+   <li><span class="bold">Site name:</span> This is usually the department or agency name. </li>
+   <li><span class="bold">Logo:</span> An image of the department or agency logo. </li>
+  </ul>
+  <p>A search box displays on the right side of the header and allows visitors to search the site. While this appears in
+   the header, it is a separate structural element and is optional. Review <a href="/structure/search.html">Search</a>
+   for more information.</a></p>
+
+  <h2>Sample</h2>
+
+  <div class="tab-group responsive">
+   <ul id="tabs2" class="nav nav-tabs" role="tablist">
+    <li class="nav-item" role="presentation">
+     <a id="tab-example2" href="#pane-example2" class="nav-link active" data-bs-toggle="tab" role="tab">Example</a>
+    </li>
+    <li class="nav-item" role="presentation">
+     <a id="tab-html2" href="#pane-html2" class="nav-link" data-bs-toggle="tab" role="tab">Source code</a>
+    </li>
+    <li class="nav-item" role="presentation">
+     <a id="tab-include2" href="#pane-include2" class="nav-link" data-bs-toggle="tab" role="tab">Nunjucks include</a>
+    </li>
+   </ul>
+
+
+   <div class="tab-content">
+    <div id="pane-example2" class="card tab-pane fade show active" role="tabpanel" aria-labelledby="tab-example2">
+     <div class="card-header" id="heading-example2">
+      <h4 class="my-0 w-100">
+       <a data-bs-toggle="collapse" href="#collapse-example2" data-parent="#tab-content" aria-expanded="true"
+        aria-controls="collapse-example2" title="Example tab header">
+        Example
+       </a>
+      </h4>
+     </div>
+     <div id="collapse-example2" class="collapse show" role="tabpanel" aria-labelledby="heading-example2">
+
+      <div class="card-body">
+       <h3 class="h4 m-t-0">Desktop</h3>
+       <img src="/images/components/strucutre-site-header.jpg" alt="Site header screenshot" class="img-fluid">
+
+       <h3 class="h4">Mobile</h3>
+       <div class="col-md-6">
+        <img src="/images/components/strucutre-site-header-mobile.jpg" alt="Mobile site header screenshot"
+         class="img-fluid">
+       </div>
+
+      </div>
+     </div>
+    </div>
+
+    <div id="pane-html2" class="card tab-pane fade" role="tabpanel" aria-labelledby="tab-html2">
+     <div class="card-header" id="heading-html2">
+      <h4 class="my-0 w-100">
+       <a class="collapsed" data-bs-toggle="collapse" href="#collapse-html2" data-parent="#tab-content"
+        aria-expanded="false" aria-controls="collapse-html2" title="HTML Source code tab header">
+        HTML Source code
+       </a>
+      </h4>
+     </div>
+     <div id="collapse-html2" class="collapse" role="tabpanel" aria-labelledby="heading-html2">
+      <div class="card-body">
+       <h3 class="h4 m-t-0">HTML</h3>
+       <pre><code>{% include "../../src/_includes/site-header.njk" %}</code>
+        </pre>
+      </div>
+     </div>
+    </div>
+
+    <div id="pane-include2" class="card tab-pane fade" role="tabpanel" aria-labelledby="tab-include2">
+     <div class="card-header" id="heading-include2">
+      <h4 class="my-0 w-100">
+       <a class="collapsed" data-bs-toggle="collapse" href="#collapse-include2" data-parent="#tab-include2"
+        aria-expanded="false" aria-controls="collapse-include2" title="Nunjucks include tab header">
+        Nunjucks include
+       </a>
+      </h4>
+     </div>
+     <div id="collapse-include2" class="collapse" role="tabpanel" aria-labelledby="heading-include2">
+      <div class="card-body">
+       <h3 class="h4 m-t-0">Include path</h3>
+       <p class="m-b">Add Settings Bar <code>njk</code> include code right after Utility Header component:
+       </p>
+       <pre><code>&#123;% include "src/_includes/site-header.njk" %&#125;</code></pre>
+
+       <p class="m-t"><span class="text-highlight-primary">Note:</span> Path to the include will be relative to the
+        directory of
+        your
+        page.</p>
+      </div>
+     </div>
+    </div>
+   </div>
+  </div>
+
+
+  <h2>Usage</h2>
+  <h3>When and how to use it</h3>
+
+  <p>The site header goes on all pages of your website. </p>
+
+  <p>If you use a logo in your site header, make sure that any text in it is legible. You may need to create a web
+   optimized version of your logo for legibility. We recommend separating the visual elements of the logo from the text
+   and adding the text next to the logo. </p>
+  <h3>How not to use it</h3>
+  <p>Do not modify the site header beyond adding the site name and a logo.</p>
+  <p>Do not use a logo with small, illegible text. Avoid using logos or state seals that are not optimized for web
+   display.</p>
+
+
+  <h2>Accessibility</h2>
+  {% include "../../src/_includes/modules/accessibility.html" %}
+
+
+ </div>
+</div>

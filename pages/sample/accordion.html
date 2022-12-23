@@ -1,0 +1,178 @@
+﻿---
+title: Accordion
+landing: Components
+layout: components.njk
+permalink: "/components/accordion.html"
+---
+
+
+<h1 class="mt-lg-0">Accordion</h1>
+
+<nav class="page-navigation"></nav>
+
+<p>Accordions are expandable sections of content. Each section contains a summary element and more body text when
+ opened.</p>
+
+<p>Accordions keep pages clean by hiding information that most people do not need to see.</p>
+
+<h2>Basic accordion</h2>
+
+
+<!--TABS-->
+<div class="tab-group responsive">
+ <ul id="tabs1" class="nav nav-tabs" role="tablist">
+  <li class="nav-item" role="presentation">
+   <a id="tab-example1" href="#pane-example1" class="nav-link active" data-bs-toggle="tab" role="tab">Example</a>
+  </li>
+  <li class="nav-item" role="presentation">
+   <a id="tab-html1" href="#pane-html1" class="nav-link" data-bs-toggle="tab" role="tab">Source code</a>
+  </li>
+
+ </ul>
+
+
+ <div id="tab-content1" class="tab-content">
+  <!--Examples-->
+  <div id="pane-example1" class="card tab-pane fade show active" role="tabpanel" aria-labelledby="tab-example1">
+   <div class="card-header" id="heading-example1">
+    <a data-bs-toggle="collapse" href="#collapse-example1" data-parent="#tab-content1" aria-expanded="true"
+     aria-controls="collapse-example1" data-hash="#pane-example1" title="Example tab header">
+     Example
+    </a>
+   </div>
+   <div id="collapse-example1" class="collapse show" role="tabpanel" aria-labelledby="heading-example1">
+    <div class="p-a-md p-b-lg">
+
+     {% include "../../src/_includes/modules/accordion.html" %}
+
+
+    </div>
+   </div>
+  </div>
+
+
+
+  <!--HTML-->
+  <div id="pane-html1" class="card tab-pane fade" role="tabpanel" aria-labelledby="tab-html1">
+   <div class="card-header" id="heading-html1">
+    <a class="collapsed" data-bs-toggle="collapse" href="#collapse-html1" data-parent="#tab-content1"
+     aria-expanded="false" aria-controls="collapse-html1" data-hash="#pane-html1" title="HTML Source code tab header">
+     Source code
+    </a>
+   </div>
+   <div id="collapse-html1" class="collapse" role="tabpanel" aria-labelledby="heading-html1">
+    <div class="card-body">
+     <textarea class="sourcecode" aria-label="source code"
+      disabled>{% include "../../src/_includes/modules/accordion.html" %}</textarea>
+
+    </div>
+   </div>
+  </div>
+
+
+ </div>
+</div>
+<!--END TABS-->
+
+
+
+
+
+
+<h2>Accordion list</h2>
+<!--TABS-->
+<div class="tab-group responsive">
+ <ul id="tabs2" class="nav nav-tabs" role="tablist">
+  <li class="nav-item" role="presentation">
+   <a id="tab-example3" href="#pane-example3" class="nav-link active" data-bs-toggle="tab" role="tab"
+    aria-label="Accordion list example">Example</a>
+  </li>
+  <li class="nav-item" role="presentation">
+   <a id="tab-html3" href="#pane-html3" class="nav-link" data-bs-toggle="tab" role="tab"
+    aria-label="Accordion list source code">Source code</a>
+  </li>
+
+ </ul>
+
+
+ <div id="tab-content2" class="tab-content">
+  <!--Examples-->
+  <div id="pane-example3" class="card tab-pane fade show active" role="tabpanel" aria-labelledby="tab-example3">
+   <div class="card-header" id="heading-example3">
+    <a data-bs-toggle="collapse" href="#collapse-example3" data-parent="#tab-content2" aria-expanded="true"
+     aria-controls="collapse-example3" data-hash="#pane-example3" title="Example tab header">
+     Example
+    </a>
+   </div>
+   <div id="collapse-example3" class="collapse show" role="tabpanel" aria-labelledby="heading-example3">
+    <div class="card-body p-b">
+
+     {% include "../../src/_includes/modules/accordion-list.html" %}
+
+
+    </div>
+   </div>
+  </div>
+
+
+
+  <!--HTML-->
+  <div id="pane-html3" class="card tab-pane fade" role="tabpanel" aria-labelledby="tab-html3">
+   <div class="card-header" id="heading-html3">
+    <a class="collapsed" data-bs-toggle="collapse" href="#collapse-html3" data-parent="#tab-content2"
+     aria-expanded="false" aria-controls="collapse-html3" data-hash="#pane-html3" title="HTML Source code tab header">
+     Source code
+    </a>
+   </div>
+   <div id="collapse-html3" class="collapse" role="tabpanel" aria-labelledby="heading-html3">
+    <div class="card-body">
+     <textarea class="sourcecode" aria-label="source code"
+      disabled>{% include "../../src/_includes/modules/accordion-list.html" %}</textarea>
+
+    </div>
+   </div>
+  </div>
+
+
+ </div>
+</div>
+<!--END TABS-->
+
+<h2>Usage</h2>
+
+<h3 class="m-t">When and how to use it</h3>
+<p>Use accordions to hide content most people do not need.</p>
+<p>Headings can be a:</p>
+
+<ul>
+ <li>Word or phrase</li>
+ <li>Sentence</li>
+ <li>Question</li>
+</ul>
+
+
+
+<p>Write headings that are brief and descriptive.</p>
+<p>Only use accordions when:</p>
+<ul>
+ <li>A small group of people needs the information.</li>
+ <li>People only need certain information (like selecting one of several license types).</li>
+ <li>Providing notes or disclaimers.</li>
+</ul>
+
+<h3>How not to use it</h3>
+
+<p>Do not use accordions:</p>
+<ul>
+ <li>If more than a third of your visitors need the information in the accordion.</li>
+ <li>To make a page look shorter.</li>
+ <li>Inside other accordions.</li>
+</ul>
+<p>Accordions hide information until someone opens them. This added step means visitors have to do extra work to get the
+ information.</p>
+
+<p>Do not put content that everyone needs to see in an accordion. Keep it in the body content.</p>
+
+
+<h2>Accessibility</h2>
+{% include "../../src/_includes/modules/accessibility.html" %}

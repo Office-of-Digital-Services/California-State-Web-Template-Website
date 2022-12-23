@@ -1,0 +1,85 @@
+﻿---
+title: Number Counter
+landing: Components
+layout: components.njk
+permalink: "components/number-counter.html"
+---
+
+<h1 class="mt-lg-0 m-b-0">Number counter</h1>
+<p class="subtitle">Other names: number animation</p>
+
+<nav class="page-navigation"></nav>
+
+
+<p>The number counter adds animation and counts up to a set number.</p>
+
+
+
+<h2>Sample</h2>
+
+<!--TABS-->
+<div class="tab-group responsive">
+ <ul id="tabs1" class="nav nav-tabs" role="tablist">
+  <li class="nav-item" role="presentation">
+   <a id="tab-example1" href="#pane-example1" class="nav-link active" data-bs-toggle="tab" role="tab">Example</a>
+  </li>
+  <li class="nav-item" role="presentation">
+   <a id="tab-html1" href="#pane-html1" class="nav-link" data-bs-toggle="tab" role="tab">Source code</a>
+  </li>
+
+ </ul>
+
+
+ <div id="tab-content" class="tab-content">
+  <!--Examples-->
+  <div id="pane-example1" class="card tab-pane fade show active" role="tabpanel" aria-labelledby="tab-example1">
+   <div class="card-header" id="heading-example1">
+    <a data-bs-toggle="collapse" href="#collapse-example1" data-parent="#tab-content" aria-expanded="true"
+     aria-controls="collapse-example1" data-hash="#pane-example1" title="Example tab header">
+     Example
+    </a>
+   </div>
+   <div id="collapse-example1" class="collapse show" role="tabpanel" aria-labelledby="heading-example1">
+    <div class="card-body p-b-md">
+     {% include "../../src/_includes/modules/number-counter.html" %}
+    </div>
+   </div>
+  </div>
+
+
+
+  <!--HTML-->
+  <div id="pane-html1" class="card tab-pane fade" role="tabpanel" aria-labelledby="tab-html1">
+   <div class="card-header" id="heading-html1">
+    <a class="collapsed" data-bs-toggle="collapse" href="#collapse-html1" data-parent="#tab-content"
+     aria-expanded="false" aria-controls="collapse-html1" data-hash="#pane-html1" title="HTML Source code tab header">
+     Source code
+    </a>
+   </div>
+   <div id="collapse-html1" class="collapse" role="tabpanel" aria-labelledby="heading-html1">
+    <div class="card-body">
+     <pre style="max-height: 300px;"><code>{% include "../../src/_includes/modules/number-counter.html" %}</code></pre>
+
+    </div>
+   </div>
+  </div>
+
+
+ </div>
+</div>
+<!--END TABS-->
+
+
+
+<h2>Usage</h2>
+<h3>When and how to use it </h3>
+<p>Use the rolling number counter component to add visual variety to important data. This is often used on homepages.
+</p>
+<h3>How not to use it</h3>
+<p>Do not use the rolling number counter in multiple sections of your webpage. </p>
+<p>Do not use the number counter for dates. </p>
+
+
+
+<h2>Accessibility</h2>
+{% include "../../src/_includes/modules/accessibility.html" %}
