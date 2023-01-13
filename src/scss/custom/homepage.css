@@ -35,11 +35,8 @@
 .font-weight-bold {
   font-weight: 500;
 }
-.partner-link {
-  text-decoration: none !important;
-}
+
 .partner-link:hover {
-  text-decoration: underline !important;
   color: #EEF8FB !important;
 }
 
@@ -55,29 +52,51 @@
   .header-primary-banner img, .partner-with-us svg {
     width: auto;
   }
+
+  .col-sm-3 {
+   display: flex;
+   flex-direction: row;
+   flex-wrap: nowrap;
+   align-content: flex-start;
+  }
+
+  .dot-line::before,
+  .dot-line::after {
+   display: none;
+  }
+
   .dot-line {
     position: relative;
+    rotate: 0deg;
+    left: 0.9rem;
+    top: 0.4rem;
+    padding-right: 0;
+    width: 2rem;
+    z-index: 9;
   }
+
   .dot-text {
-    margin-left: 3.25rem;
-    margin-top: -3.75rem;
-    margin-bottom: 3rem;
-    position: relative;
+   position: relative;
+   margin-left: 0;
+   margin-top: 0;
+   margin-bottom: 0;
+   padding-left: 2rem;
+   border-left: 1px solid #ddd;
   }
+
+  .dot-text h3 {
+   margin-top: 0;
+  }
+
   .dot-text::before {
-    display: block;
-    content: "";
-    height: 200%;
-    width: 2px;
-    background: #bcbbc1;
-    position: absolute;
-    left: calc(-38px);
-    top: 6px;
+   display: none;
   }
+
   .timeline-lines .col-sm-3:nth-last-of-type(2) .dot-text::before,
   .timeline-lines .col-sm-3:last-of-type .dot-text::before {
     background: #dddddd;
   }
+
 }
 
 @media (max-width: 767px) {
@@ -95,3 +114,13 @@
     width: 100%;
   }
 }
+
+@media (min-width: 768px) {
+ .p-r-lg-desktop {
+  padding-right: 3rem !important;
+ }
+ .p-l-lg-desktop {
+  padding-left: 3rem !important;
+ }
+ }
+
