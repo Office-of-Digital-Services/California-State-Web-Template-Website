@@ -1,0 +1,174 @@
+﻿---
+title: Pagination
+landing: Components
+layout: components.njk
+permalink: "components/pagination.html"
+---
+
+<h1 class="mt-lg-0">Pagination</h1>
+
+<nav class="page-navigation"></nav>
+
+<p>Pagination helps you navigate between a series of pages.</p>
+
+<p>The controls allow you to move forward or backward or go directly to a specific page.</p>
+
+<h2>Sample</h2>
+
+<style>
+table tr {
+  border-bottom: 1px solid #ddd;
+}
+table td {
+  vertical-align: top;
+  padding:.8rem 0;
+}
+table td:first-child {
+  padding-right:2em;
+}
+</style>
+
+<!--TABS-->
+<div class="tab-group responsive">
+ <ul id="tabs1" class="nav nav-tabs" role="tablist">
+  <li class="nav-item" role="presentation">
+   <a id="tab-example1" href="#pane-example1" class="nav-link active" data-bs-toggle="tab" role="tab">Example</a>
+  </li>
+  <li class="nav-item" role="presentation">
+   <a id="tab-html1" href="#pane-html1" class="nav-link" data-bs-toggle="tab" role="tab">Source code</a>
+  </li>
+
+ </ul>
+
+
+ <div id="tab-content" class="tab-content">
+  <!--Examples-->
+  <div id="pane-example1" class="card tab-pane fade show active" role="tabpanel" aria-labelledby="tab-example1">
+   <div class="card-header" id="heading-example1">
+    <a data-bs-toggle="collapse" href="#collapse-example1" data-parent="#tab-content" aria-expanded="true"
+     aria-controls="collapse-example1" data-hash="#pane-example1" title="Example tab header">
+     Example
+    </a>
+   </div>
+   <div id="collapse-example1" class="collapse show" role="tabpanel" aria-labelledby="heading-example1">
+    <div class="card-body p-y-0 p-t-md">
+      <cagov-pagination data-current-page="5" data-total-pages="99"></cagov-pagination>
+    </div>
+   </div>
+  </div>
+
+
+
+  <!--HTML-->
+  <div id="pane-html1" class="card tab-pane fade" role="tabpanel" aria-labelledby="tab-html1">
+   <div class="card-header" id="heading-html1">
+    <a class="collapsed" data-bs-toggle="collapse" href="#collapse-html1" data-parent="#tab-content"
+     aria-expanded="false" aria-controls="collapse-html1" data-hash="#pane-html1" title="HTML Source code tab header">
+     Source code
+    </a>
+   </div>
+   <div id="collapse-html1" class="collapse" role="tabpanel" aria-labelledby="heading-html1">
+    <div class="card-body">
+      <textarea class="sourcecode" aria-label="source code" disabled><cagov-pagination data-current-page="5" data-total-pages="99"></cagov-pagination></textarea>
+    </div>
+   </div>
+  </div>
+
+
+ </div>
+</div>
+<!--END TABS-->
+
+<h2>Usage</h2>
+<h3>When and how to use it </h3>
+
+<p>Add the pagination component after the content on each page that you’re paginating. Use pagination if it improves the performance or usability of your service.</p>
+
+<p>Consider using pagination when:</p>
+
+<ul>
+  <li>Showing all the content on a single page is too much and causes poor performance</li>
+  <li>Most users will only need the content on the first few pages</li>
+  <li>A long list of content could benefit from pagination</li>
+</ul>
+
+<p>The default number displayed will vary depending on the context.</p>
+
+<p>Common uses of pagination include:</p>
+
+<ul>
+  <li>Search results</li>
+  <li>A list of announcements or press releases</li>
+  <li>A glossary</li>
+</ul>
+
+<h3>
+ How not to use it
+</h3>
+
+<p>Do not use pagination:</p>
+<ul>
+  <li>To break up long pages of text</li>
+  <li>When the content works better as a bulleted list</li>
+  <li>For a list of steps</li>
+</ul>
+
+<h2>Behaviors</h2>
+
+<p>This describes the different pagination behaviors. The maximum number of slots (page numbers and ellipsis) displayed are 7. There are a few instances when not all 7 slots are displayed. </p>
+
+<p>Do not show pagination if there’s only one page of content. For example, you get 3 search results on 1 page, do not show pagination.</p>
+
+<table>
+  <tr style="border-bottom: 2px solid black;">
+     <th>Guideline</th>
+     <th>Example</th>
+  </tr>
+  <tr>
+     <td>Remove extra slots if there are less than 7 pages.</td>
+     <td><cagov-pagination data-current-page="1" data-total-pages="3"></cagov-pagination></td>
+  </tr>
+  <tr>
+     <td>Always highlight the current page.</td>
+     <td><cagov-pagination data-current-page="2" data-total-pages="3"></cagov-pagination></td>
+  </tr>
+  <tr>
+     <td>Hide the Previous link on the first page of the set and hide the Next link on the last page of the set.</td>
+     <td>
+      <cagov-pagination data-current-page="1" data-total-pages="3"></cagov-pagination>
+      <cagov-pagination data-current-page="3" data-total-pages="3"></cagov-pagination>
+     </td>
+  </tr>
+  <tr>
+     <td>Always show both the previous page and the next page adjacent to the current page.</td>
+     <td><cagov-pagination data-current-page="4" data-total-pages="8"></cagov-pagination></td>
+  </tr>
+  <tr>
+     <td>Use ellipsis as an overflow indicator when there are pages missing.</td>
+     <td><cagov-pagination data-current-page="1" data-total-pages="8"></cagov-pagination></td>
+  </tr>
+  <tr>
+     <td>Bounded sets can show overflow indicators in Slot 2 and Slot 6 only.</td>
+     <td><cagov-pagination data-current-page="5" data-total-pages="9"></cagov-pagination></td>
+  </tr>
+  <tr>
+     <td>Unbounded sets always show an overflow indicator in Slot 7.</td>
+     <td><cagov-pagination data-current-page="1" data-total-pages="-1"></cagov-pagination></td>
+  </tr>
+  <tr>
+     <td>Unbounded sets use Slot 4 as the current page for pages 4 and higher.</td>
+     <td><cagov-pagination data-current-page="4" data-total-pages="-1"></cagov-pagination></td>
+  </tr>
+</table>
+
+<h2>Accessibility</h2>
+
+<h3>Component-specific accessibility review</h3>
+
+<ul>
+  <li>Make sure that each pagination link has appropriate aria-label.</li>
+  <li>Make sure that pagination component is contained within nav tag and has aria-label="Pagination” added to it.</li>
+</ul>
+
+{% include "../../src/_includes/modules/accessibility.html" %}
+
