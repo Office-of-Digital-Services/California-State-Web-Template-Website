@@ -180,7 +180,7 @@ permalink: "visual-design/color.html"
  var palettesHTML = "";
  for (const id in themeData) {
   palettesHTML += ' \
-  <a href="color/?' + id + '" class="palette-card rounded-5 bg-grey-lightest-hover color-gray-dark no-underline"> \
+  <a href="color/?' + id + '"title="' + themeData[id].name + '" class="palette-card no-underline d-block color-gray-dark brd-gray-light brd-solid-1 rounded-5 h-100 transition-0_3 shadow2-hover color-primary color-primary-hover"> \
     <div><strong>' + themeData[id].name + '</strong></div> \
     <div class="palette-row"> \
       <div class="palette-disc rounded-circle" style="background-color:#' + themeData[id].colorPrimary + ';"></div> \
