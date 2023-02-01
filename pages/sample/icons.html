@@ -185,7 +185,7 @@ permalink: "visual-design/icons.html"
   var listHtml = "";
   var numberOfResults = 0;
   var inputBox = document.querySelector("#iconSearchForm input");
-  var searchInput = inputBox ? inputBox.value.trim().toLowerCase().replace(/[<>]/g, '') : "";
+  var searchInput = inputBox ? inputBox.value.trim().toLowerCase().replace(/[<>="'`&;]/g, ' ') : "";
   const iconsPerPage = 60;
 
   const letterList = [...new Set(iconData.icons.map(x => x.properties.name.charAt(0)))];
@@ -281,7 +281,7 @@ permalink: "visual-design/icons.html"
   }
 
 
-  document.querySelector('#searchSummary').innerHTML = searchInput.length ? searchInput : filterLetter ? filterLetter.toUpperCase() : "All";
+  document.querySelector('#searchSummary').textContent = searchInput.length ? searchInput : filterLetter ? filterLetter.toUpperCase() : "All";
 
   if (searchInput.length) {
    document.querySelector('#jumpToHeading').style.display = "none";
