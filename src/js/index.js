@@ -13,3 +13,4 @@ import './cagov/return-top.js';
 import './cagov/side-navigation.js';
 import './cagov/external-link.js';
 import './cagov/page-navigation.js';
+import './cagov/pagination.js';
