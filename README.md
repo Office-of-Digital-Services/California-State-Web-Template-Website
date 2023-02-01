@@ -4,7 +4,7 @@ The California State Web Template is an HTML template and website standard offer
 
 This repository is the state web template sample website showcasing all of the components, functionality, and implementation guidence. To download a version of the state web template without the sample content, please select a framework and visit the corresponding repository.
 
-## Available sate web template frameworks
+## Available state web template frameworks
 
 - [California-State-Web-Template-HTML](https://github.com/Office-of-Digital-Services/California-State-Web-Template-HTML)
 - [California-State-Web-Template-eleventy](https://github.com/Office-of-Digital-Services/California-State-Web-Template-eleventy)
