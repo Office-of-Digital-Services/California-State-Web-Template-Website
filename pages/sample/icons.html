@@ -185,7 +185,7 @@ permalink: "visual-design/icons.html"
   let listHtml = "";
   var numberOfResults = 0;
   var inputBox = document.querySelector("#iconSearchForm input");
-  var searchInput = inputBox ? sanitize(inputBox.value.trim().toLowerCase()) : "";
+  var searchInput = inputBox ? escapeHTML(inputBox.value.trim().toLowerCase()) : "";
   const iconsPerPage = 60;
 
   const letterList = [...new Set(iconData.icons.map(x => x.properties.name.charAt(0)))];
@@ -209,7 +209,7 @@ permalink: "visual-design/icons.html"
 
    if (!searchInput.length || iconStrings.find(x => x.search(searchInput) > -1)) {
     if (!paginate || (numberOfResults >= (pageNumber * iconsPerPage) && numberOfResults < ((pageNumber + 1) * iconsPerPage))) {
-     const iconName = sanitize(icon.properties.name);
+     const iconName = escapeHTML(icon.properties.name);
      const firstLetter = iconName.charAt(0);
      if (!paginate && !filterLetter && !searchInput.length && letter !== firstLetter) {
       // show the blue letter heading
@@ -233,9 +233,16 @@ permalink: "visual-design/icons.html"
    }
   }
 
-  function sanitize(input) {
-    return input.replace(/[^a-zA-Z0-9\ \-]/g,' ');
+  function escapeHTML(value) {
+    if(value!=null) {
+      var div=document.createElement("div");
+      var text=document.createTextNode(value);
+      div.appendChild(text);
+      return div.innerHTML;
+    }
+    return '';
   }
+
 
 
   // Page numbers
