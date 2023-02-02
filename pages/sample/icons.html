@@ -185,7 +185,7 @@ permalink: "visual-design/icons.html"
   let listHtml = "";
   var numberOfResults = 0;
   var inputBox = document.querySelector("#iconSearchForm input");
-  var searchInput = inputBox ? escapeHTML(inputBox.value.trim().toLowerCase()) : "";
+  var searchInput = inputBox ? inputBox.value.trim().toLowerCase() : "";
   const iconsPerPage = 60;
 
   const letterList = [...new Set(iconData.icons.map(x => x.properties.name.charAt(0)))];
