@@ -182,7 +182,7 @@ permalink: "visual-design/icons.html"
  var iconData = [];
 
  function buildList(paginate = true, pageNumber = 0, filterLetter) {
-  var listHtml = "";
+  let listHtml = "";
   var numberOfResults = 0;
   var inputBox = document.querySelector("#iconSearchForm input");
   var searchInput = inputBox ? inputBox.value.trim().toLowerCase().replace(/[<>="'`&;]/g, ' ') : "";
@@ -209,7 +209,8 @@ permalink: "visual-design/icons.html"
 
    if (!searchInput.length || iconStrings.find(x => x.search(searchInput) > -1)) {
     if (!paginate || (numberOfResults >= (pageNumber * iconsPerPage) && numberOfResults < ((pageNumber + 1) * iconsPerPage))) {
-     const firstLetter = icon.properties.name.charAt(0);
+     const iconName = icon.properties.name.replace(/[<>="'`&;]/g, ''); //html XSS bad character removal
+     const firstLetter = iconName.charAt(0);
      if (!paginate && !filterLetter && !searchInput.length && letter !== firstLetter) {
       // show the blue letter heading
       letter = firstLetter;
@@ -219,11 +220,11 @@ permalink: "visual-design/icons.html"
      listHtml += `
           <div class="d-flex icon-item">
             <div class="text-3rem p-r gray-900">
-              <span class="ca-gov-icon-${icon.properties.name}" aria-hidden="true"></span>
+              <span class="ca-gov-icon-${iconName}" aria-hidden="true"></span>
             </div>
             <div class="icon-specs p-r  gray-900">
-              <p style="text-transform:capitalize" class="bold m-t m-b-0 font-size-16">${icon.properties.name.replace('-', ' ')}</p>
-              <p class="font-size-14 m-0">ca-gov-icon-${icon.properties.name}</p>
+              <p style="text-transform:capitalize" class="bold m-t m-b-0 font-size-16">${iconName.replace('-', ' ')}</p>
+              <p class="font-size-14 m-0">ca-gov-icon-${iconName}</p>
             </div>
           </div>
           `;
