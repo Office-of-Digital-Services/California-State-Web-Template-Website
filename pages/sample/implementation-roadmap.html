@@ -1,0 +1,151 @@
+---
+title: Implementation roadmap
+landing: Get started
+layout: page.njk
+permalink: "/get-started/implementation-roadmap.html"
+---
+
+<div class="row">
+ <div class="col-md-3">
+  <nav aria-labelledby="side-navigation-label" class="side-navigation sticky-6 overflow-auto">
+   <span class="sr-only" id="side-navigation-label">Side navigation</span>
+   <ul class="list-navigation">
+    <li>
+     <a href="/download-and-setup.html" class="landing back">Download and setup</a>
+    </li>
+    <li>
+     <a href="/get-started/implementation-roadmap.html" class="active">Implementation roadmap</a>
+    </li>
+    <li>
+     <a href="/get-started/eleventy.html">Eleventy</a>
+    </li>
+   </ul>
+  </nav>
+ </div>
+
+
+ <div class="col-md-9 p-b-lg">
+  <h1 id="Downloadandsetup" class="mt-lg-0">Implementation roadmap</h1>
+
+
+  <p>These are the high-level steps to take when you upgrade to the latest template.</p>
+
+  <ol class="cagov-step-list">
+   <li><span class="bold">Back up your current site</span>
+    <br />
+    <span class="cagov-step-list-content">
+     <p>Before you start, save a copy of your current site. If there’s an issue, you won’t lose your
+      current
+      site.</p>
+    </span>
+   </li>
+
+   <li><span class="bold">Select a framework</span>
+    <br />
+    <span class="cagov-step-list-content">
+     <p>Current frameworks include HTML, Eleventy, NET core, MVC, and React. You’ll usually pick the
+      framework you’re currently on.</p>
+    </span>
+   </li>
+
+   <li><span class="bold">Understand the differences in the code and HTML structure</span>
+    <br />
+    <span class="cagov-step-list-content">
+     <p>
+      You’ll want to compare your current CSS and JS files to the state template’s files (especially if you have custom
+      styles). This helps you understand the work you need to do. Learn how to do a <a
+       href="https://docs.github.com/en/pull-requests/committing-changes-to-your-project/viewing-and-comparing-commits/comparing-commits">code
+       comparison in GitHub</a>.
+     </p>
+
+     <ul>
+      <li><a href="./structure.html">Structural elements</a> </li>
+      <li><a href="./components.html">Components</a></li>
+      <li><a href="./patterns.html">Patterns</a></li>
+
+     </ul>
+     <p>This may affect your HTML, requiring structural code updates.</p>
+
+    </span>
+   </li>
+
+   <li><span class="bold">Download or clone the State Web Template from GitHub</span>
+    <br />
+    <span class="cagov-step-list-content">
+     <p>You can clone it from our <a
+       href="https://github.com/Office-of-Digital-Services/California-State-Web-Template-Website/">Template GitHub
+       Repository</a>.</p>
+     <p>You can also download or access the different frameworks. Review <a href="#Common-web-template-resources">Common
+       web template
+       resources</a>. This is
+      also a good time to have your security office perform a scan of the files.</p>
+    </span>
+   </li>
+
+   <li><span class="bold">Look for CSS, JavaScript, and structural changes</span>
+    <br />
+    <span class="cagov-step-list-content">
+     <p>Most changes are made in:</p>
+     <ul>
+      <li>The CSS and JavaScript source files in the <code>/src/scss/</code> and <code>/src/js/</code> folders</li>
+      <li>Includes and modules folders <code>/src/_includes/</code> and <code>/src/_includes/modules/</code></li>
+     </ul>
+    </span>
+   </li>
+
+   <li><span class="bold">Replace older library files with the updated ones</span>
+    <br />
+    <span class="cagov-step-list-content">
+     <p>The web template has CSS and JavaScript (JS) code base. You will replace these source files with
+      newer ones or
+      point to the corresponding CDN links found on the <a href="/cdn.html">state web
+       template CDN</a> page. If you have a custom
+      CSS or JS
+      code, you may need to update that too. Keep your customizations separate from the core template
+      source code for
+      an easier update process.</p>
+    </span>
+   </li>
+
+   <li><span class="bold">Integrate the new template into your environment</span>
+    <br />
+    <span class="cagov-step-list-content">
+     <p>From your code comparison, make the necessary changes and updates to your code. Usually,
+      incremental
+      versions
+      will not require any structural template adjustments. You only need to replace core CSS and JS
+      files
+      or update
+      the CDN links.</p>
+    </span>
+   </li>
+
+   <li><span class="bold">Perform necessary tests and reviews</span>
+    <br />
+    <span class="cagov-step-list-content">
+     <p>After core source code has been updated, you should thoroughly review and test your website or
+      web
+      application.
+      This includes QA, code and heuristic reviews, and accessibility testing. Do not forget to
+      inspect
+      for code level
+      errors or conflicts.</p>
+    </span>
+   </li>
+
+   <li><span class="bold">Release to production</span>
+    <br />
+    <span class="cagov-step-list-content">
+     <p>Yay! You’re now ready to follow your organization's change management and release process. You
+      may
+      want to QA
+      every web page and get more people to verify that everything works as expected. Sometimes
+      releasing
+      to
+      production produces some bugs.</p>
+    </span>
+   </li>
+
+  </ol>
+ </div>
+</div>
