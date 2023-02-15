@@ -6,26 +6,6 @@ permalink: "components/countdown-timer.html"
 ---
 
 
-<style>
- #demo,
- #demo2,
- #demo3,
- #demo4 {
-  text-align: center;
-  font-size: 1.875rem;
-  margin-top: 0px;
-  font-weight: 700;
-  background-color: #153554;
-  color: #fff;
-  border-left: 3px solid #fff;
- }
-
- .countdown-text {
-  font-size: 1rem;
-  font-weight: 400;
- }
-</style>
-
 
 <h1 class="mt-lg-0">Countdown timer</h1>
 
@@ -47,105 +27,103 @@ permalink: "components/countdown-timer.html"
 
 
 <!--TABS-->
-<div class="tab-group responsive">
- <ul id="tabs1" class="nav nav-tabs" role="tablist">
-  <li class="nav-item" role="presentation">
-   <a id="tab-example1" href="#pane-example1" class="nav-link active" data-bs-toggle="tab" role="tab">Example</a>
+<div class="tabs responsive">
+ <ul class="nav-tabs">
+  <li>
+   <a href="#section1">Example</a>
   </li>
-  <li class="nav-item" role="presentation">
-   <a id="tab-html1" href="#pane-html1" class="nav-link" data-bs-toggle="tab" role="tab">Source code</a>
+  <li>
+   <a href="#section2">Source code</a>
   </li>
-
  </ul>
 
 
- <div id="tab-content" class="tab-content">
-  <!--Examples-->
-  <div id="pane-example1" class="card tab-pane fade show active" role="tabpanel" aria-labelledby="tab-example1">
-   <div class="card-header" id="heading-example1">
-    <a data-bs-toggle="collapse" href="#collapse-example1" data-parent="#tab-content" aria-expanded="true"
-     aria-controls="collapse-example1" data-hash="#pane-example1" title="Example tab header">
-     Example
-    </a>
-   </div>
-   <div id="collapse-example1" class="collapse show" role="tabpanel" aria-labelledby="heading-example1">
-    <div class="card-body">
-     <h3 class="m-t-0">Default</h3>
-     <div class="group countdown p-x">
-      <div class="fifth bg-gray-100 text-center p-b-md p-l-0 p-r-0">
-       <span class="countdown-text"><abbr title="weeks" aria-label="weeks"
-         class="text-decoration-none">wks</abbr><br></span>
-       <span id="weeks1"></span>
-      </div>
-      <div class="fifth bg-gray-100 text-center p-b-md p-l-0 p-r-0">
-       <span class="countdown-text">days<br></span>
-       <span id="days1"></span>
-      </div>
-      <div class="fifth bg-gray-100 text-center p-b-md p-l-0 p-r-0">
-       <span class="countdown-text"><abbr title="hours" aria-label="hours" class="text-decoration-none">hrs</abbr>
-        <br></span>
-       <span id="hours1"></span>
-      </div>
-      <div class="fifth bg-gray-100 text-center p-b-md p-l-0 p-r-0">
-       <span class="countdown-text"><abbr title="minutes" aria-label="minutes"
-         class="text-decoration-none">mins</abbr><br></span>
-       <span id="minutes1"></span>
-      </div>
-      <div class="fifth bg-gray-100 text-center p-b-md p-l-0 p-r-0">
-       <span class="countdown-text"><abbr title="seconds" aria-label="seconds"
-         class="text-decoration-none">secs</abbr><br></span>
-       <span id="seconds1"></span>
-      </div>
+ <!--Examples-->
+ <section id="section1" class="tab-pane">
+  <div class="card-header" id="heading-example1">
+   <a data-bs-toggle="collapse" href="#collapse-example1" aria-expanded="true" aria-controls="collapse-example1"
+    data-hash="#pane-example1" title="Example tab header">
+    Example
+   </a>
+  </div>
+  <div id="collapse-example1" class="collapse show p-0 m-0 brd-0" role="tabpanel" aria-labelledby="heading-example1">
+   <div class="p-a-sm">
+    <h3 class="m-t-0">Default</h3>
+    <div class="group countdown p-x">
+     <div class="fifth bg-gray-100 text-center p-b-md p-l-0 p-r-0">
+      <span class="countdown-text"><abbr title="weeks" aria-label="weeks"
+        class="text-decoration-none">wks</abbr><br></span>
+      <span id="weeks1"></span>
      </div>
-
-
-     <h3>Primary</h3>
-     <div class="group countdown p-x">
-      <div class="fifth text-center section-primary p-b-md p-l-0 p-r-0">
-       <span class="countdown-text"><abbr title="weeks" aria-label="weeks"
-         class="text-decoration-none">wks</abbr><br></span>
-       <span id="weeks"></span>
-      </div>
-      <div class="fifth text-center section-primary p-b-md p-l-0 p-r-0">
-       <span class="countdown-text">days<br></span>
-       <span id="days"></span>
-      </div>
-      <div class="fifth text-center section-primary p-b-md p-l-0 p-r-0">
-       <span class="countdown-text"><abbr title="hours" aria-label="hours"
-         class="text-decoration-none">hrs</abbr><br></span>
-       <span id="hours"></span>
-      </div>
-      <div class="fifth text-center section-primary p-b-md p-l-0 p-r-0">
-       <span class="countdown-text"><abbr title="minutes" aria-label="minutes"
-         class="text-decoration-none">mins</abbr><br></span>
-       <span id="minutes"></span>
-      </div>
-      <div class="fifth text-center section-primary p-b-md p-l-0 p-r-0">
-       <span class="countdown-text"><abbr title="seconds" aria-label="seconds"
-         class="text-decoration-none">secs</abbr><br></span>
-       <span id="seconds"></span>
-      </div>
+     <div class="fifth bg-gray-100 text-center p-b-md p-l-0 p-r-0">
+      <span class="countdown-text">days<br></span>
+      <span id="days1"></span>
      </div>
-
-
+     <div class="fifth bg-gray-100 text-center p-b-md p-l-0 p-r-0">
+      <span class="countdown-text"><abbr title="hours" aria-label="hours" class="text-decoration-none">hrs</abbr>
+       <br></span>
+      <span id="hours1"></span>
+     </div>
+     <div class="fifth bg-gray-100 text-center p-b-md p-l-0 p-r-0">
+      <span class="countdown-text"><abbr title="minutes" aria-label="minutes"
+        class="text-decoration-none">mins</abbr><br></span>
+      <span id="minutes1"></span>
+     </div>
+     <div class="fifth bg-gray-100 text-center p-b-md p-l-0 p-r-0">
+      <span class="countdown-text"><abbr title="seconds" aria-label="seconds"
+        class="text-decoration-none">secs</abbr><br></span>
+      <span id="seconds1"></span>
+     </div>
     </div>
+
+
+    <h3>Primary</h3>
+    <div class="group countdown p-x">
+     <div class="fifth text-center section-primary p-b-md p-l-0 p-r-0">
+      <span class="countdown-text"><abbr title="weeks" aria-label="weeks"
+        class="text-decoration-none">wks</abbr><br></span>
+      <span id="weeks"></span>
+     </div>
+     <div class="fifth text-center section-primary p-b-md p-l-0 p-r-0">
+      <span class="countdown-text">days<br></span>
+      <span id="days"></span>
+     </div>
+     <div class="fifth text-center section-primary p-b-md p-l-0 p-r-0">
+      <span class="countdown-text"><abbr title="hours" aria-label="hours"
+        class="text-decoration-none">hrs</abbr><br></span>
+      <span id="hours"></span>
+     </div>
+     <div class="fifth text-center section-primary p-b-md p-l-0 p-r-0">
+      <span class="countdown-text"><abbr title="minutes" aria-label="minutes"
+        class="text-decoration-none">mins</abbr><br></span>
+      <span id="minutes"></span>
+     </div>
+     <div class="fifth text-center section-primary p-b-md p-l-0 p-r-0">
+      <span class="countdown-text"><abbr title="seconds" aria-label="seconds"
+        class="text-decoration-none">secs</abbr><br></span>
+      <span id="seconds"></span>
+     </div>
+    </div>
+
+
    </div>
   </div>
+ </section>
 
 
 
-  <!--HTML-->
-  <div id="pane-html1" class="card tab-pane fade" role="tabpanel" aria-labelledby="tab-html1">
-   <div class="card-header" id="heading-html1">
-    <a class="collapsed" data-bs-toggle="collapse" href="#collapse-html1" data-parent="#tab-content"
-     aria-expanded="false" aria-controls="collapse-html1" data-hash="#pane-html1" title="HTML Source code tab header">
-     Source code
-    </a>
-   </div>
-   <div id="collapse-html1" class="collapse" role="tabpanel" aria-labelledby="heading-html1">
-    <div class="card-body">
-     <h3 class="m-t-0">Default</h3>
-     <pre style="max-height: 300px;"><code><!--HTML-->
+ <!--HTML-->
+ <section id="section2" class="tab-pane">
+  <div class="card-header" id="heading-html1">
+   <a class="collapsed" data-bs-toggle="collapse" href="#collapse-html1" aria-expanded="false"
+    aria-controls="collapse-html1" data-hash="#pane-html1" title="HTML Source code tab header">
+    Source code
+   </a>
+  </div>
+  <div id="collapse-html1" class="collapse p-0 m-0 brd-0" role="tabpanel" aria-labelledby="heading-html1">
+   <div class="p-a-sm">
+    <h3 class="m-t-0">Default</h3>
+    <pre style="max-height: 300px;"><code><!--HTML-->
       <div class="group countdown p-x">
        <div class="fifth bg-gray-100 text-center p-b-md p-l-0 p-r-0">
         <span class="countdown-text"><abbr title="weeks" aria-label="weeks" class="text-decoration-none">wks</abbr><br></span>
@@ -208,8 +186,8 @@ permalink: "components/countdown-timer.html"
          </pre>
 
 
-     <h3>Primary</h3>
-     <pre style="max-height: 300px;"><code><!--HTML-->
+    <h3>Primary</h3>
+    <pre style="max-height: 300px;"><code><!--HTML-->
       <div class="group countdown p-x">
        <div class="fifth text-center section-primary p-b-md p-l-0 p-r-0">
         <span class="countdown-text"><abbr title="weeks" aria-label="weeks" class="text-decoration-none">wks</abbr><br></span>
@@ -270,12 +248,11 @@ permalink: "components/countdown-timer.html"
         </script>
           </code>
         </pre>
-    </div>
    </div>
   </div>
+ </section>
 
 
- </div>
 </div>
 <!--END TABS-->
 

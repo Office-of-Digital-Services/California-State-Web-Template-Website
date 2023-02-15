@@ -25,109 +25,108 @@ permalink: "components/alert.html"
 <h2>Sample</h2>
 
 <!--TABS-->
-<div class="tab-group responsive">
- <ul id="tabs1" class="nav nav-tabs" role="tablist">
-  <li class="nav-item" role="presentation">
-   <a id="tab-example1" href="#pane-example1" class="nav-link active" data-bs-toggle="tab" role="tab">Example</a>
+<div class="tabs responsive">
+ <ul class="nav-tabs">
+  <li>
+   <a href="#section1">Example</a>
   </li>
-  <li class="nav-item" role="presentation">
-   <a id="tab-html1" href="#pane-html1" class="nav-link" data-bs-toggle="tab" role="tab">Source code</a>
+  <li>
+   <a href="#section2">Source code</a>
   </li>
-  <li class="nav-item" role="presentation">
-   <a id="tab-njk1" href="#pane-njk1" class="nav-link" data-bs-toggle="tab" role="tab">Eleventy include</a>
+  <li>
+   <a href="#section3">Eleventy include</a>
   </li>
  </ul>
 
 
- <div id="tab-content" class="tab-content">
-  <!--Examples-->
-  <div id="pane-example1" class="card tab-pane fade show active" role="tabpanel" aria-labelledby="tab-example1">
-   <div class="card-header" id="heading-example1">
-    <a data-bs-toggle="collapse" href="#collapse-example1" data-parent="#tab-content" aria-expanded="true"
-     aria-controls="collapse-example1" data-hash="#pane-example1" title="Example tab header">
-     Example
-    </a>
-   </div>
-   <div id="collapse-example1" class="collapse show" role="tabpanel" aria-labelledby="heading-example1">
-    <div class="card-body p-b-lg">
+ <!--Examples-->
+ <section id="section1" class="tab-pane">
+  <div class="card-header" id="heading-example1">
+   <a data-bs-toggle="collapse" href="#collapse-example1" aria-expanded="true" aria-controls="collapse-example1"
+    data-hash="#pane-example1" title="Example tab header">
+    Example
+   </a>
+  </div>
+  <div id="collapse-example1" class="collapse show p-0 m-0 brd-0" role="tabpanel" aria-labelledby="heading-example1">
+   <div class="p-a-sm p-b-lg">
 
 
-     <h3 class="h4 m-t-0">Info</h3>
-     <div class="alert alert-dismissible alert-banner" role="alert">
-      <div class="container">
-       <img src="/images/alert-info.svg" alt="alert info icon">
-       <span class="alert-text"><span class="text-bold">New!</span> A new version of the State Web Template has
-        launched. <span class="ca-gov-icon-pipe" aria-hidden="true"></span>
-        <a href="javascript:;">Upgrade now</a></span>
-       <button type="button" class="close ms-lg-auto" data-bs-dismiss="alert" aria-label="Close"><span
-         class="ca-gov-icon-close-mark" aria-hidden="true"></span></button>
-      </div>
+    <h3 class="h4 m-t-0">Info</h3>
+    <div class="alert alert-dismissible alert-banner" role="alert">
+     <div class="container">
+      <img src="/images/alert-info.svg" alt="alert info icon">
+      <span class="alert-text"><span class="text-bold">New!</span> A new version of the State Web Template has
+       launched. <span class="ca-gov-icon-pipe" aria-hidden="true"></span>
+       <a href="javascript:;">Upgrade now</a></span>
+      <button type="button" class="close ms-lg-auto" data-bs-dismiss="alert" aria-label="Close"><span
+        class="ca-gov-icon-close-mark" aria-hidden="true"></span></button>
      </div>
-
-
-     <h3 class="h4">Warning</h3>
-     <div class="alert alert-dismissible alert-banner" role="alert">
-      <div class="container">
-       <span class="alert-icon ca-gov-icon-warning-triangle text-warning" aria-hidden="true"></span>
-       <span class="alert-text"><span class="text-bold">Warning:</span> Our website may be impacted during upgrade.
-        <span class="ca-gov-icon-pipe" aria-hidden="true"></span>
-
-        <a href="javascript:;">Learn more <span class="sr-only">about the impact</span></a></span>
-       <button type="button" class="close ms-lg-auto" data-bs-dismiss="alert" aria-label="Close"><span
-         class="ca-gov-icon-close-mark" aria-hidden="true"></span></button>
-      </div>
-     </div>
-
-
-
-
-     <h3 class="h4">Danger</h3>
-     <div class="alert alert-dismissible alert-banner" role="alert">
-      <div class="container">
-       <img src="/images/alert-warning-diamond.svg" alt="alert warning icon">
-       <span class="alert-text"><span class="text-bold">Alert:</span> Our systems are currently down. <span
-         class="ca-gov-icon-pipe" aria-hidden="true"></span>
-        <a href="javascript:;">Learn more <span class="sr-only">about the incident</span></a></span>
-       <button type="button" class="close ms-lg-auto" data-bs-dismiss="alert" aria-label="Close"><span
-         class="ca-gov-icon-close-mark" aria-hidden="true"></span></button>
-      </div>
-     </div>
-
-
-     <h3 class="h4">Resolution</h3>
-     <div class="alert alert-dismissible alert-banner" role="alert">
-      <div class="container">
-       <img src="/images/alert-success.svg" alt="alert success icon">
-       <span class="alert-text"><span class="text-bold">Fixed.</span> Our systems are back up again. <span
-         class="ca-gov-icon-pipe" aria-hidden="true"></span>
-        <a href="javascript:;">Learn more <span class="sr-only">about the resolution</span></a></span>
-       <button type="button" class="close ms-lg-auto" data-bs-dismiss="alert" aria-label="Close"><span
-         class="ca-gov-icon-close-mark" aria-hidden="true"></span></button>
-      </div>
-     </div>
-
-
-
-
     </div>
+
+
+    <h3 class="h4">Warning</h3>
+    <div class="alert alert-dismissible alert-banner" role="alert">
+     <div class="container">
+      <span class="alert-icon ca-gov-icon-warning-triangle text-warning" aria-hidden="true"></span>
+      <span class="alert-text"><span class="text-bold">Warning:</span> Our website may be impacted during upgrade.
+       <span class="ca-gov-icon-pipe" aria-hidden="true"></span>
+
+       <a href="javascript:;">Learn more <span class="sr-only">about the impact</span></a></span>
+      <button type="button" class="close ms-lg-auto" data-bs-dismiss="alert" aria-label="Close"><span
+        class="ca-gov-icon-close-mark" aria-hidden="true"></span></button>
+     </div>
+    </div>
+
+
+
+
+    <h3 class="h4">Danger</h3>
+    <div class="alert alert-dismissible alert-banner" role="alert">
+     <div class="container">
+      <img src="/images/alert-warning-diamond.svg" alt="alert warning icon">
+      <span class="alert-text"><span class="text-bold">Alert:</span> Our systems are currently down. <span
+        class="ca-gov-icon-pipe" aria-hidden="true"></span>
+       <a href="javascript:;">Learn more <span class="sr-only">about the incident</span></a></span>
+      <button type="button" class="close ms-lg-auto" data-bs-dismiss="alert" aria-label="Close"><span
+        class="ca-gov-icon-close-mark" aria-hidden="true"></span></button>
+     </div>
+    </div>
+
+
+    <h3 class="h4">Resolution</h3>
+    <div class="alert alert-dismissible alert-banner" role="alert">
+     <div class="container">
+      <img src="/images/alert-success.svg" alt="alert success icon">
+      <span class="alert-text"><span class="text-bold">Fixed.</span> Our systems are back up again. <span
+        class="ca-gov-icon-pipe" aria-hidden="true"></span>
+       <a href="javascript:;">Learn more <span class="sr-only">about the resolution</span></a></span>
+      <button type="button" class="close ms-lg-auto" data-bs-dismiss="alert" aria-label="Close"><span
+        class="ca-gov-icon-close-mark" aria-hidden="true"></span></button>
+     </div>
+    </div>
+
+
+
+
    </div>
   </div>
+ </section>
 
 
 
-  <!--HTML-->
-  <div id="pane-html1" class="card tab-pane fade" role="tabpanel" aria-labelledby="tab-html1">
-   <div class="card-header" id="heading-html1">
-    <a class="collapsed" data-bs-toggle="collapse" href="#collapse-html1" data-parent="#tab-content"
-     aria-expanded="false" aria-controls="collapse-html1" data-hash="#pane-html1" title="HTML Source code tab header">
-     Source code
-    </a>
-   </div>
-   <div id="collapse-html1" class="collapse" role="tabpanel" aria-labelledby="heading-html1">
-    <div class="card-body">
+ <!--HTML-->
+ <section id="section2" class="tab-pane">
+  <div class="card-header" id="heading-html1">
+   <a class="collapsed" data-bs-toggle="collapse" href="#collapse-html1" aria-expanded="false"
+    aria-controls="collapse-html1" data-hash="#pane-html1" title="HTML Source code tab header">
+    Source code
+   </a>
+  </div>
+  <div id="collapse-html1" class="collapse p-0 m-0 brd-0" role="tabpanel" aria-labelledby="heading-html1">
+   <div class="p-a-sm">
 
-     <h3 class="h4 m-t-0">Info</h3>
-     <pre><code><div class="alert alert-dismissible alert-banner" role="alert">
+    <h3 class="h4 m-t-0">Info</h3>
+    <pre><code><div class="alert alert-dismissible alert-banner" role="alert">
   <div class="container">
    <img src="/images/alert-info.svg" alt="alert info icon">
    <span class="alert-text"><span class="text-bold">New!</span> A new version of the State Web Template has
@@ -141,8 +140,8 @@ permalink: "components/alert.html"
 
 
 
-     <h3 class="h4">Warning</h3>
-     <pre><code><div class="alert alert-dismissible alert-banner" role="alert">
+    <h3 class="h4">Warning</h3>
+    <pre><code><div class="alert alert-dismissible alert-banner" role="alert">
 <div class="container">
  <span class="alert-icon ca-gov-icon-warning-triangle text-warning" aria-hidden="true"></span>
  <span class="alert-text"><span class="text-bold">Warning:</span> Our website may be impacted during upgrade.
@@ -157,8 +156,8 @@ permalink: "components/alert.html"
 
 
 
-     <h3 class="h4">Danger</h3>
-     <pre><code><div class="alert alert-dismissible alert-banner" role="alert">
+    <h3 class="h4">Danger</h3>
+    <pre><code><div class="alert alert-dismissible alert-banner" role="alert">
   <div class="container">
    <img src="/images/alert-warning-diamond.svg" alt="alert warning icon">
    <span class="alert-text"><span class="text-bold">Alert:</span> Our systems are currently down. <span
@@ -172,8 +171,8 @@ permalink: "components/alert.html"
 
 
 
-     <h3 class="h4">Resolution</h3>
-     <pre><code><div class="alert alert-dismissible alert-banner" role="alert">
+    <h3 class="h4">Resolution</h3>
+    <pre><code><div class="alert alert-dismissible alert-banner" role="alert">
   <div class="container">
    <img src="/images/alert-success.svg" alt="alert success icon">
    <span class="alert-text"><span class="text-bold">Fixed.</span> Our systems are back up again. <span
@@ -186,36 +185,36 @@ permalink: "components/alert.html"
      </code></pre>
 
 
-    </div>
    </div>
   </div>
+ </section>
 
 
-  <!--NJK-->
-  <div id="pane-njk1" class="card tab-pane fade" role="tabpanel" aria-labelledby="tab-njk1">
-   <div class="card-header" id="heading-njk1">
-    <a class="collapsed" data-bs-toggle="collapse" href="#collapse-njk1" data-parent="#tab-content"
-     aria-expanded="false" aria-controls="collapse-njk1" data-hash="#pane-njk1" title="Nunjucks include tab header">
-     Nunjucks include
-    </a>
-   </div>
-   <div id="collapse-njk1" class="collapse" role="tabpanel" aria-labelledby="heading-njk1">
-    <div class="card-body">
-     Add the alert key with the path to your alert html file
-     <code>alert: "../modules/alert-banner.html"</code>
-     after your
-     eleventy layout key
-     declaration in
-     the front matter data on your page.
-     <pre>---
+ <!--NJK-->
+ <section id="section3" class="tab-pane">
+  <div class="card-header" id="heading-njk1">
+   <a class="collapsed" data-bs-toggle="collapse" href="#collapse-njk1" aria-expanded="false"
+    aria-controls="collapse-njk1" data-hash="#pane-njk1" title="Eleventy include tab header">
+    Eleventy include
+   </a>
+  </div>
+  <div id="collapse-njk1" class="collapse p-0 m-0 brd-0" role="tabpanel" aria-labelledby="heading-njk1">
+   <div class="p-a-sm">
+    Add the alert key with the path to your alert html file
+    <code>alert: " ../modules/alert-banner.html"</code>
+    after your
+    eleventy layout key
+    declaration in
+    the front matter data on your page.
+    <pre>---
 title: Alert Banner
 layout: page.njk
 alert: "../modules/alert-banner.html"
 ---</pre>
 
 
-     <p>Or include alert banner module into your page directly after skip-to-content component:</p>
-     <pre>
+    <p>Or include alert banner module into your page directly after skip-to-content component:</p>
+    <pre>
  &lt;header role="banner" id="header" class="global-header"&gt;
    &lt;div id="skip-to-content"&gt;
        &lt;a href="#main-content"&gt;Skip to Main Content&lt;/a&gt;
@@ -225,12 +224,11 @@ alert: "../modules/alert-banner.html"
    ...
  &lt;/header&gt;
  </pre>
-    </div>
    </div>
   </div>
+ </section>
 
 
- </div>
 </div>
 <!--END TABS-->
 
@@ -241,7 +239,8 @@ alert: "../modules/alert-banner.html"
 <h3>When and how to use it</h3>
 <p>Use the alert sparingly. They alarm people and distract from other content.</p>
 <p>Be concise with your alert content. Use a link to send people to a page with the details.</p>
-<p>Only use one alert on a page. Make sure the alert is relevant to the page it is on. Only duplicate the alert on other
+<p>Only use one alert on a page. Make sure the alert is relevant to the page it is on. Only duplicate the alert on
+ other
  pages if it applies to those pages.</p>
 <p>Use alerts to tell people about:</p>
 <ul>

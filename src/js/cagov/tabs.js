@@ -4,15 +4,14 @@
 
 (function () {
  // Get relevant elements and collections
- var tabbed = document.querySelector('.tabs');
- if (tabbed !== null) {
-  var tablist = tabbed.querySelector('ul');
-  var tabs = tablist.querySelectorAll('a');
-  var panels = tabbed.querySelectorAll('[id^="section"]');
-
+ const tabbed = document.querySelectorAll('.tabs');
+ tabbed.forEach(tabbed => {
+  let tablist = tabbed.querySelector('ul');
+  let tabs = tablist.querySelectorAll('a');
+  let panels = tabbed.querySelectorAll('[id^="section"]');
 
   // The tab switching function
-  var switchTab = function (oldTab, newTab) {
+  let switchTab = function (oldTab, newTab) {
    newTab.focus();
    // Make the active tab focusable by the user (Tab key)
    newTab.removeAttribute('tabindex');
@@ -22,8 +21,8 @@
    oldTab.setAttribute('tabindex', '-1');
    // Get the indices of the new and old tabs to find the correct
    // tab panels to show and hide
-   var index = Array.prototype.indexOf.call(tabs, newTab);
-   var oldIndex = Array.prototype.indexOf.call(tabs, oldTab);
+   let index = Array.prototype.indexOf.call(tabs, newTab);
+   let oldIndex = Array.prototype.indexOf.call(tabs, oldTab);
    panels[oldIndex].hidden = true;
    panels[index].hidden = false;
   };
@@ -41,7 +40,7 @@
    // Handle clicking of tabs for mouse users
    tab.addEventListener('click', function (e) {
     e.preventDefault();
-    var currentTab = tablist.querySelector('[aria-selected]');
+    let currentTab = tablist.querySelector('[aria-selected]');
     if (e.currentTarget !== currentTab) {
      switchTab(currentTab, e.currentTarget);
     }
@@ -50,10 +49,10 @@
    // Handle keydown events for keyboard users
    tab.addEventListener('keydown', function (e) {
     // Get the index of the current tab in the tabs node list
-    var index = Array.prototype.indexOf.call(tabs, e.currentTarget);
+    let index = Array.prototype.indexOf.call(tabs, e.currentTarget);
     // Work out which key the user is pressing and
     // Calculate the new tab's index where appropriate
-    var dir = e.which === 37 ? index - 1 : e.which === 39 ? index + 1 : e.which === 40 ? 'down' : null;
+    let dir = e.which === 37 ? index - 1 : e.which === 39 ? index + 1 : e.which === 40 ? 'down' : null;
     if (dir !== null) {
      e.preventDefault();
      // If the down key is pressed, move focus to the open panel,
@@ -67,7 +66,7 @@
   Array.prototype.forEach.call(panels, function (panel, i) {
    panel.setAttribute('role', 'tabpanel');
    panel.setAttribute('tabindex', '-1');
-   var id = panel.getAttribute('id');
+   let id = panel.getAttribute('id');
    panel.setAttribute('aria-labelledby', tabs[i].id);
    panel.hidden = true;
   });
@@ -76,8 +75,6 @@
   tabs[0].removeAttribute('tabindex');
   tabs[0].setAttribute('aria-selected', 'true');
   panels[0].hidden = false;
- }
+
+ });
 })();
-
-
-
