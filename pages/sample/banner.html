@@ -20,7 +20,7 @@ permalink: "patterns/banner.html"
 
 <p>The banner is the first thing a visitor sees on the homepage of a website. It often spans the full width
  of the screen or the main content area.</p>
-<p>It usually includes:</p>
+<p>It usually includes a(an):</p>
 <ul>
  <li>Title</li>
  <li>Brief description</li>
@@ -35,57 +35,53 @@ permalink: "patterns/banner.html"
 <h2 id="Full-span-banner">Full span banner</h2>
 
 <!--TABS-->
-<div class="tab-group responsive">
- <ul id="tabs1" class="nav nav-tabs" role="tablist">
-  <li class="nav-item" role="presentation">
-   <a id="tab-example1" href="#pane-example1" class="nav-link active" data-bs-toggle="tab" role="tab">Example</a>
+<div class="tabs responsive">
+ <ul class="nav-tabs">
+  <li>
+   <a href="#section1">Example</a>
   </li>
-  <li class="nav-item" role="presentation">
-   <a id="tab-html1" href="#pane-html1" class="nav-link" data-bs-toggle="tab" role="tab">Source code</a>
+  <li>
+   <a href="#section2">Source code</a>
   </li>
-
  </ul>
 
+ <!--Examples-->
+ <section id="section1" class="tab-pane">
+  <div class="card-header" id="heading-example1">
+   <a data-bs-toggle="collapse" href="#collapse-example1" aria-expanded="true" aria-controls="collapse-example1"
+    data-hash="#pane-example1" title="Example tab header">
+    Example
+   </a>
+  </div>
+  <div id="collapse-example1" class="collapse show p-0 m-0 brd-0" role="tabpanel" aria-labelledby="heading-example1">
+   <div class="p-a-sm">
 
- <div id="tab-content1" class="tab-content">
-  <!--Examples-->
-  <div id="pane-example1" class="card tab-pane fade show active" role="tabpanel" aria-labelledby="tab-example1">
-   <div class="card-header" id="heading-example1">
-    <a data-bs-toggle="collapse" href="#collapse-example1" data-parent="#tab-content1" aria-expanded="true"
-     aria-controls="collapse-example1" data-hash="#pane-example1" title="Example tab header">
-     Example
-    </a>
-   </div>
-   <div id="collapse-example1" class="collapse show" role="tabpanel" aria-labelledby="heading-example1">
-    <div class="card-body">
-
-     {% include "../../src/_includes/modules/banner.html" %}
-     <p class="m-t m-b-0 font-size-16">Minimum width: 1600px</p>
-    </div>
+    {% include "../../src/_includes/modules/banner.html" %}
+    <p class="m-t m-b-0 font-size-16">Minimum width: 1600px</p>
    </div>
   </div>
+ </section>
 
 
 
-  <!--HTML-->
-  <div id="pane-html1" class="card tab-pane fade" role="tabpanel" aria-labelledby="tab-html1">
-   <div class="card-header" id="heading-html1">
-    <a class="collapsed" data-bs-toggle="collapse" href="#collapse-html1" data-parent="#tab-content1"
-     aria-expanded="false" aria-controls="collapse-html1" data-hash="#pane-html1" title="HTML Source code tab header">
-     Source code
-    </a>
-   </div>
-   <div id="collapse-html1" class="collapse" role="tabpanel" aria-labelledby="heading-html1">
-    <div class="card-body">
-     <pre style="max-height: 300px;"><code>{% include "../../src/_includes/modules/banner.html" %}</code>
+ <!--HTML-->
+ <section id="section1" class="tab-pane">
+  <div class="card-header" id="heading-html1">
+   <a class="collapsed" data-bs-toggle="collapse" href="#collapse-html1" aria-expanded="false"
+    aria-controls="collapse-html1" data-hash="#pane-html1" title="HTML Source code tab header">
+    Source code
+   </a>
+  </div>
+  <div id="collapse-html1" class="collapse p-0 m-0 brd-0" role="tabpanel" aria-labelledby="heading-html1">
+   <div class="p-a-sm">
+    <pre style="max-height: 300px;"><code>{% include "../../src/_includes/modules/banner.html" %}</code>
     </pre>
 
-    </div>
    </div>
   </div>
+ </section>
 
 
- </div>
 </div>
 <!--END TABS-->
 
@@ -104,58 +100,54 @@ permalink: "patterns/banner.html"
  <li>Button</li>
 </ul>
 
-<div class="tab-group responsive">
- <ul id="tabs3" class="nav nav-tabs" role="tablist">
-  <li class="nav-item" role="presentation">
-   <a id="tab-example3" href="#pane-example3" class="nav-link active" data-bs-toggle="tab" role="tab">Example</a>
+<div class="tabs responsive">
+ <ul class="nav-tabs">
+  <li>
+   <a href="#section3">Example</a>
   </li>
-  <li class="nav-item" role="presentation">
-   <a id="tab-html3" href="#pane-html3" class="nav-link" data-bs-toggle="tab" role="tab">Source code</a>
+  <li>
+   <a href="#section4">Source code</a>
   </li>
-
  </ul>
 
+ <!--Examples-->
+ <section id="section3" class="tab-pane">
+  <div class="card-header" id="heading-example3">
+   <a data-bs-toggle="collapse" href="#collapse-example3" aria-expanded="true" aria-controls="collapse-example3"
+    data-hash="#pane-example3" title="Example tab header">
+    Example
+   </a>
+  </div>
+  <div id="collapse-example3" class="collapse show p-0 m-0 brd-0" role="tabpanel" aria-labelledby="heading-example3">
+   <div class="p-a-sm p-b">
 
- <div id="3" class="tab-content">
-  <!--Examples-->
-  <div id="pane-example3" class="card tab-pane fade show active" role="tabpanel" aria-labelledby="tab-example3">
-   <div class="card-header" id="heading-example3">
-    <a data-bs-toggle="collapse" href="#collapse-example3" data-parent="#tab-content3" aria-expanded="true"
-     aria-controls="collapse-example3" data-hash="#pane-example3" title="Example tab header">
-     Example
-    </a>
-   </div>
-   <div id="collapse-example3" class="collapse show" role="tabpanel" aria-labelledby="heading-example3">
-    <div class="card-body p-b">
+    {% include "../../src/_includes/modules/feature-card.html" %}
+    <p class="m-t m-b-0 font-size-16">Maximum width: 1176px</p>
 
-     {% include "../../src/_includes/modules/feature-card.html" %}
-     <p class="m-t m-b-0 font-size-16">Maximum width: 1176px</p>
-
-    </div>
    </div>
   </div>
+ </section>
 
 
 
-  <!--HTML-->
-  <div id="pane-html3" class="card tab-pane fade" role="tabpanel" aria-labelledby="tab-html3">
-   <div class="card-header" id="heading-html3">
-    <a class="collapsed" data-bs-toggle="collapse" href="#collapse-html3" data-parent="#tab-content3"
-     aria-expanded="false" aria-controls="collapse-html3" data-hash="#pane-html3" title="HTML Source code tab header">
-     Source code
-    </a>
-   </div>
-   <div id="collapse-html3" class="collapse" role="tabpanel" aria-labelledby="heading-html3">
-    <div class="card-body">
-     <pre style="max-height: 300px;"><code>{% include "../../src/_includes/modules/feature-card.html" %}</code>
+ <!--HTML-->
+ <section id="section4" class="tab-pane">
+  <div class="card-header" id="heading-html3">
+   <a class="collapsed" data-bs-toggle="collapse" href="#collapse-html3" aria-expanded="false"
+    aria-controls="collapse-html3" data-hash="#pane-html3" title="HTML Source code tab header">
+    Source code
+   </a>
+  </div>
+  <div id="collapse-html3" class="collapse p-0 m-0 brd-0" role="tabpanel" aria-labelledby="heading-html3">
+   <div class="p-a-sm">
+    <pre style="max-height: 300px;"><code>{% include "../../src/_includes/modules/feature-card.html" %}</code>
    </pre>
 
-    </div>
    </div>
   </div>
+ </section>
 
 
- </div>
 </div>
 <!--END TABS-->
 
