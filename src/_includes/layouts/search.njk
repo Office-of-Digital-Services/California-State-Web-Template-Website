@@ -3,6 +3,9 @@
 <head>
   <title>{{ title }}</title> 
   <meta charset="utf-8">
+{% if noindex %}
+  <meta name="robots" content="noindex">
+{% endif %}
   <meta name="Author" content="State of California" />
   <meta name="Description" content="State of California" />
   <meta name="Keywords" content="California, government" />

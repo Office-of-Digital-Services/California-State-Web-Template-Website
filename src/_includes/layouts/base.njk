@@ -6,7 +6,9 @@
   <meta name="Author" content="State of California" />
   <meta name="Description" content="Version 6 of the State Web Template is California's latest web design standard." />
   <meta name="Keywords" content="California, government" />
-
+{% if noindex %}
+  <meta name="robots" content="noindex">
+{% endif %}
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="HandheldFriendly" content="True">
   <meta name="MobileOptimized" content="320">
