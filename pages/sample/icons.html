@@ -178,7 +178,7 @@ templateEngineOverride: njk
   }
 </style>
 
-<script type="text/javascript" defer>
+<script type="text/javascript">
   const iconSearchData = {{ iconSearchData | dump | safe}};
 
   function buildList(paginate = true, pageNumber = 0, filterLetter) {
@@ -317,18 +317,7 @@ templateEngineOverride: njk
     buildList(true, pageNumber, letterParameter);
     window.scrollTo(0, document.getElementById('searchSummary').offsetTop - 146); // subtract height of header
   }
-
-  // prevent race condition with line 296
-  window.addEventListener('DOMContentLoaded', () => {
-    buildList(true, 0, "a");
-
-    // add event listeners to form field and button
-    document.querySelector("#iconSearchForm input").oninput = function () { buildList(false) };
-    document.querySelector("#iconSearchForm .reset-button").onclick = function () {
-      document.querySelector("#iconSearchForm input").value = "";
-      buildList();
-    }
-  })  
+ 
 </script>
 
 <div class="row">
@@ -426,3 +415,15 @@ templateEngineOverride: njk
 
   </div>
 </div>
+
+<!-- Run script after searchSummary <span> has been added to DOM -->
+<script>
+buildList(true, 0, "a");
+
+// add event listeners to form field and button
+document.querySelector("#iconSearchForm input").oninput = function () { buildList(false) };
+document.querySelector("#iconSearchForm .reset-button").onclick = function () {
+  document.querySelector("#iconSearchForm input").value = "";
+  buildList();
+}
+</script>
