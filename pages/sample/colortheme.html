@@ -2,7 +2,7 @@
 title: Color Theme
 landing: Visual design
 layout: landing.njk
-permalink: "visual-design/color/index.html"
+permalink: "visual-design/color/"
 ---
 
 <div class="container p-t-md">
@@ -38,6 +38,8 @@ permalink: "visual-design/color/index.html"
   <div class="col-md-9">
 
    <h1 class="mt-lg-0"><span class="insertThemeName"></span></h1>
+
+   <div class="insertAltText sr-only"></div>
 
    <div class="group font-size-14 color-palettes">
 
@@ -259,86 +261,99 @@ permalink: "visual-design/color/index.html"
    colorHighlight: "A5BDC5",
    colorPrimary: "577786",
    colorStandout: "46565E",
-   colorS1: "f5f9fa"
+   colorS1: "f5f9fa",
+   altText: "Delta color theme: A blue-gray, a medium-light blue-gray, a light blue-gray, and a dark blue-gray."
   },
   eureka: {
    name: "Eureka",
    colorHighlight: "D9B295",
    colorPrimary: "3E4B4D",
    colorStandout: "21272A",
-   colorS1: "f9f4f0"
+   colorS1: "f9f4f0",
+   altText: "Eureka color theme: A dark gray, a beige, an off-white, and an off-black."
   },
   mono: {
    name: "Mono",
    colorHighlight: "ffce2b",
    colorPrimary: "545351",
    colorStandout: "191919",
-   colorS1: "ededef"
+   colorS1: "ededef",
+   altText: "Mono color theme: A dark gray, a yellow, a light gray, and an off-black."
   },
   oceanside: {
    name: "Oceanside",
    colorHighlight: "FDB81E",
    colorPrimary: "046B99",
    colorStandout: "323A45",
-   colorS1: "eef8fb"
+   colorS1: "eef8fb",
+   altText: "Oceanside color theme: A medium blue, a yellow, a light blue, and a dark gray."
   },
   orangecounty: {
    name: "Orange County",
    colorHighlight: "fbad23",
    colorPrimary: "A15801",
    colorStandout: "483723",
-   colorS1: "fbf0e7"
+   colorS1: "fbf0e7",
+   altText: "Orange County color theme: A dark orange, a yellow-orange, a cream, and a dark brown."
   },
   pasorobles: {
    name: "Paso Robles",
    colorHighlight: "fbad23",
    colorPrimary: "691808",
    colorStandout: "313131",
-   colorS1: "f5f5f5"
+   colorS1: "f5f5f5",
+   altText: "Paso Robles color theme: A  dark red, a yellow-orange, a light gray, and a dark brown."
   },
   sacramento: {
    name: "Sacramento",
    colorHighlight: "7bb0da",
    colorPrimary: "153554",
    colorStandout: "730000",
-   colorS1: "e1ecf7"
+   colorS1: "e1ecf7",
+   altText: "Sacramento color theme: A dark blue, a medium-light blue, a light blue, and a dark red."
   },
   santabarbara: {
    name: "Santa Barbara",
    colorHighlight: "FF9B53",
    colorPrimary: "834B1E",
    colorStandout: "3c2c29",
-   colorS1: "f8eee4"
+   colorS1: "f8eee4",
+   altText: "Santa Barbara color theme: A brown, a medium-light orange, a cream, and a dark brown."
   },
   santacruz: {
    name: "Santa Cruz",
    colorHighlight: "f5811b",
    colorPrimary: "0f4f94",
    colorStandout: "2c2c4f",
-   colorS1: "eff4fa"
+   colorS1: "eff4fa",
+   altText: "Santa Cruz color theme: A blue, an orange, a light blue, and a dark blue."
   },
   shasta: {
    name: "Shasta",
    colorHighlight: "fbad23",
    colorPrimary: "336c39",
    colorStandout: "3c4543",
-   colorS1: "e4f1e5"
+   colorS1: "e4f1e5",
+   altText: "Shasta color theme: A green, a yellow, a light green, and a dark gray."
   },
   sierra: {
    name: "Sierra",
    colorHighlight: "fbad23",
    colorPrimary: "447766",
    colorStandout: "194949",
-   colorS1: "e8f1ee"
+   colorS1: "e8f1ee",
+   altText: "Sierra color theme: A green, a yellow, a light green, and a dark green."
   },
   trinity: {
    name: "Trinity",
    colorHighlight: "c19e73",
    colorPrimary: "446a7c",
    colorStandout: "21272a",
-   colorS1: "eff5f8"
+   colorS1: "eff5f8",
+   altText: "Trinity color theme: A blue-gray, a beige, a light gray, and  an off-black."
   }
  };
+
  var queryString = window.location.search.split('?')[1];
 
  if (!queryString || !themeData[queryString]) {
@@ -365,6 +380,9 @@ permalink: "visual-design/color/index.html"
  for (let el of nameElements) {
   el.innerHTML = themeData[queryString].name;
  }
+
+ // insert alt text for accessibility
+ document.querySelector(".insertAltText").innerHTML = themeData[queryString].altText;
 
  // display color codes and set border colors
  document.querySelector(".insertColorHighlightHex").innerHTML = themeData[queryString].colorHighlight;
