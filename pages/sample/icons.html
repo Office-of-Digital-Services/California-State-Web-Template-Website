@@ -317,9 +317,9 @@ templateEngineOverride: njk
     buildList(true, pageNumber, letterParameter);
     window.scrollTo(0, document.getElementById('searchSummary').offsetTop - 146); // subtract height of header
   }
-  
-  // Very silly hack; race condition with line 298
-  setTimeout(() => {
+
+  // prevent race condition with line 296
+  window.addEventListener('DOMContentLoaded', () => {
     buildList(true, 0, "a");
 
     // add event listeners to form field and button
@@ -328,8 +328,7 @@ templateEngineOverride: njk
       document.querySelector("#iconSearchForm input").value = "";
       buildList();
     }
-  }, 10)
-  
+  })  
 </script>
 
 <div class="row">
