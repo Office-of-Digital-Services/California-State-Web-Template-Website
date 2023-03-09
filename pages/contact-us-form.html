@@ -261,14 +261,12 @@ permalink: "contact-us.html"
     if (response.ok) {
      return response.json();
     }
-    console.error(response);
 
     throw new Error(
      `Can't submit - ${response.status}:${response.statusText}`
     );
    })
    .then((responseJson) => {
-    console.log(responseJson);
 
     goToThanksPage();
    })

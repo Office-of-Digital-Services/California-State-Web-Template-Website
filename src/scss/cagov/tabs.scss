@@ -217,7 +217,20 @@
    }
   }
  }
+
+ .tabs {
+  &.responsive {
+   .card-header {
+    display: none;
+   }
+  
+   .collapse {
+    display: block; }
+   }
+  }
 }
+
+
 
 /* Responsive tabs mobile view */
 @media (max-width: $screen-xs-max) {
@@ -225,6 +238,7 @@
   display: block !important;
   opacity: 1 !important;
   padding: 0 !important;
+  margin-bottom: 0.75rem;
   .card-header {
    padding: 0;
    background: none;
@@ -336,8 +350,12 @@
    outline-offset: -2px;
   }
  }
+}
 
- [role="tabpanel"] * + * {
-  margin-top: 0.75rem;
+@media (max-width: $screen-xs-max) {
+ .tabs.responsive {
+  [role="tabpanel"] {
+   border: none; 
+  }
  }
 }

@@ -35,8 +35,9 @@ var entityMap = {
    window.getSelection().removeAllRanges();
    window.getSelection().addRange(range);
    // replace the button icon
-   btnElem.querySelector("span").classList.remove("ca-gov-icon-copy");
-   btnElem.querySelector("span").classList.add("ca-gov-icon-check-mark");
+   //btnElem.querySelector("span").classList.remove("ca-gov-icon-copy");
+   //btnElem.querySelector("span").classList.add("ca-gov-icon-check-mark");
+   btnElem.innerHTML = '<span class="ca-gov-icon-check-mark"></span> Code copied';
   }
  }
  
