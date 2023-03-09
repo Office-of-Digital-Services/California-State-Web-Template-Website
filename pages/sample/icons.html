@@ -3,161 +3,162 @@ title: Icon font library
 landing: Visual design
 layout: page.njk
 permalink: "visual-design/icons.html"
+templateEngineOverride: njk
 ---
 
 <style>
- .icons {
-  list-style: none;
-  display: flex;
-  flex-wrap: wrap;
-  padding-left: 0;
-  margin-bottom: 0;
-  padding-top: 10px;
-  padding-bottom: 10px;
-  font-size: 1.14286rem;
- }
+  .icons {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    padding-left: 0;
+    margin-bottom: 0;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    font-size: 1.14286rem;
+  }
 
- .icons li {
-  line-height: 3rem;
- }
+  .icons li {
+    line-height: 3rem;
+  }
 
- .icons li a {
-  text-decoration: none !important;
-  position: relative;
-  padding: 10px 9px 10px 9px;
-  border-top: 1px solid #d4d4d7;
-  border-bottom: 1px solid #d4d4d7;
- }
+  .icons li a {
+    text-decoration: none !important;
+    position: relative;
+    padding: 10px 9px 10px 9px;
+    border-top: 1px solid #d4d4d7;
+    border-bottom: 1px solid #d4d4d7;
+  }
 
- .icons li a::after {
-  content: "";
-  border-right: 1px solid #ededef;
-  height: 100%;
-  position: relative;
-  left: 10px;
- }
+  .icons li a::after {
+    content: "";
+    border-right: 1px solid #ededef;
+    height: 100%;
+    position: relative;
+    left: 10px;
+  }
 
- .icons li a.letter-selected {
-  border-right: 1px solid #d4d4d7;
-  border-left: 1px solid #d4d4d7;
-  font-weight: 700;
-  background-color: #fafafa;
-  color: #3b3a48;
- }
+  .icons li a.letter-selected {
+    border-right: 1px solid #d4d4d7;
+    border-left: 1px solid #d4d4d7;
+    font-weight: 700;
+    background-color: #fafafa;
+    color: #3b3a48;
+  }
 
 
- #iconSearchForm {
-  width: 80%;
-  position: relative;
- }
-
- @media (min-width: 992px) {
   #iconSearchForm {
-   width: 40%;
+    width: 80%;
+    position: relative;
   }
- }
 
- .icon-submit {
-  position: absolute;
-  right: 0;
-  top: 0;
-  font-size: 1.33rem;
-  background: transparent;
-  border-top-right-radius: 4px;
-  border-bottom-right-radius: 4px;
-  height: 2.375rem;
-  background-color: #72717C;
-  padding-left: 13px;
-  padding-right: 13px;
- }
+  @media (min-width: 992px) {
+    #iconSearchForm {
+      width: 40%;
+    }
+  }
 
- .icon-submit:hover,
- .icon-submit:focus {
-  background-color: #4a4958;
- }
+  .icon-submit {
+    position: absolute;
+    right: 0;
+    top: 0;
+    font-size: 1.33rem;
+    background: transparent;
+    border-top-right-radius: 4px;
+    border-bottom-right-radius: 4px;
+    height: 2.375rem;
+    background-color: #72717C;
+    padding-left: 13px;
+    padding-right: 13px;
+  }
 
- .icons-searchbox {
-  width: 100%;
-  border: solid 1px #72717C;
-  height: 2.375rem;
-  padding-top: 0 !important;
-  padding-bottom: 0 !important;
- }
+  .icon-submit:hover,
+  .icon-submit:focus {
+    background-color: #4a4958;
+  }
 
- .reset-button {
-  position:absolute;
-  border:0;
-  background-color: transparent;
-  right:2.5em;
-  top:0.2em;
- }
+  .icons-searchbox {
+    width: 100%;
+    border: solid 1px #72717C;
+    height: 2.375rem;
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+  }
+
+  .reset-button {
+    position: absolute;
+    border: 0;
+    background-color: transparent;
+    right: 2.5em;
+    top: 0.2em;
+  }
 
 
- #fontlist {
-  display: flex;
-  flex-wrap: wrap;
- }
+  #fontlist {
+    display: flex;
+    flex-wrap: wrap;
+  }
 
- .icons-alpha {
-  flex-basis: 100%;
- }
+  .icons-alpha {
+    flex-basis: 100%;
+  }
 
- .icons-alpha:first-child {
-  margin-top: 0 !important;
- }
+  .icons-alpha:first-child {
+    margin-top: 0 !important;
+  }
 
- .icon-item {
-  flex-basis: 100%;
-  padding-top: 1rem;
- }
-
- @media (min-width: 992px) {
   .icon-item {
-   flex-basis: 33%;
-   padding-top: 1rem;
+    flex-basis: 100%;
+    padding-top: 1rem;
   }
- }
 
- #pagenumbers {
-  margin-top: 2.6em;
- }
+  @media (min-width: 992px) {
+    .icon-item {
+      flex-basis: 33%;
+      padding-top: 1rem;
+    }
+  }
 
- .pagenumbers a {
-  text-decoration: none;
-  padding: 6px 14px;
- }
+  #pagenumbers {
+    margin-top: 2.6em;
+  }
 
- .pagenumbers .pagePreviousNext {
-  color: #72717c;
-  /* Gray-600 */
- }
+  .pagenumbers a {
+    text-decoration: none;
+    padding: 6px 14px;
+  }
 
- .pagenumbers .pagePreviousNext span {
-  font-size: 0.86em;
- }
+  .pagenumbers .pagePreviousNext {
+    color: #72717c;
+    /* Gray-600 */
+  }
 
- .pagenumbers .pageLink {
-  color: #4a4958;
-  /* Gray-900 */
- }
+  .pagenumbers .pagePreviousNext span {
+    font-size: 0.86em;
+  }
 
- .pagenumbers .pageDots {
-  color: #72717c;
- }
+  .pagenumbers .pageLink {
+    color: #4a4958;
+    /* Gray-900 */
+  }
 
- .pagenumbers .currentPage {
-  color: #4a4958;
-  box-shadow: inset 0 0 0 1px #d4d4d7;
-  /* Gray-200 */
-  padding: 6px 14px;
-  font-weight: bold;
- }
+  .pagenumbers .pageDots {
+    color: #72717c;
+  }
 
- .pagenumbers a:hover {
-  box-shadow: inset 0 0 0 3px #d4d4d7;
- }
+  .pagenumbers .currentPage {
+    color: #4a4958;
+    box-shadow: inset 0 0 0 1px #d4d4d7;
+    /* Gray-200 */
+    padding: 6px 14px;
+    font-weight: bold;
+  }
 
- /* 
+  .pagenumbers a:hover {
+    box-shadow: inset 0 0 0 3px #d4d4d7;
+  }
+
+  /* 
   #pagenumbers .viewAll {
     margin-top: 1em;
   }
@@ -172,52 +173,51 @@ permalink: "visual-design/icons.html"
   }
   */
 
- #viewfulllist {
-  margin-top: 1em;
- }
+  #viewfulllist {
+    margin-top: 1em;
+  }
 </style>
 
-<script type="text/javascript">
+<script type="text/javascript" defer>
+  const iconSearchData = {{ iconSearchData | dump | safe}};
 
- var iconData = [];
+  function buildList(paginate = true, pageNumber = 0, filterLetter) {
+    let listHtml = "";
+    var numberOfResults = 0;
+    var inputBox = document.querySelector("#iconSearchForm input");
+    var searchInput = inputBox ? inputBox.value.trim().toLowerCase() : "";
+    const iconsPerPage = 60;
 
- function buildList(paginate = true, pageNumber = 0, filterLetter) {
-  let listHtml = "";
-  var numberOfResults = 0;
-  var inputBox = document.querySelector("#iconSearchForm input");
-  var searchInput = inputBox ? inputBox.value.trim().toLowerCase() : "";
-  const iconsPerPage = 60;
+    const letterList = [...new Set(iconSearchData.icons.map(x => x.name.charAt(0)))];
+    const jumpToHtml = `<li><a href="javascript:buildList(true,0)" ${!filterLetter ? 'class="gray-900 letter-selected"' : ''}>All</a></li>`
+      + letterList
+        .map(l => `<li><a href="javascript:buildList(false,0,'${l}')" ${filterLetter === l ? 'class="letter-selected"' : ''}>${l.toUpperCase()}</a></li>`)
+        .join('');
 
-  const letterList = [...new Set(iconData.icons.map(x => x.properties.name.charAt(0)))];
-  const jumpToHtml = `<li><a href="javascript:buildList(true,0)" ${!filterLetter ? 'class="gray-900 letter-selected"' : ''}>All</a></li>`
-   + letterList
-    .map(l => `<li><a href="javascript:buildList(false,0,'${l}')" ${filterLetter === l ? 'class="letter-selected"' : ''}>${l.toUpperCase()}</a></li>`)
-    .join('');
-
-  var iconsByLetter;
-  if (filterLetter) {
-   iconsByLetter = iconData.icons.filter(l => l.properties.name.charAt(0) === filterLetter);
-  } else {
-   iconsByLetter = iconData.icons;
-  }
-  var letter = "";
+    var iconsByLetter;
+    if (filterLetter) {
+      iconsByLetter = iconSearchData.icons.filter(l => l.name.charAt(0) === filterLetter);
+    } else {
+      iconsByLetter = iconSearchData.icons;
+    }
+    var letter = "";
 
 
-  // loop over icons
-  for (const icon of iconsByLetter) {
-   const iconStrings = [...new Set([icon.properties.name, icon.properties.name.replace('-', ' '), ...icon.icon.tags])].filter(x => x.length);
+    // loop over icons
+    for (const icon of iconsByLetter) {
+      const iconStrings = [...new Set([icon.name, icon.name.replace('-', ' '), ...icon.tags])].filter(x => x.length);
 
-   if (!searchInput.length || iconStrings.find(x => x.search(searchInput) > -1)) {
-    if (!paginate || (numberOfResults >= (pageNumber * iconsPerPage) && numberOfResults < ((pageNumber + 1) * iconsPerPage))) {
-     const iconName = escapeHTML(icon.properties.name);
-     const firstLetter = iconName.charAt(0);
-     if (!paginate && !filterLetter && !searchInput.length && letter !== firstLetter) {
-      // show the blue letter heading
-      letter = firstLetter;
-      listHtml += `<p class="h1 icons-alpha py-3 mb-0 m-t-md color-p2 p-b-0">${letter.toUpperCase()}</p>`;
-     }
+      if (!searchInput.length || iconStrings.find(x => x.search(searchInput) > -1)) {
+        if (!paginate || (numberOfResults >= (pageNumber * iconsPerPage) && numberOfResults < ((pageNumber + 1) * iconsPerPage))) {
+          const iconName = escapeHTML(icon.name);
+          const firstLetter = iconName.charAt(0);
+          if (!paginate && !filterLetter && !searchInput.length && letter !== firstLetter) {
+            // show the blue letter heading
+            letter = firstLetter;
+            listHtml += `<p class="h1 icons-alpha py-3 mb-0 m-t-md color-p2 p-b-0">${letter.toUpperCase()}</p>`;
+          }
 
-     listHtml += `
+          listHtml += `
           <div class="d-flex icon-item">
             <div class="text-3rem p-r gray-900">
               <span class="ca-gov-icon-${iconName}" aria-hidden="true"></span>
@@ -228,216 +228,202 @@ permalink: "visual-design/icons.html"
             </div>
           </div>
           `;
+        }
+        numberOfResults++;
+      }
     }
-    numberOfResults++;
-   }
-  }
 
-  function escapeHTML(value) {
-    if(value!=null) {
-      var div=document.createElement("div");
-      var text=document.createTextNode(value);
-      div.appendChild(text);
-      return div.innerHTML;
+    function escapeHTML(value) {
+      if (value != null) {
+        var div = document.createElement("div");
+        var text = document.createTextNode(value);
+        div.appendChild(text);
+        return div.innerHTML;
+      }
+      return '';
     }
-    return '';
+
+
+
+    // Page numbers
+    var pageNumbersHtml = "";
+    if (paginate && numberOfResults > iconsPerPage) {
+      const letterParameter = filterLetter ? ",'" + filterLetter + "'" : "";
+      const lastPage = Math.ceil(numberOfResults / iconsPerPage) - 1;
+
+      // is current page > 1 :  prev | page 1
+      if (pageNumber > 0) {
+        pageNumbersHtml = '<a href="javascript:goToPage(' + (pageNumber - 1) + letterParameter + ')" class="pagePreviousNext"><span class="ca-gov-icon-arrow-prev" aria-hidden="true"></span> Previous</a> ';
+        pageNumbersHtml += '<a href="javascript:goToPage(' + (0) + letterParameter + ')" class="pageLink">' + (1) + "</a> ";
+      }
+
+      // is current page > 3 : ...
+      if (pageNumber > 2) {
+        pageNumbersHtml += '<span class="pageDots">...</span> ';
+      }
+
+      // is current page > 2 : previous #
+      if (pageNumber > 1) {
+        pageNumbersHtml += '<a href="javascript:goToPage(' + (pageNumber - 1) + letterParameter + ')" class="pageLink">' + (pageNumber) + "</a> ";
+      }
+
+      // current page
+      pageNumbersHtml += '<span class="currentPage">' + (pageNumber + 1) + "</span> ";
+
+      // is last page > current page : next page #
+      if (lastPage > pageNumber) {
+        pageNumbersHtml += '<a href="javascript:goToPage(' + (pageNumber + 1) + letterParameter + ')" class="pageLink">' + (pageNumber + 2) + "</a> ";
+      }
+
+      // is last page - current page > 2 : ...
+      if (lastPage - pageNumber > 2) {
+        pageNumbersHtml += '<span class="pageDots">...</span> ';
+      }
+
+      // is last page - current page > 1 : last page #
+      if (lastPage - pageNumber > 1) {
+        pageNumbersHtml += '<a href="javascript:goToPage(' + (lastPage) + letterParameter + ');" class="pageLink">' + (lastPage + 1) + "</a> ";
+      }
+
+      // is last page > current page : next page
+      if (lastPage > pageNumber) {
+        pageNumbersHtml += '<a href="javascript:goToPage(' + (pageNumber + 1) + letterParameter + ');" class="pagePreviousNext">Next <span class="ca-gov-icon-arrow-next" aria-hidden="true"></span></a>';
+      }
+      //pageNumbersHtml += '<div class="viewAll"><a href="javascript:buildList(false,0' + letterParameter + ')">View all</a></div>';
+    }
+
+
+    document.querySelector('#searchSummary').textContent = searchInput.length ? searchInput : filterLetter ? filterLetter.toUpperCase() : "All";
+
+    if (searchInput.length) {
+      document.querySelector('#jumpToHeading').style.display = "none";
+      document.querySelector('#iconSearchForm .reset-button').style.display = "block";
+    } else {
+      document.querySelector('#jumpToHeading').style.display = "block";
+      document.querySelector('#jumpToHeading ol').innerHTML = jumpToHtml;
+      document.querySelector('#iconSearchForm .reset-button').style.display = "none";
+    }
+    document.querySelector('#fontlist').innerHTML = listHtml;
+    document.querySelector('#resultcount').innerHTML = numberOfResults ? `<span class="m-t-0">${numberOfResults} icons <span class="sr-only">found.</span></span>` : '<span>No icons found.</span>';
+
+    document.querySelector('#pagenumbers').innerHTML = pageNumbersHtml;
+    document.querySelector('#pagenumberstop').innerHTML = pageNumbersHtml;
+
+    document.querySelector('#viewfulllist').innerHTML = (filterLetter || paginate) ? '<div class="viewAll"><a href="javascript:buildList(false,0);window.scrollTo(0, document.getElementById(\'searchSummary\').offsetTop - 146);">View full list</a></div>' : '';
   }
 
-
-
-  // Page numbers
-  var pageNumbersHtml = "";
-  if (paginate && numberOfResults > iconsPerPage) {
-   const letterParameter = filterLetter ? ",'" + filterLetter + "'" : "";
-   const lastPage = Math.ceil(numberOfResults / iconsPerPage) - 1;
-
-   // is current page > 1 :  prev | page 1
-   if (pageNumber > 0) {
-    pageNumbersHtml = '<a href="javascript:goToPage(' + (pageNumber - 1) + letterParameter + ')" class="pagePreviousNext"><span class="ca-gov-icon-arrow-prev" aria-hidden="true"></span> Previous</a> ';
-    pageNumbersHtml += '<a href="javascript:goToPage(' + (0) + letterParameter + ')" class="pageLink">' + (1) + "</a> ";
-   }
-
-   // is current page > 3 : ...
-   if (pageNumber > 2) {
-    pageNumbersHtml += '<span class="pageDots">...</span> ';
-   }
-
-   // is current page > 2 : previous #
-   if (pageNumber > 1) {
-    pageNumbersHtml += '<a href="javascript:goToPage(' + (pageNumber - 1) + letterParameter + ')" class="pageLink">' + (pageNumber) + "</a> ";
-   }
-
-   // current page
-   pageNumbersHtml += '<span class="currentPage">' + (pageNumber + 1) + "</span> ";
-
-   // is last page > current page : next page #
-   if (lastPage > pageNumber) {
-    pageNumbersHtml += '<a href="javascript:goToPage(' + (pageNumber + 1) + letterParameter + ')" class="pageLink">' + (pageNumber + 2) + "</a> ";
-   }
-
-   // is last page - current page > 2 : ...
-   if (lastPage - pageNumber > 2) {
-    pageNumbersHtml += '<span class="pageDots">...</span> ';
-   }
-
-   // is last page - current page > 1 : last page #
-   if (lastPage - pageNumber > 1) {
-    pageNumbersHtml += '<a href="javascript:goToPage(' + (lastPage) + letterParameter + ');" class="pageLink">' + (lastPage + 1) + "</a> ";
-   }
-
-   // is last page > current page : next page
-   if (lastPage > pageNumber) {
-    pageNumbersHtml += '<a href="javascript:goToPage(' + (pageNumber + 1) + letterParameter + ');" class="pagePreviousNext">Next <span class="ca-gov-icon-arrow-next" aria-hidden="true"></span></a>';
-   }
-   //pageNumbersHtml += '<div class="viewAll"><a href="javascript:buildList(false,0' + letterParameter + ')">View all</a></div>';
+  // click handler for pagination
+  function goToPage(pageNumber, letterParameter) {
+    buildList(true, pageNumber, letterParameter);
+    window.scrollTo(0, document.getElementById('searchSummary').offsetTop - 146); // subtract height of header
   }
+  
+  // Very silly hack; race condition with line 298
+  setTimeout(() => {
+    buildList(true, 0, "a");
 
-
-  document.querySelector('#searchSummary').textContent = searchInput.length ? searchInput : filterLetter ? filterLetter.toUpperCase() : "All";
-
-  if (searchInput.length) {
-   document.querySelector('#jumpToHeading').style.display = "none";
-   document.querySelector('#iconSearchForm .reset-button').style.display = "block";
-  } else {
-   document.querySelector('#jumpToHeading').style.display = "block";
-   document.querySelector('#jumpToHeading ol').innerHTML = jumpToHtml;
-   document.querySelector('#iconSearchForm .reset-button').style.display = "none";
-  }
-  document.querySelector('#fontlist').innerHTML = listHtml;
-  document.querySelector('#resultcount').innerHTML = numberOfResults ? `<span class="m-t-0">${numberOfResults} icons <span class="sr-only">found.</span></span>` : '<span>No icons found.</span>';
-
-  document.querySelector('#pagenumbers').innerHTML = pageNumbersHtml;
-  document.querySelector('#pagenumberstop').innerHTML = pageNumbersHtml;
-
-  document.querySelector('#viewfulllist').innerHTML = (filterLetter || paginate) ? '<div class="viewAll"><a href="javascript:buildList(false,0);window.scrollTo(0, document.getElementById(\'searchSummary\').offsetTop - 146);">View full list</a></div>' : '';
- }
-
- // click handler for pagination
- function goToPage(pageNumber, letterParameter) {
-  buildList(true, pageNumber, letterParameter);
-  window.scrollTo(0, document.getElementById('searchSummary').offsetTop - 146); // subtract height of header
- }
-
- const myRequest = new Request('https://california.azureedge.net/fonts/icons-6.1.0.json');
- fetch(myRequest)
-  .then(response => response.json())
-  .then(data => {
-
-   function compareStrings(a, b) {
-    // Assuming you want case-insensitive comparison
-    a = a.toLowerCase();
-    b = b.toLowerCase();
-    return (a < b) ? -1 : (a > b) ? 1 : 0;
-   }
-
-   data.icons.sort(function (a, b) {
-    return compareStrings(a.properties.name, b.properties.name);
-   })
-   iconData = data;
-
-   buildList(true, 0, "a");
-
-   // add event listeners to form field and button
-   document.querySelector("#iconSearchForm input").oninput = function () { buildList(false) };
-   document.querySelector("#iconSearchForm .reset-button").onclick = function () {
-    document.querySelector("#iconSearchForm input").value = "";
-    buildList();
-   };
-
-  })
-  .catch(console.error);
-
+    // add event listeners to form field and button
+    document.querySelector("#iconSearchForm input").oninput = function () { buildList(false) };
+    document.querySelector("#iconSearchForm .reset-button").onclick = function () {
+      document.querySelector("#iconSearchForm input").value = "";
+      buildList();
+    }
+  }, 10)
+  
 </script>
 
 <div class="row">
- <div class="col-md-3">
-  <nav aria-labelledby="side-navigation-label" class="side-navigation sticky-6 overflow-auto">
-   <span class="sr-only" id="side-navigation-label">Side navigation</span>
-   <ul class="list-navigation">
-    <li><a href="/visual-design/color.html">Colors</a></li>
-    <li><a href="/visual-design/icons.html" class="active">Icons</a></li>
-    <li><a href="/visual-design/typography.html">Typography</a></li>
-   </ul>
-  </nav>
- </div>
- <div class="col-md-9 p-b-lg">
-
-
-  <h1 class="mt-lg-0" id="Icons">Icons</h1>
-
-  <nav class="page-navigation"></nav>
-
-
-  <p>Icons are visual representations of commands, devices, directories, or common actions. We use CSS classes to
-   customize icon color for compatibility with all popular browsers.</p>
-
-
-  <h2>How to use icons</h2>
-  <p>Icon color and font can be styled using the same CSS rules used to style other text on a page. Keep in mind,
-   color and font size will change the size of the icon.</p>
-
-  <div class="bg-gray-50 d-flex p-a-sm p-x-md">
-   <span class="ca-gov-icon-info font-size-30 color-p2 d-block" aria-hidden="true"></span>
-   <div class="m-l">
-    <p class="m-b-0">To use an icon, insert an empty span tag with the corresponding class name. Here's an example:
-     <code class="font-size-14 gray-900">&lt;span class="ca-gov-icon-info" aria-hidden="true">&lt;/span></code>
-    </p>
-   </div>
+  <div class="col-md-3">
+    <nav aria-labelledby="side-navigation-label" class="side-navigation sticky-6 overflow-auto">
+      <span class="sr-only" id="side-navigation-label">Side navigation</span>
+      <ul class="list-navigation">
+        <li><a href="/visual-design/color.html">Colors</a></li>
+        <li><a href="/visual-design/icons.html" class="active">Icons</a></li>
+        <li><a href="/visual-design/typography.html">Typography</a></li>
+      </ul>
+    </nav>
   </div>
-
-  <span id="Dos-and-donts-for-icon-use" class="h2 d-inline"></span>
-  <div class="row">
-   <div class="col-md-6">
-    <h3 class="h5 m-b-sm">Do</h3>
-    <hr class="m-t-0 p-t-0">
-    <ul>
-     <li>Use icons with meaningful text labels</li>
-     <li>Use a single icon for a group of related content</li>
-     <li>Use a single icon per concept</li>
-    </ul>
-   </div>
-   <div class="col-md-6">
-    <h3 class="h5 m-b m-b-sm">Don't</h3>
-    <hr class="m-t-0 p-t-0">
-    <ul>
-     <li>Use icons without labels</li>
-     <li>Use too many icons and create visual clutter</li>
-     <li>Use multiple icon variations to represent the same concept</li>
-    </ul>
-   </div>
-  </div>
+  <div class="col-md-9 p-b-lg">
 
 
-  <h2>Search icons</h2>
-  <p>Use the search to find a specific icon. You can also browse icons below.</p>
+    <h1 class="mt-lg-0" id="Icons">Icons</h1>
+
+    <nav class="page-navigation"></nav>
 
 
-  <form id="iconSearchForm" class="m-y-lg" onsubmit="return false">
-   <span class="sr-only" id="IconInput">Search icons</span>
-   <input type="text" name="iconsearch" aria-labelledby="IconInput" placeholder="Browse icons"
-    class="search-textfield rounded-5 icons-searchbox">
-   <button type="submit" title="submit" class="border-0 color-white icon-submit" aria-label="Submit" onclick="javascript:buildList(false,0);"><span class="ca-gov-icon-search" aria-hidden="true"></span><span class="sr-only">Submit</span></button>
-   <button type="reset" title="clear" value="reset"  class="reset-button" aria-label="Reset"><span class="ca-gov-icon-close-mark" aria-hidden="true"></span><span class="sr-only">Reset</span></button>
-  </form>
+    <p>Icons are visual representations of commands, devices, directories, or common actions. We use CSS classes to
+      customize icon color for compatibility with all popular browsers.</p>
 
-  <div id="jumpToHeading">
-   <ol class="icons">
-   </ol>
-  </div>
 
-  <div class="clearfix mhl ptl">
-   <div class="d-md-flex flex-row justify-content-between m-t-md">
-    <div>
-     <span class="h4 m-t-0 m-b-0 p-r-sm">"<span id="searchSummary"></span>"</span>
-     <span id="resultcount" class="fs1" aria-live="polite"></span>
+    <h2>How to use icons</h2>
+    <p>Icon color and font can be styled using the same CSS rules used to style other text on a page. Keep in mind,
+      color and font size will change the size of the icon.</p>
+
+    <div class="bg-gray-50 d-flex p-a-sm p-x-md">
+      <span class="ca-gov-icon-info font-size-30 color-p2 d-block" aria-hidden="true"></span>
+      <div class="m-l">
+        <p class="m-b-0">To use an icon, insert an empty span tag with the corresponding class name. Here's an example:
+          <code class="font-size-14 gray-900">&lt;span class="ca-gov-icon-info" aria-hidden="true">&lt;/span></code>
+        </p>
+      </div>
     </div>
-    <div id="pagenumberstop" class="pagenumbers"></div>
-   </div>
 
-   <div id="fontlist"></div>
-   <div id="pagenumbers" class="pagenumbers"></div>
-   <div id="viewfulllist"></div>
+    <span id="Dos-and-donts-for-icon-use" class="h2 d-inline"></span>
+    <div class="row">
+      <div class="col-md-6">
+        <h3 class="h5 m-b-sm">Do</h3>
+        <hr class="m-t-0 p-t-0">
+        <ul>
+          <li>Use icons with meaningful text labels</li>
+          <li>Use a single icon for a group of related content</li>
+          <li>Use a single icon per concept</li>
+        </ul>
+      </div>
+      <div class="col-md-6">
+        <h3 class="h5 m-b m-b-sm">Don't</h3>
+        <hr class="m-t-0 p-t-0">
+        <ul>
+          <li>Use icons without labels</li>
+          <li>Use too many icons and create visual clutter</li>
+          <li>Use multiple icon variations to represent the same concept</li>
+        </ul>
+      </div>
+    </div>
+
+
+    <h2>Search icons</h2>
+    <p>Use the search to find a specific icon. You can also browse icons below.</p>
+
+
+    <form id="iconSearchForm" class="m-y-lg" onsubmit="return false">
+      <span class="sr-only" id="IconInput">Search icons</span>
+      <input type="text" name="iconsearch" aria-labelledby="IconInput" placeholder="Browse icons"
+        class="search-textfield rounded-5 icons-searchbox">
+      <button type="submit" title="submit" class="border-0 color-white icon-submit" aria-label="Submit"
+        onclick="javascript:buildList(false,0);"><span class="ca-gov-icon-search" aria-hidden="true"></span><span
+          class="sr-only">Submit</span></button>
+      <button type="reset" title="clear" value="reset" class="reset-button" aria-label="Reset"><span
+          class="ca-gov-icon-close-mark" aria-hidden="true"></span><span class="sr-only">Reset</span></button>
+    </form>
+
+    <div id="jumpToHeading">
+      <ol class="icons">
+      </ol>
+    </div>
+
+    <div class="clearfix mhl ptl">
+      <div class="d-md-flex flex-row justify-content-between m-t-md">
+        <div>
+          <span class="h4 m-t-0 m-b-0 p-r-sm">"<span id="searchSummary"></span>"</span>
+          <span id="resultcount" class="fs1" aria-live="polite"></span>
+        </div>
+        <div id="pagenumberstop" class="pagenumbers"></div>
+      </div>
+
+      <div id="fontlist"></div>
+      <div id="pagenumbers" class="pagenumbers"></div>
+      <div id="viewfulllist"></div>
+    </div>
+
   </div>
-
- </div>
 </div>
