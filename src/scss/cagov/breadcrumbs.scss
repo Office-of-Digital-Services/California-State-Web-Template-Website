@@ -2,10 +2,13 @@
    BREADCRUMBS -  /source/scss/cagov/breadcrumbs.scss
 ----------------------------------------- */
 
-.breadcrumb {
+.breadcrumbs ol, .breadcrumbs ul, .breadcrumb {
  padding: 0.5em 1rem;
  padding-left: 0;
  margin-bottom: 2rem;
+ display: flex;
+ flex-wrap: wrap;
+ list-style: none;
  // @include font-size(1);
  font-size: $font-size-small;
  @include media-breakpoint-up(sm) {
