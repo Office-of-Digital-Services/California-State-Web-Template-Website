@@ -1,5 +1,15 @@
 # Version History
 
+## 6.1.1
+- Updated tab component throughout website to make it accessible
+- Fixed headings semantic structure throughout website
+- Fixed unique ID accessibility issues throughout website
+- Added pagination component
+- Added executive profile component
+- Updated search results look and feel
+- Added side navigation sample website to demo side navigation depth levels
+- Updated icon search build process and added more icons search keywords
+- Updated download and setup page content
 
 ## 6.1.0
 - Updated alert banner
