@@ -31,7 +31,12 @@ module.exports = function (eleventyConfig) {
   return md.render(content);
  });
 
+
  return {
+  // allow nunjucks templating in .html files
+  htmlTemplateEngine: "njk",
+  markdownTemplateEngine: "njk",
+  templateFormats: ["html", "njk", "11ty.js"],
   dir: {
    // site content pages
    input: "pages",
