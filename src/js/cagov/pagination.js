@@ -60,7 +60,7 @@ function templateHTML(next, previous, page, currentPage, totalPages) {
 
       ${unbounded || (currentPage < totalPages) ? pageListItem(page, currentPage + 1) : ''}
 
-      ${!unbounded && (currentPage < totalPages - 3) ? pageOverflow() : ''}
+      ${!unbounded && (currentPage < totalPages - 2) ? pageOverflow() : ''}
       ${unbounded ? pageListItem(page, currentPage + 2) : ''}
 
       ${currentPage < totalPages - 1 ? pageListItem(page, totalPages) : ''}
@@ -173,6 +173,8 @@ class CAGovPagination extends window.HTMLElement {
       );
       this.innerHTML = html;
       this.applyListeners();
+    } else {
+      this.innerHTML = "";
     }
   }
 
@@ -183,6 +185,10 @@ class CAGovPagination extends window.HTMLElement {
   attributeChangedCallback(name, oldValue, newValue) {
     if (name === 'data-current-page') {
       this.currentPage = parseInt(newValue, 10);
+      this.render();
+    }
+    if (name === 'data-total-pages') {
+      this.totalPages = parseInt(newValue, 10);
       this.render();
     }
   }
