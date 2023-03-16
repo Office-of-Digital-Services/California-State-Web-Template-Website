@@ -110,21 +110,16 @@ permalink: "visual-design/icons.html"
     flex-basis: 100%;
     padding-top: 1rem;
   }
- }
-
- #paginationcomponent {
-  margin-top: 2.6em;
- }
-
- #viewfulllist {
-  margin-top: 1em;
- }
 
   @media (min-width: 992px) {
     .icon-item {
       flex-basis: 33%;
       padding-top: 1rem;
     }
+  }
+
+  #paginationcomponent {
+    margin-top: 2.6em;
   }
 
   #viewfulllist {
@@ -197,18 +192,18 @@ permalink: "visual-design/icons.html"
       return '';
     }
 
-
-  // Calculate total pages
-  var lastPage = -1;
-  if (paginate && numberOfResults > iconsPerPage) {
-   lastPage = Math.ceil(numberOfResults / iconsPerPage) - 1;
-  }
-  // Update the current page and total pages attributes for all pagination tags
-  const paginatorList = document.querySelectorAll('cagov-pagination');
-  for (let el of paginatorList) {
-	 el.setAttribute("data-current-page", pageNumber + 1);
-	 el.setAttribute("data-total-pages", lastPage + 1);
-  }
+    // Calculate total pages
+    var lastPage = -1;
+  
+    if (paginate && numberOfResults > iconsPerPage) {
+      lastPage = Math.ceil(numberOfResults / iconsPerPage) - 1;
+	  }
+	  // Update the current page and total pages attributes for all pagination tags
+	  const paginatorList = document.querySelectorAll('cagov-pagination');
+	  for (let el of paginatorList) {
+ 	    el.setAttribute("data-current-page", pageNumber + 1);
+	    el.setAttribute("data-total-pages", lastPage + 1);
+    }
 
     document.querySelector('#searchSummary').textContent = searchInput.length ? searchInput : filterLetter ? filterLetter.toUpperCase() : "All";
 
@@ -226,38 +221,7 @@ permalink: "visual-design/icons.html"
     document.querySelector('#viewfulllist').innerHTML = (filterLetter || paginate) ? '<div class="viewAll"><a href="javascript:buildList(false,0);window.scrollTo(0, document.getElementById(\'searchSummary\').offsetTop - 146);">View full list</a></div>' : '';
   }
 
-  document.querySelector('#fontlist').innerHTML = listHtml;
-  document.querySelector('#resultcount').innerHTML = numberOfResults ? `<span class="m-t-0">${numberOfResults} icons <span class="sr-only">found.</span></span>` : '<span>No icons found.</span>';
-
-  document.querySelector('#viewfulllist').innerHTML = (filterLetter || paginate) ? '<div class="viewAll"><a href="javascript:buildList(false,0);window.scrollTo(0, document.getElementById(\'searchSummary\').offsetTop - 146);">View full list</a></div>' : '';
- }
-
- const myRequest = new Request('https://california.azureedge.net/fonts/icons-6.1.0.json');
- fetch(myRequest)
-  .then(response => response.json())
-  .then(data => {
-
-   function compareStrings(a, b) {
-    // Assuming you want case-insensitive comparison
-    a = a.toLowerCase();
-    b = b.toLowerCase();
-    return (a < b) ? -1 : (a > b) ? 1 : 0;
-   }
-
-   data.icons.sort(function (a, b) {
-    return compareStrings(a.properties.name, b.properties.name);
-   })
-   iconData = data;
-
-   buildList(true, 0, "a");
-
-   // add event listeners to form field and button
-   document.querySelector("#iconSearchForm input").oninput = function () { buildList(false) };
-   document.querySelector("#iconSearchForm .reset-button").onclick = function () {
-    document.querySelector("#iconSearchForm input").value = "";
-    buildList();
-   };
-
+  window.addEventListener('load', function() {
    // add an event listener to each pagination tag
    const paginatorList = document.querySelectorAll('cagov-pagination');
    for (let pageElem of paginatorList) {
@@ -266,10 +230,8 @@ permalink: "visual-design/icons.html"
      window.scrollTo(0, document.getElementById('searchSummary').offsetTop - 146); // subtract height of header
     });
    }
+  });
 
-  })
-  .catch(console.error);
- 
 </script>
 
 <div class="row">
@@ -357,19 +319,13 @@ permalink: "visual-design/icons.html"
           <span class="h4 m-t-0 m-b-0 p-r-sm">"<span id="searchSummary"></span>"</span>
           <span id="resultcount" class="fs1" aria-live="polite"></span>
         </div>
-        <div id="pagenumberstop" class="pagenumbers"></div>
+        <div id="paginationcomponenttop"><cagov-pagination data-current-page="1" data-total-pages="0"></cagov-pagination></div>
       </div>
 
       <div id="fontlist"></div>
-      <div id="pagenumbers" class="pagenumbers"></div>
+      <div id="paginationcomponent"><cagov-pagination data-current-page="1" data-total-pages="0"></cagov-pagination></div>
       <div id="viewfulllist"></div>
     </div>
-    <div id="paginationcomponenttop"><cagov-pagination data-current-page="1" data-total-pages="0"></cagov-pagination></div>
-   </div>
-
-   <div id="fontlist"></div>
-   <div id="paginationcomponent"><cagov-pagination data-current-page="1" data-total-pages="0"></cagov-pagination></div>
-   <div id="viewfulllist"></div>
 
   </div>
 </div>
