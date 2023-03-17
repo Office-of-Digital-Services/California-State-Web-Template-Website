@@ -204,7 +204,7 @@ permalink: "visual-design/icons.html"
 
     // loop over icons
     for (const icon of iconsByLetter) {
-      const iconStrings = [...new Set([icon.name, icon.name.replace('-', ' '), ...icon.tags])].filter(x => x.length);
+      const iconStrings = [...new Set([icon.name, icon.name.replace('-', ' '), icon.tags])];
 
       if (!searchInput.length || iconStrings.find(x => x.search(searchInput) > -1)) {
         if (!paginate || (numberOfResults >= (pageNumber * iconsPerPage) && numberOfResults < ((pageNumber + 1) * iconsPerPage))) {
