@@ -46,23 +46,43 @@ permalink: "download-and-setup.html"
 
    <div class="row">
     <div class="col-md-6 mb-4">
-     <a href="https://github.com/Office-of-Digital-Services/California-State-Web-Template-HTML"
-      class="link-grid bg-white bg-gray-75-hover">HTML</a>
+     <div
+      class="brd-gray-200 brd-solid-1 rounded-5 h-100 transition-0_3 shadow2-hover bg-white bg-gray-100-hover pos-rel p-a">
+      <h3 class="h5 m-t-0"><a href="https://github.com/Office-of-Digital-Services/California-State-Web-Template-HTML"
+        class="link-before no-underline icon-abs-right">HTML</a></h3>
+      <p class="font-size-16 color-black">HTML base of the state web template</p>
+     </div>
     </div>
+
+
     <div class="col-md-6 mb-4">
-     <a href="https://github.com/Office-of-Digital-Services/California-State-Web-Template-eleventy"
-      class="link-grid bg-white bg-gray-75-hover">Eleventy</a>
+     <div
+      class="brd-gray-200 brd-solid-1 rounded-5 h-100 transition-0_3 shadow2-hover bg-white bg-gray-100-hover pos-rel p-a">
+      <h3 class="h5 m-t-0"><a
+        href="https://github.com/Office-of-Digital-Services/California-State-Web-Template-eleventy"
+        class="link-before no-underline icon-abs-right">Eleventy</a></h3>
+      <p class="font-size-16 color-black">Static site generator framework</p>
+     </div>
     </div>
    </div>
 
    <div class="row">
     <div class="col-md-6 mb-4">
-     <a href="https://github.com/Office-of-Digital-Services/California-State-Web-Template-NET-Core-MVC"
-      class="link-grid bg-white bg-gray-75-hover">ASP.NET Core MVC</a>
+     <div
+      class="brd-gray-200 brd-solid-1 rounded-5 h-100 transition-0_3 shadow2-hover bg-white bg-gray-100-hover pos-rel p-a">
+      <h3 class="h5 m-t-0"><a href="https://github.com/Office-of-Digital-Services/California-State-Web-Template-react"
+        class="link-before no-underline icon-abs-right">React</a></h3>
+      <p class="font-size-16 color-black">Front end user interface framework</p>
+     </div>
     </div>
     <div class="col-md-6 mb-4">
-     <a href="https://github.com/Office-of-Digital-Services/California-State-Web-Template-react"
-      class="link-grid bg-white bg-gray-75-hover">React</a>
+     <div
+      class="brd-gray-200 brd-solid-1 rounded-5 h-100 transition-0_3 shadow2-hover bg-white bg-gray-100-hover pos-rel p-a">
+      <h3 class="h5 m-t-0"><a
+        href="https://github.com/Office-of-Digital-Services/California-State-Web-Template-NET-Core-MVC"
+        class="link-before no-underline icon-abs-right">ASP.NET Core MVC</a></h3>
+      <p class="font-size-16 color-black">Server side web application framework</p>
+     </div>
     </div>
    </div>
   </div>
@@ -73,7 +93,9 @@ permalink: "download-and-setup.html"
     <div class="card h-100">
      <div class="card-body brd-solid-1 brd-gray-200 h-100 d-flex flex-column">
       <h3 class="h4 m-y-sm">Sample template content <br>and files</h3>
-      <p class="m-b">This web template website uses the V6 template. You access the source code for the website.</p>
+      <p class="m-b">This site uses the V6 template and Eleventy as a compilation tool. Use the GitHub repo to access
+       the sites code to see how the website was built using Eleventy, and for component code snippets you can copy and
+       use on your site.</p>
       <div class="text-right mt-auto">
        <a class="btn btn-outline-primary p-x-md"
         href="https://github.com/Office-of-Digital-Services/California-State-Web-Template-Website">Template website
@@ -87,7 +109,8 @@ permalink: "download-and-setup.html"
     <div class="card h-100">
      <div class="card-body brd-solid-1 brd-gray-200 h-100 d-flex flex-column">
       <h3 class="h4 m-y-sm">Content delivery network (CDN)</h3>
-      <p class="m-b">You can use our CDN links to easily load essential template libraries.</p>
+      <p class="m-b">You can use our CDN links to easily load essential static resources from the template libraries.
+       Using the CDN can reduce latency, increase performance, and provide the fastest site experience.</p>
       <div class="text-right mt-auto">
        <a class="btn btn-outline-primary p-x-md" href="/cdn.html">All CSS/JS CDN links</a>
       </div>
@@ -137,24 +160,44 @@ permalink: "download-and-setup.html"
    <div class="col-lg-6 p-r-0">
     <div class="p-a h-100 brd-gray-200 brd-lg-solid-1">
      <ul class="folder-structure-list">
-      <li class="m-t"><span class="bold">_site:</span> Contains the output files.</li>
-      <li class="m-t"><span class="bold">Pages:</span> The site’s web pages are saved here. These are the pages a
-       developer or
-       content editor can edit.
+      <li class="m-t"><span class="bold">_site:</span> Output website folder that contains the website's published
+       output files
+       and webpages.
+       <ul>
+        <li><span class="bold">css</span> – This folder contains the minified CSS files that are generated through
+         compilation of the CSCC files.</li>
+        <li><span class="bold">fonts</span> – Contains icon fonts and type fonts used by the State Web Template.</li>
+        <li><span class="bold">images</span> – This folder contains the structural images used by the State Web
+         Template.</li>
+        <li><span class="bold">js</span> – Contains the compiled, minified JavaScript files that are used by the State
+         Web Template. Any third party JavaScript libraries are also included in this folder.</li>
+       </ul>
+      </li>
+      <li class="m-t"><span class="bold">pages:</span> This folder contains the site’s unpublished web pages. These are
+       the pages a developer or content editor can edit.
       </li>
       <li class="m-t"><span class="bold">src:</span> Source folder. Contains includes, modules, fonts, images, SCSS and
-       JavaScript files.</li>
-      <li class="m-t"><span class="bold">Images:</span> Contains all the images used by the website.</li>
-      <li class="m-t"><span class="bold">js:</span> Contains JavaScript files used by the website. Third party
-       JavaScript
-       libraries are also included in this
-       folder.
+       JavaScript files.
+       <ul>
+        <li class="m-t"><span class="bold">Images:</span> Contains all the images used by the website.</li>
+        <li class="m-t"><span class="bold">js:</span> Contains uncompiled JavaScript files used by the website. Third
+         party
+         JavaScript
+         libraries are also included in this
+         folder.
+        </li>
+        <li class="m-t"><span class="bold">_includes:</span> Contains the common template components or code used on
+         some
+         or all
+         pages on the website. Examples:
+         header, footer, navigation, etc.).
+        </li>
+        <li class="m-t"><span class="bold">scss:</span> Contains all the raw SASS stylesheets files.
+        </li>
+       </ul>
+
       </li>
-      <li class="m-t"><span class="bold">_includes:</span> Contains the common template components or code used on some
-       or all
-       pages on the website. Examples:
-       header, footer, navigation, etc.).
-      </li>
+
      </ul>
     </div>
    </div>
@@ -162,6 +205,24 @@ permalink: "download-and-setup.html"
     <div class="p-a h-100 brd-gray-200 brd-lg-right brd-lg-bottom brd-lg-top">
      <pre class="mb-0">StateTemplate/
  ├── _site/
+     └── css/
+     │   ├── cagov.core.css
+     │   ├── cagov.font-only.css
+     │   ├── colorscheme-oceanside.css
+     │   └── Other color scheme css files
+     └── fonts/
+     │   ├── CaGov.eot
+     │   └── etc.
+     └── images/
+     │   ├── template-logo.png
+     │   ├── Ca-Gov-Logo-Gold.svg
+     │   └── etc.
+     └── js/
+         ├── cagov.core.js
+         ├── search.js
+         └── libs/ 
+     └── index.html
+     └── etc...
  └── pages/
      ├── index.html
      └── etc...
@@ -191,5 +252,9 @@ permalink: "download-and-setup.html"
    </div>
   </div>
 
+
+  <p class="m-t-md">View the <a href="https://legacy.template.webstandards.ca.gov/structure.html">Legacy</a> version for
+   previous
+   structure example.</p>
  </div>
 </div>
