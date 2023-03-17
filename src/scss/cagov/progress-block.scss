@@ -43,14 +43,42 @@
             margin-left: 3rem!important;
         }
     }
+    .dot-line::before,
+    .dot-line::after {
+     display: none;
+    }
+  
     .dot-line {
-        rotate: 90deg;
-        left: -50%;
-        top: 282px;
-        &::before,
-        &::after {
-            width: calc(100% + 30px);
-        }
+      position: relative;
+      rotate: 0deg;
+      left: 0.9rem;
+      top: 0;
+      padding-right: 0;
+      width: 2rem;
+      z-index: 9;
+    }
+  
+    .dot-text {
+     position: relative;
+     margin-left: 0;
+     margin-top: 0;
+     margin-bottom: 0;
+     padding-left: 2rem;
+     border-left: 1px solid #ddd;
+    }
+  
+    .dot-text h3 {
+     margin-top: 0;
+     margin-bottom: 0 !important;
+    }
+  
+    .dot-text::before {
+     display: none;
+    }
+  
+    .timeline-lines .col-sm-3:nth-last-of-type(2) .dot-text::before,
+    .timeline-lines .col-sm-3:last-of-type .dot-text::before {
+      background: #dddddd;
     }
 }
 
