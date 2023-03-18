@@ -1,0 +1,119 @@
+---
+title: List of articles or content
+landing: Patterns
+layout: patterns.njk
+permalink: "/patterns/list-of-articles-or-content.html"
+---
+
+<h1 class="mt-lg-0 mb-0">List of articles or content</h1>
+<p class="subtitle">Other names: News list, report list</p>
+
+<nav class="page-navigation"></nav>
+
+<p>This is a list of articles or content that are published regularly.</p>
+<p>Common list topics includes:</p>
+<ul>
+ <li>News releases</li>
+ <li>News articles</li>
+ <li>Blog posts</li>
+ <li>Publications</li>
+ <li>Reports</li>
+</ul>
+
+<p>Here is a breakdown of this pattern:</p>
+<ul>
+ <li><span class="bold">Page title:</span> Meaningful and concise. E.g.: News releases</li>
+ <li><span class="bold">Time period:</span> (level 2 heading): This can be by year, month and year, quarter.</li>
+ <li><span class="bold">Item:</span> The item is listed in 3 parts
+  <ul>
+   <li>Title: Concise title that links to the item</li>
+   <li>Publication date</li>
+   <li>Category (optional)</li>
+  </ul>
+ </li>
+ <li><span class="bold">Pagination:</span> Optional. Use as needed.</li>
+</ul>
+
+<h2>Sample</h2>
+
+<!--TABS-->
+<div class="tabs responsive">
+ <ul class="nav-tabs">
+  <li>
+   <a href="#section1">Example</a>
+  </li>
+  <li>
+   <a href="#section2">Source code</a>
+  </li>
+ </ul>
+
+
+ <!--Examples-->
+ <section id="section1" class="tab-pane">
+  <div class="card-header" id="heading-example1">
+   <a data-bs-toggle="collapse" href="#collapse-example1" aria-expanded="true" aria-controls="collapse-example1"
+    data-hash="#pane-example1" title="Example tab header">
+    Example
+   </a>
+  </div>
+  <div id="collapse-example1" class="collapse show p-0 m-0 brd-0" role="tabpanel" aria-labelledby="heading-example1">
+
+   <div class="p-a-sm p-y-0">
+    <figure class="brd-gray-200 brd-solid-1">
+     <img src="/images/sample/images/newslist.png" alt="List of articles page example">
+    </figure>
+
+    <a href="/patterns/list-of-articles-or-content-sample.html" class="btn btn-default mb-4" target="_blank">Live
+     example</a>
+   </div>
+  </div>
+ </section>
+
+
+
+ <!--HTML-->
+ <section id="section2" class="tab-pane">
+  <div class="card-header" id="heading-html1">
+   <a class="collapsed" data-bs-toggle="collapse" href="#collapse-html1" aria-expanded="false"
+    aria-controls="collapse-html1" data-hash="#pane-html1" title="HTML Source code tab header">
+    Source code
+   </a>
+  </div>
+  <div id="collapse-html1" class="collapse p-0 m-0 brd-0" role="tabpanel" aria-labelledby="heading-html1">
+   <div class="p-a-sm">
+    <h3 class="h4 mt-0">Featured news</h3>
+    <textarea class="sourcecode" aria-label="source code"
+     disabled>{% include "../../src/_includes/modules/news-list-extended.html" %}</textarea>
+   </div>
+  </div>
+ </section>
+
+</div>
+<!--END TABS-->
+
+
+
+
+<h2>Usage</h2>
+<h3>When and how to use it </h3>
+<p>Use this pattern for related items. For instance, a News page could include news releases, news articles, and blog
+ posts. This page would not include content that is not news related (data reports, legislative analyses).</p>
+<p><span class="text-highlight">Pro tip:</span> You may want to discuss and document retention internally for these
+ items to keep your website lean. For
+ instance, only keep the last 3 years of new releases.</p>
+<p>This pattern is related to the <a herf="/patterns/newsroom.html">Newsroom pattern</a> and the <a
+  herf="/patterns/article.html">Article pattern</a>. You can use all three patterns to have a cohesive news strategy for
+ your website.</p>
+
+<h3>How not to use it</h3>
+<p>Do not mix unrelated items.</p>
+<p>If possible, avoid PDFs to increase the usability and accessibility of your website. Instead, use HTML pages.</p>
+
+<h3>Components and patterns used</h3>
+<ul>
+ <li>Horizontal separator</li>
+ <li>Pagination</li>
+</ul>
+
+<h2>Accessibility</h2>
+{% include "../../src/_includes/modules/accessibility.html" %}
