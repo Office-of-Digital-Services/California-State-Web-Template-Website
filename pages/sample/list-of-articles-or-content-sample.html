@@ -1,0 +1,37 @@
+---
+title: Sample - List of articles or content
+landing: Patterns
+layout: sample-site-news.njk
+permalink: "/patterns/list-of-articles-or-content-sample.html"
+---
+
+<nav aria-label="Breadcrumb">
+ <ol class="breadcrumb">
+  <li><a href="/patterns/list-of-articles-or-content.html" title="Home page">Home</a></li>
+  <li><a href="/patterns/newsroom-sample.html" title="Newsroom page">Newsroom</a></li>
+  <li class="active">List of articles or content</li>
+ </ol>
+</nav>
+
+<div class="row">
+ <div class="col-lg-3">
+  <nav aria-label="list navigation">
+   <ul class="list-navigation">
+    <li><a href="/patterns/newsroom-sample.html" class="landing">Newsroom</a></li>
+    <li><a href="javascript:;" aria-disabled="true">News articles</a></li>
+    <li><a href="javascript:;" aria-disabled="true" class="active">Press releases</a></li>
+    <li><a href="javascript:;" aria-disabled="true">Blog</a></li>
+    <li><a href="javascript:;" aria-disabled="true">Disaster information</a></li>
+    <li><a href="javascript:;" aria-disabled="true">Subscription services</a></li>
+    <li><a href="javascript:;" aria-disabled="true">Public records requests</a></li>
+    <li><a href="javascript:;" aria-disabled="true">Press information</a></li>
+   </ul>
+  </nav>
+ </div>
+ <div class="col-lg-9">
+  <h1 class="mt-lg-0">Page heading</h1>
+  {% include "../../src/_includes/modules/news-list-extended.html" %}
+  <hr class="m-y-lg">
+  <cagov-pagination data-current-page="5" data-total-pages="99"></cagov-pagination>
+ </div>
+</div>
