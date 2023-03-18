@@ -1,0 +1,36 @@
+﻿---
+title: Sample - Newsroom featured banner
+landing: Patterns
+layout: sample-site-news.njk
+permalink: "/patterns/newsroom-featured-banner.html"
+---
+
+<nav aria-label="Breadcrumb">
+ <ol class="breadcrumb">
+  <li><a href="/patterns/newsroom.html" title="Home page">Home</a></li>
+  <li class="active">Newsroom</li>
+ </ol>
+</nav>
+
+<div class="row">
+ <div class="col-lg-3">
+  <nav aria-label="list navigation">
+   <ul class="list-navigation">
+    <li><a href="javascript:;" class="landing active">Newsroom</a></li>
+    <li><a href="javascript:;" aria-disabled="true">News articles</a></li>
+    <li><a href="/patterns/list-of-articles-or-content-sample.html">Press releases</a></li>
+    <li><a href="javascript:;" aria-disabled="true">Blog</a></li>
+    <li><a href="javascript:;" aria-disabled="true">Disaster information</a></li>
+    <li><a href="javascript:;" aria-disabled="true">Subscription services</a></li>
+    <li><a href="javascript:;" aria-disabled="true">Public records requests</a></li>
+    <li><a href="javascript:;" aria-disabled="true">Press information</a></li>
+   </ul>
+  </nav>
+ </div>
+ <div class="col-lg-9">
+  <h1 class="mt-lg-0">Newsroom</h1>
+  {% include "../../src/_includes/modules/news-featured-banner.html" %}
+  {% include "../../src/_includes/modules/news-cards.html" %}
+  {% include "../../src/_includes/modules/news-list.html" %}
+ </div>
+</div>
