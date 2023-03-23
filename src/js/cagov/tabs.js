@@ -33,7 +33,6 @@
   // Add semantics are remove user focusability for each tab
   Array.prototype.forEach.call(tabs, function (tab, i) {
    tab.setAttribute('role', 'tab');
-   tab.setAttribute('id', 'tab' + (i + 1));
    tab.setAttribute('tabindex', '-1');
    tab.parentNode.setAttribute('role', 'presentation');
 
@@ -66,8 +65,7 @@
   Array.prototype.forEach.call(panels, function (panel, i) {
    panel.setAttribute('role', 'tabpanel');
    panel.setAttribute('tabindex', '-1');
-   let id = panel.getAttribute('id');
-   panel.setAttribute('aria-labelledby', tabs[i].id);
+   panel.setAttribute('aria-label', tabs[i].innerText);
    panel.hidden = true;
   });
 
