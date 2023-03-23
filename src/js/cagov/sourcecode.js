@@ -21,7 +21,7 @@ var entityMap = {
  }
  
  function copyCode(btnElem) {
-  var codeblock = btnElem.previousSibling;
+  var codeblock = btnElem.previousElementSibling;
   if (codeblock) {
    // copy the text
    if (codeblock.tagName.toLowerCase() == "code") {
