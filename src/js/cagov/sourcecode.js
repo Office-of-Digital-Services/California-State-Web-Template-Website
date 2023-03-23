@@ -21,7 +21,7 @@ var entityMap = {
  }
  
  function copyCode(btnElem) {
-  var codeblock = btnElem.parentElement.querySelector("pre code, textarea.sourcecode");
+  var codeblock = btnElem.previousElementSibling;
   if (codeblock) {
    // copy the text
    if (codeblock.tagName.toLowerCase() == "code") {

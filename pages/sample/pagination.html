@@ -25,6 +25,9 @@ permalink: "components/pagination.html"
     <li>
       <a href="#section2">Source code</a>
     </li>
+    <li>
+      <a href="#section3">Implementation notes</a>
+    </li>
   </ul>
 
 
@@ -54,10 +57,97 @@ permalink: "components/pagination.html"
         Source code
       </a>
     </div>
-    <div id="collapse-html1" class="collapse p-0 m-0 brd-0" role="tabpanel" aria-labelledby="heading-html1">
-      <div class="p-a-sm">
-        <textarea class="sourcecode height-100" aria-label="source code"
+    <div id="collapse-example1" class="collapse show p-0 m-0 brd-0" role="tabpanel" aria-labelledby="heading-html1">
+      <div class="p-t p-b-0">
+        <textarea class="sourcecode height-60" aria-label="source code"
           disabled><cagov-pagination data-current-page="5" data-total-pages="99"></cagov-pagination></textarea>
+      </div>
+    </div>
+  </section>
+
+
+
+  <!--Implementation-->
+  <section id="section3" class="tab-pane">
+    <div class="card-header" id="heading-implementation1">
+      <a class="collapsed" data-bs-toggle="collapse" href="#collapse-implementation1" aria-expanded="false"
+        aria-controls="collapse-implementation1" data-hash="#pane-implementation1"
+        title="Implementation notes tab header">
+        Implementation notes
+      </a>
+    </div>
+    <div id="collapse-implementation1" class="collapse p-0 m-0 brd-0" role="tabpanel"
+      aria-labelledby="heading-implementation1">
+      <div class="p-a-sm">
+        <p>First, add the HTML.</p>
+        <textarea class="sourcecode height-60" aria-label="source code"
+          disabled><cagov-pagination data-current-page="5" data-total-pages="99"></cagov-pagination></textarea>
+
+        <p class="p-t-md">This component accepts data attributes for the number of pages and current page. These changes
+          are monitored
+          and the component re-renders if these attributes change:</p>
+        <table class="font-size-15 brd-solid-1 brd-gray-200">
+          <thead>
+            <tr>
+              <th class="p-a brd-bottom brd-right brd-gray-200">Name</th>
+              <th class="p-a brd-bottom brd-right brd-gray-200">Attribute name</th>
+              <th class="p-a brd-bottom brd-right brd-gray-200">Data type</th>
+              <th class="p-a brd-bottom brd-right brd-gray-200">Field type</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="p-a  align-top brd-bottom brd-right brd-gray-200">Current page</td>
+              <td class="p-a  align-top brd-bottom brd-right brd-gray-200">data-current-page</td>
+              <td class="p-a  align-top brd-bottom brd-right brd-gray-200">string</td>
+              <td class="p-a  align-top brd-bottom brd-right brd-gray-200">Integer (default is 1)</td>
+            </tr>
+            <tr>
+              <td class="p-a  align-top brd-bottom brd-right brd-gray-200">Total pages</td>
+              <td class="p-a  align-top brd-bottom brd-right brd-gray-200">data-total-pages</td>
+              <td class="p-a  align-top brd-bottom brd-right brd-gray-200">string</td>
+              <td class="p-a  align-top brd-bottom brd-right brd-gray-200">Integer (default is 1, enter -1 for an
+                unbound set)</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <p class="p-t-md">It also accepts optional strings for all the text so it can be used in multiple languages:</p>
+        <table class="font-size-15 brd-solid-1 brd-gray-200">
+          <thead>
+            <tr>
+              <th class="p-a brd-bottom brd-right brd-gray-200">Name</th>
+              <th class="p-a brd-bottom brd-right brd-gray-200">Attribute name</th>
+              <th class="p-a brd-bottom brd-right brd-gray-200">Data type</th>
+              <th class="p-a brd-bottom brd-right brd-gray-200">Field type</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="p-a  align-top brd-bottom brd-right brd-gray-200">Previous</td>
+              <td class="p-a  align-top brd-bottom brd-right brd-gray-200">data-previous</td>
+              <td class="p-a  align-top brd-bottom brd-right brd-gray-200">string</td>
+              <td class="p-a  align-top brd-bottom brd-right brd-gray-200">Plain text (default is "<span
+                  class="ca-gov-icon-arrow-prev" aria-hidden="true"></span> Previous")</td>
+            </tr>
+            <tr>
+              <td class="p-a  align-top brd-bottom brd-right brd-gray-200">Next</td>
+              <td class="p-a  align-top brd-bottom brd-right brd-gray-200">data-next</td>
+              <td class="p-a  align-top brd-bottom brd-right brd-gray-200">string</td>
+              <td class="p-a  align-top brd-bottom brd-right brd-gray-200">Plain text (default is "Next <span
+                  class="ca-gov-icon-arrow-next" aria-hidden="true"></span>")</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <p class="p-t-md">Next, register an event to respond to clicks.</p>
+        <textarea class="sourcecode height-150" aria-label="source code" disabled>const paginator = document.querySelector('cagov-pagination');
+
+paginator.addEventListener('paginationClick', function (e) {
+  alert(`You requested page ${e.detail}.`);
+});</textarea>
+        <p class="p-t-md">Replace the alert with your own code to retrieve the content for
+          the requested page and write it into the DOM</p>
       </div>
     </div>
   </section>
@@ -109,7 +199,7 @@ permalink: "components/pagination.html"
   <thead>
     <tr>
       <th scope="col">Guideline</th>
-      <th scope="col">Example</th>
+      <th scope="col">Live example</th>
     </tr>
   </thead>
   <tbody>
