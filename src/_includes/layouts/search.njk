@@ -57,12 +57,12 @@
                     <!--Uncomment if you prefer to use original google search box. Be advided that original custom search box is not meeting WCAG accessibility standards. -->
                     <!--<gcse:searchbox-only resultsUrl="/serp.html" enableAutoComplete="true"></gcse:searchbox-only>-->
 
-                    <form id="Search" class="pos-rel" action="/serp.html">
+                    <form id="Search" class="d-flex" action="/serp.html">
                         <span class="sr-only" id="SearchInput">Custom Google Search</span>
-                        <input type="text" id="q" name="q" aria-labelledby="SearchInput"
+                        <input type="search" id="q" name="q" aria-labelledby="SearchInput"
                             placeholder="Search this website" class="search-textfield height-40" style="width:95%" />
                         <button type="submit"
-                            class="gsc-search-button width-60 height-40 pos-abs color-white right-0 top-0 border-0 bg-gray-600 bg-gray-800-hover"><span
+                            class="gsc-search-button width-60 height-40 color-white border-0 bg-gray-600 bg-gray-800-hover"><span
                                 class="ca-gov-icon-search" aria-hidden="true"></span><span
                                 class="sr-only">Submit</span></button>
                     </form>
