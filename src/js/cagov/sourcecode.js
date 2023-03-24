@@ -24,8 +24,8 @@ var entityMap = {
   var codeblock = btnElem.previousElementSibling;
   if (codeblock) {
    // copy the text
-   if (codeblock.tagName.toLowerCase() == "code") {
-     navigator.clipboard.writeText(codeblock.innerText);
+   if (codeblock.tagName.toLowerCase() == "pre") {
+     navigator.clipboard.writeText(codeblock.querySelector("code").innerText);
    } else {
      navigator.clipboard.writeText(codeblock.value);
    }
