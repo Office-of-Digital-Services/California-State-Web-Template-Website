@@ -104,16 +104,7 @@
 
 
         // extracting search query from the url parameter and applying it to the searchbox
-        function getUrlVars() {
-            var vars = {};
-            var parts = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function (m, key, value) {
-                vars[key] = value;
-            });
-            return vars;
-        }
-        var query = getUrlVars()["q"];
-        document.querySelector('input[name=q]').value = query;
-
+        document.querySelector('input[name=q]').value = new URLSearchParams(window.location.search).get("q");
     </script>
 </body>
 </html>
