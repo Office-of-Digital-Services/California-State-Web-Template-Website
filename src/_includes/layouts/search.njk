@@ -54,10 +54,10 @@
 			<!--Search result section-->
             <div class="section section-default">
                 <div class="container search-results-header">
-                    <!--Uncomment if you prefer to use original google search box. Be advided that original custom search box is not meeting WCAG accessibility standards. -->
+                    <!--Uncomment if you prefer to use original google search box. Be advised that original custom search box is not meeting WCAG accessibility standards. -->
                     <!--<gcse:searchbox-only resultsUrl="/serp.html" enableAutoComplete="true"></gcse:searchbox-only>-->
 
-                    <form id="Search" class="d-flex" action="/serp.html">
+                    <form id="Search" class="d-flex" action="?">
                         <span class="sr-only" id="SearchInput">Custom Google Search</span>
                         <input type="search" id="q" name="q" aria-labelledby="SearchInput"
                             placeholder="Search this website" class="search-textfield height-40" style="width:95%" />
@@ -104,7 +104,16 @@
 
 
         // extracting search query from the url parameter and applying it to the searchbox
-        document.querySelector('input[name=q]').value = new URLSearchParams(window.location.search).get("q");
+        function getUrlVars() {
+            var vars = {};
+            var parts = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function (m, key, value) {
+                vars[key] = value;
+            });
+            return vars;
+        }
+        var query = getUrlVars()["q"];
+        document.querySelector('input[name=q]').value = query;
+
     </script>
 </body>
 </html>
