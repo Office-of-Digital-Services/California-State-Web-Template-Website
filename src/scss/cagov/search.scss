@@ -171,10 +171,12 @@ $search-input-border-width: 3px;
  }
 }
 
-input[type="search"].search-textfield {
- padding-left: 10px; // Applying padding to all the search inputs globally. TODO: Check regression
- -webkit-appearance: none;
- background-color: canvas;
+.search-textfield {
+   padding-left: 10px; // Applying padding to all the search inputs globally. TODO: Check regression
+}
+input[type="search"].search-textfield { 
+  -webkit-appearance: none; // Removing iPhone rounder corner rendering
+  background-color: canvas; // Removing iPhone -apple-system-opaque-tertiary-fill color
 }
 
 .search-container.active {
