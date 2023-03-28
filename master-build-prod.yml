@@ -22,18 +22,6 @@ steps:
   inputs:
     command: 'install'
   displayName: "npm install"
-
-# - script: npm run test
-#   displayName: "npm test"
-#   env:
-#     CI: true
-
-# - task: PublishCodeCoverageResults@1
-#   inputs:
-#     codeCoverageTool: 'Cobertura'
-#     summaryFileLocation: 'coverage/cobertura-coverage.xml'
-#     reportDirectory: 'coverage'
-#   displayName: 'Publish Code Coverage'
     
 - script: npm run build
   displayName: "npm build"
@@ -42,39 +30,13 @@ steps:
   inputs:
     Contents: '_site/**' # Pull the build directory
     TargetFolder: '$(Build.ArtifactStagingDirectory)'
+
 - task: PublishBuildArtifacts@1
   inputs: 
     PathtoPublish: '$(Build.ArtifactStagingDirectory)/_site' # build files
     ArtifactName: 'drop' # output artifact named drop
-- task: ArchiveFiles@2
-  inputs:
-    rootFolderOrFile: '$(Build.ArtifactStagingDirectory)'
-    includeRootFolder: true
-    archiveType: 'zip'
-    archiveFile: '$(Build.ArtifactStagingDirectory)/$(Build.BuildId).zip'
-    replaceExistingArchive: true
-- task: Veracode@3
-  inputs:
-    ConnectionDetailsSelection: 'Endpoint'
-    AnalysisService: 'veracode'
-    veracodeAppProfile: '$(system.teamProject)'
-    version: '$(build.buildNumber)'
-    filepath: '$(Build.ArtifactStagingDirectory)/$(Build.BuildId).zip'
-    createProfile: true
-    maximumWaitTime: '360'
 
 
-- task: SonarQubePrepare@5
-  inputs:
-    SonarQube: 'SonarQube'
-    scannerMode: 'CLI'
-    configMode: 'manual'
-    cliProjectKey: 'beta.template.webtools.website' 
-    cliProjectName: 'beta.template.webtools.website'
-    cliSources: '$(build.artifactstagingdirectory)'
-- task: SonarQubeAnalyze@5
-    
-- task: SonarQubePublish@5
-  inputs:
-    pollingTimeoutSec: '300'
+
+
 
