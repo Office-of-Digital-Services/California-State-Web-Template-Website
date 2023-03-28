@@ -1,5 +1,15 @@
 # Version History
 
+## 6.1.1
+- Updated tab component JS to make it more accessible
+- Fixed headings semantic structure throughout website
+- Fixed accessibility issues throughout website
+- Added pagination component
+- Added executive profile component
+- Updated search results look and feel
+- Added side navigation sample website to demo side navigation depth levels
+- Updated icon search build process and added more icons search keywords
+- Added newsroom patterns including newsroom, newslist and news article
 
 ## 6.1.0
 - Updated alert banner

@@ -172,7 +172,11 @@ $search-input-border-width: 3px;
 }
 
 .search-textfield {
- padding-left: 10px; // Applying padding to all the search inputs globally. TODO: Check regression
+   padding-left: 10px; // Applying padding to all the search inputs globally. TODO: Check regression
+}
+input[type="search"].search-textfield { 
+  -webkit-appearance: none; // Removing iPhone rounder corner rendering
+  background-color: canvas; // Removing iPhone -apple-system-opaque-tertiary-fill color
 }
 
 .search-container.active {
@@ -548,6 +552,7 @@ button.gsc-search-button {
  padding: 0px 12px 0px 12px;
  border: 1px solid;
  min-height: 38px;
+ margin-left: -1px;
 }
 
 /* ------------- Custom search box (not google) --------------*/
@@ -570,6 +575,7 @@ button.gsc-search-button {
    @media (max-width: $screen-sm-max) {
     display: block;
     cursor: pointer;
+    min-height: 38px;
     .sr-only {
      height: unset !important;
      width: unset !important;
@@ -854,3 +860,13 @@ table.gsc-search-box td {
   padding-left: 10px;
  }
 }
+
+
+/* clears the ‘X’ from Internet Explorer */
+input[type=search]::-ms-clear { display: none; width : 0; height: 0; }
+input[type=search]::-ms-reveal { display: none; width : 0; height: 0; }
+/* clears the ‘X’ from Chrome */
+input[type="search"]::-webkit-search-decoration,
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-results-button,
+input[type="search"]::-webkit-search-results-decoration { display: none; }

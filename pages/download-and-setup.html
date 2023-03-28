@@ -19,6 +19,10 @@ permalink: "download-and-setup.html"
     </li>
     <li>
      <a href="/download-and-setup.html" class="active">Download and setup</a>
+     <ul>
+      <li><a href="/get-started/implementation-steps.html">Implementation steps</a></li>
+      <li><a href="/get-started/eleventy.html">Eleventy</a></li>
+     </ul>
     </li>
     <li>
      <a href="/get-started/css-classes-shortcuts/">CSS classes shortcuts</a>
@@ -35,542 +39,117 @@ permalink: "download-and-setup.html"
   <nav class="page-navigation"></nav>
 
 
-  <div class="p-a-md p-b-lg bg-gray-75">
+  <h2>Template Files</h2>
+  <div class="p-a-md p-b-md bg-gray-75">
+   <h3 class="mt-0">State web template frameworks</h3>
+   <p>Esseintial state template files without sample content. Choose your framework to get started.</p>
 
-   <h2 class="h3 mt-0">Common web template resources</h2>
+   <div class="row">
+    <div class="col-md-6 mb-4">
+     <div
+      class="brd-gray-200 brd-solid-1 rounded-5 h-100 transition-0_3 shadow2-hover bg-white bg-gray-100-hover pos-rel p-a">
+      <h3 class="h5 m-t-0"><a href="https://github.com/Office-of-Digital-Services/California-State-Web-Template-HTML"
+        class="link-before no-underline icon-abs-right">HTML</a></h3>
+      <p class="font-size-16 color-black">HTML base of the state web template</p>
+     </div>
+    </div>
 
-   <div class="d-flex flex-row flex-wrap flex-lg-nowrap justify-content-between gap-3 font-size-14">
-    <div class="brd-solid-1 brd-gray-light bg-white p-3 rounded-5 w-100 flex-fill">
-     <span class="bold"><a
-       href="https://github.com/Office-of-Digital-Services/California-State-Web-Template-Website#available-state-web-template-frameworks">Template
-       frameworks</a> core code without sample content</span>
-     <ul class="mt-2 p-l-md" style="columns:2;">
-      <li><a href="https://github.com/Office-of-Digital-Services/California-State-Web-Template-HTML">HTML</a>
-      </li>
-      <li><a href="https://github.com/Office-of-Digital-Services/California-State-Web-Template-eleventy">Eleventy</a>
-      </li>
-      <li><a href="https://github.com/Office-of-Digital-Services/California-State-Web-Template-NET-Core-MVC">NET Core
-        MVC</a></li>
-      <li><a href="https://github.com/Office-of-Digital-Services/California-State-Web-Template-react">React</a>
-      </li>
-     </ul>
-    </div>
-    <div class="brd-solid-1 brd-gray-light bg-white p-3 rounded-5  w-100 flex-fill">
-     <span class="bold">State web template website with all sample content</span>
-     <ul class="mt-2 p-l-md">
-      <li><a href="https://github.com/Office-of-Digital-Services/California-State-Web-Template-Website/">Github
-        Repository</a></li>
-      <li><a href="https://github.com/Office-of-Digital-Services/California-State-Web-Template-Website/releases">Latest
-        template releases for download</a></li>
-     </ul>
-    </div>
-    <div class="brd-solid-1 brd-gray-light bg-white p-3 rounded-5  w-100 flex-fill">
-     <span class="bold">CDN (content delivery network)</span>
-     <ul class="mt-2 p-l-md">
-      <li><a href="/cdn.html">V6 CSS/JS core CDN links</a>
-      </li>
-     </ul>
+
+    <div class="col-md-6 mb-4">
+     <div
+      class="brd-gray-200 brd-solid-1 rounded-5 h-100 transition-0_3 shadow2-hover bg-white bg-gray-100-hover pos-rel p-a">
+      <h3 class="h5 m-t-0"><a
+        href="https://github.com/Office-of-Digital-Services/California-State-Web-Template-eleventy"
+        class="link-before no-underline icon-abs-right">Eleventy</a></h3>
+      <p class="font-size-16 color-black">Static site generator framework</p>
+     </div>
     </div>
    </div>
-  </div>
-  <p class="m-t-lg">Here are the steps to follow when implementing the V6 State Web Template.
-  </p>
-  <h2>Template implementation roadmap</h2>
 
-  <p class="m-b-md">These are the high-level steps to take when you upgrade to the latest template.</p>
-
-  <ol class="cagov-step-list">
-   <li><span class="bold">Back up your current site</span>
-    <br />
-    <span class="cagov-step-list-content">
-     <p>Before you start, save a copy of your current site. If there’s an issue, you won’t lose your
-      current
-      site.</p>
-    </span>
-   </li>
-
-   <li><span class="bold">Select a framework</span>
-    <br />
-    <span class="cagov-step-list-content">
-     <p>Current frameworks include HTML, Eleventy, NET core, MVC, and React. You’ll usually pick the
-      framework you’re currently on.</p>
-    </span>
-   </li>
-
-   <li><span class="bold">Understand the differences in the code and HTML structure</span>
-    <br />
-    <span class="cagov-step-list-content">
-      <p>
-        You’ll want to compare your current CSS and JS files to the state template’s files (especially if you have custom styles). This helps you understand the work you need to do. Learn how to do a <a href="https://docs.github.com/en/pull-requests/committing-changes-to-your-project/viewing-and-comparing-commits/comparing-commits">code comparison in GitHub</a>.
-      </p>
-
-<ul>
-  <li><a href="./structure.html">Structural elements</a> </li>
-    <li><a href="./components.html">Components</a></li>
-      <li><a href="./patterns.html">Patterns</a></li>
-
-</ul>
-<p>This may affect your HTML, requiring structural code updates.</p>
-
-    </span>
-   </li>
-
-   <li><span class="bold">Download or clone the State Web Template from GitHub</span>
-    <br />
-    <span class="cagov-step-list-content">
-     <p>You can clone it from our <a
-       href="https://github.com/Office-of-Digital-Services/California-State-Web-Template-Website/">Template GitHub
-       Repository</a>.</p>
-     <p>You can also download or access the different frameworks. Review <a href="#Common-web-template-resources">Common
-       web template
-       resources</a>. This is
-      also a good time to have your security office perform a scan of the files.</p>
-    </span>
-   </li>
-
-   <li><span class="bold">Look for CSS, JavaScript, and structural changes</span>
-    <br />
-    <span class="cagov-step-list-content">
-     <p>Most changes are made in:</p>
-     <ul>
-      <li>The CSS and JavaScript source files in the <code>/src/scss/</code> and <code>/src/js/</code> folders</li>
-      <li>Includes and modules folders <code>/src/_includes/</code> and <code>/src/_includes/modules/</code></li>
-     </ul>
-    </span>
-   </li>
-
-   <li><span class="bold">Replace older library files with the updated ones</span>
-    <br />
-    <span class="cagov-step-list-content">
-     <p>The web template has CSS and JavaScript (JS) code base. You will replace these source files with
-      newer ones or
-      point to the corresponding CDN links found on the <a href="/cdn.html">state web
-       template CDN</a> page. If you have a custom
-      CSS or JS
-      code, you may need to update that too. Keep your customizations separate from the core template
-      source code for
-      an easier update process.</p>
-    </span>
-   </li>
-
-   <li><span class="bold">Integrate the new template into your environment</span>
-    <br />
-    <span class="cagov-step-list-content">
-     <p>From your code comparison, make the necessary changes and updates to your code. Usually,
-      incremental
-      versions
-      will not require any structural template adjustments. You only need to replace core CSS and JS
-      files
-      or update
-      the CDN links.</p>
-    </span>
-   </li>
-
-   <li><span class="bold">Perform necessary tests and reviews</span>
-    <br />
-    <span class="cagov-step-list-content">
-     <p>After core source code has been updated, you should thoroughly review and test your website or
-      web
-      application.
-      This includes QA, code and heuristic reviews, and accessibility testing. Do not forget to
-      inspect
-      for code level
-      errors or conflicts.</p>
-    </span>
-   </li>
-
-   <li><span class="bold">Release to production</span>
-    <br />
-    <span class="cagov-step-list-content">
-     <p>Yay! You’re now ready to follow your organization's change management and release process. You
-      may
-      want to QA
-      every web page and get more people to verify that everything works as expected. Sometimes
-      releasing
-      to
-      production produces some bugs.</p>
-    </span>
-   </li>
-
-  </ol>
-
-
-  <h2>Folder structure and files</h2>
-
-  <div class="flex-container">
-   <div class="brd-solid-1 brd-gray-light p-3">
-    <ul class="folder-structure-list">
-     <li class="m-t"><span class="bold">_site:</span> Contains the output files.</li>
-     <li class="m-t"><span class="bold">Pages:</span> The site’s web pages are saved here. These are the pages a
-      developer or
-      content editor can edit.
-     </li>
-     <li class="m-t"><span class="bold">src:</span> Source folder. Contains includes, modules, fonts, images, SCSS and
-      JavaScript files.</li>
-     <li class="m-t"><span class="bold">Images:</span> Contains all the images used by the website.</li>
-     <li class="m-t"><span class="bold">js:</span> Contains JavaScript files used by the website. Third party
-      JavaScript
-      libraries are also included in this
-      folder.
-     </li>
-     <li class="m-t"><span class="bold">_includes:</span> Contains the common template components or code used on some
-      or all
-      pages on the website. Examples:
-      header, footer, navigation, etc.).
-     </li>
-    </ul>
-   </div>
-
-   <div class="brd-solid-1 brd-gray-light p-3">
-    <pre class="mb-0">StateTemplate/
- ├── _site/
- └── pages/
-     ├── index.html
-     └── etc...
-         └── sample/
-             ├── accordions.html
-             ├── color.html
-             └── etc...
- └── src/
-     └── _includes/
-          ├── global-footer.njk
-          ├── etc...
-          └── layouts/
-          ├── base.njc
-          └── etc...
-          └── modules/
-              ├── accordion.html
-              └── etc...
-     └── fonts/
-     └── images/
-     └── js/
-     └── scss/
- ├── eleventy.js
- ├── package.json
- └── rollup.config.js
-</pre>
+   <div class="row">
+    <div class="col-md-6 mb-4">
+     <div
+      class="brd-gray-200 brd-solid-1 rounded-5 h-100 transition-0_3 shadow2-hover bg-white bg-gray-100-hover pos-rel p-a">
+      <h3 class="h5 m-t-0"><a href="https://github.com/Office-of-Digital-Services/California-State-Web-Template-react"
+        class="link-before no-underline icon-abs-right">React</a></h3>
+      <p class="font-size-16 color-black">Front end user interface framework</p>
+     </div>
+    </div>
+    <div class="col-md-6 mb-4">
+     <div
+      class="brd-gray-200 brd-solid-1 rounded-5 h-100 transition-0_3 shadow2-hover bg-white bg-gray-100-hover pos-rel p-a">
+      <h3 class="h5 m-t-0"><a
+        href="https://github.com/Office-of-Digital-Services/California-State-Web-Template-NET-Core-MVC"
+        class="link-before no-underline icon-abs-right">ASP.NET Core MVC</a></h3>
+      <p class="font-size-16 color-black">Server side web application framework</p>
+     </div>
+    </div>
    </div>
   </div>
 
 
-  <h2>Using Eleventy</h2>
+  <div class="row m-t-lg">
+   <div class="col-md-6 m-b-md">
+    <div class="card h-100">
+     <div class="card-body brd-solid-1 brd-gray-200 h-100 d-flex flex-column">
+      <h3 class="h4 m-y-sm">Sample template content <br>and files</h3>
+      <p class="m-b">This site uses the V6 template and Eleventy as a compilation tool. Use the GitHub repo to access
+       the sites code to see how the website was built using Eleventy, and for component code snippets you can copy and
+       use on your site.</p>
+      <div class="text-right mt-auto">
+       <a class="btn btn-outline-primary p-x-md"
+        href="https://github.com/Office-of-Digital-Services/California-State-Web-Template-Website">Template website
+        Github repo</a>
+      </div>
 
-  <h3>Step 1. Clone or download the template for GitHub</h3>
-
-  <p>Clone: <a href="https://github.com/Office-of-Digital-Services/California-State-Web-Template-Website/">State
-    Web Template GitHub Repository</a><br>
-   Download: <a
-    href="https://github.com/Office-of-Digital-Services/California-State-Web-Template-Website/releases">Latest
-    template releases for download</a><br>
-   Framework: <a href="https://github.com/Office-of-Digital-Services/California-State-Web-Template-eleventy">Eleventy
-    framework</a></p>
-
-  <h3>Step 2. Set up your pages</h3>
-
-  <p>To start, you can use the sample State Template web pages. If your website doesn’t use NPM or Eleventy, you can
-   use these clean starter template codes:</p>
-  <button type="button" class="btn btn-default d-block m-b-md brd-primary" style="color:#046B99;" data-bs-toggle="modal"
-   data-bs-target="#template-blocks">Clean HTML template source code</button>
-  <button type="button" class="btn btn-default d-block m-b-md brd-primary" style="color:#046B99;" data-bs-toggle="modal"
-   data-bs-target="#with-includes">HTML page that uses nunjucks includes source code</button>
-
-  <h3>Step 3. Install Node.js</h3>
-
-  <p>Make sure your local machine has Node installed. To see if Node is installed, open Windows Command Prompt,
-   Powershell or a similar command line tool. Type:</p>
-
-  <pre>node -v</pre>
-
-  <p>This should print the version number. If you don’t have Node, you can download it from <a
-    href="https://nodejs.org/">nodejs.org</a> and install it.</p>
-
-  <h3>Step 4. Use NPM to run the state web template locally</h3>
-
-
-  <div class="d-grid grid-columns-auto brd-top brd-left brd-gray-200">
-   <div class="p-a brd-bottom brd-gray-200 m-a-0">
-    1. Use this command to install all the necessary npm packages to your local website directory.
+     </div>
+    </div>
    </div>
-   <pre class="p-a m-a-0">npm install
-            </pre>
-   <div class="p-a brd-bottom brd-gray-200 m-a-0">
-    2. Use this command to build and generate your website's pages, css and js files.
+   <div class="col-md-6 m-b-md">
+    <div class="card h-100">
+     <div class="card-body brd-solid-1 brd-gray-200 h-100 d-flex flex-column">
+      <h3 class="h4 m-y-sm">Content delivery network (CDN)</h3>
+      <p class="m-b">You can use our CDN links to easily load essential static resources from the template libraries.
+       Using the CDN can reduce latency, increase performance, and provide the fastest site experience.</p>
+      <div class="text-right mt-auto">
+       <a class="btn btn-outline-primary p-x-md" href="/cdn.html">All CSS/JS CDN links</a>
+      </div>
+     </div>
+    </div>
    </div>
-   <pre class="p-a m-a-0">npm run build
-            </pre>
-   <div class="p-a brd-bottom brd-gray-200 m-a-0">
-    3. Use this command to run the website in your <code>http://localhost:8080/</code>
-    and watch for any updates you are making
-    to webpages or scss and js files.
-   </div>
-   <pre class="p-a m-a-0">npm run start
-            </pre>
   </div>
 
-  <h3>Output</h3>
 
-  <p>All web content is generated into the <code>/_site/</code> folder, which is the website's
-   final output folder.</p>
+  <h2>Template guidance</h2>
 
-  <h3>Documentation for Eleventy</h3>
-
-  <h4>CSS</h4>
-
-  <p>State Web Template core css files are generated from SASS files. They can be found in the <code>/src/scss/</code>
-   folder.
-   Multiple SASS files are compiled during the build process into core output CSS files. They are generated in
-   the
-   <code>/_site/css/</code> folder. A State Web Template webpage requires these two CSS
-   files:
-  </p>
-
-  <pre>&lt;link rel="stylesheet" href="/css/cagov.core.css">
-&lt;link rel="stylesheet" href="/css/colortheme-oceanside.css"></pre>
-
-  <h5>Custom CSS</h5>
-  <p>You can add global custom CSS into <code>/src/scss/custom/custom.scss</code> file. Those styles will be compiled
-   into <code>cagov.core.css</code> file. There is also an option to apply custom CSS to a specific page. To do that you
-   need to add your custom CSS file into <code>/src/scss/custom/</code> folder and make reference to it in the page's
-   front matter under <code>customcss</code> key. Here is an example: </p>
-  <pre>---
-title: California State Web Template
-layout: landing.njk
-customcss: /css/custom/homepage.css
----</pre>
+  <p>Resources to help you integrate the template into your website.</p>
 
 
-  <h4>JavaScript</h4>
+  <div class="row">
+   <div class="col-md-6 m-t-md">
+    <a href="/get-started/implementation-steps.html"
+     class="no-underline d-block color-gray-dark brd-gray-light brd-solid-1 rounded-5 h-100 transition-0_3 shadow2-hover color-primary color-primary-hover"
+     title="Implementation steps">
+     <div class="p-a">
+      <h3 class="h5 m-t-0">Implementation steps</h3>
+      <p class="font-size-16 color-black">High-level steps to take when you upgrade to the latest template.</p>
+     </div>
+    </a>
+   </div>
+   <div class="col-md-6 m-t-md">
+    <a href="/get-started/eleventy.html"
+     class="no-underline d-block color-gray-dark brd-gray-light brd-solid-1 rounded-5 h-100 transition-0_3 shadow2-hover color-primary color-primary-hover"
+     title="Using Eleventy">
+     <div class="p-a">
+      <h3 class="h5 m-t-0">Using Eleventy</h3>
+      <p class="font-size-16 color-black">Learn how use the Eleventy web template framework.</p>
+     </div>
+    </a>
+   </div>
 
-  <p>A State Web Template webpage requires <code>cagov.core.js</code> JavaScript file to
-   function. That file is
-   generated by rollup.js processor from multiple JavaScript files that can be found in <code>/src/js/</code> folder. If
-   your website doesn't use a site generator place the following near the end of your pages, right before the
-   closing <code>&lt;/body></code> tag.</p>
+  </div>
 
-  <h4>Includes</h4>
 
-  <p>If you are using the eleventy site generator, you can build your page using the template include
-   files. The template offers several common components (such as page headers, footers, navigation, etc.) using
-   njk includes.</p>
-
-  <button type="button" class="btn btn-default d-block m-b-md brd-primary" style="color:#046B99;" data-bs-toggle="modal"
-   data-bs-target="#using-includes">Show sample includes code</button>
-
-  <p>You can also add any other <code>html</code> or <code>njk</code> includes to your page like this:</p>
-
-  <pre>{{ '{% include "../../src/_includes/modules/header-primary-banner.html" %}' }}</pre>
-
-  <p>The path to the module include is relative to the directory of your page.</p>
-
-  <h4>Page layout options</h4>
-
-  <p>State Web Template eleventy page generation codebase uses several layout page options.</p>
-
-  <table class="table table-bordered">
-   <tr>
-    <th>Layout</th>
-    <th>njk</th>
-   </tr>
-   <tr>
-    <td>Full-width</td>
-    <td class="bg-gray-75"><code>landing.njk</code></td>
-   </tr>
-   <tr>
-    <td>Standard page</td>
-    <td class="bg-gray-75"><code>page.njk</code></td>
-   </tr>
-   <tr>
-    <td>Narrower standard page version</td>
-    <td class="bg-gray-75"><code>one-col.njk</code></td>
-   </tr>
-   <tr>
-    <td>Full width page with main navigation with icons</td>
-    <td class="bg-gray-75"><code>navicons-landing.njk</code></td>
-   </tr>
-   <tr>
-    <td>Main navigation with icons</td>
-    <td class="bg-gray-75"><code>navicons.njk</code></td>
-   </tr>
-   <tr>
-    <td>Search results page</td>
-    <td class="bg-gray-75"><code>search.njk</code></td>
-   </tr>
-   <tr>
-    <td>Page with dynamic left side navigation</td>
-    <td class="bg-gray-75"><code>components.njk</code></td>
-   </tr>
-  </table>
-
-  <p>To use one of these options, you need to specify the layout key in your front matter data at the beginning
-   of your page.</p>
-
-  <pre>---
-title: Your page title
-layout: page.njk
----</pre>
 
  </div>
 </div>
-
-
-
-<!-- -------------------------------- Modals -------------------------------- -->
-
-<!-- Modal -->
-<div class="modal fade" id="template-blocks" role="dialog">
- <div class="modal-dialog modal-lg">
-  <div class="modal-content">
-   <div class="modal-header">
-    <h4 class="modal-title">Clean HTML template source code</h4>
-    <button type="button" class="close btn btn-secondary" data-bs-dismiss="modal"><span class="sr-only">Close
-      modal</span><span class="ca-gov-icon-close-mark" aria-hidden="true"></span></button>
-   </div>
-   <div class="modal-body">
-    <pre>&lt;!doctype html&gt;</span>
-<span class="text-accent-p2">&lt;html</span> <span class="text-info">lang=</span><span class="text-accent7">"en"</span><span class="text-accent-p2">&gt;</span>
-<span class="text-accent-p2">&lt;head&gt;</span>
-<span class="text-muted">&lt;!-- Required meta tags --&gt;</span>
-<span class="text-accent-p2">&lt;meta</span> <span class="text-info">charset=</span><span class="text-accent7">"utf-8"</span><span class="text-accent-p2">&gt;</span>
-<span class="text-accent-p2">&lt;meta</span> <span class="text-info">name=</span><span class="text-accent7">"viewport"</span> <span class="text-info">content=</span><span class="text-accent7">"width=device-width, initial-scale=1, shrink-to-fit=no"</span><span class="text-accent-p2">&gt;</span>
-
-<span class="text-muted">&lt;!-- State Template CSS --&gt;</span>
-<span class="text-accent-p2">&lt;link</span> <span class="text-info">rel=</span><span class="text-accent7">"stylesheet"</span> <span class="text-info">href=</span><span class="text-accent7">"/css/cagov.core.css"</span><span class="text-accent-p2">&gt;</span>
-<span class="text-accent-p2">&lt;link</span> <span class="text-info">rel=</span><span class="text-accent7">"stylesheet"</span> <span class="text-info">href=</span><span class="text-accent7">"/css/colorscheme-oceanside.css"</span><span class="text-accent-p2">&gt;</span>
-
-<span class="text-accent-p2">&lt;title&gt;</span>California State Webpage<span class="text-accent-p2">&lt;/title&gt;</span>
-
-<span class="text-accent-p2">&lt;/head&gt;</span>
-<span class="text-accent-p2">&lt;body&gt;</span>
-<span class="text-accent-p2">&lt;h1&gt;</span>California State Webpage<span class="text-accent-p2">&lt;/h1&gt;</span>
-
-<span class="text-muted">&lt;!-- State Template JavaScript --&gt;</span>
-<span class="text-accent-p2">&lt;script </span><span class="text-info">src=</span><span class="text-accent7">"/js/cagov.core.js"</span> <span class="text-accent-p2">&gt;&lt;/script&gt;</span>
-<span class="text-accent-p2">&lt;/body&gt;</span>
-<span class="text-accent-p2">&lt;/html&gt;</span></pre>
-   </div>
-   <div class="modal-footer">
-    <button type="button" class="btn btn-default" data-bs-dismiss="modal">Close</button>
-   </div>
-  </div>
- </div>
-</div>
-<!-- / End Modal -->
-
-<!-- Modal -->
-<div class="modal fade" id="with-includes" role="dialog">
- <div class="modal-dialog modal-lg">
-  <div class="modal-content">
-   <div class="modal-header">
-    <h4 class="modal-title">HTML page that is using nunjucks includes</h4>
-    <button type="button" class="close btn btn-secondary" data-bs-dismiss="modal"><span class="sr-only">Close
-      modal</span><span class="ca-gov-icon-close-mark" aria-hidden="true"></span></button>
-
-   </div>
-   <div class="modal-body">
-    <pre><span class="text-success">&lt;!doctype html&gt;</span>
-<span class="text-accent-p2">&lt;html</span> <span class="text-info">lang=</span><span class="text-accent7">"en"</span><span class="text-accent-p2">&gt;</span>
-<span class="text-accent-p2">&lt;head&gt;</span>
-<span class="text-accent-p2">&lt;meta </span><span class="text-info">charset=</span><span class="text-accent7">"utf-8"</span><span class="text-accent-p2">&gt;</span>
-<span class="text-accent-p2">&lt;title&gt;</span>State Template<span class="text-accent-p2">&lt;/title&gt;</span>
-<span class="text-accent-p2">&lt;meta</span> <span class="text-info">name=</span><span class="text-accent7">"Author"</span> <span class="text-info">content=</span><span class="text-accent7">"State of California"</span><span class="text-accent-p2"> /&gt;</span>
-<span class="text-accent-p2">&lt;meta</span> <span class="text-info">name=</span><span class="text-accent7">"Description"</span> <span class="text-info">content=</span><span class="text-accent7">"State of California"</span><span class="text-accent-p2"> /&gt;</span>
-<span class="text-accent-p2">&lt;meta</span> <span class="text-info">name=</span><span class="text-accent7">"Keywords"</span> <span class="text-info">content=</span><span class="text-accent7">"California, government"</span><span class="text-accent-p2"> /&gt;</span>
-<span class="text-success">&#10100;% include "/src/_includes/head-css-js.njk" %&#10101;</span>
-<span class="text-accent-p2">&lt;/head&gt;</span>
-<span class="text-accent-p2">&lt;body&gt;</span>
-<span class="text-accent-p2">&lt;header</span> <span class="text-info">role=</span><span class="text-accent7">"banner"</span> <span class="text-info">id=</span><span class="text-accent7">"header"</span> <span class="text-info">class=</span><span class="text-accent7">"global-header fixed"</span><span class="text-accent-p2">&gt;</span>
-<span class="text-accent-p2">&lt;div</span> <span class="text-info">id=</span><span class="text-accent7">"skip-to-content"</span><span class="text-accent-p2">&gt;&lt;a </span><span class="text-info">href=</span><span class="text-accent7">"#main-content"</span><span class="text-accent-p2">&gt;</span>Skip to Main Content<span class="text-accent-p2">&lt;/a&gt;&lt;/div&gt;</span>
-<span class="text-success">&#10100;% include "/src/_includes/utility-header.njk" %&#10101;/span>
-<span class="text-success">&#10100;% include "/src/_includes/settings.njk" %&#10101;</span>
-<span class="text-success">&#10100;% include "/src/_includes/site-header.njk" %&#10101;</span>
-<span class="text-success">&#10100;% include "/src/_includes/mobile-controls.njk" %&#10101;</span>
-<span class="text-accent-p2">&lt;div</span> <span class="text-info">class=</span><span class="text-accent7">"navigation-search full-width-nav container"</span><span class="text-accent-p2">&gt;</span>
-<span class="text-accent-p2">&lt;div</span> <span class="text-info">id=</span><span class="text-accent7">"head-search"</span> <span class="text-info">class=</span><span class="text-accent7">"search-container search-container featured-search"</span><span class="text-accent-p2">&gt;</span>
-  <span class="text-success">&#10100;% include "/src/_includes/search.njk" %&#10101;</span>
-<span class="text-accent-p2">&lt;/div&gt;</span>
-<span class="text-success">&#10100;% include "/src/_includes/navigation.njk" %&#10101;</span>
-<span class="text-accent-p2">&lt;/div&gt;</span>
-<span class="text-accent-p2">&lt;/header&gt;</span>
-<span class="text-accent-p2">&lt;div</span> <span class="text-info">id=</span><span class="text-accent7">"main-content"</span> <span class="text-info">class=</span><span class="text-accent7">"main-content"</span><span class="text-accent-p2">&gt;</span>
-<span class="text-accent-p2">&lt;div </span><span class="text-info">class=</span><span class="text-accent7">"container"</span><span class="text-accent-p2">&gt;</span>
-  <span class="text-accent-p2">&lt;main </span><span class="text-info">class=</span><span class="text-accent7">"main-primary"</span><span class="text-accent-p2">&gt;</span>
-&#10100;{ content | safe }}
-  <span class="text-accent-p2">&lt;/main&gt;</span>
-<span class="text-accent-p2">&lt;/div&gt;</span>
-<span class="text-accent-p2">&lt;/div&gt;</span>
-<span class="text-success">&#10100;% include "/src/_includes/global-footer.njk" %&#10101;</span>
-<span class="text-success">&#10100;% include "/src/_includes/scripts.njk" %&#10101;</span>
-<span class="text-accent-p2">&lt;/body&gt;</span>
-<span class="text-accent-p2">&lt;/html&gt;</span>
-</pre>
-   </div>
-   <div class="modal-footer">
-    <button type="button" class="btn btn-default" data-bs-dismiss="modal">Close</button>
-   </div>
-  </div>
- </div>
-</div>
-<!-- / End Modal -->
-
-<!-- Modal -->
-<div class="modal fade" id="using-includes" role="dialog">
- <div class="modal-dialog modal-lg">
-  <div class="modal-content">
-   <div class="modal-header">
-    <h4 class="modal-title">HTML Markup</h4>
-    <button type="button" class="close btn btn-secondary" data-bs-dismiss="modal"><span class="sr-only">Close
-      modal</span><span class="ca-gov-icon-close-mark" aria-hidden="true"></span></button>
-
-   </div>
-   <div class="modal-body">
-    <span class="bold" aria-label="Source code for Info Blocks">State Web Template structure
-     code:</span>
-    <pre>
-<span class="text-success">&lt;!doctype html&gt;</span>
-<span class="text-accent-p2">&lt;html</span> <span class="text-info">lang=</span><span class="text-accent7">"en"</span><span class="text-accent-p2">&gt;</span>
-<span class="text-accent-p2">&lt;head&gt;</span>
-<span class="text-accent-p2">&lt;meta </span><span class="text-info">charset=</span><span class="text-accent7">"utf-8"</span><span class="text-accent-p2">&gt;</span>
-<span class="text-accent-p2">&lt;title&gt;</span>State Template<span class="text-accent-p2">&lt;/title&gt;</span>
-<span class="text-accent-p2">&lt;meta</span> <span class="text-info">name=</span><span class="text-accent7">"Author"</span> <span class="text-info">content=</span><span class="text-accent7">"State of California"</span><span class="text-accent-p2"> /&gt;</span>
-<span class="text-accent-p2">&lt;meta</span> <span class="text-info">name=</span><span class="text-accent7">"Description"</span> <span class="text-info">content=</span><span class="text-accent7">"State of California"</span><span class="text-accent-p2"> /&gt;</span>
-<span class="text-accent-p2">&lt;meta</span> <span class="text-info">name=</span><span class="text-accent7">"Keywords"</span> <span class="text-info">content=</span><span class="text-accent7">"California, government"</span><span class="text-accent-p2"> /&gt;</span>
-<span class="text-success">&#10100;% include "/src/_includes/head-css-js.njk" %&#10101;</span>
-<span class="text-accent-p2">&lt;/head&gt;</span>
-<span class="text-accent-p2">&lt;body&gt;</span>
-<span class="text-accent-p2">&lt;header</span> <span class="text-info">role=</span><span class="text-accent7">"banner"</span> <span class="text-info">id=</span><span class="text-accent7">"header"</span> <span class="text-info">class=</span><span class="text-accent7">"global-header fixed"</span><span class="text-accent-p2">&gt;</span>
-<span class="text-accent-p2">&lt;div</span> <span class="text-info">id=</span><span class="text-accent7">"skip-to-content"</span><span class="text-accent-p2">&gt;&lt;a </span><span class="text-info">href=</span><span class="text-accent7">"#main-content"</span><span class="text-accent-p2">&gt;</span>Skip to Main Content<span class="text-accent-p2">&lt;/a&gt;&lt;/div&gt;</span>
-<span class="text-success">&#10100;% include "/src/_includes/utility-header.njk" %&#10101;/span>
-<span class="text-success">&#10100;% include "/src/_includes/settings.njk" %&#10101;</span>
-<span class="text-success">&#10100;% include "/src/_includes/site-header.njk" %&#10101;</span>
-<span class="text-success">&#10100;% include "/src/_includes/mobile-controls.njk" %&#10101;</span>
-<span class="text-accent-p2">&lt;div</span> <span class="text-info">class=</span><span class="text-accent7">"navigation-search full-width-nav container"</span><span class="text-accent-p2">&gt;</span>
-<span class="text-accent-p2">&lt;div</span> <span class="text-info">id=</span><span class="text-accent7">"head-search"</span> <span class="text-info">class=</span><span class="text-accent7">"search-container search-container featured-search"</span><span class="text-accent-p2">&gt;</span>
-<span class="text-success">&#10100;% include "/src/_includes/search.njk" %&#10101;</span>
-<span class="text-accent-p2">&lt;/div&gt;</span>
-<span class="text-success">&#10100;% include "/src/_includes/navigation.njk" %&#10101;</span>
-<span class="text-accent-p2">&lt;/div&gt;</span>
-<span class="text-accent-p2">&lt;/header&gt;</span>
-<span class="text-accent-p2">&lt;div</span> <span class="text-info">id=</span><span class="text-accent7">"main-content"</span> <span class="text-info">class=</span><span class="text-accent7">"main-content"</span><span class="text-accent-p2">&gt;</span>
-<span class="text-accent-p2">&lt;div </span><span class="text-info">class=</span><span class="text-accent7">"container"</span><span class="text-accent-p2">&gt;</span>
-<span class="text-accent-p2">&lt;main </span><span class="text-info">class=</span><span class="text-accent7">"main-primary"</span><span class="text-accent-p2">&gt;</span>
-Page content
-<span class="text-accent-p2">&lt;/main&gt;</span>
-<span class="text-accent-p2">&lt;/div&gt;</span>
-<span class="text-accent-p2">&lt;/div&gt;</span>
-<span class="text-success">&#10100;% include "/src/_includes/global-footer.njk" %&#10101;</span>
-<span class="text-success">&#10100;% include "/src/_includes/scripts.njk" %&#10101;</span>
-<span class="text-accent-p2">&lt;/body&gt;</span>
-<span class="text-accent-p2">&lt;/html&gt;</span></pre>
-    <p><span class="text-highlight-primary">Note:</span> Path to the includes will be relative to the directory of your
-     page.
-    </p>
-
-    </pre>
-   </div>
-   <div class="modal-footer">
-    <button type="button" class="btn btn-default" data-bs-dismiss="modal">Close</button>
-   </div>
-  </div>
- </div>
-</div>
-<!-- / End Modal -->

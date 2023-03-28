@@ -160,6 +160,7 @@
    font-weight: 400;
    // white-space: nowrap;
    position: relative;
+   text-align: left;
    z-index: 1;
    height: 100%;
    &:hover,
@@ -210,8 +211,9 @@
     // 992px
     @media (min-width: $screen-md-min) {
      /* Navigation icons */
-     display: block;
-     font-size: 32px;
+     display:inline;
+     font-size: inherit;
+     color: inherit;
     }
    }
    // 991px
@@ -670,7 +672,8 @@
 
     &.has-sub {
      .carrot {
-      bottom: 0;
+      position: absolute;
+      right: 0.75rem;
       top: 0.35rem;
       transition: all 0.5s cubic-bezier(0.57, 0.2, 0.21, 0.89);
       //  transform: translateY(-50%);
@@ -680,7 +683,7 @@
     &[aria-expanded="true"] {
      .carrot {
       transform: rotate(180deg);
-      bottom: 0.35rem;
+      top: 0.6rem;
      }
     }
    }

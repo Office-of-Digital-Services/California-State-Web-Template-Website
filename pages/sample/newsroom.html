@@ -1,0 +1,190 @@
+---
+title: Newsroom
+landing: Patterns
+layout: patterns.njk
+permalink: "patterns/newsroom.html"
+---
+
+<h1 class="mt-lg-0 mb-0">Newsroom</h1>
+<p class="subtitle">Other names: News landing page</p>
+
+<nav class="page-navigation"></nav>
+
+<p>Newsroom is the news landing page for your website. This pattern includes:
+</p>
+<ul>
+ <li>Featured news section</li>
+ <li>List of latest news</li>
+ <li>Link to all news items</li>
+ <li>News related side navigation</li>
+</ul>
+<p>We provide two patterns with different featured news options.</p>
+<ul>
+ <li><span class="bold">Featured images:</span> 3 featured item with small images</li>
+ <li><span class="bold">Featured hero image:</span> 1 featured item with a larger image</li>
+</ul>
+
+<h2>Landing page with feature images</h2>
+<p>You can also omit images if you do not have them. </p>
+
+<!--TABS-->
+<div class="tabs responsive">
+ <ul class="nav-tabs">
+  <li>
+   <a href="#section1">Example</a>
+  </li>
+  <li>
+   <a href="#section2">Source code</a>
+  </li>
+ </ul>
+
+
+
+ <!--Examples-->
+ <section id="section1" class="tab-pane">
+  <div class="card-header" id="heading-example1">
+   <a data-bs-toggle="collapse" href="#collapse-example1" aria-expanded="true" aria-controls="collapse-example1"
+    data-hash="#pane-example1" title="Example tab header">
+    Example
+   </a>
+  </div>
+  <div id="collapse-example1" class="collapse show p-0 m-0 brd-0" role="tabpanel" aria-labelledby="heading-example1">
+
+   <div class="p-a-sm p-y-0">
+    <figure class="brd-gray-200 brd-solid-1">
+     <img src="/images/sample/images/news1.png" alt="Newsroom page with featured images example">
+    </figure>
+
+    <a href="/patterns/newsroom-sample.html" class="btn btn-outline-primary mb-4" target="_blank"
+     title="Featured images news live example">Live example in new tab <span class="ca-gov-icon-arrow-next"
+      aria-hidden="true"></span></a>
+   </div>
+  </div>
+ </section>
+
+
+
+ <!--HTML-->
+ <section id="section2" class="tab-pane">
+  <div class="card-header" id="heading-html1">
+   <a class="collapsed" data-bs-toggle="collapse" href="#collapse-html1" aria-expanded="false"
+    aria-controls="collapse-html1" data-hash="#pane-html1" title="HTML Source code tab header">
+    Source code
+   </a>
+  </div>
+  <div id="collapse-html1" class="collapse p-0 m-0 brd-0" role="tabpanel" aria-labelledby="heading-html1">
+   <div class="p-a-sm">
+    <h3 class="h4 mt-0">Featured news</h3>
+    <pre
+     style="max-height: 300px;"><code>{% include "../../src/_includes/modules/news-list-featured.html" %}</code></pre>
+
+    <h3 class="h4">News cards</h3>
+    <pre style="max-height: 300px;"><code>{% include "../../src/_includes/modules/news-cards.html" %}</code></pre>
+
+    <h3 class="h4">News list</h3>
+    <textarea class="sourcecode" aria-label="source code"
+     disabled>{% include "../../src/_includes/modules/news-list.html" %}</textarea>
+   </div>
+  </div>
+ </section>
+
+</div>
+<!--END TABS-->
+
+<h2>Landing page with feature banner</h2>
+<!--TABS-->
+<div class="tabs responsive">
+ <ul class="nav-tabs">
+  <li>
+   <a href="#section3">Example</a>
+  </li>
+  <li>
+   <a href="#section4">Source code</a>
+  </li>
+ </ul>
+
+
+
+ <!--Examples-->
+ <section id="section3" class="tab-pane">
+  <div class="card-header" id="heading-example3">
+   <a data-bs-toggle="collapse" href="#collapse-example3" aria-expanded="true" aria-controls="collapse-example3"
+    data-hash="#pane-example3" title="Example tab header">
+    Example
+   </a>
+  </div>
+  <div id="collapse-example3" class="collapse show p-0 m-0 brd-0" role="tabpanel" aria-labelledby="heading-example3">
+
+   <div class="p-a-sm p-y-0">
+    <figure class="brd-gray-200 brd-solid-1">
+     <img src="/images/sample/images/news2.png" alt="Newsroom page with with feature banner example">
+    </figure>
+
+    <a href="/patterns/newsroom-featured-banner.html" class="btn btn-outline-primary mb-4" target="_blank">Live example
+     in new
+     tab <span class="ca-gov-icon-arrow-next" aria-hidden="true"></span></a>
+   </div>
+
+  </div>
+ </section>
+
+
+
+ <!--HTML-->
+ <section id="section4" class="tab-pane">
+  <div class="card-header" id="heading-html4">
+   <a class="collapsed" data-bs-toggle="collapse" href="#collapse-html4" aria-expanded="false"
+    aria-controls="collapse-html4" data-hash="#pane-html4" title="HTML Source code tab header">
+    Source code
+   </a>
+  </div>
+  <div id="collapse-html4" class="collapse p-0 m-0 brd-0" role="tabpanel" aria-labelledby="heading-html4">
+   <div class="p-a-sm">
+    <textarea class="sourcecode" aria-label="source code"
+     disabled>{% include "../../src/_includes/modules/news-featured-banner.html" %}</textarea>
+
+   </div>
+  </div>
+ </section>
+
+</div>
+<!--END TABS-->
+
+
+<h2>Usage</h2>
+<h3>When and how to use it </h3>
+<p>We provide a news landing page framework for you to add your department news information. It provides easy access to
+ news items such as:</p>
+<ul>
+ <li>News releases</li>
+ <li>Subscription services</li>
+ <li>Press information</li>
+ <li>Trending topics</li>
+</ul>
+<h4>Featured section</h4>
+<p>Use the featured section at the top of the page to highlight important content (top tasks or needs). </p>
+<p>It includes:</p>
+<ul>
+ <li>1 main featured topic</li>
+ <li>2 secondary featured topics</li>
+</ul>
+<p>Choose an image that is relevant and supports your brand identity, mission, and tone. For best results, use images
+ with this aspect ratio:</p>
+<ul>
+ <li>For each of the 3 feature images: 275px x 160px</li>
+ <li>For <a href="/patterns/banner.html#Feature-banner">feature banner</a>: Container maximum width 1176px</li>
+</ul>
+<h3>How not to use it</h3>
+<p>Do not use this to publish extensive content. The purpose of this page is to get people to the content they want.</p>
+
+<h3>Components and patterns used</h3>
+<ul>
+ <li>Card</li>
+ <li>Feature banner</li>
+ <li>Side navigation</li>
+ <li>Horizontal separator</li>
+ <li>News list (partial)</li>
+</ul>
+
+<h2>Accessibility</h2>
+{% include "../../src/_includes/modules/accessibility.html" %}

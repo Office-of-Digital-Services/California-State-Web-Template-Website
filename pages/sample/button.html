@@ -23,71 +23,67 @@ permalink: "components/button.html"
 <p>Available button colors are based on your selected <a href="/visual-design/color.html">color theme</a>.</p>
 
 <!--TABS-->
-<div class="tab-group responsive">
- <ul id="tabs1" class="nav nav-tabs" role="tablist">
-  <li class="nav-item" role="presentation">
-   <a id="tab-example1" href="#pane-example1" class="nav-link active" data-bs-toggle="tab" role="tab">Example</a>
+<div class="tabs responsive">
+ <ul class="nav-tabs">
+  <li>
+   <a href="#section1">Example</a>
   </li>
-  <li class="nav-item" role="presentation">
-   <a id="tab-html1" href="#pane-html1" class="nav-link" data-bs-toggle="tab" role="tab">Source code</a>
+  <li>
+   <a href="#section2">Source code</a>
   </li>
-
  </ul>
 
- <div id="tab-content" class="tab-content">
-  <!--Examples-->
-  <div id="pane-example1" class="card tab-pane fade show active" role="tabpanel" aria-labelledby="tab-example1">
-   <div class="card-header" id="heading-example1">
-    <a data-bs-toggle="collapse" href="#collapse-example1" data-parent="#tab-content" aria-expanded="true"
-     aria-controls="collapse-example1" data-hash="#pane-example1" title="Example tab header">
-     Example
-    </a>
+ <!--Examples-->
+ <section id="section1" class="tab-pane">
+  <div class="card-header" id="heading-example1">
+   <a data-bs-toggle="collapse" href="#collapse-example1" aria-expanded="true" aria-controls="collapse-example1"
+    data-hash="#pane-example1" title="Example tab header">
+    Example
+   </a>
+  </div>
+  <div id="collapse-example1" class="collapse show p-0 m-0 brd-0" role="tabpanel" aria-labelledby="heading-example1">
+   <div class="p-a-sm p-b-md">
+    <h3 class="h4 m-t-0 m-b-sm">Primary action buttons</h3>
+    {% include "../../src/_includes/modules/buttons.html" %}
+
+    <h3 class="h4 m-y-sm">Secondary action buttons </h3>
+    {% include "../../src/_includes/modules/buttons-outline.html" %}
+
+    <h3 class="h4 m-y-sm">Disabled buttons</h3>
+    {% include "../../src/_includes/modules/buttons-disabled.html" %}
+
+    <h3 class="h4 m-y-sm">Button sizes</h3>
+    {% include "../../src/_includes/modules/buttons-sizes.html" %}
    </div>
-   <div id="collapse-example1" class="collapse show" role="tabpanel" aria-labelledby="heading-example1">
-    <div class="card-body p-b-md">
-     <p class="lead bold m-b">Primary action buttons</p>
-     {% include "../../src/_includes/modules/buttons.html" %}
+  </div>
+ </section>
 
-     <p class="lead bold m-b">Secondary action buttons </p>
-     {% include "../../src/_includes/modules/buttons-outline.html" %}
+ <!--HTML-->
+ <section id="section2" class="tab-pane">
+  <div class="card-header" id="heading-html1">
+   <a class="collapsed" data-bs-toggle="collapse" href="#collapse-html1" aria-expanded="false"
+    aria-controls="collapse-html1" data-hash="#pane-html1" title="HTML Source code tab header">
+    Source code
+   </a>
+  </div>
+  <div id="collapse-html1" class="collapse p-0 m-0 brd-0" role="tabpanel" aria-labelledby="heading-html1">
+   <div class="p-a-sm">
+    <h3 class="h4 m-t-0 m-b-sm">Primary action buttons</h3>
+    <pre><code>{% include "../../src/_includes/modules/buttons.html" %}</code></pre>
 
-     <p class="lead bold m-b">Disabled buttons</p>
-     {% include "../../src/_includes/modules/buttons-disabled.html" %}
+    <h3 class="h4 m-b-sm">Secondary action buttons </h3>
+    <pre><code>{% include "../../src/_includes/modules/buttons-outline.html" %}</code></pre>
 
-     <p class="lead bold m-b">Button sizes</p>
-     {% include "../../src/_includes/modules/buttons-sizes.html" %}
-    </div>
+    <h3 class="h4 m-b-sm">Disabled buttons</h3>
+    <pre><code>{% include "../../src/_includes/modules/buttons-disabled.html" %}</code></pre>
+
+    <h3 class="h4 m-b-sm">Button sizes</h3>
+    <pre><code>{% include "../../src/_includes/modules/buttons-sizes.html" %}</code></pre>
    </div>
   </div>
 
-  <!--HTML-->
-  <div id="pane-html1" class="card tab-pane fade" role="tabpanel" aria-labelledby="tab-html1">
-   <div class="card-header" id="heading-html1">
-    <a class="collapsed" data-bs-toggle="collapse" href="#collapse-html1" data-parent="#tab-content"
-     aria-expanded="false" aria-controls="collapse-html1" data-hash="#pane-html1" title="HTML Source code tab header">
-     Source code
-    </a>
-   </div>
-   <div id="collapse-html1" class="collapse" role="tabpanel" aria-labelledby="heading-html1">
-    <div class="card-body">
-     <p class="lead bold m-b">Primary action buttons</p>
-     <pre style="max-height: 300px;"><code>{% include "../../src/_includes/modules/buttons.html" %}</code></pre>
+ </section>
 
-     <p class="lead bold m-b">Secondary action buttons </p>
-     <pre style="max-height: 300px;"><code>{% include "../../src/_includes/modules/buttons-outline.html" %}</code></pre>
-
-     <p class="lead bold m-b">Disabled buttons</p>
-     <pre
-      style="max-height: 300px;"><code>{% include "../../src/_includes/modules/buttons-disabled.html" %}</code></pre>
-
-     <p class="lead bold m-b">Button sizes</p>
-     <pre style="max-height: 300px;"><code>{% include "../../src/_includes/modules/buttons-sizes.html" %}</code></pre>
-    </div>
-   </div>
-
-  </div>
-
- </div>
 </div>
 <!--END TABS-->
 

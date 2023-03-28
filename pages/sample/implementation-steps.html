@@ -1,0 +1,121 @@
+---
+title: Implementation steps
+landing: Get started
+layout: page.njk
+permalink: "/get-started/implementation-steps.html"
+---
+
+<div class="row">
+ <div class="col-md-3">
+  <nav aria-labelledby="side-navigation-label" class="side-navigation sticky-6 overflow-auto">
+   <span class="sr-only" id="side-navigation-label">Side navigation</span>
+   <ul class="list-navigation">
+    <li>
+     <a href="/download-and-setup.html" class="landing back">Download and setup</a>
+    </li>
+    <li>
+     <a href="/get-started/implementation-steps.html" class="active">Implementation steps</a>
+    </li>
+    <li>
+     <a href="/get-started/eleventy.html">Eleventy</a>
+    </li>
+   </ul>
+  </nav>
+ </div>
+
+
+ <div class="col-md-9 p-b-lg">
+  <h1 id="Downloadandsetup" class="mt-lg-0">Implementation steps</h1>
+
+
+  <p>Follow these steps to upgrade to the latest template.</p>
+
+  <ol class="cagov-step-list">
+   <li><span class="bold">Prepare for your upgrade</span>
+    <br />
+    <span class="cagov-step-list-content">
+     <p>Before you start, save a copy of your current site. </p>
+     <p>Then, identify a framework. Current frameworks include HTML, Eleventy, .NET Core MVC, and React. You’ll usually
+      pick the framework you’re currently on.</p>
+    </span>
+   </li>
+
+   <li><span class="bold">Review Template updates</span>
+    <br />
+    <span class="cagov-step-list-content">
+     <p>To understand the changes in the code, perform a code comparison in your framework repository. This helps you
+      understand the work you need to do. You can also learn how to do a <a
+       href="https://docs.github.com/en/pull-requests/committing-changes-to-your-project/viewing-and-comparing-commits/comparing-commits">code
+       comparison in GitHub</a>.</p>
+    </span>
+   </li>
+
+   <li><span class="bold">Download the State Web Template from GitHub</span>
+    <br />
+    <span class="cagov-step-list-content">
+     <p>
+      Download the latest Template release for your framework:
+     </p>
+     <ul>
+      <li><a href="https://github.com/Office-of-Digital-Services/California-State-Web-Template-HTML">HTML</a> </li>
+      <li><a href="https://github.com/Office-of-Digital-Services/California-State-Web-Template-eleventy">Eleventy</a>
+      </li>
+      <li><a href="https://github.com/Office-of-Digital-Services/California-State-Web-Template-NET-Core-MVC">ASP.NET
+        Core MVC</a></li>
+      <li><a href="https://github.com/Office-of-Digital-Services/California-State-Web-Template-react">React</a></li>
+     </ul>
+     <p>This is also a good time to have your security office perform a scan of the files.</p>
+
+    </span>
+   </li>
+
+   <li><span class="bold">Look for CSS, JavaScript, and structural changes</span>
+    <br />
+    <span class="cagov-step-list-content">
+     <p>Most changes are made in:</p>
+     <ul>
+      <li>The CSS and JavaScript source files in the <code>/src/scss/</code> and <code>/src/js/</code> folders</li>
+      <li>Includes and modules folders <code>/src/_includes/</code> and <code>/src/_includes/modules/</code></li>
+     </ul>
+    </span>
+   </li>
+
+   <li><span class="bold">Replace older library files with the updated ones</span>
+    <br />
+    <span class="cagov-step-list-content">
+     <p>The Template has CSS and JavaScript (JS) code base. You will replace these source files with newer ones or point
+      to the corresponding CDN links found on the <a href="/cdn.html">state web template CDN</a> page. </p>
+     <p>Custom CSS and JS code may be impacted when you update these files. Keep your customizations separate from the
+      core template source code for an easier update process.</p>
+    </span>
+   </li>
+
+   <li><span class="bold">Integrate the new template into your environment</span>
+    <br />
+    <span class="cagov-step-list-content">
+     <p>From your code comparison, make the necessary changes and updates to your code. Usually, incremental versions
+      will not require any structural template adjustments. You only need to replace core CSS (<code>/src/scss/</code>)
+      and JS (<code>/src/js/</code>) files or update the CDN links. </p>
+    </span>
+   </li>
+
+   <li><span class="bold">Perform necessary tests and reviews</span>
+    <br />
+    <span class="cagov-step-list-content">
+     <p>After core source code has been updated, you should thoroughly review and test your website or web application
+      before pushing to production. This includes QA, code and heuristic reviews, and accessibility testing. Do not
+      forget to inspect for code level errors or conflicts.</p>
+    </span>
+   </li>
+
+   <li><span class="bold">Release to production</span>
+    <br />
+    <span class="cagov-step-list-content">
+     <p>You’re now ready to follow your organization's change management and release process. You may want to perform
+      another QA and verify that everything works as expected in the production environment.</p>
+    </span>
+   </li>
+
+  </ol>
+ </div>
+</div>

@@ -21,11 +21,11 @@ var entityMap = {
  }
  
  function copyCode(btnElem) {
-  var codeblock = btnElem.parentElement.querySelector("pre code, textarea.sourcecode");
+  var codeblock = btnElem.previousElementSibling;
   if (codeblock) {
    // copy the text
-   if (codeblock.tagName.toLowerCase() == "code") {
-     navigator.clipboard.writeText(codeblock.innerText);
+   if (codeblock.tagName.toLowerCase() == "pre") {
+     navigator.clipboard.writeText(codeblock.querySelector("code").innerText);
    } else {
      navigator.clipboard.writeText(codeblock.value);
    }
@@ -35,8 +35,9 @@ var entityMap = {
    window.getSelection().removeAllRanges();
    window.getSelection().addRange(range);
    // replace the button icon
-   btnElem.querySelector("span").classList.remove("ca-gov-icon-copy");
-   btnElem.querySelector("span").classList.add("ca-gov-icon-check-mark");
+   //btnElem.querySelector("span").classList.remove("ca-gov-icon-copy");
+   //btnElem.querySelector("span").classList.add("ca-gov-icon-check-mark");
+   btnElem.innerHTML = '<span class="ca-gov-icon-check-mark"></span> Code copied';
   }
  }
  

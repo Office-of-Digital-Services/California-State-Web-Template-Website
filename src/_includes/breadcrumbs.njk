@@ -1,5 +1,5 @@
-<nav aria-label="You are here">
- <ol class="breadcrumb">
+<nav aria-label="You are here" class="breadcrumbs">
+ <ol>
   <li><a href="../index.html" title="Home page">Home</a></li>
    {% for nav in breadcrumbs.pages %}
     {% if helpers.getURL(nav.url, page.url) %} 

@@ -24,7 +24,8 @@ permalink: "components/form-elements.html"
   line-height: 50px;
   letter-spacing: -4px;
   height: 26px;
- }
+  speak: none;
+}
 </style>
 
 
@@ -58,66 +59,61 @@ permalink: "components/form-elements.html"
 </ul>
 
 <!--TABS-->
-<div class="tab-group responsive">
- <ul id="tabs7" class="nav nav-tabs" role="tablist">
-  <li class="nav-item" role="presentation">
-   <a id="tab-example7" href="#pane-example7" class="nav-link active" data-bs-toggle="tab" role="tab">Example</a>
+<div class="tabs responsive">
+ <ul class="nav-tabs">
+  <li>
+   <a href="#section1">Example</a>
   </li>
-  <li class="nav-item" role="presentation">
-   <a id="tab-html7" href="#pane-html7" class="nav-link" data-bs-toggle="tab" role="tab">Source code</a>
+  <li>
+   <a href="#section2">Source code</a>
   </li>
-
  </ul>
 
-
- <div id="tab-content" class="tab-content">
-  <!--Examples-->
-  <div id="pane-example7" class="card tab-pane fade show active" role="tabpanel" aria-labelledby="tab-example7">
-   <div class="card-header" id="heading-example7">
-    <a data-bs-toggle="collapse" href="#collapse-example7" data-parent="#tab-content" aria-expanded="true"
-     aria-controls="collapse-example7" data-hash="#pane-example7" title="Example tab header">
-     Example
-    </a>
-   </div>
-   <div id="collapse-example7" class="collapse show" role="tabpanel" aria-labelledby="heading-example7">
-    <div class="card-body p-b">
-     <div class="bg-gray-50 p-a">
-      <div class="row">
-       <div class="col-sm-3">
-        <p class="outline-color blue-arrow text-right">Label</p>
-       </div>
-       <div class="col-sm-9">{% include "../../src/_includes/modules/form-label.html" %}</div>
+ <!--Examples-->
+ <section id="section1" class="tab-pane">
+  <div class="card-header" id="heading-example7">
+   <a data-bs-toggle="collapse" href="#collapse-example7" aria-expanded="true" aria-controls="collapse-example7"
+    data-hash="#pane-example7" title="Example tab header">
+    Example
+   </a>
+  </div>
+  <div id="collapse-example7" class="collapse show p-0 m-0 brd-0" role="tabpanel" aria-labelledby="heading-example7">
+   <div class="p-a-sm p-b">
+    <div class="p-a">
+     <div class="row">
+      <div class="col-sm-3">
+       <p class="color-primary blue-arrow text-right">Label</p>
       </div>
+      <div class="col-sm-9">{% include "../../src/_includes/modules/form-label.html" %}</div>
      </div>
-
-
-
-
     </div>
+
+
+
+
    </div>
   </div>
+ </section>
 
 
 
-  <!--HTML-->
-  <div id="pane-html7" class="card tab-pane fade" role="tabpanel" aria-labelledby="tab-html7">
-   <div class="card-header" id="heading-html7">
-    <a class="collapsed" data-bs-toggle="collapse" href="#collapse-html7" data-parent="#tab-content"
-     aria-expanded="false" aria-controls="collapse-html7" data-hash="#pane-html7" title="HTML Source code tab header">
-     Source code
-    </a>
-   </div>
-   <div id="collapse-html7" class="collapse" role="tabpanel" aria-labelledby="heading-html7">
-    <div class="card-body">
-     <pre style="max-height: 300px;"><code>{% include "../../src/_includes/modules/form-label.html" %}</code>
+ <!--HTML-->
+ <section id="section2" class="tab-pane">
+  <div class="card-header" id="heading-html7">
+   <a class="collapsed" data-bs-toggle="collapse" href="#collapse-html7" aria-expanded="false"
+    aria-controls="collapse-html7" data-hash="#pane-html7" title="HTML Source code tab header">
+    Source code
+   </a>
+  </div>
+  <div id="collapse-html7" class="collapse p-0 m-0 brd-0" role="tabpanel" aria-labelledby="heading-html7">
+   <div class="p-a-sm">
+    <pre style="max-height: 300px;"><code>{% include "../../src/_includes/modules/form-label.html" %}</code>
    </pre>
 
-    </div>
    </div>
   </div>
+ </section>
 
-
- </div>
 </div>
 <!--END TABS-->
 
@@ -128,80 +124,77 @@ permalink: "components/form-elements.html"
 
 
 <!--TABS-->
-<div class="tab-group responsive">
- <ul id="tabs2" class="nav nav-tabs" role="tablist">
-  <li class="nav-item" role="presentation">
-   <a id="tab-example2" href="#pane-example2" class="nav-link active" data-bs-toggle="tab" role="tab">Example</a>
+<div class="tabs responsive">
+ <ul class="nav-tabs">
+  <li>
+   <a href="#section2">Example</a>
   </li>
-  <li class="nav-item" role="presentation">
-   <a id="tab-html2" href="#pane-html2" class="nav-link" data-bs-toggle="tab" role="tab">Source code</a>
+  <li>
+   <a href="#section3">Source code</a>
   </li>
  </ul>
 
-
- <div id="tab-content" class="tab-content">
-  <!--Examples-->
-  <div id="pane-example2" class="card tab-pane fade show active" role="tabpanel" aria-labelledby="tab-example2">
-   <div class="card-header" id="heading-example2">
-    <a data-bs-toggle="collapse" href="#collapse-example2" data-parent="#tab-content" aria-expanded="true"
-     aria-controls="collapse-example2" data-hash="#pane-example2" title="Example tab header">
-     Example
-    </a>
-   </div>
-   <div id="collapse-example2" class="collapse show" role="tabpanel" aria-labelledby="heading-example2">
-    <div class="card-body">
-     <div class="bg-gray-50 p-a">
-      <h3 class="h4 m-t-0">Basic</h3>
-      <div class="row">
-       <div class="col-sm-3">
-        <p class="mt-4 pt-2 outline-color blue-arrow text-right">Text field</p>
-       </div>
-       <div class="col-sm-9">{% include "../../src/_includes/modules/form-textfield.html" %}</div>
+ <!--Examples-->
+ <section id="section3" class="tab-pane">
+  <div class="card-header" id="heading-example2">
+   <a data-bs-toggle="collapse" href="#collapse-example2" aria-expanded="true" aria-controls="collapse-example2"
+    data-hash="#pane-example2" title="Example tab header">
+    Example
+   </a>
+  </div>
+  <div id="collapse-example2" class="collapse show p-0 m-0 brd-0" role="tabpanel" aria-labelledby="heading-example2">
+   <div class="p-a-sm">
+    <div class="p-a">
+     <h3 class="h4 m-t-0">Basic</h3>
+     <div class="row">
+      <div class="col-sm-3">
+       <p class="mt-4 pt-2 color-primary blue-arrow text-right">Text field</p>
       </div>
+      <div class="col-sm-9">{% include "../../src/_includes/modules/form-textfield.html" %}</div>
      </div>
-
-
-     <div class="bg-gray-50 p-a m-t-md">
-      <h3 class="h4 m-t-0">Required</h3>
-      <div class="row">
-       <div class="col-sm-3">
-        <p class="mt-4 pt-2 outline-color blue-arrow text-right">Text field</p>
-       </div>
-       <div class="col-sm-9">{% include "../../src/_includes/modules/form-textfield-required.html" %}</div>
-      </div>
-     </div>
-
-
-
     </div>
+
+
+    <div class="p-a m-t-md">
+     <h3 class="h4 m-t-0">Required</h3>
+     <div class="row">
+      <div class="col-sm-3">
+       <p class="mt-4 pt-2 color-primary blue-arrow text-right">Text field</p>
+      </div>
+      <div class="col-sm-9">{% include "../../src/_includes/modules/form-textfield-required.html" %}</div>
+     </div>
+    </div>
+
+
+
    </div>
   </div>
+ </section>
 
 
 
-  <!--HTML-->
-  <div id="pane-html2" class="card tab-pane fade" role="tabpanel" aria-labelledby="tab-html2">
-   <div class="card-header" id="heading-html2">
-    <a class="collapsed" data-bs-toggle="collapse" href="#collapse-html2" data-parent="#tab-content"
-     aria-expanded="false" aria-controls="collapse-html2" data-hash="#pane-html2" title="HTML Source code tab header">
-     Source code
-    </a>
-   </div>
-   <div id="collapse-html2" class="collapse" role="tabpanel" aria-labelledby="heading-html2">
-    <div class="card-body">
-     <h3 class="h4 m-t-0">Basic</h3>
-     <pre style="max-height: 300px;"><code>{% include "../../src/_includes/modules/form-textfield.html" %}</code>
+ <!--HTML-->
+ <section id="section4" class="tab-pane">
+  <div class="card-header" id="heading-html2">
+   <a class="collapsed" data-bs-toggle="collapse" href="#collapse-html2" aria-expanded="false"
+    aria-controls="collapse-html2" data-hash="#pane-html2" title="HTML Source code tab header">
+    Source code
+   </a>
+  </div>
+  <div id="collapse-html2" class="collapse p-0 m-0 brd-0" role="tabpanel" aria-labelledby="heading-html2">
+   <div class="p-a-sm">
+    <h3 class="h4 m-t-0">Basic</h3>
+    <pre style="max-height: 300px;"><code>{% include "../../src/_includes/modules/form-textfield.html" %}</code>
     </pre>
 
-     <h3 class="h4">Required</h3>
-     <pre style="max-height: 300px;"><code>{% include "../../src/_includes/modules/form-textfield-required.html" %}</code>
+    <h3 class="h4">Required</h3>
+    <pre style="max-height: 300px;"><code>{% include "../../src/_includes/modules/form-textfield-required.html" %}</code>
    </pre>
-    </div>
    </div>
   </div>
+ </section>
 
 
- </div>
 </div>
 <!--END TABS-->
 
@@ -214,82 +207,77 @@ permalink: "components/form-elements.html"
 <p>Instructional, error messages, and placeholder text should not provide the same message as the label.</p>
 
 <!--TABS-->
-<div class="tab-group responsive">
- <ul id="tabs1" class="nav nav-tabs" role="tablist">
-  <li class="nav-item" role="presentation">
-   <a id="tab-example1" href="#pane-example1" class="nav-link active" data-bs-toggle="tab" role="tab">Example</a>
+<div class="tabs responsive">
+ <ul class="nav-tabs">
+  <li>
+   <a href="#section5">Example</a>
   </li>
-  <li class="nav-item" role="presentation">
-   <a id="tab-html1" href="#pane-html1" class="nav-link" data-bs-toggle="tab" role="tab">Source code</a>
+  <li>
+   <a href="#section6">Source code</a>
   </li>
-
  </ul>
 
-
- <div id="tab-content" class="tab-content">
-  <!--Examples-->
-  <div id="pane-example1" class="card tab-pane fade show active" role="tabpanel" aria-labelledby="tab-example1">
-   <div class="card-header" id="heading-example1">
-    <a data-bs-toggle="collapse" href="#collapse-example1" data-parent="#tab-content" aria-expanded="true"
-     aria-controls="collapse-example1" data-hash="#pane-example1" title="Example tab header">
-     Example
-    </a>
-   </div>
-   <div id="collapse-example1" class="collapse show" role="tabpanel" aria-labelledby="heading-example1">
-    <div class="card-body">
+ <!--Examples-->
+ <section id="section5" class="tab-pane">
+  <div class="card-header" id="heading-example1">
+   <a data-bs-toggle="collapse" href="#collapse-example1" aria-expanded="true" aria-controls="collapse-example1"
+    data-hash="#pane-example1" title="Example tab header">
+    Example
+   </a>
+  </div>
+  <div id="collapse-example1" class="collapse show p-0 m-0 brd-0" role="tabpanel" aria-labelledby="heading-example1">
+   <div class="p-a-sm">
 
 
-     <div class="bg-gray-50 p-a">
-      <h3 class="h4 m-t-0">Basic</h3>
-      <div class="row">
-       <div class="col-sm-3">
-        <p class="mt-4 pt-2 outline-color blue-arrow text-right">Text area</p>
-       </div>
-       <div class="col-sm-9">{% include "../../src/_includes/modules/form-textarea.html" %}</div>
+    <div class="p-a">
+     <h3 class="h4 m-t-0">Basic</h3>
+     <div class="row">
+      <div class="col-sm-3">
+       <p class="mt-4 pt-2 color-primary blue-arrow text-right">Text area</p>
       </div>
+      <div class="col-sm-9">{% include "../../src/_includes/modules/form-textarea.html" %}</div>
      </div>
-
-
-     <div class="bg-gray-50 p-a m-t-md">
-      <h3 class="h4 m-t-0">Required</h3>
-      <div class="row">
-       <div class="col-sm-3">
-        <p class="mt-4 pt-2 outline-color blue-arrow text-right">Text area</p>
-       </div>
-       <div class="col-sm-9">{% include "../../src/_includes/modules/form-textarea-required.html" %}</div>
-      </div>
-     </div>
-
     </div>
+
+
+    <div class="p-a m-t-md">
+     <h3 class="h4 m-t-0">Required</h3>
+     <div class="row">
+      <div class="col-sm-3">
+       <p class="mt-4 pt-2 color-primary blue-arrow text-right">Text area</p>
+      </div>
+      <div class="col-sm-9">{% include "../../src/_includes/modules/form-textarea-required.html" %}</div>
+     </div>
+    </div>
+
    </div>
   </div>
+ </section>
 
 
 
-  <!--HTML-->
-  <div id="pane-html1" class="card tab-pane fade" role="tabpanel" aria-labelledby="tab-html1">
-   <div class="card-header" id="heading-html1">
-    <a class="collapsed" data-bs-toggle="collapse" href="#collapse-html1" data-parent="#tab-content"
-     aria-expanded="false" aria-controls="collapse-html1" data-hash="#pane-html1" title="HTML Source code tab header">
-     Source code
-    </a>
-   </div>
-   <div id="collapse-html1" class="collapse" role="tabpanel" aria-labelledby="heading-html1">
-    <div class="card-body">
-     <h3 class="h4 m-t-0">Basic</h3>
-     <pre style="max-height: 300px;"><code>{% include "../../src/_includes/modules/form-textarea.html" %}</code>
+ <!--HTML-->
+ <section id="section6" class="tab-pane">
+  <div class="card-header" id="heading-html1">
+   <a class="collapsed" data-bs-toggle="collapse" href="#collapse-html1" aria-expanded="false"
+    aria-controls="collapse-html1" data-hash="#pane-html1" title="HTML Source code tab header">
+    Source code
+   </a>
+  </div>
+  <div id="collapse-html1" class="collapse p-0 m-0 brd-0" role="tabpanel" aria-labelledby="heading-html1">
+   <div class="p-a-sm">
+    <h3 class="h4 m-t-0">Basic</h3>
+    <pre style="max-height: 300px;"><code>{% include "../../src/_includes/modules/form-textarea.html" %}</code>
     </pre>
 
-     <h3 class="h4">Required</h3>
-     <pre style="max-height: 300px;"><code>{% include "../../src/_includes/modules/form-textarea-required.html" %}</code>
+    <h3 class="h4">Required</h3>
+    <pre style="max-height: 300px;"><code>{% include "../../src/_includes/modules/form-textarea-required.html" %}</code>
    </pre>
 
-    </div>
    </div>
   </div>
+ </section>
 
-
- </div>
 </div>
 <!--END TABS-->
 
@@ -300,59 +288,56 @@ permalink: "components/form-elements.html"
 <p>A checkbox allows visitors to select one or more options from a number of choices.</p>
 
 <!--TABS-->
-<div class="tab-group responsive">
- <ul id="tabs3" class="nav nav-tabs" role="tablist">
-  <li class="nav-item" role="presentation">
-   <a id="tab-example3" href="#pane-example3" class="nav-link active" data-bs-toggle="tab" role="tab">Example</a>
+<div class="tabs responsive">
+ <ul class="nav-tabs">
+  <li>
+   <a href="#section7">Example</a>
   </li>
-  <li class="nav-item" role="presentation">
-   <a id="tab-html3" href="#pane-html3" class="nav-link" data-bs-toggle="tab" role="tab">Source code</a>
+  <li>
+   <a href="#section8">Source code</a>
   </li>
-
  </ul>
 
 
- <div id="tab-content" class="tab-content">
-  <!--Examples-->
-  <div id="pane-example3" class="card tab-pane fade show active" role="tabpanel" aria-labelledby="tab-example3">
-   <div class="card-header" id="heading-example3">
-    <a data-bs-toggle="collapse" href="#collapse-example3" data-parent="#tab-content" aria-expanded="true"
-     aria-controls="collapse-example3" data-hash="#pane-example3" title="Example tab header">
-     Example
-    </a>
-   </div>
-   <div id="collapse-example3" class="collapse show" role="tabpanel" aria-labelledby="heading-example3">
-    <div class="card-body p-b">
+ <!--Examples-->
+ <section id="section7" class="tab-pane">
+  <div class="card-header" id="heading-example3">
+   <a data-bs-toggle="collapse" href="#collapse-example3" aria-expanded="true" aria-controls="collapse-example3"
+    data-hash="#pane-example3" title="Example tab header">
+    Example
+   </a>
+  </div>
+  <div id="collapse-example3" class="collapse show p-0 m-0 brd-0" role="tabpanel" aria-labelledby="heading-example3">
+   <div class="p-a-sm p-b">
 
 
-     {% include "../../src/_includes/modules/form-checkbox.html" %}
+    {% include "../../src/_includes/modules/form-checkbox.html" %}
 
 
-    </div>
    </div>
   </div>
+ </section>
 
 
 
-  <!--HTML-->
-  <div id="pane-html3" class="card tab-pane fade" role="tabpanel" aria-labelledby="tab-html3">
-   <div class="card-header" id="heading-html3">
-    <a class="collapsed" data-bs-toggle="collapse" href="#collapse-html3" data-parent="#tab-content"
-     aria-expanded="false" aria-controls="collapse-html3" data-hash="#pane-html3" title="HTML Source code tab header">
-     Source code
-    </a>
-   </div>
-   <div id="collapse-html3" class="collapse" role="tabpanel" aria-labelledby="heading-html3">
-    <div class="card-body">
-     <pre style="max-height: 300px;"><code>{% include "../../src/_includes/modules/form-checkbox.html" %}</code>
+ <!--HTML-->
+ <section id="section8" class="tab-pane">
+  <div class="card-header" id="heading-html3">
+   <a class="collapsed" data-bs-toggle="collapse" href="#collapse-html3" aria-expanded="false"
+    aria-controls="collapse-html3" data-hash="#pane-html3" title="HTML Source code tab header">
+    Source code
+   </a>
+  </div>
+  <div id="collapse-html3" class="collapse p-0 m-0 brd-0" role="tabpanel" aria-labelledby="heading-html3">
+   <div class="p-a-sm">
+    <pre style="max-height: 300px;"><code>{% include "../../src/_includes/modules/form-checkbox.html" %}</code>
    </pre>
 
-    </div>
    </div>
   </div>
+ </section>
 
 
- </div>
 </div>
 <!--END TABS-->
 
@@ -365,59 +350,56 @@ permalink: "components/form-elements.html"
 <p>A radio button allows visitors to select only one option from a number of choices.</p>
 
 <!--TABS-->
-<div class="tab-group responsive">
- <ul id="tabs4" class="nav nav-tabs" role="tablist">
-  <li class="nav-item" role="presentation">
-   <a id="tab-example4" href="#pane-example4" class="nav-link active" data-bs-toggle="tab" role="tab">Example</a>
+<div class="tabs responsive">
+ <ul class="nav-tabs">
+  <li>
+   <a href="#section9">Example</a>
   </li>
-  <li class="nav-item" role="presentation">
-   <a id="tab-html4" href="#pane-html4" class="nav-link" data-bs-toggle="tab" role="tab">Source code</a>
+  <li>
+   <a href="#section10">Source code</a>
   </li>
-
  </ul>
 
 
- <div id="tab-content" class="tab-content">
-  <!--Examples-->
-  <div id="pane-example4" class="card tab-pane fade show active" role="tabpanel" aria-labelledby="tab-example4">
-   <div class="card-header" id="heading-example4">
-    <a data-bs-toggle="collapse" href="#collapse-example4" data-parent="#tab-content" aria-expanded="true"
-     aria-controls="collapse-example4" data-hash="#pane-example4" title="Example tab header">
-     Example
-    </a>
-   </div>
-   <div id="collapse-example4" class="collapse show" role="tabpanel" aria-labelledby="heading-example4">
-    <div class="card-body p-b">
+ <!--Examples-->
+ <section id="section9" class="tab-pane">
+  <div class="card-header" id="heading-example4">
+   <a data-bs-toggle="collapse" href="#collapse-example4" aria-expanded="true" aria-controls="collapse-example4"
+    data-hash="#pane-example4" title="Example tab header">
+    Example
+   </a>
+  </div>
+  <div id="collapse-example4" class="collapse show p-0 m-0 brd-0" role="tabpanel" aria-labelledby="heading-example4">
+   <div class="p-a-sm p-b">
 
 
-     {% include "../../src/_includes/modules/form-radio.html" %}
+    {% include "../../src/_includes/modules/form-radio.html" %}
 
 
-    </div>
    </div>
   </div>
+ </section>
 
 
 
-  <!--HTML-->
-  <div id="pane-html4" class="card tab-pane fade" role="tabpanel" aria-labelledby="tab-html4">
-   <div class="card-header" id="heading-html4">
-    <a class="collapsed" data-bs-toggle="collapse" href="#collapse-html4" data-parent="#tab-content"
-     aria-expanded="false" aria-controls="collapse-html4" data-hash="#pane-html4" title="HTML Source code tab header">
-     Source code
-    </a>
-   </div>
-   <div id="collapse-html4" class="collapse" role="tabpanel" aria-labelledby="heading-html4">
-    <div class="card-body">
-     <pre style="max-height: 300px;"><code>{% include "../../src/_includes/modules/form-radio.html" %}</code>
+ <!--HTML-->
+ <section id="section10" class="tab-pane">
+  <div class="card-header" id="heading-html4">
+   <a class="collapsed" data-bs-toggle="collapse" href="#collapse-html4" aria-expanded="false"
+    aria-controls="collapse-html4" data-hash="#pane-html4" title="HTML Source code tab header">
+    Source code
+   </a>
+  </div>
+  <div id="collapse-html4" class="collapse p-0 m-0 brd-0" role="tabpanel" aria-labelledby="heading-html4">
+   <div class="p-a-sm">
+    <pre style="max-height: 300px;"><code>{% include "../../src/_includes/modules/form-radio.html" %}</code>
    </pre>
 
-    </div>
    </div>
   </div>
+ </section>
 
 
- </div>
 </div>
 <!--END TABS-->
 
@@ -431,59 +413,56 @@ permalink: "components/form-elements.html"
  may select.</p>
 
 <!--TABS-->
-<div class="tab-group responsive">
- <ul id="tabs5" class="nav nav-tabs" role="tablist">
-  <li class="nav-item" role="presentation">
-   <a id="tab-example5" href="#pane-example5" class="nav-link active" data-bs-toggle="tab" role="tab">Example</a>
+<div class="tabs responsive">
+ <ul class="nav-tabs">
+  <li>
+   <a href="#section11">Example</a>
   </li>
-  <li class="nav-item" role="presentation">
-   <a id="tab-html5" href="#pane-html5" class="nav-link" data-bs-toggle="tab" role="tab">Source code</a>
+  <li>
+   <a href="#section12">Source code</a>
   </li>
-
  </ul>
 
 
- <div id="tab-content" class="tab-content">
-  <!--Examples-->
-  <div id="pane-example5" class="card tab-pane fade show active" role="tabpanel" aria-labelledby="tab-example5">
-   <div class="card-header" id="heading-example5">
-    <a data-bs-toggle="collapse" href="#collapse-example5" data-parent="#tab-content" aria-expanded="true"
-     aria-controls="collapse-example5" data-hash="#pane-example5" title="Example tab header">
-     Example
-    </a>
-   </div>
-   <div id="collapse-example5" class="collapse show" role="tabpanel" aria-labelledby="heading-example5">
-    <div class="card-body p-b">
+ <!--Examples-->
+ <section id="section11" class="tab-pane">
+  <div class="card-header" id="heading-example5">
+   <a data-bs-toggle="collapse" href="#collapse-example5" aria-expanded="true" aria-controls="collapse-example5"
+    data-hash="#pane-example5" title="Example tab header">
+    Example
+   </a>
+  </div>
+  <div id="collapse-example5" class="collapse show p-0 m-0 brd-0" role="tabpanel" aria-labelledby="heading-example5">
+   <div class="p-a-sm p-b">
 
 
-     {% include "../../src/_includes/modules/form-dropdown.html" %}
+    {% include "../../src/_includes/modules/form-dropdown.html" %}
 
 
-    </div>
    </div>
   </div>
+ </section>
 
 
 
-  <!--HTML-->
-  <div id="pane-html5" class="card tab-pane fade" role="tabpanel" aria-labelledby="tab-html5">
-   <div class="card-header" id="heading-html5">
-    <a class="collapsed" data-bs-toggle="collapse" href="#collapse-html5" data-parent="#tab-content"
-     aria-expanded="false" aria-controls="collapse-html5" data-hash="#pane-html5" title="HTML Source code tab header">
-     Source code
-    </a>
-   </div>
-   <div id="collapse-html5" class="collapse" role="tabpanel" aria-labelledby="heading-html5">
-    <div class="card-body">
-     <pre style="max-height: 300px;"><code>{% include "../../src/_includes/modules/form-dropdown.html" %}</code>
+ <!--HTML-->
+ <section id="section12" class="tab-pane">
+  <div class="card-header" id="heading-html5">
+   <a class="collapsed" data-bs-toggle="collapse" href="#collapse-html5" aria-expanded="false"
+    aria-controls="collapse-html5" data-hash="#pane-html5" title="HTML Source code tab header">
+    Source code
+   </a>
+  </div>
+  <div id="collapse-html5" class="collapse p-0 m-0 brd-0" role="tabpanel" aria-labelledby="heading-html5">
+   <div class="p-a-sm">
+    <pre style="max-height: 300px;"><code>{% include "../../src/_includes/modules/form-dropdown.html" %}</code>
    </pre>
 
-    </div>
    </div>
   </div>
+ </section>
 
 
- </div>
 </div>
 <!--END TABS-->
 
@@ -497,59 +476,58 @@ permalink: "components/form-elements.html"
  to a server using form submission.</p>
 
 <!--TABS-->
-<div class="tab-group responsive">
- <ul id="tabs6" class="nav nav-tabs" role="tablist">
-  <li class="nav-item" role="presentation">
-   <a id="tab-example6" href="#pane-example6" class="nav-link active" data-bs-toggle="tab" role="tab">Example</a>
+<div class="tabs responsive">
+ <ul class="nav-tabs">
+  <li>
+   <a href="#section13">Example</a>
   </li>
-  <li class="nav-item" role="presentation">
-   <a id="tab-html6" href="#pane-html6" class="nav-link" data-bs-toggle="tab" role="tab">Source code</a>
+  <li>
+   <a href="#section14">Source code</a>
   </li>
-
  </ul>
 
 
- <div id="tab-content" class="tab-content">
-  <!--Examples-->
-  <div id="pane-example6" class="card tab-pane fade show active" role="tabpanel" aria-labelledby="tab-example6">
-   <div class="card-header" id="heading-example6">
-    <a data-bs-toggle="collapse" href="#collapse-example6" data-parent="#tab-content" aria-expanded="true"
-     aria-controls="collapse-example6" data-hash="#pane-example6" title="Example tab header">
-     Example
-    </a>
-   </div>
-   <div id="collapse-example6" class="collapse show" role="tabpanel" aria-labelledby="heading-example6">
-    <div class="card-body p-b">
+
+ <!--Examples-->
+ <section id="section13" class="tab-pane">
+  <div class="card-header" id="heading-example6">
+   <a data-bs-toggle="collapse" href="#collapse-example6" aria-expanded="true" aria-controls="collapse-example6"
+    data-hash="#pane-example6" title="Example tab header">
+    Example
+   </a>
+  </div>
+  <div id="collapse-example6" class="collapse sho p-0 m-0 brd-0" role="tabpanel" aria-labelledby="heading-example6">
+   <div class="p-a-sm p-b">
 
 
-     {% include "../../src/_includes/modules/form-file-input.html" %}
+    {% include "../../src/_includes/modules/form-file-input.html" %}
 
 
-    </div>
    </div>
   </div>
+ </section>
 
 
 
-  <!--HTML-->
-  <div id="pane-html6" class="card tab-pane fade" role="tabpanel" aria-labelledby="tab-html6">
-   <div class="card-header" id="heading-html6">
-    <a class="collapsed" data-bs-toggle="collapse" href="#collapse-html6" data-parent="#tab-content"
-     aria-expanded="false" aria-controls="collapse-html6" data-hash="#pane-html6" title="HTML Source code tab header">
-     Source code
-    </a>
-   </div>
-   <div id="collapse-html6" class="collapse" role="tabpanel" aria-labelledby="heading-html6">
-    <div class="card-body">
-     <pre style="max-height: 300px;"><code>{% include "../../src/_includes/modules/form-file-input.html" %}</code>
+ <!--HTML-->
+ <section id="section14" class="tab-pane">
+  <div class="card-header" id="heading-html6">
+   <a class="collapsed" data-bs-toggle="collapse" href="#collapse-html6" aria-expanded="false"
+    aria-controls="collapse-html6" data-hash="#pane-html6" title="HTML Source code tab header">
+    Source code
+   </a>
+  </div>
+  <div id="collapse-html6" class="collapse p-0 m-0 brd-0" role="tabpanel" aria-labelledby="heading-html6">
+   <div class="p-a-sm">
+    <pre style="max-height: 300px;"><code>{% include "../../src/_includes/modules/form-file-input.html" %}</code>
    </pre>
 
-    </div>
    </div>
   </div>
+ </section>
 
 
- </div>
+
 </div>
 <!--END TABS-->
 

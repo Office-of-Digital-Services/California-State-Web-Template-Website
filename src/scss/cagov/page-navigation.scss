@@ -3,7 +3,9 @@
 ----------------------------------------- */
 
 // List navigation
-.list-navigation {
+.side-navigation ul, .list-navigation {
+ margin-left: 0;
+ padding-left: 0;
  li {
   list-style: none;
   margin: 0;
@@ -19,25 +21,25 @@
    padding-top: 0.7rem;
    padding-left: 1rem;
    border-bottom: 1px solid $gray-100;
-&.landing {
- font-weight: $font-weight-7;
- &.active {
-  background-color: $gray-75;
-  &:hover, &:focus {
-   background-color: $gray-100;
-  }
- }
- &.back {
-  padding-left: 1.5rem;
-  &::after {
-   content: "\e668";
-   position: absolute;
-   font-family: "CaGov";
-   left:0;
-   top: .65rem;
-  }
- }
-}
+   &.landing {
+    font-weight: $font-weight-7;
+    &.active {
+     background-color: $gray-75;
+     &:hover, &:focus {
+      background-color: $gray-100;
+     }
+    }
+    &.back {
+     padding-left: 1.5rem;
+     &::after {
+      content: "\e668";
+      position: absolute;
+      font-family: "CaGov";
+      left:0;
+      top: .65rem;
+     }
+    }
+   }
    &.active {
     color: $gray-800;
     text-decoration: none;
@@ -67,9 +69,10 @@
   }
   a:focus {
    @include outline(2px);
+   outline-offset: -2px;
   }
 
-// second level
+  // second level
   ul {
    padding-left: 0;
    li {

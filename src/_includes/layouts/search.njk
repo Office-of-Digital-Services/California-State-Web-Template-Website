@@ -9,6 +9,7 @@
   <meta name="Author" content="State of California" />
   <meta name="Description" content="State of California" />
   <meta name="Keywords" content="California, government" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
   {% include "../head-js-css.njk" %}
       <!--hiding search link from page navigation sinse the search box is already open-->
     <style>
@@ -53,15 +54,15 @@
 			<!--Search result section-->
             <div class="section section-default">
                 <div class="container search-results-header">
-                    <!--Uncomment if you prefer to use original google search box. Be advided that original custom search box is not meeting WCAG accessibility standards. -->
+                    <!--Uncomment if you prefer to use original google search box. Be advised that original custom search box is not meeting WCAG accessibility standards. -->
                     <!--<gcse:searchbox-only resultsUrl="/serp.html" enableAutoComplete="true"></gcse:searchbox-only>-->
 
-                    <form id="Search" class="pos-rel" action="/serp.html">
+                    <form id="Search" class="d-flex" action="?">
                         <span class="sr-only" id="SearchInput">Custom Google Search</span>
-                        <input type="text" id="q" name="q" aria-labelledby="SearchInput"
+                        <input type="search" id="q" name="q" aria-labelledby="SearchInput"
                             placeholder="Search this website" class="search-textfield height-40" style="width:95%" />
                         <button type="submit"
-                            class="gsc-search-button width-60 height-40 pos-abs color-white right-0 top-0 border-0 bg-gray-600 bg-gray-800-hover"><span
+                            class="gsc-search-button width-60 height-40 color-white border-0 bg-gray-600 bg-gray-800-hover"><span
                                 class="ca-gov-icon-search" aria-hidden="true"></span><span
                                 class="sr-only">Submit</span></button>
                     </form>
@@ -100,19 +101,8 @@
         var s = document.getElementsByTagName('script');
         s[s.length - 1].parentNode.insertBefore(gcse, s[s.length - 1]);
 
-
-
         // extracting search query from the url parameter and applying it to the searchbox
-        function getUrlVars() {
-            var vars = {};
-            var parts = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function (m, key, value) {
-                vars[key] = value;
-            });
-            return vars;
-        }
-        var query = getUrlVars()["q"];
-        document.querySelector('input[name=q]').value = query;
-
+        document.querySelector('input[name=q]').value = new URLSearchParams(window.location.search).get("q");
     </script>
 </body>
 </html>
