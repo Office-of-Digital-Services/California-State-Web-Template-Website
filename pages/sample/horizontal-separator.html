@@ -4,73 +4,96 @@ landing: Components
 layout: components.njk
 permalink: "components/horizontal-separator.html"
 ---
+
 <h1 class="mt-lg-0 mb-0">Horizontal separator</h1>
 <p class="subtitle">Other names: horizontal rule, divider</p>
 
-
 <nav class="page-navigation"></nav>
 
-<p>The horizontal separator is a style component that uses a line to separate content into sections.</p>
-
-
+<p>
+  The horizontal separator is a style component that uses a line to separate
+  content into sections.
+</p>
 
 <h2>Sample</h2>
 
 <!--TABS-->
 <div class="tabs responsive">
- <ul class="nav-tabs">
-  <li>
-   <a href="#section1">Example</a>
-  </li>
-  <li>
-   <a href="#section2">Source code</a>
-  </li>
- </ul>
+  <ul class="nav-tabs">
+    <li>
+      <a href="#section1">Example</a>
+    </li>
+    <li>
+      <a href="#section2">Source code</a>
+    </li>
+  </ul>
 
- <!--Examples-->
- <section id="section2" class="tab-pane">
-  <div class="card-header" id="heading-example1">
-   <a data-bs-toggle="collapse" href="#collapse-example1" aria-expanded="true" aria-controls="collapse-example1"
-    data-hash="#pane-example1" title="Example tab header">
-    Example
-   </a>
-  </div>
-  <div id="collapse-example1" class="collapse show p-0 m-0 brd-0" role="tabpanel" aria-labelledby="heading-example1">
-   <div class="p-a-sm p-b-md">
-    {% include "../../src/_includes/modules/horizontal-separator.html" %}
-   </div>
-  </div>
- </section>
+  <!--Examples-->
+  <section id="section2" class="tab-pane">
+    <div class="card-header" id="heading-example1">
+      <a
+        data-bs-toggle="collapse"
+        href="#collapse-example1"
+        aria-expanded="true"
+        aria-controls="collapse-example1"
+        data-hash="#pane-example1"
+        title="Example tab header">
+        Example
+      </a>
+    </div>
+    <div
+      id="collapse-example1"
+      class="collapse show p-0 m-0 brd-0"
+      role="tabpanel"
+      aria-labelledby="heading-example1">
+      <div class="p-a-sm p-b-md">
+        {% include "../../src/_includes/modules/horizontal-separator.html" %}
+      </div>
+    </div>
+  </section>
 
- <!--HTML-->
- <section id="section2" class="tab-pane">
-  <div class="card-header" id="heading-html1">
-   <a class="collapsed" data-bs-toggle="collapse" href="#collapse-html1" aria-expanded="false"
-    aria-controls="collapse-html1" data-hash="#pane-html1" title="HTML Source code tab header">
-    Source code
-   </a>
-  </div>
-  <div id="collapse-html1" class="collapse p-0 m-0 brd-0" role="tabpanel" aria-labelledby="heading-html1">
-   <div class="p-a-sm">
-    <pre><code>{% include "../../src/_includes/modules/horizontal-separator.html" %}</code>
+  <!--HTML-->
+  <section id="section2" class="tab-pane">
+    <div class="card-header" id="heading-html1">
+      <a
+        class="collapsed"
+        data-bs-toggle="collapse"
+        href="#collapse-html1"
+        aria-expanded="false"
+        aria-controls="collapse-html1"
+        data-hash="#pane-html1"
+        title="HTML Source code tab header">
+        Source code
+      </a>
+    </div>
+    <div
+      id="collapse-html1"
+      class="collapse p-0 m-0 brd-0"
+      role="tabpanel"
+      aria-labelledby="heading-html1">
+      <div class="p-a-sm">
+        <pre><code>{% include "../../src/_includes/modules/horizontal-separator.html" %}</code>
       </pre>
-
-   </div>
-  </div>
- </section>
-
+      </div>
+    </div>
+  </section>
 </div>
 <!--END TABS-->
 
 <h2>Usage</h2>
 <h3>When and how to use it</h3>
-<p>Use the horizontal separator to divide sections of content. This breaks up long pages of text and allows visitors to
- process your most important message first.
+<p>
+  Use the horizontal separator to divide sections of content. This breaks up
+  long pages of text and allows visitors to process your most important message
+  first.
 </p>
 <h3>How not to use it</h3>
 <p>Do not use horizontal separators to build a pseudo table.</p>
-<p>Do not abuse horizontal separators and avoid separating content that belongs together. If a section is lengthy,
- consider adding headings and removing unnecessary words. </p>
+<p>
+  Do not abuse horizontal separators and avoid separating content that belongs
+  together. If a section is lengthy, consider adding headings and removing
+  unnecessary words.
+</p>
 
 <h2>Accessibility</h2>
 {% include "../../src/_includes/modules/accessibility.html" %}
