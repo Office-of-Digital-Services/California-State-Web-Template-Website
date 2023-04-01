@@ -4,39 +4,34 @@
 # https://docs.microsoft.com/azure/devops/pipelines/languages/javascript
 
 trigger:
-- master
+  - master
 
 pr: none
 
 pool:
-  vmImage: 'ubuntu-latest'
+  vmImage: "ubuntu-latest"
 
 steps:
+  - task: NodeTool@0
+    inputs:
+      versionSpec: "18.x"
+    displayName: "Install Node.js"
 
-- task: NodeTool@0
-  inputs:
-    versionSpec: '18.x'
-  displayName: 'Install Node.js'
+  - task: Npm@1
+    inputs:
+      command: "install"
+    displayName: "npm install"
 
-- task: Npm@1
-  inputs:
-    command: 'install'
-  displayName: "npm install"
-    
-- script: npm run build
-  displayName: "npm build"
+  - script: npm run build
+    displayName: "npm build"
 
-- task: CopyFiles@2
-  inputs:
-    Contents: '_site/**' # Pull the build directory
-    TargetFolder: '$(Build.ArtifactStagingDirectory)'
+  - task: CopyFiles@2
+    inputs:
+      Contents: "_site/**" # Pull the build directory
+      TargetFolder: "$(Build.ArtifactStagingDirectory)"
 
-- task: PublishBuildArtifacts@1
-  inputs: 
-    PathtoPublish: '$(Build.ArtifactStagingDirectory)/_site' # build files
-    ArtifactName: 'drop' # output artifact named drop
-
-
-
-
+  - task: PublishBuildArtifacts@1
+    inputs:
+      PathtoPublish: "$(Build.ArtifactStagingDirectory)/_site" # build files
+      ArtifactName: "drop" # output artifact named drop
 
