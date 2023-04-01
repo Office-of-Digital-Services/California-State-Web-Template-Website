@@ -1,18 +1,26 @@
 <nav aria-label="You are here" class="breadcrumbs">
- <ol>
-  <li><a href="../index.html" title="Home page">Home</a></li>
-   {% for nav in breadcrumbs.pages %}
-    {% if helpers.getURL(nav.url, page.url) %} 
-     {% if nav.parent %} 
-     {% if nav.parentURL %} 
-     <li><a href="{{nav.parentURL }}" title="{{ nav.parent }} landing page">{{ nav.parent }}</a></li>
-     {% else %}  <li>{{ nav.parent }}</li>{% endif %} 
-       {% if nav.subparent %} 
-         <li><a href="{{nav.subparentURL }}" title="{{ nav.subparent }} landing page">{{ nav.subparent }}</a></li>
-       {% endif %} 
-      {% endif %} 
-      <li>{{ nav.text }}</li>
-      {% endif %} 
-   {% endfor %}
- </ol>
+  <ol>
+    <li>
+      <a href="../index.html" title="Home page">Home</a>
+    </li>
+    {% for nav in breadcrumbs.pages %}
+      {% if helpers.getURL(nav.url, page.url) %}
+        {% if nav.parent %}
+          {% if nav.parentURL %}
+            <li>
+              <a href="{{ nav.parentURL }}" title="{{ nav.parent }} landing page">{{ nav.parent }}</a>
+            </li>
+          {% else %}
+            <li>{{ nav.parent }}</li>
+          {% endif %}
+          {% if nav.subparent %}
+            <li>
+              <a href="{{ nav.subparentURL }}" title="{{ nav.subparent }} landing page">{{ nav.subparent }}</a>
+            </li>
+          {% endif %}
+        {% endif %}
+        <li>{{ nav.text }}</li>
+      {% endif %}
+    {% endfor %}
+  </ol>
 </nav>
