@@ -1,8 +1,5 @@
-{% extends "./base.njk" %}
-{% block content %}
+{% extends "./base.njk" %} {% block content %}
 <div id="main-content" class="main-content">
-	<main class="main-primary" id="main">
-		{{ content | safe }}
-	</main>
+  <main class="main-primary" id="main">{{ content | safe }}</main>
 </div>
 {% endblock %}
