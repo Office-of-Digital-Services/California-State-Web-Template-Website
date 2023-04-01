@@ -6,7 +6,7 @@
     "es2021": true,
     "node": true
   },
-  "extends": ["eslint:recommended"],
+  "extends": ["eslint:recommended", "prettier"],
   "parserOptions": {
     "ecmaVersion": 12,
     "sourceType": "module"
@@ -16,7 +16,6 @@
     "arrow-parens": ["warn", "as-needed"],
     "block-scoped-var": "warn",
     "class-methods-use-this": "warn",
-    "quotes": ["warn", "double", { "avoidEscape": true }],
     "no-extra-bind": "warn",
     "no-extra-parens": "off",
     "no-lonely-if": "warn",
