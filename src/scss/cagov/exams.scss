@@ -3,27 +3,27 @@
 ----------------------------------------- */
 
 .exam-item {
-    @include card();
-    
-    .footer {
-        a.btn {
-            float:right;
-        }
+  @include card();
+
+  .footer {
+    a.btn {
+      float: right;
     }
-    
-    @media (max-width: $screen-xs-max) {
-        // Remove float on small mobile 
-        .title, .filing-date, .published, a.btn {
-            float:none !important;
-        }
+  }
+
+  @media (max-width: $screen-xs-max) {
+    // Remove float on small mobile
+    .title,
+    .filing-date,
+    .published,
+    a.btn {
+      float: none !important;
     }
+  }
 }
-
-
 
 .exam-detail {
-    .location {
-        @include float-right();
-    }
+  .location {
+    @include float-right();
+  }
 }
-

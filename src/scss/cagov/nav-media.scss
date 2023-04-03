@@ -4,17 +4,16 @@
 ----------------------------------------- */
 
 // Nav Media Image Mixin
-@mixin nav-media(){
-    background-repeat: no-repeat;
-    background-position: 50% 50% !important;
-    background-size: cover !important;  
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    right: 0;
-    left: 0;
+@mixin nav-media() {
+  background-repeat: no-repeat;
+  background-position: 50% 50% !important;
+  background-size: cover !important;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
 }
-
 
 //
 // NAVIGATION MEDIA
@@ -22,58 +21,57 @@
 // --------------------------------------------------
 
 .nav-media {
-    background-position: 50% 50% !important;        // set the photo to the center
-    background-size: cover !important;              // Allows background fill the available space
-    
-    // Bootstrap media objects
-    .media {
-        padding:15px;
-        margin:0;
-    }
-    
-    .title {
-        @include font-size(1.2);
-    }
-    
-    .subtitle {
-        font-weight: bold;
-    }
+  background-position: 50% 50% !important; // set the photo to the center
+  background-size: cover !important; // Allows background fill the available space
+
+  // Bootstrap media objects
+  .media {
+    padding: 15px;
+    margin: 0;
+  }
+
+  .title {
+    @include font-size(1.2);
+  }
+
+  .subtitle {
+    font-weight: bold;
+  }
 }
 
-
 .with-image-right {
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    right: 0;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
 
-    .nav-media {
-        @include nav-media();
+  .nav-media {
+    @include nav-media();
 
-        @media (max-width: $screen-xs-max) {
-            background-image: none !important;
-        }
+    @media (max-width: $screen-xs-max) {
+      background-image: none !important;
     }
+  }
 }
 
 .with-image-left {
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
 
-    .nav-media {
-        @include nav-media();
+  .nav-media {
+    @include nav-media();
 
-        @media (max-width: $screen-xs-max) {
-            background-image: none !important;
-        }
+    @media (max-width: $screen-xs-max) {
+      background-image: none !important;
     }
+  }
 }
 
 /* Edgecase where navigation was under image */
 @media (min-width: $screen-sm-min) and (max-width: $screen-sm-max) {
-    .sub-nav .three-quarters {
-        left: 0;
-    }
+  .sub-nav .three-quarters {
+    left: 0;
+  }
 }

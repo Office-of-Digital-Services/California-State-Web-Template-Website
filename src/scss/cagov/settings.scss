@@ -6,33 +6,32 @@
 // Corrects close button placement & style
 
 .site-settings {
- .settings-bar-buttons
-  {
-  display: flex;
-  flex-wrap: wrap;
- }
- .btn-group {
-  margin-right: 12px;
-  margin-top: 0.35rem;
-  margin-bottom: 0.35rem;
- }
- button.close {
-  position: relative;
-  right: -15px;
-  right: -10px;
-  color: $gray-900;
-  text-shadow: none;
-  opacity: 1;
-  font-size: 1.75rem;
-  border: none;
-  background: none;
-  float: right;
-  @media (min-width: $screen-md-min) {
-   margin-top: -5px;
+  .settings-bar-buttons {
+    display: flex;
+    flex-wrap: wrap;
   }
-  &:hover,
-  &:focus {
-   color: $black !important;
+  .btn-group {
+    margin-right: 12px;
+    margin-top: 0.35rem;
+    margin-bottom: 0.35rem;
   }
- }
+  button.close {
+    position: relative;
+    right: -15px;
+    right: -10px;
+    color: $gray-900;
+    text-shadow: none;
+    opacity: 1;
+    font-size: 1.75rem;
+    border: none;
+    background: none;
+    float: right;
+    @media (min-width: $screen-md-min) {
+      margin-top: -5px;
+    }
+    &:hover,
+    &:focus {
+      color: $black !important;
+    }
+  }
 }
