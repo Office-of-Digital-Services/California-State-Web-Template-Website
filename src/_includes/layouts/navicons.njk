@@ -20,12 +20,10 @@
         <!-- navigation types -->
         {% if navigation %} {% include navigation %} {% else %} {% include
         "../navigation.njk" %} {% endif %}
-
-              {% if search === "Featured" %}
-              <div id="head-search" class="search-container featured-search">
-              {% else %}
-              <div id="head-search" class="search-container">
-             {% endif %}
+        <div
+          id="head-search"
+          class='search-container {%- if search
+          === "Featured" %} featured-search {%- endif -%}'>
           {% include "../search.njk" %}
         </div>
       </div>
