@@ -267,14 +267,14 @@ permalink: "contact-us.html"
 <script>
   const serviceUrl = "https://api.template.webstandards.ca.gov/api/air-table";
 
-  {
+  (()=>{
    //This code runs first
    getForm().addEventListener("submit", submitForm);
    getSubmitButton().addEventListener("click", () =>
     getForm().setAttribute("submit_attempted", "")
    );
-  }
-  ({});
+  })
+  ();
 
   function getForm() {
    return /** @type {HTMLFormElement} */ (
