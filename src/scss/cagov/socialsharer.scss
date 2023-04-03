@@ -5,81 +5,83 @@
 ----------------------------------------- */
 
 // Mixin for link color & hover states
-@mixin social-media($color){
-    color: $color !important;
+@mixin social-media($color) {
+  color: $color !important;
 
-    &:hover, &:focus {
-        color: darken($color, 10%);
-    }
+  &:hover,
+  &:focus {
+    color: darken($color, 10%);
+  }
 }
 
 .socialsharer-container {
-     float:left;
-    @include clearfix();
+  float: left;
+  @include clearfix();
 
-    a {
-        line-height:1em;
-        @include font-size(1.375);
-        cursor:pointer;
+  a {
+    line-height: 1em;
+    @include font-size(1.375);
+    cursor: pointer;
 
-        &:hover, &:focus {
-            text-decoration: none !important;               // Remove underlines from icon fonts
-        }
+    &:hover,
+    &:focus {
+      text-decoration: none !important; // Remove underlines from icon fonts
     }
+  }
 }
 
 /* Facebook */
 .ca-gov-icon-share-facebook {
-    @include social-media($share-facebook);
+  @include social-media($share-facebook);
 }
 
 /* Twitter */
 .ca-gov-icon-share-twitter {
-    @include social-media($share-twitter);
+  @include social-media($share-twitter);
 }
 
 /* snapchat */
 .ca-gov-icon-share-snapchat {
-    @include social-media($share-snapchat);
+  @include social-media($share-snapchat);
 }
 
 /* youtube */
 .ca-gov-icon-share-youtube {
-    @include social-media($share-youtube);
+  @include social-media($share-youtube);
 }
 
 /* GooglePlus */
 .ca-gov-icon-share-googleplus {
-    @include social-media($share-googleplus);
+  @include social-media($share-googleplus);
 }
 
 /* Flickr */
 .ca-gov-icon-share-flickr {
-    @include social-media($share-flickr);
+  @include social-media($share-flickr);
 }
 
 /* linkedin */
 .ca-gov-icon-share-linkedin {
-    @include social-media($share-linkedin);
+  @include social-media($share-linkedin);
 }
 
 /* instagram */
 .ca-gov-icon-share-instagram {
-    @include social-media($share-instagram);
+  @include social-media($share-instagram);
 }
 
 /* pinterest */
 .ca-gov-icon-share-pinterest {
-    @include social-media($share-pinterest);
+  @include social-media($share-pinterest);
 }
 
 /* vimeo */
 .ca-gov-icon-share-vimeo {
-    @include social-media($share-vimeo);
+  @include social-media($share-vimeo);
 }
 
 /* Email */
 .ca-gov-icon-share-email {
-    /* "Blue a v". Licensed under Public domain via Wikimedia Commons - http://commons.wikimedia.org/wiki/File:Blue_a_v.svg#mediaviewer/File:Blue_a_v.svg */
-    @include social-media($share-email);
+  /* "Blue a v". Licensed under Public domain via Wikimedia Commons - http://commons.wikimedia.org/wiki/File:Blue_a_v.svg#mediaviewer/File:Blue_a_v.svg */
+  @include social-media($share-email);
 }

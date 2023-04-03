@@ -5,168 +5,229 @@ layout: page.njk
 permalink: "visual-design/typography.html"
 ---
 
-
 <div class="row">
- <div class="col-md-3" role="complementary">
-  <!-- Side navigation -->
-  <nav aria-label="Side navigation" class="side-navigation sticky-6">
-   <ul class="list-navigation">
-    <li><a href="/visual-design/color.html">Colors</a></li>
-    <li><a href="/visual-design/icons.html">Icons</a></li>
-    <li><a href="/visual-design/typography.html" class="active">Typography</a></li>
-   </ul>
-  </nav>
- </div>
- <div class="col-md-9 p-b-lg">
+  <div class="col-md-3" role="complementary">
+    <!-- Side navigation -->
+    <nav aria-label="Side navigation" class="side-navigation sticky-6">
+      <ul class="list-navigation">
+        <li><a href="/visual-design/color.html">Colors</a></li>
+        <li><a href="/visual-design/icons.html">Icons</a></li>
+        <li>
+          <a href="/visual-design/typography.html" class="active">Typography</a>
+        </li>
+      </ul>
+    </nav>
+  </div>
+  <div class="col-md-9 p-b-lg">
+    <h1 id="Typography" class="mt-lg-0">Typography</h1>
 
-  <h1 id="Typography" class="mt-lg-0">Typography</h1>
+    <nav class="page-navigation"></nav>
 
-  <nav class="page-navigation"></nav>
-
-  <p>
-   Use typography to present your department’s brand and content as clearly as possible.
-  </p>
-
-  <div class="row">
-   <div class="col-md-7 p-r-lg">
-    <h2>Typeface</h2>
     <p>
-     The State Web Template uses <a href="https://public-sans.digital.gov/">Public Sans</a> designed by the <a
-      href="https://designsystem.digital.gov/">United States Web Design System</a>. This strong, neutral typeface
-     is used for text and headings.
+      Use typography to present your department’s brand and content as clearly
+      as possible.
     </p>
-    <p><a class="btn btn-default brd-primary color-primary"
-      href="https://fonts.google.com/specimen/Public+Sans#standard-styles">Public Sans
-      in Google Fonts</a></p>
-   </div>
-   <div class="col-md-5">
-    <span class="text-huge">Aa</span>
-    <div>
-     <p class="text-tiny">A B C D E F G H I J K L M N O P Q R S T U V W X Y Z</p>
-     <p class="text-tiny">a b c d e f g h i j k l m n o p q r s t u v w x y z</p>
-     <p class="text-tiny">0 1 2 3 4 5 6 7 8 9</p>
+
+    <div class="row">
+      <div class="col-md-7 p-r-lg">
+        <h2>Typeface</h2>
+        <p>
+          The State Web Template uses
+          <a href="https://public-sans.digital.gov/">Public Sans</a>
+          designed by the
+          <a href="https://designsystem.digital.gov/">
+            United States Web Design System
+          </a>
+          . This strong, neutral typeface is used for text and headings.
+        </p>
+        <p>
+          <a
+            class="btn btn-default brd-primary color-primary"
+            href="https://fonts.google.com/specimen/Public+Sans#standard-styles">
+            Public Sans in Google Fonts
+          </a>
+        </p>
+      </div>
+      <div class="col-md-5">
+        <span class="text-huge">Aa</span>
+        <div>
+          <p class="text-tiny">
+            A B C D E F G H I J K L M N O P Q R S T U V W X Y Z
+          </p>
+          <p class="text-tiny">
+            a b c d e f g h i j k l m n o p q r s t u v w x y z
+          </p>
+          <p class="text-tiny">0 1 2 3 4 5 6 7 8 9</p>
+        </div>
+      </div>
     </div>
-   </div>
+
+    <h2>Font code</h2>
+
+    <table class="font-size-15 brd-solid-1 brd-gray-200">
+      <thead>
+        <tr>
+          <th scope="col" class="p-a brd-bottom brd-right brd-gray-200">
+            Name
+          </th>
+          <th scope="col" class="p-a brd-bottom brd-right brd-gray-200">
+            Usage and demo
+          </th>
+          <th scope="col" class="p-a brd-bottom brd-gray-200">Code</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="p-a align-top brd-bottom brd-right brd-gray-200">
+            Font family
+          </td>
+          <td class="p-a align-top brd-bottom brd-right brd-gray-200">
+            Use sitewide for all text.
+          </td>
+          <td class="p-a align-top brd-bottom brd-gray-200">
+            font-family:'Public Sans', sans-serif;
+          </td>
+        </tr>
+        <tr>
+          <td class="p-a  align-top brd-bottom brd-right brd-gray-200">
+            Lead paragraph
+          </td>
+          <td class="lead p-a  align-top  brd-bottom brd-right brd-gray-200">
+            Use to highlight the intro paragraph on a webpage.
+          </td>
+          <td class="p-a align-top brd-bottom brd-gray-200">
+            Class: .lead
+            <br />
+            <div class="m-t">Code: font-size: calc(1.4375rem + 0.1vw);</div>
+          </td>
+        </tr>
+        <tr>
+          <td class="p-a align-top brd-bottom brd-right brd-gray-200">
+            Regular paragraph
+          </td>
+          <td
+            class="p-a align-top font-size-16 brd-bottom brd-right brd-gray-200">
+            Use for all body text.
+          </td>
+          <td class="p-a align-top brd-bottom brd-gray-200">
+            font-size: calc(1.125rem + 0.1vw);
+          </td>
+        </tr>
+        <tr>
+          <td class="p-a align-top brd-right brd-gray-200">
+            Small-text paragraph
+          </td>
+          <td class="p-a small align-top brd-right brd-gray-200">
+            Use for tooltips and footnotes.
+          </td>
+          <td class="p-a align-top">
+            Class: .small
+            <br />
+            <div class="m-t">Code: font-size: calc(1rem + 0.1vw);</div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h2>Heading hierarchy</h2>
+    <p>
+      The line height is a ratio of 1.75 to the base font size. For each
+      ascending level, the ratio is decreased by ⅛. As a result, larger headings
+      have smaller line-height ratios, which improves readability.
+    </p>
+
+    <div class="row mt-4">
+      <div class="col-md-4">
+        <div class="example-heading pos-rel align-bottom m-y height-60">
+          <div class="h1 pos-abs bottom-0 m-a-0">Heading 1</div>
+        </div>
+        <div class="font-size-70x brd-left brd-gray-200 p-l">
+          font-family: 'Public Sans'
+          <br />
+          font-weight: 700
+          <br />
+          font-size: calc(2.9375rem + 0.1vw)
+          <br />
+          line-height: 1.25
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="example-heading pos-rel align-bottom m-y height-60">
+          <div class="h2 pos-abs bottom-0 m-a-0">Heading 2</div>
+        </div>
+        <div class="font-size-70x brd-left brd-gray-200 p-l">
+          font-family: 'Public Sans'
+          <br />
+          font-weight: 700
+          <br />
+          font-size: calc(2.3175rem + 0.1vw);
+          <br />
+          line-height: 1.375
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="example-heading pos-rel align-bottom m-y height-60">
+          <div class="h3 pos-abs bottom-0 m-a-0">Heading 3</div>
+        </div>
+        <div class="font-size-70x brd-left brd-gray-200 p-l">
+          font-family: 'Public Sans'
+          <br />
+          font-weight: 700
+          <br />
+          font-size: calc(1.8125rem + 0.1vw)
+          <br />
+          line-height: 1.5
+        </div>
+      </div>
+    </div>
+
+    <div class="row p-b-lg">
+      <div class="col-md-4">
+        <div class="example-heading pos-rel align-bottom m-y height-60">
+          <div class="h4 pos-abs bottom-0 m-a-0">Heading 4</div>
+        </div>
+        <div class="font-size-70x brd-left brd-gray-200 p-l">
+          font-family: 'Public Sans'
+          <br />
+          font-weight: 700
+          <br />
+          font-size: calc(1.4375rem + 0.1vw)
+          <br />
+          line-height: 1.625
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="example-heading pos-rel align-bottom m-y height-60">
+          <div class="h5 pos-abs bottom-0 m-a-0">Heading 5</div>
+        </div>
+        <div class="font-size-70x brd-left brd-gray-200 p-l">
+          font-family: 'Public Sans'
+          <br />
+          font-weight: 700
+          <br />
+          font-size: calc(1.125rem + 0.1vw);
+          <br />
+          line-height: 1.75
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="example-heading pos-rel align-bottom m-y height-60">
+          <div class="h6 pos-abs bottom-0 m-a-0">Heading 6</div>
+        </div>
+        <div class="font-size-70x brd-left brd-gray-200 p-l height-60">
+          font-family: 'Public Sans'
+          <br />
+          font-weight: 700
+          <br />
+          font-size: calc(0.875rem + 0.1vw);
+          <br />
+          line-height: 1.75
+        </div>
+      </div>
+    </div>
   </div>
-
-  <h2>Font code</h2>
-
-  <table class="font-size-15 brd-solid-1 brd-gray-200">
-   <thead>
-    <tr>
-     <th scope="col" class="p-a brd-bottom brd-right brd-gray-200">Name</th>
-     <th scope="col" class="p-a brd-bottom brd-right brd-gray-200">Usage and demo</th>
-     <th scope="col" class="p-a brd-bottom brd-gray-200">Code</th>
-    </tr>
-   </thead>
-   <tbody>
-    <tr>
-     <td class="p-a align-top brd-bottom brd-right brd-gray-200">Font family</td>
-     <td class="p-a align-top brd-bottom brd-right brd-gray-200">Use sitewide for all text.</td>
-     <td class="p-a align-top brd-bottom brd-gray-200">font-family:'Public Sans', sans-serif;</td>
-    </tr>
-    <tr>
-     <td class="p-a  align-top brd-bottom brd-right brd-gray-200">Lead paragraph</td>
-     <td class="lead p-a  align-top  brd-bottom brd-right brd-gray-200">Use to highlight the intro paragraph on a
-      webpage.</td>
-     <td class="p-a align-top brd-bottom brd-gray-200">Class: .lead<br>
-      <div class="m-t">Code: font-size: calc(1.4375rem + 0.1vw);</div>
-     </td>
-    </tr>
-    <tr>
-     <td class="p-a align-top brd-bottom brd-right brd-gray-200">Regular paragraph</td>
-     <td class="p-a align-top font-size-16 brd-bottom brd-right brd-gray-200">Use for all body text.</td>
-     <td class="p-a align-top brd-bottom brd-gray-200">font-size: calc(1.125rem + 0.1vw);</td>
-    </tr>
-    <tr>
-     <td class="p-a align-top brd-right brd-gray-200">Small-text paragraph</td>
-     <td class="p-a small align-top brd-right brd-gray-200">Use for tooltips and footnotes.</td>
-     <td class="p-a align-top">Class: .small<br>
-      <div class="m-t">Code: font-size: calc(1rem + 0.1vw);</div>
-     </td>
-    </tr>
-   </tbody>
-  </table>
-
-  <h2>Heading hierarchy</h2>
-  <p>The line height is a ratio of 1.75 to the base font size. For each ascending level, the ratio is decreased by ⅛.
-   As a result, larger headings have smaller line-height ratios, which improves readability.</p>
-
-  <div class="row mt-4">
-   <div class="col-md-4">
-    <div class="example-heading pos-rel align-bottom m-y height-60">
-     <div class="h1 pos-abs bottom-0 m-a-0">Heading 1</div>
-    </div>
-    <div class="font-size-70x brd-left brd-gray-200 p-l">
-     font-family: 'Public Sans'<br />
-     font-weight: 700<br />
-     font-size: calc(2.9375rem + 0.1vw)<br />
-     line-height: 1.25
-    </div>
-   </div>
-
-   <div class="col-md-4">
-    <div class="example-heading pos-rel align-bottom m-y height-60">
-     <div class="h2 pos-abs bottom-0 m-a-0">Heading 2</div>
-    </div>
-    <div class="font-size-70x brd-left brd-gray-200 p-l">
-     font-family: 'Public Sans'<br />
-     font-weight: 700<br />
-     font-size: calc(2.3175rem + 0.1vw);<br />
-     line-height: 1.375
-    </div>
-   </div>
-
-   <div class="col-md-4">
-    <div class="example-heading pos-rel align-bottom m-y height-60">
-     <div class="h3 pos-abs bottom-0 m-a-0">Heading 3</div>
-    </div>
-    <div class="font-size-70x brd-left brd-gray-200 p-l">
-     font-family: 'Public Sans'<br />
-     font-weight: 700<br />
-     font-size: calc(1.8125rem + 0.1vw)<br />
-     line-height: 1.5
-    </div>
-   </div>
-  </div>
-
-  <div class="row p-b-lg">
-   <div class="col-md-4">
-    <div class="example-heading pos-rel align-bottom m-y height-60">
-     <div class="h4 pos-abs bottom-0 m-a-0">Heading 4</div>
-    </div>
-    <div class="font-size-70x brd-left brd-gray-200 p-l">
-     font-family: 'Public Sans'<br />
-     font-weight: 700<br />
-     font-size: calc(1.4375rem + 0.1vw)<br />
-     line-height: 1.625
-    </div>
-   </div>
-
-   <div class="col-md-4">
-    <div class="example-heading pos-rel align-bottom m-y height-60">
-     <div class="h5 pos-abs bottom-0 m-a-0">Heading 5</div>
-    </div>
-    <div class="font-size-70x brd-left brd-gray-200 p-l">
-     font-family: 'Public Sans'<br />
-     font-weight: 700<br />
-     font-size: calc(1.125rem + 0.1vw);<br />
-     line-height: 1.75
-    </div>
-   </div>
-
-   <div class="col-md-4">
-    <div class="example-heading pos-rel align-bottom m-y height-60">
-     <div class="h6 pos-abs bottom-0 m-a-0">Heading 6</div>
-    </div>
-    <div class="font-size-70x brd-left brd-gray-200 p-l height-60">
-     font-family: 'Public Sans'<br />
-     font-weight: 700<br />
-     font-size: calc(0.875rem + 0.1vw);<br />
-     line-height: 1.75
-    </div>
-   </div>
-  </div>
-
- </div>
 </div>

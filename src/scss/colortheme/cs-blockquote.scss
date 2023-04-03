@@ -4,19 +4,19 @@
 ----------------------------------------- */
 
 blockquote {
- border-color: $color-p2;
- &::before {
-  color: $color-p2;
- }
- &.prominent {
-  background-color: $color-p2;
-  color: $white;
+  border-color: $color-p2;
   &::before {
-   color: $white;
+    color: $color-p2;
   }
-  p,
-  footer {
-   color: $white;
+  &.prominent {
+    background-color: $color-p2;
+    color: $white;
+    &::before {
+      color: $white;
+    }
+    p,
+    footer {
+      color: $white;
+    }
   }
- }
 }

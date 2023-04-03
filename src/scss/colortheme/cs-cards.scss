@@ -4,209 +4,269 @@
 ----------------------------------------- */
 
 // MIXIN
-@mixin card-variant($background, $border, $text-color: contrast($background) ){
-    background-color: $background;
-    border-color: $border;
-    color: $text-color;
-    
-    .card-header {
-        border-bottom: $card-border-width solid $border;
-        background-color: darken($background, 5%);
-    }
-    
-    .card-footer {
-        border-top: $card-border-width solid $border;
-        background-color: darken($background, 5%);
-    }
-}
+@mixin card-variant($background, $border, $text-color: contrast($background)) {
+  background-color: $background;
+  border-color: $border;
+  color: $text-color;
 
+  .card-header {
+    border-bottom: $card-border-width solid $border;
+    background-color: darken($background, 5%);
+  }
+
+  .card-footer {
+    border-top: $card-border-width solid $border;
+    background-color: darken($background, 5%);
+  }
+}
 
 //
 // CARD STYLES
 // --------------------------------------------------
 
 .card-primary {
-    @include link-variant($white, $color-s1);
-    @include underline($white, $color-s1);
-    @include card-variant($brand-primary, $brand-primary);
+  @include link-variant($white, $color-s1);
+  @include underline($white, $color-s1);
+  @include card-variant($brand-primary, $brand-primary);
 }
 
-.card-inverted, .card-inverse {
-    @include link-variant($color-s3, darken($color-s3, 7%));
-    @include underline($color-s3, darken($color-s3, 7%));
-    @include card-variant(contrast(#fff), contrast(#fff));
+.card-inverted,
+.card-inverse {
+  @include link-variant($color-s3, darken($color-s3, 7%));
+  @include underline($color-s3, darken($color-s3, 7%));
+  @include card-variant(contrast(#fff), contrast(#fff));
 }
 
 .card-success {
-    @include link-variant($text-color, $gray-base);
-    @include underline($text-color, $gray-base);
-    @include card-variant($brand-success, $brand-success);
+  @include link-variant($text-color, $gray-base);
+  @include underline($text-color, $gray-base);
+  @include card-variant($brand-success, $brand-success);
 }
 
 .card-info {
-    @include link-variant(#fff, #fff);
-    @include underline(#fff, #fff);
-    @include card-variant($brand-info, $brand-info);
+  @include link-variant(#fff, #fff);
+  @include underline(#fff, #fff);
+  @include card-variant($brand-info, $brand-info);
 }
 
 .card-warning {
-    @include link-variant($text-color, $gray-base);
-    @include underline($text-color, $gray-base);
-    @include card-variant($brand-warning, $brand-warning);
+  @include link-variant($text-color, $gray-base);
+  @include underline($text-color, $gray-base);
+  @include card-variant($brand-warning, $brand-warning);
 }
 
 .card-danger {
-    @include link-variant($gray-base, $gray-base);
-    @include underline($gray-base, $gray-base);
-    @include card-variant($brand-danger, $brand-danger);
+  @include link-variant($gray-base, $gray-base);
+  @include underline($gray-base, $gray-base);
+  @include card-variant($brand-danger, $brand-danger);
 }
-
 
 //
 // Inverse cards need a little extra love
 // --------------------------------------------------
 
-.card-inverse, .card-inverted {
-    .card-header {
-        border-bottom: $card-border-width solid rgba(255,255,255,.2);
-    }
-    
-    .card-footer {
-        border-top: $card-border-width solid rgba(255,255,255,.2);
-    }
+.card-inverse,
+.card-inverted {
+  .card-header {
+    border-bottom: $card-border-width solid rgba(255, 255, 255, 0.2);
+  }
+
+  .card-footer {
+    border-top: $card-border-width solid rgba(255, 255, 255, 0.2);
+  }
 }
-
-
 
 /* -----------------------------------------
    CARDS THAT USED TO BE PANELS IN BOOTSTRAP 3
    leaving .panel class for backward compatibility
 ----------------------------------------- */
 
-
 /* Default Cards */
-.panel-default, .card-default {
-    // border, heading-text-color, heading-bg-color, heading-border
-    @include panel-variant($panel-default-border, $panel-default-header-txt, $panel-default-header-bg, $panel-default-header-border);
-        
-    .panel-heading, .card-heading, .card-header {        
-        h2, h3, h4, h5 {            
-            span[class^="ca-gov-icon-"] {
-                color: $panel-default-header-icon;
-            }
-        }
-        
-        .options {
-            .btn-default {
-              // bg-color, border-color
-              @include button-variant(tint($panel-default-header-bg, 70%), $panel-default-header-border);
-            }
-        }
+.panel-default,
+.card-default {
+  // border, heading-text-color, heading-bg-color, heading-border
+  @include panel-variant(
+    $panel-default-border,
+    $panel-default-header-txt,
+    $panel-default-header-bg,
+    $panel-default-header-border
+  );
+
+  .panel-heading,
+  .card-heading,
+  .card-header {
+    h2,
+    h3,
+    h4,
+    h5 {
+      span[class^="ca-gov-icon-"] {
+        color: $panel-default-header-icon;
+      }
     }
-    
-    .panel-body, .card-body {
-        background: $panel-default-body-bg;
-		color: $text-color;
+
+    .options {
+      .btn-default {
+        // bg-color, border-color
+        @include button-variant(
+          tint($panel-default-header-bg, 70%),
+          $panel-default-header-border
+        );
+      }
     }
+  }
+
+  .panel-body,
+  .card-body {
+    background: $panel-default-body-bg;
+    color: $text-color;
+  }
 }
 
 /* Overstated Cards */
-.panel-overstated, .card-overstated {
-    // border, heading-text-color, heading-bg-color, heading-border
-    @include panel-variant($overstated-border, $overstated-header-txt, $overstated-header-bg, $overstated-header-border);
+.panel-overstated,
+.card-overstated {
+  // border, heading-text-color, heading-bg-color, heading-border
+  @include panel-variant(
+    $overstated-border,
+    $overstated-header-txt,
+    $overstated-header-bg,
+    $overstated-header-border
+  );
 
-    .panel-heading, .card-heading, .card-header {
-        border-bottom-width: 5px;
-        border-bottom-style: solid;
+  .panel-heading,
+  .card-heading,
+  .card-header {
+    border-bottom-width: 5px;
+    border-bottom-style: solid;
 
-        h2, h3, h4, h5 {
-            span[class^="ca-gov-icon-"] {
-                color: $overstated-header-icon;
-            }
-        }
-
-        .options {
-            .btn-default {
-                // bg-color, border-color
-                @include button-variant(darken($overstated-header-bg, 8%), $overstated-header-border); // beta 5.0 addition
-            }
-        }
+    h2,
+    h3,
+    h4,
+    h5 {
+      span[class^="ca-gov-icon-"] {
+        color: $overstated-header-icon;
+      }
     }
 
-    .panel-body, .card-body {
-        background: $overstated-body-bg;
-        color: $text-color;
-        @include link-variant($link-color, $link-hover-color);
-        @include underline($link-color, $link-hover-color);
+    .options {
+      .btn-default {
+        // bg-color, border-color
+        @include button-variant(
+          darken($overstated-header-bg, 8%),
+          $overstated-header-border
+        ); // beta 5.0 addition
+      }
     }
+  }
+
+  .panel-body,
+  .card-body {
+    background: $overstated-body-bg;
+    color: $text-color;
+    @include link-variant($link-color, $link-hover-color);
+    @include underline($link-color, $link-hover-color);
+  }
 }
 
 /* Uderstated Cards */
-.panel-understated, .card-understated {
-    // border, heading-text-color, heading-bg-color, heading-border
-    @include panel-variant($understated-border, $understated-header-txt, $understated-header-bg, $understated-header-border);
-        
-    .panel-heading, .card-heading, .card-header {
-        border-bottom-width: 2px;
-        border-bottom-style:solid;
-        
-        h2, h3, h4, h5 {            
-            span[class^="ca-gov-icon-"] {
-                color: $understated-header-icon;
-            }
-        }
-        
-        .options {
-            .btn-default {
-              // bg-color, border-color
-              @include button-variant(darken($understated-header-bg, 8%), $understated-border); // beta 5.0 addition
-            }
-        }
+.panel-understated,
+.card-understated {
+  // border, heading-text-color, heading-bg-color, heading-border
+  @include panel-variant(
+    $understated-border,
+    $understated-header-txt,
+    $understated-header-bg,
+    $understated-header-border
+  );
+
+  .panel-heading,
+  .card-heading,
+  .card-header {
+    border-bottom-width: 2px;
+    border-bottom-style: solid;
+
+    h2,
+    h3,
+    h4,
+    h5 {
+      span[class^="ca-gov-icon-"] {
+        color: $understated-header-icon;
+      }
     }
-    
-    .panel-body, .card-body {
-        background: $understated-body-bg;
-		color: $text-color;
+
+    .options {
+      .btn-default {
+        // bg-color, border-color
+        @include button-variant(
+          darken($understated-header-bg, 8%),
+          $understated-border
+        ); // beta 5.0 addition
+      }
     }
+  }
+
+  .panel-body,
+  .card-body {
+    background: $understated-body-bg;
+    color: $text-color;
+  }
 }
 
 /* Standout Cards */
-.panel-standout, .card-standout {
-    // border, heading-text-color, heading-bg-color, heading-border
-    @include panel-variant($standout-border, $standout-header-txt, $standout-header-bg, $standout-header-border);
+.panel-standout,
+.card-standout {
+  // border, heading-text-color, heading-bg-color, heading-border
+  @include panel-variant(
+    $standout-border,
+    $standout-header-txt,
+    $standout-header-bg,
+    $standout-header-border
+  );
 
-    .panel-heading, .card-heading, .card-header {
-        border-bottom-width: 5px;
-        border-bottom-style: solid;
+  .panel-heading,
+  .card-heading,
+  .card-header {
+    border-bottom-width: 5px;
+    border-bottom-style: solid;
 
-        h2, h3, h4, h5 {
-            span[class^="ca-gov-icon-"] {
-                color: $standout-header-icon;
-            }
-        }
-
-        .options {
-            .btn-default {
-                // bg-color, border-color
-                @include button-variant(darken($standout-header-bg, 8%), darken($standout-header-bg, 5%)); // beta 5.0 addition
-            }
-        }
+    h2,
+    h3,
+    h4,
+    h5 {
+      span[class^="ca-gov-icon-"] {
+        color: $standout-header-icon;
+      }
     }
 
-    .panel-body, .card-body {
-        background: $standout-body-bg;
-        color: $text-color;
-        @include link-variant($link-color, $link-hover-color);
-        @include underline($link-color, $link-hover-color);
+    .options {
+      .btn-default {
+        // bg-color, border-color
+        @include button-variant(
+          darken($standout-header-bg, 8%),
+          darken($standout-header-bg, 5%)
+        ); // beta 5.0 addition
+      }
     }
+  }
+
+  .panel-body,
+  .card-body {
+    background: $standout-body-bg;
+    color: $text-color;
+    @include link-variant($link-color, $link-hover-color);
+    @include underline($link-color, $link-hover-color);
+  }
 }
 
 /* Adds triangle to card */
-.panel-standout.highlight, .card-standout.highlight {
-    .panel-heading, .card-heading, .card-header {
-        .triangle {
-            //background: url("#{$theme-directory}/panel-standout-triangle.png") no-repeat;
-            @include triangle(down, 12px, $color-p3);
-        }
+.panel-standout.highlight,
+.card-standout.highlight {
+  .panel-heading,
+  .card-heading,
+  .card-header {
+    .triangle {
+      //background: url("#{$theme-directory}/panel-standout-triangle.png") no-repeat;
+      @include triangle(down, 12px, $color-p3);
     }
+  }
 }
