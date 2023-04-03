@@ -1,66 +1,51 @@
-{% extends "./base.njk" %} {% block content %}
+{%- extends "./base.njk" -%}
+{%- block content -%}
 <div id="main-content" class="main-content">
   <main class="main-primary" id="main">
-    <div class="container p-t-md">
-      {# Breadcrumbs (rendering data from /src/_data/breadcrumbs.json and
-      /src/_data/helpers.js #} {% include "../breadcrumbs.njk" %}
-
+    <div
+      class="container p-t-md">
+      {# Breadcrumbs (rendering data from /src/_data/breadcrumbs.json and /src/_data/helpers.js #}
+      {%- include "../breadcrumbs.njk" -%}
       <div class="row">
-        <div class="col-lg-3">
-          {# SIde navigation (rendering data from /src/_data/components.json and
-          /src/_data/helpers.js #}
+        <div
+          class="col-lg-3">
+          {# SIde navigation (rendering data from /src/_data/components.json and /src/_data/helpers.js #}
           <nav
-            aria-labelledby="components-list"
-            class="side-navigation sticky-6">
+            aria-labelledby="components-list" class="side-navigation sticky-6">
             {# Links with subnav #}
-
             <ul>
               <li>
-                <a
-                  href="/components.html"
-                  class="nav-heading landing"
-                  id="components-list">
+                <a href="/components.html" class="nav-heading landing" id="components-list">
                   Components
                 </a>
               </li>
-              {% for item in components.components %} {% if 'subnav' in item %}
-              <li>
-                <a
-                  href="{{ item.url }}"
-                  {{
-                  helpers.getLinkActiveState(item.url,
-                  page.url)
-                  |
-                  safe
-                  }}>
-                  {{ item.text }}
-                </a>
-                {# subnav #} {% if helpers.getURL(item.url, page.url) %}
-                <ul>
-                  {% for subitem in item.subnav %}
+              {%- for item in components.components -%}
+                {%- if 'subnav' in item %}
                   <li>
-                    <a href="{{ subitem.url }}" class="tab-link">
-                      {{ subitem.text }}
+                    <a href="{{ item.url }}" {{ helpers.getLinkActiveState(item.url, page.url) | safe }}>
+                      {{ item.text }}
+                    </a>
+                    {#- subnav -#}
+                    {%- if helpers.getURL(item.url, page.url) -%}
+                      <ul>
+                        {%- for subitem in item.subnav %}
+                          <li>
+                            <a href="{{ subitem.url }}" class="tab-link">
+                              {{ subitem.text }}
+                            </a>
+                          </li>
+                        {%- endfor -%}
+                      </ul>
+                    {%- endif -%}
+                  </li>
+                {%- else %}
+                  <li>
+                    <a href="{{ item.url }}" {{ helpers.getLinkActiveState(item.url, page.url) | safe }}>
+                      {{ item.text }}
                     </a>
                   </li>
-                  {% endfor %}
-                </ul>
-                {% endif %}
-              </li>
-              {% else %}
-              <li>
-                <a
-                  href="{{ item.url }}"
-                  {{
-                  helpers.getLinkActiveState(item.url,
-                  page.url)
-                  |
-                  safe
-                  }}>
-                  {{ item.text }}
-                </a>
-              </li>
-              {% endif %} {% endfor %}
+                {%- endif -%}
+              {%- endfor -%}
             </ul>
           </nav>
         </div>
@@ -68,5 +53,4 @@
       </div>
     </div>
   </main>
-</div>
-{% endblock %}
+</div>{%- endblock -%}
