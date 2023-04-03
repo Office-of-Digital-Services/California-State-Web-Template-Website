@@ -3,126 +3,169 @@
    /source/scss/colortheme/cs-panels.scss
 ----------------------------------------- */
 
-
 /* Default Panels */
 .panel-default {
-    // border, heading-text-color, heading-bg-color, heading-border
-    @include panel-variant($panel-default-border, $panel-default-header-txt, $panel-default-header-bg, $panel-default-header-border);
-        
-    .panel-heading {        
-        h2, h3, h4, h5 {            
-            span[class^="ca-gov-icon-"] {
-                color: $panel-default-header-icon;
-            }
-        }
-        
-        .options {
-            .btn-default {
-              // bg-color, border-color
-              @include button-variant(tint($panel-default-header-bg, 70%), $panel-default-header-border);
-            }
-        }
+  // border, heading-text-color, heading-bg-color, heading-border
+  @include panel-variant(
+    $panel-default-border,
+    $panel-default-header-txt,
+    $panel-default-header-bg,
+    $panel-default-header-border
+  );
+
+  .panel-heading {
+    h2,
+    h3,
+    h4,
+    h5 {
+      span[class^="ca-gov-icon-"] {
+        color: $panel-default-header-icon;
+      }
     }
-    
-    .panel-body {
-        background: $panel-default-body-bg;
-		color: $text-color;
+
+    .options {
+      .btn-default {
+        // bg-color, border-color
+        @include button-variant(
+          tint($panel-default-header-bg, 70%),
+          $panel-default-header-border
+        );
+      }
     }
+  }
+
+  .panel-body {
+    background: $panel-default-body-bg;
+    color: $text-color;
+  }
 }
 
 /* Overstated Panels */
 .panel-overstated {
-    // border, heading-text-color, heading-bg-color, heading-border
-    @include panel-variant($overstated-border, $overstated-header-txt, $overstated-header-bg, $overstated-header-border);
-    
-    .panel-heading {
-        border-bottom-width:5px;
-        border-bottom-style:solid;
-        
-        h2, h3, h4, h5 {
-            span[class^="ca-gov-icon-"] {
-                color: $overstated-header-icon;
-            }
-        }
-        
-        .options {
-            .btn-default {
-              // bg-color, border-color
-              @include button-variant(darken($overstated-header-bg, 8%), $overstated-header-border); // beta 5.0 addition
-            }
-        }
+  // border, heading-text-color, heading-bg-color, heading-border
+  @include panel-variant(
+    $overstated-border,
+    $overstated-header-txt,
+    $overstated-header-bg,
+    $overstated-header-border
+  );
+
+  .panel-heading {
+    border-bottom-width: 5px;
+    border-bottom-style: solid;
+
+    h2,
+    h3,
+    h4,
+    h5 {
+      span[class^="ca-gov-icon-"] {
+        color: $overstated-header-icon;
+      }
     }
-    
-    .panel-body {
-        background: $overstated-body-bg;
-		color: $text-color;
+
+    .options {
+      .btn-default {
+        // bg-color, border-color
+        @include button-variant(
+          darken($overstated-header-bg, 8%),
+          $overstated-header-border
+        ); // beta 5.0 addition
+      }
     }
+  }
+
+  .panel-body {
+    background: $overstated-body-bg;
+    color: $text-color;
+  }
 }
 
 /* Uderstated Panels */
 .panel-understated {
-    // border, heading-text-color, heading-bg-color, heading-border
-    @include panel-variant($understated-border, $understated-header-txt, $understated-header-bg, $understated-header-border);
-        
-    .panel-heading {
-        border-bottom-width: 2px;
-        border-bottom-style:dotted;
-        
-        h2, h3, h4, h5 {            
-            span[class^="ca-gov-icon-"] {
-                color: $understated-header-icon;
-            }
-        }
-        
-        .options {
-            .btn-default {
-              // bg-color, border-color
-              @include button-variant(darken($understated-header-bg, 8%), $understated-border); // beta 5.0 addition
-            }
-        }
+  // border, heading-text-color, heading-bg-color, heading-border
+  @include panel-variant(
+    $understated-border,
+    $understated-header-txt,
+    $understated-header-bg,
+    $understated-header-border
+  );
+
+  .panel-heading {
+    border-bottom-width: 2px;
+    border-bottom-style: dotted;
+
+    h2,
+    h3,
+    h4,
+    h5 {
+      span[class^="ca-gov-icon-"] {
+        color: $understated-header-icon;
+      }
     }
-    
-    .panel-body {
-        background: $understated-body-bg;
-		color: $text-color;
+
+    .options {
+      .btn-default {
+        // bg-color, border-color
+        @include button-variant(
+          darken($understated-header-bg, 8%),
+          $understated-border
+        ); // beta 5.0 addition
+      }
     }
+  }
+
+  .panel-body {
+    background: $understated-body-bg;
+    color: $text-color;
+  }
 }
 
 /* Standout Panels */
 .panel-standout {
-    // border, heading-text-color, heading-bg-color, heading-border
-    @include panel-variant($standout-border, $standout-header-txt, $standout-header-bg, $standout-header-border);
-    
-    .panel-heading {
-        border-bottom-width:5px;
-        border-bottom-style:solid;
-        
-        h2, h3, h4, h5 {
-            span[class^="ca-gov-icon-"] {
-                color: $standout-header-icon;
-            }
-        }
-        
-        .options {
-            .btn-default {
-              // bg-color, border-color
-              @include button-variant(darken($standout-header-bg, 8%), darken($standout-header-bg, 5%)); // beta 5.0 addition
-            }
-        }
+  // border, heading-text-color, heading-bg-color, heading-border
+  @include panel-variant(
+    $standout-border,
+    $standout-header-txt,
+    $standout-header-bg,
+    $standout-header-border
+  );
+
+  .panel-heading {
+    border-bottom-width: 5px;
+    border-bottom-style: solid;
+
+    h2,
+    h3,
+    h4,
+    h5 {
+      span[class^="ca-gov-icon-"] {
+        color: $standout-header-icon;
+      }
     }
-    
-    .panel-body {
-        background: $standout-body-bg;
-		color: $text-color;
+
+    .options {
+      .btn-default {
+        // bg-color, border-color
+        @include button-variant(
+          darken($standout-header-bg, 8%),
+          darken($standout-header-bg, 5%)
+        ); // beta 5.0 addition
+      }
     }
+  }
+
+  .panel-body {
+    background: $standout-body-bg;
+    color: $text-color;
+  }
 }
 
 /* Adds triangle to panel */
 .panel-standout.highlight {
-    .panel-heading {
-        .triangle {
-            //background: url("#{$theme-directory}/panel-standout-triangle.png") no-repeat;
-            @include triangle(down, 12px, $color-p1);
-        }
+  .panel-heading {
+    .triangle {
+      //background: url("#{$theme-directory}/panel-standout-triangle.png") no-repeat;
+      @include triangle(down, 12px, $color-p1);
     }
+  }
 }
