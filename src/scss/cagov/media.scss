@@ -8,17 +8,17 @@
 // --------------------------------------------------
 
 figure {
-    border: 1px solid #ddd;
-    margin-bottom: 15px;
+  border: 1px solid #ddd;
+  margin-bottom: 15px;
 
-    img {
-        width: 100%;
-    }
+  img {
+    width: 100%;
+  }
 }
 
 figcaption {
-    @include font-size(0.8);
-    padding: 10px;
+  @include font-size(0.8);
+  padding: 10px;
 }
 
 //
@@ -26,22 +26,22 @@ figcaption {
 // --------------------------------------------------
 
 .img-left {
-    @include float-left();
-    margin-right: calc($grid-gutter-width / 2);
-    margin-top: 4px; // Aligns image with top of text
+  @include float-left();
+  margin-right: calc($grid-gutter-width / 2);
+  margin-top: 4px; // Aligns image with top of text
 }
 
 .img-right {
-    @include float-right();
-    margin-left: calc($grid-gutter-width / 2);
-    margin-top: 4px; // Aligns image with top of text
+  @include float-right();
+  margin-left: calc($grid-gutter-width / 2);
+  margin-top: 4px; // Aligns image with top of text
 }
 // old bootstrap 3 classes
 .img-circle {
-    border-radius: 50%;
+  border-radius: 50%;
 }
 .img-rounded {
-    border-radius: 5px;
+  border-radius: 5px;
 }
 
 //
@@ -49,15 +49,15 @@ figcaption {
 // --------------------------------------------------
 
 .media {
-    .media-top {
-        @include text-center();
+  .media-top {
+    @include text-center();
 
-        img,
-        span {
-            display: inherit;
-            margin-bottom: $line-height-computed;
-        }
+    img,
+    span {
+      display: inherit;
+      margin-bottom: $line-height-computed;
     }
+  }
 }
 
 //
@@ -66,18 +66,18 @@ figcaption {
 // --------------------------------------------------
 
 .img-responsive {
-    @include img-fluid;
-    display: inline-block;
+  @include img-fluid;
+  display: inline-block;
 }
 
 .img-fluid {
-    display: inline-block;
+  display: inline-block;
 }
 
 // Progress bar //
 .progress {
-    font-size: 1rem;
-    height: unset;
-    min-height: 1.25rem;
-    border-radius: $border-radius-base;
+  font-size: 1rem;
+  height: unset;
+  min-height: 1.25rem;
+  border-radius: $border-radius-base;
 }

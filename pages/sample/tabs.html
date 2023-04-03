@@ -5,97 +5,121 @@ layout: components.njk
 permalink: "components/tabs.html"
 ---
 
-
-
 <h1 class="mt-lg-0">Tabs</h1>
 
 <nav class="page-navigation"></nav>
 
-
-<p>Tabs organize related content into panels and enable visitors to navigate between them. Each panel displays one at a
- time.</p>
-<p>Tabs reduce clutter by forming a unit of related content and fitting more information into a smaller space.</p>
-
+<p>
+  Tabs organize related content into panels and enable visitors to navigate
+  between them. Each panel displays one at a time.
+</p>
+<p>
+  Tabs reduce clutter by forming a unit of related content and fitting more
+  information into a smaller space.
+</p>
 
 <h2>Sample</h2>
 <p>This is a working example of tabs.</p>
 
-
 <!--TABS-->
 <div class="tabs responsive">
- <ul class="nav-tabs">
-  <li>
-   <a href="#section1">Tab 1 example</a>
-  </li>
-  <li>
-   <a href="#section2">Source code</a>
-  </li>
- </ul>
+  <ul class="nav-tabs">
+    <li>
+      <a href="#section1">Tab 1 example</a>
+    </li>
+    <li>
+      <a href="#section2">Source code</a>
+    </li>
+  </ul>
 
- <!--Examples-->
- <section id="section1" class="tab-pane">
-  <div class="card-header" id="heading-example1">
-   <a data-bs-toggle="collapse" href="#collapse-example1" aria-expanded="true" aria-controls="collapse-example1"
-    data-hash="#pane-example1" title="Example tab header">
-    Tab 1 example
-   </a>
-  </div>
-  <div id="collapse-example1" class="collapse show p-0 m-0 brd-0" role="tabpanel" aria-labelledby="heading-example1">
-   <div class="p-a-sm p-y-0 p-t-md">
-    <h3 class="h4 m-t-0">Heading example</h3>
-    <p>When using tabs, don't use too many.</p>
-   </div>
-  </div>
- </section>
+  <!--Examples-->
+  <section id="section1" class="tab-pane">
+    <div class="card-header" id="heading-example1">
+      <a
+        data-bs-toggle="collapse"
+        href="#collapse-example1"
+        aria-expanded="true"
+        aria-controls="collapse-example1"
+        data-hash="#pane-example1"
+        title="Example tab header">
+        Tab 1 example
+      </a>
+    </div>
+    <div
+      id="collapse-example1"
+      class="collapse show p-0 m-0 brd-0"
+      role="tabpanel"
+      aria-labelledby="heading-example1">
+      <div class="p-a-sm p-y-0 p-t-md">
+        <h3 class="h4 m-t-0">Heading example</h3>
+        <p>When using tabs, don't use too many.</p>
+      </div>
+    </div>
+  </section>
 
-
-
- <!--HTML-->
- <section id="section2" class="tab-pane">
-  <div class="card-header" id="heading-html1">
-   <a class="collapsed" data-bs-toggle="collapse" href="#collapse-html1" aria-expanded="false"
-    aria-controls="collapse-html1" data-hash="#pane-html1" title="HTML Source code tab header">
-    Source code
-   </a>
-  </div>
-  <div id="collapse-html1" class="collapse p-0 m-0 brd-0" role="tabpanel" aria-labelledby="heading-html1">
-   <div class="p-a-sm">
-    <textarea class="sourcecode" aria-label="source code"
-     disabled>{% include "../../src/_includes/modules/tabs.html" %}</textarea>
-   </div>
-  </div>
- </section>
-
+  <!--HTML-->
+  <section id="section2" class="tab-pane">
+    <div class="card-header" id="heading-html1">
+      <a
+        class="collapsed"
+        data-bs-toggle="collapse"
+        href="#collapse-html1"
+        aria-expanded="false"
+        aria-controls="collapse-html1"
+        data-hash="#pane-html1"
+        title="HTML Source code tab header">
+        Source code
+      </a>
+    </div>
+    <div
+      id="collapse-html1"
+      class="collapse p-0 m-0 brd-0"
+      role="tabpanel"
+      aria-labelledby="heading-html1">
+      <div class="p-a-sm">
+        <textarea class="sourcecode" aria-label="source code" disabled>
+{% include "../../src/_includes/modules/tabs.html" %}</textarea
+        >
+      </div>
+    </div>
+  </section>
 </div>
 <!--END TABS-->
 
-
 <h2>Usage</h2>
 <h3>When and how to use it</h3>
-<p>Use tabs to group similar information on the same page. This allows visitors to switch between content without
- navigating away from that page or workflow to complete a task.</p>
+<p>
+  Use tabs to group similar information on the same page. This allows visitors
+  to switch between content without navigating away from that page or workflow
+  to complete a task.
+</p>
 <p>Use tabs when:</p>
 <ul>
- <li>Content can be logically separated into labeled sections</li>
- <li>Visitors do not need to view all the sections at once</li>
+  <li>Content can be logically separated into labeled sections</li>
+  <li>Visitors do not need to view all the sections at once</li>
 </ul>
 <p>Test your content without tabs first. It might be better to:</p>
 <ul>
- <li>Split the content across multiple pages</li>
- <li>Keep the content on a single page, separated by headings</li>
- <li>Use <a href="/components/side-navigation.html">side navigation</a> to let users navigate quickly to specific
-  sections of content</li>
+  <li>Split the content across multiple pages</li>
+  <li>Keep the content on a single page, separated by headings</li>
+  <li>
+    Use
+    <a href="/components/side-navigation.html">side navigation</a>
+    to let users navigate quickly to specific sections of content
+  </li>
 </ul>
 
 <h3>How not to use it</h3>
-<p>Do not use the tabs component as a form of page navigation. </p>
-<p>Tabs hide content and not everyone will notice them or understand how they work.</p>
+<p>Do not use the tabs component as a form of page navigation.</p>
+<p>
+  Tabs hide content and not everyone will notice them or understand how they
+  work.
+</p>
 <p>Do not use tabs if your visitors need to:</p>
 <ul>
- <li>Read through all of the content in order, like a step-by-step process</li>
- <li>Compare information in different tabs</li>
+  <li>Read through all of the content in order, like a step-by-step process</li>
+  <li>Compare information in different tabs</li>
 </ul>
-
 
 <h2>Accessibility</h2>
 {% include "../../src/_includes/modules/accessibility.html" %}

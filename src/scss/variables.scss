@@ -163,7 +163,11 @@ $headings-color: inherit !default;
 
 // [converter] If $bootstrap-sass-asset-helper if used, provide path relative to the assets load path.
 // [converter] This is because some asset helpers, such as Sprockets, do not work with file-relative paths.
-$icon-font-path: if($bootstrap-sass-asset-helper, "bootstrap/", "../fonts/bootstrap/") !default;
+$icon-font-path: if(
+  $bootstrap-sass-asset-helper,
+  "bootstrap/",
+  "../fonts/bootstrap/"
+) !default;
 
 // File name for all font files.
 $icon-font-name: "glyphicons-halflings-regular" !default;
@@ -300,11 +304,17 @@ $input-border-focus: #66afe9 !default;
 $input-color-placeholder: #999 !default;
 
 // Default `.form-control` height
-$input-height-base: ($line-height-computed + ($padding-base-vertical * 2) + 2) !default;
+$input-height-base: (
+  $line-height-computed + ($padding-base-vertical * 2) + 2
+) !default;
 // Large `.form-control` height
-$input-height-large: (ceil(20 * $line-height-large) + ($padding-large-vertical * 2) + 2) !default;
+$input-height-large: (
+  ceil(20 * $line-height-large) + ($padding-large-vertical * 2) + 2
+) !default;
 // Small `.form-control` height
-$input-height-small: (floor(13 * $line-height-small) + ($padding-small-vertical * 2) + 2) !default;
+$input-height-small: (
+  floor(13 * $line-height-small) + ($padding-small-vertical * 2) + 2
+) !default;
 
 // `.form-group` margin
 $form-group-margin-bottom: 1rem !default; // Old bootstrap3 value 15px !default;
@@ -448,7 +458,9 @@ $grid-float-breakpoint-max: ($grid-float-breakpoint - 1) !default;
 $navbar-height: 50px !default;
 $navbar-margin-bottom: $line-height-computed !default;
 $navbar-border-radius: $border-radius-base !default;
-$navbar-padding-vertical: calc(calc($navbar-height - $line-height-computed) / 2);
+$navbar-padding-vertical: calc(
+  calc($navbar-height - $line-height-computed) / 2
+);
 $navbar-collapse-max-height: 340px !default;
 
 $navbar-default-color: #777 !default;
@@ -466,7 +478,10 @@ $navbar-default-link-disabled-bg: transparent !default;
 
 // Navbar brand label
 $navbar-default-brand-color: $navbar-default-link-color !default;
-$navbar-default-brand-hover-color: darken($navbar-default-brand-color, 10%) !default;
+$navbar-default-brand-hover-color: darken(
+  $navbar-default-brand-color,
+  10%
+) !default;
 $navbar-default-brand-hover-bg: transparent !default;
 
 // Navbar toggle
@@ -636,7 +651,10 @@ $popover-arrow-outer-width: ($popover-arrow-width + 1) !default;
 // Popover outer arrow color
 $popover-arrow-outer-color: fade_in($popover-border-color, 0.05) !default;
 // Popover outer arrow fallback color
-$popover-arrow-outer-fallback-color: darken($popover-fallback-border-color, 20%) !default;
+$popover-arrow-outer-fallback-color: darken(
+  $popover-fallback-border-color,
+  20%
+) !default;
 
 //== Labels
 //

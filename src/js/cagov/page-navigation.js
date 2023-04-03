@@ -3,56 +3,53 @@
 ----------------------------------------- */
 
 function pageNav() {
- const headings = document.querySelectorAll('h2');
- const h2heading = document.querySelector("h2");
- const pagenav = document.querySelector(".page-navigation");
- // check if page navigation is empty and page has h2 headings
- if (pagenav && pagenav.childNodes.length === 0 && h2heading) {
+  const headings = document.querySelectorAll("h2");
+  const h2heading = document.querySelector("h2");
+  const pagenav = document.querySelector(".page-navigation");
+  // check if page navigation is empty and page has h2 headings
+  if (pagenav && pagenav.childNodes.length === 0 && h2heading) {
+    pagenavUL = document.createElement("ul");
 
-  pagenavUL = document.createElement("ul");
+    headings.forEach(h2 => {
+      // find each h2 and their innter text
+      innertext = h2.innerHTML;
 
-  headings.forEach(h2 => {
+      // add dashes for inner text for IDs
+      innertextID = h2.innerHTML.replace(/\s+/g, "-");
 
-   // find each h2 and their innter text
-   innertext = h2.innerHTML;
+      // set ID for each h2 based on inner taxt
+      h2.setAttribute("id", innertextID);
 
-   // add dashes for inner text for IDs
-   innertextID = h2.innerHTML.replace(/\s+/g, '-');
+      // Create anchor links
+      var anchorlinks = '<a href="#' + innertextID + '">' + innertext + "</a>";
 
-   // set ID for each h2 based on inner taxt
-   h2.setAttribute("id", innertextID);
+      // create li element
+      var listnav = document.createElement("li");
 
-   // Create anchor links
-   var anchorlinks = '<a href="#' + innertextID + '">' + innertext + '</a>';
+      // Add achor links into list item
+      listnav.innerHTML = anchorlinks;
 
-   // create li element
-   var listnav = document.createElement("li");
+      // appned list item to the UL
+      pagenavUL.appendChild(listnav);
 
-   // Add achor links into list item
-   listnav.innerHTML = anchorlinks;
+      // count number of h2 and add columns class to the ul if there are too many list items
+      var h2number = headings.length;
+      if (h2number > 5) {
+        pagenavUL.classList.add("columns-2");
+      } else if (h2number > 8) {
+        pagenavUL.classList.add("columns-3");
+      }
+    });
 
-   // appned list item to the UL
-   pagenavUL.appendChild(listnav);
+    // create on this page label
+    var onthispage =
+      '<div id="on-this-page-navigation-label" class="label">On this page</div>';
+    pagenav.innerHTML = onthispage;
 
-   // count number of h2 and add columns class to the ul if there are too many list items
-   var h2number = headings.length;
-   if (h2number > 5) {
-    pagenavUL.classList.add("columns-2");
-   }
-   else if (h2number > 8) {
-    pagenavUL.classList.add("columns-3");
-   }
-  });
-
-  // create on this page label
-  var onthispage = '<div id="on-this-page-navigation-label" class="label">On this page</div>';
-  pagenav.innerHTML = onthispage;
-
-  // add ul item to the nav and set aria labelledby
-  pagenav.appendChild(pagenavUL);
-  pagenav.setAttribute("aria-labelledby", "on-this-page-navigation-label");
-
- }
+    // add ul item to the nav and set aria labelledby
+    pagenav.appendChild(pagenavUL);
+    pagenav.setAttribute("aria-labelledby", "on-this-page-navigation-label");
+  }
 }
 
 // call out the function on the page load

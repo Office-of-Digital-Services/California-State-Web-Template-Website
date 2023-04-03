@@ -10,73 +10,84 @@ permalink: "components/number-counter.html"
 
 <nav class="page-navigation"></nav>
 
-
 <p>The number counter adds animation and counts up to a set number.</p>
-
-
 
 <h2>Sample</h2>
 
 <!--TABS-->
 <div class="tabs responsive">
- <ul class="nav-tabs">
-  <li>
-   <a href="#section1">Example</a>
-  </li>
-  <li>
-   <a href="#section2">Source code</a>
-  </li>
- </ul>
+  <ul class="nav-tabs">
+    <li>
+      <a href="#section1">Example</a>
+    </li>
+    <li>
+      <a href="#section2">Source code</a>
+    </li>
+  </ul>
 
+  <!--Examples-->
+  <section id="section1" class="tab-pane">
+    <div class="card-header" id="heading-example1">
+      <a
+        data-bs-toggle="collapse"
+        href="#collapse-example1"
+        aria-expanded="true"
+        aria-controls="collapse-example1"
+        data-hash="#pane-example1"
+        title="Example tab header">
+        Example
+      </a>
+    </div>
+    <div
+      id="collapse-example1"
+      class="collapse show p-0 m-0 brd-0"
+      role="tabpanel"
+      aria-labelledby="heading-example1">
+      <div class="p-a-sm p-b-md">
+        {% include "../../src/_includes/modules/number-counter.html" %}
+      </div>
+    </div>
+  </section>
 
- <!--Examples-->
- <section id="section1" class="tab-pane">
-  <div class="card-header" id="heading-example1">
-   <a data-bs-toggle="collapse" href="#collapse-example1" aria-expanded="true" aria-controls="collapse-example1"
-    data-hash="#pane-example1" title="Example tab header">
-    Example
-   </a>
-  </div>
-  <div id="collapse-example1" class="collapse show p-0 m-0 brd-0" role="tabpanel" aria-labelledby="heading-example1">
-   <div class="p-a-sm p-b-md">
-    {% include "../../src/_includes/modules/number-counter.html" %}
-   </div>
-  </div>
- </section>
-
-
-
- <!--HTML-->
- <section id="section2" class="tab-pane">
-  <div class="card-header" id="heading-html1">
-   <a class="collapsed" data-bs-toggle="collapse" href="#collapse-html1" aria-expanded="false"
-    aria-controls="collapse-html1" data-hash="#pane-html1" title="HTML Source code tab header">
-    Source code
-   </a>
-  </div>
-  <div id="collapse-html1" class="collapse p-0 m-0 brd-0" role="tabpanel" aria-labelledby="heading-html1">
-   <div class="p-a-sm">
-    <pre style="max-height: 300px;"><code>{% include "../../src/_includes/modules/number-counter.html" %}</code></pre>
-
-   </div>
-  </div>
- </section>
-
-
+  <!--HTML-->
+  <section id="section2" class="tab-pane">
+    <div class="card-header" id="heading-html1">
+      <a
+        class="collapsed"
+        data-bs-toggle="collapse"
+        href="#collapse-html1"
+        aria-expanded="false"
+        aria-controls="collapse-html1"
+        data-hash="#pane-html1"
+        title="HTML Source code tab header">
+        Source code
+      </a>
+    </div>
+    <div
+      id="collapse-html1"
+      class="collapse p-0 m-0 brd-0"
+      role="tabpanel"
+      aria-labelledby="heading-html1">
+      <div class="p-a-sm">
+        <pre
+          style="max-height: 300px;"><code>{% include "../../src/_includes/modules/number-counter.html" %}</code></pre>
+      </div>
+    </div>
+  </section>
 </div>
 <!--END TABS-->
 
-
-
 <h2>Usage</h2>
-<h3>When and how to use it </h3>
-<p>Use the rolling number counter component to add visual variety to important data. This is often used on homepages.
+<h3>When and how to use it</h3>
+<p>
+  Use the rolling number counter component to add visual variety to important
+  data. This is often used on homepages.
 </p>
 <h3>How not to use it</h3>
-<p>Do not use the rolling number counter in multiple sections of your webpage. </p>
-<p>Do not use the number counter for dates. </p>
-
-
+<p>
+  Do not use the rolling number counter in multiple sections of your webpage.
+</p>
+<p>Do not use the number counter for dates.</p>
 
 <h2>Accessibility</h2>
 {% include "../../src/_includes/modules/accessibility.html" %}

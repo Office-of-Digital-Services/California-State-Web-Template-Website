@@ -1,6 +1,7 @@
 # Version History
 
 ## 6.1.1
+
 - Updated tab component JS to make it more accessible
 - Fixed headings semantic structure throughout website
 - Fixed accessibility issues throughout website
@@ -12,16 +13,19 @@
 - Added newsroom patterns including newsroom, newslist and news article
 
 ## 6.1.0
+
 - Updated alert banner
 - Added 8 new icons to the CAGov icons font
 - Added side navigation component
 - Added pagination to the icon search page
 - Added automatic "on this page" navigation component
 - Added new contact us form that posts feedback to airtable
+
 ## 6.0.8
+
 - Updated site structure and rebuild framework to use eleventy site generation #191
 - Replaced server site includes with njk includes and templates
-- Changed website output folder to /_site/ #206
+- Changed website output folder to /\_site/ #206
 - Updated utility header include to look like design system #192
 - Updated branding include (site header) to look like CA Design System's site header #194
 - Updated mobile controls styles to look like CA Design System
@@ -43,8 +47,8 @@
 - Added new Step List component #222
 - Added new structural components pages (Utility Header #320, Settings Bar #318, Mobile Controls #316, Site Header #319, Search Bar #317, Global Footer #315)
 
-
 ## 6.0.7
+
 - Added responsive font size calculation functionality
 - Adjusted some of the components to responsive font sizing
 - Updated CaGov Font: added GitHub icon and updated pdf-text icon
@@ -53,8 +57,8 @@
 - Added settings.js into gulpfile.js to activate utility header's settings
 - Fixed search.js console error that was firing when search widget was not in the page
 
-
 ## 6.0.6 (jQuery-less Beta Release)
+
 - Updated core files with new jQuery-less navigation.js
 - Removed jQuery and jQuery plugins
 - Updated accordion file (took it from cagov design system)
@@ -96,20 +100,23 @@
 - Updated Bootstrap to v5.1.3, fixed user profile layout page
 
 ## 6.0.5
+
 - Removed plotly.js and d3.js from js/libs
 - Removed background opacity for service tiles to fix color contrast false positives
 - Updated carousels backgrounds to fix color contrast false positives.
 
 ## 6.0.4
+
 - Fixed "Links are not clearly identifiable" issue by replacing background image links underlining technique with original text underline property
 - Increased links color and surrounding text contrast ratio to 3.1
 - Fixed "fixed Link without a text alternative issue"
 - Updated jQuery to v3.6.0
 - Updated search reset button selection variable
 - Fixed sliders overflow scrollbars
-- Fixed full width nav active search bar on focus placement 
+- Fixed full width nav active search bar on focus placement
 
 ## 6.0.3
+
 - Removed role tablist attribute from tag, and collapse extension
 - Fixed "Visible label and accessible name do not match" a11y error
 - Fixed "Text is clipped when zoomed in" a11y error
@@ -129,54 +136,56 @@
 - Fixed "Decorative element is exposed to assistive technologies" issue
 - Fixed some icon font class names that were accidentally renamed during icon font update process. Removed "1" at the end of the following icon font classes: ca-gov-icon-collapse1, ca-gov-icon-construction1 and ca-gov-icon-expand1
 
-
 ## 6.0.1
+
 - Fixed side navigation border bottom style
 - Revised parallax js plugin and parallax-bg class implementation
 - Added parallax sample page
 - Fixed two column layouts on some pages
 - Updated accordion keyboard accessibility
 
-
 ## 6.0.0
-- Added new pre-made content-based layout pages that showcase specific business areas such as 
-	- About 
-	- Agency Profile
-	- Contact
-	- Events
-	- FAQs
-	- Homepage
-	- News
-	- Services
-	- Search Results
-	- User profile
-- Added new pages that provide more State Template usability directions: 
-	- CSS Shortcuts
-	- Layouts
-	- Navigation Samples 
-	- Update State Template
+
+- Added new pre-made content-based layout pages that showcase specific business areas such as
+  - About
+  - Agency Profile
+  - Contact
+  - Events
+  - FAQs
+  - Homepage
+  - News
+  - Services
+  - Search Results
+  - User profile
+- Added new pages that provide more State Template usability directions:
+
+  - CSS Shortcuts
+  - Layouts
+  - Navigation Samples
+  - Update State Template
 
 - Added new modules:
-	- Blurb
-	- Modal
-	- Side navigation
-	- Sticky footer
-	- Timeline
+
+  - Blurb
+  - Modal
+  - Side navigation
+  - Sticky footer
+  - Timeline
 
 - Updated existing modules and components
-	- Accordions
-	- Icon blocks
-	- Info blocks
-	- Lists
-	- Tabs
+
+  - Accordions
+  - Icon blocks
+  - Info blocks
+  - Lists
+  - Tabs
 
 - Added new color schemes
-	- Delta
-	- Santa Cruz
-	- Shasta
+  - Delta
+  - Santa Cruz
+  - Shasta
 - Cleaned up scss files (moved color properties and their variable to the color schemes section, updated globals.scss files)
 - Added new full width active search navigation option
 - Made new dyslexic font option available in the settings
 - Redesigned template's navigation structure focusing on how to get started with the State Template, also to showcase layout pages, color schemes and content modules
 - Added new icons to CAGov font library
-

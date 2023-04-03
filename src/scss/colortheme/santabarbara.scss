@@ -1,6 +1,3 @@
-
-
-
 /* -----------------------------------------
    SANTABARBARA
 ----------------------------------------- */
@@ -13,8 +10,8 @@
 $theme-directory: "#{$template-path}/santabarbara"; // Folder where assets for theme are stored
 
 // Primary Theme colors
-$color-p1: #FF9B53; // Gold
-$color-p2: #834B1E; // Rust
+$color-p1: #ff9b53; // Gold
+$color-p2: #834b1e; // Rust
 $color-p3: #664945; // Brown Violet
 
 // Secondary Theme colors
@@ -23,14 +20,14 @@ $color-s2: #f1dac2; // Lighter Gold
 $color-s3: #e8bd90; // Light Gold
 
 // Accent Colors
-$color-a1: #1B79C0; // Dark Blue
-$color-a2: #077CBB; // Med Blue
+$color-a1: #1b79c0; // Dark Blue
+$color-a2: #077cbb; // Med Blue
 $color-a3: #258378; // Teal
-$color-a4: #32852E; // Green $brand-success
+$color-a4: #32852e; // Green $brand-success
 $color-a5: #815ab4; // Purple
-$color-a6: #BE37CD; // Lavender
-$color-a7: #C93E2C; // Red $brand-danger
-$color-a8: #BB520C; // Orange $brand-warning
+$color-a6: #be37cd; // Lavender
+$color-a7: #c93e2c; // Red $brand-danger
+$color-a8: #bb520c; // Orange $brand-warning
 $color-a9: #f7e455; // Yellow
 
 // Module or theme specific variables
@@ -43,7 +40,7 @@ $body-color: #07537b; // Background base and typically the page edge border
 $body-midline: $color-s2; // Midline gradient color
 $edge-border: $body-color; // Applied to outer edge of the page
 $header-icon: $color-p2; // Icon left of main content H1
-$mobile-controls: 		$gray-600; // Mobile controls
+$mobile-controls: $gray-600; // Mobile controls
 $footer-txt: #fff; // Color of text and links in the footer
 
 $panel-border: #ddd;
@@ -51,7 +48,10 @@ $panel-border: #ddd;
 $overstated-header-bg: $color-p2; // Background for panel header
 $overstated-header-txt: #fff; // Panel header text color
 $overstated-header-icon: #fff; // Panel header icon color
-$overstated-header-border: darken($color-p2, 10%); // Panel header bottom border color
+$overstated-header-border: darken(
+  $color-p2,
+  10%
+); // Panel header bottom border color
 $overstated-border: $panel-border; // Border surrounding entire panel
 $overstated-body-bg: $color-s1; // Panel body background
 
@@ -97,5 +97,3 @@ $text-field-color: rgba(255, 255, 255, 0.8); // 80% white
 
 // UTILITY
 $utility-link-hover-color: lighten($color-p1, 35%);
-
-
