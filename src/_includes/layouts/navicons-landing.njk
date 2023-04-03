@@ -22,7 +22,7 @@
         include "../navigation.njk" -%} {%- endif %}
         <div
           id="head-search"
-          class='search-container {%- if search === "Featured" %} featured-search {%- endif -%}'>
+          class="search-container {{- ' featured-search' if search === 'Featured' }}">
           {% include "../search.njk" %}
         </div>
       </div>

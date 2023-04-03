@@ -1,11 +1,11 @@
-{% extends "./base.njk" %} {% block content %}
+{%- extends "./base.njk" -%} {%- block content -%}
 <div id="main-content" class="main-content">
   <div class="container p-t-md">
     <main class="main-primary" id="main">
       {# Breadcrumbs (rendering data from /src/_data/breadcrumbs.json and
-      /src/_data/helpers.js #} {% include "../breadcrumbs.njk" %} {{ content |
-      safe }}
+      /src/_data/helpers.js -#} {%- include "../breadcrumbs.njk" -%} {{ content
+      | safe }}
     </main>
   </div>
 </div>
-{% endblock %}
+{%- endblock -%}

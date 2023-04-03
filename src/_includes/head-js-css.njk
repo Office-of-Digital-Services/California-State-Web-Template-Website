@@ -1,11 +1,11 @@
 <link rel="stylesheet" href="/css/cagov.core.min.css" />
-{% if colortheme %}
+{% if colortheme -%}
 <link rel="stylesheet" href="{{ colortheme }}" />
-{% else %}
+{% else -%}
 <link rel="stylesheet" href="/css/colortheme-oceanside.min.css" />
-{% endif %} {% if customcss %}
+{% endif -%} {%- if customcss -%}
 <link rel="stylesheet" href="{{ customcss }}" />
-{% endif %}
+{% endif -%}
 <link
   rel="apple-touch-icon-precomposed"
   sizes="100x100"
@@ -41,4 +41,4 @@
 <link rel="shortcut icon" href="/images/apple-touch-icon-57x57.png" />
 <link rel="apple-touch-icon" href="/images/apple-touch-icon.png" />
 <link rel="shortcut icon" href="/favicon.ico" />
-{% include "./analytics.njk" %}
+{% include "./analytics.njk" -%}
