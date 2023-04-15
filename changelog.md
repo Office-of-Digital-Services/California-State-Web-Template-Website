@@ -1,5 +1,9 @@
 # Version History
 
+## 6.1.2
+
+- Updated project with consistent formatting
+
 ## 6.1.1
 
 - Updated tab component JS to make it more accessible
