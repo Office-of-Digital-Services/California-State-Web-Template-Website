@@ -17,7 +17,13 @@
 <ul>
   <li><a href="/patterns.html" class="nav-heading landing" id="components-list">All patterns</a></li>
   				{% for item in patterns.patterns %}
-      {% if 'subnav' in item %}
+      {% if item.url == '/patterns.html#page-templates' %}
+                    <li>
+                      <a class="bold" href="{{ item.url }}">
+                        {{ item.text }}
+                      </a>
+                    </li>
+     {%- elif 'subnav' in item %}
         <li><a href="{{ item.url }}" {{ helpers.getLinkActiveState(item.url, page.url) | safe }}>{{ item.text }}</a>
          {# subnav #}
          {% if helpers.getURL(item.url, page.url) %} 
