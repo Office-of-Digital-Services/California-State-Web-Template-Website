@@ -5,139 +5,172 @@ layout: page.njk
 permalink: "structure/mobile-controls.html"
 ---
 
-
 <div class="row">
- <div class="col-md-3" role="complementary">
-  <!-- Side navigation -->
-  <nav aria-labelledby="navigation-list" class="side-navigation sticky-6">
-   <ul class="list-navigation">
-    <li><a href="/structure.html" id="navigation-list" class="landing">Structure</a></li>
-    <li><a href="/structure/utility-header.html">Utility header</a></li>
-    <li><a href="/structure/settings.html">Settings</a></li>
-    <li><a href="/structure/site-header.html">Site header</a></li>
-    <li><a href="/structure/mobile-controls.html" class="active">Mobile controls</a></li>
-    <li><a href="/structure/search.html">Search</a></li>
-    <li><a href="/structure/site-navigation.html">Site navigation</a></li>
-    <li><a href="/structure/footer.html">Footer</a></li>
-   </ul>
-  </nav>
- </div>
- <div class="col-md-9 m-b-lg">
-
-
-  <h1 class="mt-lg-0">Mobile controls</h1>
-
-  <nav class="page-navigation"></nav>
-
-  <p>Mobile controls are mobile-friendly website search and navigation. Search and navigation toggle
-   buttons expand and collapse when interacted with in mobile view.</p>
-  <p>It includes:</p>
-
-  <ul>
-   <li>Search toggle button</li>
-   <li>Navigation toggle button</li>
-  </ul>
-
-  <h2>Sample</h2>
-
-  <div class="tabs responsive">
-   <ul class="nav-tabs">
-    <li>
-     <a href="#section1">Example</a>
-    </li>
-    <li>
-     <a href="#section2">Source code</a>
-    </li>
-    <li>
-     <a href="#section3">Eleventy include</a>
-    </li>
-   </ul>
-
-
-   <section id="section1" class="tab-pane">
-    <div class="card-header" id="heading-example2">
-     <h4 class="my-0 w-100">
-      <a data-bs-toggle="collapse" href="#collapse-example2" aria-expanded="true" aria-controls="collapse-example2"
-       title="Example tab header">
-       Example
-      </a>
-     </h4>
-    </div>
-    <div id="collapse-example2" class="collapse show p-0 m-0 brd-0" role="tabpanel" aria-labelledby="heading-example2">
-     <div class="p-a-sm">
-      <h3 class="h4 m-t-0">Mobile</h3>
-      <div class="col-md-6">
-       <img src="/images/components/strucutre-site-header-mobile.jpg" alt="Mobile Controls screenshot"
-        class="img-fluid">
-      </div>
-
-     </div>
-    </div>
-   </section>
-
-   <section id="section2" class="tab-pane">
-    <div class="card-header" id="heading-html2">
-     <h4 class="my-0 w-100">
-      <a class="collapsed" data-bs-toggle="collapse" href="#collapse-html2" aria-expanded="false"
-       aria-controls="collapse-html2" title="HTML Source code tab header">
-       HTML Source code
-      </a>
-     </h4>
-    </div>
-    <div id="collapse-html2" class="collapse p-0 m-0 brd-0" role="tabpanel" aria-labelledby="heading-html2">
-     <div class="p-a-sm">
-      <h3 class="h4 m-t-0">HTML</h3>
-      <pre><code>{% include "../../src/_includes/mobile-controls.njk" %}</code>
-       </pre>
-     </div>
-    </div>
-   </section>
-
-   <section id="section3" class="tab-pane">
-    <div class="card-header" id="heading-include2">
-     <h4 class="my-0 w-100">
-      <a class="collapsed" data-bs-toggle="collapse" href="#collapse-include2" aria-expanded="false"
-       aria-controls="collapse-include2" title="Eleventy Include tab header">
-       Eleventy include
-      </a>
-     </h4>
-    </div>
-    <div id="collapse-include2" class="collapse p-0 m-0 brd-0" role="tabpanel" aria-labelledby="heading-include2">
-     <div class="p-a-sm">
-      <h3 class="h4 m-t-0">Include path</h3>
-      <p class="p-b">Add Mobile Controls <code>njk</code> include code after Site header include:</p>
-      <pre><code>&#123;% include "src/_includes/mobile-controls.njk" %&#125;</code></pre>
-
-      <p class="p-t"><span class="text-highlight-primary">Note:</span> Path to the include will be relative to the
-       directory of
-       your
-       page.</p>
-     </div>
-    </div>
-   </section>
-
+  <div class="col-md-3" role="complementary">
+    <!-- Side navigation -->
+    <nav aria-labelledby="navigation-list" class="side-navigation sticky-6">
+      <ul class="list-navigation">
+        <li>
+          <a href="/structure.html" id="navigation-list" class="landing">
+            Structure
+          </a>
+        </li>
+        <li><a href="/structure/utility-header.html">Utility header</a></li>
+        <li><a href="/structure/settings.html">Settings</a></li>
+        <li><a href="/structure/site-header.html">Site header</a></li>
+        <li>
+          <a href="/structure/mobile-controls.html" class="active">
+            Mobile controls
+          </a>
+        </li>
+        <li><a href="/structure/search.html">Search</a></li>
+        <li><a href="/structure/site-navigation.html">Site navigation</a></li>
+        <li><a href="/structure/footer.html">Footer</a></li>
+      </ul>
+    </nav>
   </div>
+  <div class="col-md-9 m-b-lg">
+    <h1 class="mt-lg-0">Mobile controls</h1>
 
+    <nav class="page-navigation"></nav>
 
+    <p>
+      Mobile controls are mobile-friendly website search and navigation. Search
+      and navigation toggle buttons expand and collapse when interacted with in
+      mobile view.
+    </p>
+    <p>It includes:</p>
 
+    <ul>
+      <li>Search toggle button</li>
+      <li>Navigation toggle button</li>
+    </ul>
 
+    <h2>Sample</h2>
 
-  <h2>Usage</h2>
+    <div class="tabs responsive">
+      <ul class="nav-tabs">
+        <li>
+          <a href="#section1">Example</a>
+        </li>
+        <li>
+          <a href="#section2">Source code</a>
+        </li>
+        <li>
+          <a href="#section3">Eleventy include</a>
+        </li>
+      </ul>
 
-  <h3>When and how to use it</h3>
+      <section id="section1" class="tab-pane">
+        <div class="card-header" id="heading-example2">
+          <h4 class="my-0 w-100">
+            <a
+              data-bs-toggle="collapse"
+              href="#collapse-example2"
+              aria-expanded="true"
+              aria-controls="collapse-example2"
+              title="Example tab header">
+              Example
+            </a>
+          </h4>
+        </div>
+        <div
+          id="collapse-example2"
+          class="collapse show p-0 m-0 brd-0"
+          role="tabpanel"
+          aria-labelledby="heading-example2">
+          <div class="p-a-sm">
+            <h3 class="h4 m-t-0">Mobile</h3>
+            <div class="col-md-6">
+              <img
+                src="/images/components/strucutre-site-header-mobile.jpg"
+                alt="Mobile Controls screenshot"
+                class="img-fluid" />
+            </div>
+          </div>
+        </div>
+      </section>
 
-  <p>This is an essential template structural component. Without it, people could not open the site navigation or search
-   bar in mobile view. It should be placed right below the site header.</p>
-  <p>By default, the text identifier for the search button is "Search" and text identifier for the navigation button is
-   "Menu."
-  </p>
+      <section id="section2" class="tab-pane">
+        <div class="card-header" id="heading-html2">
+          <h4 class="my-0 w-100">
+            <a
+              class="collapsed"
+              data-bs-toggle="collapse"
+              href="#collapse-html2"
+              aria-expanded="false"
+              aria-controls="collapse-html2"
+              title="HTML Source code tab header">
+              HTML Source code
+            </a>
+          </h4>
+        </div>
+        <div
+          id="collapse-html2"
+          class="collapse p-0 m-0 brd-0"
+          role="tabpanel"
+          aria-labelledby="heading-html2">
+          <div class="p-a-sm">
+            <h3 class="h4 m-t-0">HTML</h3>
+            <pre><code>{% include "../../src/_includes/mobile-controls.njk" %}</code>
+       </pre>
+          </div>
+        </div>
+      </section>
 
+      <section id="section3" class="tab-pane">
+        <div class="card-header" id="heading-include2">
+          <h4 class="my-0 w-100">
+            <a
+              class="collapsed"
+              data-bs-toggle="collapse"
+              href="#collapse-include2"
+              aria-expanded="false"
+              aria-controls="collapse-include2"
+              title="Eleventy Include tab header">
+              Eleventy include
+            </a>
+          </h4>
+        </div>
+        <div
+          id="collapse-include2"
+          class="collapse p-0 m-0 brd-0"
+          role="tabpanel"
+          aria-labelledby="heading-include2">
+          <div class="p-a-sm">
+            <h3 class="h4 m-t-0">Include path</h3>
+            <p class="p-b">
+              Add Mobile Controls
+              <code>njk</code>
+              include code after Site header include:
+            </p>
+            <pre><code>&#123;% include "src/_includes/mobile-controls.njk" %&#125;</code></pre>
 
+            <p class="p-t">
+              <span class="text-highlight-primary">Note:</span>
+              Path to the include will be relative to the directory of your
+              page.
+            </p>
+          </div>
+        </div>
+      </section>
+    </div>
 
+    <h2>Usage</h2>
 
-  <h2>Accessibility</h2>
-  {% include "../../src/_includes/modules/accessibility.html" %}
+    <h3>When and how to use it</h3>
 
+    <p>
+      This is an essential template structural component. Without it, people
+      could not open the site navigation or search bar in mobile view. It should
+      be placed right below the site header.
+    </p>
+    <p>
+      By default, the text identifier for the search button is "Search" and text
+      identifier for the navigation button is "Menu."
+    </p>
 
- </div>
+    <h2>Accessibility</h2>
+    {% include "../../src/_includes/modules/accessibility.html" %}
+  </div>
 </div>

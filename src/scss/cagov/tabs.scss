@@ -3,359 +3,358 @@
 ----------------------------------------- */
 
 .tab-group {
- position: relative;
- border: none;
-
- @media (max-width: $screen-xs-max) {
+  position: relative;
   border: none;
- }
 
- > [class^="ca-gov-icon-"] {
-  @include hide();
- }
-
- .nav-tabs {
-  border-radius: 0;
-  border-bottom: none;
-
-  li:first-child a,
-  li:first-child a:hover,
-  li:first-child a:focus,
-  li:first-child a:active {
-   border-left: 0 !important;
-  }
-
-  li {
-   &.active {
-    border-top: 0;
-   }
-
-   > a {
-    padding: 0.5rem 1rem;
-    border: none;
-    border-radius: 0;
-    position: relative;
-    display: block;
-    color: $link-color;
-    font-weight: 600;
-
-    &,
-    &:hover {
-     border: none;
-     border-top: none !important;
-     text-decoration: none;
-     border-bottom: none;
-    }
-   }
-  }
- }
-
- .tab-pane {
-  padding: calc($grid-gutter-width / 2);
- }
- .tab-content {
-  border: 1px solid $gray-200;
   @media (max-width: $screen-xs-max) {
-   border: none;
+    border: none;
   }
- }
+
+  > [class^="ca-gov-icon-"] {
+    @include hide();
+  }
+
+  .nav-tabs {
+    border-radius: 0;
+    border-bottom: none;
+
+    li:first-child a,
+    li:first-child a:hover,
+    li:first-child a:focus,
+    li:first-child a:active {
+      border-left: 0 !important;
+    }
+
+    li {
+      &.active {
+        border-top: 0;
+      }
+
+      > a {
+        padding: 0.5rem 1rem;
+        border: none;
+        border-radius: 0;
+        position: relative;
+        display: block;
+        color: $link-color;
+        font-weight: 600;
+
+        &,
+        &:hover {
+          border: none;
+          border-top: none !important;
+          text-decoration: none;
+          border-bottom: none;
+        }
+      }
+    }
+  }
+
+  .tab-pane {
+    padding: calc($grid-gutter-width / 2);
+  }
+  .tab-content {
+    border: 1px solid $gray-200;
+    @media (max-width: $screen-xs-max) {
+      border: none;
+    }
+  }
 }
 
 /* Bottom Tabs */
 // If left and right solutions are required see: http://www.bootply.com/74926
 .tabs-bottom {
- .tab-content {
-  padding-bottom: 30px; // Approx height of tabs
- }
-
- .nav-tabs {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  border-bottom: none;
-  margin-bottom: 0;
-
-  > li {
-   margin-bottom: 0;
-   display: block;
+  .tab-content {
+    padding-bottom: 30px; // Approx height of tabs
   }
- }
+
+  .nav-tabs {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    border-bottom: none;
+    margin-bottom: 0;
+
+    > li {
+      margin-bottom: 0;
+      display: block;
+    }
+  }
 }
 
 .panel-group.responsive {
- margin-bottom: 0;
+  margin-bottom: 0;
 }
 
 /* Responsive tabs bootstrap 4 fix */
 @mixin d-none {
- display: none !important;
+  display: none !important;
 }
 
 @mixin d-block {
- display: block !important;
+  display: block !important;
 }
 
 @mixin d-flex {
- display: flex !important;
+  display: flex !important;
 }
 
 .panel-group {
- &.responsive {
-  &.hidden-xs.hidden-sm {
-   @include media-breakpoint-down(sm) {
-    @include d-none;
-   }
+  &.responsive {
+    &.hidden-xs.hidden-sm {
+      @include media-breakpoint-down(sm) {
+        @include d-none;
+      }
 
-   @include media-breakpoint-up(md) {
-    @include d-block;
-   }
+      @include media-breakpoint-up(md) {
+        @include d-block;
+      }
+    }
+
+    &.visible-xs.visible-sm {
+      @include media-breakpoint-down(sm) {
+        @include d-block;
+      }
+
+      @include media-breakpoint-up(md) {
+        @include d-none;
+      }
+    }
   }
-
-  &.visible-xs.visible-sm {
-   @include media-breakpoint-down(sm) {
-    @include d-block;
-   }
-
-   @include media-breakpoint-up(md) {
-    @include d-none;
-   }
-  }
- }
 }
 
 // In Tabs bootstap 4 uses active class in a elements (not parent li)
 .nav-tabs > li {
- margin-bottom: -1px;
- margin-left: 1px;
+  margin-bottom: -1px;
+  margin-left: 1px;
 
- &:first-child {
-  margin-left: 0;
- }
+  &:first-child {
+    margin-left: 0;
+  }
 }
 
 .nav-tabs > li > a.active {
- background-color: transparent !important;
- border: none !important;
- cursor: default;
- color: $gray-900 !important;
- position: relative;
+  background-color: transparent !important;
+  border: none !important;
+  cursor: default;
+  color: $gray-900 !important;
+  position: relative;
 
- &:hover {
-  color: $gray-700 !important;
- }
+  &:hover {
+    color: $gray-700 !important;
+  }
 
- &::after {
-  left: 0;
-  bottom: 0;
-  position: absolute;
-  content: "";
-  width: 100%;
-  border-bottom: 3px solid;
- }
+  &::after {
+    left: 0;
+    bottom: 0;
+    position: absolute;
+    content: "";
+    width: 100%;
+    border-bottom: 3px solid;
+  }
 }
 
 .nav-tabs > li > a:hover {
- color: darken($link-color, 7%);
+  color: darken($link-color, 7%);
 }
 
 .nav-tabs > li > a:focus {
- @include outline(2px);
- outline-offset: -2px;
+  @include outline(2px);
+  outline-offset: -2px;
 }
 .nav-tabs > li > a.active:focus {
- @include outline(2px);
- outline-offset: -2px;
+  @include outline(2px);
+  outline-offset: -2px;
 }
 
 // Rmoving :after content from bootstrap4 tabs.
 
 .nav-tabs {
- .nav-item {
-  margin-left: 2px;
+  .nav-item {
+    margin-left: 2px;
 
-  &:hover {
-   background-color: transparent;
-  }
+    &:hover {
+      background-color: transparent;
+    }
 
-  &:first-child {
-   margin-left: 0;
-  }
+    &:first-child {
+      margin-left: 0;
+    }
 
-  &::after {
-   display: none;
+    &::after {
+      display: none;
+    }
   }
- }
 }
 
 /* Responsive tabs */
 
 .responsive {
- .nav-tabs {
-  display: none;
- }
+  .nav-tabs {
+    display: none;
+  }
 }
 /* Responsive desctop view */
 @media (min-width: $screen-sm-min) {
- .responsive {
-  .nav-tabs {
-   display: flex;
-   background-color: transparent !important;
+  .responsive {
+    .nav-tabs {
+      display: flex;
+      background-color: transparent !important;
+    }
+
+    &.tab-group .card {
+      border: none;
+      padding: 0;
+      margin-bottom: 0;
+      background-color: transparent;
+
+      .card-header {
+        display: none;
+      }
+
+      .collapse {
+        display: block;
+      }
+    }
   }
 
-  &.tab-group .card {
-   border: none;
-   padding: 0;
-   margin-bottom: 0;
-   background-color: transparent;
+  .tabs {
+    &.responsive {
+      .card-header {
+        display: none;
+      }
 
-   .card-header {
-    display: none;
-   }
-
-   .collapse {
-    display: block;
-   }
-  }
- }
-
- .tabs {
-  &.responsive {
-   .card-header {
-    display: none;
-   }
-  
-   .collapse {
-    display: block; }
-   }
+      .collapse {
+        display: block;
+      }
+    }
   }
 }
 
-
-
 /* Responsive tabs mobile view */
 @media (max-width: $screen-xs-max) {
- .responsive .tab-pane {
-  display: block !important;
-  opacity: 1 !important;
-  padding: 0 !important;
-  margin-bottom: 0.75rem;
-  .card-header {
-   padding: 0;
-   background: none;
-   a {
-    display: block;
-    width: 100%;
-    padding: 0.5rem 1rem;
-    font-size: 1.25rem;
-    font-weight: 600;
-    background-color: $gray-50;
-    text-decoration: none;
-    position: relative;
-    &:hover,
-    &:focus {
-     background-color: $gray-100;
+  .responsive .tab-pane {
+    display: block !important;
+    opacity: 1 !important;
+    padding: 0 !important;
+    margin-bottom: 0.75rem;
+    .card-header {
+      padding: 0;
+      background: none;
+      a {
+        display: block;
+        width: 100%;
+        padding: 0.5rem 1rem;
+        font-size: 1.25rem;
+        font-weight: 600;
+        background-color: $gray-50;
+        text-decoration: none;
+        position: relative;
+        &:hover,
+        &:focus {
+          background-color: $gray-100;
+        }
+        &:focus {
+          @include outline(2);
+          outline-offset: -2px;
+        }
+        &::after {
+          content: "";
+          position: absolute;
+          top: 1.125rem;
+          right: 1rem;
+          border-right: 2px solid black;
+          border-top: 2px solid black;
+          border-radius: 3px;
+          width: 10px;
+          height: 10px;
+          transform: rotate(45deg);
+          transition: all 0.2s ease;
+        }
+        &[aria-expanded="true"] {
+          color: $black;
+          &:hover,
+          &:focus {
+            color: $gray-800;
+          }
+          &::before {
+            content: "";
+            border-left: 3px solid;
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+          }
+          &::after {
+            transform: rotate(135deg);
+          }
+        }
+      }
     }
-    &:focus {
-     @include outline(2);
-     outline-offset: -2px;
-    }
-    &::after {
-     content: "";
-     position: absolute;
-     top: 1.125rem;
-     right: 1rem;
-     border-right: 2px solid black;
-     border-top: 2px solid black;
-     border-radius: 3px;
-     width: 10px;
-     height: 10px;
-     transform: rotate(45deg);
-     transition: all 0.2s ease;
-    }
-    &[aria-expanded="true"] {
-     color: $black;
-     &:hover,
-     &:focus {
-      color: $gray-800;
-     }
-     &::before {
-      content: "";
-      border-left: 3px solid;
-      position: absolute;
-      top: 0;
-      left: 0;
-      height: 100%;
-     }
-     &::after {
-      transform: rotate(135deg);
-     }
-    }
-   }
   }
- }
 }
 
 /* ACCESSIBLE tabs*/
 
 .tabs {
- position: relative;
-
- [role="tablist"] {
-  padding: 0;
-  margin-bottom: 0;
- }
-
- [role="tablist"] li,
- [role="tablist"] a {
-  display: inline-block;
- }
-
- [role="tablist"] a {
-  text-decoration: none;
-  padding: 7px 15px;
-  margin: 0;
-  font-weight: 600;
-
-  &:focus {
-   @include outline(2px);
-   outline-offset: -2px;
-  }
- }
-
- [role="tablist"] [aria-selected] {
-  border: none;
   position: relative;
-  margin: 0 0;
-  color: $black;
-  &::after {
-   left: 0;
-   bottom: 0;
-   position: absolute;
-   content: "";
-   width: 100%;
-   border-bottom: 3px solid;
-  }
- }
 
- [role="tabpanel"] {
-  border: 1px solid $nav-tabs-border-color;
-  padding: 1.1rem;
-  margin-top: -2px;
-  a:focus {
-   @include outline(2px);
+  [role="tablist"] {
+    padding: 0;
+    margin-bottom: 0;
   }
 
-  &:focus {
-   @include outline(2px);
-   outline-offset: -2px;
+  [role="tablist"] li,
+  [role="tablist"] a {
+    display: inline-block;
   }
- }
+
+  [role="tablist"] a {
+    text-decoration: none;
+    padding: 7px 15px;
+    margin: 0;
+    font-weight: 600;
+
+    &:focus {
+      @include outline(2px);
+      outline-offset: -2px;
+    }
+  }
+
+  [role="tablist"] [aria-selected] {
+    border: none;
+    position: relative;
+    margin: 0 0;
+    color: $black;
+    &::after {
+      left: 0;
+      bottom: 0;
+      position: absolute;
+      content: "";
+      width: 100%;
+      border-bottom: 3px solid;
+    }
+  }
+
+  [role="tabpanel"] {
+    border: 1px solid $nav-tabs-border-color;
+    padding: 1.1rem;
+    margin-top: -2px;
+    a:focus {
+      @include outline(2px);
+    }
+
+    &:focus {
+      @include outline(2px);
+      outline-offset: -2px;
+    }
+  }
 }
 
 @media (max-width: $screen-xs-max) {
- .tabs.responsive {
-  [role="tabpanel"] {
-   border: none; 
+  .tabs.responsive {
+    [role="tabpanel"] {
+      border: none;
+    }
   }
- }
 }

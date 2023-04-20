@@ -1,55 +1,63 @@
 {% extends "./base.njk" %}
 {% block content %}
-<div id="main-content" class="main-content">
-	<main class="main-primary" id="main">
-		<div class="container p-t-md">
-  {# Breadcrumbs (rendering data from /src/_data/breadcrumbs.json and /src/_data/helpers.js  #}
-    {% include "../breadcrumbs.njk" %}
-
-
-			<div class="row">
-				<div class="col-lg-3">
-
-     {# SIde navigation (rendering data from /src/_data/patterns.json  and /src/_data/helpers.js  #}
-					<nav aria-labelledby="components-list" class="side-navigation sticky-6">
-		   {# Links with subnav #}
-
-<ul>
-  <li><a href="/patterns.html" class="nav-heading landing" id="components-list">All patterns</a></li>
-  				{% for item in patterns.patterns %}
-      {% if item.url == '/patterns.html#page-templates' %}
+  <div id="main-content" class="main-content">
+    <main class="main-primary" id="main">
+      <div
+        class="container p-t-md">
+        {#- Breadcrumbs (rendering data from /src/_data/breadcrumbs.json and /src/_data/helpers.js #}
+        {% include "../breadcrumbs.njk" %}
+        <div class="row">
+          <div
+            class="col-lg-3">
+            {# SIde navigation (rendering data from /src/_data/patterns.json and /src/_data/helpers.js -#}
+            <nav
+              aria-labelledby="components-list" class="side-navigation sticky-6">
+              {# Links with subnav -#}
+              <ul>
+                <li>
+                  <a href="/patterns.html" class="nav-heading landing" id="components-list">
+                    All patterns
+                  </a>
+                </li>
+                {%- for item in patterns.patterns -%}
+                  {% if item.url == '/patterns.html#page-templates' %}
                     <li>
                       <a class="bold" href="{{ item.url }}">
                         {{ item.text }}
                       </a>
                     </li>
-     {%- elif 'subnav' in item %}
-        <li><a href="{{ item.url }}" {{ helpers.getLinkActiveState(item.url, page.url) | safe }}>{{ item.text }}</a>
-         {# subnav #}
-         {% if helpers.getURL(item.url, page.url) %} 
-           <ul>
-            {% for subitem in item.subnav %}
-            <li>
-             <a href="{{ subitem.url }}" data-hash="{{ subitem.dataHash }}" class="tab-link">{{ subitem.text }}</a>
-            </li>
-            {% endfor %}
-           </ul>
-           {% endif %}
-        </li>
-       {% else %}
-          <li><a href="{{ item.url }}" {{ helpers.getLinkActiveState(item.url, page.url) | safe }}>{{ item.text }}</a></li>
-       {% endif %}
-      {% endfor %}
-  </ul>
-  </nav>
-
-
-				</div>
-				<div class="col-lg-9 p-b-lg body-content">
-					{{ content | safe }}
-				</div>
-			</div>
-		</div>
-	</main>
-</div>
+                  {%- elif 'subnav' in item %}
+                    <li>
+                      <a href="{{ item.url }}" {{ helpers.getLinkActiveState(item.url, page.url) | safe }}>
+                        {{ item.text }}
+                      </a>
+                      {#- subnav -#}
+                      {%- if helpers.getURL(item.url, page.url) -%}
+                        <ul>
+                          {%- for subitem in item.subnav -%}
+                            <li>
+                              <a href="{{ subitem.url }}" data-hash="{{ subitem.dataHash }}" class="tab-link">
+                                {{ subitem.text }}
+                              </a>
+                            </li>
+                          {%- endfor -%}
+                        </ul>
+                      {%- endif %}
+                    </li>
+                  {%- else %}
+                    <li>
+                      <a href="{{ item.url }}" {{ helpers.getLinkActiveState(item.url, page.url) | safe }}>
+                        {{ item.text }}
+                      </a>
+                    </li>
+                  {%- endif -%}
+                {% endfor %}
+              </ul>
+            </nav>
+          </div>
+          <div class="col-lg-9 p-b-lg body-content">{{ content | safe }}</div>
+        </div>
+      </div>
+    </main>
+  </div>
 {% endblock %}

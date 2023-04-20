@@ -5,317 +5,467 @@ layout: page.njk
 permalink: "structure/site-navigation.html"
 ---
 
-
-
-
 <div class="row">
- <div class="col-md-3" role="complementary">
-  <!-- Side navigation -->
-  <nav aria-labelledby="navigation-list" class="side-navigation sticky-6">
-   <ul class="list-navigation">
-    <li><a href="/structure.html" id="navigation-list" class="landing">Structure</a></li>
-    <li><a href="/structure/utility-header.html">Utility header</a></li>
-    <li><a href="/structure/settings.html">Settings</a></li>
-    <li><a href="/structure/site-header.html">Site header</a></li>
-    <li><a href="/structure/mobile-controls.html">Mobile controls</a></li>
-    <li><a href="/structure/search.html">Search</a></li>
-    <li><a href="/structure/site-navigation.html" class="active">Site navigation</a></li>
-    <li><a href="/structure/footer.html">Footer</a></li>
-   </ul>
-  </nav>
- </div>
-
-
- <div class="col-md-9 p-b-lg">
-
-
-  <h1 class="mt-lg-0">Site navigation</h1>
-
-  <nav class="page-navigation"></nav>
-
-  <p>Site navigation appears at the top of every page on your site. It gives links to pages in the site,
-   sometimes ordered by topic, task, or user type. This makes it easier for people to navigate the website.</p>
-  <p>There are two options for each site navigation item:</p>
-  <ul>
-   <li>A link to a page</li>
-   <li>Text with a dropdown menu of links</li>
-  </ul>
-  <p>State Web Template navigation types and variations include:</p>
-
-  <ul>
-   <li>Single level menu</li>
-   <li>Dropdown menu</li>
-   <li>Megamenu</li>
-   <li>Icon menu</li>
-  </ul>
-
-  <p>The site navigation component is made to switch between desktop and mobile presentations. On desktop, the top level
-   links or text are arranged across the top of the page. On mobile, they are in a hamburger menu that people select to
-   expand. The links in the hamburger menu are stacked.</p>
-
-
-  <h2>Single level menu</h2>
-  <p>This page is using the Single Level Navigation. This navigation style does not include a dropdown for sub
-   navigation items.</p>
-
-
-
-
-  <!--Tabs 1-->
-  <div class="tabs responsive">
-   <ul class="nav-tabs">
-    <li>
-     <a href="#section1"><span class="sr-only">Single level menu </span>Example</a>
-    </li>
-    <li>
-     <a href="#section2"><span class="sr-only">Single level menu </span>Source code</a>
-    </li>
-    <li>
-     <a href="#section3"><span class="sr-only">Single level menu </span>Implementation notes</a>
-    </li>
-   </ul>
-
-   <section id="section1" class="tab-pane">
-    <div class="card-header" id="heading-example1">
-     <h4 class="my-0 w-100">
-      <a data-bs-toggle="collapse" href="#collapse-example1" aria-expanded="true" aria-controls="collapse-example1"
-       title="Single level menu example tab header">
-       Example
-      </a>
-     </h4>
-    </div>
-    <div id="collapse-example1" class="collapse show p-0 m-0 brd-0" role="tabpanel" aria-labelledby="heading-example1">
-     <div class="p-a-sm">
-      <img src="/images/navigation-single.jpg" alt="Single level naviagiton" class="img-fluid">
-     </div>
-    </div>
-   </section>
-
-   <section id="section2" class="tab-pane">
-    <div class="card-header" id="heading-html1">
-     <h4 class="my-0 w-100">
-      <a class="collapsed" data-bs-toggle="collapse" href="#collapse-html1" aria-expanded="false"
-       aria-controls="collapse-html1" title="Single level menu HTML Source code tab header">
-       HTML Source code
-      </a>
-     </h4>
-    </div>
-    <div id="collapse-html1" class="collapse p-0 m-0 brd-0" role="tabpanel" aria-labelledby="heading-html1">
-     <div class="p-a-sm">
-      <h3 class="h4 m-t-0">HTML Source code</h3>
-      <textarea class="sourcecode" aria-label="source code"
-       disabled>{% include "../../src/_includes/modules/nav-singlelevel.html" %}</textarea>
-     </div>
-    </div>
-   </section>
-
-   <section id="section3" class="tab-pane">
-    <div class="card-header" id="heading-include1">
-     <h4 class="my-0 w-100">
-      <a class="collapsed" data-bs-toggle="collapse" href="#collapse-include1" aria-expanded="false"
-       aria-controls="collapse-include1" title="Single level menu Implementation notes tab header">
-       Implementation notes</a>
-     </h4>
-    </div>
-    <div id="collapse-include1" class="collapse p-0 m-0 brd-0" role="tabpanel" aria-labelledby="heading-include1">
-     <div class="p-a-sm">
-      <p>This style of menu can be set by including the <code>.singlelevel</code> class in the
-       <code>&lt;nav&gt;</code> element like this
-       <code>&lt;nav id="navigation" class="main-navigation singlelevel"&gt;</code>.
-      </p>
-     </div>
-    </div>
-   </section>
-
+  <div class="col-md-3" role="complementary">
+    <!-- Side navigation -->
+    <nav aria-labelledby="navigation-list" class="side-navigation sticky-6">
+      <ul class="list-navigation">
+        <li>
+          <a href="/structure.html" id="navigation-list" class="landing">
+            Structure
+          </a>
+        </li>
+        <li><a href="/structure/utility-header.html">Utility header</a></li>
+        <li><a href="/structure/settings.html">Settings</a></li>
+        <li><a href="/structure/site-header.html">Site header</a></li>
+        <li><a href="/structure/mobile-controls.html">Mobile controls</a></li>
+        <li><a href="/structure/search.html">Search</a></li>
+        <li>
+          <a href="/structure/site-navigation.html" class="active">
+            Site navigation
+          </a>
+        </li>
+        <li><a href="/structure/footer.html">Footer</a></li>
+      </ul>
+    </nav>
   </div>
-  <!--End tabs 1-->
 
+  <div class="col-md-9 p-b-lg">
+    <h1 class="mt-lg-0">Site navigation</h1>
 
+    <nav class="page-navigation"></nav>
 
+    <p>
+      Site navigation appears at the top of every page on your site. It gives
+      links to pages in the site, sometimes ordered by topic, task, or user
+      type. This makes it easier for people to navigate the website.
+    </p>
+    <p>There are two options for each site navigation item:</p>
+    <ul>
+      <li>A link to a page</li>
+      <li>Text with a dropdown menu of links</li>
+    </ul>
+    <p>State Web Template navigation types and variations include:</p>
 
-  <h2>Dropdown menu</h2>
-  <p>Dropdown menu is using the dropdown sub navigation.</p>
+    <ul>
+      <li>Single level menu</li>
+      <li>Dropdown menu</li>
+      <li>Megamenu</li>
+      <li>Icon menu</li>
+    </ul>
 
+    <p>
+      The site navigation component is made to switch between desktop and mobile
+      presentations. On desktop, the top level links or text are arranged across
+      the top of the page. On mobile, they are in a hamburger menu that people
+      select to expand. The links in the hamburger menu are stacked.
+    </p>
 
-  <!--Tabs 2-->
-  <div class="tabs responsive">
-   <ul class="nav-tabs">
-    <li>
-     <a href="#section4"><span class="sr-only">Dropdown menu </span>Example</a>
-    </li>
-    <li>
-     <a href="#section5"><span class="sr-only">Dropdown menu </span>Source code</a>
-    </li>
-    <li>
-     <a href="#section6"><span class="sr-only">Dropdown menu </span>Implementation notes</a>
-    </li>
-   </ul>
+    <h2>Single level menu</h2>
+    <p>
+      This page is using the Single Level Navigation. This navigation style does
+      not include a dropdown for sub navigation items.
+    </p>
 
+    <!--Tabs 1-->
+    <div class="tabs responsive">
+      <ul class="nav-tabs">
+        <li>
+          <a href="#section1">
+            <span class="sr-only">Single level menu</span>
+            Example
+          </a>
+        </li>
+        <li>
+          <a href="#section2">
+            <span class="sr-only">Single level menu</span>
+            Source code
+          </a>
+        </li>
+        <li>
+          <a href="#section3">
+            <span class="sr-only">Single level menu</span>
+            Implementation notes
+          </a>
+        </li>
+      </ul>
 
+      <section id="section1" class="tab-pane">
+        <div class="card-header" id="heading-example1">
+          <h4 class="my-0 w-100">
+            <a
+              data-bs-toggle="collapse"
+              href="#collapse-example1"
+              aria-expanded="true"
+              aria-controls="collapse-example1"
+              title="Single level menu example tab header">
+              Example
+            </a>
+          </h4>
+        </div>
+        <div
+          id="collapse-example1"
+          class="collapse show p-0 m-0 brd-0"
+          role="tabpanel"
+          aria-labelledby="heading-example1">
+          <div class="p-a-sm">
+            <img
+              src="/images/navigation-single.jpg"
+              alt="Single level naviagiton"
+              class="img-fluid" />
+          </div>
+        </div>
+      </section>
 
-   <section id="section4" class="tab-pane">
-    <div class="card-header" id="heading-example2">
-     <h4 class="my-0 w-100">
-      <a data-bs-toggle="collapse" href="#collapse-example2" aria-expanded="true" aria-controls="collapse-example2"
-       title="Dropdown menu Example tab header">
-       Example
-      </a>
-     </h4>
+      <section id="section2" class="tab-pane">
+        <div class="card-header" id="heading-html1">
+          <h4 class="my-0 w-100">
+            <a
+              class="collapsed"
+              data-bs-toggle="collapse"
+              href="#collapse-html1"
+              aria-expanded="false"
+              aria-controls="collapse-html1"
+              title="Single level menu HTML Source code tab header">
+              HTML Source code
+            </a>
+          </h4>
+        </div>
+        <div
+          id="collapse-html1"
+          class="collapse p-0 m-0 brd-0"
+          role="tabpanel"
+          aria-labelledby="heading-html1">
+          <div class="p-a-sm">
+            <h3 class="h4 m-t-0">HTML Source code</h3>
+            <textarea class="sourcecode" aria-label="source code" disabled>
+{% include "../../src/_includes/modules/nav-singlelevel.html" %}</textarea
+            >
+          </div>
+        </div>
+      </section>
+
+      <section id="section3" class="tab-pane">
+        <div class="card-header" id="heading-include1">
+          <h4 class="my-0 w-100">
+            <a
+              class="collapsed"
+              data-bs-toggle="collapse"
+              href="#collapse-include1"
+              aria-expanded="false"
+              aria-controls="collapse-include1"
+              title="Single level menu Implementation notes tab header">
+              Implementation notes
+            </a>
+          </h4>
+        </div>
+        <div
+          id="collapse-include1"
+          class="collapse p-0 m-0 brd-0"
+          role="tabpanel"
+          aria-labelledby="heading-include1">
+          <div class="p-a-sm">
+            <p>
+              This style of menu can be set by including the
+              <code>.singlelevel</code>
+              class in the
+              <code>&lt;nav&gt;</code>
+              element like this
+              <code>
+                &lt;nav id="navigation" class="main-navigation singlelevel"&gt;
+              </code>
+              .
+            </p>
+          </div>
+        </div>
+      </section>
     </div>
-    <div id="collapse-example2" class="collapse show p-0 m-0 brd-0" role="tabpanel" aria-labelledby="heading-example2">
-     <div class="p-a-sm">
-      <img src="/images/navigation-dropdown.jpg" alt="Dropdown Naviagiton" class="img-fluid">
-     </div>
+    <!--End tabs 1-->
+
+    <h2>Dropdown menu</h2>
+    <p>Dropdown menu is using the dropdown sub navigation.</p>
+
+    <!--Tabs 2-->
+    <div class="tabs responsive">
+      <ul class="nav-tabs">
+        <li>
+          <a href="#section4">
+            <span class="sr-only">Dropdown menu</span>
+            Example
+          </a>
+        </li>
+        <li>
+          <a href="#section5">
+            <span class="sr-only">Dropdown menu</span>
+            Source code
+          </a>
+        </li>
+        <li>
+          <a href="#section6">
+            <span class="sr-only">Dropdown menu</span>
+            Implementation notes
+          </a>
+        </li>
+      </ul>
+
+      <section id="section4" class="tab-pane">
+        <div class="card-header" id="heading-example2">
+          <h4 class="my-0 w-100">
+            <a
+              data-bs-toggle="collapse"
+              href="#collapse-example2"
+              aria-expanded="true"
+              aria-controls="collapse-example2"
+              title="Dropdown menu Example tab header">
+              Example
+            </a>
+          </h4>
+        </div>
+        <div
+          id="collapse-example2"
+          class="collapse show p-0 m-0 brd-0"
+          role="tabpanel"
+          aria-labelledby="heading-example2">
+          <div class="p-a-sm">
+            <img
+              src="/images/navigation-dropdown.jpg"
+              alt="Dropdown Naviagiton"
+              class="img-fluid" />
+          </div>
+        </div>
+      </section>
+
+      <section id="section5" class="tab-pane">
+        <div class="card-header" id="heading-html2">
+          <h4 class="my-0 w-100">
+            <a
+              class="collapsed"
+              data-bs-toggle="collapse"
+              href="#collapse-html2"
+              aria-expanded="false"
+              aria-controls="collapse-html2"
+              title="Dropdown menu HTML Source code tab header">
+              HTML Source code
+            </a>
+          </h4>
+        </div>
+        <div
+          id="collapse-html2"
+          class="collapse p-0 m-0 brd-0"
+          role="tabpanel"
+          aria-labelledby="heading-html2">
+          <div class="p-a-sm">
+            <textarea class="sourcecode" aria-label="source code" disabled>
+{% include "../../src/_includes/modules/nav-dropdown.html" %}</textarea
+            >
+          </div>
+        </div>
+      </section>
+
+      <section id="section6" class="tab-pane">
+        <div class="card-header" id="heading-include2">
+          <h4 class="my-0 w-100">
+            <a
+              class="collapsed"
+              data-bs-toggle="collapse"
+              href="#collapse-include2"
+              aria-expanded="false"
+              aria-controls="collapse-include2"
+              title="Dropdown menu Implementation notes tab header">
+              Implementation notes
+            </a>
+          </h4>
+        </div>
+        <div
+          id="collapse-include2"
+          class="collapse p-0 m-0 brd-0"
+          role="tabpanel"
+          aria-labelledby="heading-include2">
+          <div class="p-a-sm">
+            <p>
+              This style of menu can be set by including the
+              <code>.singlelevel</code>
+              class in the
+              <code>&lt;nav&gt;</code>
+              element like this
+              <code>
+                &lt;nav id="navigation" class="main-navigation singlelevel"&gt;
+              </code>
+              .
+            </p>
+          </div>
+        </div>
+      </section>
     </div>
-   </section>
+    <!--End tabs 2-->
 
-   <section id="section5" class="tab-pane">
-    <div class="card-header" id="heading-html2">
-     <h4 class="my-0 w-100">
-      <a class="collapsed" data-bs-toggle="collapse" href="#collapse-html2" aria-expanded="false"
-       aria-controls="collapse-html2" title="Dropdown menu HTML Source code tab header">
-       HTML Source code
-      </a>
-     </h4>
-    </div>
-    <div id="collapse-html2" class="collapse p-0 m-0 brd-0" role="tabpanel" aria-labelledby="heading-html2">
-     <div class="p-a-sm">
-      <textarea class="sourcecode" aria-label="source code"
-       disabled>{% include "../../src/_includes/modules/nav-dropdown.html" %}</textarea>
-     </div>
-    </div>
-   </section>
+    <h2>Megamenu</h2>
+    <p>
+      The flex megamenu displays dropdown panels for sub navigation when the
+      user clicks on a primary link.
+    </p>
 
-   <section id="section6" class="tab-pane">
-    <div class="card-header" id="heading-include2">
-     <h4 class="my-0 w-100">
-      <a class="collapsed" data-bs-toggle="collapse" href="#collapse-include2" aria-expanded="false"
-       aria-controls="collapse-include2" title="Dropdown menu Implementation notes tab header">
-       Implementation notes</a>
-     </h4>
-    </div>
-    <div id="collapse-include2" class="collapse p-0 m-0 brd-0" role="tabpanel" aria-labelledby="heading-include2">
-     <div class="p-a-sm">
-      <p>This style of menu can be set by including the <code>.singlelevel</code> class in the
-       <code>&lt;nav&gt;</code> element like this
-       <code>&lt;nav id="navigation" class="main-navigation singlelevel"&gt;</code>.
-      </p>
-     </div>
-    </div>
-   </section>
+    <!--Tabs 3-->
 
-  </div>
-  <!--End tabs 2-->
+    <div class="tabs responsive">
+      <ul class="nav-tabs">
+        <li>
+          <a href="#section7">
+            <span class="sr-only">Megamenu</span>
+            Example
+          </a>
+        </li>
+        <li>
+          <a href="#section8">
+            <span class="sr-only">Megamenu</span>
+            Source code
+          </a>
+        </li>
+        <li>
+          <a href="#section9">
+            <span class="sr-only">Megamenu</span>
+            Implementation notes
+          </a>
+        </li>
+      </ul>
 
+      <section id="section7" class="tab-pane">
+        <div class="card-header" id="heading-example3">
+          <h4 class="my-0 w-100">
+            <a
+              data-bs-toggle="collapse"
+              href="#collapse-example3"
+              aria-expanded="true"
+              aria-controls="collapse-example3"
+              title="Megamenu Example tab header">
+              Example
+            </a>
+          </h4>
+        </div>
+        <div
+          id="collapse-example3"
+          class="collapse show p-0 m-0 brd-0"
+          role="tabpanel"
+          aria-labelledby="heading-example3">
+          <div class="p-a-sm">
+            <img
+              src="/images/navigation-flex.jpg"
+              alt="Naviagiton with icons"
+              class="img-fluid" />
+          </div>
+        </div>
+      </section>
 
+      <section id="section8" class="tab-pane">
+        <div class="card-header" id="heading-html3">
+          <h4 class="my-0 w-100">
+            <a
+              class="collapsed"
+              data-bs-toggle="collapse"
+              href="#collapse-html3"
+              aria-expanded="false"
+              aria-controls="collapse-html3"
+              title="Megamenu HTML Source code tab header">
+              HTML Source code
+            </a>
+          </h4>
+        </div>
+        <div
+          id="collapse-html3"
+          class="collapse p-0 m-0 brd-0"
+          role="tabpanel"
+          aria-labelledby="heading-html3">
+          <div class="p-a-sm">
+            <textarea class="sourcecode" aria-label="source code" disabled>
+{% include "../../src/_includes/modules/nav-flex.html" %}</textarea
+            >
+          </div>
+        </div>
+      </section>
 
-  <h2>Megamenu</h2>
-  <p>The flex megamenu displays dropdown panels for sub navigation when the user clicks on a primary link.</p>
+      <section id="section9" class="tab-pane">
+        <div class="card-header" id="heading-include3">
+          <h4 class="my-0 w-100">
+            <a
+              class="collapsed"
+              data-bs-toggle="collapse"
+              href="#collapse-include3"
+              aria-expanded="false"
+              aria-controls="collapse-include3"
+              title="Megamenu Implementation notes tab header">
+              Implementation notes
+            </a>
+          </h4>
+        </div>
+        <div
+          id="collapse-include3"
+          class="collapse p-0 m-0 brd-0"
+          role="tabpanel"
+          aria-labelledby="heading-include3">
+          <div class="p-a-sm">
+            <p>
+              Inside
+              <code>.sub-nav</code>
+              container use flexbox row div
+              <code>.second-level-nav</code>
+              with class
+              <code>.flex</code>
+              added to it. Class
+              <code>flex</code>
+              will ensure equal inline distribution of
+              <code>a</code>
+              sub-navigation items iside of
+              <code>.second-level-nav</code>
+              div.
+            </p>
 
-
-  <!--Tabs 3-->
-
-  <div class="tabs responsive">
-   <ul class="nav-tabs">
-    <li>
-     <a href="#section7"><span class="sr-only">Megamenu </span>Example</a>
-    </li>
-    <li>
-     <a href="#section8"><span class="sr-only">Megamenu </span>Source code</a>
-    </li>
-    <li>
-     <a href="#section9"><span class="sr-only">Megamenu </span>Implementation notes</a>
-    </li>
-   </ul>
-
-
-
-
-   <section id="section7" class="tab-pane">
-    <div class="card-header" id="heading-example3">
-     <h4 class="my-0 w-100">
-      <a data-bs-toggle="collapse" href="#collapse-example3" aria-expanded="true" aria-controls="collapse-example3"
-       title="Megamenu Example tab header">
-       Example
-      </a>
-     </h4>
-    </div>
-    <div id="collapse-example3" class="collapse show p-0 m-0 brd-0" role="tabpanel" aria-labelledby="heading-example3">
-     <div class="p-a-sm">
-      <img src="/images/navigation-flex.jpg" alt="Naviagiton with icons" class="img-fluid">
-     </div>
-    </div>
-   </section>
-
-   <section id="section8" class="tab-pane">
-    <div class="card-header" id="heading-html3">
-     <h4 class="my-0 w-100">
-      <a class="collapsed" data-bs-toggle="collapse" href="#collapse-html3" aria-expanded="false"
-       aria-controls="collapse-html3" title="Megamenu HTML Source code tab header">
-       HTML Source code
-      </a>
-     </h4>
-    </div>
-    <div id="collapse-html3" class="collapse p-0 m-0 brd-0" role="tabpanel" aria-labelledby="heading-html3">
-     <div class="p-a-sm">
-      <textarea class="sourcecode" aria-label="source code"
-       disabled>{% include "../../src/_includes/modules/nav-flex.html" %}</textarea>
-     </div>
-    </div>
-   </section>
-
-   <section id="section9" class="tab-pane">
-    <div class="card-header" id="heading-include3">
-     <h4 class="my-0 w-100">
-      <a class="collapsed" data-bs-toggle="collapse" href="#collapse-include3" aria-expanded="false"
-       aria-controls="collapse-include3" title="Megamenu Implementation notes tab header">
-       Implementation notes</a>
-     </h4>
-    </div>
-    <div id="collapse-include3" class="collapse p-0 m-0 brd-0" role="tabpanel" aria-labelledby="heading-include3">
-     <div class="p-a-sm">
-      <p>Inside <code>.sub-nav</code> container use flexbox row div <code>.second-level-nav</code> with class
-       <code>.flex</code>
-       added to it. Class <code>flex</code> will ensure equal inline distribution of <code>a</code>
-       sub-navigation items
-       iside of <code>.second-level-nav</code> div.
-      </p>
-
-      <h3 class="h4">Markup example:</h3>
-      <pre>&lt;div class="sub-nav"&gt;
+            <h3 class="h4">Markup example:</h3>
+            <pre>
+&lt;div class="sub-nav"&gt;
         &lt;div class="second-level-nav flex"&gt;
             &lt;a href="/" class="second-level-link"&gt;Link 1&lt;/a>
             &lt;a href="/" class="second-level-link"&gt;Link 2&lt;/a>
             &lt;a href="/" class="second-level-link"&gt;Link 3&lt;/a>
         &lt;/div&gt;
     &lt;/div&gt;
-    </pre>
-      <p>To add border around sub-navigation link units add class <code>.with-border</code> to the
-       <code>.second-level-nav</code> div container.
-      </p>
+    </pre
+            >
+            <p>
+              To add border around sub-navigation link units add class
+              <code>.with-border</code>
+              to the
+              <code>.second-level-nav</code>
+              div container.
+            </p>
 
+            <h3>Mixed Content Within Navigation</h3>
+            <p>
+              The megamenu allows for the display optional icons or images with
+              sub navigation links. It is also possible to display a short
+              description below each sub navigation link. To display icon on top
+              of the link use
+              <code>span</code>
+              with appropriate ca-gov-icon icon class from our CA Gov icon font
+              library. To make an icon bigger use desired font size class such
+              as
+              <code>.font-size-40</code>
+              . To display small images on the left or right side of the link
+              use
+              <code>.with-image-left</code>
+              or
+              <code>.with-image-right</code>
+              on the div container containing the media.
+            </p>
 
-      <h3>Mixed Content Within Navigation</h3>
-      <p>
-       The megamenu allows for the display optional icons or images with sub navigation links.
-       It is also possible to display a short description below each sub navigation link. To display icon
-       on top
-       of the link use <code>span</code> with appropriate ca-gov-icon icon class from our CA Gov icon font
-       library.
-       To make an icon bigger use desired font size class such as <code>.font-size-40</code>.
-       To display small images on the left or right side of the link use <code>.with-image-left</code>
-       or <code>.with-image-right</code> on the div container containing the media.
-      </p>
-
-      <h3 class="h4">Link with large icon markup example:</h4>
-       <pre><code><a href="/" class="second-level-link">
+            <h3 class="h4">Link with large icon markup example:</h3>
+            <pre><code><a href="/" class="second-level-link">
         <span class="ca-gov-icon-home font-size-40" aria-hidden="true"></span>
         <p class="h3 sub-nav-link">First Link</p>
         <p class="link-description">Some link description.</p>
     </a>
     </code></pre>
-       <h3 class="h4">Link with left image markup example:</h4>
-        <pre><code><a href="/" class="second-level-link">
+            <h3 class="h4">Link with left image markup example:</h3>
+            <pre><code><a href="/" class="second-level-link">
             <div class="media-left">
             <img class="media-object" src="/images/sample/images/70x70.gif" alt="...">
         </div>
@@ -325,91 +475,125 @@ permalink: "structure/site-navigation.html"
         </div>
     </a>
     </code></pre>
-     </div>
+          </div>
+        </div>
+      </section>
     </div>
-   </section>
+    <!--End tabs 3-->
 
-  </div>
-  <!--End tabs 3-->
+    <h2>Icon menu</h2>
+    <p>
+      Navigation with icons usually appears to the right of the site logo. It
+      uses icons from CA.gov font library inside of the first level navigation
+      items.
+    </p>
 
+    <!--Tabs 4-->
+    <div class="tabs responsive">
+      <ul class="nav-tabs">
+        <li>
+          <a href="#section10">
+            <span class="sr-only">Icon menu</span>
+            Example
+          </a>
+        </li>
+        <li>
+          <a href="#section11">
+            <span class="sr-only">Icon menu</span>
+            Source code
+          </a>
+        </li>
+        <li>
+          <a href="#section12">
+            <span class="sr-only">Icon menu</span>
+            Implementation notes
+          </a>
+        </li>
+      </ul>
 
+      <section id="section10" class="tab-pane">
+        <div class="card-header" id="heading-example4">
+          <h4 class="my-0 w-100">
+            <a
+              data-bs-toggle="collapse"
+              href="#collapse-example4"
+              aria-expanded="true"
+              aria-controls="collapse-example4"
+              title="Icon menu Example tab header">
+              Example
+            </a>
+          </h4>
+        </div>
+        <div
+          id="collapse-example4"
+          class="collapse show p-0 m-0 brd-0"
+          role="tabpanel"
+          aria-labelledby="heading-example4">
+          <div class="p-a-sm">
+            <img
+              src="/images/navigation-icons.jpg"
+              alt="Naviagiton with icons"
+              class="img-fluid" />
+          </div>
+        </div>
+      </section>
 
+      <section id="section11" class="tab-pane">
+        <div class="card-header" id="heading-html4">
+          <h4 class="my-0 w-100">
+            <a
+              class="collapsed"
+              data-bs-toggle="collapse"
+              href="#collapse-html4"
+              aria-expanded="false"
+              aria-controls="collapse-html4"
+              title="Icon menu HTML Source code tab header">
+              HTML Source code
+            </a>
+          </h4>
+        </div>
+        <div
+          id="collapse-html4"
+          class="collapse p-0 m-0 brd-0"
+          role="tabpanel"
+          aria-labelledby="heading-html4">
+          <div class="p-a-sm">
+            <h3 class="h4 m-t-0">HTML Source code</h3>
+            <textarea class="sourcecode" aria-label="source code" disabled>
+{% include "../../src/_includes/modules/nav-icons.html" %}</textarea
+            >
+          </div>
+        </div>
+      </section>
 
+      <section id="section12" class="tab-pane">
+        <div class="card-header" id="heading-include4">
+          <h4 class="my-0 w-100">
+            <a
+              class="collapsed"
+              data-bs-toggle="collapse"
+              href="#collapse-include4"
+              aria-expanded="false"
+              aria-controls="collapse-include4"
+              title="Icon menu Implementation notes tab header">
+              Implementation notes
+            </a>
+          </h4>
+        </div>
+        <div
+          id="collapse-include4"
+          class="collapse p-0 m-0 brd-0"
+          role="tabpanel"
+          aria-labelledby="heading-include4">
+          <div class="p-a-sm">
+            <p>
+              Structurally, navigation with icons is set up differently than
+              full width navigation. The code samples bellow show the difference
+              between them.
+            </p>
 
-  <h2>Icon menu</h2>
-  <p>Navigation with icons usually appears to the right of the site logo. It uses icons from CA.gov font library inside
-   of the first level navigation items.</p>
-
-
-  <!--Tabs 4-->
-  <div class="tabs responsive">
-   <ul class="nav-tabs">
-    <li>
-     <a href="#section10"><span class="sr-only">Icon menu </span>Example</a>
-    </li>
-    <li>
-     <a href="#section11"><span class="sr-only">Icon menu </span>Source code</a>
-    </li>
-    <li>
-     <a href="#section12"><span class="sr-only">Icon menu </span>Implementation notes</a>
-    </li>
-   </ul>
-
-
-   <section id="section10" class="tab-pane">
-    <div class="card-header" id="heading-example4">
-     <h4 class="my-0 w-100">
-      <a data-bs-toggle="collapse" href="#collapse-example4" aria-expanded="true" aria-controls="collapse-example4"
-       title="Icon menu Example tab header">
-       Example
-      </a>
-     </h4>
-    </div>
-    <div id="collapse-example4" class="collapse show p-0 m-0 brd-0" role="tabpanel" aria-labelledby="heading-example4">
-     <div class="p-a-sm">
-      <img src="/images/navigation-icons.jpg" alt="Naviagiton with icons" class="img-fluid">
-     </div>
-    </div>
-   </section>
-
-   <section id="section11" class="tab-pane">
-    <div class="card-header" id="heading-html4">
-     <h4 class="my-0 w-100">
-      <a class="collapsed" data-bs-toggle="collapse" href="#collapse-html4" aria-expanded="false"
-       aria-controls="collapse-html4" title="Icon menu HTML Source code tab header">
-       HTML Source code
-      </a>
-     </h4>
-    </div>
-    <div id="collapse-html4" class="collapse p-0 m-0 brd-0" role="tabpanel" aria-labelledby="heading-html4">
-     <div class="p-a-sm">
-      <h3 class="h4 m-t-0">HTML Source code</h3>
-      <textarea class="sourcecode" aria-label="source code"
-       disabled>{% include "../../src/_includes/modules/nav-icons.html" %}</textarea>
-     </div>
-    </div>
-   </section>
-
-   <section id="section12" class="tab-pane">
-    <div class="card-header" id="heading-include4">
-     <h4 class="my-0 w-100">
-      <a class="collapsed" data-bs-toggle="collapse" href="#collapse-include4" aria-expanded="false"
-       aria-controls="collapse-include4" title="Icon menu Implementation notes tab header">
-       Implementation notes</a>
-     </h4>
-    </div>
-    <div id="collapse-include4" class="collapse p-0 m-0 brd-0" role="tabpanel" aria-labelledby="heading-include4">
-     <div class="p-a-sm">
-      <p>Structurally, navigation with icons is set up differently than full width navigation. The code samples bellow
-       show
-       the
-       difference between them.
-      </p>
-
-      </pre>
-
-      <h3 class="h4">Navigation with icons markup:</h3>
-      <pre><span class="text-accent-p2">&lt;div</span> <span class="text-info">class=</span><span class="text-accent7">"navigation-search"</span><span class="text-accent-p2">&gt;</span>
+            <h3 class="h4">Navigation with icons markup:</h3>
+            <pre><span class="text-accent-p2">&lt;div</span> <span class="text-info">class=</span><span class="text-accent7">"navigation-search"</span><span class="text-accent-p2">&gt;</span>
       <span class="text-success">&#10100;% include "/src/_includes/navigation.njk" %&#10101;</span>
       <span class="text-accent-p2">&lt;div</span> <span class="text-info">id=</span><span class="text-accent7">"head-search"</span> <span class="text-info">class=</span><span class="text-accent7">"search-container"</span><span class="text-accent-p2">&gt;</span>
        <span class="text-success">&#10100;% include "/src/_includes/search.njk" %&#10101;</span>
@@ -417,42 +601,55 @@ permalink: "structure/site-navigation.html"
      <span class="text-accent-p2">&lt;/div&gt;</span>
      </pre>
 
-      <h3 class="h4">Full width navigation markup:</h3>
-      <pre><span class="text-accent-p2">&lt;div</span> <span class="text-info">class=</span><span class="text-accent7">"navigation-search full-width-nav container"</span><span class="text-accent-p2">&gt;</span>
+            <h3 class="h4">Full width navigation markup:</h3>
+            <pre><span class="text-accent-p2">&lt;div</span> <span class="text-info">class=</span><span class="text-accent7">"navigation-search full-width-nav container"</span><span class="text-accent-p2">&gt;</span>
       <span class="text-accent-p2">&lt;div</span> <span class="text-info">id=</span><span class="text-accent7">"head-search"</span> <span class="text-info">class=</span><span class="text-accent7">"search-container featured-search"</span><span class="text-accent-p2">&gt;</span>
        <span class="text-success">&#10100;% include "/src/_includes/search.njk" %&#10101;</span>
       <span class="text-accent-p2">&lt;/div&gt;</span>
       <span class="text-success">&#10100;% include "/src/_includes/navigation.njk" %&#10101;</span>
      <span class="text-accent-p2">&lt;/div&gt;</span>
      </pre>
-     </div>
+          </div>
+        </div>
+      </section>
     </div>
-   </section>
+    <!--End tabs 4-->
 
+    <h2>Usage</h2>
+    <h3>When and how to use it</h3>
+    <p>
+      Use site navigation to help people find pages on your website. It should
+      list or lead to the most helpful content on your website.
+    </p>
+    <p>
+      Links can be organized into sections or can stand alone. Sections can be
+      organized by:
+    </p>
+
+    <ul>
+      <li>Top tasks</li>
+      <li>Major topic areas</li>
+      <li>Audience or user groups</li>
+    </ul>
+
+    <p>
+      You can use a
+      <a href="https://methods.18f.gov/validate/card-sorting/">
+        card sorting activity
+      </a>
+      to determine what should go in and how to organize your site navigation.
+    </p>
+    <h3>How not to use it</h3>
+    <p>
+      Do not overload the site navigation with too many pages. And avoid using
+      more than a handful of navigational items. This makes it difficult for
+      people to find what they're looking for. Make sure any pages not in the
+      site navigation can be reached through a page in the site navigation or
+      the site footer.
+    </p>
+    <p>Do not link to PDFs or external sites in the site navigation.</p>
+
+    <h2>Accessibility</h2>
+    {% include "../../src/_includes/modules/accessibility.html" %}
   </div>
-  <!--End tabs 4-->
-
-  <h2>Usage</h2>
-  <h3>When and how to use it</h3>
-  <p>Use site navigation to help people find pages on your website. It should list or lead to the most helpful content
-   on your website.</p>
-  <p>Links can be organized into sections or can stand alone. Sections can be organized by:</p>
-
-  <ul>
-   <li>Top tasks</li>
-   <li>Major topic areas</li>
-   <li>Audience or user groups</li>
-  </ul>
-
-  <p>You can use a <a href="https://methods.18f.gov/validate/card-sorting/">card sorting
-    activity</a> to determine what should go in and how to organize your site navigation.</p>
-  <h3>How not to use it</h3>
-  <p>Do not overload the site navigation with too many pages. And avoid using more than a handful of navigational items.
-   This makes it difficult for people to find what they're looking for. Make sure any pages not in the site navigation
-   can be reached through a page in the site navigation or the site footer.</p>
-  <p>Do not link to PDFs or external sites in the site navigation.</p>
-
-  <h2>Accessibility</h2>
-  {% include "../../src/_includes/modules/accessibility.html" %}
- </div>
 </div>

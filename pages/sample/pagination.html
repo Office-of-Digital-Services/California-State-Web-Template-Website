@@ -9,236 +9,376 @@ permalink: "components/pagination.html"
 
 <nav class="page-navigation"></nav>
 
-<p>Pagination splits information over multiple pages. It helps your audience navigate between pages for information.</p>
+<p>
+  Pagination splits information over multiple pages. It helps your audience
+  navigate between pages for information.
+</p>
 
-<p>The controls allow you to move forward or backward or go directly to a specific page.</p>
+<p>
+  The controls allow you to move forward or backward or go directly to a
+  specific page.
+</p>
 
 <h2>Sample</h2>
 
-
 <!--TABS-->
 <div class="tabs responsive">
- <ul class="nav-tabs">
-  <li>
-   <a href="#section1">Example</a>
-  </li>
-  <li>
-   <a href="#section2">Source code</a>
-  </li>
-  <li>
-   <a href="#section3">Implementation notes</a>
-  </li>
- </ul>
+  <ul class="nav-tabs">
+    <li>
+      <a href="#section1">Example</a>
+    </li>
+    <li>
+      <a href="#section2">Source code</a>
+    </li>
+    <li>
+      <a href="#section3">Implementation notes</a>
+    </li>
+  </ul>
 
+  <!--Examples-->
+  <section id="section1" class="tab-pane">
+    <div class="card-header" id="heading-example1">
+      <a
+        data-bs-toggle="collapse"
+        href="#collapse-example1"
+        aria-expanded="true"
+        aria-controls="collapse-example1"
+        data-hash="#pane-example1"
+        title="Example tab header">
+        Example
+      </a>
+    </div>
+    <div
+      id="collapse-example1"
+      class="collapse show p-0 m-0 brd-0"
+      role="tabpanel"
+      aria-labelledby="heading-example1">
+      <div class="p-t p-b-0">
+        <cagov-pagination
+          data-current-page="5"
+          data-total-pages="99"></cagov-pagination>
+      </div>
+    </div>
+  </section>
 
+  <!--HTML-->
+  <section id="section2" class="tab-pane">
+    <div class="card-header" id="heading-html1">
+      <a
+        class="collapsed"
+        data-bs-toggle="collapse"
+        href="#collapse-html1"
+        aria-expanded="false"
+        aria-controls="collapse-html1"
+        data-hash="#pane-html1"
+        title="HTML Source code tab header">
+        Source code
+      </a>
+    </div>
+    <div
+      id="collapse-html1"
+      class="collapse show p-0 m-0 brd-0"
+      role="tabpanel"
+      aria-labelledby="heading-html1">
+      <div class="p-t p-b-0">
+        <textarea
+          class="sourcecode height-60"
+          aria-label="source code"
+          disabled>
+<cagov-pagination data-current-page="5" data-total-pages="99"></cagov-pagination></textarea
+        >
+      </div>
+    </div>
+  </section>
 
- <!--Examples-->
- <section id="section1" class="tab-pane">
-  <div class="card-header" id="heading-example1">
-   <a data-bs-toggle="collapse" href="#collapse-example1" aria-expanded="true" aria-controls="collapse-example1"
-    data-hash="#pane-example1" title="Example tab header">
-    Example
-   </a>
-  </div>
-  <div id="collapse-example1" class="collapse show p-0 m-0 brd-0" role="tabpanel" aria-labelledby="heading-example1">
-   <div class="p-t p-b-0">
-    <cagov-pagination data-current-page="5" data-total-pages="99"></cagov-pagination>
-   </div>
-  </div>
- </section>
+  <!--Implementation-->
+  <section id="section3" class="tab-pane">
+    <div class="card-header" id="heading-implementation1">
+      <a
+        class="collapsed"
+        data-bs-toggle="collapse"
+        href="#collapse-implementation1"
+        aria-expanded="false"
+        aria-controls="collapse-implementation1"
+        data-hash="#pane-implementation1"
+        title="Implementation notes tab header">
+        Implementation notes
+      </a>
+    </div>
+    <div
+      id="collapse-implementation1"
+      class="collapse p-0 m-0 brd-0"
+      role="tabpanel"
+      aria-labelledby="heading-implementation1">
+      <div class="p-a-sm">
+        <p>First, add the HTML.</p>
+        <textarea
+          class="sourcecode height-60"
+          aria-label="source code"
+          disabled>
+<cagov-pagination data-current-page="5" data-total-pages="99"></cagov-pagination></textarea
+        >
 
+        <p class="p-t-md">
+          This component accepts data attributes for the number of pages and
+          current page. These changes are monitored and the component re-renders
+          if these attributes change:
+        </p>
+        <table class="font-size-15 brd-solid-1 brd-gray-200">
+          <thead>
+            <tr>
+              <th class="p-a brd-bottom brd-right brd-gray-200">Name</th>
+              <th class="p-a brd-bottom brd-right brd-gray-200">
+                Attribute name
+              </th>
+              <th class="p-a brd-bottom brd-right brd-gray-200">Data type</th>
+              <th class="p-a brd-bottom brd-right brd-gray-200">Field type</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="p-a  align-top brd-bottom brd-right brd-gray-200">
+                Current page
+              </td>
+              <td class="p-a  align-top brd-bottom brd-right brd-gray-200">
+                data-current-page
+              </td>
+              <td class="p-a  align-top brd-bottom brd-right brd-gray-200">
+                string
+              </td>
+              <td class="p-a  align-top brd-bottom brd-right brd-gray-200">
+                Integer (default is 1)
+              </td>
+            </tr>
+            <tr>
+              <td class="p-a  align-top brd-bottom brd-right brd-gray-200">
+                Total pages
+              </td>
+              <td class="p-a  align-top brd-bottom brd-right brd-gray-200">
+                data-total-pages
+              </td>
+              <td class="p-a  align-top brd-bottom brd-right brd-gray-200">
+                string
+              </td>
+              <td class="p-a  align-top brd-bottom brd-right brd-gray-200">
+                Integer (default is 1, enter -1 for an unbound set)
+              </td>
+            </tr>
+          </tbody>
+        </table>
 
+        <p class="p-t-md">
+          It also accepts optional strings for all the text so it can be used in
+          multiple languages:
+        </p>
+        <table class="font-size-15 brd-solid-1 brd-gray-200">
+          <thead>
+            <tr>
+              <th class="p-a brd-bottom brd-right brd-gray-200">Name</th>
+              <th class="p-a brd-bottom brd-right brd-gray-200">
+                Attribute name
+              </th>
+              <th class="p-a brd-bottom brd-right brd-gray-200">Data type</th>
+              <th class="p-a brd-bottom brd-right brd-gray-200">Field type</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="p-a  align-top brd-bottom brd-right brd-gray-200">
+                Previous
+              </td>
+              <td class="p-a  align-top brd-bottom brd-right brd-gray-200">
+                data-previous
+              </td>
+              <td class="p-a  align-top brd-bottom brd-right brd-gray-200">
+                string
+              </td>
+              <td class="p-a  align-top brd-bottom brd-right brd-gray-200">
+                Plain text (default is "
+                <span class="ca-gov-icon-arrow-prev" aria-hidden="true"></span>
+                Previous")
+              </td>
+            </tr>
+            <tr>
+              <td class="p-a  align-top brd-bottom brd-right brd-gray-200">
+                Next
+              </td>
+              <td class="p-a  align-top brd-bottom brd-right brd-gray-200">
+                data-next
+              </td>
+              <td class="p-a  align-top brd-bottom brd-right brd-gray-200">
+                string
+              </td>
+              <td class="p-a  align-top brd-bottom brd-right brd-gray-200">
+                Plain text (default is "Next
+                <span class="ca-gov-icon-arrow-next" aria-hidden="true"></span>
+                ")
+              </td>
+            </tr>
+          </tbody>
+        </table>
 
- <!--HTML-->
- <section id="section2" class="tab-pane">
-  <div class="card-header" id="heading-html1">
-   <a class="collapsed" data-bs-toggle="collapse" href="#collapse-html1" aria-expanded="false"
-    aria-controls="collapse-html1" data-hash="#pane-html1" title="HTML Source code tab header">
-    Source code
-   </a>
-  </div>
-  <div id="collapse-html1" class="collapse show p-0 m-0 brd-0" role="tabpanel" aria-labelledby="heading-html1">
-   <div class="p-t p-b-0">
-    <textarea class="sourcecode height-60" aria-label="source code"
-     disabled><cagov-pagination data-current-page="5" data-total-pages="99"></cagov-pagination></textarea>
-   </div>
-  </div>
- </section>
-
-
-
- <!--Implementation-->
- <section id="section3" class="tab-pane">
-  <div class="card-header" id="heading-implementation1">
-   <a class="collapsed" data-bs-toggle="collapse" href="#collapse-implementation1" aria-expanded="false"
-    aria-controls="collapse-implementation1" data-hash="#pane-implementation1" title="Implementation notes tab header">
-    Implementation notes
-   </a>
-  </div>
-  <div id="collapse-implementation1" class="collapse p-0 m-0 brd-0" role="tabpanel"
-   aria-labelledby="heading-implementation1">
-   <div class="p-a-sm">
-    <p>First, add the HTML.</p>
-    <textarea class="sourcecode height-60" aria-label="source code"
-     disabled><cagov-pagination data-current-page="5" data-total-pages="99"></cagov-pagination></textarea>
-
-    <p class="p-t-md">This component accepts data attributes for the number of pages and current page. These changes
-     are monitored
-     and the component re-renders if these attributes change:</p>
-    <table class="font-size-15 brd-solid-1 brd-gray-200">
-     <thead>
-      <tr>
-       <th class="p-a brd-bottom brd-right brd-gray-200">Name</th>
-       <th class="p-a brd-bottom brd-right brd-gray-200">Attribute name</th>
-       <th class="p-a brd-bottom brd-right brd-gray-200">Data type</th>
-       <th class="p-a brd-bottom brd-right brd-gray-200">Field type</th>
-      </tr>
-     </thead>
-     <tbody>
-      <tr>
-       <td class="p-a  align-top brd-bottom brd-right brd-gray-200">Current page</td>
-       <td class="p-a  align-top brd-bottom brd-right brd-gray-200">data-current-page</td>
-       <td class="p-a  align-top brd-bottom brd-right brd-gray-200">string</td>
-       <td class="p-a  align-top brd-bottom brd-right brd-gray-200">Integer (default is 1)</td>
-      </tr>
-      <tr>
-       <td class="p-a  align-top brd-bottom brd-right brd-gray-200">Total pages</td>
-       <td class="p-a  align-top brd-bottom brd-right brd-gray-200">data-total-pages</td>
-       <td class="p-a  align-top brd-bottom brd-right brd-gray-200">string</td>
-       <td class="p-a  align-top brd-bottom brd-right brd-gray-200">Integer (default is 1, enter -1 for an
-        unbound set)</td>
-      </tr>
-     </tbody>
-    </table>
-
-    <p class="p-t-md">It also accepts optional strings for all the text so it can be used in multiple languages:</p>
-    <table class="font-size-15 brd-solid-1 brd-gray-200">
-     <thead>
-      <tr>
-       <th class="p-a brd-bottom brd-right brd-gray-200">Name</th>
-       <th class="p-a brd-bottom brd-right brd-gray-200">Attribute name</th>
-       <th class="p-a brd-bottom brd-right brd-gray-200">Data type</th>
-       <th class="p-a brd-bottom brd-right brd-gray-200">Field type</th>
-      </tr>
-     </thead>
-     <tbody>
-      <tr>
-       <td class="p-a  align-top brd-bottom brd-right brd-gray-200">Previous</td>
-       <td class="p-a  align-top brd-bottom brd-right brd-gray-200">data-previous</td>
-       <td class="p-a  align-top brd-bottom brd-right brd-gray-200">string</td>
-       <td class="p-a  align-top brd-bottom brd-right brd-gray-200">Plain text (default is "<span
-         class="ca-gov-icon-arrow-prev" aria-hidden="true"></span> Previous")</td>
-      </tr>
-      <tr>
-       <td class="p-a  align-top brd-bottom brd-right brd-gray-200">Next</td>
-       <td class="p-a  align-top brd-bottom brd-right brd-gray-200">data-next</td>
-       <td class="p-a  align-top brd-bottom brd-right brd-gray-200">string</td>
-       <td class="p-a  align-top brd-bottom brd-right brd-gray-200">Plain text (default is "Next <span
-         class="ca-gov-icon-arrow-next" aria-hidden="true"></span>")</td>
-      </tr>
-     </tbody>
-    </table>
-
-    <p class="p-t-md">Next, register an event to respond to clicks.</p>
-    <textarea class="sourcecode height-150" aria-label="source code" disabled>const paginator = document.querySelector('cagov-pagination');
+        <p class="p-t-md">Next, register an event to respond to clicks.</p>
+        <textarea
+          class="sourcecode height-150"
+          aria-label="source code"
+          disabled>
+const paginator = document.querySelector('cagov-pagination');
 
 paginator.addEventListener('paginationClick', function (e) {
   alert(`You requested page ${e.detail}.`);
-});</textarea>
-    <p class="p-t-md">Replace the alert with your own code to retrieve the content for
-     the requested page and write it into the DOM.</p>
-   </div>
-  </div>
- </section>
-
-
+});</textarea
+        >
+        <p class="p-t-md">
+          Replace the alert with your own code to retrieve the content for the
+          requested page and write it into the DOM.
+        </p>
+      </div>
+    </div>
+  </section>
 </div>
 <!--END TABS-->
 
 <h2>Usage</h2>
-<h3>When and how to use it </h3>
+<h3>When and how to use it</h3>
 <p>Use pagination when:</p>
 <ul>
- <li>Showing all the content on a single page is too much and causes poor performance</li>
- <li>Most users will only need the content on the first few pages</li>
- <li>A long list of content could benefit from pagination</li>
+  <li>
+    Showing all the content on a single page is too much and causes poor
+    performance
+  </li>
+  <li>Most users will only need the content on the first few pages</li>
+  <li>A long list of content could benefit from pagination</li>
 </ul>
 <p>The default number displayed will vary depending on the context.</p>
-<p>Add the pagination component after the content on each page that you’re paginating. Use pagination if it improves the
- performance or usability of your service. </p>
+<p>
+  Add the pagination component after the content on each page that you’re
+  paginating. Use pagination if it improves the performance or usability of your
+  service.
+</p>
 
 <p>Common uses of pagination include:</p>
 
 <ul>
- <li>Search results</li>
- <li>A list of announcements or press releases</li>
- <li>A glossary</li>
+  <li>Search results</li>
+  <li>A list of announcements or press releases</li>
+  <li>A glossary</li>
 </ul>
 
-<h3>
- How not to use it
-</h3>
+<h3>How not to use it</h3>
 
 <p>Do not use pagination:</p>
 <ul>
- <li>To break up long pages of text</li>
- <li>When the content works better as a bulleted list</li>
- <li>For a list of steps</li>
+  <li>To break up long pages of text</li>
+  <li>When the content works better as a bulleted list</li>
+  <li>For a list of steps</li>
 </ul>
 
 <h2>Behaviors</h2>
 
-<p>This describes the different pagination behaviors. The maximum number of slots (page numbers and ellipsis) displayed
- are 7. There are a few instances when not all 7 slots are displayed. </p>
+<p>
+  This describes the different pagination behaviors. The maximum number of slots
+  (page numbers and ellipsis) displayed are 7. There are a few instances when
+  not all 7 slots are displayed.
+</p>
 
-<p>Do not show pagination if there’s only one page of content. For example, you get 3 search results on 1 page, do not
- show pagination.</p>
+<p>
+  Do not show pagination if there’s only one page of content. For example, you
+  get 3 search results on 1 page, do not show pagination.
+</p>
 
 <table class="table">
- <thead>
-  <tr>
-   <th scope="col">Guideline</th>
-   <th scope="col">Live example</th>
-  </tr>
- </thead>
- <tbody>
-  <tr>
-   <td class="small p-y-md">Remove extra slots if there are less than 7 pages.</td>
-   <td class="p-y-md"><cagov-pagination data-current-page="1" data-total-pages="3"></cagov-pagination></td>
-  </tr>
-  <tr>
-   <td class="small p-y-md">Always highlight the current page.</td>
-   <td class="p-y-md"><cagov-pagination data-current-page="2" data-total-pages="3"></cagov-pagination></td>
-  </tr>
-  <tr>
-   <td class="small p-y-md">Hide the Previous link on the first page of the set and hide the Next link on the last
-    page of the set.</td>
-   <td class="p-y-md">
-    <cagov-pagination data-current-page="1" data-total-pages="3"></cagov-pagination>
-    <cagov-pagination data-current-page="3" data-total-pages="3"></cagov-pagination>
-   </td>
-  </tr>
-  <tr>
-   <td class="small p-y-md">Always show both the previous page and the next page adjacent to the current page.</td>
-   <td class="p-y-md"><cagov-pagination data-current-page="4" data-total-pages="8"></cagov-pagination></td>
-  </tr>
-  <tr>
-   <td class="small p-y-md">Use ellipsis as an overflow indicator when there are pages missing.</td>
-   <td class="p-y-md"><cagov-pagination data-current-page="1" data-total-pages="8"></cagov-pagination></td>
-  </tr>
-  <tr>
-   <td class="small p-y-md">Bounded sets can show overflow indicators in Slot 2 and Slot 6 only.</td>
-   <td class="p-y-md"><cagov-pagination data-current-page="5" data-total-pages="9"></cagov-pagination></td>
-  </tr>
-  <tr>
-   <td class="small p-y-md">Unbounded sets always show an overflow indicator in Slot 7.</td>
-   <td class="p-y-md"><cagov-pagination data-current-page="1" data-total-pages="-1"></cagov-pagination></td>
-  </tr>
-  <tr>
-   <td class="small p-y-md">Unbounded sets use Slot 4 as the current page for pages 4 and higher.</td>
-   <td class="p-y-md"><cagov-pagination data-current-page="4" data-total-pages="-1"></cagov-pagination></td>
-  </tr>
- </tbody>
+  <thead>
+    <tr>
+      <th scope="col">Guideline</th>
+      <th scope="col">Live example</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td class="small p-y-md">
+        Remove extra slots if there are less than 7 pages.
+      </td>
+      <td class="p-y-md">
+        <cagov-pagination
+          data-current-page="1"
+          data-total-pages="3"></cagov-pagination>
+      </td>
+    </tr>
+    <tr>
+      <td class="small p-y-md">Always highlight the current page.</td>
+      <td class="p-y-md">
+        <cagov-pagination
+          data-current-page="2"
+          data-total-pages="3"></cagov-pagination>
+      </td>
+    </tr>
+    <tr>
+      <td class="small p-y-md">
+        Hide the Previous link on the first page of the set and hide the Next
+        link on the last page of the set.
+      </td>
+      <td class="p-y-md">
+        <cagov-pagination
+          data-current-page="1"
+          data-total-pages="3"></cagov-pagination>
+        <cagov-pagination
+          data-current-page="3"
+          data-total-pages="3"></cagov-pagination>
+      </td>
+    </tr>
+    <tr>
+      <td class="small p-y-md">
+        Always show both the previous page and the next page adjacent to the
+        current page.
+      </td>
+      <td class="p-y-md">
+        <cagov-pagination
+          data-current-page="4"
+          data-total-pages="8"></cagov-pagination>
+      </td>
+    </tr>
+    <tr>
+      <td class="small p-y-md">
+        Use ellipsis as an overflow indicator when there are pages missing.
+      </td>
+      <td class="p-y-md">
+        <cagov-pagination
+          data-current-page="1"
+          data-total-pages="8"></cagov-pagination>
+      </td>
+    </tr>
+    <tr>
+      <td class="small p-y-md">
+        Bounded sets can show overflow indicators in Slot 2 and Slot 6 only.
+      </td>
+      <td class="p-y-md">
+        <cagov-pagination
+          data-current-page="5"
+          data-total-pages="9"></cagov-pagination>
+      </td>
+    </tr>
+    <tr>
+      <td class="small p-y-md">
+        Unbounded sets always show an overflow indicator in Slot 7.
+      </td>
+      <td class="p-y-md">
+        <cagov-pagination
+          data-current-page="1"
+          data-total-pages="-1"></cagov-pagination>
+      </td>
+    </tr>
+    <tr>
+      <td class="small p-y-md">
+        Unbounded sets use Slot 4 as the current page for pages 4 and higher.
+      </td>
+      <td class="p-y-md">
+        <cagov-pagination
+          data-current-page="4"
+          data-total-pages="-1"></cagov-pagination>
+      </td>
+    </tr>
+  </tbody>
 </table>
 
 <h2>Accessibility</h2>
@@ -246,8 +386,11 @@ paginator.addEventListener('paginationClick', function (e) {
 <h3>Component-specific accessibility review</h3>
 
 <ul>
- <li>Make sure that each pagination link has appropriate aria-label.</li>
- <li>Make sure that pagination component is contained within nav tag and has aria-label="Pagination” added to it.</li>
+  <li>Make sure that each pagination link has appropriate aria-label.</li>
+  <li>
+    Make sure that pagination component is contained within nav tag and has
+    aria-label="Pagination” added to it.
+  </li>
 </ul>
 
 {% include "../../src/_includes/modules/accessibility.html" %}
