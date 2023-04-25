@@ -9,81 +9,101 @@ permalink: "components/breadcrumb.html"
 
 <nav class="page-navigation"></nav>
 
-<p>The breadcrumb component helps visitors understand where they are within a website’s structure and move
- between
- levels. </p>
-
+<p>
+  The breadcrumb component helps visitors understand where they are within a
+  website’s structure and move between levels.
+</p>
 
 <h2>Sample</h2>
 
 <!--TABS-->
 <div class="tabs responsive">
- <ul class="nav-tabs">
-  <li>
-   <a href="#section1">Example</a>
-  </li>
-  <li>
-   <a href="#section2">Source code</a>
-  </li>
- </ul>
+  <ul class="nav-tabs">
+    <li>
+      <a href="#section1">Example</a>
+    </li>
+    <li>
+      <a href="#section2">Source code</a>
+    </li>
+  </ul>
 
+  <!--Examples-->
+  <section id="section1" class="tab-pane">
+    <div class="card-header" id="heading-example1">
+      <a
+        data-bs-toggle="collapse"
+        href="#collapse-example1"
+        aria-expanded="true"
+        aria-controls="collapse-example1"
+        data-hash="#pane-example1"
+        title="Example tab header">
+        Example
+      </a>
+    </div>
+    <div
+      id="collapse-example1"
+      class="collapse show p-0 m-0 brd-0"
+      role="tabpanel"
+      aria-labelledby="heading-example1">
+      <div class="p-a-sm p-y-0 p-t-md">
+        {% include "../../src/_includes/modules/breadcrumb.html" %}
+      </div>
+    </div>
+  </section>
 
-
- <!--Examples-->
- <section id="section1" class="tab-pane">
-  <div class="card-header" id="heading-example1">
-   <a data-bs-toggle="collapse" href="#collapse-example1" aria-expanded="true" aria-controls="collapse-example1"
-    data-hash="#pane-example1" title="Example tab header">
-    Example
-   </a>
-  </div>
-  <div id="collapse-example1" class="collapse show p-0 m-0 brd-0" role="tabpanel" aria-labelledby="heading-example1">
-   <div class="p-a-sm p-y-0 p-t-md">
-    {% include "../../src/_includes/modules/breadcrumb.html" %}
-   </div>
-  </div>
- </section>
-
-
-
- <!--HTML-->
- <section id="section2" class="tab-pane">
-  <div class="card-header" id="heading-html1">
-   <a class="collapsed" data-bs-toggle="collapse" href="#collapse-html1" aria-expanded="false"
-    aria-controls="collapse-html1" data-hash="#pane-html1" title="HTML Source code tab header">
-    Source code
-   </a>
-  </div>
-  <div id="collapse-html1" class="collapse p-0 m-0 brd-0" role="tabpanel" aria-labelledby="heading-html1">
-   <div class="p-a-sm">
-    <pre style="max-height: 300px;"><code>{% include "../../src/_includes/modules/breadcrumb.html" %}</code></pre>
-
-   </div>
-  </div>
- </section>
-
+  <!--HTML-->
+  <section id="section2" class="tab-pane">
+    <div class="card-header" id="heading-html1">
+      <a
+        class="collapsed"
+        data-bs-toggle="collapse"
+        href="#collapse-html1"
+        aria-expanded="false"
+        aria-controls="collapse-html1"
+        data-hash="#pane-html1"
+        title="HTML Source code tab header">
+        Source code
+      </a>
+    </div>
+    <div
+      id="collapse-html1"
+      class="collapse p-0 m-0 brd-0"
+      role="tabpanel"
+      aria-labelledby="heading-html1">
+      <div class="p-a-sm">
+        <pre
+          style="max-height: 300px;"><code>{% include "../../src/_includes/modules/breadcrumb.html" %}</code></pre>
+      </div>
+    </div>
+  </section>
 </div>
 <!--END TABS-->
 
 <h2>Usage</h2>
-<h3>When and how to use it </h3>
-<p>Use the breadcrumb component to help visitors orient themselves and move between multiple levels of a website.</p>
+<h3>When and how to use it</h3>
+<p>
+  Use the breadcrumb component to help visitors orient themselves and move
+  between multiple levels of a website.
+</p>
 <p>Use breadcrumbs to illustrate:</p>
 <ul>
- <li>Progress</li>
- <li>Page levels</li>
- <li>Steps</li>
+  <li>Progress</li>
+  <li>Page levels</li>
+  <li>Steps</li>
 </ul>
 <p>Place breadcrumbs at the top left corner of a page, above the title.</p>
-<p>The breadcrumb should start with your 'home' page and end with the H1 of the current page.</p>
-<h3>
- How not to use it
-</h3>
-<p>The breadcrumb component should not replace the main navigation on a page. </p>
-</p>Do not use the breadcrumb component on websites with a flat structure. There should be at least two levels of page
-structure.</p>
-
-
+<p>
+  The breadcrumb should start with your 'home' page and end with the H1 of the
+  current page.
+</p>
+<h3>How not to use it</h3>
+<p>
+  The breadcrumb component should not replace the main navigation on a page.
+</p>
+<p>
+  Do not use the breadcrumb component on websites with a flat structure. There
+  should be at least two levels of page structure.
+</p>
 
 <h2>Accessibility</h2>
 {% include "../../src/_includes/modules/accessibility.html" %}

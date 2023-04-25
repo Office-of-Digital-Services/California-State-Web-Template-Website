@@ -1,25 +1,44 @@
-<link rel="stylesheet" href="/css/cagov.core.min.css">
-{% if colortheme %}
-      <link rel="stylesheet" href="{{colortheme}}" />
-		{% else %}
-		<link rel="stylesheet" href="/css/colortheme-oceanside.min.css">
-{% endif %}
-
-{% if customcss %}
- <link rel="stylesheet" href="{{customcss}}" />
-{% endif %}
-
-<link rel="apple-touch-icon-precomposed" sizes="100x100" href="/images/apple-touch-icon-precomposed.png">
-<link rel="icon" sizes="192x192" href="/images/apple-touch-icon-192x192.png">
-<link rel="apple-touch-icon-precomposed" sizes="180x180" href="/images/apple-touch-icon-180x180.png">
-<link rel="apple-touch-icon-precomposed" sizes="152x152" href="/images/apple-touch-icon-152x152.png">
-<link rel="apple-touch-icon-precomposed" sizes="144x144" href="/images/apple-touch-icon-144x144.png">
-<link rel="apple-touch-icon-precomposed" sizes="120x120" href="/images/apple-touch-icon-120x120.png">
-<link rel="apple-touch-icon-precomposed" sizes="114x114" href="/images/apple-touch-icon-114x114.png">
-<link rel="apple-touch-icon-precomposed" sizes="72x72" href="/images/apple-touch-icon-72x72.png">
-<link rel="apple-touch-icon-precomposed" href="/images/apple-touch-icon-57x57.png">
-<link rel="shortcut icon" href="/images/apple-touch-icon-57x57.png">
-<link rel="apple-touch-icon" href="/images/apple-touch-icon.png">
-<link rel="shortcut icon" href="/favicon.ico">
-
-{% include "./analytics.njk" %}
+<link rel="stylesheet" href="/css/cagov.core.min.css" />
+{% if colortheme -%}
+<link rel="stylesheet" href="{{ colortheme }}" />
+{% else -%}
+<link rel="stylesheet" href="/css/colortheme-oceanside.min.css" />
+{% endif -%} {%- if customcss -%}
+<link rel="stylesheet" href="{{ customcss }}" />
+{% endif -%}
+<link
+  rel="apple-touch-icon-precomposed"
+  sizes="100x100"
+  href="/images/apple-touch-icon-precomposed.png" />
+<link rel="icon" sizes="192x192" href="/images/apple-touch-icon-192x192.png" />
+<link
+  rel="apple-touch-icon-precomposed"
+  sizes="180x180"
+  href="/images/apple-touch-icon-180x180.png" />
+<link
+  rel="apple-touch-icon-precomposed"
+  sizes="152x152"
+  href="/images/apple-touch-icon-152x152.png" />
+<link
+  rel="apple-touch-icon-precomposed"
+  sizes="144x144"
+  href="/images/apple-touch-icon-144x144.png" />
+<link
+  rel="apple-touch-icon-precomposed"
+  sizes="120x120"
+  href="/images/apple-touch-icon-120x120.png" />
+<link
+  rel="apple-touch-icon-precomposed"
+  sizes="114x114"
+  href="/images/apple-touch-icon-114x114.png" />
+<link
+  rel="apple-touch-icon-precomposed"
+  sizes="72x72"
+  href="/images/apple-touch-icon-72x72.png" />
+<link
+  rel="apple-touch-icon-precomposed"
+  href="/images/apple-touch-icon-57x57.png" />
+<link rel="shortcut icon" href="/images/apple-touch-icon-57x57.png" />
+<link rel="apple-touch-icon" href="/images/apple-touch-icon.png" />
+<link rel="shortcut icon" href="/favicon.ico" />
+{% include "./analytics.njk" -%}

@@ -9,217 +9,216 @@
 
 // CONTAINER
 .mobile-controls {
-    text-align: right; // move most menu controls to right
+  text-align: right; // move most menu controls to right
+  position: relative;
+  color: $gray-600;
+  background: $white;
+  top: 0;
+  padding-right: 0;
+  height: 0;
+  @include container;
+
+  .ca-gov-icon-menu-toggle-open,
+  .ca-gov-icon-menu-toggle-closed {
+    // Dynamic elements included in toggle-sub-nav
+    padding-left: 16px;
+    padding-right: 16px;
+    line-height: 2.75rem;
+  }
+
+  // Hamburger menu to X transition
+  .toggle-menu {
+    padding: 16px 8px;
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+    color: $white;
     position: relative;
-    color: $gray-600;
-    background: $white;
-    top: 0;
-    padding-right: 0;
-    height: 0;
-    @include container;
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg);
+    -webkit-transition: 0.5s ease-in-out;
+    -moz-transition: 0.5s ease-in-out;
+    -o-transition: 0.5s ease-in-out;
+    transition: 0.5s ease-in-out;
+    cursor: pointer;
+    color: $white;
+    top: 4px;
 
-    .ca-gov-icon-menu-toggle-open,
-    .ca-gov-icon-menu-toggle-closed {
-        // Dynamic elements included in toggle-sub-nav
-        padding-left: 16px;
-        padding-right: 16px;
-        line-height: 2.75rem;
+    // Overvriting sr-only class to avoid strucural changes in mobile controls
+    span.sr-only {
+      height: unset !important;
+      width: unset !important;
+      position: relative !important;
+      clip: unset !important;
+      background: none !important;
+      color: $gray-600;
+      right: 0 !important;
+      display: inline-block !important;
+      padding-left: 0 !important;
+      top: 10px;
     }
 
-    // Hamburger menu to X transition
-    .toggle-menu {
-     padding: 16px 8px;
-     display: flex;
-     flex-direction: column;
-        cursor: pointer;
-        color: $white;
-        position: relative;
-        -webkit-transform: rotate(0deg);
-        -moz-transform: rotate(0deg);
-        -o-transform: rotate(0deg);
-        transform: rotate(0deg);
-        -webkit-transition: 0.5s ease-in-out;
-        -moz-transition: 0.5s ease-in-out;
-        -o-transition: 0.5s ease-in-out;
-        transition: 0.5s ease-in-out;
-        cursor: pointer;
-        color: $white;
-        top: 4px;
+    span {
+      margin-left: 0.75rem;
+      margin-right: 0;
+      height: 2px;
+      width: 20px;
+      display: block;
+      position: absolute;
+      background: $gray-600;
+      border-radius: 5px;
+      opacity: 1;
+      -webkit-transform: rotate(0deg);
+      -moz-transform: rotate(0deg);
+      -o-transform: rotate(0deg);
+      transform: rotate(0deg);
+      -webkit-transition: 0.25s ease-in-out;
+      -moz-transition: 0.25s ease-in-out;
+      -o-transition: 0.25s ease-in-out;
+      transition: 0.25s ease-in-out;
 
-        // Overvriting sr-only class to avoid strucural changes in mobile controls
-        span.sr-only {
-            height: unset !important;
-            width: unset !important;
-            position: relative !important;
-            clip: unset !important;
-            background: none !important;
-            color: $gray-600;
-            right: 0 !important;
-            display: inline-block !important;
-            padding-left: 0 !important;
-            top: 10px;
-        }
+      &:nth-child(1) {
+        top: 2px;
+      }
 
-        span {
-            margin-left: .75rem;
-            margin-right: 0;
-            height: 2px;
-            width: 20px;
-            display: block;
-            position: absolute;
-            background: $gray-600;
-            border-radius: 5px;
-            opacity: 1;
-            -webkit-transform: rotate(0deg);
-            -moz-transform: rotate(0deg);
-            -o-transform: rotate(0deg);
-            transform: rotate(0deg);
-            -webkit-transition: 0.25s ease-in-out;
-            -moz-transition: 0.25s ease-in-out;
-            -o-transition: 0.25s ease-in-out;
-            transition: 0.25s ease-in-out;
+      &:nth-child(2),
+      &:nth-child(3) {
+        top: 9px;
+      }
 
-            &:nth-child(1) {
-                top: 2px;
-            }
-
-            &:nth-child(2),
-            &:nth-child(3) {
-                top: 9px;
-            }
-
-            &:nth-child(4) {
-                top: 16px;
-            }
-        }
-
-        &[aria-expanded="true"] {
-            span:nth-child(1) {
-                top: 12px;
-                width: 0%;
-            }
-
-            span:nth-child(2) {
-                -webkit-transform: rotate(45deg);
-                -moz-transform: rotate(45deg);
-                -o-transform: rotate(45deg);
-                transform: rotate(45deg);
-            }
-
-            span:nth-child(3) {
-                -webkit-transform: rotate(-45deg);
-                -moz-transform: rotate(-45deg);
-                -o-transform: rotate(-45deg);
-                transform: rotate(-45deg);
-            }
-
-            span:nth-child(4) {
-                top: 12px;
-                width: 0%;
-            }
-        }
+      &:nth-child(4) {
+        top: 16px;
+      }
     }
 
-    .toggle-search {
-        padding: 0;
-        border: none;
-        background: none;
-        cursor: pointer;
-        position: relative;
-        margin-left: auto;
-        margin-right: 1rem;
-        text-align: center;
-        z-index: 99;
-        display: flex;
-        flex-direction: column;
+    &[aria-expanded="true"] {
+      span:nth-child(1) {
+        top: 12px;
+        width: 0%;
+      }
 
-        span.ca-gov-icon-search {
-            position: relative;
-            font-size: 1.4rem;
-            display: block;
-            margin: 0 auto;
-           
-        }
+      span:nth-child(2) {
+        -webkit-transform: rotate(45deg);
+        -moz-transform: rotate(45deg);
+        -o-transform: rotate(45deg);
+        transform: rotate(45deg);
+      }
 
-        // Overvriting sr-only class to avoid strucural changes in mobile controls
-        span.sr-only {
-            height: unset !important;
-            width: unset !important;
-            position: relative !important;
-            clip: unset !important;
-            background: none !important;
-            color: $gray-600;
-            right: 0 !important;
-            display: inline-block !important;
-            padding-left: 5px !important;
-            bottom: 4px;
-        }
+      span:nth-child(3) {
+        -webkit-transform: rotate(-45deg);
+        -moz-transform: rotate(-45deg);
+        -o-transform: rotate(-45deg);
+        transform: rotate(-45deg);
+      }
 
-        &:focus {
-            @include outline(2px);
-        }
+      span:nth-child(4) {
+        top: 12px;
+        width: 0%;
+      }
+    }
+  }
+
+  .toggle-search {
+    padding: 0;
+    border: none;
+    background: none;
+    cursor: pointer;
+    position: relative;
+    margin-left: auto;
+    margin-right: 1rem;
+    text-align: center;
+    z-index: 99;
+    display: flex;
+    flex-direction: column;
+
+    span.ca-gov-icon-search {
+      position: relative;
+      font-size: 1.4rem;
+      display: block;
+      margin: 0 auto;
     }
 
-    @media (max-width: $screen-xs-max) {
-        max-width: 100%;
+    // Overvriting sr-only class to avoid strucural changes in mobile controls
+    span.sr-only {
+      height: unset !important;
+      width: unset !important;
+      position: relative !important;
+      clip: unset !important;
+      background: none !important;
+      color: $gray-600;
+      right: 0 !important;
+      display: inline-block !important;
+      padding-left: 5px !important;
+      bottom: 4px;
     }
+
+    &:focus {
+      @include outline(2px);
+    }
+  }
+
+  @media (max-width: $screen-xs-max) {
+    max-width: 100%;
+  }
 }
 
 // Mobile controls inside main navigation
 .main-navigation .mobile-controls {
-    text-align: left;
-    background-color: $body-bg;
+  text-align: left;
+  background-color: $body-bg;
 }
 
 // INDIVIDUAL CONTROLS
 .mobile-control {
-    &.toggle-sub-nav {
-        // Dynamic element $toggleSubNav placed before each .sub-nav element
-        position: absolute;
-        top: 0;
-        right: 2px;
-        @include font-size(1.5);
-        width: 80px;
-        text-align: center;
-        cursor: pointer;
-        padding-left: 7px;
-        border: none;
-        height: 100%;
+  &.toggle-sub-nav {
+    // Dynamic element $toggleSubNav placed before each .sub-nav element
+    position: absolute;
+    top: 0;
+    right: 2px;
+    @include font-size(1.5);
+    width: 80px;
+    text-align: center;
+    cursor: pointer;
+    padding-left: 7px;
+    border: none;
+    height: 100%;
 
-        &:active {
-            .rotate {
-                // preventing icon shifting on active state in IE and FF
-                position: absolute;
-                top: 20px;
-                left: 30px;
-            }
-        }
+    &:active {
+      .rotate {
+        // preventing icon shifting on active state in IE and FF
+        position: absolute;
+        top: 20px;
+        left: 30px;
+      }
     }
+  }
 }
 
 // IOS Icons FIX
 .main-nav-icons {
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    z-index: 1;
-    position: relative;
-    top: -75px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  z-index: 1;
+  position: relative;
+  top: -75px;
 }
 
 /* mobile controls hack for IE because IE never dies */
 @media all and (-ms-high-contrast: none) {
-    .mobile-controls .toggle-search {
-        position: absolute;
-        right: 70px;
-        top: 10px;
-    }
-    /* IE10 */
-    *::-ms-backdrop,
-    .mobile-controls .toggle-search {
-        position: absolute;
-        right: 70px;
-        top: 10px;
-    }
-    /* IE11 */
+  .mobile-controls .toggle-search {
+    position: absolute;
+    right: 70px;
+    top: 10px;
+  }
+  /* IE10 */
+  *::-ms-backdrop,
+  .mobile-controls .toggle-search {
+    position: absolute;
+    right: 70px;
+    top: 10px;
+  }
+  /* IE11 */
 }

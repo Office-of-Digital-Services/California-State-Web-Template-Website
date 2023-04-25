@@ -5,241 +5,299 @@ layout: patterns.njk
 permalink: "patterns/card-grid.html"
 ---
 
-
 <h1 class="mt-lg-0">Card grid</h1>
 
 <nav class="page-navigation"></nav>
 
-<p>There are three types of card grids to present related information: </p>
+<p>There are three types of card grids to present related information:</p>
 <ul>
- <li>Basic card grid</li>
- <li>News grid</li>
- <li>Card grid with imagery</li>
+  <li>Basic card grid</li>
+  <li>News grid</li>
+  <li>Card grid with imagery</li>
 </ul>
 
 <h2>Basic</h2>
 
-<p>A basic card grid highlights content in grids. It visually shows content or elements that belong together with a
- button to indicate a call-to-action.</p>
+<p>
+  A basic card grid highlights content in grids. It visually shows content or
+  elements that belong together with a button to indicate a call-to-action.
+</p>
 
 <!--TABS-->
 <div class="tabs responsive">
- <ul class="nav-tabs">
-  <li>
-   <a href="#section1">Example</a>
-  </li>
-  <li>
-   <a href="#section2">Source code</a>
-  </li>
- </ul>
+  <ul class="nav-tabs">
+    <li>
+      <a href="#section1">Example</a>
+    </li>
+    <li>
+      <a href="#section2">Source code</a>
+    </li>
+  </ul>
 
- <!--Examples-->
- <section id="section1" class="tab-pane">
-  <div class="card-header" id="heading-example1">
-   <a data-bs-toggle="collapse" href="#collapse-example1" aria-expanded="true" aria-controls="collapse-example1"
-    data-hash="#pane-example1" title="Example tab header">
-    Example
-   </a>
-  </div>
-  <div id="collapse-example1" class="collapse show p-0 m-0 brd-0" role="tabpanel" aria-labelledby="heading-example1">
-   <div class="p-a-sm">
+  <!--Examples-->
+  <section id="section1" class="tab-pane">
+    <div class="card-header" id="heading-example1">
+      <a
+        data-bs-toggle="collapse"
+        href="#collapse-example1"
+        aria-expanded="true"
+        aria-controls="collapse-example1"
+        data-hash="#pane-example1"
+        title="Example tab header">
+        Example
+      </a>
+    </div>
+    <div
+      id="collapse-example1"
+      class="collapse show p-0 m-0 brd-0"
+      role="tabpanel"
+      aria-labelledby="heading-example1">
+      <div class="p-a-sm">
+        {% include "../../src/_includes/modules/card-grid-basic.html" %}
+      </div>
+    </div>
+  </section>
 
-    {% include "../../src/_includes/modules/card-grid-basic.html" %}
-
-
-   </div>
-  </div>
- </section>
-
-
-
- <!--HTML-->
- <section id="section2" class="tab-pane">
-  <div class="card-header" id="heading-html1">
-   <a class="collapsed" data-bs-toggle="collapse" href="#collapse-html1" aria-expanded="false"
-    aria-controls="collapse-html1" data-hash="#pane-html1" title="HTML Source code tab header">
-    Source code
-   </a>
-  </div>
-  <div id="collapse-html1" class="collapse p-0 m-0 brd-0" role="tabpanel" aria-labelledby="heading-html1">
-   <div class="p-a-sm">
-    <pre style="max-height: 300px;"><code>{% include "../../src/_includes/modules/card-grid-basic.html" %}</code>
+  <!--HTML-->
+  <section id="section2" class="tab-pane">
+    <div class="card-header" id="heading-html1">
+      <a
+        class="collapsed"
+        data-bs-toggle="collapse"
+        href="#collapse-html1"
+        aria-expanded="false"
+        aria-controls="collapse-html1"
+        data-hash="#pane-html1"
+        title="HTML Source code tab header">
+        Source code
+      </a>
+    </div>
+    <div
+      id="collapse-html1"
+      class="collapse p-0 m-0 brd-0"
+      role="tabpanel"
+      aria-labelledby="heading-html1">
+      <div class="p-a-sm">
+        <pre
+          style="max-height: 300px;"><code>{% include "../../src/_includes/modules/card-grid-basic.html" %}</code>
     </pre>
-
-   </div>
-  </div>
- </section>
-
-
+      </div>
+    </div>
+  </section>
 </div>
 <!--END TABS-->
-
-
-
-
-
-
 
 <h2>News grid</h2>
-<p>The news grid features information relevant to your agency or department. It offers you space to highlight current
- events, topics or developments. Use this option to link to a news section within your site or a related, official press
- release. Add an optional date, author and agency name.</p>
+<p>
+  The news grid features information relevant to your agency or department. It
+  offers you space to highlight current events, topics or developments. Use this
+  option to link to a news section within your site or a related, official press
+  release. Add an optional date, author and agency name.
+</p>
 
 <!--TABS-->
 <div class="tabs responsive">
- <ul class="nav-tabs">
-  <li>
-   <a href="#section3">Example</a>
-  </li>
-  <li>
-   <a href="#section4">Source code</a>
-  </li>
- </ul>
+  <ul class="nav-tabs">
+    <li>
+      <a href="#section3">Example</a>
+    </li>
+    <li>
+      <a href="#section4">Source code</a>
+    </li>
+  </ul>
 
+  <!--Examples-->
+  <section id="section3" class="tab-pane">
+    <div class="card-header" id="heading-example4">
+      <a
+        data-bs-toggle="collapse"
+        href="#collapse-example4"
+        aria-expanded="true"
+        aria-controls="collapse-example4"
+        data-hash="#pane-example4"
+        title="Example tab header">
+        Example
+      </a>
+    </div>
+    <div
+      id="collapse-example4"
+      class="collapse show p-0 m-0 brd-0"
+      role="tabpanel"
+      aria-labelledby="heading-example4">
+      <div class="p-a-sm p-b">
+        {% include "../../src/_includes/modules/news-block.html" %}
+      </div>
+    </div>
+  </section>
 
- <!--Examples-->
- <section id="section3" class="tab-pane">
-  <div class="card-header" id="heading-example4">
-   <a data-bs-toggle="collapse" href="#collapse-example4" aria-expanded="true" aria-controls="collapse-example4"
-    data-hash="#pane-example4" title="Example tab header">
-    Example
-   </a>
-  </div>
-  <div id="collapse-example4" class="collapse show p-0 m-0 brd-0" role="tabpanel" aria-labelledby="heading-example4">
-   <div class="p-a-sm p-b">
-
-
-    {% include "../../src/_includes/modules/news-block.html" %}
-
-
-   </div>
-  </div>
- </section>
-
-
-
- <!--HTML-->
- <section id="section4" class="tab-pane">
-  <div class="card-header" id="heading-html4">
-   <a class="collapsed" data-bs-toggle="collapse" href="#collapse-html4" aria-expanded="false"
-    aria-controls="collapse-html4" data-hash="#pane-html4" title="HTML Source code tab header">
-    Source code
-   </a>
-  </div>
-  <div id="collapse-html4" class="collapse p-0 m-0 brd-0" role="tabpanel" aria-labelledby="heading-html4">
-   <div class="p-a-sm">
-    <pre style="max-height: 300px;"><code>{% include "../../src/_includes/modules/news-block.html" %}</code>
+  <!--HTML-->
+  <section id="section4" class="tab-pane">
+    <div class="card-header" id="heading-html4">
+      <a
+        class="collapsed"
+        data-bs-toggle="collapse"
+        href="#collapse-html4"
+        aria-expanded="false"
+        aria-controls="collapse-html4"
+        data-hash="#pane-html4"
+        title="HTML Source code tab header">
+        Source code
+      </a>
+    </div>
+    <div
+      id="collapse-html4"
+      class="collapse p-0 m-0 brd-0"
+      role="tabpanel"
+      aria-labelledby="heading-html4">
+      <div class="p-a-sm">
+        <pre
+          style="max-height: 300px;"><code>{% include "../../src/_includes/modules/news-block.html" %}</code>
    </pre>
-
-   </div>
-  </div>
- </section>
-
-
+      </div>
+    </div>
+  </section>
 </div>
 <!--END TABS-->
 
-
-
 <h2>Imagery</h2>
-<p>Imagery helps to visually communicate information. Use it to help your visitors understand your content better.</p>
+<p>
+  Imagery helps to visually communicate information. Use it to help your
+  visitors understand your content better.
+</p>
 <!--TABS-->
 <div class="tabs responsive">
- <ul class="nav-tabs">
-  <li>
-   <a href="#section5">Example</a>
-  </li>
-  <li>
-   <a href="#section6">Source code</a>
-  </li>
- </ul>
+  <ul class="nav-tabs">
+    <li>
+      <a href="#section5">Example</a>
+    </li>
+    <li>
+      <a href="#section6">Source code</a>
+    </li>
+  </ul>
 
+  <!--Examples-->
+  <section id="section5" class="tab-pane">
+    <div class="card-header" id="heading-example2">
+      <a
+        data-bs-toggle="collapse"
+        href="#collapse-example2"
+        aria-expanded="true"
+        aria-controls="collapse-example2"
+        data-hash="#pane-example2"
+        title="Example tab header">
+        Example
+      </a>
+    </div>
+    <div
+      id="collapse-example2"
+      class="collapse show p-0 m-0 brd-0"
+      role="tabpanel"
+      aria-labelledby="heading-example2">
+      <div class="p-a-sm p-b-lg">
+        <h3 class="m-t-0">Graphics</h3>
+        {% include "../../src/_includes/modules/card-grid-icons.html" %}
 
- <!--Examples-->
- <section id="section5" class="tab-pane">
-  <div class="card-header" id="heading-example2">
-   <a data-bs-toggle="collapse" href="#collapse-example2" aria-expanded="true" aria-controls="collapse-example2"
-    data-hash="#pane-example2" title="Example tab header">
-    Example
-   </a>
-  </div>
-  <div id="collapse-example2" class="collapse show p-0 m-0 brd-0" role="tabpanel" aria-labelledby="heading-example2">
-   <div class="p-a-sm p-b-lg">
-    <h3 class="m-t-0">Graphics</h3>
-    {% include "../../src/_includes/modules/card-grid-icons.html" %}
+        <h3>Images</h3>
+        {% include "../../src/_includes/modules/card-grid-images.html" %}
+      </div>
+    </div>
+  </section>
 
-    <h3>Images</h3>
-    {% include "../../src/_includes/modules/card-grid-images.html" %}
-   </div>
-  </div>
- </section>
-
-
-
- <!--HTML-->
- <section id="section6" class="tab-pane">
-  <div class="card-header" id="heading-html2">
-   <a class="collapsed" data-bs-toggle="collapse" href="#collapse-html2" aria-expanded="false"
-    aria-controls="collapse-html2" data-hash="#pane-html2" title="HTML Source code tab header">
-    Source code
-   </a>
-  </div>
-  <div id="collapse-html2" class="collapse p-0 m-0 brd-0" role="tabpanel" aria-labelledby="heading-html2">
-   <div class="p-a-sm">
-    <pre style="max-height: 300px;"><code><h3 class="m-t-0">Graphics</h3>
+  <!--HTML-->
+  <section id="section6" class="tab-pane">
+    <div class="card-header" id="heading-html2">
+      <a
+        class="collapsed"
+        data-bs-toggle="collapse"
+        href="#collapse-html2"
+        aria-expanded="false"
+        aria-controls="collapse-html2"
+        data-hash="#pane-html2"
+        title="HTML Source code tab header">
+        Source code
+      </a>
+    </div>
+    <div
+      id="collapse-html2"
+      class="collapse p-0 m-0 brd-0"
+      role="tabpanel"
+      aria-labelledby="heading-html2">
+      <div class="p-a-sm">
+        <pre style="max-height: 300px;"><code><h3 class="m-t-0">Graphics</h3>
 {% include "../../src/_includes/modules/card-grid-icons.html" %}
 
 <h3>Images</h3>
 {% include "../../src/_includes/modules/card-grid-images.html" %}
      </code>
     </pre>
-   </div>
-  </div>
- </section>
-
+      </div>
+    </div>
+  </section>
 </div>
 <!--END TABS-->
 
-
-
 <h2>Usage</h2>
-<h3>When and how to use it </h3>
+<h3>When and how to use it</h3>
 <h4>Card grid</h4>
 
-<p>Keep cards simple. Cards are meant to show a taste of the available information. Don't overload cards with more
- information than necessary.</p>
-<p>Communicate clearly about a card's destination. Cards take someone to another experience, so the content should focus
- on the value a person can find when they get there.</p>
+<p>
+  Keep cards simple. Cards are meant to show a taste of the available
+  information. Don't overload cards with more information than necessary.
+</p>
+<p>
+  Communicate clearly about a card's destination. Cards take someone to another
+  experience, so the content should focus on the value a person can find when
+  they get there.
+</p>
 
-<p>Cards, by definition, should have some form of interaction such as viewing, editing, purchasing, etc. Some actions
- are exposed in buttons, and others simply occur by clicking the card.</p>
+<p>
+  Cards, by definition, should have some form of interaction such as viewing,
+  editing, purchasing, etc. Some actions are exposed in buttons, and others
+  simply occur by clicking the card.
+</p>
 
-<p>If a card only has an ability to be opened or viewed in more detail, do not include a button. Clicking anywhere on
- the card should perform that action.</p>
+<p>
+  If a card only has an ability to be opened or viewed in more detail, do not
+  include a button. Clicking anywhere on the card should perform that action.
+</p>
 
 <h4>Imagery</h4>
-<p>Use icons in a manner that is commonly understood. </p>
+<p>Use icons in a manner that is commonly understood.</p>
 
-<h3>
- How not to use it
-</h3>
+<h3>How not to use it</h3>
 <h4>Card grid</h4>
-<p>Avoid using the word “new” in a card unless the design has a limited timeframe or is actually new and relevant to
- someone. Avoiding this word also helps to minimize the work required to go back and update card titles when a feature
- is no longer new.</p>
+<p>
+  Avoid using the word “new” in a card unless the design has a limited timeframe
+  or is actually new and relevant to someone. Avoiding this word also helps to
+  minimize the work required to go back and update card titles when a feature is
+  no longer new.
+</p>
 
 <h4>Images</h4>
-<p>Don't use a commonly used icon for a different purpose. </p>
-<p>We use photos and illustrations for visualizing information. We follow these guidelines:</p>
+<p>Don't use a commonly used icon for a different purpose.</p>
+<p>
+  We use photos and illustrations for visualizing information. We follow these
+  guidelines:
+</p>
 <ul>
- <li>Do not use images as unnecessary decoration. Photos and images should be used to support the content.</li>
- <li>Use an aspect ratio of 3:2 for all images. The exception is if the proportions of the subject of the image have
-  significance. For example, an image of a driver's license or an image of an application form.</li>
- <li>Use alt text whenever adding images. Alt text makes websites more accessible and helps with search engine
-  optimization. Read more about writing alt text in <a
-   href="https://accessibility.huit.harvard.edu/describe-content-images">Harvard University's digital accessibility
-   guidelines</a>.</li>
-
+  <li>
+    Do not use images as unnecessary decoration. Photos and images should be
+    used to support the content.
+  </li>
+  <li>
+    Use an aspect ratio of 3:2 for all images. The exception is if the
+    proportions of the subject of the image have significance. For example, an
+    image of a driver's license or an image of an application form.
+  </li>
+  <li>
+    Use alt text whenever adding images. Alt text makes websites more accessible
+    and helps with search engine optimization. Read more about writing alt text
+    in
+    <a href="https://accessibility.huit.harvard.edu/describe-content-images">
+      Harvard University's digital accessibility guidelines
+    </a>
+    .
+  </li>
 </ul>
 <h2>Accessibility</h2>
 {% include "../../src/_includes/modules/accessibility.html" %}

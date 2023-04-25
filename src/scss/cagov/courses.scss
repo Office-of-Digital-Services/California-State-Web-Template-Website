@@ -3,14 +3,16 @@
 ----------------------------------------- */
 
 .course-item {
-    @include card();
+  @include card();
 
-    .thumbnail ~ .header,
-    .thumbnail ~ .body {
-        margin-left: calc(calc($grid-gutter-width / 2) + 4.375rem); // 70 is the width of the thumbnail in pixels
-    }
+  .thumbnail ~ .header,
+  .thumbnail ~ .body {
+    margin-left: calc(
+      calc($grid-gutter-width / 2) + 4.375rem
+    ); // 70 is the width of the thumbnail in pixels
+  }
 
-    .datetime {
-        clear: both;
-    }
+  .datetime {
+    clear: both;
+  }
 }

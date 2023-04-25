@@ -1,72 +1,73 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <title>{{ title }}</title> 
-  <meta charset="utf-8">
-  <meta name="Author" content="State of California" />
-  <meta name="Description" content="Version 6 of the State Web Template is California's latest web design standard." />
-  <meta name="Keywords" content="California, government" />
-{% if noindex %}
-  <meta name="robots" content="noindex">
-{% endif %}
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="HandheldFriendly" content="True">
-  <meta name="MobileOptimized" content="320">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
-
-  <!-- Primary Meta Tags -->
-  <meta name="title" content="California State Web Template">
-  <meta name="description" content="Version 6 of the State Web Template is California's latest web design standard.">
-
-  <!-- Canonical link, improves SEO -->
-  <link href="https://template.webstandards.ca.gov{{ ("/"+permalink).replace("//","/") if permalink }}" rel="canonical">
-
-  <!-- Open Graph / Facebook -->
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://template.webstandards.ca.gov/">
-  <meta property="og:title" content="California State Web Template">
-  <meta property="og:description" content="Version 6 of the State Web Template is California's latest web design standard.">
-  <meta property="og:image" content="https://california.azureedge.net/cdt/statetemplate/global/images/social_media_preview_image.png">
-
-  <!-- Twitter -->
-  <meta property="twitter:card" content="summary_large_image">
-  <meta property="twitter:url" content="https://template.webstandards.ca.gov/">
-  <meta property="twitter:title" content="California State Web Template">
-  <meta property="twitter:description" content="Version 6 of the State Web Template is California's latest web design standard.">
-  <meta property="twitter:image" content="https://california.azureedge.net/cdt/statetemplate/global/images/social_media_preview_image.png">
-
-  {% include "../head-js-css.njk" %}
-</head>
-<body class="primary">
-  <header role="banner" id="header" class="global-header fixed">
-    <div id="skip-to-content">
+  <head>
+    <title>{{ title }}</title>
+    <meta charset="utf-8" />
+    <meta name="Author" content="State of California" />
+    <meta
+      name="Description"
+      content="Version 6 of the State Web Template is California's latest web design standard." />
+    <meta name="Keywords" content="California, government" />
+    {%- if noindex %}
+    <meta name="robots" content="noindex" />
+    {%- endif %}
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="MobileOptimized" content="320" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, minimum-scale=1.0" />
+    <!-- Primary Meta Tags -->
+    <meta name="title" content="California State Web Template" />
+    <meta
+      name="description"
+      content="Version 6 of the State Web Template is California's latest web design standard." />
+    <!-- Canonical link, improves SEO -->
+    <link href="https://template.webstandards.ca.gov{{
+    ("/"+permalink).replace("//"," /") if permalink }}" rel="canonical">
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://template.webstandards.ca.gov/" />
+    <meta property="og:title" content="California State Web Template" />
+    <meta
+      property="og:description"
+      content="Version 6 of the State Web Template is California's latest web design standard." />
+    <meta
+      property="og:image"
+      content="https://california.azureedge.net/cdt/statetemplate/global/images/social_media_preview_image.png" />
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta
+      property="twitter:url"
+      content="https://template.webstandards.ca.gov/" />
+    <meta property="twitter:title" content="California State Web Template" />
+    <meta
+      property="twitter:description"
+      content="Version 6 of the State Web Template is California's latest web design standard." />
+    <meta
+      property="twitter:image"
+      content="https://california.azureedge.net/cdt/statetemplate/global/images/social_media_preview_image.png" />
+    {% include "../head-js-css.njk" %}
+  </head>
+  <body class="primary">
+    <header role="banner" id="header" class="global-header fixed">
+      <div id="skip-to-content">
         <a href="#main-content">Skip to Main Content</a>
-    </div>
-    {% if alert %}
-      {% include alert %}
-    {% endif %}
-    {% include "../utility-header.njk" %}
-    {% include "../settings.njk" %}
-    {% include "../site-header.njk" %}
-    {% include "../mobile-controls.njk" %}
-    <div class="navigation-search full-width-nav container">
-      <div id="head-search" class="search-container featured-search">
-          {% include "../search.njk" %}
       </div>
-      <!-- navigation types -->
-            {% if navigation %}
-              {% include navigation %}
-		        {% else %}
-		          {% include "../navigation.njk" %}
-            {% endif %}
-    </div>
-  </header>
-
-  {% block content %}
-    {{ content | safe }}
-  {% endblock %}
-{% include "modules/site-footer.html" %}
-  {% include "../global-footer.njk" %}
-  {% include "../scripts.njk" %}
-</body>
+      {% if alert -%} {%- include alert -%} {%- endif -%} {%- include
+      "../utility-header.njk" -%} {%- include "../settings.njk" -%} {%- include
+      "../site-header.njk" -%} {%- include "../mobile-controls.njk" -%}
+      <div class="navigation-search full-width-nav container">
+        <div id="head-search" class="search-container featured-search">
+          {%- include "../search.njk" -%}
+        </div>
+        <!-- navigation types -->
+        {%- if navigation -%} {%- include navigation -%} {%- else -%} {%-
+        include "../navigation.njk" -%} {%- endif -%}
+      </div>
+    </header>
+    {% block content -%} {{ content | safe }} {%- endblock -%} {%- include
+    "modules/site-footer.html" -%} {%- include "../global-footer.njk" -%} {%-
+    include "../scripts.njk" -%}
+  </body>
 </html>
