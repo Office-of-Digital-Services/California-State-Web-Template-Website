@@ -1,3 +1,4 @@
+//@ts-check
 /* -----------------------------------------
    SETTINGS OPTIONS
    /source/js/cagov/settings.js
@@ -6,17 +7,17 @@
 //
 // HIGH CONTRAST MODE
 // --------------------------------------------------
-window.addEventListener("load", function () {
-  var enableHighContrastButton = document.querySelector(
+window.addEventListener("load", () => {
+  const enableHighContrastButton = document.querySelector(
     ".enableHighContrastMode"
   );
-  var disableHighContrastButton = document.querySelector(
+  const disableHighContrastButton = document.querySelector(
     ".disableHighContrastMode"
   );
-  var theHTML = document.querySelector("html");
+  const theHTML = document.querySelector("html");
 
-  var isHighContrast = localStorage.getItem("high-contrast");
-  var isDyslexic = localStorage.getItem("dyslexic");
+  const isHighContrast = localStorage.getItem("high-contrast");
+  const isDyslexic = localStorage.getItem("dyslexic");
 
   function onContrast() {
     enableHighContrastButton.classList.add("active");
@@ -55,23 +56,23 @@ window.addEventListener("load", function () {
   //accessibility duplication vs using inbuilt browser
   //controls
 
-  var incFontSize = document.querySelector(".increaseTextSize");
-  var decFontSize = document.querySelector(".decreaseTextSize");
-  var resetFontSize = document.querySelector(".resetTextSize");
-  var dyslexicFontBtn = document.querySelector(".dyslexicFont");
+  const incFontSize = document.querySelector(".increaseTextSize");
+  const decFontSize = document.querySelector(".decreaseTextSize");
+  const resetFontSize = document.querySelector(".resetTextSize");
+  const dyslexicFontBtn = document.querySelector(".dyslexicFont");
 
   // in rems's
-  var MAXFONTSIZE = 1.5;
-  var MINFONTSIZE = 1;
-  var STEPVALUE = 0.1;
+  const MAXFONTSIZE = 1.5;
+  const MINFONTSIZE = 1;
+  const STEPVALUE = 0.1;
 
   // Read in previous settings and convert to number
-  var fontSize = +localStorage.getItem("font-size");
+  let fontSize = +localStorage.getItem("font-size");
   if (fontSize) {
-    document.querySelector("html").style.fontSize = fontSize + "rem";
+    document.querySelector("html").style.fontSize = `${fontSize}rem`;
   } else {
     fontSize = 1;
-    document.querySelector("html").style.fontSize = fontSize + "rem";
+    document.querySelector("html").style.fontSize = `${fontSize}rem`;
   }
 
   // init button styles for fonts
@@ -79,13 +80,16 @@ window.addEventListener("load", function () {
 
   // utility functions
   function updateFont(f) {
-    var updatedSize = Math.min(MAXFONTSIZE, Math.max(f, MINFONTSIZE));
-    localStorage.setItem("font-size", updatedSize);
-    document.querySelector("html").style.fontSize = updatedSize + "rem";
+    const updatedSize = Math.min(MAXFONTSIZE, Math.max(f, MINFONTSIZE));
+    localStorage.setItem("font-size", updatedSize.toString());
+    document.querySelector("html").style.fontSize = `${updatedSize}rem`;
     updateFontBtns(updatedSize);
     return updatedSize;
   }
 
+  /**
+   * @param {number} f
+   */
   function updateFontBtns(f) {
     if (f >= MAXFONTSIZE) {
       // incFontSize.addClass('disabled')
@@ -101,7 +105,7 @@ window.addEventListener("load", function () {
 
   incFontSize.addEventListener(
     "click",
-    function () {
+    () => {
       fontSize += STEPVALUE;
       fontSize = updateFont(fontSize);
     },
@@ -110,7 +114,7 @@ window.addEventListener("load", function () {
 
   decFontSize.addEventListener(
     "click",
-    function () {
+    () => {
       fontSize -= STEPVALUE;
       fontSize = updateFont(fontSize);
     },
@@ -120,7 +124,7 @@ window.addEventListener("load", function () {
   if (resetFontSize) {
     resetFontSize.addEventListener(
       "click",
-      function () {
+      () => {
         document.querySelector("html").removeAttribute("style");
         document
           .querySelector(
@@ -140,7 +144,7 @@ window.addEventListener("load", function () {
 
   dyslexicFontBtn.addEventListener(
     "click",
-    function () {
+    () => {
       dyslexicFont();
     },
     false
