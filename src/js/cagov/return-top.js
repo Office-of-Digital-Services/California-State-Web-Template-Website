@@ -1,3 +1,4 @@
+//@ts-check
 const returnTop = document.querySelector(".return-top");
 
 // Add on-click event
@@ -10,46 +11,46 @@ function goToTopFunction() {
 
 // If an user scrolls down the page for more than 400px activate back to top button
 // othervise keep it invisible
-var timer;
+let timer = 0;
 
-var lastScrollTop = 0;
+let lastScrollTop = 0;
 
 window.addEventListener(
   "scroll",
-  function () {
-    var returnTopButton = document.querySelector(".return-top");
-    var st = window.pageYOffset || document.documentElement.scrollTop;
+  () => {
+    const returnTopButton = document.querySelector(".return-top");
+    const st = window.pageYOffset || document.documentElement.scrollTop;
     if (st > lastScrollTop) {
       // downscroll code
       returnTopButton.classList.remove("is-visible");
-    } else {
+    } else if (
+      document.body.scrollTop >= 400 ||
+      document.documentElement.scrollTop >= 400
+    ) {
       // upscroll code
-      if (
-        document.body.scrollTop >= 400 ||
-        document.documentElement.scrollTop >= 400
-      ) {
-        if (timer != "undefined") {
-          clearTimeout(timer);
-        }
-        returnTopButton.classList.add("is-visible");
 
-        timer = setTimeout(function () {
-          returnTopButton.classList.remove("is-visible");
-        }, 2000); //Back to top removes itself after 2 sec of inactivity
+      if (timer) {
+        window.clearTimeout(timer);
       }
-      // bottom of the page
-      else {
+      returnTopButton.classList.add("is-visible");
+
+      timer = window.setTimeout(() => {
         returnTopButton.classList.remove("is-visible");
-      }
+      }, 2000); //Back to top removes itself after 2 sec of inactivity
     }
+    // bottom of the page
+    else {
+      returnTopButton.classList.remove("is-visible");
+    }
+
     lastScrollTop = st <= 0 ? 0 : st; // For Mobile or negative scrolling
   },
   false
 );
 
 // Hittin' rock bottom
-window.onscroll = function (ev) {
-  var returnTopButton = document.querySelector(".return-top");
+window.onscroll = () => {
+  const returnTopButton = document.querySelector(".return-top");
   if (window.innerHeight + window.scrollY >= document.body.offsetHeight) {
     returnTopButton.classList.add("is-visible");
   }
@@ -61,6 +62,9 @@ if (backToTop) {
   backToTop.addEventListener("click", backToTopFunction);
 }
 
+/**
+ * @param {Event} event
+ */
 function backToTopFunction(event) {
   event.preventDefault();
   document.body.scrollTop = 0; // For Safari
