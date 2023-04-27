@@ -21,7 +21,7 @@ function addActiveClass() {
 }
 addActiveClass();
 
-// Side nav heigth vs vewport
+// Side nav height vs viewport
 const siteHeader = document.querySelector("header");
 
 const siteHeaderHeight = siteHeader ? siteHeader.clientHeight : 0;
