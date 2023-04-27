@@ -1,7 +1,12 @@
+//@ts-check
 /* -----------------------------------------
    PAGINATION - /src/js/cagov/pagination.js
 ----------------------------------------- */
 
+/**
+ * @param {string} label
+ * @param {number} number
+ */
 function pageListItem(label, number) {
   return `<li class="cagov-pagination__item">
     <a
@@ -24,8 +29,15 @@ function pageOverflow() {
   </li>`;
 }
 
+/**
+ * @param {string} next
+ * @param {string} previous
+ * @param {string} page
+ * @param {number} currentPage
+ * @param {number} totalPages
+ */
 function templateHTML(next, previous, page, currentPage, totalPages) {
-  var unbounded = totalPages == -1;
+  const unbounded = totalPages == -1;
   return `<nav aria-label="Pagination" class="cagov-pagination">
     <ul class="cagov-pagination__list">
       <li class="cagov-pagination__item">
@@ -87,7 +99,7 @@ function templateHTML(next, previous, page, currentPage, totalPages) {
   </nav>`;
 }
 
-var styles = `
+const styles = `
 cagov-pagination {
   white-space: nowrap;
   font-size: .9rem;
@@ -142,7 +154,7 @@ cagov-pagination .cagov-pagination__item:has(.cagov-pagination__link-inactive) {
  *
  * @cssprop --primary-700 - Default value of #165ac2, used for text, border color
  */
-class CAGovPagination extends window.HTMLElement {
+class CAGovPagination extends HTMLElement {
   constructor() {
     super();
 
@@ -171,7 +183,9 @@ class CAGovPagination extends window.HTMLElement {
       ? this.dataset.next
       : 'Next <span class="ca-gov-icon-arrow-next" aria-hidden="true"></span>';
     const page = this.dataset.page ? this.dataset.page : "Page";
-    this.totalPages = this.dataset.totalPages ? this.dataset.totalPages : "1";
+    this.totalPages = this.dataset.totalPages
+      ? Number(this.dataset.totalPages)
+      : 1;
     if (this.totalPages < 0 || this.totalPages > 1) {
       const html = templateHTML(
         next,
@@ -206,20 +220,27 @@ class CAGovPagination extends window.HTMLElement {
     const pageLinks = this.querySelectorAll(".cagov-pagination__button");
     pageLinks.forEach(pl => {
       pl.addEventListener("click", event => {
-        this.currentPage = parseInt(event.target.dataset.pageNum, 10);
+        this.currentPage = parseInt(
+          /** @type {CAGovPagination} */ (event.target).dataset.pageNum,
+          10
+        );
         this.dispatchEvent(
           new CustomEvent("paginationClick", {
             detail: this.currentPage
           })
         );
-        this.dataset.currentPage = this.currentPage;
+        this.dataset.currentPage = this.currentPage.toString();
       });
     });
     this.querySelector(".cagov-pagination__previous-page").addEventListener(
       "click",
       event => {
         if (
-          !event.target.classList.contains("cagov-pagination__link-inactive")
+          !(
+            /** @type {Element} */ (event.target).classList.contains(
+              "cagov-pagination__link-inactive"
+            )
+          )
         ) {
           this.currentPage -= 1;
           if (this.currentPage < 1) {
@@ -230,7 +251,7 @@ class CAGovPagination extends window.HTMLElement {
               detail: this.currentPage
             })
           );
-          this.dataset.currentPage = this.currentPage;
+          this.dataset.currentPage = this.currentPage.toString();
         }
       }
     );
@@ -238,7 +259,11 @@ class CAGovPagination extends window.HTMLElement {
       "click",
       event => {
         if (
-          !event.target.classList.contains("cagov-pagination__link-inactive")
+          !(
+            /** @type {Element} */ (event.target).classList.contains(
+              "cagov-pagination__link-inactive"
+            )
+          )
         ) {
           this.currentPage += 1;
           if (this.totalPages != -1 && this.currentPage > this.totalPages) {
@@ -249,7 +274,7 @@ class CAGovPagination extends window.HTMLElement {
               detail: this.currentPage
             })
           );
-          this.dataset.currentPage = this.currentPage;
+          this.dataset.currentPage = this.currentPage.toString();
         }
       }
     );
