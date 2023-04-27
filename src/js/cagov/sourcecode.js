@@ -1,3 +1,4 @@
+//@ts-check
 /* -----------------------------------------
    SOURCE CODE
    /source/js/cagov/sourcecode.js
