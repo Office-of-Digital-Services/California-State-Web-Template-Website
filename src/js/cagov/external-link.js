@@ -1,18 +1,24 @@
+//@ts-check
+
 /* EXTERNAL LINK ICON */
 function linkAnnotator() {
   const ext = '<span class="external-link-icon" aria-hidden="true"></span>';
 
   // Check if link is external function
+  /**
+   * @param {HTMLAnchorElement} linkElement
+   */
   function linkIsExternal(linkElement) {
     return window.location.host.indexOf(linkElement.host) > -1;
   }
 
   // Add any exceptions to not render here
   const cssExceptions = `:not(
- code *
-)`;
+  code *
+ )`;
 
   // Looping thru all links inside of the main content body, agency footer and statewide footer
+  /** @type {NodeListOf<HTMLAnchorElement>} */
   const externalLink = document.querySelectorAll(
     `main a${cssExceptions}, .agency-footer a${cssExceptions}, .site-footer a${cssExceptions}, footer a${cssExceptions}`
   );
