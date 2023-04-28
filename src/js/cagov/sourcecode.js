@@ -15,17 +15,20 @@ const entityMap = {
   "/": "&#x2F;"
 };
 
-const escapeHtml = string =>
-  String(string).replace(/[&<>"'/]/g, s => entityMap[s]);
+const escapeHtml = (/** @type {string} */ string) =>
+  string.replace(/[&<>"'/]/g, s => entityMap[s]);
 
-function copyCode(btnElem) {
+function copyCode(/** @type {Element} */ btnElem) {
   const codeblock = btnElem.previousElementSibling;
   if (codeblock) {
     // copy the text
     if (codeblock.tagName.toLowerCase() == "pre") {
       navigator.clipboard.writeText(codeblock.querySelector("code").innerText);
     } else {
-      navigator.clipboard.writeText(codeblock.value);
+      //TextArea
+      navigator.clipboard.writeText(
+        /** @type { HTMLTextAreaElement} */ (codeblock).value
+      );
     }
     // select the text
     const range = document.createRange();
@@ -43,26 +46,24 @@ function copyCode(btnElem) {
 window.addEventListener("load", () => {
   const codeblock = document.querySelectorAll("pre code, textarea.sourcecode");
 
-  if (codeblock.length) {
-    for (let i = 0, len = codeblock.length; i < len; i++) {
-      const dom = codeblock[i];
-      if (dom.tagName.toLowerCase() == "code") {
-        let html = dom.innerHTML;
-        html = escapeHtml(html);
-        dom.innerHTML = html;
-      }
-      // Create a 'copy code' button, insert it after the <pre> tag
-      const newDiv = document.createElement("button");
-      newDiv.onclick = function () {
-        copyCode(this);
-      };
-      newDiv.classList.add("btn", "btn-outline-primary");
-      newDiv.innerHTML = "<span class='ca-gov-icon-copy'></span> Copy code";
-      if (dom.tagName.toLowerCase() == "code") {
-        dom.parentElement.after(newDiv);
-      } else {
-        dom.after(newDiv);
-      }
+  for (let i = 0, len = codeblock.length; i < len; i++) {
+    const dom = codeblock[i];
+    if (dom.tagName.toLowerCase() == "code") {
+      let html = dom.innerHTML;
+      html = escapeHtml(html);
+      dom.innerHTML = html;
+    }
+    // Create a 'copy code' button, insert it after the <pre> tag
+    const newDiv = document.createElement("button");
+    newDiv.onclick = function () {
+      copyCode(/** @type {HTMLElement} */ (this));
+    };
+    newDiv.classList.add("btn", "btn-outline-primary");
+    newDiv.innerHTML = "<span class='ca-gov-icon-copy'></span> Copy code";
+    if (dom.tagName.toLowerCase() == "code") {
+      dom.parentElement.after(newDiv);
+    } else {
+      dom.after(newDiv);
     }
   }
 });
