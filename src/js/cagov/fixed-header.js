@@ -39,8 +39,7 @@
         // mainheader.classList.remove('scrolled');
         // header.classList.remove('is-hidden');
         // header.removeAttribute("style");
-        //mainheader.style.removeProperty("top"); //
-        mainheader.removeAttribute("style");
+        mainheader.style.removeProperty("top");
         prevDirection = direction;
       }
     }
