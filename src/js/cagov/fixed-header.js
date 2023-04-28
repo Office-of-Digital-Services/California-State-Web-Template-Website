@@ -1,23 +1,24 @@
-/* sticky header / highding official header on scroll */
-(function () {
-  var doc = document.documentElement;
-  var w = window;
+//@ts-check
 
-  var prevScroll = w.scrollY || doc.scrollTop;
-  var curScroll;
-  var direction = 0;
-  var prevDirection = 0;
-  var headerAlert = document.querySelector("header .alert");
-  var header = document.querySelector(".utility-header");
-  var mainheader = document.querySelector("header");
+/* sticky header / hiding official header on scroll */
+(() => {
+  const doc = document.documentElement;
 
-  var checkScroll = function () {
+  let prevScroll = window.scrollY || doc.scrollTop;
+  let curScroll;
+  let direction = 0;
+  let prevDirection = 0;
+  const headerAlert = document.querySelector("header .alert");
+  const header = document.querySelector(".utility-header");
+  const mainheader = document.querySelector("header");
+
+  const checkScroll = () => {
     /*
      ** Find the direction of scroll
      ** 0 - initial, 1 - up, 2 - down
      */
 
-    curScroll = w.scrollY || doc.scrollTop;
+    curScroll = window.scrollY || doc.scrollTop;
     if (curScroll > prevScroll) {
       //scrolled up
       direction = 2;
@@ -27,30 +28,23 @@
     }
 
     if (direction !== prevDirection) {
-      toggleHeader(direction, curScroll);
+      // Toggle Header
+      if (direction === 2 && curScroll > 40) {
+        const hiddenheight =
+          header.clientHeight + (headerAlert ? headerAlert.clientHeight : 0);
+
+        mainheader.style.top = `-${hiddenheight}px`;
+      } else if (direction === 1 && curScroll < 40) {
+        // mainheader.classList.remove('scrolled');
+        // header.classList.remove('is-hidden');
+        // header.removeAttribute("style");
+        //mainheader.style.removeProperty("top"); //
+        mainheader.removeAttribute("style");
+      }
+      prevDirection = direction;
     }
 
     prevScroll = curScroll;
-  };
-
-  var toggleHeader = function (direction, curScroll) {
-    if (direction === 2 && curScroll > 40) {
-      var hiddenheight = "";
-      if (headerAlert) {
-        var hiddenheight = headerAlert.clientHeight + header.clientHeight;
-        mainheader.style.top = "-" + hiddenheight + "px";
-      } else {
-        var hiddenheight = header.clientHeight;
-        mainheader.style.top = "-" + hiddenheight + "px";
-      }
-      prevDirection = direction;
-    } else if (direction === 1 && curScroll < 40) {
-      // mainheader.classList.remove('scrolled');
-      // header.classList.remove('is-hidden');
-      // header.removeAttribute("style");
-      mainheader.removeAttribute("style");
-      prevDirection = direction;
-    }
   };
 
   window.addEventListener("scroll", checkScroll);
