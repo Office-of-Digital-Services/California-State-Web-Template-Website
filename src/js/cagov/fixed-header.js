@@ -34,14 +34,15 @@
           header.clientHeight + (headerAlert ? headerAlert.clientHeight : 0);
 
         mainheader.style.top = `-${hiddenheight}px`;
+        prevDirection = direction;
       } else if (direction === 1 && curScroll < 40) {
         // mainheader.classList.remove('scrolled');
         // header.classList.remove('is-hidden');
         // header.removeAttribute("style");
         //mainheader.style.removeProperty("top"); //
         mainheader.removeAttribute("style");
+        prevDirection = direction;
       }
-      prevDirection = direction;
     }
 
     prevScroll = curScroll;
