@@ -41,7 +41,6 @@
 
     for (let i = 0; i < widget.length; i++) {
       const self = widget[i];
-      let t;
 
       /**
        * Check for IDs and create arrays of necessary
@@ -102,7 +101,7 @@
       if (self.hasAttribute("data-transition")) {
         const thesePanels = self.querySelectorAll(widgetPanel);
 
-        for (t = 0; t < thesePanels.length; t++) {
+        for (let t = 0; t < thesePanels.length; t++) {
           thesePanels[t].classList.add(`${widgetPanelClass}--transition`);
         }
       }
@@ -121,7 +120,7 @@
        * Now that the headings/triggers and panels are setup
        * we can grab all the triggers and setup their functionality.
        */
-      for (t = 0; t < triggers.length; t++) {
+      for (let t = 0; t < triggers.length; t++) {
         triggers[t].addEventListener("click", ARIAaccordion.actions);
         triggers[t].addEventListener("keydown", ARIAaccordion.keytrolls);
       }
@@ -260,17 +259,14 @@
   ARIAaccordion.togglePanel = function (
     /** @type {Event} */ e,
     /** @type {string} */ thisAccordion,
-    /** @type {any} */ targetPanel,
+    /** @type {Element} */ targetPanel,
     /** @type {NodeListOf<Element>} */ triggers
   ) {
-    let getID;
-    let i;
-
     const thisTrigger = /** @type {Element} */ (e.target);
 
     // check to see if a trigger is disabled
     if (thisTrigger.getAttribute("aria-disabled") !== "true") {
-      getID = thisTrigger.getAttribute("aria-controls");
+      let getID = thisTrigger.getAttribute("aria-controls");
 
       isCurrent(thisTrigger, true);
 
@@ -290,7 +286,7 @@
         doc.getElementById(thisAccordion).hasAttribute("data-constant") ||
         !doc.getElementById(thisAccordion).hasAttribute("data-multi")
       ) {
-        for (i = 0; i < triggers.length; i++) {
+        for (let i = 0; i < triggers.length; i++) {
           if (thisTrigger !== triggers[i]) {
             isCurrent(triggers[i], false);
             getID = triggers[i].getAttribute("aria-controls");
@@ -309,14 +305,14 @@
         widgetTriggerClass
       )
     ) {
-      let keyCode = e.keyCode || e.which;
+      const keyCode = e.keyCode || e.which;
 
       // const keyUp = 38;
       // const keyDown = 40;
       const keyHome = 36;
       const keyEnd = 35;
 
-      let thisAccordion = this.id.replace(/_panel.*$/g, "");
+      const thisAccordion = this.id.replace(/_panel.*$/g, "");
 
       const childSelector = doc.querySelectorAll(`#${thisAccordion}> li`).length
         ? `#${thisAccordion} li > ${widgetHeading} `
