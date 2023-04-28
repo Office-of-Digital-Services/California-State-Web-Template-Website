@@ -24,6 +24,14 @@
   let idCounter = 0;
 
   /**
+   * gets the correct selector, "LI" children or not
+   * @param {Document} mydoc
+   * @param {string} id
+   */
+  const getChildSelector = (mydoc, id) =>
+    mydoc.querySelectorAll(`#${id}> li`).length ? `#${id} li > ` : `#${id} > `;
+
+  /**
    * Global Create
    *
    * This function validates that the minimum required markup
@@ -64,10 +72,7 @@
        * If accordions are contained within an ol/ul, the selector
        * needs to be different.
        */
-      const childSelector = doc.querySelectorAll(`#${self.id}> li`).length
-        ? `#${self.id} li > `
-        : `#${self.id} > `;
-
+      const childSelector = getChildSelector(doc, self.id);
       const panels = doc.querySelectorAll(`${childSelector}${widgetPanel}`);
       const headings = doc.querySelectorAll(`${childSelector}${widgetHeading}`);
 
@@ -243,13 +248,11 @@
     // Also need to pass in existing trigger arrays.
     const thisAccordion = this.id.replace(/_panel.*$/g, "");
     const thisTarget = doc.getElementById(this.getAttribute("aria-controls"));
-    const thisTriggers = doc.querySelectorAll(`#${thisAccordion}> li`).length
-      ? doc.querySelectorAll(
-          `#${thisAccordion} li > ${widgetHeading} .${widgetTriggerClass}`
-        )
-      : doc.querySelectorAll(
-          `#${thisAccordion} > ${widgetHeading} .${widgetTriggerClass}`
-        );
+
+    const childSelector = getChildSelector(doc, thisAccordion);
+    const thisTriggers = doc.querySelectorAll(
+      `${childSelector}${widgetHeading} .${widgetTriggerClass}`
+    );
 
     e.preventDefault();
 
@@ -314,13 +317,11 @@
 
       const thisAccordion = this.id.replace(/_panel.*$/g, "");
 
-      const childSelector = doc.querySelectorAll(`#${thisAccordion}> li`).length
-        ? `#${thisAccordion} li > ${widgetHeading} `
-        : `#${thisAccordion} > ${widgetHeading} `;
+      const childSelector = getChildSelector(doc, thisAccordion);
 
       /** @type {NodeListOf<HTMLElement>} */
       const thisTriggers = doc.querySelectorAll(
-        `${childSelector}.${widgetTriggerClass}`
+        `${childSelector}${widgetHeading} .${widgetTriggerClass}`
       );
 
       switch (keyCode) {
