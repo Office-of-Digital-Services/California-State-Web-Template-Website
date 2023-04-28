@@ -25,11 +25,10 @@
 
   /**
    * gets the correct selector, "LI" children or not
-   * @param {Document} mydoc
    * @param {string} id
    */
-  const getChildSelector = (mydoc, id) =>
-    mydoc.querySelectorAll(`#${id}> li`).length ? `#${id} li > ` : `#${id} > `;
+  const getChildSelector = id =>
+    doc.querySelectorAll(`#${id}> li`).length ? `#${id} li > ` : `#${id} > `;
 
   /**
    * Global Create
@@ -72,7 +71,7 @@
        * If accordions are contained within an ol/ul, the selector
        * needs to be different.
        */
-      const childSelector = getChildSelector(doc, self.id);
+      const childSelector = getChildSelector(self.id);
       const panels = doc.querySelectorAll(`${childSelector}${widgetPanel}`);
       const headings = doc.querySelectorAll(`${childSelector}${widgetHeading}`);
 
@@ -249,7 +248,7 @@
     const thisAccordion = this.id.replace(/_panel.*$/g, "");
     const thisTarget = doc.getElementById(this.getAttribute("aria-controls"));
 
-    const childSelector = getChildSelector(doc, thisAccordion);
+    const childSelector = getChildSelector(thisAccordion);
     const thisTriggers = doc.querySelectorAll(
       `${childSelector}${widgetHeading} .${widgetTriggerClass}`
     );
@@ -317,7 +316,7 @@
 
       const thisAccordion = this.id.replace(/_panel.*$/g, "");
 
-      const childSelector = getChildSelector(doc, thisAccordion);
+      const childSelector = getChildSelector(thisAccordion);
 
       /** @type {NodeListOf<HTMLElement>} */
       const thisTriggers = doc.querySelectorAll(
