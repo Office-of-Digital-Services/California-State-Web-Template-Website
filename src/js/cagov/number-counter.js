@@ -65,10 +65,6 @@ document.addEventListener("DOMContentLoaded", () => {
   };
 
   // Fire the function on load and scroll
-  window.addEventListener("load", () => {
-    handleScroll();
-  });
-  window.addEventListener("scroll", () => {
-    handleScroll();
-  });
+  window.addEventListener("load", handleScroll);
+  window.addEventListener("scroll", handleScroll);
 });
