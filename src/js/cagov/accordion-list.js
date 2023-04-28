@@ -1,12 +1,11 @@
-(function (w, doc, undefined) {
-  "use strict";
-
+//@ts-check
+((w, doc) => {
   /**
    * Local object for method references
    * and define script meta-data
    */
-  var ARIAaccordion = {};
-  w.ARIAaccordion = ARIAaccordion;
+  const ARIAaccordion = {};
+  w["ARIAaccordion"] = ARIAaccordion;
 
   ARIAaccordion.NS = "ARIAaccordion";
   ARIAaccordion.AUTHOR = "Scott O'Hara";
@@ -14,15 +13,15 @@
   ARIAaccordion.LICENSE =
     "https://github.com/scottaohara/accessible_accordions/blob/master/LICENSE";
 
-  var widgetClass = "accordion";
-  var widgetTriggerClass = widgetClass + "__trigger";
-  var widgetHeadingClass = widgetClass + "__heading";
-  var widgetPanelClass = widgetClass + "__panel";
+  const widgetClass = "accordion";
+  const widgetTriggerClass = `${widgetClass}__trigger`;
+  const widgetHeadingClass = `${widgetClass}__heading`;
+  const widgetPanelClass = `${widgetClass}__panel`;
 
-  var widgetHeading = "[data-aria-accordion-heading]";
-  var widgetPanel = "[data-aria-accordion-panel]";
+  const widgetHeading = "[data-aria-accordion-heading]";
+  const widgetPanel = "[data-aria-accordion-panel]";
 
-  var idCounter = 0;
+  let idCounter = 0;
 
   /**
    * Global Create
@@ -33,30 +32,25 @@
    * do not exist in the found required markup patterns
    * will be generated via this function.
    */
-  ARIAaccordion.create = function () {
-    var self;
-    var panels;
-    var defaultPanel = "none";
-    var headings;
-    var triggers;
-    var constantPanel;
-    var multiPanel;
-    var i;
+  ARIAaccordion.create = () => {
+    let defaultPanel = "none";
 
-    var widget = doc.querySelectorAll("[data-aria-accordion]");
+    let triggers;
+
+    const widget = doc.querySelectorAll("[data-aria-accordion]");
 
     idCounter += 1;
 
-    for (i = 0; i < widget.length; i++) {
-      self = widget[i];
-      var t;
+    for (let i = 0; i < widget.length; i++) {
+      const self = widget[i];
+      let t;
 
       /**
        * Check for IDs and create arrays of necessary
        * panels & headings for further setup functions.
        */
       if (!self.hasAttribute("id")) {
-        self.id = "acc_" + idCounter + "-" + i;
+        self.id = `acc_${idCounter}-${i}`;
       }
 
       /**
@@ -73,15 +67,12 @@
        * If accordions are contained within an ol/ul, the selector
        * needs to be different.
        */
-      if (doc.querySelectorAll("#" + self.id + "> li").length) {
-        panels = doc.querySelectorAll("#" + self.id + " li > " + widgetPanel);
-        headings = doc.querySelectorAll(
-          "#" + self.id + " li > " + widgetHeading
-        );
-      } else {
-        panels = doc.querySelectorAll("#" + self.id + " > " + widgetPanel);
-        headings = doc.querySelectorAll("#" + self.id + " > " + widgetHeading);
-      }
+      const childSelector = doc.querySelectorAll(`#${self.id}> li`).length
+        ? `#${self.id} li > `
+        : `#${self.id} > `;
+
+      let panels = doc.querySelectorAll(`${childSelector}${widgetPanel}`);
+      let headings = doc.querySelectorAll(`${childSelector}${widgetHeading}`);
 
       /**
        * Check for options:
@@ -97,13 +88,13 @@
        * but if a data-constant attribute is used, then we need this
        * to be true.
        */
-      constantPanel = self.hasAttribute("data-constant");
+      const constantPanel = self.hasAttribute("data-constant");
 
       /**
        * Accordions can have multiple panels open at a time,
        * if they have a data-multi attribute.
        */
-      multiPanel = self.hasAttribute("data-multi");
+      const multiPanel = self.hasAttribute("data-multi");
 
       /**
        * If accordion panels are meant to transition, apply this inline style.
@@ -111,10 +102,10 @@
        * no-js styling, and having an unwanted transition on initial page load.
        */
       if (self.hasAttribute("data-transition")) {
-        var thesePanels = self.querySelectorAll(widgetPanel);
+        let thesePanels = self.querySelectorAll(widgetPanel);
 
         for (t = 0; t < thesePanels.length; t++) {
-          thesePanels[t].classList.add(widgetPanelClass + "--transition");
+          thesePanels[t].classList.add(`${widgetPanelClass}--transition`);
         }
       }
 
@@ -124,13 +115,13 @@
       ARIAaccordion.setupPanels(self.id, panels, defaultPanel, constantPanel);
       ARIAaccordion.setupHeadingButton(headings, constantPanel);
 
-      if (doc.querySelectorAll("#" + self.id + "> li").length) {
+      if (doc.querySelectorAll(`#${self.id}> li`).length) {
         triggers = doc.querySelectorAll(
-          "#" + self.id + " li > " + widgetHeading + " ." + widgetTriggerClass
+          `#${self.id} li > ${widgetHeading} .${widgetTriggerClass}`
         );
       } else {
         triggers = doc.querySelectorAll(
-          "#" + self.id + " > " + widgetHeading + " ." + widgetTriggerClass
+          `#${self.id} > ${widgetHeading} .${widgetTriggerClass}`
         );
       }
 
@@ -151,15 +142,15 @@
     defaultPanel,
     constantPanel
   ) {
-    var i;
-    var panel;
-    var panelID;
-    var setPanel;
-    var constant;
+    let i;
+    let panel;
+    let panelID;
+    let setPanel;
+    let constant;
 
     for (i = 0; i < panels.length; i++) {
       panel = panels[i];
-      panelID = id + "_panel_" + (i + 1);
+      panelID = `${id}_panel_${i + 1}`;
       setPanel = defaultPanel;
       constant = constantPanel;
 
@@ -178,11 +169,13 @@
         if (setPanel <= 1) {
           ariaHidden(panels[0], false);
         }
+
         // if value is more than the number of panels, then open
         // the last panel by default
         else if (setPanel - 1 >= panels.length) {
           ariaHidden(panels[panels.length - 1], false);
         }
+
         // for any other value between 2 - the last panel #, open that one
         else {
           ariaHidden(panels[setPanel - 1], false);
@@ -201,12 +194,12 @@
   }; // ARIAaccordion.setupPanels
 
   ARIAaccordion.setupHeadingButton = function (headings, constantPanel) {
-    var heading;
-    var targetID;
-    var targetState;
-    var newButton;
-    var buttonText;
-    var i;
+    let heading;
+    let targetID;
+    let targetState;
+    let newButton;
+    let buttonText;
+    let i;
 
     for (i = 0; i < headings.length; i++) {
       heading = headings[i];
@@ -223,7 +216,7 @@
 
       newButton.setAttribute("type", "button");
       newButton.setAttribute("aria-controls", targetID);
-      newButton.setAttribute("id", targetID + "_trigger");
+      newButton.setAttribute("id", `${targetID}_trigger`);
       newButton.classList.add(widgetTriggerClass);
 
       /**
@@ -256,22 +249,17 @@
   ARIAaccordion.actions = function (e) {
     // Need to pass in if this is a multi accordion or not.
     // Also need to pass in existing trigger arrays.
-    var thisAccordion = this.id.replace(/_panel.*$/g, "");
-    var thisTarget = doc.getElementById(this.getAttribute("aria-controls"));
-    var thisTriggers;
+    let thisAccordion = this.id.replace(/_panel.*$/g, "");
+    let thisTarget = doc.getElementById(this.getAttribute("aria-controls"));
+    let thisTriggers;
 
-    if (doc.querySelectorAll("#" + thisAccordion + "> li").length) {
+    if (doc.querySelectorAll(`#${thisAccordion}> li`).length) {
       thisTriggers = doc.querySelectorAll(
-        "#" +
-          thisAccordion +
-          " li > " +
-          widgetHeading +
-          " ." +
-          widgetTriggerClass
+        `#${thisAccordion} li > ${widgetHeading} .${widgetTriggerClass}`
       );
     } else {
       thisTriggers = doc.querySelectorAll(
-        "#" + thisAccordion + " > " + widgetHeading + " ." + widgetTriggerClass
+        `#${thisAccordion} > ${widgetHeading} .${widgetTriggerClass}`
       );
     }
 
@@ -286,9 +274,9 @@
     targetPanel,
     triggers
   ) {
-    var getID;
-    var i;
-    var thisTrigger = e.target;
+    let getID;
+    let i;
+    let thisTrigger = e.target;
 
     // check to see if a trigger is disabled
     if (thisTrigger.getAttribute("aria-disabled") !== "true") {
@@ -327,33 +315,23 @@
 
   ARIAaccordion.keytrolls = function (e) {
     if (e.target.classList.contains(widgetTriggerClass)) {
-      var keyCode = e.keyCode || e.which;
+      let keyCode = e.keyCode || e.which;
 
       // var keyUp = 38;
       // var keyDown = 40;
-      var keyHome = 36;
-      var keyEnd = 35;
+      let keyHome = 36;
+      let keyEnd = 35;
 
-      var thisAccordion = this.id.replace(/_panel.*$/g, "");
-      var thisTriggers;
+      let thisAccordion = this.id.replace(/_panel.*$/g, "");
+      let thisTriggers;
 
-      if (doc.querySelectorAll("#" + thisAccordion + "> li").length) {
+      if (doc.querySelectorAll(`#${thisAccordion}> li`).length) {
         thisTriggers = doc.querySelectorAll(
-          "#" +
-            thisAccordion +
-            " li > " +
-            widgetHeading +
-            " ." +
-            widgetTriggerClass
+          `#${thisAccordion} li > ${widgetHeading} .${widgetTriggerClass}`
         );
       } else {
         thisTriggers = doc.querySelectorAll(
-          "#" +
-            thisAccordion +
-            " > " +
-            widgetHeading +
-            " ." +
-            widgetTriggerClass
+          `#${thisAccordion} > ${widgetHeading} .${widgetTriggerClass}`
         );
       }
 
@@ -368,14 +346,12 @@
         // 		// optional up arrow controls
         // 	}
         // 	break;
-
         // case keyDown:
         // 	if ( doc.getElementById(thisAccordion).hasAttribute('data-up-down') ) {
         // 		e.preventDefault();
         // 		// optional down arrow control
         // 	}
         // 	break;
-
         /**
          * keyEnd/Home are optional functions that may not be inherently known
          * to most users and, in the case of END, conflict with expected
