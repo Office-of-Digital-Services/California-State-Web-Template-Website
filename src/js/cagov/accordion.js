@@ -1,3 +1,4 @@
+//@ts-check
 /**
  * Accordion web component that collapses and expands content inside itself on click.
  *
@@ -13,10 +14,11 @@
  * @cssprop --primary-900 - Default value of #003588, used for background on hover
  *
  */
-export class CaGovAccordion extends window.HTMLElement {
+export class CaGovAccordion extends HTMLElement {
   connectedCallback() {
     this.summaryEl = this.querySelector("summary");
     // trigger the opening and closing height change animation on summary click
+
     this.setHeight();
     this.summaryEl.addEventListener("click", this.listen.bind(this));
     this.summaryEl.insertAdjacentHTML(
@@ -26,25 +28,21 @@ export class CaGovAccordion extends window.HTMLElement {
     this.detailsEl = this.querySelector("details");
     this.bodyEl = this.querySelector(".accordion-body");
 
-    window.addEventListener(
-      "resize",
-      this.debounce(() => this.setHeight()).bind(this)
-    );
+    window.addEventListener("resize", this.debounce(this.setHeight).bind(this));
   }
 
   setHeight() {
-    requestAnimationFrame(() => {
+    window.requestAnimationFrame(() => {
       // delay so the desired height is readable in all browsers
-      this.closedHeightInt = parseInt(this.summaryEl.scrollHeight + 2, 10);
+      this.closedHeightInt = this.summaryEl.scrollHeight + 2;
       this.closedHeight = `${this.closedHeightInt}px`;
 
       // apply initial height
       if (this.detailsEl.hasAttribute("open")) {
         // if open get scrollHeight
-        this.detailsEl.style.height = `${parseInt(
-          this.bodyEl.scrollHeight + this.closedHeightInt,
-          10
-        )}px`;
+        this.detailsEl.style.height = `${
+          this.bodyEl.scrollHeight + this.closedHeightInt
+        }px`;
       } else {
         // else apply closed height
         this.detailsEl.style.height = this.closedHeight;
@@ -58,21 +56,23 @@ export class CaGovAccordion extends window.HTMLElement {
       this.detailsEl.style.height = this.closedHeight;
     } else {
       // was closed, opening
-      requestAnimationFrame(() => {
+      window.requestAnimationFrame(() => {
         // delay so the desired height is readable in all browsers
-        this.detailsEl.style.height = `${parseInt(
-          this.bodyEl.scrollHeight + this.closedHeightInt,
-          10
-        )}px`;
+        this.detailsEl.style.height = `${
+          this.bodyEl.scrollHeight + this.closedHeightInt
+        }px`;
       });
     }
   }
 
+  /**
+   * @param {function} func
+   */
   debounce(func, timeout = 300) {
     let timer;
-    return (...args) => {
-      clearTimeout(timer);
-      timer = setTimeout(() => {
+    return (/** @type {any} */ ...args) => {
+      window.clearTimeout(timer);
+      timer = window.setTimeout(() => {
         func.apply(this, args);
       }, timeout);
     };
