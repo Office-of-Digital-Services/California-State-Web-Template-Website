@@ -15,12 +15,12 @@
 //};
 //var defaultActiveLink = "About";
 
-var _extends =
+const _extends =
   Object.assign ||
   function (target) {
-    for (var i = 1; i < arguments.length; i++) {
-      var source = arguments[i];
-      for (var key in source) {
+    for (let i = 1; i < arguments.length; i++) {
+      const source = arguments[i];
+      for (let key in source) {
         if (Object.prototype.hasOwnProperty.call(source, key)) {
           target[key] = source[key];
         }
@@ -29,7 +29,7 @@ var _extends =
     return target;
   };
 
-function _defineProperty(obj, key, value) {
+const _defineProperty = (obj, key, value) => {
   if (key in obj) {
     Object.defineProperty(obj, key, {
       value: value,
@@ -41,18 +41,18 @@ function _defineProperty(obj, key, value) {
     obj[key] = value;
   }
   return obj;
-}
+};
 
-var loadConfig = function loadConfig() {
-  var CACHE = {};
+const loadConfig = () => {
+  const CACHE = {};
 
-  var set = function set(id, config) {
+  const set = (id, config) => {
     CACHE[id] = config;
   };
-  var get = function get(id) {
+  const get = id => {
     return CACHE[id];
   };
-  var remove = function remove(id) {
+  const remove = id => {
     return CACHE[id];
   };
 
@@ -63,30 +63,28 @@ var loadConfig = function loadConfig() {
   };
 };
 
-var DATA_HASH_ID = "data-nav-id";
+const DATA_HASH_ID = "data-nav-id";
 
-var pluginConfig = loadConfig();
+const pluginConfig = loadConfig();
 
 /** Find an element based on an Id
  * @param  {String} id Id to find
  * @param  {String} hash hash id (not mandatory)
  * @return {Node} the element with the specified id
  */
-var findById = function findById(id, hash) {
-  return document.querySelector(
-    "#" + id + "[" + DATA_HASH_ID + '="' + hash + '"]'
-  );
+const findById = (id, hash) => {
+  return document.querySelector(`#${id}[${DATA_HASH_ID}="${hash}"]`);
 };
 
 /** add a class to a node
  * @param  {Node} el node to attach class
  * @param  {String} className the class to add
  */
-var addClass = function addClass(el, className) {
+const addClass = (el, className) => {
   if (el.classList) {
     el.classList.add(className); // IE 10+
   } else {
-    el.className += " " + className; // IE 8+
+    el.className += ` ${className}`; // IE 8+
   }
 };
 
@@ -94,12 +92,12 @@ var addClass = function addClass(el, className) {
  * @param  {Node} el node to remove class
  * @param  {String} className the class to remove
  */
-var removeClass = function removeClass(el, className) {
+const removeClass = function removeClass(el, className) {
   if (el.classList) {
     el.classList.remove(className); // IE 10+
   } else {
     el.className = el.className.replace(
-      new RegExp("(^|\\b)" + className.split(" ").join("|") + "(\\b|$)", "gi"),
+      new RegExp(`(^|\\b)${className.split(" ").join("|")}(\\b|$)`, "gi"),
       " "
     ); // IE 8+
   }
@@ -109,16 +107,16 @@ var removeClass = function removeClass(el, className) {
 // @param  {Node} el node to check
 // @param  {String} className the class
 
-var hasClass = function hasClass(el, className) {
+const hasClass = (el, className) => {
   if (el.classList) {
     return el.classList.contains(className); // IE 10+
   } else {
-    return new RegExp("(^| )" + className + "( |$)", "gi").test(el.className); // IE 8+ ?
+    return new RegExp(`(^| )${className}( |$)`, "gi").test(el.className); // IE 8+ ?
   }
 };
 
-var setAttributes = function setAttributes(node, attrs) {
-  Object.keys(attrs).forEach(function (attribute) {
+const setAttributes = function setAttributes(node, attrs) {
+  Object.keys(attrs).forEach(attribute => {
     node.setAttribute(attribute, attrs[attribute]);
   });
 };
@@ -128,10 +126,10 @@ var setAttributes = function setAttributes(node, attrs) {
  * @param  {String} hashId the attribute data-hashtooltip-id
  * @return {String} the value of attribute data-hashtooltip-id
  */
-var searchParentHashId = function searchParentHashId(el, hashId) {
-  var found = false;
+const searchParentHashId = (el, hashId) => {
+  let found = false;
 
-  var parentElement = el;
+  let parentElement = el;
   while (parentElement.nodeType === 1 && parentElement && found === false) {
     if (parentElement.hasAttribute(hashId) === true) {
       found = true;
@@ -145,10 +143,10 @@ var searchParentHashId = function searchParentHashId(el, hashId) {
     return "";
   }
 };
-var searchParent = function searchParent(el, parentClass, hashId) {
-  var found = false;
+const searchParent = (el, parentClass, hashId) => {
+  let found = false;
 
-  var parentElement = el;
+  let parentElement = el;
   while (parentElement && found === false) {
     if (
       hasClass(parentElement, parentClass) === true &&
@@ -199,22 +197,24 @@ var selectHeaderInList = function selectHeaderInList(elts, param, attrSelected) 
     }
 };
 */
-var plugin = function plugin() {
-  var config =
-    arguments.length <= 0 || arguments[0] === undefined ? {} : arguments[0];
-  // Findig if first-level-link has sub-nav then changing its clasee to first-level-btn
+// const plugin = function plugin() {
+const plugin = (...pluginArgs) => {
+  // Arrow functions do not have their own arguments object.
+  // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Arrow_functions
+
+  const config =
+    pluginArgs.length <= 0 || pluginArgs[0] === undefined ? {} : pluginArgs[0];
+  // Finding if first-level-link has sub-nav then changing its clasee to first-level-btn
   //JQuery
   //var $navItemsWithSubs = $('.main-navigation').find('.sub-nav').siblings('.first-level-link');
-  var className = "first-level-btn";
+  const className = "first-level-btn";
 
   //Change all the links next to sub-navs to first-level-btn
-  document
-    .querySelectorAll(".main-navigation .sub-nav")
-    .forEach(function (node) {
-      node.parentElement.querySelector("a").className = className;
-    });
+  document.querySelectorAll(".main-navigation .sub-nav").forEach(node => {
+    node.parentElement.querySelector("a").className = className;
+  });
 
-  var CONFIG = _extends(
+  const CONFIG = _extends(
     {
       ACCORDION_JS: "main-navigation",
       ACCORDION_JS_HEADER: className, // Assigning button class to link that has sub-nav
@@ -249,33 +249,34 @@ var plugin = function plugin() {
     config
   );
 
-  var HASH_ID = Math.random().toString(32).slice(2, 12);
+  const HASH_ID = Math.random().toString(32).slice(2, 12);
 
   pluginConfig.set(HASH_ID, CONFIG);
   // Find all accordions inside a container
   // @param  {Node} node Default document
   // @return {Array}
-  var listAccordions = function listAccordions() {
-    var node =
-      arguments.length <= 0 || arguments[0] === undefined
+  const listAccordions = (...listAccordionArgs) => {
+    const node =
+      listAccordionArgs.length <= 0 || listAccordionArgs[0] === undefined
         ? document
-        : arguments[0];
-    return [].slice.call(node.querySelectorAll("." + CONFIG.ACCORDION_JS));
+        : listAccordionArgs[0];
+    return [].slice.call(node.querySelectorAll(`.${CONFIG.ACCORDION_JS}`));
   };
 
   // Build accordions for a container
   // @param  {Node} node
   // @param  {addListeners} boolean
-  var attach = function attach(node) {
-    listAccordions(node).forEach(function (accordion_node) {
-      var iLisible = "z" + Math.random().toString(32).slice(2, 12); // avoid selector exception when starting by a number
-      var prefixClassName =
+  const attach = node => {
+    listAccordions(node).forEach(accordion_node => {
+      const iLisible = `z${Math.random().toString(32).slice(2, 12)}`; // avoid selector exception when starting by a number
+      const prefixClassName =
         accordion_node.hasAttribute(CONFIG.ACCORDION_DATA_PREFIX_CLASS) === true
-          ? accordion_node.getAttribute(CONFIG.ACCORDION_DATA_PREFIX_CLASS) +
-            "-"
+          ? `${accordion_node.getAttribute(
+              CONFIG.ACCORDION_DATA_PREFIX_CLASS
+            )}-`
           : "";
-      var coolSelectors = CONFIG.ACCORDION_DATA_COOL_SELECTORS === true;
-      var childClassName = "first-level-btn";
+      const coolSelectors = CONFIG.ACCORDION_DATA_COOL_SELECTORS;
+      const childClassName = "first-level-btn";
 
       // Init attributes accordion
       if (!mobileView()) {
@@ -290,11 +291,11 @@ var plugin = function plugin() {
 
       addClass(accordion_node, prefixClassName + CONFIG.ACCORDION_STYLE);
 
-      var listAccordionsHeader = [].slice.call(
-        accordion_node.querySelectorAll("." + childClassName)
+      const listAccordionsHeader = [].slice.call(
+        accordion_node.querySelectorAll(`.${childClassName}`)
       );
-      listAccordionsHeader.forEach(function (header_node, index_header) {
-        var _setAttributes2, _setAttributes3;
+      listAccordionsHeader.forEach((header_node, index_header) => {
+        let _setAttributes2, _setAttributes3;
 
         // if we do not have cool selectors enabled,
         // it is not a direct child, we ignore it
@@ -305,11 +306,11 @@ var plugin = function plugin() {
           return;
         }
 
-        var indexHeaderLisible = index_header + 1;
-        var accordionPanel = header_node.nextElementSibling;
-        var accordionHeaderText = header_node.innerHTML;
-        var accordionButton = document.createElement("BUTTON");
-        var accordionOpenedAttribute =
+        const indexHeaderLisible = index_header + 1;
+        const accordionPanel = header_node.nextElementSibling;
+        const accordionHeaderText = header_node.innerHTML;
+        const accordionButton = document.createElement("BUTTON");
+        const accordionOpenedAttribute =
           header_node.hasAttribute(CONFIG.ACCORDION_DATA_OPENED) === true
             ? header_node.getAttribute(CONFIG.ACCORDION_DATA_OPENED)
             : "";
@@ -395,7 +396,7 @@ var plugin = function plugin() {
           //$(accordionPanel).find(".second-level-link").removeAttr("tabindex"); //JQ
           accordionPanel
             .querySelectorAll(".second-level-link")
-            .forEach(function (item) {
+            .forEach(item => {
               item.removeAttribute("tabindex");
             }); //JS
         } else {
@@ -406,7 +407,7 @@ var plugin = function plugin() {
           //$(accordionPanel).find(".second-level-link").attr("tabindex", "-1"); //JQ
           accordionPanel
             .querySelectorAll(".second-level-link")
-            .forEach(function (item) {
+            .forEach(item => {
               item.setAttribute("tabindex", "-1");
             }); //JS
         }
@@ -421,19 +422,19 @@ var plugin = function plugin() {
   };
 };
 
-var main = function main() {
+const main = function main() {
   /* listeners for all configs */
-  ["click", "keydown", "focus"].forEach(function (eventName) {
+  ["click", "keydown", "focus"].forEach(eventName => {
     document.body.addEventListener(
       eventName,
-      function (e) {
-        var hashId = searchParentHashId(e.target, DATA_HASH_ID); //e.target.dataset.hashId;
+      e => {
+        const hashId = searchParentHashId(e.target, DATA_HASH_ID); //e.target.dataset.hashId;
         // search if click on button or on element in a button contains data-hash-id (it is needed to load config and know which class to search)
 
         if (hashId !== "") {
-          (function () {
+          (() => {
             // loading config from element
-            var CONFIG = pluginConfig.get(hashId);
+            const CONFIG = pluginConfig.get(hashId);
             /*
                          // focus on button
                          if (hasClass(e.target, 'first-level-btn') === true && eventName === 'focus') {
@@ -461,29 +462,30 @@ var main = function main() {
               eventName === "click"
             ) {
               (function () {
-                var buttonTag = e.target;
-                var accordionContainer = findById(
+                const buttonTag = e.target;
+                const accordionContainer = findById(
                   searchParent(buttonTag, CONFIG.ACCORDION_JS, hashId),
                   hashId
                 );
-                var coolSelectors =
+                const coolSelectors =
                   CONFIG.ACCORDION_DATA_COOL_SELECTORS === true;
-                var accordionAllHeaders = [].slice.call(
+                let accordionAllHeaders = [].slice.call(
                   accordionContainer.querySelectorAll(".first-level-btn")
                 );
-                //var accordionMultiSelectable = accordionContainer.getAttribute(CONFIG.ATTR_MULTISELECTABLE);
-                var destination = findById(
+                //const accordionMultiSelectable = accordionContainer.getAttribute(CONFIG.ATTR_MULTISELECTABLE);
+                const destination = findById(
                   buttonTag.getAttribute(CONFIG.ATTR_CONTROLS),
                   hashId
                 );
-                var stateButton = buttonTag.getAttribute(CONFIG.ATTR_EXPANDED);
+                const stateButton = buttonTag.getAttribute(
+                  CONFIG.ATTR_EXPANDED
+                );
 
-                if (coolSelectors === false) {
-                  accordionAllHeaders = accordionAllHeaders.filter(function (
-                    element
-                  ) {
-                    return element.parentNode.parentNode === accordionContainer;
-                  });
+                if (!coolSelectors) {
+                  accordionAllHeaders = accordionAllHeaders.filter(
+                    element =>
+                      element.parentNode.parentNode === accordionContainer
+                  );
                 }
 
                 // if closed
@@ -496,9 +498,7 @@ var main = function main() {
                   //$(destination).find(".second-level-link").removeAttr("tabindex"); //JQ
                   destination
                     .querySelectorAll(".second-level-link")
-                    .forEach(function (item) {
-                      item.removeAttribute("tabindex");
-                    }); //JS
+                    .forEach(item => item.removeAttribute("tabindex")); //JS
                 } else {
                   buttonTag.setAttribute(CONFIG.ATTR_EXPANDED, false);
                   destination.setAttribute(CONFIG.ATTR_HIDDEN, true);
@@ -508,16 +508,14 @@ var main = function main() {
                   //$(destination).find(".second-level-link").attr("tabindex", "-1");
                   destination
                     .querySelectorAll(".second-level-link")
-                    .forEach(function (item) {
-                      item.setAttribute("tabindex", "-1");
-                    }); //JS
+                    .forEach(item => item.setAttribute("tabindex", "-1")); //JS
                 }
 
                 if (!mobileView()) {
-                  accordionAllHeaders.forEach(function (header_node) {
+                  accordionAllHeaders.forEach(header_node => {
                     //Close all the other panels
 
-                    var destinationPanel = findById(
+                    const destinationPanel = findById(
                       header_node.getAttribute(CONFIG.ATTR_CONTROLS),
                       hashId
                     );
@@ -533,14 +531,12 @@ var main = function main() {
                       //Added fix to make closed panels non-tabbable
                       destinationPanel
                         .querySelectorAll(".second-level-link")
-                        .forEach(function (item) {
-                          item.setAttribute("tabindex", "-1");
-                        }); //JS
+                        .forEach(item => item.setAttribute("tabindex", "-1")); //JS
                     }
                   });
                 }
 
-                setTimeout(function () {
+                setTimeout(() => {
                   buttonTag.focus();
                 }, 0);
                 e.stopPropagation(); // making icons and other buttons elements clickable  https://css-tricks.com/slightly-careful-sub-elements-clickable-things/
@@ -628,8 +624,8 @@ var main = function main() {
 
 window.van11yAccessibleAccordionAria = main();
 
-var onLoad = function onLoad() {
-  var expand_default = window.van11yAccessibleAccordionAria();
+const onLoad = function onLoad() {
+  const expand_default = window.van11yAccessibleAccordionAria();
   expand_default.attach();
 
   document.removeEventListener("DOMContentLoaded", onLoad);
@@ -641,59 +637,54 @@ document.addEventListener("DOMContentLoaded", onLoad);
 function NavReset() {
   //RESET
   //JS
-  document.querySelectorAll(".first-level-btn").forEach(function (el) {
-    el.setAttribute("aria-expanded", "false");
-  });
-  document.querySelectorAll(".sub-nav").forEach(function (el) {
+  document
+    .querySelectorAll(".first-level-btn")
+    .forEach(el => el.setAttribute("aria-expanded", "false"));
+  document.querySelectorAll(".sub-nav").forEach(el => {
     el.setAttribute("aria-hidden", "true");
     removeClass(el, "open");
   });
-  document.querySelectorAll(".second-level-link").forEach(function (el) {
-    el.setAttribute("tabindex", "-1");
-  });
+  document
+    .querySelectorAll(".second-level-link")
+    .forEach(el => el.setAttribute("tabindex", "-1"));
 
   if (window.innerWidth <= 991) {
-    document.querySelectorAll(".rotate").forEach(function (el) {
-      el.style.display = "block";
-    });
+    document
+      .querySelectorAll(".rotate")
+      .forEach(el => (el.style.display = "block"));
   } else {
-    document.querySelectorAll(".rotate").forEach(function (el) {
-      el.style.display = "none";
-    });
-    var nav = document.querySelector("#navigation");
+    document
+      .querySelectorAll(".rotate")
+      .forEach(el => (el.style.display = "none"));
+    const nav = document.querySelector("#navigation");
     removeClass(nav, "collapse");
     nav.removeAttribute("aria-hidden");
   }
 }
 
-var mobileView = function () {
-  //JQ
-  //return $('.global-header .mobile-controls').css('display') !== "none"; // mobile view uses arrow to show subnav instead of first touch
-  //JS
-  return (
-    getComputedStyle(document.querySelector(".global-header .mobile-controls"))[
-      "display"
-    ] !== "none"
-  );
+const mobileView = () => {
+  getComputedStyle(document.querySelector(".global-header .mobile-controls"))[
+    "display"
+  ] !== "none";
 };
 
-function AlmostJQueryDocumentReady(callbackFunction) {
+const AlmostJQueryDocumentReady = callbackFunction => {
   if (document.readyState != "loading") callbackFunction();
   else document.addEventListener("DOMContentLoaded", callbackFunction);
-}
+};
 
 // Remove href if <a> has a link
-AlmostJQueryDocumentReady(function () {
+AlmostJQueryDocumentReady(() => {
   //JS
   //$(document).ready(function () { //JQ
-  var navigationJS = document.querySelector(".main-navigation");
+  const navigationJS = document.querySelector(".main-navigation");
 
-  var subnavbtnJS = document.querySelectorAll(
+  const subnavbtnJS = document.querySelectorAll(
     ".main-navigation .nav-item a.has-sub-btn"
   );
-  subnavbtnJS.forEach(function (item) {
+  subnavbtnJS.forEach(item => {
     // Change <a> tag to div since you can't place button into <a> tag
-    var newDiv = document.createElement("div");
+    const newDiv = document.createElement("div");
     newDiv.innerHTML = item.innerHTML;
     newDiv.classList.add("has-sub-btn");
     item.replaceWith(newDiv);
@@ -735,34 +726,33 @@ AlmostJQueryDocumentReady(function () {
 
   // Variables JS
 
-  var singleLevel = navigationJS.classList.contains("singleLevel");
-  var setActiveLinkByFolder = navigationJS.classList.contains("auto-highlight");
+  const singleLevel = navigationJS.classList.contains("singleLevel");
+  const setActiveLinkByFolder =
+    navigationJS.classList.contains("auto-highlight");
 
-  var navItemsJS = document.querySelectorAll(".main-navigation .nav-item");
-  var navItemsWithSubsJS = [].slice
+  const navItemsJS = document.querySelectorAll(".main-navigation .nav-item");
+  const navItemsWithSubsJS = [].slice
     .call(document.querySelectorAll(".main-navigation .nav-item"))
-    .filter(function (x) {
-      return x.querySelector(".sub-nav");
-    });
+    .filter(x => x.querySelector(".sub-nav"));
 
   // HIGHLIGHT APPROPRIATE NAV ITEM
-  var reMainNav = "";
+  let reMainNav = "";
   if (typeof defaultActiveLink !== "undefined") {
     //Globally set var
     // eslint-disable-next-line no-undef
-    reMainNav = new RegExp("^" + defaultActiveLink + "$", "i"); // Regex for finding the index of the default main list item
+    reMainNav = new RegExp(`^${defaultActiveLink}$`, "i"); // Regex for finding the index of the default main list item
   }
 
-  navItemsJS.forEach(function (navItem) {
-    var link = navItem.querySelector(".first-level-btn, .first-level-link");
+  navItemsJS.forEach(navItem => {
+    const link = navItem.querySelector(".first-level-btn, .first-level-link");
 
     if (reMainNav) {
       if (link.textContent.match(reMainNav)) {
         navItem.classList.add("active");
       }
     } else if (setActiveLinkByFolder && link.getAttribute("href")) {
-      var arrNavLink = link.getAttribute("href").split("/");
-      var arrCurrentURL = location.href.split("/");
+      const arrNavLink = link.getAttribute("href").split("/");
+      const arrCurrentURL = location.href.split("/");
 
       if (arrNavLink.length > 4 && arrCurrentURL[3] === arrNavLink[3]) {
         // folder of current URL matches this nav link
@@ -792,12 +782,12 @@ AlmostJQueryDocumentReady(function () {
 */
 
   // Reset if click outside of nav
-  document.addEventListener("mouseup", function (e) {
+  document.addEventListener("mouseup", e => {
     //JS
     //$(document).mouseup(function (e) { //JQ
 
     //var navContainer = $(".main-navigation"); //JQ
-    var navContainer = document.querySelector(".main-navigation"); //JS
+    const navContainer = document.querySelector(".main-navigation"); //JS
 
     // if the target of the click isn't the navigation container nor a descendant of the navigation
     //if (!navContainer.is(e.target) && navContainer.has(e.target).length === 0) { //JQ
@@ -817,10 +807,10 @@ AlmostJQueryDocumentReady(function () {
   //    }
   //});
   //JS
-  navItemsWithSubsJS.forEach(function (el) {
-    var itemCount = el.querySelectorAll(".second-level-nav > li").length;
+  navItemsWithSubsJS.forEach(el => {
+    const itemCount = el.querySelectorAll(".second-level-nav > li").length;
     if (itemCount <= 2) {
-      var subnav = el.querySelector(".sub-nav");
+      const subnav = el.querySelector(".sub-nav");
       addClass(subnav, "with-few-items");
     }
   });
@@ -830,7 +820,7 @@ AlmostJQueryDocumentReady(function () {
     //$navItemsWithSubs.each(function () { //JQ
 
     //$(this).find('.first-level-btn').addClass('has-sub'); //JQ
-    document.querySelectorAll(".first-level-btn").forEach(function (el) {
+    document.querySelectorAll(".first-level-btn").forEach(el => {
       //JS
       addClass(el, "has-sub"); //JS
 
@@ -847,12 +837,12 @@ AlmostJQueryDocumentReady(function () {
       //$(this).find('.has-sub').append(carrot);
 
       //JS
-      var carrot = document.createElement("span");
+      const carrot = document.createElement("span");
       addClass(carrot, "ca-gov-icon-caret-down");
       addClass(carrot, "carrot");
       carrot.setAttribute("aria-hidden", "true");
 
-      var toggleSubNav = document.createElement("div");
+      const toggleSubNav = document.createElement("div");
       addClass(toggleSubNav, "ca-gov-icon-caret-right");
       addClass(toggleSubNav, "rotate");
       toggleSubNav.setAttribute("aria-hidden", "true");
@@ -874,7 +864,7 @@ AlmostJQueryDocumentReady(function () {
 });
 
 // Do Navigation Reset function on window resize uless it's mobile device.
-window.addEventListener("resize", function () {
+window.addEventListener("resize", () => {
   //JS
   //$(window).on('resize', function () { //JQ
   if (
@@ -894,7 +884,7 @@ window.addEventListener("resize", function () {
       .setAttribute("aria-expanded", "false");
 
     //Collapse the nav when narrow
-    var nav = document.querySelector("#navigation");
+    const nav = document.querySelector("#navigation");
     addClass(nav, "collapse");
     removeClass(nav, "show");
     nav.setAttribute("aria-hidden", "true");
@@ -915,8 +905,10 @@ window.addEventListener("resize", function () {
 //    }
 //});
 //JS
-document.addEventListener("keyup", function (e) {
-  if (e.keyCode === 27) {
+document.addEventListener("keyup", e => {
+  // keyCode has been deprecated
+  // https://developer.mozilla.org/en-US/docs/Web/API/KeyboardEvent/keyCode
+  if (e.key === "Escape") {
     NavReset();
   }
 });
@@ -930,17 +922,16 @@ document.addEventListener("keyup", function (e) {
 //});
 
 // Add bold to current subnav link
-function addActive() {
-  var activeLink = document.querySelectorAll(".second-level-link"),
-    i = 0,
+const addActive = () => {
+  const activeLink = document.querySelectorAll(".second-level-link"),
     len = activeLink.length,
     full_path = location.href.split("#")[0]; //Ignore hashes?
 
   // Loop through each link.
-  for (; i < len; i++) {
+  for (let i; i < len; i++) {
     if (activeLink[i].href.split("#")[0] == full_path) {
       activeLink[i].className += " bold";
     }
   }
-}
+};
 addActive();
