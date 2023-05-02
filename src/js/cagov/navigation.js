@@ -9,12 +9,6 @@
  */
 "use strict";
 
-//JQUERY replacement helpers
-//var matches = function(el, selector) {
-//    return (el.matches || el.matchesSelector || el.msMatchesSelector || el.mozMatchesSelector || el.webkitMatchesSelector || el.oMatchesSelector).call(el, selector);
-//};
-//var defaultActiveLink = "About";
-
 const _extends =
   Object.assign ||
   function (target) {
@@ -76,45 +70,6 @@ const findById = (id, hash) => {
   return document.querySelector(`#${id}[${DATA_HASH_ID}="${hash}"]`);
 };
 
-/** add a class to a node
- * @param  {Node} el node to attach class
- * @param  {String} className the class to add
- */
-const addClass = (el, className) => {
-  if (el.classList) {
-    el.classList.add(className); // IE 10+
-  } else {
-    el.className += ` ${className}`; // IE 8+
-  }
-};
-
-/** remove class from node
- * @param  {Node} el node to remove class
- * @param  {String} className the class to remove
- */
-const removeClass = function removeClass(el, className) {
-  if (el.classList) {
-    el.classList.remove(className); // IE 10+
-  } else {
-    el.className = el.className.replace(
-      new RegExp(`(^|\\b)${className.split(" ").join("|")}(\\b|$)`, "gi"),
-      " "
-    ); // IE 8+
-  }
-};
-
-// check if node has specified class
-// @param  {Node} el node to check
-// @param  {String} className the class
-
-const hasClass = (el, className) => {
-  if (el.classList) {
-    return el.classList.contains(className); // IE 10+
-  } else {
-    return new RegExp(`(^| )${className}( |$)`, "gi").test(el.className); // IE 8+ ?
-  }
-};
-
 const setAttributes = function setAttributes(node, attrs) {
   Object.keys(attrs).forEach(attribute => {
     node.setAttribute(attribute, attrs[attribute]);
@@ -149,7 +104,7 @@ const searchParent = (el, parentClass, hashId) => {
   let parentElement = el;
   while (parentElement && found === false) {
     if (
-      hasClass(parentElement, parentClass) === true &&
+      parentElement.classList.contains(parentClass) &&
       parentElement.getAttribute(DATA_HASH_ID) === hashId
     ) {
       found = true;
@@ -164,40 +119,6 @@ const searchParent = (el, parentClass, hashId) => {
   }
 };
 
-//var unSelectHeaders = function unSelectHeaders(elts, attrSelected) {
-//    elts.forEach(function (header_node) {
-//        setAttributes(header_node, _defineProperty({}, attrSelected, 'false'));
-//    });
-//};
-/*
-var selectHeader = function selectHeader(el, attrSelected) {
-    el.setAttribute(attrSelected, true);
-};
-
-var selectHeaderInList = function selectHeaderInList(elts, param, attrSelected) {
-    var indice_trouve = undefined;
-    elts.forEach(function (header_node, index) {
-
-        if (header_node.getAttribute(attrSelected) === 'true') {
-            indice_trouve = index;
-        }
-    });
-
-    if (param === 'next') {
-        selectHeader(elts[indice_trouve + 1]);
-        setTimeout(function () {
-            elts[indice_trouve + 1].focus();
-        }, 0);
-    }
-    if (param === 'prev') {
-        selectHeader(elts[indice_trouve - 1]);
-        setTimeout(function () {
-            elts[indice_trouve - 1].focus();
-        }, 0);
-    }
-};
-*/
-// const plugin = function plugin() {
 const plugin = (...pluginArgs) => {
   // Arrow functions do not have their own arguments object.
   // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Arrow_functions
@@ -205,8 +126,6 @@ const plugin = (...pluginArgs) => {
   const config =
     pluginArgs.length <= 0 || pluginArgs[0] === undefined ? {} : pluginArgs[0];
   // Finding if first-level-link has sub-nav then changing its clasee to first-level-btn
-  //JQuery
-  //var $navItemsWithSubs = $('.main-navigation').find('.sub-nav').siblings('.first-level-link');
   const className = "first-level-btn";
 
   //Change all the links next to sub-navs to first-level-btn
@@ -253,9 +172,10 @@ const plugin = (...pluginArgs) => {
 
   pluginConfig.set(HASH_ID, CONFIG);
   // Find all accordions inside a container
-  // @param  {Node} node Default document
-  // @return {Array}
   const listAccordions = (...listAccordionArgs) => {
+    // Arrow functions do not have their own arguments object.
+    // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Arrow_functions
+
     const node =
       listAccordionArgs.length <= 0 || listAccordionArgs[0] === undefined
         ? document
@@ -264,8 +184,6 @@ const plugin = (...pluginArgs) => {
   };
 
   // Build accordions for a container
-  // @param  {Node} node
-  // @param  {addListeners} boolean
   const attach = node => {
     listAccordions(node).forEach(accordion_node => {
       const iLisible = `z${Math.random().toString(32).slice(2, 12)}`; // avoid selector exception when starting by a number
@@ -284,12 +202,8 @@ const plugin = (...pluginArgs) => {
       } else {
         accordion_node.setAttribute(CONFIG.ATTR_MULTISELECTABLE, "true");
       }
-      // accordion_node.setAttribute(CONFIG.ATTR_ROLE, CONFIG.ACCORDION_ROLE_TABLIST);
-      // We already have main navigation id
-      // accordion_node.setAttribute('id', iLisible);
       accordion_node.setAttribute(DATA_HASH_ID, HASH_ID);
-
-      addClass(accordion_node, prefixClassName + CONFIG.ACCORDION_STYLE);
+      accordion_node.classList.add(prefixClassName + CONFIG.ACCORDION_STYLE);
 
       const listAccordionsHeader = [].slice.call(
         accordion_node.querySelectorAll(`.${childClassName}`)
@@ -317,9 +231,8 @@ const plugin = (...pluginArgs) => {
 
         // set button with attributes
         accordionButton.innerHTML = accordionHeaderText;
-        addClass(accordionButton, childClassName);
-        addClass(
-          accordionButton,
+        accordionButton.classList.add(
+          childClassName,
           prefixClassName + CONFIG.ACCORDION_HEADER_STYLE
         );
         setAttributes(
@@ -349,15 +262,14 @@ const plugin = (...pluginArgs) => {
         header_node.innerHTML = "";
         header_node.appendChild(accordionButton);
 
-        // move title into panel
-        //accordionPanel.insertBefore(header_node, accordionPanel.firstChild);
         // set title with attributes
-        addClass(header_node, prefixClassName + CONFIG.ACCORDION_TITLE_STYLE);
-        removeClass(header_node, childClassName);
+        header_node.classList.add(
+          prefixClassName + CONFIG.ACCORDION_TITLE_STYLE
+        );
+        header_node.classList.remove(childClassName);
 
         // set attributes to panels
-        addClass(
-          accordionPanel,
+        accordionPanel.classList.add(
           prefixClassName + CONFIG.ACCORDION_PANEL_STYLE
         );
         setAttributes(
@@ -392,24 +304,20 @@ const plugin = (...pluginArgs) => {
           accordionButton.setAttribute(CONFIG.ATTR_EXPANDED, "true");
           header_node.removeAttribute(CONFIG.ACCORDION_DATA_OPENED);
           accordionPanel.setAttribute(CONFIG.ATTR_HIDDEN, "false");
-
-          //$(accordionPanel).find(".second-level-link").removeAttr("tabindex"); //JQ
           accordionPanel
             .querySelectorAll(".second-level-link")
             .forEach(item => {
               item.removeAttribute("tabindex");
-            }); //JS
+            });
         } else {
           accordionButton.setAttribute(CONFIG.ATTR_EXPANDED, "false");
           accordionPanel.setAttribute(CONFIG.ATTR_HIDDEN, "true");
           // making sure all second level links are not tabable
-
-          //$(accordionPanel).find(".second-level-link").attr("tabindex", "-1"); //JQ
           accordionPanel
             .querySelectorAll(".second-level-link")
             .forEach(item => {
               item.setAttribute("tabindex", "-1");
-            }); //JS
+            });
         }
       });
     });
@@ -417,8 +325,6 @@ const plugin = (...pluginArgs) => {
 
   return {
     attach: attach
-    /*,
-          destroy*/
   };
 };
 
@@ -435,33 +341,13 @@ const main = function main() {
           (() => {
             // loading config from element
             const CONFIG = pluginConfig.get(hashId);
-            /*
-                         // focus on button
-                         if (hasClass(e.target, 'first-level-btn') === true && eventName === 'focus') {
-                             (function () {
-                                 var buttonTag = e.target;
-                                 var accordionContainer = findById(searchParent(buttonTag, CONFIG.ACCORDION_JS, hashId), hashId);
-                                 var coolSelectors = CONFIG.ACCORDION_DATA_COOL_SELECTORS === true;
-                                 var accordionAllHeaders = [].slice.call(accordionContainer.querySelectorAll('.first-level-btn'));
-     
-                                 if (coolSelectors === false) {
-                                     accordionAllHeaders = accordionAllHeaders.filter(function (element) {
-                                         return element.parentNode.parentNode === accordionContainer;
-                                     });
-                                 }
-     
-                                // unSelectHeaders(accordionAllHeaders, CONFIG.ATTR_SELECTED);
-     
-                                // selectHeader(buttonTag, CONFIG.ATTR_SELECTED);
-                             })();
-                         }
-     */
+
             // click on button
             if (
-              hasClass(e.target, "first-level-btn") === true &&
+              e.target.classList.contains("first-level-btn") &&
               eventName === "click"
             ) {
-              (function () {
+              (() => {
                 const buttonTag = e.target;
                 const accordionContainer = findById(
                   searchParent(buttonTag, CONFIG.ACCORDION_JS, hashId),
@@ -472,7 +358,6 @@ const main = function main() {
                 let accordionAllHeaders = [].slice.call(
                   accordionContainer.querySelectorAll(".first-level-btn")
                 );
-                //const accordionMultiSelectable = accordionContainer.getAttribute(CONFIG.ATTR_MULTISELECTABLE);
                 const destination = findById(
                   buttonTag.getAttribute(CONFIG.ATTR_CONTROLS),
                   hashId
@@ -492,29 +377,24 @@ const main = function main() {
                 if (stateButton === "false") {
                   buttonTag.setAttribute(CONFIG.ATTR_EXPANDED, true);
                   destination.removeAttribute(CONFIG.ATTR_HIDDEN);
-                  //$(destination).addClass("open"); //JQ
-                  addClass(destination, "open"); //JS
+                  destination.classList.add("open");
                   // making second level links tabbable if sub nav panel is opened
-                  //$(destination).find(".second-level-link").removeAttr("tabindex"); //JQ
                   destination
                     .querySelectorAll(".second-level-link")
-                    .forEach(item => item.removeAttribute("tabindex")); //JS
+                    .forEach(item => item.removeAttribute("tabindex"));
                 } else {
                   buttonTag.setAttribute(CONFIG.ATTR_EXPANDED, false);
                   destination.setAttribute(CONFIG.ATTR_HIDDEN, true);
-                  removeClass(destination, "open"); //JS
-                  //$(destination).removeClass("open"); //JQ
+                  destination.classList.remove("open");
                   // adding tabindex to links to make sure they are not tabable if sub nav panel is closed
-                  //$(destination).find(".second-level-link").attr("tabindex", "-1");
                   destination
                     .querySelectorAll(".second-level-link")
-                    .forEach(item => item.setAttribute("tabindex", "-1")); //JS
+                    .forEach(item => item.setAttribute("tabindex", "-1"));
                 }
 
                 if (!mobileView()) {
                   accordionAllHeaders.forEach(header_node => {
                     //Close all the other panels
-
                     const destinationPanel = findById(
                       header_node.getAttribute(CONFIG.ATTR_CONTROLS),
                       hashId
@@ -523,15 +403,12 @@ const main = function main() {
                     if (header_node !== buttonTag) {
                       // header_node.setAttribute(CONFIG.ATTR_SELECTED, false);
                       header_node.setAttribute(CONFIG.ATTR_EXPANDED, false);
-                      //$(destinationPanel).removeClass("open"); //JQ
-
-                      removeClass(destinationPanel, "open"); //JS
-                      //destinationPanel.setAttribute(CONFIG.ATTR_HIDDEN, true);
+                      destinationPanel.classList.remove("open");
 
                       //Added fix to make closed panels non-tabbable
                       destinationPanel
                         .querySelectorAll(".second-level-link")
-                        .forEach(item => item.setAttribute("tabindex", "-1")); //JS
+                        .forEach(item => item.setAttribute("tabindex", "-1"));
                     }
                   });
                 }
@@ -543,75 +420,6 @@ const main = function main() {
                 e.preventDefault();
               })();
             }
-
-            // keyboard management for headers
-            //if (hasClass(e.target, 'first-level-btn') === true && eventName === 'keydown') {
-            //    (function () {
-            //        var buttonTag = e.target;
-            //        var idAccordionContainer = searchParent(buttonTag, CONFIG.ACCORDION_JS, hashId);
-            //        var accordionContainer = findById(idAccordionContainer, hashId);
-
-            //        var coolSelectors = CONFIG.ACCORDION_DATA_COOL_SELECTORS === true;
-            //        var accordionAllHeaders = [].slice.call(accordionContainer.querySelectorAll('.first-level-btn'));
-
-            //        if (coolSelectors === false) {
-            //            accordionAllHeaders = accordionAllHeaders.filter(function (element) {
-            //                return element.parentNode.parentNode === accordionContainer;
-            //            });
-            //        }
-
-            //        // strike home on a tab => 1st tab
-            //        if (e.keyCode === 36) {
-            //            unSelectHeaders(accordionAllHeaders, CONFIG.ATTR_SELECTED);
-            //            selectHeader(accordionAllHeaders[0], CONFIG.ATTR_SELECTED);
-            //            setTimeout(function () {
-            //                accordionAllHeaders[0].focus();
-            //            }, 0);
-            //            e.preventDefault();
-            //        }
-            //        // strike end on the tab => last tab
-            //        else if (e.keyCode === 35) {
-            //            unSelectHeaders(accordionAllHeaders, CONFIG.ATTR_SELECTED);
-            //            selectHeader(accordionAllHeaders[accordionAllHeaders.length - 1], CONFIG.ATTR_SELECTED);
-            //            setTimeout(function () {
-            //                accordionAllHeaders[accordionAllHeaders.length - 1].focus();
-            //            }, 0);
-            //            e.preventDefault();
-            //        }
-            //        // strike up or left on the tab => previous tab
-            //        else if ((e.keyCode === 37 || e.keyCode === 38) && !e.ctrlKey) {
-
-            //            // if first selected = select last
-            //            if (accordionAllHeaders[0].getAttribute(CONFIG.ATTR_SELECTED) === 'true') {
-            //                unSelectHeaders(accordionAllHeaders, CONFIG.ATTR_SELECTED);
-            //                selectHeader(accordionAllHeaders[accordionAllHeaders.length - 1], CONFIG.ATTR_SELECTED);
-            //                setTimeout(function () {
-            //                    accordionAllHeaders[accordionAllHeaders.length - 1].focus();
-            //                }, 0);
-            //                e.preventDefault();
-            //            } else {
-            //                selectHeaderInList(accordionAllHeaders, 'prev', CONFIG.ATTR_SELECTED);
-            //                e.preventDefault();
-            //            }
-            //        }
-            //        // strike down or right in the tab => next tab
-            //        else if ((e.keyCode === 40 || e.keyCode === 39) && !e.ctrlKey) {
-
-            //            // if last selected = select first
-            //            if (accordionAllHeaders[accordionAllHeaders.length - 1].getAttribute(CONFIG.ATTR_SELECTED) === 'true') {
-            //                unSelectHeaders(accordionAllHeaders, CONFIG.ATTR_SELECTED);
-            //                selectHeader(accordionAllHeaders[0], CONFIG.ATTR_SELECTED);
-            //                setTimeout(function () {
-            //                    accordionAllHeaders[0].focus();
-            //                }, 0);
-            //                e.preventDefault();
-            //            } else {
-            //                selectHeaderInList(accordionAllHeaders, 'next', CONFIG.ATTR_SELECTED);
-            //                e.preventDefault();
-            //            }
-            //        }
-            //    })();
-            //}
           })();
         }
       },
@@ -632,17 +440,15 @@ const onLoad = function onLoad() {
 };
 
 document.addEventListener("DOMContentLoaded", onLoad);
-//window.addEventListener("resize", navreset);
 
 function NavReset() {
   //RESET
-  //JS
   document
     .querySelectorAll(".first-level-btn")
     .forEach(el => el.setAttribute("aria-expanded", "false"));
   document.querySelectorAll(".sub-nav").forEach(el => {
     el.setAttribute("aria-hidden", "true");
-    removeClass(el, "open");
+    el.classList.remove("open");
   });
   document
     .querySelectorAll(".second-level-link")
@@ -657,7 +463,7 @@ function NavReset() {
       .querySelectorAll(".rotate")
       .forEach(el => (el.style.display = "none"));
     const nav = document.querySelector("#navigation");
-    removeClass(nav, "collapse");
+    nav.classList.remove("collapse");
     nav.removeAttribute("aria-hidden");
   }
 }
@@ -668,15 +474,13 @@ const mobileView = () => {
   ] !== "none";
 };
 
-const AlmostJQueryDocumentReady = callbackFunction => {
+const isDocumentReady = callbackFunction => {
   if (document.readyState != "loading") callbackFunction();
   else document.addEventListener("DOMContentLoaded", callbackFunction);
 };
 
 // Remove href if <a> has a link
-AlmostJQueryDocumentReady(() => {
-  //JS
-  //$(document).ready(function () { //JQ
+isDocumentReady(() => {
   const navigationJS = document.querySelector(".main-navigation");
 
   const subnavbtnJS = document.querySelectorAll(
@@ -690,41 +494,9 @@ AlmostJQueryDocumentReady(() => {
     item.replaceWith(newDiv);
   });
 
-  // Change <a> tag to div since you can't place button into <a> tag
-  /*
-  //JQ//
- var subnavbtn = $(".nav-item .has-sub-btn");
- $(".has-sub-btn").removeAttr("href");
- subnavbtn.replaceWith(function () {
-     
-     return $('<div/>', {
-         class: 'has-sub-btn',
-         html: this.innerHTML
-     });
- });
- */
-
   if (mobileView()) {
-    //JS
     navigationJS.classList.add("collapse");
-    /*
-  JQ
-  $('#navigation').addClass('collapse');
-  $('#navigation').addClass('collapse');
-  */
   }
-
-  // Variables JQ
-  //var $navigation = $('.main-navigation'),
-  //$navItems = $navigation.find('.nav-item'), // JQ first level link containers'
-  //$navItemsWithSubs = $navItems.has('.sub-nav'), //JQ
-  //$subNavs = $navigation.find('.sub-nav'),//JQ
-  //megamenu = $navigation.hasClass('megadropdown'),//JQ
-  //dropdown = $navigation.hasClass('dropdown'),//JQ
-  //   singleLevel = $navigation.hasClass('singleLevel'),
-  //   setActiveLinkByFolder = $navigation.hasClass('auto-highlight'); // Use new folder matching method to highlight the current navigation tab
-
-  // Variables JS
 
   const singleLevel = navigationJS.classList.contains("singleLevel");
   const setActiveLinkByFolder =
@@ -756,95 +528,41 @@ AlmostJQueryDocumentReady(() => {
 
       if (arrNavLink.length > 4 && arrCurrentURL[3] === arrNavLink[3]) {
         // folder of current URL matches this nav link
-        //if (arrNavLink.length > 1 && arrNavLink[arrNavLink.length - 1].trim().toLowerCase() === arrCurrentURL[arrCurrentURL.length - 1].trim().toLowerCase() ) {
-        // folder of current URL matches this nav link
         navItem.classList.add("active");
       }
     }
   });
 
-  /* JQ
- $navItems.each(function () { // loop through top level links
-     var $this = $(this),
-         $a = $this.find('.first-level-btn, .first-level-link');
-
-     if (reMainNav) {
-         if ($a.text().match(reMainNav)) {
-             $this.addClass('active');
-         }
-     } else if (setActiveLinkByFolder && $a.attr('href')) {
-         var arrNavLink = $a[0].href.split("/");
-         if (arrNavLink.length > 4 && arrCurrentURL[3] === arrNavLink[3]) { // folder of current URL matches this nav link
-             $this.addClass('active');
-         }
-     }
- });
-*/
-
   // Reset if click outside of nav
   document.addEventListener("mouseup", e => {
-    //JS
-    //$(document).mouseup(function (e) { //JQ
-
-    //var navContainer = $(".main-navigation"); //JQ
-    const navContainer = document.querySelector(".main-navigation"); //JS
+    const navContainer = document.querySelector(".main-navigation");
 
     // if the target of the click isn't the navigation container nor a descendant of the navigation
-    //if (!navContainer.is(e.target) && navContainer.has(e.target).length === 0) { //JQ
     if (navContainer !== e.target && !navContainer.contains(e.target)) {
-      //JS
       NavReset();
     }
-    //}); //JQ
-  }); //JS
+  });
 
   // Nav items with subs
-  //JQ
-  //$navItemsWithSubs.each(function () {
-  //    var itemCount = $(this).find('.second-level-nav > li').length;
-  //    if (itemCount <= 2) {
-  //        $(this).find('.sub-nav').addClass('with-few-items');
-  //    }
-  //});
-  //JS
   navItemsWithSubsJS.forEach(el => {
     const itemCount = el.querySelectorAll(".second-level-nav > li").length;
     if (itemCount <= 2) {
       const subnav = el.querySelector(".sub-nav");
-      addClass(subnav, "with-few-items");
+      subnav.classList.add("with-few-items");
     }
   });
 
   // Add class has-sub, then add carrots
   if (!singleLevel) {
-    //$navItemsWithSubs.each(function () { //JQ
-
-    //$(this).find('.first-level-btn').addClass('has-sub'); //JQ
     document.querySelectorAll(".first-level-btn").forEach(el => {
-      //JS
-      addClass(el, "has-sub"); //JS
+      el.classList.add("has-sub");
 
-      //JQ
-      //var carrot = $('<span class="ca-gov-icon-triangle-down carrot" aria-hidden="true"></span>');
-      //var toggleSubNav = $('<div class="ca-gov-icon-caret-right rotate" aria-hidden="true"></div>');
-
-      //if (mobileView()) {
-      //    toggleSubNav.css("display", "block");
-      //  } else {
-      //    toggleSubNav.css("display", "none");
-      //}
-      //$(this).find('.has-sub').append(toggleSubNav);
-      //$(this).find('.has-sub').append(carrot);
-
-      //JS
       const carrot = document.createElement("span");
-      addClass(carrot, "ca-gov-icon-caret-down");
-      addClass(carrot, "carrot");
+      carrot.classList.add("ca-gov-icon-caret-down", "carrot");
       carrot.setAttribute("aria-hidden", "true");
 
       const toggleSubNav = document.createElement("div");
-      addClass(toggleSubNav, "ca-gov-icon-caret-right");
-      addClass(toggleSubNav, "rotate");
+      toggleSubNav.classList.add("ca-gov-icon-caret-right", "rotate");
       toggleSubNav.setAttribute("aria-hidden", "true");
 
       if (mobileView()) {
@@ -856,17 +574,11 @@ AlmostJQueryDocumentReady(() => {
       el.appendChild(toggleSubNav);
       el.appendChild(carrot);
     });
-    //}); //JQ
   }
-
-  // Addig class first-level-btn to first-level-link to make sure left and right keyboard keys work for all navigation links
-  //$(".first-level-link").addClass("first-level-btn");
 });
 
 // Do Navigation Reset function on window resize uless it's mobile device.
 window.addEventListener("resize", () => {
-  //JS
-  //$(window).on('resize', function () { //JQ
   if (
     navigator.userAgent.match(/Android/i) ||
     navigator.userAgent.match(/webOS/i) ||
@@ -878,33 +590,21 @@ window.addEventListener("resize", () => {
   ) {
     return false;
   } else {
-    //JS
     document
       .querySelector(".toggle-menu")
       .setAttribute("aria-expanded", "false");
 
     //Collapse the nav when narrow
     const nav = document.querySelector("#navigation");
-    addClass(nav, "collapse");
-    removeClass(nav, "show");
+    nav.classList.add("collapse");
+    nav.classList.remove("show");
     nav.setAttribute("aria-hidden", "true");
-
-    //JQ
-    //$("#navigation").addClass("collapse").removeClass("show").attr("aria-hidden", "true");
-    //$(".toggle-menu").attr('aria-expanded', 'false');
 
     NavReset();
   }
 });
 
 // Reset on escape
-//JQ
-//$(document).keyup(function (e) {
-//    if (e.keyCode === 27) {
-//        NavReset();
-//    }
-//});
-//JS
 document.addEventListener("keyup", e => {
   // keyCode has been deprecated
   // https://developer.mozilla.org/en-US/docs/Web/API/KeyboardEvent/keyCode
@@ -912,14 +612,6 @@ document.addEventListener("keyup", e => {
     NavReset();
   }
 });
-
-/* Mobile Controls fix */
-//Doesn't appear to do anything
-//$(document).ready(function () {
-//$("#navigation .mobile-controls").removeClass("nav-menu");
-//$("#navigation .mobile-control a").removeAttr("aria-hidden aria-expanded role id").removeClass("sub-nav with-few-items subnav-closed");
-//$("#navigation .mobile-control .sr-only").removeAttr("aria-hidden aria-expanded role id").removeClass("sub-nav with-few-items subnav-closed");
-//});
 
 // Add bold to current subnav link
 const addActive = () => {
