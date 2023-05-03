@@ -69,7 +69,7 @@ window.addEventListener("load", () => {
   }
 
   //  search box top position
-  if (!mobileView()) {
+  if (!mobileView_search()) {
     // taking into account multiple alert banners
     alertBanner.forEach(oneBanner => {
       alertbannerHeight += oneBanner.innerHeight;
@@ -81,7 +81,7 @@ window.addEventListener("load", () => {
     // calulation search box top position
     const searchtop =
       headerHeight - utilityHeight - alertbannerHeight - navigationHeight;
-    if (!mobileView() && searchbox) {
+    if (!mobileView_search() && searchbox) {
       searchbox.style.top = Math.max(searchtop, 82);
     }
   }
@@ -113,7 +113,10 @@ window.addEventListener("load", () => {
         e.preventDefault();
         searchText.focus();
         // mobile
-        if (mobileView() && !searchContainer.classList.contains("active")) {
+        if (
+          mobileView_search() &&
+          !searchContainer.classList.contains("active")
+        ) {
           window.scrollTo({
             top: searchContainer.getBoundingClientRect().top,
             left: 0,
@@ -145,7 +148,7 @@ window.addEventListener("load", () => {
           removeSearchAttr();
         }
 
-        if (mobileView() && featuredsearch) {
+        if (mobileView_search() && featuredsearch) {
           searchContainer.classList.toggle("active");
           ariaHidden();
         }
@@ -195,7 +198,7 @@ window.addEventListener("load", () => {
 
     //        document.dispatchEvent('cagov.searchresults.hide'); // ???
 
-    if (mobileView()) {
+    if (mobileView_search()) {
       window.scrollTo({
         top: 0,
         left: 0,
@@ -280,7 +283,7 @@ window.addEventListener("load", () => {
 
 // Calculation search box top property on the scroll for the fixed nav
 window.addEventListener("scroll", () => {
-  if (!mobileView()) {
+  if (!mobileView_search()) {
     // setting timeout before calculating the search box top property otherwise it can take into account transitional values.
     setTimeout(() => {
       searchTop();
@@ -334,7 +337,7 @@ function searchTop() {
   // calulation search box top position
   const searchtop =
     headerHeight - utilityHeight - alertbannerHeight - navigationHeight;
-  if (!mobileView() && searchbox) {
+  if (!mobileView_search() && searchbox) {
     searchbox.style.top = Math.max(searchtop, 55);
   }
 }
@@ -345,7 +348,7 @@ function ariaHidden() {
     const featuredsearch =
       searchContainer.classList.contains("featured-search");
     if (featuredsearch) {
-      if (mobileView()) {
+      if (mobileView_search()) {
         searchContainer.setAttribute("aria-hidden", "true");
         document.querySelector("[name='q']").setAttribute("tabindex", "-1");
         document
@@ -364,7 +367,7 @@ function ariaHidden() {
   }
 }
 
-const mobileView = function () {
+const mobileView_search = () => {
   const mobileElement = document.querySelector(
     ".global-header .mobile-controls"
   );
