@@ -1,8 +1,10 @@
+//@ts-check
 /* -----------------------------------------
    SEARCH - /source/js/cagov/search.js
 ----------------------------------------- */
 window.addEventListener("load", () => {
   const searchContainer = document.querySelector("#head-search"); // contains the search form
+  /** @type {HTMLInputElement} */
   const searchText = document.querySelector(".search-textfield"); // search textfield, unique
   const resultsContainer = document.querySelector(".search-results-container"); // /sample/featured-search.html -- maybe not used?
   const searchInput = document.querySelector(
@@ -21,6 +23,7 @@ window.addEventListener("load", () => {
   const searchlabel = document.querySelector("#SearchInput"); // label for textfield
   /** @type {HTMLElement} */
   const globalHeader = document.querySelector(".global-header"); // header, contains nav, search form, etc, unique
+  /** @type {HTMLElement} */
   const searchbox = document.querySelector(
     ".search-container:not(.featured-search)"
   ); // only on subpages, unique, same as #head-search
@@ -31,6 +34,7 @@ window.addEventListener("load", () => {
   const utilityHeight = utility?.offsetHeight || 0;
 
   // utility header height
+  /** @type {NodeListOf<HTMLElement>} */
   const alertBanner = document.querySelectorAll(".alert-banner"); // page can have multiple
   const alertClose = document.querySelectorAll(".alert-banner .close");
   let alertbannerHeight = 0;
@@ -72,7 +76,7 @@ window.addEventListener("load", () => {
   if (!mobileView_search()) {
     // taking into account multiple alert banners
     alertBanner.forEach(oneBanner => {
-      alertbannerHeight += oneBanner.innerHeight;
+      alertbannerHeight += oneBanner.offsetHeight;
     });
     //fullwidth navigation
     if (navsearch.classList.contains("full-width-nav")) {
@@ -82,7 +86,7 @@ window.addEventListener("load", () => {
     const searchtop =
       headerHeight - utilityHeight - alertbannerHeight - navigationHeight;
     if (!mobileView_search() && searchbox) {
-      searchbox.style.top = Math.max(searchtop, 82);
+      searchbox.style.top = `${Math.max(searchtop, 82)}px`;
     }
   }
 
@@ -311,13 +315,17 @@ window.addEventListener("resize", () => {
 });
 
 function searchTop() {
+  /** @type {HTMLElement} */
   const globalHeader = document.querySelector(".global-header");
+  /** @type {HTMLElement} */
   const searchbox = document.querySelector(
     ".search-container:not(.featured-search)"
   );
-  const headerHeight = globalHeader.innerHeight;
+  const headerHeight = globalHeader.offsetHeight;
+  /** @type {HTMLElement} */
   const utility = document.querySelector(".utility-header");
-  const utilityHeight = utility.innerHeight;
+  const utilityHeight = utility.offsetHeight;
+  /** @type {NodeListOf<HTMLElement>} */
   const alertBanner = document.querySelectorAll(".alert-banner");
 
   let alertbannerHeight = 0;
@@ -326,7 +334,7 @@ function searchTop() {
   const navsearch = document.querySelector(".navigation-search");
   // taking into account multiple alert banners
   alertBanner.forEach(oneBanner => {
-    alertbannerHeight += oneBanner.innerHeight;
+    alertbannerHeight += oneBanner.offsetHeight;
   });
   // Full width navigation
   if (navsearch.classList.contains("full-width-nav")) {
@@ -338,7 +346,7 @@ function searchTop() {
   const searchtop =
     headerHeight - utilityHeight - alertbannerHeight - navigationHeight;
   if (!mobileView_search() && searchbox) {
-    searchbox.style.top = Math.max(searchtop, 55);
+    searchbox.style.top = `${Math.max(searchtop, 55)}px`;
   }
 }
 
