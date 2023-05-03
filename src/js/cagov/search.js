@@ -73,7 +73,7 @@ window.addEventListener("load", () => {
   }
 
   //  search box top position
-  if (!mobileView_search()) {
+  if (!mobileView_for_search()) {
     // taking into account multiple alert banners
     alertBanner.forEach(oneBanner => {
       alertbannerHeight += oneBanner.offsetHeight;
@@ -85,7 +85,7 @@ window.addEventListener("load", () => {
     // calulation search box top position
     const searchtop =
       headerHeight - utilityHeight - alertbannerHeight - navigationHeight;
-    if (!mobileView_search() && searchbox) {
+    if (!mobileView_for_search() && searchbox) {
       searchbox.style.top = `${Math.max(searchtop, 82)}px`;
     }
   }
@@ -108,7 +108,7 @@ window.addEventListener("load", () => {
   // Our special nav icon which we need to hook into for starting the search
   // $('#nav-item-search')
 
-  // so instead we are binding to what I'm assuming will aslways be the search
+  // so instead we are binding to what I'm assuming will always be the search
   const searchButton = document.querySelector("#nav-item-search");
   if (searchButton) {
     document.querySelector("#nav-item-search").addEventListener(
@@ -118,7 +118,7 @@ window.addEventListener("load", () => {
         searchText.focus();
         // mobile
         if (
-          mobileView_search() &&
+          mobileView_for_search() &&
           !searchContainer.classList.contains("active")
         ) {
           window.scrollTo({
@@ -152,7 +152,7 @@ window.addEventListener("load", () => {
           removeSearchAttr();
         }
 
-        if (mobileView_search() && featuredsearch) {
+        if (mobileView_for_search() && featuredsearch) {
           searchContainer.classList.toggle("active");
           ariaHidden();
         }
@@ -167,16 +167,12 @@ window.addEventListener("load", () => {
     );
   }
 
-  // SEE navitgation.js for mobile click handlers
-
   // Close search when close icon is clicked
   if (searchReset) {
     searchReset.addEventListener("click", () => {
       removeSearchResults();
     });
   }
-
-  // Helpers
 
   function removeSearchResults() {
     body.classList.remove("active-search");
@@ -202,7 +198,7 @@ window.addEventListener("load", () => {
 
     //        document.dispatchEvent('cagov.searchresults.hide'); // ???
 
-    if (mobileView_search()) {
+    if (mobileView_for_search()) {
       window.scrollTo({
         top: 0,
         left: 0,
@@ -287,7 +283,7 @@ window.addEventListener("load", () => {
 
 // Calculation search box top property on the scroll for the fixed nav
 window.addEventListener("scroll", () => {
-  if (!mobileView_search()) {
+  if (!mobileView_for_search()) {
     // setting timeout before calculating the search box top property otherwise it can take into account transitional values.
     setTimeout(() => {
       searchTop();
@@ -345,7 +341,7 @@ function searchTop() {
   // calulation search box top position
   const searchtop =
     headerHeight - utilityHeight - alertbannerHeight - navigationHeight;
-  if (!mobileView_search() && searchbox) {
+  if (!mobileView_for_search() && searchbox) {
     searchbox.style.top = `${Math.max(searchtop, 55)}px`;
   }
 }
@@ -356,7 +352,7 @@ function ariaHidden() {
     const featuredsearch =
       searchContainer.classList.contains("featured-search");
     if (featuredsearch) {
-      if (mobileView_search()) {
+      if (mobileView_for_search()) {
         searchContainer.setAttribute("aria-hidden", "true");
         document.querySelector("[name='q']").setAttribute("tabindex", "-1");
         document
@@ -375,7 +371,7 @@ function ariaHidden() {
   }
 }
 
-const mobileView_search = () => {
+const mobileView_for_search = () => {
   const mobileElement = document.querySelector(
     ".global-header .mobile-controls"
   );
