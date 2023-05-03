@@ -1,65 +1,56 @@
 /* -----------------------------------------
    SEARCH - /source/js/cagov/search.js
 ----------------------------------------- */
-window.addEventListener("load", function () {
-  var searchContainer = document.querySelector("#head-search"); // contains the search form
-  var searchText = document.querySelector(".search-textfield"); // search textfield, unique
-  var resultsContainer = document.querySelector(".search-results-container"); // /sample/featured-search.html -- maybe not used?
-  var searchInput = document.querySelector(
+window.addEventListener("load", () => {
+  const searchContainer = document.querySelector("#head-search"); // contains the search form
+  const searchText = document.querySelector(".search-textfield"); // search textfield, unique
+  const resultsContainer = document.querySelector(".search-results-container"); // /sample/featured-search.html -- maybe not used?
+  const searchInput = document.querySelector(
     "#head-search #Search .search-textfield"
   ); // search textfield -- same as searchText ?
-  var searchSubmit = document.querySelector(
+  const searchSubmit = document.querySelector(
     "#head-search #Search .gsc-search-button"
   ); // search button, unique
-  var searchReset = document.querySelector(
+  const searchReset = document.querySelector(
     "#head-search #Search .close-search"
   ); // hide search form on subpages, unique
-  if (searchContainer) {
-    var featuredsearch = searchContainer.classList.contains("featured-search"); // only exists on the home page (featured search) layout, and /sample/navigation-full-width-utility.html
-    var searchactive = searchContainer.classList.contains("active"); // "active" is applied on subpages when search form is visible
-  }
-  var searchlabel = document.querySelector("#SearchInput"); // label for textfield
-  var globalHeader = document.querySelector(".global-header"); // header, contains nav, search form, etc, unique
-  var searchbox = document.querySelector(
+
+  const featuredsearch = searchContainer?.classList.contains("featured-search"); // only exists on the home page (featured search) layout, and /sample/navigation-full-width-utility.html
+  const searchactive = searchContainer?.classList.contains("active"); // "active" is applied on subpages when search form is visible
+
+  const searchlabel = document.querySelector("#SearchInput"); // label for textfield
+  /** @type {HTMLElement} */
+  const globalHeader = document.querySelector(".global-header"); // header, contains nav, search form, etc, unique
+  const searchbox = document.querySelector(
     ".search-container:not(.featured-search)"
   ); // only on subpages, unique, same as #head-search
-  var headerHeight = globalHeader.innerHeight; // header height
-  var utility = document.querySelector(".utility-header"); // utility header, unique
-  if (utility) {
-    var utilityHeight = utility.innerHeight;
-  } else {
-    var utilityHeight = 0;
-  }
+  const headerHeight = globalHeader.offsetHeight; // header height
+  /** @type {HTMLElement} */
+  const utility = document.querySelector(".utility-header"); // utility header, unique
+
+  const utilityHeight = utility?.offsetHeight || 0;
+
   // utility header height
-  var alertBanner = document.querySelectorAll(".alert-banner"); // page can have multiple
-  var alertClose = document.querySelectorAll(".alert-banner .close");
-  var alertbannerHeight = 0;
-  var navigationHeight = 0;
-  var fullnav = document.querySelector(".top-level-nav"); // navigation ul tag, unique
-  var navsearch = document.querySelector(".navigation-search"); // contains navigation and search form, unique
+  const alertBanner = document.querySelectorAll(".alert-banner"); // page can have multiple
+  const alertClose = document.querySelectorAll(".alert-banner .close");
+  let alertbannerHeight = 0;
+  let navigationHeight = 0;
+  //const fullnav = document.querySelector(".top-level-nav"); // navigation ul tag, unique
+  const navsearch = document.querySelector(".navigation-search"); // contains navigation and search form, unique
 
-  var body = document.querySelector("body");
-
-  //		not used:
-  //    var $specialIcon =
-  //        // setup the tabs
-  //        $('.search-tabs button').on("click", function (e) {
-  //            $(this).siblings().removeClass('active');
-  //            $(this).tab('show').addClass('active');
-  //            e.preventDefault();
-  //        });
+  const body = document.querySelector("body");
 
   if (searchText) {
     // Unfreeze search width when blured.
-    var unfreezeSearchWidth = function (event) {
+    const unfreezeSearchWidth = () => {
       searchContainer.classList.remove("focus");
       document.querySelector(".search-container").classList.add("focus"); // search-container is unique
     };
     searchText.addEventListener("blur", unfreezeSearchWidth, false);
     searchText.addEventListener("focus", unfreezeSearchWidth, false);
-    var chgHandler = function (event) {
+    const chgHandler = function () {
       if (this.value) {
-        addSearchResults();
+        body.classList.add("active-search");
       }
     };
     searchText.addEventListener("change", chgHandler, false);
@@ -69,7 +60,7 @@ window.addEventListener("load", function () {
 
   if (!featuredsearch) {
     // added aria expaned attr for accessibility
-    var firstLevelBtn = document.querySelector("button.first-level-link");
+    const firstLevelBtn = document.querySelector("button.first-level-link");
     if (firstLevelBtn) {
       document
         .querySelector("button.first-level-link")
@@ -88,7 +79,7 @@ window.addEventListener("load", function () {
       navigationHeight = 82;
     }
     // calulation search box top position
-    var searchtop =
+    const searchtop =
       headerHeight - utilityHeight - alertbannerHeight - navigationHeight;
     if (!mobileView() && searchbox) {
       searchbox.style.top = Math.max(searchtop, 82);
@@ -97,7 +88,7 @@ window.addEventListener("load", function () {
 
   // have the close button remove search results and the applied classes
   //resultsContainer.find('.close').on('click', removeSearchResults);
-  var resContainClose = document.querySelector(
+  const resContainClose = document.querySelector(
     ".search-results-container .close"
   );
   if (resContainClose) {
@@ -105,7 +96,7 @@ window.addEventListener("load", function () {
   }
 
   //searchContainer.find('.close').on('click', removeSearchResults);
-  var hsClose = document.querySelector("#head-search .close");
+  const hsClose = document.querySelector("#head-search .close");
   if (hsClose) {
     hsClose.addEventListener("click", removeSearchResults, false);
   }
@@ -114,7 +105,7 @@ window.addEventListener("load", function () {
   // $('#nav-item-search')
 
   // so instead we are binding to what I'm assuming will aslways be the search
-  var searchButton = document.querySelector("#nav-item-search");
+  const searchButton = document.querySelector("#nav-item-search");
   if (searchButton) {
     document.querySelector("#nav-item-search").addEventListener(
       "click",
@@ -139,9 +130,6 @@ window.addEventListener("load", function () {
             .classList.toggle("active");
         }
 
-        var featuredsearch =
-          searchContainer.classList.contains("featured-search");
-        var searchactive = searchContainer.classList.contains("active");
         // hide Search form if it's not active
         if (searchactive) {
           // added aria expanded attr for accessibility
@@ -176,26 +164,12 @@ window.addEventListener("load", function () {
 
   // Close search when close icon is clicked
   if (searchReset) {
-    searchReset.addEventListener("click", function () {
+    searchReset.addEventListener("click", () => {
       removeSearchResults();
     });
   }
 
   // Helpers
-  function addSearchResults() {
-    body.classList.add("active-search");
-    //searchContainer.addClass('active');
-    //resultsContainer.addClass('visible');
-    // close the the menu when we are search
-    //$('#navigation').addClass('mobile-closed');
-    // hide the ask group as well
-    // $('.ask-group').addClass('fade-out');
-
-    // fire a scroll event to help update headers if need be
-    // $(window).scroll();
-
-    // $.event.trigger('cagov.searchresults.show');
-  }
 
   function removeSearchResults() {
     body.classList.remove("active-search");
@@ -268,24 +242,22 @@ window.addEventListener("load", function () {
   }
 
   // Mobile Search toggle
-  document
-    .querySelector(".toggle-search")
-    .addEventListener("click", function () {
-      document.querySelector(".search-container").classList.toggle("active");
-      var searchactive = searchContainer.classList.contains("active");
-      if (searchactive) {
-        removeSearchAttr();
+  document.querySelector(".toggle-search").addEventListener("click", () => {
+    document.querySelector(".search-container").classList.toggle("active");
 
-        searchText.focus();
-        window.scrollTo({
-          top: searchContainer.getBoundingClientRect().top,
-          left: 0,
-          behavior: "smooth"
-        });
-      } else {
-        setSearchAttr();
-      }
-    });
+    if (searchactive) {
+      removeSearchAttr();
+
+      searchText.focus();
+      window.scrollTo({
+        top: searchContainer.getBoundingClientRect().top,
+        left: 0,
+        behavior: "smooth"
+      });
+    } else {
+      setSearchAttr();
+    }
+  });
 
   // Make Search form tabable if it's featured
   if (searchContainer) {
@@ -298,7 +270,7 @@ window.addEventListener("load", function () {
 
   // on alert close event
   alertClose.forEach(oneClose => {
-    oneClose.addEventListener("click", function () {
+    oneClose.addEventListener("click", () => {
       searchTop();
     });
   });
@@ -307,10 +279,10 @@ window.addEventListener("load", function () {
 });
 
 // Calculation search box top property on the scroll for the fixed nav
-window.addEventListener("scroll", function () {
+window.addEventListener("scroll", () => {
   if (!mobileView()) {
     // setting timeout before calculating the search box top property otherwise it can take into account transitional values.
-    setTimeout(function () {
+    setTimeout(() => {
       searchTop();
     }, 400);
 
@@ -323,33 +295,32 @@ window.addEventListener("scroll", function () {
       if (FeaturedSearch) {
         FeaturedSearch.classList.add("hidden-up");
       }
-    } else {
-      if (FeaturedSearch) {
-        FeaturedSearch.classList.remove("hidden-up");
-      }
+    } else if (FeaturedSearch) {
+      FeaturedSearch.classList.remove("hidden-up");
     }
   }
 });
 
 //  search box top position if browser window is resized
-window.addEventListener("resize", function () {
+window.addEventListener("resize", () => {
   searchTop();
   ariaHidden();
 });
 
 function searchTop() {
-  var globalHeader = document.querySelector(".global-header");
-  var searchbox = document.querySelector(
+  const globalHeader = document.querySelector(".global-header");
+  const searchbox = document.querySelector(
     ".search-container:not(.featured-search)"
   );
-  var headerHeight = globalHeader.innerHeight;
-  var utility = document.querySelector(".utility-header");
-  var utilityHeight = utility.innerHeight;
-  var alertBanner = document.querySelectorAll(".alert-banner");
+  const headerHeight = globalHeader.innerHeight;
+  const utility = document.querySelector(".utility-header");
+  const utilityHeight = utility.innerHeight;
+  const alertBanner = document.querySelectorAll(".alert-banner");
 
-  var alertbannerHeight = 0;
+  let alertbannerHeight = 0;
+  let navigationHeight = 0;
 
-  var navsearch = document.querySelector(".navigation-search");
+  const navsearch = document.querySelector(".navigation-search");
   // taking into account multiple alert banners
   alertBanner.forEach(oneBanner => {
     alertbannerHeight += oneBanner.innerHeight;
@@ -361,7 +332,7 @@ function searchTop() {
     navigationHeight = 0;
   }
   // calulation search box top position
-  var searchtop =
+  const searchtop =
     headerHeight - utilityHeight - alertbannerHeight - navigationHeight;
   if (!mobileView() && searchbox) {
     searchbox.style.top = Math.max(searchtop, 55);
@@ -369,9 +340,10 @@ function searchTop() {
 }
 
 function ariaHidden() {
-  var searchContainer = document.querySelector("#head-search");
+  const searchContainer = document.querySelector("#head-search");
   if (searchContainer) {
-    var featuredsearch = searchContainer.classList.contains("featured-search");
+    const featuredsearch =
+      searchContainer.classList.contains("featured-search");
     if (featuredsearch) {
       if (mobileView()) {
         searchContainer.setAttribute("aria-hidden", "true");
@@ -392,8 +364,10 @@ function ariaHidden() {
   }
 }
 
-var mobileView = function () {
-  var mobileElement = document.querySelector(".global-header .mobile-controls");
+const mobileView = function () {
+  const mobileElement = document.querySelector(
+    ".global-header .mobile-controls"
+  );
 
   if (mobileElement) {
     return getComputedStyle(mobileElement)["display"] !== "none";
