@@ -35,8 +35,8 @@
     "build:sass-sierra-min": "npx sass --no-source-map src/scss/colortheme/sierra-import.scss:_site/css/colortheme-sierra.min.css --style compressed",
     "build:sass-trinity": "npx sass --no-source-map src/scss/colortheme/trinity-import.scss:_site/css/colortheme-trinity.css",
     "build:sass-trinity-min": "npx sass --no-source-map src/scss/colortheme/trinity-import.scss:_site/css/colortheme-trinity.min.css --style compressed",
-    "start": "npm run watch:eleventy & npm run watch:sass & npm run watch:sass-oceanside & npm run watch:js",
-    "build": "npm run build:eleventy & npm run build:js & npm run build:sass & npm run build:sass-min & npm run build:sass-delta & npm run build:sass-delta-min & npm run build:sass-eureka & npm run build:sass-eureka-min & npm run build:sass-mono & npm run build:sass-mono-min & npm run build:sass-oceanside & npm run build:sass-oceanside-min & npm run build:sass-orangecounty & npm run build:sass-orangecounty-min & npm run build:sass-pasorobles & npm run build:sass-pasorobles-min & npm run build:sass-sacramento & npm run build:sass-sacramento-min & npm run build:sass-santabarbara & npm run build:sass-santabarbara-min & npm run build:sass-santacruz & npm run build:sass-santacruz-min & npm run build:sass-shasta & npm run build:sass-shasta-min & npm run build:sass-sierra & npm run build:sass-sierra-min & npm run build:sass-trinity & npm run build:sass-trinity-min"
+    "start": "run-p watch:*",
+    "build": "run-p build:*"
   },
   "keywords": [],
   "author": "",
@@ -45,6 +45,7 @@
     "@11ty/eleventy": "^2.0.0",
     "eslint": "8.33.0",
     "eslint-config-prettier": "^8.8.0",
+    "npm-run-all": "^4.1.5",
     "prettier": "2.8.3",
     "rollup": "^2.52.2",
     "rollup-plugin-import-css": "^2.0.1",
