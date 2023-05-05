@@ -9,7 +9,6 @@
  * Website: https://van11y.net/accessible-accordion/
  * License MIT: https://github.com/nico3333fr/van11y-accessible-accordion-aria/blob/master/LICENSE
  */
-"use strict";
 (() => {
   /**
    * @param {Object} obj
@@ -30,7 +29,6 @@
     return obj;
   };
 
-  /**@type {Object} */
   const loadConfig = () => {
     const CACHE = {};
 
@@ -67,7 +65,6 @@
 
   const DATA_HASH_ID = "data-nav-id";
 
-  /**@type {Object} */
   const pluginConfig = loadConfig();
 
   /** Find an element based on an Id
@@ -81,7 +78,7 @@
 
   /**
    * @param {Element} node
-   * @param {Object} attrs
+   * @param {{}} attrs
    */
   const setAttributes = (node, attrs) => {
     Object.keys(attrs).forEach(attribute => {
@@ -102,7 +99,7 @@
       if (parentElement.hasAttribute(hashId)) {
         return parentElement.getAttribute(hashId);
       } else {
-        parentElement = /** @type {Element} */ (parentElement.parentNode);
+        parentElement = parentElement.parentElement;
       }
     }
     return "";
@@ -124,23 +121,20 @@
       ) {
         return parentElement.getAttribute("id");
       } else {
-        parentElement = /**@type {Element} */ (parentElement.parentNode);
+        parentElement = parentElement.parentElement;
       }
     }
     return "";
   };
 
-  /**@type {Object} */
   const mobileView = () => {
     const mobileElement = document.querySelector(
       ".global-header .mobile-controls"
     );
 
-    if (mobileElement) {
-      return getComputedStyle(mobileElement)["display"] !== "none";
-    } else {
-      return false; // or whatever is supposed to be returned when there is no header
-    }
+    return mobileElement
+      ? getComputedStyle(mobileElement)["display"] !== "none"
+      : false;
   };
 
   /**
@@ -150,7 +144,6 @@
     // Arrow functions do not have their own arguments object.
     // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Arrow_functions
 
-    /**@type {Object} */
     const config =
       pluginArgs.length <= 0 || pluginArgs[0] === undefined
         ? {}
@@ -163,41 +156,39 @@
       node.parentElement.querySelector("a").className = className;
     });
 
-    /**@type {Object} */
-    const CONFIG = Object.assign(
-      {
-        ACCORDION_JS: "main-navigation",
-        ACCORDION_JS_HEADER: className, // Assigning button class to link that has sub-nav
-        ACCORDION_JS_PANEL: "nav-panel",
+    let CONFIG = {
+      ACCORDION_JS: "main-navigation",
+      ACCORDION_JS_HEADER: className, // Assigning button class to link that has sub-nav
+      ACCORDION_JS_PANEL: "nav-panel",
 
-        ACCORDION_DATA_PREFIX_CLASS: "data-nav-prefix-classes",
-        ACCORDION_DATA_OPENED: "data-nav-opened",
-        ACCORDION_DATA_MULTISELECTABLE: "data-nav-multiselectable",
-        ACCORDION_DATA_COOL_SELECTORS: true,
+      ACCORDION_DATA_PREFIX_CLASS: "data-nav-prefix-classes",
+      ACCORDION_DATA_OPENED: "data-nav-opened",
+      ACCORDION_DATA_MULTISELECTABLE: "data-nav-multiselectable",
+      ACCORDION_DATA_COOL_SELECTORS: true,
 
-        ACCORDION_PREFIX_IDS: "nav",
-        ACCORDION_BUTTON_ID: "_tab",
-        ACCORDION_PANEL_ID: "_panel",
+      ACCORDION_PREFIX_IDS: "nav",
+      ACCORDION_BUTTON_ID: "_tab",
+      ACCORDION_PANEL_ID: "_panel",
 
-        ACCORDION_STYLE: "nav",
-        ACCORDION_TITLE_STYLE: "has-sub-btn",
-        ACCORDION_HEADER_STYLE: "nav-header",
-        ACCORDION_PANEL_STYLE: "sub-nav",
+      ACCORDION_STYLE: "nav",
+      ACCORDION_TITLE_STYLE: "has-sub-btn",
+      ACCORDION_HEADER_STYLE: "nav-header",
+      ACCORDION_PANEL_STYLE: "sub-nav",
 
-        ACCORDION_ROLE_TABLIST: "tablist",
-        ACCORDION_ROLE_TAB: "tab",
-        ACCORDION_ROLE_TABPANEL: "tabpanel",
+      ACCORDION_ROLE_TABLIST: "tablist",
+      ACCORDION_ROLE_TAB: "tab",
+      ACCORDION_ROLE_TABPANEL: "tabpanel",
 
-        ATTR_ROLE: "role",
-        ATTR_MULTISELECTABLE: "data-multiselectable",
-        ATTR_EXPANDED: "aria-expanded",
-        ATTR_LABELLEDBY: "aria-labelledby",
-        ATTR_HIDDEN: "aria-hidden",
-        ATTR_CONTROLS: "aria-controls",
-        ATTR_SELECTED: "aria-selected"
-      },
-      config
-    );
+      ATTR_ROLE: "role",
+      ATTR_MULTISELECTABLE: "data-multiselectable",
+      ATTR_EXPANDED: "aria-expanded",
+      ATTR_LABELLEDBY: "aria-labelledby",
+      ATTR_HIDDEN: "aria-hidden",
+      ATTR_CONTROLS: "aria-controls",
+      ATTR_SELECTED: "aria-selected"
+    };
+
+    CONFIG = Object.assign(CONFIG, config);
 
     const HASH_ID = Math.random().toString(32).slice(2, 12);
 
@@ -205,168 +196,164 @@
 
     // Find all accordions inside a container
     /**
-     * @param  {...any} listAccordionArgs
+     * @param  {Element[]} listAccordionArgs
      */
-    const listAccordions = (...listAccordionArgs) => {
+    const listAccordions = listAccordionArgs => {
       // Arrow functions do not have their own arguments object.
       // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Arrow_functions
 
-      /**@type {Object} */
       const node =
-        listAccordionArgs.length <= 0 || listAccordionArgs[0] === undefined
-          ? document
+        listAccordionArgs.length <= 0
+          ? document.documentElement
           : listAccordionArgs[0];
-      return [].slice.call(node.querySelectorAll(`.${CONFIG.ACCORDION_JS}`));
+
+      return /** @type {Element[]} */ (
+        [].slice.call(node.querySelectorAll(`.${CONFIG.ACCORDION_JS}`))
+      );
     };
 
     // Build accordions for a container
     /**
-     * @param {Element} node
+     * @param {...Element} node
      */
-    const attach = node => {
-      listAccordions(node).forEach((/**@type {Element} */ accordion_node) => {
+    const attach = (...node) => {
+      listAccordions(node).forEach(accordion_node => {
         const iLisible = `z${Math.random().toString(32).slice(2, 12)}`; // avoid selector exception when starting by a number
-        const prefixClassName =
-          accordion_node.hasAttribute(CONFIG.ACCORDION_DATA_PREFIX_CLASS) ===
-          true
-            ? `${accordion_node.getAttribute(
-                CONFIG.ACCORDION_DATA_PREFIX_CLASS
-              )}-`
-            : "";
 
-        /**@type {Boolean} */
+        const prefixClassName = accordion_node.hasAttribute(
+          CONFIG.ACCORDION_DATA_PREFIX_CLASS
+        )
+          ? `${accordion_node.getAttribute(
+              CONFIG.ACCORDION_DATA_PREFIX_CLASS
+            )}-`
+          : "";
+
         const coolSelectors = CONFIG.ACCORDION_DATA_COOL_SELECTORS;
         const childClassName = "first-level-btn";
 
         // Init attributes accordion
-        if (!mobileView()) {
-          accordion_node.setAttribute(CONFIG.ATTR_MULTISELECTABLE, "false");
-        } else {
-          accordion_node.setAttribute(CONFIG.ATTR_MULTISELECTABLE, "true");
-        }
+        accordion_node.setAttribute(
+          CONFIG.ATTR_MULTISELECTABLE,
+          mobileView() ? "true" : "false"
+        );
+
         accordion_node.setAttribute(DATA_HASH_ID, HASH_ID);
         accordion_node.classList.add(prefixClassName + CONFIG.ACCORDION_STYLE);
 
+        /** @type {Element[]} */
         const listAccordionsHeader = [].slice.call(
           accordion_node.querySelectorAll(`.${childClassName}`)
         );
-        listAccordionsHeader.forEach(
-          (
-            /**@type {Element} */ header_node,
-            /**@type {Number} */ index_header
-          ) => {
-            let _setAttributes2, _setAttributes3;
+        listAccordionsHeader.forEach((header_node, index_header) => {
+          let _setAttributes2, _setAttributes3;
 
-            // if we do not have cool selectors enabled,
-            // it is not a direct child, we ignore it
-            if (
-              header_node.parentNode !== accordion_node &&
-              coolSelectors === false
-            ) {
-              return;
-            }
-
-            const indexHeaderLisible = index_header + 1;
-            const accordionPanel = header_node.nextElementSibling;
-            const accordionHeaderText = header_node.innerHTML;
-            const accordionButton = document.createElement("BUTTON");
-            const accordionOpenedAttribute =
-              header_node.hasAttribute(CONFIG.ACCORDION_DATA_OPENED) === true
-                ? header_node.getAttribute(CONFIG.ACCORDION_DATA_OPENED)
-                : "";
-
-            // set button with attributes
-            accordionButton.innerHTML = accordionHeaderText;
-            accordionButton.classList.add(
-              childClassName,
-              prefixClassName + CONFIG.ACCORDION_HEADER_STYLE
-            );
-            setAttributes(
-              accordionButton,
-              ((_setAttributes2 = {}),
-              _defineProperty(
-                _setAttributes2,
-                "id",
-                CONFIG.ACCORDION_PREFIX_IDS +
-                  iLisible +
-                  CONFIG.ACCORDION_BUTTON_ID +
-                  indexHeaderLisible
-              ),
-              _defineProperty(
-                _setAttributes2,
-                CONFIG.ATTR_CONTROLS,
-                CONFIG.ACCORDION_PREFIX_IDS +
-                  iLisible +
-                  CONFIG.ACCORDION_PANEL_ID +
-                  indexHeaderLisible
-              ),
-              _defineProperty(_setAttributes2, DATA_HASH_ID, HASH_ID),
-              _setAttributes2)
-            );
-
-            // place button
-            header_node.innerHTML = "";
-            header_node.appendChild(accordionButton);
-
-            // set title with attributes
-            header_node.classList.add(
-              prefixClassName + CONFIG.ACCORDION_TITLE_STYLE
-            );
-            header_node.classList.remove(childClassName);
-
-            // set attributes to panels
-            accordionPanel.classList.add(
-              prefixClassName + CONFIG.ACCORDION_PANEL_STYLE
-            );
-            setAttributes(
-              accordionPanel,
-              ((_setAttributes3 = {}),
-              _defineProperty(
-                _setAttributes3,
-                CONFIG.ATTR_ROLE,
-                CONFIG.ACCORDION_ROLE_TABPANEL
-              ),
-              _defineProperty(
-                _setAttributes3,
-                CONFIG.ATTR_LABELLEDBY,
-                CONFIG.ACCORDION_PREFIX_IDS +
-                  iLisible +
-                  CONFIG.ACCORDION_BUTTON_ID +
-                  indexHeaderLisible
-              ),
-              _defineProperty(
-                _setAttributes3,
-                "id",
-                CONFIG.ACCORDION_PREFIX_IDS +
-                  iLisible +
-                  CONFIG.ACCORDION_PANEL_ID +
-                  indexHeaderLisible
-              ),
-              _defineProperty(_setAttributes3, DATA_HASH_ID, HASH_ID),
-              _setAttributes3)
-            );
-
-            if (accordionOpenedAttribute === "true") {
-              accordionButton.setAttribute(CONFIG.ATTR_EXPANDED, "true");
-              header_node.removeAttribute(CONFIG.ACCORDION_DATA_OPENED);
-              accordionPanel.setAttribute(CONFIG.ATTR_HIDDEN, "false");
-              accordionPanel
-                .querySelectorAll(".second-level-link")
-                .forEach(item => {
-                  item.removeAttribute("tabindex");
-                });
-            } else {
-              accordionButton.setAttribute(CONFIG.ATTR_EXPANDED, "false");
-              accordionPanel.setAttribute(CONFIG.ATTR_HIDDEN, "true");
-              // making sure all second level links are not tabable
-              accordionPanel
-                .querySelectorAll(".second-level-link")
-                .forEach(item => {
-                  item.setAttribute("tabindex", "-1");
-                });
-            }
+          // if we do not have cool selectors enabled,
+          // it is not a direct child, we ignore it
+          if (header_node.parentNode !== accordion_node && !coolSelectors) {
+            return;
           }
-        );
+
+          const indexHeaderLisible = index_header + 1;
+          const accordionPanel = header_node.nextElementSibling;
+          const accordionHeaderText = header_node.innerHTML;
+          const accordionButton = document.createElement("BUTTON");
+          const accordionOpenedAttribute = header_node.hasAttribute(
+            CONFIG.ACCORDION_DATA_OPENED
+          )
+            ? header_node.getAttribute(CONFIG.ACCORDION_DATA_OPENED)
+            : "";
+
+          // set button with attributes
+          accordionButton.innerHTML = accordionHeaderText;
+          accordionButton.classList.add(
+            childClassName,
+            prefixClassName + CONFIG.ACCORDION_HEADER_STYLE
+          );
+          setAttributes(
+            accordionButton,
+            ((_setAttributes2 = {}),
+            _defineProperty(
+              _setAttributes2,
+              "id",
+              CONFIG.ACCORDION_PREFIX_IDS +
+                iLisible +
+                CONFIG.ACCORDION_BUTTON_ID +
+                indexHeaderLisible
+            ),
+            _defineProperty(
+              _setAttributes2,
+              CONFIG.ATTR_CONTROLS,
+              CONFIG.ACCORDION_PREFIX_IDS +
+                iLisible +
+                CONFIG.ACCORDION_PANEL_ID +
+                indexHeaderLisible
+            ),
+            _defineProperty(_setAttributes2, DATA_HASH_ID, HASH_ID),
+            _setAttributes2)
+          );
+
+          // place button
+          header_node.innerHTML = "";
+          header_node.appendChild(accordionButton);
+
+          // set title with attributes
+          header_node.classList.add(
+            prefixClassName + CONFIG.ACCORDION_TITLE_STYLE
+          );
+          header_node.classList.remove(childClassName);
+
+          // set attributes to panels
+          accordionPanel.classList.add(
+            prefixClassName + CONFIG.ACCORDION_PANEL_STYLE
+          );
+          setAttributes(
+            accordionPanel,
+            ((_setAttributes3 = {}),
+            _defineProperty(
+              _setAttributes3,
+              CONFIG.ATTR_ROLE,
+              CONFIG.ACCORDION_ROLE_TABPANEL
+            ),
+            _defineProperty(
+              _setAttributes3,
+              CONFIG.ATTR_LABELLEDBY,
+              CONFIG.ACCORDION_PREFIX_IDS +
+                iLisible +
+                CONFIG.ACCORDION_BUTTON_ID +
+                indexHeaderLisible
+            ),
+            _defineProperty(
+              _setAttributes3,
+              "id",
+              CONFIG.ACCORDION_PREFIX_IDS +
+                iLisible +
+                CONFIG.ACCORDION_PANEL_ID +
+                indexHeaderLisible
+            ),
+            _defineProperty(_setAttributes3, DATA_HASH_ID, HASH_ID),
+            _setAttributes3)
+          );
+
+          if (accordionOpenedAttribute === "true") {
+            accordionButton.setAttribute(CONFIG.ATTR_EXPANDED, "true");
+            header_node.removeAttribute(CONFIG.ACCORDION_DATA_OPENED);
+            accordionPanel.setAttribute(CONFIG.ATTR_HIDDEN, "false");
+            accordionPanel
+              .querySelectorAll(".second-level-link")
+              .forEach(item => {
+                item.removeAttribute("tabindex");
+              });
+          } else {
+            accordionButton.setAttribute(CONFIG.ATTR_EXPANDED, "false");
+            accordionPanel.setAttribute(CONFIG.ATTR_HIDDEN, "true");
+            // making sure all second level links are not tabable
+            accordionPanel
+              .querySelectorAll(".second-level-link")
+              .forEach(item => {
+                item.setAttribute("tabindex", "-1");
+              });
+          }
+        });
       });
     };
 
@@ -375,7 +362,6 @@
     };
   };
 
-  /**@type {Object} */
   const main = function main() {
     /* listeners for all configs */
     ["click", "keydown", "focus"].forEach(eventName => {
@@ -409,14 +395,11 @@
                   const coolSelectors =
                     CONFIG.ACCORDION_DATA_COOL_SELECTORS === true;
 
-                  /**@type {Array.<Element>} */
+                  /**@type {Element[]} */
                   let accordionAllHeaders = [].slice.call(
-                    /**@type {Element} */ (accordionContainer).querySelectorAll(
-                      ".first-level-btn"
-                    )
+                    accordionContainer.querySelectorAll(".first-level-btn")
                   );
 
-                  /**@type {Element} */
                   const destination = findById(
                     buttonTag.getAttribute(CONFIG.ATTR_CONTROLS),
                     hashId
@@ -427,7 +410,7 @@
 
                   if (!coolSelectors) {
                     accordionAllHeaders = accordionAllHeaders.filter(
-                      (/**@type {Element} */ element) =>
+                      element =>
                         element.parentNode.parentNode === accordionContainer
                     );
                   }
@@ -452,31 +435,24 @@
                   }
 
                   if (!mobileView()) {
-                    accordionAllHeaders.forEach(
-                      (/**@type {Element} */ header_node) => {
-                        //Close all the other panels
-                        /**@type {Element} */
-                        const destinationPanel = findById(
-                          header_node.getAttribute(CONFIG.ATTR_CONTROLS),
-                          hashId
-                        );
+                    accordionAllHeaders.forEach(header_node => {
+                      //Close all the other panels
 
-                        if (header_node !== buttonTag) {
-                          header_node.setAttribute(
-                            CONFIG.ATTR_EXPANDED,
-                            "false"
-                          );
-                          destinationPanel.classList.remove("open");
+                      const destinationPanel = findById(
+                        header_node.getAttribute(CONFIG.ATTR_CONTROLS),
+                        hashId
+                      );
 
-                          //Added fix to make closed panels non-tabbable
-                          destinationPanel
-                            .querySelectorAll(".second-level-link")
-                            .forEach(item =>
-                              item.setAttribute("tabindex", "-1")
-                            );
-                        }
+                      if (header_node !== buttonTag) {
+                        header_node.setAttribute(CONFIG.ATTR_EXPANDED, "false");
+                        destinationPanel.classList.remove("open");
+
+                        //Added fix to make closed panels non-tabbable
+                        destinationPanel
+                          .querySelectorAll(".second-level-link")
+                          .forEach(item => item.setAttribute("tabindex", "-1"));
                       }
-                    );
+                    });
                   }
 
                   setTimeout(() => {
@@ -538,10 +514,9 @@
     }
   }
 
-  /**
-   * @param {Object} callbackFunction
-   */
-  const isDocumentReady = callbackFunction => {
+  const isDocumentReady = (
+    /** @type {{ (): void; (this: Document, ev: Event): any; }} */ callbackFunction
+  ) => {
     if (document.readyState != "loading") callbackFunction();
     else document.addEventListener("DOMContentLoaded", callbackFunction);
   };
@@ -572,18 +547,20 @@
     const navItemsJS = document.querySelectorAll(".main-navigation .nav-item");
 
     const navItemsWithSubsJS = /** @type {Element[]} */ (
-      [].slice.call(document.querySelectorAll(".main-navigation .nav-item"))
+      [].slice.call(navItemsJS)
     ).filter(x => x.querySelector(".sub-nav"));
 
     // HIGHLIGHT APPROPRIATE NAV ITEM
-    /**@type RegExp */
-    let reMainNav;
+
     /**@type {String} */
     let defaultActiveLink;
-    if (typeof defaultActiveLink !== "undefined") {
-      //Globally set var
-      reMainNav = new RegExp(`^${defaultActiveLink}$`, "i"); // Regex for finding the index of the default main list item
-    }
+    //TODO: Why is this always blank?  History, we used to ask them to put a var like this in the root of their page to set default menu.
+
+    //Globally set var
+    const reMainNav =
+      typeof defaultActiveLink !== "undefined"
+        ? new RegExp(`^${defaultActiveLink}$`, "i")
+        : null; // Regex for finding the index of the default main list item
 
     navItemsJS.forEach(navItem => {
       const link = navItem.querySelector(".first-level-btn, .first-level-link");
@@ -637,12 +614,7 @@
         const toggleSubNav = document.createElement("div");
         toggleSubNav.classList.add("ca-gov-icon-caret-right", "rotate");
         toggleSubNav.setAttribute("aria-hidden", "true");
-
-        if (mobileView()) {
-          toggleSubNav.style.display = "block";
-        } else {
-          toggleSubNav.style.display = "none";
-        }
+        toggleSubNav.style.display = mobileView() ? "block" : "none";
 
         el.appendChild(toggleSubNav);
         el.appendChild(carrot);
@@ -688,16 +660,14 @@
 
   // Add bold to current subnav link
   const addActive = () => {
+    /** @type {NodeListOf<HTMLAnchorElement>} */
     const activeLink = document.querySelectorAll(".second-level-link"),
       len = activeLink.length,
       full_path = location.href.split("#")[0]; //Ignore hashes?
 
     // Loop through each link.
     for (let i = 0; i < len; i++) {
-      if (
-        /** @type {HTMLAnchorElement} */ (activeLink[i]).href.split("#")[0] ==
-        full_path
-      ) {
+      if (activeLink[i].href.split("#")[0] == full_path) {
         activeLink[i].className += " bold";
       }
     }
