@@ -118,17 +118,6 @@
         function (e) {
           e.preventDefault();
           searchText.focus();
-          // mobile
-          if (
-            mobileView_for_search() &&
-            !searchContainer.classList.contains("active")
-          ) {
-            window.scrollTo({
-              top: searchContainer.getBoundingClientRect().top,
-              left: 0,
-              behavior: "smooth"
-            });
-          }
 
           if (
             !featuredsearch &&
@@ -151,11 +140,6 @@
           }
 
           if (featuredsearch) removeSearchAttr();
-
-          if (mobileView_for_search() && featuredsearch) {
-            searchContainer.classList.toggle("active");
-            ariaHidden();
-          }
 
           // let the user know the input box is where they should search
           searchContainer.classList.add("play-animation");
@@ -200,11 +184,6 @@
       //        document.dispatchEvent('cagov.searchresults.hide'); // ???
 
       if (mobileView_for_search()) {
-        window.scrollTo({
-          top: 0,
-          left: 0,
-          behavior: "smooth"
-        });
         ariaHidden();
       }
     }
@@ -244,24 +223,6 @@
 
       if (searchContainer) searchContainer.setAttribute("aria-hidden", "true");
     }
-
-    // Mobile Search toggle
-    document.querySelector(".toggle-search").addEventListener("click", () => {
-      document.querySelector(".search-container").classList.toggle("active");
-
-      if (searchactive) {
-        removeSearchAttr();
-
-        searchText.focus();
-        window.scrollTo({
-          top: searchContainer.getBoundingClientRect().top,
-          left: 0,
-          behavior: "smooth"
-        });
-      } else {
-        setSearchAttr();
-      }
-    });
 
     // Make Search form tabable if it's featured
     if (searchContainer) {
@@ -319,19 +280,11 @@
   function ariaHidden() {
     if (searchContainer) {
       if (featuredsearch) {
-        if (mobileView_for_search()) {
-          searchContainer.setAttribute("aria-hidden", "true");
-          document.querySelector("[name='q']").setAttribute("tabindex", "-1");
-          document
-            .querySelector(".gsc-search-button")
-            .setAttribute("tabindex", "-1");
-        } else {
-          searchContainer.removeAttribute("aria-hidden");
-          document.querySelector("[name='q']").removeAttribute("tabindex");
-          document
-            .querySelector(".gsc-search-button")
-            .removeAttribute("tabindex");
-        }
+        searchContainer.removeAttribute("aria-hidden");
+        document.querySelector("[name='q']").removeAttribute("tabindex");
+        document
+          .querySelector(".gsc-search-button")
+          .removeAttribute("tabindex");
       } else {
         searchContainer.setAttribute("aria-hidden", "true");
       }

@@ -10,13 +10,6 @@
   min-height: 42px; // beta 6.0 addition
   transition: all 0.3s ease;
 
-  @media (max-width: $screen-xs-max) {
-    min-height: 40px; // beta 6.0 addition
-    .container {
-      max-width: 100%;
-    }
-  }
-
   .half {
     @include make-sm-column(6);
     padding-top: 0; // beta 6.0 addition
@@ -88,16 +81,6 @@
     }
 
     @include text-right();
-    @media (max-width: $screen-xs-max) {
-      // @include font-size(1); // font size
-      font-size: $font-size-base;
-      @include text-right(); // beta 5.0 addition
-      padding-right: 0;
-    }
-
-    @media (min-width: $screen-xs-max) and (max-width: $screen-sm-max) {
-      padding-right: 0;
-    }
 
     @media (min-width: $screen-md-min) {
       padding-right: 5px;
@@ -110,18 +93,6 @@
     display: inline-block;
     text-decoration: none;
     padding-right: 4px;
-  }
-
-  @media (max-width: $screen-xs-max) {
-    .social-media-links {
-      li {
-        padding: 0 5px;
-      }
-    }
-
-    .header-cagov-logo img {
-      left: 10px;
-    }
   }
 
   .located-city-name {
@@ -171,11 +142,6 @@
           margin-top: 6px;
         }
 
-        @media (max-width: $screen-xs-max) {
-          margin-right: 0.4rem;
-          margin-left: 0;
-        }
-
         a {
           margin: 0;
           padding-top: 0;
@@ -196,16 +162,6 @@
 
       a {
         margin: 0px 10px 0 10px;
-
-        @media (max-width: $screen-xs-max) {
-          margin: 4px 4px 0 4px;
-        }
-      }
-
-      @media (max-width: $screen-xs-max) {
-        [class^="ca-gov-icon-"] {
-          font-size: 1rem;
-        }
       }
     }
 
@@ -220,11 +176,6 @@
       a {
         margin: 0 10px 0 10px;
         font-size: 0.95rem;
-
-        @media (max-width: $screen-xs-max) {
-          margin: 0 4px 0 4px;
-          padding: 0;
-        }
       }
 
       button {
@@ -237,5 +188,14 @@
         }
       }
     }
+  }
+}
+/* Hide utilities in mobile */
+@media (max-width: $screen-sm-max) {
+  .utility-header {
+    display: none;
+  }
+  button[aria-controls="siteSettings"] {
+    display: none;
   }
 }

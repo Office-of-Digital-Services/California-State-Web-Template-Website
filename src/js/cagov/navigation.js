@@ -509,7 +509,6 @@
         .querySelectorAll(".rotate")
         .forEach((/**@type {HTMLElement} */ el) => (el.style.display = "none"));
       const nav = document.querySelector("#navigation");
-      nav.classList.remove("collapse");
       nav.removeAttribute("aria-hidden");
     }
   }
@@ -535,10 +534,6 @@
       newDiv.classList.add("has-sub-btn");
       item.replaceWith(newDiv);
     });
-
-    if (mobileView()) {
-      navigationJS.classList.add("collapse");
-    }
 
     const singleLevel = navigationJS.classList.contains("singleLevel");
     const setActiveLinkByFolder =
@@ -641,7 +636,6 @@
 
       //Collapse the nav when narrow
       const nav = document.querySelector("#navigation");
-      nav.classList.add("collapse");
       nav.classList.remove("show");
       nav.setAttribute("aria-hidden", "true");
 

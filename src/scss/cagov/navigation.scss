@@ -32,8 +32,21 @@
   position: relative;
   padding-left: 0;
   padding-right: 0;
+  z-index: 26;
+
   @media (max-width: $screen-sm-max) {
     border-bottom: 1px solid $gray-200;
+    position: fixed;
+    top: 0;
+    right: -100%;
+    max-width: 85%;
+    margin-right: 0;
+    padding: 0;
+    transition: right 0.5s ease-in-out;
+    &.visible {
+      opacity: 1;
+      right: 0;
+    }
   }
 }
 
@@ -139,6 +152,11 @@
     .carrot {
       font-size: 1rem;
     }
+  }
+
+  // hide mobile logo in desktop view
+  .logo-nav {
+    display: none;
   }
 }
 
@@ -268,6 +286,8 @@
 // --------------------------------------------------
 // 992px
 @media (min-width: $screen-md-min) {
+  // show mobile logo in desktop view
+
   .main-navigation {
     z-index: 25;
     // handle the edge case when their is no nav links
@@ -391,11 +411,6 @@
           }
         }
       }
-
-      #nav-item-search {
-        button.first-level-link {
-        }
-      }
     }
 
     .main-navigation {
@@ -416,6 +431,9 @@
 // 991px
 
 @media (max-width: $screen-sm-max) {
+  .logo-nav {
+    display: block;
+  }
   #navigation {
     clear: both;
     width: 100%;
@@ -438,9 +456,6 @@
   }
 
   .full-width-nav {
-    max-width: 100%;
-    padding: 0;
-
     #nav-item-search button.first-level-link {
       background: none;
       border: none;
@@ -531,23 +546,6 @@
     }
   }
 
-  .oc-inner {
-    // Dynamically added wrapper div
-    position: relative;
-    width: 100%;
-    height: 100%;
-    left: 0;
-    margin-left: 0;
-    -webkit-transition: margin-left 0.5s ease;
-    -moz-transition: margin-left 0.5s ease;
-    -o-transition: margin-left 0.5s ease;
-    transition: margin-left 0.5s ease;
-
-    .oc-menu-open & {
-      margin-left: 70%;
-    }
-  }
-
   .global-header .navigation-search.oc-menu {
     position: absolute;
     width: 70%;
@@ -562,38 +560,6 @@
   // .header-decoration is placed on top of regular page, produces dropshadow, prevents clicks on main page, and when clicked closes the menu.
   .header-decoration {
     display: none; // hide in mobile view by default
-  }
-
-  .oc-outer .header-decoration {
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    height: auto;
-    width: 100%;
-    background: none;
-    -webkit-box-shadow: -6px -1px 30px 0px rgba(5, 5, 5, 0.5);
-    -moz-box-shadow: -6px -1px 30px 0px rgba(5, 5, 5, 0.5);
-    box-shadow: -6px -1px 30px 0px rgba(5, 5, 5, 0.5);
-    cursor: alias;
-  }
-
-  .oc-outer.oc-menu-open .header-decoration {
-    display: block;
-  }
-
-  .navigation-search.oc-menu {
-    padding-top: 60px;
-  }
-
-  .oc-menu .mobile-control.toggle-search {
-    display: none;
-  }
-
-  .oc-menu .mobile-control.cagov-logo {
-    display: block;
-    line-height: 1;
-    position: absolute;
-    top: 5px;
   }
 }
 // END MOBILE NAVIGATION

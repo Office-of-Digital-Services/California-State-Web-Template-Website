@@ -1,0 +1,38 @@
+/* -----------------------------------------
+   SITE HEADER
+   /source/scss/colortheme/cs-site-header.scss
+----------------------------------------- */
+@media (max-width: $screen-sm-max) {
+  header .section-default {
+    background-color: $color-s1 !important;
+  }
+}
+
+//
+// MOBILE CONTROLS
+// --------------------------------------------------
+
+.toggle-menu span {
+  background-color: $color-p2;
+}
+.mobile-controls {
+  background: $white;
+}
+.mobile-control {
+  color: $mobile-controls;
+
+  a {
+    color: $mobile-controls;
+    text-decoration: none;
+  }
+
+  &.toggle-sub-nav {
+    color: $color-p2;
+    background-color: darken($sub-nav-bg, 2%);
+    &:hover,
+    &:focus {
+      outline: none;
+      background-color: $sub-nav-bg; // should be the same as sub-nav background
+    }
+  }
+}
