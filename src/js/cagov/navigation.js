@@ -619,28 +619,16 @@
 
   // Do Navigation Reset function on window resize uless it's mobile device.
   window.addEventListener("resize", () => {
-    if (
-      navigator.userAgent.match(/Android/i) ||
-      navigator.userAgent.match(/webOS/i) ||
-      navigator.userAgent.match(/iPhone/i) ||
-      navigator.userAgent.match(/iPad/i) ||
-      navigator.userAgent.match(/iPod/i) ||
-      navigator.userAgent.match(/BlackBerry/i) ||
-      navigator.userAgent.match(/Windows Phone/i)
-    ) {
-      return false;
-    } else {
-      document
-        .querySelector(".toggle-menu")
-        .setAttribute("aria-expanded", "false");
+    document
+      .querySelector(".toggle-menu")
+      .setAttribute("aria-expanded", "false");
 
-      //Collapse the nav when narrow
-      const nav = document.querySelector("#navigation");
-      nav.classList.remove("show");
-      nav.setAttribute("aria-hidden", "true");
+    //Collapse the nav when narrow
+    const nav = document.querySelector("#navigation");
+    nav.classList.remove("show");
+    nav.setAttribute("aria-hidden", "true");
 
-      NavReset();
-    }
+    NavReset();
   });
 
   // Reset on escape

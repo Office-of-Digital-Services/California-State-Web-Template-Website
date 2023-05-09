@@ -7,6 +7,92 @@
 // MOBILE
 // --------------------------------------------------
 // Hamburger menu to X transition
+header {
+  &::after {
+    content: "";
+    position: absolute;
+    width: 100vh;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.48);
+    top: 0;
+    left: 0;
+    opacity: 0;
+    visibility: hidden;
+    -webkit-transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+    transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+  }
+}
+header.nav-overlay {
+  &::after {
+    opacity: 1;
+    visibility: visible;
+  }
+}
+
+.nav-drawer {
+  display: flex;
+  padding: 0.5rem 1rem 1rem 1rem;
+  .toggle-menu {
+    margin-top: 0;
+    width: 2.75rem;
+    height: 2.75rem;
+    span {
+      background-color: $white;
+      width: 30px;
+      &:nth-child(2),
+      &:nth-child(3) {
+        top: 20px;
+      }
+    }
+    background-color: transparent;
+    border: none;
+
+    &[aria-expanded="false"] {
+      span {
+        &:nth-child(1) {
+          top: 15px;
+        }
+        &:nth-child(2),
+        &:nth-child(3) {
+          top: 25px;
+        }
+        &:nth-child(4) {
+          top: 35px;
+        }
+      }
+    }
+  }
+  @media (min-width: $screen-md-min) {
+    display: none;
+  }
+}
+.navigation-search .settings-links {
+  padding: 1rem;
+  a {
+    position: relative;
+    color: $white;
+    margin-left: 1rem;
+    margin-right: 1rem;
+    font-size: 1rem;
+  }
+  a:before {
+    content: "";
+    color: $white;
+    border: none;
+    margin: 0 0.75rem;
+    font-size: 1.125rem;
+    font-weight: 200;
+    position: absolute;
+    border-left: 1px solid $gray-200;
+    height: 70%;
+    top: 5px;
+    left: -1.95rem;
+  }
+  a:first-child:before {
+    display: none;
+  }
+}
+
 .toggle-menu {
   padding: 16px 8px;
   display: flex;
@@ -28,6 +114,7 @@
   min-width: 2.5rem;
   min-height: 2.5rem;
   margin-top: 1.3rem;
+  margin-left: auto;
 
   // Overvriting sr-only class to avoid strucural changes in mobile controls
 

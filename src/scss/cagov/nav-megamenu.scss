@@ -181,11 +181,13 @@ a.second-level-link {
   }
   // 991px
   @media (max-width: $screen-sm-max) {
-    &:first-child {
-      margin-top: 2px !important;
-    }
     // to make outline visible
-    padding: 10px 15px 10px 20px !important;
+    padding: 0.5rem 1rem 0.75rem 2rem !important;
+    color: $white;
+    &:hover,
+    &:focus {
+      color: $white;
+    }
   }
 }
 
@@ -397,7 +399,7 @@ a.second-level-link {
     display: block;
   }
   .second-level-nav > li {
-    border-right: 0px;
+    border: none;
   }
 }
 

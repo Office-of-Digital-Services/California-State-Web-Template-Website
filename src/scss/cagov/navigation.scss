@@ -35,7 +35,6 @@
   z-index: 26;
 
   @media (max-width: $screen-sm-max) {
-    border-bottom: 1px solid $gray-200;
     position: fixed;
     top: 0;
     right: -100%;
@@ -43,6 +42,8 @@
     margin-right: 0;
     padding: 0;
     transition: right 0.5s ease-in-out;
+    height: 100%;
+    overflow-y: auto;
     &.visible {
       opacity: 1;
       right: 0;
@@ -191,7 +192,7 @@
         color: $black;
         &:hover,
         &:focus {
-          color: $gray-800 !important;
+          color: $gray-800;
           background-color: $gray-100;
         }
         &::before {
@@ -475,21 +476,18 @@
   }
   // For standard mobile menu and off canvas menu
   .top-level-nav .nav-item {
-    background-color: $white;
     margin-top: 0;
-    border-top: 1px solid $gray-200;
+    border-bottom: 1px solid $gray-200;
 
     &:first-child {
-      border-top: none;
+      border-top: 1px solid $gray-200;
     }
 
     .first-level-link,
     .first-level-btn {
-      &:first-child {
-        margin-top: 2px;
-      }
+      color: $white;
       display: block;
-      padding: 20px 0 20px 15px;
+      padding: 1rem 0 1rem 1rem;
       margin-right: 2px;
       margin-left: 2px;
       text-decoration: none;
@@ -546,17 +544,6 @@
     }
   }
 
-  .global-header .navigation-search.oc-menu {
-    position: absolute;
-    width: 70%;
-    //height: 100%;
-    left: -70%;
-    top: 0;
-    -webkit-transition: left 0.5s ease;
-    transition: left 0.5s ease;
-    overflow-y: auto; // allow menu to scroll if dynamic height reaches beyond page height
-    overflow-x: hidden;
-  }
   // .header-decoration is placed on top of regular page, produces dropshadow, prevents clicks on main page, and when clicked closes the menu.
   .header-decoration {
     display: none; // hide in mobile view by default
@@ -790,15 +777,16 @@
     top: 0;
     right: 0;
     font-size: 1.5rem !important;
-    line-height: 4rem !important;
-    width: 64px !important;
-    height: 64px !important;
+    line-height: 3.2rem !important;
+    width: 55px !important;
+    height: 55px !important;
     text-align: center;
     cursor: pointer;
     border: none;
     -moz-transition: all 0.2s ease !important;
     -webkit-transition: all 0.2s ease !important;
     transition: all 0.2s ease !important;
+    color: $white !important;
   }
 
   .first-level-btn[aria-expanded="true"] .rotate {
@@ -806,9 +794,9 @@
     -webkit-transform: rotate(90deg) !important;
     transform: rotate(90deg) !important;
     position: absolute;
-    width: 64px !important;
-    height: 64px !important;
-    line-height: 4rem !important;
+    width: 55px !important;
+    height: 55px !important;
+    line-height: 3rem !important;
     font-size: 1.5rem !important;
     top: 0;
     right: 0;
@@ -816,5 +804,6 @@
     -moz-transition: all 0.2s ease !important;
     -webkit-transition: all 0.2s ease !important;
     transition: all 0.2s ease !important;
+    color: $white !important;
   }
 }

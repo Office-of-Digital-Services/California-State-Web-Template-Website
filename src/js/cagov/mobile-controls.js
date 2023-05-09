@@ -12,6 +12,7 @@
   const footerSite = document.querySelector(".site-footer");
   const siteSettings = document.querySelector(".site-settings");
   const headerutility = document.querySelector(".utility-header");
+  const regularHeader = document.querySelector("header");
   const headerutilityLinksCont = document.querySelector(
     ".utility-header .container .flex-row"
   );
@@ -19,9 +20,7 @@
     ".mobile-controls .main-nav-icons"
   );
   const siteBranding = document.querySelector(".branding");
-  const logoContainer = document.querySelector(".header-organization-banner");
   const utilityLinks = document.querySelector(".settings-links");
-  let navDupLogo;
   let mobileControlsDisplay = getComputedStyle(mobileCntls).display;
   let allNavLinks;
   let allUtilityLinks;
@@ -44,13 +43,6 @@
   const mobileItemsCont = document.createElement("div");
   mobileItemsCont.setAttribute("class", "nav-drawer");
 
-  function duplicateLogo() {
-    const logoDup = document.createElement("div");
-    logoDup.setAttribute("class", "logo-nav");
-    logoDup.innerHTML = logoContainer.innerHTML;
-    return logoDup;
-  }
-
   // move mobile navigation toggle button back into mobile controls container
   function moveNavToggleButtonToMobileControlsContainer() {
     setTimeout(() => {
@@ -63,9 +55,7 @@
   window.onload = function () {
     // move duplicated logo to navigation drawer section
     navSearchCont?.prepend(mobileItemsCont);
-    mobileItemsCont?.prepend(duplicateLogo());
-    // assign logo link to nav the duplicate logo variable
-    navDupLogo = document.querySelector(".logo-nav a");
+
     // if mobile
     if (mobileControlsDisplay == "block") {
       mobileNavDefault();
@@ -96,7 +86,6 @@
       allBodyLinks?.forEach(el => {
         el.setAttribute("tabindex", "-1");
       });
-      navDupLogo?.removeAttribute("tabindex");
       // Hide all the website areas (add aria-hidden)
       mainCont?.setAttribute("aria-hidden", "true");
       footerGlobal?.setAttribute("aria-hidden", "true");
@@ -104,7 +93,7 @@
       siteSettings?.setAttribute("aria-hidden", "true");
       headerutility?.setAttribute("aria-hidden", "true");
       siteBranding?.setAttribute("aria-hidden", "true");
-
+      regularHeader?.classList.add("nav-overlay");
       // Close
     } else {
       navButton.setAttribute("aria-expanded", "false");
@@ -120,7 +109,6 @@
       allBodyLinks?.forEach(el => {
         el.removeAttribute("tabindex");
       });
-      navDupLogo?.setAttribute("tabindex", "-1");
       // remove aria hidden for the rest of the site
       mainCont?.removeAttribute("aria-hidden");
       footerGlobal?.removeAttribute("aria-hidden");
@@ -128,6 +116,7 @@
       siteSettings?.removeAttribute("aria-hidden");
       headerutility?.removeAttribute("aria-hidden");
       siteBranding?.removeAttribute("aria-hidden");
+      regularHeader?.classList.remove("nav-overlay");
       moveNavToggleButtonToMobileControlsContainer();
     }
   }
@@ -150,7 +139,6 @@
     allBodyLinks?.forEach(el => {
       el.removeAttribute("tabindex");
     });
-    navDupLogo?.setAttribute("tabindex", "-1");
     // remove aria hidden for the rest of the site
     mainCont?.removeAttribute("aria-hidden");
     footerGlobal?.removeAttribute("aria-hidden");
@@ -158,6 +146,7 @@
     siteSettings?.removeAttribute("aria-hidden");
     headerutility?.removeAttribute("aria-hidden");
     siteBranding?.removeAttribute("aria-hidden");
+    regularHeader?.classList.remove("nav-overlay");
   }
 
   // Default state for desktop
@@ -177,7 +166,6 @@
     allBodyLinks?.forEach(el => {
       el.removeAttribute("tabindex");
     });
-    navDupLogo?.removeAttribute("tabindex");
     // remove aria hidden for the rest of the site
     mainCont?.removeAttribute("aria-hidden");
     footerGlobal?.removeAttribute("aria-hidden");
@@ -185,7 +173,7 @@
     siteSettings?.removeAttribute("aria-hidden");
     headerutility?.removeAttribute("aria-hidden");
     siteBranding?.removeAttribute("aria-hidden");
-    // move logo back to branding section
+    regularHeader?.classList.remove("nav-overlay");
   }
 
   // Button Click event
