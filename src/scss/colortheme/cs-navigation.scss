@@ -208,6 +208,26 @@ nav-item-search {
   }
 }
 
+@media (max-width: $screen-sm-max) {
+  .nav-item {
+    &.active {
+      .first-level-btn {
+        background-color: $mobile-drawer-active !important;
+        color: $white !important;
+        &:hover,
+        &:focus {
+          background-color: $mobile-drawer !important;
+          color: $white !important;
+        }
+        &::before,
+        &::after {
+          border-left: none !important;
+        }
+      }
+    }
+  }
+}
+
 .has-sub .rotate {
   color: $color-p2;
 }
