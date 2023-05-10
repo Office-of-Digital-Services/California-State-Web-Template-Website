@@ -154,7 +154,7 @@
     moveNavToggleButtonToMobileControlsContainer();
     headerutilityLinksCont?.append(utilityLinks);
     bodyCont?.classList.remove("overflow-hidden");
-    navSearchCont?.classList.add("visible");
+    navSearchCont?.classList.remove("visible");
     navSearchCont?.classList.remove("not-visible");
     navSearchCont?.setAttribute("aria-hidden", "false");
     allNavLinks?.forEach(el => {
