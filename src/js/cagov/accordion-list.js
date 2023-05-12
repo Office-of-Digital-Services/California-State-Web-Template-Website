@@ -268,8 +268,6 @@
 
     // check to see if a trigger is disabled
     if (thisTrigger.getAttribute("aria-disabled") !== "true") {
-      let getID = thisTrigger.getAttribute("aria-controls");
-
       isCurrent(thisTrigger, true);
 
       if (thisTrigger.getAttribute("aria-expanded") === "true") {
@@ -279,21 +277,21 @@
         ariaExpanded(thisTrigger, true);
         ariaHidden(targetPanel, false);
 
-        if (doc.getElementById(thisAccordion).hasAttribute("data-constant")) {
+        if (doc.getElementById(thisAccordion).hasAttribute("data-constant"))
           ariaDisabled(thisTrigger, true);
-        }
       }
 
       if (
         doc.getElementById(thisAccordion).hasAttribute("data-constant") ||
         !doc.getElementById(thisAccordion).hasAttribute("data-multi")
       ) {
-        for (let i = 0; i < triggers.length; i++) {
-          if (thisTrigger !== triggers[i]) {
-            isCurrent(triggers[i], false);
-            getID = triggers[i].getAttribute("aria-controls");
-            ariaDisabled(triggers[i], false);
-            ariaExpanded(triggers[i], false);
+        // swap expanded when there is a single constant panel
+        for (let trigger of triggers) {
+          if (thisTrigger !== trigger) {
+            isCurrent(trigger, false);
+            const getID = trigger.getAttribute("aria-controls");
+            ariaDisabled(trigger, false);
+            ariaExpanded(trigger, false);
             ariaHidden(doc.getElementById(getID), true);
           }
         }
