@@ -1,53 +1,43 @@
+//@ts-check
 /* -----------------------------------------
    SIDE NAVIGATION - /source/js/cagov/side-navigation.js
 ----------------------------------------- */
 
-// Remebemer scrolling position
-let sidenavigation = document.querySelector(".side-navigation");
-let topposition = localStorage.getItem("sidebar-scroll");
+// Remember scrolling position
+const sidenavigation = document.querySelector(".side-navigation");
+const topposition = localStorage.getItem("sidebar-scroll");
 
 // Set active class on nav-heading links:
 function addActiveClass() {
-  var active_link = document.querySelectorAll(".nav-heading"),
-    i = 0,
+  /** @type {NodeListOf<HTMLAnchorElement>} */
+  const active_link = document.querySelectorAll("a.nav-heading"),
     len = active_link.length,
     full_path = location.href.split("#")[0]; //Ignore hashes?
 
   // Loop through each link.
-  for (; i < len; i++) {
-    if (active_link[i].href.split("#")[0] == full_path) {
+  for (let i = 0; i < len; i++)
+    if (active_link[i].href.split("#")[0] == full_path)
       active_link[i].className += " active";
-    }
-  }
 }
 addActiveClass();
 
-// Side nav heigth vs vewport
+// Side nav height vs viewport
+const siteHeader = document.querySelector("header");
 
-var siteHeader = document.querySelector("header");
-var siteFooter = document.querySelector("footer");
-if (siteHeader) {
-  var siteHeaderHeight = siteHeader.clientHeight;
-}
-if (siteFooter) {
-  var siteFooterHeight = siteFooter.clientHeight;
-}
+const siteHeaderHeight = siteHeader ? siteHeader.clientHeight : 0;
 
-var mobileView$3 = function () {
-  return (
-    getComputedStyle(document.querySelector(".global-header .mobile-controls"))[
-      "display"
-    ] !== "none"
-  );
-};
+const mobileView$3 = () =>
+  getComputedStyle(document.querySelector(".global-header .mobile-controls"))[
+    "display"
+  ] !== "none";
 
-var timeout = false;
-var delay = 250; // delay between calls
+let timeout = 0;
+const delay = 250; // delay between calls
 
 function sidenavOverflow() {
   if (!mobileView$3()) {
-    var viewportheight = document.documentElement.clientHeight;
-    var viewportMinusHeader = viewportheight - siteHeaderHeight - 100;
+    const viewportheight = document.documentElement.clientHeight;
+    const viewportMinusHeader = viewportheight - siteHeaderHeight - 100;
 
     if (
       viewportMinusHeader <=
@@ -63,7 +53,7 @@ function sidenavOverflow() {
     if ([...sidenavigation.classList].includes("overflow-auto")) {
       sidenavigation.setAttribute(
         "style",
-        "max-height:" + viewportMinusHeader + "px"
+        `max-height:${viewportMinusHeader}px`
       );
     }
   } else {
@@ -76,17 +66,18 @@ function sidenavOverflow() {
     sidenavigation.scrollTop = parseInt(topposition, 10);
   }
   window.addEventListener("beforeunload", () => {
-    localStorage.setItem("sidebar-scroll", sidenavigation.scrollTop);
+    localStorage.setItem("sidebar-scroll", sidenavigation.scrollTop.toString());
   });
 }
 
 // Debouncing on resize
 if (sidenavigation) {
-  window.addEventListener("resize", function () {
+  window.addEventListener("resize", () => {
     // clear the timeout
-    clearTimeout(timeout);
+
+    window.clearTimeout(timeout);
     // start timing for event "completion"
-    timeout = setTimeout(sidenavOverflow, delay);
+    timeout = window.setTimeout(sidenavOverflow, delay);
   });
   sidenavOverflow();
 }

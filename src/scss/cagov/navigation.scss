@@ -32,8 +32,22 @@
   position: relative;
   padding-left: 0;
   padding-right: 0;
+  z-index: 26;
+
   @media (max-width: $screen-sm-max) {
-    border-bottom: 1px solid $gray-200;
+    position: fixed;
+    top: 0;
+    right: -100%;
+    max-width: 85%;
+    margin-right: 0;
+    padding: 0;
+    transition: right 0.5s ease-in-out;
+    height: 100%;
+    overflow-y: auto;
+    &.visible {
+      opacity: 1;
+      right: 0;
+    }
   }
 }
 
@@ -140,6 +154,11 @@
       font-size: 1rem;
     }
   }
+
+  // hide mobile logo in desktop view
+  .logo-nav {
+    display: none;
+  }
 }
 
 //
@@ -173,7 +192,7 @@
         color: $black;
         &:hover,
         &:focus {
-          color: $gray-800 !important;
+          color: $gray-800;
           background-color: $gray-100;
         }
         &::before {
@@ -226,7 +245,7 @@
         color: $black;
         &:hover,
         &:focus {
-          color: $gray-800 !important;
+          color: $gray-800;
           background-color: $gray-100;
         }
         &::before {
@@ -268,6 +287,8 @@
 // --------------------------------------------------
 // 992px
 @media (min-width: $screen-md-min) {
+  // show mobile logo in desktop view
+
   .main-navigation {
     z-index: 25;
     // handle the edge case when their is no nav links
@@ -391,11 +412,6 @@
           }
         }
       }
-
-      #nav-item-search {
-        button.first-level-link {
-        }
-      }
     }
 
     .main-navigation {
@@ -416,6 +432,9 @@
 // 991px
 
 @media (max-width: $screen-sm-max) {
+  .logo-nav {
+    display: block;
+  }
   #navigation {
     clear: both;
     width: 100%;
@@ -438,9 +457,6 @@
   }
 
   .full-width-nav {
-    max-width: 100%;
-    padding: 0;
-
     #nav-item-search button.first-level-link {
       background: none;
       border: none;
@@ -460,21 +476,18 @@
   }
   // For standard mobile menu and off canvas menu
   .top-level-nav .nav-item {
-    background-color: $white;
     margin-top: 0;
-    border-top: 1px solid $gray-200;
+    border-bottom: 1px solid $gray-200;
 
     &:first-child {
-      border-top: none;
+      border-top: 1px solid $gray-200;
     }
 
     .first-level-link,
     .first-level-btn {
-      &:first-child {
-        margin-top: 2px;
-      }
+      color: $white;
       display: block;
-      padding: 20px 0 20px 15px;
+      padding: 1rem 0 1rem 1rem;
       margin-right: 2px;
       margin-left: 2px;
       text-decoration: none;
@@ -531,69 +544,9 @@
     }
   }
 
-  .oc-inner {
-    // Dynamically added wrapper div
-    position: relative;
-    width: 100%;
-    height: 100%;
-    left: 0;
-    margin-left: 0;
-    -webkit-transition: margin-left 0.5s ease;
-    -moz-transition: margin-left 0.5s ease;
-    -o-transition: margin-left 0.5s ease;
-    transition: margin-left 0.5s ease;
-
-    .oc-menu-open & {
-      margin-left: 70%;
-    }
-  }
-
-  .global-header .navigation-search.oc-menu {
-    position: absolute;
-    width: 70%;
-    //height: 100%;
-    left: -70%;
-    top: 0;
-    -webkit-transition: left 0.5s ease;
-    transition: left 0.5s ease;
-    overflow-y: auto; // allow menu to scroll if dynamic height reaches beyond page height
-    overflow-x: hidden;
-  }
   // .header-decoration is placed on top of regular page, produces dropshadow, prevents clicks on main page, and when clicked closes the menu.
   .header-decoration {
     display: none; // hide in mobile view by default
-  }
-
-  .oc-outer .header-decoration {
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    height: auto;
-    width: 100%;
-    background: none;
-    -webkit-box-shadow: -6px -1px 30px 0px rgba(5, 5, 5, 0.5);
-    -moz-box-shadow: -6px -1px 30px 0px rgba(5, 5, 5, 0.5);
-    box-shadow: -6px -1px 30px 0px rgba(5, 5, 5, 0.5);
-    cursor: alias;
-  }
-
-  .oc-outer.oc-menu-open .header-decoration {
-    display: block;
-  }
-
-  .navigation-search.oc-menu {
-    padding-top: 60px;
-  }
-
-  .oc-menu .mobile-control.toggle-search {
-    display: none;
-  }
-
-  .oc-menu .mobile-control.cagov-logo {
-    display: block;
-    line-height: 1;
-    position: absolute;
-    top: 5px;
   }
 }
 // END MOBILE NAVIGATION
@@ -824,15 +777,16 @@
     top: 0;
     right: 0;
     font-size: 1.5rem !important;
-    line-height: 4rem !important;
-    width: 64px !important;
-    height: 64px !important;
+    line-height: 3.2rem !important;
+    width: 55px !important;
+    height: 55px !important;
     text-align: center;
     cursor: pointer;
     border: none;
     -moz-transition: all 0.2s ease !important;
     -webkit-transition: all 0.2s ease !important;
     transition: all 0.2s ease !important;
+    color: $white !important;
   }
 
   .first-level-btn[aria-expanded="true"] .rotate {
@@ -840,9 +794,9 @@
     -webkit-transform: rotate(90deg) !important;
     transform: rotate(90deg) !important;
     position: absolute;
-    width: 64px !important;
-    height: 64px !important;
-    line-height: 4rem !important;
+    width: 55px !important;
+    height: 55px !important;
+    line-height: 3rem !important;
     font-size: 1.5rem !important;
     top: 0;
     right: 0;
@@ -850,5 +804,6 @@
     -moz-transition: all 0.2s ease !important;
     -webkit-transition: all 0.2s ease !important;
     transition: all 0.2s ease !important;
+    color: $white !important;
   }
 }
