@@ -34,10 +34,10 @@
 
       // count number of h2 and add columns class to the ul if there are too many list items
       const h2number = headings.length;
-      if (h2number > 5) {
-        pagenavUL.classList.add("columns-2");
-      } else if (h2number > 8) {
+      if (h2number > 8) {
         pagenavUL.classList.add("columns-3");
+      } else if (h2number > 5) {
+        pagenavUL.classList.add("columns-2");
       }
     });
 
