@@ -14,7 +14,18 @@ permalink: "patterns/card.html"
   snippet of information and can link to more details upon interaction.
 </p>
 
-<h2>Sample</h2>
+<p>There are three types of cards to present related information:</p>
+<ul>
+  <li>Default card</li>
+  <li>News card</li>
+  <li>Card with imagery</li>
+</ul>
+
+<h2>Default card</h2>
+
+<p>
+  The default card that consists of a heading, description and sometimes an call to action.
+</p>
 
 <!--TABS-->
 <div class="tabs responsive">
@@ -45,9 +56,11 @@ permalink: "patterns/card.html"
       class="collapse show p-0 m-0 brd-0"
       role="tabpanel"
       aria-labelledby="heading-example1">
-      <div class="p-a-sm p-b-md">
-        <div class="col-md-4">
-          {% include "../../src/_includes/modules/card-image.html" %}
+      <div class="p-a-sm">
+        <div class="row">
+          <div class="col-md-4 m-b-md">
+            {% include "../../src/_includes/modules/card-default.html" %}
+          </div>
         </div>
       </div>
     </div>
@@ -74,7 +87,163 @@ permalink: "patterns/card.html"
       aria-labelledby="heading-html1">
       <div class="p-a-sm">
         <pre
+          style="max-height: 300px;"><code>{% include "../../src/_includes/modules/card-default.html" %}</code></pre>
+      </div>
+    </div>
+  </section>
+</div>
+<!--END TABS-->
+
+<h2>Card with imagery</h2>
+
+<p>
+  Cards with imagery help to visually communicate information.
+  Use them to help your visitors understand your content better.
+</p>
+
+<!--TABS-->
+<div class="tabs responsive">
+  <ul class="nav-tabs">
+    <li>
+      <a href="#section3">Example</a>
+    </li>
+    <li>
+      <a href="#section4">Source code</a>
+    </li>
+  </ul>
+
+  <!--Examples-->
+  <section id="section3" class="tab-pane">
+    <div class="card-header" id="heading-example1">
+      <a
+        data-bs-toggle="collapse"
+        href="#collapse-example1"
+        aria-expanded="true"
+        aria-controls="collapse-example1"
+        data-hash="#pane-example1"
+        title="Example tab header">
+        Example
+      </a>
+    </div>
+    <div
+      id="collapse-example1"
+      class="collapse show p-0 m-0 brd-0"
+      role="tabpanel"
+      aria-labelledby="heading-example1">
+      <div class="p-a-sm">
+        <h3 class="m-t-0">Icon</h3>
+        <div class="row">
+          <div class="col-md-5 m-b-md">
+            {% include "../../src/_includes/modules/card-icon.html" %}
+          </div>
+        </div>
+        <h3 class="m-t-2">Image</h3>
+        <div class="row">
+          <div class="col-md-5 m-b-md">
+            {% include "../../src/_includes/modules/card-image.html" %}
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!--HTML-->
+  <section id="section4" class="tab-pane">
+    <div class="card-header" id="heading-html1">
+      <a
+        class="collapsed"
+        data-bs-toggle="collapse"
+        href="#collapse-html1"
+        aria-expanded="false"
+        aria-controls="collapse-html1"
+        data-hash="#pane-html1"
+        title="HTML Source code tab header">
+        Source code
+      </a>
+    </div>
+    <div
+      id="collapse-html1"
+      class="collapse p-0 m-0 brd-0"
+      role="tabpanel"
+      aria-labelledby="heading-html1">
+      <div class="p-a-sm">
+        <h3 class="m-t-0">Icon</h3>
+        <pre
+          style="max-height: 300px;"><code>{% include "../../src/_includes/modules/card-icon.html" %}</code></pre>
+        <h3 class="m-t-2">Image</h3>
+        <pre
           style="max-height: 300px;"><code>{% include "../../src/_includes/modules/card-image.html" %}</code></pre>
+      </div>
+    </div>
+  </section>
+</div>
+<!--END TABS-->
+
+<h2>Feature card</h2>
+
+<p>
+  The feature card highlights an action you want people to take or important information on the homepage. It is the first thing a visitor sees.
+</p>
+
+<!--TABS-->
+<div class="tabs responsive">
+  <ul class="nav-tabs">
+    <li>
+      <a href="#section5">Example</a>
+    </li>
+    <li>
+      <a href="#section6">Source code</a>
+    </li>
+  </ul>
+
+  <!--Examples-->
+  <section id="section5" class="tab-pane">
+    <div class="card-header" id="heading-example1">
+      <a
+        data-bs-toggle="collapse"
+        href="#collapse-example1"
+        aria-expanded="true"
+        aria-controls="collapse-example1"
+        data-hash="#pane-example1"
+        title="Example tab header">
+        Example
+      </a>
+    </div>
+    <div
+      id="collapse-example1"
+      class="collapse show p-0 m-0 brd-0"
+      role="tabpanel"
+      aria-labelledby="heading-example1">
+      <div class="p-a-sm">
+        <div class="container">
+          {% include "../../src/_includes/modules/card-feature.html" %}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!--HTML-->
+  <section id="section6" class="tab-pane">
+    <div class="card-header" id="heading-html1">
+      <a
+        class="collapsed"
+        data-bs-toggle="collapse"
+        href="#collapse-html1"
+        aria-expanded="false"
+        aria-controls="collapse-html1"
+        data-hash="#pane-html1"
+        title="HTML Source code tab header">
+        Source code
+      </a>
+    </div>
+    <div
+      id="collapse-html1"
+      class="collapse p-0 m-0 brd-0"
+      role="tabpanel"
+      aria-labelledby="heading-html1">
+      <div class="p-a-sm">
+        <pre
+          style="max-height: 300px;"><code>{% include "../../src/_includes/modules/card-feature.html" %}</code></pre>
       </div>
     </div>
   </section>
