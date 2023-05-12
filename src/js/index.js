@@ -1,4 +1,3 @@
-import "./libs/modernizr.js";
 import "./bootstrap/bootstrap.bundle.min.js";
 import "./cagov/fixed-header.js";
 import "./cagov/accordion.js";
