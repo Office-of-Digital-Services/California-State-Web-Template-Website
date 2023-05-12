@@ -67,7 +67,7 @@ permalink: "patterns/card.html"
   </section>
 
   <!--HTML-->
-  <section id="section1" class="tab-pane">
+  <section id="section2" class="tab-pane">
     <div class="card-header" id="heading-html1">
       <a
         class="collapsed"
@@ -114,22 +114,22 @@ permalink: "patterns/card.html"
 
   <!--Examples-->
   <section id="section3" class="tab-pane">
-    <div class="card-header" id="heading-example1">
+    <div class="card-header" id="heading-example2">
       <a
         data-bs-toggle="collapse"
-        href="#collapse-example1"
+        href="#collapse-example2"
         aria-expanded="true"
-        aria-controls="collapse-example1"
+        aria-controls="collapse-example2"
         data-hash="#pane-example1"
         title="Example tab header">
         Example
       </a>
     </div>
     <div
-      id="collapse-example1"
+      id="collapse-example2"
       class="collapse show p-0 m-0 brd-0"
       role="tabpanel"
-      aria-labelledby="heading-example1">
+      aria-labelledby="heading-example2">
       <div class="p-a-sm">
         <h3 class="m-t-0">Icon</h3>
         <div class="row">
@@ -149,23 +149,23 @@ permalink: "patterns/card.html"
 
   <!--HTML-->
   <section id="section4" class="tab-pane">
-    <div class="card-header" id="heading-html1">
+    <div class="card-header" id="heading-html2">
       <a
         class="collapsed"
         data-bs-toggle="collapse"
-        href="#collapse-html1"
+        href="#collapse-html2"
         aria-expanded="false"
-        aria-controls="collapse-html1"
+        aria-controls="collapse-html2"
         data-hash="#pane-html1"
         title="HTML Source code tab header">
         Source code
       </a>
     </div>
     <div
-      id="collapse-html1"
+      id="collapse-html2"
       class="collapse p-0 m-0 brd-0"
       role="tabpanel"
-      aria-labelledby="heading-html1">
+      aria-labelledby="heading-html2">
       <div class="p-a-sm">
         <h3 class="m-t-0">Icon</h3>
         <pre
@@ -173,77 +173,6 @@ permalink: "patterns/card.html"
         <h3 class="m-t-2">Image</h3>
         <pre
           style="max-height: 300px;"><code>{% include "../../src/_includes/modules/card-image.html" %}</code></pre>
-      </div>
-    </div>
-  </section>
-</div>
-<!--END TABS-->
-
-<h2>Feature card</h2>
-
-<p>
-  The feature card highlights an action you want people to take or important information on the homepage. It is the first thing a visitor sees.
-</p>
-
-<!--TABS-->
-<div class="tabs responsive">
-  <ul class="nav-tabs">
-    <li>
-      <a href="#section5">Example</a>
-    </li>
-    <li>
-      <a href="#section6">Source code</a>
-    </li>
-  </ul>
-
-  <!--Examples-->
-  <section id="section5" class="tab-pane">
-    <div class="card-header" id="heading-example1">
-      <a
-        data-bs-toggle="collapse"
-        href="#collapse-example1"
-        aria-expanded="true"
-        aria-controls="collapse-example1"
-        data-hash="#pane-example1"
-        title="Example tab header">
-        Example
-      </a>
-    </div>
-    <div
-      id="collapse-example1"
-      class="collapse show p-0 m-0 brd-0"
-      role="tabpanel"
-      aria-labelledby="heading-example1">
-      <div class="p-a-sm">
-        <div class="container">
-          {% include "../../src/_includes/modules/card-feature.html" %}
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!--HTML-->
-  <section id="section6" class="tab-pane">
-    <div class="card-header" id="heading-html1">
-      <a
-        class="collapsed"
-        data-bs-toggle="collapse"
-        href="#collapse-html1"
-        aria-expanded="false"
-        aria-controls="collapse-html1"
-        data-hash="#pane-html1"
-        title="HTML Source code tab header">
-        Source code
-      </a>
-    </div>
-    <div
-      id="collapse-html1"
-      class="collapse p-0 m-0 brd-0"
-      role="tabpanel"
-      aria-labelledby="heading-html1">
-      <div class="p-a-sm">
-        <pre
-          style="max-height: 300px;"><code>{% include "../../src/_includes/modules/card-feature.html" %}</code></pre>
       </div>
     </div>
   </section>
