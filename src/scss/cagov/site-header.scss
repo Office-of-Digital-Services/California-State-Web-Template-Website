@@ -1,5 +1,5 @@
 /* -----------------------------------------
-   SITE HEADER -  /source/scss/cagov/site-header.scss
+   SITE HEADER -  /source/scss/cagov/site-header.scss (branding)
 ----------------------------------------- */
 
 .branding {
@@ -18,13 +18,17 @@
     -webkit-transition: all 0.3s;
     transition: all 0.3s; // Smooth transition for compact header
     padding-left: 15px;
+    // 991px
     @media (max-width: $screen-sm-max) {
       position: relative;
       max-width: 400px;
       margin-left: 1rem;
+      margin-right: 20%;
       padding-top: 0.5rem;
       padding-left: 0;
-      padding-bottom: 1rem;
+      padding-bottom: 0.5rem;
+      display: flex;
+      align-content: center;
     }
 
     img {
@@ -38,11 +42,14 @@
         // Beta 5.0 addition
         max-width: 225px;
       }
+
+      @media (max-width: $screen-sm-max) {
+        max-height: 44px;
+      }
     }
 
     // Move logo above navigation
     a {
-      z-index: 26; // navigation is 25
       position: relative;
       text-decoration: none;
       color: black;
@@ -55,10 +62,7 @@
       .logo-assets {
         display: flex;
         align-content: center;
-        flex-direction: column;
-        @media (min-width: $screen-sm-min) {
-          flex-direction: row;
-        }
+        flex-flow: wrap;
 
         .logo-img {
           max-width: 100%;
@@ -70,9 +74,7 @@
 
         .logo-text {
           padding-left: 5px;
-          @media (max-width: $screen-sm-max) {
-            padding-top: 0.5rem;
-          }
+          // 991px
           .logo-state {
             font-size: 1rem;
             font-family: "Public Sans", sans-serif;
@@ -83,6 +85,9 @@
             line-height: 1.2em;
             transition: all 0.3s;
             display: block;
+            @media (max-width: $screen-sm-max) {
+              font-size: 0.78125rem;
+            }
           }
           .logo-dept {
             font-size: 1.75rem;
@@ -95,6 +100,9 @@
             line-height: 1.2em;
             transition: all 0.3s;
             display: block;
+            @media (max-width: $screen-sm-max) {
+              font-size: 1rem;
+            }
           }
         }
 

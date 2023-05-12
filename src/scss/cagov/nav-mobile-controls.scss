@@ -6,7 +6,174 @@
 //
 // MOBILE
 // --------------------------------------------------
+// Hamburger menu to X transition
+header {
+  &::after {
+    content: "";
+    position: absolute;
+    width: 100vh;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.48);
+    top: 0;
+    left: 0;
+    opacity: 0;
+    visibility: hidden;
+    -webkit-transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+    transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+  }
+}
+header.nav-overlay {
+  &::after {
+    opacity: 1;
+    visibility: visible;
+  }
+}
 
+.nav-drawer {
+  display: flex;
+  padding: 0.5rem 1rem 1rem 1rem;
+  .toggle-menu {
+    margin-top: 0;
+    width: 2.75rem;
+    height: 2.75rem;
+    span {
+      background-color: $white;
+      width: 30px;
+      &:nth-child(2),
+      &:nth-child(3) {
+        top: 20px;
+      }
+    }
+    background-color: transparent;
+    border: none;
+
+    &[aria-expanded="false"] {
+      span {
+        &:nth-child(1) {
+          top: 15px;
+        }
+        &:nth-child(2),
+        &:nth-child(3) {
+          top: 25px;
+        }
+        &:nth-child(4) {
+          top: 35px;
+        }
+      }
+    }
+  }
+  @media (min-width: $screen-md-min) {
+    display: none;
+  }
+}
+.navigation-search .settings-links {
+  padding: 1rem;
+  a {
+    position: relative;
+    color: $white;
+    margin-left: 1rem;
+    margin-right: 1rem;
+    font-size: 1rem;
+  }
+  a:before {
+    content: "";
+    color: $white;
+    border: none;
+    margin: 0 0.75rem;
+    font-size: 1.125rem;
+    font-weight: 200;
+    position: absolute;
+    border-left: 1px solid $gray-200;
+    height: 70%;
+    top: 5px;
+    left: -1.95rem;
+  }
+  a:first-child:before {
+    display: none;
+  }
+}
+
+.toggle-menu {
+  padding: 16px 8px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+  color: $white;
+  position: relative;
+  -webkit-transform: rotate(0deg);
+  -moz-transform: rotate(0deg);
+  -o-transform: rotate(0deg);
+  transform: rotate(0deg);
+  -webkit-transition: 0.5s ease-in-out;
+  -moz-transition: 0.5s ease-in-out;
+  -o-transition: 0.5s ease-in-out;
+  transition: 0.5s ease-in-out;
+  cursor: pointer;
+  color: $white;
+  min-width: 2.5rem;
+  min-height: 2.5rem;
+  margin-top: 1.3rem;
+  margin-left: auto;
+
+  // Overvriting sr-only class to avoid strucural changes in mobile controls
+
+  span {
+    height: 2px;
+    width: 20px;
+    display: block;
+    position: absolute;
+    border-radius: 5px;
+    opacity: 1;
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg);
+    -webkit-transition: 0.25s ease-in-out;
+    -moz-transition: 0.25s ease-in-out;
+    -o-transition: 0.25s ease-in-out;
+    transition: 0.25s ease-in-out;
+
+    &:nth-child(1) {
+      top: 2px;
+    }
+
+    &:nth-child(2),
+    &:nth-child(3) {
+      top: 9px;
+    }
+
+    &:nth-child(4) {
+      top: 16px;
+    }
+  }
+
+  &[aria-expanded="true"] {
+    span:nth-child(1) {
+      top: 12px;
+      width: 0%;
+    }
+
+    span:nth-child(2) {
+      -webkit-transform: rotate(45deg);
+      -moz-transform: rotate(45deg);
+      -o-transform: rotate(45deg);
+      transform: rotate(45deg);
+    }
+
+    span:nth-child(3) {
+      -webkit-transform: rotate(-45deg);
+      -moz-transform: rotate(-45deg);
+      -o-transform: rotate(-45deg);
+      transform: rotate(-45deg);
+    }
+
+    span:nth-child(4) {
+      top: 12px;
+      width: 0%;
+    }
+  }
+}
 // CONTAINER
 .mobile-controls {
   text-align: right; // move most menu controls to right
@@ -24,100 +191,6 @@
     padding-left: 16px;
     padding-right: 16px;
     line-height: 2.75rem;
-  }
-
-  // Hamburger menu to X transition
-  .toggle-menu {
-    padding: 16px 8px;
-    display: flex;
-    flex-direction: column;
-    cursor: pointer;
-    color: $white;
-    position: relative;
-    -webkit-transform: rotate(0deg);
-    -moz-transform: rotate(0deg);
-    -o-transform: rotate(0deg);
-    transform: rotate(0deg);
-    -webkit-transition: 0.5s ease-in-out;
-    -moz-transition: 0.5s ease-in-out;
-    -o-transition: 0.5s ease-in-out;
-    transition: 0.5s ease-in-out;
-    cursor: pointer;
-    color: $white;
-    top: 4px;
-
-    // Overvriting sr-only class to avoid strucural changes in mobile controls
-    span.sr-only {
-      height: unset !important;
-      width: unset !important;
-      position: relative !important;
-      clip: unset !important;
-      background: none !important;
-      color: $gray-600;
-      right: 0 !important;
-      display: inline-block !important;
-      padding-left: 0 !important;
-      top: 10px;
-    }
-
-    span {
-      margin-left: 0.75rem;
-      margin-right: 0;
-      height: 2px;
-      width: 20px;
-      display: block;
-      position: absolute;
-      background: $gray-600;
-      border-radius: 5px;
-      opacity: 1;
-      -webkit-transform: rotate(0deg);
-      -moz-transform: rotate(0deg);
-      -o-transform: rotate(0deg);
-      transform: rotate(0deg);
-      -webkit-transition: 0.25s ease-in-out;
-      -moz-transition: 0.25s ease-in-out;
-      -o-transition: 0.25s ease-in-out;
-      transition: 0.25s ease-in-out;
-
-      &:nth-child(1) {
-        top: 2px;
-      }
-
-      &:nth-child(2),
-      &:nth-child(3) {
-        top: 9px;
-      }
-
-      &:nth-child(4) {
-        top: 16px;
-      }
-    }
-
-    &[aria-expanded="true"] {
-      span:nth-child(1) {
-        top: 12px;
-        width: 0%;
-      }
-
-      span:nth-child(2) {
-        -webkit-transform: rotate(45deg);
-        -moz-transform: rotate(45deg);
-        -o-transform: rotate(45deg);
-        transform: rotate(45deg);
-      }
-
-      span:nth-child(3) {
-        -webkit-transform: rotate(-45deg);
-        -moz-transform: rotate(-45deg);
-        -o-transform: rotate(-45deg);
-        transform: rotate(-45deg);
-      }
-
-      span:nth-child(4) {
-        top: 12px;
-        width: 0%;
-      }
-    }
   }
 
   .toggle-search {
@@ -138,20 +211,6 @@
       font-size: 1.4rem;
       display: block;
       margin: 0 auto;
-    }
-
-    // Overvriting sr-only class to avoid strucural changes in mobile controls
-    span.sr-only {
-      height: unset !important;
-      width: unset !important;
-      position: relative !important;
-      clip: unset !important;
-      background: none !important;
-      color: $gray-600;
-      right: 0 !important;
-      display: inline-block !important;
-      padding-left: 5px !important;
-      bottom: 4px;
     }
 
     &:focus {
@@ -196,14 +255,15 @@
   }
 }
 
-// IOS Icons FIX
 .main-nav-icons {
   display: flex;
   justify-content: flex-end;
   align-items: center;
   z-index: 1;
   position: relative;
-  top: -75px;
+  top: -3.75rem;
+  width: 20%;
+  margin-left: auto;
 }
 
 /* mobile controls hack for IE because IE never dies */

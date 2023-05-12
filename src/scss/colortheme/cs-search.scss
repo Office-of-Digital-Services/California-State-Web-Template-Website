@@ -12,6 +12,9 @@
   }
   .search-textfield {
     border-color: $gray-600 !important;
+    @media (max-width: $screen-sm-max) {
+      border-color: $white !important;
+    }
   }
 
   .gsc-search-button {
@@ -24,6 +27,22 @@
     }
     .ca-gov-icon-search {
       color: $white;
+    }
+    @media (max-width: $screen-sm-max) {
+      background-color: $white;
+      border-color: $white;
+      // border-left-color: $gray-700;
+      &:hover,
+      &:focus {
+        background-color: $gray-50;
+        border-color: $gray-50;
+        .ca-gov-icon-search {
+          color: $gray-900;
+        }
+      }
+      .ca-gov-icon-search {
+        color: $gray-700;
+      }
     }
   }
 

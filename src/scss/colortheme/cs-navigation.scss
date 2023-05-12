@@ -4,37 +4,6 @@
 ----------------------------------------- */
 
 //
-// MOBILE CONTROLS
-// --------------------------------------------------
-
-.mobile-controls {
-  background: $white;
-}
-
-.toggle-menu span {
-  background-color: $gray-600 !important;
-}
-
-.mobile-control {
-  color: $mobile-controls;
-
-  a {
-    color: $mobile-controls;
-    text-decoration: none;
-  }
-
-  &.toggle-sub-nav {
-    color: $color-p2;
-    background-color: darken($sub-nav-bg, 2%);
-    &:hover,
-    &:focus {
-      outline: none;
-      background-color: $sub-nav-bg; // should be the same as sub-nav background
-    }
-  }
-}
-
-//
 // NAVIGATION ACTIVE STYLE
 // --------------------------------------------------
 .nav-item,
@@ -91,9 +60,27 @@ nav-item-search {
   &:focus {
     color: $gray-900;
   }
+  // 991
+  @media (max-width: $screen-sm-max) {
+    &.active {
+      background-color: $mobile-drawer-active !important;
+      color: $white !important;
+      &:hover,
+      &:focus {
+        background-color: $mobile-drawer !important;
+        color: $white !important;
+      }
+      &::before,
+      &::after {
+        border-left: none !important;
+      }
+    }
 
-  @media (max-width: $screen-xs-max) {
-    border-bottom: 1px solid $color-s1;
+    &:hover,
+    &:focus {
+      background-color: $mobile-drawer-active !important;
+      color: $white !important;
+    }
   }
 }
 
@@ -106,6 +93,17 @@ nav-item-search {
 
   [class^="ca-gov-icon-"] {
     color: $gray-700;
+  }
+  // 991px
+  @media (max-width: $screen-sm-max) {
+    background-color: $mobile-drawer;
+    &.active {
+      background-color: $mobile-drawer-active;
+      &:hover,
+      &:focus {
+        background-color: $mobile-drawer;
+      }
+    }
   }
 }
 
@@ -120,9 +118,9 @@ nav-item-search {
       background: #fff;
     }
 
-    @media (max-width: $screen-xs-max) {
-      border-right: none; // beta 5.0 addition (for accessible menu)
-      border-bottom: 1px solid $color-s1;
+    @media (max-width: $screen-sm-max) {
+      border: none; // beta 5.0 addition (for accessible menu)
+      border-top: 1px solid $gray-200;
 
       &:hover,
       &:focus {
@@ -179,10 +177,6 @@ nav-item-search {
       }
     }
   }
-
-  .media + .media {
-    //border-bottom-color:red;
-  }
 }
 
 // Accessible menu
@@ -214,6 +208,33 @@ nav-item-search {
   }
 }
 
+@media (max-width: $screen-sm-max) {
+  .nav-item {
+    &.active {
+      .first-level-btn {
+        background-color: $mobile-drawer-active !important;
+        color: $white !important;
+        &:hover,
+        &:focus {
+          background-color: $mobile-drawer !important;
+          color: $white !important;
+        }
+        &::before,
+        &::after {
+          border-left: none !important;
+        }
+      }
+    }
+  }
+}
+
 .has-sub .rotate {
   color: $color-p2;
+}
+
+/* Dark Mobile menu */
+@media (max-width: $screen-sm-max) {
+  .navigation-search {
+    background-color: $mobile-drawer;
+  }
 }
