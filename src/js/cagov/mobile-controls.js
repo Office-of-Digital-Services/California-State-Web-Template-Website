@@ -10,7 +10,6 @@
   const mainCont = document.querySelector(".main-content");
   const footerGlobal = document.querySelector("footer");
   const footerSite = document.querySelector(".site-footer");
-  const siteSettings = document.querySelector(".site-settings");
   const headerutility = document.querySelector(".utility-header");
   const regularHeader = document.querySelector("header");
   const headerutilityLinksCont = document.querySelector(
@@ -36,7 +35,7 @@
 
   // all focusable elements other than navigation
   const allBodyLinks = document.querySelectorAll(
-    '.utility-header .social-media-links a, .utility-header .social-media-links input, .utility-header .social-media-links button, .utility-header .social-media-links [tabindex]:not([tabindex="-1"]), .site-settings button, .site-settings a, .site-settings [tabindex]:not([tabindex="-1"]), .branding a, .branding button, .branding input, .branding select, .main-content a[href], .main-content button, .main-content input, .main-content textarea, .main-content select, .main-content details, .main-content [tabindex]:not([tabindex="-1"]), .site-footer a[href], .site-footer button, .site-footer input, .site-footer textarea, .site-footer select, .site-footer details, .site-footer [tabindex]:not([tabindex="-1"]), footer a[href], footer button, footer input, footer textarea, footer select, footer details, footer [tabindex]:not([tabindex="-1"])'
+    '.utility-header .social-media-links a, .utility-header .social-media-links input, .utility-header .social-media-links button, .utility-header .social-media-links [tabindex]:not([tabindex="-1"]), .branding a, .branding button, .branding input, .branding select, .main-content a[href], .main-content button, .main-content input, .main-content textarea, .main-content select, .main-content details, .main-content [tabindex]:not([tabindex="-1"]), .site-footer a[href], .site-footer button, .site-footer input, .site-footer textarea, .site-footer select, .site-footer details, .site-footer [tabindex]:not([tabindex="-1"]), footer a[href], footer button, footer input, footer textarea, footer select, footer details, footer [tabindex]:not([tabindex="-1"])'
   );
 
   // create container for drawer mobile nav items
@@ -90,7 +89,6 @@
       mainCont?.setAttribute("aria-hidden", "true");
       footerGlobal?.setAttribute("aria-hidden", "true");
       footerSite?.setAttribute("aria-hidden", "true");
-      siteSettings?.setAttribute("aria-hidden", "true");
       headerutility?.setAttribute("aria-hidden", "true");
       siteBranding?.setAttribute("aria-hidden", "true");
       regularHeader?.classList.add("nav-overlay");
@@ -113,7 +111,6 @@
       mainCont?.removeAttribute("aria-hidden");
       footerGlobal?.removeAttribute("aria-hidden");
       footerSite?.removeAttribute("aria-hidden");
-      siteSettings?.removeAttribute("aria-hidden");
       headerutility?.removeAttribute("aria-hidden");
       siteBranding?.removeAttribute("aria-hidden");
       regularHeader?.classList.remove("nav-overlay");
@@ -143,7 +140,6 @@
     mainCont?.removeAttribute("aria-hidden");
     footerGlobal?.removeAttribute("aria-hidden");
     footerSite?.removeAttribute("aria-hidden");
-    siteSettings?.removeAttribute("aria-hidden");
     headerutility?.removeAttribute("aria-hidden");
     siteBranding?.removeAttribute("aria-hidden");
     regularHeader?.classList.remove("nav-overlay");
@@ -170,7 +166,6 @@
     mainCont?.removeAttribute("aria-hidden");
     footerGlobal?.removeAttribute("aria-hidden");
     footerSite?.removeAttribute("aria-hidden");
-    siteSettings?.removeAttribute("aria-hidden");
     headerutility?.removeAttribute("aria-hidden");
     siteBranding?.removeAttribute("aria-hidden");
     regularHeader?.classList.remove("nav-overlay");
