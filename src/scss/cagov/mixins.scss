@@ -255,10 +255,11 @@
 }
 
 @mixin container {
+  width: 100%;
   margin-right: auto;
   margin-left: auto;
-  padding-left: 15px;
-  padding-right: 15px;
+  padding-left: 1rem;
+  padding-right: 1rem;
 
   @media (min-width: $screen-xs-min) {
     max-width: $breakpoint-xm;
@@ -274,10 +275,6 @@
 
   @media (min-width: $screen-lg-min) {
     max-width: $breakpoint-lg;
-  }
-
-  @media (min-width: $screen-xl-min) {
-    max-width: $breakpoint-xl;
   }
 }
 
