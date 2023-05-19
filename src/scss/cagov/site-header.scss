@@ -11,13 +11,12 @@
   // 992px
   @media (min-width: $screen-md-min) {
     position: unset;
-    height: 82px !important;
   }
 
   .header-organization-banner {
     -webkit-transition: all 0.3s;
     transition: all 0.3s; // Smooth transition for compact header
-    padding-left: 15px;
+    padding: 0.5rem 0 0.5rem 1rem;
     // 991px
     @media (max-width: $screen-sm-max) {
       position: relative;
@@ -32,14 +31,12 @@
     }
 
     img {
-      width: 100%;
       max-width: 300px;
-      max-height: 70px;
+      max-height: 55px;
       object-fit: contain !important;
       object-position: left;
 
       @media (max-width: $screen-md) and (min-width: $screen-sm-min) {
-        // Beta 5.0 addition
         max-width: 225px;
       }
 
@@ -61,12 +58,12 @@
 
       .logo-assets {
         display: flex;
-        align-content: center;
         flex-flow: wrap;
+        min-height: 4rem;
+        align-items: center;
 
         .logo-img {
           max-width: 100%;
-          width: 80px;
           height: auto;
           display: inline-block;
           transition: all 0.3s;
@@ -106,10 +103,9 @@
           }
         }
 
-        // 992px
-        @media (min-width: $screen-md-min) {
-          align-items: center;
-          height: 80px;
+        // MOBILE 992px
+        @media (max-width: $screen-sm-max) {
+          min-height: auto;
         }
       }
     }
@@ -119,8 +115,6 @@
 // FIXED HEADER LOGO
 .fixed.compact .branding .header-organization-banner {
   .logo-assets {
-    height: 60px;
-
     .logo-img {
       width: 70px;
     }
@@ -147,16 +141,6 @@
 
 @media (min-width: $screen-sm-min) {
   .fixed.compact {
-    // .search-container {
-    //   top: 51px;
-    // }
-    // covering edge case  where no links are set. Need this to maintain
-    // search box and ask group positioning
-
-    .branding {
-      height: 57px !important; // Beta 5.0 addition
-    }
-
     .header-organization-banner {
       height: 55px; // Beta 5.0 addition
       max-height: 45px; // Beta 5.0 addition
