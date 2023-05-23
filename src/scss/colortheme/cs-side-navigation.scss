@@ -2,6 +2,10 @@
    SIDE NAVIGATION
    /source/scss/colortheme/cs-side-navigation.scss
 ----------------------------------------- */
+.side-navigation ul li a.active:before,
+.list-navigation li a.active:before {
+  border-left-color: $color-p1;
+}
 /* MOBILE */
 .sidenav-mobile-btn {
   background-color: $color-s1;
@@ -31,7 +35,6 @@
           background-color: $mobile-drawer-active;
           &:before {
             color: $white;
-
             border-left-color: $color-p1;
           }
           &:hover,
@@ -85,7 +88,6 @@
 }
 
 /* bootstrap side navigation */
-
 .list-group-item {
   &.active {
     background-color: $color-p2;
