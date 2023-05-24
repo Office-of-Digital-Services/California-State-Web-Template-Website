@@ -6,6 +6,7 @@
 - Removed settings section since modern browsers provide those options to the users
 - Removed unused breakpoint (1280px)
 - Updated mobile navigation experience, look and feel
+- Updated mobile side navigation experience, look and feel
 - Cleaned up the JavaScript core code to go inline with JS lint requirenments
 
 ## 6.1.1
