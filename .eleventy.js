@@ -17,6 +17,7 @@ module.exports = function (
     "src/scss/custom": "css/custom"
   });
 
+  // Copy all static files that should appear in the website root
   userConfig.addPassthroughCopy({ "src/root": "/" });
 
   // Markdown rendering onfigurarion
