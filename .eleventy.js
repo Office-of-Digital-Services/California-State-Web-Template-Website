@@ -17,17 +17,7 @@ module.exports = function (
     "src/scss/custom": "css/custom"
   });
 
-  // site crawler
-  userConfig.addPassthroughCopy("robots.txt");
-
-  // site icon
-  userConfig.addPassthroughCopy("favicon.ico");
-
-  // sitemap
-  userConfig.addPassthroughCopy("sitemap.xml");
-
-  // web.config
-  userConfig.addPassthroughCopy("web.config");
+  userConfig.addPassthroughCopy({ "src/root": "/" });
 
   // Markdown rendering onfigurarion
   userConfig.addPairedShortcode("markdown", content => {
