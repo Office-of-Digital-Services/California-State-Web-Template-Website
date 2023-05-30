@@ -14,7 +14,8 @@ module.exports = function (
   userConfig.addPassthroughCopy({
     "src/fonts": "fonts",
     "src/images": "images",
-    "src/scss/custom": "css/custom"
+    "src/scss/custom": "css/custom",
+    "src/js/libs": "js/libs"
   });
 
   // Copy all static files that should appear in the website root

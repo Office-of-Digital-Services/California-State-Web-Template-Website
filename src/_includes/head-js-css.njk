@@ -5,7 +5,9 @@
 <link rel="stylesheet" href="/css/colortheme-oceanside.min.css" />
 {% endif -%} {%- if customcss -%}
 <link rel="stylesheet" href="{{ customcss }}" />
-{% endif -%}
+{% endif -%} {%- if customjs -%} {% for link in customjs %}
+<script src="{{ link }}"></script>
+{%- endfor -%} {%- endif %}
 <link
   rel="apple-touch-icon-precomposed"
   sizes="100x100"
