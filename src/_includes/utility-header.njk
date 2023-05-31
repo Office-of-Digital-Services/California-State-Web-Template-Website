@@ -1,3 +1,18 @@
+<svg style="display: none" version="2.0">
+  <defs>
+    <symbol id="circle-arrow-left" viewbox="0 -10 100 110">
+      <path
+        d="m 20 80 A 40 40 0 1 0 20 20"
+        fill="none"
+        stroke="#000"
+        stroke-width="10" />
+      <path d="M 10 0 v 40 h 40" fill="#000" />
+    </symbol>
+  </defs>
+  <!-- to make the circle-arrow-left.svg file
+       also usable as image: -->
+  <use href="#circle-arrow-left" />
+</svg>
 <div class="utility-header">
   <div class="container">
     <div class="flex-row">
@@ -5,12 +20,14 @@
         <div class="header-cagov-logo">
           <a href="https://ca.gov">
             <span class="sr-only">CA.gov</span>
-            <img
+            <svg
               style="aspect-ratio: 33 / 24"
-              src="/images/Ca-Gov-Logo-Gold.svg"
               class="pos-rel"
               alt=""
-              aria-hidden="true" />
+              aria-hidden="true"
+              version="2.0">
+              <use href="#circle-arrow-left" />
+            </svg>
           </a>
         </div>
         <p class="official-tag">
