@@ -131,8 +131,11 @@ npm run start
       <code>/src/scss/custom/custom.scss</code>
       file. Those styles will be compiled into
       <code>cagov.core.css</code>
-      file. There is also an option to apply custom CSS to a specific page. To
-      do that you need to add your custom CSS file into
+      file.
+    </p>
+    <p>
+      There is also an option to apply custom CSS to a specific page. To do that
+      you need to add your custom CSS file into
       <code>/src/scss/custom/</code>
       folder and make reference to it in the page's front matter under
       <code>customcss</code>
@@ -159,6 +162,41 @@ customcss: /css/custom/homepage.css
       <code>&lt;/body></code>
       tag.
     </p>
+
+    <h4>Custom JS</h4>
+    <p>
+      You can import custom JS into
+      <code>/src/js/index.js</code>
+      file. Those scripts will be compiled into global
+      <code>cagov.core.js</code>
+    </p>
+    <p>
+      There is also an option to apply custom JS to a specific page. To do that
+      you need to add <code>customjs</code> key with paths array to your custom
+      JS files in the page front matter like this:
+    </p>
+    <h5>External paths</h5>
+    <pre>
+---
+title: California State Web Template
+layout: landing.njk
+customjs: ["https://path-to-your-script-1.js", "https://path-to-your-script-2.js"]
+---</pre
+    >
+
+    <h5>Local paths</h5>
+    <p>
+      add your custom JS files into
+      <code>/js/libs/</code>
+      folder and make references to them in the page's front matter:
+    </p>
+    <pre>
+ ---
+title: California State Web Template
+layout: landing.njk
+customjs: ["/js/libs/your-script-1.js", "/js/libs/your-script-2.js"]
+---</pre
+    >
 
     <h3>Includes</h3>
 
