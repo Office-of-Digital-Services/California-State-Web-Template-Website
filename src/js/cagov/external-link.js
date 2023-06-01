@@ -13,9 +13,7 @@ function linkAnnotator() {
   }
 
   // Add any exceptions to not render here
-  const cssExceptions = `:not(
-  code *
- )`;
+  const cssExceptions = `:not(code *):not(.cagov-logo)`;
 
   // Looping thru all links inside of the main content body, agency footer and statewide footer
   /** @type {NodeListOf<HTMLAnchorElement>} */
