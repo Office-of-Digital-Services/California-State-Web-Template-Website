@@ -4,147 +4,118 @@
 ----------------------------------------- */
 
 .utility-header {
- //position:absolute;
- top: 0;
- width: 100%;
- min-height: 42px; // beta 6.0 addition
- transition: all 0.3s ease;
+  //position:absolute;
+  top: 0;
+  width: 100%;
+  min-height: 42px; // beta 6.0 addition
+  transition: all 0.3s ease;
 
- @media (max-width: $screen-xs-max) {
-  min-height: 40px; // beta 6.0 addition
-  .container {
-   max-width: 100%;
-  }
- }
+  .half {
+    @include make-sm-column(6);
+    padding-top: 0; // beta 6.0 addition
+    padding-left: 15px; // beta 5.0 addition
+    @media (max-width: $screen-xs-max) {
+      padding-top: 2px; // beta 5.0 addition
+      float: left;
 
- .half {
-  @include make-sm-column(6);
-  padding-top: 0; // beta 6.0 addition
-  padding-left: 15px; // beta 5.0 addition
-  @media (max-width: $screen-xs-max) {
-   padding-top: 2px; // beta 5.0 addition
-   float: left;
+      &:first-child {
+        padding-left: 15px;
+        padding-right: 0 !important;
+        width: 50%;
+      }
 
-   &:first-child {
-    padding-left: 15px;
-    padding-right: 0 !important;
-    width: 50%;
-   }
-
-   &:nth-child(2) {
-    padding-left: 0 !important;
-    width: 50%;
-   }
-  }
- }
-
- a {
-  display: inline-block;
-  padding: 0;
-  text-decoration: underline;
-
-  &:hover,
-  &:focus,
-  &.hovered {
-   text-decoration: none;
-  }
- }
-
- ul {
-  @include list-unstyled();
-  @include list-inline();
-  margin-bottom: 0;
-
-  li {
-   padding: 0 8px;
-
-   button {
-    font-size: 100%;
-    outline: none !important;
-    position: relative;
-    top: -1px;
-    background-color: transparent;
-    border: none;
-
-    span {
-     font-size: 100% !important;
+      &:nth-child(2) {
+        padding-left: 0 !important;
+        width: 50%;
+      }
     }
+  }
+
+  a {
+    display: inline-block;
+    padding: 0;
+    text-decoration: underline;
 
     &:hover,
-    &:focus {
-     color: $gray-800;
-     background-color: transparent;
-     border: none;
+    &:focus,
+    &.hovered {
+      text-decoration: none;
     }
-   }
-  }
- }
-
- .settings-links {
-  // @include font-size(1); // font size
-  font-size: $font-size-base;
-  @include media-breakpoint-up(sm) {
-   font-size: calc(#{$font-size-base} + #{$ratio});
   }
 
-  @include text-right();
-  @media (max-width: $screen-xs-max) {
-   // @include font-size(1); // font size
-   font-size: $font-size-base;
-   @include text-right(); // beta 5.0 addition
-   padding-right: 0;
+  ul {
+    @include list-unstyled();
+    @include list-inline();
+    margin-bottom: 0;
+
+    li {
+      padding: 0 8px;
+
+      button {
+        font-size: 100%;
+        outline: none !important;
+        position: relative;
+        top: -1px;
+        background-color: transparent;
+        border: none;
+
+        span {
+          font-size: 100% !important;
+        }
+
+        &:hover,
+        &:focus {
+          color: $gray-800;
+          background-color: transparent;
+          border: none;
+        }
+      }
+    }
   }
 
-  @media (min-width: $screen-xs-max) and (max-width: $screen-sm-max) {
-   padding-right: 0;
+  .settings-links {
+    // @include font-size(1); // font size
+    font-size: $font-size-base;
+    @include media-breakpoint-up(sm) {
+      font-size: calc(#{$font-size-base} + #{$ratio});
+    }
+
+    @include text-right();
+
+    @media (min-width: $screen-md-min) {
+      padding-right: 5px;
+    }
   }
 
-  @media (min-width: $screen-md-min) {
-   padding-right: 5px;
-  }
- }
-
- [class^="ca-gov-icon-"] {
-  @include font-size(1.1);
-  vertical-align: -2px;
-  display: inline-block;
-  text-decoration: none;
-  padding-right: 4px;
- }
-
- @media (max-width: $screen-xs-max) {
-  .social-media-links {
-   li {
-    padding: 0 5px;
-   }
+  [class^="ca-gov-icon-"] {
+    @include font-size(1.1);
+    vertical-align: -2px;
+    display: inline-block;
+    text-decoration: none;
+    padding-right: 4px;
   }
 
-  .header-cagov-logo img {
-   left: 10px;
+  .located-city-name {
+    margin-left: 5px;
   }
- }
 
- .located-city-name {
-  margin-left: 5px;
- }
-
- .geo-zip-input {
-  margin-left: 5px;
-  width: 50%;
-  vertical-align: initial;
-  line-height: 120%;
-  background: white;
-  color: $black;
- }
+  .geo-zip-input {
+    margin-left: 5px;
+    width: 50%;
+    vertical-align: initial;
+    line-height: 120%;
+    background: white;
+    color: $black;
+  }
 }
 
-.header-cagov-logo img {
- left: 27px;
- height: 1.7rem;
+.header-cagov-logo svg {
+  left: 27px;
+  height: 1.7rem;
 
- @media (max-width: $screen-md-max) {
-  left: 5px;
- }
+  @media (max-width: $screen-md-max) {
+    left: 5px;
+  }
 }
 
 //
@@ -152,90 +123,76 @@
 // --------------------------------------------------
 
 .utility-header {
- .flex-row {
-  display: flex;
+  .flex-row {
+    display: flex;
 
-  .social-media-links {
-   display: flex;
-   flex-direction: row;
-   justify-content: flex-start;
-   min-height: 38px;
-   align-items: center; // make items vertically centered
-   .header-cagov-logo {
-    margin-right: 0.5rem;
+    .social-media-links {
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-start;
+      min-height: 38px;
+      align-items: center; // make items vertically centered
+      .header-cagov-logo {
+        margin-right: 0.5rem;
 
-    img {
-     left: 0;
-     height: 24px;
-     vertical-align: top;
-     margin-top: 6px;
+        svg {
+          left: 0;
+          height: 24px;
+          vertical-align: top;
+          margin-top: 6px;
+        }
+
+        a {
+          margin: 0;
+          padding-top: 0;
+        }
+      }
+
+      .official-tag {
+        margin: 0;
+        margin-right: 1rem;
+        font-size: 0.95rem;
+        @media (max-width: $screen-xs-max) {
+          margin-right: 0;
+          .desktop-only {
+            display: none;
+          }
+        }
+      }
+
+      a {
+        margin: 0px 10px 0 10px;
+      }
     }
 
-    @media (max-width: $screen-xs-max) {
-     margin-right: 0.4rem;
-     margin-left: 0;
-    }
+    .settings-links {
+      display: flex;
+      flex-wrap: wrap;
+      margin-left: auto; // justify to the right
+      align-items: center; // make items vertically centered
+      justify-content: flex-end;
+      min-height: 38px;
 
-    a {
-     margin: 0;
-     padding-top: 0;
-    }
-   }
+      a {
+        margin: 0 10px 0 10px;
+        font-size: 0.95rem;
+      }
 
-   .official-tag {
-    margin: 0;
-    margin-right: 1rem;
-    font-size: 0.95rem;
-    @media (max-width: $screen-xs-max) {
-     margin-right: 0;
-     .desktop-only {
-      display: none;
-     }
+      button {
+        margin: 0;
+        padding-right: 0;
+        font-size: 0.95rem;
+        &:hover,
+        &:focus {
+          text-decoration: none;
+        }
+      }
     }
-   }
-
-   a {
-    margin: 0px 10px 0 10px;
-
-    @media (max-width: $screen-xs-max) {
-     margin: 4px 4px 0 4px;
-    }
-   }
-
-   @media (max-width: $screen-xs-max) {
-    [class^="ca-gov-icon-"] {
-     font-size: 1rem;
-    }
-   }
   }
-
-  .settings-links {
-   display: flex;
-   flex-wrap: wrap;
-   margin-left: auto; // justify to the right
-   align-items: center; // make items vertically centered
-   justify-content: flex-end;
-   min-height: 38px;
-
-   a {
-    margin: 0 10px 0 10px;
-    font-size: 0.95rem;
-
-    @media (max-width: $screen-xs-max) {
-     margin: 0 4px 0 4px;
-     padding: 0;
-    }
-   }
-
-   button {
-    margin: 0;
-    padding-right: 0;
-    font-size: 0.95rem;
-    &:hover,
-    &:focus {
-     text-decoration: none;
-    }
-   }
+}
+/* Hide utilities in mobile */
+@media (max-width: $screen-sm-max) {
+  button[aria-controls="siteSettings"] {
+    display: none;
   }
- }
 }

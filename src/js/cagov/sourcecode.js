@@ -1,3 +1,4 @@
+//@ts-check
 /* -----------------------------------------
    SOURCE CODE
    /source/js/cagov/sourcecode.js
@@ -5,64 +6,64 @@
 
 // Displaying HTML Source code in HTML Page
 
-var entityMap = {
+const entityMap = {
   "&": "&amp;",
   "<": "&lt;",
   ">": "&gt;",
-  '"': '&quot;',
-  "'": '&#39;',
-  "/": '&#x2F;'
- };
- 
- function escapeHtml(string) {
-  return String(string).replace(/[&<>"'/]/g, function (s) {
-   return entityMap[s];
-  });
- }
- 
- function copyCode(btnElem) {
-  var codeblock = btnElem.previousElementSibling;
+  '"': "&quot;",
+  "'": "&#39;",
+  "/": "&#x2F;"
+};
+
+const escapeHtml = (/** @type {string} */ string) =>
+  string.replace(/[&<>"'/]/g, s => entityMap[s]);
+
+function copyCode(/** @type {Element} */ btnElem) {
+  const codeblock = btnElem.previousElementSibling;
   if (codeblock) {
-   // copy the text
-   if (codeblock.tagName.toLowerCase() == "pre") {
-     navigator.clipboard.writeText(codeblock.querySelector("code").innerText);
-   } else {
-     navigator.clipboard.writeText(codeblock.value);
-   }
-   // select the text
-   var range = document.createRange();
-   range.selectNode(codeblock);
-   window.getSelection().removeAllRanges();
-   window.getSelection().addRange(range);
-   // replace the button icon
-   //btnElem.querySelector("span").classList.remove("ca-gov-icon-copy");
-   //btnElem.querySelector("span").classList.add("ca-gov-icon-check-mark");
-   btnElem.innerHTML = '<span class="ca-gov-icon-check-mark"></span> Code copied';
+    // copy the text
+    if (codeblock.tagName.toLowerCase() == "pre") {
+      navigator.clipboard.writeText(codeblock.querySelector("code").innerText);
+    } else {
+      //TextArea
+      navigator.clipboard.writeText(
+        /** @type { HTMLTextAreaElement} */ (codeblock).value
+      );
+    }
+    // select the text
+    const range = document.createRange();
+    range.selectNode(codeblock);
+    window.getSelection().removeAllRanges();
+    window.getSelection().addRange(range);
+    // replace the button icon
+    //btnElem.querySelector("span").classList.remove("ca-gov-icon-copy");
+    //btnElem.querySelector("span").classList.add("ca-gov-icon-check-mark");
+    btnElem.innerHTML =
+      '<span class="ca-gov-icon-check-mark"></span> Code copied';
   }
- }
- 
- window.addEventListener('load', function() {
-  var codeblock = document.querySelectorAll("pre code, textarea.sourcecode");
- 
-  if (codeblock.length) {
-   for (var i = 0, len = codeblock.length; i < len; i++) {
-    var dom = codeblock[i];
+}
+
+window.addEventListener("load", () => {
+  const codeblock = document.querySelectorAll("pre code, textarea.sourcecode");
+
+  for (let i = 0, len = codeblock.length; i < len; i++) {
+    const dom = codeblock[i];
     if (dom.tagName.toLowerCase() == "code") {
-     var html = dom.innerHTML;
-     html = escapeHtml(html);
-     dom.innerHTML = html;
+      let html = dom.innerHTML;
+      html = escapeHtml(html);
+      dom.innerHTML = html;
     }
     // Create a 'copy code' button, insert it after the <pre> tag
-    var newDiv = document.createElement("button");
-    newDiv.onclick = function () { copyCode(this); };
+    const newDiv = document.createElement("button");
+    newDiv.onclick = function () {
+      copyCode(/** @type {HTMLElement} */ (this));
+    };
     newDiv.classList.add("btn", "btn-outline-primary");
     newDiv.innerHTML = "<span class='ca-gov-icon-copy'></span> Copy code";
     if (dom.tagName.toLowerCase() == "code") {
-     dom.parentElement.after(newDiv);
+      dom.parentElement.after(newDiv);
     } else {
-     dom.after(newDiv);
+      dom.after(newDiv);
     }
-   }
   }
- });
- 
+});

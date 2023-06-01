@@ -194,15 +194,15 @@ permalink: "visual-design/icons.html"
 
     // Calculate total pages
     var lastPage = -1;
-  
+
     if (paginate && numberOfResults > iconsPerPage) {
       lastPage = Math.ceil(numberOfResults / iconsPerPage) - 1;
-	  }
-	  // Update the current page and total pages attributes for all pagination tags
-	  const paginatorList = document.querySelectorAll('cagov-pagination');
-	  for (let el of paginatorList) {
- 	    el.setAttribute("data-current-page", pageNumber + 1);
-	    el.setAttribute("data-total-pages", lastPage + 1);
+   }
+   // Update the current page and total pages attributes for all pagination tags
+   const paginatorList = document.querySelectorAll('cagov-pagination');
+   for (let el of paginatorList) {
+      el.setAttribute("data-current-page", pageNumber + 1);
+     el.setAttribute("data-total-pages", lastPage + 1);
     }
 
     document.querySelector('#searchSummary').textContent = searchInput.length ? searchInput : filterLetter ? filterLetter.toUpperCase() : "All";
@@ -231,41 +231,55 @@ permalink: "visual-design/icons.html"
     });
    }
   });
-
 </script>
 
 <div class="row">
-  <div class="col-md-3">
-    <nav aria-labelledby="side-navigation-label" class="side-navigation sticky-6 overflow-auto">
+  <div class="col-lg-3">
+    <nav
+      aria-labelledby="side-navigation-label"
+      class="side-navigation sticky-6 overflow-auto">
       <span class="sr-only" id="side-navigation-label">Side navigation</span>
       <ul class="list-navigation">
+        <li>
+          <a href="javascript:;" aria-hidden="true" class="d-none"
+            >Visual design</a
+          >
+        </li>
         <li><a href="/visual-design/color.html">Colors</a></li>
         <li><a href="/visual-design/icons.html" class="active">Icons</a></li>
         <li><a href="/visual-design/typography.html">Typography</a></li>
       </ul>
     </nav>
   </div>
-  <div class="col-md-9 p-b-lg">
-
-
+  <div class="col-lg-9 p-b-lg">
     <h1 class="mt-lg-0" id="Icons">Icons</h1>
 
     <nav class="page-navigation"></nav>
 
-
-    <p>Icons are visual representations of commands, devices, directories, or common actions. We use CSS classes to
-      customize icon color for compatibility with all popular browsers.</p>
-
+    <p>
+      Icons are visual representations of commands, devices, directories, or
+      common actions. We use CSS classes to customize icon color for
+      compatibility with all popular browsers.
+    </p>
 
     <h2>How to use icons</h2>
-    <p>Icon color and font can be styled using the same CSS rules used to style other text on a page. Keep in mind,
-      color and font size will change the size of the icon.</p>
+    <p>
+      Icon color and font can be styled using the same CSS rules used to style
+      other text on a page. Keep in mind, color and font size will change the
+      size of the icon.
+    </p>
 
     <div class="bg-gray-50 d-flex p-a-sm p-x-md">
-      <span class="ca-gov-icon-info font-size-30 color-p2 d-block" aria-hidden="true"></span>
+      <span
+        class="ca-gov-icon-info font-size-30 color-p2 d-block"
+        aria-hidden="true"></span>
       <div class="m-l">
-        <p class="m-b-0">To use an icon, insert an empty span tag with the corresponding class name. Here's an example:
-          <code class="font-size-14 gray-900">&lt;span class="ca-gov-icon-info" aria-hidden="true">&lt;/span></code>
+        <p class="m-b-0">
+          To use an icon, insert an empty span tag with the corresponding class
+          name. Here's an example:
+          <code class="font-size-14 gray-900">
+            &lt;span class="ca-gov-icon-info" aria-hidden="true">&lt;/span>
+          </code>
         </p>
       </div>
     </div>
@@ -274,7 +288,7 @@ permalink: "visual-design/icons.html"
     <div class="row">
       <div class="col-md-6">
         <h3 class="h5 m-b-sm">Do</h3>
-        <hr class="m-t-0 p-t-0">
+        <hr class="m-t-0 p-t-0" />
         <ul>
           <li>Use icons with meaningful text labels</li>
           <li>Use a single icon for a group of related content</li>
@@ -283,7 +297,7 @@ permalink: "visual-design/icons.html"
       </div>
       <div class="col-md-6">
         <h3 class="h5 m-b m-b-sm">Don't</h3>
-        <hr class="m-t-0 p-t-0">
+        <hr class="m-t-0 p-t-0" />
         <ul>
           <li>Use icons without labels</li>
           <li>Use too many icons and create visual clutter</li>
@@ -292,52 +306,79 @@ permalink: "visual-design/icons.html"
       </div>
     </div>
 
-
     <h2>Search icons</h2>
-    <p>Use the search to find a specific icon. You can also browse icons below.</p>
-
+    <p>
+      Use the search to find a specific icon. You can also browse icons below.
+    </p>
 
     <form id="iconSearchForm" class="m-y-lg" onsubmit="return false">
       <span class="sr-only" id="IconInput">Search icons</span>
-      <input type="text" name="iconsearch" aria-labelledby="IconInput" placeholder="Browse icons"
-        class="search-textfield rounded-5 icons-searchbox">
-      <button type="submit" title="submit" class="border-0 color-white icon-submit" aria-label="Submit"
-        onclick="javascript:buildList(false,0);"><span class="ca-gov-icon-search" aria-hidden="true"></span><span
-          class="sr-only">Submit</span></button>
-      <button type="reset" title="clear" value="reset" class="reset-button" aria-label="Reset"><span
-          class="ca-gov-icon-close-mark" aria-hidden="true"></span><span class="sr-only">Reset</span></button>
+      <input
+        type="text"
+        name="iconsearch"
+        aria-labelledby="IconInput"
+        placeholder="Browse icons"
+        class="search-textfield rounded-5 icons-searchbox" />
+      <button
+        type="submit"
+        title="submit"
+        class="border-0 color-white icon-submit"
+        aria-label="Submit"
+        onclick="javascript:buildList(false,0);">
+        <span class="ca-gov-icon-search" aria-hidden="true"></span>
+        <span class="sr-only">Submit</span>
+      </button>
+      <button
+        type="reset"
+        title="clear"
+        value="reset"
+        class="reset-button"
+        aria-label="Reset">
+        <span class="ca-gov-icon-close-mark" aria-hidden="true"></span>
+        <span class="sr-only">Reset</span>
+      </button>
     </form>
 
     <div id="jumpToHeading">
-      <ol class="icons">
-      </ol>
+      <ol class="icons"></ol>
     </div>
 
     <div class="clearfix mhl ptl">
       <div class="d-md-flex flex-row justify-content-between m-t-md">
         <div>
-          <span class="h4 m-t-0 m-b-0 p-r-sm">"<span id="searchSummary"></span>"</span>
+          <span class="h4 m-t-0 m-b-0 p-r-sm">
+            "
+            <span id="searchSummary"></span>
+            "
+          </span>
           <span id="resultcount" class="fs1" aria-live="polite"></span>
         </div>
-        <div id="paginationcomponenttop"><cagov-pagination data-current-page="1" data-total-pages="0"></cagov-pagination></div>
+        <div id="paginationcomponenttop">
+          <cagov-pagination
+            data-current-page="1"
+            data-total-pages="0"></cagov-pagination>
+        </div>
       </div>
 
       <div id="fontlist"></div>
-      <div id="paginationcomponent"><cagov-pagination data-current-page="1" data-total-pages="0"></cagov-pagination></div>
+      <div id="paginationcomponent">
+        <cagov-pagination
+          data-current-page="1"
+          data-total-pages="0"></cagov-pagination>
+      </div>
       <div id="viewfulllist"></div>
     </div>
-
   </div>
 </div>
 
 <!-- Run script after searchSummary <span> has been added to DOM -->
 <script>
-buildList(true, 0, "a");
+  buildList(true, 0, "a");
 
-// add event listeners to form field and button
-document.querySelector("#iconSearchForm input").oninput = function () { buildList(false) };
-document.querySelector("#iconSearchForm .reset-button").onclick = function () {
-  document.querySelector("#iconSearchForm input").value = "";
-  buildList();
-}
+  // add event listeners to form field and button
+  document.querySelector("#iconSearchForm input").oninput = function () { buildList(false) };
+  document.querySelector("#iconSearchForm .reset-button").onclick = function () {
+    document.querySelector("#iconSearchForm input").value = "";
+    buildList();
+  }
 </script>

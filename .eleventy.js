@@ -1,51 +1,49 @@
+//@ts-check
 const markdownIt = require("markdown-it");
+const defaultConfig = require("@11ty/eleventy/src/defaultConfig");
 
-module.exports = function (eleventyConfig) {
- // Markdown onfigurarion
- const md = new markdownIt({
-  html: true
- });
+module.exports = function (
+  /** @type {import("@11ty/eleventy").UserConfig} **/ userConfig
+) {
+  // Markdown configurarion
+  const md = new markdownIt({
+    html: true
+  });
 
- // Copy `src/fonts/` to `_site/fonts`, `src/images/` to `_site/images`
- eleventyConfig.addPassthroughCopy({
-  "src/fonts": "fonts",
-  "src/images": "images",
-  "src/scss/custom": "css/custom"
- });
+  // Copy `src/fonts/` to `_site/fonts`, `src/images/` to `_site/images`
+  userConfig.addPassthroughCopy({
+    "src/fonts": "fonts",
+    "src/images": "images",
+    "src/scss/custom": "css/custom",
+    "src/js/libs": "js/libs"
+  });
 
+  // Copy all static files that should appear in the website root
+  userConfig.addPassthroughCopy({ "src/root": "/" });
 
- // site crawler
- eleventyConfig.addPassthroughCopy('robots.txt');
+  // Markdown rendering onfigurarion
+  userConfig.addPairedShortcode("markdown", content => {
+    return md.render(content);
+  });
 
- // site icon
- eleventyConfig.addPassthroughCopy('favicon.ico');
+  //Start with default config, easier to configure 11ty later
+  const config = defaultConfig(userConfig);
 
- // sitemap
- eleventyConfig.addPassthroughCopy('sitemap.xml');
-
- // web.config
- eleventyConfig.addPassthroughCopy('web.config');
-
- // Markdown rendering onfigurarion
- eleventyConfig.addPairedShortcode("markdown", (content) => {
-  return md.render(content);
- });
-
-
- return {
   // allow nunjucks templating in .html files
-  htmlTemplateEngine: "njk",
-  markdownTemplateEngine: "njk",
-  templateFormats: ["html", "njk", "11ty.js"],
-  dir: {
-   // site content pages
-   input: "pages",
-   data: "../src/_data",
-   // site structure pages (path is realtive to input directory)
-   includes: "../src/_includes",
-   layouts: "../src/_includes/layouts",
-   // site final outpuut directory
-   output: "_site",
-  },
- };
+  config.htmlTemplateEngine = "njk";
+  config.markdownTemplateEngine = "njk";
+  config.templateFormats = ["html", "njk", "11ty.js"];
+
+  config.dir = {
+    // site content pages
+    input: "pages",
+    data: "../src/_data",
+    // site structure pages (path is realtive to input directory)
+    includes: "../src/_includes",
+    layouts: "../src/_includes/layouts",
+    // site final outpuut directory
+    output: "_site"
+  };
+
+  return config;
 };

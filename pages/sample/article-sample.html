@@ -6,23 +6,47 @@ permalink: "/patterns/article-sample.html"
 ---
 
 <nav aria-label="Breadcrumb">
- <ol class="breadcrumb">
-  <li><a href="/patterns/list-of-articles-or-content.html" title="Home page">Home</a></li>
-  <li><a href="/patterns/newsroom-sample.html" title="Newsroom landing page">Newsroom</a></li>
-  <li><a href="/patterns/list-of-articles-or-content-sample.html" title="List of articles landing page">Press
-    releases</a></li>
-  <li class="active">Artcle</li>
- </ol>
+  <ol class="breadcrumb">
+    <li>
+      <a href="/patterns/list-of-articles-or-content.html" title="Home page">
+        Home
+      </a>
+    </li>
+    <li>
+      <a href="/patterns/newsroom-sample.html" title="Newsroom landing page">
+        Newsroom
+      </a>
+    </li>
+    <li>
+      <a
+        href="/patterns/list-of-articles-or-content-sample.html"
+        title="List of articles landing page">
+        Press releases
+      </a>
+    </li>
+    <li class="active">Article</li>
+  </ol>
 </nav>
 <div class="row">
- <div class="col-lg-3">
-  <nav aria-label="list navigation">
-   <ul class="list-navigation">
-    <li><a href="/patterns/list-of-articles-or-content-sample.html" class="landing back">Press releases</a></li>
-    <li><a href="javascript:;" aria-disabled="true" class="active">Article title</a></li>
-  </nav>
- </div>
- <div class="col-lg-9">
-  {% include "../../src/_includes/modules/news-article.html" %}
- </div>
+  <div class="col-lg-3">
+    <nav aria-label="list navigation" class="side-navigation">
+      <ul>
+        <li>
+          <a
+            href="/patterns/list-of-articles-or-content-sample.html"
+            class="landing back">
+            Press releases
+          </a>
+        </li>
+        <li>
+          <a href="javascript:;" aria-disabled="true" class="active">
+            Article title
+          </a>
+        </li>
+      </ul>
+    </nav>
+  </div>
+  <div class="col-lg-9">
+    {% include "../../src/_includes/modules/news-article.html" %}
+  </div>
 </div>

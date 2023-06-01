@@ -20,187 +20,188 @@ $search-input-border-width: 3px;
 
 .search-container,
 .featured-search.active {
- // we need to hide our innner elements when we are at 0 height
- overflow: hidden;
+  // we need to hide our innner elements when we are at 0 height
+  overflow: hidden;
 
- // Render search above banner slideshow and below navigation dropdowns
- z-index: 7; // beta 5.0 addition
- position: relative;
+  // Render search above banner slideshow and below navigation dropdowns
+  z-index: 7; // beta 5.0 addition
+  position: relative;
 
- // set defaults for later animations
- display: block;
- top: 0;
- left: 0;
+  // set defaults for later animations
+  display: block;
+  top: 0;
+  left: 0;
 
- // Give some room on the sides so the search bar doesnt feel overly long
- padding: 0 15%;
+  // Give some room on the sides so the search bar doesnt feel overly long
+  padding: 0 15%;
 
- // full width for all sizes
- width: 100%;
- // we are going to animate in our height if needed
- max-height: 0;
- border: none;
-
- // on our larger screens our whole header is one big gigantic position absolute thing
- // so we need to of course respect this and add to the insanity
-
- // 992px
- @media (min-width: $screen-md-min) {
-  position: absolute;
-  top: $search-absolute-height;
- }
-
- // needed for our floating search-locator
- @include clearfix();
-
- // Transition all the things
-
- .search-textfield {
-  // increases font size to approx 16.5px
-  @include font-size(1.1);
+  // full width for all sizes
   width: 100%;
-  max-height: 38px;
-  // makes border transparent but maintains height for hover effect
-  border: 1px solid;
-  border-radius: 5px;
-  border-top-right-radius: 0;
-  border-bottom-right-radius: 0;
-  // Padding can control size of small search box
-  padding: 0 10px;
-  -webkit-transition: border $search-ft;
-  transition: border $search-ft;
+  // we are going to animate in our height if needed
+  max-height: 0;
+  border: none;
 
-  &::placeholder {
-   color: $black;
-   opacity: 1;
-  }
-  &::-ms-input-placeholder {
-   color: $black;
-  }
-  &:focus {
-   @include outline(2px);
-   outline-offset: -2px;
-  }
- }
+  // on our larger screens our whole header is one big gigantic position absolute thing
+  // so we need to of course respect this and add to the insanity
 
- .submit-container {
-  // Float all the things!!
-  float: left;
+  // 992px
+  @media (min-width: $screen-md-min) {
+    position: absolute;
+    top: $search-absolute-height;
+  }
+
+  // needed for our floating search-locator
   @include clearfix();
 
-  height: auto;
-  // ie9 needs a little help figuring out it's height
-  height: $search-input-height;
-  -webkit-transition: all $search-dt $search-dft;
-  transition: all $search-dt $search-dft;
+  // Transition all the things
 
-  button {
-   // Keep on floating and floating
-   float: left;
-   @include clearfix();
-   -webkit-transition: all $search-dt $search-dft;
-   transition: all $search-dt $search-dft;
+  .search-textfield {
+    // increases font size to approx 16.5px
+    @include font-size(1.1);
+    width: 100%;
+    max-height: 38px;
+    // makes border transparent but maintains height for hover effect
+    border: 1px solid;
+    border-radius: 5px;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    // Padding can control size of small search box
+    padding: 0 10px;
+    -webkit-transition: border $search-ft;
+    transition: border $search-ft;
 
-   background: none;
-
-   // fallback if not defined in color scheme
-   border-color: white;
-   // no border on the side next to the input otherwise it doubles up the border
-   border-width: $search-input-border-width $search-input-border-width $search-input-border-width 0px;
-   border-style: solid;
-
-   // square up this button with respect to the input
-   width: $search-input-height + (2 * $search-input-border-width);
-   height: 100%;
-
-   // good size for the current height
-   // NOTE: if changing input size this will need to be adjusted
-   @include font-size(1.5);
-   line-height: 0.9375rem;
-
-   // HACK: ios needed button padding explicity removed tp prevent button from expanding
-   padding: 0;
-   // HACK: Removes ios default appearance
-   -webkit-appearance: none;
-
-   > span {
-    // Position the icon in the middle of the button
-    position: relative;
-    top: 0;
-    // good size for the current height
-    // NOTE: if changing input size this will need to be adjusted
-    @include font-size(1.87);
-    line-height: 1.875rem;
-   }
-
-   // 991px
-   @media (max-width: $screen-sm-max) {
-    @include font-size(2);
-    line-height: 1em;
-    padding-top: 0;
-   }
-  }
- }
-
- // we are floating this and all of its siblings
- .textfield-container {
-  float: left;
-  width: 100%;
- }
-
- .close-search {
-  display: none;
-  position: absolute;
-  right: -10px;
-  cursor: pointer;
-  .sr-only {
-   height: unset !important;
-   width: unset !important;
-   position: relative !important;
-   clip: unset !important;
-   background: none !important;
-   margin: 0 !important;
-   font-size: 1.125rem !important;
+    &::placeholder {
+      color: $black;
+      opacity: 1;
+    }
+    &::-ms-input-placeholder {
+      color: $black;
+    }
+    &:focus {
+      @include outline(2px);
+      outline-offset: -2px;
+    }
   }
 
-  // 991px
-  @media (max-width: $screen-sm-max) {
-   right: 0;
-   display: none;
+  .submit-container {
+    // Float all the things!!
+    float: left;
+    @include clearfix();
+
+    height: auto;
+    // ie9 needs a little help figuring out it's height
+    height: $search-input-height;
+    -webkit-transition: all $search-dt $search-dft;
+    transition: all $search-dt $search-dft;
+
+    button {
+      // Keep on floating and floating
+      float: left;
+      @include clearfix();
+      -webkit-transition: all $search-dt $search-dft;
+      transition: all $search-dt $search-dft;
+
+      background: none;
+
+      // fallback if not defined in color scheme
+      border-color: white;
+      // no border on the side next to the input otherwise it doubles up the border
+      border-width: $search-input-border-width $search-input-border-width
+        $search-input-border-width 0px;
+      border-style: solid;
+
+      // square up this button with respect to the input
+      width: $search-input-height + (2 * $search-input-border-width);
+      height: 100%;
+
+      // good size for the current height
+      // NOTE: if changing input size this will need to be adjusted
+      @include font-size(1.5);
+      line-height: 0.9375rem;
+
+      // HACK: ios needed button padding explicity removed tp prevent button from expanding
+      padding: 0;
+      // HACK: Removes ios default appearance
+      -webkit-appearance: none;
+
+      > span {
+        // Position the icon in the middle of the button
+        position: relative;
+        top: 0;
+        // good size for the current height
+        // NOTE: if changing input size this will need to be adjusted
+        @include font-size(1.87);
+        line-height: 1.875rem;
+      }
+
+      // 991px
+      @media (max-width: $screen-sm-max) {
+        @include font-size(2);
+        line-height: 1em;
+        padding-top: 0;
+      }
+    }
   }
- }
+
+  // we are floating this and all of its siblings
+  .textfield-container {
+    float: left;
+    width: 100%;
+  }
+
+  .close-search {
+    display: none;
+    position: absolute;
+    right: -10px;
+    cursor: pointer;
+    .sr-only {
+      height: unset !important;
+      width: unset !important;
+      position: relative !important;
+      clip: unset !important;
+      background: none !important;
+      margin: 0 !important;
+      font-size: 1.125rem !important;
+    }
+
+    // 991px
+    @media (max-width: $screen-sm-max) {
+      right: 0;
+      display: none;
+    }
+  }
 }
 
 .search-textfield {
-   padding-left: 10px; // Applying padding to all the search inputs globally. TODO: Check regression
+  padding-left: 10px; // Applying padding to all the search inputs globally. TODO: Check regression
 }
-input[type="search"].search-textfield { 
+input[type="search"].search-textfield {
   -webkit-appearance: none; // Removing iPhone rounder corner rendering
   background-color: canvas; // Removing iPhone -apple-system-opaque-tertiary-fill color
 }
 
 .search-container.active {
- max-height: 300px;
- padding: 20px 15%;
- //border-bottom-width: 2px;
+  max-height: 300px;
+  padding: 20px 15%;
+  //border-bottom-width: 2px;
 
- /* Active on mobile // 991px // */
- @media (max-width: $screen-sm-max) {
-  padding-top: 1.125rem;
-  padding-bottom: 1.125rem;
- }
-
- .close-search {
-  display: block; // beta 5.0 addition
-  // 991px
+  /* Active on mobile // 991px // */
   @media (max-width: $screen-sm-max) {
-   display: none;
+    padding-top: 1.125rem;
+    padding-bottom: 1.125rem;
   }
- }
+
+  .close-search {
+    display: block; // beta 5.0 addition
+    // 991px
+    @media (max-width: $screen-sm-max) {
+      display: none;
+    }
+  }
 }
 
 #local_form {
- position: relative;
+  position: relative;
 }
 
 //
@@ -209,7 +210,7 @@ input[type="search"].search-textfield {
 
 .cse .gsc-control-cse,
 .gsc-control-cse {
- padding: 0 !important;
+  padding: 0 !important;
 }
 
 // TODO: Refactor this into using an applied class of active instead of expanded
@@ -217,125 +218,128 @@ input[type="search"].search-textfield {
 
 //992px
 @media (min-width: $screen-md-min) {
- .featured-search {
-  display: block;
-  position: absolute;
-  top: 240px; // Position search in the middle of the banner
-  padding: 0;
+  .featured-search {
+    display: block;
+    position: absolute;
+    top: 240px; // Position search in the middle of the banner
+    padding: 0;
 
-  max-height: 100%;
-  border-radius: 0;
+    max-height: 100%;
+    border-radius: 0;
 
-  width: 60%;
-  left: 20%;
+    width: 60%;
+    left: 20%;
 
-  .flexbox & {
-   left: 0px;
-   right: 0px;
-   margin: 0 auto;
-   width: 60%;
-   max-width: 630px;
-  }
-
-  &.play-animation {
-   -webkit-animation-duration: 1s;
-   animation-duration: 1s;
-   -webkit-animation-fill-mode: both;
-   animation-fill-mode: both;
-   -webkit-animation-name: pulse;
-   animation-name: pulse;
-  }
-
-  .search-textfield {
-   padding: 14px; // Increases padding on large search to make it appear bigger.
-   @include font-size(1.1); // increases font size to approx 16.5px
-   height: 38px; // Large search box overides default from above
-  }
-
-  .submit-container {
-   height: 55px; // HACK: ie9 needs a little help figuring out its height
-   width: 55px;
-   -webkit-transition: all $search-ft;
-   transition: all $search-ft;
-   button {
-    -webkit-transition: all $search-ft;
-    transition: all $search-ft;
-    @include font-size(2.5); // Approx 37.5px
-    width: 60px;
-    -webkit-appearance: none;
-
-    > span {
-     font-size: 2.8125rem;
-     line-height: 2.8125rem;
+    .flexbox & {
+      left: 0px;
+      right: 0px;
+      margin: 0 auto;
+      width: 60%;
+      max-width: 630px;
     }
-   }
+
+    &.play-animation {
+      -webkit-animation-duration: 1s;
+      animation-duration: 1s;
+      -webkit-animation-fill-mode: both;
+      animation-fill-mode: both;
+      -webkit-animation-name: pulse;
+      animation-name: pulse;
+    }
+
+    .search-textfield {
+      padding: 14px; // Increases padding on large search to make it appear bigger.
+      @include font-size(1.1); // increases font size to approx 16.5px
+      height: 38px; // Large search box overides default from above
+    }
+
+    .submit-container {
+      height: 55px; // HACK: ie9 needs a little help figuring out its height
+      width: 55px;
+      -webkit-transition: all $search-ft;
+      transition: all $search-ft;
+      button {
+        -webkit-transition: all $search-ft;
+        transition: all $search-ft;
+        @include font-size(2.5); // Approx 37.5px
+        width: 60px;
+        -webkit-appearance: none;
+
+        > span {
+          font-size: 2.8125rem;
+          line-height: 2.8125rem;
+        }
+      }
+    }
   }
- }
 
- .featured-search.active {
-  position: relative;
-  visibility: visible;
-  opacity: 1;
+  .featured-search.active {
+    position: relative;
+    visibility: visible;
+    opacity: 1;
 
-  // 992px
-  @media (min-width: $screen-md-min) {
-   position: absolute;
+    // 992px
+    @media (min-width: $screen-md-min) {
+      position: absolute;
+    }
+    -webkit-transition: top $search-ft, left $search-st $search-ft,
+      width $search-st $search-ft, background-color $search-ft + $search-st,
+      border $search-ft, padding $search-st $search-ft;
+    transition: top $search-ft, left $search-st $search-ft,
+      width $search-st $search-ft, background-color $search-ft + $search-st,
+      border $search-ft, padding $search-st $search-ft;
+    top: $search-absolute-height;
+    left: 0;
+    padding: 20px 0;
+    width: 100%;
+    border-radius: 0;
+    padding-right: 15%;
+    padding-left: 15%;
+    border-bottom: none;
+
+    width: 100%;
+    max-width: 100%;
+
+    .close-search {
+      display: none;
+    }
+
+    .search-textfield {
+      @include font-size(1.1); // increases font size to approx 16.5px
+      height: $search-input-height; // Large search box overides default from above
+      width: 100%;
+      border-radius: $border-radius-base; // 4px corners by default
+      border: $search-input-border-width solid transparent; // makes border transparent but maintains height for hover effect
+      padding: 0 4px; // Padding can control size of small search box
+      -webkit-transition: border $search-ft;
+      transition: border $search-ft;
+    }
   }
-  -webkit-transition: top $search-ft, left $search-st $search-ft, width $search-st $search-ft,
-   background-color $search-ft + $search-st, border $search-ft, padding $search-st $search-ft;
-  transition: top $search-ft, left $search-st $search-ft, width $search-st $search-ft,
-   background-color $search-ft + $search-st, border $search-ft, padding $search-st $search-ft;
-  top: $search-absolute-height;
-  left: 0;
-  padding: 20px 0;
-  width: 100%;
-  border-radius: 0;
-  padding-right: 15%;
-  padding-left: 15%;
-  border-bottom: none;
-
-  width: 100%;
-  max-width: 100%;
-
-  .close-search {
-   display: none;
-  }
-
-  .search-textfield {
-   @include font-size(1.1); // increases font size to approx 16.5px
-   height: $search-input-height; // Large search box overides default from above
-   width: 100%;
-   border-radius: $border-radius-base; // 4px corners by default
-   border: $search-input-border-width solid transparent; // makes border transparent but maintains height for hover effect
-   padding: 0 4px; // Padding can control size of small search box
-   -webkit-transition: border $search-ft;
-   transition: border $search-ft;
-  }
- }
 }
 
 .search-container.featured-search {
- // 991px
- @media (max-width: $screen-sm-max) {
-  padding-right: 1rem;
-  padding-left: 1rem;
- }
+  // 991px
+  @media (max-width: $screen-sm-max) {
+    padding-right: 1rem;
+    padding-left: 1rem;
+    max-height: 100%;
+  }
 }
 
 /* Resize search bar to look better on tablet size screens */
 @media (min-width: $screen-sm-min) and (max-width: $screen-md-min) {
- .featured-search {
-  left: 10%;
-  width: 80%;
- }
- .flexbox .featured-search {
-  left: 0;
-  width: 80%;
- }
+  .featured-search {
+    left: 10%;
+    width: 80%;
+  }
+  .flexbox .featured-search {
+    left: 0;
+    width: 100%;
+  }
 
- .featured-search.active {
-  width: 100%;
- }
+  .featured-search.active {
+    width: 100%;
+  }
 }
 
 //
@@ -343,67 +347,67 @@ input[type="search"].search-textfield {
 //-----------------------------------------
 
 .agency-form {
- @include clearfix();
- margin-top: $spacer-y !important;
- margin-bottom: $spacer-y !important;
-
- .textfield-container {
-  float: left;
-  padding-right: 44px; // Creates blank space to left of search for submit button
-  margin-right: -44px; // Reverses space created for button and prevents line break
-  width: 100%;
- }
-
- .search-textfield {
-  width: 100%;
- }
-
- .submit-container {
   @include clearfix();
-  float: left;
-  height: $search-input-height; // ie9 needs a little help figuring out it's height
+  margin-top: $spacer-y !important;
+  margin-bottom: $spacer-y !important;
+
+  .textfield-container {
+    float: left;
+    padding-right: 44px; // Creates blank space to left of search for submit button
+    margin-right: -44px; // Reverses space created for button and prevents line break
+    width: 100%;
+  }
+
+  .search-textfield {
+    width: 100%;
+  }
+
+  .submit-container {
+    @include clearfix();
+    float: left;
+    height: $search-input-height; // ie9 needs a little help figuring out it's height
+
+    button {
+      color: #fff;
+      border: none;
+      width: 44px;
+      height: 100%;
+      float: left;
+      @include font-size(1.5);
+      line-height: 0.9375rem;
+      padding: 0; // ios needed button padding explicity removed tp prevent button from expanding
+      -webkit-appearance: none; // Removes ios default appearance
+
+      > span {
+        // Position the icon in the middle of the button
+        position: relative;
+        top: 0;
+        @include font-size(1.87);
+        line-height: 1.875rem;
+      }
+      // 991px
+      @media (max-width: $screen-sm-max) {
+        @include font-size(2);
+        line-height: 1em;
+        padding-top: 0;
+      }
+    }
+  }
+
+  input,
+  button {
+    height: $search-input-height;
+    line-height: 2.5rem;
+  }
 
   button {
-   color: #fff;
-   border: none;
-   width: 44px;
-   height: 100%;
-   float: left;
-   @include font-size(1.5);
-   line-height: 0.9375rem;
-   padding: 0; // ios needed button padding explicity removed tp prevent button from expanding
-   -webkit-appearance: none; // Removes ios default appearance
+    background: $gray-light;
 
-   > span {
-    // Position the icon in the middle of the button
-    position: relative;
-    top: 0;
-    @include font-size(1.87);
-    line-height: 1.875rem;
-   }
-   // 991px
-   @media (max-width: $screen-sm-max) {
-    @include font-size(2);
-    line-height: 1em;
-    padding-top: 0;
-   }
+    > span {
+      top: 0;
+      @include font-size(1.8);
+    }
   }
- }
-
- input,
- button {
-  height: $search-input-height;
-  line-height: 2.5rem;
- }
-
- button {
-  background: $gray-light;
-
-  > span {
-   top: 0;
-   @include font-size(1.8);
-  }
- }
 }
 
 //
@@ -412,214 +416,214 @@ input[type="search"].search-textfield {
 
 .search-container,
 .search-container.featured-search.active {
- .textfield-container {
-  /* Desktop Search Button Padding */
-  margin-right: -80px;
-  padding-right: 80px;
+  .textfield-container {
+    /* Desktop Search Button Padding */
+    margin-right: -80px;
+    padding-right: 80px;
 
-  /* Mobile Search button padding */
-  @media (max-width: $screen-sm-max) {
-   margin-right: -48px; // Larger by 4 to account for border
-   padding-right: 44px;
-  }
- }
-
- .submit-container {
-  width: auto;
- }
-
- .search-locator {
-  color: $text-color;
-  float: left;
-  text-align: center;
-  width: 100px;
-
-  position: relative;
-  // Centers vertically for general pages
-
-  display: none;
-
-  line-height: inherit !important;
-
-  cursor: pointer;
-
-  [class^="ca-gov-icon-"] {
-   @include font-size(1.4);
-   padding: 0 !important;
-   position: absolute;
-   top: 0;
-   width: 100%;
-   left: 0;
+    /* Mobile Search button padding */
+    @media (max-width: $screen-sm-max) {
+      margin-right: -48px; // Larger by 4 to account for border
+      padding-right: 44px;
+    }
   }
 
-  small {
-   position: absolute;
-   top: 1.7em;
-   left: 0;
-   width: 100%;
-   text-align: center;
-   display: block;
-   overflow: hidden;
-   white-space: nowrap;
-   text-overflow: ellipsis;
+  .submit-container {
+    width: auto;
   }
-  /* Active on mobile */
-  @media (max-width: $screen-sm-max) {
-   width: 75px;
-   margin-left: 5px;
-  }
- }
- &.active {
+
   .search-locator {
-   display: block;
+    color: $text-color;
+    float: left;
+    text-align: center;
+    width: 100px;
+
+    position: relative;
+    // Centers vertically for general pages
+
+    display: none;
+
+    line-height: inherit !important;
+
+    cursor: pointer;
+
+    [class^="ca-gov-icon-"] {
+      @include font-size(1.4);
+      padding: 0 !important;
+      position: absolute;
+      top: 0;
+      width: 100%;
+      left: 0;
+    }
+
+    small {
+      position: absolute;
+      top: 1.7em;
+      left: 0;
+      width: 100%;
+      text-align: center;
+      display: block;
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+    }
+    /* Active on mobile */
+    @media (max-width: $screen-sm-max) {
+      width: 75px;
+      margin-left: 5px;
+    }
   }
- }
+  &.active {
+    .search-locator {
+      display: block;
+    }
+  }
 }
 
 .featured-search {
- .textfield-container {
-  padding-right: 60px; // Creates blank space to left of search for submit button
-  margin-right: -60px; // Reverses space created for button and prevents line break
- }
+  .textfield-container {
+    padding-right: 60px; // Creates blank space to left of search for submit button
+    margin-right: -60px; // Reverses space created for button and prevents line break
+  }
 }
 
 .featured-search.active {
- .search-locator {
-  display: block;
- }
+  .search-locator {
+    display: block;
+  }
 }
 
 .search-container.featured-search {
- background: none; // fallback color
- // Darken the search container on hover
- &:hover,
- &:focus {
-  background: none;
- }
+  background: none; // fallback color
+  // Darken the search container on hover
+  &:hover,
+  &:focus {
+    background: none;
+  }
 
- &.active {
-  background-color: $gray-100;
-  border-top: 1px solid $gray-300;
- }
+  &.active {
+    background-color: $gray-100;
+    border-top: 1px solid $gray-300;
+  }
 }
 
 // 992px
 @media (min-width: $screen-md-min) {
- .fixed.compact .search-container {
-  opacity: 0;
- }
- .active-search .fixed.compact .search-container,
- .fixed.compact .search-container.active {
-  opacity: 1;
-  top: 55px;
- }
+  .fixed.compact .search-container {
+    opacity: 0;
+  }
+  .active-search .fixed.compact .search-container,
+  .fixed.compact .search-container.active {
+    opacity: 1;
+    top: 55px;
+  }
 }
 
 /*full width navigation search container*/
 // 992px
 @media (min-width: $screen-md-min) {
- .nav-full-width + .search-container,
- .nav-full-width + .featured-search.active {
-  top: 35px;
- }
+  .nav-full-width + .search-container,
+  .nav-full-width + .featured-search.active {
+    top: 35px;
+  }
 
- .active-search .fixed.compact .nav-full-width + .search-container,
- .fixed.compact .nav-full-width + .search-container.active {
-  opacity: 1;
-  top: 35px;
- }
+  .active-search .fixed.compact .nav-full-width + .search-container,
+  .fixed.compact .nav-full-width + .search-container.active {
+    opacity: 1;
+    top: 35px;
+  }
 }
 // from 992px to 1140 //
 @media (min-width: $screen-md-min) and (max-width: $screen-lg-min) {
- .nav-full-width + .search-container,
- .nav-full-width + .featured-search.active {
-  top: 32px;
- }
+  .nav-full-width + .search-container,
+  .nav-full-width + .featured-search.active {
+    top: 32px;
+  }
 
- .active-search .fixed.compact .nav-full-width + .search-container,
- .fixed.compact .nav-full-width + .search-container.active {
-  opacity: 1;
-  top: 32px;
- }
+  .active-search .fixed.compact .nav-full-width + .search-container,
+  .fixed.compact .nav-full-width + .search-container.active {
+    opacity: 1;
+    top: 32px;
+  }
 }
 
 /* Search Button */
 
 button.gsc-search-button {
- cursor: pointer;
- border-top-right-radius: 5px;
- border-bottom-right-radius: 5px;
- padding: 0px 12px 0px 12px;
- border: 1px solid;
- min-height: 38px;
- margin-left: -1px;
+  cursor: pointer;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+  padding: 0px 12px 0px 12px;
+  border: 1px solid;
+  min-height: 38px;
+  margin-left: -1px;
 }
 
 /* ------------- Custom search box (not google) --------------*/
 .search-container {
- #Search {
-  display: flex;
+  #Search {
+    display: flex;
 
-  .gsc-search-button {
-   right: 50px;
-  }
-
-  .close-search-btn {
-   display: block;
-  }
-
-  .close-search {
-   display: block;
-   right: 0;
-   // 991px
-   @media (max-width: $screen-sm-max) {
-    display: block;
-    cursor: pointer;
-    min-height: 38px;
-    .sr-only {
-     height: unset !important;
-     width: unset !important;
-     position: relative !important;
-     clip: unset !important;
-     background: none !important;
-     margin: 0 !important;
-     font-size: 1.125rem !important;
+    .gsc-search-button {
+      right: 50px;
     }
-   }
+
+    .close-search-btn {
+      display: block;
+    }
+
+    .close-search {
+      display: block;
+      right: 0;
+      // 991px
+      @media (max-width: $screen-sm-max) {
+        display: block;
+        cursor: pointer;
+        min-height: 38px;
+        .sr-only {
+          height: unset !important;
+          width: unset !important;
+          position: relative !important;
+          clip: unset !important;
+          background: none !important;
+          margin: 0 !important;
+          font-size: 1.125rem !important;
+        }
+      }
+    }
   }
- }
 }
 
 .featured-search {
- .container {
-  padding: 0 !important;
+  .container {
+    padding: 0 !important;
 
-  #Search {
-   .gsc-search-button {
-    right: 0;
-    outline-offset: -2px;
-   }
+    #Search {
+      .gsc-search-button {
+        right: 0;
+        outline-offset: -2px;
+      }
 
-   .close-search-btn {
-    display: none;
-   }
+      .close-search-btn {
+        display: none;
+      }
+    }
   }
- }
 }
 
 .featured-search.active {
- .container {
-  #Search {
-   .gsc-search-button {
-    right: 50px;
-    outline-offset: -2px;
-   }
+  .container {
+    #Search {
+      .gsc-search-button {
+        right: 50px;
+        outline-offset: -2px;
+      }
 
-   .close-search-btn {
-    display: block;
-   }
+      .close-search-btn {
+        display: block;
+      }
+    }
   }
- }
 }
 
 /* -----------------------------------------
@@ -628,245 +632,254 @@ GOOGLE CUSTOM SEARCH CUSTOMIZATION OVERRIDES
 ----------------------------------------- */
 
 .gsc-control-searchbox-only {
- form.gsc-search-box {
-  margin-bottom: 0;
- }
-
- table.gsc-search-box {
-  margin-bottom: 0;
-
-  td.gsc-input {
-   padding-right: 0 !important;
-   width: 100% !important;
+  form.gsc-search-box {
+    margin-bottom: 0;
   }
- }
 
- .gsc-input-box {
-  border: none !important;
-  background: transparent !important;
-  height: 100%;
- }
+  table.gsc-search-box {
+    margin-bottom: 0;
 
- input.gsc-input {
-  background-color: rgba(255, 255, 255, 1);
-  border-radius: 0;
-  border: 3px solid transparent;
-  transition: border 0.4s;
-  font-size: 1.1rem;
-  height: 55px !important;
-  padding: 14px !important;
-  opacity: 1 !important;
-  width: 100%;
-  background-position-x: 7px !important;
- }
-
- input.gsc-search-button,
- button.gsc-search-button {
-  opacity: 0;
-  width: 55px;
-  height: 51px;
-  position: absolute;
-  right: 2px;
-  top: 2px;
-  z-index: 55;
- }
-
- td.gsc-clear-button {
-  width: 1px !important;
-  margin-right: 0 !important;
-  margin-left: 0 !important;
-  padding-right: 0 !important;
-  padding-left: 0 !important;
-  position: relative;
- }
-
- td.gsc-search-button {
-  width: 0px !important;
-  margin-right: 0 !important;
-  margin-left: 0 !important;
-  padding-right: 0 !important;
-  padding-left: 0 !important;
-  position: relative;
- }
-
- div.gsc-clear-button {
-  padding-left: 0 !important;
-  display: block !important;
-  background-image: none !important;
-  margin-left: 0;
-  margin-right: 0;
-  width: 40px;
-  display: block !important;
-
-  &:before {
-   content: "\4d";
-   font-family: cagov;
-   font-size: 2rem;
-   width: 100%;
-   color: $gray-lighter;
-   display: block;
-   margin-top: 12px;
-   margin-left: 2px;
+    td.gsc-input {
+      padding-right: 0 !important;
+      width: 100% !important;
+    }
   }
- }
+
+  .gsc-input-box {
+    border: none !important;
+    background: transparent !important;
+    height: 100%;
+  }
+
+  input.gsc-input {
+    background-color: rgba(255, 255, 255, 1);
+    border-radius: 0;
+    border: 3px solid transparent;
+    transition: border 0.4s;
+    font-size: 1.1rem;
+    height: 55px !important;
+    padding: 14px !important;
+    opacity: 1 !important;
+    width: 100%;
+    background-position-x: 7px !important;
+  }
+
+  input.gsc-search-button,
+  button.gsc-search-button {
+    opacity: 0;
+    width: 55px;
+    height: 51px;
+    position: absolute;
+    right: 2px;
+    top: 2px;
+    z-index: 55;
+  }
+
+  td.gsc-clear-button {
+    width: 1px !important;
+    margin-right: 0 !important;
+    margin-left: 0 !important;
+    padding-right: 0 !important;
+    padding-left: 0 !important;
+    position: relative;
+  }
+
+  td.gsc-search-button {
+    width: 0px !important;
+    margin-right: 0 !important;
+    margin-left: 0 !important;
+    padding-right: 0 !important;
+    padding-left: 0 !important;
+    position: relative;
+  }
+
+  div.gsc-clear-button {
+    padding-left: 0 !important;
+    display: block !important;
+    background-image: none !important;
+    margin-left: 0;
+    margin-right: 0;
+    width: 40px;
+    display: block !important;
+
+    &:before {
+      content: "\4d";
+      font-family: cagov;
+      font-size: 2rem;
+      width: 100%;
+      color: $gray-lighter;
+      display: block;
+      margin-top: 12px;
+      margin-left: 2px;
+    }
+  }
 }
 
 .search-icon {
- font-size: 2.4rem;
- width: 0;
- color: #666;
- display: block;
- position: relative;
- top: 0;
- right: 49px;
+  font-size: 2.4rem;
+  width: 0;
+  color: #666;
+  display: block;
+  position: relative;
+  top: 0;
+  right: 49px;
 }
 
 .search-container.active {
- div.gsc-clear-button {
-  width: 40px;
+  div.gsc-clear-button {
+    width: 40px;
 
-  &:before {
-   content: "\4d";
-   font-family: cagov;
-   font-size: 2rem;
-   width: 100%;
-   color: $gray-lighter;
-   display: block;
-   margin-top: 12px;
-   margin-left: 2px;
+    &:before {
+      content: "\4d";
+      font-family: cagov;
+      font-size: 2rem;
+      width: 100%;
+      color: $gray-lighter;
+      display: block;
+      margin-top: 12px;
+      margin-left: 2px;
+    }
   }
- }
 }
 
 .featured-search {
- div.gsc-clear-button {
-  width: 0px; // removes right space from featured search box
-  &:before {
-   display: none;
+  div.gsc-clear-button {
+    width: 0px; // removes right space from featured search box
+    &:before {
+      display: none;
+    }
   }
- }
 }
 
 .search-results-header .gsc-control-searchbox-only {
- margin-bottom: 20px; // gives bottom margin to search searchbox in search results page
- td.gsc-clear-button {
-  display: none; // removes clear results cell from the searchbox
- }
+  margin-bottom: 20px; // gives bottom margin to search searchbox in search results page
+  td.gsc-clear-button {
+    display: none; // removes clear results cell from the searchbox
+  }
 }
 
 // Fixes after google updated custom search API
 
 table.gsc-search-box table td div {
- padding: 0 !important;
+  padding: 0 !important;
 }
 
 .gsc-input-box-focus,
 .gsc-input-box-hover {
- box-shadow: none !important;
- border: none !important;
+  box-shadow: none !important;
+  border: none !important;
 }
 
 table.gsc-search-box td {
- padding: 0 !important;
+  padding: 0 !important;
 }
 
 .gsc-search-box-tools .gsc-clear-button {
- display: block !important;
+  display: block !important;
 }
 
 .search-container.active div.gsc-clear-button {
- width: 40px;
+  width: 40px;
 }
 
 .gsc-input-box table td:nth-child(2),
 .gsib_b {
- display: none !important;
+  display: none !important;
 }
 
 /* Full Width navigation search */
 @media (min-width: 992px) {
- .full-width-nav .featured-search {
-  top: -60px !important;
-  right: 15px;
-  left: unset !important;
-  width: 32%;
- }
-
- .full-width-nav .featured-search input.search-textfield {
-  border-radius: 5px;
-  border-top-right-radius: 0;
-  border-bottom-right-radius: 0;
-  padding: 0 8px 0 8px;
- }
-
- /* full width featured search hack for IE */
- @media all and (-ms-high-contrast: none) {
   .full-width-nav .featured-search {
-   width: 100%;
-   max-width: 100%;
-   padding-right: 15px;
-
-   .container {
-    width: 40%;
-    float: right;
-   }
+    top: -60px !important;
+    right: 15px;
+    left: unset !important;
+    width: 32%;
   }
 
-  *::-ms-backdrop,
-  .full-width-nav .featured-search {
-   width: 100%;
-   max-width: 100%;
-   padding-right: 15px;
-
-   .container {
-    width: 40%;
-    float: right;
-   }
+  .full-width-nav .featured-search input.search-textfield {
+    border-radius: 5px;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    padding: 0 8px 0 8px;
   }
- }
+
+  /* full width featured search hack for IE */
+  @media all and (-ms-high-contrast: none) {
+    .full-width-nav .featured-search {
+      width: 100%;
+      max-width: 100%;
+      padding-right: 15px;
+
+      .container {
+        width: 40%;
+        float: right;
+      }
+    }
+
+    *::-ms-backdrop,
+    .full-width-nav .featured-search {
+      width: 100%;
+      max-width: 100%;
+      padding-right: 15px;
+
+      .container {
+        width: 40%;
+        float: right;
+      }
+    }
+  }
 }
 
 @media (min-width: $screen-md-min) and (max-width: $screen-lg-min) {
- /* full width featured search hack for IE */
- @media all and (-ms-high-contrast: none) {
-  .full-width-nav .featured-search {
-   width: 100%;
-   max-width: 100%;
-   padding-right: 15px;
+  /* full width featured search hack for IE */
+  @media all and (-ms-high-contrast: none) {
+    .full-width-nav .featured-search {
+      width: 100%;
+      max-width: 100%;
+      padding-right: 15px;
 
-   .container {
-    width: 40%;
-    float: right;
-   }
+      .container {
+        width: 40%;
+        float: right;
+      }
+    }
+
+    *::-ms-backdrop,
+    .full-width-nav .featured-search {
+      width: 100%;
+      max-width: 100%;
+      padding-right: 15px;
+
+      .container {
+        width: 40%;
+        float: right;
+      }
+    }
   }
-
-  *::-ms-backdrop,
-  .full-width-nav .featured-search {
-   width: 100%;
-   max-width: 100%;
-   padding-right: 15px;
-
-   .container {
-    width: 40%;
-    float: right;
-   }
-  }
- }
 }
 
 /* search box icons for mobile */
 @media (max-width: $screen-sm-max) {
- .search-container #Search .close-search {
-  padding-left: 10px;
- }
+  .search-container #Search .close-search {
+    padding-left: 10px;
+  }
 }
 
-
 /* clears the ‘X’ from Internet Explorer */
-input[type=search]::-ms-clear { display: none; width : 0; height: 0; }
-input[type=search]::-ms-reveal { display: none; width : 0; height: 0; }
+input[type="search"]::-ms-clear {
+  display: none;
+  width: 0;
+  height: 0;
+}
+input[type="search"]::-ms-reveal {
+  display: none;
+  width: 0;
+  height: 0;
+}
 /* clears the ‘X’ from Chrome */
 input[type="search"]::-webkit-search-decoration,
 input[type="search"]::-webkit-search-cancel-button,
 input[type="search"]::-webkit-search-results-button,
-input[type="search"]::-webkit-search-results-decoration { display: none; }
+input[type="search"]::-webkit-search-results-decoration {
+  display: none;
+}

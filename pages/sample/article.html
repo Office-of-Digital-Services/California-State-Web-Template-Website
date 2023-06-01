@@ -10,97 +10,127 @@ permalink: "/patterns/article.html"
 
 <nav class="page-navigation"></nav>
 
-<p>The Article template provides a clear and user-friendly layout for a news article. Each article contains:</p>
+<p>
+  The Article template provides a clear and user-friendly layout for a news
+  article. Each article contains:
+</p>
 
 <ul>
- <li>Category</li>
- <li>Publication date</li>
- <li>Article title or headline</li>
- <li>Sub-headline (optional)</li>
- <li>Author (optional)</li>
- <li>Social media share icons</li>
- <li>Article body</li>
- <li>Press contact (optional)</li>
+  <li>Category</li>
+  <li>Publication date</li>
+  <li>Article title or headline</li>
+  <li>Sub-headline (optional)</li>
+  <li>Author (optional)</li>
+  <li>Social media share icons</li>
+  <li>Article body</li>
+  <li>Press contact (optional)</li>
 </ul>
-<p>These items give a hierarchy of the content, which increases usability. </p>
+<p>These items give a hierarchy of the content, which increases usability.</p>
 <h2>Article template</h2>
 
 <!--TABS-->
 <div class="tabs responsive">
- <ul class="nav-tabs">
-  <li>
-   <a href="#section1">Example</a>
-  </li>
-  <li>
-   <a href="#section2">Source code</a>
-  </li>
- </ul>
+  <ul class="nav-tabs">
+    <li>
+      <a href="#section1">Example</a>
+    </li>
+    <li>
+      <a href="#section2">Source code</a>
+    </li>
+  </ul>
 
+  <!--Examples-->
+  <section id="section1" class="tab-pane">
+    <div class="card-header" id="heading-example1">
+      <a
+        data-bs-toggle="collapse"
+        href="#collapse-example1"
+        aria-expanded="true"
+        aria-controls="collapse-example1"
+        data-hash="#pane-example1"
+        title="Example tab header">
+        Example
+      </a>
+    </div>
+    <div
+      id="collapse-example1"
+      class="collapse show p-0 m-0 brd-0"
+      role="tabpanel"
+      aria-labelledby="heading-example1">
+      <div class="p-a-sm p-y-0">
+        <figure class="brd-gray-200 brd-solid-1">
+          <img
+            src="/images/sample/images/news-article.png"
+            alt="News article page example" />
+        </figure>
 
- <!--Examples-->
- <section id="section1" class="tab-pane">
-  <div class="card-header" id="heading-example1">
-   <a data-bs-toggle="collapse" href="#collapse-example1" aria-expanded="true" aria-controls="collapse-example1"
-    data-hash="#pane-example1" title="Example tab header">
-    Example
-   </a>
-  </div>
-  <div id="collapse-example1" class="collapse show p-0 m-0 brd-0" role="tabpanel" aria-labelledby="heading-example1">
+        <a
+          href="/patterns/article-sample.html"
+          class="btn btn-outline-primary mb-4"
+          target="_blank">
+          Live example in new tab
+          <span class="ca-gov-icon-arrow-next" aria-hidden="true"></span>
+        </a>
+      </div>
+    </div>
+  </section>
 
-   <div class="p-a-sm p-y-0">
-    <figure class="brd-gray-200 brd-solid-1">
-     <img src="/images/sample/images/news-article.png" alt="News article page example">
-    </figure>
-
-    <a href="/patterns/article-sample.html" class="btn btn-outline-primary mb-4" target="_blank">Live example
-     in new
-     tab <span class="ca-gov-icon-arrow-next" aria-hidden="true"></span></a>
-   </div>
-  </div>
- </section>
-
-
-
- <!--HTML-->
- <section id="section2" class="tab-pane">
-  <div class="card-header" id="heading-html1">
-   <a class="collapsed" data-bs-toggle="collapse" href="#collapse-html1" aria-expanded="false"
-    aria-controls="collapse-html1" data-hash="#pane-html1" title="HTML Source code tab header">
-    Source code
-   </a>
-  </div>
-  <div id="collapse-html1" class="collapse p-0 m-0 brd-0" role="tabpanel" aria-labelledby="heading-html1">
-   <div class="p-a-sm">
-    <h3 class="h4 mt-0">Featured news</h3>
-    <textarea class="sourcecode" aria-label="source code"
-     disabled>{% include "../../src/_includes/modules/news-list-extended.html" %}</textarea>
-   </div>
-  </div>
- </section>
-
+  <!--HTML-->
+  <section id="section2" class="tab-pane">
+    <div class="card-header" id="heading-html1">
+      <a
+        class="collapsed"
+        data-bs-toggle="collapse"
+        href="#collapse-html1"
+        aria-expanded="false"
+        aria-controls="collapse-html1"
+        data-hash="#pane-html1"
+        title="HTML Source code tab header">
+        Source code
+      </a>
+    </div>
+    <div
+      id="collapse-html1"
+      class="collapse p-0 m-0 brd-0"
+      role="tabpanel"
+      aria-labelledby="heading-html1">
+      <div class="p-a-sm">
+        <h3 class="h4 mt-0">Featured news</h3>
+        <textarea class="sourcecode" aria-label="source code" disabled>
+{% include "../../src/_includes/modules/news-list-extended.html" %}</textarea
+        >
+      </div>
+    </div>
+  </section>
 </div>
 <!--END TABS-->
 
-
-
-
 <h2>Usage</h2>
-<h3>When and how to use it </h3>
-<p>Use this page pattern for content that captures information at a point in time. This includes news articles, press
- releases, or blog posts. You can also use this as part of a digital publication.</p>
+<h3>When and how to use it</h3>
+<p>
+  Use this page pattern for content that captures information at a point in
+  time. This includes news articles, press releases, or blog posts. You can also
+  use this as part of a digital publication.
+</p>
 <p>Use other components on this page, as needed.</p>
-<p><span class="bold">Tip:</span> Make sure that important content does not only appear in news articles. Articles
- age immediately after publication. Publish the content somewhere better on your website.</p>
-
+<p>
+  <span class="bold">Tip:</span>
+  Make sure that important content does not only appear in news articles.
+  Articles age immediately after publication. Publish the content somewhere
+  better on your website.
+</p>
 
 <h3>How not to use it</h3>
-<p>Avoid using this template for content that is not a press release, an article, or similar content.</p>
+<p>
+  Avoid using this template for content that is not a press release, an article,
+  or similar content.
+</p>
 
 <h3>Typography and components used</h3>
 <ul>
- <li>Lead text</li>
- <li>Horizontal separator</li>
- <li>Icons</li>
+  <li>Lead text</li>
+  <li>Horizontal separator</li>
+  <li>Icons</li>
 </ul>
 
 <h2>Accessibility</h2>

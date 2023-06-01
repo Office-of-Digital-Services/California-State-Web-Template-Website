@@ -1,62 +1,70 @@
-"use strict"
+//@ts-check
 
-document.addEventListener("DOMContentLoaded", function () {
-    // You can change this class to specify which elements are going to behave as counters.
-    var elements = document.querySelectorAll(".scroll-counter")
+/**
+ * @typedef {Object} ScrollCounter_Properties
+ * @property {boolean} counterAlreadyFired
+ * @property {number} counterSpeed
+ * @property {number} counterTarget
+ * @property {number} counterCount
+ * @property {number} counterStep
+ * @property {()=>void} updateCounter
+ * @typedef {HTMLElement & ScrollCounter_Properties} ScrollCounter
+ */
 
-    elements.forEach(function (item) {
-        // Add new attributes to the elements with the '.scroll-counter' HTML class
-        item.counterAlreadyFired = false
-        item.counterSpeed = item.getAttribute("data-counter-time") / 45
-        item.counterTarget = +item.innerText
-        item.counterCount = 0
-        item.counterStep = item.counterTarget / item.counterSpeed
+document.addEventListener("DOMContentLoaded", () => {
+  // You can change this class to specify which elements are going to behave as counters.
+  /** @type {NodeListOf<ScrollCounter>} */
+  const elements = document.querySelectorAll(".scroll-counter");
 
-        item.updateCounter = function () {
-            item.counterCount = item.counterCount + item.counterStep
-            item.innerText = Math.ceil(item.counterCount)
+  elements.forEach(item => {
+    // Add new attributes to the elements with the '.scroll-counter' HTML class
+    item.counterAlreadyFired = false;
+    item.counterSpeed = Number(item.getAttribute("data-counter-time")) / 45;
+    item.counterTarget = +item.innerText;
+    item.counterCount = 0;
+    item.counterStep = item.counterTarget / item.counterSpeed;
 
-            if (item.counterCount < item.counterTarget) {
-                setTimeout(item.updateCounter, item.counterSpeed)
-            } else {
-                item.innerText = item.counterTarget
-            }
-        }
-    })
+    item.updateCounter = () => {
+      item.counterCount += item.counterStep;
+      item.innerText = Math.ceil(item.counterCount).toString();
 
-    // Function to determine if an element is visible in the web page
-    var isElementVisible = function isElementVisible(el) {
-        var scroll = window.scrollY || window.pageYOffset
-        var boundsTop = el.getBoundingClientRect().top + scroll
-        var viewport = {
-            top: scroll,
-            bottom: scroll + window.innerHeight,
-        }
-        var bounds = {
-            top: boundsTop,
-            bottom: boundsTop + el.clientHeight,
-        }
-        return (
-            (bounds.bottom >= viewport.top && bounds.bottom <= viewport.bottom) ||
-            (bounds.top <= viewport.bottom && bounds.top >= viewport.top)
-        )
-    }
+      if (item.counterCount < item.counterTarget) {
+        window.setTimeout(item.updateCounter, item.counterSpeed);
+      } else {
+        item.innerText = item.counterTarget.toString();
+      }
+    };
+  });
 
-    // Funciton that will get fired uppon scrolling
-    var handleScroll = function handleScroll() {
-        elements.forEach(function (item, id) {
-            if (true === item.counterAlreadyFired) return;
-            if (!isElementVisible(item)) return;
-            item.updateCounter();
-            item.counterAlreadyFired = true;
-        });
-    }
+  // Function to determine if an element is visible in the web page
+  const isElementVisible = (/** @type {Element} */ el) => {
+    const scroll = window.scrollY || window.pageYOffset;
+    const boundsTop = el.getBoundingClientRect().top + scroll;
+    const viewport = {
+      top: scroll,
+      bottom: scroll + window.innerHeight
+    };
+    const bounds = {
+      top: boundsTop,
+      bottom: boundsTop + el.clientHeight
+    };
+    return (
+      (bounds.bottom >= viewport.top && bounds.bottom <= viewport.bottom) ||
+      (bounds.top <= viewport.bottom && bounds.top >= viewport.top)
+    );
+  };
 
-    // Fire the function on load and scroll
-    window.addEventListener("load", function () {
-        handleScroll();
+  // Funciton that will get fired uppon scrolling
+  const handleScroll = () => {
+    elements.forEach(item => {
+      if (item.counterAlreadyFired) return;
+      if (!isElementVisible(item)) return;
+      item.updateCounter();
+      item.counterAlreadyFired = true;
     });
-    window.addEventListener("scroll", function () {
-        handleScroll();
-    });
+  };
+
+  // Fire the function on load and scroll
+  window.addEventListener("load", handleScroll);
+  window.addEventListener("scroll", handleScroll);
 });

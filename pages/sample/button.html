@@ -9,112 +9,164 @@ permalink: "components/button.html"
 
 <nav class="page-navigation"></nav>
 
-<p>A button triggers an event or action. It informs the visitor that something will happen next.</p>
-<p>Buttons add visual prominence to the call to action and provide feedback on completed actions.</p>
+<p>
+  A button triggers an event or action. It informs the visitor that something
+  will happen next.
+</p>
+<p>
+  Buttons add visual prominence to the call to action and provide feedback on
+  completed actions.
+</p>
 <p>Buttons can:</p>
 <ul>
- <li>Move visitors through a process: <span class="text-bold">Submit, Next, Search, Save</span></li>
- <li>Highlight a top task: <span class="text-bold">Learn more, Get started, Join us, Visit</span></li>
- <li>Reverse an action: <span class="text-bold">Cancel, Previous, Reset, Delete</span></li>
- <li>Pause a process: <span class="text-bold">Save as draft</span></li>
+  <li>
+    Move visitors through a process:
+    <span class="text-bold">Submit, Next, Search, Save</span>
+  </li>
+  <li>
+    Highlight a top task:
+    <span class="text-bold">Learn more, Get started, Join us, Visit</span>
+  </li>
+  <li>
+    Reverse an action:
+    <span class="text-bold">Cancel, Previous, Reset, Delete</span>
+  </li>
+  <li>
+    Pause a process:
+    <span class="text-bold">Save as draft</span>
+  </li>
 </ul>
 
 <h2>Sample</h2>
-<p>Available button colors are based on your selected <a href="/visual-design/color.html">color theme</a>.</p>
+<p>
+  Available button colors are based on your selected
+  <a href="/visual-design/color.html">color theme</a>
+  .
+</p>
 
 <!--TABS-->
 <div class="tabs responsive">
- <ul class="nav-tabs">
-  <li>
-   <a href="#section1">Example</a>
-  </li>
-  <li>
-   <a href="#section2">Source code</a>
-  </li>
- </ul>
+  <ul class="nav-tabs">
+    <li>
+      <a href="#section1">Example</a>
+    </li>
+    <li>
+      <a href="#section2">Source code</a>
+    </li>
+  </ul>
 
- <!--Examples-->
- <section id="section1" class="tab-pane">
-  <div class="card-header" id="heading-example1">
-   <a data-bs-toggle="collapse" href="#collapse-example1" aria-expanded="true" aria-controls="collapse-example1"
-    data-hash="#pane-example1" title="Example tab header">
-    Example
-   </a>
-  </div>
-  <div id="collapse-example1" class="collapse show p-0 m-0 brd-0" role="tabpanel" aria-labelledby="heading-example1">
-   <div class="p-a-sm p-b-md">
-    <h3 class="h4 m-t-0 m-b-sm">Primary action buttons</h3>
-    {% include "../../src/_includes/modules/buttons.html" %}
+  <!--Examples-->
+  <section id="section1" class="tab-pane">
+    <div class="card-header" id="heading-example1">
+      <a
+        data-bs-toggle="collapse"
+        href="#collapse-example1"
+        aria-expanded="true"
+        aria-controls="collapse-example1"
+        data-hash="#pane-example1"
+        title="Example tab header">
+        Example
+      </a>
+    </div>
+    <div
+      id="collapse-example1"
+      class="collapse show p-0 m-0 brd-0"
+      role="tabpanel"
+      aria-labelledby="heading-example1">
+      <div class="p-a-sm p-b-md">
+        <h3 class="h4 m-t-0 m-b-sm">Primary action buttons</h3>
+        {% include "../../src/_includes/modules/buttons.html" %}
 
-    <h3 class="h4 m-y-sm">Secondary action buttons </h3>
-    {% include "../../src/_includes/modules/buttons-outline.html" %}
+        <h3 class="h4 m-y-sm">Secondary action buttons</h3>
+        {% include "../../src/_includes/modules/buttons-outline.html" %}
 
-    <h3 class="h4 m-y-sm">Disabled buttons</h3>
-    {% include "../../src/_includes/modules/buttons-disabled.html" %}
+        <h3 class="h4 m-y-sm">Disabled buttons</h3>
+        {% include "../../src/_includes/modules/buttons-disabled.html" %}
 
-    <h3 class="h4 m-y-sm">Button sizes</h3>
-    {% include "../../src/_includes/modules/buttons-sizes.html" %}
-   </div>
-  </div>
- </section>
+        <h3 class="h4 m-y-sm">Button sizes</h3>
+        {% include "../../src/_includes/modules/buttons-sizes.html" %}
+      </div>
+    </div>
+  </section>
 
- <!--HTML-->
- <section id="section2" class="tab-pane">
-  <div class="card-header" id="heading-html1">
-   <a class="collapsed" data-bs-toggle="collapse" href="#collapse-html1" aria-expanded="false"
-    aria-controls="collapse-html1" data-hash="#pane-html1" title="HTML Source code tab header">
-    Source code
-   </a>
-  </div>
-  <div id="collapse-html1" class="collapse p-0 m-0 brd-0" role="tabpanel" aria-labelledby="heading-html1">
-   <div class="p-a-sm">
-    <h3 class="h4 m-t-0 m-b-sm">Primary action buttons</h3>
-    <pre><code>{% include "../../src/_includes/modules/buttons.html" %}</code></pre>
+  <!--HTML-->
+  <section id="section2" class="tab-pane">
+    <div class="card-header" id="heading-html1">
+      <a
+        class="collapsed"
+        data-bs-toggle="collapse"
+        href="#collapse-html1"
+        aria-expanded="false"
+        aria-controls="collapse-html1"
+        data-hash="#pane-html1"
+        title="HTML Source code tab header">
+        Source code
+      </a>
+    </div>
+    <div
+      id="collapse-html1"
+      class="collapse p-0 m-0 brd-0"
+      role="tabpanel"
+      aria-labelledby="heading-html1">
+      <div class="p-a-sm">
+        <h3 class="h4 m-t-0 m-b-sm">Primary action buttons</h3>
+        <pre><code>{% include "../../src/_includes/modules/buttons.html" %}</code></pre>
 
-    <h3 class="h4 m-b-sm">Secondary action buttons </h3>
-    <pre><code>{% include "../../src/_includes/modules/buttons-outline.html" %}</code></pre>
+        <h3 class="h4 m-b-sm">Secondary action buttons</h3>
+        <pre><code>{% include "../../src/_includes/modules/buttons-outline.html" %}</code></pre>
 
-    <h3 class="h4 m-b-sm">Disabled buttons</h3>
-    <pre><code>{% include "../../src/_includes/modules/buttons-disabled.html" %}</code></pre>
+        <h3 class="h4 m-b-sm">Disabled buttons</h3>
+        <pre><code>{% include "../../src/_includes/modules/buttons-disabled.html" %}</code></pre>
 
-    <h3 class="h4 m-b-sm">Button sizes</h3>
-    <pre><code>{% include "../../src/_includes/modules/buttons-sizes.html" %}</code></pre>
-   </div>
-  </div>
-
- </section>
-
+        <h3 class="h4 m-b-sm">Button sizes</h3>
+        <pre><code>{% include "../../src/_includes/modules/buttons-sizes.html" %}</code></pre>
+      </div>
+    </div>
+  </section>
 </div>
 <!--END TABS-->
 
 <h2>Usage</h2>
-<h3>When and how to use it </h3>
-<p>Use buttons to communicate actions users can take to interact with a page. Buttons should be used consistently for
- the same types of tasks.</p>
+<h3>When and how to use it</h3>
+<p>
+  Use buttons to communicate actions users can take to interact with a page.
+  Buttons should be used consistently for the same types of tasks.
+</p>
 
-<p>A primary action button (filled in button) has the highest emphasis. Try to limit the number of primary action
- buttons on a page as they are distracting.</p>
+<p>
+  A primary action button (filled in button) has the highest emphasis. Try to
+  limit the number of primary action buttons on a page as they are distracting.
+</p>
 
-<p>The secondary action button (outlined button) has a lower emphasis, but should still be used sparingly.</p>
+<p>
+  The secondary action button (outlined button) has a lower emphasis, but should
+  still be used sparingly.
+</p>
 
 <p>Buttons should be used to help people:</p>
 <ul>
- <li>Submit a form</li>
- <li>Begin a task</li>
- <li>Make new elements appear on the page</li>
- <li>Identify a new or next step in a process</li>
+  <li>Submit a form</li>
+  <li>Begin a task</li>
+  <li>Make new elements appear on the page</li>
+  <li>Identify a new or next step in a process</li>
 </ul>
 
-<p>Color alone does not convey the meaning of buttons. Be sure to match your button text with the meaning you are trying
- to communicate with color.</p>
-<p>Keep in mind that not everyone will be able to see your button color, so the message should be clear without it.</p>
+<p>
+  Color alone does not convey the meaning of buttons. Be sure to match your
+  button text with the meaning you are trying to communicate with color.
+</p>
+<p>
+  Keep in mind that not everyone will be able to see your button color, so the
+  message should be clear without it.
+</p>
 
-<h3>
- How not to use it
-</h3>
+<h3>How not to use it</h3>
 <p>Avoid using multiple buttons on a single page.</p>
-</p>Avoid using disabled buttons as they can be inaccessible and confusing to some visitors. If you must use a disabled
-button, inform visitors why the button is disabled and how to enable it.</p>
+<p>
+  Avoid using disabled buttons as they can be inaccessible and confusing to some
+  visitors. If you must use a disabled button, inform visitors why the button is
+  disabled and how to enable it.
+</p>
 
 <h2>Accessibility</h2>
 {% include "../../src/_includes/modules/accessibility.html" %}

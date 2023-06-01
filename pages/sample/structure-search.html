@@ -5,125 +5,162 @@ landing: Structure
 permalink: "structure/search.html"
 ---
 
-
 <div class="row">
- <div class="col-md-3" role="complementary">
-  <!-- Side navigation -->
-  <nav aria-labelledby="navigation-list" class="side-navigation sticky-6">
-   <ul class="list-navigation">
-    <li><a href="/structure.html" id="navigation-list" class="landing">Structure</a></li>
-    <li><a href="/structure/utility-header.html">Utility header</a></li>
-    <li><a href="/structure/settings.html">Settings</a></li>
-    <li><a href="/structure/site-header.html">Site header</a></li>
-    <li><a href="/structure/mobile-controls.html">Mobile controls</a></li>
-    <li><a href="/structure/search.html" class="active">Search</a></li>
-    <li><a href="/structure/site-navigation.html">Site navigation</a></li>
-    <li><a href="/structure/footer.html">Footer</a></li>
-   </ul>
-  </nav>
- </div>
- <div class="col-md-9 m-b-lg">
+  <div class="col-lg-3" role="complementary">
+    <!-- Side navigation -->
+    <nav aria-labelledby="navigation-list" class="side-navigation sticky-6">
+      <ul class="list-navigation">
+        <li>
+          <a href="/structure.html" id="navigation-list" class="landing">
+            Structure
+          </a>
+        </li>
+        <li><a href="/structure/utility-header.html">Utility header</a></li>
+        <li><a href="/structure/site-header.html">Site header</a></li>
+        <li><a href="/structure/mobile-controls.html">Mobile controls</a></li>
+        <li><a href="/structure/search.html" class="active">Search</a></li>
+        <li><a href="/structure/site-navigation.html">Site navigation</a></li>
+        <li><a href="/structure/footer.html">Footer</a></li>
+      </ul>
+    </nav>
+  </div>
+  <div class="col-lg-9 m-b-lg">
+    <h1 class="mt-lg-0 m-b-0">Search</h1>
+    <p class="subtitle">Other names: searchbox, search field</p>
 
+    <nav class="page-navigation"></nav>
 
-  <h1 class="mt-lg-0 m-b-0">Search</h1>
-  <p class="subtitle">Other names: searchbox, search field</p>
+    <p>
+      A search input provides visitors an input field to search for specific
+      content within a site or database.
+    </p>
+    <p>
+      With search, visitors can filter content using different keywords or
+      phrases.
+    </p>
+    <p>The search component includes:</p>
+    <ul>
+      <li>A concise label</li>
+      <li>Some placeholder text</li>
+      <li>A magnifying glass icon</li>
+    </ul>
 
-  <nav class="page-navigation"></nav>
+    <p>
+      Search is an optional element. For search to work, you'll need to have a
+      Google Search ID for your domain and include a search results page for
+      your website.
+    </p>
 
+    <h2>Active search</h2>
+    <p>
+      This search bar appears on the right side of the header. This is the
+      default search bar in the template.
+    </p>
 
-  <p>A search input provides visitors an input field to search for specific content within a site or
-   database. </p>
-  <p>With search, visitors can filter content using different keywords or phrases.
-  </p>
-  <p>The search component includes:</p>
-  <ul>
-   <li>A concise label</li>
-   <li>Some placeholder text</li>
-   <li>A magnifying glass icon</li>
-  </ul>
+    <div class="tabs responsive">
+      <ul class="nav-tabs">
+        <li>
+          <a href="#section1">Example</a>
+        </li>
+        <li>
+          <a href="#section2">Source code</a>
+        </li>
+        <li>
+          <a href="#section3">Eleventy include</a>
+        </li>
+      </ul>
 
-  <p>Search is an optional element. For search to work, you'll need to have a Google Search ID for your domain and
-   include a search results page for your website.</p>
+      <section id="section1" class="tab-pane">
+        <div class="card-header" id="heading-example1">
+          <h4 class="my-0 w-100">
+            <a
+              data-bs-toggle="collapse"
+              href="#collapse-example1"
+              aria-expanded="true"
+              aria-controls="collapse-example1"
+              title="Example active search tab header">
+              Example
+            </a>
+          </h4>
+        </div>
+        <div
+          id="collapse-example1"
+          class="collapse show p-0 m-0 brd-0"
+          role="tabpanel"
+          aria-labelledby="heading-example1">
+          <div class="p-a-sm">
+            <h3 class="h4 m-t-0">Desktop</h3>
+            <img
+              src="/images/components/strucutre-site-header.jpg"
+              alt="Site header screenshot"
+              class="img-fluid" />
+          </div>
+        </div>
+      </section>
 
-
-  <h2>Active search</h2>
-  <p>This search bar appears on the right side of the header. This is the default search bar in the template.</p>
-
-  <div class="tabs responsive">
-   <ul class="nav-tabs">
-    <li>
-     <a href="#section1">Example</a>
-    </li>
-    <li>
-     <a href="#section2">Source code</a>
-    </li>
-    <li>
-     <a href="#section3">Eleventy include</a>
-    </li>
-   </ul>
-
-
-
-   <section id="section1" class="tab-pane">
-    <div class="card-header" id="heading-example1">
-     <h4 class="my-0 w-100">
-      <a data-bs-toggle="collapse" href="#collapse-example1" aria-expanded="true" aria-controls="collapse-example1"
-       title="Example active search tab header">
-       Example
-      </a>
-     </h4>
-    </div>
-    <div id="collapse-example1" class="collapse show p-0 m-0 brd-0" role="tabpanel" aria-labelledby="heading-example1">
-     <div class="p-a-sm">
-      <h3 class="h4 m-t-0">Desktop</h3>
-      <img src="/images/components/strucutre-site-header.jpg" alt="Site header screenshot" class="img-fluid">
-
-
-     </div>
-    </div>
-   </section>
-
-   <section id="section2" class="tab-pane">
-    <div class="card-header" id="heading-html1">
-     <h4 class="my-0 w-100">
-      <a class="collapsed" data-bs-toggle="collapse" href="#collapse-html1" aria-expanded="false"
-       aria-controls="collapse-html1" title="Active search HTML source code tab header">
-       HTML Source code
-      </a>
-     </h4>
-    </div>
-    <div id="collapse-html1" class="collapse p-0 m-0 brd-0" role="tabpanel" aria-labelledby="heading-html1">
-     <div class="p-a-sm">
-      <h3 class="h4 m-t-0">HTML</h3>
-      <pre><code>{% include "../../src/_includes/search.njk" %}</code>
+      <section id="section2" class="tab-pane">
+        <div class="card-header" id="heading-html1">
+          <h4 class="my-0 w-100">
+            <a
+              class="collapsed"
+              data-bs-toggle="collapse"
+              href="#collapse-html1"
+              aria-expanded="false"
+              aria-controls="collapse-html1"
+              title="Active search HTML source code tab header">
+              HTML Source code
+            </a>
+          </h4>
+        </div>
+        <div
+          id="collapse-html1"
+          class="collapse p-0 m-0 brd-0"
+          role="tabpanel"
+          aria-labelledby="heading-html1">
+          <div class="p-a-sm">
+            <h3 class="h4 m-t-0">HTML</h3>
+            <pre><code>{% include "../../src/_includes/search.njk" %}</code>
        </pre>
-     </div>
-    </div>
-   </section>
+          </div>
+        </div>
+      </section>
 
-   <section id="section3" class="tab-pane">
-    <div class="card-header" id="heading-include1">
-     <h4 class="my-0 w-100">
-      <a class="collapsed" data-bs-toggle="collapse" href="#collapse-include1" aria-expanded="false"
-       aria-controls="collapse-include1" title="Active search Eleventy Include tab header">
-       Eleventy include
-      </a>
-     </h4>
-    </div>
-    <div id="collapse-include1" class="collapse p-0 m-0 brd-0" role="tabpanel" aria-labelledby="heading-include1">
-     <div class="p-a-sm">
-      <h3 class="h4 m-t-0">Include path and usage</h3>
-      <p class="m-b">The Search <code>njk</code> include code markup:</p>
-      <pre><code>&#123;% include "src/_includes/search.njk" %&#125;</code></pre>
+      <section id="section3" class="tab-pane">
+        <div class="card-header" id="heading-include1">
+          <h4 class="my-0 w-100">
+            <a
+              class="collapsed"
+              data-bs-toggle="collapse"
+              href="#collapse-include1"
+              aria-expanded="false"
+              aria-controls="collapse-include1"
+              title="Active search Eleventy Include tab header">
+              Eleventy include
+            </a>
+          </h4>
+        </div>
+        <div
+          id="collapse-include1"
+          class="collapse p-0 m-0 brd-0"
+          role="tabpanel"
+          aria-labelledby="heading-include1">
+          <div class="p-a-sm">
+            <h3 class="h4 m-t-0">Include path and usage</h3>
+            <p class="m-b">
+              The Search
+              <code>njk</code>
+              include code markup:
+            </p>
+            <pre><code>&#123;% include "src/_includes/search.njk" %&#125;</code></pre>
 
-
-      <h3 class="h4">Using active search include in site header</h3>
-      <p class="m-b">Following code (that has both the search and the site navigation includes) needs to be placed
-       right
-       before closing
-       <code>&lt;/header&gt;</code> tag
-      </p>
-      <pre><code><div class="navigation-search full-width-nav container">
+            <h3 class="h4">Using active search include in site header</h3>
+            <p class="m-b">
+              Following code (that has both the search and the site navigation
+              includes) needs to be placed right before closing
+              <code>&lt;/header&gt;</code>
+              tag
+            </p>
+            <pre><code><div class="navigation-search full-width-nav container">
      <div id="head-search" class="search-container featured-search">
       &#123;% include "src/_includes/search.njk" %&#125;
      </div>
@@ -131,226 +168,296 @@ permalink: "structure/search.html"
   </div>
   </code></pre>
 
-
-      <p class="m-t"><span class="text-highlight-primary">Note:</span> Path to the include will be relative to the
-       directory of
-       your
-       page.</p>
-     </div>
+            <p class="m-t">
+              <span class="text-highlight-primary">Note:</span>
+              Path to the include will be relative to the directory of your
+              page.
+            </p>
+          </div>
+        </div>
+      </section>
     </div>
-   </section>
 
-  </div>
+    <h2>Inactive search</h2>
+    <p>
+      This search bar is hidden (inactive) and becomes active when people select
+      the search menu icon. This search is used on mobile and for sites that use
+      <a href="/structure/navigation-icons.html">icon menu</a>
+      (which includes the search icon).
+    </p>
 
+    <!--start tabs2-->
+    <div class="tabs responsive">
+      <ul class="nav-tabs">
+        <li>
+          <a href="#section4">Example</a>
+        </li>
+        <li>
+          <a href="#section5">Source code</a>
+        </li>
+        <li>
+          <a href="#section6">Eleventy include</a>
+        </li>
+      </ul>
 
+      <section id="section4" class="tab-pane">
+        <div class="card-header" id="heading-example2">
+          <h4 class="my-0 w-100">
+            <a
+              data-bs-toggle="collapse"
+              href="#collapse-example2"
+              aria-expanded="true"
+              aria-controls="collapse-example2"
+              title="Example inactive search tab header">
+              Example
+            </a>
+          </h4>
+        </div>
+        <div
+          id="collapse-example2"
+          class="collapse show p-0 m-0 brd-0"
+          role="tabpanel"
+          aria-labelledby="heading-example2">
+          <div class="p-a-sm">
+            <h3 class="h4 m-t-0">Desktop</h3>
+            <img
+              src="/images/components/structure-search-inactive.jpg"
+              class="img-fluid"
+              alt="Inactive search component screenshot" />
 
+            <a
+              href="/structure/search-inactive.html"
+              class="btn btn-outline-primary m-t-md">
+              Live example
+              <span class="ca-gov-icon-arrow-next" aria-hidden="true"></span>
+            </a>
+          </div>
+        </div>
+      </section>
 
-  <h2>Inactive search</h2>
-  <p>This search bar is hidden (inactive) and becomes active when people select the search menu icon. This search is
-   used on mobile and for sites that use <a href="/structure/navigation-icons.html">icon menu</a> (which includes the
-   search icon).
-  </p>
-
-
-
-  <!--start tabs2-->
-  <div class="tabs responsive">
-   <ul class="nav-tabs">
-    <li>
-     <a href="#section4">Example</a>
-    </li>
-    <li>
-     <a href="#section5">Source code</a>
-    </li>
-    <li>
-     <a href="#section6">Eleventy include</a>
-    </li>
-   </ul>
-
-
-   <section id="section4" class="tab-pane">
-    <div class="card-header" id="heading-example2">
-     <h4 class="my-0 w-100">
-      <a data-bs-toggle="collapse" href="#collapse-example2" aria-expanded="true" aria-controls="collapse-example2"
-       title="Example inactive search tab header">
-       Example
-      </a>
-     </h4>
-    </div>
-    <div id="collapse-example2" class="collapse show p-0 m-0 brd-0" role="tabpanel" aria-labelledby="heading-example2">
-     <div class="p-a-sm">
-      <h3 class="h4 m-t-0">Desktop</h3>
-      <img src="/images/components/structure-search-inactive.jpg" class="img-fluid"
-       alt="Inactive search component screenshot">
-
-      <a href="/structure/search-inactive.html" class="btn btn-outline-primary m-t-md">Live example <span
-        class="ca-gov-icon-arrow-next" aria-hidden="true"></span></a>
-     </div>
-    </div>
-   </section>
-
-   <section id="section5" class="tab-pane">
-    <div class="card-header" id="heading-html2">
-     <h4 class="my-0 w-100">
-      <a class="collapsed" data-bs-toggle="collapse" href="#collapse-html2" aria-expanded="false"
-       aria-controls="collapse-html2" title="Inactive search HTML source code tab header">
-       HTML Source code
-      </a>
-     </h4>
-    </div>
-    <div id="collapse-html2" class="collapse p-0 m-0 brd-0" role="tabpanel" aria-labelledby="heading-html2">
-     <div class="p-a-sm">
-      <h3 class="h4 m-t-0">HTML</h3>
-      <pre><code>{% include "../../src/_includes/search.njk" %}</code>
+      <section id="section5" class="tab-pane">
+        <div class="card-header" id="heading-html2">
+          <h4 class="my-0 w-100">
+            <a
+              class="collapsed"
+              data-bs-toggle="collapse"
+              href="#collapse-html2"
+              aria-expanded="false"
+              aria-controls="collapse-html2"
+              title="Inactive search HTML source code tab header">
+              HTML Source code
+            </a>
+          </h4>
+        </div>
+        <div
+          id="collapse-html2"
+          class="collapse p-0 m-0 brd-0"
+          role="tabpanel"
+          aria-labelledby="heading-html2">
+          <div class="p-a-sm">
+            <h3 class="h4 m-t-0">HTML</h3>
+            <pre><code>{% include "../../src/_includes/search.njk" %}</code>
       </pre>
-     </div>
-    </div>
-   </section>
+          </div>
+        </div>
+      </section>
 
-   <section id="section6" class="tab-pane">
-    <div class="card-header" id="heading-include2">
-     <h4 class="my-0 w-100">
-      <a class="collapsed" data-bs-toggle="collapse" href="#collapse-include2" aria-expanded="false"
-       aria-controls="collapse-include2" title="Inactive search Eleventy Include tab header">
-       Eleventy include
-      </a>
-     </h4>
-    </div>
-    <div id="collapse-include2" class="collapse p-0 m-0 brd-0" role="tabpanel" aria-labelledby="heading-include2">
-     <div class="p-a-sm">
-      <h3 class="h4 m-t-0">Include path and usage</h3>
-      <p>The Search <code>njk</code> include code markup:</p>
-      <pre><code>&#123;% include "src/_includes/search.njk" %&#125;</code></pre>
+      <section id="section6" class="tab-pane">
+        <div class="card-header" id="heading-include2">
+          <h4 class="my-0 w-100">
+            <a
+              class="collapsed"
+              data-bs-toggle="collapse"
+              href="#collapse-include2"
+              aria-expanded="false"
+              aria-controls="collapse-include2"
+              title="Inactive search Eleventy Include tab header">
+              Eleventy include
+            </a>
+          </h4>
+        </div>
+        <div
+          id="collapse-include2"
+          class="collapse p-0 m-0 brd-0"
+          role="tabpanel"
+          aria-labelledby="heading-include2">
+          <div class="p-a-sm">
+            <h3 class="h4 m-t-0">Include path and usage</h3>
+            <p>
+              The Search
+              <code>njk</code>
+              include code markup:
+            </p>
+            <pre><code>&#123;% include "src/_includes/search.njk" %&#125;</code></pre>
 
-
-      <h3 class="h4">Using inactive search include in site header</h3>
-      <p>Following code (that has both the search and the site navigation includes) needs to be placed right
-       before closing
-       <code>&lt;/header&gt;</code> tag
-      </p>
-      <pre><code><div class="navigation-search">
+            <h3 class="h4">Using inactive search include in site header</h3>
+            <p>
+              Following code (that has both the search and the site navigation
+              includes) needs to be placed right before closing
+              <code>&lt;/header&gt;</code>
+              tag
+            </p>
+            <pre><code><div class="navigation-search">
   &#123;% include "src/_includes/navigation.njk" %&#125;
  <div id="head-search" class="search-container">
   &#123;% include "src/_includes/search.njk" %&#125;
  </div>
 </div></code></pre>
 
-
-      <p class="m-t"><span class="text-highlight-primary">Note:</span> Path to the include will be relative to the
-       directory of
-       your
-       page.</p>
-     </div>
+            <p class="m-t">
+              <span class="text-highlight-primary">Note:</span>
+              Path to the include will be relative to the directory of your
+              page.
+            </p>
+          </div>
+        </div>
+      </section>
     </div>
-   </section>
+    <!--end tabs2-->
 
-  </div>
-  <!--end tabs2-->
+    <h2>Featured search</h2>
+    <p>
+      This search is directly under the main menu in a prominent container. It's
+      size and location means the website is intentionally showcasing search as
+      a top task.
+    </p>
 
+    <!--start tabs3-->
+    <div class="tabs responsive">
+      <ul class="nav-tabs">
+        <li>
+          <a href="#section7">Example</a>
+        </li>
+        <li>
+          <a href="#section8">Source code</a>
+        </li>
+        <li>
+          <a href="#section9">Eleventy include</a>
+        </li>
+      </ul>
 
+      <section id="section7" class="tab-pane">
+        <div class="card-header" id="heading-example3">
+          <h4 class="my-0 w-100">
+            <a
+              data-bs-toggle="collapse"
+              href="#collapse-example3"
+              aria-expanded="true"
+              aria-controls="collapse-example3"
+              title="Example featured search tab header">
+              Example
+            </a>
+          </h4>
+        </div>
+        <div
+          id="collapse-example3"
+          class="collapse show p-0 m-0 brd-0"
+          role="tabpanel"
+          aria-labelledby="heading-example3">
+          <div class="p-a-sm">
+            <h3 class="h4 m-t-0">Desktop</h3>
+            <img
+              src="/images/components/structure-search-featured.jpg"
+              class="img-fluid"
+              alt="Featured search" />
+            <a
+              href="/structure/featured-search.html"
+              class="btn btn-outline-primary m-t-md">
+              Live example
+              <span class="ca-gov-icon-arrow-next" aria-hidden="true"></span>
+              <span class="sr-only">of the featured search</span>
+            </a>
+          </div>
+        </div>
+      </section>
 
-  <h2>Featured search</h2>
-  <p>This search is directly under the main menu in a prominent container. It's size and location means the website is
-   intentionally showcasing search as a top task.</p>
-
-
-  <!--start tabs3-->
-  <div class="tabs responsive">
-   <ul class="nav-tabs">
-    <li>
-     <a href="#section7">Example</a>
-    </li>
-    <li>
-     <a href="#section8">Source code</a>
-    </li>
-    <li>
-     <a href="#section9">Eleventy include</a>
-    </li>
-   </ul>
-
-
-
-   <section id="section7" class="tab-pane">
-    <div class="card-header" id="heading-example3">
-     <h4 class="my-0 w-100">
-      <a data-bs-toggle="collapse" href="#collapse-example3" aria-expanded="true" aria-controls="collapse-example3"
-       title="Example featured search tab header">
-       Example
-      </a>
-     </h4>
-    </div>
-    <div id="collapse-example3" class="collapse show p-0 m-0 brd-0" role="tabpanel" aria-labelledby="heading-example3">
-     <div class="p-a-sm">
-      <h3 class="h4 m-t-0">Desktop</h3>
-      <img src="/images/components/structure-search-featured.jpg" class="img-fluid" alt="Featured search">
-      <a href="/structure/featured-search.html" class="btn btn-outline-primary m-t-md">Live example <span
-        class="ca-gov-icon-arrow-next" aria-hidden="true"></span> <span class="sr-only">of the featured
-        search</span></a>
-     </div>
-    </div>
-   </section>
-
-   <section id="section8" class="tab-pane">
-    <div class="card-header" id="heading-html3">
-     <h4 class="my-0 w-100">
-      <a class="collapsed" data-bs-toggle="collapse" href="#collapse-html3" aria-expanded="false"
-       aria-controls="collapse-html3" title="Featured search HTML source code tab header">
-       HTML Source code
-      </a>
-     </h4>
-    </div>
-    <div id="collapse-html3" class="collapse p-0 m-0 brd-0" role="tabpanel" aria-labelledby="heading-html3">
-     <div class="p-a-sm">
-      <h3 class="h4 m-t-0">HTML</h3>
-      <pre><code>{% include "../../src/_includes/search.njk" %}</code>
+      <section id="section8" class="tab-pane">
+        <div class="card-header" id="heading-html3">
+          <h4 class="my-0 w-100">
+            <a
+              class="collapsed"
+              data-bs-toggle="collapse"
+              href="#collapse-html3"
+              aria-expanded="false"
+              aria-controls="collapse-html3"
+              title="Featured search HTML source code tab header">
+              HTML Source code
+            </a>
+          </h4>
+        </div>
+        <div
+          id="collapse-html3"
+          class="collapse p-0 m-0 brd-0"
+          role="tabpanel"
+          aria-labelledby="heading-html3">
+          <div class="p-a-sm">
+            <h3 class="h4 m-t-0">HTML</h3>
+            <pre><code>{% include "../../src/_includes/search.njk" %}</code>
       </pre>
-     </div>
-    </div>
-   </section>
+          </div>
+        </div>
+      </section>
 
-   <section id="section9" class="tab-pane">
-    <div class="card-header" id="heading-include3">
-     <h4 class="my-0 w-100">
-      <a class="collapsed" data-bs-toggle="collapse" href="#collapse-include3" aria-expanded="false"
-       aria-controls="collapse-include3" title="Featured search Eleventy Include tab header">
-       Eleventy include
-      </a>
-     </h4>
-    </div>
-    <div id="collapse-include3" class="collapse p-0 m-0 brd-0" role="tabpanel" aria-labelledby="heading-include3">
-     <div class="p-a-sm">
-      <h3 class="h4 m-t-0">Implementation notes</h3>
+      <section id="section9" class="tab-pane">
+        <div class="card-header" id="heading-include3">
+          <h4 class="my-0 w-100">
+            <a
+              class="collapsed"
+              data-bs-toggle="collapse"
+              href="#collapse-include3"
+              aria-expanded="false"
+              aria-controls="collapse-include3"
+              title="Featured search Eleventy Include tab header">
+              Eleventy include
+            </a>
+          </h4>
+        </div>
+        <div
+          id="collapse-include3"
+          class="collapse p-0 m-0 brd-0"
+          role="tabpanel"
+          aria-labelledby="heading-include3">
+          <div class="p-a-sm">
+            <h3 class="h4 m-t-0">Implementation notes</h3>
 
-      <p>Featured search can be only used with <code>navicons.njk</code> or <code>navicons-landing.njk</code> layouts,
-       since <code>page.njk</code> and <code>landing.njk</code>
-       page layouts already use active search in their page header by default. The <code>.featured-search</code> class
-       needs to be added
-       to the <code>#head-search</code> div in the header of your page. To do this, add the
-       <code>search: Featured</code> parameter
-       to your page front
-       matter data.
-      </p>
+            <p>
+              Featured search can be only used with
+              <code>navicons.njk</code>
+              or
+              <code>navicons-landing.njk</code>
+              layouts, since
+              <code>page.njk</code>
+              and
+              <code>landing.njk</code>
+              page layouts already use active search in their page header by
+              default. The
+              <code>.featured-search</code>
+              class needs to be added to the
+              <code>#head-search</code>
+              div in the header of your page. To do this, add the
+              <code>search: Featured</code>
+              parameter to your page front matter data.
+            </p>
 
-      <h3 class="h4">Include path</h3>
-      <pre><code>&#123;% include "src/_includes/search.njk" %&#125;</code></pre>
+            <h3 class="h4">Include path</h3>
+            <pre><code>&#123;% include "src/_includes/search.njk" %&#125;</code></pre>
 
-
-      <h3 class="h4">Using search include in site header</h3>
-      <p class="m-b">Following code (that has both the search and the site navigation includes) needs to be placed
-       right
-       before closing
-       <code>&lt;/header&gt;</code> tag
-      </p>
-      <pre><code><div class="navigation-search">
+            <h3 class="h4">Using search include in site header</h3>
+            <p class="m-b">
+              Following code (that has both the search and the site navigation
+              includes) needs to be placed right before closing
+              <code>&lt;/header&gt;</code>
+              tag
+            </p>
+            <pre><code><div class="navigation-search">
   &#123;% include "src/_includes/navigation.njk" %&#125;
  <div id="head-search" class="search-container featured-search">
   &#123;% include "src/_includes/search.njk" %&#125;
  </div>
 </div></code></pre>
 
-
-      <h3 class="h4">Activating Featured Search in front matter data</h3>
-      <pre><code class="overflow-auto">---
+            <h3 class="h4">Activating Featured Search in front matter data</h3>
+            <pre><code class="overflow-auto">---
 title: Featured Search
 layout: navicons-landing.njk
 permalink: "components/featured-search.html"
@@ -359,45 +466,58 @@ search: Featured
 ---
 							  </code></pre>
 
-
-      <p class="m-t"><span class="text-highlight-primary">Note:</span> Path to the include will be relative to the
-       directory of
-       your
-       page.</p>
-     </div>
+            <p class="m-t">
+              <span class="text-highlight-primary">Note:</span>
+              Path to the include will be relative to the directory of your
+              page.
+            </p>
+          </div>
+        </div>
+      </section>
     </div>
-   </section>
+    <!--end tabs-->
 
+    <h2>Usage</h2>
+    <h3>When and how to use it</h3>
+
+    <p>
+      Always use a clear and concise label for your search bar. Visitors should
+      readily understand what the search is for.
+    </p>
+    <p>
+      Try to use just one search per page. If you need multiple searches,
+      clearly label them to indicate their purpose.
+    </p>
+
+    <p>
+      For the best search optimization, evolve your content with search results.
+      If visitors frequently use terms that are not in your content, consider
+      working those search terms into the page content.
+    </p>
+
+    <p>
+      Place search into the navigation-search container, which is after Mobile
+      Controls.
+    </p>
+
+    <p>
+      On mobile, the search box becomes a search icon button. When selected, it
+      opens a full-width search box under the header.
+    </p>
+
+    <h3>How not to use it</h3>
+
+    <p>
+      Search field input should fit into one line. Do not use multiline search
+      inputs.
+    </p>
+
+    <p>
+      Do not default to an advanced search. The majority of visitors will want
+      to do a simple keyword search.
+    </p>
+
+    <h2>Accessibility</h2>
+    {% include "../../src/_includes/modules/accessibility.html" %}
   </div>
-  <!--end tabs-->
-
-
-
-
-  <h2>Usage</h2>
-  <h3>When and how to use it</h3>
-
-  <p>Always use a clear and concise label for your search bar. Visitors should readily understand what the search is
-   for.</p>
-  <p>Try to use just one search per page. If you need multiple searches, clearly label them to indicate their purpose.
-  </p>
-
-  <p>For the best search optimization, evolve your content with search results. If visitors frequently use terms that
-   are not in your content, consider working those search terms into the page content. </p>
-
-  <p>Place search into the navigation-search container, which is after Mobile Controls. </p>
-
-  <p>On mobile, the search box becomes a search icon button. When selected, it opens a full-width search box under the
-   header.</p>
-
-  <h3>How not to use it</h3>
-
-  <p>Search field input should fit into one line. Do not use multiline search inputs.</p>
-
-  <p>Do not default to an advanced search. The majority of visitors will want to do a simple keyword search.</p>
-
-  <h2>Accessibility</h2>
-  {% include "../../src/_includes/modules/accessibility.html" %}
-
- </div>
 </div>

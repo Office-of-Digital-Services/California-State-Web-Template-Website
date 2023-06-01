@@ -6,205 +6,340 @@ permalink: "visual-design/color.html"
 ---
 
 <div class="row">
- <div class="col-md-3" role="complementary">
-  <!-- Side navigation -->
-  <nav aria-labelledby="color-themes-list" class="side-navigation sticky-6">
-   <ul class="list-navigation">
-    <li><a href="/visual-design/color.html" class="active landing" id="color-themes-list">Colors</a>
-     <ul>
-      <li><a href="/visual-design/color/?delta">Delta</a></li>
-      <li><a href="/visual-design/color/?eureka">Eureka</a></li>
-      <li><a href="/visual-design/color/?mono">Mono</a></li>
-      <li><a href="/visual-design/color/?oceanside">Oceanside</a></li>
-      <li><a href="/visual-design/color/?orangecounty">Orange County</a></li>
-      <li><a href="/visual-design/color/?pasorobles">Paso Robles</a></li>
-      <li><a href="/visual-design/color/?sacramento">Sacramento</a></li>
-      <li><a href="/visual-design/color/?santabarbara">Santa Barbara</a></li>
-      <li><a href="/visual-design/color/?santacruz">Santa Cruz</a></li>
-      <li><a href="/visual-design/color/?shasta">Shasta</a></li>
-      <li><a href="/visual-design/color/?sierra">Sierra</a></li>
-      <li><a href="/visual-design/color/?trinity">Trinity</a></li>
-     </ul>
-    </li>
-    <li><a href="/visual-design/icons.html">Icons</a></li>
-    <li><a href="/visual-design/typography.html">Typography</a></li>
-   </ul>
-  </nav>
- </div>
- <div class="col-md-9 mx-auto p-b-lg">
-
-  <h1 id="Colors" class="mt-lg-0">Colors</h1>
-  <p>
-   Color distinguishes the brand of State Web Template websites. Our custom color themes help create consistent
-   experiences across products.
-  </p>
-
-  <h2 id="AddAColorTheme">Add a color theme</h2>
-  <p>There are two ways to customize your main theme colors:</p>
-  <ul>
-   <li>Change the primary and secondary theme color variables in the SASS file (/src/scss/colortheme/oceanside.scss).
-   </li>
-   <li>Manually find and replace your main theme colors and their variations in the CSS file.</li>
-  </ul>
-  <p>Use meaningful colors to visually communicate what people need to see.</p>
-
-  <h2 id="ColorThemes">Color themes</h2>
-  <p>Our color themes were developed following best practices in accessibility. Colors were carefully selected to have
-   sufficient contrast between text and backgrounds. Additionally, each theme has css rules to ensure proper color
-   contrast ratios.</p>
-
-  <p>People with low vision should be able to see and use your web products. We recommend choosing primary, secondary,
-   and accent colors with accessible color contrast ratios. Use <a
-    href="https://accessibleweb.com/color-contrast-checker/">Accessible WEB <span class="sr-only">opens in a new window</span>
-  </a> to check the accessibility of your color
-   combinations.</p>
-
-  <div id="theme-palettes" class="mt-5">
+  <div class="col-lg-3" role="complementary">
+    <!-- Side navigation -->
+    <nav aria-labelledby="color-themes-list" class="side-navigation sticky-6">
+      <ul class="list-navigation">
+        <li>
+          <a href="javascript:;" aria-hidden="true" class="d-none"
+            >Visual design</a
+          >
+        </li>
+        <li>
+          <a
+            href="/visual-design/color.html"
+            class="active landing"
+            id="color-themes-list">
+            Colors
+          </a>
+          <ul>
+            <li><a href="/visual-design/color/?delta">Delta</a></li>
+            <li><a href="/visual-design/color/?eureka">Eureka</a></li>
+            <li><a href="/visual-design/color/?mono">Mono</a></li>
+            <li><a href="/visual-design/color/?oceanside">Oceanside</a></li>
+            <li>
+              <a href="/visual-design/color/?orangecounty">Orange County</a>
+            </li>
+            <li><a href="/visual-design/color/?pasorobles">Paso Robles</a></li>
+            <li><a href="/visual-design/color/?sacramento">Sacramento</a></li>
+            <li>
+              <a href="/visual-design/color/?santabarbara">Santa Barbara</a>
+            </li>
+            <li><a href="/visual-design/color/?santacruz">Santa Cruz</a></li>
+            <li><a href="/visual-design/color/?shasta">Shasta</a></li>
+            <li><a href="/visual-design/color/?sierra">Sierra</a></li>
+            <li><a href="/visual-design/color/?trinity">Trinity</a></li>
+          </ul>
+        </li>
+        <li><a href="/visual-design/icons.html">Icons</a></li>
+        <li><a href="/visual-design/typography.html">Typography</a></li>
+      </ul>
+    </nav>
   </div>
+  <div class="col-lg-9 mx-auto p-b-lg">
+    <h1 id="Colors" class="mt-lg-0">Colors</h1>
+    <p>
+      Color distinguishes the brand of State Web Template websites. Our custom
+      color themes help create consistent experiences across products.
+    </p>
 
- </div>
+    <h2 id="AddAColorTheme">Add a color theme</h2>
+    <p>There are two ways to customize your main theme colors:</p>
+    <ul>
+      <li>
+        Change the primary and secondary theme color variables in the SASS file
+        (/src/scss/colortheme/oceanside.scss).
+      </li>
+      <li>
+        Manually find and replace your main theme colors and their variations in
+        the CSS file.
+      </li>
+    </ul>
+    <p>
+      Use meaningful colors to visually communicate what people need to see.
+    </p>
+
+    <h2 id="ColorThemes">Color themes</h2>
+    <p>
+      Our color themes were developed following best practices in accessibility.
+      Colors were carefully selected to have sufficient contrast between text
+      and backgrounds. Additionally, each theme has css rules to ensure proper
+      color contrast ratios.
+    </p>
+
+    <p>
+      People with low vision should be able to see and use your web products. We
+      recommend choosing primary, secondary, and accent colors with accessible
+      color contrast ratios. Use
+      <a href="https://accessibleweb.com/color-contrast-checker/">
+        Accessible WEB
+        <span class="sr-only">opens in a new window</span>
+      </a>
+      to check the accessibility of your color combinations.
+    </p>
+
+    <div id="theme-palettes" class="mt-5"></div>
+
+    <h3>Grayscale</h3>
+    <p>
+      We've added a grayscale palette that works well with all color themes.
+      This allows you to have more design flexibility.
+    </p>
+    <div class="row">
+      <div class="col-md-2">
+        <div class="text-center p-t-3">
+          <div
+            class="bg-white-color rounded-50x palette-disc m-x-a brd-solid-1 brd-gray-200 mx-auto"></div>
+          <p class="font-size-sm m-t-sm">
+            .color-white<br />.bg-white<br />#ffffff
+          </p>
+        </div>
+      </div>
+      <div class="col-md-2">
+        <div class="text-center p-t-3">
+          <div class="bg-gray-50 rounded-50x palette-disc  mx-auto"></div>
+          <p class="font-size-sm m-t-sm">
+            .gray-50<br />.bg-gray-50<br />#fafafa
+          </p>
+        </div>
+      </div>
+      <div class="col-md-2">
+        <div class="text-center p-t-3">
+          <div class="bg-gray-100 rounded-50x palette-disc  mx-auto"></div>
+          <p class="font-size-sm m-t-sm">
+            .gray-100<br />.bg-gray-100<br />#ededef
+          </p>
+        </div>
+      </div>
+      <div class="col-md-2">
+        <div class="text-center p-t-3">
+          <div class="bg-gray-200 rounded-50x palette-disc  mx-auto"></div>
+          <p class="font-size-sm m-t-sm">
+            .gray-200<br />.bg-gray-200<br />#d4d4d7
+          </p>
+        </div>
+      </div>
+      <div class="col-md-2">
+        <div class="text-center p-t-3">
+          <div class="bg-gray-300 rounded-50x palette-disc  mx-auto"></div>
+          <p class="font-size-sm m-t-sm">
+            .gray-300<br />.bg-gray-300<br />#bcbbc1
+          </p>
+        </div>
+      </div>
+      <div class="col-md-2">
+        <div class="text-center p-t-3">
+          <div class="bg-gray-400 rounded-50x palette-disc  mx-auto"></div>
+          <p class="font-size-sm m-t-sm">
+            .gray-400<br />.bg-gray-400<br />#a4a3ab
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="row m-t">
+      <div class="col-md-2">
+        <div class="text-center p-t-3">
+          <div class="bg-gray-500 rounded-50x palette-disc  mx-auto"></div>
+          <p class="font-size-sm m-t-sm">
+            .gray-500<br />.bg-gray-500<br />#898891
+          </p>
+        </div>
+      </div>
+      <div class="col-md-2">
+        <div class="text-center p-t-3">
+          <div class="bg-gray-600 rounded-50x palette-disc  mx-auto"></div>
+          <p class="font-size-sm m-t-sm">
+            .gray-600<br />.bg-gray-600<br />#72717c
+          </p>
+        </div>
+      </div>
+      <div class="col-md-2">
+        <div class="text-center p-t-3">
+          <div class="bg-gray-700 rounded-50x palette-disc  mx-auto"></div>
+          <p class="font-size-sm m-t-sm">
+            .gray-700<br />.bg-gray-700<br />#5e5e6a
+          </p>
+        </div>
+      </div>
+      <div class="col-md-2">
+        <div class="text-center p-t-3">
+          <div class="bg-gray-800 rounded-50x palette-disc  mx-auto"></div>
+          <p class="font-size-sm m-t-sm">
+            .gray-800<br />.bg-gray-800<br />#4a4958
+          </p>
+        </div>
+      </div>
+      <div class="col-md-2">
+        <div class="text-center p-t-3">
+          <div class="bg-gray-900 rounded-50x palette-disc  mx-auto"></div>
+          <p class="font-size-sm m-t-sm">
+            .gray-900<br />.bg-gray-900<br />#3b3a48
+          </p>
+        </div>
+      </div>
+      <div class="col-md-2">
+        <div class="text-center p-t-3">
+          <div class="bg-black rounded-50x palette-disc  mx-auto"></div>
+          <p class="font-size-sm m-t-sm">
+            .color-black<br />.bg-black<br />#000000
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
 
 <style>
- #theme-palettes {
-  display: flex;
-  gap: 22px;
-  flex-wrap: wrap;
-  justify-content: center;
- }
+  #theme-palettes {
+   display: flex;
+   gap: 22px;
+   flex-wrap: wrap;
+   justify-content: center;
+  }
 
- .palette-card {
-  border: 1px solid #D4D4D7;
-  padding: 22px;
- }
+  .palette-card {
+   border: 1px solid #D4D4D7;
+   padding: 22px;
+  }
 
- .palette-row {
-  display: flex;
-  gap: 14px;
-  margin-top: 14px;
- }
+  .palette-row {
+   display: flex;
+   gap: 14px;
+   margin-top: 14px;
+  }
 
- .palette-disc {
-  width: 45px;
-  height: 45px;
- }
+  .palette-disc {
+   width: 45px;
+   height: 45px;
+  }
 </style>
 
 <script>
 
- const themeData = {
-  delta: {
-   name: "Delta",
-   colorHighlight: "A5BDC5",
-   colorPrimary: "577786",
-   colorStandout: "46565E",
-   colorS1: "f5f9fa",
-   altText: "Delta color theme: A blue-gray, a medium-light blue-gray, a light blue-gray, and a dark blue-gray."
-  },
-  eureka: {
-   name: "Eureka",
-   colorHighlight: "D9B295",
-   colorPrimary: "3E4B4D",
-   colorStandout: "21272A",
-   colorS1: "f9f4f0",
-   altText: "Eureka color theme: A dark gray, a beige, an off-white, and an off-black."
-  },
-  mono: {
-   name: "Mono",
-   colorHighlight: "ffce2b",
-   colorPrimary: "545351",
-   colorStandout: "191919",
-   colorS1: "ededef",
-   altText: "Mono color theme: A dark gray, a yellow, a light gray, and an off-black."
-  },
-  oceanside: {
-   name: "Oceanside",
-   colorHighlight: "FDB81E",
-   colorPrimary: "046B99",
-   colorStandout: "323A45",
-   colorS1: "eef8fb",
-   altText: "Oceanside color theme: A medium blue, a yellow, a light blue, and a dark gray."
-  },
-  orangecounty: {
-   name: "Orange County",
-   colorHighlight: "fbad23",
-   colorPrimary: "A15801",
-   colorStandout: "483723",
-   colorS1: "fbf0e7",
-   altText: "Orange County color theme: A dark orange, a yellow-orange, a cream, and a dark brown."
-  },
-  pasorobles: {
-   name: "Paso Robles",
-   colorHighlight: "fbad23",
-   colorPrimary: "691808",
-   colorStandout: "313131",
-   colorS1: "f5f5f5",
-   altText: "Paso Robles color theme: A  dark red, a yellow-orange, a light gray, and a dark brown."
-  },
-  sacramento: {
-   name: "Sacramento",
-   colorHighlight: "7bb0da",
-   colorPrimary: "153554",
-   colorStandout: "730000",
-   colorS1: "e1ecf7",
-   altText: "Sacramento color theme: A dark blue, a medium-light blue, a light blue, and a dark red."
-  },
-  santabarbara: {
-   name: "Santa Barbara",
-   colorHighlight: "FF9B53",
-   colorPrimary: "834B1E",
-   colorStandout: "3c2c29",
-   colorS1: "f8eee4",
-   altText: "Santa Barbara color theme: A brown, a medium-light orange, a cream, and a dark brown."
-  },
-  santacruz: {
-   name: "Santa Cruz",
-   colorHighlight: "f5811b",
-   colorPrimary: "0f4f94",
-   colorStandout: "2c2c4f",
-   colorS1: "eff4fa",
-   altText: "Santa Cruz color theme: A blue, an orange, a light blue, and a dark blue."
-  },
-  shasta: {
-   name: "Shasta",
-   colorHighlight: "fbad23",
-   colorPrimary: "336c39",
-   colorStandout: "3c4543",
-   colorS1: "e4f1e5",
-   altText: "Shasta color theme: A green, a yellow, a light green, and a dark gray."
-  },
-  sierra: {
-   name: "Sierra",
-   colorHighlight: "fbad23",
-   colorPrimary: "447766",
-   colorStandout: "194949",
-   colorS1: "e8f1ee",
-   altText: "Sierra color theme: A green, a yellow, a light green, and a dark green."
-  },
-  trinity: {
-   name: "Trinity",
-   colorHighlight: "c19e73",
-   colorPrimary: "446a7c",
-   colorStandout: "21272a",
-   colorS1: "eff5f8",
-   altText: "Trinity color theme: A blue-gray, a beige, a light gray, and  an off-black."
-  }
- };
+  const themeData = {
+   delta: {
+    name: "Delta",
+    colorHighlight: "A5BDC5",
+    colorPrimary: "577786",
+    colorStandout: "46565E",
+    colorS1: "f5f9fa",
+    altText: "Delta color theme: A blue-gray, a medium-light blue-gray, a light blue-gray, and a dark blue-gray."
+   },
+   eureka: {
+    name: "Eureka",
+    colorHighlight: "D9B295",
+    colorPrimary: "3E4B4D",
+    colorStandout: "21272A",
+    colorS1: "f9f4f0",
+    altText: "Eureka color theme: A dark gray, a beige, an off-white, and an off-black."
+   },
+   mono: {
+    name: "Mono",
+    colorHighlight: "ffce2b",
+    colorPrimary: "545351",
+    colorStandout: "191919",
+    colorS1: "ededef",
+    altText: "Mono color theme: A dark gray, a yellow, a light gray, and an off-black."
+   },
+   oceanside: {
+    name: "Oceanside",
+    colorHighlight: "FDB81E",
+    colorPrimary: "046B99",
+    colorStandout: "323A45",
+    colorS1: "eef8fb",
+    altText: "Oceanside color theme: A medium blue, a yellow, a light blue, and a dark gray."
+   },
+   orangecounty: {
+    name: "Orange County",
+    colorHighlight: "fbad23",
+    colorPrimary: "A15801",
+    colorStandout: "483723",
+    colorS1: "fbf0e7",
+    altText: "Orange County color theme: A dark orange, a yellow-orange, a cream, and a dark brown."
+   },
+   pasorobles: {
+    name: "Paso Robles",
+    colorHighlight: "fbad23",
+    colorPrimary: "691808",
+    colorStandout: "313131",
+    colorS1: "f5f5f5",
+    altText: "Paso Robles color theme: A  dark red, a yellow-orange, a light gray, and a dark brown."
+   },
+   sacramento: {
+    name: "Sacramento",
+    colorHighlight: "7bb0da",
+    colorPrimary: "153554",
+    colorStandout: "730000",
+    colorS1: "e1ecf7",
+    altText: "Sacramento color theme: A dark blue, a medium-light blue, a light blue, and a dark red."
+   },
+   santabarbara: {
+    name: "Santa Barbara",
+    colorHighlight: "FF9B53",
+    colorPrimary: "834B1E",
+    colorStandout: "3c2c29",
+    colorS1: "f8eee4",
+    altText: "Santa Barbara color theme: A brown, a medium-light orange, a cream, and a dark brown."
+   },
+   santacruz: {
+    name: "Santa Cruz",
+    colorHighlight: "f5811b",
+    colorPrimary: "0f4f94",
+    colorStandout: "2c2c4f",
+    colorS1: "eff4fa",
+    altText: "Santa Cruz color theme: A blue, an orange, a light blue, and a dark blue."
+   },
+   shasta: {
+    name: "Shasta",
+    colorHighlight: "fbad23",
+    colorPrimary: "336c39",
+    colorStandout: "3c4543",
+    colorS1: "e4f1e5",
+    altText: "Shasta color theme: A green, a yellow, a light green, and a dark gray."
+   },
+   sierra: {
+    name: "Sierra",
+    colorHighlight: "fbad23",
+    colorPrimary: "447766",
+    colorStandout: "194949",
+    colorS1: "e8f1ee",
+    altText: "Sierra color theme: A green, a yellow, a light green, and a dark green."
+   },
+   trinity: {
+    name: "Trinity",
+    colorHighlight: "c19e73",
+    colorPrimary: "446a7c",
+    colorStandout: "21272a",
+    colorS1: "eff5f8",
+    altText: "Trinity color theme: A blue-gray, a beige, a light gray, and  an off-black."
+   }
+  };
 
- var palettesHTML = "";
- for (const id in themeData) {
-  palettesHTML += ' \
-  <a href="color/?' + id + '"title="' + themeData[id].name + '" class="palette-card no-underline d-block color-gray-dark brd-gray-light brd-solid-1 rounded-5 h-100 transition-0_3 shadow2-hover color-primary color-primary-hover"> \
-    <h3 class="h5 m-t-0">' + themeData[id].name + '</h3> \
-    <div class="palette-row"> \
-      <div class="sr-only">' + themeData[id].altText + '</div> \
-      <div class="palette-disc rounded-circle" style="background-color:#' + themeData[id].colorPrimary + ';"></div> \
-      <div class="palette-disc rounded-circle" style="background-color:#' + themeData[id].colorHighlight + ';"></div> \
-      <div class="palette-disc rounded-circle" style="border:1px solid #d4d4d4;background-color:#' + themeData[id].colorS1 + ';"></div> \
-      <div class="palette-disc rounded-circle" style="background-color:#' + themeData[id].colorStandout + ';"></div> \
-    </div> \
-  </a> \
-  ';
- }
- document.querySelector("#theme-palettes").innerHTML = palettesHTML;
+  var palettesHTML = "";
+  for (const id in themeData) {
+   palettesHTML += ' \
+   <a href="color/?' + id + '"title="' + themeData[id].name + '" class="palette-card no-underline d-block color-gray-dark brd-gray-light brd-solid-1 rounded-5 h-100 transition-0_3 shadow2-hover color-primary color-primary-hover"> \
+     <h3 class="h5 m-t-0">' + themeData[id].name + '</h3> \
+     <div class="palette-row"> \
+       <div class="sr-only">' + themeData[id].altText + '</div> \
+       <div class="palette-disc rounded-circle" style="background-color:#' + themeData[id].colorPrimary + ';"></div> \
+       <div class="palette-disc rounded-circle" style="background-color:#' + themeData[id].colorHighlight + ';"></div> \
+       <div class="palette-disc rounded-circle" style="border:1px solid #d4d4d4;background-color:#' + themeData[id].colorS1 + ';"></div> \
+       <div class="palette-disc rounded-circle" style="background-color:#' + themeData[id].colorStandout + ';"></div> \
+     </div> \
+   </a> \
+   ';
+  }
+  document.querySelector("#theme-palettes").innerHTML = palettesHTML;
 </script>
