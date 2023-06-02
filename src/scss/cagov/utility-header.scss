@@ -121,7 +121,6 @@
 //
 // FLEX UTILITY
 // --------------------------------------------------
-
 .utility-header {
   .flex-row {
     display: flex;
@@ -135,11 +134,18 @@
       .header-cagov-logo {
         margin-right: 0.5rem;
 
-        svg {
+        // DEPRICATED - no longer need (img) because of .ca-gov-logo-svg
+        img {
           left: 0;
           height: 24px;
           vertical-align: top;
           margin-top: 6px;
+
+          vertical-align: middle;
+        }
+
+        .ca-gov-logo-svg {
+          vertical-align: middle;
         }
 
         a {
