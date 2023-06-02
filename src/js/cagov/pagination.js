@@ -112,6 +112,7 @@ cagov-pagination .cagov-pagination__list {
   margin: 0;
   padding: 0 !important;
   display: flex;
+  overflow-x: scroll;
 }
 cagov-pagination .cagov-pagination__item {
   margin: var(--s-sm, 0.25rem);
