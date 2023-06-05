@@ -1,0 +1,88 @@
+---
+permalink: /web.config
+eleventyExcludeFromCollections: true
+---
+
+{%- set redirects = websiteRedirects | selectattr("original_url") -%}
+<?xml version="1.0" encoding="utf-8"?>
+{%- if redirects | groupby("original_url") | length !== redirects | length %} {#
+duplicate "original_url" in data, throw error #} {{ 'web.config build fail ->
+duplicate "original_url" in data' | error }} {% endif -%}
+<configuration>
+  <system.webServer>
+    <staticContent>
+      <remove fileExtension=".woff" />
+      <!-- in case the mime type already exist in IIS -->
+      <mimeMap fileExtension=".woff" mimeType="application/x-font-woff" />
+      <clientCache
+        cacheControlCustom="public"
+        cacheControlMode="UseMaxAge"
+        cacheControlMaxAge="365.00:00:00" />
+      <mimeMap fileExtension=".woff" mimeType="application/x-font-woff" />
+      <mimeMap fileExtension=".woff2" mimeType="application/font-woff2" />
+      <remove fileExtension=".webp" />
+      <mimeMap fileExtension=".webp" mimeType="image/webp" />
+    </staticContent>
+    <rewrite>
+      <rewriteMaps>
+        <rewriteMap name="410Removals" defaultValue="">
+          {%- for item in redirects | rejectattr("replacement_url") %}
+          <add key="{{item.original_url}}" value="foo" />
+          {%- endfor %}
+        </rewriteMap>
+        <rewriteMap name="StaticRewrites" defaultValue="">
+          {%- for item in redirects | selectattr("replacement_url") %}
+          <add key="{{item.original_url}}" value="{{item.replacement_url}}" />
+          {%- endfor %}
+        </rewriteMap>
+      </rewriteMaps>
+      <rules>
+        <rule
+          name="AddTrailingSlash BeforeStaticRewrites"
+          stopProcessing="true">
+          <match url="(^[^.]*[^/]$)" />
+          <action type="Redirect" url="{R:1}/" />
+        </rule>
+        <rule name="Static Rewrite Rule" stopProcessing="true">
+          <match url=".*" />
+          <conditions>
+            <add input="{StaticRewrites:{URL}}" pattern="(.+)" />
+          </conditions>
+          <action type="Redirect" url="{C:1}" />
+        </rule>
+        <rule name="410response" stopProcessing="true">
+          <conditions>
+            <add input="{410Removals:{URL}}" pattern=".+" />
+          </conditions>
+          <action
+            type="CustomResponse"
+            statusCode="410"
+            statusReason="Gone"
+            statusDescription="Gone. The requested resource is no longer available." />
+        </rule>
+      </rules>
+      <outboundRules>
+        <rule name="Add Strict-Transport-Security when HTTPS">
+          <!-- Preload HSTS here ... https://hstspreload.org/ -->
+          <match
+            serverVariable="RESPONSE_Strict_Transport_Security"
+            pattern=".*" />
+          <conditions>
+            <add input="{HTTPS}" pattern="on" ignoreCase="true" />
+          </conditions>
+          <action
+            type="Rewrite"
+            value="max-age=31536000; includeSubDomains; preload" />
+        </rule>
+      </outboundRules>
+    </rewrite>
+
+    <!-- Below block is for custom redirect for 404 error to 404.html -->
+    <httpErrors>
+      <remove statusCode="404" />
+      <error statusCode="404" path="404.html" />
+      <remove statusCode="403" />
+      <error statusCode="403" path="404.html" />
+    </httpErrors>
+  </system.webServer>
+</configuration>
