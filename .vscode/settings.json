@@ -6,13 +6,15 @@
   },
   "editor.tabSize": 2,
   "editor.detectIndentation": false,
-  "prettier.documentSelectors": [
-    "**/*.njk"
-  ],
+  "prettier.documentSelectors": ["**/*.njk"],
   "emmet.includeLanguages": {
     "njk": "html"
   },
-  "formattingToggle.affects": [
-    "editor.formatOnSave"
-  ]
+  "formattingToggle.affects": ["editor.formatOnSave"],
+  "[html]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[json]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  }
 }
