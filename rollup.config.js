@@ -5,11 +5,11 @@ export default [
     input: "src/js/index.js",
     output: [
       {
-        file: "_site/js/cagov.core.js",
+        file: "_site/js/custom.js",
         format: "esm"
       },
       {
-        file: "_site/js/cagov.core.min.js",
+        file: "_site/js/custom.min.js",
         format: "esm",
         plugins: [terser()]
       }
