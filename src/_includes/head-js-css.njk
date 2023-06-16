@@ -1,8 +1,10 @@
-<link rel="stylesheet" href="/css/cagov.core.min.css" />
+<link rel="stylesheet" href="/state-template/css/cagov.core.min.css" />
 {% if colortheme -%}
 <link rel="stylesheet" href="{{ colortheme }}" />
 {% else -%}
-<link rel="stylesheet" href="/css/colortheme-oceanside.min.css" />
+<link
+  rel="stylesheet"
+  href="/state-template/css/colortheme-oceanside.min.css" />
 {% endif -%} {%- if customcss -%}
 <link rel="stylesheet" href="{{ customcss }}" />
 {% endif -%} {%- if customjs -%} {% for link in customjs %}
