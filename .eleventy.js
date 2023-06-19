@@ -2,12 +2,12 @@
 const defaultConfig = require("@11ty/eleventy/src/defaultConfig");
 
 module.exports = function (
-  /** @type {import("@11ty/eleventy").UserConfig} **/ userConfig
+  /** @type {import("@11ty/eleventy").UserConfig} **/ eleventyConfig
 ) {
   // Copy `src/css/` to `_site/css`, `src/images/` to `_site/images`
   // Copy all static files that should appear in the website root
   // Copy state tempate code files from NPM
-  userConfig.addPassthroughCopy({
+  eleventyConfig.addPassthroughCopy({
     "src/images": "images",
     "src/css": "css",
     "src/root": "/",
@@ -15,7 +15,7 @@ module.exports = function (
   });
 
   //Start with default config, easier to configure 11ty later
-  const config = defaultConfig(userConfig);
+  const config = defaultConfig(eleventyConfig);
 
   // allow nunjucks templating in .html files
   config.htmlTemplateEngine = "njk";
