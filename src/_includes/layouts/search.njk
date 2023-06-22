@@ -2,17 +2,17 @@
 <html lang="en">
   <head>
     <title>{{ title }}</title>
-    <meta charset="utf-8"/>
+    <meta charset="utf-8" />
     {% if noindex %}
-      <meta name="robots" content="noindex"/>
+    <meta name="robots" content="noindex" />
     {% endif %}
-    <meta name="Author" content="State of California"/>
-    <meta name="Description" content="State of California"/>
-    <meta name="Keywords" content="California, government"/>
-    <meta name="MobileOptimized" content="320"/>
+    <meta name="Author" content="State of California" />
+    <meta name="Description" content="State of California" />
+    <meta name="Keywords" content="California, government" />
+    <meta name="MobileOptimized" content="320" />
     <meta
       name="viewport"
-      content="width=device-width, initial-scale=1.0, minimum-scale=1.0"/>
+      content="width=device-width, initial-scale=1.0, minimum-scale=1.0" />
     {% include "../head-js-css.njk" %}
     <!--hiding search link from page navigation sinse the search box is already open-->
     <style>
@@ -36,13 +36,8 @@
       <div id="skip-to-content">
         <a href="#main-content">Skip to Main Content</a>
       </div>
-      {% if alert %}
-        {% include alert %}
-      {% endif %}
-      {% include
-      "../utility-header.njk" %}
-      {% include "../site-header.njk" %}
-      {% include
+      {% if alert %} {% include alert %} {% endif %} {% include
+      "../utility-header.njk" %} {% include "../site-header.njk" %} {% include
       "../mobile-controls.njk" %}
 
       <div class="navigation-search full-width-nav container">
@@ -52,47 +47,44 @@
     </header>
 
     {%- block content %}
-      <div id="main-content" class="main-content">
-        <main class="main-primary" id="main">
-          <!--Search result section-->
-          <div class="section section-default">
-            <div class="container search-results-header">
-              <!--Uncomment if you prefer to use original google search box. Be advised that original custom search box is not meeting WCAG accessibility standards. -->
-              <!--<gcse:searchbox-only resultsUrl="/serp.html" enableAutoComplete="true"></gcse:searchbox-only>-->
+    <div id="main-content" class="main-content">
+      <main class="main-primary" id="main">
+        <!--Search result section-->
+        <div class="section section-default">
+          <div class="container search-results-header">
+            <!--Uncomment if you prefer to use original google search box. Be advised that original custom search box is not meeting WCAG accessibility standards. -->
+            <!--<gcse:searchbox-only resultsUrl="/serp.html" enableAutoComplete="true"></gcse:searchbox-only>-->
 
-              <form id="Search" class="d-flex" action="?">
-                <span class="sr-only" id="SearchInput">Custom Google Search</span>
-                <input
+            <form id="Search" class="d-flex" action="?">
+              <span class="sr-only" id="SearchInput">Custom Google Search</span>
+              <input
                 type="search"
                 id="q"
                 name="q"
                 aria-labelledby="SearchInput"
                 placeholder="Search this website"
                 class="search-textfield height-40"
-                style="width:95%"/>
-                <button
+                style="width:95%" />
+              <button
                 type="submit"
                 class="gsc-search-button width-60 height-40 color-white border-0 bg-gray-600 bg-gray-800-hover">
-                  <span class="ca-gov-icon-search" aria-hidden="true"></span>
-                  <span class="sr-only">Submit</span>
-                </button>
-              </form>
-            </div>
+                <span class="ca-gov-icon-search" aria-hidden="true"></span>
+                <span class="sr-only">Submit</span>
+              </button>
+            </form>
           </div>
-          <div class="section">
-            <div class="container">
-              <gcse:searchresults-only></gcse:searchresults-only>
-              <!-- <script src='//www.google.com/jsapi' type='text/javascript'></script> -->
+        </div>
+        <div class="section">
+          <div class="container">
+            <gcse:searchresults-only></gcse:searchresults-only>
+            <!-- <script src='//www.google.com/jsapi' type='text/javascript'></script> -->
 
-              {{ content | safe }}
-            </div>
+            {{ content | safe }}
           </div>
-        </main>
-      </div>
-    {% endblock -%}
-    {%- include "../global-footer.njk" -%}
-    {%- include
-    "../scripts.njk" %}
+        </div>
+      </main>
+    </div>
+    {% endblock -%} {%- include "../global-footer.njk" -%}
 
     <script>
       // Search ID
