@@ -1,3 +1,5 @@
+<link rel="preconnect" href="https://www.googletagmanager.com" />
+<link rel="preconnect" href="https://www.google-analytics.com" />
 <!-- BEGIN Google Tag Manager -->
 <script>
   //The GA4 Measurement ID that this website should use for website analytics
@@ -13,7 +15,9 @@
   new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
   j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-  (function(){dataLayer.push(arguments)})('config',yourGA4MeasurementId);
+  function gtag() {dataLayer.push(arguments);}
+  gtag("config", yourGA4MeasurementId);
+  //gtag("set","allow_google_signals",false);
   })(window,document,'script','dataLayer',stateGTMAccount);
 </script>
 <!-- END Google Tag Manager -->
