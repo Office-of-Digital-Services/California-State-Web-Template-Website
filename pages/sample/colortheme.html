@@ -405,9 +405,6 @@ permalink: "visual-design/color/"
    queryString = "delta"; // set a default theme
   }
 
-  // remove the current color theme css
-  document.querySelectorAll('link[rel=stylesheet][href*="colortheme-"]').forEach(t=>t.remove());
-
   // insert new color theme css
   var link = document.createElement("link");
   link.href = "/state-template/css/colortheme-" + queryString + ".css";
