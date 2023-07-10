@@ -1,13 +1,14 @@
-<link rel="stylesheet" href="/css/theme.css" />
+<link rel="stylesheet" href="/css/cagov.core.colortheme-oceanside.min.css" />
 {%- if customcss -%}
 <link rel="stylesheet" href="{{ customcss }}" />
-{% endif -%} {%- if customjs -%} {% for link in customjs %}
-<script src="{{ link }}"></script>
-{%- endfor -%} {%- endif %}
+{% endif -%}
 <script
   type="text/javascript"
   src="/state-template/js/cagov.core.min.js"></script>
-<script type="text/javascript" src="/js/custom.min.js"></script>
+{% for link in customjs %}
+<script src="{{ link }}"></script>
+{%- endfor -%}
+
 <link
   rel="apple-touch-icon-precomposed"
   sizes="100x100"

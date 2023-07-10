@@ -9,11 +9,13 @@ module.exports = function (
   // Copy all static files that should appear in the website root
   // alternate CSS theme files are needed for color.html selector
   // Copy state tempate code files from NPM
+  // fonts from state template need to be copied out since css is minified locally
   eleventyConfig.addPassthroughCopy({
     "src/images": "images",
     "src/css": "css",
     "src/root": "/",
-    "node_modules/@cagovweb/state-template/dist": "state-template"
+    "node_modules/@cagovweb/state-template/dist": "state-template",
+    "node_modules/@cagovweb/state-template/dist/fonts": "fonts"
   });
 
   eleventyConfig.addFilter(
