@@ -406,11 +406,11 @@ permalink: "visual-design/color/"
   }
 
   // remove the current color theme css
-  document.querySelector('link[rel=stylesheet][href*="colortheme-"]').remove();
+  document.querySelectorAll('link[rel=stylesheet][href*="colortheme-"]').forEach(t=>t.remove());
 
   // insert new color theme css
   var link = document.createElement("link");
-  link.href = "/css/colortheme-" + queryString + ".css";
+  link.href = "/state-template/css/colortheme-" + queryString + ".css";
   link.type = "text/css";
   link.rel = "stylesheet";
   link.media = "screen,print";

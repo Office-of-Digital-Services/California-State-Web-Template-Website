@@ -1,11 +1,13 @@
 //@ts-check
 const defaultConfig = require("@11ty/eleventy/src/defaultConfig");
+const CleanCSS = require("clean-css");
 
 module.exports = function (
   /** @type {import("@11ty/eleventy").UserConfig} **/ eleventyConfig
 ) {
   // Copy `src/css/` to `_site/css`, `src/images/` to `_site/images`
   // Copy all static files that should appear in the website root
+  // alternate CSS theme files are needed for color.html selector
   // Copy state tempate code files from NPM
   eleventyConfig.addPassthroughCopy({
     "src/images": "images",
@@ -13,6 +15,11 @@ module.exports = function (
     "src/root": "/",
     "node_modules/@cagovweb/state-template/dist": "state-template"
   });
+
+  eleventyConfig.addFilter(
+    "cssmin",
+    (/** @type {string} */ code) => new CleanCSS({}).minify(code).styles
+  );
 
   //Start with default config, easier to configure 11ty later
   const config = defaultConfig(eleventyConfig);
