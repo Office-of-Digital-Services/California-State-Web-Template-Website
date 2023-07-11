@@ -406,7 +406,11 @@ permalink: "/components/side-navigation.html"
         role="tabpanel"
         aria-labelledby="heading-html4">
         <div class="card-body">
-          <textarea class="sourcecode" aria-label="source code" disabled>
+          <textarea
+            class="sourcecode"
+            aria-label="source code"
+            readonly
+            tabindex="-1">
 {% include "../../src/_includes/modules/nav-side-accordion.html" %}</textarea
           >
         </div>
@@ -453,7 +457,11 @@ permalink: "/components/side-navigation.html"
             <code>summary</code>
             tag to indicate current page.
           </p>
-          <textarea class="sourcecode m-t" aria-label="source code" disabled>
+          <textarea
+            class="sourcecode m-t"
+            aria-label="source code"
+            readonly
+            tabindex="-1">
 <cagov-accordion class="sidenav">
   <details open>
    <summary class="active">Page 2</summary>
