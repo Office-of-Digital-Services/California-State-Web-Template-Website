@@ -87,13 +87,14 @@
     {% endblock -%} {%- include "../global-footer.njk" -%}
 
     <script>
+      window.addEventListener("load", () => {
       // Search ID
-      var cx = '05e92f21f387b4800'; // Update this value with your search engine unique ID. Submit a request to the CDT Service Desk if you don't already know your unique search engine ID.
-      var gcse = document.createElement('script');
+      const cx = '05e92f21f387b4800'; // Update this value with your search engine unique ID. Submit a request to the CDT Service Desk if you don't already know your unique search engine ID.
+      const gcse = document.createElement('script');
       gcse.type = 'text/javascript';
       gcse.async = true;
       gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
-      var s = document.getElementsByTagName('script');
+      const s = document.getElementsByTagName('script');
       s[s.length - 1]
         .parentNode
         .insertBefore(gcse, s[s.length - 1]);
@@ -102,6 +103,7 @@
       document
         .querySelector('input[name=q]')
         .value = new URLSearchParams(window.location.search).get("q");
+        });
     </script>
   </body>
 </html>
