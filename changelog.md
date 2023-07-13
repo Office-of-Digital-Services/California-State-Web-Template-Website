@@ -3,6 +3,7 @@
 ## 6.2
 
 - NPM package support for state template
+- Separating template website development from template source development
 
 ## 6.1.2
 

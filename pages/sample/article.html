@@ -96,7 +96,11 @@ permalink: "/patterns/article.html"
       aria-labelledby="heading-html1">
       <div class="p-a-sm">
         <h3 class="h4 mt-0">Featured news</h3>
-        <textarea class="sourcecode" aria-label="source code" disabled>
+        <textarea
+          class="sourcecode"
+          aria-label="source code"
+          readonly
+          tabindex="-1">
 {% include "../../src/_includes/modules/news-list-extended.html" %}</textarea
         >
       </div>
