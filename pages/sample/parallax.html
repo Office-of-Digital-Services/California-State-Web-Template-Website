@@ -5,6 +5,13 @@ layout: components.njk
 permalink: "components/parallax.html"
 ---
 
+<style>
+  /* Temporary, remove after 6.2 release (included in NPM package) */
+  .parallax-bg {
+      overflow: hidden;
+  }
+</style>
+
 <h1 class="mt-lg-0">Parallax</h1>
 
 <nav class="page-navigation"></nav>
@@ -55,7 +62,8 @@ permalink: "components/parallax.html"
             alt="parallax overlay" />
 
           <h3
-            class="h3 text-center color-white m-0 p-a-md relative-centered width-30pct relative-centered bg-alpha-50">
+            class="h3 text-center color-white m-0 p-a-md relative-centered width-30pct relative-centered bg-alpha-50"
+            style="min-width: 6em;">
             Scroll down
           </h3>
         </div>
