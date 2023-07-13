@@ -1,5 +1,9 @@
 # Version History
 
+## 6.2
+
+- NPM package support for state template
+
 ## 6.1.2
 
 - Updated project with consistent formatting

@@ -1,0 +1,11 @@
+---
+permalink: css/cagov.core.colortheme-oceanside.min.css
+---
+{#- capture the CSS content as a Nunjucks variable -#} 
+{%- set css -%}
+{%- include "../node_modules/@cagovweb/state-template/dist/css/cagov.core.css" -%}
+{%- include "../node_modules/@cagovweb/state-template/dist/css/colortheme-oceanside.css" -%}
+{%- endset -%} 
+
+{#- feed it through our cssmin filter to minify -#} 
+{{- css | cssmin | safe -}}
