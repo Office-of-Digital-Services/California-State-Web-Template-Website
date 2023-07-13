@@ -1,5 +1,5 @@
 ---
-title: Implementation steps
+title: Implementation roadmap
 landing: Get started
 layout: page.njk
 permalink: "/get-started/implementation-steps.html"
@@ -19,13 +19,7 @@ permalink: "/get-started/implementation-steps.html"
         </li>
         <li>
           <a href="/get-started/implementation-steps.html" class="active">
-            Implementation steps
-          </a>
-        </li>
-        <li>
-          <a href="/get-started/eleventy.html">
-            <span class="sr-only">Get started with</span>
-            Eleventy
+            Implementation roadmap
           </a>
         </li>
       </ul>
@@ -33,9 +27,12 @@ permalink: "/get-started/implementation-steps.html"
   </div>
 
   <div class="col-lg-9 p-b-lg">
-    <h1 id="Downloadandsetup" class="mt-lg-0">Implementation steps</h1>
+    <h1 id="Downloadandsetup" class="mt-lg-0">Implementation roadmap</h1>
 
-    <p>Follow these steps to upgrade to the latest template.</p>
+    <p>
+      These are the high-level steps to take when you upgrade to the latest
+      template.
+    </p>
 
     <ol class="cagov-step-list">
       <li>
@@ -52,7 +49,7 @@ permalink: "/get-started/implementation-steps.html"
       </li>
 
       <li>
-        <span class="bold">Review Template updates</span>
+        <span class="bold">Review template updates</span>
         <br />
         <span class="cagov-step-list-content">
           <p>
@@ -99,7 +96,7 @@ permalink: "/get-started/implementation-steps.html"
               </a>
             </li>
           </ul>
-          <p>
+          <p class="m-t">
             This is also a good time to have your security office perform a scan
             of the files.
           </p>
@@ -107,27 +104,32 @@ permalink: "/get-started/implementation-steps.html"
       </li>
 
       <li>
-        <span class="bold">
-          Look for CSS, JavaScript, and structural changes
-        </span>
+        <span class="bold"> Look for structural changes </span>
         <br />
         <span class="cagov-step-list-content">
-          <p>Most changes are made in:</p>
+          <p>
+            Sometimes with the new releases the State Web Template structural
+            components might have some changes. Each structural component is
+            identified with the HTML comments in the source code of every sample
+            page.
+          </p>
+          <p>
+            Look for changes in the following State Web Template structural
+            components:
+          </p>
           <ul>
-            <li>
-              The CSS and JavaScript source files in the
-              <code>/src/scss/</code>
-              and
-              <code>/src/js/</code>
-              folders
-            </li>
-            <li>
-              Includes and modules folders
-              <code>/src/_includes/</code>
-              and
-              <code>/src/_includes/modules/</code>
-            </li>
+            <li>Utility header</li>
+            <li>Site header</li>
+            <li>Mobile controls</li>
+            <li>Search (optional)</li>
+            <li>Main navigation</li>
+            <li>Global footer</li>
           </ul>
+          <p class="m-t">
+            Also you can examine the sample components’ source code for any
+            changes. All sample components are inside of the
+            <code>/samples/</code> folder.
+          </p>
         </span>
       </li>
 
@@ -138,13 +140,30 @@ permalink: "/get-started/implementation-steps.html"
         <br />
         <span class="cagov-step-list-content">
           <p>
-            The Template has CSS and JavaScript (JS) code base. You will replace
-            these source files with newer ones or point to the corresponding CDN
-            links found on the
-            <a href="/cdn.html">state web template CDN</a>
-            page.
+            The web template has CSS and JavaScript (JS) code base. Most new
+            release changes are made in those CSS and JS files. There are two
+            options how you can update them:
           </p>
-          <p>
+
+          <ul>
+            <li>
+              <span class="bold">CDN route</span><br />
+              You can replace CSS and JS source files with newer ones by
+              pointing to the corresponding CDN links found on the
+              <a href="/cdn.html">State Web Template CDN</a> page.
+            </li>
+            <li>
+              <span class="bold">NPM route</span><br />
+              You can install the core State Web Template NPM package on your
+              project (if your project is supporting node.js setup). You can
+              find NPM guidance and more Information on the
+              <a href="https://www.npmjs.com/package/@cagovweb/state-template"
+                >State Web Template NPM</a
+              >
+              page.
+            </li>
+          </ul>
+          <p class="m-t">
             Custom CSS and JS code may be impacted when you update these files.
             Keep your customizations separate from the core template source code
             for an easier update process.
@@ -165,7 +184,7 @@ permalink: "/get-started/implementation-steps.html"
             <code>/src/scss/</code>
             ) and JS (
             <code>/src/js/</code>
-            ) files or update the CDN links.
+            ) files via NPM install or update the CDN links.
           </p>
         </span>
       </li>
@@ -190,7 +209,7 @@ permalink: "/get-started/implementation-steps.html"
         <span class="cagov-step-list-content">
           <p>
             You’re now ready to follow your organization's change management and
-            release process. You may want to perform another QA and verify that
+            release process. You may want to preform another QA and verify that
             everything works as expected in the production environment.
           </p>
         </span>
