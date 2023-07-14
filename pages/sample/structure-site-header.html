@@ -72,9 +72,6 @@ permalink: "structure/site-header.html"
         <li>
           <a href="#section2">Source code</a>
         </li>
-        <li>
-          <a href="#section3">Eleventy include</a>
-        </li>
       </ul>
 
       <section id="section1" class="tab-pane">
@@ -136,42 +133,6 @@ permalink: "structure/site-header.html"
             <h3 class="h4 m-t-0">HTML</h3>
             <pre><code>{% include "../../src/_includes/site-header.njk" %}</code>
         </pre>
-          </div>
-        </div>
-      </section>
-
-      <section id="section3" class="tab-pane">
-        <div class="card-header" id="heading-include2">
-          <h4 class="my-0 w-100">
-            <a
-              class="collapsed"
-              data-bs-toggle="collapse"
-              href="#collapse-include2"
-              aria-expanded="false"
-              aria-controls="collapse-include2"
-              title="Eleventy include tab header">
-              Eleventy include
-            </a>
-          </h4>
-        </div>
-        <div
-          id="collapse-include2"
-          class="collapse p-0 m-0 brd-0"
-          role="tabpanel"
-          aria-labelledby="heading-include2">
-          <div class="p-a-sm">
-            <h3 class="h4 m-t-0">Include path</h3>
-            <p class="m-b">
-              Add <code>site-header.njk</code>
-              include code right after Utility Header component:
-            </p>
-            <pre><code>&#123;% include "src/_includes/site-header.njk" %&#125;</code></pre>
-
-            <p class="m-t">
-              <span class="text-highlight-primary">Note:</span>
-              Path to the include will be relative to the directory of your
-              page.
-            </p>
           </div>
         </div>
       </section>
