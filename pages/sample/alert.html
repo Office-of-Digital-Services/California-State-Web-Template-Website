@@ -37,7 +37,7 @@ permalink: "components/alert.html"
       <a href="#section2">Source code</a>
     </li>
     <li>
-      <a href="#section3">Eleventy include</a>
+      <a href="#section3">Implementation notes</a>
     </li>
   </ul>
 
@@ -243,8 +243,8 @@ permalink: "components/alert.html"
         aria-expanded="false"
         aria-controls="collapse-njk1"
         data-hash="#pane-njk1"
-        title="Eleventy include tab header">
-        Eleventy include
+        title="Implementation notes tab header">
+        Implementation notes
       </a>
     </div>
     <div
@@ -253,20 +253,8 @@ permalink: "components/alert.html"
       role="tabpanel"
       aria-labelledby="heading-njk1">
       <div class="p-a-sm">
-        Add the alert key with the path to your alert html file
-        <code>alert: " ../modules/alert-banner.html"</code>
-        after your eleventy layout key declaration in the front matter data on
-        your page.
-        <pre>
----
-title: Alert Banner
-layout: page.njk
-alert: "../modules/alert-banner.html"
----</pre
-        >
-
         <p>
-          Or include alert banner module into your page directly after
+          Include alert banner module into your page directly after
           skip-to-content component:
         </p>
         <pre>
@@ -279,6 +267,20 @@ alert: "../modules/alert-banner.html"
    ...
  &lt;/header&gt;
  </pre>
+
+ <h3 class="h4">For Eleventy users</h2>
+ Add the alert key with the path to your alert html file
+ <code>alert: " ../modules/alert-banner.html"</code>
+ after your eleventy layout key declaration in the front matter data on
+ your page.
+ <pre>
+---
+title: Alert Banner
+layout: page.njk
+alert: "../modules/alert-banner.html"
+---</pre
+ >
+
       </div>
     </div>
   </section>
