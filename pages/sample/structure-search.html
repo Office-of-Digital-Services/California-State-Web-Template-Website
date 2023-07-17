@@ -66,7 +66,7 @@ permalink: "structure/search.html"
           <a href="#section2">Source code</a>
         </li>
         <li>
-          <a href="#section3">Eleventy include</a>
+          <a href="#section3">Implementation notes</a>
         </li>
       </ul>
 
@@ -134,8 +134,8 @@ permalink: "structure/search.html"
               href="#collapse-include1"
               aria-expanded="false"
               aria-controls="collapse-include1"
-              title="Active search Eleventy Include tab header">
-              Eleventy include
+              title="Active search implementation notes tab header">
+              Implementation notes
             </a>
           </h4>
         </div>
@@ -145,14 +145,6 @@ permalink: "structure/search.html"
           role="tabpanel"
           aria-labelledby="heading-include1">
           <div class="p-a-sm">
-            <h3 class="h4 m-t-0">Include path and usage</h3>
-            <p class="m-b">
-              The Search
-              <code>njk</code>
-              include code markup:
-            </p>
-            <pre><code>&#123;% include "src/_includes/search.njk" %&#125;</code></pre>
-
             <h3 class="h4">Using active search include in site header</h3>
             <p class="m-b">
               Following code (that has both the search and the site navigation
@@ -161,18 +153,12 @@ permalink: "structure/search.html"
               tag
             </p>
             <pre><code><div class="navigation-search full-width-nav container">
-     <div id="head-search" class="search-container featured-search">
-      &#123;% include "src/_includes/search.njk" %&#125;
-     </div>
-     &#123;% include "src/_includes/navigation.njk" %&#125;
-  </div>
+    <div id="head-search" class="search-container featured-search">
+      <!--Search component code goes here-->
+    </div>
+    <!--Site navigation component code goes here-->
+</div>
   </code></pre>
-
-            <p class="m-t">
-              <span class="text-highlight-primary">Note:</span>
-              Path to the include will be relative to the directory of your
-              page.
-            </p>
           </div>
         </div>
       </section>
@@ -196,7 +182,7 @@ permalink: "structure/search.html"
           <a href="#section5">Source code</a>
         </li>
         <li>
-          <a href="#section6">Eleventy include</a>
+          <a href="#section6">Implementation notes</a>
         </li>
       </ul>
 
@@ -271,8 +257,8 @@ permalink: "structure/search.html"
               href="#collapse-include2"
               aria-expanded="false"
               aria-controls="collapse-include2"
-              title="Inactive search Eleventy Include tab header">
-              Eleventy include
+              title="Inactive search implementation notes tab header">
+              Implementation notes
             </a>
           </h4>
         </div>
@@ -282,14 +268,6 @@ permalink: "structure/search.html"
           role="tabpanel"
           aria-labelledby="heading-include2">
           <div class="p-a-sm">
-            <h3 class="h4 m-t-0">Include path and usage</h3>
-            <p>
-              The Search
-              <code>njk</code>
-              include code markup:
-            </p>
-            <pre><code>&#123;% include "src/_includes/search.njk" %&#125;</code></pre>
-
             <h3 class="h4">Using inactive search include in site header</h3>
             <p>
               Following code (that has both the search and the site navigation
@@ -298,9 +276,9 @@ permalink: "structure/search.html"
               tag
             </p>
             <pre><code><div class="navigation-search">
-  &#123;% include "src/_includes/navigation.njk" %&#125;
+  <!--Site navigation component code goes here-->
  <div id="head-search" class="search-container">
-  &#123;% include "src/_includes/search.njk" %&#125;
+  <!--Search component code goes here-->
  </div>
 </div></code></pre>
 
@@ -332,7 +310,7 @@ permalink: "structure/search.html"
           <a href="#section8">Source code</a>
         </li>
         <li>
-          <a href="#section9">Eleventy include</a>
+          <a href="#section9">Implementation notes</a>
         </li>
       </ul>
 
@@ -407,8 +385,8 @@ permalink: "structure/search.html"
               href="#collapse-include3"
               aria-expanded="false"
               aria-controls="collapse-include3"
-              title="Featured search Eleventy Include tab header">
-              Eleventy include
+              title="Featured search implementation notes tab header">
+              Implementation notes
             </a>
           </h4>
         </div>
@@ -439,9 +417,6 @@ permalink: "structure/search.html"
               parameter to your page front matter data.
             </p>
 
-            <h3 class="h4">Include path</h3>
-            <pre><code>&#123;% include "src/_includes/search.njk" %&#125;</code></pre>
-
             <h3 class="h4">Using search include in site header</h3>
             <p class="m-b">
               Following code (that has both the search and the site navigation
@@ -450,27 +425,11 @@ permalink: "structure/search.html"
               tag
             </p>
             <pre><code><div class="navigation-search">
-  &#123;% include "src/_includes/navigation.njk" %&#125;
+  <!--Site navigation component code goes here-->
  <div id="head-search" class="search-container featured-search">
-  &#123;% include "src/_includes/search.njk" %&#125;
+  <!--Search component code goes here-->
  </div>
 </div></code></pre>
-
-            <h3 class="h4">Activating Featured Search in front matter data</h3>
-            <pre><code class="overflow-auto">---
-title: Featured Search
-layout: navicons-landing.njk
-permalink: "components/featured-search.html"
-navigation: "../modules/nav-flex.html"
-search: Featured
----
-							  </code></pre>
-
-            <p class="m-t">
-              <span class="text-highlight-primary">Note:</span>
-              Path to the include will be relative to the directory of your
-              page.
-            </p>
           </div>
         </div>
       </section>
