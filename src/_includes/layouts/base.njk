@@ -22,9 +22,12 @@
     <meta
       name="description"
       content="Version 6 of the State Web Template is California's latest web design standard." />
+    {%- if not nocanonical %}
     <!-- Canonical link, improves SEO -->
     <link href="https://template.webstandards.ca.gov{{
     ("/"+permalink).replace("//"," /") if permalink }}" rel="canonical">
+    <!-- END Canonical link -->
+    {% endif -%}
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://template.webstandards.ca.gov/" />
