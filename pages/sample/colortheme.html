@@ -9,7 +9,7 @@ nocanonical: true
 <div class="container p-t-md">
   <nav aria-label="You are here">
     <ol class="breadcrumb">
-      <li><a href="/index.html" title="Home page">Home</a></li>
+      <li><a href="/" title="Home page">Home</a></li>
       <li>
         <a href="/visual-design/color.html" title="Color themes landing page">
           Colors
@@ -413,6 +413,9 @@ nocanonical: true
   link.rel = "stylesheet";
   link.media = "screen,print";
   document.getElementsByTagName("head")[0].appendChild(link);
+
+  // Add canonical link for SEQ
+  document.head.appendChild(Object.assign(document.createElement('link'),{href:location.href,rel:"canonical"}));
 
   // add css class "active" to active nav item
   var themeNavItem = document.querySelector("nav.side-navigation a[href*='" + queryString + "']");
