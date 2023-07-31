@@ -1,5 +1,13 @@
 # Version History
 
+## 6.2
+
+- NPM package support for state template
+- Separated template website development from template source development
+- Updated bootstrap version to 5.3
+- Optimized core JavaScript code and placed reference to it in the head tag next to core css references
+- Improved rendering of the site header in mobile view
+
 ## 6.1.2
 
 - Updated project with consistent formatting

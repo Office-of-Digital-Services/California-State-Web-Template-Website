@@ -34,16 +34,10 @@ permalink: "structure/mobile-controls.html"
     <nav class="page-navigation"></nav>
 
     <p>
-      Mobile controls are mobile-friendly website search and navigation. Search
-      and navigation toggle buttons expand and collapse when interacted with in
-      mobile view.
+      Mobile controls is mobile-friendly website navigation. The navigation
+      toggle button expands and collapses the navigation menu when interacted
+      with in mobile view.
     </p>
-    <p>It includes:</p>
-
-    <ul>
-      <li>Search toggle button</li>
-      <li>Navigation toggle button</li>
-    </ul>
 
     <h2>Sample</h2>
 
@@ -54,9 +48,6 @@ permalink: "structure/mobile-controls.html"
         </li>
         <li>
           <a href="#section2">Source code</a>
-        </li>
-        <li>
-          <a href="#section3">Eleventy include</a>
         </li>
       </ul>
 
@@ -116,43 +107,6 @@ permalink: "structure/mobile-controls.html"
           </div>
         </div>
       </section>
-
-      <section id="section3" class="tab-pane">
-        <div class="card-header" id="heading-include2">
-          <h4 class="my-0 w-100">
-            <a
-              class="collapsed"
-              data-bs-toggle="collapse"
-              href="#collapse-include2"
-              aria-expanded="false"
-              aria-controls="collapse-include2"
-              title="Eleventy Include tab header">
-              Eleventy include
-            </a>
-          </h4>
-        </div>
-        <div
-          id="collapse-include2"
-          class="collapse p-0 m-0 brd-0"
-          role="tabpanel"
-          aria-labelledby="heading-include2">
-          <div class="p-a-sm">
-            <h3 class="h4 m-t-0">Include path</h3>
-            <p class="p-b">
-              Add Mobile Controls
-              <code>njk</code>
-              include code after Site header include:
-            </p>
-            <pre><code>&#123;% include "src/_includes/mobile-controls.njk" %&#125;</code></pre>
-
-            <p class="p-t">
-              <span class="text-highlight-primary">Note:</span>
-              Path to the include will be relative to the directory of your
-              page.
-            </p>
-          </div>
-        </div>
-      </section>
     </div>
 
     <h2>Usage</h2>
@@ -163,10 +117,6 @@ permalink: "structure/mobile-controls.html"
       This is an essential template structural component. Without it, people
       could not open the site navigation or search bar in mobile view. It should
       be placed right below the site header.
-    </p>
-    <p>
-      By default, the text identifier for the search button is "Search" and text
-      identifier for the navigation button is "Menu."
     </p>
 
     <h2>Accessibility</h2>

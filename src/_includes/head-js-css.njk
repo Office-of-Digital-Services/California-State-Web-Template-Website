@@ -1,13 +1,14 @@
-<link rel="stylesheet" href="/css/cagov.core.min.css" />
-{% if colortheme -%}
-<link rel="stylesheet" href="{{ colortheme }}" />
-{% else -%}
-<link rel="stylesheet" href="/css/colortheme-oceanside.min.css" />
-{% endif -%} {%- if customcss -%}
+<link rel="stylesheet" href="/css/cagov.core.colortheme-oceanside.min.css" />
+{%- if customcss -%}
 <link rel="stylesheet" href="{{ customcss }}" />
-{% endif -%} {%- if customjs -%} {% for link in customjs %}
+{% endif -%}
+<script
+  type="text/javascript"
+  src="/state-template/js/cagov.core.min.js"></script>
+{% for link in customjs %}
 <script src="{{ link }}"></script>
-{%- endfor -%} {%- endif %}
+{%- endfor -%}
+
 <link
   rel="apple-touch-icon-precomposed"
   sizes="100x100"
@@ -44,3 +45,5 @@
 <link rel="apple-touch-icon" href="/images/apple-touch-icon.png" />
 <link rel="shortcut icon" href="/favicon.ico" />
 {% include "./analytics.njk" -%}
+<!-- Statewide Alerts Server -->
+<script defer src="https://alert.cdt.ca.gov" crossorigin="anonymous"></script>

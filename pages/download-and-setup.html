@@ -15,7 +15,6 @@ permalink: "download-and-setup.html"
         <li>
           <a href="/get-started.html" class="landing">Get started</a>
         </li>
-
         <li>
           <a href="/whats-new.html">What's new in V6</a>
         </li>
@@ -26,10 +25,9 @@ permalink: "download-and-setup.html"
           <ul>
             <li>
               <a href="/get-started/implementation-steps.html">
-                Implementation steps
+                Implementation roadmap
               </a>
             </li>
-            <li><a href="/get-started/eleventy.html">Eleventy</a></li>
           </ul>
         </li>
         <li>
@@ -47,7 +45,7 @@ permalink: "download-and-setup.html"
     <nav class="page-navigation"></nav>
 
     <h2>Template Files</h2>
-    <div class="p-a-md p-b-md bg-gray-75">
+    <div class="p-a-md p-b-md bg-gray-75 m-b-lg">
       <h3 class="mt-0">State web template frameworks</h3>
       <p>
         Esseintial state template files without sample content. Choose your
@@ -122,49 +120,55 @@ permalink: "download-and-setup.html"
       </div>
     </div>
 
-    <div class="row m-t-lg">
-      <div class="col-md-6 m-b-md">
-        <div class="card h-100">
-          <div
-            class="card-body brd-solid-1 brd-gray-200 h-100 d-flex flex-column">
-            <h3 class="h4 m-y-sm">
-              Sample template content
-              <br />
-              and files
-            </h3>
-            <p class="m-b">
-              This site uses the V6 template and Eleventy as a compilation tool.
-              Use the GitHub repo to access the sites code to see how the
-              website was built using Eleventy, and for component code snippets
-              you can copy and use on your site.
-            </p>
-            <div class="text-right mt-auto">
-              <a
-                class="btn btn-outline-primary p-x-md"
-                href="https://github.com/Office-of-Digital-Services/California-State-Web-Template-Website">
-                Template website Github repo
-              </a>
-            </div>
-          </div>
+    <div class="card">
+      <div class="card-body brd-solid-1 brd-gray-200 d-flex flex-column">
+        <h3 class="h4 m-b-sm m-t-0">Sample template content and files</h3>
+        <p class="m-b">
+          A HTML site containing sample pages with included local references to
+          the State Web Template CSS and JavaScript files. The web pages’ source
+          code contains comments making it easy for the users to identify the
+          structural components and page’s sections.
+        </p>
+        <div class="text-left">
+          <a
+            class="btn btn-outline-primary p-x-md"
+            href="https://github.com/Office-of-Digital-Services/California-State-Web-Template-HTML">
+            HTML sample template GitHub repo
+          </a>
         </div>
       </div>
-      <div class="col-md-6 m-b-md">
-        <div class="card h-100">
-          <div
-            class="card-body brd-solid-1 brd-gray-200 h-100 d-flex flex-column">
-            <h3 class="h4 m-y-sm">Content delivery network (CDN)</h3>
-            <p class="m-b">
-              You can use our CDN links to easily load essential static
-              resources from the template libraries. Using the CDN can reduce
-              latency, increase performance, and provide the fastest site
-              experience.
-            </p>
-            <div class="text-right mt-auto">
-              <a class="btn btn-outline-primary p-x-md" href="/cdn.html">
-                All CSS/JS CDN links
-              </a>
-            </div>
-          </div>
+    </div>
+
+    <div class="card">
+      <div class="card-body brd-solid-1 brd-gray-200 d-flex flex-column">
+        <h3 class="h4 m-b-sm m-t-0">NPM Package</h3>
+        <p class="m-b">
+          You can use NPM registry to install the California State Web Template
+          core package that contains all the necessary State Web Template CSS,
+          JavaScript and fonts files.
+        </p>
+        <div class="text-left">
+          <a
+            class="btn btn-outline-primary p-x-md"
+            href="https://www.npmjs.com/package/@cagovweb/state-template">
+            NPM package information
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-body brd-solid-1 brd-gray-200 d-flex flex-column">
+        <h3 class="h4 m-b-sm m-t-0">Content delivery network (CDN)</h3>
+        <p class="m-b">
+          You can use our CDN links to easily load essential static resources
+          from the template libraries. Using the CDN can reduce latency,
+          increase performance, and provide the fastest site experience.
+        </p>
+        <div class="text-left">
+          <a class="btn btn-outline-primary p-x-md" href="/cdn.html">
+            All CSS/JS CDN links
+          </a>
         </div>
       </div>
     </div>
@@ -173,33 +177,16 @@ permalink: "download-and-setup.html"
 
     <p>Resources to help you integrate the template into your website.</p>
 
-    <div class="row">
-      <div class="col-md-6 m-t-md">
-        <a
-          href="/get-started/implementation-steps.html"
-          class="no-underline d-block color-gray-dark brd-gray-light brd-solid-1 rounded-5 h-100 transition-0_3 shadow2-hover color-primary color-primary-hover"
-          title="Implementation steps">
-          <div class="p-a">
-            <h3 class="h5 m-t-0">Implementation steps</h3>
-            <p class="font-size-16 color-black">
-              High-level steps to take when you upgrade to the latest template.
-            </p>
-          </div>
-        </a>
+    <a
+      href="/get-started/implementation-steps.html"
+      class="no-underline d-block color-gray-dark brd-gray-light brd-solid-1 rounded-5 transition-0_3 shadow2-hover color-primary color-primary-hover"
+      title="Implementation steps">
+      <div class="p-a">
+        <h3 class="h5 m-t-0">Implementation steps</h3>
+        <p class="font-size-16 color-black">
+          High-level steps to take when you upgrade to the latest template.
+        </p>
       </div>
-      <div class="col-md-6 m-t-md">
-        <a
-          href="/get-started/eleventy.html"
-          class="no-underline d-block color-gray-dark brd-gray-light brd-solid-1 rounded-5 h-100 transition-0_3 shadow2-hover color-primary color-primary-hover"
-          title="Using Eleventy">
-          <div class="p-a">
-            <h3 class="h5 m-t-0">Using Eleventy</h3>
-            <p class="font-size-16 color-black">
-              Learn how use the Eleventy web template framework.
-            </p>
-          </div>
-        </a>
-      </div>
-    </div>
+    </a>
   </div>
 </div>

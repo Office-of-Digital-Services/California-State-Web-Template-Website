@@ -1,38 +1,35 @@
 //@ts-check
-const markdownIt = require("markdown-it");
 const defaultConfig = require("@11ty/eleventy/src/defaultConfig");
+const CleanCSS = require("clean-css");
 
 module.exports = function (
-  /** @type {import("@11ty/eleventy").UserConfig} **/ userConfig
+  /** @type {import("@11ty/eleventy").UserConfig} **/ eleventyConfig
 ) {
-  // Markdown configurarion
-  const md = new markdownIt({
-    html: true
-  });
-
-  // Copy `src/fonts/` to `_site/fonts`, `src/images/` to `_site/images`
-  userConfig.addPassthroughCopy({
-    "src/fonts": "fonts",
-    "src/images": "images",
-    "src/scss/custom": "css/custom",
-    "src/js/libs": "js/libs"
-  });
-
+  // Copy `src/css/` to `_site/css`, `src/images/` to `_site/images`
   // Copy all static files that should appear in the website root
-  userConfig.addPassthroughCopy({ "src/root": "/" });
-
-  // Markdown rendering onfigurarion
-  userConfig.addPairedShortcode("markdown", content => {
-    return md.render(content);
+  // alternate CSS theme files are needed for color.html selector
+  // Copy state tempate code files from NPM
+  // fonts from state template need to be copied out since css is minified locally
+  eleventyConfig.addPassthroughCopy({
+    "src/images": "images",
+    "src/css": "css",
+    "src/root": "/",
+    "node_modules/@cagovweb/state-template/dist": "state-template",
+    "node_modules/@cagovweb/state-template/dist/fonts": "fonts"
   });
+
+  eleventyConfig.addFilter(
+    "cssmin",
+    (/** @type {string} */ code) => new CleanCSS({}).minify(code).styles
+  );
 
   //Start with default config, easier to configure 11ty later
-  const config = defaultConfig(userConfig);
+  const config = defaultConfig(eleventyConfig);
 
   // allow nunjucks templating in .html files
   config.htmlTemplateEngine = "njk";
   config.markdownTemplateEngine = "njk";
-  config.templateFormats = ["html", "njk", "11ty.js"];
+  config.templateFormats = ["html", "njk", "11ty.js", "md"];
 
   config.dir = {
     // site content pages
