@@ -404,6 +404,11 @@ nocanonical: true
 
   if (!queryString || !themeData[queryString]) {
    queryString = "delta"; // set a default theme
+
+   if (window.history.replaceState) {
+    // replacing the querystring so that SEO matches
+    window.history.replaceState(null, document.title, location.origin+location.pathname+"?"+queryString);
+   }
   }
 
   // insert new color theme css
