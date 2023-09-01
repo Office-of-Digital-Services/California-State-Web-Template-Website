@@ -1,6 +1,5 @@
 //@ts-check
 const defaultConfig = require("@11ty/eleventy/src/defaultConfig");
-const CleanCSS = require("clean-css");
 
 module.exports = function (
   /** @type {import("@11ty/eleventy").UserConfig} **/ eleventyConfig
@@ -16,11 +15,6 @@ module.exports = function (
     "src/root": "/",
     "node_modules/@cagovweb/state-template/dist": "state-template"
   });
-
-  eleventyConfig.addFilter(
-    "cssmin",
-    (/** @type {string} */ code) => new CleanCSS({}).minify(code).styles
-  );
 
   //Start with default config, easier to configure 11ty later
   const config = defaultConfig(eleventyConfig);
