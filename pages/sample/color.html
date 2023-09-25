@@ -54,7 +54,15 @@ permalink: "visual-design/color.html"
       color themes help create consistent experiences across products.
     </p>
 
+    <h2 id="AddAColorTheme">Add color theme</h2>
+    <p>By default the latest State Web Template version css core file (/state-template/css/cagov-core.css) is using oceanside theme color variables. To add any other color theme from the list of available State Web Template color themes you need to add a link to color theme in the &lt;head&gt; section of your HTML document (right after css core link). See an example below:</p>
 
+<pre>
+<code><!-- State Web Template core css file -->
+<link rel="stylesheet" href="/state-template/css/cagov.core.css" />
+
+<!-- Include link to a color theme stylesheet of your choice -->
+<link rel="stylesheet" href="/state-template/css/colortheme-delta.css" /></code></pre>
 
     <h2 id="ColorThemes">Color themes</h2>
     <p>
@@ -188,7 +196,7 @@ permalink: "visual-design/color.html"
 
 
 
-    <h2 id="AddAColorTheme">Customize color theme</h2>
+    <h2>Customize color theme</h2>
     <p>To customize your main theme colors change the theme color variables in the color theme CSS file
       (/state-template/css/colortheme-oceanside.css). Use meaningful colors to visually communicate what people need to see.</p>
 
