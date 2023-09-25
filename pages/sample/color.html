@@ -200,7 +200,52 @@ permalink: "visual-design/color.html"
     <p>To customize your main theme colors change the theme color variables in the color theme CSS file
       (/state-template/css/colortheme-oceanside.css). Use meaningful colors to visually communicate what people need to see.</p>
 
+<p><span class="text-highlight-primary">Note:</span> State Web Template is using three primary colors and three secondary colors with multiple darker and lighter variations each. 
+  <ul>
+    <li>Primary color variables: <code>--color-p1</code>, <code>--color-p2</code>, <code>--color-p3</code></li>
+    <li>Secondary color variables: <code>--color-s1</code>, <code>--color-s2</code>, <code>--color-s3</code></li>
+  </ul>
 
+  <p>Here is the oceanside color theme variables CSS code example:</p>
+<pre>
+<code>:root {
+  --color-p1: #fdb81e;
+  --color-p1-dark: #fdb20a;
+  --color-p1-darker: #f5aa02;
+  --color-p1-darkest: #d29102;
+  --color-p1-light: #fdc64b;
+  --color-p1-lighter: #fed478;
+  --color-p1-lightest: #fee3a5;
+  --color-p2: #046b99;
+  --color-p2-dark: #035d85;
+  --color-p2-darker: #035376;
+  --color-p2-darkest: #023a53;
+  --color-p2-light: #3689ad;
+  --color-p2-lighter: #68a6c2;
+  --color-p2-lightest: #9bc4d6;
+  --color-p3: #323a45;
+  --color-p3-dark: #293039;
+  --color-p3-darker: #232930;
+  --color-p3-darkest: #14171c;
+  --color-p3-light: #5b616a;
+  --color-p3-lighter: #84898f;
+  --color-p3-lightest: #adb0b5;
+  --color-s1: #eef8fb;
+  --color-s1-darker: #e2f3f8;
+  --color-s1-lighter: #f7fcfd;
+  --color-s2: #87b8ce;
+  --color-s2-dark: #6ea9c4;
+  --color-s2-darker: #549ab9;
+  --color-s3: #4993b5;
+  --color-s3-dark: #3f7e9c;
+  --color-s3-light: #92bed3;
+  --color-s3-lighter: #b6d4e1;
+  --sub-nav-bg: var(--color-s1-lighter);
+  --mobile-drawer: var(--color-p2-darker);
+  --mobile-drawer-active: var(--color-p2);
+}          
+</code>
+</pre>
   </div>
 </div>
 
