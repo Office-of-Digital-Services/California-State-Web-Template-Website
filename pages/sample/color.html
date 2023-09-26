@@ -246,6 +246,25 @@ permalink: "visual-design/color.html"
 }          
 </code>
 </pre>
+
+
+<h3>SASS theme file colors customization</h3>
+<p>If you don't want to deal with that many colors use our <a href="https://github.com/Office-of-Digital-Services/California-State-Web-Template-Development/blob/main/src/scss/colortheme/oceanside.scss">SASS color scheme file</a>, which uses only 3 primary and 3 secondary colors. Darker and lighter variations for those colors are created automatically by using SASS functions.</p>
+<p>Here is how we use darken and tint SASS functions to achieve lighter and darker color variations in our SASS color theme file.</p>
+<pre>// primary color
+$color-p2: #046b99;
+$color-p2-dark: darken($color-p2, 4%);
+$color-p2-darker: darken($color-p2, 7%);
+$color-p2-darkest: darken($color-p2, 14%);
+$color-p2-light: tint($color-p2, 20%);
+$color-p2-lighter: tint($color-p2, 40%);
+$color-p2-lightest: tint($color-p2, 60%);
+</pre>
+
+
+  
+  <p>After picking your custom primary and secondary colors all you need to do is to convert your updated SASS file into CSS. For that you can use online <a href="https://jsonformatter.org/sass-to-css">SASS to CSS converter</a> or use your own local SASS to CSS converter setup.</p>
+
   </div>
 </div>
 
