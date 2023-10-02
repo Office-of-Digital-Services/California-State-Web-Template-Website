@@ -55,7 +55,7 @@ permalink: "visual-design/color.html"
     </p>
 
     <h2 id="AddAColorTheme">Add color theme</h2>
-    <p>By default the latest State Web Template version css core file (/state-template/css/cagov-core.css) is using oceanside theme color variables. To add any other color theme from the list of available State Web Template color themes you need to add a link to color theme in the &lt;head&gt; section of your HTML document (right after css core link). See an example below:</p>
+    <p>The current template CSS core file is using the Oceanside theme's color variables. To add another color theme from the available themes, add a link to your preferred theme in the &lt;head&gt; of your HTML document after the CSS core link. Check out the example below:</p>
 
 <pre>
 <code><!-- State Web Template core css file -->
@@ -66,16 +66,11 @@ permalink: "visual-design/color.html"
 
     <h2 id="ColorThemes">Color themes</h2>
     <p>
-      Our color themes were developed following best practices in accessibility.
-      Colors were carefully selected to have sufficient contrast between text
-      and backgrounds. Additionally, each theme has css rules to ensure proper
-      color contrast ratios.
+      We developed our color themes following best practices in accessibility. We selected colors that have enough contrast between text and backgrounds. Additionally, each theme has CSS rules to ensure proper color contrast ratios.
     </p>
 
     <p>
-      People with low vision should be able to see and use your web products. We
-      recommend choosing primary, secondary, and accent colors with accessible
-      color contrast ratios. Use
+      People with low vision should be able to see and use your web products. We recommend choosing primary, secondary, and accent colors with accessible color contrast ratios. Use
       <a href="https://accessibleweb.com/color-contrast-checker/">
         Accessible WEB
         <span class="sr-only">opens in a new window</span>
@@ -197,16 +192,15 @@ permalink: "visual-design/color.html"
 
 
     <h2>Customize color theme</h2>
-    <p>To customize your main theme colors change the theme color variables in the color theme CSS file
-      (/state-template/css/colortheme-oceanside.css). Use meaningful colors to visually communicate what people need to see.</p>
+    <p>To customize your main theme colors, change the theme color variables in the color theme CSS file. Use meaningful colors to communicate what people need to see.</p>
 
-<p><span class="text-highlight-primary">Note:</span> State Web Template is using three primary colors and three secondary colors with multiple darker and lighter variations each. </p>
+<p><span class="text-highlight-primary">Note:</span> We developed the State Web Template with three primary colors and three secondary colors using darker and lighter variations of each.</p>
   <ul>
     <li>Primary color variables: <code>--color-p1</code>, <code>--color-p2</code>, <code>--color-p3</code></li>
     <li>Secondary color variables: <code>--color-s1</code>, <code>--color-s2</code>, <code>--color-s3</code></li>
   </ul>
 
-  <p>Here is the oceanside color theme variables CSS code example:</p>
+  <p>Here is the Oceanside color theme variables CSS code example: </p>
 <pre>
 <code>:root {
   --color-p1: #fdb81e;
@@ -249,8 +243,8 @@ permalink: "visual-design/color.html"
 
 
 <h3>SASS theme file colors customization</h3>
-<p>If you don't want to deal with that many colors use our <a href="https://github.com/Office-of-Digital-Services/California-State-Web-Template-Development/blob/main/src/scss/colortheme/oceanside.scss">SASS color scheme file</a>, which uses only 3 primary and 3 secondary colors. Darker and lighter variations for those colors are created automatically by using SASS functions.</p>
-<p>Here is how we use darken and tint SASS functions to achieve lighter and darker color variations in our SASS color theme file.</p>
+<p>If you don't want to deal with that many colors use our <a href="https://github.com/Office-of-Digital-Services/California-State-Web-Template-Development/blob/main/src/scss/colortheme/oceanside.scss">SASS color scheme file</a>. It uses three primary and three secondary colors. Using SASS functions, you can create darker and lighter variations for those colors.</p>
+<p>Below is how we use SASS functions to darken and tint color variations in our SASS color theme file.</p>
 <pre>// primary color
 $color-p2: #046b99;
 $color-p2-dark: darken($color-p2, 4%);
@@ -263,7 +257,7 @@ $color-p2-lightest: tint($color-p2, 60%);
 
 
   
-  <p>After picking your custom primary and secondary colors all you need to do is to convert your updated SASS file into CSS. For that you can use online <a href="https://jsonformatter.org/sass-to-css">SASS to CSS converter</a> or use your own local SASS to CSS converter setup.</p>
+  <p>After picking primary and secondary colors, convert your updated SASS file into CSS. For that you can use online <a href="https://jsonformatter.org/sass-to-css">SASS to CSS converter</a> or use your own local SASS to CSS converter setup.</p>
 
   </div>
 </div>
