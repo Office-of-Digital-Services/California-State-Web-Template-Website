@@ -9,7 +9,12 @@ eleventyExcludeFromCollections: true
 duplicate "original_url" in data, throw error #} {{ 'web.config build fail ->
 duplicate "original_url" in data' | error }} {% endif -%}
 <configuration>
+  <system.web>
+    <compilation debug="false" />
+    <sessionState mode="Off" />
+  </system.web>
   <system.webServer>
+    <urlCompression doStaticCompression="true" />
     <staticContent>
       <clientCache
         cacheControlCustom="public"
