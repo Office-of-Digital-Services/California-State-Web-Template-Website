@@ -85,5 +85,10 @@ duplicate "original_url" in data' | error }} {% endif -%}
       <remove statusCode="403" />
       <error statusCode="403" path="404.html" />
     </httpErrors>
+    <httpProtocol>
+      <customHeaders>
+        <add name="X-Content-Type-Options" value="nosniff" />
+      </customHeaders>
+    </httpProtocol>
   </system.webServer>
 </configuration>
