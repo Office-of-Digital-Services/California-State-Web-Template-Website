@@ -88,6 +88,9 @@ duplicate "original_url" in data' | error }} {% endif -%}
     <httpProtocol>
       <customHeaders>
         <add name="X-Content-Type-Options" value="nosniff" />
+        <add
+          name="Content-Security-Policy"
+          value="frame-ancestors 'self' *.ca.gov" />
       </customHeaders>
     </httpProtocol>
   </system.webServer>
