@@ -1,5 +1,14 @@
 # Version History
 
+## 6.3
+
+- Optimized color scheme files by converting SASS color variables into CSS variables
+- Updated social media icons inside of CaGov icons font library
+- Published Visual Studio integration with Library Manager (LibMan) allowing .Net users to use the State Template NPM package
+- Fixed pagination component
+- Updated starter site content
+- Added statewide alert compoent
+
 ## 6.2
 
 - NPM package support for state template
