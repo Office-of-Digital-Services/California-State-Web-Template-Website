@@ -28,7 +28,10 @@ permalink: "components/tabs.html"
       <a href="#section1">Tab 1 example</a>
     </li>
     <li>
-      <a href="#section2">Source code</a>
+      <a href="#section2">Tab 2 example</a>
+    </li>
+    <li>
+      <a href="#section3">Source code</a>
     </li>
   </ul>
 
@@ -51,14 +54,37 @@ permalink: "components/tabs.html"
       role="tabpanel"
       aria-labelledby="heading-example1">
       <div class="p-a-sm p-y-0 p-t-md">
-        <h3 class="h4 m-t-0">Heading example</h3>
+        <h3 class="h4 m-t-0">Heading example 1</h3>
+        <p>When using tabs, don't use too many.</p>
+      </div>
+    </div>
+  </section>
+  <section id="section2" class="tab-pane">
+    <div class="card-header" id="heading-example2">
+      <a
+        data-bs-toggle="collapse"
+        href="#collapse-example2"
+        aria-expanded="true"
+        aria-controls="collapse-example2"
+        data-hash="#pane-example2"
+        title="Example tab header">
+        Tab 2 example
+      </a>
+    </div>
+    <div
+      id="collapse-example2"
+      class="collapse show p-0 m-0 brd-0"
+      role="tabpanel"
+      aria-labelledby="heading-example2">
+      <div class="p-a-sm p-y-0 p-t-md">
+        <h3 class="h4 m-t-0">Heading example 2</h3>
         <p>When using tabs, don't use too many.</p>
       </div>
     </div>
   </section>
 
   <!--HTML-->
-  <section id="section2" class="tab-pane">
+  <section id="section3" class="tab-pane">
     <div class="card-header" id="heading-html1">
       <a
         class="collapsed"
