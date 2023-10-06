@@ -7,8 +7,7 @@
       {# Breadcrumbs (rendering data from /src/_data/breadcrumbs.json and /src/_data/helpers.js #}
       {%- include "../breadcrumbs.njk" -%}
       <div class="row">
-        <div
-          class="col-lg-3 pb-lg-5">
+        <div class="col-lg-4 col-xl-3 pb-lg-5">
           {# SIde navigation (rendering data from /src/_data/components.json and /src/_data/helpers.js #}
           <nav
             aria-labelledby="components-list" class="side-navigation sticky-6">
@@ -49,7 +48,7 @@
             </ul>
           </nav>
         </div>
-        <div class="col-lg-9 p-b-lg">{{ content | safe }}</div>
+        <div class="col-lg-8 col-xl-9 p-b-lg">{{ content | safe }}</div>
       </div>
     </div>
   </main>
