@@ -1,0 +1,114 @@
+---
+title: NPM package
+landing: Get started
+layout: page.njk
+permalink: "/get-started/npm.html"
+---
+
+<div class="row">
+  <div class="col-lg-4 col-xl-3">
+    <nav
+      aria-labelledby="side-navigation-label"
+      class="side-navigation sticky-6 overflow-auto">
+      <span class="sr-only" id="side-navigation-label">Side navigation</span>
+      <ul class="list-navigation">
+        <li>
+          <a href="/download-and-setup.html" class="landing back">
+            Download and setup
+          </a>
+        </li>
+        <li>
+          <a href="/get-started/implementation-steps.html">
+            Implementation roadmap
+          </a>
+          <a href="/get-started/npm.html" class="active">
+            NPM package
+          </a>
+          <a href="/cdn.html">
+            Content delivery network (CDN)
+          </a>
+        </li>
+      </ul>
+    </nav>
+  </div>
+
+  <div class="col-lg-8 col-xl-9 p-b-lg">
+    <h1 id="Downloadandsetup" class="m-t-0">State Web Template NPM package</h1>
+    <nav class="page-navigation"></nav>
+    <p>
+      You can use <a href="https://www.npmjs.com/package/@cagovweb/state-template">NPM registry</a> to install the California State Web Template core package that contains all the necessary State Web Template CSS, JavaScript and fonts files.
+    </p>
+    
+    <h2>How this works</h2>
+    <p>NPM package can be used by myltiple frameworks such as React, .NET, eleventy, etc.</p>
+
+    <h3>React</h3>
+    <p>Option 1 - default theme:</p>
+<pre><code>// import with default Oceanside theme - includes core JS and CSS
+import "@cagovweb/state-template";
+</code></pre>
+
+<p class="m-t-md">Option 2 - specific theme:</p>
+<pre><code>// import with specific theme
+// Core CSS first
+import "@cagovweb/state-template/dist/css/cagov.core.css";
+// Choose Theme
+import "@cagovweb/state-template/dist/css/colortheme-oceanside.css";
+// Core JS last
+import "@cagovweb/state-template/dist/js/cagov.core.js";
+</code></pre>
+
+
+<h3>.Net Core (Visual Studio)</h3>
+<p>You can use <a href="https://learn.microsoft.com/en-us/aspnet/core/client-side/libman/libman-vs?view=aspnetcore-7.0">Library Manager (LibMan)</a> to automatically sync the client JS/CSS with your Visual Studio projects.</p>
+
+<p>Create libman.json in your project root folder:</p>
+
+<pre><code>{
+  "version": "1.0",
+  "libraries": [
+    {
+      "provider": "jsdelivr",
+      "library": "@cagovweb/state-template@latest",
+      "destination": "wwwroot/lib/state-template/"
+    }
+  ]
+}</code></pre>
+
+
+<p class="m-t-md">In your layout files you can reference the files in the lib folder:</p>
+<pre><span class="text-accent-p2">&lt;link</span> <span class="text-info">rel=</span><span class="text-accent7">"stylesheet"</span> <span class="text-info">href=</span><span class="text-accent7">"~/lib/state-template/dist/css/cagov.core.min.css" </span><span class="text-accent-p2">&gt;</span>
+<span class="text-accent-p2">&lt;link</span> <span class="text-info">rel=</span><span class="text-accent7">"stylesheet"</span> <span class="text-info">href=</span><span class="text-accent7">"~/lib/state-template/dist/css/colortheme-oceanside.min.css"</span><span class="text-accent-p2">&gt;</span>
+<span class="text-accent-p2">&lt;script</span> <span class="text-info">src=</span><span class="text-accent7">"~/lib/state-template/dist/js/cagov.core.min.js"</span><span class="text-accent-p2">&gt;&lt;/script&gt;</span>
+</pre>
+
+
+<h3>Eleventy</h3>
+
+    <p>Add following code into your eleventy.js file:</p>
+    <pre><code>module.exports = function(eleventyConfig) {
+  // Copy state template core files to site output
+  eleventyConfig.addPassthroughCopy({
+    "node_modules/@cagovweb/state-template/dist": "state-template"
+  });
+};</code></pre>
+    
+    <p class="m-t-md">Also, add these State Web Template's core CSS and JS files references into the head tag:</p>
+    
+    <pre><span class="text-accent-p2">&lt;head&gt;</span>
+  ...
+  <span class="text-muted">&lt;!-- State Web Template core files --&gt;</span>
+  <span class="text-accent-p2">&lt;link</span> <span class="text-info">rel=</span><span class="text-accent7">"stylesheet"</span> <span class="text-info">href=</span><span class="text-accent7">"/state-template/css/cagov.core.min.css"</span><span class="text-accent-p2">&gt;</span>
+  <span class="text-accent-p2">&lt;link</span> <span class="text-info">rel=</span><span class="text-accent7">"stylesheet"</span> <span class="text-info">href=</span><span class="text-accent7">"/state-template/css/colortheme-oceanside.css"</span><span class="text-accent-p2">&gt;</span>
+
+  <span class="text-accent-p2">&lt;script</span> <span class="text-info">src=</span><span class="text-accent7">"/state-template/js/cagov.core.min.js"</span><span class="text-accent-p2">&gt;&lt;/script&gt;</span>
+
+<span class="text-accent-p2">&lt;/head&gt;</span></pre>
+    
+    <h2>Documentation</h2>
+    <p>
+      For more information about State Web Template NPM package and its usage, go to <a href="https://www.npmjs.com/package/@cagovweb/state-template">State Web Template NPM package</a> page at NPM registry portal.
+    </p>
+  </div>
+</div>
+
