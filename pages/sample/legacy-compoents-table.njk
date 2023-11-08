@@ -53,7 +53,7 @@ customcss: "https://cdn.jsdelivr.net/npm/simple-datatables@latest/dist/style.css
             
           </td>
           <td>{{ item.Notes }}</td>
-          <td><code>{{ item.Deprecated_CSS_classes}}</code></td>
+          <td><code>{{ item.Deprecated_CSS_classes | safe }}</code></td>
       </tr>
       {%- endfor -%}
       </tbody>
