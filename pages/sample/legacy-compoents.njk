@@ -33,10 +33,10 @@ permalink: "components/legacy-components.html"
         <dd><span class="ca-gov-icon-thumb-up text-success" aria-hidden="true"></span> Yes</dd>
       {%- endif -%}
 
-
+      {%- if item.V6_alternative !== "" %}
       <dt>V6 alternative</dt>
       <dd><a href="{{ item.V6_URL }}">{{ item.V6_alternative }}</a></dd>
-
+      {%- endif -%}
 
       <dt>Deprecated</dt>
       {%- if item.Deprecated == "N" %}
@@ -50,7 +50,7 @@ permalink: "components/legacy-components.html"
 
       {%- if item.Deprecated_CSS_classes !== "" %}
       <dt>Deprecated CSS classes</dt>
-      <dd><code>{{ item.Deprecated_CSS_classes }}</code></dd>
+      <dd><code>{{ item.Deprecated_CSS_classes | safe }}</code></dd>
       {%- endif -%}
 
 
