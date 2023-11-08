@@ -39,7 +39,11 @@ customcss: "https://cdn.jsdelivr.net/npm/simple-datatables@latest/dist/style.css
               <span class="ca-gov-icon-thumb-up text-success" aria-hidden="true"></span> Yes
             {%- endif -%}
           </td>
-          <td><a href="{{ item.V6_URL }}">{{ item.V6_alternative }}</a></td>
+          <td>
+             {%- if item.V6_alternative !== "" %}
+            <a href="{{ item.V6_URL }}">{{ item.V6_alternative }}</a>
+            {%- endif -%}
+          </td>
           <td>      
             {%- if item.Deprecated == "N" %}
         <span class="ca-gov-icon-check-fill text-success" aria-hidden="true"></span> No
