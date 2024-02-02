@@ -1,14 +1,22 @@
-<link rel="stylesheet" href="/state-template/css/cagov.core.min.css" />
+{%- if specialcss -%}
 <link
   rel="stylesheet"
-  href="/state-template/css/colortheme-oceanside.min.css" />
-{%- if customcss -%}
+  href="https://cdn.jsdelivr.net/npm/@cagovweb/state-template@6.3.1-beta2/dist/css/cagov.core.min.css" />
+{%- else -%}
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/@cagovweb/state-template@6.3.1-beta3/dist/css/cagov.core.min.css" />
+{%- endif -%} {%- if customcss -%}
 <link rel="stylesheet" href="{{ customcss }}" />
-{%- endif -%}
+{%- endif -%} {%- if specialcss -%}
 <script
   type="text/javascript"
-  src="/state-template/js/cagov.core.min.js"></script>
-{% for link in customjs %}
+  src="https://cdn.jsdelivr.net/npm/@cagovweb/state-template@6.3.1-beta2/dist/js/cagov.core.min.js"></script>
+{%- else -%}
+<script
+  type="text/javascript"
+  src="https://cdn.jsdelivr.net/npm/@cagovweb/state-template@6.3.1-beta3/dist/js/cagov.core.min.js"></script>
+{%- endif -%} {% for link in customjs %}
 <script src="{{ link }}"></script>
 {%- endfor -%}
 
