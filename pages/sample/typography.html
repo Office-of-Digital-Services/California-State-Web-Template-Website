@@ -33,39 +33,62 @@ permalink: "visual-design/typography.html"
       as possible.
     </p>
 
-    <div class="row">
-      <div class="col-md-7 p-r-lg">
-        <h2>Typeface</h2>
-        <p>
-          The State Web Template uses
-          <a href="https://public-sans.digital.gov/">Public Sans</a>
-          designed by the
-          <a href="https://designsystem.digital.gov/">
-            United States Web Design System
-          </a>
-          . This strong, neutral typeface is used for text and headings.
-        </p>
-        <p>
-          <a
-            class="btn btn-default brd-primary color-primary"
-            href="https://fonts.google.com/specimen/Public+Sans#standard-styles">
-            Public Sans in Google Fonts
-          </a>
-        </p>
-      </div>
-      <div class="col-md-5">
-        <span class="text-huge">Aa</span>
-        <div>
-          <p class="text-tiny">
-            A B C D E F G H I J K L M N O P Q R S T U V W X Y Z
-          </p>
-          <p class="text-tiny">
-            a b c d e f g h i j k l m n o p q r s t u v w x y z
-          </p>
-          <p class="text-tiny">0 1 2 3 4 5 6 7 8 9</p>
+   
+
+        <div class="row">
+          <div class="col-md-7 p-r-lg">
+            <h2 id="Typeface">Typeface</h2>
+            <p>
+              The State Web Template uses
+              <a href="https://public-sans.digital.gov/">Public Sans</a>
+              designed by the
+              <a href="https://designsystem.digital.gov/">
+                United States Web Design System</a>
+              . This strong, neutral typeface is used for text and headings.
+            </p>
+            <p>
+              <a class="btn btn-default brd-primary color-primary" href="https://fonts.google.com/specimen/Public+Sans#standard-styles">
+                Public Sans in Google Fonts</a>
+            </p>
+          </div>
+          <div class="col-md-5">
+            <span class="text-huge">Aa</span>
+            <div>
+              <p class="text-tiny">
+                A B C D E F G H I J K L M N O P Q R S T U V W X Y Z
+              </p>
+              <p class="text-tiny">
+                a b c d e f g h i j k l m n o p q r s t u v w x y z
+              </p>
+              <p class="text-tiny">0 1 2 3 4 5 6 7 8 9</p>
+            </div>
+          </div>
         </div>
-      </div>
-    </div>
+
+        <h3>Adding Public Sans google font to your website</h3>
+        <p>Following Public Sans google font API links should be in your website's <code>head</code> section:</p>
+        <pre><code><link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,100..900;1,100..900&display=block" rel="stylesheet" />
+</code></pre>
+
+        <h2>Fallback font</h2>
+        <p>
+          In case Public Sans google font fails for some reason the State Web Template will use fallback sytem-ui font, which is native font stack that selects the best font-family for each OS and device. Sytem-ui uses modern, sans-serif fonts with zero latency, which is great for performance.
+        </p>
+        <h3 class="h4">Other fallback fonts and properties</h3>
+<pre>system-ui, -apple-system, "Segoe UI", "Roboto", "Helvetica Neue", "Noto Sans", "Liberation Sans", Arial, sans-serif";
+</pre>
+        <ul>
+          <li><code>system-ui</code> cross-platform generic sans-serif font family (default user interface font)</li>
+          <li><code>-apple-system</code> targets San Francisco in Safari on Mac OS X and iOS, and it targets Neue Helvetica and Lucida Grande on older versions of Mac OS X. It properly selects between San Francisco Text and San Francisco Display depending on the text’s size.</li>
+          <li><code>Segoe UI</code> targets Windows and Windows Phone.</li>
+          <li><code>Roboto</code> targets Android and newer Chrome OS’. It is deliberately listed after Segoe UI so that if you’re an Android developer on Windows and have Roboto installed, Segoe UI will be used instead.</li>
+          <li><code>Helvetica Neue</code> targets pre-El Capitan versions of Mac OS X. It is listed close to the end because it’s a popular font on other non-El Capitan computers.</li>
+          <li><code>Noto Sans</code>, <code>Liberation Sans</code> are Linux sans-serif fallbacks.</li>
+          <li><code>sans-serif</code> is the default sans-serif fallback font.<p></p></li>
+        </ul>
+      
 
     <h2>Font code</h2>
 
@@ -90,7 +113,7 @@ permalink: "visual-design/typography.html"
             Use sitewide for all text.
           </td>
           <td class="p-a align-top brd-bottom brd-gray-200">
-            font-family:'Public Sans', sans-serif;
+            font-family:'Public Sans', system-ui
           </td>
         </tr>
         <tr>
@@ -147,7 +170,7 @@ permalink: "visual-design/typography.html"
           <div class="h1 pos-abs bottom-0 m-a-0">Heading 1</div>
         </div>
         <div class="font-size-70x brd-left brd-gray-200 p-l">
-          font-family: 'Public Sans'
+          font-family: var(--bs-font-sans-serif);
           <br />
           font-weight: 700
           <br />
@@ -162,7 +185,7 @@ permalink: "visual-design/typography.html"
           <div class="h2 pos-abs bottom-0 m-a-0">Heading 2</div>
         </div>
         <div class="font-size-70x brd-left brd-gray-200 p-l">
-          font-family: 'Public Sans'
+          font-family: var(--bs-font-sans-serif);
           <br />
           font-weight: 700
           <br />
@@ -177,7 +200,7 @@ permalink: "visual-design/typography.html"
           <div class="h3 pos-abs bottom-0 m-a-0">Heading 3</div>
         </div>
         <div class="font-size-70x brd-left brd-gray-200 p-l">
-          font-family: 'Public Sans'
+          font-family: var(--bs-font-sans-serif);
           <br />
           font-weight: 700
           <br />
@@ -194,7 +217,7 @@ permalink: "visual-design/typography.html"
           <div class="h4 pos-abs bottom-0 m-a-0">Heading 4</div>
         </div>
         <div class="font-size-70x brd-left brd-gray-200 p-l">
-          font-family: 'Public Sans'
+          font-family: var(--bs-font-sans-serif);
           <br />
           font-weight: 700
           <br />
@@ -209,7 +232,7 @@ permalink: "visual-design/typography.html"
           <div class="h5 pos-abs bottom-0 m-a-0">Heading 5</div>
         </div>
         <div class="font-size-70x brd-left brd-gray-200 p-l">
-          font-family: 'Public Sans'
+          font-family: var(--bs-font-sans-serif);
           <br />
           font-weight: 700
           <br />
@@ -224,7 +247,7 @@ permalink: "visual-design/typography.html"
           <div class="h6 pos-abs bottom-0 m-a-0">Heading 6</div>
         </div>
         <div class="font-size-70x brd-left brd-gray-200 p-l height-60">
-          font-family: 'Public Sans'
+          font-family: var(--bs-font-sans-serif);
           <br />
           font-weight: 700
           <br />
