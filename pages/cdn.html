@@ -5,76 +5,77 @@ layout: page.njk
 permalink: "cdn.html"
 ---
 
-
-
 <div class="row">
   <div class="col-lg-4 col-xl-3">
-  <nav
-    aria-labelledby="side-navigation-label"
-    class="side-navigation sticky-6 overflow-auto">
-    <span class="sr-only" id="side-navigation-label">Side navigation</span>
-    <ul class="list-navigation">
-      <li>
-        <a href="/download-and-setup.html" class="landing back">
-          Download and setup
-        </a>
-      </li>
-      <li>
-        <a href="/get-started/implementation-steps.html">
-          Implementation roadmap
-        </a>
-        <a href="/get-started/npm.html">
-          NPM package
-        </a>
-        <a href="/cdn.html"  class="active">
-          Content delivery network (CDN)
-        </a>
-      </li>
-    </ul>
-  </nav>
-</div>
+    <nav
+      aria-labelledby="side-navigation-label"
+      class="side-navigation sticky-6 overflow-auto">
+      <span class="sr-only" id="side-navigation-label">Side navigation</span>
+      <ul class="list-navigation">
+        <li>
+          <a href="/download-and-setup.html" class="landing back">
+            Download and setup
+          </a>
+        </li>
+        <li>
+          <a href="/get-started/implementation-steps.html">
+            Implementation roadmap
+          </a>
+          <a href="/get-started/npm.html"> NPM package </a>
+          <a href="/cdn.html" class="active">
+            Content delivery network (CDN)
+          </a>
+        </li>
+      </ul>
+    </nav>
+  </div>
 
+  <div class="col-lg-8 col-xl-9">
+    <h1 class="m-t-0">Web State Template CDN</h1>
 
-<div class="col-lg-8 col-xl-9">
+    <p>
+      A content delivery network (CDN) provides the fast delivery of internet
+      content. It is a group of servers that provide our template's static
+      resources such as CSS, JavaScript (JS), fonts, and images in nodes all
+      around the world. When a visitor uses your site, the node closest to them
+      will deliver the static content. This means the data is traveling the
+      shortest distance to the user, which reduces latency, increases
+      performance, and provides the fastest site experience.
+    </p>
 
-<h1 class="m-t-0">Web State Template CDN</h1>
+    <h2>How this works</h2>
+    <p>
+      You can add CSS and JavaScript CDN references to your HTML webpage and
+      they will work the same as internal style sheets or JavaScript files. Add
+      those references into the <code>head</code> tag of your webpage.
+    </p>
 
-<p>
-  A content delivery network (CDN) provides the fast delivery of internet
-  content. It is a group of servers that provide our template's static resources
-  such as CSS, JavaScript (JS), fonts, and images in nodes all around the world.
-  When a visitor uses your site, the node closest to them will deliver the
-  static content. This means the data is traveling the shortest distance to the
-  user, which reduces latency, increases performance, and provides the fastest
-  site experience.
-</p>
-
-<h2>How this works</h2>
-<p>
-  You can add CSS and JavaScript CDN references to your HTML webpage and they
-  will work the same as internal style sheets or JavaScript files. Add those
-  references into
-  the <code>head</code> tag of your webpage.
-</p>
-
-<h2>Examples</h2>
-<h3>Using core CSS files</h3>
-<pre><span class="text-accent-p2">&lt;link</span> <span class="text-info">href=</span><span class="text-accent7">"https://cdn.cdt.ca.gov/cdt/statetemplate/6.3.1/css/cagov.core.css" <span class="text-info">rel=</span><span class="text-accent7">"stylesheet"</span> <span class="text-info">integrity=</span><span class="text-accent7">"sha256-QM+NAR0gJ6IwDv+4qM3bggfkBtSFSsy6lODv7VCjvsQ="</span> <span class="text-info">crossorigin=</span><span class="text-accent7">"anonymous"</span></span><span class="text-accent-p2">&gt;</span>
+    <h2>Examples</h2>
+    <h3>Using core CSS files</h3>
+    <pre><span class="text-accent-p2">&lt;link</span> <span class="text-info">href=</span><span class="text-accent7">"https://cdn.cdt.ca.gov/cdt/statetemplate/6.3.1/css/cagov.core.css" <span class="text-info">rel=</span><span class="text-accent7">"stylesheet"</span> <span class="text-info">integrity=</span><span class="text-accent7">"sha256-gfvqsu+DWwTXIdxtei9rMd7i34dU6Upcn4BF0Or2YW8="</span> <span class="text-info">crossorigin=</span><span class="text-accent7">"anonymous"</span></span><span class="text-accent-p2">&gt;</span>
 <span class="text-accent-p2">&lt;link</span> <span class="text-info">href=</span><span class="text-accent7">"https://cdn.cdt.ca.gov/cdt/statetemplate/6.3.1/css/colortheme-oceanside.css"</span> <span class="text-info">rel=</span><span class="text-accent7">"stylesheet"</span>  <span class="text-info">integrity=</span><span class="text-accent7">"sha256-PC5Yszm8bAjYYFmjeL8EeB8mHo+S4dJbQt4OwA4aTmg="</span> <span class="text-info">crossorigin=</span><span class="text-accent7">"anonymous"</span><span class="text-accent-p2">&gt;</span><br /></pre>
 
-<h3>Using JS files</h3>
-<pre><span class="text-accent-p2">&lt;script</span> <span class="text-info">src=</span><span class="text-accent7">"https://cdn.cdt.ca.gov/cdt/statetemplate/6.3.1/js/cagov.core.js"</span> <span class="text-info">integrity=</span><span class="text-accent7">"sha256-K8ITOuL/imaYO2+EAF7tVG4jPsw+HIwD9wt//mgBMkY="</span> <span class="text-info">crossorigin=</span><span class="text-accent7">"anonymous"</span><span class="text-accent-p2">&gt;&lt;/script&gt;</span></pre>
+    <h3>Using JS files</h3>
+    <pre><span class="text-accent-p2">&lt;script</span> <span class="text-info">src=</span><span class="text-accent7">"https://cdn.cdt.ca.gov/cdt/statetemplate/6.3.1/js/cagov.core.js"</span> <span class="text-info">integrity=</span><span class="text-accent7">"sha256-yb1n0OhHox54XtT0AL7aBfUvbeEOhUX0eSAqwlUktSo="</span> <span class="text-info">crossorigin=</span><span class="text-accent7">"anonymous"</span><span class="text-accent-p2">&gt;&lt;/script&gt;</span></pre>
 
-<h3>Crossorigin anonymous</h3>
-<p>Prevents .ca.gov “samesite” cookies (from Google Analytics, etc) from being transmitted on CDN requests.  Should ALWAYS be there.</p>
+    <h3>Crossorigin anonymous</h3>
+    <p>
+      Prevents .ca.gov “samesite” cookies (from Google Analytics, etc) from
+      being transmitted on CDN requests. Should ALWAYS be there.
+    </p>
 
-<h3>Generate Integrity hash (SRI Hash Generator)</h3>
-<p>Include optional integrity SRI hashes on our CDN links to guarantee our code is not tampered with on transmission.  Using the shorter sha256 is fine.  Do not use in code generators that automatically update the CDN version.</p>
-<p><a href="https://www.srihash.org/">Integrity hash generator</a></p>
+    <h3>Generate Integrity hash (SRI Hash Generator)</h3>
+    <p>
+      Include optional integrity SRI hashes on our CDN links to guarantee our
+      code is not tampered with on transmission. Using the shorter sha256 is
+      fine. Do not use in code generators that automatically update the CDN
+      version.
+    </p>
+    <p><a href="https://www.srihash.org/">Integrity hash generator</a></p>
 
-<h2>Web page using Web State Template CDN</h2>
+    <h2>Web page using Web State Template CDN</h2>
 
-<pre>
+    <pre>
   <span class="text-success">&lt;!doctype html&gt;</span>
    <span class="text-accent-p2">&lt;html</span> <span class="text-info">lang=</span><span class="text-accent7">"en"</span><span class="text-accent-p2">&gt;</span>
     <span class="text-accent-p2">&lt;head&gt;</span>
@@ -91,10 +92,10 @@ permalink: "cdn.html"
      <span class="text-accent-p2">&lt;link</span> <span class="text-info">rel=</span><span class="text-accent7">"stylesheet"</span> <span class="text-info">href=</span><span class="text-accent7">"https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,100..900;1,100..900&amp;display=block"</span><span class="text-accent-p2">&gt;</span>
 
      <span class="text-muted">&lt;!-- State Template CDN CSS --&gt;</span>
-     <span class="text-accent-p2">&lt;link</span> <span class="text-info">rel=</span><span class="text-accent7">"stylesheet"</span> <span class="text-info">href=</span><span class="text-accent7">"https://cdn.cdt.ca.gov/cdt/statetemplate/6.3.1/css/cagov.core.css"</span>  <span class="text-info">integrity=</span><span class="text-accent7">"sha256-QM+NAR0gJ6IwDv+4qM3bggfkBtSFSsy6lODv7VCjvsQ="</span>  <span class="text-info">crossorigin=</span><span class="text-accent7">"anonymous"</span><span class="text-accent-p2">&gt;</span>
+     <span class="text-accent-p2">&lt;link</span> <span class="text-info">rel=</span><span class="text-accent7">"stylesheet"</span> <span class="text-info">href=</span><span class="text-accent7">"https://cdn.cdt.ca.gov/cdt/statetemplate/6.3.1/css/cagov.core.css"</span>  <span class="text-info">integrity=</span><span class="text-accent7">"sha256-gfvqsu+DWwTXIdxtei9rMd7i34dU6Upcn4BF0Or2YW8="</span>  <span class="text-info">crossorigin=</span><span class="text-accent7">"anonymous"</span><span class="text-accent-p2">&gt;</span>
      <span class="text-accent-p2">&lt;link</span> <span class="text-info">rel=</span><span class="text-accent7">"stylesheet"</span> <span class="text-info">href=</span><span class="text-accent7">"https://cdn.cdt.ca.gov/cdt/statetemplate/6.3.1/css/colortheme-oceanside.css"</span>   <span class="text-info">integrity=</span><span class="text-accent7">"sha256-PC5Yszm8bAjYYFmjeL8EeB8mHo+S4dJbQt4OwA4aTmg="</span>  <span class="text-info">crossorigin=</span><span class="text-accent7">"anonymous"</span><span class="text-accent-p2">&gt;</span>
      <span class="text-muted">&lt;!-- State Template JavaScript CDN --&gt;</span>
-     <span class="text-accent-p2">&lt;script </span><span class="text-info">src=</span><span class="text-accent7">"https://cdn.cdt.ca.gov/cdt/statetemplate/6.3.1/js/cagov.core.js"</span> <span class="text-info">integrity=</span><span class="text-accent7">"sha256-K8ITOuL/imaYO2+EAF7tVG4jPsw+HIwD9wt//mgBMkY="</span> <span class="text-info">crossorigin=</span><span class="text-accent7">"anonymous"</span><span class="text-accent-p2">&gt;&lt;/script&gt;</span>
+     <span class="text-accent-p2">&lt;script </span><span class="text-info">src=</span><span class="text-accent7">"https://cdn.cdt.ca.gov/cdt/statetemplate/6.3.1/js/cagov.core.js"</span> <span class="text-info">integrity=</span><span class="text-accent7">"sha256-yb1n0OhHox54XtT0AL7aBfUvbeEOhUX0eSAqwlUktSo="</span> <span class="text-info">crossorigin=</span><span class="text-accent7">"anonymous"</span><span class="text-accent-p2">&gt;&lt;/script&gt;</span>
 
     <span class="text-accent-p2">&lt;/head&gt;</span>
    <span class="text-accent-p2">&lt;body&gt;</span>
@@ -123,21 +124,22 @@ permalink: "cdn.html"
    <span class="text-accent-p2">&lt;/html&gt;</span>
   </pre>
 
-<h2>Core files CDN links, by template version</h2>
-<p>
-  Every version release of the state web template will get its own CDN links for
-  the CSS and JavaScript code. This means updating to a new version will be much
-  easier, simply updating to the updated CDN version links. Using CDN links is
-  also another great way to test what happens to your website with different
-  versions of the state web template.
-</p>
-<h3>Web State Template v6 (production)</h3>
-<ol data-aria-accordion data-multi data-transition data-default="none">
-  <li>
-    <h4 data-aria-accordion-heading>Version 6.3.1</h4>
-    <div data-aria-accordion-panel>
-      <p>CSS</p>
-      <pre>&lt;link href="https://cdn.cdt.ca.gov/cdt/statetemplate/6.3.1/css/cagov.core.css" rel="stylesheet" crossorigin="anonymous"&gt;
+    <h2>Core files CDN links, by template version</h2>
+    <p>
+      Every version release of the state web template will get its own CDN links
+      for the CSS and JavaScript code. This means updating to a new version will
+      be much easier, simply updating to the updated CDN version links. Using
+      CDN links is also another great way to test what happens to your website
+      with different versions of the state web template.
+    </p>
+    <h3>Web State Template v6 (production)</h3>
+    <ol data-aria-accordion data-multi data-transition data-default="none">
+      <li>
+        <h4 data-aria-accordion-heading>Version 6.3.1</h4>
+        <div data-aria-accordion-panel>
+          <p>CSS</p>
+          <pre>
+&lt;link href="https://cdn.cdt.ca.gov/cdt/statetemplate/6.3.1/css/cagov.core.css" rel="stylesheet" crossorigin="anonymous"&gt;
 &lt;link href="https://cdn.cdt.ca.gov/cdt/statetemplate/6.3.1/css/cagov.core.min.css" rel="stylesheet" crossorigin="anonymous"&gt;
 &lt;link href="https://cdn.cdt.ca.gov/cdt/statetemplate/6.3.1/css/colortheme-delta.css" rel="stylesheet" crossorigin="anonymous"&gt;
 &lt;link href="https://cdn.cdt.ca.gov/cdt/statetemplate/6.3.1/css/colortheme-delta.min.css" rel="stylesheet" crossorigin="anonymous"&gt;
@@ -162,19 +164,22 @@ permalink: "cdn.html"
 &lt;link href="https://cdn.cdt.ca.gov/cdt/statetemplate/6.3.1/css/colortheme-shasta.css" rel="stylesheet" crossorigin="anonymous"&gt;
 &lt;link href="https://cdn.cdt.ca.gov/cdt/statetemplate/6.3.1/css/colortheme-shasta.min.css" rel="stylesheet" crossorigin="anonymous"&gt;
 &lt;link href="https://cdn.cdt.ca.gov/cdt/statetemplate/6.3.1/css/colortheme-trinity.css" rel="stylesheet" crossorigin="anonymous"&gt;
-&lt;link href="https://cdn.cdt.ca.gov/cdt/statetemplate/6.3.1/css/colortheme-trinity.min.css" rel="stylesheet" crossorigin="anonymous"&gt;</pre>
-<p>JS</p>
-      <pre>
+&lt;link href="https://cdn.cdt.ca.gov/cdt/statetemplate/6.3.1/css/colortheme-trinity.min.css" rel="stylesheet" crossorigin="anonymous"&gt;</pre
+          >
+          <p>JS</p>
+          <pre>
 &lt;script src="https://cdn.cdt.ca.gov/cdt/statetemplate/6.3.1/js/cagov.core.js" crossorigin="anonymous&gt;&lt;/script&gt;
-&lt;script src="https://cdn.cdt.ca.gov/cdt/statetemplate/6.3.1/js/cagov.core.min.js" crossorigin="anonymous"&gt;&lt;/script&gt;</pre>
-    </div>
-  </li>
+&lt;script src="https://cdn.cdt.ca.gov/cdt/statetemplate/6.3.1/js/cagov.core.min.js" crossorigin="anonymous"&gt;&lt;/script&gt;</pre
+          >
+        </div>
+      </li>
 
-  <li>
-    <h4 data-aria-accordion-heading>Version 6.3.0</h4>
-    <div data-aria-accordion-panel>
-      <p>CSS</p>
-      <pre>&lt;link href="https://cdn.cdt.ca.gov/cdt/statetemplate/6.3.0/css/cagov.core.css" rel="stylesheet" crossorigin="anonymous"&gt;
+      <li>
+        <h4 data-aria-accordion-heading>Version 6.3.0</h4>
+        <div data-aria-accordion-panel>
+          <p>CSS</p>
+          <pre>
+&lt;link href="https://cdn.cdt.ca.gov/cdt/statetemplate/6.3.0/css/cagov.core.css" rel="stylesheet" crossorigin="anonymous"&gt;
 &lt;link href="https://cdn.cdt.ca.gov/cdt/statetemplate/6.3.0/css/cagov.core.min.css" rel="stylesheet" crossorigin="anonymous"&gt;
 &lt;link href="https://cdn.cdt.ca.gov/cdt/statetemplate/6.3.0/css/colortheme-delta.css" rel="stylesheet" crossorigin="anonymous"&gt;
 &lt;link href="https://cdn.cdt.ca.gov/cdt/statetemplate/6.3.0/css/colortheme-delta.min.css" rel="stylesheet" crossorigin="anonymous"&gt;
@@ -199,19 +204,21 @@ permalink: "cdn.html"
 &lt;link href="https://cdn.cdt.ca.gov/cdt/statetemplate/6.3.0/css/colortheme-shasta.css" rel="stylesheet" crossorigin="anonymous"&gt;
 &lt;link href="https://cdn.cdt.ca.gov/cdt/statetemplate/6.3.0/css/colortheme-shasta.min.css" rel="stylesheet" crossorigin="anonymous"&gt;
 &lt;link href="https://cdn.cdt.ca.gov/cdt/statetemplate/6.3.0/css/colortheme-trinity.css" rel="stylesheet" crossorigin="anonymous"&gt;
-&lt;link href="https://cdn.cdt.ca.gov/cdt/statetemplate/6.3.0/css/colortheme-trinity.min.css" rel="stylesheet" crossorigin="anonymous"&gt;</pre>
-<p>JS</p>
-      <pre>
+&lt;link href="https://cdn.cdt.ca.gov/cdt/statetemplate/6.3.0/css/colortheme-trinity.min.css" rel="stylesheet" crossorigin="anonymous"&gt;</pre
+          >
+          <p>JS</p>
+          <pre>
 &lt;script src="https://cdn.cdt.ca.gov/cdt/statetemplate/6.3.0/js/cagov.core.js" crossorigin="anonymous&gt;&lt;/script&gt;
-&lt;script src="https://cdn.cdt.ca.gov/cdt/statetemplate/6.3.0/js/cagov.core.min.js" crossorigin="anonymous"&gt;&lt;/script&gt;</pre>
-    </div>
-  </li>
+&lt;script src="https://cdn.cdt.ca.gov/cdt/statetemplate/6.3.0/js/cagov.core.min.js" crossorigin="anonymous"&gt;&lt;/script&gt;</pre
+          >
+        </div>
+      </li>
 
-  <li>
-    <h4 data-aria-accordion-heading>Version 6.2.1</h4>
-    <div data-aria-accordion-panel>
-      <p>CSS</p>
-      <pre>
+      <li>
+        <h4 data-aria-accordion-heading>Version 6.2.1</h4>
+        <div data-aria-accordion-panel>
+          <p>CSS</p>
+          <pre>
 &lt;link href="https://cdn.cdt.ca.gov/cdt/statetemplate/6.2.1/css/cagov.core.css" rel="stylesheet" crossorigin="anonymous"&gt;
 &lt;link href="https://cdn.cdt.ca.gov/cdt/statetemplate/6.2.1/css/cagov.core.min.css" rel="stylesheet" crossorigin="anonymous"&gt;
 &lt;link href="https://cdn.cdt.ca.gov/cdt/statetemplate/6.2.1/css/colortheme-delta.css" rel="stylesheet" crossorigin="anonymous"&gt;
@@ -237,19 +244,21 @@ permalink: "cdn.html"
 &lt;link href="https://cdn.cdt.ca.gov/cdt/statetemplate/6.2.1/css/colortheme-shasta.css" rel="stylesheet" crossorigin="anonymous"&gt;
 &lt;link href="https://cdn.cdt.ca.gov/cdt/statetemplate/6.2.1/css/colortheme-shasta.min.css" rel="stylesheet" crossorigin="anonymous"&gt;
 &lt;link href="https://cdn.cdt.ca.gov/cdt/statetemplate/6.2.1/css/colortheme-trinity.css" rel="stylesheet" crossorigin="anonymous"&gt;
-&lt;link href="https://cdn.cdt.ca.gov/cdt/statetemplate/6.2.1/css/colortheme-trinity.min.css" rel="stylesheet" crossorigin="anonymous"&gt;</pre>
-<p>JS</p>
-      <pre>
+&lt;link href="https://cdn.cdt.ca.gov/cdt/statetemplate/6.2.1/css/colortheme-trinity.min.css" rel="stylesheet" crossorigin="anonymous"&gt;</pre
+          >
+          <p>JS</p>
+          <pre>
 &lt;script src="https://cdn.cdt.ca.gov/cdt/statetemplate/6.2.1/js/cagov.core.js" crossorigin="anonymous&gt;&lt;/script&gt;
-&lt;script src="https://cdn.cdt.ca.gov/cdt/statetemplate/6.2.1/js/cagov.core.min.js" crossorigin="anonymous"&gt;&lt;/script&gt;</pre>
-    </div>
-  </li>
+&lt;script src="https://cdn.cdt.ca.gov/cdt/statetemplate/6.2.1/js/cagov.core.min.js" crossorigin="anonymous"&gt;&lt;/script&gt;</pre
+          >
+        </div>
+      </li>
 
-  <li>
-    <h4 data-aria-accordion-heading>Version 6.2.0</h4>
-    <div data-aria-accordion-panel>
-      <p>CSS</p>
-      <pre>
+      <li>
+        <h4 data-aria-accordion-heading>Version 6.2.0</h4>
+        <div data-aria-accordion-panel>
+          <p>CSS</p>
+          <pre>
 &lt;link href="https://cdn.cdt.ca.gov/cdt/statetemplate/6.2.0/css/cagov.core.css" rel="stylesheet" crossorigin="anonymous"&gt;
 &lt;link href="https://cdn.cdt.ca.gov/cdt/statetemplate/6.2.0/css/cagov.core.min.css" rel="stylesheet" crossorigin="anonymous"&gt;
 &lt;link href="https://cdn.cdt.ca.gov/cdt/statetemplate/6.2.0/css/colortheme-delta.css" rel="stylesheet" crossorigin="anonymous"&gt;
@@ -275,18 +284,20 @@ permalink: "cdn.html"
 &lt;link href="https://cdn.cdt.ca.gov/cdt/statetemplate/6.2.0/css/colortheme-shasta.css" rel="stylesheet" crossorigin="anonymous"&gt;
 &lt;link href="https://cdn.cdt.ca.gov/cdt/statetemplate/6.2.0/css/colortheme-shasta.min.css" rel="stylesheet" crossorigin="anonymous"&gt;
 &lt;link href="https://cdn.cdt.ca.gov/cdt/statetemplate/6.2.0/css/colortheme-trinity.css" rel="stylesheet" crossorigin="anonymous"&gt;
-&lt;link href="https://cdn.cdt.ca.gov/cdt/statetemplate/6.2.0/css/colortheme-trinity.min.css" rel="stylesheet" crossorigin="anonymous"&gt;</pre>
-<p>JS</p>
-      <pre>
+&lt;link href="https://cdn.cdt.ca.gov/cdt/statetemplate/6.2.0/css/colortheme-trinity.min.css" rel="stylesheet" crossorigin="anonymous"&gt;</pre
+          >
+          <p>JS</p>
+          <pre>
 &lt;script src="https://cdn.cdt.ca.gov/cdt/statetemplate/6.2.0/js/cagov.core.js" crossorigin="anonymous"&gt;&lt;/script&gt;
-&lt;script src="https://cdn.cdt.ca.gov/cdt/statetemplate/6.2.0/js/cagov.core.min.js" crossorigin="anonymous"&gt;&lt;/script&gt;</pre>
-    </div>
-  </li>
-  <li>
-    <h4 data-aria-accordion-heading>Version 6.1.2</h4>
-    <div data-aria-accordion-panel>
-      <p>CSS</p>
-      <pre>
+&lt;script src="https://cdn.cdt.ca.gov/cdt/statetemplate/6.2.0/js/cagov.core.min.js" crossorigin="anonymous"&gt;&lt;/script&gt;</pre
+          >
+        </div>
+      </li>
+      <li>
+        <h4 data-aria-accordion-heading>Version 6.1.2</h4>
+        <div data-aria-accordion-panel>
+          <p>CSS</p>
+          <pre>
 &lt;link href="https://cdn.cdt.ca.gov/cdt/statetemplate/6.1.2/css/cagov.core.css" rel="stylesheet" crossorigin="anonymous"&gt;
 &lt;link href="https://cdn.cdt.ca.gov/cdt/statetemplate/6.1.2/css/cagov.core.min.css" rel="stylesheet" crossorigin="anonymous"&gt;
 &lt;link href="https://cdn.cdt.ca.gov/cdt/statetemplate/6.1.2/css/colortheme-delta.css" rel="stylesheet" crossorigin="anonymous"&gt;
@@ -312,18 +323,20 @@ permalink: "cdn.html"
 &lt;link href="https://cdn.cdt.ca.gov/cdt/statetemplate/6.1.2/css/colortheme-shasta.css" rel="stylesheet" crossorigin="anonymous"&gt;
 &lt;link href="https://cdn.cdt.ca.gov/cdt/statetemplate/6.1.2/css/colortheme-shasta.min.css" rel="stylesheet" crossorigin="anonymous"&gt;
 &lt;link href="https://cdn.cdt.ca.gov/cdt/statetemplate/6.1.2/css/colortheme-trinity.css" rel="stylesheet" crossorigin="anonymous"&gt;
-&lt;link href="https://cdn.cdt.ca.gov/cdt/statetemplate/6.1.2/css/colortheme-trinity.min.css" rel="stylesheet" crossorigin="anonymous"&gt;</pre>
-<p>JS</p>
-      <pre>
+&lt;link href="https://cdn.cdt.ca.gov/cdt/statetemplate/6.1.2/css/colortheme-trinity.min.css" rel="stylesheet" crossorigin="anonymous"&gt;</pre
+          >
+          <p>JS</p>
+          <pre>
 &lt;script src="https://cdn.cdt.ca.gov/cdt/statetemplate/6.1.2/js/cagov.core.js" crossorigin="anonymous&gt;&lt;/script&gt;
-&lt;script src="https://cdn.cdt.ca.gov/cdt/statetemplate/6.1.2/js/cagov.core.min.js" crossorigin="anonymous"&gt;&lt;/script&gt;</pre>
-    </div>
-  </li>
-  <li>
-    <h4 data-aria-accordion-heading>Version 6.1.1</h4>
-    <div data-aria-accordion-panel>
-      <p>CSS</p>
-      <pre>
+&lt;script src="https://cdn.cdt.ca.gov/cdt/statetemplate/6.1.2/js/cagov.core.min.js" crossorigin="anonymous"&gt;&lt;/script&gt;</pre
+          >
+        </div>
+      </li>
+      <li>
+        <h4 data-aria-accordion-heading>Version 6.1.1</h4>
+        <div data-aria-accordion-panel>
+          <p>CSS</p>
+          <pre>
 &lt;link href="https://cdn.cdt.ca.gov/cdt/statetemplate/6.1.1/css/cagov.core.css" rel="stylesheet" crossorigin="anonymous"&gt;
 &lt;link href="https://cdn.cdt.ca.gov/cdt/statetemplate/6.1.1/css/cagov.core.min.css" rel="stylesheet" crossorigin="anonymous"&gt;
 &lt;link href="https://cdn.cdt.ca.gov/cdt/statetemplate/6.1.1/css/colortheme-delta.css" rel="stylesheet" crossorigin="anonymous"&gt;
@@ -349,18 +362,20 @@ permalink: "cdn.html"
 &lt;link href="https://cdn.cdt.ca.gov/cdt/statetemplate/6.1.1/css/colortheme-shasta.css" rel="stylesheet" crossorigin="anonymous"&gt;
 &lt;link href="https://cdn.cdt.ca.gov/cdt/statetemplate/6.1.1/css/colortheme-shasta.min.css" rel="stylesheet" crossorigin="anonymous"&gt;
 &lt;link href="https://cdn.cdt.ca.gov/cdt/statetemplate/6.1.1/css/colortheme-trinity.css" rel="stylesheet" crossorigin="anonymous"&gt;
-&lt;link href="https://cdn.cdt.ca.gov/cdt/statetemplate/6.1.1/css/colortheme-trinity.min.css" rel="stylesheet" crossorigin="anonymous"&gt;</pre>
-<p>JS</p>
-      <pre>
+&lt;link href="https://cdn.cdt.ca.gov/cdt/statetemplate/6.1.1/css/colortheme-trinity.min.css" rel="stylesheet" crossorigin="anonymous"&gt;</pre
+          >
+          <p>JS</p>
+          <pre>
 &lt;script src="https://cdn.cdt.ca.gov/cdt/statetemplate/6.1.1/js/cagov.core.js" crossorigin="anonymous&gt;&lt;/script&gt;
-&lt;script src="https://cdn.cdt.ca.gov/cdt/statetemplate/6.1.1/js/cagov.core.min.js" crossorigin="anonymous"&gt;&lt;/script&gt;</pre>
-    </div>
-  </li>
-  <li>
-    <h4 data-aria-accordion-heading>Version 6.1.0</h4>
-    <div data-aria-accordion-panel>
-      <p>CSS</p>
-      <pre>
+&lt;script src="https://cdn.cdt.ca.gov/cdt/statetemplate/6.1.1/js/cagov.core.min.js" crossorigin="anonymous"&gt;&lt;/script&gt;</pre
+          >
+        </div>
+      </li>
+      <li>
+        <h4 data-aria-accordion-heading>Version 6.1.0</h4>
+        <div data-aria-accordion-panel>
+          <p>CSS</p>
+          <pre>
 &lt;link href="https://cdn.cdt.ca.gov/cdt/statetemplate/6.1.0/css/cagov.core.css" rel="stylesheet" crossorigin="anonymous"&gt;
 &lt;link href="https://cdn.cdt.ca.gov/cdt/statetemplate/6.1.0/css/cagov.core.min.css" rel="stylesheet" crossorigin="anonymous"&gt;
 &lt;link href="https://cdn.cdt.ca.gov/cdt/statetemplate/6.1.0/css/colortheme-delta.css" rel="stylesheet" crossorigin="anonymous"&gt;
@@ -386,23 +401,25 @@ permalink: "cdn.html"
 &lt;link href="https://cdn.cdt.ca.gov/cdt/statetemplate/6.1.0/css/colortheme-shasta.css" rel="stylesheet" crossorigin="anonymous"&gt;
 &lt;link href="https://cdn.cdt.ca.gov/cdt/statetemplate/6.1.0/css/colortheme-shasta.min.css" rel="stylesheet" crossorigin="anonymous"&gt;
 &lt;link href="https://cdn.cdt.ca.gov/cdt/statetemplate/6.1.0/css/colortheme-trinity.css" rel="stylesheet" crossorigin="anonymous"&gt;
-&lt;link href="https://cdn.cdt.ca.gov/cdt/statetemplate/6.1.0/css/colortheme-trinity.min.css" rel="stylesheet" crossorigin="anonymous"&gt;</pre>
-<p>JS</p>
-      <pre>
+&lt;link href="https://cdn.cdt.ca.gov/cdt/statetemplate/6.1.0/css/colortheme-trinity.min.css" rel="stylesheet" crossorigin="anonymous"&gt;</pre
+          >
+          <p>JS</p>
+          <pre>
 &lt;script src="https://cdn.cdt.ca.gov/cdt/statetemplate/6.1.0/js/cagov.core.js" crossorigin="anonymous&gt;&lt;/script&gt;
-&lt;script src="https://cdn.cdt.ca.gov/cdt/statetemplate/6.1.0/js/cagov.core.min.js" crossorigin="anonymous"&gt;&lt;/script&gt;</pre>
-    </div>
-  </li>
-</ol>
+&lt;script src="https://cdn.cdt.ca.gov/cdt/statetemplate/6.1.0/js/cagov.core.min.js" crossorigin="anonymous"&gt;&lt;/script&gt;</pre
+          >
+        </div>
+      </li>
+    </ol>
 
-<h3>State Template v6 (beta)</h3>
+    <h3>State Template v6 (beta)</h3>
 
-<ol data-aria-accordion data-multi data-transition data-default="none">
-  <li>
-    <h4 data-aria-accordion-heading>Version 6.0.9</h4>
-    <div data-aria-accordion-panel>
-      <p>CSS</p>
-      <pre>
+    <ol data-aria-accordion data-multi data-transition data-default="none">
+      <li>
+        <h4 data-aria-accordion-heading>Version 6.0.9</h4>
+        <div data-aria-accordion-panel>
+          <p>CSS</p>
+          <pre>
 &lt;link href="https://cdn.cdt.ca.gov/cdt/statetemplate/6.0.9/css/cagov.core.css" rel="stylesheet" crossorigin="anonymous"&gt;
 &lt;link href="https://cdn.cdt.ca.gov/cdt/statetemplate/6.0.9/css/cagov.core.min.css" rel="stylesheet" crossorigin="anonymous"&gt;
 &lt;link href="https://cdn.cdt.ca.gov/cdt/statetemplate/6.0.9/css/colortheme-delta.css" rel="stylesheet" crossorigin="anonymous"&gt;
@@ -428,18 +445,20 @@ permalink: "cdn.html"
 &lt;link href="https://cdn.cdt.ca.gov/cdt/statetemplate/6.0.9/css/colortheme-shasta.css" rel="stylesheet" crossorigin="anonymous"&gt;
 &lt;link href="https://cdn.cdt.ca.gov/cdt/statetemplate/6.0.9/css/colortheme-shasta.min.css" rel="stylesheet" crossorigin="anonymous"&gt;
 &lt;link href="https://cdn.cdt.ca.gov/cdt/statetemplate/6.0.9/css/colortheme-trinity.css" rel="stylesheet" crossorigin="anonymous"&gt;
-&lt;link href="https://cdn.cdt.ca.gov/cdt/statetemplate/6.0.9/css/colortheme-trinity.min.css" rel="stylesheet" crossorigin="anonymous"&gt;</pre>
-<p>JS</p>
-      <pre>
+&lt;link href="https://cdn.cdt.ca.gov/cdt/statetemplate/6.0.9/css/colortheme-trinity.min.css" rel="stylesheet" crossorigin="anonymous"&gt;</pre
+          >
+          <p>JS</p>
+          <pre>
 &lt;script src="https://cdn.cdt.ca.gov/cdt/statetemplate/6.0.9/js/cagov.core.js" crossorigin="anonymous&gt;&lt;/script&gt;
-&lt;script src="https://cdn.cdt.ca.gov/cdt/statetemplate/6.0.9/js/cagov.core.min.js" crossorigin="anonymous"&gt;&lt;/script&gt;</pre>
-    </div>
-  </li>
-  <li>
-    <h4 data-aria-accordion-heading>Version 6.0.8</h4>
-    <div data-aria-accordion-panel>
-      <p>CSS</p>
-      <pre>
+&lt;script src="https://cdn.cdt.ca.gov/cdt/statetemplate/6.0.9/js/cagov.core.min.js" crossorigin="anonymous"&gt;&lt;/script&gt;</pre
+          >
+        </div>
+      </li>
+      <li>
+        <h4 data-aria-accordion-heading>Version 6.0.8</h4>
+        <div data-aria-accordion-panel>
+          <p>CSS</p>
+          <pre>
 &lt;link href="https://cdn.cdt.ca.gov/cdt/statetemplate/6.0.8/css/cagov.core.css" rel="stylesheet" crossorigin="anonymous"&gt;
 &lt;link href="https://cdn.cdt.ca.gov/cdt/statetemplate/6.0.8/css/cagov.core.min.css" rel="stylesheet" crossorigin="anonymous"&gt;
 &lt;link href="https://cdn.cdt.ca.gov/cdt/statetemplate/6.0.8/css/colortheme-delta.css" rel="stylesheet" crossorigin="anonymous"&gt;
@@ -465,18 +484,20 @@ permalink: "cdn.html"
 &lt;link href="https://cdn.cdt.ca.gov/cdt/statetemplate/6.0.8/css/colortheme-shasta.css" rel="stylesheet" crossorigin="anonymous"&gt;
 &lt;link href="https://cdn.cdt.ca.gov/cdt/statetemplate/6.0.8/css/colortheme-shasta.min.css" rel="stylesheet" crossorigin="anonymous"&gt;
 &lt;link href="https://cdn.cdt.ca.gov/cdt/statetemplate/6.0.8/css/colortheme-trinity.css" rel="stylesheet" crossorigin="anonymous"&gt;
-&lt;link href="https://cdn.cdt.ca.gov/cdt/statetemplate/6.0.8/css/colortheme-trinity.min.css" rel="stylesheet" crossorigin="anonymous"&gt;</pre>
-<p>JS</p>
-      <pre>
+&lt;link href="https://cdn.cdt.ca.gov/cdt/statetemplate/6.0.8/css/colortheme-trinity.min.css" rel="stylesheet" crossorigin="anonymous"&gt;</pre
+          >
+          <p>JS</p>
+          <pre>
 &lt;script src="https://cdn.cdt.ca.gov/cdt/statetemplate/6.0.7/js/cagov.core.js" crossorigin="anonymous&gt;&lt;/script&gt;
-&lt;script src="https://cdn.cdt.ca.gov/cdt/statetemplate/6.0.8/js/cagov.core.min.js" crossorigin="anonymous"&gt;&lt;/script&gt;</pre>
-    </div>
-  </li>
-  <li>
-    <h4 data-aria-accordion-heading>Version 6.0.7</h4>
-    <div data-aria-accordion-panel>
-      <p>CSS</p>
-      <pre>
+&lt;script src="https://cdn.cdt.ca.gov/cdt/statetemplate/6.0.8/js/cagov.core.min.js" crossorigin="anonymous"&gt;&lt;/script&gt;</pre
+          >
+        </div>
+      </li>
+      <li>
+        <h4 data-aria-accordion-heading>Version 6.0.7</h4>
+        <div data-aria-accordion-panel>
+          <p>CSS</p>
+          <pre>
 &lt;link href="https://cdn.cdt.ca.gov/cdt/statetemplate/6.0.7/css/cagov.core.css" rel="stylesheet" crossorigin="anonymous"&gt;
 &lt;link href="https://cdn.cdt.ca.gov/cdt/statetemplate/6.0.7/css/cagov.core.min.css" rel="stylesheet" crossorigin="anonymous"&gt;
 &lt;link href="https://cdn.cdt.ca.gov/cdt/statetemplate/6.0.7/css/cagov.font-only.css" rel="stylesheet" crossorigin="anonymous"&gt;
@@ -504,18 +525,20 @@ permalink: "cdn.html"
 &lt;link href="https://cdn.cdt.ca.gov/cdt/statetemplate/6.0.7/css/colorscheme-shasta.css" rel="stylesheet" crossorigin="anonymous"&gt;
 &lt;link href="https://cdn.cdt.ca.gov/cdt/statetemplate/6.0.7/css/colorscheme-shasta.min.css" rel="stylesheet" crossorigin="anonymous"&gt;
 &lt;link href="https://cdn.cdt.ca.gov/cdt/statetemplate/6.0.7/css/colorscheme-trinity.css" rel="stylesheet" crossorigin="anonymous"&gt;
-&lt;link href="https://cdn.cdt.ca.gov/cdt/statetemplate/6.0.7/css/colorscheme-trinity.min.css" rel="stylesheet" crossorigin="anonymous"&gt;</pre>
-<p>JS</p>
-      <pre>
+&lt;link href="https://cdn.cdt.ca.gov/cdt/statetemplate/6.0.7/css/colorscheme-trinity.min.css" rel="stylesheet" crossorigin="anonymous"&gt;</pre
+          >
+          <p>JS</p>
+          <pre>
 &lt;script src="https://cdn.cdt.ca.gov/cdt/statetemplate/6.0.7/js/cagov.core.js" crossorigin="anonymous&gt;&lt;/script&gt;
-&lt;script src="https://cdn.cdt.ca.gov/cdt/statetemplate/6.0.7/js/cagov.core.min.js" crossorigin="anonymous"&gt;&lt;/script&gt;</pre>
-    </div>
-  </li>
-  <li>
-    <h4 data-aria-accordion-heading>Version 6.0.6</h4>
-    <div data-aria-accordion-panel>
-      <p>CSS</p>
-      <pre>
+&lt;script src="https://cdn.cdt.ca.gov/cdt/statetemplate/6.0.7/js/cagov.core.min.js" crossorigin="anonymous"&gt;&lt;/script&gt;</pre
+          >
+        </div>
+      </li>
+      <li>
+        <h4 data-aria-accordion-heading>Version 6.0.6</h4>
+        <div data-aria-accordion-panel>
+          <p>CSS</p>
+          <pre>
 &lt;link href="https://cdn.cdt.ca.gov/cdt/statetemplate/6.0.6/css/cagov.core.css" rel="stylesheet" crossorigin="anonymous"&gt;
 &lt;link href="https://cdn.cdt.ca.gov/cdt/statetemplate/6.0.6/css/cagov.core.min.css" rel="stylesheet" crossorigin="anonymous"&gt;
 &lt;link href="https://cdn.cdt.ca.gov/cdt/statetemplate/6.0.6/css/cagov.font-only.css" rel="stylesheet" crossorigin="anonymous"&gt;
@@ -543,18 +566,20 @@ permalink: "cdn.html"
 &lt;link href="https://cdn.cdt.ca.gov/cdt/statetemplate/6.0.6/css/colorscheme-shasta.css" rel="stylesheet" crossorigin="anonymous"&gt;
 &lt;link href="https://cdn.cdt.ca.gov/cdt/statetemplate/6.0.6/css/colorscheme-shasta.min.css" rel="stylesheet" crossorigin="anonymous"&gt;
 &lt;link href="https://cdn.cdt.ca.gov/cdt/statetemplate/6.0.6/css/colorscheme-trinity.css" rel="stylesheet" crossorigin="anonymous"&gt;
-&lt;link href="https://cdn.cdt.ca.gov/cdt/statetemplate/6.0.6/css/colorscheme-trinity.min.css" rel="stylesheet" crossorigin="anonymous"&gt;</pre>
-<p>JS</p>
-      <pre>
+&lt;link href="https://cdn.cdt.ca.gov/cdt/statetemplate/6.0.6/css/colorscheme-trinity.min.css" rel="stylesheet" crossorigin="anonymous"&gt;</pre
+          >
+          <p>JS</p>
+          <pre>
 &lt;script src="https://cdn.cdt.ca.gov/cdt/statetemplate/6.0.6/js/cagov.core.js" crossorigin="anonymous&gt;&lt;/script&gt;
-&lt;script src="https://cdn.cdt.ca.gov/cdt/statetemplate/6.0.6/js/cagov.core.min.js" crossorigin="anonymous"&gt;&lt;/script&gt;</pre>
-    </div>
-  </li>
-  <li>
-    <h4 data-aria-accordion-heading>Version 6.0.5</h4>
-    <div data-aria-accordion-panel>
-      <p>CSS</p>
-      <pre>
+&lt;script src="https://cdn.cdt.ca.gov/cdt/statetemplate/6.0.6/js/cagov.core.min.js" crossorigin="anonymous"&gt;&lt;/script&gt;</pre
+          >
+        </div>
+      </li>
+      <li>
+        <h4 data-aria-accordion-heading>Version 6.0.5</h4>
+        <div data-aria-accordion-panel>
+          <p>CSS</p>
+          <pre>
 &lt;link href="https://cdn.cdt.ca.gov/cdt/statetemplate/6.0.5/css/cagov.core.css" rel="stylesheet" crossorigin="anonymous"&gt;
 &lt;link href="https://cdn.cdt.ca.gov/cdt/statetemplate/6.0.5/css/cagov.core.min.css" rel="stylesheet" crossorigin="anonymous"&gt;
 &lt;link href="https://cdn.cdt.ca.gov/cdt/statetemplate/6.0.5/css/cagov.font-only.css" rel="stylesheet" crossorigin="anonymous"&gt;
@@ -582,18 +607,20 @@ permalink: "cdn.html"
 &lt;link href="https://cdn.cdt.ca.gov/cdt/statetemplate/6.0.5/css/colorscheme-shasta.css" rel="stylesheet" crossorigin="anonymous"&gt;
 &lt;link href="https://cdn.cdt.ca.gov/cdt/statetemplate/6.0.5/css/colorscheme-shasta.min.css" rel="stylesheet" crossorigin="anonymous"&gt;
 &lt;link href="https://cdn.cdt.ca.gov/cdt/statetemplate/6.0.5/css/colorscheme-trinity.css" rel="stylesheet" crossorigin="anonymous"&gt;
-&lt;link href="https://cdn.cdt.ca.gov/cdt/statetemplate/6.0.5/css/colorscheme-trinity.min.css" rel="stylesheet" crossorigin="anonymous"&gt;</pre>
-<p>JS</p>
-      <pre>
+&lt;link href="https://cdn.cdt.ca.gov/cdt/statetemplate/6.0.5/css/colorscheme-trinity.min.css" rel="stylesheet" crossorigin="anonymous"&gt;</pre
+          >
+          <p>JS</p>
+          <pre>
 &lt;script src="https://cdn.cdt.ca.gov/cdt/statetemplate/6.0.5/js/cagov.core.js" crossorigin="anonymous&gt;&lt;/script&gt;
-&lt;script src="https://cdn.cdt.ca.gov/cdt/statetemplate/6.0.5/js/cagov.core.min.js" crossorigin="anonymous"&gt;&lt;/script&gt;</pre>
-    </div>
-  </li>
-  <li>
-    <h4 data-aria-accordion-heading>Version 6.0.4</h4>
-    <div data-aria-accordion-panel>
-      <p>CSS</p>
-      <pre>
+&lt;script src="https://cdn.cdt.ca.gov/cdt/statetemplate/6.0.5/js/cagov.core.min.js" crossorigin="anonymous"&gt;&lt;/script&gt;</pre
+          >
+        </div>
+      </li>
+      <li>
+        <h4 data-aria-accordion-heading>Version 6.0.4</h4>
+        <div data-aria-accordion-panel>
+          <p>CSS</p>
+          <pre>
 &lt;link href="https://cdn.cdt.ca.gov/cdt/statetemplate/6.0.4/css/cagov.core.css" rel="stylesheet" crossorigin="anonymous"&gt;
 &lt;link href="https://cdn.cdt.ca.gov/cdt/statetemplate/6.0.4/css/cagov.core.min.css" rel="stylesheet" crossorigin="anonymous"&gt;
 &lt;link href="https://cdn.cdt.ca.gov/cdt/statetemplate/6.0.4/css/cagov.font-only.css" rel="stylesheet" crossorigin="anonymous"&gt;
@@ -621,18 +648,20 @@ permalink: "cdn.html"
 &lt;link href="https://cdn.cdt.ca.gov/cdt/statetemplate/6.0.4/css/colorscheme-shasta.css" rel="stylesheet" crossorigin="anonymous"&gt;
 &lt;link href="https://cdn.cdt.ca.gov/cdt/statetemplate/6.0.4/css/colorscheme-shasta.min.css" rel="stylesheet" crossorigin="anonymous"&gt;
 &lt;link href="https://cdn.cdt.ca.gov/cdt/statetemplate/6.0.4/css/colorscheme-trinity.css" rel="stylesheet" crossorigin="anonymous"&gt;
-&lt;link href="https://cdn.cdt.ca.gov/cdt/statetemplate/6.0.4/css/colorscheme-trinity.min.css" rel="stylesheet" crossorigin="anonymous"&gt;</pre>
-<p>JS</p>
-      <pre>
+&lt;link href="https://cdn.cdt.ca.gov/cdt/statetemplate/6.0.4/css/colorscheme-trinity.min.css" rel="stylesheet" crossorigin="anonymous"&gt;</pre
+          >
+          <p>JS</p>
+          <pre>
 &lt;script src="https://cdn.cdt.ca.gov/cdt/statetemplate/6.0.4/js/cagov.core.js" crossorigin="anonymous&gt;&lt;/script&gt;
-&lt;script src="https://cdn.cdt.ca.gov/cdt/statetemplate/6.0.4/js/cagov.core.min.js" crossorigin="anonymous"&gt;&lt;/script&gt;</pre>
-    </div>
-  </li>
-  <li>
-    <h4 data-aria-accordion-heading>Version 6.0.3</h4>
-    <div data-aria-accordion-panel>
-      <p>CSS</p>
-      <pre>
+&lt;script src="https://cdn.cdt.ca.gov/cdt/statetemplate/6.0.4/js/cagov.core.min.js" crossorigin="anonymous"&gt;&lt;/script&gt;</pre
+          >
+        </div>
+      </li>
+      <li>
+        <h4 data-aria-accordion-heading>Version 6.0.3</h4>
+        <div data-aria-accordion-panel>
+          <p>CSS</p>
+          <pre>
 &lt;link href="https://cdn.cdt.ca.gov/cdt/statetemplate/6.0.3/css/cagov.core.css" rel="stylesheet" crossorigin="anonymous"&gt;
 &lt;link href="https://cdn.cdt.ca.gov/cdt/statetemplate/6.0.3/css/cagov.core.min.css" rel="stylesheet" crossorigin="anonymous"&gt;
 &lt;link href="https://cdn.cdt.ca.gov/cdt/statetemplate/6.0.3/css/cagov.font-only.css" rel="stylesheet" crossorigin="anonymous"&gt;
@@ -660,18 +689,20 @@ permalink: "cdn.html"
 &lt;link href="https://cdn.cdt.ca.gov/cdt/statetemplate/6.0.3/css/colorscheme-shasta.css" rel="stylesheet" crossorigin="anonymous"&gt;
 &lt;link href="https://cdn.cdt.ca.gov/cdt/statetemplate/6.0.3/css/colorscheme-shasta.min.css" rel="stylesheet" crossorigin="anonymous"&gt;
 &lt;link href="https://cdn.cdt.ca.gov/cdt/statetemplate/6.0.3/css/colorscheme-trinity.css" rel="stylesheet" crossorigin="anonymous"&gt;
-&lt;link href="https://cdn.cdt.ca.gov/cdt/statetemplate/6.0.3/css/colorscheme-trinity.min.css" rel="stylesheet" crossorigin="anonymous"&gt;</pre>
-<p>JS</p>
-      <pre>
+&lt;link href="https://cdn.cdt.ca.gov/cdt/statetemplate/6.0.3/css/colorscheme-trinity.min.css" rel="stylesheet" crossorigin="anonymous"&gt;</pre
+          >
+          <p>JS</p>
+          <pre>
 &lt;script src="https://cdn.cdt.ca.gov/cdt/statetemplate/6.0.3/js/cagov.core.js" crossorigin="anonymous&gt;&lt;/script&gt;
-&lt;script src="https://cdn.cdt.ca.gov/cdt/statetemplate/6.0.3/js/cagov.core.min.js" crossorigin="anonymous"&gt;&lt;/script&gt;</pre>
-    </div>
-  </li>
-  <li>
-    <h4 data-aria-accordion-heading>Version 6.0.2</h4>
-    <div data-aria-accordion-panel>
-      <p>CSS</p>
-      <pre>
+&lt;script src="https://cdn.cdt.ca.gov/cdt/statetemplate/6.0.3/js/cagov.core.min.js" crossorigin="anonymous"&gt;&lt;/script&gt;</pre
+          >
+        </div>
+      </li>
+      <li>
+        <h4 data-aria-accordion-heading>Version 6.0.2</h4>
+        <div data-aria-accordion-panel>
+          <p>CSS</p>
+          <pre>
 &lt;link href="https://cdn.cdt.ca.gov/cdt/statetemplate/6.0.2/css/cagov.core.css" rel="stylesheet" crossorigin="anonymous"&gt;
 &lt;link href="https://cdn.cdt.ca.gov/cdt/statetemplate/6.0.2/css/cagov.core.min.css" rel="stylesheet" crossorigin="anonymous"&gt;
 &lt;link href="https://cdn.cdt.ca.gov/cdt/statetemplate/6.0.2/css/cagov.font-only.css" rel="stylesheet" crossorigin="anonymous"&gt;
@@ -699,18 +730,20 @@ permalink: "cdn.html"
 &lt;link href="https://cdn.cdt.ca.gov/cdt/statetemplate/6.0.2/css/colorscheme-shasta.css" rel="stylesheet" crossorigin="anonymous"&gt;
 &lt;link href="https://cdn.cdt.ca.gov/cdt/statetemplate/6.0.2/css/colorscheme-shasta.min.css" rel="stylesheet" crossorigin="anonymous"&gt;
 &lt;link href="https://cdn.cdt.ca.gov/cdt/statetemplate/6.0.2/css/colorscheme-trinity.css" rel="stylesheet" crossorigin="anonymous"&gt;
-&lt;link href="https://cdn.cdt.ca.gov/cdt/statetemplate/6.0.2/css/colorscheme-trinity.min.css" rel="stylesheet" crossorigin="anonymous"&gt;</pre>
-<p>JS</p>
-      <pre>
+&lt;link href="https://cdn.cdt.ca.gov/cdt/statetemplate/6.0.2/css/colorscheme-trinity.min.css" rel="stylesheet" crossorigin="anonymous"&gt;</pre
+          >
+          <p>JS</p>
+          <pre>
 &lt;script src="https://cdn.cdt.ca.gov/cdt/statetemplate/6.0.2/js/cagov.core.js" crossorigin="anonymous&gt;&lt;/script&gt;
-&lt;script src="https://cdn.cdt.ca.gov/cdt/statetemplate/6.0.2/js/cagov.core.min.js" crossorigin="anonymous"&gt;&lt;/script&gt;</pre>
-    </div>
-  </li>
-  <li>
-    <h4 data-aria-accordion-heading>Version 6.0.1</h4>
-    <div data-aria-accordion-panel>
-      <p>CSS</p>
-      <pre>
+&lt;script src="https://cdn.cdt.ca.gov/cdt/statetemplate/6.0.2/js/cagov.core.min.js" crossorigin="anonymous"&gt;&lt;/script&gt;</pre
+          >
+        </div>
+      </li>
+      <li>
+        <h4 data-aria-accordion-heading>Version 6.0.1</h4>
+        <div data-aria-accordion-panel>
+          <p>CSS</p>
+          <pre>
 &lt;link href="https://cdn.cdt.ca.gov/cdt/statetemplate/6.0.1/css/cagov.core.css" rel="stylesheet" crossorigin="anonymous"&gt;
 &lt;link href="https://cdn.cdt.ca.gov/cdt/statetemplate/6.0.1/css/cagov.core.min.css" rel="stylesheet" crossorigin="anonymous"&gt;
 &lt;link href="https://cdn.cdt.ca.gov/cdt/statetemplate/6.0.1/css/cagov.font-only.css" rel="stylesheet" crossorigin="anonymous"&gt;
@@ -738,18 +771,20 @@ permalink: "cdn.html"
 &lt;link href="https://cdn.cdt.ca.gov/cdt/statetemplate/6.0.1/css/colorscheme-shasta.css" rel="stylesheet" crossorigin="anonymous"&gt;
 &lt;link href="https://cdn.cdt.ca.gov/cdt/statetemplate/6.0.1/css/colorscheme-shasta.min.css" rel="stylesheet" crossorigin="anonymous"&gt;
 &lt;link href="https://cdn.cdt.ca.gov/cdt/statetemplate/6.0.1/css/colorscheme-trinity.css" rel="stylesheet" crossorigin="anonymous"&gt;
-&lt;link href="https://cdn.cdt.ca.gov/cdt/statetemplate/6.0.1/css/colorscheme-trinity.min.css" rel="stylesheet" crossorigin="anonymous"&gt;</pre>
-<p>JS</p>
-      <pre>
+&lt;link href="https://cdn.cdt.ca.gov/cdt/statetemplate/6.0.1/css/colorscheme-trinity.min.css" rel="stylesheet" crossorigin="anonymous"&gt;</pre
+          >
+          <p>JS</p>
+          <pre>
 &lt;script src="https://cdn.cdt.ca.gov/cdt/statetemplate/6.0.1/js/cagov.core.js" crossorigin="anonymous&gt;&lt;/script&gt;
-&lt;script src="https://cdn.cdt.ca.gov/cdt/statetemplate/6.0.1/js/cagov.core.min.js" crossorigin="anonymous"&gt;&lt;/script&gt;</pre>
-    </div>
-  </li>
-  <li>
-    <h4 data-aria-accordion-heading>Version 6.0.0</h4>
-    <div data-aria-accordion-panel>
-      <p>CSS</p>
-      <pre>
+&lt;script src="https://cdn.cdt.ca.gov/cdt/statetemplate/6.0.1/js/cagov.core.min.js" crossorigin="anonymous"&gt;&lt;/script&gt;</pre
+          >
+        </div>
+      </li>
+      <li>
+        <h4 data-aria-accordion-heading>Version 6.0.0</h4>
+        <div data-aria-accordion-panel>
+          <p>CSS</p>
+          <pre>
 &lt;link href="https://cdn.cdt.ca.gov/cdt/statetemplate/6.0.0/css/cagov.core.css" rel="stylesheet" crossorigin="anonymous"&gt;
 &lt;link href="https://cdn.cdt.ca.gov/cdt/statetemplate/6.0.0/css/cagov.core.min.css" rel="stylesheet" crossorigin="anonymous"&gt;
 &lt;link href="https://cdn.cdt.ca.gov/cdt/statetemplate/6.0.0/css/cagov.font-only.css" rel="stylesheet" crossorigin="anonymous"&gt;
@@ -777,23 +812,25 @@ permalink: "cdn.html"
 &lt;link href="https://cdn.cdt.ca.gov/cdt/statetemplate/6.0.0/css/colorscheme-sierra.css" rel="stylesheet" crossorigin="anonymous"&gt;
 &lt;link href="https://cdn.cdt.ca.gov/cdt/statetemplate/6.0.0/css/colorscheme-sierra.min.css" rel="stylesheet" crossorigin="anonymous"&gt;
 &lt;link href="https://cdn.cdt.ca.gov/cdt/statetemplate/6.0.0/css/colorscheme-trinity.css" rel="stylesheet" crossorigin="anonymous"&gt;
-&lt;link href="https://cdn.cdt.ca.gov/cdt/statetemplate/6.0.0/css/colorscheme-trinity.min.css" rel="stylesheet" crossorigin="anonymous"&gt;</pre>
-<p>JS</p>
-      <pre>
+&lt;link href="https://cdn.cdt.ca.gov/cdt/statetemplate/6.0.0/css/colorscheme-trinity.min.css" rel="stylesheet" crossorigin="anonymous"&gt;</pre
+          >
+          <p>JS</p>
+          <pre>
 &lt;script src="https://cdn.cdt.ca.gov/cdt/statetemplate/6.0.0/js/cagov.core.js" crossorigin="anonymous&gt;&lt;/script&gt;
-&lt;script src="https://cdn.cdt.ca.gov/cdt/statetemplate/6.0.0/js/cagov.core.min.js" crossorigin="anonymous"&gt;&lt;/script&gt;</pre>
-    </div>
-  </li>
-</ol>
+&lt;script src="https://cdn.cdt.ca.gov/cdt/statetemplate/6.0.0/js/cagov.core.min.js" crossorigin="anonymous"&gt;&lt;/script&gt;</pre
+          >
+        </div>
+      </li>
+    </ol>
 
-<h3>State Template v5 (legacy)</h3>
+    <h3>State Template v5 (legacy)</h3>
 
-<ol data-aria-accordion data-multi data-transition data-default="none">
-  <li>
-    <h4 data-aria-accordion-heading>Version 5.6.2</h4>
-    <div data-aria-accordion-panel>
-      <p>CSS</p>
-      <pre>
+    <ol data-aria-accordion data-multi data-transition data-default="none">
+      <li>
+        <h4 data-aria-accordion-heading>Version 5.6.2</h4>
+        <div data-aria-accordion-panel>
+          <p>CSS</p>
+          <pre>
 &lt;link href="https://cdn.cdt.ca.gov/cdt/statetemplate/5.6.2/css/cagov.core.css" rel="stylesheet" crossorigin="anonymous"&gt;
 &lt;link href="https://cdn.cdt.ca.gov/cdt/statetemplate/5.6.2/css/cagov.core.min.css" rel="stylesheet" crossorigin="anonymous"&gt;
 &lt;link href="https://cdn.cdt.ca.gov/cdt/statetemplate/5.6.2/css/cagov.font-only.css" rel="stylesheet" crossorigin="anonymous"&gt;
@@ -821,18 +858,20 @@ permalink: "cdn.html"
 &lt;link href="https://cdn.cdt.ca.gov/cdt/statetemplate/5.6.2/css/colorscheme-shasta.css" rel="stylesheet" crossorigin="anonymous"&gt;
 &lt;link href="https://cdn.cdt.ca.gov/cdt/statetemplate/5.6.2/css/colorscheme-shasta.min.css" rel="stylesheet" crossorigin="anonymous"&gt;
 &lt;link href="https://cdn.cdt.ca.gov/cdt/statetemplate/5.6.2/css/colorscheme-trinity.css" rel="stylesheet" crossorigin="anonymous"&gt;
-&lt;link href="https://cdn.cdt.ca.gov/cdt/statetemplate/5.6.2/css/colorscheme-trinity.min.css" rel="stylesheet" crossorigin="anonymous"&gt;</pre>
-<p>JS</p>
-      <pre>
+&lt;link href="https://cdn.cdt.ca.gov/cdt/statetemplate/5.6.2/css/colorscheme-trinity.min.css" rel="stylesheet" crossorigin="anonymous"&gt;</pre
+          >
+          <p>JS</p>
+          <pre>
 &lt;script src="https://cdn.cdt.ca.gov/cdt/statetemplate/5.6.2/js/cagov.core.js" crossorigin="anonymous&gt;&lt;/script&gt;
-&lt;script src="https://cdn.cdt.ca.gov/cdt/statetemplate/5.6.2/js/cagov.core.min.js" crossorigin="anonymous"&gt;&lt;/script&gt;</pre>
-    </div>
-  </li>
-  <li>
-    <h4 data-aria-accordion-heading>Version 5.6.1</h4>
-    <div data-aria-accordion-panel>
-      <p>CSS</p>
-      <pre>
+&lt;script src="https://cdn.cdt.ca.gov/cdt/statetemplate/5.6.2/js/cagov.core.min.js" crossorigin="anonymous"&gt;&lt;/script&gt;</pre
+          >
+        </div>
+      </li>
+      <li>
+        <h4 data-aria-accordion-heading>Version 5.6.1</h4>
+        <div data-aria-accordion-panel>
+          <p>CSS</p>
+          <pre>
 &lt;link href="https://cdn.cdt.ca.gov/cdt/statetemplate/5.6.1/css/cagov.core.css" rel="stylesheet" crossorigin="anonymous"&gt;
 &lt;link href="https://cdn.cdt.ca.gov/cdt/statetemplate/5.6.1/css/cagov.core.min.css" rel="stylesheet" crossorigin="anonymous"&gt;
 &lt;link href="https://cdn.cdt.ca.gov/cdt/statetemplate/5.6.1/css/cagov.font-only.css" rel="stylesheet" crossorigin="anonymous"&gt;
@@ -860,18 +899,20 @@ permalink: "cdn.html"
 &lt;link href="https://cdn.cdt.ca.gov/cdt/statetemplate/5.6.1/css/colorscheme-shasta.css" rel="stylesheet" crossorigin="anonymous"&gt;
 &lt;link href="https://cdn.cdt.ca.gov/cdt/statetemplate/5.6.1/css/colorscheme-shasta.min.css" rel="stylesheet" crossorigin="anonymous"&gt;
 &lt;link href="https://cdn.cdt.ca.gov/cdt/statetemplate/5.6.1/css/colorscheme-trinity.css" rel="stylesheet" crossorigin="anonymous"&gt;
-&lt;link href="https://cdn.cdt.ca.gov/cdt/statetemplate/5.6.1/css/colorscheme-trinity.min.css" rel="stylesheet" crossorigin="anonymous"&gt;</pre>
-<p>JS</p>
-      <pre>
+&lt;link href="https://cdn.cdt.ca.gov/cdt/statetemplate/5.6.1/css/colorscheme-trinity.min.css" rel="stylesheet" crossorigin="anonymous"&gt;</pre
+          >
+          <p>JS</p>
+          <pre>
 &lt;script src="https://cdn.cdt.ca.gov/cdt/statetemplate/5.6.1/js/cagov.core.js" crossorigin="anonymous&gt;&lt;/script&gt;
-&lt;script src="https://cdn.cdt.ca.gov/cdt/statetemplate/5.6.1/js/cagov.core.min.js" crossorigin="anonymous"&gt;&lt;/script&gt;</pre>
-    </div>
-  </li>
-  <li>
-    <h4 data-aria-accordion-heading>Version 5.6.0</h4>
-    <div data-aria-accordion-panel>
-      <p>CSS</p>
-      <pre>
+&lt;script src="https://cdn.cdt.ca.gov/cdt/statetemplate/5.6.1/js/cagov.core.min.js" crossorigin="anonymous"&gt;&lt;/script&gt;</pre
+          >
+        </div>
+      </li>
+      <li>
+        <h4 data-aria-accordion-heading>Version 5.6.0</h4>
+        <div data-aria-accordion-panel>
+          <p>CSS</p>
+          <pre>
 &lt;link href="https://cdn.cdt.ca.gov/cdt/statetemplate/5.6.0/css/cagov.core.css" rel="stylesheet" crossorigin="anonymous"&gt;
 &lt;link href="https://cdn.cdt.ca.gov/cdt/statetemplate/5.6.0/css/cagov.core.min.css" rel="stylesheet" crossorigin="anonymous"&gt;
 &lt;link href="https://cdn.cdt.ca.gov/cdt/statetemplate/5.6.0/css/cagov.font-only.css" rel="stylesheet" crossorigin="anonymous"&gt;
@@ -899,18 +940,20 @@ permalink: "cdn.html"
 &lt;link href="https://cdn.cdt.ca.gov/cdt/statetemplate/5.6.0/css/colorscheme-shasta.css" rel="stylesheet" crossorigin="anonymous"&gt;
 &lt;link href="https://cdn.cdt.ca.gov/cdt/statetemplate/5.6.0/css/colorscheme-shasta.min.css" rel="stylesheet" crossorigin="anonymous"&gt;
 &lt;link href="https://cdn.cdt.ca.gov/cdt/statetemplate/5.6.0/css/colorscheme-trinity.css" rel="stylesheet" crossorigin="anonymous"&gt;
-&lt;link href="https://cdn.cdt.ca.gov/cdt/statetemplate/5.6.0/css/colorscheme-trinity.min.css" rel="stylesheet" crossorigin="anonymous"&gt;</pre>
-<p>JS</p>
-      <pre>
+&lt;link href="https://cdn.cdt.ca.gov/cdt/statetemplate/5.6.0/css/colorscheme-trinity.min.css" rel="stylesheet" crossorigin="anonymous"&gt;</pre
+          >
+          <p>JS</p>
+          <pre>
 &lt;script src="https://cdn.cdt.ca.gov/cdt/statetemplate/5.6.0/js/cagov.core.js" crossorigin="anonymous&gt;&lt;/script&gt;
-&lt;script src="https://cdn.cdt.ca.gov/cdt/statetemplate/5.6.0/js/cagov.core.min.js" crossorigin="anonymous"&gt;&lt;/script&gt;</pre>
-    </div>
-  </li>
-  <li>
-    <h4 data-aria-accordion-heading>Version 5.5.24</h4>
-    <div data-aria-accordion-panel>
-      <p>CSS</p>
-      <pre>
+&lt;script src="https://cdn.cdt.ca.gov/cdt/statetemplate/5.6.0/js/cagov.core.min.js" crossorigin="anonymous"&gt;&lt;/script&gt;</pre
+          >
+        </div>
+      </li>
+      <li>
+        <h4 data-aria-accordion-heading>Version 5.5.24</h4>
+        <div data-aria-accordion-panel>
+          <p>CSS</p>
+          <pre>
 &lt;link href="https://cdn.cdt.ca.gov/cdt/statetemplate/5.5.24/css/cagov.core.css" rel="stylesheet" crossorigin="anonymous"&gt;
 &lt;link href="https://cdn.cdt.ca.gov/cdt/statetemplate/5.5.24/css/cagov.core.min.css" rel="stylesheet" crossorigin="anonymous"&gt;
 &lt;link href="https://cdn.cdt.ca.gov/cdt/statetemplate/5.5.24/css/cagov.font-only.css" rel="stylesheet" crossorigin="anonymous"&gt;
@@ -938,18 +981,20 @@ permalink: "cdn.html"
 &lt;link href="https://cdn.cdt.ca.gov/cdt/statetemplate/5.5.24/css/colorscheme-sierra.css" rel="stylesheet" crossorigin="anonymous"&gt;
 &lt;link href="https://cdn.cdt.ca.gov/cdt/statetemplate/5.5.24/css/colorscheme-sierra.min.css" rel="stylesheet" crossorigin="anonymous"&gt;
 &lt;link href="https://cdn.cdt.ca.gov/cdt/statetemplate/5.5.24/css/colorscheme-trinity.css" rel="stylesheet" crossorigin="anonymous"&gt;
-&lt;link href="https://cdn.cdt.ca.gov/cdt/statetemplate/5.5.24/css/colorscheme-trinity.min.css" rel="stylesheet" crossorigin="anonymous"&gt;</pre>
-<p>JS</p>
-      <pre>
+&lt;link href="https://cdn.cdt.ca.gov/cdt/statetemplate/5.5.24/css/colorscheme-trinity.min.css" rel="stylesheet" crossorigin="anonymous"&gt;</pre
+          >
+          <p>JS</p>
+          <pre>
 &lt;script src="https://cdn.cdt.ca.gov/cdt/statetemplate/5.5.24/js/cagov.core.js" crossorigin="anonymous&gt;&lt;/script&gt;
-&lt;script src="https://cdn.cdt.ca.gov/cdt/statetemplate/5.5.24/js/cagov.core.min.js" crossorigin="anonymous"&gt;&lt;/script&gt;</pre>
-    </div>
-  </li>
-  <li>
-    <h4 data-aria-accordion-heading>Version 5.5.23</h4>
-    <div data-aria-accordion-panel>
-      <p>CSS</p>
-      <pre>
+&lt;script src="https://cdn.cdt.ca.gov/cdt/statetemplate/5.5.24/js/cagov.core.min.js" crossorigin="anonymous"&gt;&lt;/script&gt;</pre
+          >
+        </div>
+      </li>
+      <li>
+        <h4 data-aria-accordion-heading>Version 5.5.23</h4>
+        <div data-aria-accordion-panel>
+          <p>CSS</p>
+          <pre>
 &lt;link href="https://cdn.cdt.ca.gov/cdt/statetemplate/5.5.23/css/cagov.core.css" rel="stylesheet" crossorigin="anonymous"&gt;
 &lt;link href="https://cdn.cdt.ca.gov/cdt/statetemplate/5.5.23/css/cagov.core.min.css" rel="stylesheet" crossorigin="anonymous"&gt;
 &lt;link href="https://cdn.cdt.ca.gov/cdt/statetemplate/5.5.23/css/cagov.font-only.css" rel="stylesheet" crossorigin="anonymous"&gt;
@@ -977,18 +1022,20 @@ permalink: "cdn.html"
 &lt;link href="https://cdn.cdt.ca.gov/cdt/statetemplate/5.5.23/css/colorscheme-sierra.css" rel="stylesheet" crossorigin="anonymous"&gt;
 &lt;link href="https://cdn.cdt.ca.gov/cdt/statetemplate/5.5.23/css/colorscheme-sierra.min.css" rel="stylesheet" crossorigin="anonymous"&gt;
 &lt;link href="https://cdn.cdt.ca.gov/cdt/statetemplate/5.5.23/css/colorscheme-trinity.css" rel="stylesheet" crossorigin="anonymous"&gt;
-&lt;link href="https://cdn.cdt.ca.gov/cdt/statetemplate/5.5.23/css/colorscheme-trinity.min.css" rel="stylesheet" crossorigin="anonymous"&gt;</pre>
-<p>JS</p>
-      <pre>
+&lt;link href="https://cdn.cdt.ca.gov/cdt/statetemplate/5.5.23/css/colorscheme-trinity.min.css" rel="stylesheet" crossorigin="anonymous"&gt;</pre
+          >
+          <p>JS</p>
+          <pre>
 &lt;script src="https://cdn.cdt.ca.gov/cdt/statetemplate/5.5.23/js/cagov.core.js" crossorigin="anonymous&gt;&lt;/script&gt;
-&lt;script src="https://cdn.cdt.ca.gov/cdt/statetemplate/5.5.23/js/cagov.core.min.js" crossorigin="anonymous"&gt;&lt;/script&gt;</pre>
-    </div>
-  </li>
-  <li>
-    <h4 data-aria-accordion-heading>Version 5.5.22</h4>
-    <div data-aria-accordion-panel>
-      <p>CSS</p>
-      <pre>
+&lt;script src="https://cdn.cdt.ca.gov/cdt/statetemplate/5.5.23/js/cagov.core.min.js" crossorigin="anonymous"&gt;&lt;/script&gt;</pre
+          >
+        </div>
+      </li>
+      <li>
+        <h4 data-aria-accordion-heading>Version 5.5.22</h4>
+        <div data-aria-accordion-panel>
+          <p>CSS</p>
+          <pre>
 &lt;link href="https://cdn.cdt.ca.gov/cdt/statetemplate/5.5.22/css/cagov.core.css" rel="stylesheet" crossorigin="anonymous"&gt;
 &lt;link href="https://cdn.cdt.ca.gov/cdt/statetemplate/5.5.22/css/cagov.core.min.css" rel="stylesheet" crossorigin="anonymous"&gt;
 &lt;link href="https://cdn.cdt.ca.gov/cdt/statetemplate/5.5.22/css/cagov.font-only.css" rel="stylesheet" crossorigin="anonymous"&gt;
@@ -1016,18 +1063,20 @@ permalink: "cdn.html"
 &lt;link href="https://cdn.cdt.ca.gov/cdt/statetemplate/5.5.22/css/colorscheme-sierra.css" rel="stylesheet" crossorigin="anonymous"&gt;
 &lt;link href="https://cdn.cdt.ca.gov/cdt/statetemplate/5.5.22/css/colorscheme-sierra.min.css" rel="stylesheet" crossorigin="anonymous"&gt;
 &lt;link href="https://cdn.cdt.ca.gov/cdt/statetemplate/5.5.22/css/colorscheme-trinity.css" rel="stylesheet" crossorigin="anonymous"&gt;
-&lt;link href="https://cdn.cdt.ca.gov/cdt/statetemplate/5.5.22/css/colorscheme-trinity.min.css" rel="stylesheet" crossorigin="anonymous"&gt;</pre>
-<p>JS</p>
-      <pre>
+&lt;link href="https://cdn.cdt.ca.gov/cdt/statetemplate/5.5.22/css/colorscheme-trinity.min.css" rel="stylesheet" crossorigin="anonymous"&gt;</pre
+          >
+          <p>JS</p>
+          <pre>
 &lt;script src="https://cdn.cdt.ca.gov/cdt/statetemplate/5.5.22/js/cagov.core.js" crossorigin="anonymous&gt;&lt;/script&gt;
-&lt;script src="https://cdn.cdt.ca.gov/cdt/statetemplate/5.5.22/js/cagov.core.min.js" crossorigin="anonymous"&gt;&lt;/script&gt;</pre>
-    </div>
-  </li>
-  <li>
-    <h4 data-aria-accordion-heading>Version 5.5.21</h4>
-    <div data-aria-accordion-panel>
-      <p>CSS</p>
-      <pre>
+&lt;script src="https://cdn.cdt.ca.gov/cdt/statetemplate/5.5.22/js/cagov.core.min.js" crossorigin="anonymous"&gt;&lt;/script&gt;</pre
+          >
+        </div>
+      </li>
+      <li>
+        <h4 data-aria-accordion-heading>Version 5.5.21</h4>
+        <div data-aria-accordion-panel>
+          <p>CSS</p>
+          <pre>
 &lt;link href="https://cdn.cdt.ca.gov/cdt/statetemplate/5.5.21/css/cagov.core.css" rel="stylesheet" crossorigin="anonymous"&gt;
 &lt;link href="https://cdn.cdt.ca.gov/cdt/statetemplate/5.5.21/css/cagov.core.min.css" rel="stylesheet" crossorigin="anonymous"&gt;
 &lt;link href="https://cdn.cdt.ca.gov/cdt/statetemplate/5.5.21/css/cagov.font-only.css" rel="stylesheet" crossorigin="anonymous"&gt;
@@ -1055,18 +1104,20 @@ permalink: "cdn.html"
 &lt;link href="https://cdn.cdt.ca.gov/cdt/statetemplate/5.5.21/css/colorscheme-sierra.css" rel="stylesheet" crossorigin="anonymous"&gt;
 &lt;link href="https://cdn.cdt.ca.gov/cdt/statetemplate/5.5.21/css/colorscheme-sierra.min.css" rel="stylesheet" crossorigin="anonymous"&gt;
 &lt;link href="https://cdn.cdt.ca.gov/cdt/statetemplate/5.5.21/css/colorscheme-trinity.css" rel="stylesheet" crossorigin="anonymous"&gt;
-&lt;link href="https://cdn.cdt.ca.gov/cdt/statetemplate/5.5.21/css/colorscheme-trinity.min.css" rel="stylesheet" crossorigin="anonymous"&gt;</pre>
-<p>JS</p>
-      <pre>
+&lt;link href="https://cdn.cdt.ca.gov/cdt/statetemplate/5.5.21/css/colorscheme-trinity.min.css" rel="stylesheet" crossorigin="anonymous"&gt;</pre
+          >
+          <p>JS</p>
+          <pre>
 &lt;script src="https://cdn.cdt.ca.gov/cdt/statetemplate/5.5.21/js/cagov.core.js" crossorigin="anonymous&gt;&lt;/script&gt;
-&lt;script src="https://cdn.cdt.ca.gov/cdt/statetemplate/5.5.21/js/cagov.core.min.js" crossorigin="anonymous"&gt;&lt;/script&gt;</pre>
-    </div>
-  </li>
-  <li>
-    <h4 data-aria-accordion-heading>Version 5.5.20</h4>
-    <div data-aria-accordion-panel>
-      <p>CSS</p>
-      <pre>
+&lt;script src="https://cdn.cdt.ca.gov/cdt/statetemplate/5.5.21/js/cagov.core.min.js" crossorigin="anonymous"&gt;&lt;/script&gt;</pre
+          >
+        </div>
+      </li>
+      <li>
+        <h4 data-aria-accordion-heading>Version 5.5.20</h4>
+        <div data-aria-accordion-panel>
+          <p>CSS</p>
+          <pre>
 &lt;link href="https://cdn.cdt.ca.gov/cdt/statetemplate/5.5.20/css/cagov.core.css" rel="stylesheet" crossorigin="anonymous"&gt;
 &lt;link href="https://cdn.cdt.ca.gov/cdt/statetemplate/5.5.20/css/cagov.core.min.css" rel="stylesheet" crossorigin="anonymous"&gt;
 &lt;link href="https://cdn.cdt.ca.gov/cdt/statetemplate/5.5.20/css/cagov.font-only.css" rel="stylesheet" crossorigin="anonymous"&gt;
@@ -1094,18 +1145,20 @@ permalink: "cdn.html"
 &lt;link href="https://cdn.cdt.ca.gov/cdt/statetemplate/5.5.20/css/colorscheme-sierra.css" rel="stylesheet" crossorigin="anonymous"&gt;
 &lt;link href="https://cdn.cdt.ca.gov/cdt/statetemplate/5.5.20/css/colorscheme-sierra.min.css" rel="stylesheet" crossorigin="anonymous"&gt;
 &lt;link href="https://cdn.cdt.ca.gov/cdt/statetemplate/5.5.20/css/colorscheme-trinity.css" rel="stylesheet" crossorigin="anonymous"&gt;
-&lt;link href="https://cdn.cdt.ca.gov/cdt/statetemplate/5.5.20/css/colorscheme-trinity.min.css" rel="stylesheet" crossorigin="anonymous"&gt;</pre>
-<p>JS</p>
-      <pre>
+&lt;link href="https://cdn.cdt.ca.gov/cdt/statetemplate/5.5.20/css/colorscheme-trinity.min.css" rel="stylesheet" crossorigin="anonymous"&gt;</pre
+          >
+          <p>JS</p>
+          <pre>
 &lt;script src="https://cdn.cdt.ca.gov/cdt/statetemplate/5.5.20/js/cagov.core.js" crossorigin="anonymous&gt;&lt;/script&gt;
-&lt;script src="https://cdn.cdt.ca.gov/cdt/statetemplate/5.5.20/js/cagov.core.min.js" crossorigin="anonymous"&gt;&lt;/script&gt;</pre>
-    </div>
-  </li>
-  <li>
-    <h4 data-aria-accordion-heading>Version 5.5.19</h4>
-    <div data-aria-accordion-panel>
-      <p>CSS</p>
-      <pre>
+&lt;script src="https://cdn.cdt.ca.gov/cdt/statetemplate/5.5.20/js/cagov.core.min.js" crossorigin="anonymous"&gt;&lt;/script&gt;</pre
+          >
+        </div>
+      </li>
+      <li>
+        <h4 data-aria-accordion-heading>Version 5.5.19</h4>
+        <div data-aria-accordion-panel>
+          <p>CSS</p>
+          <pre>
 &lt;link href="https://cdn.cdt.ca.gov/cdt/statetemplate/5.5.19/css/cagov.core.css" rel="stylesheet" crossorigin="anonymous"&gt;
 &lt;link href="https://cdn.cdt.ca.gov/cdt/statetemplate/5.5.19/css/cagov.core.min.css" rel="stylesheet" crossorigin="anonymous"&gt;
 &lt;link href="https://cdn.cdt.ca.gov/cdt/statetemplate/5.5.19/css/cagov.font-only.css" rel="stylesheet" crossorigin="anonymous"&gt;
@@ -1133,18 +1186,20 @@ permalink: "cdn.html"
 &lt;link href="https://cdn.cdt.ca.gov/cdt/statetemplate/5.5.19/css/colorscheme-sierra.css" rel="stylesheet" crossorigin="anonymous"&gt;
 &lt;link href="https://cdn.cdt.ca.gov/cdt/statetemplate/5.5.19/css/colorscheme-sierra.min.css" rel="stylesheet" crossorigin="anonymous"&gt;
 &lt;link href="https://cdn.cdt.ca.gov/cdt/statetemplate/5.5.19/css/colorscheme-trinity.css" rel="stylesheet" crossorigin="anonymous"&gt;
-&lt;link href="https://cdn.cdt.ca.gov/cdt/statetemplate/5.5.19/css/colorscheme-trinity.min.css" rel="stylesheet" crossorigin="anonymous"&gt;</pre>
-<p>JS</p>
-      <pre>
+&lt;link href="https://cdn.cdt.ca.gov/cdt/statetemplate/5.5.19/css/colorscheme-trinity.min.css" rel="stylesheet" crossorigin="anonymous"&gt;</pre
+          >
+          <p>JS</p>
+          <pre>
 &lt;script src="https://cdn.cdt.ca.gov/cdt/statetemplate/5.5.19/js/cagov.core.js" crossorigin="anonymous&gt;&lt;/script&gt;
-&lt;script src="https://cdn.cdt.ca.gov/cdt/statetemplate/5.5.19/js/cagov.core.min.js" crossorigin="anonymous"&gt;&lt;/script&gt;</pre>
-    </div>
-  </li>
-  <li>
-    <h4 data-aria-accordion-heading>Version 5.5.18</h4>
-    <div data-aria-accordion-panel>
-      <p>CSS</p>
-      <pre>
+&lt;script src="https://cdn.cdt.ca.gov/cdt/statetemplate/5.5.19/js/cagov.core.min.js" crossorigin="anonymous"&gt;&lt;/script&gt;</pre
+          >
+        </div>
+      </li>
+      <li>
+        <h4 data-aria-accordion-heading>Version 5.5.18</h4>
+        <div data-aria-accordion-panel>
+          <p>CSS</p>
+          <pre>
 &lt;link href="https://cdn.cdt.ca.gov/cdt/statetemplate/5.5.18/css/cagov.core.css" rel="stylesheet" crossorigin="anonymous"&gt;
 &lt;link href="https://cdn.cdt.ca.gov/cdt/statetemplate/5.5.18/css/cagov.core.min.css" rel="stylesheet" crossorigin="anonymous"&gt;
 &lt;link href="https://cdn.cdt.ca.gov/cdt/statetemplate/5.5.18/css/cagov.font-only.css" rel="stylesheet" crossorigin="anonymous"&gt;
@@ -1172,18 +1227,20 @@ permalink: "cdn.html"
 &lt;link href="https://cdn.cdt.ca.gov/cdt/statetemplate/5.5.18/css/colorscheme-sierra.css" rel="stylesheet" crossorigin="anonymous"&gt;
 &lt;link href="https://cdn.cdt.ca.gov/cdt/statetemplate/5.5.18/css/colorscheme-sierra.min.css" rel="stylesheet" crossorigin="anonymous"&gt;
 &lt;link href="https://cdn.cdt.ca.gov/cdt/statetemplate/5.5.18/css/colorscheme-trinity.css" rel="stylesheet" crossorigin="anonymous"&gt;
-&lt;link href="https://cdn.cdt.ca.gov/cdt/statetemplate/5.5.18/css/colorscheme-trinity.min.css" rel="stylesheet" crossorigin="anonymous"&gt;</pre>
-<p>JS</p>
-      <pre>
+&lt;link href="https://cdn.cdt.ca.gov/cdt/statetemplate/5.5.18/css/colorscheme-trinity.min.css" rel="stylesheet" crossorigin="anonymous"&gt;</pre
+          >
+          <p>JS</p>
+          <pre>
 &lt;script src="https://cdn.cdt.ca.gov/cdt/statetemplate/5.5.18/js/cagov.core.js" crossorigin="anonymous&gt;&lt;/script&gt;
-&lt;script src="https://cdn.cdt.ca.gov/cdt/statetemplate/5.5.18/js/cagov.core.min.js" crossorigin="anonymous"&gt;&lt;/script&gt;</pre>
-    </div>
-  </li>
-  <li>
-    <h4 data-aria-accordion-heading>Version 5.5.17</h4>
-    <div data-aria-accordion-panel>
-      <p>CSS</p>
-      <pre>
+&lt;script src="https://cdn.cdt.ca.gov/cdt/statetemplate/5.5.18/js/cagov.core.min.js" crossorigin="anonymous"&gt;&lt;/script&gt;</pre
+          >
+        </div>
+      </li>
+      <li>
+        <h4 data-aria-accordion-heading>Version 5.5.17</h4>
+        <div data-aria-accordion-panel>
+          <p>CSS</p>
+          <pre>
 &lt;link href="https://cdn.cdt.ca.gov/cdt/statetemplate/5.5.17/css/cagov.core.css" rel="stylesheet" crossorigin="anonymous"&gt;
 &lt;link href="https://cdn.cdt.ca.gov/cdt/statetemplate/5.5.17/css/cagov.core.min.css" rel="stylesheet" crossorigin="anonymous"&gt;
 &lt;link href="https://cdn.cdt.ca.gov/cdt/statetemplate/5.5.17/css/cagov.font-only.css" rel="stylesheet" crossorigin="anonymous"&gt;
@@ -1211,18 +1268,20 @@ permalink: "cdn.html"
 &lt;link href="https://cdn.cdt.ca.gov/cdt/statetemplate/5.5.17/css/colorscheme-sierra.css" rel="stylesheet" crossorigin="anonymous"&gt;
 &lt;link href="https://cdn.cdt.ca.gov/cdt/statetemplate/5.5.17/css/colorscheme-sierra.min.css" rel="stylesheet" crossorigin="anonymous"&gt;
 &lt;link href="https://cdn.cdt.ca.gov/cdt/statetemplate/5.5.17/css/colorscheme-trinity.css" rel="stylesheet" crossorigin="anonymous"&gt;
-&lt;link href="https://cdn.cdt.ca.gov/cdt/statetemplate/5.5.17/css/colorscheme-trinity.min.css" rel="stylesheet" crossorigin="anonymous"&gt;</pre>
-<p>JS</p>
-      <pre>
+&lt;link href="https://cdn.cdt.ca.gov/cdt/statetemplate/5.5.17/css/colorscheme-trinity.min.css" rel="stylesheet" crossorigin="anonymous"&gt;</pre
+          >
+          <p>JS</p>
+          <pre>
 &lt;script src="https://cdn.cdt.ca.gov/cdt/statetemplate/5.5.17/js/cagov.core.js" crossorigin="anonymous&gt;&lt;/script&gt;
-&lt;script src="https://cdn.cdt.ca.gov/cdt/statetemplate/5.5.17/js/cagov.core.min.js" crossorigin="anonymous"&gt;&lt;/script&gt;</pre>
-    </div>
-  </li>
-  <li>
-    <h4 data-aria-accordion-heading>Version 5.5.16</h4>
-    <div data-aria-accordion-panel>
-      <p>CSS</p>
-      <pre>
+&lt;script src="https://cdn.cdt.ca.gov/cdt/statetemplate/5.5.17/js/cagov.core.min.js" crossorigin="anonymous"&gt;&lt;/script&gt;</pre
+          >
+        </div>
+      </li>
+      <li>
+        <h4 data-aria-accordion-heading>Version 5.5.16</h4>
+        <div data-aria-accordion-panel>
+          <p>CSS</p>
+          <pre>
 &lt;link href="https://cdn.cdt.ca.gov/cdt/statetemplate/5.5.16/css/cagov.core.css" rel="stylesheet" crossorigin="anonymous"&gt;
 &lt;link href="https://cdn.cdt.ca.gov/cdt/statetemplate/5.5.16/css/cagov.core.min.css" rel="stylesheet" crossorigin="anonymous"&gt;
 &lt;link href="https://cdn.cdt.ca.gov/cdt/statetemplate/5.5.16/css/cagov.font-only.css" rel="stylesheet" crossorigin="anonymous"&gt;
@@ -1250,18 +1309,20 @@ permalink: "cdn.html"
 &lt;link href="https://cdn.cdt.ca.gov/cdt/statetemplate/5.5.16/css/colorscheme-sierra.css" rel="stylesheet" crossorigin="anonymous"&gt;
 &lt;link href="https://cdn.cdt.ca.gov/cdt/statetemplate/5.5.16/css/colorscheme-sierra.min.css" rel="stylesheet" crossorigin="anonymous"&gt;
 &lt;link href="https://cdn.cdt.ca.gov/cdt/statetemplate/5.5.16/css/colorscheme-trinity.css" rel="stylesheet" crossorigin="anonymous"&gt;
-&lt;link href="https://cdn.cdt.ca.gov/cdt/statetemplate/5.5.16/css/colorscheme-trinity.min.css" rel="stylesheet" crossorigin="anonymous"&gt;</pre>
-<p>JS</p>
-      <pre>
+&lt;link href="https://cdn.cdt.ca.gov/cdt/statetemplate/5.5.16/css/colorscheme-trinity.min.css" rel="stylesheet" crossorigin="anonymous"&gt;</pre
+          >
+          <p>JS</p>
+          <pre>
 &lt;script src="https://cdn.cdt.ca.gov/cdt/statetemplate/5.5.16/js/cagov.core.js" crossorigin="anonymous&gt;&lt;/script&gt;
-&lt;script src="https://cdn.cdt.ca.gov/cdt/statetemplate/5.5.16/js/cagov.core.min.js" crossorigin="anonymous"&gt;&lt;/script&gt;</pre>
-    </div>
-  </li>
-  <li>
-    <h4 data-aria-accordion-heading>Version 5.5.15</h4>
-    <div data-aria-accordion-panel>
-      <p>CSS</p>
-      <pre>
+&lt;script src="https://cdn.cdt.ca.gov/cdt/statetemplate/5.5.16/js/cagov.core.min.js" crossorigin="anonymous"&gt;&lt;/script&gt;</pre
+          >
+        </div>
+      </li>
+      <li>
+        <h4 data-aria-accordion-heading>Version 5.5.15</h4>
+        <div data-aria-accordion-panel>
+          <p>CSS</p>
+          <pre>
 &lt;link href="https://cdn.cdt.ca.gov/cdt/statetemplate/5.5.15/css/cagov.core.css" rel="stylesheet" crossorigin="anonymous"&gt;
 &lt;link href="https://cdn.cdt.ca.gov/cdt/statetemplate/5.5.15/css/cagov.core.min.css" rel="stylesheet" crossorigin="anonymous"&gt;
 &lt;link href="https://cdn.cdt.ca.gov/cdt/statetemplate/5.5.15/css/cagov.font-only.css" rel="stylesheet" crossorigin="anonymous"&gt;
@@ -1289,18 +1350,20 @@ permalink: "cdn.html"
 &lt;link href="https://cdn.cdt.ca.gov/cdt/statetemplate/5.5.15/css/colorscheme-sierra.css" rel="stylesheet" crossorigin="anonymous"&gt;
 &lt;link href="https://cdn.cdt.ca.gov/cdt/statetemplate/5.5.15/css/colorscheme-sierra.min.css" rel="stylesheet" crossorigin="anonymous"&gt;
 &lt;link href="https://cdn.cdt.ca.gov/cdt/statetemplate/5.5.15/css/colorscheme-trinity.css" rel="stylesheet" crossorigin="anonymous"&gt;
-&lt;link href="https://cdn.cdt.ca.gov/cdt/statetemplate/5.5.15/css/colorscheme-trinity.min.css" rel="stylesheet" crossorigin="anonymous"&gt;</pre>
-<p>JS</p>
-      <pre>
+&lt;link href="https://cdn.cdt.ca.gov/cdt/statetemplate/5.5.15/css/colorscheme-trinity.min.css" rel="stylesheet" crossorigin="anonymous"&gt;</pre
+          >
+          <p>JS</p>
+          <pre>
 &lt;script src="https://cdn.cdt.ca.gov/cdt/statetemplate/5.5.15/js/cagov.core.js" crossorigin="anonymous&gt;&lt;/script&gt;
-&lt;script src="https://cdn.cdt.ca.gov/cdt/statetemplate/5.5.15/js/cagov.core.min.js" crossorigin="anonymous"&gt;&lt;/script&gt;</pre>
-    </div>
-  </li>
-  <li>
-    <h4 data-aria-accordion-heading>Version 5.5.14</h4>
-    <div data-aria-accordion-panel>
-      <p>CSS</p>
-      <pre>
+&lt;script src="https://cdn.cdt.ca.gov/cdt/statetemplate/5.5.15/js/cagov.core.min.js" crossorigin="anonymous"&gt;&lt;/script&gt;</pre
+          >
+        </div>
+      </li>
+      <li>
+        <h4 data-aria-accordion-heading>Version 5.5.14</h4>
+        <div data-aria-accordion-panel>
+          <p>CSS</p>
+          <pre>
 &lt;link href="https://cdn.cdt.ca.gov/cdt/statetemplate/5.5.14/css/cagov.core.css" rel="stylesheet" crossorigin="anonymous"&gt;
 &lt;link href="https://cdn.cdt.ca.gov/cdt/statetemplate/5.5.14/css/cagov.core.min.css" rel="stylesheet" crossorigin="anonymous"&gt;
 &lt;link href="https://cdn.cdt.ca.gov/cdt/statetemplate/5.5.14/css/cagov.font-only.css" rel="stylesheet" crossorigin="anonymous"&gt;
@@ -1322,18 +1385,20 @@ permalink: "cdn.html"
 &lt;link href="https://cdn.cdt.ca.gov/cdt/statetemplate/5.5.14/css/colorscheme-sierra.css" rel="stylesheet" crossorigin="anonymous"&gt;
 &lt;link href="https://cdn.cdt.ca.gov/cdt/statetemplate/5.5.14/css/colorscheme-sierra.min.css" rel="stylesheet" crossorigin="anonymous"&gt;
 &lt;link href="https://cdn.cdt.ca.gov/cdt/statetemplate/5.5.14/css/colorscheme-trinity.css" rel="stylesheet" crossorigin="anonymous"&gt;
-&lt;link href="https://cdn.cdt.ca.gov/cdt/statetemplate/5.5.14/css/colorscheme-trinity.min.css" rel="stylesheet" crossorigin="anonymous"&gt;</pre>
-<p>JS</p>
-      <pre>
+&lt;link href="https://cdn.cdt.ca.gov/cdt/statetemplate/5.5.14/css/colorscheme-trinity.min.css" rel="stylesheet" crossorigin="anonymous"&gt;</pre
+          >
+          <p>JS</p>
+          <pre>
 &lt;script src="https://cdn.cdt.ca.gov/cdt/statetemplate/5.5.14/js/cagov.core.js" crossorigin="anonymous&gt;&lt;/script&gt;
-&lt;script src="https://cdn.cdt.ca.gov/cdt/statetemplate/5.5.14/js/cagov.core.min.js" crossorigin="anonymous"&gt;&lt;/script&gt;</pre>
-    </div>
-  </li>
-  <li>
-    <h4 data-aria-accordion-heading>Version 5.5.13</h4>
-    <div data-aria-accordion-panel>
-      <p>CSS</p>
-      <pre>
+&lt;script src="https://cdn.cdt.ca.gov/cdt/statetemplate/5.5.14/js/cagov.core.min.js" crossorigin="anonymous"&gt;&lt;/script&gt;</pre
+          >
+        </div>
+      </li>
+      <li>
+        <h4 data-aria-accordion-heading>Version 5.5.13</h4>
+        <div data-aria-accordion-panel>
+          <p>CSS</p>
+          <pre>
 &lt;link href="https://cdn.cdt.ca.gov/cdt/statetemplate/5.5.13/css/cagov.core.css" rel="stylesheet" crossorigin="anonymous"&gt;
 &lt;link href="https://cdn.cdt.ca.gov/cdt/statetemplate/5.5.13/css/cagov.core.min.css" rel="stylesheet" crossorigin="anonymous"&gt;
 &lt;link href="https://cdn.cdt.ca.gov/cdt/statetemplate/5.5.13/css/cagov.font-only.css" rel="stylesheet" crossorigin="anonymous"&gt;
@@ -1355,18 +1420,20 @@ permalink: "cdn.html"
 &lt;link href="https://cdn.cdt.ca.gov/cdt/statetemplate/5.5.13/css/colorscheme-sierra.css" rel="stylesheet" crossorigin="anonymous"&gt;
 &lt;link href="https://cdn.cdt.ca.gov/cdt/statetemplate/5.5.13/css/colorscheme-sierra.min.css" rel="stylesheet" crossorigin="anonymous"&gt;
 &lt;link href="https://cdn.cdt.ca.gov/cdt/statetemplate/5.5.13/css/colorscheme-trinity.css" rel="stylesheet" crossorigin="anonymous"&gt;
-&lt;link href="https://cdn.cdt.ca.gov/cdt/statetemplate/5.5.13/css/colorscheme-trinity.min.css" rel="stylesheet" crossorigin="anonymous"&gt;</pre>
-<p>JS</p>
-      <pre>
+&lt;link href="https://cdn.cdt.ca.gov/cdt/statetemplate/5.5.13/css/colorscheme-trinity.min.css" rel="stylesheet" crossorigin="anonymous"&gt;</pre
+          >
+          <p>JS</p>
+          <pre>
 &lt;script src="https://cdn.cdt.ca.gov/cdt/statetemplate/5.5.13/js/cagov.core.js" crossorigin="anonymous&gt;&lt;/script&gt;
-&lt;script src="https://cdn.cdt.ca.gov/cdt/statetemplate/5.5.13/js/cagov.core.min.js" crossorigin="anonymous"&gt;&lt;/script&gt;</pre>
-    </div>
-  </li>
-  <li>
-    <h4 data-aria-accordion-heading>Version 5.5.12</h4>
-    <div data-aria-accordion-panel>
-      <p>CSS</p>
-      <pre>
+&lt;script src="https://cdn.cdt.ca.gov/cdt/statetemplate/5.5.13/js/cagov.core.min.js" crossorigin="anonymous"&gt;&lt;/script&gt;</pre
+          >
+        </div>
+      </li>
+      <li>
+        <h4 data-aria-accordion-heading>Version 5.5.12</h4>
+        <div data-aria-accordion-panel>
+          <p>CSS</p>
+          <pre>
 &lt;link href="https://cdn.cdt.ca.gov/cdt/statetemplate/5.5.12/css/cagov.core.css" rel="stylesheet" crossorigin="anonymous"&gt;
 &lt;link href="https://cdn.cdt.ca.gov/cdt/statetemplate/5.5.12/css/cagov.core.min.css" rel="stylesheet" crossorigin="anonymous"&gt;
 &lt;link href="https://cdn.cdt.ca.gov/cdt/statetemplate/5.5.12/css/cagov.font-only.css" rel="stylesheet" crossorigin="anonymous"&gt;
@@ -1388,18 +1455,20 @@ permalink: "cdn.html"
 &lt;link href="https://cdn.cdt.ca.gov/cdt/statetemplate/5.5.12/css/colorscheme-sierra.css" rel="stylesheet" crossorigin="anonymous"&gt;
 &lt;link href="https://cdn.cdt.ca.gov/cdt/statetemplate/5.5.12/css/colorscheme-sierra.min.css" rel="stylesheet" crossorigin="anonymous"&gt;
 &lt;link href="https://cdn.cdt.ca.gov/cdt/statetemplate/5.5.12/css/colorscheme-trinity.css" rel="stylesheet" crossorigin="anonymous"&gt;
-&lt;link href="https://cdn.cdt.ca.gov/cdt/statetemplate/5.5.12/css/colorscheme-trinity.min.css" rel="stylesheet" crossorigin="anonymous"&gt;</pre>
-<p>JS</p>
-      <pre>
+&lt;link href="https://cdn.cdt.ca.gov/cdt/statetemplate/5.5.12/css/colorscheme-trinity.min.css" rel="stylesheet" crossorigin="anonymous"&gt;</pre
+          >
+          <p>JS</p>
+          <pre>
 &lt;script src="https://cdn.cdt.ca.gov/cdt/statetemplate/5.5.12/js/cagov.core.js" crossorigin="anonymous&gt;&lt;/script&gt;
-&lt;script src="https://cdn.cdt.ca.gov/cdt/statetemplate/5.5.12/js/cagov.core.min.js" crossorigin="anonymous"&gt;&lt;/script&gt;</pre>
-    </div>
-  </li>
-  <li>
-    <h4 data-aria-accordion-heading>Version 5.5.11</h4>
-    <div data-aria-accordion-panel>
-      <p>CSS</p>
-      <pre>
+&lt;script src="https://cdn.cdt.ca.gov/cdt/statetemplate/5.5.12/js/cagov.core.min.js" crossorigin="anonymous"&gt;&lt;/script&gt;</pre
+          >
+        </div>
+      </li>
+      <li>
+        <h4 data-aria-accordion-heading>Version 5.5.11</h4>
+        <div data-aria-accordion-panel>
+          <p>CSS</p>
+          <pre>
 &lt;link href="https://cdn.cdt.ca.gov/cdt/statetemplate/5.5.11/css/cagov.core.css" rel="stylesheet" crossorigin="anonymous"&gt;
 &lt;link href="https://cdn.cdt.ca.gov/cdt/statetemplate/5.5.11/css/cagov.core.min.css" rel="stylesheet" crossorigin="anonymous"&gt;
 &lt;link href="https://cdn.cdt.ca.gov/cdt/statetemplate/5.5.11/css/cagov.font-only.css" rel="stylesheet" crossorigin="anonymous"&gt;
@@ -1421,18 +1490,20 @@ permalink: "cdn.html"
 &lt;link href="https://cdn.cdt.ca.gov/cdt/statetemplate/5.5.11/css/colorscheme-sierra.css" rel="stylesheet" crossorigin="anonymous"&gt;
 &lt;link href="https://cdn.cdt.ca.gov/cdt/statetemplate/5.5.11/css/colorscheme-sierra.min.css" rel="stylesheet" crossorigin="anonymous"&gt;
 &lt;link href="https://cdn.cdt.ca.gov/cdt/statetemplate/5.5.11/css/colorscheme-trinity.css" rel="stylesheet" crossorigin="anonymous"&gt;
-&lt;link href="https://cdn.cdt.ca.gov/cdt/statetemplate/5.5.11/css/colorscheme-trinity.min.css" rel="stylesheet" crossorigin="anonymous"&gt;</pre>
-<p>JS</p>
-      <pre>
+&lt;link href="https://cdn.cdt.ca.gov/cdt/statetemplate/5.5.11/css/colorscheme-trinity.min.css" rel="stylesheet" crossorigin="anonymous"&gt;</pre
+          >
+          <p>JS</p>
+          <pre>
 &lt;script src="https://cdn.cdt.ca.gov/cdt/statetemplate/5.5.11/js/cagov.core.js" crossorigin="anonymous&gt;&lt;/script&gt;
-&lt;script src="https://cdn.cdt.ca.gov/cdt/statetemplate/5.5.11/js/cagov.core.min.js" crossorigin="anonymous"&gt;&lt;/script&gt;</pre>
-    </div>
-  </li>
-  <li>
-    <h4 data-aria-accordion-heading>Version 5.5.10</h4>
-    <div data-aria-accordion-panel>
-      <p>CSS</p>
-      <pre>
+&lt;script src="https://cdn.cdt.ca.gov/cdt/statetemplate/5.5.11/js/cagov.core.min.js" crossorigin="anonymous"&gt;&lt;/script&gt;</pre
+          >
+        </div>
+      </li>
+      <li>
+        <h4 data-aria-accordion-heading>Version 5.5.10</h4>
+        <div data-aria-accordion-panel>
+          <p>CSS</p>
+          <pre>
 &lt;link href="https://cdn.cdt.ca.gov/cdt/statetemplate/5.5.10/css/cagov.core.css" rel="stylesheet" crossorigin="anonymous"&gt;
 &lt;link href="https://cdn.cdt.ca.gov/cdt/statetemplate/5.5.10/css/cagov.core.min.css" rel="stylesheet" crossorigin="anonymous"&gt;
 &lt;link href="https://cdn.cdt.ca.gov/cdt/statetemplate/5.5.10/css/cagov.font-only.css" rel="stylesheet" crossorigin="anonymous"&gt;
@@ -1454,18 +1525,20 @@ permalink: "cdn.html"
 &lt;link href="https://cdn.cdt.ca.gov/cdt/statetemplate/5.5.10/css/colorscheme-sierra.css" rel="stylesheet" crossorigin="anonymous"&gt;
 &lt;link href="https://cdn.cdt.ca.gov/cdt/statetemplate/5.5.10/css/colorscheme-sierra.min.css" rel="stylesheet" crossorigin="anonymous"&gt;
 &lt;link href="https://cdn.cdt.ca.gov/cdt/statetemplate/5.5.10/css/colorscheme-trinity.css" rel="stylesheet" crossorigin="anonymous"&gt;
-&lt;link href="https://cdn.cdt.ca.gov/cdt/statetemplate/5.5.10/css/colorscheme-trinity.min.css" rel="stylesheet" crossorigin="anonymous"&gt;</pre>
-<p>JS</p>
-      <pre>
+&lt;link href="https://cdn.cdt.ca.gov/cdt/statetemplate/5.5.10/css/colorscheme-trinity.min.css" rel="stylesheet" crossorigin="anonymous"&gt;</pre
+          >
+          <p>JS</p>
+          <pre>
 &lt;script src="https://cdn.cdt.ca.gov/cdt/statetemplate/5.5.10/js/cagov.core.js" crossorigin="anonymous&gt;&lt;/script&gt;
-&lt;script src="https://cdn.cdt.ca.gov/cdt/statetemplate/5.5.10/js/cagov.core.min.js" crossorigin="anonymous"&gt;&lt;/script&gt;</pre>
-    </div>
-  </li>
-  <li>
-    <h4 data-aria-accordion-heading>Version 5.5.9</h4>
-    <div data-aria-accordion-panel>
-      <p>CSS</p>
-      <pre>
+&lt;script src="https://cdn.cdt.ca.gov/cdt/statetemplate/5.5.10/js/cagov.core.min.js" crossorigin="anonymous"&gt;&lt;/script&gt;</pre
+          >
+        </div>
+      </li>
+      <li>
+        <h4 data-aria-accordion-heading>Version 5.5.9</h4>
+        <div data-aria-accordion-panel>
+          <p>CSS</p>
+          <pre>
 &lt;link href="https://cdn.cdt.ca.gov/cdt/statetemplate/5.5.9/css/cagov.core.css" rel="stylesheet" crossorigin="anonymous"&gt;
 &lt;link href="https://cdn.cdt.ca.gov/cdt/statetemplate/5.5.9/css/cagov.core.min.css" rel="stylesheet" crossorigin="anonymous"&gt;
 &lt;link href="https://cdn.cdt.ca.gov/cdt/statetemplate/5.5.9/css/cagov.font-only.css" rel="stylesheet" crossorigin="anonymous"&gt;
@@ -1487,18 +1560,20 @@ permalink: "cdn.html"
 &lt;link href="https://cdn.cdt.ca.gov/cdt/statetemplate/5.5.9/css/colorscheme-sierra.css" rel="stylesheet" crossorigin="anonymous"&gt;
 &lt;link href="https://cdn.cdt.ca.gov/cdt/statetemplate/5.5.9/css/colorscheme-sierra.min.css" rel="stylesheet" crossorigin="anonymous"&gt;
 &lt;link href="https://cdn.cdt.ca.gov/cdt/statetemplate/5.5.9/css/colorscheme-trinity.css" rel="stylesheet" crossorigin="anonymous"&gt;
-&lt;link href="https://cdn.cdt.ca.gov/cdt/statetemplate/5.5.9/css/colorscheme-trinity.min.css" rel="stylesheet" crossorigin="anonymous"&gt;</pre>
-<p>JS</p>
-      <pre>
+&lt;link href="https://cdn.cdt.ca.gov/cdt/statetemplate/5.5.9/css/colorscheme-trinity.min.css" rel="stylesheet" crossorigin="anonymous"&gt;</pre
+          >
+          <p>JS</p>
+          <pre>
 &lt;script src="https://cdn.cdt.ca.gov/cdt/statetemplate/5.5.9/js/cagov.core.js" crossorigin="anonymous&gt;&lt;/script&gt;
-&lt;script src="https://cdn.cdt.ca.gov/cdt/statetemplate/5.5.9/js/cagov.core.min.js" crossorigin="anonymous"&gt;&lt;/script&gt;</pre>
-    </div>
-  </li>
-  <li>
-    <h4 data-aria-accordion-heading>Version 5.5.8</h4>
-    <div data-aria-accordion-panel>
-      <p>CSS</p>
-      <pre>
+&lt;script src="https://cdn.cdt.ca.gov/cdt/statetemplate/5.5.9/js/cagov.core.min.js" crossorigin="anonymous"&gt;&lt;/script&gt;</pre
+          >
+        </div>
+      </li>
+      <li>
+        <h4 data-aria-accordion-heading>Version 5.5.8</h4>
+        <div data-aria-accordion-panel>
+          <p>CSS</p>
+          <pre>
 &lt;link href="https://cdn.cdt.ca.gov/cdt/statetemplate/5.5.8/css/cagov.core.css" rel="stylesheet" crossorigin="anonymous"&gt;
 &lt;link href="https://cdn.cdt.ca.gov/cdt/statetemplate/5.5.8/css/cagov.core.min.css" rel="stylesheet" crossorigin="anonymous"&gt;
 &lt;link href="https://cdn.cdt.ca.gov/cdt/statetemplate/5.5.8/css/cagov.font-only.css" rel="stylesheet" crossorigin="anonymous"&gt;
@@ -1520,18 +1595,20 @@ permalink: "cdn.html"
 &lt;link href="https://cdn.cdt.ca.gov/cdt/statetemplate/5.5.8/css/colorscheme-sierra.css" rel="stylesheet" crossorigin="anonymous"&gt;
 &lt;link href="https://cdn.cdt.ca.gov/cdt/statetemplate/5.5.8/css/colorscheme-sierra.min.css" rel="stylesheet" crossorigin="anonymous"&gt;
 &lt;link href="https://cdn.cdt.ca.gov/cdt/statetemplate/5.5.8/css/colorscheme-trinity.css" rel="stylesheet" crossorigin="anonymous"&gt;
-&lt;link href="https://cdn.cdt.ca.gov/cdt/statetemplate/5.5.8/css/colorscheme-trinity.min.css" rel="stylesheet" crossorigin="anonymous"&gt;</pre>
-<p>JS</p>
-      <pre>
+&lt;link href="https://cdn.cdt.ca.gov/cdt/statetemplate/5.5.8/css/colorscheme-trinity.min.css" rel="stylesheet" crossorigin="anonymous"&gt;</pre
+          >
+          <p>JS</p>
+          <pre>
 &lt;script src="https://cdn.cdt.ca.gov/cdt/statetemplate/5.5.8/js/cagov.core.js" crossorigin="anonymous&gt;&lt;/script&gt;
-&lt;script src="https://cdn.cdt.ca.gov/cdt/statetemplate/5.5.8/js/cagov.core.min.js" crossorigin="anonymous"&gt;&lt;/script&gt;</pre>
-    </div>
-  </li>
-  <li>
-    <h4 data-aria-accordion-heading>Version 5.5.7</h4>
-    <div data-aria-accordion-panel>
-      <p>CSS</p>
-      <pre>
+&lt;script src="https://cdn.cdt.ca.gov/cdt/statetemplate/5.5.8/js/cagov.core.min.js" crossorigin="anonymous"&gt;&lt;/script&gt;</pre
+          >
+        </div>
+      </li>
+      <li>
+        <h4 data-aria-accordion-heading>Version 5.5.7</h4>
+        <div data-aria-accordion-panel>
+          <p>CSS</p>
+          <pre>
 &lt;link href="https://cdn.cdt.ca.gov/cdt/statetemplate/5.5.7/css/cagov.core.css" rel="stylesheet" crossorigin="anonymous"&gt;
 &lt;link href="https://cdn.cdt.ca.gov/cdt/statetemplate/5.5.7/css/cagov.core.min.css" rel="stylesheet" crossorigin="anonymous"&gt;
 &lt;link href="https://cdn.cdt.ca.gov/cdt/statetemplate/5.5.7/css/cagov.font-only.css" rel="stylesheet" crossorigin="anonymous"&gt;
@@ -1553,18 +1630,20 @@ permalink: "cdn.html"
 &lt;link href="https://cdn.cdt.ca.gov/cdt/statetemplate/5.5.7/css/colorscheme-sierra.css" rel="stylesheet" crossorigin="anonymous"&gt;
 &lt;link href="https://cdn.cdt.ca.gov/cdt/statetemplate/5.5.7/css/colorscheme-sierra.min.css" rel="stylesheet" crossorigin="anonymous"&gt;
 &lt;link href="https://cdn.cdt.ca.gov/cdt/statetemplate/5.5.7/css/colorscheme-trinity.css" rel="stylesheet" crossorigin="anonymous"&gt;
-&lt;link href="https://cdn.cdt.ca.gov/cdt/statetemplate/5.5.7/css/colorscheme-trinity.min.css" rel="stylesheet" crossorigin="anonymous"&gt;</pre>
-<p>JS</p>
-      <pre>
+&lt;link href="https://cdn.cdt.ca.gov/cdt/statetemplate/5.5.7/css/colorscheme-trinity.min.css" rel="stylesheet" crossorigin="anonymous"&gt;</pre
+          >
+          <p>JS</p>
+          <pre>
 &lt;script src="https://cdn.cdt.ca.gov/cdt/statetemplate/5.5.7/js/cagov.core.js" crossorigin="anonymous&gt;&lt;/script&gt;
-&lt;script src="https://cdn.cdt.ca.gov/cdt/statetemplate/5.5.7/js/cagov.core.min.js" crossorigin="anonymous"&gt;&lt;/script&gt;</pre>
-    </div>
-  </li>
-  <li>
-    <h4 data-aria-accordion-heading>Version 5.5.6</h4>
-    <div data-aria-accordion-panel>
-      <p>CSS</p>
-      <pre>
+&lt;script src="https://cdn.cdt.ca.gov/cdt/statetemplate/5.5.7/js/cagov.core.min.js" crossorigin="anonymous"&gt;&lt;/script&gt;</pre
+          >
+        </div>
+      </li>
+      <li>
+        <h4 data-aria-accordion-heading>Version 5.5.6</h4>
+        <div data-aria-accordion-panel>
+          <p>CSS</p>
+          <pre>
 &lt;link href="https://cdn.cdt.ca.gov/cdt/statetemplate/5.5.6/css/cagov.core.css" rel="stylesheet" crossorigin="anonymous"&gt;
 &lt;link href="https://cdn.cdt.ca.gov/cdt/statetemplate/5.5.6/css/cagov.core.min.css" rel="stylesheet" crossorigin="anonymous"&gt;
 &lt;link href="https://cdn.cdt.ca.gov/cdt/statetemplate/5.5.6/css/cagov.font-only.css" rel="stylesheet" crossorigin="anonymous"&gt;
@@ -1586,18 +1665,20 @@ permalink: "cdn.html"
 &lt;link href="https://cdn.cdt.ca.gov/cdt/statetemplate/5.5.6/css/colorscheme-sierra.css" rel="stylesheet" crossorigin="anonymous"&gt;
 &lt;link href="https://cdn.cdt.ca.gov/cdt/statetemplate/5.5.6/css/colorscheme-sierra.min.css" rel="stylesheet" crossorigin="anonymous"&gt;
 &lt;link href="https://cdn.cdt.ca.gov/cdt/statetemplate/5.5.6/css/colorscheme-trinity.css" rel="stylesheet" crossorigin="anonymous"&gt;
-&lt;link href="https://cdn.cdt.ca.gov/cdt/statetemplate/5.5.6/css/colorscheme-trinity.min.css" rel="stylesheet" crossorigin="anonymous"&gt;</pre>
-<p>JS</p>
-      <pre>
+&lt;link href="https://cdn.cdt.ca.gov/cdt/statetemplate/5.5.6/css/colorscheme-trinity.min.css" rel="stylesheet" crossorigin="anonymous"&gt;</pre
+          >
+          <p>JS</p>
+          <pre>
 &lt;script src="https://cdn.cdt.ca.gov/cdt/statetemplate/5.5.6/js/cagov.core.js" crossorigin="anonymous&gt;&lt;/script&gt;
-&lt;script src="https://cdn.cdt.ca.gov/cdt/statetemplate/5.5.6/js/cagov.core.min.js" crossorigin="anonymous"&gt;&lt;/script&gt;</pre>
-    </div>
-  </li>
-  <li>
-    <h4 data-aria-accordion-heading>Version 5.5.5</h4>
-    <div data-aria-accordion-panel>
-      <p>CSS</p>
-      <pre>
+&lt;script src="https://cdn.cdt.ca.gov/cdt/statetemplate/5.5.6/js/cagov.core.min.js" crossorigin="anonymous"&gt;&lt;/script&gt;</pre
+          >
+        </div>
+      </li>
+      <li>
+        <h4 data-aria-accordion-heading>Version 5.5.5</h4>
+        <div data-aria-accordion-panel>
+          <p>CSS</p>
+          <pre>
 &lt;link href="https://cdn.cdt.ca.gov/cdt/statetemplate/5.5.5/css/cagov.core.css" rel="stylesheet" crossorigin="anonymous"&gt;
 &lt;link href="https://cdn.cdt.ca.gov/cdt/statetemplate/5.5.5/css/cagov.core.min.css" rel="stylesheet" crossorigin="anonymous"&gt;
 &lt;link href="https://cdn.cdt.ca.gov/cdt/statetemplate/5.5.5/css/cagov.font-only.css" rel="stylesheet" crossorigin="anonymous"&gt;
@@ -1619,18 +1700,20 @@ permalink: "cdn.html"
 &lt;link href="https://cdn.cdt.ca.gov/cdt/statetemplate/5.5.5/css/colorscheme-sierra.css" rel="stylesheet" crossorigin="anonymous"&gt;
 &lt;link href="https://cdn.cdt.ca.gov/cdt/statetemplate/5.5.5/css/colorscheme-sierra.min.css" rel="stylesheet" crossorigin="anonymous"&gt;
 &lt;link href="https://cdn.cdt.ca.gov/cdt/statetemplate/5.5.5/css/colorscheme-trinity.css" rel="stylesheet" crossorigin="anonymous"&gt;
-&lt;link href="https://cdn.cdt.ca.gov/cdt/statetemplate/5.5.5/css/colorscheme-trinity.min.css" rel="stylesheet" crossorigin="anonymous"&gt;</pre>
-<p>JS</p>
-      <pre>
+&lt;link href="https://cdn.cdt.ca.gov/cdt/statetemplate/5.5.5/css/colorscheme-trinity.min.css" rel="stylesheet" crossorigin="anonymous"&gt;</pre
+          >
+          <p>JS</p>
+          <pre>
 &lt;script src="https://cdn.cdt.ca.gov/cdt/statetemplate/5.5.5/js/cagov.core.js" crossorigin="anonymous&gt;&lt;/script&gt;
-&lt;script src="https://cdn.cdt.ca.gov/cdt/statetemplate/5.5.5/js/cagov.core.min.js" crossorigin="anonymous"&gt;&lt;/script&gt;</pre>
-    </div>
-  </li>
-  <li>
-    <h4 data-aria-accordion-heading>Version 5.5.4</h4>
-    <div data-aria-accordion-panel>
-      <p>CSS</p>
-      <pre>
+&lt;script src="https://cdn.cdt.ca.gov/cdt/statetemplate/5.5.5/js/cagov.core.min.js" crossorigin="anonymous"&gt;&lt;/script&gt;</pre
+          >
+        </div>
+      </li>
+      <li>
+        <h4 data-aria-accordion-heading>Version 5.5.4</h4>
+        <div data-aria-accordion-panel>
+          <p>CSS</p>
+          <pre>
 &lt;link href="https://cdn.cdt.ca.gov/cdt/statetemplate/5.5.4/css/cagov.core.css" rel="stylesheet" crossorigin="anonymous"&gt;
 &lt;link href="https://cdn.cdt.ca.gov/cdt/statetemplate/5.5.4/css/cagov.core.min.css" rel="stylesheet" crossorigin="anonymous"&gt;
 &lt;link href="https://cdn.cdt.ca.gov/cdt/statetemplate/5.5.4/css/cagov.font-only.css" rel="stylesheet" crossorigin="anonymous"&gt;
@@ -1652,18 +1735,20 @@ permalink: "cdn.html"
 &lt;link href="https://cdn.cdt.ca.gov/cdt/statetemplate/5.5.4/css/colorscheme-sierra.css" rel="stylesheet" crossorigin="anonymous"&gt;
 &lt;link href="https://cdn.cdt.ca.gov/cdt/statetemplate/5.5.4/css/colorscheme-sierra.min.css" rel="stylesheet" crossorigin="anonymous"&gt;
 &lt;link href="https://cdn.cdt.ca.gov/cdt/statetemplate/5.5.4/css/colorscheme-trinity.css" rel="stylesheet" crossorigin="anonymous"&gt;
-&lt;link href="https://cdn.cdt.ca.gov/cdt/statetemplate/5.5.4/css/colorscheme-trinity.min.css" rel="stylesheet" crossorigin="anonymous"&gt;</pre>
-<p>JS</p>
-      <pre>
+&lt;link href="https://cdn.cdt.ca.gov/cdt/statetemplate/5.5.4/css/colorscheme-trinity.min.css" rel="stylesheet" crossorigin="anonymous"&gt;</pre
+          >
+          <p>JS</p>
+          <pre>
 &lt;script src="https://cdn.cdt.ca.gov/cdt/statetemplate/5.5.4/js/cagov.core.js" crossorigin="anonymous&gt;&lt;/script&gt;
-&lt;script src="https://cdn.cdt.ca.gov/cdt/statetemplate/5.5.4/js/cagov.core.min.js" crossorigin="anonymous"&gt;&lt;/script&gt;</pre>
-    </div>
-  </li>
-  <li>
-    <h4 data-aria-accordion-heading>Version 5.5.3</h4>
-    <div data-aria-accordion-panel>
-      <p>CSS</p>
-      <pre>
+&lt;script src="https://cdn.cdt.ca.gov/cdt/statetemplate/5.5.4/js/cagov.core.min.js" crossorigin="anonymous"&gt;&lt;/script&gt;</pre
+          >
+        </div>
+      </li>
+      <li>
+        <h4 data-aria-accordion-heading>Version 5.5.3</h4>
+        <div data-aria-accordion-panel>
+          <p>CSS</p>
+          <pre>
 &lt;link href="https://cdn.cdt.ca.gov/cdt/statetemplate/5.5.3/css/cagov.core.css" rel="stylesheet" crossorigin="anonymous"&gt;
 &lt;link href="https://cdn.cdt.ca.gov/cdt/statetemplate/5.5.3/css/cagov.core.min.css" rel="stylesheet" crossorigin="anonymous"&gt;
 &lt;link href="https://cdn.cdt.ca.gov/cdt/statetemplate/5.5.3/css/cagov.font-only.css" rel="stylesheet" crossorigin="anonymous"&gt;
@@ -1685,18 +1770,20 @@ permalink: "cdn.html"
 &lt;link href="https://cdn.cdt.ca.gov/cdt/statetemplate/5.5.3/css/colorscheme-sierra.css" rel="stylesheet" crossorigin="anonymous"&gt;
 &lt;link href="https://cdn.cdt.ca.gov/cdt/statetemplate/5.5.3/css/colorscheme-sierra.min.css" rel="stylesheet" crossorigin="anonymous"&gt;
 &lt;link href="https://cdn.cdt.ca.gov/cdt/statetemplate/5.5.3/css/colorscheme-trinity.css" rel="stylesheet" crossorigin="anonymous"&gt;
-&lt;link href="https://cdn.cdt.ca.gov/cdt/statetemplate/5.5.3/css/colorscheme-trinity.min.css" rel="stylesheet" crossorigin="anonymous"&gt;</pre>
-<p>JS</p>
-      <pre>
+&lt;link href="https://cdn.cdt.ca.gov/cdt/statetemplate/5.5.3/css/colorscheme-trinity.min.css" rel="stylesheet" crossorigin="anonymous"&gt;</pre
+          >
+          <p>JS</p>
+          <pre>
 &lt;script src="https://cdn.cdt.ca.gov/cdt/statetemplate/5.5.3/js/cagov.core.js" crossorigin="anonymous&gt;&lt;/script&gt;
-&lt;script src="https://cdn.cdt.ca.gov/cdt/statetemplate/5.5.3/js/cagov.core.min.js" crossorigin="anonymous"&gt;&lt;/script&gt;</pre>
-    </div>
-  </li>
-  <li>
-    <h4 data-aria-accordion-heading>Version 5.5.2</h4>
-    <div data-aria-accordion-panel>
-      <p>CSS</p>
-      <pre>
+&lt;script src="https://cdn.cdt.ca.gov/cdt/statetemplate/5.5.3/js/cagov.core.min.js" crossorigin="anonymous"&gt;&lt;/script&gt;</pre
+          >
+        </div>
+      </li>
+      <li>
+        <h4 data-aria-accordion-heading>Version 5.5.2</h4>
+        <div data-aria-accordion-panel>
+          <p>CSS</p>
+          <pre>
 &lt;link href="https://cdn.cdt.ca.gov/cdt/statetemplate/5.5.2/css/cagov.core.css" rel="stylesheet" crossorigin="anonymous"&gt;
 &lt;link href="https://cdn.cdt.ca.gov/cdt/statetemplate/5.5.2/css/cagov.core.min.css" rel="stylesheet" crossorigin="anonymous"&gt;
 &lt;link href="https://cdn.cdt.ca.gov/cdt/statetemplate/5.5.2/css/cagov.font-only.css" rel="stylesheet" crossorigin="anonymous"&gt;
@@ -1718,18 +1805,20 @@ permalink: "cdn.html"
 &lt;link href="https://cdn.cdt.ca.gov/cdt/statetemplate/5.5.2/css/colorscheme-sierra.css" rel="stylesheet" crossorigin="anonymous"&gt;
 &lt;link href="https://cdn.cdt.ca.gov/cdt/statetemplate/5.5.2/css/colorscheme-sierra.min.css" rel="stylesheet" crossorigin="anonymous"&gt;
 &lt;link href="https://cdn.cdt.ca.gov/cdt/statetemplate/5.5.2/css/colorscheme-trinity.css" rel="stylesheet" crossorigin="anonymous"&gt;
-&lt;link href="https://cdn.cdt.ca.gov/cdt/statetemplate/5.5.2/css/colorscheme-trinity.min.css" rel="stylesheet" crossorigin="anonymous"&gt;</pre>
-<p>JS</p>
-      <pre>
+&lt;link href="https://cdn.cdt.ca.gov/cdt/statetemplate/5.5.2/css/colorscheme-trinity.min.css" rel="stylesheet" crossorigin="anonymous"&gt;</pre
+          >
+          <p>JS</p>
+          <pre>
 &lt;script src="https://cdn.cdt.ca.gov/cdt/statetemplate/5.5.2/js/cagov.core.js" crossorigin="anonymous&gt;&lt;/script&gt;
-&lt;script src="https://cdn.cdt.ca.gov/cdt/statetemplate/5.5.2/js/cagov.core.min.js" crossorigin="anonymous"&gt;&lt;/script&gt;</pre>
-    </div>
-  </li>
-  <li>
-    <h4 data-aria-accordion-heading>Version 5.5.1</h4>
-    <div data-aria-accordion-panel>
-      <p>CSS</p>
-      <pre>
+&lt;script src="https://cdn.cdt.ca.gov/cdt/statetemplate/5.5.2/js/cagov.core.min.js" crossorigin="anonymous"&gt;&lt;/script&gt;</pre
+          >
+        </div>
+      </li>
+      <li>
+        <h4 data-aria-accordion-heading>Version 5.5.1</h4>
+        <div data-aria-accordion-panel>
+          <p>CSS</p>
+          <pre>
 &lt;link href="https://cdn.cdt.ca.gov/cdt/statetemplate/5.5.1/css/cagov.core.css" rel="stylesheet" crossorigin="anonymous"&gt;
 &lt;link href="https://cdn.cdt.ca.gov/cdt/statetemplate/5.5.1/css/cagov.core.min.css" rel="stylesheet" crossorigin="anonymous"&gt;
 &lt;link href="https://cdn.cdt.ca.gov/cdt/statetemplate/5.5.1/css/cagov.font-only.css" rel="stylesheet" crossorigin="anonymous"&gt;
@@ -1751,18 +1840,20 @@ permalink: "cdn.html"
 &lt;link href="https://cdn.cdt.ca.gov/cdt/statetemplate/5.5.1/css/colorscheme-sierra.css" rel="stylesheet" crossorigin="anonymous"&gt;
 &lt;link href="https://cdn.cdt.ca.gov/cdt/statetemplate/5.5.1/css/colorscheme-sierra.min.css" rel="stylesheet" crossorigin="anonymous"&gt;
 &lt;link href="https://cdn.cdt.ca.gov/cdt/statetemplate/5.5.1/css/colorscheme-trinity.css" rel="stylesheet" crossorigin="anonymous"&gt;
-&lt;link href="https://cdn.cdt.ca.gov/cdt/statetemplate/5.5.1/css/colorscheme-trinity.min.css" rel="stylesheet" crossorigin="anonymous"&gt;</pre>
-<p>JS</p>
-      <pre>
+&lt;link href="https://cdn.cdt.ca.gov/cdt/statetemplate/5.5.1/css/colorscheme-trinity.min.css" rel="stylesheet" crossorigin="anonymous"&gt;</pre
+          >
+          <p>JS</p>
+          <pre>
 &lt;script src="https://cdn.cdt.ca.gov/cdt/statetemplate/5.5.1/js/cagov.core.js" crossorigin="anonymous&gt;&lt;/script&gt;
-&lt;script src="https://cdn.cdt.ca.gov/cdt/statetemplate/5.5.1/js/cagov.core.min.js" crossorigin="anonymous"&gt;&lt;/script&gt;</pre>
-    </div>
-  </li>
-  <li>
-    <h4 data-aria-accordion-heading>Version 5.5.0</h4>
-    <div data-aria-accordion-panel>
-      <p>CSS</p>
-      <pre>
+&lt;script src="https://cdn.cdt.ca.gov/cdt/statetemplate/5.5.1/js/cagov.core.min.js" crossorigin="anonymous"&gt;&lt;/script&gt;</pre
+          >
+        </div>
+      </li>
+      <li>
+        <h4 data-aria-accordion-heading>Version 5.5.0</h4>
+        <div data-aria-accordion-panel>
+          <p>CSS</p>
+          <pre>
 &lt;link href="https://cdn.cdt.ca.gov/cdt/statetemplate/5.5.0/css/cagov.core.css" rel="stylesheet" crossorigin="anonymous"&gt;
 &lt;link href="https://cdn.cdt.ca.gov/cdt/statetemplate/5.5.0/css/cagov.core.min.css" rel="stylesheet" crossorigin="anonymous"&gt;
 &lt;link href="https://cdn.cdt.ca.gov/cdt/statetemplate/5.5.0/css/cagov.font-only.css" rel="stylesheet" crossorigin="anonymous"&gt;
@@ -1784,17 +1875,17 @@ permalink: "cdn.html"
 &lt;link href="https://cdn.cdt.ca.gov/cdt/statetemplate/5.5.0/css/colorscheme-sierra.css" rel="stylesheet" crossorigin="anonymous"&gt;
 &lt;link href="https://cdn.cdt.ca.gov/cdt/statetemplate/5.5.0/css/colorscheme-sierra.min.css" rel="stylesheet" crossorigin="anonymous"&gt;
 &lt;link href="https://cdn.cdt.ca.gov/cdt/statetemplate/5.5.0/css/colorscheme-trinity.css" rel="stylesheet" crossorigin="anonymous"&gt;
-&lt;link href="https://cdn.cdt.ca.gov/cdt/statetemplate/5.5.0/css/colorscheme-trinity.min.css" rel="stylesheet" crossorigin="anonymous"&gt;</pre>
-<p>JS</p>
-      <pre>
+&lt;link href="https://cdn.cdt.ca.gov/cdt/statetemplate/5.5.0/css/colorscheme-trinity.min.css" rel="stylesheet" crossorigin="anonymous"&gt;</pre
+          >
+          <p>JS</p>
+          <pre>
 &lt;script src="https://cdn.cdt.ca.gov/cdt/statetemplate/5.5.0/js/cagov.core.js" crossorigin="anonymous&gt;&lt;/script&gt;
-&lt;script src="https://cdn.cdt.ca.gov/cdt/statetemplate/5.5.0/js/cagov.core.min.js" crossorigin="anonymous"&gt;&lt;/script&gt;</pre>
-    </div>
-  </li>
-</ol>
+&lt;script src="https://cdn.cdt.ca.gov/cdt/statetemplate/5.5.0/js/cagov.core.min.js" crossorigin="anonymous"&gt;&lt;/script&gt;</pre
+          >
+        </div>
+      </li>
+    </ol>
 
-<hr class="m-b-lg" />
-
-
-</div>
+    <hr class="m-b-lg" />
+  </div>
 </div>
