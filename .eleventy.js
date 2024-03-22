@@ -13,7 +13,8 @@ module.exports = function (
     "src/images": "images",
     "src/css": "css",
     "src/root": "/",
-    "node_modules/@cagovweb/state-template/dist": "state-template"
+    "node_modules/@cagovweb/state-template/dist": "state-template",
+    "node_modules/@cagovweb/cal-ds-nav/dist": "cal-ds-nav"
   });
 
   //Start with default config, easier to configure 11ty later
