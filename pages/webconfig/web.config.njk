@@ -38,6 +38,15 @@ duplicate "original_url" in data' | error }} {% endif -%}
         </rewriteMap>
       </rewriteMaps>
       <rules>
+        <rule name="Production Robots">
+          <match url="robots.txt" />
+          <conditions>
+            <add
+              input="{HTTP_HOST}"
+              pattern="^template\.webstandards\.ca\.gov$" />
+          </conditions>
+          <action type="Rewrite" url="robots-prod.txt" />
+        </rule>
         <rule
           name="AddTrailingSlash BeforeStaticRewrites"
           stopProcessing="true">
