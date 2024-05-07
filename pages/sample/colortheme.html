@@ -420,7 +420,7 @@ nocanonical: true
   document.getElementsByTagName("head")[0].appendChild(link);
 
   // Add canonical link for SEQ
-  document.head.appendChild(Object.assign(document.createElement('link'),{href:location.href,rel:"canonical"}));
+  document.head.appendChild(Object.assign(document.createElement('link'),{href:"https://template.webstandards.ca.gov"+location.pathname+location.search,rel:"canonical"}));
 
   // add css class "active" to active nav item
   var themeNavItem = document.querySelector("nav.side-navigation a[href*='" + queryString + "']");
