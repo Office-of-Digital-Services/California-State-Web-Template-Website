@@ -21,12 +21,8 @@ permalink: "/get-started/npm.html"
           <a href="/get-started/implementation-steps.html">
             Implementation roadmap
           </a>
-          <a href="/get-started/npm.html" class="active">
-            NPM package
-          </a>
-          <a href="/cdn.html">
-            Content delivery network (CDN)
-          </a>
+          <a href="/get-started/npm.html" class="active"> NPM package </a>
+          <a href="/cdn.html"> Content delivery network (CDN) </a>
         </li>
       </ul>
     </nav>
@@ -36,20 +32,28 @@ permalink: "/get-started/npm.html"
     <h1 id="Downloadandsetup" class="m-t-0">State Web Template NPM package</h1>
     <nav class="page-navigation"></nav>
     <p>
-      You can use <a href="https://www.npmjs.com/package/@cagovweb/state-template">NPM JS code sharing registry</a>  to install the California State Web Template core package. It contains all the necessary State Web Template CSS, JavaScript, and fonts files.
+      You can use
+      <a href="https://www.npmjs.com/package/@cagovweb/state-template"
+        >NPM JS code sharing registry</a
+      >
+      to install the California State Web Template core package. It contains all
+      the necessary State Web Template CSS, JavaScript, and fonts files.
     </p>
-    
+
     <h2>How this works</h2>
-    <p>The NPM package can be used by multiple frameworks such as React, .NET, eleventy, and others.</p>
+    <p>
+      The NPM package can be used by multiple frameworks such as React, .NET,
+      eleventy, and others.
+    </p>
 
     <h3>React</h3>
     <p>Option 1 - default theme:</p>
-<pre><code>// import with default Oceanside theme - includes core JS and CSS
+    <pre><code>// import with default Oceanside theme - includes core JS and CSS
 import "@cagovweb/state-template";
 </code></pre>
 
-<p class="m-t-md">Option 2 - specific theme:</p>
-<pre><code>// import with specific theme
+    <p class="m-t-md">Option 2 - specific theme:</p>
+    <pre><code>// import with specific theme
 // Core CSS first
 import "@cagovweb/state-template/dist/css/cagov.core.css";
 // Choose Theme
@@ -58,13 +62,19 @@ import "@cagovweb/state-template/dist/css/colortheme-oceanside.css";
 import "@cagovweb/state-template/dist/js/cagov.core.js";
 </code></pre>
 
+    <h3>.Net Core (Visual Studio)</h3>
+    <p>
+      You can use
+      <a
+        href="https://learn.microsoft.com/en-us/aspnet/core/client-side/libman/libman-vs?view=aspnetcore-7.0"
+        >Library Manager (LibMan)</a
+      >
+      to automatically sync the client JS/CSS with your Visual Studio projects.
+    </p>
 
-<h3>.Net Core (Visual Studio)</h3>
-<p>You can use <a href="https://learn.microsoft.com/en-us/aspnet/core/client-side/libman/libman-vs?view=aspnetcore-7.0">Library Manager (LibMan)</a> to automatically sync the client JS/CSS with your Visual Studio projects.</p>
+    <p>Create libman.json in your project root folder:</p>
 
-<p>Create libman.json in your project root folder:</p>
-
-<pre><code>{
+    <pre><code>{
   "version": "1.0",
   "libraries": [
     {
@@ -75,15 +85,15 @@ import "@cagovweb/state-template/dist/js/cagov.core.js";
   ]
 }</code></pre>
 
-
-<p class="m-t-md">In your layout files you can reference the files in the lib folder:</p>
-<pre><span class="text-accent-p2">&lt;link</span> <span class="text-info">rel=</span><span class="text-accent7">"stylesheet"</span> <span class="text-info">href=</span><span class="text-accent7">"~/lib/state-template/dist/css/cagov.core.min.css" </span><span class="text-accent-p2">&gt;</span>
-<span class="text-accent-p2">&lt;link</span> <span class="text-info">rel=</span><span class="text-accent7">"stylesheet"</span> <span class="text-info">href=</span><span class="text-accent7">"~/lib/state-template/dist/css/colortheme-oceanside.min.css"</span><span class="text-accent-p2">&gt;</span>
-<span class="text-accent-p2">&lt;script</span> <span class="text-info">src=</span><span class="text-accent7">"~/lib/state-template/dist/js/cagov.core.min.js"</span><span class="text-accent-p2">&gt;&lt;/script&gt;</span>
+    <p class="m-t-md">
+      In your layout files you can reference the files in the lib folder:
+    </p>
+    <pre><span class="text-accent-p2">&lt;link</span> <span class="text-accent5">rel=</span><span class="text-accent7">"stylesheet"</span> <span class="text-accent5">href=</span><span class="text-accent7">"~/lib/state-template/dist/css/cagov.core.min.css" </span><span class="text-accent-p2">&gt;</span>
+<span class="text-accent-p2">&lt;link</span> <span class="text-accent5">rel=</span><span class="text-accent7">"stylesheet"</span> <span class="text-accent5">href=</span><span class="text-accent7">"~/lib/state-template/dist/css/colortheme-oceanside.min.css"</span><span class="text-accent-p2">&gt;</span>
+<span class="text-accent-p2">&lt;script</span> <span class="text-accent5">src=</span><span class="text-accent7">"~/lib/state-template/dist/js/cagov.core.min.js"</span><span class="text-accent-p2">&gt;&lt;/script&gt;</span>
 </pre>
 
-
-<h3>Eleventy</h3>
+    <h3>Eleventy</h3>
 
     <p>Add the following code into your eleventy.js file:</p>
     <pre><code>module.exports = function(eleventyConfig) {
@@ -92,23 +102,30 @@ import "@cagovweb/state-template/dist/js/cagov.core.js";
     "node_modules/@cagovweb/state-template/dist": "state-template"
   });
 };</code></pre>
-    
-    <p class="m-t-md">Also, add these State Web Template's core CSS and JS files references into the head tag:</p>
-    
+
+    <p class="m-t-md">
+      Also, add these State Web Template's core CSS and JS files references into
+      the head tag:
+    </p>
+
     <pre><span class="text-accent-p2">&lt;head&gt;</span>
   ...
   <span class="text-muted">&lt;!-- State Web Template core files --&gt;</span>
-  <span class="text-accent-p2">&lt;link</span> <span class="text-info">rel=</span><span class="text-accent7">"stylesheet"</span> <span class="text-info">href=</span><span class="text-accent7">"/state-template/css/cagov.core.min.css"</span><span class="text-accent-p2">&gt;</span>
-  <span class="text-accent-p2">&lt;link</span> <span class="text-info">rel=</span><span class="text-accent7">"stylesheet"</span> <span class="text-info">href=</span><span class="text-accent7">"/state-template/css/colortheme-oceanside.css"</span><span class="text-accent-p2">&gt;</span>
+  <span class="text-accent-p2">&lt;link</span> <span class="text-accent5">rel=</span><span class="text-accent7">"stylesheet"</span> <span class="text-accent5">href=</span><span class="text-accent7">"/state-template/css/cagov.core.min.css"</span><span class="text-accent-p2">&gt;</span>
+  <span class="text-accent-p2">&lt;link</span> <span class="text-accent5">rel=</span><span class="text-accent7">"stylesheet"</span> <span class="text-accent5">href=</span><span class="text-accent7">"/state-template/css/colortheme-oceanside.css"</span><span class="text-accent-p2">&gt;</span>
 
-  <span class="text-accent-p2">&lt;script</span> <span class="text-info">src=</span><span class="text-accent7">"/state-template/js/cagov.core.min.js"</span><span class="text-accent-p2">&gt;&lt;/script&gt;</span>
+  <span class="text-accent-p2">&lt;script</span> <span class="text-accent5">src=</span><span class="text-accent7">"/state-template/js/cagov.core.min.js"</span><span class="text-accent-p2">&gt;&lt;/script&gt;</span>
 
 <span class="text-accent-p2">&lt;/head&gt;</span></pre>
-    
+
     <h2>Documentation</h2>
     <p>
-      For more information about the State Web Template NPM package and usage, visit the <a href="https://www.npmjs.com/package/@cagovweb/state-template">State Web Template NPM package</a> page.
+      For more information about the State Web Template NPM package and usage,
+      visit the
+      <a href="https://www.npmjs.com/package/@cagovweb/state-template"
+        >State Web Template NPM package</a
+      >
+      page.
     </p>
   </div>
 </div>
-
