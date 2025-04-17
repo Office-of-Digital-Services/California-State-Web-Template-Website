@@ -3,14 +3,18 @@
 <link
   href="https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,100..900;1,100..900&display=block"
   rel="stylesheet" />
-<link rel="stylesheet" href="/state-template/css/cagov.core.min.css" />
+<link
+  rel="stylesheet"
+  href="/state-template/css/cagov.core.min.css"
+  id="main-stylesheet" />
 <link rel="stylesheet" href="/css/custom.css" />
 {%- if customcss -%}
 <link rel="stylesheet" href="{{ customcss }}" />
 {%- endif -%}
 <script
   type="text/javascript"
-  src="/state-template/js/cagov.core.min.js" defer></script>
+  src="/state-template/js/cagov.core.min.js"
+  defer></script>
 {% for link in customjs %}
 <script src="{{ link }}"></script>
 {%- endfor -%}
