@@ -51,12 +51,21 @@ permalink: "cdn.html"
     </p>
 
     <h2>Examples</h2>
-    <h3>Using core CSS files</h3>
-    <pre><span class="text-accent-p2">&lt;link</span> <span class="text-accent5">href=</span><span class="text-accent7">"https://cdn.cdt.ca.gov/cdt/statetemplate/6.4.2/css/cagov.core.css" <span class="text-accent5">rel=</span><span class="text-accent7">"stylesheet"</span> <span class="text-accent5">integrity=</span><span class="text-accent7">"sha256-nDTZJJ+/7rO5vU+gzLCrNKW1i2LzOmM/v7lD58Of9Jw="</span> <span class="text-accent5">crossorigin=</span><span class="text-accent7">"anonymous"</span></span><span class="text-accent-p2">&gt;</span>
-<span class="text-accent-p2">&lt;link</span> <span class="text-accent5">href=</span><span class="text-accent7">"https://cdn.cdt.ca.gov/cdt/statetemplate/6.4.2/css/colortheme-oceanside.css"</span> <span class="text-accent5">rel=</span><span class="text-accent7">"stylesheet"</span>  <span class="text-accent5">integrity=</span><span class="text-accent7">"sha256-PC5Yszm8bAjYYFmjeL8EeB8mHo+S4dJbQt4OwA4aTmg="</span> <span class="text-accent5">crossorigin=</span><span class="text-accent7">"anonymous"</span><span class="text-accent-p2">&gt;</span><br /></pre>
+    <h3>Using core CSS file</h3>
+    <pre><span class="text-accent-p2">&lt;link</span> <span class="text-accent3">href=</span><span class="text-accent7">"https://cdn.cdt.ca.gov/cdt/statetemplate/6.4.2/css/cagov.core.css" <span class="text-accent3">rel=</span><span class="text-accent7">"stylesheet"</span> <span class="text-accent3">integrity=</span><span class="text-accent7">"sha256-nDTZJJ+/7rO5vU+gzLCrNKW1i2LzOmM/v7lD58Of9Jw="</span> <span class="text-accent3">crossorigin=</span><span class="text-accent7">"anonymous"</span></span> <span class="text-accent3">id=</span><span class="text-accent7">"main-stylesheet"</span><span class="text-accent-p2">&gt;</span></pre>
+
+    <h4>Optional color theme CSS</h4>
+    <p>
+      The State Template uses the Oceanside color theme by default. You can pick
+      from 12 ready-made color themes or create your own by adding a custom CSS
+      file. To learn more about color options and how to customize them, visit
+      the <a href="/visual-design/color.html">Colors</a> page.
+    </p>
+
+    <pre><span class="text-accent-p2">&lt;link</span> <span class="text-accent3">href=</span><span class="text-accent7">"https://cdn.cdt.ca.gov/cdt/statetemplate/6.4.2/css/colortheme-oceanside.css"</span> <span class="text-accent3">rel=</span><span class="text-accent7">"stylesheet"</span>  <span class="text-accent3">integrity=</span><span class="text-accent7">"sha256-PC5Yszm8bAjYYFmjeL8EeB8mHo+S4dJbQt4OwA4aTmg="</span> <span class="text-accent3">crossorigin=</span><span class="text-accent7">"anonymous"</span><span class="text-accent-p2">&gt;</span><br /></pre>
 
     <h3>Using JS files</h3>
-    <pre><span class="text-accent-p2">&lt;script</span> <span class="text-accent5">src=</span><span class="text-accent7">"https://cdn.cdt.ca.gov/cdt/statetemplate/6.4.2/js/cagov.core.js"</span> <span class="text-accent5">integrity=</span><span class="text-accent7">"sha256-vqbQV1TN99nVaQ9G8k+rb30IIb2/WXwl+YGtGHv7o/E="</span> <span class="text-accent5">defer</span> <span class="text-accent5">crossorigin=</span><span class="text-accent7">"anonymous"</span><span class="text-accent-p2">&gt;&lt;/script&gt;</span></pre>
+    <pre><span class="text-accent-p2">&lt;script</span> <span class="text-accent3">src=</span><span class="text-accent7">"https://cdn.cdt.ca.gov/cdt/statetemplate/6.4.2/js/cagov.core.js"</span> <span class="text-accent3">integrity=</span><span class="text-accent7">"sha256-vqbQV1TN99nVaQ9G8k+rb30IIb2/WXwl+YGtGHv7o/E="</span> <span class="text-accent3">defer</span> <span class="text-accent3">crossorigin=</span><span class="text-accent7">"anonymous"</span><span class="text-accent-p2">&gt;&lt;/script&gt;</span></pre>
 
     <h3>Crossorigin anonymous</h3>
     <p>
@@ -77,44 +86,44 @@ permalink: "cdn.html"
 
     <pre>
   <span class="text-success">&lt;!doctype html&gt;</span>
-   <span class="text-accent-p2">&lt;html</span> <span class="text-accent5">lang=</span><span class="text-accent7">"en"</span><span class="text-accent-p2">&gt;</span>
+   <span class="text-accent-p2">&lt;html</span> <span class="text-accent3">lang=</span><span class="text-accent7">"en"</span><span class="text-accent-p2">&gt;</span>
     <span class="text-accent-p2">&lt;head&gt;</span>
-     <span class="text-accent-p2">&lt;meta </span><span class="text-accent5">charset=</span><span class="text-accent7">"utf-8"</span><span class="text-accent-p2">&gt;</span>
+     <span class="text-accent-p2">&lt;meta </span><span class="text-accent3">charset=</span><span class="text-accent7">"utf-8"</span><span class="text-accent-p2">&gt;</span>
      <span class="text-accent-p2">&lt;title&gt;</span>State Template<span class="text-accent-p2">&lt;/title&gt;</span>
-     <span class="text-accent-p2">&lt;meta</span> <span class="text-accent5">name=</span><span class="text-accent7">"Author"</span> <span class="text-accent5">content=</span><span class="text-accent7">"State of California"</span><span class="text-accent-p2"> /&gt;</span>
-     <span class="text-accent-p2">&lt;meta</span> <span class="text-accent5">name=</span><span class="text-accent7">"Description"</span> <span class="text-accent5">content=</span><span class="text-accent7">"State of California"</span><span class="text-accent-p2"> /&gt;</span>
-     <span class="text-accent-p2">&lt;meta</span> <span class="text-accent5">name=</span><span class="text-accent7">"Keywords"</span> <span class="text-accent5">content=</span><span class="text-accent7">"California, government"</span><span class="text-accent-p2"> /&gt;</span>
-     <span class="text-accent-p2">&lt;meta</span> <span class="text-accent5">name=</span><span class="text-accent7">"viewport"</span> <span class="text-accent5">content=</span><span class="text-accent7">"width=device-width, initial-scale=1, shrink-to-fit=no"</span><span class="text-accent-p2">&gt;</span>
+     <span class="text-accent-p2">&lt;meta</span> <span class="text-accent3">name=</span><span class="text-accent7">"Author"</span> <span class="text-accent3">content=</span><span class="text-accent7">"State of California"</span><span class="text-accent-p2"> /&gt;</span>
+     <span class="text-accent-p2">&lt;meta</span> <span class="text-accent3">name=</span><span class="text-accent7">"Description"</span> <span class="text-accent3">content=</span><span class="text-accent7">"State of California"</span><span class="text-accent-p2"> /&gt;</span>
+     <span class="text-accent-p2">&lt;meta</span> <span class="text-accent3">name=</span><span class="text-accent7">"Keywords"</span> <span class="text-accent3">content=</span><span class="text-accent7">"California, government"</span><span class="text-accent-p2"> /&gt;</span>
+     <span class="text-accent-p2">&lt;meta</span> <span class="text-accent3">name=</span><span class="text-accent7">"viewport"</span> <span class="text-accent3">content=</span><span class="text-accent7">"width=device-width, initial-scale=1, shrink-to-fit=no"</span><span class="text-accent-p2">&gt;</span>
      
      <span class="text-muted">&lt;!-- Public Sans font google API --&gt;</span>
-     <span class="text-accent-p2">&lt;link</span> <span class="text-accent5">rel=</span><span class="text-accent7">"preconnect"</span> <span class="text-accent5">href=</span><span class="text-accent7">"https://fonts.googleapis.com"</span><span class="text-accent-p2">&gt;</span>
-     <span class="text-accent-p2">&lt;link</span> <span class="text-accent5">rel=</span><span class="text-accent7">"preconnect"</span> <span class="text-accent5">href=</span><span class="text-accent7">"https://fonts.gstatic.com"</span> <span class="text-accent5">crossorigin</span><span class="text-accent-p2">&gt;</span>
-     <span class="text-accent-p2">&lt;link</span> <span class="text-accent5">rel=</span><span class="text-accent7">"stylesheet"</span> <span class="text-accent5">href=</span><span class="text-accent7">"https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,100..900;1,100..900&amp;display=block"</span><span class="text-accent-p2">&gt;</span>
+     <span class="text-accent-p2">&lt;link</span> <span class="text-accent3">rel=</span><span class="text-accent7">"preconnect"</span> <span class="text-accent3">href=</span><span class="text-accent7">"https://fonts.googleapis.com"</span><span class="text-accent-p2">&gt;</span>
+     <span class="text-accent-p2">&lt;link</span> <span class="text-accent3">rel=</span><span class="text-accent7">"preconnect"</span> <span class="text-accent3">href=</span><span class="text-accent7">"https://fonts.gstatic.com"</span> <span class="text-accent3">crossorigin</span><span class="text-accent-p2">&gt;</span>
+     <span class="text-accent-p2">&lt;link</span> <span class="text-accent3">rel=</span><span class="text-accent7">"stylesheet"</span> <span class="text-accent3">href=</span><span class="text-accent7">"https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,100..900;1,100..900&amp;display=block"</span><span class="text-accent-p2">&gt;</span>
 
      <span class="text-muted">&lt;!-- State Template CDN CSS --&gt;</span>
-     <span class="text-accent-p2">&lt;link</span> <span class="text-accent5">rel=</span><span class="text-accent7">"stylesheet"</span> <span class="text-accent5">href=</span><span class="text-accent7">"https://cdn.cdt.ca.gov/cdt/statetemplate/6.4.2/css/cagov.core.css"</span>  <span class="text-accent5">integrity=</span><span class="text-accent7">"sha256-nDTZJJ+/7rO5vU+gzLCrNKW1i2LzOmM/v7lD58Of9Jw="</span>  <span class="text-accent5">crossorigin=</span><span class="text-accent7">"anonymous"</span><span class="text-accent-p2">&gt;</span>
-     <span class="text-accent-p2">&lt;link</span> <span class="text-accent5">rel=</span><span class="text-accent7">"stylesheet"</span> <span class="text-accent5">href=</span><span class="text-accent7">"https://cdn.cdt.ca.gov/cdt/statetemplate/6.4.2/css/colortheme-oceanside.css"</span>   <span class="text-accent5">integrity=</span><span class="text-accent7">"sha256-PC5Yszm8bAjYYFmjeL8EeB8mHo+S4dJbQt4OwA4aTmg="</span>  <span class="text-accent5">crossorigin=</span><span class="text-accent7">"anonymous"</span><span class="text-accent-p2">&gt;</span>
+     <span class="text-accent-p2">&lt;link</span> <span class="text-accent3">rel=</span><span class="text-accent7">"stylesheet"</span> <span class="text-accent3">href=</span><span class="text-accent7">"https://cdn.cdt.ca.gov/cdt/statetemplate/6.4.2/css/cagov.core.css"</span> <span class="text-accent3">integrity=</span><span class="text-accent7">"sha256-nDTZJJ+/7rO5vU+gzLCrNKW1i2LzOmM/v7lD58Of9Jw="</span> <span class="text-accent3">id=</span><span class="text-accent7">"main-stylesheet"</span><span class="text-accent-p2">&gt;</span>
+     <span class="text-accent-p2">&lt;link</span> <span class="text-accent3">rel=</span><span class="text-accent7">"stylesheet"</span> <span class="text-accent3">href=</span><span class="text-accent7">"https://cdn.cdt.ca.gov/cdt/statetemplate/6.4.2/css/colortheme-oceanside.css"</span> <span class="text-accent3">integrity=</span><span class="text-accent7">"sha256-PC5Yszm8bAjYYFmjeL8EeB8mHo+S4dJbQt4OwA4aTmg="</span>  <span class="text-accent3">crossorigin=</span><span class="text-accent7">"anonymous"</span><span class="text-accent-p2">&gt;</span>
      <span class="text-muted">&lt;!-- State Template JavaScript CDN --&gt;</span>
-     <span class="text-accent-p2">&lt;script </span><span class="text-accent5">src=</span><span class="text-accent7">"https://cdn.cdt.ca.gov/cdt/statetemplate/6.4.2/js/cagov.core.js"</span> <span class="text-accent5">integrity=</span><span class="text-accent7">"sha256-vqbQV1TN99nVaQ9G8k+rb30IIb2/WXwl+YGtGHv7o/E="</span> <span class="text-accent5">defer</span> <span class="text-accent5">crossorigin=</span><span class="text-accent7">"anonymous"</span><span class="text-accent-p2">&gt;&lt;/script&gt;</span>
+     <span class="text-accent-p2">&lt;script </span><span class="text-accent3">src=</span><span class="text-accent7">"https://cdn.cdt.ca.gov/cdt/statetemplate/6.4.2/js/cagov.core.js"</span> <span class="text-accent3">integrity=</span><span class="text-accent7">"sha256-vqbQV1TN99nVaQ9G8k+rb30IIb2/WXwl+YGtGHv7o/E="</span> <span class="text-accent3">defer</span> <span class="text-accent3">crossorigin=</span><span class="text-accent7">"anonymous"</span><span class="text-accent-p2">&gt;&lt;/script&gt;</span>
 
     <span class="text-accent-p2">&lt;/head&gt;</span>
    <span class="text-accent-p2">&lt;body&gt;</span>
-    <span class="text-accent-p2">&lt;header</span> <span class="text-accent5">role=</span><span class="text-accent7">"banner"</span> <span class="text-accent5">id=</span><span class="text-accent7">"header"</span> <span class="text-accent5">class=</span><span class="text-accent7">"global-header fixed"</span><span class="text-accent-p2">&gt;</span>
-      <span class="text-accent-p2">&lt;div</span> <span class="text-accent5">id=</span><span class="text-accent7">"skip-to-content"</span><span class="text-accent-p2">&gt;&lt;a </span><span class="text-accent5">href=</span><span class="text-accent7">"#main-content"</span><span class="text-accent-p2">&gt;</span>Skip to Main Content<span class="text-accent-p2">&lt;/a&gt;&lt;/div&gt;</span>
+    <span class="text-accent-p2">&lt;header</span> <span class="text-accent3">role=</span><span class="text-accent7">"banner"</span> <span class="text-accent3">id=</span><span class="text-accent7">"header"</span> <span class="text-accent3">class=</span><span class="text-accent7">"global-header fixed"</span><span class="text-accent-p2">&gt;</span>
+      <span class="text-accent-p2">&lt;div</span> <span class="text-accent3">id=</span><span class="text-accent7">"skip-to-content"</span><span class="text-accent-p2">&gt;&lt;a </span><span class="text-accent3">href=</span><span class="text-accent7">"#main-content"</span><span class="text-accent-p2">&gt;</span>Skip to Main Content<span class="text-accent-p2">&lt;/a&gt;&lt;/div&gt;</span>
        <span class="text-success">&lt;!-- utility header goes here --&gt;</span>
        <span class="text-success">&lt;!-- site header goes here --&gt;</span>
        <span class="text-success">&lt;!-- mobile controls go here --&gt;</span>
-       <span class="text-accent-p2">&lt;div</span> <span class="text-accent5">class=</span><span class="text-accent7">"navigation-search full-width-nav"</span><span class="text-accent-p2">&gt;</span>
-        <span class="text-accent-p2">&lt;div</span> <span class="text-accent5">id=</span><span class="text-accent7">"head-search"</span> <span class="text-accent5">class=</span><span class="text-accent7">"search-container featured-search"</span><span class="text-accent-p2">&gt;</span>
+       <span class="text-accent-p2">&lt;div</span> <span class="text-accent3">class=</span><span class="text-accent7">"navigation-search full-width-nav"</span><span class="text-accent-p2">&gt;</span>
+        <span class="text-accent-p2">&lt;div</span> <span class="text-accent3">id=</span><span class="text-accent7">"head-search"</span> <span class="text-accent3">class=</span><span class="text-accent7">"search-container featured-search"</span><span class="text-accent-p2">&gt;</span>
           <span class="text-success">&lt;!-- search goes here --&gt;</span>
         <span class="text-accent-p2">&lt;/div&gt;</span>
         <span class="text-success">&lt;!-- site navigation goes here --&gt;</span>
        <span class="text-accent-p2">&lt;/div&gt;</span>
-      <span class="text-accent-p2">&lt;div </span><span class="text-accent5">class=</span><span class="text-accent7">"header-decoration"</span><span class="text-accent-p2">&gt;</span><span class="text-accent-p2">&lt;/div&gt;</span>
+      <span class="text-accent-p2">&lt;div </span><span class="text-accent3">class=</span><span class="text-accent7">"header-decoration"</span><span class="text-accent-p2">&gt;</span><span class="text-accent-p2">&lt;/div&gt;</span>
      <span class="text-accent-p2">&lt;/header&gt;</span>
-     <span class="text-accent-p2">&lt;div</span> <span class="text-accent5">id=</span><span class="text-accent7">"main-content"</span> <span class="text-accent5">class=</span><span class="text-accent7">"main-content"</span><span class="text-accent-p2">&gt;</span>
-     <span class="text-accent-p2">&lt;div </span><span class="text-accent5">class=</span><span class="text-accent7">"container"</span><span class="text-accent-p2">&gt;</span>
-      <span class="text-accent-p2">&lt;main </span><span class="text-accent5">class=</span><span class="text-accent7">"main-primary"</span><span class="text-accent-p2">&gt;</span>
+     <span class="text-accent-p2">&lt;div</span> <span class="text-accent3">id=</span><span class="text-accent7">"main-content"</span> <span class="text-accent3">class=</span><span class="text-accent7">"main-content"</span><span class="text-accent-p2">&gt;</span>
+     <span class="text-accent-p2">&lt;div </span><span class="text-accent3">class=</span><span class="text-accent7">"container"</span><span class="text-accent-p2">&gt;</span>
+      <span class="text-accent-p2">&lt;main </span><span class="text-accent3">class=</span><span class="text-accent7">"main-primary"</span><span class="text-accent-p2">&gt;</span>
         Page content
       <span class="text-accent-p2">&lt;/main&gt;</span>
      <span class="text-accent-p2">&lt;/div&gt;</span>

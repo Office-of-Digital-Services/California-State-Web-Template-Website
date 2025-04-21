@@ -55,22 +55,32 @@ permalink: "visual-design/color.html"
     </p>
 
     <h2 id="AddAColorTheme">Add color theme</h2>
-    <p>The current template CSS core file is using the Oceanside theme's color variables. To add another color theme from the available themes, add a link to your preferred theme in the &lt;head&gt; of your HTML document after the CSS core link. Check out the example below:</p>
+    <p>
+      The current template CSS core file is using the Oceanside theme's color
+      variables. To add another color theme from the available themes, add a
+      link to your preferred theme in the &lt;head&gt; of your HTML document
+      after the CSS core link. Check out the example below:
+    </p>
 
-<pre>
+    <pre>
 <code><!-- State Web Template core css file -->
-<link rel="stylesheet" href="/state-template/css/cagov.core.css" />
+<link rel="stylesheet" href="/state-template/css/cagov.core.css" id="main-stylesheet"  />
 
 <!-- Include link to a color theme stylesheet of your choice -->
 <link rel="stylesheet" href="/state-template/css/colortheme-delta.css" /></code></pre>
 
     <h2 id="ColorThemes">Color themes</h2>
     <p>
-      We developed our color themes following best practices in accessibility. We selected colors that have enough contrast between text and backgrounds. Additionally, each theme has CSS rules to ensure proper color contrast ratios.
+      We developed our color themes following best practices in accessibility.
+      We selected colors that have enough contrast between text and backgrounds.
+      Additionally, each theme has CSS rules to ensure proper color contrast
+      ratios.
     </p>
 
     <p>
-      People with low vision should be able to see and use your web products. We recommend choosing primary, secondary, and accent colors with accessible color contrast ratios. Use
+      People with low vision should be able to see and use your web products. We
+      recommend choosing primary, secondary, and accent colors with accessible
+      color contrast ratios. Use
       <a href="https://accessibleweb.com/color-contrast-checker/">
         Accessible WEB
         <span class="sr-only">opens in a new window</span>
@@ -188,21 +198,75 @@ permalink: "visual-design/color.html"
       </div>
     </div>
 
-
-
-
     <h2>Customize color theme</h2>
-    <p>To customize your main theme colors, change the theme color variables in the color theme CSS file. Use meaningful colors to communicate what people need to see.</p>
+    <p>
+      To customize your main theme colors, change the theme's fixed color
+      variables or use color-mix function in the color theme CSS file. Use
+      meaningful colors to communicate what people need to see.
+    </p>
 
-<p><span class="text-highlight-primary">Note:</span> We developed the State Web Template with three primary colors and three secondary colors using darker and lighter variations of each.</p>
-  <ul>
-    <li>Primary color variables: <code>--color-p1</code>, <code>--color-p2</code>, <code>--color-p3</code></li>
-    <li>Secondary color variables: <code>--color-s1</code>, <code>--color-s2</code>, <code>--color-s3</code></li>
-  </ul>
+    <p>
+      <span class="text-highlight-primary">Note:</span> We developed the State
+      Web Template with three primary colors and three secondary colors using
+      darker and lighter variations of each.
+    </p>
+    <ul>
+      <li>
+        Primary color variables: <code>--color-p1</code>,
+        <code>--color-p2</code>, <code>--color-p3</code>
+      </li>
+      <li>
+        Secondary color variables: <code>--color-s1</code>,
+        <code>--color-s2</code>, <code>--color-s3</code>
+      </li>
+    </ul>
 
-  <p>Here is the Oceanside color theme variables CSS code example: </p>
-<pre>
-<code>:root {
+    <h3>color-mix colors customization</h3>
+    <p>
+      Use color-mix to customize the theme. The color-mix function blends two
+      colors to create a new one. It uses a base color and mixes it with white
+      or black to make lighter or darker shades.
+    </p>
+    <p>
+      Below is how we use color-mix functions to darken and tint color
+      variations.
+    </p>
+    <pre>
+@supports (color: color-mix) {
+:root {
+--color-p2: #046b99;
+--color-p2-dark: color-mix(in srgb, var(--color-p2), #000 15%);
+--color-p2-darker: color-mix(in srgb, var(--color-p2), #000 30%);
+--color-p2-darkest: color-mix(in srgb, var(--color-p2), #000 60%);
+--color-p2-light: color-mix(in srgb, var(--color-p2), #fff 15%);
+--color-p2-lighter: color-mix(in srgb, var(--color-p2), #fff 30%);
+--color-p2-lightest: color-mix(in srgb, var(--color-p2), #fff 60%);
+  }
+}
+</pre
+    >
+
+    <p>
+      Keep in mind that the color-mix function works only in modern browsers. To
+      make sure your site works for everyone, the State Template color theme
+      files include both fixed color variables for older browsers and the
+      color-mix function for newer browsers, using progressive enhancement.
+    </p>
+
+    <p>
+      Below is an example of the Oceanside theme's fixed color variables
+      alongside the color-mix variables in CSS:
+    </p>
+    <pre>
+<code>/* -----------------------------------------
+   OCEANSIDE COLOR THEME
+----------------------------------------- */
+
+:root {
+  /* color variations are hardcoded for older browsers
+ color-mix is used for the newer browsers */
+
+  /* Highlight */
   --color-p1: #fdb81e;
   --color-p1-dark: #fdb20a;
   --color-p1-darker: #f5aa02;
@@ -210,6 +274,8 @@ permalink: "visual-design/color.html"
   --color-p1-light: #fdc64b;
   --color-p1-lighter: #fed478;
   --color-p1-lightest: #fee3a5;
+
+  /* Primary */
   --color-p2: #046b99;
   --color-p2-dark: #035d85;
   --color-p2-darker: #035376;
@@ -217,6 +283,8 @@ permalink: "visual-design/color.html"
   --color-p2-light: #3689ad;
   --color-p2-lighter: #68a6c2;
   --color-p2-lightest: #9bc4d6;
+
+  /* Standout */
   --color-p3: #323a45;
   --color-p3-dark: #293039;
   --color-p3-darker: #232930;
@@ -224,41 +292,66 @@ permalink: "visual-design/color.html"
   --color-p3-light: #5b616a;
   --color-p3-lighter: #84898f;
   --color-p3-lightest: #adb0b5;
+
+  /* Secondary 1 */
   --color-s1: #eef8fb;
   --color-s1-darker: #e2f3f8;
   --color-s1-lighter: #f7fcfd;
+
+  /* Secondary 2 */
   --color-s2: #87b8ce;
   --color-s2-dark: #6ea9c4;
   --color-s2-darker: #549ab9;
+
+  /* Secondary 3 */
   --color-s3: #4993b5;
   --color-s3-dark: #3f7e9c;
   --color-s3-light: #92bed3;
   --color-s3-lighter: #b6d4e1;
+
+  /* Megamenu sub navigation background */
   --sub-nav-bg: var(--color-s1-lighter);
+
+  /* Mobile navigation drawer background */
   --mobile-drawer: var(--color-p2-darker);
   --mobile-drawer-active: var(--color-p2);
-}          
+}
+
+/* color-mix is used for the newer browsers */
+@supports (color: color-mix) {
+  :root {
+    --color-p1-dark: color-mix(in srgb, var(--color-p1), #000 15%);
+    --color-p1-darker: color-mix(in srgb, var(--color-p1), #000 30%);
+    --color-p1-darkest: color-mix(in srgb, var(--color-p1), #000 60%);
+    --color-p1-light: color-mix(in srgb, var(--color-p1), #fff 15%);
+    --color-p1-lighter: color-mix(in srgb, var(--color-p1), #fff 30%);
+    --color-p1-lightest: color-mix(in srgb, var(--color-p1), #fff 60%);
+    --color-p2-dark: color-mix(in srgb, var(--color-p2), #000 15%);
+    --color-p2-darker: color-mix(in srgb, var(--color-p2), #000 30%);
+    --color-p2-darkest: color-mix(in srgb, var(--color-p2), #000 60%);
+    --color-p2-light: color-mix(in srgb, var(--color-p2), #fff 15%);
+    --color-p2-lighter: color-mix(in srgb, var(--color-p2), #fff 30%);
+    --color-p2-lightest: color-mix(in srgb, var(--color-p2), #fff 60%);
+    --color-p3-dark: color-mix(in srgb, var(--color-p3), #000 15%);
+    --color-p3-darker: color-mix(in srgb, var(--color-p3), #000 30%);
+    --color-p3-darkest: color-mix(in srgb, var(--color-p3), #000 60%);
+    --color-p3-light: color-mix(in srgb, var(--color-p3), #fff 15%);
+    --color-p3-lighter: color-mix(in srgb, var(--color-p3), #fff 30%);
+    --color-p3-lightest: color-mix(in srgb, var(--color-p3), #fff 60%);
+    --color-s1-darker: color-mix(in srgb, var(--color-s1), #000 5%);
+    --color-s1-lighter: color-mix(in srgb, var(--color-s1), #fff 10%);
+    --color-s2-dark: color-mix(in srgb, var(--color-s2), #000 15%);
+    --color-s2-darker: color-mix(in srgb, var(--color-s2), #000 30%);
+    --color-s3-dark: color-mix(in srgb, var(--color-s3), #000 15%);
+    --color-s3-light: color-mix(in srgb, var(--color-s3), #fff 45%);
+    --color-s3-lighter: color-mix(in srgb, var(--color-s3), #fff 60%);
+    --sub-nav-bg: var(--color-s1-lighter);
+    --mobile-drawer: var(--color-p2-darker);
+    --mobile-drawer-active: var(--color-p2);
+  }
+}        
 </code>
 </pre>
-
-
-<h3>SASS theme file colors customization</h3>
-<p>If you don't want to deal with that many colors use our <a href="https://github.com/Office-of-Digital-Services/California-State-Web-Template-Development/blob/main/src/scss/colortheme/oceanside.scss">SASS color scheme file</a>. It uses three primary and three secondary colors. Using SASS functions, you can create darker and lighter variations for those colors.</p>
-<p>Below is how we use SASS functions to darken and tint color variations in our SASS color theme file.</p>
-<pre>// primary color
-$color-p2: #046b99;
-$color-p2-dark: darken($color-p2, 4%);
-$color-p2-darker: darken($color-p2, 7%);
-$color-p2-darkest: darken($color-p2, 14%);
-$color-p2-light: tint($color-p2, 20%);
-$color-p2-lighter: tint($color-p2, 40%);
-$color-p2-lightest: tint($color-p2, 60%);
-</pre>
-
-
-  
-  <p>After picking primary and secondary colors, convert your updated SASS file into CSS. For that you can use online <a href="https://jsonformatter.org/sass-to-css">SASS to CSS converter</a> or use your own local SASS to CSS converter setup.</p>
-
   </div>
 </div>
 
