@@ -55,8 +55,8 @@ permalink: "components/countdown-timer.html"
       aria-labelledby="heading-example1">
       <div class="p-a-sm">
         <h3 class="m-t-0">Default</h3>
-        <div class="group countdown p-x">
-          <div class="fifth bg-gray-100 text-center p-b-md p-l-0 p-r-0">
+        <div class="row flex-column flex-md-row countdown p-x">
+          <div class="col bg-gray-100 text-center p-b-md p-l-0 p-r-0">
             <span class="countdown-text">
               <abbr
                 title="weeks"
@@ -68,14 +68,14 @@ permalink: "components/countdown-timer.html"
             </span>
             <span id="weeks1"></span>
           </div>
-          <div class="fifth bg-gray-100 text-center p-b-md p-l-0 p-r-0">
+          <div class="col bg-gray-100 text-center p-b-md p-l-0 p-r-0">
             <span class="countdown-text">
               days
               <br />
             </span>
             <span id="days1"></span>
           </div>
-          <div class="fifth bg-gray-100 text-center p-b-md p-l-0 p-r-0">
+          <div class="col bg-gray-100 text-center p-b-md p-l-0 p-r-0">
             <span class="countdown-text">
               <abbr
                 title="hours"
@@ -87,7 +87,7 @@ permalink: "components/countdown-timer.html"
             </span>
             <span id="hours1"></span>
           </div>
-          <div class="fifth bg-gray-100 text-center p-b-md p-l-0 p-r-0">
+          <div class="col bg-gray-100 text-center p-b-md p-l-0 p-r-0">
             <span class="countdown-text">
               <abbr
                 title="minutes"
@@ -99,7 +99,7 @@ permalink: "components/countdown-timer.html"
             </span>
             <span id="minutes1"></span>
           </div>
-          <div class="fifth bg-gray-100 text-center p-b-md p-l-0 p-r-0">
+          <div class="col bg-gray-100 text-center p-b-md p-l-0 p-r-0">
             <span class="countdown-text">
               <abbr
                 title="seconds"
@@ -114,8 +114,8 @@ permalink: "components/countdown-timer.html"
         </div>
 
         <h3>Primary</h3>
-        <div class="group countdown p-x">
-          <div class="fifth text-center section-primary p-b-md p-l-0 p-r-0">
+        <div class="row flex-column flex-md-row countdown p-x">
+          <div class="col text-center section-primary p-b-md p-l-0 p-r-0">
             <span class="countdown-text">
               <abbr
                 title="weeks"
@@ -127,14 +127,14 @@ permalink: "components/countdown-timer.html"
             </span>
             <span id="weeks"></span>
           </div>
-          <div class="fifth text-center section-primary p-b-md p-l-0 p-r-0">
+          <div class="col text-center section-primary p-b-md p-l-0 p-r-0">
             <span class="countdown-text">
               days
               <br />
             </span>
             <span id="days"></span>
           </div>
-          <div class="fifth text-center section-primary p-b-md p-l-0 p-r-0">
+          <div class="col text-center section-primary p-b-md p-l-0 p-r-0">
             <span class="countdown-text">
               <abbr
                 title="hours"
@@ -146,7 +146,7 @@ permalink: "components/countdown-timer.html"
             </span>
             <span id="hours"></span>
           </div>
-          <div class="fifth text-center section-primary p-b-md p-l-0 p-r-0">
+          <div class="col text-center section-primary p-b-md p-l-0 p-r-0">
             <span class="countdown-text">
               <abbr
                 title="minutes"
@@ -158,7 +158,7 @@ permalink: "components/countdown-timer.html"
             </span>
             <span id="minutes"></span>
           </div>
-          <div class="fifth text-center section-primary p-b-md p-l-0 p-r-0">
+          <div class="col text-center section-primary p-b-md p-l-0 p-r-0">
             <span class="countdown-text">
               <abbr
                 title="seconds"
@@ -197,24 +197,24 @@ permalink: "components/countdown-timer.html"
       <div class="p-a-sm">
         <h3 class="m-t-0">Default</h3>
         <pre style="max-height: 300px;"><code><!--HTML-->
-      <div class="group countdown p-x">
-       <div class="fifth bg-gray-100 text-center p-b-md p-l-0 p-r-0">
+      <div class="row flex-column flex-md-row  countdown p-x">
+       <div class="col bg-gray-100 text-center p-b-md p-l-0 p-r-0">
         <span class="countdown-text"><abbr title="weeks" aria-label="weeks" class="text-decoration-none">wks</abbr><br></span>
         <span id="weeks1"></span>
        </div>
-       <div class="fifth bg-gray-100 text-center p-b-md p-l-0 p-r-0">
+       <div class="col bg-gray-100 text-center p-b-md p-l-0 p-r-0">
         <span class="countdown-text">days<br></span>
         <span id="days1"></span>
        </div>
-       <div class="fifth bg-gray-100 text-center p-b-md p-l-0 p-r-0">
+       <div class="col bg-gray-100 text-center p-b-md p-l-0 p-r-0">
         <span class="countdown-text"><abbr title="hours" aria-label="hours" class="text-decoration-none">hrs</abbr> <br></span>
         <span id="hours1"></span>
        </div>
-       <div class="fifth bg-gray-100 text-center p-b-md p-l-0 p-r-0">
+       <div class="col bg-gray-100 text-center p-b-md p-l-0 p-r-0">
         <span class="countdown-text"><abbr title="minutes" aria-label="minutes" class="text-decoration-none">mins</abbr><br></span>
         <span id="minutes1"></span>
        </div>
-       <div class="fifth bg-gray-100 text-center p-b-md p-l-0 p-r-0">
+       <div class="col bg-gray-100 text-center p-b-md p-l-0 p-r-0">
         <span class="countdown-text"><abbr title="seconds" aria-label="seconds" class="text-decoration-none">secs</abbr><br></span>
         <span id="seconds1"></span>
        </div>
@@ -260,24 +260,24 @@ permalink: "components/countdown-timer.html"
 
         <h3>Primary</h3>
         <pre style="max-height: 300px;"><code><!--HTML-->
-      <div class="group countdown p-x">
-       <div class="fifth text-center section-primary p-b-md p-l-0 p-r-0">
+      <div class="row flex-column flex-md-row countdown p-x">
+       <div class="col text-center section-primary p-b-md p-l-0 p-r-0">
         <span class="countdown-text"><abbr title="weeks" aria-label="weeks" class="text-decoration-none">wks</abbr><br></span>
         <span id="weeks"></span>
        </div>
-       <div class="fifth text-center section-primary p-b-md p-l-0 p-r-0">
+       <div class="col text-center section-primary p-b-md p-l-0 p-r-0">
         <span class="countdown-text">days<br></span>
         <span id="days"></span>
        </div>
-       <div class="fifth text-center section-primary p-b-md p-l-0 p-r-0">
+       <div class="col text-center section-primary p-b-md p-l-0 p-r-0">
         <span class="countdown-text"><abbr title="hours" aria-label="hours" class="text-decoration-none">hrs</abbr><br></span>
         <span id="hours"></span>
        </div>
-       <div class="fifth text-center section-primary p-b-md p-l-0 p-r-0">
+       <div class="col text-center section-primary p-b-md p-l-0 p-r-0">
         <span class="countdown-text"><abbr title="minutes" aria-label="minutes" class="text-decoration-none">mins</abbr><br></span>
         <span id="minutes"></span>
        </div>
-       <div class="fifth text-center section-primary p-b-md p-l-0 p-r-0">
+       <div class="col text-center section-primary p-b-md p-l-0 p-r-0">
         <span class="countdown-text"><abbr title="seconds" aria-label="seconds" class="text-decoration-none">secs</abbr><br></span>
         <span id="seconds"></span>
        </div>
