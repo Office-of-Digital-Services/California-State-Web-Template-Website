@@ -13,58 +13,61 @@ customcss: "https://cdn.jsdelivr.net/npm/simple-datatables@latest/dist/style.css
 </style>
 
 <div class="p-b-lg">
+  <h1 class="m-t-0" id="Icons">Legacy components</h1>
 
-<h1 class="m-t-0" id="Icons">Legacy components</h1>
-
-    <table class="table table-sm table-striped" id="table">
-      <thead>
-       <tr>
-      <th>Legacy component name</th>
-      <th>Scaled to V6</th>
-      <th>V6 alternative</th>
-      <th>Deprecated?</th>
-      <th>Notes</th>
-      <th>Deprecated CSS classes</th>
-
+  <table class="table table-sm table-striped" id="table">
+    <thead>
+      <tr>
+        <th>Legacy component name</th>
+        <th>Scaled to V6</th>
+        <th>V6 alternative</th>
+        <th>Deprecated?</th>
+        <th>Notes</th>
+        <th>Deprecated CSS classes</th>
       </tr>
-</thead>
-<tbody>
+    </thead>
+    <tbody>
       {%- for item in legacyComponents.components -%}
       <tr>
-          <td><a href="{{ item.Legacy_URL }}">{{ item.Legacy_components }}</a></td>
-          <td>
-            {%- if item.Scaled_to_V6 == "N" %}
-              <span class="ca-gov-icon-angry text-danger" aria-hidden="true"></span> No
-              {%- else %}
-              <span class="ca-gov-icon-thumb-up text-success" aria-hidden="true"></span> Yes
-            {%- endif -%}
-          </td>
-          <td>
-             {%- if item.V6_alternative !== "" %}
-            <a href="{{ item.V6_URL }}">{{ item.V6_alternative }}</a>
-            {%- endif -%}
-          </td>
-          <td>      
-            {%- if item.Deprecated == "N" %}
-        <span class="ca-gov-icon-check-fill text-success" aria-hidden="true"></span> No
-      {%- else %}
-       <span class="ca-gov-icon-warning-diamond text-danger" aria-hidden="true"></span> Yes
-      {%- endif -%}
-            
-          </td>
-          <td>{{ item.Notes }}</td>
-          <td><code>{{ item.Deprecated_CSS_classes | safe }}</code></td>
+        <td>{{ item.Legacy_components }}</td>
+        <td>
+          {%- if item.Scaled_to_V6 == "N" %}
+          <span class="ca-gov-icon-angry text-danger" aria-hidden="true"></span>
+          No {%- else %}
+          <span
+            class="ca-gov-icon-thumb-up text-success"
+            aria-hidden="true"></span>
+          Yes {%- endif -%}
+        </td>
+        <td>
+          {%- if item.V6_alternative !== "" %}
+          <a href="{{ item.V6_URL }}">{{ item.V6_alternative }}</a>
+          {%- endif -%}
+        </td>
+        <td>
+          {%- if item.Deprecated == "N" %}
+          <span
+            class="ca-gov-icon-check-fill text-success"
+            aria-hidden="true"></span>
+          No {%- else %}
+          <span
+            class="ca-gov-icon-warning-diamond text-danger"
+            aria-hidden="true"></span>
+          Yes {%- endif -%}
+        </td>
+        <td>{{ item.Notes }}</td>
+        <td><code>{{ item.Deprecated_CSS_classes | safe }}</code></td>
       </tr>
       {%- endfor -%}
-      </tbody>
-    </table>
-
-
+    </tbody>
+  </table>
 </div>
-<script src="https://cdn.jsdelivr.net/npm/simple-datatables@latest" type="text/javascript"></script>
+<script
+  src="https://cdn.jsdelivr.net/npm/simple-datatables@latest"
+  type="text/javascript"></script>
 <script>
-    const dataTable = new simpleDatatables.DataTable("#table", {
-        searchable: true,
-       // fixedHeight: true,
-    });
+  const dataTable = new simpleDatatables.DataTable("#table", {
+      searchable: true,
+     // fixedHeight: true,
+  });
 </script>
