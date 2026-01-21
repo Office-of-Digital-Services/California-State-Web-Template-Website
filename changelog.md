@@ -49,7 +49,7 @@
 
 ## 6.0.8
 
-- Updated site structure and rebuild framework to use eleventy site generation #191
+- Updated site structure and rebuild framework to use Eleventy site generation #191
 - Replaced server site includes with njk includes and templates
 - Changed website output folder to /\_site/ #206
 - Updated utility header include to look like design system #192
