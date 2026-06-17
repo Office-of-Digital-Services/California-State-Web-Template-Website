@@ -42,6 +42,10 @@ permalink: "visual-design/color.html"
               <li><a href="/visual-design/color/?shasta">Shasta</a></li>
               <li><a href="/visual-design/color/?sierra">Sierra</a></li>
               <li><a href="/visual-design/color/?trinity">Trinity</a></li>
+              <li><a href="/visual-design/color/?ukiahdark">Ukiah Dark</a></li>
+              <li>
+                <a href="/visual-design/color/?venturadark">Ventura Dark</a>
+              </li>
             </ul>
           </li>
           <li><a href="/visual-design/icons.html">Icons</a></li>
@@ -389,6 +393,7 @@ permalink: "visual-design/color.html"
   const themeData = {
    delta: {
     name: "Delta",
+            theme: "light",
     colorHighlight: "A5BDC5",
     colorPrimary: "577786",
     colorStandout: "46565E",
@@ -397,6 +402,7 @@ permalink: "visual-design/color.html"
    },
    eureka: {
     name: "Eureka",
+            theme: "light",
     colorHighlight: "D9B295",
     colorPrimary: "3E4B4D",
     colorStandout: "21272A",
@@ -405,6 +411,7 @@ permalink: "visual-design/color.html"
    },
    mono: {
     name: "Mono",
+            theme: "light",
     colorHighlight: "ffce2b",
     colorPrimary: "545351",
     colorStandout: "191919",
@@ -413,6 +420,7 @@ permalink: "visual-design/color.html"
    },
    oceanside: {
     name: "Oceanside",
+            theme: "light",
     colorHighlight: "FDB81E",
     colorPrimary: "046B99",
     colorStandout: "323A45",
@@ -421,6 +429,7 @@ permalink: "visual-design/color.html"
    },
    orangecounty: {
     name: "Orange County",
+            theme: "light",
     colorHighlight: "fbad23",
     colorPrimary: "A15801",
     colorStandout: "483723",
@@ -429,6 +438,7 @@ permalink: "visual-design/color.html"
    },
    pasorobles: {
     name: "Paso Robles",
+            theme: "light",
     colorHighlight: "fbad23",
     colorPrimary: "691808",
     colorStandout: "313131",
@@ -437,6 +447,7 @@ permalink: "visual-design/color.html"
    },
    sacramento: {
     name: "Sacramento",
+            theme: "light",
     colorHighlight: "7bb0da",
     colorPrimary: "153554",
     colorStandout: "730000",
@@ -445,6 +456,7 @@ permalink: "visual-design/color.html"
    },
    santabarbara: {
     name: "Santa Barbara",
+            theme: "light",
     colorHighlight: "FF9B53",
     colorPrimary: "834B1E",
     colorStandout: "3c2c29",
@@ -453,6 +465,7 @@ permalink: "visual-design/color.html"
    },
    santacruz: {
     name: "Santa Cruz",
+            theme: "light",
     colorHighlight: "f5811b",
     colorPrimary: "0f4f94",
     colorStandout: "2c2c4f",
@@ -461,6 +474,7 @@ permalink: "visual-design/color.html"
    },
    shasta: {
     name: "Shasta",
+            theme: "light",
     colorHighlight: "fbad23",
     colorPrimary: "336c39",
     colorStandout: "3c4543",
@@ -469,6 +483,7 @@ permalink: "visual-design/color.html"
    },
    sierra: {
     name: "Sierra",
+        theme: "light",
     colorHighlight: "fbad23",
     colorPrimary: "447766",
     colorStandout: "194949",
@@ -482,20 +497,47 @@ permalink: "visual-design/color.html"
     colorStandout: "21272a",
     colorS1: "eff5f8",
     altText: "Trinity color theme: A blue-gray, a beige, a light gray, and  an off-black."
-   }
+   },
+  ukiahdark: {
+    name: "Ukiah Dark",
+        theme: "dark",
+    colorHighlight: "56bfec",
+    colorPrimary: "001c29",
+    colorStandout: "002939",
+    colorS1: "014a72",
+    altText: "Ukiah Dark color theme: A blue, a dark blue, a dark gray, and a darker blue."
+   },
+  venturadark: {
+    name: "Ventura Dark",
+    theme: "dark",
+    colorHighlight: "ffb300",
+    colorPrimary: "191919",
+    colorStandout: "262525",
+    colorS1: "444",
+    altText: "Ventura Dark color theme: A yellow highlight, warm grays, dark gray, and darker gray."
+   },
   };
 
   var palettesHTML = "";
   for (const id in themeData) {
+   var paletteCardClasses = themeData[id].theme === "dark"
+    ? "palette-card no-underline d-block white gray-100-hover brd-gray-light brd-solid-1 rounded-5 h-100 transition-0_3 shadow2-hover bg-standout"
+    : "palette-card no-underline d-block color-gray-dark brd-gray-light brd-solid-1 rounded-5 h-100 transition-0_3 shadow2-hover color-primary color-primary-hover";
+   var primarySwatch = themeData[id].theme === "dark"
+    ? '<div class="palette-disc rounded-circle" style="border:1px solid #d4d4d4;background-color:#' + themeData[id].colorPrimary + ';"></div>'
+    : '<div class="palette-disc rounded-circle" style="background-color:#' + themeData[id].colorPrimary + ';"></div>';
+   var standoutSwatch = themeData[id].theme === "dark"
+    ? '<div class="palette-disc rounded-circle" style="border:1px solid #d4d4d4;background-color:#' + themeData[id].colorStandout + ';"></div>'
+    : '<div class="palette-disc rounded-circle" style="background-color:#' + themeData[id].colorStandout + ';"></div>';
    palettesHTML += ' \
-   <a href="color/?' + id + '"title="' + themeData[id].name + '" class="palette-card no-underline d-block color-gray-dark brd-gray-light brd-solid-1 rounded-5 h-100 transition-0_3 shadow2-hover color-primary color-primary-hover"> \
+   <a href="color/?' + id + '"title="' + themeData[id].name + '" class="' + paletteCardClasses + '"> \
      <h3 class="h5 m-t-0">' + themeData[id].name + '</h3> \
      <div class="palette-row"> \
        <div class="sr-only">' + themeData[id].altText + '</div> \
-       <div class="palette-disc rounded-circle" style="background-color:#' + themeData[id].colorPrimary + ';"></div> \
+       ' + primarySwatch + ' \
        <div class="palette-disc rounded-circle" style="background-color:#' + themeData[id].colorHighlight + ';"></div> \
        <div class="palette-disc rounded-circle" style="border:1px solid #d4d4d4;background-color:#' + themeData[id].colorS1 + ';"></div> \
-       <div class="palette-disc rounded-circle" style="background-color:#' + themeData[id].colorStandout + ';"></div> \
+       ' + standoutSwatch + ' \
      </div> \
    </a> \
    ';
