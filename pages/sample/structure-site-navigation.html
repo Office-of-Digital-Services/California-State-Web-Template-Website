@@ -8,25 +8,32 @@ permalink: "structure/site-navigation.html"
 <div class="row">
   <div class="col-lg-4 col-xl-3 pb-lg-5" role="complementary">
     <!-- Side navigation -->
-    <nav aria-labelledby="navigation-list" class="side-navigation sticky-6">
-      <ul class="list-navigation">
-        <li>
-          <a href="/structure.html" id="navigation-list" class="landing">
-            Structure
-          </a>
-        </li>
-        <li><a href="/structure/utility-header.html">Utility header</a></li>
-        <li><a href="/structure/site-header.html">Site header</a></li>
-        <li><a href="/structure/mobile-controls.html">Mobile controls</a></li>
-        <li><a href="/structure/search.html">Search</a></li>
-        <li>
-          <a href="/structure/site-navigation.html" class="active">
-            Site navigation
-          </a>
-        </li>
-        <li><a href="/structure/footer.html">Footer</a></li>
-      </ul>
-    </nav>
+    <details class="side-navigation-toggle" aria-label="Toggle side navigation">
+      <summary>
+        <span class="container d-block">Structure</span>
+      </summary>
+    </details>
+    <div class="container">
+      <nav aria-labelledby="navigation-list" class="side-navigation sticky-6">
+        <ul class="list-navigation">
+          <li>
+            <a href="/structure.html" id="navigation-list" class="landing">
+              Structure
+            </a>
+          </li>
+          <li><a href="/structure/utility-header.html">Utility header</a></li>
+          <li><a href="/structure/site-header.html">Site header</a></li>
+          <li><a href="/structure/mobile-controls.html">Mobile controls</a></li>
+          <li><a href="/structure/search.html">Search</a></li>
+          <li>
+            <a href="/structure/site-navigation.html" class="active">
+              Site navigation
+            </a>
+          </li>
+          <li><a href="/structure/footer.html">Footer</a></li>
+        </ul>
+      </nav>
+    </div>
   </div>
 
   <div class="col-lg-8 col-xl-9 p-b-lg">
@@ -479,7 +486,7 @@ permalink: "structure/site-navigation.html"
             <h3 class="h4">Link with left image markup example:</h3>
             <pre><code><a href="/" class="second-level-link">
             <div class="media-left">
-            <img class="media-object" src="/images/sample/images/70x70.gif" alt="...">
+            <img class="media-object" src="/images/sample/images/70x70.gif" alt="image size 70x70">
         </div>
         <div class="media-body">
             <div class="title text-left">News Title</div>
