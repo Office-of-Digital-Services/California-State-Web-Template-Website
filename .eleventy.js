@@ -1,5 +1,4 @@
 //@ts-check
-const defaultConfig = require("@11ty/eleventy/src/defaultConfig");
 
 module.exports = function (
   /** @type {import("@11ty/eleventy").UserConfig} **/ eleventyConfig
@@ -16,8 +15,7 @@ module.exports = function (
     "node_modules/@cagovweb/state-template/dist": "state-template"
   });
 
-  //Start with default config, easier to configure 11ty later
-  const config = defaultConfig(eleventyConfig);
+  const config = {};
 
   // allow nunjucks templating in .html files
   config.htmlTemplateEngine = "njk";
