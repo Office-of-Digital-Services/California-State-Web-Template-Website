@@ -521,8 +521,8 @@ permalink: "visual-design/color.html"
   var palettesHTML = "";
   for (const id in themeData) {
    var paletteCardClasses = themeData[id].theme === "dark"
-    ? "palette-card no-underline d-block white gray-100-hover brd-gray-light brd-solid-1 rounded-5 h-100 transition-0_3 shadow2-hover bg-standout"
-    : "palette-card no-underline d-block color-gray-dark brd-gray-light brd-solid-1 rounded-5 h-100 transition-0_3 shadow2-hover color-primary color-primary-hover";
+    ? 'palette-card no-underline d-block white gray-100-hover brd-gray-light brd-solid-1 rounded-5 h-100 transition-0_3 shadow2-hover bg-standout bg-standout-hover'
+    : 'palette-card no-underline d-block color-gray-dark brd-gray-light brd-solid-1 rounded-5 h-100 transition-0_3 shadow2-hover color-primary color-primary-hover bg-default-hover';
    var primarySwatch = themeData[id].theme === "dark"
     ? '<div class="palette-disc rounded-circle" style="border:1px solid #d4d4d4;background-color:#' + themeData[id].colorPrimary + ';"></div>'
     : '<div class="palette-disc rounded-circle" style="background-color:#' + themeData[id].colorPrimary + ';"></div>';
