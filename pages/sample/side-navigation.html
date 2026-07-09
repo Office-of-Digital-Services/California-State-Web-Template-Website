@@ -111,6 +111,48 @@ permalink: "/components/side-navigation.html"
           currently open.
         </p>
         <pre><code><li><a href="javascript:;" class="landing active">Landing page</a></li></code></pre>
+
+        <h4>Using the <code>&lt;details&gt;</code> element on mobile</h4>
+        <p>
+          In mobile view, the side navigation is collapsed by default and uses
+          the native <code>&lt;details&gt;</code> and
+          <code>&lt;summary&gt;</code> elements to provide expand and collapse
+          behavior. In desktop view, this control is hidden with CSS because the
+          side navigation remains visible and does not require a toggle. The
+          <code>&lt;details&gt;</code>
+          pattern provides a functional no-JavaScript fallback, while JavaScript
+          enhances the experience by keeping expanded and collapsed state
+          synchronized through appropriate ARIA attributes for assistive
+          technologies.
+        </p>
+        <p>This implementation uses the following ARIA attributes:</p>
+        <ul>
+          <li>
+            <code>aria-label="Toggle side navigation"</code> on the
+            <code>&lt;details&gt;</code> element to provide an accessible name
+            for the mobile toggle control.
+          </li>
+          <li>
+            <code>aria-expanded="false"</code> on the
+            <code>&lt;details&gt;</code> element to communicate whether the side
+            navigation is currently collapsed or expanded. By default it is set
+            to false since in mobile side navigation is in collapsed state.
+          </li>
+          <li>
+            <code>aria-controls="side-nav-content"</code> on the
+            <code>&lt;details&gt;</code> element to associate the toggle with
+            the navigation container it shows and hides.
+          </li>
+          <li>
+            <code>aria-label="Side navigation"</code> on the
+            <code>&lt;nav&gt;</code> element to identify the landmark region for
+            assistive technology users.
+          </li>
+          <li>
+            <code>aria-current="page"</code> on the active link, when used, to
+            indicate the current page within the navigation.
+          </li>
+        </ul>
       </div>
     </div>
   </section>

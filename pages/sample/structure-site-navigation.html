@@ -8,12 +8,16 @@ permalink: "structure/site-navigation.html"
 <div class="row">
   <div class="col-lg-4 col-xl-3 pb-lg-5" role="complementary">
     <!-- Side navigation -->
-    <details class="side-navigation-toggle" aria-label="Toggle side navigation">
+    <details
+      class="side-navigation-toggle"
+      aria-label="Toggle side navigation"
+      aria-expanded="false"
+      aria-controls="side-nav-content">
       <summary>
         <span class="container d-block">Structure</span>
       </summary>
     </details>
-    <div class="container">
+    <div class="container" id="side-nav-content">
       <nav aria-labelledby="navigation-list" class="side-navigation sticky-6">
         <ul class="list-navigation">
           <li>
