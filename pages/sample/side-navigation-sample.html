@@ -21,38 +21,51 @@ permalink: "/components/side-navigation-sample.html"
 
 <div class="row">
   <div class="col-lg-4 col-xl-3">
-    <nav aria-label="list navigation" class="side-navigation">
-      <ul>
-        <li>
-          <a href="javascript:;" class="landing active">Types of parties</a>
-        </li>
-        <li>
-          <a href="/components/side-navigation-sample-level2.html" rel="noindex"
-            >Birthday</a
-          >
-        </li>
-        <li>
-          <a href="javascript:;" class="gray-200" aria-disabled="true">
-            Dance party
-          </a>
-        </li>
-        <li>
-          <a href="javascript:;" class="gray-200" aria-disabled="true">
-            Holiday party
-          </a>
-        </li>
-        <li>
-          <a href="javascript:;" class="gray-200" aria-disabled="true">
-            New year's eve
-          </a>
-        </li>
-        <li>
-          <a href="javascript:;" class="gray-200" aria-disabled="true">
-            Office party
-          </a>
-        </li>
-      </ul>
-    </nav>
+    <details
+      class="side-navigation-toggle"
+      aria-label="Toggle side navigation"
+      aria-expanded="false"
+      aria-controls="side-nav-content">
+      <summary>
+        <span class="container d-block">Types of parties</span>
+      </summary>
+    </details>
+    <div class="container" id="side-nav-content">
+      <nav aria-label="list navigation" class="side-navigation">
+        <ul>
+          <li>
+            <a href="javascript:;" class="landing active">Types of parties</a>
+          </li>
+          <li>
+            <a
+              href="/components/side-navigation-sample-level2.html"
+              rel="noindex"
+              >Birthday</a
+            >
+          </li>
+          <li>
+            <a href="javascript:;" class="gray-200" aria-disabled="true">
+              Dance party
+            </a>
+          </li>
+          <li>
+            <a href="javascript:;" class="gray-200" aria-disabled="true">
+              Holiday party
+            </a>
+          </li>
+          <li>
+            <a href="javascript:;" class="gray-200" aria-disabled="true">
+              New year's eve
+            </a>
+          </li>
+          <li>
+            <a href="javascript:;" class="gray-200" aria-disabled="true">
+              Office party
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </div>
   </div>
   <div class="col-lg-8 col-xl-9">
     <h1 class="m-t-0">Types of parties</h1>

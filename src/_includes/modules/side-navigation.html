@@ -1,10 +1,25 @@
-<nav aria-label="list navigation" class="side-navigation">
-  <ul>
-    <li><a href="javascript:;" class="landing active">Landing page</a></li>
-    <li><a href="javascript:;">Page 1</a></li>
-    <li><a href="javascript:;">Page 2</a></li>
-    <li><a href="javascript:;">Page 3</a></li>
-    <li><a href="javascript:;">Page 4</a></li>
-    <li><a href="javascript:;">Page 5</a></li>
-  </ul>
-</nav>
+<details
+  class="side-navigation-toggle"
+  aria-label="Toggle side navigation"
+  aria-expanded="false"
+  aria-controls="side-nav-content">
+  <summary>
+    <span class="container d-block">Side navigation</span>
+  </summary>
+</details>
+<div class="container" id="side-nav-content">
+  <nav aria-label="Side navigation" class="side-navigation">
+    <ul>
+      <li>
+        <a href="javascript:;" class="landing active" aria-current="page"
+          >Landing page</a
+        >
+      </li>
+      <li><a href="javascript:;">Page 1</a></li>
+      <li><a href="javascript:;">Page 2</a></li>
+      <li><a href="javascript:;">Page 3</a></li>
+      <li><a href="javascript:;">Page 4</a></li>
+      <li><a href="javascript:;">Page 5</a></li>
+    </ul>
+  </nav>
+</div>

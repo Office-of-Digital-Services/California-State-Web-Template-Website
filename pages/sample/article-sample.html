@@ -33,23 +33,34 @@ permalink: "/patterns/article-sample.html"
 </nav>
 <div class="row">
   <div class="col-lg-4 col-xl-3">
-    <nav aria-label="list navigation" class="side-navigation">
-      <ul>
-        <li>
-          <a
-            href="/patterns/list-of-articles-or-content-sample.html"
-            rel="noindex"
-            class="landing back">
-            Press releases
-          </a>
-        </li>
-        <li>
-          <a href="javascript:;" aria-disabled="true" class="active">
-            Article title
-          </a>
-        </li>
-      </ul>
-    </nav>
+    <details
+      class="side-navigation-toggle"
+      aria-label="Toggle side navigation"
+      aria-expanded="false"
+      aria-controls="side-nav-content">
+      <summary>
+        <span class="container d-block">Side navigation</span>
+      </summary>
+    </details>
+    <div class="container" id="side-nav-content">
+      <nav aria-label="list navigation" class="side-navigation">
+        <ul>
+          <li>
+            <a
+              href="/patterns/list-of-articles-or-content-sample.html"
+              rel="noindex"
+              class="landing back">
+              Press releases
+            </a>
+          </li>
+          <li>
+            <a href="javascript:;" aria-disabled="true" class="active">
+              Article title
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </div>
   </div>
   <div class="col-lg-8 col-xl-9">
     {% include "../../src/_includes/modules/news-article.html" %}

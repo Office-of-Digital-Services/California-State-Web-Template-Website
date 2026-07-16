@@ -8,25 +8,36 @@ permalink: "structure/mobile-controls.html"
 <div class="row">
   <div class="col-lg-4 col-xl-3 pb-lg-5" role="complementary">
     <!-- Side navigation -->
-    <nav aria-labelledby="navigation-list" class="side-navigation sticky-6">
-      <ul class="list-navigation">
-        <li>
-          <a href="/structure.html" id="navigation-list" class="landing">
-            Structure
-          </a>
-        </li>
-        <li><a href="/structure/utility-header.html">Utility header</a></li>
-        <li><a href="/structure/site-header.html">Site header</a></li>
-        <li>
-          <a href="/structure/mobile-controls.html" class="active">
-            Mobile controls
-          </a>
-        </li>
-        <li><a href="/structure/search.html">Search</a></li>
-        <li><a href="/structure/site-navigation.html">Site navigation</a></li>
-        <li><a href="/structure/footer.html">Footer</a></li>
-      </ul>
-    </nav>
+    <details
+      class="side-navigation-toggle"
+      aria-label="Toggle side navigation"
+      aria-expanded="false"
+      aria-controls="side-nav-content">
+      <summary>
+        <span class="container d-block">Structure</span>
+      </summary>
+    </details>
+    <div class="container" id="side-nav-content">
+      <nav aria-labelledby="navigation-list" class="side-navigation sticky-6">
+        <ul class="list-navigation">
+          <li>
+            <a href="/structure.html" id="navigation-list" class="landing">
+              Structure
+            </a>
+          </li>
+          <li><a href="/structure/utility-header.html">Utility header</a></li>
+          <li><a href="/structure/site-header.html">Site header</a></li>
+          <li>
+            <a href="/structure/mobile-controls.html" class="active">
+              Mobile controls
+            </a>
+          </li>
+          <li><a href="/structure/search.html">Search</a></li>
+          <li><a href="/structure/site-navigation.html">Site navigation</a></li>
+          <li><a href="/structure/footer.html">Footer</a></li>
+        </ul>
+      </nav>
+    </div>
   </div>
   <div class="col-lg-8 col-xl-9  m-b-lg">
     <h1 class="m-t-0">Mobile controls</h1>

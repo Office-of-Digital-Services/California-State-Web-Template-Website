@@ -9,6 +9,14 @@
       <div class="row">
         <div class="col-lg-4 col-xl-3 pb-lg-5">
           {# SIde navigation (rendering data from /src/_data/components.json and /src/_data/helpers.js #}
+          <details class="side-navigation-toggle" aria-label="Toggle side navigation"
+            aria-expanded="false"
+            aria-controls="side-navigation-content">
+            <summary>
+              <span class="container d-block">Components</span>
+            </summary>
+          </details>
+          <div class="container" id="side-navigation-content">
           <nav
             aria-labelledby="components-list" class="side-navigation sticky-6">
             {# Links with subnav #}
@@ -54,6 +62,7 @@
               </li>
             </ul>
           </nav>
+          </div>
         </div>
         <div class="col-lg-8 col-xl-9 p-b-lg">{{ content | safe }}</div>
       </div>

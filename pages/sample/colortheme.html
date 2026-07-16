@@ -21,37 +21,53 @@ nocanonical: true
   <div class="row">
     <div class="col-lg-4 col-xl-3 pb-lg-5" role="complementary">
       <!-- Side navigation -->
-      <nav aria-labelledby="color-themes-list" class="side-navigation sticky-6">
-        <ul class="list-navigation">
-          <li>
-            <a
-              href="/visual-design/color.html"
-              id="color-themes-list"
-              class="landing back">
-              Color themes
-            </a>
-          </li>
-
-          <li><a href="/visual-design/color/?delta">Delta</a></li>
-          <li><a href="/visual-design/color/?eureka">Eureka</a></li>
-          <li><a href="/visual-design/color/?mono">Mono</a></li>
-          <li><a href="/visual-design/color/?oceanside">Oceanside</a></li>
-          <li>
-            <a href="/visual-design/color/?orangecounty">Orange County</a>
-          </li>
-          <li><a href="/visual-design/color/?pasorobles">Paso Robles</a></li>
-          <li><a href="/visual-design/color/?sacramento">Sacramento</a></li>
-          <li>
-            <a href="/visual-design/color/?santabarbara">Santa Barbara</a>
-          </li>
-          <li><a href="/visual-design/color/?santacruz">Santa Cruz</a></li>
-          <li><a href="/visual-design/color/?shasta">Shasta</a></li>
-          <li><a href="/visual-design/color/?sierra">Sierra</a></li>
-          <li><a href="/visual-design/color/?trinity">Trinity</a></li>
-        </ul>
-      </nav>
+      <details
+        class="side-navigation-toggle"
+        aria-label="Toggle side navigation"
+        aria-expanded="false"
+        aria-controls="side-nav-content">
+        <summary>
+          <span class="container d-block">Visual design</span>
+        </summary>
+      </details>
+      <div class="container" id="side-nav-content">
+        <nav
+          aria-labelledby="color-themes-list"
+          class="side-navigation sticky-6">
+          <ul class="list-navigation">
+            <li>
+              <a
+                href="/visual-design/color.html"
+                id="color-themes-list"
+                class="landing back">
+                Color themes
+              </a>
+            </li>
+            <li><a href="/visual-design/color/?delta">Delta</a></li>
+            <li><a href="/visual-design/color/?eureka">Eureka</a></li>
+            <li><a href="/visual-design/color/?mono">Mono</a></li>
+            <li><a href="/visual-design/color/?oceanside">Oceanside</a></li>
+            <li>
+              <a href="/visual-design/color/?orangecounty">Orange County</a>
+            </li>
+            <li><a href="/visual-design/color/?pasorobles">Paso Robles</a></li>
+            <li><a href="/visual-design/color/?sacramento">Sacramento</a></li>
+            <li>
+              <a href="/visual-design/color/?santabarbara">Santa Barbara</a>
+            </li>
+            <li><a href="/visual-design/color/?santacruz">Santa Cruz</a></li>
+            <li><a href="/visual-design/color/?shasta">Shasta</a></li>
+            <li><a href="/visual-design/color/?sierra">Sierra</a></li>
+            <li><a href="/visual-design/color/?trinity">Trinity</a></li>
+            <li><a href="/visual-design/color/?ukiahdark">Ukiah Dark</a></li>
+            <li>
+              <a href="/visual-design/color/?venturadark">Ventura Dark</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
     </div>
-    <div class="col-lg-8 col-xl-9">
+    <div class="col-lg-8 col-xl-9 pb-5">
       <h1 class="m-t-0"><span class="insertThemeName"></span></h1>
 
       <div class="insertAltText sr-only"></div>
@@ -59,7 +75,8 @@ nocanonical: true
       <h2 class="h3">Primary colors</h2>
       <div class="row font-size-14 color-palettes">
         <div class="col-md-4 m-b-lg">
-          <div class="palette-disc bg-primary rounded-circle mb-3"></div>
+          <div
+            class="palette-disc bg-primary rounded-circle mb-3 brd-color-default"></div>
           <div class="caption">
             <h2 class="h3">Primary</h2>
             <strong>Class:</strong>
@@ -77,7 +94,8 @@ nocanonical: true
         </div>
 
         <div class="col-md-4  m-b-lg">
-          <div class="palette-disc bg-highlight rounded-circle mb-3"></div>
+          <div
+            class="palette-disc bg-highlight rounded-circle mb-3 brd-color-default"></div>
           <div class="caption">
             <h2 class="h3">Highlight</h2>
             <strong>Class:</strong>
@@ -95,7 +113,8 @@ nocanonical: true
         </div>
 
         <div class="col-md-4  m-b-lg">
-          <div class="palette-disc bg-standout rounded-circle mb-3"></div>
+          <div
+            class="palette-disc bg-standout rounded-circle mb-3 brd-color-default"></div>
           <div class="caption">
             <h2 class="h3">Standout</h2>
             <strong>Class:</strong>
@@ -116,7 +135,8 @@ nocanonical: true
       <h2 class="h3">Secondary colors</h2>
       <div class="row font-size-14 color-palettes">
         <div class="col-md-4 m-b-lg">
-          <div class="palette-disc bg-s1 rounded-circle mb-3"></div>
+          <div
+            class="palette-disc bg-s1 rounded-circle mb-3 brd-color-default"></div>
           <div class="caption">
             <h3 class="h4">Secondary 1</h3>
             <strong>Class:</strong>
@@ -134,7 +154,8 @@ nocanonical: true
         </div>
 
         <div class="col-md-4 m-b-lg">
-          <div class="palette-disc bg-s2 rounded-circle mb-3"></div>
+          <div
+            class="palette-disc bg-s2 rounded-circle mb-3 brd-color-default"></div>
           <div class="caption">
             <h3 class="h4">Secondary 2</h3>
             <strong>Class:</strong>
@@ -152,7 +173,8 @@ nocanonical: true
         </div>
 
         <div class="col-md-4 m-b-lg">
-          <div class="palette-disc bg-s3 rounded-circle mb-3"></div>
+          <div
+            class="palette-disc bg-s3 rounded-circle mb-3 brd-color-default"></div>
           <div class="caption">
             <h3 class="h4">Secondary 3</h3>
             <strong>Class:</strong>
@@ -171,10 +193,9 @@ nocanonical: true
       </div>
 
       <h2 class="mt-0">Samples</h2>
-      <h3>Light background</h3>
 
       <div style="border: 1px solid #D4D4D7;" class="p-5">
-        <h4 class="mt-0">Link grid</h4>
+        <h3 class="mt-0">Link grid</h3>
 
         <div class="row">
           <div class="col-md-4 mb-4">
@@ -188,8 +209,8 @@ nocanonical: true
           </div>
         </div>
 
-        <h4>Buttons</h4>
-        <h5>Default</h5>
+        <h3>Buttons</h3>
+        <h4>Default</h4>
         <div class="btn-row">
           <a href="" class="btn btn-default">.btn-default</a>
           <a href="" class="btn btn-primary">.btn-primary</a>
@@ -197,109 +218,72 @@ nocanonical: true
           <a href="" class="btn btn-standout">.btn-standout</a>
           <a href="" class="btn btn-secondary">.btn-secondary</a>
         </div>
-        <h5>Hover</h5>
-        <div class="btn-row">
-          <a href="" class="btn btn-default active">.btn-default.active</a>
-          <a href="" class="btn btn-primary active">.btn-primary.active</a>
-          <a href="" class="btn btn-highlight active">.btn-highlight.active</a>
-          <a href="" class="btn btn-standout active">.btn-standout.active</a>
-          <a href="" class="btn btn-secondary active">.btn-secondary.active</a>
-        </div>
 
-        <h4>Cards</h4>
-
-        <div class="card card-overstated w-75">
-          <div class="card-heading">
-            <h3>
-              <span class="ca-gov-icon-info"></span>
-              Card (Overstated)
-            </h3>
-            <div class="options">
-              <a href="" class="btn btn-default">button</a>
-            </div>
-          </div>
-          <div class="card-body">Card Body</div>
-        </div>
-
-        <div class="card card-standout w-75">
-          <div class="card-heading">
-            <h2>
-              <span class="ca-gov-icon-info"></span>
-              Card (Standout)
-            </h2>
-            <div class="options">
-              <a href="" class="btn btn-default">button</a>
-            </div>
-          </div>
-          <div class="card-body">Card Body</div>
-        </div>
-      </div>
-
-      <h3>Dark background</h3>
-
-      <div class="bg-primary p-5 mb-4">
-        <h4 class="mt-0">Link grid</h4>
-
+        <h3>Cards</h3>
         <div class="row">
-          <div class="col-md-4 mb-4">
-            <a href="javascript:;" class="link-grid">Short link 1</a>
+          <div class="col-md-4 m-b-md">
+            <!-- Icon Block -->
+            <article
+              class="no-underline d-block bg-default bg-default-hover p-a-md pos-rel h-100">
+              <div class="text-center p-b">
+                <span
+                  class="ca-gov-icon-clipboard link-color link-color-hover text-huge d-block"
+                  aria-hidden="true"></span>
+                <a
+                  href="javascript:;"
+                  class="h4 m-t-0 m-b color-gray-dark link-before text-left no-underline d-block">
+                  Infographic
+                </a>
+                <p class="color-gray-dark text-left">
+                  Commonly recognized by visitors and generally reserved for
+                  data-rich visualization.
+                </p>
+              </div>
+            </article>
+            <!-- End Icon Block -->
           </div>
-          <div class="col-md-4 mb-4">
-            <a href="javascript:;" class="link-grid">Short link 2</a>
+          <div class="col-md-4 m-b-md">
+            <!-- Icon Block -->
+            <article
+              class="no-underline d-block bg-default bg-default-hover p-a-md pos-rel h-100">
+              <div class="text-center  p-b">
+                <span
+                  class="ca-gov-icon-accessibility link-color link-color-hover text-huge d-block"
+                  aria-hidden="true"></span>
+                <a
+                  href="javascript:;"
+                  class="h4 m-t-0 m-b color-gray-dark link-before text-left no-underline d-block">
+                  Icons
+                </a>
+                <p class="color-gray-dark text-left">
+                  Should be simple and maintain the likeness of the object it
+                  represents. samples
+                </p>
+              </div>
+            </article>
+            <!-- End Icon Block -->
           </div>
-          <div class="col-md-4 mb-4">
-            <a href="javascript:;" class="link-grid">Short link 3</a>
+          <div class="col-md-4 m-b-md">
+            <!-- Icon Block -->
+            <article
+              class="no-underline d-block bg-default bg-default-hover p-a-md pos-rel h-100">
+              <div class="text-center p-b">
+                <span
+                  class="ca-gov-icon-calendar link-color link-color-hover text-huge d-block"
+                  aria-hidden="true"></span>
+                <a
+                  href="javascript:;"
+                  class="h4 m-t-0 m-b color-gray-dark link-before text-left no-underline d-block">
+                  Card body
+                </a>
+                <p class="color-gray-dark text-left">
+                  This space should quickly describe what visitors will find at
+                  the button link.
+                </p>
+              </div>
+            </article>
+            <!-- End Icon Block -->
           </div>
-        </div>
-
-        <h4>Buttons</h4>
-        <h5>Default</h5>
-        <div class="btn-row">
-          <a href="" class="btn btn-default">.btn-default</a>
-          <a href="" class="btn btn-primary border-light">.btn-primary</a>
-          <a href="" class="btn btn-highlight">.btn-highlight</a>
-          <a href="" class="btn btn-standout border-light">.btn-standout</a>
-          <a href="" class="btn btn-secondary">.btn-secondary</a>
-        </div>
-        <h5>Hover</h5>
-        <div class="btn-row">
-          <a href="" class="btn btn-default active">.btn-default.active</a>
-          <a href="" class="btn btn-primary active border-light">
-            .btn-primary.active
-          </a>
-          <a href="" class="btn btn-highlight active">.btn-highlight.active</a>
-          <a href="" class="btn btn-standout active border-light">
-            .btn-standout.active
-          </a>
-          <a href="" class="btn btn-secondary active">.btn-secondary.active</a>
-        </div>
-
-        <h4>Cards</h4>
-
-        <div class="card card-overstated w-75  border border-light">
-          <div class="card-heading">
-            <h3>
-              <span class="ca-gov-icon-info"></span>
-              Card (Overstated)
-            </h3>
-            <div class="options">
-              <a href="" class="btn btn-default">button</a>
-            </div>
-          </div>
-          <div class="card-body">Card Body</div>
-        </div>
-
-        <div class="card card-standout w-75">
-          <div class="card-heading">
-            <h2>
-              <span class="ca-gov-icon-info"></span>
-              Card (Standout)
-            </h2>
-            <div class="options">
-              <a href="" class="btn btn-default">button</a>
-            </div>
-          </div>
-          <div class="card-body">Card Body</div>
         </div>
       </div>
     </div>
@@ -457,7 +441,27 @@ nocanonical: true
     colorS2: "e2dfda",
     colorS3: "ccc8bf",
     altText: "Trinity color theme: A blue-gray, a beige, a light gray, and  an off-black."
-   }
+   },
+  ukiahdark: {
+    name: "Ukiah Dark",
+    colorHighlight: "56bfec",
+    colorPrimary: "001c29",
+    colorStandout: "002939",
+    colorS1: "014a72",
+    colorS2: "003d59",
+    colorS3: "003248",
+    altText: "Ukiah Dark color theme: A blue, a dark blue, a dark gray, and a darker blue."
+   },
+  venturadark: {
+    name: "Ventura Dark",
+    colorHighlight: "ffb300",
+    colorPrimary: "191919",
+    colorStandout: "262525",
+    colorS1: "444",
+    colorS2: "262527",
+    colorS3: "191919",
+    altText: "Ventura Dark color theme: A yellow highlight, warm grays, dark gray, and darker gray."
+   },
   };
 
   var queryString = window.location.search.split('?')[1];
@@ -471,13 +475,11 @@ nocanonical: true
    }
   }
 
-  // insert new color theme css
-  var link = document.createElement("link");
-  link.href = "/state-template/css/colortheme-" + queryString + ".css";
-  link.type = "text/css";
-  link.rel = "stylesheet";
-  link.media = "screen,print";
-  document.getElementsByTagName("head")[0].appendChild(link);
+  // modify existing color theme stylesheet link
+  var existingLink = document.querySelector("link[href*='colortheme']");
+  if (existingLink) {
+   existingLink.href = "/state-template/css/colortheme-" + queryString + ".css";
+  }
 
   // Add canonical link for SEQ
   document.head.appendChild(Object.assign(document.createElement('link'),{href:"https://template.webstandards.ca.gov"+location.pathname+location.search,rel:"canonical"}));

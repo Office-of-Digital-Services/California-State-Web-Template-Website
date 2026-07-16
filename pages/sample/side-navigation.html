@@ -111,6 +111,48 @@ permalink: "/components/side-navigation.html"
           currently open.
         </p>
         <pre><code><li><a href="javascript:;" class="landing active">Landing page</a></li></code></pre>
+
+        <h4>Using the <code>&lt;details&gt;</code> element on mobile</h4>
+        <p>
+          In mobile view, the side navigation is collapsed by default and uses
+          the native <code>&lt;details&gt;</code> and
+          <code>&lt;summary&gt;</code> elements to provide expand and collapse
+          behavior. In desktop view, this control is hidden with CSS because the
+          side navigation remains visible and does not require a toggle. The
+          <code>&lt;details&gt;</code>
+          pattern provides a functional no-JavaScript fallback, while JavaScript
+          enhances the experience by keeping expanded and collapsed state
+          synchronized through appropriate ARIA attributes for assistive
+          technologies.
+        </p>
+        <p>This implementation uses the following ARIA attributes:</p>
+        <ul>
+          <li>
+            <code>aria-label="Toggle side navigation"</code> on the
+            <code>&lt;details&gt;</code> element to provide an accessible name
+            for the mobile toggle control.
+          </li>
+          <li>
+            <code>aria-expanded="false"</code> on the
+            <code>&lt;details&gt;</code> element to communicate whether the side
+            navigation is currently collapsed or expanded. By default it is set
+            to false since in mobile side navigation is in collapsed state.
+          </li>
+          <li>
+            <code>aria-controls="side-nav-content"</code> on the
+            <code>&lt;details&gt;</code> element to associate the toggle with
+            the navigation container it shows and hides.
+          </li>
+          <li>
+            <code>aria-label="Side navigation"</code> on the
+            <code>&lt;nav&gt;</code> element to identify the landmark region for
+            assistive technology users.
+          </li>
+          <li>
+            <code>aria-current="page"</code> on the active link, when used, to
+            indicate the current page within the navigation.
+          </li>
+        </ul>
       </div>
     </div>
   </section>
@@ -314,6 +356,158 @@ permalink: "/components/side-navigation.html"
   </div>
 </div>
 <!--END TABS-->
+
+<h2>Full width H1 banner header side navigation mobile implementation</h2>
+
+<p>
+  If you have a full-width banner header in your layout, the side navigation can
+  also go full width in mobile view. The page structure and layout column
+  classes need to be adjusted accordingly.
+</p>
+
+<!--Tabs 5-->
+<div class="tab-group responsive">
+  <ul id="tabs5" class="nav nav-tabs" role="tablist">
+    <li class="nav-item" role="presentation">
+      <a
+        id="tab-example5"
+        href="#pane-example5"
+        class="nav-link active"
+        data-bs-toggle="tab"
+        role="tab">
+        Example
+      </a>
+    </li>
+
+    <li class="nav-item" role="presentation">
+      <a
+        id="tab-include5"
+        href="#pane-include5"
+        class="nav-link"
+        data-bs-toggle="tab"
+        role="tab">
+        Implementation notes
+      </a>
+    </li>
+  </ul>
+
+  <div class="tab-content">
+    <div
+      id="pane-example5"
+      class="card tab-pane fade show active"
+      role="tabpanel"
+      aria-labelledby="tab-example5">
+      <div class="card-header" id="heading-example5">
+        <h4 class="my-0 w-100">
+          <a
+            data-bs-toggle="collapse"
+            href="#collapse-example5"
+            data-parent="#tab-content"
+            aria-expanded="true"
+            aria-controls="collapse-example5"
+            title="Example tab header">
+            Example
+          </a>
+        </h4>
+      </div>
+      <div
+        id="collapse-example5"
+        class="collapse show"
+        role="tabpanel"
+        aria-labelledby="heading-example5">
+        <div class="card-body">
+          <div class="col-lg-5">
+            <img
+              src="/images/side-navigation-mobile.jpg"
+              alt="Side navigation with banner header"
+              class="img-fluid brd-solid-1 brd-color-default" />
+          </div>
+
+          <a
+            href="/components/side-navigation-example.html"
+            rel="noindex"
+            class="btn btn-outline-primary mt-4 mb-4"
+            target="_blank">
+            Live example in new tab
+            <span class="ca-gov-icon-arrow-next" aria-hidden="true"></span>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div
+      id="pane-include5"
+      class="card tab-pane fade"
+      role="tabpanel"
+      aria-labelledby="tab-include5">
+      <div class="card-header" id="heading-include5">
+        <h4 class="my-0 w-100">
+          <a
+            class="collapsed"
+            data-bs-toggle="collapse"
+            href="#collapse-include5"
+            data-parent="#tab-include5"
+            aria-expanded="false"
+            aria-controls="collapse-include5"
+            title="Implementation notes tab header">
+            Implementation notes
+          </a>
+        </h4>
+      </div>
+      <div
+        id="collapse-include5"
+        class="collapse"
+        role="tabpanel"
+        aria-labelledby="heading-include5">
+        <div class="card-body">
+          <p>
+            To make your side navigation work with a full-width banner header in
+            mobile view, you need to use
+            <code>container-lg</code>
+            class for your main content page layout that will follow after h1
+            banner header. You also need to use
+            <code>col-12</code>
+            class for your side navigation and main content columns. This will
+            make your side navigation and main content full width on mobile
+            devices.
+          </p>
+          <textarea
+            class="sourcecode m-t"
+            aria-label="source code"
+            readonly
+            tabindex="-1">
+<!-- Full width h1 header banner -->
+<div class="bg-primary">
+  <div class="container p-t-md">
+    <h1 class="m-t-0 p-b-lg mb-0">H1 banner</h1>
+  </div>
+</div>
+
+<!-- Page layout -->
+<div class="container-lg px-0">
+  <div class="row">
+    <aside class="col-12 col-lg-3 pt-lg-5">
+      <!-- side navigation code here -->
+    </aside>
+
+    <!-- Main content --> 
+    <div class="col-12 col-lg-9">
+      <main class="main-primary" id="main">
+        <div class="container pt-5 mb-5">
+          <!-- main content code here -->
+        </div>
+      </main>
+    </div>
+  </div>
+</div>
+</textarea
+          >
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!--End tabs 5-->
 
 <h2>Accordion list</h2>
 

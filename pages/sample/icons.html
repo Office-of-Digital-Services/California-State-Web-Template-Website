@@ -25,24 +25,24 @@ permalink: "visual-design/icons.html"
     text-decoration: none !important;
     position: relative;
     padding: 10px 9px 10px 9px;
-    border-top: 1px solid #d4d4d7;
-    border-bottom: 1px solid #d4d4d7;
+    border-top: 1px solid var(--border-color-default);
+    border-bottom: 1px solid var(--border-color-default);
   }
 
   .icons li a::after {
     content: "";
-    border-right: 1px solid #ededef;
+    border-right: 1px solid var(--border-color-default);
     height: 100%;
     position: relative;
     left: 10px;
   }
 
   .icons li a.letter-selected {
-    border-right: 1px solid #d4d4d7;
-    border-left: 1px solid #d4d4d7;
+    border-right: 1px solid var(--border-color-default);
+    border-left: 1px solid var(--border-color-default);
     font-weight: 700;
-    background-color: #fafafa;
-    color: #3b3a48;
+    background-color: var(--default-bg);
+    color: var(--text-color);
   }
 
 
@@ -138,7 +138,7 @@ permalink: "visual-design/icons.html"
     const iconsPerPage = 60;
 
     const letterList = [...new Set(iconSearchData.icons.map(x => x.name.charAt(0)))];
-    const jumpToHtml = `<li><a href="javascript:buildList(true,0)" ${!filterLetter ? 'class="gray-900 letter-selected"' : ''}>All</a></li>`
+    const jumpToHtml = `<li><a href="javascript:buildList(true,0)" ${!filterLetter ? 'class="text-color letter-selected"' : ''}>All</a></li>`
       + letterList
         .map(l => `<li><a href="javascript:buildList(false,0,'${l}')" ${filterLetter === l ? 'class="letter-selected"' : ''}>${l.toUpperCase()}</a></li>`)
         .join('');
@@ -163,15 +163,15 @@ permalink: "visual-design/icons.html"
           if (!paginate && !filterLetter && !searchInput.length && letter !== firstLetter) {
             // show the blue letter heading
             letter = firstLetter;
-            listHtml += `<p class="h1 icons-alpha py-3 mb-0 m-t-md color-p2 p-b-0">${letter.toUpperCase()}</p>`;
+            listHtml += `<p class="h1 icons-alpha py-3 mb-0 m-t-md link-color p-b-0">${letter.toUpperCase()}</p>`;
           }
 
           listHtml += `
           <div class="d-flex icon-item">
-            <div class="text-3rem p-r gray-900">
+            <div class="text-3rem p-r text-color">
               <span class="ca-gov-icon-${iconName}" aria-hidden="true"></span>
             </div>
-            <div class="icon-specs p-r  gray-900">
+            <div class="icon-specs p-r text-color">
               <p style="text-transform:capitalize" class="bold m-t m-b-0 font-size-16">${iconName.replace('-', ' ')}</p>
               <p class="font-size-14 m-0">ca-gov-icon-${iconName}</p>
             </div>
@@ -235,22 +235,28 @@ permalink: "visual-design/icons.html"
 
 <div class="row">
   <div class="col-lg-4 col-xl-3">
-    <nav
-      aria-labelledby="side-navigation-label"
-      class="side-navigation sticky-6 overflow-auto">
-      <span class="sr-only" id="side-navigation-label">Side navigation</span>
-      <ul class="list-navigation">
-        <li>
-          <a href="javascript:;" aria-hidden="true" class="d-none"
-            >Visual design</a
-          >
-        </li>
-        <li><a href="/visual-design/color.html">Colors</a></li>
-        <li><a href="/visual-design/icons.html" class="active">Icons</a></li>
-        <li><a href="/visual-design/typography.html">Typography</a></li>
-        <li><a href="/visual-design/ui-kit.html">UI kit</a></li>
-      </ul>
-    </nav>
+    <details
+      class="side-navigation-toggle"
+      aria-label="Toggle side navigation"
+      aria-expanded="false"
+      aria-controls="side-nav-content">
+      <summary>
+        <span class="container d-block">Visual design</span>
+      </summary>
+    </details>
+    <div class="container" id="side-nav-content">
+      <nav
+        aria-labelledby="side-navigation-label"
+        class="side-navigation sticky-6 overflow-auto">
+        <span class="sr-only" id="side-navigation-label">Side navigation</span>
+        <ul class="list-navigation">
+          <li><a href="/visual-design/color.html">Colors</a></li>
+          <li><a href="/visual-design/icons.html" class="active">Icons</a></li>
+          <li><a href="/visual-design/typography.html">Typography</a></li>
+          <li><a href="/visual-design/ui-kit.html">UI kit</a></li>
+        </ul>
+      </nav>
+    </div>
   </div>
   <div class="col-lg-8 col-xl-9 p-b-lg">
     <h1 class="m-t-0" id="Icons">Icons</h1>
@@ -258,7 +264,8 @@ permalink: "visual-design/icons.html"
     <nav class="page-navigation"></nav>
 
     <p>
-      Icons are visual representations of commands, devices, directories, or common actions. We use CSS classes to customize icon color. 
+      Icons are visual representations of commands, devices, directories, or
+      common actions. We use CSS classes to customize icon color.
     </p>
 
     <h2>How to use icons</h2>
@@ -268,15 +275,15 @@ permalink: "visual-design/icons.html"
       size of the icon.
     </p>
 
-    <div class="bg-gray-50 d-flex p-a-sm p-x-md">
+    <div class="bg-default d-flex p-a-sm p-x-md">
       <span
-        class="ca-gov-icon-info font-size-30 color-p2 d-block"
+        class="ca-gov-icon-info font-size-30 link-color d-block"
         aria-hidden="true"></span>
       <div class="m-l">
         <p class="m-b-0">
           To use an icon, insert an empty span tag with the corresponding class
           name. Here's an example:
-          <code class="font-size-14 gray-900">
+          <code class="font-size-14 text-color">
             &lt;span class="ca-gov-icon-info" aria-hidden="true">&lt;/span>
           </code>
         </p>
@@ -307,9 +314,18 @@ permalink: "visual-design/icons.html"
 
     <p>You can also download these icons.</p>
     <ol>
-      <li>Go the <a href="https://github.com/Office-of-Digital-Services/California-State-Web-Template-Website/tree/master">California State Web Template Website Git Repo</a>.</li>
+      <li>
+        Go the
+        <a
+          href="https://github.com/Office-of-Digital-Services/California-State-Web-Template-Website/tree/master"
+          >California State Web Template Website Git Repo</a
+        >.
+      </li>
       <li>Select Code > Download ZIP.</li>
-      <li>In the file, go to src folder > images folder > icons folder (all the icons are in the icons folder).</li>
+      <li>
+        In the file, go to src folder > images folder > icons folder (all the
+        icons are in the icons folder).
+      </li>
     </ol>
 
     <h2>Search icons</h2>

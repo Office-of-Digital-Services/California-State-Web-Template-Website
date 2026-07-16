@@ -7,42 +7,49 @@ permalink: "download-and-setup.html"
 
 <div class="row">
   <div class="col-lg-4 col-xl-3">
-    <nav
-      aria-labelledby="side-navigation-label"
-      class="side-navigation sticky-6 overflow-auto">
-      <span class="sr-only" id="side-navigation-label">Side navigation</span>
-      <ul class="list-navigation">
-        <li>
-          <a href="/get-started.html" class="landing">Get started</a>
-        </li>
-        <li>
-          <a href="/whats-new.html">What's new in V6</a>
-        </li>
-        <li>
-          <a href="/download-and-setup.html" class="active">
-            Download and setup
-          </a>
-          <ul>
-            <li>
-              <a href="/get-started/implementation-steps.html">
-                Implementation roadmap
-              </a>
-              <a href="/get-started/npm.html">
-                NPM package
-              </a>
-              <a href="/cdn.html">
-                Content delivery network (CDN)
-              </a>
-            </li>
-          </ul>
-        </li>
-        <li>
-          <a href="/get-started/css-classes-shortcuts/">
-            CSS classes shortcuts
-          </a>
-        </li>
-      </ul>
-    </nav>
+    <details
+      class="side-navigation-toggle"
+      aria-label="Toggle side navigation"
+      aria-expanded="false"
+      aria-controls="side-nav-content">
+      <summary>
+        <span class="container d-block">Get started</span>
+      </summary>
+    </details>
+    <div class="container" id="side-nav-content">
+      <nav
+        aria-labelledby="side-navigation-label"
+        class="side-navigation sticky-6 overflow-auto">
+        <span class="sr-only" id="side-navigation-label">Side navigation</span>
+        <ul class="list-navigation">
+          <li>
+            <a href="/get-started.html" class="landing">Get started</a>
+          </li>
+          <li>
+            <a href="/whats-new.html">What's new in V6</a>
+          </li>
+          <li>
+            <a href="/download-and-setup.html" class="active">
+              Download and setup
+            </a>
+            <ul>
+              <li>
+                <a href="/get-started/implementation-steps.html">
+                  Implementation roadmap
+                </a>
+                <a href="/get-started/npm.html"> NPM package </a>
+                <a href="/cdn.html"> Content delivery network (CDN) </a>
+              </li>
+            </ul>
+          </li>
+          <li>
+            <a href="/get-started/css-classes-shortcuts/">
+              CSS classes shortcuts
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </div>
   </div>
 
   <div class="col-lg-8 col-xl-9 p-b-lg">
@@ -51,7 +58,7 @@ permalink: "download-and-setup.html"
     <nav class="page-navigation"></nav>
 
     <h2>Template Files</h2>
-    <div class="p-a-md p-b-md bg-gray-75 m-b-lg">
+    <div class="p-a-md p-b-md bg-gray-lighter m-b-lg">
       <h3 class="mt-0">State web template frameworks</h3>
       <p>
         Essential state template files without sample content. Choose your
@@ -61,7 +68,7 @@ permalink: "download-and-setup.html"
       <div class="row">
         <div class="col-md-6 mb-4">
           <div
-            class="brd-gray-200 brd-solid-1 rounded-5 h-100 transition-0_3 shadow2-hover bg-white bg-gray-100-hover pos-rel p-a">
+            class="brd-color-default brd-solid-1 rounded-5 h-100 transition-0_3 shadow2-hover bg-body bg-gray-light-hover pos-rel p-a">
             <h3 class="h5 m-t-0">
               <a
                 href="https://github.com/Office-of-Digital-Services/California-State-Web-Template-HTML"
@@ -69,7 +76,7 @@ permalink: "download-and-setup.html"
                 HTML
               </a>
             </h3>
-            <p class="font-size-16 color-black">
+            <p class="font-size-16 text-color">
               HTML base of the state web template
             </p>
           </div>
@@ -77,7 +84,7 @@ permalink: "download-and-setup.html"
 
         <div class="col-md-6 mb-4">
           <div
-            class="brd-gray-200 brd-solid-1 rounded-5 h-100 transition-0_3 shadow2-hover bg-white bg-gray-100-hover pos-rel p-a">
+            class="brd-color-default brd-solid-1 rounded-5 h-100 transition-0_3 shadow2-hover bg-body bg-gray-light-hover pos-rel p-a">
             <h3 class="h5 m-t-0">
               <a
                 href="https://github.com/Office-of-Digital-Services/California-State-Web-Template-eleventy"
@@ -85,7 +92,7 @@ permalink: "download-and-setup.html"
                 Eleventy
               </a>
             </h3>
-            <p class="font-size-16 color-black">
+            <p class="font-size-16 text-color">
               Static site generator framework
             </p>
           </div>
@@ -95,7 +102,7 @@ permalink: "download-and-setup.html"
       <div class="row">
         <div class="col-md-6 mb-4">
           <div
-            class="brd-gray-200 brd-solid-1 rounded-5 h-100 transition-0_3 shadow2-hover bg-white bg-gray-100-hover pos-rel p-a">
+            class="brd-color-default brd-solid-1 rounded-5 h-100 transition-0_3 shadow2-hover bg-body bg-gray-light-hover pos-rel p-a">
             <h3 class="h5 m-t-0">
               <a
                 href="https://github.com/Office-of-Digital-Services/California-State-Web-Template-react"
@@ -103,14 +110,14 @@ permalink: "download-and-setup.html"
                 React
               </a>
             </h3>
-            <p class="font-size-16 color-black">
+            <p class="font-size-16 text-color">
               Front end user interface framework
             </p>
           </div>
         </div>
         <div class="col-md-6 mb-4">
           <div
-            class="brd-gray-200 brd-solid-1 rounded-5 h-100 transition-0_3 shadow2-hover bg-white bg-gray-100-hover pos-rel p-a">
+            class="brd-color-default brd-solid-1 rounded-5 h-100 transition-0_3 shadow2-hover bg-body bg-gray-light-hover pos-rel p-a">
             <h3 class="h5 m-t-0">
               <a
                 href="https://github.com/Office-of-Digital-Services/California-State-Web-Template-NET-Core-MVC"
@@ -118,7 +125,7 @@ permalink: "download-and-setup.html"
                 ASP.NET Core MVC
               </a>
             </h3>
-            <p class="font-size-16 color-black">
+            <p class="font-size-16 text-color">
               Server side web application framework
             </p>
           </div>
@@ -127,10 +134,14 @@ permalink: "download-and-setup.html"
     </div>
 
     <div class="card">
-      <div class="card-body brd-solid-1 brd-gray-200 d-flex flex-column">
+      <div
+        class="card-body bg-body brd-solid-1 brd-color-default d-flex flex-column">
         <h3 class="h4 m-b-sm m-t-0">Sample template content and files</h3>
         <p class="m-b">
-          An HTML starter site contains sample pages. These include local references to the State Web Template CSS and JavaScript files. The source code contains comments to easily identify structural components and page sections.
+          An HTML starter site contains sample pages. These include local
+          references to the State Web Template CSS and JavaScript files. The
+          source code contains comments to easily identify structural components
+          and page sections.
         </p>
         <div class="text-left">
           <a
@@ -149,15 +160,16 @@ permalink: "download-and-setup.html"
     </div>
 
     <div class="card">
-      <div class="card-body brd-solid-1 brd-gray-200 d-flex flex-column">
+      <div
+        class="card-body bg-body brd-solid-1 brd-color-default d-flex flex-column">
         <h3 class="h4 m-b-sm m-t-0">NPM Package</h3>
         <p class="m-b">
-          You can use NPM registry to install the California State Web Template core package. This contains all the necessary State Web Template CSS, JavaScript and fonts files.
+          You can use NPM registry to install the California State Web Template
+          core package. This contains all the necessary State Web Template CSS,
+          JavaScript and fonts files.
         </p>
         <div class="text-left">
-          <a
-            class="btn btn-outline-primary p-x"
-            href="/get-started/npm.html">
+          <a class="btn btn-outline-primary p-x" href="/get-started/npm.html">
             NPM package information
           </a>
         </div>
@@ -165,10 +177,13 @@ permalink: "download-and-setup.html"
     </div>
 
     <div class="card">
-      <div class="card-body brd-solid-1 brd-gray-200 d-flex flex-column">
+      <div
+        class="card-body bg-body brd-solid-1 brd-color-default d-flex flex-column">
         <h3 class="h4 m-b-sm m-t-0">Content delivery network (CDN)</h3>
         <p class="m-b">
-          You can use our CDN links to load essential static resources from the template libraries. This can reduce latency, increase performance, and provide the fastest site experience.
+          You can use our CDN links to load essential static resources from the
+          template libraries. This can reduce latency, increase performance, and
+          provide the fastest site experience.
         </p>
         <div class="text-left">
           <a class="btn btn-outline-primary p-x" href="/cdn.html">
@@ -188,7 +203,7 @@ permalink: "download-and-setup.html"
       title="Implementation steps">
       <div class="p-a">
         <h3 class="h5 m-t-0">Implementation steps</h3>
-        <p class="font-size-16 color-black">
+        <p class="font-size-16 text-color">
           High-level steps to take when you upgrade to the latest template.
         </p>
       </div>

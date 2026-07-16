@@ -7,22 +7,30 @@ permalink: "visual-design/ui-kit.html"
 
 <div class="row">
   <div class="col-lg-4 col-xl-3">
-    <nav
-      aria-labelledby="side-navigation-label"
-      class="side-navigation sticky-6 overflow-auto">
-      <span class="sr-only" id="side-navigation-label">Side navigation</span>
-      <ul class="list-navigation">
-        <li>
-          <a href="javascript:;" aria-hidden="true" class="d-none"
-            >Visual design</a
-          >
-        </li>
-        <li><a href="/visual-design/color.html">Colors</a></li>
-        <li><a href="/visual-design/icons.html">Icons</a></li>
-        <li><a href="/visual-design/typography.html">Typography</a></li>
-        <li><a href="/visual-design/ui-kit.html" class="active">UI kit</a></li>
-      </ul>
-    </nav>
+    <details
+      class="side-navigation-toggle"
+      aria-label="Toggle side navigation"
+      aria-expanded="false"
+      aria-controls="side-nav-content">
+      <summary>
+        <span class="container d-block">Visual design</span>
+      </summary>
+    </details>
+    <div class="container" id="side-nav-content">
+      <nav
+        aria-labelledby="side-navigation-label"
+        class="side-navigation sticky-6 overflow-auto">
+        <span class="sr-only" id="side-navigation-label">Side navigation</span>
+        <ul class="list-navigation">
+          <li><a href="/visual-design/color.html">Colors</a></li>
+          <li><a href="/visual-design/icons.html">Icons</a></li>
+          <li><a href="/visual-design/typography.html">Typography</a></li>
+          <li>
+            <a href="/visual-design/ui-kit.html" class="active">UI kit</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
   </div>
   <div class="col-lg-8 col-xl-9 p-b-lg">
     <h1 class="m-t-0">UI kit</h1>

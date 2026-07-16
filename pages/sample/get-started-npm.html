@@ -7,25 +7,36 @@ permalink: "/get-started/npm.html"
 
 <div class="row">
   <div class="col-lg-4 col-xl-3">
-    <nav
-      aria-labelledby="side-navigation-label"
-      class="side-navigation sticky-6 overflow-auto">
-      <span class="sr-only" id="side-navigation-label">Side navigation</span>
-      <ul class="list-navigation">
-        <li>
-          <a href="/download-and-setup.html" class="landing back">
-            Download and setup
-          </a>
-        </li>
-        <li>
-          <a href="/get-started/implementation-steps.html">
-            Implementation roadmap
-          </a>
-          <a href="/get-started/npm.html" class="active"> NPM package </a>
-          <a href="/cdn.html"> Content delivery network (CDN) </a>
-        </li>
-      </ul>
-    </nav>
+    <details
+      class="side-navigation-toggle"
+      aria-label="Toggle side navigation"
+      aria-expanded="false"
+      aria-controls="side-nav-content">
+      <summary>
+        <span class="container d-block">Download and setup</span>
+      </summary>
+    </details>
+    <div class="container" id="side-nav-content">
+      <nav
+        aria-labelledby="side-navigation-label"
+        class="side-navigation sticky-6 overflow-auto">
+        <span class="sr-only" id="side-navigation-label">Side navigation</span>
+        <ul class="list-navigation">
+          <li>
+            <a href="/download-and-setup.html" class="landing back">
+              Download and setup
+            </a>
+          </li>
+          <li>
+            <a href="/get-started/implementation-steps.html">
+              Implementation roadmap
+            </a>
+            <a href="/get-started/npm.html" class="active"> NPM package </a>
+            <a href="/cdn.html"> Content delivery network (CDN) </a>
+          </li>
+        </ul>
+      </nav>
+    </div>
   </div>
 
   <div class="col-lg-8 col-xl-9 p-b-lg">
@@ -56,8 +67,8 @@ import "@cagovweb/state-template";
     <pre><code>// import with specific theme
 // Core CSS first
 import "@cagovweb/state-template/dist/css/cagov.core.css";
-// Choose Theme
-import "@cagovweb/state-template/dist/css/colortheme-oceanside.css";
+// Add dark theme fallback (optional)
+import "@cagovweb/state-template/dist/css/colortheme-ukiahdark.css";
 // Core JS last
 import "@cagovweb/state-template/dist/js/cagov.core.js";
 </code></pre>
@@ -89,7 +100,7 @@ import "@cagovweb/state-template/dist/js/cagov.core.js";
       In your layout files you can reference the files in the lib folder:
     </p>
     <pre><span class="text-accent-p2">&lt;link</span> <span class="text-accent5">rel=</span><span class="text-accent7">"stylesheet"</span> <span class="text-accent5">href=</span><span class="text-accent7">"~/lib/state-template/dist/css/cagov.core.min.css" </span><span class="text-accent-p2">&gt;</span>
-<span class="text-accent-p2">&lt;link</span> <span class="text-accent5">rel=</span><span class="text-accent7">"stylesheet"</span> <span class="text-accent5">href=</span><span class="text-accent7">"~/lib/state-template/dist/css/colortheme-oceanside.min.css"</span><span class="text-accent-p2">&gt;</span>
+<span class="text-accent-p2">&lt;link</span> <span class="text-accent5">rel=</span><span class="text-accent7">"stylesheet"</span> <span class="text-accent5">href=</span><span class="text-accent7">"~/lib/state-template/css/colortheme-ukiahdark.min.css"</span> <span class="text-accent5">media=</span><span class="text-accent7">"(prefers-color-scheme: dark)"</span> <span class="text-accent-p2">/&gt;</span>
 <span class="text-accent-p2">&lt;script</span> <span class="text-accent5">src=</span><span class="text-accent7">"~/lib/state-template/dist/js/cagov.core.min.js"</span><span class="text-accent-p2">&gt;&lt;/script&gt;</span>
 </pre>
 
@@ -112,7 +123,7 @@ import "@cagovweb/state-template/dist/js/cagov.core.js";
   ...
   <span class="text-muted">&lt;!-- State Web Template core files --&gt;</span>
   <span class="text-accent-p2">&lt;link</span> <span class="text-accent5">rel=</span><span class="text-accent7">"stylesheet"</span> <span class="text-accent5">href=</span><span class="text-accent7">"/state-template/css/cagov.core.min.css"</span><span class="text-accent-p2">&gt;</span>
-  <span class="text-accent-p2">&lt;link</span> <span class="text-accent5">rel=</span><span class="text-accent7">"stylesheet"</span> <span class="text-accent5">href=</span><span class="text-accent7">"/state-template/css/colortheme-oceanside.css"</span><span class="text-accent-p2">&gt;</span>
+  <span class="text-accent-p2">&lt;link</span> <span class="text-accent5">rel=</span><span class="text-accent7">"stylesheet"</span> <span class="text-accent5">href=</span><span class="text-accent7">"/state-template/css/colortheme-ukiahdark.min.css"</span> <span class="text-accent5">media=</span><span class="text-accent7">"(prefers-color-scheme: dark)"</span> <span class="text-accent-p2">/&gt;</span>
 
   <span class="text-accent-p2">&lt;script</span> <span class="text-accent5">src=</span><span class="text-accent7">"/state-template/js/cagov.core.min.js"</span><span class="text-accent-p2">&gt;&lt;/script&gt;</span>
 

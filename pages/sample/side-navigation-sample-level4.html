@@ -45,78 +45,91 @@ permalink: "/components/side-navigation-sample-level4.html"
 
 <div class="row">
   <div class="col-lg-4 col-xl-3">
-    <nav aria-label="list navigation" class="side-navigation">
-      <ul>
-        <li>
-          <a
-            href="/components/side-navigation-sample-level3.html"
-            rel="noindex"
-            class="landing back">
-            Planning
-          </a>
-        </li>
-        <li>
-          <a href="javascript:;" class="gray-200" aria-disabled="true">
-            Budget
-          </a>
-        </li>
-        <li>
-          <a href="javascript:;" class="gray-200" aria-disabled="true">
-            Guest list
-          </a>
-        </li>
-        <li>
-          <a href="javascript:;" class="gray-200" aria-disabled="true">
-            Invitations
-          </a>
-        </li>
-        <li>
-          <a href="javascript:;" class="gray-200" aria-disabled="true">Decor</a>
-        </li>
-        <li>
-          <a
-            href="/components/side-navigation-sample-level4.html"
-            rel="noindex"
-            class="active">
-            Food and drinks
-          </a>
-          <ul>
-            <li>
-              <a href="javascript:;" class="gray-200" aria-disabled="true">
-                Appetizers
-              </a>
-            </li>
-            <li>
-              <a href="javascript:;" class="gray-200" aria-disabled="true">
-                Main course
-              </a>
-            </li>
-            <li>
-              <a href="javascript:;" class="gray-200" aria-disabled="true">
-                Side dishes
-              </a>
-            </li>
-            <li>
-              <a
-                href="/components/side-navigation-sample-level5.html"
-                rel="noindex">
-                Dessert
-              </a>
-            </li>
-            <li>
-              <a href="javascript:;" class="gray-200" aria-disabled="true">
-                Drinks
-              </a>
-            </li>
-          </ul>
-        </li>
-        <li>
-          <a href="javascript:;" class="gray-200" aria-disabled="true">
-            Activities
-          </a>
-        </li>
-      </ul>
-    </nav>
+    <details
+      class="side-navigation-toggle"
+      aria-label="Toggle side navigation"
+      aria-expanded="false"
+      aria-controls="side-nav-content">
+      <summary>
+        <span class="container d-block">Planning</span>
+      </summary>
+    </details>
+    <div class="container" id="side-nav-content">
+      <nav aria-label="list navigation" class="side-navigation">
+        <ul>
+          <li>
+            <a
+              href="/components/side-navigation-sample-level3.html"
+              rel="noindex"
+              class="landing back">
+              Planning
+            </a>
+          </li>
+          <li>
+            <a href="javascript:;" class="gray-200" aria-disabled="true">
+              Budget
+            </a>
+          </li>
+          <li>
+            <a href="javascript:;" class="gray-200" aria-disabled="true">
+              Guest list
+            </a>
+          </li>
+          <li>
+            <a href="javascript:;" class="gray-200" aria-disabled="true">
+              Invitations
+            </a>
+          </li>
+          <li>
+            <a href="javascript:;" class="gray-200" aria-disabled="true"
+              >Decor</a
+            >
+          </li>
+          <li>
+            <a
+              href="/components/side-navigation-sample-level4.html"
+              rel="noindex"
+              class="active">
+              Food and drinks
+            </a>
+            <ul>
+              <li>
+                <a href="javascript:;" class="gray-200" aria-disabled="true">
+                  Appetizers
+                </a>
+              </li>
+              <li>
+                <a href="javascript:;" class="gray-200" aria-disabled="true">
+                  Main course
+                </a>
+              </li>
+              <li>
+                <a href="javascript:;" class="gray-200" aria-disabled="true">
+                  Side dishes
+                </a>
+              </li>
+              <li>
+                <a
+                  href="/components/side-navigation-sample-level5.html"
+                  rel="noindex">
+                  Dessert
+                </a>
+              </li>
+              <li>
+                <a href="javascript:;" class="gray-200" aria-disabled="true">
+                  Drinks
+                </a>
+              </li>
+            </ul>
+          </li>
+          <li>
+            <a href="javascript:;" class="gray-200" aria-disabled="true">
+              Activities
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </div>
   </div>
   <div class="col-lg-8 col-xl-9">
     <h1 class="m-t-0">Food and drinks</h1>

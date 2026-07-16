@@ -8,22 +8,36 @@ permalink: "structure.html"
 <div class="row">
   <div class="col-lg-4 col-xl-3 pb-lg-5" role="complementary">
     <!-- Side navigation -->
-    <nav aria-labelledby="navigation-list" class="side-navigation sticky-6">
-      <ul class="list-navigation">
-        <li>
-          <a href="/structure.html" id="navigation-list" class="active landing">
-            Structure
-            <span class="sr-only">landing page</span>
-          </a>
-        </li>
-        <li><a href="/structure/utility-header.html">Utility header</a></li>
-        <li><a href="/structure/site-header.html">Site header</a></li>
-        <li><a href="/structure/mobile-controls.html">Mobile controls</a></li>
-        <li><a href="/structure/search.html">Search</a></li>
-        <li><a href="/structure/site-navigation.html">Site navigation</a></li>
-        <li><a href="/structure/footer.html">Footer</a></li>
-      </ul>
-    </nav>
+    <details
+      class="side-navigation-toggle"
+      aria-label="Toggle side navigation"
+      aria-expanded="false"
+      aria-controls="side-nav-content">
+      <summary>
+        <span class="container d-block">Structure</span>
+      </summary>
+    </details>
+    <div class="container" id="side-nav-content">
+      <nav aria-labelledby="navigation-list" class="side-navigation sticky-6">
+        <ul class="list-navigation">
+          <li>
+            <a
+              href="/structure.html"
+              id="navigation-list"
+              class="active landing">
+              Structure
+              <span class="sr-only">landing page</span>
+            </a>
+          </li>
+          <li><a href="/structure/utility-header.html">Utility header</a></li>
+          <li><a href="/structure/site-header.html">Site header</a></li>
+          <li><a href="/structure/mobile-controls.html">Mobile controls</a></li>
+          <li><a href="/structure/search.html">Search</a></li>
+          <li><a href="/structure/site-navigation.html">Site navigation</a></li>
+          <li><a href="/structure/footer.html">Footer</a></li>
+        </ul>
+      </nav>
+    </div>
   </div>
   <div class="col-lg-8 col-xl-9 p-b-lg">
     <h1 class="m-t-0">Structure</h1>
@@ -146,6 +160,7 @@ permalink: "structure.html"
 
     <span class="text-success">&lt;--State Template core files--&gt;</span>
     <span class="text-accent-p2">&lt;link</span> <span class="text-info">rel=</span><span class="text-accent7">"stylesheet"</span> <span class="text-info">href=</span><span class="text-accent7">"/state-template/css/cagov.core.min.css"</span> <span class="text-accent-p2">/&gt;</span>
+    <span class="text-accent-p2">&lt;link</span> <span class="text-info">rel=</span><span class="text-accent7">"stylesheet"</span> <span class="text-info">href=</span><span class="text-accent7">"/state-template/css/colortheme-ukiahdark.min.css"</span> <span class="text-info">media=</span><span class="text-accent7">"(prefers-color-scheme: dark)"</span> <span class="text-accent-p2">/&gt;</span>
     <span class="text-accent-p2">&lt;script</span> <span class="text-info">type=</span><span class="text-accent7">"text/javascript"</span> <span class="text-info">src=</span><span class="text-accent7">"/state-template/js/cagov.core.min.js"</span> <span class="text-info">defer</span><span class="text-accent-p2">&gt;</span><span class="text-accent-p2">&lt;/script&gt;</span>
 
     <span class="text-success">&lt;--Google analytics code goes here--&gt;</span>
@@ -187,7 +202,7 @@ permalink: "structure.html"
       <div class="col-md-4 m-t-md">
         <a
           href="/structure/utility-header.html"
-          class="no-underline d-block color-gray-dark brd-gray-light brd-solid-1 rounded-5 h-100 transition-0_3 shadow2-hover color-primary color-primary-hover"
+          class="no-underline d-block color-gray-dark brd-gray-light brd-solid-1 rounded-5 h-100 transition-0_3 shadow2-hover color-primary color-primary-hover bg-default-hover"
           title="Utility Header component">
           <div class="p-a-md d-flex align-content-center">
             <img
@@ -197,7 +212,7 @@ permalink: "structure.html"
           </div>
           <div class="p-a">
             <h3 class="h5 m-t-0">Utility header</h3>
-            <p class="font-size-16 color-black">
+            <p class="font-size-16 text-color">
               Places a standard header at the very top of your website.
             </p>
           </div>
@@ -207,7 +222,7 @@ permalink: "structure.html"
       <div class="col-md-4 m-t-md">
         <a
           href="/structure/site-header.html"
-          class="no-underline d-block color-gray-dark brd-gray-light brd-solid-1 rounded-5 h-100 transition-0_3 shadow2-hover color-primary color-primary-hover"
+          class="no-underline d-block color-gray-dark brd-gray-light brd-solid-1 rounded-5 h-100 transition-0_3 shadow2-hover color-primary color-primary-hover bg-default-hover"
           title="Site Header component">
           <div class="p-a-md d-flex align-content-center">
             <img
@@ -217,7 +232,7 @@ permalink: "structure.html"
           </div>
           <div class="p-a">
             <h3 class="h5 m-t-0">Site header</h3>
-            <p class="font-size-16 color-black">
+            <p class="font-size-16 text-color">
               Provides space for your site’s name at the top of your website.
             </p>
           </div>
@@ -226,8 +241,9 @@ permalink: "structure.html"
       <div class="col-md-4 m-t-md">
         <a
           href="/structure/mobile-controls.html"
-          class="no-underline d-block color-gray-dark brd-gray-light brd-solid-1 rounded-5 h-100 transition-0_3 shadow2-hover color-primary color-primary-hover"
-          title="Mobile Controls component">
+          title="Mobile Controls component"
+          class="no-underline d-block color-gray-dark brd-gray-light brd-solid-1 rounded-5 h-100 transition-0_3 shadow2-hover color-primary color-primary-hover bg-default-hover"
+          title="Search component">
           <div class="p-a-md d-flex align-content-center">
             <img
               src="/images/components/icon-mobile.jpg"
@@ -236,7 +252,7 @@ permalink: "structure.html"
           </div>
           <div class="p-a">
             <h3 class="h5 m-t-0">Mobile controls</h3>
-            <p class="font-size-16 color-black">
+            <p class="font-size-16 text-color">
               Expand and collapse search and navigation sections in mobile view.
             </p>
           </div>
@@ -248,7 +264,7 @@ permalink: "structure.html"
       <div class="col-md-4 m-t-md">
         <a
           href="/structure/search.html"
-          class="no-underline d-block color-gray-dark brd-gray-light brd-solid-1 rounded-5 h-100 transition-0_3 shadow2-hover color-primary color-primary-hover"
+          class="no-underline d-block color-gray-dark brd-gray-light brd-solid-1 rounded-5 h-100 transition-0_3 shadow2-hover color-primary color-primary-hover bg-default-hover"
           title="Search component">
           <div class="p-a-md d-flex align-content-center">
             <img
@@ -258,7 +274,7 @@ permalink: "structure.html"
           </div>
           <div class="p-a">
             <h3 class="h5 m-t-0">Search</h3>
-            <p class="font-size-16 color-black">
+            <p class="font-size-16 text-color">
               Allows visitors to search for specific content using keywords or
               phrases.
             </p>
@@ -269,7 +285,7 @@ permalink: "structure.html"
       <div class="col-md-4 m-t-md">
         <a
           href="/structure/site-navigation.html"
-          class="no-underline d-block color-gray-dark brd-gray-light brd-solid-1 rounded-5 h-100 transition-0_3 shadow2-hover color-primary color-primary-hover"
+          class="no-underline d-block color-gray-dark brd-gray-light brd-solid-1 rounded-5 h-100 transition-0_3 shadow2-hover color-primary color-primary-hover bg-default-hover"
           title="Site Navigation component">
           <div class="p-a-md d-flex align-content-center">
             <img
@@ -279,7 +295,7 @@ permalink: "structure.html"
           </div>
           <div class="p-a">
             <h3 class="h5 m-t-0">Site navigation</h3>
-            <p class="font-size-16 color-black">
+            <p class="font-size-16 text-color">
               Appears at the top of every page on your website and links to
               pages in the site.
             </p>
@@ -289,7 +305,7 @@ permalink: "structure.html"
       <div class="col-md-4 m-t-md">
         <a
           href="/structure/footer.html"
-          class="no-underline d-block color-gray-dark brd-gray-light brd-solid-1 rounded-5 h-100 transition-0_3 shadow2-hover color-primary color-primary-hover"
+          class="no-underline d-block color-gray-dark brd-gray-light brd-solid-1 rounded-5 h-100 transition-0_3 shadow2-hover color-primary color-primary-hover bg-default-hover"
           title="Global Footer component">
           <div class="p-a-md d-flex align-content-center">
             <img
@@ -299,7 +315,7 @@ permalink: "structure.html"
           </div>
           <div class="p-a">
             <h3 class="h5 m-t-0">Footer</h3>
-            <p class="font-size-16 color-black">
+            <p class="font-size-16 text-color">
               Places a standard footer at the very bottom of your website.
             </p>
           </div>

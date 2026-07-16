@@ -8,21 +8,29 @@ permalink: "visual-design/typography.html"
 <div class="row">
   <div class="col-lg-4 col-xl-3 pb-lg-5" role="complementary">
     <!-- Side navigation -->
-    <nav aria-label="Side navigation" class="side-navigation sticky-6">
-      <ul class="list-navigation">
-        <li>
-          <a href="javascript:;" aria-hidden="true" class="d-none"
-            >Visual design</a
-          >
-        </li>
-        <li><a href="/visual-design/color.html">Colors</a></li>
-        <li><a href="/visual-design/icons.html">Icons</a></li>
-        <li>
-          <a href="/visual-design/typography.html" class="active">Typography</a>
-        </li>
-        <li><a href="/visual-design/ui-kit.html">UI kit</a></li>
-      </ul>
-    </nav>
+    <details
+      class="side-navigation-toggle"
+      aria-label="Toggle side navigation"
+      aria-expanded="false"
+      aria-controls="side-nav-content">
+      <summary>
+        <span class="container d-block">Visual design</span>
+      </summary>
+    </details>
+    <div class="container" id="side-nav-content">
+      <nav aria-label="Side navigation" class="side-navigation sticky-6">
+        <ul class="list-navigation">
+          <li><a href="/visual-design/color.html">Colors</a></li>
+          <li><a href="/visual-design/icons.html">Icons</a></li>
+          <li>
+            <a href="/visual-design/typography.html" class="active"
+              >Typography</a
+            >
+          </li>
+          <li><a href="/visual-design/ui-kit.html">UI kit</a></li>
+        </ul>
+      </nav>
+    </div>
   </div>
   <div class="col-lg-8 col-xl-9 p-b-lg">
     <h1 id="Typography" class="m-t-0">Typography</h1>
@@ -197,7 +205,7 @@ system-ui, -apple-system, "Segoe UI", "Roboto", "Helvetica Neue", "Noto Sans", "
     </p>
 
     <div class="row mt-4">
-      <div class="col-md-4">
+      <div class="col-xl-4">
         <div class="example-heading pos-rel align-bottom m-y height-60">
           <div class="h1 pos-abs bottom-0 m-a-0">Heading 1</div>
         </div>
@@ -212,7 +220,7 @@ system-ui, -apple-system, "Segoe UI", "Roboto", "Helvetica Neue", "Noto Sans", "
         </div>
       </div>
 
-      <div class="col-md-4">
+      <div class="col-xl-4">
         <div class="example-heading pos-rel align-bottom m-y height-60">
           <div class="h2 pos-abs bottom-0 m-a-0">Heading 2</div>
         </div>
@@ -227,7 +235,7 @@ system-ui, -apple-system, "Segoe UI", "Roboto", "Helvetica Neue", "Noto Sans", "
         </div>
       </div>
 
-      <div class="col-md-4">
+      <div class="col-xl-4">
         <div class="example-heading pos-rel align-bottom m-y height-60">
           <div class="h3 pos-abs bottom-0 m-a-0">Heading 3</div>
         </div>
@@ -244,7 +252,7 @@ system-ui, -apple-system, "Segoe UI", "Roboto", "Helvetica Neue", "Noto Sans", "
     </div>
 
     <div class="row p-b-lg">
-      <div class="col-md-4">
+      <div class="col-xl-4">
         <div class="example-heading pos-rel align-bottom m-y height-60">
           <div class="h4 pos-abs bottom-0 m-a-0">Heading 4</div>
         </div>
@@ -259,7 +267,7 @@ system-ui, -apple-system, "Segoe UI", "Roboto", "Helvetica Neue", "Noto Sans", "
         </div>
       </div>
 
-      <div class="col-md-4">
+      <div class="col-xl-4">
         <div class="example-heading pos-rel align-bottom m-y height-60">
           <div class="h5 pos-abs bottom-0 m-a-0">Heading 5</div>
         </div>
@@ -274,7 +282,7 @@ system-ui, -apple-system, "Segoe UI", "Roboto", "Helvetica Neue", "Noto Sans", "
         </div>
       </div>
 
-      <div class="col-md-4">
+      <div class="col-xl-4">
         <div class="example-heading pos-rel align-bottom m-y height-60">
           <div class="h6 pos-abs bottom-0 m-a-0">Heading 6</div>
         </div>

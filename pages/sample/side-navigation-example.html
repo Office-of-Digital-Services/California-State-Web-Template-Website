@@ -1,0 +1,116 @@
+﻿---
+title: Side navigation example with full width H1 banner header
+landing: Components
+layout: landing.njk
+permalink: "/components/side-navigation-example.html"
+---
+
+<!-- h1 header banner -->
+<div class="bg-primary">
+  <div class="container p-t-md">
+    <nav aria-label="You are here" class="breadcrumbs">
+      <ol>
+        <li>
+          <a href="/index.html" title="Home page">Home</a>
+        </li>
+        <li>H1 banner header side navigation</li>
+      </ol>
+    </nav>
+    <h1 class="m-t-0 p-b-lg mb-0">H1 banner header side navigation example</h1>
+  </div>
+</div>
+
+<!-- Page layout -->
+<div class="container-lg px-0 pb-5">
+  <div class="row">
+    <!-- ASIDE: side navigation -->
+    <aside class="col-12 col-lg-3 pt-lg-5">
+      <details
+        class="side-navigation-toggle"
+        aria-label="Toggle side navigation"
+        aria-expanded="false"
+        aria-controls="side-nav-content">
+        <summary>
+          <span class="container d-block">Side navigation</span>
+        </summary>
+      </details>
+      <div class="container" id="side-nav-content">
+        <nav aria-label="Side navigation" class="side-navigation">
+          <ul>
+            <li>
+              <a href="/top-task-1/" class="landing active" aria-current="page"
+                >Top task</a
+              >
+            </li>
+            <li>
+              <a href="/top-task-1/content-page-1.html">Content page 1</a>
+            </li>
+            <li>
+              <ul>
+                <li>
+                  <a href="/top-task-1/content-page-2.html">Content page 2</a>
+                </li>
+              </ul>
+            </li>
+            <li>
+              <a href="/top-task-1/content-page-3.html">Content page 3</a>
+            </li>
+            <li>
+              <a href="/top-task-1/content-page-4.html">Content page 4</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </aside>
+
+    <!-- Main content -->
+    <div class="col-12 col-lg-9">
+      <main class="main-primary" id="main">
+        <div class="container pt-5 mb-5">
+          <p class="lead">
+            To make your side navigation work with a full-width banner header in
+            mobile view, you need to use
+            <code>container-lg</code>
+            class for your main content page layout that will follow after full
+            width h1 banner header. You also need to use
+            <code>col-12</code>
+            class for your side navigation and main content columns. This will
+            make your side navigation and main content full width on mobile
+            devices.
+          </p>
+
+          <h2>Page layout code sample</h2>
+
+          <pre>
+            <code>
+<!-- Full width h1 header banner -->
+<div class="bg-primary">
+  <div class="container p-t-md">
+    <h1 class="m-t-0 p-b-lg mb-0">H1 banner</h1>
+  </div>
+</div>
+
+<!-- Page layout -->
+<div class="container-lg px-0">
+  <div class="row">
+    <aside class="col-12 col-lg-3 pt-lg-5">
+      <!-- side navigation code here -->
+    </aside>
+
+    <!-- Main content --> 
+    <div class="col-12 col-lg-9">
+      <main class="main-primary" id="main">
+        <div class="container pt-5 mb-5">
+          <!-- main content code here -->
+        </div>
+      </main>
+    </div>
+  </div>
+</div>
+            </code>
+          </pre>
+        </div>
+      </main>
+    </div>
+  </div>
+</div>

@@ -57,8 +57,12 @@
     U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }
 
+:root {
+  color-scheme: light dark;
+}
+
 .branding .header-organization-banner a .logo-assets .logo-text .logo-dept {
-  color: var(--color-p2);
+  color: var(--color-primary, var(--color-p2));
 }
 
 .branding .header-organization-banner a .logo-assets .logo-img {
@@ -66,7 +70,7 @@
 }
 
 .branding .header-organization-banner a .logo-assets .logo-img path {
-  fill: var(--color-p2);
+  fill: var(--color-primary, var(--color-p2));
 }
 
 @media (min-width: 992px) {
