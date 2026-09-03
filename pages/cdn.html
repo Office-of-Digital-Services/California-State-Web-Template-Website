@@ -16,7 +16,7 @@ permalink: "cdn.html"
         <span class="container d-block">Download and setup</span>
       </summary>
     </details>
-    <div class="container" id="side-nav-content">
+    <div class="container px-0" id="side-nav-content">
       <nav
         aria-labelledby="side-navigation-label"
         class="side-navigation sticky-6 overflow-auto">
@@ -63,7 +63,7 @@ permalink: "cdn.html"
 
     <h2>Examples</h2>
     <h3>Using core CSS file</h3>
-    <pre><span class="text-accent-p2">&lt;link</span> <span class="text-accent3">href=</span><span class="text-accent7">"https://cdn.cdt.ca.gov/cdt/statetemplate/6.5.5/css/cagov.core.min.css" <span class="text-accent3">rel=</span><span class="text-accent7">"stylesheet"</span> <span class="text-accent3">integrity=</span><span class="text-accent7">"sha256-sl5k84ZjlTXQZNs0cQEavieOU/GuH9/ovmuSbeONdFY="</span> <span class="text-accent3">crossorigin=</span><span class="text-accent7">"anonymous"</span></span><span class="text-accent-p2">&gt;</span></pre>
+    <pre><span class="text-accent-p2">&lt;link</span> <span class="text-accent3">href=</span><span class="text-accent7">"https://cdn.cdt.ca.gov/cdt/statetemplate/6.6.0/css/cagov.core.min.css" <span class="text-accent3">rel=</span><span class="text-accent7">"stylesheet"</span> <span class="text-accent3">integrity=</span><span class="text-accent7">"sha256-jVlCrCFbS1g8ZzECHPDAUlJghxo/ZjiQexLYoiRr82k="</span> <span class="text-accent3">crossorigin=</span><span class="text-accent7">"anonymous"</span></span><span class="text-accent-p2">&gt;</span></pre>
 
     <h4>Optional color theme CSS</h4>
     <p>
@@ -73,10 +73,21 @@ permalink: "cdn.html"
       the <a href="/visual-design/color.html">Colors</a> page.
     </p>
 
-    <pre><span class="text-accent-p2">&lt;link</span> <span class="text-accent3">href=</span><span class="text-accent7">"https://cdn.cdt.ca.gov/cdt/statetemplate/6.5.5/css/colortheme-oceanside.min.css"</span> <span class="text-accent3">rel=</span><span class="text-accent7">"stylesheet"</span>  <span class="text-accent3">integrity=</span><span class="text-accent7">"sha256-qQZPn1EYL0e5S3aEqiYN1bHdh5BVZIZPb7kRe5ccbp8="</span> <span class="text-accent3">crossorigin=</span><span class="text-accent7">"anonymous"</span><span class="text-accent-p2">&gt;</span><br /></pre>
+    <pre><span class="text-accent-p2">&lt;link</span> <span class="text-accent3">href=</span><span class="text-accent7">"https://cdn.cdt.ca.gov/cdt/statetemplate/6.6.0/css/colortheme-oceanside.min.css"</span> <span class="text-accent3">rel=</span><span class="text-accent7">"stylesheet"</span>  <span class="text-accent3">integrity=</span><span class="text-accent7">"sha256-I+2cV4C0BSuWRUshWYH83pKA72bh/TkOaWHg13wtgPc="</span> <span class="text-accent3">crossorigin=</span><span class="text-accent7">"anonymous"</span><span class="text-accent-p2">&gt;</span><br /></pre>
+
+    <h4>Optional dark theme fallback CSS</h4>
+    <p>
+      You can optionally load a dark color theme for visitors who use dark mode
+      at the operating system level. The
+      <code>media="(prefers-color-scheme: dark)"</code> condition applies this
+      stylesheet only when dark mode is preferred; otherwise, your default color
+      theme remains in use. This gives you a progressive, non-breaking fallback
+      for dark mode without changing your standard theme setup.
+    </p>
+    <pre><span class="text-accent-p2">&lt;link</span> <span class="text-accent3">href=</span><span class="text-accent7">"https://cdn.cdt.ca.gov/cdt/statetemplate/6.6.0/css/colortheme-ukiahdark.min.css"</span> <span class="text-accent3">rel=</span><span class="text-accent7">"stylesheet"</span>  <span class="text-accent3">integrity=</span><span class="text-accent7">"sha256-6p7GL2s68Wz3HwCpzbRmH6qWZ/80bukvmv/izAtIRK8="</span> <span class="text-accent3">crossorigin=</span><span class="text-accent7">"anonymous"</span> <span class="text-accent3">media=</span><span class="text-accent7">"(prefers-color-scheme: dark)"</span> <span class="text-accent-p2">/&gt;</span></pre>
 
     <h3>Using JS files</h3>
-    <pre><span class="text-accent-p2">&lt;script</span> <span class="text-accent3">src=</span><span class="text-accent7">"https://cdn.cdt.ca.gov/cdt/statetemplate/6.5.5/js/cagov.core.min.js"</span> <span class="text-accent3">integrity=</span><span class="text-accent7">"sha256-lk7aRdDqQaM3lRyR9FNIz2BDZHOCLTOHYr3wPpHn+uU="</span> <span class="text-accent3">defer</span> <span class="text-accent3">crossorigin=</span><span class="text-accent7">"anonymous"</span><span class="text-accent-p2">&gt;&lt;/script&gt;</span></pre>
+    <pre><span class="text-accent-p2">&lt;script</span> <span class="text-accent3">src=</span><span class="text-accent7">"https://cdn.cdt.ca.gov/cdt/statetemplate/6.6.0/js/cagov.core.min.js"</span> <span class="text-accent3">integrity=</span><span class="text-accent7">"sha256-B0S5icaWNAhVYi/0q1iRyjtmbaACFJbLQgfWyJ2bxNk="</span> <span class="text-accent3">defer</span> <span class="text-accent3">crossorigin=</span><span class="text-accent7">"anonymous"</span><span class="text-accent-p2">&gt;&lt;/script&gt;</span></pre>
 
     <h3>Crossorigin anonymous</h3>
     <p>
@@ -111,11 +122,12 @@ permalink: "cdn.html"
      <span class="text-accent-p2">&lt;link</span> <span class="text-accent3">rel=</span><span class="text-accent7">"preconnect"</span> <span class="text-accent3">href=</span><span class="text-accent7">"https://fonts.gstatic.com"</span> <span class="text-accent3">crossorigin</span><span class="text-accent-p2">&gt;</span>
      <span class="text-accent-p2">&lt;link</span> <span class="text-accent3">rel=</span><span class="text-accent7">"stylesheet"</span> <span class="text-accent3">href=</span><span class="text-accent7">"https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,100..900;1,100..900&amp;display=block"</span><span class="text-accent-p2">&gt;</span>
 
-     <span class="text-muted">&lt;!-- State Template CDN CSS --&gt;</span>
-     <span class="text-accent-p2">&lt;link</span> <span class="text-accent3">rel=</span><span class="text-accent7">"stylesheet"</span> <span class="text-accent3">href=</span><span class="text-accent7">"https://cdn.cdt.ca.gov/cdt/statetemplate/6.5.5/css/cagov.core.min.css"</span> <span class="text-accent3">integrity=</span><span class="text-accent7">"sha256-sl5k84ZjlTXQZNs0cQEavieOU/GuH9/ovmuSbeONdFY="</span><span class="text-accent-p2">&gt;</span>
-     <span class="text-accent-p2">&lt;link</span> <span class="text-accent3">rel=</span><span class="text-accent7">"stylesheet"</span> <span class="text-accent3">href=</span><span class="text-accent7">"https://cdn.cdt.ca.gov/cdt/statetemplate/6.5.5/css/colortheme-oceanside.min.css"</span> <span class="text-accent3">integrity=</span><span class="text-accent7">"sha256-qQZPn1EYL0e5S3aEqiYN1bHdh5BVZIZPb7kRe5ccbp8="</span>  <span class="text-accent3">crossorigin=</span><span class="text-accent7">"anonymous"</span><span class="text-accent-p2">&gt;</span>
-     <span class="text-muted">&lt;!-- State Template JavaScript CDN --&gt;</span>
-     <span class="text-accent-p2">&lt;script </span><span class="text-accent3">src=</span><span class="text-accent7">"https://cdn.cdt.ca.gov/cdt/statetemplate/6.5.5/js/cagov.core.min.js"</span> <span class="text-accent3">integrity=</span><span class="text-accent7">"sha256-lk7aRdDqQaM3lRyR9FNIz2BDZHOCLTOHYr3wPpHn+uU="</span> <span class="text-accent3">defer</span> <span class="text-accent3">crossorigin=</span><span class="text-accent7">"anonymous"</span><span class="text-accent-p2">&gt;&lt;/script&gt;</span>
+     <span class="text-muted">&lt;!-- State Template core CDN CSS --&gt;</span>
+     <span class="text-accent-p2">&lt;link</span> <span class="text-accent3">rel=</span><span class="text-accent7">"stylesheet"</span> <span class="text-accent3">href=</span><span class="text-accent7">"https://cdn.cdt.ca.gov/cdt/statetemplate/6.6.0/css/cagov.core.min.css"</span> <span class="text-accent3">integrity=</span><span class="text-accent7">"sha256-jVlCrCFbS1g8ZzECHPDAUlJghxo/ZjiQexLYoiRr82k="</span><span class="text-accent-p2">&gt;</span>
+     <span class="text-muted">&lt;!-- Dark theme fallback CDN CSS --&gt;</span>
+     <span class="text-accent-p2">&lt;link</span> <span class="text-accent3">href=</span><span class="text-accent7">"https://cdn.cdt.ca.gov/cdt/statetemplate/6.6.0/css/colortheme-ukiahdark.min.css"</span> <span class="text-accent3">rel=</span><span class="text-accent7">"stylesheet"</span>  <span class="text-accent3">integrity=</span><span class="text-accent7">"sha256-6p7GL2s68Wz3HwCpzbRmH6qWZ/80bukvmv/izAtIRK8="</span> <span class="text-accent3">crossorigin=</span><span class="text-accent7">"anonymous"</span> <span class="text-accent3">media=</span><span class="text-accent7">"(prefers-color-scheme: dark)"</span> <span class="text-accent-p2">/&gt;</span>
+     <span class="text-muted">&lt;!-- State Template core JavaScript CDN --&gt;</span>
+     <span class="text-accent-p2">&lt;script </span><span class="text-accent3">src=</span><span class="text-accent7">"https://cdn.cdt.ca.gov/cdt/statetemplate/6.6.0/js/cagov.core.min.js"</span> <span class="text-accent3">integrity=</span><span class="text-accent7">"sha256-B0S5icaWNAhVYi/0q1iRyjtmbaACFJbLQgfWyJ2bxNk="</span> <span class="text-accent3">defer</span> <span class="text-accent3">crossorigin=</span><span class="text-accent7">"anonymous"</span><span class="text-accent-p2">&gt;&lt;/script&gt;</span>
 
     <span class="text-accent-p2">&lt;/head&gt;</span>
    <span class="text-accent-p2">&lt;body&gt;</span>
@@ -154,6 +166,50 @@ permalink: "cdn.html"
     </p>
     <h3>Web State Template v6 (production)</h3>
     <ol data-aria-accordion data-multi data-transition data-default="none">
+      <li>
+        <h4 data-aria-accordion-heading>Version 6.6.0</h4>
+        <div data-aria-accordion-panel>
+          <p>CSS</p>
+          <pre>
+&lt;link href="https://cdn.cdt.ca.gov/cdt/statetemplate/6.6.0/css/cagov.core.css" rel="stylesheet" crossorigin="anonymous"&gt;
+&lt;link href="https://cdn.cdt.ca.gov/cdt/statetemplate/6.6.0/css/cagov.core.min.css" rel="stylesheet" crossorigin="anonymous"&gt;
+&lt;link href="https://cdn.cdt.ca.gov/cdt/statetemplate/6.6.0/css/cagov.core.flat.css" rel="stylesheet" crossorigin="anonymous"&gt;
+&lt;link href="https://cdn.cdt.ca.gov/cdt/statetemplate/6.6.0/css/colortheme-delta.css" rel="stylesheet" crossorigin="anonymous"&gt;
+&lt;link href="https://cdn.cdt.ca.gov/cdt/statetemplate/6.6.0/css/colortheme-delta.min.css" rel="stylesheet" crossorigin="anonymous"&gt;
+&lt;link href="https://cdn.cdt.ca.gov/cdt/statetemplate/6.6.0/css/colortheme-eureka.css" rel="stylesheet" crossorigin="anonymous"&gt;
+&lt;link href="https://cdn.cdt.ca.gov/cdt/statetemplate/6.6.0/css/colortheme-eureka.min.css" rel="stylesheet" crossorigin="anonymous"&gt;
+&lt;link href="https://cdn.cdt.ca.gov/cdt/statetemplate/6.6.0/css/colortheme-mono.css" rel="stylesheet" crossorigin="anonymous"&gt;
+&lt;link href="https://cdn.cdt.ca.gov/cdt/statetemplate/6.6.0/css/colortheme-mono.min.css" rel="stylesheet" crossorigin="anonymous"&gt;
+&lt;link href="https://cdn.cdt.ca.gov/cdt/statetemplate/6.6.0/css/colortheme-oceanside.css" rel="stylesheet" crossorigin="anonymous"&gt;
+&lt;link href="https://cdn.cdt.ca.gov/cdt/statetemplate/6.6.0/css/colortheme-oceanside.min.css" rel="stylesheet" crossorigin="anonymous"&gt;
+&lt;link href="https://cdn.cdt.ca.gov/cdt/statetemplate/6.6.0/css/colortheme-orangecounty.css" rel="stylesheet" crossorigin="anonymous"&gt;
+&lt;link href="https://cdn.cdt.ca.gov/cdt/statetemplate/6.6.0/css/colortheme-orangecounty.min.css" rel="stylesheet" crossorigin="anonymous"&gt;
+&lt;link href="https://cdn.cdt.ca.gov/cdt/statetemplate/6.6.0/css/colortheme-pasorobles.css" rel="stylesheet" crossorigin="anonymous"&gt;
+&lt;link href="https://cdn.cdt.ca.gov/cdt/statetemplate/6.6.0/css/colortheme-pasorobles.min.css" rel="stylesheet" crossorigin="anonymous"&gt;
+&lt;link href="https://cdn.cdt.ca.gov/cdt/statetemplate/6.6.0/css/colortheme-sacramento.css" rel="stylesheet" crossorigin="anonymous"&gt;
+&lt;link href="https://cdn.cdt.ca.gov/cdt/statetemplate/6.6.0/css/colortheme-sacramento.min.css" rel="stylesheet" crossorigin="anonymous"&gt;
+&lt;link href="https://cdn.cdt.ca.gov/cdt/statetemplate/6.6.0/css/colortheme-santabarbara.css" rel="stylesheet" crossorigin="anonymous"&gt;
+&lt;link href="https://cdn.cdt.ca.gov/cdt/statetemplate/6.6.0/css/colortheme-santabarbara.min.css" rel="stylesheet" crossorigin="anonymous"&gt;
+&lt;link href="https://cdn.cdt.ca.gov/cdt/statetemplate/6.6.0/css/colortheme-santacruz.css" rel="stylesheet" crossorigin="anonymous"&gt;
+&lt;link href="https://cdn.cdt.ca.gov/cdt/statetemplate/6.6.0/css/colortheme-santacruz.min.css" rel="stylesheet" crossorigin="anonymous"&gt;
+&lt;link href="https://cdn.cdt.ca.gov/cdt/statetemplate/6.6.0/css/colortheme-sierra.css" rel="stylesheet" crossorigin="anonymous"&gt;
+&lt;link href="https://cdn.cdt.ca.gov/cdt/statetemplate/6.6.0/css/colortheme-sierra.min.css" rel="stylesheet" crossorigin="anonymous"&gt;
+&lt;link href="https://cdn.cdt.ca.gov/cdt/statetemplate/6.6.0/css/colortheme-shasta.css" rel="stylesheet" crossorigin="anonymous"&gt;
+&lt;link href="https://cdn.cdt.ca.gov/cdt/statetemplate/6.6.0/css/colortheme-shasta.min.css" rel="stylesheet" crossorigin="anonymous"&gt;
+&lt;link href="https://cdn.cdt.ca.gov/cdt/statetemplate/6.6.0/css/colortheme-trinity.css" rel="stylesheet" crossorigin="anonymous"&gt;
+&lt;link href="https://cdn.cdt.ca.gov/cdt/statetemplate/6.6.0/css/colortheme-trinity.min.css" rel="stylesheet" crossorigin="anonymous"&gt;
+&lt;link href="https://cdn.cdt.ca.gov/cdt/statetemplate/6.6.0/css/colortheme-ukiahdark.css" rel="stylesheet" crossorigin="anonymous"&gt;
+&lt;link href="https://cdn.cdt.ca.gov/cdt/statetemplate/6.6.0/css/colortheme-ukiahdark.min.css" rel="stylesheet" crossorigin="anonymous"&gt;
+&lt;link href="https://cdn.cdt.ca.gov/cdt/statetemplate/6.6.0/css/colortheme-venturadark.css" rel="stylesheet" crossorigin="anonymous"&gt;
+&lt;link href="https://cdn.cdt.ca.gov/cdt/statetemplate/6.6.0/css/colortheme-venturadark.min.css" rel="stylesheet" crossorigin="anonymous"&gt;</pre
+          >
+          <p>JS</p>
+          <pre>
+&lt;script src="https://cdn.cdt.ca.gov/cdt/statetemplate/6.6.0/js/cagov.core.js" defer crossorigin="anonymous&gt;&lt;/script&gt;
+&lt;script src="https://cdn.cdt.ca.gov/cdt/statetemplate/6.6.0/js/cagov.core.min.js" defer crossorigin="anonymous"&gt;&lt;/script&gt;</pre
+          >
+        </div>
+      </li>
       <li>
         <h4 data-aria-accordion-heading>Version 6.5.5</h4>
         <div data-aria-accordion-panel>
