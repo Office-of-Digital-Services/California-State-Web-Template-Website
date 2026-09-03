@@ -184,8 +184,9 @@ permalink: "components/executive-profile.html"
 
 <h3>Dark background</h3>
 <p>
-  Use this version on a black, dark gray, or dark background (like the standout
-  color of your color theme).
+  To achieve a dark look, wrap the transparent executive profile inside a dark
+  background section using one of these classes: section-standout,
+  section-primary, section-impact, or section-overstated.
 </p>
 
 <!--TABS-->
@@ -226,10 +227,7 @@ permalink: "components/executive-profile.html"
       role="tabpanel"
       aria-labelledby="heading-example5">
       <div class="p-a-sm p-y-0">
-        <div class="section-standout">
-          {% include "../../src/_includes/modules/executive-profile-dark.html"
-          %}
-        </div>
+        {% include "../../src/_includes/modules/executive-profile-dark.html" %}
       </div>
     </div>
   </section>
